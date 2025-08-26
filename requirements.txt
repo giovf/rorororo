@@ -1,0 +1,25 @@
+pandas>=1.5.0
+numpy>=1.21.0
+scikit-learn>=1.0.0
+tensorflow    # or pytorch
+stable-baselines3
+backtrader
+matplotlib>=3.5.0
+plotly>=5.10.0
+seaborn>=0.12.0
+ccxt
+requests>=2.28.0
+pyYAML
+logging
+schedule
+pytest>=7.0.0
+pytest-cov
+pytest-mock>=3.10.0
+jupyter
+black
+flake8
+python-dateutil>=2.8.2
+ta-lib
+ta>=0.10.0  # Technical analysis library
+pathlib>=1.0.1
+typing-extensions>=4.0.0
