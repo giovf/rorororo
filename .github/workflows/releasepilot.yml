@@ -1,0 +1,22 @@
+name: ReleasePilot
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches: [main]
+    tags: ['v*.*.*']
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - uses: your-org/release-pilot@v1
+        with:
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+        env:
+          RELEASEPILOT_LICENSE: ${{ secrets.RELEASEPILOT_LICENSE }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
