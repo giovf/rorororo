@@ -4,6 +4,7 @@ import requests
 from datetime import datetime
 import re
 from requests.exceptions import RequestException
+from pathlib import Path
 
 def fetch_historical_klines(
     symbol: str,
@@ -11,6 +12,7 @@ def fetch_historical_klines(
     start_time: str,
     end_time: str,
     save_to_csv: bool = False,
+    save_path: Optional[Path] = None,
     limit: int = 1000
 ) -> pd.DataFrame:
     """
@@ -19,9 +21,10 @@ def fetch_historical_klines(
     Args:
         symbol: Trading pair symbol (e.g., 'ETHUSDT')
         interval: Time interval (e.g., '1h', '15m')
-        start_time: Start time in format "DD.MM.YYYY-HH:MM:SS.fff"
-        end_time: End time in format "DD.MM.YYYY-HH:MM:SS.fff"
+        start_time: Start time in format "DD.MM.YYYY-HH:MM:SS.mmm"
+        end_time: End time in format "DD.MM.YYYY-HH:MM:SS.mmm"
         save_to_csv: Whether to save the data to CSV
+        save_path: Directory path where to save the CSV file
         limit: Maximum number of records per request
     
     Returns:
@@ -33,9 +36,9 @@ def fetch_historical_klines(
     """
     try:
         if not re.match(r'^\d{2}\.\d{2}\.\d{4}-\d{2}:\d{2}:\d{2}\.\d{3}$', start_time):
-            raise ValueError(f"Invalid start_time format: {start_time}")
+            raise ValueError(f"Invalid start_time format: {start_time}. Format should be DD.MM.YYYY-HH:MM:SS.mmm")
         if not re.match(r'^\d{2}\.\d{2}\.\d{4}-\d{2}:\d{2}:\d{2}\.\d{3}$', end_time):
-            raise ValueError(f"Invalid end_time format: {end_time}")
+            raise ValueError(f"Invalid end_time format: {end_time}. Format should be DD.MM.YYYY-HH:MM:SS.mmm")
         if not re.match(r'^\d+[mh]$', interval):
             raise ValueError(f"Invalid interval format: {interval}")
             
@@ -107,13 +110,15 @@ def fetch_historical_klines(
         
         if save_to_csv:
             filename = f"{symbol}_{interval}_{start_time.split('-')[0]}_{end_time.split('-')[0]}.csv"
-            df.to_csv(filename)
-            print(f"Data saved to {filename}")
+            if save_path:
+                file_path = save_path / filename
+            else:
+                file_path = Path(filename)
+            df.to_csv(file_path)
+            print(f"Data saved to {file_path}")
             
         return df
         
     except Exception as e:
         print(f"Error in fetch_historical_klines: {str(e)}")
         raise
-
-fetch_historical_klines('ETHUSDT', '1h', '01.01.2022-00:00:00.00', '31.12.2024-00:00:00.00', save_to_csv=True)

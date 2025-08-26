@@ -1,0 +1,193 @@
+2025-01-08 12:06:40,359 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-08 12:06:40,359 - INFO - Ensured directory exists: data
+2025-01-08 12:06:40,359 - INFO - Ensured directory exists: data/raw
+2025-01-08 12:06:40,360 - INFO - Ensured directory exists: data/processed
+2025-01-08 12:06:40,360 - INFO - Fetching ETHUSDT data from 2023-01-01 00:00:00.000 to 2024-12-31 00:00:00.000
+2025-01-08 12:06:40,360 - ERROR - Error fetching data: Invalid start_time format: 2023-01-01 00:00:00.000. Format should be DD.MM.YYYY-HH:MM:SS.mmm
+2025-01-08 12:06:40,360 - ERROR - Pipeline failed: Invalid start_time format: 2023-01-01 00:00:00.000. Format should be DD.MM.YYYY-HH:MM:SS.mmm
+2025-01-08 16:13:10,967 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-08 16:13:10,967 - INFO - Ensured directory exists: data
+2025-01-08 16:13:10,968 - INFO - Ensured directory exists: data/raw
+2025-01-08 16:13:10,968 - INFO - Ensured directory exists: data/processed
+2025-01-08 16:13:10,968 - INFO - Fetching ETHUSDT data from 01.01.2023-00:00:00.000 to 31.12.2024-00:00:00.000
+2025-01-08 16:13:11,905 - INFO - Successfully fetched 1461 records
+2025-01-08 16:13:11,906 - INFO - Loading data
+2025-01-08 16:13:11,906 - ERROR - Error processing data: File not found: data/raw/ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:13:11,906 - ERROR - Pipeline failed: File not found: data/raw/ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:15:50,284 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-08 16:15:50,284 - INFO - Ensured directory exists: data
+2025-01-08 16:15:50,284 - INFO - Ensured directory exists: data/raw
+2025-01-08 16:15:50,284 - INFO - Ensured directory exists: data/processed
+2025-01-08 16:15:50,284 - INFO - Fetching ETHUSDT data from 01.01.2023-00:00:00.000 to 31.12.2024-00:00:00.000
+2025-01-08 16:15:51,271 - INFO - Successfully fetched 1461 records
+2025-01-08 16:15:51,271 - INFO - Loading data
+2025-01-08 16:15:51,280 - INFO - Loaded 1461 records
+2025-01-08 16:15:51,280 - INFO - Engineering features
+2025-01-08 16:15:51,287 - INFO - Generated 21 features
+2025-01-08 16:15:51,312 - INFO - Saved processed data to data/processed/processed_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:15:51,312 - INFO - Splitting data into train/validation/test sets
+2025-01-08 16:15:51,328 - INFO - Saved train set to data/processed/train_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:15:51,328 - INFO - train set shape: (1038, 33)
+2025-01-08 16:15:51,328 - INFO - train date range: 20 to 1057
+2025-01-08 16:15:51,330 - INFO - Saved validation set to data/processed/validation_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:15:51,330 - INFO - validation set shape: (115, 33)
+2025-01-08 16:15:51,330 - INFO - validation date range: 1058 to 1172
+2025-01-08 16:15:51,335 - INFO - Saved test set to data/processed/test_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:15:51,335 - INFO - test set shape: (288, 33)
+2025-01-08 16:15:51,335 - INFO - test date range: 1173 to 1460
+2025-01-08 16:15:51,335 - INFO - Pipeline completed successfully
+2025-01-08 16:17:38,556 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-08 16:17:38,557 - INFO - Ensured directory exists: data
+2025-01-08 16:17:38,557 - INFO - Ensured directory exists: data/raw
+2025-01-08 16:17:38,557 - INFO - Ensured directory exists: data/processed
+2025-01-08 16:17:38,557 - INFO - Found existing data file: data/raw/ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:17:38,562 - INFO - Using existing data with 1461 records
+2025-01-08 16:17:38,562 - INFO - Loading data
+2025-01-08 16:17:38,571 - INFO - Loaded 1461 records
+2025-01-08 16:17:38,571 - INFO - Engineering features
+2025-01-08 16:17:38,577 - INFO - Generated 21 features
+2025-01-08 16:17:38,599 - INFO - Saved processed data to data/processed/processed_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:17:38,599 - INFO - Splitting data into train/validation/test sets
+2025-01-08 16:17:38,614 - INFO - Saved train set to data/processed/train_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:17:38,614 - INFO - train set shape: (1038, 33)
+2025-01-08 16:17:38,614 - INFO - train date range: 20 to 1057
+2025-01-08 16:17:38,617 - INFO - Saved validation set to data/processed/validation_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:17:38,617 - INFO - validation set shape: (115, 33)
+2025-01-08 16:17:38,617 - INFO - validation date range: 1058 to 1172
+2025-01-08 16:17:38,622 - INFO - Saved test set to data/processed/test_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-08 16:17:38,623 - INFO - test set shape: (288, 33)
+2025-01-08 16:17:38,623 - INFO - test date range: 1173 to 1460
+2025-01-08 16:17:38,623 - INFO - Pipeline completed successfully
+2025-01-12 19:53:50,821 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-12 19:53:50,821 - INFO - Ensured directory exists: data
+2025-01-12 19:53:50,821 - INFO - Ensured directory exists: data/raw
+2025-01-12 19:53:50,821 - INFO - Ensured directory exists: data/processed
+2025-01-12 19:53:50,821 - INFO - Found existing data file: data/raw/ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-12 19:53:50,826 - INFO - Using existing data with 1461 records
+2025-01-12 19:53:50,826 - INFO - Loading data
+2025-01-12 19:53:50,836 - INFO - Loaded 1461 records
+2025-01-12 19:53:50,837 - INFO - Engineering features
+2025-01-12 19:53:50,843 - INFO - Generated 21 features
+2025-01-12 19:53:50,868 - INFO - Saved processed data to data/processed/processed_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-12 19:53:50,868 - INFO - Splitting data into train/validation/test sets
+2025-01-12 19:53:50,886 - INFO - Saved train set to data/processed/train_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-12 19:53:50,886 - INFO - train set shape: (1038, 33)
+2025-01-12 19:53:50,886 - INFO - train date range: 20 to 1057
+2025-01-12 19:53:50,889 - INFO - Saved validation set to data/processed/validation_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-12 19:53:50,889 - INFO - validation set shape: (115, 33)
+2025-01-12 19:53:50,889 - INFO - validation date range: 1058 to 1172
+2025-01-12 19:53:50,894 - INFO - Saved test set to data/processed/test_ETHUSDT_12h_01.01.2023_31.12.2024.csv
+2025-01-12 19:53:50,894 - INFO - test set shape: (288, 33)
+2025-01-12 19:53:50,894 - INFO - test date range: 1173 to 1460
+2025-01-12 19:53:50,894 - INFO - Pipeline completed successfully
+2025-01-12 19:54:35,642 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-12 19:54:35,642 - INFO - Ensured directory exists: data
+2025-01-12 19:54:35,642 - INFO - Ensured directory exists: data/raw
+2025-01-12 19:54:35,642 - INFO - Ensured directory exists: data/processed
+2025-01-12 19:54:35,642 - INFO - No existing data file found for ETHUSDT from 01.01.2023-00:00:00.000 to 31.12.2024-00:00:00.000
+2025-01-12 19:54:35,642 - INFO - Fetching ETHUSDT data from 01.01.2023-00:00:00.000 to 31.12.2024-00:00:00.000
+2025-01-12 19:54:35,642 - ERROR - Error fetching data: Invalid interval format: 1d
+2025-01-12 19:54:35,642 - ERROR - Pipeline failed: Invalid interval format: 1d
+2025-01-12 19:54:43,643 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-12 19:54:43,643 - INFO - Ensured directory exists: data
+2025-01-12 19:54:43,643 - INFO - Ensured directory exists: data/raw
+2025-01-12 19:54:43,643 - INFO - Ensured directory exists: data/processed
+2025-01-12 19:54:43,643 - INFO - No existing data file found for ETHUSDT from 01.01.2023-00:00:00.000 to 31.12.2024-00:00:00.000
+2025-01-12 19:54:43,643 - INFO - Fetching ETHUSDT data from 01.01.2023-00:00:00.000 to 31.12.2024-00:00:00.000
+2025-01-12 19:54:43,955 - ERROR - Error fetching data: Failed to fetch data from Binance API: 400 Client Error: Bad Request for url: https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=24h&startTime=1672531200000&endTime=1735603200000&limit=1000
+2025-01-12 19:54:43,955 - ERROR - Pipeline failed: Failed to fetch data from Binance API: 400 Client Error: Bad Request for url: https://api.binance.com/api/v3/klines?symbol=ETHUSDT&interval=24h&startTime=1672531200000&endTime=1735603200000&limit=1000
+2025-01-12 19:55:14,702 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-12 19:55:14,702 - INFO - Ensured directory exists: data
+2025-01-12 19:55:14,702 - INFO - Ensured directory exists: data/raw
+2025-01-12 19:55:14,703 - INFO - Ensured directory exists: data/processed
+2025-01-12 19:55:14,703 - INFO - No existing data file found for ETHUSDT from 01.01.2023-00:00:00.000 to 31.12.2024-00:00:00.000
+2025-01-12 19:55:14,703 - INFO - Fetching ETHUSDT data from 01.01.2023-00:00:00.000 to 31.12.2024-00:00:00.000
+2025-01-12 19:55:20,401 - INFO - Successfully fetched 17521 records
+2025-01-12 19:55:20,402 - INFO - Loading data
+2025-01-12 19:55:20,429 - INFO - Loaded 17521 records
+2025-01-12 19:55:20,429 - INFO - Engineering features
+2025-01-12 19:55:20,439 - INFO - Generated 21 features
+2025-01-12 19:55:20,735 - INFO - Saved processed data to data/processed/processed_ETHUSDT_1h_01.01.2023_31.12.2024.csv
+2025-01-12 19:55:20,735 - INFO - Splitting data into train/validation/test sets
+2025-01-12 19:55:20,940 - INFO - Saved train set to data/processed/train_ETHUSDT_1h_01.01.2023_31.12.2024.csv
+2025-01-12 19:55:20,940 - INFO - train set shape: (12601, 33)
+2025-01-12 19:55:20,940 - INFO - train date range: 20 to 12620
+2025-01-12 19:55:20,964 - INFO - Saved validation set to data/processed/validation_ETHUSDT_1h_01.01.2023_31.12.2024.csv
+2025-01-12 19:55:20,964 - INFO - validation set shape: (1400, 33)
+2025-01-12 19:55:20,965 - INFO - validation date range: 12621 to 14020
+2025-01-12 19:55:21,022 - INFO - Saved test set to data/processed/test_ETHUSDT_1h_01.01.2023_31.12.2024.csv
+2025-01-12 19:55:21,022 - INFO - test set shape: (3500, 33)
+2025-01-12 19:55:21,022 - INFO - test date range: 14021 to 17520
+2025-01-12 19:55:21,022 - INFO - Pipeline completed successfully
+2025-01-12 20:31:25,258 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-12 20:31:25,258 - INFO - Ensured directory exists: data
+2025-01-12 20:31:25,258 - INFO - Ensured directory exists: data/raw
+2025-01-12 20:31:25,258 - INFO - Ensured directory exists: data/processed
+2025-01-12 20:31:25,258 - INFO - Found existing data file: data/raw/ETHUSDT_1h_01.01.2023_31.12.2024.csv
+2025-01-12 20:31:25,278 - INFO - Using existing data with 17521 records
+2025-01-12 20:31:25,279 - INFO - Loading data
+2025-01-12 20:31:25,309 - INFO - Loaded 17521 records
+2025-01-12 20:31:25,309 - INFO - Engineering features
+2025-01-12 20:31:25,368 - ERROR - Error processing data: negative dimensions are not allowed
+2025-01-12 20:31:25,368 - ERROR - Pipeline failed: negative dimensions are not allowed
+2025-01-12 20:31:46,750 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-12 20:31:46,750 - INFO - Ensured directory exists: data
+2025-01-12 20:31:46,750 - INFO - Ensured directory exists: data/raw
+2025-01-12 20:31:46,750 - INFO - Ensured directory exists: data/processed
+2025-01-12 20:31:46,750 - INFO - Found existing data file: data/raw/ETHUSDT_1h_01.01.2023_31.12.2024.csv
+2025-01-12 20:31:46,771 - INFO - Using existing data with 17521 records
+2025-01-12 20:31:46,772 - INFO - Loading data
+2025-01-12 20:31:46,803 - INFO - Loaded 17521 records
+2025-01-12 20:31:46,803 - INFO - Engineering features
+2025-01-12 20:31:46,864 - ERROR - Error processing data: Not enough data points. Need at least 10 points
+2025-01-12 20:31:46,864 - ERROR - Pipeline failed: Not enough data points. Need at least 10 points
+2025-01-12 20:32:11,669 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-12 20:32:11,670 - INFO - Ensured directory exists: data
+2025-01-12 20:32:11,670 - INFO - Ensured directory exists: data/raw
+2025-01-12 20:32:11,670 - INFO - Ensured directory exists: data/processed
+2025-01-12 20:32:11,670 - INFO - Found existing data file: data/raw/ETHUSDT_1h_01.01.2023_31.12.2024.csv
+2025-01-12 20:32:11,689 - INFO - Using existing data with 17521 records
+2025-01-12 20:32:11,689 - INFO - Loading data
+2025-01-12 20:32:11,725 - INFO - Loaded 17521 records
+2025-01-12 20:32:11,725 - INFO - Engineering features
+2025-01-12 20:32:11,787 - ERROR - Error processing data: Some features still contain NaN values after filling
+2025-01-12 20:32:11,787 - ERROR - Pipeline failed: Some features still contain NaN values after filling
+2025-01-12 20:32:41,827 - INFO - Starting cryptocurrency data analysis pipeline
+2025-01-12 20:32:41,827 - INFO - Ensured directory exists: data
+2025-01-12 20:32:41,827 - INFO - Ensured directory exists: data/raw
+2025-01-12 20:32:41,827 - INFO - Ensured directory exists: data/processed
+2025-01-12 20:32:41,827 - INFO - Found existing data file: data/raw/ETHUSDT_1h_01.01.2023_31.12.2024.csv
+2025-01-12 20:32:41,847 - INFO - Using existing data with 17521 records
+2025-01-12 20:32:41,848 - INFO - Loading data
+2025-01-12 20:32:41,880 - INFO - Loaded 17521 records
+2025-01-12 20:32:41,880 - INFO - Engineering features
+2025-01-12 20:32:58,031 - INFO - Generated state tensor with shape (17512, 10, 49)
+2025-01-12 20:32:58,031 - INFO - Number of features: 49
+2025-01-12 20:32:58,043 - INFO - Saved state tensor to data/processed/state_tensor_ETHUSDT_1h_01.01.2023_31.12.2024.npy
+2025-01-12 20:32:58,043 - INFO - Saved feature names to data/processed/feature_names_ETHUSDT_1h_01.01.2023_31.12.2024.txt
+2025-01-12 20:32:58,043 - INFO - Splitting data into train/validation/test sets
+2025-01-12 20:32:58,067 - INFO - Saved train tensor to data/processed/train_tensor_ETHUSDT_1h_01.01.2023_31.12.2024.npy
+2025-01-12 20:32:58,067 - INFO - train tensor shape: (12609, 10, 49)
+2025-01-12 20:32:58,071 - INFO - Saved validation tensor to data/processed/validation_tensor_ETHUSDT_1h_01.01.2023_31.12.2024.npy
+2025-01-12 20:32:58,071 - INFO - validation tensor shape: (1401, 10, 49)
+2025-01-12 20:32:58,082 - INFO - Saved test tensor to data/processed/test_tensor_ETHUSDT_1h_01.01.2023_31.12.2024.npy
+2025-01-12 20:32:58,082 - INFO - test tensor shape: (3502, 10, 49)
+2025-01-12 20:32:58,092 - INFO - Pipeline completed successfully
+2025-01-12 20:32:58,092 - INFO - 
+TRAIN Set Summary:
+2025-01-12 20:32:58,092 - INFO - Shape: 12609
+2025-01-12 20:32:58,092 - INFO - Date Range: Not available
+2025-01-12 20:32:58,092 - INFO - Average Close Price: Not available
+2025-01-12 20:32:58,092 - INFO - Trading Volume: Not available
+2025-01-12 20:32:58,092 - INFO - 
+VALIDATION Set Summary:
+2025-01-12 20:32:58,092 - INFO - Shape: 1401
+2025-01-12 20:32:58,092 - INFO - Date Range: Not available
+2025-01-12 20:32:58,092 - INFO - Average Close Price: Not available
+2025-01-12 20:32:58,092 - INFO - Trading Volume: Not available
+2025-01-12 20:32:58,092 - INFO - 
+TEST Set Summary:
+2025-01-12 20:32:58,092 - INFO - Shape: 3502
+2025-01-12 20:32:58,092 - INFO - Date Range: Not available
+2025-01-12 20:32:58,092 - INFO - Average Close Price: Not available
+2025-01-12 20:32:58,092 - INFO - Trading Volume: Not available

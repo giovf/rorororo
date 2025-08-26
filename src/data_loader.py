@@ -14,7 +14,7 @@ class DataLoader:
         Raises:
             ValueError: If the directory doesn't exist
         """
-        self.data_directory = Path(data_directory)
+        self.data_directory = Path(data_directory).resolve()
         if not self.data_directory.exists():
             raise ValueError(f"Directory does not exist: {data_directory}")
     
@@ -32,7 +32,7 @@ class DataLoader:
             FileNotFoundError: If the file doesn't exist
             pd.errors.EmptyDataError: If the file is empty
         """
-        file_path = self.data_directory / file_name
+        file_path = (self.data_directory / file_name).resolve()
         if not file_path.exists():
             raise FileNotFoundError(f"File not found: {file_path}")
             
