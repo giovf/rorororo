@@ -1,0 +1,26 @@
+name: ReleasePilot
+on:
+  pull_request:
+    types: [opened, synchronize]
+  push:
+    branches: [main]
+    tags: ['v*.*.*']
+    
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      
+      - uses: Geppix140269/release-pilot@v1.0.0
+        with:
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+        env:
+          RELEASEPILOT_LICENSE: ${{ secrets.RELEASEPILOT_LICENSE }}
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}

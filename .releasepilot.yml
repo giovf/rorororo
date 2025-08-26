@@ -1,0 +1,13 @@
+project_name: MyApp
+release_sections:
+  - feat
+  - fix
+  - perf
+  - refactor
+excluded_scopes: [ci, chore]
+pr_checklist:
+  - "Tests added/updated"
+  - "Docs updated"
+  - "Security review (if touching auth)"
+version_file: package.json
+ai_provider: openai # or anthropic
