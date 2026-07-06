@@ -81,6 +81,8 @@ function sourcePathItem(source: DataSource): JsonObject {
         ),
         '400': errorResponse('Invalid query parameters (see error.details)'),
         '401': errorResponse('Missing, unknown, or revoked API key'),
+        '402': errorResponse('Monthly credit quota exhausted (code: quota_exceeded)'),
+        '429': errorResponse('Rate limit exceeded (see Retry-After header)'),
         '503': errorResponse('Source temporarily unavailable, retry later'),
       },
     },
@@ -94,6 +96,33 @@ const issuedKeySchema = z.object({
   credits: z.number(),
   message: z.string(),
 });
+
+const usagePath: JsonObject = {
+  '/v1/usage': {
+    get: {
+      operationId: 'get_usage',
+      summary: 'Current-period credit usage for the presented key (free to call)',
+      tags: ['platform'],
+      security: [{ bearerAuth: [] }],
+      responses: {
+        '200': jsonResponse(
+          'Usage summary',
+          successEnvelope(
+            z.object({
+              plan: z.string(),
+              period: z.string(),
+              used: z.number(),
+              granted: z.number(),
+              remaining: z.number(),
+              alerts: z.array(z.string()),
+            }),
+          ),
+        ),
+        '401': errorResponse('Missing, unknown, or revoked API key'),
+      },
+    },
+  },
+};
 
 const keysPaths: JsonObject = {
   '/v1/keys': {
@@ -184,6 +213,7 @@ function buildDocument(): JsonObject {
         },
       },
       ...keysPaths,
+      ...usagePath,
       ...sourcePaths,
     },
     components: {

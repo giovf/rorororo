@@ -7,6 +7,7 @@ interface KeyRecord {
   id: string;
   plan: string;
   revoked_at: string | null;
+  credits_granted: number;
 }
 
 const KV_TTL_SECONDS = 3600;
@@ -17,8 +18,13 @@ async function lookupKey(env: CloudflareBindings, hash: string): Promise<KeyReco
   const cached = await env.CACHE.get<KeyRecord>(keyCacheKey(hash), 'json');
   if (cached) return cached;
 
+  // credits_granted = ledger sum, so Stripe top-ups (task 8) only need to
+  // insert a ledger row and delete this KV entry to take effect.
   const row = await env.DB.prepare(
-    'SELECT id, plan, revoked_at FROM api_keys WHERE key_hash = ?1',
+    `SELECT a.id, a.plan, a.revoked_at, COALESCE(SUM(l.delta), 0) AS credits_granted
+     FROM api_keys a LEFT JOIN credit_ledger l ON l.key_id = a.id
+     WHERE a.key_hash = ?1
+     GROUP BY a.id, a.plan, a.revoked_at`,
   )
     .bind(hash)
     .first<KeyRecord>();
@@ -51,7 +57,12 @@ export function requireApiKey(): MiddlewareHandler<AppEnv> {
       return c.json(failure('unauthorized', 'Unknown or revoked API key'), 401);
     }
 
-    const keyCtx: KeyContext = { keyId: record.id, plan: record.plan, keyHash: hash };
+    const keyCtx: KeyContext = {
+      keyId: record.id,
+      plan: record.plan,
+      keyHash: hash,
+      creditsGranted: record.credits_granted,
+    };
     c.set('keyCtx', keyCtx);
     await next();
   };

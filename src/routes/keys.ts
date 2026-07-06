@@ -4,6 +4,7 @@ import { generateKey, hashKey } from '../auth/keys';
 import { keyCacheKey, requireApiKey } from '../auth/middleware';
 import { FREE_TIER_CREDITS } from '../lib/constants';
 import { failure, success } from '../lib/envelope';
+import { rateLimit } from '../metering/ratelimit';
 import type { AppEnv } from '../types';
 
 const issueBodySchema = z.object({
@@ -11,16 +12,13 @@ const issueBodySchema = z.object({
   name: z.string().trim().min(1).max(100).optional(),
 });
 
-// Best-effort KV counter to stop key-farming (PRD accepts KV consistency).
-const ISSUE_LIMIT_PER_HOUR = 5;
-
-async function overIssueLimit(env: CloudflareBindings, ip: string): Promise<boolean> {
-  const key = `ratelimit:keys:${ip}`;
-  const current = Number((await env.RATE.get(key)) ?? '0');
-  if (current >= ISSUE_LIMIT_PER_HOUR) return true;
-  await env.RATE.put(key, String(current + 1), { expirationTtl: 3600 });
-  return false;
-}
+// Per-IP guard against key-farming (best-effort KV window per PRD).
+const issueRateLimit = rateLimit({
+  scope: 'keys',
+  limit: 5,
+  windowSeconds: 3600,
+  identify: (c) => c.req.header('CF-Connecting-IP') ?? 'unknown',
+});
 
 async function revokeKey(env: CloudflareBindings, keyId: string): Promise<boolean> {
   const row = await env.DB.prepare(
@@ -39,12 +37,7 @@ async function revokeKey(env: CloudflareBindings, keyId: string): Promise<boolea
 }
 
 export const keysRoutes = new Hono<AppEnv>()
-  .post('/', async (c) => {
-    const ip = c.req.header('CF-Connecting-IP') ?? 'unknown';
-    if (await overIssueLimit(c.env, ip)) {
-      return c.json(failure('rate_limited', 'Too many keys issued from this IP; try later'), 429);
-    }
-
+  .post('/', issueRateLimit, async (c) => {
     const parsed = issueBodySchema.safeParse(await c.req.json().catch(() => ({})));
     if (!parsed.success) {
       const details = parsed.error.issues.map((issue) => ({

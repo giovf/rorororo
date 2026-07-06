@@ -44,6 +44,11 @@ npx wrangler dev --port 8787 --test-scheduled   # run in background
 - After adding a migration, re-run the `d1 migrations apply DB --local` step or
   dev-server D1 queries 500 with `internal` (tests won't catch it — they apply
   migrations themselves).
+- Metering: data routes cost 1 credit and set `X-Credits-Limit`/`-Remaining`
+  (+ `X-Upgrade-Nudge` and `meta.usage_alert` from 80%); `GET /v1/usage`
+  (authed) is free. Quota = SUM(credit_ledger deltas) per month. To test
+  thresholds quickly: insert a negative ledger row for the key, then delete
+  the `key:<sha256(key)>` entry from CACHE so the new total loads.
 - Every response must use the envelope: success `{ok:true,data,...}`, error
   `{ok:false,error:{code,message,docs_url}}` — check unknown routes return the
   404 envelope, not bare text.

@@ -7,6 +7,7 @@ export const ERROR_CODES = [
   'bad_request',
   'unauthorized',
   'payment_required',
+  'quota_exceeded',
   'not_found',
   'rate_limited',
   'unavailable',

@@ -461,7 +461,7 @@
           "2",
           "6"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -469,9 +469,10 @@
             "description": "Implement `creditCost(route, source?)` as a data-driven lookup — default 1 credit per data request, per-source override via `source.creditCost`, and 0-cost entries for /v1/health, /v1/usage, and /openapi.json — plus plan quotas (free tier 250 req/month placeholder) exported as configuration constants rather than branching logic.",
             "dependencies": [],
             "details": "Create src/metering/costs.ts. Export `creditCost(route: string, source?: DataSource): number` with explicit return type (per CLAUDE.md conventions). Structure it as a data table: a const map of zero-cost route paths (`/v1/health`, `/v1/usage`, `/openapi.json`) checked first, then `source?.creditCost ?? 1` for data requests. Add an optional `creditCost` field to the DataSource interface in src/sources/ if not already present (interface change only — no dataset-specific logic outside src/sources/<slug>.ts). In the same module (or a sibling plans.ts), export plan quota constants as data, e.g. `export const PLANS = { free: { monthlyCredits: 250 } } as const` — pricing is launch-time config per the PRD, so downstream code must read these constants, never hard-code 250 or branch on plan names.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit tests: creditCost returns 0 for each zero-cost route, 1 for an arbitrary /v1/data/* route with no override, and the override value when source.creditCost is set. Assert PLANS.free.monthlyCredits === 250 so a pricing change is a deliberate test update.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:32:25.793Z"
           },
           {
             "id": 2,
@@ -479,9 +480,10 @@
             "description": "Implement the KV monthly counter on the CACHE namespace under key `usage:<keyId>:<yyyymm>`: `incrementUsage(env, keyId, cost)` as read-modify-write plus a `getUsage(env, keyId, period)` reader, with the accepted eventual-consistency race documented in a code comment and the Durable Objects upgrade path noted in the comment and the runbook.",
             "dependencies": [],
             "details": "Create src/metering/counters.ts. Export `currentPeriod(now?: Date): string` returning `yyyymm` (accept an injectable date so tests can exercise month rollover), `getUsage(env: Env, keyId: string, period: string): Promise<number>` reading the CACHE KV value (missing key → 0), and `incrementUsage(env: Env, keyId: string, cost: number, period?: string): Promise<number>` doing get → add → put and returning the new total. Zero-cost calls should short-circuit without a KV write. Add a prominent code comment: KV read-modify-write races under concurrency and KV is eventually consistent — this is accepted best-effort metering per the PRD; the strict-accuracy upgrade path is a Durable Object per key serializing increments (describe it, do NOT build it). Mirror that note in docs/RUNBOOK.md (create or append a 'Metering accuracy' section). Month rollover needs no cleanup logic — a new month simply starts a fresh key; optionally set a KV expirationTtl of ~60 days so stale counters self-expire.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit tests via vitest-pool-workers with the real KV binding: increment from empty key returns cost; repeated increments accumulate; getUsage on a missing key returns 0; currentPeriod formats correctly and an injected date in a different month yields a different key (rollover isolation). Verify the DO-upgrade comment exists (code review, not automated).",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:32:25.799Z"
           },
           {
             "id": 3,
@@ -492,9 +494,10 @@
               2
             ],
             "details": "Create src/metering/middleware.ts as Hono middleware mounted after the task-6 auth middleware (which puts the key record on context). Flow: (a) `cost = creditCost(route, source)`; if 0, pass through but still set informational credit headers where cheap to do so; (b) `granted` = credits_granted + cached ledger top-ups from the KV key-record (do not query D1 on the hot path); (c) `used = getUsage(...)` for `currentPeriod()`; (d) if `used + cost > granted`, respond with the shared error envelope from task 1 — `code: \"quota_exceeded\"`, a docs_url pointing at the pricing page, HTTP 402 — and do not increment or serve data; (e) otherwise `incrementUsage`, then set `X-Credits-Remaining` (granted − new used, floored at 0) and `X-Credits-Limit: granted` on the response. Threshold logic: when new usage ≥ 80% or ≥ 100% of granted, add `X-Upgrade-Nudge: <pricing docs url>` and `meta.usage_alert: \"80\" | \"100\"` in the response envelope (Dana's upgrade-nudge flow); detect *crossings* (previous total below threshold, new total at/above) and record them in the task-1 structured request log. Always feed `creditsCharged` into the structured logger entry for the request. Keep all quota numbers sourced from the subtask-1 constants.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration via SELF.fetch with a seeded key: metered response carries both credit headers with correct arithmetic; exhausted key gets the 402 quota_exceeded envelope with docs_url and no data body; requests crossing 80% and 100% gain the nudge header and meta.usage_alert; log output (spy on console) includes creditsCharged and threshold-crossing entries; zero-cost routes never decrement the counter.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:32:25.802Z"
           },
           {
             "id": 4,
@@ -506,9 +509,10 @@
               3
             ],
             "details": "Add the route in src/routes/ (e.g. src/routes/usage.ts registered in the /v1 group) behind the auth middleware but exempt from debiting — this falls out naturally because subtask 1 lists /v1/usage as a 0-cost route. Handler: read the key record from context (plan, credits_granted + cached top-ups), read the month counter via `getUsage(env, keyId, currentPeriod())`, and return `{ plan, period, used, granted, remaining: max(0, granted - used), alerts }` where `alerts` reflects thresholds already reached this period (e.g. [\"80\"] or [\"80\",\"100\"]) derived from used/granted — consistent with the middleware's threshold math (share the threshold helper from src/metering/ rather than duplicating it). Define a zod schema for the response body so it flows into the OpenAPI 3.1 spec and MCP tool definitions per the single-source-of-truth convention. Response must be shaped so header math from subtask 3 and this endpoint always agree (same granted/used inputs, same helpers).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration: fresh key → 200 with plan free, used 0, granted 250, remaining 250, empty alerts; after N metered requests, `used`/`remaining` match the last response's X-Credits-Remaining exactly; after crossing 80%, alerts includes \"80\"; unauthenticated request → 401 envelope; calling /v1/usage repeatedly never changes `used`.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:32:25.806Z"
           },
           {
             "id": 5,
@@ -519,14 +523,16 @@
               4
             ],
             "details": "src/metering/ratelimit.ts: `rateLimit({ scope, limit, windowSeconds })` Hono middleware factory. Window key `rl:<scope>:<id>:<windowStart>` on the RATE binding where id is the keyId (per-key) or client IP from CF-Connecting-IP (per-IP); get → increment → put with `expirationTtl: windowSeconds * 2`. On exceed: 429 with the shared error envelope (`code: \"rate_limited\"`) and a `Retry-After` header of seconds until window end. Comment that fixed-window + KV eventual consistency makes this best-effort by design (PRD-accepted; same DO upgrade path as counters). Mount per-key limiting after auth on /v1 data routes and per-IP limiting on the unauthenticated key-issuance and waitlist endpoints. Then the integration suite (vitest-pool-workers, SELF.fetch, seeded free-tier key with 250 credits): (1) X-Credits-Remaining decreases by exactly 1 per data request, monotonically, and matches GET /v1/usage after each batch; (2) request 200 (80%) is the first response carrying X-Upgrade-Nudge and meta.usage_alert \"80\"; request 250 carries \"100\"; (3) request 251 returns the quota_exceeded 402 envelope with no data and the counter stops advancing; (4) with an injected date rolled to the next month, the same key serves requests again from a fresh counter and /v1/usage shows the new period; (5) 61 requests inside one minute-window → 429 with Retry-After, and per-IP limiting fires on the unauthenticated endpoint.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "The integration suite described in details is the deliverable: quota arithmetic, header/endpoint consistency, threshold crossings at 200/250, hard stop at 251, month rollover via injected date, and both rate-limit scopes returning 429 + Retry-After. Unit-test the window-key derivation and Retry-After computation with fixed timestamps. All tests run under `npm test` with real KV bindings from the vitest Workers pool.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:32:25.814Z"
           }
         ],
         "complexity": 7,
         "recommendedSubtasks": 5,
-        "expansionPrompt": "Split into: (1) src/metering/costs.ts — creditCost(route, source?) as a data table (source.creditCost override, 0-cost routes), keeping plan quotas as config constants not branching logic; (2) counters.ts — KV `usage:<keyId>:<yyyymm>` read-modify-write with the accepted eventual-consistency race documented in a code comment plus the Durable Objects upgrade path note; (3) metering middleware (after auth) — balance = granted + ledger top-ups − month usage, quota_exceeded 402 envelope when exhausted, X-Credits-Remaining/X-Credits-Limit on every metered response, 80%/100% X-Upgrade-Nudge header + meta.usage_alert, creditsCharged fed into the structured logger; (4) GET /v1/usage returning {plan, period, used, granted, remaining, alerts} from counter + key record; (5) ratelimit.ts fixed-window per-key and per-IP on RATE KV with 429 + Retry-After, applied to unauthenticated endpoints, plus the integration test suite (monotonic header decrement, threshold crossings at 200/250, hard stop at 251, month rollover via injected date, >60 req/min → 429)."
+        "expansionPrompt": "Split into: (1) src/metering/costs.ts — creditCost(route, source?) as a data table (source.creditCost override, 0-cost routes), keeping plan quotas as config constants not branching logic; (2) counters.ts — KV `usage:<keyId>:<yyyymm>` read-modify-write with the accepted eventual-consistency race documented in a code comment plus the Durable Objects upgrade path note; (3) metering middleware (after auth) — balance = granted + ledger top-ups − month usage, quota_exceeded 402 envelope when exhausted, X-Credits-Remaining/X-Credits-Limit on every metered response, 80%/100% X-Upgrade-Nudge header + meta.usage_alert, creditsCharged fed into the structured logger; (4) GET /v1/usage returning {plan, period, used, granted, remaining, alerts} from counter + key record; (5) ratelimit.ts fixed-window per-key and per-IP on RATE KV with 429 + Retry-After, applied to unauthenticated endpoints, plus the integration test suite (monotonic header decrement, threshold crossings at 200/250, hard stop at 251, month rollover via injected date, >60 req/min → 429).",
+        "updatedAt": "2026-07-06T15:32:25.814Z"
       },
       {
         "id": "8",
@@ -875,9 +881,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T15:26:53.256Z",
+      "lastModified": "2026-07-06T15:32:25.814Z",
       "taskCount": 12,
-      "completedCount": 6,
+      "completedCount": 7,
       "tags": [
         "master"
       ]

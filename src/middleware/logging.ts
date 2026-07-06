@@ -20,6 +20,7 @@ export function structuredLogger(): MiddlewareHandler<AppEnv> {
         status: c.res.status,
         latencyMs: Date.now() - start,
         keyId: c.get('keyCtx')?.keyId,
+        creditsCharged: c.get('creditsCharged'),
       }),
     );
   };
