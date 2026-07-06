@@ -796,7 +796,7 @@
           "4",
           "6"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -804,9 +804,10 @@
             "description": "Build the plain-HTML landing page served via Workers Static Assets: answer-first copy explaining what the API returns, an above-the-fold copy-paste curl example, a placeholder pricing table, a free-key signup form with progressive-enhancement JS posting to /v1/keys (with a no-JS curl fallback documented beside it), and a GDPR-minimal privacy note. No framework, no build step.",
             "dependencies": [],
             "details": "Create the public/ directory (it does not exist yet; task 1 wired it as the assets directory in wrangler.jsonc via `assets: { directory: \"public\" }`). Author public/index.html as fast, plain HTML with inline minimal CSS — no framework, no build step, no external assets. Content requirements: (a) answer-first hero — first screenful states what the API returns (UK planning applications and procurement notices as normalized JSON) with one working curl example above the fold (e.g. `curl -H \"Authorization: Bearer $KEY\" https://<host>/v1/data/uk-planning?authority=...`); (b) placeholder pricing table with free tier (250 req/mo) and placeholder paid tiers — copy clearly marked as placeholder; (c) free-key form: a small inline <script> progressively enhances a plain <form> to POST JSON to /v1/keys and render the returned key once on-page with a 'shown once, copy now' warning; directly beside the form, document the no-JS fallback: the equivalent `curl -X POST /v1/keys` command, so core content works without JS per PRD; (d) a link/section for the waitlist path (POST /v1/waitlist) so pre-launch copy can toggle between key-issuance and waitlist without structural changes — keep both wired, toggle via copy; (e) GDPR-minimal privacy note: emails only, no purchased lists, no tracking scripts; (f) nav links to /docs.html, /openapi.json, /llms.txt. Keep dataset-specific copy confined to content (no dataset logic — this is static HTML, but keep the niche easily swappable by isolating dataset mentions to obvious copy blocks).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration test via SELF.fetch: GET / returns 200 with content-type text/html and body contains the curl example string and the free-key form markup. Manual check: disable JS in a browser and confirm the page is fully readable, the form's no-JS curl fallback is visible, and layout holds with inline CSS only.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:56:03.552Z"
           },
           {
             "id": 2,
@@ -814,9 +815,10 @@
             "description": "Build the interactive API reference page embedding Scalar pointed at /openapi.json, preceded by a no-JS curl quickstart (issue key → query uk-planning → check usage), plus llms.txt summarizing the API for LLM discoverability and citation.",
             "dependencies": [],
             "details": "public/docs.html: (a) top section is a plain-HTML, no-JS quickstart with three copy-paste curl steps: 1) issue a key via `curl -X POST /v1/keys`, 2) query `GET /v1/data/uk-planning` with `Authorization: Bearer <key>`, 3) check `GET /v1/usage` — each with expected response shape shown so the page is useful even if the Scalar CDN script fails or JS is disabled; (b) below it, the Scalar embed: `<script id=\"api-reference\" data-url=\"/openapi.json\"></script><script src=\"https://cdn.jsdelivr.net/npm/@scalar/api-reference\"></script>` — verify this is still the current recommended embed snippet against Scalar's docs before shipping (the attribute/element API has changed across versions; pin a version in the CDN URL if the latest requires different markup); the data-url must be the relative path /openapi.json served by the same Worker (task 6's OpenAPI route). public/llms.txt: markdown-ish plain text optimized for LLM citation — one-line description of what the API is, base URL, auth scheme (Bearer API key, how to get one), free tier (250 req/mo), pointer to /openapi.json for the full machine-readable spec, the /mcp endpoint for agent access, and a short note that x402 USDC pay-per-request exists for agents. Keep it short, factual, and stable — it is a discovery artifact, not marketing copy.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration: GET /docs.html returns 200 text/html and the body references /openapi.json in the Scalar script tag and contains all three quickstart curl commands; GET /llms.txt returns 200 with a text content-type and contains the base URL, /openapi.json, and /mcp references. Manual: load /docs.html in a browser and confirm Scalar renders the spec; confirm the quickstart is readable with JS disabled.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:56:03.557Z"
           },
           {
             "id": 3,
@@ -824,9 +826,10 @@
             "description": "Add the D1 waitlist table migration and the public POST /v1/waitlist endpoint: zod-validated { email, source? } body, idempotent dedupe on email, per-IP rate limiting reusing task 7's ratelimit, and the standard success envelope. No email provider in v1 — manual export, noted in the runbook.",
             "dependencies": [],
             "details": "1. migrations/0003_waitlist.sql: `CREATE TABLE waitlist (id INTEGER PRIMARY KEY, email TEXT NOT NULL UNIQUE, source TEXT, created_at TEXT NOT NULL DEFAULT (datetime('now')));` — the UNIQUE constraint backs the dedupe. Apply locally via `wrangler d1 migrations apply` (production apply is an ask-first op per CLAUDE.md). 2. Route in src/routes/ (e.g. src/routes/waitlist.ts, mounted in src/index.ts): POST /v1/waitlist is public (no API key), rate-limited per-IP using task 7's ratelimit middleware keyed on the client IP (CF-Connecting-IP). Body schema: `z.object({ email: z.string().email(), source: z.string().max(64).optional() })` — invalid body → 400 in the standard error envelope from task 1. 3. Insert with dedupe: use `INSERT ... ON CONFLICT(email) DO NOTHING` (or catch the UNIQUE violation) so a duplicate email is idempotent and still returns the success envelope — do not leak whether the email already existed. Normalize email (trim, lowercase) before insert. 4. Response: standard success envelope, no body payload beyond confirmation. 5. GDPR/Blind Mode: store only email + source + timestamp, nothing else (no IP, no user-agent). 6. Add a runbook note (docs/ runbook or a TODO in the route file per existing convention): no email provider in v1 — export the waitlist manually via `wrangler d1 execute ... \"SELECT email FROM waitlist\"`.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration via vitest-pool-workers: POST /v1/waitlist with a valid email → success envelope and a row exists in D1 (assert via test-env D1 query); posting the same email again → success envelope and still exactly one row; invalid email → 400 error envelope with zod issue detail; missing body → 400; hammering the endpoint past the per-IP limit → 429 envelope. Confirm the row stores only email/source/created_at.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:56:03.562Z"
           },
           {
             "id": 4,
@@ -838,14 +841,16 @@
               3
             ],
             "details": "1. Routing: with Workers Static Assets, requests matching a file in public/ are served as assets before the Worker runs by default. Verify that /v1/* and /mcp always hit the Worker (no asset path can shadow them) and that /, /docs.html, and /llms.txt are served from assets. If any API path could be shadowed or the default ordering is wrong for this layout, set `assets.run_worker_first` in wrangler.jsonc (e.g. `run_worker_first: [\"/v1/*\", \"/mcp\"]`) and run `npm run cf-typegen` after the wrangler.jsonc change per CLAUDE.md. Confirm the Hono app's 404/error envelope still applies to unknown /v1/* paths and that unknown non-API paths fall through sensibly (asset 404 or Worker 404 envelope — pick one deliberately and test it). 2. Integration tests (vitest-pool-workers, SELF.fetch), consolidating the surface: GET / → 200, content-type text/html, body contains the curl example; GET /docs.html → 200 and references /openapi.json; GET /llms.txt → 200 with text content-type; POST /v1/waitlist → row inserted (assert via D1), duplicate email idempotent, invalid email → 400 envelope, rate-limit hammering → 429; GET /v1/health still 200 (proves API routes not shadowed by assets). 3. Manual checks (document in the PR/task notes): `npm run dev`, load / and /docs.html with JS disabled to confirm core content renders; confirm Scalar renders with JS enabled; run `npm run lint`, `npm run typecheck`, and `npm run build` (dry-run deploy validates the assets config).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "The test suite is the deliverable: all assertions above pass under `npm test`; `npm run build` (wrangler dry-run) succeeds with the assets + run_worker_first config; manual no-JS browser check of / and /docs.html recorded as done. Regression guard: a test asserting /v1/health and one /v1/data route return Worker responses (JSON envelope), never asset content.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:56:03.568Z"
           }
         ],
         "complexity": 4,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Split into: (1) public/index.html — answer-first landing with above-the-fold curl example, placeholder pricing table, free-key form with progressive-enhancement JS posting to /v1/keys (no-JS curl fallback beside it), inline CSS, no build step, GDPR-minimal privacy note — note public/ does not exist yet and depends on task 1's assets binding; (2) public/docs.html with the Scalar embed pointing at /openapi.json (verify the current CDN snippet) preceded by a no-JS curl quickstart (issue key → query uk-planning → check usage), plus public/llms.txt summarizing base URL, auth, free tier, /openapi.json, /mcp; (3) migrations/0003_waitlist.sql and POST /v1/waitlist — zod-validated email, dedupe, per-IP rate limit via task 7's ratelimit, success envelope; (4) routing precedence (assets for non-/v1 paths, run_worker_first for /v1/* and /mcp if needed) and the integration tests (landing 200 text/html with curl example, llms.txt as text, waitlist insert/dedupe/400/429) plus manual no-JS render check."
+        "expansionPrompt": "Split into: (1) public/index.html — answer-first landing with above-the-fold curl example, placeholder pricing table, free-key form with progressive-enhancement JS posting to /v1/keys (no-JS curl fallback beside it), inline CSS, no build step, GDPR-minimal privacy note — note public/ does not exist yet and depends on task 1's assets binding; (2) public/docs.html with the Scalar embed pointing at /openapi.json (verify the current CDN snippet) preceded by a no-JS curl quickstart (issue key → query uk-planning → check usage), plus public/llms.txt summarizing base URL, auth, free tier, /openapi.json, /mcp; (3) migrations/0003_waitlist.sql and POST /v1/waitlist — zod-validated email, dedupe, per-IP rate limit via task 7's ratelimit, success envelope; (4) routing precedence (assets for non-/v1 paths, run_worker_first for /v1/* and /mcp if needed) and the integration tests (landing 200 text/html with curl example, llms.txt as text, waitlist insert/dedupe/400/429) plus manual no-JS render check.",
+        "updatedAt": "2026-07-06T15:56:03.568Z"
       },
       {
         "id": "12",
@@ -899,9 +904,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T15:49:36.608Z",
+      "lastModified": "2026-07-06T15:56:03.568Z",
       "taskCount": 12,
-      "completedCount": 10,
+      "completedCount": 11,
       "tags": [
         "master"
       ]

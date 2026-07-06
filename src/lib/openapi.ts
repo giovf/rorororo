@@ -137,6 +137,32 @@ const billingPaths: JsonObject = {
   },
 };
 
+const waitlistPath: JsonObject = {
+  '/v1/waitlist': {
+    post: {
+      operationId: 'join_waitlist',
+      summary: 'Join the launch waitlist (email only, GDPR-minimal)',
+      tags: ['platform'],
+      requestBody: {
+        required: true,
+        content: {
+          'application/json': {
+            schema: toSchema(z.object({ email: z.email(), source: z.string().optional() })),
+          },
+        },
+      },
+      responses: {
+        '200': jsonResponse(
+          'Subscribed (idempotent)',
+          successEnvelope(z.object({ subscribed: z.boolean() })),
+        ),
+        '400': errorResponse('Invalid request body'),
+        '429': errorResponse('Rate limit exceeded'),
+      },
+    },
+  },
+};
+
 const usagePath: JsonObject = {
   '/v1/usage': {
     get: {
@@ -255,6 +281,7 @@ function buildDocument(): JsonObject {
       ...keysPaths,
       ...usagePath,
       ...billingPaths,
+      ...waitlistPath,
       ...sourcePaths,
     },
     components: {

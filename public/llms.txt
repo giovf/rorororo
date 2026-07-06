@@ -1,0 +1,41 @@
+# faceless-api
+
+> Normalized UK public-sector open data as clean JSON: planning applications
+> (planning.data.gov.uk) and procurement notices (Find a Tender OCDS), one
+> schema per dataset, refreshed daily from official Open-Government-Licence
+> feeds. No scraping. Personal data is dropped at ingest (Blind Mode).
+
+Base URL: https://faceless-api.example
+Machine-readable spec: https://faceless-api.example/openapi.json
+
+## Auth & pricing
+
+- Free key: POST /v1/keys with {"email": "..."} → 250 requests/month, no card.
+- Send it as `Authorization: Bearer fapi_...` on every data request.
+- 1 credit = 1 request; paid plans from $29/mo; usage at GET /v1/usage (free).
+- Every response: {"ok":true,"data":[...],"meta":{...}} or
+  {"ok":false,"error":{"code","message","docs_url"}}.
+
+## Datasets
+
+- GET /v1/data — list sources and their filter params (public).
+- GET /v1/data/uk-planning — UK planning applications. Filters: authority,
+  reference, decision_date_after/_before, q, page, per_page.
+- GET /v1/data/uk-tenders — UK procurement notices. Filters: buyer, status,
+  procurement_method, cpv_codes, value_amount_min/_max,
+  published_at_after/_before, q, page, per_page.
+
+## For AI agents
+
+- MCP server (Streamable HTTP): https://faceless-api.example/mcp with the same
+  bearer key. Tools: list_sources, get_usage, query_uk_planning,
+  query_uk_tenders. Structured JSON results with credits_remaining in meta.
+- x402 pay-per-request (no account, USDC on Base):
+  GET /x402/data/{source} → HTTP 402 with payment requirements → pay → retry
+  with X-PAYMENT header. ~$0.005/request.
+
+## Docs
+
+- Human docs: https://faceless-api.example/docs
+- Quickstart: get a key, then
+  curl -H "Authorization: Bearer fapi_..." "https://faceless-api.example/v1/data/uk-planning?q=solar"

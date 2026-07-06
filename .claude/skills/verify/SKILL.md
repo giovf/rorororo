@@ -63,7 +63,11 @@ npx wrangler dev --port 8787 --test-scheduled   # run in background
   status, latencyMs) appear on the dev-server stdout — capture the background
   task's output file and grep `^\{`.
 - Static assets (landing/docs) are served from `public/` at `/` — asset paths
-  are matched before Worker routes.
+  are matched before Worker routes. Assets are NOT emulated by the vitest
+  pool (SELF.fetch 404s on them) — verify them live only. `html_handling`
+  redirects `/docs.html` → `/docs` (307): link to the pretty URL.
+- Waitlist: `POST /v1/waitlist {email, source?}` — idempotent per email,
+  10/hour/IP limit.
 - Secrets for local dev come from `.dev.vars` (never `.env`).
 
 ## Gotchas

@@ -1,14 +1,149 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>faceless-api</title>
-  </head>
-  <body>
-    <h1>faceless-api</h1>
-    <p>Normalized UK planning &amp; procurement data, as clean JSON.</p>
-    <p>API base: <code>/v1</code> — health check at <code>/v1/health</code>.</p>
-    <!-- Real landing page + docs land in task 11. -->
-  </body>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>faceless-api — UK planning &amp; procurement data as clean JSON</title>
+<meta name="description" content="Normalized UK planning applications and procurement notices from official government feeds. One schema, clean JSON, free tier, MCP server for AI agents, pay-per-request for autonomous agents.">
+<style>
+:root{--bg:#ffffff;--fg:#16181d;--muted:#5b6472;--line:#e5e8ee;--card:#f6f7f9;--accent:#0b5fff;--accent-fg:#ffffff;--code-bg:#0f172a;--code-fg:#d8e0ee}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e8eaef;--muted:#9aa3b2;--line:#262b34;--card:#161a21;--accent:#5b8dff;--accent-fg:#0b0d12;--code-bg:#0b0e14;--code-fg:#c9d4e6}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:920px;margin:0 auto;padding:0 20px 80px}
+header{display:flex;justify-content:space-between;align-items:center;max-width:920px;margin:0 auto;padding:20px}
+header a{color:var(--muted);text-decoration:none;margin-left:18px}header a:hover{color:var(--fg)}
+.brand{font-weight:700;color:var(--fg) !important;margin:0 !important;letter-spacing:-.02em}
+h1{font-size:2.1rem;line-height:1.2;letter-spacing:-.02em;margin:48px 0 12px}
+.sub{color:var(--muted);font-size:1.1rem;max-width:640px}
+pre{background:var(--code-bg);color:var(--code-fg);padding:16px;border-radius:10px;overflow-x:auto;font:13.5px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+p code,li code{background:var(--card);border:1px solid var(--line);border-radius:5px;padding:1px 5px;font-size:.86em}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:24px 0}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.card h3{margin:0 0 6px;font-size:1.05rem}.card p{margin:0;color:var(--muted);font-size:.95rem}
+.chips{margin-top:10px}.chips code{margin:0 4px 4px 0;display:inline-block}
+h2{font-size:1.4rem;letter-spacing:-.01em;margin:56px 0 8px}
+form{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0 4px}
+input[type=email]{flex:1;min-width:220px;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font-size:1rem}
+button{padding:11px 18px;border:0;border-radius:8px;background:var(--accent);color:var(--accent-fg);font-size:1rem;font-weight:600;cursor:pointer}
+button:hover{filter:brightness(1.08)}
+.note{color:var(--muted);font-size:.86rem}
+table{width:100%;border-collapse:collapse;margin:16px 0}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}th{color:var(--muted);font-weight:600;font-size:.9rem}
+.price{font-weight:700}
+#key-result{display:none;margin-top:10px}
+footer{border-top:1px solid var(--line);margin-top:64px;padding-top:20px;color:var(--muted);font-size:.9rem}
+footer p{max-width:720px}
+a{color:var(--accent)}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/">faceless-api</a>
+  <nav>
+    <a href="/docs">Docs</a>
+    <a href="/openapi.json">OpenAPI</a>
+    <a href="/llms.txt">llms.txt</a>
+    <a href="#pricing">Pricing</a>
+  </nav>
+</header>
+<main>
+  <h1>UK planning &amp; procurement data, as clean JSON.</h1>
+  <p class="sub">Planning applications and public-sector tenders from official Open-Government-Licence feeds — normalized to one schema, refreshed daily, queryable in one request. Built for developers and AI agents.</p>
+
+<pre><code>curl -H "Authorization: Bearer $API_KEY" \
+  "https://faceless-api.example/v1/data/uk-planning?q=solar&amp;decision_date_after=2026-01-01"
+
+{ "ok": true,
+  "data": [ { "reference": "24/00117/HOU", "authority": 222,
+              "description": "Installation of solar panels…",
+              "decision_date": "2026-06-30", … } ],
+  "meta": { "total": 12, "last_refreshed_at": "2026-07-06T05:00:11Z" } }</code></pre>
+
+  <h2 id="key">Get a free API key</h2>
+  <p>250 requests/month, no card. The key is shown once — store it.</p>
+  <form id="key-form">
+    <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
+    <button type="submit">Get free key</button>
+  </form>
+  <pre id="key-result"><code></code></pre>
+  <p class="note">Prefer the terminal? <code>curl -X POST https://faceless-api.example/v1/keys -H 'content-type: application/json' -d '{"email":"you@company.com"}'</code></p>
+  <p class="note">Not ready yet? <a href="#" id="waitlist-link">Join the launch waitlist instead</a> — email only, nothing else stored.</p>
+
+  <h2>Two datasets today, one swappable schema</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>uk-planning</h3>
+      <p>Planning applications from planning.data.gov.uk, normalized across authorities. Blind Mode: applicant personal data is dropped at ingest, never stored.</p>
+      <p class="chips"><code>authority</code><code>reference</code><code>decision_date_after</code><code>decision_date_before</code><code>q</code></p>
+    </div>
+    <div class="card">
+      <h3>uk-tenders</h3>
+      <p>Procurement notices from Find a Tender's OCDS feed, flattened from nested releases to one row per notice.</p>
+      <p class="chips"><code>buyer</code><code>status</code><code>cpv_codes</code><code>value_amount_min</code><code>published_at_after</code><code>q</code></p>
+    </div>
+  </div>
+
+  <h2>Built for AI agents, not just humans</h2>
+  <div class="grid">
+    <div class="card"><h3>MCP server</h3><p>Point any MCP client at <code>/mcp</code> with your API key: tools for every dataset, deterministic JSON results, usage built in.</p></div>
+    <div class="card"><h3>x402 micropayments</h3><p>No account? Agents can pay per request in USDC at <code>/x402/data/…</code> — HTTP 402 flow, zero commission.</p></div>
+    <div class="card"><h3>OpenAPI 3.1</h3><p>The whole surface is described at <code>/openapi.json</code> — generated from the same schemas that validate every request.</p></div>
+  </div>
+
+  <h2 id="pricing">Pricing</h2>
+  <table>
+    <tr><th>Plan</th><th>Credits / month</th><th></th></tr>
+    <tr><td>Free</td><td>250</td><td class="price">£0</td></tr>
+    <tr><td>Starter</td><td>5,000</td><td class="price">$29/mo</td></tr>
+    <tr><td>Growth</td><td>20,000</td><td class="price">$99/mo</td></tr>
+    <tr><td>Scale</td><td>100,000</td><td class="price">$299/mo</td></tr>
+  </table>
+  <p class="note">1 credit = 1 request. Rate limit 60 req/min. Checking <code>/v1/usage</code> is always free. Launch pricing — subject to change.</p>
+
+  <footer>
+    <p><strong>Data &amp; privacy.</strong> Sources are official UK government feeds published under the Open Government Licence (planning.data.gov.uk, Find a Tender). Personal data in source records is dropped at ingest and never stored (Blind Mode). The only personal data we hold is the email you sign up with — no analytics cookies, no purchased lists, no cold email. Contact: replace-with-contact@faceless-api.example</p>
+    <p>© 2026 faceless-api · <a href="/docs">Documentation</a> · <a href="/llms.txt">For LLMs</a></p>
+  </footer>
+</main>
+<script>
+// Progressive enhancement only — every action above has a no-JS curl fallback.
+const form = document.getElementById('key-form');
+const result = document.getElementById('key-result');
+let waitlistMode = false;
+document.getElementById('waitlist-link').addEventListener('click', (e) => {
+  e.preventDefault();
+  waitlistMode = true;
+  form.querySelector('button').textContent = 'Join waitlist';
+  form.querySelector('input').focus();
+});
+form.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = form.querySelector('input').value;
+  const endpoint = waitlistMode ? '/v1/waitlist' : '/v1/keys';
+  result.style.display = 'block';
+  result.querySelector('code').textContent = '…';
+  try {
+    const res = await fetch(endpoint, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email, source: 'landing' }),
+    });
+    const body = await res.json();
+    if (!body.ok) {
+      result.querySelector('code').textContent = body.error.message;
+    } else if (waitlistMode) {
+      result.querySelector('code').textContent = 'You are on the list. No confirmation email — we only mail you at launch.';
+    } else {
+      result.querySelector('code').textContent =
+        'Your API key (shown once, store it now):\n\n' + body.data.key +
+        '\n\nTry it:\ncurl -H "Authorization: Bearer ' + body.data.key +
+        '" "' + location.origin + '/v1/data/uk-planning?per_page=3"';
+    }
+  } catch {
+    result.querySelector('code').textContent = 'Request failed — use the curl command below instead.';
+  }
+});
+</script>
+</body>
 </html>

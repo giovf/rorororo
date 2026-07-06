@@ -14,6 +14,7 @@ import { keysRoutes } from './routes/keys';
 import { mcpRoute } from './routes/mcp';
 import { openapiRoute } from './routes/openapi';
 import { usageRoute } from './routes/usage';
+import { waitlistRoute } from './routes/waitlist';
 import { x402Routes } from './x402/routes';
 import type { AppEnv } from './types';
 
@@ -45,6 +46,7 @@ app.route('/v1/data', dataRoutes);
 app.route('/v1/keys', keysRoutes);
 app.route('/v1/usage', usageRoute);
 app.route('/v1/billing', billingRoutes);
+app.route('/v1/waitlist', waitlistRoute);
 app.route('/mcp', mcpRoute);
 app.route('/x402', x402Routes);
 app.route('/openapi.json', openapiRoute);
