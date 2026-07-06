@@ -1,9 +1,9 @@
 import { z } from 'zod';
-import type { DataSource } from './types';
+import type { DataSource } from '../../src/sources/types';
 
-// In-memory placeholder proving the DataSource contract end to end.
-// Replaced by real sources from task 3 onwards; keep it out of production
-// registries once uk-planning and uk-tenders land.
+// In-memory source for unit-testing the generic query engine without any
+// network or registry coupling. Retired from the production registry when
+// uk-planning and uk-tenders landed (task 5).
 
 const demoRecordSchema = z.object({
   id: z.string(),

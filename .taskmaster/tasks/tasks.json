@@ -309,7 +309,7 @@
           "3",
           "4"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -317,9 +317,10 @@
             "description": "Fetch a live response from Find a Tender's OCDS release-package endpoint, confirm the current API version/path, document the paging mechanism (cursor and/or date-window params), and save a representative response as fixtures/uk-tenders.json for offline dev and tests.",
             "dependencies": [],
             "details": "Hit `https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages` (verify the version segment and path are still current — check the official Find a Tender API docs if the request 404s or redirects). Record: (a) the exact working URL and required headers, (b) how paging works — cursor param, `links.next` URL, and/or `updatedFrom`/`updatedTo` date-window params — and any page-size limits or rate limits, (c) the response envelope shape (releasePackage → releases[]). Save one real page containing several releases with varied shapes (releases with and without tender.value, multiple parties[], missing deadlines, different statuses) as `fixtures/uk-tenders.json`, following the same fixture pattern as uk-planning. Note in a comment or the task log any fields that are inconsistently present, since the flattening in the next subtask must tolerate them. No personal data should be present in OCDS notices, but scan the captured fixture for contact-person fields (parties[].contactPoint) and strip them per the Blind Mode rule before committing.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Manual verification: the documented URL returns 200 with a valid OCDS release package; the saved fixture parses as JSON and contains ≥5 releases with at least one release exhibiting each edge case (missing value, multiple parties, absent deadline). Confirm contactPoint/personal fields are absent from the committed fixture.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:16:29.062Z"
           },
           {
             "id": 2,
@@ -329,9 +330,10 @@
               1
             ],
             "details": "Create `src/sources/uk-tenders.ts` implementing the DataSource interface from src/sources/types.ts. fetchFresh(env): loop over release packages using the cursor/date-window mechanism documented in subtask 1, with a sane page cap; for each release produce `{ ocid, notice_id, title, description, buyer_name, procurement_method, main_category, cpv_codes, value_amount, value_currency, published_at, deadline_at, status }`. Flattening rules live entirely in this file: buyer_name from parties[] where roles includes 'buyer' (fall back to release.buyer.name), title/description/procurement_method/main_category from releases[].tender.*, cpv_codes from tender.items[].classification + additionalClassifications (CPV scheme), value_amount/value_currency from tender.value, published_at from release.date, deadline_at from tender.tenderPeriod.endDate, status from tender.status. Coerce dates to ISO strings and amounts to numbers; tolerate missing fields with nulls rather than throwing. recordSchema is a zod object matching that shape with `.strip()` for unknown keys. queryParams: buyer, cpv, min_value, max_value, published_after, status, q. refresh: `{ cron: daily, cacheTtlSeconds: 86400 }`. Do not touch any file outside src/sources/ — if the interface can't express something needed here, stop and fix the abstraction (task 2/3 design bug) first.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit tests: feed fixtures/uk-tenders.json through the flattening and snapshot the resulting records; assert schema validation rejects records missing ocid/title; assert value/date coercions (string amounts → number, dates → ISO) and null-tolerance for absent deadline/value; assert unknown keys are stripped.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:16:29.067Z"
           },
           {
             "id": 3,
@@ -341,9 +343,10 @@
               2
             ],
             "details": "Add one import + one entry for uk-tenders in `src/sources/registry.ts` — that entry plus the source file must be the entire cost of the new dataset. Wire the fixture fallback so fetchFresh failures (or a local-dev flag) serve `fixtures/uk-tenders.json`, mirroring exactly the mechanism uk-planning uses; if uk-planning's fallback pattern can't be reused verbatim, that's an abstraction bug to fix in the shared code first, not to work around here. Then retire the demo source created in task 2: if it is still registered, remove it from registry.ts and relocate its definition to the test fixtures/helpers directory so registry/route/spec tests can keep using it, updating test imports accordingly. Verify `npm run dev` serves /v1/data/uk-tenders from the fixture offline and that the demo source no longer appears in the public sources listing.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration: with network access stubbed/unavailable, GET /v1/data/uk-tenders returns fixture-backed records in the standard envelope; the sources listing includes uk-tenders and excludes the demo source; existing task-2/3 tests still pass using the relocated demo source.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:16:29.071Z"
           },
           {
             "id": 4,
@@ -353,14 +356,16 @@
               3
             ],
             "details": "In the vitest Workers-pool suite: (1) snapshot test of the flattened records produced from fixtures/uk-tenders.json (locks the OCDS mapping); (2) integration tests via SELF.fetch against /v1/data/uk-tenders exercising buyer, cpv, min_value/max_value, published_after, status, and q filters plus pagination — all served by the generic engine from task 2 with no uk-tenders-specific route code; (3) fetch /openapi.json and assert a /v1/data/uk-tenders path exists whose query parameters match the source's queryParams shape, proving the task-4 generator picked the new source up automatically; (4) trigger the scheduled handler (or call the refresh path directly) and assert refresh_log gains rows for both uk-planning and uk-tenders. Finally, encode the isolation guarantee: a test (or CI check) that diffs the branch against its merge-base and fails if files outside `src/sources/`, `fixtures/`, and the test directories were modified — e.g. shelling out to `git diff --name-only` in a node-side check script — making 'one file plus a registry entry' an asserted property rather than a claim.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "This subtask IS the test work; its own acceptance is: `npm test` green with the new suite included, snapshot committed, all six filters covered by at least one assertion each, the openapi assertion failing if the registry entry is removed (verified once by temporarily commenting it out), and the isolation diff-check passing on the final branch.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:16:29.074Z"
           }
         ],
         "complexity": 5,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Split into: (1) capture a real Find a Tender OCDS release-package response as a fixture and verify the current API path/version and paging params (cursor/date-window); (2) implement src/sources/uk-tenders.ts — fetchFresh paging loop and the OCDS flattening (releases[].tender.*, parties[] buyer extraction, value/currency, CPV codes, deadlines) into the flat record shape, with the recordSchema using .strip() and queryParams (buyer, cpv, min/max_value, published_after, status, q); (3) register in registry.ts, add the fixture fallback, and relocate the task-2 demo source to test fixtures; (4) write the proof-of-abstraction tests: flattening snapshot against the fixture, filters working through the generic engine, /openapi.json containing the uk-tenders path with zero spec-code changes, and refresh_log rows for both sources — explicitly assert nothing outside src/sources/ changed."
+        "expansionPrompt": "Split into: (1) capture a real Find a Tender OCDS release-package response as a fixture and verify the current API path/version and paging params (cursor/date-window); (2) implement src/sources/uk-tenders.ts — fetchFresh paging loop and the OCDS flattening (releases[].tender.*, parties[] buyer extraction, value/currency, CPV codes, deadlines) into the flat record shape, with the recordSchema using .strip() and queryParams (buyer, cpv, min/max_value, published_after, status, q); (3) register in registry.ts, add the fixture fallback, and relocate the task-2 demo source to test fixtures; (4) write the proof-of-abstraction tests: flattening snapshot against the fixture, filters working through the generic engine, /openapi.json containing the uk-tenders path with zero spec-code changes, and refresh_log rows for both sources — explicitly assert nothing outside src/sources/ changed.",
+        "updatedAt": "2026-07-06T15:16:29.074Z"
       },
       {
         "id": "6",
@@ -864,9 +869,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T15:10:21.701Z",
+      "lastModified": "2026-07-06T15:16:29.075Z",
       "taskCount": 12,
-      "completedCount": 4,
+      "completedCount": 5,
       "tags": [
         "master"
       ]

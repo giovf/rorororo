@@ -15,7 +15,8 @@ export interface RefreshPolicy {
  * - a param key naming a record field matches string fields as
  *   case-insensitive substrings, number/boolean fields as strict equality;
  * - `<field>_after` / `<field>_before` params form inclusive ranges over
- *   ISO-date string fields;
+ *   ISO-date string fields; `<field>_min` / `<field>_max` over numeric fields;
+ * - params against array fields match when any element matches;
  * - `page`, `per_page`, and `q` (substring search across all string fields)
  *   are platform-reserved and added to every source automatically.
  * All declared params must be optional.

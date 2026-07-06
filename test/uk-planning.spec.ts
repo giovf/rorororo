@@ -11,6 +11,7 @@ import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import { refreshSource } from '../src/sources/cache';
 import type { DataSource } from '../src/sources/types';
 import type { UkPlanningRecord } from '../src/sources/uk-planning';
+import { stubOrigins } from './helpers/origin-mock';
 
 // Raw origin entities, including personal-data fields that Blind Mode must drop.
 const ORIGIN_ENTITIES = [
@@ -40,19 +41,8 @@ const ORIGIN_ENTITIES = [
   },
 ];
 
-// Tests run in the same isolate as the worker under test, so stubbing the
-// global fetch intercepts the worker's outbound origin calls (bindings like
-// KV/D1 are unaffected — they don't go through global fetch).
 function mockOrigin(handler: () => Response): ReturnType<typeof vi.fn> {
-  const mock = vi.fn((input: RequestInfo | URL) => {
-    const url = String(input instanceof Request ? input.url : input);
-    if (!url.startsWith('https://www.planning.data.gov.uk/entity.json')) {
-      throw new Error(`unexpected outbound fetch in test: ${url}`);
-    }
-    return Promise.resolve(handler());
-  });
-  vi.stubGlobal('fetch', mock);
-  return mock;
+  return stubOrigins({ planning: handler });
 }
 
 function originPage(): Response {
@@ -163,20 +153,23 @@ describe('refreshSource error path', () => {
 
 describe('scheduled refresh', () => {
   it('refreshes all sources matching the cron and logs each', async () => {
-    mockOrigin(originPage);
+    stubOrigins({
+      planning: originPage,
+      tenders: () => Response.json({ releases: [], links: {} }),
+    });
     const controller = createScheduledController({ cron: '0 5 * * *' });
     const ctx = createExecutionContext();
     await worker.scheduled(controller, env, ctx);
     await waitOnExecutionContext(ctx);
 
     expect(await env.CACHE.get('data:uk-planning', 'json')).not.toBeNull();
-    expect(await env.CACHE.get('data:demo', 'json')).not.toBeNull();
+    expect(await env.CACHE.get('data:uk-tenders', 'json')).not.toBeNull();
     const rows = await env.DB.prepare(
       'SELECT source_slug, status FROM refresh_log ORDER BY source_slug',
     ).all();
     expect(rows.results).toEqual([
-      { source_slug: 'demo', status: 'ok' },
       { source_slug: 'uk-planning', status: 'ok' },
+      { source_slug: 'uk-tenders', status: 'ok' },
     ]);
   });
 });

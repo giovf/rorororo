@@ -24,25 +24,45 @@ export interface QueryPage<T> {
   total: number;
 }
 
-function matchesFilter(record: Record<string, unknown>, key: string, wanted: unknown): boolean {
-  // <field>_after / <field>_before: inclusive range on ISO-date string fields
-  // (lexicographic compare is correct for ISO dates).
-  for (const [suffix, cmp] of RANGE_SUFFIXES) {
-    if (key.endsWith(suffix) && typeof wanted === 'string') {
-      const actual = record[key.slice(0, -suffix.length)];
-      return typeof actual === 'string' && cmp(actual, wanted);
-    }
-  }
-  const actual = record[key];
+function matchesValue(actual: unknown, wanted: unknown): boolean {
   if (typeof wanted === 'string' && typeof actual === 'string') {
     return actual.toLowerCase().includes(wanted.toLowerCase());
   }
   return actual === wanted;
 }
 
-const RANGE_SUFFIXES: [string, (actual: string, wanted: string) => boolean][] = [
+function matchesFilter(record: Record<string, unknown>, key: string, wanted: unknown): boolean {
+  // <field>_after / <field>_before: inclusive range on ISO-date string fields
+  // (lexicographic compare is correct for ISO dates).
+  for (const [suffix, cmp] of DATE_RANGE_SUFFIXES) {
+    if (key.endsWith(suffix) && typeof wanted === 'string') {
+      const actual = record[key.slice(0, -suffix.length)];
+      return typeof actual === 'string' && cmp(actual, wanted);
+    }
+  }
+  // <field>_min / <field>_max: inclusive range on numeric fields.
+  for (const [suffix, cmp] of NUMBER_RANGE_SUFFIXES) {
+    if (key.endsWith(suffix) && typeof wanted === 'number') {
+      const actual = record[key.slice(0, -suffix.length)];
+      return typeof actual === 'number' && cmp(actual, wanted);
+    }
+  }
+  const actual = record[key];
+  // Array fields match when any element matches (substring for strings).
+  if (Array.isArray(actual)) {
+    return actual.some((element) => matchesValue(element, wanted));
+  }
+  return matchesValue(actual, wanted);
+}
+
+const DATE_RANGE_SUFFIXES: [string, (actual: string, wanted: string) => boolean][] = [
   ['_after', (actual, wanted) => actual >= wanted],
   ['_before', (actual, wanted) => actual <= wanted],
+];
+
+const NUMBER_RANGE_SUFFIXES: [string, (actual: number, wanted: number) => boolean][] = [
+  ['_min', (actual, wanted) => actual >= wanted],
+  ['_max', (actual, wanted) => actual <= wanted],
 ];
 
 function matchesFullText(record: Record<string, unknown>, q: string): boolean {

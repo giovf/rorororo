@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { demoSource } from '../src/sources/demo';
+import { demoSource } from './helpers/demo-source';
 import { applyQuery, buildQuerySchema } from '../src/sources/query';
 import { getSource, listSources } from '../src/sources/registry';
 
@@ -17,9 +17,9 @@ function parseQuery(query: Record<string, string>): Record<string, unknown> {
 
 describe('registry', () => {
   it('looks up sources by slug and lists them', () => {
-    expect(getSource('demo')?.slug).toBe('demo');
+    expect(getSource('uk-planning')?.slug).toBe('uk-planning');
     expect(getSource('nope')).toBeUndefined();
-    expect(listSources().map((s) => s.slug)).toContain('demo');
+    expect(listSources().map((s) => s.slug)).toEqual(['uk-planning', 'uk-tenders']);
   });
 });
 
@@ -93,5 +93,30 @@ describe('applyQuery', () => {
     expect(after.records.map((r) => r.id)).toEqual(['d2']);
     const before = applyQuery(dated, { page: 1, per_page: 25, decided_before: '2023-05-09' });
     expect(before.records.map((r) => r.id)).toEqual(['d1']);
+  });
+
+  it('applies inclusive _min/_max ranges over numeric fields', () => {
+    const priced = [
+      { id: 'p1', value: 100 },
+      { id: 'p2', value: 5000 },
+      { id: 'p3', value: null },
+    ];
+    expect(
+      applyQuery(priced, { page: 1, per_page: 25, value_min: 100 }).records.map((r) => r.id),
+    ).toEqual(['p1', 'p2']);
+    expect(
+      applyQuery(priced, { page: 1, per_page: 25, value_max: 4999 }).records.map((r) => r.id),
+    ).toEqual(['p1']);
+  });
+
+  it('matches array fields when any element matches', () => {
+    const tagged = [
+      { id: 't1', codes: ['79993000', '50700000'] },
+      { id: 't2', codes: ['45233139'] },
+      { id: 't3', codes: [] },
+    ];
+    expect(
+      applyQuery(tagged, { page: 1, per_page: 25, codes: '50700000' }).records.map((r) => r.id),
+    ).toEqual(['t1']);
   });
 });
