@@ -44,6 +44,11 @@ npx wrangler dev --port 8787 --test-scheduled   # run in background
 - After adding a migration, re-run the `d1 migrations apply DB --local` step or
   dev-server D1 queries 500 with `internal` (tests won't catch it — they apply
   migrations themselves).
+- MCP: POST JSON-RPC to `/mcp` with the bearer key + header
+  `accept: application/json, text/event-stream`; responses are SSE — extract
+  with `sed -n 's/^data: //p'`. Tools: list_sources, get_usage (free),
+  query_uk_planning, query_uk_tenders (metered, same counters as REST).
+  Interop check: `npx @modelcontextprotocol/inspector` against localhost:8787/mcp.
 - Metering: data routes cost 1 credit and set `X-Credits-Limit`/`-Remaining`
   (+ `X-Upgrade-Nudge` and `meta.usage_alert` from 80%); `GET /v1/usage`
   (authed) is free. Quota = SUM(credit_ledger deltas) per month. To test

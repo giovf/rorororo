@@ -643,7 +643,7 @@
           "5",
           "7"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -651,9 +651,10 @@
             "description": "Install the official MCP TypeScript SDK at a pinned version and create src/mcp/server.ts implementing the per-request stateless Streamable HTTP pattern for Cloudflare Workers, verified end-to-end with a minimal initialize → tools/list JSON-RPC exchange via SELF.fetch.",
             "dependencies": [],
             "details": "Add `@modelcontextprotocol/sdk` as an exact-pinned dependency (no caret — PRD risk note on ecosystem churn; adding a top-level dependency is an ask-first item per CLAUDE.md, so confirm before installing). Before writing code, verify the SDK's *current* recommended stateless pattern against its docs: the established shape is constructing a fresh `McpServer` plus `StreamableHTTPServerTransport` with `sessionIdGenerator: undefined` on every request (Workers are stateless; no session store), but the API surface moves — implement whatever the pinned version documents. In src/mcp/server.ts export a factory like `createMcpServer(env, ctx)` that builds the server instance, and a request handler that bridges Hono's Request/Response to the transport (the SDK's Node-style transport may need the fetch-API adapter pattern current at implementation time). Register a single placeholder `ping`-style tool for now so tools/list is non-empty. Wire a temporary unauthenticated `app.all('/mcp', ...)` mount in src/index.ts (auth arrives in subtask 3). Ensure the Accept header handling (application/json, text/event-stream) and 405 for unsupported methods follow the Streamable HTTP spec as implemented by the SDK.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration test via SELF.fetch: POST /mcp with a JSON-RPC `initialize` request returns a successful result with server info and protocol version; follow-up `tools/list` returns the placeholder tool. Assert responses parse as JSON-RPC 2.0 (handle SSE-framed bodies if the SDK responds with text/event-stream). GET/DELETE /mcp behave per the stateless spec (405 or per-SDK behavior).",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:43:39.282Z"
           },
           {
             "id": 2,
@@ -663,9 +664,10 @@
               1
             ],
             "details": "No per-source code anywhere in src/mcp/ (dataset isolation rule). Iterate the registry at server-construction time: for each source register `query_<slug.replace(/-/g, '_')>` (e.g. query_uk_planning, query_uk_tenders) passing the source's `queryParams` zod object merged with the shared pagination schema directly as inputSchema — the SDK accepts zod raw shapes, so reuse the exact objects from task 2 (single source of truth; do not redeclare shapes). Handler must call the same cache/query/filter path as /v1/data/:source: if task 2 left that logic inline in the route, extract it into src/sources/query.ts as a pure function (e.g. `querySource(env, source, params)`) and refactor the REST route to call it too, so REST and MCP cannot drift. `list_sources` returns each registry entry's slug, title, description, credit cost, and freshness (last_refreshed_at from refresh_log/KV). `get_usage` returns the same payload shape as GET /v1/usage (credits remaining, monthly counter, plan) by calling the same metering read function. Tool descriptions should be agent-legible: state what the source contains, filterable fields, and credit cost per call.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "tools/list via SELF.fetch returns exactly list_sources, query_uk_planning, query_uk_tenders, get_usage; assert each query tool's JSON schema properties match the corresponding source's zod queryParams keys (schema parity test that fails if a param is added to one surface only). Unit test that adding a stub source to the registry in-test yields a new query_<slug> tool with no other code changes. tools/call query_uk_planning with a filter returns fixture records matching the REST endpoint's results for identical params.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:43:39.288Z"
           },
           {
             "id": 3,
@@ -676,9 +678,10 @@
               2
             ],
             "details": "In src/index.ts change the mount to `app.all('/mcp', authMiddleware, meteringContext, mcpHandler)` (exact composition per how tasks 6/7 structured their middleware). Auth failures at the HTTP layer (missing/invalid key) may remain HTTP 401 with the standard error envelope — that happens before a JSON-RPC session exists. Metering, however, is per tool call, not per HTTP request: initialize and tools/list must be free; only tools/call for query_<slug> (and get_usage if the PRD prices it — default free) debits credits, using the same debit function and `usage:<keyId>:<yyyymm>` KV counters as the REST path so both channels share one quota. Thread the authenticated key context from Hono into tool handlers (e.g. pass keyId/plan into createMcpServer or via a per-request context object). When the debit function reports quota exceeded, the tool handler must return `{ isError: true, content: [{ type: 'text', text: '...' }] }` with a message that names the limit hit and includes the upgrade docs URL so agents can self-serve — never throw, never let it become a JSON-RPC protocol error or HTTP 429, since agents recover from tool errors but not transport failures.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "SELF.fetch without Authorization header → 401 error envelope. With a valid test key: tools/call debits — assert via a subsequent GET /v1/usage (REST) that the counter incremented, proving shared metering. initialize and tools/list do not decrement credits. Seed a key at its quota limit → tools/call returns a JSON-RPC *success* whose result has isError: true and the docs URL in the text; assert HTTP status is 200.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:43:39.292Z"
           },
           {
             "id": 4,
@@ -688,9 +691,10 @@
               2
             ],
             "details": "Add a small helper in src/mcp/ (e.g. `toolResult(payload)`) that returns `{ structuredContent: payload, content: [{ type: 'text', text: JSON.stringify(payload) }] }` and use it in every tool handler — list_sources, all query_<slug> tools, and get_usage — so no handler hand-rolls its shape. For query tools the payload should mirror the REST response body: records array, pagination info (page, per_page, total), and last_refreshed_at, keeping the two channels byte-comparable modulo the envelope. Where the pinned SDK version supports declaring `outputSchema` on tool registration, derive it from the source's recordSchema (wrapped in the results envelope) so the SDK validates structuredContent against it; if the pinned version's support is partial, still emit structuredContent and note the limitation in a comment. Keep serialization deterministic: no timestamps generated per-call in the payload beyond source freshness data, stable key order not required by JSON but avoid injecting request-specific noise. Error results from subtask 3 (isError) keep plain text content — structuredContent is for successful payloads.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration: tools/call query_uk_planning → result contains structuredContent whose records match fixtures AND a text block that JSON.parses to a deeply-equal value (parity assertion between the two representations). get_usage's structuredContent deep-equals the GET /v1/usage response body. If outputSchema is declared, tools/list shows it and a deliberately malformed payload in a unit test fails SDK validation.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:43:39.296Z"
           },
           {
             "id": 5,
@@ -701,14 +705,16 @@
               4
             ],
             "details": "Create test/mcp.spec.ts (or split by concern) with a small JSON-RPC client helper for SELF.fetch that handles Streamable HTTP framing (POST with Accept: application/json, text/event-stream; parse SSE-wrapped responses if the SDK emits them) and manages the initialize handshake. Required cases, consolidating the per-subtask tests into one coherent suite: (1) tools/list returns the four expected tools and each query tool's input JSON schema key-set exactly matches the source's zod queryParams + pagination — a parity test that breaks when either surface drifts; (2) tools/call query_uk_planning with a filter returns fixture records identical to /v1/data/uk-planning with the same params; (3) missing API key → 401 envelope, malformed key → 401; (4) shared-counter assertion: N tools/call requests then GET /v1/usage shows the counter advanced by N × creditCost; (5) quota-exhausted key → HTTP 200, JSON-RPC success, result.isError === true, message contains the upgrade docs URL; (6) structuredContent/text parity from subtask 4. Then write docs/mcp-verification.md (or a runbook section): steps to run `npm run dev`, launch `npx @modelcontextprotocol/inspector`, connect to http://localhost:8787/mcp with an Authorization header, and a checklist (tools listed, query returns records, usage reflects calls, quota error readable). Add the /mcp URL and a one-line agent-facing description to public/llms.txt per the task-11 dependency direction.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "The suite itself is the deliverable: `npm test` green in the Workers pool with all six case groups passing, and the suite fails if a registry source is added without its tool appearing (parity guard). Manual: execute the inspector runbook against wrangler dev once and record the checklist outcome in the doc.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:43:39.300Z"
           }
         ],
         "complexity": 7,
         "recommendedSubtasks": 5,
-        "expansionPrompt": "Split into: (1) add @modelcontextprotocol/sdk (pinned — verify the current stateless Streamable HTTP pattern for Workers: per-request McpServer + transport with sessionIdGenerator undefined) and get a minimal initialize/tools-list round trip working via SELF.fetch; (2) registry-driven tool generation — list_sources from registry metadata + freshness, one query_<slug> tool per source reusing the exact zod queryParams objects from task 2 as inputSchema, and get_usage mirroring /v1/usage, with shared query logic extracted to src/sources/query.ts if task 2 didn't already; (3) mount app.all('/mcp') behind the task-6 auth middleware and task-7 metering so tool calls debit the same counters, with quota-exceeded surfacing as an isError tool result carrying the upgrade docs URL rather than a protocol failure; (4) return structuredContent + text-fallback JSON tool results for deterministic agent consumption; (5) the JSON-RPC integration test suite (tools/list schema parity with zod params, filtered tools/call against fixtures, missing-key auth error, shared usage-counter assertion via /v1/usage, quota-exhausted isError) plus documented manual verification with the MCP inspector against wrangler dev."
+        "expansionPrompt": "Split into: (1) add @modelcontextprotocol/sdk (pinned — verify the current stateless Streamable HTTP pattern for Workers: per-request McpServer + transport with sessionIdGenerator undefined) and get a minimal initialize/tools-list round trip working via SELF.fetch; (2) registry-driven tool generation — list_sources from registry metadata + freshness, one query_<slug> tool per source reusing the exact zod queryParams objects from task 2 as inputSchema, and get_usage mirroring /v1/usage, with shared query logic extracted to src/sources/query.ts if task 2 didn't already; (3) mount app.all('/mcp') behind the task-6 auth middleware and task-7 metering so tool calls debit the same counters, with quota-exceeded surfacing as an isError tool result carrying the upgrade docs URL rather than a protocol failure; (4) return structuredContent + text-fallback JSON tool results for deterministic agent consumption; (5) the JSON-RPC integration test suite (tools/list schema parity with zod params, filtered tools/call against fixtures, missing-key auth error, shared usage-counter assertion via /v1/usage, quota-exhausted isError) plus documented manual verification with the MCP inspector against wrangler dev.",
+        "updatedAt": "2026-07-06T15:43:39.300Z"
       },
       {
         "id": "10",
@@ -888,9 +894,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T15:39:02.682Z",
+      "lastModified": "2026-07-06T15:43:39.300Z",
       "taskCount": 12,
-      "completedCount": 8,
+      "completedCount": 9,
       "tags": [
         "master"
       ]

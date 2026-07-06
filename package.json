@@ -16,6 +16,8 @@
     "cf-typegen": "wrangler types --env-interface CloudflareBindings"
   },
   "dependencies": {
+    "@hono/mcp": "^0.3.0",
+    "@modelcontextprotocol/sdk": "^1.29.0",
     "hono": "^4.12.27",
     "stripe": "^22.3.0",
     "zod": "^4.4.3"

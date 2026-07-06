@@ -11,6 +11,7 @@ import { billingRoutes } from './routes/billing';
 import { dataRoutes } from './routes/data';
 import { healthRoute } from './routes/health';
 import { keysRoutes } from './routes/keys';
+import { mcpRoute } from './routes/mcp';
 import { openapiRoute } from './routes/openapi';
 import { usageRoute } from './routes/usage';
 import type { AppEnv } from './types';
@@ -43,6 +44,7 @@ app.route('/v1/data', dataRoutes);
 app.route('/v1/keys', keysRoutes);
 app.route('/v1/usage', usageRoute);
 app.route('/v1/billing', billingRoutes);
+app.route('/mcp', mcpRoute);
 app.route('/openapi.json', openapiRoute);
 
 app.onError(errorHandler);
