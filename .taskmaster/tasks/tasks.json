@@ -2,14 +2,14 @@
   "master": {
     "tasks": [
       {
-        "id": 1,
+        "id": "1",
         "title": "Bootstrap Worker foundation: bindings, middleware chain, error envelope, health endpoint, test harness",
         "description": "Turn the hello-world Hono starter into the platform skeleton: configure all Cloudflare bindings in wrangler.jsonc, build the shared middleware chain (request id, structured logging, CORS), define the JSON success/error envelope, add /v1/health, export fetch + scheduled handlers, and wire the vitest Workers test harness.",
         "details": "Existing state: src/index.ts is a bare `new Hono()` app; wrangler.jsonc has no bindings. Steps:\n1. Add deps: `zod` (runtime), `vitest` + `@cloudflare/vitest-pool-workers` (dev). Add `\"test\": \"vitest run\"` to package.json scripts (CLAUDE.md already references `npm test`).\n2. wrangler.jsonc: add `d1_databases` (binding `DB`, database_name `faceless-api`), two `kv_namespaces` (`CACHE`, `RATE`) with placeholder ids for local dev, `assets: { directory: \"public\" }`, and `triggers: { crons: [\"0 5 * * *\"] }` (daily; per-source cadence refined in task 3). Run `npm run cf-typegen` to regenerate `CloudflareBindings`.\n3. Restructure src/index.ts: `const app = new Hono<{ Bindings: CloudflareBindings, Variables: { requestId: string, keyCtx?: KeyContext } }>()`. Middleware order: requestId → structured JSON logger (log `{requestId, route, method, status, latencyMs, keyId?, creditsCharged?}` via console.log JSON) → CORS. Export `default { fetch: app.fetch, scheduled }` with a stub `scheduled` handler (filled in task 3).\n4. Envelope in src/lib/envelope.ts: success `{ ok: true, data, meta? }`; error `{ ok: false, error: { code, message, docs_url } }` — machine-parsable code + human hint + docs URL per PRD. Register `app.onError` + `app.notFound` to always emit the error envelope; map HTTPException status codes to stable codes (`unauthorized`, `not_found`, `rate_limited`, `payment_required`, `internal`).\n5. `GET /v1/health` in src/routes/health.ts returning `{ status: \"ok\", version }` (no auth — UptimeRobot target).\n6. vitest.config.ts using `defineWorkersConfig` from @cloudflare/vitest-pool-workers with `wrangler: { configPath: \"./wrangler.jsonc\" }` so tests get real KV/D1 bindings via miniflare.\nUse named exports and explicit return types throughout (house rules).",
         "testStrategy": "Worker-level integration tests via vitest-pool-workers using `SELF.fetch`: /v1/health returns 200 with `{status:\"ok\"}`; unknown route returns 404 with the exact error-envelope shape; thrown HTTPException produces envelope with correct code and docs_url; response includes request id header. `npm run lint`, `npm run typecheck`, and `npm run build` (dry-run deploy) all pass, proving bindings config is valid.",
         "priority": "high",
         "dependencies": [],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -17,8 +17,10 @@
             "description": "Install the runtime and dev dependencies required by the foundation work and wire the `npm test` script that CLAUDE.md already references, leaving the repo's quality gates green.",
             "dependencies": [],
             "details": "Run `npm install zod` (runtime dependency) and `npm install -D vitest @cloudflare/vitest-pool-workers` — pick versions compatible with the repo's wrangler 4.x (vitest-pool-workers pins a supported vitest range; check its peerDependencies and align vitest accordingly rather than blindly taking latest). Add `\"test\": \"vitest run\"` to package.json scripts. Do not create vitest.config.ts yet (that is subtask 5); `npm test` may fail with 'no test files' at this point, which is acceptable. Verify package-lock.json is updated and that `npm run lint`, `npm run typecheck`, and `npm run build` all still pass. Note: these deps are named in the parent task, so no separate ask-first approval is needed despite the new-dependency house rule.",
-            "status": "pending",
-            "testStrategy": "`npm ls zod vitest @cloudflare/vitest-pool-workers` resolves without peer-dependency errors; `node -e \"require('zod')\"` equivalent import compiles under typecheck; lint/typecheck/build all exit 0."
+            "status": "done",
+            "testStrategy": "`npm ls zod vitest @cloudflare/vitest-pool-workers` resolves without peer-dependency errors; `node -e \"require('zod')\"` equivalent import compiles under typecheck; lint/typecheck/build all exit 0.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T14:49:44.208Z"
           },
           {
             "id": 2,
@@ -26,8 +28,10 @@
             "description": "Author all Cloudflare bindings from scratch in wrangler.jsonc — everything is currently commented out — then regenerate the CloudflareBindings type so downstream code can type the Hono app against real bindings.",
             "dependencies": [],
             "details": "In wrangler.jsonc add: `d1_databases` with `{ binding: \"DB\", database_name: \"faceless-api\", database_id: \"<placeholder>\" }`; two `kv_namespaces` entries `{ binding: \"CACHE\", id: \"<placeholder>\" }` and `{ binding: \"RATE\", id: \"<placeholder>\" }` (placeholder ids are fine for local dev/miniflare); `assets: { directory: \"public\" }` (create an empty `public/` directory with a minimal placeholder index.html so the assets directory exists); and `triggers: { crons: [\"0 5 * * *\"] }` for the daily refresh (per-source cadence is refined in task 3 of the parent plan). Then run `npm run cf-typegen` to regenerate the CloudflareBindings interface (worker-configuration.d.ts) and confirm it now declares DB (D1Database), CACHE and RATE (KVNamespace). Keep JSONC comments explaining each binding's purpose. Finish with lint/typecheck/build green — `npm run build` (dry-run deploy) is the real validator that wrangler accepts the config.",
-            "status": "pending",
-            "testStrategy": "`npm run build` (wrangler dry-run deploy) succeeds, proving the config parses and bindings are well-formed; generated worker-configuration.d.ts contains DB/CACHE/RATE with correct types; `npm run dev` boots without binding errors."
+            "status": "done",
+            "testStrategy": "`npm run build` (wrangler dry-run deploy) succeeds, proving the config parses and bindings are well-formed; generated worker-configuration.d.ts contains DB/CACHE/RATE with correct types; `npm run dev` boots without binding errors.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T14:49:44.213Z"
           },
           {
             "id": 3,
@@ -37,8 +41,10 @@
               2
             ],
             "details": "Rewrite src/index.ts as `const app = new Hono<{ Bindings: CloudflareBindings; Variables: { requestId: string; keyCtx?: KeyContext } }>()` (declare a minimal `KeyContext` placeholder type, e.g. in src/lib/types.ts, to be fleshed out by the auth task). Middleware in this exact order: (1) requestId — generate via crypto.randomUUID(), set on `c.set('requestId', ...)` and echo as a response header (e.g. `x-request-id`); (2) structured JSON logger — after `await next()`, `console.log(JSON.stringify({ requestId, route, method, status, latencyMs, keyId?, creditsCharged? }))` measuring latency around next(); (3) CORS via hono/cors. Export `default { fetch: app.fetch, scheduled }` where `scheduled` is a stub `(controller: ScheduledController, env: CloudflareBindings, ctx: ExecutionContext): Promise<void>` that just logs — task 3 of the parent plan fills it in. Also export the `app` instance as a named export so routes/tests can reference it. Use named exports and explicit return types per house rules; keep a temporary root route or none at all (404 handling arrives in subtask 4).",
-            "status": "pending",
-            "testStrategy": "`npm run typecheck` proves the Bindings/Variables generics resolve against the generated CloudflareBindings; `npm run dev` boots and any request logs one JSON line containing requestId/method/status/latencyMs and returns the x-request-id header; formal SELF.fetch assertions land in subtask 5."
+            "status": "done",
+            "testStrategy": "`npm run typecheck` proves the Bindings/Variables generics resolve against the generated CloudflareBindings; `npm run dev` boots and any request logs one JSON line containing requestId/method/status/latencyMs and returns the x-request-id header; formal SELF.fetch assertions land in subtask 5.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T14:49:44.216Z"
           },
           {
             "id": 4,
@@ -48,8 +54,10 @@
               3
             ],
             "details": "src/lib/envelope.ts: named helpers with explicit return types — `ok<T>(data: T, meta?: ...)` producing `{ ok: true, data, meta? }` and `err(code, message, docsUrl)` producing `{ ok: false, error: { code, message, docs_url } }`. Define the stable code union: `unauthorized` (401), `not_found` (404), `rate_limited` (429), `payment_required` (402), `internal` (500), with a status→code mapping function for HTTPException instances. In src/index.ts register `app.onError` (map HTTPException status via the table, anything else → 500 `internal`; never leak stack traces; include a docs_url pointing at a stable anchor like `https://<domain>/docs#errors`) and `app.notFound` (404 envelope with code `not_found`). src/routes/health.ts: a named-export Hono sub-router with `GET /` returning `ok({ status: 'ok', version })` — version from package.json import or a build-time constant — mounted at `/v1/health` in index.ts with no auth (UptimeRobot target). Lint/typecheck/build green.",
-            "status": "pending",
-            "testStrategy": "Manual smoke via `npm run dev`: GET /v1/health → 200 `{ok:true,data:{status:'ok',...}}`; GET /nope → 404 with exact error-envelope shape and code `not_found`; a temporary route throwing HTTPException(401) yields the `unauthorized` envelope with docs_url. Automated SELF.fetch coverage is subtask 5."
+            "status": "done",
+            "testStrategy": "Manual smoke via `npm run dev`: GET /v1/health → 200 `{ok:true,data:{status:'ok',...}}`; GET /nope → 404 with exact error-envelope shape and code `not_found`; a temporary route throwing HTTPException(401) yields the `unauthorized` envelope with docs_url. Automated SELF.fetch coverage is subtask 5.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T14:49:44.220Z"
           },
           {
             "id": 5,
@@ -60,20 +68,26 @@
               4
             ],
             "details": "Create vitest.config.ts using `defineWorkersConfig` from `@cloudflare/vitest-pool-workers/config` with `test.poolOptions.workers.wrangler.configPath: './wrangler.jsonc'` so miniflare provisions DB/CACHE/RATE from the real config. Add the pool-workers types (`@cloudflare/vitest-pool-workers` types entry or a test tsconfig) so `cloudflare:test` imports typecheck. Write test/index.spec.ts using `import { SELF } from 'cloudflare:test'`: (1) GET /v1/health → 200 with `{ok:true, data:{status:'ok'}}`; (2) unknown route → 404 with the exact error-envelope shape `{ok:false, error:{code:'not_found', message, docs_url}}`; (3) a route that throws HTTPException produces the envelope with the mapped stable code and docs_url — either hit a deliberate test-only route or import the app and register a throwing route in the test; (4) every response carries the x-request-id header (non-empty, unique per request). This is the notoriously fiddly step: if `npm test` fails on version alignment between wrangler 4.x, vitest, and the pool, resolve by pinning the versions the pool's peerDependencies demand (adjusting subtask 1's installs). Finish with `npm test`, lint, typecheck, and build all green.",
-            "status": "pending",
-            "testStrategy": "`npm test` runs the Workers pool and all four integration tests pass deterministically (run twice to confirm no flake); tests fail meaningfully if the envelope shape or header is changed (mutate one field locally to confirm, then revert); CI-parity check: lint + typecheck + test + build all exit 0 in sequence."
+            "status": "done",
+            "testStrategy": "`npm test` runs the Workers pool and all four integration tests pass deterministically (run twice to confirm no flake); tests fail meaningfully if the envelope shape or header is changed (mutate one field locally to confirm, then revert); CI-parity check: lint + typecheck + test + build all exit 0 in sequence.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T14:49:44.224Z"
           }
-        ]
+        ],
+        "complexity": 6,
+        "recommendedSubtasks": 5,
+        "expansionPrompt": "Break into subtasks along the five independent workstreams: (1) add zod + vitest + @cloudflare/vitest-pool-workers deps and the npm test script; (2) configure wrangler.jsonc bindings (D1 `DB`, KV `CACHE`/`RATE`, assets dir `public/`, cron trigger) and run cf-typegen to regenerate CloudflareBindings — note wrangler.jsonc currently has ALL bindings commented out, so this is from scratch; (3) restructure src/index.ts from the 9-line hello-world app to typed Hono<{Bindings, Variables}> with requestId → structured JSON logger → CORS middleware and `export default { fetch, scheduled }` with a stub scheduled handler; (4) implement src/lib/envelope.ts success/error envelope plus app.onError/app.notFound mapping HTTPException statuses to stable codes, and GET /v1/health in src/routes/health.ts; (5) create vitest.config.ts with defineWorkersConfig pointing at wrangler.jsonc and write the SELF.fetch integration tests (health 200, 404 envelope, HTTPException envelope, request-id header). Each subtask should end with lint/typecheck/build green.",
+        "updatedAt": "2026-07-06T14:49:44.224Z"
       },
       {
-        "id": 2,
+        "id": "2",
         "title": "DataSource interface, source registry, and generic /v1/data/:source query endpoint",
         "description": "Build the niche-agnostic heart: a DataSource TypeScript interface (slug, zod record schema, fetchFresh, refresh policy, declared query capabilities), a registry mapping slugs to sources, and a generic /v1/data/:source endpoint with pagination and source-declared filters — so adding a source file + registry entry is the whole cost of a new dataset.",
         "details": "In src/sources/types.ts define:\n```ts\nexport interface DataSource<T extends z.ZodTypeAny = z.ZodTypeAny> {\n  slug: string;               // e.g. 'uk-planning'\n  title: string;\n  recordSchema: T;            // zod schema of one normalized record\n  fetchFresh(env: CloudflareBindings): Promise<z.infer<T>[]>;\n  refresh: { cron: string; cacheTtlSeconds: number };\n  queryParams: z.ZodObject<any>; // filters this source supports (validated per-request)\n  creditCost?: number;        // default 1\n}\n```\nsrc/sources/registry.ts: `export const registry: Record<string, DataSource>` + `getSource(slug)` helper + a demo in-memory source for tests until task 3 lands. Dataset-specific logic anywhere outside src/sources/ is a design bug (CLAUDE.md isolation rule).\nsrc/routes/data.ts: `GET /v1/data/:source` — 404 envelope for unknown slug; validate query with `source.queryParams.extend({ page: z.coerce.number().int().min(1).default(1), per_page: z.coerce.number().int().max(100).default(25) })`; read records from cache layer (task 3 supplies real cache; until then call fetchFresh), apply declared filters generically (equality/substring per param type), paginate, respond with envelope `meta: { page, per_page, total, source: slug, last_refreshed_at }`. Also `GET /v1/data` (or `/v1/sources`) listing registry entries with title, slug, freshness, and supported params — this later feeds MCP list_sources.\nKeep filtering logic generic (driven by the queryParams schema), never per-dataset.",
         "testStrategy": "Unit tests: registry lookup, unknown slug → 404 envelope, pagination math (page/per_page bounds, total counts), filter application against a fixture demo source, invalid query param → 400 envelope with zod issue detail. Integration test via SELF.fetch exercising /v1/data/:source end-to-end with the demo source. Assert no source-specific branches exist in routes (code review checklist item).",
         "priority": "high",
         "dependencies": [
-          1
+          "1"
         ],
         "status": "pending",
         "subtasks": [
@@ -84,7 +98,8 @@
             "dependencies": [],
             "details": "In src/sources/types.ts define `export interface DataSource<T extends z.ZodTypeAny = z.ZodTypeAny>` with: `slug: string` (e.g. 'uk-planning'), `title: string`, `recordSchema: T` (zod schema of one normalized record), `fetchFresh(env: CloudflareBindings): Promise<z.infer<T>[]>`, `refresh: { cron: string; cacheTtlSeconds: number }`, `queryParams: z.ZodObject<any>` (per-request-validated filters this source declares), and `creditCost?: number` (default 1, consumed later by task 7). Get the generics right: registry entries must be storable as `DataSource` (erased/default type param) while individual source modules keep full inference from their own recordSchema — add a type-level test or helper (e.g. `defineSource`) if needed to prove both directions compile. Also export any shared helper types the route/filter layer will need (e.g. `SourceRecord<S> = z.infer<S['recordSchema']>`). Explicit return types on all exported functions, no `any` leaking into the public surface beyond the documented `z.ZodObject<any>` for queryParams. Nothing dataset-specific may appear here (CLAUDE.md isolation rule).",
             "status": "pending",
-            "testStrategy": "Type-level assertions (expectTypeOf via vitest or tsd-style compile checks): a concrete source with a specific zod schema assigns to `DataSource`; `z.infer` of recordSchema flows through fetchFresh's return type; a mistyped fetchFresh return fails compilation. `npm run typecheck` passes with strict mode."
+            "testStrategy": "Type-level assertions (expectTypeOf via vitest or tsd-style compile checks): a concrete source with a specific zod schema assigns to `DataSource`; `z.infer` of recordSchema flows through fetchFresh's return type; a mistyped fetchFresh return fails compilation. `npm run typecheck` passes with strict mode.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -95,7 +110,8 @@
             ],
             "details": "src/sources/registry.ts: `export const registry: Record<string, DataSource>` and `export function getSource(slug: string): DataSource | undefined` (explicit return type; named exports per conventions). Create src/sources/demo.ts: an in-memory demo source with a small zod recordSchema covering the filterable types the generic filter engine must handle (at least one string field for substring matching, one enum/literal or number field for equality matching, and a date-ish string), `fetchFresh` returning ~10–20 deterministic fixture records synchronously wrapped in a Promise, a `queryParams` z.object declaring 2–3 filters, and a refresh policy with placeholder cron/TTL values. Register it in the registry. Keep the demo source clearly marked as test scaffolding to be joined (not replaced) by real sources in task 3. All dataset-specific content lives only in src/sources/demo.ts plus its registry entry — nothing elsewhere.",
             "status": "pending",
-            "testStrategy": "Unit tests: getSource('demo') returns the source and getSource('nope') returns undefined; demo fixture records all parse against the demo recordSchema; queryParams schema accepts declared filters and rejects unknown-typed values."
+            "testStrategy": "Unit tests: getSource('demo') returns the source and getSource('nope') returns undefined; demo fixture records all parse against the demo recordSchema; queryParams schema accepts declared filters and rejects unknown-typed values.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -107,7 +123,8 @@
             ],
             "details": "src/sources/query.ts (extracted so tasks 9 and 10 — MCP tools and x402 routes — can reuse it without going through Hono): (a) `buildQuerySchema(source)` returning `source.queryParams.extend({ page: z.coerce.number().int().min(1).default(1), per_page: z.coerce.number().int().min(1).max(100).default(25) })`; (b) `applyFilters(records, params, queryParams)` that introspects the zod shape of each declared param and applies equality for numbers/booleans/enums and case-insensitive substring for strings — no per-dataset branches anywhere (any dataset-specific conditional is a design bug per CLAUDE.md); (c) `paginate(records, page, per_page)` returning `{ items, total }`. src/routes/data.ts: `GET /v1/data/:source` — unknown slug → 404 using task 1's error envelope; validate the query string against the built schema, zod failure → 400 envelope with issue detail; obtain records via the cache layer abstraction (until task 3 lands, call `source.fetchFresh(env)` behind a thin `getRecords(env, source)` seam so task 3 swaps in KV caching without touching this route); apply filters, paginate, respond with success envelope `meta: { page, per_page, total, source: slug, last_refreshed_at }` (last_refreshed_at may be the fetch time until refresh_log exists). Mount the route in src/index.ts.",
             "status": "pending",
-            "testStrategy": "Unit tests against the demo source fixtures: applyFilters equality and substring behavior per param type, combined filters, pagination math (bounds, total counts, out-of-range page returns empty items with correct total), per_page clamped at 100. Route-level: unknown slug → 404 envelope; invalid param (e.g. page=0, non-numeric per_page) → 400 envelope with zod issue detail."
+            "testStrategy": "Unit tests against the demo source fixtures: applyFilters equality and substring behavior per param type, combined filters, pagination math (bounds, total counts, out-of-range page returns empty items with correct total), per_page clamped at 100. Route-level: unknown slug → 404 envelope; invalid param (e.g. page=0, non-numeric per_page) → 400 envelope with zod issue detail.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -119,19 +136,23 @@
             ],
             "details": "In src/routes/data.ts add `GET /v1/sources` (also decide whether bare `GET /v1/data` aliases it or 404s — document the choice): iterate the registry and return, per source, `{ slug, title, refresh: { cron, cacheTtlSeconds }, last_refreshed_at, params }` where `params` is derived generically from each source's queryParams zod shape (param name + inferred type + optionality) — this listing later feeds MCP list_sources in task 9, so keep the shape stable and serializable. Wrap in the standard success envelope. Then complete the task's test suite using task 1's vitest Workers harness: SELF.fetch integration tests for `/v1/data/demo` happy path (envelope shape, meta fields, records validate against demo recordSchema), filtered query, paginated query, unknown slug 404 envelope, invalid query param 400 envelope with zod issue detail, and `/v1/sources` listing containing the demo entry with its declared params. Run `npm run lint`, `npm run typecheck`, and `npm test` clean.",
             "status": "pending",
-            "testStrategy": "Integration via SELF.fetch (vitest-pool-workers): GET /v1/sources returns 200 with the demo source's slug/title/params; GET /v1/data/demo end-to-end with pagination and filter params matches unit-level expectations; invalid param → 400 envelope; unknown slug → 404 envelope. Full quality gates (lint, typecheck, test) pass."
+            "testStrategy": "Integration via SELF.fetch (vitest-pool-workers): GET /v1/sources returns 200 with the demo source's slug/title/params; GET /v1/data/demo end-to-end with pagination and filter params matches unit-level expectations; invalid param → 400 envelope; unknown slug → 404 envelope. Full quality gates (lint, typecheck, test) pass.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 6,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Split into: (1) define the DataSource<T extends z.ZodTypeAny> interface in src/sources/types.ts (slug, title, recordSchema, fetchFresh, refresh policy, queryParams, creditCost) — get the generics right so registry entries stay heterogeneous but type-safe; (2) build src/sources/registry.ts with getSource(slug) plus an in-memory demo source with fixture records for tests; (3) implement GET /v1/data/:source in src/routes/data.ts — unknown-slug 404 envelope, queryParams extended with page/per_page coercion, generic filter application driven purely by the zod param shape (equality/substring by type — no per-dataset branches), pagination, and envelope meta {page, per_page, total, source, last_refreshed_at}; (4) implement the sources-listing endpoint (GET /v1/data or /v1/sources) exposing registry metadata, and write the unit + SELF.fetch integration tests including the invalid-param 400 envelope. Extract the query/filter core so tasks 9 and 10 can reuse it (src/sources/query.ts)."
       },
       {
-        "id": 3,
+        "id": "3",
         "title": "uk-planning seed source with Blind Mode schema, KV caching, and cron refresh pipeline",
         "description": "Implement the first real DataSource pulling UK planning applications from the official planning.data.gov.uk JSON API with personal-data fields excluded at the schema level (Blind Mode), plus the shared infrastructure it exercises: KV response caching, the scheduled-handler refresh loop writing refresh_log to D1, freshness metadata, and fixture fallback for offline dev.",
         "details": "1. Start the D1 migrations workflow now (Phase 1 needs refresh_log): create `migrations/0001_refresh_log.sql` — `refresh_log(id INTEGER PRIMARY KEY, source_slug TEXT, status TEXT, records INTEGER, duration_ms INTEGER, created_at TEXT DEFAULT (datetime('now')))`; document `wrangler d1 migrations create/apply` usage (local apply is free; production apply is an ask-first op per CLAUDE.md).\n2. src/sources/uk-planning.ts: recordSchema with reference, authority, status, decision, dates (received/validated/decided), site-level location (postcode/point), description — NO applicant name/agent/contact fields; strip unknown keys with `.strip()` so personal data is dropped at ingest and never stored (UK GDPR Blind Mode). fetchFresh() calls planning.data.gov.uk's dataset API (e.g. `https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=...` with pagination loop), maps entities → normalized records, and validates each through the schema. On fetch failure in local dev, fall back to `src/sources/fixtures/uk-planning.json` (PRD: offline-capable dev). queryParams: authority, status, decided_after/decided_before, q (description substring). refresh: daily cron, cacheTtlSeconds 86400.\n3. src/sources/cache.ts (generic, source-agnostic): `readCached(env, source)` → KV `data:<slug>` (records + `last_refreshed_at`), on miss run fetchFresh and populate; `refreshSource(env, source)` → fetchFresh, write KV, insert refresh_log row (status ok/error, record count, duration). Wire the `scheduled` handler from task 1: iterate registry, refresh sources matching the cron event, never throw (log failures to refresh_log so the operator sees them).\n4. Wire /v1/data/:source (task 2) to read through this cache and expose `last_refreshed_at` in meta.\nVerify current planning.data.gov.uk endpoint paths/params at implementation time — record the exact URL used in the source file header comment.",
         "testStrategy": "Unit: schema rejects/strips personal-data fields (feed a fixture containing applicant_name and assert it never appears in output); origin-response → normalized-record mapping against recorded fixtures; fixture fallback path when fetch rejects. Integration (pool-workers): trigger the scheduled handler via `SELF.scheduled` / runDurableObjectAlarm-style test API, assert KV populated and refresh_log row written (query D1 binding in test); /v1/data/uk-planning serves cached data with last_refreshed_at and filters by authority/status. Mock origin with fetchMock so tests never hit the network.",
         "priority": "high",
         "dependencies": [
-          2
+          "2"
         ],
         "status": "pending",
         "subtasks": [
@@ -142,7 +163,8 @@
             "dependencies": [],
             "details": "Create `migrations/0001_refresh_log.sql` containing: `CREATE TABLE refresh_log (id INTEGER PRIMARY KEY, source_slug TEXT, status TEXT, records INTEGER, duration_ms INTEGER, created_at TEXT DEFAULT (datetime('now')));`. Ensure `wrangler.jsonc` has the D1 binding configured with `migrations_dir` pointing at `migrations/` (add if missing) and run `npm run cf-typegen` if bindings change. Document the workflow in `docs/` (or a README section): `wrangler d1 migrations create <db> <name>` to scaffold, `wrangler d1 migrations apply <db> --local` for free local apply during dev, and note that `wrangler d1 migrations apply <db> --remote` against production is an ask-first operation per CLAUDE.md. Verify the migration applies cleanly locally and the table shape matches what src/sources/cache.ts will insert (source_slug, status, records, duration_ms).",
             "status": "pending",
-            "testStrategy": "Run `wrangler d1 migrations apply <db> --local` and confirm success; query the local D1 with `wrangler d1 execute --local --command \"PRAGMA table_info(refresh_log)\"` to assert columns and default. Pool-workers tests in later subtasks will exercise the table via real inserts."
+            "testStrategy": "Run `wrangler d1 migrations apply <db> --local` and confirm success; query the local D1 with `wrangler d1 execute --local --command \"PRAGMA table_info(refresh_log)\"` to assert columns and default. Pool-workers tests in later subtasks will exercise the table via real inserts.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -151,7 +173,8 @@
             "dependencies": [],
             "details": "In `src/sources/uk-planning.ts`, define `recordSchema` as a zod object with: reference, authority, status, decision, dates (received/validated/decided), site-level location only (postcode, point/coordinates), and description. Explicitly NO applicant name, agent, or contact fields — and apply `.strip()` so any unknown keys from the origin are dropped at parse time, meaning personal data is never stored (UK GDPR Blind Mode; this is compliance-critical, not just hygiene). Add a comment on the schema stating the Blind Mode invariant so future edits don't reintroduce personal fields. Define `queryParams` as a zod object with: authority, status, decided_after/decided_before (date strings), and q (description substring match). Stub the DataSource object conforming to the task-2 interface (slug 'uk-planning', title, recordSchema, queryParams, refresh: { cron for daily, cacheTtlSeconds: 86400 }) with fetchFresh left as a placeholder for subtask 3, and add the registry entry per the dataset-isolation rule (source file + registry entry only).",
             "status": "pending",
-            "testStrategy": "Unit tests: feed a record containing applicant_name, agent_email, and other personal keys through recordSchema.parse and assert those keys never appear in the output; assert required site-level fields survive; assert queryParams accepts valid filters and rejects malformed dates with zod issues."
+            "testStrategy": "Unit tests: feed a record containing applicant_name, agent_email, and other personal keys through recordSchema.parse and assert those keys never appear in the output; assert required site-level fields survive; assert queryParams accepts valid filters and rejects malformed dates with zod issues.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -162,7 +185,8 @@
             ],
             "details": "Verify the current planning.data.gov.uk endpoint shape at implementation time (expected form: `https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=...` — confirm dataset slug, pagination params, and response envelope against the live API) and record the exact URL and verification date in a header comment in `src/sources/uk-planning.ts`. Implement the pagination loop (offset/cursor per the API's actual scheme, bounded page size, sane upper limit), map each entity to the normalized record shape, and validate every record through recordSchema.parse so stripping happens at ingest. On fetch failure (network error or non-2xx) in local dev, fall back to `src/sources/fixtures/uk-planning.json` — create that fixture from a real recorded API response (with personal fields present in the raw capture so tests can prove they get stripped). Surface fetch errors to the caller in production paths so refreshSource can log status 'error'.",
             "status": "pending",
-            "testStrategy": "Unit tests with fetchMock (no live network): mock a two-page entity.json response and assert the pagination loop aggregates all records; assert entity→record mapping against the recorded fixture (snapshot or field-level asserts); reject the mocked fetch and assert the fixture fallback path returns parsed, Blind-Mode-stripped records."
+            "testStrategy": "Unit tests with fetchMock (no live network): mock a two-page entity.json response and assert the pagination loop aggregates all records; assert entity→record mapping against the recorded fixture (snapshot or field-level asserts); reject the mocked fetch and assert the fixture fallback path returns parsed, Blind-Mode-stripped records.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -174,7 +198,8 @@
             ],
             "details": "Create `src/sources/cache.ts` — generic over any DataSource, no uk-planning-specific logic (dataset isolation rule). `readCached(env, source)`: read KV key `data:<slug>` holding `{ records, last_refreshed_at }`; on miss, call source.fetchFresh(), write the KV entry (respecting source.refresh.cacheTtlSeconds), and return it. `refreshSource(env, source)`: time the fetchFresh() call, write the KV entry on success, and insert a refresh_log row into D1 either way — status 'ok' with record count and duration_ms, or status 'error' with the failure captured — so the operator sees failures in refresh_log rather than silent drops. Wire the `scheduled` handler exported from src/index.ts (task 1) to iterate the source registry, select sources whose refresh.cron matches the triggering cron event, and call refreshSource for each inside a try/catch per source — the handler must never throw, and one failing source must not block others.",
             "status": "pending",
-            "testStrategy": "Unit tests: readCached hit returns KV data without calling fetchFresh (spy); miss populates KV. refreshSource success writes KV + 'ok' row; a rejecting fetchFresh writes an 'error' row and does not clobber existing KV data. Scheduled-handler test: registry with one healthy and one throwing source — handler resolves without throwing and both outcomes appear in refresh_log."
+            "testStrategy": "Unit tests: readCached hit returns KV data without calling fetchFresh (spy); miss populates KV. refreshSource success writes KV + 'ok' row; a rejecting fetchFresh writes an 'error' row and does not clobber existing KV data. Scheduled-handler test: registry with one healthy and one throwing source — handler resolves without throwing and both outcomes appear in refresh_log.",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -185,19 +210,23 @@
             ],
             "details": "Update the /v1/data/:source route handler to fetch records via `readCached(env, source)` instead of calling fetchFresh directly, and include `last_refreshed_at` in the response `meta` object alongside pagination info, keeping filters and pagination operating on the cached record set. Then write the tests using @cloudflare/vitest-pool-workers with fetchMock enabled (disableNetConnect) so nothing hits the real network. Unit: Blind Mode stripping (fixture with applicant_name never appears in output), entity→record mapping fixtures, fixture fallback on fetch rejection. Integration: trigger the scheduled handler via the pool-workers scheduled test helper against real KV/D1 bindings and assert KV `data:uk-planning` is populated and a refresh_log row exists; then SELF.fetch /v1/data/uk-planning and assert it serves cached data, filters (authority, status, decided_after/before, q) apply correctly, and meta.last_refreshed_at is present and ISO-formatted. Run npm run lint/typecheck/test as the exit gate.",
             "status": "pending",
-            "testStrategy": "This subtask IS the test suite: unit tests for schema stripping, mapping, and fallback; pool-workers integration tests for scheduled-trigger → KV+D1 population and endpoint serving cached filtered data with freshness meta. All origin calls mocked via fetchMock; assert mock expectations so no test silently hits the network."
+            "testStrategy": "This subtask IS the test suite: unit tests for schema stripping, mapping, and fallback; pool-workers integration tests for scheduled-trigger → KV+D1 population and endpoint serving cached filtered data with freshness meta. All origin calls mocked via fetchMock; assert mock expectations so no test silently hits the network.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 7,
+        "recommendedSubtasks": 5,
+        "expansionPrompt": "Split into: (1) bootstrap the D1 migrations workflow with migrations/0001_refresh_log.sql and document local vs production apply (no migrations/ directory exists yet — this establishes the pattern); (2) implement src/sources/uk-planning.ts recordSchema with Blind Mode — only site-level fields, `.strip()` unknown keys, explicitly no applicant/agent/contact fields — plus queryParams (authority, status, decided_after/before, q); (3) implement fetchFresh() against planning.data.gov.uk's entity.json API with pagination loop and entity→record mapping, verify the live endpoint shape at implementation time and record the URL in a header comment, plus fixture fallback (src/sources/fixtures/uk-planning.json) for offline dev; (4) build the generic src/sources/cache.ts (readCached KV read-through, refreshSource writing KV + refresh_log row) and wire the task-1 scheduled handler to iterate the registry without ever throwing; (5) connect /v1/data/:source to the cache layer with last_refreshed_at in meta, and write the unit tests (personal-field stripping, mapping fixtures, fallback) and pool-workers integration tests (scheduled trigger populates KV + D1, endpoint serves cached filtered data) with fetchMock so nothing hits the network."
       },
       {
-        "id": 4,
+        "id": "4",
         "title": "OpenAPI 3.1 spec at /openapi.json generated from the zod schemas",
         "description": "Make the zod schemas the single source of truth by auto-generating an OpenAPI 3.1 document served at /openapi.json, covering every /v1 route with per-source paths derived from the registry — the same spec later feeds the Scalar docs embed and validates the MCP tool surface.",
         "details": "Preferred approach: `@hono/zod-openapi` (Hono's official zod-to-OpenAPI integration, supports OpenAPI 3.1 via `app.doc31`/`getOpenAPI31Document`) — define routes with `createRoute({ method, path, request: { params, query }, responses })` and mount on an `OpenAPIHono` app. Alternative if migrating existing routes is too invasive: keep plain Hono routes and build the document with `@asteasolutions/zod-to-openapi`'s OpenApiGeneratorV31, registering each registry entry programmatically. Either way (ask before adding the dependency per CLAUDE.md; it's PRD-mandated so flag not block):\n1. For each registry source, generate `GET /v1/data/{slug}` path items with query parameters from `source.queryParams` + pagination params, and response schema `envelope(array(recordSchema))` — iterate the registry at spec-build time so new sources appear automatically.\n2. Document /v1/health, /v1/usage, /v1/keys, /v1/waitlist as they land (later tasks extend the same generator — keep a `registerRoute` helper so each task adds its own spec entry).\n3. Add bearer/api-key securityScheme (`Authorization: Bearer <key>`), error-envelope component schema, and X-Credits-Remaining response-header documentation.\n4. Serve at `GET /openapi.json` with long cache headers; include `info.version` from package.json, server URL from env (placeholder domain until purchased).\nNote zod v4 also offers native `z.toJSONSchema()` — use it only if the chosen integration lags zod v4 support; pin whatever combination works and record why.",
         "testStrategy": "Integration test fetches /openapi.json and asserts: valid JSON, `openapi: \"3.1.x\"`, a path exists for every registry slug (add a source in test → path appears), query params in the spec match the source's queryParams shape, and the security scheme is present. Validate the document in CI with a spec validator (e.g. `@seriousme/openapi-schema-validator` in a unit test) to catch generation regressions.",
         "priority": "high",
         "dependencies": [
-          2
+          "2"
         ],
         "status": "pending",
         "subtasks": [
@@ -208,7 +237,8 @@
             "dependencies": [],
             "details": "Check the installed zod version in package.json first, since the zod v4 vs openapi-library compatibility churn is the main risk. For @hono/zod-openapi: confirm it supports OpenAPI 3.1 output via app.doc31/getOpenAPI31Document and works with the project's zod version; assess how invasive migrating existing /v1 route definitions to OpenAPIHono would be. For @asteasolutions/zod-to-openapi: confirm OpenApiGeneratorV31 compatibility and that plain Hono routes can stay untouched. Fall back to zod v4 native z.toJSONSchema only if both integrations lag zod v4 support. Pin exact versions of whatever combination works. Record the decision, the version-compatibility rationale, and any known caveats in a short ADR-style note (e.g. docs/decisions or a comment block near the generator module). The dependency is PRD-mandated, so per CLAUDE.md flag it to the user rather than silently adding it — surface the choice and proceed once acknowledged.",
             "status": "pending",
-            "testStrategy": "No automated tests for this subtask; acceptance is a recorded decision note with pinned versions, plus `npm run typecheck` and `npm run build` passing after the dependency is added, proving the chosen library resolves and bundles cleanly on Workers."
+            "testStrategy": "No automated tests for this subtask; acceptance is a recorded decision note with pinned versions, plus `npm run typecheck` and `npm run build` passing after the dependency is added, proving the chosen library resolves and bundles cleanly on Workers.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -219,7 +249,8 @@
             ],
             "details": "Create src/routes/openapi.ts (or equivalent module per the chosen approach from subtask 1). Iterate the registry from src/sources at document-build time — never hardcode slugs — so adding a source file plus registry entry automatically produces its path item. For each source: derive query parameter schemas from source.queryParams zod shapes, append the shared pagination parameters, and set the 200 response schema to the success envelope wrapping an array of the source's recordSchema. Design a registerRoute(routeSpec) helper that appends arbitrary route definitions (method, path, request schemas, responses) into the same document, and use it to document /v1/health now; tasks for /v1/usage, /v1/keys, and /v1/waitlist will call it as those endpoints land. Keep the generator a pure function of (registry, extra registered routes) → document object so it is trivially testable without a running Worker.",
             "status": "pending",
-            "testStrategy": "Unit test the generator function directly: assert one path per registry slug exists, that a synthetic source added to a test registry appears as /v1/data/{slug}, that its query parameters match the source's queryParams keys/types, and that registerRoute entries (e.g. /v1/health) show up in the paths object."
+            "testStrategy": "Unit test the generator function directly: assert one path per registry slug exists, that a synthetic source added to a test registry appears as /v1/data/{slug}, that its query parameters match the source's queryParams keys/types, and that registerRoute entries (e.g. /v1/health) show up in the paths object.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -230,7 +261,8 @@
             ],
             "details": "Add components.securitySchemes with an HTTP bearer scheme documenting `Authorization: Bearer <key>` and apply it as the default security requirement on /v1 data routes (health/waitlist stay public). Register the error-envelope zod schema as a named component and reference it from 4xx/5xx responses. Document the X-Credits-Remaining response header on metered routes via a reusable header component. Set info.version by importing package.json's version (with tsconfig resolveJsonModule or an equivalent build-time constant) and info.title/description for the API. Set servers[0].url from an environment value with a placeholder domain until the real domain is purchased. Mount GET /openapi.json in the Hono app returning the document as application/json with long-lived Cache-Control headers (e.g. public, max-age=3600 or longer since the document only changes on deploy); build the document once per isolate rather than per request.",
             "status": "pending",
-            "testStrategy": "Integration test via vitest-pool-workers SELF.fetch: GET /openapi.json returns 200 application/json with a Cache-Control header, the parsed body has openapi starting with \"3.1\", info.version equals package.json's version, components.securitySchemes contains the bearer scheme, and the error-envelope component plus X-Credits-Remaining header documentation are present."
+            "testStrategy": "Integration test via vitest-pool-workers SELF.fetch: GET /openapi.json returns 200 application/json with a Cache-Control header, the parsed body has openapi starting with \"3.1\", info.version equals package.json's version, components.securitySchemes contains the bearer scheme, and the error-envelope component plus X-Credits-Remaining header documentation are present.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -242,20 +274,24 @@
             ],
             "details": "Unit layer (pure generator from subtask 2): for every registry entry assert a /v1/data/{slug} path exists; construct a test registry containing an extra synthetic source and assert its path appears without any generator changes; for each source compare the spec's query parameter names, types, and required flags against the source's queryParams zod shape programmatically rather than via snapshots so drift fails loudly. Integration layer (vitest-pool-workers): fetch /openapi.json and assert valid JSON, openapi \"3.1.x\", presence of the security scheme, and paths for all registered routes. CI validation: run an OpenAPI 3.1-aware validator (e.g. @seriousme/openapi-schema-validator or @redocly/cli lint) against the generated document — either inside a vitest test that imports the validator, or as a dedicated script (npm run validate:openapi) invoked from the GitHub Actions workflow alongside lint/typecheck/test. Prefer the in-test approach so `npm test` alone catches an invalid document locally.",
             "status": "pending",
-            "testStrategy": "This subtask is the test work itself: acceptance is `npm test` passing with the new unit and integration suites, a deliberately broken schema (e.g. renamed queryParam in a test fixture) failing the parity test, and the CI workflow failing when the document violates the OpenAPI 3.1 meta-schema."
+            "testStrategy": "This subtask is the test work itself: acceptance is `npm test` passing with the new unit and integration suites, a deliberately broken schema (e.g. renamed queryParam in a test fixture) failing the parity test, and the CI workflow failing when the document violates the OpenAPI 3.1 meta-schema.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 6,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Split into: (1) evaluate and pin the generation approach — @hono/zod-openapi (route migration to OpenAPIHono) vs @asteasolutions/zod-to-openapi (programmatic document build over existing plain-Hono routes) vs zod v4 native z.toJSONSchema; record the decision and version-compatibility rationale, and flag the new dependency per the ask-first house rule; (2) implement registry-driven path generation — iterate sources at spec-build time producing GET /v1/data/{slug} entries with queryParams + pagination parameters and envelope(array(recordSchema)) responses, plus a registerRoute helper so later tasks (usage, keys, waitlist) self-register their spec entries; (3) add the bearer securityScheme, error-envelope component, X-Credits-Remaining header docs, info.version from package.json, and serve GET /openapi.json with long cache headers; (4) write tests: registry slug → path presence (including add-a-source-in-test), query-param shape parity with the zod schemas, and document validation via a spec validator in CI."
       },
       {
-        "id": 5,
+        "id": "5",
         "title": "uk-tenders second source (Find a Tender OCDS) proving the abstraction",
         "description": "Add the second seed DataSource: UK procurement notices from Find a Tender's official OCDS JSON API, normalized from nested OCDS releases to a flat queryable schema, with daily refresh — proving that a differently-shaped origin costs exactly one file plus a registry entry.",
         "details": "src/sources/uk-tenders.ts only (plus fixture + registry entry — if anything else needs touching, that's a design bug to fix in the abstraction first, per PRD).\n1. fetchFresh(): call Find a Tender's OCDS release endpoint (`https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages` — verify current version/path at implementation time), page through release packages (cursor/date-window params), flatten each OCDS release → `{ ocid, notice_id, title, description, buyer_name, procurement_method, main_category, cpv_codes, value_amount, value_currency, published_at, deadline_at, status }`. OCDS is deeply nested (releases[].tender.*, parties[]) — the flattening lives entirely in this file.\n2. recordSchema validates the flat shape; `.strip()` unknown keys. queryParams: buyer, cpv, min_value/max_value, published_after, status, q. refresh: daily cron, cacheTtlSeconds 86400. Fixture fallback `fixtures/uk-tenders.json` for offline dev, same pattern as uk-planning.\n3. Register in registry.ts. Confirm it automatically appears in /v1/data/uk-tenders, the sources listing, and /openapi.json with zero route/spec code changes — that confirmation is the point of the task.\n4. Retire/relocate the task-2 demo source to test fixtures if still registered.",
         "testStrategy": "Unit: OCDS release-package fixture (copy a real API response) → flattened records snapshot test; schema validation catches missing ocid/title; value/date coercions correct. Integration: /v1/data/uk-tenders serves fixture-backed data with filters (buyer, published_after) working through the generic filter engine; /openapi.json contains the uk-tenders path without any spec-code change (assert in test). Cron refresh writes a refresh_log row for uk-tenders alongside uk-planning.",
         "priority": "medium",
         "dependencies": [
-          3,
-          4
+          "3",
+          "4"
         ],
         "status": "pending",
         "subtasks": [
@@ -266,7 +302,8 @@
             "dependencies": [],
             "details": "Hit `https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages` (verify the version segment and path are still current — check the official Find a Tender API docs if the request 404s or redirects). Record: (a) the exact working URL and required headers, (b) how paging works — cursor param, `links.next` URL, and/or `updatedFrom`/`updatedTo` date-window params — and any page-size limits or rate limits, (c) the response envelope shape (releasePackage → releases[]). Save one real page containing several releases with varied shapes (releases with and without tender.value, multiple parties[], missing deadlines, different statuses) as `fixtures/uk-tenders.json`, following the same fixture pattern as uk-planning. Note in a comment or the task log any fields that are inconsistently present, since the flattening in the next subtask must tolerate them. No personal data should be present in OCDS notices, but scan the captured fixture for contact-person fields (parties[].contactPoint) and strip them per the Blind Mode rule before committing.",
             "status": "pending",
-            "testStrategy": "Manual verification: the documented URL returns 200 with a valid OCDS release package; the saved fixture parses as JSON and contains ≥5 releases with at least one release exhibiting each edge case (missing value, multiple parties, absent deadline). Confirm contactPoint/personal fields are absent from the committed fixture."
+            "testStrategy": "Manual verification: the documented URL returns 200 with a valid OCDS release package; the saved fixture parses as JSON and contains ≥5 releases with at least one release exhibiting each edge case (missing value, multiple parties, absent deadline). Confirm contactPoint/personal fields are absent from the committed fixture.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -277,7 +314,8 @@
             ],
             "details": "Create `src/sources/uk-tenders.ts` implementing the DataSource interface from src/sources/types.ts. fetchFresh(env): loop over release packages using the cursor/date-window mechanism documented in subtask 1, with a sane page cap; for each release produce `{ ocid, notice_id, title, description, buyer_name, procurement_method, main_category, cpv_codes, value_amount, value_currency, published_at, deadline_at, status }`. Flattening rules live entirely in this file: buyer_name from parties[] where roles includes 'buyer' (fall back to release.buyer.name), title/description/procurement_method/main_category from releases[].tender.*, cpv_codes from tender.items[].classification + additionalClassifications (CPV scheme), value_amount/value_currency from tender.value, published_at from release.date, deadline_at from tender.tenderPeriod.endDate, status from tender.status. Coerce dates to ISO strings and amounts to numbers; tolerate missing fields with nulls rather than throwing. recordSchema is a zod object matching that shape with `.strip()` for unknown keys. queryParams: buyer, cpv, min_value, max_value, published_after, status, q. refresh: `{ cron: daily, cacheTtlSeconds: 86400 }`. Do not touch any file outside src/sources/ — if the interface can't express something needed here, stop and fix the abstraction (task 2/3 design bug) first.",
             "status": "pending",
-            "testStrategy": "Unit tests: feed fixtures/uk-tenders.json through the flattening and snapshot the resulting records; assert schema validation rejects records missing ocid/title; assert value/date coercions (string amounts → number, dates → ISO) and null-tolerance for absent deadline/value; assert unknown keys are stripped."
+            "testStrategy": "Unit tests: feed fixtures/uk-tenders.json through the flattening and snapshot the resulting records; assert schema validation rejects records missing ocid/title; assert value/date coercions (string amounts → number, dates → ISO) and null-tolerance for absent deadline/value; assert unknown keys are stripped.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -288,7 +326,8 @@
             ],
             "details": "Add one import + one entry for uk-tenders in `src/sources/registry.ts` — that entry plus the source file must be the entire cost of the new dataset. Wire the fixture fallback so fetchFresh failures (or a local-dev flag) serve `fixtures/uk-tenders.json`, mirroring exactly the mechanism uk-planning uses; if uk-planning's fallback pattern can't be reused verbatim, that's an abstraction bug to fix in the shared code first, not to work around here. Then retire the demo source created in task 2: if it is still registered, remove it from registry.ts and relocate its definition to the test fixtures/helpers directory so registry/route/spec tests can keep using it, updating test imports accordingly. Verify `npm run dev` serves /v1/data/uk-tenders from the fixture offline and that the demo source no longer appears in the public sources listing.",
             "status": "pending",
-            "testStrategy": "Integration: with network access stubbed/unavailable, GET /v1/data/uk-tenders returns fixture-backed records in the standard envelope; the sources listing includes uk-tenders and excludes the demo source; existing task-2/3 tests still pass using the relocated demo source."
+            "testStrategy": "Integration: with network access stubbed/unavailable, GET /v1/data/uk-tenders returns fixture-backed records in the standard envelope; the sources listing includes uk-tenders and excludes the demo source; existing task-2/3 tests still pass using the relocated demo source.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -299,19 +338,23 @@
             ],
             "details": "In the vitest Workers-pool suite: (1) snapshot test of the flattened records produced from fixtures/uk-tenders.json (locks the OCDS mapping); (2) integration tests via SELF.fetch against /v1/data/uk-tenders exercising buyer, cpv, min_value/max_value, published_after, status, and q filters plus pagination — all served by the generic engine from task 2 with no uk-tenders-specific route code; (3) fetch /openapi.json and assert a /v1/data/uk-tenders path exists whose query parameters match the source's queryParams shape, proving the task-4 generator picked the new source up automatically; (4) trigger the scheduled handler (or call the refresh path directly) and assert refresh_log gains rows for both uk-planning and uk-tenders. Finally, encode the isolation guarantee: a test (or CI check) that diffs the branch against its merge-base and fails if files outside `src/sources/`, `fixtures/`, and the test directories were modified — e.g. shelling out to `git diff --name-only` in a node-side check script — making 'one file plus a registry entry' an asserted property rather than a claim.",
             "status": "pending",
-            "testStrategy": "This subtask IS the test work; its own acceptance is: `npm test` green with the new suite included, snapshot committed, all six filters covered by at least one assertion each, the openapi assertion failing if the registry entry is removed (verified once by temporarily commenting it out), and the isolation diff-check passing on the final branch."
+            "testStrategy": "This subtask IS the test work; its own acceptance is: `npm test` green with the new suite included, snapshot committed, all six filters covered by at least one assertion each, the openapi assertion failing if the registry entry is removed (verified once by temporarily commenting it out), and the isolation diff-check passing on the final branch.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 5,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Split into: (1) capture a real Find a Tender OCDS release-package response as a fixture and verify the current API path/version and paging params (cursor/date-window); (2) implement src/sources/uk-tenders.ts — fetchFresh paging loop and the OCDS flattening (releases[].tender.*, parties[] buyer extraction, value/currency, CPV codes, deadlines) into the flat record shape, with the recordSchema using .strip() and queryParams (buyer, cpv, min/max_value, published_after, status, q); (3) register in registry.ts, add the fixture fallback, and relocate the task-2 demo source to test fixtures; (4) write the proof-of-abstraction tests: flattening snapshot against the fixture, filters working through the generic engine, /openapi.json containing the uk-tenders path with zero spec-code changes, and refresh_log rows for both sources — explicitly assert nothing outside src/sources/ changed."
       },
       {
-        "id": 6,
+        "id": "6",
         "title": "D1 core schema, API key issuance, auth middleware, and revocation",
         "description": "Ship the account primitives: D1 migrations for api_keys/credit_ledger/stripe_customers, POST /v1/keys self-serve issuance (email in, key shown once, SHA-256 hash at rest), bearer-auth middleware with KV hot-path lookup of hash→key-record, and revocation support.",
         "details": "1. `migrations/0002_accounts.sql`: `api_keys(id TEXT PRIMARY KEY, key_hash TEXT UNIQUE, email TEXT, name TEXT, plan TEXT DEFAULT 'free', credits_granted INTEGER DEFAULT 250, created_at TEXT, revoked_at TEXT)`; `credit_ledger(id INTEGER PRIMARY KEY, key_id TEXT, delta INTEGER, reason TEXT, stripe_ref TEXT, created_at TEXT)` (append-only — no UPDATEs ever); `stripe_customers(stripe_customer_id TEXT PRIMARY KEY, key_id TEXT, plan TEXT, status TEXT, updated_at TEXT)`.\n2. src/auth/keys.ts: `generateKey()` → `fapi_<32 chars base62 from crypto.getRandomValues>`; `hashKey(key)` → hex SHA-256 via `crypto.subtle.digest`. `POST /v1/keys` (src/routes/keys.ts): body `{ email, name? }` validated by zod; insert api_keys row with free plan + initial `credit_ledger` grant (+250, reason 'free_tier'); return the raw key exactly once in the response with an explicit \"store this now\" message. Light per-IP rate limit on this endpoint (RATE KV) to stop key-farming.\n3. src/auth/middleware.ts: extract `Authorization: Bearer <key>`; hash; lookup KV `key:<hash>` → key-record JSON (id, plan, revoked). On KV miss, fall back to D1 `SELECT ... WHERE key_hash = ?`, then populate KV (TTL ~1h). Missing/unknown/revoked key → 401 error envelope. Attach `keyCtx` to Hono context Variables for logging + metering. Apply to /v1/data/* and /v1/usage; leave /v1/health, /openapi.json, /v1/keys, /v1/waitlist public.\n4. Revocation: `DELETE /v1/keys` (self, authed) and an `ADMIN_TOKEN`-guarded admin variant; set revoked_at in D1 AND delete/overwrite the KV entry so revocation is immediate despite the cache.\n5. Add `.dev.vars.example` documenting `ADMIN_TOKEN` (secrets never in .env per CLAUDE.md).",
         "testStrategy": "Integration (pool-workers with real D1/KV bindings): POST /v1/keys returns a fapi_-prefixed key and the raw key never appears in D1 (assert only the hash is stored); authed request to /v1/data/:source succeeds; bad/missing key → 401 envelope; revoked key → 401 immediately (KV entry cleared); KV-miss path falls back to D1 and repopulates KV (spy via KV list). Unit: hashKey is deterministic hex; generateKey entropy/format.",
         "priority": "high",
         "dependencies": [
-          1
+          "1"
         ],
         "status": "pending",
         "subtasks": [
@@ -322,7 +365,8 @@
             "dependencies": [],
             "details": "Create `migrations/0002_accounts.sql` containing: `api_keys(id TEXT PRIMARY KEY, key_hash TEXT UNIQUE, email TEXT, name TEXT, plan TEXT DEFAULT 'free', credits_granted INTEGER DEFAULT 250, created_at TEXT, revoked_at TEXT)`; `credit_ledger(id INTEGER PRIMARY KEY, key_id TEXT, delta INTEGER, reason TEXT, stripe_ref TEXT, created_at TEXT)` — append-only by convention, add a header comment stating no UPDATEs/DELETEs are ever issued against it since tasks 7 and 8 depend on that invariant; `stripe_customers(stripe_customer_id TEXT PRIMARY KEY, key_id TEXT, plan TEXT, status TEXT, updated_at TEXT)`. Add an index on `credit_ledger(key_id)` for balance queries. Apply locally with `wrangler d1 migrations apply` (local only — production apply is an ask-first operation per CLAUDE.md). Verify the vitest-pool-workers harness picks up migrations so later subtasks can test against real D1.",
             "status": "pending",
-            "testStrategy": "Apply the migration to the local D1 database and assert via `wrangler d1 execute --local` (or a pool-workers test querying sqlite_master) that all three tables exist with the expected columns, that api_keys.key_hash carries a UNIQUE constraint (duplicate insert fails), and that plan/credits_granted defaults populate on insert."
+            "testStrategy": "Apply the migration to the local D1 database and assert via `wrangler d1 execute --local` (or a pool-workers test querying sqlite_master) that all three tables exist with the expected columns, that api_keys.key_hash carries a UNIQUE constraint (duplicate insert fails), and that plan/credits_granted defaults populate on insert.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -331,7 +375,8 @@
             "dependencies": [],
             "details": "In `src/auth/keys.ts` export (named exports, explicit return types per CLAUDE.md): `generateKey(): string` producing `fapi_` + 32 base62 chars ([0-9A-Za-z]) sourced from `crypto.getRandomValues(new Uint8Array(...))` — use rejection sampling or an unbiased mapping so the base62 distribution isn't skewed by modulo bias; and `hashKey(key: string): Promise<string>` returning lowercase hex SHA-256 via `crypto.subtle.digest('SHA-256', new TextEncoder().encode(key))`. Keep this module free of Hono/D1/KV imports so it stays unit-testable in isolation.",
             "status": "pending",
-            "testStrategy": "Unit tests (vitest Workers pool): generateKey output matches /^fapi_[0-9A-Za-z]{32}$/ across many iterations; consecutive calls differ; hashKey is deterministic (same input → same 64-char lowercase hex), differs for different inputs, and matches a known SHA-256 test vector."
+            "testStrategy": "Unit tests (vitest Workers pool): generateKey output matches /^fapi_[0-9A-Za-z]{32}$/ across many iterations; consecutive calls differ; hashKey is deterministic (same input → same 64-char lowercase hex), differs for different inputs, and matches a known SHA-256 test vector.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -343,7 +388,8 @@
             ],
             "details": "In `src/routes/keys.ts`: zod schema `{ email: z.string().email(), name: z.string().optional() }` — invalid body → 400 in the task-1 error envelope. Handler: call generateKey(), hashKey(); insert api_keys row (id via crypto.randomUUID(), key_hash, email, name, plan 'free', credits_granted 250, created_at ISO) and a credit_ledger row (key_id, delta +250, reason 'free_tier') — use `env.DB.batch()` so key and grant land together. Response includes the raw key exactly once plus an explicit \"store this now — it cannot be shown again\" message; the raw key must never be logged or persisted. Per-IP rate limit using RATE KV keyed on CF-Connecting-IP with a short-window counter (e.g. 5 keys/hour/IP via TTL'd key) → 429 envelope when exceeded. Mount on the app as a public route (no auth middleware). This route stays niche-agnostic — no dataset-specific logic per the isolation rule.",
             "status": "pending",
-            "testStrategy": "Integration (pool-workers, SELF.fetch with real D1/KV): successful POST returns a fapi_-prefixed key and the warning message; querying D1 shows only the hash at rest (raw key appears nowhere); a matching +250 free_tier ledger row exists; invalid email → 400 envelope; repeated requests from one IP beyond the limit → 429."
+            "testStrategy": "Integration (pool-workers, SELF.fetch with real D1/KV): successful POST returns a fapi_-prefixed key and the warning message; querying D1 shows only the hash at rest (raw key appears nowhere); a matching +250 free_tier ledger row exists; invalid email → 400 envelope; repeated requests from one IP beyond the limit → 429.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -356,7 +402,8 @@
             ],
             "details": "In `src/auth/middleware.ts`: parse `Authorization: Bearer <key>`; missing/malformed header → 401 envelope immediately. Hash via hashKey, then get KV `key:<hash>` from CACHE expecting key-record JSON `{ id, plan, revoked }`. On KV miss, fall back to D1 `SELECT id, plan, revoked_at FROM api_keys WHERE key_hash = ?`; if found, write the record back to KV with `expirationTtl: 3600`; if not found → 401. A record with revoked set (from either layer) → 401 with a distinct message but the same envelope shape. On success set `c.set('keyCtx', { id, plan })` and type it in the Hono Variables generic so metering (task 7) and logging consume it type-safely. Wire into src/index.ts so /v1/data/* and /v1/usage are guarded while /v1/health, /openapi.json, /v1/keys, and /v1/waitlist remain public.",
             "status": "pending",
-            "testStrategy": "Integration: freshly issued key → authed /v1/data/:source request succeeds; no/garbage/unknown key → 401 envelope; KV-miss path — delete the KV entry, request still succeeds via D1 fallback and the KV entry reappears with TTL; public routes respond without any Authorization header; keyCtx values surface correctly downstream (e.g. via a test route or log assertion)."
+            "testStrategy": "Integration: freshly issued key → authed /v1/data/:source request succeeds; no/garbage/unknown key → 401 envelope; KV-miss path — delete the KV entry, request still succeeds via D1 fallback and the KV entry reappears with TTL; public routes respond without any Authorization header; keyCtx values surface correctly downstream (e.g. via a test route or log assertion).",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -368,20 +415,24 @@
             ],
             "details": "Self-serve: `DELETE /v1/keys` runs behind the auth middleware and revokes the caller's own key — `UPDATE api_keys SET revoked_at = ? WHERE id = ?` then `env.CACHE.delete('key:<hash>')` (recompute the hash from the presented bearer key) so the stale cached record cannot outlive revocation. Admin variant (e.g. `DELETE /v1/keys/:id` or admin route) guarded by comparing a bearer/header token against the `ADMIN_TOKEN` secret; it must also clear the KV entry, which requires reading key_hash from D1 by id. Order matters: update D1 first, then delete KV. Create `.dev.vars.example` documenting `ADMIN_TOKEN` (Worker runtime secrets live in .dev.vars locally / wrangler secret put in prod — never .env, never committed, per CLAUDE.md); ensure .dev.vars is gitignored. Then write the task-6 integration suite from the parent testStrategy.",
             "status": "pending",
-            "testStrategy": "Integration (pool-workers): issue key → authed request succeeds → DELETE /v1/keys → the very next request with the same key returns 401 (assert the KV entry is gone, proving cache invalidation not TTL expiry); revoked_at populated in D1; admin revocation works only with the correct ADMIN_TOKEN (wrong/missing → 401/403); full sweep asserting the raw key never appears in any D1 column; KV-miss → D1 fallback → repopulation regression test."
+            "testStrategy": "Integration (pool-workers): issue key → authed request succeeds → DELETE /v1/keys → the very next request with the same key returns 401 (assert the KV entry is gone, proving cache invalidation not TTL expiry); revoked_at populated in D1; admin revocation works only with the correct ADMIN_TOKEN (wrong/missing → 401/403); full sweep asserting the raw key never appears in any D1 column; KV-miss → D1 fallback → repopulation regression test.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 7,
+        "recommendedSubtasks": 5,
+        "expansionPrompt": "Split into: (1) migrations/0002_accounts.sql — api_keys (key_hash UNIQUE), append-only credit_ledger, stripe_customers — coordinating with the migration numbering/workflow established in task 3; (2) src/auth/keys.ts crypto primitives — generateKey (fapi_ prefix, base62 from crypto.getRandomValues) and hashKey (hex SHA-256 via crypto.subtle) with unit tests for format and determinism; (3) POST /v1/keys issuance route — zod-validated body, D1 insert + initial +250 free_tier ledger grant, raw key returned exactly once, per-IP rate limit on RATE KV against key-farming; (4) src/auth/middleware.ts — bearer extraction, hash, KV `key:<hash>` hot-path lookup with D1 fallback + KV repopulation (TTL ~1h), 401 envelope for missing/unknown/revoked, keyCtx attached to context Variables, applied to /v1/data/* while health/openapi/keys/waitlist stay public; (5) revocation — DELETE /v1/keys self-serve plus ADMIN_TOKEN-guarded variant, setting revoked_at AND clearing the KV entry so revocation is immediate, with .dev.vars.example documenting ADMIN_TOKEN, and the integration tests (hash-only at rest, KV-miss fallback path, immediate revocation)."
       },
       {
-        "id": 7,
+        "id": "7",
         "title": "Credit metering, free-tier quota, usage endpoint, and rate limiting",
         "description": "Meter every authenticated request: per-route credit costs debited against KV monthly counters, free tier of 250 req/month enforced, X-Credits-Remaining and upgrade-nudge headers, GET /v1/usage self-service endpoint, 80%/100% usage-alert thresholds, and best-effort per-key/per-IP rate limits.",
         "details": "src/metering/:\n1. costs.ts: `creditCost(route, source?)` — default 1 credit per data request (source.creditCost override), 0 for /v1/health, /v1/usage, /openapi.json.\n2. counters.ts: KV key `usage:<keyId>:<yyyymm>` on CACHE; `incrementUsage(env, keyId, cost)` read-modify-write (accepted race: KV is eventually consistent, best-effort per PRD — document the Durable Objects upgrade path in a code comment + runbook, do NOT build it).\n3. middleware.ts (runs after auth): compute balance = plan quota (`api_keys.credits_granted` + ledger top-ups cached in the KV key-record) − month usage. If exhausted → 402-style envelope (`code: \"quota_exceeded\"`, docs_url to pricing). Otherwise increment, then set headers on every metered response: `X-Credits-Remaining`, `X-Credits-Limit`, and at ≥80%/100% an `X-Upgrade-Nudge: <pricing docs url>` header + `meta.usage_alert: \"80\"|\"100\"` in the envelope (Dana's upgrade-nudge flow). Record threshold crossings in the request log.\n4. `GET /v1/usage` (authed, free): `{ plan, period: \"yyyymm\", used, granted, remaining, alerts }` — reads counter + key record only.\n5. ratelimit.ts on RATE KV: fixed-window per-key (e.g. 60 req/min) and per-IP for unauthenticated endpoints (keys issuance, waitlist); exceeding → 429 envelope with Retry-After. Best-effort by design.\n6. Feed `creditsCharged` into the task-1 structured logger.\nKeep plan quotas as data (constants module), not branching logic — pricing is launch-time config per PRD.",
         "testStrategy": "Integration: fresh key → /v1/usage shows 250 granted/0 used; N data requests decrement X-Credits-Remaining monotonically; header math matches /v1/usage; at 200/250 (80%) nudge header+meta appear; at 250 requests the 251st returns quota_exceeded envelope and no data; rate-limit test fires >60 requests in-window → 429 with Retry-After; counters roll over on month boundary (inject date). Unit: cost table, window arithmetic, balance calculation with ledger top-ups.",
         "priority": "high",
         "dependencies": [
-          2,
-          6
+          "2",
+          "6"
         ],
         "status": "pending",
         "subtasks": [
@@ -392,7 +443,8 @@
             "dependencies": [],
             "details": "Create src/metering/costs.ts. Export `creditCost(route: string, source?: DataSource): number` with explicit return type (per CLAUDE.md conventions). Structure it as a data table: a const map of zero-cost route paths (`/v1/health`, `/v1/usage`, `/openapi.json`) checked first, then `source?.creditCost ?? 1` for data requests. Add an optional `creditCost` field to the DataSource interface in src/sources/ if not already present (interface change only — no dataset-specific logic outside src/sources/<slug>.ts). In the same module (or a sibling plans.ts), export plan quota constants as data, e.g. `export const PLANS = { free: { monthlyCredits: 250 } } as const` — pricing is launch-time config per the PRD, so downstream code must read these constants, never hard-code 250 or branch on plan names.",
             "status": "pending",
-            "testStrategy": "Unit tests: creditCost returns 0 for each zero-cost route, 1 for an arbitrary /v1/data/* route with no override, and the override value when source.creditCost is set. Assert PLANS.free.monthlyCredits === 250 so a pricing change is a deliberate test update."
+            "testStrategy": "Unit tests: creditCost returns 0 for each zero-cost route, 1 for an arbitrary /v1/data/* route with no override, and the override value when source.creditCost is set. Assert PLANS.free.monthlyCredits === 250 so a pricing change is a deliberate test update.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -401,7 +453,8 @@
             "dependencies": [],
             "details": "Create src/metering/counters.ts. Export `currentPeriod(now?: Date): string` returning `yyyymm` (accept an injectable date so tests can exercise month rollover), `getUsage(env: Env, keyId: string, period: string): Promise<number>` reading the CACHE KV value (missing key → 0), and `incrementUsage(env: Env, keyId: string, cost: number, period?: string): Promise<number>` doing get → add → put and returning the new total. Zero-cost calls should short-circuit without a KV write. Add a prominent code comment: KV read-modify-write races under concurrency and KV is eventually consistent — this is accepted best-effort metering per the PRD; the strict-accuracy upgrade path is a Durable Object per key serializing increments (describe it, do NOT build it). Mirror that note in docs/RUNBOOK.md (create or append a 'Metering accuracy' section). Month rollover needs no cleanup logic — a new month simply starts a fresh key; optionally set a KV expirationTtl of ~60 days so stale counters self-expire.",
             "status": "pending",
-            "testStrategy": "Unit tests via vitest-pool-workers with the real KV binding: increment from empty key returns cost; repeated increments accumulate; getUsage on a missing key returns 0; currentPeriod formats correctly and an injected date in a different month yields a different key (rollover isolation). Verify the DO-upgrade comment exists (code review, not automated)."
+            "testStrategy": "Unit tests via vitest-pool-workers with the real KV binding: increment from empty key returns cost; repeated increments accumulate; getUsage on a missing key returns 0; currentPeriod formats correctly and an injected date in a different month yields a different key (rollover isolation). Verify the DO-upgrade comment exists (code review, not automated).",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -413,7 +466,8 @@
             ],
             "details": "Create src/metering/middleware.ts as Hono middleware mounted after the task-6 auth middleware (which puts the key record on context). Flow: (a) `cost = creditCost(route, source)`; if 0, pass through but still set informational credit headers where cheap to do so; (b) `granted` = credits_granted + cached ledger top-ups from the KV key-record (do not query D1 on the hot path); (c) `used = getUsage(...)` for `currentPeriod()`; (d) if `used + cost > granted`, respond with the shared error envelope from task 1 — `code: \"quota_exceeded\"`, a docs_url pointing at the pricing page, HTTP 402 — and do not increment or serve data; (e) otherwise `incrementUsage`, then set `X-Credits-Remaining` (granted − new used, floored at 0) and `X-Credits-Limit: granted` on the response. Threshold logic: when new usage ≥ 80% or ≥ 100% of granted, add `X-Upgrade-Nudge: <pricing docs url>` and `meta.usage_alert: \"80\" | \"100\"` in the response envelope (Dana's upgrade-nudge flow); detect *crossings* (previous total below threshold, new total at/above) and record them in the task-1 structured request log. Always feed `creditsCharged` into the structured logger entry for the request. Keep all quota numbers sourced from the subtask-1 constants.",
             "status": "pending",
-            "testStrategy": "Integration via SELF.fetch with a seeded key: metered response carries both credit headers with correct arithmetic; exhausted key gets the 402 quota_exceeded envelope with docs_url and no data body; requests crossing 80% and 100% gain the nudge header and meta.usage_alert; log output (spy on console) includes creditsCharged and threshold-crossing entries; zero-cost routes never decrement the counter."
+            "testStrategy": "Integration via SELF.fetch with a seeded key: metered response carries both credit headers with correct arithmetic; exhausted key gets the 402 quota_exceeded envelope with docs_url and no data body; requests crossing 80% and 100% gain the nudge header and meta.usage_alert; log output (spy on console) includes creditsCharged and threshold-crossing entries; zero-cost routes never decrement the counter.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -426,7 +480,8 @@
             ],
             "details": "Add the route in src/routes/ (e.g. src/routes/usage.ts registered in the /v1 group) behind the auth middleware but exempt from debiting — this falls out naturally because subtask 1 lists /v1/usage as a 0-cost route. Handler: read the key record from context (plan, credits_granted + cached top-ups), read the month counter via `getUsage(env, keyId, currentPeriod())`, and return `{ plan, period, used, granted, remaining: max(0, granted - used), alerts }` where `alerts` reflects thresholds already reached this period (e.g. [\"80\"] or [\"80\",\"100\"]) derived from used/granted — consistent with the middleware's threshold math (share the threshold helper from src/metering/ rather than duplicating it). Define a zod schema for the response body so it flows into the OpenAPI 3.1 spec and MCP tool definitions per the single-source-of-truth convention. Response must be shaped so header math from subtask 3 and this endpoint always agree (same granted/used inputs, same helpers).",
             "status": "pending",
-            "testStrategy": "Integration: fresh key → 200 with plan free, used 0, granted 250, remaining 250, empty alerts; after N metered requests, `used`/`remaining` match the last response's X-Credits-Remaining exactly; after crossing 80%, alerts includes \"80\"; unauthenticated request → 401 envelope; calling /v1/usage repeatedly never changes `used`."
+            "testStrategy": "Integration: fresh key → 200 with plan free, used 0, granted 250, remaining 250, empty alerts; after N metered requests, `used`/`remaining` match the last response's X-Credits-Remaining exactly; after crossing 80%, alerts includes \"80\"; unauthenticated request → 401 envelope; calling /v1/usage repeatedly never changes `used`.",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -438,19 +493,23 @@
             ],
             "details": "src/metering/ratelimit.ts: `rateLimit({ scope, limit, windowSeconds })` Hono middleware factory. Window key `rl:<scope>:<id>:<windowStart>` on the RATE binding where id is the keyId (per-key) or client IP from CF-Connecting-IP (per-IP); get → increment → put with `expirationTtl: windowSeconds * 2`. On exceed: 429 with the shared error envelope (`code: \"rate_limited\"`) and a `Retry-After` header of seconds until window end. Comment that fixed-window + KV eventual consistency makes this best-effort by design (PRD-accepted; same DO upgrade path as counters). Mount per-key limiting after auth on /v1 data routes and per-IP limiting on the unauthenticated key-issuance and waitlist endpoints. Then the integration suite (vitest-pool-workers, SELF.fetch, seeded free-tier key with 250 credits): (1) X-Credits-Remaining decreases by exactly 1 per data request, monotonically, and matches GET /v1/usage after each batch; (2) request 200 (80%) is the first response carrying X-Upgrade-Nudge and meta.usage_alert \"80\"; request 250 carries \"100\"; (3) request 251 returns the quota_exceeded 402 envelope with no data and the counter stops advancing; (4) with an injected date rolled to the next month, the same key serves requests again from a fresh counter and /v1/usage shows the new period; (5) 61 requests inside one minute-window → 429 with Retry-After, and per-IP limiting fires on the unauthenticated endpoint.",
             "status": "pending",
-            "testStrategy": "The integration suite described in details is the deliverable: quota arithmetic, header/endpoint consistency, threshold crossings at 200/250, hard stop at 251, month rollover via injected date, and both rate-limit scopes returning 429 + Retry-After. Unit-test the window-key derivation and Retry-After computation with fixed timestamps. All tests run under `npm test` with real KV bindings from the vitest Workers pool."
+            "testStrategy": "The integration suite described in details is the deliverable: quota arithmetic, header/endpoint consistency, threshold crossings at 200/250, hard stop at 251, month rollover via injected date, and both rate-limit scopes returning 429 + Retry-After. Unit-test the window-key derivation and Retry-After computation with fixed timestamps. All tests run under `npm test` with real KV bindings from the vitest Workers pool.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 7,
+        "recommendedSubtasks": 5,
+        "expansionPrompt": "Split into: (1) src/metering/costs.ts — creditCost(route, source?) as a data table (source.creditCost override, 0-cost routes), keeping plan quotas as config constants not branching logic; (2) counters.ts — KV `usage:<keyId>:<yyyymm>` read-modify-write with the accepted eventual-consistency race documented in a code comment plus the Durable Objects upgrade path note; (3) metering middleware (after auth) — balance = granted + ledger top-ups − month usage, quota_exceeded 402 envelope when exhausted, X-Credits-Remaining/X-Credits-Limit on every metered response, 80%/100% X-Upgrade-Nudge header + meta.usage_alert, creditsCharged fed into the structured logger; (4) GET /v1/usage returning {plan, period, used, granted, remaining, alerts} from counter + key record; (5) ratelimit.ts fixed-window per-key and per-IP on RATE KV with 429 + Retry-After, applied to unauthenticated endpoints, plus the integration test suite (monotonic header decrement, threshold crossings at 200/250, hard stop at 251, month rollover via injected date, >60 req/min → 429)."
       },
       {
-        "id": 8,
+        "id": "8",
         "title": "Stripe billing: checkout sessions, idempotent webhooks to credit ledger, customer portal",
         "description": "Monetize the human channel with stripe-node on Workers: endpoint creating Checkout sessions for credit bundles (placeholder Starter $29 / Growth $99 / Scale $299), a signature-verified idempotent webhook handler mapping Stripe events to credit grants in D1 ledger + KV, a customer-portal link endpoint, and subscription lifecycle handling. Test mode only until launch.",
         "details": "1. Add `stripe` dependency. src/billing/client.ts: `new Stripe(env.STRIPE_SECRET_KEY, { httpClient: Stripe.createFetchHttpClient(), apiVersion: <pin current> })`; webhook verification with `Stripe.createSubtleCryptoProvider()` and `stripe.webhooks.constructEventAsync` (SubtleCrypto — required on Workers).\n2. Products/prices: write `docs/STRIPE-SETUP.md` + optional `scripts/stripe-setup.ts` (run manually, test mode) creating Starter/$29, Growth/$99, Scale/$299 monthly subscriptions with credit amounts in price metadata (`credits: 5000` etc.) — placeholder numbers are config, not code. Annual = 2 months free as additional prices.\n3. `POST /v1/billing/checkout` (authed): body `{ plan }` → create Checkout session (mode subscription, `client_reference_id = keyId`, success/cancel URLs from env) → return session URL. `GET /v1/billing/portal` (authed): look up stripe_customers by keyId → `billingPortal.sessions.create` → return URL (Stripe-native dunning/cancel/upgrade — no code).\n4. `POST /v1/billing/webhook` (public, signature-verified, raw body via `c.req.text()` before any parsing): handle `checkout.session.completed` (upsert stripe_customers, insert ledger grant `+credits` with `stripe_ref = event.id`, update api_keys.plan, refresh KV key-record), `invoice.paid` (recurring grant), `customer.subscription.updated/deleted` (plan change / downgrade to free). Idempotency: `INSERT ... WHERE NOT EXISTS(SELECT 1 FROM credit_ledger WHERE stripe_ref = ?)` (or unique index on stripe_ref) so replays/retries never double-credit — the append-only ledger is the audit trail; always 2xx after recording to stop Stripe retries, log unhandled event types.\n5. Metering (task 7) balance must include ledger grants — verify the KV key-record refresh propagates new credits promptly.\nSecrets: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET via .dev.vars / wrangler secret (never .env). Live-mode object creation is an ask-first op per CLAUDE.md.",
         "testStrategy": "Integration with Stripe fixture payloads (recorded test-mode events, no live API): webhook with valid test signature (compute HMAC in test) credits the ledger exactly once; replaying the same event id changes nothing (idempotency); bad signature → 400 and no mutation; subscription.deleted downgrades plan and later requests reflect reduced quota; checkout endpoint returns a session URL (stripe client mocked via fetchMock). Manual test-mode end-to-end with `stripe listen --forward-to localhost:8787` documented in STRIPE-SETUP.md.",
         "priority": "medium",
         "dependencies": [
-          7
+          "7"
         ],
         "status": "pending",
         "subtasks": [
@@ -461,7 +520,8 @@
             "dependencies": [],
             "details": "Ask the user before adding `stripe` as a dependency (CLAUDE.md ask-first rule), then `npm install stripe`. In src/billing/client.ts export `getStripe(env: CloudflareBindings): Stripe` that constructs `new Stripe(env.STRIPE_SECRET_KEY, { httpClient: Stripe.createFetchHttpClient(), apiVersion: '<pin the current stable version>' })` — the fetch HTTP client is mandatory because Workers has no Node http. Export `verifyWebhookEvent(payload: string, signature: string, secret: string): Promise<Stripe.Event>` wrapping `stripe.webhooks.constructEventAsync(payload, signature, secret, undefined, Stripe.createSubtleCryptoProvider())` — the async SubtleCrypto path is required on Workers; the sync `constructEvent` throws. Use named exports with explicit return types (strict TS). Document STRIPE_SECRET_KEY and STRIPE_WEBHOOK_SECRET in .dev.vars.example / setup docs — never in .env, never committed. No dataset-specific logic anywhere in src/billing/.",
             "status": "pending",
-            "testStrategy": "Unit test in the vitest Workers pool: getStripe returns a client without throwing under workerd (proves the fetch client + no Node-API leakage); verifyWebhookEvent resolves for a payload signed in-test with a known secret (HMAC-SHA256 computed via crypto.subtle to build a valid Stripe-Signature header) and rejects for a tampered payload."
+            "testStrategy": "Unit test in the vitest Workers pool: getStripe returns a client without throwing under workerd (proves the fetch client + no Node-API leakage); verifyWebhookEvent resolves for a payload signed in-test with a known secret (HMAC-SHA256 computed via crypto.subtle to build a valid Stripe-Signature header) and rejects for a tampered payload.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -472,7 +532,8 @@
             ],
             "details": "docs/STRIPE-SETUP.md: step-by-step test-mode instructions (Dashboard and/or CLI) creating three products with monthly recurring prices — Starter $29, Growth $99, Scale $299 — each price carrying `metadata.credits` (e.g. credits: 5000; placeholder numbers live in metadata/config, never hardcoded in Worker code), plus annual prices at 10× monthly (2 months free) with proportionally scaled credit metadata. Document how the resulting price IDs map to plan slugs consumed by the checkout endpoint (env vars or a small config module in src/billing/plans.ts), how to set STRIPE_SECRET_KEY / STRIPE_WEBHOOK_SECRET via .dev.vars and `wrangler secret put`, and how to configure the webhook endpoint + `stripe listen` for local dev. scripts/stripe-setup.ts: optional idempotent Node script (run manually with a test-mode key from .env — CLI tooling only) that creates or updates the same catalog via the API and prints the price IDs. Guard it: refuse to run if the key does not start with `sk_test_` — live-mode object creation is an ask-first operation per CLAUDE.md.",
             "status": "pending",
-            "testStrategy": "Manual verification only: run scripts/stripe-setup.ts against a test-mode key, confirm products/prices and metadata in the Stripe test Dashboard, and confirm re-running is a no-op. Verify the sk_test_ guard by attempting a run with a non-test key prefix. Doc review: every command in STRIPE-SETUP.md is copy-paste executable."
+            "testStrategy": "Manual verification only: run scripts/stripe-setup.ts against a test-mode key, confirm products/prices and metadata in the Stripe test Dashboard, and confirm re-running is a no-op. Verify the sk_test_ guard by attempting a run with a non-test key prefix. Doc review: every command in STRIPE-SETUP.md is copy-paste executable.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -484,7 +545,8 @@
             ],
             "details": "In src/routes/ (wired through src/billing/): `POST /v1/billing/checkout` behind the existing auth middleware. Validate body with a zod schema `{ plan: z.enum([...plan slugs...]) }` (zod is the single schema source of truth — 400 error envelope on invalid input). Resolve plan → price ID via the mapping from subtask 2 (env/config, not hardcoded). Call `stripe.checkout.sessions.create({ mode: 'subscription', line_items: [{ price, quantity: 1 }], client_reference_id: keyId, success_url: env.CHECKOUT_SUCCESS_URL, cancel_url: env.CHECKOUT_CANCEL_URL })` — client_reference_id carries the keyId so the webhook can link the Stripe customer back to the API key. If a stripe_customers row already exists for this keyId, pass `customer` to reuse it. Return `{ url }` in the standard success envelope. Success/cancel URLs come from env vars (documented in STRIPE-SETUP.md), never hardcoded. Stripe API failures map to a 502-style error envelope with a request-id log line, no secret leakage.",
             "status": "pending",
-            "testStrategy": "Integration via SELF.fetch with fetchMock intercepting api.stripe.com: valid plan → 200 with the mocked session URL and the outgoing request asserted to contain mode=subscription, the right price ID, and client_reference_id=keyId; unknown plan → 400 zod envelope; missing/invalid API key → 401; Stripe 5xx mock → error envelope without stack or key material."
+            "testStrategy": "Integration via SELF.fetch with fetchMock intercepting api.stripe.com: valid plan → 200 with the mocked session URL and the outgoing request asserted to contain mode=subscription, the right price ID, and client_reference_id=keyId; unknown plan → 400 zod envelope; missing/invalid API key → 401; Stripe 5xx mock → error envelope without stack or key material.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -495,7 +557,8 @@
             ],
             "details": "`GET /v1/billing/portal` behind auth middleware. Query D1 `stripe_customers` by keyId; if no row exists (never purchased), return a 404 error envelope with a message pointing at /v1/billing/checkout and a docs_url. Otherwise call `stripe.billingPortal.sessions.create({ customer: stripeCustomerId, return_url: env.PORTAL_RETURN_URL })` and return `{ url }` in the success envelope. Portal configuration (which operations are allowed) is a Dashboard concern — reference it in STRIPE-SETUP.md rather than code. Keep the handler thin: lookup, one Stripe call, envelope; upgrade/downgrade/cancel flows generate webhook events handled by subtask 5, so no lifecycle logic belongs here.",
             "status": "pending",
-            "testStrategy": "Integration: seed a stripe_customers row in the test D1, fetchMock the billingPortal.sessions.create call → 200 with mocked URL and outgoing request asserted to carry the stored customer ID; key with no stripe_customers row → 404 envelope; unauthenticated → 401. Confirm the endpoint performs no writes to D1 or KV."
+            "testStrategy": "Integration: seed a stripe_customers row in the test D1, fetchMock the billingPortal.sessions.create call → 200 with mocked URL and outgoing request asserted to carry the stored customer ID; key with no stripe_customers row → 404 envelope; unauthenticated → 401. Confirm the endpoint performs no writes to D1 or KV.",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -507,7 +570,8 @@
             ],
             "details": "`POST /v1/billing/webhook` — public, no auth middleware. Read raw body via `c.req.text()` BEFORE any JSON parsing (parsing first breaks signature verification), then `verifyWebhookEvent(rawBody, stripeSignatureHeader, env.STRIPE_WEBHOOK_SECRET)` from subtask 1; failure → 400, zero mutations. Handlers: (a) `checkout.session.completed` — upsert stripe_customers (keyId from client_reference_id ↔ session.customer), insert credit_ledger grant of the plan's credits with `stripe_ref = event.id`, update api_keys.plan, refresh the KV key-record so metering (task 7) sees the new plan/credits promptly; (b) `invoice.paid` — recurring monthly grant via customer → keyId lookup, same idempotent insert; (c) `customer.subscription.updated` — sync api_keys.plan to the new price + refresh KV; (d) `customer.subscription.deleted` — downgrade to free tier + refresh KV. Idempotency: unique index on credit_ledger.stripe_ref (D1 migration) with `INSERT OR IGNORE` / `INSERT ... WHERE NOT EXISTS(SELECT 1 FROM credit_ledger WHERE stripe_ref = ?)` so replays and retries never double-credit — the append-only ledger is the audit trail; never UPDATE balances directly. Always return 2xx once the event is recorded (including already-seen replays and unhandled types) so Stripe stops retrying; log unhandled event types with the request id. Verify with task 7's balance path that ledger grants + KV refresh surface in X-Credits-Remaining without waiting for cache expiry.",
             "status": "pending",
-            "testStrategy": "Covered exhaustively by subtask 6's fixture suite (valid-signature crediting, replay no-op, bad signature → 400 no-mutation, lifecycle downgrade). During development, smoke-test against `stripe listen --forward-to localhost:8787/v1/billing/webhook` with `stripe trigger checkout.session.completed` in test mode."
+            "testStrategy": "Covered exhaustively by subtask 6's fixture suite (valid-signature crediting, replay no-op, bad signature → 400 no-mutation, lifecycle downgrade). During development, smoke-test against `stripe listen --forward-to localhost:8787/v1/billing/webhook` with `stripe trigger checkout.session.completed` in test mode.",
+            "parentId": "undefined"
           },
           {
             "id": 6,
@@ -520,20 +584,24 @@
             ],
             "details": "test/billing/: fixture JSON payloads (recorded test-mode events, no live API) for checkout.session.completed, invoice.paid, customer.subscription.updated, customer.subscription.deleted. Signature helper: build a real `Stripe-Signature: t=<ts>,v1=<hmac>` header by computing HMAC-SHA256 over `${timestamp}.${rawBody}` with crypto.subtle and the test webhook secret — exercising actual verification, not a mocked verifier. Tests: (1) valid signed checkout.session.completed → 2xx, exactly one credit_ledger row with stripe_ref = event.id, stripe_customers upserted, api_keys.plan updated, KV key record refreshed; (2) replaying the identical event id → 2xx and zero new rows / unchanged balance (idempotency under Stripe retries); (3) tampered payload or bad signature → 400 and assert D1 + KV completely unmutated; (4) customer.subscription.deleted → plan downgraded to free and task-7 quota math reflects it; (5) invoice.paid → recurring grant exactly once; (6) checkout + portal endpoints via fetchMock on api.stripe.com per subtasks 3–4; (7) end-to-end: webhook grant then a metered data request shows the raised X-Credits-Remaining (task 7 integration). Extend docs/STRIPE-SETUP.md with the manual flow: `stripe listen --forward-to localhost:8787/v1/billing/webhook`, `stripe trigger checkout.session.completed`, then verify ledger row and /v1/usage balance.",
             "status": "pending",
-            "testStrategy": "This subtask IS the test suite: all cases green under `npm test` (vitest Workers pool) with no network beyond fetchMock; the replay and bad-signature tests assert database row counts and KV state, not just status codes. Manual stripe-listen flow executed once end-to-end in test mode and its steps confirmed copy-paste accurate."
+            "testStrategy": "This subtask IS the test suite: all cases green under `npm test` (vitest Workers pool) with no network beyond fetchMock; the replay and bad-signature tests assert database row counts and KV state, not just status codes. Manual stripe-listen flow executed once end-to-end in test mode and its steps confirmed copy-paste accurate.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 8,
+        "recommendedSubtasks": 6,
+        "expansionPrompt": "Split into: (1) add the stripe dependency (ask-first per house rules) and build src/billing/client.ts with the fetch HTTP client, pinned apiVersion, and SubtleCryptoProvider + constructEventAsync webhook verification — the Workers-specific setup; (2) docs/STRIPE-SETUP.md plus optional scripts/stripe-setup.ts creating test-mode Starter/$29, Growth/$99, Scale/$299 products with credit amounts in price metadata and annual variants; (3) POST /v1/billing/checkout (authed) creating subscription-mode Checkout sessions with client_reference_id = keyId and env-driven success/cancel URLs; (4) GET /v1/billing/portal via stripe_customers lookup → billingPortal session URL; (5) POST /v1/billing/webhook — raw-body signature verification before any parsing, handlers for checkout.session.completed / invoice.paid / customer.subscription.updated+deleted mapping to ledger grants and plan changes, idempotency via unique stripe_ref so replays never double-credit, always-2xx-after-recording, KV key-record refresh so task-7 balances see new credits promptly; (6) the fixture-based test suite — HMAC computed in-test for valid signatures, replay no-ops, bad signature → 400 with no mutation, subscription.deleted downgrades quota, checkout mocked via fetchMock — plus the documented stripe-listen manual flow."
       },
       {
-        "id": 9,
+        "id": "9",
         "title": "MCP server at /mcp with tools generated from the source registry",
         "description": "Expose the agent channel: a remote MCP server on Streamable HTTP at /mcp using the official TypeScript SDK, with list_sources, one query_<source> tool per registry entry (input schemas derived from the same zod queryParams as REST), and get_usage — authenticated by API key and metered identically to REST.",
         "details": "1. Add `@modelcontextprotocol/sdk` (official TS SDK). In src/mcp/server.ts build a per-request `McpServer` in stateless Streamable HTTP mode (Workers are stateless — create server + `StreamableHTTPServerTransport` with `sessionIdGenerator: undefined` per request, or use the SDK's stateless pattern current at implementation time; verify against the SDK docs since the ecosystem churns — pin the version per PRD risk note).\n2. Tool generation from the registry (no per-source code): `list_sources` → registry metadata + freshness; for each source `query_<slug_with_underscores>` with inputSchema derived from `source.queryParams` + pagination (SDK accepts zod schemas directly — reuse the exact objects from task 2, single source of truth); handler calls the same cache/query/filter functions as /v1/data/:source (extract shared query logic into src/sources/query.ts if not already); `get_usage` → same data as GET /v1/usage.\n3. Auth + metering parity: mount at `app.all('/mcp', ...)` BEHIND the task-6 auth middleware (API key via Authorization header) and task-7 metering — each tool call debits credits and respects quota; quota-exceeded surfaces as a tool error result (isError: true) with the upgrade docs URL in the message so agents can self-serve.\n4. Return JSON tool results (`structuredContent` + text fallback) — deterministic JSON per Agent Astra's needs.\n5. Add /mcp to llms.txt + docs copy (task 11 dependency direction: they reference this URL).",
         "testStrategy": "Integration via SELF.fetch speaking Streamable HTTP JSON-RPC: initialize → tools/list returns list_sources, query_uk_planning, query_uk_tenders, get_usage with JSON schemas matching the zod queryParams; tools/call query_uk_planning with a filter returns fixture records; call without API key → auth error; tool calls decrement the same usage counter as REST (assert /v1/usage after N tool calls); quota-exhausted key gets isError tool result, not a protocol crash. Optionally verify interop manually with `npx @modelcontextprotocol/inspector` against wrangler dev (document in README).",
         "priority": "medium",
         "dependencies": [
-          5,
-          7
+          "5",
+          "7"
         ],
         "status": "pending",
         "subtasks": [
@@ -544,7 +612,8 @@
             "dependencies": [],
             "details": "Add `@modelcontextprotocol/sdk` as an exact-pinned dependency (no caret — PRD risk note on ecosystem churn; adding a top-level dependency is an ask-first item per CLAUDE.md, so confirm before installing). Before writing code, verify the SDK's *current* recommended stateless pattern against its docs: the established shape is constructing a fresh `McpServer` plus `StreamableHTTPServerTransport` with `sessionIdGenerator: undefined` on every request (Workers are stateless; no session store), but the API surface moves — implement whatever the pinned version documents. In src/mcp/server.ts export a factory like `createMcpServer(env, ctx)` that builds the server instance, and a request handler that bridges Hono's Request/Response to the transport (the SDK's Node-style transport may need the fetch-API adapter pattern current at implementation time). Register a single placeholder `ping`-style tool for now so tools/list is non-empty. Wire a temporary unauthenticated `app.all('/mcp', ...)` mount in src/index.ts (auth arrives in subtask 3). Ensure the Accept header handling (application/json, text/event-stream) and 405 for unsupported methods follow the Streamable HTTP spec as implemented by the SDK.",
             "status": "pending",
-            "testStrategy": "Integration test via SELF.fetch: POST /mcp with a JSON-RPC `initialize` request returns a successful result with server info and protocol version; follow-up `tools/list` returns the placeholder tool. Assert responses parse as JSON-RPC 2.0 (handle SSE-framed bodies if the SDK responds with text/event-stream). GET/DELETE /mcp behave per the stateless spec (405 or per-SDK behavior)."
+            "testStrategy": "Integration test via SELF.fetch: POST /mcp with a JSON-RPC `initialize` request returns a successful result with server info and protocol version; follow-up `tools/list` returns the placeholder tool. Assert responses parse as JSON-RPC 2.0 (handle SSE-framed bodies if the SDK responds with text/event-stream). GET/DELETE /mcp behave per the stateless spec (405 or per-SDK behavior).",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -555,7 +624,8 @@
             ],
             "details": "No per-source code anywhere in src/mcp/ (dataset isolation rule). Iterate the registry at server-construction time: for each source register `query_<slug.replace(/-/g, '_')>` (e.g. query_uk_planning, query_uk_tenders) passing the source's `queryParams` zod object merged with the shared pagination schema directly as inputSchema — the SDK accepts zod raw shapes, so reuse the exact objects from task 2 (single source of truth; do not redeclare shapes). Handler must call the same cache/query/filter path as /v1/data/:source: if task 2 left that logic inline in the route, extract it into src/sources/query.ts as a pure function (e.g. `querySource(env, source, params)`) and refactor the REST route to call it too, so REST and MCP cannot drift. `list_sources` returns each registry entry's slug, title, description, credit cost, and freshness (last_refreshed_at from refresh_log/KV). `get_usage` returns the same payload shape as GET /v1/usage (credits remaining, monthly counter, plan) by calling the same metering read function. Tool descriptions should be agent-legible: state what the source contains, filterable fields, and credit cost per call.",
             "status": "pending",
-            "testStrategy": "tools/list via SELF.fetch returns exactly list_sources, query_uk_planning, query_uk_tenders, get_usage; assert each query tool's JSON schema properties match the corresponding source's zod queryParams keys (schema parity test that fails if a param is added to one surface only). Unit test that adding a stub source to the registry in-test yields a new query_<slug> tool with no other code changes. tools/call query_uk_planning with a filter returns fixture records matching the REST endpoint's results for identical params."
+            "testStrategy": "tools/list via SELF.fetch returns exactly list_sources, query_uk_planning, query_uk_tenders, get_usage; assert each query tool's JSON schema properties match the corresponding source's zod queryParams keys (schema parity test that fails if a param is added to one surface only). Unit test that adding a stub source to the registry in-test yields a new query_<slug> tool with no other code changes. tools/call query_uk_planning with a filter returns fixture records matching the REST endpoint's results for identical params.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -567,7 +637,8 @@
             ],
             "details": "In src/index.ts change the mount to `app.all('/mcp', authMiddleware, meteringContext, mcpHandler)` (exact composition per how tasks 6/7 structured their middleware). Auth failures at the HTTP layer (missing/invalid key) may remain HTTP 401 with the standard error envelope — that happens before a JSON-RPC session exists. Metering, however, is per tool call, not per HTTP request: initialize and tools/list must be free; only tools/call for query_<slug> (and get_usage if the PRD prices it — default free) debits credits, using the same debit function and `usage:<keyId>:<yyyymm>` KV counters as the REST path so both channels share one quota. Thread the authenticated key context from Hono into tool handlers (e.g. pass keyId/plan into createMcpServer or via a per-request context object). When the debit function reports quota exceeded, the tool handler must return `{ isError: true, content: [{ type: 'text', text: '...' }] }` with a message that names the limit hit and includes the upgrade docs URL so agents can self-serve — never throw, never let it become a JSON-RPC protocol error or HTTP 429, since agents recover from tool errors but not transport failures.",
             "status": "pending",
-            "testStrategy": "SELF.fetch without Authorization header → 401 error envelope. With a valid test key: tools/call debits — assert via a subsequent GET /v1/usage (REST) that the counter incremented, proving shared metering. initialize and tools/list do not decrement credits. Seed a key at its quota limit → tools/call returns a JSON-RPC *success* whose result has isError: true and the docs URL in the text; assert HTTP status is 200."
+            "testStrategy": "SELF.fetch without Authorization header → 401 error envelope. With a valid test key: tools/call debits — assert via a subsequent GET /v1/usage (REST) that the counter incremented, proving shared metering. initialize and tools/list do not decrement credits. Seed a key at its quota limit → tools/call returns a JSON-RPC *success* whose result has isError: true and the docs URL in the text; assert HTTP status is 200.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -578,7 +649,8 @@
             ],
             "details": "Add a small helper in src/mcp/ (e.g. `toolResult(payload)`) that returns `{ structuredContent: payload, content: [{ type: 'text', text: JSON.stringify(payload) }] }` and use it in every tool handler — list_sources, all query_<slug> tools, and get_usage — so no handler hand-rolls its shape. For query tools the payload should mirror the REST response body: records array, pagination info (page, per_page, total), and last_refreshed_at, keeping the two channels byte-comparable modulo the envelope. Where the pinned SDK version supports declaring `outputSchema` on tool registration, derive it from the source's recordSchema (wrapped in the results envelope) so the SDK validates structuredContent against it; if the pinned version's support is partial, still emit structuredContent and note the limitation in a comment. Keep serialization deterministic: no timestamps generated per-call in the payload beyond source freshness data, stable key order not required by JSON but avoid injecting request-specific noise. Error results from subtask 3 (isError) keep plain text content — structuredContent is for successful payloads.",
             "status": "pending",
-            "testStrategy": "Integration: tools/call query_uk_planning → result contains structuredContent whose records match fixtures AND a text block that JSON.parses to a deeply-equal value (parity assertion between the two representations). get_usage's structuredContent deep-equals the GET /v1/usage response body. If outputSchema is declared, tools/list shows it and a deliberately malformed payload in a unit test fails SDK validation."
+            "testStrategy": "Integration: tools/call query_uk_planning → result contains structuredContent whose records match fixtures AND a text block that JSON.parses to a deeply-equal value (parity assertion between the two representations). get_usage's structuredContent deep-equals the GET /v1/usage response body. If outputSchema is declared, tools/list shows it and a deliberately malformed payload in a unit test fails SDK validation.",
+            "parentId": "undefined"
           },
           {
             "id": 5,
@@ -590,20 +662,24 @@
             ],
             "details": "Create test/mcp.spec.ts (or split by concern) with a small JSON-RPC client helper for SELF.fetch that handles Streamable HTTP framing (POST with Accept: application/json, text/event-stream; parse SSE-wrapped responses if the SDK emits them) and manages the initialize handshake. Required cases, consolidating the per-subtask tests into one coherent suite: (1) tools/list returns the four expected tools and each query tool's input JSON schema key-set exactly matches the source's zod queryParams + pagination — a parity test that breaks when either surface drifts; (2) tools/call query_uk_planning with a filter returns fixture records identical to /v1/data/uk-planning with the same params; (3) missing API key → 401 envelope, malformed key → 401; (4) shared-counter assertion: N tools/call requests then GET /v1/usage shows the counter advanced by N × creditCost; (5) quota-exhausted key → HTTP 200, JSON-RPC success, result.isError === true, message contains the upgrade docs URL; (6) structuredContent/text parity from subtask 4. Then write docs/mcp-verification.md (or a runbook section): steps to run `npm run dev`, launch `npx @modelcontextprotocol/inspector`, connect to http://localhost:8787/mcp with an Authorization header, and a checklist (tools listed, query returns records, usage reflects calls, quota error readable). Add the /mcp URL and a one-line agent-facing description to public/llms.txt per the task-11 dependency direction.",
             "status": "pending",
-            "testStrategy": "The suite itself is the deliverable: `npm test` green in the Workers pool with all six case groups passing, and the suite fails if a registry source is added without its tool appearing (parity guard). Manual: execute the inspector runbook against wrangler dev once and record the checklist outcome in the doc."
+            "testStrategy": "The suite itself is the deliverable: `npm test` green in the Workers pool with all six case groups passing, and the suite fails if a registry source is added without its tool appearing (parity guard). Manual: execute the inspector runbook against wrangler dev once and record the checklist outcome in the doc.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 7,
+        "recommendedSubtasks": 5,
+        "expansionPrompt": "Split into: (1) add @modelcontextprotocol/sdk (pinned — verify the current stateless Streamable HTTP pattern for Workers: per-request McpServer + transport with sessionIdGenerator undefined) and get a minimal initialize/tools-list round trip working via SELF.fetch; (2) registry-driven tool generation — list_sources from registry metadata + freshness, one query_<slug> tool per source reusing the exact zod queryParams objects from task 2 as inputSchema, and get_usage mirroring /v1/usage, with shared query logic extracted to src/sources/query.ts if task 2 didn't already; (3) mount app.all('/mcp') behind the task-6 auth middleware and task-7 metering so tool calls debit the same counters, with quota-exceeded surfacing as an isError tool result carrying the upgrade docs URL rather than a protocol failure; (4) return structuredContent + text-fallback JSON tool results for deterministic agent consumption; (5) the JSON-RPC integration test suite (tools/list schema parity with zod params, filtered tools/call against fixtures, missing-key auth error, shared usage-counter assertion via /v1/usage, quota-exhausted isError) plus documented manual verification with the MCP inspector against wrangler dev."
       },
       {
-        "id": 10,
+        "id": "10",
         "title": "x402 USDC pay-per-request routes (dark-launched behind env config)",
         "description": "Add the second agent channel: x402-hono middleware gating pay-per-request data routes so accountless agents pay ~$0.005/request in USDC direct to the operator wallet — mounted only when X402_WALLET_ADDRESS is configured, so the feature ships dark until a wallet/facilitator exists.",
         "details": "1. Add `x402-hono` (pin version — young protocol per PRD risk note; verify current API against the x402 docs at implementation time).\n2. src/x402/routes.ts: a route group mirroring the data endpoints at e.g. `/x402/data/:source`, reusing the shared query logic from src/sources/query.ts — thin adapter over the same core, no metering/auth middleware (payment IS the auth). Apply `paymentMiddleware(env.X402_WALLET_ADDRESS, { '/x402/data/*': { price: env.X402_PRICE_USD ?? '$0.005', network: 'base' } }, { url: env.X402_FACILITATOR_URL })` — exact config-object shape per the pinned x402-hono version.\n3. Dark launch: in src/index.ts, `if (env.X402_WALLET_ADDRESS) app.route('/x402', x402Routes)` — with the env var absent (default), the routes return 404 and nothing about x402 executes. Wallet address + facilitator URL are secrets/vars via .dev.vars / wrangler secret; add to .dev.vars.example as commented-out placeholders.\n4. Protocol flow to preserve: unpaid request → HTTP 402 with payment-requirements body → agent pays → retries with X-PAYMENT header → middleware verifies via facilitator → handler runs. Log paid requests through the task-1 structured logger (route, amount) for the operator's weekly review.\n5. `docs/X402-SETUP.md`: choosing a Base USDC wallet, facilitator options (e.g. Coinbase's x402 facilitator), env vars to set, and how to verify with an x402 test client. Open question #4 (which wallet) stays open — code must not assume an answer.",
         "testStrategy": "Integration: with X402_WALLET_ADDRESS unset, /x402/data/uk-planning → 404 (dark). With a test wallet address set (test env vars in vitest config), unpaid request → 402 with a parseable payment-requirements body listing the wallet and price; facilitator verification is mocked via fetchMock to test the paid path returns data. Unit: config gating logic. Manual end-to-end against a real facilitator deferred until wallet exists (documented as blocked-by-config, not by code).",
         "priority": "low",
         "dependencies": [
-          3,
-          7
+          "3",
+          "7"
         ],
         "status": "pending",
         "subtasks": [
@@ -614,7 +690,8 @@
             "dependencies": [],
             "details": "Run `npm install x402-hono@<exact-version>` and pin the version exactly in package.json (strip any ^/~ prefix). Before writing adapter code, check the pinned version's README/types against the x402 protocol docs to verify: (a) the paymentMiddleware argument order — the task sketch assumes `paymentMiddleware(walletAddress, routeConfigMap, facilitatorConfig)` but the real API may differ; (b) the route-config shape for `{ price, network }` entries and whether price accepts a '$0.005' string or a numeric/atomic-units form; (c) how the facilitator URL is passed (e.g. `{ url }` object vs plain string) and the default facilitator behavior when omitted; (d) that 'base' is the correct network identifier for Base mainnet USDC (vs 'base-sepolia' for testing). Record any divergence from the task sketch in a short comment block at the top of src/x402/routes.ts (created in the next subtask) so the config shape is traceable to the pinned version. Confirm the package is compatible with the Cloudflare Workers runtime (no Node-only APIs) via `npm run build` (dry-run deploy bundles and validates). NOTE: adding a top-level dependency is on the CLAUDE.md ask-first list — confirm with the operator before installing.",
             "status": "pending",
-            "testStrategy": "`npm run build` succeeds with the dependency bundled (proves Workers-runtime compatibility); `npm run typecheck` passes; package.json shows an exact pinned version with no range specifier. Documented API-shape notes match the pinned version's exported TypeScript types."
+            "testStrategy": "`npm run build` succeeds with the dependency bundled (proves Workers-runtime compatibility); `npm run typecheck` passes; package.json shows an exact pinned version with no range specifier. Documented API-shape notes match the pinned version's exported TypeScript types.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -625,7 +702,8 @@
             ],
             "details": "Create src/x402/routes.ts exporting a factory (e.g. `createX402Routes(env)` or a Hono sub-app reading bindings per-request, matching the app's existing env-access pattern) so middleware can be configured from runtime env. Apply paymentMiddleware using the API shape verified in subtask 1: wallet from `env.X402_WALLET_ADDRESS`, per-route config `{ '/x402/data/*': { price: env.X402_PRICE_USD ?? '$0.005', network: 'base' } }`, facilitator from `env.X402_FACILITATOR_URL` — adjusting the exact object shape to the pinned version. The GET /x402/data/:source handler must be a thin adapter: resolve the source slug via the registry, delegate validation/pagination/filtering entirely to the shared query logic in src/sources/query.ts, and return the same response envelope as /v1/data/:source — do NOT duplicate query logic and do NOT attach the auth or metering middleware from src/auth//src/metering/. After the middleware admits a paid request, log it via the task-1 structured logger with at least { route, source, amount } for the operator's weekly review. Preserve the protocol flow untouched: unpaid request → 402 with payment-requirements body (emitted by the middleware) → agent pays → retry with X-PAYMENT header → middleware verifies via facilitator → handler runs. Add X402_WALLET_ADDRESS, X402_PRICE_USD, X402_FACILITATOR_URL to the CloudflareBindings/env typings as optional strings.",
             "status": "pending",
-            "testStrategy": "Typecheck passes with the new optional env bindings. Unit-level: handler delegates to src/sources/query.ts (verified by fixture source returning identical envelope to /v1/data/:source). Full 402/paid-path behavior is covered by subtask 4's integration tests."
+            "testStrategy": "Typecheck passes with the new optional env bindings. Unit-level: handler delegates to src/sources/query.ts (verified by fixture source returning identical envelope to /v1/data/:source). Full 402/paid-path behavior is covered by subtask 4's integration tests.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -636,7 +714,8 @@
             ],
             "details": "In src/index.ts, conditionally mount the routes: `if (env.X402_WALLET_ADDRESS) app.route('/x402', x402Routes)` — implemented to fit how the app accesses env (if bindings are only available per-request in Workers, gate inside a lazy mount/middleware that checks `c.env.X402_WALLET_ADDRESS` and falls through to the app's standard 404 error envelope when unset; the important invariant is that neither paymentMiddleware nor any x402 module logic runs when the var is absent). Ensure the module-level import of src/x402/routes.ts is side-effect-free so importing it while dark is harmless. Add to .dev.vars.example (create if missing) as commented-out placeholders with a one-line note that setting X402_WALLET_ADDRESS activates the routes: `# X402_WALLET_ADDRESS=0x...`, `# X402_PRICE_USD=$0.005`, `# X402_FACILITATOR_URL=https://...`. Per project convention these are Worker runtime secrets: .dev.vars locally, `wrangler secret put` in prod — never .env, never committed. If bindings/vars were declared in wrangler.jsonc, run `npm run cf-typegen` to refresh types. Open question #4 (which wallet) stays open — nothing in the code may assume a specific wallet or facilitator choice.",
             "status": "pending",
-            "testStrategy": "With X402_WALLET_ADDRESS unset in the test env, GET /x402/data/uk-planning returns the app's standard 404 error envelope and no x402 logging occurs; with it set, the route group responds (402 for unpaid). Formal assertions land in subtask 4."
+            "testStrategy": "With X402_WALLET_ADDRESS unset in the test env, GET /x402/data/uk-planning returns the app's standard 404 error envelope and no x402 logging occurs; with it set, the route group responds (402 for unpaid). Formal assertions land in subtask 4.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -647,20 +726,24 @@
             ],
             "details": "Tests (vitest with @cloudflare/vitest-pool-workers, via SELF.fetch): (1) Dark: with X402_WALLET_ADDRESS unset, GET /x402/data/uk-planning → 404 matching the standard error envelope exactly. (2) Unpaid: with test env vars set in the vitest/miniflare config (test wallet address, X402_PRICE_USD), an unpaid request → HTTP 402 whose body parses as a payment-requirements object listing the configured wallet address, price, and network — assert on structure per the pinned x402-hono version's shape, not a hardcoded copy of docs. (3) Paid: mock the facilitator's verification endpoint with fetchMock (outbound-fetch mocking in pool-workers) to return a successful verification for a request carrying an X-PAYMENT header → handler runs, data envelope returned, and the structured logger records { route, amount }; also test facilitator rejection → payment error, no data returned, no paid-request log line. Docs: create docs/X402-SETUP.md covering (a) choosing a Base USDC wallet — present options, explicitly noting PRD open question #4 remains undecided and the code assumes no answer; (b) facilitator options (e.g. Coinbase's x402 facilitator) and setting X402_FACILITATOR_URL; (c) the env vars to set via .dev.vars / `wrangler secret put` and that setting X402_WALLET_ADDRESS is what activates the routes; (d) how to verify end-to-end with an x402 test client once a wallet exists (real E2E verification is explicitly deferred until then).",
             "status": "pending",
-            "testStrategy": "This subtask IS the test deliverable: `npm test` green with all three protocol-state suites passing and no test hitting a real facilitator or requiring a real wallet. Doc reviewed for accuracy against the pinned x402-hono version and for leaving wallet choice open."
+            "testStrategy": "This subtask IS the test deliverable: `npm test` green with all three protocol-state suites passing and no test hitting a real facilitator or requiring a real wallet. Doc reviewed for accuracy against the pinned x402-hono version and for leaving wallet choice open.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 5,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Split into: (1) add x402-hono pinned, verifying the current paymentMiddleware config-object shape against the protocol docs at implementation time (young, churning protocol); (2) src/x402/routes.ts — a thin route group at /x402/data/:source reusing src/sources/query.ts with no auth/metering middleware (payment is the auth), wrapped by paymentMiddleware configured from X402_WALLET_ADDRESS / X402_PRICE_USD / X402_FACILITATOR_URL, and paid requests logged through the structured logger; (3) the dark-launch gate in src/index.ts — routes mounted only when X402_WALLET_ADDRESS is set, 404 otherwise, with commented-out placeholders in .dev.vars.example; (4) tests (unset → 404; set → unpaid 402 with parseable payment-requirements body; paid path with facilitator mocked via fetchMock) and docs/X402-SETUP.md covering wallet choice, facilitator options, and verification — keeping the wallet question explicitly open in code."
       },
       {
-        "id": 11,
+        "id": "11",
         "title": "Landing page, docs (Scalar embed), llms.txt, and waitlist endpoint",
         "description": "Ship the marketing surface from the same Worker via Static Assets: an answer-first landing page with free-key signup form, an interactive API reference rendering /openapi.json via Scalar, copy-paste curl quickstart, llms.txt for LLM discoverability, and POST /v1/waitlist persisting emails to D1.",
         "details": "1. public/ (already wired as assets dir in task 1): `index.html` — plain fast HTML, answer-first copy (what the API returns, one curl example above the fold, pricing table with placeholder tiers, free-key form), core content works without JS per PRD; inline minimal CSS, no framework, no build step. GDPR-minimal privacy note (emails only, no purchased lists).\n2. `public/docs.html`: Scalar embed — `<script id=\"api-reference\" data-url=\"/openapi.json\"></script><script src=\"https://cdn.jsdelivr.net/npm/@scalar/api-reference\"></script>` (verify current embed snippet), preceded by a no-JS quickstart section: issue key via curl POST /v1/keys, query /v1/data/uk-planning with Bearer header, check /v1/usage.\n3. `public/llms.txt`: markdown-ish summary — what the API is, base URL, auth, free tier, /openapi.json, /mcp endpoint, x402 note — optimized for LLM citation.\n4. `migrations/0003_waitlist.sql`: `waitlist(id INTEGER PRIMARY KEY, email TEXT, source TEXT, created_at TEXT)`. `POST /v1/waitlist` (public, per-IP rate-limited via task-7 ratelimit): zod-validated `{ email, source? }`, dedupe on email, insert; success envelope. No email provider in v1 — export manually (note in runbook).\n5. Landing form posts to /v1/keys (free key shown once on-page via minimal progressive-enhancement JS, with a no-JS curl fallback documented right beside it) and/or /v1/waitlist for the pre-launch period — keep both wired, toggle via copy.\n6. Ensure Worker routes take precedence over assets appropriately (assets serve non-/v1 paths; `run_worker_first` config if needed for /v1/* and /mcp).",
         "testStrategy": "Integration: GET / serves the landing HTML (200, content-type text/html, contains curl example); /docs.html references /openapi.json; /llms.txt served as text; POST /v1/waitlist stores a row (assert via D1 in test), duplicate email is idempotent, invalid email → 400 envelope, hammering → 429. Manual: wrangler dev — landing renders readably with JS disabled; Scalar docs load and every registry source appears; quickstart commands work verbatim against localhost:8787.",
         "priority": "medium",
         "dependencies": [
-          4,
-          6
+          "4",
+          "6"
         ],
         "status": "pending",
         "subtasks": [
@@ -671,7 +754,8 @@
             "dependencies": [],
             "details": "Create the public/ directory (it does not exist yet; task 1 wired it as the assets directory in wrangler.jsonc via `assets: { directory: \"public\" }`). Author public/index.html as fast, plain HTML with inline minimal CSS — no framework, no build step, no external assets. Content requirements: (a) answer-first hero — first screenful states what the API returns (UK planning applications and procurement notices as normalized JSON) with one working curl example above the fold (e.g. `curl -H \"Authorization: Bearer $KEY\" https://<host>/v1/data/uk-planning?authority=...`); (b) placeholder pricing table with free tier (250 req/mo) and placeholder paid tiers — copy clearly marked as placeholder; (c) free-key form: a small inline <script> progressively enhances a plain <form> to POST JSON to /v1/keys and render the returned key once on-page with a 'shown once, copy now' warning; directly beside the form, document the no-JS fallback: the equivalent `curl -X POST /v1/keys` command, so core content works without JS per PRD; (d) a link/section for the waitlist path (POST /v1/waitlist) so pre-launch copy can toggle between key-issuance and waitlist without structural changes — keep both wired, toggle via copy; (e) GDPR-minimal privacy note: emails only, no purchased lists, no tracking scripts; (f) nav links to /docs.html, /openapi.json, /llms.txt. Keep dataset-specific copy confined to content (no dataset logic — this is static HTML, but keep the niche easily swappable by isolating dataset mentions to obvious copy blocks).",
             "status": "pending",
-            "testStrategy": "Integration test via SELF.fetch: GET / returns 200 with content-type text/html and body contains the curl example string and the free-key form markup. Manual check: disable JS in a browser and confirm the page is fully readable, the form's no-JS curl fallback is visible, and layout holds with inline CSS only."
+            "testStrategy": "Integration test via SELF.fetch: GET / returns 200 with content-type text/html and body contains the curl example string and the free-key form markup. Manual check: disable JS in a browser and confirm the page is fully readable, the form's no-JS curl fallback is visible, and layout holds with inline CSS only.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -680,7 +764,8 @@
             "dependencies": [],
             "details": "public/docs.html: (a) top section is a plain-HTML, no-JS quickstart with three copy-paste curl steps: 1) issue a key via `curl -X POST /v1/keys`, 2) query `GET /v1/data/uk-planning` with `Authorization: Bearer <key>`, 3) check `GET /v1/usage` — each with expected response shape shown so the page is useful even if the Scalar CDN script fails or JS is disabled; (b) below it, the Scalar embed: `<script id=\"api-reference\" data-url=\"/openapi.json\"></script><script src=\"https://cdn.jsdelivr.net/npm/@scalar/api-reference\"></script>` — verify this is still the current recommended embed snippet against Scalar's docs before shipping (the attribute/element API has changed across versions; pin a version in the CDN URL if the latest requires different markup); the data-url must be the relative path /openapi.json served by the same Worker (task 6's OpenAPI route). public/llms.txt: markdown-ish plain text optimized for LLM citation — one-line description of what the API is, base URL, auth scheme (Bearer API key, how to get one), free tier (250 req/mo), pointer to /openapi.json for the full machine-readable spec, the /mcp endpoint for agent access, and a short note that x402 USDC pay-per-request exists for agents. Keep it short, factual, and stable — it is a discovery artifact, not marketing copy.",
             "status": "pending",
-            "testStrategy": "Integration: GET /docs.html returns 200 text/html and the body references /openapi.json in the Scalar script tag and contains all three quickstart curl commands; GET /llms.txt returns 200 with a text content-type and contains the base URL, /openapi.json, and /mcp references. Manual: load /docs.html in a browser and confirm Scalar renders the spec; confirm the quickstart is readable with JS disabled."
+            "testStrategy": "Integration: GET /docs.html returns 200 text/html and the body references /openapi.json in the Scalar script tag and contains all three quickstart curl commands; GET /llms.txt returns 200 with a text content-type and contains the base URL, /openapi.json, and /mcp references. Manual: load /docs.html in a browser and confirm Scalar renders the spec; confirm the quickstart is readable with JS disabled.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -689,7 +774,8 @@
             "dependencies": [],
             "details": "1. migrations/0003_waitlist.sql: `CREATE TABLE waitlist (id INTEGER PRIMARY KEY, email TEXT NOT NULL UNIQUE, source TEXT, created_at TEXT NOT NULL DEFAULT (datetime('now')));` — the UNIQUE constraint backs the dedupe. Apply locally via `wrangler d1 migrations apply` (production apply is an ask-first op per CLAUDE.md). 2. Route in src/routes/ (e.g. src/routes/waitlist.ts, mounted in src/index.ts): POST /v1/waitlist is public (no API key), rate-limited per-IP using task 7's ratelimit middleware keyed on the client IP (CF-Connecting-IP). Body schema: `z.object({ email: z.string().email(), source: z.string().max(64).optional() })` — invalid body → 400 in the standard error envelope from task 1. 3. Insert with dedupe: use `INSERT ... ON CONFLICT(email) DO NOTHING` (or catch the UNIQUE violation) so a duplicate email is idempotent and still returns the success envelope — do not leak whether the email already existed. Normalize email (trim, lowercase) before insert. 4. Response: standard success envelope, no body payload beyond confirmation. 5. GDPR/Blind Mode: store only email + source + timestamp, nothing else (no IP, no user-agent). 6. Add a runbook note (docs/ runbook or a TODO in the route file per existing convention): no email provider in v1 — export the waitlist manually via `wrangler d1 execute ... \"SELECT email FROM waitlist\"`.",
             "status": "pending",
-            "testStrategy": "Integration via vitest-pool-workers: POST /v1/waitlist with a valid email → success envelope and a row exists in D1 (assert via test-env D1 query); posting the same email again → success envelope and still exactly one row; invalid email → 400 error envelope with zod issue detail; missing body → 400; hammering the endpoint past the per-IP limit → 429 envelope. Confirm the row stores only email/source/created_at."
+            "testStrategy": "Integration via vitest-pool-workers: POST /v1/waitlist with a valid email → success envelope and a row exists in D1 (assert via test-env D1 query); posting the same email again → success envelope and still exactly one row; invalid email → 400 error envelope with zod issue detail; missing body → 400; hammering the endpoint past the per-IP limit → 429 envelope. Confirm the row stores only email/source/created_at.",
+            "parentId": "undefined"
           },
           {
             "id": 4,
@@ -702,19 +788,23 @@
             ],
             "details": "1. Routing: with Workers Static Assets, requests matching a file in public/ are served as assets before the Worker runs by default. Verify that /v1/* and /mcp always hit the Worker (no asset path can shadow them) and that /, /docs.html, and /llms.txt are served from assets. If any API path could be shadowed or the default ordering is wrong for this layout, set `assets.run_worker_first` in wrangler.jsonc (e.g. `run_worker_first: [\"/v1/*\", \"/mcp\"]`) and run `npm run cf-typegen` after the wrangler.jsonc change per CLAUDE.md. Confirm the Hono app's 404/error envelope still applies to unknown /v1/* paths and that unknown non-API paths fall through sensibly (asset 404 or Worker 404 envelope — pick one deliberately and test it). 2. Integration tests (vitest-pool-workers, SELF.fetch), consolidating the surface: GET / → 200, content-type text/html, body contains the curl example; GET /docs.html → 200 and references /openapi.json; GET /llms.txt → 200 with text content-type; POST /v1/waitlist → row inserted (assert via D1), duplicate email idempotent, invalid email → 400 envelope, rate-limit hammering → 429; GET /v1/health still 200 (proves API routes not shadowed by assets). 3. Manual checks (document in the PR/task notes): `npm run dev`, load / and /docs.html with JS disabled to confirm core content renders; confirm Scalar renders with JS enabled; run `npm run lint`, `npm run typecheck`, and `npm run build` (dry-run deploy validates the assets config).",
             "status": "pending",
-            "testStrategy": "The test suite is the deliverable: all assertions above pass under `npm test`; `npm run build` (wrangler dry-run) succeeds with the assets + run_worker_first config; manual no-JS browser check of / and /docs.html recorded as done. Regression guard: a test asserting /v1/health and one /v1/data route return Worker responses (JSON envelope), never asset content."
+            "testStrategy": "The test suite is the deliverable: all assertions above pass under `npm test`; `npm run build` (wrangler dry-run) succeeds with the assets + run_worker_first config; manual no-JS browser check of / and /docs.html recorded as done. Regression guard: a test asserting /v1/health and one /v1/data route return Worker responses (JSON envelope), never asset content.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 4,
+        "recommendedSubtasks": 4,
+        "expansionPrompt": "Split into: (1) public/index.html — answer-first landing with above-the-fold curl example, placeholder pricing table, free-key form with progressive-enhancement JS posting to /v1/keys (no-JS curl fallback beside it), inline CSS, no build step, GDPR-minimal privacy note — note public/ does not exist yet and depends on task 1's assets binding; (2) public/docs.html with the Scalar embed pointing at /openapi.json (verify the current CDN snippet) preceded by a no-JS curl quickstart (issue key → query uk-planning → check usage), plus public/llms.txt summarizing base URL, auth, free tier, /openapi.json, /mcp; (3) migrations/0003_waitlist.sql and POST /v1/waitlist — zod-validated email, dedupe, per-IP rate limit via task 7's ratelimit, success envelope; (4) routing precedence (assets for non-/v1 paths, run_worker_first for /v1/* and /mcp if needed) and the integration tests (landing 200 text/html with curl example, llms.txt as text, waitlist insert/dedupe/400/429) plus manual no-JS render check."
       },
       {
-        "id": 12,
+        "id": "12",
         "title": "GitHub Actions CI/CD, runbook, and marketplace-listing prep doc",
         "description": "Automate the <2 hrs/week operation: CI running lint/typecheck/test on every push with a main-branch Cloudflare deploy job gated on account secrets, docs/RUNBOOK.md covering weekly checks/alerts/rotation/backups, and a marketplace-prep doc mapping RapidAPI/Apify requirements to existing endpoints (documentation only).",
         "details": "1. `.github/workflows/ci.yml`: on push/PR — checkout, setup-node (LTS, npm cache), `npm ci`, `npm run lint`, `npm run typecheck`, `npm test`, `npm run build` (dry-run deploy validates wrangler config). Deploy job: `needs: check`, `if: github.ref == 'refs/heads/main'`, runs `wrangler deploy` via `cloudflare/wrangler-action` with `CLOUDFLARE_API_TOKEN` — and skips gracefully when the secret is absent (guard step checking secret existence via `secrets` in an env-conditional) so CI is green before the Cloudflare account exists (PRD open question #2: blocked-by-config, not by code). Enable Dependabot (`.github/dependabot.yml`, npm weekly + github-actions) for Gio's monthly merge ritual.\n2. `docs/RUNBOOK.md` (write once behaviors exist — this task runs last): weekly checklist (query refresh_log for failures — sample wrangler d1 execute command; scan structured logs for error spikes/usage anomalies; Stripe dashboard glance), alerting setup (UptimeRobot HTTP monitor on /v1/health, optional Sentry), secret rotation procedure (wrangler secret put for STRIPE_*, ADMIN_TOKEN, X402_*), D1 backup/export (`wrangler d1 export` cadence), KV counter caveats (eventual consistency, DO upgrade path), waitlist export command, and the pivot triggers from the niche analysis (3+ mature planning APIs → procurement-only; <£300 MRR after 4 months → reposition).\n3. `docs/MARKETPLACE-PREP.md`: RapidAPI + Apify listing requirements (spec import, auth model, pricing tiers, description assets) mapped to what already exists (/openapi.json, key auth, tiers) — explicitly documentation-only; actual listings are post-niche-validation and out of v1 scope.\n4. Do not add deploy secrets or deploy for real — deploying is an ask-first op per CLAUDE.md.",
         "testStrategy": "CI proves itself: push a branch, all check steps pass; deploy job shows skipped (secret absent) rather than failed. Locally run the exact CI command sequence to confirm parity. Runbook review: every command in it is copy-paste executable against wrangler dev/local D1 (dry-run each one); every alert mentioned corresponds to a real endpoint/log field. Marketplace doc reviewed against current RapidAPI/Apify publisher docs for accuracy at write time.",
         "priority": "medium",
         "dependencies": [
-          1
+          "1"
         ],
         "status": "pending",
         "subtasks": [
@@ -725,7 +815,8 @@
             "dependencies": [],
             "details": "1. `.github/workflows/ci.yml` — `check` job on push + pull_request: actions/checkout, actions/setup-node (LTS, `cache: npm`), then `npm ci`, `npm run lint`, `npm run typecheck`, `npm test`, `npm run build` (dry-run deploy validates wrangler.jsonc) — mirror the exact script names already in package.json, do not invent new ones.\n2. `deploy` job: `needs: check`, `if: github.ref == 'refs/heads/main'`, using `cloudflare/wrangler-action` with `CLOUDFLARE_API_TOKEN`. GitHub Actions cannot reference `secrets` directly in a job-level `if:`, so implement the secret-existence guard via an env intermediary: a first step sets `env: HAS_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}` (or writes to `$GITHUB_OUTPUT`), and the wrangler-action step is conditioned on that output. When the secret is absent the job must show as skipped/green, never failed — CI stays green before the Cloudflare account exists (blocked-by-config, not by code).\n3. `.github/dependabot.yml` — two update blocks: `npm` (weekly) and `github-actions` (weekly), supporting the monthly merge ritual in the runbook.\n4. Do NOT add the `CLOUDFLARE_API_TOKEN` secret or deploy for real — deploying is an ask-first operation per CLAUDE.md; this subtask only ships the workflow files.",
             "status": "pending",
-            "testStrategy": "Run the exact check-job command sequence locally (`npm ci && npm run lint && npm run typecheck && npm test && npm run build`) to confirm parity with the workflow. Validate YAML with `actionlint` or a parse check. Push a branch: all check steps pass and the deploy job reports skipped (secret absent) rather than failed; open a PR and confirm the check job triggers there too."
+            "testStrategy": "Run the exact check-job command sequence locally (`npm ci && npm run lint && npm run typecheck && npm test && npm run build`) to confirm parity with the workflow. Validate YAML with `actionlint` or a parse check. Push a branch: all check steps pass and the deploy job reports skipped (secret absent) rather than failed; open a PR and confirm the check job triggers there too.",
+            "parentId": "undefined"
           },
           {
             "id": 2,
@@ -736,7 +827,8 @@
             ],
             "details": "Write `docs/RUNBOOK.md` documenting behavior that already exists (this task runs last in the project by design). Sections:\n1. Weekly checklist — refresh_log failure query with a concrete command, e.g. `wrangler d1 execute faceless-api --command \"SELECT * FROM refresh_log WHERE status != 'ok' ORDER BY created_at DESC LIMIT 20\"` (verify table/column names against the actual migration in migrations/); structured-log scan for error spikes/usage anomalies (`wrangler tail` guidance); Stripe dashboard glance; Dependabot PR merge ritual (monthly, referencing the CI from subtask 1 as the merge gate).\n2. Alerting — UptimeRobot HTTP monitor setup on `/v1/health`; optional Sentry note.\n3. Secret rotation — `wrangler secret put` procedure for STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, ADMIN_TOKEN, X402_* (note: prod rotation is an ask-first op).\n4. Backups — `wrangler d1 export` command and cadence; waitlist export command (d1 execute SELECT against the waitlist table).\n5. KV counter caveats — eventual consistency of usage counters, best-effort limits, documented Durable Objects upgrade path (not built).\n6. Pivot triggers from the niche analysis — 3+ mature planning APIs appear → go procurement-only; <£300 MRR after 4 months → reposition.\nEvery command must be dry-run executed against local wrangler/local D1 (use `--local`) before the doc ships; fix any command that doesn't run verbatim.",
             "status": "pending",
-            "testStrategy": "Copy-paste every command from the doc into a shell against wrangler dev / local D1 (`--local` flags where applicable) and confirm each executes without error and returns the expected shape. Cross-check table and column names against the actual D1 migrations. Review that each alerting/rotation step names a concrete endpoint or secret that actually exists in the codebase."
+            "testStrategy": "Copy-paste every command from the doc into a shell against wrangler dev / local D1 (`--local` flags where applicable) and confirm each executes without error and returns the expected shape. Cross-check table and column names against the actual D1 migrations. Review that each alerting/rotation step names a concrete endpoint or secret that actually exists in the codebase.",
+            "parentId": "undefined"
           },
           {
             "id": 3,
@@ -745,15 +837,23 @@
             "dependencies": [],
             "details": "Write `docs/MARKETPLACE-PREP.md`:\n1. RapidAPI section — their listing requirements (OpenAPI spec import, auth scheme declaration, pricing tier definition, description/logo assets) each mapped to the existing implementation: `/openapi.json` for spec import, bearer API-key auth as implemented in src/auth/, the Starter/Growth/Scale tier structure from billing. Verify requirement details against RapidAPI's current publisher docs (WebFetch/WebSearch) rather than from memory; note the docs-checked date.\n2. Apify section — Actor/API-integration listing requirements mapped the same way, flagging any genuine gaps (e.g. assets not yet created) as pre-listing TODOs rather than v1 work.\n3. Prominent scope banner: this document is preparation only — actual marketplace listings are post-niche-validation and explicitly out of v1 scope per docs/ARCHITECTURE.md; nothing in this subtask creates accounts, submits listings, or publishes anything externally.",
             "status": "pending",
-            "testStrategy": "Review pass: every claimed existing capability (/openapi.json, key auth, tiers) is confirmed present in the codebase by opening the referenced route/module; every marketplace requirement cites the current publisher documentation page it came from. Confirm the doc contains the explicit documentation-only / out-of-v1-scope statement and no instruction that would trigger an external publication."
+            "testStrategy": "Review pass: every claimed existing capability (/openapi.json, key auth, tiers) is confirmed present in the codebase by opening the referenced route/module; every marketplace requirement cites the current publisher documentation page it came from. Confirm the doc contains the explicit documentation-only / out-of-v1-scope statement and no instruction that would trigger an external publication.",
+            "parentId": "undefined"
           }
-        ]
+        ],
+        "complexity": 4,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Split into: (1) .github/workflows/ci.yml — check job running npm ci, lint, typecheck, test, build on push/PR (mirroring the exact scripts already in package.json), plus a main-only deploy job via wrangler-action that skips gracefully when CLOUDFLARE_API_TOKEN is absent (secret-existence guard, since GitHub Actions can't reference secrets in `if:` directly — use an env intermediary), and .github/dependabot.yml for weekly npm + actions updates; (2) docs/RUNBOOK.md — weekly checklist with copy-paste-tested commands (refresh_log failure query via wrangler d1 execute, log scan, Stripe glance), UptimeRobot on /v1/health, secret rotation via wrangler secret put, D1 export cadence, KV consistency caveats with the DO upgrade path, waitlist export, and the pivot triggers; (3) docs/MARKETPLACE-PREP.md mapping RapidAPI/Apify listing requirements to existing endpoints (/openapi.json, key auth, tiers), verified against current publisher docs, explicitly documentation-only. Every runbook command must be dry-run executable locally before the doc ships."
       }
     ],
     "metadata": {
-      "created": "2026-07-06T10:37:11.885Z",
-      "updated": "2026-07-06T10:37:11.885Z",
-      "description": "Tasks for master context"
+      "version": "1.0.0",
+      "lastModified": "2026-07-06T14:49:44.224Z",
+      "taskCount": 12,
+      "completedCount": 1,
+      "tags": [
+        "master"
+      ]
     }
   }
 }

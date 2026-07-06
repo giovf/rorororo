@@ -2,37 +2,29 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "faceless-api",
   "main": "src/index.ts",
-  "compatibility_date": "2026-07-06"
-  // "compatibility_flags": [
-  //   "nodejs_compat"
-  // ],
-  // "vars": {
-  //   "MY_VAR": "my-variable"
-  // },
-  // "kv_namespaces": [
-  //   {
-  //     "binding": "MY_KV_NAMESPACE",
-  //     "id": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-  //   }
-  // ],
-  // "r2_buckets": [
-  //   {
-  //     "binding": "MY_BUCKET",
-  //     "bucket_name": "my-bucket"
-  //   }
-  // ],
-  // "d1_databases": [
-  //   {
-  //     "binding": "MY_DB",
-  //     "database_name": "my-database",
-  //     "database_id": ""
-  //   }
-  // ],
-  // "ai": {
-  //   "binding": "AI"
-  // },
-  // "observability": {
-  //   "enabled": true,
-  //   "head_sampling_rate": 1
-  // }
+  "compatibility_date": "2026-07-06",
+  // Placeholder ids: local dev + tests run on miniflare simulations and never
+  // contact Cloudflare; replace with real ids (wrangler d1/kv namespace create)
+  // before the first deploy.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "faceless-api",
+      "database_id": "00000000-0000-0000-0000-000000000000"
+    }
+  ],
+  "kv_namespaces": [
+    { "binding": "CACHE", "id": "cache-placeholder-id" },
+    { "binding": "RATE", "id": "rate-placeholder-id" }
+  ],
+  "assets": {
+    "directory": "public"
+  },
+  "triggers": {
+    // Daily source refresh; per-source cadence is dispatched in code (task 3).
+    "crons": ["0 5 * * *"]
+  },
+  "observability": {
+    "enabled": true
+  }
 }
