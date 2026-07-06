@@ -12,20 +12,32 @@ export interface RateLimitOptions {
 }
 
 /**
- * Fixed-window counter on the RATE KV namespace — best-effort by design
- * (same KV caveats as metering counters; Durable Objects are the accurate
- * upgrade path, not built for v1).
+ * Sliding-window-counter on the RATE KV namespace: the current bucket plus a
+ * time-weighted share of the previous bucket. This bounds the classic
+ * fixed-window flaw where up to 2×limit slip through across a bucket boundary
+ * (which matters for the anti-abuse limiters, e.g. key issuance). Best-effort by
+ * design — KV is eventually consistent; a Durable Object is the accurate upgrade
+ * path (PRD), not built for v1.
  */
 export function rateLimit(options: RateLimitOptions): MiddlewareHandler<AppEnv> {
   return async (c, next) => {
     const nowSeconds = Math.floor(Date.now() / 1000);
-    const window = Math.floor(nowSeconds / options.windowSeconds);
-    const key = `rl:${options.scope}:${options.identify(c)}:${window}`;
+    const bucket = Math.floor(nowSeconds / options.windowSeconds);
+    const elapsed = nowSeconds % options.windowSeconds;
+    const prevWeight = (options.windowSeconds - elapsed) / options.windowSeconds;
 
-    const current = Number((await c.env.RATE.get(key)) ?? '0');
-    if (current >= options.limit) {
-      const retryAfter = options.windowSeconds - (nowSeconds % options.windowSeconds);
-      c.header('Retry-After', String(retryAfter));
+    const id = options.identify(c);
+    const currKey = `rl:${options.scope}:${id}:${bucket}`;
+    const prevKey = `rl:${options.scope}:${id}:${bucket - 1}`;
+    const [currRaw, prevRaw] = await Promise.all([
+      c.env.RATE.get(currKey),
+      c.env.RATE.get(prevKey),
+    ]);
+    const current = Number(currRaw ?? '0');
+    const estimated = current + Number(prevRaw ?? '0') * prevWeight;
+
+    if (estimated >= options.limit) {
+      c.header('Retry-After', String(options.windowSeconds - elapsed));
       return c.json(
         failure(
           'rate_limited',
@@ -34,7 +46,7 @@ export function rateLimit(options: RateLimitOptions): MiddlewareHandler<AppEnv> 
         429,
       );
     }
-    await c.env.RATE.put(key, String(current + 1), {
+    await c.env.RATE.put(currKey, String(current + 1), {
       expirationTtl: Math.max(60, options.windowSeconds * 2),
     });
     await next();

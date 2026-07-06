@@ -17,6 +17,16 @@ export function buildQuerySchema(source: DataSource): z.ZodObject {
   });
 }
 
+/**
+ * Drop params whose value is empty. Hono yields '' for a bare `?x=`, which would
+ * otherwise coerce to 0 (turning `?authority=` into an authority===0 filter that
+ * matches nothing) or become a match-everything '' substring, or fail per_page's
+ * min(1). Treating '' as absent restores the intended "no filter" behaviour.
+ */
+export function omitEmptyParams(raw: Record<string, string>): Record<string, string> {
+  return Object.fromEntries(Object.entries(raw).filter(([, value]) => value !== ''));
+}
+
 export interface QueryPage<T> {
   records: T[];
   page: number;
@@ -32,8 +42,10 @@ function matchesValue(actual: unknown, wanted: unknown): boolean {
 }
 
 function matchesFilter(record: Record<string, unknown>, key: string, wanted: unknown): boolean {
-  // <field>_after / <field>_before: inclusive range on ISO-date string fields
-  // (lexicographic compare is correct for ISO dates).
+  // <field>_after / <field>_before: inclusive range on ISO date/datetime string
+  // fields. Compared as parsed timestamps (not lexicographically) so a date-only
+  // bound covers the whole boundary day of a datetime field regardless of its
+  // timezone offset (e.g. published_at "2026-07-06T16:09:27+01:00").
   for (const [suffix, cmp] of DATE_RANGE_SUFFIXES) {
     if (key.endsWith(suffix) && typeof wanted === 'string') {
       const actual = record[key.slice(0, -suffix.length)];
@@ -55,9 +67,19 @@ function matchesFilter(record: Record<string, unknown>, key: string, wanted: unk
   return matchesValue(actual, wanted);
 }
 
+// A date-only bound ('YYYY-MM-DD') spans a whole UTC day: _after includes from
+// its start, _before through its end. A datetime bound is used as-is. NaN (an
+// unparseable field) fails both, excluding the record rather than throwing.
+function boundStart(wanted: string): number {
+  return Date.parse(wanted.includes('T') ? wanted : `${wanted}T00:00:00Z`);
+}
+function boundEnd(wanted: string): number {
+  return Date.parse(wanted.includes('T') ? wanted : `${wanted}T23:59:59.999Z`);
+}
+
 const DATE_RANGE_SUFFIXES: [string, (actual: string, wanted: string) => boolean][] = [
-  ['_after', (actual, wanted) => actual >= wanted],
-  ['_before', (actual, wanted) => actual <= wanted],
+  ['_after', (actual, wanted) => Date.parse(actual) >= boundStart(wanted)],
+  ['_before', (actual, wanted) => Date.parse(actual) <= boundEnd(wanted)],
 ];
 
 const NUMBER_RANGE_SUFFIXES: [string, (actual: number, wanted: number) => boolean][] = [

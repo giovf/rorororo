@@ -1,21 +1,11 @@
 import type { MiddlewareHandler } from 'hono';
 import { creditCost } from './costs';
 import { currentPeriod, getUsage, incrementUsage } from './counters';
+import { alertThreshold, NUDGE_MESSAGES } from './quota';
+import { planAllowance } from '../billing/plans';
 import { failure } from '../lib/envelope';
 import { getSource } from '../sources/registry';
 import type { AppEnv } from '../types';
-
-// ASCII only: non-ASCII header values make browser fetch implementations throw.
-const NUDGE_MESSAGES: Record<string, string> = {
-  '80': 'Approaching your monthly quota - consider upgrading',
-  '100': 'Monthly quota exhausted - upgrade to keep access',
-};
-
-function alertThreshold(used: number, granted: number): '80' | '100' | undefined {
-  if (granted <= 0 || used >= granted) return '100';
-  if (used >= granted * 0.8) return '80';
-  return undefined;
-}
 
 /**
  * Runs after auth on metered routes. Rejects exhausted quotas with a 402
@@ -27,10 +17,14 @@ export function meterCredits(): MiddlewareHandler<AppEnv> {
     const keyCtx = c.get('keyCtx');
     if (!keyCtx) return next(); // auth must be mounted before metering
 
+    // HEAD is re-dispatched as GET by Hono but returns no body; don't bill or
+    // count it (a bodyless probe shouldn't consume credits).
+    if (c.req.method === 'HEAD') return next();
+
     const cost = creditCost(getSource(c.req.param('source') ?? ''));
     const period = currentPeriod();
-    const granted = keyCtx.creditsGranted;
-    const used = await getUsage(c.env, keyCtx.keyId, period);
+    const granted = planAllowance(keyCtx.plan);
+    const used = await getUsage(c.env, keyCtx.usageSubject, period);
 
     if (used + cost > granted) {
       c.header('X-Credits-Limit', String(granted));
@@ -47,7 +41,7 @@ export function meterCredits(): MiddlewareHandler<AppEnv> {
     await next();
     if (!c.res.ok) return; // only successful responses are charged
 
-    const newUsed = await incrementUsage(c.env, keyCtx.keyId, cost, period);
+    const newUsed = await incrementUsage(c.env, keyCtx.usageSubject, cost, period);
     c.set('creditsCharged', cost);
     c.res.headers.set('X-Credits-Limit', String(granted));
     c.res.headers.set('X-Credits-Remaining', String(Math.max(0, granted - newUsed)));

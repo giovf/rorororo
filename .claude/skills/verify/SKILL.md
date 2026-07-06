@@ -51,9 +51,12 @@ npx wrangler dev --port 8787 --test-scheduled   # run in background
   Interop check: `npx @modelcontextprotocol/inspector` against localhost:8787/mcp.
 - Metering: data routes cost 1 credit and set `X-Credits-Limit`/`-Remaining`
   (+ `X-Upgrade-Nudge` and `meta.usage_alert` from 80%); `GET /v1/usage`
-  (authed) is free. Quota = SUM(credit_ledger deltas) per month. To test
-  thresholds quickly: insert a negative ledger row for the key, then delete
-  the `key:<sha256(key)>` entry from CACHE so the new total loads.
+  (authed) is free. Quota = the plan's monthly allowance (billing/plans.ts
+  planAllowance: free 250 / starter 5000 / growth 20000 / scale 100000), NOT
+  the ledger sum — renewals don't inflate it. Usage is keyed by EMAIL, not key
+  id (`usage:<lowercased-email>:<yyyymm>` in CACHE), so keys sharing an email
+  share the quota. To test thresholds fast, seed that KV counter. HEAD requests
+  are not billed. Bearer scheme is case-insensitive.
 - Every response must use the envelope: success `{ok:true,data,...}`, error
   `{ok:false,error:{code,message,docs_url}}` — check unknown routes return the
   404 envelope, not bare text.

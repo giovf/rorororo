@@ -11,7 +11,7 @@ import { refreshSource } from '../src/sources/cache';
 import type { DataSource } from '../src/sources/types';
 import type { UkPlanningRecord } from '../src/sources/uk-planning';
 import { authedFetch, issueKey } from './helpers/auth';
-import { stubOrigins } from './helpers/origin-mock';
+import { stubOrigins, tendersResponse } from './helpers/origin-mock';
 
 // Raw origin entities, including personal-data fields that Blind Mode must drop.
 const ORIGIN_ENTITIES = [
@@ -156,10 +156,7 @@ describe('refreshSource error path', () => {
 
 describe('scheduled refresh', () => {
   it('refreshes all sources matching the cron and logs each', async () => {
-    stubOrigins({
-      planning: originPage,
-      tenders: () => Response.json({ releases: [], links: {} }),
-    });
+    stubOrigins({ planning: originPage, tenders: tendersResponse });
     const controller = createScheduledController({ cron: '0 5 * * *' });
     const ctx = createExecutionContext();
     await worker.scheduled(controller, env, ctx);

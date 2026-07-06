@@ -1,20 +1,17 @@
 import { env, SELF } from 'cloudflare:test';
 import { Hono } from 'hono';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { hashKey } from '../src/auth/keys';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import { currentPeriod } from '../src/metering/counters';
 import { rateLimit } from '../src/metering/ratelimit';
 import type { AppEnv } from '../src/types';
 import { authedFetch, bearer, issueKey } from './helpers/auth';
-import { stubOrigins } from './helpers/origin-mock';
+import { planningResponse, stubOrigins } from './helpers/origin-mock';
 
 const DATA_URL = 'https://example.com/v1/data/uk-planning?per_page=1';
 const USAGE_URL = 'https://example.com/v1/usage';
 
-function planningPage(): Response {
-  return Response.json({ entities: [], links: {}, count: 0 });
-}
+const planningPage = (): Response => planningResponse();
 
 type UsageBody = SuccessEnvelope<{
   plan: string;
@@ -25,13 +22,9 @@ type UsageBody = SuccessEnvelope<{
   alerts: string[];
 }>;
 
-/** Shrink a key's quota by inserting a negative ledger adjustment. */
-async function shrinkQuota(keyId: string, key: string, grantedTarget: number): Promise<void> {
-  await env.DB.prepare('INSERT INTO credit_ledger (key_id, delta, reason) VALUES (?1, ?2, ?3)')
-    .bind(keyId, grantedTarget - 250, 'test_adjustment')
-    .run();
-  // Drop the cached key record so the new total is picked up immediately.
-  await env.CACHE.delete(`key:${await hashKey(key)}`);
+/** Pre-set a subject's (email's) monthly usage counter to hit thresholds fast. */
+async function seedUsage(email: string, used: number): Promise<void> {
+  await env.CACHE.put(`usage:${email.toLowerCase()}:${currentPeriod()}`, String(used));
 }
 
 afterEach(() => {
@@ -100,40 +93,34 @@ describe('credit metering on data routes', () => {
 
   it('nudges at 80%, alerts at 100%, and blocks past the quota with 402', async () => {
     stubOrigins({ planning: planningPage });
-    const { id, key } = await issueKey();
-    await shrinkQuota(id, key, 5);
+    const { key, email } = await issueKey();
+    await seedUsage(email, 248); // free plan = 250/mo
 
-    const statuses: (string | null)[] = [];
-    for (let i = 1; i <= 5; i++) {
-      const res = await authedFetch(DATA_URL, key);
-      expect(res.status).toBe(200);
-      statuses.push(res.headers.get('X-Upgrade-Nudge') && res.headers.get('X-Credits-Remaining'));
-      if (i === 4) {
-        const body = (await res.json()) as SuccessEnvelope<unknown[]>;
-        expect(body.meta?.usage_alert).toBe('80');
-      }
-      if (i === 5) {
-        const body = (await res.json()) as SuccessEnvelope<unknown[]>;
-        expect(body.meta?.usage_alert).toBe('100');
-      }
-    }
-    expect(statuses).toEqual([null, null, null, '1', '0']);
+    const r1 = await authedFetch(DATA_URL, key); // → 249, 80% nudge
+    expect(r1.status).toBe(200);
+    expect(r1.headers.get('X-Credits-Remaining')).toBe('1');
+    expect(r1.headers.get('X-Upgrade-Nudge')).toBeTruthy();
+    expect(((await r1.json()) as SuccessEnvelope<unknown[]>).meta?.usage_alert).toBe('80');
 
-    const blocked = await authedFetch(DATA_URL, key);
+    const r2 = await authedFetch(DATA_URL, key); // → 250, 100% alert
+    expect(r2.status).toBe(200);
+    expect(r2.headers.get('X-Credits-Remaining')).toBe('0');
+    expect(((await r2.json()) as SuccessEnvelope<unknown[]>).meta?.usage_alert).toBe('100');
+
+    const blocked = await authedFetch(DATA_URL, key); // over quota
     expect(blocked.status).toBe(402);
     expect(blocked.headers.get('X-Credits-Remaining')).toBe('0');
-    const body = (await blocked.json()) as ErrorEnvelope;
-    expect(body.error.code).toBe('quota_exceeded');
+    expect(((await blocked.json()) as ErrorEnvelope).error.code).toBe('quota_exceeded');
 
     const usage = (await (
       await SELF.fetch(USAGE_URL, { headers: bearer(key) })
     ).json()) as UsageBody;
-    expect(usage.data).toMatchObject({ used: 5, granted: 5, remaining: 0, alerts: ['100'] });
+    expect(usage.data).toMatchObject({ used: 250, granted: 250, remaining: 0, alerts: ['100'] });
   });
 });
 
 describe('rate limiting', () => {
-  it('caps a fixed window and reports Retry-After', async () => {
+  it('caps requests in a window and reports Retry-After', async () => {
     const app = new Hono<AppEnv>();
     app.use(
       '*',

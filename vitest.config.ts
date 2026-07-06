@@ -13,6 +13,7 @@ export default defineConfig({
           ADMIN_TOKEN: 'test-admin-token',
           STRIPE_SECRET_KEY: 'sk_test_dummy',
           STRIPE_WEBHOOK_SECRET: 'whsec_testsecret',
+          FIXTURE_FALLBACK: 'true',
         },
       },
     }),

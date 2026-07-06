@@ -17,3 +17,7 @@ X402_WALLET_ADDRESS=
 X402_PRICE_USD=
 X402_NETWORK=
 X402_FACILITATOR_URL=
+
+# Offline dev: serve bundled fixtures when an origin fetch fails. Local only —
+# production (wrangler.jsonc) defaults this to "false" so outages fail loudly.
+FIXTURE_FALLBACK=true

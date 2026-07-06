@@ -3,14 +3,12 @@ import { afterEach, describe, expect, it, vi } from 'vitest';
 import { generateKey, hashKey } from '../src/auth/keys';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import { authedFetch, bearer, issueKey } from './helpers/auth';
-import { stubOrigins } from './helpers/origin-mock';
+import { planningResponse, stubOrigins } from './helpers/origin-mock';
 
 const KEYS_URL = 'https://example.com/v1/keys';
 const DATA_URL = 'https://example.com/v1/data/uk-planning';
 
-function planningPage(): Response {
-  return Response.json({ entities: [], links: {}, count: 0 });
-}
+const planningPage = (): Response => planningResponse();
 
 afterEach(() => {
   vi.unstubAllGlobals();

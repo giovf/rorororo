@@ -14,6 +14,8 @@ import type { AppEnv } from '../types';
 
 const DEFAULT_PRICE_USD = '$0.005';
 const DEFAULT_NETWORK = 'base';
+// x402-hono networks we accept as an override (it throws on anything else).
+const SUPPORTED_NETWORKS = new Set(['base', 'base-sepolia']);
 
 export const x402Routes = new Hono<AppEnv>()
   .use('/data/:source', async (c, next) => {
@@ -21,30 +23,40 @@ export const x402Routes = new Hono<AppEnv>()
     if (!wallet) {
       return c.json(failure('not_found', `No route for ${c.req.method} ${c.req.path}`), 404);
     }
+
+    const price = c.env.X402_PRICE_USD || DEFAULT_PRICE_USD;
+    const network = c.env.X402_NETWORK || DEFAULT_NETWORK;
+    // Validate the operator-supplied overrides up front: paymentMiddleware THROWS
+    // on a bad price/network, which would 500 every request (paid and unpaid).
+    // A clean 503 + log names the misconfiguration instead.
+    if (!/^\$\d+(\.\d+)?$/.test(price) || !SUPPORTED_NETWORKS.has(network)) {
+      console.error(
+        JSON.stringify({ level: 'error', event: 'x402_misconfigured', price, network }),
+      );
+      return c.json(failure('unavailable', 'x402 is misconfigured; retry later'), 503);
+    }
+
     // Built per request: Workers only expose env at request time, and the
     // middleware itself only calls the facilitator when a payment is presented.
     const middleware = paymentMiddleware(
       wallet as `0x${string}`,
-      {
-        '/x402/data/*': {
-          price: c.env.X402_PRICE_USD || DEFAULT_PRICE_USD,
-          network: (c.env.X402_NETWORK || DEFAULT_NETWORK) as 'base',
-        },
-      },
-      c.env.X402_FACILITATOR_URL ? { url: c.env.X402_FACILITATOR_URL as `${string}://${string}` } : undefined,
+      { '/x402/data/*': { price, network: network as 'base' } },
+      c.env.X402_FACILITATOR_URL
+        ? { url: c.env.X402_FACILITATOR_URL as `${string}://${string}` }
+        : undefined,
     );
     const paid = c.req.header('X-PAYMENT') !== undefined;
     const response = await middleware(c, async () => {
       await next();
     });
-    if (paid && c.res.ok) {
+    // On a rejected payment the middleware RETURNS its 402 (so `response` is the
+    // 402); on success it mutates c.res and may return void. Check the actual
+    // outcome, not c.res.ok alone — the c.res getter lazily materializes a 200
+    // when unset, which would log a false settlement for every failed payment.
+    const outcome = response ?? c.res;
+    if (paid && outcome.ok) {
       console.log(
-        JSON.stringify({
-          level: 'info',
-          event: 'x402_paid',
-          path: c.req.path,
-          price: c.env.X402_PRICE_USD || DEFAULT_PRICE_USD,
-        }),
+        JSON.stringify({ level: 'info', event: 'x402_paid', path: c.req.path, price }),
       );
     }
     return response;

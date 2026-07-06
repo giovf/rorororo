@@ -3,7 +3,7 @@ import type { Context } from 'hono';
 import { failure, success } from '../lib/envelope';
 import { readCached } from '../sources/cache';
 import { getSource, listSources } from '../sources/registry';
-import { applyQuery, buildQuerySchema } from '../sources/query';
+import { applyQuery, buildQuerySchema, omitEmptyParams } from '../sources/query';
 import type { AppEnv } from '../types';
 
 /**
@@ -17,7 +17,7 @@ export async function handleSourceQuery(c: Context<AppEnv>): Promise<Response> {
     return c.json(failure('not_found', `Unknown source '${slug}'`), 404);
   }
 
-  const parsed = buildQuerySchema(source).safeParse(c.req.query());
+  const parsed = buildQuerySchema(source).safeParse(omitEmptyParams(c.req.query()));
   if (!parsed.success) {
     const details = parsed.error.issues.map((issue) => ({
       param: issue.path.join('.'),

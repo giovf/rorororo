@@ -1,6 +1,6 @@
 import { env, SELF } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
-import { hashKey } from '../src/auth/keys';
+import { currentPeriod } from '../src/metering/counters';
 import { bearer, issueKey } from './helpers/auth';
 import { stubOrigins } from './helpers/origin-mock';
 
@@ -151,11 +151,9 @@ describe('/mcp', () => {
   });
 
   it('surfaces quota exhaustion as an isError tool result, not a protocol crash', async () => {
-    const { id, key } = await issueKey();
-    await env.DB.prepare('INSERT INTO credit_ledger (key_id, delta, reason) VALUES (?1, ?2, ?3)')
-      .bind(id, -250, 'test_adjustment')
-      .run();
-    await env.CACHE.delete(`key:${await hashKey(key)}`);
+    const { key, email } = await issueKey();
+    // Free plan = 250/mo; exhaust the monthly usage counter (keyed by email).
+    await env.CACHE.put(`usage:${email.toLowerCase()}:${currentPeriod()}`, '250');
 
     const { status, body } = await rpc(key, 'tools/call', {
       name: 'query_uk_planning',

@@ -1,10 +1,15 @@
 export interface KeyContext {
   keyId: string;
+  /** Current plan slug; the monthly quota derives from it (billing/plans.ts). */
   plan: string;
   /** Hex SHA-256 of the presented key — lets self-serve routes invalidate the KV cache. */
   keyHash: string;
-  /** Sum of credit_ledger deltas, cached with the key record. */
-  creditsGranted: number;
+  /**
+   * Stable identity the monthly usage counter is keyed by (normalized email),
+   * so multiple keys for one email share a free quota instead of each getting a
+   * fresh 250 — you can't farm free credits by re-issuing keys.
+   */
+  usageSubject: string;
 }
 
 export type AppVariables = {

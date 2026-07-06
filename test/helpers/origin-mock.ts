@@ -25,3 +25,19 @@ export function stubOrigins(handlers: {
   vi.stubGlobal('fetch', mock);
   return mock;
 }
+
+// Minimal non-empty origin payloads. Sources treat a 0-record refresh as an
+// origin failure, so stubs that just exercise auth/metering still need ≥1 row.
+export function planningResponse(
+  entities: unknown[] = [
+    { entity: 1, reference: 'A/1', 'organisation-entity': 109, description: 'x' },
+  ],
+): Response {
+  return Response.json({ entities, links: {}, count: entities.length });
+}
+
+export function tendersResponse(
+  releases: unknown[] = [{ id: 'n/1', ocid: 'ocds-x', tender: { title: 't' } }],
+): Response {
+  return Response.json({ releases, links: {} });
+}

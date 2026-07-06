@@ -7,10 +7,16 @@ interface KeyRecord {
   id: string;
   plan: string;
   revoked_at: string | null;
-  credits_granted: number;
+  email: string;
 }
 
-const KV_TTL_SECONDS = 3600;
+// The quota cap derives from the plan (billing/plans.ts planAllowance), so the
+// hot path only needs the plan — no ledger join. Kept short (KV minimum, 60s)
+// so revocation and plan changes propagate quickly: the KV-delete on revoke/
+// top-up races with this put and KV is eventually consistent, so staleness is
+// bounded to ~this TTL rather than being truly instant. A Durable Object per
+// key is the accurate upgrade path (PRD), deliberately not built for v1.
+const KV_TTL_SECONDS = 60;
 
 export const keyCacheKey = (hash: string): string => `key:${hash}`;
 
@@ -18,13 +24,8 @@ async function lookupKey(env: CloudflareBindings, hash: string): Promise<KeyReco
   const cached = await env.CACHE.get<KeyRecord>(keyCacheKey(hash), 'json');
   if (cached) return cached;
 
-  // credits_granted = ledger sum, so Stripe top-ups (task 8) only need to
-  // insert a ledger row and delete this KV entry to take effect.
   const row = await env.DB.prepare(
-    `SELECT a.id, a.plan, a.revoked_at, COALESCE(SUM(l.delta), 0) AS credits_granted
-     FROM api_keys a LEFT JOIN credit_ledger l ON l.key_id = a.id
-     WHERE a.key_hash = ?1
-     GROUP BY a.id, a.plan, a.revoked_at`,
+    'SELECT id, plan, revoked_at, email FROM api_keys WHERE key_hash = ?1',
   )
     .bind(hash)
     .first<KeyRecord>();
@@ -38,12 +39,13 @@ async function lookupKey(env: CloudflareBindings, hash: string): Promise<KeyReco
 
 /**
  * Bearer API-key auth: KV hot path, D1 fallback (repopulating KV).
- * Revocation deletes the KV entry, so it takes effect immediately.
+ * Revocation deletes the KV entry; it propagates within the cache TTL.
  */
 export function requireApiKey(): MiddlewareHandler<AppEnv> {
   return async (c, next) => {
     const header = c.req.header('Authorization') ?? '';
-    const match = /^Bearer\s+(\S+)$/.exec(header);
+    // RFC 7235 auth-scheme is case-insensitive.
+    const match = /^Bearer\s+(\S+)$/i.exec(header);
     if (!match) {
       return c.json(
         failure('unauthorized', 'Missing API key. Send it as: Authorization: Bearer <key>'),
@@ -61,7 +63,7 @@ export function requireApiKey(): MiddlewareHandler<AppEnv> {
       keyId: record.id,
       plan: record.plan,
       keyHash: hash,
-      creditsGranted: record.credits_granted,
+      usageSubject: record.email.toLowerCase(),
     };
     c.set('keyCtx', keyCtx);
     await next();

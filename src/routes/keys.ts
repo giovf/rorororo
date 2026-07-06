@@ -12,7 +12,11 @@ const issueBodySchema = z.object({
   name: z.string().trim().min(1).max(100).optional(),
 });
 
-// Per-IP guard against key-farming (best-effort KV window per PRD).
+// Anti-farming: the free quota is metered per-email (metering/counters.ts), so
+// issuing many keys for one email shares one 250/mo allowance rather than
+// minting fresh credits. This per-IP window caps issuance velocity on top.
+// Residual: distinct/disposable/plus-addressed emails still each get a free
+// quota — closing that needs email verification, a documented post-v1 hardening.
 const issueRateLimit = rateLimit({
   scope: 'keys',
   limit: 5,

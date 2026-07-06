@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { requireApiKey } from '../auth/middleware';
 import { stripeClient, webhookCryptoProvider } from '../billing/client';
-import { PAID_PLANS } from '../billing/plans';
+import { isPaidPlan, PAID_PLANS } from '../billing/plans';
 import { handleStripeEvent } from '../billing/webhook';
 import { API_BASE_URL } from '../lib/constants';
 import { failure, success } from '../lib/envelope';
@@ -19,13 +19,15 @@ export const billingRoutes = new Hono<AppEnv>()
 
     const body = (await c.req.json().catch(() => ({}))) as { plan?: unknown };
     const plan = typeof body.plan === 'string' ? body.plan : '';
-    const planDef = PAID_PLANS[plan];
-    if (!planDef) {
+    // Object.hasOwn (via isPaidPlan) so a value like 'toString' can't resolve an
+    // inherited Object.prototype member and slip past the unknown-plan guard.
+    if (!isPaidPlan(plan)) {
       return c.json(
         failure('bad_request', `Unknown plan; choose one of: ${Object.keys(PAID_PLANS).join(', ')}`),
         400,
       );
     }
+    const planDef = PAID_PLANS[plan]!;
 
     const keyCtx = c.get('keyCtx')!;
     const prices = await stripe.prices.list({ lookup_keys: [planDef.lookupKey], limit: 1 });

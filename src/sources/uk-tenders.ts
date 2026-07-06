@@ -147,7 +147,9 @@ export const ukTendersSource: DataSource<UkTendersRecord> = {
     try {
       return await fetchFromOrigin();
     } catch (err) {
-      if (env.FIXTURE_FALLBACK === 'true') {
+      // String() so the check survives the generated literal binding type
+      // (prod pins FIXTURE_FALLBACK="false"); local dev / tests set "true".
+      if (String(env.FIXTURE_FALLBACK) === 'true') {
         console.log(
           JSON.stringify({
             level: 'warn',

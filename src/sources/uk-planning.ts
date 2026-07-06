@@ -124,7 +124,9 @@ export const ukPlanningSource: DataSource<UkPlanningRecord> = {
     } catch (err) {
       // Offline-capable local dev only; production must fail loudly so the
       // refresh log shows it (FIXTURE_FALLBACK is unset in production).
-      if (env.FIXTURE_FALLBACK === 'true') {
+      // String() so the check survives the generated literal binding type
+      // (prod pins FIXTURE_FALLBACK="false"); local dev / tests set "true".
+      if (String(env.FIXTURE_FALLBACK) === 'true') {
         console.log(
           JSON.stringify({
             level: 'warn',

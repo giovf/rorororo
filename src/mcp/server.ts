@@ -2,6 +2,8 @@ import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
 import { API_BASE_URL, APP_VERSION, DOCS_ERRORS_URL } from '../lib/constants';
 import { creditCost } from '../metering/costs';
 import { currentPeriod, getUsage, incrementUsage } from '../metering/counters';
+import { planAllowance } from '../billing/plans';
+import { usageSummary } from '../metering/quota';
 import { readCached } from '../sources/cache';
 import { applyQuery, buildQuerySchema } from '../sources/query';
 import { listSources } from '../sources/registry';
@@ -60,10 +62,11 @@ function registerQueryTool(
     async (args: Record<string, unknown>): Promise<ToolResult> => {
       const cost = creditCost(source);
       const period = currentPeriod();
-      const used = await getUsage(env, keyCtx.keyId, period);
-      if (used + cost > keyCtx.creditsGranted) {
+      const granted = planAllowance(keyCtx.plan);
+      const used = await getUsage(env, keyCtx.usageSubject, period);
+      if (used + cost > granted) {
         return errorResult(
-          `Monthly credit quota exhausted (${keyCtx.creditsGranted}). Upgrade via POST ${API_BASE_URL}/v1/billing/checkout — see ${DOCS_ERRORS_URL}#quota_exceeded`,
+          `Monthly credit quota exhausted (${granted}). Upgrade via POST ${API_BASE_URL}/v1/billing/checkout — see ${DOCS_ERRORS_URL}#quota_exceeded`,
         );
       }
 
@@ -75,7 +78,7 @@ function registerQueryTool(
       }
 
       const result = applyQuery(payload.records, args);
-      const newUsed = await incrementUsage(env, keyCtx.keyId, cost, period);
+      const newUsed = await incrementUsage(env, keyCtx.usageSubject, cost, period);
       return jsonResult({
         ok: true,
         data: result.records,
@@ -85,7 +88,7 @@ function registerQueryTool(
           per_page: result.perPage,
           total: result.total,
           last_refreshed_at: payload.last_refreshed_at,
-          credits_remaining: Math.max(0, keyCtx.creditsGranted - newUsed),
+          credits_remaining: Math.max(0, granted - newUsed),
         },
       });
     },
@@ -115,16 +118,11 @@ export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext): Mcp
     },
     async (): Promise<ToolResult> => {
       const period = currentPeriod();
-      const used = await getUsage(env, keyCtx.keyId, period);
+      const used = await getUsage(env, keyCtx.usageSubject, period);
+      const { granted, remaining, alerts } = usageSummary(keyCtx.plan, used);
       return jsonResult({
         ok: true,
-        data: {
-          plan: keyCtx.plan,
-          period,
-          used,
-          granted: keyCtx.creditsGranted,
-          remaining: Math.max(0, keyCtx.creditsGranted - used),
-        },
+        data: { plan: keyCtx.plan, period, used, granted, remaining, alerts },
       });
     },
   );

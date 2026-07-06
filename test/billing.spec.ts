@@ -139,17 +139,18 @@ describe('POST /v1/billing/webhook', () => {
     ).first<{ n: number; total: number }>();
     expect(grants).toMatchObject({ n: 1, total: 5000 });
 
+    // Quota is the plan's monthly allowance, NOT the ledger sum — so it's the
+    // starter allowance and a renewal does NOT inflate it (the fixed bug).
     const usage = (await (
       await SELF.fetch('https://example.com/v1/usage', { headers: bearer(key) })
     ).json()) as SuccessEnvelope<{ granted: number }>;
-    expect(usage.data.granted).toBe(5250); // 250 free + 5000 starter
+    expect(usage.data.granted).toBe(5000);
 
-    // A different invoice id (renewal) grants again.
-    await postWebhook(invoicePaidEvent(id, 'evt_invoice_2'));
+    await postWebhook(invoicePaidEvent(id, 'evt_invoice_2')); // renewal
     const usage2 = (await (
       await SELF.fetch('https://example.com/v1/usage', { headers: bearer(key) })
     ).json()) as SuccessEnvelope<{ granted: number }>;
-    expect(usage2.data.granted).toBe(10250);
+    expect(usage2.data.granted).toBe(5000); // unchanged by renewal
   });
 
   it('downgrades to free on customer.subscription.deleted', async () => {
@@ -163,10 +164,12 @@ describe('POST /v1/billing/webhook', () => {
     });
     expect(res.status).toBe(200);
 
+    // Cancellation drops both plan AND quota back to free (250) — no lingering
+    // paid allowance, which the ledger-sum model wrongly left in place.
     const usage = (await (
       await SELF.fetch('https://example.com/v1/usage', { headers: bearer(key) })
-    ).json()) as SuccessEnvelope<{ plan: string }>;
-    expect(usage.data.plan).toBe('free');
+    ).json()) as SuccessEnvelope<{ plan: string; granted: number }>;
+    expect(usage.data).toMatchObject({ plan: 'free', granted: 250 });
   });
 
   it('acknowledges unhandled event types', async () => {

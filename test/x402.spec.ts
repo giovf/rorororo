@@ -8,12 +8,17 @@ const X402_URL = 'https://example.com/x402/data/uk-planning';
 const TEST_WALLET = '0x1111111111111111111111111111111111111111';
 
 /** Run a request through the real worker with x402 env vars switched on. */
-async function litFetch(url: string, init?: RequestInit): Promise<Response> {
+async function litFetch(
+  url: string,
+  init?: RequestInit,
+  overrides: Partial<CloudflareBindings> = {},
+): Promise<Response> {
   const ctx = createExecutionContext();
   const litEnv = {
     ...env,
     X402_WALLET_ADDRESS: TEST_WALLET,
     X402_NETWORK: 'base-sepolia',
+    ...overrides,
   } as CloudflareBindings;
   const res = await worker.fetch(new Request(url, init), litEnv, ctx);
   await waitOnExecutionContext(ctx);
@@ -57,5 +62,16 @@ describe('/x402/data/:source', () => {
     // Same slug via /v1 still requires an API key even when x402 is lit.
     const res = await litFetch('https://example.com/v1/data/uk-planning');
     expect(res.status).toBe(401);
+  });
+
+  // #11 — a bad price/network env override returns a clean 503, not a 500 from
+  // paymentMiddleware throwing on every request.
+  it('returns 503 (not 500) when misconfigured', async () => {
+    const badPrice = await litFetch(X402_URL, undefined, { X402_PRICE_USD: '0' });
+    expect(badPrice.status).toBe(503);
+    expect(((await badPrice.json()) as ErrorEnvelope).error.code).toBe('unavailable');
+
+    const badNetwork = await litFetch(X402_URL, undefined, { X402_NETWORK: 'ethereum' });
+    expect(badNetwork.status).toBe(503);
   });
 });
