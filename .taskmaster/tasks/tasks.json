@@ -159,7 +159,7 @@
         "dependencies": [
           "2"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -167,9 +167,10 @@
             "description": "Establish the D1 migrations pattern for the repo (no migrations/ directory exists yet) by creating the first migration for the refresh_log table and documenting the local vs production apply workflow.",
             "dependencies": [],
             "details": "Create `migrations/0001_refresh_log.sql` containing: `CREATE TABLE refresh_log (id INTEGER PRIMARY KEY, source_slug TEXT, status TEXT, records INTEGER, duration_ms INTEGER, created_at TEXT DEFAULT (datetime('now')));`. Ensure `wrangler.jsonc` has the D1 binding configured with `migrations_dir` pointing at `migrations/` (add if missing) and run `npm run cf-typegen` if bindings change. Document the workflow in `docs/` (or a README section): `wrangler d1 migrations create <db> <name>` to scaffold, `wrangler d1 migrations apply <db> --local` for free local apply during dev, and note that `wrangler d1 migrations apply <db> --remote` against production is an ask-first operation per CLAUDE.md. Verify the migration applies cleanly locally and the table shape matches what src/sources/cache.ts will insert (source_slug, status, records, duration_ms).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Run `wrangler d1 migrations apply <db> --local` and confirm success; query the local D1 with `wrangler d1 execute --local --command \"PRAGMA table_info(refresh_log)\"` to assert columns and default. Pool-workers tests in later subtasks will exercise the table via real inserts.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:06:52.670Z"
           },
           {
             "id": 2,
@@ -177,9 +178,10 @@
             "description": "Create src/sources/uk-planning.ts with a zod recordSchema that structurally excludes personal data (Blind Mode) — only site-level fields, unknown keys stripped — plus the queryParams schema declaring the filters this source supports.",
             "dependencies": [],
             "details": "In `src/sources/uk-planning.ts`, define `recordSchema` as a zod object with: reference, authority, status, decision, dates (received/validated/decided), site-level location only (postcode, point/coordinates), and description. Explicitly NO applicant name, agent, or contact fields — and apply `.strip()` so any unknown keys from the origin are dropped at parse time, meaning personal data is never stored (UK GDPR Blind Mode; this is compliance-critical, not just hygiene). Add a comment on the schema stating the Blind Mode invariant so future edits don't reintroduce personal fields. Define `queryParams` as a zod object with: authority, status, decided_after/decided_before (date strings), and q (description substring match). Stub the DataSource object conforming to the task-2 interface (slug 'uk-planning', title, recordSchema, queryParams, refresh: { cron for daily, cacheTtlSeconds: 86400 }) with fetchFresh left as a placeholder for subtask 3, and add the registry entry per the dataset-isolation rule (source file + registry entry only).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit tests: feed a record containing applicant_name, agent_email, and other personal keys through recordSchema.parse and assert those keys never appear in the output; assert required site-level fields survive; assert queryParams accepts valid filters and rejects malformed dates with zod issues.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:06:52.676Z"
           },
           {
             "id": 3,
@@ -189,9 +191,10 @@
               2
             ],
             "details": "Verify the current planning.data.gov.uk endpoint shape at implementation time (expected form: `https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=...` — confirm dataset slug, pagination params, and response envelope against the live API) and record the exact URL and verification date in a header comment in `src/sources/uk-planning.ts`. Implement the pagination loop (offset/cursor per the API's actual scheme, bounded page size, sane upper limit), map each entity to the normalized record shape, and validate every record through recordSchema.parse so stripping happens at ingest. On fetch failure (network error or non-2xx) in local dev, fall back to `src/sources/fixtures/uk-planning.json` — create that fixture from a real recorded API response (with personal fields present in the raw capture so tests can prove they get stripped). Surface fetch errors to the caller in production paths so refreshSource can log status 'error'.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit tests with fetchMock (no live network): mock a two-page entity.json response and assert the pagination loop aggregates all records; assert entity→record mapping against the recorded fixture (snapshot or field-level asserts); reject the mocked fetch and assert the fixture fallback path returns parsed, Blind-Mode-stripped records.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:06:52.679Z"
           },
           {
             "id": 4,
@@ -202,9 +205,10 @@
               3
             ],
             "details": "Create `src/sources/cache.ts` — generic over any DataSource, no uk-planning-specific logic (dataset isolation rule). `readCached(env, source)`: read KV key `data:<slug>` holding `{ records, last_refreshed_at }`; on miss, call source.fetchFresh(), write the KV entry (respecting source.refresh.cacheTtlSeconds), and return it. `refreshSource(env, source)`: time the fetchFresh() call, write the KV entry on success, and insert a refresh_log row into D1 either way — status 'ok' with record count and duration_ms, or status 'error' with the failure captured — so the operator sees failures in refresh_log rather than silent drops. Wire the `scheduled` handler exported from src/index.ts (task 1) to iterate the source registry, select sources whose refresh.cron matches the triggering cron event, and call refreshSource for each inside a try/catch per source — the handler must never throw, and one failing source must not block others.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit tests: readCached hit returns KV data without calling fetchFresh (spy); miss populates KV. refreshSource success writes KV + 'ok' row; a rejecting fetchFresh writes an 'error' row and does not clobber existing KV data. Scheduled-handler test: registry with one healthy and one throwing source — handler resolves without throwing and both outcomes appear in refresh_log.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:06:52.683Z"
           },
           {
             "id": 5,
@@ -214,14 +218,16 @@
               4
             ],
             "details": "Update the /v1/data/:source route handler to fetch records via `readCached(env, source)` instead of calling fetchFresh directly, and include `last_refreshed_at` in the response `meta` object alongside pagination info, keeping filters and pagination operating on the cached record set. Then write the tests using @cloudflare/vitest-pool-workers with fetchMock enabled (disableNetConnect) so nothing hits the real network. Unit: Blind Mode stripping (fixture with applicant_name never appears in output), entity→record mapping fixtures, fixture fallback on fetch rejection. Integration: trigger the scheduled handler via the pool-workers scheduled test helper against real KV/D1 bindings and assert KV `data:uk-planning` is populated and a refresh_log row exists; then SELF.fetch /v1/data/uk-planning and assert it serves cached data, filters (authority, status, decided_after/before, q) apply correctly, and meta.last_refreshed_at is present and ISO-formatted. Run npm run lint/typecheck/test as the exit gate.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "This subtask IS the test suite: unit tests for schema stripping, mapping, and fallback; pool-workers integration tests for scheduled-trigger → KV+D1 population and endpoint serving cached filtered data with freshness meta. All origin calls mocked via fetchMock; assert mock expectations so no test silently hits the network.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:06:52.686Z"
           }
         ],
         "complexity": 7,
         "recommendedSubtasks": 5,
-        "expansionPrompt": "Split into: (1) bootstrap the D1 migrations workflow with migrations/0001_refresh_log.sql and document local vs production apply (no migrations/ directory exists yet — this establishes the pattern); (2) implement src/sources/uk-planning.ts recordSchema with Blind Mode — only site-level fields, `.strip()` unknown keys, explicitly no applicant/agent/contact fields — plus queryParams (authority, status, decided_after/before, q); (3) implement fetchFresh() against planning.data.gov.uk's entity.json API with pagination loop and entity→record mapping, verify the live endpoint shape at implementation time and record the URL in a header comment, plus fixture fallback (src/sources/fixtures/uk-planning.json) for offline dev; (4) build the generic src/sources/cache.ts (readCached KV read-through, refreshSource writing KV + refresh_log row) and wire the task-1 scheduled handler to iterate the registry without ever throwing; (5) connect /v1/data/:source to the cache layer with last_refreshed_at in meta, and write the unit tests (personal-field stripping, mapping fixtures, fallback) and pool-workers integration tests (scheduled trigger populates KV + D1, endpoint serves cached filtered data) with fetchMock so nothing hits the network."
+        "expansionPrompt": "Split into: (1) bootstrap the D1 migrations workflow with migrations/0001_refresh_log.sql and document local vs production apply (no migrations/ directory exists yet — this establishes the pattern); (2) implement src/sources/uk-planning.ts recordSchema with Blind Mode — only site-level fields, `.strip()` unknown keys, explicitly no applicant/agent/contact fields — plus queryParams (authority, status, decided_after/before, q); (3) implement fetchFresh() against planning.data.gov.uk's entity.json API with pagination loop and entity→record mapping, verify the live endpoint shape at implementation time and record the URL in a header comment, plus fixture fallback (src/sources/fixtures/uk-planning.json) for offline dev; (4) build the generic src/sources/cache.ts (readCached KV read-through, refreshSource writing KV + refresh_log row) and wire the task-1 scheduled handler to iterate the registry without ever throwing; (5) connect /v1/data/:source to the cache layer with last_refreshed_at in meta, and write the unit tests (personal-field stripping, mapping fixtures, fallback) and pool-workers integration tests (scheduled trigger populates KV + D1, endpoint serves cached filtered data) with fetchMock so nothing hits the network.",
+        "updatedAt": "2026-07-06T15:06:52.686Z"
       },
       {
         "id": "4",
@@ -853,9 +859,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T14:55:26.464Z",
+      "lastModified": "2026-07-06T15:06:52.687Z",
       "taskCount": 12,
-      "completedCount": 2,
+      "completedCount": 3,
       "tags": [
         "master"
       ]

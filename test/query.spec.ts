@@ -74,4 +74,24 @@ describe('applyQuery', () => {
     expect(result.records).toEqual([]);
     expect(result.total).toBe(3);
   });
+
+  it('searches all string fields with the reserved q param', () => {
+    const result = applyQuery(RECORDS, parseQuery({ q: 'yard' }));
+    expect(result.records.map((r) => r.id)).toEqual(['r3']);
+    expect(applyQuery(RECORDS, parseQuery({ q: 'residential' })).records.map((r) => r.id)).toEqual(
+      ['r2'],
+    );
+  });
+
+  it('applies inclusive _after/_before ranges over ISO-date string fields', () => {
+    const dated = [
+      { id: 'd1', decided: '2023-05-09' },
+      { id: 'd2', decided: '2024-06-30' },
+      { id: 'd3', decided: null },
+    ];
+    const after = applyQuery(dated, { page: 1, per_page: 25, decided_after: '2024-01-01' });
+    expect(after.records.map((r) => r.id)).toEqual(['d2']);
+    const before = applyQuery(dated, { page: 1, per_page: 25, decided_before: '2023-05-09' });
+    expect(before.records.map((r) => r.id)).toEqual(['d1']);
+  });
 });

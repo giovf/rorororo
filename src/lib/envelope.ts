@@ -9,6 +9,7 @@ export type ErrorCode =
   | 'payment_required'
   | 'not_found'
   | 'rate_limited'
+  | 'unavailable'
   | 'internal';
 
 export interface SuccessEnvelope<T> {
@@ -48,6 +49,7 @@ const STATUS_TO_CODE: Record<number, ErrorCode> = {
   402: 'payment_required',
   404: 'not_found',
   429: 'rate_limited',
+  503: 'unavailable',
 };
 
 export function statusToCode(status: number): ErrorCode {

@@ -11,6 +11,7 @@ assets. The surface is HTTP on :8787 via wrangler dev — drive it with curl.
 ## Launch
 
 ```bash
+npx wrangler d1 migrations apply DB --local     # once per fresh .wrangler state
 npx wrangler dev --port 8787 --test-scheduled   # run in background
 # readiness: poll until curl -s http://localhost:8787/v1/health returns a body
 ```

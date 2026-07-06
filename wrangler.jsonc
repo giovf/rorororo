@@ -3,6 +3,12 @@
   "name": "faceless-api",
   "main": "src/index.ts",
   "compatibility_date": "2026-07-06",
+  "vars": {
+    // Serve bundled fixture data when an origin fetch fails — local dev only.
+    // Production deploys MUST override this to "false" (wrangler.jsonc env
+    // override or dashboard var) so origin failures surface in refresh_log.
+    "FIXTURE_FALLBACK": "true"
+  },
   // Placeholder ids: local dev + tests run on miniflare simulations and never
   // contact Cloudflare; replace with real ids (wrangler d1/kv namespace create)
   // before the first deploy.

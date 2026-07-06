@@ -1,11 +1,9 @@
 import { Hono } from 'hono';
 import { failure, success } from '../lib/envelope';
+import { readCached } from '../sources/cache';
 import { getSource, listSources } from '../sources/registry';
 import { applyQuery, buildQuerySchema } from '../sources/query';
 import type { AppEnv } from '../types';
-
-// last_refreshed_at is null until the KV cache + refresh pipeline lands (task 3).
-const LAST_REFRESHED_AT: string | null = null;
 
 export const dataRoutes = new Hono<AppEnv>()
   .get('/', (c) => {
@@ -13,10 +11,9 @@ export const dataRoutes = new Hono<AppEnv>()
       slug: source.slug,
       title: source.title,
       description: source.description,
-      supported_params: Object.keys(source.queryParams.shape),
+      supported_params: [...Object.keys(source.queryParams.shape), 'q'],
       refresh_cron: source.refresh.cron,
       credit_cost: source.creditCost ?? 1,
-      last_refreshed_at: LAST_REFRESHED_AT,
     }));
     return c.json(success(sources, { total: sources.length }));
   })
@@ -37,15 +34,25 @@ export const dataRoutes = new Hono<AppEnv>()
       return c.json(failure('bad_request', 'Invalid query parameters', details), 400);
     }
 
-    const records = await source.fetchFresh(c.env);
-    const result = applyQuery(records, parsed.data);
+    let payload;
+    try {
+      payload = await readCached(c.env, source);
+    } catch {
+      // Failure detail is in refresh_log / logs; clients get a clean 503.
+      return c.json(
+        failure('unavailable', `Source '${slug}' is temporarily unavailable, retry later`),
+        503,
+      );
+    }
+
+    const result = applyQuery(payload.records, parsed.data);
     return c.json(
       success(result.records, {
         source: source.slug,
         page: result.page,
         per_page: result.perPage,
         total: result.total,
-        last_refreshed_at: LAST_REFRESHED_AT,
+        last_refreshed_at: payload.last_refreshed_at,
       }),
     );
   });

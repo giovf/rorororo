@@ -43,6 +43,7 @@ describe('statusToCode', () => {
     expect(statusToCode(400)).toBe('bad_request');
     expect(statusToCode(402)).toBe('payment_required');
     expect(statusToCode(429)).toBe('rate_limited');
+    expect(statusToCode(503)).toBe('unavailable');
     expect(statusToCode(418)).toBe('internal');
   });
 });
