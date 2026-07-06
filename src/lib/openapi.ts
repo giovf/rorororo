@@ -97,6 +97,46 @@ const issuedKeySchema = z.object({
   message: z.string(),
 });
 
+const billingPaths: JsonObject = {
+  '/v1/billing/checkout': {
+    post: {
+      operationId: 'create_checkout',
+      summary: 'Create a Stripe Checkout session for a paid plan',
+      tags: ['platform'],
+      security: [{ bearerAuth: [] }],
+      requestBody: {
+        required: true,
+        content: {
+          'application/json': { schema: toSchema(z.object({ plan: z.string() })) },
+        },
+      },
+      responses: {
+        '200': jsonResponse(
+          'Checkout session created',
+          successEnvelope(z.object({ url: z.string().nullable(), plan: z.string() })),
+        ),
+        '400': errorResponse('Unknown plan'),
+        '401': errorResponse('Missing, unknown, or revoked API key'),
+        '503': errorResponse('Billing not configured'),
+      },
+    },
+  },
+  '/v1/billing/portal': {
+    get: {
+      operationId: 'billing_portal',
+      summary: 'Get a Stripe customer-portal link (manage/cancel subscription)',
+      tags: ['platform'],
+      security: [{ bearerAuth: [] }],
+      responses: {
+        '200': jsonResponse('Portal link', successEnvelope(z.object({ url: z.string() }))),
+        '401': errorResponse('Missing, unknown, or revoked API key'),
+        '404': errorResponse('No billing account for this key'),
+        '503': errorResponse('Billing not configured'),
+      },
+    },
+  },
+};
+
 const usagePath: JsonObject = {
   '/v1/usage': {
     get: {
@@ -214,6 +254,7 @@ function buildDocument(): JsonObject {
       },
       ...keysPaths,
       ...usagePath,
+      ...billingPaths,
       ...sourcePaths,
     },
     components: {

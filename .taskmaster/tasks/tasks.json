@@ -544,7 +544,7 @@
         "dependencies": [
           "7"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -552,9 +552,10 @@
             "description": "Add the stripe npm package (ask-first per house rules on new top-level dependencies) and create src/billing/client.ts exposing a lazily-constructed Stripe client configured for the Workers runtime, plus an async webhook-verification helper using SubtleCrypto.",
             "dependencies": [],
             "details": "Ask the user before adding `stripe` as a dependency (CLAUDE.md ask-first rule), then `npm install stripe`. In src/billing/client.ts export `getStripe(env: CloudflareBindings): Stripe` that constructs `new Stripe(env.STRIPE_SECRET_KEY, { httpClient: Stripe.createFetchHttpClient(), apiVersion: '<pin the current stable version>' })` — the fetch HTTP client is mandatory because Workers has no Node http. Export `verifyWebhookEvent(payload: string, signature: string, secret: string): Promise<Stripe.Event>` wrapping `stripe.webhooks.constructEventAsync(payload, signature, secret, undefined, Stripe.createSubtleCryptoProvider())` — the async SubtleCrypto path is required on Workers; the sync `constructEvent` throws. Use named exports with explicit return types (strict TS). Document STRIPE_SECRET_KEY and STRIPE_WEBHOOK_SECRET in .dev.vars.example / setup docs — never in .env, never committed. No dataset-specific logic anywhere in src/billing/.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit test in the vitest Workers pool: getStripe returns a client without throwing under workerd (proves the fetch client + no Node-API leakage); verifyWebhookEvent resolves for a payload signed in-test with a known secret (HMAC-SHA256 computed via crypto.subtle to build a valid Stripe-Signature header) and rejects for a tampered payload.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:39:02.662Z"
           },
           {
             "id": 2,
@@ -564,9 +565,10 @@
               1
             ],
             "details": "docs/STRIPE-SETUP.md: step-by-step test-mode instructions (Dashboard and/or CLI) creating three products with monthly recurring prices — Starter $29, Growth $99, Scale $299 — each price carrying `metadata.credits` (e.g. credits: 5000; placeholder numbers live in metadata/config, never hardcoded in Worker code), plus annual prices at 10× monthly (2 months free) with proportionally scaled credit metadata. Document how the resulting price IDs map to plan slugs consumed by the checkout endpoint (env vars or a small config module in src/billing/plans.ts), how to set STRIPE_SECRET_KEY / STRIPE_WEBHOOK_SECRET via .dev.vars and `wrangler secret put`, and how to configure the webhook endpoint + `stripe listen` for local dev. scripts/stripe-setup.ts: optional idempotent Node script (run manually with a test-mode key from .env — CLI tooling only) that creates or updates the same catalog via the API and prints the price IDs. Guard it: refuse to run if the key does not start with `sk_test_` — live-mode object creation is an ask-first operation per CLAUDE.md.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Manual verification only: run scripts/stripe-setup.ts against a test-mode key, confirm products/prices and metadata in the Stripe test Dashboard, and confirm re-running is a no-op. Verify the sk_test_ guard by attempting a run with a non-test key prefix. Doc review: every command in STRIPE-SETUP.md is copy-paste executable.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:39:02.668Z"
           },
           {
             "id": 3,
@@ -577,9 +579,10 @@
               2
             ],
             "details": "In src/routes/ (wired through src/billing/): `POST /v1/billing/checkout` behind the existing auth middleware. Validate body with a zod schema `{ plan: z.enum([...plan slugs...]) }` (zod is the single schema source of truth — 400 error envelope on invalid input). Resolve plan → price ID via the mapping from subtask 2 (env/config, not hardcoded). Call `stripe.checkout.sessions.create({ mode: 'subscription', line_items: [{ price, quantity: 1 }], client_reference_id: keyId, success_url: env.CHECKOUT_SUCCESS_URL, cancel_url: env.CHECKOUT_CANCEL_URL })` — client_reference_id carries the keyId so the webhook can link the Stripe customer back to the API key. If a stripe_customers row already exists for this keyId, pass `customer` to reuse it. Return `{ url }` in the standard success envelope. Success/cancel URLs come from env vars (documented in STRIPE-SETUP.md), never hardcoded. Stripe API failures map to a 502-style error envelope with a request-id log line, no secret leakage.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration via SELF.fetch with fetchMock intercepting api.stripe.com: valid plan → 200 with the mocked session URL and the outgoing request asserted to contain mode=subscription, the right price ID, and client_reference_id=keyId; unknown plan → 400 zod envelope; missing/invalid API key → 401; Stripe 5xx mock → error envelope without stack or key material.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:39:02.672Z"
           },
           {
             "id": 4,
@@ -589,9 +592,10 @@
               1
             ],
             "details": "`GET /v1/billing/portal` behind auth middleware. Query D1 `stripe_customers` by keyId; if no row exists (never purchased), return a 404 error envelope with a message pointing at /v1/billing/checkout and a docs_url. Otherwise call `stripe.billingPortal.sessions.create({ customer: stripeCustomerId, return_url: env.PORTAL_RETURN_URL })` and return `{ url }` in the success envelope. Portal configuration (which operations are allowed) is a Dashboard concern — reference it in STRIPE-SETUP.md rather than code. Keep the handler thin: lookup, one Stripe call, envelope; upgrade/downgrade/cancel flows generate webhook events handled by subtask 5, so no lifecycle logic belongs here.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration: seed a stripe_customers row in the test D1, fetchMock the billingPortal.sessions.create call → 200 with mocked URL and outgoing request asserted to carry the stored customer ID; key with no stripe_customers row → 404 envelope; unauthenticated → 401. Confirm the endpoint performs no writes to D1 or KV.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:39:02.675Z"
           },
           {
             "id": 5,
@@ -602,9 +606,10 @@
               3
             ],
             "details": "`POST /v1/billing/webhook` — public, no auth middleware. Read raw body via `c.req.text()` BEFORE any JSON parsing (parsing first breaks signature verification), then `verifyWebhookEvent(rawBody, stripeSignatureHeader, env.STRIPE_WEBHOOK_SECRET)` from subtask 1; failure → 400, zero mutations. Handlers: (a) `checkout.session.completed` — upsert stripe_customers (keyId from client_reference_id ↔ session.customer), insert credit_ledger grant of the plan's credits with `stripe_ref = event.id`, update api_keys.plan, refresh the KV key-record so metering (task 7) sees the new plan/credits promptly; (b) `invoice.paid` — recurring monthly grant via customer → keyId lookup, same idempotent insert; (c) `customer.subscription.updated` — sync api_keys.plan to the new price + refresh KV; (d) `customer.subscription.deleted` — downgrade to free tier + refresh KV. Idempotency: unique index on credit_ledger.stripe_ref (D1 migration) with `INSERT OR IGNORE` / `INSERT ... WHERE NOT EXISTS(SELECT 1 FROM credit_ledger WHERE stripe_ref = ?)` so replays and retries never double-credit — the append-only ledger is the audit trail; never UPDATE balances directly. Always return 2xx once the event is recorded (including already-seen replays and unhandled types) so Stripe stops retrying; log unhandled event types with the request id. Verify with task 7's balance path that ledger grants + KV refresh surface in X-Credits-Remaining without waiting for cache expiry.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Covered exhaustively by subtask 6's fixture suite (valid-signature crediting, replay no-op, bad signature → 400 no-mutation, lifecycle downgrade). During development, smoke-test against `stripe listen --forward-to localhost:8787/v1/billing/webhook` with `stripe trigger checkout.session.completed` in test mode.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:39:02.679Z"
           },
           {
             "id": 6,
@@ -616,14 +621,16 @@
               5
             ],
             "details": "test/billing/: fixture JSON payloads (recorded test-mode events, no live API) for checkout.session.completed, invoice.paid, customer.subscription.updated, customer.subscription.deleted. Signature helper: build a real `Stripe-Signature: t=<ts>,v1=<hmac>` header by computing HMAC-SHA256 over `${timestamp}.${rawBody}` with crypto.subtle and the test webhook secret — exercising actual verification, not a mocked verifier. Tests: (1) valid signed checkout.session.completed → 2xx, exactly one credit_ledger row with stripe_ref = event.id, stripe_customers upserted, api_keys.plan updated, KV key record refreshed; (2) replaying the identical event id → 2xx and zero new rows / unchanged balance (idempotency under Stripe retries); (3) tampered payload or bad signature → 400 and assert D1 + KV completely unmutated; (4) customer.subscription.deleted → plan downgraded to free and task-7 quota math reflects it; (5) invoice.paid → recurring grant exactly once; (6) checkout + portal endpoints via fetchMock on api.stripe.com per subtasks 3–4; (7) end-to-end: webhook grant then a metered data request shows the raised X-Credits-Remaining (task 7 integration). Extend docs/STRIPE-SETUP.md with the manual flow: `stripe listen --forward-to localhost:8787/v1/billing/webhook`, `stripe trigger checkout.session.completed`, then verify ledger row and /v1/usage balance.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "This subtask IS the test suite: all cases green under `npm test` (vitest Workers pool) with no network beyond fetchMock; the replay and bad-signature tests assert database row counts and KV state, not just status codes. Manual stripe-listen flow executed once end-to-end in test mode and its steps confirmed copy-paste accurate.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:39:02.682Z"
           }
         ],
         "complexity": 8,
         "recommendedSubtasks": 6,
-        "expansionPrompt": "Split into: (1) add the stripe dependency (ask-first per house rules) and build src/billing/client.ts with the fetch HTTP client, pinned apiVersion, and SubtleCryptoProvider + constructEventAsync webhook verification — the Workers-specific setup; (2) docs/STRIPE-SETUP.md plus optional scripts/stripe-setup.ts creating test-mode Starter/$29, Growth/$99, Scale/$299 products with credit amounts in price metadata and annual variants; (3) POST /v1/billing/checkout (authed) creating subscription-mode Checkout sessions with client_reference_id = keyId and env-driven success/cancel URLs; (4) GET /v1/billing/portal via stripe_customers lookup → billingPortal session URL; (5) POST /v1/billing/webhook — raw-body signature verification before any parsing, handlers for checkout.session.completed / invoice.paid / customer.subscription.updated+deleted mapping to ledger grants and plan changes, idempotency via unique stripe_ref so replays never double-credit, always-2xx-after-recording, KV key-record refresh so task-7 balances see new credits promptly; (6) the fixture-based test suite — HMAC computed in-test for valid signatures, replay no-ops, bad signature → 400 with no mutation, subscription.deleted downgrades quota, checkout mocked via fetchMock — plus the documented stripe-listen manual flow."
+        "expansionPrompt": "Split into: (1) add the stripe dependency (ask-first per house rules) and build src/billing/client.ts with the fetch HTTP client, pinned apiVersion, and SubtleCryptoProvider + constructEventAsync webhook verification — the Workers-specific setup; (2) docs/STRIPE-SETUP.md plus optional scripts/stripe-setup.ts creating test-mode Starter/$29, Growth/$99, Scale/$299 products with credit amounts in price metadata and annual variants; (3) POST /v1/billing/checkout (authed) creating subscription-mode Checkout sessions with client_reference_id = keyId and env-driven success/cancel URLs; (4) GET /v1/billing/portal via stripe_customers lookup → billingPortal session URL; (5) POST /v1/billing/webhook — raw-body signature verification before any parsing, handlers for checkout.session.completed / invoice.paid / customer.subscription.updated+deleted mapping to ledger grants and plan changes, idempotency via unique stripe_ref so replays never double-credit, always-2xx-after-recording, KV key-record refresh so task-7 balances see new credits promptly; (6) the fixture-based test suite — HMAC computed in-test for valid signatures, replay no-ops, bad signature → 400 with no mutation, subscription.deleted downgrades quota, checkout mocked via fetchMock — plus the documented stripe-listen manual flow.",
+        "updatedAt": "2026-07-06T15:39:02.682Z"
       },
       {
         "id": "9",
@@ -881,9 +888,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T15:32:25.814Z",
+      "lastModified": "2026-07-06T15:39:02.682Z",
       "taskCount": 12,
-      "completedCount": 7,
+      "completedCount": 8,
       "tags": [
         "master"
       ]

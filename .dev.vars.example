@@ -6,9 +6,10 @@
 # Generate one: openssl rand -hex 32
 ADMIN_TOKEN=dev-admin-token
 
-# Stripe test keys land with task 8:
-#STRIPE_SECRET_KEY=sk_test_...
-#STRIPE_WEBHOOK_SECRET=whsec_...
+# Stripe (test mode; billing endpoints 503 until set — see docs/STRIPE-SETUP.md).
+# Keep the empty defaults if you're not working on billing.
+STRIPE_SECRET_KEY=
+STRIPE_WEBHOOK_SECRET=
 
 # x402 stays dark until a wallet is configured (task 10):
 #X402_WALLET_ADDRESS=0x...

@@ -7,6 +7,7 @@ import { meterCredits } from './metering/middleware';
 import { rateLimit } from './metering/ratelimit';
 import { structuredLogger } from './middleware/logging';
 import { refreshMatchingSources } from './sources/cache';
+import { billingRoutes } from './routes/billing';
 import { dataRoutes } from './routes/data';
 import { healthRoute } from './routes/health';
 import { keysRoutes } from './routes/keys';
@@ -41,6 +42,7 @@ app.route('/v1/health', healthRoute);
 app.route('/v1/data', dataRoutes);
 app.route('/v1/keys', keysRoutes);
 app.route('/v1/usage', usageRoute);
+app.route('/v1/billing', billingRoutes);
 app.route('/openapi.json', openapiRoute);
 
 app.onError(errorHandler);

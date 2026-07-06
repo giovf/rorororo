@@ -8,7 +8,12 @@ export default defineConfig({
     cloudflareTest({
       wrangler: { configPath: './wrangler.jsonc' },
       miniflare: {
-        bindings: { TEST_MIGRATIONS: migrations, ADMIN_TOKEN: 'test-admin-token' },
+        bindings: {
+          TEST_MIGRATIONS: migrations,
+          ADMIN_TOKEN: 'test-admin-token',
+          STRIPE_SECRET_KEY: 'sk_test_dummy',
+          STRIPE_WEBHOOK_SECRET: 'whsec_testsecret',
+        },
       },
     }),
   ],

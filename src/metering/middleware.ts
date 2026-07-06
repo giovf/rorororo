@@ -5,9 +5,10 @@ import { failure } from '../lib/envelope';
 import { getSource } from '../sources/registry';
 import type { AppEnv } from '../types';
 
+// ASCII only: non-ASCII header values make browser fetch implementations throw.
 const NUDGE_MESSAGES: Record<string, string> = {
-  '80': 'Approaching your monthly quota — consider upgrading',
-  '100': 'Monthly quota exhausted — upgrade to keep access',
+  '80': 'Approaching your monthly quota - consider upgrading',
+  '100': 'Monthly quota exhausted - upgrade to keep access',
 };
 
 function alertThreshold(used: number, granted: number): '80' | '100' | undefined {
