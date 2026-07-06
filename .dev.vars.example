@@ -11,5 +11,9 @@ ADMIN_TOKEN=dev-admin-token
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 
-# x402 stays dark until a wallet is configured (task 10):
-#X402_WALLET_ADDRESS=0x...
+# x402 agent payments — ALL routes under /x402 stay dark (404) until a wallet
+# is set. See docs/X402-SETUP.md. Keep empty defaults unless working on x402.
+X402_WALLET_ADDRESS=
+X402_PRICE_USD=
+X402_NETWORK=
+X402_FACILITATOR_URL=

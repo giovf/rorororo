@@ -727,7 +727,7 @@
           "3",
           "7"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -735,9 +735,10 @@
             "description": "Install x402-hono with an exact pinned version (no caret/tilde — young, churning protocol per PRD risk note) and confirm the actual paymentMiddleware signature and config-object shape against the current x402 docs before any wiring is written.",
             "dependencies": [],
             "details": "Run `npm install x402-hono@<exact-version>` and pin the version exactly in package.json (strip any ^/~ prefix). Before writing adapter code, check the pinned version's README/types against the x402 protocol docs to verify: (a) the paymentMiddleware argument order — the task sketch assumes `paymentMiddleware(walletAddress, routeConfigMap, facilitatorConfig)` but the real API may differ; (b) the route-config shape for `{ price, network }` entries and whether price accepts a '$0.005' string or a numeric/atomic-units form; (c) how the facilitator URL is passed (e.g. `{ url }` object vs plain string) and the default facilitator behavior when omitted; (d) that 'base' is the correct network identifier for Base mainnet USDC (vs 'base-sepolia' for testing). Record any divergence from the task sketch in a short comment block at the top of src/x402/routes.ts (created in the next subtask) so the config shape is traceable to the pinned version. Confirm the package is compatible with the Cloudflare Workers runtime (no Node-only APIs) via `npm run build` (dry-run deploy bundles and validates). NOTE: adding a top-level dependency is on the CLAUDE.md ask-first list — confirm with the operator before installing.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "`npm run build` succeeds with the dependency bundled (proves Workers-runtime compatibility); `npm run typecheck` passes; package.json shows an exact pinned version with no range specifier. Documented API-shape notes match the pinned version's exported TypeScript types.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:49:36.594Z"
           },
           {
             "id": 2,
@@ -747,9 +748,10 @@
               1
             ],
             "details": "Create src/x402/routes.ts exporting a factory (e.g. `createX402Routes(env)` or a Hono sub-app reading bindings per-request, matching the app's existing env-access pattern) so middleware can be configured from runtime env. Apply paymentMiddleware using the API shape verified in subtask 1: wallet from `env.X402_WALLET_ADDRESS`, per-route config `{ '/x402/data/*': { price: env.X402_PRICE_USD ?? '$0.005', network: 'base' } }`, facilitator from `env.X402_FACILITATOR_URL` — adjusting the exact object shape to the pinned version. The GET /x402/data/:source handler must be a thin adapter: resolve the source slug via the registry, delegate validation/pagination/filtering entirely to the shared query logic in src/sources/query.ts, and return the same response envelope as /v1/data/:source — do NOT duplicate query logic and do NOT attach the auth or metering middleware from src/auth//src/metering/. After the middleware admits a paid request, log it via the task-1 structured logger with at least { route, source, amount } for the operator's weekly review. Preserve the protocol flow untouched: unpaid request → 402 with payment-requirements body (emitted by the middleware) → agent pays → retry with X-PAYMENT header → middleware verifies via facilitator → handler runs. Add X402_WALLET_ADDRESS, X402_PRICE_USD, X402_FACILITATOR_URL to the CloudflareBindings/env typings as optional strings.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Typecheck passes with the new optional env bindings. Unit-level: handler delegates to src/sources/query.ts (verified by fixture source returning identical envelope to /v1/data/:source). Full 402/paid-path behavior is covered by subtask 4's integration tests.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:49:36.600Z"
           },
           {
             "id": 3,
@@ -759,9 +761,10 @@
               2
             ],
             "details": "In src/index.ts, conditionally mount the routes: `if (env.X402_WALLET_ADDRESS) app.route('/x402', x402Routes)` — implemented to fit how the app accesses env (if bindings are only available per-request in Workers, gate inside a lazy mount/middleware that checks `c.env.X402_WALLET_ADDRESS` and falls through to the app's standard 404 error envelope when unset; the important invariant is that neither paymentMiddleware nor any x402 module logic runs when the var is absent). Ensure the module-level import of src/x402/routes.ts is side-effect-free so importing it while dark is harmless. Add to .dev.vars.example (create if missing) as commented-out placeholders with a one-line note that setting X402_WALLET_ADDRESS activates the routes: `# X402_WALLET_ADDRESS=0x...`, `# X402_PRICE_USD=$0.005`, `# X402_FACILITATOR_URL=https://...`. Per project convention these are Worker runtime secrets: .dev.vars locally, `wrangler secret put` in prod — never .env, never committed. If bindings/vars were declared in wrangler.jsonc, run `npm run cf-typegen` to refresh types. Open question #4 (which wallet) stays open — nothing in the code may assume a specific wallet or facilitator choice.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "With X402_WALLET_ADDRESS unset in the test env, GET /x402/data/uk-planning returns the app's standard 404 error envelope and no x402 logging occurs; with it set, the route group responds (402 for unpaid). Formal assertions land in subtask 4.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:49:36.604Z"
           },
           {
             "id": 4,
@@ -771,14 +774,16 @@
               3
             ],
             "details": "Tests (vitest with @cloudflare/vitest-pool-workers, via SELF.fetch): (1) Dark: with X402_WALLET_ADDRESS unset, GET /x402/data/uk-planning → 404 matching the standard error envelope exactly. (2) Unpaid: with test env vars set in the vitest/miniflare config (test wallet address, X402_PRICE_USD), an unpaid request → HTTP 402 whose body parses as a payment-requirements object listing the configured wallet address, price, and network — assert on structure per the pinned x402-hono version's shape, not a hardcoded copy of docs. (3) Paid: mock the facilitator's verification endpoint with fetchMock (outbound-fetch mocking in pool-workers) to return a successful verification for a request carrying an X-PAYMENT header → handler runs, data envelope returned, and the structured logger records { route, amount }; also test facilitator rejection → payment error, no data returned, no paid-request log line. Docs: create docs/X402-SETUP.md covering (a) choosing a Base USDC wallet — present options, explicitly noting PRD open question #4 remains undecided and the code assumes no answer; (b) facilitator options (e.g. Coinbase's x402 facilitator) and setting X402_FACILITATOR_URL; (c) the env vars to set via .dev.vars / `wrangler secret put` and that setting X402_WALLET_ADDRESS is what activates the routes; (d) how to verify end-to-end with an x402 test client once a wallet exists (real E2E verification is explicitly deferred until then).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "This subtask IS the test deliverable: `npm test` green with all three protocol-state suites passing and no test hitting a real facilitator or requiring a real wallet. Doc reviewed for accuracy against the pinned x402-hono version and for leaving wallet choice open.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:49:36.608Z"
           }
         ],
         "complexity": 5,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Split into: (1) add x402-hono pinned, verifying the current paymentMiddleware config-object shape against the protocol docs at implementation time (young, churning protocol); (2) src/x402/routes.ts — a thin route group at /x402/data/:source reusing src/sources/query.ts with no auth/metering middleware (payment is the auth), wrapped by paymentMiddleware configured from X402_WALLET_ADDRESS / X402_PRICE_USD / X402_FACILITATOR_URL, and paid requests logged through the structured logger; (3) the dark-launch gate in src/index.ts — routes mounted only when X402_WALLET_ADDRESS is set, 404 otherwise, with commented-out placeholders in .dev.vars.example; (4) tests (unset → 404; set → unpaid 402 with parseable payment-requirements body; paid path with facilitator mocked via fetchMock) and docs/X402-SETUP.md covering wallet choice, facilitator options, and verification — keeping the wallet question explicitly open in code."
+        "expansionPrompt": "Split into: (1) add x402-hono pinned, verifying the current paymentMiddleware config-object shape against the protocol docs at implementation time (young, churning protocol); (2) src/x402/routes.ts — a thin route group at /x402/data/:source reusing src/sources/query.ts with no auth/metering middleware (payment is the auth), wrapped by paymentMiddleware configured from X402_WALLET_ADDRESS / X402_PRICE_USD / X402_FACILITATOR_URL, and paid requests logged through the structured logger; (3) the dark-launch gate in src/index.ts — routes mounted only when X402_WALLET_ADDRESS is set, 404 otherwise, with commented-out placeholders in .dev.vars.example; (4) tests (unset → 404; set → unpaid 402 with parseable payment-requirements body; paid path with facilitator mocked via fetchMock) and docs/X402-SETUP.md covering wallet choice, facilitator options, and verification — keeping the wallet question explicitly open in code.",
+        "updatedAt": "2026-07-06T15:49:36.608Z"
       },
       {
         "id": "11",
@@ -894,9 +899,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T15:43:39.300Z",
+      "lastModified": "2026-07-06T15:49:36.608Z",
       "taskCount": 12,
-      "completedCount": 9,
+      "completedCount": 10,
       "tags": [
         "master"
       ]
