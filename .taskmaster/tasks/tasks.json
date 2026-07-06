@@ -377,7 +377,7 @@
         "dependencies": [
           "1"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -385,9 +385,10 @@
             "description": "Author the second D1 migration defining the three account-primitive tables, following the migration numbering and wrangler d1 migrations workflow established in task 3 (which owns 0001_refresh_log.sql).",
             "dependencies": [],
             "details": "Create `migrations/0002_accounts.sql` containing: `api_keys(id TEXT PRIMARY KEY, key_hash TEXT UNIQUE, email TEXT, name TEXT, plan TEXT DEFAULT 'free', credits_granted INTEGER DEFAULT 250, created_at TEXT, revoked_at TEXT)`; `credit_ledger(id INTEGER PRIMARY KEY, key_id TEXT, delta INTEGER, reason TEXT, stripe_ref TEXT, created_at TEXT)` — append-only by convention, add a header comment stating no UPDATEs/DELETEs are ever issued against it since tasks 7 and 8 depend on that invariant; `stripe_customers(stripe_customer_id TEXT PRIMARY KEY, key_id TEXT, plan TEXT, status TEXT, updated_at TEXT)`. Add an index on `credit_ledger(key_id)` for balance queries. Apply locally with `wrangler d1 migrations apply` (local only — production apply is an ask-first operation per CLAUDE.md). Verify the vitest-pool-workers harness picks up migrations so later subtasks can test against real D1.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Apply the migration to the local D1 database and assert via `wrangler d1 execute --local` (or a pool-workers test querying sqlite_master) that all three tables exist with the expected columns, that api_keys.key_hash carries a UNIQUE constraint (duplicate insert fails), and that plan/credits_granted defaults populate on insert.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:26:53.240Z"
           },
           {
             "id": 2,
@@ -395,9 +396,10 @@
             "description": "Build the pure key-generation and hashing utilities using Workers-native crypto, with unit tests covering format and determinism. No routes or storage — just the primitives the issuance route and middleware will consume.",
             "dependencies": [],
             "details": "In `src/auth/keys.ts` export (named exports, explicit return types per CLAUDE.md): `generateKey(): string` producing `fapi_` + 32 base62 chars ([0-9A-Za-z]) sourced from `crypto.getRandomValues(new Uint8Array(...))` — use rejection sampling or an unbiased mapping so the base62 distribution isn't skewed by modulo bias; and `hashKey(key: string): Promise<string>` returning lowercase hex SHA-256 via `crypto.subtle.digest('SHA-256', new TextEncoder().encode(key))`. Keep this module free of Hono/D1/KV imports so it stays unit-testable in isolation.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit tests (vitest Workers pool): generateKey output matches /^fapi_[0-9A-Za-z]{32}$/ across many iterations; consecutive calls differ; hashKey is deterministic (same input → same 64-char lowercase hex), differs for different inputs, and matches a known SHA-256 test vector.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:26:53.245Z"
           },
           {
             "id": 3,
@@ -408,9 +410,10 @@
               2
             ],
             "details": "In `src/routes/keys.ts`: zod schema `{ email: z.string().email(), name: z.string().optional() }` — invalid body → 400 in the task-1 error envelope. Handler: call generateKey(), hashKey(); insert api_keys row (id via crypto.randomUUID(), key_hash, email, name, plan 'free', credits_granted 250, created_at ISO) and a credit_ledger row (key_id, delta +250, reason 'free_tier') — use `env.DB.batch()` so key and grant land together. Response includes the raw key exactly once plus an explicit \"store this now — it cannot be shown again\" message; the raw key must never be logged or persisted. Per-IP rate limit using RATE KV keyed on CF-Connecting-IP with a short-window counter (e.g. 5 keys/hour/IP via TTL'd key) → 429 envelope when exceeded. Mount on the app as a public route (no auth middleware). This route stays niche-agnostic — no dataset-specific logic per the isolation rule.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration (pool-workers, SELF.fetch with real D1/KV): successful POST returns a fapi_-prefixed key and the warning message; querying D1 shows only the hash at rest (raw key appears nowhere); a matching +250 free_tier ledger row exists; invalid email → 400 envelope; repeated requests from one IP beyond the limit → 429.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:26:53.249Z"
           },
           {
             "id": 4,
@@ -422,9 +425,10 @@
               3
             ],
             "details": "In `src/auth/middleware.ts`: parse `Authorization: Bearer <key>`; missing/malformed header → 401 envelope immediately. Hash via hashKey, then get KV `key:<hash>` from CACHE expecting key-record JSON `{ id, plan, revoked }`. On KV miss, fall back to D1 `SELECT id, plan, revoked_at FROM api_keys WHERE key_hash = ?`; if found, write the record back to KV with `expirationTtl: 3600`; if not found → 401. A record with revoked set (from either layer) → 401 with a distinct message but the same envelope shape. On success set `c.set('keyCtx', { id, plan })` and type it in the Hono Variables generic so metering (task 7) and logging consume it type-safely. Wire into src/index.ts so /v1/data/* and /v1/usage are guarded while /v1/health, /openapi.json, /v1/keys, and /v1/waitlist remain public.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration: freshly issued key → authed /v1/data/:source request succeeds; no/garbage/unknown key → 401 envelope; KV-miss path — delete the KV entry, request still succeeds via D1 fallback and the KV entry reappears with TTL; public routes respond without any Authorization header; keyCtx values surface correctly downstream (e.g. via a test route or log assertion).",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:26:53.253Z"
           },
           {
             "id": 5,
@@ -435,14 +439,16 @@
               4
             ],
             "details": "Self-serve: `DELETE /v1/keys` runs behind the auth middleware and revokes the caller's own key — `UPDATE api_keys SET revoked_at = ? WHERE id = ?` then `env.CACHE.delete('key:<hash>')` (recompute the hash from the presented bearer key) so the stale cached record cannot outlive revocation. Admin variant (e.g. `DELETE /v1/keys/:id` or admin route) guarded by comparing a bearer/header token against the `ADMIN_TOKEN` secret; it must also clear the KV entry, which requires reading key_hash from D1 by id. Order matters: update D1 first, then delete KV. Create `.dev.vars.example` documenting `ADMIN_TOKEN` (Worker runtime secrets live in .dev.vars locally / wrangler secret put in prod — never .env, never committed, per CLAUDE.md); ensure .dev.vars is gitignored. Then write the task-6 integration suite from the parent testStrategy.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration (pool-workers): issue key → authed request succeeds → DELETE /v1/keys → the very next request with the same key returns 401 (assert the KV entry is gone, proving cache invalidation not TTL expiry); revoked_at populated in D1; admin revocation works only with the correct ADMIN_TOKEN (wrong/missing → 401/403); full sweep asserting the raw key never appears in any D1 column; KV-miss → D1 fallback → repopulation regression test.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:26:53.256Z"
           }
         ],
         "complexity": 7,
         "recommendedSubtasks": 5,
-        "expansionPrompt": "Split into: (1) migrations/0002_accounts.sql — api_keys (key_hash UNIQUE), append-only credit_ledger, stripe_customers — coordinating with the migration numbering/workflow established in task 3; (2) src/auth/keys.ts crypto primitives — generateKey (fapi_ prefix, base62 from crypto.getRandomValues) and hashKey (hex SHA-256 via crypto.subtle) with unit tests for format and determinism; (3) POST /v1/keys issuance route — zod-validated body, D1 insert + initial +250 free_tier ledger grant, raw key returned exactly once, per-IP rate limit on RATE KV against key-farming; (4) src/auth/middleware.ts — bearer extraction, hash, KV `key:<hash>` hot-path lookup with D1 fallback + KV repopulation (TTL ~1h), 401 envelope for missing/unknown/revoked, keyCtx attached to context Variables, applied to /v1/data/* while health/openapi/keys/waitlist stay public; (5) revocation — DELETE /v1/keys self-serve plus ADMIN_TOKEN-guarded variant, setting revoked_at AND clearing the KV entry so revocation is immediate, with .dev.vars.example documenting ADMIN_TOKEN, and the integration tests (hash-only at rest, KV-miss fallback path, immediate revocation)."
+        "expansionPrompt": "Split into: (1) migrations/0002_accounts.sql — api_keys (key_hash UNIQUE), append-only credit_ledger, stripe_customers — coordinating with the migration numbering/workflow established in task 3; (2) src/auth/keys.ts crypto primitives — generateKey (fapi_ prefix, base62 from crypto.getRandomValues) and hashKey (hex SHA-256 via crypto.subtle) with unit tests for format and determinism; (3) POST /v1/keys issuance route — zod-validated body, D1 insert + initial +250 free_tier ledger grant, raw key returned exactly once, per-IP rate limit on RATE KV against key-farming; (4) src/auth/middleware.ts — bearer extraction, hash, KV `key:<hash>` hot-path lookup with D1 fallback + KV repopulation (TTL ~1h), 401 envelope for missing/unknown/revoked, keyCtx attached to context Variables, applied to /v1/data/* while health/openapi/keys/waitlist stay public; (5) revocation — DELETE /v1/keys self-serve plus ADMIN_TOKEN-guarded variant, setting revoked_at AND clearing the KV entry so revocation is immediate, with .dev.vars.example documenting ADMIN_TOKEN, and the integration tests (hash-only at rest, KV-miss fallback path, immediate revocation).",
+        "updatedAt": "2026-07-06T15:26:53.256Z"
       },
       {
         "id": "7",
@@ -869,9 +875,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T15:16:29.075Z",
+      "lastModified": "2026-07-06T15:26:53.256Z",
       "taskCount": 12,
-      "completedCount": 5,
+      "completedCount": 6,
       "tags": [
         "master"
       ]

@@ -1,0 +1,14 @@
+# Copy to `.dev.vars` (gitignored) for local wrangler dev. Production values
+# are set with `wrangler secret put <KEY>` — never committed, never in .env
+# (that file is for CLI tooling only, per CLAUDE.md).
+
+# Guards the operator endpoints (e.g. DELETE /v1/keys/:id).
+# Generate one: openssl rand -hex 32
+ADMIN_TOKEN=dev-admin-token
+
+# Stripe test keys land with task 8:
+#STRIPE_SECRET_KEY=sk_test_...
+#STRIPE_WEBHOOK_SECRET=whsec_...
+
+# x402 stays dark until a wallet is configured (task 10):
+#X402_WALLET_ADDRESS=0x...

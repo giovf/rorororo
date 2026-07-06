@@ -1,6 +1,7 @@
 import { SELF } from 'cloudflare:test';
 import { describe, expect, it } from 'vitest';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
+import { authedFetch } from './helpers/auth';
 
 type SourceListing = {
   slug: string;
@@ -25,7 +26,7 @@ describe('GET /v1/data (sources listing)', () => {
 
 describe('GET /v1/data/:source', () => {
   it('rejects invalid query params before any origin fetch', async () => {
-    const res = await SELF.fetch('https://example.com/v1/data/uk-planning?per_page=1000');
+    const res = await authedFetch('https://example.com/v1/data/uk-planning?per_page=1000');
     expect(res.status).toBe(400);
     const body = (await res.json()) as ErrorEnvelope;
     expect(body.error.code).toBe('bad_request');
@@ -33,7 +34,7 @@ describe('GET /v1/data/:source', () => {
   });
 
   it('returns the 404 envelope for unknown sources', async () => {
-    const res = await SELF.fetch('https://example.com/v1/data/uk-unicorns');
+    const res = await authedFetch('https://example.com/v1/data/uk-unicorns');
     expect(res.status).toBe(404);
     const body = (await res.json()) as ErrorEnvelope;
     expect(body.error.code).toBe('not_found');

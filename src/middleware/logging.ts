@@ -19,6 +19,7 @@ export function structuredLogger(): MiddlewareHandler<AppEnv> {
         path: c.req.path,
         status: c.res.status,
         latencyMs: Date.now() - start,
+        keyId: c.get('keyCtx')?.keyId,
       }),
     );
   };

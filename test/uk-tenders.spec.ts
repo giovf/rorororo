@@ -1,8 +1,8 @@
-import { SELF } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import fixtureReleases from '../src/sources/fixtures/uk-tenders.json';
 import type { UkTendersRecord } from '../src/sources/uk-tenders';
+import { authedFetch, issueKey } from './helpers/auth';
 import { stubOrigins } from './helpers/origin-mock';
 
 const TENDERS_URL = 'https://example.com/v1/data/uk-tenders';
@@ -18,7 +18,7 @@ afterEach(() => {
 describe('GET /v1/data/uk-tenders', () => {
   it('flattens OCDS releases and never exposes contact data (Blind Mode)', async () => {
     stubOrigins({ tenders: packageResponse });
-    const res = await SELF.fetch(TENDERS_URL);
+    const res = await authedFetch(TENDERS_URL);
     expect(res.status).toBe(200);
     const text = await res.text();
     expect(text).not.toContain('finance@fixture.example');
@@ -44,7 +44,7 @@ describe('GET /v1/data/uk-tenders', () => {
 
   it('handles nulls in value, period, and items', async () => {
     stubOrigins({ tenders: packageResponse });
-    const res = await SELF.fetch(TENDERS_URL);
+    const res = await authedFetch(TENDERS_URL);
     const body = (await res.json()) as SuccessEnvelope<UkTendersRecord[]>;
     const cabinetOffice = body.data.find((r) => r.buyer === 'Cabinet Office');
     expect(cabinetOffice).toMatchObject({
@@ -57,19 +57,20 @@ describe('GET /v1/data/uk-tenders', () => {
 
   it('filters by numeric range, cpv array element, and date range', async () => {
     stubOrigins({ tenders: packageResponse });
+    const { key } = await issueKey();
 
     const highValue = (await (
-      await SELF.fetch(`${TENDERS_URL}?value_amount_min=2000000`)
+      await authedFetch(`${TENDERS_URL}?value_amount_min=2000000`, key)
     ).json()) as SuccessEnvelope<UkTendersRecord[]>;
     expect(highValue.data.map((r) => r.notice_id)).toEqual(['063319-2026']);
 
     const byCpv = (await (
-      await SELF.fetch(`${TENDERS_URL}?cpv_codes=50700000`)
+      await authedFetch(`${TENDERS_URL}?cpv_codes=50700000`, key)
     ).json()) as SuccessEnvelope<UkTendersRecord[]>;
     expect(byCpv.data.map((r) => r.notice_id)).toEqual(['063318-2026']);
 
     const recent = (await (
-      await SELF.fetch(`${TENDERS_URL}?published_at_after=2026-07-05`)
+      await authedFetch(`${TENDERS_URL}?published_at_after=2026-07-05`, key)
     ).json()) as SuccessEnvelope<UkTendersRecord[]>;
     expect(recent.data.map((r) => r.notice_id)).toEqual(['063318-2026', '063319-2026']);
   });
@@ -90,7 +91,7 @@ describe('GET /v1/data/uk-tenders', () => {
         return Response.json({ releases: [fixtureReleases[1]], links: {} });
       },
     });
-    const res = await SELF.fetch(TENDERS_URL);
+    const res = await authedFetch(TENDERS_URL);
     const body = (await res.json()) as SuccessEnvelope<UkTendersRecord[]>;
     expect(mock).toHaveBeenCalledTimes(2);
     expect(body.data.map((r) => r.notice_id)).toEqual(['063318-2026', '063319-2026']);
@@ -98,14 +99,14 @@ describe('GET /v1/data/uk-tenders', () => {
 
   it('falls back to bundled fixtures when the origin fails', async () => {
     stubOrigins({ tenders: () => new Response('origin exploded', { status: 500 }) });
-    const res = await SELF.fetch(TENDERS_URL);
+    const res = await authedFetch(TENDERS_URL);
     expect(res.status).toBe(200);
     const body = (await res.json()) as SuccessEnvelope<UkTendersRecord[]>;
     expect(body.data).toHaveLength(3);
   });
 
   it('rejects malformed date params with a 400 envelope', async () => {
-    const res = await SELF.fetch(`${TENDERS_URL}?published_at_after=last-week`);
+    const res = await authedFetch(`${TENDERS_URL}?published_at_after=last-week`);
     expect(res.status).toBe(400);
     const body = (await res.json()) as ErrorEnvelope;
     expect(body.error.code).toBe('bad_request');

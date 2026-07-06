@@ -2,7 +2,6 @@ import {
   createExecutionContext,
   createScheduledController,
   env,
-  SELF,
   waitOnExecutionContext,
 } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
@@ -11,6 +10,7 @@ import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import { refreshSource } from '../src/sources/cache';
 import type { DataSource } from '../src/sources/types';
 import type { UkPlanningRecord } from '../src/sources/uk-planning';
+import { authedFetch, issueKey } from './helpers/auth';
 import { stubOrigins } from './helpers/origin-mock';
 
 // Raw origin entities, including personal-data fields that Blind Mode must drop.
@@ -60,7 +60,7 @@ afterEach(() => {
 describe('GET /v1/data/uk-planning', () => {
   it('serves normalized records and never exposes personal data (Blind Mode)', async () => {
     mockOrigin(originPage);
-    const res = await SELF.fetch('https://example.com/v1/data/uk-planning');
+    const res = await authedFetch('https://example.com/v1/data/uk-planning');
     expect(res.status).toBe(200);
     const text = await res.text();
     expect(text).not.toContain('John Smith');
@@ -83,7 +83,7 @@ describe('GET /v1/data/uk-planning', () => {
 
   it('writes an ok row to refresh_log and caches into KV', async () => {
     mockOrigin(originPage);
-    await SELF.fetch('https://example.com/v1/data/uk-planning');
+    await authedFetch('https://example.com/v1/data/uk-planning');
     const cached = await env.CACHE.get('data:uk-planning', 'json');
     expect(cached).not.toBeNull();
     const rows = await env.DB.prepare(
@@ -94,27 +94,30 @@ describe('GET /v1/data/uk-planning', () => {
 
   it('serves the second request from cache without hitting the origin', async () => {
     const mock = mockOrigin(originPage);
-    await SELF.fetch('https://example.com/v1/data/uk-planning');
-    const res = await SELF.fetch('https://example.com/v1/data/uk-planning');
+    const { key } = await issueKey();
+    await authedFetch('https://example.com/v1/data/uk-planning', key);
+    const res = await authedFetch('https://example.com/v1/data/uk-planning', key);
     expect(res.status).toBe(200);
     expect(mock).toHaveBeenCalledTimes(1);
   });
 
   it('filters by authority and decision_date range', async () => {
     mockOrigin(originPage);
-    const res = await SELF.fetch(
+    const { key } = await issueKey();
+    const res = await authedFetch(
       'https://example.com/v1/data/uk-planning?decision_date_after=2024-01-01',
+      key,
     );
     const body = (await res.json()) as SuccessEnvelope<UkPlanningRecord[]>;
     expect(body.data.map((r) => r.reference)).toEqual(['B/2']);
 
-    const res2 = await SELF.fetch('https://example.com/v1/data/uk-planning?authority=109');
+    const res2 = await authedFetch('https://example.com/v1/data/uk-planning?authority=109', key);
     const body2 = (await res2.json()) as SuccessEnvelope<UkPlanningRecord[]>;
     expect(body2.data.map((r) => r.reference)).toEqual(['A/1']);
   });
 
   it('rejects malformed date params with a 400 envelope', async () => {
-    const res = await SELF.fetch(
+    const res = await authedFetch(
       'https://example.com/v1/data/uk-planning?decision_date_after=yesterday',
     );
     expect(res.status).toBe(400);
@@ -124,7 +127,7 @@ describe('GET /v1/data/uk-planning', () => {
 
   it('falls back to bundled fixtures when the origin fails (FIXTURE_FALLBACK=true)', async () => {
     mockOrigin(originFailure);
-    const res = await SELF.fetch('https://example.com/v1/data/uk-planning');
+    const res = await authedFetch('https://example.com/v1/data/uk-planning');
     expect(res.status).toBe(200);
     const body = (await res.json()) as SuccessEnvelope<UkPlanningRecord[]>;
     expect(body.data.length).toBeGreaterThan(0);

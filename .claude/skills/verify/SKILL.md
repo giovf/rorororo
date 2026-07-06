@@ -34,6 +34,16 @@ npx wrangler dev --port 8787 --test-scheduled   # run in background
   find-tender.service.gov.uk) — first request takes seconds; warm is ms.
 - Blind Mode check: response text must contain no `contactPoint`/applicant
   fields (free-text descriptions may legitimately contain org emails).
+- Auth: `/v1/data/:source` needs `Authorization: Bearer <key>`. Get one:
+  `curl -s -X POST localhost:8787/v1/keys -H 'content-type: application/json'
+  -d '{"email":"t@example.com"}'` — key issuance is rate-limited to 5/hour/IP;
+  if POSTs start returning 429 in dev, clear the counter:
+  `npx wrangler kv key delete --binding RATE --local "ratelimit:keys:127.0.0.1"`.
+  Admin ops use `X-Admin-Token` (value from `.dev.vars`). Public: /v1/health,
+  /v1/data (listing), /openapi.json, POST /v1/keys.
+- After adding a migration, re-run the `d1 migrations apply DB --local` step or
+  dev-server D1 queries 500 with `internal` (tests won't catch it — they apply
+  migrations themselves).
 - Every response must use the envelope: success `{ok:true,data,...}`, error
   `{ok:false,error:{code,message,docs_url}}` — check unknown routes return the
   404 envelope, not bare text.

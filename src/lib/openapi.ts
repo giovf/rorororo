@@ -72,6 +72,7 @@ function sourcePathItem(source: DataSource): JsonObject {
       summary: source.title,
       description: source.description,
       tags: ['data'],
+      security: [{ bearerAuth: [] }],
       parameters: queryParameters(source),
       responses: {
         '200': jsonResponse(
@@ -79,11 +80,55 @@ function sourcePathItem(source: DataSource): JsonObject {
           successEnvelope(z.array(source.recordSchema), paginationMeta),
         ),
         '400': errorResponse('Invalid query parameters (see error.details)'),
+        '401': errorResponse('Missing, unknown, or revoked API key'),
         '503': errorResponse('Source temporarily unavailable, retry later'),
       },
     },
   };
 }
+
+const issuedKeySchema = z.object({
+  id: z.string(),
+  key: z.string(),
+  plan: z.string(),
+  credits: z.number(),
+  message: z.string(),
+});
+
+const keysPaths: JsonObject = {
+  '/v1/keys': {
+    post: {
+      operationId: 'create_key',
+      summary: 'Issue a free-tier API key (shown once, store it immediately)',
+      tags: ['platform'],
+      requestBody: {
+        required: true,
+        content: {
+          'application/json': {
+            schema: toSchema(
+              z.object({ email: z.email(), name: z.string().max(100).optional() }),
+            ),
+          },
+        },
+      },
+      responses: {
+        '201': jsonResponse('Key issued — the raw key is never shown again', successEnvelope(issuedKeySchema)),
+        '400': errorResponse('Invalid request body'),
+        '429': errorResponse('Too many keys issued from this IP'),
+      },
+    },
+    delete: {
+      operationId: 'revoke_key',
+      summary: 'Revoke the presented API key (self-serve)',
+      tags: ['platform'],
+      security: [{ bearerAuth: [] }],
+      responses: {
+        '200': jsonResponse('Key revoked', successEnvelope(z.object({ revoked: z.boolean() }))),
+        '401': errorResponse('Missing, unknown, or revoked API key'),
+      },
+    },
+  },
+};
 
 const sourceListingSchema = z.array(
   z.object({
@@ -138,6 +183,7 @@ function buildDocument(): JsonObject {
           },
         },
       },
+      ...keysPaths,
       ...sourcePaths,
     },
     components: {
