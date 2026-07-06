@@ -24,6 +24,10 @@ npx wrangler dev --port 8787 --test-scheduled   # run in background
 ## Drive
 
 - API routes live under `/v1/*`; liveness: `GET /v1/health`.
+- Data layer: `GET /v1/data` lists registered sources; `GET /v1/data/:source`
+  queries records (filters per source's `queryParams`, `page`/`per_page`
+  pagination, max per_page 100). Unknown params are stripped, not rejected;
+  invalid typed params → 400 envelope with `details` array.
 - Every response must use the envelope: success `{ok:true,data,...}`, error
   `{ok:false,error:{code,message,docs_url}}` — check unknown routes return the
   404 envelope, not bare text.

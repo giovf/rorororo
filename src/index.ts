@@ -3,6 +3,7 @@ import { cors } from 'hono/cors';
 import { requestId } from 'hono/request-id';
 import { errorHandler, notFoundHandler } from './lib/envelope';
 import { structuredLogger } from './middleware/logging';
+import { dataRoutes } from './routes/data';
 import { healthRoute } from './routes/health';
 import type { AppEnv } from './types';
 
@@ -13,6 +14,7 @@ app.use('*', structuredLogger());
 app.use('*', cors());
 
 app.route('/v1/health', healthRoute);
+app.route('/v1/data', dataRoutes);
 
 app.onError(errorHandler);
 app.notFound(notFoundHandler);

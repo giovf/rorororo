@@ -23,6 +23,8 @@ export interface ErrorEnvelope {
     code: ErrorCode;
     message: string;
     docs_url: string;
+    /** Machine-parsable specifics, e.g. per-field validation issues. */
+    details?: unknown;
   };
 }
 
@@ -30,11 +32,14 @@ export function success<T>(data: T, meta?: Record<string, unknown>): SuccessEnve
   return meta === undefined ? { ok: true, data } : { ok: true, data, meta };
 }
 
-export function failure(code: ErrorCode, message: string): ErrorEnvelope {
-  return {
-    ok: false,
-    error: { code, message, docs_url: `${DOCS_ERRORS_URL}#${code}` },
+export function failure(code: ErrorCode, message: string, details?: unknown): ErrorEnvelope {
+  const error: ErrorEnvelope['error'] = {
+    code,
+    message,
+    docs_url: `${DOCS_ERRORS_URL}#${code}`,
   };
+  if (details !== undefined) error.details = details;
+  return { ok: false, error };
 }
 
 const STATUS_TO_CODE: Record<number, ErrorCode> = {

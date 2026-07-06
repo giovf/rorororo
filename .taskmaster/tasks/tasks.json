@@ -89,7 +89,7 @@
         "dependencies": [
           "1"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -97,9 +97,10 @@
             "description": "Create the niche-agnostic DataSource TypeScript contract — slug, title, zod recordSchema, fetchFresh, refresh policy, queryParams, optional creditCost — with generics designed so a heterogeneous registry stays type-safe.",
             "dependencies": [],
             "details": "In src/sources/types.ts define `export interface DataSource<T extends z.ZodTypeAny = z.ZodTypeAny>` with: `slug: string` (e.g. 'uk-planning'), `title: string`, `recordSchema: T` (zod schema of one normalized record), `fetchFresh(env: CloudflareBindings): Promise<z.infer<T>[]>`, `refresh: { cron: string; cacheTtlSeconds: number }`, `queryParams: z.ZodObject<any>` (per-request-validated filters this source declares), and `creditCost?: number` (default 1, consumed later by task 7). Get the generics right: registry entries must be storable as `DataSource` (erased/default type param) while individual source modules keep full inference from their own recordSchema — add a type-level test or helper (e.g. `defineSource`) if needed to prove both directions compile. Also export any shared helper types the route/filter layer will need (e.g. `SourceRecord<S> = z.infer<S['recordSchema']>`). Explicit return types on all exported functions, no `any` leaking into the public surface beyond the documented `z.ZodObject<any>` for queryParams. Nothing dataset-specific may appear here (CLAUDE.md isolation rule).",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Type-level assertions (expectTypeOf via vitest or tsd-style compile checks): a concrete source with a specific zod schema assigns to `DataSource`; `z.infer` of recordSchema flows through fetchFresh's return type; a mistyped fetchFresh return fails compilation. `npm run typecheck` passes with strict mode.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T14:55:26.451Z"
           },
           {
             "id": 2,
@@ -109,9 +110,10 @@
               1
             ],
             "details": "src/sources/registry.ts: `export const registry: Record<string, DataSource>` and `export function getSource(slug: string): DataSource | undefined` (explicit return type; named exports per conventions). Create src/sources/demo.ts: an in-memory demo source with a small zod recordSchema covering the filterable types the generic filter engine must handle (at least one string field for substring matching, one enum/literal or number field for equality matching, and a date-ish string), `fetchFresh` returning ~10–20 deterministic fixture records synchronously wrapped in a Promise, a `queryParams` z.object declaring 2–3 filters, and a refresh policy with placeholder cron/TTL values. Register it in the registry. Keep the demo source clearly marked as test scaffolding to be joined (not replaced) by real sources in task 3. All dataset-specific content lives only in src/sources/demo.ts plus its registry entry — nothing elsewhere.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit tests: getSource('demo') returns the source and getSource('nope') returns undefined; demo fixture records all parse against the demo recordSchema; queryParams schema accepts declared filters and rejects unknown-typed values.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T14:55:26.457Z"
           },
           {
             "id": 3,
@@ -122,9 +124,10 @@
               2
             ],
             "details": "src/sources/query.ts (extracted so tasks 9 and 10 — MCP tools and x402 routes — can reuse it without going through Hono): (a) `buildQuerySchema(source)` returning `source.queryParams.extend({ page: z.coerce.number().int().min(1).default(1), per_page: z.coerce.number().int().min(1).max(100).default(25) })`; (b) `applyFilters(records, params, queryParams)` that introspects the zod shape of each declared param and applies equality for numbers/booleans/enums and case-insensitive substring for strings — no per-dataset branches anywhere (any dataset-specific conditional is a design bug per CLAUDE.md); (c) `paginate(records, page, per_page)` returning `{ items, total }`. src/routes/data.ts: `GET /v1/data/:source` — unknown slug → 404 using task 1's error envelope; validate the query string against the built schema, zod failure → 400 envelope with issue detail; obtain records via the cache layer abstraction (until task 3 lands, call `source.fetchFresh(env)` behind a thin `getRecords(env, source)` seam so task 3 swaps in KV caching without touching this route); apply filters, paginate, respond with success envelope `meta: { page, per_page, total, source: slug, last_refreshed_at }` (last_refreshed_at may be the fetch time until refresh_log exists). Mount the route in src/index.ts.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit tests against the demo source fixtures: applyFilters equality and substring behavior per param type, combined filters, pagination math (bounds, total counts, out-of-range page returns empty items with correct total), per_page clamped at 100. Route-level: unknown slug → 404 envelope; invalid param (e.g. page=0, non-numeric per_page) → 400 envelope with zod issue detail.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T14:55:26.461Z"
           },
           {
             "id": 4,
@@ -135,14 +138,16 @@
               3
             ],
             "details": "In src/routes/data.ts add `GET /v1/sources` (also decide whether bare `GET /v1/data` aliases it or 404s — document the choice): iterate the registry and return, per source, `{ slug, title, refresh: { cron, cacheTtlSeconds }, last_refreshed_at, params }` where `params` is derived generically from each source's queryParams zod shape (param name + inferred type + optionality) — this listing later feeds MCP list_sources in task 9, so keep the shape stable and serializable. Wrap in the standard success envelope. Then complete the task's test suite using task 1's vitest Workers harness: SELF.fetch integration tests for `/v1/data/demo` happy path (envelope shape, meta fields, records validate against demo recordSchema), filtered query, paginated query, unknown slug 404 envelope, invalid query param 400 envelope with zod issue detail, and `/v1/sources` listing containing the demo entry with its declared params. Run `npm run lint`, `npm run typecheck`, and `npm test` clean.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration via SELF.fetch (vitest-pool-workers): GET /v1/sources returns 200 with the demo source's slug/title/params; GET /v1/data/demo end-to-end with pagination and filter params matches unit-level expectations; invalid param → 400 envelope; unknown slug → 404 envelope. Full quality gates (lint, typecheck, test) pass.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T14:55:26.464Z"
           }
         ],
         "complexity": 6,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Split into: (1) define the DataSource<T extends z.ZodTypeAny> interface in src/sources/types.ts (slug, title, recordSchema, fetchFresh, refresh policy, queryParams, creditCost) — get the generics right so registry entries stay heterogeneous but type-safe; (2) build src/sources/registry.ts with getSource(slug) plus an in-memory demo source with fixture records for tests; (3) implement GET /v1/data/:source in src/routes/data.ts — unknown-slug 404 envelope, queryParams extended with page/per_page coercion, generic filter application driven purely by the zod param shape (equality/substring by type — no per-dataset branches), pagination, and envelope meta {page, per_page, total, source, last_refreshed_at}; (4) implement the sources-listing endpoint (GET /v1/data or /v1/sources) exposing registry metadata, and write the unit + SELF.fetch integration tests including the invalid-param 400 envelope. Extract the query/filter core so tasks 9 and 10 can reuse it (src/sources/query.ts)."
+        "expansionPrompt": "Split into: (1) define the DataSource<T extends z.ZodTypeAny> interface in src/sources/types.ts (slug, title, recordSchema, fetchFresh, refresh policy, queryParams, creditCost) — get the generics right so registry entries stay heterogeneous but type-safe; (2) build src/sources/registry.ts with getSource(slug) plus an in-memory demo source with fixture records for tests; (3) implement GET /v1/data/:source in src/routes/data.ts — unknown-slug 404 envelope, queryParams extended with page/per_page coercion, generic filter application driven purely by the zod param shape (equality/substring by type — no per-dataset branches), pagination, and envelope meta {page, per_page, total, source, last_refreshed_at}; (4) implement the sources-listing endpoint (GET /v1/data or /v1/sources) exposing registry metadata, and write the unit + SELF.fetch integration tests including the invalid-param 400 envelope. Extract the query/filter core so tasks 9 and 10 can reuse it (src/sources/query.ts).",
+        "updatedAt": "2026-07-06T14:55:26.464Z"
       },
       {
         "id": "3",
@@ -848,9 +853,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T14:49:44.224Z",
+      "lastModified": "2026-07-06T14:55:26.464Z",
       "taskCount": 12,
-      "completedCount": 1,
+      "completedCount": 2,
       "tags": [
         "master"
       ]
