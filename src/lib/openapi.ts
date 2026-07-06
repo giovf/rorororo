@@ -1,0 +1,164 @@
+import { z } from 'zod';
+import { API_BASE_URL, APP_VERSION } from './constants';
+import { ERROR_CODES } from './envelope';
+import { buildQuerySchema } from '../sources/query';
+import { listSources } from '../sources/registry';
+import type { DataSource } from '../sources/types';
+
+// Generator choice (task 4.1, recorded 2026-07-06): zod v4's native
+// z.toJSONSchema() emits JSON Schema draft 2020-12 — the dialect OpenAPI 3.1
+// is built on — so the registry-driven document needs no extra dependency and
+// no OpenAPIHono route rewrite. Query params use io:'input' so coercions and
+// transforms document what the client actually sends. Revisit only if we need
+// features this can't express (request bodies land with tasks 6/8).
+
+type JsonObject = Record<string, unknown>;
+
+function toSchema(schema: z.ZodType): JsonObject {
+  const generated = z.toJSONSchema(schema, { io: 'input' }) as JsonObject;
+  delete generated.$schema; // fragment inside the document, not a standalone schema
+  return generated;
+}
+
+const errorEnvelopeSchema = z.object({
+  ok: z.literal(false),
+  error: z.object({
+    code: z.enum(ERROR_CODES),
+    message: z.string(),
+    docs_url: z.string(),
+    details: z.unknown().optional(),
+  }),
+});
+
+function successEnvelope(data: z.ZodType, meta?: z.ZodType): JsonObject {
+  return toSchema(
+    z.object({
+      ok: z.literal(true),
+      data,
+      ...(meta ? { meta } : {}),
+    }),
+  );
+}
+
+function jsonResponse(description: string, schema: JsonObject): JsonObject {
+  return { description, content: { 'application/json': { schema } } };
+}
+
+function errorResponse(description: string): JsonObject {
+  return jsonResponse(description, { $ref: '#/components/schemas/ErrorEnvelope' });
+}
+
+function queryParameters(source: DataSource): JsonObject[] {
+  return Object.entries(buildQuerySchema(source).shape).map(([name, field]) => ({
+    name,
+    in: 'query',
+    required: false,
+    schema: toSchema(field as z.ZodType),
+  }));
+}
+
+const paginationMeta = z.object({
+  source: z.string(),
+  page: z.int(),
+  per_page: z.int(),
+  total: z.int(),
+  last_refreshed_at: z.string().nullable(),
+});
+
+function sourcePathItem(source: DataSource): JsonObject {
+  return {
+    get: {
+      operationId: `query_${source.slug.replaceAll('-', '_')}`,
+      summary: source.title,
+      description: source.description,
+      tags: ['data'],
+      parameters: queryParameters(source),
+      responses: {
+        '200': jsonResponse(
+          `Matching ${source.title} records`,
+          successEnvelope(z.array(source.recordSchema), paginationMeta),
+        ),
+        '400': errorResponse('Invalid query parameters (see error.details)'),
+        '503': errorResponse('Source temporarily unavailable, retry later'),
+      },
+    },
+  };
+}
+
+const sourceListingSchema = z.array(
+  z.object({
+    slug: z.string(),
+    title: z.string(),
+    description: z.string(),
+    supported_params: z.array(z.string()),
+    refresh_cron: z.string(),
+    credit_cost: z.number(),
+  }),
+);
+
+function buildDocument(): JsonObject {
+  const sourcePaths = Object.fromEntries(
+    listSources().map((source) => [`/v1/data/${source.slug}`, sourcePathItem(source)]),
+  );
+
+  return {
+    openapi: '3.1.0',
+    info: {
+      title: 'faceless-api',
+      version: APP_VERSION,
+      description:
+        'Normalized UK planning and procurement open data as clean JSON, for developers and AI agents. Blind Mode: no personal data is stored or served.',
+    },
+    servers: [{ url: API_BASE_URL, description: 'Production (placeholder domain)' }],
+    tags: [
+      { name: 'platform', description: 'Health and discovery' },
+      { name: 'data', description: 'Dataset query endpoints' },
+    ],
+    paths: {
+      '/v1/health': {
+        get: {
+          operationId: 'health',
+          summary: 'Liveness check',
+          tags: ['platform'],
+          responses: {
+            '200': jsonResponse(
+              'Service is up',
+              successEnvelope(z.object({ status: z.string(), version: z.string() })),
+            ),
+          },
+        },
+      },
+      '/v1/data': {
+        get: {
+          operationId: 'list_sources',
+          summary: 'List available data sources',
+          tags: ['platform'],
+          responses: {
+            '200': jsonResponse('Registered sources', successEnvelope(sourceListingSchema)),
+          },
+        },
+      },
+      ...sourcePaths,
+    },
+    components: {
+      securitySchemes: {
+        bearerAuth: {
+          type: 'http',
+          scheme: 'bearer',
+          description: 'API key issued via /v1/keys, sent as a bearer token.',
+        },
+      },
+      schemas: {
+        ErrorEnvelope: toSchema(errorEnvelopeSchema),
+      },
+    },
+  };
+}
+
+let cachedDocument: JsonObject | undefined;
+
+/** The registry is static per deployment, so the document is built once. */
+export function getOpenApiDocument(): JsonObject {
+  cachedDocument ??= buildDocument();
+  return cachedDocument;
+}

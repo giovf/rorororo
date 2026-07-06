@@ -239,7 +239,7 @@
         "dependencies": [
           "2"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -247,9 +247,10 @@
             "description": "Compare the three candidate generation strategies — @hono/zod-openapi (migrating routes to OpenAPIHono with createRoute), @asteasolutions/zod-to-openapi (programmatic OpenApiGeneratorV31 build over existing plain-Hono routes), and zod v4's native z.toJSONSchema — verify version compatibility with the pinned zod version, record the decision with rationale, and flag the new dependency per the ask-first house rule before installing.",
             "dependencies": [],
             "details": "Check the installed zod version in package.json first, since the zod v4 vs openapi-library compatibility churn is the main risk. For @hono/zod-openapi: confirm it supports OpenAPI 3.1 output via app.doc31/getOpenAPI31Document and works with the project's zod version; assess how invasive migrating existing /v1 route definitions to OpenAPIHono would be. For @asteasolutions/zod-to-openapi: confirm OpenApiGeneratorV31 compatibility and that plain Hono routes can stay untouched. Fall back to zod v4 native z.toJSONSchema only if both integrations lag zod v4 support. Pin exact versions of whatever combination works. Record the decision, the version-compatibility rationale, and any known caveats in a short ADR-style note (e.g. docs/decisions or a comment block near the generator module). The dependency is PRD-mandated, so per CLAUDE.md flag it to the user rather than silently adding it — surface the choice and proceed once acknowledged.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "No automated tests for this subtask; acceptance is a recorded decision note with pinned versions, plus `npm run typecheck` and `npm run build` passing after the dependency is added, proving the chosen library resolves and bundles cleanly on Workers.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:10:21.688Z"
           },
           {
             "id": 2,
@@ -259,9 +260,10 @@
               1
             ],
             "details": "Create src/routes/openapi.ts (or equivalent module per the chosen approach from subtask 1). Iterate the registry from src/sources at document-build time — never hardcode slugs — so adding a source file plus registry entry automatically produces its path item. For each source: derive query parameter schemas from source.queryParams zod shapes, append the shared pagination parameters, and set the 200 response schema to the success envelope wrapping an array of the source's recordSchema. Design a registerRoute(routeSpec) helper that appends arbitrary route definitions (method, path, request schemas, responses) into the same document, and use it to document /v1/health now; tasks for /v1/usage, /v1/keys, and /v1/waitlist will call it as those endpoints land. Keep the generator a pure function of (registry, extra registered routes) → document object so it is trivially testable without a running Worker.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Unit test the generator function directly: assert one path per registry slug exists, that a synthetic source added to a test registry appears as /v1/data/{slug}, that its query parameters match the source's queryParams keys/types, and that registerRoute entries (e.g. /v1/health) show up in the paths object.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:10:21.694Z"
           },
           {
             "id": 3,
@@ -271,9 +273,10 @@
               2
             ],
             "details": "Add components.securitySchemes with an HTTP bearer scheme documenting `Authorization: Bearer <key>` and apply it as the default security requirement on /v1 data routes (health/waitlist stay public). Register the error-envelope zod schema as a named component and reference it from 4xx/5xx responses. Document the X-Credits-Remaining response header on metered routes via a reusable header component. Set info.version by importing package.json's version (with tsconfig resolveJsonModule or an equivalent build-time constant) and info.title/description for the API. Set servers[0].url from an environment value with a placeholder domain until the real domain is purchased. Mount GET /openapi.json in the Hono app returning the document as application/json with long-lived Cache-Control headers (e.g. public, max-age=3600 or longer since the document only changes on deploy); build the document once per isolate rather than per request.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Integration test via vitest-pool-workers SELF.fetch: GET /openapi.json returns 200 application/json with a Cache-Control header, the parsed body has openapi starting with \"3.1\", info.version equals package.json's version, components.securitySchemes contains the bearer scheme, and the error-envelope component plus X-Credits-Remaining header documentation are present.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:10:21.698Z"
           },
           {
             "id": 4,
@@ -284,14 +287,16 @@
               3
             ],
             "details": "Unit layer (pure generator from subtask 2): for every registry entry assert a /v1/data/{slug} path exists; construct a test registry containing an extra synthetic source and assert its path appears without any generator changes; for each source compare the spec's query parameter names, types, and required flags against the source's queryParams zod shape programmatically rather than via snapshots so drift fails loudly. Integration layer (vitest-pool-workers): fetch /openapi.json and assert valid JSON, openapi \"3.1.x\", presence of the security scheme, and paths for all registered routes. CI validation: run an OpenAPI 3.1-aware validator (e.g. @seriousme/openapi-schema-validator or @redocly/cli lint) against the generated document — either inside a vitest test that imports the validator, or as a dedicated script (npm run validate:openapi) invoked from the GitHub Actions workflow alongside lint/typecheck/test. Prefer the in-test approach so `npm test` alone catches an invalid document locally.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "This subtask is the test work itself: acceptance is `npm test` passing with the new unit and integration suites, a deliberately broken schema (e.g. renamed queryParam in a test fixture) failing the parity test, and the CI workflow failing when the document violates the OpenAPI 3.1 meta-schema.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:10:21.701Z"
           }
         ],
         "complexity": 6,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Split into: (1) evaluate and pin the generation approach — @hono/zod-openapi (route migration to OpenAPIHono) vs @asteasolutions/zod-to-openapi (programmatic document build over existing plain-Hono routes) vs zod v4 native z.toJSONSchema; record the decision and version-compatibility rationale, and flag the new dependency per the ask-first house rule; (2) implement registry-driven path generation — iterate sources at spec-build time producing GET /v1/data/{slug} entries with queryParams + pagination parameters and envelope(array(recordSchema)) responses, plus a registerRoute helper so later tasks (usage, keys, waitlist) self-register their spec entries; (3) add the bearer securityScheme, error-envelope component, X-Credits-Remaining header docs, info.version from package.json, and serve GET /openapi.json with long cache headers; (4) write tests: registry slug → path presence (including add-a-source-in-test), query-param shape parity with the zod schemas, and document validation via a spec validator in CI."
+        "expansionPrompt": "Split into: (1) evaluate and pin the generation approach — @hono/zod-openapi (route migration to OpenAPIHono) vs @asteasolutions/zod-to-openapi (programmatic document build over existing plain-Hono routes) vs zod v4 native z.toJSONSchema; record the decision and version-compatibility rationale, and flag the new dependency per the ask-first house rule; (2) implement registry-driven path generation — iterate sources at spec-build time producing GET /v1/data/{slug} entries with queryParams + pagination parameters and envelope(array(recordSchema)) responses, plus a registerRoute helper so later tasks (usage, keys, waitlist) self-register their spec entries; (3) add the bearer securityScheme, error-envelope component, X-Credits-Remaining header docs, info.version from package.json, and serve GET /openapi.json with long cache headers; (4) write tests: registry slug → path presence (including add-a-source-in-test), query-param shape parity with the zod schemas, and document validation via a spec validator in CI.",
+        "updatedAt": "2026-07-06T15:10:21.701Z"
       },
       {
         "id": "5",
@@ -859,9 +864,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T15:06:52.687Z",
+      "lastModified": "2026-07-06T15:10:21.701Z",
       "taskCount": 12,
-      "completedCount": 3,
+      "completedCount": 4,
       "tags": [
         "master"
       ]

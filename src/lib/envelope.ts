@@ -3,14 +3,17 @@ import type { Context, ErrorHandler, NotFoundHandler } from 'hono';
 import { DOCS_ERRORS_URL } from './constants';
 import type { AppEnv } from '../types';
 
-export type ErrorCode =
-  | 'bad_request'
-  | 'unauthorized'
-  | 'payment_required'
-  | 'not_found'
-  | 'rate_limited'
-  | 'unavailable'
-  | 'internal';
+export const ERROR_CODES = [
+  'bad_request',
+  'unauthorized',
+  'payment_required',
+  'not_found',
+  'rate_limited',
+  'unavailable',
+  'internal',
+] as const;
+
+export type ErrorCode = (typeof ERROR_CODES)[number];
 
 export interface SuccessEnvelope<T> {
   ok: true;

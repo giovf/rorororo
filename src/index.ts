@@ -6,6 +6,7 @@ import { structuredLogger } from './middleware/logging';
 import { refreshMatchingSources } from './sources/cache';
 import { dataRoutes } from './routes/data';
 import { healthRoute } from './routes/health';
+import { openapiRoute } from './routes/openapi';
 import type { AppEnv } from './types';
 
 const app = new Hono<AppEnv>();
@@ -16,6 +17,7 @@ app.use('*', cors());
 
 app.route('/v1/health', healthRoute);
 app.route('/v1/data', dataRoutes);
+app.route('/openapi.json', openapiRoute);
 
 app.onError(errorHandler);
 app.notFound(notFoundHandler);
