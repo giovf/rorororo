@@ -14,6 +14,7 @@ out/
 
 # ── Wrangler (Cloudflare Workers local state)
 .wrangler/
+backup-*.sql
 
 # ── Logs
 logs/

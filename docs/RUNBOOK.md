@@ -1,0 +1,80 @@
+# Runbook — the <2 hrs/week operation
+
+Everything here is copy-paste executable. Local commands use `--local`; the
+production variants (`--remote`) touch the live database — treat them as
+ask-first while the operator model beds in.
+
+## Weekly checklist (~15 min)
+
+1. **Refresh health** — any failed source pulls?
+
+   ```bash
+   npx wrangler d1 execute DB --local --command \
+     "SELECT source_slug, status, records, duration_ms, message, created_at
+      FROM refresh_log ORDER BY id DESC LIMIT 14"
+   ```
+
+   An `error` row = the origin broke or changed shape. Reproduce locally with
+   `npm run dev` + `curl localhost:8787/v1/data/<slug>?per_page=1` (fixture
+   fallback masks it locally — check the `fixture_fallback` log line).
+
+2. **Log scan** — error spikes or usage anomalies. Production logs:
+   `npx wrangler tail --format json | grep -E '"level":"error"|usage_alert'`.
+   Every request line carries `requestId, path, status, latencyMs, keyId,
+   creditsCharged`; alerts fire as `event: "usage_alert"` at 80%/100%.
+
+3. **Stripe glance** (once live): dashboard → payments/disputes. Dunning,
+   retries, and cancellations are Stripe-native; nothing to operate here.
+
+4. **Waitlist export** (pre-launch):
+
+   ```bash
+   npx wrangler d1 execute DB --local --command \
+     "SELECT email, source, created_at FROM waitlist ORDER BY id" --json
+   ```
+
+## Monthly (~15 min)
+
+- Merge Dependabot PRs (CI must be green).
+- **D1 backup**: `npx wrangler d1 export DB --remote --output backup-$(date +%Y%m%d).sql`
+  and stash it somewhere off-Cloudflare.
+
+## Alerting (external, free tiers)
+
+- **UptimeRobot**: HTTP monitor on `https://<domain>/v1/health` (expects 200,
+  body contains `"status":"ok"`), 5-min interval, alert → phone.
+- **Cron health**: refresh runs daily at 05:00 UTC — if `last_refreshed_at`
+  in any `/v1/data/:source` meta is >48h old, the cron or origin is broken.
+- Optional: Sentry via a Workers integration (deferred — structured logs +
+  UptimeRobot cover v1).
+
+## Secret rotation
+
+```bash
+wrangler secret put ADMIN_TOKEN          # openssl rand -hex 32
+wrangler secret put STRIPE_SECRET_KEY    # rotate in Stripe dashboard first
+wrangler secret put STRIPE_WEBHOOK_SECRET
+wrangler secret put X402_WALLET_ADDRESS  # a config change, not a secret rotation
+```
+
+Local equivalents live in `.dev.vars` (see `.dev.vars.example`).
+
+## Known caveats (accepted for v1)
+
+- **KV counters are best-effort**: usage/rate-limit counters can lose
+  increments under concurrency (slight over-serve). Accurate upgrade path =
+  Durable Object per key; documented in `src/metering/counters.ts`, not built.
+- **Key cache TTL**: auth records cache in KV for 1h; revocation and credit
+  grants bypass it by deleting the entry, so they're immediate.
+- **Snapshot caps**: uk-planning serves the most recent ~2000 records,
+  uk-tenders ~1000 (KV value + memory bounds). Raising them = shard the cache
+  per authority/window (post-v1).
+
+## Pivot triggers (from the niche analysis — check monthly against reality)
+
+- 3+ well-reviewed, actively maintained, self-serve planning APIs at scale →
+  pivot the wedge to procurement-only or sanctions screening (swap
+  `src/sources/` files; the platform stays).
+- <£300 MRR after 4 months of real marketing → reposition toward
+  bid-intelligence buyers or merge into a compliance feed.
+- A single data source >40% of revenue exposure → add the next vertical.

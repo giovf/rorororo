@@ -862,7 +862,7 @@
         "dependencies": [
           "1"
         ],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -870,9 +870,10 @@
             "description": "Add the CI workflow running the full quality gate on every push/PR, a main-branch-only deploy job that skips gracefully when CLOUDFLARE_API_TOKEN is absent, and Dependabot config for weekly npm and github-actions updates.",
             "dependencies": [],
             "details": "1. `.github/workflows/ci.yml` — `check` job on push + pull_request: actions/checkout, actions/setup-node (LTS, `cache: npm`), then `npm ci`, `npm run lint`, `npm run typecheck`, `npm test`, `npm run build` (dry-run deploy validates wrangler.jsonc) — mirror the exact script names already in package.json, do not invent new ones.\n2. `deploy` job: `needs: check`, `if: github.ref == 'refs/heads/main'`, using `cloudflare/wrangler-action` with `CLOUDFLARE_API_TOKEN`. GitHub Actions cannot reference `secrets` directly in a job-level `if:`, so implement the secret-existence guard via an env intermediary: a first step sets `env: HAS_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN != '' }}` (or writes to `$GITHUB_OUTPUT`), and the wrangler-action step is conditioned on that output. When the secret is absent the job must show as skipped/green, never failed — CI stays green before the Cloudflare account exists (blocked-by-config, not by code).\n3. `.github/dependabot.yml` — two update blocks: `npm` (weekly) and `github-actions` (weekly), supporting the monthly merge ritual in the runbook.\n4. Do NOT add the `CLOUDFLARE_API_TOKEN` secret or deploy for real — deploying is an ask-first operation per CLAUDE.md; this subtask only ships the workflow files.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Run the exact check-job command sequence locally (`npm ci && npm run lint && npm run typecheck && npm test && npm run build`) to confirm parity with the workflow. Validate YAML with `actionlint` or a parse check. Push a branch: all check steps pass and the deploy job reports skipped (secret absent) rather than failed; open a PR and confirm the check job triggers there too.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:59:27.464Z"
           },
           {
             "id": 2,
@@ -882,9 +883,10 @@
               1
             ],
             "details": "Write `docs/RUNBOOK.md` documenting behavior that already exists (this task runs last in the project by design). Sections:\n1. Weekly checklist — refresh_log failure query with a concrete command, e.g. `wrangler d1 execute faceless-api --command \"SELECT * FROM refresh_log WHERE status != 'ok' ORDER BY created_at DESC LIMIT 20\"` (verify table/column names against the actual migration in migrations/); structured-log scan for error spikes/usage anomalies (`wrangler tail` guidance); Stripe dashboard glance; Dependabot PR merge ritual (monthly, referencing the CI from subtask 1 as the merge gate).\n2. Alerting — UptimeRobot HTTP monitor setup on `/v1/health`; optional Sentry note.\n3. Secret rotation — `wrangler secret put` procedure for STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET, ADMIN_TOKEN, X402_* (note: prod rotation is an ask-first op).\n4. Backups — `wrangler d1 export` command and cadence; waitlist export command (d1 execute SELECT against the waitlist table).\n5. KV counter caveats — eventual consistency of usage counters, best-effort limits, documented Durable Objects upgrade path (not built).\n6. Pivot triggers from the niche analysis — 3+ mature planning APIs appear → go procurement-only; <£300 MRR after 4 months → reposition.\nEvery command must be dry-run executed against local wrangler/local D1 (use `--local`) before the doc ships; fix any command that doesn't run verbatim.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Copy-paste every command from the doc into a shell against wrangler dev / local D1 (`--local` flags where applicable) and confirm each executes without error and returns the expected shape. Cross-check table and column names against the actual D1 migrations. Review that each alerting/rotation step names a concrete endpoint or secret that actually exists in the codebase.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:59:27.469Z"
           },
           {
             "id": 3,
@@ -892,21 +894,23 @@
             "description": "Author the documentation-only marketplace-prep doc mapping RapidAPI and Apify publisher listing requirements (spec import, auth model, pricing tiers, description assets) to what the API already exposes, verified against current publisher documentation.",
             "dependencies": [],
             "details": "Write `docs/MARKETPLACE-PREP.md`:\n1. RapidAPI section — their listing requirements (OpenAPI spec import, auth scheme declaration, pricing tier definition, description/logo assets) each mapped to the existing implementation: `/openapi.json` for spec import, bearer API-key auth as implemented in src/auth/, the Starter/Growth/Scale tier structure from billing. Verify requirement details against RapidAPI's current publisher docs (WebFetch/WebSearch) rather than from memory; note the docs-checked date.\n2. Apify section — Actor/API-integration listing requirements mapped the same way, flagging any genuine gaps (e.g. assets not yet created) as pre-listing TODOs rather than v1 work.\n3. Prominent scope banner: this document is preparation only — actual marketplace listings are post-niche-validation and explicitly out of v1 scope per docs/ARCHITECTURE.md; nothing in this subtask creates accounts, submits listings, or publishes anything externally.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Review pass: every claimed existing capability (/openapi.json, key auth, tiers) is confirmed present in the codebase by opening the referenced route/module; every marketplace requirement cites the current publisher documentation page it came from. Confirm the doc contains the explicit documentation-only / out-of-v1-scope statement and no instruction that would trigger an external publication.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-06T15:59:27.474Z"
           }
         ],
         "complexity": 4,
         "recommendedSubtasks": 3,
-        "expansionPrompt": "Split into: (1) .github/workflows/ci.yml — check job running npm ci, lint, typecheck, test, build on push/PR (mirroring the exact scripts already in package.json), plus a main-only deploy job via wrangler-action that skips gracefully when CLOUDFLARE_API_TOKEN is absent (secret-existence guard, since GitHub Actions can't reference secrets in `if:` directly — use an env intermediary), and .github/dependabot.yml for weekly npm + actions updates; (2) docs/RUNBOOK.md — weekly checklist with copy-paste-tested commands (refresh_log failure query via wrangler d1 execute, log scan, Stripe glance), UptimeRobot on /v1/health, secret rotation via wrangler secret put, D1 export cadence, KV consistency caveats with the DO upgrade path, waitlist export, and the pivot triggers; (3) docs/MARKETPLACE-PREP.md mapping RapidAPI/Apify listing requirements to existing endpoints (/openapi.json, key auth, tiers), verified against current publisher docs, explicitly documentation-only. Every runbook command must be dry-run executable locally before the doc ships."
+        "expansionPrompt": "Split into: (1) .github/workflows/ci.yml — check job running npm ci, lint, typecheck, test, build on push/PR (mirroring the exact scripts already in package.json), plus a main-only deploy job via wrangler-action that skips gracefully when CLOUDFLARE_API_TOKEN is absent (secret-existence guard, since GitHub Actions can't reference secrets in `if:` directly — use an env intermediary), and .github/dependabot.yml for weekly npm + actions updates; (2) docs/RUNBOOK.md — weekly checklist with copy-paste-tested commands (refresh_log failure query via wrangler d1 execute, log scan, Stripe glance), UptimeRobot on /v1/health, secret rotation via wrangler secret put, D1 export cadence, KV consistency caveats with the DO upgrade path, waitlist export, and the pivot triggers; (3) docs/MARKETPLACE-PREP.md mapping RapidAPI/Apify listing requirements to existing endpoints (/openapi.json, key auth, tiers), verified against current publisher docs, explicitly documentation-only. Every runbook command must be dry-run executable locally before the doc ships.",
+        "updatedAt": "2026-07-06T15:59:27.474Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T15:56:03.568Z",
+      "lastModified": "2026-07-06T15:59:27.474Z",
       "taskCount": 12,
-      "completedCount": 11,
+      "completedCount": 12,
       "tags": [
         "master"
       ]
