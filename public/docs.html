@@ -22,9 +22,8 @@ a{color:var(--accent)}
   <p class="top"><a href="/">← home</a> · machine-readable spec: <a href="/openapi.json">/openapi.json</a> · MCP endpoint for agents: <code>/mcp</code></p>
 
   <h2>Quickstart (60 seconds, no JS needed)</h2>
-  <pre><code># 1. Get a free key (250 req/mo, shown once)
-curl -X POST https://faceless-api.faceless-api.workers.dev/v1/keys \
-  -H 'content-type: application/json' -d '{"email":"you@company.com"}'
+  <pre><code># 1. Get a free key (250 req/mo, shown once) from the signup form at
+#    https://faceless-api.faceless-api.workers.dev  (signup is bot-protected)
 
 # 2. Query procurement notices by value and CPV code (filters combine with AND)
 curl -H "Authorization: Bearer fapi_..." \
