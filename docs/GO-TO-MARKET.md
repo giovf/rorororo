@@ -7,9 +7,9 @@ niche-agnostic (swap `src/sources/`).
 
 ## Before you post
 
-- **Landing page + waitlist must be live first.** Every post drives to a real
-  URL where people can grab a free key or join the waitlist. Replace
-  `https://<your-domain>` throughout once the domain is set.
+- **Landing page + waitlist are live** at
+  `https://faceless-api.faceless-api.workers.dev` (used throughout below). It
+  works today; swap it for your custom domain here once that's set up.
 - **Do the competitor scan first** (also Stage 0): search RapidAPI / Apify /
   Google for "UK planning API", "Find a Tender API". If you find 3+
   well-reviewed, actively-maintained, self-serve planning APIs already at
@@ -39,7 +39,7 @@ I built a small API that normalizes the two official government feeds into one
 consistent JSON schema, refreshed daily, with filtering and pagination:
 
     curl -H "Authorization: Bearer $KEY" \
-      "https://<your-domain>/v1/data/uk-planning?q=solar&decision_date_after=2026-01-01"
+      "https://faceless-api.faceless-api.workers.dev/v1/data/uk-planning?q=solar&decision_date_after=2026-01-01"
 
 Notes for this crowd:
 - It's a single Cloudflare Worker (Hono + TypeScript). Every response is the
@@ -54,7 +54,7 @@ It's early — v1 covers the official feeds; council-portal long-tail coverage i
 next, driven by what people ask for. I'd love feedback on the schema and on
 which fields/authorities would make this actually useful to you.
 
-Docs: https://<your-domain>/docs
+Docs: https://faceless-api.faceless-api.workers.dev/docs
 
 ---
 
@@ -79,7 +79,7 @@ Design choices that might interest you:
 - Cache + daily cron refresh; responses expose `last_refreshed_at`.
 - Serves stale-but-good data if an origin has a wobble, rather than erroring.
 
-Free tier (250 req/mo, no card): https://<your-domain>. Council-portal coverage
+Free tier (250 req/mo, no card): https://faceless-api.faceless-api.workers.dev. Council-portal coverage
 is the obvious next step — curious which councils people here would want first.
 
 ---
@@ -101,7 +101,7 @@ harder council-portal coverage, I want to know there's real willingness to pay.
 So: if you work in proptech, planning, construction lead-gen, or bid
 intelligence — **would a clean API for this save you enough to pay for it?**
 What would you filter on? Grab a free key or the waitlist:
-https://<your-domain>.
+https://faceless-api.faceless-api.workers.dev.
 
 Happy to share the stack (Cloudflare Workers + Hono + TypeScript, ~1 file per
 dataset behind a swappable source interface) if useful.
