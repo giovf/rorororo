@@ -16,6 +16,8 @@ export default tseslint.config(
   {
     // Node scripts run outside the Workers runtime.
     files: ['scripts/**/*.mjs'],
-    languageOptions: { globals: { console: 'readonly', process: 'readonly' } },
+    languageOptions: {
+      globals: { console: 'readonly', process: 'readonly', fetch: 'readonly' },
+    },
   },
 );
