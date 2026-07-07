@@ -66,6 +66,7 @@ a{color:var(--accent)}
   <form id="key-form">
     <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
     <button type="submit">Get free key</button>
+    <div class="cf-turnstile" data-sitekey="0x4AAAAAADxa3orlVPksuZ8i" style="flex-basis:100%;margin-top:4px"></div>
   </form>
   <pre id="key-result"><code></code></pre>
   <p class="note">Prefer the terminal? <code>curl -X POST https://faceless-api.faceless-api.workers.dev/v1/keys -H 'content-type: application/json' -d '{"email":"you@company.com"}'</code></p>
@@ -107,6 +108,7 @@ a{color:var(--accent)}
     <p>© 2026 faceless-api · <a href="/docs">Documentation</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/llms.txt">For LLMs</a></p>
   </footer>
 </main>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
 // Progressive enhancement only — every action above has a no-JS curl fallback.
 const form = document.getElementById('key-form');
@@ -122,13 +124,19 @@ form.addEventListener('submit', async (e) => {
   e.preventDefault();
   const email = form.querySelector('input').value;
   const endpoint = waitlistMode ? '/v1/waitlist' : '/v1/keys';
+  const token = window.turnstile ? turnstile.getResponse() : '';
+  if (window.turnstile && !token) {
+    result.style.display = 'block';
+    result.querySelector('code').textContent = 'Please complete the verification below first.';
+    return;
+  }
   result.style.display = 'block';
   result.querySelector('code').textContent = '…';
   try {
     const res = await fetch(endpoint, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email, source: 'landing' }),
+      body: JSON.stringify({ email, source: 'landing', 'cf-turnstile-response': token }),
     });
     const body = await res.json();
     if (!body.ok) {
@@ -139,10 +147,12 @@ form.addEventListener('submit', async (e) => {
       result.querySelector('code').textContent =
         'Your API key (shown once, store it now):\n\n' + body.data.key +
         '\n\nTry it:\ncurl -H "Authorization: Bearer ' + body.data.key +
-        '" "' + location.origin + '/v1/data/uk-planning?per_page=3"';
+        '" "' + location.origin + '/v1/data/uk-tenders?per_page=3"';
     }
   } catch {
     result.querySelector('code').textContent = 'Request failed — use the curl command below instead.';
+  } finally {
+    if (window.turnstile) turnstile.reset();
   }
 });
 </script>
