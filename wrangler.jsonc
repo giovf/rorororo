@@ -3,6 +3,8 @@
   "name": "faceless-api",
   "main": "src/index.ts",
   "compatibility_date": "2026-07-06",
+  // Node built-ins (Buffer, etc.) — needed by the Coinbase CDP x402 facilitator.
+  "compatibility_flags": ["nodejs_compat"],
   "vars": {
     // Safe by default: deploys (which read these vars) get "false", so a real
     // origin outage surfaces as a 503 / refresh_log error instead of silently
