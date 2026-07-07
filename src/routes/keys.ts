@@ -2,6 +2,7 @@ import { Hono } from 'hono';
 import { z } from 'zod';
 import { generateKey, hashKey } from '../auth/keys';
 import { keyCacheKey, requireApiKey } from '../auth/middleware';
+import { turnstileEnabled, verifyTurnstile } from '../auth/turnstile';
 import { FREE_TIER_CREDITS } from '../lib/constants';
 import { failure, success } from '../lib/envelope';
 import { rateLimit } from '../metering/ratelimit';
@@ -42,7 +43,14 @@ async function revokeKey(env: CloudflareBindings, keyId: string): Promise<boolea
 
 export const keysRoutes = new Hono<AppEnv>()
   .post('/', issueRateLimit, async (c) => {
-    const parsed = issueBodySchema.safeParse(await c.req.json().catch(() => ({})));
+    const raw = (await c.req.json().catch(() => ({}))) as Record<string, unknown>;
+    if (turnstileEnabled(c.env)) {
+      const token = (raw['cf-turnstile-response'] ?? raw['turnstile_token']) as string | undefined;
+      if (!(await verifyTurnstile(c.env, token, c.req.header('CF-Connecting-IP')))) {
+        return c.json(failure('bad_request', 'CAPTCHA verification failed; please retry'), 400);
+      }
+    }
+    const parsed = issueBodySchema.safeParse(raw);
     if (!parsed.success) {
       const details = parsed.error.issues.map((issue) => ({
         field: issue.path.join('.'),

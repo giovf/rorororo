@@ -1,5 +1,6 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
+import { turnstileEnabled, verifyTurnstile } from '../auth/turnstile';
 import { failure, success } from '../lib/envelope';
 import { rateLimit } from '../metering/ratelimit';
 import type { AppEnv } from '../types';
@@ -17,7 +18,14 @@ const waitlistRateLimit = rateLimit({
 });
 
 export const waitlistRoute = new Hono<AppEnv>().post('/', waitlistRateLimit, async (c) => {
-  const parsed = waitlistBodySchema.safeParse(await c.req.json().catch(() => ({})));
+  const raw = (await c.req.json().catch(() => ({}))) as Record<string, unknown>;
+  if (turnstileEnabled(c.env)) {
+    const token = (raw['cf-turnstile-response'] ?? raw['turnstile_token']) as string | undefined;
+    if (!(await verifyTurnstile(c.env, token, c.req.header('CF-Connecting-IP')))) {
+      return c.json(failure('bad_request', 'CAPTCHA verification failed; please retry'), 400);
+    }
+  }
+  const parsed = waitlistBodySchema.safeParse(raw);
   if (!parsed.success) {
     const details = parsed.error.issues.map((issue) => ({
       field: issue.path.join('.'),

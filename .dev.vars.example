@@ -21,3 +21,8 @@ X402_FACILITATOR_URL=
 # Offline dev: serve bundled fixtures when an origin fetch fails. Local only —
 # production (wrangler.jsonc) defaults this to "false" so outages fail loudly.
 FIXTURE_FALLBACK=true
+
+# Cloudflare Turnstile (anti-abuse on signup). Dark until set — the signup
+# endpoints skip CAPTCHA verification when this is empty. Secret key from the
+# Turnstile dashboard; the public site key goes in public/index.html.
+TURNSTILE_SECRET_KEY=

@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>faceless-api — Terms of Service</title>
+<style>
+:root{--bg:#fff;--fg:#16181d;--muted:#5b6472;--line:#e5e8ee;--accent:#0b5fff}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e8eaef;--muted:#9aa3b2;--line:#262b34;--accent:#5b8dff}}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:24px 20px 72px}
+h1{letter-spacing:-.02em}h2{margin-top:32px;font-size:1.2rem}
+a{color:var(--accent)}code{font-family:ui-monospace,Menlo,Consolas,monospace}
+.top{color:var(--muted);font-size:.95rem}.muted{color:var(--muted)}
+.note{border:1px solid var(--line);border-radius:10px;padding:12px 16px;color:var(--muted);font-size:.92rem}
+</style>
+</head>
+<body>
+<main>
+  <p class="top"><a href="/">← home</a></p>
+  <h1>Terms of Service</h1>
+  <p class="muted">Last updated: 7 July 2026. Contact: <a href="mailto:gio@1402celsius.com">gio@1402celsius.com</a>.</p>
+
+  <div class="note">Early-stage note: this is a plain-English starting point and should be reviewed by a solicitor before you rely on it — especially before taking live payments.</div>
+
+  <h2>1. The service</h2>
+  <p>faceless-api provides programmatic access to UK public-sector data (public procurement notices and planning applications) normalized from official government feeds into JSON, via a REST API and an MCP endpoint. By creating a key or using the API you agree to these terms.</p>
+
+  <h2>2. Data disclaimer</h2>
+  <p>The underlying data originates from official government sources (Find a Tender, planning.data.gov.uk) under the Open Government Licence and is provided <strong>"as is"</strong>. We normalize and cache it but do not guarantee its accuracy, completeness, or timeliness, and it is not legal, financial, or professional advice. For decisions that matter, verify against the official source.</p>
+
+  <h2>3. Acceptable use</h2>
+  <ul>
+    <li>Don't use the service unlawfully, or to attempt to disrupt, overload, reverse-engineer, or circumvent its security or quotas.</li>
+    <li>Respect the rate limits and monthly credit allowances of your plan.</li>
+    <li>Don't attempt to re-identify individuals from any data, or combine it with other sources to do so.</li>
+  </ul>
+
+  <h2>4. Keys, accounts &amp; quotas</h2>
+  <p>Keep your API key confidential; you are responsible for activity under it. The free tier provides a limited monthly allowance; we may adjust free-tier limits over time. We may suspend or revoke a key that is abused.</p>
+
+  <h2>5. Billing</h2>
+  <p>Paid plans are billed monthly via Stripe. Credit allowances reset each billing period and do not roll over. We may change pricing with reasonable notice. As an early-stage service, refunds are handled case-by-case — contact us if something goes wrong.</p>
+
+  <h2>6. Availability</h2>
+  <p>We aim for high availability but provide no formal SLA at this stage. The service may change or be interrupted.</p>
+
+  <h2>7. Intellectual property</h2>
+  <p>The API, software, and normalized schema are ours. The underlying government data remains subject to the Open Government Licence and Crown copyright, with attribution to the originating bodies.</p>
+
+  <h2>8. Liability</h2>
+  <p>To the fullest extent permitted by law, the service is provided without warranties, and we are not liable for indirect or consequential loss, or for decisions made in reliance on the data. Nothing here excludes liability that cannot be excluded by law.</p>
+
+  <h2>9. Termination</h2>
+  <p>You may stop using the service at any time. We may suspend or terminate access for breach of these terms.</p>
+
+  <h2>10. Governing law</h2>
+  <p>These terms are governed by the laws of England and Wales.</p>
+
+  <h2>11. Changes &amp; contact</h2>
+  <p>We may update these terms; material changes will be posted here with a new date. Questions: <a href="mailto:gio@1402celsius.com">gio@1402celsius.com</a>.</p>
+</main>
+</body>
+</html>
