@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         with:
           node-version: 22
           cache: npm
@@ -38,7 +38,7 @@ jobs:
             echo "available=false" >> "$GITHUB_OUTPUT"
             echo "CLOUDFLARE_API_TOKEN not set - skipping deploy (expected pre-launch)."
           fi
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v6
         if: steps.secret.outputs.available == 'true'
         with:
           node-version: 22
