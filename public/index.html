@@ -35,6 +35,19 @@ th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line)}th{c
 footer{border-top:1px solid var(--line);margin-top:64px;padding-top:20px;color:var(--muted);font-size:.9rem}
 footer p{max-width:720px}
 a{color:var(--accent)}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:100;background:rgba(10,12,16,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:20px}
+.modal.open{display:flex}
+.modal-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;max-width:560px;width:100%;padding:24px 24px 20px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,.4)}
+.modal-card h3{margin:0 24px 4px 0}
+.modal-close{position:absolute;top:10px;right:12px;background:none;border:0;color:var(--muted);font-size:1.7rem;line-height:1;cursor:pointer;padding:2px 8px;border-radius:8px}
+.modal-close:hover{color:var(--fg)}
+.modal-warn{color:var(--muted);font-size:.92rem;margin:.3rem 0 0}
+.modal-key{background:var(--code-bg);color:var(--code-fg);border-radius:10px;padding:14px;margin:14px 0;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-all;user-select:all}
+.modal-copy{padding:11px 18px;border:0;border-radius:8px;background:var(--accent);color:var(--accent-fg);font-size:1rem;font-weight:600;cursor:pointer}
+.modal-copy:hover{filter:brightness(1.08)}
+.modal-copied{margin-left:12px;color:#16a34a;font-size:.9rem;font-weight:600}
+.modal-try{margin:16px 0 0;color:var(--muted);font-size:.82rem;word-break:break-all}
+body.modal-open{overflow:hidden}
 </style>
 </head>
 <body>
@@ -108,6 +121,17 @@ a{color:var(--accent)}
     <p>© 2026 faceless-api · <a href="/docs">Documentation</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/llms.txt">For LLMs</a></p>
   </footer>
 </main>
+<div id="key-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+  <div class="modal-card">
+    <button id="modal-close" class="modal-close" type="button" aria-label="Close">&times;</button>
+    <h3 id="modal-title">Your API key</h3>
+    <p class="modal-warn">Shown once. Copy it now and store it somewhere safe — it cannot be recovered after you close this window.</p>
+    <div class="modal-key"><code id="modal-key-value"></code></div>
+    <button id="modal-copy" class="modal-copy" type="button">Copy key</button>
+    <span id="modal-copied" class="modal-copied" role="status" aria-live="polite"></span>
+    <p class="modal-try">Then use it: <code>curl -H "Authorization: Bearer &lt;key&gt;" https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders</code></p>
+  </div>
+</div>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
 // Progressive enhancement only — every action above has a no-JS curl fallback.
@@ -144,16 +168,60 @@ form.addEventListener('submit', async (e) => {
     } else if (waitlistMode) {
       result.querySelector('code').textContent = 'You are on the list. No confirmation email — we only mail you at launch.';
     } else {
-      result.querySelector('code').textContent =
-        'Your API key (shown once, store it now):\n\n' + body.data.key +
-        '\n\nTry it:\ncurl -H "Authorization: Bearer ' + body.data.key +
-        '" "' + location.origin + '/v1/data/uk-tenders?per_page=3"';
+      result.style.display = 'none';
+      openKeyModal(body.data.key);
     }
   } catch {
     result.querySelector('code').textContent = 'Request failed — use the curl command below instead.';
   } finally {
     if (window.turnstile) turnstile.reset();
   }
+});
+
+// API-key modal: shows the key once, copy-to-clipboard, and wipes it on close.
+const keyModal = document.getElementById('key-modal');
+const keyModalValue = document.getElementById('modal-key-value');
+const copyBtn = document.getElementById('modal-copy');
+const closeBtn = document.getElementById('modal-close');
+const copiedMsg = document.getElementById('modal-copied');
+let lastFocus = null;
+function openKeyModal(key) {
+  keyModalValue.textContent = key;
+  copiedMsg.textContent = '';
+  copyBtn.textContent = 'Copy key';
+  lastFocus = document.activeElement;
+  keyModal.classList.add('open');
+  keyModal.setAttribute('aria-hidden', 'false');
+  document.body.classList.add('modal-open');
+  copyBtn.focus();
+}
+function closeKeyModal() {
+  keyModal.classList.remove('open');
+  keyModal.setAttribute('aria-hidden', 'true');
+  document.body.classList.remove('modal-open');
+  keyModalValue.textContent = ''; // the key is gone once the window is closed
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+copyBtn.addEventListener('click', async () => {
+  try {
+    await navigator.clipboard.writeText(keyModalValue.textContent);
+    copiedMsg.textContent = '✓ Copied to clipboard';
+  } catch {
+    const range = document.createRange();
+    range.selectNodeContents(keyModalValue);
+    const sel = window.getSelection();
+    sel.removeAllRanges();
+    sel.addRange(range);
+    copiedMsg.textContent = 'Press Ctrl/Cmd+C to copy';
+  }
+});
+closeBtn.addEventListener('click', closeKeyModal);
+// Keep focus inside the modal and allow Escape to close (the only ways out).
+keyModal.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') { closeKeyModal(); return; }
+  if (e.key !== 'Tab') return;
+  if (e.shiftKey && document.activeElement === copyBtn) { e.preventDefault(); closeBtn.focus(); }
+  else if (!e.shiftKey && document.activeElement === closeBtn) { e.preventDefault(); copyBtn.focus(); }
 });
 </script>
 </body>
