@@ -15,11 +15,18 @@ import { privateKeyToAccount } from 'viem/accounts';
 
 const TARGET = 'https://faceless-api.faceless-api.workers.dev/x402/data/uk-tenders?per_page=2';
 
-const pk = process.env.PRIVATE_KEY;
-if (!pk || !/^0x[0-9a-fA-F]{64}$/.test(pk)) {
-  console.error('Set PRIVATE_KEY to your funded Base Sepolia BUYER wallet key (0x + 64 hex).');
+// MetaMask exports the key as 64 hex chars, usually WITHOUT the 0x prefix.
+// Accept it either way (and trim stray whitespace).
+const raw = (process.env.PRIVATE_KEY ?? '').trim().replace(/^0x/i, '');
+if (!/^[0-9a-fA-F]{64}$/.test(raw)) {
+  console.error(
+    'Set PRIVATE_KEY to your BUYER wallet key: 64 hex characters (0x optional).\n' +
+      'In MetaMask: Account menu (⋮) → Account details → Show private key.\n' +
+      'If you see 12/24 words, that is your Secret Recovery Phrase — do NOT use that here.',
+  );
   process.exit(1);
 }
+const pk = `0x${raw}`;
 
 const account = privateKeyToAccount(pk);
 console.log('Buyer wallet (paying from):', account.address);
