@@ -32,3 +32,10 @@ FIXTURE_FALLBACK=true
 # endpoints skip CAPTCHA verification when this is empty. Secret key from the
 # Turnstile dashboard; the public site key goes in public/index.html.
 TURNSTILE_SECRET_KEY=
+
+# Resend transactional email (magic-link sign-in). Dark until set — /v1/auth/login
+# returns 503 and passwordless sign-in is disabled when empty. API key from
+# resend.com. EMAIL_FROM defaults to onboarding@resend.dev (no DNS needed); set a
+# verified-domain sender (e.g. "faceless <no-reply@faceless.com>") once available.
+RESEND_API_KEY=
+EMAIL_FROM=

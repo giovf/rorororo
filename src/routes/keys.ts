@@ -1,5 +1,6 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
+import { getOrCreateAccount, normalizeEmail } from '../auth/accounts';
 import { generateKey, hashKey } from '../auth/keys';
 import { keyCacheKey, requireApiKey } from '../auth/middleware';
 import { turnstileEnabled, verifyTurnstile } from '../auth/turnstile';
@@ -63,16 +64,8 @@ export const keysRoutes = new Hono<AppEnv>()
     // Upsert the account (email identity), then issue the key under it. A new key
     // inherits the account's CURRENT plan, so re-issuing under a paid email keeps
     // the paid entitlement instead of silently dropping to free.
-    const email = parsed.data.email.trim().toLowerCase();
-    const newAccountId = crypto.randomUUID();
-    await c.env.DB.prepare(
-      'INSERT INTO accounts (id, email) VALUES (?1, ?2) ON CONFLICT (email) DO NOTHING',
-    )
-      .bind(newAccountId, email)
-      .run();
-    const account = (await c.env.DB.prepare('SELECT id, plan FROM accounts WHERE email = ?1')
-      .bind(email)
-      .first<{ id: string; plan: string }>())!;
+    const email = normalizeEmail(parsed.data.email);
+    const account = await getOrCreateAccount(c.env, email);
 
     const id = crypto.randomUUID();
     const key = generateKey();

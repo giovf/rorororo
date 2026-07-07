@@ -14,9 +14,17 @@ export interface KeyContext {
   usageSubject: string;
 }
 
+/** Set by requireSession() on browser/account routes (cookie-based auth). */
+export interface AccountContext {
+  accountId: string;
+  email: string;
+  plan: string;
+}
+
 export type AppVariables = {
   requestId: string;
   keyCtx?: KeyContext;
+  accountCtx?: AccountContext;
   creditsCharged?: number;
 };
 
