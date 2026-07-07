@@ -5,54 +5,58 @@ Ready-to-use drafts for the blueprint's **Stage 0**: get **20+ signups or 5
 blueprint says change the dataset — cheap here, since the platform is
 niche-agnostic (swap `src/sources/`).
 
+**Positioning (post-competitor-scan):** the UK *planning* API space is already
+crowded with mature self-serve players (PlanAPI, PlanWire, Searchland), so we
+**lead with procurement / bid-intelligence** (Find a Tender — far less
+contested, bigger budgets) and the **agent-native angle** (MCP + x402, which
+none of the planning incumbents offer). Planning ships as a bundled second
+dataset — the cross-vertical edge — not the headline.
+
 ## Before you post
 
 - **Landing page + waitlist are live** at
   `https://faceless-api.faceless-api.workers.dev` (used throughout below). It
   works today; swap it for your custom domain here once that's set up.
-- **Do the competitor scan first** (also Stage 0): search RapidAPI / Apify /
-  Google for "UK planning API", "Find a Tender API". If you find 3+
-  well-reviewed, actively-maintained, self-serve planning APIs already at
-  scale, the niche analysis says pivot to procurement-only or sanctions before
-  marketing.
-- **Be honest about scope.** v1 serves the **official government feeds**
-  (planning.data.gov.uk + Find a Tender OCDS), normalized to one schema — *not*
-  the 400+ council portals yet. Don't claim "all councils." The gap is a
-  validation hook: ask which councils/fields people actually need.
+- **Scope honesty.** v1 serves the **official government feeds** (Find a Tender
+  OCDS + planning.data.gov.uk), normalized to one schema. For planning that's
+  *not* the 400+ council portals yet — don't claim "all councils." Turn the gap
+  into a question: ask which authorities/fields people need.
 - **Don't spam.** These communities are allergic to it. Post genuine build
-  logs, answer questions, and only mention the product where it's relevant.
-  One post per community, then engage in the comments.
+  logs, answer questions, mention the product only where relevant. One post per
+  community, then engage in the comments.
 
 ---
 
 ## Show HN / Hacker News
 
-> **Title:** Show HN: A clean JSON API for UK planning and procurement data
+> **Title:** Show HN: Clean JSON + MCP API for UK public procurement (and planning) data
 
-Hi HN. UK planning applications and public-sector tenders are technically open
-data, but in practice they're scattered across the official
-planning.data.gov.uk feed, the Find a Tender OCDS API, and 400+ council portals
-— each with a slightly different schema. Getting a usable dataset out means
-writing and maintaining a lot of glue.
+Hi HN. UK public-sector tenders live on Find a Tender as OCDS release packages —
+deeply nested JSON, one release per event, extensions everywhere. Getting a
+usable "one row per notice" view (with buyer, value, CPV codes, deadlines) means
+writing and maintaining a fair bit of glue. Planning data is worse: scattered
+across planning.data.gov.uk and 400+ council portals with subtly different
+schemas.
 
-I built a small API that normalizes the two official government feeds into one
-consistent JSON schema, refreshed daily, with filtering and pagination:
+I built an API that normalizes both into one flat, filterable JSON schema,
+refreshed daily:
 
     curl -H "Authorization: Bearer $KEY" \
-      "https://faceless-api.faceless-api.workers.dev/v1/data/uk-planning?q=solar&decision_date_after=2026-01-01"
+      "https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders?value_amount_min=1000000&status=active"
 
 Notes for this crowd:
-- It's a single Cloudflare Worker (Hono + TypeScript). Every response is the
-  same `{ok, data, meta}` envelope; the whole surface is at `/openapi.json`.
-- **Blind Mode**: applicant personal data is dropped at ingest, never stored
-  (UK GDPR). Sources are Open Government Licence — no scraping.
-- There's an MCP server at `/mcp` and an x402 pay-per-request endpoint, so AI
-  agents can call it directly.
-- Free tier is 250 requests/month, no card.
+- Single Cloudflare Worker (Hono + TypeScript). Same `{ok, data, meta}` envelope
+  everywhere; whole surface at `/openapi.json`.
+- **Native MCP server** at `/mcp` and an **x402** pay-per-request endpoint — so
+  AI agents (bid-scouting, market research) can call it directly. That's the bit
+  the existing planning-data vendors don't do.
+- Sources are Open Government Licence — no scraping. Planning uses **Blind Mode**
+  (applicant personal data dropped at ingest).
+- Free tier: 250 requests/month, no card.
 
-It's early — v1 covers the official feeds; council-portal long-tail coverage is
-next, driven by what people ask for. I'd love feedback on the schema and on
-which fields/authorities would make this actually useful to you.
+It's early — v1 is the official feeds; deeper council coverage is next, driven by
+demand. I'd love feedback on the tender schema and which filters/fields would
+make this genuinely useful to you.
 
 Docs: https://faceless-api.faceless-api.workers.dev/docs
 
@@ -60,68 +64,71 @@ Docs: https://faceless-api.faceless-api.workers.dev/docs
 
 ## r/webscraping
 
-> **Title:** Normalized UK planning + procurement data as one JSON API (no scraping — official feeds)
+> **Title:** UK procurement + planning data as one normalized JSON API (official OCDS feeds, no scraping)
 
-Sharing a build log. UK planning and tender data is a classic
-normalization-is-the-hard-part problem: the data's public, but it's spread over
-planning.data.gov.uk, Find a Tender's OCDS releases, and hundreds of council
-portals with subtly different schemas. Cleaning it up took far longer than the
-API itself.
+Build log. UK tender data is a normalization-is-the-hard-part problem: Find a
+Tender publishes OCDS release *packages* — nested, multi-stage, extension-heavy
+— and turning that into a clean "one notice per row" feed with buyer/value/CPV/
+deadline took longer than the API itself. Planning data (planning.data.gov.uk +
+council portals) is the same story.
 
 v1 sticks to the **official Open Government Licence feeds** (no scraping, no
-anti-bot arms race) and normalizes them into one schema:
+anti-bot arms race) and flattens them to one schema:
 
-- `/v1/data/uk-planning` — filter by authority, reference, decision date, free-text
 - `/v1/data/uk-tenders` — filter by buyer, CPV code, value, status, date
+- `/v1/data/uk-planning` — filter by authority, reference, decision date, text
 
-Design choices that might interest you:
-- **Blind Mode** — personal fields are dropped at ingest for GDPR safety.
-- Cache + daily cron refresh; responses expose `last_refreshed_at`.
-- Serves stale-but-good data if an origin has a wobble, rather than erroring.
+Things this crowd might care about:
+- Cursor pagination handled server-side; daily cron refresh; `last_refreshed_at`
+  in every response.
+- Serves stale-but-good data if an origin wobbles, rather than erroring.
+- **Blind Mode** drops personal fields at ingest (GDPR).
+- MCP + x402 endpoints so agents can call it without an API key.
 
-Free tier (250 req/mo, no card): https://faceless-api.faceless-api.workers.dev. Council-portal coverage
-is the obvious next step — curious which councils people here would want first.
+Free tier (250 req/mo, no card): https://faceless-api.faceless-api.workers.dev.
+Curious which procurement filters or authorities people here would want first.
 
 ---
 
 ## Indie Hackers
 
-> **Title:** Building a "boring" niche data API — UK planning + procurement. Validating before I go deeper.
+> **Title:** Validating a "boring" niche data API — UK procurement + planning, agent-native. Before I build deeper.
 
-Following the faceless-data-API playbook: pick one narrow, valuable, frequently-
-changing dataset that's a pain to get, and sell clean JSON by the request.
+Following the faceless-data-API playbook: one narrow, valuable, frequently-
+changing dataset that's a pain to get, sold as clean JSON by the request.
 
-Mine is UK public-sector data — planning applications and procurement notices —
-normalized from the official government feeds into one schema, with a free tier,
-Stripe usage billing, and (because it's 2026) an MCP server + x402 endpoint so
-AI agents can call it too.
+I started aimed at UK planning, then a competitor scan showed that space is
+already well-served (PlanAPI, PlanWire, Searchland). So I've repositioned around
+**public procurement / bid intelligence** (Find a Tender) — less contested,
+bigger budgets — with planning bundled in, and leaned into an angle none of them
+have: it's **MCP-native and x402-payable**, so AI agents can call it directly.
 
-I'm at the validation stage, not the victory-lap stage. Before I build out the
-harder council-portal coverage, I want to know there's real willingness to pay.
-So: if you work in proptech, planning, construction lead-gen, or bid
-intelligence — **would a clean API for this save you enough to pay for it?**
-What would you filter on? Grab a free key or the waitlist:
+I'm validating, not victory-lapping. Before building deeper coverage I want to
+know there's willingness to pay. So — if you work in **bid intelligence,
+procurement, construction/solar lead-gen, or proptech** (or you build agents
+that need public-sector data): **would a clean API for this be worth paying
+for?** What would you filter on? Free key / waitlist:
 https://faceless-api.faceless-api.workers.dev.
 
-Happy to share the stack (Cloudflare Workers + Hono + TypeScript, ~1 file per
-dataset behind a swappable source interface) if useful.
+Happy to share the stack (Cloudflare Workers + Hono + TS, one file per dataset
+behind a swappable source interface).
 
 ---
 
-## LinkedIn (for the actual buyers: planning consultants, proptech, lead-gen)
+## LinkedIn (for bid-intelligence / procurement / proptech teams)
 
-> If your team pulls UK planning applications or public-sector tenders by hand —
-> or maintains scrapers for them — this might save you the trouble.
+> If your team tracks UK public-sector tenders — pulling Find a Tender by hand,
+> or wrangling its OCDS JSON — this might save you the trouble.
 >
-> I've built an API that turns the official government feeds
-> (planning.data.gov.uk and Find a Tender) into one clean, queryable JSON
-> schema, refreshed daily. Filter planning applications by authority, status,
-> decision date, or keyword; filter tenders by buyer, value, CPV code, or
-> deadline. No personal data is stored.
+> I've built an API that turns Find a Tender (and UK planning applications) into
+> one clean, queryable JSON feed, refreshed daily. Filter tenders by buyer,
+> value, CPV code, status, or deadline; filter planning by authority, status, or
+> keyword. No personal data stored.
 >
-> There's a free tier to try it. I'm actively shaping the roadmap around what
-> teams actually need — if you'd find this useful, I'd genuinely like to hear
-> which data and filters matter most to you. Link in comments.
+> There's a free tier to try it, and it's callable directly by AI agents (MCP).
+> I'm shaping the roadmap around what teams actually need — if this would help
+> your bid pipeline or market research, I'd genuinely like to hear which data and
+> filters matter most. Link in comments.
 
 ---
 
@@ -139,18 +146,17 @@ dataset behind a swappable source interface) if useful.
 - This is a template, not a mandate to blast. A handful of well-researched,
   personalized sends beats volume.
 
-> **Subject:** UK planning data for {{company}} — as an API?
+> **Subject:** UK tender data for {{company}} — as an API?
 >
 > Hi {{first_name}},
 >
-> I saw {{company}} works on {{their relevant area — e.g. solar lead-gen /
-> planning consultancy}}. Teams doing that usually spend real time pulling UK
-> planning applications from planning.data.gov.uk or council sites by hand.
+> I saw {{company}} works on {{their relevant area — e.g. bid writing /
+> construction lead-gen / market intelligence}}. Teams doing that usually spend
+> real time pulling UK public-sector tenders from Find a Tender by hand.
 >
-> I've built an API that serves that data (plus public-sector tenders) as one
-> clean, filterable JSON feed, refreshed daily — e.g. "solar applications
-> approved in {{authority}} this month" is one request. There's a free tier if
-> it's useful to try.
+> I've built an API that serves that data (plus UK planning applications) as one
+> clean, filterable JSON feed, refreshed daily — e.g. "active tenders over £1m
+> with CPV 45 (construction)" is one request. Free tier if it's useful to try.
 >
 > If it's not relevant, no problem — just reply "no thanks" and I won't follow
 > up. Otherwise happy to send a couple of example queries for your use case.
@@ -167,18 +173,18 @@ repo already ships the raw material:
 - `/llms.txt` — machine-readable summary for models to cite.
 - `/openapi.json` + `/docs` — answer-first, structured.
 
-To reinforce it, write 1–2 genuinely useful, data-backed pages (e.g. "How to get
-UK planning application data as JSON", "Find a Tender OCDS explained") that a
-model would cite when asked. Get listed in "there's an API for that"-style
-directories and, once agents matter, MCP directories (PulseMCP/Glama/Smithery)
-— see `docs/MARKETPLACE-PREP.md`.
+Reinforce it with 1–2 genuinely useful, data-backed pages (e.g. "How to get UK
+tender data from Find a Tender as clean JSON", "OCDS release packages
+explained") that a model would cite. Get listed in "there's an API for that"
+directories and — since we're agent-native — MCP directories
+(PulseMCP/Glama/Smithery); see `docs/MARKETPLACE-PREP.md`.
 
 ---
 
 ## After Stage 0
 
-- **≥20 signups / 5 pre-commits** → proceed: wire real billing, add council-portal
-  coverage where demand points, list on RapidAPI/Apify.
-- **<20 after genuine effort** → change the dataset (procurement-only, or the
-  sanctions/compliance niche from the analysis). Swap `src/sources/`, keep
-  everything else.
+- **≥20 signups / 5 pre-commits** → proceed: wire real billing, deepen the
+  procurement/bid-intelligence data, list on RapidAPI/Apify + MCP directories.
+- **<20 after genuine effort** → change the dataset again. The next candidate
+  from the analysis is **sanctions/compliance screening** (non-discretionary
+  spend, strongest agent demand). Swap `src/sources/`, keep everything else.

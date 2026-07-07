@@ -247,7 +247,7 @@ function buildDocument(): JsonObject {
       title: 'faceless-api',
       version: APP_VERSION,
       description:
-        'Normalized UK planning and procurement open data as clean JSON, for developers and AI agents. Blind Mode: no personal data is stored or served.',
+        'UK public-sector data as clean JSON — public procurement notices (Find a Tender) and planning applications, one schema, from official Open-Government-Licence feeds. For bid intelligence, proptech, and AI agents (native MCP + x402). Blind Mode: no personal data is stored or served.',
     },
     servers: [{ url: API_BASE_URL, description: 'Production (placeholder domain)' }],
     tags: [

@@ -23,27 +23,27 @@ a{color:var(--accent)}
 
   <h2>Quickstart (60 seconds, no JS needed)</h2>
   <pre><code># 1. Get a free key (250 req/mo, shown once)
-curl -X POST https://faceless-api.example/v1/keys \
+curl -X POST https://faceless-api.faceless-api.workers.dev/v1/keys \
   -H 'content-type: application/json' -d '{"email":"you@company.com"}'
 
-# 2. Query planning applications (filters combine with AND)
+# 2. Query procurement notices by value and CPV code (filters combine with AND)
 curl -H "Authorization: Bearer fapi_..." \
-  "https://faceless-api.example/v1/data/uk-planning?authority=109&q=extension&per_page=5"
+  "https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders?value_amount_min=1000000&cpv_codes=45&status=active"
 
-# 3. Query tenders by value and CPV code
+# 3. Query planning applications
 curl -H "Authorization: Bearer fapi_..." \
-  "https://faceless-api.example/v1/data/uk-tenders?value_amount_min=1000000&cpv_codes=45"
+  "https://faceless-api.faceless-api.workers.dev/v1/data/uk-planning?authority=109&q=extension&per_page=5"
 
 # 4. Check your usage (free)
-curl -H "Authorization: Bearer fapi_..." https://faceless-api.example/v1/usage</code></pre>
+curl -H "Authorization: Bearer fapi_..." https://faceless-api.faceless-api.workers.dev/v1/usage</code></pre>
 
   <h2>For AI agents</h2>
-  <pre><code># MCP (Streamable HTTP) — tools: list_sources, query_uk_planning, query_uk_tenders, get_usage
+  <pre><code># MCP (Streamable HTTP) — tools: list_sources, query_uk_tenders, query_uk_planning, get_usage
 "mcpServers": { "faceless-api": {
-  "url": "https://faceless-api.example/mcp",
+  "url": "https://faceless-api.faceless-api.workers.dev/mcp",
   "headers": { "Authorization": "Bearer fapi_..." } } }
 
-# x402 pay-per-request (no account): GET /x402/data/uk-planning → HTTP 402 → pay → retry</code></pre>
+# x402 pay-per-request (no account): GET /x402/data/uk-tenders → HTTP 402 → pay → retry</code></pre>
 
   <p>Every response uses the same envelope: <code>{"ok":true,"data":…,"meta":…}</code> or
   <code>{"ok":false,"error":{"code","message","docs_url"}}</code>. Errors carry stable codes

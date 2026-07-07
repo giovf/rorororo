@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>faceless-api — UK planning &amp; procurement data as clean JSON</title>
-<meta name="description" content="Normalized UK planning applications and procurement notices from official government feeds. One schema, clean JSON, free tier, MCP server for AI agents, pay-per-request for autonomous agents.">
+<title>faceless-api — UK procurement &amp; planning data as clean JSON (REST + MCP)</title>
+<meta name="description" content="UK public-sector tenders (Find a Tender) and planning applications, normalized to one clean JSON schema from official government feeds. Built for bid intelligence, proptech, and AI agents — free tier, MCP server, x402 pay-per-request.">
 <style>
 :root{--bg:#ffffff;--fg:#16181d;--muted:#5b6472;--line:#e5e8ee;--card:#f6f7f9;--accent:#0b5fff;--accent-fg:#ffffff;--code-bg:#0f172a;--code-fg:#d8e0ee}
 @media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e8eaef;--muted:#9aa3b2;--line:#262b34;--card:#161a21;--accent:#5b8dff;--accent-fg:#0b0d12;--code-bg:#0b0e14;--code-fg:#c9d4e6}}
@@ -48,17 +48,18 @@ a{color:var(--accent)}
   </nav>
 </header>
 <main>
-  <h1>UK planning &amp; procurement data, as clean JSON.</h1>
-  <p class="sub">Planning applications and public-sector tenders from official Open-Government-Licence feeds — normalized to one schema, refreshed daily, queryable in one request. Built for developers and AI agents.</p>
+  <h1>UK public-sector tenders &amp; planning, as clean JSON.</h1>
+  <p class="sub">Public procurement notices (Find a Tender) and planning applications from official Open-Government-Licence feeds — normalized to one schema, refreshed daily, queryable in one request. Built for bid intelligence, proptech, and AI agents.</p>
 
 <pre><code>curl -H "Authorization: Bearer $API_KEY" \
-  "https://faceless-api.example/v1/data/uk-planning?q=solar&amp;decision_date_after=2026-01-01"
+  "https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders?value_amount_min=1000000&amp;status=active"
 
 { "ok": true,
-  "data": [ { "reference": "24/00117/HOU", "authority": 222,
-              "description": "Installation of solar panels…",
-              "decision_date": "2026-06-30", … } ],
-  "meta": { "total": 12, "last_refreshed_at": "2026-07-06T05:00:11Z" } }</code></pre>
+  "data": [ { "notice_id": "063319-2026", "buyer": "London Borough of Havering",
+              "title": "Highways maintenance term contract",
+              "value_amount": 8400000, "cpv_codes": ["45233139"],
+              "deadline_at": "2026-09-01T17:00:00+01:00", … } ],
+  "meta": { "total": 116, "last_refreshed_at": "2026-07-07T05:00:11Z" } }</code></pre>
 
   <h2 id="key">Get a free API key</h2>
   <p>250 requests/month, no card. The key is shown once — store it.</p>
@@ -67,20 +68,20 @@ a{color:var(--accent)}
     <button type="submit">Get free key</button>
   </form>
   <pre id="key-result"><code></code></pre>
-  <p class="note">Prefer the terminal? <code>curl -X POST https://faceless-api.example/v1/keys -H 'content-type: application/json' -d '{"email":"you@company.com"}'</code></p>
+  <p class="note">Prefer the terminal? <code>curl -X POST https://faceless-api.faceless-api.workers.dev/v1/keys -H 'content-type: application/json' -d '{"email":"you@company.com"}'</code></p>
   <p class="note">Not ready yet? <a href="#" id="waitlist-link">Join the launch waitlist instead</a> — email only, nothing else stored.</p>
 
-  <h2>Two datasets today, one swappable schema</h2>
+  <h2>Two datasets, one schema — cross-vertical by design</h2>
   <div class="grid">
     <div class="card">
-      <h3>uk-planning</h3>
-      <p>Planning applications from planning.data.gov.uk, normalized across authorities. Blind Mode: applicant personal data is dropped at ingest, never stored.</p>
-      <p class="chips"><code>authority</code><code>reference</code><code>decision_date_after</code><code>decision_date_before</code><code>q</code></p>
+      <h3>uk-tenders <span style="font-weight:400;color:var(--muted)">· procurement</span></h3>
+      <p>Public-sector tenders from Find a Tender's official OCDS feed, flattened from nested releases to one clean row per notice. For bid intelligence, lead-gen, and market research.</p>
+      <p class="chips"><code>buyer</code><code>status</code><code>cpv_codes</code><code>value_amount_min</code><code>published_at_after</code><code>q</code></p>
     </div>
     <div class="card">
-      <h3>uk-tenders</h3>
-      <p>Procurement notices from Find a Tender's OCDS feed, flattened from nested releases to one row per notice.</p>
-      <p class="chips"><code>buyer</code><code>status</code><code>cpv_codes</code><code>value_amount_min</code><code>published_at_after</code><code>q</code></p>
+      <h3>uk-planning <span style="font-weight:400;color:var(--muted)">· planning</span></h3>
+      <p>Planning applications from planning.data.gov.uk, normalized to the same schema. Blind Mode: applicant personal data is dropped at ingest, never stored.</p>
+      <p class="chips"><code>authority</code><code>reference</code><code>decision_date_after</code><code>decision_date_before</code><code>q</code></p>
     </div>
   </div>
 
@@ -102,7 +103,7 @@ a{color:var(--accent)}
   <p class="note">1 credit = 1 request. Rate limit 60 req/min. Checking <code>/v1/usage</code> is always free. Launch pricing — subject to change.</p>
 
   <footer>
-    <p><strong>Data &amp; privacy.</strong> Sources are official UK government feeds published under the Open Government Licence (planning.data.gov.uk, Find a Tender). Personal data in source records is dropped at ingest and never stored (Blind Mode). The only personal data we hold is the email you sign up with — no analytics cookies, no purchased lists, no cold email. Contact: replace-with-contact@faceless-api.example</p>
+    <p><strong>Data &amp; privacy.</strong> Sources are official UK government feeds published under the Open Government Licence (planning.data.gov.uk, Find a Tender). Personal data in source records is dropped at ingest and never stored (Blind Mode). The only personal data we hold is the email you sign up with — no analytics cookies, no purchased lists, no cold email. Contact us via the signup form above.</p>
     <p>© 2026 faceless-api · <a href="/docs">Documentation</a> · <a href="/llms.txt">For LLMs</a></p>
   </footer>
 </main>
