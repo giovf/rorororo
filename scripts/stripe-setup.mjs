@@ -7,16 +7,21 @@
 // Creates one product per paid plan with a monthly price carrying a stable
 // lookup_key (the Worker resolves prices by lookup_key, so ids never need to
 // be configured) and the credit amount in metadata for human reference.
-// Amounts are blueprint placeholders — adjust here + src/billing/plans.ts
-// together. Re-running is safe: existing lookup_keys are skipped.
+// Plan data comes from the SAME src/billing/plans.json the app uses, so Stripe
+// prices/credits can't drift from what the app validates and grants. Change
+// prices there. Re-running is safe: existing lookup_keys are skipped.
 
 import Stripe from 'stripe';
+import paidPlans from '../src/billing/plans.json' with { type: 'json' };
 
-const PLANS = [
-  { name: 'Starter', lookupKey: 'starter_monthly', usd: 29, credits: 5000 },
-  { name: 'Growth', lookupKey: 'growth_monthly', usd: 99, credits: 20000 },
-  { name: 'Scale', lookupKey: 'scale_monthly', usd: 299, credits: 100000 },
-];
+// key → display name for the Stripe product (e.g. "starter" → "Starter").
+const displayName = (key) => key.charAt(0).toUpperCase() + key.slice(1);
+const PLANS = Object.entries(paidPlans).map(([key, p]) => ({
+  name: displayName(key),
+  lookupKey: p.lookupKey,
+  usd: p.usdPerMonth,
+  credits: p.credits,
+}));
 
 const key = process.env.STRIPE_SECRET_KEY;
 if (!key) {

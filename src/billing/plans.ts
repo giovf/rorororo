@@ -1,6 +1,8 @@
-// Paid plans as data, never logic (PRD: pricing is launch-time config).
-// Amounts/credits are blueprint placeholders; the Stripe objects are created
-// by scripts/stripe-setup.mjs with matching lookup_keys (see docs/STRIPE-SETUP.md).
+// Paid plans as data, never logic (PRD: pricing is launch-time config). The
+// single source of truth is plans.json — imported here for the runtime and by
+// scripts/stripe-setup.mjs so the Stripe products can never drift from what the
+// app validates and grants (see docs/STRIPE-SETUP.md).
+import paidPlansData from './plans.json';
 import { FREE_TIER_CREDITS } from '../lib/constants';
 
 export interface PaidPlan {
@@ -13,11 +15,7 @@ export interface PaidPlan {
 
 export const FREE_PLAN = 'free';
 
-export const PAID_PLANS: Record<string, PaidPlan> = {
-  starter: { lookupKey: 'starter_monthly', credits: 5_000, usdPerMonth: 29 },
-  growth: { lookupKey: 'growth_monthly', credits: 20_000, usdPerMonth: 99 },
-  scale: { lookupKey: 'scale_monthly', credits: 100_000, usdPerMonth: 299 },
-};
+export const PAID_PLANS: Record<string, PaidPlan> = paidPlansData;
 
 export function isPaidPlan(plan: string): boolean {
   return Object.hasOwn(PAID_PLANS, plan);

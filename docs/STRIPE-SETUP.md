@@ -8,7 +8,8 @@ Billing ships dark: every `/v1/billing/*` endpoint returns a clean 503 until
 1. Create a Stripe account (or use the existing one) and grab the **test**
    secret key (`sk_test_...`).
 2. Create the products/prices (idempotent; placeholder pricing lives in
-   `src/billing/plans.ts` — change both together):
+   `src/billing/plans.json` — the single source the app and this script both
+   read, so Stripe can't drift from what the app grants):
 
    ```bash
    STRIPE_SECRET_KEY=sk_test_... node scripts/stripe-setup.mjs

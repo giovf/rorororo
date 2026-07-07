@@ -1,0 +1,5 @@
+{
+  "starter": { "lookupKey": "starter_monthly", "credits": 5000, "usdPerMonth": 29 },
+  "growth": { "lookupKey": "growth_monthly", "credits": 20000, "usdPerMonth": 99 },
+  "scale": { "lookupKey": "scale_monthly", "credits": 100000, "usdPerMonth": 299 }
+}
