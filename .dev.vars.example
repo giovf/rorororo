@@ -18,6 +18,12 @@ X402_PRICE_USD=
 X402_NETWORK=
 X402_FACILITATOR_URL=
 
+# Coinbase CDP facilitator creds (verify + settle x402 payments reliably, on
+# base + base-sepolia). When set, the x402 route uses the CDP facilitator
+# instead of the rate-limited public one. From portal.cdp.coinbase.com.
+CDP_API_KEY_ID=
+CDP_API_KEY_SECRET=
+
 # Offline dev: serve bundled fixtures when an origin fetch fails. Local only —
 # production (wrangler.jsonc) defaults this to "false" so outages fail loudly.
 FIXTURE_FALLBACK=true

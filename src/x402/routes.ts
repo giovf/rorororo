@@ -1,3 +1,4 @@
+import { createFacilitatorConfig } from '@coinbase/x402';
 import { Hono } from 'hono';
 import { paymentMiddleware } from 'x402-hono';
 import { failure } from '../lib/envelope';
@@ -36,14 +37,23 @@ export const x402Routes = new Hono<AppEnv>()
       return c.json(failure('unavailable', 'x402 is misconfigured; retry later'), 503);
     }
 
+    // Facilitator (verify + settle): prefer Coinbase CDP (authenticated, works
+    // on base + base-sepolia) when CDP creds are set; else an explicit URL; else
+    // the default public facilitator (rate-limited — fine only for probing).
+    const facilitator =
+      c.env.CDP_API_KEY_ID && c.env.CDP_API_KEY_SECRET
+        ? createFacilitatorConfig(c.env.CDP_API_KEY_ID, c.env.CDP_API_KEY_SECRET)
+        : c.env.X402_FACILITATOR_URL
+          ? { url: c.env.X402_FACILITATOR_URL as `${string}://${string}` }
+          : undefined;
     // Built per request: Workers only expose env at request time, and the
     // middleware itself only calls the facilitator when a payment is presented.
     const middleware = paymentMiddleware(
       wallet as `0x${string}`,
       { '/x402/data/*': { price, network: network as 'base' } },
-      c.env.X402_FACILITATOR_URL
-        ? { url: c.env.X402_FACILITATOR_URL as `${string}://${string}` }
-        : undefined,
+      // @coinbase/x402 and x402-hono ship structurally-identical but nominally
+      // distinct FacilitatorConfig types (url: string vs `${string}://${string}`).
+      facilitator as Parameters<typeof paymentMiddleware>[2],
     );
     const paid = c.req.header('X-PAYMENT') !== undefined;
     const response = await middleware(c, async () => {
