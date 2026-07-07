@@ -39,11 +39,15 @@ export const billingRoutes = new Hono<AppEnv>()
       );
     }
 
-    const metadata = { keyId: keyCtx.keyId, plan };
+    // Bind billing to the ACCOUNT (email identity), not the presented key.
+    // customer_email lets Stripe reuse one customer per email so re-subscribing
+    // doesn't mint duplicates.
+    const metadata = { accountId: keyCtx.accountId, plan };
     const session = await stripe.checkout.sessions.create({
       mode: 'subscription',
       line_items: [{ price: price.id, quantity: 1 }],
-      client_reference_id: keyCtx.keyId,
+      client_reference_id: keyCtx.accountId,
+      customer_email: keyCtx.usageSubject,
       metadata,
       subscription_data: { metadata },
       success_url: `${API_BASE_URL}/?checkout=success`,
@@ -57,9 +61,9 @@ export const billingRoutes = new Hono<AppEnv>()
 
     const keyCtx = c.get('keyCtx')!;
     const row = await c.env.DB.prepare(
-      'SELECT stripe_customer_id FROM stripe_customers WHERE key_id = ?1',
+      'SELECT stripe_customer_id FROM stripe_customers WHERE account_id = ?1',
     )
-      .bind(keyCtx.keyId)
+      .bind(keyCtx.accountId)
       .first<{ stripe_customer_id: string }>();
     if (!row) {
       return c.json(failure('not_found', 'No billing account for this key — purchase a plan first'), 404);

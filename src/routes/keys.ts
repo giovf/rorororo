@@ -60,23 +60,37 @@ export const keysRoutes = new Hono<AppEnv>()
       return c.json(failure('bad_request', 'Invalid request body', details), 400);
     }
 
+    // Upsert the account (email identity), then issue the key under it. A new key
+    // inherits the account's CURRENT plan, so re-issuing under a paid email keeps
+    // the paid entitlement instead of silently dropping to free.
+    const email = parsed.data.email.trim().toLowerCase();
+    const newAccountId = crypto.randomUUID();
+    await c.env.DB.prepare(
+      'INSERT INTO accounts (id, email) VALUES (?1, ?2) ON CONFLICT (email) DO NOTHING',
+    )
+      .bind(newAccountId, email)
+      .run();
+    const account = (await c.env.DB.prepare('SELECT id, plan FROM accounts WHERE email = ?1')
+      .bind(email)
+      .first<{ id: string; plan: string }>())!;
+
     const id = crypto.randomUUID();
     const key = generateKey();
     const hash = await hashKey(key);
     await c.env.DB.batch([
       c.env.DB.prepare(
-        'INSERT INTO api_keys (id, key_hash, email, name, plan, credits_granted) VALUES (?1, ?2, ?3, ?4, ?5, ?6)',
-      ).bind(id, hash, parsed.data.email, parsed.data.name ?? null, 'free', FREE_TIER_CREDITS),
+        'INSERT INTO api_keys (id, key_hash, email, name, plan, credits_granted, account_id) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)',
+      ).bind(id, hash, email, parsed.data.name ?? null, account.plan, FREE_TIER_CREDITS, account.id),
       c.env.DB.prepare(
-        'INSERT INTO credit_ledger (key_id, delta, reason) VALUES (?1, ?2, ?3)',
-      ).bind(id, FREE_TIER_CREDITS, 'free_tier'),
+        'INSERT INTO credit_ledger (account_id, key_id, delta, reason) VALUES (?1, ?2, ?3, ?4)',
+      ).bind(account.id, id, FREE_TIER_CREDITS, 'free_tier'),
     ]);
 
     return c.json(
       success({
         id,
         key,
-        plan: 'free',
+        plan: account.plan,
         credits: FREE_TIER_CREDITS,
         message: 'Store this key now — it is shown only once and cannot be recovered.',
       }),

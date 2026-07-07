@@ -3,28 +3,34 @@ import { PAID_PLANS, planByLookupKey } from './plans';
 import { keyCacheKey } from '../auth/middleware';
 
 // Grants happen ONLY on invoice.paid (fires for the first payment and every
-// renewal); checkout.session.completed just links customer ↔ key ↔ plan.
+// renewal); checkout.session.completed just links customer ↔ account ↔ plan.
 // This split avoids double-granting on subscription creation and keeps
-// renewals working with zero extra code.
+// renewals working with zero extra code. Everything keys off the ACCOUNT
+// (email identity), so a plan change applies to every key under that email.
 
 function log(event: string, fields: Record<string, unknown>): void {
   console.log(JSON.stringify({ level: 'info', event, ...fields }));
 }
 
-async function invalidateKeyRecord(env: CloudflareBindings, keyId: string): Promise<void> {
-  const row = await env.DB.prepare('SELECT key_hash FROM api_keys WHERE id = ?1')
-    .bind(keyId)
-    .first<{ key_hash: string }>();
-  if (row) await env.CACHE.delete(keyCacheKey(row.key_hash));
+// Plan/entitlement is account-level, so a change must invalidate the hot-path
+// KV cache entry for EVERY key under the account (bounded set; accounts hold a
+// handful of keys).
+async function invalidateAccountKeys(env: CloudflareBindings, accountId: string): Promise<void> {
+  const { results } = await env.DB.prepare('SELECT key_hash FROM api_keys WHERE account_id = ?1')
+    .bind(accountId)
+    .all<{ key_hash: string }>();
+  await Promise.all(results.map((r) => env.CACHE.delete(keyCacheKey(r.key_hash))));
 }
 
 async function customerLink(
   env: CloudflareBindings,
   customerId: string,
-): Promise<{ key_id: string; plan: string | null } | null> {
-  return env.DB.prepare('SELECT key_id, plan FROM stripe_customers WHERE stripe_customer_id = ?1')
+): Promise<{ account_id: string; plan: string | null } | null> {
+  return env.DB.prepare(
+    'SELECT account_id, plan FROM stripe_customers WHERE stripe_customer_id = ?1',
+  )
     .bind(customerId)
-    .first<{ key_id: string; plan: string | null }>();
+    .first<{ account_id: string; plan: string | null }>();
 }
 
 function customerIdOf(customer: string | { id: string } | null | undefined): string | null {
@@ -37,50 +43,59 @@ async function onCheckoutCompleted(
   event: Stripe.Event,
 ): Promise<void> {
   const session = event.data.object as Stripe.Checkout.Session;
-  const keyId = session.metadata?.keyId ?? session.client_reference_id;
+  const accountId = session.metadata?.accountId ?? session.client_reference_id;
   const plan = session.metadata?.plan;
   const customerId = customerIdOf(session.customer);
-  if (!keyId || !plan || !customerId || !(plan in PAID_PLANS)) {
+  if (!accountId || !plan || !customerId || !(plan in PAID_PLANS)) {
     log('stripe_event_skipped', { type: event.type, id: event.id, reason: 'missing metadata' });
     return;
   }
   await env.DB.batch([
+    // Keep one Stripe customer per account: drop any stale row pointing this
+    // account at a different customer id (unique index on account_id).
     env.DB.prepare(
-      `INSERT INTO stripe_customers (stripe_customer_id, key_id, plan, status)
+      'DELETE FROM stripe_customers WHERE account_id = ?2 AND stripe_customer_id != ?1',
+    ).bind(customerId, accountId),
+    env.DB.prepare(
+      `INSERT INTO stripe_customers (stripe_customer_id, account_id, plan, status)
        VALUES (?1, ?2, ?3, 'active')
        ON CONFLICT (stripe_customer_id)
-       DO UPDATE SET plan = ?3, status = 'active', updated_at = datetime('now')`,
-    ).bind(customerId, keyId, plan),
-    env.DB.prepare('UPDATE api_keys SET plan = ?2 WHERE id = ?1').bind(keyId, plan),
+       DO UPDATE SET account_id = ?2, plan = ?3, status = 'active', updated_at = datetime('now')`,
+    ).bind(customerId, accountId, plan),
+    env.DB.prepare("UPDATE accounts SET plan = ?2, updated_at = datetime('now') WHERE id = ?1").bind(
+      accountId,
+      plan,
+    ),
   ]);
-  await invalidateKeyRecord(env, keyId);
-  log('stripe_customer_linked', { keyId, plan, customerId });
+  await invalidateAccountKeys(env, accountId);
+  log('stripe_customer_linked', { accountId, plan, customerId });
 }
 
 async function onInvoicePaid(env: CloudflareBindings, event: Stripe.Event): Promise<void> {
   const invoice = event.data.object as Stripe.Invoice;
   const meta = invoice.parent?.subscription_details?.metadata ?? {};
-  let keyId: string | undefined = meta.keyId;
+  let accountId: string | undefined = meta.accountId;
   let plan: string | undefined = meta.plan;
 
   const customerId = customerIdOf(invoice.customer);
-  if ((!keyId || !plan) && customerId) {
+  if ((!accountId || !plan) && customerId) {
     const link = await customerLink(env, customerId);
-    keyId ??= link?.key_id;
+    accountId ??= link?.account_id;
     plan ??= link?.plan ?? undefined;
   }
-  if (!keyId || !plan || !(plan in PAID_PLANS)) {
-    log('stripe_event_skipped', { type: event.type, id: event.id, reason: 'unresolvable key/plan' });
+  if (!accountId || !plan || !(plan in PAID_PLANS)) {
+    log('stripe_event_skipped', { type: event.type, id: event.id, reason: 'unresolvable account/plan' });
     return;
   }
 
   const credits = PAID_PLANS[plan]!.credits;
   try {
-    // Unique index on stripe_ref makes replays a no-op (idempotency).
+    // Unique index on stripe_ref makes replays a no-op (idempotency). Grant is
+    // account-level, so key_id is left null.
     await env.DB.prepare(
-      'INSERT INTO credit_ledger (key_id, delta, reason, stripe_ref) VALUES (?1, ?2, ?3, ?4)',
+      'INSERT INTO credit_ledger (account_id, delta, reason, stripe_ref) VALUES (?1, ?2, ?3, ?4)',
     )
-      .bind(keyId, credits, `stripe:${plan}`, event.id)
+      .bind(accountId, credits, `stripe:${plan}`, event.id)
       .run();
   } catch (err) {
     if (err instanceof Error && err.message.includes('UNIQUE constraint failed')) {
@@ -89,8 +104,8 @@ async function onInvoicePaid(env: CloudflareBindings, event: Stripe.Event): Prom
     }
     throw err;
   }
-  await invalidateKeyRecord(env, keyId);
-  log('stripe_credits_granted', { keyId, plan, credits, eventId: event.id });
+  await invalidateAccountKeys(env, accountId);
+  log('stripe_credits_granted', { accountId, plan, credits, eventId: event.id });
 }
 
 async function onSubscriptionChanged(
@@ -108,7 +123,7 @@ async function onSubscriptionChanged(
 
   const deleted = event.type === 'customer.subscription.deleted';
   const lookupKey = subscription.items?.data?.[0]?.price?.lookup_key ?? null;
-  const plan = deleted ? 'free' : (lookupKey && planByLookupKey(lookupKey)) || link.plan;
+  const plan = deleted ? 'free' : (lookupKey && planByLookupKey(lookupKey)) || link.plan || 'free';
   const status = deleted ? 'canceled' : subscription.status;
 
   await env.DB.batch([
@@ -116,10 +131,13 @@ async function onSubscriptionChanged(
       `UPDATE stripe_customers SET plan = ?2, status = ?3, updated_at = datetime('now')
        WHERE stripe_customer_id = ?1`,
     ).bind(customerId, plan, status),
-    env.DB.prepare('UPDATE api_keys SET plan = ?2 WHERE id = ?1').bind(link.key_id, plan),
+    env.DB.prepare("UPDATE accounts SET plan = ?2, updated_at = datetime('now') WHERE id = ?1").bind(
+      link.account_id,
+      plan,
+    ),
   ]);
-  await invalidateKeyRecord(env, link.key_id);
-  log('stripe_subscription_changed', { keyId: link.key_id, plan, status });
+  await invalidateAccountKeys(env, link.account_id);
+  log('stripe_subscription_changed', { accountId: link.account_id, plan, status });
 }
 
 export async function handleStripeEvent(

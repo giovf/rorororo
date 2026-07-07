@@ -1,6 +1,8 @@
 export interface KeyContext {
   keyId: string;
-  /** Current plan slug; the monthly quota derives from it (billing/plans.ts). */
+  /** Account (email identity) this key belongs to; billing + entitlement live here. */
+  accountId: string;
+  /** Current plan slug; the monthly quota derives from it (billing/plans.ts). Resolved from the account, not the key. */
   plan: string;
   /** Hex SHA-256 of the presented key — lets self-serve routes invalidate the KV cache. */
   keyHash: string;
