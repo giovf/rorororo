@@ -10,19 +10,18 @@
     // (which overrides this), and tests set it in vitest.config.ts.
     "FIXTURE_FALLBACK": "false"
   },
-  // Placeholder ids: local dev + tests run on miniflare simulations and never
-  // contact Cloudflare; replace with real ids (wrangler d1/kv namespace create)
-  // before the first deploy.
+  // Real resource ids (not secrets — safe to commit). Local dev + tests still
+  // run on miniflare simulations and never touch these.
   "d1_databases": [
     {
       "binding": "DB",
       "database_name": "faceless-api",
-      "database_id": "00000000-0000-0000-0000-000000000000"
+      "database_id": "ac051277-5f69-46ba-965b-50da2f1ec524"
     }
   ],
   "kv_namespaces": [
-    { "binding": "CACHE", "id": "cache-placeholder-id" },
-    { "binding": "RATE", "id": "rate-placeholder-id" }
+    { "binding": "CACHE", "id": "eacc87d970e94b9b87ce944985af0b52" },
+    { "binding": "RATE", "id": "de75231f2c994f68b003d414be100759" }
   ],
   "assets": {
     "directory": "public"
