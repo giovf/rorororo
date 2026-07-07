@@ -48,13 +48,11 @@ a{color:var(--accent)}
 .modal-copied{margin-left:12px;color:#16a34a;font-size:.9rem;font-weight:600}
 .modal-try{margin:16px 0 0;color:var(--muted);font-size:.82rem;word-break:break-all}
 body.modal-open{overflow:hidden}
-.buy{padding:8px 16px;font-size:.92rem}
+.buy{display:inline-block;padding:8px 16px;font-size:.92rem;border:0;border-radius:8px;background:var(--accent);color:var(--accent-fg);font-weight:600;text-decoration:none;cursor:pointer}
+.buy:hover{filter:brightness(1.08)}
 .free-link{color:var(--accent);text-decoration:none;font-weight:600;font-size:.92rem}
 .banner{margin:20px 0 0;padding:12px 16px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--fg);font-size:.95rem}
 .banner.ok{border-color:#16a34a;background:rgba(22,163,74,.09)}
-#buy-form{display:block;margin:14px 0 0}
-#buy-key{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font:14px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-#buy-error{color:#dc2626}
 </style>
 </head>
 <body>
@@ -65,6 +63,7 @@ body.modal-open{overflow:hidden}
     <a href="/openapi.json">OpenAPI</a>
     <a href="/llms.txt">llms.txt</a>
     <a href="#pricing">Pricing</a>
+    <a href="/account">Account</a>
   </nav>
 </header>
 <main>
@@ -118,9 +117,9 @@ body.modal-open{overflow:hidden}
   <table>
     <tr><th>Plan</th><th>Credits / month</th><th>Price</th><th></th></tr>
     <tr><td>Free</td><td>250</td><td class="price">£0</td><td><a class="free-link" href="#key">Get free key</a></td></tr>
-    <tr><td>Starter</td><td>5,000</td><td class="price">$29/mo</td><td><button class="buy" type="button" data-plan="starter">Subscribe</button></td></tr>
-    <tr><td>Growth</td><td>20,000</td><td class="price">$99/mo</td><td><button class="buy" type="button" data-plan="growth">Subscribe</button></td></tr>
-    <tr><td>Scale</td><td>100,000</td><td class="price">$299/mo</td><td><button class="buy" type="button" data-plan="scale">Subscribe</button></td></tr>
+    <tr><td>Starter</td><td>5,000</td><td class="price">$29/mo</td><td><a class="buy" href="/account">Subscribe</a></td></tr>
+    <tr><td>Growth</td><td>20,000</td><td class="price">$99/mo</td><td><a class="buy" href="/account">Subscribe</a></td></tr>
+    <tr><td>Scale</td><td>100,000</td><td class="price">$299/mo</td><td><a class="buy" href="/account">Subscribe</a></td></tr>
   </table>
   <p class="note">1 credit = 1 request. Rate limit 60 req/min. Checking <code>/v1/usage</code> is always free. Launch pricing — subject to change.</p>
 
@@ -138,19 +137,6 @@ body.modal-open{overflow:hidden}
     <button id="modal-copy" class="modal-copy" type="button">Copy key</button>
     <span id="modal-copied" class="modal-copied" role="status" aria-live="polite"></span>
     <p class="modal-try">Then use it: <code>curl -H "Authorization: Bearer &lt;key&gt;" https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders</code></p>
-  </div>
-</div>
-<div id="buy-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="buy-title" aria-hidden="true">
-  <div class="modal-card">
-    <button id="buy-close" class="modal-close" type="button" aria-label="Close">&times;</button>
-    <h3 id="buy-title">Subscribe to <span id="buy-plan-name"></span></h3>
-    <p class="modal-warn">Paste the API key you saved when you signed up — we link the subscription to it. You'll continue to Stripe's secure checkout to enter card details.</p>
-    <form id="buy-form">
-      <input id="buy-key" type="text" placeholder="fapi_…" autocomplete="off" autocapitalize="off" spellcheck="false" required>
-      <button id="buy-submit" type="submit" style="width:100%;margin-top:10px">Continue to payment →</button>
-    </form>
-    <p id="buy-error" class="modal-warn" style="display:none"></p>
-    <p class="modal-try">No key yet? <a href="#key" id="buy-getkey">Get a free key first</a> — then come back and subscribe.</p>
   </div>
 </div>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -243,76 +229,6 @@ keyModal.addEventListener('keydown', (e) => {
   if (e.key !== 'Tab') return;
   if (e.shiftKey && document.activeElement === copyBtn) { e.preventDefault(); closeBtn.focus(); }
   else if (!e.shiftKey && document.activeElement === closeBtn) { e.preventDefault(); copyBtn.focus(); }
-});
-
-// Plan checkout: paste key → POST /v1/billing/checkout → redirect to Stripe.
-const PLAN_NAMES = { starter: 'Starter', growth: 'Growth', scale: 'Scale' };
-const buyModal = document.getElementById('buy-modal');
-const buyForm = document.getElementById('buy-form');
-const buyKey = document.getElementById('buy-key');
-const buyErr = document.getElementById('buy-error');
-const buySubmit = document.getElementById('buy-submit');
-const buyPlanName = document.getElementById('buy-plan-name');
-let buyPlan = null;
-let buyLastFocus = null;
-function openBuyModal(plan) {
-  buyPlan = plan;
-  buyPlanName.textContent = PLAN_NAMES[plan] || plan;
-  buyErr.style.display = 'none';
-  buyKey.value = '';
-  buySubmit.disabled = false;
-  buySubmit.textContent = 'Continue to payment →';
-  buyLastFocus = document.activeElement;
-  buyModal.classList.add('open');
-  buyModal.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('modal-open');
-  buyKey.focus();
-}
-function closeBuyModal() {
-  buyModal.classList.remove('open');
-  buyModal.setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('modal-open');
-  buyKey.value = '';
-  if (buyLastFocus && buyLastFocus.focus) buyLastFocus.focus();
-}
-document.querySelectorAll('button.buy').forEach((b) => {
-  b.addEventListener('click', () => openBuyModal(b.dataset.plan));
-});
-document.getElementById('buy-close').addEventListener('click', closeBuyModal);
-document.getElementById('buy-getkey').addEventListener('click', closeBuyModal);
-buyModal.addEventListener('click', (e) => { if (e.target === buyModal) closeBuyModal(); });
-buyModal.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeBuyModal(); });
-buyForm.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const key = buyKey.value.trim();
-  if (!key) return;
-  buyErr.style.display = 'none';
-  buySubmit.disabled = true;
-  buySubmit.textContent = 'Starting checkout…';
-  try {
-    const res = await fetch('/v1/billing/checkout', {
-      method: 'POST',
-      headers: { 'content-type': 'application/json', authorization: 'Bearer ' + key },
-      body: JSON.stringify({ plan: buyPlan }),
-    });
-    const body = await res.json().catch(() => ({}));
-    if (body.ok && body.data && body.data.url) {
-      window.location.href = body.data.url; // Stripe-hosted checkout
-      return;
-    }
-    buyErr.textContent =
-      res.status === 401
-        ? 'That API key was not recognized. Paste the exact key you saved (starts with fapi_).'
-        : (body.error && body.error.message) || 'Could not start checkout — please try again.';
-    buyErr.style.display = 'block';
-    buySubmit.disabled = false;
-    buySubmit.textContent = 'Continue to payment →';
-  } catch {
-    buyErr.textContent = 'Request failed — please try again.';
-    buyErr.style.display = 'block';
-    buySubmit.disabled = false;
-    buySubmit.textContent = 'Continue to payment →';
-  }
 });
 
 // Stripe redirects back to /?checkout=success|cancelled — show a banner, then
