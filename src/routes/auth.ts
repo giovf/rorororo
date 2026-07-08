@@ -36,7 +36,15 @@ export const authRoutes = new Hono<AppEnv>()
     const email = normalizeEmail(parsed.data.email);
     const token = await issueMagicToken(c.env, email);
     const base = publicBaseUrl(c.env);
-    await sendEmail(c.env, magicLinkEmail(email, `${base}/v1/auth/verify?token=${token}`));
+    const sent = await sendEmail(c.env, magicLinkEmail(email, `${base}/v1/auth/verify?token=${token}`));
+    // A provider rejection isn't an enumeration signal (it fails identically for
+    // any address), so fail loudly rather than claim the email is on its way.
+    if (!sent) {
+      return c.json(
+        failure('unavailable', 'Could not send the sign-in email — please try again shortly'),
+        502,
+      );
+    }
     // Same response whether or not the email has an account (no enumeration).
     return c.json(
       success({ sent: true, message: 'Check your email for a sign-in link — it expires in 15 minutes.' }),

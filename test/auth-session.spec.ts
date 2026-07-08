@@ -86,6 +86,26 @@ describe('magic-link auth + account API', () => {
     expect((await SELF.fetch(`${BASE}/v1/account`)).status).toBe(401);
   });
 
+  it('returns 502 when the email provider rejects the send', async () => {
+    // e.g. Resend's sandbox 403 ("can only send to your own address") — the
+    // API must not claim the email is on its way.
+    vi.stubGlobal(
+      'fetch',
+      vi.fn(() =>
+        Promise.resolve(Response.json({ statusCode: 403, name: 'validation_error' }, { status: 403 })),
+      ),
+    );
+    const res = await SELF.fetch(`${BASE}/v1/auth/login`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email: 'rejected@example.com' }),
+    });
+    expect(res.status).toBe(502);
+    const body = (await res.json()) as { ok: boolean; error: { code: string } };
+    expect(body.ok).toBe(false);
+    expect(body.error.code).toBe('unavailable');
+  });
+
   it('rejects an invalid or reused magic token', async () => {
     const bad = await SELF.fetch(`${BASE}/v1/auth/verify?token=deadbeef`, { redirect: 'manual' });
     expect(bad.status).toBe(302);
