@@ -33,6 +33,11 @@ FIXTURE_FALLBACK=true
 # Turnstile dashboard; the public site key goes in public/index.html.
 TURNSTILE_SECRET_KEY=
 
+# Public base URL override for magic-link + Stripe-redirect URLs. Leave empty to
+# use the default workers.dev domain; set to a custom domain (e.g.
+# https://faceless.com) once it points at the Worker — no code change needed.
+PUBLIC_BASE_URL=
+
 # Resend transactional email (magic-link sign-in). Dark until set — /v1/auth/login
 # returns 503 and passwordless sign-in is disabled when empty. API key from
 # resend.com. EMAIL_FROM defaults to onboarding@resend.dev (no DNS needed); set a

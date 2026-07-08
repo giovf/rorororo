@@ -1,6 +1,6 @@
 import type Stripe from 'stripe';
 import { isPaidPlan, PAID_PLANS } from './plans';
-import { API_BASE_URL } from '../lib/constants';
+import { publicBaseUrl } from '../lib/constants';
 
 // Shared Stripe checkout/portal logic so the API-key path (/v1/billing/*) and the
 // session path (/v1/account/*) create identical, account-keyed sessions — no
@@ -12,9 +12,9 @@ export type BillingUrl =
 
 export async function createCheckoutUrl(
   stripe: Stripe,
-  opts: { accountId: string; email: string; plan: string; returnPath?: string },
+  opts: { accountId: string; email: string; plan: string; baseUrl: string; returnPath?: string },
 ): Promise<BillingUrl> {
-  const { accountId, email, plan, returnPath = '/' } = opts;
+  const { accountId, email, plan, baseUrl, returnPath = '/' } = opts;
   if (!isPaidPlan(plan)) {
     return {
       ok: false,
@@ -42,8 +42,8 @@ export async function createCheckoutUrl(
     customer_email: email,
     metadata,
     subscription_data: { metadata },
-    success_url: `${API_BASE_URL}${returnPath}?checkout=success`,
-    cancel_url: `${API_BASE_URL}${returnPath}?checkout=cancelled`,
+    success_url: `${baseUrl}${returnPath}?checkout=success`,
+    cancel_url: `${baseUrl}${returnPath}?checkout=cancelled`,
   });
   return { ok: true, url: session.url! };
 }
@@ -69,7 +69,7 @@ export async function createPortalUrl(
   }
   const portal = await stripe.billingPortal.sessions.create({
     customer: row.stripe_customer_id,
-    return_url: `${API_BASE_URL}${returnPath}`,
+    return_url: `${publicBaseUrl(env)}${returnPath}`,
   });
   return { ok: true, url: portal.url };
 }

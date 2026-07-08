@@ -4,7 +4,7 @@ import { keyCacheKey } from '../auth/middleware';
 import { requireSession } from '../auth/session';
 import { createCheckoutUrl, createPortalUrl } from '../billing/checkout';
 import { stripeClient } from '../billing/client';
-import { FREE_TIER_CREDITS } from '../lib/constants';
+import { FREE_TIER_CREDITS, publicBaseUrl } from '../lib/constants';
 import { failure, success } from '../lib/envelope';
 import { currentPeriod, getUsage } from '../metering/counters';
 import { usageSummary } from '../metering/quota';
@@ -73,6 +73,7 @@ export const accountRoutes = new Hono<AppEnv>()
       accountId: acct.accountId,
       email: acct.email,
       plan: typeof body.plan === 'string' ? body.plan : '',
+      baseUrl: publicBaseUrl(c.env),
       returnPath: '/account',
     });
     if (!result.ok) return c.json(failure(result.code, result.message), result.status);

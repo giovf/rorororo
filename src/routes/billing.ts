@@ -3,6 +3,7 @@ import { requireApiKey } from '../auth/middleware';
 import { createCheckoutUrl, createPortalUrl } from '../billing/checkout';
 import { stripeClient, webhookCryptoProvider } from '../billing/client';
 import { handleStripeEvent } from '../billing/webhook';
+import { publicBaseUrl } from '../lib/constants';
 import { failure, success } from '../lib/envelope';
 import type { AppEnv } from '../types';
 
@@ -23,6 +24,7 @@ export const billingRoutes = new Hono<AppEnv>()
       accountId: keyCtx.accountId,
       email: keyCtx.usageSubject,
       plan,
+      baseUrl: publicBaseUrl(c.env),
     });
     if (!result.ok) return c.json(failure(result.code, result.message), result.status);
     return c.json(success({ url: result.url, plan }));

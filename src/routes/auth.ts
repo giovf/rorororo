@@ -11,7 +11,7 @@ import {
 } from '../auth/session';
 import { emailEnabled, sendEmail } from '../email/send';
 import { magicLinkEmail } from '../email/templates';
-import { API_BASE_URL } from '../lib/constants';
+import { publicBaseUrl } from '../lib/constants';
 import { failure, success } from '../lib/envelope';
 import { rateLimit } from '../metering/ratelimit';
 import type { AppEnv } from '../types';
@@ -35,7 +35,8 @@ export const authRoutes = new Hono<AppEnv>()
     }
     const email = normalizeEmail(parsed.data.email);
     const token = await issueMagicToken(c.env, email);
-    await sendEmail(c.env, magicLinkEmail(email, `${API_BASE_URL}/v1/auth/verify?token=${token}`));
+    const base = publicBaseUrl(c.env);
+    await sendEmail(c.env, magicLinkEmail(email, `${base}/v1/auth/verify?token=${token}`));
     // Same response whether or not the email has an account (no enumeration).
     return c.json(
       success({ sent: true, message: 'Check your email for a sign-in link — it expires in 15 minutes.' }),
@@ -44,12 +45,13 @@ export const authRoutes = new Hono<AppEnv>()
   // Clicking the emailed link lands here (top-level GET): consume the token,
   // open a session, and redirect into the account page.
   .get('/verify', async (c) => {
+    const base = publicBaseUrl(c.env);
     const email = await consumeMagicToken(c.env, c.req.query('token') ?? '');
-    if (!email) return c.redirect(`${API_BASE_URL}/account?error=link_expired`, 302);
+    if (!email) return c.redirect(`${base}/account?error=link_expired`, 302);
     const account = await getOrCreateAccount(c.env, email);
     const sid = await createSession(c.env, { accountId: account.id, email });
     c.header('Set-Cookie', sessionCookie(sid));
-    return c.redirect(`${API_BASE_URL}/account`, 302);
+    return c.redirect(`${base}/account`, 302);
   })
   .post('/logout', async (c) => {
     const sid = readSessionCookie(c);
