@@ -75,13 +75,14 @@ export async function refreshSource(
   }
 }
 
-/** Cron entrypoint: refresh every source whose cron matches; never throws. */
-export async function refreshMatchingSources(
-  env: CloudflareBindings,
-  cron: string,
-): Promise<void> {
+/**
+ * Cron entrypoint: refresh EVERY source on each scheduled tick. Per-source cron
+ * is advisory — the platform runs one daily cron, and refreshing all sources
+ * means adding a source never silently skips its refresh (no wrangler.jsonc/code
+ * cron drift). Never throws.
+ */
+export async function refreshAllSources(env: CloudflareBindings): Promise<void> {
   for (const source of listSources()) {
-    if (source.refresh.cron !== cron) continue;
     try {
       await refreshSource(env, source);
     } catch (err) {

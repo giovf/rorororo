@@ -6,7 +6,8 @@ import { errorHandler, notFoundHandler } from './lib/envelope';
 import { meterCredits } from './metering/middleware';
 import { rateLimit } from './metering/ratelimit';
 import { structuredLogger } from './middleware/logging';
-import { refreshMatchingSources } from './sources/cache';
+import { refreshAllSources } from './sources/cache';
+import { getSource } from './sources/registry';
 import { accountRoutes } from './routes/account';
 import { authRoutes } from './routes/auth';
 import { billingRoutes } from './routes/billing';
@@ -31,15 +32,17 @@ app.use('*', cors());
 // (rate-limited + metered) and /v1/usage (free to call).
 // Note: '/v1/data/*' would also match the bare listing path, hence ':source'.
 app.use('/v1/data/:source', requireApiKey());
-app.use(
-  '/v1/data/:source',
-  rateLimit({
+// Per-source rate limit (source.rateLimit, default 60/60s) so a high-value niche
+// can be throttled independently — resolved per request from the registry.
+app.use('/v1/data/:source', (c, next) => {
+  const cfg = getSource(c.req.param('source') ?? '')?.rateLimit ?? { limit: 60, windowSeconds: 60 };
+  return rateLimit({
     scope: 'data',
-    limit: 60,
-    windowSeconds: 60,
-    identify: (c) => c.get('keyCtx')?.keyId ?? 'anonymous',
-  }),
-);
+    limit: cfg.limit,
+    windowSeconds: cfg.windowSeconds,
+    identify: (ctx) => ctx.get('keyCtx')?.keyId ?? 'anonymous',
+  })(c, next);
+});
 app.use('/v1/data/:source', meterCredits());
 app.use('/v1/usage', requireApiKey());
 
@@ -60,7 +63,7 @@ app.notFound(notFoundHandler);
 
 const scheduled: ExportedHandlerScheduledHandler<CloudflareBindings> = (controller, env, ctx) => {
   console.log(JSON.stringify({ level: 'info', event: 'scheduled', cron: controller.cron }));
-  ctx.waitUntil(refreshMatchingSources(env, controller.cron));
+  ctx.waitUntil(refreshAllSources(env));
 };
 
 export default {

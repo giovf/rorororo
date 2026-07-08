@@ -241,13 +241,20 @@ function buildDocument(): JsonObject {
     listSources().map((source) => [`/v1/data/${source.slug}`, sourcePathItem(source)]),
   );
 
+  // Registry-derived so a new/renamed niche updates the served spec automatically.
+  const catalog = listSources()
+    .map((source) => source.title)
+    .join(', ');
+
   return {
     openapi: '3.1.0',
     info: {
       title: 'faceless-api',
       version: APP_VERSION,
       description:
-        'UK public-sector data as clean JSON — public procurement notices (Find a Tender) and planning applications, one schema, from official Open-Government-Licence feeds. For bid intelligence, proptech, and AI agents (native MCP + x402). Blind Mode: no personal data is stored or served.',
+        `Clean-JSON access to ${catalog} — one schema across every dataset, from ` +
+        'official open-data feeds. Built for developers and AI agents (native MCP + x402). ' +
+        'Blind Mode: no personal data is stored or served.',
     },
     servers: [{ url: API_BASE_URL, description: 'Production (placeholder domain)' }],
     tags: [
