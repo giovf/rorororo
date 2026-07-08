@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { z } from 'zod';
 import { getOrCreateAccount, normalizeEmail } from '../auth/accounts';
-import { generateKey, hashKey } from '../auth/keys';
+import { generateKey, hashKey, timingSafeEqual } from '../auth/keys';
 import { keyCacheKey, requireApiKey } from '../auth/middleware';
 import { turnstileEnabled, verifyTurnstile } from '../auth/turnstile';
 import { FREE_TIER_CREDITS } from '../lib/constants';
@@ -99,7 +99,7 @@ export const keysRoutes = new Hono<AppEnv>()
   // Operator revocation by key id, guarded by the ADMIN_TOKEN secret.
   .delete('/:id', async (c) => {
     const token = c.req.header('X-Admin-Token');
-    if (!c.env.ADMIN_TOKEN || token !== c.env.ADMIN_TOKEN) {
+    if (!c.env.ADMIN_TOKEN || !token || !timingSafeEqual(token, c.env.ADMIN_TOKEN)) {
       return c.json(failure('unauthorized', 'Admin token required'), 401);
     }
     const revoked = await revokeKey(c.env, c.req.param('id'));
