@@ -21,6 +21,9 @@
     { "pattern": "gankdat.com", "custom_domain": true },
     { "pattern": "www.gankdat.com", "custom_domain": true }
   ],
+  // Keep the workers.dev URL alive as an alias — it's the API_BASE_URL fallback
+  // and pre-cutover links/scripts still point at it.
+  "workers_dev": true,
   // Real resource ids (not secrets — safe to commit). Local dev + tests still
   // run on miniflare simulations and never touch these.
   "d1_databases": [

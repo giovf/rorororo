@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { API_BASE_URL, APP_VERSION } from './constants';
+import { APP_VERSION } from './constants';
 import { ERROR_CODES } from './envelope';
 import { buildQuerySchema } from '../sources/query';
 import { listSources } from '../sources/registry';
@@ -236,7 +236,7 @@ const sourceListingSchema = z.array(
   }),
 );
 
-function buildDocument(): JsonObject {
+function buildDocument(baseUrl: string): JsonObject {
   const sourcePaths = Object.fromEntries(
     listSources().map((source) => [`/v1/data/${source.slug}`, sourcePathItem(source)]),
   );
@@ -256,7 +256,7 @@ function buildDocument(): JsonObject {
         'official open-data feeds. Built for developers and AI agents (native MCP + x402). ' +
         'Blind Mode: no personal data is stored or served.',
     },
-    servers: [{ url: API_BASE_URL, description: 'Production (placeholder domain)' }],
+    servers: [{ url: baseUrl, description: 'Production' }],
     tags: [
       { name: 'platform', description: 'Health and discovery' },
       { name: 'data', description: 'Dataset query endpoints' },
@@ -308,8 +308,8 @@ function buildDocument(): JsonObject {
 
 let cachedDocument: JsonObject | undefined;
 
-/** The registry is static per deployment, so the document is built once. */
-export function getOpenApiDocument(): JsonObject {
-  cachedDocument ??= buildDocument();
+/** Registry + base URL are static per deployment, so the document is built once. */
+export function getOpenApiDocument(baseUrl: string): JsonObject {
+  cachedDocument ??= buildDocument(baseUrl);
   return cachedDocument;
 }
