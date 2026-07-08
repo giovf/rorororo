@@ -13,7 +13,7 @@
 import { wrapFetchWithPayment } from 'x402-fetch';
 import { privateKeyToAccount } from 'viem/accounts';
 
-const TARGET = 'https://faceless-api.faceless-api.workers.dev/x402/data/uk-tenders?per_page=2';
+const TARGET = 'https://gankdat.com/x402/data/uk-tenders?per_page=2';
 
 // MetaMask exports the key as 64 hex chars, usually WITHOUT the 0x prefix.
 // Accept it either way (and trim stray whitespace).

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>faceless-api — UK procurement &amp; planning data as clean JSON (REST + MCP)</title>
+<title>gankdat — UK procurement &amp; planning data as clean JSON (REST + MCP)</title>
 <meta name="description" content="UK public-sector tenders (Find a Tender) and planning applications, normalized to one clean JSON schema from official government feeds. Built for bid intelligence, proptech, and AI agents — free tier, MCP server, x402 pay-per-request.">
 <style>
 :root{--bg:#ffffff;--fg:#16181d;--muted:#5b6472;--line:#e5e8ee;--card:#f6f7f9;--accent:#0b5fff;--accent-fg:#ffffff;--code-bg:#0f172a;--code-fg:#d8e0ee}
@@ -57,7 +57,7 @@ body.modal-open{overflow:hidden}
 </head>
 <body>
 <header>
-  <a class="brand" href="/">faceless-api</a>
+  <a class="brand" href="/">gankdat</a>
   <nav>
     <a href="/docs">Docs</a>
     <a href="/openapi.json">OpenAPI</a>
@@ -72,7 +72,7 @@ body.modal-open{overflow:hidden}
   <p class="sub">Public procurement notices (Find a Tender) and planning applications from official Open-Government-Licence feeds — normalized to one schema, refreshed daily, queryable in one request. Built for bid intelligence, proptech, and AI agents.</p>
 
 <pre><code>curl -H "Authorization: Bearer $API_KEY" \
-  "https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders?value_amount_min=1000000&amp;status=active"
+  "https://gankdat.com/v1/data/uk-tenders?value_amount_min=1000000&amp;status=active"
 
 { "ok": true,
   "data": [ { "notice_id": "063319-2026", "buyer": "London Borough of Havering",
@@ -89,7 +89,7 @@ body.modal-open{overflow:hidden}
     <div class="cf-turnstile" data-sitekey="0x4AAAAAADxa3orlVPksuZ8i" style="flex-basis:100%;margin-top:4px"></div>
   </form>
   <pre id="key-result"><code></code></pre>
-  <p class="note">Got your key? Use it anywhere: <code>curl -H "Authorization: Bearer fapi_..." https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders</code></p>
+  <p class="note">Got your key? Use it anywhere: <code>curl -H "Authorization: Bearer fapi_..." https://gankdat.com/v1/data/uk-tenders</code></p>
   <p class="note">Not ready yet? <a href="#" id="waitlist-link">Join the launch waitlist instead</a> — email only, nothing else stored.</p>
 
   <h2>Two datasets, one schema — cross-vertical by design</h2>
@@ -125,7 +125,7 @@ body.modal-open{overflow:hidden}
 
   <footer>
     <p><strong>Data &amp; privacy.</strong> Sources are official UK government feeds published under the Open Government Licence (planning.data.gov.uk, Find a Tender). Personal data in source records is dropped at ingest and never stored (Blind Mode). The only personal data we hold is the email you sign up with — no analytics cookies, no purchased lists, no cold email. Contact: <a href="mailto:gio@1402celsius.com">gio@1402celsius.com</a>.</p>
-    <p>© 2026 faceless-api · <a href="/docs">Documentation</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/llms.txt">For LLMs</a></p>
+    <p>© 2026 gankdat · <a href="/docs">Documentation</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/llms.txt">For LLMs</a></p>
   </footer>
 </main>
 <div id="key-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
@@ -136,7 +136,7 @@ body.modal-open{overflow:hidden}
     <div class="modal-key"><code id="modal-key-value"></code></div>
     <button id="modal-copy" class="modal-copy" type="button">Copy key</button>
     <span id="modal-copied" class="modal-copied" role="status" aria-live="polite"></span>
-    <p class="modal-try">Then use it: <code>curl -H "Authorization: Bearer &lt;key&gt;" https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders</code></p>
+    <p class="modal-try">Then use it: <code>curl -H "Authorization: Bearer &lt;key&gt;" https://gankdat.com/v1/data/uk-tenders</code></p>
   </div>
 </div>
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>

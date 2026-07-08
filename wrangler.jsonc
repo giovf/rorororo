@@ -10,8 +10,17 @@
     // origin outage surfaces as a 503 / refresh_log error instead of silently
     // serving bundled fixtures as live data. Local dev opts in via .dev.vars
     // (which overrides this), and tests set it in vitest.config.ts.
-    "FIXTURE_FALLBACK": "false"
+    "FIXTURE_FALLBACK": "false",
+    // Customer-facing base URL (magic links, Stripe redirects). The workers.dev
+    // URL keeps working as an alias; this is the brand domain.
+    "PUBLIC_BASE_URL": "https://gankdat.com"
   },
+  // Custom domains (Cloudflare auto-manages DNS records + certs on deploy).
+  // The Worker keeps its internal codename "faceless-api"; customers see gankdat.
+  "routes": [
+    { "pattern": "gankdat.com", "custom_domain": true },
+    { "pattern": "www.gankdat.com", "custom_domain": true }
+  ],
   // Real resource ids (not secrets — safe to commit). Local dev + tests still
   // run on miniflare simulations and never touch these.
   "d1_databases": [

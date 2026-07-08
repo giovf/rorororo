@@ -47,7 +47,7 @@ for (const plan of PLANS) {
     continue;
   }
   const product = await stripe.products.create({
-    name: `faceless-api ${plan.name}`,
+    name: `gankdat ${plan.name}`,
     metadata: { credits: String(plan.credits) },
   });
   await stripe.prices.create({

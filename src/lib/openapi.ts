@@ -249,7 +249,7 @@ function buildDocument(): JsonObject {
   return {
     openapi: '3.1.0',
     info: {
-      title: 'faceless-api',
+      title: 'gankdat',
       version: APP_VERSION,
       description:
         `Clean-JSON access to ${catalog} — one schema across every dataset, from ` +

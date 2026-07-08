@@ -96,7 +96,7 @@ function registerQueryTool(
 }
 
 export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext): McpServer {
-  const server = new McpServer({ name: 'faceless-api', version: APP_VERSION });
+  const server = new McpServer({ name: 'gankdat', version: APP_VERSION });
 
   server.registerTool(
     'list_sources',
