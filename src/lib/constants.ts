@@ -5,7 +5,7 @@ export const FREE_TIER_CREDITS = 250;
 
 // Public base URL. API_BASE_URL is the default (workers.dev); PUBLIC_BASE_URL
 // overrides it at runtime for the correctness-critical URLs (magic-link sign-in
-// + Stripe redirects) so pointing a custom domain (e.g. faceless.com) at the
+// + Stripe redirects) so pointing a custom domain (e.g. gankdat.com) at the
 // Worker is a config change, not a code change. OpenAPI server/docs_url display
 // strings stay on the default until the domain lands.
 export const API_BASE_URL = 'https://faceless-api.faceless-api.workers.dev';

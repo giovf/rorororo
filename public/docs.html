@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>faceless-api — API documentation</title>
-<meta name="description" content="Quickstart and full API reference for faceless-api: UK planning applications and procurement notices as clean JSON.">
+<title>gankdat — API documentation</title>
+<meta name="description" content="Quickstart and full API reference for gankdat: UK planning applications and procurement notices as clean JSON.">
 <style>
 :root{--bg:#ffffff;--fg:#16181d;--muted:#5b6472;--line:#e5e8ee;--code-bg:#0f172a;--code-fg:#d8e0ee;--accent:#0b5fff}
 @media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e8eaef;--muted:#9aa3b2;--line:#262b34;--code-bg:#0b0e14;--code-fg:#c9d4e6;--accent:#5b8dff}}
@@ -18,28 +18,28 @@ a{color:var(--accent)}
 </head>
 <body>
 <div class="quickstart">
-  <h1>faceless-api docs</h1>
+  <h1>gankdat docs</h1>
   <p class="top"><a href="/">← home</a> · machine-readable spec: <a href="/openapi.json">/openapi.json</a> · MCP endpoint for agents: <code>/mcp</code></p>
 
   <h2>Quickstart (60 seconds, no JS needed)</h2>
   <pre><code># 1. Get a free key (250 req/mo, shown once) from the signup form at
-#    https://faceless-api.faceless-api.workers.dev  (signup is bot-protected)
+#    https://gankdat.com  (signup is bot-protected)
 
 # 2. Query procurement notices by value and CPV code (filters combine with AND)
 curl -H "Authorization: Bearer fapi_..." \
-  "https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders?value_amount_min=1000000&cpv_codes=45&status=active"
+  "https://gankdat.com/v1/data/uk-tenders?value_amount_min=1000000&cpv_codes=45&status=active"
 
 # 3. Query planning applications
 curl -H "Authorization: Bearer fapi_..." \
-  "https://faceless-api.faceless-api.workers.dev/v1/data/uk-planning?authority=109&q=extension&per_page=5"
+  "https://gankdat.com/v1/data/uk-planning?authority=109&q=extension&per_page=5"
 
 # 4. Check your usage (free)
-curl -H "Authorization: Bearer fapi_..." https://faceless-api.faceless-api.workers.dev/v1/usage</code></pre>
+curl -H "Authorization: Bearer fapi_..." https://gankdat.com/v1/usage</code></pre>
 
   <h2>For AI agents</h2>
   <pre><code># MCP (Streamable HTTP) — tools: list_sources, query_uk_tenders, query_uk_planning, get_usage
-"mcpServers": { "faceless-api": {
-  "url": "https://faceless-api.faceless-api.workers.dev/mcp",
+"mcpServers": { "gankdat": {
+  "url": "https://gankdat.com/mcp",
   "headers": { "Authorization": "Bearer fapi_..." } } }
 
 # x402 pay-per-request (no account): GET /x402/data/uk-tenders → HTTP 402 → pay → retry</code></pre>

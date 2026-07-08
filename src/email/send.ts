@@ -5,8 +5,8 @@
 
 const RESEND_ENDPOINT = 'https://api.resend.com/emails';
 // Resend's shared onboarding sender needs no DNS — fine for testing. Swap to a
-// verified domain (e.g. no-reply@faceless.com) via EMAIL_FROM once it exists.
-const DEFAULT_FROM = 'faceless <onboarding@resend.dev>';
+// verified domain (e.g. no-reply@gankdat.com) via EMAIL_FROM once it exists.
+const DEFAULT_FROM = 'gankdat <onboarding@resend.dev>';
 
 export interface EmailMessage {
   to: string;

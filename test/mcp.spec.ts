@@ -102,7 +102,7 @@ describe('/mcp', () => {
     const { key } = await issueKey();
     const { status, body } = await rpc(key, 'initialize', INIT_PARAMS);
     expect(status).toBe(200);
-    expect(body?.result?.serverInfo?.name).toBe('faceless-api');
+    expect(body?.result?.serverInfo?.name).toBe('gankdat');
   });
 
   it('lists registry-generated tools with schemas from the zod queryParams', async () => {

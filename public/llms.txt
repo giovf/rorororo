@@ -1,4 +1,4 @@
-# faceless-api
+# gankdat
 
 > UK public-sector data as clean JSON, one schema, refreshed daily from official
 > Open-Government-Licence feeds — no scraping. Public procurement notices (Find a
@@ -6,8 +6,8 @@
 > intelligence, proptech, and AI agents. Native MCP server + x402 pay-per-request.
 > Personal data is dropped at ingest (Blind Mode).
 
-Base URL: https://faceless-api.faceless-api.workers.dev
-Machine-readable spec: https://faceless-api.faceless-api.workers.dev/openapi.json
+Base URL: https://gankdat.com
+Machine-readable spec: https://gankdat.com/openapi.json
 
 ## Auth & pricing
 
@@ -30,7 +30,7 @@ Machine-readable spec: https://faceless-api.faceless-api.workers.dev/openapi.jso
 
 ## For AI agents
 
-- MCP server (Streamable HTTP): https://faceless-api.faceless-api.workers.dev/mcp
+- MCP server (Streamable HTTP): https://gankdat.com/mcp
   with the same bearer key. Tools: list_sources, get_usage, query_uk_tenders,
   query_uk_planning. Structured JSON results with credits_remaining in meta.
 - x402 pay-per-request (no account, USDC on Base):
@@ -39,6 +39,6 @@ Machine-readable spec: https://faceless-api.faceless-api.workers.dev/openapi.jso
 
 ## Docs
 
-- Human docs: https://faceless-api.faceless-api.workers.dev/docs
+- Human docs: https://gankdat.com/docs
 - Quickstart: get a key, then
-  curl -H "Authorization: Bearer fapi_..." "https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders?value_amount_min=1000000"
+  curl -H "Authorization: Bearer fapi_..." "https://gankdat.com/v1/data/uk-tenders?value_amount_min=1000000"
