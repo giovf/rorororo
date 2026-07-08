@@ -35,6 +35,29 @@ describe('currentPeriod', () => {
   it('formats yyyymm in UTC', () => {
     expect(currentPeriod(new Date('2026-07-15T10:00:00Z'))).toBe('202607');
     expect(currentPeriod(new Date('2026-12-31T23:59:59Z'))).toBe('202612');
+    expect(currentPeriod(new Date('2027-01-01T00:00:00Z'))).toBe('202701'); // year rollover
+  });
+});
+
+describe('month rollover', () => {
+  it('grants a fresh quota each period — an exhausted last month does not carry over', async () => {
+    stubOrigins({ planning: planningPage });
+    const { key, email } = await issueKey();
+
+    // Exhaust LAST month's counter (the key rolls with the period string).
+    const now = new Date();
+    const lastMonth = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - 1, 1));
+    await env.CACHE.put(`usage:${email.toLowerCase()}:${currentPeriod(lastMonth)}`, '250');
+
+    // The current period is untouched: full grant, nothing blocked.
+    const usage = (await (
+      await SELF.fetch(USAGE_URL, { headers: bearer(key) })
+    ).json()) as UsageBody;
+    expect(usage.data).toMatchObject({ used: 0, granted: 250, remaining: 250, alerts: [] });
+
+    const res = await authedFetch(DATA_URL, key);
+    expect(res.status).toBe(200);
+    expect(res.headers.get('X-Credits-Remaining')).toBe('249');
   });
 });
 
