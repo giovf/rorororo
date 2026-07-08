@@ -27,7 +27,7 @@ this channel matters.
 ## MCP directories (PulseMCP, Glama, Smithery, etc.)
 
 - Endpoint: `https://<domain>/mcp` (Streamable HTTP), auth = bearer key.
-- Server name `faceless-api`; tools: `list_sources`, `get_usage`,
+- Server name `gankdat`; tools: `list_sources`, `get_usage`,
   `query_uk_planning`, `query_uk_tenders`.
 - Most directories want a GitHub repo link + README — the repo is private
   until the operator publishes it (their call).

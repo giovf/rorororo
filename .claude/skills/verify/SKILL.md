@@ -1,9 +1,9 @@
 ---
 name: verify
-description: Build, launch, and drive faceless-api (Cloudflare Worker) to verify a change end-to-end at its HTTP surface. Use before committing nontrivial changes to product source.
+description: Build, launch, and drive gankdat (Cloudflare Worker) to verify a change end-to-end at its HTTP surface. Use before committing nontrivial changes to product source.
 ---
 
-# Verifying faceless-api changes
+# Verifying gankdat changes
 
 Single Cloudflare Worker (Hono) serving the REST API, MCP endpoint, and static
 assets. The surface is HTTP on :8787 via wrangler dev — drive it with curl.

@@ -15,8 +15,7 @@ dataset — the cross-vertical edge — not the headline.
 ## Before you post
 
 - **Landing page + waitlist are live** at
-  `https://faceless-api.faceless-api.workers.dev` (used throughout below). It
-  works today; swap it for your custom domain here once that's set up.
+  `https://gankdat.com` (used throughout below).
 - **Scope honesty.** v1 serves the **official government feeds** (Find a Tender
   OCDS + planning.data.gov.uk), normalized to one schema. For planning that's
   *not* the 400+ council portals yet — don't claim "all councils." Turn the gap
@@ -42,7 +41,7 @@ I built an API that normalizes both into one flat, filterable JSON schema,
 refreshed daily:
 
     curl -H "Authorization: Bearer $KEY" \
-      "https://faceless-api.faceless-api.workers.dev/v1/data/uk-tenders?value_amount_min=1000000&status=active"
+      "https://gankdat.com/v1/data/uk-tenders?value_amount_min=1000000&status=active"
 
 Notes for this crowd:
 - Single Cloudflare Worker (Hono + TypeScript). Same `{ok, data, meta}` envelope
@@ -58,7 +57,7 @@ It's early — v1 is the official feeds; deeper council coverage is next, driven
 demand. I'd love feedback on the tender schema and which filters/fields would
 make this genuinely useful to you.
 
-Docs: https://faceless-api.faceless-api.workers.dev/docs
+Docs: https://gankdat.com/docs
 
 ---
 
@@ -85,7 +84,7 @@ Things this crowd might care about:
 - **Blind Mode** drops personal fields at ingest (GDPR).
 - MCP + x402 endpoints so agents can call it without an API key.
 
-Free tier (250 req/mo, no card): https://faceless-api.faceless-api.workers.dev.
+Free tier (250 req/mo, no card): https://gankdat.com.
 Curious which procurement filters or authorities people here would want first.
 
 ---
@@ -94,7 +93,7 @@ Curious which procurement filters or authorities people here would want first.
 
 > **Title:** Validating a "boring" niche data API — UK procurement + planning, agent-native. Before I build deeper.
 
-Following the faceless-data-API playbook: one narrow, valuable, frequently-
+Following the solo-operator data-API playbook: one narrow, valuable, frequently-
 changing dataset that's a pain to get, sold as clean JSON by the request.
 
 I started aimed at UK planning, then a competitor scan showed that space is
@@ -108,7 +107,7 @@ know there's willingness to pay. So — if you work in **bid intelligence,
 procurement, construction/solar lead-gen, or proptech** (or you build agents
 that need public-sector data): **would a clean API for this be worth paying
 for?** What would you filter on? Free key / waitlist:
-https://faceless-api.faceless-api.workers.dev.
+https://gankdat.com.
 
 Happy to share the stack (Cloudflare Workers + Hono + TS, one file per dataset
 behind a swappable source interface).

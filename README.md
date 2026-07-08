@@ -1,4 +1,4 @@
-# faceless-api
+# gankdat
 
 A niche data API sold on usage-based pricing to **human developers** (self-serve
 Stripe billing) and **AI agents** (MCP server + x402 USDC micropayments). v1

@@ -1,4 +1,4 @@
-# faceless-api — Architecture
+# gankdat — Architecture
 
 > Derived from `.taskmaster/docs/prd.md`. This file holds the *stable*
 > architectural decisions and is loaded into every Claude session via
