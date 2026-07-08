@@ -9,6 +9,7 @@ export const ERROR_CODES = [
   'payment_required',
   'quota_exceeded',
   'not_found',
+  'gone',
   'rate_limited',
   'unavailable',
   'internal',

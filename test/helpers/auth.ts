@@ -1,5 +1,6 @@
-import { SELF } from 'cloudflare:test';
-import type { SuccessEnvelope } from '../../src/lib/envelope';
+import { env, SELF } from 'cloudflare:test';
+import { generateKey, hashKey } from '../../src/auth/keys';
+import { FREE_TIER_CREDITS } from '../../src/lib/constants';
 
 export interface IssuedKey {
   id: string;
@@ -12,16 +13,33 @@ export interface IssuedKey {
 // independent quotas (usage is now metered per-email, not per-key).
 let issueSeq = 0;
 
-/** Issue a fresh key through the real route (per-test storage is reset). */
+/**
+ * Test fixture: mint an account + key directly in D1, mirroring what
+ * POST /v1/account/keys does. Public issuance (POST /v1/keys) is retired —
+ * real key creation requires a signed-in session, which auth-session.spec
+ * exercises end-to-end; everything else just needs a working key fast.
+ */
 export async function issueKey(email = `user${(issueSeq += 1)}@example.com`): Promise<IssuedKey> {
-  const res = await SELF.fetch('https://example.com/v1/keys', {
-    method: 'POST',
-    headers: { 'content-type': 'application/json' },
-    body: JSON.stringify({ email }),
-  });
-  if (res.status !== 201) throw new Error(`key issuance failed: ${res.status}`);
-  const body = (await res.json()) as SuccessEnvelope<{ id: string; key: string }>;
-  return { id: body.data.id, key: body.data.key, email };
+  const normalized = email.trim().toLowerCase();
+  await env.DB.prepare('INSERT INTO accounts (id, email) VALUES (?1, ?2) ON CONFLICT (email) DO NOTHING')
+    .bind(crypto.randomUUID(), normalized)
+    .run();
+  const account = await env.DB.prepare('SELECT id, plan FROM accounts WHERE email = ?1')
+    .bind(normalized)
+    .first<{ id: string; plan: string }>();
+  if (!account) throw new Error(`account upsert failed for ${normalized}`);
+
+  const id = crypto.randomUUID();
+  const key = generateKey();
+  await env.DB.batch([
+    env.DB.prepare(
+      'INSERT INTO api_keys (id, key_hash, email, plan, credits_granted, account_id) VALUES (?1, ?2, ?3, ?4, ?5, ?6)',
+    ).bind(id, await hashKey(key), normalized, account.plan, FREE_TIER_CREDITS, account.id),
+    env.DB.prepare(
+      'INSERT INTO credit_ledger (account_id, key_id, delta, reason) VALUES (?1, ?2, ?3, ?4)',
+    ).bind(account.id, id, FREE_TIER_CREDITS, 'free_tier'),
+  ]);
+  return { id, key, email: normalized };
 }
 
 export function bearer(key: string): HeadersInit {

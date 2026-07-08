@@ -1,7 +1,7 @@
 import { env } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { verifyTurnstile } from '../src/auth/turnstile';
-import { keysRoutes } from '../src/routes/keys';
+import { waitlistRoute } from '../src/routes/waitlist';
 import type { SuccessEnvelope } from '../src/lib/envelope';
 
 function stubSiteverify(success: boolean): void {
@@ -36,10 +36,10 @@ describe('verifyTurnstile', () => {
   });
 });
 
-describe('POST /v1/keys with Turnstile enabled', () => {
+describe('POST /v1/waitlist with Turnstile enabled', () => {
   const post = (body: Record<string, unknown>, envOverride: CloudflareBindings): Promise<Response> =>
     Promise.resolve(
-      keysRoutes.request(
+      waitlistRoute.request(
         '/',
         {
           method: 'POST',
@@ -55,16 +55,16 @@ describe('POST /v1/keys with Turnstile enabled', () => {
     expect(res.status).toBe(400);
   });
 
-  it('issues a key when the captcha token verifies', async () => {
+  it('subscribes when the captcha token verifies', async () => {
     stubSiteverify(true);
     const res = await post({ email: 'b@example.com', 'cf-turnstile-response': 'tok' }, withTurnstile());
-    expect(res.status).toBe(201);
-    const body = (await res.json()) as SuccessEnvelope<{ key: string }>;
-    expect(body.data.key).toMatch(/^fapi_/);
+    expect(res.status).toBe(200);
+    const body = (await res.json()) as SuccessEnvelope<{ subscribed: boolean }>;
+    expect(body.data.subscribed).toBe(true);
   });
 
   it('still works with no token when Turnstile is disabled', async () => {
     const res = await post({ email: 'c@example.com' }, env);
-    expect(res.status).toBe(201);
+    expect(res.status).toBe(200);
   });
 });

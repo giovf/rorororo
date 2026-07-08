@@ -1,30 +1,8 @@
 import { Hono } from 'hono';
-import { z } from 'zod';
-import { getOrCreateAccount, normalizeEmail } from '../auth/accounts';
-import { generateKey, hashKey, timingSafeEqual } from '../auth/keys';
+import { timingSafeEqual } from '../auth/keys';
 import { keyCacheKey, requireApiKey } from '../auth/middleware';
-import { turnstileEnabled, verifyTurnstile } from '../auth/turnstile';
-import { FREE_TIER_CREDITS } from '../lib/constants';
 import { failure, success } from '../lib/envelope';
-import { rateLimit } from '../metering/ratelimit';
 import type { AppEnv } from '../types';
-
-const issueBodySchema = z.object({
-  email: z.email(),
-  name: z.string().trim().min(1).max(100).optional(),
-});
-
-// Anti-farming: the free quota is metered per-email (metering/counters.ts), so
-// issuing many keys for one email shares one 250/mo allowance rather than
-// minting fresh credits. This per-IP window caps issuance velocity on top.
-// Residual: distinct/disposable/plus-addressed emails still each get a free
-// quota — closing that needs email verification, a documented post-v1 hardening.
-const issueRateLimit = rateLimit({
-  scope: 'keys',
-  limit: 5,
-  windowSeconds: 3600,
-  identify: (c) => c.req.header('CF-Connecting-IP') ?? 'unknown',
-});
 
 async function revokeKey(env: CloudflareBindings, keyId: string): Promise<boolean> {
   const row = await env.DB.prepare(
@@ -43,53 +21,20 @@ async function revokeKey(env: CloudflareBindings, keyId: string): Promise<boolea
 }
 
 export const keysRoutes = new Hono<AppEnv>()
-  .post('/', issueRateLimit, async (c) => {
-    const raw = (await c.req.json().catch(() => ({}))) as Record<string, unknown>;
-    if (turnstileEnabled(c.env)) {
-      const token = (raw['cf-turnstile-response'] ?? raw['turnstile_token']) as string | undefined;
-      if (!(await verifyTurnstile(c.env, token, c.req.header('CF-Connecting-IP')))) {
-        return c.json(failure('bad_request', 'CAPTCHA verification failed; please retry'), 400);
-      }
-    }
-    const parsed = issueBodySchema.safeParse(raw);
-    if (!parsed.success) {
-      const details = parsed.error.issues.map((issue) => ({
-        field: issue.path.join('.'),
-        code: issue.code,
-        message: issue.message,
-      }));
-      return c.json(failure('bad_request', 'Invalid request body', details), 400);
-    }
-
-    // Upsert the account (email identity), then issue the key under it. A new key
-    // inherits the account's CURRENT plan, so re-issuing under a paid email keeps
-    // the paid entitlement instead of silently dropping to free.
-    const email = normalizeEmail(parsed.data.email);
-    const account = await getOrCreateAccount(c.env, email);
-
-    const id = crypto.randomUUID();
-    const key = generateKey();
-    const hash = await hashKey(key);
-    await c.env.DB.batch([
-      c.env.DB.prepare(
-        'INSERT INTO api_keys (id, key_hash, email, name, plan, credits_granted, account_id) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)',
-      ).bind(id, hash, email, parsed.data.name ?? null, account.plan, FREE_TIER_CREDITS, account.id),
-      c.env.DB.prepare(
-        'INSERT INTO credit_ledger (account_id, key_id, delta, reason) VALUES (?1, ?2, ?3, ?4)',
-      ).bind(account.id, id, FREE_TIER_CREDITS, 'free_tier'),
-    ]);
-
-    return c.json(
-      success({
-        id,
-        key,
-        plan: account.plan,
-        credits: FREE_TIER_CREDITS,
-        message: 'Store this key now — it is shown only once and cannot be recovered.',
-      }),
-      201,
-    );
-  })
+  // Issuance is retired here and lives behind verified sign-in (POST
+  // /v1/account/keys). The old public form accepted any UNVERIFIED email —
+  // harmless when keys were standalone free-tier objects, a privilege leak once
+  // keys inherit the account's plan (type a stranger's email, get a key on
+  // their paid account, burn their quota). Magic-link sign-in proves ownership.
+  .post('/', (c) =>
+    c.json(
+      failure(
+        'gone',
+        'Key issuance has moved: sign in at /account (email magic link) and create keys from your dashboard',
+      ),
+      410,
+    ),
+  )
   // Self-serve revocation of the presented key.
   .delete('/', requireApiKey(), async (c) => {
     const keyCtx = c.get('keyCtx')!;

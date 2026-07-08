@@ -1,7 +1,7 @@
 import { env, SELF } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { generateKey, hashKey } from '../src/auth/keys';
-import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
+import type { ErrorEnvelope } from '../src/lib/envelope';
 import { authedFetch, bearer, issueKey } from './helpers/auth';
 import { planningResponse, stubOrigins } from './helpers/origin-mock';
 
@@ -30,67 +30,30 @@ describe('key primitives', () => {
   });
 });
 
-describe('POST /v1/keys', () => {
-  it('issues a key once and stores only its hash', async () => {
+describe('POST /v1/keys (retired)', () => {
+  // Public issuance accepted UNVERIFIED emails; since keys inherit the
+  // account's plan, that was a privilege leak. Creation now requires a
+  // signed-in session (POST /v1/account/keys — covered by auth-session.spec).
+  it('is gone (410) and points at the account dashboard', async () => {
     const res = await SELF.fetch(KEYS_URL, {
       method: 'POST',
       headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email: 'dana@example.com', name: 'Dana' }),
+      body: JSON.stringify({ email: 'dana@example.com' }),
     });
-    expect(res.status).toBe(201);
-    const body = (await res.json()) as SuccessEnvelope<{
-      id: string;
-      key: string;
-      credits: number;
-      message: string;
-    }>;
-    expect(body.data.key).toMatch(/^fapi_[0-9A-Za-z]{32}$/);
-    expect(body.data.credits).toBe(250);
-    expect(body.data.message).toContain('only once');
-
-    const row = await env.DB.prepare('SELECT key_hash, email, plan FROM api_keys WHERE id = ?1')
-      .bind(body.data.id)
-      .first<{ key_hash: string; email: string; plan: string }>();
-    expect(row?.key_hash).toBe(await hashKey(body.data.key));
-    expect(row?.key_hash).not.toBe(body.data.key);
-    expect(row?.plan).toBe('free');
-
-    const ledger = await env.DB.prepare(
-      'SELECT delta, reason FROM credit_ledger WHERE key_id = ?1',
-    )
-      .bind(body.data.id)
-      .all();
-    expect(ledger.results).toEqual([{ delta: 250, reason: 'free_tier' }]);
-  });
-
-  it('rejects invalid bodies with field details', async () => {
-    const res = await SELF.fetch(KEYS_URL, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email: 'not-an-email' }),
-    });
-    expect(res.status).toBe(400);
+    expect(res.status).toBe(410);
     const body = (await res.json()) as ErrorEnvelope;
-    expect(body.error.details).toEqual([expect.objectContaining({ field: 'email' })]);
+    expect(body.error.code).toBe('gone');
+    expect(body.error.message).toContain('/account');
   });
 
-  it('rate-limits key farming per IP', async () => {
-    for (let i = 0; i < 5; i++) {
-      const res = await SELF.fetch(KEYS_URL, {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ email: `farm${i}@example.com` }),
-      });
-      expect(res.status).toBe(201);
-    }
-    const sixth = await SELF.fetch(KEYS_URL, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email: 'farm6@example.com' }),
-    });
-    expect(sixth.status).toBe(429);
-    const body = (await sixth.json()) as ErrorEnvelope;
-    expect(body.error.code).toBe('rate_limited');
+  it('the fixture path stores only a hash, never the raw key', async () => {
+    const { id, key } = await issueKey('dana@example.com');
+    const row = await env.DB.prepare('SELECT key_hash, plan FROM api_keys WHERE id = ?1')
+      .bind(id)
+      .first<{ key_hash: string; plan: string }>();
+    expect(row?.key_hash).toBe(await hashKey(key));
+    expect(row?.key_hash).not.toBe(key);
+    expect(row?.plan).toBe('free');
   });
 });
 

@@ -11,8 +11,9 @@ Machine-readable spec: https://gankdat.com/openapi.json
 
 ## Auth & pricing
 
-- Free key: sign up at the website (bot-protected form) → 250 requests/month,
-  no card. Agents without a key can pay per request via x402 (see below) — no signup.
+- Free key: your operator signs in at https://gankdat.com/account (email magic
+  link) and creates a key → 250 requests/month, no card. Agents without a key
+  can pay per request via x402 (see below) — no signup.
 - Send the key as `Authorization: Bearer fapi_...` on every data request.
 - 1 credit = 1 request; paid plans from $29/mo; usage at GET /v1/usage (free).
 - Every response: {"ok":true,"data":[...],"meta":{...}} or

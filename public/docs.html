@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>gankdat — API documentation</title>
 <meta name="description" content="Quickstart and full API reference for gankdat: UK planning applications and procurement notices as clean JSON.">
 <style>
@@ -22,8 +23,8 @@ a{color:var(--accent)}
   <p class="top"><a href="/">← home</a> · machine-readable spec: <a href="/openapi.json">/openapi.json</a> · MCP endpoint for agents: <code>/mcp</code></p>
 
   <h2>Quickstart (60 seconds, no JS needed)</h2>
-  <pre><code># 1. Get a free key (250 req/mo, shown once) from the signup form at
-#    https://gankdat.com  (signup is bot-protected)
+  <pre><code># 1. Sign in at https://gankdat.com/account (email magic link, no password)
+#    and create a key from your dashboard (250 req/mo free, shown once)
 
 # 2. Query procurement notices by value and CPV code (filters combine with AND)
 curl -H "Authorization: Bearer fapi_..." \

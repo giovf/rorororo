@@ -89,14 +89,6 @@ function sourcePathItem(source: DataSource): JsonObject {
   };
 }
 
-const issuedKeySchema = z.object({
-  id: z.string(),
-  key: z.string(),
-  plan: z.string(),
-  credits: z.number(),
-  message: z.string(),
-});
-
 const billingPaths: JsonObject = {
   '/v1/billing/checkout': {
     post: {
@@ -191,27 +183,10 @@ const usagePath: JsonObject = {
 };
 
 const keysPaths: JsonObject = {
+  // Key CREATION is deliberately absent from the public API: it requires a
+  // signed-in session (email magic link at /account), because keys inherit the
+  // account's plan and issuance against unverified emails would leak it.
   '/v1/keys': {
-    post: {
-      operationId: 'create_key',
-      summary: 'Issue a free-tier API key (shown once, store it immediately)',
-      tags: ['platform'],
-      requestBody: {
-        required: true,
-        content: {
-          'application/json': {
-            schema: toSchema(
-              z.object({ email: z.email(), name: z.string().max(100).optional() }),
-            ),
-          },
-        },
-      },
-      responses: {
-        '201': jsonResponse('Key issued — the raw key is never shown again', successEnvelope(issuedKeySchema)),
-        '400': errorResponse('Invalid request body'),
-        '429': errorResponse('Too many keys issued from this IP'),
-      },
-    },
     delete: {
       operationId: 'revoke_key',
       summary: 'Revoke the presented API key (self-serve)',
@@ -296,7 +271,8 @@ function buildDocument(baseUrl: string): JsonObject {
         bearerAuth: {
           type: 'http',
           scheme: 'bearer',
-          description: 'API key issued via /v1/keys, sent as a bearer token.',
+          description:
+            'API key created from your account dashboard (sign in at /account), sent as a bearer token.',
         },
       },
       schemas: {

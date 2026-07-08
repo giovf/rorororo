@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
 <title>gankdat — UK procurement &amp; planning data as clean JSON (REST + MCP)</title>
 <meta name="description" content="UK public-sector tenders (Find a Tender) and planning applications, normalized to one clean JSON schema from official government feeds. Built for bid intelligence, proptech, and AI agents — free tier, MCP server, x402 pay-per-request.">
 <style>
@@ -68,8 +69,8 @@ body.modal-open{overflow:hidden}
 </header>
 <main>
   <div id="checkout-banner" class="banner" style="display:none" role="status" aria-live="polite"></div>
-  <h1>UK public-sector tenders &amp; planning, as clean JSON.</h1>
-  <p class="sub">Public procurement notices (Find a Tender) and planning applications from official Open-Government-Licence feeds — normalized to one schema, refreshed daily, queryable in one request. Built for bid intelligence, proptech, and AI agents.</p>
+  <h1>Hard-to-use public data, served as one clean API.</h1>
+  <p class="sub">gankdat normalizes niche public datasets into one schema — refreshed daily from official feeds, queryable in one request. One key covers the whole catalog: today that's UK procurement notices and planning applications, with more datasets on the way. Built for developers and AI agents.</p>
 
 <pre><code>curl -H "Authorization: Bearer $API_KEY" \
   "https://gankdat.com/v1/data/uk-tenders?value_amount_min=1000000&amp;status=active"
@@ -81,19 +82,14 @@ body.modal-open{overflow:hidden}
               "deadline_at": "2026-09-01T17:00:00+01:00", … } ],
   "meta": { "total": 116, "last_refreshed_at": "2026-07-07T05:00:11Z" } }</code></pre>
 
-  <h2 id="key">Get a free API key</h2>
-  <p>250 requests/month, no card. The key is shown once — store it.</p>
-  <form id="key-form">
-    <input type="email" name="email" placeholder="you@company.com" required autocomplete="email">
-    <button type="submit">Get free key</button>
-    <div class="cf-turnstile" data-sitekey="0x4AAAAAADxa3orlVPksuZ8i" style="flex-basis:100%;margin-top:4px"></div>
-  </form>
-  <pre id="key-result"><code></code></pre>
-  <p class="note">Got your key? Use it anywhere: <code>curl -H "Authorization: Bearer fapi_..." https://gankdat.com/v1/data/uk-tenders</code></p>
-  <p class="note">Not ready yet? <a href="#" id="waitlist-link">Join the launch waitlist instead</a> — email only, nothing else stored.</p>
+  <h2 id="key">Get your API key</h2>
+  <p>Sign in with your email — we send a magic link, no password. Create keys from your dashboard; the free tier is 250 requests/month with no card, and every key works across the whole catalog.</p>
+  <p><a class="buy" href="/account">Sign in &amp; create a key</a></p>
+  <p class="note">Got a key? Use it anywhere: <code>curl -H "Authorization: Bearer fapi_..." https://gankdat.com/v1/data/uk-tenders</code></p>
 
-  <h2>Two datasets, one schema — cross-vertical by design</h2>
-  <div class="grid">
+  <h2>The catalog — one schema across every dataset</h2>
+  <p class="note">Rendered from the live registry at <a href="/v1/data"><code>/v1/data</code></a> — when a dataset ships, it appears here.</p>
+  <div class="grid" id="datasets-grid">
     <div class="card">
       <h3>uk-tenders <span style="font-weight:400;color:var(--muted)">· procurement</span></h3>
       <p>Public-sector tenders from Find a Tender's official OCDS feed, flattened from nested releases to one clean row per notice. For bid intelligence, lead-gen, and market research.</p>
@@ -116,7 +112,7 @@ body.modal-open{overflow:hidden}
   <h2 id="pricing">Pricing</h2>
   <table>
     <tr><th>Plan</th><th>Credits / month</th><th>Price</th><th></th></tr>
-    <tr><td>Free</td><td>250</td><td class="price">£0</td><td><a class="free-link" href="#key">Get free key</a></td></tr>
+    <tr><td>Free</td><td>250</td><td class="price">£0</td><td><a class="free-link" href="/account">Sign in</a></td></tr>
     <tr><td>Starter</td><td>5,000</td><td class="price">$29/mo</td><td><a class="buy" href="/account">Subscribe</a></td></tr>
     <tr><td>Growth</td><td>20,000</td><td class="price">$99/mo</td><td><a class="buy" href="/account">Subscribe</a></td></tr>
     <tr><td>Scale</td><td>100,000</td><td class="price">$299/mo</td><td><a class="buy" href="/account">Subscribe</a></td></tr>
@@ -128,108 +124,40 @@ body.modal-open{overflow:hidden}
     <p>© 2026 gankdat · <a href="/docs">Documentation</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/llms.txt">For LLMs</a></p>
   </footer>
 </main>
-<div id="key-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-  <div class="modal-card">
-    <button id="modal-close" class="modal-close" type="button" aria-label="Close">&times;</button>
-    <h3 id="modal-title">Your API key</h3>
-    <p class="modal-warn">Shown once. Copy it now and store it somewhere safe — it cannot be recovered after you close this window.</p>
-    <div class="modal-key"><code id="modal-key-value"></code></div>
-    <button id="modal-copy" class="modal-copy" type="button">Copy key</button>
-    <span id="modal-copied" class="modal-copied" role="status" aria-live="polite"></span>
-    <p class="modal-try">Then use it: <code>curl -H "Authorization: Bearer &lt;key&gt;" https://gankdat.com/v1/data/uk-tenders</code></p>
-  </div>
-</div>
-<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script>
-// Progressive enhancement only — every action above has a no-JS curl fallback.
-const form = document.getElementById('key-form');
-const result = document.getElementById('key-result');
-let waitlistMode = false;
-document.getElementById('waitlist-link').addEventListener('click', (e) => {
-  e.preventDefault();
-  waitlistMode = true;
-  form.querySelector('button').textContent = 'Join waitlist';
-  form.querySelector('input').focus();
-});
-form.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const email = form.querySelector('input').value;
-  const endpoint = waitlistMode ? '/v1/waitlist' : '/v1/keys';
-  const token = window.turnstile ? turnstile.getResponse() : '';
-  if (window.turnstile && !token) {
-    result.style.display = 'block';
-    result.querySelector('code').textContent = 'Please complete the verification below first.';
-    return;
-  }
-  result.style.display = 'block';
-  result.querySelector('code').textContent = '…';
+// Progressive enhancement only — the static dataset cards above are the no-JS
+// fallback. When JS runs, the catalog re-renders from the live registry, so a
+// newly shipped dataset appears here with zero landing-page edits.
+(async function () {
   try {
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ email, source: 'landing', 'cf-turnstile-response': token }),
-    });
+    const res = await fetch('/v1/data');
     const body = await res.json();
-    if (!body.ok) {
-      result.querySelector('code').textContent = body.error.message;
-    } else if (waitlistMode) {
-      result.querySelector('code').textContent = 'You are on the list. No confirmation email — we only mail you at launch.';
-    } else {
-      result.style.display = 'none';
-      openKeyModal(body.data.key);
+    if (!body.ok || !Array.isArray(body.data) || body.data.length === 0) return;
+    const grid = document.getElementById('datasets-grid');
+    grid.innerHTML = '';
+    for (const s of body.data) {
+      const card = document.createElement('div');
+      card.className = 'card';
+      const h3 = document.createElement('h3');
+      h3.textContent = s.slug + ' ';
+      const label = document.createElement('span');
+      label.style.cssText = 'font-weight:400;color:var(--muted)';
+      label.textContent = '· ' + s.title;
+      h3.appendChild(label);
+      const p = document.createElement('p');
+      p.textContent = s.description;
+      const chips = document.createElement('p');
+      chips.className = 'chips';
+      for (const param of s.supported_params.slice(0, 6)) {
+        const code = document.createElement('code');
+        code.textContent = param;
+        chips.appendChild(code);
+      }
+      card.append(h3, p, chips);
+      grid.appendChild(card);
     }
-  } catch {
-    result.querySelector('code').textContent = 'Request failed — use the curl command below instead.';
-  } finally {
-    if (window.turnstile) turnstile.reset();
-  }
-});
-
-// API-key modal: shows the key once, copy-to-clipboard, and wipes it on close.
-const keyModal = document.getElementById('key-modal');
-const keyModalValue = document.getElementById('modal-key-value');
-const copyBtn = document.getElementById('modal-copy');
-const closeBtn = document.getElementById('modal-close');
-const copiedMsg = document.getElementById('modal-copied');
-let lastFocus = null;
-function openKeyModal(key) {
-  keyModalValue.textContent = key;
-  copiedMsg.textContent = '';
-  copyBtn.textContent = 'Copy key';
-  lastFocus = document.activeElement;
-  keyModal.classList.add('open');
-  keyModal.setAttribute('aria-hidden', 'false');
-  document.body.classList.add('modal-open');
-  copyBtn.focus();
-}
-function closeKeyModal() {
-  keyModal.classList.remove('open');
-  keyModal.setAttribute('aria-hidden', 'true');
-  document.body.classList.remove('modal-open');
-  keyModalValue.textContent = ''; // the key is gone once the window is closed
-  if (lastFocus && lastFocus.focus) lastFocus.focus();
-}
-copyBtn.addEventListener('click', async () => {
-  try {
-    await navigator.clipboard.writeText(keyModalValue.textContent);
-    copiedMsg.textContent = '✓ Copied to clipboard';
-  } catch {
-    const range = document.createRange();
-    range.selectNodeContents(keyModalValue);
-    const sel = window.getSelection();
-    sel.removeAllRanges();
-    sel.addRange(range);
-    copiedMsg.textContent = 'Press Ctrl/Cmd+C to copy';
-  }
-});
-closeBtn.addEventListener('click', closeKeyModal);
-// Keep focus inside the modal and allow Escape to close (the only ways out).
-keyModal.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') { closeKeyModal(); return; }
-  if (e.key !== 'Tab') return;
-  if (e.shiftKey && document.activeElement === copyBtn) { e.preventDefault(); closeBtn.focus(); }
-  else if (!e.shiftKey && document.activeElement === closeBtn) { e.preventDefault(); copyBtn.focus(); }
-});
+  } catch { /* keep the static fallback */ }
+})();
 
 // Stripe redirects back to /?checkout=success|cancelled — show a banner, then
 // clean the URL so a refresh doesn't replay it.
