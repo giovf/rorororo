@@ -3,6 +3,7 @@ import { Hono } from 'hono';
 import { paymentMiddleware } from 'x402-hono';
 import { failure } from '../lib/envelope';
 import { handleSourceQuery } from '../routes/data';
+import { listSources } from '../sources/registry';
 import type { AppEnv } from '../types';
 
 // Pay-per-request lane for agents with no account: payment IS the auth, so no
@@ -48,9 +49,17 @@ export const x402Routes = new Hono<AppEnv>()
           : undefined;
     // Built per request: Workers only expose env at request time, and the
     // middleware itself only calls the facilitator when a payment is presented.
+    // Per-source pricing (source.x402PriceUsd, default the platform price) so each
+    // niche can be priced to its value. Built from the registry.
+    const routesConfig = Object.fromEntries(
+      listSources().map((s) => [
+        `/x402/data/${s.slug}`,
+        { price: s.x402PriceUsd || price, network: network as 'base' },
+      ]),
+    );
     const middleware = paymentMiddleware(
       wallet as `0x${string}`,
-      { '/x402/data/*': { price, network: network as 'base' } },
+      routesConfig,
       // @coinbase/x402 and x402-hono ship structurally-identical but nominally
       // distinct FacilitatorConfig types (url: string vs `${string}://${string}`).
       facilitator as Parameters<typeof paymentMiddleware>[2],

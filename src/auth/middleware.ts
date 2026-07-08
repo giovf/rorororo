@@ -7,7 +7,8 @@ interface KeyRecord {
   id: string;
   plan: string;
   revoked_at: string | null;
-  email: string;
+  account_id: string;
+  account_email: string;
 }
 
 // The quota cap derives from the plan (billing/plans.ts planAllowance), so the
@@ -18,22 +19,49 @@ interface KeyRecord {
 // key is the accurate upgrade path (PRD), deliberately not built for v1.
 const KV_TTL_SECONDS = 60;
 
+// Second-tier in-isolate cache behind KV: lets a key this isolate resolved
+// recently keep authenticating through a brief D1 outage on a KV miss (KV TTL is
+// 60s; this is longer). Consulted ONLY when D1 errors, so normal revocation
+// (KV delete → D1 re-read → sees revoked_at) is unaffected. Bounded to cap memory.
+const ISOLATE_TTL_MS = 5 * 60 * 1000;
+const ISOLATE_MAX = 500;
+const isolateCache = new Map<string, { record: KeyRecord; exp: number }>();
+
 export const keyCacheKey = (hash: string): string => `key:${hash}`;
 
 async function lookupKey(env: CloudflareBindings, hash: string): Promise<KeyRecord | null> {
   const cached = await env.CACHE.get<KeyRecord>(keyCacheKey(hash), 'json');
   if (cached) return cached;
 
-  const row = await env.DB.prepare(
-    'SELECT id, plan, revoked_at, email FROM api_keys WHERE key_hash = ?1',
-  )
-    .bind(hash)
-    .first<KeyRecord>();
+  // Entitlement (plan) and the usage subject come from the ACCOUNT, not the key,
+  // so every key under one email shares one plan + quota. LEFT JOIN + COALESCE so
+  // a key with no linked account (shouldn't happen post-0005) still authenticates
+  // off its own row rather than 401'ing.
+  let row: KeyRecord | null;
+  try {
+    row = await env.DB.prepare(
+      `SELECT k.id AS id, k.revoked_at AS revoked_at,
+              COALESCE(a.id, '') AS account_id,
+              COALESCE(a.email, lower(k.email)) AS account_email,
+              COALESCE(a.plan, k.plan) AS plan
+         FROM api_keys k
+         LEFT JOIN accounts a ON a.id = k.account_id
+        WHERE k.key_hash = ?1`,
+    )
+      .bind(hash)
+      .first<KeyRecord>();
+  } catch (err) {
+    // D1 blip on a KV miss: serve a recently-seen key from the isolate cache so a
+    // transient outage doesn't 500 cold-key auth. Cold keys still fail.
+    const fallback = isolateCache.get(hash);
+    if (fallback && fallback.exp > Date.now()) return fallback.record;
+    throw err;
+  }
   if (!row) return null;
 
-  await env.CACHE.put(keyCacheKey(hash), JSON.stringify(row), {
-    expirationTtl: KV_TTL_SECONDS,
-  });
+  await env.CACHE.put(keyCacheKey(hash), JSON.stringify(row), { expirationTtl: KV_TTL_SECONDS });
+  if (isolateCache.size >= ISOLATE_MAX) isolateCache.clear();
+  isolateCache.set(hash, { record: row, exp: Date.now() + ISOLATE_TTL_MS });
   return row;
 }
 
@@ -61,9 +89,10 @@ export function requireApiKey(): MiddlewareHandler<AppEnv> {
 
     const keyCtx: KeyContext = {
       keyId: record.id,
+      accountId: record.account_id,
       plan: record.plan,
       keyHash: hash,
-      usageSubject: record.email.toLowerCase(),
+      usageSubject: record.account_email,
     };
     c.set('keyCtx', keyCtx);
     await next();

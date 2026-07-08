@@ -1,7 +1,11 @@
 import type { z } from 'zod';
 
 export interface RefreshPolicy {
-  /** Cron expression for scheduled refresh (dispatched by the scheduled handler). */
+  /**
+   * Intended refresh cadence (advisory). The platform runs a single daily cron
+   * (wrangler.jsonc) that refreshes every source, so adding a source never
+   * silently skips its refresh regardless of this value.
+   */
   cron: string;
   /** How long cached records stay valid in KV. */
   cacheTtlSeconds: number;
@@ -33,6 +37,10 @@ export interface DataSource<TRecord = unknown> {
   refresh: RefreshPolicy;
   /** Credits debited per request against this source (default 1). */
   creditCost?: number;
+  /** x402 pay-per-request price for this source, e.g. '$0.01' (default: X402_PRICE_USD env / platform default). */
+  x402PriceUsd?: string;
+  /** Per-source REST rate limit for the metered data route (default 60 req / 60s). */
+  rateLimit?: { limit: number; windowSeconds: number };
   /** Pull fresh records from the origin (called by cron refresh / cache miss). */
   fetchFresh(env: CloudflareBindings): Promise<TRecord[]>;
 }

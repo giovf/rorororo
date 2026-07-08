@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Your account — faceless</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--bg:#ffffff;--fg:#16181d;--muted:#5b6472;--line:#e5e8ee;--card:#f6f7f9;--accent:#0b5fff;--accent-fg:#ffffff;--code-bg:#0f172a;--code-fg:#d8e0ee;--ok:#16a34a;--danger:#dc2626}
+@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e8eaef;--muted:#9aa3b2;--line:#262b34;--card:#161a21;--accent:#5b8dff;--accent-fg:#0b0d12;--code-bg:#0b0e14;--code-fg:#c9d4e6}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+main{max-width:760px;margin:0 auto;padding:0 20px 80px}
+header{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto;padding:20px}
+header a{color:var(--muted);text-decoration:none;margin-left:18px}header a:hover{color:var(--fg)}
+.brand{font-weight:700;color:var(--fg) !important;margin:0 !important;letter-spacing:-.02em}
+h1{font-size:1.7rem;letter-spacing:-.02em;margin:36px 0 6px}
+h2{font-size:1.15rem;margin:32px 0 10px}
+.muted{color:var(--muted)}a{color:var(--accent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}
+input[type=email],input[type=text]{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font-size:1rem}
+button{padding:10px 16px;border:0;border-radius:8px;background:var(--accent);color:var(--accent-fg);font-size:.95rem;font-weight:600;cursor:pointer}
+button:hover{filter:brightness(1.08)}button:disabled{opacity:.6;cursor:default}
+button.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
+button.danger{background:transparent;color:var(--danger);border:1px solid var(--line);padding:6px 12px;font-size:.85rem}
+.row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+.spread{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.pill{display:inline-block;padding:2px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-size:.8rem;font-weight:600;text-transform:capitalize}
+.bar{height:8px;border-radius:6px;background:var(--line);overflow:hidden;margin:8px 0}
+.bar>span{display:block;height:100%;background:var(--accent)}
+table{width:100%;border-collapse:collapse;margin-top:6px}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);font-size:.92rem}th{color:var(--muted);font-weight:600;font-size:.82rem}
+.banner{margin:16px 0 0;padding:12px 16px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-size:.95rem}
+.banner.ok{border-color:var(--ok);background:rgba(22,163,74,.09)}
+.banner.err{border-color:var(--danger);background:rgba(220,38,38,.08)}
+.hidden{display:none}
+.plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:6px}
+.plan{border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center}
+.plan b{font-size:1.05rem}.plan .p{color:var(--muted);font-size:.85rem;margin:2px 0 10px}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:100;background:rgba(10,12,16,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:20px}
+.modal.open{display:flex}
+.modal-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;max-width:560px;width:100%;padding:24px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,.4)}
+.modal-close{position:absolute;top:10px;right:12px;background:none;border:0;color:var(--muted);font-size:1.7rem;line-height:1;cursor:pointer;padding:2px 8px;border-radius:8px}
+.modal-close:hover{color:var(--fg)}
+.modal-key{background:var(--code-bg);color:var(--code-fg);border-radius:10px;padding:14px;margin:14px 0;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-all;user-select:all}
+.copied{margin-left:12px;color:var(--ok);font-size:.9rem;font-weight:600}
+body.modal-open{overflow:hidden}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/">faceless</a>
+  <nav>
+    <a href="/">Home</a>
+    <a href="/docs">Docs</a>
+    <a href="#" id="nav-signout" class="hidden">Sign out</a>
+  </nav>
+</header>
+<main>
+  <div id="banner" class="banner hidden" role="status" aria-live="polite"></div>
+
+  <!-- Signed-out: request a magic link -->
+  <section id="signin" class="hidden">
+    <h1>Sign in</h1>
+    <p class="muted">Enter your email and we'll send you a one-time sign-in link — no password.</p>
+    <div class="card">
+      <form id="login-form" class="row">
+        <input type="email" id="login-email" placeholder="you@company.com" required autocomplete="email" style="flex:1;min-width:220px">
+        <button type="submit" id="login-btn">Email me a link</button>
+      </form>
+      <p id="login-msg" class="muted hidden" style="margin:12px 0 0"></p>
+    </div>
+    <p class="muted">No account yet? Signing in creates one. You can also <a href="/#key">grab a free key on the home page</a>.</p>
+  </section>
+
+  <!-- Signed-in dashboard -->
+  <section id="dashboard" class="hidden">
+    <div class="spread">
+      <h1 style="margin-bottom:0">Your account</h1>
+      <span class="muted" id="acct-email"></span>
+    </div>
+
+    <h2>Plan &amp; usage</h2>
+    <div class="card">
+      <div class="spread">
+        <div>Current plan: <span class="pill" id="acct-plan">free</span></div>
+        <div id="billing-actions"></div>
+      </div>
+      <div style="margin-top:12px">
+        <div class="spread"><span class="muted" id="usage-label">Usage this month</span><span class="muted" id="usage-nums"></span></div>
+        <div class="bar"><span id="usage-bar" style="width:0%"></span></div>
+      </div>
+    </div>
+
+    <div id="upgrade" class="hidden">
+      <h2>Upgrade</h2>
+      <p class="muted">One subscription covers every dataset. Credits are shared across the catalog.</p>
+      <div class="plan-grid">
+        <div class="plan"><b>Starter</b><div class="p">5,000 credits / mo</div><button class="buy" data-plan="starter">$29/mo</button></div>
+        <div class="plan"><b>Growth</b><div class="p">20,000 credits / mo</div><button class="buy" data-plan="growth">$99/mo</button></div>
+        <div class="plan"><b>Scale</b><div class="p">100,000 credits / mo</div><button class="buy" data-plan="scale">$299/mo</button></div>
+      </div>
+    </div>
+
+    <h2 class="spread"><span>API keys</span><button id="new-key" class="ghost">Create key</button></h2>
+    <div class="card">
+      <table>
+        <thead><tr><th>Name</th><th>Created</th><th>Status</th><th></th></tr></thead>
+        <tbody id="keys-body"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody>
+      </table>
+      <p class="muted" style="font-size:.82rem;margin:10px 0 0">Keys are shown once at creation and stored only as a hash — we can't display them again. Lost one? Create a new key; it keeps your plan.</p>
+    </div>
+  </section>
+</main>
+
+<!-- New-key reveal modal (shown once) -->
+<div id="key-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="km-title" aria-hidden="true">
+  <div class="modal-card">
+    <button id="km-close" class="modal-close" type="button" aria-label="Close">&times;</button>
+    <h2 id="km-title" style="margin:0 24px 4px 0">Your new API key</h2>
+    <p class="muted" style="margin:.2rem 0 0">Shown once. Copy it now — it can't be recovered after you close this.</p>
+    <div class="modal-key"><code id="km-value"></code></div>
+    <button id="km-copy" type="button">Copy key</button>
+    <span id="km-copied" class="copied" role="status" aria-live="polite"></span>
+  </div>
+</div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const banner = $('banner');
+function showBanner(text, kind) { banner.textContent = text; banner.className = 'banner ' + (kind || ''); banner.classList.remove('hidden'); }
+
+// URL flags from magic-link verify / Stripe redirect, then clean the URL.
+(function () {
+  const p = new URLSearchParams(location.search);
+  if (p.get('error') === 'link_expired') showBanner('That sign-in link was invalid or already used. Request a new one below.', 'err');
+  else if (p.get('checkout') === 'success') showBanner('✅ Payment successful — your plan is active. It may take a few seconds to reflect below.', 'ok');
+  else if (p.get('checkout') === 'cancelled') showBanner('Checkout cancelled — no charge was made.', '');
+  if (p.toString()) history.replaceState(null, '', location.pathname);
+})();
+
+async function api(path, opts) {
+  const res = await fetch(path, Object.assign({ headers: { accept: 'application/json' } }, opts));
+  let body = {}; try { body = await res.json(); } catch {}
+  return { status: res.status, body };
+}
+
+function fmtDate(s) { return s ? String(s).slice(0, 10) : ''; }
+
+function render(d) {
+  $('signin').classList.add('hidden');
+  $('dashboard').classList.remove('hidden');
+  $('nav-signout').classList.remove('hidden');
+  $('acct-email').textContent = d.email;
+  $('acct-plan').textContent = d.plan;
+
+  const pct = d.granted ? Math.min(100, Math.round((d.used / d.granted) * 100)) : 0;
+  $('usage-bar').style.width = pct + '%';
+  $('usage-nums').textContent = `${d.used.toLocaleString()} / ${d.granted.toLocaleString()} credits`;
+
+  const paid = d.plan && d.plan !== 'free';
+  $('upgrade').classList.toggle('hidden', paid);
+  $('billing-actions').innerHTML = paid ? '<button id="manage" class="ghost">Manage billing</button>' : '';
+  if (paid) $('manage').addEventListener('click', () => redirectTo('/v1/account/portal', {}));
+
+  const body = $('keys-body');
+  const active = (d.keys || []).filter((k) => !k.revoked_at);
+  if (!active.length) { body.innerHTML = '<tr><td colspan="4" class="muted">No keys yet — create one.</td></tr>'; return; }
+  body.innerHTML = '';
+  for (const k of active) {
+    const tr = document.createElement('tr');
+    tr.innerHTML = `<td>${k.name ? escapeHtml(k.name) : '<span class="muted">—</span>'}</td><td class="muted">${fmtDate(k.created_at)}</td><td><span class="pill">active</span></td><td style="text-align:right"></td>`;
+    const btn = document.createElement('button'); btn.className = 'danger'; btn.textContent = 'Revoke';
+    btn.addEventListener('click', () => revokeKey(k.id, btn));
+    tr.lastElementChild.appendChild(btn);
+    body.appendChild(tr);
+  }
+}
+function escapeHtml(s) { return s.replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c])); }
+
+async function load() {
+  const { status, body } = await api('/v1/account');
+  if (status === 200 && body.ok) render(body.data);
+  else { $('dashboard').classList.add('hidden'); $('signin').classList.remove('hidden'); $('nav-signout').classList.add('hidden'); }
+}
+
+// --- Sign in ---
+$('login-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = $('login-btn'), msg = $('login-msg');
+  btn.disabled = true; btn.textContent = 'Sending…';
+  const { status, body } = await api('/v1/auth/login', {
+    method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' },
+    body: JSON.stringify({ email: $('login-email').value.trim() }),
+  });
+  msg.classList.remove('hidden');
+  msg.textContent = status === 200 ? '✅ Check your email for a sign-in link (expires in 15 minutes).'
+    : status === 503 ? 'Email sign-in is not configured yet — please try again later.'
+    : (body.error && body.error.message) || 'Something went wrong — please try again.';
+  btn.disabled = false; btn.textContent = 'Email me a link';
+});
+
+$('nav-signout').addEventListener('click', async (e) => { e.preventDefault(); await api('/v1/auth/logout', { method: 'POST' }); location.reload(); });
+
+// --- Billing redirects ---
+async function redirectTo(path, payload) {
+  const { status, body } = await api(path, { method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify(payload) });
+  if (status === 200 && body.ok && body.data.url) { window.location.href = body.data.url; return; }
+  showBanner((body.error && body.error.message) || 'Could not open billing — please try again.', 'err');
+}
+document.querySelectorAll('button.buy').forEach((b) => b.addEventListener('click', () => { b.disabled = true; redirectTo('/v1/account/checkout', { plan: b.dataset.plan }); }));
+
+// --- Create key + reveal modal ---
+const km = $('key-modal'), kmValue = $('km-value'), kmCopied = $('km-copied'); let kmFocus = null;
+function openKeyModal(key) {
+  kmValue.textContent = key; kmCopied.textContent = ''; kmFocus = document.activeElement;
+  km.classList.add('open'); km.setAttribute('aria-hidden', 'false'); document.body.classList.add('modal-open'); $('km-copy').focus();
+}
+function closeKeyModal() {
+  km.classList.remove('open'); km.setAttribute('aria-hidden', 'true'); document.body.classList.remove('modal-open');
+  kmValue.textContent = ''; if (kmFocus && kmFocus.focus) kmFocus.focus(); load();
+}
+$('km-close').addEventListener('click', closeKeyModal);
+km.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeKeyModal(); });
+$('km-copy').addEventListener('click', async () => {
+  try { await navigator.clipboard.writeText(kmValue.textContent); kmCopied.textContent = '✓ Copied'; }
+  catch { const r = document.createRange(); r.selectNodeContents(kmValue); const s = getSelection(); s.removeAllRanges(); s.addRange(r); kmCopied.textContent = 'Press Ctrl/Cmd+C'; }
+});
+$('new-key').addEventListener('click', async () => {
+  const name = prompt('Name this key (optional — e.g. "prod", "laptop"):') || '';
+  const { status, body } = await api('/v1/account/keys', {
+    method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify({ name }),
+  });
+  if (status === 201 && body.ok) openKeyModal(body.data.key);
+  else showBanner((body.error && body.error.message) || 'Could not create key.', 'err');
+});
+
+async function revokeKey(id, btn) {
+  if (!confirm('Revoke this key? Any app using it will stop working immediately.')) return;
+  btn.disabled = true; btn.textContent = 'Revoking…';
+  const { status } = await api('/v1/account/keys/' + encodeURIComponent(id), { method: 'DELETE' });
+  if (status === 200) load(); else { btn.disabled = false; btn.textContent = 'Revoke'; showBanner('Could not revoke that key.', 'err'); }
+}
+
+load();
+</script>
+</body>
+</html>
