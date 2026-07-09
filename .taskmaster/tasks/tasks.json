@@ -1089,10 +1089,11 @@
         "description": "Fill the crawl-surface gaps agents and AI crawlers use: public/robots.txt (allow all, explicitly name GPTBot/ClaudeBot/PerplexityBot, disallow /account), public/sitemap.xml, OpenGraph tags + schema.org/WebAPI JSON-LD on index.html and docs.html, and info.contact + externalDocs in src/lib/openapi.ts. Context: docs/AGENT-DISCOVERY.md action item 2.",
         "details": "",
         "testStrategy": "",
-        "status": "pending",
+        "status": "done",
         "dependencies": [],
         "priority": "medium",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2026-07-09T22:22:04.933Z"
       },
       {
         "id": "28",
@@ -1100,19 +1101,20 @@
         "description": "Prep (do NOT publish — operator executes, ask-first): author server.json named com.gankdat/gankdat with remotes[{type:streamable-http,url:https://gankdat.com/mcp}] and Authorization header declared isRequired+isSecret; generate Ed25519 keypair and host proof at public/.well-known/mcp-registry-auth; verify Workers Assets serves the .well-known path. Depends on task 26 (introspection) being live for aggregator indexing. Context: docs/AGENT-DISCOVERY.md action item 3.",
         "details": "",
         "testStrategy": "",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           "26"
         ],
         "priority": "medium",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2026-07-09T22:25:42.000Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-09T22:18:37.099Z",
+      "lastModified": "2026-07-09T22:25:42.001Z",
       "taskCount": 28,
-      "completedCount": 24,
+      "completedCount": 26,
       "tags": [
         "master"
       ]

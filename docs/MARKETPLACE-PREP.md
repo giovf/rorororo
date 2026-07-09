@@ -29,13 +29,43 @@ input schema mirrors a source's `queryParams` and calls `/v1/data/:source`,
 charging per-result ("pay per event"). Defer building until validation says
 this channel matters.
 
+## Official MCP Registry (registry.modelcontextprotocol.io)
+
+Prep is DONE (task 28, 2026-07-09):
+
+- `server.json` at the repo root — name `com.gankdat/gankdat`, remote
+  streamable-http `https://gankdat.com/mcp`, Authorization header declared
+  `isRequired`+`isSecret`. Validates against the 2025-12-11 schema.
+- Domain proof served at `https://gankdat.com/.well-known/mcp-registry-auth`
+  (Ed25519, verified served by Workers Assets).
+- **Private signing key**: `mcp-registry-key.pem` at the repo root,
+  gitignored. Copy it to the password manager — if this devcontainer is
+  wiped, regenerate the pair and redeploy the proof file before publishing.
+
+Publish day (operator executes — external submission, ask-first):
+
+```bash
+# install: brew install mcp-publisher, or a release binary from
+# github.com/modelcontextprotocol/registry
+PRIVATE_KEY="$(openssl pkey -in mcp-registry-key.pem -noout -text | grep -A3 'priv:' | tail -n +2 | tr -d ' :\n')"
+mcp-publisher login http --domain gankdat.com --private-key "${PRIVATE_KEY}"
+mcp-publisher publish   # reads ./server.json
+```
+
+Notes: registry is in preview (data resets possible — just re-publish); bump
+`server.json` `version` alongside APP_VERSION; aggregators syndicate from
+this registry, so publish here first.
+
 ## MCP directories (PulseMCP, Glama, Smithery, etc.)
 
-- Endpoint: `https://<domain>/mcp` (Streamable HTTP), auth = bearer key.
+- Endpoint: `https://gankdat.com/mcp` (Streamable HTTP), bearer key for
+  tools/call; `initialize`/`tools/list` are anonymous since task 26, so
+  directory crawlers can index the tools without a key.
 - Server name `gankdat`; tools: `list_sources`, `get_usage`,
   `query_uk_planning`, `query_uk_tenders`.
-- Most directories want a GitHub repo link + README — the repo is private
-  until the operator publishes it (their call).
+- Most directories syndicate from the official registry (publish there
+  first, then claim the listing); Glama also takes a GitHub repo link — the
+  repo is private until the operator publishes it (their call).
 
 ## x402 discovery
 
