@@ -904,13 +904,119 @@
         "recommendedSubtasks": 3,
         "expansionPrompt": "Split into: (1) .github/workflows/ci.yml — check job running npm ci, lint, typecheck, test, build on push/PR (mirroring the exact scripts already in package.json), plus a main-only deploy job via wrangler-action that skips gracefully when CLOUDFLARE_API_TOKEN is absent (secret-existence guard, since GitHub Actions can't reference secrets in `if:` directly — use an env intermediary), and .github/dependabot.yml for weekly npm + actions updates; (2) docs/RUNBOOK.md — weekly checklist with copy-paste-tested commands (refresh_log failure query via wrangler d1 execute, log scan, Stripe glance), UptimeRobot on /v1/health, secret rotation via wrangler secret put, D1 export cadence, KV consistency caveats with the DO upgrade path, waitlist export, and the pivot triggers; (3) docs/MARKETPLACE-PREP.md mapping RapidAPI/Apify listing requirements to existing endpoints (/openapi.json, key auth, tiers), verified against current publisher docs, explicitly documentation-only. Every runbook command must be dry-run executable locally before the doc ships.",
         "updatedAt": "2026-07-06T15:59:27.474Z"
+      },
+      {
+        "id": "13",
+        "title": "Stripe live cutover: create live products/prices",
+        "description": "Run scripts/stripe-setup.mjs with the live key: gankdat Starter/Growth/Scale, monthly prices with lookup keys, tax code txcd_10103001",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2026-07-09T13:23:12.302Z"
+      },
+      {
+        "id": "14",
+        "title": "Stripe live cutover: live webhook endpoint",
+        "description": "Create live-mode webhook endpoint at https://gankdat.com/v1/billing/webhook with same events as test; capture signing secret",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [
+          "13"
+        ],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2026-07-09T13:24:09.346Z"
+      },
+      {
+        "id": "15",
+        "title": "Stripe live cutover: swap prod Worker secrets",
+        "description": "wrangler secret put STRIPE_SECRET_KEY (live) and STRIPE_WEBHOOK_SECRET (live whsec)",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [
+          "14"
+        ],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2026-07-09T13:24:14.719Z"
+      },
+      {
+        "id": "16",
+        "title": "Stripe live cutover: clean test billing residue in prod D1",
+        "description": "DELETE stripe_customers rows (test-mode customer ids), reset accounts.plan to free, purge key: KV cache entries",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [
+          "15"
+        ],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2026-07-09T13:24:44.883Z"
+      },
+      {
+        "id": "17",
+        "title": "Stripe live cutover: verify + real-card smoke test",
+        "description": "Verify live prices resolvable by lookup_key, webhook enabled, support email set; user subscribes with real card then cancels/refunds",
+        "details": "",
+        "testStrategy": "",
+        "status": "in-progress",
+        "dependencies": [
+          "16"
+        ],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2026-07-09T13:24:46.789Z"
+      },
+      {
+        "id": "18",
+        "title": "Multi-currency GBP-default pricing",
+        "description": "Recreate plan prices with GBP as default currency + USD/EUR currency_options (transfer lookup keys, deactivate old USD prices), test + live mode. GBP 23/79/239, USD 29/99/299, EUR 27/92/279",
+        "details": "",
+        "testStrategy": "",
+        "status": "in-progress",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2026-07-09T15:24:27.405Z"
+      },
+      {
+        "id": "19",
+        "title": "Saver tier: £5 / 1,000 calls monthly",
+        "description": "Add saver plan to plans.json, quota allowances, Stripe products (test+live), landing pricing table, account upgrade grid",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [
+          "18"
+        ],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": "20",
+        "title": "GBP-first pricing UI + checkout verification",
+        "description": "Landing shows GBP primary with auto-currency note; verify checkout presents GBP from UK; tests green",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [
+          "19"
+        ],
+        "priority": "high",
+        "subtasks": []
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-06T15:59:27.474Z",
-      "taskCount": 12,
-      "completedCount": 12,
+      "lastModified": "2026-07-09T15:24:27.405Z",
+      "taskCount": 20,
+      "completedCount": 16,
       "tags": [
         "master"
       ]

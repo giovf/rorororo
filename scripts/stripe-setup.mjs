@@ -19,9 +19,26 @@ const displayName = (key) => key.charAt(0).toUpperCase() + key.slice(1);
 const PLANS = Object.entries(paidPlans).map(([key, p]) => ({
   name: displayName(key),
   lookupKey: p.lookupKey,
+  gbp: p.gbpPerMonth,
   usd: p.usdPerMonth,
+  eur: p.eurPerMonth,
   credits: p.credits,
 }));
+
+// GBP is the default currency (UK-based operator); USD/EUR ride along as
+// currency_options and Checkout auto-selects by customer location.
+const priceBody = (plan, productId) => ({
+  product: productId,
+  currency: 'gbp',
+  unit_amount: plan.gbp * 100,
+  currency_options: {
+    usd: { unit_amount: plan.usd * 100 },
+    eur: { unit_amount: plan.eur * 100 },
+  },
+  recurring: { interval: 'month' },
+  lookup_key: plan.lookupKey,
+  metadata: { credits: String(plan.credits) },
+});
 
 const key = process.env.STRIPE_SECRET_KEY;
 if (!key) {
@@ -40,11 +57,21 @@ const existing = await stripe.prices.list({
   lookup_keys: PLANS.map((p) => p.lookupKey),
   limit: 100,
 });
-const existingKeys = new Set(existing.data.map((p) => p.lookup_key));
+const byLookup = new Map(existing.data.map((p) => [p.lookup_key, p]));
 
 for (const plan of PLANS) {
-  if (existingKeys.has(plan.lookupKey)) {
-    console.log(`= ${plan.lookupKey} already exists, skipping`);
+  const current = byLookup.get(plan.lookupKey);
+  if (current && current.currency === 'gbp') {
+    console.log(`= ${plan.lookupKey} already GBP-default, skipping`);
+    continue;
+  }
+  if (current) {
+    // Currency migration: a Price's currency is immutable, so mint a fresh
+    // GBP-default price on the SAME product, move the lookup key to it, and
+    // retire the old price (existing subscriptions keep working on it).
+    await stripe.prices.create({ ...priceBody(plan, current.product), transfer_lookup_key: true });
+    await stripe.prices.update(current.id, { active: false });
+    console.log(`~ migrated ${plan.lookupKey} to GBP default (£${plan.gbp}/mo), old price retired`);
     continue;
   }
   const product = await stripe.products.create({
@@ -54,14 +81,7 @@ for (const plan of PLANS) {
     tax_code: 'txcd_10103001',
     metadata: { credits: String(plan.credits) },
   });
-  await stripe.prices.create({
-    product: product.id,
-    unit_amount: plan.usd * 100,
-    currency: 'usd',
-    recurring: { interval: 'month' },
-    lookup_key: plan.lookupKey,
-    metadata: { credits: String(plan.credits) },
-  });
-  console.log(`+ created ${plan.name} ($${plan.usd}/mo, ${plan.credits} credits)`);
+  await stripe.prices.create(priceBody(plan, product.id));
+  console.log(`+ created ${plan.name} (£${plan.gbp}/mo, ${plan.credits} credits)`);
 }
 console.log('Done. Point STRIPE_WEBHOOK_SECRET at a webhook for /v1/billing/webhook.');

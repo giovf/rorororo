@@ -10,7 +10,11 @@ export interface PaidPlan {
   lookupKey: string;
   /** Monthly credit allowance for this plan (resets each period). */
   credits: number;
+  /** GBP is the price's default currency (UK-based); USD/EUR are Stripe
+   *  currency_options that Checkout auto-selects by customer location. */
+  gbpPerMonth: number;
   usdPerMonth: number;
+  eurPerMonth: number;
 }
 
 export const FREE_PLAN = 'free';
