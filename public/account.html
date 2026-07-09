@@ -42,7 +42,10 @@ th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);font-s
 .modal-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;max-width:560px;width:100%;padding:24px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,.4)}
 .modal-close{position:absolute;top:10px;right:12px;background:none;border:0;color:var(--muted);font-size:1.7rem;line-height:1;cursor:pointer;padding:2px 8px;border-radius:8px}
 .modal-close:hover{color:var(--fg)}
-.modal-key{background:var(--code-bg);color:var(--code-fg);border-radius:10px;padding:14px;margin:14px 0;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;word-break:break-all;user-select:all}
+.modal-key{background:var(--code-bg);color:var(--code-fg);border-radius:10px;padding:14px;margin:14px 0;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;display:flex;align-items:flex-start;gap:10px}
+.modal-key code{flex:1;word-break:break-all;user-select:all}
+.icon-btn{flex:none;background:transparent;border:0;color:var(--code-fg);opacity:.7;cursor:pointer;padding:4px;border-radius:6px;line-height:0}
+.icon-btn:hover{opacity:1;background:rgba(255,255,255,.1)}
 .copied{margin-left:12px;color:var(--ok);font-size:.9rem;font-weight:600}
 body.modal-open{overflow:hidden}
 </style>
@@ -113,15 +116,29 @@ body.modal-open{overflow:hidden}
   </section>
 </main>
 
-<!-- New-key reveal modal (shown once) -->
+<!-- Create-key modal: name it (optional), then the one-time reveal -->
 <div id="key-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="km-title" aria-hidden="true">
   <div class="modal-card">
     <button id="km-close" class="modal-close" type="button" aria-label="Close">&times;</button>
-    <h2 id="km-title" style="margin:0 24px 4px 0">Your new API key</h2>
-    <p class="muted" style="margin:.2rem 0 0">Shown once. Copy it now — it can't be recovered after you close this.</p>
-    <div class="modal-key"><code id="km-value"></code></div>
-    <button id="km-copy" type="button">Copy key</button>
-    <span id="km-copied" class="copied" role="status" aria-live="polite"></span>
+    <div id="km-create">
+      <h2 id="km-title" style="margin:0 24px 4px 0">Create API key</h2>
+      <p class="muted" style="margin:.2rem 0 0">Name it so you can tell your keys apart later (optional).</p>
+      <form id="km-form" class="row" style="margin-top:14px">
+        <input type="text" id="km-name" placeholder='e.g. "prod", "laptop"' maxlength="100" style="flex:1;min-width:200px">
+        <button type="submit" id="km-submit">Create key</button>
+      </form>
+    </div>
+    <div id="km-reveal" class="hidden">
+      <h2 style="margin:0 24px 4px 0">Your new API key</h2>
+      <p class="muted" style="margin:.2rem 0 0">Shown once. Copy it now — it can't be recovered after you close this.</p>
+      <div class="modal-key">
+        <code id="km-value"></code>
+        <button id="km-copy" class="icon-btn" type="button" aria-label="Copy key" title="Copy key">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+      </div>
+      <span id="km-copied" class="copied" role="status" aria-live="polite"></span>
+    </div>
   </div>
 </div>
 
@@ -210,30 +227,41 @@ async function redirectTo(path, payload) {
 }
 document.querySelectorAll('button.buy').forEach((b) => b.addEventListener('click', () => { b.disabled = true; redirectTo('/v1/account/checkout', { plan: b.dataset.plan }); }));
 
-// --- Create key + reveal modal ---
-const km = $('key-modal'), kmValue = $('km-value'), kmCopied = $('km-copied'); let kmFocus = null;
-function openKeyModal(key) {
-  kmValue.textContent = key; kmCopied.textContent = ''; kmFocus = document.activeElement;
-  km.classList.add('open'); km.setAttribute('aria-hidden', 'false'); document.body.classList.add('modal-open'); $('km-copy').focus();
+// --- Create key + reveal modal (two states: name form → one-time reveal) ---
+const km = $('key-modal'), kmValue = $('km-value'), kmCopied = $('km-copied');
+let kmFocus = null, kmRevealed = false;
+function openKeyModal() {
+  $('km-create').classList.remove('hidden'); $('km-reveal').classList.add('hidden');
+  $('km-name').value = ''; kmCopied.textContent = ''; kmRevealed = false; kmFocus = document.activeElement;
+  km.classList.add('open'); km.setAttribute('aria-hidden', 'false'); document.body.classList.add('modal-open'); $('km-name').focus();
 }
 function closeKeyModal() {
   km.classList.remove('open'); km.setAttribute('aria-hidden', 'true'); document.body.classList.remove('modal-open');
-  kmValue.textContent = ''; if (kmFocus && kmFocus.focus) kmFocus.focus(); load();
+  kmValue.textContent = ''; if (kmFocus && kmFocus.focus) kmFocus.focus();
+  if (kmRevealed) load(); // refresh the key table only when a key was actually created
 }
 $('km-close').addEventListener('click', closeKeyModal);
 km.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeKeyModal(); });
+$('km-form').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const btn = $('km-submit'); btn.disabled = true; btn.textContent = 'Creating…';
+  const { status, body } = await api('/v1/account/keys', {
+    method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' },
+    body: JSON.stringify({ name: $('km-name').value.trim() }),
+  });
+  btn.disabled = false; btn.textContent = 'Create key';
+  if (status === 201 && body.ok) {
+    kmRevealed = true; kmValue.textContent = body.data.key;
+    $('km-create').classList.add('hidden'); $('km-reveal').classList.remove('hidden'); $('km-copy').focus();
+  } else {
+    closeKeyModal(); showBanner((body.error && body.error.message) || 'Could not create key.', 'err');
+  }
+});
 $('km-copy').addEventListener('click', async () => {
   try { await navigator.clipboard.writeText(kmValue.textContent); kmCopied.textContent = '✓ Copied'; }
   catch { const r = document.createRange(); r.selectNodeContents(kmValue); const s = getSelection(); s.removeAllRanges(); s.addRange(r); kmCopied.textContent = 'Press Ctrl/Cmd+C'; }
 });
-$('new-key').addEventListener('click', async () => {
-  const name = prompt('Name this key (optional — e.g. "prod", "laptop"):') || '';
-  const { status, body } = await api('/v1/account/keys', {
-    method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify({ name }),
-  });
-  if (status === 201 && body.ok) openKeyModal(body.data.key);
-  else showBanner((body.error && body.error.message) || 'Could not create key.', 'err');
-});
+$('new-key').addEventListener('click', openKeyModal);
 
 async function revokeKey(id, btn) {
   if (!confirm('Revoke this key? Any app using it will stop working immediately.')) return;
