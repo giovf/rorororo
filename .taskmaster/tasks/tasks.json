@@ -1059,13 +1059,60 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-07-09T20:50:18.967Z"
+      },
+      {
+        "id": "25",
+        "title": "Security backlog from 2026-07-09 pentest (deferred low-risk items)",
+        "description": "4-agent pentest + live probing found NO Critical/High. Fixed in c50e109: security headers, login-CSRF (same-origin POST /verify), per-account rate limits + key cap, per-email login cap, scoped CORS, links.next host check, page bound, scoped revoke UPDATE. DEFERRED (documented, low risk): (1) email canonicalization to stop plus-address free-tier farming — product tradeoff, harms legit plus users, revisit if abuse appears; (2) revoked key can auth up to 5min during a simultaneous D1 outage (isolate cache) — deliberate resilience tradeoff, add KV revocation tombstone if needed; (3) magic-token get-then-delete non-atomic KV race — narrow window, interstitial already blocks the prefetch vector; (4) COALESCE(account_id,'') latent shared-scope for account-less keys — not reachable post-0005; (5) Turnstile on /login (needs widget in account.html + TURNSTILE_SECRET_KEY); (6) full script-src CSP (needs inline-script refactor or nonces); (7) negative-cache invalid keys / pre-auth IP limit for auth-flood cost; (8) Blind-Mode test-lock so a future .passthrough() can't silently leak personal fields; (9) session rotation / shorter idle TTL.",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "low",
+        "subtasks": []
+      },
+      {
+        "id": "26",
+        "title": "MCP discoverability: anonymous initialize/tools-list + WWW-Authenticate",
+        "description": "Unblock registry/directory introspection of /mcp (Glama, Smithery, official MCP Registry aggregators): allow unauthenticated MCP initialize and tools/list; keep tools/call bearer-key-gated; return WWW-Authenticate: Bearer on the 401; add per-IP rate limit for anonymous MCP traffic. Auth/API-surface contract change. Context: docs/AGENT-DISCOVERY.md action item 1.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-07-09T22:18:37.099Z"
+      },
+      {
+        "id": "27",
+        "title": "Static agent-discovery surface: robots.txt, sitemap.xml, OG/JSON-LD, OpenAPI contact",
+        "description": "Fill the crawl-surface gaps agents and AI crawlers use: public/robots.txt (allow all, explicitly name GPTBot/ClaudeBot/PerplexityBot, disallow /account), public/sitemap.xml, OpenGraph tags + schema.org/WebAPI JSON-LD on index.html and docs.html, and info.contact + externalDocs in src/lib/openapi.ts. Context: docs/AGENT-DISCOVERY.md action item 2.",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": "28",
+        "title": "Official MCP Registry publish prep: server.json + /.well-known/mcp-registry-auth",
+        "description": "Prep (do NOT publish — operator executes, ask-first): author server.json named com.gankdat/gankdat with remotes[{type:streamable-http,url:https://gankdat.com/mcp}] and Authorization header declared isRequired+isSecret; generate Ed25519 keypair and host proof at public/.well-known/mcp-registry-auth; verify Workers Assets serves the .well-known path. Depends on task 26 (introspection) being live for aggregator indexing. Context: docs/AGENT-DISCOVERY.md action item 3.",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [
+          "26"
+        ],
+        "priority": "medium",
+        "subtasks": []
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-09T20:50:18.967Z",
-      "taskCount": 24,
-      "completedCount": 23,
+      "lastModified": "2026-07-09T22:18:37.099Z",
+      "taskCount": 28,
+      "completedCount": 24,
       "tags": [
         "master"
       ]

@@ -4,14 +4,19 @@ Listings happen **after** Stage 0 niche validation (out of v1 scope, per the
 PRD). This maps what each channel needs to what already exists, so listing day
 is copy-paste, not engineering.
 
+> See `AGENT-DISCOVERY.md` (2026-07-09) for the wider agent-discovery
+> landscape: official MCP Registry publish flow, x402 Bazaar auto-cataloging,
+> Claude Connectors Directory requirements, and the code-side gaps
+> (Taskmaster 26–28).
+
 ## RapidAPI
 
 | They need                | We have                                                        |
 | ------------------------ | -------------------------------------------------------------- |
 | OpenAPI import           | `/openapi.json` (3.1; RapidAPI may want 3.0 — downconvert then) |
 | Auth model               | Header `Authorization: Bearer <key>` (they proxy their own keys → create one `rapidapi@` key per plan, or keep direct keys and use their "external" billing mode) |
-| Pricing tiers            | Free 250/mo, $29/$99/$299 — mirrors `src/billing/plans.ts`     |
-| Base URL                 | production Workers URL (domain pending, open question #3)      |
+| Pricing tiers            | Free 250/mo; saver £5/1k, starter £23/5k, growth £79/20k, scale £239/100k — mirrors `src/billing/plans.json` |
+| Base URL                 | `https://gankdat.com`                                          |
 | Description/assets       | reuse landing copy + `llms.txt` summary                        |
 
 Caveat: RapidAPI proxies requests and takes ~20–25% — per the blueprint, use
@@ -40,8 +45,8 @@ this channel matters.
 
 ## Pre-listing checklist (all blocked on launch config, none on code)
 
-- [ ] Domain purchased and Worker routed (open question #3)
-- [ ] Stripe live mode + real prices (ask-first)
+- [x] Domain purchased and Worker routed — gankdat.com (2026-07-08)
+- [x] Stripe live mode + real prices (2026-07-09)
 - [ ] `FIXTURE_FALLBACK=false` in production
 - [ ] UptimeRobot monitor green for 2+ weeks (runbook)
 - [ ] Stage 0 validation threshold met (20+ signups or 5 pre-commits)
