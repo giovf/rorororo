@@ -28,8 +28,9 @@ if (!key) {
   console.error('Set STRIPE_SECRET_KEY (test mode: sk_test_...) and re-run.');
   process.exit(1);
 }
-if (!key.startsWith('sk_test_')) {
+if (!key.startsWith('sk_test_') && process.env.STRIPE_ALLOW_LIVE !== '1') {
   console.error('Refusing non-test key: live-mode object creation is ask-first (CLAUDE.md).');
+  console.error('If the operator has explicitly approved, re-run with STRIPE_ALLOW_LIVE=1.');
   process.exit(1);
 }
 
