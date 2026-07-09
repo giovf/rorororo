@@ -230,7 +230,11 @@ function buildDocument(baseUrl: string): JsonObject {
         `Clean-JSON access to ${catalog} — one schema across every dataset, from ` +
         'official open-data feeds. Built for developers and AI agents (native MCP + x402). ' +
         'Blind Mode: no personal data is stored or served.',
+      // Directory importers (RapidAPI et al.) and spec crawlers read these.
+      contact: { name: 'gankdat', url: baseUrl },
+      termsOfService: `${baseUrl}/terms`,
     },
+    externalDocs: { description: 'Quickstart, interactive reference, llms.txt', url: `${baseUrl}/docs` },
     servers: [{ url: baseUrl, description: 'Production' }],
     tags: [
       { name: 'platform', description: 'Health and discovery' },

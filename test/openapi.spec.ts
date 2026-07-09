@@ -4,6 +4,8 @@ import { listSources } from '../src/sources/registry';
 
 type OpenApiDocument = {
   openapi: string;
+  info: { contact?: { url?: string }; termsOfService?: string };
+  externalDocs?: { url?: string };
   paths: Record<string, { get?: { parameters?: { name: string; schema: { type?: string; format?: string } }[] } }>;
   components: {
     securitySchemes: Record<string, { type: string; scheme?: string }>;
@@ -22,6 +24,13 @@ describe('GET /openapi.json', () => {
     expect(res.status).toBe(200);
     expect(res.headers.get('Cache-Control')).toContain('max-age');
     expect(doc.openapi).toMatch(/^3\.1\./);
+  });
+
+  it('carries discovery metadata for spec crawlers and directory importers', async () => {
+    const { doc } = await fetchDocument();
+    expect(doc.info.contact?.url).toBeTruthy();
+    expect(doc.info.termsOfService).toContain('/terms');
+    expect(doc.externalDocs?.url).toContain('/docs');
   });
 
   it('has a path for every registered source, generated from the registry', async () => {
