@@ -82,12 +82,23 @@ footer a{color:var(--fg)}
 @keyframes rise{to{transform:translateY(-30px);opacity:0}}
 .tp{position:fixed;width:6px;height:6px;background:var(--green);pointer-events:none;z-index:9998;animation:tfade .5s linear forwards}
 @keyframes tfade{to{opacity:0;transform:scale(.3)}}
-#blockcur{position:fixed;width:10px;height:18px;background:var(--green);pointer-events:none;display:none;z-index:9999;animation:blink 1.1s steps(1) infinite;mix-blend-mode:screen}
-html.fx-block, html.fx-block *{cursor:none !important}
+#blockcur{position:fixed;width:10px;height:18px;background:var(--green);pointer-events:none;display:none;z-index:9999;mix-blend-mode:screen}
+html.fx-nocursor, html.fx-nocursor *{cursor:none !important}
 #spotcv{position:fixed;inset:0;pointer-events:none;display:none;z-index:9997}
 .xh{position:fixed;background:rgba(0,255,65,.25);pointer-events:none;display:none;z-index:9997}
 #xhv{width:1px;top:0;bottom:0}#xhh{height:1px;left:0;right:0}
 #xhc{position:fixed;font:.66rem var(--mono);color:var(--green);pointer-events:none;display:none;z-index:9999;background:rgba(10,10,10,.85);padding:1px 6px;border:1px solid var(--border)}
+.dripc{position:fixed;font:700 .72rem var(--mono);color:var(--green);pointer-events:none;z-index:9998;animation:dripfall .7s linear forwards}
+@keyframes dripfall{to{transform:translateY(26px);opacity:0}}
+#lockbox{position:fixed;width:34px;height:34px;pointer-events:none;display:none;z-index:9998}
+#lockbox i{position:absolute;width:9px;height:9px;border:0 solid var(--green)}
+#lockbox i:nth-child(1){top:0;left:0;border-top-width:2px;border-left-width:2px}
+#lockbox i:nth-child(2){top:0;right:0;border-top-width:2px;border-right-width:2px}
+#lockbox i:nth-child(3){bottom:0;left:0;border-bottom-width:2px;border-left-width:2px}
+#lockbox i:nth-child(4){bottom:0;right:0;border-bottom-width:2px;border-right-width:2px}
+#glitchA{position:fixed;width:10px;height:18px;background:var(--green);pointer-events:none;display:none;z-index:9999}
+#glitchB{position:fixed;width:10px;height:18px;background:var(--magenta);pointer-events:none;display:none;z-index:9998;opacity:.7}
+#racc{position:fixed;width:26px;height:24px;pointer-events:none;display:none;z-index:9999;image-rendering:pixelated}
 @media (prefers-reduced-motion:reduce){.cursor{animation:none}#fxroll{display:none}}
 </style>
 </head>
@@ -264,40 +275,79 @@ html.fx-block, html.fx-block *{cursor:none !important}
   const xhv = Object.assign(document.createElement('div'), { id: 'xhv', className: 'xh' });
   const xhh = Object.assign(document.createElement('div'), { id: 'xhh', className: 'xh' });
   const xhc = Object.assign(document.createElement('div'), { id: 'xhc' });
-  document.body.append(blockcur, spotcv, xhv, xhh, xhc);
+  const lockbox = Object.assign(document.createElement('div'), { id: 'lockbox' });
+  lockbox.innerHTML = '<i></i><i></i><i></i><i></i>';
+  const glitchA = Object.assign(document.createElement('div'), { id: 'glitchA' });
+  const glitchB = Object.assign(document.createElement('div'), { id: 'glitchB' });
+  const racc = Object.assign(document.createElement('img'), { id: 'racc', src: '/icon-raccoon.svg', alt: '' });
+  document.body.append(blockcur, spotcv, xhv, xhh, xhc, lockbox, glitchA, glitchB, racc);
   const sctx = spotcv.getContext('2d');
   function fit() { spotcv.width = innerWidth; spotcv.height = innerHeight; }
   fit(); addEventListener('resize', fit);
 
-  let fx = '', lastTrail = 0;
+  // cursor-replacing effects hide the real pointer; the replacement never blinks
+  const NOCURSOR = new Set(['block', 'glitch', 'racc']);
+  let fx = '', lastTrail = 0, lastDrip = 0;
+  let mx = innerWidth / 2, my = innerHeight / 2;   // live pointer
+  let lx = mx, ly = my, rx = mx, ry = my;          // lagged followers (lock, raccoon)
+  const DRIPCHARS = '01{}$;<>/#'.split('');
+
   function setFx(name) {
     fx = name;
-    document.documentElement.classList.toggle('fx-block', fx === 'block');
+    document.documentElement.classList.toggle('fx-nocursor', NOCURSOR.has(fx));
     blockcur.style.display = fx === 'block' ? 'block' : 'none';
     spotcv.style.display = fx === 'spot' ? 'block' : 'none';
     xhv.style.display = xhh.style.display = xhc.style.display = fx === 'xhair' ? 'block' : 'none';
+    lockbox.style.display = fx === 'lock' ? 'block' : 'none';
+    glitchA.style.display = glitchB.style.display = fx === 'glitch' ? 'block' : 'none';
+    racc.style.display = fx === 'racc' ? 'block' : 'none';
     if (fx !== 'spot') sctx.clearRect(0, 0, spotcv.width, spotcv.height);
   }
   document.addEventListener('mousemove', (e) => {
-    const x = e.clientX, y = e.clientY;
-    if (fx === 'block') { blockcur.style.left = (x - 2) + 'px'; blockcur.style.top = (y - 4) + 'px'; }
+    mx = e.clientX; my = e.clientY;
+    if (fx === 'block') { blockcur.style.left = (mx - 2) + 'px'; blockcur.style.top = (my - 4) + 'px'; }
     else if (fx === 'trail' && performance.now() - lastTrail > 28) {
       lastTrail = performance.now();
       const t = document.createElement('div');
-      t.className = 'tp'; t.style.left = (x - 3) + 'px'; t.style.top = (y - 3) + 'px';
+      t.className = 'tp'; t.style.left = (mx - 3) + 'px'; t.style.top = (my - 3) + 'px';
       document.body.appendChild(t); setTimeout(() => t.remove(), 520);
     } else if (fx === 'spot') {
       sctx.clearRect(0, 0, spotcv.width, spotcv.height);
-      const g = sctx.createRadialGradient(x, y, 0, x, y, 190);
+      const g = sctx.createRadialGradient(mx, my, 0, mx, my, 190);
       g.addColorStop(0, 'rgba(0,255,65,.09)'); g.addColorStop(.5, 'rgba(0,255,65,.03)'); g.addColorStop(1, 'rgba(0,255,65,0)');
       sctx.fillStyle = g; sctx.fillRect(0, 0, spotcv.width, spotcv.height);
     } else if (fx === 'xhair') {
-      xhv.style.left = x + 'px'; xhh.style.top = y + 'px';
-      xhc.style.left = (x + 12) + 'px'; xhc.style.top = (y + 12) + 'px';
-      xhc.textContent = '[' + x + ',' + y + ']';
+      xhv.style.left = mx + 'px'; xhh.style.top = my + 'px';
+      xhc.style.left = (mx + 12) + 'px'; xhc.style.top = (my + 12) + 'px';
+      xhc.textContent = '[' + mx + ',' + my + ']';
+    } else if (fx === 'drip' && performance.now() - lastDrip > 46) {
+      lastDrip = performance.now();
+      const d = document.createElement('div');
+      d.className = 'dripc';
+      d.textContent = DRIPCHARS[Math.floor(Math.random() * DRIPCHARS.length)];
+      d.style.left = (mx + (Math.random() * 14 - 7)) + 'px'; d.style.top = (my + 6) + 'px';
+      document.body.appendChild(d); setTimeout(() => d.remove(), 720);
     }
   });
-  const ROULETTE = [['block', 'BLOCK CURSOR'], ['trail', 'PIXEL TRAIL'], ['spot', 'SPOTLIGHT'], ['xhair', 'CROSSHAIR'], ['', 'BACK TO NORMAL']];
+  // rAF loop drives the lagged/jittery effects (lock, glitch, raccoon)
+  (function raf() {
+    if (fx === 'lock') {
+      lx += (mx - lx) * 0.22; ly += (my - ly) * 0.22;
+      lockbox.style.left = (lx - 17) + 'px'; lockbox.style.top = (ly - 17) + 'px';
+    } else if (fx === 'glitch') {
+      const jx = Math.random() < 0.12 ? (Math.random() * 4 - 2) : 0;
+      const jy = Math.random() < 0.12 ? (Math.random() * 4 - 2) : 0;
+      glitchA.style.left = (mx - 2 + jx) + 'px'; glitchA.style.top = (my - 4 + jy) + 'px';
+      glitchB.style.left = (mx - 2 - jx + (Math.random() < 0.08 ? 4 : 2)) + 'px';
+      glitchB.style.top = (my - 4 - jy) + 'px';
+    } else if (fx === 'racc') {
+      rx += (mx - rx) * 0.35; ry += (my - ry) * 0.35;
+      racc.style.left = (rx - 4) + 'px'; racc.style.top = (ry - 3) + 'px';
+    }
+    requestAnimationFrame(raf);
+  })();
+  const ROULETTE = [['block', 'BLOCK CURSOR'], ['trail', 'PIXEL TRAIL'], ['spot', 'SPOTLIGHT'], ['xhair', 'CROSSHAIR'],
+    ['drip', 'CODE DRIP'], ['lock', 'TARGET LOCK'], ['glitch', 'GLITCH'], ['racc', 'RACCOON'], ['', 'BACK TO NORMAL']];
   const roll = document.getElementById('fxroll');
   if (roll && !reduced) roll.addEventListener('click', (e) => {
     e.stopPropagation();
