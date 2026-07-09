@@ -12,7 +12,7 @@ Agents find tools through six channels. Ranked by leverage-per-effort for us:
 
 | # | Channel | How it finds us | Effort | Status |
 |---|---------|-----------------|--------|--------|
-| 1 | **Official MCP Registry** (registry.modelcontextprotocol.io) | We publish a `server.json`; aggregators (Glama, PulseMCP, …) syndicate from it | Low — no public repo needed for remote servers | Prep done (task 28); publish is operator-gated |
+| 1 | **Official MCP Registry** (registry.modelcontextprotocol.io) | We publish a `server.json`; aggregators (Glama, PulseMCP, …) syndicate from it | Low — no public repo needed for remote servers | **Published 2026-07-09** (v0.1.0, active) |
 | 2 | **x402 Bazaar / Agentic.Market / x402scan** | **Automatic** — CDP facilitator catalogs the route on first mainnet settlement (`discoverable: true` is already our default) | Zero code | Waiting on first real settlement |
 | 3 | **Web search by agents** | Agents search like humans, then read `llms.txt` / `/docs` / `openapi.json` | Low — fill static-surface gaps | Shipped (task 27) |
 | 4 | **MCP directories** (Glama ~20k servers, PulseMCP 18k+, Smithery) | Crawl + form submission; they introspect `tools/list` | Low | Unblocked (task 26); listing is operator-gated |

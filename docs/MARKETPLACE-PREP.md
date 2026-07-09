@@ -31,7 +31,12 @@ this channel matters.
 
 ## Official MCP Registry (registry.modelcontextprotocol.io)
 
-Prep is DONE (task 28, 2026-07-09):
+**PUBLISHED 2026-07-09**: `com.gankdat/gankdat` v0.1.0, status `active`
+(operator-executed via `mcp-publisher login http` + `publish`; binary at
+`~/.local/bin/mcp-publisher`). Re-publish after any preview-period data
+reset, and bump `server.json` `version` alongside APP_VERSION.
+
+Prep artifacts (task 28, 2026-07-09):
 
 - `server.json` at the repo root — name `com.gankdat/gankdat`, remote
   streamable-http `https://gankdat.com/mcp`, Authorization header declared
