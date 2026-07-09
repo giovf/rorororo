@@ -37,11 +37,33 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   prod — never in `.env` (that's for CLI tooling only) and never committed.
 - Personal data from sources is dropped at ingest (Blind Mode) — never stored.
 
-## Workflow
-- Use Taskmaster for breaking down work. Before implementing any non-trivial
-  feature, check `task-master next` or read `.taskmaster/tasks/tasks.json`.
-- Update task status with `task-master set-status --id <id> --status done` as
-  you complete each one.
+## Sources of truth & drift control
+- Architecture: `docs/ARCHITECTURE.md` (auto-loaded below; the stable summary).
+  Volatile detail: `.taskmaster/docs/prd.md`. Work plan: `.taskmaster/tasks/tasks.json`.
+- If a task conflicts with ARCHITECTURE.md, reconcile BEFORE implementing —
+  usually by fixing the task; change the architecture doc only when the code
+  genuinely changes a contract (data model, API surface, auth, billing).
+- Architecture-doc edits are surgical and land in their own
+  `docs(architecture):` commit stating what changed and why — git is the
+  change log. Then note it on the driving task (`task-master update-subtask`
+  or the commit ref in the task description).
+- **Same-commit rule**: a code change that alters anything ARCHITECTURE.md,
+  the privacy policy, or the terms describe updates those docs in the same
+  commit/PR. Drift is a bug.
+
+## Workflow — when to create a Taskmaster task
+- **Task required (create it BEFORE coding):** new modules/routes/sources;
+  contract changes (zod schemas, D1 migrations, `wrangler.jsonc`,
+  `plans.json`, API surface, auth/billing flows); refactors >~50 lines across
+  files. Manual form works everywhere:
+  `task-master add-task --title="..." --description="..."`.
+- **No task needed:** typos/formatting, config tweaks without behavior
+  change, spikes not meant to be committed, fixes <~30 lines in one private
+  function, docs-only edits.
+- In doubt → create the task. One Taskmaster row is near-free; untracked work
+  breaks the audit trail.
+- Check `task-master next` when picking up work; `task-master set-status
+  --id <id> --status done` as you finish.
 - Don't commit `node_modules/`, `.taskmaster/reports/`, or anything in
   `.gitignore`.
 
