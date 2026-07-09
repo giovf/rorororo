@@ -35,7 +35,17 @@ async function signIn(email: string): Promise<string> {
   const token = await latestMagicToken();
   vi.unstubAllGlobals();
 
-  const verify = await SELF.fetch(`${BASE}/v1/auth/verify?token=${token}`, { redirect: 'manual' });
+  // GET shows a confirm page (no session yet); the same-origin POST signs in.
+  const page = await SELF.fetch(`${BASE}/v1/auth/verify?token=${token}`);
+  expect(page.status).toBe(200);
+  expect(page.headers.get('set-cookie')).toBeNull();
+
+  const verify = await SELF.fetch(`${BASE}/v1/auth/verify`, {
+    method: 'POST',
+    headers: { 'content-type': 'application/x-www-form-urlencoded', 'Sec-Fetch-Site': 'same-origin' },
+    body: `token=${token}`,
+    redirect: 'manual',
+  });
   expect(verify.status).toBe(302);
   expect(verify.headers.get('location')).toContain('/account');
   const setCookie = verify.headers.get('set-cookie') ?? '';
@@ -107,7 +117,15 @@ describe('magic-link auth + account API', () => {
   });
 
   it('rejects an invalid or reused magic token', async () => {
-    const bad = await SELF.fetch(`${BASE}/v1/auth/verify?token=deadbeef`, { redirect: 'manual' });
+    const post = (token: string) =>
+      SELF.fetch(`${BASE}/v1/auth/verify`, {
+        method: 'POST',
+        headers: { 'content-type': 'application/x-www-form-urlencoded', 'Sec-Fetch-Site': 'same-origin' },
+        body: `token=${token}`,
+        redirect: 'manual',
+      });
+
+    const bad = await post('deadbeef');
     expect(bad.status).toBe(302);
     expect(bad.headers.get('location')).toContain('error=link_expired');
 
@@ -120,9 +138,41 @@ describe('magic-link auth + account API', () => {
     const token = await latestMagicToken();
     vi.unstubAllGlobals();
 
-    const first = await SELF.fetch(`${BASE}/v1/auth/verify?token=${token}`, { redirect: 'manual' });
+    const first = await post(token);
     expect(first.headers.get('location')).toContain('/account');
-    const second = await SELF.fetch(`${BASE}/v1/auth/verify?token=${token}`, { redirect: 'manual' });
+    const second = await post(token);
     expect(second.headers.get('location')).toContain('error=link_expired'); // single-use
+  });
+
+  it('blocks login-CSRF: a cross-site POST to /verify does not create a session', async () => {
+    stubResend();
+    await SELF.fetch(`${BASE}/v1/auth/login`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json' },
+      body: JSON.stringify({ email: 'attacker@example.com' }),
+    });
+    const token = await latestMagicToken();
+    vi.unstubAllGlobals();
+
+    // Attacker auto-submits their own token from another origin.
+    const res = await SELF.fetch(`${BASE}/v1/auth/verify`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/x-www-form-urlencoded', 'Sec-Fetch-Site': 'cross-site' },
+      body: `token=${token}`,
+      redirect: 'manual',
+    });
+    expect(res.status).toBe(302);
+    expect(res.headers.get('location')).toContain('error=link_expired');
+    expect(res.headers.get('set-cookie')).toBeNull(); // no session minted
+
+    // The token was NOT consumed — a legitimate same-origin POST still works.
+    const ok = await SELF.fetch(`${BASE}/v1/auth/verify`, {
+      method: 'POST',
+      headers: { 'content-type': 'application/x-www-form-urlencoded', 'Sec-Fetch-Site': 'same-origin' },
+      body: `token=${token}`,
+      redirect: 'manual',
+    });
+    expect(ok.headers.get('location')).toContain('/account');
+    expect(ok.headers.get('set-cookie')).toContain('fapi_session=');
   });
 });

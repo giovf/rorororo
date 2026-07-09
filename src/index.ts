@@ -1,6 +1,7 @@
 import { Hono } from 'hono';
 import { cors } from 'hono/cors';
 import { requestId } from 'hono/request-id';
+import { secureHeaders } from 'hono/secure-headers';
 import { requireApiKey } from './auth/middleware';
 import { errorHandler, notFoundHandler } from './lib/envelope';
 import { meterCredits } from './metering/middleware';
@@ -25,7 +26,32 @@ const app = new Hono<AppEnv>();
 
 app.use('*', requestId());
 app.use('*', structuredLogger());
-app.use('*', cors());
+// Dynamic-response hardening (JSON API). Static HTML gets the same via
+// public/_headers, which the Workers Assets pipeline serves without the Worker.
+app.use(
+  '*',
+  secureHeaders({
+    xFrameOptions: 'DENY',
+    xContentTypeOptions: 'nosniff',
+    referrerPolicy: 'strict-origin-when-cross-origin',
+    strictTransportSecurity: 'max-age=63072000; includeSubDomains',
+    contentSecurityPolicy: { frameAncestors: ["'none'"] },
+    // The API is not framed and serves JSON — no need for the default CSP that
+    // would also constrain script/style on our own pages.
+    xXssProtection: false,
+  }),
+);
+// CORS: allow cross-origin reads of the PUBLIC, bearer-or-payment-authed API
+// (data, openapi, mcp, x402) so third-party sites/agents can call it. Cookie-
+// authed routes (/v1/auth, /v1/account) and the Stripe webhook are deliberately
+// EXCLUDED — same-origin only — so a future credentials:true can never open them.
+// Never combine origin-reflection with credentials on the account routes.
+const publicCors = cors();
+app.use('/v1/data/*', publicCors);
+app.use('/v1/health', publicCors);
+app.use('/openapi.json', publicCors);
+app.use('/mcp/*', publicCors);
+app.use('/x402/*', publicCors);
 
 // Public: /v1/health, /openapi.json, key issuance, and the sources listing
 // (GET /v1/data — discovery must work before signup). Authed: per-source data
@@ -34,13 +60,15 @@ app.use('*', cors());
 app.use('/v1/data/:source', requireApiKey());
 // Per-source rate limit (source.rateLimit, default 60/60s) so a high-value niche
 // can be throttled independently — resolved per request from the registry.
+// Throttle by ACCOUNT (usageSubject), not keyId: quota is per-account, so keying
+// the limit on the key would let one account mint many keys to multiply its rate.
 app.use('/v1/data/:source', (c, next) => {
   const cfg = getSource(c.req.param('source') ?? '')?.rateLimit ?? { limit: 60, windowSeconds: 60 };
   return rateLimit({
     scope: 'data',
     limit: cfg.limit,
     windowSeconds: cfg.windowSeconds,
-    identify: (ctx) => ctx.get('keyCtx')?.keyId ?? 'anonymous',
+    identify: (ctx) => ctx.get('keyCtx')?.usageSubject ?? ctx.get('keyCtx')?.keyId ?? 'anonymous',
   })(c, next);
 });
 app.use('/v1/data/:source', meterCredits());

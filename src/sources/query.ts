@@ -2,7 +2,7 @@ import { z } from 'zod';
 import type { DataSource } from './types';
 
 export const paginationShape = {
-  page: z.coerce.number().int().min(1).default(1),
+  page: z.coerce.number().int().min(1).max(100000).default(1),
   per_page: z.coerce.number().int().min(1).max(100).default(25),
 };
 

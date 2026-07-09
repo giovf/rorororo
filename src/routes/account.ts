@@ -35,6 +35,20 @@ export const accountRoutes = new Hono<AppEnv>()
   // returned exactly once.
   .post('/keys', async (c) => {
     const acct = c.get('accountCtx')!;
+    // Cap active keys per account: keys are free to mint and rate limiting is
+    // per-account, but an unbounded count is a footgun (KV/D1 growth, harder
+    // key hygiene). 25 is generous for real use.
+    const { count } = (await c.env.DB.prepare(
+      'SELECT COUNT(*) AS count FROM api_keys WHERE account_id = ?1 AND revoked_at IS NULL',
+    )
+      .bind(acct.accountId)
+      .first<{ count: number }>()) ?? { count: 0 };
+    if (count >= 25) {
+      return c.json(
+        failure('bad_request', 'Key limit reached (25 active). Revoke an unused key first.'),
+        400,
+      );
+    }
     const raw = (await c.req.json().catch(() => ({}))) as { name?: unknown };
     const name = typeof raw.name === 'string' ? raw.name.trim().slice(0, 100) || null : null;
     const id = crypto.randomUUID();
@@ -58,8 +72,12 @@ export const accountRoutes = new Hono<AppEnv>()
       .bind(c.req.param('id'), acct.accountId)
       .first<{ key_hash: string }>();
     if (!row) return c.json(failure('not_found', 'No active key with that id on this account'), 404);
-    await c.env.DB.prepare("UPDATE api_keys SET revoked_at = datetime('now') WHERE id = ?1")
-      .bind(c.req.param('id'))
+    // Scope the write to the account too (not just the preceding SELECT) so the
+    // ownership boundary is enforced by the mutation itself, defence-in-depth.
+    await c.env.DB.prepare(
+      "UPDATE api_keys SET revoked_at = datetime('now') WHERE id = ?1 AND account_id = ?2",
+    )
+      .bind(c.req.param('id'), acct.accountId)
       .run();
     await c.env.CACHE.delete(keyCacheKey(row.key_hash));
     return c.json(success({ revoked: true }));

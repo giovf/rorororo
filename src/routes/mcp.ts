@@ -19,7 +19,9 @@ export const mcpRoute = new Hono<AppEnv>().post(
     scope: 'mcp',
     limit: 60,
     windowSeconds: 60,
-    identify: (c) => c.get('keyCtx')?.keyId ?? 'anonymous',
+    // Per-account (see index.ts): quota is per-account, so keying on the key
+    // would let one account mint many keys to multiply its effective rate.
+    identify: (c) => c.get('keyCtx')?.usageSubject ?? c.get('keyCtx')?.keyId ?? 'anonymous',
   }),
   async (c) => {
     const server = buildMcpServer(c.env, c.get('keyCtx')!);

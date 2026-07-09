@@ -108,7 +108,16 @@ async function fetchFromOrigin(): Promise<UkTendersRecord[]> {
     if (!res.ok) throw new Error(`find-tender.service.gov.uk responded ${res.status}`);
     const page = packageSchema.parse(await res.json());
     records.push(...mapReleases(page.releases));
-    const next = page.links?.next;
+    let next = page.links?.next;
+    // Only follow pagination that stays on the official origin host — a
+    // compromised/MITM'd feed can't redirect our crawler to an arbitrary host.
+    if (next) {
+      try {
+        if (new URL(next).host !== new URL(ORIGIN_URL).host) next = undefined;
+      } catch {
+        next = undefined;
+      }
+    }
     if (!next || page.releases.length === 0 || records.length >= MAX_RECORDS) {
       if (next && records.length >= MAX_RECORDS) {
         console.log(

@@ -1,0 +1,9 @@
+# Security headers for static assets (served by the Workers Assets pipeline,
+# which bypasses the Worker — so these are set here, mirroring the Hono
+# secureHeaders() config in src/index.ts for dynamic responses).
+/*
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Content-Security-Policy: frame-ancestors 'none'
+  Strict-Transport-Security: max-age=63072000; includeSubDomains
