@@ -965,13 +965,13 @@
         "description": "Verify live prices resolvable by lookup_key, webhook enabled, support email set; user subscribes with real card then cancels/refunds",
         "details": "",
         "testStrategy": "",
-        "status": "in-progress",
+        "status": "done",
         "dependencies": [
           "16"
         ],
         "priority": "high",
         "subtasks": [],
-        "updatedAt": "2026-07-09T13:24:46.789Z"
+        "updatedAt": "2026-07-09T15:51:15.209Z"
       },
       {
         "id": "18",
@@ -979,11 +979,11 @@
         "description": "Recreate plan prices with GBP as default currency + USD/EUR currency_options (transfer lookup keys, deactivate old USD prices), test + live mode. GBP 23/79/239, USD 29/99/299, EUR 27/92/279",
         "details": "",
         "testStrategy": "",
-        "status": "in-progress",
+        "status": "done",
         "dependencies": [],
         "priority": "high",
         "subtasks": [],
-        "updatedAt": "2026-07-09T15:24:27.405Z"
+        "updatedAt": "2026-07-09T15:28:34.934Z"
       },
       {
         "id": "19",
@@ -991,12 +991,13 @@
         "description": "Add saver plan to plans.json, quota allowances, Stripe products (test+live), landing pricing table, account upgrade grid",
         "details": "",
         "testStrategy": "",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           "18"
         ],
         "priority": "high",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2026-07-09T15:28:37.190Z"
       },
       {
         "id": "20",
@@ -1004,19 +1005,20 @@
         "description": "Landing shows GBP primary with auto-currency note; verify checkout presents GBP from UK; tests green",
         "details": "",
         "testStrategy": "",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           "19"
         ],
         "priority": "high",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2026-07-09T15:51:17.200Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-09T15:24:27.405Z",
+      "lastModified": "2026-07-09T15:51:17.200Z",
       "taskCount": 20,
-      "completedCount": 16,
+      "completedCount": 20,
       "tags": [
         "master"
       ]
