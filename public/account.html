@@ -7,56 +7,72 @@
 <title>Your account — gankdat</title>
 <meta name="robots" content="noindex">
 <style>
-:root{--bg:#ffffff;--fg:#16181d;--muted:#5b6472;--line:#e5e8ee;--card:#f6f7f9;--accent:#0b5fff;--accent-fg:#ffffff;--code-bg:#0f172a;--code-fg:#d8e0ee;--ok:#16a34a;--danger:#dc2626}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e8eaef;--muted:#9aa3b2;--line:#262b34;--card:#161a21;--accent:#5b8dff;--accent-fg:#0b0d12;--code-bg:#0b0e14;--code-fg:#c9d4e6}}
-*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+:root{--bg:#0A0A0A;--panel:#111315;--panel2:#16191C;--green:#00FF41;--magenta:#FF007F;--border:#2A2E33;--fg:#E6E8EA;--muted:#8B9299;--amber:#FFBD2E;
+--sans:Inter,Geist,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box;border-radius:0}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 var(--sans)}
 main{max-width:760px;margin:0 auto;padding:0 20px 80px}
-header{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto;padding:20px}
-header a{color:var(--muted);text-decoration:none;margin-left:18px}header a:hover{color:var(--fg)}
-.brand{font-weight:700;color:var(--fg) !important;margin:0 !important;letter-spacing:-.02em}
-h1{font-size:1.7rem;letter-spacing:-.02em;margin:36px 0 6px}
-h2{font-size:1.15rem;margin:32px 0 10px}
-.muted{color:var(--muted)}a{color:var(--accent)}
-.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin:14px 0}
-input[type=email],input[type=text]{width:100%;padding:11px 14px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg);font-size:1rem}
-button{padding:10px 16px;border:0;border-radius:8px;background:var(--accent);color:var(--accent-fg);font-size:.95rem;font-weight:600;cursor:pointer}
-button:hover{filter:brightness(1.08)}button:disabled{opacity:.6;cursor:default}
-button.ghost{background:transparent;color:var(--accent);border:1px solid var(--line)}
-button.danger{background:transparent;color:var(--danger);border:1px solid var(--line);padding:6px 12px;font-size:.85rem}
+header{display:flex;justify-content:space-between;align-items:center;max-width:760px;margin:0 auto;padding:18px 20px;border-bottom:1px solid var(--border)}
+header a{color:var(--muted);text-decoration:none;margin-left:18px;font:.85rem var(--mono)}
+header a:hover{color:var(--green)}
+.brand{display:flex;align-items:center;gap:10px;font:700 1rem var(--mono);color:var(--fg) !important;margin:0 !important}
+.brand img{width:22px;height:20px;image-rendering:pixelated}
+.brand b{color:var(--green)}
+h1{font:800 1.7rem var(--sans);letter-spacing:-.02em;margin:36px 0 6px}
+h2{font:700 .78rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:34px 0 10px}
+h2::before{content:"// ";color:var(--green)}
+.muted{color:var(--muted)}a{color:var(--green)}
+.card{background:var(--panel);border:1px solid var(--border);padding:18px;margin:14px 0}
+input[type=email],input[type=text]{width:100%;padding:11px 14px;border:1px solid var(--border);background:var(--panel2);color:var(--fg);font:.92rem var(--mono)}
+input:focus{outline:none;border-color:var(--green);box-shadow:0 0 14px rgba(0,255,65,.15)}
+input::placeholder{color:var(--muted)}
+button{padding:10px 16px;border:1px solid var(--green);background:var(--green);color:#0A0A0A;font:600 .85rem var(--mono);cursor:pointer}
+button:hover{box-shadow:0 0 18px rgba(0,255,65,.3)}
+button:disabled{opacity:.55;cursor:default;box-shadow:none}
+button.ghost{background:transparent;color:var(--green)}
+button.ghost:hover{background:rgba(0,255,65,.06);box-shadow:none}
+button.danger{background:transparent;color:var(--magenta);border-color:var(--magenta);padding:5px 11px;font-size:.75rem}
+button.danger:hover{background:rgba(255,0,127,.07);box-shadow:none}
 .row{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
 .spread{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
-.pill{display:inline-block;padding:2px 10px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-size:.8rem;font-weight:600;text-transform:capitalize}
-.bar{height:8px;border-radius:6px;background:var(--line);overflow:hidden;margin:8px 0}
-.bar>span{display:block;height:100%;background:var(--accent)}
-table{width:100%;border-collapse:collapse;margin-top:6px}
-th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--line);font-size:.92rem}th{color:var(--muted);font-weight:600;font-size:.82rem}
-.banner{margin:16px 0 0;padding:12px 16px;border-radius:10px;border:1px solid var(--line);background:var(--card);font-size:.95rem}
-.banner.ok{border-color:var(--ok);background:rgba(22,163,74,.09)}
-.banner.err{border-color:var(--danger);background:rgba(220,38,38,.08)}
+.pill{display:inline-block;padding:2px 10px;border:1px solid var(--green);color:var(--green);font:600 .72rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
+.pill::before{content:"[ "}
+.pill::after{content:" ]"}
+.bar{height:12px;border:1px solid var(--border);background:var(--panel2);overflow:hidden;margin:8px 0;padding:2px}
+.bar>span{display:block;height:100%;background:repeating-linear-gradient(90deg,var(--green) 0 8px,transparent 8px 11px)}
+table{width:100%;border-collapse:collapse;margin-top:6px;font:.85rem var(--mono)}
+th,td{text-align:left;padding:9px 8px;border-bottom:1px solid var(--border)}
+th{color:var(--muted);font:700 .68rem var(--mono);text-transform:uppercase;letter-spacing:.1em}
+.banner{margin:16px 0 0;padding:12px 16px;border:1px solid var(--border);background:var(--panel);font:.85rem var(--mono)}
+.banner.ok{border-color:var(--green);background:rgba(0,255,65,.05)}
+.banner.err{border-color:var(--magenta);background:rgba(255,0,127,.05)}
 .hidden{display:none}
-.plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:6px}
-.plan{border:1px solid var(--line);border-radius:10px;padding:14px;text-align:center}
-.plan b{font-size:1.05rem}.plan .p{color:var(--muted);font-size:.85rem;margin:2px 0 10px}
-.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:100;background:rgba(10,12,16,.55);-webkit-backdrop-filter:blur(6px);backdrop-filter:blur(6px);padding:20px}
+.plan-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin-top:6px}
+.plan{background:var(--panel);padding:16px 14px;text-align:center}
+.plan b{font:700 .8rem var(--mono);text-transform:lowercase}
+.plan b::before{content:"> ";color:var(--green)}
+.plan .p{color:var(--muted);font:.72rem var(--mono);margin:4px 0 12px}
+.plan button{width:100%}
+.modal{position:fixed;inset:0;display:none;align-items:center;justify-content:center;z-index:100;background:rgba(5,6,8,.75);padding:20px}
 .modal.open{display:flex}
-.modal-card{background:var(--bg);border:1px solid var(--line);border-radius:14px;max-width:560px;width:100%;padding:24px;position:relative;box-shadow:0 24px 70px rgba(0,0,0,.4)}
-.modal-close{position:absolute;top:10px;right:12px;background:none;border:0;color:var(--muted);font-size:1.7rem;line-height:1;cursor:pointer;padding:2px 8px;border-radius:8px}
-.modal-close:hover{color:var(--fg)}
-.modal-key{background:var(--code-bg);color:var(--code-fg);border-radius:10px;padding:14px;margin:14px 0;font:14px/1.5 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;display:flex;align-items:flex-start;gap:10px}
-.modal-key code{flex:1;word-break:break-all;user-select:all}
-.icon-btn{flex:none;background:transparent;border:0;color:var(--code-fg);opacity:.7;cursor:pointer;padding:4px;border-radius:6px;line-height:0}
-.icon-btn:hover{opacity:1;background:rgba(255,255,255,.1)}
-.copied{margin-left:12px;color:var(--ok);font-size:.9rem;font-weight:600}
+.modal-card{background:var(--panel);border:1px solid var(--border);max-width:560px;width:100%;padding:24px;position:relative;box-shadow:0 0 60px rgba(0,255,65,.07)}
+.modal-close{position:absolute;top:8px;right:10px;background:none;border:0;color:var(--muted);font-size:1.6rem;line-height:1;cursor:pointer;padding:2px 8px}
+.modal-close:hover{color:var(--fg);box-shadow:none}
+.modal-key{background:#050608;border:1px solid var(--border);padding:0;margin:14px 0;display:flex;align-items:stretch}
+.modal-key code{flex:1;padding:13px 14px;font:13.5px/1.5 var(--mono);color:var(--fg);word-break:break-all;user-select:all}
+.icon-btn{flex:none;background:var(--panel2);border:0;border-left:1px solid var(--border);color:var(--green);cursor:pointer;padding:0 14px;line-height:0}
+.icon-btn:hover{background:rgba(0,255,65,.08);box-shadow:none}
+.copied{margin-left:12px;color:var(--green);font:600 .8rem var(--mono)}
 body.modal-open{overflow:hidden}
 </style>
 </head>
 <body>
 <header>
-  <a class="brand" href="/">gankdat</a>
+  <a class="brand" href="/"><img src="/icon-raccoon.svg" alt=""><span><b>&gt;_</b> gankdat</span></a>
   <nav>
-    <a href="/">Home</a>
-    <a href="/docs">Docs</a>
-    <a href="#" id="nav-signout" class="hidden">Sign out</a>
+    <a href="/">/home</a>
+    <a href="/docs">/docs</a>
+    <a href="#" id="nav-signout" class="hidden">sign out</a>
   </nav>
 </header>
 <main>
@@ -65,13 +81,13 @@ body.modal-open{overflow:hidden}
   <!-- Signed-out: request a magic link -->
   <section id="signin" class="hidden">
     <h1>Sign in</h1>
-    <p class="muted">Enter your email and we'll send you a one-time sign-in link — no password.</p>
+    <p class="muted">Enter your email and we'll send a one-time sign-in link — no password.</p>
     <div class="card">
       <form id="login-form" class="row">
         <input type="email" id="login-email" placeholder="you@company.com" required autocomplete="email" style="flex:1;min-width:220px">
-        <button type="submit" id="login-btn">Email me a link</button>
+        <button type="submit" id="login-btn">send magic link</button>
       </form>
-      <p id="login-msg" class="muted hidden" style="margin:12px 0 0"></p>
+      <p id="login-msg" class="muted hidden" style="margin:12px 0 0;font-family:var(--mono);font-size:.82rem"></p>
     </div>
     <p class="muted">No account yet? Signing in creates one — keys are managed right here.</p>
   </section>
@@ -80,40 +96,40 @@ body.modal-open{overflow:hidden}
   <section id="dashboard" class="hidden">
     <div class="spread">
       <h1 style="margin-bottom:0">Your account</h1>
-      <span class="muted" id="acct-email"></span>
+      <span class="muted" id="acct-email" style="font-family:var(--mono);font-size:.85rem"></span>
     </div>
 
-    <h2>Plan &amp; usage</h2>
+    <h2>plan &amp; usage</h2>
     <div class="card">
       <div class="spread">
         <div>Current plan: <span class="pill" id="acct-plan">free</span></div>
         <div id="billing-actions"></div>
       </div>
       <div style="margin-top:12px">
-        <div class="spread"><span class="muted" id="usage-label">Usage this month</span><span class="muted" id="usage-nums"></span></div>
+        <div class="spread"><span class="muted" id="usage-label" style="font-family:var(--mono);font-size:.78rem">usage this month</span><span class="muted" id="usage-nums" style="font-family:var(--mono);font-size:.78rem"></span></div>
         <div class="bar"><span id="usage-bar" style="width:0%"></span></div>
       </div>
     </div>
 
     <div id="upgrade" class="hidden">
-      <h2>Upgrade</h2>
+      <h2>upgrade</h2>
       <p class="muted">One subscription covers every dataset. Credits are shared across the catalog.</p>
       <div class="plan-grid">
-        <div class="plan"><b>Saver</b><div class="p">1,000 credits / mo</div><button class="buy" data-plan="saver">£5/mo</button></div>
-        <div class="plan"><b>Starter</b><div class="p">5,000 credits / mo</div><button class="buy" data-plan="starter">£23/mo</button></div>
-        <div class="plan"><b>Growth</b><div class="p">20,000 credits / mo</div><button class="buy" data-plan="growth">£79/mo</button></div>
-        <div class="plan"><b>Scale</b><div class="p">100,000 credits / mo</div><button class="buy" data-plan="scale">£239/mo</button></div>
+        <div class="plan"><b>saver</b><div class="p">1,000 credits / mo</div><button class="buy" data-plan="saver">£5/mo</button></div>
+        <div class="plan"><b>starter</b><div class="p">5,000 credits / mo</div><button class="buy" data-plan="starter">£23/mo</button></div>
+        <div class="plan"><b>growth</b><div class="p">20,000 credits / mo</div><button class="buy" data-plan="growth">£79/mo</button></div>
+        <div class="plan"><b>scale</b><div class="p">100,000 credits / mo</div><button class="buy" data-plan="scale">£239/mo</button></div>
       </div>
-      <p class="muted" style="font-size:.82rem">Prices in GBP; checkout bills USD/EUR automatically if you're outside the UK.</p>
+      <p class="muted" style="font:.72rem var(--mono)">prices in GBP; checkout bills USD/EUR automatically if you're outside the UK.</p>
     </div>
 
-    <h2 class="spread"><span>API keys</span><button id="new-key" class="ghost">Create key</button></h2>
+    <h2 class="spread"><span>api keys</span><button id="new-key" class="ghost">+ create key</button></h2>
     <div class="card">
       <table>
-        <thead><tr><th>Name</th><th>Created</th><th>Status</th><th></th></tr></thead>
-        <tbody id="keys-body"><tr><td colspan="4" class="muted">Loading…</td></tr></tbody>
+        <thead><tr><th>name</th><th>created</th><th>status</th><th></th></tr></thead>
+        <tbody id="keys-body"><tr><td colspan="4" class="muted">loading…</td></tr></tbody>
       </table>
-      <p class="muted" style="font-size:.82rem;margin:10px 0 0">Keys are shown once at creation and stored only as a hash — we can't display them again. Lost one? Create a new key; it keeps your plan.</p>
+      <p class="muted" style="font:.72rem var(--mono);margin:10px 0 0">keys are shown once at creation and stored only as a hash — we can't display them again. lost one? create a new key; it keeps your plan.</p>
     </div>
   </section>
 </main>
@@ -123,16 +139,16 @@ body.modal-open{overflow:hidden}
   <div class="modal-card">
     <button id="km-close" class="modal-close" type="button" aria-label="Close">&times;</button>
     <div id="km-create">
-      <h2 id="km-title" style="margin:0 24px 4px 0">Create API key</h2>
-      <p class="muted" style="margin:.2rem 0 0">Name it so you can tell your keys apart later (optional).</p>
+      <h2 id="km-title" style="margin:0 24px 4px 0">create api key</h2>
+      <p class="muted" style="margin:.2rem 0 0;font-size:.88rem">Name it so you can tell your keys apart later (optional).</p>
       <form id="km-form" class="row" style="margin-top:14px">
         <input type="text" id="km-name" placeholder='e.g. "prod", "laptop"' maxlength="100" style="flex:1;min-width:200px">
-        <button type="submit" id="km-submit">Create key</button>
+        <button type="submit" id="km-submit">create key</button>
       </form>
     </div>
     <div id="km-reveal" class="hidden">
-      <h2 style="margin:0 24px 4px 0">Your new API key</h2>
-      <p class="muted" style="margin:.2rem 0 0">Shown once. Copy it now — it can't be recovered after you close this.</p>
+      <h2 style="margin:0 24px 4px 0">[LOOT SECURED]</h2>
+      <p class="muted" style="margin:.2rem 0 0;font-size:.88rem">Shown once. Copy it now — it can't be recovered after you close this.</p>
       <div class="modal-key">
         <code id="km-value"></code>
         <button id="km-copy" class="icon-btn" type="button" aria-label="Copy key" title="Copy key">
@@ -152,9 +168,9 @@ function showBanner(text, kind) { banner.textContent = text; banner.className = 
 // URL flags from magic-link verify / Stripe redirect, then clean the URL.
 (function () {
   const p = new URLSearchParams(location.search);
-  if (p.get('error') === 'link_expired') showBanner('That sign-in link was invalid or already used. Request a new one below.', 'err');
-  else if (p.get('checkout') === 'success') showBanner('✅ Payment successful — your plan is active. It may take a few seconds to reflect below.', 'ok');
-  else if (p.get('checkout') === 'cancelled') showBanner('Checkout cancelled — no charge was made.', '');
+  if (p.get('error') === 'link_expired') showBanner('[ERR] that sign-in link was invalid or already used. Request a new one below.', 'err');
+  else if (p.get('checkout') === 'success') showBanner('[OK] payment successful — your plan is active. It may take a few seconds to reflect below.', 'ok');
+  else if (p.get('checkout') === 'cancelled') showBanner('[--] checkout cancelled — no charge was made.', '');
   if (p.toString()) history.replaceState(null, '', location.pathname);
 })();
 
@@ -179,17 +195,17 @@ function render(d) {
 
   const paid = d.plan && d.plan !== 'free';
   $('upgrade').classList.toggle('hidden', paid);
-  $('billing-actions').innerHTML = paid ? '<button id="manage" class="ghost">Manage billing</button>' : '';
+  $('billing-actions').innerHTML = paid ? '<button id="manage" class="ghost">manage billing</button>' : '';
   if (paid) $('manage').addEventListener('click', () => redirectTo('/v1/account/portal', {}));
 
   const body = $('keys-body');
   const active = (d.keys || []).filter((k) => !k.revoked_at);
-  if (!active.length) { body.innerHTML = '<tr><td colspan="4" class="muted">No keys yet — create one.</td></tr>'; return; }
+  if (!active.length) { body.innerHTML = '<tr><td colspan="4" class="muted">no keys yet — create one.</td></tr>'; return; }
   body.innerHTML = '';
   for (const k of active) {
     const tr = document.createElement('tr');
     tr.innerHTML = `<td>${k.name ? escapeHtml(k.name) : '<span class="muted">—</span>'}</td><td class="muted">${fmtDate(k.created_at)}</td><td><span class="pill">active</span></td><td style="text-align:right"></td>`;
-    const btn = document.createElement('button'); btn.className = 'danger'; btn.textContent = 'Revoke';
+    const btn = document.createElement('button'); btn.className = 'danger'; btn.textContent = 'revoke';
     btn.addEventListener('click', () => revokeKey(k.id, btn));
     tr.lastElementChild.appendChild(btn);
     body.appendChild(tr);
@@ -207,16 +223,16 @@ async function load() {
 $('login-form').addEventListener('submit', async (e) => {
   e.preventDefault();
   const btn = $('login-btn'), msg = $('login-msg');
-  btn.disabled = true; btn.textContent = 'Sending…';
+  btn.disabled = true; btn.textContent = 'sending…';
   const { status, body } = await api('/v1/auth/login', {
     method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' },
     body: JSON.stringify({ email: $('login-email').value.trim() }),
   });
   msg.classList.remove('hidden');
-  msg.textContent = status === 200 ? '✅ Check your email for a sign-in link (expires in 15 minutes).'
-    : status === 503 ? 'Email sign-in is not configured yet — please try again later.'
-    : (body.error && body.error.message) || 'Something went wrong — please try again.';
-  btn.disabled = false; btn.textContent = 'Email me a link';
+  msg.textContent = status === 200 ? '[OK] check your email for a sign-in link (expires in 15 minutes).'
+    : status === 503 ? '[ERR] email sign-in is not configured yet — please try again later.'
+    : (body.error && body.error.message) || '[ERR] something went wrong — please try again.';
+  btn.disabled = false; btn.textContent = 'send magic link';
 });
 
 $('nav-signout').addEventListener('click', async (e) => { e.preventDefault(); await api('/v1/auth/logout', { method: 'POST' }); location.reload(); });
@@ -225,7 +241,7 @@ $('nav-signout').addEventListener('click', async (e) => { e.preventDefault(); aw
 async function redirectTo(path, payload) {
   const { status, body } = await api(path, { method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' }, body: JSON.stringify(payload) });
   if (status === 200 && body.ok && body.data.url) { window.location.href = body.data.url; return; }
-  showBanner((body.error && body.error.message) || 'Could not open billing — please try again.', 'err');
+  showBanner((body.error && body.error.message) || '[ERR] could not open billing — please try again.', 'err');
 }
 document.querySelectorAll('button.buy').forEach((b) => b.addEventListener('click', () => { b.disabled = true; redirectTo('/v1/account/checkout', { plan: b.dataset.plan }); }));
 
@@ -246,30 +262,30 @@ $('km-close').addEventListener('click', closeKeyModal);
 km.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeKeyModal(); });
 $('km-form').addEventListener('submit', async (e) => {
   e.preventDefault();
-  const btn = $('km-submit'); btn.disabled = true; btn.textContent = 'Creating…';
+  const btn = $('km-submit'); btn.disabled = true; btn.textContent = 'creating…';
   const { status, body } = await api('/v1/account/keys', {
     method: 'POST', headers: { 'content-type': 'application/json', accept: 'application/json' },
     body: JSON.stringify({ name: $('km-name').value.trim() }),
   });
-  btn.disabled = false; btn.textContent = 'Create key';
+  btn.disabled = false; btn.textContent = 'create key';
   if (status === 201 && body.ok) {
     kmRevealed = true; kmValue.textContent = body.data.key;
     $('km-create').classList.add('hidden'); $('km-reveal').classList.remove('hidden'); $('km-copy').focus();
   } else {
-    closeKeyModal(); showBanner((body.error && body.error.message) || 'Could not create key.', 'err');
+    closeKeyModal(); showBanner((body.error && body.error.message) || '[ERR] could not create key.', 'err');
   }
 });
 $('km-copy').addEventListener('click', async () => {
-  try { await navigator.clipboard.writeText(kmValue.textContent); kmCopied.textContent = '✓ Copied'; }
-  catch { const r = document.createRange(); r.selectNodeContents(kmValue); const s = getSelection(); s.removeAllRanges(); s.addRange(r); kmCopied.textContent = 'Press Ctrl/Cmd+C'; }
+  try { await navigator.clipboard.writeText(kmValue.textContent); kmCopied.textContent = '[COPIED]'; }
+  catch { const r = document.createRange(); r.selectNodeContents(kmValue); const s = getSelection(); s.removeAllRanges(); s.addRange(r); kmCopied.textContent = '[CTRL/CMD+C]'; }
 });
 $('new-key').addEventListener('click', openKeyModal);
 
 async function revokeKey(id, btn) {
   if (!confirm('Revoke this key? Any app using it will stop working immediately.')) return;
-  btn.disabled = true; btn.textContent = 'Revoking…';
+  btn.disabled = true; btn.textContent = 'revoking…';
   const { status } = await api('/v1/account/keys/' + encodeURIComponent(id), { method: 'DELETE' });
-  if (status === 200) load(); else { btn.disabled = false; btn.textContent = 'Revoke'; showBanner('Could not revoke that key.', 'err'); }
+  if (status === 200) load(); else { btn.disabled = false; btn.textContent = 'revoke'; showBanner('[ERR] could not revoke that key.', 'err'); }
 }
 
 load();

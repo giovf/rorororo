@@ -6,17 +6,23 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <title>gankdat — Privacy Policy</title>
 <style>
-:root{--bg:#fff;--fg:#16181d;--muted:#5b6472;--line:#e5e8ee;--accent:#0b5fff}
-@media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e8eaef;--muted:#9aa3b2;--line:#262b34;--accent:#5b8dff}}
-body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+:root{--bg:#0A0A0A;--panel:#111315;--green:#00FF41;--magenta:#FF007F;--line:#2A2E33;--fg:#E6E8EA;--muted:#8B9299;--accent:#00FF41;
+--sans:Inter,Geist,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box;border-radius:0}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.7 var(--sans)}
 main{max-width:760px;margin:0 auto;padding:24px 20px 72px}
-h1{letter-spacing:-.02em}h2{margin-top:32px;font-size:1.2rem}h3{font-size:1rem;margin:20px 0 6px}
-a{color:var(--accent)}code{font-family:ui-monospace,Menlo,Consolas,monospace}
-.top{color:var(--muted);font-size:.95rem}.muted{color:var(--muted)}
-.note{border:1px solid var(--line);border-radius:10px;padding:12px 16px;color:var(--muted);font-size:.92rem}
-table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+h1{font:800 1.9rem var(--sans);letter-spacing:-.02em}
+h2{margin-top:34px;font:700 .82rem var(--mono);text-transform:uppercase;letter-spacing:.12em;color:var(--fg)}
+h2::before{content:"// ";color:var(--green)}
+h3{font-size:1rem;margin:20px 0 6px}
+a{color:var(--green)}code{font-family:var(--mono);background:var(--panel);border:1px solid var(--line);padding:1px 5px;font-size:.85em}
+.top{color:var(--muted);font:.82rem var(--mono)}
+.top a{color:var(--muted)}
+.muted{color:var(--muted)}
+.note{border:1px dashed var(--line);padding:12px 16px;color:var(--muted);font:.85rem var(--mono)}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92rem}
 th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
-th{color:var(--muted);font-weight:600;font-size:.85rem}
+th{color:var(--muted);font:700 .72rem var(--mono);text-transform:uppercase;letter-spacing:.08em}
 </style>
 </head>
 <body>
