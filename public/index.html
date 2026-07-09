@@ -74,6 +74,21 @@ footer p{max-width:740px}
 footer a{color:var(--fg)}
 .banner{margin:20px 0 0;padding:12px 16px;border:1px solid var(--border);background:var(--panel);color:var(--fg);font:.85rem var(--mono)}
 .banner.ok{border-color:var(--green);background:rgba(0,255,65,.05)}
+/* --- interactive fx --- */
+#fxroll{margin-left:20px;padding:5px 10px;font:600 .75rem var(--mono);border:1px solid var(--magenta);color:var(--magenta);background:transparent;cursor:pointer;letter-spacing:.04em}
+#fxroll:hover{background:rgba(255,0,127,.08);box-shadow:0 0 14px rgba(255,0,127,.25)}
+@media (hover:none){#fxroll{display:none}}
+.burst{position:fixed;font:700 .72rem var(--mono);color:var(--green);pointer-events:none;z-index:9999;animation:rise .75s ease-out forwards}
+@keyframes rise{to{transform:translateY(-30px);opacity:0}}
+.tp{position:fixed;width:6px;height:6px;background:var(--green);pointer-events:none;z-index:9998;animation:tfade .5s linear forwards}
+@keyframes tfade{to{opacity:0;transform:scale(.3)}}
+#blockcur{position:fixed;width:10px;height:18px;background:var(--green);pointer-events:none;display:none;z-index:9999;animation:blink 1.1s steps(1) infinite;mix-blend-mode:screen}
+html.fx-block, html.fx-block *{cursor:none !important}
+#spotcv{position:fixed;inset:0;pointer-events:none;display:none;z-index:9997}
+.xh{position:fixed;background:rgba(0,255,65,.25);pointer-events:none;display:none;z-index:9997}
+#xhv{width:1px;top:0;bottom:0}#xhh{height:1px;left:0;right:0}
+#xhc{position:fixed;font:.66rem var(--mono);color:var(--green);pointer-events:none;display:none;z-index:9999;background:rgba(10,10,10,.85);padding:1px 6px;border:1px solid var(--border)}
+@media (prefers-reduced-motion:reduce){.cursor{animation:none}#fxroll{display:none}}
 </style>
 </head>
 <body>
@@ -85,12 +100,13 @@ footer a{color:var(--fg)}
     <a href="/llms.txt">/llms.txt</a>
     <a href="#pricing">/pricing</a>
     <a href="/account">/account</a>
+    <button id="fxroll" type="button" title="???">[ do not press ]</button>
   </nav>
 </header>
 <main>
   <div id="checkout-banner" class="banner" style="display:none" role="status" aria-live="polite"></div>
   <span class="tag">[ UK PROCUREMENT · PLANNING · MORE INCOMING ]</span>
-  <h1>Public data is a mess.<br>We <em>gank</em> it for you.<span class="cursor"></span></h1>
+  <h1>Public data is a mess.<br>We <em id="verb">gank</em><span class="cursor"></span> it for you.</h1>
   <p class="sub">Archaic government feeds, extracted and served as fast, clean JSON — one schema, refreshed daily, one key for the whole catalog. Built for developers and AI agents.</p>
   <div class="cta"><a class="btn solid" href="/account">$ get api-key</a><a class="btn" href="/docs">$ man gankdat</a></div>
 
@@ -203,6 +219,99 @@ footer a{color:var(--fg)}
   }
   banner.style.display = 'block';
   history.replaceState(null, '', location.pathname + location.hash);
+})();
+
+// --- interactive fx (desktop flourish; all gated on prefers-reduced-motion) ---
+(function () {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // 1. typewriter hero: the verb gets re-typed on a loop, cursor at the edit point
+  if (!reduced) {
+    const verbs = ['gank', 'yoink', 'liberate', 'extract', 'wrangle', 'normalize'];
+    const el = document.getElementById('verb');
+    let vi = 0;
+    function erase(done) {
+      const t = el.textContent;
+      if (!t.length) return done();
+      el.textContent = t.slice(0, -1);
+      setTimeout(() => erase(done), 38);
+    }
+    function type(word, i) {
+      if (i > word.length) return setTimeout(cycle, 2800);
+      el.textContent = word.slice(0, i);
+      setTimeout(() => type(word, i + 1), 62 + Math.random() * 55);
+    }
+    function cycle() { erase(() => { vi = (vi + 1) % verbs.length; type(verbs[vi], 1); }); }
+    setTimeout(cycle, 3200);
+  }
+
+  // 2. permanent click burst: a random heist verb rises from every click
+  const VERBS = ['GANKED', 'YOINKED', 'LOOTED', 'SWIPED', 'NICKED', 'PINCHED', 'LIFTED',
+    'SNATCHED', 'EXTRACTED', 'LIBERATED', 'ACQUIRED', 'PILFERED', 'PURLOINED', 'FETCHED', 'PARSED', 'CACHED'];
+  if (!reduced) document.addEventListener('click', (e) => {
+    const b = document.createElement('div');
+    b.className = 'burst';
+    b.textContent = '[' + VERBS[Math.floor(Math.random() * VERBS.length)] + ']';
+    b.style.left = (e.clientX - 24) + 'px';
+    b.style.top = (e.clientY - 18) + 'px';
+    document.body.appendChild(b);
+    setTimeout(() => b.remove(), 780);
+  });
+
+  // 3. cursor roulette: [ do not press ] equips a random cursor effect
+  const blockcur = Object.assign(document.createElement('div'), { id: 'blockcur' });
+  const spotcv = Object.assign(document.createElement('canvas'), { id: 'spotcv' });
+  const xhv = Object.assign(document.createElement('div'), { id: 'xhv', className: 'xh' });
+  const xhh = Object.assign(document.createElement('div'), { id: 'xhh', className: 'xh' });
+  const xhc = Object.assign(document.createElement('div'), { id: 'xhc' });
+  document.body.append(blockcur, spotcv, xhv, xhh, xhc);
+  const sctx = spotcv.getContext('2d');
+  function fit() { spotcv.width = innerWidth; spotcv.height = innerHeight; }
+  fit(); addEventListener('resize', fit);
+
+  let fx = '', lastTrail = 0;
+  function setFx(name) {
+    fx = name;
+    document.documentElement.classList.toggle('fx-block', fx === 'block');
+    blockcur.style.display = fx === 'block' ? 'block' : 'none';
+    spotcv.style.display = fx === 'spot' ? 'block' : 'none';
+    xhv.style.display = xhh.style.display = xhc.style.display = fx === 'xhair' ? 'block' : 'none';
+    if (fx !== 'spot') sctx.clearRect(0, 0, spotcv.width, spotcv.height);
+  }
+  document.addEventListener('mousemove', (e) => {
+    const x = e.clientX, y = e.clientY;
+    if (fx === 'block') { blockcur.style.left = (x - 2) + 'px'; blockcur.style.top = (y - 4) + 'px'; }
+    else if (fx === 'trail' && performance.now() - lastTrail > 28) {
+      lastTrail = performance.now();
+      const t = document.createElement('div');
+      t.className = 'tp'; t.style.left = (x - 3) + 'px'; t.style.top = (y - 3) + 'px';
+      document.body.appendChild(t); setTimeout(() => t.remove(), 520);
+    } else if (fx === 'spot') {
+      sctx.clearRect(0, 0, spotcv.width, spotcv.height);
+      const g = sctx.createRadialGradient(x, y, 0, x, y, 190);
+      g.addColorStop(0, 'rgba(0,255,65,.09)'); g.addColorStop(.5, 'rgba(0,255,65,.03)'); g.addColorStop(1, 'rgba(0,255,65,0)');
+      sctx.fillStyle = g; sctx.fillRect(0, 0, spotcv.width, spotcv.height);
+    } else if (fx === 'xhair') {
+      xhv.style.left = x + 'px'; xhh.style.top = y + 'px';
+      xhc.style.left = (x + 12) + 'px'; xhc.style.top = (y + 12) + 'px';
+      xhc.textContent = '[' + x + ',' + y + ']';
+    }
+  });
+  const ROULETTE = [['block', 'BLOCK CURSOR'], ['trail', 'PIXEL TRAIL'], ['spot', 'SPOTLIGHT'], ['xhair', 'CROSSHAIR'], ['', 'BACK TO NORMAL']];
+  const roll = document.getElementById('fxroll');
+  if (roll && !reduced) roll.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const options = ROULETTE.filter(([name]) => name !== fx);
+    const [name, label] = options[Math.floor(Math.random() * options.length)];
+    setFx(name);
+    const b = document.createElement('div');
+    b.className = 'burst';
+    b.textContent = '[' + label + (name ? ' EQUIPPED' : '') + ']';
+    b.style.left = Math.max(8, e.clientX - 90) + 'px';
+    b.style.top = (e.clientY + 16) + 'px';
+    document.body.appendChild(b);
+    setTimeout(() => b.remove(), 780);
+  });
 })();
 </script>
 </body>
