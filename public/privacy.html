@@ -10,51 +10,84 @@
 @media (prefers-color-scheme:dark){:root{--bg:#0f1115;--fg:#e8eaef;--muted:#9aa3b2;--line:#262b34;--accent:#5b8dff}}
 body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 main{max-width:760px;margin:0 auto;padding:24px 20px 72px}
-h1{letter-spacing:-.02em}h2{margin-top:32px;font-size:1.2rem}
+h1{letter-spacing:-.02em}h2{margin-top:32px;font-size:1.2rem}h3{font-size:1rem;margin:20px 0 6px}
 a{color:var(--accent)}code{font-family:ui-monospace,Menlo,Consolas,monospace}
 .top{color:var(--muted);font-size:.95rem}.muted{color:var(--muted)}
 .note{border:1px solid var(--line);border-radius:10px;padding:12px 16px;color:var(--muted);font-size:.92rem}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.95rem}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+th{color:var(--muted);font-weight:600;font-size:.85rem}
 </style>
 </head>
 <body>
 <main>
   <p class="top"><a href="/">← home</a></p>
   <h1>Privacy Policy</h1>
-  <p class="muted">Last updated: 7 July 2026. This service is operated from the United Kingdom by the gankdat operator ("we", "us"). Contact: <a href="mailto:info@gankdat.com">info@gankdat.com</a>.</p>
+  <p class="muted">Last updated: 9 July 2026. gankdat ("we", "us") is operated from the United Kingdom by its operator. Contact: <a href="mailto:info@gankdat.com">info@gankdat.com</a>.</p>
 
-  <div class="note">Early-stage note: this policy is a plain-English starting point and should be reviewed by a qualified adviser before you rely on it commercially.</div>
+  <p>The short version: the only personal data we hold about you is your <strong>email address</strong> and the operational records needed to run your account. No analytics, no trackers, no ad tech, no selling data — and the public datasets we serve have personal data stripped out before we ever store them.</p>
 
-  <h2>What we collect</h2>
+  <h2>1. What we collect, and why</h2>
+  <table>
+    <tr><th>Data</th><th>When</th><th>Why</th></tr>
+    <tr><td><strong>Email address</strong></td><td>You sign in or join the waitlist</td><td>It is your account identity: sign-in links, API-key ownership, plan and quota all attach to it. Waitlist emails are used only to tell you about launch.</td></tr>
+    <tr><td><strong>API keys (hashed)</strong></td><td>You create a key</td><td>We store only a SHA-256 hash — we cannot recover or display your key after creation.</td></tr>
+    <tr><td><strong>Usage counters</strong></td><td>You call the API</td><td>Monthly request counts per account, for quotas and the usage display on your dashboard.</td></tr>
+    <tr><td><strong>Billing records</strong></td><td>You buy a plan</td><td>Your Stripe customer reference, plan, and a credit ledger. Card details go directly to Stripe — we never see or store them.</td></tr>
+    <tr><td><strong>Request metadata</strong></td><td>Every API request</td><td>Timestamp, endpoint, key identifier, response status, and IP address, in short-lived operational logs — for rate limiting, abuse prevention, and debugging. We do not log request bodies.</td></tr>
+    <tr><td><strong>Correspondence</strong></td><td>You email us</td><td>To answer you.</td></tr>
+  </table>
+
+  <h2>2. Cookies</h2>
+  <p>We set exactly one cookie: <code>fapi_session</code>, an opaque session identifier created when you sign in (HttpOnly, Secure, expires after 30 days or on sign-out). It is strictly necessary to keep you signed in, which is why there is no cookie banner — we have nothing else to ask consent for. No analytics or third-party cookies, ever.</p>
+
+  <h2>3. Source data &amp; "Blind Mode"</h2>
+  <p>The datasets we serve come from official UK government feeds published under the Open Government Licence (currently Find a Tender and planning.data.gov.uk). Personal data present in source records — for example planning-applicant names and contact details — is <strong>dropped at ingest and never stored or served</strong>. We call this Blind Mode. We do not build profiles of individuals, and our terms forbid using the service to re-identify anyone.</p>
+
+  <h2>4. Pay-per-request crypto payments (x402)</h2>
+  <p>Agents may pay per request in USDC without creating an account. Those payments settle on a public blockchain (Base) via a payment facilitator; the paying wallet address is pseudonymous public-ledger data by the nature of blockchains. We do not link wallet addresses to email accounts, and no account is created for x402 usage.</p>
+
+  <h2>5. Legal bases (UK GDPR)</h2>
   <ul>
-    <li><strong>Your email address</strong> — when you request an API key or join the waitlist. That's the only personal data you actively give us.</li>
-    <li><strong>API request metadata</strong> — in our logs: timestamp, endpoint, your API key's identifier, response status, and your IP address (used for rate-limiting and abuse prevention). We do not log request bodies containing your personal data.</li>
-    <li><strong>No analytics cookies or third-party trackers.</strong></li>
+    <li><strong>Contract</strong> — operating your account: sign-in emails, key authentication, metering, billing.</li>
+    <li><strong>Legitimate interests</strong> — securing the service, preventing abuse and fraud, and keeping minimal operational logs.</li>
+    <li><strong>Legal obligation</strong> — retaining billing and tax records for as long as UK law requires.</li>
+    <li><strong>Consent</strong> — the waitlist (you gave us your email for a launch notification; unsubscribe by emailing us).</li>
   </ul>
 
-  <h2>Source data &amp; "Blind Mode"</h2>
-  <p>The datasets we serve come from official UK government feeds published under the Open Government Licence (Find a Tender, planning.data.gov.uk). Personal data present in source records (e.g. planning-applicant names) is dropped at ingest and <strong>never stored or served</strong> ("Blind Mode"). We do not build individual profiles.</p>
+  <h2>6. Who processes data for us</h2>
+  <table>
+    <tr><th>Processor</th><th>Purpose</th><th>Privacy policy</th></tr>
+    <tr><td>Cloudflare</td><td>Hosting, storage, DNS, email routing, bot protection</td><td><a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com</a></td></tr>
+    <tr><td>Stripe</td><td>Payment processing and billing portal</td><td><a href="https://stripe.com/privacy">stripe.com</a></td></tr>
+    <tr><td>Resend</td><td>Sending transactional email (sign-in links), EU region</td><td><a href="https://resend.com/legal/privacy-policy">resend.com</a></td></tr>
+    <tr><td>Coinbase Developer Platform</td><td>Verifying and settling x402 crypto payments</td><td><a href="https://www.coinbase.com/legal/privacy">coinbase.com</a></td></tr>
+  </table>
+  <p>We do not sell personal data, buy contact lists, or send cold email to individuals.</p>
 
-  <h2>Why we process your data (legal bases, UK GDPR)</h2>
+  <h2>7. International transfers</h2>
+  <p>Some processors are US companies operating global infrastructure. Where personal data leaves the UK, transfers rely on UK adequacy decisions (including the UK–US Data Bridge) or the processors' standard contractual safeguards.</p>
+
+  <h2>8. Retention</h2>
   <ul>
-    <li><strong>To provide the service you request</strong> (issuing and authenticating your API key, metering usage) — necessary for our agreement with you.</li>
-    <li><strong>Legitimate interests</strong> — securing the service, preventing abuse, and improving it — using the minimum data needed.</li>
+    <li><strong>Account email &amp; keys</strong> — kept while your account exists; deleted on request (see rights below).</li>
+    <li><strong>Sign-in links</strong> — expire after 15 minutes and are single-use; sessions expire after 30 days.</li>
+    <li><strong>Usage counters</strong> — auto-expire roughly two months after the period they meter.</li>
+    <li><strong>Billing and credit-ledger records</strong> — kept up to 6 years, as UK tax law requires.</li>
+    <li><strong>Operational logs</strong> — short-term only.</li>
   </ul>
 
-  <h2>Who we share it with (processors)</h2>
-  <ul>
-    <li><strong>Cloudflare</strong> — hosting, storage, and bot protection (Turnstile). <a href="https://www.cloudflare.com/privacypolicy/">Cloudflare privacy</a>.</li>
-    <li><strong>Stripe</strong> — payment processing, if you buy a paid plan. We never see your card details. <a href="https://stripe.com/privacy">Stripe privacy</a>.</li>
-  </ul>
-  <p>We do not sell your data, use purchased lists, or send cold email to individuals.</p>
+  <h2>9. Security</h2>
+  <p>All traffic is TLS-encrypted. API keys are stored only as SHA-256 hashes. Sign-in is passwordless (no password database to breach). Secrets are held in our hosting platform's encrypted secret store, and admin operations use constant-time credential checks.</p>
 
-  <h2>Retention</h2>
-  <p>We keep your email while your account/waitlist entry is active and for a reasonable period afterwards. Request logs are kept short-term for security and operations.</p>
+  <h2>10. Your rights</h2>
+  <p>Under UK GDPR you may request access, correction, erasure, restriction, objection, or portability of your personal data. Email <a href="mailto:info@gankdat.com">info@gankdat.com</a> and we will action it — deleting your account removes your email, keys, and sessions (billing records we must keep for tax law are retained until that clock runs out). You may also complain to the <a href="https://ico.org.uk/">Information Commissioner's Office (ICO)</a>.</p>
 
-  <h2>Your rights</h2>
-  <p>Under UK GDPR you can request access, correction, erasure, restriction, objection, or portability of your personal data. Email <a href="mailto:info@gankdat.com">info@gankdat.com</a> and we'll action it. You can also complain to the UK <a href="https://ico.org.uk/">Information Commissioner's Office (ICO)</a>.</p>
+  <h2>11. Children</h2>
+  <p>The service is a business tool and is not directed at children under 16. We do not knowingly collect their data.</p>
 
-  <h2>Changes</h2>
-  <p>We may update this policy; material changes will be reflected here with a new date.</p>
+  <h2>12. Changes</h2>
+  <p>We may update this policy; material changes will be posted here with a new date, and — for signed-up users — flagged by email where the change matters to you.</p>
 </main>
 </body>
 </html>
