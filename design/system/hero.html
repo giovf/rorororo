@@ -1,0 +1,60 @@
+<!-- @dsCard group="Marketing" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hero — Terminal Brutalism</title>
+<style>
+:root{--bg:#0A0A0A;--panel:#111315;--green:#00FF41;--magenta:#FF007F;--border:#2A2E33;--fg:#E6E8EA;--muted:#8B9299;
+--sans:Inter,Geist,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box;border-radius:0 !important}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 var(--sans)}
+.wrap{max-width:880px;margin:0 auto;padding:24px 28px 48px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:4px 0 42px;border-bottom:1px solid var(--border);margin-bottom:42px}
+.brand{font:700 1.02rem var(--mono);color:var(--fg)}
+.brand b{color:var(--green)}
+nav .links a{color:var(--muted);text-decoration:none;margin-left:24px;font:.85rem var(--mono)}
+nav .links a:hover{color:var(--green)}
+.tag{display:inline-block;font:.72rem var(--mono);color:var(--green);border:1px solid var(--green);padding:3px 10px;margin-bottom:20px;letter-spacing:.08em}
+h1{font:800 2.9rem/1.08 var(--sans);letter-spacing:-.035em;margin:0 0 16px}
+h1 em{font-style:normal;color:var(--green)}
+h1 .cursor{display:inline-block;width:.5em;height:.92em;background:var(--green);vertical-align:baseline;margin-left:4px;animation:blink 1.1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.sub{color:var(--muted);font-size:1.06rem;max-width:600px;margin:0 0 28px}
+.sub code{font:.92em var(--mono);color:var(--fg)}
+.cta{display:flex;gap:12px;margin-bottom:40px}
+.btn{padding:12px 22px;font:600 .92rem var(--mono);text-decoration:none;letter-spacing:.02em;border:1px solid var(--green)}
+.btn.solid{background:var(--green);color:#0A0A0A}
+.btn.solid:hover{box-shadow:0 0 24px rgba(0,255,65,.35)}
+.btn.line{color:var(--green);background:transparent}
+.btn.line:hover{background:rgba(0,255,65,.06)}
+.term{background:var(--panel);border:1px solid var(--border)}
+.term-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--border)}
+.term-bar i{width:10px;height:10px;display:inline-block}
+.term-bar i:nth-child(1){background:#FF5F56}.term-bar i:nth-child(2){background:#FFBD2E}.term-bar i:nth-child(3){background:#27C93F}
+.term-bar span{font:.72rem var(--mono);color:var(--muted);margin-left:8px}
+pre{margin:0;padding:18px 20px;font:12.8px/1.65 var(--mono);overflow-x:auto}
+.p{color:var(--green)}.k{color:var(--fg)}.s{color:var(--magenta)}.n{color:#FFBD2E}.m{color:var(--muted)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav><span class="brand"><b>&gt;_</b> gankdat</span><span class="links"><a href="#">/docs</a><a href="#">/pricing</a><a href="#">/account</a></span></nav>
+  <span class="tag">[ UK PROCUREMENT · PLANNING · MORE INCOMING ]</span>
+  <h1>Public data is a mess.<br>We <em>gank</em> it for you.<span class="cursor"></span></h1>
+  <p class="sub">Archaic government feeds, extracted and served as fast, clean JSON — one schema, refreshed daily, one key for the whole catalog. Built for developers and AI agents.</p>
+  <div class="cta"><a class="btn solid" href="#">$ get api-key</a><a class="btn line" href="#">$ man gankdat</a></div>
+  <div class="term">
+    <div class="term-bar"><i></i><i></i><i></i><span>heist.sh — gankdat.com</span></div>
+    <pre><span class="p">~$</span> curl -H <span class="s">"Authorization: Bearer $API_KEY"</span> \
+     <span class="s">"https://gankdat.com/v1/data/uk-tenders?value_amount_min=1000000"</span>
+
+{ <span class="k">"ok"</span>: <span class="p">true</span>,
+  <span class="k">"data"</span>: [ { <span class="k">"buyer"</span>: <span class="s">"London Borough of Havering"</span>,
+              <span class="k">"value_amount"</span>: <span class="n">8400000</span>, <span class="m">…</span> } ],
+  <span class="k">"meta"</span>: { <span class="k">"last_refreshed_at"</span>: <span class="s">"2026-07-09T05:00:11Z"</span> } }</pre>
+  </div>
+</div>
+</body>
+</html>

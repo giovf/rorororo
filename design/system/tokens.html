@@ -1,0 +1,76 @@
+<!-- @dsCard group="Foundations" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tokens — Terminal Brutalism</title>
+<style>
+:root{
+  /* The Shadows */
+  --bg:#0A0A0A; --panel:#111315; --panel2:#16191C;
+  /* The Loot */
+  --green:#00FF41; --green-dim:#00C733;
+  /* Cyberpunk Magenta */
+  --magenta:#FF007F;
+  /* Structure */
+  --border:#2A2E33; --border-strong:#3A4046;
+  /* Text */
+  --fg:#E6E8EA; --muted:#8B9299;
+  --sans:Inter,Geist,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --mono:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box;border-radius:0 !important}
+body{margin:0;background:var(--bg);color:var(--fg);font:14px/1.6 var(--sans);padding:28px}
+h3{font:700 .72rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:28px 0 12px}
+h3:first-child{margin-top:0}
+h3::before{content:"// ";color:var(--green)}
+.sw{display:flex;gap:1px;flex-wrap:wrap;border:1px solid var(--border);width:fit-content}
+.sw div{width:118px;height:78px;padding:8px;display:flex;flex-direction:column;justify-content:flex-end;font:.68rem var(--mono)}
+.sw b{display:block}
+.type p{margin:6px 0}
+.h1{font:800 2.2rem/1.15 var(--sans);letter-spacing:-.03em}
+.h1 em{font-style:normal;color:var(--green)}
+.h2{font:700 1.35rem/1.2 var(--sans);letter-spacing:-.02em}
+.body{font:1rem var(--sans);color:var(--fg)}
+.small{font:.85rem var(--sans);color:var(--muted)}
+.label{font:.75rem var(--mono);color:var(--green);text-transform:uppercase;letter-spacing:.1em}
+.code{font:.85rem var(--mono);color:var(--fg);background:var(--panel);border:1px solid var(--border);padding:2px 8px;display:inline-block}
+.rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;border:1px solid var(--border);max-width:680px;background:var(--border)}
+.rules div{background:var(--panel);padding:14px;font:.8rem var(--mono);color:var(--muted)}
+.rules b{color:var(--fg);display:block;margin-bottom:4px;font-family:var(--sans)}
+</style>
+</head>
+<body>
+  <h3>Palette — the shadows &amp; the loot</h3>
+  <div class="sw">
+    <div style="background:#0A0A0A;color:#8B9299"><b>#0A0A0A</b>bg</div>
+    <div style="background:#111315;color:#8B9299"><b>#111315</b>panel</div>
+    <div style="background:#16191C;color:#8B9299"><b>#16191C</b>panel-2</div>
+    <div style="background:#2A2E33;color:#E6E8EA"><b>#2A2E33</b>border</div>
+    <div style="background:#00FF41;color:#0A0A0A"><b>#00FF41</b>terminal green</div>
+    <div style="background:#FF007F;color:#0A0A0A"><b>#FF007F</b>magenta</div>
+    <div style="background:#E6E8EA;color:#0A0A0A"><b>#E6E8EA</b>text</div>
+    <div style="background:#8B9299;color:#0A0A0A"><b>#8B9299</b>muted</div>
+  </div>
+
+  <h3>Type — sans grounds, mono steals</h3>
+  <div class="type">
+    <p class="h1">Data, <em>liberated</em>.</p>
+    <p class="h2">Section heading — Inter 700</p>
+    <p class="body">Body copy is a clean sans-serif for legibility. Marketing copy, docs prose, and dashboard text all use it.</p>
+    <p class="small">Small/muted copy for captions and footnotes.</p>
+    <p><span class="label">[ ui-label ]</span> &nbsp; <span class="code">GET /v1/data/uk-tenders</span></p>
+  </div>
+
+  <h3>Rules of the heist</h3>
+  <div class="rules">
+    <div><b>No border-radius</b>radius: 0 — everywhere, always</div>
+    <div><b>No soft shadows</b>green glow only, on interactive green elements</div>
+    <div><b>1px visible borders</b>#2A2E33 — the blueprint lines</div>
+    <div><b>Green is loot</b>use sparingly: primary CTA, active state, mascot glow</div>
+    <div><b>Magenta is danger</b>errors, destructive actions, string syntax</div>
+    <div><b>Mono is machinery</b>endpoints, tags, labels, micro-feedback like [COPIED]</div>
+  </div>
+</body>
+</html>

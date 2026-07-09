@@ -1,0 +1,89 @@
+<!-- @dsCard group="Brand" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mascot — The Tech Burglar (v1)</title>
+<style>
+:root{--bg:#0A0A0A;--panel:#111315;--green:#00FF41;--magenta:#FF007F;--border:#2A2E33;--fg:#E6E8EA;--muted:#8B9299;
+--sans:Inter,Geist,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box;border-radius:0 !important}
+body{margin:0;background:var(--bg);color:var(--fg);font:14.5px/1.6 var(--sans);padding:28px}
+h3{font:700 .72rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:28px 0 12px}
+h3:first-child{margin-top:0}
+h3::before{content:"// ";color:var(--green)}
+.row{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-end}
+.sprite svg{image-rendering:pixelated;shape-rendering:crispEdges;display:block}
+.sprite.glow svg{filter:drop-shadow(0 0 10px rgba(0,255,65,.35))}
+.bob{animation:bob 1s steps(2) infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(-4px)}}
+.cap{font:.7rem var(--mono);color:var(--muted);margin-top:8px}
+.panel{background:var(--panel);border:1px solid var(--border);padding:22px;max-width:400px;text-align:center}
+.panel h4{font:700 1rem var(--mono);margin:14px 0 4px}
+.panel h4.g{color:var(--green)}
+.panel h4.m{color:var(--magenta)}
+.panel p{font:.8rem var(--mono);color:var(--muted);margin:0}
+.panel .sprite{display:inline-block}
+.note{font:.78rem var(--mono);color:var(--muted);border:1px dashed var(--border);padding:10px 14px;max-width:560px;margin-top:20px}
+</style>
+</head>
+<body>
+  <h3>the tech burglar — sprite v1 (iterate on me)</h3>
+  <div class="row">
+    <div><div class="sprite glow" data-scale="8"></div><div class="cap">8× — hero / 404</div></div>
+    <div><div class="sprite glow" data-scale="5"></div><div class="cap">5× — panels</div></div>
+    <div><div class="sprite" data-scale="3"></div><div class="cap">3× — inline</div></div>
+    <div><div class="sprite glow bob" data-scale="5"></div><div class="cap">loading bob</div></div>
+  </div>
+
+  <h3>usage — empty / error / success states</h3>
+  <div class="row">
+    <div class="panel"><span class="sprite glow" data-scale="4"></span><h4 class="m">[404]</h4><p>the raccoon already ganked this page.<br>try /docs instead.</p></div>
+    <div class="panel"><span class="sprite glow bob" data-scale="4"></span><h4 class="g">[GANKING DATA…]</h4><p>extracting rows from the archives</p></div>
+    <div class="panel"><span class="sprite glow" data-scale="4"></span><h4 class="g">[LOOT SECURED]</h4><p>your api key is ready — shown once, stash it.</p></div>
+  </div>
+
+  <p class="note">v1 sprite is hand-pixelled in code (26×24 grid) so every pixel is editable by name — say "lower the beanie", "bigger grin", "more loot in the sack" and it changes. If we outgrow code-art, this brief maps 1:1 to a commissioned sprite sheet.</p>
+
+<script>
+// 26 cols × 24 rows. Legend: B/b beanie, E ears, G fur, D shade, K black/mask,
+// W eyes, T snout, N nose, V vest, v pouch, C crowbar (loot green), S/s sack, J loot.
+const ROWS = [
+"....EE..........EE........",
+"....EEE........EEE........",
+"....BBBBBBBBBBBBBB........",
+"...BBBBBBBBBBBBBBBB.......",
+"...bbbbbbbbbbbbbbbb..CC...",
+"...GGGGGGGGGGGGGGGG..CC...",
+"..GGKKKKKKGGGGKKKKKK.CC...",
+"..GKKWWKKKGGGGKKWWKK.CC...",
+"..GKKKKKKGGGGGKKKKKG.CC...",
+"...GGGGGTTTTTTTGGGG..CC...",
+"....GGGTTTTTTTTTGG...CC...",
+"....GGGTTKNNKTTTGG...CC...",
+"....GGGTKKKKKKTTGG...CC...",
+".....GGTTKKKKTTGG....CC...",
+"......GGTTTTTTGG.....CC...",
+".J...VVVVVVVVVVVV..GGCC...",
+"JSJ..VVvvVVVVvvVV.GGGCC...",
+"SSSS.VVvvVVVVvvVV.GG.CC...",
+"SSSSSsVVVVVVVVVVV.GG......",
+"SSSSSsVVVVVVVVVV..GG......",
+"SSSSSs.GGGGGGGG...........",
+"sSSSs..GGD..DGG...........",
+".sss...GG....GG...........",
+"........KK....KK..........",
+];
+const PAL = {B:"#1E2A4A",b:"#2A3A63",E:"#4A5158",G:"#9AA3AB",D:"#6B7480",K:"#15181B",
+W:"#FFFFFF",T:"#D9C1A0",N:"#0A0A0A",V:"#232B2F",v:"#313B40",C:"#00FF41",S:"#8A6B4A",s:"#6E543A",J:"#00FF41"};
+const W_=ROWS[0].length,H_=ROWS.length;
+function sprite(scale){
+  let r='';
+  ROWS.forEach((row,y)=>{for(let x=0;x<row.length;x++){const c=row[x];if(PAL[c])r+=`<rect x="${x}" y="${y}" width="1" height="1" fill="${PAL[c]}"/>`;}});
+  return `<svg width="${W_*scale}" height="${H_*scale}" viewBox="0 0 ${W_} ${H_}" xmlns="http://www.w3.org/2000/svg">${r}</svg>`;
+}
+document.querySelectorAll('.sprite').forEach(el=>{el.innerHTML=sprite(Number(el.dataset.scale||4));});
+</script>
+</body>
+</html>
