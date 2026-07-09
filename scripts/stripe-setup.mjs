@@ -48,6 +48,9 @@ for (const plan of PLANS) {
   }
   const product = await stripe.products.create({
     name: `gankdat ${plan.name}`,
+    // Stripe Tax category: SaaS — business use (metered access to a hosted
+    // service, sold B2B). Set here so live-mode setup inherits it.
+    tax_code: 'txcd_10103001',
     metadata: { credits: String(plan.credits) },
   });
   await stripe.prices.create({
