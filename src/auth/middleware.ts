@@ -78,13 +78,18 @@ export function requireApiKey(): MiddlewareHandler<AppEnv> {
       return c.json(
         failure('unauthorized', 'Missing API key. Send it as: Authorization: Bearer <key>'),
         401,
+        // RFC 7235: a 401 MUST say how to authenticate. MCP clients and
+        // directory crawlers key off this header.
+        { 'WWW-Authenticate': 'Bearer realm="gankdat"' },
       );
     }
 
     const hash = await hashKey(match[1]!);
     const record = await lookupKey(c.env, hash);
     if (!record || record.revoked_at !== null) {
-      return c.json(failure('unauthorized', 'Unknown or revoked API key'), 401);
+      return c.json(failure('unauthorized', 'Unknown or revoked API key'), 401, {
+        'WWW-Authenticate': 'Bearer realm="gankdat", error="invalid_token"',
+      });
     }
 
     const keyCtx: KeyContext = {

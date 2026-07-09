@@ -1,30 +1,71 @@
 import { StreamableHTTPTransport } from '@hono/mcp';
 import { Hono } from 'hono';
+import type { Context } from 'hono';
 import { requireApiKey } from '../auth/middleware';
 import { buildMcpServer } from '../mcp/server';
 import { rateLimit } from '../metering/ratelimit';
 import type { AppEnv } from '../types';
 
 // Stateless Streamable HTTP: Workers are stateless, so every request gets a
-// fresh server + transport pair (no session ids). Auth is the same bearer API
-// key as REST; metering happens per tool call inside the handlers.
+// fresh server + transport pair (no session ids). Tool execution uses the same
+// bearer API key as REST; metering happens per tool call inside the handlers.
 //
 // POST only: a stateless server never pushes server-initiated notifications, so
 // GET would just open a hanging SSE stream with a live keepalive timer, and
 // DELETE (session teardown) is meaningless without sessions. Both 404 here.
+
+// Methods a registry or directory crawler needs to index this server (the
+// official MCP Registry's aggregators, Glama, Smithery all introspect tools by
+// calling these). Metadata only — none touches an account or debits credits.
+const INTROSPECTION_METHODS = new Set([
+  'initialize',
+  'notifications/initialized',
+  'ping',
+  'tools/list',
+]);
+
+// Anonymous only when NO key is presented AND the message is pure
+// introspection. A presented key is always validated — a typo'd key should
+// 401 loudly, not silently downgrade to anonymous. Reading the body here is
+// safe: HonoRequest caches parsed JSON, so the transport's own req.json()
+// gets the cached copy, not a consumed stream.
+async function isAnonymousIntrospection(c: Context<AppEnv>): Promise<boolean> {
+  if (c.req.header('Authorization')) return false;
+  let body: unknown;
+  try {
+    body = await c.req.json();
+  } catch {
+    return false; // malformed JSON: fall through to auth's 401
+  }
+  const messages = Array.isArray(body) ? body : [body];
+  return (
+    messages.length > 0 &&
+    messages.every((message) => {
+      if (typeof message !== 'object' || message === null) return false;
+      const { method } = message as { method?: unknown };
+      return typeof method === 'string' && INTROSPECTION_METHODS.has(method);
+    })
+  );
+}
+
 export const mcpRoute = new Hono<AppEnv>().post(
   '/',
-  requireApiKey(),
+  async (c, next) => {
+    if (await isAnonymousIntrospection(c)) return next();
+    return requireApiKey()(c, next);
+  },
   rateLimit({
     scope: 'mcp',
     limit: 60,
     windowSeconds: 60,
-    // Per-account (see index.ts): quota is per-account, so keying on the key
-    // would let one account mint many keys to multiply its effective rate.
-    identify: (c) => c.get('keyCtx')?.usageSubject ?? c.get('keyCtx')?.keyId ?? 'anonymous',
+    // Authed: per-account (quota is per-account, so keying on the key would let
+    // one account mint many keys to multiply its effective rate). Anonymous
+    // introspection: per-IP, so one crawler can't starve the path for others.
+    identify: (c) =>
+      c.get('keyCtx')?.usageSubject ?? `ip:${c.req.header('CF-Connecting-IP') ?? 'unknown'}`,
   }),
   async (c) => {
-    const server = buildMcpServer(c.env, c.get('keyCtx')!);
+    const server = buildMcpServer(c.env, c.get('keyCtx') ?? null);
     const transport = new StreamableHTTPTransport();
     await server.connect(transport);
     const response = await transport.handleRequest(c);

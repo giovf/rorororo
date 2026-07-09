@@ -51,7 +51,9 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   a signed-in session (public issuance retired — keys inherit the account's
   plan, so unverified-email issuance was a privilege leak). Quota = plan
   monthly allowance per account (free 250/mo); KV-based best-effort (DO
-  upgrade path documented, not built).
+  upgrade path documented, not built). MCP: anonymous `initialize`/`tools/list`
+  so registries/directories can index tools (per-IP rate-limited);
+  `tools/call` needs a key; bearer 401s carry `WWW-Authenticate`.
 - **Refresh**: Cron Triggers pull sources on schedule, write `refresh_log`;
   responses expose `last_refreshed_at`.
 

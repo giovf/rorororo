@@ -34,6 +34,11 @@ function errorResult(message: string): ToolResult {
   return { content: [{ type: 'text', text: message }], isError: true };
 }
 
+// Tool execution never runs anonymously in practice — the route 401s
+// unauthenticated tools/call before the server is invoked — but the handlers
+// guard anyway so a route regression degrades to a polite tool error.
+const AUTH_REQUIRED = `Authentication required: send an API key as "Authorization: Bearer <key>" on the HTTP request. Get a free key at ${API_BASE_URL}/account.`;
+
 function sourceListing(): Record<string, unknown>[] {
   return listSources().map((source) => ({
     slug: source.slug,
@@ -48,7 +53,7 @@ function sourceListing(): Record<string, unknown>[] {
 function registerQueryTool(
   server: McpServer,
   env: CloudflareBindings,
-  keyCtx: KeyContext,
+  keyCtx: KeyContext | null,
   source: DataSource,
 ): void {
   const schema = buildQuerySchema(source);
@@ -60,6 +65,7 @@ function registerQueryTool(
       inputSchema: schema.shape,
     },
     async (args: Record<string, unknown>): Promise<ToolResult> => {
+      if (!keyCtx) return errorResult(AUTH_REQUIRED);
       const cost = creditCost(source);
       const period = currentPeriod();
       const granted = planAllowance(keyCtx.plan);
@@ -95,7 +101,12 @@ function registerQueryTool(
   );
 }
 
-export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext): McpServer {
+/**
+ * keyCtx is null for anonymous introspection (initialize/tools/list — see
+ * routes/mcp.ts): registries and directories index tools without a key, so
+ * every tool must register with its full schema regardless of auth.
+ */
+export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext | null): McpServer {
   const server = new McpServer({ name: 'gankdat', version: APP_VERSION });
 
   server.registerTool(
@@ -117,6 +128,7 @@ export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext): Mcp
       inputSchema: {},
     },
     async (): Promise<ToolResult> => {
+      if (!keyCtx) return errorResult(AUTH_REQUIRED);
       const period = currentPeriod();
       const used = await getUsage(env, keyCtx.usageSubject, period);
       const { granted, remaining, alerts } = usageSummary(keyCtx.plan, used);

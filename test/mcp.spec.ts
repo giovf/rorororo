@@ -52,7 +52,7 @@ interface RpcResponse {
 }
 
 async function rpc(
-  key: string,
+  key: string | null,
   method: string,
   params: Record<string, unknown> = {},
   id = 1,
@@ -60,7 +60,7 @@ async function rpc(
   const res = await SELF.fetch(MCP_URL, {
     method: 'POST',
     headers: {
-      ...bearer(key),
+      ...(key === null ? {} : bearer(key)),
       'content-type': 'application/json',
       accept: 'application/json, text/event-stream',
     },
@@ -89,13 +89,46 @@ afterEach(() => {
 });
 
 describe('/mcp', () => {
-  it('requires an API key', async () => {
+  it('answers anonymous initialize and tools/list (registry/directory introspection)', async () => {
+    const init = await rpc(null, 'initialize', INIT_PARAMS);
+    expect(init.status).toBe(200);
+    expect(init.body?.result?.serverInfo?.name).toBe('gankdat');
+
+    const { status, body } = await rpc(null, 'tools/list');
+    expect(status).toBe(200);
+    const names = (body?.result?.tools ?? []).map((t) => t.name);
+    expect(names).toEqual(
+      expect.arrayContaining(['list_sources', 'get_usage', 'query_uk_planning', 'query_uk_tenders']),
+    );
+  });
+
+  it('requires an API key for tools/call, advertised via WWW-Authenticate', async () => {
     const res = await SELF.fetch(MCP_URL, {
       method: 'POST',
-      headers: { 'content-type': 'application/json' },
-      body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'initialize', params: INIT_PARAMS }),
+      headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'tools/call',
+        params: { name: 'list_sources', arguments: {} },
+      }),
     });
     expect(res.status).toBe(401);
+    expect(res.headers.get('WWW-Authenticate')).toContain('Bearer');
+  });
+
+  it('validates a presented key even on introspection methods', async () => {
+    const res = await SELF.fetch(MCP_URL, {
+      method: 'POST',
+      headers: {
+        ...bearer('fapi_definitely_not_a_key'),
+        'content-type': 'application/json',
+        accept: 'application/json, text/event-stream',
+      },
+      body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'tools/list', params: {} }),
+    });
+    expect(res.status).toBe(401);
+    expect(res.headers.get('WWW-Authenticate')).toContain('invalid_token');
   });
 
   it('answers initialize with server info', async () => {
