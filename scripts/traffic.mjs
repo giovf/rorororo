@@ -19,6 +19,7 @@ if (!token) {
 
 const GREEN = '\x1b[32m';
 const MAGENTA = '\x1b[35m';
+const AMBER = '\x1b[33m';
 const DIM = '\x1b[2m';
 const RESET = '\x1b[0m';
 
@@ -96,10 +97,39 @@ if (!agents?.length) {
   console.log(`  ${DIM}(none yet)${RESET}`);
 } else {
   const uaWidth = Math.min(60, Math.max(...agents.map((a) => (a.ua || '(none)').length)));
+  const KIND_LABEL = {
+    mcp_anon: `${GREEN}anon  ${RESET}`,
+    mcp_authed: `${MAGENTA}authed${RESET}`,
+    x402_paid: `${AMBER}paid $${RESET}`,
+  };
   for (const a of agents) {
     const ua = (a.ua || '(none)').slice(0, 60).padEnd(uaWidth);
-    const kind = a.kind === 'mcp_anon' ? `${GREEN}anon  ${RESET}` : `${MAGENTA}authed${RESET}`;
-    console.log(`  ${ua}  ${kind}  ${Math.round(Number(a.requests))}`);
+    console.log(`  ${ua}  ${KIND_LABEL[a.kind] ?? a.kind}  ${Math.round(Number(a.requests))}`);
   }
+}
+
+const payments = await sql(`
+  SELECT toStartOfInterval(timestamp, INTERVAL '1' DAY) AS day,
+         blob3 AS path,
+         SUM(_sample_interval * double1) AS payments
+  FROM ${DATASET}
+  WHERE timestamp > NOW() - INTERVAL '30' DAY AND blob1 = 'x402_paid'
+  GROUP BY day, path
+  ORDER BY day ASC
+`);
+
+console.log(`\n${AMBER}x402 payments${RESET} — last 30 days\n`);
+if (!payments?.length) {
+  console.log(
+    `  ${DIM}(none yet — settlements also visible on basescan.org at the payTo wallet)${RESET}`,
+  );
+} else {
+  let total = 0;
+  for (const p of payments) {
+    const n = Math.round(Number(p.payments));
+    total += n;
+    console.log(`  ${String(p.day).slice(0, 10)}  ${p.path.padEnd(28)}  ${AMBER}${n}${RESET}`);
+  }
+  console.log(`\n  total: ${AMBER}${total}${RESET} paid request(s)`);
 }
 console.log();

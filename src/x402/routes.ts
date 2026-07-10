@@ -77,6 +77,13 @@ export const x402Routes = new Hono<AppEnv>()
       console.log(
         JSON.stringify({ level: 'info', event: 'x402_paid', path: c.req.path, price }),
       );
+      // Revenue analytics (90-day history via `npm run traffic`) — Workers
+      // Logs alone rotates out in days. UA names the paying agent.
+      c.env.TRAFFIC.writeDataPoint({
+        blobs: ['x402_paid', c.req.header('User-Agent') ?? '', c.req.path],
+        doubles: [1],
+        indexes: ['x402_paid'],
+      });
     }
     return response;
   })
