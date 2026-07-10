@@ -72,6 +72,50 @@ this registry, so publish here first.
   first, then claim the listing); Glama also takes a GitHub repo link — the
   repo is private until the operator publishes it (their call).
 
+### Submission form contents (copy-paste, prepped 2026-07-10)
+
+Reusable blurbs for any directory form:
+
+- **Name**: gankdat
+- **Tagline** (short): UK tenders & planning applications as clean JSON —
+  REST + MCP + x402.
+- **Description** (long): gankdat serves UK public-sector data from official
+  government feeds (Find a Tender OCDS procurement notices;
+  planning.data.gov.uk planning applications), normalized to one clean JSON
+  schema. Native MCP server for AI agents, plus x402 USDC pay-per-request on
+  Base — no signup needed for agents that can pay per call. Free tier: 250
+  requests/month. Blind Mode: personal data is dropped at ingest, never
+  stored or served.
+- **Endpoint**: `https://gankdat.com/mcp` (Streamable HTTP, MCP 2025-06-18)
+- **Auth**: `Authorization: Bearer <api key>` for tools/call (free key at
+  https://gankdat.com/account); `initialize`/`tools/list` need no key.
+- **Tools**:
+  - `list_sources` — datasets with filter params + credit cost (free)
+  - `get_usage` — plan, credits used/remaining (free)
+  - `query_uk_tenders` — Find a Tender OCDS notices; filter by buyer, CPV,
+    status, value, dates, full-text `q` (1 credit)
+  - `query_uk_planning` — planning applications; filter by authority,
+    reference, decision dates, full-text `q` (1 credit)
+- **Official registry**: `com.gankdat/gankdat` (published 2026-07-09)
+- **Links**: site https://gankdat.com · docs https://gankdat.com/docs ·
+  OpenAPI https://gankdat.com/openapi.json · llms.txt
+  https://gankdat.com/llms.txt · icon https://gankdat.com/icon-raccoon.svg
+- **Pricing**: free 250/mo; grep £5/1k · cron £23/5k · daemon £79/20k ·
+  kernel £239/100k; x402 ~$0.005/request.
+- **Categories/tags**: data · government · open-data · uk · procurement ·
+  tenders · planning · property
+
+Channel-specific notes:
+
+- **PulseMCP** (https://www.pulsemcp.com/submit): form takes name, endpoint,
+  description, links — everything above; no repo needed. Classification:
+  "official provider", remote.
+- **Glama** (https://glama.ai): richest listings come from a public GitHub
+  repo, which is still the operator's call; without it, submit the remote
+  endpoint + blurbs and claim the listing when registry syndication lands.
+- **Smithery** (`smithery mcp publish https://gankdat.com/mcp -n gankdat/gankdat`):
+  CLI publish under an operator Smithery account.
+
 ## x402 discovery
 
 - The 402 payment-requirements body already marks the resource
