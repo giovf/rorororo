@@ -15,7 +15,7 @@ is copy-paste, not engineering.
 | ------------------------ | -------------------------------------------------------------- |
 | OpenAPI import           | `/openapi.json` (3.1; RapidAPI may want 3.0 — downconvert then) |
 | Auth model               | Header `Authorization: Bearer <key>` (they proxy their own keys → create one `rapidapi@` key per plan, or keep direct keys and use their "external" billing mode) |
-| Pricing tiers            | Free 250/mo; saver £5/1k, starter £23/5k, growth £79/20k, scale £239/100k — mirrors `src/billing/plans.json` |
+| Pricing tiers            | Free 250/mo; grep £5/1k, cron £23/5k, daemon £79/20k, kernel £239/100k (slugs: saver/starter/growth/scale) — mirrors `src/billing/plans.json` |
 | Base URL                 | `https://gankdat.com`                                          |
 | Description/assets       | reuse landing copy + `llms.txt` summary                        |
 

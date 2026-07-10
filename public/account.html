@@ -115,10 +115,10 @@ body.modal-open{overflow:hidden}
       <h2>upgrade</h2>
       <p class="muted">One subscription covers every dataset. Credits are shared across the catalog.</p>
       <div class="plan-grid">
-        <div class="plan"><b>saver</b><div class="p">1,000 credits / mo</div><button class="buy" data-plan="saver">£5/mo</button></div>
-        <div class="plan"><b>starter</b><div class="p">5,000 credits / mo</div><button class="buy" data-plan="starter">£23/mo</button></div>
-        <div class="plan"><b>growth</b><div class="p">20,000 credits / mo</div><button class="buy" data-plan="growth">£79/mo</button></div>
-        <div class="plan"><b>scale</b><div class="p">100,000 credits / mo</div><button class="buy" data-plan="scale">£239/mo</button></div>
+        <div class="plan"><b>grep</b><div class="p">1,000 credits / mo</div><button class="buy" data-plan="saver">£5/mo</button></div>
+        <div class="plan"><b>cron</b><div class="p">5,000 credits / mo</div><button class="buy" data-plan="starter">£23/mo</button></div>
+        <div class="plan"><b>daemon</b><div class="p">20,000 credits / mo</div><button class="buy" data-plan="growth">£79/mo</button></div>
+        <div class="plan"><b>kernel</b><div class="p">100,000 credits / mo</div><button class="buy" data-plan="scale">£239/mo</button></div>
       </div>
       <p class="muted" style="font:.72rem var(--mono)">prices in GBP; checkout bills USD/EUR automatically if you're outside the UK.</p>
     </div>
@@ -182,12 +182,15 @@ async function api(path, opts) {
 
 function fmtDate(s) { return s ? String(s).slice(0, 10) : ''; }
 
+// Display names for stored plan slugs (slugs are the API/billing contract).
+const PLAN_NAMES = { saver: 'grep', starter: 'cron', growth: 'daemon', scale: 'kernel' };
+
 function render(d) {
   $('signin').classList.add('hidden');
   $('dashboard').classList.remove('hidden');
   $('nav-signout').classList.remove('hidden');
   $('acct-email').textContent = d.email;
-  $('acct-plan').textContent = d.plan;
+  $('acct-plan').textContent = PLAN_NAMES[d.plan] ?? d.plan;
 
   const pct = d.granted ? Math.min(100, Math.round((d.used / d.granted) * 100)) : 0;
   $('usage-bar').style.width = pct + '%';

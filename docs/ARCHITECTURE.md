@@ -61,8 +61,10 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
 - **Stripe** — **LIVE** since 2026-07-09: checkout, customer portal,
   idempotent webhooks → account plan + ledger. Prices are GBP-default
   multi-currency (USD/EUR auto-selected by location), resolved by
-  `lookup_key`; plan data lives in `src/billing/plans.json` (saver £5/1k,
-  starter £23/5k, growth £79/20k, scale £239/100k). Secrets:
+  `lookup_key`; plan data lives in `src/billing/plans.json`. Plan KEYS are
+  stable slugs (saver £5/1k, starter £23/5k, growth £79/20k, scale £239/100k)
+  stored in D1/Stripe; customer-facing names are a display layer
+  (`displayName`: grep/cron/daemon/kernel). Secrets:
   `STRIPE_SECRET_KEY`, `STRIPE_WEBHOOK_SECRET`.
 - **Resend** — magic-link email from `no-reply@mail.gankdat.com` (verified
   domain); dark (503 on login) until `RESEND_API_KEY` is set.

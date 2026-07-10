@@ -6,6 +6,9 @@ import paidPlansData from './plans.json';
 import { FREE_TIER_CREDITS } from '../lib/constants';
 
 export interface PaidPlan {
+  /** Customer-facing tier name (terminal theme). The plan KEY is the stable
+   *  slug stored in D1/Stripe and must never change; this is presentation. */
+  displayName: string;
   /** Stripe price lookup_key (test + live mode use the same keys). */
   lookupKey: string;
   /** Monthly credit allowance for this plan (resets each period). */
