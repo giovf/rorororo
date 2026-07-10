@@ -1139,6 +1139,18 @@
         "description": "Workers Paid (upgraded 2026-07-10) unlocks Analytics Engine. Add analytics_engine_datasets binding TRAFFIC (dataset gankdat_traffic) to wrangler.jsonc + cf-typegen; write one datapoint per /mcp request (kind anon/authed, user-agent) — fire-and-forget, no latency/KV cost; document SQL API crawler queries in RUNBOOK.md. Survey of other unlocks: KV daily caps gone, Workers Logs retention up (automatic); Durable Objects now AVAILABLE but DO rate limiting stays out-of-scope per architecture until re-baselined.",
         "details": "",
         "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-07-10T14:13:16.377Z"
+      },
+      {
+        "id": 32,
+        "title": "npm run traffic — terminal dashboard for Analytics Engine crawler data",
+        "description": "Local-only visualization (zero deployed surface, per security discussion 2026-07-10): scripts/traffic.mjs queries the AE SQL API with CLOUDFLARE_API_TOKEN from .env (node --env-file, no new deps) and renders daily anon/authed MCP volume + top crawler user-agents in the terminal.",
+        "details": "",
+        "testStrategy": "",
         "status": "pending",
         "dependencies": [],
         "priority": "medium",
@@ -1147,15 +1159,15 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-10T14:04:08.154Z",
-      "taskCount": 30,
-      "completedCount": 28,
+      "lastModified": "2026-07-10T14:13:16.378Z",
+      "taskCount": 31,
+      "completedCount": 29,
       "tags": [
         "master"
       ],
-      "created": "2026-07-10T14:10:40.104Z",
+      "created": "2026-07-10T14:36:37.368Z",
       "description": "Tasks for master context",
-      "updated": "2026-07-10T14:10:40.106Z"
+      "updated": "2026-07-10T14:36:37.370Z"
     }
   }
 }
