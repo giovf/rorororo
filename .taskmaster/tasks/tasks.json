@@ -1127,6 +1127,18 @@
         "description": "Two fixes from the 2026-07-10 KV write-cap incident (free-tier 1k writes/day, 62% by midday from crawler traffic): (1) rateLimit() middleware must fail OPEN on KV errors — at the daily cap RATE.put throws and every rate-limited route 500s, including paying customers; (2) anonymous MCP introspection switches from KV-backed rateLimit to a per-isolate in-memory counter so discovery traffic costs zero KV writes. Authed/metered accounting stays on KV.",
         "details": "",
         "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-07-10T14:04:08.154Z"
+      },
+      {
+        "id": 31,
+        "title": "Analytics Engine traffic dataset (paid-plan unlock) + observability doc",
+        "description": "Workers Paid (upgraded 2026-07-10) unlocks Analytics Engine. Add analytics_engine_datasets binding TRAFFIC (dataset gankdat_traffic) to wrangler.jsonc + cf-typegen; write one datapoint per /mcp request (kind anon/authed, user-agent) — fire-and-forget, no latency/KV cost; document SQL API crawler queries in RUNBOOK.md. Survey of other unlocks: KV daily caps gone, Workers Logs retention up (automatic); Durable Objects now AVAILABLE but DO rate limiting stays out-of-scope per architecture until re-baselined.",
+        "details": "",
+        "testStrategy": "",
         "status": "pending",
         "dependencies": [],
         "priority": "medium",
@@ -1135,15 +1147,15 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-10T07:31:35.848Z",
-      "taskCount": 29,
-      "completedCount": 27,
+      "lastModified": "2026-07-10T14:04:08.154Z",
+      "taskCount": 30,
+      "completedCount": 28,
       "tags": [
         "master"
       ],
-      "created": "2026-07-10T13:59:16.628Z",
+      "created": "2026-07-10T14:10:40.104Z",
       "description": "Tasks for master context",
-      "updated": "2026-07-10T13:59:16.632Z"
+      "updated": "2026-07-10T14:10:40.106Z"
     }
   }
 }

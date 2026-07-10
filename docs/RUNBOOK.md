@@ -39,6 +39,30 @@ ask-first while the operator model beds in.
 - **D1 backup**: `npx wrangler d1 export DB --remote --output backup-$(date +%Y%m%d).sql`
   and stash it somewhere off-Cloudflare.
 
+## Traffic analytics (Analytics Engine, since 2026-07-10)
+
+Every `/mcp` request writes a datapoint to the `gankdat_traffic` dataset:
+`blob1` = `mcp_anon` | `mcp_authed`, `blob2` = User-Agent, `double1` = 1.
+Anonymous traffic is crawlers/directories/agents window-shopping; the UA
+names them. ~90-day retention, queryable via the SQL API:
+
+```bash
+# Which crawlers/agents hit /mcp this week, by volume?
+curl -s "https://api.cloudflare.com/client/v4/accounts/37e56f3ce4dfe49919e85d4380467f44/analytics_engine/sql" \
+  -H "Authorization: Bearer $CLOUDFLARE_API_TOKEN" \
+  -d "SELECT blob2 AS user_agent, blob1 AS kind,
+             SUM(_sample_interval * double1) AS requests
+      FROM gankdat_traffic
+      WHERE timestamp > NOW() - INTERVAL '7' DAY
+      GROUP BY user_agent, kind
+      ORDER BY requests DESC
+      LIMIT 25"
+```
+
+(`$CLOUDFLARE_API_TOKEN` from `.env`; `SUM(_sample_interval * double1)`
+corrects for sampling.) Day-to-day request logs stay in Workers Logs
+(dashboard → Worker → Logs; filter `path = /mcp`, no `keyId` = anonymous).
+
 ## Alerting (external, free tiers)
 
 - **UptimeRobot**: HTTP monitor on `https://<domain>/v1/health` (expects 200,

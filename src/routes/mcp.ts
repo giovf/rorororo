@@ -88,6 +88,15 @@ export const mcpRoute = new Hono<AppEnv>().post(
   // Anonymous requests were already limited above; keyCtx present ⇒ authed.
   async (c, next) => (c.get('keyCtx') ? authedRateLimit(c, next) : next()),
   async (c) => {
+    // Adoption analytics (fire-and-forget, no request-path cost): who calls
+    // /mcp — anonymous introspection is crawler/directory traffic, the UA
+    // names it. UA only, no IPs (data-minimization).
+    c.env.TRAFFIC.writeDataPoint({
+      blobs: [c.get('keyCtx') ? 'mcp_authed' : 'mcp_anon', c.req.header('User-Agent') ?? ''],
+      doubles: [1],
+      indexes: [c.get('keyCtx') ? 'mcp_authed' : 'mcp_anon'],
+    });
+
     const server = buildMcpServer(c.env, c.get('keyCtx') ?? null);
     const transport = new StreamableHTTPTransport();
     await server.connect(transport);

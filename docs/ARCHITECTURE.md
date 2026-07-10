@@ -33,8 +33,9 @@ names — never rename those; see memory/git history for why).
 - `docs/` — architecture, runbook, setup docs; `.taskmaster/` — PRD + backlog
 
 ## Stack
-TypeScript (strict) · Hono on Cloudflare Workers · zod (→ OpenAPI 3.1 → MCP
-tools; one schema source of truth) · Workers KV + D1 + Cron Triggers ·
+TypeScript (strict) · Hono on Cloudflare Workers (Paid plan since 2026-07-10)
+· zod (→ OpenAPI 3.1 → MCP tools; one schema source of truth) · Workers KV +
+D1 + Cron Triggers + Analytics Engine (`gankdat_traffic`: /mcp adoption) ·
 stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
 @cloudflare/vitest-pool-workers · ESLint + Prettier · npm · wrangler.
 

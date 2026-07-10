@@ -38,6 +38,10 @@
     { "binding": "CACHE", "id": "eacc87d970e94b9b87ce944985af0b52" },
     { "binding": "RATE", "id": "de75231f2c994f68b003d414be100759" }
   ],
+  // Traffic analytics (Workers Paid unlock, 2026-07-10): fire-and-forget
+  // datapoints, queryable via the Analytics Engine SQL API for ~90 days (see
+  // RUNBOOK.md). Written for /mcp requests to watch crawler/agent adoption.
+  "analytics_engine_datasets": [{ "binding": "TRAFFIC", "dataset": "gankdat_traffic" }],
   "assets": {
     "directory": "public"
   },
