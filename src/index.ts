@@ -16,6 +16,7 @@ import { dataRoutes } from './routes/data';
 import { healthRoute } from './routes/health';
 import { keysRoutes } from './routes/keys';
 import { mcpRoute } from './routes/mcp';
+import { llmsRoute } from './routes/llms';
 import { openapiRoute } from './routes/openapi';
 import { usageRoute } from './routes/usage';
 import { waitlistRoute } from './routes/waitlist';
@@ -85,6 +86,7 @@ app.route('/v1/waitlist', waitlistRoute);
 app.route('/mcp', mcpRoute);
 app.route('/x402', x402Routes);
 app.route('/openapi.json', openapiRoute);
+app.route('/llms.txt', llmsRoute);
 
 app.onError(errorHandler);
 app.notFound(notFoundHandler);

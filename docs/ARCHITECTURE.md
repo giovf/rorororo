@@ -29,7 +29,8 @@ names — never rename those; see memory/git history for why).
 - `src/billing/` — Stripe checkout/portal, webhooks → account plan + ledger
 - `src/mcp/` — MCP server at `/mcp`, tools generated from the registry
 - `src/x402/` — x402-gated pay-per-request routes (dark until configured)
-- `public/` — landing page, docs (Scalar embed), `llms.txt` (Workers Assets)
+- `public/` — landing page, docs (Scalar embed), robots/sitemap (Workers
+  Assets); `llms.txt` is Worker-generated from the source registry
 - `docs/` — architecture, runbook, setup docs; `.taskmaster/` — PRD + backlog
 
 ## Stack
