@@ -21,6 +21,9 @@ export function structuredLogger(): MiddlewareHandler<AppEnv> {
         latencyMs: Date.now() - start,
         keyId: c.get('keyCtx')?.keyId,
         creditsCharged: c.get('creditsCharged'),
+        // Identifies crawlers/agents (anonymous MCP introspection has no
+        // keyId; the UA says who's indexing us). UA only — no IPs logged.
+        userAgent: c.req.header('User-Agent'),
       }),
     );
   };
