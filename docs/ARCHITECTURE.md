@@ -21,7 +21,8 @@ names — never rename those; see memory/git history for why).
 ## Repo layout
 - `src/index.ts` — Hono app assembly; exports `fetch` + `scheduled` handlers
 - `src/sources/` — `DataSource` interface, registry, one file per dataset
-- `src/routes/` — `/v1/*` REST routes + `/openapi.json`
+- `src/routes/` — `/v1/*` REST routes + `/openapi.json` + registry-generated
+  `/llms.txt` and `/stats/*` cite-bait pages
 - `src/auth/` — email accounts (identity), magic-link sign-in, KV sessions,
   API-key verify/revoke (SHA-256 at rest, KV hot path)
 - `src/email/` — transactional email via Resend REST (dark until configured)
@@ -89,6 +90,7 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   integration
 - Regulatory-change/recall feed vertical; spatial search; webhooks
 - RapidAPI/Apify/MCP-directory listings (prep doc only)
-- Durable-Objects rate limiting; annual-plan automation; programmatic SEO
-  pages
+- Durable-Objects rate limiting; annual-plan automation; programmatic SEO at
+  scale (per-council/per-buyer pages — the per-SOURCE `/stats` pages shipped
+  with task 34 are the bounded version)
 - Real niche commitment before Stage 0 validation (build stays pivotable)

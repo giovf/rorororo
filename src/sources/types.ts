@@ -12,6 +12,18 @@ export interface RefreshPolicy {
 }
 
 /**
+ * Declarative spec for the public /stats/<slug> cite-bait page (task 34).
+ * Lives on the source (isolation rule); a generic engine renders it. Sources
+ * without one still get a minimal page (record count + freshness).
+ */
+export interface StatsSpec {
+  /** ISO-date record field bucketed into the monthly-trend table. */
+  date: { field: string; title: string };
+  /** Categorical record fields rendered as top-N breakdown tables. */
+  groupBy: { field: string; title: string; limit?: number }[];
+}
+
+/**
  * One dataset behind the platform. Everything dataset-specific lives in the
  * implementing file + a registry entry (CLAUDE.md isolation rule).
  *
@@ -41,6 +53,8 @@ export interface DataSource<TRecord = unknown> {
   x402PriceUsd?: string;
   /** Per-source REST rate limit for the metered data route (default 60 req / 60s). */
   rateLimit?: { limit: number; windowSeconds: number };
+  /** Breakdown spec for the public /stats/<slug> page (optional enrichment). */
+  stats?: StatsSpec;
   /** Pull fresh records from the origin (called by cron refresh / cache miss). */
   fetchFresh(env: CloudflareBindings): Promise<TRecord[]>;
 }

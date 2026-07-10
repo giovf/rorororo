@@ -140,6 +140,14 @@ export const ukTendersSource: DataSource<UkTendersRecord> = {
   title: 'UK procurement notices',
   description:
     'Public procurement notices from the official Find a Tender OCDS feed, flattened to one queryable schema. Blind Mode: no contact or personal data.',
+  stats: {
+    date: { field: 'published_at', title: 'Notices published by month' },
+    groupBy: [
+      { field: 'buyer', title: 'Most active buyers' },
+      { field: 'status', title: 'Notices by status' },
+      { field: 'procurement_method', title: 'By procurement method' },
+    ],
+  },
   recordSchema: ukTendersRecordSchema,
   queryParams: z.object({
     buyer: z.string().optional(),

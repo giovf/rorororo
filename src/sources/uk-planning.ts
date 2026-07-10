@@ -110,6 +110,12 @@ export const ukPlanningSource: DataSource<UkPlanningRecord> = {
   title: 'UK planning applications',
   description:
     'Planning applications from the official planning.data.gov.uk feed, normalized to one schema. Blind Mode: no applicant personal data.',
+  stats: {
+    date: { field: 'entry_date', title: 'Applications recorded by month' },
+    groupBy: [
+      { field: 'authority', title: 'Most active planning authorities (organisation code)' },
+    ],
+  },
   recordSchema: ukPlanningRecordSchema,
   queryParams: z.object({
     reference: z.string().optional(),

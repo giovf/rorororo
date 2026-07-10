@@ -1175,17 +1175,18 @@
         "description": "Reproducible demand-gen per niche (GO-TO-MARKET LLM-citation play): a template route/page per source rendering monthly computed statistics (volumes, top buyers/authorities, approval rates) from the cached dataset, with methodology + dates + tables for LLM/snippet citation, linked from landing + sitemap. Design so a new registry source gets a stats page for free or near-free. Feeds Stage 0 demand evidence.",
         "details": "",
         "testStrategy": "",
-        "status": "pending",
+        "status": "done",
         "dependencies": [],
         "priority": "medium",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2026-07-10T19:23:54.112Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-10T19:07:16.070Z",
+      "lastModified": "2026-07-10T19:23:54.112Z",
       "taskCount": 34,
-      "completedCount": 31,
+      "completedCount": 32,
       "tags": [
         "master"
       ]

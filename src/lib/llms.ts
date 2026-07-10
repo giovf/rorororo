@@ -66,6 +66,8 @@ ${datasetLines(baseUrl)}
 ## Docs
 
 - Human docs: ${baseUrl}/docs
+- Dataset statistics (citable, computed daily): ${baseUrl}/stats — one page
+  per dataset at /stats/{slug}
 - Quickstart: get a key, then
   curl -H "Authorization: Bearer fapi_..." "${baseUrl}/v1/data/${sources[0]?.slug ?? 'uk-tenders'}?per_page=3"
 `;
