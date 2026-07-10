@@ -3,7 +3,7 @@ import { Hono } from 'hono';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import { currentPeriod } from '../src/metering/counters';
-import { rateLimit } from '../src/metering/ratelimit';
+import { isolateRateLimit, rateLimit } from '../src/metering/ratelimit';
 import type { AppEnv } from '../src/types';
 import { authedFetch, bearer, issueKey } from './helpers/auth';
 import { planningResponse, stubOrigins } from './helpers/origin-mock';
@@ -160,5 +160,38 @@ describe('rate limiting', () => {
     expect(Number(limited.headers.get('Retry-After'))).toBeGreaterThan(0);
     const body = (await limited.json()) as ErrorEnvelope;
     expect(body.error.code).toBe('rate_limited');
+  });
+
+  it('fails open when KV errors (daily write cap, outage) instead of 500ing', async () => {
+    const app = new Hono<AppEnv>();
+    app.use(
+      '*',
+      rateLimit({ scope: 'test-open', limit: 3, windowSeconds: 60, identify: () => 'fixed' }),
+    );
+    app.get('/ping', (c) => c.json({ ok: true }));
+
+    const broken = {
+      ...env,
+      RATE: {
+        get: () => Promise.reject(new Error('KV put() limit exceeded')),
+        put: () => Promise.reject(new Error('KV put() limit exceeded')),
+      } as unknown as KVNamespace,
+    };
+    // Well past the limit: every request must still succeed.
+    for (let i = 0; i < 6; i++) {
+      const res = await app.request('/ping', {}, broken);
+      expect(res.status).toBe(200);
+    }
+  });
+});
+
+describe('isolateRateLimit', () => {
+  it('allows up to the limit, then reports seconds until the window resets', () => {
+    for (let i = 0; i < 4; i++) {
+      expect(isolateRateLimit('iso-test-a', 4, 60)).toBe(0);
+    }
+    expect(isolateRateLimit('iso-test-a', 4, 60)).toBeGreaterThan(0);
+    // Independent ids get independent windows.
+    expect(isolateRateLimit('iso-test-b', 4, 60)).toBe(0);
   });
 });

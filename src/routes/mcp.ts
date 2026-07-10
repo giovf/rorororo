@@ -2,8 +2,9 @@ import { StreamableHTTPTransport } from '@hono/mcp';
 import { Hono } from 'hono';
 import type { Context } from 'hono';
 import { requireApiKey } from '../auth/middleware';
+import { failure } from '../lib/envelope';
 import { buildMcpServer } from '../mcp/server';
-import { rateLimit } from '../metering/ratelimit';
+import { isolateRateLimit, rateLimit } from '../metering/ratelimit';
 import type { AppEnv } from '../types';
 
 // Stateless Streamable HTTP: Workers are stateless, so every request gets a
@@ -48,22 +49,44 @@ async function isAnonymousIntrospection(c: Context<AppEnv>): Promise<boolean> {
   );
 }
 
+// Anonymous introspection is limited in-isolate (zero KV ops): crawler waves
+// after directory listings were burning the KV write budget one put per
+// request, and metadata reads don't need globally-accurate accounting.
+const ANON_LIMIT = 120;
+const ANON_WINDOW_SECONDS = 60;
+
+// Authed traffic keeps KV-backed accounting, per-account (quota is
+// per-account, so keying on the key would let one account mint many keys to
+// multiply its effective rate).
+const authedRateLimit = rateLimit({
+  scope: 'mcp',
+  limit: 60,
+  windowSeconds: 60,
+  identify: (c) => c.get('keyCtx')?.usageSubject ?? c.get('keyCtx')?.keyId ?? 'unknown',
+});
+
 export const mcpRoute = new Hono<AppEnv>().post(
   '/',
   async (c, next) => {
-    if (await isAnonymousIntrospection(c)) return next();
+    if (await isAnonymousIntrospection(c)) {
+      const ip = c.req.header('CF-Connecting-IP') ?? 'unknown';
+      const retryAfter = isolateRateLimit(`mcp:${ip}`, ANON_LIMIT, ANON_WINDOW_SECONDS);
+      if (retryAfter > 0) {
+        c.header('Retry-After', String(retryAfter));
+        return c.json(
+          failure(
+            'rate_limited',
+            `Rate limit exceeded (${ANON_LIMIT} per ${ANON_WINDOW_SECONDS}s); retry later`,
+          ),
+          429,
+        );
+      }
+      return next();
+    }
     return requireApiKey()(c, next);
   },
-  rateLimit({
-    scope: 'mcp',
-    limit: 60,
-    windowSeconds: 60,
-    // Authed: per-account (quota is per-account, so keying on the key would let
-    // one account mint many keys to multiply its effective rate). Anonymous
-    // introspection: per-IP, so one crawler can't starve the path for others.
-    identify: (c) =>
-      c.get('keyCtx')?.usageSubject ?? `ip:${c.req.header('CF-Connecting-IP') ?? 'unknown'}`,
-  }),
+  // Anonymous requests were already limited above; keyCtx present ⇒ authed.
+  async (c, next) => (c.get('keyCtx') ? authedRateLimit(c, next) : next()),
   async (c) => {
     const server = buildMcpServer(c.env, c.get('keyCtx') ?? null);
     const transport = new StreamableHTTPTransport();

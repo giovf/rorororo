@@ -1115,6 +1115,18 @@
         "description": "Rename paid-tier display names to terminal theme: saver→grep, starter→cron, growth→daemon, scale→kernel. Display layer ONLY: slugs in plans.json keys, D1 accounts.plan, Stripe lookup_keys stay stable. Touch: plans.json displayName field, landing pricing grid, account.html plan grid + current-plan pill mapping, ARCHITECTURE.md + MARKETPLACE-PREP.md plan mentions. Stripe live product names unchanged (separate ask-first decision). Market comparison (2026-07-10) concluded no price changes needed.",
         "details": "",
         "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-07-10T07:31:35.848Z"
+      },
+      {
+        "id": 30,
+        "title": "KV-resilient rate limiting: fail-open + in-isolate limiter for anonymous MCP",
+        "description": "Two fixes from the 2026-07-10 KV write-cap incident (free-tier 1k writes/day, 62% by midday from crawler traffic): (1) rateLimit() middleware must fail OPEN on KV errors — at the daily cap RATE.put throws and every rate-limited route 500s, including paying customers; (2) anonymous MCP introspection switches from KV-backed rateLimit to a per-isolate in-memory counter so discovery traffic costs zero KV writes. Authed/metered accounting stays on KV.",
+        "details": "",
+        "testStrategy": "",
         "status": "pending",
         "dependencies": [],
         "priority": "medium",
@@ -1123,15 +1135,15 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-09T22:25:42.001Z",
-      "taskCount": 28,
-      "completedCount": 26,
+      "lastModified": "2026-07-10T07:31:35.848Z",
+      "taskCount": 29,
+      "completedCount": 27,
       "tags": [
         "master"
       ],
-      "created": "2026-07-10T07:26:29.137Z",
+      "created": "2026-07-10T13:59:16.628Z",
       "description": "Tasks for master context",
-      "updated": "2026-07-10T07:26:29.143Z"
+      "updated": "2026-07-10T13:59:16.632Z"
     }
   }
 }

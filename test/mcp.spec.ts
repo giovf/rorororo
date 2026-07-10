@@ -117,6 +117,15 @@ describe('/mcp', () => {
     expect(res.headers.get('WWW-Authenticate')).toContain('Bearer');
   });
 
+  it('anonymous introspection costs zero KV rate-limit writes; authed traffic is accounted', async () => {
+    await rpc(null, 'tools/list');
+    expect((await env.RATE.list({ prefix: 'rl:mcp:' })).keys.length).toBe(0);
+
+    const { key } = await issueKey();
+    await rpc(key, 'tools/list');
+    expect((await env.RATE.list({ prefix: 'rl:mcp:' })).keys.length).toBeGreaterThan(0);
+  });
+
   it('validates a presented key even on introspection methods', async () => {
     const res = await SELF.fetch(MCP_URL, {
       method: 'POST',
