@@ -1180,13 +1180,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-07-10T19:23:54.112Z"
+      },
+      {
+        "id": "35",
+        "title": "Stage 0 execution: playbook doc + npm run scoreboard",
+        "description": "Execution layer over GO-TO-MARKET's post drafts for a first-time marketer: docs/STAGE0-PLAYBOOK.md (week-by-week sequencing, per-venue rules, follow-up discipline, tracking) + scripts/scoreboard.mjs querying prod D1 via REST (accounts total/7d/paid, waitlist by source) so progress vs the 20-signup/5-precommit gate is one command.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-07-10T19:49:44.478Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-10T19:23:54.112Z",
-      "taskCount": 34,
-      "completedCount": 32,
+      "lastModified": "2026-07-10T19:49:44.478Z",
+      "taskCount": 35,
+      "completedCount": 33,
       "tags": [
         "master"
       ]

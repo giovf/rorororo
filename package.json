@@ -14,7 +14,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "cf-typegen": "wrangler types --env-interface CloudflareBindings",
-    "traffic": "node --env-file=.env scripts/traffic.mjs"
+    "traffic": "node --env-file=.env scripts/traffic.mjs",
+    "scoreboard": "node --env-file=.env scripts/scoreboard.mjs"
   },
   "dependencies": {
     "@coinbase/x402": "^2.1.0",
