@@ -7,13 +7,18 @@
 > this is the always-loaded summary.
 
 ## What we're building
-A single-purpose niche data API sold on usage/credit pricing to human
+A multi-niche data-API platform sold on usage/credit pricing to human
 developers (Stripe self-serve) and AI agents (MCP server + x402 USDC
-micropayments). v1 seeds it with UK public-sector open data — planning
-applications (`uk-planning`, planning.data.gov.uk) and procurement notices
-(`uk-tenders`, Find a Tender OCDS) — behind a swappable `DataSource`
-abstraction, so a market-validation pivot swaps source files, not the
-platform. Solo-operator product: everything self-serve, <2 hrs/week ops.
+micropayments). Strategy (operator decision 2026-07-11): ship MANY datasets
+across niches in parallel — validation comes from shipped-product signal
+(signups, traffic analytics, the /feedback form) rather than a pre-launch
+gate; weak datasets are cheap to retire because everything dataset-specific
+sits behind the swappable `DataSource` abstraction (one file + registry
+entry; the exposure surface regenerates itself — see NICHE-LAUNCH-CHECKLIST).
+Live datasets: UK planning applications (`uk-planning`) and procurement
+notices (`uk-tenders`); next: sanctions/debarment supplier-compliance
+(NICHE-NEXT-SANCTIONS.md, behind per-dataset legal terms). Solo-operator
+product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo
 names — never rename those; see memory/git history for why).
@@ -93,4 +98,5 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
 - Durable-Objects rate limiting; annual-plan automation; programmatic SEO at
   scale (per-council/per-buyer pages — the per-SOURCE `/stats` pages shipped
   with task 34 are the bounded version)
-- Real niche commitment before Stage 0 validation (build stays pivotable)
+- Fuzzy-match sanctions *screening* (`/v1/screen`) before list-serving proves
+  demand and per-dataset legal terms exist (NICHE-NEXT-SANCTIONS Phase B)
