@@ -1212,11 +1212,11 @@
         "description": "Multi-niche strategy (2026-07-11): feedback replaces gated validation. New D1 table feedback(message, email optional, page, created_at); POST /v1/feedback with zod validation, per-IP rate limit, envelope responses, OpenAPI path; public/feedback.html form (JS fetch + noscript fallback) linked from landing/docs footers; privacy policy updated same-commit (new stored data); sitemap entry; tests.",
         "details": "",
         "testStrategy": "",
-        "status": "in-progress",
+        "status": "done",
         "dependencies": [],
         "priority": "medium",
         "subtasks": [],
-        "updatedAt": "2026-07-11T21:39:15.599Z"
+        "updatedAt": "2026-07-11T21:50:04.228Z"
       },
       {
         "id": "38",
@@ -1232,9 +1232,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-11T21:39:15.600Z",
+      "lastModified": "2026-07-11T21:50:04.228Z",
       "taskCount": 38,
-      "completedCount": 33,
+      "completedCount": 34,
       "tags": [
         "master"
       ]
