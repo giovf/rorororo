@@ -1197,7 +1197,7 @@
         "id": "36",
         "title": "Phase A bridge datasets: uk-sanctions (UKSL) + uk-debarment — BLOCKED on Stage 0 trigger",
         "description": "UNBLOCKED 2026-07-11: Stage 0 gate removed by operator — strategy is now a multi-niche portfolio, so this ships ALONGSIDE uk-planning/uk-tenders as an expansion, not a pivot. Positioning: 'supplier due diligence' bundled with the procurement audience ('is this supplier sanctioned or debarred?' as a bid-intelligence question). Per docs/NICHE-NEXT-SANCTIONS.md Phase A: add the UK Sanctions List (UKSL, FCDO, OGL v3, XML/CSV) and the UK Procurement Act 2023 debarment list (Cabinet Office, PDF — investigate structured formats first) as ordinary DataSources. Query/filter only — NO matching/screening claims (Phase B /v1/screen is a separate, demand-gated effort). Legal prereqs (per-dataset terms, privacy policy update — sanctions/debarment lists ARE personal data, so the Blind Mode claim becomes per-dataset — plus EU/UN licence verification) are extracted to task 38, which this task now depends on: do not deploy these sources before task 38 lands.",
-        "status": "in-progress",
+        "status": "done",
         "dependencies": [
           "38"
         ],
@@ -1211,10 +1211,10 @@
             "description": "Create src/sources/uk-sanctions.ts implementing the DataSource interface for the UK Sanctions List: investigate the static gov.uk publication URLs, choose CSV over XML if viable (workerd has no DOMParser), design the zod recordSchema, queryParams, stats spec, and a checked-in fixture with FIXTURE_FALLBACK behavior — following the uk-tenders single-source pattern (~180 lines, one file only).",
             "dependencies": [],
             "details": "Follow src/sources/uk-tenders.ts as the template and the dataset isolation rule: this subtask touches only src/sources/uk-sanctions.ts + a fixture under src/sources/fixtures/. Steps: (1) Fetch the current UK Sanctions List publication page on gov.uk and identify the stable static download URLs; the list has been the single consolidated list since 2026-01-28 (OFSI Consolidated List closed). Prefer the CSV format — the Workers runtime has no DOMParser, so XML would need a hand-rolled or bundled parser; only fall back to XML if the CSV omits needed fields, and document the choice in a code comment stating the constraint. (2) Implement fetchFresh(env) to download and normalize records; validate every record against the zod recordSchema at ingest. (3) recordSchema fields: name, entity type (individual/entity/ship), sanctions regime, designation date (ISO), aliases as an array field, plus unique group/reference ID and any address/nationality fields as published. Do NOT strip personal fields — this source deliberately serves personal data as published for compliance purposes (GDPR divergence handled in subtask 5 docs and task 38 legal work). (4) queryParams per the generic filter convention in src/sources/types.ts: all optional, string params as case-insensitive substrings (name, regime, entity_type), designation_date_after/_before ISO-date ranges; page/per_page/q are platform-added. (5) statsSpec: monthly trend on designation date, groupBy sanctions regime and entity type, for the /stats/uk-sanctions cite-bait page. (6) Save a real API response excerpt as the fixture and wire the FIXTURE_FALLBACK pattern so dev/test never hits the live origin. (7) Set title/description strings mindful that they feed the sources listing, OpenAPI spec, and MCP tool description — query/filter positioning only, no matching/screening claims. Registry entry is deferred to subtask 5.",
-            "status": "in-progress",
+            "status": "done",
             "testStrategy": "Compiles under strict TypeScript with npm run typecheck; fixture parses and every record passes recordSchema.parse (verified fully in subtask 2's spec file). Manually spot-check field mapping of 2-3 known designations against the gov.uk source.",
             "parentId": "undefined",
-            "updatedAt": "2026-07-11T22:08:47.622Z"
+            "updatedAt": "2026-07-11T22:19:00.221Z"
           },
           {
             "id": 2,
@@ -1224,9 +1224,10 @@
               1
             ],
             "details": "Create a per-source spec file in test/ following the structure of test/uk-tenders.spec.ts. Unit tests: (1) fixture → normalized records snapshot (stable ordering), (2) recordSchema rejects records missing name/entity type/regime and accepts alias arrays of zero or more entries, (3) designation-date coercion to ISO and correct _after/_before boundary behavior. Integration tests via SELF.fetch with @cloudflare/vitest-pool-workers: /v1/data/uk-sanctions returns fixture-backed data; case-insensitive substring filters work for name and regime; entity_type filter works; designation_date_after/_before narrow results correctly; invalid query params return the 400 envelope with zod issue detail; pagination (page/per_page) math is correct. Confirm responses expose last_refreshed_at. Tests must run offline against the fixture (FIXTURE_FALLBACK) — no live gov.uk calls in CI.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "npm test green with the new spec file included; assert at least one filter-combination test and one negative (400) test. Coverage of the generated surfaces for the slug is deferred to subtask 5 (llms/openapi/mcp specs fire on registry entry).",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-11T22:19:02.519Z"
           },
           {
             "id": 3,
@@ -1247,9 +1248,10 @@
               3
             ],
             "details": "One source file + fixture + spec file, per the dataset isolation rule. (1) Implement fetchFresh(env) using the ingestion strategy from subtask 3 — structured download if one exists, else parse inside fetchFresh with the fixture+manual-refresh fallback. Fail-loud requirement: any parse anomaly (unexpected column count, missing expected header, zero records where the fixture has entries) must throw so the refresh cron logs a failure in refresh_log rather than serving wrong data; the KV cache TTL bounds how long stale data survives. (2) recordSchema: supplier name, exclusion ground(s) — array if multiple, mandatory/discretionary flag, entry date, expiry/review date, validated at ingest; personal data is served as published (no Blind Mode stripping — same GDPR divergence as uk-sanctions). (3) queryParams per the generic filter convention: supplier name substring, exclusion_ground substring, mandatory/discretionary, entry_date_after/_before. (4) statsSpec: breakdown by exclusion ground ('who's on it, by ground' cite-bait angle) plus a trend on entry date. (5) Fixture in src/sources/fixtures/ derived from the real published list; FIXTURE_FALLBACK wired. (6) test/uk-debarment.spec.ts mirroring the uk-tenders/uk-sanctions pattern: fixture normalization snapshot, schema validation, fail-loud parser tests (malformed input throws, does NOT return partial arrays), and /v1/data/uk-debarment filter/pagination/400-envelope integration tests via SELF.fetch. Registry entry is deferred to subtask 5.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "npm test green including the new spec; explicit negative tests prove the parser throws on drifted input (mutated fixture) rather than returning partial data. npm run typecheck and lint clean.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-11T22:19:04.535Z"
           },
           {
             "id": 5,
@@ -1261,9 +1263,10 @@
               4
             ],
             "details": "(1) Add one registry line per source in src/sources/registry.ts; if anything beyond the registry needs touching to make a surface work, that is a design bug in the abstraction to fix first, per the dataset isolation rule. (2) Verify propagation per docs/NICHE-LAUNCH-CHECKLIST.md: /v1/data/uk-sanctions and /v1/data/uk-debarment REST routes with validation, /openapi.json paths, MCP tools query_uk_sanctions and query_uk_debarment, llms.txt entries, /x402/data/<slug> payment lanes, landing catalog grid entries, and both slugs included in the daily refresh cron writing refresh_log. Run the /verify skill end-to-end against the dev server. (3) Same-commit rule (CLAUDE.md): in the SAME commit as the registry change, update docs/ARCHITECTURE.md — add UKSL (FCDO, OGL v3) and the Cabinet Office debarment list to the data-origins list, and reword the Blind Mode / UK GDPR paragraph so the no-personal-data claim is per-dataset (planning strips personal fields at ingest; sanctions/debarment serve personal data as published for compliance purposes) — and add the matching data-model note to .taskmaster/docs/prd.md. Commit as docs(architecture) content within the feature commit per convention. (4) This subtask is code + docs only, on a branch or local main — DO NOT deploy: deployment is gated on task 38 (per-dataset terms, privacy policy, landing/llms 'no personal data' copy fixes) being live, and belongs to subtask 6.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "npm test — test/llms.spec.ts fails if a registered source is missing from llms.txt; openapi.spec and mcp.spec must pass for both new slugs. /verify skill end-to-end: query both /v1/data/<slug> routes with filters, check /openapi.json, MCP tools/list, and /stats/<slug> pages on the dev server. Grep the diff to confirm ARCHITECTURE.md + PRD changes are in the same commit as the registry entries.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-11T22:19:07.122Z"
           },
           {
             "id": 6,
@@ -1273,15 +1276,16 @@
               5
             ],
             "details": "Pre-flight gate: confirm task 38 is status done AND its terms/privacy/landing-copy changes are deployed to production — verify the live privacy policy names the sanctions/debarment data categories and lawful basis, per-dataset licence/disclaimer sections (including 'screening aid, not legal advice') exist, and no global 'no personal data' claim remains in landing/llms copy. If not live, stop and do not deploy. Then: (1) Landing copy — add the 'supplier due diligence' bundle messaging next to the procurement copy ('is this supplier sanctioned or debarred?' as a bid-intelligence question); optionally the UKSL-consolidation cite-bait hook ('the UKSL consolidation, explained, with clean JSON'). No hero/meta repositioning. Positioning stays query/filter only — no matching, screening, or scoring claims anywhere (Phase B is demand-gated). (2) Add /stats/uk-sanctions and /stats/uk-debarment to public/sitemap.xml. (3) Bump the server.json version and run mcp-publisher publish. (4) Deploy — npm run deploy requires operator sign-off per CLAUDE.md 'ask before doing': confirm before running. (5) Post-deploy checks: MCP tools/list shows query_uk_sanctions and query_uk_debarment; /x402/data/<slug> returns a 402 payment-required response for both; refresh_log shows a successful cron entry for both sources after the next daily run; /stats pages render; spot-query both /v1/data/<slug> routes with a real key. Scope guard: UKSL + debarment only — no OFAC/EU/UN lists, no /v1/screen.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Production smoke checks after deploy: GET /openapi.json and /llms.txt list both slugs; MCP initialize + tools/list anonymously; authenticated tools/call for each new tool; x402 lane returns 402 without payment; sitemap.xml validates and includes both /stats URLs; refresh_log row per source after the cron fires. Re-read the live privacy policy and terms to confirm the task-38 language is present before announcing.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-11T22:24:47.222Z"
           }
         ],
         "complexity": 7,
         "recommendedSubtasks": 6,
         "expansionPrompt": "Expand into subtasks following the proven single-source pattern (see src/sources/uk-tenders.ts: ~180 lines, fixture in src/sources/fixtures/, per-source spec file in test/), but account for TWO sources and the compliance coupling: (1) uk-sanctions.ts — investigate the UKSL static gov.uk URLs and pick CSV over XML if viable (Workers runtime has no DOMParser; XML needs a hand-rolled or bundled parser), design the zod recordSchema (name, entity type, regime, designation date, aliases as array field), queryParams per the generic filter convention in src/sources/types.ts, stats spec (monthly trend on designation date, groupBy regime/entity type), fixture + fixture fallback matching the FIXTURE_FALLBACK pattern; (2) uk-sanctions unit + integration tests mirroring test/uk-tenders.spec.ts (fixture normalization, schema validation, /v1/data/uk-sanctions filters via SELF.fetch); (3) uk-debarment format investigation — confirm whether Cabinet Office publishes a structured format (ODS/CSV/API) before committing to PDF parsing; document the finding on the task; (4) uk-debarment.ts source with parser that fails loudly on drift (throw, never return partial data), checked-in fixture, stats groupBy exclusion ground, plus tests; (5) registry entries + generated-surface verification (llms.spec/openapi.spec/mcp.spec pass for both slugs; /verify skill end-to-end) and the same-commit ARCHITECTURE.md edits (data origins list, Blind Mode wording becomes per-dataset) + PRD data-model note; (6) launch ritual — landing catalog + 'supplier due diligence' bundle copy, sitemap.xml entries for both /stats pages, server.json version bump + mcp-publisher publish, post-deploy checks (MCP tools/list, x402 402 response, refresh_log after cron). Gate every deploy-facing subtask on task 38 being live.",
-        "updatedAt": "2026-07-11T22:08:47.622Z"
+        "updatedAt": "2026-07-11T22:24:47.222Z"
       },
       {
         "id": "37",
@@ -1361,9 +1365,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-11T22:08:47.622Z",
+      "lastModified": "2026-07-11T22:24:47.222Z",
       "taskCount": 38,
-      "completedCount": 35,
+      "completedCount": 36,
       "tags": [
         "master"
       ]
