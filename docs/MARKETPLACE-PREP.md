@@ -67,7 +67,7 @@ this registry, so publish here first.
   tools/call; `initialize`/`tools/list` are anonymous since task 26, so
   directory crawlers can index the tools without a key.
 - Server name `gankdat`; tools: `list_sources`, `get_usage`,
-  `query_uk_planning`, `query_uk_tenders`.
+  `query_uk_planning`, `query_uk_tenders`, `query_uk_sanctions`.
 - Most directories syndicate from the official registry (publish there
   first, then claim the listing); Glama also takes a GitHub repo link — the
   repo is private until the operator publishes it (their call).
@@ -96,6 +96,8 @@ Reusable blurbs for any directory form:
     status, value, dates, full-text `q` (1 credit)
   - `query_uk_planning` — planning applications; filter by authority,
     reference, decision dates, full-text `q` (1 credit)
+  - `query_uk_sanctions` — UK Sanctions List designations; filter by name,
+    regime, type, country, dates, full-text `q` (1 credit)
 - **Official registry**: `com.gankdat/gankdat` (published 2026-07-09)
 - **Links**: site https://gankdat.com · docs https://gankdat.com/docs ·
   OpenAPI https://gankdat.com/openapi.json · llms.txt

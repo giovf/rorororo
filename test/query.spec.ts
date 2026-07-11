@@ -19,7 +19,7 @@ describe('registry', () => {
   it('looks up sources by slug and lists them', () => {
     expect(getSource('uk-planning')?.slug).toBe('uk-planning');
     expect(getSource('nope')).toBeUndefined();
-    expect(listSources().map((s) => s.slug)).toEqual(['uk-planning', 'uk-tenders']);
+    expect(listSources().map((s) => s.slug)).toEqual(['uk-planning', 'uk-tenders', 'uk-sanctions']);
   });
 });
 

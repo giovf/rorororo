@@ -2,6 +2,7 @@ import { vi } from 'vitest';
 
 const PLANNING_ORIGIN = 'https://www.planning.data.gov.uk/entity.json';
 const TENDERS_ORIGIN = 'https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages';
+const SANCTIONS_ORIGIN = 'https://sanctionslist.fcdo.gov.uk/docs/UK-Sanctions-List.csv';
 
 /**
  * Tests run in the same isolate as the worker under test, so stubbing the
@@ -11,6 +12,7 @@ const TENDERS_ORIGIN = 'https://www.find-tender.service.gov.uk/api/1.0/ocdsRelea
 export function stubOrigins(handlers: {
   planning?: () => Response;
   tenders?: () => Response;
+  sanctions?: () => Response;
 }): ReturnType<typeof vi.fn> {
   const mock = vi.fn((input: RequestInfo | URL) => {
     const url = String(input instanceof Request ? input.url : input);
@@ -19,6 +21,9 @@ export function stubOrigins(handlers: {
     }
     if (url.startsWith(TENDERS_ORIGIN) && handlers.tenders) {
       return Promise.resolve(handlers.tenders());
+    }
+    if (url.startsWith(SANCTIONS_ORIGIN) && handlers.sanctions) {
+      return Promise.resolve(handlers.sanctions());
     }
     throw new Error(`unexpected outbound fetch in test: ${url}`);
   });

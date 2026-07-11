@@ -15,7 +15,7 @@ describe('GET /v1/data (sources listing)', () => {
     const res = await SELF.fetch('https://example.com/v1/data');
     expect(res.status).toBe(200);
     const body = (await res.json()) as SuccessEnvelope<SourceListing[]>;
-    expect(body.data.map((s) => s.slug)).toEqual(['uk-planning', 'uk-tenders']);
+    expect(body.data.map((s) => s.slug)).toEqual(['uk-planning', 'uk-tenders', 'uk-sanctions']);
     const tenders = body.data.find((s) => s.slug === 'uk-tenders');
     expect(tenders?.supported_params).toEqual(
       expect.arrayContaining(['buyer', 'cpv_codes', 'value_amount_min', 'published_at_after', 'q']),

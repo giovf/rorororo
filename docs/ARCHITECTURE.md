@@ -15,9 +15,10 @@ across niches in parallel — validation comes from shipped-product signal
 gate; weak datasets are cheap to retire because everything dataset-specific
 sits behind the swappable `DataSource` abstraction (one file + registry
 entry; the exposure surface regenerates itself — see NICHE-LAUNCH-CHECKLIST).
-Live datasets: UK planning applications (`uk-planning`) and procurement
-notices (`uk-tenders`); next: sanctions/debarment supplier-compliance
-(NICHE-NEXT-SANCTIONS.md, behind per-dataset legal terms). Solo-operator
+Live datasets: UK planning applications (`uk-planning`), procurement
+notices (`uk-tenders`), and UK sanctions designations (`uk-sanctions`,
+shipped 2026-07-11 with per-dataset terms; debarment list monitored —
+still empty upstream, see NICHE-NEXT-SANCTIONS.md). Solo-operator
 product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo

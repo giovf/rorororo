@@ -33,8 +33,8 @@ export function buildLlmsTxt(baseUrl: string): string {
 > ${catalog} — as clean JSON, one schema, refreshed daily from official
 > government feeds; no scraping. Built for developers and AI agents. Native
 > MCP server + x402 pay-per-request. Licence and personal-data posture are
-> stated per dataset in ${baseUrl}/terms (current datasets: OGL v3, Blind
-> Mode — personal data dropped at ingest).
+> stated per dataset in ${baseUrl}/terms (OGL v3 sources; Blind Mode where
+> stated; sanctions data served as published, minimized, for compliance use).
 
 Base URL: ${baseUrl}
 Machine-readable spec: ${baseUrl}/openapi.json
