@@ -85,9 +85,11 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   `CLOUDFLARE_API_TOKEN` secret existing.
 
 ## Compliance & accessibility
-- UK GDPR: Blind Mode — personal fields in planning data are dropped at
-  ingest, never stored; waitlist stores email only. No purchased lists, no
-  cold email in v1.
+- UK GDPR: per-dataset data posture, stated in the terms licence table.
+  Current datasets run Blind Mode — personal fields dropped at ingest, never
+  stored. Personal-data datasets (e.g. sanctions lists) require their terms +
+  privacy entries BEFORE going live (task-38 framework). Waitlist/feedback
+  store email only. No purchased lists, no cold email in v1.
 - Landing/docs: plain fast HTML, core content works without JS.
 
 ## Out of scope for v1 (do not scope-creep without re-baselining)

@@ -64,8 +64,8 @@ screening added once list-serving proves demand.
 | UK Sanctions List (UKSL) | FCDO | XML/CSV/HTML/PDF, static URLs | **OGL v3** | Clean DataSource fit |
 | UK debarment list | Cabinet Office | **PDF** (investigate data formats) | Crown/OGL | Tiny dataset; parse in cron; THE bridge |
 | OFAC SDN + Consolidated | US Treasury | XML/CSV via Sanctions List Service | US public domain | Clean fit |
-| EU consolidated (FSF) | EU Commission | XML | EU reuse decision (attribution) | Verify terms before ship |
-| UN consolidated | UN Security Council | XML | verify terms | Verify before ship |
+| EU consolidated (FSF) | EU Commission | XML | **VERIFIED 2026-07-11**: Commission Decision 2011/833/EU — commercial reuse OK with attribution | Usable |
+| UN consolidated | UN Security Council | XML | **UNRESOLVED 2026-07-11**: no open commercial-reuse licence found — EXCLUDED from Phase A. Low cost: UKSL already incorporates UN designations via UK regulations | Excluded until terms clarified |
 
 ## The honest engineering delta
 

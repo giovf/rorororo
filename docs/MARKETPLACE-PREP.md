@@ -84,8 +84,8 @@ Reusable blurbs for any directory form:
   planning.data.gov.uk planning applications), normalized to one clean JSON
   schema. Native MCP server for AI agents, plus x402 USDC pay-per-request on
   Base — no signup needed for agents that can pay per call. Free tier: 250
-  requests/month. Blind Mode: personal data is dropped at ingest, never
-  stored or served.
+  requests/month. Licence and personal-data posture stated per dataset in the
+  terms (current datasets: OGL v3, Blind Mode — personal data dropped at ingest).
 - **Endpoint**: `https://gankdat.com/mcp` (Streamable HTTP, MCP 2025-06-18)
 - **Auth**: `Authorization: Bearer <api key>` for tools/call (free key at
   https://gankdat.com/account); `initialize`/`tools/list` need no key.

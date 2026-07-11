@@ -20,7 +20,7 @@
   "@id": "https://gankdat.com/#api",
   "name": "gankdat",
   "url": "https://gankdat.com",
-  "description": "UK public-sector tenders (Find a Tender) and planning applications as clean JSON from official government feeds. Native MCP server and x402 pay-per-request for AI agents. Blind Mode: no personal data stored or served.",
+  "description": "UK public-sector tenders (Find a Tender) and planning applications as clean JSON from official government feeds. Native MCP server and x402 pay-per-request for AI agents. Blind Mode on current datasets: personal data dropped at ingest.",
   "documentation": "https://gankdat.com/docs",
   "termsOfService": "https://gankdat.com/terms",
   "provider": { "@type": "Organization", "name": "gankdat", "url": "https://gankdat.com" },
@@ -195,11 +195,11 @@ html.fx-nocursor, html.fx-nocursor *{cursor:none !important}
   <div class="trust">
     <span>cancel anytime — monthly billing, no lock-in</span>
     <span><a href="/privacy">zero trackers</a> — one essential cookie</span>
-    <span>official OGL sources — no scraping, <a href="/privacy">no personal data</a></span>
+    <span>official government sources — no scraping, <a href="/privacy">Blind Mode</a></span>
   </div>
 
   <footer>
-    <p><strong>Data &amp; privacy.</strong> Sources are official UK government feeds published under the Open Government Licence (planning.data.gov.uk, Find a Tender). Personal data in source records is dropped at ingest and never stored (Blind Mode). The only personal data we hold is the email you sign up with — no analytics cookies, no purchased lists, no cold email. Contact: <a href="mailto:info@gankdat.com">info@gankdat.com</a>.</p>
+    <p><strong>Data &amp; privacy.</strong> Sources are official government feeds; each dataset's licence and personal-data posture is stated in the <a href="/terms">terms</a>. All current datasets (planning.data.gov.uk, Find a Tender — both OGL) run Blind Mode: personal data in source records is dropped at ingest and never stored. The only personal data we hold is the email you sign up with — no analytics cookies, no purchased lists, no cold email. Contact: <a href="mailto:info@gankdat.com">info@gankdat.com</a>.</p>
     <p>© 2026 gankdat · <a href="/docs">Documentation</a> · <a href="/stats">Statistics</a> · <a href="/feedback">Feedback</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/llms.txt">For LLMs</a></p>
   </footer>
 </main>

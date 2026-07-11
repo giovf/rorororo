@@ -59,11 +59,18 @@ th{color:var(--muted);font:700 .72rem var(--mono);text-transform:uppercase;lette
   <h2>6. Pay-per-request (x402)</h2>
   <p>Endpoints under <code>/x402/</code> accept per-request payment in USDC on the Base network, with no account required. A payment is complete when it settles on-chain; settled payments are <strong>non-refundable</strong> (we could not identify the payer to refund them). The response to a paid request is delivered at the time of settlement.</p>
 
-  <h2>7. Your use of the data</h2>
+  <h2>7. Your use of the data — per-dataset licences</h2>
+  <p>Each dataset in the catalog carries its own source licence and personal-data posture, set out in this table. If a dataset ever lacks an entry here, the defaults apply: Open Government Licence v3 and Blind Mode.</p>
+  <table>
+    <tr><th>Dataset</th><th>Source</th><th>Licence</th><th>Personal data</th></tr>
+    <tr><td><code>uk-planning</code></td><td>planning.data.gov.uk (official government feed)</td><td><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">OGL v3</a>, Crown copyright — attribute the originating body if you republish</td><td><strong>Blind Mode</strong>: applicant names and contact details are dropped at ingest, never stored or served</td></tr>
+    <tr><td><code>uk-tenders</code></td><td>Find a Tender (official OCDS feed)</td><td><a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">OGL v3</a>, Crown copyright — attribute the originating body if you republish</td><td><strong>Blind Mode</strong>: contact and personal fields are dropped at ingest, never stored or served</td></tr>
+  </table>
+  <p>Rules that apply to every dataset:</p>
   <ul>
-    <li>The underlying records originate from official government sources under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/">Open Government Licence v3</a> and remain subject to it, including Crown copyright and the OGL's attribution requirement. If you republish the data, attribute the originating body (we identify sources per dataset).</li>
-    <li>You may use API responses in your own products, analyses, and services, including commercially.</li>
-    <li>You may <strong>not</strong> resell, mirror, or redistribute the API itself (i.e. offering our service, or wholesale access to it, as your product), and you may not use the data to attempt to identify or profile individuals.</li>
+    <li>You may use API responses in your own products, analyses, and services, including commercially, subject to the dataset's source licence above.</li>
+    <li>You may <strong>not</strong> resell, mirror, or redistribute the API itself (i.e. offering our service, or wholesale access to it, as your product).</li>
+    <li>Where a dataset runs <strong>Blind Mode</strong>, you may not use it to attempt to identify or profile individuals, alone or combined with other sources. If we add a dataset that inherently consists of personal data published by government for a specific purpose (for example a compliance list), its table entry will say so and state any additional use conditions — those conditions are part of these terms for that dataset.</li>
   </ul>
 
   <h2>8. Data disclaimer</h2>

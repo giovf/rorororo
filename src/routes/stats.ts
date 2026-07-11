@@ -111,10 +111,10 @@ function pageHtml(
 ${sections.join('\n')}
 <h2>methodology</h2>
 <p class="muted">Computed from the same records the gankdat API serves — official
-Open-Government-Licence feeds, refreshed daily, no scraping. Personal data is
-dropped at ingest (Blind Mode). Counts reflect the current dataset window, not
-all-time totals. Licence: OGL v3. Cite this page with its URL and the
-last-refreshed date.</p>
+government feeds, refreshed daily, no scraping. This dataset's licence and
+personal-data posture are stated in the <a href="/terms">terms</a>. Counts
+reflect the current dataset window, not all-time totals. Cite this page with
+its URL and the last-refreshed date.</p>
 <div class="cta">
 <b>Get this data as JSON</b><br>
 <span class="muted">free tier, 250 req/mo — or MCP for agents</span><br><br>

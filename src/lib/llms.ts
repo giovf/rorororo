@@ -31,9 +31,10 @@ export function buildLlmsTxt(baseUrl: string): string {
   return `# gankdat
 
 > ${catalog} — as clean JSON, one schema, refreshed daily from official
-> Open-Government-Licence feeds; no scraping. Built for developers and AI
-> agents. Native MCP server + x402 pay-per-request. Personal data is dropped
-> at ingest (Blind Mode).
+> government feeds; no scraping. Built for developers and AI agents. Native
+> MCP server + x402 pay-per-request. Licence and personal-data posture are
+> stated per dataset in ${baseUrl}/terms (current datasets: OGL v3, Blind
+> Mode — personal data dropped at ingest).
 
 Base URL: ${baseUrl}
 Machine-readable spec: ${baseUrl}/openapi.json
