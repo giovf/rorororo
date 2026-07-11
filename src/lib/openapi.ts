@@ -155,6 +155,35 @@ const waitlistPath: JsonObject = {
   },
 };
 
+const feedbackPath: JsonObject = {
+  '/v1/feedback': {
+    post: {
+      operationId: 'send_feedback',
+      summary: 'Send product feedback (public; email optional, only for replies)',
+      tags: ['platform'],
+      requestBody: {
+        required: true,
+        content: {
+          'application/json': {
+            schema: toSchema(
+              z.object({
+                message: z.string().min(3).max(2000),
+                email: z.email().optional(),
+                page: z.string().max(200).optional(),
+              }),
+            ),
+          },
+        },
+      },
+      responses: {
+        '200': jsonResponse('Feedback stored', successEnvelope(z.object({ received: z.boolean() }))),
+        '400': errorResponse('Invalid request body'),
+        '429': errorResponse('Rate limit exceeded'),
+      },
+    },
+  },
+};
+
 const usagePath: JsonObject = {
   '/v1/usage': {
     get: {
@@ -268,6 +297,7 @@ function buildDocument(baseUrl: string): JsonObject {
       ...usagePath,
       ...billingPaths,
       ...waitlistPath,
+      ...feedbackPath,
       ...sourcePaths,
     },
     components: {

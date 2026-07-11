@@ -50,12 +50,12 @@ const recent = await sql(`
   GROUP BY 1 ORDER BY 1
 `);
 
-const GATE = 20;
-const pct = Math.min(100, Math.round((totals.accounts / GATE) * 100));
+const BENCHMARK = 20; // per-niche progress benchmark (the old gate, retired 2026-07-11)
+const pct = Math.min(100, Math.round((totals.accounts / BENCHMARK) * 100));
 
-console.log(`\n${GREEN}gankdat${RESET} Stage 0 scoreboard\n`);
+console.log(`\n${GREEN}gankdat${RESET} growth scoreboard\n`);
 console.log(
-  `  signups (accounts):  ${GREEN}${totals.accounts}${RESET} / ${GATE} gate  ${DIM}(${pct}%)${RESET}`,
+  `  signups (accounts):  ${GREEN}${totals.accounts}${RESET} / ${BENCHMARK} benchmark  ${DIM}(${pct}%)${RESET}`,
 );
 console.log(`  last 7 days:         ${totals.last7 ?? 0}`);
 console.log(`  paid conversions:    ${AMBER}${totals.paid ?? 0}${RESET}`);
@@ -67,6 +67,10 @@ if (recent.length) {
   console.log(`\n  signups by day (14d):`);
   for (const r of recent) console.log(`    ${r.day}  ${'█'.repeat(r.n)} ${r.n}`);
 }
+const [fb] = await sql(`SELECT COUNT(*) AS n FROM feedback`);
 console.log(
-  `\n${DIM}  gate: 20 signups OR 5 "I'd pay" pre-commits (log pre-commits in STAGE0-PLAYBOOK.md)${RESET}\n`,
+  `  feedback messages:   ${fb.n}${fb.n ? '  (read: wrangler d1 execute DB --remote --command "SELECT * FROM feedback ORDER BY id DESC LIMIT 20")' : ''}`,
+);
+console.log(
+  `\n${DIM}  benchmark: ~20 signups per niche launch; demand signals via /feedback (log them in STAGE0-PLAYBOOK.md)${RESET}\n`,
 );

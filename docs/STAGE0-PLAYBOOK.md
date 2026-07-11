@@ -1,10 +1,17 @@
-# Stage 0 execution playbook — for a first-time marketer
+# Launch-marketing playbook — for a first-time marketer
 
-**Goal (the gate): 20 signups OR 5 "I'd pay for this" pre-commitments,
-within ~4 weeks of genuine effort.** Post copy lives in `GO-TO-MARKET.md` —
-this doc is the WHEN, WHERE, and WHAT-NEXT. Check progress any time with
-`npm run scoreboard` (signups from prod D1) and `npm run traffic` (who's
-visiting). Log pre-commits by hand in the table at the bottom.
+> **Strategy update 2026-07-11:** the Stage 0 gate is retired — the platform
+> ships multiple niches in parallel and lets shipped-product signal decide
+> (signups via `npm run scoreboard`, visitors via `npm run traffic`, and the
+> website `/feedback` form). This playbook remains the marketing sequence to
+> run **per dataset launch** — the 20-signup figure below is a progress
+> benchmark, not a go/no-go gate, and "pivot" steps now mean "deprioritize
+> that dataset," not "abandon the platform."
+
+**Benchmark: 20 signups per niche within ~4 weeks of genuine effort.** Post
+copy lives in `GO-TO-MARKET.md` — this doc is the WHEN, WHERE, and
+WHAT-NEXT. Log "I'd pay" signals in the table at the bottom; they now arrive
+via the feedback form too.
 
 Positioning reminder: **lead with procurement / bid-intelligence** (Find a
 Tender, less contested, bigger budgets) and the **agent-native angle**

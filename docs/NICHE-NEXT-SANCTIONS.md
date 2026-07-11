@@ -121,10 +121,16 @@ requests + at least 2 "would pay for screening" conversations.
 - **Crowding velocity**: the agent-native entrants iterate fast; our moat is
   primary sources + UK anchor + existing platform, not the MCP transport.
 
-## Next actions (all currently BLOCKED on Stage 0 — do not build yet)
+## Next actions (UNBLOCKED 2026-07-11 — Stage 0 gate retired; multi-niche
+## portfolio strategy. Phase A ships alongside uk-tenders/uk-planning.)
 
-1. Verify EU/UN list reuse terms; confirm debarment list has no structured format.
-2. Draft per-dataset terms + privacy updates (legal prep is the long pole).
-3. Task the Phase A sources when a trigger fires (NICHE-LAUNCH-CHECKLIST flow).
+1. **Task 38 first (the only remaining gate — legal, not validation):**
+   per-dataset terms + privacy updates; verify EU/UN reuse terms; confirm
+   debarment list structured format.
+2. Then task 36: build `uk-sanctions` + `uk-debarment` per
+   NICHE-LAUNCH-CHECKLIST; position as "supplier due diligence" bundled
+   with procurement.
+3. Phase B (screening endpoint) still waits for demand signal — now measured
+   via /feedback and per-source traffic instead of pre-commit interviews.
 
 Sources: [OpenSanctions licensing](https://www.opensanctions.org/licensing/) · [Verifex](https://verifex.dev/) · [sanctions.io pricing](https://help.sanctions.io/knowledge-base/pricing-plans) · [UKSL](https://www.gov.uk/government/publications/the-uk-sanctions-list) · [UKSL single-list transition, 28 Jan 2026](https://www.gov.uk/guidance/moving-to-a-single-list-for-uk-sanctions-designations-28-january-2026) · [UK debarment list](https://assets.publishing.service.gov.uk/media/68595a94eaa6f6419fade63b/Debarment_List.pdf) · [debarment guidance](https://www.gov.uk/government/publications/procurement-act-2023-guidance-documents-procure-phase/guidance-debarment-html) · [OFAC list formats](https://ofac.treasury.gov/faqs/topic/1641) · [Limitguard MCP](https://conare.ai/marketplace/mcp/limitguard) · [LION x402](https://glama.ai/mcp/connectors/com.lionx402/lion-x402) · [Anthropic KYC agent analysis](https://www.sardine.ai/blog/anthropic-kyc-agent-what-it-actually-is)
