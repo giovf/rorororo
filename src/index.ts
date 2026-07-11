@@ -88,6 +88,12 @@ app.route('/mcp', mcpRoute);
 app.route('/x402', x402Routes);
 app.route('/openapi.json', openapiRoute);
 app.route('/llms.txt', llmsRoute);
+// Google Search Console verification. Served by the Worker, NOT public/:
+// the assets layer's html_handling 307s exact .html URLs to their pretty
+// form, and Google's verifier requires a 200 at this precise path.
+app.get('/googlefe04af66a3419656.html', (c) =>
+  c.text('google-site-verification: googlefe04af66a3419656.html'),
+);
 app.route('/stats', statsRoutes);
 
 app.onError(errorHandler);
