@@ -27,6 +27,33 @@ Two coherent bundles, not orphans:
 - Bulk-package URL template `packages/notice/daily/{yyyynnnnn}` is WRONG
   (refuted 1-2); the verified pattern is `packages/daily/{yyyynnnnn}`.
 
+## Task-43 licence review — VERDICT: parked (2026-07-13)
+
+The PPD "Address Data" restriction is broader than assumed: per the official
+downloads page it attaches to EIGHT fields — postcode, PAON, SAON, street,
+locality, town/city, district, county — with reuse limited to personal/
+non-commercial use or "display for the purpose of providing residential
+property price information services"; anything else needs Royal Mail
+permission. Consequences, in order examined:
+
+1. **Per-transaction records with postcode** (the hoped-for middle path):
+   inside the restricted set — not shippable self-serve without accepting
+   material licence risk.
+2. **Address-free transactions** (price, date, type, tenure, new-build): no
+   geography at all → commercially useless.
+3. **Aggregates by admin geography**: compliant, but duplicates the official
+   UK House Price Index (verified plain OGL, local-authority, monthly, free)
+   → near-zero willingness-to-pay.
+4. **"Display services" carve-out passed downstream via per-dataset terms**:
+   a real position some products take, but whether an API reseller fits
+   "display… services" is exactly the question Royal Mail could dispute —
+   needs counsel or Royal Mail permission BEFORE build, not after.
+
+**Decision: defer.** Revisit triggers: (a) paying-customer demand for
+property-price data → price Royal Mail permission / get counsel on shape 4;
+(b) HMLR/Royal Mail open address rights (PAF openness is periodically
+reviewed). The property bundle keeps uk-planning as its anchor meanwhile.
+
 ## Open questions (carry into tasks)
 1. TED anonymous rate limits; does eForms UBL parsing fit one DataSource or
    need a shared helper?
