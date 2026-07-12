@@ -38,9 +38,21 @@ app.use(
     xContentTypeOptions: 'nosniff',
     referrerPolicy: 'strict-origin-when-cross-origin',
     strictTransportSecurity: 'max-age=63072000; includeSubDomains',
-    contentSecurityPolicy: { frameAncestors: ["'none'"] },
-    // The API is not framed and serves JSON — no need for the default CSP that
-    // would also constrain script/style on our own pages.
+    // Strict CSP for Worker-generated responses: JSON API (no subresources),
+    // the sign-in confirm page, and the /stats pages — none run inline scripts
+    // (only inline <style> and ld+json data), so script-src 'self' holds.
+    // Static HTML has its own per-page CSP in public/_headers.
+    contentSecurityPolicy: {
+      defaultSrc: ["'self'"],
+      scriptSrc: ["'self'"],
+      styleSrc: ["'self'", "'unsafe-inline'"],
+      imgSrc: ["'self'", 'data:'],
+      connectSrc: ["'self'"],
+      formAction: ["'self'"],
+      baseUri: ["'none'"],
+      objectSrc: ["'none'"],
+      frameAncestors: ["'none'"],
+    },
     xXssProtection: false,
   }),
 );
