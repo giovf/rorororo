@@ -191,7 +191,9 @@ export const ukSanctionsSource: DataSource<UkSanctionsRecord> = {
       }
       return records;
     } catch (err) {
-      if (env.FIXTURE_FALLBACK === 'true') {
+      // String() so the check survives the generated literal binding type
+      // (prod pins FIXTURE_FALLBACK="false"), matching the other sources.
+      if (String(env.FIXTURE_FALLBACK) === 'true') {
         console.log(
           JSON.stringify({ level: 'warn', event: 'fixture_fallback', source: 'uk-sanctions' }),
         );

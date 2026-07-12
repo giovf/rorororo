@@ -169,11 +169,15 @@ export const statsRoutes = new Hono<AppEnv>()
   .get('/:source', async (c) => {
     const source = getSource(c.req.param('source'));
     if (!source) return c.json(failure('not_found', 'Unknown source'), 404);
-    let result;
-    try {
-      result = await sourceStats(c.env, source);
-    } catch {
-      return c.json(failure('unavailable', 'Source temporarily unavailable, retry later'), 503);
+    // Precomputed read only — this page is public and unauthenticated, so it
+    // must never drive an origin refresh or a full-table aggregation.
+    const result = await sourceStats(c.env, source);
+    if (!result) {
+      c.header('Retry-After', '3600');
+      return c.json(
+        failure('unavailable', 'Statistics are being prepared for this dataset; check back soon'),
+        503,
+      );
     }
     c.header('Cache-Control', 'public, max-age=3600');
     return c.html(pageHtml(source, result.stats, result.last_refreshed_at, publicBaseUrl(c.env)));

@@ -95,9 +95,18 @@ function isoDaysAgo(days: number): string {
 async function fetchFromOrigin(key: string): Promise<UkCompaniesRecord[]> {
   const auth = `Basic ${btoa(`${key}:`)}`;
   const records: UkCompaniesRecord[] = [];
+  // Hard page cap per day: reaching MAX_RECORDS needs only a couple of pages,
+  // and this bounds the loop even if the origin returns full pages whose items
+  // all fail to parse (schema drift) — without it, `records` never grows and
+  // the loop would run to the Worker subrequest cap.
+  const maxPagesPerDay = Math.ceil(MAX_RECORDS / PAGE_SIZE) + 1;
   for (let day = 0; day < WINDOW_DAYS && records.length < MAX_RECORDS; day += 1) {
     const date = isoDaysAgo(day);
-    for (let startIndex = 0; records.length < MAX_RECORDS; startIndex += PAGE_SIZE) {
+    for (
+      let startIndex = 0, pageNum = 0;
+      records.length < MAX_RECORDS && pageNum < maxPagesPerDay;
+      startIndex += PAGE_SIZE, pageNum += 1
+    ) {
       const url = `${ORIGIN_URL}?incorporated_from=${date}&incorporated_to=${date}&size=${PAGE_SIZE}&start_index=${startIndex}`;
       const res = await fetch(url, {
         headers: { authorization: auth, 'user-agent': 'gankdat.com data refresh' },

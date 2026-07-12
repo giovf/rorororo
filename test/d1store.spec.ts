@@ -1,7 +1,8 @@
 import { env } from 'cloudflare:test';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
-import { queryD1Source, refreshD1Source, statsD1Source } from '../src/sources/d1store';
+import { queryD1Source, refreshD1Source } from '../src/sources/d1store';
+import { readSourceStats } from '../src/sources/cache';
 import { computeStats } from '../src/lib/stats';
 import { applyQuery, buildQuerySchema } from '../src/sources/query';
 import type { DataSource } from '../src/sources/types';
@@ -128,10 +129,12 @@ describe('d1store', () => {
     expect(result.page.total).toBe(RECORDS.length);
   });
 
-  it('computes stats matching the JS aggregation', async () => {
+  it('precomputes stats at refresh matching the JS aggregation', async () => {
     const source = makeSource('d1-stats');
     await refreshD1Source(env, source);
-    const viaSql = await statsD1Source(env, source);
+    // Stats are computed once at refresh and cached in KV; /stats reads this.
+    const cached = await readSourceStats(env, 'd1-stats');
+    expect(cached).not.toBeNull();
     // Ties in group counts have no canonical order in the JS engine (insertion
     // order); normalize both sides to (count desc, value asc) before comparing.
     const canonical = (
@@ -143,6 +146,31 @@ describe('d1store', () => {
         rows: [...group.rows].sort((a, b) => b.count - a.count || a.value.localeCompare(b.value)),
       })),
     });
-    expect(canonical(viaSql.stats)).toEqual(canonical(computeStats(RECORDS, source.stats)));
+    expect(canonical(cached!.stats)).toEqual(canonical(computeStats(RECORDS, source.stats)));
+  });
+
+  it('does not refresh on query when the source is not loaded (503 path)', async () => {
+    const source = makeSource('d1-cold');
+    const parsed = buildQuerySchema(source).parse({});
+    // No prior refresh → no meta row → must throw, never trigger a cold-start.
+    await expect(queryD1Source(env, source, parsed)).rejects.toThrow(/not been loaded/);
+  });
+
+  it('self-heals after a mid-refresh crash left orphan rows at the target generation', async () => {
+    const source = makeSource('d1-orphan');
+    await refreshD1Source(env, source); // generation 1 committed
+
+    // Simulate a crash after partial insert at generation 2: meta stays at 1,
+    // orphan rows linger at generation 2.
+    await env.DB.prepare(
+      "INSERT INTO source_records (source_slug, generation, seq, search, record) VALUES ('d1-orphan', 2, 0, 'orphan', '{}')",
+    ).run();
+
+    // Next refresh recomputes generation 2 and must sweep the orphan first
+    // (else a PK collision would throw and wedge the dataset forever).
+    await refreshD1Source(env, source);
+    const parsed = buildQuerySchema(source).parse({});
+    const result = await queryD1Source(env, source, parsed);
+    expect(result.page.total).toBe(RECORDS.length);
   });
 });

@@ -86,6 +86,25 @@ function normalizeRow(cols: string[], idx: Map<string, number>): SamExclusionsRe
 
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
+// Abort decompression if the extract expands past this — the real active
+// dataset is ~68MB; this bounds a gzip-bomb from a compromised origin.
+const MAX_DECOMPRESSED_BYTES = 256 * 1024 * 1024;
+
+/** Caps the total bytes read from a stream, aborting past the limit. */
+function byteCapTransform(limit: number): TransformStream<Uint8Array, Uint8Array> {
+  let seen = 0;
+  return new TransformStream({
+    transform(chunk, controller) {
+      seen += chunk.byteLength;
+      if (seen > limit) {
+        controller.error(new Error(`decompressed body exceeded ${limit} bytes`));
+        return;
+      }
+      controller.enqueue(chunk);
+    },
+  });
+}
+
 /** Sniff the extract body: gzip (magic 1f 8b) → decompress; else use as-is. */
 async function csvStream(body: ReadableStream<Uint8Array>): Promise<ReadableStream<Uint8Array>> {
   const [probe, rest] = body.tee();
@@ -93,12 +112,20 @@ async function csvStream(body: ReadableStream<Uint8Array>): Promise<ReadableStre
   const { value } = await reader.read();
   await reader.cancel();
   const isGzip = value !== undefined && value.length >= 2 && value[0] === 0x1f && value[1] === 0x8b;
-  return isGzip ? rest.pipeThrough(new DecompressionStream('gzip')) : rest;
+  return isGzip
+    ? rest
+        .pipeThrough(new DecompressionStream('gzip'))
+        .pipeThrough(byteCapTransform(MAX_DECOMPRESSED_BYTES))
+    : rest;
 }
 
 async function requestExtractUrl(key: string): Promise<string> {
-  const res = await fetch(`${LIST_URL}?api_key=${key}&isActive=Y&format=csv`, {
+  // Key travels in the query string (SAM-mandated). Encoded for robustness;
+  // NB: this URL and the derived download URL carry the live key — never log
+  // or throw them (only status codes are surfaced below).
+  const res = await fetch(`${LIST_URL}?api_key=${encodeURIComponent(key)}&isActive=Y&format=csv`, {
     headers: { 'user-agent': 'gankdat.com data refresh' },
+    redirect: 'manual',
   });
   if (!res.ok) throw new Error(`SAM extract request failed: ${res.status}`);
   const text = await res.text();
@@ -113,7 +140,12 @@ async function requestExtractUrl(key: string): Promise<string> {
 async function* streamFromOrigin(key: string): AsyncGenerator<SamExclusionsRecord> {
   const downloadUrl = await requestExtractUrl(key);
   for (let attempt = 1; attempt <= POLL_ATTEMPTS; attempt += 1) {
-    const res = await fetch(downloadUrl, { headers: { 'user-agent': 'gankdat.com data refresh' } });
+    // redirect:'manual' — the URL carries the key; don't follow a redirect off
+    // api.sam.gov (host is regex-pinned, but this closes the redirect vector).
+    const res = await fetch(downloadUrl, {
+      headers: { 'user-agent': 'gankdat.com data refresh' },
+      redirect: 'manual',
+    });
     if (res.ok && res.body) {
       // A not-ready response can still be 200 with a small text body; the
       // header check below rejects it and we keep polling.
@@ -161,10 +193,17 @@ function fixtures(): SamExclusionsRecord[] {
 }
 
 async function* fetchStream(env: CloudflareBindings): AsyncIterable<SamExclusionsRecord> {
+  let yielded = 0;
   try {
-    yield* streamFromOrigin(apiKey(env));
+    for await (const record of streamFromOrigin(apiKey(env))) {
+      yielded += 1;
+      yield record;
+    }
   } catch (err) {
-    if (String(env.FIXTURE_FALLBACK) === 'true') {
+    // Only fall back if the stream failed BEFORE yielding anything. A mid-stream
+    // failure has already fed partial real rows to the D1 loader; appending
+    // fixtures would build a real/fixture hybrid generation.
+    if (yielded === 0 && String(env.FIXTURE_FALLBACK) === 'true') {
       console.log(
         JSON.stringify({
           level: 'warn',

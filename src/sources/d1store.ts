@@ -2,7 +2,15 @@ import type { StatsSpec } from './types';
 import type { DataSource } from './types';
 import type { QueryPage } from './query';
 import type { SourceStats } from '../lib/stats';
-import { writeRefreshLog } from './cache';
+import { putSourceStats, writeRefreshLog } from './cache';
+
+/** Thrown when a D1 source is queried before cron has loaded it (routes → 503). */
+export class SourceNotLoadedError extends Error {
+  constructor(slug: string) {
+    super(`Source '${slug}' has not been loaded yet`);
+    this.name = 'SourceNotLoadedError';
+  }
+}
 
 // D1-backed source storage (task 44, migration 0007): datasets too large for
 // the KV snapshot pattern. Refresh loads a NEW generation of rows then flips
@@ -40,9 +48,11 @@ function searchText(record: Record<string, unknown>): string {
 }
 
 /**
- * Full reload into generation+1, then an atomic meta flip. Called from the
- * cron refresh and on cold start — never inline on a request that merely
- * finds the data stale (a full reload takes seconds at 100k+ rows).
+ * Full reload into generation+1, then an atomic meta flip. Called ONLY from the
+ * scheduled cron (never inline on a request path — a full reload takes seconds
+ * to minutes at 100k+ rows, and must not be triggerable by an unauthenticated
+ * request; see queryD1Source / the /stats route, which read committed state
+ * only). Idempotent per generation, so a crashed attempt self-heals next run.
  */
 export async function refreshD1Source(
   env: CloudflareBindings,
@@ -52,6 +62,14 @@ export async function refreshD1Source(
   try {
     const previous = await readMeta(env, source.slug);
     const generation = (previous?.generation ?? 0) + 1;
+
+    // Idempotency sweep: meta only advances on success, so a prior crashed
+    // attempt left orphan rows at THIS same generation. Clear them first —
+    // otherwise the first chunk's seq=0 collides on the PK and every future
+    // refresh throws, wedging the dataset on stale data permanently.
+    await env.DB.prepare('DELETE FROM source_records WHERE source_slug = ?1 AND generation >= ?2')
+      .bind(source.slug, generation)
+      .run();
 
     // Chunked set-based insert: one statement per chunk via json_each keeps
     // bind counts tiny (D1 caps bound parameters per statement). fetchStream
@@ -79,8 +97,9 @@ export async function refreshD1Source(
     }
     await flush();
     if (total === 0) {
-      // Failed-generation rows (none here, but mid-stream failures leave some)
-      // are swept by the next successful refresh's generation delete.
+      // Never flip meta to an empty generation (origin outage vs real-empty is
+      // indistinguishable); readers keep the prior generation. The partial rows
+      // at this generation are cleared by the next attempt's idempotency sweep.
       throw new Error('refresh returned 0 records');
     }
 
@@ -97,10 +116,27 @@ export async function refreshD1Source(
     )
       .bind(source.slug, meta.generation, meta.last_refreshed_at, meta.total)
       .run();
-    // Readers are on the new generation now; drop the old rows.
+    // Readers are on the new generation now; drop every older generation.
     await env.DB.prepare('DELETE FROM source_records WHERE source_slug = ?1 AND generation < ?2')
       .bind(source.slug, generation)
       .run();
+
+    // Precompute the /stats aggregation once here (cron), so the public,
+    // unauthenticated /stats page never runs a full-table GROUP BY per request.
+    // Best-effort: a stats-cache failure must not fail the data refresh.
+    try {
+      const stats = await aggregateD1Stats(env, source, generation, total);
+      await putSourceStats(env, source, stats, meta.last_refreshed_at);
+    } catch (statsErr) {
+      console.log(
+        JSON.stringify({
+          level: 'warn',
+          event: 'stats_precompute_failed',
+          source: source.slug,
+          reason: statsErr instanceof Error ? statsErr.message : String(statsErr),
+        }),
+      );
+    }
 
     await writeRefreshLog(env, source.slug, 'ok', total, Date.now() - start, null);
     return meta;
@@ -111,19 +147,23 @@ export async function refreshD1Source(
   }
 }
 
-async function metaOrColdStart(env: CloudflareBindings, source: DataSource): Promise<SourceMeta> {
-  const meta = await readMeta(env, source.slug);
-  if (meta) return meta;
-  return refreshD1Source(env, source);
-}
-
 interface SqlPredicate {
   sql: string;
   binds: (string | number)[];
 }
 
-/** JSON-path helper — queryParams keys are code-defined, never user input. */
-const path = (field: string): string => `'$.${field}'`;
+// JSON-path helper. Field names are code-defined (zod-schema keys / StatsSpec
+// fields), never user input — but this is the ONE place a string is
+// interpolated into SQL, so assert the identifier shape defensively. Turns a
+// future footgun (a dev putting a quote in a queryParams key or stats field)
+// into a loud error at first use instead of a silent injection.
+const IDENT = /^[A-Za-z0-9_]+$/;
+function path(field: string): string {
+  if (!IDENT.test(field)) {
+    throw new Error(`unsafe D1 field identifier: ${JSON.stringify(field)}`);
+  }
+  return `'$.${field}'`;
+}
 
 /**
  * One predicate per query param, mirroring applyQuery's semantics. Unknown
@@ -199,7 +239,11 @@ export async function queryD1Source(
   source: DataSource,
   parsed: Record<string, unknown>,
 ): Promise<D1QueryResult> {
-  const meta = await metaOrColdStart(env, source);
+  // Read committed state only — NEVER trigger a refresh from the request path
+  // (a D1 reload is a multi-minute upstream pull; letting a request drive it
+  // was an unauthenticated-DoS vector). Cron is the sole loader.
+  const meta = await readMeta(env, source.slug);
+  if (!meta) throw new SourceNotLoadedError(source.slug);
   const where = buildWhere(source.slug, meta.generation, parsed);
   const page = parsed.page as number;
   const perPage = parsed.per_page as number;
@@ -226,20 +270,20 @@ export async function queryD1Source(
   };
 }
 
-export interface D1StatsResult {
-  stats: SourceStats;
-  last_refreshed_at: string;
-}
-
-/** SQL aggregation mirroring lib/stats computeStats for D1 sources. */
-export async function statsD1Source(
+/**
+ * SQL aggregation mirroring lib/stats computeStats for D1 sources. Called ONCE
+ * per refresh (cron) against the just-committed generation; the result is
+ * cached so /stats never scans the table per request.
+ */
+async function aggregateD1Stats(
   env: CloudflareBindings,
   source: DataSource,
-): Promise<D1StatsResult> {
-  const meta = await metaOrColdStart(env, source);
+  generation: number,
+  total: number,
+): Promise<SourceStats> {
   const spec: StatsSpec | undefined = source.stats;
-  const stats: SourceStats = { total: meta.total, monthly: null, groups: [] };
-  if (!spec) return { stats, last_refreshed_at: meta.last_refreshed_at };
+  const stats: SourceStats = { total, monthly: null, groups: [] };
+  if (!spec) return stats;
 
   const monthExpr = `substr(json_extract(record, ${path(spec.date.field)}), 1, 7)`;
   const monthly = await env.DB.prepare(
@@ -248,7 +292,7 @@ export async function statsD1Source(
        AND json_extract(record, ${path(spec.date.field)}) GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]*'
      GROUP BY month ORDER BY month DESC LIMIT 12`,
   )
-    .bind(source.slug, meta.generation)
+    .bind(source.slug, generation)
     .all<{ month: string; n: number }>();
   const buckets = (monthly.results ?? [])
     .reverse()
@@ -263,7 +307,7 @@ export async function statsD1Source(
          AND ${valueExpr} IS NOT NULL AND ${valueExpr} != ''
        GROUP BY value ORDER BY n DESC, value ASC LIMIT ?3`,
     )
-      .bind(source.slug, meta.generation, group.limit ?? 10)
+      .bind(source.slug, generation, group.limit ?? 10)
       .all<{ value: string | number; n: number }>();
     const groupRows = (rows.results ?? []).map((row) => ({
       value: String(row.value),
@@ -271,5 +315,5 @@ export async function statsD1Source(
     }));
     if (groupRows.length > 0) stats.groups.push({ title: group.title, rows: groupRows });
   }
-  return { stats, last_refreshed_at: meta.last_refreshed_at };
+  return stats;
 }

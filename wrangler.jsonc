@@ -6,7 +6,10 @@
   // Node built-ins (Buffer, etc.) — needed by the Coinbase CDP x402 facilitator.
   "compatibility_flags": ["nodejs_compat"],
   // sam-exclusions cron refresh stream-parses a ~60MB CSV extract; the default
-  // 30s CPU budget is not safely above that. Paid-plan max is 300s.
+  // 30s CPU budget is not safely above that. Paid-plan max is 300s. NOTE: this
+  // is Worker-global (governs fetch too), so heavy ingest is kept strictly on
+  // the scheduled/cron path — request handlers read committed state only
+  // (D1 queries never cold-start refresh; /stats reads precomputed blobs).
   "limits": { "cpu_ms": 300000 },
   "vars": {
     // Safe by default: deploys (which read these vars) get "false", so a real

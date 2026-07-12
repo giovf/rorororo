@@ -27,6 +27,13 @@ export async function handleSourceQuery(c: Context<AppEnv>): Promise<Response> {
     return c.json(failure('bad_request', 'Invalid query parameters', details), 400);
   }
 
+  // HEAD is unmetered (meterCredits skips it), so don't run the query — that
+  // would let a HEAD probe drive an expensive scan / origin read for free.
+  // Answer liveness with a bodyless 200 after validation.
+  if (c.req.method === 'HEAD') {
+    return c.body(null, 200);
+  }
+
   let queried;
   try {
     queried = await querySource(c.env, source, parsed.data);

@@ -1,10 +1,19 @@
+import { env } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
+import { refreshD1Source } from '../src/sources/d1store';
+import { samExclusionsSource } from '../src/sources/sam-exclusions';
 import type { SamExclusionsRecord } from '../src/sources/sam-exclusions';
 import { authedFetch, issueKey } from './helpers/auth';
 import { stubOrigins } from './helpers/origin-mock';
 
 const SAM_URL = 'https://example.com/v1/data/sam-exclusions';
+
+// D1 sources load via refresh (cron in prod), NOT on query — so tests must
+// populate the table before querying, mirroring the real contract.
+function load(): Promise<unknown> {
+  return refreshD1Source(env, samExclusionsSource);
+}
 
 const EXTRACT_TEXT =
   'Extract File will be available for download with url: ' +
@@ -34,6 +43,7 @@ describe('GET /v1/data/sam-exclusions', () => {
       samExtract: () => new Response(EXTRACT_TEXT),
       samDownload: () => gzipped(CSV),
     });
+    await load();
     const res = await authedFetch(SAM_URL);
     expect(res.status).toBe(200);
     const text = await res.text();
@@ -76,6 +86,7 @@ describe('GET /v1/data/sam-exclusions', () => {
         return downloads < 3 ? new Response('Extract is being generated') : new Response(CSV);
       },
     });
+    await load();
     const res = await authedFetch(SAM_URL);
     expect(res.status).toBe(200);
     expect(downloads).toBe(3);
@@ -88,6 +99,7 @@ describe('GET /v1/data/sam-exclusions', () => {
       samExtract: () => new Response(EXTRACT_TEXT),
       samDownload: () => new Response(CSV),
     });
+    await load();
     const { key } = await issueKey();
 
     const byName = (await (
@@ -108,6 +120,7 @@ describe('GET /v1/data/sam-exclusions', () => {
 
   it('falls back to bundled fixtures when the origin fails', async () => {
     stubOrigins({ samExtract: () => new Response('nope', { status: 500 }) });
+    await load();
     const res = await authedFetch(SAM_URL);
     expect(res.status).toBe(200);
     const body = (await res.json()) as SuccessEnvelope<SamExclusionsRecord[]>;

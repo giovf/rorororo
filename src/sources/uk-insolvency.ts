@@ -24,7 +24,14 @@ const CORPORATE_NOTICE_CODES = [
   2401, 2402, 2404, 2405, 2406, 2407, 2408, 2409, 2410, 2411, 2412, 2413, 2414, 2421, 2422, 2423,
   2431, 2432, 2433, 2434, 2435, 2441, 2442, 2443, 2444, 2445, 2446, 2447, 2450, 2451, 2452, 2453,
   2454, 2455, 2456, 2457, 2458, 2459, 2460, 2461, 2462, 2463, 2464, 2465,
-].join(',');
+];
+// The Blind-Mode guarantee (never serve a person-named notice) must not rest on
+// the origin honouring our ?noticetypes filter — if The Gazette ever changed
+// that param's meaning or fell back to "all notices", personal-insolvency
+// titles (which ARE people's names) would flow straight through. So we re-check
+// every returned notice code against this set at ingest and drop the rest.
+const CORPORATE_CODE_SET = new Set(CORPORATE_NOTICE_CODES.map(String));
+const CORPORATE_NOTICE_PARAM = CORPORATE_NOTICE_CODES.join(',');
 const PAGE_SIZE = 100;
 // Snapshot cap (KV window, same rationale as uk-tenders): the product is the
 // freshest corporate-insolvency events, newest-first as the feed returns them.
@@ -81,9 +88,29 @@ function normalize(raw: z.infer<typeof rawEntrySchema>): UkInsolvencyRecord {
 
 function mapEntries(entries: unknown[]): UkInsolvencyRecord[] {
   const records: UkInsolvencyRecord[] = [];
+  let dropped = 0;
   for (const entry of entries) {
     const parsed = rawEntrySchema.safeParse(entry);
-    if (parsed.success) records.push(normalize(parsed.data));
+    if (!parsed.success) continue;
+    // Defence in depth: only ingest notices whose code is a known corporate
+    // type. A non-corporate notice slipping through the origin filter would
+    // carry a person's name in `title` — drop it rather than serve it.
+    const code = parsed.data['f:notice-code'];
+    if (code === null || code === undefined || !CORPORATE_CODE_SET.has(code)) {
+      dropped += 1;
+      continue;
+    }
+    records.push(normalize(parsed.data));
+  }
+  if (dropped > 0) {
+    console.log(
+      JSON.stringify({
+        level: 'warn',
+        event: 'non_corporate_notice_dropped',
+        source: 'uk-insolvency',
+        dropped,
+      }),
+    );
   }
   return records;
 }
@@ -95,7 +122,7 @@ async function fetchFromOrigin(): Promise<UkInsolvencyRecord[]> {
   const pages = Math.ceil(MAX_RECORDS / PAGE_SIZE);
   for (let page = 1; page <= pages; page += 1) {
     if (page > 1) await sleep(PAGE_DELAY_MS);
-    const url = `${ORIGIN_URL}?noticetypes=${CORPORATE_NOTICE_CODES}&results-page-size=${PAGE_SIZE}&results-page=${page}`;
+    const url = `${ORIGIN_URL}?noticetypes=${CORPORATE_NOTICE_PARAM}&results-page-size=${PAGE_SIZE}&results-page=${page}`;
     // No accept header: the Gazette's content negotiation 500s when one is
     // sent alongside the .json path (verified 2026-07-13); the extension
     // alone selects the format.

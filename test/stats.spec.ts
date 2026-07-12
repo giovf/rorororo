@@ -1,7 +1,8 @@
-import { SELF } from 'cloudflare:test';
+import { env, SELF } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { computeStats } from '../src/lib/stats';
 import { listSources } from '../src/sources/registry';
+import { refreshAllSources } from '../src/sources/store';
 import { planningResponse, stubOrigins, tendersResponse } from './helpers/origin-mock';
 
 function stubBoth(): void {
@@ -91,11 +92,22 @@ describe('GET /stats', () => {
     }
   });
 
-  it('serves a citable page per source: headline, JSON-LD Dataset, API CTA', async () => {
+  it('returns 503 (never refreshes) for a source whose stats are not yet computed', async () => {
+    // Public page must not drive a refresh; before any cron/refresh it warms.
+    const res = await SELF.fetch('https://example.com/stats/uk-tenders');
+    expect(res.status).toBe(503);
+    const body = (await res.json()) as { ok: boolean; error: { code: string } };
+    expect(body.error.code).toBe('unavailable');
+  });
+
+  it('serves a citable page per source from precomputed stats', async () => {
+    // Stats are precomputed at refresh (origins stubbed → fixtures for the
+    // sources stubBoth doesn't cover); the public page then reads the blob.
     stubBoth();
+    await refreshAllSources(env);
     for (const source of listSources()) {
       const res = await SELF.fetch(`https://example.com/stats/${source.slug}`);
-      expect(res.status).toBe(200);
+      expect(res.status, `${source.slug} stats page`).toBe(200);
       expect(res.headers.get('content-type')).toContain('text/html');
       const html = await res.text();
       expect(html).toContain(source.title);
@@ -118,6 +130,7 @@ describe('GET /stats', () => {
           },
         ]),
     });
+    await refreshAllSources(env);
     const html = await (await SELF.fetch('https://example.com/stats/uk-tenders')).text();
     expect(html).not.toContain('<script>alert(1)</script>');
     expect(html).toContain('&lt;script&gt;');

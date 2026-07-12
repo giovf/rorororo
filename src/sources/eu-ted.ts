@@ -124,7 +124,11 @@ function mapNotices(notices: unknown[]): EuTedRecord[] {
 
 async function fetchFromOrigin(): Promise<EuTedRecord[]> {
   const records: EuTedRecord[] = [];
-  for (let page = 1; records.length < MAX_RECORDS; page += 1) {
+  // Hard page cap: reaching MAX_RECORDS needs a handful of pages; this bounds
+  // the loop even if the origin returns full pages whose notices all fail to
+  // parse (schema drift), which would otherwise never grow `records`.
+  const maxPages = Math.ceil(MAX_RECORDS / PAGE_SIZE) + 1;
+  for (let page = 1; records.length < MAX_RECORDS && page <= maxPages; page += 1) {
     const res = await fetch(ORIGIN_URL, {
       method: 'POST',
       headers: {
