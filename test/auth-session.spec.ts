@@ -20,8 +20,10 @@ function stubResend(): void {
 afterEach(() => vi.unstubAllGlobals());
 
 async function latestMagicToken(): Promise<string> {
-  const list = await env.CACHE.list({ prefix: 'magic:' });
-  return list.keys.at(-1)!.name.slice('magic:'.length);
+  const row = await env.DB.prepare(
+    'SELECT token FROM magic_tokens ORDER BY expires_at DESC LIMIT 1',
+  ).first<{ token: string }>();
+  return row!.token;
 }
 
 /** Full passwordless flow → returns the session Cookie header for authed calls. */
