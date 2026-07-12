@@ -4,8 +4,8 @@ import { creditCost } from '../metering/costs';
 import { currentPeriod, getUsage, incrementUsage } from '../metering/counters';
 import { planAllowance } from '../billing/plans';
 import { usageSummary } from '../metering/quota';
-import { readCached } from '../sources/cache';
-import { applyQuery, buildQuerySchema } from '../sources/query';
+import { buildQuerySchema } from '../sources/query';
+import { querySource } from '../sources/store';
 import { listSources } from '../sources/registry';
 import type { DataSource } from '../sources/types';
 import type { KeyContext } from '../types';
@@ -76,14 +76,14 @@ function registerQueryTool(
         );
       }
 
-      let payload;
+      let queried;
       try {
-        payload = await readCached(env, source);
+        queried = await querySource(env, source, args);
       } catch {
         return errorResult(`Source '${source.slug}' is temporarily unavailable, retry later`);
       }
 
-      const result = applyQuery(payload.records, args);
+      const result = queried.page;
       const newUsed = await incrementUsage(env, keyCtx.usageSubject, cost, period);
       return jsonResult({
         ok: true,
@@ -93,7 +93,7 @@ function registerQueryTool(
           page: result.page,
           per_page: result.perPage,
           total: result.total,
-          last_refreshed_at: payload.last_refreshed_at,
+          last_refreshed_at: queried.last_refreshed_at,
           credits_remaining: Math.max(0, granted - newUsed),
         },
       });

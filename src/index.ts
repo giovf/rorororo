@@ -7,7 +7,7 @@ import { errorHandler, notFoundHandler } from './lib/envelope';
 import { meterCredits } from './metering/middleware';
 import { rateLimit } from './metering/ratelimit';
 import { structuredLogger } from './middleware/logging';
-import { refreshAllSources } from './sources/cache';
+import { refreshAllSources } from './sources/store';
 import { getSource } from './sources/registry';
 import { accountRoutes } from './routes/account';
 import { authRoutes } from './routes/auth';

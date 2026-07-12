@@ -42,6 +42,16 @@ export interface DataSource<TRecord = unknown> {
   title: string;
   /** One-liner used by the sources listing, OpenAPI spec, and MCP tool descriptions. */
   description: string;
+  /**
+   * Where records live. 'kv' (default): one cached snapshot value, filtered in
+   * JS per request — right for datasets up to a few MB. 'd1': rows in the
+   * source_records table, filtered in SQL — for datasets too large for a KV
+   * value (25MiB cap). D1 sources must declare SCALAR queryParams only (no
+   * array-field filters), normalize date fields to date-only ISO (YYYY-MM-DD)
+   * with z.iso.date() params, and refresh via cron/cold-start only (no inline
+   * staleness refresh — a full reload is too slow for a request path).
+   */
+  storage?: 'kv' | 'd1';
   /** zod schema of one normalized record (validated at ingest). */
   recordSchema: z.ZodType<TRecord>;
   /** Filters this source supports; validated per-request by the data route. */

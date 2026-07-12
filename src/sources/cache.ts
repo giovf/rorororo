@@ -1,4 +1,3 @@
-import { listSources } from './registry';
 import type { DataSource } from './types';
 
 export interface CachedPayload {
@@ -75,31 +74,7 @@ export async function refreshSource(
   }
 }
 
-/**
- * Cron entrypoint: refresh EVERY source on each scheduled tick. Per-source cron
- * is advisory — the platform runs one daily cron, and refreshing all sources
- * means adding a source never silently skips its refresh (no wrangler.jsonc/code
- * cron drift). Never throws.
- */
-export async function refreshAllSources(env: CloudflareBindings): Promise<void> {
-  for (const source of listSources()) {
-    try {
-      await refreshSource(env, source);
-    } catch (err) {
-      // Already recorded in refresh_log; keep the loop alive for other sources.
-      console.error(
-        JSON.stringify({
-          level: 'error',
-          event: 'refresh_failed',
-          source: source.slug,
-          message: err instanceof Error ? err.message : String(err),
-        }),
-      );
-    }
-  }
-}
-
-async function writeRefreshLog(
+export async function writeRefreshLog(
   env: CloudflareBindings,
   slug: string,
   status: 'ok' | 'error',

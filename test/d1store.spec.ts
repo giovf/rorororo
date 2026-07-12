@@ -1,0 +1,148 @@
+import { env } from 'cloudflare:test';
+import { describe, expect, it } from 'vitest';
+import { z } from 'zod';
+import { queryD1Source, refreshD1Source, statsD1Source } from '../src/sources/d1store';
+import { computeStats } from '../src/lib/stats';
+import { applyQuery, buildQuerySchema } from '../src/sources/query';
+import type { DataSource } from '../src/sources/types';
+
+// Semantics parity: a D1-backed source must answer every query exactly like
+// the KV path's applyQuery. Fixtures are ASCII-only — lower()/instr() in
+// SQLite does not case-fold non-ASCII, a documented D1-source limitation.
+
+const RECORDS = [
+  {
+    name: 'Alpha Corp',
+    classification: 'Firm',
+    country: 'USA',
+    amount: 100,
+    listed_on: '2026-01-05',
+  },
+  {
+    name: 'beta LLC',
+    classification: 'Firm',
+    country: 'GBR',
+    amount: 250,
+    listed_on: '2026-02-10',
+  },
+  {
+    name: 'Charlie Person',
+    classification: 'Individual',
+    country: 'USA',
+    amount: null,
+    listed_on: '2026-02-20',
+  },
+  { name: 'Delta Vessel', classification: 'Vessel', country: 'PAN', amount: 75, listed_on: null },
+  {
+    name: 'Epsilon Firm',
+    classification: 'Firm',
+    country: 'ESP',
+    amount: 300,
+    listed_on: '2026-03-01',
+  },
+];
+
+function makeSource(slug: string, records: unknown[] = RECORDS): DataSource {
+  return {
+    slug,
+    title: 'D1 test source',
+    description: 'test-only',
+    storage: 'd1',
+    recordSchema: z.looseObject({}),
+    queryParams: z.object({
+      name: z.string().optional(),
+      classification: z.string().optional(),
+      country: z.string().optional(),
+      amount_min: z.coerce.number().optional(),
+      amount_max: z.coerce.number().optional(),
+      listed_on_after: z.iso.date().optional(),
+      listed_on_before: z.iso.date().optional(),
+    }),
+    stats: {
+      date: { field: 'listed_on', title: 'Listed by month' },
+      groupBy: [{ field: 'classification', title: 'By classification' }],
+    },
+    refresh: { cron: '0 5 * * *', cacheTtlSeconds: 60 },
+    fetchFresh: () => Promise.resolve(records),
+  };
+}
+
+const QUERIES: Record<string, string>[] = [
+  {},
+  { name: 'alpha' },
+  { name: 'ALPHA' },
+  { classification: 'firm' },
+  { q: 'usa' },
+  { q: 'person' },
+  { amount_min: '100' },
+  { amount_max: '100' },
+  { amount_min: '80', amount_max: '260' },
+  { listed_on_after: '2026-02-01' },
+  { listed_on_before: '2026-02-10' },
+  { listed_on_after: '2026-02-10', listed_on_before: '2026-02-20' },
+  { classification: 'Firm', amount_min: '200' },
+  { per_page: '2' },
+  { per_page: '2', page: '2' },
+  { per_page: '2', page: '3' },
+  { name: 'zzz-no-match' },
+];
+
+describe('d1store', () => {
+  it('answers every query with the same result as applyQuery (parity)', async () => {
+    const source = makeSource('d1-parity');
+    await refreshD1Source(env, source);
+    const schema = buildQuerySchema(source);
+    for (const raw of QUERIES) {
+      const parsed = schema.parse(raw);
+      const viaJs = applyQuery(RECORDS, parsed);
+      const viaSql = await queryD1Source(env, source, parsed);
+      expect(viaSql.page, JSON.stringify(raw)).toEqual(viaJs);
+    }
+  });
+
+  it('flips generations atomically and drops old rows', async () => {
+    const source = makeSource('d1-swap');
+    await refreshD1Source(env, source);
+    const smaller = RECORDS.slice(0, 2);
+    await refreshD1Source(env, { ...source, fetchFresh: () => Promise.resolve(smaller) });
+
+    const parsed = buildQuerySchema(source).parse({});
+    const result = await queryD1Source(env, source, parsed);
+    expect(result.page.total).toBe(2);
+
+    const rows = await env.DB.prepare(
+      "SELECT COUNT(*) AS n FROM source_records WHERE source_slug = 'd1-swap'",
+    ).first<{ n: number }>();
+    expect(rows?.n).toBe(2);
+  });
+
+  it('keeps the previous generation when a refresh returns 0 records', async () => {
+    const source = makeSource('d1-empty');
+    await refreshD1Source(env, source);
+    await expect(
+      refreshD1Source(env, { ...source, fetchFresh: () => Promise.resolve([]) }),
+    ).rejects.toThrow('0 records');
+
+    const parsed = buildQuerySchema(source).parse({});
+    const result = await queryD1Source(env, source, parsed);
+    expect(result.page.total).toBe(RECORDS.length);
+  });
+
+  it('computes stats matching the JS aggregation', async () => {
+    const source = makeSource('d1-stats');
+    await refreshD1Source(env, source);
+    const viaSql = await statsD1Source(env, source);
+    // Ties in group counts have no canonical order in the JS engine (insertion
+    // order); normalize both sides to (count desc, value asc) before comparing.
+    const canonical = (
+      stats: ReturnType<typeof computeStats>,
+    ): ReturnType<typeof computeStats> => ({
+      ...stats,
+      groups: stats.groups.map((group) => ({
+        ...group,
+        rows: [...group.rows].sort((a, b) => b.count - a.count || a.value.localeCompare(b.value)),
+      })),
+    });
+    expect(canonical(viaSql.stats)).toEqual(canonical(computeStats(RECORDS, source.stats)));
+  });
+});

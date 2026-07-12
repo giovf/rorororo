@@ -1,11 +1,10 @@
 import { Hono } from 'hono';
 import { publicBaseUrl } from '../lib/constants';
 import { failure } from '../lib/envelope';
-import { computeStats } from '../lib/stats';
 import type { SourceStats } from '../lib/stats';
 import { isolateRateLimit } from '../metering/ratelimit';
-import { readCached } from '../sources/cache';
 import { getSource, listSources } from '../sources/registry';
+import { sourceStats } from '../sources/store';
 import type { DataSource } from '../sources/types';
 import type { AppEnv } from '../types';
 
@@ -17,7 +16,11 @@ import type { AppEnv } from '../types';
 // metering: the page IS the marketing. In-isolate rate limit only (KV-free).
 
 const esc = (value: string): string =>
-  value.replaceAll('&', '&amp;').replaceAll('<', '&lt;').replaceAll('>', '&gt;').replaceAll('"', '&quot;');
+  value
+    .replaceAll('&', '&amp;')
+    .replaceAll('<', '&lt;')
+    .replaceAll('>', '&gt;')
+    .replaceAll('"', '&quot;');
 
 const STYLE = `
 :root{--bg:#0A0A0A;--panel:#111315;--green:#00FF41;--border:#2A2E33;--fg:#E6E8EA;--muted:#8B9299;
@@ -32,7 +35,10 @@ td:last-child,th:last-child{text-align:right}.muted{color:var(--muted);font-size
 
 function tableHtml(header: [string, string], rows: [string, number][]): string {
   const body = rows
-    .map(([label, count]) => `<tr><td>${esc(label)}</td><td>${count.toLocaleString('en-GB')}</td></tr>`)
+    .map(
+      ([label, count]) =>
+        `<tr><td>${esc(label)}</td><td>${count.toLocaleString('en-GB')}</td></tr>`,
+    )
     .join('');
   return `<table><thead><tr><th>${header[0]}</th><th>${header[1]}</th></tr></thead><tbody>${body}</tbody></table>`;
 }
@@ -70,13 +76,19 @@ function pageHtml(
   if (stats.monthly) {
     sections.push(
       `<h2>${esc(stats.monthly.title)}</h2>` +
-        tableHtml(['month', 'count'], stats.monthly.buckets.map((b) => [b.month, b.count])),
+        tableHtml(
+          ['month', 'count'],
+          stats.monthly.buckets.map((b) => [b.month, b.count]),
+        ),
     );
   }
   for (const group of stats.groups) {
     sections.push(
       `<h2>${esc(group.title)}</h2>` +
-        tableHtml(['value', 'records'], group.rows.map((r) => [r.value, r.count])),
+        tableHtml(
+          ['value', 'records'],
+          group.rows.map((r) => [r.value, r.count]),
+        ),
     );
   }
 
@@ -157,13 +169,12 @@ export const statsRoutes = new Hono<AppEnv>()
   .get('/:source', async (c) => {
     const source = getSource(c.req.param('source'));
     if (!source) return c.json(failure('not_found', 'Unknown source'), 404);
-    let payload;
+    let result;
     try {
-      payload = await readCached(c.env, source);
+      result = await sourceStats(c.env, source);
     } catch {
       return c.json(failure('unavailable', 'Source temporarily unavailable, retry later'), 503);
     }
-    const stats = computeStats(payload.records, source.stats);
     c.header('Cache-Control', 'public, max-age=3600');
-    return c.html(pageHtml(source, stats, payload.last_refreshed_at, publicBaseUrl(c.env)));
+    return c.html(pageHtml(source, result.stats, result.last_refreshed_at, publicBaseUrl(c.env)));
   });

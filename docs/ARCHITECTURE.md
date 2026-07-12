@@ -52,8 +52,10 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
 ## Backend & data
 - **D1**: `accounts` (email = identity, holds plan), `api_keys` (belong to
   accounts, inherit plan), `credit_ledger` (append-only audit; NOT the live
-  quota), `stripe_customers` (one per account), `waitlist`, `refresh_log`.
-  Migrations via `wrangler d1 migrations`.
+  quota), `stripe_customers` (one per account), `waitlist`, `refresh_log`,
+  `source_records`/`source_meta` (rows for `storage:'d1'` datasets too large
+  for a KV snapshot — SQL filters with applyQuery-parity semantics,
+  generation-swap refresh; task 44). Migrations via `wrangler d1 migrations`.
 - **KV**: response cache per source, monthly usage counters per account email
   (`usage:<email>:<yyyymm>`), key-hash → key-record hot-path lookup, magic
   tokens (15 min), sessions (30 d).

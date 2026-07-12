@@ -1,9 +1,9 @@
 import { Hono } from 'hono';
 import type { Context } from 'hono';
 import { failure, success } from '../lib/envelope';
-import { readCached } from '../sources/cache';
 import { getSource, listSources } from '../sources/registry';
-import { applyQuery, buildQuerySchema, omitEmptyParams } from '../sources/query';
+import { buildQuerySchema, omitEmptyParams } from '../sources/query';
+import { querySource } from '../sources/store';
 import type { AppEnv } from '../types';
 
 /**
@@ -27,9 +27,9 @@ export async function handleSourceQuery(c: Context<AppEnv>): Promise<Response> {
     return c.json(failure('bad_request', 'Invalid query parameters', details), 400);
   }
 
-  let payload;
+  let queried;
   try {
-    payload = await readCached(c.env, source);
+    queried = await querySource(c.env, source, parsed.data);
   } catch {
     // Failure detail is in refresh_log / logs; clients get a clean 503.
     return c.json(
@@ -38,14 +38,14 @@ export async function handleSourceQuery(c: Context<AppEnv>): Promise<Response> {
     );
   }
 
-  const result = applyQuery(payload.records, parsed.data);
+  const result = queried.page;
   return c.json(
     success(result.records, {
       source: source.slug,
       page: result.page,
       per_page: result.perPage,
       total: result.total,
-      last_refreshed_at: payload.last_refreshed_at,
+      last_refreshed_at: queried.last_refreshed_at,
     }),
   );
 }
