@@ -1853,21 +1853,21 @@
         "description": "Extend /mcp Analytics Engine writes: blob3 = JSON-RPC method(s) on mcp_anon/mcp_authed points; new mcp_denied kind (blob4 no_key|bad_key) written when requireApiKey 401s, so keyless tools/call attempts — the earliest conversion signal — become visible. Extend scripts/traffic.mjs with an anon method breakdown and a denied-attempts section.",
         "details": "",
         "testStrategy": "",
-        "status": "in-progress",
+        "status": "done",
         "dependencies": [],
         "priority": "medium",
         "subtasks": [],
         "complexity": 4,
         "recommendedSubtasks": 3,
         "expansionPrompt": "Break task 45 into subtasks along its three natural seams. (1) Method capture on existing points: in src/routes/mcp.ts, add a small helper that reads the cached JSON-RPC body (c.req.json() is already cached via isAnonymousIntrospection) and extracts the method name(s) — handling batch arrays (join sorted/comma-separated) and malformed JSON (empty string) — then add it as blob3 on the existing mcp_anon/mcp_authed writeDataPoint call, keeping blob1=kind, blob2=user-agent positions unchanged. (2) Denied-attempt instrumentation: wrap the requireApiKey() call at src/routes/mcp.ts:86 in an /mcp-scoped wrapper (do NOT modify the shared middleware in src/auth/middleware.ts) that awaits the auth outcome, detects a 401 via the returned/set response status, classifies blob4 as no_key (no Bearer token in the Authorization header) vs bad_key (token presented but unknown/revoked), and fire-and-forget writes a TRAFFIC point with blob1='mcp_denied', blob2=UA, blob3=method(s), blob4=reason; extend test/mcp.spec.ts to assert writeDataPoint payloads for authed, anon, no_key, and bad_key cases via a TRAFFIC binding spy. (3) Dashboard: extend scripts/traffic.mjs with an anonymous method breakdown (GROUP BY blob3 WHERE blob1='mcp_anon', last 7 days) and a denied-attempts section (daily counts by blob4 WHERE blob1='mcp_denied'), following the existing sql()/bar()/color-constant idioms and null-dataset handling.",
-        "updatedAt": "2026-07-12T23:27:44.272Z"
+        "updatedAt": "2026-07-12T23:32:21.140Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-12T23:27:44.272Z",
+      "lastModified": "2026-07-12T23:32:21.140Z",
       "taskCount": 45,
-      "completedCount": 42,
+      "completedCount": 43,
       "tags": [
         "master"
       ]
