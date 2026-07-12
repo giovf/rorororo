@@ -26,6 +26,7 @@ describe('registry', () => {
       'eu-ted',
       'sam-exclusions',
       'uk-insolvency',
+      'uk-companies',
     ]);
   });
 });

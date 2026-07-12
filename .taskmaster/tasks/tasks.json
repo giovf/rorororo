@@ -1602,16 +1602,148 @@
       {
         "id": "42",
         "title": "uk-companies: Companies House company profiles (spike, then build)",
-        "description": "KYB enrichment layer for the counterparty-risk bundle; build AFTER uk-insolvency proves the audience. SPIKE FIRST (blocking questions from research): (a) Companies House REST/on-demand API rate limits and commercial redistribution licence terms — unverified; (b) whether a timepoint-replay drain of the Streaming API (streams: companies, filings, insolvency-cases, charges; push model does not fit Workers cron) can substitute for a pull — retention window unspecified. Then build a company-profile DataSource with company-level fields only (officer/PSC data is personal — Blind Mode or task-38 route). WTP verified 2026-07-12: Endole GBP 39/mo, Creditsafe median ~USD 25.8k/yr contracts (Vendr). Ranked #4 in docs/NICHE-RESEARCH-2026-07.md",
-        "details": "",
-        "testStrategy": "",
-        "status": "pending",
+        "description": "KYB layer for the counterparty-risk bundle (with uk-sanctions, sam-exclusions, uk-insolvency). SPIKE COMPLETE 2026-07-13 — all blocking questions resolved: (a) REST auth verified live (Basic auth, API key as username, empty password); x-ratelimit headers confirm the 600 req/5 min window (contact CH for higher; bans for abuse — our cron needs ~2 req/day). (b) Reuse position verified: the register is public by statute (Companies Act 2006); the CH personal-information charter explicitly contemplates commercial reuse ('Commercial organisations may sometimes use data from these registers to create their own online products'); Crown copyright — attribute Companies House. (c) Streaming API timepoint-drain NOT needed for the chosen shape. SCOPE RECONCILED from the original 'company-profile DataSource': a full-register mirror is infeasible (5.4M companies ≈ 1.6GB, past the D1 500MB cap) and unnecessary. v1 = uk-companies as a RECENT UK INCORPORATIONS window: advanced-search API by incorporated_from/incorporated_to (~1,000 new companies/weekday; 3,139 hits verified over 3 days), KV snapshot of the newest ~2,000, company-level fields only (company_name, company_number, company_status, company_type, date_of_creation, sic_codes, locality/region/postal_code/country + company_url). address_line_1/2 DROPPED at ingest (may be residential — data minimization; postcode+locality serve the lead-gen job). Officers/PSC endpoints never touched (Blind Mode). WTP verified 2026-07-12: Endole GBP 39/mo, Creditsafe median ~USD 25.8k/yr contracts (Vendr). Ranked #4 in docs/NICHE-RESEARCH-2026-07.md",
+        "status": "done",
         "dependencies": [],
         "priority": "medium",
-        "subtasks": [],
-        "complexity": 8,
-        "recommendedSubtasks": 6,
-        "expansionPrompt": "Expand into spike-first subtasks; build subtasks are gated on spike outcomes AND on uk-insolvency proving the counterparty-risk audience. Subtasks: (1) Licence spike — verify Companies House API rate limits (600 req/5 min documented for REST — confirm current) and, critically, the commercial redistribution terms for serving CH data through a paid API; produce a written go/no-go with citations. (2) Streaming-replay spike — test whether a timepoint-replay drain of the Streaming API (companies/filings/insolvency-cases/charges streams) works from a cron: connect with a timepoint, drain, persist the cursor to KV, disconnect; determine the undocumented retention window empirically. (3) Architecture decision — company profiles do not fit the snapshot model (5M+ UK companies vs the ~1000-record KV snapshot cap): decide between a changes-feed dataset (recent incorporations/changes as the record stream, fits DataSource as-is) or an on-demand lookup shape (requires extending the DataSource contract — that is an ARCHITECTURE.md contract change needing its own reconciliation before code). (4) Build src/sources/uk-companies.ts per the decided shape with company-level fields only — officers/PSC data excluded at the schema level (Blind Mode) unless the task-38 route is deliberately chosen. (5) Legal entries per the outcome of (1)/(4): terms licence row and, if any personal data survives, privacy entry before launch. (6) Fixtures, unit tests, generated-surface pass, and the NICHE-LAUNCH-CHECKLIST exposure ritual."
+        "details": "Build follows the uk-tenders/uk-insolvency KV-snapshot pattern — src/sources/uk-companies.ts implementing DataSource<T> (src/sources/types.ts) + one registry entry (src/sources/registry.ts, isolation rule). Default storage:'kv'; no D1, no fetchStream. The spike's architecture decision resolves to the changes-feed shape, which fits the DataSource contract AS-IS — the on-demand-lookup contract extension flagged pre-spike is NOT needed, so no ARCHITECTURE.md contract change beyond the standard same-commit live-datasets/data-origins update.\n\nFetch layer: fetchFresh(env) pages GET https://api.company-information.service.gov.uk/advanced-search/companies?incorporated_from=<date>&incorporated_to=<date> over a rolling recent window, newest-first, capped at MAX_RECORDS ≈ 2,000 (same KV-window rationale as uk-insolvency.ts MAX_RECORDS). Auth: Basic with COMPANIES_HOUSE_API_KEY as username and empty password; read env.COMPANIES_HOUSE_API_KEY and throw when unset, following the sam-exclusions.ts:154-155 pattern. Rate limits are a non-issue (600 req/5 min verified via x-ratelimit headers; refresh needs ~2 req/day under the platform daily cron) but keep an identifiable User-Agent as with uk-insolvency. Include the FIXTURE_FALLBACK guard + recorded fixture at src/sources/fixtures/uk-companies.json, matching the other sources.\n\nRecord schema (zod, validated at ingest): company_name, company_number, company_status, company_type, date_of_creation, sic_codes (string array), locality, region, postal_code, country, company_url (https://find-and-search.company-information.service.gov.uk/company/<number>). Normalization must NOT map address_line_1/address_line_2 (may be residential — data minimization) and must never call officers/PSC endpoints (Blind Mode — excluded at the schema level). queryParams follow the generic filter convention in types.ts: substring on company_name/locality/postal_code etc., date_of_creation_after/_before ranges, sic_codes array-any-match (fine for KV storage). Stats spec: date bucket on date_of_creation ('Incorporations by month'), groupBy company_type / locality or region.\n\nSecret wiring: COMPANIES_HOUSE_API_KEY in .dev.vars locally (never .env), `wrangler secret put` at deploy (deploy is ask-first per CLAUDE.md); run npm run cf-typegen so the binding lands on CloudflareBindings. Legal: terms licence-table row — Crown copyright, Companies House attribution, register public by statute (Companies Act 2006), CH personal-information charter commercial-reuse position; no personal data stored, so no privacy entry needed, but note the dropped address lines as the data-minimization measure. ARCHITECTURE.md data-origins + live-datasets lines updated in the same commit as the source (same-commit rule). Launch exposure per docs/NICHE-LAUNCH-CHECKLIST.md (registry-driven surfaces regenerate themselves; manual ritual = stats page + sitemap, server.json bump/publish, docs drift check).",
+        "testStrategy": "Unit tests test/uk-companies.spec.ts (vitest, Workers pool) against recorded advanced-search fixtures, following test/uk-insolvency.spec.ts: search JSON → record mapping (fields, sic_codes array, company_url construction); window pagination stops at the ~2,000 cap; fetchFresh throws when COMPANIES_HOUSE_API_KEY is unset; FIXTURE_FALLBACK path returns fixture-mapped records. Blind-Mode/data-minimization guard test: assert normalized records and ukCompaniesRecordSchema contain no address_line_1/address_line_2 and no officer/PSC fields even when present in the fixture payload. Filter tests for date_of_creation_after/_before and substring params via the generic query engine. Generated-surface coverage (llms.txt, OpenAPI, MCP tool) is enforced automatically by test/llms.spec.ts / openapi.spec.ts / mcp.spec.ts once the registry entry exists. Before commit, run the verify skill end-to-end against /v1/data/uk-companies; at launch, complete the NICHE-LAUNCH-CHECKLIST verification pass.",
+        "subtasks": [
+          {
+            "id": 1,
+            "title": "Record schema + query params for the recent-incorporations window",
+            "description": "Define ukCompaniesRecordSchema and queryParams in src/sources/uk-companies.ts per the reconciled v1 scope.",
+            "dependencies": [],
+            "details": "zod recordSchema: company_name, company_number, company_status, company_type, date_of_creation, sic_codes (string array), locality, region, postal_code, country, company_url. Exclude address_line_1/2 and any officer/PSC fields at the schema level (Blind Mode + data minimization). queryParams per the types.ts filter convention: substring params on the string fields, date_of_creation_after/_before (z.iso.date()), sic_codes array-any-match; all optional.",
+            "status": "done",
+            "testStrategy": "Schema round-trips a fixture record; guard test asserts no address-line/officer/PSC keys exist on the schema.",
+            "updatedAt": "2026-07-12T18:16:40.420Z",
+            "parentId": "undefined"
+          },
+          {
+            "id": 2,
+            "title": "Fetch layer: advanced-search by incorporation date with Basic auth",
+            "description": "Implement fetchFresh paging the CH advanced-search API over a rolling incorporated_from/to window, capped at the newest ~2,000 records.",
+            "dependencies": [
+              1
+            ],
+            "details": "GET api.company-information.service.gov.uk/advanced-search/companies with incorporated_from/incorporated_to; Basic auth with env.COMPANIES_HOUSE_API_KEY as username, empty password; throw when the key is unset (sam-exclusions.ts:154-155 pattern). Normalize dropping address_line_1/2; identifiable User-Agent; MAX_RECORDS ≈ 2,000 newest (KV-window rationale as uk-insolvency.ts). FIXTURE_FALLBACK guard + src/sources/fixtures/uk-companies.json.",
+            "status": "done",
+            "testStrategy": "Fixture-driven mapping, pagination/cap, and missing-key-throws tests in test/uk-companies.spec.ts.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T18:16:40.438Z"
+          },
+          {
+            "id": 3,
+            "title": "Registry entry, stats spec, and COMPANIES_HOUSE_API_KEY wiring",
+            "description": "Register the source and wire the secret so the dataset appears on every generated surface.",
+            "dependencies": [
+              2
+            ],
+            "details": "Add ukCompaniesSource to SOURCES in src/sources/registry.ts (nothing else — isolation rule). Stats spec: date bucket on date_of_creation ('Incorporations by month'), groupBy company_type and locality/region. COMPANIES_HOUSE_API_KEY into .dev.vars locally; npm run cf-typegen to land the binding on CloudflareBindings; `wrangler secret put` at deploy time (ask first per CLAUDE.md). Set refresh policy to the platform daily cron with 86,400s cache TTL.",
+            "status": "done",
+            "testStrategy": "Generated-surface specs (llms/openapi/mcp) pass with the new slug registered; typecheck passes with the new binding.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T18:16:40.447Z"
+          },
+          {
+            "id": 4,
+            "title": "Unit tests incl. Blind-Mode/data-minimization guard",
+            "description": "test/uk-companies.spec.ts against recorded fixtures, following the uk-insolvency spec precedent.",
+            "dependencies": [
+              1,
+              2,
+              3
+            ],
+            "details": "Cover: search JSON → record mapping; window/cap behavior; COMPANIES_HOUSE_API_KEY-unset throws; FIXTURE_FALLBACK path; date_of_creation range and substring filters via the generic query engine; guard asserting normalized output contains no address_line_1/address_line_2 or officer/PSC data even when the fixture payload includes them.",
+            "status": "done",
+            "testStrategy": "npm test green in the Workers pool; guard test fails if a future edit reintroduces dropped fields.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T18:16:40.455Z"
+          },
+          {
+            "id": 5,
+            "title": "Legal + docs: licence row, reuse position, same-commit architecture update",
+            "description": "Land the terms licence-table row and the ARCHITECTURE.md updates in the same commit as the source.",
+            "dependencies": [
+              3
+            ],
+            "details": "Terms row: Crown copyright, Companies House attribution, register public by statute (Companies Act 2006), CH personal-information charter commercial-reuse position; note address-line dropping as the data-minimization measure. No personal data stored → no privacy entry required. Update ARCHITECTURE.md live-datasets and data-origins lines (same-commit rule); note the new COMPANIES_HOUSE_API_KEY secret alongside SAM_API_KEY.",
+            "status": "done",
+            "testStrategy": "Docs-drift review: terms/ARCHITECTURE.md changes present in the same commit/PR as the source file.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T18:16:40.466Z"
+          },
+          {
+            "id": 6,
+            "title": "Verify end-to-end and run the NICHE-LAUNCH-CHECKLIST exposure ritual",
+            "description": "Prove the dataset at its HTTP surface and complete the reproducible launch exposure steps.",
+            "dependencies": [
+              4,
+              5
+            ],
+            "details": "Run the verify skill against /v1/data/uk-companies (filters, quota headers, freshness) plus /openapi.json, /llms.txt, and MCP tools/list showing query_uk-companies. Manual ritual from docs/NICHE-LAUNCH-CHECKLIST.md: cite-bait /stats/uk-companies page + sitemap entry, server.json version bump + mcp-publisher publish, confirm registry-driven surfaces regenerated. Deploy and production `wrangler secret put` are ask-first.",
+            "status": "done",
+            "testStrategy": "Checklist verification section completed; live endpoint returns records with last_refreshed_at after the first cron/cold-start refresh.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T18:16:40.480Z"
+          },
+          {
+            "id": 7,
+            "title": "Close unit-test gaps: pagination cap, missing-key throw, auth header, deeper Blind-Mode guard",
+            "description": "Extend test/uk-companies.spec.ts to cover the parts of task 42's test strategy the drafted spec misses: window pagination stopping at MAX_RECORDS, fetchFresh throwing when COMPANIES_HOUSE_API_KEY is unset, the Basic-auth/User-Agent request shape, and an officer/PSC-injection guard.",
+            "dependencies": [
+              4
+            ],
+            "details": "The drafted spec (test/uk-companies.spec.ts) covers normalization + address-line dropping, filters, FIXTURE_FALLBACK, and 400 on malformed dates — but not the rest of the task's test strategy. Add, using the existing stubOrigins 'companies' hook (test/helpers/origin-mock.ts): (1) pagination/cap — mock a day whose pages return PAGE_SIZE (1000) items so a second request with start_index=1000 is issued, and assert fetching stops at MAX_RECORDS (2000) with records sliced to the cap and the 'snapshot_truncated' warn logged (src/sources/uk-companies.ts:98-123); (2) key guard — with COMPANIES_HOUSE_API_KEY empty and FIXTURE_FALLBACK not 'true', assert fetchFresh throws 'COMPANIES_HOUSE_API_KEY not configured' (uk-companies.ts:150-169), following the sam-exclusions spec's env-stubbing precedent; (3) request shape — capture request headers in the mock and assert authorization equals `Basic ${btoa(key + ':')}` (key as username, empty password) plus the identifiable 'gankdat.com data refresh' User-Agent (uk-companies.ts:96-104); (4) deepen the Blind-Mode guard — inject officer/PSC-shaped keys and address_line_1/address_line_2 into a mocked search item and assert none reach the output (rawItemSchema strips unknown keys) and that only advanced-search URLs are ever requested — no officers/PSC endpoint is fetched.",
+            "status": "done",
+            "testStrategy": "npm test green in the Workers pool; each new case fails if pagination/cap, the key guard, the auth header, or the minimization behavior regresses.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T18:16:40.490Z"
+          },
+          {
+            "id": 8,
+            "title": "Drift-review the already-drafted docs/legal surfaces against the reconciled scope",
+            "description": "Review and finalize the six uncommitted doc/config edits (terms, privacy, ARCHITECTURE.md, sitemap, server.json, constants) so every surface states the reconciled recent-incorporations scope before the same-commit landing.",
+            "dependencies": [
+              5
+            ],
+            "details": "The working tree already touches public/terms.html (uk-companies licence row at line 72), public/privacy.html, docs/ARCHITECTURE.md (live-datasets line ~28 and data-origins), public/sitemap.xml (stats/uk-companies entry, line 12), server.json (version 0.6.0), and src/lib/constants.ts. Verify each states the verified legal position: register public by statute (Companies Act 2006), CH personal-information charter commercial-reuse position, Crown copyright with Companies House attribution; address_line_1/2 dropped at ingest as the data-minimization measure; officers/PSC never touched (Blind Mode). Confirm ARCHITECTURE.md's data-origins line lists COMPANIES_HOUSE_API_KEY alongside SAM_API_KEY and that NO DataSource-contract change was introduced (the spike resolved that the contract fits as-is). The task notes no privacy entry is strictly required (no personal data stored) — confirm the privacy.html edit is limited to the minimization note and does not promise more than the implementation does. Fix any wording that still reflects the pre-spike 'company-profile mirror' scope.",
+            "status": "done",
+            "testStrategy": "Manual git-diff review of the six files; all doc edits must land in the same commit as src/sources/uk-companies.ts (same-commit rule).",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T18:16:40.496Z"
+          },
+          {
+            "id": 9,
+            "title": "Quality gates + end-to-end verify at the HTTP surface",
+            "description": "Run lint/typecheck/format and the full vitest suite, then drive the local Worker with the verify skill to prove uk-companies at every generated surface before committing.",
+            "dependencies": [
+              7,
+              8
+            ],
+            "details": "Run npm run lint, npm run typecheck, npm run format, and npm test — llms.spec/openapi.spec/mcp.spec/stats.spec enforce the seventh source on the generated surfaces automatically, and data.spec/query.spec/uk-planning.spec were touched for the registry addition, so confirm the new origin-mock 'companies' stub doesn't leak across suites. Then the verify skill against wrangler dev with the real COMPANIES_HOUSE_API_KEY from .dev.vars: GET /v1/data/uk-companies returns records with quota headers and last_refreshed_at; filters company/sic_codes/locality/incorporated_on_after behave; /openapi.json includes the path; /llms.txt lists the dataset; /stats/uk-companies renders 'Incorporations by month' and the groupBy tables; MCP tools/list shows query_uk-companies; /x402/data/uk-companies returns 402 payment metadata. Observe one live refresh: ~7 requests (WINDOW_DAYS) stays far under the 600 req/5 min limit.",
+            "status": "done",
+            "testStrategy": "All quality gates green; verify-skill checklist passes locally against the live Companies House origin.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T18:16:40.506Z"
+          },
+          {
+            "id": 10,
+            "title": "Ship: same-commit landing, MCP publish, production secret + deploy (ask-first)",
+            "description": "Land one commit bundling source, tests, and all doc surfaces per the same-commit rule, then complete the ask-first production steps and the NICHE-LAUNCH-CHECKLIST verification pass.",
+            "dependencies": [
+              6,
+              9
+            ],
+            "details": "Stage and commit everything as a single 'feat(sources): uk-companies — Companies House new incorporations as seventh dataset (task 42)' commit: src/sources/uk-companies.ts + fixtures/uk-companies.json + registry.ts + worker-configuration.d.ts + test files + terms.html/privacy.html/ARCHITECTURE.md/sitemap.xml/server.json/constants.ts (same-commit rule — docs must not land separately). Then the ask-first steps per CLAUDE.md: `wrangler secret put COMPANIES_HOUSE_API_KEY` in production, npm run deploy, and `mcp-publisher publish` for the server.json 0.6.0 bump per docs/MARKETPLACE-PREP.md. Post-deploy verification from the checklist: anonymous MCP tools/list shows query_uk-companies, GET /x402/data/uk-companies returns a 402, the first cron/cold-start refresh writes refresh_log and populates last_refreshed_at on gankdat.com. Finish with task-master set-status --id=42 --status=done.",
+            "status": "done",
+            "testStrategy": "Post-deploy live checks from the NICHE-LAUNCH-CHECKLIST verification section pass on gankdat.com; refresh_log shows the first successful uk-companies run.",
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T18:16:40.431Z"
+          }
+        ],
+        "updatedAt": "2026-07-12T18:16:40.506Z"
       },
       {
         "id": "43",
@@ -1719,9 +1851,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-12T17:47:59.759Z",
+      "lastModified": "2026-07-12T18:16:40.506Z",
       "taskCount": 44,
-      "completedCount": 40,
+      "completedCount": 41,
       "tags": [
         "master"
       ]
