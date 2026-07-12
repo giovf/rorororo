@@ -19,6 +19,14 @@ interface KeyRecord {
 // key is the accurate upgrade path (PRD), deliberately not built for v1.
 const KV_TTL_SECONDS = 60;
 
+// Negative cache for unknown key hashes (task 25 item 7): a flood of invalid
+// keys would otherwise hit D1 on every request (the positive cache never
+// populates for a key that doesn't exist). Caching the miss briefly blunts that
+// auth-flood D1 cost. Short TTL so any edge case self-heals fast; key creation
+// proactively clears it (clearNegativeKeyCache) so a just-minted key is never
+// shadowed by a prior probe of the same hash (astronomically unlikely anyway).
+const NEGATIVE_TTL_SECONDS = 30;
+
 // Second-tier in-isolate cache behind KV: lets a key this isolate resolved
 // recently keep authenticating through a brief D1 outage on a KV miss (KV TTL is
 // 60s; this is longer). Consulted ONLY when D1 errors, so normal revocation
@@ -27,37 +35,81 @@ const ISOLATE_TTL_MS = 5 * 60 * 1000;
 const ISOLATE_MAX = 500;
 const isolateCache = new Map<string, { record: KeyRecord; exp: number }>();
 
+// Revocation tombstone (task 25 item 2): the ONLY thing that can make the
+// isolate-cache fallback authenticate a stale key is a revocation that happened
+// on another isolate during a D1 outage. On revoke we write this KV marker
+// (TTL > ISOLATE_TTL) and the fallback consults it, so a revoked key can't ride
+// the isolate cache past its revocation even while D1 is down (as long as KV is up).
+const REVOKED_TOMBSTONE_TTL_SECONDS = 6 * 60;
+
 export const keyCacheKey = (hash: string): string => `key:${hash}`;
+const negativeKeyCacheKey = (hash: string): string => `keyneg:${hash}`;
+const revokedTombstoneKey = (hash: string): string => `keyrevoked:${hash}`;
+
+/**
+ * Invalidate all caches for a key on revocation: drop the positive KV entry and
+ * write a short-lived tombstone so the D1-outage isolate-cache fallback can't
+ * resurrect it. Call this from every revoke path instead of a bare KV delete.
+ */
+export async function invalidateKeyCache(env: CloudflareBindings, hash: string): Promise<void> {
+  isolateCache.delete(hash);
+  await Promise.all([
+    env.CACHE.delete(keyCacheKey(hash)),
+    env.CACHE.put(revokedTombstoneKey(hash), '1', {
+      expirationTtl: REVOKED_TOMBSTONE_TTL_SECONDS,
+    }),
+  ]);
+}
+
+/** Clear a negative-cache entry — call on key creation so a fresh key resolves. */
+export async function clearNegativeKeyCache(env: CloudflareBindings, hash: string): Promise<void> {
+  await env.CACHE.delete(negativeKeyCacheKey(hash));
+}
 
 async function lookupKey(env: CloudflareBindings, hash: string): Promise<KeyRecord | null> {
   const cached = await env.CACHE.get<KeyRecord>(keyCacheKey(hash), 'json');
   if (cached) return cached;
+  // Known-absent key: skip the D1 round-trip (blunts invalid-key floods).
+  if (await env.CACHE.get(negativeKeyCacheKey(hash))) return null;
 
   // Entitlement (plan) and the usage subject come from the ACCOUNT, not the key,
-  // so every key under one email shares one plan + quota. LEFT JOIN + COALESCE so
-  // a key with no linked account (shouldn't happen post-0005) still authenticates
-  // off its own row rather than 401'ing.
+  // so every key under one email shares one plan + quota. INNER JOIN: a key with
+  // no linked account (shouldn't exist post-migration 0005) does NOT authenticate
+  // — it 401s rather than falling back to an empty, cross-key-shared scope.
   let row: KeyRecord | null;
   try {
     row = await env.DB.prepare(
       `SELECT k.id AS id, k.revoked_at AS revoked_at,
-              COALESCE(a.id, '') AS account_id,
-              COALESCE(a.email, lower(k.email)) AS account_email,
-              COALESCE(a.plan, k.plan) AS plan
+              a.id AS account_id, a.email AS account_email, a.plan AS plan
          FROM api_keys k
-         LEFT JOIN accounts a ON a.id = k.account_id
+         JOIN accounts a ON a.id = k.account_id
         WHERE k.key_hash = ?1`,
     )
       .bind(hash)
       .first<KeyRecord>();
   } catch (err) {
     // D1 blip on a KV miss: serve a recently-seen key from the isolate cache so a
-    // transient outage doesn't 500 cold-key auth. Cold keys still fail.
+    // transient outage doesn't 500 cold-key auth. But never resurrect a key that
+    // was revoked during the outage (tombstone in KV, checked best-effort).
     const fallback = isolateCache.get(hash);
-    if (fallback && fallback.exp > Date.now()) return fallback.record;
+    if (fallback && fallback.exp > Date.now()) {
+      try {
+        if (await env.CACHE.get(revokedTombstoneKey(hash))) return null;
+      } catch {
+        // KV also unavailable — fall back to the cached record (best-effort)
+      }
+      return fallback.record;
+    }
     throw err;
   }
-  if (!row) return null;
+  if (!row) {
+    try {
+      await env.CACHE.put(negativeKeyCacheKey(hash), '1', { expirationTtl: NEGATIVE_TTL_SECONDS });
+    } catch {
+      // negative-cache write is best-effort
+    }
+    return null;
+  }
 
   await env.CACHE.put(keyCacheKey(hash), JSON.stringify(row), { expirationTtl: KV_TTL_SECONDS });
   if (isolateCache.size >= ISOLATE_MAX) isolateCache.clear();

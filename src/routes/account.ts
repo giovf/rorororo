@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { generateKey, hashKey } from '../auth/keys';
-import { keyCacheKey } from '../auth/middleware';
+import { clearNegativeKeyCache, invalidateKeyCache } from '../auth/middleware';
 import { requireSession } from '../auth/session';
 import { createCheckoutUrl, createPortalUrl } from '../billing/checkout';
 import { stripeClient } from '../billing/client';
@@ -10,7 +10,10 @@ import { currentPeriod, getUsage } from '../metering/counters';
 import { usageSummary } from '../metering/quota';
 import type { AppEnv } from '../types';
 
-const NOT_CONFIGURED = failure('unavailable', 'Billing is not configured yet (Stripe keys missing)');
+const NOT_CONFIGURED = failure(
+  'unavailable',
+  'Billing is not configured yet (Stripe keys missing)',
+);
 
 // Self-serve account dashboard API — all cookie-session authed. Everything is
 // scoped to the signed-in account, so a user manages exactly their own keys,
@@ -28,7 +31,16 @@ export const accountRoutes = new Hono<AppEnv>()
       .bind(acct.accountId)
       .all();
     return c.json(
-      success({ email: acct.email, plan: acct.plan, period, used, granted, remaining, alerts, keys }),
+      success({
+        email: acct.email,
+        plan: acct.plan,
+        period,
+        used,
+        granted,
+        remaining,
+        alerts,
+        keys,
+      }),
     );
   })
   // Issue a new key under this account (inherits the account's plan). Raw key
@@ -59,6 +71,9 @@ export const accountRoutes = new Hono<AppEnv>()
     )
       .bind(id, hash, acct.email, name, acct.plan, FREE_TIER_CREDITS, acct.accountId)
       .run();
+    // Clear any negative-cache entry so the new key resolves on first use even
+    // if its hash was probed (and cached as absent) moments before.
+    await clearNegativeKeyCache(c.env, hash);
     return c.json(
       success({ id, key, name, message: 'Store this key now — it is shown only once.' }),
       201,
@@ -71,7 +86,8 @@ export const accountRoutes = new Hono<AppEnv>()
     )
       .bind(c.req.param('id'), acct.accountId)
       .first<{ key_hash: string }>();
-    if (!row) return c.json(failure('not_found', 'No active key with that id on this account'), 404);
+    if (!row)
+      return c.json(failure('not_found', 'No active key with that id on this account'), 404);
     // Scope the write to the account too (not just the preceding SELECT) so the
     // ownership boundary is enforced by the mutation itself, defence-in-depth.
     await c.env.DB.prepare(
@@ -79,7 +95,7 @@ export const accountRoutes = new Hono<AppEnv>()
     )
       .bind(c.req.param('id'), acct.accountId)
       .run();
-    await c.env.CACHE.delete(keyCacheKey(row.key_hash));
+    await invalidateKeyCache(c.env, row.key_hash);
     return c.json(success({ revoked: true }));
   })
   .post('/checkout', async (c) => {

@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
 import { timingSafeEqual } from '../auth/keys';
-import { keyCacheKey, requireApiKey } from '../auth/middleware';
+import { invalidateKeyCache, requireApiKey } from '../auth/middleware';
 import { failure, success } from '../lib/envelope';
 import type { AppEnv } from '../types';
 
@@ -15,8 +15,9 @@ async function revokeKey(env: CloudflareBindings, keyId: string): Promise<boolea
   await env.DB.prepare("UPDATE api_keys SET revoked_at = datetime('now') WHERE id = ?1")
     .bind(keyId)
     .run();
-  // Delete the hot-path cache entry so revocation is immediate.
-  await env.CACHE.delete(keyCacheKey(row.key_hash));
+  // Drop the hot-path cache and write a revocation tombstone so the revocation
+  // holds even through the D1-outage isolate-cache fallback.
+  await invalidateKeyCache(env, row.key_hash);
   return true;
 }
 
