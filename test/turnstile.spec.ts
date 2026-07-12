@@ -1,6 +1,7 @@
 import { env } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { verifyTurnstile } from '../src/auth/turnstile';
+import { authRoutes } from '../src/routes/auth';
 import { waitlistRoute } from '../src/routes/waitlist';
 import type { SuccessEnvelope } from '../src/lib/envelope';
 
@@ -9,7 +10,8 @@ function stubSiteverify(success: boolean): void {
     'fetch',
     vi.fn((input: RequestInfo | URL) => {
       const url = String(input instanceof Request ? input.url : input);
-      if (url.includes('/turnstile/v0/siteverify')) return Promise.resolve(Response.json({ success }));
+      if (url.includes('/turnstile/v0/siteverify'))
+        return Promise.resolve(Response.json({ success }));
       throw new Error(`unexpected fetch in test: ${url}`);
     }),
   );
@@ -37,7 +39,10 @@ describe('verifyTurnstile', () => {
 });
 
 describe('POST /v1/waitlist with Turnstile enabled', () => {
-  const post = (body: Record<string, unknown>, envOverride: CloudflareBindings): Promise<Response> =>
+  const post = (
+    body: Record<string, unknown>,
+    envOverride: CloudflareBindings,
+  ): Promise<Response> =>
     Promise.resolve(
       waitlistRoute.request(
         '/',
@@ -57,7 +62,10 @@ describe('POST /v1/waitlist with Turnstile enabled', () => {
 
   it('subscribes when the captcha token verifies', async () => {
     stubSiteverify(true);
-    const res = await post({ email: 'b@example.com', 'cf-turnstile-response': 'tok' }, withTurnstile());
+    const res = await post(
+      { email: 'b@example.com', 'cf-turnstile-response': 'tok' },
+      withTurnstile(),
+    );
     expect(res.status).toBe(200);
     const body = (await res.json()) as SuccessEnvelope<{ subscribed: boolean }>;
     expect(body.data.subscribed).toBe(true);
@@ -65,6 +73,49 @@ describe('POST /v1/waitlist with Turnstile enabled', () => {
 
   it('still works with no token when Turnstile is disabled', async () => {
     const res = await post({ email: 'c@example.com' }, env);
+    expect(res.status).toBe(200);
+  });
+});
+
+describe('POST /v1/auth/login with Turnstile enabled', () => {
+  const post = (
+    body: Record<string, unknown>,
+    envOverride: CloudflareBindings,
+  ): Promise<Response> =>
+    Promise.resolve(
+      authRoutes.request(
+        '/login',
+        {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(body),
+        },
+        envOverride,
+      ),
+    );
+
+  it('400s a sign-in request with no captcha token', async () => {
+    const res = await post({ email: 'login-a@example.com' }, withTurnstile());
+    expect(res.status).toBe(400);
+  });
+
+  it('sends the link when the captcha token verifies', async () => {
+    // Login verifies the captcha (siteverify) then sends the email (Resend).
+    vi.stubGlobal(
+      'fetch',
+      vi.fn((input: RequestInfo | URL) => {
+        const url = String(input instanceof Request ? input.url : input);
+        if (url.includes('/turnstile/v0/siteverify'))
+          return Promise.resolve(Response.json({ success: true }));
+        if (url.startsWith('https://api.resend.com/'))
+          return Promise.resolve(Response.json({ id: 'e1' }));
+        throw new Error(`unexpected fetch in test: ${url}`);
+      }),
+    );
+    const res = await post(
+      { email: 'login-b@example.com', 'cf-turnstile-response': 'tok' },
+      withTurnstile(),
+    );
     expect(res.status).toBe(200);
   });
 });

@@ -9,6 +9,7 @@ import {
   readSessionCookie,
   sessionCookie,
 } from '../auth/session';
+import { turnstileEnabled, verifyTurnstile } from '../auth/turnstile';
 import { emailEnabled, sendEmail } from '../email/send';
 import { magicLinkEmail } from '../email/templates';
 import { publicBaseUrl } from '../lib/constants';
@@ -80,8 +81,17 @@ button:hover{box-shadow:0 0 22px rgba(0,255,65,.35)}
 
 export const authRoutes = new Hono<AppEnv>()
   .post('/login', loginRateLimit, async (c) => {
-    const parsed = loginSchema.safeParse(await c.req.json().catch(() => ({})));
+    const raw = (await c.req.json().catch(() => ({}))) as Record<string, unknown>;
+    const parsed = loginSchema.safeParse(raw);
     if (!parsed.success) return c.json(failure('bad_request', 'A valid email is required'), 400);
+    // CAPTCHA before the (rate-limited but still abusable) email send. Dark
+    // until TURNSTILE_SECRET_KEY is set — verifyTurnstile returns true then.
+    if (turnstileEnabled(c.env)) {
+      const token = (raw['cf-turnstile-response'] ?? raw['turnstile_token']) as string | undefined;
+      if (!(await verifyTurnstile(c.env, token, c.req.header('CF-Connecting-IP')))) {
+        return c.json(failure('bad_request', 'CAPTCHA verification failed; please retry'), 400);
+      }
+    }
     if (!emailEnabled(c.env)) {
       return c.json(failure('unavailable', 'Email sign-in is not configured yet'), 503);
     }
@@ -94,7 +104,10 @@ export const authRoutes = new Hono<AppEnv>()
     if (already < EMAIL_CAP) {
       const token = await issueMagicToken(c.env, email);
       const base = publicBaseUrl(c.env);
-      const sent = await sendEmail(c.env, magicLinkEmail(email, `${base}/v1/auth/verify?token=${token}`));
+      const sent = await sendEmail(
+        c.env,
+        magicLinkEmail(email, `${base}/v1/auth/verify?token=${token}`),
+      );
       if (!sent) {
         return c.json(
           failure('unavailable', 'Could not send the sign-in email — please try again shortly'),
@@ -106,7 +119,10 @@ export const authRoutes = new Hono<AppEnv>()
     // Same response whether or not the email has an account or was capped (no
     // enumeration, no throttle signal).
     return c.json(
-      success({ sent: true, message: 'Check your email for a sign-in link — it expires in 15 minutes.' }),
+      success({
+        sent: true,
+        message: 'Check your email for a sign-in link — it expires in 15 minutes.',
+      }),
     );
   })
   // Clicking the emailed link lands here (GET): show a confirm page but do NOT
