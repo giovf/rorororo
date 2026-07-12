@@ -10,7 +10,8 @@ function stubResend(): void {
     'fetch',
     vi.fn((input: RequestInfo | URL) => {
       const url = String(input instanceof Request ? input.url : input);
-      if (url.startsWith('https://api.resend.com/')) return Promise.resolve(Response.json({ id: 'email_1' }));
+      if (url.startsWith('https://api.resend.com/'))
+        return Promise.resolve(Response.json({ id: 'email_1' }));
       throw new Error(`unexpected outbound fetch in test: ${url}`);
     }),
   );
@@ -42,7 +43,10 @@ async function signIn(email: string): Promise<string> {
 
   const verify = await SELF.fetch(`${BASE}/v1/auth/verify`, {
     method: 'POST',
-    headers: { 'content-type': 'application/x-www-form-urlencoded', 'Sec-Fetch-Site': 'same-origin' },
+    headers: {
+      'content-type': 'application/x-www-form-urlencoded',
+      'Sec-Fetch-Site': 'same-origin',
+    },
     body: `token=${token}`,
     redirect: 'manual',
   });
@@ -59,7 +63,11 @@ describe('magic-link auth + account API', () => {
     const cookie = await signIn('owner@example.com');
     const res = await SELF.fetch(`${BASE}/v1/account`, { headers: { Cookie: cookie } });
     expect(res.status).toBe(200);
-    const body = (await res.json()) as SuccessEnvelope<{ email: string; plan: string; keys: unknown[] }>;
+    const body = (await res.json()) as SuccessEnvelope<{
+      email: string;
+      plan: string;
+      keys: unknown[];
+    }>;
     expect(body.data).toMatchObject({ email: 'owner@example.com', plan: 'free' });
   });
 
@@ -96,13 +104,35 @@ describe('magic-link auth + account API', () => {
     expect((await SELF.fetch(`${BASE}/v1/account`)).status).toBe(401);
   });
 
+  it('expires a session past the absolute lifetime cap and clears the cookie', async () => {
+    const cookie = await signIn('old@example.com');
+    const sid = /fapi_session=([^;]+)/.exec(cookie)![1]!;
+    // Backdate createdAt beyond the 30-day absolute cap.
+    const rec = await env.CACHE.get<{ accountId: string; email: string }>(`session:${sid}`, 'json');
+    await env.CACHE.put(
+      `session:${sid}`,
+      JSON.stringify({
+        ...rec,
+        createdAt: Date.now() - 31 * 24 * 3600 * 1000,
+        refreshedAt: Date.now(),
+      }),
+    );
+    const res = await SELF.fetch(`${BASE}/v1/account`, { headers: { Cookie: cookie } });
+    expect(res.status).toBe(401);
+    expect(res.headers.get('set-cookie')).toContain('Max-Age=0');
+    // The session is destroyed, so it can't be reused even before its idle TTL.
+    expect(await env.CACHE.get(`session:${sid}`)).toBeNull();
+  });
+
   it('returns 502 when the email provider rejects the send', async () => {
     // e.g. Resend's sandbox 403 ("can only send to your own address") — the
     // API must not claim the email is on its way.
     vi.stubGlobal(
       'fetch',
       vi.fn(() =>
-        Promise.resolve(Response.json({ statusCode: 403, name: 'validation_error' }, { status: 403 })),
+        Promise.resolve(
+          Response.json({ statusCode: 403, name: 'validation_error' }, { status: 403 }),
+        ),
       ),
     );
     const res = await SELF.fetch(`${BASE}/v1/auth/login`, {
@@ -120,7 +150,10 @@ describe('magic-link auth + account API', () => {
     const post = (token: string) =>
       SELF.fetch(`${BASE}/v1/auth/verify`, {
         method: 'POST',
-        headers: { 'content-type': 'application/x-www-form-urlencoded', 'Sec-Fetch-Site': 'same-origin' },
+        headers: {
+          'content-type': 'application/x-www-form-urlencoded',
+          'Sec-Fetch-Site': 'same-origin',
+        },
         body: `token=${token}`,
         redirect: 'manual',
       });
@@ -157,7 +190,10 @@ describe('magic-link auth + account API', () => {
     // Attacker auto-submits their own token from another origin.
     const res = await SELF.fetch(`${BASE}/v1/auth/verify`, {
       method: 'POST',
-      headers: { 'content-type': 'application/x-www-form-urlencoded', 'Sec-Fetch-Site': 'cross-site' },
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'Sec-Fetch-Site': 'cross-site',
+      },
       body: `token=${token}`,
       redirect: 'manual',
     });
@@ -168,7 +204,10 @@ describe('magic-link auth + account API', () => {
     // The token was NOT consumed — a legitimate same-origin POST still works.
     const ok = await SELF.fetch(`${BASE}/v1/auth/verify`, {
       method: 'POST',
-      headers: { 'content-type': 'application/x-www-form-urlencoded', 'Sec-Fetch-Site': 'same-origin' },
+      headers: {
+        'content-type': 'application/x-www-form-urlencoded',
+        'Sec-Fetch-Site': 'same-origin',
+      },
       body: `token=${token}`,
       redirect: 'manual',
     });
