@@ -48,6 +48,22 @@ function searchText(record: Record<string, unknown>): string {
 }
 
 /**
+ * Deep copy with every string leaf JS-lowercased (numbers/booleans/null kept).
+ * Stored as record_lc so per-field substring filters fold identically to the
+ * KV path's JS toLowerCase — SQLite lower() only handles ASCII.
+ */
+function lowercaseStrings(value: unknown): unknown {
+  if (typeof value === 'string') return value.toLowerCase();
+  if (Array.isArray(value)) return value.map(lowercaseStrings);
+  if (value && typeof value === 'object') {
+    return Object.fromEntries(
+      Object.entries(value as Record<string, unknown>).map(([k, v]) => [k, lowercaseStrings(v)]),
+    );
+  }
+  return value;
+}
+
+/**
  * Full reload into generation+1, then an atomic meta flip. Called ONLY from the
  * scheduled cron (never inline on a request path — a full reload takes seconds
  * to minutes at 100k+ rows, and must not be triggerable by an unauthenticated
@@ -76,12 +92,12 @@ export async function refreshD1Source(
     // (preferred when present) holds only one chunk in memory, so datasets far
     // beyond Worker memory can load; fetchFresh materializes like the KV path.
     const insert = env.DB.prepare(
-      `INSERT INTO source_records (source_slug, generation, seq, search, record)
-       SELECT ?1, ?2, key + ?3, json_extract(value, '$.s'), json_extract(value, '$.r')
+      `INSERT INTO source_records (source_slug, generation, seq, search, record, record_lc)
+       SELECT ?1, ?2, key + ?3, json_extract(value, '$.s'), json_extract(value, '$.r'), json_extract(value, '$.l')
        FROM json_each(?4)`,
     );
     let total = 0;
-    let chunk: { s: string; r: unknown }[] = [];
+    let chunk: { s: string; r: unknown; l: unknown }[] = [];
     const flush = async (): Promise<void> => {
       if (chunk.length === 0) return;
       await insert.bind(source.slug, generation, total - chunk.length, JSON.stringify(chunk)).run();
@@ -91,7 +107,11 @@ export async function refreshD1Source(
       ? source.fetchStream(env)
       : await source.fetchFresh(env);
     for await (const record of records) {
-      chunk.push({ s: searchText(record as Record<string, unknown>), r: record });
+      chunk.push({
+        s: searchText(record as Record<string, unknown>),
+        r: record,
+        l: lowercaseStrings(record),
+      });
       total += 1;
       if (chunk.length >= INSERT_CHUNK) await flush();
     }
@@ -193,11 +213,20 @@ function predicateFor(key: string, wanted: unknown): SqlPredicate | null {
       binds: [wanted],
     };
   }
+  if (typeof wanted === 'boolean') {
+    // Strict equality like matchesValue. json_extract of a JSON true/false
+    // yields 1/0; bind the same so a boolean param filters correctly.
+    return { sql: `json_extract(record, ${path(key)}) = ?`, binds: [wanted ? 1 : 0] };
+  }
   if (typeof wanted === 'string') {
-    // Case-insensitive substring, like matchesValue. instr avoids LIKE-wildcard
-    // escaping; lower() matches JS toLowerCase for the ASCII data we serve.
+    // Case-insensitive substring, like matchesValue. Match against record_lc
+    // (JS-lowercased at ingest) so folding matches the KV path's toLowerCase
+    // for non-ASCII too; fall back to SQLite lower(record) for rows written
+    // before record_lc existed. The typeof guard mirrors matchesValue: a string
+    // param only matches TEXT fields (a number field yields no substring match).
+    const p = path(key);
     return {
-      sql: `instr(lower(json_extract(record, ${path(key)})), ?) > 0`,
+      sql: `typeof(json_extract(record, ${p})) = 'text' AND instr(COALESCE(json_extract(record_lc, ${p}), lower(json_extract(record, ${p}))), ?) > 0`,
       binds: [wanted.toLowerCase()],
     };
   }

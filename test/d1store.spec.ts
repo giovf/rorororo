@@ -8,8 +8,8 @@ import { applyQuery, buildQuerySchema } from '../src/sources/query';
 import type { DataSource } from '../src/sources/types';
 
 // Semantics parity: a D1-backed source must answer every query exactly like
-// the KV path's applyQuery. Fixtures are ASCII-only — lower()/instr() in
-// SQLite does not case-fold non-ASCII, a documented D1-source limitation.
+// the KV path's applyQuery — including non-ASCII case folding (record_lc is
+// JS-lowercased at ingest) and boolean params (strict equality).
 
 const RECORDS = [
   {
@@ -18,6 +18,7 @@ const RECORDS = [
     country: 'USA',
     amount: 100,
     listed_on: '2026-01-05',
+    flagged: true,
   },
   {
     name: 'beta LLC',
@@ -25,6 +26,7 @@ const RECORDS = [
     country: 'GBR',
     amount: 250,
     listed_on: '2026-02-10',
+    flagged: false,
   },
   {
     name: 'Charlie Person',
@@ -32,14 +34,32 @@ const RECORDS = [
     country: 'USA',
     amount: null,
     listed_on: '2026-02-20',
+    flagged: false,
   },
-  { name: 'Delta Vessel', classification: 'Vessel', country: 'PAN', amount: 75, listed_on: null },
+  {
+    name: 'Delta Vessel',
+    classification: 'Vessel',
+    country: 'PAN',
+    amount: 75,
+    listed_on: null,
+    flagged: true,
+  },
   {
     name: 'Epsilon Firm',
     classification: 'Firm',
     country: 'ESP',
     amount: 300,
     listed_on: '2026-03-01',
+    flagged: false,
+  },
+  // Accented name (item 10): uppercase non-ASCII must fold like JS toLowerCase.
+  {
+    name: 'José Müller SL',
+    classification: 'Individual',
+    country: 'ESP',
+    amount: 500,
+    listed_on: '2026-04-01',
+    flagged: true,
   },
 ];
 
@@ -58,6 +78,12 @@ function makeSource(slug: string, records: unknown[] = RECORDS): DataSource {
       amount_max: z.coerce.number().optional(),
       listed_on_after: z.iso.date().optional(),
       listed_on_before: z.iso.date().optional(),
+      // Boolean param (item 11): parsed to a real boolean so both engines
+      // compare strictly. z.coerce.boolean would make "false" truthy.
+      flagged: z
+        .enum(['true', 'false'])
+        .transform((v) => v === 'true')
+        .optional(),
     }),
     stats: {
       date: { field: 'listed_on', title: 'Listed by month' },
@@ -82,6 +108,10 @@ const QUERIES: Record<string, string>[] = [
   { listed_on_before: '2026-02-10' },
   { listed_on_after: '2026-02-10', listed_on_before: '2026-02-20' },
   { classification: 'Firm', amount_min: '200' },
+  { name: 'josé' }, // accented, lowercase needle vs uppercase-É record (item 10)
+  { name: 'MÜLLER' }, // uppercase non-ASCII needle
+  { flagged: 'true' }, // boolean param parity (item 11)
+  { flagged: 'false' },
   { per_page: '2' },
   { per_page: '2', page: '2' },
   { per_page: '2', page: '3' },
