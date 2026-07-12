@@ -59,16 +59,21 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
 - **D1**: `accounts` (email = identity, holds plan), `api_keys` (belong to
   accounts, inherit plan), `credit_ledger` (append-only audit; NOT the live
   quota), `stripe_customers` (one per account), `waitlist`, `refresh_log`,
+  `magic_tokens` (single-use sign-in tokens — atomic consume via
+  `UPDATE … WHERE used_at IS NULL`),
   `source_records`/`source_meta` (rows for `storage:'d1'` datasets too large
   for a KV snapshot — SQL filters with applyQuery-parity semantics,
   generation-swap refresh; task 44). Migrations via `wrangler d1 migrations`.
-- **KV**: response cache per source, monthly usage counters per account email
-  (`usage:<email>:<yyyymm>`), key-hash → key-record hot-path lookup, magic
-  tokens (15 min), sessions (30 d).
+- **KV**: response cache per source (+ precomputed `/stats` blob and a
+  best-effort refresh single-flight lock), monthly usage counters per account
+  email (`usage:<email>:<yyyymm>`), key-hash → key-record hot-path lookup
+  (with short negative + revocation-tombstone entries), sessions (7 d idle,
+  30 d absolute cap).
 - **Auth**: bearer API key per request for data; passwordless magic-link
-  (Resend) + session cookie for the /account dashboard. Key creation requires
-  a signed-in session (public issuance retired — keys inherit the account's
-  plan, so unverified-email issuance was a privilege leak). Quota = plan
+  (Resend, Turnstile-gated when configured) + session cookie for the /account
+  dashboard. Key creation requires a signed-in session (public issuance
+  retired — keys inherit the account's plan, so unverified-email issuance was
+  a privilege leak). Quota = plan
   monthly allowance per account (free 250/mo); KV-based best-effort (DO
   upgrade path documented, not built). MCP: anonymous `initialize`/`tools/list`
   so registries/directories can index tools (per-IP, in-isolate limiter —
