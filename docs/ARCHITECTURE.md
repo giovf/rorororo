@@ -21,8 +21,10 @@ shipped 2026-07-11 with per-dataset terms; debarment list monitored —
 still empty upstream, see NICHE-NEXT-SANCTIONS.md), EU procurement
 notices (`eu-ted`, shipped 2026-07-12 — pairs with uk-tenders as the
 bid-intelligence bundle; niche pipeline in NICHE-RESEARCH-2026-07.md),
-and US federal exclusions (`sam-exclusions`, shipped 2026-07-13, first
-`storage:'d1'` dataset — counterparty-risk bundle with uk-sanctions).
+US federal exclusions (`sam-exclusions`, shipped 2026-07-13, first
+`storage:'d1'` dataset — counterparty-risk bundle with uk-sanctions),
+and UK corporate insolvency notices (`uk-insolvency`, shipped
+2026-07-13 — Gazette corporate-only slice, Blind Mode; same bundle).
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo
@@ -90,7 +92,9 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   (planning.data.gov.uk, Find a Tender OCDS, FCDO UKSL — all OGL v3;
   TED Search API — Commission Decision 2011/833/EU; SAM.gov Exclusions —
   US public domain, D&B address fields stripped at ingest, needs
-  `SAM_API_KEY` secret with 90-day rotation per SAM terms). No scraping.
+  `SAM_API_KEY` secret with 90-day rotation per SAM terms; The Gazette
+  linked-data API — OGL v3, fair-use paced, corporate notices only).
+  No scraping.
 - **CI/CD** — GitHub Actions: lint/typecheck/test; deploy on main gated on
   `CLOUDFLARE_API_TOKEN` secret existing.
 

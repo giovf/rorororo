@@ -21,6 +21,7 @@ describe('GET /v1/data (sources listing)', () => {
       'uk-sanctions',
       'eu-ted',
       'sam-exclusions',
+      'uk-insolvency',
     ]);
     const tenders = body.data.find((s) => s.slug === 'uk-tenders');
     expect(tenders?.supported_params).toEqual(

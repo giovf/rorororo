@@ -25,6 +25,7 @@ describe('registry', () => {
       'uk-sanctions',
       'eu-ted',
       'sam-exclusions',
+      'uk-insolvency',
     ]);
   });
 });

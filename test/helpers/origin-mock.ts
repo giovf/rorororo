@@ -6,6 +6,7 @@ const SANCTIONS_ORIGIN = 'https://sanctionslist.fcdo.gov.uk/docs/UK-Sanctions-Li
 const EU_TED_ORIGIN = 'https://api.ted.europa.eu/v3/notices/search';
 const SAM_DOWNLOAD_ORIGIN = 'https://api.sam.gov/entity-information/v4/download-exclusions';
 const SAM_EXTRACT_ORIGIN = 'https://api.sam.gov/entity-information/v4/exclusions';
+const GAZETTE_ORIGIN = 'https://www.thegazette.co.uk/insolvency/notice/data.json';
 
 /**
  * Tests run in the same isolate as the worker under test, so stubbing the
@@ -19,6 +20,7 @@ export function stubOrigins(handlers: {
   euTed?: () => Response;
   samExtract?: () => Response;
   samDownload?: () => Response;
+  gazette?: () => Response;
 }): ReturnType<typeof vi.fn> {
   const mock = vi.fn((input: RequestInfo | URL) => {
     const url = String(input instanceof Request ? input.url : input);
@@ -40,6 +42,9 @@ export function stubOrigins(handlers: {
     }
     if (url.startsWith(SAM_EXTRACT_ORIGIN) && handlers.samExtract) {
       return Promise.resolve(handlers.samExtract());
+    }
+    if (url.startsWith(GAZETTE_ORIGIN) && handlers.gazette) {
+      return Promise.resolve(handlers.gazette());
     }
     throw new Error(`unexpected outbound fetch in test: ${url}`);
   });
