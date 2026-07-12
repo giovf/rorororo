@@ -5,7 +5,8 @@
 // login CAPTCHA. Left empty ships dark (no widget, no external script) — the
 // server also skips verification until TURNSTILE_SECRET_KEY is set, so the
 // two must both be configured to turn it on.
-const TURNSTILE_SITE_KEY = '';
+const TURNSTILE_SITE_KEY = '0x4AAAAAADxa3orlVPksuZ8i';
+// Filled by the Turnstile widget callback per sign-in; must start empty.
 let turnstileToken = '';
 
 const $ = (id) => document.getElementById(id);
