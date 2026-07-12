@@ -2,7 +2,7 @@
   "master": {
     "tasks": [
       {
-        "id": "1",
+        "id": 1,
         "title": "Bootstrap Worker foundation: bindings, middleware chain, error envelope, health endpoint, test harness",
         "description": "Turn the hello-world Hono starter into the platform skeleton: configure all Cloudflare bindings in wrangler.jsonc, build the shared middleware chain (request id, structured logging, CORS), define the JSON success/error envelope, add /v1/health, export fetch + scheduled handlers, and wire the vitest Workers test harness.",
         "details": "Existing state: src/index.ts is a bare `new Hono()` app; wrangler.jsonc has no bindings. Steps:\n1. Add deps: `zod` (runtime), `vitest` + `@cloudflare/vitest-pool-workers` (dev). Add `\"test\": \"vitest run\"` to package.json scripts (CLAUDE.md already references `npm test`).\n2. wrangler.jsonc: add `d1_databases` (binding `DB`, database_name `faceless-api`), two `kv_namespaces` (`CACHE`, `RATE`) with placeholder ids for local dev, `assets: { directory: \"public\" }`, and `triggers: { crons: [\"0 5 * * *\"] }` (daily; per-source cadence refined in task 3). Run `npm run cf-typegen` to regenerate `CloudflareBindings`.\n3. Restructure src/index.ts: `const app = new Hono<{ Bindings: CloudflareBindings, Variables: { requestId: string, keyCtx?: KeyContext } }>()`. Middleware order: requestId → structured JSON logger (log `{requestId, route, method, status, latencyMs, keyId?, creditsCharged?}` via console.log JSON) → CORS. Export `default { fetch: app.fetch, scheduled }` with a stub `scheduled` handler (filled in task 3).\n4. Envelope in src/lib/envelope.ts: success `{ ok: true, data, meta? }`; error `{ ok: false, error: { code, message, docs_url } }` — machine-parsable code + human hint + docs URL per PRD. Register `app.onError` + `app.notFound` to always emit the error envelope; map HTTPException status codes to stable codes (`unauthorized`, `not_found`, `rate_limited`, `payment_required`, `internal`).\n5. `GET /v1/health` in src/routes/health.ts returning `{ status: \"ok\", version }` (no auth — UptimeRobot target).\n6. vitest.config.ts using `defineWorkersConfig` from @cloudflare/vitest-pool-workers with `wrangler: { configPath: \"./wrangler.jsonc\" }` so tests get real KV/D1 bindings via miniflare.\nUse named exports and explicit return types throughout (house rules).",
@@ -80,7 +80,7 @@
         "updatedAt": "2026-07-06T14:49:44.224Z"
       },
       {
-        "id": "2",
+        "id": 2,
         "title": "DataSource interface, source registry, and generic /v1/data/:source query endpoint",
         "description": "Build the niche-agnostic heart: a DataSource TypeScript interface (slug, zod record schema, fetchFresh, refresh policy, declared query capabilities), a registry mapping slugs to sources, and a generic /v1/data/:source endpoint with pagination and source-declared filters — so adding a source file + registry entry is the whole cost of a new dataset.",
         "details": "In src/sources/types.ts define:\n```ts\nexport interface DataSource<T extends z.ZodTypeAny = z.ZodTypeAny> {\n  slug: string;               // e.g. 'uk-planning'\n  title: string;\n  recordSchema: T;            // zod schema of one normalized record\n  fetchFresh(env: CloudflareBindings): Promise<z.infer<T>[]>;\n  refresh: { cron: string; cacheTtlSeconds: number };\n  queryParams: z.ZodObject<any>; // filters this source supports (validated per-request)\n  creditCost?: number;        // default 1\n}\n```\nsrc/sources/registry.ts: `export const registry: Record<string, DataSource>` + `getSource(slug)` helper + a demo in-memory source for tests until task 3 lands. Dataset-specific logic anywhere outside src/sources/ is a design bug (CLAUDE.md isolation rule).\nsrc/routes/data.ts: `GET /v1/data/:source` — 404 envelope for unknown slug; validate query with `source.queryParams.extend({ page: z.coerce.number().int().min(1).default(1), per_page: z.coerce.number().int().max(100).default(25) })`; read records from cache layer (task 3 supplies real cache; until then call fetchFresh), apply declared filters generically (equality/substring per param type), paginate, respond with envelope `meta: { page, per_page, total, source: slug, last_refreshed_at }`. Also `GET /v1/data` (or `/v1/sources`) listing registry entries with title, slug, freshness, and supported params — this later feeds MCP list_sources.\nKeep filtering logic generic (driven by the queryParams schema), never per-dataset.",
@@ -150,7 +150,7 @@
         "updatedAt": "2026-07-06T14:55:26.464Z"
       },
       {
-        "id": "3",
+        "id": 3,
         "title": "uk-planning seed source with Blind Mode schema, KV caching, and cron refresh pipeline",
         "description": "Implement the first real DataSource pulling UK planning applications from the official planning.data.gov.uk JSON API with personal-data fields excluded at the schema level (Blind Mode), plus the shared infrastructure it exercises: KV response caching, the scheduled-handler refresh loop writing refresh_log to D1, freshness metadata, and fixture fallback for offline dev.",
         "details": "1. Start the D1 migrations workflow now (Phase 1 needs refresh_log): create `migrations/0001_refresh_log.sql` — `refresh_log(id INTEGER PRIMARY KEY, source_slug TEXT, status TEXT, records INTEGER, duration_ms INTEGER, created_at TEXT DEFAULT (datetime('now')))`; document `wrangler d1 migrations create/apply` usage (local apply is free; production apply is an ask-first op per CLAUDE.md).\n2. src/sources/uk-planning.ts: recordSchema with reference, authority, status, decision, dates (received/validated/decided), site-level location (postcode/point), description — NO applicant name/agent/contact fields; strip unknown keys with `.strip()` so personal data is dropped at ingest and never stored (UK GDPR Blind Mode). fetchFresh() calls planning.data.gov.uk's dataset API (e.g. `https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=...` with pagination loop), maps entities → normalized records, and validates each through the schema. On fetch failure in local dev, fall back to `src/sources/fixtures/uk-planning.json` (PRD: offline-capable dev). queryParams: authority, status, decided_after/decided_before, q (description substring). refresh: daily cron, cacheTtlSeconds 86400.\n3. src/sources/cache.ts (generic, source-agnostic): `readCached(env, source)` → KV `data:<slug>` (records + `last_refreshed_at`), on miss run fetchFresh and populate; `refreshSource(env, source)` → fetchFresh, write KV, insert refresh_log row (status ok/error, record count, duration). Wire the `scheduled` handler from task 1: iterate registry, refresh sources matching the cron event, never throw (log failures to refresh_log so the operator sees them).\n4. Wire /v1/data/:source (task 2) to read through this cache and expose `last_refreshed_at` in meta.\nVerify current planning.data.gov.uk endpoint paths/params at implementation time — record the exact URL used in the source file header comment.",
@@ -230,7 +230,7 @@
         "updatedAt": "2026-07-06T15:06:52.686Z"
       },
       {
-        "id": "4",
+        "id": 4,
         "title": "OpenAPI 3.1 spec at /openapi.json generated from the zod schemas",
         "description": "Make the zod schemas the single source of truth by auto-generating an OpenAPI 3.1 document served at /openapi.json, covering every /v1 route with per-source paths derived from the registry — the same spec later feeds the Scalar docs embed and validates the MCP tool surface.",
         "details": "Preferred approach: `@hono/zod-openapi` (Hono's official zod-to-OpenAPI integration, supports OpenAPI 3.1 via `app.doc31`/`getOpenAPI31Document`) — define routes with `createRoute({ method, path, request: { params, query }, responses })` and mount on an `OpenAPIHono` app. Alternative if migrating existing routes is too invasive: keep plain Hono routes and build the document with `@asteasolutions/zod-to-openapi`'s OpenApiGeneratorV31, registering each registry entry programmatically. Either way (ask before adding the dependency per CLAUDE.md; it's PRD-mandated so flag not block):\n1. For each registry source, generate `GET /v1/data/{slug}` path items with query parameters from `source.queryParams` + pagination params, and response schema `envelope(array(recordSchema))` — iterate the registry at spec-build time so new sources appear automatically.\n2. Document /v1/health, /v1/usage, /v1/keys, /v1/waitlist as they land (later tasks extend the same generator — keep a `registerRoute` helper so each task adds its own spec entry).\n3. Add bearer/api-key securityScheme (`Authorization: Bearer <key>`), error-envelope component schema, and X-Credits-Remaining response-header documentation.\n4. Serve at `GET /openapi.json` with long cache headers; include `info.version` from package.json, server URL from env (placeholder domain until purchased).\nNote zod v4 also offers native `z.toJSONSchema()` — use it only if the chosen integration lags zod v4 support; pin whatever combination works and record why.",
@@ -299,7 +299,7 @@
         "updatedAt": "2026-07-06T15:10:21.701Z"
       },
       {
-        "id": "5",
+        "id": 5,
         "title": "uk-tenders second source (Find a Tender OCDS) proving the abstraction",
         "description": "Add the second seed DataSource: UK procurement notices from Find a Tender's official OCDS JSON API, normalized from nested OCDS releases to a flat queryable schema, with daily refresh — proving that a differently-shaped origin costs exactly one file plus a registry entry.",
         "details": "src/sources/uk-tenders.ts only (plus fixture + registry entry — if anything else needs touching, that's a design bug to fix in the abstraction first, per PRD).\n1. fetchFresh(): call Find a Tender's OCDS release endpoint (`https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages` — verify current version/path at implementation time), page through release packages (cursor/date-window params), flatten each OCDS release → `{ ocid, notice_id, title, description, buyer_name, procurement_method, main_category, cpv_codes, value_amount, value_currency, published_at, deadline_at, status }`. OCDS is deeply nested (releases[].tender.*, parties[]) — the flattening lives entirely in this file.\n2. recordSchema validates the flat shape; `.strip()` unknown keys. queryParams: buyer, cpv, min_value/max_value, published_after, status, q. refresh: daily cron, cacheTtlSeconds 86400. Fixture fallback `fixtures/uk-tenders.json` for offline dev, same pattern as uk-planning.\n3. Register in registry.ts. Confirm it automatically appears in /v1/data/uk-tenders, the sources listing, and /openapi.json with zero route/spec code changes — that confirmation is the point of the task.\n4. Retire/relocate the task-2 demo source to test fixtures if still registered.",
@@ -368,7 +368,7 @@
         "updatedAt": "2026-07-06T15:16:29.074Z"
       },
       {
-        "id": "6",
+        "id": 6,
         "title": "D1 core schema, API key issuance, auth middleware, and revocation",
         "description": "Ship the account primitives: D1 migrations for api_keys/credit_ledger/stripe_customers, POST /v1/keys self-serve issuance (email in, key shown once, SHA-256 hash at rest), bearer-auth middleware with KV hot-path lookup of hash→key-record, and revocation support.",
         "details": "1. `migrations/0002_accounts.sql`: `api_keys(id TEXT PRIMARY KEY, key_hash TEXT UNIQUE, email TEXT, name TEXT, plan TEXT DEFAULT 'free', credits_granted INTEGER DEFAULT 250, created_at TEXT, revoked_at TEXT)`; `credit_ledger(id INTEGER PRIMARY KEY, key_id TEXT, delta INTEGER, reason TEXT, stripe_ref TEXT, created_at TEXT)` (append-only — no UPDATEs ever); `stripe_customers(stripe_customer_id TEXT PRIMARY KEY, key_id TEXT, plan TEXT, status TEXT, updated_at TEXT)`.\n2. src/auth/keys.ts: `generateKey()` → `fapi_<32 chars base62 from crypto.getRandomValues>`; `hashKey(key)` → hex SHA-256 via `crypto.subtle.digest`. `POST /v1/keys` (src/routes/keys.ts): body `{ email, name? }` validated by zod; insert api_keys row with free plan + initial `credit_ledger` grant (+250, reason 'free_tier'); return the raw key exactly once in the response with an explicit \"store this now\" message. Light per-IP rate limit on this endpoint (RATE KV) to stop key-farming.\n3. src/auth/middleware.ts: extract `Authorization: Bearer <key>`; hash; lookup KV `key:<hash>` → key-record JSON (id, plan, revoked). On KV miss, fall back to D1 `SELECT ... WHERE key_hash = ?`, then populate KV (TTL ~1h). Missing/unknown/revoked key → 401 error envelope. Attach `keyCtx` to Hono context Variables for logging + metering. Apply to /v1/data/* and /v1/usage; leave /v1/health, /openapi.json, /v1/keys, /v1/waitlist public.\n4. Revocation: `DELETE /v1/keys` (self, authed) and an `ADMIN_TOKEN`-guarded admin variant; set revoked_at in D1 AND delete/overwrite the KV entry so revocation is immediate despite the cache.\n5. Add `.dev.vars.example` documenting `ADMIN_TOKEN` (secrets never in .env per CLAUDE.md).",
@@ -451,7 +451,7 @@
         "updatedAt": "2026-07-06T15:26:53.256Z"
       },
       {
-        "id": "7",
+        "id": 7,
         "title": "Credit metering, free-tier quota, usage endpoint, and rate limiting",
         "description": "Meter every authenticated request: per-route credit costs debited against KV monthly counters, free tier of 250 req/month enforced, X-Credits-Remaining and upgrade-nudge headers, GET /v1/usage self-service endpoint, 80%/100% usage-alert thresholds, and best-effort per-key/per-IP rate limits.",
         "details": "src/metering/:\n1. costs.ts: `creditCost(route, source?)` — default 1 credit per data request (source.creditCost override), 0 for /v1/health, /v1/usage, /openapi.json.\n2. counters.ts: KV key `usage:<keyId>:<yyyymm>` on CACHE; `incrementUsage(env, keyId, cost)` read-modify-write (accepted race: KV is eventually consistent, best-effort per PRD — document the Durable Objects upgrade path in a code comment + runbook, do NOT build it).\n3. middleware.ts (runs after auth): compute balance = plan quota (`api_keys.credits_granted` + ledger top-ups cached in the KV key-record) − month usage. If exhausted → 402-style envelope (`code: \"quota_exceeded\"`, docs_url to pricing). Otherwise increment, then set headers on every metered response: `X-Credits-Remaining`, `X-Credits-Limit`, and at ≥80%/100% an `X-Upgrade-Nudge: <pricing docs url>` header + `meta.usage_alert: \"80\"|\"100\"` in the envelope (Dana's upgrade-nudge flow). Record threshold crossings in the request log.\n4. `GET /v1/usage` (authed, free): `{ plan, period: \"yyyymm\", used, granted, remaining, alerts }` — reads counter + key record only.\n5. ratelimit.ts on RATE KV: fixed-window per-key (e.g. 60 req/min) and per-IP for unauthenticated endpoints (keys issuance, waitlist); exceeding → 429 envelope with Retry-After. Best-effort by design.\n6. Feed `creditsCharged` into the task-1 structured logger.\nKeep plan quotas as data (constants module), not branching logic — pricing is launch-time config per PRD.",
@@ -535,7 +535,7 @@
         "updatedAt": "2026-07-06T15:32:25.814Z"
       },
       {
-        "id": "8",
+        "id": 8,
         "title": "Stripe billing: checkout sessions, idempotent webhooks to credit ledger, customer portal",
         "description": "Monetize the human channel with stripe-node on Workers: endpoint creating Checkout sessions for credit bundles (placeholder Starter $29 / Growth $99 / Scale $299), a signature-verified idempotent webhook handler mapping Stripe events to credit grants in D1 ledger + KV, a customer-portal link endpoint, and subscription lifecycle handling. Test mode only until launch.",
         "details": "1. Add `stripe` dependency. src/billing/client.ts: `new Stripe(env.STRIPE_SECRET_KEY, { httpClient: Stripe.createFetchHttpClient(), apiVersion: <pin current> })`; webhook verification with `Stripe.createSubtleCryptoProvider()` and `stripe.webhooks.constructEventAsync` (SubtleCrypto — required on Workers).\n2. Products/prices: write `docs/STRIPE-SETUP.md` + optional `scripts/stripe-setup.ts` (run manually, test mode) creating Starter/$29, Growth/$99, Scale/$299 monthly subscriptions with credit amounts in price metadata (`credits: 5000` etc.) — placeholder numbers are config, not code. Annual = 2 months free as additional prices.\n3. `POST /v1/billing/checkout` (authed): body `{ plan }` → create Checkout session (mode subscription, `client_reference_id = keyId`, success/cancel URLs from env) → return session URL. `GET /v1/billing/portal` (authed): look up stripe_customers by keyId → `billingPortal.sessions.create` → return URL (Stripe-native dunning/cancel/upgrade — no code).\n4. `POST /v1/billing/webhook` (public, signature-verified, raw body via `c.req.text()` before any parsing): handle `checkout.session.completed` (upsert stripe_customers, insert ledger grant `+credits` with `stripe_ref = event.id`, update api_keys.plan, refresh KV key-record), `invoice.paid` (recurring grant), `customer.subscription.updated/deleted` (plan change / downgrade to free). Idempotency: `INSERT ... WHERE NOT EXISTS(SELECT 1 FROM credit_ledger WHERE stripe_ref = ?)` (or unique index on stripe_ref) so replays/retries never double-credit — the append-only ledger is the audit trail; always 2xx after recording to stop Stripe retries, log unhandled event types.\n5. Metering (task 7) balance must include ledger grants — verify the KV key-record refresh propagates new credits promptly.\nSecrets: STRIPE_SECRET_KEY, STRIPE_WEBHOOK_SECRET via .dev.vars / wrangler secret (never .env). Live-mode object creation is an ask-first op per CLAUDE.md.",
@@ -633,7 +633,7 @@
         "updatedAt": "2026-07-06T15:39:02.682Z"
       },
       {
-        "id": "9",
+        "id": 9,
         "title": "MCP server at /mcp with tools generated from the source registry",
         "description": "Expose the agent channel: a remote MCP server on Streamable HTTP at /mcp using the official TypeScript SDK, with list_sources, one query_<source> tool per registry entry (input schemas derived from the same zod queryParams as REST), and get_usage — authenticated by API key and metered identically to REST.",
         "details": "1. Add `@modelcontextprotocol/sdk` (official TS SDK). In src/mcp/server.ts build a per-request `McpServer` in stateless Streamable HTTP mode (Workers are stateless — create server + `StreamableHTTPServerTransport` with `sessionIdGenerator: undefined` per request, or use the SDK's stateless pattern current at implementation time; verify against the SDK docs since the ecosystem churns — pin the version per PRD risk note).\n2. Tool generation from the registry (no per-source code): `list_sources` → registry metadata + freshness; for each source `query_<slug_with_underscores>` with inputSchema derived from `source.queryParams` + pagination (SDK accepts zod schemas directly — reuse the exact objects from task 2, single source of truth); handler calls the same cache/query/filter functions as /v1/data/:source (extract shared query logic into src/sources/query.ts if not already); `get_usage` → same data as GET /v1/usage.\n3. Auth + metering parity: mount at `app.all('/mcp', ...)` BEHIND the task-6 auth middleware (API key via Authorization header) and task-7 metering — each tool call debits credits and respects quota; quota-exceeded surfaces as a tool error result (isError: true) with the upgrade docs URL in the message so agents can self-serve.\n4. Return JSON tool results (`structuredContent` + text fallback) — deterministic JSON per Agent Astra's needs.\n5. Add /mcp to llms.txt + docs copy (task 11 dependency direction: they reference this URL).",
@@ -717,7 +717,7 @@
         "updatedAt": "2026-07-06T15:43:39.300Z"
       },
       {
-        "id": "10",
+        "id": 10,
         "title": "x402 USDC pay-per-request routes (dark-launched behind env config)",
         "description": "Add the second agent channel: x402-hono middleware gating pay-per-request data routes so accountless agents pay ~$0.005/request in USDC direct to the operator wallet — mounted only when X402_WALLET_ADDRESS is configured, so the feature ships dark until a wallet/facilitator exists.",
         "details": "1. Add `x402-hono` (pin version — young protocol per PRD risk note; verify current API against the x402 docs at implementation time).\n2. src/x402/routes.ts: a route group mirroring the data endpoints at e.g. `/x402/data/:source`, reusing the shared query logic from src/sources/query.ts — thin adapter over the same core, no metering/auth middleware (payment IS the auth). Apply `paymentMiddleware(env.X402_WALLET_ADDRESS, { '/x402/data/*': { price: env.X402_PRICE_USD ?? '$0.005', network: 'base' } }, { url: env.X402_FACILITATOR_URL })` — exact config-object shape per the pinned x402-hono version.\n3. Dark launch: in src/index.ts, `if (env.X402_WALLET_ADDRESS) app.route('/x402', x402Routes)` — with the env var absent (default), the routes return 404 and nothing about x402 executes. Wallet address + facilitator URL are secrets/vars via .dev.vars / wrangler secret; add to .dev.vars.example as commented-out placeholders.\n4. Protocol flow to preserve: unpaid request → HTTP 402 with payment-requirements body → agent pays → retries with X-PAYMENT header → middleware verifies via facilitator → handler runs. Log paid requests through the task-1 structured logger (route, amount) for the operator's weekly review.\n5. `docs/X402-SETUP.md`: choosing a Base USDC wallet, facilitator options (e.g. Coinbase's x402 facilitator), env vars to set, and how to verify with an x402 test client. Open question #4 (which wallet) stays open — code must not assume an answer.",
@@ -786,7 +786,7 @@
         "updatedAt": "2026-07-06T15:49:36.608Z"
       },
       {
-        "id": "11",
+        "id": 11,
         "title": "Landing page, docs (Scalar embed), llms.txt, and waitlist endpoint",
         "description": "Ship the marketing surface from the same Worker via Static Assets: an answer-first landing page with free-key signup form, an interactive API reference rendering /openapi.json via Scalar, copy-paste curl quickstart, llms.txt for LLM discoverability, and POST /v1/waitlist persisting emails to D1.",
         "details": "1. public/ (already wired as assets dir in task 1): `index.html` — plain fast HTML, answer-first copy (what the API returns, one curl example above the fold, pricing table with placeholder tiers, free-key form), core content works without JS per PRD; inline minimal CSS, no framework, no build step. GDPR-minimal privacy note (emails only, no purchased lists).\n2. `public/docs.html`: Scalar embed — `<script id=\"api-reference\" data-url=\"/openapi.json\"></script><script src=\"https://cdn.jsdelivr.net/npm/@scalar/api-reference\"></script>` (verify current embed snippet), preceded by a no-JS quickstart section: issue key via curl POST /v1/keys, query /v1/data/uk-planning with Bearer header, check /v1/usage.\n3. `public/llms.txt`: markdown-ish summary — what the API is, base URL, auth, free tier, /openapi.json, /mcp endpoint, x402 note — optimized for LLM citation.\n4. `migrations/0003_waitlist.sql`: `waitlist(id INTEGER PRIMARY KEY, email TEXT, source TEXT, created_at TEXT)`. `POST /v1/waitlist` (public, per-IP rate-limited via task-7 ratelimit): zod-validated `{ email, source? }`, dedupe on email, insert; success envelope. No email provider in v1 — export manually (note in runbook).\n5. Landing form posts to /v1/keys (free key shown once on-page via minimal progressive-enhancement JS, with a no-JS curl fallback documented right beside it) and/or /v1/waitlist for the pre-launch period — keep both wired, toggle via copy.\n6. Ensure Worker routes take precedence over assets appropriately (assets serve non-/v1 paths; `run_worker_first` config if needed for /v1/* and /mcp).",
@@ -853,7 +853,7 @@
         "updatedAt": "2026-07-06T15:56:03.568Z"
       },
       {
-        "id": "12",
+        "id": 12,
         "title": "GitHub Actions CI/CD, runbook, and marketplace-listing prep doc",
         "description": "Automate the <2 hrs/week operation: CI running lint/typecheck/test on every push with a main-branch Cloudflare deploy job gated on account secrets, docs/RUNBOOK.md covering weekly checks/alerts/rotation/backups, and a marketplace-prep doc mapping RapidAPI/Apify requirements to existing endpoints (documentation only).",
         "details": "1. `.github/workflows/ci.yml`: on push/PR — checkout, setup-node (LTS, npm cache), `npm ci`, `npm run lint`, `npm run typecheck`, `npm test`, `npm run build` (dry-run deploy validates wrangler config). Deploy job: `needs: check`, `if: github.ref == 'refs/heads/main'`, runs `wrangler deploy` via `cloudflare/wrangler-action` with `CLOUDFLARE_API_TOKEN` — and skips gracefully when the secret is absent (guard step checking secret existence via `secrets` in an env-conditional) so CI is green before the Cloudflare account exists (PRD open question #2: blocked-by-config, not by code). Enable Dependabot (`.github/dependabot.yml`, npm weekly + github-actions) for Gio's monthly merge ritual.\n2. `docs/RUNBOOK.md` (write once behaviors exist — this task runs last): weekly checklist (query refresh_log for failures — sample wrangler d1 execute command; scan structured logs for error spikes/usage anomalies; Stripe dashboard glance), alerting setup (UptimeRobot HTTP monitor on /v1/health, optional Sentry), secret rotation procedure (wrangler secret put for STRIPE_*, ADMIN_TOKEN, X402_*), D1 backup/export (`wrangler d1 export` cadence), KV counter caveats (eventual consistency, DO upgrade path), waitlist export command, and the pivot triggers from the niche analysis (3+ mature planning APIs → procurement-only; <£300 MRR after 4 months → reposition).\n3. `docs/MARKETPLACE-PREP.md`: RapidAPI + Apify listing requirements (spec import, auth model, pricing tiers, description assets) mapped to what already exists (/openapi.json, key auth, tiers) — explicitly documentation-only; actual listings are post-niche-validation and out of v1 scope.\n4. Do not add deploy secrets or deploy for real — deploying is an ask-first op per CLAUDE.md.",
@@ -906,7 +906,7 @@
         "updatedAt": "2026-07-06T15:59:27.474Z"
       },
       {
-        "id": "13",
+        "id": 13,
         "title": "Stripe live cutover: create live products/prices",
         "description": "Run scripts/stripe-setup.mjs with the live key: gankdat Starter/Growth/Scale, monthly prices with lookup keys, tax code txcd_10103001",
         "details": "",
@@ -918,7 +918,7 @@
         "updatedAt": "2026-07-09T13:23:12.302Z"
       },
       {
-        "id": "14",
+        "id": 14,
         "title": "Stripe live cutover: live webhook endpoint",
         "description": "Create live-mode webhook endpoint at https://gankdat.com/v1/billing/webhook with same events as test; capture signing secret",
         "details": "",
@@ -932,7 +932,7 @@
         "updatedAt": "2026-07-09T13:24:09.346Z"
       },
       {
-        "id": "15",
+        "id": 15,
         "title": "Stripe live cutover: swap prod Worker secrets",
         "description": "wrangler secret put STRIPE_SECRET_KEY (live) and STRIPE_WEBHOOK_SECRET (live whsec)",
         "details": "",
@@ -946,7 +946,7 @@
         "updatedAt": "2026-07-09T13:24:14.719Z"
       },
       {
-        "id": "16",
+        "id": 16,
         "title": "Stripe live cutover: clean test billing residue in prod D1",
         "description": "DELETE stripe_customers rows (test-mode customer ids), reset accounts.plan to free, purge key: KV cache entries",
         "details": "",
@@ -960,7 +960,7 @@
         "updatedAt": "2026-07-09T13:24:44.883Z"
       },
       {
-        "id": "17",
+        "id": 17,
         "title": "Stripe live cutover: verify + real-card smoke test",
         "description": "Verify live prices resolvable by lookup_key, webhook enabled, support email set; user subscribes with real card then cancels/refunds",
         "details": "",
@@ -974,7 +974,7 @@
         "updatedAt": "2026-07-09T15:51:15.209Z"
       },
       {
-        "id": "18",
+        "id": 18,
         "title": "Multi-currency GBP-default pricing",
         "description": "Recreate plan prices with GBP as default currency + USD/EUR currency_options (transfer lookup keys, deactivate old USD prices), test + live mode. GBP 23/79/239, USD 29/99/299, EUR 27/92/279",
         "details": "",
@@ -986,7 +986,7 @@
         "updatedAt": "2026-07-09T15:28:34.934Z"
       },
       {
-        "id": "19",
+        "id": 19,
         "title": "Saver tier: £5 / 1,000 calls monthly",
         "description": "Add saver plan to plans.json, quota allowances, Stripe products (test+live), landing pricing table, account upgrade grid",
         "details": "",
@@ -1000,7 +1000,7 @@
         "updatedAt": "2026-07-09T15:28:37.190Z"
       },
       {
-        "id": "20",
+        "id": 20,
         "title": "GBP-first pricing UI + checkout verification",
         "description": "Landing shows GBP primary with auto-currency note; verify checkout presents GBP from UK; tests green",
         "details": "",
@@ -1014,7 +1014,7 @@
         "updatedAt": "2026-07-09T15:51:17.200Z"
       },
       {
-        "id": "21",
+        "id": 21,
         "title": "Mascot v2: proper multi-pose raccoon sprite",
         "description": "Revisit the mascot with a real workflow: reference art is design/assets/raccoon.png (beanie, aviators, red tracksuit, pizza). Goal: separate controllable entities (beanie/aviators/head/body/tail/pizza) with true occlusion, poses and animations - either commission a layered sprite sheet from a pixel artist using the reference, or generate per-layer art with an image model. Interim head-on icon lives at public/icon-raccoon.svg (source grid: design/assets/raccoon-icon.json).",
         "details": "",
@@ -1025,7 +1025,7 @@
         "subtasks": []
       },
       {
-        "id": "22",
+        "id": 22,
         "title": "Landing: typewriter hero with verb variations",
         "description": "Hero second line cycles verbs (gank/yoink/liberate/extract/wrangle/normalize) with type/delete animation, cursor at edit point; static fallback no-JS and prefers-reduced-motion",
         "details": "",
@@ -1037,7 +1037,7 @@
         "updatedAt": "2026-07-09T20:50:15.431Z"
       },
       {
-        "id": "23",
+        "id": 23,
         "title": "Landing: cursor-roulette button top right",
         "description": "[ do not press ] button in header randomly equips a cursor effect (block/trail/spotlight/crosshair/none) with an equip burst; desktop-only, hidden for touch + reduced-motion",
         "details": "",
@@ -1049,7 +1049,7 @@
         "updatedAt": "2026-07-09T20:50:17.234Z"
       },
       {
-        "id": "24",
+        "id": 24,
         "title": "Landing: permanent click burst with random verbs",
         "description": "Every click pops a rising [VERB] tag from a heist-verb set; pointer-events none, reduced-motion gated",
         "details": "",
@@ -1061,7 +1061,7 @@
         "updatedAt": "2026-07-09T20:50:18.967Z"
       },
       {
-        "id": "25",
+        "id": 25,
         "title": "Security backlog from 2026-07-09 pentest (deferred low-risk items)",
         "description": "4-agent pentest + live probing found NO Critical/High. Fixed in c50e109: security headers, login-CSRF (same-origin POST /verify), per-account rate limits + key cap, per-email login cap, scoped CORS, links.next host check, page bound, scoped revoke UPDATE. DEFERRED (documented, low risk): (1) email canonicalization to stop plus-address free-tier farming — product tradeoff, harms legit plus users, revisit if abuse appears; (2) revoked key can auth up to 5min during a simultaneous D1 outage (isolate cache) — deliberate resilience tradeoff, add KV revocation tombstone if needed; (3) magic-token get-then-delete non-atomic KV race — narrow window, interstitial already blocks the prefetch vector; (4) COALESCE(account_id,'') latent shared-scope for account-less keys — not reachable post-0005; (5) Turnstile on /login (needs widget in account.html + TURNSTILE_SECRET_KEY); (6) full script-src CSP (needs inline-script refactor or nonces); (7) negative-cache invalid keys / pre-auth IP limit for auth-flood cost; (8) Blind-Mode test-lock so a future .passthrough() can't silently leak personal fields; (9) session rotation / shorter idle TTL.",
         "details": "",
@@ -1072,7 +1072,7 @@
         "subtasks": []
       },
       {
-        "id": "26",
+        "id": 26,
         "title": "MCP discoverability: anonymous initialize/tools-list + WWW-Authenticate",
         "description": "Unblock registry/directory introspection of /mcp (Glama, Smithery, official MCP Registry aggregators): allow unauthenticated MCP initialize and tools/list; keep tools/call bearer-key-gated; return WWW-Authenticate: Bearer on the 401; add per-IP rate limit for anonymous MCP traffic. Auth/API-surface contract change. Context: docs/AGENT-DISCOVERY.md action item 1.",
         "details": "",
@@ -1084,7 +1084,7 @@
         "updatedAt": "2026-07-09T22:18:37.099Z"
       },
       {
-        "id": "27",
+        "id": 27,
         "title": "Static agent-discovery surface: robots.txt, sitemap.xml, OG/JSON-LD, OpenAPI contact",
         "description": "Fill the crawl-surface gaps agents and AI crawlers use: public/robots.txt (allow all, explicitly name GPTBot/ClaudeBot/PerplexityBot, disallow /account), public/sitemap.xml, OpenGraph tags + schema.org/WebAPI JSON-LD on index.html and docs.html, and info.contact + externalDocs in src/lib/openapi.ts. Context: docs/AGENT-DISCOVERY.md action item 2.",
         "details": "",
@@ -1096,7 +1096,7 @@
         "updatedAt": "2026-07-09T22:22:04.933Z"
       },
       {
-        "id": "28",
+        "id": 28,
         "title": "Official MCP Registry publish prep: server.json + /.well-known/mcp-registry-auth",
         "description": "Prep (do NOT publish — operator executes, ask-first): author server.json named com.gankdat/gankdat with remotes[{type:streamable-http,url:https://gankdat.com/mcp}] and Authorization header declared isRequired+isSecret; generate Ed25519 keypair and host proof at public/.well-known/mcp-registry-auth; verify Workers Assets serves the .well-known path. Depends on task 26 (introspection) being live for aggregator indexing. Context: docs/AGENT-DISCOVERY.md action item 3.",
         "details": "",
@@ -1110,7 +1110,7 @@
         "updatedAt": "2026-07-09T22:25:42.000Z"
       },
       {
-        "id": "29",
+        "id": 29,
         "title": "Thematic plan display names (grep/cron/daemon/kernel) as display-only layer",
         "description": "Rename paid-tier display names to terminal theme: saver→grep, starter→cron, growth→daemon, scale→kernel. Display layer ONLY: slugs in plans.json keys, D1 accounts.plan, Stripe lookup_keys stay stable. Touch: plans.json displayName field, landing pricing grid, account.html plan grid + current-plan pill mapping, ARCHITECTURE.md + MARKETPLACE-PREP.md plan mentions. Stripe live product names unchanged (separate ask-first decision). Market comparison (2026-07-10) concluded no price changes needed.",
         "details": "",
@@ -1122,7 +1122,7 @@
         "updatedAt": "2026-07-10T07:31:35.848Z"
       },
       {
-        "id": "30",
+        "id": 30,
         "title": "KV-resilient rate limiting: fail-open + in-isolate limiter for anonymous MCP",
         "description": "Two fixes from the 2026-07-10 KV write-cap incident (free-tier 1k writes/day, 62% by midday from crawler traffic): (1) rateLimit() middleware must fail OPEN on KV errors — at the daily cap RATE.put throws and every rate-limited route 500s, including paying customers; (2) anonymous MCP introspection switches from KV-backed rateLimit to a per-isolate in-memory counter so discovery traffic costs zero KV writes. Authed/metered accounting stays on KV.",
         "details": "",
@@ -1134,7 +1134,7 @@
         "updatedAt": "2026-07-10T14:04:08.154Z"
       },
       {
-        "id": "31",
+        "id": 31,
         "title": "Analytics Engine traffic dataset (paid-plan unlock) + observability doc",
         "description": "Workers Paid (upgraded 2026-07-10) unlocks Analytics Engine. Add analytics_engine_datasets binding TRAFFIC (dataset gankdat_traffic) to wrangler.jsonc + cf-typegen; write one datapoint per /mcp request (kind anon/authed, user-agent) — fire-and-forget, no latency/KV cost; document SQL API crawler queries in RUNBOOK.md. Survey of other unlocks: KV daily caps gone, Workers Logs retention up (automatic); Durable Objects now AVAILABLE but DO rate limiting stays out-of-scope per architecture until re-baselined.",
         "details": "",
@@ -1146,7 +1146,7 @@
         "updatedAt": "2026-07-10T14:13:16.377Z"
       },
       {
-        "id": "32",
+        "id": 32,
         "title": "npm run traffic — terminal dashboard for Analytics Engine crawler data",
         "description": "Local-only visualization (zero deployed surface, per security discussion 2026-07-10): scripts/traffic.mjs queries the AE SQL API with CLOUDFLARE_API_TOKEN from .env (node --env-file, no new deps) and renders daily anon/authed MCP volume + top crawler user-agents in the terminal.",
         "details": "",
@@ -1158,7 +1158,7 @@
         "updatedAt": "2026-07-10T14:37:51.855Z"
       },
       {
-        "id": "33",
+        "id": 33,
         "title": "Registry-driven llms.txt served from the Worker",
         "description": "Replace hand-written public/llms.txt with a route generated from the source registry + plans.json (same build-once pattern as openapi.json), so every future niche appears in the LLM-discovery surface automatically. Delete the static file (assets match before Worker routes).",
         "details": "",
@@ -1170,7 +1170,7 @@
         "updatedAt": "2026-07-10T19:07:16.070Z"
       },
       {
-        "id": "34",
+        "id": 34,
         "title": "Cite-bait template: per-source stats pages generated from live data",
         "description": "Reproducible demand-gen per niche (GO-TO-MARKET LLM-citation play): a template route/page per source rendering monthly computed statistics (volumes, top buyers/authorities, approval rates) from the cached dataset, with methodology + dates + tables for LLM/snippet citation, linked from landing + sitemap. Design so a new registry source gets a stats page for free or near-free. Feeds Stage 0 demand evidence.",
         "details": "",
@@ -1182,7 +1182,7 @@
         "updatedAt": "2026-07-10T19:23:54.112Z"
       },
       {
-        "id": "35",
+        "id": 35,
         "title": "Stage 0 execution: playbook doc + npm run scoreboard",
         "description": "Execution layer over GO-TO-MARKET's post drafts for a first-time marketer: docs/STAGE0-PLAYBOOK.md (week-by-week sequencing, per-venue rules, follow-up discipline, tracking) + scripts/scoreboard.mjs querying prod D1 via REST (accounts total/7d/paid, waitlist by source) so progress vs the 20-signup/5-precommit gate is one command.",
         "details": "",
@@ -1194,7 +1194,7 @@
         "updatedAt": "2026-07-10T19:49:44.478Z"
       },
       {
-        "id": "36",
+        "id": 36,
         "title": "Phase A bridge datasets: uk-sanctions (UKSL) + uk-debarment — BLOCKED on Stage 0 trigger",
         "description": "UNBLOCKED 2026-07-11: Stage 0 gate removed by operator — strategy is now a multi-niche portfolio, so this ships ALONGSIDE uk-planning/uk-tenders as an expansion, not a pivot. Positioning: 'supplier due diligence' bundled with the procurement audience ('is this supplier sanctioned or debarred?' as a bid-intelligence question). Per docs/NICHE-NEXT-SANCTIONS.md Phase A: add the UK Sanctions List (UKSL, FCDO, OGL v3, XML/CSV) and the UK Procurement Act 2023 debarment list (Cabinet Office, PDF — investigate structured formats first) as ordinary DataSources. Query/filter only — NO matching/screening claims (Phase B /v1/screen is a separate, demand-gated effort). Legal prereqs (per-dataset terms, privacy policy update — sanctions/debarment lists ARE personal data, so the Blind Mode claim becomes per-dataset — plus EU/UN licence verification) are extracted to task 38, which this task now depends on: do not deploy these sources before task 38 lands.",
         "status": "done",
@@ -1288,7 +1288,7 @@
         "updatedAt": "2026-07-11T22:24:47.222Z"
       },
       {
-        "id": "37",
+        "id": 37,
         "title": "Feedback form: POST /v1/feedback + website form page",
         "description": "Multi-niche strategy (2026-07-11): feedback replaces gated validation. New D1 table feedback(message, email optional, page, created_at); POST /v1/feedback with zod validation, per-IP rate limit, envelope responses, OpenAPI path; public/feedback.html form (JS fetch + noscript fallback) linked from landing/docs footers; privacy policy updated same-commit (new stored data); sitemap entry; tests.",
         "details": "",
@@ -1300,7 +1300,7 @@
         "updatedAt": "2026-07-11T21:50:04.228Z"
       },
       {
-        "id": "38",
+        "id": 38,
         "title": "Per-dataset legal terms + privacy update for personal-data datasets (sanctions/debarment prereq)",
         "description": "Prereq for task 36 (NICHE-NEXT-SANCTIONS Phase A): sanctions/debarment lists are personal data served as published for compliance purposes — Blind Mode claim becomes per-dataset. Update terms (per-dataset licence/disclaimer sections incl. 'screening aid, not legal advice'), privacy policy (categories of data served, lawful basis), and landing/llms copy where 'no personal data' is stated globally. Verify EU/UN list reuse terms if bundled.",
         "details": "",
@@ -1361,6 +1361,61 @@
         "recommendedSubtasks": 4,
         "expansionPrompt": "Expand into subtasks covering each surface where the global 'no personal data' posture is stated, plus the licence research: (1) public/terms.html — restructure the data-licence section (currently a single OGL v3 paragraph at line 64) into per-dataset licence/attribution entries, and add the sanctions/debarment disclaimer block: 'screening aid, not legal advice', served-as-published, no fitness-for-compliance warranty, re-identification prohibition carve-out review (note the memory: generous ToS is deliberate — add per-dataset sections without hardening the general terms); (2) public/privacy.html — rewrite section 3 ('Source data & Blind Mode', lines 51-52) to be per-dataset: Blind Mode applies to uk-planning/uk-tenders, sanctions/debarment data is served as published by government for compliance purposes; add categories of data served and UK GDPR lawful basis (Art 6(1)(f) legitimate interests, and address Art 10 criminal-offence data since sanctions designations can reference criminal conduct — cite the served-as-published-by-government basis); update the summary paragraph at line 34; (3) sweep remaining global claims — public/index.html lines 23 (JSON-LD description), 173, 198, 202; make the hardcoded Blind Mode footer in src/routes/stats.ts:115 per-dataset (small code change: only render for sources that actually strip personal data — likely a DataSource flag or per-source copy), and confirm llms.txt output carries no global claim; (4) verify EU/UN consolidated-list reuse terms (EU reuse decision attribution requirements, UN terms) per docs/NICHE-NEXT-SANCTIONS.md sources table and record the verdict on the task so a later bundling decision doesn't repeat the research.",
         "updatedAt": "2026-07-11T22:04:33.436Z"
+      },
+      {
+        "id": 39,
+        "title": "eu-ted: EU TED procurement notices as fourth dataset",
+        "description": "Add TED (Tenders Electronic Daily) as a DataSource pairing with uk-tenders (bid-intelligence bundle). Source: TED Search API v3 (POST api.ted.europa.eu/v3/notices/search, no key) + free bulk XML packages ted.europa.eu/packages/daily/{yyyynnnnn} (no auth, weekdays by 09:00 CET) — NOT packages/notice/daily (refuted URL). Licence: Commission Decision 2011/833/EU, free commercial reuse with attribution. No personal data (Blind Mode posture OK). WTP verified 2026-07-12: tedapi.pro USD 9.99-49.99/mo, Stotles GBP 75-475/mo, Tussell ~GBP 11.4k/yr. Before build: verify anonymous rate limits; check eForms UBL XML parsing fits one DataSource or needs shared helper. Follow NICHE-LAUNCH-CHECKLIST. Ranked #1 in docs/NICHE-RESEARCH-2026-07.md",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 40,
+        "title": "sam-exclusions: US SAM.gov exclusions (debarment) dataset",
+        "description": "Add US federal exclusions/debarment as a DataSource pairing with uk-sanctions (counterparty-risk bundle). Source: GSA Exclusions API v4 (api.sam.gov/entity-information/v4/exclusions, free API key via SAM.gov account; JSON paginated with 10k cap + async CSV/JSON extract up to 1M records — full daily sync = ~2 req/day, fits lowest 10 req/day key tier). Licence: US public domain EXCEPT Dun & Bradstreet-sourced fields (legal business name, street address, city/state/ZIP/country codes) — bulk dissemination barred, STRIP D&B fields at ingest. Personal data present (individual exclusions) so task-38 per-dataset terms + privacy entries required BEFORE launch (path already paved by uk-sanctions). WTP: same supplier due-diligence audience; US federal contractors must screen against it. Ranked #2 in docs/NICHE-RESEARCH-2026-07.md",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 41,
+        "title": "uk-insolvency: Gazette corporate insolvency notices dataset",
+        "description": "Add The Gazette corporate notices (company insolvency, striking-off, dissolution) as a DataSource — counterparty-risk/KYB bundle with uk-sanctions + sam-exclusions. Source: Gazette linked-data API (thegazette.co.uk/all-notices/notice/data.json feed with pagination; per-notice JSON-LD — plain .json 500s) + SPARQL endpoint. Licence: OGL v3 Crown copyright, commercial reuse OK BUT excludes personal data — ship a corporate-only slice with person fields (incl. insolvency-practitioner names) dropped at ingest; resolve open question whether even the corporate slice needs task-38 per-dataset terms. Respect fair-use: 5 req/10s, bulk crawling 21:00-07:00 UK, identifiable User-Agent — pace the cron. WTP verified 2026-07-12: Endole GBP 25-39/mo (CH+Gazette bundle), Gazette own paid feed GBP 8,539/yr, Red Flag Alert GBP 2+VAT/search. Ranked #3 in docs/NICHE-RESEARCH-2026-07.md",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": []
+      },
+      {
+        "id": 42,
+        "title": "uk-companies: Companies House company profiles (spike, then build)",
+        "description": "KYB enrichment layer for the counterparty-risk bundle; build AFTER uk-insolvency proves the audience. SPIKE FIRST (blocking questions from research): (a) Companies House REST/on-demand API rate limits and commercial redistribution licence terms — unverified; (b) whether a timepoint-replay drain of the Streaming API (streams: companies, filings, insolvency-cases, charges; push model does not fit Workers cron) can substitute for a pull — retention window unspecified. Then build a company-profile DataSource with company-level fields only (officer/PSC data is personal — Blind Mode or task-38 route). WTP verified 2026-07-12: Endole GBP 39/mo, Creditsafe median ~USD 25.8k/yr contracts (Vendr). Ranked #4 in docs/NICHE-RESEARCH-2026-07.md",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": []
+      },
+      {
+        "id": 43,
+        "title": "uk-price-paid: Land Registry PPD licence-mitigation design (deferred)",
+        "description": "HM Land Registry Price Paid Data pairs with uk-planning (property bundle) and is technically ready (landregistry.data.gov.uk linked-data JSON API + SPARQL verified live 2026-07-12) but BLOCKED for its most valuable form: OGL v3 does not cover Royal Mail PAF / OS AddressBase third-party rights in address fields, so a raw per-property API with full addresses exceeds the permitted display carve-out. DESIGN TASK, not build: find a compliant product shape (postcode-sector aggregation, address-free transaction records keyed to UPRN/parcel, or display-only price info service) that still serves the planning/property audience; build only if a shape clears the licence review. Do NOT ship full addresses. Ranked #5 (deferred) in docs/NICHE-RESEARCH-2026-07.md",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "low",
+        "subtasks": []
       }
     ],
     "metadata": {
@@ -1370,7 +1425,10 @@
       "completedCount": 36,
       "tags": [
         "master"
-      ]
+      ],
+      "created": "2026-07-12T14:39:13.608Z",
+      "description": "Tasks for master context",
+      "updated": "2026-07-12T14:40:07.025Z"
     }
   }
 }
