@@ -5,12 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="/favicon.png">
 <title>gankdat — API documentation</title>
-<meta name="description" content="Quickstart and full API reference for gankdat: UK planning applications and procurement notices as clean JSON.">
+<meta name="description" content="Quickstart and full API reference for gankdat: UK + EU procurement, UK planning, UK/US sanctions &amp; debarment, UK insolvency and company data as clean JSON.">
 <link rel="canonical" href="https://gankdat.com/docs">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="gankdat">
 <meta property="og:title" content="gankdat — API documentation">
-<meta property="og:description" content="Quickstart and full API reference for gankdat: UK planning applications and procurement notices as clean JSON.">
+<meta property="og:description" content="Quickstart and full API reference for gankdat: UK + EU procurement, UK planning, UK/US sanctions &amp; debarment, UK insolvency and company data as clean JSON.">
 <meta property="og:url" content="https://gankdat.com/docs">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
@@ -69,7 +69,7 @@ curl -H "Authorization: Bearer fapi_..." https://gankdat.com/v1/usage</code></pr
 
   <h2>for ai agents</h2>
   <div class="term"><div class="term-bar"><i></i><i></i><i></i></div>
-  <pre><code># MCP (Streamable HTTP) — tools: list_sources, query_uk_tenders, query_uk_planning, get_usage
+  <pre><code># MCP (Streamable HTTP) — tools: list_sources, get_usage, and query_&lt;dataset&gt; for each dataset (query_uk_tenders, query_eu_ted, query_sam_exclusions, …)
 "mcpServers": { "gankdat": {
   "url": "https://gankdat.com/mcp",
   "headers": { "Authorization": "Bearer fapi_..." } } }

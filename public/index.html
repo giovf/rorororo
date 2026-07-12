@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="icon" type="image/png" href="/favicon.png">
-<title>gankdat — UK procurement &amp; planning data as clean JSON (REST + MCP)</title>
-<meta name="description" content="UK public-sector tenders (Find a Tender) and planning applications, normalized to one clean JSON schema from official government feeds. Built for bid intelligence, proptech, and AI agents — free tier, MCP server, x402 pay-per-request.">
+<title>gankdat — UK &amp; EU tenders, planning, company &amp; compliance data as clean JSON (REST + MCP)</title>
+<meta name="description" content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency and company incorporations. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request.">
 <link rel="canonical" href="https://gankdat.com/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="gankdat">
-<meta property="og:title" content="gankdat — UK procurement &amp; planning data as clean JSON (REST + MCP)">
-<meta property="og:description" content="UK public-sector tenders and planning applications, normalized to one clean JSON schema from official government feeds. Free tier, MCP server, x402 pay-per-request.">
+<meta property="og:title" content="gankdat — UK &amp; EU tenders, planning, company &amp; compliance data as clean JSON (REST + MCP)">
+<meta property="og:description" content="Official open data as one clean JSON schema: UK + EU procurement, UK planning, UK/US sanctions &amp; debarment, UK insolvency and company data. Free tier, MCP server, x402 pay-per-request.">
 <meta property="og:url" content="https://gankdat.com/">
 <meta name="twitter:card" content="summary">
 <script type="application/ld+json">
@@ -20,7 +20,7 @@
   "@id": "https://gankdat.com/#api",
   "name": "gankdat",
   "url": "https://gankdat.com",
-  "description": "UK public-sector tenders, planning applications, and sanctions designations as clean JSON from official government feeds — bid intelligence and supplier due diligence in one API. Native MCP server and x402 pay-per-request for AI agents.",
+  "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, US federal exclusions, UK insolvency and company incorporations) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
   "documentation": "https://gankdat.com/docs",
   "termsOfService": "https://gankdat.com/terms",
   "provider": { "@type": "Organization", "name": "gankdat", "url": "https://gankdat.com" },
@@ -172,6 +172,31 @@ html.fx-nocursor, html.fx-nocursor *{cursor:none !important}
       <h3>uk-planning <span>// planning</span></h3>
       <p>Planning applications from planning.data.gov.uk, normalized to the same schema. Blind Mode: applicant personal data is dropped at ingest, never stored.</p>
       <p class="chips"><code>authority</code><code>reference</code><code>decision_date_after</code><code>decision_date_before</code><code>q</code></p>
+    </div>
+    <div class="card">
+      <h3>eu-ted <span>// procurement</span></h3>
+      <p>EU contract notices and awards from TED (Tenders Electronic Daily), the official EU procurement journal — buyer, country, CPV, values, deadlines across every member state. Pairs with uk-tenders for bid intelligence.</p>
+      <p class="chips"><code>buyer</code><code>buyer_country</code><code>cpv_codes</code><code>value_amount_min</code><code>published_at_after</code><code>q</code></p>
+    </div>
+    <div class="card">
+      <h3>uk-sanctions <span>// compliance</span></h3>
+      <p>Every designation on the UK Sanctions List (FCDO) — individuals, entities, ships, with regime, aliases, and dates. Served for compliance screening; DOBs, IDs, and contact details dropped at ingest.</p>
+      <p class="chips"><code>name</code><code>regime</code><code>designation_type</code><code>countries</code><code>date_designated_after</code><code>q</code></p>
+    </div>
+    <div class="card">
+      <h3>sam-exclusions <span>// compliance</span></h3>
+      <p>Every active US federal exclusion (debarment) from SAM.gov — parties barred from federal awards, with agency, program, and dates. Pairs with uk-sanctions for supplier due diligence. Addresses and identifiers dropped at ingest.</p>
+      <p class="chips"><code>name</code><code>classification</code><code>excluding_agency</code><code>exclusion_program</code><code>activation_date_after</code><code>q</code></p>
+    </div>
+    <div class="card">
+      <h3>uk-insolvency <span>// risk</span></h3>
+      <p>The latest UK corporate insolvency notices from The Gazette — winding-up petitions and orders, administrator/receiver/liquidator appointments, moratoria. Company-level facts only (Blind Mode).</p>
+      <p class="chips"><code>company</code><code>notice_type</code><code>notice_code</code><code>published_at_after</code><code>published_at_before</code><code>q</code></p>
+    </div>
+    <div class="card">
+      <h3>uk-companies <span>// company data</span></h3>
+      <p>The newest companies on the UK register, from the official Companies House API — name, number, type, SIC codes, incorporation date, and registered-office area. Officer/PSC data never ingested.</p>
+      <p class="chips"><code>company</code><code>company_type</code><code>sic_codes</code><code>locality</code><code>incorporated_on_after</code><code>q</code></p>
     </div>
   </div>
 
