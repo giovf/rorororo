@@ -1,5 +1,6 @@
+import { computeStats } from '../lib/stats';
 import type { SourceStats } from '../lib/stats';
-import { readCached, readSourceStats, refreshSource } from './cache';
+import { readCached, readSnapshot, readSourceStats, refreshSource } from './cache';
 import { queryD1Source, refreshD1Source } from './d1store';
 import { applyQuery } from './query';
 import type { QueryPage } from './query';
@@ -36,17 +37,31 @@ export interface SourceStatsResult {
 }
 
 /**
- * Read the precomputed /stats blob (written at refresh, both storage kinds).
- * Returns null until the first successful refresh has populated it — the public
- * page must NOT trigger a refresh or a table scan, so this is a pure KV read.
+ * Stats for the public /stats page. Prefers the blob precomputed at refresh.
+ * If that's absent (e.g. just after a deploy, before the next cron), a KV
+ * source falls back to computing from its existing cached snapshot — bounded
+ * (≤ snapshot size), and crucially WITHOUT triggering a refresh. A D1 source
+ * has no cheap fallback (computing means scanning ~100k+ rows), so it returns
+ * null → the page shows "warming" until cron precomputes. Never refreshes,
+ * never scans the D1 table per request.
  */
 export async function sourceStats(
   env: CloudflareBindings,
   source: DataSource,
 ): Promise<SourceStatsResult | null> {
   const cached = await readSourceStats(env, source.slug);
-  if (!cached) return null;
-  return { stats: cached.stats, last_refreshed_at: cached.last_refreshed_at };
+  if (cached) return { stats: cached.stats, last_refreshed_at: cached.last_refreshed_at };
+
+  if (source.storage !== 'd1') {
+    const snapshot = await readSnapshot(env, source.slug);
+    if (snapshot) {
+      return {
+        stats: computeStats(snapshot.records, source.stats),
+        last_refreshed_at: snapshot.last_refreshed_at,
+      };
+    }
+  }
+  return null;
 }
 
 /**

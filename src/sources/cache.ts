@@ -53,6 +53,18 @@ function isFresh(payload: CachedPayload, source: DataSource): boolean {
 }
 
 /**
+ * Non-refreshing snapshot read (KV sources): returns the last-good payload if
+ * present, else null. Used by /stats to compute from the existing snapshot
+ * without ever triggering an origin refresh.
+ */
+export async function readSnapshot(
+  env: CloudflareBindings,
+  slug: string,
+): Promise<CachedPayload | null> {
+  return env.CACHE.get<CachedPayload>(dataKey(slug), 'json');
+}
+
+/**
  * Serve fresh cache; on staleness/miss, refresh — but coalesce concurrent
  * request-path refreshers via a best-effort KV lock so a burst of misses can't
  * storm a keyed/fair-use origin. If refresh fails or the lock is held by
