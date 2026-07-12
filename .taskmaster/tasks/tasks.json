@@ -1445,7 +1445,7 @@
         "id": "40",
         "title": "sam-exclusions: US SAM.gov exclusions (debarment) dataset",
         "description": "Add US federal exclusions/debarment as a DataSource pairing with uk-sanctions (counterparty-risk bundle). Source: GSA Exclusions API v4 (api.sam.gov/entity-information/v4/exclusions, free API key via SAM.gov account; JSON paginated with 10k cap + async CSV/JSON extract up to 1M records — full daily sync = ~2 req/day, fits lowest 10 req/day no-role key tier). Terms review 2026-07-12 (sam.gov/about/terms-of-use + open.gsa.gov/api/exclusions-api read in full): VERDICT amber-green — buildable with specific mitigations. GREEN: exclusion records are US-government works (public domain); the public v4 API via registered key is the sanctioned access path (the no-scraping clause targets the website; ~2 req/day fits even the 10/day no-role tier). AMBER-1 (D&B Open Data clause): nine fields — Legal Business Name, street address, city, state/province name+code+abbrev, county code, ZIP, country name+code — are licensed D&B Open Data; commercial use IS permitted but requires written D&B attribution and bars bulk access/use/dissemination. Mitigation: drop ALL address fields at ingest (not needed for is-this-party-excluded); KEEP names (individual-exclusion names are not D&B data; post-April-2022 records are UEI/EVS-validated, not D&B — EVS source is 'D&B' only for records updated before 4/4/2022); add D&B attribution to per-dataset terms. Residual risk on legacy pre-2022 entity legal names is LOW but nonzero — operator to accept or seek counsel per legal-positioning policy. AMBER-2: personal data present (individual exclusions: names, masked NPI; ssnOrTinOrEin exists as a SEARCH param only — never expose or forward it) so task-38 per-dataset terms + privacy entries required BEFORE launch (path already paved by uk-sanctions). OPS: SAM API keys must be rotated every 90 days (account terms) — RUNBOOK entry + calendar reminder; key via wrangler secret put SAM_API_KEY. Never use sensitive/FOUO endpoints — public v4 only. WTP: same supplier due-diligence audience; US federal contractors must screen against it. Ranked #2 in docs/NICHE-RESEARCH-2026-07.md",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           "44"
         ],
@@ -1459,9 +1459,10 @@
             "description": "Set up access to the GSA Exclusions API v4 and empirically verify the sync mechanics before writing the DataSource: record counts, the async CSV/JSON extract flow, real field names, and rate-limit fit.",
             "dependencies": [],
             "details": "Create a free SAM.gov account and generate a public API key (no roles needed). Store it as SAM_API_KEY in .dev.vars locally and via `wrangler secret put SAM_API_KEY` for prod — never in .env, never committed. Follow the dark-until-configured convention (precedents: RESEND_API_KEY in src/email/send.ts, X402_WALLET_ADDRESS in src/x402/routes.ts): when SAM_API_KEY is unset, fetchFresh must throw, falling back to fixtures when FIXTURE_FALLBACK='true'. Probe api.sam.gov/entity-information/v4/exclusions (PUBLIC v4 only — never sensitive/FOUO endpoints): (a) total active-exclusion count to confirm whether the paginated JSON path exceeds the 10k snapshot cap (expected yes → extract path); (b) the async extract mechanics end-to-end: request extract, poll/receive download token, download CSV/JSON, note timing and URL shapes; (c) capture real response field names (classification, exclusionType, exclusionProgram, excludingAgencyCode, ueiSAM, cageCode, CT code, activation/termination dates, address block, individual-exclusion fields incl. masked NPI) for the recordSchema and the D&B strip list; (d) confirm ~2 req/day full sync fits the 10 req/day no-role tier. Save a raw sample payload (with personal/address data flagged for later minimization into fixtures) and write findings into this subtask via task-master update-subtask. Note ssnOrTinOrEin exists as an upstream SEARCH param only — record it in findings as never-to-be-forwarded.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Manual probe evidence logged on the subtask: extract request→download round-trip succeeds with the no-role key; record count confirms/refutes the 10k-cap assumption; a saved sample payload exists for fixture derivation. Local `npm run dev` with SAM_API_KEY unset shows the dark-until-configured throw + fixture fallback path.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T17:18:34.496Z"
           },
           {
             "id": 2,
@@ -1469,9 +1470,10 @@
             "description": "Extract the csvRows streaming CSV parser from src/sources/uk-sanctions.ts into a shared module under src/sources so sam-exclusions can reuse it, and re-point uk-sanctions with no behavior change.",
             "dependencies": [],
             "details": "Pure refactor, no behavior change. Move csvRows (and any coupled CSV helpers) from src/sources/uk-sanctions.ts into a shared module, e.g. src/sources/csv.ts, with named exports and explicit return types (strict TS, no `any`). Re-point uk-sanctions.ts to import from the shared module. This respects the dataset-isolation rule: shared parsing infrastructure is not dataset-specific, so a shared src/sources module is the correct home — do NOT copy-paste the parser into sam-exclusions.ts. Keep the parser streaming/iterator-based as-is since the SAM extract can be large (up to 1M records). Preserve existing quoting/escaping/newline semantics exactly; if edge-case handling needs extending for SAM's CSV dialect, do it in a later subtask with tests, not during the lift.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Existing uk-sanctions.spec.ts passes unchanged (proves no behavior change). Add a small unit spec for the shared module covering quoted fields, embedded commas/newlines, and CRLF handling. `npm run typecheck` and `npm run lint` clean.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T17:18:34.508Z"
           },
           {
             "id": 3,
@@ -1482,9 +1484,10 @@
               2
             ],
             "details": "Mirror src/sources/uk-sanctions.ts (closest precedent). recordSchema (zod) IS the allowlist — KEEP: name (entity + individual), classification (Individual/Firm/Special Entity), exclusion type/program, excluding agency, ueiSAM, CAGE, CT code, activation/termination dates, status. DROP at ingest the entire address block — all nine D&B Open Data fields (legal business name in its D&B address-block context, street address, city, state/province name+code+abbrev, county code, ZIP, country name+code) — plus DOB/SSN-adjacent identifiers on individual exclusions (keep designation facts only, per uk-sanctions). Never add ssnOrTinOrEin to queryParams, never forward or expose it. Include the minimization-at-ingest comment block explaining the D&B clause and the accepted LOW residual risk on pre-2022 legacy entity names — do not silently widen the kept-fields set. fetchFresh implements the flow verified in subtask 1 (expected: async extract request→download parsed via the shared CSV module; paginated JSON only if the probe showed it suffices), with dark-until-configured throw on missing SAM_API_KEY, FIXTURE_FALLBACK support, and the suspiciously_small_refresh warn log. Define queryParams (e.g. name search, classification, excluding agency, active-on date) and the stats spec fields on the source. Capture a minimized fixture from the subtask-1 sample (D&B/personal fields already stripped) into the fixtures location used by uk-sanctions. Add the registry entry in src/sources/registry.ts; REST/OpenAPI/MCP/llms.txt/x402 surfaces regenerate from it — verify, don't hand-edit.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Covered in depth by subtask 4; during implementation: fixture parse yields records valid against samExclusionsRecordSchema; local /v1/sam-exclusions query returns minimized records; grep confirms no D&B field names in schema keys or fixture output; `npm run typecheck`/`lint`/`build` clean.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T17:18:34.529Z"
           },
           {
             "id": 4,
@@ -1494,9 +1497,10 @@
               3
             ],
             "details": "test/sam-exclusions.spec.ts: (a) fixture parse produces valid records against samExclusionsRecordSchema; (b) the legally-mandated strip is provably complete — assert NO output record and NO recordSchema key carries any of the nine D&B Open Data fields (streetAddress, city, state/province name/code/abbrev, county code, ZIP, country name/code, D&B-context legal business name) nor DOB/SSN-adjacent identifiers, and that ssnOrTinOrEin appears nowhere in queryParams or records; (c) suspiciously_small_refresh warn fires on an implausibly small refresh; (d) dark-until-configured: fetchFresh throws without SAM_API_KEY and falls back to fixtures with FIXTURE_FALLBACK='true'; (e) query filtering per queryParams. Update the source-enumeration lists in data.spec/query.spec/uk-planning.spec (wherever live sources are enumerated) to include sam-exclusions, and assert the generated surfaces pick it up: /openapi.json path, MCP tools/list exposing query_sam_exclusions, and /llms.txt listing the dataset. Full `npm test` green in the Workers pool.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "This subtask IS the test work: vitest (Workers pool) green across the new spec and all updated enumeration specs; the D&B-absence assertions act as the regression guard for the licence mitigation; CI lint/typecheck/test pass.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T17:18:34.537Z"
           },
           {
             "id": 5,
@@ -1507,11 +1511,13 @@
               4
             ],
             "details": "Hard gate: legal BEFORE launch, same-commit rule applies. (1) public/terms.html licence table (~line 65, model on the uk-sanctions row at line 68): add sam-exclusions row stating US-government-works public domain, the D&B Open Data carve-out with a WRITTEN D&B attribution line (required for the retained pre-2022 legacy names posture), and 'screening aid, not legal advice' conditions. (2) public/privacy.html section 3 (model on the uk-sanctions paragraph at line 53): categories served (individual-exclusion designation facts), lawful basis legitimate interests, rights requests directed to GSA/SAM.gov, minimization statement (address block + identifiers dropped at ingest). (3) docs/RUNBOOK.md 'Secret rotation' section (~line 75): SAM_API_KEY with MANDATORY 90-day rotation per SAM.gov account terms; operator sets a calendar reminder (surface this as an explicit operator action in the PR/summary). (4) Exposure ritual per docs/NICHE-LAUNCH-CHECKLIST.md: stats spec verified on the source (date + groupBy: excluding agency / exclusion type / classification), sitemap.xml entry for the stats page, server.json version bump + mcp-publisher publish (publishing = ask-first per CLAUDE.md), ARCHITECTURE.md live-datasets line updated. All of the above land in the single commit/PR that makes the registry entry live.",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Checklist review against docs/NICHE-LAUNCH-CHECKLIST.md; visual check of terms/privacy pages via `npm run dev` (D&B attribution text present verbatim); grep confirms sitemap + ARCHITECTURE.md entries; git diff of the activation commit shows code + terms + privacy + ARCHITECTURE.md together (same-commit rule); mcp-publisher publish only after operator approval.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-07-12T17:18:34.544Z"
           }
-        ]
+        ],
+        "updatedAt": "2026-07-12T17:18:34.544Z"
       },
       {
         "id": "41",
@@ -1561,7 +1567,7 @@
         "description": "Platform capability (contract change, operator-approved 2026-07-13): a DataSource may declare storage:'d1' for datasets too large for the KV-snapshot pattern (KV 25MiB value cap + full JSON parse per request; breaks at ~168k records for sam-exclusions). Design: migration adds source_records(source_slug, generation, seq, search, record JSON, PK(source_slug,generation,seq)) + source_meta(source_slug PK, generation, last_refreshed_at, total). Refresh path in cache.ts: fetchFresh -> chunked batch INSERTs under generation+1 -> flip source_meta -> delete old generation (atomic swap, queries never see partial data; refresh_log unchanged). Query path: new src/sources/d1store.ts translates the EXISTING generic filter semantics to SQL — scalar string params as json_extract(...) LIKE '%v%' (case-insensitive substring), number _min/_max as numeric compares, date _after/_before as string compares (D1 sources must normalize dates to date-only ISO), q as LIKE over the precomputed lowercased search column, COUNT(*) total, LIMIT/OFFSET pagination. Constraint: D1 sources may declare scalar queryParams only (no array fields v1). Shared querySource(env, source, parsedQuery) dispatcher used by REST data route, MCP tools, and x402 lane; stats page uses SQL GROUP BY json_extract for D1 sources. Tests: semantics-parity suite (same fixture through applyQuery and the SQL path must agree), refresh swap atomicity, enumeration specs. ARCHITECTURE.md data-model note in same commit. Unblocks task 40 (sam-exclusions, 167,695 active records) and future large status-list datasets (uk-companies).",
         "details": "",
         "testStrategy": "",
-        "status": "in-progress",
+        "status": "done",
         "dependencies": [],
         "priority": "high",
         "subtasks": [
@@ -1642,14 +1648,14 @@
         "complexity": 8,
         "recommendedSubtasks": 6,
         "expansionPrompt": "Expand task 44 into subtasks following the existing code structure (all paths verified in the current repo). Suggested decomposition: (1) Contract + schema: migration 0007 creating source_records(source_slug, generation, seq, search, record JSON, PK(source_slug,generation,seq)) and source_meta(source_slug PK, generation, last_refreshed_at, total); add storage?: 'kv'|'d1' to DataSource in src/sources/types.ts with the scalar-only queryParams constraint for D1 sources (enforce via a registry-time assertion in src/sources/registry.ts, since queryParams shapes are introspectable zod objects). (2) Refresh/ingest path: extend src/sources/cache.ts (refreshSource/refreshAllSources) so storage:'d1' sources do fetchFresh -> chunked batch INSERTs under generation+1 (respect D1's ~100 bound-params-per-statement limit; use env.DB.batch for chunks), precompute the lowercased search column from the record's string fields, flip source_meta last, then delete the old generation — preserving the existing refresh_log writes and the zero-records guard. (3) SQL query engine: new src/sources/d1store.ts translating the exact semantics of applyQuery in src/sources/query.ts to SQL — scalar string params as LOWER(json_extract(record,'$.field')) LIKE '%'||?||'%' with ESCAPE handling for % and _ in user input, _min/_max as numeric json_extract compares, _after/_before as string compares (document the date-only ISO normalization requirement on D1 sources), q as LIKE over the search column, COUNT(*) total, LIMIT/OFFSET from page/per_page. (4) querySource dispatcher: shared querySource(env, source, parsedQuery) that routes KV sources through readCached+applyQuery and D1 sources through d1store, returning records + page metadata + last_refreshed_at (from source_meta for D1); rewire the three call sites — handleSourceQuery in src/routes/data.ts (which also serves the x402 lane via src/x402/routes.ts), the MCP tools/call handler in src/mcp/server.ts, and keep the 503-on-unavailable envelope behavior. (5) Stats for D1 sources: extend src/routes/stats.ts so computeStats for storage:'d1' sources runs SQL GROUP BY json_extract for StatsSpec groupBy fields and monthly bucketing (substr of the date field) instead of loading all records. (6) Tests + docs: semantics-parity suite pushing the same fixture through applyQuery and the D1 path asserting identical results (records, total, pagination) for every filter kind including LIKE-special-character inputs and case-mixed values; refresh swap atomicity spec (queries mid-refresh see only the old complete generation; failed refresh leaves the old generation intact); enumeration specs (llms/openapi/mcp suites still pass with a D1 demo source registered); ARCHITECTURE.md data-model note in the same commit per the same-commit rule. Subtasks 2-5 depend on 1; 6 depends on 2-5.",
-        "updatedAt": "2026-07-12T16:50:27.557Z"
+        "updatedAt": "2026-07-12T16:58:20.094Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-12T16:50:27.557Z",
+      "lastModified": "2026-07-12T17:18:34.544Z",
       "taskCount": 44,
-      "completedCount": 37,
+      "completedCount": 39,
       "tags": [
         "master"
       ]

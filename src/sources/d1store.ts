@@ -50,32 +50,44 @@ export async function refreshD1Source(
 ): Promise<SourceMeta> {
   const start = Date.now();
   try {
-    const records = await source.fetchFresh(env);
-    if (records.length === 0) {
-      throw new Error('refresh returned 0 records');
-    }
     const previous = await readMeta(env, source.slug);
     const generation = (previous?.generation ?? 0) + 1;
 
     // Chunked set-based insert: one statement per chunk via json_each keeps
-    // bind counts tiny (D1 caps bound parameters per statement).
+    // bind counts tiny (D1 caps bound parameters per statement). fetchStream
+    // (preferred when present) holds only one chunk in memory, so datasets far
+    // beyond Worker memory can load; fetchFresh materializes like the KV path.
     const insert = env.DB.prepare(
       `INSERT INTO source_records (source_slug, generation, seq, search, record)
        SELECT ?1, ?2, key + ?3, json_extract(value, '$.s'), json_extract(value, '$.r')
        FROM json_each(?4)`,
     );
-    for (let offset = 0; offset < records.length; offset += INSERT_CHUNK) {
-      const chunk = records.slice(offset, offset + INSERT_CHUNK).map((record) => ({
-        s: searchText(record as Record<string, unknown>),
-        r: record,
-      }));
-      await insert.bind(source.slug, generation, offset, JSON.stringify(chunk)).run();
+    let total = 0;
+    let chunk: { s: string; r: unknown }[] = [];
+    const flush = async (): Promise<void> => {
+      if (chunk.length === 0) return;
+      await insert.bind(source.slug, generation, total - chunk.length, JSON.stringify(chunk)).run();
+      chunk = [];
+    };
+    const records: AsyncIterable<unknown> | unknown[] = source.fetchStream
+      ? source.fetchStream(env)
+      : await source.fetchFresh(env);
+    for await (const record of records) {
+      chunk.push({ s: searchText(record as Record<string, unknown>), r: record });
+      total += 1;
+      if (chunk.length >= INSERT_CHUNK) await flush();
+    }
+    await flush();
+    if (total === 0) {
+      // Failed-generation rows (none here, but mid-stream failures leave some)
+      // are swept by the next successful refresh's generation delete.
+      throw new Error('refresh returned 0 records');
     }
 
     const meta: SourceMeta = {
       generation,
       last_refreshed_at: new Date().toISOString(),
-      total: records.length,
+      total,
     };
     await env.DB.prepare(
       `INSERT INTO source_meta (source_slug, generation, last_refreshed_at, total)
@@ -90,7 +102,7 @@ export async function refreshD1Source(
       .bind(source.slug, generation)
       .run();
 
-    await writeRefreshLog(env, source.slug, 'ok', records.length, Date.now() - start, null);
+    await writeRefreshLog(env, source.slug, 'ok', total, Date.now() - start, null);
     return meta;
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);

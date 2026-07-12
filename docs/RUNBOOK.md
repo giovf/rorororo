@@ -77,6 +77,7 @@ corrects for sampling.) Day-to-day request logs stay in Workers Logs
 ```bash
 wrangler secret put ADMIN_TOKEN          # openssl rand -hex 32
 wrangler secret put STRIPE_SECRET_KEY    # rotate in Stripe dashboard first
+wrangler secret put SAM_API_KEY          # SAM.gov EXPIRES keys every 90 days — regenerate on the SAM.gov Account Details page, then update (calendar reminder!)
 wrangler secret put STRIPE_WEBHOOK_SECRET
 wrangler secret put X402_WALLET_ADDRESS  # a config change, not a secret rotation
 ```

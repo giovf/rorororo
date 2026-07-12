@@ -67,4 +67,11 @@ export interface DataSource<TRecord = unknown> {
   stats?: StatsSpec;
   /** Pull fresh records from the origin (called by cron refresh / cache miss). */
   fetchFresh(env: CloudflareBindings): Promise<TRecord[]>;
+  /**
+   * Streaming alternative to fetchFresh, preferred by the D1 refresh when
+   * present: yields records one at a time so datasets too large to
+   * materialize in Worker memory (tens of MB) can load in O(chunk) space.
+   * KV-snapshot sources ignore it.
+   */
+  fetchStream?(env: CloudflareBindings): AsyncIterable<TRecord>;
 }

@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.gankdat/gankdat",
   "title": "gankdat",
-  "description": "UK & EU tenders, planning applications and sanctions designations as clean JSON from official feeds.",
-  "version": "0.3.0",
+  "description": "UK & EU tenders, planning, sanctions and US debarment lists as clean JSON from official feeds.",
+  "version": "0.4.0",
   "websiteUrl": "https://gankdat.com",
   "icons": [
     {

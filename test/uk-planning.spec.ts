@@ -166,11 +166,18 @@ describe('scheduled refresh', () => {
     expect(await env.CACHE.get('data:uk-tenders', 'json')).not.toBeNull();
     expect(await env.CACHE.get('data:uk-sanctions', 'json')).not.toBeNull();
     expect(await env.CACHE.get('data:eu-ted', 'json')).not.toBeNull();
+    // sam-exclusions is a D1-backed source: its refresh lands in source_meta,
+    // not the KV snapshot (fixture fallback: 28 records).
+    const samMeta = await env.DB.prepare(
+      "SELECT total FROM source_meta WHERE source_slug = 'sam-exclusions'",
+    ).first<{ total: number }>();
+    expect(samMeta?.total).toBe(28);
     const rows = await env.DB.prepare(
       'SELECT source_slug, status FROM refresh_log ORDER BY source_slug',
     ).all();
     expect(rows.results).toEqual([
       { source_slug: 'eu-ted', status: 'ok' },
+      { source_slug: 'sam-exclusions', status: 'ok' },
       { source_slug: 'uk-planning', status: 'ok' },
       { source_slug: 'uk-sanctions', status: 'ok' },
       { source_slug: 'uk-tenders', status: 'ok' },
