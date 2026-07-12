@@ -49,6 +49,28 @@ async function isAnonymousIntrospection(c: Context<AppEnv>): Promise<boolean> {
   );
 }
 
+// Comma-joined sorted unique JSON-RPC method names from the (possibly batched)
+// body, recorded in analytics blobs. Same cached-parse safety note as
+// isAnonymousIntrospection; '' when the body is malformed JSON.
+async function requestMethods(c: Context<AppEnv>): Promise<string> {
+  let body: unknown;
+  try {
+    body = await c.req.json();
+  } catch {
+    return '';
+  }
+  const messages = Array.isArray(body) ? body : [body];
+  const methods = new Set<string>();
+  for (const message of messages) {
+    const method =
+      typeof message === 'object' && message !== null
+        ? (message as { method?: unknown }).method
+        : undefined;
+    methods.add(typeof method === 'string' ? method : '(invalid)');
+  }
+  return [...methods].sort().join(',');
+}
+
 // Anonymous introspection is limited in-isolate (zero KV ops): crawler waves
 // after directory listings were burning the KV write budget one put per
 // request, and metadata reads don't need globally-accurate accounting.
@@ -83,16 +105,36 @@ export const mcpRoute = new Hono<AppEnv>().post(
       }
       return next();
     }
-    return requireApiKey()(c, next);
+    // requireApiKey's 401 short-circuits before the analytics write in the
+    // final handler, which would hide the strongest adoption signal there is:
+    // an agent attempting tools/call without a key. Record rejections here.
+    const response = await requireApiKey()(c, next);
+    if (response instanceof Response && response.status === 401) {
+      c.env.TRAFFIC.writeDataPoint({
+        blobs: [
+          'mcp_denied',
+          c.req.header('User-Agent') ?? '',
+          await requestMethods(c),
+          c.req.header('Authorization') ? 'bad_key' : 'no_key',
+        ],
+        doubles: [1],
+        indexes: ['mcp_denied'],
+      });
+    }
+    return response;
   },
   // Anonymous requests were already limited above; keyCtx present ⇒ authed.
   async (c, next) => (c.get('keyCtx') ? authedRateLimit(c, next) : next()),
   async (c) => {
     // Adoption analytics (fire-and-forget, no request-path cost): who calls
-    // /mcp — anonymous introspection is crawler/directory traffic, the UA
-    // names it. UA only, no IPs (data-minimization).
+    // /mcp and which method — splits crawler introspection (initialize,
+    // tools/list) from real tool usage. UA only, no IPs (data-minimization).
     c.env.TRAFFIC.writeDataPoint({
-      blobs: [c.get('keyCtx') ? 'mcp_authed' : 'mcp_anon', c.req.header('User-Agent') ?? ''],
+      blobs: [
+        c.get('keyCtx') ? 'mcp_authed' : 'mcp_anon',
+        c.req.header('User-Agent') ?? '',
+        await requestMethods(c),
+      ],
       doubles: [1],
       indexes: [c.get('keyCtx') ? 'mcp_authed' : 'mcp_anon'],
     });

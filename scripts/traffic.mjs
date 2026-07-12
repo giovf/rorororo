@@ -20,6 +20,7 @@ if (!token) {
 const GREEN = '\x1b[32m';
 const MAGENTA = '\x1b[35m';
 const AMBER = '\x1b[33m';
+const RED = '\x1b[31m';
 const DIM = '\x1b[2m';
 const RESET = '\x1b[0m';
 
@@ -42,7 +43,8 @@ function bar(value, max, width = 30) {
   return '█'.repeat(filled).padEnd(width);
 }
 
-const kindColor = (kind) => (kind === 'mcp_anon' ? GREEN : MAGENTA);
+const KIND_COLOR = { mcp_anon: GREEN, mcp_authed: MAGENTA, mcp_denied: RED };
+const kindColor = (kind) => KIND_COLOR[kind] ?? RESET;
 
 const daily = await sql(`
   SELECT toStartOfInterval(timestamp, INTERVAL '1' DAY) AS day,
@@ -62,7 +64,7 @@ if (daily === null) {
 }
 
 console.log(
-  `\n${GREEN}gankdat${RESET} /mcp traffic — last 14 days  ${DIM}(${GREEN}█${RESET}${DIM} anon · ${MAGENTA}█${RESET}${DIM} authed)${RESET}\n`,
+  `\n${GREEN}gankdat${RESET} /mcp traffic — last 14 days  ${DIM}(${GREEN}█${RESET}${DIM} anon · ${MAGENTA}█${RESET}${DIM} authed · ${RED}█${RESET}${DIM} denied 401)${RESET}\n`,
 );
 
 const byDay = new Map();
@@ -73,10 +75,12 @@ for (const row of daily) {
 }
 const dayMax = Math.max(1, ...[...byDay.values()].flatMap((k) => Object.values(k)));
 for (const [day, kinds] of byDay) {
-  for (const kind of ['mcp_anon', 'mcp_authed']) {
+  let labelled = false;
+  for (const kind of ['mcp_anon', 'mcp_authed', 'mcp_denied']) {
     if (!kinds[kind]) continue;
     const n = Math.round(kinds[kind]);
-    const label = kind === 'mcp_anon' ? day : ' '.repeat(10);
+    const label = labelled ? ' '.repeat(10) : day;
+    labelled = true;
     console.log(`  ${label}  ${kindColor(kind)}${bar(n, dayMax)}${RESET} ${n}`);
   }
 }
@@ -100,11 +104,65 @@ if (!agents?.length) {
   const KIND_LABEL = {
     mcp_anon: `${GREEN}anon  ${RESET}`,
     mcp_authed: `${MAGENTA}authed${RESET}`,
+    mcp_denied: `${RED}denied${RESET}`,
     x402_paid: `${AMBER}paid $${RESET}`,
   };
   for (const a of agents) {
     const ua = (a.ua || '(none)').slice(0, 60).padEnd(uaWidth);
     console.log(`  ${ua}  ${KIND_LABEL[a.kind] ?? a.kind}  ${Math.round(Number(a.requests))}`);
+  }
+}
+
+// Method mix (blob3, recorded since task 45): splits crawler introspection
+// (initialize/tools/list) from real tool usage. Rows written before the
+// upgrade have an empty blob3.
+const methods = await sql(`
+  SELECT blob3 AS methods, blob1 AS kind,
+         SUM(_sample_interval * double1) AS requests
+  FROM ${DATASET}
+  WHERE timestamp > NOW() - INTERVAL '7' DAY
+    AND blob1 IN ('mcp_anon', 'mcp_authed')
+  GROUP BY methods, kind
+  ORDER BY requests DESC
+  LIMIT 15
+`);
+
+console.log(`\n/mcp method mix — last 7 days\n`);
+if (!methods?.length) {
+  console.log(`  ${DIM}(none yet)${RESET}`);
+} else {
+  const nameOf = (m) => m || '(before method tracking)';
+  const width = Math.max(...methods.map((m) => nameOf(m.methods).length));
+  for (const m of methods) {
+    const label = m.kind === 'mcp_anon' ? `${GREEN}anon  ${RESET}` : `${MAGENTA}authed${RESET}`;
+    console.log(`  ${nameOf(m.methods).padEnd(width)}  ${label}  ${Math.round(Number(m.requests))}`);
+  }
+}
+
+// The conversion signal: a keyless tools/call means an agent moved past
+// introspection and actually wanted the data, then stopped at the paywall.
+// bad_key = someone holding a key that doesn't validate (misconfiguration).
+const denied = await sql(`
+  SELECT toStartOfInterval(timestamp, INTERVAL '1' DAY) AS day,
+         blob2 AS ua, blob3 AS methods, blob4 AS reason,
+         SUM(_sample_interval * double1) AS requests
+  FROM ${DATASET}
+  WHERE timestamp > NOW() - INTERVAL '14' DAY AND blob1 = 'mcp_denied'
+  GROUP BY day, ua, methods, reason
+  ORDER BY day ASC, requests DESC
+  LIMIT 40
+`);
+
+console.log(`\n${RED}denied /mcp calls (401)${RESET} — last 14 days\n`);
+if (!denied?.length) {
+  console.log(`  ${DIM}(none — no agent has tried a tool call without a valid key yet)${RESET}`);
+} else {
+  for (const d of denied) {
+    const ua = (d.ua || '(none)').slice(0, 40).padEnd(40);
+    const what = `${d.methods || '(malformed)'} · ${d.reason}`;
+    console.log(
+      `  ${String(d.day).slice(0, 10)}  ${ua}  ${what.padEnd(24)}  ${RED}${Math.round(Number(d.requests))}${RESET}`,
+    );
   }
 }
 

@@ -117,6 +117,58 @@ describe('/mcp', () => {
     expect(res.headers.get('WWW-Authenticate')).toContain('Bearer');
   });
 
+  it('records denied (401) attempts and method names in traffic analytics', async () => {
+    const spy = vi.spyOn(env.TRAFFIC, 'writeDataPoint');
+
+    // Keyless tools/call — the conversion signal: agent wanted data, hit the paywall.
+    const keyless = await SELF.fetch(MCP_URL, {
+      method: 'POST',
+      headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream' },
+      body: JSON.stringify({
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'tools/call',
+        params: { name: 'list_sources', arguments: {} },
+      }),
+    });
+    expect(keyless.status).toBe(401);
+    expect(spy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        blobs: ['mcp_denied', expect.any(String), 'tools/call', 'no_key'],
+        indexes: ['mcp_denied'],
+      }),
+    );
+
+    // Invalid presented key is bad_key, not no_key (misconfigured customer ≠ paywall stop).
+    spy.mockClear();
+    const badKey = await SELF.fetch(MCP_URL, {
+      method: 'POST',
+      headers: {
+        ...bearer('fapi_definitely_not_a_key'),
+        'content-type': 'application/json',
+        accept: 'application/json, text/event-stream',
+      },
+      body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'tools/list', params: {} }),
+    });
+    expect(badKey.status).toBe(401);
+    expect(spy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        blobs: ['mcp_denied', expect.any(String), 'tools/list', 'bad_key'],
+      }),
+    );
+
+    // Successful anon introspection carries its method(s) in blob3.
+    spy.mockClear();
+    await rpc(null, 'tools/list');
+    expect(spy).toHaveBeenCalledWith(
+      expect.objectContaining({
+        blobs: ['mcp_anon', expect.any(String), 'tools/list'],
+      }),
+    );
+
+    spy.mockRestore();
+  });
+
   it('anonymous introspection costs zero KV rate-limit writes; authed traffic is accounted', async () => {
     await rpc(null, 'tools/list');
     expect((await env.RATE.list({ prefix: 'rl:mcp:' })).keys.length).toBe(0);

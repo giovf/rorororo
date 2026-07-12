@@ -1846,12 +1846,27 @@
         "recommendedSubtasks": 6,
         "expansionPrompt": "Expand task 44 into subtasks following the existing code structure (all paths verified in the current repo). Suggested decomposition: (1) Contract + schema: migration 0007 creating source_records(source_slug, generation, seq, search, record JSON, PK(source_slug,generation,seq)) and source_meta(source_slug PK, generation, last_refreshed_at, total); add storage?: 'kv'|'d1' to DataSource in src/sources/types.ts with the scalar-only queryParams constraint for D1 sources (enforce via a registry-time assertion in src/sources/registry.ts, since queryParams shapes are introspectable zod objects). (2) Refresh/ingest path: extend src/sources/cache.ts (refreshSource/refreshAllSources) so storage:'d1' sources do fetchFresh -> chunked batch INSERTs under generation+1 (respect D1's ~100 bound-params-per-statement limit; use env.DB.batch for chunks), precompute the lowercased search column from the record's string fields, flip source_meta last, then delete the old generation — preserving the existing refresh_log writes and the zero-records guard. (3) SQL query engine: new src/sources/d1store.ts translating the exact semantics of applyQuery in src/sources/query.ts to SQL — scalar string params as LOWER(json_extract(record,'$.field')) LIKE '%'||?||'%' with ESCAPE handling for % and _ in user input, _min/_max as numeric json_extract compares, _after/_before as string compares (document the date-only ISO normalization requirement on D1 sources), q as LIKE over the search column, COUNT(*) total, LIMIT/OFFSET from page/per_page. (4) querySource dispatcher: shared querySource(env, source, parsedQuery) that routes KV sources through readCached+applyQuery and D1 sources through d1store, returning records + page metadata + last_refreshed_at (from source_meta for D1); rewire the three call sites — handleSourceQuery in src/routes/data.ts (which also serves the x402 lane via src/x402/routes.ts), the MCP tools/call handler in src/mcp/server.ts, and keep the 503-on-unavailable envelope behavior. (5) Stats for D1 sources: extend src/routes/stats.ts so computeStats for storage:'d1' sources runs SQL GROUP BY json_extract for StatsSpec groupBy fields and monthly bucketing (substr of the date field) instead of loading all records. (6) Tests + docs: semantics-parity suite pushing the same fixture through applyQuery and the D1 path asserting identical results (records, total, pagination) for every filter kind including LIKE-special-character inputs and case-mixed values; refresh swap atomicity spec (queries mid-refresh see only the old complete generation; failed refresh leaves the old generation intact); enumeration specs (llms/openapi/mcp suites still pass with a D1 demo source registered); ARCHITECTURE.md data-model note in the same commit per the same-commit rule. Subtasks 2-5 depend on 1; 6 depends on 2-5.",
         "updatedAt": "2026-07-12T16:58:20.094Z"
+      },
+      {
+        "id": "45",
+        "title": "Record MCP method + denied (401) attempts in traffic analytics",
+        "description": "Extend /mcp Analytics Engine writes: blob3 = JSON-RPC method(s) on mcp_anon/mcp_authed points; new mcp_denied kind (blob4 no_key|bad_key) written when requireApiKey 401s, so keyless tools/call attempts — the earliest conversion signal — become visible. Extend scripts/traffic.mjs with an anon method breakdown and a denied-attempts section.",
+        "details": "",
+        "testStrategy": "",
+        "status": "in-progress",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "complexity": 4,
+        "recommendedSubtasks": 3,
+        "expansionPrompt": "Break task 45 into subtasks along its three natural seams. (1) Method capture on existing points: in src/routes/mcp.ts, add a small helper that reads the cached JSON-RPC body (c.req.json() is already cached via isAnonymousIntrospection) and extracts the method name(s) — handling batch arrays (join sorted/comma-separated) and malformed JSON (empty string) — then add it as blob3 on the existing mcp_anon/mcp_authed writeDataPoint call, keeping blob1=kind, blob2=user-agent positions unchanged. (2) Denied-attempt instrumentation: wrap the requireApiKey() call at src/routes/mcp.ts:86 in an /mcp-scoped wrapper (do NOT modify the shared middleware in src/auth/middleware.ts) that awaits the auth outcome, detects a 401 via the returned/set response status, classifies blob4 as no_key (no Bearer token in the Authorization header) vs bad_key (token presented but unknown/revoked), and fire-and-forget writes a TRAFFIC point with blob1='mcp_denied', blob2=UA, blob3=method(s), blob4=reason; extend test/mcp.spec.ts to assert writeDataPoint payloads for authed, anon, no_key, and bad_key cases via a TRAFFIC binding spy. (3) Dashboard: extend scripts/traffic.mjs with an anonymous method breakdown (GROUP BY blob3 WHERE blob1='mcp_anon', last 7 days) and a denied-attempts section (daily counts by blob4 WHERE blob1='mcp_denied'), following the existing sql()/bar()/color-constant idioms and null-dataset handling.",
+        "updatedAt": "2026-07-12T23:27:44.272Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-12T22:55:13.401Z",
-      "taskCount": 44,
+      "lastModified": "2026-07-12T23:27:44.272Z",
+      "taskCount": 45,
       "completedCount": 42,
       "tags": [
         "master"
