@@ -165,10 +165,12 @@ describe('scheduled refresh', () => {
     expect(await env.CACHE.get('data:uk-planning', 'json')).not.toBeNull();
     expect(await env.CACHE.get('data:uk-tenders', 'json')).not.toBeNull();
     expect(await env.CACHE.get('data:uk-sanctions', 'json')).not.toBeNull();
+    expect(await env.CACHE.get('data:eu-ted', 'json')).not.toBeNull();
     const rows = await env.DB.prepare(
       'SELECT source_slug, status FROM refresh_log ORDER BY source_slug',
     ).all();
     expect(rows.results).toEqual([
+      { source_slug: 'eu-ted', status: 'ok' },
       { source_slug: 'uk-planning', status: 'ok' },
       { source_slug: 'uk-sanctions', status: 'ok' },
       { source_slug: 'uk-tenders', status: 'ok' },

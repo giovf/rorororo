@@ -19,7 +19,12 @@ describe('registry', () => {
   it('looks up sources by slug and lists them', () => {
     expect(getSource('uk-planning')?.slug).toBe('uk-planning');
     expect(getSource('nope')).toBeUndefined();
-    expect(listSources().map((s) => s.slug)).toEqual(['uk-planning', 'uk-tenders', 'uk-sanctions']);
+    expect(listSources().map((s) => s.slug)).toEqual([
+      'uk-planning',
+      'uk-tenders',
+      'uk-sanctions',
+      'eu-ted',
+    ]);
   });
 });
 
@@ -78,9 +83,9 @@ describe('applyQuery', () => {
   it('searches all string fields with the reserved q param', () => {
     const result = applyQuery(RECORDS, parseQuery({ q: 'yard' }));
     expect(result.records.map((r) => r.id)).toEqual(['r3']);
-    expect(applyQuery(RECORDS, parseQuery({ q: 'residential' })).records.map((r) => r.id)).toEqual(
-      ['r2'],
-    );
+    expect(applyQuery(RECORDS, parseQuery({ q: 'residential' })).records.map((r) => r.id)).toEqual([
+      'r2',
+    ]);
   });
 
   it('applies inclusive _after/_before ranges over ISO-date string fields', () => {
