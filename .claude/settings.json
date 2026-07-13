@@ -1,3 +1,9 @@
 {
-  "enabledPlugins": {}
+  "enabledPlugins": {},
+  "permissions": {
+    "allow": [
+      "Bash(git push)",
+      "Bash(git push origin main)"
+    ]
+  }
 }
