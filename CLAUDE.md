@@ -72,13 +72,24 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
 - Don't commit `node_modules/`, `.taskmaster/reports/`, or anything in
   `.gitignore`.
 
+## Deploys
+- **CI deploys are pre-authorized** (operator decision 2026-07-13): once
+  gates pass (lint, typecheck, test — plus /verify for nontrivial product
+  changes), commit and push to `main`; GitHub Actions deploys. Watch the run
+  to green and smoke-test the live surface — a push is not a deploy until
+  both are confirmed.
+- Direct `npm run deploy` / `wrangler deploy` still requires asking — it
+  skips CI's gates.
+
 ## Things to ask before doing
 - Adding a new top-level dependency
 - Changing the package manager
 - Modifying anything inside `.devcontainer/`
-- Deploying, publishing, or submitting to any store/registry
-- `npm run deploy` / `wrangler deploy` (real Cloudflare deploy)
-- Running D1 migrations against the production database
+- Publishing or submitting to any store/registry/directory (CI deploys of
+  the Worker itself are pre-authorized — see Deploys)
+- Direct `npm run deploy` / `wrangler deploy` (bypasses CI)
+- Running D1 migrations against the production database (a push whose deploy
+  depends on an unapplied prod migration is NOT self-serve — ask first)
 - Creating/modifying Stripe objects in **live** mode (test mode is fine)
 - Anything that sends real payments, emails, or publishes data externally
 
