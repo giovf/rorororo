@@ -98,6 +98,15 @@ Local equivalents live in `.dev.vars` (see `.dev.vars.example`).
 - **Snapshot caps**: uk-planning serves the most recent ~2000 records,
   uk-tenders ~1000 (KV value + memory bounds). Raising them = shard the cache
   per authority/window (post-v1).
+- **SAM.gov daily quota — ONE refresh shot per day**: the non-federal no-role
+  API key gets 10 requests/day, reset midnight UTC, and the extract's
+  tokenised download polls count against it (verified 2026-07-13). The
+  sam-exclusions refresh budgets 1 extract request + 8 polls = 9/day; if a
+  day's cron fails, do NOT hand-retry the same day — every attempt 429s until
+  00:00 UTC and the source just stays on its previous generation. A 429 from
+  the extract request itself means the quota was already burnt (e.g. by
+  manual curls). Durable upgrade: link a role/system account to the key
+  (1,000/day tier) via SAM.gov Account Details.
 
 ## Pivot triggers (from the niche analysis — check monthly against reality)
 

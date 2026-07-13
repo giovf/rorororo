@@ -22,12 +22,18 @@ import type { DataSource } from './types';
 // Requires SAM_API_KEY (rotate every 90 days per SAM account terms; RUNBOOK).
 
 const LIST_URL = 'https://api.sam.gov/entity-information/v4/exclusions';
-// Extract generation for the full active set (~168k records) routinely takes
-// longer than a few minutes — the 2026-07-13 cron gave up at 10×20s while SAM
-// was still building it. 20×30s (~10 min of polling) fits the 15-min cron
-// waitUntil budget alongside the other sources' ~1–2 min of sequential work.
-const POLL_ATTEMPTS = 20;
-const POLL_DELAY_MS = 30_000;
+// Poll pacing is QUOTA-driven, not just time-driven. A non-federal no-role
+// SAM key gets 10 requests/day (resets midnight UTC, per Retry-After), and
+// the tokenised download polls COUNT against it — verified 2026-07-13 when
+// the 05:00 run's 1 request + 10 polls exhausted the day and a 09:26 retry
+// 429'd instantly. Budget: 1 extract request + 8 polls = 9/day, one spare.
+// First poll is immediate (covers an instantly-ready extract); the rest are
+// spaced 90s, so the last lands ~10.5 min after the request — the 2026-07-13
+// cron gave up at 10×20s (~3.4 min) while SAM was still building the ~68MB
+// extract. Total ~11 min fits the 15-min cron waitUntil budget alongside the
+// other sources' ~1–2 min of sequential work. See RUNBOOK for quota tiers.
+const POLL_ATTEMPTS = 8;
+const POLL_DELAY_MS = 90_000;
 
 export const samExclusionsRecordSchema = z.object({
   /** Excluded party's name as designated (entityName; individuals included). */
