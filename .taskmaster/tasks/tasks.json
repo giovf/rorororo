@@ -1861,12 +1861,27 @@
         "recommendedSubtasks": 3,
         "expansionPrompt": "Break task 45 into subtasks along its three natural seams. (1) Method capture on existing points: in src/routes/mcp.ts, add a small helper that reads the cached JSON-RPC body (c.req.json() is already cached via isAnonymousIntrospection) and extracts the method name(s) — handling batch arrays (join sorted/comma-separated) and malformed JSON (empty string) — then add it as blob3 on the existing mcp_anon/mcp_authed writeDataPoint call, keeping blob1=kind, blob2=user-agent positions unchanged. (2) Denied-attempt instrumentation: wrap the requireApiKey() call at src/routes/mcp.ts:86 in an /mcp-scoped wrapper (do NOT modify the shared middleware in src/auth/middleware.ts) that awaits the auth outcome, detects a 401 via the returned/set response status, classifies blob4 as no_key (no Bearer token in the Authorization header) vs bad_key (token presented but unknown/revoked), and fire-and-forget writes a TRAFFIC point with blob1='mcp_denied', blob2=UA, blob3=method(s), blob4=reason; extend test/mcp.spec.ts to assert writeDataPoint payloads for authed, anon, no_key, and bad_key cases via a TRAFFIC binding spy. (3) Dashboard: extend scripts/traffic.mjs with an anonymous method breakdown (GROUP BY blob3 WHERE blob1='mcp_anon', last 7 days) and a denied-attempts section (daily counts by blob4 WHERE blob1='mcp_denied'), following the existing sql()/bar()/color-constant idioms and null-dataset handling.",
         "updatedAt": "2026-07-12T23:32:21.140Z"
+      },
+      {
+        "id": "46",
+        "title": "Fix sam-exclusions refresh: extend SAM extract poll window",
+        "description": "The 05:00 UTC cron on 2026-07-13 failed with 'SAM extract not ready after 10 polls' (203s) — sam-exclusions has never populated (source_meta empty, 0 rows). Root cause: POLL_ATTEMPTS=10 x POLL_DELAY_MS=20s gives SAM's async extract only ~3.4 min to generate the ~68MB CSV. Fix: extend polling to ~10 min (20 attempts x 30s, skip the sleep after the final attempt), staying inside the 15-min shared cron waitUntil budget (other sources take ~1-2 min). Then backfill prod via 'wrangler dev --remote --test-scheduled' with FIXTURE_FALLBACK=false and verify refresh_log success + source_meta total ~167k. Caution: each failed run re-requests a new extract and SAM rate-limits that endpoint (429 seen 2026-07-12).",
+        "details": "",
+        "testStrategy": "",
+        "status": "in-progress",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "complexity": 3,
+        "recommendedSubtasks": 0,
+        "expansionPrompt": "If expanded despite the low score, split into two subtasks: (1) Code fix — in src/sources/sam-exclusions.ts change POLL_ATTEMPTS to 20 and POLL_DELAY_MS to 30_000, and restructure the streamFromOrigin loop so sleep(POLL_DELAY_MS) is skipped after the final attempt (guard with attempt < POLL_ATTEMPTS); confirm the existing 'polls until the extract is ready' spec still passes (it stubs setTimeout, so timing changes are test-neutral) and optionally assert the not-ready-after-all-polls error path performs no trailing sleep. (2) Prod backfill + verification — run 'wrangler dev --remote --test-scheduled' with FIXTURE_FALLBACK=false, confirm refresh_log shows success for sam-exclusions and source_meta total is ~167k; do NOT retry-loop on failure, since each failed run requests a fresh SAM extract and that endpoint rate-limits (429 observed 2026-07-12).",
+        "updatedAt": "2026-07-13T08:45:53.497Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-07-12T23:32:21.140Z",
-      "taskCount": 45,
+      "lastModified": "2026-07-13T08:45:53.497Z",
+      "taskCount": 46,
       "completedCount": 43,
       "tags": [
         "master"

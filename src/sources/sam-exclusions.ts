@@ -22,8 +22,12 @@ import type { DataSource } from './types';
 // Requires SAM_API_KEY (rotate every 90 days per SAM account terms; RUNBOOK).
 
 const LIST_URL = 'https://api.sam.gov/entity-information/v4/exclusions';
-const POLL_ATTEMPTS = 10;
-const POLL_DELAY_MS = 20_000;
+// Extract generation for the full active set (~168k records) routinely takes
+// longer than a few minutes — the 2026-07-13 cron gave up at 10×20s while SAM
+// was still building it. 20×30s (~10 min of polling) fits the 15-min cron
+// waitUntil budget alongside the other sources' ~1–2 min of sequential work.
+const POLL_ATTEMPTS = 20;
+const POLL_DELAY_MS = 30_000;
 
 export const samExclusionsRecordSchema = z.object({
   /** Excluded party's name as designated (entityName; individuals included). */
@@ -176,7 +180,7 @@ async function* streamFromOrigin(key: string): AsyncGenerator<SamExclusionsRecor
         return;
       }
     }
-    await sleep(POLL_DELAY_MS);
+    if (attempt < POLL_ATTEMPTS) await sleep(POLL_DELAY_MS);
   }
   throw new Error(`SAM extract not ready after ${POLL_ATTEMPTS} polls`);
 }
