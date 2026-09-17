@@ -144,3 +144,9 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
 - Setup machinery (`docs/SETUP.md`, this file, `.claude/commands/setup.md`, post-create
   banner) left in place — delete only on the owner's say-so.
 - Committed locally on `feature/data-retrieval-and-manipulation` (not pushed).
+
+### 2026-09-17 late — landing site live
+- `gh auth login` done by owner (user giovf). Branch pushed. GitHub Pages enabled via API
+  (build_type=workflow); workflow run succeeded; https://giovf.github.io/rorororo/ returns 200.
+- Owner guidance given: Chrome trader status = **Trader**. Lemon Squeezy URL = the Pages URL.
+- Open: support email for `CONTACT_EMAIL` placeholders (3 pages).

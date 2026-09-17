@@ -63,7 +63,7 @@ Everything below needs *your* identity or wallet; nothing else in the backlog do
   `LEMONSQUEEZY_STORE_ID`, then say "MoR done" (or "waitlisted", which is expected).
 - **Cost:** £0.00
 
-### 4. Publish the landing site (free, ~3 minutes) — gives you the URL for item 3
+### 4. Publish the landing site — DONE 2026-09-17 (live at https://giovf.github.io/rorororo/)
 - **What:** the static site in `packages/landing/site/` deployed to GitHub Pages.
 - **Where:** https://github.com/giovf/rorororo
 - **Steps:**
@@ -73,7 +73,7 @@ Everything below needs *your* identity or wallet; nothing else in the backlog do
      on the push). URL: `https://giovf.github.io/rorororo/`.
   4. Optional: rename the repo to `foundry` (Settings → General) for a nicer URL
      `https://giovf.github.io/foundry/` — tell me if you do, I'll update links.
-  5. Tell me the support email to publish (it replaces `CONTACT_EMAIL` on 3 pages).
+  5. **Still open:** tell me the support email to publish (replaces `CONTACT_EMAIL` on 3 pages).
 - **Cost:** £0.00
 
 Not requested yet, deliberately: a domain (only needed for V2's landing page and a
