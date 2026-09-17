@@ -1,0 +1,37 @@
+{
+  "name": "foundry",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Foundry \u2014 a portfolio of small, self-funding digital products built and operated by Claude Code.",
+  "license": "UNLICENSED",
+  "engines": {
+    "node": ">=22"
+  },
+  "workspaces": [
+    "packages/*",
+    "ventures/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc -b && tsc -p scripts",
+    "build": "tsc -b",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "check": "npm run typecheck && npm run portfolio && npm run ledger && npm run lint && npm run format:check && npm run test",
+    "portfolio": "node --disable-warning=ExperimentalWarning scripts/portfolio.ts",
+    "ledger": "node --disable-warning=ExperimentalWarning scripts/ledger-check.ts"
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@types/node": "^26.6.1",
+    "eslint": "^10.10.0",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.8",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.70.0",
+    "vitest": "^5.0.1"
+  }
+}

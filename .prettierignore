@@ -1,0 +1,20 @@
+# Prettier owns product code and root configs only.
+node_modules
+dist
+build
+.venv
+package-lock.json
+# legacy prior-art Python project + data
+src/
+environment/
+data/
+*.log
+*.pdf
+# template / tooling directories with their own formatting
+.claude/
+.codegpt/
+.devcontainer/
+.taskmaster/
+.mcp.json
+docs/
+*.md
