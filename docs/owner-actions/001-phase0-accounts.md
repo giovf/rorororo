@@ -38,6 +38,10 @@ Everything below needs *your* identity or wallet; nothing else in the backlog do
   1. Sign in with a Google account you control long-term (a dedicated one is fine).
   2. Accept the developer agreement and pay the $5 registration fee.
   3. Complete the **Account** tab: developer name, contact email, and verify the email.
+  4. **Trader / non-trader:** choose **Trader** — we sell, so legally that's what you are.
+     Consequence: your legal name, address, email and phone are shown on listings.
+     If you don't want your home address public, skip this item for now: nothing needs
+     it until V2, and we'll decide then (virtual address ≈ £5–15/month vs. the cap).
 - **Give back:** "Chrome done". When money leaves your account, tell me the GBP
   amount so the ledger row moves from `planned` to `cost`.
 - **Cost:** ~£3.70
@@ -50,11 +54,26 @@ Everything below needs *your* identity or wallet; nothing else in the backlog do
   https://www.paddle.com (needs a live product site first — I'll have one) or
   https://dodopayments.com.
 - **Steps:**
-  1. Join the Lemon Squeezy waitlist with the same email as above.
+  1. Join the Lemon Squeezy waitlist with the same email as above. **Website URL:** use
+     the landing site once Pages is live — `https://giovf.github.io/rorororo/`
+     (see "Publish the landing site" below).
   2. If/when you get access, create a store (name: "Foundry" is fine), complete the
      identity/payout details, and generate an API key under Settings → API.
 - **Give back:** put the key in `.env` as `LEMONSQUEEZY_API_KEY` and the store id as
   `LEMONSQUEEZY_STORE_ID`, then say "MoR done" (or "waitlisted", which is expected).
+- **Cost:** £0.00
+
+### 4. Publish the landing site (free, ~3 minutes) — gives you the URL for item 3
+- **What:** the static site in `packages/landing/site/` deployed to GitHub Pages.
+- **Where:** https://github.com/giovf/rorororo
+- **Steps:**
+  1. Push this branch: `git push origin feature/data-retrieval-and-manipulation`.
+  2. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+  3. **Actions** tab → "Deploy landing site to GitHub Pages" → Run workflow (or it runs
+     on the push). URL: `https://giovf.github.io/rorororo/`.
+  4. Optional: rename the repo to `foundry` (Settings → General) for a nicer URL
+     `https://giovf.github.io/foundry/` — tell me if you do, I'll update links.
+  5. Tell me the support email to publish (it replaces `CONTACT_EMAIL` on 3 pages).
 - **Cost:** £0.00
 
 Not requested yet, deliberately: a domain (only needed for V2's landing page and a
