@@ -1,0 +1,133 @@
+:root {
+  --bg: #fbfaf7;
+  --fg: #1c1b18;
+  --muted: #6b675e;
+  --line: #e6e2d8;
+  --accent: #b5551b;
+  --card: #ffffff;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #15140f;
+    --fg: #ece8df;
+    --muted: #a39d90;
+    --line: #2b2921;
+    --accent: #e08a4f;
+    --card: #1d1b15;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+html {
+  font:
+    17px/1.55 ui-sans-serif,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    sans-serif;
+}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+}
+main,
+header,
+footer {
+  max-width: 44rem;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+header {
+  padding-top: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+header nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 1rem;
+}
+header nav a:hover,
+a:hover {
+  color: var(--accent);
+}
+.brand {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  color: var(--fg);
+}
+h1 {
+  font-size: 2.2rem;
+  line-height: 1.15;
+  margin: 3rem 0 1rem;
+  letter-spacing: -0.01em;
+}
+h2 {
+  font-size: 1.25rem;
+  margin: 2.5rem 0 0.75rem;
+}
+p.lead {
+  font-size: 1.15rem;
+  color: var(--muted);
+  max-width: 36rem;
+}
+a {
+  color: var(--accent);
+}
+.cards {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr;
+  margin: 1.5rem 0;
+  padding: 0;
+  list-style: none;
+}
+@media (min-width: 640px) {
+  .cards {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+.card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 1.1rem 1.2rem;
+}
+.card h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+.tag {
+  display: inline-block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+}
+footer {
+  border-top: 1px solid var(--line);
+  margin-top: 4rem;
+  padding: 1.5rem 16px 3rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+footer a {
+  color: var(--muted);
+  margin-right: 1rem;
+}
+.legal h2 {
+  margin-top: 2rem;
+}
+.legal li {
+  margin-bottom: 0.4rem;
+}

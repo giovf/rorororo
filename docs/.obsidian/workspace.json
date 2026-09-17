@@ -1,0 +1,174 @@
+{
+  "main": {
+    "id": "116357474d86b5f1",
+    "type": "split",
+    "children": [
+      {
+        "id": "a95b7bea850e3525",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "a5722b1572ddb15e",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "owner-actions/001-phase0-accounts.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "001-phase0-accounts"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "326a31176e4bf5c2",
+    "type": "split",
+    "children": [
+      {
+        "id": "ba068f4e173a292e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "509cad17caf6d530",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "acc10e69156266b6",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "cf0d2407e22389fd",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "a8df5764b243de70",
+    "type": "split",
+    "children": [
+      {
+        "id": "a770d066ed49d2ce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1ec04342d1407594",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "owner-actions/001-phase0-accounts.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for 001-phase0-accounts"
+            }
+          },
+          {
+            "id": "e0e1caf939e4c6b7",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "owner-actions/001-phase0-accounts.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from 001-phase0-accounts"
+            }
+          },
+          {
+            "id": "75ba10596f3b631c",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "802ba3f8d885ccc2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "owner-actions/001-phase0-accounts.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of 001-phase0-accounts"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "bases:Create new base": false
+    }
+  },
+  "active": "a5722b1572ddb15e",
+  "lastOpenFiles": []
+}
