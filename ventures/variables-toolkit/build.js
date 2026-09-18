@@ -5,7 +5,10 @@ import process from 'node:process';
 
 const watch = process.argv.includes('--watch');
 const release = process.argv.includes('--release');
-await mkdir('dist', { recursive: true });
+// Development builds go to dist/ (root manifest.json points there, keeps the testing menu);
+// release builds go to dist-release/ with a self-contained manifest and no testing commands.
+const out = release ? 'dist-release' : 'dist';
+await mkdir(out, { recursive: true });
 
 // Release builds ship no testing-only menu commands (demo page, simulated payments).
 // dist/manifest.json is self-contained (paths relative to dist/); the root manifest.json
@@ -16,12 +19,12 @@ const manifest = {
   ui: 'ui.html',
 };
 if (release) delete manifest.menu;
-await writeFile('dist/manifest.json', JSON.stringify(manifest, null, 2) + '\n');
+await writeFile(`${out}/manifest.json`, JSON.stringify(manifest, null, 2) + '\n');
 
 const main = {
   entryPoints: ['src/code.ts'],
   bundle: true,
-  outfile: 'dist/code.js',
+  outfile: `${out}/code.js`,
   target: 'es2020',
   format: 'iife',
   logLevel: 'info',

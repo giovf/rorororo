@@ -10,10 +10,13 @@ Publishing happens from the Figma desktop app; I can't do it from here. Everythi
 paste is prepared.
 
 ## Before you start
-- The build on your disk must be the **release** build (no testing menu). I run it and say
-  "release build ready"; the manifest is now `ventures/variables-toolkit/dist/manifest.json`.
-  Re-import the plugin from **that** manifest (Plugins → Development → Import plugin from
-  manifest…) so Figma publishes the release files.
+- Two builds live side by side on your disk:
+  - `ventures/variables-toolkit/manifest.json` → **development** build (testing menu: demo
+    page, simulate paid/unpaid). Use this for screenshots.
+  - `ventures/variables-toolkit/dist-release/manifest.json` → **release** build (no testing
+    menu). Import this one (Plugins → Development → Import plugin from manifest…) right
+    before you click Publish, so Figma uploads the release files. Same plugin id, so
+    importing one replaces the other — switch back and forth freely.
 - Have these open: `ventures/variables-toolkit/LISTING.md` (all text), and the folder
   `ventures/variables-toolkit/assets/out/` (icon-128.png, cover-1920x960.png).
 
@@ -21,7 +24,10 @@ paste is prepared.
 1. **Plugins → Development → Variables Toolkit → Publish…** (or Manage plugins → Publish).
 2. Name, tagline, description: copy from LISTING.md. Category **Design tools**; tags from
    the file; editor type **Figma Design** only.
-3. Images (Figma's names): **Icon** → `icon-128.png`; **Thumbnail** → `cover-1920x960.png`
+3. Screenshots first, with the **development** build imported: **… → Simulate UNPAID** so the
+   panel shows the free state, **… → Create demo page**, **… → Open**, then capture. Then
+   import the **release** manifest before continuing.
+   Images (Figma's names): **Icon** → `icon-128.png`; **Thumbnail** → `cover-1920x960.png`
    (this is the cover); **Carousel** → 3 screenshots from the demo page — Link tab after a
    scan, Styles → Variables preview, Clean up report (Cmd+Shift+4 on a Mac, drag over the
    plugin panel). **Playground file** (optional): the file you tested in, with only the
