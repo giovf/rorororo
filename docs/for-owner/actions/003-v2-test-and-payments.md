@@ -1,13 +1,11 @@
 # Owner action request #3 — ReadFocus test (done) + API access for payments & hosting
 
 - **Date:** 2026-09-18 (rewritten after round 2 passed)
-- **Status:** provisioning **DONE 2026-09-18** (product, price, Payment Link, worker, KV, secrets, webhook). Three follow-ups remain:
+- **Status:** **ALL DONE 2026-09-18** (product, price, Payment Link, worker, KV, secrets, webhook). Three follow-ups remain:
   1. ~~Resend~~ **done** — sender is `licences@mail.gankdat.com` (your verified subdomain),
      reply-to `info@gankdat.com`; test licence email delivered 2026-09-18.
-  2. **Stripe key**: add **Promotion Codes: Write** (still missing). Then I create the
-     `OWNERTEST` code and you make a real £0 purchase at
-     https://buy.stripe.com/6oUdR2gdfcOtaJU22aefC00 — the key should land in your inbox
-     within a minute. That proves Stripe → worker → email.
+  2. ~~Stripe key / £0 purchase~~ **done 2026-09-18** — real checkout through the Payment
+     Link with `OWNERTEST` → webhook → worker → key emailed. Whole path proven.
   3. ~~Managed Payments~~ **done** per owner 2026-09-18 (ReadFocus product selected).
 - **Your time:** ~10 minutes
 - **Cost:** £0.00
