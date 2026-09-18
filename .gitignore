@@ -70,3 +70,6 @@ __pycache__/
 
 # ── Owner's Figma "New plugin" template (only its id matters; kept out of the repo)
 docs/for-owner/actions/plugin/
+
+# ── Obsidian vault state (owner reads docs/ in Obsidian)
+docs/.obsidian/
