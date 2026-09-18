@@ -1,6 +1,6 @@
 # Manual test checklist — ReadFocus (Chrome)
 
-Setup: `npm run build -w @foundry/read-focus` → chrome://extensions → **Developer mode** →
+Setup: (already built by Claude) chrome://extensions → **Developer mode** →
 **Load unpacked** → pick `ventures/read-focus/dist`. Pin the icon.
 
 ## Free tier

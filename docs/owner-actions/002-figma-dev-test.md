@@ -20,7 +20,8 @@ I can't run Figma here, so plugin testing is the one part of V1 that needs your 
    folder, or I'll have built it).
 
 ## Each test round
-1. Pull the branch, run `npm install && npm run build -w @foundry/variables-toolkit`.
+1. Nothing to build — I build inside the dev container and the files land in your checkout
+   (`ventures/variables-toolkit/dist/`). If I say "rebuilt", just re-run the plugin.
 2. In Figma: **Plugins → Development → Variables Toolkit**. Follow
    `ventures/variables-toolkit/TESTING.md` and tell me what you saw (screenshots welcome).
 3. Payments in dev: **Plugins → Development → (plugin) → Set payment status** lets you
