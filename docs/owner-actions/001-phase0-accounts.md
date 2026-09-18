@@ -73,7 +73,7 @@ Everything below needs *your* identity or wallet; nothing else in the backlog do
      on the push). URL: `https://giovf.github.io/rorororo/`.
   4. Optional: rename the repo to `foundry` (Settings → General) for a nicer URL
      `https://giovf.github.io/foundry/` — tell me if you do, I'll update links.
-  5. **Still open:** tell me the support email to publish (replaces `CONTACT_EMAIL` on 3 pages).
+  5. Support email published: info@gankdat.com (done 2026-09-18).
 - **Cost:** £0.00
 
 Not requested yet, deliberately: a domain (only needed for V2's landing page and a
