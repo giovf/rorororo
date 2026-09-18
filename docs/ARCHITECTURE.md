@@ -29,7 +29,7 @@ ventures/<slug>/         one workspace per product: venture.json, RESEARCH.md, s
 ventures/variables-toolkit   V1 Figma plugin (validated; awaiting owner test + launch)
 docs/LEDGER.md           every pound in and out, per venture (£100 cap enforced)
 docs/launch/             per-channel launch checklists
-docs/owner-actions/      batched requests that need the owner's identity/wallet
+docs/for-owner/actions/      batched requests that need the owner's identity/wallet
 scripts/                 portfolio listing, ledger check, licence keygen
 src/ environment/ data/   legacy Python prior art — reference only
 ```

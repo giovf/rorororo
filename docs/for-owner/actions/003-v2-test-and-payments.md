@@ -7,7 +7,7 @@
 - **Blocks:** task 14.6–14.8 (V2 launch), V2/V3 checkout
 
 ## 1. Load ReadFocus unpacked and run the checklist
-`ventures/read-focus/TESTING.md`. No npm needed — `ventures/read-focus/dist/` is already built in
+`docs/for-owner/testing/read-focus.md`. No npm needed — `ventures/read-focus/dist/` is already built in
    your checkout; load that folder unpacked. Tell me what broke.
 
 ## 2. Stripe Managed Payments — finish onboarding, then create one Payment Link

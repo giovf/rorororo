@@ -11,14 +11,10 @@
             "id": "a5722b1572ddb15e",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "owner-actions/002-figma-dev-test.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "002-figma-dev-test"
+              "title": "New tab"
             }
           }
         ]
@@ -94,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "owner-actions/002-figma-dev-test.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for 002-figma-dev-test"
+              "title": "Backlinks"
             }
           },
           {
@@ -113,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "owner-actions/002-figma-dev-test.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from 002-figma-dev-test"
+              "title": "Outgoing links"
             }
           },
           {
@@ -142,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "owner-actions/002-figma-dev-test.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of 002-figma-dev-test"
+              "title": "Outline"
             }
           }
         ]
@@ -171,21 +164,31 @@
   },
   "active": "a5722b1572ddb15e",
   "lastOpenFiles": [
-    "owner-actions/plugin/tsconfig.json",
-    "owner-actions/plugin/package.json",
-    "owner-actions/plugin/manifest.json",
-    "owner-actions/plugin/eslint.config.js",
-    "owner-actions/plugin/code.ts",
-    "owner-actions/plugin/code.js",
+    "for-owner/README.md",
+    "owner-actions/002-figma-dev-test.md",
+    "for-owner/actions/plugin/tsconfig.json",
+    "for-owner/actions/plugin/package.json",
+    "for-owner/actions/plugin/manifest.json",
+    "for-owner/actions/plugin/eslint.config.js",
+    "for-owner/actions/plugin/code.ts",
+    "for-owner/actions/plugin/code.js",
+    "for-owner/actions/plugin/README.md",
+    "for-owner/testing/variables-toolkit.md",
+    "for-owner/testing/read-focus.md",
+    "for-owner/actions/plugin",
+    "for-owner/actions/TEMPLATE.md",
+    "for-owner/actions/003-v2-test-and-payments.md",
+    "for-owner/actions/002-figma-dev-test.md",
+    "for-owner/actions/001-phase0-accounts.md",
+    "for-owner/testing",
+    "for-owner/actions",
+    "for-owner",
     "owner-actions/plugin/README.md",
-    "owner-actions/plugin",
     "owner-actions/001-phase0-accounts.md",
     "OPERATIONS.md",
     "owner-actions/003-v2-test-and-payments.md",
     "launch/web.md",
     "launch/figma.md",
-    "launch/chrome.md",
-    "launch",
-    "owner-actions/002-figma-dev-test.md"
+    "launch/chrome.md"
   ]
 }

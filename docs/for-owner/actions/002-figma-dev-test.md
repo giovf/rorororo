@@ -1,7 +1,7 @@
 # Owner action request #2 — load Variables Toolkit in Figma desktop (when asked)
 
 - **Date:** 2026-09-18
-- **Status:** **READY for round 1** (2026-09-18) — build is on the branch, checklist in `ventures/variables-toolkit/TESTING.md`
+- **Status:** **READY for round 1** (2026-09-18) — build is on the branch, checklist in `docs/for-owner/testing/variables-toolkit.md`
 - **Your time:** ~10 minutes per round
 - **Cost:** £0.00
 - **Blocks:** task 11.7 (manual testing), task 12 (launch)
@@ -23,6 +23,6 @@ I can't run Figma here, so plugin testing is the one part of V1 that needs your 
 1. Nothing to build — I build inside the dev container and the files land in your checkout
    (`ventures/variables-toolkit/dist/`). If I say "rebuilt", just re-run the plugin.
 2. In Figma: **Plugins → Development → Variables Toolkit**. Follow
-   `ventures/variables-toolkit/TESTING.md` and tell me what you saw (screenshots welcome).
+   `docs/for-owner/testing/variables-toolkit.md` and tell me what you saw (screenshots welcome).
 3. Payments in dev: **Plugins → Development → (plugin) → Set payment status** lets you
    toggle paid/unpaid without paying.

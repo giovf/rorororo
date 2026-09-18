@@ -2,13 +2,13 @@
 
 ## The loop (any session)
 1. `task-master next` → implement → `npm run check` → `task-master set-status --id=<id> --status=done`.
-2. Anything needing the owner's identity or wallet goes into `docs/owner-actions/NNN-*.md`
+2. Anything needing the owner's identity or wallet goes into `docs/for-owner/actions/NNN-*.md`
    (one batched request), never into chat piecemeal.
 3. Money in or out is a row in `docs/LEDGER.md` the day it happens.
 
 Hands-free option for the owner: `/loop Work the Foundry backlog: task-master next →
 implement fully → npm run check → set-status done → repeat. Decide everything yourself;
-only surface owner actions in docs/owner-actions/.`
+only surface owner actions in docs/for-owner/actions/.`
 
 ## Per-venture review cadence (Phase 4)
 | When | What | Where it goes |

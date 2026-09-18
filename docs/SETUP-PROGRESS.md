@@ -129,7 +129,7 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
 - Task 2 done: `docs/LEDGER.md` (Entries table; kinds cost/planned/revenue), 
   `packages/core/src/ledger.ts` (+tests), `scripts/ledger-check.ts`; `npm run ledger` in
   `check`, fails if cost+planned > £100. First row: planned £3.70 Chrome dev fee.
-- Task 9 done: `docs/owner-actions/TEMPLATE.md` + `001-phase0-accounts.md` (Figma account +
+- Task 9 done: `docs/for-owner/actions/TEMPLATE.md` + `001-phase0-accounts.md` (Figma account +
   payouts, Chrome dev registration, Lemon Squeezy waitlist; domain deliberately deferred).
 - Scripts run on Node 22 type-stripping (`scripts/tsconfig.json` has `erasableSyntaxOnly`,
   `noEmit`; typecheck = `tsc -b && tsc -p scripts`). TS 6 needs `"types": ["node"]` in base.

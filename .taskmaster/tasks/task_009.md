@@ -13,7 +13,7 @@
 **Details:**
 
 Implementation:
-1. Create `docs/owner-actions/` directory
+1. Create `docs/for-owner/actions/` directory
 
 2. Define template format (`TEMPLATE.md`):
 ```markdown
@@ -45,7 +45,7 @@ Cost: £X.XX
 Any additional context.
 ```
 
-3. Create `docs/owner-actions/001-phase0-setup.md`:
+3. Create `docs/for-owner/actions/001-phase0-setup.md`:
    - Figma account + Community payments setup (free, needs identity)
    - Chrome Web Store developer registration ($5 = ~£4)
    - Lemon Squeezy application (free, waitlist, needs identity)
@@ -65,7 +65,7 @@ Any additional context.
 
 ## Subtasks
 
-### 9.1. Create docs/owner-actions/TEMPLATE.md with standardized request format
+### 9.1. Create docs/for-owner/actions/TEMPLATE.md with standardized request format
 
 **Status:** pending  
 **Dependencies:** None  
@@ -74,7 +74,7 @@ Create the owner-actions directory and define the standardized markdown template
 
 **Details:**
 
-1. Create `docs/owner-actions/` directory.
+1. Create `docs/for-owner/actions/` directory.
 2. Create `TEMPLATE.md` with the format specified in task details:
    - Header with request number, date, status (pending/completed), estimated time, and cost fields
    - Actions Required section with numbered actions containing: What, Where, Credentials needed, and Cost
@@ -82,7 +82,7 @@ Create the owner-actions directory and define the standardized markdown template
    - Notes section for additional context
 3. Ensure the template uses GBP (£) currency formatting consistent with the project.
 
-### 9.2. Create docs/owner-actions/001-phase0-setup.md with Phase 0 actions
+### 9.2. Create docs/for-owner/actions/001-phase0-setup.md with Phase 0 actions
 
 **Status:** pending  
 **Dependencies:** 9.1  
@@ -106,12 +106,12 @@ Create the first owner action request document covering all Phase 0 setup tasks 
 **Status:** pending  
 **Dependencies:** 9.1, 9.2  
 
-Build a TypeScript script that scans docs/owner-actions/ directory and lists all pending action requests with their details.
+Build a TypeScript script that scans docs/for-owner/actions/ directory and lists all pending action requests with their details.
 
 **Details:**
 
 1. Create `scripts/owner-actions.ts` with functionality to:
-   - Glob `docs/owner-actions/*.md` files (excluding TEMPLATE.md)
+   - Glob `docs/for-owner/actions/*.md` files (excluding TEMPLATE.md)
    - Parse each markdown file to extract: request number, date, status, estimated time, total cost
    - Filter to show pending actions (status != completed)
    - Print a formatted summary table to console showing: ID, Date, Status, Est. Time, Cost, and number of actions
