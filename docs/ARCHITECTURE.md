@@ -44,9 +44,10 @@ merchant of record). No user PII is stored anywhere we control.
 
 ## External services
 - **Figma Community payments** — V1 plugin sales; Figma handles tax (15% fee).
-- **Merchant of record** for Chrome/web products — Lemon Squeezy (waitlist as of
-  Sept 2026), fallback Paddle or Dodo Payments; handles VAT. ExtensionPay only as a
-  last resort (leaves VAT on the seller).
+- **Merchant of record** for Chrome/web products — **Stripe Managed Payments**
+  (Stripe's MoR; Lemon Squeezy redirects UK sellers to it). Fee ≈ 3.5% on top of
+  Stripe processing. Handles VAT/invoices/refunds. License keys are ours: signed
+  Ed25519 keys issued by a webhook handler in `@foundry/licensing`.
 - **Chrome Web Store** developer account ($5 one-off, 20 extensions).
 - **Cloudflare** free tier (Pages + Workers). One domain (≤ £10).
 Owner performs account creation; keys go in `.env` (see `.env.example`).

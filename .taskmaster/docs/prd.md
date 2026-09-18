@@ -124,9 +124,11 @@ Prettier, Vitest. Per-venture frameworks: WXT for browser extensions; Figma plug
 No runtime dependency is added without a note in the venture's `RESEARCH.md`.
 
 **Payments & licensing** — Figma Community payments for Figma plugins (native, tax handled).
-For everything else a merchant of record: Lemon Squeezy (waitlist as of 2026, 5% + $0.50,
-+1.5% intl, handles VAT) or Paddle / Dodo Payments as fallbacks. License keys are verified
-by `@foundry/licensing` with a cached grace period so products keep working offline.
+For everything else a merchant of record: **Stripe Managed Payments** (decided 2026-09-18
+after Lemon Squeezy's sign-up redirected the UK owner to it; ≈ 3.5% MoR fee on top of
+Stripe processing; handles VAT, invoicing, refunds). License keys are ours: signed Ed25519
+keys issued on `checkout.session.completed` and verified by `@foundry/licensing` with a
+cached grace period so products keep working offline.
 ExtensionPay is a fallback only, because it leaves VAT on the seller.
 
 **Telemetry** — Cloudflare Workers free tier (or equivalent) receiving `{venture, event,

@@ -12,7 +12,7 @@ Everything below needs *your* identity or wallet; nothing else in the backlog do
 
 ## Actions
 
-### 1. Figma account + Community creator profile (V1 — needed first)
+### 1. Figma account + Community creator profile (V1 — needed first) — DONE 2026-09-18
 - **What:** an account that can publish plugins and receive Community payments.
 - **Where:** https://www.figma.com → sign up (free plan is fine), then
   https://www.figma.com/community → your profile → **Publish** tab.
@@ -31,7 +31,7 @@ Everything below needs *your* identity or wallet; nothing else in the backlog do
   (one click; you must be logged in).
 - **Cost:** £0.00
 
-### 2. Chrome Web Store developer registration (V2)
+### 2. Chrome Web Store developer registration (V2) — DONE 2026-09-18
 - **What:** one-time $5 developer account; covers up to 20 extensions.
 - **Where:** https://chrome.google.com/webstore/devconsole
 - **Steps:**
@@ -46,7 +46,7 @@ Everything below needs *your* identity or wallet; nothing else in the backlog do
   amount so the ledger row moves from `planned` to `cost`.
 - **Cost:** ~£3.70
 
-### 3. Merchant-of-record application (V2/V3 checkout — handles VAT for you)
+### 3. Merchant of record — DECISION 2026-09-18: **Stripe Managed Payments** (Lemon Squeezy's sign-up redirected UK sellers to it; it is Stripe's MoR successor to LS). Finish its onboarding; add the API key to `.env` as `STRIPE_SECRET_KEY` when it exists.
 - **What:** an account with a merchant of record so Chrome/web sales are legal for
   EU/UK VAT without you registering anywhere.
 - **Where:** Lemon Squeezy is the first choice but is invite/waitlist as of Sept 2026:

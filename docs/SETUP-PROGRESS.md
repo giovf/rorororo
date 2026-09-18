@@ -150,3 +150,4 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
   (build_type=workflow); workflow run succeeded; https://giovf.github.io/rorororo/ returns 200.
 - Owner guidance given: Chrome trader status = **Trader**. Lemon Squeezy URL = the Pages URL.
 - Support email published: info@gankdat.com (2026-09-18). Pages env restricts deploys to `main`; feature branch added to its branch policy via API.
+- 2026-09-18: owner completed Figma + Chrome accounts. MoR decision: Stripe Managed Payments (LS redirected). PRD/ARCHITECTURE/.env.example/owner-actions updated. Tasks 3/4 (licensing) will target Stripe webhooks + self-issued Ed25519 keys.
