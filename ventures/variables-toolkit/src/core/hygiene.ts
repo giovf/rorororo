@@ -2,7 +2,8 @@
 export interface VariableUsage {
   id: string;
   name: string;
-  type: 'COLOR' | 'FLOAT' | 'STRING' | 'BOOLEAN';
+  /** Figma's resolved type name, display only. */
+  type: string;
   collectionId: string;
   /** Stable string per mode, e.g. colour hex or number, for duplicate detection. */
   valueKeys: string[];

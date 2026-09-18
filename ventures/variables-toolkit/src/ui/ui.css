@@ -1,15 +1,28 @@
 :root { font: 12px/1.4 Inter, -apple-system, system-ui, sans-serif; color: var(--figma-color-text); }
-body { margin: 0; padding: 12px; display: flex; flex-direction: column; gap: 10px; min-height: 100vh; box-sizing: border-box; background: var(--figma-color-bg); }
+body { margin: 0; padding: 10px 12px; display: flex; flex-direction: column; gap: 8px; min-height: 100vh; box-sizing: border-box; background: var(--figma-color-bg); }
 header { display: flex; justify-content: space-between; align-items: center; }
+nav { display: flex; gap: 2px; border-bottom: 1px solid var(--figma-color-border); }
+.tab { background: none; border: none; border-bottom: 2px solid transparent; padding: 6px 8px; color: var(--figma-color-text-secondary); cursor: pointer; font: inherit; }
+.tab.active { color: var(--figma-color-text); border-bottom-color: var(--figma-color-bg-brand); }
+.panel { display: none; flex-direction: column; gap: 8px; flex: 1; min-height: 0; }
+.panel.active { display: flex; }
 .tag { font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em; padding: 2px 6px; border-radius: 4px; background: var(--figma-color-bg-secondary); }
 .tag.paid { background: var(--figma-color-bg-brand); color: var(--figma-color-text-onbrand); }
-#controls, footer { display: flex; gap: 8px; }
+.pro { font-size: 9px; text-transform: uppercase; letter-spacing: 0.05em; color: var(--figma-color-text-brand); margin-left: 2px; }
+.row { display: flex; gap: 8px; align-items: center; }
+.row.wrap { flex-wrap: wrap; }
+.row.end { justify-content: flex-end; }
+label { display: flex; align-items: center; gap: 4px; }
+input[type='text'] { flex: 1; font: inherit; padding: 5px 8px; border-radius: 6px; border: 1px solid var(--figma-color-border); background: var(--figma-color-bg); color: inherit; }
 button { font: inherit; padding: 6px 10px; border-radius: 6px; border: 1px solid var(--figma-color-border); background: var(--figma-color-bg); color: inherit; cursor: pointer; }
 button.primary { background: var(--figma-color-bg-brand); color: var(--figma-color-text-onbrand); border-color: transparent; }
+button.danger { color: var(--figma-color-text-danger); }
 button:disabled { opacity: 0.5; cursor: default; }
 .muted { color: var(--figma-color-text-secondary); margin: 0; }
-ul { list-style: none; padding: 0; margin: 0; flex: 1; overflow: auto; display: flex; flex-direction: column; gap: 4px; }
-li { display: flex; gap: 8px; align-items: center; padding: 6px 8px; border-radius: 6px; background: var(--figma-color-bg-secondary); }
-li .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-li .count { color: var(--figma-color-text-secondary); }
-footer { margin-top: auto; }
+.list { list-style: none; padding: 0; margin: 0; flex: 1; overflow: auto; display: flex; flex-direction: column; gap: 3px; }
+.list li { display: flex; gap: 8px; align-items: center; padding: 5px 8px; border-radius: 6px; background: var(--figma-color-bg-secondary); }
+.list li.head { background: none; padding: 6px 0 0; font-weight: 600; }
+.list .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.list .count, .list .sub { color: var(--figma-color-text-secondary); }
+.list .link { background: none; border: none; padding: 0; color: var(--figma-color-text-brand); cursor: pointer; }
+footer { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--figma-color-border); }

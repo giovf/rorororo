@@ -1,8 +1,13 @@
-import { suggestLinks, groupByVariable, type ColorVariableRef, type PaintSite } from './core/link.js';
+import { planStyleConversion, type StyleInfo } from './core/convert.js';
+import { hygieneReport } from './core/hygiene.js';
+import { groupByVariable, suggestLinks, type ColorVariableRef, type PaintSite } from './core/link.js';
 import { allowedLinks, type TierState } from './core/tier.js';
+import { executePlan, readExistingVariables } from './figma/convert.js';
+import { readVariableUsage } from './figma/hygiene.js';
+import { readLocalStyles } from './figma/styles.js';
 import type { ToMain, ToUi } from './messages.js';
 
-figma.showUI(__html__, { width: 360, height: 480, themeColors: true });
+figma.showUI(__html__, { width: 380, height: 520, themeColors: true });
 
 const post = (msg: ToUi): void => figma.ui.postMessage(msg);
 const tier: TierState = { paid: figma.payments?.status.type === 'PAID', usedThisRun: 0 };
@@ -10,6 +15,8 @@ let lastSites: PaintSite[] = [];
 let lastVars: ColorVariableRef[] = [];
 
 post({ type: 'status', paid: tier.paid });
+
+// ---------- feature 1: link raw values ----------
 
 async function loadColorVariables(): Promise<ColorVariableRef[]> {
   const collections = await figma.variables.getLocalVariableCollectionsAsync();
@@ -91,6 +98,64 @@ async function apply(variableIds: string[]): Promise<void> {
   figma.notify(limit < todo.length ? `Linked ${count} (free limit reached — unlock for unlimited)` : `Linked ${count} paint${count === 1 ? '' : 's'}`);
 }
 
+// ---------- feature 2: styles → variables ----------
+
+const FREE_KINDS: ReadonlySet<StyleInfo['kind']> = new Set(['paint']);
+
+function permittedKinds(kinds: StyleInfo['kind'][]): Set<StyleInfo['kind']> {
+  return new Set(kinds.filter((k) => tier.paid || FREE_KINDS.has(k)));
+}
+
+async function convertPreview(kinds: StyleInfo['kind'][]): Promise<void> {
+  const styles = await readLocalStyles();
+  const counts: Record<StyleInfo['kind'], number> = { paint: 0, text: 0, effect: 0 };
+  for (const s of styles) counts[s.kind]++;
+  const plan = planStyleConversion(styles, { kinds: permittedKinds(kinds), existing: await readExistingVariables() });
+  post({ type: 'convert-plan', plan, counts });
+}
+
+async function convertApply(kinds: StyleInfo['kind'][], collectionName: string): Promise<void> {
+  const styles = await readLocalStyles();
+  const plan = planStyleConversion(styles, { kinds: permittedKinds(kinds), existing: await readExistingVariables() });
+  const result = await executePlan(plan, collectionName.trim() || 'Tokens');
+  post({ type: 'converted', ...result });
+  figma.notify(`Created ${result.created}, reused ${result.reused}, bound ${result.bound} style properties`);
+}
+
+// ---------- feature 3: hygiene ----------
+
+async function hygiene(): Promise<void> {
+  const usage = await readVariableUsage();
+  post({ type: 'hygiene', report: hygieneReport(usage), total: usage.length });
+}
+
+async function deleteVariables(ids: string[]): Promise<void> {
+  if (!tier.paid) {
+    post({ type: 'error', message: 'Deleting unused variables is part of the paid unlock.' });
+    return;
+  }
+  let n = 0;
+  for (const id of ids) {
+    const v = await figma.variables.getVariableByIdAsync(id);
+    if (v) {
+      v.remove();
+      n++;
+    }
+  }
+  figma.notify(`Deleted ${n} variable${n === 1 ? '' : 's'}`);
+  await hygiene();
+}
+
+async function selectNodes(ids: string[]): Promise<void> {
+  const nodes = (await Promise.all(ids.map((id) => figma.getNodeByIdAsync(id)))).filter(
+    (n): n is SceneNode => n !== null && n.type !== 'PAGE' && n.type !== 'DOCUMENT',
+  );
+  figma.currentPage.selection = nodes;
+  if (nodes.length > 0) figma.viewport.scrollAndZoomIntoView(nodes);
+}
+
+// ---------- payments ----------
+
 async function upgrade(): Promise<void> {
   if (!figma.payments) return;
   await figma.payments.initiateCheckoutAsync({ interstitial: 'PAID_FEATURE' });
@@ -99,6 +164,25 @@ async function upgrade(): Promise<void> {
 }
 
 figma.ui.onmessage = (msg: ToMain) => {
-  const run = msg.type === 'scan' ? scan(msg.scope) : msg.type === 'apply' ? apply(msg.variableIds) : upgrade();
+  const run = ((): Promise<void> => {
+    switch (msg.type) {
+      case 'scan':
+        return scan(msg.scope);
+      case 'apply':
+        return apply(msg.variableIds);
+      case 'convert-preview':
+        return convertPreview(msg.kinds);
+      case 'convert-apply':
+        return convertApply(msg.kinds, msg.collectionName);
+      case 'hygiene':
+        return hygiene();
+      case 'delete-variables':
+        return deleteVariables(msg.ids);
+      case 'select-nodes':
+        return selectNodes(msg.ids);
+      case 'upgrade':
+        return upgrade();
+    }
+  })();
   run.catch((err: unknown) => post({ type: 'error', message: err instanceof Error ? err.message : String(err) }));
 };

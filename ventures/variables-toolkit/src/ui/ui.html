@@ -11,15 +11,47 @@
       <strong>Variables Toolkit</strong>
       <span id="tier" class="tag">free</span>
     </header>
-    <section id="controls">
-      <button id="scan-selection" class="primary">Scan selection</button>
-      <button id="scan-page">Scan page</button>
+    <nav>
+      <button data-tab="link" class="tab active">Link</button>
+      <button data-tab="convert" class="tab">Styles → Variables</button>
+      <button data-tab="hygiene" class="tab">Clean up</button>
+    </nav>
+
+    <section id="tab-link" class="panel active">
+      <div class="row">
+        <button id="scan-selection" class="primary">Scan selection</button>
+        <button id="scan-page">Scan page</button>
+      </div>
+      <p id="link-summary" class="muted">Finds fills and strokes whose colour equals a local colour variable, then links them.</p>
+      <ul id="groups" class="list"></ul>
+      <div class="row end"><button id="apply" class="primary" disabled>Link selected</button></div>
     </section>
-    <p id="summary" class="muted">Finds fills and strokes whose colour equals a local colour variable, then links them.</p>
-    <ul id="groups"></ul>
+
+    <section id="tab-convert" class="panel">
+      <div class="row wrap">
+        <label><input type="checkbox" id="kind-paint" checked /> Colour styles</label>
+        <label><input type="checkbox" id="kind-text" /> Text styles <span class="pro">unlock</span></label>
+        <label><input type="checkbox" id="kind-effect" /> Effect styles <span class="pro">unlock</span></label>
+      </div>
+      <div class="row">
+        <input id="collection" type="text" value="Tokens" placeholder="Collection name" />
+        <button id="convert-preview">Preview</button>
+      </div>
+      <p id="convert-summary" class="muted">Creates variables from your local styles and binds the styles to them, so existing layers follow.</p>
+      <ul id="plan" class="list"></ul>
+      <div class="row end"><button id="convert-apply" class="primary" disabled>Create &amp; bind</button></div>
+    </section>
+
+    <section id="tab-hygiene" class="panel">
+      <div class="row"><button id="hygiene-run" class="primary">Analyse file</button></div>
+      <p id="hygiene-summary" class="muted">Finds variables unused in this file, duplicate values and broken aliases. Library usage in other files is not visible to plugins.</p>
+      <ul id="hygiene-list" class="list"></ul>
+      <div class="row end"><button id="delete-unused" class="danger" disabled>Delete selected</button></div>
+    </section>
+
     <footer>
-      <button id="apply" class="primary" disabled>Link selected</button>
-      <button id="upgrade" hidden>Unlock unlimited</button>
+      <span id="message" class="muted"></span>
+      <button id="upgrade" hidden>Unlock — $12 once</button>
     </footer>
     <script>
       // __JS__
