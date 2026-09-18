@@ -86,6 +86,16 @@ describe('license worker', () => {
     expect(unknown).toEqual({ revoked: false, blocked: false, known: false });
   });
 
+  it('re-sends a stored key on request and reports provider errors', async () => {
+    const before = sent.length;
+    const ok = await handle(new Request('https://w.test/admin/resend/cs_1', { method: 'POST', headers: { authorization: 'Bearer admin' } }), env);
+    expect(await ok.json()).toEqual({ ok: true, to: 'buyer@example.com' });
+    expect(sent).toHaveLength(before + 1);
+    const failing = createHandler({ fetch: () => Promise.resolve(new Response('{"message":"API key is invalid"}', { status: 401 })), now: () => now });
+    const bad = await failing(new Request('https://w.test/admin/resend/cs_1?to=x@y.z', { method: 'POST', headers: { authorization: 'Bearer admin' } }), env);
+    expect(await bad.json()).toMatchObject({ ok: false, to: 'x@y.z', error: expect.stringContaining('resend 401') as string });
+  });
+
   it('reports and applies revocation behind the admin token', async () => {
     const status = async (): Promise<boolean> =>
       ((await (await handle(new Request('https://w.test/v1/keys/cs_1/status'), env)).json()) as { revoked: boolean }).revoked;

@@ -78,6 +78,18 @@ export function createHandler(deps: Deps = { fetch, now: () => new Date() }) {
       return json({ ok: true, id });
     }
 
+    // Admin: re-send the licence email for a stored key (support requests, failed sends).
+    const resend = /^\/admin\/resend\/([^/]+)$/.exec(path);
+    if (request.method === 'POST' && resend?.[1]) {
+      if (request.headers.get('authorization') !== `Bearer ${env.ADMIN_TOKEN}`) return json({ error: 'unauthorized' }, 401);
+      const stored = await readLicense(env, decodeURIComponent(resend[1]));
+      if (!stored) return json({ error: 'not found' }, 404);
+      const to = new URL(request.url).searchParams.get('to') ?? stored.email;
+      if (!to) return json({ error: 'no email on record; pass ?to=' }, 400);
+      const sent = await sendKeyEmail(deps.fetch, env, to, stored.payload, stored.key);
+      return json({ ok: sent.ok, to, ...(sent.error ? { error: sent.error } : {}) });
+    }
+
     if (request.method === 'GET' && path === '/health') return json({ ok: true });
     return json({ error: 'not found' }, 404);
   };
@@ -109,8 +121,13 @@ async function webhook(request: Request, env: Env, deps: Deps): Promise<Response
   }
 
   let emailed = false;
-  if (issued.email && !existing) emailed = await sendKeyEmail(deps.fetch, env, issued.email, issued.payload, key);
-  return json({ ok: true, id: issued.payload.id, emailed, duplicate: existing !== null });
+  let emailError: string | undefined;
+  if (issued.email && !existing) {
+    const sent = await sendKeyEmail(deps.fetch, env, issued.email, issued.payload, key);
+    emailed = sent.ok;
+    emailError = sent.error;
+  }
+  return json({ ok: true, id: issued.payload.id, emailed, duplicate: existing !== null, ...(emailError ? { emailError } : {}) });
 }
 
 export function licenseEmail(payload: LicensePayload, key: string): { subject: string; text: string } {
@@ -134,7 +151,13 @@ export function licenseEmail(payload: LicensePayload, key: string): { subject: s
   };
 }
 
-async function sendKeyEmail(fetchImpl: typeof fetch, env: Env, to: string, payload: LicensePayload, key: string): Promise<boolean> {
+async function sendKeyEmail(
+  fetchImpl: typeof fetch,
+  env: Env,
+  to: string,
+  payload: LicensePayload,
+  key: string,
+): Promise<{ ok: boolean; error?: string }> {
   const { subject, text } = licenseEmail(payload, key);
   try {
     const res = await fetchImpl('https://api.resend.com/emails', {
@@ -142,8 +165,10 @@ async function sendKeyEmail(fetchImpl: typeof fetch, env: Env, to: string, paylo
       headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
       body: JSON.stringify({ from: env.FROM_EMAIL, to: [to], subject, text }),
     });
-    return res.ok;
-  } catch {
-    return false;
+    if (res.ok) return { ok: true };
+    // Surface the provider's message (never the key) so a failed send is diagnosable.
+    return { ok: false, error: `resend ${res.status}: ${(await res.text()).slice(0, 200)}` };
+  } catch (err) {
+    return { ok: false, error: err instanceof Error ? err.message : String(err) };
   }
 }
