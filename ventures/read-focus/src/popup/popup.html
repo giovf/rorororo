@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ReadFocus</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header>
+      <strong>ReadFocus</strong>
+      <span id="tier" class="tag">free</span>
+    </header>
+    <p id="site" class="muted">—</p>
+
+    <label class="row big"><span>On for this site</span><input type="checkbox" id="enabled" /></label>
+
+    <section id="controls">
+      <label class="row"><span>Bold word starts</span><input type="checkbox" id="bold" /></label>
+      <div class="row presets">
+        <button data-preset="light">Light</button><button data-preset="medium">Medium</button><button data-preset="heavy">Heavy</button>
+      </div>
+      <label class="row pro"><span>Strength <span class="pro-tag">pro</span></span><input type="range" id="strength" min="0.1" max="0.9" step="0.05" /></label>
+      <label class="row"><span>Reading ruler <kbd>Alt+Shift+R</kbd></span><input type="checkbox" id="ruler" /></label>
+      <label class="row pro"><span>Paragraph focus <span class="pro-tag">pro</span></span><input type="checkbox" id="focus" /></label>
+      <label class="row pro"><span>Font <span class="pro-tag">pro</span></span>
+        <select id="font">
+          <option value="default">Page default</option>
+          <option value="opendyslexic">OpenDyslexic</option>
+          <option value="atkinson">Atkinson Hyperlegible</option>
+          <option value="system-sans">System sans-serif</option>
+        </select>
+      </label>
+    </section>
+
+    <section id="unlock">
+      <details>
+        <summary><span id="unlock-title">Unlock everything — $12, once</span></summary>
+        <p class="muted">Precise strength, paragraph focus and dyslexia-friendly fonts. One payment, your key works offline on every device you sign in to.</p>
+        <a id="buy" href="https://giovf.github.io/rorororo/#products" target="_blank" rel="noopener">Get a key</a>
+        <div class="row"><input type="text" id="key" placeholder="Paste your key (FNDRY1…)" /><button id="activate">Activate</button></div>
+        <p id="key-status" class="muted"></p>
+      </details>
+    </section>
+
+    <footer class="muted">Shortcut <kbd>Alt+Shift+F</kbd> toggles this site. Nothing leaves your browser.</footer>
+    <script src="popup.js"></script>
+  </body>
+</html>

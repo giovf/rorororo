@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "ReadFocus — Focus Reading: Bold Word Starts, Reading Ruler & Dyslexia Fonts",
+  "short_name": "ReadFocus",
+  "version": "0.1.0",
+  "description": "Read faster and stay focused: bold the start of each word, follow a reading ruler, dim distractions, switch to dyslexia-friendly fonts. Private — nothing leaves your browser.",
+  "minimum_chrome_version": "116",
+  "permissions": ["storage"],
+  "host_permissions": ["http://*/*", "https://*/*"],
+  "action": { "default_popup": "popup.html", "default_title": "ReadFocus" },
+  "background": { "service_worker": "background.js", "type": "module" },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-site": {
+      "suggested_key": { "default": "Alt+Shift+F" },
+      "description": "Toggle ReadFocus on this site"
+    },
+    "toggle-ruler": {
+      "suggested_key": { "default": "Alt+Shift+R" },
+      "description": "Toggle the reading ruler"
+    }
+  },
+  "web_accessible_resources": [
+    { "resources": ["fonts/*"], "matches": ["http://*/*", "https://*/*"] }
+  ],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}

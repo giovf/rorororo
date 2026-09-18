@@ -1,0 +1,25 @@
+:root { font: 13px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; color: #1c1b18; }
+body { width: 320px; margin: 0; padding: 12px 14px; display: flex; flex-direction: column; gap: 10px; background: #fbfaf7; }
+@media (prefers-color-scheme: dark) { :root { color: #ece8df; } body { background: #15140f; } .tag, .presets button, input[type=text], select { background: #1d1b15; color: inherit; border-color: #2b2921; } }
+header { display: flex; justify-content: space-between; align-items: center; }
+.tag { font-size: 10px; text-transform: uppercase; letter-spacing: .06em; padding: 2px 6px; border-radius: 4px; border: 1px solid #e6e2d8; }
+.tag.pro { background: #b5551b; color: #fff; border-color: transparent; }
+.muted { color: #6b675e; margin: 0; font-size: 12px; }
+.row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+.row.big { font-weight: 600; font-size: 14px; }
+#controls { display: flex; flex-direction: column; gap: 8px; }
+#controls.off { opacity: .45; pointer-events: none; }
+.presets { justify-content: flex-start; }
+.presets button { flex: 1; font: inherit; padding: 5px 0; border-radius: 6px; border: 1px solid #e6e2d8; background: #fff; cursor: pointer; }
+.presets button.active { border-color: #b5551b; color: #b5551b; font-weight: 600; }
+.pro-tag { font-size: 9px; text-transform: uppercase; letter-spacing: .05em; color: #b5551b; margin-left: 4px; }
+body.is-free .row.pro input, body.is-free .row.pro select { opacity: .5; pointer-events: none; }
+body.is-pro .pro-tag { display: none; }
+input[type=range] { width: 130px; }
+input[type=text], select { font: inherit; padding: 5px 8px; border-radius: 6px; border: 1px solid #e6e2d8; background: #fff; }
+input[type=text] { flex: 1; min-width: 0; }
+#activate { font: inherit; padding: 5px 10px; border-radius: 6px; border: 1px solid #e6e2d8; background: #fff; cursor: pointer; }
+#buy { color: #b5551b; }
+kbd { font: 11px ui-monospace, monospace; border: 1px solid #e6e2d8; border-radius: 4px; padding: 0 4px; margin-left: 4px; }
+details summary { cursor: pointer; font-weight: 600; }
+footer { border-top: 1px solid #e6e2d8; padding-top: 8px; }

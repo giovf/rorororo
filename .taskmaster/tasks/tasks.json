@@ -890,7 +890,7 @@
         "dependencies": [
           "12"
         ],
-        "status": "in-progress",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -945,7 +945,7 @@
         "complexity": 4,
         "recommendedSubtasks": 4,
         "expansionPrompt": "Break down into: 1) Survey Chrome Web Store for paid/freemium extensions in Productivity and Shopping categories with >10k users, 2) Analyze Chrome Web Store policies and target platform ToS for each candidate direction, 3) Evaluate candidate directions (e-commerce tools, info extraction, BYO-API AI helpers) against validation gate, 4) Write ventures/v2/RESEARCH.md incorporating learnings from V1 launch. Apply V1 learnings about what worked.",
-        "updatedAt": "2026-09-18T00:44:36.213Z"
+        "updatedAt": "2026-09-18T00:53:05.521Z"
       },
       {
         "id": "14",
@@ -960,7 +960,7 @@
           "8",
           "13"
         ],
-        "status": "pending",
+        "status": "in-progress",
         "subtasks": [
           {
             "id": 1,
@@ -1063,14 +1063,15 @@
         ],
         "complexity": 9,
         "recommendedSubtasks": 8,
-        "expansionPrompt": "Break down into: 1) Create ventures/v2 workspace with WXT framework initialization for Chrome MV3, 2) Implement core extension functionality (background, content scripts, popup), 3) Integrate @foundry/licensing for freemium paywall with chrome.storage persistence, 4) Integrate @foundry/telemetry for usage tracking, 5) Copy and configure packages/landing for V2 landing page deployment, 6) Complete docs/launch/chrome.md checklist and create store assets, 7) Handle $5 developer fee owner action and submit to Chrome Web Store, 8) Update venture.json, ledger, enable telemetry and set 30-day review. Multiple package integrations and full launch process."
+        "expansionPrompt": "Break down into: 1) Create ventures/v2 workspace with WXT framework initialization for Chrome MV3, 2) Implement core extension functionality (background, content scripts, popup), 3) Integrate @foundry/licensing for freemium paywall with chrome.storage persistence, 4) Integrate @foundry/telemetry for usage tracking, 5) Copy and configure packages/landing for V2 landing page deployment, 6) Complete docs/launch/chrome.md checklist and create store assets, 7) Handle $5 developer fee owner action and submit to Chrome Web Store, 8) Update venture.json, ledger, enable telemetry and set 30-day review. Multiple package integrations and full launch process.",
+        "updatedAt": "2026-09-18T00:53:07.294Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T00:52:12.085Z",
+      "lastModified": "2026-09-18T00:53:07.294Z",
       "taskCount": 14,
-      "completedCount": 7,
+      "completedCount": 8,
       "tags": [
         "master"
       ]
