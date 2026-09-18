@@ -1,6 +1,6 @@
 # V1 research — Figma plugin (discovery, task 10)
 
-Status: **direction decided 2026-09-18, gap analysis pending** (Figma is rate-limiting the comments endpoint; background harvest retrying). Venture stays `idea` until gap evidence is in.
+Status: **validated 2026-09-18** — gate (a)–(e) met; see §5 for the rival-gap evidence.
 Date: 2026-09-17/18. Method: Figma's internal community search endpoint
 (`/api/search/resources`, `price_type=paid`) queried with ~235 keywords → 5,038 plugins,
 of which 167 sell through Figma checkout (purchase counts are public in
@@ -119,9 +119,8 @@ report. **$12 one-time** via Figma checkout (below the $15 leader, above impulse
 low end. It is a portfolio shot, not a business on its own; the point is to learn what
 ranks and convert that into V2/V3.
 
-**Open before `validated`:** comment-level gaps for S&V Organizer, Variables Pro and
-Design System Organizer (harvest pending); confirm Figma checkout requires nothing beyond
-the Stripe payout setup the owner completed.
+**Validated 2026-09-18** on the S&V Organizer comment evidence in §5. Figma checkout
+needs nothing beyond the Stripe payout setup the owner completed.
 
 ## 4. Build notes
 - Workspace: `ventures/variables-toolkit/` (renamed from `v1`). esbuild bundles
@@ -129,3 +128,29 @@ the Stripe payout setup the owner completed.
 - Deps added: `esbuild`, `@figma/plugin-typings` (dev). No runtime deps.
 - Core logic (`src/core/`) is pure and unit-tested; Figma API touches only in `code.ts`.
 - Manifest: `documentAccess: dynamic-page`, `networkAccess: none`, `permissions: payments`.
+
+## 5. Rival-gap evidence (Styles & Variables Organizer, 57 user comments, 2024-08 → 2026-05)
+
+Raw: `research/rival-comments-2026-09-18.json`. Themes, with counts of distinct commenters:
+
+| Theme | n | Representative quotes |
+|---|---|---|
+| **Performance / hangs** | 9 | "button reads scanning… forever"; "waiting 15 minutes, the file is small"; "several minutes to scan one frame with three objects"; "getting slower" |
+| **Breaks on page content** | 3 | "if you have any FigJam connector on your page it does not work"; "scanning numbers doesn't work when a page has widgets" |
+| **Scope control** | 5 | "Scan Page has too many elements — add Scan Selected" (added 2025-03); "option to not include component instances" (added 2026-05); "skips hidden layers" (added 2026-05) |
+| **Number / spacing variables** | 4 | "Number Variables doesn't work"; "Auto spacing mistaken with other values"; "icon sizes not mapped"; merge logic "frustrating" (rem/1 = 16) |
+| **Buying / licensing confusion** | 7 | "is it monthly or yearly?"; "team admin — available to all members?"; "can't transfer to partner's account"; India/China cards not accepted by Figma checkout |
+| **Feature asks** | 3 | rename variables in place; resizable window; act on results after scan |
+| **Praise (job is worth paying for)** | 8 | "solved 3 days work in 30 mins"; "use it every day… happy to pay"; "used across 3 companies"; "lifesaver for a large design system" |
+
+Autoflow (51 comments) shows the same failure modes in niche A — "major lag", "mass deleting
+my arrows", broken by Figma's *slots* update, purchase-restore confusion — confirming that
+robustness and support responsiveness are where paid plugins lose users.
+
+### What this changes in the product
+1. **Robustness first**: chunked scanning with a progress bar and a cancel button; never a
+   single blocking pass. Skip widgets/connectors/FigJam nodes explicitly. Scope = selection
+   or page, with "include hidden layers" and "skip component instances" switches from v1.
+2. **Number variables**: link padding, gap, corner radius and (opt-in) width/height to FLOAT
+   variables, with sensible exclusions ("Auto" spacing, hug/fill sizes).
+3. **Listing clarity**: "$12 one-time, per Figma account" spelled out; refund policy linked.

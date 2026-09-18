@@ -2,8 +2,11 @@
   "slug": "variables-toolkit",
   "name": "Variables Toolkit",
   "channel": "figma-community",
-  "status": "idea",
-  "pricing": { "kind": "one-time", "priceUsd": 12 },
+  "status": "validated",
+  "pricing": {
+    "kind": "one-time",
+    "priceUsd": 12
+  },
   "thesis": "Design-system teams pay to migrate legacy styles and hard-coded values onto Figma variables and keep collections clean, because Figma's own tooling for this is manual and its Variables API is Enterprise-only.",
   "statusChangedOn": "2026-09-18"
 }
