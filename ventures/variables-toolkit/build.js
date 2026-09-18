@@ -8,7 +8,13 @@ const release = process.argv.includes('--release');
 await mkdir('dist', { recursive: true });
 
 // Release builds ship no testing-only menu commands (demo page, simulated payments).
-const manifest = JSON.parse(await readFile('manifest.json', 'utf8'));
+// dist/manifest.json is self-contained (paths relative to dist/); the root manifest.json
+// keeps dist/ paths so a development import from the venture folder works unchanged.
+const manifest = {
+  ...JSON.parse(await readFile('manifest.json', 'utf8')),
+  main: 'code.js',
+  ui: 'ui.html',
+};
 if (release) delete manifest.menu;
 await writeFile('dist/manifest.json', JSON.stringify(manifest, null, 2) + '\n');
 
