@@ -7,8 +7,10 @@ export interface SiteSettings {
   enabled: boolean;
   bold: boolean;
   preset: Preset;
-  /** Pro: precise strength 0.1–0.9 overriding the preset. */
+  /** Pro: precise coverage 0.1–0.9 (how far into each word) overriding the preset. */
   strength?: number;
+  /** Pro: how bold the emphasised part is (CSS font-weight 500–900). */
+  weight?: number;
   ruler: boolean;
   /** Pro: dim everything except the paragraph under the cursor. */
   focus: boolean;

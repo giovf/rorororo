@@ -1,4 +1,4 @@
-.rf-b { font-weight: 700; }
+.rf-b { font-weight: var(--rf-weight, 700); }
 .rf-ruler {
   position: fixed; left: 0; right: 0; height: 34px; pointer-events: none; z-index: 2147483646;
   background: rgba(255, 214, 10, 0.18); box-shadow: 0 0 0 1px rgba(255, 180, 0, 0.35) inset;

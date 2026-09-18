@@ -34,11 +34,32 @@ async function fonts() {
 }
 
 function iconSvg() {
-  // Bold "R" over a ruler band — legible at 16px.
+  // Three "lines of text": the start of each word bright (fixation), the rest dim; a warm
+  // ruler band behind the middle line. Pure shapes, so it is crisp at 16px.
+  const line = (y, words) =>
+    words
+      .map(
+        ([x, w, head]) =>
+          `<rect x="${x}" y="${y}" width="${w}" height="12" rx="6" fill="#64748B"/>` +
+          `<rect x="${x}" y="${y}" width="${head}" height="12" rx="6" fill="#F8FAFC"/>`,
+      )
+      .join('');
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <rect width="128" height="128" rx="28" fill="#0F172A"/>
-  <rect x="16" y="72" width="96" height="22" rx="6" fill="#FBBF24" opacity="0.9"/>
-  <text x="64" y="92" font-family="Inter" font-weight="700" font-size="84" text-anchor="middle" fill="#F8FAFC">R</text>
+  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E293B"/><stop offset="1" stop-color="#0F172A"/></linearGradient></defs>
+  <rect width="128" height="128" rx="28" fill="url(#g)"/>
+  <rect x="14" y="52" width="100" height="26" rx="8" fill="#FBBF24" opacity="0.85"/>
+  ${line(28, [
+    [22, 34, 16],
+    [62, 44, 20],
+  ])}
+  ${line(59, [
+    [22, 26, 12],
+    [54, 52, 24],
+  ])}
+  ${line(90, [
+    [22, 48, 22],
+    [76, 30, 14],
+  ])}
 </svg>`;
 }
 
@@ -78,6 +99,11 @@ async function statics() {
   await copyFile(path.join(here, 'src', 'content.css'), path.join(dist, 'content.css'));
   await copyFile(path.join(here, 'src', 'popup', 'popup.html'), path.join(dist, 'popup.html'));
   await copyFile(path.join(here, 'src', 'popup', 'popup.css'), path.join(dist, 'popup.css'));
+  await copyFile(
+    path.join(here, 'src', 'welcome', 'welcome.html'),
+    path.join(dist, 'welcome.html'),
+  );
+  await copyFile(path.join(here, 'src', 'welcome', 'welcome.css'), path.join(dist, 'welcome.css'));
 }
 
 const bundles = {
@@ -85,6 +111,7 @@ const bundles = {
     content: 'src/content.ts',
     background: 'src/background.ts',
     popup: 'src/popup/popup.ts',
+    welcome: 'src/welcome/welcome.ts',
   },
   bundle: true,
   outdir: dist,

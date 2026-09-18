@@ -7,7 +7,8 @@ export function applyTier(site: SiteSettings, tier: Tier): SiteSettings {
   if (tier === 'pro') return site;
   const rest: SiteSettings = { ...site, focus: false, font: 'default' };
   delete rest.strength;
+  delete rest.weight;
   return rest;
 }
 
-export const PRO_FEATURES = ['Precise bold strength', 'Paragraph focus', 'Dyslexia-friendly fonts'] as const;
+export const PRO_FEATURES = ['Precise coverage and weight', 'Paragraph focus', 'Dyslexia-friendly fonts'] as const;

@@ -19,5 +19,5 @@ chrome.commands.onCommand.addListener((command) => {
 });
 
 chrome.runtime.onInstalled.addListener((details) => {
-  if (details.reason === 'install') void chrome.tabs.create({ url: chrome.runtime.getURL('popup.html?welcome=1') });
+  if (details.reason === 'install') void chrome.tabs.create({ url: chrome.runtime.getURL('welcome.html') });
 });

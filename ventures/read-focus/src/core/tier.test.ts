@@ -3,7 +3,7 @@ import { DEFAULT_SITE } from './settings.js';
 import { applyTier } from './tier.js';
 
 describe('applyTier', () => {
-  const pro = { ...DEFAULT_SITE, enabled: true, strength: 0.42, focus: true, font: 'opendyslexic' as const };
+  const pro = { ...DEFAULT_SITE, enabled: true, strength: 0.42, weight: 800, focus: true, font: 'opendyslexic' as const };
   it('keeps everything for pro', () => {
     expect(applyTier(pro, 'pro')).toEqual(pro);
   });

@@ -1,0 +1,19 @@
+:root { font: 16px/1.55 system-ui, -apple-system, "Segoe UI", sans-serif; color: #1c1b18; }
+body { margin: 0; background: #fbfaf7; }
+@media (prefers-color-scheme: dark) { :root { color: #ece8df; } body { background: #15140f; } .demo, .pro { background: #1d1b15; border-color: #2b2921; } .presets button { background: #15140f; color: inherit; border-color: #2b2921; } }
+main { max-width: 42rem; margin: 0 auto; padding: 3rem 16px 4rem; }
+header { display: flex; align-items: center; gap: 12px; }
+h1 { font-size: 1.8rem; margin: 0; }
+.lead { font-size: 1.15rem; color: #6b675e; margin: 0.5rem 0 1.5rem; }
+.steps { padding-left: 1.2rem; display: flex; flex-direction: column; gap: 0.8rem; }
+kbd { font: 13px ui-monospace, monospace; border: 1px solid #c9c4b8; border-radius: 5px; padding: 1px 6px; }
+.demo, .pro { border: 1px solid #e6e2d8; border-radius: 12px; padding: 1rem 1.2rem; margin-top: 1.5rem; background: #fff; }
+.demo-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+.presets { display: inline-flex; gap: 4px; }
+.presets button { font: inherit; font-size: 13px; padding: 4px 10px; border-radius: 6px; border: 1px solid #e6e2d8; background: #fff; cursor: pointer; }
+.presets button.active { border-color: #b5551b; color: #b5551b; font-weight: 600; }
+#sample { margin: 0; font-size: 1.05rem; }
+#sample b { font-weight: 700; }
+.pro strong { display: block; }
+.muted { color: #6b675e; }
+a { color: #b5551b; }

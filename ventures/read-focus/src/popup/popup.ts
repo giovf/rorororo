@@ -25,6 +25,7 @@ function render(site: SiteSettings): void {
   $<HTMLInputElement>('bold').checked = site.bold;
   document.querySelectorAll<HTMLButtonElement>('[data-preset]').forEach((b) => b.classList.toggle('active', b.dataset['preset'] === site.preset));
   $<HTMLInputElement>('strength').value = String(site.strength ?? PRESET_STRENGTH[site.preset]);
+  $<HTMLInputElement>('weight').value = String(site.weight ?? 700);
   $<HTMLInputElement>('ruler').checked = site.ruler;
   $<HTMLInputElement>('focus').checked = site.focus;
   $<HTMLSelectElement>('font').value = site.font;
@@ -41,6 +42,14 @@ async function change(patch: Partial<SiteSettings>): Promise<void> {
   const next = withSiteChange(settings, hostname, patch);
   await saveSettings(next);
   render(effectiveFor(next, hostname));
+}
+
+/** Shows the shortcuts as actually bound on this machine (they differ per platform). */
+async function showShortcuts(): Promise<void> {
+  const commands = await chrome.commands.getAll();
+  const label = (name: string): string => commands.find((c) => c.name === name)?.shortcut || 'not set';
+  $('kbd-site').textContent = label('toggle-site');
+  $('kbd-ruler').textContent = label('toggle-ruler');
 }
 
 async function init(): Promise<void> {
@@ -69,6 +78,12 @@ async function init(): Promise<void> {
     };
   });
   $('strength').onchange = (e) => void change({ strength: Number((e.target as HTMLInputElement).value) });
+  $('weight').onchange = (e) => void change({ weight: Number((e.target as HTMLInputElement).value) });
+  $('shortcuts').onclick = (e) => {
+    e.preventDefault();
+    void chrome.tabs.create({ url: 'chrome://extensions/shortcuts' });
+  };
+  void showShortcuts();
 
   $('activate').onclick = () => {
     void (async () => {

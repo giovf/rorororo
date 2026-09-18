@@ -23,3 +23,4 @@ input[type=text] { flex: 1; min-width: 0; }
 kbd { font: 11px ui-monospace, monospace; border: 1px solid #e6e2d8; border-radius: 4px; padding: 0 4px; margin-left: 4px; }
 details summary { cursor: pointer; font-weight: 600; }
 footer { border-top: 1px solid #e6e2d8; padding-top: 8px; }
+#shortcuts { color: inherit; }

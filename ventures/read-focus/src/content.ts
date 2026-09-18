@@ -115,18 +115,30 @@ function setRuler(on: boolean): void {
 
 const BLOCKS = 'p, li, h1, h2, h3, h4, h5, h6, blockquote, dd, dt, td, th, figcaption, pre';
 let focused: Element | null = null;
-const onFocusMove = (e: MouseEvent): void => {
-  const target = (e.target as Element | null)?.closest(BLOCKS) ?? null;
+let pointer = { x: -1, y: -1 };
+function focusAt(x: number, y: number): void {
+  const target = document.elementFromPoint(x, y)?.closest(BLOCKS) ?? null;
   if (target === focused) return;
   focused?.classList.remove('rf-focus-target');
   focused = target;
   focused?.classList.add('rf-focus-target');
+}
+const onFocusMove = (e: MouseEvent): void => {
+  pointer = { x: e.clientX, y: e.clientY };
+  focusAt(pointer.x, pointer.y);
+};
+// While scrolling the pointer stays put but the page moves under it: re-evaluate.
+const onFocusScroll = (): void => {
+  if (pointer.x >= 0) requestAnimationFrame(() => focusAt(pointer.x, pointer.y));
 };
 function setFocus(on: boolean): void {
   document.documentElement.classList.toggle('rf-focus', on);
-  if (on) window.addEventListener('mousemove', onFocusMove, { passive: true });
-  else {
+  if (on) {
+    window.addEventListener('mousemove', onFocusMove, { passive: true });
+    window.addEventListener('scroll', onFocusScroll, { passive: true, capture: true });
+  } else {
     window.removeEventListener('mousemove', onFocusMove);
+    window.removeEventListener('scroll', onFocusScroll, { capture: true });
     focused?.classList.remove('rf-focus-target');
     focused = null;
   }
@@ -170,6 +182,7 @@ function apply(next: SiteSettings): void {
     observer?.disconnect();
     removeBold();
   }
+  document.documentElement.style.setProperty('--rf-weight', String(next.enabled ? (next.weight ?? 700) : 700));
   setRuler(next.enabled && next.ruler);
   setFocus(next.enabled && next.focus);
   setFont(next.enabled ? next.font : 'default');
