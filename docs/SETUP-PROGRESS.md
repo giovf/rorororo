@@ -162,3 +162,4 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
   committed. Tasks done: 1,2,3,4,8,9,10. Task 11 awaiting 11.7 (owner test, action #2).
   Next: task 13 (V2 Chrome discovery) in progress; 12 (V1 launch) blocked on owner test.
 - 2026-09-18: Task 13 done — V2 = ReadFocus (focus-reading Chrome extension), validated on store review evidence; RESEARCH.md in ventures/read-focus. Tasks 5/6 (telemetry) deferred: V2 collects no data. Task 14 (build) starting.
+- 2026-09-18: V2 ReadFocus MVP built (60 tests). Owner-action #3 written (V2 unpacked test, Stripe payment link, Cloudflare). Landing: product cards updated, readfocus.html + thanks.html added.
