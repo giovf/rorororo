@@ -149,4 +149,4 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
 - `gh auth login` done by owner (user giovf). Branch pushed. GitHub Pages enabled via API
   (build_type=workflow); workflow run succeeded; https://giovf.github.io/rorororo/ returns 200.
 - Owner guidance given: Chrome trader status = **Trader**. Lemon Squeezy URL = the Pages URL.
-- Open: support email for `CONTACT_EMAIL` placeholders (3 pages).
+- Support email published: info@gankdat.com (2026-09-18). Pages env restricts deploys to `main`; feature branch added to its branch policy via API.
