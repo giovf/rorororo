@@ -25,7 +25,12 @@ interface StoredLicense {
   email: string | null;
   payload: LicensePayload;
   revoked?: boolean;
+  /** Times the key was activated (one request per activation); no device data. */
+  activations?: number;
 }
+
+/** A key activated more times than one person plausibly would is treated as shared. */
+export const MAX_ACTIVATIONS = 20;
 
 const json = (body: unknown, status = 200): Response =>
   new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json' } });
@@ -41,6 +46,18 @@ export function createHandler(deps: Deps = { fetch, now: () => new Date() }) {
     if (request.method === 'GET' && status?.[1]) {
       const stored = await readLicense(env, decodeURIComponent(status[1]));
       return json({ revoked: stored?.revoked === true });
+    }
+
+    // Activation: counts the activation and auto-revokes a key that is clearly being shared.
+    const activate = /^\/v1\/keys\/([^/]+)\/activate$/.exec(path);
+    if (request.method === 'POST' && activate?.[1]) {
+      const id = decodeURIComponent(activate[1]);
+      const stored = await readLicense(env, id);
+      if (!stored) return json({ revoked: false, known: false });
+      const activations = (stored.activations ?? 0) + 1;
+      const revoked = stored.revoked === true || activations > MAX_ACTIVATIONS;
+      await env.LICENSES.put(`license:${id}`, JSON.stringify({ ...stored, activations, revoked }));
+      return json({ revoked, known: true, activations });
     }
 
     const revoke = /^\/admin\/revoke\/([^/]+)$/.exec(path);

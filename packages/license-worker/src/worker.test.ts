@@ -69,6 +69,20 @@ describe('license worker', () => {
     expect(other.ignored).toBe('invoice.paid');
   });
 
+  it('counts activations and auto-revokes a shared key', async () => {
+    await webhook({ ...completed, data: { object: { ...completed.data.object, id: 'cs_share' } } });
+    const activate = async (): Promise<{ revoked: boolean; activations?: number; known: boolean }> =>
+      (await (await handle(new Request('https://w.test/v1/keys/cs_share/activate', { method: 'POST' }), env)).json()) as {
+        revoked: boolean;
+        activations?: number;
+        known: boolean;
+      };
+    for (let i = 1; i <= 20; i++) expect(await activate()).toEqual({ revoked: false, known: true, activations: i });
+    expect((await activate()).revoked).toBe(true);
+    const unknown: unknown = await (await handle(new Request('https://w.test/v1/keys/nope/activate', { method: 'POST' }), env)).json();
+    expect(unknown).toEqual({ revoked: false, known: false });
+  });
+
   it('reports and applies revocation behind the admin token', async () => {
     const status = async (): Promise<boolean> =>
       ((await (await handle(new Request('https://w.test/v1/keys/cs_1/status'), env)).json()) as { revoked: boolean }).revoked;

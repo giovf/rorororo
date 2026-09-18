@@ -22,7 +22,7 @@ export async function activateKey(
   fetchImpl: typeof fetch = fetch,
 ): Promise<{ tier: Tier; reason?: string }> {
   if (!key.trim()) return { tier: 'free', reason: 'empty' };
-  const result = await verifyLicenseOnline(LICENSE_PUBLIC_KEY, key, new RemoteRevocations(LICENSE_SERVER, fetchImpl), {
+  const result = await verifyLicenseOnline(LICENSE_PUBLIC_KEY, key, new RemoteRevocations(LICENSE_SERVER, fetchImpl, 'activate'), {
     venture: VENTURE,
   });
   return result.valid ? { tier: 'pro' } : { tier: 'free', reason: result.reason };

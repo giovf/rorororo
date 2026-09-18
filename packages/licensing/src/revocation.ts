@@ -15,15 +15,23 @@ export class InMemoryRevocations implements RevocationStore {
   }
 }
 
-/** Calls the worker's status endpoint; any network failure counts as "not revoked" (grace). */
+/**
+ * Calls the worker; any network failure counts as "not revoked" (grace). In `activate` mode
+ * the call is a POST that also counts the activation (used once, when a key is entered).
+ */
 export class RemoteRevocations implements RevocationStore {
   constructor(
     private readonly baseUrl: string,
     private readonly fetchImpl: typeof fetch = fetch,
+    private readonly mode: 'status' | 'activate' = 'status',
   ) {}
   async isRevoked(id: string): Promise<boolean> {
     try {
-      const res = await this.fetchImpl(`${this.baseUrl.replace(/\/$/, '')}/v1/keys/${encodeURIComponent(id)}/status`);
+      const base = `${this.baseUrl.replace(/\/$/, '')}/v1/keys/${encodeURIComponent(id)}`;
+      const res =
+        this.mode === 'activate'
+          ? await this.fetchImpl(`${base}/activate`, { method: 'POST' })
+          : await this.fetchImpl(`${base}/status`);
       if (!res.ok) return false;
       const body = (await res.json()) as { revoked?: boolean };
       return body.revoked === true;
