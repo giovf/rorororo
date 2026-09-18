@@ -1,5 +1,5 @@
 import { PRESET_STRENGTH, type Preset } from '../core/fixation.js';
-import { tierForKey } from '../core/license.js';
+import { activateKey, tierForKey } from '../core/license.js';
 import { effectiveFor, withSiteChange, type SiteSettings } from '../core/settings.js';
 import type { Tier } from '../core/tier.js';
 import { loadSettings, saveSettings } from '../storage.js';
@@ -73,10 +73,14 @@ async function init(): Promise<void> {
   $('activate').onclick = () => {
     void (async () => {
       const key = $<HTMLInputElement>('key').value.trim();
-      const t = await tierForKey(key);
       const status = $('key-status');
+      status.textContent = 'Checking…';
+      const { tier: t, reason } = await activateKey(key);
       if (t !== 'pro') {
-        status.textContent = 'That key is not valid for ReadFocus. Check for missing characters or reply to your receipt email.';
+        status.textContent =
+          reason === 'revoked'
+            ? 'This key was refunded and is no longer valid.'
+            : 'That key is not valid for ReadFocus. Check for missing characters or reply to your receipt email.';
         return;
       }
       const s = await loadSettings();

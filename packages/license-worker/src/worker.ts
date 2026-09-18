@@ -102,7 +102,7 @@ export function licenseEmail(payload: LicensePayload, key: string): { subject: s
       `Tier: ${payload.tier}${payload.seats ? ` · seats: ${payload.seats}` : ''}${payload.expires ? ` · valid until ${payload.expires}` : ' · perpetual'}`,
       '',
       'Keep this email; the key works offline and is tied to your purchase, not a device.',
-      'Questions or refunds (14 days, no questions asked): reply to this email.',
+      'Questions or refunds (14 days; one refund per customer, the key is then revoked): reply to this email.',
       '',
       '— Foundry',
     ].join('\n'),
