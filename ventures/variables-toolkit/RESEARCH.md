@@ -1,6 +1,6 @@
 # V1 research — Figma plugin (discovery, task 10)
 
-Status: **in progress** — market sized, gap analysis pending (comments harvest running).
+Status: **direction decided 2026-09-18, gap analysis pending** (Figma is rate-limiting the comments endpoint; background harvest retrying). Venture stays `idea` until gap evidence is in.
 Date: 2026-09-17/18. Method: Figma's internal community search endpoint
 (`/api/search/resources`, `price_type=paid`) queried with ~235 keywords → 5,038 plugins,
 of which 167 sell through Figma checkout (purchase counts are public in
@@ -89,6 +89,43 @@ agent to build a plugin and publish it to the Community. Simple single-function 
 (rename, export, convert) are now commoditised. A paid plugin must be something a prompt
 won't produce: stateful, UI-rich, robust on large files, maintained.
 
-## 3. Validation gate — pending
+## 3. Decision (2026-09-18): niche B — **Variables Toolkit**
 
-Filled in once the comments harvest for niches A and B completes.
+| Gate | A: flow arrows | B: variables tooling | C: component specs |
+|---|---|---|---|
+| (a) buyers with money | designers — yes | design-system teams — yes | DS teams — yes |
+| (b) recurring job | yes | yes | yes |
+| (c) paid rival with documented gap | Autoflow paid; gaps **unknown** (blocked) | S&V Organizer paid; gaps **unknown** (blocked); free leader in "styles to variables" is colour-only (documented) | gaps documented but only in the deprecated product; Specs 2 is strong |
+| (d) ≤ 1 week build | MVP yes, parity no | yes | no |
+| (e) policy/ToS risk | none | none | none |
+| Platform risk | **high** — native connectors in Design is a top feature request | moderate — Figma iterates on variables; Enterprise-only REST API is a tailwind | moderate |
+| Newcomer growth evidence | best 2025–26 entrant 22k users (free) | best 2026 entrant <2k; 2025 entrant Kigen 37k | — |
+| Conversion (paid leaders) | 0.3–1.2% | 1.7–2.9% | 1.2% (sub) |
+
+Why B over A: twice the conversion, a smaller leader to rank beside (rank 217 vs 17), a
+structural reason plugins persist, and no headline native-feature threat. A has 10× the
+audience but I would be the ~12th clone competing on polish against a 1M-user incumbent.
+
+**Product:** *Variables Toolkit — Styles to Variables, Link & Clean Up.* Three jobs, one
+plugin: (1) link hard-coded fills/strokes to the local variable with the same value —
+the job S&V Organizer proves people pay $15 for; (2) convert styles → variables for
+colour, typography, effects and number tokens, with modes — the leading free tool does
+colour only; (3) hygiene: unused, duplicate-valued and broken variable references.
+Free: up to 25 links per run, colour-only conversion. Paid: unlimited, all types, hygiene
+report. **$12 one-time** via Figma checkout (below the $15 leader, above impulse tier).
+
+**Expected value, honestly:** a newcomer in this niche reaching 5–20k users in a year at
+1.5–2.5% conversion × $12 ≈ $900–$6,000 gross, minus Figma's 15%. Typical outcome is the
+low end. It is a portfolio shot, not a business on its own; the point is to learn what
+ranks and convert that into V2/V3.
+
+**Open before `validated`:** comment-level gaps for S&V Organizer, Variables Pro and
+Design System Organizer (harvest pending); confirm Figma checkout requires nothing beyond
+the Stripe payout setup the owner completed.
+
+## 4. Build notes
+- Workspace: `ventures/variables-toolkit/` (renamed from `v1`). esbuild bundles
+  `src/code.ts` (main thread) and inlines `src/ui/*` into `dist/ui.html`.
+- Deps added: `esbuild`, `@figma/plugin-typings` (dev). No runtime deps.
+- Core logic (`src/core/`) is pure and unit-tested; Figma API touches only in `code.ts`.
+- Manifest: `documentAccess: dynamic-page`, `networkAccess: none`, `permissions: payments`.

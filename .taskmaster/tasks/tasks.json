@@ -123,7 +123,7 @@
         "testStrategy": "1. Generate a key, verify it returns the correct payload.\n2. Tamper with payload bytes, verify verification fails.\n3. Test expired key detection with past validUntil date.\n4. Test perpetual keys always pass expiry check.\n5. Fuzz test with malformed base64 inputs, verify graceful null returns.",
         "priority": "high",
         "dependencies": [],
-        "status": "in-progress",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -191,7 +191,7 @@
         "complexity": 5,
         "recommendedSubtasks": 5,
         "expansionPrompt": "Break down into: 1) Create packages/licensing workspace structure (package.json, tsconfig.json extending root), 2) Define LicensePayload and LicenseKey types with tier and expiry handling, 3) Implement generateLicenseKey() using Node crypto HMAC-SHA256, 4) Implement verifyLicenseOffline() with signature validation, 5) Add parseLicenseKey() and isExpired() utilities with comprehensive unit tests. Reference existing packages/core structure for workspace conventions.",
-        "updatedAt": "2026-09-18T00:22:14.503Z"
+        "updatedAt": "2026-09-18T00:23:31.208Z"
       },
       {
         "id": "4",
@@ -700,7 +700,7 @@
         "dependencies": [
           "10"
         ],
-        "status": "pending",
+        "status": "in-progress",
         "subtasks": [
           {
             "id": 1,
@@ -793,7 +793,8 @@
         ],
         "complexity": 8,
         "recommendedSubtasks": 7,
-        "expansionPrompt": "Break down into: 1) Create ventures/v1 workspace with venture.json manifest and build configuration, 2) Set up Figma plugin structure (manifest.json, esbuild config), 3) Implement core business logic in src/core/ with pure testable functions, 4) Build plugin UI with HTML/TypeScript in iframe context, 5) Implement free tier usage tracking with clientStorage and upgrade prompts, 6) Integrate Figma Payments API for paid unlock detection, 7) Add comprehensive unit tests and manual testing in Figma desktop/web. Plugin direction depends on Task 10 research."
+        "expansionPrompt": "Break down into: 1) Create ventures/v1 workspace with venture.json manifest and build configuration, 2) Set up Figma plugin structure (manifest.json, esbuild config), 3) Implement core business logic in src/core/ with pure testable functions, 4) Build plugin UI with HTML/TypeScript in iframe context, 5) Implement free tier usage tracking with clientStorage and upgrade prompts, 6) Integrate Figma Payments API for paid unlock detection, 7) Add comprehensive unit tests and manual testing in Figma desktop/web. Plugin direction depends on Task 10 research.",
+        "updatedAt": "2026-09-18T00:26:54.165Z"
       },
       {
         "id": "12",
@@ -1034,9 +1035,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T00:22:14.503Z",
+      "lastModified": "2026-09-18T00:26:54.165Z",
       "taskCount": 14,
-      "completedCount": 3,
+      "completedCount": 4,
       "tags": [
         "master"
       ]

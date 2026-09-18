@@ -13,7 +13,7 @@
     "ventures/*"
   ],
   "scripts": {
-    "typecheck": "tsc -b && tsc -p scripts",
+    "typecheck": "tsc -b && tsc -p scripts && tsc -p ventures/variables-toolkit",
     "build": "tsc -b",
     "lint": "eslint .",
     "format": "prettier --write .",

@@ -161,7 +161,8 @@ validUntil, tier }`, `TelemetryEvent { venture, event, day, count }`, ledger row
 
 ## Phase 1 — V1 Figma plugin
 - Discovery: survey paid Figma plugins (installs, ratings, price, review complaints), write
-  `ventures/v1/RESEARCH.md`, pick the product against the validation gate.
+  `ventures/variables-toolkit/RESEARCH.md` (done 2026-09-18: product = Variables Toolkit),
+  pick the product against the validation gate.
 - Build: plugin UI + core logic, free tier limit, paid unlock via Figma payments API,
   unit tests on the core logic.
 - Listing: icon, cover, copy, screenshots; submit for Figma review.
