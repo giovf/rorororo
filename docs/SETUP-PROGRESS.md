@@ -166,3 +166,4 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
 - 2026-09-18: V1 convert: Light/Dark mode pairing + subset selection shipped (11.10, 11.11). 62 tests. Landing index live with both products. All remaining work is gated on owner actions #2 and #3.
 - 2026-09-18: V1 manual test round passed in full (incl. simulated paid). Task 11 done; task 12 (launch) in progress: release build produced (menu stripped), owner-action #4 READY.
 - 2026-09-18: refund guards — one refund per customer (terms/email), revocation check at key activation in ReadFocus (disclosed). LICENSE_SERVER is a placeholder until the worker is deployed (chrome launch checklist).
+- 2026-09-18: Variables Toolkit submitted to Figma Community review. Owner testing ReadFocus; test pro key issued (id owner-test-2026-09-18).

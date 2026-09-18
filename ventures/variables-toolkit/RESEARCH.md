@@ -182,3 +182,9 @@ keys are offline-verifiable for the same reason.
 Backlog for V1 (added as subtasks of task 11): (1) mode pairing — detect a common prefix
 segment set (Light/Dark, Default/…) across styles and create modes instead of duplicate
 variables; (2) pick a subset of styles to convert; (3) toast with counts after every action.
+
+## 6. Metrics
+
+| Date | Event | Users | Likes | Purchases | Notes |
+|---|---|---|---|---|---|
+| 2026-09-18 | Submitted to Figma Community review | — | — | — | release build; $12 one-time |

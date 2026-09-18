@@ -4,12 +4,14 @@ Setup: (already built by Claude) chrome://extensions → **Developer mode** →
 **Load unpacked** → pick `ventures/read-focus/dist`. Pin the icon.
 
 ## Free tier
-- [ ] Install opens the popup page once (welcome).
-- [ ] On a news article: popup shows the hostname; "On for this site" off by default.
-- [ ] Switch on → word starts become bold within ~1 s; long pages (e.g. a Wikipedia
+- [x] Install opens the popup page once (welcome).
+	- [ ] Add welcome page instead of just opening the extension. it is a bit confusing.
+- [x] On a news article: popup shows the hostname; "On for this site" off by default.
+- [x] Switch on → word starts become bold within ~1 s; long pages (e.g. a Wikipedia
       article) finish progressively without freezing the tab.
-- [ ] Light / Medium / Heavy change the bolding; Strength slider is greyed out (pro).
+- [x] Light / Medium / Heavy change the bolding; Strength slider is greyed out (pro).
 - [ ] Reading ruler follows the mouse; `Alt+Shift+R` toggles it; `Alt+Shift+F` toggles the site.
+	- [ ] no shortcuts for mac
 - [ ] Infinite-scroll pages (Reddit, Twitter/X): newly loaded posts get bolded too.
 - [ ] Editing is untouched: textareas, Google Docs body, Gmail compose, code blocks, inputs.
 - [ ] Switch off → page text restored exactly (no leftover bold, no duplicated text).

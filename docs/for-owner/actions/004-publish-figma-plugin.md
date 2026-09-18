@@ -1,7 +1,7 @@
 # Owner action request #4 — publish Variables Toolkit to the Figma Community
 
 - **Date:** 2026-09-18
-- **Status:** **READY** — all walkthrough steps passed 2026-09-18; release build is on your disk
+- **Status:** **SUBMITTED 2026-09-18** — awaiting Figma review
 - **Your time:** ~20 minutes
 - **Cost:** £0.00 (Figma takes 15% of each sale, nothing up front)
 - **Blocks:** task 12
