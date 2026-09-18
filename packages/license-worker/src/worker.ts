@@ -13,6 +13,8 @@ export interface Env {
   RESEND_API_KEY: string;
   ADMIN_TOKEN: string;
   FROM_EMAIL: string;
+  /** Support address buyers reply to (sender domain is a mail subdomain). */
+  REPLY_TO?: string;
 }
 
 export interface Deps {
@@ -163,7 +165,7 @@ async function sendKeyEmail(
     const res = await fetchImpl('https://api.resend.com/emails', {
       method: 'POST',
       headers: { authorization: `Bearer ${env.RESEND_API_KEY}`, 'content-type': 'application/json' },
-      body: JSON.stringify({ from: env.FROM_EMAIL, to: [to], subject, text }),
+      body: JSON.stringify({ from: env.FROM_EMAIL, to: [to], subject, text, ...(env.REPLY_TO ? { reply_to: env.REPLY_TO } : {}) }),
     });
     if (res.ok) return { ok: true };
     // Surface the provider's message (never the key) so a failed send is diagnosable.
