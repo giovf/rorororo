@@ -12,7 +12,7 @@
 
 ## Licensing (Stripe Managed Payments + @foundry/licensing)
 - [x] Licence worker deployed at https://foundry-licenses.faceless-api.workers.dev; `LICENSE_SERVER` set (2026-09-18).
-- [ ] Checkout link on the landing page; webhook issues `FNDRY1…` key by email.
+- [x] Payment Link https://buy.stripe.com/6oUdR2gdfcOtaJU22aefC00 (metadata venture=read-focus); webhook we_1UH12N31BoD8QU62rlTnQpiX → worker → key by email (2026-09-18).
 - [ ] Extension verifies the key offline; grace period on verification failure.
 - [ ] Refund policy linked; licence terms stated ("per person, your devices").
 

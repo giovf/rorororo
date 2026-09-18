@@ -1,7 +1,7 @@
 # Owner action request #3 — ReadFocus test (done) + API access for payments & hosting
 
 - **Date:** 2026-09-18 (rewritten after round 2 passed)
-- **Status:** test rounds 1–2 **DONE**. Waiting on the three keys below.
+- **Status:** **DONE 2026-09-18** — keys received; Stripe product/price/Payment Link, licence worker, KV, secrets and webhook all provisioned by Claude. One follow-up: the Stripe key needs **Coupons: Write** for a £0 test purchase (see chat).
 - **Your time:** ~10 minutes
 - **Cost:** £0.00
 - **Blocks:** ReadFocus store submission (task 14.6–14.8)
