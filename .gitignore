@@ -76,3 +76,7 @@ docs/.obsidian/
 dist-release/
 ventures/*/read-focus.zip
 *.zip
+
+# ── Owner screen recordings (large); extracted PNG frames are committed
+ventures/*/assets/screenshots/*.mov
+ventures/*/assets/screenshots/*.mp4
