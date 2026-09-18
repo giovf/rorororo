@@ -5,7 +5,7 @@ import type { Tier } from './tier.js';
 export const LICENSE_PUBLIC_KEY = 'PkTQCEYFTv062z5DmS-saXuK_OPwhpIlGO6bxIPq5U0';
 export const VENTURE = 'read-focus';
 /** Licence worker; contacted ONCE, when a key is activated, to check it wasn't refunded. */
-export const LICENSE_SERVER = 'https://foundry-licenses.workers.dev';
+export const LICENSE_SERVER = 'https://foundry-licenses.faceless-api.workers.dev';
 
 export async function tierForKey(key: string): Promise<Tier> {
   if (!key.trim()) return 'free';

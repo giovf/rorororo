@@ -11,7 +11,7 @@
       https://giovf.github.io/rorororo/privacy.html.
 
 ## Licensing (Stripe Managed Payments + @foundry/licensing)
-- [ ] Licence worker deployed; `LICENSE_SERVER` in `ventures/read-focus/src/core/license.ts` set to its real `*.workers.dev` URL (placeholder until then).
+- [x] Licence worker deployed at https://foundry-licenses.faceless-api.workers.dev; `LICENSE_SERVER` set (2026-09-18).
 - [ ] Checkout link on the landing page; webhook issues `FNDRY1…` key by email.
 - [ ] Extension verifies the key offline; grace period on verification failure.
 - [ ] Refund policy linked; licence terms stated ("per person, your devices").

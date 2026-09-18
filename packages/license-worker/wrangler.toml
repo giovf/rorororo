@@ -6,7 +6,7 @@ compatibility_date = "2026-09-01"
 
 [[kv_namespaces]]
 binding = "LICENSES"
-id = "REPLACE_AFTER_wrangler_kv_namespace_create_LICENSES"
+id = "7316344bc3a245498bec8e0a1baf3316"
 
 [vars]
 FROM_EMAIL = "Foundry <info@gankdat.com>"
