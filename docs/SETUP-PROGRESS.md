@@ -151,3 +151,9 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
 - Owner guidance given: Chrome trader status = **Trader**. Lemon Squeezy URL = the Pages URL.
 - Support email published: info@gankdat.com (2026-09-18). Pages env restricts deploys to `main`; feature branch added to its branch policy via API.
 - 2026-09-18: owner completed Figma + Chrome accounts. MoR decision: Stripe Managed Payments (LS redirected). PRD/ARCHITECTURE/.env.example/owner-actions updated. Tasks 3/4 (licensing) will target Stripe webhooks + self-issued Ed25519 keys.
+- 2026-09-18 (later): V1 = Variables Toolkit, **validated** (57 rival comments harvested; gaps
+  documented in RESEARCH.md §5). Plugin implements link (colours + numbers, chunked scan,
+  cancel, hidden/instance switches, daily free tier via clientStorage), styles→variables
+  (colour free; text/effect paid), hygiene (unused/duplicates/broken; delete paid). 39 tests.
+  Owner-action #2 (Figma desktop test) is READY. Task 3 (licensing) done. Tasks 10 done; 11
+  in progress (11.7 manual test pending).

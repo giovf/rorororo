@@ -1,88 +1,93 @@
 import { planStyleConversion, type StyleInfo } from './core/convert.js';
 import { hygieneReport } from './core/hygiene.js';
 import { groupByVariable, suggestLinks, type ColorVariableRef, type PaintSite } from './core/link.js';
-import { allowedLinks, type TierState } from './core/tier.js';
+import { suggestNumberLinks, type NumberSite, type NumberVariableRef } from './core/numbers.js';
+import type { ScanOptions } from './core/scan.js';
+import { FREE_LINKS_PER_DAY, allowedLinks, rollover, today, type TierState } from './core/tier.js';
 import { executePlan, readExistingVariables } from './figma/convert.js';
 import { readVariableUsage } from './figma/hygiene.js';
+import { loadColorVariables, loadNumberVariables, scanNodes } from './figma/scan.js';
 import { readLocalStyles } from './figma/styles.js';
-import type { ToMain, ToUi } from './messages.js';
+import type { LinkGroup, ToMain, ToUi } from './messages.js';
 
-figma.showUI(__html__, { width: 380, height: 520, themeColors: true });
+figma.showUI(__html__, { width: 400, height: 560, themeColors: true });
 
 const post = (msg: ToUi): void => figma.ui.postMessage(msg);
-const tier: TierState = { paid: figma.payments?.status.type === 'PAID', usedThisRun: 0 };
-let lastSites: PaintSite[] = [];
-let lastVars: ColorVariableRef[] = [];
+const TIER_KEY = 'tier-v1';
 
-post({ type: 'status', paid: tier.paid });
+let tier: TierState = { paid: figma.payments?.status.type === 'PAID', day: today(), used: 0 };
+let lastPaints: PaintSite[] = [];
+let lastNumbers: NumberSite[] = [];
+let colorVars: ColorVariableRef[] = [];
+let numberVars: NumberVariableRef[] = [];
+let scanToken = 0;
+
+async function loadTier(): Promise<void> {
+  const saved = (await figma.clientStorage.getAsync(TIER_KEY)) as Partial<TierState> | undefined;
+  tier = rollover({ ...tier, day: saved?.day ?? tier.day, used: saved?.used ?? 0 });
+  postStatus();
+}
+
+async function saveTier(): Promise<void> {
+  await figma.clientStorage.setAsync(TIER_KEY, { day: tier.day, used: tier.used });
+}
+
+function postStatus(): void {
+  post({ type: 'status', paid: tier.paid, freeLeftToday: allowedLinks(tier, FREE_LINKS_PER_DAY) });
+}
 
 // ---------- feature 1: link raw values ----------
 
-async function loadColorVariables(): Promise<ColorVariableRef[]> {
-  const collections = await figma.variables.getLocalVariableCollectionsAsync();
-  const vars = await figma.variables.getLocalVariablesAsync('COLOR');
-  const byCollection = new Map(collections.map((c) => [c.id, c.name]));
-  return vars.map((v) => {
-    const valuesByMode: ColorVariableRef['valuesByMode'] = {};
-    for (const [mode, value] of Object.entries(v.valuesByMode)) {
-      if (typeof value === 'object' && value !== null && 'r' in value) {
-        valuesByMode[mode] = { r: value.r, g: value.g, b: value.b, a: 'a' in value ? value.a : 1 };
-      }
-    }
-    return { id: v.id, name: v.name, collection: byCollection.get(v.variableCollectionId) ?? '', valuesByMode };
-  });
-}
-
-function collectPaintSites(nodes: readonly SceneNode[]): PaintSite[] {
-  const sites: PaintSite[] = [];
-  const visit = (node: SceneNode): void => {
-    for (const property of ['fills', 'strokes'] as const) {
-      if (!(property in node)) continue;
-      const paints: readonly Paint[] | PluginAPI['mixed'] = (node as GeometryMixin)[property];
-      if (typeof paints === 'symbol') continue; // figma.mixed
-      paints.forEach((paint, index) => {
-        if (paint.type !== 'SOLID' || paint.visible === false) return;
-        const bound = paint.boundVariables?.color?.id;
-        sites.push({
-          nodeId: node.id,
-          nodeName: node.name,
-          property,
-          index,
-          color: { ...paint.color, a: paint.opacity ?? 1 },
-          ...(bound === undefined ? {} : { boundVariableId: bound }),
-        });
-      });
-    }
-    if ('children' in node) node.children.forEach(visit);
-  };
-  nodes.forEach(visit);
-  return sites;
-}
-
-async function scan(scope: 'selection' | 'page'): Promise<void> {
+async function scan(scope: 'selection' | 'page', options: ScanOptions): Promise<void> {
   const roots = scope === 'selection' ? figma.currentPage.selection : figma.currentPage.children;
   if (roots.length === 0) {
     post({ type: 'error', message: scope === 'selection' ? 'Select something first.' : 'This page is empty.' });
     return;
   }
-  lastVars = await loadColorVariables();
-  lastSites = collectPaintSites(roots);
-  const { suggestions, unmatched } = suggestLinks(lastSites, lastVars);
+  const token = ++scanToken;
+  [colorVars, numberVars] = await Promise.all([loadColorVariables(), loadNumberVariables()]);
+  const result = await scanNodes(
+    roots,
+    options,
+    (visited, pending) => post({ type: 'progress', visited, pending }),
+    () => token !== scanToken,
+  );
+  if (!result) {
+    post({ type: 'scan-cancelled' });
+    return;
+  }
+  lastPaints = result.paints;
+  lastNumbers = result.numbers;
+  const colors = suggestLinks(lastPaints, colorVars);
+  const numbers = suggestNumberLinks(lastNumbers, numberVars);
+  const numberGroups = new Map<string, LinkGroup<NumberSite>>();
+  for (const s of numbers.suggestions) {
+    const g = numberGroups.get(s.variable.id) ?? { variableId: s.variable.id, variableName: s.variable.name, sites: [] };
+    g.sites.push(s.site);
+    numberGroups.set(s.variable.id, g);
+  }
   post({
     type: 'scan-result',
-    groups: groupByVariable(suggestions).map((g) => ({ variableId: g.variable.id, variableName: g.variable.name, sites: g.sites })),
-    unmatched: unmatched.length,
-    scanned: lastSites.length,
+    colors: groupByVariable(colors.suggestions).map((g) => ({ variableId: g.variable.id, variableName: g.variable.name, sites: g.sites })),
+    numbers: [...numberGroups.values()].sort((a, b) => b.sites.length - a.sites.length),
+    unmatchedColors: colors.unmatched.length,
+    unmatchedNumbers: numbers.unmatched.length,
+    visited: result.visited,
   });
 }
 
-async function apply(variableIds: string[]): Promise<void> {
-  const wanted = new Set(variableIds);
-  const { suggestions } = suggestLinks(lastSites, lastVars);
-  const todo = suggestions.filter((s) => wanted.has(s.variable.id));
-  const limit = allowedLinks(tier, todo.length);
+async function apply(colorVariableIds: string[], numberVariableIds: string[]): Promise<void> {
+  tier = rollover(tier);
+  const wantedColors = new Set(colorVariableIds);
+  const wantedNumbers = new Set(numberVariableIds);
+  const colorTodo = suggestLinks(lastPaints, colorVars).suggestions.filter((s) => wantedColors.has(s.variable.id));
+  const numberTodo = suggestNumberLinks(lastNumbers, numberVars).suggestions.filter((s) => wantedNumbers.has(s.variable.id));
+  const requested = colorTodo.length + numberTodo.length;
+  let budget = allowedLinks(tier, requested);
   let count = 0;
-  for (const s of todo.slice(0, limit)) {
+
+  for (const s of colorTodo) {
+    if (budget === 0) break;
     const node = (await figma.getNodeByIdAsync(s.site.nodeId)) as (SceneNode & GeometryMixin) | null;
     const variable = await figma.variables.getVariableByIdAsync(s.variable.id);
     if (!node || !variable) continue;
@@ -92,19 +97,31 @@ async function apply(variableIds: string[]): Promise<void> {
     paints[s.site.index] = figma.variables.setBoundVariableForPaint(paint, 'color', variable);
     node[s.site.property] = paints;
     count++;
+    budget--;
   }
-  tier.usedThisRun += tier.paid ? 0 : count;
-  post({ type: 'applied', count, capped: limit < todo.length });
-  figma.notify(limit < todo.length ? `Linked ${count} (free limit reached — unlock for unlimited)` : `Linked ${count} paint${count === 1 ? '' : 's'}`);
+  for (const s of numberTodo) {
+    if (budget === 0) break;
+    const node = await figma.getNodeByIdAsync(s.site.nodeId);
+    const variable = await figma.variables.getVariableByIdAsync(s.variable.id);
+    if (!node || !variable || !('setBoundVariable' in node)) continue;
+    node.setBoundVariable(s.site.field, variable);
+    count++;
+    budget--;
+  }
+  if (!tier.paid) {
+    tier.used += count;
+    await saveTier();
+  }
+  const capped = count < requested;
+  post({ type: 'applied', count, capped });
+  postStatus();
+  figma.notify(capped ? `Linked ${count} — free limit reached for today. Unlock for unlimited.` : `Linked ${count} value${count === 1 ? '' : 's'}`);
 }
 
 // ---------- feature 2: styles → variables ----------
 
 const FREE_KINDS: ReadonlySet<StyleInfo['kind']> = new Set(['paint']);
-
-function permittedKinds(kinds: StyleInfo['kind'][]): Set<StyleInfo['kind']> {
-  return new Set(kinds.filter((k) => tier.paid || FREE_KINDS.has(k)));
-}
+const permittedKinds = (kinds: StyleInfo['kind'][]): Set<StyleInfo['kind']> => new Set(kinds.filter((k) => tier.paid || FREE_KINDS.has(k)));
 
 async function convertPreview(kinds: StyleInfo['kind'][]): Promise<void> {
   const styles = await readLocalStyles();
@@ -131,7 +148,7 @@ async function hygiene(): Promise<void> {
 
 async function deleteVariables(ids: string[]): Promise<void> {
   if (!tier.paid) {
-    post({ type: 'error', message: 'Deleting unused variables is part of the paid unlock.' });
+    post({ type: 'error', message: 'Deleting unused variables is part of the unlock.' });
     return;
   }
   let n = 0;
@@ -146,30 +163,25 @@ async function deleteVariables(ids: string[]): Promise<void> {
   await hygiene();
 }
 
-async function selectNodes(ids: string[]): Promise<void> {
-  const nodes = (await Promise.all(ids.map((id) => figma.getNodeByIdAsync(id)))).filter(
-    (n): n is SceneNode => n !== null && n.type !== 'PAGE' && n.type !== 'DOCUMENT',
-  );
-  figma.currentPage.selection = nodes;
-  if (nodes.length > 0) figma.viewport.scrollAndZoomIntoView(nodes);
-}
-
 // ---------- payments ----------
 
 async function upgrade(): Promise<void> {
   if (!figma.payments) return;
   await figma.payments.initiateCheckoutAsync({ interstitial: 'PAID_FEATURE' });
   tier.paid = figma.payments.status.type === 'PAID';
-  post({ type: 'status', paid: tier.paid });
+  postStatus();
 }
 
 figma.ui.onmessage = (msg: ToMain) => {
   const run = ((): Promise<void> => {
     switch (msg.type) {
       case 'scan':
-        return scan(msg.scope);
+        return scan(msg.scope, msg.options);
+      case 'cancel-scan':
+        scanToken++;
+        return Promise.resolve();
       case 'apply':
-        return apply(msg.variableIds);
+        return apply(msg.colorVariableIds, msg.numberVariableIds);
       case 'convert-preview':
         return convertPreview(msg.kinds);
       case 'convert-apply':
@@ -178,11 +190,11 @@ figma.ui.onmessage = (msg: ToMain) => {
         return hygiene();
       case 'delete-variables':
         return deleteVariables(msg.ids);
-      case 'select-nodes':
-        return selectNodes(msg.ids);
       case 'upgrade':
         return upgrade();
     }
   })();
   run.catch((err: unknown) => post({ type: 'error', message: err instanceof Error ? err.message : String(err) }));
 };
+
+void loadTier();

@@ -1,4 +1,5 @@
 import type { StyleInfo } from '../core/convert.js';
+import type { ScanOptions } from '../core/scan.js';
 import type { ToMain, ToUi } from '../messages.js';
 
 const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
@@ -29,10 +30,24 @@ for (const tab of document.querySelectorAll<HTMLButtonElement>('.tab')) {
 // link
 const groups = $<HTMLUListElement>('groups');
 const apply = $<HTMLButtonElement>('apply');
-$('scan-selection').onclick = () => send({ type: 'scan', scope: 'selection' });
-$('scan-page').onclick = () => send({ type: 'scan', scope: 'page' });
-apply.onclick = () =>
-  send({ type: 'apply', variableIds: [...groups.querySelectorAll<HTMLInputElement>('input:checked')].map((i) => i.value) });
+const cancel = $<HTMLButtonElement>('cancel-scan');
+const options = (): ScanOptions => ({
+  numbers: $<HTMLInputElement>('opt-numbers').checked,
+  sizes: $<HTMLInputElement>('opt-sizes').checked,
+  includeHidden: $<HTMLInputElement>('opt-hidden').checked,
+  skipInstances: $<HTMLInputElement>('opt-instances').checked,
+});
+const startScan = (scope: 'selection' | 'page'): void => {
+  cancel.hidden = false;
+  say('Scanning…');
+  send({ type: 'scan', scope, options: options() });
+};
+$('scan-selection').onclick = () => startScan('selection');
+$('scan-page').onclick = () => startScan('page');
+cancel.onclick = () => send({ type: 'cancel-scan' });
+const checked = (kind: string): string[] =>
+  [...groups.querySelectorAll<HTMLInputElement>(`input[data-kind="${kind}"]:checked`)].map((i) => i.value);
+apply.onclick = () => send({ type: 'apply', colorVariableIds: checked('color'), numberVariableIds: checked('number') });
 
 // convert
 const selectedKinds = (): StyleInfo['kind'][] =>
@@ -61,28 +76,37 @@ window.onmessage = (event: MessageEvent<{ pluginMessage: ToUi }>) => {
     case 'status': {
       paid = msg.paid;
       const tag = $('tier');
-      tag.textContent = paid ? 'unlocked' : 'free';
+      tag.textContent = paid ? 'unlocked' : `free · ${msg.freeLeftToday} links left today`;
       tag.classList.toggle('paid', paid);
       $('upgrade').hidden = paid;
       document.querySelectorAll('.pro').forEach((el) => ((el as HTMLElement).hidden = paid));
       break;
     }
+    case 'progress':
+      say(`Scanning… ${msg.visited} layers (${msg.pending} queued)`);
+      break;
+    case 'scan-cancelled':
+      cancel.hidden = true;
+      say('Scan cancelled.');
+      break;
     case 'scan-result': {
+      cancel.hidden = true;
+      const row = (kind: 'color' | 'number', g: { variableId: string; variableName: string; sites: unknown[] }): HTMLLIElement =>
+        li(
+          `<input type="checkbox" data-kind="${kind}" checked value="${g.variableId}" /><span class="name" title="${esc(g.variableName)}">${esc(g.variableName)}</span><span class="count">${g.sites.length}</span>`,
+        );
       groups.replaceChildren(
-        ...msg.groups.map((g) =>
-          li(
-            `<input type="checkbox" checked value="${g.variableId}" /><span class="name" title="${esc(g.variableName)}">${esc(g.variableName)}</span><span class="count">${g.sites.length}</span>`,
-          ),
-        ),
+        ...(msg.colors.length ? [li('Colours', 'head'), ...msg.colors.map((g) => row('color', g))] : []),
+        ...(msg.numbers.length ? [li('Numbers', 'head'), ...msg.numbers.map((g) => row('number', g))] : []),
       );
-      const linkable = msg.groups.reduce((n, g) => n + g.sites.length, 0);
-      $('link-summary').textContent = `${msg.scanned} paints scanned · ${linkable} can be linked · ${msg.unmatched} have no matching variable`;
+      const linkable = [...msg.colors, ...msg.numbers].reduce((n, g) => n + g.sites.length, 0);
+      $('link-summary').textContent = `${msg.visited} layers scanned · ${linkable} values can be linked · ${msg.unmatchedColors} colours and ${msg.unmatchedNumbers} numbers have no matching variable`;
       apply.disabled = linkable === 0;
       say('');
       break;
     }
     case 'applied':
-      say(msg.capped ? `Linked ${msg.count}. Free runs link up to 25 at a time — unlock for unlimited.` : `Linked ${msg.count}.`);
+      say(msg.capped ? `Linked ${msg.count}. That's today's free allowance — unlock for unlimited.` : `Linked ${msg.count}.`);
       apply.disabled = true;
       break;
     case 'convert-plan': {

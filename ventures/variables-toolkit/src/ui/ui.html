@@ -21,8 +21,15 @@
       <div class="row">
         <button id="scan-selection" class="primary">Scan selection</button>
         <button id="scan-page">Scan page</button>
+        <button id="cancel-scan" hidden>Cancel</button>
       </div>
-      <p id="link-summary" class="muted">Finds fills and strokes whose colour equals a local colour variable, then links them.</p>
+      <div class="row wrap options">
+        <label><input type="checkbox" id="opt-numbers" checked /> Numbers (padding, gap, radius)</label>
+        <label><input type="checkbox" id="opt-sizes" /> Sizes</label>
+        <label><input type="checkbox" id="opt-hidden" /> Include hidden</label>
+        <label><input type="checkbox" id="opt-instances" /> Skip instances</label>
+      </div>
+      <p id="link-summary" class="muted">Finds colours and numbers that equal a local variable, then links them. Skips widgets and FigJam objects.</p>
       <ul id="groups" class="list"></ul>
       <div class="row end"><button id="apply" class="primary" disabled>Link selected</button></div>
     </section>
