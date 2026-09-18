@@ -40,6 +40,19 @@ export default tseslint.config(
       ],
     },
   },
-  { files: ['**/*.js'], ...tseslint.configs.disableTypeChecked },
+  {
+    files: ['**/*.js'],
+    ...tseslint.configs.disableTypeChecked,
+    languageOptions: {
+      parserOptions: { projectService: false, project: false, program: null },
+      globals: {
+        console: 'readonly',
+        fetch: 'readonly',
+        URL: 'readonly',
+        Buffer: 'readonly',
+        process: 'readonly',
+      },
+    },
+  },
   prettier,
 );
