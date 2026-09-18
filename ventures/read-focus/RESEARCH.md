@@ -100,3 +100,9 @@ viewer when it ships. Listed on Chrome, then Edge Add-ons and Firefox AMO (free 
 best-made simple tool (Reader Line) reached 20k in two. Plan for 5–20k users in year one
 at 1–2% conversion × $12 → $600–$4,800 gross, typically the low end. Portfolio shot #2;
 the multi-store listing is the main upside over V1.
+
+## Metrics
+
+| Date | Event | Users | Rating | Sales | Notes |
+|---|---|---|---|---|---|
+| 2026-09-18 | Payment path proven (£0 test purchase) | — | — | 0 | Payment Link live; store submission pending screenshots |

@@ -131,3 +131,18 @@ footer a {
 .legal li {
   margin-bottom: 0.4rem;
 }
+
+.button {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  padding: 0.6rem 1.1rem;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+.button:hover {
+  color: #fff;
+  opacity: 0.92;
+}

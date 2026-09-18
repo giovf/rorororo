@@ -1062,9 +1062,10 @@
               4
             ],
             "details": "1. Create docs/launch/chrome.md with complete submission checklist\n2. Generate extension icons: 16x16, 48x48, 128x128 PNG files in ventures/v2/public/\n3. Create 1280x800 and 440x280 promotional screenshots showing key features\n4. Write short description (132 chars max) and detailed description (up to 16k chars)\n5. Identify primary category (Productivity or Shopping based on V2 direction)\n6. Document all permissions with justifications (shown to users during install)\n7. Create privacy policy URL (link to landing page privacy policy)\n8. Prepare support URL and support email\n9. Fill in single purpose statement (required by Chrome)\n10. Review Chrome Web Store Developer Program Policies for compliance",
-            "status": "pending",
+            "status": "in-progress",
             "testStrategy": "Verify all icon sizes are correct and display properly. Check descriptions fit character limits. Review screenshots show actual functionality. Validate privacy policy covers all data usage. Cross-reference with Chrome Web Store submission form requirements.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T15:45:35.033Z"
           },
           {
             "id": 7,
@@ -1094,12 +1095,12 @@
         "complexity": 9,
         "recommendedSubtasks": 8,
         "expansionPrompt": "Break down into: 1) Create ventures/v2 workspace with WXT framework initialization for Chrome MV3, 2) Implement core extension functionality (background, content scripts, popup), 3) Integrate @foundry/licensing for freemium paywall with chrome.storage persistence, 4) Integrate @foundry/telemetry for usage tracking, 5) Copy and configure packages/landing for V2 landing page deployment, 6) Complete docs/launch/chrome.md checklist and create store assets, 7) Handle $5 developer fee owner action and submit to Chrome Web Store, 8) Update venture.json, ledger, enable telemetry and set 30-day review. Multiple package integrations and full launch process.",
-        "updatedAt": "2026-09-18T00:59:02.537Z"
+        "updatedAt": "2026-09-18T15:45:35.033Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T10:37:51.124Z",
+      "lastModified": "2026-09-18T15:45:35.034Z",
       "taskCount": 14,
       "completedCount": 9,
       "tags": [
