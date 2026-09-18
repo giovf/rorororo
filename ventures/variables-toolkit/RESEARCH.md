@@ -170,3 +170,15 @@ users to breakage after updates (slots, storage); (2) V1.1 candidate feature wit
 demand: **relink local/broken variables to library variables by name**; (3) V1 uses Figma's
 own checkout — the external-licence failures above are a real reason buyers prefer it; V2's
 keys are offline-verifiable for the same reason.
+
+### Free rivals closest to "styles → variables" (comments, 2026-09-18)
+- **Styles to Variables** (89k): "Light and Dark styles … after binding, all the same" —
+  users expect `Light/Primary` + `Dark/Primary` styles to become **one variable with two
+  modes**; spaces in style names break binding; no way to convert a subset; no success
+  notification; "doesn't work" reports through 2024.
+- **Variables Pro** (81k): copied variables "not attached"; aliases to local variables lost on
+  import; "limited to 4 modes"; 15-minute imports; wants collection overwrite/swap.
+
+Backlog for V1 (added as subtasks of task 11): (1) mode pairing — detect a common prefix
+segment set (Light/Dark, Default/…) across styles and create modes instead of duplicate
+variables; (2) pick a subset of styles to convert; (3) toast with counts after every action.
