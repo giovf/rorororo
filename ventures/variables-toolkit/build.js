@@ -11,8 +11,8 @@ const out = release ? 'dist-release' : 'dist';
 await mkdir(out, { recursive: true });
 
 // Release builds ship no testing-only menu commands (demo page, simulated payments).
-// dist/manifest.json is self-contained (paths relative to dist/); the root manifest.json
-// keeps dist/ paths so a development import from the venture folder works unchanged.
+// The manifest written next to the bundle is self-contained (paths relative to its folder);
+// the root manifest.json keeps dist/ paths so a development import works unchanged.
 const manifest = {
   ...JSON.parse(await readFile('manifest.json', 'utf8')),
   main: 'code.js',
@@ -42,7 +42,7 @@ const uiJs = {
 async function writeUi(js) {
   const html = await readFile('src/ui/ui.html', 'utf8');
   const css = await readFile('src/ui/ui.css', 'utf8');
-  await writeFile('dist/ui.html', html.replace('/* __CSS__ */', css).replace('// __JS__', js));
+  await writeFile(`${out}/ui.html`, html.replace('/* __CSS__ */', css).replace('// __JS__', js));
 }
 
 if (watch) {
