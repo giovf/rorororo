@@ -1,0 +1,32 @@
+# Chrome Web Store listing — ReadFocus
+
+**Name (≤ 45):** ReadFocus — Focus Reading, Ruler & Dyslexia Fonts
+**Summary (≤ 132):** Bold word starts, a reading ruler, paragraph focus and dyslexia-friendly fonts — private, nothing leaves your browser.
+
+**Description:**
+
+Long pages, short attention? ReadFocus makes reading on the web easier to start and easier to finish.
+
+• Bold word starts — the first letters of every word are emphasised so your eyes land and glide. Light, medium or heavy.
+• Reading ruler — a soft band that follows your mouse so you never lose the line (Alt+Shift+R).
+• Per-site switch — turn it on for the sites where you read, off everywhere else (Alt+Shift+F). Your text editors, docs and code stay untouched.
+• Works on articles, documentation, forums and infinite-scroll feeds; new content is handled as it loads.
+
+Unlock ($12, once): precise bold strength, paragraph focus (dims everything but the paragraph you're on), and OpenDyslexic / Atkinson Hyperlegible fonts. One key for every browser you sign in to; works offline; 14-day refund.
+
+Private by design: ReadFocus makes no network requests and collects no data. Settings live in your browser's extension storage.
+
+Made for readers with ADHD or dyslexia, students, and anyone who reads for a living.
+
+**Category:** Accessibility · **Language:** English
+**Single purpose:** Improve readability of web page text for the current user.
+**Permissions justification:** `storage` — save your settings; host access on http/https — apply the reading aids to the page you're viewing (content script; no data is read out of the page or sent anywhere).
+**Data-use disclosure:** collects no user data.
+**Privacy policy:** https://giovf.github.io/rorororo/privacy.html · **Support:** info@gankdat.com
+
+## Screenshots (1280×800) — owner captures after test round
+1. Article before/after with medium bolding, popup open.
+2. Reading ruler on a dense page.
+3. Paragraph focus (pro) on a long article.
+4. OpenDyslexic font on a news site.
+5. Popup with presets, strength, unlock.

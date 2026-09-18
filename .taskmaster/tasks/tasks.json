@@ -968,9 +968,10 @@
             "description": "Initialize the V2 Chrome extension workspace using WXT framework with proper npm workspace integration and Chrome Manifest V3 configuration.",
             "dependencies": [],
             "details": "1. Run `npm create wxt@latest ventures/v2` to scaffold WXT project\n2. Configure wxt.config.ts for Chrome MV3 target (manifest_version: 3)\n3. Update root package.json to include ventures/v2 in workspaces array\n4. Add @foundry/licensing and @foundry/telemetry as workspace dependencies in ventures/v2/package.json\n5. Create venture.json with defineVenture() compliant structure: slug='v2', channel='chrome-web-store', status='building', pricing freemium model\n6. Run npm install from root to link workspace\n7. Verify wxt dev and wxt build commands work",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Run `wxt build` and verify Chrome MV3 manifest.json is generated. Run `npm run check` from root to verify workspace links correctly. Load unpacked extension in Chrome and confirm no manifest errors.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:58:58.907Z"
           },
           {
             "id": 2,
@@ -980,9 +981,10 @@
               1
             ],
             "details": "1. Create src/entrypoints/background.ts with chrome.runtime listeners for lifecycle events\n2. Create src/entrypoints/popup/index.html with minimal HTML shell\n3. Create src/entrypoints/popup/main.ts with TypeScript entry point\n4. Create src/core/ directory for business logic (keep UI and logic separate)\n5. Create src/utils/ for shared helpers\n6. Add content.ts only if page injection is needed (avoid unless required for V2 feature)\n7. Configure proper permissions in wxt.config.ts (minimal required set)\n8. Implement the core V2 feature logic in src/core/ based on validated direction from Task 13",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Load extension in Chrome, verify popup opens. Check background script initializes (chrome://extensions -> service worker active). Test core feature works as expected. Write unit tests for src/core/ business logic.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:58:58.914Z"
           },
           {
             "id": 3,
@@ -993,9 +995,10 @@
               2
             ],
             "details": "1. Import verifyLicenseKey from @foundry/licensing\n2. Create src/core/usage.ts: track daily usage count in chrome.storage.local with date-based reset\n3. Define FREE_TIER_LIMIT constant (e.g., 5 uses per day)\n4. Create src/core/license.ts: store/retrieve license key from chrome.storage.sync, cache verification result\n5. Implement checkAccess() function: returns 'free' | 'paid' | 'limit-reached'\n6. Create upgrade prompt UI component in popup showing remaining uses and upgrade CTA\n7. Add license key input field in popup settings for users to paste and verify keys\n8. Handle offline verification using @foundry/licensing cached signature validation\n9. Show unlock success/error feedback after key entry",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Test free tier limit triggers after N uses. Test license key entry, verify valid key unlocks, invalid key shows error. Test chrome.storage persistence across browser restarts. Test offline mode with cached license. Mock date to verify daily reset works.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:58:58.919Z"
           },
           {
             "id": 4,
@@ -1006,9 +1009,10 @@
               2
             ],
             "details": "1. Import telemetry functions from @foundry/telemetry\n2. Create src/core/telemetry.ts wrapper with venture='v2' context\n3. Track events: 'install' (on first run), 'activate' (on feature use), 'limit-reached' (when free cap hit), 'license-entered' (on key entry)\n4. Implement opt-in consent flow in popup (default off, toggle in settings)\n5. Store telemetry preference in chrome.storage.sync\n6. Only send events when user has opted in\n7. Ensure events are anonymous ({venture, event, day} only, no PII)\n8. Handle offline: queue events and send on reconnect or drop gracefully",
-            "status": "pending",
+            "status": "cancelled",
             "testStrategy": "Verify events fire at correct points. Test opt-out prevents any network calls. Test event payload matches expected {venture, event, day} schema. Mock network to verify offline handling.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:59:00.788Z"
           },
           {
             "id": 5,
@@ -1018,9 +1022,10 @@
               1
             ],
             "details": "1. Copy packages/landing template to ventures/v2/landing/ directory\n2. Update package.json name to @foundry/v2-landing\n3. Configure landing page with V2 venture manifest data (name, pricing, thesis)\n4. Create feature highlight sections based on V2 functionality\n5. Add Chrome Web Store badge/link (placeholder until store listing exists)\n6. Configure Cloudflare Pages deployment in wrangler.toml or via dashboard\n7. Set up custom domain if available, otherwise use pages.dev subdomain\n8. Add privacy policy and refund policy pages (required for store compliance)\n9. Test build: npm run build in ventures/v2/landing/",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "Run local dev server, verify all pages render. Test responsive design on mobile viewports. Verify all links work. Deploy to Cloudflare Pages staging, confirm production build works. Check accessibility with Lighthouse.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:59:02.537Z"
           },
           {
             "id": 6,
@@ -1064,12 +1069,12 @@
         "complexity": 9,
         "recommendedSubtasks": 8,
         "expansionPrompt": "Break down into: 1) Create ventures/v2 workspace with WXT framework initialization for Chrome MV3, 2) Implement core extension functionality (background, content scripts, popup), 3) Integrate @foundry/licensing for freemium paywall with chrome.storage persistence, 4) Integrate @foundry/telemetry for usage tracking, 5) Copy and configure packages/landing for V2 landing page deployment, 6) Complete docs/launch/chrome.md checklist and create store assets, 7) Handle $5 developer fee owner action and submit to Chrome Web Store, 8) Update venture.json, ledger, enable telemetry and set 30-day review. Multiple package integrations and full launch process.",
-        "updatedAt": "2026-09-18T00:53:07.294Z"
+        "updatedAt": "2026-09-18T00:59:02.537Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T00:53:07.294Z",
+      "lastModified": "2026-09-18T00:59:02.538Z",
       "taskCount": 14,
       "completedCount": 8,
       "tags": [
