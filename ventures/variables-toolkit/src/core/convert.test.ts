@@ -62,3 +62,33 @@ describe('planStyleConversion', () => {
     expect(plan.bind).toHaveLength(6);
   });
 });
+
+describe('mode pairing', () => {
+  const blue = { r: 0, g: 0, b: 1, a: 1 };
+  const paired: StyleInfo[] = [
+    { kind: 'paint', id: 'l1', name: 'Light/Brand/Primary', solid: red, paintCount: 1 },
+    { kind: 'paint', id: 'd1', name: 'Dark/Brand/Primary', solid: blue, paintCount: 1 },
+    { kind: 'paint', id: 'l2', name: 'Light/Surface', solid: red, paintCount: 1 },
+    { kind: 'paint', id: 'x', name: 'Brand/Accent', solid: blue, paintCount: 1 },
+  ];
+
+  it('turns Light/Dark twins into one variable with two modes and leaves singles alone', () => {
+    const plan = planStyleConversion(paired, { kinds: new Set(['paint']), existing: [] });
+    expect(plan.modes).toEqual(['Light', 'Dark']);
+    const primary = plan.create.find((v) => v.name === 'brand/primary');
+    expect(primary?.valuesByMode).toEqual({ Light: red, Dark: blue });
+    expect(primary?.value).toEqual(red);
+    expect(plan.bind.filter((b) => b.variableKey === 'COLOR:brand/primary').map((b) => b.styleId)).toEqual(['l1', 'd1']);
+    // unpaired styles keep their full slug
+    expect(plan.create.map((v) => v.name)).toEqual(['brand/primary', 'light/surface', 'brand/accent']);
+  });
+
+  it('can be switched off and honours a subset', () => {
+    const off = planStyleConversion(paired, { kinds: new Set(['paint']), existing: [], modePairing: false });
+    expect(off.modes).toEqual([]);
+    expect(off.create.map((v) => v.name)).toEqual(['light/brand/primary', 'dark/brand/primary', 'light/surface', 'brand/accent']);
+    const subset = planStyleConversion(paired, { kinds: new Set(['paint']), existing: [], onlyStyleIds: new Set(['x']) });
+    expect(subset.create.map((v) => v.name)).toEqual(['brand/accent']);
+    expect(subset.modes).toEqual([]);
+  });
+});

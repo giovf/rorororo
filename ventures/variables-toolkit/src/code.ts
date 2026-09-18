@@ -123,20 +123,34 @@ async function apply(colorVariableIds: string[], numberVariableIds: string[]): P
 const FREE_KINDS: ReadonlySet<StyleInfo['kind']> = new Set(['paint']);
 const permittedKinds = (kinds: StyleInfo['kind'][]): Set<StyleInfo['kind']> => new Set(kinds.filter((k) => tier.paid || FREE_KINDS.has(k)));
 
-async function convertPreview(kinds: StyleInfo['kind'][]): Promise<void> {
+async function convertPreview(kinds: StyleInfo['kind'][], styleIds?: string[]): Promise<void> {
   const styles = await readLocalStyles();
   const counts: Record<StyleInfo['kind'], number> = { paint: 0, text: 0, effect: 0 };
   for (const s of styles) counts[s.kind]++;
-  const plan = planStyleConversion(styles, { kinds: permittedKinds(kinds), existing: await readExistingVariables() });
-  post({ type: 'convert-plan', plan, counts });
+  const permitted = permittedKinds(kinds);
+  const plan = planStyleConversion(styles, {
+    kinds: permitted,
+    existing: await readExistingVariables(),
+    ...(styleIds ? { onlyStyleIds: new Set(styleIds) } : {}),
+  });
+  post({
+    type: 'convert-plan',
+    plan,
+    counts,
+    styles: styles.filter((s) => permitted.has(s.kind)).map((s) => ({ id: s.id, name: s.name, kind: s.kind })),
+  });
 }
 
-async function convertApply(kinds: StyleInfo['kind'][], collectionName: string): Promise<void> {
+async function convertApply(kinds: StyleInfo['kind'][], collectionName: string, styleIds: string[]): Promise<void> {
   const styles = await readLocalStyles();
-  const plan = planStyleConversion(styles, { kinds: permittedKinds(kinds), existing: await readExistingVariables() });
+  const plan = planStyleConversion(styles, {
+    kinds: permittedKinds(kinds),
+    existing: await readExistingVariables(),
+    onlyStyleIds: new Set(styleIds),
+  });
   const result = await executePlan(plan, collectionName.trim() || 'Tokens');
   post({ type: 'converted', ...result });
-  figma.notify(`Created ${result.created}, reused ${result.reused}, bound ${result.bound} style properties`);
+  figma.notify(result.warning ?? `Created ${result.created}, reused ${result.reused}, bound ${result.bound} style properties`);
 }
 
 // ---------- feature 3: hygiene ----------
@@ -183,9 +197,9 @@ figma.ui.onmessage = (msg: ToMain) => {
       case 'apply':
         return apply(msg.colorVariableIds, msg.numberVariableIds);
       case 'convert-preview':
-        return convertPreview(msg.kinds);
+        return convertPreview(msg.kinds, msg.styleIds);
       case 'convert-apply':
-        return convertApply(msg.kinds, msg.collectionName);
+        return convertApply(msg.kinds, msg.collectionName, msg.styleIds);
       case 'hygiene':
         return hygiene();
       case 'delete-variables':

@@ -22,9 +22,15 @@ padding 16, gap 16 and corner radius 8, and rectangles filled #3B82F6 and #FF000
       paid** in the dev menu → badge "unlocked", no limit.
 
 ## Styles → Variables (tab 2)
-- [ ] With colour styles ticked, **Preview** lists variables to create (`reuse` tag if a
-      variable with that name exists); **Create & bind** makes the collection ("Tokens")
-      and paint styles now reference the variables.
+- [ ] With colour styles ticked, **Preview** lists your styles with checkboxes (non-solid
+      ones unticked with a reason); the summary counts variables (`reused` if a variable
+      with that name exists). Untick a few → summary updates.
+- [ ] Styles named `Light/…` and `Dark/…` with the same remainder → summary shows
+      "modes: Light, Dark"; after **Create & bind** there is ONE variable per remainder with
+      both mode values, and both styles reference it. On a free Figma plan the toast warns
+      that modes couldn't be added and values fall back to the default mode.
+- [ ] **Create & bind** makes the collection ("Tokens") and paint styles now reference the
+      variables.
 - [ ] Text/Effect styles: unpaid → summary says they "need the unlock"; paid → font
       family/style/size/line-height and shadow colour/radius/spread/offset variables are
       created and bound (check the style's properties show chips).

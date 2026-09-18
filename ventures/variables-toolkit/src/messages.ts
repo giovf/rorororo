@@ -24,8 +24,8 @@ export type ToUi =
     }
   | { type: 'scan-cancelled' }
   | { type: 'applied'; count: number; capped: boolean }
-  | { type: 'convert-plan'; plan: ConversionPlan; counts: Record<StyleInfo['kind'], number> }
-  | { type: 'converted'; created: number; reused: number; bound: number }
+  | { type: 'convert-plan'; plan: ConversionPlan; counts: Record<StyleInfo['kind'], number>; styles: { id: string; name: string; kind: StyleInfo['kind'] }[] }
+  | { type: 'converted'; created: number; reused: number; bound: number; warning?: string }
   | { type: 'hygiene'; report: HygieneReport; total: number }
   | { type: 'error'; message: string };
 
@@ -33,8 +33,8 @@ export type ToMain =
   | { type: 'scan'; scope: 'selection' | 'page'; options: ScanOptions }
   | { type: 'cancel-scan' }
   | { type: 'apply'; colorVariableIds: string[]; numberVariableIds: string[] }
-  | { type: 'convert-preview'; kinds: StyleInfo['kind'][] }
-  | { type: 'convert-apply'; kinds: StyleInfo['kind'][]; collectionName: string }
+  | { type: 'convert-preview'; kinds: StyleInfo['kind'][]; styleIds?: string[] }
+  | { type: 'convert-apply'; kinds: StyleInfo['kind'][]; collectionName: string; styleIds: string[] }
   | { type: 'hygiene' }
   | { type: 'delete-variables'; ids: string[] }
   | { type: 'upgrade' };
