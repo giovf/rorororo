@@ -1,7 +1,16 @@
 # Owner action request #3 — ReadFocus test (done) + API access for payments & hosting
 
 - **Date:** 2026-09-18 (rewritten after round 2 passed)
-- **Status:** **DONE 2026-09-18** — keys received; Stripe product/price/Payment Link, licence worker, KV, secrets and webhook all provisioned by Claude. One follow-up: the Stripe key needs **Coupons: Write** for a £0 test purchase (see chat).
+- **Status:** provisioning **DONE 2026-09-18** (product, price, Payment Link, worker, KV, secrets, webhook). Three follow-ups remain:
+  1. **Resend**: `gankdat.com` is not verified in this Resend team → resend.com → Domains →
+     add `gankdat.com` → add the DNS records it shows (SPF/DKIM) → Verify. Or name another
+     domain that is already verified there and I'll switch the sender.
+  2. **Stripe key**: add **Promotion Codes: Write** (Coupons: Write is now on; the 100%-off
+     coupon exists, the code that customers type still needs this permission).
+  3. **Managed Payments**: Dashboard → Managed Payments → *Complete setup* → when it asks
+     which products to sell through Managed Payments, pick **ReadFocus — lifetime unlock**
+     only (leave your other project's products as they are) → finish. That is what makes
+     Stripe the merchant of record for ReadFocus sales.
 - **Your time:** ~10 minutes
 - **Cost:** £0.00
 - **Blocks:** ReadFocus store submission (task 14.6–14.8)
