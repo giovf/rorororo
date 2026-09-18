@@ -45,7 +45,18 @@ hard to displace; parked.
 | Reader Mode Pro | 2,000 | 3.9 | Nov 2022 | $15 one-time; licence-key friction; MV2 |
 | Bionic Reader | 2,000 | 3.8 | Jul 2024 | "the only one that works"; wants PDF |
 | Dyslexia Friendly | 10,000 | 4.2 | Dec 2025 | |
-Demand + gap: 200k users sit on two 2–3★ products; buyers are ADHD/dyslexic/slow readers,
-students and professionals reading all day; paid tiers already exist at $15 one-time and
-$30/yr. Pending: actively maintained free rivals (Jiffy Reader) and the "Bionic Reading"
-trademark (must not use the name).
+| Jiffy Reader (free, OSS) | 4,000 | 4.7 (4) | Feb 2026 | re-listed under a new id; the old listing (130 reviews, privacy complaints) is gone |
+| Reader Line (ruler) | 20,000 | 4.9 (100) | Dec 2024 | every top review asks for PDF support |
+| ReadingLine (ruler) | 8,000 | 3.9 | Jun 2022 | abandoned; "zero controls" |
+| ReadingRuler | 722 | 3.4 | Apr 2026 | "not working after recent update" |
+| Chrome Reader Mode | 10,000 | 3.9 | Sep 2026 | no width control, harsh colours |
+| ADHD Reading | ? | ? | 2026 | **$29/yr or $59 lifetime**, Stripe, local-first; free = 3 emphasis modes; Pro = typography controls, per-site auto-apply, profiles |
+
+Demand + gap: 200k users sit on two 2–3★ products; the good small tools are unmaintained
+or lack PDF support; buyers are ADHD/dyslexic/slow readers, students and professionals who
+read all day; paid tiers already exist at $15 one-time, $30/yr and $59 lifetime.
+
+**Legal constraints:** "Bionic Reading" is a registered trademark (Renato Casutt / BRCG
+Casutt GmbH, CH) and the owner has pursued open-source projects over the name — the product
+must never use the word "Bionic". The owner also claims patent rights on the method; see the
+assessment below before any build starts.
