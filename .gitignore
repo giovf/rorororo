@@ -67,3 +67,6 @@ __pycache__/
 
 # ── Editor/AI tooling caches
 .codegpt/
+
+# ── Owner's Figma "New plugin" template (only its id matters; kept out of the repo)
+docs/owner-actions/plugin/

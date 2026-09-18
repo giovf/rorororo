@@ -13,6 +13,7 @@ export default tseslint.config(
       'src/**',
       'environment/**',
       'data/**',
+      'docs/owner-actions/plugin/**',
     ],
   },
   js.configs.recommended,

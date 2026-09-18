@@ -1,11 +1,23 @@
 {
-  "name": "Variables Toolkit — Styles to Variables, Link & Clean Up",
+  "name": "Variables Toolkit \u2014 Styles to Variables, Link & Clean Up",
   "id": "1682711656065145288",
   "api": "1.0.0",
   "main": "dist/code.js",
   "ui": "dist/ui.html",
   "editorType": ["figma"],
   "documentAccess": "dynamic-page",
-  "networkAccess": { "allowedDomains": ["none"] },
-  "permissions": ["payments"]
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  },
+  "permissions": ["payments"],
+  "menu": [
+    {
+      "name": "Open",
+      "command": "open"
+    },
+    {
+      "name": "Create demo page (testing only)",
+      "command": "demo"
+    }
+  ]
 }

@@ -8,9 +8,16 @@ import { executePlan, readExistingVariables } from './figma/convert.js';
 import { readVariableUsage } from './figma/hygiene.js';
 import { loadColorVariables, loadNumberVariables, scanNodes } from './figma/scan.js';
 import { readLocalStyles } from './figma/styles.js';
+import { createDemoPage } from './figma/demo.js';
 import type { LinkGroup, ToMain, ToUi } from './messages.js';
 
-figma.showUI(__html__, { width: 400, height: 560, themeColors: true });
+if (figma.command === 'demo') {
+  createDemoPage()
+    .then((name) => figma.closePlugin(`Created page "${name}". Now run Variables Toolkit → Open.`))
+    .catch((err: unknown) => figma.closePlugin(`Demo failed: ${err instanceof Error ? err.message : String(err)}`));
+} else {
+  figma.showUI(__html__, { width: 400, height: 560, themeColors: true });
+}
 
 const post = (msg: ToUi): void => figma.ui.postMessage(msg);
 const TIER_KEY = 'tier-v1';
