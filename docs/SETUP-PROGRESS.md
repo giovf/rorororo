@@ -168,3 +168,4 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
 - 2026-09-18: refund guards — one refund per customer (terms/email), revocation check at key activation in ReadFocus (disclosed). LICENSE_SERVER is a placeholder until the worker is deployed (chrome launch checklist).
 - 2026-09-18: Variables Toolkit submitted to Figma Community review. Owner testing ReadFocus; test pro key issued (id owner-test-2026-09-18).
 - 2026-09-18: ReadFocus round 1 feedback applied: welcome page, new icon, coverage+weight sliders, Mac shortcuts + live labels, focus follows scroll. Round 2 requested.
+- 2026-09-18: ReadFocus round 2 passed. Owner reuses existing Stripe/Cloudflare/Resend accounts and grants scoped API keys via .env; action #3 rewritten as a key list. Claude will provision Stripe product/link/webhook and deploy the worker itself.
