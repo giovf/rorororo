@@ -25,12 +25,17 @@ interface StoredLicense {
   email: string | null;
   payload: LicensePayload;
   revoked?: boolean;
-  /** Times the key was activated (one request per activation); no device data. */
-  activations?: number;
+  /** Activation timestamps (ms), most recent last; no device data. Kept to the last 50. */
+  activations?: number[];
 }
 
-/** A key activated more times than one person plausibly would is treated as shared. */
-export const MAX_ACTIVATIONS = 20;
+/**
+ * Rolling activation window: a real buyer activates rarely (new profile, wiped machine); a
+ * shared key gets many activations quickly. Past the limit, NEW activations are declined
+ * but nothing is revoked — existing installs keep working and the buyer isn't punished.
+ */
+export const ACTIVATION_WINDOW_MS = 30 * 86_400_000;
+export const MAX_ACTIVATIONS_PER_WINDOW = 5;
 
 const json = (body: unknown, status = 200): Response =>
   new Response(JSON.stringify(body), { status, headers: { 'content-type': 'application/json' } });
@@ -48,16 +53,19 @@ export function createHandler(deps: Deps = { fetch, now: () => new Date() }) {
       return json({ revoked: stored?.revoked === true });
     }
 
-    // Activation: counts the activation and auto-revokes a key that is clearly being shared.
+    // Activation: records the activation; declines new ones past the rolling window.
     const activate = /^\/v1\/keys\/([^/]+)\/activate$/.exec(path);
     if (request.method === 'POST' && activate?.[1]) {
       const id = decodeURIComponent(activate[1]);
       const stored = await readLicense(env, id);
-      if (!stored) return json({ revoked: false, known: false });
-      const activations = (stored.activations ?? 0) + 1;
-      const revoked = stored.revoked === true || activations > MAX_ACTIVATIONS;
-      await env.LICENSES.put(`license:${id}`, JSON.stringify({ ...stored, activations, revoked }));
-      return json({ revoked, known: true, activations });
+      if (!stored) return json({ revoked: false, blocked: false, known: false });
+      if (stored.revoked === true) return json({ revoked: true, blocked: false, known: true });
+      const now = deps.now().getTime();
+      const recent = (stored.activations ?? []).filter((t) => now - t < ACTIVATION_WINDOW_MS);
+      if (recent.length >= MAX_ACTIVATIONS_PER_WINDOW) return json({ revoked: false, blocked: true, known: true, recent: recent.length });
+      const activations = [...(stored.activations ?? []), now].slice(-50);
+      await env.LICENSES.put(`license:${id}`, JSON.stringify({ ...stored, activations }));
+      return json({ revoked: false, blocked: false, known: true, recent: recent.length + 1 });
     }
 
     const revoke = /^\/admin\/revoke\/([^/]+)$/.exec(path);

@@ -69,18 +69,21 @@ describe('license worker', () => {
     expect(other.ignored).toBe('invoice.paid');
   });
 
-  it('counts activations and auto-revokes a shared key', async () => {
+  it('declines new activations past the rolling window without revoking', async () => {
     await webhook({ ...completed, data: { object: { ...completed.data.object, id: 'cs_share' } } });
-    const activate = async (): Promise<{ revoked: boolean; activations?: number; known: boolean }> =>
+    const activate = async (): Promise<{ revoked: boolean; blocked: boolean; known: boolean }> =>
       (await (await handle(new Request('https://w.test/v1/keys/cs_share/activate', { method: 'POST' }), env)).json()) as {
         revoked: boolean;
-        activations?: number;
+        blocked: boolean;
         known: boolean;
       };
-    for (let i = 1; i <= 20; i++) expect(await activate()).toEqual({ revoked: false, known: true, activations: i });
-    expect((await activate()).revoked).toBe(true);
+    for (let i = 0; i < 5; i++) expect(await activate()).toMatchObject({ revoked: false, blocked: false, known: true });
+    expect(await activate()).toMatchObject({ revoked: false, blocked: true, known: true });
+    // status stays clean: nothing was revoked
+    const status = (await (await handle(new Request('https://w.test/v1/keys/cs_share/status'), env)).json()) as { revoked: boolean };
+    expect(status.revoked).toBe(false);
     const unknown: unknown = await (await handle(new Request('https://w.test/v1/keys/nope/activate', { method: 'POST' }), env)).json();
-    expect(unknown).toEqual({ revoked: false, known: false });
+    expect(unknown).toEqual({ revoked: false, blocked: false, known: false });
   });
 
   it('reports and applies revocation behind the admin token', async () => {

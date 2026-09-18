@@ -18,4 +18,20 @@ describe('verifyLicenseOnline', () => {
     const ok = new RemoteRevocations('https://x.invalid/', () => Promise.resolve(new Response(JSON.stringify({ revoked: true }))));
     expect(await ok.isRevoked('any')).toBe(true);
   });
+
+  it('reports a blocked activation without calling the server twice', async () => {
+    let calls = 0;
+    const store = new RemoteRevocations(
+      'https://x.invalid',
+      () => {
+        calls++;
+        return Promise.resolve(new Response(JSON.stringify({ revoked: false, blocked: true })));
+      },
+      'activate',
+    );
+    const keys = await generateKeyPair();
+    const key = await issueLicense(keys.privateKey, { venture: 't', tier: 'pro', id: 'cs_b', issued: '2026-09-18' });
+    expect(await verifyLicenseOnline(keys.publicKey, key, store)).toEqual({ valid: false, reason: 'blocked' });
+    expect(calls).toBe(1);
+  });
 });

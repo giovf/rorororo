@@ -80,7 +80,9 @@ async function init(): Promise<void> {
         status.textContent =
           reason === 'revoked'
             ? 'This key was refunded and is no longer valid.'
-            : 'That key is not valid for ReadFocus. Check for missing characters or reply to your receipt email.';
+            : reason === 'blocked'
+              ? 'This key has been activated too many times recently. If it\u2019s yours, reply to your receipt email and we\u2019ll sort it.'
+              : 'That key is not valid for ReadFocus. Check for missing characters or reply to your receipt email.';
         return;
       }
       const s = await loadSettings();

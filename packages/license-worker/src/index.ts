@@ -1,6 +1,6 @@
 import { createHandler, type Env } from './worker.js';
 
-export { MAX_ACTIVATIONS, createHandler, licenseEmail } from './worker.js';
+export { ACTIVATION_WINDOW_MS, MAX_ACTIVATIONS_PER_WINDOW, createHandler, licenseEmail } from './worker.js';
 export type { Deps, Env, KV } from './worker.js';
 
 const handler = createHandler();
