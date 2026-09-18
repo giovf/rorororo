@@ -164,3 +164,4 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
 - 2026-09-18: Task 13 done — V2 = ReadFocus (focus-reading Chrome extension), validated on store review evidence; RESEARCH.md in ventures/read-focus. Tasks 5/6 (telemetry) deferred: V2 collects no data. Task 14 (build) starting.
 - 2026-09-18: V2 ReadFocus MVP built (60 tests). Owner-action #3 written (V2 unpacked test, Stripe payment link, Cloudflare). Landing: product cards updated, readfocus.html + thanks.html added.
 - 2026-09-18: V1 convert: Light/Dark mode pairing + subset selection shipped (11.10, 11.11). 62 tests. Landing index live with both products. All remaining work is gated on owner actions #2 and #3.
+- 2026-09-18: V1 manual test round passed in full (incl. simulated paid). Task 11 done; task 12 (launch) in progress: release build produced (menu stripped), owner-action #4 READY.

@@ -625,7 +625,7 @@
         ],
         "complexity": 3,
         "recommendedSubtasks": 3,
-        "expansionPrompt": "Break down into: 1) Create docs/for-owner/actions/TEMPLATE.md with the standardized request format, 2) Create docs/for-owner/actions/001-phase0-setup.md with specific Phase 0 actions (Figma, Chrome Web Store, Lemon Squeezy, domain), 3) Create scripts/owner-actions.ts to list pending actions from the directory. Update ledger with planned costs.",
+        "expansionPrompt": "Break down into: 1) Create docs/owner-actions/TEMPLATE.md with the standardized request format, 2) Create docs/owner-actions/001-phase0-setup.md with specific Phase 0 actions (Figma, Chrome Web Store, Lemon Squeezy, domain), 3) Create scripts/owner-actions.ts to list pending actions from the directory. Update ledger with planned costs.",
         "updatedAt": "2026-09-17T22:56:25.113Z"
       },
       {
@@ -705,7 +705,7 @@
         "dependencies": [
           "10"
         ],
-        "status": "in-progress",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -797,9 +797,10 @@
               6
             ],
             "details": "1. Set up Vitest configuration:\n   - vitest.config.ts with TypeScript support\n   - Coverage reporting configuration\n   - Test environment setup for mocking Figma APIs\n2. Create test files structure:\n   - tests/core/*.test.ts - all core business logic\n   - tests/services/*.test.ts - usage tracking, payments\n   - tests/integration/*.test.ts - message passing, flows\n3. Write unit tests:\n   - All core functions with edge cases\n   - Usage tracking increment/reset/limit\n   - Payment status handling\n   - Message serialization/deserialization\n4. Create Figma API mocks:\n   - Mock clientStorage (get/set/delete)\n   - Mock figma.payments (status, request)\n   - Mock figma.ui.postMessage\n5. Create manual testing checklist (TESTING.md):\n   - [ ] Install plugin in Figma desktop\n   - [ ] Install plugin in Figma web\n   - [ ] Use free tier up to limit\n   - [ ] Verify upgrade prompt appears\n   - [ ] Test payment flow (sandbox)\n   - [ ] Verify paid unlock works\n6. Add npm script: `npm run test` and `npm run test:coverage`",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "1. Run full test suite passes with no failures.\n2. Achieve >85% code coverage on core logic.\n3. All mocked Figma API interactions tested.\n4. Complete manual testing checklist on both desktop and web.\n5. Document any platform-specific differences found.\n6. Run tests in CI-compatible headless mode.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T10:37:47.518Z"
           },
           {
             "id": 8,
@@ -849,7 +850,7 @@
         "complexity": 8,
         "recommendedSubtasks": 7,
         "expansionPrompt": "Break down into: 1) Create ventures/v1 workspace with venture.json manifest and build configuration, 2) Set up Figma plugin structure (manifest.json, esbuild config), 3) Implement core business logic in src/core/ with pure testable functions, 4) Build plugin UI with HTML/TypeScript in iframe context, 5) Implement free tier usage tracking with clientStorage and upgrade prompts, 6) Integrate Figma Payments API for paid unlock detection, 7) Add comprehensive unit tests and manual testing in Figma desktop/web. Plugin direction depends on Task 10 research.",
-        "updatedAt": "2026-09-18T01:03:03.477Z"
+        "updatedAt": "2026-09-18T10:37:47.518Z"
       },
       {
         "id": "12",
@@ -862,7 +863,7 @@
           "8",
           "11"
         ],
-        "status": "pending",
+        "status": "in-progress",
         "subtasks": [
           {
             "id": 1,
@@ -901,7 +902,8 @@
         ],
         "complexity": 3,
         "recommendedSubtasks": 3,
-        "expansionPrompt": "Break down into: 1) Complete all docs/launch/figma.md checklist items (create icons, cover image, screenshots, store copy), 2) Submit to Figma Community with pricing configuration and verify acceptance, 3) Update ventures/v1/venture.json to 'launched' status, update ledger, and create ventures/v1/METRICS.md for tracking. Mostly manual submission process with documentation updates."
+        "expansionPrompt": "Break down into: 1) Complete all docs/launch/figma.md checklist items (create icons, cover image, screenshots, store copy), 2) Submit to Figma Community with pricing configuration and verify acceptance, 3) Update ventures/v1/venture.json to 'launched' status, update ledger, and create ventures/v1/METRICS.md for tracking. Mostly manual submission process with documentation updates.",
+        "updatedAt": "2026-09-18T10:37:51.124Z"
       },
       {
         "id": "13",
@@ -1097,9 +1099,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T01:03:27.537Z",
+      "lastModified": "2026-09-18T10:37:51.124Z",
       "taskCount": 14,
-      "completedCount": 8,
+      "completedCount": 9,
       "tags": [
         "master"
       ]

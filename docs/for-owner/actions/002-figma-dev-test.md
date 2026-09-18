@@ -1,7 +1,7 @@
 # Owner action request #2 — load Variables Toolkit in Figma desktop (when asked)
 
 - **Date:** 2026-09-18
-- **Status:** **READY for round 1** (2026-09-18) — build is on the branch, checklist in `docs/for-owner/testing/variables-toolkit.md`
+- **Status:** **DONE** — round 1 passed in full on 2026-09-18
 - **Your time:** ~10 minutes per round
 - **Cost:** £0.00
 - **Blocks:** task 11.7 (manual testing), task 12 (launch)
