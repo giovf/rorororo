@@ -2,7 +2,7 @@
   "master": {
     "tasks": [
       {
-        "id": 1,
+        "id": "1",
         "title": "Create Portfolio Listing Script",
         "description": "Build scripts/portfolio.ts that reads all venture.json files from ventures/<slug>/, validates them with defineVenture(), and prints a formatted portfolio status summary. Wire it into npm run check to fail on invalid manifests.",
         "details": "Implementation:\n1. Create `scripts/portfolio.ts` that:\n   - Globs `ventures/*/venture.json` using Node's fs/promises + path\n   - Reads and parses each JSON file\n   - Calls `defineVenture()` from `@foundry/core` for validation (throws on invalid)\n   - Collects results and prints a table: slug | name | channel | status | pricing\n   - Uses console colors (no dep needed, Node 22 has stylized output)\n   - Exit code 1 if any manifest invalid\n2. Add a `scripts/` workspace in package.json or run via tsx\n3. Add `\"portfolio\": \"tsx scripts/portfolio.ts\"` and update `check` script to include it\n4. Create `scripts/tsconfig.json` extending root config\n\nPseudo-code:\n```typescript\nimport { glob } from 'node:fs/promises';\nimport { defineVenture, VentureManifest } from '@foundry/core';\n\nconst manifests = await glob('ventures/*/venture.json');\nlet hasError = false;\n\nfor (const path of manifests) {\n  const raw = JSON.parse(await readFile(path, 'utf8'));\n  try {\n    const v = defineVenture(raw);\n    console.log(`✓ ${v.slug} [${v.status}]`);\n  } catch (e) {\n    console.error(`✗ ${path}: ${e.message}`);\n    hasError = true;\n  }\n}\nprocess.exit(hasError ? 1 : 0);\n```",
@@ -52,7 +52,7 @@
         "updatedAt": "2026-09-17T22:56:25.102Z"
       },
       {
-        "id": 2,
+        "id": "2",
         "title": "Create Ledger Schema and Validation Script",
         "description": "Define docs/LEDGER.md with a structured markdown table schema for tracking all costs and revenues, then create scripts/ledger-check.ts to parse and validate entries, ensuring totals stay under the £100 capital cap.",
         "details": "Implementation:\n1. Create `docs/LEDGER.md` with structure:\n```markdown\n# Portfolio Ledger\n\nSource of truth for all money in/out.\n\n| Date       | Venture | Kind    | GBP    | Note                          |\n|------------|---------|---------|--------|-------------------------------|\n| 2026-09-17 | infra   | cost    | 5.00   | Chrome Web Store dev fee      |\n```\n\n2. Create `scripts/ledger-check.ts`:\n   - Parse markdown table using regex or simple line parsing (no external deps)\n   - Validate: date is ISO format, kind is 'cost'|'revenue', GBP is valid number\n   - Calculate totals: sum costs, sum revenue, net\n   - **Fail build if total planned costs exceed £100**\n   - Print summary: total spent, total earned, net\n3. Add to npm scripts and `check` command\n4. Export types: `LedgerRow { date: string; venture: string; kind: 'cost'|'revenue'; gbp: number; note: string }`\n\nPseudo-code:\n```typescript\nconst lines = (await readFile('docs/LEDGER.md', 'utf8')).split('\\n');\nconst rows = parseMarkdownTable(lines);\nlet costs = 0, revenue = 0;\nfor (const row of rows) {\n  if (row.kind === 'cost') costs += row.gbp;\n  else revenue += row.gbp;\n}\nif (costs > 100) {\n  console.error(`Capital cap exceeded: £${costs} > £100`);\n  process.exit(1);\n}\n```",
@@ -116,7 +116,7 @@
         "updatedAt": "2026-09-17T22:56:25.108Z"
       },
       {
-        "id": 3,
+        "id": "3",
         "title": "Build Licensing Package Core",
         "description": "Create packages/licensing with offline-first license key verification using signed key format. Include the core types, key generation, and offline verification logic without external dependencies.",
         "details": "Implementation:\n1. Create `packages/licensing/` workspace:\n   - package.json with name `@foundry/licensing`\n   - tsconfig.json extending root\n   - src/index.ts exporting all public API\n\n2. Key format (signed, offline-verifiable):\n```typescript\n// Key: base64url({ venture, tier, validUntil, signature })\ninterface LicensePayload {\n  venture: string;      // slug matching the product\n  tier: 'basic' | 'pro';\n  validUntil: string;   // ISO date or 'perpetual'\n  email?: string;       // optional, hashed for privacy\n}\n\ninterface LicenseKey {\n  payload: LicensePayload;\n  signature: string;    // HMAC-SHA256 of payload\n}\n```\n\n3. Functions:\n   - `generateLicenseKey(payload, secret): string` - for merchant webhook\n   - `verifyLicenseOffline(key, publicHint): LicensePayload | null` - fast check\n   - `parseLicenseKey(key): LicensePayload | null` - decode without verify\n\n4. Use Node crypto (HMAC-SHA256), no external deps\n5. Handle graceful expiry check: `isExpired(payload): boolean`\n\nPseudo-code:\n```typescript\nimport { createHmac } from 'node:crypto';\n\nexport function generateLicenseKey(payload: LicensePayload, secret: string): string {\n  const data = JSON.stringify(payload);\n  const sig = createHmac('sha256', secret).update(data).digest('base64url');\n  return Buffer.from(JSON.stringify({ payload, signature: sig })).toString('base64url');\n}\n\nexport function verifyLicenseOffline(key: string, secret: string): LicensePayload | null {\n  const { payload, signature } = JSON.parse(Buffer.from(key, 'base64url').toString());\n  const expected = createHmac('sha256', secret).update(JSON.stringify(payload)).digest('base64url');\n  if (signature !== expected) return null;\n  return payload;\n}\n```",
@@ -194,7 +194,7 @@
         "updatedAt": "2026-09-18T00:23:31.208Z"
       },
       {
-        "id": 4,
+        "id": "4",
         "title": "Add Licensing Online Verification Adapter",
         "description": "Extend packages/licensing with an adapter interface for online verification and implement Lemon Squeezy API integration plus an in-memory fake for testing.",
         "details": "Implementation:\n1. Define adapter interface:\n```typescript\ninterface LicenseVerifier {\n  verify(licenseKey: string): Promise<{\n    valid: boolean;\n    payload?: LicensePayload;\n    error?: string;\n  }>;\n  activate?(licenseKey: string, instanceId: string): Promise<boolean>;\n}\n```\n\n2. Implement `LemonSqueezyVerifier`:\n   - Uses Lemon Squeezy License API: POST /v1/licenses/validate\n   - Headers: Authorization Bearer with API key\n   - Returns parsed payload if valid, error message if not\n   - Handles rate limits (429) with exponential backoff\n\n3. Implement `InMemoryVerifier` for tests:\n   - Constructor takes a Map<string, LicensePayload>\n   - verify() checks map, simulates latency\n   - activate() adds to activated set\n\n4. Export factory: `createVerifier(type: 'lemon-squeezy' | 'memory', opts)`\n\n5. Add grace period caching:\n```typescript\ninterface CachedVerifier {\n  // Cache valid results for 24h, allowing offline use\n  verify(key: string): Promise<Result>;\n  clearCache(): void;\n}\n```\n\nPseudo-code:\n```typescript\nexport class LemonSqueezyVerifier implements LicenseVerifier {\n  constructor(private apiKey: string) {}\n  \n  async verify(licenseKey: string) {\n    const res = await fetch('https://api.lemonsqueezy.com/v1/licenses/validate', {\n      method: 'POST',\n      headers: { 'Authorization': `Bearer ${this.apiKey}` },\n      body: JSON.stringify({ license_key: licenseKey })\n    });\n    // Parse response...\n  }\n}\n```",
@@ -271,7 +271,7 @@
         "expansionPrompt": "Break down into: 1) Define LicenseVerifier interface with verify() and optional activate() methods, 2) Implement InMemoryVerifier for testing with configurable latency, 3) Implement LemonSqueezyVerifier with API calls and rate limit handling, 4) Add CachedVerifier wrapper with 24h TTL for offline grace period, 5) Create factory function createVerifier() and add integration tests with mocked fetch. Consider exponential backoff for 429 responses."
       },
       {
-        "id": 5,
+        "id": "5",
         "title": "Build Telemetry Package Client",
         "description": "Create packages/telemetry with a privacy-safe, opt-in telemetry client that batches events and posts to a configurable endpoint. No PII, just venture/event/day counts.",
         "details": "Implementation:\n1. Create `packages/telemetry/` workspace with standard structure\n\n2. Event model (privacy-safe):\n```typescript\ninterface TelemetryEvent {\n  venture: string;   // product slug\n  event: string;     // 'install' | 'activate' | 'paywall_view' | 'upgrade'\n  day: string;       // YYYY-MM-DD (UTC)\n  count: number;     // always 1 from client\n}\n\ninterface TelemetryConfig {\n  endpoint: string;\n  venture: string;\n  enabled: boolean;  // opt-in flag\n  batchInterval?: number;  // ms, default 30000\n}\n```\n\n3. Client implementation:\n```typescript\nexport class TelemetryClient {\n  private queue: TelemetryEvent[] = [];\n  \n  constructor(private config: TelemetryConfig) {\n    if (config.enabled) {\n      setInterval(() => this.flush(), config.batchInterval ?? 30000);\n    }\n  }\n  \n  track(event: string): void {\n    if (!this.config.enabled) return;\n    this.queue.push({\n      venture: this.config.venture,\n      event,\n      day: new Date().toISOString().slice(0, 10),\n      count: 1\n    });\n  }\n  \n  async flush(): Promise<void> {\n    if (!this.queue.length) return;\n    const batch = this.queue.splice(0, 100);\n    await fetch(this.config.endpoint, {\n      method: 'POST',\n      body: JSON.stringify(batch)\n    });\n  }\n}\n```\n\n4. Export singleton factory: `createTelemetry(config)`\n5. Ensure no PII is ever collected (no user IDs, IPs, etc.)",
@@ -332,7 +332,7 @@
         "expansionPrompt": "Break down into: 1) Create packages/telemetry workspace with TelemetryEvent and TelemetryConfig types, 2) Implement TelemetryClient class with queue management and track() method, 3) Add flush() with batching and POST to configured endpoint, 4) Implement createTelemetry() singleton factory and add unit tests. Ensure no PII fields exist in event shape. Follow packages/core workspace conventions."
       },
       {
-        "id": 6,
+        "id": "6",
         "title": "Build Telemetry Cloudflare Worker Collector",
         "description": "Create a Cloudflare Worker that receives telemetry batches, aggregates counts by venture/event/day, and stores in KV. Include a simple dashboard endpoint.",
         "details": "Implementation:\n1. Create `packages/telemetry-collector/` or `infra/telemetry-worker/`:\n   - wrangler.toml configuration\n   - KV namespace binding for storage\n\n2. Worker routes:\n   - POST /ingest - receives batch, aggregates, stores\n   - GET /stats?venture=X - returns counts for a venture\n   - GET /health - simple health check\n\n3. Storage schema in KV:\n   - Key: `{venture}:{event}:{day}` e.g., `v1-contrast:install:2026-09-17`\n   - Value: count (number)\n\n4. Worker code:\n```typescript\nexport default {\n  async fetch(request: Request, env: Env) {\n    const url = new URL(request.url);\n    \n    if (request.method === 'POST' && url.pathname === '/ingest') {\n      const events: TelemetryEvent[] = await request.json();\n      for (const e of events) {\n        const key = `${e.venture}:${e.event}:${e.day}`;\n        const current = parseInt(await env.TELEMETRY.get(key) || '0');\n        await env.TELEMETRY.put(key, String(current + e.count));\n      }\n      return new Response('ok');\n    }\n    \n    if (url.pathname === '/stats') {\n      const venture = url.searchParams.get('venture');\n      const list = await env.TELEMETRY.list({ prefix: `${venture}:` });\n      // Aggregate and return...\n    }\n  }\n};\n```\n\n5. Rate limiting: use Cloudflare's built-in or simple IP tracking\n6. Deploy script in package.json: `wrangler deploy`",
@@ -409,7 +409,7 @@
         "expansionPrompt": "Break down into: 1) Set up Cloudflare Worker project with wrangler.toml and KV namespace binding, 2) Implement POST /ingest endpoint for batch processing and KV aggregation, 3) Implement GET /stats endpoint with prefix-based KV listing, 4) Add GET /health endpoint and rate limiting, 5) Write local tests with wrangler dev and create deployment script. Consider atomic counter operations in KV."
       },
       {
-        "id": 7,
+        "id": "7",
         "title": "Create Landing Page Astro Template",
         "description": "Build packages/landing as an Astro template that generates product page, pricing, privacy policy, and terms from a venture.json manifest. Must be deployable to Cloudflare Pages/GitHub Pages at zero cost.",
         "details": "Implementation:\n1. Create `packages/landing/` with Astro:\n   - `npm create astro@latest` with blank template\n   - Configure for static output (adapter: none)\n   - TypeScript strict mode\n\n2. Template pages that read from a manifest:\n   - src/pages/index.astro - Hero, features, CTA\n   - src/pages/pricing.astro - Pricing table from manifest\n   - src/pages/privacy.astro - Generated privacy policy\n   - src/pages/terms.astro - Generated terms of service\n\n3. Configuration:\n```typescript\n// astro.config.mjs\nexport default defineConfig({\n  output: 'static',\n  site: 'https://example.com',\n});\n\n// src/config.ts\nimport manifest from '../../venture.json';\nexport const venture = manifest as VentureManifest;\n```\n\n4. Components:\n   - Hero.astro - Title, tagline, install/buy button\n   - PricingCard.astro - Shows pricing from manifest\n   - Footer.astro - Links to privacy, terms\n\n5. Styling: Tailwind CSS (minimal, fast)\n\n6. Deploy script: `npm run build && wrangler pages deploy dist`\n\n7. Privacy policy template includes:\n   - No PII collection\n   - Telemetry opt-in disclosure\n   - Contact email from manifest",
@@ -496,7 +496,7 @@
         "expansionPrompt": "Break down into: 1) Initialize Astro project in packages/landing with static output and TypeScript strict mode, 2) Create base layout and configuration to read from venture.json manifest, 3) Build index.astro with Hero and feature sections, 4) Create pricing.astro with PricingCard component for one-time/subscription models, 5) Generate privacy.astro and terms.astro from templates with manifest interpolation, 6) Add Tailwind CSS, configure Cloudflare Pages deployment, and verify Lighthouse scores."
       },
       {
-        "id": 8,
+        "id": "8",
         "title": "Create Launch Checklists",
         "description": "Write comprehensive markdown checklists for each distribution channel (Figma, Chrome, Web) covering store assets, listing copy, screenshots, privacy disclosures, and permissions justification.",
         "details": "Implementation:\n1. Create `docs/launch/figma.md`:\n   - [ ] Plugin icon (512x512 PNG)\n   - [ ] Cover image (1920x960)\n   - [ ] Plugin name (≤50 chars)\n   - [ ] Tagline (≤100 chars)\n   - [ ] Description (features, use cases)\n   - [ ] Categories selected\n   - [ ] Screenshots (3-5, showing UI)\n   - [ ] Privacy policy URL\n   - [ ] Support email\n   - [ ] Pricing configured in Figma Community\n   - [ ] Test on Figma desktop and web\n   - [ ] venture.json updated to 'launched'\n   - [ ] Ledger updated with any costs\n\n2. Create `docs/launch/chrome.md`:\n   - [ ] Extension icons (16, 48, 128 PNG)\n   - [ ] Promo images (small 440x280, large 920x680, marquee 1400x560)\n   - [ ] Store listing name\n   - [ ] Summary (≤132 chars)\n   - [ ] Description\n   - [ ] Category\n   - [ ] Screenshots (1280x800 or 640x400)\n   - [ ] Permissions justification for each permission\n   - [ ] Privacy policy URL\n   - [ ] Single purpose description\n   - [ ] Host permissions justified\n   - [ ] $5 developer fee paid (ledger)\n   - [ ] Test on Chrome stable\n   - [ ] manifest.json version bumped\n\n3. Create `docs/launch/web.md`:\n   - [ ] Landing page deployed\n   - [ ] Merchant of record account active\n   - [ ] Product created in MoR dashboard\n   - [ ] Webhook configured for license delivery\n   - [ ] Privacy policy page live\n   - [ ] Terms of service page live\n   - [ ] Test purchase flow end-to-end\n   - [ ] Email delivery verified",
@@ -571,7 +571,7 @@
         "expansionPrompt": "This is a documentation task that does not require expansion into subtasks. Create three markdown files (docs/launch/figma.md, docs/launch/chrome.md, docs/launch/web.md) with comprehensive checklists based on official platform documentation. Can be completed in a single focused session."
       },
       {
-        "id": 9,
+        "id": "9",
         "title": "Create Owner Action Request Template",
         "description": "Design a standardized format for batching identity-bound actions the owner must perform (account creation, payments, domain registration). Create the first request covering Phase 0 setup.",
         "details": "Implementation:\n1. Create `docs/owner-actions/` directory\n\n2. Define template format (`TEMPLATE.md`):\n```markdown\n# Owner Action Request #N\n\nDate: YYYY-MM-DD\nStatus: pending | completed\nEstimated time: X minutes\nCost: £X.XX\n\n## Actions Required\n\n### 1. [Action Name]\n- **What**: Description\n- **Where**: URL/location\n- **Credentials needed**: What to share back (keys, etc.)\n- **Cost**: £X.XX\n\n### 2. [Next Action]\n...\n\n## After Completion\n1. Update status above to 'completed'\n2. Add any keys to .env\n3. Update ledger with costs\n4. Notify via [method]\n\n## Notes\nAny additional context.\n```\n\n3. Create `docs/owner-actions/001-phase0-setup.md`:\n   - Figma account + Community payments setup (free, needs identity)\n   - Chrome Web Store developer registration ($5 = ~£4)\n   - Lemon Squeezy application (free, waitlist, needs identity)\n   - Domain registration (e.g., foundry-ventures.uk, ≤£10)\n   - Total estimated: ~£14\n\n4. Add to ledger as planned costs\n\n5. Create `scripts/owner-actions.ts` to list pending actions",
@@ -624,7 +624,7 @@
         "updatedAt": "2026-09-17T22:56:25.113Z"
       },
       {
-        "id": 10,
+        "id": "10",
         "title": "V1 Figma Plugin Discovery Research",
         "description": "Conduct market research on paid Figma plugins: survey top performers by installs/ratings, analyze review complaints for gaps, identify 3-5 candidate product directions, and write ventures/v1/RESEARCH.md with validation gate analysis.",
         "details": "Research process:\n1. Survey Figma Community paid plugins:\n   - Top 20 by install count\n   - Categories: accessibility, design systems, content/data, export, automation\n   - Note: price, rating, review count, last updated\n\n2. Analyze gaps via reviews:\n   - 1-3 star reviews for top plugins\n   - Common complaints (speed, features, UX)\n   - Unmet requests in comments\n\n3. Evaluate candidate directions against validation gate:\n   a. **Accessibility/contrast audit** - professionals (designers at agencies)\n   b. **Localization/copy management** - recurring (every project)\n   c. **Data population** - many competitors exist\n   d. **Export automation** - technical, crowded\n\n4. Write `ventures/v1/RESEARCH.md`:\n```markdown\n# V1 Research: Figma Plugin\n\n## Market Survey\n[Table of top paid plugins with metrics]\n\n## Gap Analysis\n[Review complaints, unmet needs]\n\n## Candidate Directions\n### 1. [Direction Name]\n- Target user: [who]\n- Job-to-be-done: [what]\n- Recurrence: [frequency]\n- Competitors: [list + their gaps]\n- Build estimate: [days]\n- Risk: [policy/technical]\n\n## Validation Gate\n- [x] Buyers are professionals: ...\n- [x] Job recurs: ...\n- [x] Paid competitor exists: ...\n- [x] Buildable in ≤1 week: ...\n- [x] No policy risk: ...\n\n## Decision\n[Chosen direction with rationale]\n```",
@@ -691,7 +691,7 @@
         "updatedAt": "2026-09-18T00:34:12.123Z"
       },
       {
-        "id": 11,
+        "id": "11",
         "title": "V1 Figma Plugin Build",
         "description": "Build the V1 Figma plugin based on research findings: core functionality, free tier with session limit, paid unlock via Figma payments API, and comprehensive unit tests.",
         "details": "Implementation:\n1. Create `ventures/v1/` workspace:\n   - package.json with name `@foundry/v1-[slug]`\n   - venture.json manifest\n   - tsconfig.json\n   - esbuild config for Figma plugin bundling\n\n2. Figma plugin structure:\n   - manifest.json (Figma plugin manifest)\n   - src/code.ts - main plugin logic (runs in Figma sandbox)\n   - src/ui.html + src/ui.ts - plugin UI (iframe)\n   - src/core/ - business logic (testable, pure functions)\n\n3. Core implementation:\n```typescript\n// src/core/analyzer.ts (example for contrast checker)\nexport function checkContrast(fg: RGB, bg: RGB): ContrastResult {\n  const ratio = calculateRatio(fg, bg);\n  return {\n    ratio,\n    wcagAA: ratio >= 4.5,\n    wcagAAA: ratio >= 7,\n  };\n}\n```\n\n4. Free tier limit:\n   - Track usage in clientStorage\n   - Limit: e.g., 5 checks per session\n   - Show upgrade prompt at limit\n\n5. Paid unlock:\n   - Use Figma Payments API: `figma.payments.getPluginPaymentStatus()`\n   - Check status on plugin load\n   - Unlock full functionality if paid\n\n6. Build scripts:\n   - `npm run build` - esbuild bundle\n   - `npm run dev` - watch mode\n   - `npm run test` - vitest on core logic",
@@ -763,9 +763,10 @@
               4
             ],
             "details": "1. Define usage tracking strategy:\n   - Session-based limit (e.g., 5 operations per session)\n   - Store in clientStorage: { usageCount: number, sessionId: string, lastReset: timestamp }\n2. Implement src/services/usage.ts:\n   ```typescript\n   export async function getUsageCount(): Promise<number>\n   export async function incrementUsage(): Promise<{ count: number; limitReached: boolean }>\n   export async function resetUsage(): Promise<void>\n   export function getUsageLimit(): number // configurable\n   ```\n3. Integrate usage tracking in code.ts:\n   - Check usage before each operation\n   - Block if limit reached and not paid\n   - Send limit status to UI\n4. Implement upgrade prompt flow in UI:\n   - Show remaining uses counter\n   - Display upgrade prompt modal at limit\n   - Clear messaging about what paid tier unlocks\n5. Handle session reset logic (new session = reset count)\n6. Add graceful fallback if clientStorage fails",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "1. Unit test usage tracking functions with mocked clientStorage.\n2. Test limit triggers correctly at exact threshold.\n3. Test session reset clears count.\n4. Verify upgrade prompt appears when limit reached.\n5. Test operations blocked after limit (free tier).\n6. Test operations continue working (paid tier).\n7. Test clientStorage failure fallback behavior.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:37:40.692Z"
           },
           {
             "id": 6,
@@ -800,27 +801,31 @@
             "title": "Chunked scanning with progress + cancel; skip widgets/connectors; hidden-layer and skip-instances switches",
             "description": "",
             "details": "",
-            "status": "pending",
+            "status": "done",
             "dependencies": [],
-            "parentTaskId": 11
+            "parentTaskId": 11,
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:37:40.699Z"
           },
           {
             "id": 9,
             "title": "Link number values (padding, gap, radius, opt-in size) to FLOAT variables",
             "description": "",
             "details": "",
-            "status": "pending",
+            "status": "done",
             "dependencies": [],
-            "parentTaskId": 11
+            "parentTaskId": 11,
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:37:40.709Z"
           }
         ],
         "complexity": 8,
         "recommendedSubtasks": 7,
         "expansionPrompt": "Break down into: 1) Create ventures/v1 workspace with venture.json manifest and build configuration, 2) Set up Figma plugin structure (manifest.json, esbuild config), 3) Implement core business logic in src/core/ with pure testable functions, 4) Build plugin UI with HTML/TypeScript in iframe context, 5) Implement free tier usage tracking with clientStorage and upgrade prompts, 6) Integrate Figma Payments API for paid unlock detection, 7) Add comprehensive unit tests and manual testing in Figma desktop/web. Plugin direction depends on Task 10 research.",
-        "updatedAt": "2026-09-18T00:28:22.369Z"
+        "updatedAt": "2026-09-18T00:37:40.709Z"
       },
       {
-        "id": 12,
+        "id": "12",
         "title": "V1 Figma Plugin Launch",
         "description": "Prepare all store assets per the launch checklist, submit V1 for Figma Community review, update venture.json status, and record in ledger.",
         "details": "Launch process:\n1. Complete `docs/launch/figma.md` checklist:\n   - Create 512x512 icon (consistent brand style)\n   - Create 1920x960 cover image\n   - Write compelling store copy:\n     - Name: [Product Name] (≤50 chars)\n     - Tagline: [One-liner value prop] (≤100 chars)\n     - Description: Problem, solution, features, how it works\n   - Capture 3-5 screenshots showing key flows\n   - Select appropriate categories\n\n2. Figma Community submission:\n   - Navigate to Figma > Resources > Publish\n   - Upload all assets\n   - Configure pricing (one-time or subscription)\n   - Set privacy policy URL (from landing page)\n   - Submit for review\n\n3. Post-submission:\n   - Update `ventures/v1/venture.json`:\n     ```json\n     {\n       \"status\": \"launched\",\n       \"statusChangedOn\": \"2026-09-XX\"\n     }\n     ```\n   - Run `scripts/portfolio.ts` to verify\n   - Update ledger with any costs (usually £0 for Figma)\n\n4. Set 30-day review reminder:\n   - Create `ventures/v1/METRICS.md` to track:\n     - Installs, paid conversions, revenue\n     - Review feedback\n     - Bugs/issues reported",
@@ -872,7 +877,7 @@
         "expansionPrompt": "Break down into: 1) Complete all docs/launch/figma.md checklist items (create icons, cover image, screenshots, store copy), 2) Submit to Figma Community with pricing configuration and verify acceptance, 3) Update ventures/v1/venture.json to 'launched' status, update ledger, and create ventures/v1/METRICS.md for tracking. Mostly manual submission process with documentation updates."
       },
       {
-        "id": 13,
+        "id": "13",
         "title": "V2 Chrome Extension Discovery Research",
         "description": "Conduct market research on Chrome Web Store paid/freemium extensions: analyze successful e-commerce seller tools, information extraction utilities, and BYO-API-key AI helpers. Document findings in ventures/v2/RESEARCH.md.",
         "details": "Research process:\n1. Survey Chrome Web Store extensions:\n   - Filter by category: Productivity, Shopping\n   - Look for: user counts >10k, paid or freemium\n   - Note: pricing model, reviews, last updated\n\n2. Candidate directions from PRD:\n   a. **E-commerce seller utilities** - Amazon/eBay sellers (professionals with money)\n   b. **Information extraction/export** - must use official APIs only, no scraping\n   c. **BYO-API-key AI helpers** - user provides their OpenAI/Anthropic key, zero serving cost\n\n3. Policy/ToS check for each:\n   - Chrome Web Store policies (no deceptive, no scraping ToS-protected sites)\n   - Target platform ToS (Amazon, eBay, etc.)\n   - List any restricted permissions to avoid\n\n4. Write `ventures/v2/RESEARCH.md`:\n```markdown\n# V2 Research: Chrome Extension\n\n## Market Survey\n[Table of relevant extensions]\n\n## Policy Analysis\n- Chrome Web Store: [relevant policies]\n- Target platforms: [ToS constraints]\n\n## Candidate Directions\n### 1. [Direction]\n- Target user: [who]\n- Recurring job: [what]\n- Revenue model: [freemium with X limit]\n- Competitors: [gaps]\n- Technical approach: [APIs used]\n- Policy risk: [assessment]\n\n## Validation Gate\n[All criteria checked]\n\n## Decision\n[Chosen direction]\n```\n\n5. Align with V1 learnings (what worked/didn't)",
@@ -938,7 +943,7 @@
         "expansionPrompt": "Break down into: 1) Survey Chrome Web Store for paid/freemium extensions in Productivity and Shopping categories with >10k users, 2) Analyze Chrome Web Store policies and target platform ToS for each candidate direction, 3) Evaluate candidate directions (e-commerce tools, info extraction, BYO-API AI helpers) against validation gate, 4) Write ventures/v2/RESEARCH.md incorporating learnings from V1 launch. Apply V1 learnings about what worked."
       },
       {
-        "id": 14,
+        "id": "14",
         "title": "V2 Chrome Extension Build and Launch",
         "description": "Build V2 Chrome extension using WXT framework with freemium model, integrate @foundry/licensing for paywall, deploy landing page from template, and submit to Chrome Web Store.",
         "details": "Implementation:\n1. Create `ventures/v2/` workspace:\n   - Initialize with WXT: `npm create wxt@latest`\n   - Configure for Chrome MV3\n   - Add @foundry/licensing, @foundry/telemetry deps\n\n2. Extension structure (WXT):\n```\nventures/v2/\n├── src/\n│   ├── entrypoints/\n│   │   ├── background.ts\n│   │   ├── content.ts (if needed)\n│   │   └── popup/\n│   │       ├── index.html\n│   │       └── main.ts\n│   ├── core/           # Business logic\n│   └── utils/\n├── wxt.config.ts\n├── package.json\n└── venture.json\n```\n\n3. Freemium implementation:\n   - Free tier: limited uses per day (stored in chrome.storage)\n   - Paywall: show upgrade prompt at limit\n   - License check: call @foundry/licensing with cached verification\n   - Unlock: paste license key in popup, verify, store\n\n4. Landing page:\n   - Copy packages/landing template to ventures/v2/landing\n   - Configure with V2 manifest\n   - Deploy to Cloudflare Pages\n\n5. Chrome Web Store submission:\n   - Complete docs/launch/chrome.md checklist\n   - $5 developer fee (owner action)\n   - Submit for review\n\n6. Post-launch:\n   - Update manifest, ledger\n   - Enable telemetry\n   - Set 30-day review",
@@ -1058,14 +1063,12 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T00:34:12.124Z",
+      "lastModified": "2026-09-18T00:37:40.709Z",
       "taskCount": 14,
       "completedCount": 5,
       "tags": [
         "master"
-      ],
-      "created": "2026-09-18T00:35:28.718Z",
-      "description": "Tasks for master context"
+      ]
     }
   }
 }
