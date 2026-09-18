@@ -154,3 +154,19 @@ robustness and support responsiveness are where paid plugins lose users.
 2. **Number variables**: link padding, gap, corner radius and (opt-in) width/height to FLOAT
    variables, with sensible exclusions ("Auto" spacing, hug/fill sizes).
 3. **Listing clarity**: "$12 one-time, per Figma account" spelled out; refund policy linked.
+
+### More rivals (comments harvested later on 2026-09-18)
+- **Variable Utilities** ($17 × 181): "no longer works with Figma's recent updates", copy/paste
+  variables "always spinning", clientStorage errors; asks: move variables between
+  collections, **re-connect broken links to library variables with the same name**.
+- **Design System Organizer** (external licence, 205k users): swap broken by *slots*; "Mark as
+  swap target no longer works"; no feedback on what was swapped; **licence server down**
+  ("SERVER CONNECTION ERROR", suspended page), licence emails lost for a month.
+- **Export/Import Variables** (free, 90k): import fails at ~2,800 variables; alias references
+  detached ("useless w/o references"); wants hex output and multi-collection export.
+
+Takeaways added to the plan: (1) keep following Figma API changes fast — every rival lost
+users to breakage after updates (slots, storage); (2) V1.1 candidate feature with clear
+demand: **relink local/broken variables to library variables by name**; (3) V1 uses Figma's
+own checkout — the external-licence failures above are a real reason buyers prefer it; V2's
+keys are offline-verifiable for the same reason.

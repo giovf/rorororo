@@ -157,3 +157,4 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
   (colour free; text/effect paid), hygiene (unused/duplicates/broken; delete paid). 39 tests.
   Owner-action #2 (Figma desktop test) is READY. Task 3 (licensing) done. Tasks 10 done; 11
   in progress (11.7 manual test pending).
+- 2026-09-18: Task 4 done (Stripe webhook licence issuer + worker + revocation). Task 8 done (launch checklists). Rival comments for 3 more plugins folded into RESEARCH.md. 50 tests.
