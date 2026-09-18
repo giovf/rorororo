@@ -22,7 +22,8 @@
     "test:watch": "vitest",
     "check": "npm run typecheck && npm run portfolio && npm run ledger && npm run lint && npm run format:check && npm run test",
     "portfolio": "node --disable-warning=ExperimentalWarning scripts/portfolio.ts",
-    "ledger": "node --disable-warning=ExperimentalWarning scripts/ledger-check.ts"
+    "ledger": "node --disable-warning=ExperimentalWarning scripts/ledger-check.ts",
+    "licensing:keygen": "node --disable-warning=ExperimentalWarning scripts/licensing-keygen.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

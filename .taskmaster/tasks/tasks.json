@@ -123,7 +123,7 @@
         "testStrategy": "1. Generate a key, verify it returns the correct payload.\n2. Tamper with payload bytes, verify verification fails.\n3. Test expired key detection with past validUntil date.\n4. Test perpetual keys always pass expiry check.\n5. Fuzz test with malformed base64 inputs, verify graceful null returns.",
         "priority": "high",
         "dependencies": [],
-        "status": "pending",
+        "status": "in-progress",
         "subtasks": [
           {
             "id": 1,
@@ -190,7 +190,8 @@
         ],
         "complexity": 5,
         "recommendedSubtasks": 5,
-        "expansionPrompt": "Break down into: 1) Create packages/licensing workspace structure (package.json, tsconfig.json extending root), 2) Define LicensePayload and LicenseKey types with tier and expiry handling, 3) Implement generateLicenseKey() using Node crypto HMAC-SHA256, 4) Implement verifyLicenseOffline() with signature validation, 5) Add parseLicenseKey() and isExpired() utilities with comprehensive unit tests. Reference existing packages/core structure for workspace conventions."
+        "expansionPrompt": "Break down into: 1) Create packages/licensing workspace structure (package.json, tsconfig.json extending root), 2) Define LicensePayload and LicenseKey types with tier and expiry handling, 3) Implement generateLicenseKey() using Node crypto HMAC-SHA256, 4) Implement verifyLicenseOffline() with signature validation, 5) Add parseLicenseKey() and isExpired() utilities with comprehensive unit tests. Reference existing packages/core structure for workspace conventions.",
+        "updatedAt": "2026-09-18T00:22:14.503Z"
       },
       {
         "id": "4",
@@ -1033,7 +1034,7 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T00:04:04.827Z",
+      "lastModified": "2026-09-18T00:22:14.503Z",
       "taskCount": 14,
       "completedCount": 3,
       "tags": [
