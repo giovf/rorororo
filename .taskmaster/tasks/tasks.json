@@ -888,7 +888,7 @@
         "dependencies": [
           "12"
         ],
-        "status": "pending",
+        "status": "in-progress",
         "subtasks": [
           {
             "id": 1,
@@ -942,7 +942,8 @@
         ],
         "complexity": 4,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Break down into: 1) Survey Chrome Web Store for paid/freemium extensions in Productivity and Shopping categories with >10k users, 2) Analyze Chrome Web Store policies and target platform ToS for each candidate direction, 3) Evaluate candidate directions (e-commerce tools, info extraction, BYO-API AI helpers) against validation gate, 4) Write ventures/v2/RESEARCH.md incorporating learnings from V1 launch. Apply V1 learnings about what worked."
+        "expansionPrompt": "Break down into: 1) Survey Chrome Web Store for paid/freemium extensions in Productivity and Shopping categories with >10k users, 2) Analyze Chrome Web Store policies and target platform ToS for each candidate direction, 3) Evaluate candidate directions (e-commerce tools, info extraction, BYO-API AI helpers) against validation gate, 4) Write ventures/v2/RESEARCH.md incorporating learnings from V1 launch. Apply V1 learnings about what worked.",
+        "updatedAt": "2026-09-18T00:44:36.213Z"
       },
       {
         "id": "14",
@@ -1065,7 +1066,7 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T00:41:10.424Z",
+      "lastModified": "2026-09-18T00:44:36.213Z",
       "taskCount": 14,
       "completedCount": 7,
       "tags": [
