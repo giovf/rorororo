@@ -6,6 +6,9 @@
     },
     {
       "path": "packages/licensing/tsconfig.build.json"
+    },
+    {
+      "path": "packages/license-worker/tsconfig.build.json"
     }
   ]
 }

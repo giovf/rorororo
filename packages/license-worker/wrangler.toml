@@ -1,0 +1,12 @@
+# Deploy: npx wrangler deploy (needs CLOUDFLARE_API_TOKEN). Secrets via `wrangler secret put`:
+#   STRIPE_WEBHOOK_SECRET, LICENSE_SIGNING_KEY, RESEND_API_KEY, ADMIN_TOKEN
+name = "foundry-licenses"
+main = "dist/index.js"
+compatibility_date = "2026-09-01"
+
+[[kv_namespaces]]
+binding = "LICENSES"
+id = "REPLACE_AFTER_wrangler_kv_namespace_create_LICENSES"
+
+[vars]
+FROM_EMAIL = "Foundry <info@gankdat.com>"

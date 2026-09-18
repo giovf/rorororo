@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Foundry \u2014 a portfolio of small, self-funding digital products built and operated by Claude Code.",
+  "description": "Foundry — a portfolio of small, self-funding digital products built and operated by Claude Code.",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=22"
@@ -27,6 +27,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
+    "@resvg/resvg-js": "^2.6.2",
     "@types/node": "^26.6.1",
     "eslint": "^10.10.0",
     "eslint-config-prettier": "^10.1.8",

@@ -503,7 +503,7 @@
         "testStrategy": "1. Review each checklist for completeness against platform documentation.\n2. Create dummy venture and walk through checklist, verify no gaps.\n3. Cross-reference with official store guidelines (Figma, Chrome) for accuracy.\n4. Get feedback after first real submission, update checklists.",
         "priority": "medium",
         "dependencies": [],
-        "status": "pending",
+        "status": "done",
         "subtasks": [
           {
             "id": 1,
@@ -568,7 +568,8 @@
         ],
         "complexity": 2,
         "recommendedSubtasks": 0,
-        "expansionPrompt": "This is a documentation task that does not require expansion into subtasks. Create three markdown files (docs/launch/figma.md, docs/launch/chrome.md, docs/launch/web.md) with comprehensive checklists based on official platform documentation. Can be completed in a single focused session."
+        "expansionPrompt": "This is a documentation task that does not require expansion into subtasks. Create three markdown files (docs/launch/figma.md, docs/launch/chrome.md, docs/launch/web.md) with comprehensive checklists based on official platform documentation. Can be completed in a single focused session.",
+        "updatedAt": "2026-09-18T00:38:29.197Z"
       },
       {
         "id": "9",
@@ -1063,9 +1064,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T00:37:40.709Z",
+      "lastModified": "2026-09-18T00:38:29.197Z",
       "taskCount": 14,
-      "completedCount": 5,
+      "completedCount": 6,
       "tags": [
         "master"
       ]
