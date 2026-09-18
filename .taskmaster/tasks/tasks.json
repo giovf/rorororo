@@ -708,9 +708,10 @@
             "description": "Set up the foundational workspace structure for the V1 Figma plugin including package.json, venture.json manifest, TypeScript configuration, and esbuild bundling configuration.",
             "dependencies": [],
             "details": "1. Create `ventures/v1/` directory structure\n2. Initialize package.json with name `@foundry/v1-[slug]` (slug determined by Task 10 research outcome)\n3. Create venture.json manifest with required metadata (name, description, platform: 'figma', status: 'development', pricing model)\n4. Configure tsconfig.json with strict mode, appropriate target (ES2020+), and module resolution for Figma plugin environment\n5. Set up esbuild.config.js for Figma plugin bundling:\n   - Bundle code.ts to dist/code.js (Figma sandbox)\n   - Bundle ui.ts to dist/ui.js (iframe context)\n   - Configure external dependencies appropriately\n6. Add npm scripts: `build`, `dev` (watch mode), `test`\n7. Create .gitignore for dist/, node_modules/",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "1. Verify package.json has correct name pattern and all required fields.\n2. Validate venture.json against expected schema.\n3. Run `npm run build` and confirm it completes without errors.\n4. Verify tsconfig.json compiles TypeScript files correctly.\n5. Test `npm run dev` starts watch mode properly.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:28:22.343Z"
           },
           {
             "id": 2,
@@ -720,9 +721,10 @@
               1
             ],
             "details": "1. Create manifest.json with required Figma plugin fields:\n   - name, id (generate unique plugin ID), api version\n   - main: 'dist/code.js'\n   - ui: 'dist/ui.html'\n   - editorType: ['figma']\n   - permissions if needed (currentuser, etc.)\n2. Create src/code.ts skeleton:\n   - figma.showUI(__html__, { width, height })\n   - Message handling between sandbox and UI\n   - Plugin initialization logic\n3. Create src/ui.html template:\n   - Basic HTML structure with styles\n   - Script tag for ui.js bundle\n4. Create src/ui.ts:\n   - postMessage handlers for communication with code.ts\n   - UI state management setup\n5. Set up message type definitions for type-safe communication\n6. Update esbuild to properly bundle HTML with inlined JS",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "1. Load plugin in Figma desktop app and verify it opens UI without errors.\n2. Verify manifest.json validates against Figma's schema.\n3. Test bidirectional message passing between code.ts and ui.ts.\n4. Verify plugin loads in Figma web browser version.\n5. Check console for any sandbox or CSP errors.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:28:22.350Z"
           },
           {
             "id": 3,
@@ -733,9 +735,10 @@
               2
             ],
             "details": "1. Create src/core/ directory for all business logic\n2. Design core module structure based on Task 10 research outcome (example patterns):\n   - If accessibility: src/core/contrast.ts, src/core/wcag.ts\n   - If design system: src/core/tokens.ts, src/core/validation.ts\n   - If content: src/core/generator.ts, src/core/formatter.ts\n3. Implement pure functions with explicit types:\n   ```typescript\n   // Example pattern - actual implementation depends on Task 10\n   export interface CoreResult<T> {\n     success: boolean;\n     data?: T;\n     error?: string;\n   }\n   export function processInput(input: InputType): CoreResult<OutputType>\n   ```\n4. Keep Figma-specific code OUT of core/ - only pure TypeScript\n5. Create src/core/types.ts for shared type definitions\n6. Create src/core/index.ts for clean exports\n7. Add JSDoc comments for public API documentation",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "1. Unit test every exported function with valid inputs.\n2. Test edge cases: empty inputs, boundary values, malformed data.\n3. Test error handling paths return proper error results.\n4. Verify functions are pure (no side effects, deterministic).\n5. Measure code coverage, aim for >90% on core logic.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:28:22.354Z"
           },
           {
             "id": 4,
@@ -746,9 +749,10 @@
               3
             ],
             "details": "1. Design UI layout in src/ui.html:\n   - Clean, minimal design following Figma plugin conventions\n   - Responsive within typical plugin dimensions (300-400px width)\n   - Dark mode support (respect Figma theme)\n2. Implement src/ui.ts with full functionality:\n   - State management for UI (free/paid status, usage count, results)\n   - Event handlers for user interactions\n   - postMessage communication with code.ts\n   - Display core logic results from src/core/\n3. Add CSS styling:\n   - Use CSS variables for theming\n   - Match Figma's design language\n   - Loading states, error states, success states\n4. Implement upgrade prompt UI:\n   - Shown when free tier limit reached\n   - Clear value proposition\n   - Call-to-action button to trigger payment\n5. Create reusable UI components if needed\n6. Handle accessibility basics (keyboard nav, focus states)",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "1. Visual inspection in Figma desktop and web.\n2. Test all interactive elements respond correctly.\n3. Verify state transitions (free->limit reached->paid).\n4. Test dark mode appearance.\n5. Test keyboard navigation and focus management.\n6. Verify message passing displays results correctly.",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:28:22.361Z"
           },
           {
             "id": 5,
@@ -772,9 +776,10 @@
               5
             ],
             "details": "1. Create src/services/payments.ts:\n   ```typescript\n   export async function checkPaymentStatus(): Promise<{\n     isPaid: boolean;\n     userId?: string;\n   }>\n   export async function initiatePayment(): Promise<boolean>\n   ```\n2. Integrate Figma Payments API:\n   - Use `figma.payments.getPluginPaymentStatus()` on plugin load\n   - Handle PaymentStatus response (PAID, UNPAID, etc.)\n   - Store status for session duration\n3. Implement unlock flow:\n   - On load: check status -> set paid state -> bypass usage limits\n   - In UI: hide upgrade prompts if paid, show premium badge\n4. Add payment initiation:\n   - Call `figma.payments.requestPayment()` from upgrade prompt\n   - Handle payment completion callback\n   - Update UI state on successful payment\n5. Error handling:\n   - Network failures during payment check\n   - Invalid payment states\n   - Graceful degradation (default to free tier on error)\n6. Update manifest.json with payment-related configuration if required",
-            "status": "pending",
+            "status": "done",
             "testStrategy": "1. Mock figma.payments API for unit testing.\n2. Test PAID status unlocks full functionality.\n3. Test UNPAID status enforces free tier limits.\n4. Test payment initiation flow triggers correctly.\n5. Test payment completion updates state.\n6. Test error handling shows appropriate fallback.\n7. Manual test full payment flow in Figma (requires Figma payments sandbox).",
-            "parentId": "undefined"
+            "parentId": "undefined",
+            "updatedAt": "2026-09-18T00:28:22.369Z"
           },
           {
             "id": 7,
@@ -794,7 +799,7 @@
         "complexity": 8,
         "recommendedSubtasks": 7,
         "expansionPrompt": "Break down into: 1) Create ventures/v1 workspace with venture.json manifest and build configuration, 2) Set up Figma plugin structure (manifest.json, esbuild config), 3) Implement core business logic in src/core/ with pure testable functions, 4) Build plugin UI with HTML/TypeScript in iframe context, 5) Implement free tier usage tracking with clientStorage and upgrade prompts, 6) Integrate Figma Payments API for paid unlock detection, 7) Add comprehensive unit tests and manual testing in Figma desktop/web. Plugin direction depends on Task 10 research.",
-        "updatedAt": "2026-09-18T00:26:54.165Z"
+        "updatedAt": "2026-09-18T00:28:22.369Z"
       },
       {
         "id": "12",
@@ -1035,7 +1040,7 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T00:26:54.165Z",
+      "lastModified": "2026-09-18T00:28:22.369Z",
       "taskCount": 14,
       "completedCount": 4,
       "tags": [
