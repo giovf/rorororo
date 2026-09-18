@@ -13,8 +13,8 @@ Run top to bottom before every submission. Owner does the starred (★) steps.
 
 ## Listing assets
 - [ ] Icon 128×128 PNG (no text, readable at 32px).
-- [ ] Cover 1920×960 PNG (safe area centre 1600×800). Shows the plugin doing its job.
-- [ ] 3–5 screenshots or a 15–30 s GIF of the core flow.
+- [ ] Thumbnail (Figma's name for the cover) 1920×960 PNG (safe area centre 1600×800). Shows the plugin doing its job.
+- [ ] Carousel: 3–5 screenshots or a 15–30 s GIF of the core flow. Playground file optional.
 - [ ] Name ≤ 40 chars, front-loaded with the searched term (e.g. "Variables Toolkit — …").
 - [ ] Tagline ≤ 100 chars: the outcome, not the feature.
 - [ ] Description: first line = the job; then bullets per feature; "Free vs unlock" section;

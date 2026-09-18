@@ -21,9 +21,11 @@ paste is prepared.
 1. **Plugins → Development → Variables Toolkit → Publish…** (or Manage plugins → Publish).
 2. Name, tagline, description: copy from LISTING.md. Category **Design tools**; tags from
    the file; editor type **Figma Design** only.
-3. Icon: `icon-128.png`. Cover: `cover-1920x960.png`. Screenshots: take 3 from the demo
-   page — Link tab after a scan, Styles → Variables preview, Clean up report (Cmd+Shift+4
-   on a Mac, drag over the plugin panel).
+3. Images (Figma's names): **Icon** → `icon-128.png`; **Thumbnail** → `cover-1920x960.png`
+   (this is the cover); **Carousel** → 3 screenshots from the demo page — Link tab after a
+   scan, Styles → Variables preview, Clean up report (Cmd+Shift+4 on a Mac, drag over the
+   plugin panel). **Playground file** (optional): the file you tested in, with only the
+   "Variables Toolkit demo" page left, renamed "Variables Toolkit — try it".
 4. **Pricing**: Paid → **One-time payment** → **$12**. Free trial: choose the "custom"
    option (our free tier is built in) — the description already explains what's free.
 5. Support contact: `info@gankdat.com`. Community page: none needed.
