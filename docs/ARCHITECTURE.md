@@ -20,14 +20,17 @@ job, a paid competitor with a documented gap, ≤ 1 week to build, no policy/ToS
 
 ## Repo layout
 ```
-packages/core        venture manifest types + defineVenture() validation
-packages/licensing   license-key verification shared by paid products (planned)
-packages/telemetry   opt-in funnel event counting (planned)
-packages/landing     Astro landing-page template (planned)
-ventures/<slug>/     one workspace per product: venture.json, RESEARCH.md, src/
-docs/LEDGER.md       every pound in and out, per venture (planned)
-docs/launch/         per-channel launch checklists (planned)
-scripts/             portfolio listing, ledger checks (planned)
+packages/core            venture manifest types, portfolio loader, ledger parser
+packages/licensing       Ed25519 signed licence keys; Stripe webhook verify; revocation
+packages/license-worker  Cloudflare Worker: Stripe webhook → key → Resend email; status API
+packages/landing         static site (GitHub Pages: https://giovf.github.io/rorororo/)
+packages/telemetry       opt-in funnel event counting (planned, V2)
+ventures/<slug>/         one workspace per product: venture.json, RESEARCH.md, src/
+ventures/variables-toolkit   V1 Figma plugin (validated; awaiting owner test + launch)
+docs/LEDGER.md           every pound in and out, per venture (£100 cap enforced)
+docs/launch/             per-channel launch checklists
+docs/owner-actions/      batched requests that need the owner's identity/wallet
+scripts/                 portfolio listing, ledger check, licence keygen
 src/ environment/ data/   legacy Python prior art — reference only
 ```
 

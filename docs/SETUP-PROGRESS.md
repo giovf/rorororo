@@ -158,3 +158,6 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
   Owner-action #2 (Figma desktop test) is READY. Task 3 (licensing) done. Tasks 10 done; 11
   in progress (11.7 manual test pending).
 - 2026-09-18: Task 4 done (Stripe webhook licence issuer + worker + revocation). Task 8 done (launch checklists). Rival comments for 3 more plugins folded into RESEARCH.md. 50 tests.
+- 2026-09-18 (end of session block): listing assets (icon/cover via resvg) + LISTING.md
+  committed. Tasks done: 1,2,3,4,8,9,10. Task 11 awaiting 11.7 (owner test, action #2).
+  Next: task 13 (V2 Chrome discovery) in progress; 12 (V1 launch) blocked on owner test.
