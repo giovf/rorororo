@@ -9,3 +9,7 @@ const handler = createHandler();
 export const worker = {
   fetch: (request: Request, env: Env): Promise<Response> => handler(request, env),
 };
+
+// Workers require the module's default export to be the handler object.
+// eslint-disable-next-line no-restricted-syntax
+export default worker;
