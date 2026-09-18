@@ -2,15 +2,13 @@
 
 - **Date:** 2026-09-18 (rewritten after round 2 passed)
 - **Status:** provisioning **DONE 2026-09-18** (product, price, Payment Link, worker, KV, secrets, webhook). Three follow-ups remain:
-  1. **Resend**: `gankdat.com` is not verified in this Resend team → resend.com → Domains →
-     add `gankdat.com` → add the DNS records it shows (SPF/DKIM) → Verify. Or name another
-     domain that is already verified there and I'll switch the sender.
-  2. **Stripe key**: add **Promotion Codes: Write** (Coupons: Write is now on; the 100%-off
-     coupon exists, the code that customers type still needs this permission).
-  3. **Managed Payments**: Dashboard → Managed Payments → *Complete setup* → when it asks
-     which products to sell through Managed Payments, pick **ReadFocus — lifetime unlock**
-     only (leave your other project's products as they are) → finish. That is what makes
-     Stripe the merchant of record for ReadFocus sales.
+  1. ~~Resend~~ **done** — sender is `licences@mail.gankdat.com` (your verified subdomain),
+     reply-to `info@gankdat.com`; test licence email delivered 2026-09-18.
+  2. **Stripe key**: add **Promotion Codes: Write** (still missing). Then I create the
+     `OWNERTEST` code and you make a real £0 purchase at
+     https://buy.stripe.com/6oUdR2gdfcOtaJU22aefC00 — the key should land in your inbox
+     within a minute. That proves Stripe → worker → email.
+  3. ~~Managed Payments~~ **done** per owner 2026-09-18 (ReadFocus product selected).
 - **Your time:** ~10 minutes
 - **Cost:** £0.00
 - **Blocks:** ReadFocus store submission (task 14.6–14.8)

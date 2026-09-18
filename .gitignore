@@ -74,3 +74,5 @@ docs/for-owner/actions/plugin/
 # ── Obsidian vault state (owner reads docs/ in Obsidian)
 docs/.obsidian/
 dist-release/
+ventures/*/read-focus.zip
+*.zip

@@ -8,7 +8,8 @@ Claude runs the project; this folder is the only part written for you. Read top 
 | [actions/002-figma-dev-test.md](actions/002-figma-dev-test.md) | Load the Figma plugin — one-time setup |
 | [testing/variables-toolkit.md](testing/variables-toolkit.md) | Click-by-click test of the Figma plugin (no Figma knowledge needed) |
 | [actions/004-publish-figma-plugin.md](actions/004-publish-figma-plugin.md) | Publish the Figma plugin (after the paid steps pass) |
-| [actions/003-v2-test-and-payments.md](actions/003-v2-test-and-payments.md) | **Now:** three API keys so Claude can set up Stripe, Cloudflare and Resend itself |
+| [actions/003-v2-test-and-payments.md](actions/003-v2-test-and-payments.md) | **Now:** one Stripe permission, then a £0 test purchase |
+| [actions/005-publish-chrome-extension.md](actions/005-publish-chrome-extension.md) | **Next:** submit ReadFocus (screenshots + upload) |
 | [testing/read-focus.md](testing/read-focus.md) | Chrome extension walkthrough (rounds 1–2 passed) |
 
 ## Background (optional)
