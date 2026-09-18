@@ -11,7 +11,16 @@ import { readLocalStyles } from './figma/styles.js';
 import { createDemoPage } from './figma/demo.js';
 import type { LinkGroup, ToMain, ToUi } from './messages.js';
 
-if (figma.command === 'demo') {
+if (figma.command === 'dev-paid' || figma.command === 'dev-unpaid') {
+  // Development builds only: Figma ignores this once the plugin is published.
+  const type = figma.command === 'dev-paid' ? 'PAID' : 'UNPAID';
+  try {
+    figma.payments?.setPaymentStatusInDevelopment({ type });
+    figma.closePlugin(`Payment status set to ${type}. Now run Variables Toolkit → Open.`);
+  } catch (err: unknown) {
+    figma.closePlugin(`Couldn't set status: ${err instanceof Error ? err.message : String(err)}`);
+  }
+} else if (figma.command === 'demo') {
   createDemoPage()
     .then((name) => figma.closePlugin(`Created page "${name}". Now run Variables Toolkit → Open.`))
     .catch((err: unknown) => figma.closePlugin(`Demo failed: ${err instanceof Error ? err.message : String(err)}`));

@@ -16,8 +16,19 @@
       "command": "open"
     },
     {
+      "separator": true
+    },
+    {
       "name": "Create demo page (testing only)",
       "command": "demo"
+    },
+    {
+      "name": "Simulate PAID (testing only)",
+      "command": "dev-paid"
+    },
+    {
+      "name": "Simulate UNPAID (testing only)",
+      "command": "dev-unpaid"
     }
   ]
 }

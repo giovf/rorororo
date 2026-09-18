@@ -57,12 +57,12 @@ compare what you see with the "expect" lines. Send me screenshots of anything th
     delete". The Delete button is disabled.
 
 ## E. Paid mode (simulated)
-16. Menu **Plugins → Development → Variables Toolkit** — look for a **Set payment status**
-    or **Payments** item and choose **Paid** (Figma provides this for development builds).
-    Re-open the plugin. *Expect:* badge "unlocked"; Unlock button gone; in Clean up the
-    unused row has a working checkbox and **Delete selected** works; Text/Effect styles now
-    convert (Preview lists `Body/Regular` and `Shadow/Card`).
-17. Set payment status back to **Unpaid**.
+16. Menu **Plugins → Development → Variables Toolkit → Simulate PAID (testing only)**.
+    *Expect:* a toast "Payment status set to PAID". Then **… → Open**. *Expect:* badge
+    "unlocked"; Unlock button gone; in Clean up the unused row has a working checkbox and
+    **Delete selected** works; Text/Effect styles now convert (Preview lists `Body/Regular`
+    and `Shadow/Card`, and Create & bind reports them bound).
+17. **… → Simulate UNPAID (testing only)**, then **Open**. *Expect:* badge back to "free".
 
 ## F. Robustness (2 min)
 18. Draw a big page: select the white card (click it), press **Ctrl/Cmd+D** ten times to
