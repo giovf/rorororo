@@ -1,8 +1,8 @@
-# V2 research — Chrome extension (discovery, task 13)
+# V2 research — ReadFocus (Chrome extension; discovery, task 13)
 
-Status: **in progress** (2026-09-18). Method: web research for candidate niches → store
+Status: **validated 2026-09-18** — see §Decision. Method: web research for candidate niches → store
 pages pulled directly (users, rating, rating count, last update) + first page of reviews;
-raw in `cws-harvest-2026-09-18.json`. Chrome Web Store search/category pages are
+raw in `research/cws-harvest-2026-09-18.json`. Chrome Web Store search/category pages are
 client-rendered, so there is no whole-market harvest like Figma's; this is a targeted sample.
 
 ## V1 learnings applied
@@ -60,3 +60,43 @@ read all day; paid tiers already exist at $15 one-time, $30/yr and $59 lifetime.
 Casutt GmbH, CH) and the owner has pursued open-source projects over the name — the product
 must never use the word "Bionic". The owner also claims patent rights on the method; see the
 assessment below before any build starts.
+
+| ADHD Reader | 10,000 | 3.3 (32) | Sep 2023 | "wish I could fine-tune how much is bold"; breaks Google Keep; wants Docs/Word |
+| ADHD Reading Help | 7,000 | 4.0 (32) | Dec 2023 | "broken, not working at all" |
+| ADHD Reading (adhdreading.org) | 604 | 4.2 (5) | Feb 2026 | the polished one; $29/yr · $59 lifetime; "developers don't respond" |
+| ADHD Reading Focus | 25 | — | Apr 2026 | |
+
+### Legal assessment (reading niche)
+- **Trademark**: "Bionic Reading" registered in UK (UK00915969488), EU, US and 7 more; owner
+  has pursued projects over the name. → The word never appears in our name, listing, code
+  comments or marketing. We describe the technique generically ("fixation bolding",
+  "bold word starts").
+- **Patent**: the owner lists a single French publication (FR1755215); no UK, EU or US
+  patent is claimed. An independent implementation is not a UK legal problem; France is
+  the one exposure and is noted, not blocking. Copyright: our code is our own.
+- **Store policy**: no data collection at all (settings in `chrome.storage`), so the
+  2026 Limited Use / Disclosure rules are trivially met.
+
+## Decision (2026-09-18): **ReadFocus** — `ventures/read-focus`
+
+| Gate | Result |
+|---|---|
+| (a) buyers with money | ADHD/dyslexic/slow readers, students, all-day professional readers; Helperbird (500k) at $30/yr and ADHD Reading at $59 lifetime prove willingness to pay |
+| (b) recurring job | daily reading |
+| (c) paid rival with documented gap | Bionic Reading 2.4★/100k abandoned; Reader Mode 3.1★/100k crashes; Reader Mode Pro abandoned with licence-key friction; every ruler tool asks for PDF |
+| (d) ≤ 1 week build | yes — content script + popup + options + offline licence |
+| (e) policy/ToS risk | none; zero data collection; trademark avoided |
+
+**Product:** ReadFocus — fixation bolding (light/medium/heavy + fine strength), reading
+ruler / line focus, paragraph focus, dyslexia-friendly font switch (OpenDyslexic, Atkinson
+Hyperlegible — both OFL), per-site auto-apply and keyboard shortcut. Works on normal pages,
+Google Docs (via the canvas fallback is *not* possible — document as a known limit) and,
+in a later release, PDFs through a bundled PDF.js viewer (the single most-requested gap).
+**Free:** bolding presets + ruler. **Unlock $12 one-time** (Stripe Managed Payments, key
+by email, verified offline): fine strength, per-site profiles, fonts, focus modes, PDF
+viewer when it ships. Listed on Chrome, then Edge Add-ons and Firefox AMO (free channels).
+
+**Honest EV:** the polished newcomer in this category has 604 users after a year; the
+best-made simple tool (Reader Line) reached 20k in two. Plan for 5–20k users in year one
+at 1–2% conversion × $12 → $600–$4,800 gross, typically the low end. Portfolio shot #2;
+the multi-store listing is the main upside over V1.

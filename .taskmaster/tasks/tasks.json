@@ -279,7 +279,7 @@
         "testStrategy": "1. Create client with enabled=false, call track(), verify no queue buildup.\n2. Create enabled client, track events, verify queue contains correctly shaped events.\n3. Mock fetch, call flush(), verify POST body matches expected format.\n4. Test batch interval fires and clears queue.\n5. Verify no PII fields exist in any event shape.",
         "priority": "medium",
         "dependencies": [],
-        "status": "pending",
+        "status": "deferred",
         "subtasks": [
           {
             "id": 1,
@@ -330,7 +330,8 @@
         ],
         "complexity": 4,
         "recommendedSubtasks": 4,
-        "expansionPrompt": "Break down into: 1) Create packages/telemetry workspace with TelemetryEvent and TelemetryConfig types, 2) Implement TelemetryClient class with queue management and track() method, 3) Add flush() with batching and POST to configured endpoint, 4) Implement createTelemetry() singleton factory and add unit tests. Ensure no PII fields exist in event shape. Follow packages/core workspace conventions."
+        "expansionPrompt": "Break down into: 1) Create packages/telemetry workspace with TelemetryEvent and TelemetryConfig types, 2) Implement TelemetryClient class with queue management and track() method, 3) Add flush() with batching and POST to configured endpoint, 4) Implement createTelemetry() singleton factory and add unit tests. Ensure no PII fields exist in event shape. Follow packages/core workspace conventions.",
+        "updatedAt": "2026-09-18T00:52:12.078Z"
       },
       {
         "id": "6",
@@ -342,7 +343,7 @@
         "dependencies": [
           "5"
         ],
-        "status": "pending",
+        "status": "deferred",
         "subtasks": [
           {
             "id": 1,
@@ -407,7 +408,8 @@
         ],
         "complexity": 6,
         "recommendedSubtasks": 5,
-        "expansionPrompt": "Break down into: 1) Set up Cloudflare Worker project with wrangler.toml and KV namespace binding, 2) Implement POST /ingest endpoint for batch processing and KV aggregation, 3) Implement GET /stats endpoint with prefix-based KV listing, 4) Add GET /health endpoint and rate limiting, 5) Write local tests with wrangler dev and create deployment script. Consider atomic counter operations in KV."
+        "expansionPrompt": "Break down into: 1) Set up Cloudflare Worker project with wrangler.toml and KV namespace binding, 2) Implement POST /ingest endpoint for batch processing and KV aggregation, 3) Implement GET /stats endpoint with prefix-based KV listing, 4) Add GET /health endpoint and rate limiting, 5) Write local tests with wrangler dev and create deployment script. Consider atomic counter operations in KV.",
+        "updatedAt": "2026-09-18T00:52:12.085Z"
       },
       {
         "id": "7",
@@ -1066,7 +1068,7 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-18T00:44:36.213Z",
+      "lastModified": "2026-09-18T00:52:12.085Z",
       "taskCount": 14,
       "completedCount": 7,
       "tags": [

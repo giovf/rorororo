@@ -170,7 +170,7 @@ validUntil, tier }`, `TelemetryEvent { venture, event, day, count }`, ledger row
 
 ## Phase 2 — V2 Chrome extension
 - Discovery as above for the Chrome Web Store; product chosen against the gate, with an
-  explicit policy/ToS check.
+  explicit policy/ToS check. (Done 2026-09-18: **ReadFocus**, `ventures/read-focus`.)
 - Build with WXT; paywall via `@foundry/licensing`; landing page from the kit.
 - Listing + submission; measure.
 
