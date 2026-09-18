@@ -32,8 +32,10 @@ paste is prepared.
    scan, Styles → Variables preview, Clean up report (Cmd+Shift+4 on a Mac, drag over the
    plugin panel). **Playground file** (optional): the file you tested in, with only the
    "Variables Toolkit demo" page left, renamed "Variables Toolkit — try it".
-4. **Pricing**: Paid → **One-time payment** → **$12**. Free trial: choose the "custom"
-   option (our free tier is built in) — the description already explains what's free.
+4. **Monetization**: tick **Sell this resource on Community**, one-time payment if asked,
+   amount **12** (USD). There is no free-trial setting in the dialog — the free tier is
+   built into the plugin, and the description already explains what's free vs unlocked,
+   which is all Figma requires.
 5. Support contact: `info@gankdat.com`. Community page: none needed.
 6. Submit for review. Figma says 5–10 business days; lately it runs longer.
 - **Give back:** "submitted" + the date, and later the approval email. I'll flip the venture
