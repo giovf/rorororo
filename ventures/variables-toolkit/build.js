@@ -4,7 +4,13 @@ import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import process from 'node:process';
 
 const watch = process.argv.includes('--watch');
+const release = process.argv.includes('--release');
 await mkdir('dist', { recursive: true });
+
+// Release builds ship no testing-only menu commands (demo page, simulated payments).
+const manifest = JSON.parse(await readFile('manifest.json', 'utf8'));
+if (release) delete manifest.menu;
+await writeFile('dist/manifest.json', JSON.stringify(manifest, null, 2) + '\n');
 
 const main = {
   entryPoints: ['src/code.ts'],
@@ -13,6 +19,7 @@ const main = {
   target: 'es2020',
   format: 'iife',
   logLevel: 'info',
+  define: { __DEV__: String(!release) },
 };
 const uiJs = {
   entryPoints: ['src/ui/ui.ts'],

@@ -3,7 +3,7 @@
 Run top to bottom before every submission. Owner does the starred (★) steps.
 
 ## Build & code
-- [ ] `npm run check` green; `npm run build -w @foundry/<venture>` produces `dist/code.js` + `dist/ui.html`.
+- [ ] `npm run check` green; `npm run build:release -w @foundry/<venture>` produces `dist/` with a manifest that has **no** testing-only menu commands.
 - [ ] `manifest.json`: real plugin `id`; `documentAccess: "dynamic-page"`; `networkAccess`
       lists only domains actually used (`none` if none); `permissions` only what's used.
 - [ ] Manual test checklist (`TESTING.md`) passed in Figma desktop, free **and** paid state.

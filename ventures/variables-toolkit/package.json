@@ -6,7 +6,8 @@
   "description": "Figma plugin: link raw values to variables, convert styles to variables, clean up collections.",
   "scripts": {
     "build": "node build.js",
-    "dev": "node build.js --watch"
+    "dev": "node build.js --watch",
+    "build:release": "node build.js --release"
   },
   "devDependencies": {
     "@figma/plugin-typings": "^1.138.0",
