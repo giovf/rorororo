@@ -60,12 +60,17 @@ async function interFonts() {
   return files;
 }
 
-function iconSvg() {
-  // Clean white tile, faint edge (visible on white toolbars); "Aa" in a Times-style serif,
-  // bold capital + regular lowercase, centred as one text run.
+function iconSvg({ ruler = true } = {}) {
+  // White tile; "Read" / "Focus" on two lines with the first letter bold — the product's
+  // own effect — and, optionally, the reading ruler as a soft band behind the second line.
+  const band = ruler
+    ? `<rect x="8" y="70" width="112" height="40" rx="8" fill="#FDE68A" opacity="0.9"/>`
+    : '';
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <rect x="1" y="1" width="126" height="126" rx="26" fill="#FFFFFF" stroke="#D9D6CE" stroke-width="2"/>
-  <text x="64" y="94" font-family="Tinos" font-size="88" text-anchor="middle" fill="#0F172A"><tspan font-weight="700">A</tspan><tspan font-weight="400">a</tspan></text>
+  ${band}
+  <text x="64" y="58" font-family="Tinos" font-size="44" text-anchor="middle" fill="#0F172A"><tspan font-weight="700">R</tspan><tspan font-weight="400">ead</tspan></text>
+  <text x="64" y="102" font-family="Tinos" font-size="44" text-anchor="middle" fill="#0F172A"><tspan font-weight="700">F</tspan><tspan font-weight="400">ocus</tspan></text>
 </svg>`;
 }
 
