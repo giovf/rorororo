@@ -9,7 +9,9 @@
     "dev": "node build.js --watch",
     "zip": "node build.js && cd dist && zip -qr ../read-focus.zip . && cd .. && ls -la read-focus.zip",
     "build:test": "node build.js --test",
-    "e2e": "node build.js --test && node --disable-warning=ExperimentalWarning e2e/run.ts"
+    "e2e": "node build.js --test && node --disable-warning=ExperimentalWarning e2e/run.ts",
+    "build:firefox": "node build.js --firefox",
+    "zip:firefox": "node build.js --firefox && cd dist-firefox && zip -qr ../read-focus-firefox.zip . && cd .. && ls -la read-focus-firefox.zip"
   },
   "dependencies": {
     "@foundry/licensing": "0.1.0"

@@ -6,11 +6,21 @@ import path from 'node:path';
 import process from 'node:process';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
-const dist = path.join(here, process.argv.includes('--test') ? 'dist-test' : 'dist');
+const dist = path.join(
+  here,
+  process.argv.includes('--test')
+    ? 'dist-test'
+    : process.argv.includes('--firefox')
+      ? 'dist-firefox'
+      : 'dist',
+);
 const watch = process.argv.includes('--watch');
 // --test: a build for automated tests that pre-grants one local origin (no permission
 // prompt to click) and registers the content script for it statically.
 const test = process.argv.includes('--test');
+// --firefox: same code, Firefox-shaped manifest (event page instead of service worker,
+// gecko id for AMO signing). Chrome-only keys are dropped.
+const firefox = process.argv.includes('--firefox');
 const cache = path.join(here, '..', '..', 'node_modules', '.cache', 'fonts');
 
 const FONTS = {
@@ -94,6 +104,13 @@ async function icons() {
 async function statics() {
   await mkdir(dist, { recursive: true });
   const manifest = JSON.parse(await readFile(path.join(here, 'manifest.json'), 'utf8'));
+  if (firefox) {
+    manifest.background = { scripts: ['background.js'], type: 'module' };
+    manifest.browser_specific_settings = {
+      gecko: { id: 'readfocus@gankdat.com', strict_min_version: '128.0' },
+    };
+    delete manifest.minimum_chrome_version;
+  }
   if (test) {
     manifest.name = manifest.name + ' (test build)';
     manifest.host_permissions = ['http://127.0.0.1/*'];
