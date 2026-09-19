@@ -188,3 +188,4 @@ variables; (2) pick a subset of styles to convert; (3) toast with counts after e
 | Date | Event | Users | Likes | Purchases | Notes |
 |---|---|---|---|---|---|
 | 2026-09-18 | Submitted to Figma Community review | — | — | — | release build; $12 one-time |
+| 2026-09-19 | Daily check | — | — | — | not live yet |
