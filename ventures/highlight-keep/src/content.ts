@@ -46,22 +46,45 @@ document.documentElement.appendChild(ui);
 let pendingRange: Range | null = null;
 let editing: string | null = null;
 
+function button(cls: string, text: string, title: string, onClick: () => void): HTMLButtonElement {
+  const b = document.createElement('button');
+  b.className = cls;
+  b.textContent = text;
+  b.title = title;
+  b.type = 'button';
+  b.onclick = onClick;
+  return b;
+}
+
 function showToolbar(x: number, y: number, target: 'new' | Highlight): void {
   const colours = pro ? COLOURS : FREE_COLOURS;
   const isNew = target === 'new';
-  ui.innerHTML =
-    colours.map((c) => `<button class="hk-dot hk-${c}" data-colour="${c}" title="${c}"></button>`).join('') +
-    (pro ? `<button class="hk-btn" data-act="note" title="Add a note">✎</button>` : '') +
-    (isNew ? '' : `<button class="hk-btn" data-act="delete" title="Remove highlight">✕</button>`) +
-    (pro || isNew ? '' : `<span class="hk-hint">Unlock for colours & notes</span>`);
+  ui.replaceChildren(
+    ...colours.map((c) => {
+      const b = button(`hk-dot hk-${c}`, '', c, () => void (isNew ? create(c) : recolour(target, c)));
+      b.dataset['colour'] = c;
+      return b;
+    }),
+  );
+  if (pro) {
+    const b = button('hk-btn', '\u270e', 'Add a note', () => (isNew ? void create('yellow', true) : editNote(target)));
+    b.dataset['act'] = 'note';
+    ui.appendChild(b);
+  }
+  if (!isNew) {
+    const b = button('hk-btn', '\u2715', 'Remove highlight', () => void remove(target));
+    b.dataset['act'] = 'delete';
+    ui.appendChild(b);
+  }
+  if (!pro && !isNew) {
+    const hint = document.createElement('span');
+    hint.className = 'hk-hint';
+    hint.textContent = 'Unlock for colours & notes';
+    ui.appendChild(hint);
+  }
   ui.style.left = `${Math.max(8, Math.min(window.innerWidth - 240, x))}px`;
   ui.style.top = `${Math.max(8, y - 44)}px`;
   ui.hidden = false;
-  ui.querySelectorAll<HTMLButtonElement>('[data-colour]').forEach((b) => (b.onclick = () => void (isNew ? create(b.dataset['colour'] as Colour) : recolour(target, b.dataset['colour'] as Colour))));
-  const del = ui.querySelector<HTMLButtonElement>('[data-act="delete"]');
-  if (del && !isNew) del.onclick = () => void remove(target);
-  const note = ui.querySelector<HTMLButtonElement>('[data-act="note"]');
-  if (note) note.onclick = () => (isNew ? void create('yellow', true) : editNote(target));
 }
 const hide = (): void => {
   ui.hidden = true;
@@ -106,7 +129,10 @@ async function create(colour: Colour, withNote = false): Promise<void> {
   const idx = await loadIndex();
   const site = siteOf(location.href);
   if (!canAddOnSite(sitesInIndex(idx), site, pro)) {
-    ui.innerHTML = `<span class="hk-hint">Free plan: highlights on up to 3 sites. Unlock for unlimited.</span>`;
+    const hint = document.createElement('span');
+    hint.className = 'hk-hint';
+    hint.textContent = 'Free plan: highlights on up to 3 sites. Unlock for unlimited.';
+    ui.replaceChildren(hint);
     return;
   }
   const h: Highlight = { id: newId(), anchor: describe(index.text, start, end), colour, createdAt: new Date().toISOString() };
@@ -136,12 +162,15 @@ async function remove(h: Highlight): Promise<void> {
 
 function editNote(h: Highlight): void {
   editing = h.id;
-  ui.innerHTML = `<textarea class="hk-note" placeholder="Note…" rows="3">${(h.note ?? '').replace(/</g, '&lt;')}</textarea><button class="hk-btn hk-save">Save</button>`;
-  const ta = ui.querySelector<HTMLTextAreaElement>('textarea');
-  ta?.focus();
-  const save = ui.querySelector<HTMLButtonElement>('.hk-save');
-  if (save)
-    save.onclick = async () => {
+  const ta = document.createElement('textarea');
+  ta.className = 'hk-note';
+  ta.placeholder = 'Note\u2026';
+  ta.rows = 3;
+  ta.value = h.note ?? '';
+  const save = button('hk-btn hk-save', 'Save', 'Save note', () => undefined);
+  ui.replaceChildren(ta, save);
+  ta.focus();
+  save.onclick = async () => {
       const note = ta?.value.trim() ?? '';
       const next: Highlight = { ...h, ...(note ? { note } : {}) };
       if (!note) delete next.note;

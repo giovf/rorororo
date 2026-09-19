@@ -4,7 +4,6 @@ import { loadAllPages, replaceAll, savePage } from '../pages-storage.js';
 import { loadSettings } from '../settings-storage.js';
 
 const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
-const esc = (s: string): string => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c] ?? c);
 let pages: PageRecord[] = [];
 
 function matches(p: PageRecord, q: string): PageRecord | null {
@@ -22,9 +21,41 @@ function render(): void {
   $('pages').replaceChildren(
     ...shown.map((p) => {
       const a = document.createElement('article');
-      a.innerHTML =
-        `<h2><a href="${esc(p.url)}" target="_blank" rel="noopener">${esc(p.title || p.url)}</a></h2><p class="meta">${esc(new URL(p.url).hostname)} · ${p.highlights.length} highlight${p.highlights.length === 1 ? '' : 's'} · ${esc(p.updatedAt.slice(0, 10))}</p>` +
-        p.highlights.map((h) => `<blockquote class="${h.colour}"><button class="del" data-page="${esc(p.url)}" data-id="${h.id}" title="Remove">✕</button>${esc(h.anchor.quote)}${h.note ? `<span class="note">${esc(h.note)}</span>` : ''}${h.tags?.length ? `<span class="tags">${h.tags.map((t) => '#' + esc(t)).join(' ')}</span>` : ''}</blockquote>`).join('');
+      const h2 = document.createElement('h2');
+      const link = document.createElement('a');
+      link.href = p.url;
+      link.target = '_blank';
+      link.rel = 'noopener';
+      link.textContent = p.title || p.url;
+      h2.appendChild(link);
+      const meta = document.createElement('p');
+      meta.className = 'meta';
+      meta.textContent = `${new URL(p.url).hostname} \u00b7 ${p.highlights.length} highlight${p.highlights.length === 1 ? '' : 's'} \u00b7 ${p.updatedAt.slice(0, 10)}`;
+      a.append(h2, meta);
+      for (const h of p.highlights) {
+        const bq = document.createElement('blockquote');
+        bq.className = h.colour;
+        const del = document.createElement('button');
+        del.className = 'del';
+        del.title = 'Remove';
+        del.textContent = '\u2715';
+        del.dataset['page'] = p.url;
+        del.dataset['id'] = h.id;
+        bq.append(del, document.createTextNode(h.anchor.quote));
+        if (h.note) {
+          const n = document.createElement('span');
+          n.className = 'note';
+          n.textContent = h.note;
+          bq.appendChild(n);
+        }
+        if (h.tags?.length) {
+          const t = document.createElement('span');
+          t.className = 'tags';
+          t.textContent = h.tags.map((x) => '#' + x).join(' ');
+          bq.appendChild(t);
+        }
+        a.appendChild(bq);
+      }
       return a;
     }),
   );

@@ -6,7 +6,6 @@ import { loadSettings, saveSettings } from '../settings-storage.js';
 import { requestSiteAccess } from '../sites.js';
 
 const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
-const esc = (s: string): string => s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' })[c] ?? c);
 let hostname = '';
 let href = '';
 let tabId: number | null = null;
@@ -41,7 +40,19 @@ async function render(): Promise<void> {
   list.replaceChildren(
     ...page.highlights.map((h) => {
       const li = document.createElement('li');
-      li.innerHTML = `<span class="dot ${h.colour}"></span><span class="q">${esc(h.anchor.quote)}${h.note ? `<br /><span class="n">${esc(h.note)}</span>` : ''}</span>`;
+      const dot = document.createElement('span');
+      dot.className = `dot ${h.colour}`;
+      const q = document.createElement('span');
+      q.className = 'q';
+      q.textContent = h.anchor.quote;
+      if (h.note) {
+        q.appendChild(document.createElement('br'));
+        const n = document.createElement('span');
+        n.className = 'n';
+        n.textContent = h.note;
+        q.appendChild(n);
+      }
+      li.append(dot, q);
       return li;
     }),
   );
