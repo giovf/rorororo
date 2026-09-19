@@ -105,11 +105,12 @@ async function statics() {
   await mkdir(dist, { recursive: true });
   const manifest = JSON.parse(await readFile(path.join(here, 'manifest.json'), 'utf8'));
   if (firefox) {
+    manifest.name = 'ReadFocus — Focus Reading & Dyslexia Fonts'; // AMO caps names at 45
     manifest.background = { scripts: ['background.js'], type: 'module' };
     manifest.browser_specific_settings = {
       gecko: {
         id: 'readfocus@gankdat.com',
-        strict_min_version: '128.0',
+        strict_min_version: '140.0',
         // Firefox's built-in data-collection consent: we collect nothing.
         data_collection_permissions: { required: ['none'] },
       },
