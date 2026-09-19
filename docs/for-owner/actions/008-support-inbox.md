@@ -1,7 +1,7 @@
 # Owner action request #8 — hand the support inbox (info@gankdat.com) to Claude
 
 - **Date:** 2026-09-19
-- **Status:** READY
+- **Status:** **REVISED 2026-09-19** — the owner's real inbox is gio@1402celsius.com (Google Workspace), which already receives info@ mail. Simplest route: connect Gmail to Claude (below). The Cloudflare/Resend steps become optional (only needed to *send* from info@gankdat.com rather than from gio@).
 - **Your time:** ~5 minutes
 - **Cost:** £0.00
 - **Blocks:** Claude answering support, refunds and key re-sends without you
@@ -11,7 +11,14 @@
 message to `info@` and keeps forwarding it to you unchanged, and will reply from
 `info@gankdat.com` via Resend. Three small permissions make that possible:
 
-## 1. Cloudflare — extend the existing API token (2 min)
+## 0. Connect Gmail (gio@1402celsius.com) to Claude — 1 minute, does most of it
+Claude starts the connection from the terminal and gives you a Google sign-in link; approve
+it with the gio@1402celsius.com account. Claude can then read, search, label, draft and
+send from that mailbox in every session (and routines can use it too). Reply-as
+`info@gankdat.com` works if that address is set up as a "Send mail as" alias in Gmail
+(Settings → Accounts) — otherwise replies go from gio@ with Reply-To info@.
+
+## 1. (Optional) Cloudflare — extend the existing API token (2 min)
 dash.cloudflare.com → profile → **API Tokens** → edit the token you made for Foundry →
 add permissions:
 - **Zone → Email Routing Rules → Edit** (zone: `gankdat.com`)
