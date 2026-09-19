@@ -31,7 +31,7 @@ Created 2026-09-19 on the owner's claude.ai account (GitHub connected):
   writes bug/refund/privacy mentions to `docs/ALERTS.md`, commits.
 - **Foundry weekly report** — Mondays 07:30 UTC: writes `docs/reports/<year>-W<week>.md`
   (money, ventures, alerts, waiting-on-owner, activity, next step), commits.
-Manage at https://claude.ai/code/routines. Keep `STORE.md` current (ids/URLs) — it is what
+Ids: daily `trig_01JBrWDAZLeWEAhSBBnA9g8K`, weekly `trig_01PjxdBAcvYSAT32fCyzcvQg`. Manage at https://claude.ai/code/routines. Keep `STORE.md` current (ids/URLs) — it is what
 the routines read. Each session: `git pull` first (routines commit to the branch), read
 `docs/ALERTS.md` and the latest report, then regenerate the dashboard.
 
