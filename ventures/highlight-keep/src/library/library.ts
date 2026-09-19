@@ -74,7 +74,11 @@ function render(): void {
 void (async () => {
   const tier = await tierForKey((await loadSettings()).licenseKey);
   if (tier !== 'pro') {
-    $('pages').innerHTML = '<p class="locked">The library is part of the unlock ($12, once). Your highlights are still saved — open the popup on any page to see that page’s highlights and copy them as Markdown.</p>';
+    const locked = document.createElement('p');
+    locked.className = 'locked';
+    locked.textContent =
+      'The library is part of the unlock ($12, once). Your highlights are still saved \u2014 open the popup on any page to see that page\u2019s highlights and copy them as Markdown.';
+    $('pages').replaceChildren(locked);
     ['q', 'export-all', 'backup'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
     return;
   }
