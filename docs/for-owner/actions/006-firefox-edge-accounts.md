@@ -1,7 +1,7 @@
 # Owner action request #6 — two free store accounts (Firefox, Edge) for ReadFocus
 
 - **Date:** 2026-09-19
-- **Status:** READY
+- **Status:** Firefox **DONE** (keys in .env; both extensions submitted to AMO 2026-09-19). Chrome Publish API **DONE** (refresh token stored). Edge **pending** — Microsoft account issues on the owner's side.
 - **Your time:** ~15 minutes total
 - **Cost:** £0.00 (both stores are free to list on)
 - **Blocks:** ReadFocus on Firefox Add-ons (AMO) and Microsoft Edge Add-ons — two more
