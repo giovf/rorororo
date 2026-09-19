@@ -24,6 +24,17 @@ https://claude.ai/artifact/5EVansYqPeYLQVEcpTG2LU (pass its URL as `url`). Do th
 working session. At the start of a session read the owner's notes (artifact db, collection
 `inbox`) and any `actions/<id>` docs marked `done-by-owner`, then confirm them in the docs.
 
+## Cloud routines (run without anyone typing)
+Created 2026-09-19 on the owner's claude.ai account (GitHub connected):
+- **Foundry daily metrics** — 07:00 UTC daily: reads each `ventures/<slug>/STORE.md`, fetches
+  public store numbers/reviews, appends a `Daily check` row to the venture's Metrics table,
+  writes bug/refund/privacy mentions to `docs/ALERTS.md`, commits.
+- **Foundry weekly report** — Mondays 07:30 UTC: writes `docs/reports/<year>-W<week>.md`
+  (money, ventures, alerts, waiting-on-owner, activity, next step), commits.
+Manage at https://claude.ai/code/routines. Keep `STORE.md` current (ids/URLs) — it is what
+the routines read. Each session: `git pull` first (routines commit to the branch), read
+`docs/ALERTS.md` and the latest report, then regenerate the dashboard.
+
 ## Per-venture review cadence (Phase 4)
 | When | What | Where it goes |
 |---|---|---|
