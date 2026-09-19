@@ -90,6 +90,14 @@ Local equivalents live in `.dev.vars` (see `.dev.vars.example`).
 
 ## Known caveats (accepted for v1)
 
+- **Managed challenge on API paths** (found 2026-09-19): the zone's security level
+  (`medium`) serves a "Just a moment…" HTML 403 to low-reputation IPs — GitHub
+  Actions runners hit it on `/v1/health`. Real agent traffic evidently gets through
+  (Analytics Engine shows tens of thousands of `/mcp` hits), but a JSON client can never
+  pass a JS challenge, so a WAF skip rule for `/v1/*`, `/mcp`, `/x402/*` (or a lower
+  security level for those paths) is the right fix once the API token can manage
+  zone rulesets. CI verifies deploys via the Workers API instead of the edge.
+
 - **KV counters are best-effort**: usage/rate-limit counters can lose
   increments under concurrency (slight over-serve). Accurate upgrade path =
   Durable Object per key; documented in `src/metering/counters.ts`, not built.
