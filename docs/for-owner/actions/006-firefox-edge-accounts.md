@@ -27,3 +27,26 @@
 - **Give back:** "Edge enrolled" (+ "keys in .env" if you created them).
 
 Not requested: Safari (needs a Mac + Apple developer account, £79/yr) — parked.
+
+## 3. Chrome Web Store Publish API (~10 min, once) — so Claude ships updates itself
+Honest scope: the API uploads and publishes **new versions** of an extension; the very first
+listing (description, screenshots, privacy answers) still has to be created once in the
+dashboard by you. After that, every update to ReadFocus / Highlight Keep goes out from here.
+
+- **Where:** https://console.cloud.google.com (same Google account as the Chrome developer account).
+- **Steps:**
+  1. Create a project (name: `foundry`), or pick an existing one.
+  2. **APIs & Services → Library** → search *Chrome Web Store API* → **Enable**.
+  3. **APIs & Services → OAuth consent screen** → External → app name `Foundry publisher`,
+     your email for both contact fields → Save. Under **Test users** add your own Google
+     account (the app can stay in "Testing"; no verification needed for one user).
+  4. **APIs & Services → Credentials → + Create credentials → OAuth client ID** →
+     type **Desktop app** → name `foundry-cli` → Create. Copy the **Client ID** and
+     **Client secret** into `.env` as `CWS_CLIENT_ID` and `CWS_CLIENT_SECRET`.
+  5. Authorise once: open this URL in your browser (replace CLIENT_ID):
+     `https://accounts.google.com/o/oauth2/v2/auth?response_type=code&access_type=offline&prompt=consent&scope=https://www.googleapis.com/auth/chromewebstore&redirect_uri=http://localhost:1/&client_id=CLIENT_ID`
+     → sign in, allow → the browser lands on an error page at `localhost:1` — that's
+     expected. Copy the `code=…` value from the address bar (everything between `code=` and
+     `&`) into `.env` as `CWS_AUTH_CODE` (it expires in ~10 minutes, so tell me straight away).
+- **Give back:** "CWS code in .env" — I exchange it for a refresh token immediately and
+  store that instead; from then on I publish versions without you.
