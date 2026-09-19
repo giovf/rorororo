@@ -1,7 +1,7 @@
 # Owner action request #8 — hand the support inbox (info@gankdat.com) to Claude
 
 - **Date:** 2026-09-19
-- **Status:** **REVISED 2026-09-19** — the owner's real inbox is gio@1402celsius.com (Google Workspace), which already receives info@ mail. Simplest route: connect Gmail to Claude (below). The Cloudflare/Resend steps become optional (only needed to *send* from info@gankdat.com rather than from gio@).
+- **Status:** **DONE 2026-09-19** — Gmail connected; info@ forwards to gio@1402celsius.com; Resend now full-access and `gankdat.com` added with DNS records placed (verification propagating). Routing to the worker not needed while Gmail works. Originally: — the owner's real inbox is gio@1402celsius.com (Google Workspace), which already receives info@ mail. Simplest route: connect Gmail to Claude (below). The Cloudflare/Resend steps become optional (only needed to *send* from info@gankdat.com rather than from gio@).
 - **Your time:** ~5 minutes
 - **Cost:** £0.00
 - **Blocks:** Claude answering support, refunds and key re-sends without you

@@ -26,8 +26,12 @@ ventures get the same harness from day one; Figma plugins still need the owner (
 Extension ids go into each venture's `STORE.md` when known.
 
 ## Support inbox (info@gankdat.com)
-Cloudflare Email Routing → the licence worker's `email()` handler → KV (`mail:<id>`) + a
-forwarded copy to the owner. Handle from a session with the admin token in `.env`:
+info@ forwards (Cloudflare Email Routing) to **gio@1402celsius.com**, which Claude reads via
+the claude.ai Gmail connector — search `to:info@gankdat.com newer_than:7d` at session start,
+plus store mail (Figma, Mozilla, Chrome, Stripe, Google Payments). Replies: from gio@ via
+Gmail, or from info@gankdat.com via Resend once the root domain verifies
+(`POST /admin/mail/<id>/reply` exists on the worker as a fallback path). The worker's
+Email-Routing capture below is built but not wired in, so nothing changes for the owner:
 `GET /admin/mail?unread=1`, `GET /admin/mail/<id>`, `POST /admin/mail/<id>/read`,
 `POST /admin/mail/<id>/reply {"text"}` (Resend, from info@gankdat.com, threaded). Refunds:
 Stripe dashboard/API + `POST /admin/revoke/<id>`; key re-send: `POST /admin/resend/<id>`.
