@@ -8,5 +8,6 @@ set -a; source .env; set +a
 : "${AMO_JWT_ISSUER:?missing AMO_JWT_ISSUER in .env}"; : "${AMO_JWT_SECRET:?missing AMO_JWT_SECRET in .env}"
 v="${1:?venture folder}"
 (cd "$v" && node build.js --firefox >/dev/null)
+meta="$v/assets/amo-metadata.json"
 npx --yes web-ext@latest sign --channel listed --source-dir "$v/dist-firefox" --artifacts-dir "$v/web-ext-artifacts" \
-  --api-key "$AMO_JWT_ISSUER" --api-secret "$AMO_JWT_SECRET"
+  --api-key "$AMO_JWT_ISSUER" --api-secret "$AMO_JWT_SECRET" ${meta:+--amo-metadata "$meta"} --timeout 900000

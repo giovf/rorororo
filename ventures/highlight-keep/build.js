@@ -87,7 +87,7 @@ const bundles = {
   target: 'chrome116',
   format: 'iife',
   logLevel: 'info',
-  minify: !watch,
+  minify: !watch && !firefox, // AMO reviewers read the code; ship Firefox unminified
 };
 
 await statics();
