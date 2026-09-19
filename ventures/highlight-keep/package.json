@@ -1,0 +1,17 @@
+{
+  "name": "@foundry/highlight-keep",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Highlight Keep — highlight any web page, add notes, keep it all locally, export to Markdown. Chrome/Firefox/Edge extension (MV3).",
+  "scripts": {
+    "build": "node build.js",
+    "build:test": "node build.js --test",
+    "build:firefox": "node build.js --firefox",
+    "e2e": "node build.js --test && node --disable-warning=ExperimentalWarning e2e/run.ts",
+    "zip": "node build.js && cd dist && zip -qr ../highlight-keep.zip . && cd .. && ls -la highlight-keep.zip"
+  },
+  "dependencies": {
+    "@foundry/licensing": "0.1.0"
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "outDir": "dist-types",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "types": ["chrome"],
+    "composite": false,
+    "declaration": false,
+    "noEmit": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "../../packages/licensing/tsconfig.build.json" }]
+}

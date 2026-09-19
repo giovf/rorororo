@@ -1,0 +1,26 @@
+<!doctype html>
+<html>
+  <head><meta charset="utf-8" /><title>Highlight Keep</title><link rel="stylesheet" href="popup.css" /></head>
+  <body>
+    <header><strong>Highlight Keep</strong><span id="tier" class="tag">free</span></header>
+    <p id="site" class="muted">—</p>
+    <label class="row big"><span>On for this site</span><input type="checkbox" id="enabled" /></label>
+    <p class="muted small">Select text on the page to highlight it. Click a highlight to change its colour, add a note (pro) or remove it.</p>
+    <section id="list-wrap">
+      <div class="row"><strong id="count">No highlights on this page</strong><button id="copy" type="button" disabled>Copy as Markdown</button></div>
+      <ul id="list"></ul>
+    </section>
+    <div class="row"><button id="library" type="button">Open library</button><span id="sites" class="muted small"></span></div>
+    <section id="unlock">
+      <details>
+        <summary><span id="unlock-title">Unlock everything — $12, once</span></summary>
+        <p class="muted small">Unlimited sites, six colours, notes and tags, the searchable library, backup &amp; restore. One key, all your browsers, works offline. Activating contacts our licence server once to confirm the key; nothing else ever leaves your browser.</p>
+        <a id="buy" href="https://giovf.github.io/rorororo/highlightkeep.html" target="_blank" rel="noopener">Get a key — $12, once</a>
+        <div class="row"><input type="text" id="key" placeholder="Paste your key (FNDRY1…)" /><button id="activate" type="button">Activate</button></div>
+        <p id="key-status" class="muted small"></p>
+      </details>
+    </section>
+    <footer class="muted small"><kbd id="kbd-site">…</kbd> toggles this site · <a id="shortcuts" href="#">change shortcuts</a></footer>
+    <script src="popup.js"></script>
+  </body>
+</html>

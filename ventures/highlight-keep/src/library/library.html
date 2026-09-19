@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="en">
+  <head><meta charset="utf-8" /><title>Highlight Keep — Library</title><link rel="stylesheet" href="library.css" /></head>
+  <body>
+    <main>
+      <header>
+        <h1>Your highlights</h1>
+        <div class="tools">
+          <input id="q" type="search" placeholder="Search quotes, notes, tags, titles…" aria-label="Search" />
+          <button id="export-all" type="button">Export all (Markdown)</button>
+          <button id="backup" type="button">Backup (JSON)</button>
+          <label class="file"><input id="restore" type="file" accept="application/json" />Restore</label>
+        </div>
+      </header>
+      <p id="status" class="muted"></p>
+      <div id="pages"></div>
+    </main>
+    <script src="library.js"></script>
+  </body>
+</html>
