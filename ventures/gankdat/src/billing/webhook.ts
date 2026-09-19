@@ -38,10 +38,7 @@ function customerIdOf(customer: string | { id: string } | null | undefined): str
   return typeof customer === 'string' ? customer : customer.id;
 }
 
-async function onCheckoutCompleted(
-  env: CloudflareBindings,
-  event: Stripe.Event,
-): Promise<void> {
+async function onCheckoutCompleted(env: CloudflareBindings, event: Stripe.Event): Promise<void> {
   const session = event.data.object as Stripe.Checkout.Session;
   const accountId = session.metadata?.accountId ?? session.client_reference_id;
   const plan = session.metadata?.plan;
@@ -62,10 +59,9 @@ async function onCheckoutCompleted(
        ON CONFLICT (stripe_customer_id)
        DO UPDATE SET account_id = ?2, plan = ?3, status = 'active', updated_at = datetime('now')`,
     ).bind(customerId, accountId, plan),
-    env.DB.prepare("UPDATE accounts SET plan = ?2, updated_at = datetime('now') WHERE id = ?1").bind(
-      accountId,
-      plan,
-    ),
+    env.DB.prepare(
+      "UPDATE accounts SET plan = ?2, updated_at = datetime('now') WHERE id = ?1",
+    ).bind(accountId, plan),
   ]);
   await invalidateAccountKeys(env, accountId);
   log('stripe_customer_linked', { accountId, plan, customerId });
@@ -84,7 +80,11 @@ async function onInvoicePaid(env: CloudflareBindings, event: Stripe.Event): Prom
     plan ??= link?.plan ?? undefined;
   }
   if (!accountId || !plan || !(plan in PAID_PLANS)) {
-    log('stripe_event_skipped', { type: event.type, id: event.id, reason: 'unresolvable account/plan' });
+    log('stripe_event_skipped', {
+      type: event.type,
+      id: event.id,
+      reason: 'unresolvable account/plan',
+    });
     return;
   }
 
@@ -108,10 +108,7 @@ async function onInvoicePaid(env: CloudflareBindings, event: Stripe.Event): Prom
   log('stripe_credits_granted', { accountId, plan, credits, eventId: event.id });
 }
 
-async function onSubscriptionChanged(
-  env: CloudflareBindings,
-  event: Stripe.Event,
-): Promise<void> {
+async function onSubscriptionChanged(env: CloudflareBindings, event: Stripe.Event): Promise<void> {
   const subscription = event.data.object as Stripe.Subscription;
   const customerId = customerIdOf(subscription.customer);
   if (!customerId) return;
@@ -131,10 +128,9 @@ async function onSubscriptionChanged(
       `UPDATE stripe_customers SET plan = ?2, status = ?3, updated_at = datetime('now')
        WHERE stripe_customer_id = ?1`,
     ).bind(customerId, plan, status),
-    env.DB.prepare("UPDATE accounts SET plan = ?2, updated_at = datetime('now') WHERE id = ?1").bind(
-      link.account_id,
-      plan,
-    ),
+    env.DB.prepare(
+      "UPDATE accounts SET plan = ?2, updated_at = datetime('now') WHERE id = ?1",
+    ).bind(link.account_id, plan),
   ]);
   await invalidateAccountKeys(env, link.account_id);
   log('stripe_subscription_changed', { accountId: link.account_id, plan, status });

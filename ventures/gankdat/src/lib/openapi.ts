@@ -176,7 +176,10 @@ const feedbackPath: JsonObject = {
         },
       },
       responses: {
-        '200': jsonResponse('Feedback stored', successEnvelope(z.object({ received: z.boolean() }))),
+        '200': jsonResponse(
+          'Feedback stored',
+          successEnvelope(z.object({ received: z.boolean() })),
+        ),
         '400': errorResponse('Invalid request body'),
         '429': errorResponse('Rate limit exceeded'),
       },
@@ -264,7 +267,10 @@ function buildDocument(baseUrl: string): JsonObject {
       contact: { name: 'gankdat', url: baseUrl },
       termsOfService: `${baseUrl}/terms`,
     },
-    externalDocs: { description: 'Quickstart, interactive reference, llms.txt', url: `${baseUrl}/docs` },
+    externalDocs: {
+      description: 'Quickstart, interactive reference, llms.txt',
+      url: `${baseUrl}/docs`,
+    },
     servers: [{ url: baseUrl, description: 'Production' }],
     tags: [
       { name: 'platform', description: 'Health and discovery' },

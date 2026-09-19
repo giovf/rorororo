@@ -1,151 +1,646 @@
 <!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="icon" type="image/png" href="/favicon.png">
-<title>gankdat — UK &amp; EU tenders, planning, company &amp; compliance data as clean JSON (REST + MCP)</title>
-<meta name="description" content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency and company incorporations. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request.">
-<link rel="canonical" href="https://gankdat.com/">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="gankdat">
-<meta property="og:title" content="gankdat — UK &amp; EU tenders, planning, company &amp; compliance data as clean JSON (REST + MCP)">
-<meta property="og:description" content="Official open data as one clean JSON schema: UK + EU procurement, UK planning, UK/US sanctions &amp; debarment, UK insolvency and company data. Free tier, MCP server, x402 pay-per-request.">
-<meta property="og:url" content="https://gankdat.com/">
-<meta name="twitter:card" content="summary">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "WebAPI",
-  "@id": "https://gankdat.com/#api",
-  "name": "gankdat",
-  "url": "https://gankdat.com",
-  "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, US federal exclusions, UK insolvency and company incorporations) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
-  "documentation": "https://gankdat.com/docs",
-  "termsOfService": "https://gankdat.com/terms",
-  "provider": { "@type": "Organization", "name": "gankdat", "url": "https://gankdat.com" },
-  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "GBP", "description": "Free tier: 250 requests/month; paid plans from £5/month" }
-}
-</script>
-<style>
-:root{--bg:#0A0A0A;--panel:#111315;--panel2:#16191C;--green:#00FF41;--magenta:#FF007F;--border:#2A2E33;--fg:#E6E8EA;--muted:#8B9299;--amber:#FFBD2E;
---sans:Inter,Geist,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
-*{box-sizing:border-box;border-radius:0}
-body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.65 var(--sans)}
-main{max-width:900px;margin:0 auto;padding:0 20px 72px}
-header{display:flex;justify-content:space-between;align-items:center;max-width:900px;margin:0 auto;padding:18px 20px;border-bottom:1px solid var(--border)}
-.brand{display:flex;align-items:center;gap:10px;font:700 1rem var(--mono);color:var(--fg);text-decoration:none}
-.brand img{width:22px;height:20px;image-rendering:pixelated}
-.brand b{color:var(--green);font-weight:700}
-header nav a{color:var(--muted);text-decoration:none;margin-left:20px;font:.85rem var(--mono)}
-header nav a:hover{color:var(--green)}
-.tag{display:inline-block;font:.7rem var(--mono);color:var(--green);border:1px solid var(--green);padding:3px 10px;margin:44px 0 20px;letter-spacing:.08em}
-h1{font:800 2.7rem/1.1 var(--sans);letter-spacing:-.035em;margin:0 0 14px}
-h1 em{font-style:normal;color:var(--green)}
-.cursor{display:inline-block;width:.5em;height:.9em;background:var(--green);vertical-align:baseline;margin-left:4px;animation:blink 1.1s steps(1) infinite}
-@keyframes blink{50%{opacity:0}}
-.sub{color:var(--muted);font-size:1.05rem;max-width:620px;margin:0 0 26px}
-.cta{display:flex;gap:12px;margin-bottom:36px;flex-wrap:wrap}
-.btn{display:inline-block;padding:12px 22px;font:600 .92rem var(--mono);text-decoration:none;letter-spacing:.02em;border:1px solid var(--green);color:var(--green);background:transparent;cursor:pointer}
-.btn.solid{background:var(--green);color:#0A0A0A}
-.btn.solid:hover{box-shadow:0 0 24px rgba(0,255,65,.35)}
-.btn:hover{background:rgba(0,255,65,.06)}
-.btn.solid:hover{background:var(--green)}
-.term{background:var(--panel);border:1px solid var(--border);margin:0 0 8px}
-.term-bar{display:flex;align-items:center;gap:7px;padding:10px 14px;border-bottom:1px solid var(--border)}
-.term-bar i{width:10px;height:10px;display:inline-block}
-.term-bar i:nth-child(1){background:#FF5F56}.term-bar i:nth-child(2){background:var(--amber)}.term-bar i:nth-child(3){background:#27C93F}
-.term-bar span{font:.72rem var(--mono);color:var(--muted);margin-left:8px}
-pre{margin:0;padding:16px 18px;font:12.8px/1.65 var(--mono);overflow-x:auto;color:var(--fg)}
-.tk-p{color:var(--green)}.tk-s{color:var(--magenta)}.tk-n{color:var(--amber)}.tk-m{color:var(--muted)}
-code{font-family:var(--mono)}
-p code,li code{background:var(--panel2);border:1px solid var(--border);padding:1px 6px;font-size:.84em}
-h2{font:700 .8rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:52px 0 12px}
-h2::before{content:"// ";color:var(--green)}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin:18px 0}
-.card{background:var(--panel);padding:18px}
-.card h3{margin:0 0 6px;font:700 .95rem var(--mono);color:var(--green)}
-.card h3 span{color:var(--muted);font-weight:400}
-.card p{margin:0;color:var(--muted);font-size:.9rem}
-.chips{margin-top:10px}
-.chips code{display:inline-block;background:var(--panel2);border:1px solid var(--border);padding:2px 8px;font-size:.74rem;margin:0 6px 4px 0;color:var(--fg)}
-.note{color:var(--muted);font:.78rem var(--mono)}
-.note a{color:inherit}
-/* pricing */
-.plans{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:1px;background:var(--border);border:1px solid var(--border);margin:18px 0 6px}
-.plan{background:var(--panel);padding:20px 16px;position:relative}
-.plan.hot{outline:1px solid var(--green);outline-offset:-1px;box-shadow:inset 0 0 34px rgba(0,255,65,.05)}
-.plan .ptag{position:absolute;top:-9px;right:12px;background:var(--green);color:#0A0A0A;font:700 .6rem var(--mono);padding:2px 8px;letter-spacing:.1em}
-.plan .name{font:.75rem var(--mono);color:var(--muted);text-transform:lowercase}
-.plan .name::before{content:"> ";color:var(--green)}
-.plan .price{font:800 1.7rem var(--sans);letter-spacing:-.03em;margin:10px 0 2px}
-.plan .price small{font:.75rem var(--mono);color:var(--muted);font-weight:400}
-.plan .cr{font:.72rem var(--mono);color:var(--muted);margin-bottom:14px}
-.plan a{display:block;text-align:center;padding:9px 0;border:1px solid var(--green);color:var(--green);text-decoration:none;font:600 .8rem var(--mono)}
-.plan a.solid{background:var(--green);color:#0A0A0A}
-.plan a.solid:hover{box-shadow:0 0 18px rgba(0,255,65,.3)}
-.plan a:hover{background:rgba(0,255,65,.06)}
-.plan a.solid:hover{background:var(--green)}
-.trust{display:flex;flex-wrap:wrap;gap:8px 22px;margin:16px 0 0;color:var(--muted);font:.78rem var(--mono)}
-.trust span::before{content:"[✓] ";color:var(--green)}
-.trust a{color:inherit;text-decoration:underline;text-decoration-color:var(--border)}
-.trust a:hover{color:var(--green)}
-footer{border-top:1px solid var(--border);margin-top:64px;padding-top:20px;color:var(--muted);font-size:.88rem}
-footer p{max-width:740px}
-footer a{color:var(--fg)}
-.banner{margin:20px 0 0;padding:12px 16px;border:1px solid var(--border);background:var(--panel);color:var(--fg);font:.85rem var(--mono)}
-.banner.ok{border-color:var(--green);background:rgba(0,255,65,.05)}
-/* --- interactive fx --- */
-#fxroll{margin-left:20px;padding:5px 10px;font:600 .75rem var(--mono);border:1px solid var(--magenta);color:var(--magenta);background:transparent;cursor:pointer;letter-spacing:.04em}
-#fxroll:hover{background:rgba(255,0,127,.08);box-shadow:0 0 14px rgba(255,0,127,.25)}
-@media (hover:none){#fxroll{display:none}}
-.burst{position:fixed;font:700 .72rem var(--mono);color:var(--green);pointer-events:none;z-index:9999;animation:rise .75s ease-out forwards}
-@keyframes rise{to{transform:translateY(-30px);opacity:0}}
-.tp{position:fixed;width:6px;height:6px;background:var(--green);pointer-events:none;z-index:9998;animation:tfade .5s linear forwards}
-@keyframes tfade{to{opacity:0;transform:scale(.3)}}
-#blockcur{position:fixed;width:10px;height:18px;background:var(--green);pointer-events:none;display:none;z-index:9999;mix-blend-mode:screen}
-html.fx-nocursor, html.fx-nocursor *{cursor:none !important}
-#spotcv{position:fixed;inset:0;pointer-events:none;display:none;z-index:9997}
-.xh{position:fixed;background:rgba(0,255,65,.25);pointer-events:none;display:none;z-index:9997}
-#xhv{width:1px;top:0;bottom:0}#xhh{height:1px;left:0;right:0}
-#xhc{position:fixed;font:.66rem var(--mono);color:var(--green);pointer-events:none;display:none;z-index:9999;background:rgba(10,10,10,.85);padding:1px 6px;border:1px solid var(--border)}
-.dripc{position:fixed;font:700 .72rem var(--mono);color:var(--green);pointer-events:none;z-index:9998;animation:dripfall .7s linear forwards}
-@keyframes dripfall{to{transform:translateY(26px);opacity:0}}
-#lockbox{position:fixed;width:34px;height:34px;pointer-events:none;display:none;z-index:9998}
-#lockbox i{position:absolute;width:9px;height:9px;border:0 solid var(--green)}
-#lockbox i:nth-child(1){top:0;left:0;border-top-width:2px;border-left-width:2px}
-#lockbox i:nth-child(2){top:0;right:0;border-top-width:2px;border-right-width:2px}
-#lockbox i:nth-child(3){bottom:0;left:0;border-bottom-width:2px;border-left-width:2px}
-#lockbox i:nth-child(4){bottom:0;right:0;border-bottom-width:2px;border-right-width:2px}
-#glitchA{position:fixed;width:10px;height:18px;background:var(--green);pointer-events:none;display:none;z-index:9999}
-#glitchB{position:fixed;width:10px;height:18px;background:var(--magenta);pointer-events:none;display:none;z-index:9998;opacity:.7}
-#racc{position:fixed;width:26px;height:24px;pointer-events:none;display:none;z-index:9999;image-rendering:pixelated}
-@media (prefers-reduced-motion:reduce){.cursor{animation:none}#fxroll{display:none}}
-</style>
-</head>
-<body>
-<header>
-  <a class="brand" href="/"><img src="/icon-raccoon.svg" alt=""><span><b>&gt;_</b> gankdat</span></a>
-  <nav>
-    <a href="/docs">/docs</a>
-    <a href="/stats">/stats</a>
-    <a href="/openapi.json">/openapi</a>
-    <a href="/llms.txt">/llms.txt</a>
-    <a href="#pricing">/pricing</a>
-    <a href="/account">/account</a>
-    <button id="fxroll" type="button" title="???">[ do not press ]</button>
-  </nav>
-</header>
-<main>
-  <div id="checkout-banner" class="banner" style="display:none" role="status" aria-live="polite"></div>
-  <span class="tag">[ UK PROCUREMENT · PLANNING · MORE INCOMING ]</span>
-  <h1>Public data is a mess.<br>We <em id="verb">gank</em><span class="cursor"></span> it for you.</h1>
-  <p class="sub">Archaic government feeds, extracted and served as fast, clean JSON — one schema, refreshed daily, one key for the whole catalog. Built for developers and AI agents.</p>
-  <div class="cta"><a class="btn solid" href="/account">$ get api-key</a><a class="btn" href="/docs">$ man gankdat</a></div>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <title>
+      gankdat — UK &amp; EU tenders, planning, company &amp; compliance data as clean JSON (REST +
+      MCP)
+    </title>
+    <meta
+      name="description"
+      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency and company incorporations. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
+    />
+    <link rel="canonical" href="https://gankdat.com/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="gankdat" />
+    <meta
+      property="og:title"
+      content="gankdat — UK &amp; EU tenders, planning, company &amp; compliance data as clean JSON (REST + MCP)"
+    />
+    <meta
+      property="og:description"
+      content="Official open data as one clean JSON schema: UK + EU procurement, UK planning, UK/US sanctions &amp; debarment, UK insolvency and company data. Free tier, MCP server, x402 pay-per-request."
+    />
+    <meta property="og:url" content="https://gankdat.com/" />
+    <meta name="twitter:card" content="summary" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebAPI",
+        "@id": "https://gankdat.com/#api",
+        "name": "gankdat",
+        "url": "https://gankdat.com",
+        "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, US federal exclusions, UK insolvency and company incorporations) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
+        "documentation": "https://gankdat.com/docs",
+        "termsOfService": "https://gankdat.com/terms",
+        "provider": { "@type": "Organization", "name": "gankdat", "url": "https://gankdat.com" },
+        "offers": {
+          "@type": "Offer",
+          "price": "0",
+          "priceCurrency": "GBP",
+          "description": "Free tier: 250 requests/month; paid plans from £5/month"
+        }
+      }
+    </script>
+    <style>
+      :root {
+        --bg: #0a0a0a;
+        --panel: #111315;
+        --panel2: #16191c;
+        --green: #00ff41;
+        --magenta: #ff007f;
+        --border: #2a2e33;
+        --fg: #e6e8ea;
+        --muted: #8b9299;
+        --amber: #ffbd2e;
+        --sans: Inter, Geist, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+        --mono:
+          'JetBrains Mono', 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      }
+      * {
+        box-sizing: border-box;
+        border-radius: 0;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font: 15px/1.65 var(--sans);
+      }
+      main {
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 20px 72px;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 18px 20px;
+        border-bottom: 1px solid var(--border);
+      }
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font: 700 1rem var(--mono);
+        color: var(--fg);
+        text-decoration: none;
+      }
+      .brand img {
+        width: 22px;
+        height: 20px;
+        image-rendering: pixelated;
+      }
+      .brand b {
+        color: var(--green);
+        font-weight: 700;
+      }
+      header nav a {
+        color: var(--muted);
+        text-decoration: none;
+        margin-left: 20px;
+        font: 0.85rem var(--mono);
+      }
+      header nav a:hover {
+        color: var(--green);
+      }
+      .tag {
+        display: inline-block;
+        font: 0.7rem var(--mono);
+        color: var(--green);
+        border: 1px solid var(--green);
+        padding: 3px 10px;
+        margin: 44px 0 20px;
+        letter-spacing: 0.08em;
+      }
+      h1 {
+        font: 800 2.7rem/1.1 var(--sans);
+        letter-spacing: -0.035em;
+        margin: 0 0 14px;
+      }
+      h1 em {
+        font-style: normal;
+        color: var(--green);
+      }
+      .cursor {
+        display: inline-block;
+        width: 0.5em;
+        height: 0.9em;
+        background: var(--green);
+        vertical-align: baseline;
+        margin-left: 4px;
+        animation: blink 1.1s steps(1) infinite;
+      }
+      @keyframes blink {
+        50% {
+          opacity: 0;
+        }
+      }
+      .sub {
+        color: var(--muted);
+        font-size: 1.05rem;
+        max-width: 620px;
+        margin: 0 0 26px;
+      }
+      .cta {
+        display: flex;
+        gap: 12px;
+        margin-bottom: 36px;
+        flex-wrap: wrap;
+      }
+      .btn {
+        display: inline-block;
+        padding: 12px 22px;
+        font: 600 0.92rem var(--mono);
+        text-decoration: none;
+        letter-spacing: 0.02em;
+        border: 1px solid var(--green);
+        color: var(--green);
+        background: transparent;
+        cursor: pointer;
+      }
+      .btn.solid {
+        background: var(--green);
+        color: #0a0a0a;
+      }
+      .btn.solid:hover {
+        box-shadow: 0 0 24px rgba(0, 255, 65, 0.35);
+      }
+      .btn:hover {
+        background: rgba(0, 255, 65, 0.06);
+      }
+      .btn.solid:hover {
+        background: var(--green);
+      }
+      .term {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        margin: 0 0 8px;
+      }
+      .term-bar {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        padding: 10px 14px;
+        border-bottom: 1px solid var(--border);
+      }
+      .term-bar i {
+        width: 10px;
+        height: 10px;
+        display: inline-block;
+      }
+      .term-bar i:nth-child(1) {
+        background: #ff5f56;
+      }
+      .term-bar i:nth-child(2) {
+        background: var(--amber);
+      }
+      .term-bar i:nth-child(3) {
+        background: #27c93f;
+      }
+      .term-bar span {
+        font: 0.72rem var(--mono);
+        color: var(--muted);
+        margin-left: 8px;
+      }
+      pre {
+        margin: 0;
+        padding: 16px 18px;
+        font: 12.8px/1.65 var(--mono);
+        overflow-x: auto;
+        color: var(--fg);
+      }
+      .tk-p {
+        color: var(--green);
+      }
+      .tk-s {
+        color: var(--magenta);
+      }
+      .tk-n {
+        color: var(--amber);
+      }
+      .tk-m {
+        color: var(--muted);
+      }
+      code {
+        font-family: var(--mono);
+      }
+      p code,
+      li code {
+        background: var(--panel2);
+        border: 1px solid var(--border);
+        padding: 1px 6px;
+        font-size: 0.84em;
+      }
+      h2 {
+        font: 700 0.8rem var(--mono);
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--muted);
+        margin: 52px 0 12px;
+      }
+      h2::before {
+        content: '// ';
+        color: var(--green);
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin: 18px 0;
+      }
+      .card {
+        background: var(--panel);
+        padding: 18px;
+      }
+      .card h3 {
+        margin: 0 0 6px;
+        font: 700 0.95rem var(--mono);
+        color: var(--green);
+      }
+      .card h3 span {
+        color: var(--muted);
+        font-weight: 400;
+      }
+      .card p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+      .chips {
+        margin-top: 10px;
+      }
+      .chips code {
+        display: inline-block;
+        background: var(--panel2);
+        border: 1px solid var(--border);
+        padding: 2px 8px;
+        font-size: 0.74rem;
+        margin: 0 6px 4px 0;
+        color: var(--fg);
+      }
+      .note {
+        color: var(--muted);
+        font: 0.78rem var(--mono);
+      }
+      .note a {
+        color: inherit;
+      }
+      /* pricing */
+      .plans {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1px;
+        background: var(--border);
+        border: 1px solid var(--border);
+        margin: 18px 0 6px;
+      }
+      .plan {
+        background: var(--panel);
+        padding: 20px 16px;
+        position: relative;
+      }
+      .plan.hot {
+        outline: 1px solid var(--green);
+        outline-offset: -1px;
+        box-shadow: inset 0 0 34px rgba(0, 255, 65, 0.05);
+      }
+      .plan .ptag {
+        position: absolute;
+        top: -9px;
+        right: 12px;
+        background: var(--green);
+        color: #0a0a0a;
+        font: 700 0.6rem var(--mono);
+        padding: 2px 8px;
+        letter-spacing: 0.1em;
+      }
+      .plan .name {
+        font: 0.75rem var(--mono);
+        color: var(--muted);
+        text-transform: lowercase;
+      }
+      .plan .name::before {
+        content: '> ';
+        color: var(--green);
+      }
+      .plan .price {
+        font: 800 1.7rem var(--sans);
+        letter-spacing: -0.03em;
+        margin: 10px 0 2px;
+      }
+      .plan .price small {
+        font: 0.75rem var(--mono);
+        color: var(--muted);
+        font-weight: 400;
+      }
+      .plan .cr {
+        font: 0.72rem var(--mono);
+        color: var(--muted);
+        margin-bottom: 14px;
+      }
+      .plan a {
+        display: block;
+        text-align: center;
+        padding: 9px 0;
+        border: 1px solid var(--green);
+        color: var(--green);
+        text-decoration: none;
+        font: 600 0.8rem var(--mono);
+      }
+      .plan a.solid {
+        background: var(--green);
+        color: #0a0a0a;
+      }
+      .plan a.solid:hover {
+        box-shadow: 0 0 18px rgba(0, 255, 65, 0.3);
+      }
+      .plan a:hover {
+        background: rgba(0, 255, 65, 0.06);
+      }
+      .plan a.solid:hover {
+        background: var(--green);
+      }
+      .trust {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px 22px;
+        margin: 16px 0 0;
+        color: var(--muted);
+        font: 0.78rem var(--mono);
+      }
+      .trust span::before {
+        content: '[✓] ';
+        color: var(--green);
+      }
+      .trust a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: var(--border);
+      }
+      .trust a:hover {
+        color: var(--green);
+      }
+      footer {
+        border-top: 1px solid var(--border);
+        margin-top: 64px;
+        padding-top: 20px;
+        color: var(--muted);
+        font-size: 0.88rem;
+      }
+      footer p {
+        max-width: 740px;
+      }
+      footer a {
+        color: var(--fg);
+      }
+      .banner {
+        margin: 20px 0 0;
+        padding: 12px 16px;
+        border: 1px solid var(--border);
+        background: var(--panel);
+        color: var(--fg);
+        font: 0.85rem var(--mono);
+      }
+      .banner.ok {
+        border-color: var(--green);
+        background: rgba(0, 255, 65, 0.05);
+      }
+      /* --- interactive fx --- */
+      #fxroll {
+        margin-left: 20px;
+        padding: 5px 10px;
+        font: 600 0.75rem var(--mono);
+        border: 1px solid var(--magenta);
+        color: var(--magenta);
+        background: transparent;
+        cursor: pointer;
+        letter-spacing: 0.04em;
+      }
+      #fxroll:hover {
+        background: rgba(255, 0, 127, 0.08);
+        box-shadow: 0 0 14px rgba(255, 0, 127, 0.25);
+      }
+      @media (hover: none) {
+        #fxroll {
+          display: none;
+        }
+      }
+      .burst {
+        position: fixed;
+        font: 700 0.72rem var(--mono);
+        color: var(--green);
+        pointer-events: none;
+        z-index: 9999;
+        animation: rise 0.75s ease-out forwards;
+      }
+      @keyframes rise {
+        to {
+          transform: translateY(-30px);
+          opacity: 0;
+        }
+      }
+      .tp {
+        position: fixed;
+        width: 6px;
+        height: 6px;
+        background: var(--green);
+        pointer-events: none;
+        z-index: 9998;
+        animation: tfade 0.5s linear forwards;
+      }
+      @keyframes tfade {
+        to {
+          opacity: 0;
+          transform: scale(0.3);
+        }
+      }
+      #blockcur {
+        position: fixed;
+        width: 10px;
+        height: 18px;
+        background: var(--green);
+        pointer-events: none;
+        display: none;
+        z-index: 9999;
+        mix-blend-mode: screen;
+      }
+      html.fx-nocursor,
+      html.fx-nocursor * {
+        cursor: none !important;
+      }
+      #spotcv {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        display: none;
+        z-index: 9997;
+      }
+      .xh {
+        position: fixed;
+        background: rgba(0, 255, 65, 0.25);
+        pointer-events: none;
+        display: none;
+        z-index: 9997;
+      }
+      #xhv {
+        width: 1px;
+        top: 0;
+        bottom: 0;
+      }
+      #xhh {
+        height: 1px;
+        left: 0;
+        right: 0;
+      }
+      #xhc {
+        position: fixed;
+        font: 0.66rem var(--mono);
+        color: var(--green);
+        pointer-events: none;
+        display: none;
+        z-index: 9999;
+        background: rgba(10, 10, 10, 0.85);
+        padding: 1px 6px;
+        border: 1px solid var(--border);
+      }
+      .dripc {
+        position: fixed;
+        font: 700 0.72rem var(--mono);
+        color: var(--green);
+        pointer-events: none;
+        z-index: 9998;
+        animation: dripfall 0.7s linear forwards;
+      }
+      @keyframes dripfall {
+        to {
+          transform: translateY(26px);
+          opacity: 0;
+        }
+      }
+      #lockbox {
+        position: fixed;
+        width: 34px;
+        height: 34px;
+        pointer-events: none;
+        display: none;
+        z-index: 9998;
+      }
+      #lockbox i {
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        border: 0 solid var(--green);
+      }
+      #lockbox i:nth-child(1) {
+        top: 0;
+        left: 0;
+        border-top-width: 2px;
+        border-left-width: 2px;
+      }
+      #lockbox i:nth-child(2) {
+        top: 0;
+        right: 0;
+        border-top-width: 2px;
+        border-right-width: 2px;
+      }
+      #lockbox i:nth-child(3) {
+        bottom: 0;
+        left: 0;
+        border-bottom-width: 2px;
+        border-left-width: 2px;
+      }
+      #lockbox i:nth-child(4) {
+        bottom: 0;
+        right: 0;
+        border-bottom-width: 2px;
+        border-right-width: 2px;
+      }
+      #glitchA {
+        position: fixed;
+        width: 10px;
+        height: 18px;
+        background: var(--green);
+        pointer-events: none;
+        display: none;
+        z-index: 9999;
+      }
+      #glitchB {
+        position: fixed;
+        width: 10px;
+        height: 18px;
+        background: var(--magenta);
+        pointer-events: none;
+        display: none;
+        z-index: 9998;
+        opacity: 0.7;
+      }
+      #racc {
+        position: fixed;
+        width: 26px;
+        height: 24px;
+        pointer-events: none;
+        display: none;
+        z-index: 9999;
+        image-rendering: pixelated;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .cursor {
+          animation: none;
+        }
+        #fxroll {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="/"
+        ><img src="/icon-raccoon.svg" alt="" /><span><b>&gt;_</b> gankdat</span></a
+      >
+      <nav>
+        <a href="/docs">/docs</a>
+        <a href="/stats">/stats</a>
+        <a href="/openapi.json">/openapi</a>
+        <a href="/llms.txt">/llms.txt</a>
+        <a href="#pricing">/pricing</a>
+        <a href="/account">/account</a>
+        <button id="fxroll" type="button" title="???">[ do not press ]</button>
+      </nav>
+    </header>
+    <main>
+      <div
+        id="checkout-banner"
+        class="banner"
+        style="display: none"
+        role="status"
+        aria-live="polite"
+      ></div>
+      <span class="tag">[ UK PROCUREMENT · PLANNING · MORE INCOMING ]</span>
+      <h1>
+        Public data is a mess.<br />We <em id="verb">gank</em><span class="cursor"></span> it for
+        you.
+      </h1>
+      <p class="sub">
+        Archaic government feeds, extracted and served as fast, clean JSON — one schema, refreshed
+        daily, one key for the whole catalog. Built for developers and AI agents.
+      </p>
+      <div class="cta">
+        <a class="btn solid" href="/account">$ get api-key</a
+        ><a class="btn" href="/docs">$ man gankdat</a>
+      </div>
 
-  <div class="term">
-    <div class="term-bar"><i></i><i></i><i></i><span>heist.sh — gankdat.com</span></div>
-    <pre><span class="tk-p">~$</span> curl -H <span class="tk-s">"Authorization: Bearer $API_KEY"</span> \
+      <div class="term">
+        <div class="term-bar"><i></i><i></i><i></i><span>heist.sh — gankdat.com</span></div>
+        <pre><span class="tk-p">~$</span> curl -H <span class="tk-s">"Authorization: Bearer $API_KEY"</span> \
      <span class="tk-s">"https://gankdat.com/v1/data/uk-tenders?value_amount_min=1000000&amp;status=active"</span>
 
 { "ok": <span class="tk-p">true</span>,
@@ -153,81 +648,198 @@ html.fx-nocursor, html.fx-nocursor *{cursor:none !important}
               "title": <span class="tk-s">"Highways maintenance term contract"</span>,
               "value_amount": <span class="tk-n">8400000</span>, "cpv_codes": [<span class="tk-s">"45233139"</span>], <span class="tk-m">…</span> } ],
   "meta": { "total": <span class="tk-n">116</span>, "last_refreshed_at": <span class="tk-s">"2026-07-09T05:00:11Z"</span> } }</pre>
-  </div>
+      </div>
 
-  <h2 id="key">get your api key</h2>
-  <p>Sign in with your email — magic link, no password. Create keys from your dashboard; the free tier is 250 requests/month with no card, and every key works across the whole catalog.</p>
-  <p><a class="btn solid" href="/account">$ sign in &amp; create a key</a></p>
-  <p class="note">Got a key? Use it anywhere: <code>curl -H "Authorization: Bearer fapi_..." https://gankdat.com/v1/data/uk-tenders</code></p>
+      <h2 id="key">get your api key</h2>
+      <p>
+        Sign in with your email — magic link, no password. Create keys from your dashboard; the free
+        tier is 250 requests/month with no card, and every key works across the whole catalog.
+      </p>
+      <p><a class="btn solid" href="/account">$ sign in &amp; create a key</a></p>
+      <p class="note">
+        Got a key? Use it anywhere:
+        <code>curl -H "Authorization: Bearer fapi_..." https://gankdat.com/v1/data/uk-tenders</code>
+      </p>
 
-  <h2>the catalog — one schema across every dataset</h2>
-  <p class="note">Rendered from the live registry at <a href="/v1/data"><code>/v1/data</code></a> — when a dataset ships, it appears here.</p>
-  <div class="grid" id="datasets-grid">
-    <div class="card">
-      <h3>uk-tenders <span>// procurement</span></h3>
-      <p>Public-sector tenders from Find a Tender's official OCDS feed, flattened from nested releases to one clean row per notice. For bid intelligence, lead-gen, and market research.</p>
-      <p class="chips"><code>buyer</code><code>status</code><code>cpv_codes</code><code>value_amount_min</code><code>published_at_after</code><code>q</code></p>
-    </div>
-    <div class="card">
-      <h3>uk-planning <span>// planning</span></h3>
-      <p>Planning applications from planning.data.gov.uk, normalized to the same schema. Blind Mode: applicant personal data is dropped at ingest, never stored.</p>
-      <p class="chips"><code>authority</code><code>reference</code><code>decision_date_after</code><code>decision_date_before</code><code>q</code></p>
-    </div>
-    <div class="card">
-      <h3>eu-ted <span>// procurement</span></h3>
-      <p>EU contract notices and awards from TED (Tenders Electronic Daily), the official EU procurement journal — buyer, country, CPV, values, deadlines across every member state. Pairs with uk-tenders for bid intelligence.</p>
-      <p class="chips"><code>buyer</code><code>buyer_country</code><code>cpv_codes</code><code>value_amount_min</code><code>published_at_after</code><code>q</code></p>
-    </div>
-    <div class="card">
-      <h3>uk-sanctions <span>// compliance</span></h3>
-      <p>Every designation on the UK Sanctions List (FCDO) — individuals, entities, ships, with regime, aliases, and dates. Served for compliance screening; DOBs, IDs, and contact details dropped at ingest.</p>
-      <p class="chips"><code>name</code><code>regime</code><code>designation_type</code><code>countries</code><code>date_designated_after</code><code>q</code></p>
-    </div>
-    <div class="card">
-      <h3>sam-exclusions <span>// compliance</span></h3>
-      <p>Every active US federal exclusion (debarment) from SAM.gov — parties barred from federal awards, with agency, program, and dates. Pairs with uk-sanctions for supplier due diligence. Addresses and identifiers dropped at ingest.</p>
-      <p class="chips"><code>name</code><code>classification</code><code>excluding_agency</code><code>exclusion_program</code><code>activation_date_after</code><code>q</code></p>
-    </div>
-    <div class="card">
-      <h3>uk-insolvency <span>// risk</span></h3>
-      <p>The latest UK corporate insolvency notices from The Gazette — winding-up petitions and orders, administrator/receiver/liquidator appointments, moratoria. Company-level facts only (Blind Mode).</p>
-      <p class="chips"><code>company</code><code>notice_type</code><code>notice_code</code><code>published_at_after</code><code>published_at_before</code><code>q</code></p>
-    </div>
-    <div class="card">
-      <h3>uk-companies <span>// company data</span></h3>
-      <p>The newest companies on the UK register, from the official Companies House API — name, number, type, SIC codes, incorporation date, and registered-office area. Officer/PSC data never ingested.</p>
-      <p class="chips"><code>company</code><code>company_type</code><code>sic_codes</code><code>locality</code><code>incorporated_on_after</code><code>q</code></p>
-    </div>
-  </div>
+      <h2>the catalog — one schema across every dataset</h2>
+      <p class="note">
+        Rendered from the live registry at <a href="/v1/data"><code>/v1/data</code></a> — when a
+        dataset ships, it appears here.
+      </p>
+      <div class="grid" id="datasets-grid">
+        <div class="card">
+          <h3>uk-tenders <span>// procurement</span></h3>
+          <p>
+            Public-sector tenders from Find a Tender's official OCDS feed, flattened from nested
+            releases to one clean row per notice. For bid intelligence, lead-gen, and market
+            research.
+          </p>
+          <p class="chips">
+            <code>buyer</code><code>status</code><code>cpv_codes</code><code>value_amount_min</code
+            ><code>published_at_after</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>uk-planning <span>// planning</span></h3>
+          <p>
+            Planning applications from planning.data.gov.uk, normalized to the same schema. Blind
+            Mode: applicant personal data is dropped at ingest, never stored.
+          </p>
+          <p class="chips">
+            <code>authority</code><code>reference</code><code>decision_date_after</code
+            ><code>decision_date_before</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>eu-ted <span>// procurement</span></h3>
+          <p>
+            EU contract notices and awards from TED (Tenders Electronic Daily), the official EU
+            procurement journal — buyer, country, CPV, values, deadlines across every member state.
+            Pairs with uk-tenders for bid intelligence.
+          </p>
+          <p class="chips">
+            <code>buyer</code><code>buyer_country</code><code>cpv_codes</code
+            ><code>value_amount_min</code><code>published_at_after</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>uk-sanctions <span>// compliance</span></h3>
+          <p>
+            Every designation on the UK Sanctions List (FCDO) — individuals, entities, ships, with
+            regime, aliases, and dates. Served for compliance screening; DOBs, IDs, and contact
+            details dropped at ingest.
+          </p>
+          <p class="chips">
+            <code>name</code><code>regime</code><code>designation_type</code><code>countries</code
+            ><code>date_designated_after</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>sam-exclusions <span>// compliance</span></h3>
+          <p>
+            Every active US federal exclusion (debarment) from SAM.gov — parties barred from federal
+            awards, with agency, program, and dates. Pairs with uk-sanctions for supplier due
+            diligence. Addresses and identifiers dropped at ingest.
+          </p>
+          <p class="chips">
+            <code>name</code><code>classification</code><code>excluding_agency</code
+            ><code>exclusion_program</code><code>activation_date_after</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>uk-insolvency <span>// risk</span></h3>
+          <p>
+            The latest UK corporate insolvency notices from The Gazette — winding-up petitions and
+            orders, administrator/receiver/liquidator appointments, moratoria. Company-level facts
+            only (Blind Mode).
+          </p>
+          <p class="chips">
+            <code>company</code><code>notice_type</code><code>notice_code</code
+            ><code>published_at_after</code><code>published_at_before</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>uk-companies <span>// company data</span></h3>
+          <p>
+            The newest companies on the UK register, from the official Companies House API — name,
+            number, type, SIC codes, incorporation date, and registered-office area. Officer/PSC
+            data never ingested.
+          </p>
+          <p class="chips">
+            <code>company</code><code>company_type</code><code>sic_codes</code><code>locality</code
+            ><code>incorporated_on_after</code><code>q</code>
+          </p>
+        </div>
+      </div>
 
-  <h2>built for ai agents, not just humans</h2>
-  <div class="grid">
-    <div class="card"><h3>mcp server</h3><p>Point any MCP client at <code>/mcp</code> with your API key: tools for every dataset, deterministic JSON results, usage built in.</p></div>
-    <div class="card"><h3>x402 micropayments</h3><p>No account? Agents pay per request in USDC at <code>/x402/data/…</code> — HTTP 402 flow, zero commission.</p></div>
-    <div class="card"><h3>openapi 3.1</h3><p>The whole surface is described at <code>/openapi.json</code> — generated from the same schemas that validate every request.</p></div>
-  </div>
+      <h2>built for ai agents, not just humans</h2>
+      <div class="grid">
+        <div class="card">
+          <h3>mcp server</h3>
+          <p>
+            Point any MCP client at <code>/mcp</code> with your API key: tools for every dataset,
+            deterministic JSON results, usage built in.
+          </p>
+        </div>
+        <div class="card">
+          <h3>x402 micropayments</h3>
+          <p>
+            No account? Agents pay per request in USDC at <code>/x402/data/…</code> — HTTP 402 flow,
+            zero commission.
+          </p>
+        </div>
+        <div class="card">
+          <h3>openapi 3.1</h3>
+          <p>
+            The whole surface is described at <code>/openapi.json</code> — generated from the same
+            schemas that validate every request.
+          </p>
+        </div>
+      </div>
 
-  <h2 id="pricing">pricing</h2>
-  <div class="plans">
-    <div class="plan"><div class="name">free</div><div class="price">£0</div><div class="cr">250 credits/mo</div><a href="/account">sign in</a></div>
-    <div class="plan"><div class="name">grep</div><div class="price">£5<small>/mo</small></div><div class="cr">1,000 credits/mo</div><a href="/account">subscribe</a></div>
-    <div class="plan hot"><span class="ptag">POPULAR</span><div class="name">cron</div><div class="price">£23<small>/mo</small></div><div class="cr">5,000 credits/mo</div><a class="solid" href="/account">subscribe</a></div>
-    <div class="plan"><div class="name">daemon</div><div class="price">£79<small>/mo</small></div><div class="cr">20,000 credits/mo</div><a href="/account">subscribe</a></div>
-    <div class="plan"><div class="name">kernel</div><div class="price">£239<small>/mo</small></div><div class="cr">100,000 credits/mo</div><a href="/account">subscribe</a></div>
-  </div>
-  <p class="note">1 credit = 1 request · rate limit 60 req/min · checking <code>/v1/usage</code> is always free · outside the UK? checkout bills USD/EUR automatically · launch pricing, subject to change · 14-day make-it-right guarantee (<a href="/terms">terms</a>)</p>
+      <h2 id="pricing">pricing</h2>
+      <div class="plans">
+        <div class="plan">
+          <div class="name">free</div>
+          <div class="price">£0</div>
+          <div class="cr">250 credits/mo</div>
+          <a href="/account">sign in</a>
+        </div>
+        <div class="plan">
+          <div class="name">grep</div>
+          <div class="price">£5<small>/mo</small></div>
+          <div class="cr">1,000 credits/mo</div>
+          <a href="/account">subscribe</a>
+        </div>
+        <div class="plan hot">
+          <span class="ptag">POPULAR</span>
+          <div class="name">cron</div>
+          <div class="price">£23<small>/mo</small></div>
+          <div class="cr">5,000 credits/mo</div>
+          <a class="solid" href="/account">subscribe</a>
+        </div>
+        <div class="plan">
+          <div class="name">daemon</div>
+          <div class="price">£79<small>/mo</small></div>
+          <div class="cr">20,000 credits/mo</div>
+          <a href="/account">subscribe</a>
+        </div>
+        <div class="plan">
+          <div class="name">kernel</div>
+          <div class="price">£239<small>/mo</small></div>
+          <div class="cr">100,000 credits/mo</div>
+          <a href="/account">subscribe</a>
+        </div>
+      </div>
+      <p class="note">
+        1 credit = 1 request · rate limit 60 req/min · checking <code>/v1/usage</code> is always
+        free · outside the UK? checkout bills USD/EUR automatically · launch pricing, subject to
+        change · 14-day make-it-right guarantee (<a href="/terms">terms</a>)
+      </p>
 
-  <div class="trust">
-    <span>cancel anytime — monthly billing, no lock-in</span>
-    <span><a href="/privacy">zero trackers</a> — one essential cookie</span>
-    <span>official government sources — no scraping, <a href="/privacy">Blind Mode</a></span>
-  </div>
+      <div class="trust">
+        <span>cancel anytime — monthly billing, no lock-in</span>
+        <span><a href="/privacy">zero trackers</a> — one essential cookie</span>
+        <span>official government sources — no scraping, <a href="/privacy">Blind Mode</a></span>
+      </div>
 
-  <footer>
-    <p><strong>Data &amp; privacy.</strong> Sources are official government feeds; each dataset's licence and personal-data posture is stated in the <a href="/terms">terms</a>. Public-record datasets (planning.data.gov.uk, Find a Tender — both OGL) run Blind Mode: personal data in source records is dropped at ingest and never stored. The UK sanctions list is served as published, minimized, for compliance use. The only personal data we hold about <em>you</em> is the email you sign up with — no analytics cookies, no purchased lists, no cold email. Contact: <a href="mailto:info@gankdat.com">info@gankdat.com</a>.</p>
-    <p>© 2026 gankdat · <a href="/docs">Documentation</a> · <a href="/stats">Statistics</a> · <a href="/feedback">Feedback</a> · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/llms.txt">For LLMs</a></p>
-  </footer>
-</main>
-<script src="/js/index.js" defer></script>
-</body>
+      <footer>
+        <p>
+          <strong>Data &amp; privacy.</strong> Sources are official government feeds; each dataset's
+          licence and personal-data posture is stated in the <a href="/terms">terms</a>.
+          Public-record datasets (planning.data.gov.uk, Find a Tender — both OGL) run Blind Mode:
+          personal data in source records is dropped at ingest and never stored. The UK sanctions
+          list is served as published, minimized, for compliance use. The only personal data we hold
+          about <em>you</em> is the email you sign up with — no analytics cookies, no purchased
+          lists, no cold email. Contact: <a href="mailto:info@gankdat.com">info@gankdat.com</a>.
+        </p>
+        <p>
+          © 2026 gankdat · <a href="/docs">Documentation</a> · <a href="/stats">Statistics</a> ·
+          <a href="/feedback">Feedback</a> · <a href="/privacy">Privacy</a> ·
+          <a href="/terms">Terms</a> · <a href="/llms.txt">For LLMs</a>
+        </p>
+      </footer>
+    </main>
+    <script src="/js/index.js" defer></script>
+  </body>
 </html>

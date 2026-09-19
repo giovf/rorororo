@@ -21,7 +21,9 @@ let issueSeq = 0;
  */
 export async function issueKey(email = `user${(issueSeq += 1)}@example.com`): Promise<IssuedKey> {
   const normalized = email.trim().toLowerCase();
-  await env.DB.prepare('INSERT INTO accounts (id, email) VALUES (?1, ?2) ON CONFLICT (email) DO NOTHING')
+  await env.DB.prepare(
+    'INSERT INTO accounts (id, email) VALUES (?1, ?2) ON CONFLICT (email) DO NOTHING',
+  )
     .bind(crypto.randomUUID(), normalized)
     .run();
   const account = await env.DB.prepare('SELECT id, plan FROM accounts WHERE email = ?1')

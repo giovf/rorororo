@@ -8,7 +8,12 @@ import { publicBaseUrl } from '../lib/constants';
 
 export type BillingUrl =
   | { ok: true; url: string }
-  | { ok: false; code: 'bad_request' | 'unavailable' | 'not_found'; message: string; status: 400 | 404 | 503 };
+  | {
+      ok: false;
+      code: 'bad_request' | 'unavailable' | 'not_found';
+      message: string;
+      status: 400 | 404 | 503;
+    };
 
 export async function createCheckoutUrl(
   stripe: Stripe,

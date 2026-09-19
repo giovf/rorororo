@@ -36,7 +36,7 @@ describe('empty query params (#6)', () => {
     const { key } = await issueKey();
     const res = await authedFetch(`${PLANNING_URL}?per_page=`, key);
     expect(res.status).toBe(200);
-    expect((await res.json() as SuccessEnvelope<unknown[]>).meta?.per_page).toBe(25);
+    expect(((await res.json()) as SuccessEnvelope<unknown[]>).meta?.per_page).toBe(25);
   });
 });
 

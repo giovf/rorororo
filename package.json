@@ -20,7 +20,7 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run typecheck && npm run portfolio && npm run ledger && npm run lint && npm run format:check && npm run test",
+    "check": "npm run typecheck && npm run portfolio && npm run ledger && npm run lint && npm run format:check && npm run test && npm run check -w @foundry/gankdat",
     "portfolio": "node --disable-warning=ExperimentalWarning scripts/portfolio.ts",
     "ledger": "node --disable-warning=ExperimentalWarning scripts/ledger-check.ts",
     "licensing:keygen": "node --disable-warning=ExperimentalWarning scripts/licensing-keygen.ts",

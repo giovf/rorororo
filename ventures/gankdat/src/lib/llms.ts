@@ -25,7 +25,11 @@ function datasetLines(baseUrl: string): string {
 export function buildLlmsTxt(baseUrl: string): string {
   const sources = listSources();
   const catalog = sources.map((s) => s.title).join('; ');
-  const tools = ['list_sources', 'get_usage', ...sources.map((s) => `query_${s.slug.replaceAll('-', '_')}`)].join(', ');
+  const tools = [
+    'list_sources',
+    'get_usage',
+    ...sources.map((s) => `query_${s.slug.replaceAll('-', '_')}`),
+  ].join(', ');
   const minGbp = Math.min(...Object.values(PAID_PLANS).map((p) => p.gbpPerMonth));
 
   return `# gankdat

@@ -43,7 +43,9 @@ describe('POST /v1/feedback', () => {
       const body = (await res.json()) as { ok: boolean; error: { code: string } };
       expect(body.error.code).toBe('bad_request');
     }
-    expect((await env.DB.prepare('SELECT COUNT(*) AS n FROM feedback').first<{ n: number }>())?.n).toBe(0);
+    expect(
+      (await env.DB.prepare('SELECT COUNT(*) AS n FROM feedback').first<{ n: number }>())?.n,
+    ).toBe(0);
   });
 
   it('rate limits per IP', async () => {

@@ -135,7 +135,9 @@ if (!methods?.length) {
   const width = Math.max(...methods.map((m) => nameOf(m.methods).length));
   for (const m of methods) {
     const label = m.kind === 'mcp_anon' ? `${GREEN}anon  ${RESET}` : `${MAGENTA}authed${RESET}`;
-    console.log(`  ${nameOf(m.methods).padEnd(width)}  ${label}  ${Math.round(Number(m.requests))}`);
+    console.log(
+      `  ${nameOf(m.methods).padEnd(width)}  ${label}  ${Math.round(Number(m.requests))}`,
+    );
   }
 }
 

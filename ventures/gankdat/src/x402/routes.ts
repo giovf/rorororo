@@ -74,9 +74,7 @@ export const x402Routes = new Hono<AppEnv>()
     // when unset, which would log a false settlement for every failed payment.
     const outcome = response ?? c.res;
     if (paid && outcome.ok) {
-      console.log(
-        JSON.stringify({ level: 'info', event: 'x402_paid', path: c.req.path, price }),
-      );
+      console.log(JSON.stringify({ level: 'info', event: 'x402_paid', path: c.req.path, price }));
       // Revenue analytics (90-day history via `npm run traffic`) — Workers
       // Logs alone rotates out in days. UA names the paying agent.
       c.env.TRAFFIC.writeDataPoint({

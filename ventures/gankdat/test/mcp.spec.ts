@@ -70,7 +70,10 @@ async function rpc(
   if (contentType.includes('text/event-stream')) {
     const text = await res.text();
     const dataLine = text.split('\n').find((line) => line.startsWith('data:'));
-    return { status: res.status, body: dataLine ? (JSON.parse(dataLine.slice(5)) as RpcResponse) : null };
+    return {
+      status: res.status,
+      body: dataLine ? (JSON.parse(dataLine.slice(5)) as RpcResponse) : null,
+    };
   }
   if (contentType.includes('application/json')) {
     return { status: res.status, body: (await res.json()) as RpcResponse };
@@ -98,14 +101,22 @@ describe('/mcp', () => {
     expect(status).toBe(200);
     const names = (body?.result?.tools ?? []).map((t) => t.name);
     expect(names).toEqual(
-      expect.arrayContaining(['list_sources', 'get_usage', 'query_uk_planning', 'query_uk_tenders']),
+      expect.arrayContaining([
+        'list_sources',
+        'get_usage',
+        'query_uk_planning',
+        'query_uk_tenders',
+      ]),
     );
   });
 
   it('requires an API key for tools/call, advertised via WWW-Authenticate', async () => {
     const res = await SELF.fetch(MCP_URL, {
       method: 'POST',
-      headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream' },
+      headers: {
+        'content-type': 'application/json',
+        accept: 'application/json, text/event-stream',
+      },
       body: JSON.stringify({
         jsonrpc: '2.0',
         id: 1,
@@ -123,7 +134,10 @@ describe('/mcp', () => {
     // Keyless tools/call — the conversion signal: agent wanted data, hit the paywall.
     const keyless = await SELF.fetch(MCP_URL, {
       method: 'POST',
-      headers: { 'content-type': 'application/json', accept: 'application/json, text/event-stream' },
+      headers: {
+        'content-type': 'application/json',
+        accept: 'application/json, text/event-stream',
+      },
       body: JSON.stringify({
         jsonrpc: '2.0',
         id: 1,
@@ -205,7 +219,12 @@ describe('/mcp', () => {
     const tools = body?.result?.tools ?? [];
     const names = tools.map((t) => t.name);
     expect(names).toEqual(
-      expect.arrayContaining(['list_sources', 'get_usage', 'query_uk_planning', 'query_uk_tenders']),
+      expect.arrayContaining([
+        'list_sources',
+        'get_usage',
+        'query_uk_planning',
+        'query_uk_tenders',
+      ]),
     );
     const planning = tools.find((t) => t.name === 'query_uk_planning');
     const props = Object.keys(planning?.inputSchema.properties ?? {});

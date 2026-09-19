@@ -1,0 +1,45 @@
+name: gankdat
+
+on:
+  push:
+    branches: [main, feature/data-retrieval-and-manipulation]
+    paths: ['ventures/gankdat/**', '.github/workflows/gankdat.yml', 'package-lock.json']
+  pull_request:
+    paths: ['ventures/gankdat/**']
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check -w @foundry/gankdat
+
+  deploy:
+    needs: check
+    if: github.event_name == 'push' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ventures/gankdat
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+        working-directory: .
+      - name: Deploy to Cloudflare
+        run: npx wrangler deploy --minify
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Smoke test
+        run: |
+          sleep 10
+          curl -sf https://gankdat.com/v1/health | grep -q '"status":"ok"'

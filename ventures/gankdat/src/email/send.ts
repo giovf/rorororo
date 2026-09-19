@@ -53,6 +53,8 @@ export async function sendEmail(env: CloudflareBindings, msg: EmailMessage): Pro
     );
     return false;
   }
-  console.log(JSON.stringify({ level: 'info', event: 'email_sent', to: msg.to, subject: msg.subject }));
+  console.log(
+    JSON.stringify({ level: 'info', event: 'email_sent', to: msg.to, subject: msg.subject }),
+  );
   return true;
 }

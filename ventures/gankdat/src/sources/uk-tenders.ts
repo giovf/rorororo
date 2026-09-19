@@ -34,9 +34,7 @@ const rawReleaseSchema = z.object({
         .array(
           z.object({
             classification: z.object({ id: z.coerce.string() }).nullish(),
-            additionalClassifications: z
-              .array(z.object({ id: z.coerce.string() }))
-              .nullish(),
+            additionalClassifications: z.array(z.object({ id: z.coerce.string() })).nullish(),
           }),
         )
         .nullish(),

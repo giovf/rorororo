@@ -6,7 +6,10 @@ type OpenApiDocument = {
   openapi: string;
   info: { contact?: { url?: string }; termsOfService?: string };
   externalDocs?: { url?: string };
-  paths: Record<string, { get?: { parameters?: { name: string; schema: { type?: string; format?: string } }[] } }>;
+  paths: Record<
+    string,
+    { get?: { parameters?: { name: string; schema: { type?: string; format?: string } }[] } }
+  >;
   components: {
     securitySchemes: Record<string, { type: string; scheme?: string }>;
     schemas: Record<string, { properties?: Record<string, unknown> }>;
@@ -47,7 +50,15 @@ describe('GET /openapi.json', () => {
     const params = doc.paths['/v1/data/uk-planning']?.get?.parameters ?? [];
     const byName = new Map(params.map((p) => [p.name, p.schema]));
     expect([...byName.keys()].sort()).toEqual(
-      ['authority', 'decision_date_after', 'decision_date_before', 'page', 'per_page', 'q', 'reference'].sort(),
+      [
+        'authority',
+        'decision_date_after',
+        'decision_date_before',
+        'page',
+        'per_page',
+        'q',
+        'reference',
+      ].sort(),
     );
     expect(byName.get('authority')?.type).toBe('number');
     expect(byName.get('decision_date_after')?.format).toBe('date');

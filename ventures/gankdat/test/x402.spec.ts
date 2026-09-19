@@ -85,13 +85,20 @@ describe('/x402/data/:source', () => {
         }
         if (url === `${FACILITATOR}/settle`) {
           return Promise.resolve(
-            Response.json({ success: true, transaction: TX_HASH, network: 'base-sepolia', payer: PAYER }),
+            Response.json({
+              success: true,
+              transaction: TX_HASH,
+              network: 'base-sepolia',
+              payer: PAYER,
+            }),
           );
         }
         if (url.startsWith('https://www.planning.data.gov.uk/')) {
           return Promise.resolve(
             Response.json({
-              entities: [{ entity: 1, reference: 'A/1', 'organisation-entity': 109, description: 'x' }],
+              entities: [
+                { entity: 1, reference: 'A/1', 'organisation-entity': 109, description: 'x' },
+              ],
               links: {},
               count: 1,
             }),
@@ -154,7 +161,9 @@ describe('/x402/data/:source', () => {
         const url = String(input instanceof Request ? input.url : input);
         calls.push(url);
         if (url === `${FACILITATOR}/verify`) {
-          return Promise.resolve(Response.json({ isValid: false, invalidReason: 'insufficient_funds' }));
+          return Promise.resolve(
+            Response.json({ isValid: false, invalidReason: 'insufficient_funds' }),
+          );
         }
         throw new Error(`unexpected outbound fetch in test: ${url}`);
       }),
@@ -179,7 +188,11 @@ describe('/x402/data/:source', () => {
       }),
     );
 
-    const res = await litFetch(X402_URL, { headers: { 'X-PAYMENT': payment } }, { X402_FACILITATOR_URL: FACILITATOR });
+    const res = await litFetch(
+      X402_URL,
+      { headers: { 'X-PAYMENT': payment } },
+      { X402_FACILITATOR_URL: FACILITATOR },
+    );
     expect(res.status).toBe(402);
     expect(res.headers.get('X-PAYMENT-RESPONSE')).toBeNull();
     expect(calls).toEqual([`${FACILITATOR}/verify`]); // no settle, no origin hit

@@ -27,6 +27,8 @@ packages/landing         static site (GitHub Pages: https://giovf.github.io/roro
 packages/telemetry       opt-in funnel event counting (planned, V2)
 ventures/<slug>/         one workspace per product: venture.json, RESEARCH.md, src/
 ventures/variables-toolkit   V1 Figma plugin (validated; awaiting owner test + launch)
+ventures/gankdat         V4 data API (gankdat.com) — Cloudflare Worker, Stripe + x402; adopted 2026-09-19,
+                         self-contained gates (`npm run check -w @foundry/gankdat`), deploys via CI
 docs/LEDGER.md           every pound in and out, per venture (£100 cap enforced)
 docs/launch/             per-channel launch checklists
 docs/for-owner/actions/      batched requests that need the owner's identity/wallet
@@ -40,8 +42,8 @@ TypeScript 6 strict / NodeNext ESM, Node 22, npm workspaces, ESLint 10 + Prettie
 (landing), Hono (small APIs). Static hosting only (Cloudflare Pages / GitHub Pages).
 
 ## Backend & data
-No servers in v1. The only backend is a free-tier Cloudflare Worker collecting
-anonymous telemetry counts `{venture, event, day}`. Persistent data: venture
+No servers in v1 except gankdat (adopted, Worker + KV + D1, Workers Paid ≈ US$5/mo — the
+portfolio's only recurring cost) and the licence Worker. Persistent data: venture
 manifests (in repo), the ledger (in repo), license keys (issued and stored by the
 merchant of record). No user PII is stored anywhere we control.
 

@@ -16,7 +16,8 @@ import paidPlans from '../src/billing/plans.json' with { type: 'json' };
 
 // Stripe product name: the plan's customer-facing displayName from plans.json,
 // falling back to the capitalized slug for entries without one.
-const displayName = (key) => paidPlans[key]?.displayName ?? key.charAt(0).toUpperCase() + key.slice(1);
+const displayName = (key) =>
+  paidPlans[key]?.displayName ?? key.charAt(0).toUpperCase() + key.slice(1);
 const PLANS = Object.entries(paidPlans).map(([key, p]) => ({
   name: displayName(key),
   lookupKey: p.lookupKey,

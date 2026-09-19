@@ -17,6 +17,7 @@ export default tseslint.config(
       'environment/**',
       'data/**',
       'docs/for-owner/actions/plugin/**',
+      'ventures/gankdat/**', // own eslint config + gates (Workers runtime)
     ],
   },
   js.configs.recommended,

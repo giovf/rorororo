@@ -11,9 +11,7 @@
   "description": {
     "en-US": "Mark what matters, and keep it.\n\n\u2022 Highlight any text on any page \u2014 it's there again next visit, anchored to the words so it survives the page changing.\n\u2022 Click a highlight to change its colour, add a note, or remove it.\n\u2022 Copy a page's highlights as Markdown (Obsidian, Notion, anything).\n\u2022 Per-site switch: on for the sites you read on; it never runs anywhere else.\n\nUnlock ($12, once): unlimited sites, six colours, notes and tags, the library \u2014 search everything you've kept, export it all, backup and restore. One key for every browser; works offline; 14-day refund.\n\nPrivate by design: no account, no sync server, no data collection. The only request it ever makes is a one-time check when you activate a paid key."
   },
-  "categories": [
-    "other"
-  ],
+  "categories": ["other"],
   "homepage": {
     "en-US": "https://giovf.github.io/rorororo/highlightkeep.html"
   },
