@@ -6,8 +6,11 @@ import path from 'node:path';
 import process from 'node:process';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
-const dist = path.join(here, 'dist');
+const dist = path.join(here, process.argv.includes('--test') ? 'dist-test' : 'dist');
 const watch = process.argv.includes('--watch');
+// --test: a build for automated tests that pre-grants one local origin (no permission
+// prompt to click) and registers the content script for it statically.
+const test = process.argv.includes('--test');
 const cache = path.join(here, '..', '..', 'node_modules', '.cache', 'fonts');
 
 const FONTS = {
@@ -90,7 +93,20 @@ async function icons() {
 
 async function statics() {
   await mkdir(dist, { recursive: true });
-  await copyFile(path.join(here, 'manifest.json'), path.join(dist, 'manifest.json'));
+  const manifest = JSON.parse(await readFile(path.join(here, 'manifest.json'), 'utf8'));
+  if (test) {
+    manifest.name = manifest.name + ' (test build)';
+    manifest.host_permissions = ['http://127.0.0.1/*'];
+    manifest.content_scripts = [
+      {
+        matches: ['http://127.0.0.1/*'],
+        js: ['content.js'],
+        css: ['content.css'],
+        run_at: 'document_idle',
+      },
+    ];
+  }
+  await writeFile(path.join(dist, 'manifest.json'), JSON.stringify(manifest, null, 2) + '\n');
   await copyFile(path.join(here, 'src', 'content.css'), path.join(dist, 'content.css'));
   await copyFile(path.join(here, 'src', 'popup', 'popup.html'), path.join(dist, 'popup.html'));
   await copyFile(path.join(here, 'src', 'popup', 'popup.css'), path.join(dist, 'popup.css'));

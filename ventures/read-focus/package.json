@@ -3,11 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "ReadFocus — fixation bolding, reading ruler and dyslexia-friendly fonts for any web page. Chrome extension (MV3).",
+  "description": "ReadFocus \u2014 fixation bolding, reading ruler and dyslexia-friendly fonts for any web page. Chrome extension (MV3).",
   "scripts": {
     "build": "node build.js",
     "dev": "node build.js --watch",
-    "zip": "node build.js && cd dist && zip -qr ../read-focus.zip . && cd .. && ls -la read-focus.zip"
+    "zip": "node build.js && cd dist && zip -qr ../read-focus.zip . && cd .. && ls -la read-focus.zip",
+    "build:test": "node build.js --test",
+    "e2e": "node build.js --test && node --disable-warning=ExperimentalWarning e2e/run.ts"
   },
   "dependencies": {
     "@foundry/licensing": "0.1.0"

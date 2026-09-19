@@ -20,6 +20,8 @@ const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'INPUT', 'SELEC
 const wrapped: { wrapper: HTMLElement; original: Text }[] = [];
 let mutating = false;
 let observer: MutationObserver | null = null;
+/** Bumped on every remove; a chunked apply that outlives its generation stops. */
+let boldGeneration = 0;
 
 function skippable(node: Node): boolean {
   let el: Node | null = node.parentNode;
@@ -63,8 +65,10 @@ function collect(root: Node, limit = 25_000): Text[] {
 
 function applyBold(root: Node, strength: number): void {
   const nodes = collect(root);
+  const generation = boldGeneration;
   let i = 0;
   const step = (deadline?: IdleDeadline): void => {
+    if (generation !== boldGeneration) return; // switched off (or re-applied) meanwhile
     mutating = true;
     const until = performance.now() + 12;
     while (i < nodes.length && (deadline ? deadline.timeRemaining() > 1 : performance.now() < until)) {
@@ -83,6 +87,7 @@ function schedule(fn: (d?: IdleDeadline) => void): void {
 }
 
 function removeBold(): void {
+  boldGeneration++;
   mutating = true;
   for (const { wrapper, original } of wrapped.splice(0)) {
     if (wrapper.isConnected) wrapper.replaceWith(original);

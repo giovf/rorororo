@@ -1,3 +1,7 @@
+> **Now automated.** Since 2026-09-19 Claude runs these checks itself in a real browser
+> (`npm run e2e`). This file stays as the record of the manual rounds you did (1–5) and as a
+> fallback if something only reproduces on your machine.
+
 # Manual test checklist — ReadFocus (Chrome)
 
 Setup: (already built by Claude) chrome://extensions → **Developer mode** →

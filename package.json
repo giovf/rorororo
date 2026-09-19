@@ -13,7 +13,7 @@
     "ventures/*"
   ],
   "scripts": {
-    "typecheck": "tsc -b && tsc -p scripts && tsc -p ventures/variables-toolkit && tsc -p ventures/read-focus",
+    "typecheck": "tsc -b && tsc -p scripts && tsc -p ventures/variables-toolkit && tsc -p ventures/read-focus && tsc -p ventures/read-focus/e2e",
     "build": "tsc -b",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -24,7 +24,8 @@
     "portfolio": "node --disable-warning=ExperimentalWarning scripts/portfolio.ts",
     "ledger": "node --disable-warning=ExperimentalWarning scripts/ledger-check.ts",
     "licensing:keygen": "node --disable-warning=ExperimentalWarning scripts/licensing-keygen.ts",
-    "ops": "node --disable-warning=ExperimentalWarning scripts/ops-dashboard.ts"
+    "ops": "node --disable-warning=ExperimentalWarning scripts/ops-dashboard.ts",
+    "e2e": "npm run e2e -w @foundry/read-focus"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

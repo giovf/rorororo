@@ -8,6 +8,7 @@ export default tseslint.config(
     ignores: [
       '**/dist/**',
       '**/dist-release/**',
+      '**/dist-test/**',
       '**/build/**',
       '**/node_modules/**',
       '**/.venv/**',

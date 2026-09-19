@@ -10,6 +10,13 @@ Hands-free option for the owner: `/loop Work the Foundry backlog: task-master ne
 implement fully → npm run check → set-status done → repeat. Decide everything yourself;
 only surface owner actions in docs/for-owner/actions/.`
 
+## Automated testing (no owner needed)
+The container has Chromium + Playwright. `npm run e2e` builds ReadFocus's test build and
+drives it in a real browser: bolding, editors untouched, restore on off, text size, ruler,
+pro features with a real key, invalid key. Screenshots land in `ventures/read-focus/e2e/out/`.
+Run it before every store submission and after any content-script change. New web/extension
+ventures get the same harness from day one; Figma plugins still need the owner (desktop app).
+
 ## Owner interface
 `npm run ops` regenerates the ops page from repo data (ventures, ledger, backlog, owner
 actions, git log) into `ops.html`; republish it to the existing artifact
