@@ -13,7 +13,8 @@ Claude runs the project; this folder is the only part written for you. Read top 
 | [testing/variables-toolkit.md](testing/variables-toolkit.md) | Click-by-click test of the Figma plugin (no Figma knowledge needed) |
 | [actions/004-publish-figma-plugin.md](actions/004-publish-figma-plugin.md) | Publish the Figma plugin (after the paid steps pass) |
 | [actions/003-v2-test-and-payments.md](actions/003-v2-test-and-payments.md) | Done — payments and hosting provisioned |
-| [actions/005-publish-chrome-extension.md](actions/005-publish-chrome-extension.md) | **Now:** submit ReadFocus (screenshots + upload) |
+| [actions/005-publish-chrome-extension.md](actions/005-publish-chrome-extension.md) | Done — ReadFocus submitted to Chrome |
+| [actions/006-firefox-edge-accounts.md](actions/006-firefox-edge-accounts.md) | **Now:** two free store accounts so ReadFocus can list on Firefox and Edge |
 | [testing/read-focus.md](testing/read-focus.md) | Chrome extension walkthrough (rounds 1–2 passed) |
 
 ## Background (optional)
