@@ -11,6 +11,9 @@ class MemoryKV implements KV {
     this.map.set(key, value);
     return Promise.resolve();
   }
+  list(prefix: string): Promise<string[]> {
+    return Promise.resolve([...this.map.keys()].filter((k) => k.startsWith(prefix)));
+  }
 }
 
 const now = new Date('2026-09-18T12:00:00Z');

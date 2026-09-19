@@ -1,9 +1,12 @@
 import { issueLicense, payloadFromSession, verifyStripeSignature, type LicensePayload } from '@foundry/licensing';
+import { getMail, listMail, markRead, reply } from './mail.js';
 
 /** Minimal KV surface so tests don't need Cloudflare types. */
 export interface KV {
   get(key: string): Promise<string | null>;
   put(key: string, value: string): Promise<void>;
+  /** Keys under a prefix (mail listing). */
+  list(prefix: string): Promise<string[]>;
 }
 
 export interface Env {
@@ -15,6 +18,9 @@ export interface Env {
   FROM_EMAIL: string;
   /** Support address buyers reply to (sender domain is a mail subdomain). */
   REPLY_TO?: string;
+  /** Support inbox (mail.ts). */
+  FORWARD_TO?: string;
+  SUPPORT_FROM?: string;
 }
 
 export interface Deps {
@@ -90,6 +96,23 @@ export function createHandler(deps: Deps = { fetch, now: () => new Date() }) {
       if (!to) return json({ error: 'no email on record; pass ?to=' }, 400);
       const sent = await sendKeyEmail(deps.fetch, env, to, stored.payload, stored.key);
       return json({ ok: sent.ok, to, ...(sent.error ? { error: sent.error } : {}) });
+    }
+
+    // Support inbox (admin): list, read, mark read, reply.
+    if (path.startsWith('/admin/mail')) {
+      if (request.headers.get('authorization') !== `Bearer ${env.ADMIN_TOKEN}`) return json({ error: 'unauthorized' }, 401);
+      const m = /^\/admin\/mail(?:\/([^/]+))?(?:\/(read|reply))?$/.exec(path);
+      const id = m?.[1] ? decodeURIComponent(m[1]) : null;
+      const verb = m?.[2];
+      if (request.method === 'GET' && !id) return json({ mail: await listMail(env, new URL(request.url).searchParams.get('unread') === '1') });
+      if (request.method === 'GET' && id) return json({ mail: await getMail(env, id) });
+      if (request.method === 'POST' && id && verb === 'read') return json({ ok: await markRead(env, id) });
+      if (request.method === 'POST' && id && verb === 'reply') {
+        const body = (await request.json().catch(() => ({}))) as { text?: string };
+        if (!body.text?.trim()) return json({ error: 'text required' }, 400);
+        return json(await reply(env, deps.fetch, id, body.text));
+      }
+      return json({ error: 'not found' }, 404);
     }
 
     if (request.method === 'GET' && path === '/health') return json({ ok: true });

@@ -25,6 +25,14 @@ ventures get the same harness from day one; Figma plugins still need the owner (
 - **Edge**: same zip as Chrome; Partner Center upload by the owner until API credentials exist.
 Extension ids go into each venture's `STORE.md` when known.
 
+## Support inbox (info@gankdat.com)
+Cloudflare Email Routing → the licence worker's `email()` handler → KV (`mail:<id>`) + a
+forwarded copy to the owner. Handle from a session with the admin token in `.env`:
+`GET /admin/mail?unread=1`, `GET /admin/mail/<id>`, `POST /admin/mail/<id>/read`,
+`POST /admin/mail/<id>/reply {"text"}` (Resend, from info@gankdat.com, threaded). Refunds:
+Stripe dashboard/API + `POST /admin/revoke/<id>`; key re-send: `POST /admin/resend/<id>`.
+Routing rule + root-domain Resend verification need owner action #8 first.
+
 ## Owner interface
 `npm run ops` regenerates the ops page from repo data (ventures, ledger, backlog, owner
 actions, git log) into `ops.html`; republish it to the existing artifact
