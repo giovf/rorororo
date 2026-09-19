@@ -19,6 +19,7 @@ Claude runs the project; this folder is the only part written for you. Read top 
 | [actions/008-support-inbox.md](actions/008-support-inbox.md) | Mostly done — Gmail connected; Cloudflare/Resend parts optional |
 | [actions/009-google-identity-verification.md](actions/009-google-identity-verification.md) | **Now:** Google's ID check on the Chrome developer account |
 | [actions/004-publish-figma-plugin.md](actions/004-publish-figma-plugin.md) | **Now:** Figma rejected v0.1.0 (crash fixed) — resubmit, 2 clicks |
+| [actions/010-gankdat-owner-items.md](actions/010-gankdat-owner-items.md) | **New, low urgency:** three gankdat items only you can do (SAM.gov role, launch posts, domain renewal) |
 | [incoming/gankdat-assessment.md](incoming/gankdat-assessment.md) | **New:** your gankdat API project — assessment, legal check, what happens next |
 | [testing/read-focus.md](testing/read-focus.md) | Chrome extension walkthrough (rounds 1–2 passed) |
 

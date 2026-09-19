@@ -40,6 +40,15 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: Smoke test
+        # Retries: the new version takes a few seconds to reach every edge, and the
+        # runner's IP may get a one-off challenge. Prints status + body on failure.
         run: |
-          sleep 10
-          curl -sf https://gankdat.com/v1/health | grep -q '"status":"ok"'
+          for i in 1 2 3 4 5 6; do
+            sleep 10
+            code=$(curl -s -o /tmp/health.json -w '%{http_code}' -A 'gankdat-ci-smoke/1.0' https://gankdat.com/v1/health || true)
+            if [ "$code" = "200" ] && grep -q '"status":"ok"' /tmp/health.json; then
+              echo "healthy: $(head -c 120 /tmp/health.json)"; exit 0
+            fi
+            echo "attempt $i: http $code"; head -c 300 /tmp/health.json; echo
+          done
+          exit 1
