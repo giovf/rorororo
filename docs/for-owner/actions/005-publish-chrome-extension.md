@@ -1,7 +1,7 @@
 # Owner action request #5 — publish ReadFocus to the Chrome Web Store
 
 - **Date:** 2026-09-18
-- **Status:** **READY** — payment path proven 2026-09-18; needs your screenshots + upload
+- **Status:** **SUBMITTED 2026-09-19** — awaiting Chrome Web Store review
 - **Your time:** ~25 minutes
 - **Cost:** £0.00 (the $5 developer fee was paid in action #1 — tell me the GBP amount charged so the ledger row moves from planned to cost)
 - **Blocks:** task 14.6–14.8

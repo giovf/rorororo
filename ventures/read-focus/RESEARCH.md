@@ -106,3 +106,4 @@ the multi-store listing is the main upside over V1.
 | Date | Event | Users | Rating | Sales | Notes |
 |---|---|---|---|---|---|
 | 2026-09-18 | Payment path proven (£0 test purchase) | — | — | 0 | Payment Link live; store submission pending screenshots |
+| 2026-09-19 | Submitted to Chrome Web Store review | — | — | 0 | per-site optional permissions; video to follow on YouTube |
