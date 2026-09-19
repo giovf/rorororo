@@ -1,7 +1,7 @@
 # Owner action request #4 — publish Variables Toolkit to the Figma Community
 
 - **Date:** 2026-09-18
-- **Status:** **REJECTED 2026-09-18 → FIXED, RESUBMIT** (see "Resubmit" below)
+- **Status:** **RESUBMITTED 2026-09-19** (v0.1.1) — awaiting Figma review
 - **Your time:** ~20 minutes
 - **Cost:** £0.00 (Figma takes 15% of each sale, nothing up front)
 - **Blocks:** task 12

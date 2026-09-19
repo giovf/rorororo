@@ -89,3 +89,6 @@ dist-test/
 ventures/*/e2e/out/
 dist-firefox/
 web-ext-artifacts/
+
+# ── Hand-over drop zone for other projects (integrated deliberately, never committed as-is)
+incoming/
