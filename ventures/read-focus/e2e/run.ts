@@ -140,10 +140,20 @@ try {
     'font class applied',
     await page.evaluate(() => document.documentElement.classList.contains('rf-font-opendyslexic')),
   );
-  check(
-    'font face loaded',
-    await page.evaluate(() => document.fonts.check('700 16px "ReadFocus opendyslexic"')),
-  );
+  const fontLoaded = await page
+    .waitForFunction(
+      async () => {
+        await document.fonts.load('700 16px "ReadFocus opendyslexic"');
+        return document.fonts.check('700 16px "ReadFocus opendyslexic"');
+      },
+      undefined,
+      { timeout: 5000 },
+    )
+    .then(
+      () => true,
+      () => false,
+    );
+  check('font face loaded', fontLoaded);
   const stroke = await page.evaluate(
     () => getComputedStyle(document.querySelector('.rf-b')!).webkitTextStrokeWidth,
   );
