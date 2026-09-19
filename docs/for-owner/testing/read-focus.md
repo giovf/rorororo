@@ -51,3 +51,8 @@ Setup: (already built by Claude) chrome://extensions → **Developer mode** →
       part on any site (it adds a hairline stroke, so lines don't reflow).
 - [ ] With **OpenDyslexic** or **Atkinson** selected, word starts are clearly bold (real bold
       faces are now bundled).
+
+## Round 4 (2026-09-19) — text size
+- [ ] Free **Text size** slider (100–150%): article paragraphs, lists and quotes grow as you
+      drag; site navigation, buttons and anything you type in do not; nested lists don't
+      grow twice. Slider at 100% → page back to normal. Persists per site.

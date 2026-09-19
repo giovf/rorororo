@@ -6,6 +6,7 @@ describe('settings', () => {
     expect(normalize(undefined)).toEqual({ defaults: DEFAULT_SITE, sites: {}, licenseKey: '' });
     const s = normalize({ defaults: { preset: 'heavy' }, licenseKey: 7 });
     expect(s.defaults).toEqual({ ...DEFAULT_SITE, preset: 'heavy' });
+    expect(s.defaults.size).toBe(1);
     expect(s.licenseKey).toBe('');
   });
   it('keys sites by hostname without www', () => {

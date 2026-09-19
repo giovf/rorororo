@@ -26,6 +26,7 @@ function render(site: SiteSettings): void {
   document.querySelectorAll<HTMLButtonElement>('[data-preset]').forEach((b) => b.classList.toggle('active', b.dataset['preset'] === site.preset));
   $<HTMLInputElement>('strength').value = String(site.strength ?? PRESET_STRENGTH[site.preset]);
   $<HTMLInputElement>('weight').value = String(site.weight ?? 700);
+  $<HTMLInputElement>('size').value = String(site.size || 1);
   $<HTMLInputElement>('ruler').checked = site.ruler;
   $<HTMLInputElement>('focus').checked = site.focus;
   $<HTMLSelectElement>('font').value = site.font;
@@ -79,6 +80,7 @@ async function init(): Promise<void> {
   });
   $('strength').onchange = (e) => void change({ strength: Number((e.target as HTMLInputElement).value) });
   $('weight').onchange = (e) => void change({ weight: Number((e.target as HTMLInputElement).value) });
+  $('size').oninput = (e) => void change({ size: Number((e.target as HTMLInputElement).value) });
   $('shortcuts').onclick = (e) => {
     e.preventDefault();
     void chrome.tabs.create({ url: 'chrome://extensions/shortcuts' });

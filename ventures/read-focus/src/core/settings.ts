@@ -12,6 +12,8 @@ export interface SiteSettings {
   /** Pro: extra thickness of the emphasised part, 700 (plain bold) … 900 (+0.8px stroke). */
   weight?: number;
   ruler: boolean;
+  /** Text size multiplier for reading blocks, 1.0–1.5 (free). */
+  size: number;
   /** Pro: dim everything except the paragraph under the cursor. */
   focus: boolean;
   /** Pro. */
@@ -30,6 +32,7 @@ export const DEFAULT_SITE: SiteSettings = {
   bold: true,
   preset: 'medium',
   ruler: false,
+  size: 1,
   focus: false,
   font: 'default',
 };

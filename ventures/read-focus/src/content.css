@@ -15,3 +15,7 @@ html.rf-focus .rf-focus-target { opacity: 1; }
 html.rf-font-opendyslexic :is(body, p, li, a, span, div, td, th, h1, h2, h3, h4, h5, h6, blockquote, label, dd, dt, article, section) { font-family: "ReadFocus opendyslexic", sans-serif !important; }
 html.rf-font-atkinson :is(body, p, li, a, span, div, td, th, h1, h2, h3, h4, h5, h6, blockquote, label, dd, dt, article, section) { font-family: "ReadFocus atkinson", sans-serif !important; }
 html.rf-font-system-sans :is(body, p, li, a, span, div, td, th, h1, h2, h3, h4, h5, h6, blockquote, label, dd, dt, article, section) { font-family: system-ui, -apple-system, "Segoe UI", sans-serif !important; }
+/* Text size: scale the outermost reading blocks only, so nested blocks don't compound. */
+html.rf-size :is(p, li, dd, dt, blockquote, td, th, figcaption, article > div, section > div):not(:is(p, li, dd, dt, blockquote, td, th, figcaption) *):not([contenteditable], textarea, input) {
+  font-size: calc(1em * var(--rf-size, 1)) !important;
+}

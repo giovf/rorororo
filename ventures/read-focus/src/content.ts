@@ -190,6 +190,9 @@ function apply(next: SiteSettings): void {
   // weight 700 → plain bold; up to 900 → + up to 0.8px stroke.
   const stroke = next.enabled ? Math.max(0, ((next.weight ?? 700) - 700) / 200) * 0.8 : 0;
   document.documentElement.style.setProperty('--rf-stroke', `${stroke.toFixed(2)}px`);
+  const size = next.enabled ? Math.min(1.5, Math.max(1, next.size || 1)) : 1;
+  document.documentElement.style.setProperty('--rf-size', String(size));
+  document.documentElement.classList.toggle('rf-size', size !== 1);
   setRuler(next.enabled && next.ruler);
   setFocus(next.enabled && next.focus);
   setFont(next.enabled ? next.font : 'default');

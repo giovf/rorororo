@@ -9,6 +9,7 @@ Long pages, short attention? ReadFocus makes reading on the web easier to start 
 
 • Bold word starts — the first letters of every word are emphasised so your eyes land and glide. Light, medium or heavy.
 • Reading ruler — a soft band that follows your mouse so you never lose the line (Alt+Shift+R).
+• Text size — scale the page's reading text up to 150% without touching menus or editors.
 • Per-site switch — turn it on for the sites where you read, off everywhere else (Alt+Shift+F). Your text editors, docs and code stay untouched.
 • Works on articles, documentation, forums and infinite-scroll feeds; new content is handled as it loads.
 
