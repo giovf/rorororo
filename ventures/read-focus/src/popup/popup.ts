@@ -2,20 +2,39 @@ import { PRESET_STRENGTH, type Preset } from '../core/fixation.js';
 import { activateKey, tierForKey } from '../core/license.js';
 import { effectiveFor, withSiteChange, type SiteSettings } from '../core/settings.js';
 import type { Tier } from '../core/tier.js';
+import { requestSiteAccess } from '../sites.js';
 import { loadSettings, saveSettings } from '../storage.js';
 
 const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
 let hostname = '';
+let tabId: number | null = null;
 let tier: Tier = 'free';
 
 async function activeHostname(): Promise<string> {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+  tabId = tab?.id ?? null;
   try {
     const url = new URL(tab?.url ?? '');
     return url.protocol.startsWith('http') ? url.hostname : '';
   } catch {
     return '';
   }
+}
+
+/** Enabling needs the origin permission (asked here, inside the click) then the background does the rest. */
+async function setEnabled(on: boolean): Promise<void> {
+  if (!hostname) return;
+  if (on && !(await requestSiteAccess(hostname))) {
+    say('ReadFocus needs permission for this site to work here.');
+    render(effectiveFor(await loadSettings(), hostname));
+    return;
+  }
+  await chrome.runtime.sendMessage({ type: on ? 'enable-site' : 'disable-site', hostname, tabId });
+  render(effectiveFor(await loadSettings(), hostname));
+}
+
+function say(text: string): void {
+  $('site').textContent = text;
 }
 
 function render(site: SiteSettings): void {
@@ -59,7 +78,7 @@ async function init(): Promise<void> {
   tier = await tierForKey(settings.licenseKey);
   render(effectiveFor(settings, hostname));
 
-  $('enabled').onchange = (e) => void change({ enabled: (e.target as HTMLInputElement).checked });
+  $('enabled').onchange = (e) => void setEnabled((e.target as HTMLInputElement).checked);
   $('bold').onchange = (e) => void change({ bold: (e.target as HTMLInputElement).checked });
   $('ruler').onchange = (e) => void change({ ruler: (e.target as HTMLInputElement).checked });
   $('focus').onchange = (e) => void change({ focus: (e.target as HTMLInputElement).checked });

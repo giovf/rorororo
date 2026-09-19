@@ -4,6 +4,16 @@ import { effectiveFor, type SiteSettings } from './core/settings.js';
 import { applyTier, type Tier } from './core/tier.js';
 import { loadSettings, onSettingsChange } from './storage.js';
 
+// Injected both by the registered content script and by executeScript on first enable —
+// never run twice in the same page.
+declare global {
+  interface Window {
+    __readfocusLoaded?: boolean;
+  }
+}
+if (window.__readfocusLoaded) throw new Error('ReadFocus already loaded');
+window.__readfocusLoaded = true;
+
 // ---------- bolding ----------
 
 const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'INPUT', 'SELECT', 'OPTION', 'CODE', 'PRE', 'KBD', 'SAMP', 'SVG', 'MATH', 'BUTTON']);

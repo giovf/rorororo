@@ -56,3 +56,15 @@ Setup: (already built by Claude) chrome://extensions → **Developer mode** →
 - [ ] Free **Text size** slider (100–150%): article paragraphs, lists and quotes grow as you
       drag; site navigation, buttons and anything you type in do not; nested lists don't
       grow twice. Slider at 100% → page back to normal. Persists per site.
+
+## Round 5 (2026-09-19) — per-site permissions (no broad access at install)
+Remove and re-add the unpacked extension first (permissions changed).
+- [ ] chrome://extensions → ReadFocus → *Details* → "Site access" shows **On click** / no sites,
+      not "On all sites".
+- [ ] On an article, flip **On for this site** → Chrome shows a one-time prompt "Allow
+      ReadFocus on en.wikipedia.org?" → Allow → bolding appears immediately (no reload).
+- [ ] Deny the prompt on another site → popup says it needs permission; switch stays off.
+- [ ] Reload the page → still on (the site was registered). Restart Chrome → still on.
+- [ ] Switch off → page restored; reload → stays off.
+- [ ] Keyboard `Control+Shift+F` on a site never enabled → Chrome's permission prompt appears,
+      then it switches on.
