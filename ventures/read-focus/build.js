@@ -37,23 +37,22 @@ async function fonts() {
   }
 }
 
-const INTER = {
-  'Inter-Regular.ttf':
-    'https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjQ.ttf',
-  'Inter-Bold.ttf':
-    'https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZ9hjQ.ttf',
+// Tinos: metric-compatible open twin of Times New Roman (Apache 2.0).
+const ICON_FONTS = {
+  'Tinos-Regular.ttf': 'https://fonts.gstatic.com/s/tinos/v26/buE4poGnedXvwjX7fmE.ttf',
+  'Tinos-Bold.ttf': 'https://fonts.gstatic.com/s/tinos/v26/buE1poGnedXvwj1AW3Fu0Co.ttf',
 };
 
 async function interFonts() {
   await mkdir(cache, { recursive: true });
   const files = [];
-  for (const [name, url] of Object.entries(INTER)) {
+  for (const [name, url] of Object.entries(ICON_FONTS)) {
     const file = path.join(cache, name);
     try {
       await access(file);
     } catch {
       const res = await fetch(url);
-      if (!res.ok) throw new Error(`Inter download failed: ${name}`);
+      if (!res.ok) throw new Error(`icon font download failed: ${name}`);
       await writeFile(file, Buffer.from(await res.arrayBuffer()));
     }
     files.push(file);
@@ -62,12 +61,11 @@ async function interFonts() {
 }
 
 function iconSvg() {
-  // Clean white tile: bold capital A + regular lowercase a, dark ink, faint edge so it
-  // stays visible on white toolbars.
+  // Clean white tile, faint edge (visible on white toolbars); "Aa" in a Times-style serif,
+  // bold capital + regular lowercase, centred as one text run.
   return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
   <rect x="1" y="1" width="126" height="126" rx="26" fill="#FFFFFF" stroke="#D9D6CE" stroke-width="2"/>
-  <text x="62" y="90" font-family="Inter" font-size="78" text-anchor="end" fill="#0F172A" font-weight="700">A</text>
-  <text x="66" y="90" font-family="Inter" font-size="78" text-anchor="start" fill="#0F172A" font-weight="400">a</text>
+  <text x="64" y="94" font-family="Tinos" font-size="88" text-anchor="middle" fill="#0F172A"><tspan font-weight="700">A</tspan><tspan font-weight="400">a</tspan></text>
 </svg>`;
 }
 
@@ -77,7 +75,7 @@ async function icons() {
   const font = {
     fontFiles: await interFonts(),
     loadSystemFonts: false,
-    defaultFontFamily: 'Inter',
+    defaultFontFamily: 'Tinos',
   };
   for (const size of [16, 32, 48, 128]) {
     const png = new Resvg(svg, { font, fitTo: { mode: 'width', value: size } }).render().asPng();
