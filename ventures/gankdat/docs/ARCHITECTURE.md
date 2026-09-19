@@ -27,6 +27,8 @@ UK corporate insolvency notices (`uk-insolvency`, shipped 2026-07-13 —
 Gazette corporate-only slice, Blind Mode; same bundle), and UK new
 incorporations (`uk-companies`, shipped 2026-07-13 — Companies House
 advanced search; KYB/lead-gen, completes the counterparty bundle).
+**Parked 2026-09-19:** `sam-exclusions` is out of the registry (never loaded in prod —
+SAM.gov no-role key tier; owner action 010 in the Foundry repo re-enables it).
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo

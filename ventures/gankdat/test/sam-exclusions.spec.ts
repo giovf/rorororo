@@ -37,7 +37,9 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
-describe('GET /v1/data/sam-exclusions', () => {
+// Route-level tests are skipped while the source is parked out of the registry (2026-09-19,
+// see src/sources/registry.ts). Re-enable together with the registry entry.
+describe.skip('GET /v1/data/sam-exclusions', () => {
   it('runs the extract flow, gunzips, normalizes, and never serves dropped fields', async () => {
     stubOrigins({
       samExtract: () => new Response(EXTRACT_TEXT),

@@ -24,7 +24,6 @@ describe('registry', () => {
       'uk-tenders',
       'uk-sanctions',
       'eu-ted',
-      'sam-exclusions',
       'uk-insolvency',
       'uk-companies',
     ]);
