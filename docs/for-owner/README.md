@@ -16,7 +16,9 @@ Claude runs the project; this folder is the only part written for you. Read top 
 | [actions/005-publish-chrome-extension.md](actions/005-publish-chrome-extension.md) | Done — ReadFocus submitted to Chrome |
 | [actions/006-firefox-edge-accounts.md](actions/006-firefox-edge-accounts.md) | **Now:** two free store accounts so ReadFocus can list on Firefox and Edge |
 | [actions/007-publish-highlight-keep.md](actions/007-publish-highlight-keep.md) | **Now:** submit Highlight Keep to Chrome (no testing needed — the harness did it) |
-| [actions/008-support-inbox.md](actions/008-support-inbox.md) | **Now:** two permissions so Claude can run the support inbox |
+| [actions/008-support-inbox.md](actions/008-support-inbox.md) | Mostly done — Gmail connected; Cloudflare/Resend parts optional |
+| [actions/009-google-identity-verification.md](actions/009-google-identity-verification.md) | **Now:** Google's ID check on the Chrome developer account |
+| [actions/004-publish-figma-plugin.md](actions/004-publish-figma-plugin.md) | **Now:** Figma rejected v0.1.0 (crash fixed) — resubmit, 2 clicks |
 | [testing/read-focus.md](testing/read-focus.md) | Chrome extension walkthrough (rounds 1–2 passed) |
 
 ## Background (optional)

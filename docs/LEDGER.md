@@ -11,7 +11,7 @@ fails the build if `cost + planned` exceeds the **£100** capital cap.
 
 | Date       | Venture   | Kind    | GBP  | Note                                              |
 | ---------- | --------- | ------- | ---- | ------------------------------------------------- |
-| 2026-09-17 | portfolio | planned | 3.70 | Chrome Web Store developer registration ($5 once) |
+| 2026-09-17 | portfolio | cost    | 3.70 | Chrome Web Store developer registration — US$5.00 incl. VAT on Mastercard 17 Sep (order CWS.5162-7768-2586-70036); £3.70 at ~1.35, exact GBP per card statement |
 
 ## Conventions
 

@@ -1,7 +1,7 @@
 # Owner action request #4 — publish Variables Toolkit to the Figma Community
 
 - **Date:** 2026-09-18
-- **Status:** **SUBMITTED 2026-09-18** — awaiting Figma review
+- **Status:** **REJECTED 2026-09-18 → FIXED, RESUBMIT** (see "Resubmit" below)
 - **Your time:** ~20 minutes
 - **Cost:** £0.00 (Figma takes 15% of each sale, nothing up front)
 - **Blocks:** task 12
@@ -40,3 +40,12 @@ paste is prepared.
 6. Submit for review. Figma says 5–10 business days; lately it runs longer.
 - **Give back:** "submitted" + the date, and later the approval email. I'll flip the venture
   to `launched`, start the day-1/7/30 metrics, and note the 15% fee in the ledger notes.
+
+## Resubmit (after the 2026-09-18 rejection)
+Figma's reviewer hit a crash on launch: `Cannot read properties of undefined (reading 'type')
+at window.onmessage`. Cause: Figma posts its own messages into the plugin's iframe and our UI
+assumed every message was ours. Fixed and covered; the release build on your disk is current.
+1. Figma desktop → **Plugins → Development → Import plugin from manifest…** →
+   `ventures/variables-toolkit/dist-release/manifest.json` (replaces the previous import).
+2. **Plugins → Development → Variables Toolkit → Publish…** → the listing you filled in is
+   still there; just **Publish** again (new version 0.1.1). Tell me "resubmitted".

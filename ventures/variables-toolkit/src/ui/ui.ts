@@ -81,8 +81,10 @@ deleteUnused.onclick = () =>
 
 $('upgrade').onclick = () => send({ type: 'upgrade' });
 
-window.onmessage = (event: MessageEvent<{ pluginMessage: ToUi }>) => {
-  const msg = event.data.pluginMessage;
+window.onmessage = (event: MessageEvent<{ pluginMessage?: ToUi } | null>) => {
+  // Figma posts other messages into the iframe too; only ours carry pluginMessage.
+  const msg = event.data?.pluginMessage;
+  if (!msg) return;
   switch (msg.type) {
     case 'status': {
       paid = msg.paid;
