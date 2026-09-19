@@ -37,57 +37,45 @@ async function fonts() {
   }
 }
 
-function iconSvg() {
-  // Three "lines of text": the start of each word bright (fixation), the rest dim; a warm
-  // ruler band behind the middle line. Pure shapes, so it is crisp at 16px.
-  const line = (y, words) =>
-    words
-      .map(
-        ([x, w, head]) =>
-          `<rect x="${x}" y="${y}" width="${w}" height="12" rx="6" fill="#64748B"/>` +
-          `<rect x="${x}" y="${y}" width="${head}" height="12" rx="6" fill="#F8FAFC"/>`,
-      )
-      .join('');
-  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1E293B"/><stop offset="1" stop-color="#0F172A"/></linearGradient></defs>
-  <rect width="128" height="128" rx="28" fill="url(#g)"/>
-  <rect x="14" y="52" width="100" height="26" rx="8" fill="#FBBF24" opacity="0.85"/>
-  ${line(28, [
-    [22, 34, 16],
-    [62, 44, 20],
-  ])}
-  ${line(59, [
-    [22, 26, 12],
-    [54, 52, 24],
-  ])}
-  ${line(90, [
-    [22, 48, 22],
-    [76, 30, 14],
-  ])}
-</svg>`;
+const INTER = {
+  'Inter-Regular.ttf':
+    'https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuLyfAZ9hjQ.ttf',
+  'Inter-Bold.ttf':
+    'https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZ9hjQ.ttf',
+};
+
+async function interFonts() {
+  await mkdir(cache, { recursive: true });
+  const files = [];
+  for (const [name, url] of Object.entries(INTER)) {
+    const file = path.join(cache, name);
+    try {
+      await access(file);
+    } catch {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`Inter download failed: ${name}`);
+      await writeFile(file, Buffer.from(await res.arrayBuffer()));
+    }
+    files.push(file);
+  }
+  return files;
 }
 
-const INTER_BOLD =
-  'https://fonts.gstatic.com/s/inter/v20/UcCO3FwrK3iLTeHuS_nVMrMxCp50SjIw2boKoduKmMEVuFuYAZ9hjQ.ttf';
-
-async function interBold() {
-  await mkdir(cache, { recursive: true });
-  const file = path.join(cache, 'Inter-Bold.ttf');
-  try {
-    await access(file);
-  } catch {
-    const res = await fetch(INTER_BOLD);
-    if (!res.ok) throw new Error('Inter download failed');
-    await writeFile(file, Buffer.from(await res.arrayBuffer()));
-  }
-  return file;
+function iconSvg() {
+  // Clean white tile: bold capital A + regular lowercase a, dark ink, faint edge so it
+  // stays visible on white toolbars.
+  return `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <rect x="1" y="1" width="126" height="126" rx="26" fill="#FFFFFF" stroke="#D9D6CE" stroke-width="2"/>
+  <text x="62" y="90" font-family="Inter" font-size="78" text-anchor="end" fill="#0F172A" font-weight="700">A</text>
+  <text x="66" y="90" font-family="Inter" font-size="78" text-anchor="start" fill="#0F172A" font-weight="400">a</text>
+</svg>`;
 }
 
 async function icons() {
   await mkdir(path.join(dist, 'icons'), { recursive: true });
   const svg = iconSvg();
   const font = {
-    fontFiles: [await interBold()],
+    fontFiles: await interFonts(),
     loadSystemFonts: false,
     defaultFontFamily: 'Inter',
   };
