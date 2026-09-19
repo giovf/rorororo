@@ -16,6 +16,7 @@ Claude runs the project; this folder is the only part written for you. Read top 
 | [actions/005-publish-chrome-extension.md](actions/005-publish-chrome-extension.md) | Done — ReadFocus submitted to Chrome |
 | [actions/006-firefox-edge-accounts.md](actions/006-firefox-edge-accounts.md) | **Now:** two free store accounts so ReadFocus can list on Firefox and Edge |
 | [actions/007-publish-highlight-keep.md](actions/007-publish-highlight-keep.md) | **Now:** submit Highlight Keep to Chrome (no testing needed — the harness did it) |
+| [actions/008-support-inbox.md](actions/008-support-inbox.md) | **Now:** two permissions so Claude can run the support inbox |
 | [testing/read-focus.md](testing/read-focus.md) | Chrome extension walkthrough (rounds 1–2 passed) |
 
 ## Background (optional)
