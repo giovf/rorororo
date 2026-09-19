@@ -44,3 +44,10 @@ Setup: (already built by Claude) chrome://extensions → **Developer mode** →
       extension.
 - [ ] **Paragraph focus while scrolling**: leave the mouse still and scroll → the highlighted
       paragraph follows the one under the pointer.
+
+## Round 3 (2026-09-19) — bolding fixes, please re-check
+- [ ] Words that were already bold on the page keep their start bold (now heavier, never lighter).
+- [ ] Pro **Weight** slider: 700 = plain bold; sliding towards 900 visibly thickens the bold
+      part on any site (it adds a hairline stroke, so lines don't reflow).
+- [ ] With **OpenDyslexic** or **Atkinson** selected, word starts are clearly bold (real bold
+      faces are now bundled).

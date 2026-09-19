@@ -80,3 +80,6 @@ ventures/*/read-focus.zip
 # ── Owner screen recordings (large); extracted PNG frames are committed
 ventures/*/assets/screenshots/*.mov
 ventures/*/assets/screenshots/*.mp4
+
+# ── wrangler local cache
+.wrangler/

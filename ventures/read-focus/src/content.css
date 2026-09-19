@@ -1,4 +1,11 @@
-.rf-b { font-weight: var(--rf-weight, 700); }
+.rf-b {
+  /* bolder = relative: normal text → bold, already-bold text → heavier; never lighter. */
+  font-weight: bolder;
+  font-synthesis: weight;
+  /* Extra thickness on any font (most ship only 400/700): a hairline stroke, no reflow. */
+  -webkit-text-stroke: var(--rf-stroke, 0px) currentColor;
+  paint-order: stroke fill;
+}
 .rf-ruler {
   position: fixed; left: 0; right: 0; height: 34px; pointer-events: none; z-index: 2147483646;
   background: rgba(255, 214, 10, 0.18); box-shadow: 0 0 0 1px rgba(255, 180, 0, 0.35) inset;

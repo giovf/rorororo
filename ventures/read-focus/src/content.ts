@@ -146,16 +146,21 @@ function setFocus(on: boolean): void {
 
 // ---------- fonts (pro) ----------
 
-const FONT_FILES: Record<string, string> = { opendyslexic: 'OpenDyslexic-Regular.otf', atkinson: 'AtkinsonHyperlegible-Regular.ttf' };
+const FONT_FILES: Record<string, { regular: string; bold: string }> = {
+  opendyslexic: { regular: 'OpenDyslexic-Regular.otf', bold: 'OpenDyslexic-Bold.otf' },
+  atkinson: { regular: 'AtkinsonHyperlegible-Regular.ttf', bold: 'AtkinsonHyperlegible-Bold.ttf' },
+};
 function setFont(font: SiteSettings['font']): void {
   const html = document.documentElement;
   html.classList.remove('rf-font-opendyslexic', 'rf-font-atkinson', 'rf-font-system-sans');
   if (font === 'default') return;
-  const file = FONT_FILES[font];
-  if (file && !document.getElementById(`rf-font-${font}`)) {
+  const files = FONT_FILES[font];
+  if (files && !document.getElementById(`rf-font-${font}`)) {
     const style = document.createElement('style');
     style.id = `rf-font-${font}`;
-    style.textContent = `@font-face{font-family:"ReadFocus ${font}";src:url("${chrome.runtime.getURL(`fonts/${file}`)}");font-display:swap}`;
+    const face = (file: string, weight: number): string =>
+      `@font-face{font-family:"ReadFocus ${font}";src:url("${chrome.runtime.getURL(`fonts/${file}`)}");font-weight:${weight};font-display:swap}`;
+    style.textContent = face(files.regular, 400) + face(files.bold, 700);
     document.head.appendChild(style);
   }
   html.classList.add(`rf-font-${font}`);
@@ -182,7 +187,9 @@ function apply(next: SiteSettings): void {
     observer?.disconnect();
     removeBold();
   }
-  document.documentElement.style.setProperty('--rf-weight', String(next.enabled ? (next.weight ?? 700) : 700));
+  // weight 700 → plain bold; up to 900 → + up to 0.8px stroke.
+  const stroke = next.enabled ? Math.max(0, ((next.weight ?? 700) - 700) / 200) * 0.8 : 0;
+  document.documentElement.style.setProperty('--rf-stroke', `${stroke.toFixed(2)}px`);
   setRuler(next.enabled && next.ruler);
   setFocus(next.enabled && next.focus);
   setFont(next.enabled ? next.font : 'default');

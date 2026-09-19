@@ -13,8 +13,12 @@ const cache = path.join(here, '..', '..', 'node_modules', '.cache', 'fonts');
 const FONTS = {
   'OpenDyslexic-Regular.otf':
     'https://raw.githubusercontent.com/antijingoist/opendyslexic/master/compiled/OpenDyslexic-Regular.otf',
+  'OpenDyslexic-Bold.otf':
+    'https://raw.githubusercontent.com/antijingoist/opendyslexic/master/compiled/OpenDyslexic-Bold.otf',
   'AtkinsonHyperlegible-Regular.ttf':
     'https://github.com/googlefonts/atkinson-hyperlegible/raw/main/fonts/ttf/AtkinsonHyperlegible-Regular.ttf',
+  'AtkinsonHyperlegible-Bold.ttf':
+    'https://github.com/googlefonts/atkinson-hyperlegible/raw/main/fonts/ttf/AtkinsonHyperlegible-Bold.ttf',
 };
 
 async function fonts() {
