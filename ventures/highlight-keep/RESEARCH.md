@@ -46,3 +46,9 @@ in every rival's reviews.
 
 Honest EV: same class as ReadFocus (5–20k users in year one at 1–2% × $12); the upside is a
 larger, clearly frustrated audience and three stores (Chrome, Firefox, Edge) from day one.
+
+## Metrics
+
+| Date | Event | Users | Rating | Sales | Notes |
+|---|---|---|---|---|---|
+| 2026-09-19 | Built + e2e-tested; Stripe link live; awaiting owner's store upload | — | — | 0 | zero owner testing |
