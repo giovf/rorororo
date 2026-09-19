@@ -17,6 +17,14 @@ pro features with a real key, invalid key. Screenshots land in `ventures/read-fo
 Run it before every store submission and after any content-script change. New web/extension
 ventures get the same harness from day one; Figma plugins still need the owner (desktop app).
 
+## Publishing from here
+- **Chrome**: `npm run cws -- token` once (after the owner's auth code lands), then
+  `npm run cws -- upload <itemId> <zip>` and `npm run cws -- publish <itemId>` per release.
+  First listings are created in the dashboard by the owner (the API can't fill listing text).
+- **Firefox**: `bash scripts/amo-publish.sh ventures/<slug>` (needs AMO keys) — submits for review.
+- **Edge**: same zip as Chrome; Partner Center upload by the owner until API credentials exist.
+Extension ids go into each venture's `STORE.md` when known.
+
 ## Owner interface
 `npm run ops` regenerates the ops page from repo data (ventures, ledger, backlog, owner
 actions, git log) into `ops.html`; republish it to the existing artifact

@@ -25,7 +25,8 @@
     "ledger": "node --disable-warning=ExperimentalWarning scripts/ledger-check.ts",
     "licensing:keygen": "node --disable-warning=ExperimentalWarning scripts/licensing-keygen.ts",
     "ops": "node --disable-warning=ExperimentalWarning scripts/ops-dashboard.ts",
-    "e2e": "npm run e2e -w @foundry/read-focus && npm run e2e -w @foundry/highlight-keep"
+    "e2e": "npm run e2e -w @foundry/read-focus && npm run e2e -w @foundry/highlight-keep",
+    "cws": "node --disable-warning=ExperimentalWarning --env-file=.env scripts/cws-publish.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
