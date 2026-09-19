@@ -1,5 +1,9 @@
 # For the owner — everything you may need to read
 
+**Live view:** the Foundry Ops page — https://claude.ai/artifact/5EVansYqPeYLQVEcpTG2LU — money, ventures, reviews, your open
+requests, and a "Note to Claude" box. Claude regenerates it after each working session and
+reads your notes at the start of the next one.
+
 Claude runs the project; this folder is the only part written for you. Read top to bottom.
 
 ## Right now

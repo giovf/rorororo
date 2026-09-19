@@ -71,7 +71,19 @@ RUN npm install -g \
 # (Command Palette -> "Dev Containers: Rebuild Container").
 # ============================================================================
 # <<PROJECT-DEPS-START>>
-# (nothing yet — added during /setup)
+# Foundry: a real browser so Claude can test extensions and web products itself and
+# take store screenshots; ffmpeg for frames/GIFs from the owner's recordings; adb to
+# drive an Android emulator or phone running on the host.
+USER root
+RUN apt-get update \
+ && export DEBIAN_FRONTEND=noninteractive \
+ && apt-get install -y --no-install-recommends ffmpeg xvfb android-tools-adb \
+ && apt-get clean -y && rm -rf /var/lib/apt/lists/*
+# Playwright's Chromium + its OS deps, installed system-wide so every session has it.
+ENV PLAYWRIGHT_BROWSERS_PATH=/opt/pw-browsers
+RUN npx --yes playwright@1.58.1 install --with-deps chromium \
+ && chown -R vscode:vscode /opt/pw-browsers
+USER vscode
 # <<PROJECT-DEPS-END>>
 
 WORKDIR /workspaces

@@ -8,6 +8,12 @@
 
   "remoteUser": "vscode",
 
+  // Browser + Android tooling for autonomous testing (see Dockerfile project layer).
+  "containerEnv": {
+    "PLAYWRIGHT_BROWSERS_PATH": "/opt/pw-browsers",
+    "ANDROID_ADB_SERVER_ADDRESS": "host.docker.internal"
+  },
+
   "features": {
     "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {},
     "ghcr.io/devcontainers/features/github-cli:1": {}

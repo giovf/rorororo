@@ -10,6 +10,13 @@ Hands-free option for the owner: `/loop Work the Foundry backlog: task-master ne
 implement fully → npm run check → set-status done → repeat. Decide everything yourself;
 only surface owner actions in docs/for-owner/actions/.`
 
+## Owner interface
+`npm run ops` regenerates the ops page from repo data (ventures, ledger, backlog, owner
+actions, git log) into `ops.html`; republish it to the existing artifact
+https://claude.ai/artifact/5EVansYqPeYLQVEcpTG2LU (pass its URL as `url`). Do this at the end of every
+working session. At the start of a session read the owner's notes (artifact db, collection
+`inbox`) and any `actions/<id>` docs marked `done-by-owner`, then confirm them in the docs.
+
 ## Per-venture review cadence (Phase 4)
 | When | What | Where it goes |
 |---|---|---|
