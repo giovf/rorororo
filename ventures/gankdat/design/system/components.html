@@ -1,0 +1,86 @@
+<!-- @dsCard group="Components" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Components — Terminal Brutalism</title>
+<style>
+:root{--bg:#0A0A0A;--panel:#111315;--panel2:#16191C;--green:#00FF41;--magenta:#FF007F;--border:#2A2E33;--fg:#E6E8EA;--muted:#8B9299;
+--sans:Inter,Geist,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Menlo,monospace}
+*{box-sizing:border-box;border-radius:0 !important}
+body{margin:0;background:var(--bg);color:var(--fg);font:14.5px/1.6 var(--sans);padding:28px}
+h3{font:700 .72rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:28px 0 12px}
+h3:first-child{margin-top:0}
+h3::before{content:"// ";color:var(--green)}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{padding:10px 18px;font:600 .88rem var(--mono);border:1px solid var(--green);background:transparent;color:var(--green);cursor:pointer;letter-spacing:.02em}
+.btn.solid{background:var(--green);color:#0A0A0A}
+.btn.solid:hover{box-shadow:0 0 20px rgba(0,255,65,.35)}
+.btn.line:hover{background:rgba(0,255,65,.06)}
+.btn.danger{border-color:var(--magenta);color:var(--magenta)}
+.btn.danger:hover{background:rgba(255,0,127,.07)}
+.btn:disabled{border-color:var(--border);color:var(--muted);cursor:default}
+.tagpill{font:.72rem var(--mono);padding:3px 10px;border:1px solid var(--border);color:var(--muted);letter-spacing:.06em}
+.tagpill.ok{color:var(--green);border-color:var(--green)}
+.tagpill.warn{color:#FFBD2E;border-color:#FFBD2E}
+.tagpill.err{color:var(--magenta);border-color:var(--magenta)}
+.card{background:var(--panel);border:1px solid var(--border);padding:18px;max-width:440px}
+.card h4{margin:0 0 6px;font:700 .95rem var(--mono);color:var(--green)}
+.card h4 span{color:var(--muted);font-weight:400}
+.card p{margin:0;color:var(--muted);font-size:.88rem}
+.chips code{display:inline-block;border:1px solid var(--border);background:var(--panel2);padding:2px 8px;font:.74rem var(--mono);margin:8px 6px 0 0;color:var(--fg)}
+input{padding:11px 14px;border:1px solid var(--border);background:var(--panel);color:var(--fg);font:.9rem var(--mono);min-width:250px}
+input:focus{outline:none;border-color:var(--green);box-shadow:0 0 14px rgba(0,255,65,.15)}
+input::placeholder{color:var(--muted)}
+.banner{border:1px solid var(--green);background:rgba(0,255,65,.05);padding:12px 16px;font:.85rem var(--mono);max-width:540px}
+.banner b{color:var(--green);font-weight:700}
+.banner.err{border-color:var(--magenta);background:rgba(255,0,127,.05)}
+.banner.err b{color:var(--magenta)}
+.bar{height:12px;border:1px solid var(--border);max-width:440px;background:var(--panel);padding:2px}
+.bar span{display:block;height:100%;width:62%;background:repeating-linear-gradient(90deg,var(--green) 0 8px,transparent 8px 11px)}
+.bar-label{font:.72rem var(--mono);color:var(--muted);margin-top:6px;max-width:440px;display:flex;justify-content:space-between}
+.keyline{display:flex;align-items:center;gap:0;max-width:540px;border:1px solid var(--border);background:var(--panel)}
+.keyline code{flex:1;padding:12px 14px;font:.85rem var(--mono);color:var(--fg);word-break:break-all}
+.copybtn{border:0;border-left:1px solid var(--border);background:var(--panel2);color:var(--green);font:.8rem var(--mono);padding:12px 16px;cursor:pointer}
+.copybtn:hover{background:rgba(0,255,65,.08)}
+table{border-collapse:collapse;font:.85rem var(--mono);min-width:440px}
+th{font:700 .68rem var(--mono);text-transform:uppercase;letter-spacing:.1em;color:var(--muted);text-align:left;padding:9px 12px;border-bottom:1px solid var(--border)}
+td{padding:10px 12px;border-bottom:1px solid var(--border);color:var(--fg)}
+</style>
+</head>
+<body>
+  <h3>buttons</h3>
+  <div class="row"><button class="btn solid">$ get api-key</button><button class="btn line">manage billing</button><button class="btn danger">revoke</button><button class="btn" disabled>creating…</button></div>
+
+  <h3>status tags</h3>
+  <div class="row"><span class="tagpill ok">[ACTIVE]</span><span class="tagpill warn">[SAVER]</span><span class="tagpill">[FREE]</span><span class="tagpill err">[REVOKED]</span></div>
+
+  <h3>key reveal + copy micro-interaction</h3>
+  <div class="keyline"><code id="key">fapi_x9K2mQpL7vRw3nTjB5sYcD8fGhZ4aE6u</code><button class="copybtn" id="copy">[copy]</button></div>
+
+  <h3>dataset card</h3>
+  <div class="card"><h4>uk-tenders <span>// procurement</span></h4><p>Public-sector tenders from Find a Tender's official OCDS feed, one clean row per notice.</p><p class="chips"><code>buyer</code><code>status</code><code>value_amount_min</code><code>q</code></p></div>
+
+  <h3>input</h3>
+  <div class="row"><input placeholder="you@company.com"><button class="btn solid">send magic link</button></div>
+
+  <h3>feedback</h3>
+  <div class="banner"><b>[OK]</b> payment successful — plan active.</div>
+  <div style="height:10px"></div>
+  <div class="banner err"><b>[ERR]</b> that sign-in link expired — request a new one.</div>
+
+  <h3>usage</h3>
+  <div class="bar"><span></span></div>
+  <div class="bar-label"><span>3,100 / 5,000 credits</span><span>resets 2026-08-01</span></div>
+
+  <h3>keys table</h3>
+  <table><tr><th>name</th><th>created</th><th>status</th><th></th></tr>
+  <tr><td>prod</td><td style="color:var(--muted)">2026-07-09</td><td><span class="tagpill ok">[ACTIVE]</span></td><td><button class="btn danger" style="padding:4px 10px;font-size:.72rem">revoke</button></td></tr></table>
+
+<script>
+const btn=document.getElementById('copy');
+btn.addEventListener('click',()=>{navigator.clipboard&&navigator.clipboard.writeText(document.getElementById('key').textContent).catch(()=>{});btn.textContent='[COPIED]';btn.style.color='#0A0A0A';btn.style.background='#00FF41';setTimeout(()=>{btn.textContent='[copy]';btn.style.color='';btn.style.background='';},1200);});
+</script>
+</body>
+</html>

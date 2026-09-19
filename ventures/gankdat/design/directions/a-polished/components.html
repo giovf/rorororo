@@ -1,0 +1,47 @@
+<!-- @dsCard group="A — Polished minimal" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A — Components</title>
+<style>
+:root{--bg:#ffffff;--fg:#15181e;--muted:#5c6572;--line:#e6e9ef;--card:#f7f8fa;--accent:#0b5fff;--ok:#16a34a;--danger:#dc2626}
+@media (prefers-color-scheme:dark){:root{--bg:#0e1116;--fg:#e9ebf0;--muted:#98a2b3;--line:#252b35;--card:#151a22;--accent:#5b8dff}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:15px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;padding:28px}
+h3{font-size:.8rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin:26px 0 12px}
+h3:first-child{margin-top:0}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{padding:10px 18px;border-radius:10px;background:var(--accent);color:#fff;font-weight:600;border:0;font-size:.93rem;cursor:pointer;box-shadow:0 1px 2px rgba(0,0,0,.08),0 6px 18px color-mix(in srgb,var(--accent) 22%,transparent)}
+.btn.ghost{background:transparent;color:var(--fg);border:1px solid var(--line);box-shadow:none}
+.btn.danger{background:transparent;color:var(--danger);border:1px solid color-mix(in srgb,var(--danger) 35%,transparent);box-shadow:none}
+.pill{display:inline-block;padding:3px 12px;border-radius:999px;font-size:.78rem;font-weight:600;border:1px solid var(--line);background:var(--card)}
+.pill.ok{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 35%,transparent);background:color-mix(in srgb,var(--ok) 8%,transparent)}
+.pill.accent{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 30%,transparent);background:color-mix(in srgb,var(--accent) 8%,transparent)}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;max-width:420px}
+.card h4{margin:0 0 6px;font-size:1rem}
+.card p{margin:0;color:var(--muted);font-size:.92rem}
+.chips code{display:inline-block;background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:2px 8px;font:.8rem ui-monospace,Menlo,monospace;margin:8px 6px 0 0}
+input{padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--fg);font-size:.95rem;min-width:250px}
+input:focus{outline:2px solid color-mix(in srgb,var(--accent) 45%,transparent);border-color:var(--accent)}
+.banner{border:1px solid color-mix(in srgb,var(--ok) 40%,transparent);background:color-mix(in srgb,var(--ok) 8%,transparent);border-radius:12px;padding:12px 16px;font-size:.93rem;max-width:520px}
+.bar{height:8px;border-radius:6px;background:var(--line);overflow:hidden;max-width:420px}
+.bar span{display:block;height:100%;width:62%;border-radius:6px;background:linear-gradient(90deg,var(--accent),#7c3aed)}
+</style>
+</head>
+<body>
+  <h3>Buttons</h3>
+  <div class="row"><button class="btn">Get your API key</button><button class="btn ghost">Manage billing</button><button class="btn danger">Revoke</button></div>
+  <h3>Status pills</h3>
+  <div class="row"><span class="pill ok">active</span><span class="pill accent">saver</span><span class="pill">free</span></div>
+  <h3>Dataset card</h3>
+  <div class="card"><h4>uk-tenders <span style="font-weight:400;color:var(--muted)">· procurement</span></h4><p>Public-sector tenders from Find a Tender's official OCDS feed, one clean row per notice.</p><p class="chips"><code>buyer</code><code>status</code><code>value_amount_min</code><code>q</code></p></div>
+  <h3>Input</h3>
+  <div class="row"><input placeholder="you@company.com"><button class="btn">Email me a link</button></div>
+  <h3>Banner &amp; usage</h3>
+  <div class="banner">✅ Payment successful — your plan is now active.</div>
+  <div style="height:12px"></div>
+  <div class="bar"><span></span></div>
+</body>
+</html>

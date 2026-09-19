@@ -1,0 +1,61 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "faceless-api",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-07-06",
+  // Node built-ins (Buffer, etc.) — needed by the Coinbase CDP x402 facilitator.
+  "compatibility_flags": ["nodejs_compat"],
+  // sam-exclusions cron refresh stream-parses a ~60MB CSV extract; the default
+  // 30s CPU budget is not safely above that. Paid-plan max is 300s. NOTE: this
+  // is Worker-global (governs fetch too), so heavy ingest is kept strictly on
+  // the scheduled/cron path — request handlers read committed state only
+  // (D1 queries never cold-start refresh; /stats reads precomputed blobs).
+  "limits": { "cpu_ms": 300000 },
+  "vars": {
+    // Safe by default: deploys (which read these vars) get "false", so a real
+    // origin outage surfaces as a 503 / refresh_log error instead of silently
+    // serving bundled fixtures as live data. Local dev opts in via .dev.vars
+    // (which overrides this), and tests set it in vitest.config.ts.
+    "FIXTURE_FALLBACK": "false",
+    // Customer-facing base URL (magic links, Stripe redirects). The workers.dev
+    // URL keeps working as an alias; this is the brand domain.
+    "PUBLIC_BASE_URL": "https://gankdat.com"
+  },
+  // Custom domains (Cloudflare auto-manages DNS records + certs on deploy).
+  // The Worker keeps its internal codename "faceless-api"; customers see gankdat.
+  "routes": [
+    { "pattern": "gankdat.com", "custom_domain": true },
+    { "pattern": "www.gankdat.com", "custom_domain": true }
+  ],
+  // workers.dev URL disabled: gankdat.com is the only public surface (the
+  // *.workers.dev hostname would leak the internal codename). Stripe's webhook
+  // and all docs/scripts point at the brand domain.
+  "workers_dev": false,
+  // Real resource ids (not secrets — safe to commit). Local dev + tests still
+  // run on miniflare simulations and never touch these.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "faceless-api",
+      "database_id": "ac051277-5f69-46ba-965b-50da2f1ec524"
+    }
+  ],
+  "kv_namespaces": [
+    { "binding": "CACHE", "id": "eacc87d970e94b9b87ce944985af0b52" },
+    { "binding": "RATE", "id": "de75231f2c994f68b003d414be100759" }
+  ],
+  // Traffic analytics (Workers Paid unlock, 2026-07-10): fire-and-forget
+  // datapoints, queryable via the Analytics Engine SQL API for ~90 days (see
+  // RUNBOOK.md). Written for /mcp requests to watch crawler/agent adoption.
+  "analytics_engine_datasets": [{ "binding": "TRAFFIC", "dataset": "gankdat_traffic" }],
+  "assets": {
+    "directory": "public"
+  },
+  "triggers": {
+    // Daily source refresh; per-source cadence is dispatched in code (task 3).
+    "crons": ["0 5 * * *"]
+  },
+  "observability": {
+    "enabled": true
+  }
+}

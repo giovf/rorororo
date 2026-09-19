@@ -1,0 +1,55 @@
+{
+  "name": "gankdat",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+
+  "remoteUser": "vscode",
+
+  "features": {
+    "ghcr.io/anthropics/devcontainer-features/claude-code:1.0": {},
+    "ghcr.io/devcontainers/features/github-cli:1": {}
+  },
+
+  // Persistent named volumes keep state across container rebuilds.
+  // All are PER-PROJECT (prefixed with the workspace folder name), so two
+  // projects created from this template never share state:
+  // - claude-config:  ~/.claude (auth + session history + custom commands).
+  //                   You run /login once per project; it survives rebuilds.
+  // - node-modules:   keeps installs fast, off slow bind-mounts
+  // - shell-history:  preserves zsh history
+  "mounts": [
+    "source=${localWorkspaceFolderBasename}-claude-config,target=/home/vscode/.claude,type=volume",
+    "source=${localWorkspaceFolderBasename}-node-modules,target=${containerWorkspaceFolder}/node_modules,type=volume",
+    "source=${localWorkspaceFolderBasename}-shell-history,target=/commandhistory,type=volume"
+  ],
+
+  "forwardPorts": [8787],
+  "portsAttributes": {
+    "8787": { "label": "Wrangler dev (API)" }
+  },
+
+  // Runs once after the container is first created (and after every rebuild).
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+
+  "customizations": {
+    "vscode": {
+      // Base set — stack-specific extensions are added during /setup.
+      "extensions": [
+        "anthropic.claude-code",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "editorconfig.editorconfig",
+        "eamodio.gitlens",
+        "github.vscode-pull-request-github",
+        "ms-azuretools.vscode-docker"
+      ],
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "zsh",
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+      }
+    }
+  }
+}

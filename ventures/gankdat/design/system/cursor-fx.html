@@ -1,0 +1,137 @@
+<!-- @dsCard group="Effects" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cursor effects — pick your weapon</title>
+<style>
+:root{--bg:#0A0A0A;--panel:#111315;--green:#00FF41;--magenta:#FF007F;--border:#2A2E33;--fg:#E6E8EA;--muted:#8B9299;
+--sans:Inter,Geist,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;--mono:"JetBrains Mono","Fira Code",ui-monospace,SFMono-Regular,Menlo,Consolas,monospace}
+*{box-sizing:border-box;border-radius:0 !important}
+body{margin:0;background:var(--bg);color:var(--fg);font:14.5px/1.6 var(--sans);padding:24px}
+h3{font:700 .72rem var(--mono);text-transform:uppercase;letter-spacing:.14em;color:var(--muted);margin:24px 0 12px}
+h3:first-child{margin-top:0}
+h3::before{content:"// ";color:var(--green)}
+.btnrow{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.btn{padding:7px 12px;font:600 .74rem var(--mono);border:1px solid var(--green);background:transparent;color:var(--green);cursor:pointer}
+.btn.on{background:var(--green);color:#0A0A0A}
+.arena{position:relative;border:1px solid var(--border);background:var(--panel);height:300px;overflow:hidden;padding:34px}
+.arena h1{font:800 2rem/1.15 var(--sans);letter-spacing:-.03em;margin:0 0 10px}
+.arena h1 em{font-style:normal;color:var(--green)}
+.arena p{color:var(--muted);max-width:440px;font-size:.92rem}
+.arena a.demo{display:inline-block;margin-top:10px;padding:10px 18px;border:1px solid var(--green);color:var(--green);font:600 .85rem var(--mono);text-decoration:none}
+.hint{font:.72rem var(--mono);color:var(--muted);margin-top:8px}
+/* option A: block cursor replaces pointer */
+.arena.fx-block{cursor:none}
+#blockcur{position:absolute;width:10px;height:18px;background:var(--green);pointer-events:none;display:none;z-index:9;animation:cblink 1.1s steps(1) infinite;mix-blend-mode:screen}
+@keyframes cblink{50%{opacity:.25}}
+/* option B: pixel trail */
+.tp{position:absolute;width:6px;height:6px;background:var(--green);pointer-events:none;z-index:8;animation:fade .5s linear forwards}
+@keyframes fade{to{opacity:0;transform:scale(.3)}}
+/* option C: spotlight glow */
+#spot{position:absolute;inset:0;pointer-events:none;display:none;z-index:1}
+/* option D: schematic crosshair */
+.xh{position:absolute;background:rgba(0,255,65,.28);pointer-events:none;display:none;z-index:7}
+#xhv{width:1px;top:0;bottom:0}#xhh{height:1px;left:0;right:0}
+#coords{position:absolute;font:.66rem var(--mono);color:var(--green);pointer-events:none;display:none;z-index:9;background:rgba(10,10,10,.8);padding:1px 6px;border:1px solid var(--border)}
+/* option E: click burst */
+.burst{position:absolute;font:700 .7rem var(--mono);color:var(--green);pointer-events:none;z-index:9;animation:rise .7s ease-out forwards}
+@keyframes rise{to{transform:translateY(-26px);opacity:0}}
+/* typewriter demo */
+.type-h{font:800 1.7rem var(--sans);letter-spacing:-.03em;min-height:2.4rem}
+.type-h em{font-style:normal;color:var(--green)}
+.tcur{display:inline-block;width:.5em;height:.9em;background:var(--green);vertical-align:baseline;margin-left:3px;animation:cblink 1.05s steps(1) infinite}
+.note{font:.75rem var(--mono);color:var(--muted);border:1px dashed var(--border);padding:10px 14px;max-width:640px;margin-top:18px}
+.note b{color:var(--fg)}
+</style>
+</head>
+<body>
+  <h3>mouse effects — move around the arena, click things</h3>
+  <div class="btnrow">
+    <button class="btn on" data-fx="">none</button>
+    <button class="btn" data-fx="block">A · block cursor</button>
+    <button class="btn" data-fx="trail">B · pixel trail</button>
+    <button class="btn" data-fx="spot">C · spotlight</button>
+    <button class="btn" data-fx="xhair">D · schematic crosshair</button>
+    <button class="btn" data-fx="burst">E · click burst</button>
+  </div>
+  <div class="arena" id="arena">
+    <h1>Public data is a mess.<br>We <em>gank</em> it for you.</h1>
+    <p>Move the pointer around this arena to feel each effect against real page furniture — headline, copy, a button.</p>
+    <a class="demo" href="#" onclick="return false">$ get api-key</a>
+    <div class="hint">click anywhere too — E rewards it</div>
+    <div id="blockcur"></div>
+    <canvas id="spot"></canvas>
+    <div class="xh" id="xhv"></div><div class="xh" id="xhh"></div><div id="coords"></div>
+  </div>
+
+  <h3>hero text cursor — typewriter variant</h3>
+  <div class="btnrow">
+    <button class="btn" id="typebtn">F · run typewriter</button>
+  </div>
+  <p class="type-h" id="typeh">We <em>gank</em> it for you.<span class="tcur"></span></p>
+
+  <p class="note"><b>recommendation:</b> D (crosshair) or C (spotlight) — atmospheric without hijacking the pointer. A is the boldest (replaces the cursor entirely; slight a11y cost). B and E are playful accents — E works well combined with C or D. F is a one-time page-load flourish, not a loop. all effects: desktop-only (touch unaffected), and we'd gate them behind prefers-reduced-motion.</p>
+
+<script>
+const arena=document.getElementById('arena');
+const blockcur=document.getElementById('blockcur');
+const spot=document.getElementById('spot'), sctx=spot.getContext('2d');
+const xhv=document.getElementById('xhv'), xhh=document.getElementById('xhh'), coords=document.getElementById('coords');
+let fx=''; let lastTrail=0;
+function resize(){spot.width=arena.clientWidth;spot.height=arena.clientHeight}
+resize(); addEventListener('resize',resize);
+document.querySelectorAll('.btn[data-fx]').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('.btn[data-fx]').forEach(x=>x.classList.remove('on'));
+  b.classList.add('on'); fx=b.dataset.fx;
+  arena.classList.toggle('fx-block',fx==='block');
+  blockcur.style.display=fx==='block'?'block':'none';
+  spot.style.display=fx==='spot'?'block':'none';
+  xhv.style.display=xhh.style.display=coords.style.display=(fx==='xhair')?'block':'none';
+}));
+arena.addEventListener('mousemove',e=>{
+  const r=arena.getBoundingClientRect(), x=e.clientX-r.left, y=e.clientY-r.top;
+  if(fx==='block'){blockcur.style.left=(x-2)+'px';blockcur.style.top=(y-4)+'px';}
+  if(fx==='trail'&&performance.now()-lastTrail>28){
+    lastTrail=performance.now();
+    const t=document.createElement('div');t.className='tp';t.style.left=(x-3)+'px';t.style.top=(y-3)+'px';
+    arena.appendChild(t);setTimeout(()=>t.remove(),520);
+  }
+  if(fx==='spot'){
+    sctx.clearRect(0,0,spot.width,spot.height);
+    const g=sctx.createRadialGradient(x,y,0,x,y,170);
+    g.addColorStop(0,'rgba(0,255,65,.10)');g.addColorStop(.5,'rgba(0,255,65,.035)');g.addColorStop(1,'rgba(0,255,65,0)');
+    sctx.fillStyle=g;sctx.fillRect(0,0,spot.width,spot.height);
+  }
+  if(fx==='xhair'){
+    xhv.style.left=x+'px';xhh.style.top=y+'px';
+    coords.style.left=(x+10)+'px';coords.style.top=(y+10)+'px';
+    coords.textContent='['+Math.round(x)+','+Math.round(y)+']';
+  }
+});
+arena.addEventListener('click',e=>{
+  if(fx!=='burst')return;
+  const r=arena.getBoundingClientRect();
+  const b=document.createElement('div');b.className='burst';
+  b.style.left=(e.clientX-r.left-18)+'px';b.style.top=(e.clientY-r.top-14)+'px';
+  b.textContent='[GANKED]';arena.appendChild(b);setTimeout(()=>b.remove(),720);
+});
+// typewriter
+const typeh=document.getElementById('typeh');
+document.getElementById('typebtn').addEventListener('click',()=>{
+  const parts=[['We ',false],['gank',true],[' it for you.',false]];
+  typeh.innerHTML='<span class="tcur"></span>';
+  let pi=0,ci=0,out='';
+  (function tick(){
+    if(pi>=parts.length)return;
+    const [txt,em]=parts[pi]; ci++;
+    if(ci>txt.length){pi++;ci=0;return tick();}
+    out=parts.slice(0,pi).map(([t,e])=>e?'<em>'+t+'</em>':t).join('')+(parts[pi][1]?'<em>'+txt.slice(0,ci)+'</em>':txt.slice(0,ci));
+    typeh.innerHTML=out+'<span class="tcur"></span>';
+    setTimeout(tick,55+Math.random()*60);
+  })();
+});
+</script>
+</body>
+</html>

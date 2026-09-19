@@ -1,0 +1,37 @@
+<!-- @dsCard group="B — Terminal dark" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B — Pricing</title>
+<style>
+:root{--bg:#0a0e12;--panel:#0e141b;--fg:#dbe7e4;--muted:#7d8f8a;--line:#1c2830;--green:#4ade80;--amber:#fbbf24}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14.5px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:12px;max-width:860px}
+.plan{border:1px solid var(--line);border-radius:8px;padding:18px 16px;background:var(--panel);position:relative}
+.plan.hot{border-color:var(--green);box-shadow:0 0 24px rgba(74,222,128,.12)}
+.tag{position:absolute;top:-9px;right:12px;background:var(--green);color:#06110a;font-size:.62rem;font-weight:700;padding:2px 8px;border-radius:3px;letter-spacing:.08em}
+.name{color:var(--muted);font-size:.8rem;text-transform:lowercase}
+.name::before{content:"> ";color:var(--green)}
+.price{font-size:1.6rem;font-weight:700;margin:8px 0 2px;color:var(--fg)}
+.price small{font-size:.8rem;color:var(--muted);font-weight:400}
+.cr{color:var(--muted);font-size:.78rem;margin-bottom:14px}
+.btn{display:block;text-align:center;padding:8px 0;border:1px solid var(--green);color:var(--green);text-decoration:none;font-size:.83rem;border-radius:4px}
+.btn.solid{background:var(--green);color:#06110a;font-weight:700}
+.trust{margin-top:18px;color:var(--muted);font-size:.8rem;display:flex;gap:18px;flex-wrap:wrap}
+.trust span::before{content:"[✓] ";color:var(--green)}
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="plan"><div class="name">free</div><div class="price">£0</div><div class="cr">250 credits/mo</div><a class="btn" href="#">sign in</a></div>
+    <div class="plan"><div class="name">saver</div><div class="price">£5<small>/mo</small></div><div class="cr">1,000 credits/mo</div><a class="btn" href="#">subscribe</a></div>
+    <div class="plan hot"><span class="tag">POPULAR</span><div class="name">starter</div><div class="price">£23<small>/mo</small></div><div class="cr">5,000 credits/mo</div><a class="btn solid" href="#">subscribe</a></div>
+    <div class="plan"><div class="name">growth</div><div class="price">£79<small>/mo</small></div><div class="cr">20,000 credits/mo</div><a class="btn" href="#">subscribe</a></div>
+    <div class="plan"><div class="name">scale</div><div class="price">£239<small>/mo</small></div><div class="cr">100,000 credits/mo</div><a class="btn" href="#">subscribe</a></div>
+  </div>
+  <div class="trust"><span>cancel anytime</span><span>14-day make-it-right</span><span>zero trackers</span></div>
+</body>
+</html>

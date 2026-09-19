@@ -1,0 +1,51 @@
+<!-- @dsCard group="B — Terminal dark" -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>B — Components</title>
+<style>
+:root{--bg:#0a0e12;--panel:#0e141b;--fg:#dbe7e4;--muted:#7d8f8a;--line:#1c2830;--green:#4ade80;--amber:#fbbf24;--red:#f87171}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font:14.5px/1.6 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;padding:28px}
+h3{font-size:.75rem;text-transform:lowercase;letter-spacing:.1em;color:var(--muted);margin:26px 0 12px}
+h3::before{content:"# "}
+h3:first-child{margin-top:0}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.btn{padding:9px 16px;border:1px solid var(--green);color:var(--green);background:transparent;font:inherit;font-size:.88rem;cursor:pointer;border-radius:4px}
+.btn.solid{background:var(--green);color:#06110a;font-weight:700}
+.btn.danger{border-color:var(--red);color:var(--red)}
+.btn:hover{box-shadow:0 0 16px rgba(74,222,128,.22)}
+.pill{padding:2px 10px;border:1px solid var(--line);font-size:.75rem;border-radius:3px;color:var(--muted)}
+.pill.ok{color:var(--green);border-color:rgba(74,222,128,.4)}
+.pill.warn{color:var(--amber);border-color:rgba(251,191,36,.4)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:16px;max-width:430px}
+.card h4{margin:0 0 6px;font-size:.95rem;color:var(--green)}
+.card h4 span{color:var(--muted);font-weight:400}
+.card p{margin:0;color:var(--muted);font-size:.85rem}
+.chips code{display:inline-block;border:1px solid var(--line);border-radius:3px;padding:1px 7px;font-size:.75rem;margin:8px 6px 0 0;color:var(--fg)}
+input{padding:10px 13px;border:1px solid var(--line);background:var(--panel);color:var(--fg);font:inherit;font-size:.9rem;min-width:250px;border-radius:4px}
+input:focus{outline:none;border-color:var(--green);box-shadow:0 0 12px rgba(74,222,128,.18)}
+input::placeholder{color:var(--muted)}
+.banner{border:1px solid rgba(74,222,128,.4);background:rgba(74,222,128,.07);border-radius:6px;padding:11px 15px;font-size:.87rem;max-width:520px}
+.banner::before{content:"[ok] ";color:var(--green);font-weight:700}
+.bar{height:10px;border:1px solid var(--line);border-radius:3px;max-width:420px;padding:1px;background:var(--panel)}
+.bar span{display:block;height:100%;width:62%;background:repeating-linear-gradient(90deg,var(--green) 0 6px,transparent 6px 8px)}
+</style>
+</head>
+<body>
+  <h3>buttons</h3>
+  <div class="row"><button class="btn solid">$ get api-key</button><button class="btn">manage billing</button><button class="btn danger">revoke</button></div>
+  <h3>status</h3>
+  <div class="row"><span class="pill ok">● active</span><span class="pill warn">● saver</span><span class="pill">○ free</span></div>
+  <h3>dataset</h3>
+  <div class="card"><h4>uk-tenders <span>// procurement</span></h4><p>Public-sector tenders from Find a Tender's official OCDS feed, one clean row per notice.</p><p class="chips"><code>buyer</code><code>status</code><code>value_amount_min</code><code>q</code></p></div>
+  <h3>input</h3>
+  <div class="row"><input placeholder="you@company.com"><button class="btn solid">send magic link</button></div>
+  <h3>feedback + usage</h3>
+  <div class="banner">payment successful — plan active</div>
+  <div style="height:12px"></div>
+  <div class="bar"><span></span></div>
+</body>
+</html>
