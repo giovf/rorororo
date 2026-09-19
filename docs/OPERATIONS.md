@@ -32,7 +32,7 @@ Created 2026-09-19 on the owner's claude.ai account (GitHub connected):
 - **Foundry weekly report** — Mondays 07:30 UTC: writes `docs/reports/<year>-W<week>.md`
   (money, ventures, alerts, waiting-on-owner, activity, next step), commits.
 Ids: daily `trig_01JBrWDAZLeWEAhSBBnA9g8K`, weekly `trig_01PjxdBAcvYSAT32fCyzcvQg`. Manage at https://claude.ai/code/routines. Keep `STORE.md` current (ids/URLs) — it is what
-the routines read. Each session: `git pull` first (routines commit to the branch), read
+the routines read. Each session: `git pull --no-rebase` first (routines commit to the branch; merge, don't rebase), read
 `docs/ALERTS.md` and the latest report, then regenerate the dashboard.
 
 ## Per-venture review cadence (Phase 4)

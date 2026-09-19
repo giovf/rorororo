@@ -107,7 +107,12 @@ async function statics() {
   if (firefox) {
     manifest.background = { scripts: ['background.js'], type: 'module' };
     manifest.browser_specific_settings = {
-      gecko: { id: 'readfocus@gankdat.com', strict_min_version: '128.0' },
+      gecko: {
+        id: 'readfocus@gankdat.com',
+        strict_min_version: '128.0',
+        // Firefox's built-in data-collection consent: we collect nothing.
+        data_collection_permissions: { required: ['none'] },
+      },
     };
     delete manifest.minimum_chrome_version;
   }
@@ -158,5 +163,5 @@ if (watch) {
 } else {
   await build(bundles);
   const manifest = JSON.parse(await readFile(path.join(dist, 'manifest.json'), 'utf8'));
-  console.log(`ReadFocus ${manifest.version} built → dist/`);
+  console.log(`ReadFocus ${manifest.version} built → ${path.basename(dist)}/`);
 }
