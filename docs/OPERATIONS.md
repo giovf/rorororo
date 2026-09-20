@@ -75,3 +75,10 @@ dashboard (purchases). Chrome → developer dashboard (users, ratings) and the s
 `info@gankdat.com`; reply within two working days; 14-day refunds, no questions asked
 (Figma refunds via Figma; Stripe refunds via the dashboard, then `POST /admin/revoke/<id>`
 on the licence worker).
+
+## Strategy loop (added 2026-09-20)
+
+research → plan → build → distribute → measure → review. The plan is `docs/STRATEGY.md`; the
+monthly strategy review is a cloud routine (first Monday, 08:00 UTC) writing `docs/reviews/YYYY-MM.md`
+with a scorecard, keep/kill verdicts per venture, market signals, research gaps and the next three
+moves. Claude rewrites STRATEGY.md after each review and logs decisions in its §8.

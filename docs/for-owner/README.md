@@ -31,6 +31,7 @@ Claude runs the project; this folder is the only part written for you. Read top 
 | Read | Why |
 | --- | --- |
 | [actions/001-phase0-accounts.md](actions/001-phase0-accounts.md) | The accounts you already created and why |
+| [../STRATEGY.md](../STRATEGY.md) | The business plan: where the money is, 90-day targets, what gets killed and why; reviewed monthly |
 | [../OPERATIONS.md](../OPERATIONS.md) | How the work loop runs, review cadence, kill criteria, the `/loop` command |
 | [../LEDGER.md](../LEDGER.md) | Every pound in and out (the £100 cap is enforced by the build) |
 | [../ARCHITECTURE.md](../ARCHITECTURE.md) | What is being built and with what |
