@@ -1,0 +1,33 @@
+name: gankdat metrics
+
+on:
+  schedule:
+    - cron: '30 6 * * *' # daily, before the 07:00 UTC ops routine
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Append today's numbers to RESEARCH.md
+        run: node ventures/gankdat/scripts/metrics.mjs
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Commit
+        run: |
+          git config user.name "foundry-metrics[bot]"
+          git config user.email "info@gankdat.com"
+          git add ventures/gankdat/RESEARCH.md
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "metrics(gankdat): $(date -u +%F) daily numbers"
+          git pull --rebase origin main
+          git push origin HEAD:main
