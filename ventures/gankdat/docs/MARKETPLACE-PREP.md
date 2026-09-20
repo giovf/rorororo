@@ -47,12 +47,12 @@ mcp-publisher publish   # reads ./server.json
 `mcp-publisher` is a release binary from github.com/modelcontextprotocol/registry
 (linux_amd64 tarball; not in the repo).
 
-## Copy-paste blurbs for any directory form (current, 2026-09-20, v0.10.0)
+## Copy-paste blurbs for any directory form (current, 2026-09-21, v0.11.0)
 
 - **Name**: gankdat
 - **Tagline**: UK & EU tenders, UK planning, UK sanctions, US exclusions, UK insolvency,
   company, charity, care-provider, visa-sponsor and food-hygiene data as clean JSON — REST + MCP + x402.
-- **Description**: gankdat serves eleven official government open-data feeds as one clean,
+- **Description**: gankdat serves twelve official government open-data feeds as one clean,
   filterable JSON schema: UK procurement notices (Find a Tender), EU procurement notices
   (TED), UK planning applications (planning.data.gov.uk), the UK Sanctions List (FCDO),
   US federal exclusions (SAM.gov), UK corporate insolvency notices (The Gazette) and new UK
@@ -68,7 +68,7 @@ mcp-publisher publish   # reads ./server.json
 - **Endpoint**: `https://gankdat.com/mcp` (Streamable HTTP). `initialize` and
   `tools/list` are anonymous; `tools/call` needs `Authorization: Bearer <api key>`
   (free key at https://gankdat.com/account).
-- **Tools** (13): `list_sources`, `get_usage` (free); `query_uk_tenders`, `query_eu_ted`,
+- **Tools** (14): `list_sources`, `get_usage` (free); `query_uk_tenders`, `query_uk_contract_awards`, `query_eu_ted`,
   `query_uk_planning`, `query_uk_sanctions`, `query_sam_exclusions`,
   `query_uk_insolvency`, `query_uk_companies`, `query_uk_food_hygiene`, `query_uk_sponsors`, `query_uk_charities`, `query_uk_care_locations` (1 credit each; filters per dataset, plus
   full-text `q`).

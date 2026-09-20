@@ -36,7 +36,9 @@ establishments; risk + lead-gen bundle; NICHE-RESEARCH-2026-09 §3), and UK lice
 `src/sources/zip.ts`, D1, ~185k registered charities (removed ones surface via the change feed), contact details
 dropped), and the CQC care directory
 (`uk-care-locations`, shipped 2026-09-20 — weekly CSV resolved from CQC's data page, D1,
-~57k regulated locations, phone numbers dropped).
+~57k regulated locations, phone numbers dropped), and UK contract awards
+(`uk-contract-awards`, shipped 2026-09-21 — Contracts Finder OCDS awards, one row per award ×
+supplier with company numbers, KV window; bid-intelligence bundle; NICHE-RESEARCH-2026-09-B).
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo

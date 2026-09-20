@@ -18,6 +18,7 @@ describe('GET /v1/data (sources listing)', () => {
     expect(body.data.map((s) => s.slug)).toEqual([
       'uk-planning',
       'uk-tenders',
+      'uk-contract-awards',
       'uk-sanctions',
       'eu-ted',
       'sam-exclusions',

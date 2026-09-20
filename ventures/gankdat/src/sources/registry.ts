@@ -3,6 +3,7 @@ import { samExclusionsSource } from './sam-exclusions';
 import { ukCareLocationsSource } from './uk-care-locations';
 import { ukCharitiesSource } from './uk-charities';
 import { ukCompaniesSource } from './uk-companies';
+import { ukContractAwardsSource } from './uk-contract-awards';
 import { ukFoodHygieneSource } from './uk-food-hygiene';
 import { ukInsolvencySource } from './uk-insolvency';
 import { ukPlanningSource } from './uk-planning';
@@ -15,6 +16,7 @@ import type { DataSource } from './types';
 const SOURCES: DataSource[] = [
   ukPlanningSource,
   ukTendersSource,
+  ukContractAwardsSource,
   ukSanctionsSource,
   euTedSource,
   samExclusionsSource,

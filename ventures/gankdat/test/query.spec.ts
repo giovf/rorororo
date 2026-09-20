@@ -22,6 +22,7 @@ describe('registry', () => {
     expect(listSources().map((s) => s.slug)).toEqual([
       'uk-planning',
       'uk-tenders',
+      'uk-contract-awards',
       'uk-sanctions',
       'eu-ted',
       'sam-exclusions',

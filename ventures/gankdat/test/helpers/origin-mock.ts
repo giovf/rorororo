@@ -15,6 +15,7 @@ const GOVUK_ASSET_ORIGIN = 'https://assets.publishing.service.gov.uk/';
 const CHARITIES_ORIGIN = 'https://ccewuksprdoneregsadata1.blob.core.windows.net/';
 const CQC_PAGE_ORIGIN = 'https://www.cqc.org.uk/about-us/';
 const CQC_FILE_ORIGIN = 'https://www.cqc.org.uk/system/files/';
+const CF_ORIGIN = 'https://www.contractsfinder.service.gov.uk/Published/Notices/OCDS/Search';
 
 /**
  * Tests run in the same isolate as the worker under test, so stubbing the
@@ -37,6 +38,7 @@ export function stubOrigins(handlers: {
   charities?: () => Response;
   cqcPage?: () => Response;
   cqcFile?: () => Response;
+  contractsFinder?: () => Response;
 }): ReturnType<typeof vi.fn> {
   const mock = vi.fn((input: RequestInfo | URL) => {
     const url = String(input instanceof Request ? input.url : input);
@@ -84,6 +86,9 @@ export function stubOrigins(handlers: {
     }
     if (url.startsWith(CQC_FILE_ORIGIN) && handlers.cqcFile) {
       return Promise.resolve(handlers.cqcFile());
+    }
+    if (url.startsWith(CF_ORIGIN) && handlers.contractsFinder) {
+      return Promise.resolve(handlers.contractsFinder());
     }
     throw new Error(`unexpected outbound fetch in test: ${url}`);
   });

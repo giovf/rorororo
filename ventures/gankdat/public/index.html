@@ -10,7 +10,7 @@
     </title>
     <meta
       name="description"
-      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency, company incorporations, charities, licensed visa sponsors, CQC care locations and food hygiene ratings. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
+      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement and contract awards (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency, company incorporations, charities, licensed visa sponsors, CQC care locations and food hygiene ratings. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
     />
     <link rel="canonical" href="https://gankdat.com/" />
     <meta property="og:type" content="website" />
@@ -677,6 +677,19 @@
           <p class="chips">
             <code>buyer</code><code>status</code><code>cpv_codes</code><code>value_amount_min</code
             ><code>published_at_after</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>uk-contract-awards <span>// bid intelligence</span></h3>
+          <p>
+            Who won what: UK public-sector contract awards from the official Contracts Finder feed —
+            buyer, winning supplier and its company number, value, contract period, CPV codes. The
+            last two weeks of awards, refreshed daily.
+          </p>
+          <p class="chips">
+            <code>supplier</code><code>buyer</code><code>cpv_codes</code
+            ><code>award_value_amount_min</code><code>award_date_after</code><code>category</code
+            ><code>q</code>
           </p>
         </div>
         <div class="card">
