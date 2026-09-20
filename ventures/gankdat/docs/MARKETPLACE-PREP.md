@@ -19,9 +19,9 @@ place for what is listed where, what each channel needs, and the copy-paste blur
 | punkpeye/awesome-remote-mcp-servers | PR open (Search & Data Extraction), 2026-09-20 | https://github.com/punkpeye/awesome-remote-mcp-servers/pull/460 |
 | punkpeye/awesome-mcp-servers | not eligible — self-hosted open-source servers only | — |
 | wong2/awesome-mcp-servers | no PRs accepted; web form at mcpservers.org/submit (needs the owner's browser) | Foundry action 010 §4 |
-| Glama | connector page exists via registry syndication; "Claim" needs the owner's GitHub sign-in | https://glama.ai/mcp/connectors/com.gankdat/gankdat |
+| Glama | claim challenges served 2026-09-20 (`/.well-known/glama.json` + `_glama-claim` TXT); owner completes the claim in Glama | https://glama.ai/mcp/connectors/com.gankdat/gankdat |
 | Smithery | not listed; CLI publish needs a Smithery account (owner) | — |
-| Google Search Console | not set up; owner adds the property, Claude adds the DNS TXT | Foundry action 010 §4 |
+| Google Search Console | domain verified 2026-09-20 (owner, DNS TXT); sitemap `https://gankdat.com/sitemap.xml` to submit once | search.google.com/search-console |
 | x402 Bazaar (CDP discovery) | 402 bodies already carry `discoverable: true`; the catalogue lists services once real settlements occur (only 2 test payments so far) | https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources |
 | RapidAPI, Apify | parked (see below) | — |
 

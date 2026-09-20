@@ -35,15 +35,16 @@ Done from here, no sign-in needed: official MCP registry updated to v0.6.2; pull
 issues opened from your GitHub account at public-apis, the APIs.guru directory and
 awesome-remote-mcp-servers (links in `ventures/gankdat/docs/MARKETPLACE-PREP.md`).
 
-The rest need a browser session signed in as you, which I don't have. Each is a few minutes,
-none is urgent, and I'll do the follow-through once you've done the click:
+Done 20 Sep with your clicks: **Google Search Console** domain verified (DNS record confirmed);
+**Glama** claim challenges are live at `/.well-known/glama.json` and in DNS — finish the claim
+in Glama's page.
+
+Two small clicks left, none urgent:
+- **Search Console → Sitemaps:** submit `https://gankdat.com/sitemap.xml` (one field, once).
 - **mcpservers.org/submit** — free form (2-week review). Fields: name gankdat, category
-  Data/Search, description and links as in MARKETPLACE-PREP.md, contact info@gankdat.com,
-  registry name `com.gankdat/gankdat`, tick "remote".
-- **Glama** — https://glama.ai/mcp/connectors/com.gankdat/gankdat → "Claim" with GitHub.
-- **Google Search Console** — add property `gankdat.com` (Domain type) with your Google
-  account; it shows a TXT record. Paste that TXT value to me (not secret) and I'll add it to
-  DNS; then press Verify and submit `https://gankdat.com/sitemap.xml`.
+  Data/Search, description and links from `ventures/gankdat/docs/MARKETPLACE-PREP.md`,
+  contact info@gankdat.com, registry name `com.gankdat/gankdat`, tick "remote".
+
 ## What I did without you
 - Full assessment and UK legal check on the crypto payment lane (no FCA authorisation needed).
 - Merged the repo with its history, wired quality gates and CI deploys, added the £3.70/month
