@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.gankdat/gankdat",
   "title": "gankdat",
-  "description": "UK & EU tenders, planning, companies, insolvency, food hygiene ratings, sanctions and debarment as clean JSON APIs.",
+  "description": "UK & EU tenders, planning, companies, insolvency, food hygiene, sanctions & debarment as clean JSON.",
   "version": "0.7.0",
   "websiteUrl": "https://gankdat.com",
   "icons": [
