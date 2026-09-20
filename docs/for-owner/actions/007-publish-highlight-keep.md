@@ -1,7 +1,7 @@
 # Owner action request #7 — publish Highlight Keep (Chrome first)
 
 - **Date:** 2026-09-19
-- **Status:** IN PROGRESS — Chrome item created by Claude on 2026-09-20 (package uploaded); the listing text still needs you
+- **Status:** DONE for Chrome — submitted by the owner 2026-09-20, awaiting review. Firefox submitted 2026-09-19. Edge parked (no account).
 - **Your time:** ~15 minutes
 - **Cost:** £0.00
 - **Blocks:** Highlight Keep going live
