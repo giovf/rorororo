@@ -12,6 +12,7 @@ fails the build if `cost + planned` exceeds the **£100** capital cap.
 | Date       | Venture   | Kind    | GBP  | Note                                              |
 | ---------- | --------- | ------- | ---- | ------------------------------------------------- |
 | 2026-09-10 | gankdat   | cost    | 3.70 | Cloudflare Workers Paid — US$5/month recurring since 2026-07-10 (owner-paid before adoption; counted from Sep 2026); ≈£3.70 at ~1.35 |
+| 2027-07-08 | gankdat   | planned | 8.00 | gankdat.com renewal — Cloudflare Registrar, auto-renew on, expires 2027-07-08; ≈US$10.50 at cost |
 | 2026-09-17 | portfolio | cost    | 3.70 | Chrome Web Store developer registration — US$5.00 incl. VAT on Mastercard 17 Sep (order CWS.5162-7768-2586-70036); £3.70 at ~1.35, exact GBP per card statement |
 
 ## Conventions
