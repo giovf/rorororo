@@ -1,148 +1,96 @@
-# Marketplace listing prep (documentation only — do not list yet)
+# Marketplace & directory listings
 
-Listings happen **after** Stage 0 niche validation (out of v1 scope, per the
-PRD). This maps what each channel needs to what already exists, so listing day
-is copy-paste, not engineering.
+**Status (2026-09-20):** listing is ON. The Stage 0 gate that used to block this was
+retired on 2026-07-11; Foundry adopted the venture on 2026-09-19 and the owner approved
+directory sign-ins on 2026-09-20 (Foundry action 010 item 4). This file is the single
+place for what is listed where, what each channel needs, and the copy-paste blurbs.
 
-> See `AGENT-DISCOVERY.md` (2026-07-09) for the wider agent-discovery
-> landscape: official MCP Registry publish flow, x402 Bazaar auto-cataloging,
-> Claude Connectors Directory requirements, and the code-side gaps
-> (Taskmaster 26–28).
+> Wider landscape (how agents find tools, registry/x402/Connectors mechanics):
+> `AGENT-DISCOVERY.md` (2026-07-09).
 
-## RapidAPI
+## Listings log
 
-| They need                | We have                                                        |
-| ------------------------ | -------------------------------------------------------------- |
-| OpenAPI import           | `/openapi.json` (3.1; RapidAPI may want 3.0 — downconvert then) |
-| Auth model               | Header `Authorization: Bearer <key>` (they proxy their own keys → create one `rapidapi@` key per plan, or keep direct keys and use their "external" billing mode) |
-| Pricing tiers            | Free 250/mo; grep £5/1k, cron £23/5k, daemon £79/20k, kernel £239/100k (slugs: saver/starter/growth/scale) — mirrors `src/billing/plans.json` |
-| Base URL                 | `https://gankdat.com`                                          |
-| Description/assets       | reuse landing copy + `llms.txt` summary                        |
+| Channel | Status | Where |
+| --- | --- | --- |
+| Official MCP Registry | **live, v0.6.2** (re-published 2026-09-20; was 0.1.0 with a two-dataset description) | `com.gankdat/gankdat` — registry.modelcontextprotocol.io |
+| PulseMCP | submissions paused on their side; they index the official registry automatically | — |
+| public-apis/public-apis | PR open (Government section), 2026-09-20 | https://github.com/public-apis/public-apis/pull/7436 |
+| APIs.guru OpenAPI directory | issue open (their documented add-API flow), 2026-09-20 | https://github.com/APIs-guru/openapi-directory/issues/3384 |
+| punkpeye/awesome-remote-mcp-servers | PR open (Search & Data Extraction), 2026-09-20 | https://github.com/punkpeye/awesome-remote-mcp-servers/pull/460 |
+| punkpeye/awesome-mcp-servers | not eligible — self-hosted open-source servers only | — |
+| wong2/awesome-mcp-servers | no PRs accepted; web form at mcpservers.org/submit (needs the owner's browser) | Foundry action 010 §4 |
+| Glama | connector page exists via registry syndication; "Claim" needs the owner's GitHub sign-in | https://glama.ai/mcp/connectors/com.gankdat/gankdat |
+| Smithery | not listed; CLI publish needs a Smithery account (owner) | — |
+| Google Search Console | not set up; owner adds the property, Claude adds the DNS TXT | Foundry action 010 §4 |
+| x402 Bazaar (CDP discovery) | 402 bodies already carry `discoverable: true`; the catalogue lists services once real settlements occur (only 2 test payments so far) | https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources |
+| RapidAPI, Apify | parked (see below) | — |
 
-Caveat: RapidAPI proxies requests and takes ~20–25% — per the blueprint, use
-it for discovery and steer volume users to direct billing.
+## Official MCP Registry
 
-## Apify Store
-
-Apify wants an Actor, not an API. Thinnest viable wrapper: an Actor whose
-input schema mirrors a source's `queryParams` and calls `/v1/data/:source`,
-charging per-result ("pay per event"). Defer building until validation says
-this channel matters.
-
-## Official MCP Registry (registry.modelcontextprotocol.io)
-
-**PUBLISHED 2026-07-09**: `com.gankdat/gankdat` v0.1.0, status `active`
-(operator-executed via `mcp-publisher login http` + `publish`; binary at
-`~/.local/bin/mcp-publisher`). Re-publish after any preview-period data
-reset, and bump `server.json` `version` alongside APP_VERSION.
-
-Prep artifacts (task 28, 2026-07-09):
-
-- `server.json` at the repo root — name `com.gankdat/gankdat`, remote
-  streamable-http `https://gankdat.com/mcp`, Authorization header declared
-  `isRequired`+`isSecret`. Validates against the 2025-12-11 schema.
-- Domain proof served at `https://gankdat.com/.well-known/mcp-registry-auth`
-  (Ed25519, verified served by Workers Assets).
-- **Private signing key**: `mcp-registry-key.pem` at the repo root,
-  gitignored. Copy it to the password manager — if this devcontainer is
-  wiped, regenerate the pair and redeploy the proof file before publishing.
-
-Publish day (operator executes — external submission, ask-first):
+- `server.json` at the venture root — `com.gankdat/gankdat`, remote streamable-http
+  `https://gankdat.com/mcp`, Authorization header `isRequired`+`isSecret`. Bump its
+  `version` together with `APP_VERSION` (`src/lib/constants.ts`) on every release,
+  then re-publish.
+- Domain proof: `https://gankdat.com/.well-known/mcp-registry-auth` (Ed25519, Workers
+  Assets). Private key: `mcp-registry-key.pem` at the venture root, gitignored — if it
+  is lost, regenerate the pair and redeploy the proof file before publishing.
+- Publish (no browser, no account — domain-key auth; ~10 s):
 
 ```bash
-# install: brew install mcp-publisher, or a release binary from
-# github.com/modelcontextprotocol/registry
-PRIVATE_KEY="$(openssl pkey -in mcp-registry-key.pem -noout -text | grep -A3 'priv:' | tail -n +2 | tr -d ' :\n')"
+cd ventures/gankdat
+PRIVATE_KEY="$(openssl pkey -in mcp-registry-key.pem -noout -text | awk '/priv:/{f=1;next} f&&/pub:/{exit} f{gsub(/[: ]/,"");printf "%s",$0}')"
 mcp-publisher login http --domain gankdat.com --private-key "${PRIVATE_KEY}"
 mcp-publisher publish   # reads ./server.json
 ```
 
-Notes: registry is in preview (data resets possible — just re-publish); bump
-`server.json` `version` alongside APP_VERSION; aggregators syndicate from
-this registry, so publish here first.
+`mcp-publisher` is a release binary from github.com/modelcontextprotocol/registry
+(linux_amd64 tarball; not in the repo).
 
-## MCP directories (PulseMCP, Glama, Smithery, etc.)
-
-- Endpoint: `https://gankdat.com/mcp` (Streamable HTTP), bearer key for
-  tools/call; `initialize`/`tools/list` are anonymous since task 26, so
-  directory crawlers can index the tools without a key.
-- Server name `gankdat`; tools: `list_sources`, `get_usage`,
-  `query_uk_planning`, `query_uk_tenders`, `query_uk_sanctions`.
-- Most directories syndicate from the official registry (publish there
-  first, then claim the listing); Glama also takes a GitHub repo link — the
-  repo is private until the operator publishes it (their call).
-
-### Submission form contents (copy-paste, prepped 2026-07-10)
-
-Reusable blurbs for any directory form:
+## Copy-paste blurbs for any directory form (current, 2026-09-20)
 
 - **Name**: gankdat
-- **Tagline** (short): UK tenders & planning applications as clean JSON —
-  REST + MCP + x402.
-- **Description** (long): gankdat serves UK public-sector data from official
-  government feeds (Find a Tender OCDS procurement notices;
-  planning.data.gov.uk planning applications), normalized to one clean JSON
-  schema. Native MCP server for AI agents, plus x402 USDC pay-per-request on
-  Base — no signup needed for agents that can pay per call. Free tier: 250
-  requests/month. Licence and personal-data posture stated per dataset in the
-  terms (current datasets: OGL v3, Blind Mode — personal data dropped at ingest).
-- **Endpoint**: `https://gankdat.com/mcp` (Streamable HTTP, MCP 2025-06-18)
-- **Auth**: `Authorization: Bearer <api key>` for tools/call (free key at
-  https://gankdat.com/account); `initialize`/`tools/list` need no key.
-- **Tools**:
-  - `list_sources` — datasets with filter params + credit cost (free)
-  - `get_usage` — plan, credits used/remaining (free)
-  - `query_uk_tenders` — Find a Tender OCDS notices; filter by buyer, CPV,
-    status, value, dates, full-text `q` (1 credit)
-  - `query_uk_planning` — planning applications; filter by authority,
-    reference, decision dates, full-text `q` (1 credit)
-  - `query_uk_sanctions` — UK Sanctions List designations; filter by name,
-    regime, type, country, dates, full-text `q` (1 credit)
-- **Official registry**: `com.gankdat/gankdat` (published 2026-07-09)
-- **Links**: site https://gankdat.com · docs https://gankdat.com/docs ·
-  OpenAPI https://gankdat.com/openapi.json · llms.txt
-  https://gankdat.com/llms.txt · icon https://gankdat.com/icon-raccoon.svg
-- **Pricing**: free 250/mo; grep £5/1k · cron £23/5k · daemon £79/20k ·
-  kernel £239/100k; x402 ~$0.005/request.
-- **Categories/tags**: data · government · open-data · uk · procurement ·
-  tenders · planning · property
+- **Tagline**: UK & EU tenders, UK planning, UK sanctions, US exclusions, UK insolvency
+  and company data as clean JSON — REST + MCP + x402.
+- **Description**: gankdat serves seven official government open-data feeds as one clean,
+  filterable JSON schema: UK procurement notices (Find a Tender), EU procurement notices
+  (TED), UK planning applications (planning.data.gov.uk), the UK Sanctions List (FCDO),
+  US federal exclusions (SAM.gov), UK corporate insolvency notices (The Gazette) and new UK
+  company incorporations (Companies House). Native MCP server for AI agents, plus x402
+  USDC pay-per-request on Base for agents with no account. Free tier: 250 requests/month.
+  Licence and personal-data posture stated per dataset in the terms; personal fields are
+  dropped at ingest. Source code is not open source.
+- **Endpoint**: `https://gankdat.com/mcp` (Streamable HTTP). `initialize` and
+  `tools/list` are anonymous; `tools/call` needs `Authorization: Bearer <api key>`
+  (free key at https://gankdat.com/account).
+- **Tools** (9): `list_sources`, `get_usage` (free); `query_uk_tenders`, `query_eu_ted`,
+  `query_uk_planning`, `query_uk_sanctions`, `query_sam_exclusions`,
+  `query_uk_insolvency`, `query_uk_companies` (1 credit each; filters per dataset, plus
+  full-text `q`).
+- **Official registry name**: `com.gankdat/gankdat`
+- **Links**: site https://gankdat.com · docs https://gankdat.com/docs · OpenAPI 3.1
+  https://gankdat.com/openapi.json · llms.txt https://gankdat.com/llms.txt · icon
+  https://gankdat.com/icon-raccoon.svg (SVG) / https://gankdat.com/favicon.png
+- **Pricing**: free 250/mo; grep £5/1k · cron £23/5k · daemon £79/20k · kernel £239/100k
+  (slugs saver/starter/growth/scale, `src/billing/plans.json`); x402 US$0.005/request.
+- **Contact**: info@gankdat.com
+- **Categories/tags**: data · government · open-data · uk · eu · procurement · tenders ·
+  planning · sanctions · compliance · kyb
 
-Channel-specific notes:
+## Parked channels
 
-- **PulseMCP** (https://www.pulsemcp.com/submit): form takes name, endpoint,
-  description, links — everything above; no repo needed. Classification:
-  "official provider", remote.
-- **Glama** (https://glama.ai): richest listings come from a public GitHub
-  repo, which is still the operator's call; without it, submit the remote
-  endpoint + blurbs and claim the listing when registry syndication lands.
-- **Smithery** (`smithery mcp publish https://gankdat.com/mcp -n gankdat/gankdat`):
-  CLI publish under an operator Smithery account.
+- **RapidAPI** — imports `/openapi.json` (may want 3.0; downconvert then); proxies with
+  its own keys and takes ~20–25%. Use only for discovery if ever; steer volume users to
+  direct billing. Needs an owner account.
+- **Apify Store** — wants an Actor, not an API: a thin wrapper whose input mirrors a
+  source's `queryParams` and calls `/v1/data/:source`, charged per result. Build only if a
+  signal says this channel matters.
 
-## x402 discovery
+## Pre-listing checklist
 
-- The 402 payment-requirements body already marks the resource
-  `discoverable: true`; x402 index sites (e.g. x402scan) pick services up from
-  on-chain settlement activity once real payments flow.
-
-## Pre-listing checklist (all blocked on launch config, none on code)
-
-- [x] Domain purchased and Worker routed — gankdat.com (2026-07-08)
+- [x] Domain and Worker routed — gankdat.com (2026-07-08)
 - [x] Stripe live mode + real prices (2026-07-09)
-- [ ] `FIXTURE_FALLBACK=false` in production
-- [ ] UptimeRobot monitor green for 2+ weeks (runbook)
-- [ ] Stage 0 validation threshold met (20+ signups or 5 pre-commits)
-
-
-## Listings log (Foundry, 2026-09-20)
-
-| Channel | Status | Where |
-| --- | --- | --- |
-| Official MCP Registry | re-published v0.6.2 (was 0.1.0, two-dataset description) via `mcp-publisher login http` (domain key) | registry.modelcontextprotocol.io — `com.gankdat/gankdat` |
-| PulseMCP | submissions paused; indexes the official registry automatically | — |
-| public-apis/public-apis | PR open (Government section) | https://github.com/public-apis/public-apis/pull/7436 |
-| APIs.guru OpenAPI directory | issue open (their documented add-API flow) | https://github.com/APIs-guru/openapi-directory/issues/3384 |
-| punkpeye/awesome-remote-mcp-servers | PR open (Search & Data Extraction) | https://github.com/punkpeye/awesome-remote-mcp-servers/pull/460 |
-| punkpeye/awesome-mcp-servers | not eligible (local/open-source servers only) | — |
-| wong2/awesome-mcp-servers | no PRs; web form at mcpservers.org/submit (owner) | — |
-| x402 Bazaar (CDP discovery) | not listed yet — needs the `discoverable` route flag on the x402 middleware; code task | — |
-| Glama / Smithery claim, Google Search Console, dev.to | need a browser sign-in with the owner's GitHub/Google | action 010 item 4 |
+- [x] `FIXTURE_FALLBACK=false` in production (`wrangler.jsonc` vars)
+- [x] All seven datasets refreshing daily (sam-exclusions fixed 2026-09-20)
+- [ ] External uptime monitor (runbook suggests UptimeRobot; not confirmed set up — the
+      Foundry daily routine checks `/v1/health` instead)
+- [x] Stage 0 gate — retired 2026-07-11 (signal comes from shipped-product metrics)
