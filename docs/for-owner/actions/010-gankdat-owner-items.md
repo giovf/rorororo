@@ -1,6 +1,6 @@
 # 010 — gankdat: what only you can do
 
-**Status:** open · **Urgency:** low — nothing breaks if you leave these for a while.
+**Status:** DONE 2026-09-20 — SAM resolved without you, domain on auto-renew, Search Console verified, Glama claimed, sitemap + mcpservers.org submitted by the owner. Glama's health-check key was emailed to you for its test profile.
 Background: [../incoming/gankdat-assessment.md](../incoming/gankdat-assessment.md).
 
 gankdat now lives in this repo as `ventures/gankdat/` and deploys from here. I run it; these
