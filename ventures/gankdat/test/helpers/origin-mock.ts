@@ -10,6 +10,8 @@ const SAM_FILE_ORIGIN = 'https://falextracts.s3.amazonaws.com/';
 const GAZETTE_ORIGIN = 'https://www.thegazette.co.uk/insolvency/notice/data.json';
 const CH_ORIGIN = 'https://api.company-information.service.gov.uk/advanced-search/companies';
 const FHRS_ORIGIN = 'https://ratings.food.gov.uk/api/open-data-files/';
+const GOVUK_CONTENT_ORIGIN = 'https://www.gov.uk/api/content/';
+const GOVUK_ASSET_ORIGIN = 'https://assets.publishing.service.gov.uk/';
 
 /**
  * Tests run in the same isolate as the worker under test, so stubbing the
@@ -27,6 +29,8 @@ export function stubOrigins(handlers: {
   gazette?: () => Response;
   companies?: () => Response;
   fhrs?: () => Response;
+  govukContent?: () => Response;
+  govukAsset?: () => Response;
 }): ReturnType<typeof vi.fn> {
   const mock = vi.fn((input: RequestInfo | URL) => {
     const url = String(input instanceof Request ? input.url : input);
@@ -59,6 +63,12 @@ export function stubOrigins(handlers: {
     }
     if (url.startsWith(FHRS_ORIGIN) && handlers.fhrs) {
       return Promise.resolve(handlers.fhrs());
+    }
+    if (url.startsWith(GOVUK_CONTENT_ORIGIN) && handlers.govukContent) {
+      return Promise.resolve(handlers.govukContent());
+    }
+    if (url.startsWith(GOVUK_ASSET_ORIGIN) && handlers.govukAsset) {
+      return Promise.resolve(handlers.govukAsset());
     }
     throw new Error(`unexpected outbound fetch in test: ${url}`);
   });

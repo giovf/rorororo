@@ -28,6 +28,7 @@ describe('registry', () => {
       'uk-insolvency',
       'uk-companies',
       'uk-food-hygiene',
+      'uk-sponsors',
     ]);
   });
 });

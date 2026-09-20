@@ -10,7 +10,7 @@
     </title>
     <meta
       name="description"
-      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency, company incorporations and food hygiene ratings. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
+      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency, company incorporations, licensed visa sponsors and food hygiene ratings. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
     />
     <link rel="canonical" href="https://gankdat.com/" />
     <meta property="og:type" content="website" />
@@ -32,7 +32,7 @@
         "@id": "https://gankdat.com/#api",
         "name": "gankdat",
         "url": "https://gankdat.com",
-        "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, US federal exclusions, UK insolvency, company incorporations and food hygiene ratings) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
+        "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, US federal exclusions, UK insolvency, company incorporations, licensed visa sponsors and food hygiene ratings) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
         "documentation": "https://gankdat.com/docs",
         "termsOfService": "https://gankdat.com/terms",
         "provider": { "@type": "Organization", "name": "gankdat", "url": "https://gankdat.com" },
@@ -761,6 +761,18 @@
             <code>rating_value</code><code>business_type</code><code>outward_code</code
             ><code>local_authority</code><code>rating_date_after</code><code>hygiene_score_min</code
             ><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>uk-sponsors <span>// company data</span></h3>
+          <p>
+            Every organisation licensed by the Home Office to sponsor Worker and Temporary Worker
+            visas — name, town, county, sponsor type, licence rating and immigration route, from the
+            official GOV.UK register. Republished most working days.
+          </p>
+          <p class="chips">
+            <code>organisation</code><code>route</code><code>rating</code><code>town</code
+            ><code>county</code><code>q</code>
           </p>
         </div>
       </div>

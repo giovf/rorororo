@@ -185,6 +185,7 @@ describe('scheduled refresh', () => {
       { source_slug: 'uk-insolvency', status: 'ok' },
       { source_slug: 'uk-planning', status: 'ok' },
       { source_slug: 'uk-sanctions', status: 'ok' },
+      { source_slug: 'uk-sponsors', status: 'ok' },
       { source_slug: 'uk-tenders', status: 'ok' },
     ]);
   });

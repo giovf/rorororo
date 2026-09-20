@@ -5,6 +5,7 @@ import { ukFoodHygieneSource } from './uk-food-hygiene';
 import { ukInsolvencySource } from './uk-insolvency';
 import { ukPlanningSource } from './uk-planning';
 import { ukSanctionsSource } from './uk-sanctions';
+import { ukSponsorsSource } from './uk-sponsors';
 import { ukTendersSource } from './uk-tenders';
 import type { DataSource } from './types';
 
@@ -18,6 +19,7 @@ const SOURCES: DataSource[] = [
   ukInsolvencySource,
   ukCompaniesSource,
   ukFoodHygieneSource,
+  ukSponsorsSource,
 ];
 
 export const registry: ReadonlyMap<string, DataSource> = new Map(

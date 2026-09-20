@@ -5,7 +5,7 @@ Stripe billing) and **AI agents** (MCP server + x402 USDC micropayments). v1
 ships official open data across two bundles — bid intelligence (UK planning
 applications, UK + EU procurement notices) and counterparty risk (UK
 sanctions, US federal exclusions, UK corporate insolvency, UK company
-incorporations, UK food hygiene ratings) — normalized to clean JSON behind a swappable data-source
+incorporations, UK food hygiene ratings, UK licensed visa sponsors) — normalized to clean JSON behind a swappable data-source
 layer, so datasets are added or retired without touching the platform (auth,
 metering, billing, MCP, x402, docs). Large lists (e.g. US exclusions) sit in
 D1; smaller feeds are cached KV snapshots.
