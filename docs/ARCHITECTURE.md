@@ -23,7 +23,9 @@ job, a paid competitor with a documented gap, ≤ 1 week to build, no policy/ToS
 packages/core            venture manifest types, portfolio loader, ledger parser
 packages/licensing       Ed25519 signed licence keys; Stripe webhook verify; revocation
 packages/license-worker  Cloudflare Worker: Stripe webhook → key → Resend email; status API
-packages/landing         static site (GitHub Pages: https://giovf.github.io/rorororo/)
+packages/landing         static site — Cloudflare static-assets Worker at https://apps.gankdat.com/
+                         (GitHub Pages copy at giovf.github.io/rorororo until store listings switch;
+                         then the repo goes private — action 013)
 packages/telemetry       opt-in funnel event counting (planned, V2)
 ventures/<slug>/         one workspace per product: venture.json, RESEARCH.md, src/
 ventures/variables-toolkit   V1 Figma plugin (validated; awaiting owner test + launch)

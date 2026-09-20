@@ -1,0 +1,27 @@
+name: landing
+
+on:
+  push:
+    branches: [main]
+    paths: ['packages/landing/**', '.github/workflows/landing.yml']
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: packages/landing
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+        working-directory: .
+      - name: Deploy landing site (static-assets Worker, apps.gankdat.com)
+        run: npx wrangler deploy
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 37e56f3ce4dfe49919e85d4380467f44

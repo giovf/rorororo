@@ -1,0 +1,12 @@
+{
+  "$schema": "../../node_modules/wrangler/config-schema.json",
+  // Foundry landing + policy pages as a static-assets Worker (Cloudflare, free plan).
+  // Replaces GitHub Pages so the repo can be private. Deploy: `npx wrangler deploy` here
+  // (CI: .github/workflows/landing.yml).
+  "name": "foundry-landing",
+  "compatibility_date": "2026-07-06",
+  // html_handling none: the store listings and extensions link to the .html paths verbatim.
+  "assets": { "directory": "site", "html_handling": "none", "not_found_handling": "none" },
+  "routes": [{ "pattern": "apps.gankdat.com", "custom_domain": true }],
+  "workers_dev": true
+}
