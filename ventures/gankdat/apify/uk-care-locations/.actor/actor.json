@@ -12,5 +12,9 @@
     "GANKDAT_API_KEY": "@gankdatApiKey"
   },
   "minMemoryMbytes": 256,
-  "maxMemoryMbytes": 512
+  "maxMemoryMbytes": 512,
+  "output": "./output_schema.json",
+  "storages": {
+    "dataset": "./dataset_schema.json"
+  }
 }
