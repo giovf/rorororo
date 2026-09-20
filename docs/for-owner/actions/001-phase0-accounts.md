@@ -67,7 +67,7 @@ Everything below needs *your* identity or wallet; nothing else in the backlog do
 - **What:** the static site in `packages/landing/site/` deployed to GitHub Pages.
 - **Where:** https://github.com/giovf/rorororo
 - **Steps:**
-  1. Push this branch: `git push origin feature/data-retrieval-and-manipulation`.
+  1. Push this branch: `git push origin main`.
   2. On GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
   3. **Actions** tab → "Deploy landing site to GitHub Pages" → Run workflow (or it runs
      on the push). URL: `https://giovf.github.io/rorororo/`.

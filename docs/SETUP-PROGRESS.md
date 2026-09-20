@@ -17,7 +17,7 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
 ## Decisions so far
 
 ### Step 0 (2026-09-17)
-- Git repo: yes. Branch `feature/data-retrieval-and-manipulation`, main branch `main`.
+- Git repo: yes. Branch `main`, main branch `main`.
 - Toolchain: node v22.23.1, npm 10.9.8, task-master 0.43.1, gh 2.101.0. All OK.
 - **IMPORTANT — this is NOT a blank template.** The template was copied on top of an
   existing Python project. Pre-existing, git-tracked code:
@@ -143,7 +143,7 @@ Tracks `/setup` (see `docs/SETUP.md`). Update after **every** completed step.
 - Figma paid-plugin eligibility verified (open to all with Stripe; UK supported).
 - Setup machinery (`docs/SETUP.md`, this file, `.claude/commands/setup.md`, post-create
   banner) left in place — delete only on the owner's say-so.
-- Committed locally on `feature/data-retrieval-and-manipulation` (not pushed).
+- Committed locally on `main` (not pushed).
 
 ### 2026-09-17 late — landing site live
 - `gh auth login` done by owner (user giovf). Branch pushed. GitHub Pages enabled via API
