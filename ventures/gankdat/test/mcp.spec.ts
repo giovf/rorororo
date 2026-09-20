@@ -148,7 +148,7 @@ describe('/mcp', () => {
     expect(keyless.status).toBe(401);
     expect(spy).toHaveBeenCalledWith(
       expect.objectContaining({
-        blobs: ['mcp_denied', expect.any(String), 'tools/call', 'no_key'],
+        blobs: ['mcp_denied', expect.any(String), 'tools/call', 'no_key', 'list_sources'],
         indexes: ['mcp_denied'],
       }),
     );
@@ -167,7 +167,7 @@ describe('/mcp', () => {
     expect(badKey.status).toBe(401);
     expect(spy).toHaveBeenCalledWith(
       expect.objectContaining({
-        blobs: ['mcp_denied', expect.any(String), 'tools/list', 'bad_key'],
+        blobs: ['mcp_denied', expect.any(String), 'tools/list', 'bad_key', ''],
       }),
     );
 
@@ -176,7 +176,7 @@ describe('/mcp', () => {
     await rpc(null, 'tools/list');
     expect(spy).toHaveBeenCalledWith(
       expect.objectContaining({
-        blobs: ['mcp_anon', expect.any(String), 'tools/list'],
+        blobs: ['mcp_anon', expect.any(String), 'tools/list', '', ''],
       }),
     );
 

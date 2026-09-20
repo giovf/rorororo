@@ -4,16 +4,10 @@
     "type": "object",
     "properties": {
       "unique_id": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "name": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "aliases": {
         "type": "array",
@@ -22,22 +16,13 @@
         }
       },
       "designation_type": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "regime": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "designation_source": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "sanctions_imposed": {
         "type": "array",
@@ -52,16 +37,10 @@
         }
       },
       "date_designated": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "last_updated": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       }
     }
   },

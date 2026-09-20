@@ -4,106 +4,55 @@
     "type": "object",
     "properties": {
       "fhrs_id": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       },
       "business_name": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "business_type": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "address": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "postcode": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "outward_code": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "local_authority": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "local_authority_code": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "rating_value": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "scheme_type": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "rating_date": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "hygiene_score": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       },
       "structural_score": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       },
       "confidence_score": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       },
       "new_rating_pending": {
-        "type": [
-          "boolean",
-          "null"
-        ]
+        "type": ["boolean", "null"]
       },
       "latitude": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       },
       "longitude": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       }
     }
   },

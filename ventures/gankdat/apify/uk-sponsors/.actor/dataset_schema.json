@@ -4,40 +4,22 @@
     "type": "object",
     "properties": {
       "organisation": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "town": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "county": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "sponsor_type": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "rating": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "route": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       }
     }
   },
@@ -45,14 +27,7 @@
     "overview": {
       "title": "Overview",
       "transformation": {
-        "fields": [
-          "organisation",
-          "town",
-          "county",
-          "sponsor_type",
-          "rating",
-          "route"
-        ]
+        "fields": ["organisation", "town", "county", "sponsor_type", "rating", "route"]
       },
       "display": {
         "component": "table"

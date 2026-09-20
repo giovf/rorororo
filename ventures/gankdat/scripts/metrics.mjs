@@ -68,11 +68,18 @@ const paywall = n(
   'n',
 );
 
+const wanted = await ae(
+  "SELECT blob5 AS tool, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_denied' AND blob5 != '' AND timestamp > NOW() - INTERVAL '1' DAY GROUP BY tool ORDER BY n DESC LIMIT 3",
+);
+const wantedNote = wanted.length
+  ? `; wanted: ${wanted.map((r) => `${r.tool} ${Math.round(Number(r.n))}`).join(', ')}`
+  : '';
+
 const date = new Date().toISOString().slice(0, 10);
 const users = `${acct.total} accts (${acct.paid ?? 0} paid, +${acct.new24h ?? 0}/24h)`;
 const sales = `${kinds.x402_paid ?? 0} x402 paid`;
 const notes = [
-  `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${paywall} paywall hits`,
+  `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${paywall} paywall hits${wantedNote}`,
   errors.length ? `refresh errors: ${errors.map((e) => e.source_slug).join(', ')}` : 'refresh ok',
 ].join('; ');
 const row = `| ${date} | Daily numbers | ${users} | — | ${sales} | ${notes} |`;

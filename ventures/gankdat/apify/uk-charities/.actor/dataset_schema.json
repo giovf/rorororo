@@ -4,142 +4,73 @@
     "type": "object",
     "properties": {
       "organisation_number": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       },
       "registered_charity_number": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       },
       "linked_charity_number": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       },
       "name": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "charity_type": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "registration_status": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "date_of_registration": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "date_of_removal": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "reporting_status": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "latest_financial_period_end": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "latest_income": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       },
       "latest_expenditure": {
-        "type": [
-          "number",
-          "null"
-        ]
+        "type": ["number", "null"]
       },
       "postcode": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "outward_code": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "company_number": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "website": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       },
       "insolvent": {
-        "type": [
-          "boolean",
-          "null"
-        ]
+        "type": ["boolean", "null"]
       },
       "in_administration": {
-        "type": [
-          "boolean",
-          "null"
-        ]
+        "type": ["boolean", "null"]
       },
       "is_cio": {
-        "type": [
-          "boolean",
-          "null"
-        ]
+        "type": ["boolean", "null"]
       },
       "cio_dissolved": {
-        "type": [
-          "boolean",
-          "null"
-        ]
+        "type": ["boolean", "null"]
       },
       "gift_aid": {
-        "type": [
-          "boolean",
-          "null"
-        ]
+        "type": ["boolean", "null"]
       },
       "has_land": {
-        "type": [
-          "boolean",
-          "null"
-        ]
+        "type": ["boolean", "null"]
       },
       "activities": {
-        "type": [
-          "string",
-          "null"
-        ]
+        "type": ["string", "null"]
       }
     }
   },

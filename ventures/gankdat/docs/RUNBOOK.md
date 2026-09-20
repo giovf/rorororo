@@ -45,7 +45,8 @@ Every `/mcp` request writes a datapoint to the `gankdat_traffic` dataset:
 `blob1` = `mcp_anon` | `mcp_authed` | `mcp_denied` (401 before the handler),
 `blob2` = User-Agent, `blob3` = JSON-RPC method(s), comma-joined (task 45;
 empty on rows written before 2026-07-12), `blob4` (denied only) = `no_key` |
-`bad_key`, `double1` = 1. Anonymous traffic is crawlers/directories/agents
+`bad_key`, `blob5` (since 2026-09-20) = tool name(s) on `tools/call` — i.e. which dataset an
+agent asked for, the per-dataset demand signal — `double1` = 1. Anonymous traffic is crawlers/directories/agents
 window-shopping; the UA names them. A `mcp_denied` + `tools/call` + `no_key`
 row is the conversion signal: an agent wanted the data and stopped at the
 paywall. ~90-day retention, queryable via the SQL API:

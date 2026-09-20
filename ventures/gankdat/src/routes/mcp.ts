@@ -52,23 +52,28 @@ async function isAnonymousIntrospection(c: Context<AppEnv>): Promise<boolean> {
 // Comma-joined sorted unique JSON-RPC method names from the (possibly batched)
 // body, recorded in analytics blobs. Same cached-parse safety note as
 // isAnonymousIntrospection; '' when the body is malformed JSON.
-async function requestMethods(c: Context<AppEnv>): Promise<string> {
+/** JSON-RPC method(s) and, for tools/call, the tool name(s) — which dataset an agent wanted. */
+async function requestShape(c: Context<AppEnv>): Promise<{ methods: string; tools: string }> {
   let body: unknown;
   try {
     body = await c.req.json();
   } catch {
-    return '';
+    return { methods: '', tools: '' };
   }
   const messages = Array.isArray(body) ? body : [body];
   const methods = new Set<string>();
+  const tools = new Set<string>();
   for (const message of messages) {
-    const method =
+    const msg =
       typeof message === 'object' && message !== null
-        ? (message as { method?: unknown }).method
-        : undefined;
-    methods.add(typeof method === 'string' ? method : '(invalid)');
+        ? (message as { method?: unknown; params?: { name?: unknown } })
+        : {};
+    methods.add(typeof msg.method === 'string' ? msg.method : '(invalid)');
+    if (msg.method === 'tools/call' && typeof msg.params?.name === 'string') {
+      tools.add(msg.params.name.slice(0, 64));
+    }
   }
-  return [...methods].sort().join(',');
+  return { methods: [...methods].sort().join(','), tools: [...tools].sort().join(',') };
 }
 
 // Anonymous introspection is limited in-isolate (zero KV ops): crawler waves
@@ -110,12 +115,15 @@ export const mcpRoute = new Hono<AppEnv>().post(
     // an agent attempting tools/call without a key. Record rejections here.
     const response = await requireApiKey()(c, next);
     if (response instanceof Response && response.status === 401) {
+      const shape = await requestShape(c);
       c.env.TRAFFIC.writeDataPoint({
+        // blob5 = tool name(s) on tools/call: which dataset the agent wanted (task 52).
         blobs: [
           'mcp_denied',
           c.req.header('User-Agent') ?? '',
-          await requestMethods(c),
+          shape.methods,
           c.req.header('Authorization') ? 'bad_key' : 'no_key',
+          shape.tools,
         ],
         doubles: [1],
         indexes: ['mcp_denied'],
@@ -129,11 +137,14 @@ export const mcpRoute = new Hono<AppEnv>().post(
     // Adoption analytics (fire-and-forget, no request-path cost): who calls
     // /mcp and which method — splits crawler introspection (initialize,
     // tools/list) from real tool usage. UA only, no IPs (data-minimization).
+    const shape = await requestShape(c);
     c.env.TRAFFIC.writeDataPoint({
       blobs: [
         c.get('keyCtx') ? 'mcp_authed' : 'mcp_anon',
         c.req.header('User-Agent') ?? '',
-        await requestMethods(c),
+        shape.methods,
+        '',
+        shape.tools,
       ],
       doubles: [1],
       indexes: [c.get('keyCtx') ? 'mcp_authed' : 'mcp_anon'],

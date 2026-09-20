@@ -1932,13 +1932,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-09-20T17:54:47.523Z"
+      },
+      {
+        "id": "52",
+        "title": "MCP analytics: record requested tool name on tools/call (per-dataset demand signal)",
+        "description": "blob5 on gankdat_traffic datapoints = tool name(s) for tools/call (authed, anon, denied). metrics.mjs reports the top wanted tools among paywall hits. Answers the review's research gap: which dataset do agents want?",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-09-20T23:12:09.743Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-20T17:54:47.523Z",
-      "taskCount": 51,
-      "completedCount": 48,
+      "lastModified": "2026-09-20T23:12:09.743Z",
+      "taskCount": 52,
+      "completedCount": 49,
       "tags": [
         "master"
       ]
