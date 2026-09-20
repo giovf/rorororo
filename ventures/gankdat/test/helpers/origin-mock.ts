@@ -9,6 +9,7 @@ const SAM_DOWNLOAD_ORIGIN = 'https://sam.gov/api/prod/fileextractservices/v1/api
 const SAM_FILE_ORIGIN = 'https://falextracts.s3.amazonaws.com/';
 const GAZETTE_ORIGIN = 'https://www.thegazette.co.uk/insolvency/notice/data.json';
 const CH_ORIGIN = 'https://api.company-information.service.gov.uk/advanced-search/companies';
+const FHRS_ORIGIN = 'https://ratings.food.gov.uk/api/open-data-files/';
 
 /**
  * Tests run in the same isolate as the worker under test, so stubbing the
@@ -25,6 +26,7 @@ export function stubOrigins(handlers: {
   samFile?: () => Response;
   gazette?: () => Response;
   companies?: () => Response;
+  fhrs?: () => Response;
 }): ReturnType<typeof vi.fn> {
   const mock = vi.fn((input: RequestInfo | URL) => {
     const url = String(input instanceof Request ? input.url : input);
@@ -54,6 +56,9 @@ export function stubOrigins(handlers: {
     }
     if (url.startsWith(CH_ORIGIN) && handlers.companies) {
       return Promise.resolve(handlers.companies());
+    }
+    if (url.startsWith(FHRS_ORIGIN) && handlers.fhrs) {
+      return Promise.resolve(handlers.fhrs());
     }
     throw new Error(`unexpected outbound fetch in test: ${url}`);
   });

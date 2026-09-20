@@ -1,4 +1,4 @@
-export const APP_VERSION = '0.6.2';
+export const APP_VERSION = '0.7.0';
 
 // Placeholder free-tier size (PRD open question #5 — pricing is launch config).
 export const FREE_TIER_CREDITS = 250;

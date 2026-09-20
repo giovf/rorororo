@@ -10,7 +10,7 @@
     </title>
     <meta
       name="description"
-      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency and company incorporations. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
+      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency, company incorporations and food hygiene ratings. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
     />
     <link rel="canonical" href="https://gankdat.com/" />
     <meta property="og:type" content="website" />
@@ -32,7 +32,7 @@
         "@id": "https://gankdat.com/#api",
         "name": "gankdat",
         "url": "https://gankdat.com",
-        "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, US federal exclusions, UK insolvency and company incorporations) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
+        "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, US federal exclusions, UK insolvency, company incorporations and food hygiene ratings) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
         "documentation": "https://gankdat.com/docs",
         "termsOfService": "https://gankdat.com/terms",
         "provider": { "@type": "Organization", "name": "gankdat", "url": "https://gankdat.com" },
@@ -748,6 +748,19 @@
           <p class="chips">
             <code>company</code><code>company_type</code><code>sic_codes</code><code>locality</code
             ><code>incorporated_on_after</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>uk-food-hygiene <span>// risk &amp; leads</span></h3>
+          <p>
+            Every rated food business in the UK from the official FSA Food Hygiene Rating Scheme
+            file — name, type, trading address and area, local authority, rating value and date,
+            sub-scores, new-rating-pending flag. Stable FHRSID; refreshed daily.
+          </p>
+          <p class="chips">
+            <code>rating_value</code><code>business_type</code><code>outward_code</code
+            ><code>local_authority</code><code>rating_date_after</code><code>hygiene_score_min</code
+            ><code>q</code>
           </p>
         </div>
       </div>

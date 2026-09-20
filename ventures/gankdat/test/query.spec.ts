@@ -27,6 +27,7 @@ describe('registry', () => {
       'sam-exclusions',
       'uk-insolvency',
       'uk-companies',
+      'uk-food-hygiene',
     ]);
   });
 });

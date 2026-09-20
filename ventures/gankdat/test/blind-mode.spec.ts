@@ -69,9 +69,12 @@ describe('Blind Mode (every registered source)', () => {
     (slug, source) => {
       for (const field of declaredFields(source)) {
         const normalized = field.toLowerCase();
+        // Short tokens (tin, ssn, dob, npi, psc) are matched as whole
+        // underscore-separated segments — "rating_value" is not a TIN.
+        const segments = normalized.split('_');
         for (const banned of BANNED_FIELD_SUBSTRINGS) {
           expect(
-            normalized.includes(banned),
+            banned.length <= 3 ? segments.includes(banned) : normalized.includes(banned),
             `${slug}: record field "${field}" matches banned substring "${banned}" — personal data must be dropped at ingest`,
           ).toBe(false);
         }

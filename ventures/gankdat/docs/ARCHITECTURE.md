@@ -27,7 +27,9 @@ no SAM_API_KEY needed — counterparty-risk bundle with uk-sanctions),
 UK corporate insolvency notices (`uk-insolvency`, shipped 2026-07-13 —
 Gazette corporate-only slice, Blind Mode; same bundle), and UK new
 incorporations (`uk-companies`, shipped 2026-07-13 — Companies House
-advanced search; KYB/lead-gen, completes the counterparty bundle).
+advanced search; KYB/lead-gen, completes the counterparty bundle), and UK food
+hygiene ratings (`uk-food-hygiene`, shipped 2026-09-20 — FSA FHRS national file, D1, ~610k
+establishments; risk + lead-gen bundle; NICHE-RESEARCH-2026-09 §3).
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo

@@ -23,18 +23,25 @@ const headers = { Authorization: `Bearer ${token}` };
 async function sql(query) {
   const res = await fetch(
     `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/d1/database/${DATABASE_ID}/query`,
-    { method: 'POST', headers: { ...headers, 'content-type': 'application/json' }, body: JSON.stringify({ sql: query }) },
+    {
+      method: 'POST',
+      headers: { ...headers, 'content-type': 'application/json' },
+      body: JSON.stringify({ sql: query }),
+    },
   );
   const body = await res.json();
   if (!body.success) throw new Error(`D1: ${JSON.stringify(body.errors).slice(0, 200)}`);
   return body.result[0].results;
 }
 async function ae(query) {
-  const res = await fetch(`https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/analytics_engine/sql`, {
-    method: 'POST',
-    headers,
-    body: query,
-  });
+  const res = await fetch(
+    `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/analytics_engine/sql`,
+    {
+      method: 'POST',
+      headers,
+      body: query,
+    },
+  );
   const body = await res.json();
   if (!body.data) throw new Error(`Analytics Engine: ${JSON.stringify(body).slice(0, 200)}`);
   return body.data;
@@ -73,7 +80,9 @@ const row = `| ${date} | Daily numbers | ${users} | — | ${sales} | ${notes} |`
 const file = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'RESEARCH.md');
 let md = await readFile(file, 'utf8');
 if (!/^## Metrics/m.test(md)) {
-  md = md.trimEnd() + '\n\n## Metrics\n\n| Date | Event | Users | Rating | Sales | Notes |\n|---|---|---|---|---|---|\n';
+  md =
+    md.trimEnd() +
+    '\n\n## Metrics\n\n| Date | Event | Users | Rating | Sales | Notes |\n|---|---|---|---|---|---|\n';
 }
 if (md.includes(`| ${date} | Daily numbers |`)) {
   md = md.replace(new RegExp(`^\\| ${date} \\| Daily numbers \\|.*$`, 'm'), row);
@@ -82,7 +91,12 @@ if (md.includes(`| ${date} | Daily numbers |`)) {
   const rest = md.slice(i);
   const lastRow = rest.lastIndexOf('\n|');
   const end = i + (lastRow === -1 ? rest.length : rest.indexOf('\n', lastRow + 1));
-  md = md.slice(0, end === -1 ? undefined : end).trimEnd() + '\n' + row + '\n' + (end === -1 ? '' : md.slice(end).replace(/^\n/, '\n'));
+  md =
+    md.slice(0, end === -1 ? undefined : end).trimEnd() +
+    '\n' +
+    row +
+    '\n' +
+    (end === -1 ? '' : md.slice(end).replace(/^\n/, '\n'));
 }
 await writeFile(file, md.endsWith('\n') ? md : md + '\n');
 console.log(row);
