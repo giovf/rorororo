@@ -263,6 +263,24 @@
           </td>
         </tr>
         <tr>
+          <td><code>sam-exclusions</code></td>
+          <td>SAM.gov Exclusions (US GSA official API)</td>
+          <td>
+            US Government work (public domain). Address fields licensed from Dun &amp; Bradstreet
+            are removed at ingest and never served; where any D&amp;B Open Data appears, D&amp;B is
+            the data source and bulk dissemination of it is not permitted
+          </td>
+          <td>
+            <strong>As published, minimized</strong>: this dataset inherently names excluded persons
+            and entities, published by the US government for award-eligibility compliance. We serve
+            exclusion facts (name, classification, type, program, agency, UEI/CAGE, dates) and drop
+            all addresses, SSN/TIN/NPI identifiers, and free-text comments at ingest.
+            <em>Conditions:</em> use only for compliance, due-diligence, risk, research, or
+            journalistic purposes; results are a screening aid, not legal advice — verify matches
+            against <a href="https://sam.gov/search/?index=ex">SAM.gov</a> before acting.
+          </td>
+        </tr>
+        <tr>
           <td><code>uk-insolvency</code></td>
           <td>The Gazette — corporate insolvency notices (official UK public record)</td>
           <td>

@@ -10,7 +10,7 @@
     </title>
     <meta
       name="description"
-      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, UK insolvency and company incorporations. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
+      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency and company incorporations. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
     />
     <link rel="canonical" href="https://gankdat.com/" />
     <meta property="og:type" content="website" />
@@ -21,7 +21,7 @@
     />
     <meta
       property="og:description"
-      content="Official open data as one clean JSON schema: UK + EU procurement, UK planning, UK sanctions, UK insolvency and company data. Free tier, MCP server, x402 pay-per-request."
+      content="Official open data as one clean JSON schema: UK + EU procurement, UK planning, UK/US sanctions &amp; debarment, UK insolvency and company data. Free tier, MCP server, x402 pay-per-request."
     />
     <meta property="og:url" content="https://gankdat.com/" />
     <meta name="twitter:card" content="summary" />
@@ -32,7 +32,7 @@
         "@id": "https://gankdat.com/#api",
         "name": "gankdat",
         "url": "https://gankdat.com",
-        "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, UK insolvency and company incorporations) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
+        "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, US federal exclusions, UK insolvency and company incorporations) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
         "documentation": "https://gankdat.com/docs",
         "termsOfService": "https://gankdat.com/terms",
         "provider": { "@type": "Organization", "name": "gankdat", "url": "https://gankdat.com" },
@@ -712,6 +712,18 @@
           <p class="chips">
             <code>name</code><code>regime</code><code>designation_type</code><code>countries</code
             ><code>date_designated_after</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>sam-exclusions <span>// compliance</span></h3>
+          <p>
+            Every active US federal exclusion (debarment) from SAM.gov — parties barred from federal
+            awards, with agency, program, and dates. Pairs with uk-sanctions for supplier due
+            diligence. Addresses and identifiers dropped at ingest.
+          </p>
+          <p class="chips">
+            <code>name</code><code>classification</code><code>excluding_agency</code
+            ><code>exclusion_program</code><code>activation_date_after</code><code>q</code>
           </p>
         </div>
         <div class="card">

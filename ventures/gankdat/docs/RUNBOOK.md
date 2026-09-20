@@ -81,7 +81,6 @@ corrects for sampling.) Day-to-day request logs stay in Workers Logs
 ```bash
 wrangler secret put ADMIN_TOKEN          # openssl rand -hex 32
 wrangler secret put STRIPE_SECRET_KEY    # rotate in Stripe dashboard first
-wrangler secret put SAM_API_KEY          # SAM.gov EXPIRES keys every 90 days — regenerate on the SAM.gov Account Details page, then update (calendar reminder!)
 wrangler secret put STRIPE_WEBHOOK_SECRET
 wrangler secret put X402_WALLET_ADDRESS  # a config change, not a secret rotation
 ```
@@ -106,18 +105,11 @@ Local equivalents live in `.dev.vars` (see `.dev.vars.example`).
 - **Snapshot caps**: uk-planning serves the most recent ~2000 records,
   uk-tenders ~1000 (KV value + memory bounds). Raising them = shard the cache
   per authority/window (post-v1).
-- **SAM.gov daily quota — ONE refresh shot per day**: the non-federal no-role
-  API key gets 10 requests/day, reset midnight UTC, and the extract's
-  tokenised download polls count against it (verified 2026-07-13). The
-  sam-exclusions refresh budgets 1 extract request + 8 polls = 9/day; if a
-  day's cron fails, do NOT hand-retry the same day — every attempt 429s until
-  00:00 UTC and the source just stays on its previous generation. A 429 from
-  the extract request itself means the quota was already burnt (e.g. by
-  manual curls). Durable upgrade: link a role/system account to the key
-  (1,000/day tier) via SAM.gov Account Details.
-
-## Pivot triggers (from the niche analysis — check monthly against reality)
-
+- **SAM.gov**: the exclusions refresh reads the keyless daily public extract ZIP
+  (~12MB → ~78MB CSV, streamed). No API key, no quota. If the refresh fails, check
+  `refresh_log` for the message: a listing/download HTTP error is transient (retry next
+  day); "format changed" means the extract's header row changed — fix the column map
+  in `src/sources/sam-exclusions.ts`.
 - 3+ well-reviewed, actively maintained, self-serve planning APIs at scale →
   pivot the wedge to procurement-only or sanctions screening (swap
   `src/sources/` files; the platform stays).

@@ -1,4 +1,4 @@
-# 010 — gankdat: the three things only you can do
+# 010 — gankdat: the two things only you can do
 
 **Status:** open · **Urgency:** low — nothing breaks if you leave these for a while.
 Background: [../incoming/gankdat-assessment.md](../incoming/gankdat-assessment.md).
@@ -6,20 +6,12 @@ Background: [../incoming/gankdat-assessment.md](../incoming/gankdat-assessment.m
 gankdat now lives in this repo as `ventures/gankdat/` and deploys from here. I run it; these
 are the parts that need your identity.
 
-## 1. SAM.gov key tier (or let the US exclusions dataset go)
+## 1. SAM.gov — resolved, nothing to do
 
-The `sam-exclusions` dataset has never loaded in production. Cause: the SAM.gov API key on
-your account is the "non-federal, no role" tier — 10 requests per day, and each daily refresh
-needs more than that while the extract is being generated. The key also expires every 90 days
-(next expiry around **11 October 2026**).
-
-- **Option A (keeps the dataset):** log in at https://sam.gov → Account Details → request a
-  *role* on your entity/account (any role unlocks the 1,000/day tier), then regenerate the API
-  key and paste the new value into `ventures/gankdat/.env` as `SAM_API_KEY=` and into the
-  Worker with `wrangler secret put SAM_API_KEY` from `ventures/gankdat/` — or tell me the key
-  is in `.env` and I will push it to the Worker.
-- **Option B (default):** do nothing. I have already taken the dataset off the public surface
-  so the site only advertises what it serves. One registry line brings it back later.
+You do not need a SAM.gov role, and the "Request Role" form is for employees of an organisation
+already registered in SAM (it asks for an entity, which you don't have). Cancel it. On 20 Sep I
+found that SAM.gov publishes the full exclusions list as a daily public file with no account
+and no key, and rebuilt the dataset on that. The old API key can simply expire.
 
 ## 2. Launch posts — optional, your call
 

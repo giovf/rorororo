@@ -4,39 +4,36 @@ import fixtureRecords from './fixtures/sam-exclusions.json';
 import type { DataSource } from './types';
 
 // US SAM.gov Exclusions (debarment) — every party excluded from US federal
-// awards, from GSA's official Exclusions API v4 (task 40).
+// awards, from GSA's official daily PUBLIC extract (task 40; rebuilt 2026-09-20).
 //
-// Ingest is the asynchronous EXTRACT flow (the paged JSON API caps at 10k of
-// ~168k records): request a CSV extract, poll the tokenised download URL,
-// then stream-parse it (gzip → csvRows) — the dataset is ~68MB normalized,
-// far past Worker memory, so this is a storage:'d1' source with fetchStream.
+// Ingest reads the "Exclusions / Public V2" data-services extract: a daily ZIP
+// (~12MB, one deflated CSV of ~78MB / ~168k rows) that SAM.gov publishes with
+// NO account and NO API key — the file-extract listing + download endpoints are
+// open. This replaced the key-gated Exclusions API v4 extract flow, whose
+// non-federal no-role key tier (10 requests/day) could never complete the
+// asynchronous extract poll in production (never one successful refresh
+// 2026-07-13 → 2026-09-19). The ZIP is unwrapped and inflated as a stream
+// (DecompressionStream 'deflate-raw'), then csvRows — the dataset is far past
+// Worker memory, so this stays a storage:'d1' source with fetchStream.
 //
 // Data posture (terms reviewed 2026-07-12, logged on task 40): exclusion
 // records are US-government works (public domain), BUT (a) the D&B Open Data
 // fields (all addresses; legal-name provenance pre-2022) may not be
-// disseminated in bulk — every address column is DROPPED at ingest (live
-// extract verified 2026-07-13: dnbOpenData is null on all 167,695 active
-// records, so residual D&B exposure is nil); (b) individual exclusions are
-// personal data served for compliance purposes — same task-38 posture as
-// uk-sanctions: no SSN/TIN/NPI, no addresses, no free-text comments, ever.
-// Requires SAM_API_KEY (rotate every 90 days per SAM account terms; RUNBOOK).
+// disseminated in bulk — every address column is DROPPED at ingest (never
+// read); (b) individual exclusions are personal data served for compliance
+// purposes — same task-38 posture as uk-sanctions: no SSN/TIN/NPI, no
+// addresses, no free-text comments, ever.
 
-const LIST_URL = 'https://api.sam.gov/entity-information/v4/exclusions';
-// Poll pacing is QUOTA-driven, not just time-driven. A non-federal no-role
-// SAM key gets 10 requests/day (resets midnight UTC, per Retry-After), and
-// the tokenised download polls COUNT against it — verified 2026-07-13 when
-// the 05:00 run's 1 request + 10 polls exhausted the day and a 09:26 retry
-// 429'd instantly. Budget: 1 extract request + 8 polls = 9/day, one spare.
-// First poll is immediate (covers an instantly-ready extract); the rest are
-// spaced 90s, so the last lands ~10.5 min after the request — the 2026-07-13
-// cron gave up at 10×20s (~3.4 min) while SAM was still building the ~68MB
-// extract. Total ~11 min fits the 15-min cron waitUntil budget alongside the
-// other sources' ~1–2 min of sequential work. See RUNBOOK for quota tiers.
-const POLL_ATTEMPTS = 8;
-const POLL_DELAY_MS = 90_000;
+const LIST_URL =
+  'https://sam.gov/api/prod/fileextractservices/v1/api/listfiles?domain=Exclusions/Public%20V2&privacy=Public';
+const DOWNLOAD_BASE = 'https://sam.gov/api/prod/fileextractservices/v1/api/download/';
+// The download endpoint answers 303 to a (signed) S3 object URL. Only these
+// hosts are followed — one hop, https only.
+const REDIRECT_HOSTS = /(^|\.)(sam\.gov|amazonaws\.com)$/;
+const USER_AGENT = 'gankdat.com data refresh';
 
 export const samExclusionsRecordSchema = z.object({
-  /** Excluded party's name as designated (entityName; individuals included). */
+  /** Excluded party's name as designated (individuals: prefix/first/middle/last/suffix joined). */
   name: z.string(),
   /** Individual | Firm | Special Entity Designation | Vessel. */
   classification: z.string().nullable(),
@@ -44,11 +41,13 @@ export const samExclusionsRecordSchema = z.object({
   /** Reciprocal | Procurement | Nonprocurement. */
   exclusion_program: z.string().nullable(),
   excluding_agency: z.string().nullable(),
+  /** Not present in the public extract (was API-only); kept null for schema stability. */
   excluding_agency_name: z.string().nullable(),
   uei_sam: z.string().nullable(),
   cage_code: z.string().nullable(),
   activation_date: z.string().nullable(),
   termination_date: z.string().nullable(),
+  /** Definite (dated) | Indefinite. */
   termination_type: z.string().nullable(),
 });
 
@@ -60,44 +59,64 @@ function clean(value: string | undefined): string | null {
   return trimmed === '' || trimmed.toLowerCase() === 'null' ? null : trimmed;
 }
 
-/** MM-DD-YYYY (SAM extract format) → YYYY-MM-DD; anything else → null. */
+/** YYYY-MM-DD (public extract) or MM-DD-YYYY (legacy API extract) → YYYY-MM-DD; else null. */
 function isoDate(raw: string | null): string | null {
-  const match = /^(\d{2})-(\d{2})-(\d{4})$/.exec(raw ?? '');
+  if (raw === null) return null;
+  if (/^\d{4}-\d{2}-\d{2}$/.test(raw)) return raw;
+  const match = /^(\d{2})-(\d{2})-(\d{4})$/.exec(raw);
   return match ? `${match[3]}-${match[1]}-${match[2]}` : null;
 }
 
+// Public-extract header names. Address, NPI, comment and cross-reference
+// columns are deliberately absent from this list — they are never read.
 const REQUIRED_COLUMNS = [
-  'classificationType',
-  'exclusionType',
-  'exclusionProgram',
-  'excludingAgencyCode',
-  'entityName',
-  'activateDate',
+  'Classification',
+  'Name',
+  'First',
+  'Last',
+  'Exclusion Program',
+  'Excluding Agency',
+  'Exclusion Type',
+  'Active Date',
+  'Termination Date',
+  'Record Status',
 ] as const;
 
 function normalizeRow(cols: string[], idx: Map<string, number>): SamExclusionsRecord | null {
   const col = (name: string): string | null => clean(cols[idx.get(name) ?? -1]);
-  const name = col('entityName');
+  // The extract is documented as active-only; enforce it anyway.
+  const status = col('Record Status');
+  if (status !== null && status.toLowerCase() !== 'active') return null;
+  const name =
+    col('Name') ??
+    [col('Prefix'), col('First'), col('Middle'), col('Last'), col('Suffix')]
+      .filter((part): part is string => part !== null)
+      .join(' ');
   if (!name) return null;
+  const terminationRaw = col('Termination Date');
+  const terminationDate = isoDate(terminationRaw);
   return {
     name,
-    classification: col('classificationType'),
-    exclusion_type: col('exclusionType'),
-    exclusion_program: col('exclusionProgram'),
-    excluding_agency: col('excludingAgencyCode'),
-    excluding_agency_name: col('excludingAgencyName'),
-    uei_sam: col('ueiSAM'),
-    cage_code: col('cageCode'),
-    activation_date: isoDate(col('activateDate')),
-    termination_date: isoDate(col('terminationDate')),
-    termination_type: col('terminationType'),
+    classification: col('Classification'),
+    exclusion_type: col('Exclusion Type'),
+    exclusion_program: col('Exclusion Program'),
+    excluding_agency: col('Excluding Agency'),
+    excluding_agency_name: null,
+    uei_sam: col('Unique Entity ID'),
+    cage_code: col('CAGE'),
+    activation_date: isoDate(col('Active Date')),
+    termination_date: terminationDate,
+    termination_type:
+      terminationDate !== null
+        ? 'Definite'
+        : terminationRaw !== null && /indefinite/i.test(terminationRaw)
+          ? 'Indefinite'
+          : null,
   };
 }
 
-const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
-
-// Abort decompression if the extract expands past this — the real active
-// dataset is ~68MB; this bounds a gzip-bomb from a compromised origin.
+// Abort decompression if the extract expands past this — the real dataset is
+// ~78MB; this bounds a zip-bomb from a compromised origin.
 const MAX_DECOMPRESSED_BYTES = 256 * 1024 * 1024;
 
 /** Caps the total bytes read from a stream, aborting past the limit. */
@@ -115,87 +134,149 @@ function byteCapTransform(limit: number): TransformStream<Uint8Array, Uint8Array
   });
 }
 
-/** Sniff the extract body: gzip (magic 1f 8b) → decompress; else use as-is. */
-async function csvStream(body: ReadableStream<Uint8Array>): Promise<ReadableStream<Uint8Array>> {
-  const [probe, rest] = body.tee();
-  const reader = probe.getReader();
-  const { value } = await reader.read();
-  await reader.cancel();
-  const isGzip = value !== undefined && value.length >= 2 && value[0] === 0x1f && value[1] === 0x8b;
-  return isGzip
-    ? rest
-        .pipeThrough(new DecompressionStream('gzip'))
-        .pipeThrough(byteCapTransform(MAX_DECOMPRESSED_BYTES))
-    : rest;
-}
+const ZIP_LOCAL_HEADER = 0x04034b50;
+const ZIP_LOCAL_HEADER_LEN = 30;
+const ZIP_METHOD_DEFLATE = 8;
+const ZIP_FLAG_DATA_DESCRIPTOR = 0x8;
 
-async function requestExtractUrl(key: string): Promise<string> {
-  // Key travels in the query string (SAM-mandated). Encoded for robustness;
-  // NB: this URL and the derived download URL carry the live key — never log
-  // or throw them (only status codes are surfaced below).
-  const res = await fetch(`${LIST_URL}?api_key=${encodeURIComponent(key)}&isActive=Y&format=csv`, {
-    headers: { 'user-agent': 'gankdat.com data refresh' },
-    redirect: 'manual',
+/**
+ * Streams the raw deflate bytes of the FIRST entry of a ZIP: parses the local
+ * file header, skips name/extra, forwards exactly `compressed size` bytes and
+ * drops the rest (data descriptor, further entries, central directory) so the
+ * inflater never sees trailing bytes. Only method 8 (deflate) is supported —
+ * that is what SAM publishes; anything else is rejected loudly.
+ */
+export function zipFirstEntryDeflate(): TransformStream<Uint8Array, Uint8Array> {
+  let header = new Uint8Array(0);
+  let skip = -1; // <0: header not parsed yet; otherwise bytes still to skip
+  let remaining = Number.POSITIVE_INFINITY;
+  return new TransformStream({
+    transform(chunk, controller) {
+      let buf = chunk;
+      if (skip < 0) {
+        const merged = new Uint8Array(header.length + buf.length);
+        merged.set(header);
+        merged.set(buf, header.length);
+        header = merged;
+        if (header.length < ZIP_LOCAL_HEADER_LEN) return;
+        const view = new DataView(header.buffer, header.byteOffset, header.byteLength);
+        if (view.getUint32(0, true) !== ZIP_LOCAL_HEADER) {
+          controller.error(new Error('SAM extract is not a ZIP'));
+          return;
+        }
+        const flags = view.getUint16(6, true);
+        const method = view.getUint16(8, true);
+        if (method !== ZIP_METHOD_DEFLATE) {
+          controller.error(new Error(`SAM extract ZIP uses unsupported method ${method}`));
+          return;
+        }
+        const compressedSize = view.getUint32(18, true);
+        const nameLen = view.getUint16(26, true);
+        const extraLen = view.getUint16(28, true);
+        // Sizes in a data-descriptor ZIP live AFTER the data; then we cannot cap
+        // and forward everything (the inflater stops at the final block).
+        if ((flags & ZIP_FLAG_DATA_DESCRIPTOR) === 0 && compressedSize > 0) {
+          remaining = compressedSize;
+        }
+        skip = ZIP_LOCAL_HEADER_LEN + nameLen + extraLen;
+        buf = header;
+        header = new Uint8Array(0);
+      }
+      if (skip > 0) {
+        const n = Math.min(skip, buf.length);
+        buf = buf.subarray(n);
+        skip -= n;
+      }
+      if (buf.length === 0 || remaining <= 0) return;
+      const take = Math.min(remaining, buf.length);
+      controller.enqueue(buf.subarray(0, take));
+      remaining -= take;
+    },
+    flush(controller) {
+      if (skip < 0) controller.error(new Error('SAM extract ended before the ZIP header'));
+    },
   });
-  if (!res.ok) throw new Error(`SAM extract request failed: ${res.status}`);
-  const text = await res.text();
-  const match =
-    /(https:\/\/api\.sam\.gov\/entity-information\/v\d+\/download-exclusions\?\S+token=[A-Za-z0-9]+)/.exec(
-      text,
-    );
-  if (!match) throw new Error('SAM extract response had no download URL');
-  return match[1]!.replace('REPLACE_WITH_API_KEY', key);
 }
 
-async function* streamFromOrigin(key: string): AsyncGenerator<SamExclusionsRecord> {
-  const downloadUrl = await requestExtractUrl(key);
-  for (let attempt = 1; attempt <= POLL_ATTEMPTS; attempt += 1) {
-    // redirect:'manual' — the URL carries the key; don't follow a redirect off
-    // api.sam.gov (host is regex-pinned, but this closes the redirect vector).
-    const res = await fetch(downloadUrl, {
-      headers: { 'user-agent': 'gankdat.com data refresh' },
+/** ZIP body → inflated CSV bytes, byte-capped. */
+function csvStreamFromZip(body: ReadableStream<Uint8Array>): ReadableStream<Uint8Array> {
+  return body
+    .pipeThrough(zipFirstEntryDeflate())
+    .pipeThrough(new DecompressionStream('deflate-raw'))
+    .pipeThrough(byteCapTransform(MAX_DECOMPRESSED_BYTES));
+}
+
+interface ExtractListing {
+  _embedded?: { customS3ObjectSummaryList?: { displayKey?: string; key?: string }[] };
+}
+
+/** Newest "SAM_Exclusions_Public_Extract_V2_<yyddd>.ZIP" object key from the public listing. */
+async function latestExtractKey(): Promise<string> {
+  const res = await fetch(LIST_URL, {
+    headers: { 'user-agent': USER_AGENT, accept: 'application/json' },
+  });
+  if (!res.ok) throw new Error(`SAM extract listing failed: ${res.status}`);
+  const body = (await res.json()) as ExtractListing;
+  let best: { serial: number; key: string } | null = null;
+  for (const entry of body._embedded?.customS3ObjectSummaryList ?? []) {
+    const match = /SAM_Exclusions_Public_Extract_V2_(\d+)\.ZIP$/i.exec(entry.displayKey ?? '');
+    if (!match || !entry.key) continue;
+    const serial = Number(match[1]);
+    if (best === null || serial > best.serial) best = { serial, key: entry.key };
+  }
+  if (best === null) throw new Error('SAM extract listing had no Public V2 ZIP');
+  return best.key;
+}
+
+/** Fetches the extract ZIP, following the single S3 redirect the endpoint issues. */
+async function openExtract(key: string): Promise<Response> {
+  const url = `${DOWNLOAD_BASE}${key.split('/').map(encodeURIComponent).join('/')}?privacy=Public`;
+  const first = await fetch(url, { headers: { 'user-agent': USER_AGENT }, redirect: 'manual' });
+  if (first.status >= 300 && first.status < 400) {
+    const location = first.headers.get('location') ?? '';
+    let target: URL;
+    try {
+      target = new URL(location, url);
+    } catch {
+      throw new Error('SAM extract download redirect had no usable location');
+    }
+    if (target.protocol !== 'https:' || !REDIRECT_HOSTS.test(target.hostname)) {
+      throw new Error(`SAM extract download redirected off-origin (${target.hostname})`);
+    }
+    const second = await fetch(target, {
+      headers: { 'user-agent': USER_AGENT },
       redirect: 'manual',
     });
-    if (res.ok && res.body) {
-      // A not-ready response can still be 200 with a small text body; the
-      // header check below rejects it and we keep polling.
-      const stream = await csvStream(res.body);
-      let idx: Map<string, number> | null = null;
-      let yielded = 0;
-      for await (const row of csvRows(stream)) {
-        if (idx === null) {
-          idx = new Map(row.map((column, i) => [column.trim(), i]));
-          const missing = REQUIRED_COLUMNS.filter((column) => !idx!.has(column));
-          if (missing.length > 0) {
-            if (attempt === POLL_ATTEMPTS) {
-              throw new Error(`SAM extract format changed — missing: ${missing.join(', ')}`);
-            }
-            idx = null;
-            break; // not the CSV yet (extract still generating) — poll again
-          }
-          continue;
-        }
-        const record = normalizeRow(row, idx);
-        if (record) {
-          yielded += 1;
-          yield record;
-        }
-      }
-      if (idx !== null) {
-        if (yielded === 0) throw new Error('SAM extract parsed 0 records');
-        return;
-      }
+    if (!second.ok || !second.body) {
+      throw new Error(`SAM extract download failed: ${second.status}`);
     }
-    if (attempt < POLL_ATTEMPTS) await sleep(POLL_DELAY_MS);
+    return second;
   }
-  throw new Error(`SAM extract not ready after ${POLL_ATTEMPTS} polls`);
+  if (!first.ok || !first.body) throw new Error(`SAM extract download failed: ${first.status}`);
+  return first;
 }
 
-function apiKey(env: CloudflareBindings): string {
-  // String() so the check survives the generated literal binding type.
-  const key = String(env.SAM_API_KEY ?? '');
-  if (key === '') throw new Error('SAM_API_KEY not configured');
-  return key;
+async function* streamFromOrigin(): AsyncGenerator<SamExclusionsRecord> {
+  const key = await latestExtractKey();
+  const res = await openExtract(key);
+  let idx: Map<string, number> | null = null;
+  let yielded = 0;
+  for await (const row of csvRows(csvStreamFromZip(res.body!))) {
+    if (idx === null) {
+      idx = new Map(row.map((column, i) => [column.replace(/^\uFEFF/, '').trim(), i]));
+      const missing = REQUIRED_COLUMNS.filter((column) => !idx!.has(column));
+      if (missing.length > 0) {
+        throw new Error(`SAM extract format changed — missing: ${missing.join(', ')}`);
+      }
+      continue;
+    }
+    const record = normalizeRow(row, idx);
+    if (record) {
+      yielded += 1;
+      yield record;
+    }
+  }
+  if (yielded === 0) throw new Error('SAM extract parsed 0 records');
 }
 
 function fixtures(): SamExclusionsRecord[] {
@@ -205,7 +286,7 @@ function fixtures(): SamExclusionsRecord[] {
 async function* fetchStream(env: CloudflareBindings): AsyncIterable<SamExclusionsRecord> {
   let yielded = 0;
   try {
-    for await (const record of streamFromOrigin(apiKey(env))) {
+    for await (const record of streamFromOrigin()) {
       yielded += 1;
       yield record;
     }
