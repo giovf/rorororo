@@ -1,6 +1,6 @@
 # 014 — Apify account (free) so gankdat data can sell on the Apify Store
 
-**Status:** account DONE (20 Sep); five actors are built on it. **One step left (payouts, below).** · **Urgency:** medium — this is the one shelf where buyers already pay for
+**Status:** DONE on your side (account, token, payouts, Store terms — 20 Sep). First actor LIVE: https://apify.com/faceless-api/uk-food-hygiene-ratings. The other four are blocked by Apify's new-publisher limit; Claude emailed support@apify.com from info@gankdat.com to lift it — watch for their reply in your inbox. — this is the one shelf where buyers already pay for
 exactly this data (food-hygiene, charity, company, care-provider scrapers sell at ~US$1 per
 1,000 records). · **Cost:** £0 (free plan; Apify takes 20% of sales and pays out monthly).
 

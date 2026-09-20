@@ -23,7 +23,7 @@ place for what is listed where, what each channel needs, and the copy-paste blur
 | Smithery | not listed; CLI publish needs a Smithery account (owner) | — |
 | Google Search Console | domain verified 2026-09-20 (owner, DNS TXT); sitemap `https://gankdat.com/sitemap.xml` to submit once | search.google.com/search-console |
 | x402 Bazaar (CDP discovery) | 402 bodies already carry `discoverable: true`; the catalogue lists services once real settlements occur (only 2 test payments so far) | https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources |
-| Apify Store | **five actors built** (`apify/`: food hygiene, charities, care locations, visa sponsors, new companies); publishing waits on the owner's account + token (action 014); pay-per-result, 80/20 | — |
+| Apify Store | **uk-food-hygiene-ratings LIVE** (pay-per-result US$0.001, 80/20). Four more built and priced but blocked by the new-publisher limit (`cannot-publish-actor`); support asked 2026-09-20 | https://apify.com/faceless-api/uk-food-hygiene-ratings |
 | RapidAPI | parked (see below) | — |
 
 ## Official MCP Registry
