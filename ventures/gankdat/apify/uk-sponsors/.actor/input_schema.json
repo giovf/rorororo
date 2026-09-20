@@ -6,17 +6,20 @@
     "organisation": {
       "title": "Organisation name contains",
       "type": "string",
-      "editor": "textfield"
+      "editor": "textfield",
+      "description": "Filter: Organisation name contains (case-insensitive substring match)."
     },
     "town": {
       "title": "Town contains",
       "type": "string",
-      "editor": "textfield"
+      "editor": "textfield",
+      "description": "Filter: Town contains (case-insensitive substring match)."
     },
     "county": {
       "title": "County contains",
       "type": "string",
-      "editor": "textfield"
+      "editor": "textfield",
+      "description": "Filter: County contains (case-insensitive substring match)."
     },
     "route": {
       "title": "Route contains",
@@ -39,7 +42,8 @@
     "q": {
       "title": "Free-text search",
       "type": "string",
-      "editor": "textfield"
+      "editor": "textfield",
+      "description": "Filter: Free-text search (case-insensitive substring match)."
     },
     "max_results": {
       "title": "Maximum results",

@@ -18,7 +18,8 @@
     "provider_name": {
       "title": "Provider name contains",
       "type": "string",
-      "editor": "textfield"
+      "editor": "textfield",
+      "description": "Filter: Provider name contains (case-insensitive substring match)."
     },
     "region": {
       "title": "Region contains",
@@ -29,12 +30,14 @@
     "local_authority": {
       "title": "Local authority contains",
       "type": "string",
-      "editor": "textfield"
+      "editor": "textfield",
+      "description": "Filter: Local authority contains (case-insensitive substring match)."
     },
     "outward_code": {
       "title": "Postcode area (outward code)",
       "type": "string",
-      "editor": "textfield"
+      "editor": "textfield",
+      "description": "Filter: Postcode area (outward code) (case-insensitive substring match)."
     },
     "latest_check_date_after": {
       "title": "Latest CQC check on or after",
@@ -46,7 +49,8 @@
     "q": {
       "title": "Free-text search",
       "type": "string",
-      "editor": "textfield"
+      "editor": "textfield",
+      "description": "Filter: Free-text search (case-insensitive substring match)."
     },
     "max_results": {
       "title": "Maximum results",
