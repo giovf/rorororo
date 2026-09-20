@@ -210,28 +210,83 @@ interface ExtractListing {
   _embedded?: { customS3ObjectSummaryList?: { displayKey?: string; key?: string }[] };
 }
 
-/** Newest "SAM_Exclusions_Public_Extract_V2_<yyddd>.ZIP" object key from the public listing. */
-async function latestExtractKey(): Promise<string> {
-  const res = await fetch(LIST_URL, {
-    headers: { 'user-agent': USER_AGENT, accept: 'application/json' },
-  });
-  if (!res.ok) throw new Error(`SAM extract listing failed: ${res.status}`);
-  const body = (await res.json()) as ExtractListing;
-  let best: { serial: number; key: string } | null = null;
-  for (const entry of body._embedded?.customS3ObjectSummaryList ?? []) {
-    const match = /SAM_Exclusions_Public_Extract_V2_(\d+)\.ZIP$/i.exec(entry.displayKey ?? '');
-    if (!match || !entry.key) continue;
-    const serial = Number(match[1]);
-    if (best === null || serial > best.serial) best = { serial, key: entry.key };
+const EXTRACT_PREFIX = 'Exclusions/Public V2/SAM_Exclusions_Public_Extract_V2_';
+// SAM's listing endpoint has transient "retry in a couple minutes" 500s; the
+// download endpoint is separate and the file name is deterministic (YY + day
+// of year), so the listing is best-effort with a computed fallback.
+const LIST_ATTEMPTS = 3;
+const LIST_RETRY_DELAY_MS = 15_000;
+const FALLBACK_DAYS = 4;
+
+const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
+
+/** Newest "…_V2_<yyddd>.ZIP" object key from the public listing, or null if the listing is down. */
+async function listedExtractKey(): Promise<string | null> {
+  for (let attempt = 1; attempt <= LIST_ATTEMPTS; attempt += 1) {
+    try {
+      const res = await fetch(LIST_URL, { headers: { 'user-agent': USER_AGENT } });
+      if (res.ok) {
+        const body = (await res.json()) as ExtractListing;
+        let best: { serial: number; key: string } | null = null;
+        for (const entry of body._embedded?.customS3ObjectSummaryList ?? []) {
+          const match = /SAM_Exclusions_Public_Extract_V2_(\d+)\.ZIP$/i.exec(
+            entry.displayKey ?? '',
+          );
+          if (!match || !entry.key) continue;
+          const serial = Number(match[1]);
+          if (best === null || serial > best.serial) best = { serial, key: entry.key };
+        }
+        if (best !== null) return best.key;
+      }
+      console.log(
+        JSON.stringify({
+          level: 'warn',
+          event: 'sam_listing_unavailable',
+          attempt,
+          status: res.status,
+        }),
+      );
+    } catch (err) {
+      // Network-level failure (DNS, TLS, no route): not the transient 500 the
+      // retries exist for — go straight to the computed-key fallback.
+      console.log(
+        JSON.stringify({
+          level: 'warn',
+          event: 'sam_listing_unavailable',
+          attempt,
+          reason: err instanceof Error ? err.message : String(err),
+        }),
+      );
+      return null;
+    }
+    if (attempt < LIST_ATTEMPTS) await sleep(LIST_RETRY_DELAY_MS);
   }
-  if (best === null) throw new Error('SAM extract listing had no Public V2 ZIP');
-  return best.key;
+  return null;
 }
 
-/** Fetches the extract ZIP, following the single S3 redirect the endpoint issues. */
-async function openExtract(key: string): Promise<Response> {
+/** Object keys for today and the previous days (UTC), newest first: SAM names files YY + day-of-year. */
+export function computedExtractKeys(
+  now: Date = new Date(),
+  days: number = FALLBACK_DAYS,
+): string[] {
+  const keys: string[] = [];
+  for (let back = 0; back < days; back += 1) {
+    const d = new Date(now.getTime() - back * 86_400_000);
+    const dayOfYear = Math.floor((d.getTime() - Date.UTC(d.getUTCFullYear(), 0, 0)) / 86_400_000);
+    const yy = String(d.getUTCFullYear() % 100).padStart(2, '0');
+    keys.push(`${EXTRACT_PREFIX}${yy}${String(dayOfYear).padStart(3, '0')}.ZIP`);
+  }
+  return keys;
+}
+
+/**
+ * Fetches an extract ZIP, following the single S3 redirect the endpoint issues.
+ * Returns null when that day's file is not published (SAM answers 204/404).
+ */
+async function openExtract(key: string): Promise<Response | null> {
   const url = `${DOWNLOAD_BASE}${key.split('/').map(encodeURIComponent).join('/')}?privacy=Public`;
   const first = await fetch(url, { headers: { 'user-agent': USER_AGENT }, redirect: 'manual' });
+  if (first.status === 204 || first.status === 404) return null;
   if (first.status >= 300 && first.status < 400) {
     const location = first.headers.get('location') ?? '';
     let target: URL;
@@ -247,6 +302,7 @@ async function openExtract(key: string): Promise<Response> {
       headers: { 'user-agent': USER_AGENT },
       redirect: 'manual',
     });
+    if (second.status === 404) return null;
     if (!second.ok || !second.body) {
       throw new Error(`SAM extract download failed: ${second.status}`);
     }
@@ -257,8 +313,14 @@ async function openExtract(key: string): Promise<Response> {
 }
 
 async function* streamFromOrigin(): AsyncGenerator<SamExclusionsRecord> {
-  const key = await latestExtractKey();
-  const res = await openExtract(key);
+  const listed = await listedExtractKey();
+  const candidates = listed !== null ? [listed] : computedExtractKeys();
+  let res: Response | null = null;
+  for (const key of candidates) {
+    res = await openExtract(key);
+    if (res !== null) break;
+  }
+  if (res === null) throw new Error('SAM extract: no published file among candidate days');
   let idx: Map<string, number> | null = null;
   let yielded = 0;
   for await (const row of csvRows(csvStreamFromZip(res.body!))) {

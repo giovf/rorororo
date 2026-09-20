@@ -2,7 +2,11 @@ import { env } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import { refreshD1Source } from '../src/sources/d1store';
-import { samExclusionsSource, zipFirstEntryDeflate } from '../src/sources/sam-exclusions';
+import {
+  computedExtractKeys,
+  samExclusionsSource,
+  zipFirstEntryDeflate,
+} from '../src/sources/sam-exclusions';
 import type { SamExclusionsRecord } from '../src/sources/sam-exclusions';
 import { authedFetch, issueKey } from './helpers/auth';
 import { stubOrigins } from './helpers/origin-mock';
@@ -98,6 +102,27 @@ afterEach(() => {
   vi.unstubAllGlobals();
 });
 
+/** Listing retries sleep 15s apiece; make them instant. */
+function instantTimers(): void {
+  vi.stubGlobal('setTimeout', ((fn: () => void): number => {
+    fn();
+    return 0;
+  }) as never);
+}
+
+describe('computedExtractKeys', () => {
+  it('names files YY + day-of-year, newest first', () => {
+    expect(computedExtractKeys(new Date('2026-09-19T12:00:00Z'), 2)).toEqual([
+      'Exclusions/Public V2/SAM_Exclusions_Public_Extract_V2_26262.ZIP',
+      'Exclusions/Public V2/SAM_Exclusions_Public_Extract_V2_26261.ZIP',
+    ]);
+    expect(computedExtractKeys(new Date('2027-01-01T00:00:00Z'), 2)).toEqual([
+      'Exclusions/Public V2/SAM_Exclusions_Public_Extract_V2_27001.ZIP',
+      'Exclusions/Public V2/SAM_Exclusions_Public_Extract_V2_26365.ZIP',
+    ]);
+  });
+});
+
 describe('zipFirstEntryDeflate', () => {
   it('forwards exactly the compressed bytes of the first entry and drops trailing data', async () => {
     const text = 'a,b\n1,2\n';
@@ -189,6 +214,31 @@ describe('GET /v1/data/sam-exclusions', () => {
     expect(downloadCall).toContain('Public%20V2');
   });
 
+  it('falls back to computed file names when the listing is down, skipping unpublished days', async () => {
+    instantTimers();
+    const zip = await zipOf(CSV);
+    let downloads = 0;
+    const mock = stubOrigins({
+      samList: () => new Response('{"errorMessage":"retry"}', { status: 500 }),
+      samDownload: () => {
+        downloads += 1;
+        // Today's file is not published yet (SAM answers 204); yesterday's is.
+        return downloads === 1 ? new Response(null, { status: 204 }) : s3Redirect();
+      },
+      samFile: () => chunked(zip),
+    });
+    await load();
+    const urls = mock.mock.calls.map((call) => String(call[0]));
+    expect(urls.filter((u) => u.includes('/api/listfiles')).length).toBe(3);
+    const expected = computedExtractKeys(new Date(), 2).map((k) => k.split('/').pop());
+    const downloaded = urls.filter((u) => u.includes('/api/download/'));
+    expect(downloaded[0]).toContain(expected[0]);
+    expect(downloaded[1]).toContain(expected[1]);
+    const res = await authedFetch(SAM_URL);
+    const body = (await res.json()) as SuccessEnvelope<SamExclusionsRecord[]>;
+    expect(body.meta?.total).toBe(3);
+  });
+
   it('refuses a redirect to an unexpected host and falls back to fixtures', async () => {
     stubOrigins({
       samList: () => LISTING([26262]),
@@ -227,8 +277,12 @@ describe('GET /v1/data/sam-exclusions', () => {
     expect(recent.data.map((r) => r.name)).toEqual(['ACME SANCTIONED LLC', 'FISHING, VESSEL ONE']);
   });
 
-  it('falls back to bundled fixtures when the listing fails', async () => {
-    stubOrigins({ samList: () => new Response('nope', { status: 500 }) });
+  it('falls back to bundled fixtures when neither the listing nor any candidate file works', async () => {
+    instantTimers();
+    stubOrigins({
+      samList: () => new Response('nope', { status: 500 }),
+      samDownload: () => new Response(null, { status: 204 }),
+    });
     await load();
     const res = await authedFetch(SAM_URL);
     expect(res.status).toBe(200);

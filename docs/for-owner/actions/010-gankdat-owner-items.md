@@ -29,14 +29,21 @@ gankdat.com is on Cloudflare Registrar: it is an annual registration, not a one-
 2027-07-08, auto-renew is on, and Cloudflare charges the wholesale price (about US$10.50, roughly
 £8). I've put it in the ledger as a planned cost for July 2027.
 
-## 4. Directory listings that need a one-time sign-in — one yes/no from you
+## 4. Directory listings — you said yes on 20 Sep; here is where it stands
 
-Most agent/API directories (Smithery, Glama, PulseMCP, Google Search Console for the stats
-pages, dev.to for build-log articles) require signing in with a GitHub or Google account. They
-would be created under your identity, so I'm asking once: **may I sign in to developer
-directories with your GitHub account (and Google Search Console with your Google account) to
-list gankdat?** Reply "010-4 yes" or "no". Everything that needs no account (MCP registry
-version bump, x402 catalogue, GitHub-based API lists) I'm doing anyway.
+Done from here, no sign-in needed: official MCP registry updated to v0.6.2; pull requests /
+issues opened from your GitHub account at public-apis, the APIs.guru directory and
+awesome-remote-mcp-servers (links in `ventures/gankdat/docs/MARKETPLACE-PREP.md`).
+
+The rest need a browser session signed in as you, which I don't have. Each is a few minutes,
+none is urgent, and I'll do the follow-through once you've done the click:
+- **mcpservers.org/submit** — free form (2-week review). Fields: name gankdat, category
+  Data/Search, description and links as in MARKETPLACE-PREP.md, contact info@gankdat.com,
+  registry name `com.gankdat/gankdat`, tick "remote".
+- **Glama** — https://glama.ai/mcp/connectors/com.gankdat/gankdat → "Claim" with GitHub.
+- **Google Search Console** — add property `gankdat.com` (Domain type) with your Google
+  account; it shows a TXT record. Paste that TXT value to me (not secret) and I'll add it to
+  DNS; then press Verify and submit `https://gankdat.com/sitemap.xml`.
 ## What I did without you
 - Full assessment and UK legal check on the crypto payment lane (no FCA authorisation needed).
 - Merged the repo with its history, wired quality gates and CI deploys, added the £3.70/month

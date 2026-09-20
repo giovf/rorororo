@@ -131,3 +131,18 @@ Channel-specific notes:
 - [ ] `FIXTURE_FALLBACK=false` in production
 - [ ] UptimeRobot monitor green for 2+ weeks (runbook)
 - [ ] Stage 0 validation threshold met (20+ signups or 5 pre-commits)
+
+
+## Listings log (Foundry, 2026-09-20)
+
+| Channel | Status | Where |
+| --- | --- | --- |
+| Official MCP Registry | re-published v0.6.2 (was 0.1.0, two-dataset description) via `mcp-publisher login http` (domain key) | registry.modelcontextprotocol.io — `com.gankdat/gankdat` |
+| PulseMCP | submissions paused; indexes the official registry automatically | — |
+| public-apis/public-apis | PR open (Government section) | https://github.com/public-apis/public-apis/pull/7436 |
+| APIs.guru OpenAPI directory | issue open (their documented add-API flow) | https://github.com/APIs-guru/openapi-directory/issues/3384 |
+| punkpeye/awesome-remote-mcp-servers | PR open (Search & Data Extraction) | https://github.com/punkpeye/awesome-remote-mcp-servers/pull/460 |
+| punkpeye/awesome-mcp-servers | not eligible (local/open-source servers only) | — |
+| wong2/awesome-mcp-servers | no PRs; web form at mcpservers.org/submit (owner) | — |
+| x402 Bazaar (CDP discovery) | not listed yet — needs the `discoverable` route flag on the x402 middleware; code task | — |
+| Glama / Smithery claim, Google Search Console, dev.to | need a browser sign-in with the owner's GitHub/Google | action 010 item 4 |
