@@ -53,8 +53,10 @@ Score = (evidence of paying demand × reach of the channel) ÷ (build days + own
 Build only what scores above the best distribution task still undone. **Distribution beats
 new datasets** until the funnel shows conversion: as of today the queue is (1) publish the
 remaining Apify actors, (2) Datarade approval, (3) directory PRs merged, (4) Search Console
-indexing of the stats pages, (5) then the next dataset (research doc `NICHE-RESEARCH-2026-09-B`
-to be written: Ofsted/GIAS, NHS ODS, Contracts Finder awards, CCOD/OCOD).
+indexing of the stats pages, (5) then the next dataset. Research done 2026-09-20 (`ventures/gankdat/docs/NICHE-RESEARCH-2026-09-B.md`):
+**Contracts Finder awarded contracts + supplier index** first (open OCDS API, OGL, strongest paid
+demand: Stotles £50–475/mo, Tussell, 8+ Apify actors), then GIAS + Ofsted outcomes, then NHS ODS.
+Rejected: Land Registry CCOD/OCOD (licence forbids standalone products), HMRC VAT check, SIA.
 
 ## 6. Workflow (research → plan → build → distribute → measure → review)
 
@@ -87,3 +89,4 @@ to be written: Ofsted/GIAS, NHS ODS, Contracts Finder awards, CCOD/OCOD).
 - 2026-09-20 ICO fee deferred by owner until the first real customer (risk noted in action 012).
 - 2026-09-20 owner asks for business planning and market research to be explicit in the loop
   → this file + the monthly strategy routine.
+- 2026-09-20 next-dataset queue set from research B: Contracts Finder awards → GIAS/Ofsted → NHS ODS.
