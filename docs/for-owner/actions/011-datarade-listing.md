@@ -16,6 +16,20 @@ here needs you. Full eligibility notes: `ventures/gankdat/docs/DATA-MARKETPLACES
    set pricing to "from £5/month, free tier available" linking to https://gankdat.com.
 4. Reply "011 done" here. If Datarade messages arrive at info@, I'll draft the replies for you.
 
+## Supporting documents (ready — pull the repo, they are in `docs/for-owner/datarade/`)
+
+| Datarade field | Upload |
+| --- | --- |
+| Data samples | `gankdat-data-samples.zip` (25 live records per dataset, JSON, with a README) |
+| Data catalog overview | `gankdat-data-catalog.pdf` |
+| Data dictionary | `gankdat-data-dictionary.pdf` |
+| Marketing material | `gankdat-data-catalog.pdf` again, or leave empty |
+| Certifications | leave empty (none held; GDPR posture is in the catalogue's compliance section) |
+
+Primary data categories: Company Data, Government Data, Sanctions/Compliance (KYB) — then
+Procurement/Tender or B2B Leads if a fourth is allowed. Location: London, United Kingdom.
+Legal entity: sole trader, trading as gankdat.
+
 ## Copy-paste text
 
 **Company:** gankdat (gankdat.com) — UK sole trader. Official government open data served as a
