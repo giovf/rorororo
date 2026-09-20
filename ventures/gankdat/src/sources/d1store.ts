@@ -70,6 +70,29 @@ function lowercaseStrings(value: unknown): unknown {
  * request; see queryD1Source / the /stats route, which read committed state
  * only). Idempotent per generation, so a crashed attempt self-heals next run.
  */
+/** Rows per DELETE statement — a single DELETE of ~600k rows (uk-food-hygiene) tripped D1's
+ *  per-statement storage timeout ("operation exceeded timeout which caused object to be
+ *  reset", 2026-09-20), so old generations are removed in bounded chunks. */
+const DELETE_CHUNK = 20_000;
+
+/** Deletes every row of `slug` whose generation is `>=` or `<` the given one, chunk by chunk. */
+async function deleteGenerations(
+  env: CloudflareBindings,
+  slug: string,
+  op: '>=' | '<',
+  generation: number,
+): Promise<void> {
+  const stmt = env.DB.prepare(
+    `DELETE FROM source_records WHERE rowid IN (
+       SELECT rowid FROM source_records WHERE source_slug = ?1 AND generation ${op} ?2 LIMIT ${DELETE_CHUNK}
+     )`,
+  );
+  for (;;) {
+    const res = await stmt.bind(slug, generation).run();
+    if ((res.meta?.changes ?? 0) < DELETE_CHUNK) return;
+  }
+}
+
 export async function refreshD1Source(
   env: CloudflareBindings,
   source: DataSource,
@@ -83,9 +106,7 @@ export async function refreshD1Source(
     // attempt left orphan rows at THIS same generation. Clear them first —
     // otherwise the first chunk's seq=0 collides on the PK and every future
     // refresh throws, wedging the dataset on stale data permanently.
-    await env.DB.prepare('DELETE FROM source_records WHERE source_slug = ?1 AND generation >= ?2')
-      .bind(source.slug, generation)
-      .run();
+    await deleteGenerations(env, source.slug, '>=', generation);
 
     // Chunked set-based insert: one statement per chunk via json_each keeps
     // bind counts tiny (D1 caps bound parameters per statement). fetchStream
@@ -137,9 +158,7 @@ export async function refreshD1Source(
       .bind(source.slug, meta.generation, meta.last_refreshed_at, meta.total)
       .run();
     // Readers are on the new generation now; drop every older generation.
-    await env.DB.prepare('DELETE FROM source_records WHERE source_slug = ?1 AND generation < ?2')
-      .bind(source.slug, generation)
-      .run();
+    await deleteGenerations(env, source.slug, '<', generation);
 
     // Precompute the /stats aggregation once here (cron), so the public,
     // unauthenticated /stats page never runs a full-table GROUP BY per request.
