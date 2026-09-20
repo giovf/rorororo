@@ -1,0 +1,66 @@
+{
+  "title": "UK Charities Register (Charity Commission) \u2014 leads & due diligence \u2014 filters",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "name": {
+      "title": "Name contains",
+      "type": "string",
+      "editor": "textfield"
+    },
+    "charity_type": {
+      "title": "Charity type contains",
+      "type": "string",
+      "description": "CIO, Charitable company, Trust, Previously excepted, Other",
+      "editor": "textfield"
+    },
+    "reporting_status": {
+      "title": "Reporting status contains",
+      "type": "string",
+      "description": "e.g. Submission Received, Submission Received Late, Submission Double Default, New",
+      "editor": "textfield"
+    },
+    "outward_code": {
+      "title": "Postcode area (outward code)",
+      "type": "string",
+      "description": "e.g. LS1, SW1A",
+      "editor": "textfield"
+    },
+    "latest_income_min": {
+      "title": "Minimum latest income (\u00a3)",
+      "type": "integer",
+      "minimum": 0
+    },
+    "latest_income_max": {
+      "title": "Maximum latest income (\u00a3)",
+      "type": "integer",
+      "minimum": 0
+    },
+    "date_of_registration_after": {
+      "title": "Registered on or after",
+      "type": "string",
+      "description": "YYYY-MM-DD",
+      "editor": "textfield",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "in_administration": {
+      "title": "Only charities in administration",
+      "type": "boolean",
+      "default": false
+    },
+    "q": {
+      "title": "Free-text search",
+      "type": "string",
+      "editor": "textfield"
+    },
+    "max_results": {
+      "title": "Maximum results",
+      "type": "integer",
+      "description": "Stop after this many records (you are charged per result).",
+      "default": 1000,
+      "minimum": 1,
+      "maximum": 100000
+    }
+  },
+  "required": []
+}

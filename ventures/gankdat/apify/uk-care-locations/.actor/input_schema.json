@@ -1,0 +1,61 @@
+{
+  "title": "UK Care Providers Directory (CQC) \u2014 care homes, GPs, dentists, homecare \u2014 filters",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "service_types": {
+      "title": "Service type contains",
+      "type": "string",
+      "description": "e.g. Care home, Nursing home, Homecare, Dentist, GP, Hospital, Hospice",
+      "editor": "textfield"
+    },
+    "specialisms": {
+      "title": "Specialism contains",
+      "type": "string",
+      "description": "e.g. Dementia, Learning disabilities, Mental health, Children",
+      "editor": "textfield"
+    },
+    "provider_name": {
+      "title": "Provider name contains",
+      "type": "string",
+      "editor": "textfield"
+    },
+    "region": {
+      "title": "Region contains",
+      "type": "string",
+      "description": "London, South East, North West, Yorkshire & Humberside, \u2026",
+      "editor": "textfield"
+    },
+    "local_authority": {
+      "title": "Local authority contains",
+      "type": "string",
+      "editor": "textfield"
+    },
+    "outward_code": {
+      "title": "Postcode area (outward code)",
+      "type": "string",
+      "editor": "textfield"
+    },
+    "latest_check_date_after": {
+      "title": "Latest CQC check on or after",
+      "type": "string",
+      "description": "YYYY-MM-DD",
+      "editor": "textfield",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "q": {
+      "title": "Free-text search",
+      "type": "string",
+      "editor": "textfield"
+    },
+    "max_results": {
+      "title": "Maximum results",
+      "type": "integer",
+      "description": "Stop after this many records (you are charged per result).",
+      "default": 1000,
+      "minimum": 1,
+      "maximum": 100000
+    }
+  },
+  "required": []
+}

@@ -23,7 +23,8 @@ place for what is listed where, what each channel needs, and the copy-paste blur
 | Smithery | not listed; CLI publish needs a Smithery account (owner) | — |
 | Google Search Console | domain verified 2026-09-20 (owner, DNS TXT); sitemap `https://gankdat.com/sitemap.xml` to submit once | search.google.com/search-console |
 | x402 Bazaar (CDP discovery) | 402 bodies already carry `discoverable: true`; the catalogue lists services once real settlements occur (only 2 test payments so far) | https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources |
-| RapidAPI, Apify | parked (see below) | — |
+| Apify Store | **five actors built** (`apify/`: food hygiene, charities, care locations, visa sponsors, new companies); publishing waits on the owner's account + token (action 014); pay-per-result, 80/20 | — |
+| RapidAPI | parked (see below) | — |
 
 ## Official MCP Registry
 
@@ -86,9 +87,9 @@ mcp-publisher publish   # reads ./server.json
 - **RapidAPI** — imports `/openapi.json` (may want 3.0; downconvert then); proxies with
   its own keys and takes ~20–25%. Use only for discovery if ever; steer volume users to
   direct billing. Needs an owner account.
-- **Apify Store** — wants an Actor, not an API: a thin wrapper whose input mirrors a
-  source's `queryParams` and calls `/v1/data/:source`, charged per result. Build only if a
-  signal says this channel matters.
+- **Apify Store** — built 2026-09-20 (see the row above and `apify/README.md`): thin actors
+  over `/v1/data/:source`, pay-per-event `result`. Existing paid demand there (scrapers of the
+  same registers at ~US$1/1k records) is why it is first in line.
 
 ## Pre-listing checklist
 

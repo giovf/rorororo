@@ -66,3 +66,6 @@ logs
 # tasks.json
 # tasks/ 
 x402-test-wallet.key
+apify/**/node_modules/
+apify/**/storage/
+apify/**/package-lock.json

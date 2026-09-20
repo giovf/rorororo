@@ -16,10 +16,18 @@ export default tseslint.config(
     },
   },
   {
-    // Node scripts run outside the Workers runtime.
-    files: ['scripts/**/*.mjs'],
+    // Node scripts run outside the Workers runtime (CLI tooling + Apify actors).
+    files: ['scripts/**/*.mjs', 'apify/**/*.mjs'],
+    // Plain JS: JSDoc carries the types; the TS boundary rule does not apply.
+    rules: { '@typescript-eslint/explicit-module-boundary-types': 'off' },
     languageOptions: {
-      globals: { console: 'readonly', process: 'readonly', fetch: 'readonly' },
+      globals: {
+        console: 'readonly',
+        process: 'readonly',
+        fetch: 'readonly',
+        URLSearchParams: 'readonly',
+        setTimeout: 'readonly',
+      },
     },
   },
   {
