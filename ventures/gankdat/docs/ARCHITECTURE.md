@@ -31,7 +31,9 @@ advanced search; KYB/lead-gen, completes the counterparty bundle), and UK food
 hygiene ratings (`uk-food-hygiene`, shipped 2026-09-20 — FSA FHRS national file, D1, ~610k
 establishments; risk + lead-gen bundle; NICHE-RESEARCH-2026-09 §3), and UK licensed visa sponsors
 (`uk-sponsors`, shipped 2026-09-20 — Home Office register via the GOV.UK Content API, D1,
-~143k rows, no personal data; company-data bundle).
+~143k rows, no personal data; company-data bundle), and the Charity Commission register
+(`uk-charities`, shipped 2026-09-20 — keyless daily extract ZIP via the shared unwrapper in
+`src/sources/zip.ts`, D1, ~400k rows incl. removed charities, contact details dropped).
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo

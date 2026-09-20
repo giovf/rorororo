@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { csvRows } from './csv';
 import fixtureRecords from './fixtures/sam-exclusions.json';
 import type { DataSource } from './types';
+import { inflateZipEntry } from './zip';
 
 // US SAM.gov Exclusions (debarment) — every party excluded from US federal
 // awards, from GSA's official daily PUBLIC extract (task 40; rebuilt 2026-09-20).
@@ -119,91 +120,9 @@ function normalizeRow(cols: string[], idx: Map<string, number>): SamExclusionsRe
 // ~78MB; this bounds a zip-bomb from a compromised origin.
 const MAX_DECOMPRESSED_BYTES = 256 * 1024 * 1024;
 
-/** Caps the total bytes read from a stream, aborting past the limit. */
-function byteCapTransform(limit: number): TransformStream<Uint8Array, Uint8Array> {
-  let seen = 0;
-  return new TransformStream({
-    transform(chunk, controller) {
-      seen += chunk.byteLength;
-      if (seen > limit) {
-        controller.error(new Error(`decompressed body exceeded ${limit} bytes`));
-        return;
-      }
-      controller.enqueue(chunk);
-    },
-  });
-}
-
-const ZIP_LOCAL_HEADER = 0x04034b50;
-const ZIP_LOCAL_HEADER_LEN = 30;
-const ZIP_METHOD_DEFLATE = 8;
-const ZIP_FLAG_DATA_DESCRIPTOR = 0x8;
-
-/**
- * Streams the raw deflate bytes of the FIRST entry of a ZIP: parses the local
- * file header, skips name/extra, forwards exactly `compressed size` bytes and
- * drops the rest (data descriptor, further entries, central directory) so the
- * inflater never sees trailing bytes. Only method 8 (deflate) is supported —
- * that is what SAM publishes; anything else is rejected loudly.
- */
-export function zipFirstEntryDeflate(): TransformStream<Uint8Array, Uint8Array> {
-  let header = new Uint8Array(0);
-  let skip = -1; // <0: header not parsed yet; otherwise bytes still to skip
-  let remaining = Number.POSITIVE_INFINITY;
-  return new TransformStream({
-    transform(chunk, controller) {
-      let buf = chunk;
-      if (skip < 0) {
-        const merged = new Uint8Array(header.length + buf.length);
-        merged.set(header);
-        merged.set(buf, header.length);
-        header = merged;
-        if (header.length < ZIP_LOCAL_HEADER_LEN) return;
-        const view = new DataView(header.buffer, header.byteOffset, header.byteLength);
-        if (view.getUint32(0, true) !== ZIP_LOCAL_HEADER) {
-          controller.error(new Error('SAM extract is not a ZIP'));
-          return;
-        }
-        const flags = view.getUint16(6, true);
-        const method = view.getUint16(8, true);
-        if (method !== ZIP_METHOD_DEFLATE) {
-          controller.error(new Error(`SAM extract ZIP uses unsupported method ${method}`));
-          return;
-        }
-        const compressedSize = view.getUint32(18, true);
-        const nameLen = view.getUint16(26, true);
-        const extraLen = view.getUint16(28, true);
-        // Sizes in a data-descriptor ZIP live AFTER the data; then we cannot cap
-        // and forward everything (the inflater stops at the final block).
-        if ((flags & ZIP_FLAG_DATA_DESCRIPTOR) === 0 && compressedSize > 0) {
-          remaining = compressedSize;
-        }
-        skip = ZIP_LOCAL_HEADER_LEN + nameLen + extraLen;
-        buf = header;
-        header = new Uint8Array(0);
-      }
-      if (skip > 0) {
-        const n = Math.min(skip, buf.length);
-        buf = buf.subarray(n);
-        skip -= n;
-      }
-      if (buf.length === 0 || remaining <= 0) return;
-      const take = Math.min(remaining, buf.length);
-      controller.enqueue(buf.subarray(0, take));
-      remaining -= take;
-    },
-    flush(controller) {
-      if (skip < 0) controller.error(new Error('SAM extract ended before the ZIP header'));
-    },
-  });
-}
-
-/** ZIP body → inflated CSV bytes, byte-capped. */
+/** ZIP body → inflated CSV bytes, byte-capped (shared unwrapper in zip.ts). */
 function csvStreamFromZip(body: ReadableStream<Uint8Array>): ReadableStream<Uint8Array> {
-  return body
-    .pipeThrough(zipFirstEntryDeflate())
-    .pipeThrough(new DecompressionStream('deflate-raw'))
-    .pipeThrough(byteCapTransform(MAX_DECOMPRESSED_BYTES));
+  return inflateZipEntry(body, MAX_DECOMPRESSED_BYTES);
 }
 
 interface ExtractListing {

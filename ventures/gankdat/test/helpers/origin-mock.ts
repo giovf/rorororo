@@ -12,6 +12,7 @@ const CH_ORIGIN = 'https://api.company-information.service.gov.uk/advanced-searc
 const FHRS_ORIGIN = 'https://ratings.food.gov.uk/api/open-data-files/';
 const GOVUK_CONTENT_ORIGIN = 'https://www.gov.uk/api/content/';
 const GOVUK_ASSET_ORIGIN = 'https://assets.publishing.service.gov.uk/';
+const CHARITIES_ORIGIN = 'https://ccewuksprdoneregsadata1.blob.core.windows.net/';
 
 /**
  * Tests run in the same isolate as the worker under test, so stubbing the
@@ -31,6 +32,7 @@ export function stubOrigins(handlers: {
   fhrs?: () => Response;
   govukContent?: () => Response;
   govukAsset?: () => Response;
+  charities?: () => Response;
 }): ReturnType<typeof vi.fn> {
   const mock = vi.fn((input: RequestInfo | URL) => {
     const url = String(input instanceof Request ? input.url : input);
@@ -69,6 +71,9 @@ export function stubOrigins(handlers: {
     }
     if (url.startsWith(GOVUK_ASSET_ORIGIN) && handlers.govukAsset) {
       return Promise.resolve(handlers.govukAsset());
+    }
+    if (url.startsWith(CHARITIES_ORIGIN) && handlers.charities) {
+      return Promise.resolve(handlers.charities());
     }
     throw new Error(`unexpected outbound fetch in test: ${url}`);
   });

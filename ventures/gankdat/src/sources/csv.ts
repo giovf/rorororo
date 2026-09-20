@@ -7,10 +7,14 @@ const MAX_CELLS_PER_ROW = 2_000;
 /**
  * Streaming RFC-4180 CSV rows from a response body: handles quoted fields,
  * escaped quotes, and embedded commas/newlines without buffering the file.
- * Shared by CSV-based sources (uk-sanctions UKSL, sam-exclusions extract).
+ * Shared by CSV-based sources (uk-sanctions UKSL, sam-exclusions extract) and, with
+ * `delimiter = '\t'`, the tab-delimited Charity Commission extract.
  * Throws if a single field or row exceeds the sanity caps above.
  */
-export async function* csvRows(body: ReadableStream<Uint8Array>): AsyncGenerator<string[]> {
+export async function* csvRows(
+  body: ReadableStream<Uint8Array>,
+  delimiter: string = ',',
+): AsyncGenerator<string[]> {
   const decoder = new TextDecoder();
   const reader = body.getReader();
   let field = '';
@@ -48,7 +52,7 @@ export async function* csvRows(body: ReadableStream<Uint8Array>): AsyncGenerator
       }
       if (c === '"' && field === '') {
         inQuotes = true;
-      } else if (c === ',') {
+      } else if (c === delimiter) {
         endField();
       } else if (c === '\n') {
         endField();

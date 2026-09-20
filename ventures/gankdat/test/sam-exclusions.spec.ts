@@ -2,11 +2,8 @@ import { env } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import { refreshD1Source } from '../src/sources/d1store';
-import {
-  computedExtractKeys,
-  samExclusionsSource,
-  zipFirstEntryDeflate,
-} from '../src/sources/sam-exclusions';
+import { computedExtractKeys, samExclusionsSource } from '../src/sources/sam-exclusions';
+import { zipFirstEntryDeflate } from '../src/sources/zip';
 import type { SamExclusionsRecord } from '../src/sources/sam-exclusions';
 import { authedFetch, issueKey } from './helpers/auth';
 import { stubOrigins } from './helpers/origin-mock';

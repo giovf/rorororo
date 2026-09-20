@@ -180,6 +180,7 @@ describe('scheduled refresh', () => {
     expect(rows.results).toEqual([
       { source_slug: 'eu-ted', status: 'ok' },
       { source_slug: 'sam-exclusions', status: 'ok' },
+      { source_slug: 'uk-charities', status: 'ok' },
       { source_slug: 'uk-companies', status: 'ok' },
       { source_slug: 'uk-food-hygiene', status: 'ok' },
       { source_slug: 'uk-insolvency', status: 'ok' },
