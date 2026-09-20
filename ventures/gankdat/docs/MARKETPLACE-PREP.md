@@ -12,7 +12,7 @@ place for what is listed where, what each channel needs, and the copy-paste blur
 
 | Channel | Status | Where |
 | --- | --- | --- |
-| Official MCP Registry | **live, v0.8.0** (re-published 2026-09-20 with uk-food-hygiene and uk-sponsors; was 0.1.0 with a two-dataset description) | `com.gankdat/gankdat` — registry.modelcontextprotocol.io |
+| Official MCP Registry | **live, v0.9.0** (re-published 2026-09-20 with uk-food-hygiene, uk-sponsors and uk-charities; was 0.1.0 with a two-dataset description) | `com.gankdat/gankdat` — registry.modelcontextprotocol.io |
 | PulseMCP | submissions paused on their side; they index the official registry automatically | — |
 | public-apis/public-apis | PR open (Government section), 2026-09-20 | https://github.com/public-apis/public-apis/pull/7436 |
 | APIs.guru OpenAPI directory | issue open (their documented add-API flow), 2026-09-20 | https://github.com/APIs-guru/openapi-directory/issues/3384 |
@@ -46,26 +46,27 @@ mcp-publisher publish   # reads ./server.json
 `mcp-publisher` is a release binary from github.com/modelcontextprotocol/registry
 (linux_amd64 tarball; not in the repo).
 
-## Copy-paste blurbs for any directory form (current, 2026-09-20, v0.8.0)
+## Copy-paste blurbs for any directory form (current, 2026-09-20, v0.9.0)
 
 - **Name**: gankdat
 - **Tagline**: UK & EU tenders, UK planning, UK sanctions, US exclusions, UK insolvency,
-  company, visa-sponsor and food-hygiene data as clean JSON — REST + MCP + x402.
-- **Description**: gankdat serves nine official government open-data feeds as one clean,
+  company, charity, visa-sponsor and food-hygiene data as clean JSON — REST + MCP + x402.
+- **Description**: gankdat serves ten official government open-data feeds as one clean,
   filterable JSON schema: UK procurement notices (Find a Tender), EU procurement notices
   (TED), UK planning applications (planning.data.gov.uk), the UK Sanctions List (FCDO),
   US federal exclusions (SAM.gov), UK corporate insolvency notices (The Gazette) and new UK
   company incorporations (Companies House) UK food hygiene ratings (Food Standards
-  Agency) and the Home Office register of licensed visa sponsors. Native MCP server for AI agents, plus x402
+  Agency) the Home Office register of licensed visa sponsors and the Charity Commission register
+  for England and Wales. Native MCP server for AI agents, plus x402
   USDC pay-per-request on Base for agents with no account. Free tier: 250 requests/month.
   Licence and personal-data posture stated per dataset in the terms; personal fields are
   dropped at ingest. Source code is not open source.
 - **Endpoint**: `https://gankdat.com/mcp` (Streamable HTTP). `initialize` and
   `tools/list` are anonymous; `tools/call` needs `Authorization: Bearer <api key>`
   (free key at https://gankdat.com/account).
-- **Tools** (11): `list_sources`, `get_usage` (free); `query_uk_tenders`, `query_eu_ted`,
+- **Tools** (12): `list_sources`, `get_usage` (free); `query_uk_tenders`, `query_eu_ted`,
   `query_uk_planning`, `query_uk_sanctions`, `query_sam_exclusions`,
-  `query_uk_insolvency`, `query_uk_companies`, `query_uk_food_hygiene`, `query_uk_sponsors` (1 credit each; filters per dataset, plus
+  `query_uk_insolvency`, `query_uk_companies`, `query_uk_food_hygiene`, `query_uk_sponsors`, `query_uk_charities` (1 credit each; filters per dataset, plus
   full-text `q`).
 - **Official registry name**: `com.gankdat/gankdat`
 - **Links**: site https://gankdat.com · docs https://gankdat.com/docs · OpenAPI 3.1
@@ -75,7 +76,7 @@ mcp-publisher publish   # reads ./server.json
   (slugs saver/starter/growth/scale, `src/billing/plans.json`); x402 US$0.005/request.
 - **Contact**: info@gankdat.com
 - **Categories/tags**: data · government · open-data · uk · eu · procurement · tenders ·
-  planning · sanctions · compliance · kyb · food-hygiene · hospitality · immigration · sponsors · recruitment
+  planning · sanctions · compliance · kyb · food-hygiene · hospitality · immigration · sponsors · recruitment · charities · grant-making
 
 ## Parked channels
 
