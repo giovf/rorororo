@@ -30,6 +30,7 @@ describe('registry', () => {
       'uk-food-hygiene',
       'uk-sponsors',
       'uk-charities',
+      'uk-care-locations',
     ]);
   });
 });

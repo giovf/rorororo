@@ -13,6 +13,8 @@ const FHRS_ORIGIN = 'https://ratings.food.gov.uk/api/open-data-files/';
 const GOVUK_CONTENT_ORIGIN = 'https://www.gov.uk/api/content/';
 const GOVUK_ASSET_ORIGIN = 'https://assets.publishing.service.gov.uk/';
 const CHARITIES_ORIGIN = 'https://ccewuksprdoneregsadata1.blob.core.windows.net/';
+const CQC_PAGE_ORIGIN = 'https://www.cqc.org.uk/about-us/';
+const CQC_FILE_ORIGIN = 'https://www.cqc.org.uk/system/files/';
 
 /**
  * Tests run in the same isolate as the worker under test, so stubbing the
@@ -33,6 +35,8 @@ export function stubOrigins(handlers: {
   govukContent?: () => Response;
   govukAsset?: () => Response;
   charities?: () => Response;
+  cqcPage?: () => Response;
+  cqcFile?: () => Response;
 }): ReturnType<typeof vi.fn> {
   const mock = vi.fn((input: RequestInfo | URL) => {
     const url = String(input instanceof Request ? input.url : input);
@@ -74,6 +78,12 @@ export function stubOrigins(handlers: {
     }
     if (url.startsWith(CHARITIES_ORIGIN) && handlers.charities) {
       return Promise.resolve(handlers.charities());
+    }
+    if (url.startsWith(CQC_PAGE_ORIGIN) && handlers.cqcPage) {
+      return Promise.resolve(handlers.cqcPage());
+    }
+    if (url.startsWith(CQC_FILE_ORIGIN) && handlers.cqcFile) {
+      return Promise.resolve(handlers.cqcFile());
     }
     throw new Error(`unexpected outbound fetch in test: ${url}`);
   });

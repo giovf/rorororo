@@ -70,8 +70,33 @@ export async function sourceStats(
  * means adding a source never silently skips its refresh (no wrangler.jsonc/code
  * cron drift). Never throws.
  */
-export async function refreshAllSources(env: CloudflareBindings): Promise<void> {
-  for (const source of listSources()) {
+/**
+ * Which wave a trigger runs, from the cron's minute field: 0 → wave 1, 20 → wave 2,
+ * 40 → wave 3; anything else (a manual/temporary trigger) → every wave in order.
+ * Keeping each wave under the 15-minute Cron Trigger limit is what matters.
+ */
+export function waveForCron(cron: string | undefined): 1 | 2 | 3 | undefined {
+  const minute = (cron ?? '').trim().split(/\s+/)[0];
+  return minute === '0' ? 1 : minute === '20' ? 2 : minute === '40' ? 3 : undefined;
+}
+
+export function waveOf(source: DataSource): 1 | 2 | 3 {
+  return source.refresh.wave ?? (source.storage === 'd1' ? 2 : 1);
+}
+
+export async function refreshAllSources(env: CloudflareBindings, cron?: string): Promise<void> {
+  const wave = waveForCron(cron);
+  const sources = listSources().filter((s) => wave === undefined || waveOf(s) === wave);
+  console.log(
+    JSON.stringify({
+      level: 'info',
+      event: 'refresh_wave',
+      cron: cron ?? null,
+      wave: wave ?? 'all',
+      sources: sources.map((s) => s.slug),
+    }),
+  );
+  for (const source of sources) {
     try {
       if (source.storage === 'd1') {
         await refreshD1Source(env, source);

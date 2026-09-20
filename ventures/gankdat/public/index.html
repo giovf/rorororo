@@ -10,7 +10,7 @@
     </title>
     <meta
       name="description"
-      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency, company incorporations, charities, licensed visa sponsors and food hygiene ratings. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
+      content="Official open data as one clean JSON schema: UK planning, UK + EU procurement (Find a Tender, TED), UK sanctions, US federal exclusions, UK insolvency, company incorporations, charities, licensed visa sponsors, CQC care locations and food hygiene ratings. For bid intelligence, supplier due diligence, and AI agents — free tier, MCP server, x402 pay-per-request."
     />
     <link rel="canonical" href="https://gankdat.com/" />
     <meta property="og:type" content="website" />
@@ -32,7 +32,7 @@
         "@id": "https://gankdat.com/#api",
         "name": "gankdat",
         "url": "https://gankdat.com",
-        "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, US federal exclusions, UK insolvency, company incorporations, charities, licensed visa sponsors and food hygiene ratings) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
+        "description": "Official open data as clean JSON in two bundles — bid intelligence (UK planning, UK + EU procurement) and counterparty risk (UK sanctions, US federal exclusions, UK insolvency, company incorporations, charities, licensed visa sponsors, CQC care locations and food hygiene ratings) — from official government feeds. Native MCP server and x402 pay-per-request for AI agents.",
         "documentation": "https://gankdat.com/docs",
         "termsOfService": "https://gankdat.com/terms",
         "provider": { "@type": "Organization", "name": "gankdat", "url": "https://gankdat.com" },
@@ -787,6 +787,20 @@
             <code>name</code><code>registration_status</code><code>charity_type</code
             ><code>latest_income_min</code><code>date_of_registration_after</code
             ><code>outward_code</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>uk-care-locations <span>// risk &amp; leads</span></h3>
+          <p>
+            Every CQC-regulated care location in England — hospitals, care homes, GPs, dentists,
+            homecare — with service types, specialisms, provider, area and the date of the latest
+            CQC check, from the official weekly directory. Phone numbers and manager names never
+            ingested.
+          </p>
+          <p class="chips">
+            <code>service_types</code><code>specialisms</code><code>provider_name</code
+            ><code>region</code><code>local_authority</code><code>latest_check_date_after</code
+            ><code>q</code>
           </p>
         </div>
       </div>

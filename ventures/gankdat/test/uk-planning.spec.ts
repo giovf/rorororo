@@ -157,10 +157,13 @@ describe('refreshSource error path', () => {
 describe('scheduled refresh', () => {
   it('refreshes all sources matching the cron and logs each', async () => {
     stubOrigins({ planning: originPage, tenders: tendersResponse });
-    const controller = createScheduledController({ cron: '0 5 * * *' });
-    const ctx = createExecutionContext();
-    await worker.scheduled(controller, env, ctx);
-    await waitOnExecutionContext(ctx);
+    // The daily refresh is split into three staggered triggers (waves); run each.
+    for (const cron of ['0 5 * * *', '20 5 * * *', '40 5 * * *']) {
+      const controller = createScheduledController({ cron });
+      const ctx = createExecutionContext();
+      await worker.scheduled(controller, env, ctx);
+      await waitOnExecutionContext(ctx);
+    }
 
     expect(await env.CACHE.get('data:uk-planning', 'json')).not.toBeNull();
     expect(await env.CACHE.get('data:uk-tenders', 'json')).not.toBeNull();
@@ -180,6 +183,7 @@ describe('scheduled refresh', () => {
     expect(rows.results).toEqual([
       { source_slug: 'eu-ted', status: 'ok' },
       { source_slug: 'sam-exclusions', status: 'ok' },
+      { source_slug: 'uk-care-locations', status: 'ok' },
       { source_slug: 'uk-charities', status: 'ok' },
       { source_slug: 'uk-companies', status: 'ok' },
       { source_slug: 'uk-food-hygiene', status: 'ok' },

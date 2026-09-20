@@ -33,7 +33,9 @@ establishments; risk + lead-gen bundle; NICHE-RESEARCH-2026-09 §3), and UK lice
 (`uk-sponsors`, shipped 2026-09-20 — Home Office register via the GOV.UK Content API, D1,
 ~143k rows, no personal data; company-data bundle), and the Charity Commission register
 (`uk-charities`, shipped 2026-09-20 — keyless daily extract ZIP via the shared unwrapper in
-`src/sources/zip.ts`, D1, ~400k rows incl. removed charities, contact details dropped).
+`src/sources/zip.ts`, D1, ~400k rows incl. removed charities, contact details dropped), and the CQC care directory
+(`uk-care-locations`, shipped 2026-09-20 — weekly CSV resolved from CQC's data page, D1,
+~57k regulated locations, phone numbers dropped).
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo

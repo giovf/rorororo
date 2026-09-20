@@ -9,6 +9,13 @@ export interface RefreshPolicy {
   cron: string;
   /** How long cached records stay valid in KV. */
   cacheTtlSeconds: number;
+  /**
+   * Refresh wave (see store.ts). Cron Triggers are killed after 15 minutes, so
+   * the daily refresh is split across staggered triggers: wave 1 = KV snapshot
+   * sources (05:00), wave 2 = D1 sources (05:20), wave 3 = the largest D1 loads
+   * (05:40). Defaults: kv → 1, d1 → 2.
+   */
+  wave?: 1 | 2 | 3;
 }
 
 /**

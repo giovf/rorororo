@@ -52,8 +52,10 @@
     "directory": "public",
   },
   "triggers": {
-    // Daily source refresh; per-source cadence is dispatched in code (task 3).
-    "crons": ["0 5 * * *"],
+    // Daily refresh in three waves (store.ts waveForCron): 05:00 KV snapshot sources,
+    // 05:20 D1 sources, 05:40 the largest D1 load. Each wave stays under the 15-minute
+    // Cron Trigger limit; a single trigger ran ~13 min by 2026-09-20 and was still growing.
+    "crons": ["0 5 * * *", "20 5 * * *", "40 5 * * *"],
   },
   "observability": {
     "enabled": true,

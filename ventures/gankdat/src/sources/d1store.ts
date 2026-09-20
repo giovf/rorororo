@@ -24,6 +24,9 @@ const RESERVED = new Set(['page', 'per_page', 'q']);
 
 /** Rows per INSERT chunk — sized so the JSON bind stays well under D1 limits. */
 const INSERT_CHUNK = 2000;
+// …and a byte bound: wide rows (uk-charities: 23 fields + a 400-char text, stored three
+// ways) blew D1's per-bind size cap ("string or blob too big", 2026-09-20) at 2000 rows.
+const INSERT_CHUNK_BYTES = 400_000;
 
 interface SourceMeta {
   generation: number;
@@ -119,22 +122,26 @@ export async function refreshD1Source(
     );
     let total = 0;
     let chunk: { s: string; r: unknown; l: unknown }[] = [];
+    let chunkBytes = 0;
     const flush = async (): Promise<void> => {
       if (chunk.length === 0) return;
       await insert.bind(source.slug, generation, total - chunk.length, JSON.stringify(chunk)).run();
       chunk = [];
+      chunkBytes = 0;
     };
     const records: AsyncIterable<unknown> | unknown[] = source.fetchStream
       ? source.fetchStream(env)
       : await source.fetchFresh(env);
     for await (const record of records) {
-      chunk.push({
+      const entry = {
         s: searchText(record as Record<string, unknown>),
         r: record,
         l: lowercaseStrings(record),
-      });
+      };
+      chunk.push(entry);
+      chunkBytes += JSON.stringify(entry).length;
       total += 1;
-      if (chunk.length >= INSERT_CHUNK) await flush();
+      if (chunk.length >= INSERT_CHUNK || chunkBytes >= INSERT_CHUNK_BYTES) await flush();
     }
     await flush();
     if (total === 0) {

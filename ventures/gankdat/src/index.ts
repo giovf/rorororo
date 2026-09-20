@@ -115,7 +115,7 @@ app.notFound(notFoundHandler);
 
 const scheduled: ExportedHandlerScheduledHandler<CloudflareBindings> = (controller, env, ctx) => {
   console.log(JSON.stringify({ level: 'info', event: 'scheduled', cron: controller.cron }));
-  ctx.waitUntil(refreshAllSources(env));
+  ctx.waitUntil(refreshAllSources(env, controller.cron));
 };
 
 export default {

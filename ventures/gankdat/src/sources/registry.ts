@@ -1,5 +1,6 @@
 import { euTedSource } from './eu-ted';
 import { samExclusionsSource } from './sam-exclusions';
+import { ukCareLocationsSource } from './uk-care-locations';
 import { ukCharitiesSource } from './uk-charities';
 import { ukCompaniesSource } from './uk-companies';
 import { ukFoodHygieneSource } from './uk-food-hygiene';
@@ -22,6 +23,7 @@ const SOURCES: DataSource[] = [
   ukFoodHygieneSource,
   ukSponsorsSource,
   ukCharitiesSource,
+  ukCareLocationsSource,
 ];
 
 export const registry: ReadonlyMap<string, DataSource> = new Map(
