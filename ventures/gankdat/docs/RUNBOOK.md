@@ -97,8 +97,11 @@ Local equivalents live in `.dev.vars` (see `.dev.vars.example`).
   cannot manage WAF rulesets, which would have allowed a path-scoped skip rule — if a
   token with Zone WAF permission ever exists, prefer a skip rule for `/mcp`, `/v1/*`,
   `/x402/*`, `/.well-known/*`). The Worker's own rate limiters remain the abuse control.
-  Bot Fight Mode is dashboard-only: if agent clients still see challenges, turn it off
-  under Security → Bots. CI verifies deploys via the Workers API instead of the edge.
+  **Bot Fight Mode was the actual culprit** — it issues managed challenges to traffic it
+  judges automated (Glama's health checker, CI runners), i.e. exactly this API's customers.
+  The owner switched it off on 2026-09-20 (dashboard-only setting: Security → Bots) and
+  Glama's connection test passed immediately. Keep it off; keep "Block AI bots" off too.
+  CI verifies deploys via the Workers API instead of the edge.
 
 - **KV counters are best-effort**: usage/rate-limit counters can lose
   increments under concurrency (slight over-serve). Accurate upgrade path =
