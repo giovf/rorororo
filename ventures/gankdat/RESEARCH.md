@@ -42,5 +42,5 @@ Cloudflare Workers Paid ≈ US$5/month (only recurring cost in the portfolio), d
 | Date | Event | Users | Likes | Purchases | Notes |
 |---|---|---|---|---|---|
 | 2026-09-20 | Daily check | — | — | — | no store listing to check (channel: web/API + MCP + x402); see "Signal since launch" above for real usage/revenue signal |
-| 2026-09-20 | Daily numbers | 5 accts (0 paid, +1/24h) | — | 0 x402 paid | MCP 24h: 4 authed, 1287 anon, 57 paywall hits; refresh errors: sam-exclusions |
+| 2026-09-20 | Daily numbers | 5 accts (0 paid, +1/24h) | — | 0 x402 paid | MCP 24h: 4 authed, 1286 anon, 57 paywall hits; refresh errors: sam-exclusions |
 
