@@ -52,10 +52,11 @@
     "directory": "public",
   },
   "triggers": {
-    // Daily refresh in three waves (store.ts waveForCron): 05:00 KV snapshot sources,
-    // 05:20 D1 sources, 05:40 the largest D1 load. Each wave stays under the 15-minute
-    // Cron Trigger limit; a single trigger ran ~13 min by 2026-09-20 and was still growing.
-    "crons": ["0 5 * * *", "20 5 * * *", "40 5 * * *"],
+    // Daily refresh in four waves (store.ts waveForCron): 05:00 KV snapshot sources,
+    // 05:15 smaller D1 sources (exclusions, sponsors), 05:30 charities + care locations,
+    // 05:45 uk-food-hygiene. Each wave must stay well under the 15-minute Cron Trigger
+    // limit even on a slow D1 day (a four-source wave was killed on 2026-09-20).
+    "crons": ["0 5 * * *", "15 5 * * *", "30 5 * * *", "45 5 * * *"],
   },
   "observability": {
     "enabled": true,

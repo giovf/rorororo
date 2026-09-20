@@ -71,13 +71,14 @@ corrects for sampling.) Day-to-day request logs stay in Workers Logs
 
 - **UptimeRobot**: HTTP monitor on `https://<domain>/v1/health` (expects 200,
   body contains `"status":"ok"`), 5-min interval, alert → phone.
-- **Cron health**: the daily refresh runs in three waves — 05:00 UTC (KV snapshot
-  sources), 05:20 (D1 sources), 05:40 (uk-food-hygiene alone) — because a Cron Trigger is
-  killed at 15 minutes and one combined run reached ~13 min on 2026-09-20. A trigger's
-  minute selects the wave (`store.ts waveForCron`: 0 → 1, 20 → 2, 40 → 3, anything else →
+- **Cron health**: the daily refresh runs in four waves — 05:00 UTC (KV snapshot
+  sources), 05:15 (exclusions, sponsors), 05:30 (charities, care locations), 05:45
+  (uk-food-hygiene alone) — because a Cron Trigger is killed at 15 minutes; one combined run
+  reached ~13 min and a four-source D1 wave was killed on 2026-09-20. A trigger's minute
+  selects the wave (`store.ts waveForCron`: 0 → 1, 15 → 2, 30 → 3, 45 → 4, anything else →
   all). If `last_refreshed_at` in any `/v1/data/:source` meta is >48h old, the trigger or
   origin is broken. To force a wave by hand, add a temporary trigger via the Cloudflare
-  schedules API with ≥16 min lead on a :00/:20/:40 minute, then restore the three crons
+  schedules API with ≥16 min lead on a :00/:15/:30/:45 minute, then restore the four crons
   (a deploy also restores them).
 - Optional: Sentry via a Workers integration (deferred — structured logs +
   UptimeRobot cover v1).

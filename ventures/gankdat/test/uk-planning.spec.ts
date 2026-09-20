@@ -158,7 +158,7 @@ describe('scheduled refresh', () => {
   it('refreshes all sources matching the cron and logs each', async () => {
     stubOrigins({ planning: originPage, tenders: tendersResponse });
     // The daily refresh is split into three staggered triggers (waves); run each.
-    for (const cron of ['0 5 * * *', '20 5 * * *', '40 5 * * *']) {
+    for (const cron of ['0 5 * * *', '15 5 * * *', '30 5 * * *', '45 5 * * *']) {
       const controller = createScheduledController({ cron });
       const ctx = createExecutionContext();
       await worker.scheduled(controller, env, ctx);

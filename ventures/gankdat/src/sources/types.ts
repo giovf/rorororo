@@ -12,10 +12,11 @@ export interface RefreshPolicy {
   /**
    * Refresh wave (see store.ts). Cron Triggers are killed after 15 minutes, so
    * the daily refresh is split across staggered triggers: wave 1 = KV snapshot
-   * sources (05:00), wave 2 = D1 sources (05:20), wave 3 = the largest D1 loads
-   * (05:40). Defaults: kv → 1, d1 → 2.
+   * sources (05:00), wave 2 = smaller D1 sources (05:15), wave 3 = charities +
+   * care locations (05:30), wave 4 = uk-food-hygiene (05:45). Defaults: kv → 1,
+   * d1 → 2. Budget each wave at well under 15 minutes on a slow D1 day.
    */
-  wave?: 1 | 2 | 3;
+  wave?: 1 | 2 | 3 | 4;
 }
 
 /**

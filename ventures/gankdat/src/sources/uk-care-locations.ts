@@ -245,7 +245,7 @@ export const ukCareLocationsSource: DataSource<UkCareLocationsRecord> = {
     latest_check_date_after: z.iso.date().optional(),
     latest_check_date_before: z.iso.date().optional(),
   }),
-  refresh: { cron: '20 5 * * *', cacheTtlSeconds: 86_400 },
+  refresh: { cron: '30 5 * * *', cacheTtlSeconds: 86_400, wave: 3 },
   idOf: (r) => r.location_id,
   fetchStream,
   async fetchFresh(env: CloudflareBindings): Promise<UkCareLocationsRecord[]> {

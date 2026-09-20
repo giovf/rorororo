@@ -237,7 +237,7 @@ export const ukFoodHygieneSource: DataSource<UkFoodHygieneRecord> = {
     new_rating_pending: z.stringbool().optional(),
   }),
   // ~6 min alone (613k rows) — its own wave.
-  refresh: { cron: '40 5 * * *', cacheTtlSeconds: 86_400, wave: 3 },
+  refresh: { cron: '45 5 * * *', cacheTtlSeconds: 86_400, wave: 4 },
   idOf: (r) => String(r.fhrs_id),
   fetchStream,
   async fetchFresh(env: CloudflareBindings): Promise<UkFoodHygieneRecord[]> {
