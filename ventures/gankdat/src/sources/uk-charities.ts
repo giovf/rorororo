@@ -4,11 +4,12 @@ import fixtureRecords from './fixtures/uk-charities.json';
 import type { DataSource } from './types';
 import { inflateZipEntry } from './zip';
 
-// Register of charities in England & Wales — every registered and removed
+// Register of charities in England & Wales — every currently registered
 // charity, from the Charity Commission's daily public extract (task 49).
 //
 // Ingest: `publicextract.charity.zip` on the Commission's public blob storage
-// (no account, no key; ~44MB zip → ~160MB tab-delimited text, ~400k rows,
+// (no account, no key; ~44MB zip → ~160MB tab-delimited text, ~400k rows of which
+// ~185k are registered charities and ingested,
 // refreshed daily ~01:10 UTC; OGL v3). Streamed through the shared ZIP
 // unwrapper (data-descriptor ZIP — see zip.ts) into D1. Stable id:
 // organisation_number (registered charities may have linked charities that
@@ -24,7 +25,7 @@ const ORIGIN_URL =
   'https://ccewuksprdoneregsadata1.blob.core.windows.net/data/txt/publicextract.charity.zip';
 const USER_AGENT = 'gankdat.com data refresh';
 const MAX_BYTES = 768 * 1024 * 1024;
-const ACTIVITIES_MAX_CHARS = 400;
+const ACTIVITIES_MAX_CHARS = 240;
 
 export const ukCharitiesRecordSchema = z.object({
   /** Commission's stable id for the organisation (distinct per linked charity). */
@@ -35,7 +36,7 @@ export const ukCharitiesRecordSchema = z.object({
   name: z.string(),
   /** CIO, Charitable company, Trust, Previously excepted, Other; null when not stated. */
   charity_type: z.string().nullable(),
-  /** Registered | Removed. */
+  /** Always "Registered" (removed charities are not ingested; removals appear in the change feed). */
   registration_status: z.string(),
   date_of_registration: z.string().nullable(),
   date_of_removal: z.string().nullable(),
@@ -54,7 +55,7 @@ export const ukCharitiesRecordSchema = z.object({
   cio_dissolved: z.boolean().nullable(),
   gift_aid: z.boolean().nullable(),
   has_land: z.boolean().nullable(),
-  /** The charity's own description of its activities, capped at 400 characters. */
+  /** The charity's own description of its activities, capped at 240 characters. */
   activities: z.string().nullable(),
 });
 
@@ -107,6 +108,10 @@ function normalizeRow(cols: string[], idx: Map<string, number>): UkCharitiesReco
   const name = col('charity_name');
   const status = col('charity_registration_status');
   if (organisation === null || registered === null || name === null || status === null) return null;
+  // Only the live register: >200k historical "Removed" rows (some decades old) doubled the
+  // load and blew the refresh budget. A charity that is removed from now on shows up in the
+  // change feed as 'removed' with its last record.
+  if (status.toLowerCase() !== 'registered') return null;
   const postcode = col('charity_contact_postcode');
   const activities = col('charity_activities');
   return {

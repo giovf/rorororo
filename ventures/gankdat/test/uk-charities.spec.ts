@@ -104,7 +104,7 @@ describe('GET /v1/data/uk-charities', () => {
       expect(text).not.toContain(banned);
     }
     const body = JSON.parse(text) as SuccessEnvelope<UkCharitiesRecord[]>;
-    expect(body.data).toHaveLength(4); // the row without an organisation number is skipped
+    expect(body.data).toHaveLength(3); // nameless-org row and the Removed charity are skipped
     expect(body.data[0]).toEqual({
       organisation_number: 5001,
       registered_charity_number: 1100001,
@@ -130,13 +130,9 @@ describe('GET /v1/data/uk-charities', () => {
       has_land: false,
       activities: 'Runs a community centre and food bank in central Leeds.',
     });
-    const removed = body.data.find((r) => r.name === 'OLD HALL TRUST');
-    expect(removed).toMatchObject({
-      registration_status: 'Removed',
-      date_of_removal: '2014-04-16',
-    });
+    expect(body.data.find((r) => r.name === 'OLD HALL TRUST')).toBeUndefined();
     const hospice = body.data.find((r) => r.name === 'BIG HOSPICE LIMITED');
-    expect(hospice?.activities).toHaveLength(400);
+    expect(hospice?.activities).toHaveLength(240);
     expect(hospice?.in_administration).toBe(true);
     expect(hospice?.company_number).toBe('04123456');
   });
@@ -152,7 +148,7 @@ describe('GET /v1/data/uk-charities', () => {
       >;
       return body.data.map((r) => r.name);
     };
-    expect(await names('registration_status=Removed')).toEqual(['OLD HALL TRUST']);
+    expect(await names('registration_status=Removed')).toEqual([]);
     expect(await names('latest_income_min=1000000')).toEqual(['BIG HOSPICE LIMITED']);
     expect(await names('outward_code=ls1')).toEqual(['ACME COMMUNITY TRUST']);
     expect(await names('in_administration=true')).toEqual(['BIG HOSPICE LIMITED']);

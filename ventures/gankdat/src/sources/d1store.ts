@@ -26,7 +26,7 @@ const RESERVED = new Set(['page', 'per_page', 'q']);
 const INSERT_CHUNK = 2000;
 // …and a byte bound: wide rows (uk-charities: 23 fields + a 400-char text, stored three
 // ways) blew D1's per-bind size cap ("string or blob too big", 2026-09-20) at 2000 rows.
-const INSERT_CHUNK_BYTES = 400_000;
+const INSERT_CHUNK_BYTES = 700_000; // 400k made ~3,600 statements for uk-charities and blew the 15-min trigger
 
 interface SourceMeta {
   generation: number;
