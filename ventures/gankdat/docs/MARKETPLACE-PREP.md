@@ -61,6 +61,9 @@ mcp-publisher publish   # reads ./server.json
   USDC pay-per-request on Base for agents with no account. Free tier: 250 requests/month.
   Licence and personal-data posture stated per dataset in the terms; personal fields are
   dropped at ingest. Source code is not open source.
+- **Change feeds** (2026-09-20): `GET /v1/changes/<dataset>?since=YYYY-MM-DD` → rows added, removed
+  or changed between daily refreshes (90-day history) for food hygiene, charities, care
+  locations, sponsors and US exclusions; MCP tool `get_changes`. The gap vs every competitor.
 - **Endpoint**: `https://gankdat.com/mcp` (Streamable HTTP). `initialize` and
   `tools/list` are anonymous; `tools/call` needs `Authorization: Bearer <api key>`
   (free key at https://gankdat.com/account).

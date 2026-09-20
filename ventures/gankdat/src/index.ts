@@ -12,6 +12,7 @@ import { getSource } from './sources/registry';
 import { accountRoutes } from './routes/account';
 import { authRoutes } from './routes/auth';
 import { billingRoutes } from './routes/billing';
+import { changesRoutes } from './routes/changes';
 import { dataRoutes } from './routes/data';
 import { healthRoute } from './routes/health';
 import { keysRoutes } from './routes/keys';
@@ -63,6 +64,7 @@ app.use(
 // Never combine origin-reflection with credentials on the account routes.
 const publicCors = cors();
 app.use('/v1/data/*', publicCors);
+app.use('/v1/changes/*', publicCors);
 app.use('/v1/health', publicCors);
 app.use('/openapi.json', publicCors);
 app.use('/mcp/*', publicCors);
@@ -87,10 +89,23 @@ app.use('/v1/data/:source', (c, next) => {
   })(c, next);
 });
 app.use('/v1/data/:source', meterCredits());
+// Change feeds: same guards as data queries (key, per-source rate limit, metering).
+app.use('/v1/changes/:source', requireApiKey());
+app.use('/v1/changes/:source', (c, next) => {
+  const cfg = getSource(c.req.param('source') ?? '')?.rateLimit ?? { limit: 60, windowSeconds: 60 };
+  return rateLimit({
+    scope: 'data',
+    limit: cfg.limit,
+    windowSeconds: cfg.windowSeconds,
+    identify: (ctx) => ctx.get('keyCtx')?.usageSubject ?? ctx.get('keyCtx')?.keyId ?? 'anonymous',
+  })(c, next);
+});
+app.use('/v1/changes/:source', meterCredits());
 app.use('/v1/usage', requireApiKey());
 
 app.route('/v1/health', healthRoute);
 app.route('/v1/data', dataRoutes);
+app.route('/v1/changes', changesRoutes);
 app.route('/v1/keys', keysRoutes);
 app.route('/v1/usage', usageRoute);
 app.route('/v1/auth', authRoutes);

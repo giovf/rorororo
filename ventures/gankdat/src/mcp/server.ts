@@ -4,9 +4,12 @@ import { creditCost } from '../metering/costs';
 import { currentPeriod, getUsage, incrementUsage } from '../metering/counters';
 import { planAllowance } from '../billing/plans';
 import { usageSummary } from '../metering/quota';
+import { z } from 'zod';
 import { buildQuerySchema } from '../sources/query';
+import { queryD1Changes } from '../sources/d1store';
+import { changesQuerySchema } from '../routes/changes';
 import { querySource } from '../sources/store';
-import { listSources } from '../sources/registry';
+import { getSource, listSources } from '../sources/registry';
 import type { DataSource } from '../sources/types';
 import type { KeyContext } from '../types';
 
@@ -101,6 +104,57 @@ function registerQueryTool(
   );
 }
 
+/** One tool for every register dataset's change feed (sources with a stable record id). */
+function registerChangesTool(
+  server: McpServer,
+  env: CloudflareBindings,
+  keyCtx: KeyContext | null,
+): void {
+  const feeds = listSources().filter((s) => s.idOf && s.storage === 'd1');
+  if (feeds.length === 0) return;
+  const slugs = feeds.map((s) => s.slug) as [string, ...string[]];
+  server.registerTool(
+    'get_changes',
+    {
+      title: 'Changes since a date',
+      description: `Rows added, removed or changed between daily refreshes of a register dataset (${slugs.join(', ')}), newest first, 90-day history. Poll this instead of re-reading a whole register. Costs 1 credit per call.`,
+      inputSchema: { source: z.enum(slugs), ...changesQuerySchema.shape },
+    },
+    async (args: Record<string, unknown>): Promise<ToolResult> => {
+      if (!keyCtx) return errorResult(AUTH_REQUIRED);
+      const source = getSource(String(args.source));
+      if (!source?.idOf) return errorResult(`Source '${String(args.source)}' has no change feed`);
+      const parsed = changesQuerySchema.safeParse(args);
+      if (!parsed.success) return errorResult('Invalid arguments: ' + parsed.error.message);
+      const cost = creditCost(source);
+      const period = currentPeriod();
+      const granted = planAllowance(keyCtx.plan);
+      const used = await getUsage(env, keyCtx.usageSubject, period);
+      if (used + cost > granted) {
+        return errorResult(
+          `Monthly credit quota exhausted (${granted}). Upgrade via POST ${API_BASE_URL}/v1/billing/checkout — see ${DOCS_ERRORS_URL}#quota_exceeded`,
+        );
+      }
+      const since = parsed.data.since ?? new Date(Date.now() - 7 * 86_400_000).toISOString();
+      const result = await queryD1Changes(env, source, { ...parsed.data, since });
+      const newUsed = await incrementUsage(env, keyCtx.usageSubject, cost, period);
+      return jsonResult({
+        ok: true,
+        data: result.rows,
+        meta: {
+          source: source.slug,
+          since,
+          page: parsed.data.page,
+          per_page: parsed.data.per_page,
+          total: result.total,
+          last_refreshed_at: result.last_refreshed_at,
+          credits_remaining: Math.max(0, granted - newUsed),
+        },
+      });
+    },
+  );
+}
+
 /**
  * keyCtx is null for anonymous introspection (initialize/tools/list — see
  * routes/mcp.ts): registries and directories index tools without a key, so
@@ -142,5 +196,6 @@ export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext | nul
   for (const source of listSources()) {
     registerQueryTool(server, env, keyCtx, source);
   }
+  registerChangesTool(server, env, keyCtx);
   return server;
 }

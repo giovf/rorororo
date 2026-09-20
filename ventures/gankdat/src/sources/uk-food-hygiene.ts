@@ -238,6 +238,7 @@ export const ukFoodHygieneSource: DataSource<UkFoodHygieneRecord> = {
   }),
   // ~6 min alone (613k rows) — its own wave.
   refresh: { cron: '40 5 * * *', cacheTtlSeconds: 86_400, wave: 3 },
+  idOf: (r) => String(r.fhrs_id),
   fetchStream,
   async fetchFresh(env: CloudflareBindings): Promise<UkFoodHygieneRecord[]> {
     const records: UkFoodHygieneRecord[] = [];

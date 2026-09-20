@@ -1920,6 +1920,17 @@
         "dependencies": [],
         "priority": "medium",
         "subtasks": []
+      },
+      {
+        "id": 51,
+        "title": "Change feeds: /v1/changes/:source + MCP get_changes for register datasets",
+        "description": "Each D1 refresh diffs the new generation against the previous by the source's stable id (DataSource.idOf) and records added/removed/changed rows in source_changes (migration 0010; 90-day retention). Served at GET /v1/changes/:source?since=&change=&page= with the same key/rate-limit/metering guards as data queries, in the OpenAPI spec (tag changes) and as the MCP tool get_changes. Feeds: uk-food-hygiene, uk-sponsors, uk-charities, uk-care-locations, sam-exclusions. This is the documented gap vs every competitor (snapshots/search only).",
+        "details": "",
+        "testStrategy": "",
+        "status": "pending",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": []
       }
     ],
     "metadata": {
@@ -1932,7 +1943,7 @@
       ],
       "created": "2026-09-20T15:56:54.756Z",
       "description": "Tasks for master context",
-      "updated": "2026-09-20T15:56:54.759Z"
+      "updated": "2026-09-20T16:38:14.599Z"
     }
   }
 }

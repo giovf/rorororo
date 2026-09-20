@@ -320,7 +320,12 @@ export const samExclusionsSource: DataSource<SamExclusionsRecord> = {
     termination_date_after: z.iso.date().optional(),
     termination_date_before: z.iso.date().optional(),
   }),
-  refresh: { cron: '0 5 * * *', cacheTtlSeconds: 86_400 },
+  refresh: { cron: '20 5 * * *', cacheTtlSeconds: 86_400 },
+  // No published id: name × classification × agency × activation date identifies an exclusion.
+  idOf: (r) =>
+    [r.name, r.classification ?? '', r.excluding_agency ?? '', r.activation_date ?? '']
+      .join('|')
+      .toLowerCase(),
   fetchStream,
   // Materializing path for callers that need an array (dev tooling); the D1
   // refresh always prefers fetchStream above.

@@ -88,8 +88,10 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   so registries/directories can index tools (per-IP, in-isolate limiter —
   zero KV ops); `tools/call` needs a key; bearer 401s carry
   `WWW-Authenticate`. KV rate limiters fail open on KV errors.
-- **Refresh**: Cron Triggers pull sources on schedule, write `refresh_log`;
-  responses expose `last_refreshed_at`.
+- **Refresh**: three staggered Cron Triggers (05:00 KV sources, 05:20 D1 sources, 05:40
+  uk-food-hygiene; `store.ts waveForCron`) pull sources, write `refresh_log`; responses
+  expose `last_refreshed_at`. D1 refreshes diff generations by `DataSource.idOf` into
+  `source_changes` (90 d) — served at `/v1/changes/:source` and the MCP `get_changes` tool.
 
 ## External services
 - **Stripe** — **LIVE** since 2026-07-09: checkout, customer portal,

@@ -96,6 +96,104 @@ async function deleteGenerations(
   }
 }
 
+/** How long change rows are kept. */
+const CHANGES_RETENTION_DAYS = 90;
+
+/**
+ * Records added / removed / changed rows between two generations of a source
+ * (by record_id) into source_changes, stamped with the refresh time. Skipped
+ * when the previous generation predates record ids (nothing to compare).
+ */
+async function recordChanges(
+  env: CloudflareBindings,
+  slug: string,
+  previousGeneration: number,
+  generation: number,
+  changedAt: string,
+): Promise<void> {
+  const prevHasIds = await env.DB.prepare(
+    'SELECT 1 AS ok FROM source_records WHERE source_slug = ?1 AND generation = ?2 AND record_id IS NOT NULL LIMIT 1',
+  )
+    .bind(slug, previousGeneration)
+    .first<{ ok: number }>();
+  if (!prevHasIds) return;
+  const added = `INSERT OR IGNORE INTO source_changes (source_slug, changed_at, change, record_id, record)
+     SELECT n.source_slug, ?3, 'added', n.record_id, n.record
+     FROM source_records n
+     LEFT JOIN source_records o ON o.source_slug = n.source_slug AND o.generation = ?1 AND o.record_id = n.record_id
+     WHERE n.source_slug = ?4 AND n.generation = ?2 AND n.record_id IS NOT NULL AND o.record_id IS NULL`;
+  const removed = `INSERT OR IGNORE INTO source_changes (source_slug, changed_at, change, record_id, record)
+     SELECT o.source_slug, ?3, 'removed', o.record_id, o.record
+     FROM source_records o
+     LEFT JOIN source_records n ON n.source_slug = o.source_slug AND n.generation = ?2 AND n.record_id = o.record_id
+     WHERE o.source_slug = ?4 AND o.generation = ?1 AND o.record_id IS NOT NULL AND n.record_id IS NULL`;
+  const changed = `INSERT OR IGNORE INTO source_changes (source_slug, changed_at, change, record_id, record)
+     SELECT n.source_slug, ?3, 'changed', n.record_id, n.record
+     FROM source_records n
+     JOIN source_records o ON o.source_slug = n.source_slug AND o.generation = ?1 AND o.record_id = n.record_id
+     WHERE n.source_slug = ?4 AND n.generation = ?2 AND n.record != o.record`;
+  for (const sql of [added, removed, changed]) {
+    await env.DB.prepare(sql).bind(previousGeneration, generation, changedAt, slug).run();
+  }
+  await env.DB.prepare(
+    "DELETE FROM source_changes WHERE source_slug = ?1 AND changed_at < datetime('now', ?2)",
+  )
+    .bind(slug, `-${CHANGES_RETENTION_DAYS} days`)
+    .run();
+}
+
+export interface ChangesQuery {
+  since?: string;
+  change?: 'added' | 'removed' | 'changed';
+  page: number;
+  per_page: number;
+}
+
+export interface ChangeRow {
+  change: string;
+  changed_at: string;
+  record_id: string;
+  record: unknown;
+}
+
+/** Page of change rows for a source, newest refresh first (read-only; no refresh). */
+export async function queryD1Changes(
+  env: CloudflareBindings,
+  source: DataSource,
+  q: ChangesQuery,
+): Promise<{ rows: ChangeRow[]; total: number; last_refreshed_at: string | null }> {
+  const meta = await readMeta(env, source.slug);
+  const clauses = ['source_slug = ?1'];
+  const binds: (string | number)[] = [source.slug];
+  if (q.since) {
+    clauses.push(`changed_at >= ?${binds.length + 1}`);
+    binds.push(q.since.length === 10 ? `${q.since}T00:00:00.000Z` : q.since);
+  }
+  if (q.change) {
+    clauses.push(`change = ?${binds.length + 1}`);
+    binds.push(q.change);
+  }
+  const where = clauses.join(' AND ');
+  const count = await env.DB.prepare(`SELECT COUNT(*) AS n FROM source_changes WHERE ${where}`)
+    .bind(...binds)
+    .first<{ n: number }>();
+  const total = count?.n ?? 0;
+  const offset = (q.page - 1) * q.per_page;
+  const res = await env.DB.prepare(
+    `SELECT change, changed_at, record_id, record FROM source_changes WHERE ${where}
+     ORDER BY changed_at DESC, change, record_id LIMIT ?${binds.length + 1} OFFSET ?${binds.length + 2}`,
+  )
+    .bind(...binds, q.per_page, offset)
+    .all<{ change: string; changed_at: string; record_id: string; record: string }>();
+  const rows = (res.results ?? []).map((r) => ({
+    change: r.change,
+    changed_at: r.changed_at,
+    record_id: r.record_id,
+    record: JSON.parse(r.record) as unknown,
+  }));
+  return { rows, total, last_refreshed_at: meta?.last_refreshed_at ?? null };
+}
+
 export async function refreshD1Source(
   env: CloudflareBindings,
   source: DataSource,
@@ -116,12 +214,12 @@ export async function refreshD1Source(
     // (preferred when present) holds only one chunk in memory, so datasets far
     // beyond Worker memory can load; fetchFresh materializes like the KV path.
     const insert = env.DB.prepare(
-      `INSERT INTO source_records (source_slug, generation, seq, search, record, record_lc)
-       SELECT ?1, ?2, key + ?3, json_extract(value, '$.s'), json_extract(value, '$.r'), json_extract(value, '$.l')
+      `INSERT INTO source_records (source_slug, generation, seq, search, record, record_lc, record_id)
+       SELECT ?1, ?2, key + ?3, json_extract(value, '$.s'), json_extract(value, '$.r'), json_extract(value, '$.l'), json_extract(value, '$.i')
        FROM json_each(?4)`,
     );
     let total = 0;
-    let chunk: { s: string; r: unknown; l: unknown }[] = [];
+    let chunk: { s: string; r: unknown; l: unknown; i: string | null }[] = [];
     let chunkBytes = 0;
     const flush = async (): Promise<void> => {
       if (chunk.length === 0) return;
@@ -137,6 +235,7 @@ export async function refreshD1Source(
         s: searchText(record as Record<string, unknown>),
         r: record,
         l: lowercaseStrings(record),
+        i: source.idOf ? source.idOf(record) : null,
       };
       chunk.push(entry);
       chunkBytes += JSON.stringify(entry).length;
@@ -164,7 +263,29 @@ export async function refreshD1Source(
     )
       .bind(source.slug, meta.generation, meta.last_refreshed_at, meta.total)
       .run();
-    // Readers are on the new generation now; drop every older generation.
+    // Readers are on the new generation now. Before the old generation goes,
+    // diff it against the new one for the change feed (best-effort).
+    if (source.idOf && previous) {
+      try {
+        await recordChanges(
+          env,
+          source.slug,
+          previous.generation,
+          generation,
+          meta.last_refreshed_at,
+        );
+      } catch (diffErr) {
+        console.log(
+          JSON.stringify({
+            level: 'warn',
+            event: 'change_diff_failed',
+            source: source.slug,
+            reason: diffErr instanceof Error ? diffErr.message : String(diffErr),
+          }),
+        );
+      }
+    }
+    // Drop every older generation.
     await deleteGenerations(env, source.slug, '<', generation);
 
     // Precompute the /stats aggregation once here (cron), so the public,

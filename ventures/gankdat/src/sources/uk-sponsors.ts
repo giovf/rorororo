@@ -181,7 +181,9 @@ export const ukSponsorsSource: DataSource<UkSponsorsRecord> = {
     rating: z.string().optional(),
     route: z.string().optional(),
   }),
-  refresh: { cron: '0 5 * * *', cacheTtlSeconds: 86_400 },
+  refresh: { cron: '20 5 * * *', cacheTtlSeconds: 86_400 },
+  // No published id: organisation × town × route is the row's identity in the register.
+  idOf: (r) => [r.organisation, r.town ?? '', r.route].join('|').toLowerCase(),
   fetchStream,
   async fetchFresh(env: CloudflareBindings): Promise<UkSponsorsRecord[]> {
     const records: UkSponsorsRecord[] = [];

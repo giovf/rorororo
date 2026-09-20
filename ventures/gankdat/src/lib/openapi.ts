@@ -243,10 +243,71 @@ const sourceListingSchema = z.array(
   }),
 );
 
+const changeRowSchema = z.object({
+  change: z.enum(['added', 'removed', 'changed']),
+  changed_at: z.string(),
+  record_id: z.string(),
+  record: z.record(z.string(), z.unknown()),
+});
+
+function changesPathItem(source: DataSource): JsonObject {
+  return {
+    get: {
+      operationId: `changes_${source.slug.replaceAll('-', '_')}`,
+      summary: `${source.title} — changes since a date`,
+      description: `Rows added, removed or changed in ${source.title} between daily refreshes, newest first (90-day history). Poll this instead of re-reading the whole register. Costs the same credits as a query.`,
+      tags: ['changes'],
+      security: [{ bearerAuth: [] }],
+      parameters: [
+        {
+          name: 'since',
+          in: 'query',
+          required: false,
+          schema: { type: 'string', format: 'date' },
+          description:
+            'Only changes observed at or after this date (YYYY-MM-DD). Default: 7 days ago.',
+        },
+        {
+          name: 'change',
+          in: 'query',
+          required: false,
+          schema: { type: 'string', enum: ['added', 'removed', 'changed'] },
+        },
+        {
+          name: 'page',
+          in: 'query',
+          required: false,
+          schema: { type: 'integer', minimum: 1, default: 1 },
+        },
+        {
+          name: 'per_page',
+          in: 'query',
+          required: false,
+          schema: { type: 'integer', minimum: 1, maximum: 100, default: 25 },
+        },
+      ],
+      responses: {
+        '200': jsonResponse(
+          `Changes to ${source.title}`,
+          successEnvelope(z.array(changeRowSchema), paginationMeta),
+        ),
+        '400': errorResponse('Invalid query parameters (see error.details)'),
+        '401': errorResponse('Missing, unknown, or revoked API key'),
+        '402': errorResponse('Monthly credit quota exhausted (code: quota_exceeded)'),
+        '404': errorResponse('Source has no change feed'),
+        '429': errorResponse('Rate limit exceeded (see Retry-After header)'),
+      },
+    },
+  };
+}
+
 function buildDocument(baseUrl: string): JsonObject {
-  const sourcePaths = Object.fromEntries(
-    listSources().map((source) => [`/v1/data/${source.slug}`, sourcePathItem(source)]),
-  );
+  const sourcePaths = Object.fromEntries([
+    ...listSources().map((source) => [`/v1/data/${source.slug}`, sourcePathItem(source)]),
+    ...listSources()
+      .filter((source) => source.idOf && source.storage === 'd1')
+      .map((source) => [`/v1/changes/${source.slug}`, changesPathItem(source)]),
+  ]);
 
   // Registry-derived so a new/renamed niche updates the served spec automatically.
   const catalog = listSources()
@@ -275,6 +336,7 @@ function buildDocument(baseUrl: string): JsonObject {
     tags: [
       { name: 'platform', description: 'Health and discovery' },
       { name: 'data', description: 'Dataset query endpoints' },
+      { name: 'changes', description: 'What changed since a date (register datasets)' },
     ],
     paths: {
       '/v1/health': {

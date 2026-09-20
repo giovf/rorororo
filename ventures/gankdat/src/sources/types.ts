@@ -72,6 +72,13 @@ export interface DataSource<TRecord = unknown> {
   rateLimit?: { limit: number; windowSeconds: number };
   /** Breakdown spec for the public /stats/<slug> page (optional enrichment). */
   stats?: StatsSpec;
+  /**
+   * Stable identity of a record across refreshes (D1 sources). When set, each
+   * refresh diffs the new generation against the previous one and records
+   * added / removed / changed rows in `source_changes`, served at
+   * `/v1/changes/<slug>` (task 51). Sources without a stable id have no feed.
+   */
+  idOf?(record: TRecord): string;
   /** Pull fresh records from the origin (called by cron refresh / cache miss). */
   fetchFresh(env: CloudflareBindings): Promise<TRecord[]>;
   /**
