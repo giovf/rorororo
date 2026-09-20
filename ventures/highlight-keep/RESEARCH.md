@@ -52,3 +52,4 @@ larger, clearly frustrated audience and three stores (Chrome, Firefox, Edge) fro
 | Date | Event | Users | Rating | Sales | Notes |
 |---|---|---|---|---|---|
 | 2026-09-19 | Built + e2e-tested; Stripe link live; awaiting owner's store upload | — | — | 0 | zero owner testing |
+| 2026-09-20 | Daily check | — | — | — | not live yet |

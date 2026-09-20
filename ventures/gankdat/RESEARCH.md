@@ -36,3 +36,9 @@ distribution rather than more build.
 ## Costs
 Cloudflare Workers Paid ≈ US$5/month (only recurring cost in the portfolio), domain renewal
 (date TBC by owner). Everything else is free tier.
+
+## Metrics
+
+| Date | Event | Users | Likes | Purchases | Notes |
+|---|---|---|---|---|---|
+| 2026-09-20 | Daily check | — | — | — | no store listing to check (channel: web/API + MCP + x402); see "Signal since launch" above for real usage/revenue signal |
