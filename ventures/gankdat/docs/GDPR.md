@@ -1,0 +1,71 @@
+# UK GDPR — records of processing and legitimate-interests assessments
+
+Maintained by Claude; reviewed 2026-09-20. Public-facing text lives in `public/privacy.html`
+and the per-dataset table in `public/terms.html`; this file is the internal record (UK GDPR
+Art 30) and the reasoning behind the lawful bases.
+
+**Controller:** the owner, a UK sole trader trading as gankdat (contact info@gankdat.com).
+**ICO data protection fee:** see Foundry action 012 (tier 1; required because serving
+sanctions/exclusions lists is processing beyond the exempt "accounts, staff, marketing" purposes).
+
+## 1. Records of processing
+
+| Processing | Data subjects | Personal data | Lawful basis | Retention | Processors | Transfers |
+| --- | --- | --- | --- | --- | --- | --- |
+| Accounts & API keys | customers | email; key hashes; plan | contract (Art 6(1)(b)) | while account exists; deleted on request | Cloudflare (D1/KV) | UK/EU/US under Cloudflare DPA + UK addendum / Data Bridge |
+| Sign-in (magic link) | customers | email; single-use token; session cookie | contract | token 15 min; session 7 d idle / 30 d | Cloudflare, Resend (EU region) | as above |
+| Billing | customers | Stripe customer id; invoices (held by Stripe) | contract; legal obligation (tax records, 6 y) | 6 years after last transaction | Stripe (independent controller for its own compliance) | Stripe UK/EU entities |
+| Usage metering & logs | customers | request logs with key id, path, status, IP (Workers Logs) | legitimate interests (security, quota, abuse) | Workers Logs ≈ 7 d; Analytics Engine 90 d (user-agent only, no key/IP) | Cloudflare | as above |
+| Waitlist / feedback | visitors | email (optional), message | consent (waitlist), legitimate interests (feedback) | until acted on / deleted on request | Cloudflare | as above |
+| Support email | anyone writing in | email, content | legitimate interests | 2 years | Cloudflare Email Routing → owner's mailbox (Google) | Google DPA |
+| Dataset: uk-sanctions | designated persons on the UK Sanctions List | names, aliases, regime, designation dates, countries (DOB, IDs, addresses dropped) | legitimate interests — see LIA A | mirrors the official list; refreshed daily | Cloudflare | as above |
+| Dataset: sam-exclusions | excluded persons/entities on SAM.gov | name, classification, program, agency, dates (addresses, SSN/TIN/NPI, comments dropped) | legitimate interests — see LIA A | mirrors the official list; refreshed daily | Cloudflare | as above |
+| Dataset: uk-food-hygiene | food business operators (some sole traders) | trading name, trading address, rating fields (operator comments dropped) | legitimate interests — see LIA B | mirrors the FSA file; refreshed daily | Cloudflare | as above |
+| Datasets: uk-companies, uk-insolvency, uk-tenders, eu-ted, uk-planning | none by design | Blind Mode: organisation-level fields only; officer/PSC/contact/person fields never ingested | n/a | daily | Cloudflare | as above |
+| x402 payments | paying agents' wallet holders | public wallet address on-chain (not linked to any account) | contract | on-chain, permanent by nature | Coinbase CDP facilitator | US |
+
+No special-category data. No automated decision-making with legal effect. No children's data
+(business tool). No sale of personal data, no purchased lists, no cold email.
+
+## 2. LIA A — serving sanctions and exclusion lists
+
+- **Purpose:** enable customers to screen counterparties against lists that governments
+  publish precisely so that they are screened against. Benefits: sanctions compliance, fraud
+  and award-eligibility checks; a legal duty for many customers.
+- **Necessity:** screening requires the names; there is no less intrusive way. We minimise:
+  dates of birth, identifiers, addresses, contact details and free text are dropped at ingest.
+- **Balancing:** the data is already public by law, published for this purpose; subjects have
+  a reasonable expectation of screening; harm is limited to what the official publication
+  already causes. Safeguards: mirror-only (no enrichment, no inference), daily refresh so
+  delistings propagate within 24 h, terms restrict use to compliance/due-diligence/research,
+  rights requests routed to the list owner (FCDO / US GSA) who controls the source, plus our
+  own contact for our copy.
+- **Conclusion:** legitimate interests apply; Art 21 objections handled case by case (we can
+  suppress a record in our copy while the source is corrected).
+
+## 3. LIA B — food hygiene ratings (business data with incidental personal data)
+
+- **Purpose:** supplier due diligence, onboarding and lead generation from a public register
+  the FSA publishes under the Open Government Licence for reuse.
+- **Necessity:** trading name and address are the register's identifiers; the FSA already
+  withholds addresses of businesses run from private homes. We drop the operator's free-text
+  "right to reply".
+- **Balancing:** the data is published by a public authority for public use; expectations are
+  set by the scheme itself (ratings are displayed on premises). Low risk.
+- **Conclusion:** legitimate interests apply.
+
+## 4. Rights and breaches
+
+- Requests to info@gankdat.com; identity confirmed via the account email; answered within one
+  month. Access/erasure for account data is a D1 query; for dataset copies we suppress the row
+  and point to the source.
+- Breach: assess within 24 h; notify the ICO within 72 h if risk to individuals; notify affected
+  customers if high risk. Key material at risk → revoke keys (KV tombstones) and rotate secrets
+  per RUNBOOK.
+
+## 5. Open items
+
+1. ICO fee registration (owner; action 012). Add the registration number to the privacy policy.
+2. Privacy policy names "gankdat" but not the legal person behind it (Art 13(1)(a)). Owner
+   decides whether to publish "gankdat is the trading name of <name>" — action 012.
+3. Datarade profile: sole trader trading as gankdat; city/country only.
