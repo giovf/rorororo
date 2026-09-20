@@ -4,7 +4,7 @@ Maintained by Claude; reviewed 2026-09-20. Public-facing text lives in `public/p
 and the per-dataset table in `public/terms.html`; this file is the internal record (UK GDPR
 Art 30) and the reasoning behind the lawful bases.
 
-**Controller:** the owner, a UK sole trader trading as gankdat (contact info@gankdat.com).
+**Controller:** Giovanni Funaro, a UK sole trader trading as gankdat (contact info@gankdat.com) — named in the privacy policy and terms since 2026-09-20.
 **ICO data protection fee:** see Foundry action 012 (tier 1; required because serving
 sanctions/exclusions lists is processing beyond the exempt "accounts, staff, marketing" purposes).
 
@@ -65,7 +65,7 @@ No special-category data. No automated decision-making with legal effect. No chi
 
 ## 5. Open items
 
-1. ICO fee registration (owner; action 012). Add the registration number to the privacy policy.
-2. Privacy policy names "gankdat" but not the legal person behind it (Art 13(1)(a)). Owner
-   decides whether to publish "gankdat is the trading name of <name>" — action 012.
+1. ICO fee registration — owner decision 2026-09-20: deferred until the first real customer
+   (action 012 records the risk). Add the registration number to the privacy policy when paid.
+2. ~~Controller identity~~ — done 2026-09-20 (privacy policy + terms).
 3. Datarade profile: sole trader trading as gankdat; city/country only.

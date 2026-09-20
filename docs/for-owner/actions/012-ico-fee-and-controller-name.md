@@ -1,7 +1,12 @@
 # 012 — ICO data protection fee (legal requirement, £47–52/yr) and one yes/no
 
-**Status:** open · **Urgency:** medium (a legal requirement; the ICO fines non-payers, though
-it writes first) · **Cost:** £52/year, or £47 by direct debit — approved from the £100 cap.
+**Status:** DEFERRED by owner decision (2026-09-20) until gankdat has its first real customer;
+name-in-policy part DONE 2026-09-20. · **Cost when triggered:** £47/year by direct debit.
+
+> Plain statement of the risk you accepted: the fee is legally due now, not at first revenue,
+> because personal data is already processed (sanctions lists, account emails). In practice the
+> ICO writes before it fines, and a tier-1 penalty is typically a few hundred pounds. I'll raise
+> this again the day a non-test account signs up or a payment lands, whichever is first.
 
 ## Why
 UK organisations that process personal data must pay the ICO's data protection fee unless they
