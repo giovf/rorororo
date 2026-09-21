@@ -2,3 +2,6 @@
 
 - 2026-09-19 23:59 | notification | google.com | Report domain: gankdat.com Submitter: google.com Report-ID: 2874719523080953303 | Routine Google DMARC aggregate report for gankdat.com | logged
 - 2026-09-21 10:52 | notification | github.com | [giovf/rorororo] Run failed: notify owner - main (ee8a556) | "notify owner" CI workflow (owner phone alerts from ALERTS.md) failed, all jobs failed in 8s | needs owner
+- 2026-09-21 11:55 | notification | github.com | [giovf/rorororo] Run failed: gankdat - main (e62f312) | gankdat venture check workflow failed on main, job failed in 53s | needs owner
+- 2026-09-21 11:55 | notification | github.com | [giovf/rorororo] Run failed: check - main (e62f312) | root check workflow failed on main, job failed in 59s | needs owner
+- 2026-09-21 11:57 | notification | github.com | [giovf/rorororo] Run failed: check - main (fd2ee56) | root check workflow failed again on next main commit, job failed in 59s | needs owner
