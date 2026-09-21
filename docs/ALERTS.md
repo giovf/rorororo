@@ -3,8 +3,10 @@
 Written by the cloud routines (daily build, daily metrics, inbox triage). Interactive
 sessions read this file first and clear the items that need secrets, accounts or a
 browser — the routines cannot do those. Convention: one line per item,
-`- YYYY-MM-DD handoff: <what the next interactive session must do>`. Delete a line
-once it is done (git keeps the history).
+`- YYYY-MM-DD handoff: <what the next interactive session must do>` for agent-to-agent
+work, and `- YYYY-MM-DD owner: <what and where>` for anything needing the owner — those
+lines are sent to their phone by the `notify owner` job. Delete a line once it is done
+(git keeps the history).
 
 ## Open
 
@@ -22,10 +24,10 @@ once it is done (git keeps the history).
   actors (support asked 2026-09-20).
 - 2026-09-21 handoff: re-publish the MCP registry entry at v0.12.0 (`server.json` now names
   schools) — needs `mcp-registry-key.pem`; see MARKETPLACE-PREP.md for the two commands.
-- 2026-09-21 handoff: the 2026-09-21 metrics row shows the **first paid account**
-  (6 accounts, 1 paid). Confirm it in Stripe, record the net GBP as a `revenue` row in
-  `docs/LEDGER.md`, and re-open owner action 012 — the ICO fee was deferred by the owner
-  "until gankdat has its first real customer", and that condition now looks met.
+- 2026-09-21 owner: gankdat looks to have its **first paying account** (today's metrics row:
+  6 accounts, 1 paid; no revenue row in the ledger yet). Please confirm it in Stripe — and
+  note it re-opens the ICO data protection fee (action 012), which you deferred until the
+  first real customer. Claude will record the net GBP in `docs/LEDGER.md` once confirmed.
 - 2026-09-21 handoff: the 2026-09-21 metrics row reports refresh errors on five sources
   (`sam-exclusions`, `uk-care-locations`, `uk-charities`, `uk-contract-awards`,
   `uk-food-hygiene`) — every D1 wave except wave 2. Read the Worker logs / `refresh_log`
