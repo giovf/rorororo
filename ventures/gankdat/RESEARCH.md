@@ -54,4 +54,6 @@ Owner idea (outreach venture) reshaped into data: a `<field>_present` filter on 
 "businesses without websites" scrapers built on Google Maps at US$1–5 per 1k; ours is
 register-complete and organisation-level, no scraping). Proof number: paid runs of this actor
 and `website_present=false` calls in Analytics Engine (30 days). Kill if zero after 60 days live.
+Live counts at launch (2026-09-21, `website_present=false`): care locations 27,614 of 57,127;
+charities with income ≥ £25k 17,508 of 75,574; open schools 2,572 of 27,233 — ≈ 47,700 leads.
 

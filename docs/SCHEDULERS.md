@@ -52,6 +52,11 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 
 - `docs/ALERTS.md` line prefixes: `owner:` (sent to the owner's phone), `handoff:` (for the
   next interactive session — needs secrets), `done:` (closed by the interactive session).
+- `needs owner` (in `docs/INBOX.md`) is reserved for things only the owner can do (account
+  clicks under their identity, payments, identity checks, refund/complaint/deletion requests) and
+  must be paired with an `owner:` line in ALERTS.md, otherwise nothing reaches the phone. CI
+  "Run failed" mail is never owner work: the next push or the daily build heals `main`
+  (triage prompt updated 2026-09-21).
 - Cron-trigger minute selects the refresh wave (`ventures/gankdat/src/sources/store.ts`
   `WAVE_BY_MINUTE`): 0 → 1, 15 → 2, 30 → 3, 45 → 4, 50 → 5; any other minute → all waves. A
   temporary trigger on one of those minutes forces just that wave (≥ 16 min lead; a deploy or
