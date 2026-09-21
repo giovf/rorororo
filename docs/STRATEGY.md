@@ -59,6 +59,11 @@ demand: Stotles £50–475/mo, Tussell, 8+ Apify actors), then GIAS + Ofsted out
 Contracts Finder shipped 2026-09-21 (`uk-contract-awards`) and GIAS + Ofsted shipped 2026-09-21
 (`uk-schools`); **NHS ODS is the next dataset**, behind the distribution queue above.
 Rejected: Land Registry CCOD/OCOD (licence forbids standalone products), HMRC VAT check, SIA.
+Queued 2026-09-21 (owner idea, reshaped): **"businesses without a website" lead feed** — derived
+view over uk-care-locations, uk-charities (website null) and, where a web field exists, other
+registers; by sector and area; API preset + Apify actor for web agencies. B2B, organisation-level,
+no outreach by us (cold email/AI calls to UK small businesses breach PECR; a website-building
+service is human-in-the-loop). Build ≤ 1 day.
 
 ## 6. Workflow (research → plan → build → distribute → measure → review)
 
@@ -92,6 +97,10 @@ Rejected: Land Registry CCOD/OCOD (licence forbids standalone products), HMRC VA
 - 2026-09-20 owner asks for business planning and market research to be explicit in the loop
   → this file + the monthly strategy routine.
 - 2026-09-20 next-dataset queue set from research B: Contracts Finder awards → GIAS/Ofsted → NHS ODS.
+- 2026-09-21 owner proposed an outreach venture (find businesses lacking a website, contact them
+  by email/AI phone, sell sites). Declined as a service: automated calls need prior consent under
+  PECR, cold email to sole traders needs consent, delivery is per-customer human work. Kept the
+  data angle as a lead feed for agencies (queued above).
 - 2026-09-21 Datarade rejected the listing (registered businesses only). AWS Data Exchange also
   needs VAT registration. Decision: no limited company yet — formation is ~£50 plus annual
   filing burden on the owner; revisit when the data line passes £300 MRR (then a company also
