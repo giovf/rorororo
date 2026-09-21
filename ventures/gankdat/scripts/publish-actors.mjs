@@ -75,12 +75,28 @@ for (const a of acts) {
     console.log(`${g.name}: priced, public`);
     continue;
   }
-  const r = await fetch(`https://api.apify.com/v2/acts/${a.id}`, {
-    method: 'PUT',
-    headers: H,
-    body: JSON.stringify(body),
-  });
-  const j = await r.json();
+  const put = async () =>
+    (
+      await fetch(`https://api.apify.com/v2/acts/${a.id}`, {
+        method: 'PUT',
+        headers: H,
+        body: JSON.stringify(body),
+      })
+    ).json();
+  let j = await put();
+  if (j.error?.type === 'tagged-build-required') {
+    // No build carries the `latest` tag (an aborted push leaves the actor like this): build the
+    // latest version, tag it, and retry once.
+    const version = g.versions?.at(-1)?.versionNumber ?? '0.1';
+    const b = await (
+      await fetch(
+        `https://api.apify.com/v2/acts/${a.id}/builds?version=${version}&tag=latest&waitForFinish=300`,
+        { method: 'POST', headers: H },
+      )
+    ).json();
+    console.log(`${g.name}: build ${b.data?.status ?? 'ERR ' + b.error?.type}`);
+    if (b.data?.status === 'SUCCEEDED') j = await put();
+  }
   if (j.error?.type === 'cannot-publish-actor' && body.isPublic) {
     delete body.isPublic;
     const r2 = Object.keys(body).length

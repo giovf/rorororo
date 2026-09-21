@@ -5,7 +5,12 @@ name: gankdat publish
 on:
   push:
     branches: [main]
-    paths: ['ventures/gankdat/apify/**', 'ventures/gankdat/server.json', '.github/workflows/gankdat-publish.yml']
+    paths:
+      [
+        'ventures/gankdat/apify/**',
+        'ventures/gankdat/server.json',
+        '.github/workflows/gankdat-publish.yml',
+      ]
   workflow_dispatch:
     inputs:
       all:
