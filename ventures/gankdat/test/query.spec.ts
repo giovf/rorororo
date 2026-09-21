@@ -123,6 +123,21 @@ describe('applyQuery', () => {
     ).toEqual(['p1']);
   });
 
+  it('applies <field>_present as a has-a-value test (null, empty string and [] are absent)', () => {
+    const rows = [
+      { id: 'a', website: 'https://a.example', tags: ['x'] },
+      { id: 'b', website: null, tags: [] },
+      { id: 'c', website: '   ', tags: ['y'] },
+      { id: 'd', tags: null },
+    ];
+    const ids = (parsed: Record<string, unknown>): string[] =>
+      applyQuery(rows, { page: 1, per_page: 25, ...parsed }).records.map((r) => r.id);
+    expect(ids({ website_present: true })).toEqual(['a']);
+    expect(ids({ website_present: false })).toEqual(['b', 'c', 'd']);
+    expect(ids({ tags_present: true })).toEqual(['a', 'c']);
+    expect(ids({ tags_present: false })).toEqual(['b', 'd']);
+  });
+
   it('matches array fields when any element matches', () => {
     const tagged = [
       { id: 't1', codes: ['79993000', '50700000'] },

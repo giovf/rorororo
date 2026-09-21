@@ -101,6 +101,11 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   05:30 charities + care locations, 05:45 uk-food-hygiene; `store.ts waveForCron`) pull sources, write `refresh_log`; responses
   expose `last_refreshed_at`. D1 refreshes diff generations by `DataSource.idOf` into
   `source_changes` (90 d) — served at `/v1/changes/:source` and the MCP `get_changes` tool.
+- **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
+  params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
+  date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value
+  (null, '' and [] are absent; added 2026-09-21 for the "no website" lead feed — sources opt in
+  by declaring `website_present` in `queryParams`), `q` across all string fields.
 
 ## External services
 - **Stripe** — **LIVE** since 2026-07-09: checkout, customer portal,

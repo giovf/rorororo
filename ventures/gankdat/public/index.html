@@ -799,7 +799,7 @@
           <p class="chips">
             <code>name</code><code>registration_status</code><code>charity_type</code
             ><code>latest_income_min</code><code>date_of_registration_after</code
-            ><code>outward_code</code><code>q</code>
+            ><code>outward_code</code><code>website_present</code><code>q</code>
           </p>
         </div>
         <div class="card">
@@ -813,7 +813,7 @@
           <p class="chips">
             <code>service_types</code><code>specialisms</code><code>provider_name</code
             ><code>region</code><code>local_authority</code><code>latest_check_date_after</code
-            ><code>q</code>
+            ><code>website_present</code><code>q</code>
           </p>
         </div>
         <div class="card">
@@ -826,7 +826,22 @@
           </p>
           <p class="chips">
             <code>phase</code><code>establishment_type</code><code>local_authority</code
-            ><code>trust_name</code><code>ofsted_rating</code><code>pupils_min</code><code>q</code>
+            ><code>trust_name</code><code>ofsted_rating</code><code>pupils_min</code
+            ><code>website_present</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
+          <h3>no-website leads <span>// preset</span></h3>
+          <p>
+            Organisations on official registers that list no website — the prospect list for web
+            agencies. Add <code>website_present=false</code> to uk-care-locations, uk-charities or
+            uk-schools and filter by area; every field on any dataset supports
+            <code>&lt;field&gt;_present=true|false</code>. Also on the Apify Store as one merged
+            feed (<em>UK Businesses Without a Website</em>).
+          </p>
+          <p class="chips">
+            <code>website_present=false</code><code>outward_code</code><code>local_authority</code
+            ><code>latest_income_min</code>
           </p>
         </div>
       </div>

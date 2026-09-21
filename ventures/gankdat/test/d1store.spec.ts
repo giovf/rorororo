@@ -19,6 +19,7 @@ const RECORDS = [
     amount: 100,
     listed_on: '2026-01-05',
     flagged: true,
+    website: 'https://alpha.example',
   },
   {
     name: 'beta LLC',
@@ -27,6 +28,7 @@ const RECORDS = [
     amount: 250,
     listed_on: '2026-02-10',
     flagged: false,
+    website: '',
   },
   {
     name: 'Charlie Person',
@@ -84,6 +86,9 @@ function makeSource(slug: string, records: unknown[] = RECORDS): DataSource {
         .enum(['true', 'false'])
         .transform((v) => v === 'true')
         .optional(),
+      amount_present: z.stringbool().optional(),
+      listed_on_present: z.stringbool().optional(),
+      website_present: z.stringbool().optional(),
     }),
     stats: {
       date: { field: 'listed_on', title: 'Listed by month' },
@@ -112,6 +117,12 @@ const QUERIES: Record<string, string>[] = [
   { name: 'MÜLLER' }, // uppercase non-ASCII needle
   { flagged: 'true' }, // boolean param parity (item 11)
   { flagged: 'false' },
+  { amount_present: 'true' }, // _present parity: null number
+  { amount_present: 'false' },
+  { listed_on_present: 'false' }, // null string
+  { website_present: 'true' }, // '' and missing key are absent
+  { website_present: 'false' },
+  { website_present: 'false', classification: 'firm' },
   { per_page: '2' },
   { per_page: '2', page: '2' },
   { per_page: '2', page: '3' },

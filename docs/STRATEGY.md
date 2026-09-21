@@ -59,11 +59,11 @@ demand: Stotles £50–475/mo, Tussell, 8+ Apify actors), then GIAS + Ofsted out
 Contracts Finder shipped 2026-09-21 (`uk-contract-awards`) and GIAS + Ofsted shipped 2026-09-21
 (`uk-schools`); **NHS ODS is the next dataset**, behind the distribution queue above.
 Rejected: Land Registry CCOD/OCOD (licence forbids standalone products), HMRC VAT check, SIA.
-Queued 2026-09-21 (owner idea, reshaped): **"businesses without a website" lead feed** — derived
-view over uk-care-locations, uk-charities (website null) and, where a web field exists, other
-registers; by sector and area; API preset + Apify actor for web agencies. B2B, organisation-level,
-no outreach by us (cold email/AI calls to UK small businesses breach PECR; a website-building
-service is human-in-the-loop). Build ≤ 1 day.
+Shipped 2026-09-21 (owner idea, reshaped): **"businesses without a website" lead feed** —
+`website_present=false` on uk-care-locations, uk-charities and uk-schools (generic
+`<field>_present` filter) plus the merged Apify actor `uk-no-website-leads` for web agencies.
+B2B, organisation-level, no outreach by us (cold email/AI calls to UK small businesses breach
+PECR; a website-building service is human-in-the-loop). Proof: paid runs + filter calls in 30 days.
 
 ## 6. Workflow (research → plan → build → distribute → measure → review)
 
@@ -116,3 +116,7 @@ service is human-in-the-loop). Build ≤ 1 day.
   Console submission), so none was buildable from the routine — the next dataset was the
   highest-scoring item this run could actually finish. Live ingest is unverified: the container
   has no egress to the GIAS/GOV.UK hosts (handoff in ALERTS.md).
+- 2026-09-21 interactive session: shipped the no-website lead feed (generic `_present` filter,
+  `website_present` on three registers, Apify actor `uk-no-website-leads`, v0.13.0) and fixed the
+  red root check + the TED actor's missing tagged build (publish script now self-heals that).
+

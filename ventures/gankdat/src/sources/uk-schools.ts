@@ -427,6 +427,8 @@ export const ukSchoolsSource: DataSource<UkSchoolsRecord> = {
     ofsted_rating: z.string().optional(),
     pupils_min: z.coerce.number().optional(),
     pupils_max: z.coerce.number().optional(),
+    /** true = has a website on the register; false = none listed (lead feed for web agencies). */
+    website_present: z.stringbool().optional(),
     ofsted_last_inspection_after: z.iso.date().optional(),
     ofsted_last_inspection_before: z.iso.date().optional(),
     open_date_after: z.iso.date().optional(),

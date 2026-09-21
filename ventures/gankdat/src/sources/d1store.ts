@@ -1,6 +1,6 @@
 import type { StatsSpec } from './types';
 import type { DataSource } from './types';
-import type { QueryPage } from './query';
+import { PRESENT_SUFFIX, type QueryPage } from './query';
 import type { SourceStats } from '../lib/stats';
 import { putSourceStats, writeRefreshLog } from './cache';
 
@@ -338,6 +338,16 @@ function path(field: string): string {
  * equality/substring rule, exactly like the JS engine.
  */
 function predicateFor(key: string, wanted: unknown): SqlPredicate | null {
+  if (key.endsWith(PRESENT_SUFFIX) && typeof wanted === 'boolean') {
+    // Mirrors isPresent(): missing key (json_type NULL) / JSON null / '' / [] are absent,
+    // anything else present. A searched CASE — a simple CASE on a NULL operand would fall to ELSE.
+    const p = path(key.slice(0, -PRESENT_SUFFIX.length));
+    const t = `json_type(record, ${p})`;
+    return {
+      sql: `(CASE WHEN ${t} IS NULL OR ${t} = 'null' THEN 0 WHEN ${t} = 'text' THEN trim(json_extract(record, ${p})) != '' WHEN ${t} = 'array' THEN json_array_length(record, ${p}) > 0 ELSE 1 END) = ?`,
+      binds: [wanted ? 1 : 0],
+    };
+  }
   if (key.endsWith('_after') && typeof wanted === 'string') {
     const field = key.slice(0, -'_after'.length);
     return { sql: `json_extract(record, ${path(field)}) >= ?`, binds: [wanted.slice(0, 10)] };

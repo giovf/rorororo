@@ -18,7 +18,8 @@ the account. Publish: `cd <actor> && npx apify-cli push` with `APIFY_TOKEN` set.
 | `uk-sponsors` | `f5B9jFHoADfZIwcKd` | https://console.apify.com/actors/f5B9jFHoADfZIwcKd |
 | `uk-companies` | `GtHwSKC3Do5XYCjiR` | https://console.apify.com/actors/GtHwSKC3Do5XYCjiR |
 | `uk-contract-awards` | see console (pushed 2026-09-21) | https://console.apify.com/actors |
-| `uk-schools` | not pushed yet (built 2026-09-21) | https://console.apify.com/actors |
+| `uk-schools` | `JpzvkJcNfbaieyqrg` | https://console.apify.com/actors/JpzvkJcNfbaieyqrg |
+| `uk-no-website-leads` | pushed by CI on the 2026-09-21 commit (merged feed: care + charities + schools with `website_present=false`) | https://console.apify.com/actors |
 
 Pricing (`result` event) and Store publication are set through the API once payout billing
 info exists on the account (Apify refuses monetisation without it — action 014 step 4).

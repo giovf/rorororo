@@ -153,6 +153,9 @@ describe('GET /v1/data/uk-charities', () => {
     expect(await names('outward_code=ls1')).toEqual(['ACME COMMUNITY TRUST']);
     expect(await names('in_administration=true')).toEqual(['BIG HOSPICE LIMITED']);
     expect(await names('is_cio=true')).toEqual(['ACME COMMUNITY TRUST']);
+    expect(await names('website_present=true')).toEqual(['ACME COMMUNITY TRUST']);
+    expect(await names('website_present=false')).not.toContain('ACME COMMUNITY TRUST');
+    expect(await names('website_present=false')).toContain('BIG HOSPICE LIMITED');
     expect(
       await names('date_of_registration_after=2010-01-01&registration_status=Registered'),
     ).toEqual(['ACME COMMUNITY TRUST', 'ACME TRUST YOUTH WING']);

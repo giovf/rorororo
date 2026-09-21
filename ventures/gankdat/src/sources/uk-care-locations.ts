@@ -249,6 +249,8 @@ export const ukCareLocationsSource: DataSource<UkCareLocationsRecord> = {
     outward_code: z.string().optional(),
     latest_check_date_after: z.iso.date().optional(),
     latest_check_date_before: z.iso.date().optional(),
+    /** true = has a website on the register; false = none listed (lead feed for web agencies). */
+    website_present: z.stringbool().optional(),
   }),
   refresh: { cron: '30 5 * * *', cacheTtlSeconds: 86_400, wave: 3 },
   idOf: (r) => r.location_id,

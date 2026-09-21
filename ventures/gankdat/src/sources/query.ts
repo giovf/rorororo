@@ -41,7 +41,20 @@ function matchesValue(actual: unknown, wanted: unknown): boolean {
   return actual === wanted;
 }
 
+/** A field counts as present when it is not null/undefined, not an empty string and not an empty array. */
+export function isPresent(actual: unknown): boolean {
+  if (actual === null || actual === undefined) return false;
+  if (typeof actual === 'string') return actual.trim() !== '';
+  if (Array.isArray(actual)) return actual.length > 0;
+  return true;
+}
+
 function matchesFilter(record: Record<string, unknown>, key: string, wanted: unknown): boolean {
+  // <field>_present=true|false: whether the field holds a value at all (null, '' and []
+  // count as absent). The generic way to ask for "rows missing X", e.g. website_present=false.
+  if (key.endsWith(PRESENT_SUFFIX) && typeof wanted === 'boolean') {
+    return isPresent(record[key.slice(0, -PRESENT_SUFFIX.length)]) === wanted;
+  }
   // <field>_after / <field>_before: inclusive range on ISO date/datetime string
   // fields. Compared as parsed timestamps (not lexicographically) so a date-only
   // bound covers the whole boundary day of a datetime field regardless of its
@@ -77,6 +90,8 @@ function boundEnd(wanted: string): number {
   return Date.parse(wanted.includes('T') ? wanted : `${wanted}T23:59:59.999Z`);
 }
 
+export const PRESENT_SUFFIX = '_present';
+
 const DATE_RANGE_SUFFIXES: [string, (actual: string, wanted: string) => boolean][] = [
   ['_after', (actual, wanted) => Date.parse(actual) >= boundStart(wanted)],
   ['_before', (actual, wanted) => Date.parse(actual) <= boundEnd(wanted)],
@@ -97,8 +112,8 @@ function matchesFullText(record: Record<string, unknown>, q: string): boolean {
 /**
  * Generic, schema-driven filtering — never per-dataset. String params match as
  * case-insensitive substrings, number/boolean params as strict equality,
- * `<field>_after`/`<field>_before` as inclusive ranges, and `q` as a substring
- * search across all string fields.
+ * `<field>_after`/`<field>_before` as inclusive ranges, `<field>_present` as a
+ * has-a-value test, and `q` as a substring search across all string fields.
  */
 export function applyQuery<T>(records: T[], parsedQuery: Record<string, unknown>): QueryPage<T> {
   const filters = Object.entries(parsedQuery).filter(

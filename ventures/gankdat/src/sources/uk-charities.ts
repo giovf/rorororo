@@ -228,6 +228,8 @@ export const ukCharitiesSource: DataSource<UkCharitiesRecord> = {
     in_administration: z.stringbool().optional(),
     is_cio: z.stringbool().optional(),
     gift_aid: z.stringbool().optional(),
+    /** true = has a website on the register; false = none listed (lead feed for web agencies). */
+    website_present: z.stringbool().optional(),
   }),
   refresh: { cron: '30 5 * * *', cacheTtlSeconds: 86_400, wave: 3 },
   idOf: (r) => String(r.organisation_number),
