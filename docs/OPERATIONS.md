@@ -85,6 +85,9 @@ moves. Claude rewrites STRATEGY.md after each review and logs decisions in its Â
 
 ## Routines (cloud, run without anyone present)
 
+Full inventory with times, ids, infrastructure and outputs: `docs/SCHEDULERS.md` (keep it
+current whenever a scheduler changes).
+
 | Routine | When (UTC) | Does |
 | --- | --- | --- |
 | Inbox triage | hourly | reads unread mail, logs `docs/INBOX.md`, alerts, drafts replies (never sends) |

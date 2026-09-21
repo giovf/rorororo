@@ -53,6 +53,8 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   (temporary cron triggers, schedule edits) is restored by CI's daily self-heal if the session
   dies (`ventures/gankdat/scripts/schedules.mjs`). Apply D1 migrations before pushing code that
   needs them, never after.
+- Every scheduled job (cloud routines, GitHub Actions, Worker crons) is listed in
+  `docs/SCHEDULERS.md`; update it in the same commit as any scheduler change.
 - Plan of record: `docs/STRATEGY.md` (thesis, 90-day targets, prioritisation rule, kill
   criteria). Research before build, distribution before new features, monthly review
   (`docs/reviews/`). Rewrite STRATEGY.md when the facts change; log decisions in its §8.
