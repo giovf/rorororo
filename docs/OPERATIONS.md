@@ -95,3 +95,10 @@ moves. Claude rewrites STRATEGY.md after each review and logs decisions in its Â
 
 Interactive sessions start by reading `docs/ALERTS.md` (handoffs from the build routine) and
 `docs/INBOX.md`, then do what needs secrets: publishing, forced refreshes, DNS, payments.
+
+## Owner notifications
+
+Any agent that needs the owner appends `- YYYY-MM-DD owner: <what and where>` to `docs/ALERTS.md`
+(or creates a new `docs/for-owner/actions/NNN-*.md`). The `notify owner` GitHub job sends those
+lines to the owner's phone (Telegram and/or WhatsApp; secrets in the repo settings). Handoffs
+between agents use `handoff:` and are not sent.
