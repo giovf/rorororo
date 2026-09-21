@@ -38,3 +38,4 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   connection (timed out), so the venture's "task before coding" convention could not be
   honoured this run.
 - 2026-09-21 owner: Telegram notifications are live — this line is the end-to-end test; nothing to do.
+- 2026-09-21 owner: Telegram is wired end to end — this is the CI test message; nothing to do.

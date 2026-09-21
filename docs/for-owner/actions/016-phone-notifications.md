@@ -1,6 +1,6 @@
 # 016 — get a message on your phone when something needs you (5 minutes)
 
-**Status:** almost — bot @foundry_ops_tg_bot created; waiting for you to send it one message so Claude can read the chat id. · **Cost:** £0.
+**Status:** DONE 2026-09-21 — Telegram bot @foundry_ops_tg_bot connected, CI secrets set, test message delivered. · **Cost:** £0.
 
 From now on every agent (me, the routines) writes owner items as `owner:` lines in
 `docs/ALERTS.md`, and a GitHub job sends exactly those lines to your phone on each push. Pick
