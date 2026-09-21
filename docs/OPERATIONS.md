@@ -82,3 +82,16 @@ research → plan → build → distribute → measure → review. The plan is `
 monthly strategy review is a cloud routine (first Monday, 08:00 UTC) writing `docs/reviews/YYYY-MM.md`
 with a scorecard, keep/kill verdicts per venture, market signals, research gaps and the next three
 moves. Claude rewrites STRATEGY.md after each review and logs decisions in its §8.
+
+## Routines (cloud, run without anyone present)
+
+| Routine | When (UTC) | Does |
+| --- | --- | --- |
+| Inbox triage | hourly | reads unread mail, logs `docs/INBOX.md`, alerts, drafts replies (never sends) |
+| Daily metrics | 07:00 | store numbers into each `RESEARCH.md`; gankdat numbers come from the GitHub `gankdat metrics` job at 06:30 |
+| **Daily build** | 09:30 | picks ONE item by `STRATEGY.md` §5 (alert fix, next dataset, research, distribution), builds it behind the gates, pushes to `main`; hands secret-needing steps to `docs/ALERTS.md` |
+| Weekly report | Mon 07:30 | `docs/reports/` |
+| Monthly strategy review | 1st 08:00 | `docs/reviews/`, keep/kill verdicts, next three moves |
+
+Interactive sessions start by reading `docs/ALERTS.md` (handoffs from the build routine) and
+`docs/INBOX.md`, then do what needs secrets: publishing, forced refreshes, DNS, payments.
