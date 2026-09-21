@@ -10,8 +10,10 @@ Three kinds of scheduled work exist, each running on different infrastructure:
 | **Cloudflare Cron Triggers** (the gankdat Worker itself) | Cloudflare's edge, the deployed `faceless-api` Worker | The Worker's own bindings/secrets | State in D1/KV | Cloudflare dashboard → Workers → faceless-api → Logs; `refresh_log` table |
 
 The interactive Claude session (this devcontainer, the only instance with `.env`) is not
-scheduled; it runs when the owner opens Claude Code and executes the `handoff:` lines the
-routines leave in `docs/ALERTS.md`.
+scheduled; it runs when the owner opens Claude Code. Since 2026-09-21 the daily build no longer
+depends on it: publishing, registry updates and migrations run in CI after each push. The
+interactive session handles what is left (Stripe, DNS, accounts) via `handoff:` lines, and the
+owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NOTES.md`).
 
 ## Daily timeline
 
@@ -22,6 +24,7 @@ routines leave in `docs/ALERTS.md`.
 | 05:30 | Cloudflare cron `30 5 * * *` | wave 3 | uk-charities, uk-care-locations | same |
 | 05:45 | Cloudflare cron `45 5 * * *` | wave 4 | uk-food-hygiene (largest) | same |
 | 05:50 | Cloudflare cron `50 5 * * *` | wave 5 | uk-schools | same |
+| every hour at :20 | GitHub Actions `owner notes` (`.github/workflows/owner-notes.yml`) | — | `scripts/owner-notes.mjs`: pulls messages the owner sent to the Telegram bot | appends to `docs/OWNER-NOTES.md` (read by every routine; the build routine answers in place) |
 | 06:30 | GitHub Actions `gankdat metrics` (`.github/workflows/gankdat-metrics.yml`) | — | `ventures/gankdat/scripts/schedules.mjs reset` (self-heal cron triggers), then `scripts/metrics.mjs` (D1 + Analytics Engine numbers) | commits a `Daily numbers` row to `ventures/gankdat/RESEARCH.md` |
 | 07:00 | Cloud routine `trig_01JBrWDAZLeWEAhSBBnA9g8K` **Foundry daily metrics** (Sonnet) | — | reads each `STORE.md`, fetches public store stats (Figma, Chrome, Firefox) | `Daily check` rows in each venture's `RESEARCH.md`; `docs/ALERTS.md` on bad reviews |
 | 09:30 | Cloud routine `trig_01P9WT733fg3qnuJeKUHE8fx` **Foundry daily build** (Opus) | — | heals `main` if red, then builds ONE item by `docs/STRATEGY.md` §5 (alert fix, next dataset, research, distribution) behind `npm run check` | one commit to `main`; `handoff:` lines in `docs/ALERTS.md`; a line in `STRATEGY.md` §8 |
@@ -39,7 +42,8 @@ routines leave in `docs/ALERTS.md`.
 | Trigger | Kind | Workflow | Does |
 | --- | --- | --- | --- |
 | push to `main` | GitHub Actions `check` | `.github/workflows/check.yml` | full root gate (`npm run check`); a red result is what the daily build fixes first |
-| push touching `ventures/gankdat/**` | GitHub Actions `gankdat` | `.github/workflows/gankdat.yml` | gankdat gate, then `wrangler deploy` (resets the Worker's cron triggers to `wrangler.jsonc`), then verifies the deployment via the Workers API |
+| push touching `ventures/gankdat/**` | GitHub Actions `gankdat` | `.github/workflows/gankdat.yml` | gankdat gate, D1 migrations, then `wrangler deploy` (resets the Worker's cron triggers to `wrangler.jsonc`), then verifies the deployment via the Workers API |
+| push touching `ventures/gankdat/apify/**` or `server.json` | GitHub Actions `gankdat publish` | `.github/workflows/gankdat-publish.yml` → `scripts/publish-actors.mjs`, `scripts/registry-publish.sh` | pushes changed Apify actors, prices and publishes every actor on the account, publishes the MCP registry entry when `server.json` is newer. **The keys live in CI, not in any Claude sandbox** — this is what makes the daily build fully autonomous |
 | push touching `packages/landing/**` | GitHub Actions `landing` | `.github/workflows/landing.yml` | deploys the static site Worker at apps.gankdat.com |
 | push touching `packages/landing/site/**` | GitHub Actions `Deploy landing site to GitHub Pages` | `.github/workflows/pages.yml` | legacy github.io copy, kept until store listings switch (action 013) |
 | push touching `docs/ALERTS.md` or `docs/for-owner/actions/**` | GitHub Actions `notify owner` | `.github/workflows/notify-owner.yml` → `scripts/notify-owner.mjs` | sends new `owner:` lines and new action files to the owner's Telegram |

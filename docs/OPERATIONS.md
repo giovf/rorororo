@@ -96,8 +96,11 @@ current whenever a scheduler changes).
 | Weekly report | Mon 07:30 | `docs/reports/` |
 | Monthly strategy review | 1st 08:00 | `docs/reviews/`, keep/kill verdicts, next three moves |
 
-Interactive sessions start by reading `docs/ALERTS.md` (handoffs from the build routine) and
-`docs/INBOX.md`, then do what needs secrets: publishing, forced refreshes, DNS, payments.
+Publishing, registry updates and D1 migrations run in CI after every push (keys are repo
+secrets, never in a Claude sandbox), so the daily build is autonomous end to end. Interactive
+sessions start by reading `docs/OWNER-NOTES.md`, `docs/ALERTS.md` and `docs/INBOX.md`, then do
+only what CI cannot: Stripe, DNS, account creation. The owner leaves notes for any agent by
+messaging the Telegram bot; they land in `docs/OWNER-NOTES.md` within the hour.
 
 ## Owner notifications
 

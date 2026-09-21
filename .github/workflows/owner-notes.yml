@@ -1,0 +1,33 @@
+name: owner notes
+
+# Hourly: the owner can leave notes for Claude by messaging the Telegram bot; they land in
+# docs/OWNER-NOTES.md, which every routine reads at the start of a run.
+on:
+  schedule:
+    - cron: '20 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  notes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: node scripts/owner-notes.mjs
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: Commit
+        run: |
+          git config user.name "foundry-notes[bot]"
+          git config user.email "info@gankdat.com"
+          git add docs/OWNER-NOTES.md
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "notes: owner notes from Telegram"
+          git pull --rebase origin main
+          git push origin HEAD:main
