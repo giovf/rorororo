@@ -48,8 +48,9 @@ async function ae(query) {
 }
 const n = (rows, key) => Math.round(Number(rows[0]?.[key] ?? 0));
 
+// Internal accounts (ours: info@, apify@ …@gankdat.com and the owner's own) are not customers.
 const [acct] = await sql(
-  "SELECT COUNT(*) AS total, SUM(plan != 'free') AS paid, SUM(created_at > datetime('now','-1 day')) AS new24h FROM accounts",
+  "SELECT COUNT(*) AS total, SUM(plan != 'free') AS paid, SUM(created_at > datetime('now','-1 day')) AS new24h FROM accounts WHERE email NOT LIKE '%@gankdat.com' AND email NOT LIKE '%@1402celsius.com' AND email NOT LIKE '%@example.com' AND email NOT LIKE 'giova1506@%'",
 );
 const errors = await sql(
   "SELECT source_slug FROM refresh_log WHERE status = 'error' AND created_at > datetime('now','-1 day') GROUP BY source_slug",
