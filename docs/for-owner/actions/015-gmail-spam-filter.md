@@ -1,6 +1,6 @@
 # 015 — keep Foundry mail out of Gmail spam (2 minutes)
 
-**Status:** open · **Urgency:** low-medium — some store/platform mail has been landing in spam,
+**Status:** DONE 2026-09-21 (owner) · **Urgency:** low-medium — some store/platform mail has been landing in spam,
 and the Gmail connection Claude uses cannot see the spam folder at all (Google's connector
 excludes it), so anything there is invisible to the hourly inbox triage.
 
