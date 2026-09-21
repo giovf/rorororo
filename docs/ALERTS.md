@@ -37,3 +37,4 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   build container has neither the `task-master` CLI nor a working task-master-ai MCP
   connection (timed out), so the venture's "task before coding" convention could not be
   honoured this run.
+- 2026-09-21 owner: Telegram notifications are live — this line is the end-to-end test; nothing to do.
