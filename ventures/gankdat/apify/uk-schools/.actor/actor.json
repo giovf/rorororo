@@ -2,7 +2,7 @@
   "actorSpecification": 1,
   "name": "uk-schools-gias-ofsted",
   "title": "UK Schools & Colleges Directory (GIAS + Ofsted)",
-  "description": "Every school, academy, college and nursery in England from the Department for Education register \u2014 type and phase, status, local authority and region, address, website, capacity and pupils on roll, academy trust \u2014 joined to the latest Ofsted rating and inspection date. Official DfE and Ofsted open data. Pay per result.",
+  "description": "Every school, academy, college and nursery in England from the Department for Education register \u2014 type and phase, status, local authority and region, address, website, capacity and pupils on roll, academy trust \u2014 joined to the latest Ofsted rating and inspection date. Official DfE and Ofsted.",
   "version": "0.1",
   "buildTag": "latest",
   "dockerfile": "../Dockerfile",

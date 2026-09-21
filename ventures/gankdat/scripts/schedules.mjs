@@ -16,16 +16,35 @@ if (!token) {
   process.exit(1);
 }
 const mode = process.argv[2] ?? 'check';
-const cfg = readFileSync(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'wrangler.jsonc'), 'utf8');
-const wanted = [...cfg.matchAll(/"crons":\s*\[([^\]]*)\]/g)][0]?.[1].match(/"[^"]+"/g)?.map((s) => s.slice(1, -1)) ?? [];
+const cfg = readFileSync(
+  path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'wrangler.jsonc'),
+  'utf8',
+);
+const wanted =
+  [...cfg.matchAll(/"crons":\s*\[([^\]]*)\]/g)][0]?.[1]
+    .match(/"[^"]+"/g)
+    ?.map((s) => s.slice(1, -1)) ?? [];
 const url = `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/workers/scripts/${SCRIPT}/schedules`;
 const headers = { Authorization: `Bearer ${token}`, 'content-type': 'application/json' };
-const live = (await (await fetch(url, { headers })).json()).result?.schedules?.map((s) => s.cron) ?? [];
+const live =
+  (await (await fetch(url, { headers })).json()).result?.schedules?.map((s) => s.cron) ?? [];
 const same = live.length === wanted.length && wanted.every((c) => live.includes(c));
-console.log(`live: ${JSON.stringify(live)}\nwanted: ${JSON.stringify(wanted)}\n${same ? 'in sync' : 'DRIFT'}`);
+console.log(
+  `live: ${JSON.stringify(live)}\nwanted: ${JSON.stringify(wanted)}\n${same ? 'in sync' : 'DRIFT'}`,
+);
 if (!same && mode === 'reset') {
-  const res = await (await fetch(url, { method: 'PUT', headers, body: JSON.stringify(wanted.map((cron) => ({ cron }))) })).json();
-  console.log(res.success ? 'reset to wrangler.jsonc' : `reset failed: ${JSON.stringify(res.errors).slice(0, 200)}`);
+  const res = await (
+    await fetch(url, {
+      method: 'PUT',
+      headers,
+      body: JSON.stringify(wanted.map((cron) => ({ cron }))),
+    })
+  ).json();
+  console.log(
+    res.success
+      ? 'reset to wrangler.jsonc'
+      : `reset failed: ${JSON.stringify(res.errors).slice(0, 200)}`,
+  );
   process.exit(res.success ? 0 : 1);
 }
 process.exit(same || mode === 'reset' ? 0 : 3);
