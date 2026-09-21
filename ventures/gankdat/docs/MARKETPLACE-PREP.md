@@ -18,7 +18,7 @@ place for what is listed where, what each channel needs, and the copy-paste blur
 | APIs.guru OpenAPI directory | issue open (their documented add-API flow), 2026-09-20 | https://github.com/APIs-guru/openapi-directory/issues/3384 |
 | punkpeye/awesome-remote-mcp-servers | PR open (Search & Data Extraction), 2026-09-20 | https://github.com/punkpeye/awesome-remote-mcp-servers/pull/460 |
 | punkpeye/awesome-mcp-servers | not eligible — self-hosted open-source servers only | — |
-| wong2/awesome-mcp-servers | no PRs accepted; web form at mcpservers.org/submit (needs the owner's browser) | Foundry action 010 §4 |
+| mcpservers.org (wong2) | **approved and live 2026-09-21** (owner submitted the form) | https://mcpservers.org |
 | Glama | claim challenges served 2026-09-20 (`/.well-known/glama.json` + `_glama-claim` TXT); claimed by the owner 2026-09-20; health check uses a free-tier test key (`glama-health-check`, account info@gankdat.com, key id 1472c087…, emailed to the owner for Glama's test profile) | https://glama.ai/mcp/connectors/com.gankdat/gankdat |
 | Smithery | not listed; CLI publish needs a Smithery account (owner) | — |
 | Google Search Console | domain verified 2026-09-20 (owner, DNS TXT); sitemap `https://gankdat.com/sitemap.xml` to submit once | search.google.com/search-console |

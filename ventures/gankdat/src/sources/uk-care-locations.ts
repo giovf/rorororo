@@ -159,7 +159,12 @@ function byteCapTransform(limit: number): TransformStream<Uint8Array, Uint8Array
 
 async function* streamFromOrigin(): AsyncGenerator<UkCareLocationsRecord> {
   const csvUrl = await currentCsvUrl();
-  const res = await fetch(csvUrl, { headers: { 'user-agent': USER_AGENT } });
+  let res = await fetch(csvUrl, { headers: { 'user-agent': USER_AGENT } });
+  // CQC's file host answers 503 now and then (05:33 wave, 2026-09-21): retry before failing.
+  for (let attempt = 1; res.status >= 500 && attempt <= 3; attempt += 1) {
+    await new Promise((r) => setTimeout(r, 30_000 * attempt));
+    res = await fetch(csvUrl, { headers: { 'user-agent': USER_AGENT } });
+  }
   if (!res.ok || !res.body) throw new Error(`CQC directory download failed: ${res.status}`);
   let idx: Map<string, number> | null = null;
   let yielded = 0;

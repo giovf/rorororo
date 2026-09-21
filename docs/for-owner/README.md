@@ -17,8 +17,9 @@ Claude runs the project; this folder is the only part written for you. Read top 
 | [actions/006-firefox-edge-accounts.md](actions/006-firefox-edge-accounts.md) | **Now:** two free store accounts so ReadFocus can list on Firefox and Edge |
 | [actions/007-publish-highlight-keep.md](actions/007-publish-highlight-keep.md) | Done — Highlight Keep submitted to Chrome 20 Sep; in review |
 | [actions/008-support-inbox.md](actions/008-support-inbox.md) | Mostly done — Gmail connected; Cloudflare/Resend parts optional |
-| [actions/009-google-identity-verification.md](actions/009-google-identity-verification.md) | **Now:** Google's ID check on the Chrome developer account |
+| [actions/009-google-identity-verification.md](actions/009-google-identity-verification.md) | Done — Google confirmed identity verification 21 Sep |
 | [actions/004-publish-figma-plugin.md](actions/004-publish-figma-plugin.md) | **Now:** Figma rejected v0.1.0 (crash fixed) — resubmit, 2 clicks |
+| [actions/015-gmail-spam-filter.md](actions/015-gmail-spam-filter.md) | **New, 2 min:** one Gmail filter so store/platform mail never lands in spam (the inbox triage can't see spam) |
 | [actions/014-apify-account.md](actions/014-apify-account.md) | **New, medium:** one free Apify account + API token so gankdat's datasets can sell on the Apify Store (~10 min) |
 | [actions/013-repo-private.md](actions/013-repo-private.md) | Why the repo is public, and the plan to make it private once the store reviews finish (nothing to do yet) |
 | [actions/012-ico-fee-and-controller-name.md](actions/012-ico-fee-and-controller-name.md) | Deferred by you until the first real customer (ICO fee, ~£47/yr); name added to the policy 20 Sep |

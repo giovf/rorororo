@@ -1,6 +1,6 @@
 # 011 — list gankdat on Datarade (one account, ~10 minutes)
 
-**Status:** DONE — application submitted by the owner 2026-09-20; awaiting Datarade's review (their reply lands at info@gankdat.com) · **Cost:** £0 (free plan; Datarade takes 30% only on deals
+**Status:** REJECTED by Datarade on 2026-09-21 — "we only work with registered businesses as opposed to sole proprietors". Nothing to do; revisit only if a limited company is formed (see STRATEGY.md §8). · **Cost:** £0 (free plan; Datarade takes 30% only on deals
 it brokers itself; direct customers are ours).
 
 Datarade is the one free marketplace where business data buyers search by category, request

@@ -22,6 +22,8 @@ const WINDOW_DAYS = 14;
 // Snapshot cap (KV value + Worker memory); ~2 weeks of awards fits comfortably.
 const MAX_RECORDS = 3000;
 const DESCRIPTION_MAX = 400;
+const RETRIES = 3;
+const RETRY_DELAY_MS = 45_000;
 
 const rawReleaseSchema = z.object({
   id: z.string(),
@@ -156,9 +158,21 @@ async function fetchFromOrigin(): Promise<UkContractAwardsRecord[]> {
   const records: UkContractAwardsRecord[] = [];
   let url = `${ORIGIN_URL}?stages=award&publishedFrom=${isoDaysAgo(WINDOW_DAYS)}&limit=${PAGE_SIZE}`;
   for (;;) {
-    const res = await fetch(url, {
+    let res = await fetch(url, {
       headers: { accept: 'application/json', 'user-agent': 'gankdat.com data refresh' },
     });
+    // Contracts Finder rate-limits bursts (429/403, seen at the 05:00 wave 2026-09-21):
+    // back off and retry a few times before giving up on this refresh.
+    for (
+      let attempt = 1;
+      (res.status === 429 || res.status === 403) && attempt <= RETRIES;
+      attempt += 1
+    ) {
+      await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * attempt));
+      res = await fetch(url, {
+        headers: { accept: 'application/json', 'user-agent': 'gankdat.com data refresh' },
+      });
+    }
     if (!res.ok) throw new Error(`contractsfinder.service.gov.uk responded ${res.status}`);
     const page = packageSchema.parse(await res.json());
     records.push(...mapReleases(page.releases));

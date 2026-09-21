@@ -90,3 +90,7 @@ Rejected: Land Registry CCOD/OCOD (licence forbids standalone products), HMRC VA
 - 2026-09-20 owner asks for business planning and market research to be explicit in the loop
   → this file + the monthly strategy routine.
 - 2026-09-20 next-dataset queue set from research B: Contracts Finder awards → GIAS/Ofsted → NHS ODS.
+- 2026-09-21 Datarade rejected the listing (registered businesses only). AWS Data Exchange also
+  needs VAT registration. Decision: no limited company yet — formation is ~£50 plus annual
+  filing burden on the owner; revisit when the data line passes £300 MRR (then a company also
+  fixes the ICO/address privacy questions). Marketplace route for now: Apify + own site + agents.

@@ -1,7 +1,7 @@
 # Owner action request #9 — Google Payments identity verification (Chrome developer account)
 
 - **Date:** 2026-09-19
-- **Status:** **SUBMITTED 2026-09-19** — awaiting Google
+- **Status:** DONE — Google confirmed identity verification on 2026-09-21 ("You can now publish new items").
 - **Your time:** ~5 minutes + a few days of Google processing
 - **Cost:** £0.00
 - **Blocks:** possibly the Chrome Web Store listings going live (Google can hold publisher accounts until the payments profile is verified)
