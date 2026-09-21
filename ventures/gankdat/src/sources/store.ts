@@ -72,12 +72,18 @@ export async function sourceStats(
  */
 /**
  * Which wave a trigger runs, from the cron's minute field: 0 → wave 1, 15 → wave 2,
- * 30 → wave 3, 45 → wave 4; anything else (a manual/temporary trigger) → every wave in
- * order. Keeping each wave under the 15-minute Cron Trigger limit is what matters —
- * a four-source D1 wave was killed mid-load on 2026-09-20 when D1 ran slow.
+ * 30 → wave 3, 45 → wave 4, 50 → wave 5; anything else (a manual/temporary trigger) →
+ * every wave in order. Keeping each wave under the 15-minute Cron Trigger limit is what
+ * matters — a four-source D1 wave was killed mid-load on 2026-09-20 when D1 ran slow.
  */
-export type RefreshWave = 1 | 2 | 3 | 4;
-const WAVE_BY_MINUTE: Record<string, RefreshWave> = { '0': 1, '15': 2, '30': 3, '45': 4 };
+export type RefreshWave = 1 | 2 | 3 | 4 | 5;
+const WAVE_BY_MINUTE: Record<string, RefreshWave> = {
+  '0': 1,
+  '15': 2,
+  '30': 3,
+  '45': 4,
+  '50': 5,
+};
 
 export function waveForCron(cron: string | undefined): RefreshWave | undefined {
   const minute = (cron ?? '').trim().split(/\s+/)[0] ?? '';

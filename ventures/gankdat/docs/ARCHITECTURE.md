@@ -38,7 +38,13 @@ dropped), and the CQC care directory
 (`uk-care-locations`, shipped 2026-09-20 — weekly CSV resolved from CQC's data page, D1,
 ~57k regulated locations, phone numbers dropped), and UK contract awards
 (`uk-contract-awards`, shipped 2026-09-21 — Contracts Finder OCDS awards, one row per award ×
-supplier with company numbers, KV window; bid-intelligence bundle; NICHE-RESEARCH-2026-09-B).
+supplier with company numbers, KV window; bid-intelligence bundle; NICHE-RESEARCH-2026-09-B),
+and schools in England (`uk-schools`, shipped 2026-09-21 — DfE GIAS daily establishment extract
+joined by URN to Ofsted's monthly inspection outcomes, D1, ~50k establishments; the Ofsted join
+is best-effort enrichment over the Ofsted columns GIAS itself carries, so a moved Ofsted file
+costs a field, not the dataset; head-teacher names and telephone dropped, governors extract never
+ingested; lead-gen bundle; NICHE-RESEARCH-2026-09-B §1). Its size (~62 MB daily) added refresh
+**wave 5** (05:50) — waves stay one-trigger-one-budget under the 15-minute Cron Trigger limit.
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo

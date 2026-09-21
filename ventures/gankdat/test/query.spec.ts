@@ -32,6 +32,7 @@ describe('registry', () => {
       'uk-sponsors',
       'uk-charities',
       'uk-care-locations',
+      'uk-schools',
     ]);
   });
 });
