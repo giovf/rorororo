@@ -39,3 +39,4 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   honoured this run.
 - 2026-09-21 owner: Telegram notifications are live — this line is the end-to-end test; nothing to do.
 - 2026-09-21 owner: Telegram is wired end to end — this is the CI test message; nothing to do.
+- 2026-09-21 owner: correction — the "first paying account" alert earlier today was a false alarm: the paid-plan account is our own internal service account for the Apify actors, not a customer. No revenue yet; the ICO fee stays deferred; nothing to do. (Metrics now exclude internal accounts.)
