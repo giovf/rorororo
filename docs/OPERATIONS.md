@@ -102,3 +102,15 @@ Any agent that needs the owner appends `- YYYY-MM-DD owner: <what and where>` to
 (or creates a new `docs/for-owner/actions/NNN-*.md`). The `notify owner` GitHub job sends those
 lines to the owner's phone (Telegram and/or WhatsApp; secrets in the repo settings). Handoffs
 between agents use `handoff:` and are not sent.
+
+## Interrupted runs (usage limits, timeouts, crashes)
+
+- Routine sandboxes are discarded when a run dies; nothing reaches `main` unless pushed. Every
+  routine therefore pushes exactly once, at the end, after the gates pass — a dead run leaves no
+  trace and the next run simply redoes the item.
+- `main` is gated by the `check` workflow on every push. If it goes red, the next daily build
+  run fixes or reverts before doing anything else; interactive sessions do the same at start.
+- Live-state side effects (temporary cron triggers used to force a refresh) are reconciled with
+  `wrangler.jsonc` every morning by the `gankdat metrics` job (`scripts/schedules.mjs reset`).
+- Owner-visible state (action files, alerts) is only ever written together with the work it
+  describes, in the same commit.

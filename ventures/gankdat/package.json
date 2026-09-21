@@ -17,7 +17,8 @@
     "traffic": "node --env-file=.env scripts/traffic.mjs",
     "scoreboard": "node --env-file=.env scripts/scoreboard.mjs",
     "check": "npm run lint && npm run typecheck && npm run format:check && npm test && npm run build",
-    "metrics": "node --env-file=.env scripts/metrics.mjs"
+    "metrics": "node --env-file=.env scripts/metrics.mjs",
+    "schedules": "node --env-file=.env scripts/schedules.mjs"
   },
   "dependencies": {
     "@coinbase/x402": "^2.1.0",

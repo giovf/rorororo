@@ -41,6 +41,18 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   permissions and data use are disclosed on every listing
 
 ## Workflow
+- **Session start (every interactive session):** `git status` — uncommitted work from a
+  cut-off session is finished or discarded, never left; `git pull --no-rebase`; read
+  `docs/ALERTS.md` (`handoff:` lines are yours to execute) and `docs/INBOX.md`; check CI is
+  green (`gh run list -L 3`) and fix `main` first if not; `npm run schedules -w @foundry/gankdat`
+  to confirm no temporary cron trigger was left armed.
+- **Atomic pushes:** build fully, run the gates, then ONE commit and push. Never push partial
+  work "to save progress" — a session can be cut off by usage limits at any moment, and the
+  sandbox is discarded, which is safe only if nothing half-done reached `main`.
+- **Interruptible side effects:** anything that changes live state and must be undone later
+  (temporary cron triggers, schedule edits) is restored by CI's daily self-heal if the session
+  dies (`ventures/gankdat/scripts/schedules.mjs`). Apply D1 migrations before pushing code that
+  needs them, never after.
 - Plan of record: `docs/STRATEGY.md` (thesis, 90-day targets, prioritisation rule, kill
   criteria). Research before build, distribution before new features, monthly review
   (`docs/reviews/`). Rewrite STRATEGY.md when the facts change; log decisions in its §8.
