@@ -56,7 +56,7 @@
     // 05:15 smaller D1 sources (exclusions, sponsors), 05:30 charities + care locations,
     // 05:45 uk-food-hygiene. Each wave must stay well under the 15-minute Cron Trigger
     // limit even on a slow D1 day (a four-source wave was killed on 2026-09-20).
-    "crons": ["0 5 * * *", "15 5 * * *", "30 5 * * *", "45 5 * * *"],
+    "crons": ["0 5 * * *", "15 5 * * *", "30 5 * * *", "45 5 * * *", "50 5 * * *"],
   },
   "observability": {
     "enabled": true,

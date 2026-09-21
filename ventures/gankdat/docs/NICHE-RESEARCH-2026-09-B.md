@@ -13,7 +13,7 @@ providers (not community pharmacies, not schools).
 
 ---
 
-## 1. DfE GIAS + Ofsted inspection outcomes (England) — **PASS**
+## 1. DfE GIAS + Ofsted inspection outcomes (England) — **PASS — SHIPPED 2026-09-21 as `uk-schools`**
 
 - **GIAS bulk download** — https://get-information-schools.service.gov.uk/Downloads
   Daily CSV, no login. "All establishment data" 61.7 MB; state-funded schools 8.9 MB;
@@ -86,7 +86,7 @@ dataset; at most a pass-through lookup, which is not gankdat's model.
   £50–500/mo; OC Corporate trial → subscription), so demand is proven, but they must hold
   bespoke HMLR/Royal Mail terms. Not doable under the open licence; park.
 
-## 5. Contracts Finder awarded contracts — **PASS**
+## 5. Contracts Finder awarded contracts — **PASS — SHIPPED 2026-09-21 as `uk-contract-awards`**
 
 - **API** — `GET https://www.contractsfinder.service.gov.uk/Published/Notices/OCDS/Search`
   (https://www.contractsfinder.service.gov.uk/apidocumentation/Notices/1/GET-Published-Notice-OCDS-Search).

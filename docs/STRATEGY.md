@@ -17,8 +17,8 @@ same thing*, not for one big bet. Capital cap £100; recurring cost today ≈ £
 
 | Line | Buyer & job | Evidence of paying demand | Price point | Human effort per sale |
 | --- | --- | --- | --- | --- |
-| **gankdat data API** (11 datasets) | bid teams, compliance/KYB, prospecting, proptech; AI agents | paid rivals (PlanAPI, Searchland, ComplyAdvantage tiers); Apify scrapers of the same registers sell at ~US$1/1k rows | £5–£239/mo, x402 US$0.005/call | none (self-serve) |
-| **Apify actors** (11, one per dataset) | same buyers, already on Apify | existing paid actors on identical data | US$0.001/row, 80/20 | none |
+| **gankdat data API** (13 datasets) | bid teams, compliance/KYB, prospecting, proptech; AI agents | paid rivals (PlanAPI, Searchland, ComplyAdvantage tiers); Apify scrapers of the same registers sell at ~US$1/1k rows | £5–£239/mo, x402 US$0.005/call | none (self-serve) |
+| **Apify actors** (13, one per dataset) | same buyers, already on Apify | existing paid actors on identical data | US$0.001/row, 80/20 | none |
 | **Change feeds** (`/v1/changes`) | grant-makers, KYB, recruiters | no competitor offers an official-source delta feed | inside plans; upsell later | none |
 | Browser extensions (ReadFocus, Highlight Keep) | consumers | rivals abandoned; low ticket | US$12 one-off | none, but small |
 | Figma plugin (Variables Toolkit) | designers | paid rivals with gaps | one-off | none |
@@ -38,7 +38,7 @@ same thing*, not for one big bet. Capital cap £100; recurring cost today ≈ £
 | --- | --- | --- | --- |
 | gankdat paying accounts | 0 | 5 | `Daily numbers` rows in `ventures/gankdat/RESEARCH.md` |
 | gankdat MRR | £0 | £150 | Stripe (weekly report) |
-| Apify actors live | 1 of 11 | 11 | Apify console / `apify/README.md` |
+| Apify actors live | 1 of 13 | 13 | Apify console / `apify/README.md` |
 | Apify paid runs / month | 0 | 100 | Apify stats |
 | Change-feed calls / week | 0 | 50 | Analytics Engine (`get_changes`, `/v1/changes`) |
 | Extension + plugin sales | 0 | 20 | Stripe / Figma |
@@ -56,6 +56,8 @@ remaining Apify actors, (2) Datarade approval, (3) directory PRs merged, (4) Sea
 indexing of the stats pages, (5) then the next dataset. Research done 2026-09-20 (`ventures/gankdat/docs/NICHE-RESEARCH-2026-09-B.md`):
 **Contracts Finder awarded contracts + supplier index** first (open OCDS API, OGL, strongest paid
 demand: Stotles £50–475/mo, Tussell, 8+ Apify actors), then GIAS + Ofsted outcomes, then NHS ODS.
+Contracts Finder shipped 2026-09-21 (`uk-contract-awards`) and GIAS + Ofsted shipped 2026-09-21
+(`uk-schools`); **NHS ODS is the next dataset**, behind the distribution queue above.
 Rejected: Land Registry CCOD/OCOD (licence forbids standalone products), HMRC VAT check, SIA.
 
 ## 6. Workflow (research → plan → build → distribute → measure → review)
@@ -94,3 +96,9 @@ Rejected: Land Registry CCOD/OCOD (licence forbids standalone products), HMRC VA
   needs VAT registration. Decision: no limited company yet — formation is ~£50 plus annual
   filing burden on the owner; revisit when the data line passes £300 MRR (then a company also
   fixes the ICO/address privacy questions). Marketplace route for now: Apify + own site + agents.
+- 2026-09-21 daily build: shipped `uk-schools` (DfE GIAS + Ofsted outcomes), the #2 dataset in the
+  research-B queue. Distribution items 1–4 all need an account, a secret or a third party
+  (Apify's new-publisher limit, Datarade rejected, directory PRs with their maintainers, Search
+  Console submission), so none was buildable from the routine — the next dataset was the
+  highest-scoring item this run could actually finish. Live ingest is unverified: the container
+  has no egress to the GIAS/GOV.UK hosts (handoff in ALERTS.md).
