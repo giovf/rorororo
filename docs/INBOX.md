@@ -5,3 +5,7 @@
 - 2026-09-21 11:55 | notification | github.com | [giovf/rorororo] Run failed: gankdat - main (e62f312) | gankdat venture check workflow failed on main, job failed in 53s | needs owner
 - 2026-09-21 11:55 | notification | github.com | [giovf/rorororo] Run failed: check - main (e62f312) | root check workflow failed on main, job failed in 59s | needs owner
 - 2026-09-21 11:57 | notification | github.com | [giovf/rorororo] Run failed: check - main (fd2ee56) | root check workflow failed again on next main commit, job failed in 59s | needs owner
+- 2026-09-21 12:11 | notification | github.com | [giovf/rorororo] Run failed: check - main (0372bb3) | root check workflow failed again, job failed in 59s | needs owner
+- 2026-09-21 12:55 | notification | github.com | [giovf/rorororo] Run failed: check - main (d7423ee) | root check workflow failed again, job failed in 59s | needs owner
+- 2026-09-21 12:55 | notification | github.com | [giovf/rorororo] Run failed: gankdat - main (d7423ee) | gankdat venture check workflow failed, job failed in 43s | needs owner
+- 2026-09-21 12:57 | notification | github.com | [giovf/rorororo] Run failed: check - main (b437f6a) | root check workflow failed again, job failed in 57s | needs owner
