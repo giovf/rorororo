@@ -191,3 +191,4 @@ variables; (2) pick a subset of styles to convert; (3) toast with counts after e
 | 2026-09-19 | Daily check | — | — | — | not live yet |
 | 2026-09-18 | Rejected by Figma review — crash on launch (unguarded window.onmessage) | — | — | — | fixed 2026-09-19 as v0.1.1; awaiting owner resubmit |
 | 2026-09-20 | Daily check | — | — | — | not live yet |
+| 2026-09-21 | Daily check | — | — | — | not live yet |
