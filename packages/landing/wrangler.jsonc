@@ -8,5 +8,5 @@
   // html_handling none: the store listings and extensions link to the .html paths verbatim.
   "assets": { "directory": "site", "html_handling": "none", "not_found_handling": "none" },
   "routes": [{ "pattern": "apps.gankdat.com", "custom_domain": true }],
-  "workers_dev": true
+  "workers_dev": true,
 }
