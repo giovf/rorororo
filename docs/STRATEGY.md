@@ -101,6 +101,11 @@ service is human-in-the-loop). Build ≤ 1 day.
   by email/AI phone, sell sites). Declined as a service: automated calls need prior consent under
   PECR, cold email to sole traders needs consent, delivery is per-customer human work. Kept the
   data angle as a lead feed for agencies (queued above).
+- 2026-09-21 owner floated a digital-services marketplace on top of the APIs. Declined for now:
+  two-sided cold start with no marketing budget, human ops (vetting, disputes, Connect payouts),
+  and it would not use our data edge. Staged path instead: no-website lead feed → a paid-lead
+  request form on the stats pages if the feed sells → revisit a marketplace only at ≈1,000
+  monthly API/stats users. The monthly review re-asks this when that number is reached.
 - 2026-09-21 Datarade rejected the listing (registered businesses only). AWS Data Exchange also
   needs VAT registration. Decision: no limited company yet — formation is ~£50 plus annual
   filing burden on the owner; revisit when the data line passes £300 MRR (then a company also
