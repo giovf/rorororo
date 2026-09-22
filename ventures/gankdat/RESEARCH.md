@@ -44,7 +44,7 @@ Cloudflare Workers Paid ≈ US$5/month (only recurring cost in the portfolio), d
 | 2026-09-20 | Daily check | — | — | — | no store listing to check (channel: web/API + MCP + x402); see "Signal since launch" above for real usage/revenue signal |
 | 2026-09-20 | Daily numbers | 5 accts (0 paid, +1/24h) | — | 0 x402 paid | MCP 24h: 4 authed, 1286 anon, 57 paywall hits; refresh errors: sam-exclusions |
 | 2026-09-21 | Daily numbers | 0 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 180 authed, 1973 anon, 160 paywall hits; wanted: list_sources 6, query_uk_sponsors 3, query_uk_care_locations 3; refresh errors: uk-care-locations, uk-charities, uk-contract-awards, uk-food-hygiene |
-| 2026-09-22 | Daily numbers | 0 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 219 authed, 1635 anon, 46 paywall hits; wanted: query_uk_sanctions 5, list_sources 5, query_uk_tenders 4; refresh errors: uk-insolvency |
+| 2026-09-22 | Daily numbers | 0 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 222 authed, 1635 anon, 46 paywall hits; wanted: query_uk_sanctions 5, list_sources 5, query_uk_tenders 4; refresh errors: uk-insolvency |
 
 
 ## No-website lead feed (2026-09-21)
