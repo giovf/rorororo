@@ -51,9 +51,9 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 
 ## Conventions the schedulers rely on
 
-- `docs/RUNS.md`: build, exchange, review and report routines append 1–3 one-liners at the end
-  of every run (`- YYYY-MM-DD HH:MM | <routine> | <text>`); each new line reaches the owner's
-  phone as a bullet. Triage and metrics do not post there (hourly/daily noise).
+- `docs/RUNS.md`: build, exchange, review and report routines append one line per piece of
+  work done at the end of every run (`- YYYY-MM-DD HH:MM | <routine> | <text>`); each new line
+  reaches the owner's phone as a bullet. Triage and metrics do not post there (hourly/daily noise).
 - `docs/ALERTS.md` line prefixes: `owner:` (sent to the owner's phone), `handoff:` (for the
   next interactive session — needs secrets), `done:` (closed by the interactive session).
 - `needs owner` (in `docs/INBOX.md`) is reserved for things only the owner can do (account
