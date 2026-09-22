@@ -47,10 +47,13 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 | push touching `ventures/gankdat/apify/**` or `server.json` | GitHub Actions `gankdat publish` | `.github/workflows/gankdat-publish.yml` → `scripts/publish-actors.mjs`, `scripts/registry-publish.sh` | pushes changed Apify actors, prices and publishes every actor on the account, publishes the MCP registry entry when `server.json` is newer. **The keys live in CI, not in any Claude sandbox** — this is what makes the daily build fully autonomous |
 | push touching `packages/landing/**` | GitHub Actions `landing` | `.github/workflows/landing.yml` | deploys the static site Worker at apps.gankdat.com |
 | push touching `packages/landing/site/**` | GitHub Actions `Deploy landing site to GitHub Pages` | `.github/workflows/pages.yml` | legacy github.io copy, kept until store listings switch (action 013) |
-| push touching `docs/ALERTS.md` or `docs/for-owner/actions/**` | GitHub Actions `notify owner` | `.github/workflows/notify-owner.yml` → `scripts/notify-owner.mjs` | sends new `owner:` lines and new action files to the owner's Telegram |
+| push touching `docs/ALERTS.md`, `docs/RUNS.md` or `docs/for-owner/actions/**` | GitHub Actions `notify owner` | `.github/workflows/notify-owner.yml` → `scripts/notify-owner.mjs` | sends new `owner:` lines and new action files ("Foundry needs you") and new `docs/RUNS.md` lines ("Foundry run", one bullet per line) to the owner's Telegram |
 
 ## Conventions the schedulers rely on
 
+- `docs/RUNS.md`: build, exchange, review and report routines append 1–3 one-liners at the end
+  of every run (`- YYYY-MM-DD HH:MM | <routine> | <text>`); each new line reaches the owner's
+  phone as a bullet. Triage and metrics do not post there (hourly/daily noise).
 - `docs/ALERTS.md` line prefixes: `owner:` (sent to the owner's phone), `handoff:` (for the
   next interactive session — needs secrets), `done:` (closed by the interactive session).
 - `needs owner` (in `docs/INBOX.md`) is reserved for things only the owner can do (account

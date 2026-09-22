@@ -3,7 +3,7 @@ name: notify owner
 on:
   push:
     branches: [main]
-    paths: ['docs/ALERTS.md', 'docs/for-owner/actions/**']
+    paths: ['docs/ALERTS.md', 'docs/RUNS.md', 'docs/for-owner/actions/**']
 
 jobs:
   notify:
