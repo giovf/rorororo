@@ -54,3 +54,4 @@ larger, clearly frustrated audience and three stores (Chrome, Firefox, Edge) fro
 | 2026-09-19 | Built + e2e-tested; Stripe link live; awaiting owner's store upload | — | — | 0 | zero owner testing |
 | 2026-09-20 | Daily check | — | — | — | not live yet |
 | 2026-09-21 | Daily check | — | — | — | fetch failed: egress blocked by network policy (chromewebstore.google.com, addons.mozilla.org) |
+| 2026-09-22 | Daily check | — | — | — | not live yet |
