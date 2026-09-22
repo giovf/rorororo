@@ -1,7 +1,11 @@
 # Owner action request #4 — publish Variables Toolkit to the Figma Community
 
 - **Date:** 2026-09-18
-- **Status:** **RESUBMITTED 2026-09-19** (v0.1.1) — awaiting Figma review
+- **Status:** **DONE — APPROVED 2026-09-21** (v0.1.1). The listing is live at
+  https://www.figma.com/community/plugin/1682711656065145288. Nothing further is needed here;
+  the venture is `launched` and day-1/7/30 metrics are running (`ventures/variables-toolkit/RESEARCH.md` §7).
+  One thing left to confirm: that **Creator payout (Stripe) is complete in your Figma profile** —
+  without it Figma can take the $12 but cannot pay it out. See `docs/ALERTS.md`.
 - **Your time:** ~20 minutes
 - **Cost:** £0.00 (Figma takes 15% of each sale, nothing up front)
 - **Blocks:** task 12

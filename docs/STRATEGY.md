@@ -120,3 +120,14 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `website_present` on three registers, Apify actor `uk-no-website-leads`, v0.13.0) and fixed the
   red root check + the TED actor's missing tagged build (publish script now self-heals that).
 
+- 2026-09-22 daily build: **Variables Toolkit launched** — Figma approved the listing 2026-09-21
+  20:29 UTC (verified against Figma's own notification email, not just the handoff line). Recorded
+  the launch end to end: `venture.json` → `launched`, STORE.md → live with the listing URL, the
+  apps.gankdat.com product card now links Figma Community instead of saying "in review soon",
+  ARCHITECTURE and the ledger's fee convention updated, owner action 004 closed, and day-1/7/30
+  measurement plus the 90-day kill date (2026-12-20) written into the venture's RESEARCH.md §7.
+  Chosen over the next dataset (NHS ODS) because §5 puts distribution first until the funnel shows
+  conversion, and this is the portfolio's first listing live on a shelf that takes payment — the
+  metrics routine reads STORE.md, so leaving it stale meant no purchase data at all. Remaining
+  Figma work needs network the build container does not have (figma.com 403): the resource uuid is
+  a handoff, and the creator payout is the one owner-only step.

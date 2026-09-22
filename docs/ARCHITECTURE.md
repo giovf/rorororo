@@ -28,7 +28,7 @@ packages/landing         static site — Cloudflare static-assets Worker at http
                          then the repo goes private — action 013)
 packages/telemetry       opt-in funnel event counting (planned, V2)
 ventures/<slug>/         one workspace per product: venture.json, RESEARCH.md, src/
-ventures/variables-toolkit   V1 Figma plugin (validated; awaiting owner test + launch)
+ventures/variables-toolkit   V1 Figma plugin — launched 2026-09-21 on Figma Community, $12 one-time
 ventures/gankdat         V4 data API (gankdat.com) — Cloudflare Worker, Stripe + x402; adopted 2026-09-19,
                          self-contained gates (`npm run check -w @foundry/gankdat`), deploys via CI
 docs/LEDGER.md           every pound in and out, per venture (£100 cap enforced)

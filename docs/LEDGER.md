@@ -21,3 +21,6 @@ fails the build if `cost + planned` exceeds the **£100** capital cap.
 - Venture is the slug from `ventures/<slug>/venture.json`, or `portfolio` for shared costs.
 - Move a `planned` row to `cost` (same note) once the money has left the account.
 - Refunds: a negative-free ledger — record a refund as a `cost` row with note `refund: …`.
+- Figma Community sales (Variables Toolkit, live since 2026-09-21): Figma keeps **15%** and pays
+  out the rest, so a $12 sale nets ≈$10.20. Record the **payout** amount in GBP as a `revenue`
+  row on the day it lands, not the list price.

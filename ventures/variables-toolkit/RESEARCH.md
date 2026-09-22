@@ -193,3 +193,24 @@ variables; (2) pick a subset of styles to convert; (3) toast with counts after e
 | 2026-09-20 | Daily check | — | — | — | not live yet |
 | 2026-09-21 | Daily check | — | — | — | not live yet |
 | 2026-09-22 | Daily check | — | — | — | STORE.md says not live, but docs/ALERTS.md (2026-09-21 handoff) reports Figma approved this plugin 20:29 UTC — status unconfirmed, fetch blocked by network policy; STORE.md/venture.json not yet updated |
+| 2026-09-21 | **Approved by Figma review — listing live** | — | — | — | approval email 20:29 UTC (v0.1.1); listing https://www.figma.com/community/plugin/1682711656065145288 |
+| 2026-09-22 | Status confirmed | — | — | — | approval verified against the Figma notification email; `venture.json` → `launched`, STORE.md → live, landing card links the listing. Figma stats not readable from the build container (figma.com egress blocked); the 07:00 metrics routine takes over from here |
+
+## 7. Post-launch measurement (day 1 / 7 / 30)
+
+Live since **2026-09-21**. The 07:00 daily metrics routine reads `STORE.md` and records users,
+likes and purchases in §6 above; these are the dates that matter for the decision:
+
+| Checkpoint | Date | What we read | What it would mean |
+| --- | --- | --- | --- |
+| Day 1 | 2026-09-22 | listing reachable, install count starts moving | listing is discoverable at all |
+| Day 7 | 2026-09-28 | users, likes, purchases | first read on install→purchase conversion |
+| Day 30 | 2026-10-21 | users, likes, purchases | scored against the §1 benchmark |
+
+Benchmark from §1 (measured across 167 Figma-checkout plugins): the **median paid plugin has 16
+purchases lifetime**, and design-system/variables tools convert free→paid at **1.7–2.9%** — the
+best band in the market. At $12 with Figma's 15% fee, each sale nets ≈$10.20 (≈£7.55 at ~1.35).
+
+Decision rule (STRATEGY.md §7 kill criteria): zero sales **and** zero organic signal (installs,
+likes, comments) by **2026-12-20** (90 days live) → kill and keep the code. A day-30 read of
+installs with no purchases is a pricing/description problem, not a kill — fix the listing first.
