@@ -24,8 +24,8 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 | 05:30 | Cloudflare cron `30 5 * * *` | wave 3 | uk-charities, uk-care-locations | same |
 | 05:45 | Cloudflare cron `45 5 * * *` | wave 4 | uk-food-hygiene (largest) | same |
 | 05:50 | Cloudflare cron `50 5 * * *` | wave 5 | uk-schools | same |
-| every hour at :20 | GitHub Actions `owner notes` (`.github/workflows/owner-notes.yml`) | — | `scripts/owner-notes.mjs`: pulls messages the owner sent to the Telegram bot | appends to `docs/OWNER-NOTES.md` (read by every routine; the build routine answers in place) |
-| 06:30 | GitHub Actions `gankdat metrics` (`.github/workflows/gankdat-metrics.yml`) | — | `ventures/gankdat/scripts/schedules.mjs reset` (self-heal cron triggers), then `scripts/metrics.mjs` (D1 + Analytics Engine numbers) | commits a `Daily numbers` row to `ventures/gankdat/RESEARCH.md` |
+| every hour at :20 **and on every push to `main`** | GitHub Actions `owner notes` (`.github/workflows/owner-notes.yml`) | — | `scripts/owner-notes.mjs`: pulls messages the owner sent to the Telegram bot | appends to `docs/OWNER-NOTES.md` (read by every routine; the build routine answers in place) |
+| 06:30 **and on pushes to `main`** (push runs only fill a missing day) | GitHub Actions `gankdat metrics` (`.github/workflows/gankdat-metrics.yml`) | — | `ventures/gankdat/scripts/schedules.mjs reset` (self-heal cron triggers), then `scripts/metrics.mjs` (D1 + Analytics Engine numbers) | commits a `Daily numbers` row to `ventures/gankdat/RESEARCH.md` |
 | 07:00 | Cloud routine `trig_01JBrWDAZLeWEAhSBBnA9g8K` **Foundry daily metrics** (Sonnet) | — | reads each `STORE.md`, fetches public store stats (Figma, Chrome, Firefox) | `Daily check` rows in each venture's `RESEARCH.md`; `docs/ALERTS.md` on bad reviews |
 | 09:30 | Cloud routine `trig_01P9WT733fg3qnuJeKUHE8fx` **Foundry daily build** (Opus) | — | heals `main` if red, then builds ONE item by `docs/STRATEGY.md` §5 (alert fix, next dataset, research, distribution) behind `npm run check` | one commit to `main`; `handoff:` lines in `docs/ALERTS.md`; a line in `STRATEGY.md` §8 |
 | every hour at :05 | Cloud routine `trig_011NfGaSrEEsr5B1xTHEBRAr` **Foundry inbox triage** (Sonnet, Gmail connector) | — | reads unread inbox mail, classifies, drafts customer replies (never sends) | `docs/INBOX.md`, `docs/ALERTS.md` (`needs owner` / listing changes) |
@@ -61,6 +61,14 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   `WAVE_BY_MINUTE`): 0 → 1, 15 → 2, 30 → 3, 45 → 4, 50 → 5; any other minute → all waves. A
   temporary trigger on one of those minutes forces just that wave (≥ 16 min lead; a deploy or
   the 06:30 self-heal removes it).
+- **GitHub's cron is best-effort**: overnight 2026-09-21/22 the hourly job fired 3 times in 14
+  hours and the 06:30 job not at all. Anything time-sensitive on GitHub Actions therefore also
+  triggers on `push` to `main` (routines push several times a day). Cloud routines and
+  Cloudflare crons fired on time every slot.
+- **Stale sandbox clone**: a routine's sandbox once started with local `main` at the repo's
+  initial commit and `git pull` refused to merge; the auto-mode classifier then blocked the
+  reset and the run stalled (2026-09-22 04:05 triage). Every routine prompt now says: do not
+  reset/force, `git switch -c work origin/main`, push `HEAD:main`.
 - Routines push exactly once, at the end, after the gates; a run killed by a usage limit leaves
   nothing behind (`docs/OPERATIONS.md`, "Interrupted runs").
 - Routine ids and prompts are managed with the RemoteTrigger API from the interactive session;

@@ -1,8 +1,13 @@
 name: gankdat metrics
 
+# GitHub's cron is best-effort (the 06:30 slot was skipped on 2026-09-22), so the job also runs
+# on pushes to main, where it only writes a row if today's is missing (METRICS_IF_MISSING).
 on:
   schedule:
     - cron: '30 6 * * *' # daily, before the 07:00 UTC ops routine
+  push:
+    branches: [main]
+    paths-ignore: ['ventures/gankdat/RESEARCH.md', 'docs/**']
   workflow_dispatch:
 
 permissions:
@@ -25,6 +30,7 @@ jobs:
       - name: Append today's numbers to RESEARCH.md
         run: node ventures/gankdat/scripts/metrics.mjs
         env:
+          METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: Commit
         run: |

@@ -2,9 +2,14 @@ name: owner notes
 
 # Hourly: the owner can leave notes for Claude by messaging the Telegram bot; they land in
 # docs/OWNER-NOTES.md, which every routine reads at the start of a run.
+# GitHub's cron is best-effort (3 of 14 hourly slots fired on 2026-09-21/22), so the job also
+# runs on every push to main — routines push several times a day, which keeps the lag short.
 on:
   schedule:
     - cron: '20 * * * *'
+  push:
+    branches: [main]
+    paths-ignore: ['docs/OWNER-NOTES.md']
   workflow_dispatch:
 
 permissions:

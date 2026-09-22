@@ -117,6 +117,26 @@ function mapEntries(entries: unknown[]): UkInsolvencyRecord[] {
 
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
+const FETCH_ATTEMPTS = 3;
+
+// The Gazette occasionally returns a truncated body on a 200 ("Unexpected end of JSON input",
+// 2026-09-22 wave 1); re-read the page rather than fail the refresh. Non-2xx and network
+// errors are not retried here (they fall back to fixtures as before).
+async function fetchJsonWithRetry(url: string): Promise<unknown> {
+  for (let attempt = 1; ; attempt += 1) {
+    const res = await fetch(url, {
+      headers: { 'user-agent': 'gankdat.com data refresh (info@gankdat.com)' },
+    });
+    if (!res.ok) throw new Error(`thegazette.co.uk responded ${res.status}`);
+    try {
+      return await res.json();
+    } catch (err) {
+      if (attempt >= FETCH_ATTEMPTS) throw err;
+      await sleep(PAGE_DELAY_MS);
+    }
+  }
+}
+
 async function fetchFromOrigin(): Promise<UkInsolvencyRecord[]> {
   const records: UkInsolvencyRecord[] = [];
   const pages = Math.ceil(MAX_RECORDS / PAGE_SIZE);
@@ -126,11 +146,7 @@ async function fetchFromOrigin(): Promise<UkInsolvencyRecord[]> {
     // No accept header: the Gazette's content negotiation 500s when one is
     // sent alongside the .json path (verified 2026-07-13); the extension
     // alone selects the format.
-    const res = await fetch(url, {
-      headers: { 'user-agent': 'gankdat.com data refresh (info@gankdat.com)' },
-    });
-    if (!res.ok) throw new Error(`thegazette.co.uk responded ${res.status}`);
-    const feed = feedSchema.parse(await res.json());
+    const feed = feedSchema.parse(await fetchJsonWithRetry(url));
     const entries =
       feed.entry === undefined || feed.entry === null
         ? []

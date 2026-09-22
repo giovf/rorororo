@@ -93,6 +93,10 @@ if (!/^## Metrics/m.test(md)) {
     '\n\n## Metrics\n\n| Date | Event | Users | Rating | Sales | Notes |\n|---|---|---|---|---|---|\n';
 }
 if (md.includes(`| ${date} | Daily numbers |`)) {
+  if (process.env.METRICS_IF_MISSING) {
+    console.log(`row for ${date} already present; METRICS_IF_MISSING set, leaving it`);
+    process.exit(0);
+  }
   md = md.replace(new RegExp(`^\\| ${date} \\| Daily numbers \\|.*$`, 'm'), row);
 } else {
   const i = md.search(/^## Metrics/m);
