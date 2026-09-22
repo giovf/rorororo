@@ -55,3 +55,11 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
 - 2026-09-22 handoff: file the Taskmaster row for `nhs-ods` retrospectively (no `task-master`
   CLI and the task-master-ai MCP timed out in the build container again).
 - 2026-09-22 done: Figma community resource uuid filled in (`b376009b-…`); the 07:00 metrics routine can now read listing comments. Stale sandbox clone stalled the 04:05 triage run — every routine prompt now carries a non-destructive fallback (`git switch -c work origin/main`). GitHub-scheduled jobs (owner notes, gankdat metrics) missed most of their slots overnight; both now also run on every push to `main` as a fallback.
+- 2026-09-22 handoff: **ReadFocus** tentatively approved on Firefox Add-ons (AMO), v0.1.0, live at
+  https://addons.mozilla.org/addon/readfocus-focus-reading-dyslex/ (Mozilla email 2026-09-22 22:25 UTC,
+  ref Addon#3075364 — automated screening only, a human reviewer may still ask for changes or pull it).
+  Update `ventures/readfocus/venture.json`/STORE.md with the AMO listing and note the new channel.
+- 2026-09-22 handoff: **Highlight Keep** tentatively approved on Firefox Add-ons (AMO), v0.1.0, live at
+  https://addons.mozilla.org/addon/highlight-keep-web-highlighter/ (Mozilla email 2026-09-22 22:40 UTC,
+  ref Addon#3075366 — automated screening only, a human reviewer may still ask for changes or pull it).
+  Update `ventures/highlight-keep/venture.json`/STORE.md with the AMO listing and note the new channel.
