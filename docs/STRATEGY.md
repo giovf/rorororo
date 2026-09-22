@@ -140,4 +140,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   triggered whenever a venture queue empties unless the venture is finished. Credit use is the
   only cost; interruption handling already covers cut-off runs. Implemented as `docs/pipeline/`
   + `npm run pipeline` (validated in `npm run check`) and rewired routines (SCHEDULERS.md).
+- 2026-09-22 owner: build, venture exchange and strategy review routines run on Claude Fable 5.1
+  (`claude-fable-5-1`); metrics, triage and the weekly report stay on Sonnet (read-and-summarise).
 
