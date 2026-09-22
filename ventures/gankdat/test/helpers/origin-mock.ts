@@ -17,6 +17,7 @@ const CQC_PAGE_ORIGIN = 'https://www.cqc.org.uk/about-us/';
 const CQC_FILE_ORIGIN = 'https://www.cqc.org.uk/system/files/';
 const CF_ORIGIN = 'https://www.contractsfinder.service.gov.uk/Published/Notices/OCDS/Search';
 const GIAS_ORIGIN = 'https://ea-edubase-api-prod.azurewebsites.net/edubase/downloads/public/';
+const ODS_ORIGIN = 'https://files.digital.nhs.uk/assets/ods/current/';
 
 /**
  * Tests run in the same isolate as the worker under test, so stubbing the
@@ -42,6 +43,8 @@ export function stubOrigins(handlers: {
   contractsFinder?: () => Response;
   /** Called with the dated GIAS URL so a test can 404 the days it wants. */
   gias?: (url: string) => Response;
+  /** Called with the ODS file URL (…/current/<file>.zip) so a test can serve one file per organisation type. */
+  nhsOds?: (url: string) => Response;
 }): ReturnType<typeof vi.fn> {
   const mock = vi.fn((input: RequestInfo | URL) => {
     const url = String(input instanceof Request ? input.url : input);
@@ -95,6 +98,9 @@ export function stubOrigins(handlers: {
     }
     if (url.startsWith(GIAS_ORIGIN) && handlers.gias) {
       return Promise.resolve(handlers.gias(url));
+    }
+    if (url.startsWith(ODS_ORIGIN) && handlers.nhsOds) {
+      return Promise.resolve(handlers.nhsOds(url));
     }
     throw new Error(`unexpected outbound fetch in test: ${url}`);
   });

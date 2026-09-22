@@ -60,7 +60,8 @@ indexing of the stats pages, (5) then the next dataset. Research done 2026-09-20
 **Contracts Finder awarded contracts + supplier index** first (open OCDS API, OGL, strongest paid
 demand: Stotles £50–475/mo, Tussell, 8+ Apify actors), then GIAS + Ofsted outcomes, then NHS ODS.
 Contracts Finder shipped 2026-09-21 (`uk-contract-awards`) and GIAS + Ofsted shipped 2026-09-21
-(`uk-schools`); **NHS ODS is the next dataset**, behind the distribution queue above.
+(`uk-schools`); NHS ODS shipped 2026-09-22 (`nhs-ods`) — the research-B queue is built out, so the
+next dataset comes from the exchange or new research, behind the distribution queue above.
 Rejected: Land Registry CCOD/OCOD (licence forbids standalone products), HMRC VAT check, SIA.
 Shipped 2026-09-21 (owner idea, reshaped): **"businesses without a website" lead feed** —
 `website_present=false` on uk-care-locations, uk-charities and uk-schools (generic
@@ -143,3 +144,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-09-22 owner: build, venture exchange and strategy review routines run on Claude Fable 5.1
   (`claude-fable-5-1`); metrics, triage and the weekly report stay on Sonnet (read-and-summarise).
 
+- 2026-09-22 build (17:00 run): shipped `nhs-ods` — the NHS Organisation Data Service register
+  (GP practices, trusts and sites, pharmacies, dental practices, independent providers; #3 and last
+  of the research-B queue, score 6, the top buildable item in `docs/pipeline/`; the two higher
+  distribution items stay blocked on Apify support and a Search Console click). Six nightly ODS
+  ZIPs through one positional parser, own refresh wave 6 (05:55), v0.14.0, Apify actor. Written
+  without live-file access again (no egress to files.digital.nhs.uk) — verification is a handoff.
+  Next buildable item: the change-feed upsell (score 5).

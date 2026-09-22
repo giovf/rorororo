@@ -45,6 +45,14 @@ is best-effort enrichment over the Ofsted columns GIAS itself carries, so a move
 costs a field, not the dataset; head-teacher names and telephone dropped, governors extract never
 ingested; lead-gen bundle; NICHE-RESEARCH-2026-09-B §1). Its size (~62 MB daily) added refresh
 **wave 5** (05:50) — waves stay one-trigger-one-budget under the 15-minute Cron Trigger limit.
+And the NHS organisation register (`nhs-ods`, shipped 2026-09-22 — NHS England Organisation Data
+Service nightly ZIPs, six organisation files (trusts, trust sites, GP practices, pharmacies, dental
+practices, independent providers) through one positional parser for ODS's standard 27-column
+layout, D1, ~45k organisations keyed by ODS code; every file is required so a moved file fails the
+load loudly instead of dropping a type into the change feed; telephone dropped, practitioner files
+never ingested; healthcare lead-gen + KYB bundle with uk-care-locations; NICHE-RESEARCH-2026-09-B
+§2). Own refresh **wave 6** (05:55), so an ingest written without live-file access (build container
+has no egress to files.digital.nhs.uk) cannot take another dataset down with it.
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo
@@ -97,8 +105,9 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   so registries/directories can index tools (per-IP, in-isolate limiter —
   zero KV ops); `tools/call` needs a key; bearer 401s carry
   `WWW-Authenticate`. KV rate limiters fail open on KV errors.
-- **Refresh**: four staggered Cron Triggers (05:00 KV sources, 05:15 exclusions + sponsors,
-  05:30 charities + care locations, 05:45 uk-food-hygiene; `store.ts waveForCron`) pull sources, write `refresh_log`; responses
+- **Refresh**: six staggered Cron Triggers (05:00 KV sources, 05:15 exclusions + sponsors,
+  05:30 charities + care locations, 05:45 uk-food-hygiene, 05:50 uk-schools, 05:55 nhs-ods;
+  `store.ts waveForCron`) pull sources, write `refresh_log`; responses
   expose `last_refreshed_at`. D1 refreshes diff generations by `DataSource.idOf` into
   `source_changes` (90 d) — served at `/v1/changes/:source` and the MCP `get_changes` tool.
 - **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string

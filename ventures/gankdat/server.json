@@ -2,8 +2,8 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "com.gankdat/gankdat",
   "title": "gankdat",
-  "description": "UK & EU tenders and awards, planning, companies, charities, schools, care, sponsors, sanctions.",
-  "version": "0.13.0",
+  "description": "UK & EU tenders and awards, planning, companies, charities, schools, NHS, care, sponsors, sanctions.",
+  "version": "0.14.0",
   "websiteUrl": "https://gankdat.com",
   "icons": [
     {

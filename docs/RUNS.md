@@ -14,3 +14,9 @@ Routines: build, exchange, review, report; interactive sessions too.
 - 2026-09-22 15:10 | interactive | Pipeline model + npm run pipeline validator added to the root check (6 tests)
 - 2026-09-22 15:10 | interactive | GitHub cron missed most slots overnight; owner-notes and metrics jobs now also run on push
 - 2026-09-22 15:10 | interactive | Figma comment-feed id filled in; Gazette truncated-body retry; routine clone fallback
+- 2026-09-22 18:30 | build | nhs-ods dataset: NHS ODS register (GP practices, trusts+sites, pharmacies, dentists, IHPs), ~45k rows
+- 2026-09-22 18:30 | build | nhs-ods tests: 7 specs (6 ZIP files, telephone dropped, loud failure keeps previous generation)
+- 2026-09-22 18:30 | build | Refresh wave 6 added at 05:55 UTC so the unverified NHS ingest cannot stall another dataset
+- 2026-09-22 18:30 | build | Landing card, terms row, sitemap and stats page for nhs-ods; registry bumped to v0.14.0
+- 2026-09-22 18:30 | build | Apify actor nhs-ods (NHS Organisations Directory) added; CI pushes and prices it
+- 2026-09-22 18:30 | build | Handoff: verify the live ODS file names tomorrow (build container has no egress to NHS hosts)

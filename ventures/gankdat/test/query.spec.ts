@@ -33,6 +33,7 @@ describe('registry', () => {
       'uk-charities',
       'uk-care-locations',
       'uk-schools',
+      'nhs-ods',
     ]);
   });
 });

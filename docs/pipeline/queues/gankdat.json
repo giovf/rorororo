@@ -7,12 +7,13 @@
     {
       "id": "nhs-ods",
       "title": "NHS ODS organisation register dataset (GP practices, trusts, pharmacies)",
-      "why": "#3 in NICHE-RESEARCH-2026-09-B: healthtech sales and KYB teams buy this; open licence; pairs with uk-care-locations.",
+      "why": "#3 in NICHE-RESEARCH-2026-09-B: healthtech sales and KYB teams buy this; open licence; pairs with uk-care-locations. Built 2026-09-22 (wave 6, v0.14.0); live ingest unverified from the build container (handoff in ALERTS.md).",
       "effort_days": 1,
       "proof": "queries + paywall hits on the dataset in 30 days (Analytics Engine)",
       "score": 6,
-      "status": "todo",
-      "added": "2026-09-20"
+      "status": "done",
+      "added": "2026-09-20",
+      "done_at": "2026-09-22"
     },
     {
       "id": "change-feed-upsell",

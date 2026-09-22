@@ -44,4 +44,14 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
 - 2026-09-22 done: Variables Toolkit launch recorded by the daily build — approval verified against Figma's own notification email (2026-09-21 20:29 UTC), `venture.json` → `launched`, STORE.md → live with the listing URL, ARCHITECTURE/LEDGER notes updated, the apps.gankdat.com product card now links the listing, and day-1/7/30 measurement is set out in `ventures/variables-toolkit/RESEARCH.md` §7. The 07:00 metrics routine reads STORE.md, so real Figma numbers start landing from tomorrow.
 - 2026-09-22 owner: **Variables Toolkit is live on Figma Community** — https://www.figma.com/community/plugin/1682711656065145288. The portfolio's first listing on a shelf that takes payment. One thing only you can check (~2 min): open Figma → Settings → Community/Creator payouts and confirm the **Stripe payout is connected**. Without it Figma can sell the $12 unlock but cannot pay the money out. Nothing else needed — no spend, no account creation.
 - 2026-09-22 handoff: fill in the Figma **community resource uuid** in `ventures/variables-toolkit/STORE.md` (needed to read listing comments) — the daily build container has no egress to `figma.com` (proxy 403). One fetch of `https://www.figma.com/api/search/resources?query=Variables%20Toolkit&resource_type=plugin` from a session with network gets it.
+- 2026-09-22 handoff: verify the new `nhs-ods` ingest against the real files — the build container
+  has no egress to `files.digital.nhs.uk` (proxy blocked), so the six file names
+  (`etr`, `ets`, `epraccur`, `edispensary`, `egdpprac`, `ephp` under
+  `/assets/ods/current/`) and the standard 27-column positional layout in
+  `src/sources/nhs-ods.ts` come from the ODS file specifications, not a live download. Wave 6
+  runs at 05:55; check tomorrow's `refresh_log` / metrics row (~45k rows expected, telephone
+  column absent, `status` populated for practices and pharmacies) and fix any file name that
+  404s. A reshaped file fails loudly (`ODS <file> format changed`).
+- 2026-09-22 handoff: file the Taskmaster row for `nhs-ods` retrospectively (no `task-master`
+  CLI and the task-master-ai MCP timed out in the build container again).
 - 2026-09-22 done: Figma community resource uuid filled in (`b376009b-…`); the 07:00 metrics routine can now read listing comments. Stale sandbox clone stalled the 04:05 triage run — every routine prompt now carries a non-destructive fallback (`git switch -c work origin/main`). GitHub-scheduled jobs (owner notes, gankdat metrics) missed most of their slots overnight; both now also run on every push to `main` as a fallback.
