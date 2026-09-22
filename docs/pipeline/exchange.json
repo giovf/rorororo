@@ -1,0 +1,43 @@
+{
+  "ideas": [
+    {
+      "id": "no-website-lead-feed",
+      "title": "Businesses without a website — lead feed for web agencies",
+      "why": "Owner's outreach idea reshaped into data; Apify already sells scraped versions at US$1–5/1k rows.",
+      "status": "promoted",
+      "venture": "gankdat",
+      "added": "2026-09-21"
+    },
+    {
+      "id": "digital-services-marketplace",
+      "title": "Marketplace where people request digital services on top of the APIs",
+      "why": "Two-sided cold start with no marketing budget and human ops (vetting, disputes, payouts); does not use the data edge yet.",
+      "status": "parked",
+      "trigger": "≈1,000 monthly API/stats users, or the no-website lead feed selling to agencies who ask for fulfilment",
+      "added": "2026-09-21"
+    },
+    {
+      "id": "outreach-service",
+      "title": "Contact businesses lacking a website by email / AI phone and sell them sites",
+      "why": "Automated calls need prior consent under PECR; cold email to sole traders needs consent; delivery is per-customer human work.",
+      "status": "declined",
+      "added": "2026-09-21"
+    },
+    {
+      "id": "algorithmic-trading",
+      "title": "Use portfolio revenue to fund algorithmic trading",
+      "why": "Owner's stated end goal; fees exceed edge at £100 capital, so it waits for banked revenue.",
+      "status": "parked",
+      "trigger": "£1,000 of banked net revenue and a written risk plan reviewed by the owner",
+      "added": "2026-09-20"
+    },
+    {
+      "id": "limited-company",
+      "title": "Form a UK limited company to unlock Datarade / AWS Data Exchange listings",
+      "why": "Both marketplaces refuse sole traders; formation ≈ £50 plus annual filing burden on the owner.",
+      "status": "parked",
+      "trigger": "data line passes £300 MRR",
+      "added": "2026-09-21"
+    }
+  ]
+}

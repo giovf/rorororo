@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
-  "description": "Foundry \u2014 a portfolio of small, self-funding digital products built and operated by Claude Code.",
+  "description": "Foundry — a portfolio of small, self-funding digital products built and operated by Claude Code.",
   "license": "UNLICENSED",
   "engines": {
     "node": ">=22"
@@ -20,13 +20,14 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run typecheck && npm run portfolio && npm run ledger && npm run lint && npm run format:check && npm run test && npm run check -w @foundry/gankdat",
+    "check": "npm run typecheck && npm run portfolio && npm run ledger && npm run pipeline && npm run lint && npm run format:check && npm run test && npm run check -w @foundry/gankdat",
     "portfolio": "node --disable-warning=ExperimentalWarning scripts/portfolio.ts",
     "ledger": "node --disable-warning=ExperimentalWarning scripts/ledger-check.ts",
     "licensing:keygen": "node --disable-warning=ExperimentalWarning scripts/licensing-keygen.ts",
     "ops": "node --disable-warning=ExperimentalWarning scripts/ops-dashboard.ts",
     "e2e": "npm run e2e -w @foundry/read-focus && npm run e2e -w @foundry/highlight-keep",
-    "cws": "node --disable-warning=ExperimentalWarning --env-file=.env scripts/cws-publish.ts"
+    "cws": "node --disable-warning=ExperimentalWarning --env-file=.env scripts/cws-publish.ts",
+    "pipeline": "node --disable-warning=ExperimentalWarning scripts/pipeline.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

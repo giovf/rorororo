@@ -49,6 +49,9 @@ live, the data line is re-positioned (see kill criteria) rather than extended.
 
 ## 5. Prioritisation rule (used before starting anything)
 
+**The live queue is `docs/pipeline/` (one JSON queue per venture plus the idea exchange);
+`npm run pipeline` prints the next item.** The text below is the rationale and history.
+
 Score = (evidence of paying demand × reach of the channel) ÷ (build days + owner minutes).
 Build only what scores above the best distribution task still undone. **Distribution beats
 new datasets** until the funnel shows conversion: as of today the queue is (1) publish the
@@ -131,3 +134,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   metrics routine reads STORE.md, so leaving it stale meant no purchase data at all. Remaining
   Figma work needs network the build container does not have (figma.com 403): the resource uuid is
   a handoff, and the creator payout is the one owner-only step.
+- 2026-09-22 owner: build twice a day (09:30, 21:30), strategy review weekly (Sundays), and a
+  hierarchy of work queues — an idea exchange feeding one queue per venture, a weekly exchange
+  routine (Wednesdays) that opens a new venture queue or reopens/extends a live one, research
+  triggered whenever a venture queue empties unless the venture is finished. Credit use is the
+  only cost; interruption handling already covers cut-off runs. Implemented as `docs/pipeline/`
+  + `npm run pipeline` (validated in `npm run check`) and rewired routines (SCHEDULERS.md).
+

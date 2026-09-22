@@ -1,0 +1,50 @@
+{
+  "venture": "gankdat",
+  "status": "open",
+  "needs_research": false,
+  "updated": "2026-09-22",
+  "items": [
+    {
+      "id": "nhs-ods",
+      "title": "NHS ODS organisation register dataset (GP practices, trusts, pharmacies)",
+      "why": "#3 in NICHE-RESEARCH-2026-09-B: healthtech sales and KYB teams buy this; open licence; pairs with uk-care-locations.",
+      "effort_days": 1,
+      "proof": "queries + paywall hits on the dataset in 30 days (Analytics Engine)",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-09-20"
+    },
+    {
+      "id": "change-feed-upsell",
+      "title": "Surface the change feeds as a product: /stats deltas, llms.txt section, pricing page line",
+      "why": "No competitor offers official-source delta feeds; nothing on the site sells them today.",
+      "effort_days": 0.5,
+      "proof": "get_changes / /v1/changes calls per week ≥ 50 (STRATEGY §4)",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-09-22"
+    },
+    {
+      "id": "apify-remaining-actors-public",
+      "title": "Re-run the publish workflow once Apify lifts the new-publisher limit",
+      "why": "13 priced actors, 1 public; the Store is the shelf with existing buyers.",
+      "effort_days": 0.1,
+      "proof": "13 of 13 actors public (apify/README.md)",
+      "score": 9,
+      "status": "blocked",
+      "blocked_on": "Apify support reply to the limit-lift request (owner mailbox)",
+      "added": "2026-09-21"
+    },
+    {
+      "id": "search-console-stats-indexing",
+      "title": "Submit the /stats pages sitemap in Search Console and check indexing",
+      "why": "Cite-bait pages only earn if indexed.",
+      "effort_days": 0.1,
+      "proof": "≥ 10 stats pages indexed (Search Console)",
+      "score": 4,
+      "status": "blocked",
+      "blocked_on": "owner click in Search Console (identity)",
+      "added": "2026-09-20"
+    }
+  ]
+}

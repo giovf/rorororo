@@ -1,0 +1,18 @@
+{
+  "venture": "variables-toolkit",
+  "status": "open",
+  "needs_research": false,
+  "updated": "2026-09-22",
+  "items": [
+    {
+      "id": "day-7-review",
+      "title": "Day-7 review of the Figma listing: installs, likes, comments; fix any reported bug",
+      "why": "First listing on a paying shelf; early comments decide the ranking.",
+      "effort_days": 0.3,
+      "proof": "RESEARCH.md §7 day-7 row filled; no unanswered comment",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-09-22"
+    }
+  ]
+}

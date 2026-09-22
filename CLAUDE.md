@@ -56,6 +56,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   needs them, never after.
 - Every scheduled job (cloud routines, GitHub Actions, Worker crons) is listed in
   `docs/SCHEDULERS.md`; update it in the same commit as any scheduler change.
+- Work queue of record: `docs/pipeline/` (exchange + one queue per venture, see its README;
+  `npm run pipeline` validates and prints the next item). Build the next item, mark it in the
+  same commit; an emptied queue gets `needs_research: true`.
 - Plan of record: `docs/STRATEGY.md` (thesis, 90-day targets, prioritisation rule, kill
   criteria). Research before build, distribution before new features, monthly review
   (`docs/reviews/`). Rewrite STRATEGY.md when the facts change; log decisions in its §8.

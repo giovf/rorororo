@@ -1,0 +1,19 @@
+{
+  "venture": "highlight-keep",
+  "status": "open",
+  "needs_research": false,
+  "updated": "2026-09-22",
+  "items": [
+    {
+      "id": "post-approval-links",
+      "title": "On store approval: switch listing links to apps.gankdat.com, close action 013 (repo private)",
+      "why": "Listing URLs currently point at the github.io copy.",
+      "effort_days": 0.2,
+      "proof": "STORE.md live URL recorded; daily metrics rows start",
+      "score": 5,
+      "status": "blocked",
+      "blocked_on": "Chrome Web Store / Firefox AMO review",
+      "added": "2026-09-22"
+    }
+  ]
+}

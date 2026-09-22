@@ -27,15 +27,16 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 | every hour at :20 **and on every push to `main`** | GitHub Actions `owner notes` (`.github/workflows/owner-notes.yml`) | — | `scripts/owner-notes.mjs`: pulls messages the owner sent to the Telegram bot | appends to `docs/OWNER-NOTES.md` (read by every routine; the build routine answers in place) |
 | 06:30 **and on pushes to `main`** (push runs only fill a missing day) | GitHub Actions `gankdat metrics` (`.github/workflows/gankdat-metrics.yml`) | — | `ventures/gankdat/scripts/schedules.mjs reset` (self-heal cron triggers), then `scripts/metrics.mjs` (D1 + Analytics Engine numbers) | commits a `Daily numbers` row to `ventures/gankdat/RESEARCH.md` |
 | 07:00 | Cloud routine `trig_01JBrWDAZLeWEAhSBBnA9g8K` **Foundry daily metrics** (Sonnet) | — | reads each `STORE.md`, fetches public store stats (Figma, Chrome, Firefox) | `Daily check` rows in each venture's `RESEARCH.md`; `docs/ALERTS.md` on bad reviews |
-| 09:30 | Cloud routine `trig_01P9WT733fg3qnuJeKUHE8fx` **Foundry daily build** (Opus) | — | heals `main` if red, then builds ONE item by `docs/STRATEGY.md` §5 (alert fix, next dataset, research, distribution) behind `npm run check` | one commit to `main`; `handoff:` lines in `docs/ALERTS.md`; a line in `STRATEGY.md` §8 |
+| 09:30 **and 21:30** | Cloud routine `trig_01P9WT733fg3qnuJeKUHE8fx` **Foundry daily build** (Opus, twice daily since 2026-09-22) | — | heals `main` if red, then takes `npm run pipeline next` (the highest-scoring item across open venture queues, `docs/pipeline/`) and builds it behind `npm run check`; if any open queue needs research it researches that venture instead (≥ 3 scored items or `finished`) | one commit to `main` including the queue change; `handoff:` lines in `docs/ALERTS.md`; a line in `STRATEGY.md` §8 |
 | every hour at :05 | Cloud routine `trig_011NfGaSrEEsr5B1xTHEBRAr` **Foundry inbox triage** (Sonnet, Gmail connector) | — | reads unread inbox mail, classifies, drafts customer replies (never sends) | `docs/INBOX.md`, `docs/ALERTS.md` (`needs owner` / listing changes) |
 
-## Weekly and monthly
+## Weekly
 
 | When (UTC) | Kind | Name / id | Invokes | Writes |
 | --- | --- | --- | --- | --- |
+| Sunday 08:00 | Cloud routine `trig_01Mv7z5Ae9gEGq9zBnrfDH6R` **Foundry strategy review** (Sonnet; weekly since 2026-09-22, was monthly) | — | scores every venture against `docs/STRATEGY.md` (targets, kill criteria), market signals, next three moves; may mark a venture queue `finished` or re-park/promote exchange ideas | `docs/reviews/<year>-W<week>.md`; edits under `docs/pipeline/` |
 | Monday 07:30 | Cloud routine `trig_01PjxdBAcvYSAT32fCyzcvQg` **Foundry weekly report** (Sonnet) | — | ledger, ventures, metrics deltas, alerts, open actions, git activity | `docs/reports/<year>-W<week>.md` |
-| 1st of month 08:00 | Cloud routine `trig_01Mv7z5Ae9gEGq9zBnrfDH6R` **Foundry monthly strategy review** (Sonnet) | — | scores every venture against `docs/STRATEGY.md` (targets, kill criteria), market signals, next three moves | `docs/reviews/<year>-<month>.md`; Claude rewrites `STRATEGY.md` after it |
+| Wednesday 08:00 | Cloud routine `trig_01CaSyBqwyKVL6NiPqPzhM8L` **Foundry venture exchange** (Opus; created 2026-09-22) | — | market research over `docs/pipeline/exchange.json` and fresh candidates; opens a NEW venture queue (folder, `venture.json` idea, `RESEARCH.md`, scored items) or reopens/extends an existing one when enhancing scores higher | new files under `ventures/<slug>/` and `docs/pipeline/`; `STRATEGY.md` §8 line |
 
 ## Event-driven (not on a clock)
 
