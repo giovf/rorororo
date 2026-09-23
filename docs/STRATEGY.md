@@ -151,3 +151,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   ZIPs through one positional parser, own refresh wave 6 (05:55), v0.14.0, Apify actor. Written
   without live-file access again (no egress to files.digital.nhs.uk) — verification is a handoff.
   Next buildable item: the change-feed upsell (score 5).
+- 2026-09-23 exchange: **gankdat enhancement — UK Trade Marks Journal dataset + change feed** (score
+  8: evidence 4 × reach 3 ÷ 1.5 days, 0 owner minutes; watch services charge £180–320/mark/yr to
+  scan the same weekly OGL XML). Gambling Commission register queued second (6), a per-class
+  trade-mark watch surface third (4). Parked: Variables Toolkit v0.2 relink (7.2 — wait for the
+  day-7 read), a second Figma plugin. Declined: Shopify app, Stripe Apps, extension #3, FCA
+  register (licence). Comparison: `docs/exchange/2026-W39.md`.

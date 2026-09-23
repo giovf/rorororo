@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-22",
+  "updated": "2026-09-23",
   "items": [
     {
       "id": "nhs-ods",
@@ -46,6 +46,36 @@
       "status": "blocked",
       "blocked_on": "owner click in Search Console (identity)",
       "added": "2026-09-20"
+    },
+    {
+      "id": "uk-trademark-journal",
+      "title": "UK Trade Marks Journal dataset: weekly accepted applications with classes, applicant and opposition deadline (+ stats page, Apify actor)",
+      "why": "Exchange 2026-W39 winner. Watch services charge £180–320/mark/yr to scan this journal; Apify UK trademark actor $0.05/record. Weekly OGL XML (~15 MB zip) from ipo.gov.uk/t-tmj.htm; rolling 52 issues; own Saturday wave. Schema undocumented and ipo.gov.uk unreachable from the routine container — write from a sample, hand off verification. Organisation-level fields only.",
+      "effort_days": 1.5,
+      "proof": "queries + paywall hits + get_changes calls on the dataset in 30 days (Analytics Engine); Apify paid runs once actors unblock",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "uk-gambling-operators",
+      "title": "Gambling Commission operator register dataset (operators, premises, regulatory actions)",
+      "why": "Exchange 2026-W39 runner-up. 2,642 operators, daily CSV/ZIP, no login; Apify actors price it from $8/1k rows; KYB/payments/affiliate-compliance buyers. Confirm the OGL statement on the data.gov.uk \"Operator licence register\" record before publishing (mark blocked if it cannot be read).",
+      "effort_days": 0.5,
+      "proof": "queries + paywall hits on the dataset in 30 days (Analytics Engine)",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "trademark-watch-surface",
+      "title": "Trade-mark watch on the change feed: per-Nice-class weekly stats pages and get_changes filters (class, keyword, applicant) for uk-trademark-journal",
+      "why": "Turns the journal dataset into the product the watch services sell (monthly similar-mark reports); cite-bait pages target \"trade mark applications this week class N\" searches. Needs uk-trademark-journal live.",
+      "effort_days": 1,
+      "proof": "≥ 20 get_changes calls/week filtered on the dataset; stats pages indexed",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-09-23"
     }
   ]
 }

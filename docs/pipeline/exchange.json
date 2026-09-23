@@ -38,6 +38,66 @@
       "status": "parked",
       "trigger": "data line passes £300 MRR",
       "added": "2026-09-21"
+    },
+    {
+      "id": "uk-trademark-journal",
+      "title": "UK Trade Marks Journal — weekly accepted applications as a dataset + change feed (trade-mark watch)",
+      "why": "Watch services charge £180–320/mark/yr to scan this weekly OGL XML; Apify sells per-search scrapes at $0.05/record; nobody serves the journal as a queryable feed with opposition deadlines. Exchange 2026-W39 winner, score 8.",
+      "status": "promoted",
+      "venture": "gankdat",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "uk-gambling-operators",
+      "title": "Gambling Commission operator register (operators, premises, regulatory actions)",
+      "why": "2,642 operators, daily CSV; two Apify actors price it from $8/1k rows; KYB/payments buyers. Half-day build; OGL statement to confirm on the data.gov.uk record before publishing. Exchange 2026-W39 runner-up, score 6.",
+      "status": "promoted",
+      "venture": "gankdat",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "variables-toolkit-v0-2-relink",
+      "title": "Variables Toolkit v0.2: relink local/broken variables to library variables by name",
+      "why": "Clearest unmet ask in rival comments (Variable Utilities $17×181, Design System Organizer); scores 7.2 but each release costs an owner publish + Figma re-review and the day-7 read is not in yet.",
+      "status": "parked",
+      "trigger": "day-7 review (2026-09-28) shows ≥ 100 installs, or any listing comment asks for library/relink behaviour",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "figma-variables-diff",
+      "title": "Second Figma plugin: variables diff / compare across files",
+      "why": "Sub-niche with no paid plugin in the 2026-09-17 census, but no growth evidence and no sales data from our first listing yet.",
+      "status": "parked",
+      "trigger": "Variables Toolkit day-30 (2026-10-21) shows ≥ 1 purchase or ≥ 500 installs",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "shopify-app",
+      "title": "Shopify App Store app",
+      "why": "Partner registration $19 exceeds the £10 launch cap, the Partner account carries the owner identity, and merchants expect per-install support (human hours per sale).",
+      "status": "declined",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "stripe-app-marketplace",
+      "title": "Stripe App Marketplace app",
+      "why": "One app per activated account with the owner name/email on the listing, review needs a test plan and credentials, and no portfolio product fits the surface.",
+      "status": "declined",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "browser-extension-3",
+      "title": "Third browser extension",
+      "why": "STRATEGY §8 2026-09-20: no more consumer apps until one sells; ReadFocus and Highlight Keep are days from their first store data.",
+      "status": "declined",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "fca-register",
+      "title": "FCA Financial Services Register dataset",
+      "why": "Register API terms forbid sharing or re-selling the data; bulk access is the paid Register Extract Service. Standalone product would breach the licence (same category as CCOD/OCOD).",
+      "status": "declined",
+      "added": "2026-09-23"
     }
   ]
 }

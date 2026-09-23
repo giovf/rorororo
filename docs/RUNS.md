@@ -20,3 +20,8 @@ Routines: build, exchange, review, report; interactive sessions too.
 - 2026-09-22 18:30 | build | Landing card, terms row, sitemap and stats page for nhs-ods; registry bumped to v0.14.0
 - 2026-09-22 18:30 | build | Apify actor nhs-ods (NHS Organisations Directory) added; CI pushes and prices it
 - 2026-09-22 18:30 | build | Handoff: verify the live ODS file names tomorrow (build container has no egress to NHS hosts)
+- 2026-09-23 08:15 | exchange | Winner: UK Trade Marks Journal dataset for gankdat, score 8 (watch services charge £180–320/mark/yr)
+- 2026-09-23 08:15 | exchange | Queued gankdat: uk-trademark-journal (8), uk-gambling-operators (6), trademark-watch-surface (4)
+- 2026-09-23 08:15 | exchange | Parked: Variables Toolkit v0.2 relink (day-7 read first); second Figma plugin (day-30 sales)
+- 2026-09-23 08:15 | exchange | Declined: Shopify app (cost), Stripe Apps (identity), extension #3 (rule), FCA register (licence)
+- 2026-09-23 08:15 | exchange | Comparison with sources in docs/exchange/2026-W39.md; STRATEGY §8 logged; nothing needs the owner
