@@ -63,3 +63,8 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   https://addons.mozilla.org/addon/highlight-keep-web-highlighter/ (Mozilla email 2026-09-22 22:40 UTC,
   ref Addon#3075366 — automated screening only, a human reviewer may still ask for changes or pull it).
   Update `ventures/highlight-keep/venture.json`/STORE.md with the AMO listing and note the new channel.
+- 2026-09-23 handoff: **gankdat** is now listed in the community directory
+  `punkpeye/awesome-remote-mcp-servers` — PR #460 merged 2026-09-23 02:21 UTC. Add the
+  listing to `ventures/gankdat/STORE.md` distribution channels. The merge-bot comment also
+  asks for a Discord username for a "server-author flair" — optional, no action taken (not
+  an owner-identity action, just a nice-to-have; skip unless the owner wants it).
