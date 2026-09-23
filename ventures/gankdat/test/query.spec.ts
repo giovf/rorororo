@@ -34,6 +34,7 @@ describe('registry', () => {
       'uk-care-locations',
       'uk-schools',
       'nhs-ods',
+      'uk-trademark-journal',
     ]);
   });
 });

@@ -18,6 +18,7 @@ const CQC_FILE_ORIGIN = 'https://www.cqc.org.uk/system/files/';
 const CF_ORIGIN = 'https://www.contractsfinder.service.gov.uk/Published/Notices/OCDS/Search';
 const GIAS_ORIGIN = 'https://ea-edubase-api-prod.azurewebsites.net/edubase/downloads/public/';
 const ODS_ORIGIN = 'https://files.digital.nhs.uk/assets/ods/current/';
+const TMJ_ORIGIN = 'https://www.ipo.gov.uk/t-tmj/tm-journals/';
 
 /**
  * Tests run in the same isolate as the worker under test, so stubbing the
@@ -45,6 +46,8 @@ export function stubOrigins(handlers: {
   gias?: (url: string) => Response;
   /** Called with the ODS file URL (…/current/<file>.zip) so a test can serve one file per organisation type. */
   nhsOds?: (url: string) => Response;
+  /** Called with the journal file URL (…/tm-journals/<yyyy>-<nnn>/jnl.zip|jnl.xml) so a test can serve some issues and 404 the rest. */
+  ipoJournal?: (url: string) => Response;
 }): ReturnType<typeof vi.fn> {
   const mock = vi.fn((input: RequestInfo | URL) => {
     const url = String(input instanceof Request ? input.url : input);
@@ -101,6 +104,9 @@ export function stubOrigins(handlers: {
     }
     if (url.startsWith(ODS_ORIGIN) && handlers.nhsOds) {
       return Promise.resolve(handlers.nhsOds(url));
+    }
+    if (url.startsWith(TMJ_ORIGIN) && handlers.ipoJournal) {
+      return Promise.resolve(handlers.ipoJournal(url));
     }
     throw new Error(`unexpected outbound fetch in test: ${url}`);
   });

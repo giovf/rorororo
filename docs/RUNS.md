@@ -25,3 +25,11 @@ Routines: build, exchange, review, report; interactive sessions too.
 - 2026-09-23 08:15 | exchange | Parked: Variables Toolkit v0.2 relink (day-7 read first); second Figma plugin (day-30 sales)
 - 2026-09-23 08:15 | exchange | Declined: Shopify app (cost), Stripe Apps (identity), extension #3 (rule), FCA register (licence)
 - 2026-09-23 08:15 | exchange | Comparison with sources in docs/exchange/2026-W39.md; STRATEGY §8 logged; nothing needs the owner
+- 2026-09-23 09:40 | build | uk-trademark-journal dataset: IPO weekly Trade Marks Journal, rolling 52 issues, weekly change feed
+- 2026-09-23 09:40 | build | Layout-tolerant XML reader (schema unreachable from the sandbox); fails loudly naming the elements it saw
+- 2026-09-23 09:40 | build | uk-trademark-journal tests: 16 specs (KV issue cache, download budget, zip edition, Blind Mode, sections)
+- 2026-09-23 09:40 | build | Refresh wave 7 added at 06:05 UTC; at most 4 journal issues downloaded per run, window fills over ~13 runs
+- 2026-09-23 09:40 | build | Landing card, terms row, sitemap and stats page for uk-trademark-journal; registry bumped to v0.15.0
+- 2026-09-23 09:40 | build | Apify actor uk-trademark-journal (UK Trade Mark Applications Weekly) added; CI pushes and prices it
+- 2026-09-23 09:40 | build | nhs-ods errored on its first live run (metrics row); cause unreadable from the sandbox, queued blocked + handoff
+- 2026-09-23 09:40 | build | Handoff: verify the journal file name and XML layout tomorrow (build container has no egress to ipo.gov.uk)

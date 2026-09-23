@@ -14,10 +14,10 @@ export interface RefreshPolicy {
    * the daily refresh is split across staggered triggers: wave 1 = KV snapshot
    * sources (05:00), wave 2 = smaller D1 sources (05:15), wave 3 = charities +
    * care locations (05:30), wave 4 = uk-food-hygiene (05:45), wave 5 =
-   * uk-schools (05:50), wave 6 = nhs-ods (05:55). Defaults: kv → 1, d1 → 2. Budget each wave at well
-   * under 15 minutes on a slow D1 day.
+   * uk-schools (05:50), wave 6 = nhs-ods (05:55), wave 7 = uk-trademark-journal (06:05).
+   * Defaults: kv → 1, d1 → 2. Budget each wave at well under 15 minutes on a slow D1 day.
    */
-  wave?: 1 | 2 | 3 | 4 | 5 | 6;
+  wave?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
 }
 
 /**

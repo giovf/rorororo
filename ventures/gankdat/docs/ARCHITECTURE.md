@@ -53,6 +53,18 @@ load loudly instead of dropping a type into the change feed; telephone dropped, 
 never ingested; healthcare lead-gen + KYB bundle with uk-care-locations; NICHE-RESEARCH-2026-09-B
 §2). Own refresh **wave 6** (05:55), so an ingest written without live-file access (build container
 has no egress to files.digital.nhs.uk) cannot take another dataset down with it.
+And the UK Trade Marks Journal (`uk-trademark-journal`, shipped 2026-09-23 — the IPO's weekly
+XML edition of applications accepted and published for opposition, UK filings and international
+registrations designating the UK; exchange 2026-W39 winner: watch services charge £180–320 per
+mark per year to scan the same journal). Rolling window of the newest 52 weekly issues in D1
+keyed by application number, so `/v1/changes` is each week's new publications; each issue is
+parsed once into a KV cache (`tmj:issue:<yyyy-nnn>`) and a refresh downloads at most four new
+issues, the window filling over the first runs. The journal schema is undocumented and the origin
+unreachable from the build container, so the reader is layout-tolerant (every assumption in one
+`LAYOUT` table; an issue with no recognisable application fails the refresh loudly, naming the
+element names it saw). Organisation-level only: applicant and representative names kept only with
+a corporate designator, addresses reduced to country, mark images never stored. Own refresh
+**wave 7** (06:05).
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo
@@ -105,8 +117,9 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   so registries/directories can index tools (per-IP, in-isolate limiter —
   zero KV ops); `tools/call` needs a key; bearer 401s carry
   `WWW-Authenticate`. KV rate limiters fail open on KV errors.
-- **Refresh**: six staggered Cron Triggers (05:00 KV sources, 05:15 exclusions + sponsors,
-  05:30 charities + care locations, 05:45 uk-food-hygiene, 05:50 uk-schools, 05:55 nhs-ods;
+- **Refresh**: seven staggered Cron Triggers (05:00 KV sources, 05:15 exclusions + sponsors,
+  05:30 charities + care locations, 05:45 uk-food-hygiene, 05:50 uk-schools, 05:55 nhs-ods,
+  06:05 uk-trademark-journal;
   `store.ts waveForCron`) pull sources, write `refresh_log`; responses
   expose `last_refreshed_at`. D1 refreshes diff generations by `DataSource.idOf` into
   `source_changes` (90 d) — served at `/v1/changes/:source` and the MCP `get_changes` tool.

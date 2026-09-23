@@ -20,6 +20,7 @@ the account. Publish: `cd <actor> && npx apify-cli push` with `APIFY_TOKEN` set.
 | `uk-contract-awards` | see console (pushed 2026-09-21) | https://console.apify.com/actors |
 | `uk-schools` | `JpzvkJcNfbaieyqrg` | https://console.apify.com/actors/JpzvkJcNfbaieyqrg |
 | `nhs-ods` | pushed by CI on the 2026-09-22 commit | https://console.apify.com/actors |
+| `uk-trademark-journal` | pushed by CI on the 2026-09-23 commit | https://console.apify.com/actors |
 | `uk-no-website-leads` | pushed by CI on the 2026-09-21 commit (merged feed: care + charities + schools with `website_present=false`) | https://console.apify.com/actors |
 
 Pricing (`result` event) and Store publication are set through the API once payout billing

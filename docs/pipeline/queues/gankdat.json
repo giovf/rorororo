@@ -50,12 +50,13 @@
     {
       "id": "uk-trademark-journal",
       "title": "UK Trade Marks Journal dataset: weekly accepted applications with classes, applicant and opposition deadline (+ stats page, Apify actor)",
-      "why": "Exchange 2026-W39 winner. Watch services charge £180–320/mark/yr to scan this journal; Apify UK trademark actor $0.05/record. Weekly OGL XML (~15 MB zip) from ipo.gov.uk/t-tmj.htm; rolling 52 issues; own Saturday wave. Schema undocumented and ipo.gov.uk unreachable from the routine container — write from a sample, hand off verification. Organisation-level fields only.",
+      "why": "Exchange 2026-W39 winner. Watch services charge £180–320/mark/yr to scan this journal; Apify UK trademark actor $0.05/record. Weekly OGL XML (~15 MB zip) from ipo.gov.uk/t-tmj.htm; rolling 52 issues; own Saturday wave. Schema undocumented and ipo.gov.uk unreachable from the routine container — write from a sample, hand off verification. Organisation-level fields only. Built 2026-09-23 (wave 7 at 06:05, v0.15.0, Apify actor): layout-tolerant XML reader written blind — verification handoff in ALERTS.md.",
       "effort_days": 1.5,
       "proof": "queries + paywall hits + get_changes calls on the dataset in 30 days (Analytics Engine); Apify paid runs once actors unblock",
       "score": 8,
-      "status": "todo",
-      "added": "2026-09-23"
+      "status": "done",
+      "added": "2026-09-23",
+      "done_at": "2026-09-23"
     },
     {
       "id": "uk-gambling-operators",
@@ -75,6 +76,17 @@
       "proof": "≥ 20 get_changes calls/week filtered on the dataset; stats pages indexed",
       "score": 4,
       "status": "todo",
+      "added": "2026-09-23"
+    },
+    {
+      "id": "nhs-ods-refresh-error",
+      "title": "Fix the nhs-ods refresh error reported in the 2026-09-23 metrics row",
+      "why": "First live wave-6 run (05:55) errored. The ingest was written without access to files.digital.nhs.uk and the build container still has no egress to NHS hosts or to gankdat.com, so the refresh_log message cannot be read from a routine; the fix needs the error text.",
+      "effort_days": 0.25,
+      "proof": "nhs-ods loads ~45k rows and the metrics row shows no refresh error",
+      "score": 7,
+      "status": "blocked",
+      "blocked_on": "refresh_log error text for nhs-ods (interactive session or Cloudflare Worker logs)",
       "added": "2026-09-23"
     }
   ]

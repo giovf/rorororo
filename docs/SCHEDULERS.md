@@ -25,6 +25,7 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 | 05:45 | Cloudflare cron `45 5 * * *` | wave 4 | uk-food-hygiene (largest) | same |
 | 05:50 | Cloudflare cron `50 5 * * *` | wave 5 | uk-schools | same |
 | 05:55 | Cloudflare cron `55 5 * * *` | wave 6 | nhs-ods (added 2026-09-22) | same |
+| 06:05 | Cloudflare cron `5 6 * * *` | wave 7 | uk-trademark-journal (added 2026-09-23): downloads at most 4 new weekly journal issues into KV, rebuilds the 52-issue window in D1 | same, plus KV `tmj:issue:*` / `tmj:missing:*` |
 | every hour at :20 **and on every push to `main`** | GitHub Actions `owner notes` (`.github/workflows/owner-notes.yml`) | — | `scripts/owner-notes.mjs`: pulls messages the owner sent to the Telegram bot | appends to `docs/OWNER-NOTES.md` (read by every routine; the build routine answers in place) |
 | 06:30 **and on pushes to `main`** (push runs only fill a missing day) | GitHub Actions `gankdat metrics` (`.github/workflows/gankdat-metrics.yml`) | — | `ventures/gankdat/scripts/schedules.mjs reset` (self-heal cron triggers), then `scripts/metrics.mjs` (D1 + Analytics Engine numbers) | commits a `Daily numbers` row to `ventures/gankdat/RESEARCH.md` |
 | 07:00 | Cloud routine `trig_01JBrWDAZLeWEAhSBBnA9g8K` **Foundry daily metrics** (Sonnet) | — | reads each `STORE.md`, fetches public store stats (Figma, Chrome, Firefox) | `Daily check` rows in each venture's `RESEARCH.md`; `docs/ALERTS.md` on bad reviews |
@@ -63,7 +64,7 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   "Run failed" mail is never owner work: the next push or the daily build heals `main`
   (triage prompt updated 2026-09-21).
 - Cron-trigger minute selects the refresh wave (`ventures/gankdat/src/sources/store.ts`
-  `WAVE_BY_MINUTE`): 0 → 1, 15 → 2, 30 → 3, 45 → 4, 50 → 5, 55 → 6; any other minute → all waves. A
+  `WAVE_BY_MINUTE`): 0 → 1, 15 → 2, 30 → 3, 45 → 4, 50 → 5, 55 → 6, 5 → 7; any other minute → all waves. A
   temporary trigger on one of those minutes forces just that wave (≥ 16 min lead; a deploy or
   the 06:30 self-heal removes it).
 - **GitHub's cron is best-effort**: overnight 2026-09-21/22 the hourly job fired 3 times in 14

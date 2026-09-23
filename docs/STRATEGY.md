@@ -157,3 +157,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   trade-mark watch surface third (4). Parked: Variables Toolkit v0.2 relink (7.2 — wait for the
   day-7 read), a second Figma plugin. Declined: Shopify app, Stripe Apps, extension #3, FCA
   register (licence). Comparison: `docs/exchange/2026-W39.md`.
+- 2026-09-23 build (09:00 run): shipped `uk-trademark-journal` — the IPO's weekly Trade Marks
+  Journal as a rolling 52-issue dataset with a weekly change feed (exchange 2026-W39 winner, score
+  8, the top buildable item in `docs/pipeline/`). Per-issue KV cache + D1 window, own wave 7
+  (06:05), v0.15.0, Apify actor. The journal XML schema is undocumented and ipo.gov.uk is
+  unreachable from the build container, so the reader is layout-tolerant and fails loudly with the
+  element names it saw; verification is a handoff. Also: `nhs-ods` errored on its first live run
+  (today's metrics row) — cause unreadable from here, queued as blocked. Next buildable item:
+  uk-gambling-operators (6).

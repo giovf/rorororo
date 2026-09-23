@@ -68,3 +68,19 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   listing to `ventures/gankdat/STORE.md` distribution channels. The merge-bot comment also
   asks for a Discord username for a "server-author flair" — optional, no action taken (not
   an owner-identity action, just a nice-to-have; skip unless the owner wants it).
+- 2026-09-23 handoff: verify the new `uk-trademark-journal` ingest against a real issue — the build
+  container has no egress to ipo.gov.uk (proxy 403), so the file name (`jnl.zip` tried first, then
+  `jnl.xml`, the latter confirmed by search-engine index at
+  `https://www.ipo.gov.uk/t-tmj/tm-journals/<yyyy>-<nnn>/jnl.xml`), the element and section names
+  in `LAYOUT` (`src/sources/uk-trademark-journal.ts`) and the applicant-name heuristic are
+  assumptions. Wave 7 first runs 06:05 tomorrow; a wrong layout fails loudly in `refresh_log`
+  ("no published application recognised … element names seen: …") — paste the real names into
+  `LAYOUT`, and check `publication_date`/`opposition_deadline` are populated. One `curl -sI` of
+  `…/2026-038/jnl.zip` and `jnl.xml` settles the file question.
+- 2026-09-23 handoff: `nhs-ods` errored on its first live wave-6 run (2026-09-23 metrics row) and
+  `sam-exclusions` + `uk-charities` errored the same night. Read the `refresh_log` messages (the
+  build container cannot) and fix `nhs-ods`; queue item `nhs-ods-refresh-error` is blocked on that
+  text. Likely suspects: a file name under `/assets/ods/current/`, a host that refuses the Worker's
+  user agent, or a ZIP with more than one entry (the shared unwrapper reads the first entry only).
+- 2026-09-23 handoff: file the Taskmaster row for `uk-trademark-journal` retrospectively (the
+  task-master-ai MCP timed out in the build container again).

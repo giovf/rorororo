@@ -12,6 +12,7 @@ import { ukSanctionsSource } from './uk-sanctions';
 import { ukSchoolsSource } from './uk-schools';
 import { ukSponsorsSource } from './uk-sponsors';
 import { ukTendersSource } from './uk-tenders';
+import { ukTrademarkJournalSource } from './uk-trademark-journal';
 import type { DataSource } from './types';
 
 // Adding a dataset = one source file + one entry here. Nothing else.
@@ -30,6 +31,7 @@ const SOURCES: DataSource[] = [
   ukCareLocationsSource,
   ukSchoolsSource,
   nhsOdsSource,
+  ukTrademarkJournalSource,
 ];
 
 export const registry: ReadonlyMap<string, DataSource> = new Map(
