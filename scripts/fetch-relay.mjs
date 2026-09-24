@@ -18,7 +18,7 @@ const TIMEOUT_MS = 90_000;
 const USER_AGENT =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36 gankdat-relay';
 /** Host suffixes (".x" matches x and any subdomain) and exact hosts the relay will fetch. */
-export const ALLOWED = [
+const ALLOWED = [
   '.gov.uk',
   '.nhs.uk',
   '.europa.eu',
@@ -44,12 +44,12 @@ export const ALLOWED = [
   '.openstreetmap.org',
 ];
 
-export function allowed(hostname) {
+function allowed(hostname) {
   const h = hostname.toLowerCase();
   return ALLOWED.some((a) => (a.startsWith('.') ? h === a.slice(1) || h.endsWith(a) : h === a));
 }
 
-export function parseLine(line) {
+function parseLine(line) {
   const t = line.trim();
   if (t === '' || t.startsWith('#')) return null;
   const parts = t.split(/\s+/);
@@ -93,7 +93,7 @@ async function fetchOne(req, outDir, index) {
       method: req.method,
       headers,
       redirect: 'follow',
-      signal: AbortSignal.timeout(TIMEOUT_MS),
+      signal: globalThis.AbortSignal.timeout(TIMEOUT_MS),
     });
     meta.status = res.status;
     meta.final_url = res.url;
@@ -124,7 +124,7 @@ async function fetchOne(req, outDir, index) {
   }
 }
 
-export async function processRequest(file) {
+async function processRequest(file) {
   const name = path.basename(file, '.txt');
   const outDir = path.join(ROOT, 'responses', name);
   rmSync(outDir, { recursive: true, force: true });
