@@ -38,6 +38,7 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 | --- | --- | --- | --- | --- |
 | Sunday 08:00 | Cloud routine `trig_01Mv7z5Ae9gEGq9zBnrfDH6R` **Foundry strategy review** (Fable; weekly since 2026-09-22, was monthly) | — | scores every venture against `docs/STRATEGY.md` (targets, kill criteria), market signals, next three moves; may mark a venture queue `finished` or re-park/promote exchange ideas | `docs/reviews/<year>-W<week>.md`; edits under `docs/pipeline/` |
 | Monday 07:30 | Cloud routine `trig_01PjxdBAcvYSAT32fCyzcvQg` **Foundry weekly report** (Sonnet) | — | ledger, ventures, metrics deltas, alerts, open actions, git activity | `docs/reports/<year>-W<week>.md` |
+| Wednesday 18:00–23:00 and Thursday 00:00–02:00, hourly | Cloud routines `trig_011mbqaUzm3qTK2ZdevCuYpH` (Wed) + `trig_013tLPWgysoiHWpciYGgXJQ2` (Thu) **Foundry Wednesday burn-down** (Fable; created 2026-09-24; the owner's Fable allowance resets Thursday 03:00 UTC) | — | same loop as the build routine but back to back: item → gate → commit → push, repeat until nothing is buildable, ~50 min elapsed, or the usage limit cuts the session (harmless: one commit per finished item). Spends the allowance left before the owner's Thursday reset | commits to `main`, `docs/RUNS.md` lines tagged `burn-down` |
 | Wednesday 08:00 | Cloud routine `trig_01CaSyBqwyKVL6NiPqPzhM8L` **Foundry venture exchange** (Fable; created 2026-09-22) | — | market research over `docs/pipeline/exchange.json` and fresh candidates; opens a NEW venture queue (folder, `venture.json` idea, `RESEARCH.md`, scored items) or reopens/extends an existing one when enhancing scores higher | new files under `ventures/<slug>/` and `docs/pipeline/`; `STRATEGY.md` §8 line |
 
 ## Event-driven (not on a clock)
@@ -75,6 +76,15 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   initial commit and `git pull` refused to merge; the auto-mode classifier then blocked the
   reset and the run stalled (2026-09-22 04:05 triage). Every routine prompt now says: do not
   reset/force, `git switch -c work origin/main`, push `HEAD:main`.
+- **Usage limit**: no routine can read the owner's remaining allowance. Evidence so far: the
+  Wednesday 2026-09-23 17:09 build was rejected at start (`rate_limit: rejected
+  (seven_day_overage_included) resets_at=Thu 03:00 UTC`) — the week's Fable allowance was gone
+  before the burn-down window, so under the current cadence (2 builds/day + exchange + review
+  + interactive sessions on Fable) there may be nothing left to burn on Wednesdays. The only signal is a
+  `rate_limit_event` in a run's log (`RemoteTrigger get_run_log`) and a run that ends within
+  seconds of starting; the owner sees the real figure with `/usage` in Claude Code. The
+  Wednesday burn-down is designed to be cut off: each item is one commit, pushed as soon as its
+  gate passes, so a cut leaves nothing half-done.
 - Routines push exactly once, at the end, after the gates; a run killed by a usage limit leaves
   nothing behind (`docs/OPERATIONS.md`, "Interrupted runs").
 - Routine ids and prompts are managed with the RemoteTrigger API from the interactive session;
