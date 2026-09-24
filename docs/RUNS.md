@@ -39,3 +39,9 @@ Routines: build, exchange, review, report; interactive sessions too.
 - 2026-09-24 09:35 | build | Landing change-feeds card rewritten (8 registers), pricing line: a daily diff of every register fits free
 - 2026-09-24 09:35 | build | Docs quickstart step for /v1/changes; registry bumped to v0.16.0; gankdat gate 272 tests green
 - 2026-09-24 09:35 | build | Metrics: uk-trademark-journal ran without a refresh error today; nhs-ods and eu-ted still error (blocked)
+- 2026-09-24 10:45 | interactive | nhs-ods fixed: NHS moved the files; now read as CSV from odsdatasearchandexport.nhs.uk (6/6 files OK)
+- 2026-09-24 10:45 | interactive | uk-trademark-journal verified live: 13,758 marks from journal 2026/038, dates populated
+- 2026-09-24 10:45 | interactive | uk-gambling-operators unblocked: OGL v3 confirmed, 5 CSV headers recorded; next build ships it
+- 2026-09-24 10:45 | interactive | gankdat listed in awesome-remote-mcp-servers (PR #460 merged); Taskmaster #56/#57 filed
+- 2026-09-24 10:45 | interactive | Wednesday burn-down routines created (Wed 18-23, Thu 00-02 UTC); Fable limit was hit Wed 17:09 this week
+

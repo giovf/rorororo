@@ -2,16 +2,18 @@ import { z } from 'zod';
 import { csvRows } from './csv';
 import fixtureRecords from './fixtures/nhs-ods.json';
 import type { DataSource } from './types';
-import { inflateZipEntry } from './zip';
+import { byteCapTransform } from './zip';
 
 // NHS organisation register — the Organisation Data Service (ODS) run by NHS
 // England: GP practices, NHS trusts and their sites, pharmacies, dental
 // practices and independent-sector healthcare providers, each keyed by its
 // ODS code (NICHE-RESEARCH-2026-09-B §2). OGL v3; no key, no account.
 //
-// Ingest: ODS republishes one ZIP per organisation type every night under a
-// fixed path (`…/assets/ods/current/<file>.zip`, one header-less CSV inside).
-// All the files we read share ODS's standard 27-column organisation layout,
+// Ingest: ODS republishes one header-less CSV per organisation type every
+// night from the ODS Data Search and Export service
+// (`…/api/getReport?report=<file>`, verified 2026-09-24; the older
+// files.digital.nhs.uk/assets/ods/current/<file>.zip path now returns 403 for
+// the current files). All the files we read share ODS's standard 27-column organisation layout,
 // so a single positional parser covers them; each file tags its rows with
 // the organisation type. Every file is required — a missing or reshaped file
 // fails the load loudly (the previous generation keeps serving) rather than
@@ -22,10 +24,10 @@ import { inflateZipEntry } from './zip';
 // practitioner files ODS also publishes (egpcur, egdpcur, epracmem — named
 // GPs and dentists) are never fetched.
 
-const FILE_BASE = 'https://files.digital.nhs.uk/assets/ods/current/';
-const FILE_HOST = /(^|\.)files\.digital\.nhs\.uk$/;
+const FILE_BASE = 'https://www.odsdatasearchandexport.nhs.uk/api/getReport?report=';
+const FILE_HOST = /(^|\.)odsdatasearchandexport\.nhs\.uk$/;
 const USER_AGENT = 'gankdat.com data refresh';
-/** Per-file inflated cap; the largest (pharmacies, GP practices) are single-digit MB. */
+/** Per-file byte cap; the largest (trust sites, pharmacies) are single-digit MB. */
 const MAX_BYTES = 64 * 1024 * 1024;
 /** Standard ODS organisation layout: fields 1–18 are the ones we read. */
 const MIN_COLUMNS = 18;
@@ -195,7 +197,7 @@ export function normalizeRow(cols: string[], orgType: string): NhsOdsRecord | nu
 }
 
 async function fetchFile(file: string): Promise<Response> {
-  const url = new URL(`${FILE_BASE}${file}.zip`);
+  const url = new URL(`${FILE_BASE}${file}`);
   if (url.protocol !== 'https:' || !FILE_HOST.test(url.hostname)) {
     throw new Error(`ODS file on unexpected host (${url.hostname})`);
   }
@@ -204,7 +206,7 @@ async function fetchFile(file: string): Promise<Response> {
     await new Promise((r) => setTimeout(r, 20_000 * attempt));
     res = await fetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
   }
-  if (!res.ok || !res.body) throw new Error(`ODS ${file}.zip download failed: ${res.status}`);
+  if (!res.ok || !res.body) throw new Error(`ODS ${file} download failed: ${res.status}`);
   return res;
 }
 
@@ -212,7 +214,7 @@ async function* streamFile(file: string, orgType: string): AsyncGenerator<NhsOds
   const res = await fetchFile(file);
   let rows = 0;
   let yielded = 0;
-  for await (const row of csvRows(inflateZipEntry(res.body!, MAX_BYTES))) {
+  for await (const row of csvRows(res.body!.pipeThrough(byteCapTransform(MAX_BYTES)))) {
     if (row.length === 1 && (row[0] ?? '').trim() === '') continue; // trailing blank line
     rows += 1;
     if (row.length < MIN_COLUMNS) {

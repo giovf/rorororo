@@ -1979,13 +1979,37 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-09-21T20:03:40.425Z"
+      },
+      {
+        "id": "56",
+        "title": "uk-trademark-journal: UK IPO Trade Marks Journal weekly XML (built by the build routine 2026-09-23, v0.15.0)",
+        "description": "Exchange 2026-W39 winner. Weekly OGL XML from ipo.gov.uk/t-tmj (jnl.xml; the zip is 403), rolling 52 issues, wave 7 at 06:05, Blind Mode on applicant names; Apify actor uk-trademark-journal. Verified live 2026-09-24: 13,758 records, publication_date and opposition_deadline populated.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-09-24T10:23:45.697Z"
+      },
+      {
+        "id": "57",
+        "title": "change-feed-upsell: change feeds surfaced as a product (built by the build routine 2026-09-24, v0.16.0)",
+        "description": "/stats pages show 30 days of added/removed/changed per day plus the poll command; change_feed flag on /v1/data and MCP list_sources; llms.txt Change feeds section; landing change-feeds card and pricing line; docs quickstart step for /v1/changes.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-09-24T10:23:47.585Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-21T20:03:40.425Z",
-      "taskCount": 55,
-      "completedCount": 51,
+      "lastModified": "2026-09-24T10:23:47.585Z",
+      "taskCount": 57,
+      "completedCount": 53,
       "tags": [
         "master"
       ]

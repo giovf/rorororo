@@ -52,7 +52,7 @@ layout, D1, ~45k organisations keyed by ODS code; every file is required so a mo
 load loudly instead of dropping a type into the change feed; telephone dropped, practitioner files
 never ingested; healthcare lead-gen + KYB bundle with uk-care-locations; NICHE-RESEARCH-2026-09-B
 §2). Own refresh **wave 6** (05:55), so an ingest written without live-file access (build container
-has no egress to files.digital.nhs.uk) cannot take another dataset down with it.
+has no egress to NHS hosts; the current files come from odsdatasearchandexport.nhs.uk `getReport?report=<file>` as plain CSV since 2026-09-24, the old files.digital.nhs.uk ZIP path 403s) cannot take another dataset down with it.
 And the UK Trade Marks Journal (`uk-trademark-journal`, shipped 2026-09-23 — the IPO's weekly
 XML edition of applications accepted and published for opposition, UK filings and international
 registrations designating the UK; exchange 2026-W39 winner: watch services charge £180–320 per

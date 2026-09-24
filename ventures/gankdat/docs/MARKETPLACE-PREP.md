@@ -16,7 +16,7 @@ place for what is listed where, what each channel needs, and the copy-paste blur
 | PulseMCP | submissions paused on their side; they index the official registry automatically | — |
 | public-apis/public-apis | PR open (Government section), 2026-09-20 | https://github.com/public-apis/public-apis/pull/7436 |
 | APIs.guru OpenAPI directory | issue open (their documented add-API flow), 2026-09-20 | https://github.com/APIs-guru/openapi-directory/issues/3384 |
-| punkpeye/awesome-remote-mcp-servers | PR open (Search & Data Extraction), 2026-09-20 | https://github.com/punkpeye/awesome-remote-mcp-servers/pull/460 |
+| punkpeye/awesome-remote-mcp-servers | **merged and live 2026-09-23** (Search & Data Extraction; PR #460 merged 02:21 UTC) | https://github.com/punkpeye/awesome-remote-mcp-servers |
 | punkpeye/awesome-mcp-servers | not eligible — self-hosted open-source servers only | — |
 | mcpservers.org (wong2) | **approved and live 2026-09-21** (owner submitted the form) | https://mcpservers.org |
 | Glama | claim challenges served 2026-09-20 (`/.well-known/glama.json` + `_glama-claim` TXT); claimed by the owner 2026-09-20; health check uses a free-tier test key (`glama-health-check`, account info@gankdat.com, key id 1472c087…, emailed to the owner for Glama's test profile) | https://glama.ai/mcp/connectors/com.gankdat/gankdat |

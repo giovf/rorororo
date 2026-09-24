@@ -13,32 +13,6 @@ function load(): Promise<unknown> {
   return refreshD1Source(env, nhsOdsSource);
 }
 
-/** A plain (sizes-in-header) ZIP with one deflated entry — the ODS download layout. */
-async function zipOf(name: string, text: string): Promise<Uint8Array> {
-  const raw = new TextEncoder().encode(text);
-  const deflated = new Uint8Array(
-    await new Response(
-      new Blob([raw]).stream().pipeThrough(new CompressionStream('deflate-raw')),
-    ).arrayBuffer(),
-  );
-  const entryName = new TextEncoder().encode(name);
-  const header = new Uint8Array(30);
-  const v = new DataView(header.buffer);
-  v.setUint32(0, 0x04034b50, true);
-  v.setUint16(4, 20, true);
-  v.setUint16(8, 8, true); // deflate
-  v.setUint32(18, deflated.length, true);
-  v.setUint32(22, raw.length, true);
-  v.setUint16(26, entryName.length, true);
-  const trailer = new Uint8Array(64).fill(0x50); // central directory junk the unwrapper must drop
-  const out = new Uint8Array(30 + entryName.length + deflated.length + trailer.length);
-  out.set(header, 0);
-  out.set(entryName, 30);
-  out.set(deflated, 30 + entryName.length);
-  out.set(trailer, 30 + entryName.length + deflated.length);
-  return out;
-}
-
 /** Standard 27-column ODS organisation row (no header line in the real files). */
 function odsRow(fields: Partial<Record<number, string>>): string {
   const cols = Array.from({ length: 27 }, (_, i) => fields[i + 1] ?? '');
@@ -194,37 +168,23 @@ const FILES: Record<string, string> = {
     ].join('\r\n') + '\r\n',
 };
 
-const zips = new Map<string, Promise<Uint8Array>>();
-function zipFor(file: string): Promise<Uint8Array> {
-  let z = zips.get(file);
-  if (!z) {
-    z = zipOf(`${file}.csv`, FILES[file] ?? '');
-    zips.set(file, z);
-  }
-  return z;
-}
-
 function fileOf(url: string): string {
-  return /\/([a-z]+)\.zip$/.exec(url)?.[1] ?? '';
+  return /[?&]report=([a-z]+)$/.exec(url)?.[1] ?? '';
 }
 
-async function serveFiles(
-  overrides: Record<string, () => Response> = {},
-): Promise<Map<string, Uint8Array>> {
-  const bodies = new Map<string, Uint8Array>();
-  for (const file of Object.keys(FILES)) bodies.set(file, await zipFor(file));
+// The service serves each report as a plain CSV attachment (verified 2026-09-24).
+function serveFiles(overrides: Record<string, () => Response> = {}): void {
   stubOrigins({
     nhsOds: (url) => {
       const file = fileOf(url);
       const override = overrides[file];
       if (override) return override();
-      const body = bodies.get(file);
-      return body
-        ? new Response(body, { headers: { 'content-type': 'application/zip' } })
+      const body = FILES[file];
+      return body !== undefined
+        ? new Response(body, { headers: { 'content-type': 'text/csv' } })
         : new Response('not found', { status: 404 });
     },
   });
-  return bodies;
 }
 
 afterEach(() => {
@@ -233,7 +193,7 @@ afterEach(() => {
 
 describe('GET /v1/data/nhs-ods', () => {
   it('ingests every ODS file, tags organisation types, normalizes dates and drops telephone numbers', async () => {
-    await serveFiles();
+    serveFiles();
     await load();
     const res = await authedFetch(`${URL_}?per_page=50`);
     expect(res.status).toBe(200);
@@ -286,7 +246,7 @@ describe('GET /v1/data/nhs-ods', () => {
   });
 
   it('filters by organisation type, status, area codes, parent and dates', async () => {
-    await serveFiles();
+    serveFiles();
     await load();
     const { key } = await issueKey();
     const codes = async (qs: string): Promise<string[]> => {
@@ -306,7 +266,7 @@ describe('GET /v1/data/nhs-ods', () => {
   });
 
   it('fetches each file from the fixed ODS path and loads them all in one generation', async () => {
-    await serveFiles();
+    serveFiles();
     await load();
     const fetched = (globalThis.fetch as unknown as ReturnType<typeof vi.fn>).mock.calls.map((c) =>
       fileOf(String(c[0])),
@@ -315,16 +275,16 @@ describe('GET /v1/data/nhs-ods', () => {
   });
 
   it('fails loudly when a later file is missing or reshaped, keeping the previous generation', async () => {
-    await serveFiles();
+    serveFiles();
     await load();
     vi.unstubAllGlobals();
 
-    await serveFiles({ egdpprac: () => new Response('gone', { status: 404 }) });
-    await expect(load()).rejects.toThrow('ODS egdpprac.zip download failed: 404');
+    serveFiles({ egdpprac: () => new Response('gone', { status: 404 }) });
+    await expect(load()).rejects.toThrow('ODS egdpprac download failed: 404');
     vi.unstubAllGlobals();
 
-    const short = await zipOf('ets.csv', '"RJ122","ONLY TWO COLUMNS"\r\n');
-    await serveFiles({ ets: () => new Response(short) });
+    const short = '"RJ122","ONLY TWO COLUMNS"\r\n';
+    serveFiles({ ets: () => new Response(short, { headers: { 'content-type': 'text/csv' } }) });
     await expect(load()).rejects.toThrow('ODS ets format changed');
 
     const body = (await (await authedFetch(URL_)).json()) as SuccessEnvelope<NhsOdsRecord[]>;
@@ -332,7 +292,7 @@ describe('GET /v1/data/nhs-ods', () => {
   });
 
   it('falls back to bundled fixtures when the register cannot be read at all', async () => {
-    await serveFiles({ etr: () => new Response('nope', { status: 404 }) });
+    serveFiles({ etr: () => new Response('nope', { status: 404 }) });
     await load();
     const body = (await (await authedFetch(URL_)).json()) as SuccessEnvelope<NhsOdsRecord[]>;
     expect(body.meta?.total).toBe(30);
