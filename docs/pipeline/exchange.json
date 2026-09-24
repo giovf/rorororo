@@ -98,6 +98,22 @@
       "why": "Register API terms forbid sharing or re-selling the data; bulk access is the paid Register Extract Service. Standalone product would breach the licence (same category as CCOD/OCOD).",
       "status": "declined",
       "added": "2026-09-23"
+    },
+    {
+      "id": "japan-gbizinfo-register",
+      "title": "Japan corporate register (gBizINFO) dataset + Apify actor",
+      "why": "Owner asked 2026-09-24 whether a larger market (Asia) would help. ~4M corporations, government-run, permissive terms, JSON API with a free key (no local identity needed); same KYB/sales-intelligence buyers as the UK line, reachable on the same global shelves. Not first: the current bottleneck is distribution, not market size.",
+      "status": "parked",
+      "trigger": "two shelves open (Apify actors public, stats pages indexed) and gankdat still < 3 real signups 30 days later",
+      "added": "2026-09-24"
+    },
+    {
+      "id": "singapore-acra-gebiz",
+      "title": "Singapore ACRA entities + GeBIZ tenders (data.gov.sg)",
+      "why": "Singapore Open Data Licence permits commercial use; English-language; pairs with uk-tenders/eu-ted as an APAC procurement feed. Same caveat as Japan: supply is not the constraint today.",
+      "status": "parked",
+      "trigger": "same as japan-gbizinfo-register; pick whichever the exchange scores higher on paid-rival evidence",
+      "added": "2026-09-24"
     }
   ]
 }
