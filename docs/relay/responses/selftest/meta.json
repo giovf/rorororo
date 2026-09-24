@@ -1,0 +1,48 @@
+{
+  "request": "selftest",
+  "fetched_at": "2026-09-24T19:59:49.077Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://www.figma.com/api/plugins/1682711656065145288/versions",
+      "fetched_at": "2026-09-24T19:59:47.509Z",
+      "status": 404,
+      "final_url": "https://www.figma.com/api/plugins/1682711656065145288/versions",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "206413",
+        "content-disposition": "attachment"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/v1/sources",
+      "fetched_at": "2026-09-24T19:59:47.800Z",
+      "status": 404,
+      "final_url": "https://gankdat.com/v1/sources",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 130,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "range": "0-2047",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-038/jnl.xml",
+      "fetched_at": "2026-09-24T19:59:48.283Z",
+      "status": 206,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-038/jnl.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "content-length": "2048",
+        "last-modified": "Thu, 17 Sep 2026 05:18:13 GMT",
+        "etag": "\"a2916c4-65ba6e9136d57\""
+      },
+      "file": "3.xml",
+      "bytes": 2048,
+      "truncated": false
+    }
+  ]
+}
