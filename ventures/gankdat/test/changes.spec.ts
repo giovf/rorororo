@@ -1,4 +1,4 @@
-import { env } from 'cloudflare:test';
+import { env, SELF } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import { getOpenApiDocument } from '../src/lib/openapi';
@@ -88,6 +88,30 @@ describe('GET /v1/changes/:source', () => {
   it('404s for unknown sources and for sources without a stable id', async () => {
     expect((await authedFetch('https://example.com/v1/changes/nope')).status).toBe(404);
     expect((await authedFetch('https://example.com/v1/changes/uk-planning')).status).toBe(404);
+  });
+
+  it('shows the daily delta on the public /stats page (precomputed at refresh) and the sources listing', async () => {
+    await loadWith(DAY1);
+    const warm = await (await SELF.fetch('https://example.com/stats/uk-care-locations')).text();
+    expect(warm).toContain('what changed (last 30 days)');
+    expect(warm).toContain('No diff yet');
+    await loadWith(DAY2);
+    const html = await (await SELF.fetch('https://example.com/stats/uk-care-locations')).text();
+    const today = new Date().toISOString().slice(0, 10);
+    expect(html).toContain(`<tr><td>${today}</td><td>1</td><td>1</td><td>1</td></tr>`);
+    expect(html).toContain('Last 30 days: 1 added, 1 removed, 1 changed');
+    expect(html).toContain(`/v1/changes/uk-care-locations?since=${today}`);
+    expect(html).toContain('"name":"daily change feed"');
+    // A KV-snapshot source has no feed and no section.
+    const index = await (await SELF.fetch('https://example.com/stats')).text();
+    expect(index).toContain('daily change feed');
+    const listing = (await (
+      await SELF.fetch('https://example.com/v1/data')
+    ).json()) as SuccessEnvelope<{ slug: string; change_feed: string | null }[]>;
+    expect(listing.data.find((s) => s.slug === 'uk-care-locations')?.change_feed).toBe(
+      '/v1/changes/uk-care-locations',
+    );
+    expect(listing.data.find((s) => s.slug === 'uk-planning')?.change_feed).toBeNull();
   });
 
   it('is documented in the OpenAPI spec for register datasets only', () => {

@@ -84,3 +84,13 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   user agent, or a ZIP with more than one entry (the shared unwrapper reads the first entry only).
 - 2026-09-23 handoff: file the Taskmaster row for `uk-trademark-journal` retrospectively (the
   task-master-ai MCP timed out in the build container again).
+- 2026-09-24 handoff: `uk-gambling-operators` (gankdat queue) is blocked on one page view: read the
+  licence field on https://www.data.gov.uk/dataset/operator-licence-register (and, if it is not
+  OGL, the terms on https://www.gamblingcommission.gov.uk/public-register/businesses/download) —
+  the build container cannot reach data.gov.uk, ckan or gamblingcommission.gov.uk. Paste the
+  statement into the queue item's `why`, set it back to `todo`, and the next build run ships it.
+  While there: `curl -sI` the five files under `https://www.gamblingcommission.gov.uk/downloads/`
+  (`business-licence-register-{businesses,licences,trading-names,domain-names}.csv`,
+  `premises-licence-register.csv`) and note the header rows so the ingest is not written blind.
+  Also file the Taskmaster row for `change-feed-upsell` (v0.16.0) retrospectively — no
+  `task-master` CLI in the build container and the MCP timed out again.

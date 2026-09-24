@@ -10,11 +10,27 @@ export interface StatsGroup {
   rows: { value: string; count: number }[];
 }
 
+/** One refresh day's diff against the previous generation (register datasets). */
+export interface ChangeDay {
+  /** YYYY-MM-DD of the refresh that observed the changes. */
+  date: string;
+  added: number;
+  removed: number;
+  changed: number;
+}
+
 export interface SourceStats {
   total: number;
   /** Chronological YYYY-MM buckets (up to the most recent 12 present). */
   monthly: { title: string; buckets: { month: string; count: number }[] } | null;
   groups: StatsGroup[];
+  /**
+   * Change-feed activity, newest day first, over the last 30 days — set only
+   * for register datasets (a stable record id, D1). Present but empty until
+   * the second refresh has produced a diff. Precomputed at refresh like the
+   * rest, so the public page never touches source_changes per request.
+   */
+  changes?: ChangeDay[];
 }
 
 const asRecord = (row: unknown): Record<string, unknown> =>

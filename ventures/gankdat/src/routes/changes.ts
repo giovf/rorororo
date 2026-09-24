@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { failure, success } from '../lib/envelope';
 import { queryD1Changes } from '../sources/d1store';
 import { omitEmptyParams, paginationShape } from '../sources/query';
-import { getSource } from '../sources/registry';
+import { getSource, hasChangeFeed } from '../sources/registry';
 import type { AppEnv } from '../types';
 
 /** Query params of /v1/changes/:source — shared with the MCP get_changes tool. */
@@ -23,7 +23,7 @@ export const changesRoutes = new Hono<AppEnv>().get('/:source', async (c) => {
   const slug = c.req.param('source');
   const source = getSource(slug);
   if (!source) return c.json(failure('not_found', `Unknown source '${slug}'`), 404);
-  if (!source.idOf || source.storage !== 'd1') {
+  if (!hasChangeFeed(source)) {
     return c.json(
       failure('not_found', `Source '${slug}' has no change feed (no stable record id)`),
       404,

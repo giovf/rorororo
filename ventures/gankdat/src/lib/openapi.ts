@@ -2,7 +2,7 @@ import { z } from 'zod';
 import { APP_VERSION } from './constants';
 import { ERROR_CODES } from './envelope';
 import { buildQuerySchema } from '../sources/query';
-import { listSources } from '../sources/registry';
+import { hasChangeFeed, listSources } from '../sources/registry';
 import type { DataSource } from '../sources/types';
 
 // Generator choice (task 4.1, recorded 2026-07-06): zod v4's native
@@ -240,6 +240,10 @@ const sourceListingSchema = z.array(
     supported_params: z.array(z.string()),
     refresh_cron: z.string(),
     credit_cost: z.number(),
+    change_feed: z
+      .string()
+      .nullable()
+      .describe('Path of the daily change feed (register datasets), else null'),
   }),
 );
 
@@ -305,7 +309,7 @@ function buildDocument(baseUrl: string): JsonObject {
   const sourcePaths = Object.fromEntries([
     ...listSources().map((source) => [`/v1/data/${source.slug}`, sourcePathItem(source)]),
     ...listSources()
-      .filter((source) => source.idOf && source.storage === 'd1')
+      .filter(hasChangeFeed)
       .map((source) => [`/v1/changes/${source.slug}`, changesPathItem(source)]),
   ]);
 

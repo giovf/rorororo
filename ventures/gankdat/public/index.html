@@ -896,9 +896,13 @@
         <div class="card">
           <h3>change feeds</h3>
           <p>
-            Registers diff themselves daily: <code>/v1/changes/…?since=YYYY-MM-DD</code> returns
-            what was added, removed or changed — food hygiene, charities, care locations, sponsors,
-            exclusions. Poll the delta, not the register.
+            Every register diffs itself each morning:
+            <code>/v1/changes/…?since=YYYY-MM-DD</code> returns what was added, removed or changed —
+            food hygiene, charities, care locations, schools, NHS organisations, sponsors,
+            exclusions and the weekly trade-mark journal. 90-day history, MCP tool
+            <code>get_changes</code>; the activity per day is on each
+            <a href="/stats">stats page</a>. Poll the delta, not the register — no other source
+            publishes official-register deltas.
           </p>
         </div>
         <div class="card">
@@ -945,9 +949,10 @@
         </div>
       </div>
       <p class="note">
-        1 credit = 1 request · rate limit 60 req/min · checking <code>/v1/usage</code> is always
-        free · outside the UK? checkout bills USD/EUR automatically · launch pricing, subject to
-        change · 14-day make-it-right guarantee (<a href="/terms">terms</a>)
+        1 credit = 1 request · a change-feed page costs 1 credit, so a daily diff of every register
+        fits the free tier · rate limit 60 req/min · checking <code>/v1/usage</code> is always free
+        · outside the UK? checkout bills USD/EUR automatically · launch pricing, subject to change ·
+        14-day make-it-right guarantee (<a href="/terms">terms</a>)
       </p>
 
       <div class="trust">

@@ -123,6 +123,11 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   `store.ts waveForCron`) pull sources, write `refresh_log`; responses
   expose `last_refreshed_at`. D1 refreshes diff generations by `DataSource.idOf` into
   `source_changes` (90 d) — served at `/v1/changes/:source` and the MCP `get_changes` tool.
+  The feed is sold, not just served (2026-09-24): `registry.hasChangeFeed` is the one
+  predicate; the refresh precomputes 30 days of added/removed/changed per day into the
+  `/stats` blob (`SourceStats.changes`) so the public page shows the activity and the poll
+  command without touching D1; `/v1/data` and `list_sources` carry `change_feed`; llms.txt
+  has a "Change feeds" section.
 - **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
   params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
   date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value

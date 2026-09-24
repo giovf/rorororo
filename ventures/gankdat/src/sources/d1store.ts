@@ -1,7 +1,7 @@
 import type { StatsSpec } from './types';
 import type { DataSource } from './types';
 import { PRESENT_SUFFIX, type QueryPage } from './query';
-import type { SourceStats } from '../lib/stats';
+import type { ChangeDay, SourceStats } from '../lib/stats';
 import { putSourceStats, writeRefreshLog } from './cache';
 
 /** Thrown when a D1 source is queried before cron has loaded it (routes → 503). */
@@ -461,6 +461,31 @@ export async function queryD1Source(
  * per refresh (cron) against the just-committed generation; the result is
  * cached so /stats never scans the table per request.
  */
+/**
+ * Daily added / removed / changed counts from the change feed for the /stats
+ * page (newest first, 30 days). One indexed GROUP BY at refresh time — the
+ * change feed is the product every competitor lacks, so its activity is shown
+ * where buyers look before they sign up.
+ */
+async function aggregateChangeDays(env: CloudflareBindings, slug: string): Promise<ChangeDay[]> {
+  const rows = await env.DB.prepare(
+    `SELECT substr(changed_at, 1, 10) AS day, change, COUNT(*) AS n FROM source_changes
+     WHERE source_slug = ?1 AND changed_at >= datetime('now', '-30 days')
+     GROUP BY day, change ORDER BY day DESC`,
+  )
+    .bind(slug)
+    .all<{ day: string; change: string; n: number }>();
+  const byDay = new Map<string, ChangeDay>();
+  for (const row of rows.results ?? []) {
+    const day = byDay.get(row.day) ?? { date: row.day, added: 0, removed: 0, changed: 0 };
+    if (row.change === 'added' || row.change === 'removed' || row.change === 'changed') {
+      day[row.change] = row.n;
+    }
+    byDay.set(row.day, day);
+  }
+  return [...byDay.values()];
+}
+
 async function aggregateD1Stats(
   env: CloudflareBindings,
   source: DataSource,
@@ -469,6 +494,7 @@ async function aggregateD1Stats(
 ): Promise<SourceStats> {
   const spec: StatsSpec | undefined = source.stats;
   const stats: SourceStats = { total, monthly: null, groups: [] };
+  if (source.idOf) stats.changes = await aggregateChangeDays(env, source.slug);
   if (!spec) return stats;
 
   const monthExpr = `substr(json_extract(record, ${path(spec.date.field)}), 1, 7)`;

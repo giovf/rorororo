@@ -3,7 +3,7 @@ import { publicBaseUrl } from '../lib/constants';
 import { failure } from '../lib/envelope';
 import type { SourceStats } from '../lib/stats';
 import { isolateRateLimit } from '../metering/ratelimit';
-import { getSource, listSources } from '../sources/registry';
+import { getSource, hasChangeFeed, listSources } from '../sources/registry';
 import { sourceStats } from '../sources/store';
 import type { DataSource } from '../sources/types';
 import type { AppEnv } from '../types';
@@ -43,6 +43,39 @@ function tableHtml(header: [string, string], rows: [string, number][]): string {
   return `<table><thead><tr><th>${header[0]}</th><th>${header[1]}</th></tr></thead><tbody>${body}</tbody></table>`;
 }
 
+function changesHtml(source: DataSource, stats: SourceStats): string {
+  if (!hasChangeFeed(source)) return '';
+  const days = stats.changes ?? [];
+  const since = days.at(-1)?.date ?? new Date().toISOString().slice(0, 10);
+  const body =
+    days.length === 0
+      ? '<p class="muted">No diff yet — the feed starts with the dataset\'s second daily refresh.</p>'
+      : `<table><thead><tr><th>refresh day</th><th>added</th><th>removed</th><th>changed</th></tr></thead><tbody>${days
+          .map(
+            (d) =>
+              `<tr><td>${esc(d.date)}</td><td>${d.added.toLocaleString('en-GB')}</td><td>${d.removed.toLocaleString('en-GB')}</td><td>${d.changed.toLocaleString('en-GB')}</td></tr>`,
+          )
+          .join('')}</tbody></table>`;
+  const totals = days.reduce(
+    (acc, d) => ({
+      added: acc.added + d.added,
+      removed: acc.removed + d.removed,
+      changed: acc.changed + d.changed,
+    }),
+    { added: 0, removed: 0, changed: 0 },
+  );
+  const summary =
+    days.length === 0
+      ? ''
+      : `<p class="muted">Last 30 days: ${totals.added.toLocaleString('en-GB')} added, ${totals.removed.toLocaleString('en-GB')} removed, ${totals.changed.toLocaleString('en-GB')} changed — the rows a re-download would make you find yourself.</p>`;
+  return `<h2>what changed (last 30 days)</h2>
+${summary}${body}
+<p class="muted">This register diffs itself every morning. Poll the delta instead of the whole
+dataset: <code>GET /v1/changes/${esc(source.slug)}?since=${esc(since)}</code> (add
+<code>change=added|removed|changed</code>), or the MCP tool <code>get_changes</code>. One
+credit per page, 90-day history — a daily diff of every register fits the free tier.</p>`;
+}
+
 function jsonLd(source: DataSource, baseUrl: string, refreshedAt: string | null): string {
   return JSON.stringify({
     '@context': 'https://schema.org',
@@ -60,6 +93,16 @@ function jsonLd(source: DataSource, baseUrl: string, refreshedAt: string | null)
         encodingFormat: 'application/json',
         contentUrl: `${baseUrl}/v1/data/${source.slug}`,
       },
+      ...(hasChangeFeed(source)
+        ? [
+            {
+              '@type': 'DataDownload',
+              name: 'daily change feed',
+              encodingFormat: 'application/json',
+              contentUrl: `${baseUrl}/v1/changes/${source.slug}`,
+            },
+          ]
+        : []),
     ],
   });
 }
@@ -121,6 +164,7 @@ function pageHtml(
 <tr><td>last refreshed</td><td>${esc(updated)}</td></tr>
 </tbody></table>
 ${sections.join('\n')}
+${changesHtml(source, stats)}
 <h2>methodology</h2>
 <p class="muted">Computed from the same records the gankdat API serves — official
 government feeds, refreshed daily, no scraping. This dataset's licence and
@@ -150,7 +194,7 @@ export const statsRoutes = new Hono<AppEnv>()
     const items = listSources()
       .map(
         (s) =>
-          `<li><a href="/stats/${s.slug}">${esc(s.title)}</a> — <span class="muted">${esc(s.description)}</span></li>`,
+          `<li><a href="/stats/${s.slug}">${esc(s.title)}</a>${hasChangeFeed(s) ? ' <span class="muted">· daily change feed</span>' : ''} — <span class="muted">${esc(s.description)}</span></li>`,
       )
       .join('');
     c.header('Cache-Control', 'public, max-age=3600');

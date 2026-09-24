@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import type { Context } from 'hono';
 import { failure, success } from '../lib/envelope';
-import { getSource, listSources } from '../sources/registry';
+import { getSource, hasChangeFeed, listSources } from '../sources/registry';
 import { buildQuerySchema, omitEmptyParams } from '../sources/query';
 import { querySource } from '../sources/store';
 import type { AppEnv } from '../types';
@@ -66,6 +66,7 @@ export const dataRoutes = new Hono<AppEnv>()
       supported_params: [...Object.keys(source.queryParams.shape), 'q'],
       refresh_cron: source.refresh.cron,
       credit_cost: source.creditCost ?? 1,
+      change_feed: hasChangeFeed(source) ? `/v1/changes/${source.slug}` : null,
     }));
     return c.json(success(sources, { total: sources.length }));
   })

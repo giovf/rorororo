@@ -21,6 +21,11 @@ describe('GET /llms.txt', () => {
         expect(text).toContain(param);
       }
     }
+    // Change feeds: every register dataset, the MCP tool, and nothing for snapshot sources.
+    expect(text).toContain('## Change feeds');
+    expect(text).toContain('get_changes');
+    expect(text).toContain('/v1/changes/uk-charities');
+    expect(text).not.toContain('/v1/changes/uk-planning');
     // Platform surfaces every niche shares.
     expect(text).toContain('/openapi.json');
     expect(text).toContain('/mcp');

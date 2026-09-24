@@ -2,7 +2,7 @@ import { PAID_PLANS } from '../billing/plans';
 import { FREE_TIER_CREDITS } from './constants';
 import { creditCost } from '../metering/costs';
 import { buildQuerySchema } from '../sources/query';
-import { listSources } from '../sources/registry';
+import { hasChangeFeed, listSources } from '../sources/registry';
 
 // llms.txt generated from the source registry (same single-source-of-truth
 // pattern as lib/openapi.ts): a new registry entry appears in the Datasets and
@@ -25,9 +25,11 @@ function datasetLines(baseUrl: string): string {
 export function buildLlmsTxt(baseUrl: string): string {
   const sources = listSources();
   const catalog = sources.map((s) => s.title).join('; ');
+  const feeds = sources.filter(hasChangeFeed);
   const tools = [
     'list_sources',
     'get_usage',
+    ...(feeds.length > 0 ? ['get_changes'] : []),
     ...sources.map((s) => `query_${s.slug.replaceAll('-', '_')}`),
   ].join(', ');
   const minGbp = Math.min(...Object.values(PAID_PLANS).map((p) => p.gbpPerMonth));
@@ -58,6 +60,19 @@ Machine-readable spec: ${baseUrl}/openapi.json
 
 - GET ${baseUrl}/v1/data — list sources and their filter params (public).
 ${datasetLines(baseUrl)}
+
+## Change feeds (what changed since a date)
+
+Register datasets diff themselves against the previous day's refresh, so an
+agent polls the delta instead of re-reading a whole register — no competitor
+publishes official-source deltas. Rows added, removed or changed, newest
+first, 90-day history, 1 credit per page: a daily diff of every register fits
+the free tier.
+
+${feeds.map((s) => `- GET ${baseUrl}/v1/changes/${s.slug} — ${s.title}`).join('\n')}
+  Params: since (YYYY-MM-DD, default 7 days ago), change (added|removed|changed), page, per_page.
+- MCP tool: get_changes (source, since, change). Activity per day is shown on
+  each dataset's /stats page.
 
 ## For AI agents
 

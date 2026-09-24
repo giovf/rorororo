@@ -33,3 +33,9 @@ Routines: build, exchange, review, report; interactive sessions too.
 - 2026-09-23 09:40 | build | Apify actor uk-trademark-journal (UK Trade Mark Applications Weekly) added; CI pushes and prices it
 - 2026-09-23 09:40 | build | nhs-ods errored on its first live run (metrics row); cause unreadable from the sandbox, queued blocked + handoff
 - 2026-09-23 09:40 | build | Handoff: verify the journal file name and XML layout tomorrow (build container has no egress to ipo.gov.uk)
+- 2026-09-24 09:35 | build | uk-gambling-operators blocked: OGL statement unreadable from the sandbox (3 hosts blocked); handoff filed
+- 2026-09-24 09:35 | build | change-feed-upsell: /stats pages now show 30 days of added/removed/changed per day + the poll command
+- 2026-09-24 09:35 | build | change_feed flag on /v1/data and MCP list_sources; llms.txt gains a Change feeds section and get_changes
+- 2026-09-24 09:35 | build | Landing change-feeds card rewritten (8 registers), pricing line: a daily diff of every register fits free
+- 2026-09-24 09:35 | build | Docs quickstart step for /v1/changes; registry bumped to v0.16.0; gankdat gate 272 tests green
+- 2026-09-24 09:35 | build | Metrics: uk-trademark-journal ran without a refresh error today; nhs-ods and eu-ted still error (blocked)

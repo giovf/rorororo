@@ -165,3 +165,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   element names it saw; verification is a handoff. Also: `nhs-ods` errored on its first live run
   (today's metrics row) — cause unreadable from here, queued as blocked. Next buildable item:
   uk-gambling-operators (6).
+- 2026-09-24 build (09:00 run): `uk-gambling-operators` (6) marked blocked — the exchange rule
+  required the OGL statement on the data.gov.uk record and every host that carries it is blocked
+  from the routine container (handoff in ALERTS.md; file names recovered from the search index).
+  Built the next item, `change-feed-upsell` (5): the delta feeds — the one thing no competitor
+  sells — are now visible before sign-up: 30-day added/removed/changed per day on every register's
+  /stats page with the poll command, `change_feed` on the sources listing and MCP `list_sources`,
+  a "Change feeds" section in llms.txt, landing card + pricing line, docs quickstart step
+  (v0.16.0). Proof: get_changes / /v1/changes calls per week ≥ 50. Next buildable item:
+  variables-toolkit day-7-review (4, older than trademark-watch-surface at the same score).

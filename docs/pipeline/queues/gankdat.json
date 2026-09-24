@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-23",
+  "updated": "2026-09-24",
   "items": [
     {
       "id": "nhs-ods",
@@ -18,12 +18,13 @@
     {
       "id": "change-feed-upsell",
       "title": "Surface the change feeds as a product: /stats deltas, llms.txt section, pricing page line",
-      "why": "No competitor offers official-source delta feeds; nothing on the site sells them today.",
+      "why": "No competitor offers official-source delta feeds; nothing on the site sells them today. Built 2026-09-24 (v0.16.0): /stats/<slug> shows the last 30 days of added/removed/changed per refresh day (precomputed at refresh) with the poll command; /stats index and /v1/data + MCP list_sources flag change_feed; llms.txt \"Change feeds\" section + get_changes in the tool list; landing card and pricing line; docs quickstart step.",
       "effort_days": 0.5,
       "proof": "get_changes / /v1/changes calls per week ≥ 50 (STRATEGY §4)",
       "score": 5,
-      "status": "todo",
-      "added": "2026-09-22"
+      "status": "done",
+      "added": "2026-09-22",
+      "done_at": "2026-09-24"
     },
     {
       "id": "apify-remaining-actors-public",
@@ -61,12 +62,13 @@
     {
       "id": "uk-gambling-operators",
       "title": "Gambling Commission operator register dataset (operators, premises, regulatory actions)",
-      "why": "Exchange 2026-W39 runner-up. 2,642 operators, daily CSV/ZIP, no login; Apify actors price it from $8/1k rows; KYB/payments/affiliate-compliance buyers. Confirm the OGL statement on the data.gov.uk \"Operator licence register\" record before publishing (mark blocked if it cannot be read).",
+      "why": "Exchange 2026-W39 runner-up. 2,642 operators, daily CSV/ZIP, no login; Apify actors price it from $8/1k rows; KYB/payments/affiliate-compliance buyers. Confirm the OGL statement on the data.gov.uk \"Operator licence register\" record before publishing (mark blocked if it cannot be read). 2026-09-24 build: licence unreadable from the routine container, per the exchange rule marked blocked; file names found via search index: business-licence-register-{businesses,licences,trading-names,domain-names}.csv and premises-licence-register.csv under gamblingcommission.gov.uk/downloads/ (licences.csv columns: Account Number, Licence Number, Status, Type, Activity, Start Date, End Date).",
       "effort_days": 0.5,
       "proof": "queries + paywall hits on the dataset in 30 days (Analytics Engine)",
       "score": 6,
-      "status": "todo",
-      "added": "2026-09-23"
+      "status": "blocked",
+      "added": "2026-09-23",
+      "blocked_on": "the OGL statement on the data.gov.uk \"Operator licence register\" record (build container: data.gov.uk, ckan.publishing.service.gov.uk and gamblingcommission.gov.uk all blocked; search snippets only). One page view by the interactive session unblocks it."
     },
     {
       "id": "trademark-watch-surface",

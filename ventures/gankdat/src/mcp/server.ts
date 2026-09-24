@@ -9,7 +9,7 @@ import { buildQuerySchema } from '../sources/query';
 import { queryD1Changes } from '../sources/d1store';
 import { changesQuerySchema } from '../routes/changes';
 import { querySource } from '../sources/store';
-import { getSource, listSources } from '../sources/registry';
+import { getSource, hasChangeFeed, listSources } from '../sources/registry';
 import type { DataSource } from '../sources/types';
 import type { KeyContext } from '../types';
 
@@ -50,6 +50,7 @@ function sourceListing(): Record<string, unknown>[] {
     tool: `query_${source.slug.replaceAll('-', '_')}`,
     supported_params: [...Object.keys(source.queryParams.shape), 'q'],
     credit_cost: source.creditCost ?? 1,
+    change_feed: hasChangeFeed(source) ? 'get_changes' : null,
   }));
 }
 
@@ -110,7 +111,7 @@ function registerChangesTool(
   env: CloudflareBindings,
   keyCtx: KeyContext | null,
 ): void {
-  const feeds = listSources().filter((s) => s.idOf && s.storage === 'd1');
+  const feeds = listSources().filter(hasChangeFeed);
   if (feeds.length === 0) return;
   const slugs = feeds.map((s) => s.slug) as [string, ...string[]];
   server.registerTool(

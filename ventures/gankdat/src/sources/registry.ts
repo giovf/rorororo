@@ -45,3 +45,8 @@ export function getSource(slug: string): DataSource | undefined {
 export function listSources(): DataSource[] {
   return [...registry.values()];
 }
+
+/** Register datasets — a stable record id in D1 — carry a daily change feed (/v1/changes, get_changes). */
+export function hasChangeFeed(source: DataSource): boolean {
+  return source.idOf !== undefined && source.storage === 'd1';
+}

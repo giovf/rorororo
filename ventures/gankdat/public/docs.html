@@ -162,14 +162,19 @@ curl -H "Authorization: Bearer fapi_..." \
 curl -H "Authorization: Bearer fapi_..." \
   "https://gankdat.com/v1/data/uk-planning?authority=109&q=extension&per_page=5"
 
-# 4. Check your usage (free)
+# 4. What changed since a date — registers diff themselves daily (charities, care
+#    locations, schools, NHS, sponsors, food hygiene, exclusions, trade marks)
+curl -H "Authorization: Bearer fapi_..." \
+  "https://gankdat.com/v1/changes/uk-charities?since=2026-09-01&change=added"
+
+# 5. Check your usage (free)
 curl -H "Authorization: Bearer fapi_..." https://gankdat.com/v1/usage</code></pre>
       </div>
 
       <h2>for ai agents</h2>
       <div class="term">
         <div class="term-bar"><i></i><i></i><i></i></div>
-        <pre><code># MCP (Streamable HTTP) — tools: list_sources, get_usage, and query_&lt;dataset&gt; for each dataset (query_uk_tenders, query_eu_ted, query_sam_exclusions, …)
+        <pre><code># MCP (Streamable HTTP) — tools: list_sources, get_usage, get_changes (register deltas), and query_&lt;dataset&gt; for each dataset (query_uk_tenders, query_eu_ted, query_sam_exclusions, …)
 "mcpServers": { "gankdat": {
   "url": "https://gankdat.com/mcp",
   "headers": { "Authorization": "Bearer fapi_..." } } }
