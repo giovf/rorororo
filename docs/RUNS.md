@@ -46,3 +46,10 @@ Routines: build, exchange, review, report; interactive sessions too.
 - 2026-09-24 10:45 | interactive | Wednesday burn-down routines created (Wed 18-23, Thu 00-02 UTC); Fable limit was hit Wed 17:09 this week
 
 - 2026-09-24 11:00 | interactive | nhs-ods verified live after a forced refresh: 98,221 organisations (15,651 GP practices) in 69 s
+- 2026-09-24 17:28 | build | uk-gambling-operators dataset: Gambling Commission licences, domains and premises, one D1 table, daily diff
+- 2026-09-24 17:28 | build | Five register CSVs joined blind against the recorded headers (origin unreachable); every file required, fails loudly
+- 2026-09-24 17:28 | build | uk-gambling-operators tests: 6 specs (join, filters incl. is_active, load order, loud failure, fixtures, dates)
+- 2026-09-24 17:28 | build | Landing card, terms row, sitemap, docs mention and stats page for uk-gambling-operators; registry bumped to v0.17.0
+- 2026-09-24 17:28 | build | Apify actor uk-gambling-operators (UK Gambling Commission Licence Register) added; CI pushes and prices it
+- 2026-09-24 17:28 | build | Runs in wave 2 (05:15) from tomorrow; ~15k rows expected; a refresh error would show in the metrics row
+- 2026-09-24 17:28 | build | Taskmaster row #58 filed in tasks.json for uk-gambling-operators (no CLI/MCP in the build container)

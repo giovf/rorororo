@@ -2003,13 +2003,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-09-24T10:23:47.585Z"
+      },
+      {
+        "id": "58",
+        "title": "uk-gambling-operators: Gambling Commission licence register — licences, domains, premises (built by the build routine 2026-09-24, v0.17.0)",
+        "description": "Exchange 2026-W39 runner-up, OGL v3 confirmed on data.gov.uk. Five daily CSVs under gamblingcommission.gov.uk/downloads/ joined into one D1 table with record_type licence|domain|premises, stable ids for the change feed, is_active boolean, wave 2 at 05:15, every file required; Apify actor uk-gambling-operators. Written without live-file access — verify the first live run in the 2026-09-25 metrics row.",
+        "details": "",
+        "testStrategy": "test/uk-gambling-operators.spec.ts (join, filters, load order, loud failure, fixture fallback, isoDate)",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-09-24T17:28:19.000Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-24T10:23:47.585Z",
-      "taskCount": 57,
-      "completedCount": 53,
+      "lastModified": "2026-09-24T17:28:19.000Z",
+      "taskCount": 58,
+      "completedCount": 54,
       "tags": [
         "master"
       ]

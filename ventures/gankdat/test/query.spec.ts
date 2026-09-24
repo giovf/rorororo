@@ -35,6 +35,7 @@ describe('registry', () => {
       'uk-schools',
       'nhs-ods',
       'uk-trademark-journal',
+      'uk-gambling-operators',
     ]);
   });
 });

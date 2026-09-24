@@ -62,12 +62,13 @@
     {
       "id": "uk-gambling-operators",
       "title": "Gambling Commission operator register dataset (operators, premises, regulatory actions)",
-      "why": "Exchange 2026-W39 runner-up. 2,642 operators, daily CSV/ZIP, no login; Apify actors price it from $8/1k rows; KYB/payments/affiliate-compliance buyers. LICENCE CONFIRMED 2026-09-24 by the interactive session: data.gov.uk record 'Operator licence register' (Gambling Commission) is marked UK Open Government Licence v3 (rel=dc:rights → nationalarchives.gov.uk/doc/open-government-licence/version/3/; CKAN license_id uk-ogl). Files under https://www.gamblingcommission.gov.uk/downloads/ (all 200, text/csv, no login, browser UA): business-licence-register-businesses.csv (Account Number,Licence Account Name; 92 KB), business-licence-register-licences.csv (Account Number,Licence Number,Status,Type,Activity,Start Date,End Date; 493 KB), business-licence-register-trading-names.csv (Account Number,Trading Name,Status), business-licence-register-domain-names.csv (Account Number,Domain Name,Status), premises-licence-register.csv (Account Number,Account Name,Premises Activity,Local Authority,Address Line 1,Address Line 2,City,Postcode). business-licence-register-activities.csv does NOT exist (404). Values are double-quoted, blank dates empty.",
+      "why": "Exchange 2026-W39 runner-up. 2,642 operators, daily CSV/ZIP, no login; Apify actors price it from $8/1k rows; KYB/payments/affiliate-compliance buyers. LICENCE CONFIRMED 2026-09-24 by the interactive session: data.gov.uk record 'Operator licence register' (Gambling Commission) is marked UK Open Government Licence v3 (rel=dc:rights → nationalarchives.gov.uk/doc/open-government-licence/version/3/; CKAN license_id uk-ogl). Files under https://www.gamblingcommission.gov.uk/downloads/ (all 200, text/csv, no login, browser UA): business-licence-register-businesses.csv (Account Number,Licence Account Name; 92 KB), business-licence-register-licences.csv (Account Number,Licence Number,Status,Type,Activity,Start Date,End Date; 493 KB), business-licence-register-trading-names.csv (Account Number,Trading Name,Status), business-licence-register-domain-names.csv (Account Number,Domain Name,Status), premises-licence-register.csv (Account Number,Account Name,Premises Activity,Local Authority,Address Line 1,Address Line 2,City,Postcode). business-licence-register-activities.csv does NOT exist (404). Values are double-quoted, blank dates empty. BUILT 2026-09-24 (17:00 run): v0.17.0 — licence/domain/premises rows in one D1 table, wave 2, Apify actor; ingest written blind against the recorded headers (origin unreachable from the build container), first live run 05:15 tomorrow; a failure shows in the metrics row and the next run fixes it.",
       "effort_days": 0.5,
       "proof": "queries + paywall hits on the dataset in 30 days (Analytics Engine)",
       "score": 6,
-      "status": "todo",
-      "added": "2026-09-23"
+      "status": "done",
+      "added": "2026-09-23",
+      "done_at": "2026-09-24"
     },
     {
       "id": "trademark-watch-surface",

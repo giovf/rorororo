@@ -833,6 +833,22 @@
           </p>
         </div>
         <div class="card">
+          <h3>uk-gambling-operators <span>// KYB &amp; affiliate compliance</span></h3>
+          <p>
+            Every operating licence on the Gambling Commission register for Great Britain — remote
+            and non-remote betting, casino, bingo, gaming machines, lotteries, gambling software —
+            with status, activities, dates and trading names; the website domains registered against
+            each operator; and every licensed premises (betting shops, casinos, bingo halls,
+            arcades) by licensing authority and address. Daily diff: new licences, surrenders and
+            revocations, new domains. Personal licences never ingested.
+          </p>
+          <p class="chips">
+            <code>record_type</code><code>licence_type</code><code>activities</code
+            ><code>is_active</code><code>domain_name</code><code>local_authority</code
+            ><code>end_date_after</code><code>q</code>
+          </p>
+        </div>
+        <div class="card">
           <h3>nhs-ods <span>// healthcare leads &amp; KYB</span></h3>
           <p>
             Every GP practice, NHS trust and trust site, pharmacy, dental practice and independent
@@ -899,8 +915,8 @@
             Every register diffs itself each morning:
             <code>/v1/changes/…?since=YYYY-MM-DD</code> returns what was added, removed or changed —
             food hygiene, charities, care locations, schools, NHS organisations, sponsors,
-            exclusions and the weekly trade-mark journal. 90-day history, MCP tool
-            <code>get_changes</code>; the activity per day is on each
+            exclusions, gambling licences and the weekly trade-mark journal. 90-day history, MCP
+            tool <code>get_changes</code>; the activity per day is on each
             <a href="/stats">stats page</a>. Poll the delta, not the register — no other source
             publishes official-register deltas.
           </p>

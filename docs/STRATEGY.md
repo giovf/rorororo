@@ -174,3 +174,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   a "Change feeds" section in llms.txt, landing card + pricing line, docs quickstart step
   (v0.16.0). Proof: get_changes / /v1/changes calls per week ≥ 50. Next buildable item:
   variables-toolkit day-7-review (4, older than trademark-watch-surface at the same score).
+- 2026-09-24 build (17:00 run): shipped `uk-gambling-operators` — the Gambling Commission licence
+  register (exchange 2026-W39 runner-up, score 6, the top buildable item in `docs/pipeline/` once
+  the interactive session confirmed OGL v3 and recorded the five CSV headers). Operating licences,
+  registered domains and licensed premises as three record kinds in one D1 table with a daily change
+  feed (new licences, surrenders/revocations, new domains), `is_active` boolean, wave 2, v0.17.0,
+  Apify actor. Written blind again (origin unreachable from the build container) — the first live
+  run is 05:15 tomorrow and the metrics row will say if it errored. Next buildable item:
+  variables-toolkit day-7-review (4), then trademark-watch-surface (4).

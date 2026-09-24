@@ -65,6 +65,20 @@ unreachable from the build container, so the reader is layout-tolerant (every as
 element names it saw). Organisation-level only: applicant and representative names kept only with
 a corporate designator, addresses reduced to country, mark images never stored. Own refresh
 **wave 7** (06:05).
+And the Gambling Commission licence register (`uk-gambling-operators`, shipped 2026-09-24 —
+exchange 2026-W39 runner-up, OGL v3 confirmed on the data.gov.uk record; KYB/payments risk,
+affiliate compliance, sector suppliers; rival Apify actors price it from $8 per 1k rows). Five daily
+CSVs (businesses, licences, trading names, domain names, premises) joined into one D1 table with
+three record kinds told apart by `record_type`: one row per operating licence (the licences file is
+licence × activity, folded to one row with activities joined "|" and the operator's active trading
+names), one per registered website domain, one per licensed premises; ids `licence:<number>`,
+`domain:<account>:<domain>`, `premises:<account>:<activity>:<address>:<postcode>`, so the change
+feed is new licences, surrenders/revocations, new domains and premises. `is_active` is the boolean
+filter because "Inactive" contains "active". Every file is required (a moved file fails loudly).
+Organisation level: the personal licence registers are never fetched. Written without live-file
+access (gamblingcommission.gov.uk is unreachable from the build container; headers recorded by the
+interactive session), with a 90 s per-file timeout; runs in **wave 2** (05:15) after the two
+sources there, ~15k rows.
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo
@@ -117,7 +131,7 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   so registries/directories can index tools (per-IP, in-isolate limiter —
   zero KV ops); `tools/call` needs a key; bearer 401s carry
   `WWW-Authenticate`. KV rate limiters fail open on KV errors.
-- **Refresh**: seven staggered Cron Triggers (05:00 KV sources, 05:15 exclusions + sponsors,
+- **Refresh**: seven staggered Cron Triggers (05:00 KV sources, 05:15 exclusions + sponsors + gambling operators,
   05:30 charities + care locations, 05:45 uk-food-hygiene, 05:50 uk-schools, 05:55 nhs-ods,
   06:05 uk-trademark-journal;
   `store.ts waveForCron`) pull sources, write `refresh_log`; responses
