@@ -46,7 +46,7 @@ Cloudflare Workers Paid ≈ US$5/month (only recurring cost in the portfolio), d
 | 2026-09-21 | Daily numbers | 0 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 180 authed, 1973 anon, 160 paywall hits; wanted: list_sources 6, query_uk_sponsors 3, query_uk_care_locations 3; refresh errors: uk-care-locations, uk-charities, uk-contract-awards, uk-food-hygiene |
 | 2026-09-22 | Daily numbers | 0 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 222 authed, 1635 anon, 46 paywall hits; wanted: query_uk_sanctions 5, list_sources 5, query_uk_tenders 4; refresh errors: uk-insolvency |
 | 2026-09-23 | Daily numbers | 0 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 180 authed, 1595 anon, 18 paywall hits; wanted: sandbox.execute_shell 13, __verifymcp_auth_probe_068d3465e6aaddc4__ 1, __verifymcp_auth_probe_d51cd2b4d8b27c7c__ 1; refresh errors: nhs-ods, sam-exclusions, uk-charities |
-| 2026-09-24 | Daily numbers | 0 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 144 authed, 1685 anon, 22 paywall hits; wanted: list_sources 3, get_usage 2, query_uk_contract_awards 1; refresh errors: eu-ted, nhs-ods |
+| 2026-09-24 | Daily numbers | 0 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 156 authed, 1706 anon, 21 paywall hits; wanted: list_sources 3, query_uk_sponsors 1, query_uk_contract_awards 1; refresh errors: eu-ted, nhs-ods |
 
 
 
