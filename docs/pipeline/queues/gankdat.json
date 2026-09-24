@@ -90,6 +90,36 @@
       "status": "done",
       "added": "2026-09-23",
       "done_at": "2026-09-24"
+    },
+    {
+      "id": "agent-paywall-signup",
+      "title": "Agent-side sign-up at the paywall: MCP tool takes an email, issues a key once the magic link is clicked",
+      "why": "20–160 paywall hits/day are agents that cannot become customers: sign-up is a human magic-link flow. Diagnosis 2026-09-24.",
+      "effort_days": 1,
+      "proof": "≥ 5 keys issued via the agent path in 30 days",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-09-24"
+    },
+    {
+      "id": "launch-post-kit",
+      "title": "Launch-post kit for the owner: Product Hunt, Hacker News (Show HN), r/datasets, IndieHackers — copy, images, timing",
+      "why": "Zero outbound so far; the owner posts, we write. Owner action 010 asked for this.",
+      "effort_days": 0.3,
+      "proof": "posts published; referral visits in Analytics Engine",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-09-24"
+    },
+    {
+      "id": "b2b-outreach-experiment",
+      "title": "B2B outreach experiment: 10 targeted emails from info@gankdat.com to bid consultancies / web agencies, drafts for owner approval",
+      "why": "Lawful under PECR for corporate subscribers (unlike consumers/sole traders). Cheapest demand test we have.",
+      "effort_days": 0.3,
+      "proof": "≥ 2 replies or 1 signup from 10 emails",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-09-24"
     }
   ]
 }

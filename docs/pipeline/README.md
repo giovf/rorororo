@@ -1,6 +1,8 @@
 # Work pipeline — the exchange and the venture queues
 
-Owner decision 2026-09-22: work is organised as a hierarchy of queues that the routines read
+Owner decision 2026-09-22: work is organised as a hierarchy of queues. **`queues/foundry.json` is the
+operation's own queue** (owner 2026-09-24: self-expansion — routines, relays, watchdogs, retros — is in
+scope and competes on the same score; any routine may add to it) that the routines read
 and write, validated by `npm run pipeline` (part of `npm run check`).
 
 ```

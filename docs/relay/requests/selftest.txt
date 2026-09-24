@@ -1,0 +1,4 @@
+# self-test of the relay (interactive session, 2026-09-24)
+HEAD https://www.figma.com/api/plugins/1682711656065145288/versions
+GET https://gankdat.com/v1/sources
+GET RANGE=0-2047 https://www.ipo.gov.uk/t-tmj/tm-journals/2026-038/jnl.xml

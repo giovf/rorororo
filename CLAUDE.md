@@ -56,6 +56,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   needs them, never after.
 - Every scheduled job (cloud routines, GitHub Actions, Worker crons) is listed in
   `docs/SCHEDULERS.md`; update it in the same commit as any scheduler change.
+- **Self-expansion is in scope** (owner 2026-09-24): when a blocker repeats, build the general
+  fix (a routine, a relay, a watchdog) and queue it in `docs/pipeline/queues/foundry.json`;
+  do not wait to be asked. Hosts the sandbox cannot reach: use `docs/relay/` (README there).
 - Work queue of record: `docs/pipeline/` (exchange + one queue per venture, see its README;
   `npm run pipeline` validates and prints the next item). Build the next item, mark it in the
   same commit; an emptied queue gets `needs_research: true`.

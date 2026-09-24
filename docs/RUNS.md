@@ -53,3 +53,7 @@ Routines: build, exchange, review, report; interactive sessions too.
 - 2026-09-24 17:28 | build | Apify actor uk-gambling-operators (UK Gambling Commission Licence Register) added; CI pushes and prices it
 - 2026-09-24 17:28 | build | Runs in wave 2 (05:15) from tomorrow; ~15k rows expected; a refresh error would show in the metrics row
 - 2026-09-24 17:28 | build | Taskmaster row #58 filed in tasks.json for uk-gambling-operators (no CLI/MCP in the build container)
+- 2026-09-24 11:40 | interactive | Fetch relay built: routines can now read blocked hosts via GitHub (docs/relay); self-test request pushed
+- 2026-09-24 11:40 | interactive | Foundry queue created (operation's own improvements): watchdog, ops retro, metrics via relay, Fable fallback
+- 2026-09-24 11:40 | interactive | gankdat queue: agent paywall sign-up (score 8), launch-post kit, B2B outreach experiment added
+

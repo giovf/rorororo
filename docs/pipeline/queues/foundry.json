@@ -1,0 +1,60 @@
+{
+  "venture": "foundry",
+  "status": "open",
+  "needs_research": false,
+  "updated": "2026-09-24",
+  "items": [
+    {
+      "id": "fetch-relay",
+      "title": "Fetch relay: routines read blocked hosts via a GitHub Actions fetch (docs/relay)",
+      "why": "Four handoffs this week stalled only because the sandbox cannot reach ipo.gov.uk, nhs.uk, data.gov.uk, figma.com. A relay removes the whole class; the metrics routine gets Figma numbers too.",
+      "effort_days": 0.4,
+      "proof": "handoffs citing 'no egress' drop to zero over the next 7 days; Figma metrics rows fill",
+      "score": 9,
+      "status": "done",
+      "added": "2026-09-24",
+      "done_at": "2026-09-24"
+    },
+    {
+      "id": "run-watchdog",
+      "title": "Run watchdog: Telegram line when a scheduled routine leaves no commit/run-log line within 2h of its slot",
+      "why": "The Wed 17:09 build was refused by the usage limit and nobody knew until the owner asked. Silence must be visible.",
+      "effort_days": 0.3,
+      "proof": "every missed slot produces one 'missed' bullet within 2h",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-09-24"
+    },
+    {
+      "id": "ops-retro",
+      "title": "Weekly ops retro routine (Sonnet): reads RUNS/ALERTS/git log, proposes prompt and tooling fixes as foundry queue items",
+      "why": "Owner 2026-09-24: self-expansion is in scope; nobody currently reviews how the routines themselves perform.",
+      "effort_days": 0.3,
+      "proof": "≥ 2 accepted foundry items per month originate from the retro",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-09-24"
+    },
+    {
+      "id": "metrics-via-relay",
+      "title": "Daily metrics routine fetches Figma/Chrome/AMO numbers through the relay instead of failing on egress",
+      "why": "Every Figma row since launch says 'fetch failed: egress blocked'; no purchase/installs data at all.",
+      "effort_days": 0.2,
+      "proof": "Variables Toolkit metrics rows carry install/like numbers",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-09-24"
+    },
+    {
+      "id": "fable-fallback",
+      "title": "Decide and implement what happens when Fable is exhausted mid-week (Opus fallback routine vs fewer runs)",
+      "why": "Refused runs waste the slot; owner's allowance was gone by Wed 17:09 this week.",
+      "effort_days": 0.3,
+      "proof": "zero refused-run slots in a month",
+      "score": 5,
+      "status": "blocked",
+      "blocked_on": "owner's call on model policy (Fable-only was explicit)",
+      "added": "2026-09-24"
+    }
+  ]
+}

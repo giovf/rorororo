@@ -1,0 +1,34 @@
+name: fetch relay
+
+# Routines (cloud sandboxes with no egress to data hosts) push docs/relay/requests/<name>.txt;
+# this fetches the URLs from a GitHub runner and commits the responses under
+# docs/relay/responses/<name>/. See docs/relay/README.md.
+on:
+  push:
+    branches: [main]
+    paths: ['docs/relay/requests/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: node scripts/fetch-relay.mjs
+      - name: Commit responses
+        run: |
+          git config user.name "foundry-relay[bot]"
+          git config user.email "info@gankdat.com"
+          git add -A docs/relay
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "relay: $(git diff --cached --name-only | grep -oE 'responses/[^/]+' | sort -u | sed 's#responses/##' | tr '\n' ' ')"
+          git pull --rebase origin main
+          git push origin HEAD:main
