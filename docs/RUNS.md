@@ -45,3 +45,4 @@ Routines: build, exchange, review, report; interactive sessions too.
 - 2026-09-24 10:45 | interactive | gankdat listed in awesome-remote-mcp-servers (PR #460 merged); Taskmaster #56/#57 filed
 - 2026-09-24 10:45 | interactive | Wednesday burn-down routines created (Wed 18-23, Thu 00-02 UTC); Fable limit was hit Wed 17:09 this week
 
+- 2026-09-24 11:00 | interactive | nhs-ods verified live after a forced refresh: 98,221 organisations (15,651 GP practices) in 69 s
