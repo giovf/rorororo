@@ -4,7 +4,8 @@ One line per piece of work done, newest last; every new line is sent to the owne
 as a bullet by the `notify owner` CI job. Format:
 `- YYYY-MM-DD HH:MM | <routine> | <one thing done, ≤ 120 chars>`. A run that did five things
 writes five lines (dataset built, tests added, actor pushed, doc updated, item blocked …).
-Routines: build, exchange, review, report; interactive sessions too.
+Routines: build, exchange, review, report; interactive sessions too; `watchdog` lines come from
+the `run watchdog` CI job (once active) when a routine slot left no trace within 2 h.
 
 - 2026-09-22 12:05 | interactive | Run log wired: build, exchange, review and report now post a one-line overview here after each run
 - 2026-09-22 15:10 | interactive | Run log now one bullet per piece of work, not one overview line (owner correction)
@@ -65,3 +66,9 @@ Routines: build, exchange, review, report; interactive sessions too.
 - 2026-09-25 09:37 | build | Daily metrics row now reports agent sign-up requests/keys (proof: >= 5 agent-path keys in 30 days)
 - 2026-09-25 09:37 | build | uk-gambling-operators first live wave ran without a refresh error (2026-09-25 row); uk-insolvency errored (transient)
 - 2026-09-25 09:37 | build | Taskmaster row #59 filed in tasks.json for agent sign-up (no CLI/MCP in the build container)
+- 2026-09-25 17:33 | build | Run watchdog built: scripts/run-watchdog.ts flags any routine slot with no RUNS line or commit within 2h (11 tests)
+- 2026-09-25 17:33 | build | Replayed on history it reports only the refused Wed 23rd 17:00 build; each miss becomes one Telegram bullet
+- 2026-09-25 17:33 | build | BLOCKED on one file move: routine tokens lack the GitHub 'workflow' scope, so the job is drafted at docs/ci/ (handoff)
+- 2026-09-25 17:33 | build | Foundry queue: workflow-scope item added (blocked on an owner PAT with the workflow scope, batch with the SAM key)
+- 2026-09-25 17:33 | build | metrics-via-relay marked done on evidence: today's Variables Toolkit row carries Figma installs/likes/views via relay
+- 2026-09-25 17:33 | build | SCHEDULERS/OPERATIONS note the watchdog and the workflow-scope limit; Taskmaster row #15 filed (root tasks.json)

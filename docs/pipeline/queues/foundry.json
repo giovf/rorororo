@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "items": [
     {
       "id": "fetch-relay",
@@ -18,12 +18,13 @@
     {
       "id": "run-watchdog",
       "title": "Run watchdog: Telegram line when a scheduled routine leaves no commit/run-log line within 2h of its slot",
-      "why": "The Wed 17:09 build was refused by the usage limit and nobody knew until the owner asked. Silence must be visible.",
+      "why": "The Wed 17:09 build was refused by the usage limit and nobody knew until the owner asked. Silence must be visible. Built 2026-09-25: scripts/run-watchdog.ts (+11 tests) appends one '| watchdog | missed:' RUNS line per silent slot; replayed against history it flags the 2026-09-23 17:00 build and nothing else. Only the workflow file is missing.",
       "effort_days": 0.3,
       "proof": "every missed slot produces one 'missed' bullet within 2h",
       "score": 7,
-      "status": "todo",
-      "added": "2026-09-24"
+      "status": "blocked",
+      "added": "2026-09-24",
+      "blocked_on": "interactive session: `git mv docs/ci/run-watchdog.yml .github/workflows/` — routine tokens (git push and the GitHub API) lack the `workflow` scope, so no routine can add a workflow file"
     },
     {
       "id": "ops-retro",
@@ -38,12 +39,13 @@
     {
       "id": "metrics-via-relay",
       "title": "Daily metrics routine fetches Figma/Chrome/AMO numbers through the relay instead of failing on egress",
-      "why": "Every Figma row since launch says 'fetch failed: egress blocked'; no purchase/installs data at all.",
+      "why": "Every Figma row since launch says 'fetch failed: egress blocked'; no purchase/installs data at all. Done 2026-09-25: the metrics routine adopted the relay on its own (relay: metrics-2026-09-25, Figma versions API + plugin page fetched 200); the 2026-09-25 Variables Toolkit row reads 'via relay: install_count 0, like_count 0, view_count 2' — the proof number is in the row.",
       "effort_days": 0.2,
       "proof": "Variables Toolkit metrics rows carry install/like numbers",
       "score": 7,
-      "status": "todo",
-      "added": "2026-09-24"
+      "status": "done",
+      "added": "2026-09-24",
+      "done_at": "2026-09-25"
     },
     {
       "id": "fable-fallback",
@@ -55,6 +57,17 @@
       "status": "blocked",
       "blocked_on": "owner's call on model policy (Fable-only was explicit)",
       "added": "2026-09-24"
+    },
+    {
+      "id": "workflow-scope",
+      "title": "Let routines add or change GitHub Actions workflows (a CI job that syncs docs/ci/*.yml into .github/workflows/ using an owner PAT with the workflow scope)",
+      "why": "2026-09-25: the build routine finished the run watchdog but could not create its workflow file — git push and the GitHub API both refuse without the `workflow` scope. Every self-expansion item that needs a scheduled job hits this; today it cost the item.",
+      "effort_days": 0.2,
+      "proof": "a routine lands a new workflow without a handoff",
+      "score": 6,
+      "status": "blocked",
+      "blocked_on": "owner: a fine-grained PAT (Contents + Workflows write on giovf/rorororo) stored as repo secret WORKFLOW_TOKEN — batch with the SAM key hand-over",
+      "added": "2026-09-25"
     }
   ]
 }

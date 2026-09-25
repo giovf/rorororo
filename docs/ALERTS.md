@@ -96,4 +96,10 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   `task-master` CLI in the build container and the MCP timed out again.
 - 2026-09-24 done: handoffs from the 2026-09-23/24 builds executed by the interactive session — nhs-ods fixed (files moved to odsdatasearchandexport.nhs.uk getReport CSVs; old ZIP path 403s for every UA); uk-trademark-journal verified live (jnl.xml 200, 13,758 records, publication_date + opposition_deadline populated; jnl.zip is 403 so the code's zip-then-xml order is right); uk-gambling-operators unblocked (OGL v3 confirmed on data.gov.uk + CKAN; five CSV headers recorded in the queue item; activities.csv does not exist); awesome-remote-mcp-servers listing recorded as live; Taskmaster #56 (trademark journal) and #57 (change-feed upsell) filed.
 - 2026-09-25 owner: SAM.gov emailed a 1st reminder (2026-09-25 08:02 UTC) that the individual-account API key backing gankdat's `sam-exclusions` source rotates in 15 days (~2026-10-10). A replacement key is already generated under the account's Public API Key profile section at sam.gov — please sign in, grab it, and hand it to Claude to update the Worker secret before the old key stops working. Nothing to do until then.
-
+- 2026-09-25 handoff: activate the run watchdog — `git mv docs/ci/run-watchdog.yml .github/workflows/run-watchdog.yml`
+  and push (needs a token with the `workflow` scope; the build routine's git push and GitHub API calls
+  were both refused with "required workflow scope"). The script (`scripts/run-watchdog.ts`, tests
+  green, dormant until then) then reports any routine slot with no trace within 2 h as a
+  `watchdog | missed:` Telegram bullet. Set foundry queue item `run-watchdog` to `done` in the same
+  commit. While there: the queued `workflow-scope` item needs the owner's fine-grained PAT
+  (Contents + Workflows write) as repo secret `WORKFLOW_TOKEN` — batch with the SAM key hand-over.

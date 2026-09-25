@@ -193,3 +193,14 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   ≥ 5 keys via the agent path in 30 days — the daily metrics row now carries the count. Yesterday's
   `uk-gambling-operators` first live run had no refresh error. Next buildable item: launch-post-kit
   (6), then b2b-outreach-experiment (6), trademark-watch-surface (4).
+- 2026-09-25 build (17:00 run): built `run-watchdog` (foundry queue, score 7, the top buildable item in
+  `docs/pipeline/`): `scripts/run-watchdog.ts` checks each routine slot in SCHEDULERS.md for its
+  trace — a tagged RUNS.md line or a known commit subject within 2 h — and appends one `watchdog |
+  missed:` line per silent slot to `docs/RUNS.md`, which `notify owner` sends to the owner's phone.
+  Replayed against history it flags exactly the refused Wednesday 2026-09-23 17:00 build. The item
+  is **blocked** on one file move: neither the routine's git token nor the GitHub API token carries
+  the `workflow` scope, so the workflow is drafted at `docs/ci/run-watchdog.yml` for the interactive
+  session (handoff in ALERTS.md); the general fix (`workflow-scope`) is queued, blocked on an owner
+  PAT. `metrics-via-relay` (7) marked done on evidence: the metrics routine adopted the relay itself
+  today and the Variables Toolkit row now carries Figma install/like/view counts. Next buildable
+  item: gankdat launch-post-kit (6) / foundry ops-retro (6).

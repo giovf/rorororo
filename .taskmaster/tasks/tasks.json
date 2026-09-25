@@ -1097,12 +1097,24 @@
         "recommendedSubtasks": 8,
         "expansionPrompt": "Break down into: 1) Create ventures/v2 workspace with WXT framework initialization for Chrome MV3, 2) Implement core extension functionality (background, content scripts, popup), 3) Integrate @foundry/licensing for freemium paywall with chrome.storage persistence, 4) Integrate @foundry/telemetry for usage tracking, 5) Copy and configure packages/landing for V2 landing page deployment, 6) Complete docs/launch/chrome.md checklist and create store assets, 7) Handle $5 developer fee owner action and submit to Chrome Web Store, 8) Update venture.json, ledger, enable telemetry and set 30-day review. Multiple package integrations and full launch process.",
         "updatedAt": "2026-09-19T18:02:36.591Z"
+      },
+      {
+        "id": "15",
+        "title": "run-watchdog: CI job that reports a routine slot with no trace within 2h to the owner's phone (script built by the build routine 2026-09-25; workflow file blocked on the workflow scope)",
+        "description": "scripts/run-watchdog.ts + docs/ci/run-watchdog.yml (draft; moves to .github/workflows/ via the interactive session) (hourly cron + every push to main): enumerates the routine slots in docs/SCHEDULERS.md (metrics, build x2, exchange, review, report, burn-down), looks for a tagged docs/RUNS.md line or a known commit subject inside the grace window, appends one '| watchdog | missed:' RUNS line per silent slot (the line is the dedupe record); notify owner sends it to Telegram. Foundry queue item run-watchdog (score 7).",
+        "details": "",
+        "testStrategy": "scripts/run-watchdog.test.ts (slot calendar by weekday and lookback, RUNS/commit traces, CI metrics job vs metrics routine, dedupe, line format); replay against git history flags only the 2026-09-23 17:00 refused build",
+        "status": "blocked",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2026-09-25T17:24:57.000Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-19T18:02:36.591Z",
-      "taskCount": 14,
+      "lastModified": "2026-09-25T17:24:57.000Z",
+      "taskCount": 15,
       "completedCount": 9,
       "tags": [
         "master"

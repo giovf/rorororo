@@ -30,6 +30,7 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 | 06:30 **and on pushes to `main`** (push runs only fill a missing day) | GitHub Actions `gankdat metrics` (`.github/workflows/gankdat-metrics.yml`) | — | `ventures/gankdat/scripts/schedules.mjs reset` (self-heal cron triggers), then `scripts/metrics.mjs` (D1 + Analytics Engine numbers) | commits a `Daily numbers` row to `ventures/gankdat/RESEARCH.md` |
 | 07:00 | Cloud routine `trig_01JBrWDAZLeWEAhSBBnA9g8K` **Foundry daily metrics** (Sonnet) | — | reads each `STORE.md`, fetches public store stats (Figma, Chrome, Firefox) | `Daily check` rows in each venture's `RESEARCH.md`; `docs/ALERTS.md` on bad reviews |
 | 09:00 **and 17:00** (10:00 and 18:00 UK time) | Cloud routine `trig_01P9WT733fg3qnuJeKUHE8fx` **Foundry daily build** (Fable, twice daily since 2026-09-22) | — | heals `main` if red, then takes `npm run pipeline next` (the highest-scoring item across open venture queues, `docs/pipeline/`) and builds it behind `npm run check`; if any open queue needs research it researches that venture instead (≥ 3 scored items or `finished`) | one commit to `main` including the queue change; `handoff:` lines in `docs/ALERTS.md`; a line in `STRATEGY.md` §8 |
+| every hour at :40 **and on every push to `main`** — **drafted, not yet active** | GitHub Actions `run watchdog` (draft at `docs/ci/run-watchdog.yml`, 2026-09-25; routine tokens lack the `workflow` scope, so the interactive session moves it to `.github/workflows/`) | — | `scripts/run-watchdog.ts`: for every routine slot in this file (metrics 07:00, build 09:00/17:00, exchange Wed 08:00, review Sun 08:00, report Mon 07:30, burn-down Wed 18:00) checks that a trace exists within 2 h — a `docs/RUNS.md` line with the routine's tag or a commit with its subject (`(build)`, `metrics: `, `(venture exchange)` …); triage is not watched (it commits only when there is mail). The slot list is `ROUTINES` in the script — change it in the same commit as any routine slot here | appends one `- … \| watchdog \| missed: <routine> slot <when> UTC …` line per silent slot to `docs/RUNS.md` (the line is the dedupe record; `notify owner` sends it as a bullet) |
 | every hour at :05 | Cloud routine `trig_011NfGaSrEEsr5B1xTHEBRAr` **Foundry inbox triage** (Sonnet, Gmail connector) | — | reads unread inbox mail, classifies, drafts customer replies (never sends) | `docs/INBOX.md`, `docs/ALERTS.md` (`needs owner` / listing changes) |
 
 ## Weekly
@@ -81,11 +82,22 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   Wednesday 2026-09-23 17:09 build was rejected at start (`rate_limit: rejected
   (seven_day_overage_included) resets_at=Thu 03:00 UTC`) — the week's Fable allowance was gone
   before the burn-down window, so under the current cadence (2 builds/day + exchange + review
-  + interactive sessions on Fable) there may be nothing left to burn on Wednesdays. The only signal is a
-  `rate_limit_event` in a run's log (`RemoteTrigger get_run_log`) and a run that ends within
-  seconds of starting; the owner sees the real figure with `/usage` in Claude Code. The
+  + interactive sessions on Fable) there may be nothing left to burn on Wednesdays. The signals are a
+  `rate_limit_event` in a run's log (`RemoteTrigger get_run_log`), a run that ends within
+  seconds of starting, and — once `docs/ci/run-watchdog.yml` is moved into `.github/workflows/` — the `run
+  watchdog` job's `missed:` bullet on the owner's phone within 2 h of the silent slot; the owner sees the real figure with `/usage` in
+  Claude Code. The
   Wednesday burn-down is designed to be cut off: each item is one commit, pushed as soon as its
   gate passes, so a cut leaves nothing half-done.
+- **Every routine slot is watched** (once the drafted job is active): a routine's trace is its tagged `docs/RUNS.md` line (build,
+  exchange, review, report, burn-down) or, for the metrics routine, its `metrics: <date> daily
+  check` commit. A slot with neither within 2 h becomes a `watchdog | missed:` line in RUNS.md and
+  a Telegram bullet (`docs/ci/run-watchdog.yml`). Keep the tags and commit subjects
+  stable, or update `ROUTINES` in `scripts/run-watchdog.ts` in the same commit.
+- **Routines cannot add or change workflows**: both the git token and the GitHub API token a cloud
+  routine holds lack the `workflow` scope (2026-09-25). A routine that needs a new GitHub Actions job
+  drafts it under `docs/ci/` and files a `handoff:`; the general fix is the `workflow-scope` item in
+  `docs/pipeline/queues/foundry.json`.
 - Routines push exactly once, at the end, after the gates; a run killed by a usage limit leaves
   nothing behind (`docs/OPERATIONS.md`, "Interrupted runs").
 - Routine ids and prompts are managed with the RemoteTrigger API from the interactive session;

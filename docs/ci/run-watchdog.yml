@@ -1,0 +1,48 @@
+name: run watchdog
+
+# DRAFT, not active: routine tokens (git and the GitHub API alike) lack the `workflow` scope, so the
+# build routine could not create this file under .github/workflows/ (2026-09-25). The interactive
+# session moves it there unchanged; the script it runs is already on main and tested.
+
+# A scheduled routine that never ran (usage limit, stalled sandbox) leaves nothing on main.
+# This job checks every routine slot in docs/SCHEDULERS.md for its trace (a tagged
+# docs/RUNS.md line or a known commit subject within 2 h) and appends one
+# `| watchdog | missed: …` line per silent slot; the `notify owner` job sends it to Telegram.
+# GitHub's cron is best-effort, so it also runs on pushes to main (routines push several times
+# a day); its own commit touches only docs/RUNS.md and is ignored, so it cannot loop.
+on:
+  schedule:
+    - cron: '40 * * * *'
+  push:
+    branches: [main]
+    paths-ignore: ['docs/RUNS.md']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: run-watchdog
+  cancel-in-progress: false
+
+jobs:
+  watchdog:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: node --disable-warning=ExperimentalWarning scripts/run-watchdog.ts
+      - name: Commit
+        run: |
+          git config user.name "foundry-watchdog[bot]"
+          git config user.email "info@gankdat.com"
+          git add docs/RUNS.md
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "watchdog: missed routine slot"
+          git pull --rebase origin main
+          git push origin HEAD:main

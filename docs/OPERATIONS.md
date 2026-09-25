@@ -114,6 +114,10 @@ between agents use `handoff:` and are not sent.
 - Routine sandboxes are discarded when a run dies; nothing reaches `main` unless pushed. Every
   routine therefore pushes exactly once, at the end, after the gates pass — a dead run leaves no
   trace and the next run simply redoes the item.
+- A slot that leaves no trace at all (refused by the usage limit, stalled clone) is reported by
+  the `run watchdog` CI job (drafted 2026-09-25 at `docs/ci/run-watchdog.yml`, active once moved
+  into `.github/workflows/`) within 2 h as a `watchdog | missed:` line in `docs/RUNS.md` → Telegram
+  bullet, so silence is never mistaken for a quiet day (`docs/SCHEDULERS.md`).
 - `main` is gated by the `check` workflow on every push. If it goes red, the next daily build
   run fixes or reverts before doing anything else; interactive sessions do the same at start.
 - Live-state side effects (temporary cron triggers used to force a refresh) are reconciled with
