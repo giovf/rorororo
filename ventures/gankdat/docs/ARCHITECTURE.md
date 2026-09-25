@@ -112,7 +112,8 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   accounts, inherit plan), `credit_ledger` (append-only audit; NOT the live
   quota), `stripe_customers` (one per account), `waitlist`, `refresh_log`,
   `magic_tokens` (single-use sign-in tokens — atomic consume via
-  `UPDATE … WHERE used_at IS NULL`),
+  `UPDATE … WHERE used_at IS NULL`), `agent_signups` (agent-side sign-up requests:
+  hashed claim secret, emailed approval token, human-check code; same atomic single-use),
   `source_records`/`source_meta` (rows for `storage:'d1'` datasets too large
   for a KV snapshot — SQL filters with applyQuery-parity semantics,
   generation-swap refresh; task 44). Migrations via `wrangler d1 migrations`.
@@ -131,6 +132,17 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   so registries/directories can index tools (per-IP, in-isolate limiter —
   zero KV ops); `tools/call` needs a key; bearer 401s carry
   `WWW-Authenticate`. KV rate limiters fail open on KV errors.
+  **Agent-side sign-up** (2026-09-25, `src/auth/signup.ts`): the paywall's audience is
+  agents that cannot click a magic link, so the two keyless tools `request_api_key`
+  (user's email → approval email with a short code, RFC 8628-style) and `claim_api_key`
+  (poll with the claim secret → the key, once) — REST twins `POST /v1/auth/agent-signup`
+  and `/agent-signup/claim` — let the agent start sign-up and the human only approve
+  (`GET`-then-same-origin-`POST /v1/auth/approve`, like `/verify`). The approval token
+  goes only into the email, the raw key is minted at claim and never stored, keys are
+  named `agent:<client>` and inherit the account's plan (hence the human gate). Abuse
+  valves: login-sized per-IP budget (KV scope `signup`, shared by REST and MCP) and the
+  per-email hourly cap shared with browser login (`src/auth/emailcap.ts`). Every keyless
+  401 names the path. Proof number in the daily metrics row (`agent sign-up: …`).
 - **Refresh**: seven staggered Cron Triggers (05:00 KV sources, 05:15 exclusions + sponsors + gambling operators,
   05:30 charities + care locations, 05:45 uk-food-hygiene, 05:50 uk-schools, 05:55 nhs-ods,
   06:05 uk-trademark-journal;

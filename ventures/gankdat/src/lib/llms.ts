@@ -29,6 +29,8 @@ export function buildLlmsTxt(baseUrl: string): string {
   const tools = [
     'list_sources',
     'get_usage',
+    'request_api_key',
+    'claim_api_key',
     ...(feeds.length > 0 ? ['get_changes'] : []),
     ...sources.map((s) => `query_${s.slug.replaceAll('-', '_')}`),
   ].join(', ');
@@ -50,6 +52,12 @@ Machine-readable spec: ${baseUrl}/openapi.json
 - Free key: sign in at ${baseUrl}/account (email magic link) and create a key
   → ${FREE_TIER_CREDITS} requests/month, no card. Agents without a key can pay
   per request via x402 (see below) — no signup.
+- Agents can sign the user up without a browser: POST ${baseUrl}/v1/auth/agent-signup
+  {"email":"…","client_name":"…"} (or the MCP tool request_api_key) emails the
+  user a one-click approval link with a short code; show them the code, then
+  POST ${baseUrl}/v1/auth/agent-signup/claim {"request_id","claim_secret"} (or
+  claim_api_key) every 15 s until status is "approved" — it returns the key
+  once. No key needed for these two calls.
 - Send the key as \`Authorization: Bearer fapi_...\` on every data request.
 - 1 credit = 1 request; paid plans from £${minGbp}/mo (billed GBP/USD/EUR by
   location); usage at GET /v1/usage (free).
@@ -76,9 +84,9 @@ ${feeds.map((s) => `- GET ${baseUrl}/v1/changes/${s.slug} — ${s.title}`).join(
 
 ## For AI agents
 
-- MCP server (Streamable HTTP): ${baseUrl}/mcp — anonymous initialize and
-  tools/list; tool calls use the same bearer key. Tools: ${tools}.
-  Structured JSON results with credits_remaining in meta.
+- MCP server (Streamable HTTP): ${baseUrl}/mcp — anonymous initialize,
+  tools/list and the two sign-up tools; data tools use the same bearer key.
+  Tools: ${tools}. Structured JSON results with credits_remaining in meta.
 - x402 pay-per-request (no account, USDC on Base):
   GET /x402/data/{source} → HTTP 402 with payment requirements → pay → retry
   with X-PAYMENT header. ~$0.005/request.

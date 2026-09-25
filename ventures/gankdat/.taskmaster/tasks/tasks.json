@@ -2015,6 +2015,18 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-09-24T17:28:19.000Z"
+      },
+      {
+        "id": "59",
+        "title": "agent-paywall-signup: agent-side sign-up — request_api_key / claim_api_key MCP tools + REST twins (built by the build routine 2026-09-25, v0.18.0)",
+        "description": "Keyless MCP tools and POST /v1/auth/agent-signup(+/claim): the agent gives the user's email, the user approves one emailed link (GET-then-same-origin-POST /v1/auth/approve showing an RFC 8628-style code), the agent collects the key with its claim secret (single-use, raw key never stored, inherits the account's plan). Migration 0011 agent_signups; per-IP and per-email caps; every keyless 401 names the path; metrics row carries the proof count.",
+        "details": "",
+        "testStrategy": "test/agent-signup.spec.ts (REST + MCP flows, pending/approved/claimed/expired, CSRF, wrong secret, rate limits, plan inheritance)",
+        "status": "done",
+        "dependencies": [],
+        "priority": "high",
+        "subtasks": [],
+        "updatedAt": "2026-09-25T09:37:00.000Z"
       }
     ],
     "metadata": {

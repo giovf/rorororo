@@ -182,3 +182,14 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   Apify actor. Written blind again (origin unreachable from the build container) — the first live
   run is 05:15 tomorrow and the metrics row will say if it errored. Next buildable item:
   variables-toolkit day-7-review (4), then trademark-watch-surface (4).
+- 2026-09-25 build (09:00 run): shipped `agent-paywall-signup` (score 8, the top buildable item in
+  `docs/pipeline/`): 20–160 keyless MCP tools/call a day were agents that could not become
+  customers because sign-up was a browser magic-link flow. Now the agent starts it — keyless
+  tools `request_api_key` (user's email → approval email with a short cross-check code) and
+  `claim_api_key` (poll → key, once), REST twins under `/v1/auth/agent-signup`, the human only
+  clicks one approval link (same GET-then-POST anti-prefetch shape as magic links, key inherits
+  the account's plan so the human is the gate). Every keyless 401, llms.txt, the docs and the
+  landing MCP card point at it; v0.18.0 republishes the registry entry with the two tools. Proof:
+  ≥ 5 keys via the agent path in 30 days — the daily metrics row now carries the count. Yesterday's
+  `uk-gambling-operators` first live run had no refresh error. Next buildable item: launch-post-kit
+  (6), then b2b-outreach-experiment (6), trademark-watch-surface (4).

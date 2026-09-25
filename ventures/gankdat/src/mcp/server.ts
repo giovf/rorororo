@@ -1,5 +1,16 @@
 import { McpServer } from '@modelcontextprotocol/sdk/server/mcp.js';
-import { API_BASE_URL, APP_VERSION, DOCS_ERRORS_URL } from '../lib/constants';
+import { normalizeEmail } from '../auth/accounts';
+import { emailSendAllowed, recordEmailSend } from '../auth/emailcap';
+import { claimAgentKey, createAgentSignup, CLAIM_RETRY_SECONDS } from '../auth/signup';
+import { emailEnabled, sendEmail } from '../email/send';
+import { agentKeyRequestEmail } from '../email/templates';
+import {
+  API_BASE_URL,
+  APP_VERSION,
+  DOCS_ERRORS_URL,
+  FREE_TIER_CREDITS,
+  publicBaseUrl,
+} from '../lib/constants';
 import { creditCost } from '../metering/costs';
 import { currentPeriod, getUsage, incrementUsage } from '../metering/counters';
 import { planAllowance } from '../billing/plans';
@@ -37,10 +48,17 @@ function errorResult(message: string): ToolResult {
   return { content: [{ type: 'text', text: message }], isError: true };
 }
 
+/** The tools an agent may call WITHOUT a key — they are how it gets one (routes/mcp.ts). */
+export const SIGNUP_TOOLS: ReadonlySet<string> = new Set(['request_api_key', 'claim_api_key']);
+
+/** Appended to the HTTP 401 on a keyless tools/call: the sign-up funnel's first line. */
+export const MCP_NO_KEY_HINT =
+  "No key yet? Call the request_api_key tool with the user's email (no key needed): they approve one emailed link, then claim_api_key returns the key.";
+
 // Tool execution never runs anonymously in practice — the route 401s
 // unauthenticated tools/call before the server is invoked — but the handlers
 // guard anyway so a route regression degrades to a polite tool error.
-const AUTH_REQUIRED = `Authentication required: send an API key as "Authorization: Bearer <key>" on the HTTP request. Get a free key at ${API_BASE_URL}/account.`;
+const AUTH_REQUIRED = `Authentication required: send an API key as "Authorization: Bearer <key>" on the HTTP request. ${MCP_NO_KEY_HINT} Or get one at ${API_BASE_URL}/account.`;
 
 function sourceListing(): Record<string, unknown>[] {
   return listSources().map((source) => ({
@@ -157,6 +175,101 @@ function registerChangesTool(
 }
 
 /**
+ * Agent-side sign-up (build routine 2026-09-25): the paywall's audience is
+ * agents that cannot click a magic link, so the flow starts inside the agent
+ * and the human only approves. Both tools are free and keyless; abuse valves
+ * (per-IP, per-email) live in routes/mcp.ts and auth/emailcap.ts.
+ */
+function registerSignupTools(server: McpServer, env: CloudflareBindings): void {
+  server.registerTool(
+    'request_api_key',
+    {
+      title: 'Request a free API key for the user (no browser needed)',
+      description: `Start sign-up from inside the agent: give the user's email address and gankdat emails them a one-click approval link with a short code. Show the user the returned code (they approve only if it matches), then call claim_api_key with request_id and claim_secret every ${CLAIM_RETRY_SECONDS}s until it returns the key (${FREE_TIER_CREDITS} free credits/month, no card; an existing account's plan carries over). Free to call; no key needed.`,
+      inputSchema: {
+        email: z.email().describe("The user's email address — they must be able to open the email"),
+        client_name: z
+          .string()
+          .trim()
+          .min(1)
+          .max(60)
+          .optional()
+          .describe('Name of the agent or app asking, shown to the user'),
+      },
+    },
+    async (args: { email: string; client_name?: string }): Promise<ToolResult> => {
+      if (!emailEnabled(env)) return errorResult('Email sign-up is not configured yet');
+      const clientName = args.client_name ?? null;
+      if (!(await emailSendAllowed(env, normalizeEmail(args.email)))) {
+        return errorResult('Too many sign-up emails for this address; retry in an hour');
+      }
+      const { request, approveToken } = await createAgentSignup(env, args.email, clientName);
+      const link = `${publicBaseUrl(env)}/v1/auth/approve?token=${approveToken}`;
+      const sent = await sendEmail(
+        env,
+        agentKeyRequestEmail(request.email, link, request.code, clientName),
+      );
+      if (!sent) return errorResult('Could not send the approval email — please try again shortly');
+      await recordEmailSend(env, request.email);
+      return jsonResult({
+        ok: true,
+        data: {
+          ...request,
+          next: `Tell the user: "Check ${request.email} for a gankdat email and approve the request with code ${request.code}." Then call claim_api_key with request_id and claim_secret every ${CLAIM_RETRY_SECONDS}s until status is "approved".`,
+        },
+      });
+    },
+  );
+
+  server.registerTool(
+    'claim_api_key',
+    {
+      title: 'Collect the API key once the user has approved',
+      description: `Poll after request_api_key: returns status "pending" until the user approves the emailed link, then "approved" with the key exactly once. Send the key as "Authorization: Bearer <key>" on every later request (reconnect the MCP client with that header). Free to call; no key needed.`,
+      inputSchema: {
+        request_id: z.string().min(1),
+        claim_secret: z.string().min(1),
+      },
+    },
+    async (args: { request_id: string; claim_secret: string }): Promise<ToolResult> => {
+      const result = await claimAgentKey(env, args.request_id, args.claim_secret);
+      switch (result.status) {
+        case 'approved':
+          return jsonResult({
+            ok: true,
+            data: {
+              status: 'approved',
+              api_key: result.api_key,
+              key_id: result.key_id,
+              plan: result.plan,
+              message:
+                'Store this key now — it is shown only once. Send it as: Authorization: Bearer <key>',
+            },
+          });
+        case 'pending':
+          return jsonResult({
+            ok: true,
+            data: {
+              status: 'pending',
+              approve_by: result.approve_by,
+              retry_after_seconds: CLAIM_RETRY_SECONDS,
+              message: 'The user has not approved the emailed link yet; ask them to, then retry.',
+            },
+          });
+        case 'not_found':
+          return errorResult('Unknown request_id or wrong claim_secret');
+        case 'claimed':
+          return errorResult('This request already issued its key');
+        case 'key_limit':
+          return errorResult('Key limit reached (25 active) — revoke a key at /account first');
+        default:
+          return errorResult('This request expired; call request_api_key again');
+      }
+    },
+  );
+}
+
+/**
  * keyCtx is null for anonymous introspection (initialize/tools/list — see
  * routes/mcp.ts): registries and directories index tools without a key, so
  * every tool must register with its full schema regardless of auth.
@@ -194,6 +307,7 @@ export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext | nul
     },
   );
 
+  registerSignupTools(server, env);
   for (const source of listSources()) {
     registerQueryTool(server, env, keyCtx, source);
   }

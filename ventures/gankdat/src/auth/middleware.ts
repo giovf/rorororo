@@ -117,18 +117,28 @@ async function lookupKey(env: CloudflareBindings, hash: string): Promise<KeyReco
   return row;
 }
 
+// How a caller with no key gets one — REST wording; the MCP route passes its
+// own hint naming the tools. Agents read the 401 body, so this is the sign-up
+// funnel's first line.
+export const NO_KEY_HINT =
+  'No key yet? Sign in at /account, or from an agent: POST /v1/auth/agent-signup {"email"} — the user approves one emailed link, then POST /v1/auth/agent-signup/claim returns the key.';
+
 /**
  * Bearer API-key auth: KV hot path, D1 fallback (repopulating KV).
  * Revocation deletes the KV entry; it propagates within the cache TTL.
+ * `hint` tells a keyless caller how to get one (route-specific wording).
  */
-export function requireApiKey(): MiddlewareHandler<AppEnv> {
+export function requireApiKey(hint: string = NO_KEY_HINT): MiddlewareHandler<AppEnv> {
   return async (c, next) => {
     const header = c.req.header('Authorization') ?? '';
     // RFC 7235 auth-scheme is case-insensitive.
     const match = /^Bearer\s+(\S+)$/i.exec(header);
     if (!match) {
       return c.json(
-        failure('unauthorized', 'Missing API key. Send it as: Authorization: Bearer <key>'),
+        failure(
+          'unauthorized',
+          `Missing API key. Send it as: Authorization: Bearer <key>. ${hint}`,
+        ),
         401,
         // RFC 7235: a 401 MUST say how to authenticate. MCP clients and
         // directory crawlers key off this header.

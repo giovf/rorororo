@@ -56,4 +56,12 @@ Routines: build, exchange, review, report; interactive sessions too.
 - 2026-09-24 11:40 | interactive | Fetch relay built: routines can now read blocked hosts via GitHub (docs/relay); self-test request pushed
 - 2026-09-24 11:40 | interactive | Foundry queue created (operation's own improvements): watchdog, ops retro, metrics via relay, Fable fallback
 - 2026-09-24 11:40 | interactive | gankdat queue: agent paywall sign-up (score 8), launch-post kit, B2B outreach experiment added
-
+- 2026-09-25 09:37 | build | Agent-side sign-up shipped: MCP tools request_api_key + claim_api_key issue a key after one human email click (v0.18.0)
+- 2026-09-25 09:37 | build | REST twins POST /v1/auth/agent-signup and /agent-signup/claim; approval page GET-then-POST like magic links
+- 2026-09-25 09:37 | build | D1 migration 0011 agent_signups (hashed claim secret, RFC 8628-style code); keys named agent:<client>, inherit plan
+- 2026-09-25 09:37 | build | Abuse valves: per-IP sign-up budget shared REST/MCP, per-email hourly cap shared with login; keyless 401s name the path
+- 2026-09-25 09:37 | build | 9 new specs (REST + MCP flows, single-use, CSRF, expiry, plan inheritance, rate limits); 290/290 pass
+- 2026-09-25 09:37 | build | llms.txt, docs quickstart, landing MCP card, privacy retention updated; server.json republishes with the two tools
+- 2026-09-25 09:37 | build | Daily metrics row now reports agent sign-up requests/keys (proof: >= 5 agent-path keys in 30 days)
+- 2026-09-25 09:37 | build | uk-gambling-operators first live wave ran without a refresh error (2026-09-25 row); uk-insolvency errored (transient)
+- 2026-09-25 09:37 | build | Taskmaster row #59 filed in tasks.json for agent sign-up (no CLI/MCP in the build container)

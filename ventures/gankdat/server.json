@@ -3,7 +3,7 @@
   "name": "com.gankdat/gankdat",
   "title": "gankdat",
   "description": "UK & EU tenders, awards, planning, companies, charities, schools, NHS, care, gambling, trade marks.",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "websiteUrl": "https://gankdat.com",
   "icons": [
     {
@@ -18,7 +18,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer <api key> \u2014 required for tools/call; initialize and tools/list work without it. Get a free key at https://gankdat.com/account",
+          "description": "Bearer <api key> \u2014 required for data tools; initialize, tools/list and the sign-up tools request_api_key / claim_api_key work without it (the user approves one emailed link). Or get a key at https://gankdat.com/account",
           "isRequired": true,
           "isSecret": true
         }

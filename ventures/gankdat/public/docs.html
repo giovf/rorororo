@@ -179,6 +179,14 @@ curl -H "Authorization: Bearer fapi_..." https://gankdat.com/v1/usage</code></pr
   "url": "https://gankdat.com/mcp",
   "headers": { "Authorization": "Bearer fapi_..." } } }
 
+# No key yet? An agent can sign its user up without a browser (no key needed for these two):
+#   MCP: request_api_key {email} → show the user the code → claim_api_key {request_id, claim_secret}
+#   REST:
+curl -X POST https://gankdat.com/v1/auth/agent-signup -H "content-type: application/json" \
+  -d '{"email":"you@example.com","client_name":"my-agent"}'      # user gets a one-click approval email
+curl -X POST https://gankdat.com/v1/auth/agent-signup/claim -H "content-type: application/json" \
+  -d '{"request_id":"…","claim_secret":"fsig_…"}'                # "pending" until approved, then the key (once)
+
 # x402 pay-per-request (no account): GET /x402/data/uk-tenders → HTTP 402 → pay → retry</code></pre>
       </div>
 

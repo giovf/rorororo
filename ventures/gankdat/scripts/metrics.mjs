@@ -55,6 +55,13 @@ const [acct] = await sql(
 const errors = await sql(
   "SELECT source_slug FROM refresh_log WHERE status = 'error' AND created_at > datetime('now','-1 day') GROUP BY source_slug",
 );
+// Agent-side sign-up funnel (build 2026-09-25; proof: ≥ 5 keys issued via the agent path in 30
+// days). Tolerant of the migration not being applied yet on the day it ships.
+const agentKeys = await sql(
+  "SELECT SUM(claimed_at IS NOT NULL) AS keys30d, SUM(claimed_at IS NOT NULL AND claimed_at > (strftime('%s','now') - 86400) * 1000) AS keys24h, SUM(created_at > (strftime('%s','now') - 86400) * 1000) AS requests24h FROM agent_signups WHERE email NOT LIKE '%@gankdat.com' AND email NOT LIKE '%@1402celsius.com' AND email NOT LIKE '%@example.com' AND email NOT LIKE 'giova1506@%'",
+)
+  .then(([row]) => row ?? null)
+  .catch(() => null);
 const kinds = Object.fromEntries(
   (
     await ae(
@@ -81,6 +88,9 @@ const users = `${acct.total} accts (${acct.paid ?? 0} paid, +${acct.new24h ?? 0}
 const sales = `${kinds.x402_paid ?? 0} x402 paid`;
 const notes = [
   `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${paywall} paywall hits${wantedNote}`,
+  agentKeys
+    ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`
+    : 'agent sign-up: n/a',
   errors.length ? `refresh errors: ${errors.map((e) => e.source_slug).join(', ')}` : 'refresh ok',
 ].join('; ');
 const row = `| ${date} | Daily numbers | ${users} | — | ${sales} | ${notes} |`;

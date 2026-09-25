@@ -2,8 +2,9 @@ import { StreamableHTTPTransport } from '@hono/mcp';
 import { Hono } from 'hono';
 import type { Context } from 'hono';
 import { requireApiKey } from '../auth/middleware';
+import { SIGNUP_RATE_LIMIT } from '../auth/signup';
 import { failure } from '../lib/envelope';
-import { buildMcpServer } from '../mcp/server';
+import { buildMcpServer, MCP_NO_KEY_HINT, SIGNUP_TOOLS } from '../mcp/server';
 import { isolateRateLimit, rateLimit } from '../metering/ratelimit';
 import type { AppEnv } from '../types';
 
@@ -25,28 +26,45 @@ const INTROSPECTION_METHODS = new Set([
   'tools/list',
 ]);
 
-// Anonymous only when NO key is presented AND the message is pure
-// introspection. A presented key is always validated — a typo'd key should
-// 401 loudly, not silently downgrade to anonymous. Reading the body here is
-// safe: HonoRequest caches parsed JSON, so the transport's own req.json()
-// gets the cached copy, not a consumed stream.
-async function isAnonymousIntrospection(c: Context<AppEnv>): Promise<boolean> {
-  if (c.req.header('Authorization')) return false;
+// What an unauthenticated request may do. Anonymous only when NO key is
+// presented — a presented key is always validated (a typo'd key should 401
+// loudly, not silently downgrade to anonymous). 'introspection' is metadata
+// only; 'signup' is the agent-side sign-up tools (request_api_key /
+// claim_api_key — the one tools/call that must work without a key, since it
+// is how a key is obtained); 'request' marks a message that sends an email
+// and so gets the stricter KV-backed budget. Reading the body here is safe:
+// HonoRequest caches parsed JSON, so the transport's own req.json() gets the
+// cached copy, not a consumed stream.
+type AnonymousKind = 'introspection' | 'signup' | 'request' | null;
+
+async function anonymousKind(c: Context<AppEnv>): Promise<AnonymousKind> {
+  if (c.req.header('Authorization')) return null;
   let body: unknown;
   try {
     body = await c.req.json();
   } catch {
-    return false; // malformed JSON: fall through to auth's 401
+    return null; // malformed JSON: fall through to auth's 401
   }
   const messages = Array.isArray(body) ? body : [body];
-  return (
-    messages.length > 0 &&
-    messages.every((message) => {
-      if (typeof message !== 'object' || message === null) return false;
-      const { method } = message as { method?: unknown };
-      return typeof method === 'string' && INTROSPECTION_METHODS.has(method);
-    })
-  );
+  if (messages.length === 0) return null;
+  let kind: AnonymousKind = 'introspection';
+  for (const message of messages) {
+    if (typeof message !== 'object' || message === null) return null;
+    const { method, params } = message as { method?: unknown; params?: { name?: unknown } };
+    if (typeof method !== 'string') return null;
+    if (INTROSPECTION_METHODS.has(method)) continue;
+    if (
+      method === 'tools/call' &&
+      typeof params?.name === 'string' &&
+      SIGNUP_TOOLS.has(params.name)
+    ) {
+      if (params.name === 'request_api_key') kind = 'request';
+      else if (kind !== 'request') kind = 'signup';
+      continue;
+    }
+    return null;
+  }
+  return kind;
 }
 
 // Comma-joined sorted unique JSON-RPC method names from the (possibly batched)
@@ -92,10 +110,19 @@ const authedRateLimit = rateLimit({
   identify: (c) => c.get('keyCtx')?.usageSubject ?? c.get('keyCtx')?.keyId ?? 'unknown',
 });
 
+// Sign-up requests send an email, so they share the login-sized per-IP budget
+// (KV-backed, same scope as POST /v1/auth/agent-signup). Claim polls are cheap
+// D1 reads and ride the in-isolate limiter like introspection.
+const signupRequestRateLimit = rateLimit({
+  ...SIGNUP_RATE_LIMIT,
+  identify: (c) => c.req.header('CF-Connecting-IP') ?? 'unknown',
+});
+
 export const mcpRoute = new Hono<AppEnv>().post(
   '/',
   async (c, next) => {
-    if (await isAnonymousIntrospection(c)) {
+    const kind = await anonymousKind(c);
+    if (kind !== null) {
       const ip = c.req.header('CF-Connecting-IP') ?? 'unknown';
       const retryAfter = isolateRateLimit(`mcp:${ip}`, ANON_LIMIT, ANON_WINDOW_SECONDS);
       if (retryAfter > 0) {
@@ -108,12 +135,12 @@ export const mcpRoute = new Hono<AppEnv>().post(
           429,
         );
       }
-      return next();
+      return kind === 'request' ? signupRequestRateLimit(c, next) : next();
     }
     // requireApiKey's 401 short-circuits before the analytics write in the
     // final handler, which would hide the strongest adoption signal there is:
     // an agent attempting tools/call without a key. Record rejections here.
-    const response = await requireApiKey()(c, next);
+    const response = await requireApiKey(MCP_NO_KEY_HINT)(c, next);
     if (response instanceof Response && response.status === 401) {
       const shape = await requestShape(c);
       c.env.TRAFFIC.writeDataPoint({

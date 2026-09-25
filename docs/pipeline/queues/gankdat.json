@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-24",
+  "updated": "2026-09-25",
   "items": [
     {
       "id": "nhs-ods",
@@ -94,12 +94,13 @@
     {
       "id": "agent-paywall-signup",
       "title": "Agent-side sign-up at the paywall: MCP tool takes an email, issues a key once the magic link is clicked",
-      "why": "20–160 paywall hits/day are agents that cannot become customers: sign-up is a human magic-link flow. Diagnosis 2026-09-24.",
+      "why": "20–160 paywall hits/day are agents that cannot become customers: sign-up is a human magic-link flow. Diagnosis 2026-09-24. BUILT 2026-09-25 (09:00 run, v0.18.0): keyless MCP tools request_api_key (email → approval email with an RFC 8628-style code) and claim_api_key (poll → key once), REST twins POST /v1/auth/agent-signup and /agent-signup/claim, GET-then-POST /v1/auth/approve page for the human; D1 migration 0011; keys named agent:<client>; every keyless 401 and llms.txt/docs/landing point at it; daily metrics row now carries 'agent sign-up: req/24h, keys/24h, keys/30d' (the proof).",
       "effort_days": 1,
       "proof": "≥ 5 keys issued via the agent path in 30 days",
       "score": 8,
-      "status": "todo",
-      "added": "2026-09-24"
+      "status": "done",
+      "added": "2026-09-24",
+      "done_at": "2026-09-25"
     },
     {
       "id": "launch-post-kit",
