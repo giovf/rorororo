@@ -1,0 +1,60 @@
+{
+  "request": "metrics-2026-09-25",
+  "fetched_at": "2026-09-25T07:15:03.094Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/plugins/1682711656065145288/versions",
+      "fetched_at": "2026-09-25T07:15:01.432Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/plugins/1682711656065145288/versions",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "1.json",
+      "bytes": 12758,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/community/plugin/1682711656065145288",
+      "fetched_at": "2026-09-25T07:15:01.996Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/community/plugin/1682711656065145288/variables-toolkit-styles-to-variables-link-clean-up",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 708691,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://fig-stats.com/plugins/1682711656065145288",
+      "fetched_at": "2026-09-25T07:15:02.566Z",
+      "status": 404,
+      "final_url": "https://fig-stats.com/plugins/1682711656065145288",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 13531,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717/comments?page_size=50",
+      "fetched_at": "2026-09-25T07:15:02.987Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "4.json",
+      "bytes": 127,
+      "truncated": false
+    }
+  ]
+}
