@@ -103,3 +103,4 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   `watchdog | missed:` Telegram bullet. Set foundry queue item `run-watchdog` to `done` in the same
   commit. While there: the queued `workflow-scope` item needs the owner's fine-grained PAT
   (Contents + Workflows write) as repo secret `WORKFLOW_TOKEN` — batch with the SAM key hand-over.
+- 2026-09-25 gankdat/apify: Actor `uk-planning-applications` (faceless-api/uk-planning-applications) flagged "under maintenance" by Apify's automated QA — failing prefilled-input test runs for 3 days; needs investigation (failed run: https://console.apify.com/view/runs/wuRDmzbT84RthY4CB).
