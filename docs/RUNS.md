@@ -84,3 +84,12 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-26 09:41 | build | OWNER (optional): post the four launch posts under your name — everything is ready to paste in LAUNCH-POST-KIT.md
 - 2026-09-26 09:41 | build | Yesterday's uk-gambling-operators wave ran clean; 2026-09-26 metrics row shows no refresh errors
 - 2026-09-26 09:41 | build | Taskmaster rows filed: root #16 (ops-retro, blocked), gankdat #60 (launch-post-kit, done)
+- 2026-09-26 17:35 | build | Built b2b-outreach-experiment (gankdat, score 6): ten targeted B2B emails, drafts for owner approval
+- 2026-09-26 17:35 | build | Targets: 5 bid consultancies + 5 charity/care web agencies, all Ltd, Companies House numbers confirmed via relay
+- 2026-09-26 17:35 | build | Every address a generic company mailbox from the firm's own site (PECR reg. 22); LIA C added to GDPR.md
+- 2026-09-26 17:35 | build | Kit: OUTREACH-2026-09.md — claims cross-checked against src, sending rules, suppression list, send log
+- 2026-09-26 17:35 | build | Ten drafts created in the owner's Gmail through the connector; nothing sent, nothing spent
+- 2026-09-26 17:35 | build | Dropped 9 candidates: named-person addresses only, no Companies House match, or one-person firms
+- 2026-09-26 17:35 | build | Queued b2b-outreach-results (score 4), blocked on the sends; proof: >= 2 replies or 1 sign-up from 10
+- 2026-09-26 17:35 | build | OWNER: open Gmail Drafts, check each contact page, send 2-3 a day, log dates in OUTREACH-2026-09.md §6
+- 2026-09-26 17:35 | build | Today's metrics row: refresh ok, 0 accounts, 186 authed MCP calls/24h; Taskmaster gankdat #61 filed

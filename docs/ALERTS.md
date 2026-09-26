@@ -117,3 +117,8 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   Product Hunt, r/datasets and Indie Hackers copy (current facts, images to take, comment answers, a two-week
   timing table). Optional, as in action 010 §2: these venues need you to post under your own name and answer
   comments for a few hours; nothing else is needed from you.
+- 2026-09-26 owner: ten B2B outreach emails are drafted in your Gmail (gio@1402celsius.com → Drafts): five bid consultancies, five
+  charity/care web agencies, all limited companies, generic mailboxes only, Companies House checked. Read
+  `ventures/gankdat/docs/OUTREACH-2026-09.md` (§2 lawful basis, §4 how to send), glance at each firm's contact page, pick the
+  From address (info@gankdat.com alias if Gmail has it), send two or three a day and note the dates in §6. Delete any draft you
+  do not like. Nothing has been sent.

@@ -116,12 +116,24 @@
     {
       "id": "b2b-outreach-experiment",
       "title": "B2B outreach experiment: 10 targeted emails from info@gankdat.com to bid consultancies / web agencies, drafts for owner approval",
-      "why": "Lawful under PECR for corporate subscribers (unlike consumers/sole traders). Cheapest demand test we have.",
+      "why": "Lawful under PECR for corporate subscribers (unlike consumers/sole traders). Cheapest demand test we have. Done 2026-09-26: ventures/gankdat/docs/OUTREACH-2026-09.md — ten UK limited companies (5 bid consultancies, 5 charity/care web agencies), Companies House numbers confirmed via the relay, generic mailboxes only, ten personalised drafts created in the owner's Gmail (nothing sent), LIA C in GDPR.md, send log + suppression list; owner: line in ALERTS.",
       "effort_days": 0.3,
       "proof": "≥ 2 replies or 1 signup from 10 emails",
       "score": 6,
-      "status": "todo",
-      "added": "2026-09-24"
+      "status": "done",
+      "added": "2026-09-24",
+      "done_at": "2026-09-26"
+    },
+    {
+      "id": "b2b-outreach-results",
+      "title": "Close the B2B outreach experiment: 14 days after the last send, count replies/sign-ups in OUTREACH-2026-09.md §6, write the verdict to RESEARCH.md and decide on a second list",
+      "why": "The experiment only pays if its result is read. Proof number set 2026-09-24: ≥ 2 replies or 1 sign-up from 10 emails. Replies arrive at info@gankdat.com (inbox triage logs them in docs/INBOX.md); sign-ups show in the Daily numbers row.",
+      "effort_days": 0.1,
+      "proof": "verdict line in RESEARCH.md; second list queued or outreach dropped",
+      "score": 4,
+      "status": "blocked",
+      "blocked_on": "owner sends the ten Gmail drafts (ALERTS 2026-09-26) — unblock with the send dates in OUTREACH-2026-09.md §6",
+      "added": "2026-09-26"
     }
   ]
 }

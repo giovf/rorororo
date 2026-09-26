@@ -138,6 +138,9 @@ behind a swappable source interface).
 
 ## UK-legal B2B cold email (use with care)
 
+**First run: `OUTREACH-2026-09.md` (2026-09-26) — ten limited companies, generic mailboxes only,
+Companies House checked, drafts in Gmail, LIA C in `GDPR.md`. Results decide whether there is a second.**
+
 **Legal guardrails — read before sending:**
 - UK PECR Regulation 22 permits unsolicited B2B email to **corporate addresses**
   (`name@company.com`) without prior consent, *if* content is relevant to their

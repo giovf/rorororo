@@ -18,6 +18,7 @@ sanctions/exclusions lists is processing beyond the exempt "accounts, staff, mar
 | Usage metering & logs | customers | request logs with key id, path, status, IP (Workers Logs) | legitimate interests (security, quota, abuse) | Workers Logs ≈ 7 d; Analytics Engine 90 d (user-agent only, no key/IP) | Cloudflare | as above |
 | Waitlist / feedback | visitors | email (optional), message | consent (waitlist), legitimate interests (feedback) | until acted on / deleted on request | Cloudflare | as above |
 | Support email | anyone writing in | email, content | legitimate interests | 2 years | Cloudflare Email Routing → owner's mailbox (Google) | Google DPA |
+| B2B outreach replies (2026-09) | staff of the ten limited companies written to (`docs/OUTREACH-2026-09.md`) | name, work email, reply content | legitimate interests — see LIA C | 2 years, like support mail; opt-outs kept as a domain suppression list | Cloudflare Email Routing → owner's mailbox (Google) | Google DPA |
 | Dataset: uk-sanctions | designated persons on the UK Sanctions List | names, aliases, regime, designation dates, countries (DOB, IDs, addresses dropped) | legitimate interests — see LIA A | mirrors the official list; refreshed daily | Cloudflare | as above |
 | Dataset: sam-exclusions | excluded persons/entities on SAM.gov | name, classification, program, agency, dates (addresses, SSN/TIN/NPI, comments dropped) | legitimate interests — see LIA A | mirrors the official list; refreshed daily | Cloudflare | as above |
 | Dataset: uk-food-hygiene | food business operators (some sole traders) | trading name, trading address, rating fields (operator comments dropped) | legitimate interests — see LIA B | mirrors the FSA file; refreshed daily | Cloudflare | as above |
@@ -54,7 +55,23 @@ No special-category data. No automated decision-making with legal effect. No chi
   set by the scheme itself (ratings are displayed on premises). Low risk.
 - **Conclusion:** legitimate interests apply.
 
-## 4. Rights and breaches
+## 4. LIA C — B2B outreach (2026-09 experiment)
+
+- **Purpose:** ten one-off emails from info@gankdat.com to UK limited companies (bid consultancies,
+  web agencies) whose published work matches a dataset, asking whether the API is useful. Targets,
+  addresses and wording: `docs/OUTREACH-2026-09.md`.
+- **Personal data:** none sent to — every address is a generic company mailbox (info@, hello@,
+  studio@, enquiry@); PECR reg. 22 applies to individual subscribers only, and reg. 23 (sender
+  identified, valid reply address) is met by the footer. Personal data arises only when a named
+  person replies: their name, work address and message.
+- **Necessity and balance:** the reply is processed only to answer it; no profiling, no list, no
+  follow-up if there is no reply; one "no thanks" adds the domain to a suppression list every
+  routine honours. A reasonable employee expects a reply to their own email. Retention two years,
+  as for support mail. Individuals can object or ask for deletion by replying; nothing else is held.
+- **Decision:** legitimate interests (Art. 6(1)(f)) for replies; the initial send involves no
+  personal data. Not a basis for scaling: a new list needs a fresh LIA line here.
+
+## 5. Rights and breaches
 
 - Requests to info@gankdat.com; identity confirmed via the account email; answered within one
   month. Access/erasure for account data is a D1 query; for dataset copies we suppress the row
@@ -63,7 +80,7 @@ No special-category data. No automated decision-making with legal effect. No chi
   customers if high risk. Key material at risk → revoke keys (KV tombstones) and rotate secrets
   per RUNBOOK.
 
-## 5. Open items
+## 6. Open items
 
 1. ICO fee registration — owner decision 2026-09-20: deferred until the first real customer
    (action 012 records the risk). Add the registration number to the privacy policy when paid.

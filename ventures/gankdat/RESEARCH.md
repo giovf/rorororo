@@ -66,4 +66,7 @@ register-complete and organisation-level, no scraping). Proof number: paid runs 
 and `website_present=false` calls in Analytics Engine (30 days). Kill if zero after 60 days live.
 Live counts at launch (2026-09-21, `website_present=false`): care locations 27,614 of 57,127;
 charities with income ≥ £25k 17,508 of 75,574; open schools 2,572 of 27,233 — ≈ 47,700 leads.
+2026-09-26: first (and only, until it proves out) B2B outreach — ten UK limited companies, generic mailboxes,
+Companies House checked, drafts for the owner in Gmail; kit and lawful basis in `docs/OUTREACH-2026-09.md`,
+LIA C in `docs/GDPR.md`. Proof: ≥ 2 replies or 1 sign-up from 10; verdict due 14 days after the last send.
 

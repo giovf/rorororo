@@ -218,3 +218,15 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   refresh, superseding the July drafts; one `owner:` line since only the owner can post. Yesterday's
   `uk-gambling-operators` wave and every other refresh ran clean (2026-09-26 row: refresh ok). Next
   buildable item: b2b-outreach-experiment (6), then trademark-watch-surface (4) / day-7-review (4).
+- 2026-09-26 build (17:00 run): built `b2b-outreach-experiment` (gankdat queue, score 6, the top buildable
+  item; the three items above it stay blocked on Apify, Search Console and the owner). Ten targeted emails,
+  drafts for owner approval: five bid consultancies (Contracts Finder awards with winning supplier + Find a
+  Tender + TED as one daily feed) and five charity/care web agencies (`website_present=false` and the change
+  feed on the CQC, Charity Commission and GIAS registers as a prospect list). Every target is a UK limited
+  company confirmed on Companies House through the relay, every address a generic company mailbox from the
+  firm's own site — PECR reg. 22 covers individual subscribers only, so no consent is needed and no personal
+  data is sent to; a reply is handled under LIA C (GDPR.md). Kit at `ventures/gankdat/docs/OUTREACH-2026-09.md`
+  (claims table, sending rules, suppression list, send log); the ten drafts sit in the owner's Gmail via the
+  connector, nothing sent. Sandbox egress blocks every commercial site (WebFetch and curl alike), so mailboxes
+  were taken from search-result reproductions of the contact pages and the owner checks each one before
+  sending. `b2b-outreach-results` (4) queued, blocked on the sends. Next buildable: day-7-review (4), then trademark-watch-surface (4).
