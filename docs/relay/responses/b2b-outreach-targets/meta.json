@@ -1,0 +1,286 @@
+{
+  "request": "b2b-outreach-targets",
+  "fetched_at": "2026-09-26T17:22:55.958Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Klick+Business+Solutions",
+      "fetched_at": "2026-09-26T17:22:50.361Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Klick+Business+Solutions",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "52947"
+      },
+      "file": "1.html",
+      "bytes": 52947,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Hudson+Outsourcing",
+      "fetched_at": "2026-09-26T17:22:51.329Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Hudson+Outsourcing",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "52943"
+      },
+      "file": "2.html",
+      "bytes": 52943,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Thornton+%26+Lowe",
+      "fetched_at": "2026-09-26T17:22:51.968Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Thornton+%26+Lowe",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "53317"
+      },
+      "file": "3.html",
+      "bytes": 53317,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Executive+Compass+Business+Consultants",
+      "fetched_at": "2026-09-26T17:22:52.331Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Executive+Compass+Business+Consultants",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "53499"
+      },
+      "file": "4.html",
+      "bytes": 53499,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Tender+Response",
+      "fetched_at": "2026-09-26T17:22:52.546Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Tender+Response",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "53053"
+      },
+      "file": "5.html",
+      "bytes": 53053,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Bid+Writing+Service",
+      "fetched_at": "2026-09-26T17:22:52.730Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Bid+Writing+Service",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "53066"
+      },
+      "file": "6.html",
+      "bytes": 53066,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Contracts+Advance",
+      "fetched_at": "2026-09-26T17:22:53.012Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Contracts+Advance",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "53913"
+      },
+      "file": "7.html",
+      "bytes": 53913,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Tender+Victory",
+      "fetched_at": "2026-09-26T17:22:53.200Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Tender+Victory",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "53045"
+      },
+      "file": "8.html",
+      "bytes": 53045,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Bid+Solutions",
+      "fetched_at": "2026-09-26T17:22:53.502Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Bid+Solutions",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "53082"
+      },
+      "file": "9.html",
+      "bytes": 53082,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Scamper+Limited",
+      "fetched_at": "2026-09-26T17:22:53.726Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Scamper+Limited",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "47354"
+      },
+      "file": "10.html",
+      "bytes": 47354,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Adept+Design+Norfolk",
+      "fetched_at": "2026-09-26T17:22:53.911Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Adept+Design+Norfolk",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "53475"
+      },
+      "file": "11.html",
+      "bytes": 53475,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Websdale",
+      "fetched_at": "2026-09-26T17:22:54.142Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Websdale",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "37439"
+      },
+      "file": "12.html",
+      "bytes": 37439,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Loose+Connections",
+      "fetched_at": "2026-09-26T17:22:54.321Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Loose+Connections",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "52770"
+      },
+      "file": "13.html",
+      "bytes": 52770,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Bubble+Design",
+      "fetched_at": "2026-09-26T17:22:54.546Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Bubble+Design",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "53168"
+      },
+      "file": "14.html",
+      "bytes": 53168,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Splitpixel",
+      "fetched_at": "2026-09-26T17:22:54.750Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Splitpixel",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "33290"
+      },
+      "file": "15.html",
+      "bytes": 33290,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Care+Launch",
+      "fetched_at": "2026-09-26T17:22:54.925Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Care+Launch",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "52820"
+      },
+      "file": "16.html",
+      "bytes": 52820,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Giant+Digital",
+      "fetched_at": "2026-09-26T17:22:55.132Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Giant+Digital",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "53125"
+      },
+      "file": "17.html",
+      "bytes": 53125,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Agency+for+Good",
+      "fetched_at": "2026-09-26T17:22:55.323Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Agency+for+Good",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "52878"
+      },
+      "file": "18.html",
+      "bytes": 52878,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Armadillo+Web+Design",
+      "fetched_at": "2026-09-26T17:22:55.537Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Armadillo+Web+Design",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "52824"
+      },
+      "file": "19.html",
+      "bytes": 52824,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Suspire+Media",
+      "fetched_at": "2026-09-26T17:22:55.752Z",
+      "status": 200,
+      "final_url": "https://find-and-update.company-information.service.gov.uk/search/companies?q=Suspire+Media",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "content-length": "52570"
+      },
+      "file": "20.html",
+      "bytes": 52570,
+      "truncated": false
+    }
+  ]
+}
