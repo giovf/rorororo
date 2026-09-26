@@ -95,6 +95,7 @@ current whenever a scheduler changes).
 | **Daily build** | 09:30 | picks ONE item by `STRATEGY.md` §5 (alert fix, next dataset, research, distribution), builds it behind the gates, pushes to `main`; hands secret-needing steps to `docs/ALERTS.md` |
 | Weekly report | Mon 07:30 | `docs/reports/` |
 | Monthly strategy review | 1st 08:00 | `docs/reviews/`, keep/kill verdicts, next three moves |
+| Ops retro (created 2026-09-26, disabled until the repo is attached — ALERTS handoff) | Sat 07:59 | audits the routines themselves (missed slots, repeat blockers, defects, owner load) into `docs/retros/`; fixes become scored `foundry` queue items |
 
 Publishing, registry updates and D1 migrations run in CI after every push (keys are repo
 secrets, never in a Claude sandbox), so the daily build is autonomous end to end. Interactive

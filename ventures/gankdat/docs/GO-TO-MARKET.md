@@ -1,5 +1,10 @@
 # Go-to-market: Stage 0 validation posts
 
+> **2026-09-26:** the per-venue copy below dates from July (two datasets, a waitlist). The
+> current, paste-ready posts for Show HN, Product Hunt, r/datasets and Indie Hackers — with
+> images, timing and the numbers to refresh — are in `LAUNCH-POST-KIT.md`. The LinkedIn draft,
+> the B2B email guardrails and the LLM-citation notes below still apply.
+
 Ready-to-use drafts for the blueprint's **Stage 0**: get **20+ signups or 5
 "I'd pay for this"** before pouring in more build effort. If you can't, the
 blueprint says change the dataset — cheap here, since the platform is

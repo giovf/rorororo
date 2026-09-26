@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-25",
+  "updated": "2026-09-26",
   "items": [
     {
       "id": "nhs-ods",
@@ -105,12 +105,13 @@
     {
       "id": "launch-post-kit",
       "title": "Launch-post kit for the owner: Product Hunt, Hacker News (Show HN), r/datasets, IndieHackers — copy, images, timing",
-      "why": "Zero outbound so far; the owner posts, we write. Owner action 010 asked for this.",
+      "why": "Zero outbound so far; the owner posts, we write. Owner action 010 asked for this. Done 2026-09-26: ventures/gankdat/docs/LAUNCH-POST-KIT.md — Show HN, Product Hunt, r/datasets and Indie Hackers copy against v0.18.0 facts (16 registers, change feeds, MCP/x402/agent sign-up, pricing), comment prep, six screenshots, numbers-to-refresh table, two-week timing; owner: line in ALERTS.",
       "effort_days": 0.3,
       "proof": "posts published; referral visits in Analytics Engine",
       "score": 6,
-      "status": "todo",
-      "added": "2026-09-24"
+      "status": "done",
+      "added": "2026-09-24",
+      "done_at": "2026-09-26"
     },
     {
       "id": "b2b-outreach-experiment",

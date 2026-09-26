@@ -1109,12 +1109,24 @@
         "priority": "high",
         "subtasks": [],
         "updatedAt": "2026-09-25T17:24:57.000Z"
+      },
+      {
+        "id": "16",
+        "title": "ops-retro: weekly cloud routine that audits the routines themselves and queues fixes in docs/pipeline/queues/foundry.json (built by the build routine 2026-09-26; trigger created disabled — create_trigger sets no repository, interactive session attaches it)",
+        "description": "Cloud routine trig_015Uvn63XZUVqx1TAiWZrZL6 'Foundry ops retro', Saturdays 07:59 UTC, created with create_trigger from the build routine. Reads SCHEDULERS/RUNS/ALERTS/OWNER-NOTES/INBOX/STRATEGY §8/relay meta/gankdat metrics rows + git log for the last 7 days; measures slot reliability, throughput, blockers by cause (repeat = general fix), routine defects and owner load; writes docs/retros/<year>-W<week>.md; proposals scoring >= 4 become todo items in the foundry queue (evidence appended to existing items instead of duplicates); RUNS lines tagged retro. Prompt mirrored at docs/routines/ops-retro.md; watchdog slot added in scripts/run-watchdog.ts. Foundry queue item ops-retro (score 6).",
+        "details": "",
+        "testStrategy": "scripts/run-watchdog.test.ts covers the Saturday slot; validation firing 2026-09-26 (session cse_01FzQ9gN1R2KVqFD6hTCvva6) must land a 'retro: 2026-W39 ops' commit with docs/retros/2026-W39.md and a valid foundry queue (npm run pipeline)",
+        "status": "blocked",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-09-26T09:24:30.000Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-25T17:24:57.000Z",
-      "taskCount": 15,
+      "lastModified": "2026-09-26T09:24:30.000Z",
+      "taskCount": 16,
       "completedCount": 9,
       "tags": [
         "master"

@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-25",
+  "updated": "2026-09-26",
   "items": [
     {
       "id": "fetch-relay",
@@ -29,12 +29,13 @@
     {
       "id": "ops-retro",
       "title": "Weekly ops retro routine (Sonnet): reads RUNS/ALERTS/git log, proposes prompt and tooling fixes as foundry queue items",
-      "why": "Owner 2026-09-24: self-expansion is in scope; nobody currently reviews how the routines themselves perform.",
+      "why": "Owner 2026-09-24: self-expansion is in scope; nobody currently reviews how the routines themselves perform. Built 2026-09-26: prompt (docs/routines/ops-retro.md) measuring slot reliability, throughput, blockers by cause, routine defects and owner load, writing docs/retros/<year>-W<week>.md and queuing proposals ≥ 4 here; watchdog slot Sat 07:59 in scripts/run-watchdog.ts; trigger created from the routine but create_trigger sets no repository, so the validation firing (session cse_01FzQ9gN1R2KVqFD6hTCvva6) stalled in 'requires action' with 0 tokens; trigger left disabled.",
       "effort_days": 0.3,
       "proof": "≥ 2 accepted foundry items per month originate from the retro",
       "score": 6,
-      "status": "todo",
-      "added": "2026-09-24"
+      "status": "blocked",
+      "added": "2026-09-24",
+      "blocked_on": "interactive session: attach the repo giovf/rorororo to routine trig_015Uvn63XZUVqx1TAiWZrZL6 (routines UI or RemoteTrigger HTTP API) and enable it — or recreate it from docs/routines/ops-retro.md (Sonnet, `59 7 * * 6`) and delete the disabled one"
     },
     {
       "id": "metrics-via-relay",

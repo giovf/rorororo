@@ -204,3 +204,17 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   PAT. `metrics-via-relay` (7) marked done on evidence: the metrics routine adopted the relay itself
   today and the Variables Toolkit row now carries Figma install/like/view counts. Next buildable
   item: gankdat launch-post-kit (6) / foundry ops-retro (6).
+- 2026-09-26 build (09:00 run): built `ops-retro` (foundry queue, score 6, the top item in
+  `docs/pipeline/`): a Saturday 07:59 UTC routine that audits the operation itself — slot
+  reliability against SCHEDULERS.md, throughput, blockers grouped by cause (a repeat cause → a
+  general fix), routine defects, owner load — into `docs/retros/<year>-W<week>.md`, with proposals
+  scoring ≥ 4 queued in the foundry queue (prompt mirrored at `docs/routines/ops-retro.md`,
+  watchdog slot added). The trigger exists (`trig_015Uvn63XZUVqx1TAiWZrZL6`, resolved to Sonnet) but
+  the `create_trigger` tool sets no repository source, so its validation firing stalled with 0 tokens;
+  left **disabled and blocked** on the interactive session attaching the repo (handoff in ALERTS.md;
+  the limitation is now written into SCHEDULERS.md: routines draft routines, people enable them). Took
+  the next candidate as the rules say: `launch-post-kit` (gankdat, 6) — paste-ready Show HN, Product
+  Hunt, r/datasets and Indie Hackers posts against the v0.18.0 facts, images, timing and the numbers to
+  refresh, superseding the July drafts; one `owner:` line since only the owner can post. Yesterday's
+  `uk-gambling-operators` wave and every other refresh ran clean (2026-09-26 row: refresh ok). Next
+  buildable item: b2b-outreach-experiment (6), then trademark-watch-surface (4) / day-7-review (4).

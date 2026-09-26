@@ -59,6 +59,14 @@ describe('slotsDue', () => {
     expect(keys).toContain('report@2026-09-28 07:30');
     expect(keys).not.toContain('exchange@2026-09-27 08:00');
   });
+
+  it('includes the Saturday ops retro only on Saturdays', () => {
+    const keys = slotsDue(ROUTINES, at('2026-10-03T10:30:00Z'), 0, 30).map((s) =>
+      slotKey(s.routine, s.at),
+    );
+    expect(keys).toContain('retro@2026-10-03 07:59');
+    expect(keys).not.toContain('retro@2026-10-02 07:59');
+  });
 });
 
 describe('parsers', () => {
@@ -98,7 +106,9 @@ describe('missedSlots', () => {
 
   it('distinguishes the 07:00 metrics routine from the CI metrics job', () => {
     const later = at('2026-09-26T11:30:00Z');
-    const ci = '2026-09-26T07:15:00+00:00\tmetrics(gankdat): 2026-09-26 daily numbers\n';
+    // 2026-09-26 is a Saturday, so the ops retro's 07:59 slot is due too; give it its trace.
+    const retro = '2026-09-26T09:40:00+00:00\tretro: 2026-W39 ops\n';
+    const ci = `${retro}2026-09-26T07:15:00+00:00\tmetrics(gankdat): 2026-09-26 daily numbers\n`;
     const routine = `${ci}2026-09-26T07:14:00+00:00\tmetrics: 2026-09-26 daily check\n`;
     const only = (text: string): string[] =>
       missedSlots({ now: later, runsText: runsOk, commitsText: text }).map((s) =>

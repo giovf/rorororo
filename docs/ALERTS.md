@@ -104,3 +104,16 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   commit. While there: the queued `workflow-scope` item needs the owner's fine-grained PAT
   (Contents + Workflows write) as repo secret `WORKFLOW_TOKEN` — batch with the SAM key hand-over.
 - 2026-09-25 gankdat/apify: Actor `uk-planning-applications` (faceless-api/uk-planning-applications) flagged "under maintenance" by Apify's automated QA — failing prefilled-input test runs for 3 days; needs investigation (failed run: https://console.apify.com/view/runs/wuRDmzbT84RthY4CB).
+- 2026-09-26 handoff: enable the ops retro routine — `trig_015Uvn63XZUVqx1TAiWZrZL6` "Foundry ops retro"
+  (Sat 07:59 UTC, prompt mirrored at `docs/routines/ops-retro.md`) was created by the build routine with
+  the `create_trigger` tool, which sets no repository source: its validation firing (session
+  `cse_01FzQ9gN1R2KVqFD6hTCvva6`) stalled in "requires action" with 0 tokens used, so the trigger is
+  left disabled. Attach `giovf/rorororo` to it (routines UI, or the RemoteTrigger HTTP API used for the
+  other routines) and enable it, or recreate it from the mirrored prompt (Sonnet, `59 7 * * 6`) and delete
+  the disabled one; then set foundry queue item `ops-retro` to `done` and fire it once to get the first
+  `docs/retros/2026-W39.md`. The stalled session can be archived. General note recorded in SCHEDULERS.md:
+  routines cannot create working routines, only drafts + this handoff.
+- 2026-09-26 owner: launch posts are ready to paste — `ventures/gankdat/docs/LAUNCH-POST-KIT.md` has the Show HN,
+  Product Hunt, r/datasets and Indie Hackers copy (current facts, images to take, comment answers, a two-week
+  timing table). Optional, as in action 010 §2: these venues need you to post under your own name and answer
+  comments for a few hours; nothing else is needed from you.

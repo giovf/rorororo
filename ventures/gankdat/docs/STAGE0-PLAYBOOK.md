@@ -9,7 +9,7 @@
 > that dataset," not "abandon the platform."
 
 **Benchmark: 20 signups per niche within ~4 weeks of genuine effort.** Post
-copy lives in `GO-TO-MARKET.md` — this doc is the WHEN, WHERE, and
+copy lives in `LAUNCH-POST-KIT.md` (2026-09-26; `GO-TO-MARKET.md` for LinkedIn and email) — this doc is the WHEN, WHERE, and
 WHAT-NEXT. Log "I'd pay" signals in the table at the bottom; they now arrive
 via the feedback form too.
 

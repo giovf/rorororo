@@ -72,3 +72,15 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-25 17:33 | build | Foundry queue: workflow-scope item added (blocked on an owner PAT with the workflow scope, batch with the SAM key)
 - 2026-09-25 17:33 | build | metrics-via-relay marked done on evidence: today's Variables Toolkit row carries Figma installs/likes/views via relay
 - 2026-09-25 17:33 | build | SCHEDULERS/OPERATIONS note the watchdog and the workflow-scope limit; Taskmaster row #15 filed (root tasks.json)
+- 2026-09-26 09:41 | build | Ops retro routine built: Saturday 07:59 UTC audit of slots, throughput, blockers, defects, owner load (docs/retros)
+- 2026-09-26 09:41 | build | Retro prompt mirrored at docs/routines/ops-retro.md; proposals scoring >= 4 land in the foundry queue as todo items
+- 2026-09-26 09:41 | build | Watchdog now covers the retro slot (run-watchdog.ts, 12 tests green); SCHEDULERS, OPERATIONS, pipeline README updated
+- 2026-09-26 09:41 | build | BLOCKED: trigger trig_015Uvn63XZUVqx1TAiWZrZL6 created from the routine has no repo source; test run stalled at 0 tokens
+- 2026-09-26 09:41 | build | Trigger left disabled; handoff: interactive session attaches giovf/rorororo and enables it (or recreates it)
+- 2026-09-26 09:41 | build | Rule recorded in SCHEDULERS: a routine cannot create a working routine (create_trigger sets no repo/model/connectors)
+- 2026-09-26 09:41 | build | Next candidate taken: launch-post-kit — Show HN, Product Hunt, r/datasets, Indie Hackers copy (LAUNCH-POST-KIT.md)
+- 2026-09-26 09:41 | build | Kit facts checked against code: 16 registers, 21 MCP tools, per_page max 100, x402 US$0.005, pricing £5–£239
+- 2026-09-26 09:41 | build | Kit adds comment prep, 6 screenshot specs, numbers-to-refresh table and a 2-week timing plan; July drafts superseded
+- 2026-09-26 09:41 | build | OWNER (optional): post the four launch posts under your name — everything is ready to paste in LAUNCH-POST-KIT.md
+- 2026-09-26 09:41 | build | Yesterday's uk-gambling-operators wave ran clean; 2026-09-26 metrics row shows no refresh errors
+- 2026-09-26 09:41 | build | Taskmaster rows filed: root #16 (ops-retro, blocked), gankdat #60 (launch-post-kit, done)

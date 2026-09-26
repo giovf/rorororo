@@ -2027,13 +2027,25 @@
         "priority": "high",
         "subtasks": [],
         "updatedAt": "2026-09-25T09:37:00.000Z"
+      },
+      {
+        "id": "60",
+        "title": "launch-post-kit: paste-ready launch posts for the owner — Show HN, Product Hunt, r/datasets, Indie Hackers (built by the build routine 2026-09-26)",
+        "description": "ventures/gankdat/docs/LAUNCH-POST-KIT.md: facts table (v0.18.0: 16 registers, change feeds, MCP 21 tools, x402, agent sign-up, pricing), do-not-claim list, per-venue copy with venue rules and timing windows, HN comment prep, six screenshot specs, numbers-to-refresh table, two-week schedule, what the routines do afterwards. GO-TO-MARKET.md and STAGE0-PLAYBOOK.md point at it. gankdat queue item launch-post-kit (score 6). Proof: posts published; new keys and authenticated MCP calls in the Daily numbers row the morning after.",
+        "details": "",
+        "testStrategy": "docs only; facts cross-checked against src/mcp/server.ts (tool count), src/sources/query.ts (per_page max 100), public/index.html (pricing, datasets), MARKETPLACE-PREP.md (x402 price, listings)",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-09-26T09:40:00.000Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-24T17:28:19.000Z",
-      "taskCount": 58,
-      "completedCount": 54,
+      "lastModified": "2026-09-26T09:40:00.000Z",
+      "taskCount": 60,
+      "completedCount": 56,
       "tags": [
         "master"
       ]

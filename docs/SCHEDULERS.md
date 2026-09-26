@@ -30,7 +30,7 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 | 06:30 **and on pushes to `main`** (push runs only fill a missing day) | GitHub Actions `gankdat metrics` (`.github/workflows/gankdat-metrics.yml`) | — | `ventures/gankdat/scripts/schedules.mjs reset` (self-heal cron triggers), then `scripts/metrics.mjs` (D1 + Analytics Engine numbers) | commits a `Daily numbers` row to `ventures/gankdat/RESEARCH.md` |
 | 07:00 | Cloud routine `trig_01JBrWDAZLeWEAhSBBnA9g8K` **Foundry daily metrics** (Sonnet) | — | reads each `STORE.md`, fetches public store stats (Figma, Chrome, Firefox) | `Daily check` rows in each venture's `RESEARCH.md`; `docs/ALERTS.md` on bad reviews |
 | 09:00 **and 17:00** (10:00 and 18:00 UK time) | Cloud routine `trig_01P9WT733fg3qnuJeKUHE8fx` **Foundry daily build** (Fable, twice daily since 2026-09-22) | — | heals `main` if red, then takes `npm run pipeline next` (the highest-scoring item across open venture queues, `docs/pipeline/`) and builds it behind `npm run check`; if any open queue needs research it researches that venture instead (≥ 3 scored items or `finished`) | one commit to `main` including the queue change; `handoff:` lines in `docs/ALERTS.md`; a line in `STRATEGY.md` §8 |
-| every hour at :40 **and on every push to `main`** — **drafted, not yet active** | GitHub Actions `run watchdog` (draft at `docs/ci/run-watchdog.yml`, 2026-09-25; routine tokens lack the `workflow` scope, so the interactive session moves it to `.github/workflows/`) | — | `scripts/run-watchdog.ts`: for every routine slot in this file (metrics 07:00, build 09:00/17:00, exchange Wed 08:00, review Sun 08:00, report Mon 07:30, burn-down Wed 18:00) checks that a trace exists within 2 h — a `docs/RUNS.md` line with the routine's tag or a commit with its subject (`(build)`, `metrics: `, `(venture exchange)` …); triage is not watched (it commits only when there is mail). The slot list is `ROUTINES` in the script — change it in the same commit as any routine slot here | appends one `- … \| watchdog \| missed: <routine> slot <when> UTC …` line per silent slot to `docs/RUNS.md` (the line is the dedupe record; `notify owner` sends it as a bullet) |
+| every hour at :40 **and on every push to `main`** — **drafted, not yet active** | GitHub Actions `run watchdog` (draft at `docs/ci/run-watchdog.yml`, 2026-09-25; routine tokens lack the `workflow` scope, so the interactive session moves it to `.github/workflows/`) | — | `scripts/run-watchdog.ts`: for every routine slot in this file (metrics 07:00, build 09:00/17:00, exchange Wed 08:00, review Sun 08:00, report Mon 07:30, burn-down Wed 18:00, retro Sat 07:59) checks that a trace exists within 2 h — a `docs/RUNS.md` line with the routine's tag or a commit with its subject (`(build)`, `metrics: `, `(venture exchange)`, `retro: ` …); triage is not watched (it commits only when there is mail). The slot list is `ROUTINES` in the script — change it in the same commit as any routine slot here | appends one `- … \| watchdog \| missed: <routine> slot <when> UTC …` line per silent slot to `docs/RUNS.md` (the line is the dedupe record; `notify owner` sends it as a bullet) |
 | every hour at :05 | Cloud routine `trig_011NfGaSrEEsr5B1xTHEBRAr` **Foundry inbox triage** (Sonnet, Gmail connector) | — | reads unread inbox mail, classifies, drafts customer replies (never sends) | `docs/INBOX.md`, `docs/ALERTS.md` (`needs owner` / listing changes) |
 
 ## Weekly
@@ -40,6 +40,7 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 | Sunday 08:00 | Cloud routine `trig_01Mv7z5Ae9gEGq9zBnrfDH6R` **Foundry strategy review** (Fable; weekly since 2026-09-22, was monthly) | — | scores every venture against `docs/STRATEGY.md` (targets, kill criteria), market signals, next three moves; may mark a venture queue `finished` or re-park/promote exchange ideas | `docs/reviews/<year>-W<week>.md`; edits under `docs/pipeline/` |
 | Monday 07:30 | Cloud routine `trig_01PjxdBAcvYSAT32fCyzcvQg` **Foundry weekly report** (Sonnet) | — | ledger, ventures, metrics deltas, alerts, open actions, git activity | `docs/reports/<year>-W<week>.md` |
 | Wednesday 18:00–23:00 and Thursday 00:00–02:00, hourly | Cloud routines `trig_011mbqaUzm3qTK2ZdevCuYpH` (Wed) + `trig_013tLPWgysoiHWpciYGgXJQ2` (Thu) **Foundry Wednesday burn-down** (Fable; created 2026-09-24; the owner's Fable allowance resets Thursday 03:00 UTC) | — | same loop as the build routine but back to back: item → gate → commit → push, repeat until nothing is buildable, ~50 min elapsed, or the usage limit cuts the session (harmless: one commit per finished item). Spends the allowance left before the owner's Thursday reset | commits to `main`, `docs/RUNS.md` lines tagged `burn-down` |
+| Saturday 07:59 — **created 2026-09-26, DISABLED until the interactive session attaches the repo** | Cloud routine `trig_015Uvn63XZUVqx1TAiWZrZL6` **Foundry ops retro** (created by the build routine with `create_trigger`; that tool sets no repository source, so its validation firing, session `cse_01FzQ9gN1R2KVqFD6hTCvva6`, stalled in "requires action" with 0 tokens used; the model resolved to Sonnet by itself. The interactive session attaches `giovf/rorororo` to the routine (routines UI or the RemoteTrigger HTTP API, as for every other routine) and enables it, or recreates it from the mirrored prompt at `docs/routines/ops-retro.md`; handoff in ALERTS.md 2026-09-26) | — | audits the operation itself over the last 7 days against this file: slot reliability (traced / missed / pushed nothing), pipeline throughput, blockers grouped by cause (a cause seen twice is a repeat → a general fix), defects in the routines (datasets shipped blind that errored, red CI after a push, wrong RUNS shape, stale handoffs, prompt sentences events contradicted), owner load; checks what became of the previous retro's proposals. Proposes fixes (prompt sentences quoted verbatim, scripts, CI jobs, relay hosts, schedule changes); never more Fable runs, never owner actions | `docs/retros/<year>-W<week>.md`; proposals scoring ≥ 4 become `todo` items in `docs/pipeline/queues/foundry.json` (evidence added to an existing item instead of a duplicate); `docs/RUNS.md` lines tagged `retro`; commit `retro: <year>-W<week> ops` |
 | Wednesday 08:00 | Cloud routine `trig_01CaSyBqwyKVL6NiPqPzhM8L` **Foundry venture exchange** (Fable; created 2026-09-22) | — | market research over `docs/pipeline/exchange.json` and fresh candidates; opens a NEW venture queue (folder, `venture.json` idea, `RESEARCH.md`, scored items) or reopens/extends an existing one when enhancing scores higher | new files under `ventures/<slug>/` and `docs/pipeline/`; `STRATEGY.md` §8 line |
 
 ## Event-driven (not on a clock)
@@ -56,7 +57,7 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 
 ## Conventions the schedulers rely on
 
-- `docs/RUNS.md`: build, exchange, review and report routines append one line per piece of
+- `docs/RUNS.md`: build, exchange, review, report and retro routines append one line per piece of
   work done at the end of every run (`- YYYY-MM-DD HH:MM | <routine> | <text>`); each new line
   reaches the owner's phone as a bullet. Triage and metrics do not post there (hourly/daily noise).
 - `docs/ALERTS.md` line prefixes: `owner:` (sent to the owner's phone), `handoff:` (for the
@@ -90,7 +91,7 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   Wednesday burn-down is designed to be cut off: each item is one commit, pushed as soon as its
   gate passes, so a cut leaves nothing half-done.
 - **Every routine slot is watched** (once the drafted job is active): a routine's trace is its tagged `docs/RUNS.md` line (build,
-  exchange, review, report, burn-down) or, for the metrics routine, its `metrics: <date> daily
+  exchange, review, report, burn-down, retro) or, for the metrics routine, its `metrics: <date> daily
   check` commit. A slot with neither within 2 h becomes a `watchdog | missed:` line in RUNS.md and
   a Telegram bullet (`docs/ci/run-watchdog.yml`). Keep the tags and commit subjects
   stable, or update `ROUTINES` in `scripts/run-watchdog.ts` in the same commit.
@@ -100,5 +101,13 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   `docs/pipeline/queues/foundry.json`.
 - Routines push exactly once, at the end, after the gates; a run killed by a usage limit leaves
   nothing behind (`docs/OPERATIONS.md`, "Interrupted runs").
-- Routine ids and prompts are managed with the RemoteTrigger API from the interactive session;
-  the owner can pause or delete any routine at https://claude.ai/code/routines.
+- Routine ids and prompts are managed with the RemoteTrigger API from the interactive session.
+  **A routine cannot create a working routine** (2026-09-26): the `create_trigger` tool in the
+  Claude_Code_Remote connector takes a cron and a prompt but sets no repository source, model or
+  connectors, so a routine it creates starts a session with nothing checked out and stalls in
+  "requires action". A routine that needs a new routine therefore writes the prompt to
+  `docs/routines/<name>.md`, may create the trigger disabled so the id exists, and files a
+  `handoff:` for the interactive session to attach the repo and enable it. The owner can pause or
+  delete any routine at https://claude.ai/code/routines.
+- **The ops retro closes the loop on this file**: every Saturday it audits each slot listed here,
+  so a scheduler change that is not recorded here shows up as a defect in the next retro.

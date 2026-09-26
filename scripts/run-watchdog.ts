@@ -94,6 +94,15 @@ export const ROUTINES: RoutineSlot[] = [
     commit: /\((daily )?build\)$/,
   },
   {
+    routine: 'retro',
+    hour: 7,
+    minute: 59,
+    days: [6],
+    graceMinutes: GRACE_MINUTES,
+    tags: ['retro'],
+    commit: /^retro[:(]|\(ops retro\)/,
+  },
+  {
     // Only the first burn-down hour is watched: later hours are expected to be cut off by
     // the usage limit; a silent 18:00 slot is exactly the "allowance already gone" case.
     routine: 'burn-down',
