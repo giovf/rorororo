@@ -1,0 +1,21 @@
+# Companies House search: confirm each B2B outreach target is a corporate subscriber (PECR reg 22)
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Klick+Business+Solutions
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Hudson+Outsourcing
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Thornton+%26+Lowe
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Executive+Compass+Business+Consultants
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Tender+Response
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Bid+Writing+Service
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Contracts+Advance
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Tender+Victory
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Bid+Solutions
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Scamper+Limited
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Adept+Design+Norfolk
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Websdale
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Loose+Connections
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Bubble+Design
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Splitpixel
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Care+Launch
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Giant+Digital
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Agency+for+Good
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Armadillo+Web+Design
+GET https://find-and-update.company-information.service.gov.uk/search/companies?q=Suspire+Media
