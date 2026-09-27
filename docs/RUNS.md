@@ -93,3 +93,15 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-26 17:35 | build | Queued b2b-outreach-results (score 4), blocked on the sends; proof: >= 2 replies or 1 sign-up from 10
 - 2026-09-26 17:35 | build | OWNER: open Gmail Drafts, check each contact page, send 2-3 a day, log dates in OUTREACH-2026-09.md §6
 - 2026-09-26 17:35 | build | Today's metrics row: refresh ok, 0 accounts, 186 authed MCP calls/24h; Taskmaster gankdat #61 filed
+- 2026-09-27 08:09 | review | Week 39 review written: all seven 90-day targets still at baseline; listings 5 of 8, revenue £0
+- 2026-09-27 08:09 | review | gankdat: double-down — only venture with signal (~190 authed MCP calls, ~22 paywall hits/day), 0 accounts
+- 2026-09-27 08:09 | review | variables-toolkit: fix — 2 views, 0 installs in 6 days on Figma; day-7 review must rework the listing
+- 2026-09-27 08:09 | review | read-focus: keep — Chrome still in review, AMO listing live since 09-22 but unrecorded; kill clock not started
+- 2026-09-27 08:09 | review | highlight-keep: keep — same as ReadFocus; no store data yet
+- 2026-09-27 08:09 | review | gankdat queue +2: stats-canonical-fix (7, Search Console duplicates) and apify-planning-actor-repair (7)
+- 2026-09-27 08:09 | review | No queue finished, no exchange idea promoted: no parked trigger met (relink needs 100 installs, Asia two shelves)
+- 2026-09-27 08:09 | review | Move 1: owner sends the 10 outreach drafts + posts Show HN; proof >= 2 replies or 1 sign-up in 30 days
+- 2026-09-27 08:09 | review | Move 2: fix /stats canonical indexing and the flagged Apify planning actor; proof >= 10 pages indexed by 10-27
+- 2026-09-27 08:09 | review | Move 3: rework the Figma listing at day 7; proof >= 100 views and 10 installs by 2026-10-21
+- 2026-09-27 08:09 | review | Gaps: Apify runs and get_changes calls are not in the daily metrics row, so two targets are unmeasured
+- 2026-09-27 08:09 | review | OWNER: send outreach drafts, post Show HN, chase Apify support, Search Console sitemap, SAM key + PAT, Figma payout

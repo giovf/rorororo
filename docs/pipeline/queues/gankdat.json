@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-26",
+  "updated": "2026-09-27",
   "items": [
     {
       "id": "nhs-ods",
@@ -134,6 +134,26 @@
       "status": "blocked",
       "blocked_on": "owner sends the ten Gmail drafts (ALERTS 2026-09-26) — unblock with the send dates in OUTREACH-2026-09.md §6",
       "added": "2026-09-26"
+    },
+    {
+      "id": "stats-canonical-fix",
+      "title": "Fix /stats indexing: one canonical per stats page, no duplicate variants, then re-submit the sitemap",
+      "why": "Review 2026-W39 (double-down). Search Console mailed 2026-09-23 (INBOX): \"new reasons prevent pages from being indexed on gankdat.com\" — alternative page with proper canonical tag; duplicate without user-selected canonical. Impressions began 2026-09-20, so the cite-bait pages are crawled but folded into duplicates. Likely causes: trailing-slash/query variants of /stats/<slug> and the 30-day delta tables served on more than one URL. Evidence 3 × reach 3 ÷ 0.3 days; no owner minutes except the sitemap click already queued.",
+      "effort_days": 0.3,
+      "proof": "Search Console shows ≥ 10 /stats pages indexed by 2026-10-27; the duplicate/canonical reason count drops to 0",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-09-27"
+    },
+    {
+      "id": "apify-planning-actor-repair",
+      "title": "Repair the Apify uk-planning-applications actor flagged under maintenance (failing prefilled-input QA runs)",
+      "why": "Review 2026-W39 (double-down). Apify QA mailed 2026-09-25 (INBOX/ALERTS): faceless-api/uk-planning-applications flagged under maintenance after 3 days of failed prefilled test runs (failed run wuRDmzbT84RthY4CB). The Store is the one shelf with buyers already paying and our only public presence there is now one live actor plus one marked broken; a maintenance flag also weighs on the pending publisher-limit lift. Read the failed run log through the Apify API (APIFY_TOKEN in CI), fix the prefilled input or the actor default, re-push. Evidence 3 × reach 3 ÷ 0.25 days.",
+      "effort_days": 0.25,
+      "proof": "actor no longer flagged; 3 consecutive green QA runs; ≥ 1 paid run within 30 days once public",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-09-27"
     }
   ]
 }
