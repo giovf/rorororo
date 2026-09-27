@@ -1,6 +1,7 @@
-# Security headers for static assets (served by the Workers Assets pipeline,
-# which bypasses the Worker — so these are set here, mirroring the Hono
-# secureHeaders() config in src/index.ts for dynamic responses).
+# Security headers for static assets (served by the Workers Assets pipeline
+# through env.ASSETS in src/middleware/canonical.ts, before Hono's
+# secureHeaders() runs — so these are set here, mirroring the secureHeaders()
+# config in src/index.ts for dynamic responses).
 #
 # CSP is per-page rather than one /* rule: multiple matching CSP headers are
 # enforced as their INTERSECTION, so a global strict script-src would also

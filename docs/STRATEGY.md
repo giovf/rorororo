@@ -230,3 +230,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   connector, nothing sent. Sandbox egress blocks every commercial site (WebFetch and curl alike), so mailboxes
   were taken from search-result reproductions of the contact pages and the owner checks each one before
   sending. `b2b-outreach-results` (4) queued, blocked on the sends. Next buildable: day-7-review (4), then trademark-watch-surface (4).
+- 2026-09-27 build (09:00 run): built `stats-canonical-fix` (gankdat queue, score 7, top buildable item from
+  today's W39 review). The relay showed the real cause of both Search Console reasons: `www.gankdat.com` is a
+  second custom domain on the Worker and served every page as an un-redirected 200 copy, and `/privacy` and
+  `/terms` had no canonical tag — not the trailing-slash or query variants the item guessed (those were a JSON
+  404 and a canonical-tagged 200). Fix: `canonicalHost` middleware (www → apex, http → https, trailing slash
+  → 301; 308 for non-GET; API paths keep their bytes), static files now served through `env.ASSETS` with
+  `run_worker_first` so the redirect covers them, canonical tags on the two static pages, five tests. Proof
+  stays the item's: ≥ 10 /stats pages indexed by 2026-10-27 once the owner re-submits the sitemap. Next
+  buildable: apify-planning-actor-repair (7), then day-7-review (4, due tomorrow).

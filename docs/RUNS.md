@@ -105,3 +105,8 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-27 08:09 | review | Move 3: rework the Figma listing at day 7; proof >= 100 views and 10 installs by 2026-10-21
 - 2026-09-27 08:09 | review | Gaps: Apify runs and get_changes calls are not in the daily metrics row, so two targets are unmeasured
 - 2026-09-27 08:09 | review | OWNER: send outreach drafts, post Show HN, chase Apify support, Search Console sitemap, SAM key + PAT, Figma payout
+- 2026-09-27 09:26 | build | Relay check: www.gankdat.com served every page as a 200 copy and /privacy, /terms had no canonical tag
+- 2026-09-27 09:26 | build | gankdat: canonicalHost middleware — www, http and trailing-slash variants now 301 to gankdat.com (308 non-GET)
+- 2026-09-27 09:26 | build | gankdat: static pages served via env.ASSETS with run_worker_first so www redirects cover them too
+- 2026-09-27 09:26 | build | gankdat: canonical tags added to /privacy and /terms; 5 tests in test/canonical.spec.ts, gates green
+- 2026-09-27 09:26 | build | Queue: stats-canonical-fix done; next apify-planning-actor-repair (7); owner: re-submit sitemap in Search Console

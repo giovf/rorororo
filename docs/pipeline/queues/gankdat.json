@@ -142,8 +142,9 @@
       "effort_days": 0.3,
       "proof": "Search Console shows ≥ 10 /stats pages indexed by 2026-10-27; the duplicate/canonical reason count drops to 0",
       "score": 7,
-      "status": "todo",
-      "added": "2026-09-27"
+      "status": "done",
+      "added": "2026-09-27",
+      "done_at": "2026-09-27"
     },
     {
       "id": "apify-planning-actor-repair",

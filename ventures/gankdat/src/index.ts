@@ -6,6 +6,7 @@ import { requireApiKey } from './auth/middleware';
 import { errorHandler, notFoundHandler } from './lib/envelope';
 import { meterCredits } from './metering/middleware';
 import { rateLimit } from './metering/ratelimit';
+import { canonicalHost, staticAssets } from './middleware/canonical';
 import { structuredLogger } from './middleware/logging';
 import { refreshAllSources } from './sources/store';
 import { getSource } from './sources/registry';
@@ -28,10 +29,15 @@ import type { AppEnv } from './types';
 
 const app = new Hono<AppEnv>();
 
+// Order matters: canonical-host redirects first (www/http/trailing slash), then
+// static files via the assets binding (their CSP comes from public/_headers and
+// must not pass through secureHeaders below), then the dynamic middleware.
+app.use('*', canonicalHost());
+app.use('*', staticAssets());
 app.use('*', requestId());
 app.use('*', structuredLogger());
 // Dynamic-response hardening (JSON API). Static HTML gets the same via
-// public/_headers, which the Workers Assets pipeline serves without the Worker.
+// public/_headers, applied by the assets binding in staticAssets().
 app.use(
   '*',
   secureHeaders({

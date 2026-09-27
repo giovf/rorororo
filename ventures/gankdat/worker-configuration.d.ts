@@ -6,6 +6,7 @@ interface __BaseEnv_CloudflareBindings {
 	RATE: KVNamespace;
 	DB: D1Database;
 	TRAFFIC: AnalyticsEngineDataset;
+	ASSETS: Fetcher;
 	ADMIN_TOKEN: string;
 	STRIPE_SECRET_KEY: string;
 	STRIPE_WEBHOOK_SECRET: string;

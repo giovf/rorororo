@@ -98,6 +98,11 @@ names — never rename those; see memory/git history for why).
 - `src/x402/` — x402-gated pay-per-request routes (dark until configured)
 - `public/` — landing page, docs (Scalar embed), robots/sitemap (Workers
   Assets); `llms.txt` is Worker-generated from the source registry
+- `src/middleware/canonical.ts` — one URL per page: `www.` and `http://` and
+  trailing-slash variants 301 to `PUBLIC_BASE_URL` (308 for non-GET; API paths keep
+  their bytes), and the static files are served through `env.ASSETS` with
+  `run_worker_first` so the redirect covers them too (Search Console duplicate
+  fix, 2026-09-27)
 - `docs/` — architecture, runbook, setup docs; `.taskmaster/` — PRD + backlog
 
 ## Stack
