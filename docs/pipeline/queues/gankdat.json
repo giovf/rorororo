@@ -149,12 +149,13 @@
     {
       "id": "apify-planning-actor-repair",
       "title": "Repair the Apify uk-planning-applications actor flagged under maintenance (failing prefilled-input QA runs)",
-      "why": "Review 2026-W39 (double-down). Apify QA mailed 2026-09-25 (INBOX/ALERTS): faceless-api/uk-planning-applications flagged under maintenance after 3 days of failed prefilled test runs (failed run wuRDmzbT84RthY4CB). The Store is the one shelf with buyers already paying and our only public presence there is now one live actor plus one marked broken; a maintenance flag also weighs on the pending publisher-limit lift. Read the failed run log through the Apify API (APIFY_TOKEN in CI), fix the prefilled input or the actor default, re-push. Evidence 3 × reach 3 ÷ 0.25 days.",
+      "why": "Review 2026-W39 (double-down). Apify QA mailed 2026-09-25 (INBOX/ALERTS): faceless-api/uk-planning-applications flagged under maintenance after 3 days of failed prefilled test runs (failed run wuRDmzbT84RthY4CB). The Store is the one shelf with buyers already paying and our only public presence there is now one live actor plus one marked broken; a maintenance flag also weighs on the pending publisher-limit lift. Read the failed run log through the Apify API (APIFY_TOKEN in CI), fix the prefilled input or the actor default, re-push. Evidence 3 × reach 3 ÷ 0.25 days. Built 2026-09-27 (relay read the run log, no token needed): the actor's dataset_schema.json declared `authority` as string while the API serves the planning.data.gov.uk organisation id as a number, so Apify rejected the first pushData of every run (schema-validation-error) — 3 failed runs, 0 succeeded, 2 distinct users had tried it. Fixed the field type and the input (authority is a numeric id, the text 'contains' input would have got a 400), same latent bug in uk-trademark-journal (class_count/series_count integer vs number) fixed, and test/apify-schemas.spec.ts now checks every actor's dataset and input schema against the source's zod schemas so this cannot ship blind again. CI re-pushes both actors; Apify's QA re-runs on the new build.",
       "effort_days": 0.25,
       "proof": "actor no longer flagged; 3 consecutive green QA runs; ≥ 1 paid run within 30 days once public",
       "score": 7,
-      "status": "todo",
-      "added": "2026-09-27"
+      "status": "done",
+      "added": "2026-09-27",
+      "done_at": "2026-09-27"
     }
   ]
 }

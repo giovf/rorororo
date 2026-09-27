@@ -10,7 +10,7 @@
         "type": ["string", "null"]
       },
       "authority": {
-        "type": ["string", "null"]
+        "type": ["number", "null"]
       },
       "description": {
         "type": ["string", "null"]

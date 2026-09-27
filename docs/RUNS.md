@@ -110,3 +110,8 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-27 09:26 | build | gankdat: static pages served via env.ASSETS with run_worker_first so www redirects cover them too
 - 2026-09-27 09:26 | build | gankdat: canonical tags added to /privacy and /terms; 5 tests in test/canonical.spec.ts, gates green
 - 2026-09-27 09:26 | build | Queue: stats-canonical-fix done; next apify-planning-actor-repair (7); owner: re-submit sitemap in Search Console
+- 2026-09-27 17:30 | build | Relay read the failed Apify QA run: uk-planning actor rejected every record — authority declared string, served number
+- 2026-09-27 17:30 | build | gankdat: uk-planning-applications actor schema + input fixed (authority is a numeric id); CI re-pushes, Apify QA re-runs
+- 2026-09-27 17:30 | build | gankdat: same latent drift fixed in uk-trademark-journal actor (class_count, series_count integer → number)
+- 2026-09-27 17:30 | build | gankdat: test/apify-schemas.spec.ts checks all 16 actors' dataset + input schemas against the sources (34 tests, green)
+- 2026-09-27 17:30 | build | Queue: apify-planning-actor-repair done; next variables-toolkit day-7-review (4, due tomorrow); nothing for the owner

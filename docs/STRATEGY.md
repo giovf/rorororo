@@ -239,3 +239,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `run_worker_first` so the redirect covers them, canonical tags on the two static pages, five tests. Proof
   stays the item's: ≥ 10 /stats pages indexed by 2026-10-27 once the owner re-submits the sitemap. Next
   buildable: apify-planning-actor-repair (7), then day-7-review (4, due tomorrow).
+- 2026-09-27 build (17:00 run): built `apify-planning-actor-repair` (gankdat queue, score 7, the top buildable
+  item). The relay fetched the failed QA run's log without a token: Apify rejected the very first record of every
+  run because the actor's dataset schema declared `authority` a string while the API serves the planning
+  authority's organisation id as a number (3 failed runs, 0 succeeded, 2 users had tried it). Fixed the dataset
+  and input schema, the same latent integer/number drift in `uk-trademark-journal`, and added
+  `test/apify-schemas.spec.ts`, which checks every actor's dataset and input schema against the source's zod
+  schemas — the general fix for actors written blind. CI re-pushes both actors; Apify's QA re-runs on the new
+  build and lifts the flag by itself. Next buildable: variables-toolkit day-7-review (4, due 2026-09-28), then
+  trademark-watch-surface (4).

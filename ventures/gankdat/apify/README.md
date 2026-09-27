@@ -8,6 +8,12 @@ the account. Publish: `cd <actor> && npx apify-cli push` with `APIFY_TOKEN` set.
 `GANKDAT_API_KEY=… APIFY_LOCAL_STORAGE_DIR=./storage node src/main.mjs` with
 `storage/key_value_stores/default/INPUT.json`.
 
+Each actor's `.actor/dataset_schema.json` (Apify validates every pushed item against it) and
+`.actor/input_schema.json` (every field is sent as an API query param) must match the source's
+zod `recordSchema` / `queryParams`: `test/apify-schemas.spec.ts` checks both for every folder.
+A type that drifts fails every run — `uk-planning-applications` was flagged "under maintenance"
+by Apify QA on 2026-09-25 because `authority` was declared a string and served as a number.
+
 ## Published actors (account `faceless-api`, 2026-09-20)
 
 | Folder | Actor id | Console |

@@ -1,13 +1,14 @@
 {
-  "title": "UK Planning Applications (planning.data.gov.uk) \u2014 filters",
+  "title": "UK Planning Applications (planning.data.gov.uk) — filters",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
     "authority": {
-      "title": "Planning authority contains",
-      "type": "string",
-      "description": "Filter: Planning authority contains (case-insensitive substring match).",
-      "editor": "textfield"
+      "title": "Planning authority (organisation id)",
+      "type": "integer",
+      "description": "Filter: the numeric planning.data.gov.uk organisation entity id of the local planning authority — the value of the `authority` output field. Leave empty for all authorities.",
+      "editor": "number",
+      "minimum": 1
     },
     "reference": {
       "title": "Application reference contains",
