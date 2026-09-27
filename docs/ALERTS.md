@@ -122,3 +122,11 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   `ventures/gankdat/docs/OUTREACH-2026-09.md` (§2 lawful basis, §4 how to send), glance at each firm's contact page, pick the
   From address (info@gankdat.com alias if Gmail has it), send two or three a day and note the dates in §6. Delete any draft you
   do not like. Nothing has been sent.
+- 2026-09-27 handoff: Apify emailed (2026-09-27 18:07 UTC) that pricing for gankdat's own
+  `uk-trademark-journal-watch` actor (`faceless-api`, `ventures/gankdat/apify/uk-trademark-journal`) is
+  moving from pay-per-usage to pay-per-event: $1.00 per 1,000 results. Read the full pricing-model docs
+  (https://docs.apify.com/platform/actors/running/actors-in-store#paid-actors) and work out whether this
+  is a cost gankdat now pays to run its own actor or a price gankdat is setting as the actor's publisher —
+  the account name (`faceless-api`) is ours either way. If it is a real recurring cost, log it in
+  `docs/LEDGER.md` and check it against wave 7's weekly result volume (~13.8k rows on the initial
+  backfill, smaller deltas per week after).
