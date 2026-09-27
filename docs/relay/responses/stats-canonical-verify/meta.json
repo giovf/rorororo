@@ -1,0 +1,106 @@
+{
+  "request": "stats-canonical-verify",
+  "fetched_at": "2026-09-27T09:43:19.708Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://www.gankdat.com/stats/uk-tenders",
+      "fetched_at": "2026-09-27T09:43:16.185Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/stats/uk-tenders",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.gankdat.com/privacy",
+      "fetched_at": "2026-09-27T09:43:17.485Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/privacy",
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/stats/uk-tenders/",
+      "fetched_at": "2026-09-27T09:43:17.912Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/stats/uk-tenders",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/stats/",
+      "fetched_at": "2026-09-27T09:43:18.242Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/stats",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/docs",
+      "fetched_at": "2026-09-27T09:43:18.338Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/docs",
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/",
+      "fetched_at": "2026-09-27T09:43:18.403Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/",
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/privacy.html",
+      "fetched_at": "2026-09-27T09:43:18.512Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/privacy",
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/stats/uk-tenders",
+      "fetched_at": "2026-09-27T09:43:18.905Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/stats/uk-tenders",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/v1/health",
+      "fetched_at": "2026-09-27T09:43:19.336Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/v1/health",
+      "headers": {
+        "content-type": "application/json"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/googlecc09a1f1a708bfc8.html",
+      "fetched_at": "2026-09-27T09:43:19.658Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/googlecc09a1f1a708bfc8.html",
+      "headers": {
+        "content-type": "text/plain; charset=UTF-8"
+      }
+    }
+  ]
+}
