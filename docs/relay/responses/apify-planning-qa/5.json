@@ -1,0 +1,74 @@
+{
+  "data": {
+    "total": 13,
+    "count": 13,
+    "offset": 0,
+    "limit": 50,
+    "desc": false,
+    "items": [
+      {
+        "title": "OpenIBAN IBAN Validator — Bulk IBAN Checker",
+        "name": "openiban-iban-validator-scraper",
+        "username": "devilscrapes",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 19,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-09-27T08:27:03.804Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 17,
+            "TIMED-OUT": 0,
+            "TOTAL": 17
+          }
+        },
+        "description": "Bulk IBAN validation against the free, keyless openiban.com API. Feed IBANs in any common format and get one row back per IBAN: checksum validity, bank-code and BIC enrichment where available, and the messages explaining any failure — built for whole-list AP/AR and KYC batch checks.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "DevilScrapes",
+        "userPictureUrl": "https://images.apifyusercontent.com/2sThxlwPh-1eu3WVnVJ3mpJKE6PaiB1ZYZLuK5Vnepw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZFJGejhXcmFtUUJZTE5hSmllR1VtaFdST2RqV0drQndZMFJTeWdLeGt1NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWRTlpV0VoUVVscHpiMnQwTUZOQ1VHVXRjSEp2Wm1sc1pTMTJiVTlJTjNsbFdHTkhMV1JsZG1sc2MyTnlZWEJsY3kxcFkyOXVMbk4yWnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricePerUnitUsd": 0.0001,
+          "minimalMaxTotalChargeUsd": 0,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Charged once when the Actor begins a run.",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.2
+              },
+              "iban-checked": {
+                "eventTitle": "IBAN checked",
+                "eventDescription": "Charged once per input IBAN processed — valid, invalid-but-answered, or skipped.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-09T07:58:08.381Z",
+          "startedAt": "2026-09-09T07:58:08.381Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Jutd3iHud3HaKPM4B",
+        "url": "https://apify.com/devilscrapes/openiban-iban-validator-scraper"
+      }
+    ]
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "data": {
+    "id": "kfFwugT7erMwxuoIU",
+    "userId": "VcapAQgluym4HTqoG",
+    "name": "uk-planning-applications",
+    "username": "faceless-api",
+    "description": "Recent planning applications from the official planning.data.gov.uk feed: reference, authority, description, decision and key dates, location point. Refreshed daily. Pay per result.",
+    "isPublic": true,
+    "createdAt": "2026-09-20T22:18:17.732Z",
+    "modifiedAt": "2026-09-24T17:43:41.836Z",
+    "taggedBuilds": {
+      "latest": {
+        "buildId": "HvX1bIxvcAolQdYV1",
+        "finishedAt": "2026-09-20T22:18:45.698Z",
+        "buildNumberInt": 100001,
+        "buildNumber": "0.1.1"
+      }
+    },
+    "stats": {
+      "totalBuilds": 1,
+      "totalRuns": 3,
+      "totalUsers": 2,
+      "totalUsers7Days": 1,
+      "totalUsers30Days": 1,
+      "totalUsers90Days": 1,
+      "actorReviewCount": 0,
+      "actorReviewRating": 0,
+      "bookmarkCount": 0,
+      "lastRunStartedAt": "2026-09-27T00:26:56.918Z",
+      "publicActorRunStats30Days": {
+        "ABORTED": 0,
+        "FAILED": 3,
+        "SUCCEEDED": 0,
+        "TIMED-OUT": 0,
+        "TOTAL": 3
+      }
+    },
+    "versions": [
+      {
+        "versionNumber": "0.1",
+        "sourceType": "SOURCE_FILES",
+        "buildTag": "latest"
+      }
+    ],
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 3600,
+      "memoryMbytes": 4096
+    },
+    "exampleRunInput": {
+      "body": "{ \"helloWorld\": 123 }",
+      "contentType": "application/json; charset=utf-8"
+    },
+    "categories": [
+      "LEAD_GENERATION",
+      "BUSINESS"
+    ],
+    "isDeprecated": false,
+    "title": "UK Planning Applications (planning.data.gov.uk)",
+    "seoTitle": "UK Planning Applications (planning.data.gov.uk)",
+    "seoDescription": "Recent planning applications from the official planning.data.gov.uk feed: reference, authority, description, decision and key dates, location point. Refreshed d",
+    "pricingInfos": [
+      {
+        "pricingModel": "PAY_PER_EVENT",
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "result": {
+              "eventTitle": "Result (one record)",
+              "eventDescription": "One record written to the dataset",
+              "eventPriceUsd": 0.001,
+              "isPrimaryEvent": true
+            }
+          }
+        },
+        "createdAt": "2026-09-20T22:20:09.153Z",
+        "startedAt": "2026-09-20T22:20:09.153Z",
+        "apifyMarginPercentage": 0.2
+      }
+    ],
+    "notice": "UNDER_MAINTENANCE",
+    "isCritical": false,
+    "isGeneric": false,
+    "hasNoDataset": false,
+    "isSourceCodeHidden": true,
+    "standbyUrl": null,
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "readmeSummary": "## UK Planning Applications (planning.data.gov.uk)\n\nProvides daily-updated records of UK planning applications harvested from planning.data.gov.uk. Each record corresponds to a single planning application and contains unique identifiers and reference numbers, the responsible local planning authority, a textual description of the proposal, decision date and application date range, and a geographic location point. Data focuses on applications published to the planning.data.gov.uk platform and is formatted as structured, authority-level planning metadata suitable for monitoring planning activity, extracting leads, and integrating into property/proptech workflows.\n\n## Use cases\n\n- Construction and trades lead generation — tracking new applications by authority or by time period.  \n- Property research and proptech — monitoring planning activity and development patterns by area.",
+    "deploymentKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC5X/kjHYgeZMouXA2K1jL00E0I4Aa8BYKLiI6Jgw3UWYtU0s3qhKYPvaG1IIyN2AVQLFdJAeHA68/V6ZGWxxFCBWHGmNnsaeF1eLobkT1jZjN2pdSZ8GRE1xU3c+sqeBDlng1utaL7qdiw2qHi+PEAPQimPi3FTeTvMLEzRY9104iK/O4YifmNrCrtoTa+UPu+r8dykyqZucuE1CTEDvxHRsObJnFKUeUjmn1oqWAZubtCnwKhs/h8bGbqgL4R0GlCBg5V1NF0UeJXsB69V9Ly3ZQ4yAl/Iauhi1Dh16uV8gjphnvlpqXis/Q133g+3R7eQOk4gBn/xsXw1h7nosVR \n"
+  }
+}
