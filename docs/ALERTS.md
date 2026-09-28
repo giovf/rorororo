@@ -138,3 +138,16 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   @foundry/variables-toolkit` (or just edit the listing) and paste name, tagline, description and tags from
   `ventures/variables-toolkit/LISTING.md` v2 — bold the headings with the editor's B button, no asterisks. Evidence and the
   day-30 target (≥ 100 views, ≥ 10 installs by 2026-10-21) are in `ventures/variables-toolkit/RESEARCH.md` §8.
+- 2026-09-28 handoff: inbox backlog catch-up found two store mails that never reached this file — **gankdat's
+  MCP server listing is approved and live** on mcpservers.org (email 2026-09-21 07:14 UTC) and **Chrome Web
+  Store identity verification is complete** (email 2026-09-21 07:22 UTC, publishing via the CWS API/Developer
+  Dashboard is now unblocked). Add the mcpservers.org listing to `ventures/gankdat/STORE.md` distribution
+  channels; note the CWS verification where the Chrome Web Store developer account is tracked. Also worth a
+  look: 9 unread threads dated 2026-09-18 to 09-21 were sitting unprocessed (never in `docs/INBOX.md`) until
+  today's run caught them up — likely from the same missed-run gaps already noted 2026-09-22; no fix applied
+  this run since the hourly `newer_than:3h` search is working correctly today.
+- 2026-09-28 owner: a Gmail **"Send Mail As" confirmation for info@gankdat.com** (via the 1402celsius.com
+  account) has been sitting unconfirmed since 2026-09-19 23:11 UTC — only surfaced now via backlog catch-up.
+  Confirming it requires clicking the link in that email under your own Google identity; given the age it may
+  have expired, in which case re-trigger from Gmail Settings → Accounts and Import → Send mail as. Nothing to
+  do if you don't need to send as info@gankdat.com.
