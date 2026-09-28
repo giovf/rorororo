@@ -23,17 +23,17 @@ const range = process.env.DIFF_RANGE ?? 'HEAD~1..HEAD';
 const changed = process.env.PUBLISH_ONLY
   ? []
   : all
-  ? readdirSync(root, { withFileTypes: true })
-      .filter((d) => d.isDirectory())
-      .map((d) => d.name)
-  : [
-      ...new Set(
-        execSync(`git diff --name-only ${range} -- ${root}`, { encoding: 'utf8' })
-          .split('\n')
-          .map((p) => p.split('/')[3])
-          .filter(Boolean),
-      ),
-    ];
+    ? readdirSync(root, { withFileTypes: true })
+        .filter((d) => d.isDirectory())
+        .map((d) => d.name)
+    : [
+        ...new Set(
+          execSync(`git diff --name-only ${range} -- ${root}`, { encoding: 'utf8' })
+            .split('\n')
+            .map((p) => p.split('/')[3])
+            .filter(Boolean),
+        ),
+      ];
 const sh = (cmd, opts = {}) =>
   execSync(cmd, {
     stdio: 'pipe',
