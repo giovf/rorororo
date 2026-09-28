@@ -5,12 +5,12 @@ what it unblocks and roughly how long it takes. Nothing here spends money.
 
 ## A. Quick clicks (under 5 minutes each)
 
-| # | Do this | Unblocks | Where |
-| --- | --- | --- | --- |
-| A1 | **Figma payout**: Figma → Settings → Community / Creator payouts → confirm Stripe is connected. | Getting paid for Variables Toolkit sales at all | [ALERTS 2026-09-22](../ALERTS.md) |
-| A2 | **Search Console**: submit `https://gankdat.com/sitemap.xml` and check the stats pages index. | Search traffic to the 17 dataset pages — the only free buyer channel we have | queue `gankdat/search-console-stats-indexing` |
-| A3 | **Chase Apify support** on the new-publisher limit (reply to the open ticket from your mailbox). | 16 priced actors going public on the Apify Store | queue `gankdat/apify-remaining-actors-public` |
-| A4 | **Gmail "Send mail as" info@gankdat.com**: click the confirmation link (2026-09-19 email), or re-trigger from Gmail → Settings → Accounts and Import if it expired. | Sending outreach from the business address (B2) | [ALERTS 2026-09-28](../ALERTS.md) |
+| #   | Do this                                                                                                                                                             | Unblocks                                                                     | Where                                         |
+| --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------- |
+| A1  | **Figma payout**: Figma → Settings → Community / Creator payouts → confirm Stripe is connected.                                                                     | Getting paid for Variables Toolkit sales at all                              | [ALERTS 2026-09-22](../ALERTS.md)             |
+| A2  | **Search Console**: submit `https://gankdat.com/sitemap.xml` and check the stats pages index.                                                                       | Search traffic to the 17 dataset pages — the only free buyer channel we have | queue `gankdat/search-console-stats-indexing` |
+| A3  | **Chase Apify support** on the new-publisher limit (reply to the open ticket from your mailbox).                                                                    | 16 priced actors going public on the Apify Store                             | queue `gankdat/apify-remaining-actors-public` |
+| A4  | **Gmail "Send mail as" info@gankdat.com**: click the confirmation link (2026-09-19 email), or re-trigger from Gmail → Settings → Accounts and Import if it expired. | Sending outreach from the business address (B2)                              | [ALERTS 2026-09-28](../ALERTS.md)             |
 
 ## B. Short tasks (15–30 minutes)
 
