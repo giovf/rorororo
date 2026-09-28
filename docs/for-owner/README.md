@@ -7,6 +7,11 @@ reads your notes at the start of the next one.
 Claude runs the project; this folder is the only part written for you. Read top to bottom.
 
 ## Right now
+
+**Start here: [OUTSTANDING.md](OUTSTANDING.md) — the single list of everything waiting on you, kept current.**
+
+The table below is the older per-item history.
+
 | Read | Why |
 | --- | --- |
 | [actions/002-figma-dev-test.md](actions/002-figma-dev-test.md) | Load the Figma plugin — one-time setup |

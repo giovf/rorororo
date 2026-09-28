@@ -18,13 +18,13 @@
     {
       "id": "run-watchdog",
       "title": "Run watchdog: Telegram line when a scheduled routine leaves no commit/run-log line within 2h of its slot",
-      "why": "The Wed 17:09 build was refused by the usage limit and nobody knew until the owner asked. Silence must be visible. Built 2026-09-25: scripts/run-watchdog.ts (+11 tests) appends one '| watchdog | missed:' RUNS line per silent slot; replayed against history it flags the 2026-09-23 17:00 build and nothing else. Only the workflow file is missing.",
+      "why": "The Wed 17:09 build was refused by the usage limit and nobody knew until the owner asked. Silence must be visible. Built 2026-09-25: scripts/run-watchdog.ts (+11 tests) appends one '| watchdog | missed:' RUNS line per silent slot; replayed against history it flags the 2026-09-23 17:00 build and nothing else. Only the workflow file is missing. Moved into .github/workflows by the interactive session 2026-09-28 (routine tokens lack the workflow scope).",
       "effort_days": 0.3,
       "proof": "every missed slot produces one 'missed' bullet within 2h",
       "score": 7,
-      "status": "blocked",
+      "status": "done",
       "added": "2026-09-24",
-      "blocked_on": "interactive session: `git mv docs/ci/run-watchdog.yml .github/workflows/` — routine tokens (git push and the GitHub API) lack the `workflow` scope, so no routine can add a workflow file"
+      "done_at": "2026-09-28"
     },
     {
       "id": "ops-retro",

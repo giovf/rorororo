@@ -153,3 +153,6 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-28 17:31 | build | Refresh retries once on transient D1 faults (today: uk-trademark-journal internal error, uk-charities connection lost)
 - 2026-09-28 17:31 | build | uk-insolvency truncated-JSON failures (3 this week) now report bytes, content-length and tail so the next run can fix it
 - 2026-09-28 17:31 | build | 7 new tests (feed filters REST+MCP, facet pages, retry); gankdat v0.19.0; queue: trademark-watch-surface done, refresh-transient-d1-retry done
+- 2026-09-28 20:35 | interactive | docs/for-owner/OUTSTANDING.md: one list of everything waiting on the owner (4 clicks, 3 tasks, 2 key hand-overs, 3 decisions)
+- 2026-09-28 20:35 | interactive | Run watchdog workflow activated (missed routine slots now reach Telegram within 2 h)
+
