@@ -69,6 +69,15 @@ describe('scheduling', () => {
     expect(candidates(queues).map((c) => c.item.id)).toEqual(['old', 'nhs']);
   });
 
+  it('caps candidates by effort when asked', () => {
+    const q = parseQueue(
+      queue('x', [{ ...item('big', 'todo', 9), effort_days: 2 }, { ...item('small', 'todo', 3), effort_days: 0.2 }]),
+    );
+    expect(nextItem([q])?.item.id).toBe('big');
+    expect(nextItem([q], { maxEffortDays: 0.5 })?.item.id).toBe('small');
+    expect(candidates([q], { maxEffortDays: 0.5 })).toHaveLength(1);
+  });
+
   it('treats a queue with only done/dropped items as empty, blocked as not empty', () => {
     expect(isEmpty(queues[2]!)).toBe(true);
     expect(isEmpty(queues[1]!)).toBe(false);

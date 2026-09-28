@@ -29,12 +29,11 @@
     {
       "id": "apify-remaining-actors-public",
       "title": "Re-run the publish workflow once Apify lifts the new-publisher limit",
-      "why": "13 priced actors, 1 public; the Store is the shelf with existing buyers.",
+      "why": "13 priced actors, 1 public; the Store is the shelf with existing buyers. Apify support 2026-09-28: the limit is 5 publications per organisation per 24 h; publish-actors.mjs now publishes ≤ 5 per run and the workflow runs daily 04:00 UTC — the backlog drains over ~3 days without an exception. Set done when 17/17 are public.",
       "effort_days": 0.1,
       "proof": "13 of 13 actors public (apify/README.md)",
       "score": 9,
-      "status": "blocked",
-      "blocked_on": "Apify support reply to the limit-lift request (owner mailbox)",
+      "status": "doing",
       "added": "2026-09-21"
     },
     {

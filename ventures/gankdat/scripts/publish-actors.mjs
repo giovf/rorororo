@@ -1,7 +1,10 @@
 #!/usr/bin/env node
-// CI: push every Apify actor whose folder changed in this push (or all with --all), then make
-// sure each actor on the account is priced (pay-per-event `result`, US$0.001) and, when the
-// account is allowed to, public. Needs APIFY_TOKEN and GANKDAT_INTERNAL_API_KEY. Idempotent.
+// CI: push every Apify actor whose folder changed in this push (or all with --all; none with
+// PUBLISH_ONLY=1, used by the daily schedule), then make sure each actor on the account is priced
+// (pay-per-event `result`, US$0.001) and public. Apify support (2026-09-28): publishing is limited
+// to 5 Actor publications per organisation per 24 h and `cannot-publish-actor` means that limit
+// is hit — so at most MAX_PUBLISH_PER_RUN actors are made public per run, the run stops at the
+// first refusal, and the workflow also runs daily. Needs APIFY_TOKEN and GANKDAT_INTERNAL_API_KEY.
 import { execSync } from 'node:child_process';
 import { existsSync, readdirSync } from 'node:fs';
 
@@ -13,8 +16,13 @@ if (!token || !serviceKey) {
 }
 const root = 'ventures/gankdat/apify';
 const all = process.argv.includes('--all');
+const MAX_PUBLISH_PER_RUN = 5;
+let published = 0;
+let rateLimited = false;
 const range = process.env.DIFF_RANGE ?? 'HEAD~1..HEAD';
-const changed = all
+const changed = process.env.PUBLISH_ONLY
+  ? []
+  : all
   ? readdirSync(root, { withFileTypes: true })
       .filter((d) => d.isDirectory())
       .map((d) => d.name)
@@ -70,7 +78,7 @@ for (const a of acts) {
     body.seoTitle = (g.seoTitle ?? g.title ?? '').slice(0, 60);
     body.seoDescription = (g.seoDescription ?? g.description ?? '').slice(0, 160);
   }
-  if (!g.isPublic) body.isPublic = true;
+  if (!g.isPublic && !rateLimited && published < MAX_PUBLISH_PER_RUN) body.isPublic = true;
   if (Object.keys(body).length === 0) {
     console.log(`${g.name}: priced, public`);
     continue;
@@ -98,6 +106,7 @@ for (const a of acts) {
     if (b.data?.status === 'SUCCEEDED') j = await put();
   }
   if (j.error?.type === 'cannot-publish-actor' && body.isPublic) {
+    rateLimited = true;
     delete body.isPublic;
     const r2 = Object.keys(body).length
       ? await fetch(`https://api.apify.com/v2/acts/${a.id}`, {
@@ -107,11 +116,13 @@ for (const a of acts) {
         })
       : { ok: true };
     console.log(
-      `${g.name}: publish blocked by Apify's new-publisher limit${Object.keys(body).length ? `; pricing ${r2.ok ? 'set' : 'failed'}` : ''}`,
+      `${g.name}: publish refused (5 publications / 24 h limit reached; the daily run continues tomorrow)${Object.keys(body).length ? `; pricing ${r2.ok ? 'set' : 'failed'}` : ''}`,
     );
     continue;
   }
+  if (body.isPublic && !j.error) published += 1;
   console.log(
     `${g.name}: ${j.error ? 'ERR ' + j.error.type : 'updated (' + Object.keys(body).join(', ') + ')'}`,
   );
 }
+console.log(`published this run: ${published}${rateLimited ? ' (daily limit reached)' : ''}`);

@@ -156,4 +156,8 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-28 20:35 | interactive | docs/for-owner/OUTSTANDING.md: one list of everything waiting on the owner (4 clicks, 3 tasks, 2 key hand-overs, 3 decisions)
 - 2026-09-28 20:35 | interactive | Run watchdog workflow activated (missed routine slots now reach Telegram within 2 h)
 - 2026-09-28 20:45 | interactive | Ops retro routine enabled (Sonnet, Saturdays 07:59 UTC); first retro this Saturday
+- 2026-09-28 21:20 | interactive | Owner answers applied: Edge dropped, company waits, launch posts declined, Fable→Opus fallback for small items
+- 2026-09-28 21:20 | interactive | Apify limit is 5 publications/24h (support): publish job now batches 5/run and runs daily 04:00 UTC
+- 2026-09-28 21:20 | interactive | Build fallback routine created on Opus 5 (09:20/17:20 UTC, effort ≤ 0.3 days, only when Fable slot missed)
+- 2026-09-28 21:20 | interactive | SAM key alert was a false alarm (source keyless since 20 Sep); OUTSTANDING.md now one open item (C2 token)
 

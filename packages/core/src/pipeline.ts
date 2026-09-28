@@ -168,16 +168,27 @@ export function parseExchange(text: string, where = 'exchange'): Exchange {
 }
 
 /** Items the build routine may pick: `todo` items on open queues, best score first, oldest first on ties. */
-export function candidates(queues: VentureQueue[]): { venture: string; item: QueueItem }[] {
+export function candidates(
+  queues: VentureQueue[],
+  options: { maxEffortDays?: number } = {},
+): { venture: string; item: QueueItem }[] {
+  const cap = options.maxEffortDays ?? Number.POSITIVE_INFINITY;
   return queues
     .filter((q) => q.status === 'open')
-    .flatMap((q) => q.items.filter((it) => it.status === 'todo').map((item) => ({ venture: q.venture, item })))
+    .flatMap((q) =>
+      q.items
+        .filter((it) => it.status === 'todo' && it.effort_days <= cap)
+        .map((item) => ({ venture: q.venture, item })),
+    )
     .sort((a, b) => b.item.score - a.item.score || a.item.added.localeCompare(b.item.added));
 }
 
-/** The next item to build, or undefined when every open queue is empty. */
-export function nextItem(queues: VentureQueue[]): { venture: string; item: QueueItem } | undefined {
-  return candidates(queues)[0];
+/** The next item to build (optionally only items up to `maxEffortDays`), or undefined when nothing qualifies. */
+export function nextItem(
+  queues: VentureQueue[],
+  options: { maxEffortDays?: number } = {},
+): { venture: string; item: QueueItem } | undefined {
+  return candidates(queues, options)[0];
 }
 
 /** An open queue is empty when nothing is todo, doing or blocked (done/dropped do not count). */

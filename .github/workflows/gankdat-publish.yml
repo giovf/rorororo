@@ -11,6 +11,8 @@ on:
         'ventures/gankdat/server.json',
         '.github/workflows/gankdat-publish.yml',
       ]
+  schedule:
+    - cron: '0 4 * * *' # daily: Apify allows 5 publications / 24 h, so the backlog drains a few a day
   workflow_dispatch:
     inputs:
       all:
@@ -33,6 +35,7 @@ jobs:
         env:
           DIFF_RANGE: ${{ github.event.before }}..${{ github.sha }}
           APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+          PUBLISH_ONLY: ${{ github.event_name == 'schedule' && '1' || '' }}
           GANKDAT_INTERNAL_API_KEY: ${{ secrets.GANKDAT_INTERNAL_API_KEY }}
       - name: MCP registry — publish if server.json is newer
         run: bash ventures/gankdat/scripts/registry-publish.sh

@@ -43,7 +43,11 @@ if (errors.length > 0) {
 
 const command = process.argv[2] ?? 'status';
 if (command === 'next') {
-  const next = nextItem(pipeline.queues);
+  // `next --max-effort=0.3` restricts to small items (the Opus fallback routine's remit).
+  const cap = process.argv
+    .find((a) => a.startsWith('--max-effort='))
+    ?.slice('--max-effort='.length);
+  const next = nextItem(pipeline.queues, cap ? { maxEffortDays: Number(cap) } : {});
   console.log(JSON.stringify(next ?? null, null, 2));
 } else if (command === 'empty') {
   console.log(JSON.stringify(needsResearch(pipeline.queues).map((q) => q.venture)));

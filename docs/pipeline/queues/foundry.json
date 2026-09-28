@@ -51,13 +51,13 @@
     {
       "id": "fable-fallback",
       "title": "Decide and implement what happens when Fable is exhausted mid-week (Opus fallback routine vs fewer runs)",
-      "why": "Refused runs waste the slot; owner's allowance was gone by Wed 17:09 this week.",
+      "why": "Refused runs waste the slot; owner's allowance was gone by Wed 17:09 this week. Owner 2026-09-28: Opus may fill in only for low-complexity items. Built: routine trig_01GraXN5FPXmq5M9wJSYYeHN (Opus 5, 09:20 and 17:20 UTC) that stops if the Fable slot left a trace, else takes `npm run pipeline -- next --max-effort=0.3`.",
       "effort_days": 0.3,
       "proof": "zero refused-run slots in a month",
       "score": 5,
-      "status": "blocked",
-      "blocked_on": "owner's call on model policy (Fable-only was explicit)",
-      "added": "2026-09-24"
+      "status": "done",
+      "added": "2026-09-24",
+      "done_at": "2026-09-28"
     },
     {
       "id": "workflow-scope",
@@ -67,7 +67,7 @@
       "proof": "a routine lands a new workflow without a handoff",
       "score": 6,
       "status": "blocked",
-      "blocked_on": "owner: a fine-grained PAT (Contents + Workflows write on giovf/rorororo) stored as repo secret WORKFLOW_TOKEN — batch with the SAM key hand-over",
+      "blocked_on": "owner: fine-grained PAT (Contents + Workflows write on giovf/rorororo) saved as repo secret WORKFLOW_TOKEN — runthrough in docs/for-owner/OUTSTANDING.md C2; then build the docs/ci → .github/workflows installer job",
       "added": "2026-09-25"
     },
     {
@@ -80,6 +80,17 @@
       "status": "done",
       "added": "2026-09-28",
       "done_at": "2026-09-28"
+    },
+    {
+      "id": "workflow-installer",
+      "title": "Workflow installer: a CI job with WORKFLOW_TOKEN moves docs/ci/*.yml into .github/workflows (routines cannot)",
+      "why": "Routine tokens lack the workflow scope (run-watchdog had to wait 3 days for the interactive session). With the owner's PAT as WORKFLOW_TOKEN a push touching docs/ci/ can install workflows automatically.",
+      "effort_days": 0.2,
+      "proof": "a workflow file added by a routine goes live without the interactive session",
+      "score": 6,
+      "status": "blocked",
+      "blocked_on": "workflow-scope (owner PAT, see OUTSTANDING.md C2)",
+      "added": "2026-09-28"
     }
   ]
 }

@@ -269,3 +269,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   refresh errors generally (`refresh-transient-d1-retry`, done): one retry on transient D1 faults, and the recurring
   Gazette JSON truncation now fails with bytes/content-length/tail evidence. v0.19.0. Next buildable: none in gankdat
   besides blocked items (Apify limit, Search Console, outreach sends) — `npm run pipeline next` decides.
+- 2026-09-28 owner answers to the outstanding list: Opus fallback for low-complexity items only
+  (routine built), Edge dropped, no company before £300 MRR, launch posts declined. Apify support:
+  the publish block is a 5-publications-per-24h limit, not a ban — publish job batched + daily.
+  SAM key alert was a false alarm (keyless source). Figma payout is implied by the paid listing.
+

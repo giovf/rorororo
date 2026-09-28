@@ -1,7 +1,7 @@
 # Owner action request #6 — two free store accounts (Firefox, Edge) for ReadFocus
 
 - **Date:** 2026-09-19
-- **Status:** Firefox **DONE** (keys in .env; both extensions submitted to AMO 2026-09-19). Chrome Publish API **DONE** (refresh token stored). Edge **parked** — Microsoft blocked account creation (2026-09-19); retry later.
+- **Status:** Firefox **DONE** (keys in .env; both extensions submitted to AMO 2026-09-19). Chrome Publish API **DONE** (refresh token stored). Edge **DROPPED** by the owner 2026-09-28 (Microsoft blocked account creation on 2026-09-19); Chrome + Firefox only.
 - **Your time:** ~15 minutes total
 - **Cost:** £0.00 (both stores are free to list on)
 - **Blocks:** ReadFocus on Firefox Add-ons (AMO) and Microsoft Edge Add-ons — two more
