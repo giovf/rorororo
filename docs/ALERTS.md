@@ -130,3 +130,11 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   the account name (`faceless-api`) is ours either way. If it is a real recurring cost, log it in
   `docs/LEDGER.md` and check it against wave 7's weekly result volume (~13.8k rows on the initial
   backfill, smaller deltas per week after).
+- 2026-09-28 owner: Variables Toolkit day-7 read: 2 views, 0 installs in 7 days (the one "user" is your approval test). Figma's
+  search API shows why — the listing ranks 8th for its own name behind a 2,784-user plugin also called "Variables Toolkit",
+  79th for "styles to variables" and nowhere for "convert styles to variables"; Figma ranks on the name first, and the live
+  description shows literal `**` around every heading. Please republish from the Figma desktop app (~15 min, no code change):
+  Plugins → Development → import `ventures/variables-toolkit/dist-release/manifest.json` after `npm run build:release -w
+  @foundry/variables-toolkit` (or just edit the listing) and paste name, tagline, description and tags from
+  `ventures/variables-toolkit/LISTING.md` v2 — bold the headings with the editor's B button, no asterisks. Evidence and the
+  day-30 target (≥ 100 views, ≥ 10 installs by 2026-10-21) are in `ventures/variables-toolkit/RESEARCH.md` §8.

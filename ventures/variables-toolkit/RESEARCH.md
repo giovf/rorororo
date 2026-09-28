@@ -210,7 +210,7 @@ likes and purchases in §6 above; these are the dates that matter for the decisi
 | Checkpoint | Date | What we read | What it would mean |
 | --- | --- | --- | --- |
 | Day 1 | 2026-09-22 | listing reachable, install count starts moving | listing is discoverable at all |
-| Day 7 | 2026-09-28 | users, likes, purchases | first read on install→purchase conversion |
+| Day 7 | 2026-09-28 | **read: 0 installs (the 1 "user" is our own test run), 0 likes, 0 purchases, 2 views, 0 comments** | no install→purchase read is possible: nobody reaches the page. §8 shows why (search rank) and what changes |
 | Day 30 | 2026-10-21 | users, likes, purchases | scored against the §1 benchmark |
 
 Benchmark from §1 (measured across 167 Figma-checkout plugins): the **median paid plugin has 16
@@ -220,3 +220,53 @@ best band in the market. At $12 with Figma's 15% fee, each sale nets ≈$10.20 (
 Decision rule (STRATEGY.md §7 kill criteria): zero sales **and** zero organic signal (installs,
 likes, comments) by **2026-12-20** (90 days live) → kill and keep the code. A day-30 read of
 installs with no purchases is a pricing/description problem, not a kill — fix the listing first.
+
+## 8. Day-7 review (2026-09-28): the listing is not findable — relist under the searched terms
+
+Read on day 7 through the relay (`docs/relay/responses/vt-day7/`, Figma's own search API,
+`figma.com/api/search/resources?query=<term>&resource_type=plugin&sort=relevancy`, the endpoint
+the Community search box calls):
+
+| Buyer query | Hits | Our rank | #1 result (users) | Newest rival with traction |
+| --- | --- | --- | --- | --- |
+| variables toolkit (our own name) | 45 | **8** | Variables Toolkit: Find, Swap and Bind Variables (2,784) | — |
+| styles to variables | 1,222 | **79** | Styles & Variables Organizer, $15 (139,949) | Convert Variables to Styles, 2026-04 (56) |
+| convert styles to variables | 160 | absent from top 100 | Styles to Variables Converter (37,360) | — |
+| link variables | 160 | **14** | Generating variables & Linking styles (3,358) | Easy Sync — Auto-Link Variables & Styles, 2026-04 (69) |
+| unused variables | 48 | **41** of 48 | Variables Cleaner (1,181) | Unused Token Finder, 2026-07 (41) |
+| variables | 2,377 | absent from top 100 | variables2json (14,720) | Token Toolkit Pro, 2026-09-08 (16 users in 20 days) |
+| design tokens | 1,588 | absent from top 100 | Design Tokens (65,454) | TokenOps, 2025-12 (483) |
+
+What the numbers say:
+
+1. **Two page views in seven days is a search problem, not a conversion problem.** Plugins
+   published in the same niche this year pick up tens of users in their first weeks from search
+   alone (Token Toolkit Pro: 16 users in 20 days; Unused Token Finder: 41; Easy Sync: 69). Ours has
+   one "user" and one unique run — the owner's own approval test. Zero organic reach.
+2. **The name collides.** "Variables Toolkit: Find, Swap and Bind Variables" (2,784 users, since
+   2024-11) owns the query "variables toolkit"; six more "Variable(s) Toolkit" plugins sit between
+   it and us. A brand with no users cannot win its own name back, and the brand is worth nothing
+   yet (the plugin is 7 days old), so it moves to the end of the name.
+3. **Figma's search weights the name far above the description.** Every top-8 result for every
+   query carries the query words in its *name*; our rank tracks where the words appear — "link"
+   (in the tagline) ranks 14, "unused" (once, deep in the description) ranks 41, "convert" (absent
+   from name and tagline) is nowhere. The name must lead with the three phrases buyers type:
+   *styles to variables*, *link variables*, *unused variables*.
+4. **The description shows raw markdown.** The live description contains literal `**Link**`,
+   `**Styles → Variables**` … — the asterisks were pasted into Figma's rich-text editor, which does
+   not parse markdown, so every heading renders with stars around it. Cheap to fix on republish.
+5. **Category is right.** `file-organization` under Design tools is the category of the #1 result
+   (Styles & Variables Organizer); no change.
+
+Decision (owner-delegated, logged in STRATEGY.md §8): **relist v2** — name, tagline, tags and
+description rewritten in `LISTING.md` against the terms above; `manifest.json` carries the new
+name so the next release import publishes it. Republishing is a Figma-desktop action for the
+owner (ALERTS 2026-09-28 owner line, ~15 minutes). No product change: nothing in the plugin is
+implicated by the data. The venture, package and UI keep the name Variables Toolkit.
+
+Proof (queue `relist-v2` → `day-30-review`, 2026-10-21): ≥ 100 views, ≥ 10 installs, and a rank
+≤ 20 for "styles to variables" or ≤ 5 for "unused variables". The day-30 rank check is the same
+relay request (`docs/relay/requests/vt-day7.txt` in the git history — copy it as
+`vt-day30.txt`). If the republished listing is still under 20 views at day 30, the channel is
+the problem and the next lever is the Figma-file *playground* + a Community *file* resource that
+links the plugin (free resources are indexed and shown far more often than paid plugins).

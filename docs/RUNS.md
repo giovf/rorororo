@@ -139,3 +139,10 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-28 07:39 | report | Owner action #012 open: ICO fee deferred until gankdat's first real customer
 - 2026-09-28 07:39 | report | Owner action #013 open: repo-private waiting on Chrome/Firefox/Figma store reviews
 - 2026-09-28 07:39 | report | Next step: resolve the Apify pricing change for uk-trademark-journal-watch and re-enable the disabled ops-retro routine
+- 2026-09-28 09:45 | build | Variables Toolkit day 7: 2 views, 0 installs, 0 purchases, 0 comments; the one "user" is our own test run
+- 2026-09-28 09:45 | build | Relay read Figma search for 7 buyer queries: rank 8 for our own name (namesake has 2,784 users), 79 for "styles to variables"
+- 2026-09-28 09:45 | build | Verdict: not findable, not a product problem — LISTING.md v2 + manifest name lead with the searched terms; RESEARCH.md §8
+- 2026-09-28 09:45 | build | Live description shows literal ** around headings (markdown pasted into Figma's editor); fixed in the v2 copy
+- 2026-09-28 09:45 | build | Queue: day-7-review done; relist-v2 (6) blocked on the owner's republish; day-30-review (4) queued for 2026-10-21
+- 2026-09-28 09:45 | build | gankdat metrics: Daily numbers row now shows each refresh error's message text, not just the slug (foundry item done)
+- 2026-09-28 09:45 | build | Owner: republish the Figma listing with LISTING.md v2 (~15 min) — details in ALERTS

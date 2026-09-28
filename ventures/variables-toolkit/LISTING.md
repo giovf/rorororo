@@ -1,31 +1,56 @@
-# Community listing copy — Variables Toolkit
+# Community listing copy — Variables Toolkit (v2, day-7 relisting 2026-09-28)
 
-**Name (≤ 40):** Variables Toolkit — Styles to Variables, Link & Clean Up
+Why v2: after 7 days live the listing had 2 views and 0 installs. Figma's search API showed the
+cause (`RESEARCH.md` §8): the name collided with a 2,784-user plugin called "Variables Toolkit",
+and Figma ranks on the *name* first — we were 79th for "styles to variables" and absent for
+"convert styles to variables". v2 leads with the three phrases buyers type and demotes the brand
+to the end. v1 copy is in the git history (before 2026-09-28).
 
-**Tagline (≤ 100):** Link hard-coded colours and numbers to variables, convert styles, and clean up collections.
+**Name (live v1 was 57 characters, so the dialog accepts at least that; if it rejects 73, drop
+" — Variables Toolkit"):**
 
-**Description:**
+Styles to Variables, Link & Clean Up Unused Variables — Variables Toolkit
 
-Move a file onto variables without the hand work.
+**Tagline (≤ 100, this one is 99):**
 
-**Link** — scans a selection or page for fills, strokes, padding, gaps and corner radii whose value equals one of your local variables, then binds them in one click. Skips widgets and FigJam objects, handles hidden layers and component instances your way, and never freezes: scans run in chunks with a live count and a Cancel button.
+Convert styles to variables, link hard-coded values to variables, find and delete unused variables.
 
-**Styles → Variables** — turns your colour, text and effect styles into variables in a collection you name, and binds the styles to them so every layer that uses the style follows automatically. Existing variables with the same name are reused, not duplicated.
+**Description** — paste as plain text. Do **not** type asterisks: Figma's description box is a
+rich-text editor and v1 showed literal `**Link**` on the live page. Select each heading line
+(Convert styles to variables / Link variables / Clean up unused variables / Free forever /
+Unlock / Privacy / Support & refunds) and press the editor's **B** button instead.
 
-**Clean up** — a report of variables unused in this file, variables that share a value, and aliases pointing at nothing. Delete what you don't need.
+Convert styles to variables, link hard-coded values to your variables, and clean up unused variables — three jobs designers do by hand when a file moves onto Figma variables and design tokens.
 
-**Free, forever:** 25 links a day, colour styles → variables, the full clean-up report.
-**Unlock ($12, one-time, per Figma account):** unlimited links, text and effect styles → variables, delete unused variables.
+Convert styles to variables
+Turns your colour, text and effect styles into variables in a collection you name, and binds each style to its new variable so every layer that uses the style follows automatically. Existing variables with the same name are reused, never duplicated.
 
-**Privacy:** runs entirely inside your file. No network access, no accounts, nothing leaves Figma.
+Link variables
+Scans a selection or a page for fills, strokes, padding, gaps and corner radii whose value equals one of your local variables, then binds them in one click. Handles hidden layers and component instances your way, skips widgets and FigJam objects, and never freezes: scans run in chunks with a live count and a Cancel button.
 
-**Support & refunds:** info@gankdat.com · 14-day refund, no questions asked · https://giovf.github.io/rorororo/terms.html
+Clean up unused variables
+A report of variables unused in this file, variables that share a value, and aliases pointing at nothing. Delete what you don't need.
 
-**Category:** Design tools · **Editor:** Figma Design · **Tags:** variables, design tokens, styles, design system, clean up
+Free forever
+25 links a day, colour styles to variables, the full clean-up report.
 
-## Cover / screenshots plan
-1. Cover: before/after — a frame's property panel with raw values on the left, variable chips on the right; headline "Raw values → variables, in one click".
-2. Screenshot: Link tab after a scan (grouped counts).
-3. Screenshot: Styles → Variables preview list with "reuse" tags.
-4. Screenshot: Clean up report.
-5. Screenshot: free vs unlock table.
+Unlock — $12 one-time, per Figma account
+Unlimited links, text and effect styles to variables, delete unused variables.
+
+Privacy
+Runs entirely inside your file. No network access, no accounts, nothing leaves Figma.
+
+Support & refunds
+info@gankdat.com · 14-day refund, no questions asked · https://apps.gankdat.com/terms.html
+
+**Category:** Design tools (Figma files it under *File organization*, the same category as
+Styles & Variables Organizer, the #1 result — keep it) · **Editor:** Figma Design only
+
+**Tags, in this order (enter as many as the dialog accepts; each is a query buyers type):**
+styles to variables · unused variables · link variables · variables · design tokens ·
+design system · styles · clean up · tokens · migration
+
+## Cover / screenshots
+Unchanged from v1 (`assets/out/cover-1920x960.png`, four carousel images live since 2026-09-19).
+If time allows, put the words "Styles → Variables · Link · Clean up unused" on the cover: the
+cover is the only image shown in search results.

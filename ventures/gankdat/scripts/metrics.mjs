@@ -52,9 +52,20 @@ const n = (rows, key) => Math.round(Number(rows[0]?.[key] ?? 0));
 const [acct] = await sql(
   "SELECT COUNT(*) AS total, SUM(plan != 'free') AS paid, SUM(created_at > datetime('now','-1 day')) AS new24h FROM accounts WHERE email NOT LIKE '%@gankdat.com' AND email NOT LIKE '%@1402celsius.com' AND email NOT LIKE '%@example.com' AND email NOT LIKE 'giova1506@%'",
 );
+// Build 2026-09-28: carry the error text, not just the slug. Twice (nhs-ods 2026-09-23, three
+// sources 2026-09-28) a routine saw a slug in this row and could not fix it because refresh_log
+// is not reachable from a sandbox. One line per source, whitespace collapsed, table-safe, capped;
+// anything shaped like a credential in a URL is redacted before it lands in a public repo.
 const errors = await sql(
-  "SELECT source_slug FROM refresh_log WHERE status = 'error' AND created_at > datetime('now','-1 day') GROUP BY source_slug",
+  "SELECT source_slug, MAX(message) AS message FROM refresh_log WHERE status = 'error' AND created_at > datetime('now','-1 day') GROUP BY source_slug",
 );
+const errorText = (m) =>
+  String(m ?? '')
+    .replace(/\s+/g, ' ')
+    .replace(/\|/g, '/')
+    .replace(/([?&](?:api_key|apikey|key|token|secret|password)=)[^&\s]+/gi, '$1<redacted>')
+    .trim()
+    .slice(0, 90);
 // Agent-side sign-up funnel (build 2026-09-25; proof: ≥ 5 keys issued via the agent path in 30
 // days). Tolerant of the migration not being applied yet on the day it ships.
 const agentKeys = await sql(
@@ -91,7 +102,14 @@ const notes = [
   agentKeys
     ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`
     : 'agent sign-up: n/a',
-  errors.length ? `refresh errors: ${errors.map((e) => e.source_slug).join(', ')}` : 'refresh ok',
+  errors.length
+    ? `refresh errors: ${errors
+        .map((e) => {
+          const text = errorText(e.message);
+          return text ? `${e.source_slug} (${text})` : e.source_slug;
+        })
+        .join(', ')}`
+    : 'refresh ok',
 ].join('; ');
 const row = `| ${date} | Daily numbers | ${users} | — | ${sales} | ${notes} |`;
 

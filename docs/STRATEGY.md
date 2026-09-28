@@ -248,3 +248,15 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   schemas — the general fix for actors written blind. CI re-pushes both actors; Apify's QA re-runs on the new
   build and lifts the flag by itself. Next buildable: variables-toolkit day-7-review (4, due 2026-09-28), then
   trademark-watch-surface (4).
+- 2026-09-28 build (09:00 run): built `day-7-review` (variables-toolkit queue, score 4, the top buildable item and due
+  today). Day-7 read: 0 installs (the single user is our own run), 0 likes, 0 purchases, 2 views, 0 comments. The relay
+  read Figma's search API for seven buyer queries: rank 8 for "variables toolkit" behind a 2,784-user namesake, 79 for
+  "styles to variables", 41 of 48 for "unused variables", absent from the top 100 for "variables", "design tokens" and
+  "convert styles to variables"; rivals published this year get 16–69 users in their first weeks from search alone, and
+  Figma ranks on the name first. Decision: relist v2 — name leads with the searched terms ("Styles to Variables, Link &
+  Clean Up Unused Variables — Variables Toolkit"), tagline/first paragraph/tags carry the same phrases, description pasted
+  without markdown asterisks (the live one shows them). No product change. `relist-v2` (6) blocked on the owner's
+  republish; `day-30-review` (4) queued for 2026-10-21 with the playground-file lever if views stay under 20. Also built
+  the foundry item `refresh-error-text` (8): the Daily numbers row now carries each refresh error's message (redacted,
+  90 chars) — the third time a routine saw only a slug (nhs-ods 09-23; uk-charities, uk-insolvency, uk-trademark-journal
+  today) and could not fix it blind. Next buildable: trademark-watch-surface (4).

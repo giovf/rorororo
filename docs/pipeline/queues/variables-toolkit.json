@@ -2,17 +2,39 @@
   "venture": "variables-toolkit",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-22",
+  "updated": "2026-09-28",
   "items": [
     {
       "id": "day-7-review",
       "title": "Day-7 review of the Figma listing: installs, likes, comments; fix any reported bug",
-      "why": "First listing on a paying shelf; early comments decide the ranking.",
+      "why": "First listing on a paying shelf; early comments decide the ranking. Done 2026-09-28: day-7 read 0 installs (the 1 user is our own run), 0 likes, 0 purchases, 2 views, 0 comments — nothing to answer, no bug reported. Relay-read Figma's search API for 7 buyer queries (RESEARCH.md §8): rank 8 for \"variables toolkit\" behind a 2,784-user namesake, 79 for \"styles to variables\", 41/48 for \"unused variables\", absent from the top 100 for \"variables\", \"design tokens\" and \"convert styles to variables\"; Figma ranks on the name first; the live description shows literal markdown asterisks. Verdict: not findable — relist v2 (LISTING.md + manifest.json rewritten, owner republishes).",
       "effort_days": 0.3,
       "proof": "RESEARCH.md §7 day-7 row filled; no unanswered comment",
       "score": 4,
+      "status": "done",
+      "added": "2026-09-22",
+      "done_at": "2026-09-28"
+    },
+    {
+      "id": "relist-v2",
+      "title": "Republish the Figma listing as v2: name leads with the searched terms, tagline/description/tags rewritten, no literal markdown",
+      "why": "Day-7 review (RESEARCH.md §8): 2 views and 0 installs in 7 days because the listing is rank 8 for its own name (namesake with 2,784 users) and rank 79 / absent for every buyer query, while rivals published this year get 16–69 users in their first weeks from search alone. Figma ranks on the name first, so v2 is 'Styles to Variables, Link & Clean Up Unused Variables — Variables Toolkit', tagline and first paragraph carry the same three phrases, ten tags in buyer-query order, description pasted without asterisks. Copy in LISTING.md, name in manifest.json (release build picks it up). Evidence 3 (measured ranks) × reach 3 (the only shelf) ÷ (0.1 days + 15 owner minutes).",
+      "effort_days": 0.1,
+      "proof": "listing shows the v2 name; rank ≤ 20 for 'styles to variables' or ≤ 5 for 'unused variables' at the day-30 check",
+      "score": 6,
+      "status": "blocked",
+      "blocked_on": "owner republishes from the Figma desktop app with LISTING.md v2 (ALERTS 2026-09-28 owner line, ~15 min); unblock by setting done with the republish date",
+      "added": "2026-09-28"
+    },
+    {
+      "id": "day-30-review",
+      "title": "Day-30 review (2026-10-21): views, installs, purchases and search rank of the v2 listing against the §1 benchmark",
+      "why": "RESEARCH.md §7 checkpoint. Re-run the vt-day7 relay request as vt-day30 and compare ranks; ≥ 100 views and ≥ 10 installs is the day-30 target set in review 2026-W39. If still under 20 views the channel is the problem: next lever is a free Community file (playground) that links the plugin, since free resources are indexed and surfaced far more than paid plugins. If installs but no purchases: pricing/description problem, fix the listing again before any v0.2 feature.",
+      "effort_days": 0.3,
+      "proof": "§7 day-30 row filled with views/installs/purchases/ranks; decision written (keep / relist again / playground file / kill 2026-12-20)",
+      "score": 4,
       "status": "todo",
-      "added": "2026-09-22"
+      "added": "2026-09-28"
     }
   ]
 }
