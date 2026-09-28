@@ -115,3 +115,27 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-27 17:30 | build | gankdat: same latent drift fixed in uk-trademark-journal actor (class_count, series_count integer → number)
 - 2026-09-27 17:30 | build | gankdat: test/apify-schemas.spec.ts checks all 16 actors' dataset + input schemas against the sources (34 tests, green)
 - 2026-09-27 17:30 | build | Queue: apify-planning-actor-repair done; next variables-toolkit day-7-review (4, due tomorrow); nothing for the owner
+- 2026-09-28 07:39 | report | Money: £0 revenue, £7.40 spent, £55 planned, net -£7.40, £37.60 headroom under the £100 cap
+- 2026-09-28 07:39 | report | gankdat: 1 account (+1 this week), ~15,520 MCP calls, 350 paywall hits, 0 x402 payments, £0 revenue
+- 2026-09-28 07:39 | report | Variables Toolkit: 0 installs, 2 views all week, no change from 7 days ago
+- 2026-09-28 07:39 | report | Alert 09-21: gankdat "first paying account" was a false alarm (internal Apify service account)
+- 2026-09-28 07:39 | report | Alert 09-21: MCP registry v0.12.0, uk-schools actor priced, 52,578 schools loaded
+- 2026-09-28 07:39 | report | Alert 09-22: Variables Toolkit launch recorded live; venture.json + STORE.md updated
+- 2026-09-28 07:39 | report | Alert 09-22 (owner): confirm Stripe payout is connected in Figma Community settings
+- 2026-09-28 07:39 | report | Alert 09-22: Figma resource uuid filled in; routines now fall back on stale sandbox clones
+- 2026-09-28 07:39 | report | Alert 09-22: Highlight Keep + ReadFocus tentatively approved on Firefox AMO v0.1.0
+- 2026-09-28 07:39 | report | Alert 09-23: gankdat listed in a community directory; uk-trademark-journal verified live
+- 2026-09-28 07:39 | report | Alert 09-23: nhs-ods, sam-exclusions, uk-charities errored on first live wave-6 run
+- 2026-09-28 07:39 | report | Alert 09-24: uk-gambling-operators unblocked; 09-23/24 handoffs closed, Taskmaster #56/#57 filed
+- 2026-09-28 07:39 | report | Alert 09-25 (owner): SAM.gov key for sam-exclusions rotates ~2026-10-10, replacement ready
+- 2026-09-28 07:39 | report | Alert 09-25: run watchdog built but dormant, needs a workflow-scope token to activate
+- 2026-09-28 07:39 | report | Alert 09-25: Apify flagged uk-planning-applications actor "under maintenance" for 3 days
+- 2026-09-28 07:39 | report | Alert 09-26: ops retro routine created but disabled, needs repo giovf/rorororo attached
+- 2026-09-28 07:39 | report | Alert 09-26 (owner): launch posts ready to paste; ten B2B outreach drafts ready in Gmail
+- 2026-09-28 07:39 | report | Alert 09-27: Apify pricing change for uk-trademark-journal-watch, cost/ownership unresolved
+- 2026-09-28 07:39 | report | Owner action #1 open: channel accounts still pending
+- 2026-09-28 07:39 | report | Owner action #6 open: Edge store account for ReadFocus parked, Microsoft blocked signup
+- 2026-09-28 07:39 | report | Owner action #011 open: Datarade rejected sole proprietors, revisit if a company forms
+- 2026-09-28 07:39 | report | Owner action #012 open: ICO fee deferred until gankdat's first real customer
+- 2026-09-28 07:39 | report | Owner action #013 open: repo-private waiting on Chrome/Firefox/Figma store reviews
+- 2026-09-28 07:39 | report | Next step: resolve the Apify pricing change for uk-trademark-journal-watch and re-enable the disabled ops-retro routine
