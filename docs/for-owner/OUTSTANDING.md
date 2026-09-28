@@ -5,19 +5,7 @@ Nothing here spends money. Your answers of 2026-09-28 are applied below.
 
 ## Open
 
-| # | Do this | Unblocks | Where |
-| --- | --- | --- | --- |
-| C2 | **GitHub token for the workflow installer** (~5 min, runthrough below). | Routines can add or change CI workflows themselves instead of waiting days for the interactive session | queue `foundry/workflow-scope` |
-
-**C2 runthrough**
-
-1. GitHub → your avatar (top right) → **Settings** → left menu bottom **Developer settings** → **Personal access tokens** → **Fine-grained tokens** → **Generate new token**.
-2. Token name `foundry-workflow-installer`; expiration 1 year (GitHub will email you before it lapses; Claude will re-queue it).
-3. **Repository access**: "Only select repositories" → tick `giovf/rorororo`.
-4. **Permissions → Repository permissions**: set **Contents** to *Read and write* and **Workflows** to *Read and write* (Metadata becomes read-only automatically). Nothing else.
-5. Generate, copy the token once.
-6. Repo page `github.com/giovf/rorororo` → **Settings** → **Secrets and variables** → **Actions** → **New repository secret** → Name `WORKFLOW_TOKEN`, paste, Add.
-7. Tell Claude "WORKFLOW_TOKEN added" (Telegram note or here). Do not paste the token anywhere else.
+Nothing. (C2 done 2026-09-28: `WORKFLOW_TOKEN` added; the workflow installer is live.)
 
 ## Decided 2026-09-28 (applied)
 

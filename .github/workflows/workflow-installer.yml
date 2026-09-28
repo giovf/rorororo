@@ -1,0 +1,47 @@
+name: workflow installer
+
+# Routine tokens cannot create or change files under .github/workflows (no `workflow` scope).
+# A routine writes the workflow to docs/ci/<name>.yml instead; this job, running with the
+# owner's fine-grained PAT (WORKFLOW_TOKEN: Contents + Workflows write), moves it into place
+# and pushes. The PAT push does trigger workflows, so the installed file goes live immediately.
+on:
+  push:
+    branches: [main]
+    paths: ['docs/ci/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: workflow-installer
+  cancel-in-progress: false
+
+jobs:
+  install:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+          token: ${{ secrets.WORKFLOW_TOKEN }}
+      - name: Move docs/ci/*.yml into .github/workflows
+        run: |
+          set -e
+          shopt -s nullglob
+          moved=""
+          for f in docs/ci/*.yml docs/ci/*.yaml; do
+            name=$(basename "$f")
+            # minimal sanity: a workflow needs a name and a trigger
+            grep -qE '^name:' "$f" && grep -qE '^on:' "$f" || { echo "skip $name: not a workflow (needs name: and on:)"; continue; }
+            git mv -f "$f" ".github/workflows/$name"
+            moved="$moved $name"
+          done
+          echo "moved:$moved"
+          git config user.name "foundry-installer[bot]"
+          git config user.email "info@gankdat.com"
+          git add -A docs/ci .github/workflows
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "ci: install workflow(s)$moved (workflow installer)"
+          git pull --rebase origin main
+          git push origin HEAD:main

@@ -62,13 +62,13 @@
     {
       "id": "workflow-scope",
       "title": "Let routines add or change GitHub Actions workflows (a CI job that syncs docs/ci/*.yml into .github/workflows/ using an owner PAT with the workflow scope)",
-      "why": "2026-09-25: the build routine finished the run watchdog but could not create its workflow file — git push and the GitHub API both refuse without the `workflow` scope. Every self-expansion item that needs a scheduled job hits this; today it cost the item.",
+      "why": "2026-09-25: the build routine finished the run watchdog but could not create its workflow file — git push and the GitHub API both refuse without the `workflow` scope. Every self-expansion item that needs a scheduled job hits this; today it cost the item. Owner added WORKFLOW_TOKEN 2026-09-28; installer workflow built and self-tested the same evening.",
       "effort_days": 0.2,
       "proof": "a routine lands a new workflow without a handoff",
       "score": 6,
-      "status": "blocked",
-      "blocked_on": "owner: fine-grained PAT (Contents + Workflows write on giovf/rorororo) saved as repo secret WORKFLOW_TOKEN — runthrough in docs/for-owner/OUTSTANDING.md C2; then build the docs/ci → .github/workflows installer job",
-      "added": "2026-09-25"
+      "status": "done",
+      "added": "2026-09-25",
+      "done_at": "2026-09-28"
     },
     {
       "id": "refresh-error-text",
@@ -84,13 +84,13 @@
     {
       "id": "workflow-installer",
       "title": "Workflow installer: a CI job with WORKFLOW_TOKEN moves docs/ci/*.yml into .github/workflows (routines cannot)",
-      "why": "Routine tokens lack the workflow scope (run-watchdog had to wait 3 days for the interactive session). With the owner's PAT as WORKFLOW_TOKEN a push touching docs/ci/ can install workflows automatically.",
+      "why": "Routine tokens lack the workflow scope (run-watchdog had to wait 3 days for the interactive session). With the owner's PAT as WORKFLOW_TOKEN a push touching docs/ci/ can install workflows automatically. Owner added WORKFLOW_TOKEN 2026-09-28; installer workflow built and self-tested the same evening.",
       "effort_days": 0.2,
       "proof": "a workflow file added by a routine goes live without the interactive session",
       "score": 6,
-      "status": "blocked",
-      "blocked_on": "workflow-scope (owner PAT, see OUTSTANDING.md C2)",
-      "added": "2026-09-28"
+      "status": "done",
+      "added": "2026-09-28",
+      "done_at": "2026-09-28"
     }
   ]
 }

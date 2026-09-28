@@ -1,0 +1,11 @@
+name: installer self-test
+
+# Placeholder installed by the workflow installer's end-to-end test (2026-09-28). Manual only.
+on:
+  workflow_dispatch:
+
+jobs:
+  ok:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "installer works"

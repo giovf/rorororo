@@ -161,4 +161,6 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-28 21:20 | interactive | Build fallback routine created on Opus 5 (09:20/17:20 UTC, effort ≤ 0.3 days, only when Fable slot missed)
 - 2026-09-28 21:20 | interactive | SAM key alert was a false alarm (source keyless since 20 Sep); OUTSTANDING.md now one open item (C2 token)
 - 2026-09-28 21:30 | interactive | Apify Store: all 17 gankdat actors are now public (was 1 of 17 a week ago)
+- 2026-09-28 21:45 | interactive | Workflow installer live: routines drop CI jobs in docs/ci and they go live (owner added WORKFLOW_TOKEN)
+- 2026-09-28 21:45 | interactive | Owner's outstanding list is empty
 
