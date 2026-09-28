@@ -151,3 +151,4 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   Confirming it requires clicking the link in that email under your own Google identity; given the age it may
   have expired, in which case re-trigger from Gmail Settings → Accounts and Import → Send mail as. Nothing to
   do if you don't need to send as info@gankdat.com.
+- 2026-09-28 gankdat/apify: pricing change for uk-gambling-commission-licence-register actor (faceless-api) — pay-per-usage → pay-per-event, $1.00/1,000 results. Same pattern as the uk-trademark-journal-watch change logged 2026-09-27; review cost impact against the actor's usage.
