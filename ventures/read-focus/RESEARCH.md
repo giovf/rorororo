@@ -117,3 +117,4 @@ the multi-store listing is the main upside over V1.
 | 2026-09-25 | Daily check | — | — | — | not live yet |
 | 2026-09-26 | Daily check | — | — | — | not live yet |
 | 2026-09-27 | Daily check | — | — | — | not live yet |
+| 2026-09-28 | Daily check | — | — | — | not live yet |
