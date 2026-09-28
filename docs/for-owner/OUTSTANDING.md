@@ -34,7 +34,7 @@ Nothing here spends money. Your answers of 2026-09-28 are applied below.
 | --- | --- |
 | A1 Figma payout | The plugin sells through Figma checkout ($12), which Figma only enables once payouts are connected — so this was already satisfied at publish time. If a sale ever fails to pay out, the setting lives at figma.com → your avatar → Settings → **Community** tab → Payouts. |
 | A2 Search Console sitemap | Done by you. |
-| A3 Apify publishing | Support's reply explains it: **5 Actor publications per organisation per 24 h**, not a new-publisher ban. Claude changed the publish job to make ≤ 5 actors public per run and to run daily at 04:00 UTC, so the remaining 16 go public over ~3 days without an exception. No reply to support needed unless it stalls; Claude watches it. |
+| A3 Apify publishing | Resolved: as of 2026-09-28 21:15 UTC **all 17 actors are public on the Apify Store** (support's reply explained the block was a 5-publications-per-24h limit; the daily publish job now respects it). Nothing more to send to support. |
 | A4 Gmail send-as | Done by you. |
 | B1 Figma relisting | Done by you. |
 | B2 Outreach drafts | Sent by you; Claude tracks replies in `OUTREACH-2026-09.md`. |
@@ -44,7 +44,6 @@ Nothing here spends money. Your answers of 2026-09-28 are applied below.
 
 - Chrome Web Store review: ReadFocus (19 Sep) and Highlight Keep (20 Sep).
 - Firefox AMO review: both extensions (19 Sep).
-- Apify: actors going public in daily batches of five.
 - ICO data-protection fee: deferred by you until the first real customer (action 012).
 - Repo goes private once the store reviews are through (action 013) — Claude does this.
 
