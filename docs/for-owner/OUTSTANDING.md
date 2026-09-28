@@ -9,8 +9,17 @@ what it unblocks and roughly how long it takes. Nothing here spends money.
 | --- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | --------------------------------------------- |
 | A1  | **Figma payout**: Figma → Settings → Community / Creator payouts → confirm Stripe is connected.                                                                     | Getting paid for Variables Toolkit sales at all                              | [ALERTS 2026-09-22](../ALERTS.md)             |
 | A2  | **Search Console**: submit `https://gankdat.com/sitemap.xml` and check the stats pages index.                                                                       | Search traffic to the 17 dataset pages — the only free buyer channel we have | queue `gankdat/search-console-stats-indexing` |
-| A3  | **Chase Apify support** on the new-publisher limit (reply to the open ticket from your mailbox).                                                                    | 16 priced actors going public on the Apify Store                             | queue `gankdat/apify-remaining-actors-public` |
-| A4  | **Gmail "Send mail as" info@gankdat.com**: click the confirmation link (2026-09-19 email), or re-trigger from Gmail → Settings → Accounts and Import if it expired. | Sending outreach from the business address (B2)                              | [ALERTS 2026-09-28](../ALERTS.md)             |
+| A3 | **Chase Apify support.** Our ticket went out on 20 Sep 22:14 UTC from info@gankdat.com via Resend (not Gmail, so it is not in your Sent folder), subject "Publishing limit on new account faceless-api — four Actors return cannot-publish-actor", delivered, no reply in 8 days. Fastest chase: log in at console.apify.com → the chat bubble (bottom right) → paste the A3-text below. A reply to the original would land in info@gankdat.com → your inbox. | 16 priced actors going public on the Apify Store | account faceless-api |
+| A4 | **Gmail "Send mail as"**: in gio@1402celsius.com search `subject:"Send Mail as info@gankdat.com"` — one email from gmail-noreply@google.com, 19 Sep 23:11, "1402celsius.com Confirmation - Send Mail as info@gankdat.com" (it was addressed to info@ and forwarded in, so it may sit under Updates or All Mail). Click its confirmation link; if expired: Gmail → Settings → Accounts and Import → Send mail as → add info@gankdat.com again. | Sending outreach from the business address (B2) | [ALERTS 2026-09-28](../ALERTS.md) |
+
+**A3-text** (paste as-is into the console chat):
+
+> Hi — following up on my email of 20 Sep from info@gankdat.com about account `faceless-api`. I now have
+> 16 Actors built, priced (pay-per-event) and passing builds, but publishing beyond the first is refused with
+> `cannot-publish-actor` ("The Actor cannot be published at this time. Please contact support@apify.com").
+> They read official open data (UK Charity Commission, CQC, GIAS, Contracts Finder, Gambling Commission, IPO,
+> NHS ODS, EU TED, SAM.gov) through my own API at gankdat.com — no scraping, no login walls. Could you lift
+> the new-publisher limit on this account? Thanks, Giovanni
 
 ## B. Short tasks (15–30 minutes)
 
