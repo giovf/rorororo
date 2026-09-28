@@ -260,3 +260,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the foundry item `refresh-error-text` (8): the Daily numbers row now carries each refresh error's message (redacted,
   90 chars) — the third time a routine saw only a slug (nhs-ods 09-23; uk-charities, uk-insolvency, uk-trademark-journal
   today) and could not fix it blind. Next buildable: trademark-watch-surface (4).
+- 2026-09-28 build (17:00 run): built `trademark-watch-surface` (gankdat queue, score 4, the top buildable item; no queue
+  needed research). Two generic platform pieces rather than trademark-only code: every register change feed now takes the
+  dataset's own filters (`/v1/changes/<slug>?classes=09&q=<mark>`, `get_changes` `filter`) with `/v1/data` semantics, so
+  the watch the £180–320/mark/year services sell is one metered call; and `StatsSpec.facets` gives bounded per-value
+  stats sub-pages, first used for 45 Nice-class pages under `/stats/uk-trademark-journal/class/<nn>` (weekly issue
+  table, month trend, top organisations/representatives, the poll command; sitemap + parent index). Also fixed today's
+  refresh errors generally (`refresh-transient-d1-retry`, done): one retry on transient D1 faults, and the recurring
+  Gazette JSON truncation now fails with bytes/content-length/tail evidence. v0.19.0. Next buildable: none in gankdat
+  besides blocked items (Apify limit, Search Console, outreach sends) — `npm run pipeline next` decides.

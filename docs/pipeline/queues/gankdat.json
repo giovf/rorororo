@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-27",
+  "updated": "2026-09-28",
   "items": [
     {
       "id": "nhs-ods",
@@ -73,12 +73,13 @@
     {
       "id": "trademark-watch-surface",
       "title": "Trade-mark watch on the change feed: per-Nice-class weekly stats pages and get_changes filters (class, keyword, applicant) for uk-trademark-journal",
-      "why": "Turns the journal dataset into the product the watch services sell (monthly similar-mark reports); cite-bait pages target \"trade mark applications this week class N\" searches. Needs uk-trademark-journal live.",
+      "why": "Turns the journal dataset into the product the watch services sell (monthly similar-mark reports); cite-bait pages target \"trade mark applications this week class N\" searches. Needs uk-trademark-journal live. Built 2026-09-28: (1) the change feed takes the dataset's own filters — /v1/changes/uk-trademark-journal?classes=09&q=<mark> and get_changes filter:{classes,applicant,q,…} apply the /v1/data predicates to the changed record (generic: every register feed gained it; migration 0012 carries search + record_lc onto source_changes; unknown params 400; OpenAPI + llms.txt + docs updated); (2) 45 bounded Nice-class pages /stats/uk-trademark-journal/class/<nn> — records, share, applications per weekly issue, by month, origin, country, top organisations and representatives, the filtered query and poll command, JSON-LD isPartOf — precomputed at refresh (generic StatsSpec.facets, 4-minute budget), indexed from the parent page and the sitemap. Pages fill at the next wave-7 refresh; a 45-page facet costs ~270 D1 statements per refresh. Proof unchanged.",
       "effort_days": 1,
       "proof": "≥ 20 get_changes calls/week filtered on the dataset; stats pages indexed",
       "score": 4,
-      "status": "todo",
-      "added": "2026-09-23"
+      "status": "done",
+      "added": "2026-09-23",
+      "done_at": "2026-09-28"
     },
     {
       "id": "nhs-ods-refresh-error",
@@ -156,6 +157,17 @@
       "status": "done",
       "added": "2026-09-27",
       "done_at": "2026-09-27"
+    },
+    {
+      "id": "refresh-transient-d1-retry",
+      "title": "Retry a refresh once on a transient D1 error; make the Gazette truncation fail with evidence",
+      "why": "2026-09-28 Daily numbers: uk-trademark-journal failed on 'D1_ERROR: internal error; reference = …' and uk-charities on 'D1_ERROR: Network connection lost.' — platform faults that each cost a dataset its day although both refresh paths are idempotent. uk-insolvency failed on 'Unexpected end of JSON input' for the third time in a week (09-22, 09-25, 09-28) despite the 3-read retry, and the message says nothing about where the cut is. Built 2026-09-28: store.ts refreshOne retries a source once after 5 s on those D1 messages while the wave is under 6 minutes old (4 tests); the insolvency reader now reads bytes first and reports bytes seen, content-length and the tail after its last attempt, with growing backoff, so the next metrics row carries the evidence to fix it.",
+      "effort_days": 0.25,
+      "proof": "zero D1-transient refresh errors in the next 14 daily rows; insolvency error text names the cut",
+      "score": 6,
+      "status": "done",
+      "added": "2026-09-28",
+      "done_at": "2026-09-28"
     }
   ]
 }

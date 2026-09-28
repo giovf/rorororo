@@ -25,11 +25,41 @@ export interface RefreshPolicy {
  * Lives on the source (isolation rule); a generic engine renders it. Sources
  * without one still get a minimal page (record count + freshness).
  */
+export interface StatsGroupSpec {
+  field: string;
+  title: string;
+  limit?: number;
+  /** Row order: by count (default, top-N) or by value (chronological for issue/week fields). */
+  sort?: 'count' | 'value';
+}
+
+/**
+ * Bounded sub-pages `/stats/<slug>/<segment>/<value>`, one per listed value
+ * (never derived from the data — programmatic SEO stays bounded, see
+ * ARCHITECTURE "out of scope"). A value selects records with the query
+ * engine's rule for a string param on `field` (case-insensitive substring), so
+ * a comma-separated list field such as Nice classes works with one value.
+ * Each sub-page carries its own trend and breakdown tables, precomputed at
+ * refresh like the parent page.
+ */
+export interface StatsFacet {
+  /** URL segment, e.g. 'class'. */
+  segment: string;
+  /** Record field the value is matched against. */
+  field: string;
+  /** Section title on the parent page, e.g. 'By Nice class'. */
+  title: string;
+  values: readonly { value: string; label: string }[];
+  date?: { field: string; title: string };
+  groupBy: StatsGroupSpec[];
+}
+
 export interface StatsSpec {
   /** ISO-date record field bucketed into the monthly-trend table. */
   date: { field: string; title: string };
   /** Categorical record fields rendered as top-N breakdown tables. */
-  groupBy: { field: string; title: string; limit?: number }[];
+  groupBy: StatsGroupSpec[];
+  facets?: StatsFacet[];
 }
 
 /**

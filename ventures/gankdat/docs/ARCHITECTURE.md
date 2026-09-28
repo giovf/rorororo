@@ -158,7 +158,20 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   predicate; the refresh precomputes 30 days of added/removed/changed per day into the
   `/stats` blob (`SourceStats.changes`) so the public page shows the activity and the poll
   command without touching D1; `/v1/data` and `list_sources` carry `change_feed`; llms.txt
-  has a "Change feeds" section.
+  has a "Change feeds" section. **The feed takes the source's own filters** (2026-09-28,
+  migration 0012: `search` + `record_lc` ride along from `source_records` at diff time):
+  `/v1/changes/<slug>?classes=09&q=<mark>` and `get_changes` `filter` apply the same
+  predicates as `/v1/data` to the changed record, so a watch is one call; unknown params 400.
+  A transient D1 failure ("internal error; reference", "Network connection lost") retries the
+  source once while the wave is under 6 minutes old (`store.ts refreshOne`); the insolvency
+  reader reports bytes/content-length/tail when the Gazette truncates a JSON page.
+- **Stats facets**: a `StatsSpec.facets` entry declares bounded sub-pages
+  `/stats/<slug>/<segment>/<value>` — one per value the source lists, never derived from the
+  data — each with its own headline, trend, breakdowns (a `groupBy` may `sort: 'value'` for
+  chronological issue/week tables) and the filtered query + change-feed poll; precomputed at
+  refresh with the parent (`aggregateFacets`, a 4-minute budget per source, the rest 503
+  "being prepared" until tomorrow) and indexed from the parent page and `sitemap.xml`.
+  First use: 45 Nice-class pages for `uk-trademark-journal` (`NICE_CLASSES` in the source).
 - **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
   params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
   date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value
@@ -204,6 +217,6 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
 - RapidAPI/Apify/MCP-directory listings (prep doc only)
 - Durable-Objects rate limiting; annual-plan automation; programmatic SEO at
   scale (per-council/per-buyer pages — the per-SOURCE `/stats` pages shipped
-  with task 34 are the bounded version)
+  with task 34 and the explicitly listed facet sub-pages are the bounded version)
 - Fuzzy-match sanctions *screening* (`/v1/screen`) before list-serving proves
   demand and per-dataset legal terms exist (NICHE-NEXT-SANCTIONS Phase B)

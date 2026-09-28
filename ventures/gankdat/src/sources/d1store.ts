@@ -1,7 +1,8 @@
-import type { StatsSpec } from './types';
+import type { StatsFacet, StatsGroupSpec, StatsSpec } from './types';
 import type { DataSource } from './types';
 import { PRESENT_SUFFIX, type QueryPage } from './query';
-import type { ChangeDay, SourceStats } from '../lib/stats';
+import type { ChangeDay, FacetStats, MonthlyTrend, SourceStats, StatsGroup } from '../lib/stats';
+import { sortGroupRows } from '../lib/stats';
 import { putSourceStats, writeRefreshLog } from './cache';
 
 /** Thrown when a D1 source is queried before cron has loaded it (routes → 503). */
@@ -117,18 +118,20 @@ async function recordChanges(
     .bind(slug, previousGeneration)
     .first<{ ok: number }>();
   if (!prevHasIds) return;
-  const added = `INSERT OR IGNORE INTO source_changes (source_slug, changed_at, change, record_id, record)
-     SELECT n.source_slug, ?3, 'added', n.record_id, n.record
+  // search + record_lc ride along so the feed takes the source's own filters
+  // (migration 0012) with the same fold as /v1/data.
+  const added = `INSERT OR IGNORE INTO source_changes (source_slug, changed_at, change, record_id, record, search, record_lc)
+     SELECT n.source_slug, ?3, 'added', n.record_id, n.record, n.search, n.record_lc
      FROM source_records n
      LEFT JOIN source_records o ON o.source_slug = n.source_slug AND o.generation = ?1 AND o.record_id = n.record_id
      WHERE n.source_slug = ?4 AND n.generation = ?2 AND n.record_id IS NOT NULL AND o.record_id IS NULL`;
-  const removed = `INSERT OR IGNORE INTO source_changes (source_slug, changed_at, change, record_id, record)
-     SELECT o.source_slug, ?3, 'removed', o.record_id, o.record
+  const removed = `INSERT OR IGNORE INTO source_changes (source_slug, changed_at, change, record_id, record, search, record_lc)
+     SELECT o.source_slug, ?3, 'removed', o.record_id, o.record, o.search, o.record_lc
      FROM source_records o
      LEFT JOIN source_records n ON n.source_slug = o.source_slug AND n.generation = ?2 AND n.record_id = o.record_id
      WHERE o.source_slug = ?4 AND o.generation = ?1 AND o.record_id IS NOT NULL AND n.record_id IS NULL`;
-  const changed = `INSERT OR IGNORE INTO source_changes (source_slug, changed_at, change, record_id, record)
-     SELECT n.source_slug, ?3, 'changed', n.record_id, n.record
+  const changed = `INSERT OR IGNORE INTO source_changes (source_slug, changed_at, change, record_id, record, search, record_lc)
+     SELECT n.source_slug, ?3, 'changed', n.record_id, n.record, n.search, n.record_lc
      FROM source_records n
      JOIN source_records o ON o.source_slug = n.source_slug AND o.generation = ?1 AND o.record_id = n.record_id
      WHERE n.source_slug = ?4 AND n.generation = ?2 AND n.record != o.record`;
@@ -147,6 +150,12 @@ export interface ChangesQuery {
   change?: 'added' | 'removed' | 'changed';
   page: number;
   per_page: number;
+  /**
+   * The source's own query params (+ `q`), already validated against its
+   * schema — applied to the changed record with /v1/data semantics, so a
+   * watch is one call: `classes=09`, `applicant=acme`, `q=keyword`.
+   */
+  filters?: Record<string, unknown>;
 }
 
 export interface ChangeRow {
@@ -173,6 +182,13 @@ export async function queryD1Changes(
     clauses.push(`change = ?${binds.length + 1}`);
     binds.push(q.change);
   }
+  const filters = filterPredicate(q.filters ?? {});
+  let next = binds.length + 1;
+  for (const clause of filters.clauses) {
+    // Anonymous `?` binds → `?n`, numbered on from the feed's own binds.
+    clauses.push(clause.replaceAll('?', () => `?${next++}`));
+  }
+  binds.push(...filters.binds);
   const where = clauses.join(' AND ');
   const count = await env.DB.prepare(`SELECT COUNT(*) AS n FROM source_changes WHERE ${where}`)
     .bind(...binds)
@@ -393,15 +409,20 @@ function predicateFor(key: string, wanted: unknown): SqlPredicate | null {
   return null;
 }
 
-function buildWhere(
-  slug: string,
-  generation: number,
-  parsed: Record<string, unknown>,
-): SqlPredicate {
-  const clauses = ['source_slug = ?', 'generation = ?'];
-  const binds: (string | number)[] = [slug, generation];
+/**
+ * The filter part of a WHERE (anonymous `?` binds, one clause per param) —
+ * shared by source_records queries, the change feed and the facet stats, so
+ * every surface filters a record identically.
+ */
+function filterPredicate(parsed: Record<string, unknown>): {
+  clauses: string[];
+  binds: (string | number)[];
+} {
+  const clauses: string[] = [];
+  const binds: (string | number)[] = [];
   if (typeof parsed.q === 'string') {
-    clauses.push('instr(search, ?) > 0');
+    // source_changes rows written before migration 0012 have no search column value.
+    clauses.push('instr(COALESCE(search, lower(record)), ?) > 0');
     binds.push(parsed.q.toLowerCase());
   }
   for (const [key, wanted] of Object.entries(parsed)) {
@@ -412,7 +433,19 @@ function buildWhere(
       binds.push(...predicate.binds);
     }
   }
-  return { sql: clauses.join(' AND '), binds };
+  return { clauses, binds };
+}
+
+function buildWhere(
+  slug: string,
+  generation: number,
+  parsed: Record<string, unknown>,
+): SqlPredicate {
+  const filters = filterPredicate(parsed);
+  return {
+    sql: ['source_slug = ?', 'generation = ?', ...filters.clauses].join(' AND '),
+    binds: [slug, generation, ...filters.binds],
+  };
 }
 
 export interface D1QueryResult {
@@ -486,6 +519,109 @@ async function aggregateChangeDays(env: CloudflareBindings, slug: string): Promi
   return [...byDay.values()];
 }
 
+async function aggregateMonthly(
+  env: CloudflareBindings,
+  where: SqlPredicate,
+  date: { field: string; title: string },
+): Promise<MonthlyTrend | null> {
+  const monthExpr = `substr(json_extract(record, ${path(date.field)}), 1, 7)`;
+  const monthly = await env.DB.prepare(
+    `SELECT ${monthExpr} AS month, COUNT(*) AS n FROM source_records
+     WHERE ${where.sql}
+       AND json_extract(record, ${path(date.field)}) GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]*'
+     GROUP BY month ORDER BY month DESC LIMIT 12`,
+  )
+    .bind(...where.binds)
+    .all<{ month: string; n: number }>();
+  const buckets = (monthly.results ?? [])
+    .reverse()
+    .map((row) => ({ month: row.month, count: row.n }));
+  return buckets.length > 0 ? { title: date.title, buckets } : null;
+}
+
+async function aggregateGroups(
+  env: CloudflareBindings,
+  where: SqlPredicate,
+  specs: StatsGroupSpec[],
+): Promise<StatsGroup[]> {
+  const groups: StatsGroup[] = [];
+  for (const group of specs) {
+    const valueExpr = `json_extract(record, ${path(group.field)})`;
+    const order = group.sort === 'value' ? 'value ASC' : 'n DESC, value ASC';
+    const rows = await env.DB.prepare(
+      `SELECT ${valueExpr} AS value, COUNT(*) AS n FROM source_records
+       WHERE ${where.sql}
+         AND ${valueExpr} IS NOT NULL AND ${valueExpr} != ''
+       GROUP BY value ORDER BY ${order} LIMIT ?`,
+    )
+      .bind(...where.binds, group.limit ?? 10)
+      .all<{ value: string | number; n: number }>();
+    const groupRows = sortGroupRows(
+      (rows.results ?? []).map((row) => ({ value: String(row.value), count: row.n })),
+      group.sort,
+    );
+    if (groupRows.length > 0) groups.push({ title: group.title, rows: groupRows });
+  }
+  return groups;
+}
+
+/**
+ * Wall-clock budget for the facet sub-pages of one source: each listed value
+ * costs 2 + groupBy.length scans of the generation, so a 45-value facet is a
+ * few hundred statements. Past the budget the remaining pages are left out
+ * (they 503 "being prepared" until tomorrow) rather than risk the wave's
+ * 15-minute Cron Trigger limit.
+ */
+const FACETS_BUDGET_MS = 240_000;
+
+async function aggregateFacets(
+  env: CloudflareBindings,
+  source: DataSource,
+  generation: number,
+  facets: StatsFacet[],
+): Promise<FacetStats[]> {
+  const started = Date.now();
+  const out: FacetStats[] = [];
+  for (const facet of facets) {
+    const stats: FacetStats = {
+      segment: facet.segment,
+      field: facet.field,
+      title: facet.title,
+      pages: [],
+    };
+    for (const { value, label } of facet.values) {
+      if (Date.now() - started > FACETS_BUDGET_MS) {
+        console.log(
+          JSON.stringify({
+            level: 'warn',
+            event: 'stats_facets_budget',
+            source: source.slug,
+            segment: facet.segment,
+            computed: stats.pages.length,
+            of: facet.values.length,
+          }),
+        );
+        break;
+      }
+      const where = buildWhere(source.slug, generation, { [facet.field]: value });
+      const count = await env.DB.prepare(
+        `SELECT COUNT(*) AS n FROM source_records WHERE ${where.sql}`,
+      )
+        .bind(...where.binds)
+        .first<{ n: number }>();
+      stats.pages.push({
+        value,
+        label,
+        total: count?.n ?? 0,
+        monthly: facet.date ? await aggregateMonthly(env, where, facet.date) : null,
+        groups: await aggregateGroups(env, where, facet.groupBy),
+      });
+    }
+    out.push(stats);
+  }
+  return out;
+}
+
 async function aggregateD1Stats(
   env: CloudflareBindings,
   source: DataSource,
@@ -496,36 +632,9 @@ async function aggregateD1Stats(
   const stats: SourceStats = { total, monthly: null, groups: [] };
   if (source.idOf) stats.changes = await aggregateChangeDays(env, source.slug);
   if (!spec) return stats;
-
-  const monthExpr = `substr(json_extract(record, ${path(spec.date.field)}), 1, 7)`;
-  const monthly = await env.DB.prepare(
-    `SELECT ${monthExpr} AS month, COUNT(*) AS n FROM source_records
-     WHERE source_slug = ?1 AND generation = ?2
-       AND json_extract(record, ${path(spec.date.field)}) GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]*'
-     GROUP BY month ORDER BY month DESC LIMIT 12`,
-  )
-    .bind(source.slug, generation)
-    .all<{ month: string; n: number }>();
-  const buckets = (monthly.results ?? [])
-    .reverse()
-    .map((row) => ({ month: row.month, count: row.n }));
-  if (buckets.length > 0) stats.monthly = { title: spec.date.title, buckets };
-
-  for (const group of spec.groupBy) {
-    const valueExpr = `json_extract(record, ${path(group.field)})`;
-    const rows = await env.DB.prepare(
-      `SELECT ${valueExpr} AS value, COUNT(*) AS n FROM source_records
-       WHERE source_slug = ?1 AND generation = ?2
-         AND ${valueExpr} IS NOT NULL AND ${valueExpr} != ''
-       GROUP BY value ORDER BY n DESC, value ASC LIMIT ?3`,
-    )
-      .bind(source.slug, generation, group.limit ?? 10)
-      .all<{ value: string | number; n: number }>();
-    const groupRows = (rows.results ?? []).map((row) => ({
-      value: String(row.value),
-      count: row.n,
-    }));
-    if (groupRows.length > 0) stats.groups.push({ title: group.title, rows: groupRows });
-  }
+  const where = buildWhere(source.slug, generation, {});
+  stats.monthly = await aggregateMonthly(env, where, spec.date);
+  stats.groups = await aggregateGroups(env, where, spec.groupBy);
+  if (spec.facets) stats.facets = await aggregateFacets(env, source, generation, spec.facets);
   return stats;
 }

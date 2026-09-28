@@ -867,6 +867,61 @@ async function* fetchStream(env: CloudflareBindings): AsyncIterable<UkTrademarkJ
   }
 }
 
+/**
+ * The 45 Nice classes (Nice Classification, 12th edition headings, shortened):
+ * one bounded /stats/uk-trademark-journal/class/<nn> page each — the
+ * "trade mark applications this week class 9" search, and the watch a
+ * business runs on the class it trades in. Values are the two-digit tokens of
+ * the `classes` field, so `classes=09` selects the same records.
+ */
+export const NICE_CLASSES: readonly { value: string; label: string }[] = [
+  ['01', 'Chemicals'],
+  ['02', 'Paints and coatings'],
+  ['03', 'Cosmetics and cleaning preparations'],
+  ['04', 'Fuels, oils and lubricants'],
+  ['05', 'Pharmaceuticals and medical preparations'],
+  ['06', 'Common metals and metal goods'],
+  ['07', 'Machines and machine tools'],
+  ['08', 'Hand tools and cutlery'],
+  ['09', 'Computers, software and electronics'],
+  ['10', 'Medical and surgical apparatus'],
+  ['11', 'Lighting, heating, cooking and sanitary apparatus'],
+  ['12', 'Vehicles'],
+  ['13', 'Firearms and fireworks'],
+  ['14', 'Jewellery, watches and precious metals'],
+  ['15', 'Musical instruments'],
+  ['16', 'Paper goods, printed matter and stationery'],
+  ['17', 'Rubber, plastics and insulating materials'],
+  ['18', 'Leather goods, luggage and bags'],
+  ['19', 'Non-metallic building materials'],
+  ['20', 'Furniture and household furnishings'],
+  ['21', 'Household utensils, glassware and cookware'],
+  ['22', 'Ropes, nets, tents and raw textile fibres'],
+  ['23', 'Yarns and threads'],
+  ['24', 'Textiles and fabrics'],
+  ['25', 'Clothing, footwear and headgear'],
+  ['26', 'Lace, embroidery, buttons and haberdashery'],
+  ['27', 'Carpets, rugs and wall hangings'],
+  ['28', 'Games, toys and sporting goods'],
+  ['29', 'Meat, fish, dairy and processed foods'],
+  ['30', 'Coffee, tea, bakery goods and confectionery'],
+  ['31', 'Agricultural produce, plants and live animals'],
+  ['32', 'Beers and non-alcoholic drinks'],
+  ['33', 'Alcoholic beverages'],
+  ['34', 'Tobacco, vapes and smokers’ articles'],
+  ['35', 'Advertising, business management and retail services'],
+  ['36', 'Financial, insurance and real-estate services'],
+  ['37', 'Construction, installation and repair services'],
+  ['38', 'Telecommunications services'],
+  ['39', 'Transport, packaging and storage services'],
+  ['40', 'Treatment of materials and custom manufacturing'],
+  ['41', 'Education, training, entertainment and sport'],
+  ['42', 'Scientific, technological and software services'],
+  ['43', 'Food, drink and accommodation services'],
+  ['44', 'Medical, veterinary, beauty and agricultural services'],
+  ['45', 'Legal, security and personal services'],
+].map(([value, label]) => ({ value, label }));
+
 export const ukTrademarkJournalSource: DataSource<UkTrademarkJournalRecord> = {
   slug: 'uk-trademark-journal',
   title: 'UK trade mark applications published for opposition (Trade Marks Journal)',
@@ -881,6 +936,27 @@ export const ukTrademarkJournalSource: DataSource<UkTrademarkJournalRecord> = {
       { field: 'origin', title: 'UK filings vs international designations', limit: 2 },
       { field: 'applicant_country', title: 'By applicant country', limit: 12 },
       { field: 'representative', title: 'Busiest representatives', limit: 15 },
+    ],
+    facets: [
+      {
+        segment: 'class',
+        field: 'classes',
+        title: 'By Nice class (weekly pages)',
+        values: NICE_CLASSES,
+        date: { field: 'publication_date', title: 'Applications published by month' },
+        groupBy: [
+          {
+            field: 'journal_number',
+            title: 'Applications published per weekly journal issue',
+            limit: WINDOW_ISSUES,
+            sort: 'value',
+          },
+          { field: 'origin', title: 'UK filings vs international designations', limit: 2 },
+          { field: 'applicant_country', title: 'By applicant country', limit: 10 },
+          { field: 'applicant', title: 'Organisations with most applications', limit: 10 },
+          { field: 'representative', title: 'Busiest representatives', limit: 10 },
+        ],
+      },
     ],
   },
   recordSchema: ukTrademarkJournalRecordSchema,

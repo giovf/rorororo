@@ -1,7 +1,7 @@
 import { Hono } from 'hono';
 import { publicBaseUrl } from '../lib/constants';
 import { failure } from '../lib/envelope';
-import type { SourceStats } from '../lib/stats';
+import type { FacetPage, FacetStats, MonthlyTrend, SourceStats, StatsGroup } from '../lib/stats';
 import { isolateRateLimit } from '../metering/ratelimit';
 import { getSource, hasChangeFeed, listSources } from '../sources/registry';
 import { sourceStats } from '../sources/store';
@@ -76,22 +76,79 @@ dataset: <code>GET /v1/changes/${esc(source.slug)}?since=${esc(since)}</code> (a
 credit per page, 90-day history — a daily diff of every register fits the free tier.</p>`;
 }
 
-function jsonLd(source: DataSource, baseUrl: string, refreshedAt: string | null): string {
+/** Trend + breakdown tables shared by the source page and its facet sub-pages. */
+function breakdownSections(monthly: MonthlyTrend | null, groups: StatsGroup[]): string[] {
+  const sections: string[] = [];
+  if (monthly) {
+    sections.push(
+      `<h2>${esc(monthly.title)}</h2>` +
+        tableHtml(
+          ['month', 'count'],
+          monthly.buckets.map((b) => [b.month, b.count]),
+        ),
+    );
+  }
+  for (const group of groups) {
+    sections.push(
+      `<h2>${esc(group.title)}</h2>` +
+        tableHtml(
+          ['value', 'records'],
+          group.rows.map((r) => [r.value, r.count]),
+        ),
+    );
+  }
+  return sections;
+}
+
+/** The parent page's index of its facet sub-pages (one bounded list per facet). */
+function facetIndexHtml(source: DataSource, facets: FacetStats[]): string {
+  return facets
+    .filter((facet) => facet.pages.length > 0)
+    .map(
+      (facet) =>
+        `<h2>${esc(facet.title)}</h2>
+<table><thead><tr><th>${esc(facet.segment)}</th><th>records</th></tr></thead><tbody>${facet.pages
+          .map(
+            (p) =>
+              `<tr><td><a href="/stats/${esc(source.slug)}/${esc(facet.segment)}/${esc(p.value)}">${esc(p.value)} — ${esc(p.label)}</a></td><td>${p.total.toLocaleString('en-GB')}</td></tr>`,
+          )
+          .join('')}</tbody></table>`,
+    )
+    .join('\n');
+}
+
+/** Where a `?field=value` query is, as a string for the query poll commands. */
+function filterQuery(field: string, value: string): string {
+  return `${encodeURIComponent(field)}=${encodeURIComponent(value)}`;
+}
+
+function jsonLd(
+  source: DataSource,
+  baseUrl: string,
+  refreshedAt: string | null,
+  facet?: { stats: FacetStats; page: FacetPage },
+): string {
+  const pageUrl = facet
+    ? `${baseUrl}/stats/${source.slug}/${facet.stats.segment}/${facet.page.value}`
+    : `${baseUrl}/stats/${source.slug}`;
+  const query = facet ? `?${filterQuery(facet.stats.field, facet.page.value)}` : '';
+  const suffix = facet ? ` — ${facet.stats.segment} ${facet.page.value} (${facet.page.label})` : '';
   return JSON.stringify({
     '@context': 'https://schema.org',
     '@type': 'Dataset',
-    name: `${source.title} — statistics`,
+    name: `${source.title}${suffix} — statistics`,
     description: source.description,
-    url: `${baseUrl}/stats/${source.slug}`,
+    url: pageUrl,
     license: 'https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/',
     isAccessibleForFree: true,
     dateModified: refreshedAt ?? undefined,
     creator: { '@type': 'Organization', name: 'gankdat', url: baseUrl },
+    ...(facet ? { isPartOf: `${baseUrl}/stats/${source.slug}` } : {}),
     distribution: [
       {
         '@type': 'DataDownload',
         encodingFormat: 'application/json',
-        contentUrl: `${baseUrl}/v1/data/${source.slug}`,
+        contentUrl: `${baseUrl}/v1/data/${source.slug}${query}`,
       },
       ...(hasChangeFeed(source)
         ? [
@@ -99,12 +156,85 @@ function jsonLd(source: DataSource, baseUrl: string, refreshedAt: string | null)
               '@type': 'DataDownload',
               name: 'daily change feed',
               encodingFormat: 'application/json',
-              contentUrl: `${baseUrl}/v1/changes/${source.slug}`,
+              contentUrl: `${baseUrl}/v1/changes/${source.slug}${query}`,
             },
           ]
         : []),
     ],
   });
+}
+
+/**
+ * One facet sub-page, e.g. /stats/uk-trademark-journal/class/09: the
+ * value's own headline, trend and breakdowns plus the filtered query and
+ * change-feed poll — the page a "trade mark applications this week class 9"
+ * search should land on, and the watch it sells.
+ */
+function facetPageHtml(
+  source: DataSource,
+  parentTotal: number,
+  facet: FacetStats,
+  page: FacetPage,
+  refreshedAt: string | null,
+  baseUrl: string,
+): string {
+  const updated = refreshedAt ? refreshedAt.slice(0, 10) : 'daily';
+  const query = filterQuery(facet.field, page.value);
+  const title = `${source.title} — ${facet.segment} ${page.value}: ${page.label}`;
+  const share = parentTotal > 0 ? `${((100 * page.total) / parentTotal).toFixed(1)}%` : '—';
+  const description = `${page.label} (${facet.segment} ${page.value}): ${page.total.toLocaleString('en-GB')} of ${parentTotal.toLocaleString('en-GB')} records in ${source.title}, updated ${updated}. Weekly and monthly statistics computed from the official feed. Free JSON API and change feed.`;
+  const pageUrl = `${baseUrl}/stats/${source.slug}/${facet.segment}/${page.value}`;
+  const feed = hasChangeFeed(source)
+    ? `<h2>watch this ${esc(facet.segment)}</h2>
+<p class="muted">The register diffs itself every morning. Poll only this ${esc(facet.segment)}'s new,
+removed and changed rows: <code>GET /v1/changes/${esc(source.slug)}?${esc(query)}&amp;since=YYYY-MM-DD</code>
+(add <code>q=&lt;word&gt;</code> for a keyword watch, <code>change=added</code> for new publications only),
+or the MCP tool <code>get_changes</code> with <code>filter: {"${esc(facet.field)}": "${esc(page.value)}"}</code>.
+One credit per page — a weekly watch on every ${esc(facet.segment)} fits the free tier.</p>`
+    : '';
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>${esc(title)} — statistics | gankdat</title>
+<meta name="description" content="${esc(description)}">
+<link rel="canonical" href="${pageUrl}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="gankdat">
+<meta property="og:title" content="${esc(title)} — statistics">
+<meta property="og:description" content="${esc(description)}">
+<meta property="og:url" content="${pageUrl}">
+<script type="application/ld+json">${jsonLd(source, baseUrl, refreshedAt, { stats: facet, page })}</script>
+<style>${STYLE}</style>
+</head>
+<body><main>
+<p class="muted"><a href="/">gankdat</a> / <a href="/stats">stats</a> / <a href="/stats/${esc(source.slug)}">${esc(source.slug)}</a> / ${esc(facet.segment)} ${esc(page.value)}</p>
+<h1>${esc(source.title)} — <b>${esc(facet.segment)} ${esc(page.value)}: ${esc(page.label)}</b></h1>
+<p class="muted">${esc(source.description)}</p>
+<h2>headline</h2>
+<table><tbody>
+<tr><td>records in ${esc(facet.segment)} ${esc(page.value)}</td><td>${page.total.toLocaleString('en-GB')}</td></tr>
+<tr><td>share of the dataset</td><td>${esc(share)}</td></tr>
+<tr><td>last refreshed</td><td>${esc(updated)}</td></tr>
+</tbody></table>
+${breakdownSections(page.monthly, page.groups).join('\n')}
+${feed}
+<h2>methodology</h2>
+<p class="muted">Computed from the same records the gankdat API serves — official
+government feeds, refreshed daily, no scraping. A record counts here when its
+<code>${esc(facet.field)}</code> field matches <code>${esc(page.value)}</code>, exactly as
+<code>GET /v1/data/${esc(source.slug)}?${esc(query)}</code> filters it. This dataset's
+licence and personal-data posture are stated in the <a href="/terms">terms</a>. Counts
+reflect the current dataset window, not all-time totals. Cite this page with its URL and
+the last-refreshed date.</p>
+<div class="cta">
+<b>Get this ${esc(facet.segment)} as JSON</b><br>
+<span class="muted"><code>GET /v1/data/${esc(source.slug)}?${esc(query)}</code> — free tier, 250 req/mo — or MCP for agents</span><br><br>
+<a href="/docs">docs</a> <a href="/account">get a key</a> <a href="/llms.txt">llms.txt</a>
+</div>
+</main></body></html>`;
 }
 
 function pageHtml(
@@ -114,26 +244,8 @@ function pageHtml(
   baseUrl: string,
 ): string {
   const updated = refreshedAt ? refreshedAt.slice(0, 10) : 'daily';
-  const sections: string[] = [];
-
-  if (stats.monthly) {
-    sections.push(
-      `<h2>${esc(stats.monthly.title)}</h2>` +
-        tableHtml(
-          ['month', 'count'],
-          stats.monthly.buckets.map((b) => [b.month, b.count]),
-        ),
-    );
-  }
-  for (const group of stats.groups) {
-    sections.push(
-      `<h2>${esc(group.title)}</h2>` +
-        tableHtml(
-          ['value', 'records'],
-          group.rows.map((r) => [r.value, r.count]),
-        ),
-    );
-  }
+  const sections = breakdownSections(stats.monthly, stats.groups);
+  if (stats.facets) sections.push(facetIndexHtml(source, stats.facets));
 
   const description = `${source.title}: ${stats.total.toLocaleString('en-GB')} records, updated ${updated}. Monthly statistics computed from the official feed. Free JSON API.`;
 
@@ -225,4 +337,36 @@ export const statsRoutes = new Hono<AppEnv>()
     }
     c.header('Cache-Control', 'public, max-age=3600');
     return c.html(pageHtml(source, result.stats, result.last_refreshed_at, publicBaseUrl(c.env)));
+  })
+  .get('/:source/:segment/:value', async (c) => {
+    const source = getSource(c.req.param('source'));
+    const segment = c.req.param('segment');
+    const value = c.req.param('value');
+    // Only values the source lists exist (bounded programmatic SEO): anything else is a 404,
+    // never a page computed on request.
+    const spec = source?.stats?.facets?.find((f) => f.segment === segment);
+    if (!source || !spec || !spec.values.some((v) => v.value === value)) {
+      return c.json(failure('not_found', 'Unknown statistics page'), 404);
+    }
+    const result = await sourceStats(c.env, source);
+    const facet = result?.stats.facets?.find((f) => f.segment === segment);
+    const page = facet?.pages.find((p) => p.value === value);
+    if (!result || !facet || !page) {
+      c.header('Retry-After', '3600');
+      return c.json(
+        failure('unavailable', 'Statistics are being prepared for this page; check back soon'),
+        503,
+      );
+    }
+    c.header('Cache-Control', 'public, max-age=3600');
+    return c.html(
+      facetPageHtml(
+        source,
+        result.stats.total,
+        facet,
+        page,
+        result.last_refreshed_at,
+        publicBaseUrl(c.env),
+      ),
+    );
   });

@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { APP_VERSION } from './constants';
 import { ERROR_CODES } from './envelope';
 import { buildQuerySchema } from '../sources/query';
+import { changeFiltersSchema } from '../routes/changes';
 import { hasChangeFeed, listSources } from '../sources/registry';
 import type { DataSource } from '../sources/types';
 
@@ -255,14 +256,22 @@ const changeRowSchema = z.object({
 });
 
 function changesPathItem(source: DataSource): JsonObject {
+  const filters = Object.entries(changeFiltersSchema(source).shape).map(([name, field]) => ({
+    name,
+    in: 'query',
+    required: false,
+    schema: toSchema(field as z.ZodType),
+    description: `Filter the changed record like /v1/data/${source.slug}?${name}=…`,
+  }));
   return {
     get: {
       operationId: `changes_${source.slug.replaceAll('-', '_')}`,
       summary: `${source.title} — changes since a date`,
-      description: `Rows added, removed or changed in ${source.title} between daily refreshes, newest first (90-day history). Poll this instead of re-reading the whole register. Costs the same credits as a query.`,
+      description: `Rows added, removed or changed in ${source.title} between daily refreshes, newest first (90-day history). Poll this instead of re-reading the whole register. Takes the same filters as /v1/data/${source.slug}, applied to the changed record, so one call is a watch. Costs the same credits as a query.`,
       tags: ['changes'],
       security: [{ bearerAuth: [] }],
       parameters: [
+        ...filters,
         {
           name: 'since',
           in: 'query',

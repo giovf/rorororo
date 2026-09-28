@@ -97,6 +97,57 @@ export function waveOf(source: DataSource): RefreshWave {
   return source.refresh.wave ?? (source.storage === 'd1' ? 2 : 1);
 }
 
+/**
+ * D1 failures that are the platform's, not the data's: "D1_ERROR: internal
+ * error; reference = …" (uk-trademark-journal 2026-09-28) and "Network
+ * connection lost" (uk-charities the same morning) each cost a dataset its
+ * day. Both refresh paths are idempotent (a crashed D1 generation is swept on
+ * the next attempt; a KV snapshot is written last), so one retry is safe.
+ */
+export const TRANSIENT_D1_ERROR =
+  /D1_ERROR: (internal error|Network connection lost)|D1 (is|was) (overloaded|reset)/i;
+/** Only retry while the wave has ample room under the 15-minute Cron Trigger limit. */
+const RETRY_DEADLINE_MS = 6 * 60_000;
+const RETRY_DELAY_MS = 5_000;
+
+export function isTransientD1Error(err: unknown): boolean {
+  return TRANSIENT_D1_ERROR.test(err instanceof Error ? err.message : String(err));
+}
+
+/** One source's refresh, retried once on a transient D1 error while the wave is young. */
+export async function refreshOne(
+  env: CloudflareBindings,
+  source: DataSource,
+  waveStartedAt = Date.now(),
+  delayMs = RETRY_DELAY_MS,
+): Promise<void> {
+  for (let attempt = 1; ; attempt += 1) {
+    try {
+      if (source.storage === 'd1') {
+        await refreshD1Source(env, source);
+      } else {
+        await refreshSource(env, source);
+      }
+      return;
+    } catch (err) {
+      const retry =
+        attempt === 1 && isTransientD1Error(err) && Date.now() - waveStartedAt < RETRY_DEADLINE_MS;
+      // Already recorded in refresh_log; keep the loop alive for other sources.
+      console.error(
+        JSON.stringify({
+          level: retry ? 'warn' : 'error',
+          event: retry ? 'refresh_retry' : 'refresh_failed',
+          source: source.slug,
+          attempt,
+          message: err instanceof Error ? err.message : String(err),
+        }),
+      );
+      if (!retry) return;
+      await new Promise((resolve) => setTimeout(resolve, delayMs));
+    }
+  }
+}
+
 export async function refreshAllSources(env: CloudflareBindings, cron?: string): Promise<void> {
   const wave = waveForCron(cron);
   const sources = listSources().filter((s) => wave === undefined || waveOf(s) === wave);
@@ -109,23 +160,8 @@ export async function refreshAllSources(env: CloudflareBindings, cron?: string):
       sources: sources.map((s) => s.slug),
     }),
   );
+  const startedAt = Date.now();
   for (const source of sources) {
-    try {
-      if (source.storage === 'd1') {
-        await refreshD1Source(env, source);
-      } else {
-        await refreshSource(env, source);
-      }
-    } catch (err) {
-      // Already recorded in refresh_log; keep the loop alive for other sources.
-      console.error(
-        JSON.stringify({
-          level: 'error',
-          event: 'refresh_failed',
-          source: source.slug,
-          message: err instanceof Error ? err.message : String(err),
-        }),
-      );
-    }
+    await refreshOne(env, source, startedAt);
   }
 }

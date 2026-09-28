@@ -823,8 +823,10 @@
             published for opposition in the IPO's weekly Trade Marks Journal — application number,
             mark text and type, Nice classes and goods/services, applicant organisation and country,
             representative, filing date, journal issue and the two-month opposition deadline.
-            Rolling 52 issues; the change feed is each week's new publications. Applicant names kept
-            for organisations only; mark images never stored.
+            Rolling 52 issues; the change feed is each week's new publications, filterable by class,
+            applicant or keyword — a trade-mark watch in one call. Weekly statistics per
+            <a href="/stats/uk-trademark-journal">Nice class</a>. Applicant names kept for
+            organisations only; mark images never stored.
           </p>
           <p class="chips">
             <code>classes</code><code>mark_text</code><code>applicant</code
@@ -916,8 +918,9 @@
             Every register diffs itself each morning:
             <code>/v1/changes/…?since=YYYY-MM-DD</code> returns what was added, removed or changed —
             food hygiene, charities, care locations, schools, NHS organisations, sponsors,
-            exclusions, gambling licences and the weekly trade-mark journal. 90-day history, MCP
-            tool <code>get_changes</code>; the activity per day is on each
+            exclusions, gambling licences and the weekly trade-mark journal — with the dataset's own
+            filters, so <code>?classes=09&amp;q=acme</code> is a watch. 90-day history, MCP tool
+            <code>get_changes</code>; the activity per day is on each
             <a href="/stats">stats page</a>. Poll the delta, not the register — no other source
             publishes official-register deltas.
           </p>

@@ -128,11 +128,22 @@ async function fetchJsonWithRetry(url: string): Promise<unknown> {
       headers: { 'user-agent': 'gankdat.com data refresh (info@gankdat.com)' },
     });
     if (!res.ok) throw new Error(`thegazette.co.uk responded ${res.status}`);
+    // Read the bytes first so a truncated body fails with evidence (bytes seen vs the
+    // declared length, and the tail) — three refreshes failed on "Unexpected end of JSON
+    // input" alone in the week to 2026-09-28, which says nothing about where the cut is.
+    const text = await res.text();
     try {
-      return await res.json();
+      return JSON.parse(text) as unknown;
     } catch (err) {
-      if (attempt >= FETCH_ATTEMPTS) throw err;
-      await sleep(PAGE_DELAY_MS);
+      if (attempt >= FETCH_ATTEMPTS) {
+        const declared = res.headers.get('content-length') ?? '?';
+        const tail = text.slice(-40).replaceAll(/\s+/g, ' ');
+        throw new Error(
+          `thegazette.co.uk page ${url.slice(url.indexOf('results-page='))}: ${err instanceof Error ? err.message : String(err)} after ${attempt} reads (${text.length} bytes, content-length ${declared}, tail "${tail}")`,
+          { cause: err },
+        );
+      }
+      await sleep(PAGE_DELAY_MS * attempt);
     }
   }
 }

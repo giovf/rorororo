@@ -76,6 +76,65 @@ describe('computeStats', () => {
     expect(stats.groups[0]?.rows).toEqual([{ value: 'a', count: 2 }]);
   });
 
+  it('computes one sub-page per listed facet value with the string-param match rule', () => {
+    const rows = [
+      { classes: '09,35', issue: '2026/037', d: '2026-09-11', who: 'A Ltd' },
+      { classes: '09', issue: '2026/038', d: '2026-09-18', who: 'B Ltd' },
+      { classes: '25', issue: '2026/038', d: '2026-09-18', who: null },
+    ];
+    const stats = computeStats(rows, {
+      date: { field: 'd', title: 'by month' },
+      groupBy: [],
+      facets: [
+        {
+          segment: 'class',
+          field: 'classes',
+          title: 'By class',
+          values: [
+            { value: '09', label: 'Software' },
+            { value: '13', label: 'Firearms' },
+          ],
+          date: { field: 'd', title: 'by month' },
+          groupBy: [
+            { field: 'issue', title: 'per issue', sort: 'value', limit: 52 },
+            { field: 'who', title: 'who' },
+          ],
+        },
+      ],
+    });
+    expect(stats.facets).toHaveLength(1);
+    const [nine, thirteen] = stats.facets?.[0]?.pages ?? [];
+    expect(nine).toEqual({
+      value: '09',
+      label: 'Software',
+      total: 2,
+      monthly: { title: 'by month', buckets: [{ month: '2026-09', count: 2 }] },
+      groups: [
+        {
+          title: 'per issue',
+          rows: [
+            { value: '2026/037', count: 1 },
+            { value: '2026/038', count: 1 },
+          ],
+        },
+        {
+          title: 'who',
+          rows: [
+            { value: 'A Ltd', count: 1 },
+            { value: 'B Ltd', count: 1 },
+          ],
+        },
+      ],
+    });
+    expect(thirteen).toEqual({
+      value: '13',
+      label: 'Firearms',
+      total: 0,
+      monthly: null,
+      groups: [],
+    });
+  });
+
   it('without a spec still reports the total (minimal page for spec-less sources)', () => {
     const stats = computeStats([{ x: 1 }]);
     expect(stats).toEqual({ total: 1, monthly: null, groups: [] });

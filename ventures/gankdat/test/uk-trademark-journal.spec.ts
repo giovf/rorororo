@@ -1,4 +1,4 @@
-import { env } from 'cloudflare:test';
+import { env, SELF } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { SuccessEnvelope } from '../src/lib/envelope';
 import { refreshD1Source } from '../src/sources/d1store';
@@ -14,7 +14,7 @@ import {
   ukTrademarkJournalSource,
 } from '../src/sources/uk-trademark-journal';
 import type { UkTrademarkJournalRecord } from '../src/sources/uk-trademark-journal';
-import { authedFetch, issueKey } from './helpers/auth';
+import { authedFetch, bearer, issueKey } from './helpers/auth';
 import { stubOrigins } from './helpers/origin-mock';
 
 const URL_ = 'https://example.com/v1/data/uk-trademark-journal';
@@ -324,6 +324,133 @@ describe('GET /v1/data/uk-trademark-journal', () => {
     expect(await numbers('class_count_min=3')).toEqual(['UK00004348816']);
     expect(await numbers('q=harbourside')).toEqual(['UK00004348818']);
     expect(await numbers('mark_text=pixel')).toEqual(['UK00004299901']);
+  });
+
+  it('serves one weekly statistics page per Nice class, indexed from the dataset page', async () => {
+    // Before any refresh: the listed page warms (503), never computes on request.
+    expect(
+      (await SELF.fetch('https://example.com/stats/uk-trademark-journal/class/09')).status,
+    ).toBe(503);
+    serveIssues({ [id(38)]: ISSUE_38, [id(37)]: ISSUE_37 });
+    await load();
+    const parent = await (
+      await SELF.fetch('https://example.com/stats/uk-trademark-journal')
+    ).text();
+    expect(parent).toContain('By Nice class (weekly pages)');
+    expect(parent).toContain('href="/stats/uk-trademark-journal/class/09"');
+    expect(parent).toContain('09 — Computers, software and electronics</a></td><td>2</td>');
+
+    const res = await SELF.fetch('https://example.com/stats/uk-trademark-journal/class/09');
+    expect(res.status).toBe(200);
+    const html = await res.text();
+    expect(html).toContain('class 09: Computers, software and electronics');
+    expect(html).toContain('<tr><td>records in class 09</td><td>2</td></tr>');
+    expect(html).toContain('<tr><td>share of the dataset</td><td>33.3%</td></tr>');
+    expect(html).toContain('Applications published per weekly journal issue');
+    expect(html).toContain(
+      `<tr><td>${YEAR}/037</td><td>1</td></tr><tr><td>${YEAR}/038</td><td>1</td></tr>`,
+    );
+    expect(html).toContain('<tr><td>Northwind Analytics Ltd</td><td>1</td></tr>');
+    expect(html).toContain('GET /v1/changes/uk-trademark-journal?classes=09&amp;since=YYYY-MM-DD');
+    expect(html).toContain(
+      '<link rel="canonical" href="https://gankdat.com/stats/uk-trademark-journal/class/09">',
+    );
+    expect(html).toContain('"isPartOf":"https://gankdat.com/stats/uk-trademark-journal"');
+    expect(html).toContain(
+      '"contentUrl":"https://gankdat.com/v1/data/uk-trademark-journal?classes=09"',
+    );
+    expect(html).not.toContain('Jane Example');
+
+    // An empty class still has its page (the number IS the fact); unlisted values 404.
+    const empty = await (
+      await SELF.fetch('https://example.com/stats/uk-trademark-journal/class/13')
+    ).text();
+    expect(empty).toContain('<tr><td>records in class 13</td><td>0</td></tr>');
+    expect(
+      (await SELF.fetch('https://example.com/stats/uk-trademark-journal/class/99')).status,
+    ).toBe(404);
+    expect(
+      (await SELF.fetch('https://example.com/stats/uk-trademark-journal/klass/09')).status,
+    ).toBe(404);
+    expect((await SELF.fetch('https://example.com/stats/uk-planning/class/09')).status).toBe(404);
+  });
+
+  it('filters the change feed by class, applicant and keyword — REST and the MCP get_changes tool', async () => {
+    serveIssues({ [id(38)]: ISSUE_38, [id(37)]: ISSUE_37 });
+    await load();
+    vi.unstubAllGlobals();
+    // Next week's issue: one software mark, one clothing mark.
+    const ISSUE_39 = issueXml(`${YEAR}/039`, '2026-09-25', [
+      {
+        number: 'UK00004350001',
+        text: 'CLOUDLOOM',
+        type: 'Word',
+        classes: [
+          { n: 9, goods: 'Software.' },
+          { n: 42, goods: 'SaaS.' },
+        ],
+        applicant: 'Cloudloom Systems Ltd',
+        representative: 'Example IP LLP',
+      },
+      {
+        number: 'UK00004350002',
+        text: 'THREADBARE',
+        classes: [{ n: 25, goods: 'Clothing.' }],
+        applicant: 'Threadbare Apparel Limited',
+      },
+    ]);
+    // The previous run remembered 039 as not yet published; a week has passed.
+    await env.CACHE.delete(`tmj:missing:${id(39)}`);
+    serveIssues({ [id(39)]: ISSUE_39 });
+    await load();
+    const { key } = await issueKey();
+    const feed = 'https://example.com/v1/changes/uk-trademark-journal';
+    const ids = async (qs: string): Promise<string[]> => {
+      const res = await authedFetch(`${feed}?${qs}`, key);
+      const text = await res.text();
+      if (res.status !== 200) throw new Error(`${qs}: ${res.status} ${text}`);
+      const body = JSON.parse(text) as SuccessEnvelope<{ record_id: string }[]>;
+      return body.data.map((r) => r.record_id).sort();
+    };
+    expect(await ids('since=2026-01-01')).toEqual(['UK00004350001', 'UK00004350002']);
+    expect(await ids('since=2026-01-01&classes=09')).toEqual(['UK00004350001']);
+    expect(await ids('since=2026-01-01&classes=25&change=added')).toEqual(['UK00004350002']);
+    expect(await ids('since=2026-01-01&q=threadbare')).toEqual(['UK00004350002']);
+    expect(await ids('since=2026-01-01&applicant=cloudloom&representative=example')).toEqual([
+      'UK00004350001',
+    ]);
+    expect(await ids('since=2026-01-01&applicant_country=DE')).toEqual([]);
+    expect((await authedFetch(`${feed}?class=09`, key)).status).toBe(400);
+
+    const rpc = async (args: Record<string, unknown>): Promise<Record<string, unknown>> => {
+      const res = await SELF.fetch('https://example.com/mcp', {
+        method: 'POST',
+        headers: {
+          ...bearer(key),
+          'content-type': 'application/json',
+          accept: 'application/json, text/event-stream',
+        },
+        body: JSON.stringify({
+          jsonrpc: '2.0',
+          id: 1,
+          method: 'tools/call',
+          params: { name: 'get_changes', arguments: { source: 'uk-trademark-journal', ...args } },
+        }),
+      });
+      const text = await res.text();
+      const line = text.split('\n').find((l) => l.startsWith('data:')) ?? text;
+      return (JSON.parse(line.replace(/^data:\s*/, '')) as { result: Record<string, unknown> })
+        .result;
+    };
+    const filtered = await rpc({ since: '2026-01-01', filter: { classes: '09', q: 'cloud' } });
+    expect(filtered.isError).toBeUndefined();
+    expect(
+      (filtered.structuredContent as { data: { record_id: string }[] }).data.map(
+        (r) => r.record_id,
+      ),
+    ).toEqual(['UK00004350001']);
+    const bad = await rpc({ since: '2026-01-01', filter: { class: '09' } });
+    expect(bad.isError).toBe(true);
   });
 
   it('caches each issue in KV so the next refresh downloads nothing already read', async () => {

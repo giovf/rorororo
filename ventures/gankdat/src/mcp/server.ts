@@ -18,7 +18,7 @@ import { usageSummary } from '../metering/quota';
 import { z } from 'zod';
 import { buildQuerySchema } from '../sources/query';
 import { queryD1Changes } from '../sources/d1store';
-import { changesQuerySchema } from '../routes/changes';
+import { changeFiltersSchema, changesQuerySchema } from '../routes/changes';
 import { querySource } from '../sources/store';
 import { getSource, hasChangeFeed, listSources } from '../sources/registry';
 import type { DataSource } from '../sources/types';
@@ -136,8 +136,17 @@ function registerChangesTool(
     'get_changes',
     {
       title: 'Changes since a date',
-      description: `Rows added, removed or changed between daily refreshes of a register dataset (${slugs.join(', ')}), newest first, 90-day history. Poll this instead of re-reading a whole register. Costs 1 credit per call.`,
-      inputSchema: { source: z.enum(slugs), ...changesQuerySchema.shape },
+      description: `Rows added, removed or changed between daily refreshes of a register dataset (${slugs.join(', ')}), newest first, 90-day history. Poll this instead of re-reading a whole register. \`filter\` takes the source's own query params (see list_sources supported_params, plus q) applied to the changed record — e.g. {"classes":"09","q":"acme"} watches one Nice class of uk-trademark-journal for a mark. Costs 1 credit per call.`,
+      inputSchema: {
+        source: z.enum(slugs),
+        ...changesQuerySchema.shape,
+        filter: z
+          .record(z.string(), z.union([z.string(), z.number(), z.boolean()]))
+          .optional()
+          .describe(
+            "The source's query params (as for its query_ tool, plus q) to match the changed record against",
+          ),
+      },
     },
     async (args: Record<string, unknown>): Promise<ToolResult> => {
       if (!keyCtx) return errorResult(AUTH_REQUIRED);
@@ -145,6 +154,8 @@ function registerChangesTool(
       if (!source?.idOf) return errorResult(`Source '${String(args.source)}' has no change feed`);
       const parsed = changesQuerySchema.safeParse(args);
       if (!parsed.success) return errorResult('Invalid arguments: ' + parsed.error.message);
+      const filters = changeFiltersSchema(source).safeParse(args.filter ?? {});
+      if (!filters.success) return errorResult('Invalid filter: ' + filters.error.message);
       const cost = creditCost(source);
       const period = currentPeriod();
       const granted = planAllowance(keyCtx.plan);
@@ -155,7 +166,11 @@ function registerChangesTool(
         );
       }
       const since = parsed.data.since ?? new Date(Date.now() - 7 * 86_400_000).toISOString();
-      const result = await queryD1Changes(env, source, { ...parsed.data, since });
+      const result = await queryD1Changes(env, source, {
+        ...parsed.data,
+        since,
+        filters: filters.data as Record<string, unknown>,
+      });
       const newUsed = await incrementUsage(env, keyCtx.usageSubject, cost, period);
       return jsonResult({
         ok: true,

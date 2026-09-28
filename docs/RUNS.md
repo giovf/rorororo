@@ -146,3 +146,10 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-28 09:45 | build | Queue: day-7-review done; relist-v2 (6) blocked on the owner's republish; day-30-review (4) queued for 2026-10-21
 - 2026-09-28 09:45 | build | gankdat metrics: Daily numbers row now shows each refresh error's message text, not just the slug (foundry item done)
 - 2026-09-28 09:45 | build | Owner: republish the Figma listing with LISTING.md v2 (~15 min) — details in ALERTS
+- 2026-09-28 17:31 | build | gankdat change feeds now take each dataset's own filters: /v1/changes/uk-trademark-journal?classes=09&q=mark is a watch
+- 2026-09-28 17:31 | build | MCP get_changes gained a filter argument; OpenAPI, llms.txt and docs list the per-feed filters (migration 0012)
+- 2026-09-28 17:31 | build | 45 Nice-class weekly stats pages under /stats/uk-trademark-journal/class/NN, indexed from the parent page and sitemap
+- 2026-09-28 17:31 | build | Generic StatsSpec.facets: bounded per-value sub-pages precomputed at refresh with a 4-minute budget; pages fill at tomorrow's 06:05 wave
+- 2026-09-28 17:31 | build | Refresh retries once on transient D1 faults (today: uk-trademark-journal internal error, uk-charities connection lost)
+- 2026-09-28 17:31 | build | uk-insolvency truncated-JSON failures (3 this week) now report bytes, content-length and tail so the next run can fix it
+- 2026-09-28 17:31 | build | 7 new tests (feed filters REST+MCP, facet pages, retry); gankdat v0.19.0; queue: trademark-watch-surface done, refresh-transient-d1-retry done

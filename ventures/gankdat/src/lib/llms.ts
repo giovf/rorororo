@@ -78,8 +78,10 @@ first, 90-day history, 1 credit per page: a daily diff of every register fits
 the free tier.
 
 ${feeds.map((s) => `- GET ${baseUrl}/v1/changes/${s.slug} — ${s.title}`).join('\n')}
-  Params: since (YYYY-MM-DD, default 7 days ago), change (added|removed|changed), page, per_page.
-- MCP tool: get_changes (source, since, change). Activity per day is shown on
+  Params: since (YYYY-MM-DD, default 7 days ago), change (added|removed|changed), page, per_page,
+  plus the dataset's own filters and q applied to the changed record (a watch in one call, e.g.
+  /v1/changes/uk-trademark-journal?classes=09&q=<mark>).
+- MCP tool: get_changes (source, since, change, filter). Activity per day is shown on
   each dataset's /stats page.
 
 ## For AI agents

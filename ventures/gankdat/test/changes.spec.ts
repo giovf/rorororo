@@ -75,6 +75,28 @@ describe('GET /v1/changes/:source', () => {
     expect(paged.meta?.total).toBe(3);
   });
 
+  it("takes the source's own filters and q against the changed record, rejecting unknown ones", async () => {
+    await loadWith(DAY1);
+    await loadWith(DAY2);
+    const ids = async (qs: string): Promise<string[]> => {
+      const body = (await (await authedFetch(`${URL_}?${qs}`)).json()) as SuccessEnvelope<
+        ChangeRow[]
+      >;
+      return body.data.map((r) => `${r.change}:${r.record_id}`).sort();
+    };
+    expect(await ids('name=delta')).toEqual(['added:1-D']);
+    expect(await ids('q=GAMMA')).toEqual(['changed:1-C']);
+    expect(await ids('local_authority=leeds')).toEqual(['added:1-D', 'changed:1-C', 'removed:1-B']);
+    expect(await ids('local_authority=leeds&change=removed')).toEqual(['removed:1-B']);
+    expect(await ids('latest_check_date_after=2026-09-12')).toEqual(
+      ['added:1-C', 'changed:1-C'].slice(1),
+    );
+    const bad = await authedFetch(`${URL_}?nmae=delta`);
+    expect(bad.status).toBe(400);
+    const err = (await bad.json()) as ErrorEnvelope;
+    expect(err.error.code).toBe('bad_request');
+  });
+
   it('is empty after a single load and rejects bad params', async () => {
     await loadWith(DAY1);
     const body = (await (await authedFetch(URL_)).json()) as SuccessEnvelope<ChangeRow[]>;
@@ -115,8 +137,13 @@ describe('GET /v1/changes/:source', () => {
   });
 
   it('is documented in the OpenAPI spec for register datasets only', () => {
-    const doc = getOpenApiDocument('https://example.com') as { paths: Record<string, unknown> };
+    const doc = getOpenApiDocument('https://example.com') as {
+      paths: Record<string, { get: { parameters: { name: string }[] } } | undefined>;
+    };
     expect(doc.paths['/v1/changes/uk-care-locations']).toBeDefined();
+    expect(doc.paths['/v1/changes/uk-care-locations']?.get.parameters.map((p) => p.name)).toEqual(
+      expect.arrayContaining(['since', 'change', 'name', 'local_authority', 'q']),
+    );
     expect(doc.paths['/v1/changes/uk-charities']).toBeDefined();
     expect(doc.paths['/v1/changes/uk-planning']).toBeUndefined();
   });
