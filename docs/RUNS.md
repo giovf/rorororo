@@ -164,3 +164,4 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-28 21:45 | interactive | Workflow installer live: routines drop CI jobs in docs/ci and they go live (owner added WORKFLOW_TOKEN)
 - 2026-09-28 21:45 | interactive | Owner's outstanding list is empty
 
+- 2026-09-28 23:00 | interactive | Workflow installer verified end to end (self-test workflow installed, then removed); owner list empty
