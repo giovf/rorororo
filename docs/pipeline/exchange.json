@@ -114,6 +114,29 @@
       "status": "parked",
       "trigger": "same as japan-gbizinfo-register; pick whichever the exchange scores higher on paid-rival evidence",
       "added": "2026-09-24"
+    },
+    {
+      "id": "are-port",
+      "title": "Port the ARE (Asset Retrieval Engine) product into Foundry",
+      "why": "Owner asked 2026-09-28. Declined: internal BD tool with a drug-licensing revenue model, mandatory clinician review, Postgres+OpenSearch+Redis+Celery server stack, no external buyer or price in its docs — breaks the no-human-hours, no-recurring-cost and shelf-with-buyers rules. See ventures/gankdat/docs/ARE-REUSE-NOTES.md.",
+      "status": "declined",
+      "added": "2026-09-28"
+    },
+    {
+      "id": "pharma-registers-line",
+      "title": "Pharma regulatory registers on gankdat: FDA shortages, Orange Book, Drugs@FDA, EMA, MHRA (from ARE's verified source inventory)",
+      "why": "Free, public-domain/OGL/attribution-licensed registers whose URLs, formats and quirks ARE already documented (ventures/gankdat/docs/ARE-REUSE-NOTES.md). Buyers: generics/505(b)(2) planners, pharmacy procurement, market access; paid rivals Citeline, GlobalData, DrugPatentWatch, ASHP. Same DataSource shape as our UK registers; change feeds are the product.",
+      "status": "parked",
+      "trigger": "Wednesday exchange 2026-09-30 scores it against the queue; build only if it beats the top distribution item",
+      "added": "2026-09-28"
+    },
+    {
+      "id": "region-delta-feed",
+      "title": "Region-delta feed: drugs authorised in the EU/UK but absent from Drugs@FDA (and the reverse), daily diff",
+      "why": "ARE's core insight, nobody sells it as a feed; derived from the pharma-registers line via an INN join (RxNorm). Distinctive enough to earn backlinks and pharma-BD searches.",
+      "status": "parked",
+      "trigger": "pharma-registers-line shipped and queried by at least one external key",
+      "added": "2026-09-28"
     }
   ]
 }

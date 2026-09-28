@@ -273,4 +273,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   (routine built), Edge dropped, no company before £300 MRR, launch posts declined. Apify support:
   the publish block is a 5-publications-per-24h limit, not a ban — publish job batched + daily.
   SAM key alert was a false alarm (keyless source). Figma payout is implied by the paid listing.
+- 2026-09-28 owner asked whether to adapt ARE (private repo, drug-licensing BD tool). Declined as a
+  product (human review, server stack, no buyer); its verified inventory of free pharma registers
+  became two parked exchange ideas (pharma-registers-line, region-delta-feed); notes in
+  `ventures/gankdat/docs/ARE-REUSE-NOTES.md`.
 

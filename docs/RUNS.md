@@ -165,3 +165,6 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-28 21:45 | interactive | Owner's outstanding list is empty
 
 - 2026-09-28 23:00 | interactive | Workflow installer verified end to end (self-test workflow installed, then removed); owner list empty
+- 2026-09-28 23:30 | interactive | ARE repo assessed: not portable as a product; its FDA/EMA/MHRA source inventory captured for gankdat
+- 2026-09-28 23:30 | interactive | Exchange: pharma-registers-line and region-delta-feed parked for Wednesday's scoring; ARE port declined
+
