@@ -155,4 +155,5 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-28 17:31 | build | 7 new tests (feed filters REST+MCP, facet pages, retry); gankdat v0.19.0; queue: trademark-watch-surface done, refresh-transient-d1-retry done
 - 2026-09-28 20:35 | interactive | docs/for-owner/OUTSTANDING.md: one list of everything waiting on the owner (4 clicks, 3 tasks, 2 key hand-overs, 3 decisions)
 - 2026-09-28 20:35 | interactive | Run watchdog workflow activated (missed routine slots now reach Telegram within 2 h)
+- 2026-09-28 20:45 | interactive | Ops retro routine enabled (Sonnet, Saturdays 07:59 UTC); first retro this Saturday
 
