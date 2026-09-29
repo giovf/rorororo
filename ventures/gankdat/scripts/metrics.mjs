@@ -94,11 +94,27 @@ const wantedNote = wanted.length
   ? `; wanted: ${wanted.map((r) => `${r.tool} ${Math.round(Number(r.n))}`).join(', ')}`
   : '';
 
+// STRATEGY §4 targets "change-feed calls / week: 50" and change-feed-upsell /
+// trademark-watch-surface are both proved by that number, but nothing counted it:
+// review 2026-W39 §1 had to write "unknown, likely 0". Both surfaces in one query,
+// over 7 days to match the weekly target — MCP get_changes tool calls (blob5 carries
+// the tool names) plus the REST /v1/changes data point added in the same commit.
+const changeFeed = Object.fromEntries(
+  (
+    await ae(
+      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '7' DAY AND ((blob1 = 'mcp_authed' AND blob5 LIKE '%get_changes%') OR blob1 = 'rest_changes') GROUP BY kind",
+    )
+  ).map((r) => [r.kind, Math.round(Number(r.n))]),
+);
+const changesMcp = changeFeed.mcp_authed ?? 0;
+const changesRest = changeFeed.rest_changes ?? 0;
+
 const date = new Date().toISOString().slice(0, 10);
 const users = `${acct.total} accts (${acct.paid ?? 0} paid, +${acct.new24h ?? 0}/24h)`;
 const sales = `${kinds.x402_paid ?? 0} x402 paid`;
 const notes = [
   `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${paywall} paywall hits${wantedNote}`,
+  `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
   agentKeys
     ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`
     : 'agent sign-up: n/a',

@@ -108,7 +108,11 @@ names — never rename those; see memory/git history for why).
 ## Stack
 TypeScript (strict) · Hono on Cloudflare Workers (Paid plan since 2026-07-10)
 · zod (→ OpenAPI 3.1 → MCP tools; one schema source of truth) · Workers KV +
-D1 + Cron Triggers + Analytics Engine (`gankdat_traffic`: /mcp adoption) ·
+D1 + Cron Triggers + Analytics Engine (`gankdat_traffic`: /mcp and /x402 adoption,
+and since 2026-09-29 the REST surface too — `src/middleware/traffic.ts` writes
+`rest_data`/`rest_changes` for every served `/v1/data/:source` and `/v1/changes/:source`,
+UA and source slug only, never an IP, denials excluded, so STRATEGY §4's weekly
+change-feed target is readable from the daily metrics row) ·
 stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
 @cloudflare/vitest-pool-workers · ESLint + Prettier · npm · wrangler.
 

@@ -8,6 +8,7 @@ import { meterCredits } from './metering/middleware';
 import { rateLimit } from './metering/ratelimit';
 import { canonicalHost, staticAssets } from './middleware/canonical';
 import { structuredLogger } from './middleware/logging';
+import { restTraffic } from './middleware/traffic';
 import { refreshAllSources } from './sources/store';
 import { getSource } from './sources/registry';
 import { accountRoutes } from './routes/account';
@@ -80,6 +81,9 @@ app.use('/x402/*', publicCors);
 // (GET /v1/data — discovery must work before signup). Authed: per-source data
 // (rate-limited + metered) and /v1/usage (free to call).
 // Note: '/v1/data/*' would also match the bare listing path, hence ':source'.
+// Outermost of the per-source chain so `c.res` is the final outcome (a 401 from
+// requireApiKey or a 429 from the rate limit is not counted as a call).
+app.use('/v1/data/:source', restTraffic('rest_data'));
 app.use('/v1/data/:source', requireApiKey());
 // Per-source rate limit (source.rateLimit, default 60/60s) so a high-value niche
 // can be throttled independently — resolved per request from the registry.
@@ -96,6 +100,7 @@ app.use('/v1/data/:source', (c, next) => {
 });
 app.use('/v1/data/:source', meterCredits());
 // Change feeds: same guards as data queries (key, per-source rate limit, metering).
+app.use('/v1/changes/:source', restTraffic('rest_changes'));
 app.use('/v1/changes/:source', requireApiKey());
 app.use('/v1/changes/:source', (c, next) => {
   const cfg = getSource(c.req.param('source') ?? '')?.rateLimit ?? { limit: 60, windowSeconds: 60 };

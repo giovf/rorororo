@@ -164,3 +164,15 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   (https://claude.ai/code/routines/<id> or the RemoteTrigger API). Each differs from the live prompt by one
   sentence pointing at `docs/ops/SELF-CAUSED.md`; nothing else changes. Then delete this line's remark in
   `docs/SCHEDULERS.md` ("live prompt pending the handoff").
+- 2026-09-29 handoff: delete three lines from this file that are now documented false alarms — the
+  2026-09-27 Apify pricing handoff, the 2026-09-28 `gankdat/apify` pricing line (both are our own
+  US$0.001/result publisher price, `docs/ops/SELF-CAUSED.md` row 1) and the 2026-09-25 SAM.gov
+  `owner:` key-rotation line (`sam-exclusions` keyless since 2026-09-20, OUTSTANDING.md C1). Today's
+  build commit wrote the self-caused list and its row says "both handoffs closed", but the lines it
+  describes are still open above. The fallback run corrected their `docs/INBOX.md` dispositions but
+  its deletion from this file was refused by the sandbox's auto-mode classifier (irreversible local
+  destruction), so the removal is left to a session that can confirm it.
+- 2026-09-29 handoff: file the Taskmaster row for `metrics-change-feed-count` retrospectively
+  (`src/middleware/traffic.ts` + the `changes 7d:` metrics query) — the fallback sandbox has no
+  `task-master` CLI and the task-master-ai MCP timed out again at session start (30 s). Same
+  recurring gap as 2026-09-21/22/23/24; gankdat's CLAUDE.md wants a task before a new module.

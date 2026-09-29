@@ -40,7 +40,7 @@ same thing*, not for one big bet. Capital cap £100; recurring cost today ≈ £
 | gankdat MRR | £0 | £150 | Stripe (weekly report) |
 | Apify actors live | 1 of 13 | 13 | Apify console / `apify/README.md` |
 | Apify paid runs / month | 0 | 100 | Apify stats |
-| Change-feed calls / week | 0 | 50 | Analytics Engine (`get_changes`, `/v1/changes`) |
+| Change-feed calls / week | 0 | 50 | `changes 7d:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — Analytics Engine, MCP `get_changes` + REST `/v1/changes` |
 | Extension + plugin sales | 0 | 20 | Stripe / Figma |
 | Directory listings live | 4 | 8 | `MARKETPLACE-PREP.md` |
 
@@ -303,3 +303,17 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   routines created via the HTTP API, so applying the two live prompts is an ALERTS handoff. Rule added to
   CLAUDE.md: anything automated that emails us gets a row in the same commit. Next buildable:
   metrics-change-feed-count (8).
+
+- 2026-09-29 fallback (17:00 slot): the slot race fired a second time — the Fable build committed at
+  17:29:57, nine minutes after this run's STEP 0 check had found no trace, and both runs built
+  `self-caused-alerts`. Fable's version is the richer one (prompt mirrors, a CLAUDE.md rule, a
+  "real work" section), so the fallback's duplicate was discarded rather than merged; the evidence
+  and a raised score went to `fallback-slot-race` instead of a new item. Two things Fable's commit
+  left undone were kept: the three false-alarm `docs/INBOX.md` dispositions are corrected (the SAM
+  row no longer reads `needs owner`), and — since its own SELF-CAUSED row claims "both handoffs
+  closed" while the lines are still open — their deletion is filed as a handoff, the sandbox's
+  auto-mode classifier having refused it. The slot then took the next small item,
+  `metrics-change-feed-count` (8): `/v1/data` and `/v1/changes` write an Analytics Engine data
+  point (`rest_data`/`rest_changes`, UA and slug, never an IP, denials excluded), `metrics.mjs`
+  prints `changes 7d: N (mcp M, rest R)`, and the §4 target above now names that column as its
+  source. It had read "unknown, likely 0" since launch because nothing counted it.

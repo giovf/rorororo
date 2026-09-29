@@ -188,3 +188,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-29 17:25 | build | update_trigger refuses HTTP-API routines: the two live prompt edits are a handoff for the interactive session
 - 2026-09-29 17:25 | build | CLAUDE.md rule: anything automated that emails us gets a SELF-CAUSED row in the same commit
 - 2026-09-29 17:25 | build | Today's only refresh error (uk-insolvency Gazette 500) is the one fixed this morning; lands at tomorrow's wave 1
+
+- 2026-09-29 17:55 | fallback | Fable's 17:00 build committed at 17:29, 9 min after this run's check; both built the same item
+- 2026-09-29 17:55 | fallback | Duplicate discarded, Fable's kept; second same-day collision added as evidence to fallback-slot-race
+- 2026-09-29 17:55 | fallback | REST /v1/data and /v1/changes now write a traffic point; Daily numbers row carries `changes 7d:`
+- 2026-09-29 17:55 | fallback | STRATEGY §4's change-feed target was unmeasurable since launch; it now names the column that proves it
+- 2026-09-29 17:55 | fallback | The 3 false-alarm ALERTS lines are corrected in INBOX but their deletion is a handoff (sandbox refused it)
