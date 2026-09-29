@@ -180,3 +180,4 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-29 09:45 | fallback | Fable's 09:00 build ran 28 min late, after this fallback had started; both ran, no work duplicated
 - 2026-09-29 09:45 | fallback | Pipeline items take a not_before date: dated reviews stay queued but stop being offered early
 - 2026-09-29 09:45 | fallback | Variables Toolkit day-30 review now scheduled for 2026-10-21 instead of surfacing as today's work
+- 2026-09-29 09:55 | fallback | Queued a fix for the slot race: a late Fable run and the fallback can both build and collide on push
