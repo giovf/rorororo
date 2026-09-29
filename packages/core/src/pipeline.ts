@@ -6,7 +6,8 @@
  *   docs/pipeline/queues/<venture>.json  status open|finished, needs_research, scored items
  *
  * Rules (mirrored in docs/pipeline/README.md):
- * - the build routine takes the highest-scoring `todo` item across OPEN queues;
+ * - the build routine takes the highest-scoring `todo` item across OPEN queues, skipping any
+ *   whose `not_before` date has not arrived (a dated checkpoint, e.g. a day-30 review);
  * - an open queue with nothing left to do (no todo/doing/blocked) needs research — the build
  *   routine researches before it builds; `needs_research` is also set explicitly by the run
  *   that empties a queue;
@@ -32,6 +33,12 @@ export interface QueueItem {
   status: ItemStatus;
   /** ISO date the item was added. */
   added: string;
+  /**
+   * ISO date before which the item is not buildable — a checkpoint that needs elapsed time
+   * (a day-30 review) rather than a blocker. It stays `todo` but is not offered by
+   * `candidates()`/`nextItem()` until that date.
+   */
+  not_before?: string;
   done_at?: string;
   /** For `blocked`: what it waits on (a store review, a support ticket, an owner action). */
   blocked_on?: string;
@@ -117,6 +124,8 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
     const blocked_on = str(w, r, 'blocked_on', true);
     if (st === 'blocked' && blocked_on === '') fail(w, 'blocked items need blocked_on');
     const done_at = str(w, r, 'done_at', true);
+    const not_before = str(w, r, 'not_before', true);
+    if (not_before !== '' && !ISO_DATE.test(not_before)) fail(w, 'not_before must be YYYY-MM-DD');
     const item: QueueItem = {
       id,
       title: str(w, r, 'title'),
@@ -128,6 +137,7 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
       added,
     };
     if (done_at !== '') item.done_at = done_at;
+    if (not_before !== '') item.not_before = not_before;
     if (blocked_on !== '') item.blocked_on = blocked_on;
     return item;
   });
@@ -167,17 +177,31 @@ export function parseExchange(text: string, where = 'exchange'): Exchange {
   return { ideas };
 }
 
-/** Items the build routine may pick: `todo` items on open queues, best score first, oldest first on ties. */
+/** Today in UTC as YYYY-MM-DD — the clock the queues are dated in. */
+export function utcToday(now: Date = new Date()): string {
+  return now.toISOString().slice(0, 10);
+}
+
+/**
+ * Items the build routine may pick: `todo` items on open queues whose `not_before` has
+ * arrived, best score first, oldest first on ties. `today` overrides the clock (tests).
+ */
 export function candidates(
   queues: VentureQueue[],
-  options: { maxEffortDays?: number } = {},
+  options: { maxEffortDays?: number; today?: string } = {},
 ): { venture: string; item: QueueItem }[] {
   const cap = options.maxEffortDays ?? Number.POSITIVE_INFINITY;
+  const today = options.today ?? utcToday();
   return queues
     .filter((q) => q.status === 'open')
     .flatMap((q) =>
       q.items
-        .filter((it) => it.status === 'todo' && it.effort_days <= cap)
+        .filter(
+          (it) =>
+            it.status === 'todo' &&
+            it.effort_days <= cap &&
+            (it.not_before === undefined || it.not_before <= today),
+        )
         .map((item) => ({ venture: q.venture, item })),
     )
     .sort((a, b) => b.item.score - a.item.score || a.item.added.localeCompare(b.item.added));
@@ -186,7 +210,7 @@ export function candidates(
 /** The next item to build (optionally only items up to `maxEffortDays`), or undefined when nothing qualifies. */
 export function nextItem(
   queues: VentureQueue[],
-  options: { maxEffortDays?: number } = {},
+  options: { maxEffortDays?: number; today?: string } = {},
 ): { venture: string; item: QueueItem } | undefined {
   return candidates(queues, options)[0];
 }
@@ -210,8 +234,13 @@ export function formatPipeline(pipeline: Pipeline): string {
       `${q.venture.padEnd(18)} ${flag.padEnd(22)} todo ${count('todo')}  doing ${count('doing')}  blocked ${count('blocked')}  done ${count('done')}`,
     );
   }
-  const next = nextItem(pipeline.queues);
+  const today = utcToday();
+  const next = nextItem(pipeline.queues, { today });
   lines.push(next ? `next: ${next.venture} / ${next.item.id} (score ${next.item.score}) — ${next.item.title}` : 'next: nothing to build — research needed');
+  const scheduled = pipeline.queues
+    .filter((q) => q.status === 'open')
+    .flatMap((q) => q.items.filter((it) => it.status === 'todo' && it.not_before !== undefined && it.not_before > today).map((it) => `${q.venture}/${it.id} on ${it.not_before!}`));
+  if (scheduled.length > 0) lines.push(`scheduled: ${scheduled.join(', ')}`);
   const parked = pipeline.exchange.ideas.filter((i) => i.status === 'parked').length;
   lines.push(`exchange: ${pipeline.exchange.ideas.length} idea(s), ${parked} parked`);
   return lines.join('\n');

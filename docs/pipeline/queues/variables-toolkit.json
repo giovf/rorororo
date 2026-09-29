@@ -2,7 +2,7 @@
   "venture": "variables-toolkit",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "items": [
     {
       "id": "day-7-review",
@@ -34,7 +34,8 @@
       "proof": "§7 day-30 row filled with views/installs/purchases/ranks; decision written (keep / relist again / playground file / kill 2026-12-20)",
       "score": 4,
       "status": "todo",
-      "added": "2026-09-28"
+      "added": "2026-09-28",
+      "not_before": "2026-10-21"
     }
   ]
 }

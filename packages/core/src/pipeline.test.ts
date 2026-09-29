@@ -69,6 +69,25 @@ describe('scheduling', () => {
     expect(candidates(queues).map((c) => c.item.id)).toEqual(['old', 'nhs']);
   });
 
+  it('skips a dated checkpoint until its not_before day, then offers it', () => {
+    const q = parseQueue(
+      queue('toolkit', [
+        { ...item('day-30', 'todo', 9), not_before: '2026-10-21' },
+        item('now', 'todo', 2),
+      ]),
+    );
+    expect(nextItem([q], { today: '2026-09-29' })?.item.id).toBe('now');
+    expect(candidates([q], { today: '2026-09-29' }).map((c) => c.item.id)).toEqual(['now']);
+    // On the day itself and after, the higher score wins again.
+    expect(nextItem([q], { today: '2026-10-21' })?.item.id).toBe('day-30');
+    expect(nextItem([q], { today: '2026-11-01' })?.item.id).toBe('day-30');
+    // A scheduled item still counts as work, so the queue does not ask for research.
+    expect(isEmpty(parseQueue(queue('t', [{ ...item('later', 'todo', 9), not_before: '2026-12-01' }])))).toBe(false);
+    expect(() => parseQueue(queue('t', [{ ...item('a', 'todo', 1), not_before: '21-10-2026' }]))).toThrow(
+      /not_before/,
+    );
+  });
+
   it('caps candidates by effort when asked', () => {
     const q = parseQueue(
       queue('x', [{ ...item('big', 'todo', 9), effort_days: 2 }, { ...item('small', 'todo', 3), effort_days: 0.2 }]),

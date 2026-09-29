@@ -21,5 +21,9 @@ docs/pipeline/queues/<venture>.json  one queue per venture: status open|finished
 
 Item fields: `score` is STRATEGY §5 (evidence × reach ÷ effort), higher first, oldest first on
 ties; `proof` is the number that would show it worked; `blocked` items name what they wait on
-and do not count as "empty". A `finished` queue is a venture with nothing left to do; only the
+and do not count as "empty". An item that only needs elapsed time rather than a blocker — a
+day-7 or day-30 review — stays `todo` and carries `not_before: YYYY-MM-DD`: `npm run pipeline
+next` skips it until that date (listing it on a `scheduled:` line instead) and offers it from
+that day on. Like a blocked item it still counts as work, so it does not put the queue into
+`needs_research`. A `finished` queue is a venture with nothing left to do; only the
 exchange or the review reopens it. Every change to a queue lands in the same commit as the work.

@@ -278,3 +278,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   became two parked exchange ideas (pharma-registers-line, region-delta-feed); notes in
   `ventures/gankdat/docs/ARE-REUSE-NOTES.md`.
 
+- 2026-09-29 fallback: the 09:00 Fable build slot was missed and every open queue was blocked except
+  variables-toolkit's day-30 review, a 2026-10-21 checkpoint the selector offered today. Queue items
+  now take `not_before`, so dated reviews stay queued but out of `pipeline next` until their day;
+  foundry's queue is empty and flagged `needs_research` for the next build.

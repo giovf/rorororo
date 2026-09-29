@@ -168,3 +168,7 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-28 23:30 | interactive | ARE repo assessed: not portable as a product; its FDA/EMA/MHRA source inventory captured for gankdat
 - 2026-09-28 23:30 | interactive | Exchange: pharma-registers-line and region-delta-feed parked for Wednesday's scoring; ARE port declined
 
+- 2026-09-29 09:35 | fallback | Fable's 09:00 build slot was missed (no build commit or run line); this Opus fallback filled it
+- 2026-09-29 09:35 | fallback | Pipeline items take a not_before date: dated reviews stay queued but stop being offered early
+- 2026-09-29 09:35 | fallback | Variables Toolkit day-30 review now scheduled for 2026-10-21 instead of surfacing as today's work
+- 2026-09-29 09:35 | fallback | Every other open queue is blocked on you or a store; foundry's queue is empty and flagged for research

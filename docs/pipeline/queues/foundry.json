@@ -1,8 +1,8 @@
 {
   "venture": "foundry",
   "status": "open",
-  "needs_research": false,
-  "updated": "2026-09-28",
+  "needs_research": true,
+  "updated": "2026-09-29",
   "items": [
     {
       "id": "fetch-relay",
@@ -91,6 +91,17 @@
       "status": "done",
       "added": "2026-09-28",
       "done_at": "2026-09-28"
+    },
+    {
+      "id": "scheduled-queue-items",
+      "title": "Queue items can carry a not_before date so dated checkpoints stop being offered early",
+      "why": "Today the 09:00 build slot was missed and the fallback found only variables-toolkit/day-30-review, a checkpoint that cannot be done until 2026-10-21: every open queue is otherwise blocked. Without a date field each build run either fabricates the review or burns the slot, and the same applies to every future day-7/day-30 checkpoint the reviews keep adding.",
+      "effort_days": 0.1,
+      "proof": "npm run pipeline next returns null today instead of day-30-review, and lists it under \"scheduled\"; the item is offered again on 2026-10-21",
+      "score": 6,
+      "status": "done",
+      "added": "2026-09-29",
+      "done_at": "2026-09-29"
     }
   ]
 }

@@ -12,6 +12,7 @@ export {
   nextItem,
   parseExchange,
   parseQueue,
+  utcToday,
 } from './pipeline.js';
 export type {
   Exchange,
