@@ -181,3 +181,10 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-29 09:45 | fallback | Pipeline items take a not_before date: dated reviews stay queued but stop being offered early
 - 2026-09-29 09:45 | fallback | Variables Toolkit day-30 review now scheduled for 2026-10-21 instead of surfacing as today's work
 - 2026-09-29 09:55 | fallback | Queued a fix for the slot race: a late Fable run and the fallback can both build and collide on push
+
+- 2026-09-29 17:25 | build | Built self-caused-alerts (8): docs/ops/SELF-CAUSED.md lists 8 mails our own scripts trigger, never escalated
+- 2026-09-29 17:25 | build | Apify "pricing change", SAM key reminder, DMARC, CI-on-our-push now classify as self-caused; 3 rows are agent work
+- 2026-09-29 17:25 | build | Triage and weekly-report prompts mirrored in docs/routines/ with the one new sentence each
+- 2026-09-29 17:25 | build | update_trigger refuses HTTP-API routines: the two live prompt edits are a handoff for the interactive session
+- 2026-09-29 17:25 | build | CLAUDE.md rule: anything automated that emails us gets a SELF-CAUSED row in the same commit
+- 2026-09-29 17:25 | build | Today's only refresh error (uk-insolvency Gazette 500) is the one fixed this morning; lands at tomorrow's wave 1

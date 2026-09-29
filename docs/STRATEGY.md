@@ -294,3 +294,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   28 min late, during this run; its ops research and this fix were merged, nothing duplicated. The
   fallback's "did Fable run?" check cannot see a slot that has not committed yet — noted for the
   ops retro: a late slot means two runs can overlap.)
+
+- 2026-09-29 build (17:00 run): built foundry `self-caused-alerts` (8, the top item): `docs/ops/SELF-CAUSED.md`
+  maps mail our own automation triggers (Apify PAY_PER_EVENT pricing and publish confirmations, the retired SAM
+  key reminder, MCP registry publishes, DMARC reports, CI failures on our pushes) to its cause and the log
+  line, plus three "caused by us but real work" rows and what is NOT self-caused; the triage and weekly-report
+  prompts are mirrored under `docs/routines/` with the one added sentence each. `update_trigger` refuses
+  routines created via the HTTP API, so applying the two live prompts is an ALERTS handoff. Rule added to
+  CLAUDE.md: anything automated that emails us gets a row in the same commit. Next buildable:
+  metrics-change-feed-count (8).

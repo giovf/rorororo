@@ -109,6 +109,9 @@ Any agent that needs the owner appends `- YYYY-MM-DD owner: <what and where>` to
 (or creates a new `docs/for-owner/actions/NNN-*.md`). The `notify owner` GitHub job sends those
 lines to the owner's phone (Telegram and/or WhatsApp; secrets in the repo settings). Handoffs
 between agents use `handoff:` and are not sent.
+Mail that our own automation triggers (Apify pricing/publish confirmations, DMARC reports, CI
+failures on our pushes, the retired SAM key reminder) is listed in `docs/ops/SELF-CAUSED.md`; triage
+logs a match and never escalates it, and the weekly report never makes one a next step.
 
 ## Interrupted runs (usage limits, timeouts, crashes)
 

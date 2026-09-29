@@ -60,6 +60,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   fix (a routine, a relay, a watchdog) and queue it in `docs/pipeline/queues/foundry.json`;
   do not wait to be asked. Hosts the sandbox cannot reach: use `docs/relay/` (README there). New or changed CI
   workflows from a routine: write them to `docs/ci/` (README there); the installer moves them.
+- **Self-caused mail:** anything you automate that makes a third party email us (publishing, pricing,
+  key rotation, DNS, registry submissions) gets a row in `docs/ops/SELF-CAUSED.md` in the same commit;
+  triage and the weekly report read it and never escalate a match.
 - Work queue of record: `docs/pipeline/` (exchange + one queue per venture, see its README;
   `npm run pipeline` validates and prints the next item). Build the next item, mark it in the
   same commit; an emptied queue gets `needs_research: true`.

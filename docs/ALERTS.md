@@ -157,3 +157,10 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   publish (US$0.001 per result, STRATEGY §2); Apify mails the publisher when a pricing model is set. It is revenue we
   charge, not a cost we pay; nothing for the ledger. The general fix (a self-caused notification list read by triage and
   the report) is queued as foundry item `self-caused-alerts`.
+- 2026-09-29 handoff: apply the self-caused-alerts prompt change to two routines — the build routine cannot
+  (`update_trigger` refuses routines created via the HTTP API). Replace the stored prompt of **Foundry inbox
+  triage** (`trig_011NfGaSrEEsr5B1xTHEBRAr`) with the text below the `---` in `docs/routines/inbox-triage.md`
+  and of **Foundry weekly report** (`trig_01PjxdBAcvYSAT32fCyzcvQg`) with `docs/routines/weekly-report.md`
+  (https://claude.ai/code/routines/<id> or the RemoteTrigger API). Each differs from the live prompt by one
+  sentence pointing at `docs/ops/SELF-CAUSED.md`; nothing else changes. Then delete this line's remark in
+  `docs/SCHEDULERS.md` ("live prompt pending the handoff").
