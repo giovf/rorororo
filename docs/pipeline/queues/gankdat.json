@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "items": [
     {
       "id": "nhs-ods",
@@ -168,6 +168,17 @@
       "status": "done",
       "added": "2026-09-28",
       "done_at": "2026-09-28"
+    },
+    {
+      "id": "gazette-5xx-retry",
+      "title": "uk-insolvency: retry a momentary Gazette 5xx once (fifth refresh error in eight days)",
+      "why": "Daily numbers 2026-09-29: refresh errors: uk-insolvency (thegazette.co.uk responded 500). uk-insolvency errored on 2026-09-22, 09-25, 09-28 (truncated JSON, now evidenced) and 09-29 (a 500) — the most failure-prone source, and each failure leaves the KV snapshot a day stale. fetchJsonWithRetry re-read truncated bodies but threw on any non-2xx; it now retries a 5xx once after the fair-use pause (2.1 s) and reports the attempt count in the error. Two tests (500 then 200 serves origin data; persistent 500 still falls back to fixtures after exactly two reads).",
+      "effort_days": 0.05,
+      "proof": "no uk-insolvency `responded 5xx` refresh error in the next 14 Daily numbers rows",
+      "score": 6,
+      "status": "done",
+      "added": "2026-09-29",
+      "done_at": "2026-09-29"
     }
   ]
 }

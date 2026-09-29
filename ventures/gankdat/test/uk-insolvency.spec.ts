@@ -60,10 +60,28 @@ describe('GET /v1/data/uk-insolvency', () => {
     expect(none.data).toEqual([]);
   });
 
-  it('falls back to bundled fixtures when the origin fails', async () => {
-    stubOrigins({ gazette: () => new Response('gone fishing', { status: 500 }) });
+  it('retries a momentary 5xx once and serves the origin data', async () => {
+    let calls = 0;
+    const mock = stubOrigins({
+      gazette: () => {
+        calls += 1;
+        return calls === 1 ? new Response('gone fishing', { status: 500 }) : feedResponse();
+      },
+    });
     const res = await authedFetch(INSOLVENCY_URL);
     expect(res.status).toBe(200);
+    expect(mock).toHaveBeenCalledTimes(2);
+    const body = (await res.json()) as SuccessEnvelope<UkInsolvencyRecord[]>;
+    expect(body.data).toHaveLength(25);
+    expect(body.data[0]?.company).toBe('MCGAWLEY CONTRACTING LTD');
+  });
+
+  it('falls back to bundled fixtures when the origin keeps failing', async () => {
+    const mock = stubOrigins({ gazette: () => new Response('gone fishing', { status: 500 }) });
+    const res = await authedFetch(INSOLVENCY_URL);
+    expect(res.status).toBe(200);
+    // One retry only: the wave budget and the Gazette's fair-use pacing both cap it.
+    expect(mock).toHaveBeenCalledTimes(2);
     const body = (await res.json()) as SuccessEnvelope<UkInsolvencyRecord[]>;
     expect(body.data).toHaveLength(25);
   });

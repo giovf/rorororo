@@ -167,4 +167,13 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-28 23:00 | interactive | Workflow installer verified end to end (self-test workflow installed, then removed); owner list empty
 - 2026-09-28 23:30 | interactive | ARE repo assessed: not portable as a product; its FDA/EMA/MHRA source inventory captured for gankdat
 - 2026-09-28 23:30 | interactive | Exchange: pharma-registers-line and region-delta-feed parked for Wednesday's scoring; ARE port declined
+- 2026-09-29 09:35 | build | Research run: foundry queue was empty (8 of 8 done); audited the week's routines, CI and handoffs
+- 2026-09-29 09:35 | build | Apify "pricing change" alerts (09-27, 09-28) are our own $0.001/result price set by publish-actors.mjs; closed
+- 2026-09-29 09:35 | build | Queued self-caused-alerts (8): triage and report read a list of mail our own automation triggers
+- 2026-09-29 09:35 | build | Queued metrics-change-feed-count (8): REST /v1/changes writes no traffic point; §4 target unmeasured
+- 2026-09-29 09:35 | build | Queued triage-backlog-window (7): newer_than:3h lost 9 threads for a week; unread becomes the queue
+- 2026-09-29 09:35 | build | Queued metrics-apify-runs (7): 17 actors public, zero visibility of runs; APIFY_TOKEN already in CI
+- 2026-09-29 09:35 | build | Queued store-approval-to-store-md (5): AMO approvals 7 days old still unrecorded in STORE.md
+- 2026-09-29 09:35 | build | uk-insolvency refresh error today (Gazette 500): 5xx now retried once, 2 tests; 5th error in 8 days
+- 2026-09-29 09:35 | build | SCHEDULERS.md: watchdog and workflow-installer rows no longer say "drafted"/"cannot"
 

@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-28",
+  "updated": "2026-09-29",
   "items": [
     {
       "id": "fetch-relay",
@@ -91,6 +91,56 @@
       "status": "done",
       "added": "2026-09-28",
       "done_at": "2026-09-28"
+    },
+    {
+      "id": "self-caused-alerts",
+      "title": "Self-caused notification list: triage and the weekly report recognise mail that our own automation triggered (Apify pricing, SAM key) and never escalate it",
+      "why": "Three false alarms in one week, all caused by us. (1) scripts/publish-actors.mjs prices every actor PAY_PER_EVENT US$0.001/result (lines 62-71); Apify then mails the publisher 'Pricing change … $1.00/1,000 results' and triage filed two ALERTS handoffs (2026-09-27 18:07 uk-trademark-journal-watch, 2026-09-28 18:06 uk-gambling-commission) asking for a ledger check of a cost that does not exist — it is our own sale price; report 2026-W40 §6 then called it 'the highest-leverage open item'. (2) The SAM.gov key-rotation reminder became an owner: line on 2026-09-25 although sam-exclusions has read the keyless extract since 2026-09-20 (OUTSTANDING.md C1: owner acted, false alarm). Fix: docs/ops/SELF-CAUSED.md — a table pattern (sender, subject fragment) → cause (script/file) → what to log; the build routine adds a row in the same commit whenever it automates something that emails us (publishing, pricing, key rotation, DNS). Prompt sentence for the triage routine (Sonnet, hourly): 'Before classifying a store, vendor or platform mail, read docs/ops/SELF-CAUSED.md; a match is logged in docs/INBOX.md as `logged (self-caused: <cause>)` and never becomes an ALERTS.md line or a `needs owner`.' Same sentence for the weekly report before §3/§6. The prompt edits themselves are a handoff (RemoteTrigger API, interactive session). Evidence 3 (three occurrences) × reach 3 (triage 24×/day, report, owner) ÷ 0.2 days.",
+      "effort_days": 0.2,
+      "proof": "zero ALERTS/owner lines over 30 days that a later done:/OUTSTANDING line calls a false alarm; the two Apify pricing handoffs closed",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-09-29"
+    },
+    {
+      "id": "triage-backlog-window",
+      "title": "Inbox triage searches unread mail without an age window, so a missed slot cannot lose mail",
+      "why": "The hourly triage searches `newer_than:3h`; when slots are missed (GitHub cron gaps 2026-09-21/22, usage limits) the mail in between is never read. Nine unread threads dated 2026-09-18..21 surfaced only on 2026-09-28 17:07 by a manual catch-up (docs/INBOX.md 'Backlog catch-up'): the Gmail Send-as confirmation for info@gankdat.com (expired unclicked, owner had to redo it), Chrome Web Store identity verification (publishing unblocked a week late), the mcpservers.org approval, the Datarade application receipt. Fix: replace the search with `in:inbox is:unread` (no age filter) and mark each logged thread read in the same run (already done for triaged mail), so the window is the read state, not the clock; cap one run at 30 threads, oldest first, and note 'backlog' in the INBOX line when the mail is older than 3 h. Exact sentence for the triage prompt: 'Search Gmail for `in:inbox is:unread` (no newer_than filter): unread is the queue, so a missed slot only delays mail; process oldest first, at most 30 threads per run, mark each processed thread read, and write `(backlog)` after the timestamp of any thread older than 3 h.' Prompt edit is a handoff. Evidence 3 (9 threads, two owner-visible consequences) × reach 2 ÷ 0.1 days.",
+      "effort_days": 0.1,
+      "proof": "no 'backlog' or 'found unread' INBOX line over 30 days; every store mail logged within 2 h of arrival",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-09-29"
+    },
+    {
+      "id": "metrics-change-feed-count",
+      "title": "Daily numbers row measures change-feed use (MCP get_changes + REST /v1/changes over 7 days), which STRATEGY §4 targets but nothing counts",
+      "why": "STRATEGY §4 target 'Change-feed calls / week: 50' and the proofs of change-feed-upsell (done 2026-09-24, ≥ 50 calls/week) and trademark-watch-surface (done 2026-09-28) cannot be read anywhere: ventures/gankdat/scripts/metrics.mjs has no change-feed query, and the REST routes write no traffic data point at all — only /mcp (routes/mcp.ts) and /x402 (x402/routes.ts) call TRAFFIC.writeDataPoint — so review 2026-W39 §1 records 'unknown, likely 0'. Fix: (a) the /v1/changes and /v1/data handlers write a fire-and-forget data point (blob1 rest_changes|rest_data, blob2 UA, blob3 path, blob5 source slug; no IP, same shape as mcp_authed); (b) metrics.mjs adds one Analytics Engine query — blob5 LIKE '%get_changes%' on mcp_authed plus blob1 = 'rest_changes', 7 days — and prints `changes 7d: N (mcp M, rest R)`; (c) STRATEGY §4 row names that column as its source. Evidence 3 (a target and two proofs unmeasurable) × reach 3 (review, report, build decide on it) ÷ 0.15 days.",
+      "effort_days": 0.15,
+      "proof": "the Daily numbers row carries `changes 7d:` from the first run; review 2026-W40 fills the change-feed row with a number",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-09-29"
+    },
+    {
+      "id": "metrics-apify-runs",
+      "title": "Daily numbers row carries Apify actor runs and users from the Apify API (APIFY_TOKEN already in CI)",
+      "why": "STRATEGY §4 target 'Apify paid runs / month: 100' is unmeasured — review 2026-W39 §4: 'no run count reaches the repo'. All 17 actors went public on 2026-09-28 (RUNS 21:30), so from now the shelf either produces runs or it does not, and no routine can see which. The token exists: gankdat-publish.yml passes secrets.APIFY_TOKEN to scripts/publish-actors.mjs. Fix: docs/ci/gankdat-metrics.yml (the workflow installer moves it) adds APIFY_TOKEN to the metrics step; metrics.mjs calls GET https://api.apify.com/v2/acts?my=1&limit=100 and sums the per-actor stats (totalRuns, totalUsers30Days — confirm field names from the first response in the CI log), printing `apify: R runs (+d/24h), U users/30d, P public`; the +d comes from yesterday's row. Evidence 3 × reach 3 (the §4 target, review, report) ÷ 0.15 days.",
+      "effort_days": 0.15,
+      "proof": "the row carries `apify:` from the first run; the first paid run is visible in the row within 24 h of happening",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-09-29"
+    },
+    {
+      "id": "store-approval-to-store-md",
+      "title": "A store approval or rejection mail updates the venture's STORE.md status line in the triage commit, so the metrics routine reads the live listing the next morning",
+      "why": "Store state reaches ALERTS.md but not the files the routines read. Firefox AMO tentatively approved ReadFocus and Highlight Keep on 2026-09-22 22:25/22:40 (INBOX), yet both STORE.md files still say 'awaiting review' and venture.json 'building' on 2026-09-29 — seven days, flagged by review 2026-W39 §2 and again by report 2026-W40 §2, and the daily metrics routine has read 'not live yet' for both every day since. mcpservers.org approval (2026-09-21) reached the listings log only on 2026-09-28. Fix: exact sentence for the triage prompt: 'A mail from a store or directory that approves, publishes, rejects or takes down one of our listings also updates that venture's STORE.md status line (and venture.json status when a first listing goes live) in the same commit, citing the mail's date; then the ALERTS line is informational.' Plus one build-routine step now: record the two AMO listings as tentatively approved 2026-09-22 with their URLs so the metrics routine starts reading them. Prompt edit is a handoff. Evidence 2 (three listings, two reviews flagged it) × reach 2 (metrics daily, review, report) ÷ 0.1 days.",
+      "effort_days": 0.1,
+      "proof": "AMO Daily check rows show install counts instead of 'not live yet'; no review/report flags an unrecorded listing over 30 days",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-09-29"
     }
   ]
 }
