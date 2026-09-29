@@ -125,3 +125,22 @@ between agents use `handoff:` and are not sent.
   `wrangler.jsonc` every morning by the `gankdat metrics` job (`scripts/schedules.mjs reset`).
 - Owner-visible state (action files, alerts) is only ever written together with the work it
   describes, in the same commit.
+
+## Ops research log (the foundry queue's evidence; the Saturday retro takes over from here)
+
+- **2026-09-29 (build routine, research run — `npm run pipeline empty` listed `foundry`)**. Week to
+  2026-09-28 measured from RUNS.md, ALERTS.md, INBOX.md, review W39, report W40 and the code:
+  every build/exchange/review/report slot since 2026-09-24 left a trace (builds finish 26–45 min after
+  the slot; the one miss, Wed 2026-09-23 17:00, was the usage limit and is what the watchdog now
+  catches); the relay round trip is 15–25 s (request commit → response commit), well inside the
+  routines' 120 s wait; all eight foundry items were done. Defects found and queued: three false
+  alarms our own automation caused (Apify "pricing change" mails are the `publish-actors.mjs`
+  PAY_PER_EVENT price we set ourselves — two handoffs and report W40's "highest-leverage" next step;
+  the SAM key reminder for a keyless source) → `self-caused-alerts` (8); nine threads of mail lost for
+  a week to triage's `newer_than:3h` window → `triage-backlog-window` (7); two STRATEGY §4 targets
+  with no measurement anywhere — change-feed calls (REST routes write no traffic point at all) and
+  Apify runs (token already in CI) → `metrics-change-feed-count` (8), `metrics-apify-runs` (7); store
+  approvals that never reach STORE.md (AMO, seven days) → `store-approval-to-store-md` (5). Seen but
+  not queued (score < 4): the root gate's 4–5 minutes of vitest per run; the Wednesday burn-down has
+  no evidence yet (first window 2026-09-30). Also fixed today: uk-insolvency's momentary Gazette 500
+  (gankdat queue `gazette-5xx-retry`, done).

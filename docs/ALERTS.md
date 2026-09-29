@@ -152,3 +152,8 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   have expired, in which case re-trigger from Gmail Settings → Accounts and Import → Send mail as. Nothing to
   do if you don't need to send as info@gankdat.com.
 - 2026-09-28 gankdat/apify: pricing change for uk-gambling-commission-licence-register actor (faceless-api) — pay-per-usage → pay-per-event, $1.00/1,000 results. Same pattern as the uk-trademark-journal-watch change logged 2026-09-27; review cost impact against the actor's usage.
+- 2026-09-29 done (build routine): the 2026-09-27 and 2026-09-28 Apify "pricing change" handoffs are false alarms — the
+  $1.00 / 1,000 results is the PAY_PER_EVENT price `ventures/gankdat/scripts/publish-actors.mjs` sets on every actor we
+  publish (US$0.001 per result, STRATEGY §2); Apify mails the publisher when a pricing model is set. It is revenue we
+  charge, not a cost we pay; nothing for the ledger. The general fix (a self-caused notification list read by triage and
+  the report) is queued as foundry item `self-caused-alerts`.

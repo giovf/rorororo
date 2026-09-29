@@ -277,8 +277,20 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   product (human review, server stack, no buyer); its verified inventory of free pharma registers
   became two parked exchange ideas (pharma-registers-line, region-delta-feed); notes in
   `ventures/gankdat/docs/ARE-REUSE-NOTES.md`.
+- 2026-09-29 build (09:00 run): research run — `npm run pipeline empty` listed the foundry queue (all eight items done). Audited
+  the week's operation (RUNS, ALERTS, INBOX, review W39, report W40, the metrics and publish scripts): slots reliable since
+  09-24, relay 15–25 s, but three false alarms were caused by our own automation (the Apify "pricing change" mails are the
+  PAY_PER_EVENT price `publish-actors.mjs` sets — closed both handoffs; the SAM key reminder for a keyless source), triage's
+  `newer_than:3h` window lost nine threads for a week, two STRATEGY §4 targets (change-feed calls, Apify runs) have no
+  measurement anywhere (REST routes write no traffic point), and AMO approvals never reached STORE.md. Queued five scored
+  foundry items (self-caused-alerts 8, metrics-change-feed-count 8, triage-backlog-window 7, metrics-apify-runs 7,
+  store-approval-to-store-md 5); evidence in `docs/OPERATIONS.md` § Ops research log. Also fixed today's refresh error:
+  uk-insolvency now retries a momentary Gazette 5xx once (gankdat `gazette-5xx-retry`, done). Next buildable:
+  self-caused-alerts (8).
 
-- 2026-09-29 fallback: the 09:00 Fable build slot was missed and every open queue was blocked except
-  variables-toolkit's day-30 review, a 2026-10-21 checkpoint the selector offered today. Queue items
-  now take `not_before`, so dated reviews stay queued but out of `pipeline next` until their day;
-  foundry's queue is empty and flagged `needs_research` for the next build.
+- 2026-09-29 fallback: with every open queue blocked, `pipeline next` offered variables-toolkit's
+  day-30 review — a 2026-10-21 checkpoint — as today's work. Queue items now take `not_before`, so
+  dated reviews stay queued but out of `pipeline next` until their day. (The 09:00 Fable build ran
+  28 min late, during this run; its ops research and this fix were merged, nothing duplicated. The
+  fallback's "did Fable run?" check cannot see a slot that has not committed yet — noted for the
+  ops retro: a late slot means two runs can overlap.)

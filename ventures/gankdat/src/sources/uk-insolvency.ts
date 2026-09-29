@@ -118,16 +118,28 @@ function mapEntries(entries: unknown[]): UkInsolvencyRecord[] {
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
 const FETCH_ATTEMPTS = 3;
+// A 5xx is retried once after the fair-use pause: "thegazette.co.uk responded 500" cost the
+// 2026-09-29 wave-1 refresh its day (the fifth uk-insolvency refresh error in eight days), and
+// the Gazette's 500s are momentary — the same page reads fine seconds later.
+const SERVER_ERROR_ATTEMPTS = 2;
 
 // The Gazette occasionally returns a truncated body on a 200 ("Unexpected end of JSON input",
-// 2026-09-22 wave 1); re-read the page rather than fail the refresh. Non-2xx and network
-// errors are not retried here (they fall back to fixtures as before).
+// 2026-09-22 wave 1); re-read the page rather than fail the refresh. 4xx and network errors
+// are not retried here (they fall back to fixtures as before).
 async function fetchJsonWithRetry(url: string): Promise<unknown> {
   for (let attempt = 1; ; attempt += 1) {
     const res = await fetch(url, {
       headers: { 'user-agent': 'gankdat.com data refresh (info@gankdat.com)' },
     });
-    if (!res.ok) throw new Error(`thegazette.co.uk responded ${res.status}`);
+    if (!res.ok) {
+      if (res.status >= 500 && attempt < SERVER_ERROR_ATTEMPTS) {
+        await sleep(PAGE_DELAY_MS * attempt);
+        continue;
+      }
+      throw new Error(
+        `thegazette.co.uk responded ${res.status}${attempt > 1 ? ` after ${attempt} reads` : ''}`,
+      );
+    }
     // Read the bytes first so a truncated body fails with evidence (bytes seen vs the
     // declared length, and the tail) — three refreshes failed on "Unexpected end of JSON
     // input" alone in the week to 2026-09-28, which says nothing about where the cut is.
