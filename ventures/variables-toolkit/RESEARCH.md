@@ -201,6 +201,7 @@ variables; (2) pick a subset of styles to convert; (3) toast with counts after e
 | 2026-09-26 | Daily check | 0 | 0 | — | via relay: install_count 0, like_count 0, view_count 2, comment_count 0; no new comments; fig-stats.com fetch failed: 404 |
 | 2026-09-27 | Daily check | 0 | 0 | — | via relay: install_count 0, like_count 0, view_count 2, comment_count 0; no new comments; fig-stats.com fetch failed: 404 |
 | 2026-09-28 | Daily check | 0 | 0 | — | via relay: install_count 0, like_count 0, view_count 2, comment_count 0; no new comments; fig-stats.com fetch failed: 404 |
+| 2026-09-29 | Daily check | 0 | 0 | — | via relay: install_count 0, like_count 0, view_count 2, comment_count 0; no new comments; fig-stats.com fetch failed: 404. Listing title/description now read as the v2 rewrite ("Styles to Variables, Link & Clean Up Unused Variables — Variables Toolkit") — owner appears to have republished from the Figma desktop app |
 
 ## 7. Post-launch measurement (day 1 / 7 / 30)
 
