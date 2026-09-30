@@ -293,3 +293,7 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 21:00 | burn-down | scripts/refresh-errors-to-queue.ts runs in the 06:30 metrics job; 7 tests; idempotent, 14-day cool-off
 - 2026-09-30 21:00 | burn-down | Dry run on today's rows files refresh-uk-insolvency; the research item now carries that id, no duplicate
 - 2026-09-30 21:00 | burn-down | Stopping for time (~50 min); next gankdat item is refresh-uk-insolvency (6), foundry notify-owner-cursor (6)
+- 2026-09-30 21:30 | burn-down | Built foundry notify-owner-cursor (6): a failed notify run no longer loses its bullets, the next push resends
+- 2026-09-30 21:30 | burn-down | scripts/notify-owner.ts diffs from the commit in docs/ops/NOTIFIED.md to the tip of main; 14 tests
+- 2026-09-30 21:30 | burn-down | docs/ci/notify-owner.yml: serialised runs, cursor committed [skip ci] only after every channel answered 2xx
+- 2026-09-30 21:30 | burn-down | A refused send now fails the job so it shows; an ALERTS line closed with ' — Done' is not sent as a need

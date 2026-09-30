@@ -109,7 +109,9 @@ messaging the Telegram bot; they land in `docs/OWNER-NOTES.md` within the hour.
 Any agent that needs the owner appends `- YYYY-MM-DD owner: <what and where>` to `docs/ALERTS.md`
 (or creates a new `docs/for-owner/actions/NNN-*.md`). The `notify owner` GitHub job sends those
 lines to the owner's phone (Telegram and/or WhatsApp; secrets in the repo settings). Handoffs
-between agents use `handoff:` and are not sent.
+between agents use `handoff:` and are not sent. The job sends everything added since the commit in
+`docs/ops/NOTIFIED.md` and moves that cursor only after the phone accepted it (2026-09-30), so a
+failed run resends on the next push instead of losing lines; move the cursor back by hand to resend.
 Mail that our own automation triggers (Apify pricing/publish confirmations, DMARC reports, CI
 failures on our pushes, the retired SAM key reminder) is listed in `docs/ops/SELF-CAUSED.md`; triage
 logs a match and never escalates it, and the weekly report never makes one a next step.

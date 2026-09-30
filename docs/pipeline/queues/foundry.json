@@ -227,12 +227,13 @@
     {
       "id": "notify-owner-cursor",
       "title": "notify-owner sends everything since a committed cursor instead of the push range, so a failed job's bullets go out on the next push",
-      "why": "When notify-owner run 63 crashed (2026-09-30 19:57, `push-diff-range-depth`), the four RUNS bullets of that push were lost for good: the job diffs `github.event.before..sha` and nothing ever looks at that range again — the same holds for a Telegram 5xx, a runner loss or a red `check` that cancels the job. Fix: the job reads `docs/ops/NOTIFIED.md` (the last RUNS/ALERTS line hashes it sent), sends every newer `owner:` line and RUNS line, and commits the new cursor with `[skip ci]` only after Telegram answered 2xx; a failure leaves the cursor where it was and the next push (the watchdog pushes hourly at worst) resends. Evidence 2 (one loss today; every earlier failed run — 2026-09-24, 09-28 red-CI pushes — lost its bullets the same way) × reach 3 (every owner notification) ÷ 0.1 days.",
+      "why": "When notify-owner run 63 crashed (2026-09-30 19:57, `push-diff-range-depth`), the four RUNS bullets of that push were lost for good: the job diffs `github.event.before..sha` and nothing ever looks at that range again — the same holds for a Telegram 5xx, a runner loss or a red `check` that cancels the job. Fix: the job reads `docs/ops/NOTIFIED.md` (the last RUNS/ALERTS line hashes it sent), sends every newer `owner:` line and RUNS line, and commits the new cursor with `[skip ci]` only after Telegram answered 2xx; a failure leaves the cursor where it was and the next push (the watchdog pushes hourly at worst) resends. Evidence 2 (one loss today; every earlier failed run — 2026-09-24, 09-28 red-CI pushes — lost its bullets the same way) × reach 3 (every owner notification) ÷ 0.1 days. Built 2026-09-30 (burn-down): `scripts/notify-owner.ts` (14 tests) replaces the .mjs; the cursor is a commit sha in `docs/ops/NOTIFIED.md`, the job checks out the tip of main, is serialised, commits the cursor with GITHUB_TOKEN + [skip ci] after 2xx and fails visibly on a refused send; workflow via `docs/ci/notify-owner.yml`.",
       "effort_days": 0.1,
       "proof": "every RUNS line of 30 days has a matching Telegram bullet (spot-check five); zero lost bullets after a notify failure",
       "score": 6,
-      "status": "todo",
-      "added": "2026-09-30"
+      "status": "done",
+      "added": "2026-09-30",
+      "done_at": "2026-09-30"
     },
     {
       "id": "handoff-ledger",

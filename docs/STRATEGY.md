@@ -417,3 +417,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-09-30 burn-down: built `refresh-errors-to-queue` (8) — the 06:30 metrics job now files `refresh-<slug>` items for sources that
   error two days running (`scripts/refresh-errors-to-queue.ts`, `docs/ci/gankdat-metrics.yml`), because uk-insolvency errored four
   days with nobody queuing it; the instance item is `refresh-uk-insolvency` (6) in the gankdat queue.
+- 2026-09-30 burn-down: built `notify-owner-cursor` (6) — the `notify owner` job now sends everything since a committed cursor
+  (`docs/ops/NOTIFIED.md`) and advances it only after the phone accepted, because run 63 lost four bullets for good and every
+  earlier failed run did the same; `scripts/notify-owner.ts` replaces the untested .mjs, workflow via `docs/ci/`.
