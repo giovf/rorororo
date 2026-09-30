@@ -47,8 +47,14 @@ export interface Reading {
   purchases?: number;
   /** One clause for the Notes column, e.g. `chrome: 0 users, no ratings, v0.1.0`. */
   note: string;
+  /** The page could not be read (fetch error, 403/429/5xx, unparseable body): says nothing
+   *  about whether the listing is live, so the row reads `unread`, never `not live yet`. */
+  unread?: true;
   error?: string;
 }
+
+export const USER_AGENT =
+  'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36 gankdat-store-metrics';
 
 const CHANNEL_WORD: Record<Channel, RegExp> = {
   chrome: /chrome/i,
@@ -110,11 +116,16 @@ export function parseChrome(status: number, html: string): Reading {
   const text = visibleText(html);
   const live = status === 200 && text.includes('Add to Chrome');
   if (!live) {
-    return {
+    const reading: Reading = {
       channel: 'chrome',
       live: false,
       note: `chrome: ${status === 200 ? 'page answered without "Add to Chrome"' : `${status} (not live)`}`,
     };
+    if (status !== 200 && status !== 404) {
+      reading.unread = true;
+      reading.note = `chrome: ${status} (unread)`;
+    }
+    return reading;
   }
   const cut = text.indexOf('You might also like');
   const own = cut === -1 ? text : text.slice(0, cut);
@@ -157,14 +168,19 @@ export function parseFirefox(status: number, body: string): Reading {
   try {
     json = JSON.parse(body) as AmoAddon;
   } catch {
-    return { channel: 'firefox', live: false, note: `firefox: ${status}, not JSON` };
+    return { channel: 'firefox', live: false, unread: true, note: `firefox: ${status}, not JSON` };
   }
   if (status !== 200 || json.status !== 'public') {
-    return {
+    const reading: Reading = {
       channel: 'firefox',
       live: false,
       note: `firefox: ${status === 200 ? `status ${json.status ?? 'unknown'}` : `${status} (not live)`}`,
     };
+    if (status !== 200 && status !== 404) {
+      reading.unread = true;
+      reading.note = `firefox: ${status} (unread)`;
+    }
+    return reading;
   }
   const users = json.average_daily_users ?? 0;
   const count = json.ratings?.count ?? 0;
@@ -199,14 +215,19 @@ export function parseFigma(status: number, body: string): Reading {
   try {
     plugin = (JSON.parse(body) as { meta?: { plugin?: FigmaPlugin } }).meta?.plugin;
   } catch {
-    return { channel: 'figma', live: false, note: `figma: ${status}, not JSON` };
+    return { channel: 'figma', live: false, unread: true, note: `figma: ${status}, not JSON` };
   }
   if (status !== 200 || !plugin || plugin.publishing_status !== 'approved_public') {
-    return {
+    const reading: Reading = {
       channel: 'figma',
       live: false,
       note: `figma: ${status === 200 ? `status ${plugin?.publishing_status ?? 'unknown'}` : `${status} (not live)`}`,
     };
+    if (status !== 200 && status !== 404) {
+      reading.unread = true;
+      reading.note = `figma: ${status} (unread)`;
+    }
+    return reading;
   }
   const current = plugin.current_plugin_version_id;
   const created = current ? plugin.versions?.[current]?.created_at?.slice(0, 10) : undefined;
@@ -235,7 +256,9 @@ export function parseFigma(status: number, body: string): Reading {
 
 export const DEFAULT_HEADER = '| Date | Event | Users | Rating | Sales | Notes |';
 
-/** The `Daily check` row in the venture's own columns. Users sums the live channels. */
+/** The `Daily check` row in the venture's own columns. Users sums the live channels. A row
+ *  says `not live yet` only when every channel answered and none is live; a channel that could
+ *  not be read makes it `unread`, so a 403 never reads as a listing gone. */
 export function renderRow(date: string, header: string, readings: Reading[]): string {
   const cols = header
     .split('|')
@@ -263,8 +286,9 @@ export function renderRow(date: string, header: string, readings: Reading[]): st
       case 'Rating':
         return ratings.length ? ratings.join(' / ') : '—';
       case 'Notes':
-        return live.length
-          ? `via store-metrics CI: ${notes}`
+        if (live.length) return `via store-metrics CI: ${notes}`;
+        return readings.some((r) => r.unread)
+          ? `unread (store-metrics CI: ${notes})`
           : `not live yet (store-metrics CI: ${notes})`;
       default:
         return '—';
@@ -333,7 +357,9 @@ async function fetchListing(listing: Listing): Promise<Reading> {
   try {
     const res = await fetch(listing.url, {
       headers: {
-        'user-agent': 'foundry-store-metrics/1 (+https://apps.gankdat.com)',
+        // The same browser-shaped agent the relay uses (scripts/fetch-relay.mjs): Figma's API
+        // answered 403 to a bare script agent from a runner on 2026-09-30 and 200 to this one.
+        'user-agent': USER_AGENT,
         accept: listing.channel === 'chrome' ? 'text/html' : 'application/json',
         'accept-language': 'en',
       },
@@ -350,6 +376,7 @@ async function fetchListing(listing: Listing): Promise<Reading> {
       channel: listing.channel,
       live: false,
       note: `${listing.channel}: fetch failed: ${msg.replace(/\s+/g, ' ').slice(0, 80)}`,
+      unread: true,
       error: msg,
     };
   }
@@ -373,7 +400,7 @@ async function main(): Promise<void> {
     if (!listings.length) continue;
     ventures += 1;
     const readings = await Promise.all(listings.map(fetchListing));
-    if (readings.every((r) => r.error)) failures += 1;
+    if (readings.every((r) => r.unread)) failures += 1;
     const md = readFileSync(researchFile, 'utf8');
     const row = renderRow(date, metricsHeader(md), readings);
     const next = upsertRow(md, date, row, ifMissing);

@@ -401,3 +401,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-09-30 burn-down: built `taskmaster-offline-add` (8) — `scripts/taskmaster-add.ts` (`npm run task -- add|done|list`) appends
   Taskmaster rows deterministically because the MCP timed out in every sandbox (seven times) and the CLI is absent; the three
   rows waiting on the 2026-09-29 handoff (17–19) are filed and the handoff closed. Next foundry item: `prompts-from-repo` (8).
+- 2026-09-30 burn-down: store-metrics live run showed Figma 403 to a script agent from a runner — job now uses the relay's
+  browser-shaped agent and writes `unread` (not `not live yet`) when a page cannot be read; gankdat vitest `testTimeout` 20 s after
+  check run 118 went red on runner timing alone.

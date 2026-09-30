@@ -176,13 +176,31 @@ describe('renderRow', () => {
     ).toBe(true);
   });
 
-  it('says not live yet, with the reason, when nothing answers', () => {
+  it('says not live yet only when every channel answered and none is live', () => {
     const row = renderRow('2026-10-01', DEFAULT_HEADER, [
       parseChrome(404, ''),
-      { channel: 'firefox', live: false, note: 'firefox: fetch failed: timeout', error: 'timeout' },
+      parseFirefox(404, '{"detail":"Not found."}'),
     ]);
     expect(row).toBe(
-      '| 2026-10-01 | Daily check | — | — | — | not live yet (store-metrics CI: chrome: 404 (not live); firefox: fetch failed: timeout) |',
+      '| 2026-10-01 | Daily check | — | — | — | not live yet (store-metrics CI: chrome: 404 (not live); firefox: 404 (not live)) |',
+    );
+  });
+
+  it('says unread, never not live yet, when a channel could not be read (403, fetch error)', () => {
+    const figma403 = parseFigma(403, '<html>Forbidden</html>');
+    expect(figma403).toMatchObject({ live: false, unread: true, note: 'figma: 403, not JSON' });
+    expect(parseChrome(429, '')).toMatchObject({ unread: true, note: 'chrome: 429 (unread)' });
+    expect(parseFirefox(503, '{}')).toMatchObject({ unread: true, note: 'firefox: 503 (unread)' });
+    const header = '| Date | Event | Users | Likes | Purchases | Notes |';
+    expect(renderRow('2026-10-01', header, [figma403])).toBe(
+      '| 2026-10-01 | Daily check | — | — | — | unread (store-metrics CI: figma: 403, not JSON) |',
+    );
+    const row = renderRow('2026-10-01', DEFAULT_HEADER, [
+      parseChrome(404, ''),
+      { channel: 'firefox', live: false, unread: true, note: 'firefox: fetch failed: timeout' },
+    ]);
+    expect(row).toContain(
+      '| unread (store-metrics CI: chrome: 404 (not live); firefox: fetch failed: timeout) |',
     );
   });
 });

@@ -269,3 +269,7 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 19:45 | burn-down | scripts/taskmaster-add.ts validates the tag shape, takes the next id and refreshes the metadata counts; 8 tests
 - 2026-09-30 19:45 | burn-down | Filed the three rows the 2026-09-29 handoff was waiting on: 17 change-feed count, 18 directory listing, 19 lazy OAuth
 - 2026-09-30 19:45 | burn-down | That Taskmaster handoff is closed in ALERTS; gankdat and root CLAUDE.md now name the offline form for sandboxes
+- 2026-09-30 19:56 | burn-down | store metrics live run 19:48: Chrome and Firefox rows read from the runner, but Figma's API answered 403 there
+- 2026-09-30 19:56 | burn-down | Fix pushed: the job now sends the relay's browser-shaped user agent (the one Figma answers 200 to)
+- 2026-09-30 19:56 | burn-down | A page the job cannot read now writes 'unread (…)', never 'not live yet' — a 403 must not read as a listing gone
+- 2026-09-30 19:56 | burn-down | Heal: check run 118 red on two uk-trademark-journal tests timing out at 5 s on a slow runner; testTimeout now 20 s
