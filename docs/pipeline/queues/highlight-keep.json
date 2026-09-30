@@ -18,12 +18,13 @@
     {
       "id": "amo-listing-previews",
       "title": "Firefox listing gets its two 1280×800 screenshots, Productivity category, tags and the apps.gankdat.com homepage via the AMO API",
-      "why": "Relay amo-listings 2026-09-30: the live AMO listing has previews 0, tags [], categories ['other'] and a github.io homepage — web-ext sign only ships the fields in assets/amo-metadata.json, never images or category. A listing with no screenshots and category 'other' is invisible in AMO's productivity browse pages and search; both extensions show 0 weekly downloads after eight days public. Build: scripts/amo-listing.ts (JWT from AMO_JWT_ISSUER/SECRET, POST previews from assets/screenshots/, PATCH homepage + tags + categories), unit-tested request shaping; the run is one ALERTS handoff line (keys only in .env), or rides foundry extension-publish-in-ci once the secrets exist. Same script serves ReadFocus.",
+      "why": "Relay amo-listings 2026-09-30: the live AMO listing has previews 0, tags [], categories ['other'] and a github.io homepage — web-ext sign only ships the fields in assets/amo-metadata.json, never images or category. A listing with no screenshots and category 'other' is invisible in AMO's productivity browse pages and search; both extensions show 0 weekly downloads after eight days public. Build: scripts/amo-listing.ts (JWT from AMO_JWT_ISSUER/SECRET, POST previews from assets/screenshots/, PATCH homepage + tags + categories), unit-tested request shaping; the run is one ALERTS handoff line (keys only in .env), or rides foundry extension-publish-in-ci once the secrets exist. Same script serves ReadFocus. DONE 2026-09-30 (burn-down): scripts/amo-listing.ts (`npm run amo-listing -- ventures/<slug>`, 6 tests) reads assets/amo-listing.json, PATCHes category/tags/homepage/support and uploads the missing previews in order, idempotent; configs shipped for highlight-keep and read-focus. The run needs the AMO keys, so it is folded into the 0.1.1 handoff in ALERTS; the proof row comes from the daily metrics after that run.",
       "effort_days": 0.3,
       "proof": "AMO weekly_downloads > 0 within 14 days of the previews going up (RESEARCH.md metrics row)",
       "score": 6,
-      "status": "todo",
-      "added": "2026-09-30"
+      "status": "done",
+      "added": "2026-09-30",
+      "done_at": "2026-09-30"
     },
     {
       "id": "weava-alternative-page",

@@ -223,8 +223,10 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
 - 2026-09-30 handoff: **ship Highlight Keep 0.1.1** (links moved from github.io to apps.gankdat.com; queue item
   `post-approval-links`, action 013). From a machine with `.env`: `bash scripts/amo-publish.sh ventures/highlight-keep`
   (signs 0.1.1 with `assets/amo-metadata.json`, whose `homepage` is now apps.gankdat.com — AMO takes the homepage from the
-  metadata; if it does not, `PATCH https://addons.mozilla.org/api/v5/addons/addon/highlight-keep-web-highlighter/` with
-  `{"homepage":{"en-US":"https://apps.gankdat.com/highlightkeep.html"}}` under the same JWT), then
+  metadata), then `npm run amo-listing -- ventures/highlight-keep` (new `scripts/amo-listing.ts`: uploads the two
+  screenshots, sets category Productivity, tags, homepage and support on the AMO listing, idempotent; a 400 on `tags`
+  names AMO's allowed list — pick the nearest and rerun; then the same for `ventures/read-focus`, whose
+  `assets/amo-listing.json` is already there), then
   `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
   Record the submission dates in `ventures/highlight-keep/STORE.md`. Do not flip the repo private yet: that waits for the
   owner's Chrome dashboard privacy-URL edit (action 013) on both extensions and for ReadFocus's own 0.1.1. ~15 min.

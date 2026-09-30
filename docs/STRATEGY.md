@@ -428,3 +428,5 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-09-30 burn-down: research (highlight-keep) — nobody can find it yet (0 users, AMO listing with no screenshots in 'other'); four
   scored items, distribution first (AMO previews 6, Weava-alternative page 6, Chrome dashboard keywords 4, PDF 3); foundry
   `extension-publish-in-ci` (5) because every release is a handoff while the store keys live only in `.env`.
+- 2026-09-30 burn-down: built highlight-keep `amo-listing-previews` (6) — `scripts/amo-listing.ts` fixes the empty AMO listing (previews,
+  category, tags, homepage) for both extensions; one handoff run, then the metrics rows show whether Firefox downloads start.

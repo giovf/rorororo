@@ -315,3 +315,5 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 22:45 | burn-down | Queued weava-alternative-page (6): a comparison page on apps.gankdat.com for burned Weava users
 - 2026-09-30 22:45 | burn-down | Queued cws-listing-keywords (4, owner dashboard) and pdf-highlighting (3, feature, behind distribution)
 - 2026-09-30 22:45 | burn-down | Queued foundry extension-publish-in-ci (5): store releases from CI once five secrets exist, no more handoffs
+- 2026-09-30 22:55 | burn-down | Built highlight-keep amo-listing-previews (6): scripts/amo-listing.ts puts screenshots, category, tags and homepage on AMO
+- 2026-09-30 22:55 | burn-down | Idempotent, 6 tests; configs for both extensions; the run rides the 0.1.1 handoff since the AMO keys live only in .env

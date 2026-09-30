@@ -27,6 +27,7 @@
     "ops": "node --disable-warning=ExperimentalWarning scripts/ops-dashboard.ts",
     "e2e": "npm run e2e -w @foundry/read-focus && npm run e2e -w @foundry/highlight-keep",
     "cws": "node --disable-warning=ExperimentalWarning --env-file=.env scripts/cws-publish.ts",
+    "amo-listing": "node --disable-warning=ExperimentalWarning --env-file=.env scripts/amo-listing.ts",
     "pipeline": "node --disable-warning=ExperimentalWarning scripts/pipeline.ts",
     "slot": "node --disable-warning=ExperimentalWarning scripts/slot.ts",
     "task": "node --disable-warning=ExperimentalWarning scripts/taskmaster-add.ts",
