@@ -289,3 +289,7 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 20:55 | burn-down | Queued notify-owner-cursor (6): bullets a failed notify run lost go out on the next push
 - 2026-09-30 20:55 | burn-down | Queued handoff-ledger (5): eight open handoffs, four stale — `npm run handoffs` lists them by age
 - 2026-09-30 20:55 | burn-down | Closed two stale handoffs: three false-alarm ALERTS entries deleted (09-29 ask), CWS verification noted
+- 2026-09-30 21:00 | burn-down | Built foundry refresh-errors-to-queue (8): a source erroring two days running is queued for the next build
+- 2026-09-30 21:00 | burn-down | scripts/refresh-errors-to-queue.ts runs in the 06:30 metrics job; 7 tests; idempotent, 14-day cool-off
+- 2026-09-30 21:00 | burn-down | Dry run on today's rows files refresh-uk-insolvency; the research item now carries that id, no duplicate
+- 2026-09-30 21:00 | burn-down | Stopping for time (~50 min); next gankdat item is refresh-uk-insolvency (6), foundry notify-owner-cursor (6)
