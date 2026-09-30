@@ -1,9 +1,24 @@
 name: notify owner
 
+# Sends new `owner:` lines, new action files and new docs/RUNS.md lines to the owner's phone.
+# Since 2026-09-30 (foundry `notify-owner-cursor`) the job diffs from the commit recorded in
+# docs/ops/NOTIFIED.md to the tip of main and commits the new cursor only after every channel
+# accepted every message, so a crashed or refused run loses nothing: the next push resends.
+# The cursor push uses GITHUB_TOKEN (triggers no workflow) and carries the skip-ci marker besides.
+# Never write that marker in a hand-written commit message, subject or body: the 2026-09-30 21:30
+# commit that shipped this file mentioned it in its body and GitHub ran nothing on the push.
 on:
   push:
     branches: [main]
     paths: ['docs/ALERTS.md', 'docs/RUNS.md', 'docs/for-owner/actions/**']
+  workflow_dispatch: # resend everything since the cursor (e.g. after moving it back by hand)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: notify-owner
+  cancel-in-progress: false # runs are serialised so two pushes never send the same lines twice
 
 jobs:
   notify:
@@ -11,14 +26,29 @@ jobs:
     steps:
       - uses: actions/checkout@v7
         with:
-          fetch-depth: 0 # the push range (github.event.before..sha) spans every commit of the push; depth 2 lost a two-commit push (2026-09-30)
+          ref: main # the tip, not github.sha: everything since the cursor goes out in one run
+          fetch-depth: 0 # the cursor may be many commits back
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-      - run: node scripts/notify-owner.mjs
+      - run: node --disable-warning=ExperimentalWarning scripts/notify-owner.ts
         env:
-          DIFF_RANGE: ${{ github.event.before }}..${{ github.sha }}
+          PUSH_BEFORE: ${{ github.event.before }} # fallback left end when the cursor does not resolve
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
           CALLMEBOT_APIKEY: ${{ secrets.CALLMEBOT_APIKEY }}
+      - name: Commit the cursor
+        if: success()
+        run: |
+          git config user.name "foundry-notify[bot]"
+          git config user.email "info@gankdat.com"
+          git add docs/ops/NOTIFIED.md
+          git diff --cached --quiet && { echo "cursor unchanged"; exit 0; }
+          git commit -m "notify: cursor $(git rev-parse --short HEAD) sent [skip ci]"
+          for i in 1 2 3 4; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          echo "cursor push failed after 4 tries — the next run resends (duplicates, never loss)"
+          exit 1
