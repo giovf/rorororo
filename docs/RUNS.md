@@ -318,3 +318,7 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 22:55 | burn-down | Built highlight-keep amo-listing-previews (6): scripts/amo-listing.ts puts screenshots, category, tags and homepage on AMO
 - 2026-09-30 22:55 | burn-down | Idempotent, 6 tests; configs for both extensions; the run rides the 0.1.1 handoff since the AMO keys live only in .env
 - 2026-09-30 22:55 | burn-down | Stopping for time (~45 min): next is highlight-keep weava-alternative-page (6), then read-focus post-approval-links (5)
+- 2026-09-30 23:25 | burn-down | Built highlight-keep weava-alternative-page (6): apps.gankdat.com/weava-alternative.html, 11-row honest comparison
+- 2026-09-30 23:25 | burn-down | Page linked from the landing index, the Highlight Keep page and both listing texts (AMO rides 0.1.1, CWS the dashboard)
+- 2026-09-30 23:25 | burn-down | Highlight Keep page now shows the live Chrome and Firefox install buttons instead of 'listings in review'
+- 2026-09-30 23:25 | burn-down | sitemap.xml and robots.txt added to apps.gankdat.com so Search Console lists the new page

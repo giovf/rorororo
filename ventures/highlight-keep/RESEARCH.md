@@ -91,3 +91,14 @@ Foundry: `extension-publish-in-ci` (5) — releases stop being handoffs once fiv
 are in GitHub Actions. Kill check (STRATEGY §7): zero sales and zero organic signal 90 days after
 every listing is live → 2026-12-21 if nothing moves; the items above are what "effort" means
 until then.
+
+### 2026-09-30 (burn-down) — `weava-alternative-page` built
+`https://apps.gankdat.com/weava-alternative.html` is the search-capture page for "weava alternative" /
+"weava not saving highlights" / "super simple highlighter pages disappear": an 11-row comparison table,
+one paragraph per rival written from the September 2026 review sample in `research/cws-reviews-2026-09-19.json`
+(quoted as "reviews report …", never as our claim), an honest "not yet" for PDF highlighting and sync, and
+the two live install buttons. Linked from the landing index and the Highlight Keep page, and appended to
+both listing descriptions (AMO via `assets/amo-metadata.json` on the 0.1.1 sign; Chrome via `LISTING.md`
+on the owner's action-013 dashboard visit). `sitemap.xml` and `robots.txt` now exist on apps.gankdat.com
+(the property is already verified in Search Console). Proof at day 30 (2026-10-30): ≥ 50 impressions or
+≥ 5 clicks on the page in Search Console; the metrics row shows whether installs follow.

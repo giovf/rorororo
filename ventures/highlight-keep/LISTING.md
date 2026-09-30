@@ -18,6 +18,8 @@ Private by design: no account, no sync server, no data collection. Highlights an
 
 Made for students, researchers and anyone who reads for a living.
 
+Switching from Weava or Super Simple Highlighter? Side-by-side comparison: https://apps.gankdat.com/weava-alternative.html
+
 **Category:** Productivity → Tools · **Language:** English
 **Single purpose:** Let the user highlight and annotate text on web pages and keep those highlights.
 **Permissions justification:** `storage` — save your highlights and settings. `activeTab` + `scripting` — add the highlighter to the page you're viewing when you switch it on. Optional host permission, granted per site — Chrome asks once when you enable a site; the extension only ever runs on sites you've enabled. Nothing is read out of the page beyond the text you select, and nothing is sent anywhere.

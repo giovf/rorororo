@@ -29,12 +29,13 @@
     {
       "id": "weava-alternative-page",
       "title": "apps.gankdat.com/weava-alternative.html: a comparison page for burned Weava / Super Simple Highlighter users, linked from the landing and both listings",
-      "why": "RESEARCH.md 2026-09-19: Weava (200k users, last update Feb 2024) reviews say 'no longer saves your highlights', 'no way to cancel', 'stole $240'; Super Simple Highlighter 'saved pages started to disappear'. Those users search 'weava alternative' / 'weava not saving highlights' and there is no page of ours answering it. STRATEGY §5: distribution beats features until the funnel converts — a static page is the cheapest channel we own (Search Console already indexes apps.gankdat.com). Page: side-by-side table (local storage, no account, $12 once vs $3.99–7.99/mo), one honest paragraph per rival, Markdown export, install buttons for Chrome and Firefox, the refund line.",
+      "why": "RESEARCH.md 2026-09-19: Weava (200k users, last update Feb 2024) reviews say 'no longer saves your highlights', 'no way to cancel', 'stole $240'; Super Simple Highlighter 'saved pages started to disappear'. Those users search 'weava alternative' / 'weava not saving highlights' and there is no page of ours answering it. STRATEGY §5: distribution beats features until the funnel converts — a static page is the cheapest channel we own (Search Console already indexes apps.gankdat.com). Page: side-by-side table (local storage, no account, $12 once vs $3.99–7.99/mo), one honest paragraph per rival, Markdown export, install buttons for Chrome and Firefox, the refund line. DONE 2026-09-30 (burn-down): packages/landing/site/weava-alternative.html — 11-row table (storage, account, price, survival of page changes, notes, search, export, PDF, where it runs, last update, cancelling), one honest paragraph per rival with the export-before-you-cancel advice, a 'what we don't do' list (no PDF, no sync), Chrome + Firefox install buttons, the buy link and refund line; canonical URL. Linked from index.html, highlightkeep.html (which also gained the live store buttons instead of 'listings in review'), LISTING.md and amo-metadata.json (the AMO copy rides the 0.1.1 sign; the CWS copy is the owner's action-013 dashboard visit). sitemap.xml + robots.txt added so Search Console lists the page. Proof read from Search Console at the day-30 mark.",
       "effort_days": 0.3,
       "proof": "Search Console: ≥ 50 impressions or ≥ 5 clicks on the page in 30 days; any install attributed to it",
       "score": 6,
-      "status": "todo",
-      "added": "2026-09-30"
+      "status": "done",
+      "added": "2026-09-30",
+      "done_at": "2026-09-30"
     },
     {
       "id": "cws-listing-keywords",

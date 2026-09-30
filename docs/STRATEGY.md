@@ -430,3 +430,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `extension-publish-in-ci` (5) because every release is a handoff while the store keys live only in `.env`.
 - 2026-09-30 burn-down: built highlight-keep `amo-listing-previews` (6) — `scripts/amo-listing.ts` fixes the empty AMO listing (previews,
   category, tags, homepage) for both extensions; one handoff run, then the metrics rows show whether Firefox downloads start.
+- 2026-09-30 burn-down: built highlight-keep `weava-alternative-page` (6) — the page a burned Weava / Super Simple user finds when they
+  search, on the host Search Console already indexes; honest table (PDF and sync marked "not yet"), live install buttons, both listing
+  texts link to it. Distribution before features (§5); proof is Search Console at day 30.
