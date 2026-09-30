@@ -220,3 +220,11 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 09:45 | fallback | The nine threads lost for a week in September (expired Send-as link, late CWS verification) is what this prevents
 - 2026-09-30 09:45 | fallback | No new owner handoff: the live prompt edit rides the 2026-09-29 one, which now carries both triage sentences
 - 2026-09-30 09:45 | fallback | Third slot-race collision in two days logged on fallback-slot-race: the window is 6-9 min after the check
+- 2026-09-30 17:46 | build | gankdat v0.21.0: lazy OAuth for /mcp — discovery docs, /authorize (CIMD + PKCE, magic-link consent), /token (rotation)
+- 2026-09-30 17:46 | build | 401 gate: connect_account tool and a spent preview budget now answer the OAuth challenge → Claude's Connect card
+- 2026-09-30 17:46 | build | Tokens bill the account's oauth:<client> key: plan, credits, metering; revoking it at /account disconnects the client
+- 2026-09-30 17:46 | build | test/oauth.spec.ts (12 flows: CIMD, loopback, PKCE, refresh replay, revoke); gankdat gate green, 359 tests
+- 2026-09-30 17:46 | build | Daily numbers gain 'oauth: N connects/24h' + client hosts — the proof number for the directory funnel
+- 2026-09-30 17:46 | build | Listing pack: auth type stays none + lazy auth (per Anthropic docs); docs#claude, privacy policy, llms.txt updated
+- 2026-09-30 17:46 | build | Queue: mcp-oauth-lazy-auth done; next gankdat item is the 2026-10-30 day-30 read, so builds fall back to foundry (7)
+- 2026-09-30 17:46 | build | Taskmaster rows still pending for the new OAuth module (MCP timed out again, no CLI) — rides the 2026-09-29 handoff

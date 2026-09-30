@@ -19,6 +19,7 @@ import { dataRoutes } from './routes/data';
 import { healthRoute } from './routes/health';
 import { keysRoutes } from './routes/keys';
 import { mcpOriginAllowed, mcpRoute } from './routes/mcp';
+import { oauthRoutes } from './routes/oauth';
 import { llmsRoute } from './routes/llms';
 import { openapiRoute } from './routes/openapi';
 import { statsRoutes } from './routes/stats';
@@ -80,6 +81,10 @@ app.use('/mcp/*', (c, next) =>
   cors({ origin: (origin) => (mcpOriginAllowed(origin, c.env) ? origin : null) })(c, next),
 );
 app.use('/x402/*', publicCors);
+// OAuth discovery and the token endpoint: fetched by Claude server-side, and
+// by browser-based MCP clients (Inspector) cross-origin. No cookies involved.
+app.use('/.well-known/oauth-*', publicCors);
+app.use('/token', publicCors);
 
 // Public: /v1/health, /openapi.json, key issuance, and the sources listing
 // (GET /v1/data — discovery must work before signup). Authed: per-source data
@@ -129,6 +134,8 @@ app.route('/v1/billing', billingRoutes);
 app.route('/v1/waitlist', waitlistRoute);
 app.route('/v1/feedback', feedbackRoute);
 app.route('/mcp', mcpRoute);
+// Lazy OAuth for /mcp: discovery documents, /authorize, /token (routes/oauth.ts).
+app.route('/', oauthRoutes);
 app.route('/x402', x402Routes);
 app.route('/openapi.json', openapiRoute);
 app.route('/llms.txt', llmsRoute);

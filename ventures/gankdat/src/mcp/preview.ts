@@ -90,7 +90,7 @@ export function previewNextStep(): string {
   const paidLine = paid
     ? ` Paid plans from £${paid.gbp}/month (${paid.name}: ${paid.credits.toLocaleString('en-GB')} credits) at ${API_BASE_URL}/#pricing.`
     : '';
-  return `A free API key gives ${FREE_TIER_CREDITS} credits/month with full pages (no card): call request_api_key with the user's email, or sign in at ${API_BASE_URL}/account, then send the key as "Authorization: Bearer <key>".${paidLine}`;
+  return `A free API key gives ${FREE_TIER_CREDITS} credits/month with full pages (no card): in Claude call connect_account to sign in; elsewhere call request_api_key with the user's email, or sign in at ${API_BASE_URL}/account, then send the key as "Authorization: Bearer <key>".${paidLine}`;
 }
 
 export function previewExhaustedMessage(): string {

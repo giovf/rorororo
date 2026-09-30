@@ -340,3 +340,15 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   with no age filter, oldest first, at most 30 threads a run, and step 2
   marks anything older than 3 h `(backlog)` — unread state is the queue, so a missed slot can only delay mail.
   The live prompt edit rides the open 2026-09-29 handoff rather than adding a second one.
+- 2026-09-30 build: built gankdat `mcp-oauth-lazy-auth` (8, the pipeline's top item — distribution: the directory listing
+  can discover but not convert until Claude can sign a buyer in). v0.21.0 makes the Worker its own authorization server:
+  RFC 9728/8414 discovery, `/authorize` with CIMD (the client_id URL is fetched and must name itself and the
+  redirect_uri; loopback port-agnostic for Claude Code) and consent on the magic-link session (the emailed link carries
+  `next` back to the request, so the hop may finish in another tab — deterministic, no script; a popup poller is the
+  follow-up if the numbers show the hop losing people), `/token` with S256 PKCE, 1 h access + 30 d rotating refresh
+  tokens and family revocation on replay. The 401 challenge fires for the one protected tool `connect_account` ("sign
+  in to gankdat") and for a data tool once the preview budget is spent — so the paywall now ends in Claude's Connect
+  card instead of a dead-end tool error. Tokens map to an `oauth:<client host>` key on the account (plan, credits,
+  metering, revocation all the key's). Listing stays auth type `none` + lazy auth per Anthropic's docs. Proof: the daily
+  numbers row now prints `oauth: N connects/24h` and the client hosts. Next gankdat item is the day-30 read
+  (2026-10-30); the build queue falls back to foundry items (7) until the exchange adds more.

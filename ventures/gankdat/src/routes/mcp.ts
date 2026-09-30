@@ -2,11 +2,18 @@ import { StreamableHTTPTransport } from '@hono/mcp';
 import { Hono } from 'hono';
 import type { Context } from 'hono';
 import { requireApiKey } from '../auth/middleware';
+import { bearerChallenge, resourceMetadataUrl } from '../auth/oauth';
 import { SIGNUP_RATE_LIMIT } from '../auth/signup';
 import { API_BASE_URL, publicBaseUrl } from '../lib/constants';
 import { failure } from '../lib/envelope';
-import { previewClientId } from '../mcp/preview';
-import { buildMcpServer, MCP_NO_KEY_HINT, SIGNUP_TOOLS } from '../mcp/server';
+import { previewCallsRemaining, previewClientId, previewExhaustedMessage } from '../mcp/preview';
+import {
+  buildMcpServer,
+  FREE_TOOLS,
+  MCP_NO_KEY_HINT,
+  PROTECTED_TOOLS,
+  SIGNUP_TOOLS,
+} from '../mcp/server';
 import { isolateRateLimit, rateLimit } from '../metering/ratelimit';
 import type { AppEnv } from '../types';
 
@@ -64,7 +71,10 @@ export function mcpOriginAllowed(origin: string, env: CloudflareBindings): boole
 // (mcp/preview.ts) so an authless directory listing can run every tool.
 // Reading the body here is safe: HonoRequest caches parsed JSON, so the
 // transport's own req.json() gets the cached copy, not a consumed stream.
-type AnonymousKind = 'introspection' | 'signup' | 'request' | 'preview' | null;
+// 'protected' is a tools/call on a tool that needs the user's account
+// (mcp/server.ts PROTECTED_TOOLS): answered with the OAuth 401 below, which is
+// what makes Claude show its Connect card (auth/oauth.ts).
+type AnonymousKind = 'introspection' | 'signup' | 'request' | 'preview' | 'protected' | null;
 
 async function anonymousKind(c: Context<AppEnv>): Promise<AnonymousKind> {
   if (c.req.header('Authorization')) return null;
@@ -83,6 +93,8 @@ async function anonymousKind(c: Context<AppEnv>): Promise<AnonymousKind> {
     if (typeof method !== 'string') return null;
     if (INTROSPECTION_METHODS.has(method)) continue;
     if (method === 'tools/call' && typeof params?.name === 'string') {
+      if (PROTECTED_TOOLS.has(params.name)) return 'protected';
+      if (FREE_TOOLS.has(params.name)) continue; // metadata-like: never gated
       if (params.name === 'request_api_key') kind = 'request';
       else if (SIGNUP_TOOLS.has(params.name)) {
         if (kind !== 'request') kind = 'signup';
@@ -145,6 +157,37 @@ const signupRequestRateLimit = rateLimit({
   identify: (c) => c.req.header('CF-Connecting-IP') ?? 'unknown',
 });
 
+/**
+ * The lazy-auth gate (Claude's "Answer a protected call with 401 before the
+ * MCP SDK runs"): a transport-level 401 with `resource_metadata` is the only
+ * thing that starts sign-in in Claude, Cursor or ChatGPT — a 200 tool error
+ * never does. Sent when a keyless call names a protected tool, or a data tool
+ * once the day's preview budget is spent (the paywall, which the daily numbers
+ * count as before via the `mcp_denied` point).
+ */
+async function oauthChallenge(
+  c: Context<AppEnv>,
+  reason: 'protected_tool' | 'preview_exhausted',
+): Promise<Response> {
+  const shape = await requestShape(c);
+  c.env.TRAFFIC.writeDataPoint({
+    blobs: ['mcp_denied', c.req.header('User-Agent') ?? '', shape.methods, reason, shape.tools],
+    doubles: [1],
+    indexes: ['mcp_denied'],
+  });
+  const description =
+    reason === 'protected_tool'
+      ? 'Sign in to gankdat to use this tool with your account'
+      : previewExhaustedMessage();
+  const headline =
+    reason === 'protected_tool'
+      ? description
+      : 'Preview limit reached; sign in to gankdat to continue with your plan';
+  return c.json({ error: 'invalid_token', error_description: description }, 401, {
+    'WWW-Authenticate': bearerChallenge(c.env, headline),
+  });
+}
+
 export const mcpRoute = new Hono<AppEnv>().post(
   '/',
   async (c, next) => {
@@ -169,12 +212,21 @@ export const mcpRoute = new Hono<AppEnv>().post(
           429,
         );
       }
+      if (kind === 'protected') return oauthChallenge(c, 'protected_tool');
+      if (kind === 'preview') {
+        const clientId = await previewClientId(ip, c.req.header('User-Agent') ?? '');
+        if ((await previewCallsRemaining(c.env, clientId)) === 0) {
+          return oauthChallenge(c, 'preview_exhausted');
+        }
+      }
       return kind === 'request' ? signupRequestRateLimit(c, next) : next();
     }
     // requireApiKey's 401 short-circuits before the analytics write in the
     // final handler, which would hide the strongest adoption signal there is:
     // an agent attempting tools/call without a key. Record rejections here.
-    const response = await requireApiKey(MCP_NO_KEY_HINT)(c, next);
+    // Its 401 carries the resource_metadata pointer so an OAuth client with an
+    // expired token refreshes instead of giving up.
+    const response = await requireApiKey(MCP_NO_KEY_HINT, resourceMetadataUrl(c.env))(c, next);
     if (response instanceof Response && response.status === 401) {
       const shape = await requestShape(c);
       c.env.TRAFFIC.writeDataPoint({

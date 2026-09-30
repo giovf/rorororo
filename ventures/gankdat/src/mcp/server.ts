@@ -61,6 +61,17 @@ function errorResult(message: string): ToolResult {
 /** The tools an agent may call WITHOUT a key — they are how it gets one (routes/mcp.ts). */
 export const SIGNUP_TOOLS: ReadonlySet<string> = new Set(['request_api_key', 'claim_api_key']);
 
+/**
+ * Tools that need the user's account: called without a token they are refused
+ * at the HTTP layer with the OAuth 401 (routes/mcp.ts), which is what makes
+ * Claude show its Connect card — the explicit "sign in" entry point next to
+ * the implicit one (a spent preview budget).
+ */
+export const PROTECTED_TOOLS: ReadonlySet<string> = new Set(['connect_account']);
+
+/** Free, keyless, never gated: metadata about the server and the caller's own budget. */
+export const FREE_TOOLS: ReadonlySet<string> = new Set(['list_sources', 'get_usage']);
+
 /** Appended to the HTTP 401 on a keyless tools/call: the sign-up funnel's first line. */
 export const MCP_NO_KEY_HINT =
   "No key yet? Call the request_api_key tool with the user's email (no key needed): they approve one emailed link, then claim_api_key returns the key.";
@@ -423,6 +434,38 @@ export function buildMcpServer(
       return jsonResult({
         ok: true,
         data: { plan: keyCtx.plan, period, used, granted, remaining, alerts },
+      });
+    },
+  );
+
+  server.registerTool(
+    'connect_account',
+    {
+      title: 'Sign in so this chat uses your gankdat plan',
+      description:
+        "Connect the user's gankdat account (OAuth sign-in prompt in clients that support it, such as Claude): afterwards every tool answers with full pages and the account's credits instead of the preview. Returns the plan and usage once connected. Free to call.",
+      inputSchema: {},
+      annotations: { ...READ_ONLY, title: 'Sign in so this chat uses your gankdat plan' },
+    },
+    async (): Promise<ToolResult> => {
+      // Unreachable without a token: routes/mcp.ts answers 401 first. Kept as
+      // a belt-and-braces tool error for transports that skip the gate.
+      if (!keyCtx) return errorResult('Sign in required: ' + previewNextStep());
+      const period = currentPeriod();
+      const used = await getUsage(env, keyCtx.usageSubject, period);
+      const { granted, remaining } = usageSummary(keyCtx.plan, used);
+      return jsonResult({
+        ok: true,
+        data: {
+          connected: true,
+          account: keyCtx.usageSubject,
+          plan: keyCtx.plan,
+          period,
+          used,
+          granted,
+          remaining,
+          message: `Connected as ${keyCtx.usageSubject} (${keyCtx.plan} plan): data tools now return full pages and bill this account's credits.`,
+        },
       });
     },
   );

@@ -150,6 +150,24 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   claude.ai/claude.com, loopback; else 403, CORS mirrors the list) — non-browser clients
   send none. `test/mcp-directory.spec.ts` is the conformance test for any agent
   directory. KV rate limiters fail open on KV errors.
+  **Lazy OAuth** (2026-09-30, `src/auth/oauth.ts` + `src/routes/oauth.ts`, migration 0013
+  `oauth_grants`): Claude, Cursor and ChatGPT start sign-in only on an HTTP 401 with
+  `WWW-Authenticate: Bearer resource_metadata=…` (a 200 tool error never does), so the Worker
+  is its own authorization server — RFC 9728 `/.well-known/oauth-protected-resource[/mcp]`,
+  RFC 8414 `/.well-known/oauth-authorization-server` (S256 PKCE, `token_endpoint_auth_methods
+  none`, `client_id_metadata_document_supported`), `/authorize` (CIMD: the client_id is an
+  https URL whose document is fetched and must name itself and the redirect_uri, loopback
+  matched port-agnostically for Claude Code; consent rendered on the magic-link session, the
+  emailed link carrying `next` back to the request so the hop can finish in another tab) and
+  `/token` (form-urlencoded, 1 h access + 30 d rotating refresh tokens, `invalid_grant` on
+  replay with the whole family revoked). The gate in `routes/mcp.ts` sends the 401 for the one
+  protected tool `connect_account` and for a data tool once the preview budget is spent; free
+  tools (`list_sources`, `get_usage`) are never gated. An access token resolves to an API key on
+  the account named `oauth:<client host>` (created at consent, never shown, visible and
+  revocable at /account), so plan, credits, rate limits and metering are the key's — one
+  `KeyContext` for both credentials. Only hashes are stored; the daily numbers carry
+  `oauth: … connects` (D1 codes for real accounts) and the `oauth_token` analytics point per
+  client host. `test/oauth.spec.ts`.
   **Agent-side sign-up** (2026-09-25, `src/auth/signup.ts`): the paywall's audience is
   agents that cannot click a magic link, so the two keyless tools `request_api_key`
   (user's email → approval email with a short code, RFC 8628-style) and `claim_api_key`

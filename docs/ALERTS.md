@@ -180,6 +180,8 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   recurring gap as 2026-09-21/22/23/24; gankdat's CLAUDE.md wants a task before a new module.
   2026-09-30 build: same for `claude-directory-listing` (`src/mcp/preview.ts`, the Origin gate
   in `routes/mcp.ts`, `test/mcp-directory.spec.ts`) — task-master-ai timed out again (CONNECT_TIMEOUT).
+  2026-09-30 build (17:00): same for `mcp-oauth-lazy-auth` (`src/auth/oauth.ts`, `src/routes/oauth.ts`,
+  migration 0013, `test/oauth.spec.ts`) — CONNECT_TIMEOUT again; the sandbox has no `task-master` CLI.
 - 2026-09-30 owner: nothing to do yet — heads-up that the exchange chose a **Claude Connectors Directory** listing for
   gankdat (`docs/exchange/2026-W40.md`); once the build routine ships `claude-directory-listing` it will ask you for one
   portal form at https://claude.ai/directory/manage on your paid Claude plan (~20 min, no new account, no money).

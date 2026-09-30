@@ -167,6 +167,19 @@ describe('/mcp directory conformance', () => {
     for (const name of names) {
       let args: Record<string, unknown> = {};
       if (name === 'request_api_key') continue;
+      if (name === 'connect_account') {
+        // The one deliberately protected tool: a transport-level 401 with the
+        // OAuth challenge is the sanctioned lazy-auth answer (oauth.spec.ts).
+        const { status, res } = await post({
+          jsonrpc: '2.0',
+          id: 1,
+          method: 'tools/call',
+          params: { name, arguments: {} },
+        });
+        expect(status).toBe(401);
+        expect(res.headers.get('www-authenticate')).toContain('resource_metadata=');
+        continue;
+      }
       if (name === 'claim_api_key')
         args = { request_id: req.request_id, claim_secret: req.claim_secret };
       if (name === 'get_changes') args = { source: feed };
@@ -200,12 +213,25 @@ describe('/mcp directory conformance', () => {
         .preview.calls_remaining_today,
     ).toBe(0);
 
+    // Spent: the HTTP-level OAuth challenge (what makes Claude show its
+    // Connect card), with the plan text as the advisory description.
     const spy = vi.spyOn(env.TRAFFIC, 'writeDataPoint');
-    const over = await call('query_uk_tenders', {}, client);
-    expect(over?.isError).toBe(true);
-    expect(over?.content?.[0]?.text).toContain('Preview limit reached');
-    expect(over?.content?.[0]?.text).toContain('£5/month');
-    expect(over?.content?.[0]?.text).toContain('250 credits/month');
+    const over = await post(
+      {
+        jsonrpc: '2.0',
+        id: 1,
+        method: 'tools/call',
+        params: { name: 'query_uk_tenders', arguments: {} },
+      },
+      client,
+    );
+    expect(over.status).toBe(401);
+    expect(over.res.headers.get('www-authenticate')).toContain('resource_metadata=');
+    const overBody = over.body as unknown as { error: string; error_description: string };
+    expect(overBody.error).toBe('invalid_token');
+    expect(overBody.error_description).toContain('Preview limit reached');
+    expect(overBody.error_description).toContain('£5/month');
+    expect(overBody.error_description).toContain('250 credits/month');
     expect(spy).toHaveBeenCalledWith(
       expect.objectContaining({
         blobs: ['mcp_denied', 'budget-test', 'tools/call', 'preview_exhausted', 'query_uk_tenders'],

@@ -1,5 +1,6 @@
 import type { MiddlewareHandler } from 'hono';
 import { hashKey } from './keys';
+import { ACCESS_TOKEN_PREFIX, resolveAccessToken } from './oauth';
 import { failure } from '../lib/envelope';
 import type { AppEnv, KeyContext } from '../types';
 
@@ -124,11 +125,19 @@ export const NO_KEY_HINT =
   'No key yet? Sign in at /account, or from an agent: POST /v1/auth/agent-signup {"email"} — the user approves one emailed link, then POST /v1/auth/agent-signup/claim returns the key.';
 
 /**
- * Bearer API-key auth: KV hot path, D1 fallback (repopulating KV).
- * Revocation deletes the KV entry; it propagates within the cache TTL.
- * `hint` tells a keyless caller how to get one (route-specific wording).
+ * Bearer auth: an API key (`fapi_…`, KV hot path, D1 fallback repopulating KV)
+ * or an OAuth access token (`gkat_…`, auth/oauth.ts — resolves to the key it
+ * was issued for, so everything downstream is identical). Revocation deletes
+ * the KV entry; it propagates within the cache TTL. `hint` tells a keyless
+ * caller how to get a key (route-specific wording); `resourceMetadata`, when
+ * given, is the RFC 9728 pointer OAuth clients need on a 401 to start sign-in
+ * (or refresh an expired token) — the MCP route passes it.
  */
-export function requireApiKey(hint: string = NO_KEY_HINT): MiddlewareHandler<AppEnv> {
+export function requireApiKey(
+  hint: string = NO_KEY_HINT,
+  resourceMetadata?: string,
+): MiddlewareHandler<AppEnv> {
+  const pointer = resourceMetadata ? `, resource_metadata="${resourceMetadata}"` : '';
   return async (c, next) => {
     const header = c.req.header('Authorization') ?? '';
     // RFC 7235 auth-scheme is case-insensitive.
@@ -142,15 +151,21 @@ export function requireApiKey(hint: string = NO_KEY_HINT): MiddlewareHandler<App
         401,
         // RFC 7235: a 401 MUST say how to authenticate. MCP clients and
         // directory crawlers key off this header.
-        { 'WWW-Authenticate': 'Bearer realm="gankdat"' },
+        { 'WWW-Authenticate': `Bearer realm="gankdat"${pointer}` },
       );
     }
 
-    const hash = await hashKey(match[1]!);
-    const record = await lookupKey(c.env, hash);
+    const presented = match[1]!;
+    const hash = await hashKey(presented);
+    const record = presented.startsWith(ACCESS_TOKEN_PREFIX)
+      ? await resolveAccessToken(c.env, presented, hash)
+      : await lookupKey(c.env, hash);
     if (!record || record.revoked_at !== null) {
-      return c.json(failure('unauthorized', 'Unknown or revoked API key'), 401, {
-        'WWW-Authenticate': 'Bearer realm="gankdat", error="invalid_token"',
+      const what = presented.startsWith(ACCESS_TOKEN_PREFIX)
+        ? 'Expired or revoked access token — refresh it or sign in again'
+        : 'Unknown or revoked API key';
+      return c.json(failure('unauthorized', what), 401, {
+        'WWW-Authenticate': `Bearer realm="gankdat", error="invalid_token"${pointer}`,
       });
     }
 

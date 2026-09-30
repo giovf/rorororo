@@ -6,8 +6,12 @@ account, no money. Sources: claude.com/docs/connectors/building/{submission,revi
 
 What the server does to pass (shipped in v0.20.0, `test/mcp-directory.spec.ts` keeps it true):
 every tool has a `title` + `readOnlyHint`/`destructiveHint`; a foreign `Origin` gets 403; every
-tool answers without credentials (the keyless preview — 5 rows, 20 calls/day per client — then a
-tool error naming the plans). Re-run the test before any later resubmission.
+data tool answers without credentials (the keyless preview — 5 rows, 20 calls/day per client).
+Since v0.21.0 (2026-09-30) the server also does **lazy OAuth** exactly as
+claude.com/docs/connectors/building/lazy-authentication describes: the one protected tool
+(`connect_account`) and a spent preview budget answer HTTP 401 with `WWW-Authenticate: Bearer
+resource_metadata=…`, which makes Claude show its Connect card; sign-in is the email magic link,
+tokens bill the account's plan (`test/oauth.spec.ts`). Re-run both tests before any resubmission.
 
 ## Step 1 — Connection
 
@@ -72,9 +76,13 @@ flags a missing title or annotation, the deploy is stale — check `/mcp` `tools
 
 ## Step 6 — Authentication
 
-- **No authentication**. Tick the option that the server works without authentication and
-  individual tools ask for it on demand (the preview, then `request_api_key`). OAuth is queued
-  (`mcp-oauth-lazy-auth`) and will be added as a listing edit when it ships.
+- **No authentication** (the `none` type), with lazy authentication: the server works without
+  credentials and individual tools ask for sign-in on demand — the docs list this combination
+  under `none` ("To leave some tools open and require sign-in for others, see Lazy
+  authentication"). Do not pick an OAuth type: that would make Claude demand sign-in before
+  the first tool call and lose the keyless preview. The authorization server is our own
+  (`https://gankdat.com/.well-known/oauth-authorization-server`), CIMD + PKCE, so nothing to
+  register with Anthropic.
 
 ## Step 7 — Data handling
 
@@ -87,16 +95,20 @@ flags a missing title or annotation, the deploy is stale — check `/mcp` `tools
 Paste as the reviewer instructions:
 
 > No credentials needed: connect `https://gankdat.com/mcp` with no authentication and every
-> tool answers. Try `list_sources` (all datasets and their filters), `query_uk_tenders` with
+> data tool answers. Try `list_sources` (all datasets and their filters), `query_uk_tenders` with
 > `{"q":"solar","per_page":5}`, `get_changes` with `{"source":"uk-charities"}`, and `get_usage`
-> (shows the preview budget). Without a key the data tools return up to 5 rows and 20 calls per
-> day per client; a key removes those limits. Test key for a populated free account: [paste a
-> key created at https://gankdat.com/account under an @gankdat.com mailbox]. Clients that
-> support headers send it as `Authorization: Bearer <key>`.
+> (shows the preview budget). Without an account the data tools return up to 5 rows and 20 calls
+> per day per client. `connect_account` is the one tool that deliberately asks for sign-in (lazy
+> authentication per your docs): it answers 401 with `resource_metadata` so Claude shows the
+> Connect card; sign in with any email you can read — a free account is created on the fly, no
+> card — approve once, and every tool then returns full pages on that account. Test key for a
+> populated free account, for clients that send headers (`Authorization: Bearer <key>`): [paste
+> a key created at https://gankdat.com/account under an @gankdat.com mailbox].
 
 Before ticking "I have tested every tool": add the server as a custom connector in Claude and
-call one query tool, `get_changes` and `get_usage` from a chat (the CI test already exercises
-all 22 tools; the portal wants the human confirmation).
+call one query tool, `get_changes` and `get_usage` from a chat, then say "sign in to gankdat"
+and complete the Connect card once (the CI tests already exercise all 23 tools and the OAuth
+flow; the portal wants the human confirmation).
 
 ## Step 9 — Compliance
 

@@ -194,12 +194,13 @@
     {
       "id": "mcp-oauth-lazy-auth",
       "title": "Lazy OAuth for the MCP server (CIMD + PKCE, magic-link consent, tokens mapped to account keys) so plans bill from Claude, ChatGPT and Cursor",
-      "why": "Exchange 2026-W40 second (8). Claude starts sign-in only on an HTTP 401 with WWW-Authenticate: Bearer resource_metadata=…; a 200 tool error never does, so an authless listing can discover but not convert. Build: /.well-known/oauth-protected-resource and /mcp variant, /.well-known/oauth-authorization-server (code_challenge_methods_supported S256, token_endpoint_auth_methods_supported none, client_id_metadata_document_supported true), /authorize that fetches the CIMD client_id URL, checks redirect_uri exactly (port-agnostic for localhost/127.0.0.1) and renders consent on the magic-link session, /token (form-urlencoded, PKCE, refresh rotation, invalid_grant on stale refresh, < 10 s), access tokens mapped to the account's default key so plan/credits/metering apply, and the 401 gate on protected tools/call before the transport. Sources: claude.com/docs/connectors/building/{lazy-authentication,authentication}.",
+      "why": "Exchange 2026-W40 second (8). Claude starts sign-in only on an HTTP 401 with WWW-Authenticate: Bearer resource_metadata=…; a 200 tool error never does, so an authless listing can discover but not convert. Build: /.well-known/oauth-protected-resource and /mcp variant, /.well-known/oauth-authorization-server (code_challenge_methods_supported S256, token_endpoint_auth_methods_supported none, client_id_metadata_document_supported true), /authorize that fetches the CIMD client_id URL, checks redirect_uri exactly (port-agnostic for localhost/127.0.0.1) and renders consent on the magic-link session, /token (form-urlencoded, PKCE, refresh rotation, invalid_grant on stale refresh, < 10 s), access tokens mapped to the account's default key so plan/credits/metering apply, and the 401 gate on protected tools/call before the transport. Sources: claude.com/docs/connectors/building/{lazy-authentication,authentication}. Built 2026-09-30 (v0.21.0): src/auth/oauth.ts, src/routes/oauth.ts, migration 0013 oauth_grants, connect_account tool, test/oauth.spec.ts; metrics row now carries 'oauth: N connects'. Listing stays auth type none + lazy auth (CLAUDE-DIRECTORY.md step 6).",
       "effort_days": 1.5,
       "proof": "first key connected from claude.ai (token issued via /token with a claude.ai CIMD client); paywall → checkout conversion per client in the Daily numbers row",
       "score": 8,
-      "status": "todo",
-      "added": "2026-09-30"
+      "status": "done",
+      "added": "2026-09-30",
+      "done_at": "2026-09-30"
     },
     {
       "id": "claude-directory-day-30",

@@ -73,6 +73,21 @@ const agentKeys = await sql(
 )
   .then(([row]) => row ?? null)
   .catch(() => null);
+// Lazy OAuth (2026-09-30): consents = authorization codes minted for real
+// accounts (internal mailboxes excluded like agent sign-up); per-client hosts
+// from the oauth_token analytics point (blob4) — the "first key connected from
+// claude.ai" proof of mcp-oauth-lazy-auth.
+const oauth = await sql(
+  "SELECT COUNT(*) AS connects30d, SUM(g.created_at > (strftime('%s','now') - 86400) * 1000) AS connects24h FROM oauth_grants g JOIN accounts a ON a.id = g.account_id WHERE g.kind = 'code' AND g.created_at > (strftime('%s','now') - 30 * 86400) * 1000 AND a.email NOT LIKE '%@gankdat.com' AND a.email NOT LIKE '%@1402celsius.com' AND a.email NOT LIKE '%@example.com' AND a.email NOT LIKE 'giova1506@%'",
+)
+  .then(([row]) => row ?? null)
+  .catch(() => null);
+const oauthClients = await ae(
+  "SELECT blob4 AS client, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'oauth_token' AND blob3 = 'authorization_code' AND timestamp > NOW() - INTERVAL '7' DAY GROUP BY client ORDER BY n DESC LIMIT 3",
+).catch(() => []);
+const oauthNote = oauth
+  ? `oauth: ${oauth.connects24h ?? 0} connects/24h, ${oauth.connects30d ?? 0}/30d${oauthClients.length ? ` (7d by client: ${oauthClients.map((r) => `${r.client} ${Math.round(Number(r.n))}`).join(', ')})` : ''}`
+  : 'oauth: n/a';
 const kinds = Object.fromEntries(
   (
     await ae(
@@ -121,6 +136,7 @@ const notes = [
   agentKeys
     ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`
     : 'agent sign-up: n/a',
+  oauthNote,
   errors.length
     ? `refresh errors: ${errors
         .map((e) => {

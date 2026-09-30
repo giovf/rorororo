@@ -3,7 +3,7 @@
   "name": "com.gankdat/gankdat",
   "title": "gankdat",
   "description": "UK & EU tenders, awards, planning, companies, charities, schools, NHS, care, gambling, trade marks.",
-  "version": "0.20.0",
+  "version": "0.21.0",
   "websiteUrl": "https://gankdat.com",
   "icons": [
     {
@@ -18,7 +18,7 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer <api key> \u2014 full pages and your plan's credits. Without it every tool still answers: data tools return a preview (5 rows, 20 calls/day) and request_api_key / claim_api_key get the user a free key (one emailed approval). Or get a key at https://gankdat.com/account",
+          "description": "Bearer <api key> or OAuth access token \u2014 full pages and your plan's credits. Without it every data tool still answers a preview (5 rows, 20 calls/day); clients that follow a 401 challenge (Claude, Cursor) sign the user in with OAuth (connect_account), others use request_api_key / claim_api_key (one emailed approval) or a key from https://gankdat.com/account",
           "isRequired": false,
           "isSecret": true
         }

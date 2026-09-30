@@ -58,6 +58,10 @@ Machine-readable spec: ${baseUrl}/openapi.json
   POST ${baseUrl}/v1/auth/agent-signup/claim {"request_id","claim_secret"} (or
   claim_api_key) every 15 s until status is "approved" — it returns the key
   once. No key needed for these two calls.
+- MCP clients that follow a 401 challenge (Claude, Cursor, ChatGPT) sign the user in
+  with OAuth instead: ${baseUrl}/.well-known/oauth-protected-resource/mcp names the
+  issuer (CIMD + PKCE, no client secret); the connect_account tool, or a spent
+  preview budget, triggers it. Tokens bill the account like a key.
 - Send the key as \`Authorization: Bearer fapi_...\` on every data request.
 - 1 credit = 1 request; paid plans from £${minGbp}/mo (billed GBP/USD/EUR by
   location); usage at GET /v1/usage (free).
