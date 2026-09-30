@@ -1,0 +1,4 @@
+HEAD https://addons.mozilla.org/en-US/firefox/addon/readfocus-focus-reading-dyslex/
+HEAD https://addons.mozilla.org/en-US/firefox/addon/highlight-keep-web-highlighter/
+GET https://addons.mozilla.org/api/v5/addons/addon/readfocus-focus-reading-dyslex/
+GET https://addons.mozilla.org/api/v5/addons/addon/highlight-keep-web-highlighter/
