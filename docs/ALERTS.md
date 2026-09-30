@@ -95,7 +95,6 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   Also file the Taskmaster row for `change-feed-upsell` (v0.16.0) retrospectively — no
   `task-master` CLI in the build container and the MCP timed out again.
 - 2026-09-24 done: handoffs from the 2026-09-23/24 builds executed by the interactive session — nhs-ods fixed (files moved to odsdatasearchandexport.nhs.uk getReport CSVs; old ZIP path 403s for every UA); uk-trademark-journal verified live (jnl.xml 200, 13,758 records, publication_date + opposition_deadline populated; jnl.zip is 403 so the code's zip-then-xml order is right); uk-gambling-operators unblocked (OGL v3 confirmed on data.gov.uk + CKAN; five CSV headers recorded in the queue item; activities.csv does not exist); awesome-remote-mcp-servers listing recorded as live; Taskmaster #56 (trademark journal) and #57 (change-feed upsell) filed.
-- 2026-09-25 owner: SAM.gov emailed a 1st reminder (2026-09-25 08:02 UTC) that the individual-account API key backing gankdat's `sam-exclusions` source rotates in 15 days (~2026-10-10). A replacement key is already generated under the account's Public API Key profile section at sam.gov — please sign in, grab it, and hand it to Claude to update the Worker secret before the old key stops working. Nothing to do until then.
 - 2026-09-25 handoff: activate the run watchdog — `git mv docs/ci/run-watchdog.yml .github/workflows/run-watchdog.yml`
   and push (needs a token with the `workflow` scope; the build routine's git push and GitHub API calls
   were both refused with "required workflow scope"). The script (`scripts/run-watchdog.ts`, tests
@@ -122,14 +121,6 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   `ventures/gankdat/docs/OUTREACH-2026-09.md` (§2 lawful basis, §4 how to send), glance at each firm's contact page, pick the
   From address (info@gankdat.com alias if Gmail has it), send two or three a day and note the dates in §6. Delete any draft you
   do not like. Nothing has been sent.
-- 2026-09-27 handoff: Apify emailed (2026-09-27 18:07 UTC) that pricing for gankdat's own
-  `uk-trademark-journal-watch` actor (`faceless-api`, `ventures/gankdat/apify/uk-trademark-journal`) is
-  moving from pay-per-usage to pay-per-event: $1.00 per 1,000 results. Read the full pricing-model docs
-  (https://docs.apify.com/platform/actors/running/actors-in-store#paid-actors) and work out whether this
-  is a cost gankdat now pays to run its own actor or a price gankdat is setting as the actor's publisher —
-  the account name (`faceless-api`) is ours either way. If it is a real recurring cost, log it in
-  `docs/LEDGER.md` and check it against wave 7's weekly result volume (~13.8k rows on the initial
-  backfill, smaller deltas per week after).
 - 2026-09-28 owner: Variables Toolkit day-7 read: 2 views, 0 installs in 7 days (the one "user" is your approval test). Figma's
   search API shows why — the listing ranks 8th for its own name behind a 2,784-user plugin also called "Variables Toolkit",
   79th for "styles to variables" and nowhere for "convert styles to variables"; Figma ranks on the name first, and the live
@@ -145,13 +136,12 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   channels; note the CWS verification where the Chrome Web Store developer account is tracked. Also worth a
   look: 9 unread threads dated 2026-09-18 to 09-21 were sitting unprocessed (never in `docs/INBOX.md`) until
   today's run caught them up — likely from the same missed-run gaps already noted 2026-09-22; no fix applied
-  this run since the hourly `newer_than:3h` search is working correctly today.
+  this run since the hourly `newer_than:3h` search is working correctly today. — Done 2026-09-30 (burn-down): mcpservers.org was already in the listings log (`ventures/gankdat/docs/MARKETPLACE-PREP.md`, live 2026-09-21; gankdat has no STORE.md); the CWS identity verification is noted in `ventures/read-focus/STORE.md`; the triage window fix shipped as `triage-backlog-window`.
 - 2026-09-28 owner: a Gmail **"Send Mail As" confirmation for info@gankdat.com** (via the 1402celsius.com
   account) has been sitting unconfirmed since 2026-09-19 23:11 UTC — only surfaced now via backlog catch-up.
   Confirming it requires clicking the link in that email under your own Google identity; given the age it may
   have expired, in which case re-trigger from Gmail Settings → Accounts and Import → Send mail as. Nothing to
   do if you don't need to send as info@gankdat.com.
-- 2026-09-28 gankdat/apify: pricing change for uk-gambling-commission-licence-register actor (faceless-api) — pay-per-usage → pay-per-event, $1.00/1,000 results. Same pattern as the uk-trademark-journal-watch change logged 2026-09-27; review cost impact against the actor's usage.
 - 2026-09-29 done (build routine): the 2026-09-27 and 2026-09-28 Apify "pricing change" handoffs are false alarms — the
   $1.00 / 1,000 results is the PAY_PER_EVENT price `ventures/gankdat/scripts/publish-actors.mjs` sets on every actor we
   publish (US$0.001 per result, STRATEGY §2); Apify mails the publisher when a pricing model is set. It is revenue we
@@ -175,7 +165,7 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   build commit wrote the self-caused list and its row says "both handoffs closed", but the lines it
   describes are still open above. The fallback run corrected their `docs/INBOX.md` dispositions but
   its deletion from this file was refused by the sandbox's auto-mode classifier (irreversible local
-  destruction), so the removal is left to a session that can confirm it.
+  destruction), so the removal is left to a session that can confirm it. — Done 2026-09-30 (burn-down): the three entries are deleted in this commit; the false alarms stay documented in `docs/ops/SELF-CAUSED.md` and `docs/INBOX.md`.
 - 2026-09-29 handoff: file the Taskmaster row for `metrics-change-feed-count` retrospectively
   (`src/middleware/traffic.ts` + the `changes 7d:` metrics query) — the fallback sandbox has no
   `task-master` CLI and the task-master-ai MCP timed out again at session start (30 s). Same

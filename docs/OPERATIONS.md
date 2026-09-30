@@ -172,3 +172,17 @@ logs a match and never escalates it, and the weekly report never makes one a nex
   exists (no occurrence yet); the CWS user count is rendered by script, not in the first 256 KB of
   HTML (the CI item reads the page's structured data instead). Unblocked today: `post-approval-links`
   in both extension queues (their blocker, store review, is over).
+- **2026-09-30 (burn-down, second research run — the foundry queue emptied again at 20:50)**. Evidence from
+  this evening's CI runs, RUNS, ALERTS and the gankdat Daily numbers. (1) `notify owner` run 63 crashed on
+  a two-commit push (depth-2 checkout, no `before` commit) and four bullets were lost; the cause is fixed
+  (`push-diff-range-depth`, done) but any failed notify run still loses its bullets for good →
+  `notify-owner-cursor` (6). (2) uk-insolvency has errored on refresh four days running (500, empty body,
+  500, zero-byte body with a declared content-length) and nobody queued it: a routine only sees the row it
+  reads, and the 09-29 fix covered the 500 alone → `refresh-errors-to-queue` (8) for the class, plus gankdat
+  `insolvency-truncated-body` (6) for the instance. (3) ALERTS.md held eight open handoff lines with the
+  interactive session absent since 09-28; four were stale (satisfied or superseded) and one only asked for a
+  deletion a routine may make → closed tonight (three false-alarm entries deleted per the 09-29 handoff, the
+  09-28 store-mail handoff marked done: mcpservers.org was already in MARKETPLACE-PREP.md, the CWS
+  verification is now in read-focus/STORE.md) and `handoff-ledger` (5) for the class. Seen, not queued
+  (< 4): the installer's push racing the routine's next push (one merge commit, harmless); the first ops
+  retro fires 2026-10-03, so retro-side evidence does not exist yet.

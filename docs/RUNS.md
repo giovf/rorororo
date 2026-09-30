@@ -283,3 +283,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 20:50 | burn-down | The slot-marker, offline-Taskmaster and store-metrics sentences are folded into their files, no separate handoffs
 - 2026-09-30 20:50 | burn-down | One ALERTS handoff (~30 min) swaps all nine routines and closes the three open prompt handoffs
 - 2026-09-30 20:50 | burn-down | Foundry queue emptied → needs_research on the next loop pass
+- 2026-09-30 20:55 | burn-down | Research (foundry): uk-insolvency has errored on refresh four days running and no queue item existed
+- 2026-09-30 20:55 | burn-down | Queued refresh-errors-to-queue (8): a source erroring two days running becomes a gankdat item via the 06:30 job
+- 2026-09-30 20:55 | burn-down | Queued gankdat insolvency-truncated-body (6): zero-byte Gazette bodies retried, then the old snapshot kept
+- 2026-09-30 20:55 | burn-down | Queued notify-owner-cursor (6): bullets a failed notify run lost go out on the next push
+- 2026-09-30 20:55 | burn-down | Queued handoff-ledger (5): eight open handoffs, four stale — `npm run handoffs` lists them by age
+- 2026-09-30 20:55 | burn-down | Closed two stale handoffs: three false-alarm ALERTS entries deleted (09-29 ask), CWS verification noted

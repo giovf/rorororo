@@ -212,6 +212,16 @@
       "status": "todo",
       "not_before": "2026-10-30",
       "added": "2026-09-30"
+    },
+    {
+      "id": "insolvency-truncated-body",
+      "title": "uk-insolvency: a Gazette data.json body that arrives empty or shorter than its content-length is retried like a 5xx and, after the retries, keeps the previous snapshot without an error row",
+      "why": "Daily numbers 2026-09-30: `uk-insolvency (thegazette.co.uk page results-page=1: Unexpected end of JSON input after 3 reads (0 bytes, content-length declared))`; 09-28 the same `Unexpected end of JSON input`; 09-27 and 09-29 a 500 (retry shipped 09-29, `gazette-5xx-retry`). Four days without a fresh insolvency snapshot on a live surface. The source (`src/sources/uk-insolvency.ts`) already reads the body up to three times; a zero-byte body with a declared content-length is the origin closing the stream early, so: treat a short body exactly like a 5xx (fair-use pause, one more read), and when every read fails, log `refresh_log` status `skipped` with the message and keep the previous KV snapshot (Blind Mode already serves it) rather than `error`, so the row shows a stale-since date instead of a daily error. Verify the current response shape through the relay first (`GET RANGE=0-4095` of the data.json URL with the corporate notice types).",
+      "effort_days": 0.1,
+      "proof": "uk-insolvency absent from `refresh errors` for 7 consecutive days; the snapshot's newest notice date within 2 days of today",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-09-30"
     }
   ]
 }

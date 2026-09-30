@@ -1,7 +1,7 @@
 {
   "venture": "foundry",
   "status": "open",
-  "needs_research": true,
+  "needs_research": false,
   "updated": "2026-09-30",
   "items": [
     {
@@ -212,6 +212,36 @@
       "status": "done",
       "added": "2026-09-30",
       "done_at": "2026-09-30"
+    },
+    {
+      "id": "refresh-errors-to-queue",
+      "title": "A dataset that errors on refresh two days running becomes a scored gankdat queue item automatically, written by the 06:30 metrics job",
+      "why": "uk-insolvency has been in the Daily numbers `refresh errors` field four days running (2026-09-27 500, 09-28 `Unexpected end of JSON input`, 09-29 500, 09-30 `page results-page=1: Unexpected end of JSON input after 3 reads (0 bytes, content-length declared)`), and uk-charities and uk-trademark-journal logged `D1_ERROR: Network connection lost` on 09-28; the 09-29 build fixed only the 500 case (`gazette-5xx-retry`) because a routine only sees the row it happens to read, and no queue item exists for the live failure — the surface serves a stale insolvency snapshot while the gankdat queue holds nothing buildable. Fix: `ventures/gankdat/scripts/metrics.mjs` (runs in CI with the D1 numbers) compares today's error slugs with yesterday's row; a slug present both days gets an idempotent `todo` item `refresh-<slug>` in `docs/pipeline/queues/gankdat.json` (score 6, effort 0.1, the two messages in `why`, evidence appended on later days, never re-added once done or dropped within 14 days) in the same metrics commit, so `npm run pipeline next` offers it to the next build. Evidence 3 (one dataset broken four days, three slugs in a week, nobody queued it) × reach 3 (all 17 datasets, every day) ÷ 0.1 days.",
+      "effort_days": 0.1,
+      "proof": "every source in `refresh errors` two days running has a gankdat queue item within 24 h; no dataset stays in the field more than 3 days over 30 days",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "notify-owner-cursor",
+      "title": "notify-owner sends everything since a committed cursor instead of the push range, so a failed job's bullets go out on the next push",
+      "why": "When notify-owner run 63 crashed (2026-09-30 19:57, `push-diff-range-depth`), the four RUNS bullets of that push were lost for good: the job diffs `github.event.before..sha` and nothing ever looks at that range again — the same holds for a Telegram 5xx, a runner loss or a red `check` that cancels the job. Fix: the job reads `docs/ops/NOTIFIED.md` (the last RUNS/ALERTS line hashes it sent), sends every newer `owner:` line and RUNS line, and commits the new cursor with `[skip ci]` only after Telegram answered 2xx; a failure leaves the cursor where it was and the next push (the watchdog pushes hourly at worst) resends. Evidence 2 (one loss today; every earlier failed run — 2026-09-24, 09-28 red-CI pushes — lost its bullets the same way) × reach 3 (every owner notification) ÷ 0.1 days.",
+      "effort_days": 0.1,
+      "proof": "every RUNS line of 30 days has a matching Telegram bullet (spot-check five); zero lost bullets after a notify failure",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "handoff-ledger",
+      "title": "Open handoffs are listed by age with `npm run handoffs`, and a routine that closes one marks the original line instead of writing a new one",
+      "why": "ALERTS.md carried eight open `handoff:` lines on 2026-09-30 evening while the interactive session had not run since 09-28: three were already satisfied by later work (Apify pricing false alarm closed 09-29, store mails logged 09-28, Taskmaster rows filed 09-30) but their lines stayed open, three prompt handoffs were superseded by one, and one (`delete three lines`, 09-29) existed only because a sandbox refused a deletion a routine may make. Every reader (report, retro, exchange, this routine) re-derives which are live. Fix: `scripts/handoffs.ts` prints each open `handoff:` / `owner:` entry with its age and any `Done`/`Superseded` suffix; the weekly report and the retro read it (their `docs/routines/` files gain one sentence); convention in `docs/OPERATIONS.md` §Owner notifications: closing a handoff appends ` — Done YYYY-MM-DD (<routine>): <how>` to the original entry. Evidence 2 (eight open, four stale) × reach 2 (report, retro, interactive session) ÷ 0.1 days.",
+      "effort_days": 0.1,
+      "proof": "no handoff older than 7 days without a Done or Superseded suffix over 30 days; the weekly report's 'Waiting on the owner' section lists only live items",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-09-30"
     }
   ]
 }

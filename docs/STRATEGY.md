@@ -411,3 +411,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   each stored prompt becomes a three-line bootstrap that reads its file (README there), because five prompt fixes queued behind one
   person in two days while CLAUDE.md already proved the repo steers every run. Four files are verbatim, five are written from the repo
   record and get reconciled against the stored text at swap time; one handoff replaces three. Foundry queue empty → research next.
+- 2026-09-30 burn-down: ops research (second of the day) — queued `refresh-errors-to-queue` (8), `notify-owner-cursor` (6),
+  `handoff-ledger` (5) in foundry and `insolvency-truncated-body` (6) in gankdat; closed the 09-28 and 09-29 handoffs a routine could
+  close itself (three false-alarm ALERTS entries deleted, CWS verification recorded). Evidence in `docs/OPERATIONS.md` §Ops research log.

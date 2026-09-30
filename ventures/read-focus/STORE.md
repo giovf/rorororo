@@ -8,3 +8,5 @@
 - **Buy link:** https://buy.stripe.com/6oUdR2gdfcOtaJU22aefC00
 - **Firefox Add-ons:** **live** (status `public`, tentatively approved 2026-09-22, v0.1.0): https://addons.mozilla.org/en-US/firefox/addon/readfocus-focus-reading-dyslex/
 - **Firefox metrics source:** `https://addons.mozilla.org/api/v5/addons/addon/readfocus-focus-reading-dyslex/` (JSON: `average_daily_users`, `weekly_downloads`, `ratings.average`, `ratings.count`, `current_version.version`) — the daily metrics routine reads this, not the HTML page
+
+- Chrome Web Store developer account: identity verification complete 2026-09-21 07:22 UTC (mail found in the 2026-09-28 backlog catch-up); publishing via the Developer Dashboard or the CWS API is unblocked for every extension.
