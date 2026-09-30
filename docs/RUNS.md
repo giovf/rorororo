@@ -220,3 +220,12 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 09:45 | fallback | The nine threads lost for a week in September (expired Send-as link, late CWS verification) is what this prevents
 - 2026-09-30 09:45 | fallback | No new owner handoff: the live prompt edit rides the 2026-09-29 one, which now carries both triage sentences
 - 2026-09-30 09:45 | fallback | Third slot-race collision in two days logged on fallback-slot-race: the window is 6-9 min after the check
+- 2026-09-30 17:36 | fallback | Fable's 17:00 build left no trace by 17:20 (no (build) commit since 12:51), so this run filled the slot
+- 2026-09-30 17:36 | fallback | Took metrics-apify-runs (7): the Daily numbers row now carries Apify runs, users/30d and public actor count
+- 2026-09-30 17:36 | fallback | STRATEGY §4 target 'Apify paid runs / month: 100' had no reading in the repo while all 17 actors are public
+- 2026-09-30 17:36 | fallback | The 24h delta reads the previous row — the Apify API gives lifetime totals, and a re-run is never its own baseline
+- 2026-09-30 17:36 | fallback | Field names confirmed by a live relay fetch of GET /v2/acts/apify~web-scraper, not from memory
+- 2026-09-30 17:36 | fallback | APIFY_TOKEN stays optional: without it the row lands as 'apify: n/a' instead of losing the D1 numbers with it
+- 2026-09-30 17:36 | fallback | docs/ci/gankdat-metrics.yml adds APIFY_TOKEN to the metrics step; the workflow installer moves it on push
+- 2026-09-30 17:36 | fallback | First real apify reading lands at tomorrow's 06:30 metrics slot; today's row already exists so it is not rewritten
+- 2026-09-30 17:36 | fallback | §4 'Apify actors live' corrected from a stale '1 of 13' to 17 of 17; both Apify rows now name where measured

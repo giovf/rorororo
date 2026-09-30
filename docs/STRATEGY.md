@@ -39,8 +39,8 @@ same thing*, not for one big bet. Capital cap £100; recurring cost today ≈ £
 | --- | --- | --- | --- |
 | gankdat paying accounts | 0 | 5 | `Daily numbers` rows in `ventures/gankdat/RESEARCH.md` |
 | gankdat MRR | £0 | £150 | Stripe (weekly report) |
-| Apify actors live | 1 of 13 | 13 | Apify console / `apify/README.md` |
-| Apify paid runs / month | 0 | 100 | Apify stats |
+| Apify actors live | 17 of 17 | 17 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — `P public`; all 17 went public 2026-09-28 |
+| Apify paid runs / month | 0 | 100 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — lifetime `R runs` plus the `+d/24h` delta, Apify API `stats.totalRuns` |
 | Change-feed calls / week | 0 | 50 | `changes 7d:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — Analytics Engine, MCP `get_changes` + REST `/v1/changes` |
 | Extension + plugin sales | 0 | 20 | Stripe / Figma |
 | Directory listings live | 4 | 8 | `MARKETPLACE-PREP.md` |
@@ -340,3 +340,16 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   with no age filter, oldest first, at most 30 threads a run, and step 2
   marks anything older than 3 h `(backlog)` — unread state is the queue, so a missed slot can only delay mail.
   The live prompt edit rides the open 2026-09-29 handoff rather than adding a second one.
+- 2026-09-30 fallback: Fable's 17:00 build left no trace by 17:20 (no `(build)` commit since 12:51, no `| build |`
+  row for the slot), so this run filled it with the highest-scoring small item, `metrics-apify-runs` (7). The
+  §4 target "Apify paid runs / month: 100" had no reading anywhere in the repo — review 2026-W39 §4 wrote "no
+  run count reaches the repo" — while all 17 actors have been public since 2026-09-28, so the shelf's only
+  revenue signal was invisible. The Daily numbers row now carries `apify: R runs (+d/24h), U users/30d,
+  P public`; the 24 h delta comes from the previous row, since the Apify API reports lifetime totals only, and
+  a re-run cannot use its own row as the baseline. Field names were confirmed against a live
+  `GET /v2/acts/apify~web-scraper` through the relay rather than from memory (`stats.totalRuns`,
+  `stats.totalUsers30Days`, `isPublic`); because `?my=1` is documented with a reduced actor object, an entry
+  without stats is read from its own endpoint and the first CI run logs which path it took. `APIFY_TOKEN` is
+  optional by design: without it the row still lands as `apify: n/a` rather than losing the D1 and Analytics
+  Engine numbers with it. Two §4 rows now name where they are measured, and "Apify actors live" is corrected
+  from the stale "1 of 13" to 17 of 17.

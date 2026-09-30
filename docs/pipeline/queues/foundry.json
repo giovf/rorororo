@@ -143,8 +143,9 @@
       "effort_days": 0.15,
       "proof": "the row carries `apify:` from the first run; the first paid run is visible in the row within 24 h of happening",
       "score": 7,
-      "status": "todo",
-      "added": "2026-09-29"
+      "status": "done",
+      "added": "2026-09-29",
+      "done_at": "2026-09-30"
     },
     {
       "id": "store-approval-to-store-md",
