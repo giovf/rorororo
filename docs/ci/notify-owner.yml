@@ -4,7 +4,9 @@ name: notify owner
 # Since 2026-09-30 (foundry `notify-owner-cursor`) the job diffs from the commit recorded in
 # docs/ops/NOTIFIED.md to the tip of main and commits the new cursor only after every channel
 # accepted every message, so a crashed or refused run loses nothing: the next push resends.
-# The cursor push uses GITHUB_TOKEN (triggers no workflow) and says [skip ci] besides.
+# The cursor push uses GITHUB_TOKEN (triggers no workflow) and carries the skip-ci marker besides.
+# Never write that marker in a hand-written commit message, subject or body: the 2026-09-30 21:30
+# commit that shipped this file mentioned it in its body and GitHub ran nothing on the push.
 on:
   push:
     branches: [main]

@@ -297,3 +297,5 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 21:30 | burn-down | scripts/notify-owner.ts diffs from the commit in docs/ops/NOTIFIED.md to the tip of main; 14 tests
 - 2026-09-30 21:30 | burn-down | docs/ci/notify-owner.yml: serialised runs, cursor committed [skip ci] only after every channel answered 2xx
 - 2026-09-30 21:30 | burn-down | A refused send now fails the job so it shows; an ALERTS line closed with ' — Done' is not sent as a need
+- 2026-09-30 21:42 | burn-down | Heal: the 21:30 commit body quoted the skip-ci marker, so GitHub ran nothing on that push; re-pushed docs/ci
+- 2026-09-30 21:42 | burn-down | docs/ci/README.md now says never to write that marker in a commit message; the installer runs on this push
