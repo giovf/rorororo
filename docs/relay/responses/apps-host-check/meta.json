@@ -1,0 +1,56 @@
+{
+  "request": "apps-host-check",
+  "fetched_at": "2026-09-30T22:27:24.216Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://apps.gankdat.com/highlightkeep.html",
+      "fetched_at": "2026-09-30T22:27:22.727Z",
+      "status": 200,
+      "final_url": "https://apps.gankdat.com/highlightkeep.html",
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://apps.gankdat.com/readfocus.html",
+      "fetched_at": "2026-09-30T22:27:23.337Z",
+      "status": 200,
+      "final_url": "https://apps.gankdat.com/readfocus.html",
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://apps.gankdat.com/privacy.html",
+      "fetched_at": "2026-09-30T22:27:23.560Z",
+      "status": 200,
+      "final_url": "https://apps.gankdat.com/privacy.html",
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://apps.gankdat.com/terms.html",
+      "fetched_at": "2026-09-30T22:27:23.788Z",
+      "status": 200,
+      "final_url": "https://apps.gankdat.com/terms.html",
+      "headers": {
+        "content-type": "text/html"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://apps.gankdat.com/thanks.html",
+      "fetched_at": "2026-09-30T22:27:23.990Z",
+      "status": 200,
+      "final_url": "https://apps.gankdat.com/thanks.html",
+      "headers": {
+        "content-type": "text/html"
+      }
+    }
+  ]
+}
