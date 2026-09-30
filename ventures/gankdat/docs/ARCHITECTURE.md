@@ -139,8 +139,17 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   monthly allowance per account (free 250/mo); KV-based best-effort (DO
   upgrade path documented, not built). MCP: anonymous `initialize`/`tools/list`
   so registries/directories can index tools (per-IP, in-isolate limiter —
-  zero KV ops); `tools/call` needs a key; bearer 401s carry
-  `WWW-Authenticate`. KV rate limiters fail open on KV errors.
+  zero KV ops); a presented key is always validated and bad ones 401 with
+  `WWW-Authenticate`. **Keyless preview** (2026-09-30, `src/mcp/preview.ts`, for the
+  Claude Connectors Directory whose review requires every tool to answer without
+  credentials): a data tool called without a key returns page 1 with ≤ 5 rows, 20 calls
+  per UTC day per client (sha-256 of IP + UA, KV `preview:<id>:<day>`), then a tool error
+  naming the free plan and the cheapest paid one; `get_usage` reports the budget. Every
+  tool carries `title` + `readOnlyHint`/`destructiveHint` (the two sign-up tools are the
+  only writes, neither destructive). `/mcp` validates a present `Origin` (own host,
+  claude.ai/claude.com, loopback; else 403, CORS mirrors the list) — non-browser clients
+  send none. `test/mcp-directory.spec.ts` is the conformance test for any agent
+  directory. KV rate limiters fail open on KV errors.
   **Agent-side sign-up** (2026-09-25, `src/auth/signup.ts`): the paywall's audience is
   agents that cannot click a magic link, so the two keyless tools `request_api_key`
   (user's email → approval email with a short code, RFC 8628-style) and `claim_api_key`

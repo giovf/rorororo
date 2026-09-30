@@ -110,28 +110,24 @@ describe('/mcp', () => {
     );
   });
 
-  it('requires an API key for tools/call, advertised via WWW-Authenticate', async () => {
+  it('still 401s a keyless non-tool method, advertised via WWW-Authenticate', async () => {
     const res = await SELF.fetch(MCP_URL, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
         accept: 'application/json, text/event-stream',
       },
-      body: JSON.stringify({
-        jsonrpc: '2.0',
-        id: 1,
-        method: 'tools/call',
-        params: { name: 'list_sources', arguments: {} },
-      }),
+      body: JSON.stringify({ jsonrpc: '2.0', id: 1, method: 'resources/list', params: {} }),
     });
     expect(res.status).toBe(401);
     expect(res.headers.get('WWW-Authenticate')).toContain('Bearer');
   });
 
-  it('records denied (401) attempts and method names in traffic analytics', async () => {
+  it('records preview calls, denied keys and method names in traffic analytics', async () => {
     const spy = vi.spyOn(env.TRAFFIC, 'writeDataPoint');
 
-    // Keyless tools/call — the conversion signal: agent wanted data, hit the paywall.
+    // Keyless tools/call on a data tool is the preview (its own kind, so the daily
+    // numbers can tell a taste of the data from crawler introspection).
     const keyless = await SELF.fetch(MCP_URL, {
       method: 'POST',
       headers: {
@@ -145,11 +141,11 @@ describe('/mcp', () => {
         params: { name: 'list_sources', arguments: {} },
       }),
     });
-    expect(keyless.status).toBe(401);
+    expect(keyless.status).toBe(200);
     expect(spy).toHaveBeenCalledWith(
       expect.objectContaining({
-        blobs: ['mcp_denied', expect.any(String), 'tools/call', 'no_key', 'list_sources'],
-        indexes: ['mcp_denied'],
+        blobs: ['mcp_preview', expect.any(String), 'tools/call', '', 'list_sources'],
+        indexes: ['mcp_preview'],
       }),
     );
 

@@ -6,6 +6,7 @@ import type { AppEnv } from '../types';
 export const ERROR_CODES = [
   'bad_request',
   'unauthorized',
+  'forbidden',
   'payment_required',
   'quota_exceeded',
   'not_found',

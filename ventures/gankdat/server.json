@@ -3,7 +3,7 @@
   "name": "com.gankdat/gankdat",
   "title": "gankdat",
   "description": "UK & EU tenders, awards, planning, companies, charities, schools, NHS, care, gambling, trade marks.",
-  "version": "0.19.0",
+  "version": "0.20.0",
   "websiteUrl": "https://gankdat.com",
   "icons": [
     {
@@ -18,8 +18,8 @@
       "headers": [
         {
           "name": "Authorization",
-          "description": "Bearer <api key> \u2014 required for data tools; initialize, tools/list and the sign-up tools request_api_key / claim_api_key work without it (the user approves one emailed link). Or get a key at https://gankdat.com/account",
-          "isRequired": true,
+          "description": "Bearer <api key> \u2014 full pages and your plan's credits. Without it every tool still answers: data tools return a preview (5 rows, 20 calls/day) and request_api_key / claim_api_key get the user a free key (one emailed approval). Or get a key at https://gankdat.com/account",
+          "isRequired": false,
           "isSecret": true
         }
       ]

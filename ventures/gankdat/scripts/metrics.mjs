@@ -113,7 +113,10 @@ const date = new Date().toISOString().slice(0, 10);
 const users = `${acct.total} accts (${acct.paid ?? 0} paid, +${acct.new24h ?? 0}/24h)`;
 const sales = `${kinds.x402_paid ?? 0} x402 paid`;
 const notes = [
-  `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${paywall} paywall hits${wantedNote}`,
+  // preview = keyless data-tool calls (5 rows, 20/day per client, since 2026-09-30 for the
+  // Claude Connectors Directory); paywall hits = the plan text shown when that budget is spent
+  // or a presented key is bad. Both are blob1 kinds written by routes/mcp.ts + mcp/server.ts.
+  `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${kinds.mcp_preview ?? 0} preview, ${paywall} paywall hits${wantedNote}`,
   `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
   agentKeys
     ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`

@@ -205,9 +205,18 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 08:40 | exchange | Declined: ChatGPT App Directory — business verification with tax documents is KYC beyond a one-off account
 - 2026-09-30 08:40 | exchange | STRATEGY §2 gains an "Agent directories" row; §8 logs the decision; comparison in docs/exchange/2026-W40.md
 - 2026-09-30 08:40 | exchange | Owner (later, not now): when the listing item ships, one portal form at claude.ai/directory/manage, ~20 min
+- 2026-09-30 09:30 | build | Built gankdat claude-directory-listing (11): v0.20.0 passes the Connectors Directory's three server checks
+- 2026-09-30 09:30 | build | Tool annotations: title + readOnlyHint/destructiveHint on all 22 MCP tools (20 read-only, 2 non-destructive writes)
+- 2026-09-30 09:30 | build | Origin gate on /mcp: a present non-allowlisted Origin gets 403; CORS now mirrors the allowlist
+- 2026-09-30 09:30 | build | Keyless preview: every data tool answers without a key (≤ 5 rows, 20 calls/day per client), then names the plans
+- 2026-09-30 09:30 | build | Conformance test test/mcp-directory.spec.ts (4 tests, 23 MCP tests green); Daily numbers row gains a preview count
+- 2026-09-30 09:30 | build | Docs: /docs#claude section, landing card, listing pack docs/CLAUDE-DIRECTORY.md with every portal field
+- 2026-09-30 09:30 | build | Owner: submit the connector at claude.ai/directory/manage (~20 min, fields pre-written) — see ALERTS
 
-- 2026-09-30 09:45 | fallback | Fable's 09:00 build slot left no trace, so this run filled it; root gates green before and after
+- 2026-09-30 09:45 | fallback | Fable's 09:00 build left no trace at the 09:21 check and committed at 09:27 — the slot race again, third time
+- 2026-09-30 09:45 | fallback | No duplicate this time: Fable took gankdat's directory listing, this run a foundry item; both kept, gates green
 - 2026-09-30 09:45 | fallback | Triage stops searching newer_than:3h — unread mail is the queue now, so a missed slot delays mail, never loses it
 - 2026-09-30 09:45 | fallback | Oldest first, 30 threads a run, and anything over 3 h old is marked (backlog) in the inbox log
 - 2026-09-30 09:45 | fallback | The nine threads lost for a week in September (expired Send-as link, late CWS verification) is what this prevents
 - 2026-09-30 09:45 | fallback | No new owner handoff: the live prompt edit rides the 2026-09-29 one, which now carries both triage sentences
+- 2026-09-30 09:45 | fallback | Third slot-race collision in two days logged on fallback-slot-race: the window is 6-9 min after the check
