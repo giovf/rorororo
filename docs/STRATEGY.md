@@ -423,3 +423,5 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-09-30 burn-down: built gankdat `refresh-uk-insolvency` (6) — page size 50, a cut body retried four times, a missing later page
   keeps the pages read; the relay proved the Gazette serves the full body to a runner, so the Worker-side 0-byte reads are momentary.
   Kept the honest `error` row instead of a `skipped` status: the 06:30 job that files refresh items keys on it. Stale KV lasts 7 days.
+- 2026-09-30 burn-down: built highlight-keep `post-approval-links` (5) — all repo-side links on apps.gankdat.com (relay-verified), version
+  0.1.1 ready to sign; the live listings switch via one handoff (sign/upload) and one owner dashboard edit, then the repo goes private (013).

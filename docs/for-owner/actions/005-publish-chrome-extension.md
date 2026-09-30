@@ -33,7 +33,7 @@ Adjust Size, or crop to 16:10 and I'll resize it — drop files in
    data-use certification: tick "does not collect user data" — and, since activation sends
    the order id once, if the form insists, declare "Authentication information" is *not*
    collected and add the sentence from LISTING.md's data-use line in the justification box.
-   Privacy policy URL: https://giovf.github.io/rorororo/privacy.html.
+   Privacy policy URL: https://apps.gankdat.com/privacy.html.
 4. **Distribution**: public, all regions, free (the unlock is sold outside the store).
 5. **Submit for review**. Typical review: 1–3 days, sometimes longer for host permissions.
 - **Give back:** "submitted" + date, and later the approval email. I'll flip the venture to

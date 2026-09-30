@@ -2,7 +2,7 @@
   "version": {
     "license": "all-rights-reserved",
     "release_notes": {
-      "en-US": "First release."
+      "en-US": "Links in the popup and welcome page now point at apps.gankdat.com (our own host); no functional change."
     }
   },
   "summary": {
@@ -13,7 +13,7 @@
   },
   "categories": ["other"],
   "homepage": {
-    "en-US": "https://giovf.github.io/rorororo/highlightkeep.html"
+    "en-US": "https://apps.gankdat.com/highlightkeep.html"
   },
   "support_email": {
     "en-US": "info@gankdat.com"

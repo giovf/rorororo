@@ -305,3 +305,8 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 21:52 | burn-down | No 'skipped' refresh_log status: the error row is what the 06:30 queue job keys on; two new tests, Taskmaster row 20
 - 2026-09-30 21:53 | burn-down | notify owner run 68 failed on the heal push (old job, script gone); the cursor job sends from 1007fe1 on this push
 - 2026-09-30 21:47 | burn-down | Cursor job verified live: run 69 sent 11 lines, cursor moved to 56e6afb; stopping for time, next is highlight-keep post-approval-links (5)
+- 2026-09-30 22:35 | burn-down | Built highlight-keep post-approval-links (5): every repo link now points at apps.gankdat.com, not github.io
+- 2026-09-30 22:35 | burn-down | Relay apps-host-check: highlightkeep, readfocus, privacy, terms and thanks pages all answer 200 on the new host
+- 2026-09-30 22:35 | burn-down | Highlight Keep 0.1.1 in the repo (links only); ALERTS handoff signs and uploads it, self-caused row added
+- 2026-09-30 22:35 | burn-down | Owner ask: one 2-minute Chrome dashboard edit (privacy URL) is the last link keeping the repo public
+- 2026-09-30 22:35 | burn-down | highlight-keep queue emptied → needs_research

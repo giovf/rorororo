@@ -22,7 +22,7 @@ Made for students, researchers and anyone who reads for a living.
 **Single purpose:** Let the user highlight and annotate text on web pages and keep those highlights.
 **Permissions justification:** `storage` — save your highlights and settings. `activeTab` + `scripting` — add the highlighter to the page you're viewing when you switch it on. Optional host permission, granted per site — Chrome asks once when you enable a site; the extension only ever runs on sites you've enabled. Nothing is read out of the page beyond the text you select, and nothing is sent anywhere.
 **Data-use disclosure:** collects no user data. (Activating a paid key sends the key's order id to our licence server once, to confirm it wasn't refunded.)
-**Privacy policy:** https://giovf.github.io/rorororo/privacy.html · **Support:** info@gankdat.com
+**Privacy policy:** https://apps.gankdat.com/privacy.html · **Support:** info@gankdat.com
 **Buy link:** https://buy.stripe.com/28E14g8KN7u95pA9uCefC02
 
 **Screenshots (1280×800):** `assets/screenshots/` — produced by the automated browser test.

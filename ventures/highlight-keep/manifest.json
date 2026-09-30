@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Highlight Keep — Web Highlighter & Notes, Private",
   "short_name": "Highlight Keep",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Highlight any page, add notes, find it all again. Stored in your browser, no account, exports to Markdown.",
   "minimum_chrome_version": "116",
   "permissions": ["storage", "activeTab", "scripting"],

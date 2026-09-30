@@ -220,3 +220,15 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   `routines: <name> prompt reconciled`), then swap. Nothing else changes; from then on a prompt change is a commit to
   `docs/routines/` and the README's "Stored prompt" column reads `bootstrap` for each swapped row. Also enable the ops retro if
   it is still disabled. ~30 min, no new account, no money.
+- 2026-09-30 handoff: **ship Highlight Keep 0.1.1** (links moved from github.io to apps.gankdat.com; queue item
+  `post-approval-links`, action 013). From a machine with `.env`: `bash scripts/amo-publish.sh ventures/highlight-keep`
+  (signs 0.1.1 with `assets/amo-metadata.json`, whose `homepage` is now apps.gankdat.com — AMO takes the homepage from the
+  metadata; if it does not, `PATCH https://addons.mozilla.org/api/v5/addons/addon/highlight-keep-web-highlighter/` with
+  `{"homepage":{"en-US":"https://apps.gankdat.com/highlightkeep.html"}}` under the same JWT), then
+  `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
+  Record the submission dates in `ventures/highlight-keep/STORE.md`. Do not flip the repo private yet: that waits for the
+  owner's Chrome dashboard privacy-URL edit (action 013) on both extensions and for ReadFocus's own 0.1.1. ~15 min.
+- 2026-09-30 owner: **one 2-minute dashboard edit** — the Chrome Web Store privacy-policy URL for Highlight Keep must move
+  to `https://apps.gankdat.com/privacy.html` (the page is live; steps in `docs/for-owner/actions/013-repo-private.md`).
+  It is the last link keeping the repo public; once you have done it (and the same for ReadFocus, asked the same way
+  when its item lands) Claude flips the repo to private. No new account, no money.

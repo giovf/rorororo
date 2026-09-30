@@ -8,7 +8,7 @@
 - [ ] Manual test in a fresh Chrome profile, free and licensed states.
 - [ ] Privacy: single-purpose statement; data-use disclosure filled truthfully
       (what is collected, whether it leaves the device); privacy policy URL
-      https://giovf.github.io/rorororo/privacy.html.
+      https://apps.gankdat.com/privacy.html.
 
 ## Licensing (Stripe Managed Payments + @foundry/licensing)
 - [x] Licence worker deployed at https://foundry-licenses.faceless-api.workers.dev; `LICENSE_SERVER` set (2026-09-18).
