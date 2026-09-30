@@ -22,6 +22,7 @@ same thing*, not for one big bet. Capital cap £100; recurring cost today ≈ £
 | **Change feeds** (`/v1/changes`) | grant-makers, KYB, recruiters | no competitor offers an official-source delta feed | inside plans; upsell later | none |
 | Browser extensions (ReadFocus, Highlight Keep) | consumers | rivals abandoned; low ticket | US$12 one-off | none, but small |
 | Figma plugin (Variables Toolkit) | designers | paid rivals with gaps | one-off | none |
+| **Agent directories** (Claude Connectors Directory; MCP Registry, mcpservers.org, Glama already) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30) |
 
 ## 3. Unit economics (what has to be true)
 
@@ -317,3 +318,4 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   point (`rest_data`/`rest_changes`, UA and slug, never an IP, denials excluded), `metrics.mjs`
   prints `changes 7d: N (mcp M, rest R)`, and the §4 target above now names that column as its
   source. It had read "unknown, likely 0" since launch because nothing counted it.
+- 2026-09-30 exchange: **gankdat distribution — Claude Connectors Directory listing** (score 11: evidence 3 × reach 4 ÷ 0.75 days + 20 owner min; the shelf lists automatically after a policy scan, no third-party gate, and the server today fails three of its checks: no readOnlyHint on 22 tools, no Origin 403, no keyless answer). Lazy OAuth (CIMD + PKCE) queued second (8) so plans bill from Claude/ChatGPT/Cursor; day-30 read 2026-10-30. Parked: Apify quality-score pass (copy lever already spent, needs run data), n8n node (5.1), Snowflake (needs account + provider agreement), pharma registers (3.0, supply). Declined: ChatGPT App Directory (business/tax verification). Comparison: `docs/exchange/2026-W40.md`.

@@ -125,9 +125,9 @@
     {
       "id": "pharma-registers-line",
       "title": "Pharma regulatory registers on gankdat: FDA shortages, Orange Book, Drugs@FDA, EMA, MHRA (from ARE's verified source inventory)",
-      "why": "Free, public-domain/OGL/attribution-licensed registers whose URLs, formats and quirks ARE already documented (ventures/gankdat/docs/ARE-REUSE-NOTES.md). Buyers: generics/505(b)(2) planners, pharmacy procurement, market access; paid rivals Citeline, GlobalData, DrugPatentWatch, ASHP. Same DataSource shape as our UK registers; change feeds are the product.",
+      "why": "Free, public-domain/OGL/attribution-licensed registers whose URLs, formats and quirks ARE already documented (ventures/gankdat/docs/ARE-REUSE-NOTES.md). Buyers: generics/505(b)(2) planners, pharmacy procurement, market access; paid rivals Citeline, GlobalData, DrugPatentWatch, ASHP. Same DataSource shape as our UK registers; change feeds are the product. Exchange 2026-W40 scored it 3.0 (evidence 3 × reach 2 ÷ 2 days): openFDA serves the registers free, S&P Global and one Apify actor sell them, buyers are US generics/BD teams outside the shelves we reach. Supply, not shelf.",
       "status": "parked",
-      "trigger": "Wednesday exchange 2026-09-30 scores it against the queue; build only if it beats the top distribution item",
+      "trigger": "a shelf converts (≥ 1 paying account or ≥ 20 paid Apify runs/month) and the Apify run data shows demand for non-UK registers",
       "added": "2026-09-28"
     },
     {
@@ -137,6 +137,45 @@
       "status": "parked",
       "trigger": "pharma-registers-line shipped and queried by at least one external key",
       "added": "2026-09-28"
+    },
+    {
+      "id": "claude-connectors-directory",
+      "title": "List gankdat's MCP server in the Claude Connectors Directory (then lazy OAuth so plans bill from Claude)",
+      "why": "Exchange 2026-W40 winner, score 11 (evidence 3 × reach 4 ÷ 0.75 days + 20 owner min). A shelf with the agents' owners as buyers that lists automatically after a policy scan on the owner's paid Claude plan — no third-party gate. Server needs tool annotations, Origin 403, a keyless preview so every tool answers, and a listing pack; OAuth (CIMD + PKCE) queued second so paid plans work inside Claude and the same server becomes submittable to ChatGPT/Cursor.",
+      "status": "promoted",
+      "venture": "gankdat",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "apify-quality-score-pass",
+      "title": "Apify Store quality-score / README keyword pass over the 17 public actors",
+      "why": "Store search and the Apify MCP search-actors tool weight name, short description, README, categories, then runs and ratings. publish-actors.mjs already sets seoTitle/seoDescription/categories; the copy lever is spent and the rest is the run flywheel, so nothing to change blind (W40 raw score 16, discounted).",
+      "status": "parked",
+      "trigger": "the first 14 days of metrics-apify-runs show ≥ 10 actors with 0 runs; then a keyword pass against store-search data read through the relay",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "n8n-community-node",
+      "title": "n8n verified community node for gankdat (npm publish with provenance via GitHub Actions)",
+      "why": "A shelf inside n8n Cloud; verification needs provenance publishing (workflow installer can), no runtime deps, one service per package, and an npm token from the owner. Evidence 2, reach 3, 1 day + 10 min → 5.1, below the 7 baseline (W40).",
+      "status": "parked",
+      "trigger": "the Claude directory listing shows ≥ 20 distinct accounts using a tool in 30 days",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "snowflake-marketplace",
+      "title": "Snowflake Marketplace data listing for the gankdat registers",
+      "why": "Needs a full Snowflake account, a signed provider agreement and paid-listing profile, and products billed by consumer consumption; sole-trader eligibility unstated and compute is a recurring-cost risk under the £10/month rule (W40, score 3).",
+      "status": "parked",
+      "trigger": "data line passes £300 MRR (same as limited-company)",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "chatgpt-app-directory",
+      "title": "ChatGPT App Directory app on the gankdat MCP server (Apps SDK)",
+      "why": "Largest reach of any candidate and the Apps SDK is MCP, but submission requires OpenAI business verification with tax documents (KYC beyond a one-off account) and the directory does not bill for us. Declined on constraint (W40); re-raise only if the owner opts into that verification after mcp-oauth-lazy-auth ships.",
+      "status": "declined",
+      "added": "2026-09-30"
     }
   ]
 }

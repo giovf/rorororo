@@ -176,3 +176,6 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   (`src/middleware/traffic.ts` + the `changes 7d:` metrics query) — the fallback sandbox has no
   `task-master` CLI and the task-master-ai MCP timed out again at session start (30 s). Same
   recurring gap as 2026-09-21/22/23/24; gankdat's CLAUDE.md wants a task before a new module.
+- 2026-09-30 owner: nothing to do yet — heads-up that the exchange chose a **Claude Connectors Directory** listing for
+  gankdat (`docs/exchange/2026-W40.md`); once the build routine ships `claude-directory-listing` it will ask you for one
+  portal form at https://claude.ai/directory/manage on your paid Claude plan (~20 min, no new account, no money).

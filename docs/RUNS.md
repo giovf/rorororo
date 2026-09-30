@@ -194,3 +194,14 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-29 17:55 | fallback | REST /v1/data and /v1/changes now write a traffic point; Daily numbers row carries `changes 7d:`
 - 2026-09-29 17:55 | fallback | STRATEGY §4's change-feed target was unmeasurable since launch; it now names the column that proves it
 - 2026-09-29 17:55 | fallback | The 3 false-alarm ALERTS lines are corrected in INBOX but their deletion is a handoff (sandbox refused it)
+
+- 2026-09-30 08:40 | exchange | Exchange W40: winner is a Claude Connectors Directory listing for gankdat's MCP server (score 11) — a shelf that opens itself
+- 2026-09-30 08:40 | exchange | The directory lists automatically after a policy scan on your paid Claude plan; buyers are the owners of the agents hitting our paywall
+- 2026-09-30 08:40 | exchange | Server fails three portal checks today: no readOnlyHint on 22 tools, no Origin 403, no keyless answer from query tools
+- 2026-09-30 08:40 | exchange | Queued gankdat claude-directory-listing (11): annotations, Origin 403, keyless preview, listing pack, CI conformance test
+- 2026-09-30 08:40 | exchange | Queued gankdat mcp-oauth-lazy-auth (8): CIMD + PKCE OAuth so paid plans bill from Claude, ChatGPT and Cursor
+- 2026-09-30 08:40 | exchange | Queued gankdat claude-directory-day-30 (4, from 2026-10-30): read the portal's rank, accounts and tool-call numbers
+- 2026-09-30 08:40 | exchange | Parked: Apify quality-score pass (copy already set, needs run data), n8n node (5.1), Snowflake (account), pharma registers (3.0)
+- 2026-09-30 08:40 | exchange | Declined: ChatGPT App Directory — business verification with tax documents is KYC beyond a one-off account
+- 2026-09-30 08:40 | exchange | STRATEGY §2 gains an "Agent directories" row; §8 logs the decision; comparison in docs/exchange/2026-W40.md
+- 2026-09-30 08:40 | exchange | Owner (later, not now): when the listing item ships, one portal form at claude.ai/directory/manage, ~20 min
