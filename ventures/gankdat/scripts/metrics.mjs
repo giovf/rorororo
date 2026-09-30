@@ -114,9 +114,11 @@ const changesRest = changeFeed.rest_changes ?? 0;
 // write "no run count reaches the repo" — yet all 17 actors are public since 2026-09-28, so the
 // shelf either produces runs or it does not. Field names confirmed against a live
 // GET /v2/acts/apify~web-scraper through the relay (docs/relay), not from memory:
-// stats.totalRuns, stats.totalUsers30Days, isPublic. `?my=1` is documented with a reduced actor
-// object, so an entry that carries no stats is read from its own endpoint (publish-actors.mjs
-// does the same for pricingInfos); the first run logs which path it took and the keys it saw.
+// stats.totalRuns, stats.totalUsers30Days, isPublic. The `?my=1` list itself was then read in CI
+// (run 36753533977): its entries carry `stats` but NOT `isPublic`, so every actor falls through to
+// its own endpoint for the public count — as publish-actors.mjs already does for pricingInfos.
+// Do not drop that fallback because the list looks complete: without it `P public` reads 0. Each
+// run logs the keys it saw, so a shape change shows up in the log before it shows up in the row.
 // APIFY_TOKEN is optional: without it, or if the API is down, the row still lands as `apify: n/a`
 // rather than losing the D1 and Analytics Engine numbers with it.
 const apifyToken = process.env.APIFY_TOKEN;
@@ -143,7 +145,7 @@ async function apifyShelf() {
     if (act.isPublic) publicCount += 1;
   }
   console.log(
-    `apify: ${items.length} actors, ${fromDetail} needed their own endpoint (list keys: ${Object.keys(items[0] ?? {}).join(',')})`,
+    `apify: ${items.length} actors, ${fromDetail} read from their own endpoint for isPublic (list keys: ${Object.keys(items[0] ?? {}).join(',')})`,
   );
   return { runs, users, publicCount };
 }

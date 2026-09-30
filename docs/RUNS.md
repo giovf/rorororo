@@ -229,3 +229,5 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 17:36 | fallback | docs/ci/gankdat-metrics.yml adds APIFY_TOKEN to the metrics step; the workflow installer moves it on push
 - 2026-09-30 17:36 | fallback | First real apify reading lands at tomorrow's 06:30 metrics slot; today's row already exists so it is not rewritten
 - 2026-09-30 17:36 | fallback | §4 'Apify actors live' corrected from a stale '1 of 13' to 17 of 17; both Apify rows now name where measured
+- 2026-09-30 17:52 | fallback | Live CI run confirms the shape: the ?my=1 list carries stats but not isPublic, so all 17 read their own endpoint
+- 2026-09-30 17:52 | fallback | That fallback is load-bearing, not belt-and-braces — comment and §8 now say so, so nobody deletes it

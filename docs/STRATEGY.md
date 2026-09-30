@@ -348,8 +348,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   P public`; the 24 h delta comes from the previous row, since the Apify API reports lifetime totals only, and
   a re-run cannot use its own row as the baseline. Field names were confirmed against a live
   `GET /v2/acts/apify~web-scraper` through the relay rather than from memory (`stats.totalRuns`,
-  `stats.totalUsers30Days`, `isPublic`); because `?my=1` is documented with a reduced actor object, an entry
-  without stats is read from its own endpoint and the first CI run logs which path it took. `APIFY_TOKEN` is
+  `stats.totalUsers30Days`, `isPublic`). The `?my=1` list was then read in CI: it carries `stats` but not
+  `isPublic`, so all 17 actors fall through to their own endpoint for the public count — that fallback is load-
+  bearing, not belt-and-braces, and dropping it would read `P public` as 0. `APIFY_TOKEN` is
   optional by design: without it the row still lands as `apify: n/a` rather than losing the D1 and Analytics
   Engine numbers with it. Two §4 rows now name where they are measured, and "Apify actors live" is corrected
   from the stale "1 of 13" to 17 of 17.
