@@ -164,7 +164,8 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   (https://claude.ai/code/routines/<id> or the RemoteTrigger API). The weekly report differs from its live prompt by one
   sentence pointing at `docs/ops/SELF-CAUSED.md`; the triage prompt differs by that sentence and (since 2026-09-30) by
   step 1's search, which drops `newer_than:3h` for `in:inbox is:unread`, oldest first, 30 threads a run, plus the
-  `(backlog)` marker in step 2 — one replacement from the mirror file carries both. Nothing else changes. Then delete
+  `(backlog)` marker in step 2, and (since 2026-09-30 burn-down) step 3's STORE.md/venture.json update on a listing
+  approval or rejection mail — one replacement from the mirror file carries all three. Nothing else changes. Then delete
   this line's remark in `docs/SCHEDULERS.md` ("live prompt pending the handoff").
 - 2026-09-29 handoff: delete three lines from this file that are now documented false alarms — the
   2026-09-27 Apify pricing handoff, the 2026-09-28 `gankdat/apify` pricing line (both are our own

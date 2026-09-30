@@ -63,3 +63,4 @@ larger, clearly frustrated audience and three stores (Chrome, Firefox, Edge) fro
 | 2026-09-28 | Daily check | — | — | — | not live yet |
 | 2026-09-29 | Daily check | — | — | — | not live yet |
 | 2026-09-30 | Daily check | — | — | — | not live yet |
+| 2026-09-30 | Firefox listing recorded live (approved 2026-09-22; STORE.md was 7 days stale) | 0 daily / 0 weekly downloads (AMO API) | — | 0 | source: relay `amo-listings`; Chrome still in review |

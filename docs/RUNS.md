@@ -245,3 +245,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 18:35 | burn-down | `npm run slot -- check build` prints running / done / missed; exercised live on this slot (568e2f4)
 - 2026-09-30 18:35 | burn-down | Watchdog never takes the marker for the work: a stamped-then-dead slot is reported as `stalled:`
 - 2026-09-30 18:35 | burn-down | 19 script tests green; CLAUDE.md rule applies from tomorrow's 09:00 build; prompt sentence in ALERTS handoff
+- 2026-09-30 18:45 | burn-down | Built foundry store-approval-to-store-md (5): triage step 3 now updates STORE.md/venture.json on listing mail
+- 2026-09-30 18:45 | burn-down | Relay confirmed both Firefox listings public (v0.1.0): ReadFocus 2 weekly downloads, Highlight Keep 0
+- 2026-09-30 18:45 | burn-down | STORE.md for read-focus and highlight-keep record Firefox live since 2026-09-22 with the AMO API as metrics source
+- 2026-09-30 18:45 | burn-down | read-focus and highlight-keep venture.json → launched (first listing live 2026-09-22); Chrome still in review
+- 2026-09-30 18:45 | burn-down | The prompt sentence rides the open 2026-09-29 triage handoff (three sentences, one replacement)
+- 2026-09-30 18:45 | burn-down | Foundry queue emptied → needs_research; the next loop pass researches the operation

@@ -1,7 +1,7 @@
 {
   "venture": "foundry",
   "status": "open",
-  "needs_research": false,
+  "needs_research": true,
   "updated": "2026-09-30",
   "items": [
     {
@@ -150,12 +150,13 @@
     {
       "id": "store-approval-to-store-md",
       "title": "A store approval or rejection mail updates the venture's STORE.md status line in the triage commit, so the metrics routine reads the live listing the next morning",
-      "why": "Store state reaches ALERTS.md but not the files the routines read. Firefox AMO tentatively approved ReadFocus and Highlight Keep on 2026-09-22 22:25/22:40 (INBOX), yet both STORE.md files still say 'awaiting review' and venture.json 'building' on 2026-09-29 — seven days, flagged by review 2026-W39 §2 and again by report 2026-W40 §2, and the daily metrics routine has read 'not live yet' for both every day since. mcpservers.org approval (2026-09-21) reached the listings log only on 2026-09-28. Fix: exact sentence for the triage prompt: 'A mail from a store or directory that approves, publishes, rejects or takes down one of our listings also updates that venture's STORE.md status line (and venture.json status when a first listing goes live) in the same commit, citing the mail's date; then the ALERTS line is informational.' Plus one build-routine step now: record the two AMO listings as tentatively approved 2026-09-22 with their URLs so the metrics routine starts reading them. Prompt edit is a handoff. Evidence 2 (three listings, two reviews flagged it) × reach 2 (metrics daily, review, report) ÷ 0.1 days.",
+      "why": "Store state reaches ALERTS.md but not the files the routines read. Firefox AMO tentatively approved ReadFocus and Highlight Keep on 2026-09-22 22:25/22:40 (INBOX), yet both STORE.md files still say 'awaiting review' and venture.json 'building' on 2026-09-29 — seven days, flagged by review 2026-W39 §2 and again by report 2026-W40 §2, and the daily metrics routine has read 'not live yet' for both every day since. mcpservers.org approval (2026-09-21) reached the listings log only on 2026-09-28. Fix: exact sentence for the triage prompt: 'A mail from a store or directory that approves, publishes, rejects or takes down one of our listings also updates that venture's STORE.md status line (and venture.json status when a first listing goes live) in the same commit, citing the mail's date; then the ALERTS line is informational.' Plus one build-routine step now: record the two AMO listings as tentatively approved 2026-09-22 with their URLs so the metrics routine starts reading them. Prompt edit is a handoff. Evidence 2 (three listings, two reviews flagged it) × reach 2 (metrics daily, review, report) ÷ 0.1 days. BUILT 2026-09-30 (burn-down): triage mirror step 3 now carries the sentence (STORE.md channel line + venture.json `launched` on a first listing), riding the open 2026-09-29 prompt handoff (three sentences, one replacement). Both AMO listings verified `public` v0.1.0 through the relay (amo-listings: HEAD 200 on both pages, API records Addon#3075364/3075366) and recorded in STORE.md with the API endpoint as the Firefox metrics source; read-focus and highlight-keep venture.json → launched (statusChangedOn 2026-09-22).",
       "effort_days": 0.1,
       "proof": "AMO Daily check rows show install counts instead of 'not live yet'; no review/report flags an unrecorded listing over 30 days",
       "score": 5,
-      "status": "todo",
-      "added": "2026-09-29"
+      "status": "done",
+      "added": "2026-09-29",
+      "done_at": "2026-09-30"
     },
     {
       "id": "fallback-slot-race",

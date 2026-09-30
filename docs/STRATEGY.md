@@ -376,3 +376,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   extended so the marker is never the trace: a slot that stamps and then dies is reported as `stalled:` within 2 h
   instead of disappearing behind its own marker. Trade-off accepted: such a slot is then not filled by the fallback —
   rarer than the collisions, and visible on the phone. Proof stays the item's: no collision in 30 days.
+- 2026-09-30 burn-down: built foundry `store-approval-to-store-md` (5). Store state reached ALERTS but not the
+  files the routines read: AMO tentatively approved ReadFocus and Highlight Keep on 2026-09-22 and both STORE.md files
+  still said "awaiting review" eight days later, so the metrics routine wrote "not live yet" daily. The triage prompt
+  mirror's step 3 now updates the venture's STORE.md channel line (state, mail date, URL) and flips venture.json to
+  `launched` on a first listing, in the triage commit; the live prompt change rides the open 2026-09-29 handoff. The
+  two listings were verified through the relay (HEAD 200, AMO API `status: public`, v0.1.0 — ReadFocus already has 2
+  weekly downloads with no promotion) and recorded, with the AMO JSON endpoint named as the Firefox metrics source so
+  tomorrow's Daily check reads numbers. Both ventures are `launched` as of 2026-09-22 (Chrome still in review).
