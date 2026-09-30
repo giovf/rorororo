@@ -407,3 +407,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-09-30 burn-down: heal — `notify owner` run 63 died on a two-commit push (`fetch-depth: 2` cannot see `github.event.before`), losing four
   run bullets; both range-diffing jobs (`notify-owner.yml`, `gankdat-publish.yml`) now check out full depth via `docs/ci/` and their scripts fall
   back to `HEAD~1..HEAD` on an unresolvable range. Foundry item `push-diff-range-depth` (7), done in the same commit.
+- 2026-09-30 burn-down: built `prompts-from-repo` (8) — `docs/routines/<name>.md` is now the prompt of record for all nine routines and
+  each stored prompt becomes a three-line bootstrap that reads its file (README there), because five prompt fixes queued behind one
+  person in two days while CLAUDE.md already proved the repo steers every run. Four files are verbatim, five are written from the repo
+  record and get reconciled against the stored text at swap time; one handoff replaces three. Foundry queue empty → research next.

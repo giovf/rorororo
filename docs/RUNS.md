@@ -277,3 +277,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 20:25 | burn-down | The four 19:56 bullets (store metrics Figma fix, testTimeout heal) never reached the phone; they are in RUNS.md
 - 2026-09-30 20:25 | burn-down | docs/ci: notify-owner and gankdat-publish now check out full depth; both scripts fall back to HEAD~1 on a bad range
 - 2026-09-30 20:25 | burn-down | Queued and closed foundry push-diff-range-depth (7); the installer moves both workflows on this push
+- 2026-09-30 20:50 | burn-down | Built foundry prompts-from-repo (8): routine prompts now live in docs/routines/, a change is a commit
+- 2026-09-30 20:50 | burn-down | docs/routines/README.md holds the 3-line bootstrap each stored prompt becomes, plus the ten trigger ids
+- 2026-09-30 20:50 | burn-down | burn-down.md is the verbatim running prompt; build, fallback, exchange, review, metrics written from the repo record
+- 2026-09-30 20:50 | burn-down | The slot-marker, offline-Taskmaster and store-metrics sentences are folded into their files, no separate handoffs
+- 2026-09-30 20:50 | burn-down | One ALERTS handoff (~30 min) swaps all nine routines and closes the three open prompt handoffs
+- 2026-09-30 20:50 | burn-down | Foundry queue emptied → needs_research on the next loop pass

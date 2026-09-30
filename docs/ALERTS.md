@@ -166,7 +166,8 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   step 1's search, which drops `newer_than:3h` for `in:inbox is:unread`, oldest first, 30 threads a run, plus the
   `(backlog)` marker in step 2, and (since 2026-09-30 burn-down) step 3's STORE.md/venture.json update on a listing
   approval or rejection mail — one replacement from the mirror file carries all three. Nothing else changes. Then delete
-  this line's remark in `docs/SCHEDULERS.md` ("live prompt pending the handoff").
+  this line's remark in `docs/SCHEDULERS.md` ("live prompt pending the handoff"). — Superseded 2026-09-30 (burn-down): the
+  prompts-from-repo handoff below swaps both prompts for the bootstrap, and the mirrors already carry every sentence.
 - 2026-09-29 handoff: delete three lines from this file that are now documented false alarms — the
   2026-09-27 Apify pricing handoff, the 2026-09-28 `gankdat/apify` pricing line (both are our own
   US$0.001/result publisher price, `docs/ops/SELF-CAUSED.md` row 1) and the 2026-09-25 SAM.gov
@@ -207,14 +208,25 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   trace check with: "run `npm run slot -- check build`; if it prints `running` or `done`, stop — the slot is
   taken" (its current `(build)`-commit check already stops on the marker, so this is clarity, not a fix). The
   CLAUDE.md rule of the same date makes the build routine stamp from tomorrow either way; foundry item
-  `fallback-slot-race`, `scripts/slot.ts`, `docs/ops/SLOTS.md`.
+  `fallback-slot-race`, `scripts/slot.ts`, `docs/ops/SLOTS.md`. — Superseded 2026-09-30 (burn-down): both sentences are in
+  `docs/routines/build.md` and `fallback.md`; the prompts-from-repo handoff below applies them.
 - 2026-09-30 handoff: add one sentence to the stored prompt of **Foundry daily metrics** (`trig_01JBrWDAZLeWEAhSBBnA9g8K`),
   at the start of its store-stats step: "The `store metrics` GitHub job (06:45) has already written today's `Daily check` row in
   each venture's RESEARCH.md from a runner that can reach the stores; read that row instead of fetching Chrome, Firefox or
   Figma stats yourself, never overwrite it, and only write a row for a venture whose row for today is missing (then say
   `store-metrics job left no row`)." Ten days of `not live yet` rows for live listings is what this ends; foundry item
-  `store-metrics-in-ci`, `scripts/store-metrics.ts`, `docs/ci/store-metrics.yml`.
+  `store-metrics-in-ci`, `scripts/store-metrics.ts`, `docs/ci/store-metrics.yml`. — Superseded 2026-09-30 (burn-down): the
+  sentence is in `docs/routines/metrics.md`; the prompts-from-repo handoff below applies it.
 - 2026-09-30 done (burn-down): the 2026-09-29 Taskmaster handoff is closed without the interactive session —
   rows 17 (`metrics-change-feed-count`), 18 (`claude-directory-listing`) and 19 (`mcp-oauth-lazy-auth`, migration 0013)
   are in `.taskmaster/tasks/tasks.json`, filed with the new offline command `npm run task -- add` (`scripts/taskmaster-add.ts`,
   foundry item `taskmaster-offline-add`). Routines file their own rows from now on; no more Taskmaster handoffs.
+- 2026-09-30 handoff: **one prompt swap for all nine routines** (foundry `prompts-from-repo`; closes the three prompt handoffs
+  above). For each row of the table in `docs/routines/README.md`, replace the stored prompt at https://claude.ai/code/routines/<id>
+  (or the RemoteTrigger API) with the bootstrap quoted in that README, `<name>` and `<file>` filled from the row — ten triggers
+  (the burn-down has two). Order: first the four verbatim mirrors (burn-down, inbox-triage, weekly-report, ops-retro) — swap as
+  is. Then the five written from the repo record (build, fallback, exchange, review, metrics): open the stored prompt, diff it
+  against the file's text below the `---`, add to the file any sentence the stored prompt has that the file lacks (commit
+  `routines: <name> prompt reconciled`), then swap. Nothing else changes; from then on a prompt change is a commit to
+  `docs/routines/` and the README's "Stored prompt" column reads `bootstrap` for each swapped row. Also enable the ops retro if
+  it is still disabled. ~30 min, no new account, no money.

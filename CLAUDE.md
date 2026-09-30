@@ -59,7 +59,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   dies (`ventures/gankdat/scripts/schedules.mjs`). Apply D1 migrations before pushing code that
   needs them, never after.
 - Every scheduled job (cloud routines, GitHub Actions, Worker crons) is listed in
-  `docs/SCHEDULERS.md`; update it in the same commit as any scheduler change.
+  `docs/SCHEDULERS.md`; update it in the same commit as any scheduler change. Routine prompts
+  live in `docs/routines/<name>.md` (the stored prompt only reads that file): change the file,
+  never file a prompt handoff (README there).
 - **Self-expansion is in scope** (owner 2026-09-24): when a blocker repeats, build the general
   fix (a routine, a relay, a watchdog) and queue it in `docs/pipeline/queues/foundry.json`;
   do not wait to be asked. Hosts the sandbox cannot reach: use `docs/relay/` (README there). New or changed CI

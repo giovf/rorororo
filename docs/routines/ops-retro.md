@@ -1,10 +1,14 @@
-# Foundry ops retro — routine prompt (mirror)
+# Foundry ops retro — routine prompt of record
 
 Cloud routine `trig_015Uvn63XZUVqx1TAiWZrZL6`, Saturdays 07:59 UTC, created 2026-09-26 by the build routine
 (`create_trigger`) — **disabled until the interactive session attaches the repository `giovf/rorororo` and
 enables it** (the tool sets no repository source; validation firing stalled, see `docs/SCHEDULERS.md`). This file mirrors the stored prompt so a retro proposal can quote the exact sentence to
 change; the live prompt is edited from the interactive session (RemoteTrigger API) and this file in the same
 change. Listed in `docs/SCHEDULERS.md`.
+
+Since 2026-09-30 (foundry `prompts-from-repo`) this file is the prompt of record: once the stored prompt is the
+bootstrap in `README.md`, the text below the `---` is what the routine runs and a change is a commit here; the
+pending sentences above ride the one handoff of 2026-09-30 that swaps every routine at once.
 
 ---
 

@@ -86,7 +86,8 @@ moves. Claude rewrites STRATEGY.md after each review and logs decisions in its Â
 ## Routines (cloud, run without anyone present)
 
 Full inventory with times, ids, infrastructure and outputs: `docs/SCHEDULERS.md` (keep it
-current whenever a scheduler changes).
+current whenever a scheduler changes). The prompts themselves live in `docs/routines/<name>.md`
+(the stored prompt is a bootstrap that reads the file, 2026-09-30) â€” a prompt change is a commit.
 
 | Routine | When (UTC) | Does |
 | --- | --- | --- |

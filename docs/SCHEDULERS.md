@@ -68,6 +68,10 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   marker commit is the trace the fallback stops on and the watchdog reads it to tell `stalled` from
   `missed`. The file is not sent to the owner (only RUNS.md and ALERTS.md are). Trade-off accepted: a
   build that stamps and then dies loses its slot to nobody until the watchdog's 2 h `stalled:` line.
+- **Routine prompts of record** (`docs/routines/<name>.md`, 2026-09-30): each stored prompt is a three-line bootstrap that
+  clones `main` and reads its file, so a prompt change is a commit to that file in the same commit as the work that needs it
+  (the README there has the bootstrap text, the trigger ids and which prompts are swapped). Until a routine is swapped its
+  file is a mirror and the edit rides a `handoff:` line.
 - `docs/ALERTS.md` line prefixes: `owner:` (sent to the owner's phone), `handoff:` (for the
   next interactive session — needs secrets), `done:` (closed by the interactive session).
 - `needs owner` (in `docs/INBOX.md`) is reserved for things only the owner can do (account

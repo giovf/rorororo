@@ -1,4 +1,4 @@
-# Foundry weekly report — routine prompt (mirror)
+# Foundry weekly report — routine prompt of record
 
 Cloud routine `trig_01PjxdBAcvYSAT32fCyzcvQg`, Mondays 07:30 UTC, Sonnet. This file mirrors the stored
 prompt so a change can be quoted exactly; the live prompt and this file change in the same commit (the routine
@@ -6,6 +6,10 @@ was created via the HTTP API, so `update_trigger` refuses agents — 2026-09-29;
 applies it, RemoteTrigger API or https://claude.ai/code/routines). Listed in `docs/SCHEDULERS.md`.
 
 Changes: 2026-09-29 — sections 3 and 6 gained the `docs/ops/SELF-CAUSED.md` sentence (foundry `self-caused-alerts`).
+
+Since 2026-09-30 (foundry `prompts-from-repo`) this file is the prompt of record: once the stored prompt is the
+bootstrap in `README.md`, the text below the `---` is what the routine runs and a change is a commit here; the
+pending sentences above ride the one handoff of 2026-09-30 that swaps every routine at once.
 
 ---
 

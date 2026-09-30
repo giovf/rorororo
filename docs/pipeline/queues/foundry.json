@@ -1,7 +1,7 @@
 {
   "venture": "foundry",
   "status": "open",
-  "needs_research": false,
+  "needs_research": true,
   "updated": "2026-09-30",
   "items": [
     {
@@ -194,12 +194,13 @@
     {
       "id": "prompts-from-repo",
       "title": "Routine prompts live in the repo: each stored prompt becomes a three-line bootstrap that reads docs/routines/<name>.md, so a prompt change is a commit instead of a handoff",
-      "why": "Routines cannot edit their own prompts (update_trigger refuses triggers created via the HTTP API, 2026-09-29), so every prompt fix waits for the interactive session: the 2026-09-29 handoff now carries three triage sentences and one report sentence (self-caused-alerts, triage-backlog-window, store-approval-to-store-md), a fourth handoff of 2026-09-30 carries the build routine's slot-start sentence, and the ops retro has been disabled since 2026-09-26 waiting for its repository attach. Four prompt changes in two days, all queued behind one person; meanwhile the routines already follow repo text without a handoff (CLAUDE.md is loaded into every session, which is how fallback-slot-race shipped). Fix: one last handoff per routine that replaces the stored prompt with: 'You are the Foundry <name> routine. Run `git fetch origin && git checkout main && git pull` (on unrelated histories: `git switch -c work origin/main`, push with `git push origin HEAD:main`), then read `docs/routines/<name>.md` on that branch and do exactly what it says. Never touch .env, never create accounts or spend money.' The mirrors under docs/routines/ become the prompts of record (triage, report and retro already exist; build, burn-down, exchange, review and metrics need writing from the live prompts — the burn-down text is in hand from its own run; the others are read from claude.ai/code/routines by the interactive session). Security posture unchanged: the repo already steers every run through CLAUDE.md. Evidence 3 (five prompt handoffs in two days, one routine dark four days) × reach 3 (all eight routines, forever) ÷ 0.3 days (mirrors + one handoff listing all eight replacements).",
+      "why": "Routines cannot edit their own prompts (update_trigger refuses triggers created via the HTTP API, 2026-09-29), so every prompt fix waits for the interactive session: the 2026-09-29 handoff now carries three triage sentences and one report sentence (self-caused-alerts, triage-backlog-window, store-approval-to-store-md), a fourth handoff of 2026-09-30 carries the build routine's slot-start sentence, and the ops retro has been disabled since 2026-09-26 waiting for its repository attach. Four prompt changes in two days, all queued behind one person; meanwhile the routines already follow repo text without a handoff (CLAUDE.md is loaded into every session, which is how fallback-slot-race shipped). Fix: one last handoff per routine that replaces the stored prompt with: 'You are the Foundry <name> routine. Run `git fetch origin && git checkout main && git pull` (on unrelated histories: `git switch -c work origin/main`, push with `git push origin HEAD:main`), then read `docs/routines/<name>.md` on that branch and do exactly what it says. Never touch .env, never create accounts or spend money.' The mirrors under docs/routines/ become the prompts of record (triage, report and retro already exist; build, burn-down, exchange, review and metrics need writing from the live prompts — the burn-down text is in hand from its own run; the others are read from claude.ai/code/routines by the interactive session). Security posture unchanged: the repo already steers every run through CLAUDE.md. Evidence 3 (five prompt handoffs in two days, one routine dark four days) × reach 3 (all eight routines, forever) ÷ 0.3 days (mirrors + one handoff listing all eight replacements). Built 2026-09-30 burn-down: docs/routines/README.md (bootstrap text, trigger table, provenance and editing rules); burn-down.md verbatim from the running prompt; build.md, fallback.md, exchange.md, review.md, metrics.md written from the repo record with the queued sentences folded in (the interactive session reconciles each against the stored text before swapping); the three existing mirrors relabelled prompts of record; one ALERTS handoff replaces the three open prompt handoffs; CLAUDE.md, SCHEDULERS.md and OPERATIONS.md name the mechanism.",
       "effort_days": 0.3,
       "proof": "zero prompt-change handoffs in ALERTS.md over 30 days after the switch; a prompt change lands in the next scheduled run of that routine",
       "score": 8,
-      "status": "todo",
-      "added": "2026-09-30"
+      "status": "done",
+      "added": "2026-09-30",
+      "done_at": "2026-09-30"
     },
     {
       "id": "push-diff-range-depth",

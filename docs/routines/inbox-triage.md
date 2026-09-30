@@ -1,4 +1,4 @@
-# Foundry inbox triage — routine prompt (mirror)
+# Foundry inbox triage — routine prompt of record
 
 Cloud routine `trig_011NfGaSrEEsr5B1xTHEBRAr`, hourly at :05 UTC, Sonnet, Gmail connector. This file
 mirrors the stored prompt so a change can be quoted exactly; the live prompt and this file change in
@@ -11,6 +11,10 @@ and step 2 gained the `(backlog)` marker (foundry `triage-backlog-window`). 2026
 updates the venture's `STORE.md` status line and `venture.json` on an approval/rejection/takedown mail (foundry
 `store-approval-to-store-md`). All three changes are still waiting on the
 same handoff, so one prompt replacement from the text below the `---` applies them together.
+
+Since 2026-09-30 (foundry `prompts-from-repo`) this file is the prompt of record: once the stored prompt is the
+bootstrap in `README.md`, the text below the `---` is what the routine runs and a change is a commit here; the
+pending sentences above ride the one handoff of 2026-09-30 that swaps every routine at once.
 
 ---
 
