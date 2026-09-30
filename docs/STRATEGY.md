@@ -433,3 +433,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-09-30 burn-down: built highlight-keep `weava-alternative-page` (6) — the page a burned Weava / Super Simple user finds when they
   search, on the host Search Console already indexes; honest table (PDF and sync marked "not yet"), live install buttons, both listing
   texts link to it. Distribution before features (§5); proof is Search Console at day 30.
+- 2026-09-30 burn-down: built read-focus `post-approval-links` (5) — both extensions' repo-side links now on apps.gankdat.com; the
+  live listings switch with the one open handoff (AMO) and one owner dashboard visit (Chrome, both extensions), then the repo goes
+  private (013). Queue emptied → research next.

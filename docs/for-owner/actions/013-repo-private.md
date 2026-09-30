@@ -1,8 +1,8 @@
 # 013 — make the GitHub repo private (after the store reviews finish)
 
 **Status:** store reviews finished (all four extension listings live by 2026-09-30; Figma's listing never
-used github.io). Repo side done for Highlight Keep (2026-09-30). Waiting on: the 0.1.1 sign/upload (interactive
-session, ALERTS handoff) and **one 2-minute dashboard edit from you** (below). · **Cost:** £0.
+used github.io). Repo side done for both extensions (2026-09-30). Waiting on: the 0.1.1 sign/upload + AMO listing run (interactive
+session, ALERTS handoff) and **one 2-minute dashboard edit from you, per extension** (below). · **Cost:** £0.
 
 ## Why the repo is public today
 GitHub Pages on a free account only serves public repos, and the landing/policy pages for the
@@ -31,10 +31,13 @@ at the time.
 The Chrome Web Store privacy-policy URL can only be edited in the dashboard, under your Google login:
 https://chrome.google.com/webstore/devconsole → **Highlight Keep** (`pciignkojfpgmfcmjchmpdhonpjkfepc`) → Privacy tab →
 Privacy policy URL: `https://apps.gankdat.com/privacy.html` → Save → Submit for review (listing-only changes
-review quickly). Do the same for ReadFocus (`dckbdaplggmhimpbekhdbaampglfhdgf`) once its queue item lands (same
-day). Nothing else; the Firefox homepage moves by API when 0.1.1 is signed.
+review quickly). Do the same for ReadFocus (`dckbdaplggmhimpbekhdbaampglfhdgf`) — its repo side landed the same evening, so
+both edits can be done in one dashboard visit. Nothing else; the Firefox homepage moves by API when 0.1.1 is signed.
 
 ## Progress
 - 2026-09-30 (burn-down): Highlight Keep — popup/welcome links, AMO `homepage`, LISTING privacy URL all on
   apps.gankdat.com; version 0.1.1 in the repo, not yet published. Relay `apps-host-check`: highlightkeep, readfocus,
   privacy, terms, thanks all 200 on the new host.
+- 2026-09-30 (burn-down): ReadFocus — AMO `homepage` and LISTING privacy URL on apps.gankdat.com; no version bump needed
+  (the extension has no github.io link). The AMO homepage is applied by the `amo-listing` run already in the handoff; the Chrome
+  privacy URL is your dashboard edit. After both: repo private, GitHub Pages workflow removed.

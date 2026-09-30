@@ -23,7 +23,7 @@ Made for readers with ADHD or dyslexia, students, and anyone who reads for a liv
 **Single purpose:** Improve readability of web page text for the current user.
 **Permissions justification:** `storage` — save your settings. `activeTab` + `scripting` — apply the reading aids to the page you're viewing when you switch it on. Optional host permission, granted per site — Chrome asks once when you enable a site, and ReadFocus only ever runs on sites you've enabled; nothing is read out of the page or sent anywhere.
 **Data-use disclosure:** collects no user data. (Activating a paid key sends the key's order id to our licence server once, to confirm it wasn't refunded.)
-**Privacy policy:** https://giovf.github.io/rorororo/privacy.html · **Support:** info@gankdat.com
+**Privacy policy:** https://apps.gankdat.com/privacy.html · **Support:** info@gankdat.com
 
 ## Screenshots (1280×800) — owner captures after test round
 1. Article before/after with medium bolding, popup open.

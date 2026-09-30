@@ -322,3 +322,8 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 23:25 | burn-down | Page linked from the landing index, the Highlight Keep page and both listing texts (AMO rides 0.1.1, CWS the dashboard)
 - 2026-09-30 23:25 | burn-down | Highlight Keep page now shows the live Chrome and Firefox install buttons instead of 'listings in review'
 - 2026-09-30 23:25 | burn-down | sitemap.xml and robots.txt added to apps.gankdat.com so Search Console lists the new page
+- 2026-09-30 23:40 | burn-down | Built read-focus post-approval-links (5): AMO homepage and LISTING privacy URL now on apps.gankdat.com
+- 2026-09-30 23:40 | burn-down | No ReadFocus version bump needed: the extension never linked github.io; AMO homepage rides the open handoff
+- 2026-09-30 23:40 | burn-down | ReadFocus landing page shows the live Chrome and Firefox install buttons; index cards say live
+- 2026-09-30 23:40 | burn-down | Owner ask: the same 2-minute Chrome dashboard privacy-URL edit for ReadFocus, then the repo goes private
+- 2026-09-30 23:40 | burn-down | read-focus queue emptied → needs_research

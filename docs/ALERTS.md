@@ -234,3 +234,6 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   to `https://apps.gankdat.com/privacy.html` (the page is live; steps in `docs/for-owner/actions/013-repo-private.md`).
   It is the last link keeping the repo public; once you have done it (and the same for ReadFocus, asked the same way
   when its item lands) Claude flips the repo to private. No new account, no money.
+- 2026-09-30 owner: ReadFocus is ready for **the same 2-minute dashboard edit** as Highlight Keep — Chrome Web Store →
+  ReadFocus (`dckbdaplggmhimpbekhdbaampglfhdgf`) → Privacy tab → privacy policy URL `https://apps.gankdat.com/privacy.html` →
+  Save → Submit. Both extensions in one dashboard visit; then Claude flips the repo private. No new account, no money.
