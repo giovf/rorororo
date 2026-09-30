@@ -118,6 +118,25 @@ describe('missedSlots', () => {
     expect(only(routine)).toEqual(['build@2026-09-26 09:00']);
   });
 
+  it('does not take a start marker for the work, and reports a started-then-dead slot as stalled', () => {
+    const slotsText = '# Slot starts\n\n- 2026-09-25 17:03 | build | started\n';
+    const marker = '2026-09-25T17:03:20+00:00\tbuild: slot 2026-09-25 17:03 UTC started (build)\n';
+    const stalled = missedSlots({ now, runsText: '# Run log\n', commitsText: marker, slotsText });
+    expect(stalled.map((s) => slotKey(s.routine, s.at))).toEqual(['build@2026-09-25 17:00']);
+    expect(stalled[0]?.startedAt?.toISOString()).toBe('2026-09-25T17:03:00.000Z');
+    expect(missedLine(stalled[0]!, now)).toBe(
+      '- 2026-09-25 19:40 | watchdog | stalled: build slot 2026-09-25 17:00 UTC started 17:03 but pushed nothing by 19:00; usage limit? see claude.ai/code/routines',
+    );
+    // The stalled line dedupes like a missed one, and a real commit after the marker is the trace.
+    expect(reportedSlots(`# Run log\n${missedLine(stalled[0]!, now)}\n`)).toEqual(
+      new Set(['build@2026-09-25 17:00']),
+    );
+    const finished = `${marker}2026-09-25T17:44:00+00:00\tgankdat: something useful (build)\n`;
+    expect(missedSlots({ now, runsText: '# Run log\n', commitsText: finished, slotsText })).toEqual(
+      [],
+    );
+  });
+
   it('never reports the same slot twice: the RUNS.md line is the dedupe record', () => {
     const first = missedSlots({ now, runsText: '# Run log\n', commitsText: '' });
     expect(first).toHaveLength(1);

@@ -366,3 +366,13 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   metering, revocation all the key's). Listing stays auth type `none` + lazy auth per Anthropic's docs. Proof: the daily
   numbers row now prints `oauth: N connects/24h` and the client hosts. Next gankdat item is the day-30 read
   (2026-10-30); the build queue falls back to foundry items (7) until the exchange adds more.
+- 2026-09-30 burn-down: built foundry `fallback-slot-race` (7, the pipeline's top item after the OAuth build). Three
+  build/fallback collisions in two days, all inside a 6-9 min window after the fallback's :20 check, because the
+  check could only see a build that had already committed and builds commit 26-45 min after the slot. Fix: the
+  build's very first push is a start marker (`npm run slot -- start build` → one line in `docs/ops/SLOTS.md`, commit
+  `build: slot … UTC started (build)`), which the fallback's existing `(build)`-commit check stops on — so the window
+  closes with a repo-side rule (CLAUDE.md) and no prompt change is required, though the exact sentence is filed as a
+  handoff for the build prompt. `npm run slot -- check build` answers `running` / `done` / `missed`. The watchdog was
+  extended so the marker is never the trace: a slot that stamps and then dies is reported as `stalled:` within 2 h
+  instead of disappearing behind its own marker. Trade-off accepted: such a slot is then not filled by the fallback —
+  rarer than the collisions, and visible on the phone. Proof stays the item's: no collision in 30 days.

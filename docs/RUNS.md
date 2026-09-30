@@ -239,3 +239,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 17:46 | build | Taskmaster rows still pending for the new OAuth module (MCP timed out again, no CLI) — rides the 2026-09-29 handoff
 - 2026-09-30 17:52 | fallback | Live CI run confirms the shape: the ?my=1 list carries stats but not isPublic, so all 17 read their own endpoint
 - 2026-09-30 17:52 | fallback | That fallback is load-bearing, not belt-and-braces — comment and §8 now say so, so nobody deletes it
+- 2026-09-30 18:35 | burn-down | Built foundry fallback-slot-race (7): the build's first push is now a start marker the fallback sees
+- 2026-09-30 18:35 | burn-down | scripts/slot.ts: `npm run slot -- start build` stamps docs/ops/SLOTS.md and pushes `… started (build)`
+- 2026-09-30 18:35 | burn-down | The fallback's existing '(build) commit in 2 h' check stops on that marker, so no fallback prompt change
+- 2026-09-30 18:35 | burn-down | `npm run slot -- check build` prints running / done / missed; exercised live on this slot (568e2f4)
+- 2026-09-30 18:35 | burn-down | Watchdog never takes the marker for the work: a stamped-then-dead slot is reported as `stalled:`
+- 2026-09-30 18:35 | burn-down | 19 script tests green; CLAUDE.md rule applies from tomorrow's 09:00 build; prompt sentence in ALERTS handoff

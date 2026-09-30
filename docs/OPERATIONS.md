@@ -122,6 +122,12 @@ logs a match and never escalates it, and the weekly report never makes one a nex
   the `run watchdog` CI job (drafted 2026-09-25 at `docs/ci/run-watchdog.yml`, active once moved
   into `.github/workflows/`) within 2 h as a `watchdog | missed:` line in `docs/RUNS.md` → Telegram
   bullet, so silence is never mistaken for a quiet day (`docs/SCHEDULERS.md`).
+- Slot race (2026-09-29/30, three collisions in two days): the fallback's :20 check could only see a
+  build that had already committed, and builds commit 26–45 min after the slot. Since 2026-09-30 the
+  build routine's first push is a start marker (`npm run slot -- start build` → `docs/ops/SLOTS.md` +
+  a `… started (build)` commit), which the fallback's existing check stops on; `npm run slot -- check
+  build` answers `running` / `done` / `missed`. The watchdog reports a marker with no work commit
+  by the deadline as `stalled:` rather than counting it as a trace (`scripts/slot.ts`).
 - `main` is gated by the `check` workflow on every push. If it goes red, the next daily build
   run fixes or reverts before doing anything else; interactive sessions do the same at start.
 - Live-state side effects (temporary cron triggers used to force a refresh) are reconciled with

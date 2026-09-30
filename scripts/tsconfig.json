@@ -5,6 +5,7 @@
     "declaration": false,
     "sourceMap": false,
     "noEmit": true,
+    "allowImportingTsExtensions": true,
     "erasableSyntaxOnly": true,
     "types": ["node"]
   },

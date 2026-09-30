@@ -199,3 +199,11 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   clock, is the queue, so a missed slot (GitHub cron gaps 2026-09-21/22, usage limits) delays mail instead of
   losing it, as the nine threads of 2026-09-18..21 were lost for a week. No new handoff: the live prompt edit
   rides the 2026-09-29 handoff above, which now carries both sentences. Foundry item `triage-backlog-window`.
+- 2026-09-30 handoff: add one sentence to the stored prompt of **Foundry daily build** (`trig_01P9WT733fg3qnuJeKUHE8fx`),
+  right before its STEP 0: "STEP -1 — mark the slot: before anything else (before `npm ci`), run
+  `npm run slot -- start build`; it pushes a one-line marker so the :20 fallback can see this slot is in flight;
+  if the push fails, continue anyway." Optionally replace the fallback's (`trig_01GraXN5FPXmq5M9wJSYYeHN`)
+  trace check with: "run `npm run slot -- check build`; if it prints `running` or `done`, stop — the slot is
+  taken" (its current `(build)`-commit check already stops on the marker, so this is clarity, not a fix). The
+  CLAUDE.md rule of the same date makes the build routine stamp from tomorrow either way; foundry item
+  `fallback-slot-race`, `scripts/slot.ts`, `docs/ops/SLOTS.md`.

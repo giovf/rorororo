@@ -47,6 +47,10 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   yours to execute) and `docs/INBOX.md`; check CI is
   green (`gh run list -L 3`) and fix `main` first if not; `npm run schedules -w @foundry/gankdat`
   to confirm no temporary cron trigger was left armed.
+- **Slot start (routines that have a fallback — today the 09:00/17:00 build):** the very first action of
+  the run, before `npm ci`, is `npm run slot -- start build`: it pushes a one-line marker so the :20
+  fallback and the watchdog can see the slot is in flight (`docs/ops/SLOTS.md`). Burn-down, exchange,
+  review and retro runs do not need it.
 - **Atomic pushes:** build fully, run the gates, then ONE commit and push. Never push partial
   work "to save progress" — a session can be cut off by usage limits at any moment, and the
   sandbox is discarded, which is safe only if nothing half-done reached `main`.

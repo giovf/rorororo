@@ -8,14 +8,18 @@
 // `notify owner` CI job turns that line into a Telegram bullet; the line itself is the
 // dedupe record, so re-runs (hourly cron + every push) never report a slot twice.
 //
+// A slot that STARTED (`npm run slot -- start <routine>` stamped docs/ops/SLOTS.md, 2026-09-30) but
+// never finished is reported as `stalled:` — the start marker is never mistaken for the work.
+//
 // Run in CI: node --disable-warning=ExperimentalWarning scripts/run-watchdog.ts
 // Workflow: docs/ci/run-watchdog.yml (drafted 2026-09-25; routine tokens lack the `workflow` scope,
 // so the interactive session moves it to .github/workflows/ — until then the script is dormant).
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
 import { execSync } from 'node:child_process';
-import { appendFileSync, readFileSync } from 'node:fs';
+import { appendFileSync, existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { SLOTS_FILE, parseStarted, startMarkerRoutine } from './slot.ts';
 
 export interface RoutineSlot {
   /** Tag the routine writes in docs/RUNS.md (`| build |`) and the name used in the missed line. */
@@ -198,7 +202,8 @@ export function parseCommits(text: string): Trace[] {
   return out;
 }
 
-const MISSED_RE = /\|\s*watchdog\s*\|\s*missed: (\S+) slot (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) UTC/;
+const MISSED_RE =
+  /\|\s*watchdog\s*\|\s*(?:missed|stalled): (\S+) slot (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) UTC/;
 
 /** Slot keys already reported in RUNS.md (the file is the dedupe record). */
 export function reportedSlots(runsText: string): Set<string> {
@@ -217,31 +222,57 @@ export function hasTrace(slot: DueSlot, traces: Trace[]): boolean {
   return traces.some((t) => {
     const ms = t.at.getTime();
     if (ms < from || ms > to) return false;
-    return t.kind === 'commit' ? slot.def.commit.test(t.text) : slot.def.tags.includes(t.kind);
+    if (t.kind === 'commit')
+      return startMarkerRoutine(t.text) === undefined && slot.def.commit.test(t.text);
+    return slot.def.tags.includes(t.kind);
   });
+}
+
+/** The slot's start marker (docs/ops/SLOTS.md) inside the same window, if the run stamped one. */
+export function startedAt(slot: DueSlot, slotsText: string): Date | undefined {
+  const from = slot.at.getTime() - 5 * MINUTE;
+  const to = slot.deadline.getTime();
+  return parseStarted(slotsText).find(
+    (s) => s.routine === slot.routine && s.at.getTime() >= from && s.at.getTime() <= to,
+  )?.at;
 }
 
 export interface WatchInput {
   now: Date;
   runsText: string;
   commitsText: string;
+  /** docs/ops/SLOTS.md — start markers; absent before 2026-09-30. */
+  slotsText?: string;
   defs?: RoutineSlot[];
   since?: number;
   lookbackHours?: number;
 }
 
-/** Slots that have passed their deadline without a trace and are not yet in RUNS.md. */
-export function missedSlots(input: WatchInput): DueSlot[] {
-  const traces = [...parseRuns(input.runsText), ...parseCommits(input.commitsText)];
-  const reported = reportedSlots(input.runsText);
-  return slotsDue(input.defs ?? ROUTINES, input.now, input.since, input.lookbackHours).filter(
-    (slot) => !reported.has(slotKey(slot.routine, slot.at)) && !hasTrace(slot, traces),
-  );
+export interface MissedSlot extends DueSlot {
+  /** Set when the run stamped a start marker and then never committed: stalled, not missed. */
+  startedAt?: Date;
 }
 
-/** The RUNS.md line for one missed slot (≤ 120 chars of text after the routine column). */
-export function missedLine(slot: DueSlot, now: Date): string {
+/** Slots that have passed their deadline without a trace and are not yet in RUNS.md. */
+export function missedSlots(input: WatchInput): MissedSlot[] {
+  const traces = [...parseRuns(input.runsText), ...parseCommits(input.commitsText)];
+  const reported = reportedSlots(input.runsText);
+  const slotsText = input.slotsText ?? '';
+  return slotsDue(input.defs ?? ROUTINES, input.now, input.since, input.lookbackHours)
+    .filter((slot) => !reported.has(slotKey(slot.routine, slot.at)) && !hasTrace(slot, traces))
+    .map((slot) => {
+      const started = startedAt(slot, slotsText);
+      return started ? { ...slot, startedAt: started } : slot;
+    });
+}
+
+/** The RUNS.md line for one missed or stalled slot (≤ 120 chars of text after the routine column). */
+export function missedLine(slot: MissedSlot, now: Date): string {
   const hhmm = stamp(slot.deadline).slice(11);
+  if (slot.startedAt) {
+    const started = stamp(slot.startedAt).slice(11);
+    return `- ${stamp(now)} | watchdog | stalled: ${slot.routine} slot ${stamp(slot.at)} UTC started ${started} but pushed nothing by ${hhmm}; usage limit? see claude.ai/code/routines`;
+  }
   return `- ${stamp(now)} | watchdog | missed: ${slot.routine} slot ${stamp(slot.at)} UTC left no commit or run line by ${hhmm}; usage limit? see claude.ai/code/routines`;
 }
 
@@ -255,7 +286,9 @@ function main(): void {
     encoding: 'utf8',
   });
   const runsText = readFileSync(runsPath, 'utf8');
-  const missed = missedSlots({ now, runsText, commitsText });
+  const slotsPath = path.join(root, SLOTS_FILE);
+  const slotsText = existsSync(slotsPath) ? readFileSync(slotsPath, 'utf8') : '';
+  const missed = missedSlots({ now, runsText, commitsText, slotsText });
   if (missed.length === 0) {
     console.log(`watchdog: every slot due before ${now.toISOString()} left a trace`);
     return;
