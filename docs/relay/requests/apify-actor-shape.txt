@@ -1,2 +1,0 @@
-GET RANGE=0-8191 https://api.apify.com/v2/acts/apify~web-scraper
-GET RANGE=0-8191 https://api.apify.com/v2/store?limit=2
