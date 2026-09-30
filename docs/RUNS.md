@@ -237,3 +237,5 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 17:46 | build | Listing pack: auth type stays none + lazy auth (per Anthropic docs); docs#claude, privacy policy, llms.txt updated
 - 2026-09-30 17:46 | build | Queue: mcp-oauth-lazy-auth done; next gankdat item is the 2026-10-30 day-30 read, so builds fall back to foundry (7)
 - 2026-09-30 17:46 | build | Taskmaster rows still pending for the new OAuth module (MCP timed out again, no CLI) — rides the 2026-09-29 handoff
+- 2026-09-30 17:52 | fallback | Live CI run confirms the shape: the ?my=1 list carries stats but not isPublic, so all 17 read their own endpoint
+- 2026-09-30 17:52 | fallback | That fallback is load-bearing, not belt-and-braces — comment and §8 now say so, so nobody deletes it
