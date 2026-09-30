@@ -65,3 +65,29 @@ larger, clearly frustrated audience and three stores (Chrome, Firefox, Edge) fro
 | 2026-09-30 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.1.0, updated September 21, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.1.0 |
 | 2026-09-30 | Firefox listing recorded live (approved 2026-09-22; STORE.md was 7 days stale) | 0 daily / 0 weekly downloads (AMO API) | — | 0 | source: relay `amo-listings`; Chrome still in review |
 | 2026-09-30 | Chrome Web Store listing found live (relay: page 200, "Add to Chrome"); user count is not in the static HTML | — | — | 0 | approval mail never reached INBOX; foundry `store-metrics-in-ci` queued to read the numbers from CI |
+
+## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
+
+Evidence read: the metrics rows above (0 Chrome users, 0 Firefox daily users / weekly downloads,
+Chrome live since ~2026-09-21, Firefox public since 2026-09-22), relay `amo-listings` (the live
+AMO listing: **0 previews, no tags, category `other`**, homepage on github.io — `web-ext sign`
+only ships the text fields of `assets/amo-metadata.json`), relay `cws-pages` (Chrome listing
+created via the API with the bare name, no promo tile), the 2026-09-19 competitor table
+(Weava still abandoned, its reviews still the wedge) and STRATEGY §5 (distribution before
+features until the funnel converts).
+
+Reading: nothing is wrong with the product yet — nobody can find it. Two listings without
+screenshots in the "other" category and no page of ours that answers the search a burned
+Weava user actually types. Items added (score = evidence × reach ÷ effort):
+
+| Item | Score | Effort | What it fixes |
+|---|---|---|---|
+| `amo-listing-previews` | 6 | 0.3 d | screenshots, Productivity category, tags, homepage on AMO via the API (script + one handoff run) |
+| `weava-alternative-page` | 6 | 0.3 d | the search-capture page for Weava / Super Simple refugees on apps.gankdat.com |
+| `cws-listing-keywords` | 4 (blocked: owner dashboard) | 0.1 d | Chrome title keywords, category, promo tile — rides the action-013 dashboard visit |
+| `pdf-highlighting` | 3 | 2 d | the most-asked rival gap; a feature, so behind the three above |
+
+Foundry: `extension-publish-in-ci` (5) — releases stop being handoffs once five store secrets
+are in GitHub Actions. Kill check (STRATEGY §7): zero sales and zero organic signal 90 days after
+every listing is live → 2026-12-21 if nothing moves; the items above are what "effort" means
+until then.

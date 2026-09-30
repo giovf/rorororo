@@ -310,3 +310,8 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 22:35 | burn-down | Highlight Keep 0.1.1 in the repo (links only); ALERTS handoff signs and uploads it, self-caused row added
 - 2026-09-30 22:35 | burn-down | Owner ask: one 2-minute Chrome dashboard edit (privacy URL) is the last link keeping the repo public
 - 2026-09-30 22:35 | burn-down | highlight-keep queue emptied → needs_research
+- 2026-09-30 22:45 | burn-down | Research (highlight-keep): 0 users on both stores; the AMO listing has no screenshots, no tags, category 'other'
+- 2026-09-30 22:45 | burn-down | Queued amo-listing-previews (6): screenshots, category, tags and homepage on AMO via the API script
+- 2026-09-30 22:45 | burn-down | Queued weava-alternative-page (6): a comparison page on apps.gankdat.com for burned Weava users
+- 2026-09-30 22:45 | burn-down | Queued cws-listing-keywords (4, owner dashboard) and pdf-highlighting (3, feature, behind distribution)
+- 2026-09-30 22:45 | burn-down | Queued foundry extension-publish-in-ci (5): store releases from CI once five secrets exist, no more handoffs

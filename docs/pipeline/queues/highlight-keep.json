@@ -1,7 +1,7 @@
 {
   "venture": "highlight-keep",
   "status": "open",
-  "needs_research": true,
+  "needs_research": false,
   "updated": "2026-09-30",
   "items": [
     {
@@ -14,6 +14,47 @@
       "status": "done",
       "added": "2026-09-22",
       "done_at": "2026-09-30"
+    },
+    {
+      "id": "amo-listing-previews",
+      "title": "Firefox listing gets its two 1280×800 screenshots, Productivity category, tags and the apps.gankdat.com homepage via the AMO API",
+      "why": "Relay amo-listings 2026-09-30: the live AMO listing has previews 0, tags [], categories ['other'] and a github.io homepage — web-ext sign only ships the fields in assets/amo-metadata.json, never images or category. A listing with no screenshots and category 'other' is invisible in AMO's productivity browse pages and search; both extensions show 0 weekly downloads after eight days public. Build: scripts/amo-listing.ts (JWT from AMO_JWT_ISSUER/SECRET, POST previews from assets/screenshots/, PATCH homepage + tags + categories), unit-tested request shaping; the run is one ALERTS handoff line (keys only in .env), or rides foundry extension-publish-in-ci once the secrets exist. Same script serves ReadFocus.",
+      "effort_days": 0.3,
+      "proof": "AMO weekly_downloads > 0 within 14 days of the previews going up (RESEARCH.md metrics row)",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "weava-alternative-page",
+      "title": "apps.gankdat.com/weava-alternative.html: a comparison page for burned Weava / Super Simple Highlighter users, linked from the landing and both listings",
+      "why": "RESEARCH.md 2026-09-19: Weava (200k users, last update Feb 2024) reviews say 'no longer saves your highlights', 'no way to cancel', 'stole $240'; Super Simple Highlighter 'saved pages started to disappear'. Those users search 'weava alternative' / 'weava not saving highlights' and there is no page of ours answering it. STRATEGY §5: distribution beats features until the funnel converts — a static page is the cheapest channel we own (Search Console already indexes apps.gankdat.com). Page: side-by-side table (local storage, no account, $12 once vs $3.99–7.99/mo), one honest paragraph per rival, Markdown export, install buttons for Chrome and Firefox, the refund line.",
+      "effort_days": 0.3,
+      "proof": "Search Console: ≥ 50 impressions or ≥ 5 clicks on the page in 30 days; any install attributed to it",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "cws-listing-keywords",
+      "title": "Chrome listing: title keywords ('Web Highlighter & Notes'), Productivity → Tools category, promo tile — one dashboard pass",
+      "why": "Chrome shows 0 users after ~9 days live; CWS search ranks on title and short-description keywords and the listing was created via the API with the bare name. Dashboard-only fields, so this is owner work that rides the privacy-URL visit already asked in action 013; the copy is pre-written in LISTING.md (title, 132-char summary, category).",
+      "effort_days": 0.1,
+      "proof": "Chrome users ≥ 10 within 30 days of the edit",
+      "score": 4,
+      "status": "blocked",
+      "blocked_on": "owner: Chrome dashboard pass (action 013) — the copy is ready in ventures/highlight-keep/LISTING.md",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "pdf-highlighting",
+      "title": "Highlight PDFs opened in the browser (PDF.js viewer page with the same anchoring and library)",
+      "why": "The most-asked gap in every rival's reviews (RESEARCH.md 2026-09-19: Weava 'PDF highlighting broken', Glasp iframe gaps). Real differentiator but a feature: behind the three distribution items above until the funnel shows any install. Needs a bundled PDF.js viewer page, per-file storage keyed by URL/hash, and the anchor model extended to page+offset.",
+      "effort_days": 2,
+      "proof": "a 'PDF' mention in a review or support mail; paid conversions after release vs before",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-09-30"
     }
   ]
 }

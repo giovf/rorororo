@@ -244,6 +244,16 @@
       "score": 5,
       "status": "todo",
       "added": "2026-09-30"
+    },
+    {
+      "id": "extension-publish-in-ci",
+      "title": "Extensions publish from CI like the Apify actors: AMO sign + CWS upload/publish when a venture's manifest version changes",
+      "why": "Every extension release is an ALERTS handoff for the interactive session because AMO_JWT_* and CWS_* live only in .env (2026-09-19 first submissions; 2026-09-30 Highlight Keep 0.1.1 and ReadFocus 0.1.1 both waiting). The interactive session ran last on 09-28, so a links-only release waits days. Build: docs/ci/extension-publish.yml (paths ventures/*/manifest.json, reads the version, skips when the store already has it via the AMO API / CWS items GET, runs scripts/amo-publish.sh and scripts/cws-publish.ts, records the submission in STORE.md), plus the amo-listing script from highlight-keep amo-listing-previews. Owner minutes: paste five secrets (AMO_JWT_ISSUER, AMO_JWT_SECRET, CWS_CLIENT_ID, CWS_CLIENT_SECRET, CWS_REFRESH_TOKEN) into GitHub Actions secrets — one owner line, ~3 min. Self-caused row exists (extension release).",
+      "effort_days": 0.5,
+      "proof": "the next extension release reaches both stores with no handoff line",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-09-30"
     }
   ]
 }
