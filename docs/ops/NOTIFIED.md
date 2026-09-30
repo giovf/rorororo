@@ -6,5 +6,5 @@ accepted every message: `cursor:` is the last commit on `main` whose additions t
 added after it, so a crashed run, a Telegram 5xx or a cancelled job loses nothing — the next push
 resends. Edit by hand only to move the cursor back and resend from there.
 
-cursor: 7dcea203ea4be9a7527e247a51c489081b5dd2c2
-sent: 2026-09-30T22:54:23Z (1 line)
+cursor: e4c62ff439c6366e14accd29082d6440bba0c14d
+sent: 2026-09-30T23:31:02Z (4 lines)
