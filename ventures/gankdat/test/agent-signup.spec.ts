@@ -313,25 +313,15 @@ describe('agent sign-up over MCP', () => {
     expect(usage.body?.result?.isError).toBeFalsy();
   });
 
-  it('still 401s every other keyless tools/call, and the 401 names the sign-up tool', async () => {
-    const res = await SELF.fetch(MCP_URL, {
-      method: 'POST',
-      headers: {
-        'content-type': 'application/json',
-        accept: 'application/json, text/event-stream',
-      },
-      body: JSON.stringify({
-        jsonrpc: '2.0',
-        id: 1,
-        method: 'tools/call',
-        params: { name: 'get_usage', arguments: {} },
-      }),
-    });
-    expect(res.status).toBe(401);
-    expect(((await res.json()) as { error: { message: string } }).error.message).toContain(
-      'request_api_key',
-    );
-    // A batch that mixes a sign-up call with a data call is not anonymous either.
+  it('answers every other keyless tools/call as a preview that names the sign-up tool', async () => {
+    const res = await rpc(null, 'tools/call', { name: 'get_usage', arguments: {} });
+    expect(res.status).toBe(200);
+    expect(res.body?.result?.isError).toBeFalsy();
+    const data = (res.body?.result?.structuredContent as { data: { plan: string; next: string } })
+      .data;
+    expect(data.plan).toBe('preview');
+    expect(data.next).toContain('request_api_key');
+    // A batch that mixes a sign-up call with a data call rides the preview lane too.
     const mixed = await SELF.fetch(MCP_URL, {
       method: 'POST',
       headers: {
@@ -353,7 +343,7 @@ describe('agent sign-up over MCP', () => {
         },
       ]),
     });
-    expect(mixed.status).toBe(401);
+    expect(mixed.status).toBe(200);
   });
 
   it('throttles request_api_key per IP like login while claim polls stay cheap', async () => {

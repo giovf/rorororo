@@ -18,7 +18,7 @@ import { changesRoutes } from './routes/changes';
 import { dataRoutes } from './routes/data';
 import { healthRoute } from './routes/health';
 import { keysRoutes } from './routes/keys';
-import { mcpRoute } from './routes/mcp';
+import { mcpOriginAllowed, mcpRoute } from './routes/mcp';
 import { llmsRoute } from './routes/llms';
 import { openapiRoute } from './routes/openapi';
 import { statsRoutes } from './routes/stats';
@@ -74,7 +74,11 @@ app.use('/v1/data/*', publicCors);
 app.use('/v1/changes/*', publicCors);
 app.use('/v1/health', publicCors);
 app.use('/openapi.json', publicCors);
-app.use('/mcp/*', publicCors);
+// /mcp: CORS mirrors the transport's Origin allowlist (routes/mcp.ts) — a
+// browser page outside it gets no CORS grant and a 403 from the route.
+app.use('/mcp/*', (c, next) =>
+  cors({ origin: (origin) => (mcpOriginAllowed(origin, c.env) ? origin : null) })(c, next),
+);
 app.use('/x402/*', publicCors);
 
 // Public: /v1/health, /openapi.json, key issuance, and the sources listing

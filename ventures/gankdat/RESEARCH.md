@@ -78,3 +78,17 @@ charities with income ≥ £25k 17,508 of 75,574; open schools 2,572 of 27,233 �
 Companies House checked, drafts for the owner in Gmail; kit and lawful basis in `docs/OUTREACH-2026-09.md`,
 LIA C in `docs/GDPR.md`. Proof: ≥ 2 replies or 1 sign-up from 10; verdict due 14 days after the last send.
 
+## Claude Connectors Directory (2026-09-30)
+
+Exchange 2026-W40 winner (score 11). The directory lists a remote MCP server to every Claude
+surface after an automatic policy scan, on the owner's paid plan — the first shelf since Apify
+with no third-party gate, and the buyers are the agent owners already producing ~80 paywall hits
+a day. Server changes in v0.20.0 (`src/mcp/preview.ts`, `routes/mcp.ts`, conformance test
+`test/mcp-directory.spec.ts`): annotations on every tool, Origin 403, keyless preview (5 rows,
+20 calls/day per client). Listing pack: `docs/CLAUDE-DIRECTORY.md`; owner submits the form.
+Proof (day-30 read 2026-10-30, queue `claude-directory-day-30`): ≥ 20 distinct Claude accounts
+used a tool in 30 days and ≥ 1 key issued from a claude.ai referrer; `/mcp` calls from
+`160.79.104.0/21` in the Daily numbers row, whose MCP column now reads
+`authed, anon, preview, paywall hits`. Risk accepted: a Community listing without OAuth cannot
+bill inside Claude — `mcp-oauth-lazy-auth` (8) is next.
+

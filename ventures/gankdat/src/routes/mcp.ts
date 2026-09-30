@@ -3,7 +3,9 @@ import { Hono } from 'hono';
 import type { Context } from 'hono';
 import { requireApiKey } from '../auth/middleware';
 import { SIGNUP_RATE_LIMIT } from '../auth/signup';
+import { API_BASE_URL, publicBaseUrl } from '../lib/constants';
 import { failure } from '../lib/envelope';
+import { previewClientId } from '../mcp/preview';
 import { buildMcpServer, MCP_NO_KEY_HINT, SIGNUP_TOOLS } from '../mcp/server';
 import { isolateRateLimit, rateLimit } from '../metering/ratelimit';
 import type { AppEnv } from '../types';
@@ -26,16 +28,43 @@ const INTROSPECTION_METHODS = new Set([
   'tools/list',
 ]);
 
+// Origin validation (MCP Streamable HTTP transport security; a Connectors
+// Directory check): a request that carries an Origin header must come from a
+// browser context we expect — our own pages, Claude's, or a local MCP
+// Inspector. Non-browser clients (Claude's connector runtime, Claude Code,
+// Cursor, curl) send no Origin and are unaffected. Anything else is 403 before
+// auth, so DNS-rebinding style calls from an arbitrary page never reach a tool.
+const MCP_ORIGIN_HOSTS = new Set(['claude.ai', 'www.claude.ai', 'claude.com', 'www.claude.com']);
+const LOOPBACK_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]']);
+
+export function mcpOriginAllowed(origin: string, env: CloudflareBindings): boolean {
+  let url: URL;
+  try {
+    url = new URL(origin);
+  } catch {
+    return false;
+  }
+  if (LOOPBACK_HOSTS.has(url.hostname) || LOOPBACK_HOSTS.has(url.host)) return true;
+  if (url.protocol !== 'https:') return false;
+  if (MCP_ORIGIN_HOSTS.has(url.hostname)) return true;
+  for (const base of [API_BASE_URL, publicBaseUrl(env)]) {
+    const own = new URL(base).hostname;
+    if (url.hostname === own || url.hostname === `www.${own}`) return true;
+  }
+  return false;
+}
+
 // What an unauthenticated request may do. Anonymous only when NO key is
 // presented — a presented key is always validated (a typo'd key should 401
 // loudly, not silently downgrade to anonymous). 'introspection' is metadata
 // only; 'signup' is the agent-side sign-up tools (request_api_key /
-// claim_api_key — the one tools/call that must work without a key, since it
-// is how a key is obtained); 'request' marks a message that sends an email
-// and so gets the stricter KV-backed budget. Reading the body here is safe:
-// HonoRequest caches parsed JSON, so the transport's own req.json() gets the
-// cached copy, not a consumed stream.
-type AnonymousKind = 'introspection' | 'signup' | 'request' | null;
+// claim_api_key — how a key is obtained); 'request' marks a message that
+// sends an email and so gets the stricter KV-backed budget; 'preview' is any
+// other tools/call without a key — the data tools answer a capped preview
+// (mcp/preview.ts) so an authless directory listing can run every tool.
+// Reading the body here is safe: HonoRequest caches parsed JSON, so the
+// transport's own req.json() gets the cached copy, not a consumed stream.
+type AnonymousKind = 'introspection' | 'signup' | 'request' | 'preview' | null;
 
 async function anonymousKind(c: Context<AppEnv>): Promise<AnonymousKind> {
   if (c.req.header('Authorization')) return null;
@@ -53,13 +82,11 @@ async function anonymousKind(c: Context<AppEnv>): Promise<AnonymousKind> {
     const { method, params } = message as { method?: unknown; params?: { name?: unknown } };
     if (typeof method !== 'string') return null;
     if (INTROSPECTION_METHODS.has(method)) continue;
-    if (
-      method === 'tools/call' &&
-      typeof params?.name === 'string' &&
-      SIGNUP_TOOLS.has(params.name)
-    ) {
+    if (method === 'tools/call' && typeof params?.name === 'string') {
       if (params.name === 'request_api_key') kind = 'request';
-      else if (kind !== 'request') kind = 'signup';
+      else if (SIGNUP_TOOLS.has(params.name)) {
+        if (kind !== 'request') kind = 'signup';
+      } else if (kind === 'introspection' || kind === 'signup') kind = 'preview';
       continue;
     }
     return null;
@@ -121,6 +148,13 @@ const signupRequestRateLimit = rateLimit({
 export const mcpRoute = new Hono<AppEnv>().post(
   '/',
   async (c, next) => {
+    const origin = c.req.header('Origin');
+    if (origin !== undefined && !mcpOriginAllowed(origin, c.env)) {
+      return c.json(failure('forbidden', 'Origin not allowed for /mcp'), 403);
+    }
+    return next();
+  },
+  async (c, next) => {
     const kind = await anonymousKind(c);
     if (kind !== null) {
       const ip = c.req.header('CF-Connecting-IP') ?? 'unknown';
@@ -164,20 +198,24 @@ export const mcpRoute = new Hono<AppEnv>().post(
     // Adoption analytics (fire-and-forget, no request-path cost): who calls
     // /mcp and which method — splits crawler introspection (initialize,
     // tools/list) from real tool usage. UA only, no IPs (data-minimization).
+    // Keyless tools/call on a data tool is the preview (its own kind, so the
+    // daily numbers can tell a taste of the data from crawler introspection).
     const shape = await requestShape(c);
+    const keyCtx = c.get('keyCtx') ?? null;
+    const previewCall =
+      !keyCtx && shape.tools !== '' && shape.tools.split(',').some((t) => !SIGNUP_TOOLS.has(t));
+    const kind = keyCtx ? 'mcp_authed' : previewCall ? 'mcp_preview' : 'mcp_anon';
+    const userAgent = c.req.header('User-Agent') ?? '';
     c.env.TRAFFIC.writeDataPoint({
-      blobs: [
-        c.get('keyCtx') ? 'mcp_authed' : 'mcp_anon',
-        c.req.header('User-Agent') ?? '',
-        shape.methods,
-        '',
-        shape.tools,
-      ],
+      blobs: [kind, userAgent, shape.methods, '', shape.tools],
       doubles: [1],
-      indexes: [c.get('keyCtx') ? 'mcp_authed' : 'mcp_anon'],
+      indexes: [kind],
     });
 
-    const server = buildMcpServer(c.env, c.get('keyCtx') ?? null);
+    const server = buildMcpServer(c.env, keyCtx, {
+      clientId: await previewClientId(c.req.header('CF-Connecting-IP') ?? 'unknown', userAgent),
+      userAgent,
+    });
     const transport = new StreamableHTTPTransport();
     await server.connect(transport);
     const response = await transport.handleRequest(c);

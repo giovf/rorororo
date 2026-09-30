@@ -15,6 +15,16 @@ import { creditCost } from '../metering/costs';
 import { currentPeriod, getUsage, incrementUsage } from '../metering/counters';
 import { planAllowance } from '../billing/plans';
 import { usageSummary } from '../metering/quota';
+import {
+  clampPreviewArgs,
+  PREVIEW_CALLS_PER_DAY,
+  PREVIEW_ROWS,
+  previewCallsRemaining,
+  previewExhaustedMessage,
+  previewNextStep,
+  takePreviewCall,
+} from './preview';
+import type { PreviewContext } from './preview';
 import { z } from 'zod';
 import { buildQuerySchema } from '../sources/query';
 import { queryD1Changes } from '../sources/d1store';
@@ -55,10 +65,82 @@ export const SIGNUP_TOOLS: ReadonlySet<string> = new Set(['request_api_key', 'cl
 export const MCP_NO_KEY_HINT =
   "No key yet? Call the request_api_key tool with the user's email (no key needed): they approve one emailed link, then claim_api_key returns the key.";
 
-// Tool execution never runs anonymously in practice — the route 401s
-// unauthenticated tools/call before the server is invoked — but the handlers
-// guard anyway so a route regression degrades to a polite tool error.
-const AUTH_REQUIRED = `Authentication required: send an API key as "Authorization: Bearer <key>" on the HTTP request. ${MCP_NO_KEY_HINT} Or get one at ${API_BASE_URL}/account.`;
+// Tool annotations (Claude Connectors Directory review criteria, 2026-09-30):
+// every tool carries a title and readOnlyHint/destructiveHint — Claude runs
+// read-only tools without a per-call confirmation. The two sign-up tools
+// write (an email is sent, a claim is consumed) but destroy nothing.
+const READ_ONLY = {
+  readOnlyHint: true,
+  destructiveHint: false,
+  idempotentHint: true,
+  openWorldHint: false,
+} as const;
+const WRITE_SAFE = {
+  readOnlyHint: false,
+  destructiveHint: false,
+  idempotentHint: false,
+  openWorldHint: false,
+} as const;
+
+// Keyless callers get the preview (mcp/preview.ts) instead of a 401: the
+// directory lists this server without credentials, so every data tool must
+// answer without one. The gate below decides per call.
+type DataGate =
+  | { kind: 'key'; granted: number; cost: number }
+  | { kind: 'preview'; remaining: number }
+  | { kind: 'denied'; message: string };
+
+async function gateDataCall(
+  env: CloudflareBindings,
+  keyCtx: KeyContext | null,
+  preview: PreviewContext,
+  source: DataSource,
+  toolName: string,
+): Promise<DataGate> {
+  const cost = creditCost(source);
+  if (keyCtx) {
+    const granted = planAllowance(keyCtx.plan);
+    const used = await getUsage(env, keyCtx.usageSubject, currentPeriod());
+    if (used + cost > granted) {
+      return {
+        kind: 'denied',
+        message: `Monthly credit quota exhausted (${granted}). Upgrade via POST ${API_BASE_URL}/v1/billing/checkout — see ${DOCS_ERRORS_URL}#quota_exceeded`,
+      };
+    }
+    return { kind: 'key', granted, cost };
+  }
+  const taken = await takePreviewCall(env, preview.clientId);
+  if (!taken.allowed) {
+    // The paywall signal the daily numbers count (metrics.mjs "paywall hits"):
+    // an agent wanted data and got the plan text instead. UA only, no IP.
+    env.TRAFFIC.writeDataPoint({
+      blobs: ['mcp_denied', preview.userAgent, 'tools/call', 'preview_exhausted', toolName],
+      doubles: [1],
+      indexes: ['mcp_denied'],
+    });
+    return { kind: 'denied', message: previewExhaustedMessage() };
+  }
+  return { kind: 'preview', remaining: taken.remaining };
+}
+
+/** Debit a keyed call or annotate a preview one; returns the meta fields to append. */
+async function settleDataCall(
+  env: CloudflareBindings,
+  keyCtx: KeyContext | null,
+  gate: Exclude<DataGate, { kind: 'denied' }>,
+): Promise<Record<string, unknown>> {
+  if (gate.kind === 'key' && keyCtx) {
+    const newUsed = await incrementUsage(env, keyCtx.usageSubject, gate.cost, currentPeriod());
+    return { credits_remaining: Math.max(0, gate.granted - newUsed) };
+  }
+  return {
+    preview: {
+      rows_max: PREVIEW_ROWS,
+      calls_remaining_today: gate.kind === 'preview' ? gate.remaining : 0,
+      next: previewNextStep(),
+    },
+  };
+}
 
 function sourceListing(): Record<string, unknown>[] {
   return listSources().map((source) => ({
@@ -76,37 +158,35 @@ function registerQueryTool(
   server: McpServer,
   env: CloudflareBindings,
   keyCtx: KeyContext | null,
+  preview: PreviewContext,
   source: DataSource,
 ): void {
   const schema = buildQuerySchema(source);
+  const toolName = `query_${source.slug.replaceAll('-', '_')}`;
   server.registerTool(
-    `query_${source.slug.replaceAll('-', '_')}`,
+    toolName,
     {
       title: source.title,
-      description: `${source.description} Filters combine with AND; q searches all text fields. Costs ${creditCost(source)} credit(s) per call.`,
+      description: `${source.description} Filters combine with AND; q searches all text fields. Costs ${creditCost(source)} credit(s) per call with an API key; without one, a preview of up to ${PREVIEW_ROWS} rows (${PREVIEW_CALLS_PER_DAY} calls/day).`,
       inputSchema: schema.shape,
+      annotations: { ...READ_ONLY, title: source.title },
     },
     async (args: Record<string, unknown>): Promise<ToolResult> => {
-      if (!keyCtx) return errorResult(AUTH_REQUIRED);
-      const cost = creditCost(source);
-      const period = currentPeriod();
-      const granted = planAllowance(keyCtx.plan);
-      const used = await getUsage(env, keyCtx.usageSubject, period);
-      if (used + cost > granted) {
-        return errorResult(
-          `Monthly credit quota exhausted (${granted}). Upgrade via POST ${API_BASE_URL}/v1/billing/checkout — see ${DOCS_ERRORS_URL}#quota_exceeded`,
-        );
-      }
+      const gate = await gateDataCall(env, keyCtx, preview, source, toolName);
+      if (gate.kind === 'denied') return errorResult(gate.message);
 
       let queried;
       try {
-        queried = await querySource(env, source, args);
+        queried = await querySource(
+          env,
+          source,
+          gate.kind === 'preview' ? clampPreviewArgs(args) : args,
+        );
       } catch {
         return errorResult(`Source '${source.slug}' is temporarily unavailable, retry later`);
       }
 
       const result = queried.page;
-      const newUsed = await incrementUsage(env, keyCtx.usageSubject, cost, period);
       return jsonResult({
         ok: true,
         data: result.records,
@@ -116,7 +196,7 @@ function registerQueryTool(
           per_page: result.perPage,
           total: result.total,
           last_refreshed_at: queried.last_refreshed_at,
-          credits_remaining: Math.max(0, granted - newUsed),
+          ...(await settleDataCall(env, keyCtx, gate)),
         },
       });
     },
@@ -128,6 +208,7 @@ function registerChangesTool(
   server: McpServer,
   env: CloudflareBindings,
   keyCtx: KeyContext | null,
+  preview: PreviewContext,
 ): void {
   const feeds = listSources().filter(hasChangeFeed);
   if (feeds.length === 0) return;
@@ -136,7 +217,8 @@ function registerChangesTool(
     'get_changes',
     {
       title: 'Changes since a date',
-      description: `Rows added, removed or changed between daily refreshes of a register dataset (${slugs.join(', ')}), newest first, 90-day history. Poll this instead of re-reading a whole register. \`filter\` takes the source's own query params (see list_sources supported_params, plus q) applied to the changed record — e.g. {"classes":"09","q":"acme"} watches one Nice class of uk-trademark-journal for a mark. Costs 1 credit per call.`,
+      description: `Rows added, removed or changed between daily refreshes of a register dataset (${slugs.join(', ')}), newest first, 90-day history. Poll this instead of re-reading a whole register. \`filter\` takes the source's own query params (see list_sources supported_params, plus q) applied to the changed record — e.g. {"classes":"09","q":"acme"} watches one Nice class of uk-trademark-journal for a mark. Costs 1 credit per call with an API key; without one, a preview of up to ${PREVIEW_ROWS} rows (${PREVIEW_CALLS_PER_DAY} calls/day).`,
+      annotations: { ...READ_ONLY, title: 'Changes since a date' },
       inputSchema: {
         source: z.enum(slugs),
         ...changesQuerySchema.shape,
@@ -149,29 +231,25 @@ function registerChangesTool(
       },
     },
     async (args: Record<string, unknown>): Promise<ToolResult> => {
-      if (!keyCtx) return errorResult(AUTH_REQUIRED);
       const source = getSource(String(args.source));
       if (!source?.idOf) return errorResult(`Source '${String(args.source)}' has no change feed`);
-      const parsed = changesQuerySchema.safeParse(args);
+      const parsed = changesQuerySchema.safeParse(keyCtx ? args : clampPreviewArgs(args));
       if (!parsed.success) return errorResult('Invalid arguments: ' + parsed.error.message);
       const filters = changeFiltersSchema(source).safeParse(args.filter ?? {});
       if (!filters.success) return errorResult('Invalid filter: ' + filters.error.message);
-      const cost = creditCost(source);
-      const period = currentPeriod();
-      const granted = planAllowance(keyCtx.plan);
-      const used = await getUsage(env, keyCtx.usageSubject, period);
-      if (used + cost > granted) {
-        return errorResult(
-          `Monthly credit quota exhausted (${granted}). Upgrade via POST ${API_BASE_URL}/v1/billing/checkout — see ${DOCS_ERRORS_URL}#quota_exceeded`,
-        );
-      }
+      const gate = await gateDataCall(env, keyCtx, preview, source, 'get_changes');
+      if (gate.kind === 'denied') return errorResult(gate.message);
       const since = parsed.data.since ?? new Date(Date.now() - 7 * 86_400_000).toISOString();
-      const result = await queryD1Changes(env, source, {
-        ...parsed.data,
-        since,
-        filters: filters.data as Record<string, unknown>,
-      });
-      const newUsed = await incrementUsage(env, keyCtx.usageSubject, cost, period);
+      let result;
+      try {
+        result = await queryD1Changes(env, source, {
+          ...parsed.data,
+          since,
+          filters: filters.data as Record<string, unknown>,
+        });
+      } catch {
+        return errorResult(`Source '${source.slug}' is temporarily unavailable, retry later`);
+      }
       return jsonResult({
         ok: true,
         data: result.rows,
@@ -182,7 +260,7 @@ function registerChangesTool(
           per_page: parsed.data.per_page,
           total: result.total,
           last_refreshed_at: result.last_refreshed_at,
-          credits_remaining: Math.max(0, granted - newUsed),
+          ...(await settleDataCall(env, keyCtx, gate)),
         },
       });
     },
@@ -201,6 +279,10 @@ function registerSignupTools(server: McpServer, env: CloudflareBindings): void {
     {
       title: 'Request a free API key for the user (no browser needed)',
       description: `Start sign-up from inside the agent: give the user's email address and gankdat emails them a one-click approval link with a short code. Show the user the returned code (they approve only if it matches), then call claim_api_key with request_id and claim_secret every ${CLAIM_RETRY_SECONDS}s until it returns the key (${FREE_TIER_CREDITS} free credits/month, no card; an existing account's plan carries over). Free to call; no key needed.`,
+      annotations: {
+        ...WRITE_SAFE,
+        title: 'Request a free API key for the user (no browser needed)',
+      },
       inputSchema: {
         email: z.email().describe("The user's email address — they must be able to open the email"),
         client_name: z
@@ -241,6 +323,7 @@ function registerSignupTools(server: McpServer, env: CloudflareBindings): void {
     {
       title: 'Collect the API key once the user has approved',
       description: `Poll after request_api_key: returns status "pending" until the user approves the emailed link, then "approved" with the key exactly once. Send the key as "Authorization: Bearer <key>" on every later request (reconnect the MCP client with that header). Free to call; no key needed.`,
+      annotations: { ...WRITE_SAFE, title: 'Collect the API key once the user has approved' },
       inputSchema: {
         request_id: z.string().min(1),
         claim_secret: z.string().min(1),
@@ -285,11 +368,16 @@ function registerSignupTools(server: McpServer, env: CloudflareBindings): void {
 }
 
 /**
- * keyCtx is null for anonymous introspection (initialize/tools/list — see
- * routes/mcp.ts): registries and directories index tools without a key, so
- * every tool must register with its full schema regardless of auth.
+ * keyCtx is null for anonymous calls (introspection and the keyless preview —
+ * see routes/mcp.ts): registries and directories index tools without a key,
+ * so every tool registers with its full schema regardless of auth, and every
+ * tool answers without one (preview) so an authless listing passes review.
  */
-export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext | null): McpServer {
+export function buildMcpServer(
+  env: CloudflareBindings,
+  keyCtx: KeyContext | null,
+  preview: PreviewContext = { clientId: 'unknown', userAgent: '' },
+): McpServer {
   const server = new McpServer({ name: 'gankdat', version: APP_VERSION });
 
   server.registerTool(
@@ -299,6 +387,7 @@ export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext | nul
       description:
         'Datasets this API serves, with the tool name and filter params for each. Free to call.',
       inputSchema: {},
+      annotations: { ...READ_ONLY, title: 'List available data sources' },
     },
     () => Promise.resolve(jsonResult({ ok: true, data: sourceListing() })),
   );
@@ -307,11 +396,27 @@ export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext | nul
     'get_usage',
     {
       title: 'Current credit usage',
-      description: 'Plan, credits used/granted/remaining for the presented API key. Free to call.',
+      description:
+        'Plan, credits used/granted/remaining for the presented API key; without a key, the preview calls left today. Free to call.',
       inputSchema: {},
+      annotations: { ...READ_ONLY, title: 'Current credit usage' },
     },
     async (): Promise<ToolResult> => {
-      if (!keyCtx) return errorResult(AUTH_REQUIRED);
+      if (!keyCtx) {
+        const remaining = await previewCallsRemaining(env, preview.clientId);
+        return jsonResult({
+          ok: true,
+          data: {
+            plan: 'preview',
+            preview: {
+              rows_max: PREVIEW_ROWS,
+              calls_per_day: PREVIEW_CALLS_PER_DAY,
+              calls_remaining_today: remaining,
+            },
+            next: previewNextStep(),
+          },
+        });
+      }
       const period = currentPeriod();
       const used = await getUsage(env, keyCtx.usageSubject, period);
       const { granted, remaining, alerts } = usageSummary(keyCtx.plan, used);
@@ -324,8 +429,8 @@ export function buildMcpServer(env: CloudflareBindings, keyCtx: KeyContext | nul
 
   registerSignupTools(server, env);
   for (const source of listSources()) {
-    registerQueryTool(server, env, keyCtx, source);
+    registerQueryTool(server, env, keyCtx, preview, source);
   }
-  registerChangesTool(server, env, keyCtx);
+  registerChangesTool(server, env, keyCtx, preview);
   return server;
 }

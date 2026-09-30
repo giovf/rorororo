@@ -192,6 +192,24 @@ curl -X POST https://gankdat.com/v1/auth/agent-signup/claim -H "content-type: ap
 
 # x402 pay-per-request (no account): GET /x402/data/uk-tenders → HTTP 402 → pay → retry</code></pre>
       </div>
+      <h2 id="claude">use in claude (connectors directory)</h2>
+      <div class="term">
+        <div class="term-bar"><i></i><i></i><i></i></div>
+        <pre><code># Claude (web, desktop, mobile): Settings → Connectors → add "gankdat" from the directory,
+# or "Add custom connector" with the URL below and no authentication. Every tool then works
+# straight away as a PREVIEW: up to 5 rows per call, 20 calls per day, no key.
+https://gankdat.com/mcp
+
+# Ask Claude things like:
+#   "Which UK tenders over £1m in CPV 45 are open right now?"        → query_uk_tenders
+#   "Has any charity been removed from the register this week?"      → get_changes
+#   "Is &lt;company&gt; a licensed visa sponsor?"                          → query_uk_sponsors
+
+# Full pages and your plan's credits need an API key (250 free credits/month, no card).
+# Ask Claude to call request_api_key with your email: approve the emailed link, and the
+# key comes back through claim_api_key. Clients that send headers (Claude Code, Cursor,
+# any MCP SDK) use it as "Authorization: Bearer fapi_..." (config above).</code></pre>
+      </div>
 
       <p>
         Every response uses the same envelope: <code>{"ok":true,"data":…,"meta":…}</code> or

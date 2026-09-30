@@ -205,3 +205,11 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 08:40 | exchange | Declined: ChatGPT App Directory — business verification with tax documents is KYC beyond a one-off account
 - 2026-09-30 08:40 | exchange | STRATEGY §2 gains an "Agent directories" row; §8 logs the decision; comparison in docs/exchange/2026-W40.md
 - 2026-09-30 08:40 | exchange | Owner (later, not now): when the listing item ships, one portal form at claude.ai/directory/manage, ~20 min
+- 2026-09-30 09:30 | build | Built gankdat claude-directory-listing (11): v0.20.0 passes the Connectors Directory's three server checks
+- 2026-09-30 09:30 | build | Tool annotations: title + readOnlyHint/destructiveHint on all 22 MCP tools (20 read-only, 2 non-destructive writes)
+- 2026-09-30 09:30 | build | Origin gate on /mcp: a present non-allowlisted Origin gets 403; CORS now mirrors the allowlist
+- 2026-09-30 09:30 | build | Keyless preview: every data tool answers without a key (≤ 5 rows, 20 calls/day per client), then names the plans
+- 2026-09-30 09:30 | build | Conformance test test/mcp-directory.spec.ts (4 tests, 23 MCP tests green); Daily numbers row gains a preview count
+- 2026-09-30 09:30 | build | Docs: /docs#claude section, landing card, listing pack docs/CLAUDE-DIRECTORY.md with every portal field
+- 2026-09-30 09:30 | build | Owner: submit the connector at claude.ai/directory/manage (~20 min, fields pre-written) — see ALERTS
+

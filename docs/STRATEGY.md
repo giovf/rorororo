@@ -319,3 +319,14 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   prints `changes 7d: N (mcp M, rest R)`, and the §4 target above now names that column as its
   source. It had read "unknown, likely 0" since launch because nothing counted it.
 - 2026-09-30 exchange: **gankdat distribution — Claude Connectors Directory listing** (score 11: evidence 3 × reach 4 ÷ 0.75 days + 20 owner min; the shelf lists automatically after a policy scan, no third-party gate, and the server today fails three of its checks: no readOnlyHint on 22 tools, no Origin 403, no keyless answer). Lazy OAuth (CIMD + PKCE) queued second (8) so plans bill from Claude/ChatGPT/Cursor; day-30 read 2026-10-30. Parked: Apify quality-score pass (copy lever already spent, needs run data), n8n node (5.1), Snowflake (needs account + provider agreement), pharma registers (3.0, supply). Declined: ChatGPT App Directory (business/tax verification). Comparison: `docs/exchange/2026-W40.md`.
+- 2026-09-30 build: built gankdat `claude-directory-listing` (11, the exchange winner; distribution beats
+  supply and this shelf lists without a third-party gate). v0.20.0: `title` + `readOnlyHint`/`destructiveHint`
+  on all 22 tools (the two sign-up tools are the only writes), a 403 for a present non-allowlisted `Origin`
+  on `/mcp` (CORS mirrors it), and a **keyless preview** — every data tool answers without a key (page 1,
+  ≤ 5 rows, 20 calls/day per IP+UA client) before a tool error names the free plan and the £5 one — because an
+  authless listing cannot carry a key and review requires every tool to succeed; `get_usage` reports the
+  budget keyless. `docs#claude` section, landing card, `docs/CLAUDE-DIRECTORY.md` with every portal field
+  pre-written, `test/mcp-directory.spec.ts` (the conformance test any agent directory needs), `mcp_preview`
+  analytics kind so the Daily numbers row separates preview calls from paywall hits. Owner: one portal form
+  (ALERTS). Next buildable: `mcp-oauth-lazy-auth` (8) so plans bill from inside Claude; foundry items at 7.
+
