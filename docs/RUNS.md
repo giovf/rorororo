@@ -273,3 +273,7 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 19:56 | burn-down | Fix pushed: the job now sends the relay's browser-shaped user agent (the one Figma answers 200 to)
 - 2026-09-30 19:56 | burn-down | A page the job cannot read now writes 'unread (…)', never 'not live yet' — a 403 must not read as a listing gone
 - 2026-09-30 19:56 | burn-down | Heal: check run 118 red on two uk-trademark-journal tests timing out at 5 s on a slow runner; testTimeout now 20 s
+- 2026-09-30 20:25 | burn-down | Heal: notify-owner run 63 crashed on the 19:57 two-commit push — depth-2 checkout had no `before` commit
+- 2026-09-30 20:25 | burn-down | The four 19:56 bullets (store metrics Figma fix, testTimeout heal) never reached the phone; they are in RUNS.md
+- 2026-09-30 20:25 | burn-down | docs/ci: notify-owner and gankdat-publish now check out full depth; both scripts fall back to HEAD~1 on a bad range
+- 2026-09-30 20:25 | burn-down | Queued and closed foundry push-diff-range-depth (7); the installer moves both workflows on this push

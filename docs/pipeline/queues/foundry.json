@@ -200,6 +200,17 @@
       "score": 8,
       "status": "todo",
       "added": "2026-09-30"
+    },
+    {
+      "id": "push-diff-range-depth",
+      "title": "CI jobs that diff the push range check out full depth: a two-commit push no longer crashes notify-owner or blinds the Apify publish job",
+      "why": "notify-owner run 63 (2026-09-30 19:57, push 587a3d9..139b7e9) failed with `fatal: Invalid revision range`: the job checks out `fetch-depth: 2` while DIFF_RANGE is `github.event.before..sha`, so any push carrying two or more commits (the burn-down pushed 18ec948 and 139b7e9 within a minute, GitHub coalesced them) has no `before` commit locally. The first diff swallowed the error and returned nothing, the second crashed — the four 19:56 run bullets never reached the owner's phone and the job went red. gankdat-publish.yml has the same depth and range: on a coalesced push its `git diff --name-only` would crash before any actor is priced or published. Fix: `fetch-depth: 0` in both workflows (the repo is 22 MB) via docs/ci/, and both scripts fall back to `HEAD~1..HEAD` with a printed notice when the range does not resolve (branch creation, force-push) instead of throwing. Evidence 2 (one loss, both jobs exposed on every multi-commit push — the burn-down's hourly runs make those common) × reach 3 (every owner notification and every actor publish) ÷ 0.05 days.",
+      "effort_days": 0.05,
+      "proof": "zero notify-owner or gankdat-publish failures with `Invalid revision range` over 30 days; every burn-down RUNS line arrives as a Telegram bullet",
+      "score": 7,
+      "status": "done",
+      "added": "2026-09-30",
+      "done_at": "2026-09-30"
     }
   ]
 }

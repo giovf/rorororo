@@ -6,7 +6,21 @@
 // files say — never secrets. Convention for any agent: `- YYYY-MM-DD owner: <text>` in ALERTS.md.
 import { execSync } from 'node:child_process';
 
-const range = process.env.DIFF_RANGE ?? 'HEAD~1..HEAD';
+// The push range is `github.event.before..sha`. Both ends must exist locally: a shallow checkout
+// (fetch-depth 2) lost a two-commit push on 2026-09-30 and the job crashed, so four run bullets
+// never reached the phone. The workflow now checks out full depth; if the range still does not
+// resolve (branch creation, a force-push), fall back to the last commit rather than send nothing.
+const resolvable = (r) => {
+  try {
+    execSync(`git rev-list --max-count=1 ${r}`, { encoding: 'utf8', stdio: 'pipe' });
+    return true;
+  } catch {
+    return false;
+  }
+};
+const wanted = process.env.DIFF_RANGE ?? 'HEAD~1..HEAD';
+const range = resolvable(wanted) ? wanted : 'HEAD~1..HEAD';
+if (range !== wanted) console.log(`range ${wanted} not resolvable here — using ${range}`);
 const diff = (path) => {
   try {
     return execSync(`git diff ${range} -- ${path}`, { encoding: 'utf8' });
@@ -24,9 +38,15 @@ const items = [];
 for (const line of added(diff('docs/ALERTS.md'))) {
   if (/\bowner:|needs owner/i.test(line)) items.push(line.replace(/^-\s*/, '').trim());
 }
-const newActions = execSync(`git diff --name-status ${range} -- docs/for-owner/actions`, {
-  encoding: 'utf8',
-})
+const newActions = (() => {
+  try {
+    return execSync(`git diff --name-status ${range} -- docs/for-owner/actions`, {
+      encoding: 'utf8',
+    });
+  } catch {
+    return '';
+  }
+})()
   .split('\n')
   .filter((l) => l.startsWith('A\t'))
   .map((l) => l.split('\t')[1]);

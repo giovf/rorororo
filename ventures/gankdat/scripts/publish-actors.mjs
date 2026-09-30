@@ -19,7 +19,20 @@ const all = process.argv.includes('--all');
 const MAX_PUBLISH_PER_RUN = 5;
 let published = 0;
 let rateLimited = false;
-const range = process.env.DIFF_RANGE ?? 'HEAD~1..HEAD';
+// `github.event.before..sha` needs both ends locally — the workflow checks out full depth since
+// 2026-09-30 (depth 2 could not see a two-commit push). An unresolvable range (branch creation,
+// force-push) falls back to the last commit instead of crashing before any actor is priced.
+const wanted = process.env.DIFF_RANGE ?? 'HEAD~1..HEAD';
+const resolvable = (r) => {
+  try {
+    execSync(`git rev-list --max-count=1 ${r}`, { encoding: 'utf8', stdio: 'pipe' });
+    return true;
+  } catch {
+    return false;
+  }
+};
+const range = resolvable(wanted) ? wanted : 'HEAD~1..HEAD';
+if (range !== wanted) console.log(`range ${wanted} not resolvable here — using ${range}`);
 const changed = process.env.PUBLISH_ONLY
   ? []
   : all
