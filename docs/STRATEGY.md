@@ -393,3 +393,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `prompts-from-repo` (8 — five prompt handoffs in two days; the stored prompt becomes a bootstrap that reads its mirror,
   the mechanism CLAUDE.md already proves). Both extension queues' `post-approval-links` items are unblocked; the next
   build takes `store-metrics-in-ci`.
+- 2026-09-30 burn-down: built `store-metrics-in-ci` (9) — `scripts/store-metrics.ts` + `docs/ci/store-metrics.yml` write each
+  venture's `Daily check` row from a GitHub runner at 06:45 (CWS page, AMO API, Figma API; STORE.md `not live yet` flipped when
+  a page answers), because the 07:00 routine's sandbox cannot reach the stores and wrote `not live yet` for ten days of live
+  listings. The routine now only reads the row (prompt sentence handed off). Next foundry items: `taskmaster-offline-add`,
+  `prompts-from-repo` (both 8).

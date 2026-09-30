@@ -208,3 +208,9 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   taken" (its current `(build)`-commit check already stops on the marker, so this is clarity, not a fix). The
   CLAUDE.md rule of the same date makes the build routine stamp from tomorrow either way; foundry item
   `fallback-slot-race`, `scripts/slot.ts`, `docs/ops/SLOTS.md`.
+- 2026-09-30 handoff: add one sentence to the stored prompt of **Foundry daily metrics** (`trig_01JBrWDAZLeWEAhSBBnA9g8K`),
+  at the start of its store-stats step: "The `store metrics` GitHub job (06:45) has already written today's `Daily check` row in
+  each venture's RESEARCH.md from a runner that can reach the stores; read that row instead of fetching Chrome, Firefox or
+  Figma stats yourself, never overwrite it, and only write a row for a venture whose row for today is missing (then say
+  `store-metrics job left no row`)." Ten days of `not live yet` rows for live listings is what this ends; foundry item
+  `store-metrics-in-ci`, `scripts/store-metrics.ts`, `docs/ci/store-metrics.yml`.

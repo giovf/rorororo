@@ -62,6 +62,6 @@ larger, clearly frustrated audience and three stores (Chrome, Firefox, Edge) fro
 | 2026-09-27 | Daily check | — | — | — | not live yet |
 | 2026-09-28 | Daily check | — | — | — | not live yet |
 | 2026-09-29 | Daily check | — | — | — | not live yet |
-| 2026-09-30 | Daily check | — | — | — | not live yet |
+| 2026-09-30 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.1.0, updated September 21, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.1.0 |
 | 2026-09-30 | Firefox listing recorded live (approved 2026-09-22; STORE.md was 7 days stale) | 0 daily / 0 weekly downloads (AMO API) | — | 0 | source: relay `amo-listings`; Chrome still in review |
 | 2026-09-30 | Chrome Web Store listing found live (relay: page 200, "Add to Chrome"); user count is not in the static HTML | — | — | 0 | approval mail never reached INBOX; foundry `store-metrics-in-ci` queued to read the numbers from CI |

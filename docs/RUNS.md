@@ -257,3 +257,11 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 18:52 | burn-down | Queued taskmaster-offline-add (8): a JSON script files tasks.json rows; npx task-master-ai crashes in the sandbox
 - 2026-09-30 18:52 | burn-down | Queued prompts-from-repo (8): stored prompts become a bootstrap reading docs/routines/<name>.md; no more handoffs
 - 2026-09-30 18:52 | burn-down | STORE.md for both extensions now says Chrome live; post-approval-links unblocked in both queues
+- 2026-09-30 19:35 | burn-down | Built foundry store-metrics-in-ci (9): a GitHub job now writes every venture's Daily check row from a runner
+- 2026-09-30 19:35 | burn-down | scripts/store-metrics.ts reads listing URLs from each STORE.md and fetches CWS page, AMO API and Figma API itself
+- 2026-09-30 19:35 | burn-down | Page shapes taken from today's relay bodies: CWS renders no user count at 0 users, ratings before 'You might also like'
+- 2026-09-30 19:35 | burn-down | 19 tests cover the three parsers, the venture-specific columns, row upsert and the STORE.md 'not live yet' flip
+- 2026-09-30 19:35 | burn-down | docs/ci/store-metrics.yml: 06:45 daily and on every push to main (push runs only fill a missing day); installer moves it
+- 2026-09-30 19:35 | burn-down | Dry run on the relay bodies gave today's real rows: read-focus 0 users, 2 Firefox downloads; highlight-keep 0 and 0
+- 2026-09-30 19:35 | burn-down | Today's 'not live yet' rows for read-focus and highlight-keep replaced with those rows; ten days of blind rows end here
+- 2026-09-30 19:35 | burn-down | SCHEDULERS.md gains the 06:45 job; the 07:00 routine now only reads the row (prompt sentence handed off in ALERTS)
