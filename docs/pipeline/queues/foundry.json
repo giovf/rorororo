@@ -1,7 +1,7 @@
 {
   "venture": "foundry",
   "status": "open",
-  "needs_research": true,
+  "needs_research": false,
   "updated": "2026-09-30",
   "items": [
     {
@@ -168,6 +168,36 @@
       "status": "done",
       "added": "2026-09-29",
       "done_at": "2026-09-30"
+    },
+    {
+      "id": "store-metrics-in-ci",
+      "title": "Store metrics job in CI: a script reads every STORE.md's listing URLs from a GitHub runner and writes the Daily check row itself (CWS page, AMO API, Figma API)",
+      "why": "The Sonnet metrics routine cannot reach the stores from its sandbox ('fetch failed: egress blocked by network policy (chromewebstore.google.com, addons.mozilla.org)', highlight-keep RESEARCH 2026-09-21) and, since it reads STORE.md's status line for whether to try, has written 'not live yet' for read-focus and highlight-keep every day 2026-09-20..30 while all four of their listings were live: AMO approved both on 2026-09-22 (found 2026-09-30 via relay amo-listings, API status public, ReadFocus 2 weekly downloads) and the Chrome Web Store pages both answer 200 with a slug redirect and an 'Add to Chrome' button (relay cws-status/cws-pages 2026-09-30; no approval mail ever reached INBOX.md, so the triage-driven fix store-approval-to-store-md alone would not have caught it). Ten days of a launched product with no reading, twice. The gankdat metrics already run this way (gankdat-metrics.yml → scripts/metrics.mjs from a runner with egress). Fix: scripts/store-metrics.mjs run by docs/ci/store-metrics.yml daily 06:45: for each ventures/*/STORE.md parse the listing URLs; CWS: GET the detail page and read the user count and rating from the page's structured data (a 404 or no 'Add to Chrome' = not live); AMO: GET api/v5/addons/addon/<slug>/ (average_daily_users, weekly_downloads, ratings); Figma: the community API the metrics routine already uses via relay (relay metrics-2026-09-25); append one 'Daily check' row per venture to its RESEARCH.md and flip a STORE.md 'not live yet' to live with the date when the page answers — then the Sonnet routine only reads. Evidence 3 (4 listings unread for 8-10 days, 2 ventures, review W39 and report W40 both flagged it) × reach 3 (every non-gankdat venture, daily; review; report) ÷ 0.3 days.",
+      "effort_days": 0.3,
+      "proof": "every venture's RESEARCH.md carries a Daily check row with a number (users/downloads) on every day the listing is live; 0 'not live yet' rows for a live listing over 30 days",
+      "score": 9,
+      "status": "todo",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "taskmaster-offline-add",
+      "title": "Deterministic Taskmaster row: scripts/taskmaster-add.ts appends a task to .taskmaster/tasks/tasks.json without the MCP or the AI CLI, so routines stop filing Taskmaster handoffs",
+      "why": "gankdat's CLAUDE.md wants a Taskmaster task before a new module, but no routine can create one: the task-master-ai MCP times out at session start in every cloud sandbox (CONNECT_TIMEOUT 2026-09-21, 22, 23, 24, 29, 30 ×2 — ALERTS handoffs, 14 mentions in ALERTS.md), the sandbox has no task-master CLI, and `npx -y task-master-ai --version` crashes in the sandbox with ERR_MODULE_NOT_FOUND (zod/v4, tested 2026-09-30). Four modules (metrics-change-feed-count, claude-directory-listing, mcp-oauth-lazy-auth, the OAuth migration) are waiting on one handoff for rows that need no AI at all: tasks.json is plain JSON ({master:{tasks:[{id,title,description,status,priority,dependencies,details,testStrategy,subtasks}],metadata}}). Fix: scripts/taskmaster-add.ts (`npm run task -- add --title … --description … --details … [--status done]`) that validates the shape, takes the next id, sets metadata.lastModified/taskCount/completedCount, and regenerates nothing else (task-master generate is optional); plus a `task -- done <id>` verb. The routine prompts' 'file a Taskmaster row' step then works offline; the open handoff rows get filed by the first build that runs it. Evidence 3 (seven occurrences, every gankdat module) × reach 2 (build, fallback, burn-down) ÷ 0.15 days.",
+      "effort_days": 0.15,
+      "proof": "zero Taskmaster handoffs in ALERTS.md over 30 days; every gankdat module shipped after this has its tasks.json row in the same commit",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "prompts-from-repo",
+      "title": "Routine prompts live in the repo: each stored prompt becomes a three-line bootstrap that reads docs/routines/<name>.md, so a prompt change is a commit instead of a handoff",
+      "why": "Routines cannot edit their own prompts (update_trigger refuses triggers created via the HTTP API, 2026-09-29), so every prompt fix waits for the interactive session: the 2026-09-29 handoff now carries three triage sentences and one report sentence (self-caused-alerts, triage-backlog-window, store-approval-to-store-md), a fourth handoff of 2026-09-30 carries the build routine's slot-start sentence, and the ops retro has been disabled since 2026-09-26 waiting for its repository attach. Four prompt changes in two days, all queued behind one person; meanwhile the routines already follow repo text without a handoff (CLAUDE.md is loaded into every session, which is how fallback-slot-race shipped). Fix: one last handoff per routine that replaces the stored prompt with: 'You are the Foundry <name> routine. Run `git fetch origin && git checkout main && git pull` (on unrelated histories: `git switch -c work origin/main`, push with `git push origin HEAD:main`), then read `docs/routines/<name>.md` on that branch and do exactly what it says. Never touch .env, never create accounts or spend money.' The mirrors under docs/routines/ become the prompts of record (triage, report and retro already exist; build, burn-down, exchange, review and metrics need writing from the live prompts — the burn-down text is in hand from its own run; the others are read from claude.ai/code/routines by the interactive session). Security posture unchanged: the repo already steers every run through CLAUDE.md. Evidence 3 (five prompt handoffs in two days, one routine dark four days) × reach 3 (all eight routines, forever) ÷ 0.3 days (mirrors + one handoff listing all eight replacements).",
+      "effort_days": 0.3,
+      "proof": "zero prompt-change handoffs in ALERTS.md over 30 days after the switch; a prompt change lands in the next scheduled run of that routine",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-09-30"
     }
   ]
 }

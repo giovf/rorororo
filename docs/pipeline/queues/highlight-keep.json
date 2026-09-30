@@ -2,17 +2,16 @@
   "venture": "highlight-keep",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-22",
+  "updated": "2026-09-30",
   "items": [
     {
       "id": "post-approval-links",
       "title": "On store approval: switch listing links to apps.gankdat.com, close action 013 (repo private)",
-      "why": "Listing URLs currently point at the github.io copy.",
+      "why": "Listing URLs currently point at the github.io copy. UNBLOCKED 2026-09-30 (burn-down): both listings are live — Firefox since 2026-09-22 (Addon#3075366, AMO API status public) and the Chrome Web Store page answers 200 with an 'Add to Chrome' button (relay cws-pages 2026-09-30; no approval mail reached the inbox log, approval date unknown, between 2026-09-21 and 09-30).",
       "effort_days": 0.2,
       "proof": "STORE.md live URL recorded; daily metrics rows start",
       "score": 5,
-      "status": "blocked",
-      "blocked_on": "Chrome Web Store / Firefox AMO review",
+      "status": "todo",
       "added": "2026-09-22"
     }
   ]

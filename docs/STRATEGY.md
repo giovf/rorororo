@@ -384,3 +384,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   two listings were verified through the relay (HEAD 200, AMO API `status: public`, v0.1.0 — ReadFocus already has 2
   weekly downloads with no promotion) and recorded, with the AMO JSON endpoint named as the Firefox metrics source so
   tomorrow's Daily check reads numbers. Both ventures are `launched` as of 2026-09-22 (Chrome still in review).
+- 2026-09-30 burn-down: research run for the emptied foundry queue (`docs/OPERATIONS.md` ops research log). The
+  headline finding is not an ops defect but a product fact nobody in the repo knew: ReadFocus and Highlight Keep are
+  live on the Chrome Web Store as well as on Firefox (relay probes: page 200, slug redirect, "Add to Chrome"), no
+  approval mail reached the inbox log, and the metrics routine has written "not live yet" for ten days because its
+  sandbox cannot reach the stores. Three items queued: `store-metrics-in-ci` (9 — the store numbers come from a GitHub
+  runner, as gankdat's do), `taskmaster-offline-add` (8 — seven timeouts, a deterministic JSON script), and
+  `prompts-from-repo` (8 — five prompt handoffs in two days; the stored prompt becomes a bootstrap that reads its mirror,
+  the mechanism CLAUDE.md already proves). Both extension queues' `post-approval-links` items are unblocked; the next
+  build takes `store-metrics-in-ci`.

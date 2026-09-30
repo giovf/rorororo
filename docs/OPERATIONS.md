@@ -153,3 +153,21 @@ logs a match and never escalates it, and the weekly report never makes one a nex
   not queued (score < 4): the root gate's 4–5 minutes of vitest per run; the Wednesday burn-down has
   no evidence yet (first window 2026-09-30). Also fixed today: uk-insolvency's momentary Gazette 500
   (gankdat queue `gazette-5xx-retry`, done).
+- **2026-09-30 (burn-down, research run — the foundry queue emptied at 18:35)**. Evidence from RUNS,
+  ALERTS, INBOX, the two venture RESEARCH files and three relay probes. (1) All four extension listings
+  are live and nothing in the repo knew: AMO approved both add-ons on 2026-09-22 (found today, API
+  status `public`, ReadFocus 2 weekly downloads) and both Chrome Web Store pages answer 200 with a
+  slug redirect and an "Add to Chrome" button (relay `cws-status`, `cws-pages`) — no CWS approval
+  mail ever reached INBOX.md, and the Sonnet metrics routine cannot reach either store from its
+  sandbox (`fetch failed: egress blocked`, 2026-09-21), so it wrote "not live yet" for ten days →
+  `store-metrics-in-ci` (9): the numbers come from a GitHub runner, as gankdat's already do. (2) The
+  Taskmaster MCP timed out in seven sandboxes and `npx -y task-master-ai` crashes there
+  (ERR_MODULE_NOT_FOUND zod/v4, tested today); four modules wait on one handoff for rows that are
+  plain JSON → `taskmaster-offline-add` (8). (3) Five prompt changes in two days all wait on the
+  interactive session because routines cannot edit their triggers, and the retro has been dark since
+  2026-09-26 → `prompts-from-repo` (8): the stored prompt becomes a bootstrap that reads
+  `docs/routines/<name>.md`, the mechanism CLAUDE.md already proves. Seen, not queued (< 4): a build
+  that stamps its slot and then dies is not filled by the fallback until a second fallback check
+  exists (no occurrence yet); the CWS user count is rendered by script, not in the first 256 KB of
+  HTML (the CI item reads the page's structured data instead). Unblocked today: `post-approval-links`
+  in both extension queues (their blocker, store review, is over).
