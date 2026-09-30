@@ -304,3 +304,4 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 21:52 | burn-down | A later page that never arrives keeps the pages already read (partial_snapshot warn) instead of losing the day
 - 2026-09-30 21:52 | burn-down | No 'skipped' refresh_log status: the error row is what the 06:30 queue job keys on; two new tests, Taskmaster row 20
 - 2026-09-30 21:53 | burn-down | notify owner run 68 failed on the heal push (old job, script gone); the cursor job sends from 1007fe1 on this push
+- 2026-09-30 21:47 | burn-down | Cursor job verified live: run 69 sent 11 lines, cursor moved to 56e6afb; stopping for time, next is highlight-keep post-approval-links (5)
