@@ -27,5 +27,9 @@ export default defineConfig({
   ],
   test: {
     setupFiles: ['./test/apply-migrations.ts'],
+    // Slow shared runners: two uk-trademark-journal cases (1.5 s locally) hit vitest's 5 s
+    // default on 2026-09-30 (check run 118, same tree green on the re-run). A CI red from
+    // timing is noise the routines then chase; the workers pool is slow to spin, not the code.
+    testTimeout: 20_000,
   },
 });
