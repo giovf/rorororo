@@ -32,6 +32,9 @@ jobs:
         env:
           METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Apify actor runs / users for the row (STRATEGY §4 "Apify paid runs / month: 100").
+          # Optional in the script: a missing token degrades the row to `apify: n/a`, never fails it.
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
       - name: Commit
         run: |
           git config user.name "foundry-metrics[bot]"

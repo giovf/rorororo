@@ -6,6 +6,7 @@
 //   MCP authed calls, paywall hits  — Analytics Engine gankdat_traffic (last 24 h)
 //   x402 paid requests              — Analytics Engine (last 24 h)
 //   refresh health                  — D1 refresh_log (last 24 h errors)
+//   Apify actor runs / users        — Apify API (optional APIFY_TOKEN; omitted without it)
 
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
@@ -124,15 +125,77 @@ const changeFeed = Object.fromEntries(
 const changesMcp = changeFeed.mcp_authed ?? 0;
 const changesRest = changeFeed.rest_changes ?? 0;
 
+// STRATEGY §4 target "Apify paid runs / month: 100" was unmeasured — review 2026-W39 §4 had to
+// write "no run count reaches the repo" — yet all 17 actors are public since 2026-09-28, so the
+// shelf either produces runs or it does not. Field names confirmed against a live
+// GET /v2/acts/apify~web-scraper through the relay (docs/relay), not from memory:
+// stats.totalRuns, stats.totalUsers30Days, isPublic. `?my=1` is documented with a reduced actor
+// object, so an entry that carries no stats is read from its own endpoint (publish-actors.mjs
+// does the same for pricingInfos); the first run logs which path it took and the keys it saw.
+// APIFY_TOKEN is optional: without it, or if the API is down, the row still lands as `apify: n/a`
+// rather than losing the D1 and Analytics Engine numbers with it.
+const apifyToken = process.env.APIFY_TOKEN;
+async function apifyShelf() {
+  if (!apifyToken) return null;
+  const H = { Authorization: `Bearer ${apifyToken}` };
+  const res = await fetch('https://api.apify.com/v2/acts?my=1&limit=100', { headers: H });
+  if (!res.ok) throw new Error(`GET /v2/acts: HTTP ${res.status}`);
+  const items = (await res.json()).data?.items ?? [];
+  let runs = 0;
+  let users = 0;
+  let publicCount = 0;
+  let fromDetail = 0;
+  for (const item of items) {
+    let act = item;
+    if (!item.stats || item.isPublic === undefined) {
+      const one = await fetch(`https://api.apify.com/v2/acts/${item.id}`, { headers: H });
+      if (!one.ok) throw new Error(`GET /v2/acts/${item.id}: HTTP ${one.status}`);
+      act = { ...item, ...((await one.json()).data ?? {}) };
+      fromDetail += 1;
+    }
+    runs += Math.round(Number(act.stats?.totalRuns ?? 0));
+    users += Math.round(Number(act.stats?.totalUsers30Days ?? 0));
+    if (act.isPublic) publicCount += 1;
+  }
+  console.log(
+    `apify: ${items.length} actors, ${fromDetail} needed their own endpoint (list keys: ${Object.keys(items[0] ?? {}).join(',')})`,
+  );
+  return { runs, users, publicCount };
+}
+const apify = await apifyShelf().catch((e) => {
+  console.error(`apify: ${e.message}`);
+  return null;
+});
+
 const date = new Date().toISOString().slice(0, 10);
 const users = `${acct.total} accts (${acct.paid ?? 0} paid, +${acct.new24h ?? 0}/24h)`;
 const sales = `${kinds.x402_paid ?? 0} x402 paid`;
+
+const file = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'RESEARCH.md');
+let md = await readFile(file, 'utf8');
+// The Apify API gives lifetime run totals, so the 24 h delta has to come from the row before
+// this one — the only place a previous total is kept. Today's row is skipped: a re-run rewrites
+// it, and it must not become its own baseline. Only the immediately preceding row counts, so the
+// first row after this ships reads `baseline` rather than inventing a delta against nothing.
+const prevRuns = (() => {
+  const rows = (md.match(/^\| \d{4}-\d{2}-\d{2} \| Daily numbers \|.*$/gm) ?? []).reverse();
+  for (const r of rows) {
+    if (r.startsWith(`| ${date} `)) continue;
+    const m = r.match(/apify: (\d+) runs/);
+    return m ? Number(m[1]) : null;
+  }
+  return null;
+})();
+
 const notes = [
   // preview = keyless data-tool calls (5 rows, 20/day per client, since 2026-09-30 for the
   // Claude Connectors Directory); paywall hits = the plan text shown when that budget is spent
   // or a presented key is bad. Both are blob1 kinds written by routes/mcp.ts + mcp/server.ts.
   `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${kinds.mcp_preview ?? 0} preview, ${paywall} paywall hits${wantedNote}`,
   `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
+  apify
+    ? `apify: ${apify.runs} runs (${prevRuns === null ? 'baseline' : `+${apify.runs - prevRuns}/24h`}), ${apify.users} users/30d, ${apify.publicCount} public`
+    : 'apify: n/a',
   agentKeys
     ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`
     : 'agent sign-up: n/a',
@@ -148,8 +211,6 @@ const notes = [
 ].join('; ');
 const row = `| ${date} | Daily numbers | ${users} | — | ${sales} | ${notes} |`;
 
-const file = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'RESEARCH.md');
-let md = await readFile(file, 'utf8');
 if (!/^## Metrics/m.test(md)) {
   md =
     md.trimEnd() +
