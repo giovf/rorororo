@@ -299,3 +299,8 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 21:30 | burn-down | A refused send now fails the job so it shows; an ALERTS line closed with ' — Done' is not sent as a need
 - 2026-09-30 21:42 | burn-down | Heal: the 21:30 commit body quoted the skip-ci marker, so GitHub ran nothing on that push; re-pushed docs/ci
 - 2026-09-30 21:42 | burn-down | docs/ci/README.md now says never to write that marker in a commit message; the installer runs on this push
+- 2026-09-30 21:52 | burn-down | Built gankdat refresh-uk-insolvency (6): a Gazette page the Worker reads as 0 bytes is retried 4× with longer pauses
+- 2026-09-30 21:52 | burn-down | Relay showed the Gazette serves the full 204 KB page to a runner; page size halved to 50 so each body is smaller
+- 2026-09-30 21:52 | burn-down | A later page that never arrives keeps the pages already read (partial_snapshot warn) instead of losing the day
+- 2026-09-30 21:52 | burn-down | No 'skipped' refresh_log status: the error row is what the 06:30 queue job keys on; two new tests, Taskmaster row 20
+- 2026-09-30 21:53 | burn-down | notify owner run 68 failed on the heal push (old job, script gone); the cursor job sends from 1007fe1 on this push

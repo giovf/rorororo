@@ -76,6 +76,47 @@ describe('GET /v1/data/uk-insolvency', () => {
     expect(body.data[0]?.company).toBe('MCGAWLEY CONTRACTING LTD');
   });
 
+  it('re-reads a page the origin cut (0 bytes with a content-length) and serves the origin data', async () => {
+    // 2026-09-28 and 09-30: three reads in a row came back as 0 bytes while a runner got 204 KB.
+    let calls = 0;
+    const mock = stubOrigins({
+      gazette: () => {
+        calls += 1;
+        return calls <= 2
+          ? new Response('', { status: 200, headers: { 'content-length': '204426' } })
+          : feedResponse();
+      },
+    });
+    const res = await authedFetch(INSOLVENCY_URL);
+    expect(res.status).toBe(200);
+    expect(mock).toHaveBeenCalledTimes(3);
+    const body = (await res.json()) as SuccessEnvelope<UkInsolvencyRecord[]>;
+    expect(body.data).toHaveLength(25);
+  });
+
+  it('keeps the pages already read when a later page never arrives (partial snapshot, not a lost day)', async () => {
+    // Page 1 is a full page (50 = PAGE_SIZE distinct notices), page 2 is cut on every read.
+    const fullPage = Array.from({ length: 50 }, (_, i) => {
+      const src = fixtureEntries[i % fixtureEntries.length] as Record<string, unknown>;
+      return { ...src, id: `https://www.thegazette.co.uk/id/notice/${9000000 + i}` };
+    });
+    let calls = 0;
+    const mock = stubOrigins({
+      gazette: () => {
+        calls += 1;
+        return calls === 1 ? feedResponse(fullPage) : new Response('', { status: 200 });
+      },
+    });
+    const res = await authedFetch(`${INSOLVENCY_URL}?per_page=100`);
+    expect(res.status).toBe(200);
+    // 1 good read + 4 cut reads of page 2, then the 50 records are served.
+    expect(mock).toHaveBeenCalledTimes(5);
+    const body = (await res.json()) as SuccessEnvelope<UkInsolvencyRecord[]>;
+    expect(body.meta?.total).toBe(50);
+    expect(body.data).toHaveLength(50);
+    expect(body.data[0]?.notice_id).toBe('9000000');
+  });
+
   it('falls back to bundled fixtures when the origin keeps failing', async () => {
     const mock = stubOrigins({ gazette: () => new Response('gone fishing', { status: 500 }) });
     const res = await authedFetch(INSOLVENCY_URL);

@@ -420,3 +420,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-09-30 burn-down: built `notify-owner-cursor` (6) — the `notify owner` job now sends everything since a committed cursor
   (`docs/ops/NOTIFIED.md`) and advances it only after the phone accepted, because run 63 lost four bullets for good and every
   earlier failed run did the same; `scripts/notify-owner.ts` replaces the untested .mjs, workflow via `docs/ci/`.
+- 2026-09-30 burn-down: built gankdat `refresh-uk-insolvency` (6) — page size 50, a cut body retried four times, a missing later page
+  keeps the pages read; the relay proved the Gazette serves the full body to a runner, so the Worker-side 0-byte reads are momentary.
+  Kept the honest `error` row instead of a `skipped` status: the 06:30 job that files refresh items keys on it. Stale KV lasts 7 days.

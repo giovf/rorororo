@@ -32,7 +32,11 @@ const CORPORATE_NOTICE_CODES = [
 // every returned notice code against this set at ingest and drop the rest.
 const CORPORATE_CODE_SET = new Set(CORPORATE_NOTICE_CODES.map(String));
 const CORPORATE_NOTICE_PARAM = CORPORATE_NOTICE_CODES.join(',');
-const PAGE_SIZE = 100;
+// 50, not 100: a 100-notice page is ~204 KB (relay check 2026-09-30) and the Worker read it as
+// 0 bytes on 2026-09-28 and 09-30 while a runner got the full body — the origin cutting a long
+// response, so half the bytes per request and twice the requests (20 for the snapshot, still
+// paced within the fair-use limit and well inside the wave budget).
+const PAGE_SIZE = 50;
 // Snapshot cap (KV window, same rationale as uk-tenders): the product is the
 // freshest corporate-insolvency events, newest-first as the feed returns them.
 const MAX_RECORDS = 1000;
@@ -117,15 +121,24 @@ function mapEntries(entries: unknown[]): UkInsolvencyRecord[] {
 
 const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout(resolve, ms));
 
-const FETCH_ATTEMPTS = 3;
+// A cut body (empty, shorter than its content-length, or unparsable) is retried like a 5xx —
+// four reads, each after a longer fair-use pause. 2026-09-28 and 09-30 the Worker read page 1 as
+// 0 bytes three times in a row within ~6 s while a GitHub runner got the full 204 KB, so the cut
+// is momentary and on the origin's side; the pauses now span ~13 s.
+const FETCH_ATTEMPTS = 4;
 // A 5xx is retried once after the fair-use pause: "thegazette.co.uk responded 500" cost the
 // 2026-09-29 wave-1 refresh its day (the fifth uk-insolvency refresh error in eight days), and
 // the Gazette's 500s are momentary — the same page reads fine seconds later.
 const SERVER_ERROR_ATTEMPTS = 2;
 
-// The Gazette occasionally returns a truncated body on a 200 ("Unexpected end of JSON input",
-// 2026-09-22 wave 1); re-read the page rather than fail the refresh. 4xx and network errors
-// are not retried here (they fall back to fixtures as before).
+/** A body the origin cut: nothing, or fewer bytes than it declared. */
+function shortBody(text: string, declared: string | null): boolean {
+  if (text.length === 0) return true;
+  const length = Number(declared);
+  return Number.isFinite(length) && length > 0 && new TextEncoder().encode(text).length < length;
+}
+
+// 4xx and network errors are not retried here (they fall back to fixtures as before).
 async function fetchJsonWithRetry(url: string): Promise<unknown> {
   for (let attempt = 1; ; attempt += 1) {
     const res = await fetch(url, {
@@ -144,14 +157,15 @@ async function fetchJsonWithRetry(url: string): Promise<unknown> {
     // declared length, and the tail) — three refreshes failed on "Unexpected end of JSON
     // input" alone in the week to 2026-09-28, which says nothing about where the cut is.
     const text = await res.text();
+    const declared = res.headers.get('content-length');
     try {
+      if (shortBody(text, declared)) throw new Error('body cut by the origin');
       return JSON.parse(text) as unknown;
     } catch (err) {
       if (attempt >= FETCH_ATTEMPTS) {
-        const declared = res.headers.get('content-length') ?? '?';
         const tail = text.slice(-40).replaceAll(/\s+/g, ' ');
         throw new Error(
-          `thegazette.co.uk page ${url.slice(url.indexOf('results-page='))}: ${err instanceof Error ? err.message : String(err)} after ${attempt} reads (${text.length} bytes, content-length ${declared}, tail "${tail}")`,
+          `thegazette.co.uk page ${url.slice(url.indexOf('results-page='))}: ${err instanceof Error ? err.message : String(err)} after ${attempt} reads (${text.length} bytes, content-length ${declared ?? '?'}, tail "${tail}")`,
           { cause: err },
         );
       }
@@ -169,7 +183,26 @@ async function fetchFromOrigin(): Promise<UkInsolvencyRecord[]> {
     // No accept header: the Gazette's content negotiation 500s when one is
     // sent alongside the .json path (verified 2026-07-13); the extension
     // alone selects the format.
-    const feed = feedSchema.parse(await fetchJsonWithRetry(url));
+    let feed: z.infer<typeof feedSchema>;
+    try {
+      feed = feedSchema.parse(await fetchJsonWithRetry(url));
+    } catch (err) {
+      // A later page that never arrives must not cost the day: the pages already read are
+      // the newest notices (the feed is newest-first), which is the product. Keep them and
+      // say so; only page 1 failing is a failed refresh (the previous snapshot then stays).
+      if (records.length === 0) throw err;
+      console.log(
+        JSON.stringify({
+          level: 'warn',
+          event: 'partial_snapshot',
+          source: 'uk-insolvency',
+          pages_read: page - 1,
+          records: records.length,
+          reason: err instanceof Error ? err.message : String(err),
+        }),
+      );
+      break;
+    }
     const entries =
       feed.entry === undefined || feed.entry === null
         ? []

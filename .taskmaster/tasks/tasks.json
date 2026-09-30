@@ -1159,13 +1159,25 @@
         "priority": "high",
         "subtasks": [],
         "updatedAt": "2026-09-30T19:41:50.292Z"
+      },
+      {
+        "id": "20",
+        "title": "uk-insolvency: retry a body the Gazette cut and keep a partial snapshot",
+        "description": "src/sources/uk-insolvency.ts: page size 50 (a 100-notice page is ~204 KB and the Worker read it as 0 bytes on 2026-09-28/30 while a runner got the full body), a cut body (empty or shorter than content-length) is retried four times like a 5xx, and a later page that never arrives keeps the pages already read (warn partial_snapshot) instead of failing the day. Tests in test/uk-insolvency.spec.ts. Pipeline item refresh-uk-insolvency.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-09-30T21:36:24.357Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-30T19:41:50.292Z",
-      "taskCount": 19,
-      "completedCount": 12,
+      "lastModified": "2026-09-30T21:36:24.357Z",
+      "taskCount": 20,
+      "completedCount": 13,
       "tags": [
         "master"
       ]
