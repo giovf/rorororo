@@ -1,0 +1,39 @@
+{
+  "request": "cws-status",
+  "fetched_at": "2026-09-30T18:37:12.713Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://chromewebstore.google.com/detail/dckbdaplggmhimpbekhdbaampglfhdgf?hl=en",
+      "fetched_at": "2026-09-30T18:37:11.728Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/readfocus-%E2%80%94-focus-reading/dckbdaplggmhimpbekhdbaampglfhdgf?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "0"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://chromewebstore.google.com/detail/pciignkojfpgmfcmjchmpdhonpjkfepc?hl=en",
+      "fetched_at": "2026-09-30T18:37:12.251Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/highlight-keep-%E2%80%94-web-high/pciignkojfpgmfcmjchmpdhonpjkfepc?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "0"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://chromewebstore.google.com/detail/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=en",
+      "fetched_at": "2026-09-30T18:37:12.494Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/google-translate/aapbdbdomjkkjkaonfhkkikfgjllcleb?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "0"
+      }
+    }
+  ]
+}
