@@ -52,6 +52,8 @@ Cloudflare Workers Paid ≈ US$5/month (only recurring cost in the portfolio), d
 | 2026-09-27 | Daily numbers | 0 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 189 authed, 1771 anon, 27 paywall hits; wanted: list_sources 3, query_uk_sanctions 3, query_uk_contract_awards 2; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; refresh ok |
 | 2026-09-28 | Daily numbers | 1 accts (0 paid, +1/24h) | — | 0 x402 paid | MCP 24h: 204 authed, 1717 anon, 48 paywall hits; wanted: list_sources 7, get_usage 6, query_uk_planning 3; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; refresh errors: uk-charities (D1_ERROR: Network connection lost.), uk-insolvency (Unexpected end of JSON input), uk-trademark-journal (D1_ERROR: internal error; reference = pvpjl6o7idm7cdijf25nr275) |
 | 2026-09-29 | Daily numbers | 1 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 198 authed, 1600 anon, 81 paywall hits; wanted: list_sources 8, query_uk_tenders 5, query_uk_sponsors 4; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; refresh errors: uk-insolvency (thegazette.co.uk responded 500) |
+| 2026-09-30 | Daily numbers | 1 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 147 authed, 1444 anon, 79 paywall hits; wanted: list_sources 8, query_uk_sponsors 4, query_uk_charities 4; changes 7d: 0 (mcp 0, rest 0); agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; refresh errors: uk-insolvency (thegazette.co.uk responded 500) |
+
 
 
 
