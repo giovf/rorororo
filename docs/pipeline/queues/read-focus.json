@@ -1,7 +1,7 @@
 {
   "venture": "read-focus",
   "status": "open",
-  "needs_research": true,
+  "needs_research": false,
   "updated": "2026-09-30",
   "items": [
     {
@@ -14,6 +14,59 @@
       "status": "done",
       "added": "2026-09-22",
       "done_at": "2026-09-30"
+    },
+    {
+      "id": "reader-mode-alternative-page",
+      "title": "apps.gankdat.com/reader-mode-alternative.html: a comparison page for Reader Mode / ADHD-reading users who search for a working alternative, linked from the landing and both listings",
+      "why": "RESEARCH.md 2026-09-18: Reader Mode (100k users, 3.1★) crashes and sold a lifetime promo without the promised features; the official bolding tool (100k, 2.4★, last update Jun 2024) 'doesn't work'; every ruler tool's top reviews ask for PDF; ADHD Reading charges $29/yr or $59 lifetime and 'developers don't respond'. Those users search 'reader mode alternative', 'reading ruler chrome', 'adhd reading extension' and nothing of ours answers it. STRATEGY §5: distribution before features until the funnel converts; apps.gankdat.com is indexed and now has a sitemap (highlight-keep weava-alternative-page shipped the pattern and the table CSS). Page: side-by-side table (local, no account, free tier, $12 once vs $30/yr and $59 lifetime), one honest paragraph per rival written from the September 2026 review sample, a 'not yet' row for PDF and Google Docs, Chrome + Firefox install buttons, the refund line. The trademarked name of the bolding technique never appears (RESEARCH legal assessment) — the rival is named as 'the official bolding extension'.",
+      "effort_days": 0.3,
+      "proof": "Search Console: ≥ 50 impressions or ≥ 5 clicks on the page in 30 days; any install attributed to it",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "day-30-funnel-review",
+      "title": "Day-30 funnel review once both listings are fixed: installs, key activations, sales — keep, fix or kill per STRATEGY §7",
+      "why": "Metrics rows 2026-09-30: 0 Chrome users, 0 Firefox daily users after 8 days public, no ratings — with an AMO listing that had no screenshots and category 'other' (the Chrome listing has its title, category and screenshots). The distribution fixes (AMO previews via the 0.1.1 handoff, the comparison page, the dashboard keywords) all land in the next two weeks; the honest EV in RESEARCH.md is 5–20k users in year one at 1–2 % conversion. This item is the measure step: on the date, read the store-metrics rows, the licence Worker's activation count and the ledger; write the reading into RESEARCH.md; if installs are still zero with every listing fixed, apply §7 (zero sales and zero organic signal → kill date 2026-12-21) or queue the one fix the numbers point at.",
+      "effort_days": 0.1,
+      "proof": "A RESEARCH.md metrics row on the date with installs, activations and sales, and a decision line in STRATEGY §8",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-09-30",
+      "not_before": "2026-10-30"
+    },
+    {
+      "id": "cws-promo-tile",
+      "title": "Chrome listing: small promo tile (440×280) — rides the owner's action-013 dashboard visit",
+      "why": "Relay cws-pages 2026-09-30: the Chrome listing already carries the searched-term title from the manifest ('ReadFocus — Focus Reading: Bold Word Starts, Reading Ruler & Dyslexia Fonts'), the Accessibility category and the screenshots — the one listing asset missing is the promo tile, which the store uses on search cards and collections and which only the dashboard can take. Low evidence that it moves installs on its own, so score 3; it rides the same 2-minute visit as the privacy URL (docs/for-owner/actions/013-repo-private.md), so the cost is the tile PNG in assets/, which Claude produces first.",
+      "effort_days": 0.1,
+      "proof": "Chrome listing shows the tile; store-metrics row moves off 0 within 30 days",
+      "score": 3,
+      "status": "blocked",
+      "blocked_on": "owner: Chrome Web Store dashboard (action 013 visit)",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "pdf-viewer",
+      "title": "PDF support: open PDFs in a bundled PDF.js viewer so bolding, ruler and fonts work on them (unlock feature)",
+      "why": "RESEARCH.md: 'every top review [of Reader Line, 20k users] asks for PDF support', Bionic-style tools 'want PDF', Reader Mode Pro and the official tool have none — the single most-requested gap in the niche and named in the product decision as the later release. A feature, so it sits behind the three distribution items above (STRATEGY §5); build only once the day-30 review shows installs. Build: bundle pdf.js (Apache-2.0) as an extension page, intercept PDF navigations on sites the user switched on (optional permission already per-site), apply the same content script to the text layer; e2e test with a fixture PDF. Unlock-tier so it gives the free user a reason to pay.",
+      "effort_days": 3,
+      "proof": "Listing review or support mail mentioning PDF; unlock conversion after the release above the pre-release rate",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-09-30"
+    },
+    {
+      "id": "edge-add-ons-listing",
+      "title": "Edge Add-ons listing (free channel, same zip) once the owner has a Microsoft Partner Center account",
+      "why": "RESEARCH.md product decision lists Edge Add-ons as the third free channel; Edge users install from its own store search, which is far less crowded than Chrome's. Same build as Chrome (Manifest V3), listing text from LISTING.md. Blocked on an account that carries the owner's identity (CLAUDE.md: ask before creating) — batched into the next owner request with the other account asks, not a separate ALERTS line.",
+      "effort_days": 0.2,
+      "proof": "Edge listing live; a store-metrics row for Edge",
+      "score": 3,
+      "status": "blocked",
+      "blocked_on": "owner: Microsoft Partner Center developer account (identity; batch with other account asks)",
+      "added": "2026-09-30"
     }
   ]
 }

@@ -436,3 +436,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-09-30 burn-down: built read-focus `post-approval-links` (5) — both extensions' repo-side links now on apps.gankdat.com; the
   live listings switch with the one open handoff (AMO) and one owner dashboard visit (Chrome, both extensions), then the repo goes
   private (013). Queue emptied → research next.
+- 2026-09-30 burn-down: research (read-focus) — same picture as Highlight Keep (0 users, listings being fixed by the open handoff);
+  five scored items, distribution first (comparison page 6, day-30 funnel review 5, PDF viewer 3, Chrome promo tile 3 and
+  Edge listing 3, the last two blocked on the owner). Kill date if nothing moves: 2026-12-21.

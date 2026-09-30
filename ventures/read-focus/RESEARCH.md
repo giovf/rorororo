@@ -122,3 +122,31 @@ the multi-store listing is the main upside over V1.
 | 2026-09-30 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.1.0, updated September 21, 2026; firefox: 0 adu, 2 weekly downloads, no ratings, v0.1.0 |
 | 2026-09-30 | Firefox listing recorded live (approved 2026-09-22; STORE.md was 7 days stale) | 0 daily / 2 weekly downloads (AMO API) | — | 0 | source: relay `amo-listings`; Chrome still in review |
 | 2026-09-30 | Chrome Web Store listing found live (relay: page 200, "Add to Chrome"); user count is not in the static HTML | — | — | 0 | approval mail never reached INBOX; foundry `store-metrics-in-ci` queued to read the numbers from CI |
+
+## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
+
+Evidence read: the metrics rows above (0 Chrome users and no ratings since ~2026-09-21, 0 Firefox
+daily users and 2 weekly downloads since 2026-09-22), relay `amo-listings` (the live Firefox listing
+had no screenshots, no tags and category `other` — `assets/amo-listing.json` + `scripts/amo-listing.ts`
+fix that in the open 0.1.1 handoff, so no new item), relay `cws-pages` (the Chrome listing already has the
+searched-term title from the manifest, the Accessibility category and its screenshots; only the promo tile is missing), the 2026-09-18 competitor table (Reader Mode 3.1★ and
+the official bolding tool 2.4★ still the wedge; every ruler tool asks for PDF; ADHD Reading at $29/yr
+or $59 lifetime), the legal assessment (the trademarked name never appears in our marketing, including
+comparison pages) and STRATEGY §5 (distribution before features until the funnel converts).
+
+Reading: same as Highlight Keep — nothing is wrong with the product yet, nobody can find it. Both
+listings are being fixed by the open handoff; what is missing is a page of ours that answers the
+search a burned Reader Mode / ADHD-reading user types, and a date on which the numbers decide.
+Items added (score = evidence × reach ÷ effort):
+
+| Item | Score | Effort | What it fixes |
+|---|---|---|---|
+| `reader-mode-alternative-page` | 6 | 0.3 d | the search-capture page on apps.gankdat.com (pattern and table CSS shipped with Highlight Keep's page); names rivals honestly, never the trademarked term |
+| `day-30-funnel-review` | 5 | 0.1 d | `not_before` 2026-10-30: installs, activations, sales once every listing is fixed; keep / fix / kill per §7 |
+| `cws-promo-tile` | 3 (blocked: owner dashboard) | 0.1 d | the one Chrome listing asset missing (title, category, screenshots are already right); rides the action-013 dashboard visit |
+| `pdf-viewer` | 3 | 3 d | the most-asked gap in the niche (bundled PDF.js); a feature, so behind the distribution items and the day-30 numbers |
+| `edge-add-ons-listing` | 3 (blocked: owner account) | 0.2 d | the third free channel; needs a Partner Center account, batched with other account asks |
+
+Not added: Google Docs support (canvas rendering, documented as a known limit); a video listing asset
+(no evidence it moves installs at this stage). Kill check (STRATEGY §7): zero sales and zero organic
+signal 90 days after every listing is live → 2026-12-21 if nothing moves.

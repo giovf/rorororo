@@ -327,3 +327,8 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 23:40 | burn-down | ReadFocus landing page shows the live Chrome and Firefox install buttons; index cards say live
 - 2026-09-30 23:40 | burn-down | Owner ask: the same 2-minute Chrome dashboard privacy-URL edit for ReadFocus, then the repo goes private
 - 2026-09-30 23:40 | burn-down | read-focus queue emptied → needs_research
+- 2026-09-30 23:48 | burn-down | Research (read-focus): 0 users on both stores; listings being fixed by the open handoff, no page answers the search
+- 2026-09-30 23:48 | burn-down | Queued reader-mode-alternative-page (6): honest comparison page for Reader Mode / ADHD-reading users, no trademark
+- 2026-09-30 23:48 | burn-down | Queued day-30-funnel-review (5, not before 2026-10-30): installs, activations, sales decide keep / fix / kill
+- 2026-09-30 23:48 | burn-down | Queued pdf-viewer (3, feature), cws-promo-tile (3, owner dashboard), edge-add-ons-listing (3, owner account)
+- 2026-09-30 23:55 | burn-down | Stopping for time (~45 min): next is read-focus reader-mode-alternative-page (6), then highlight-keep pdf-highlighting (3)
