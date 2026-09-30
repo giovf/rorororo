@@ -205,3 +205,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 08:40 | exchange | Declined: ChatGPT App Directory — business verification with tax documents is KYC beyond a one-off account
 - 2026-09-30 08:40 | exchange | STRATEGY §2 gains an "Agent directories" row; §8 logs the decision; comparison in docs/exchange/2026-W40.md
 - 2026-09-30 08:40 | exchange | Owner (later, not now): when the listing item ships, one portal form at claude.ai/directory/manage, ~20 min
+
+- 2026-09-30 09:45 | fallback | Fable's 09:00 build slot left no trace, so this run filled it; root gates green before and after
+- 2026-09-30 09:45 | fallback | Triage stops searching newer_than:3h — unread mail is the queue now, so a missed slot delays mail, never loses it
+- 2026-09-30 09:45 | fallback | Oldest first, 30 threads a run, and anything over 3 h old is marked (backlog) in the inbox log
+- 2026-09-30 09:45 | fallback | The nine threads lost for a week in September (expired Send-as link, late CWS verification) is what this prevents
+- 2026-09-30 09:45 | fallback | No new owner handoff: the live prompt edit rides the 2026-09-29 one, which now carries both triage sentences

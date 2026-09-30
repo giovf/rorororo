@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-29",
+  "updated": "2026-09-30",
   "items": [
     {
       "id": "fetch-relay",
@@ -117,12 +117,13 @@
     {
       "id": "triage-backlog-window",
       "title": "Inbox triage searches unread mail without an age window, so a missed slot cannot lose mail",
-      "why": "The hourly triage searches `newer_than:3h`; when slots are missed (GitHub cron gaps 2026-09-21/22, usage limits) the mail in between is never read. Nine unread threads dated 2026-09-18..21 surfaced only on 2026-09-28 17:07 by a manual catch-up (docs/INBOX.md 'Backlog catch-up'): the Gmail Send-as confirmation for info@gankdat.com (expired unclicked, owner had to redo it), Chrome Web Store identity verification (publishing unblocked a week late), the mcpservers.org approval, the Datarade application receipt. Fix: replace the search with `in:inbox is:unread` (no age filter) and mark each logged thread read in the same run (already done for triaged mail), so the window is the read state, not the clock; cap one run at 30 threads, oldest first, and note 'backlog' in the INBOX line when the mail is older than 3 h. Exact sentence for the triage prompt: 'Search Gmail for `in:inbox is:unread` (no newer_than filter): unread is the queue, so a missed slot only delays mail; process oldest first, at most 30 threads per run, mark each processed thread read, and write `(backlog)` after the timestamp of any thread older than 3 h.' Prompt edit is a handoff. Evidence 3 (9 threads, two owner-visible consequences) × reach 2 ÷ 0.1 days.",
+      "why": "The hourly triage searches `newer_than:3h`; when slots are missed (GitHub cron gaps 2026-09-21/22, usage limits) the mail in between is never read. Nine unread threads dated 2026-09-18..21 surfaced only on 2026-09-28 17:07 by a manual catch-up (docs/INBOX.md 'Backlog catch-up'): the Gmail Send-as confirmation for info@gankdat.com (expired unclicked, owner had to redo it), Chrome Web Store identity verification (publishing unblocked a week late), the mcpservers.org approval, the Datarade application receipt. Fix: replace the search with `in:inbox is:unread` (no age filter) and mark each logged thread read in the same run (already done for triaged mail), so the window is the read state, not the clock; cap one run at 30 threads, oldest first, and note 'backlog' in the INBOX line when the mail is older than 3 h. Exact sentence for the triage prompt: 'Search Gmail for `in:inbox is:unread` (no newer_than filter): unread is the queue, so a missed slot only delays mail; process oldest first, at most 30 threads per run, mark each processed thread read, and write `(backlog)` after the timestamp of any thread older than 3 h.' Prompt edit is a handoff. Evidence 3 (9 threads, two owner-visible consequences) × reach 2 ÷ 0.1 days. Built 2026-09-30 (fallback): docs/routines/inbox-triage.md step 1 now reads the exact sentence above and step 2 carries the `(backlog)` marker; docs/SCHEDULERS.md names the new window. The live prompt replacement rides the existing 2026-09-29 ALERTS handoff (the routine was created via the HTTP API, so update_trigger refuses agents), which now covers both triage sentences in one edit.",
       "effort_days": 0.1,
       "proof": "no 'backlog' or 'found unread' INBOX line over 30 days; every store mail logged within 2 h of arrival",
       "score": 7,
-      "status": "todo",
-      "added": "2026-09-29"
+      "status": "done",
+      "added": "2026-09-29",
+      "done_at": "2026-09-30"
     },
     {
       "id": "metrics-change-feed-count",

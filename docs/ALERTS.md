@@ -161,9 +161,11 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   (`update_trigger` refuses routines created via the HTTP API). Replace the stored prompt of **Foundry inbox
   triage** (`trig_011NfGaSrEEsr5B1xTHEBRAr`) with the text below the `---` in `docs/routines/inbox-triage.md`
   and of **Foundry weekly report** (`trig_01PjxdBAcvYSAT32fCyzcvQg`) with `docs/routines/weekly-report.md`
-  (https://claude.ai/code/routines/<id> or the RemoteTrigger API). Each differs from the live prompt by one
-  sentence pointing at `docs/ops/SELF-CAUSED.md`; nothing else changes. Then delete this line's remark in
-  `docs/SCHEDULERS.md` ("live prompt pending the handoff").
+  (https://claude.ai/code/routines/<id> or the RemoteTrigger API). The weekly report differs from its live prompt by one
+  sentence pointing at `docs/ops/SELF-CAUSED.md`; the triage prompt differs by that sentence and (since 2026-09-30) by
+  step 1's search, which drops `newer_than:3h` for `in:inbox is:unread`, oldest first, 30 threads a run, plus the
+  `(backlog)` marker in step 2 — one replacement from the mirror file carries both. Nothing else changes. Then delete
+  this line's remark in `docs/SCHEDULERS.md` ("live prompt pending the handoff").
 - 2026-09-29 handoff: delete three lines from this file that are now documented false alarms — the
   2026-09-27 Apify pricing handoff, the 2026-09-28 `gankdat/apify` pricing line (both are our own
   US$0.001/result publisher price, `docs/ops/SELF-CAUSED.md` row 1) and the 2026-09-25 SAM.gov
@@ -179,3 +181,9 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
 - 2026-09-30 owner: nothing to do yet — heads-up that the exchange chose a **Claude Connectors Directory** listing for
   gankdat (`docs/exchange/2026-W40.md`); once the build routine ships `claude-directory-listing` it will ask you for one
   portal form at https://claude.ai/directory/manage on your paid Claude plan (~20 min, no new account, no money).
+- 2026-09-30 done (fallback routine): triage's `newer_than:3h` window is gone from the prompt mirror
+  (`docs/routines/inbox-triage.md` step 1) — the search is now `in:inbox is:unread` with no age filter, oldest
+  first, at most 30 threads a run, and step 2 marks any thread older than 3 h `(backlog)`. Unread state, not the
+  clock, is the queue, so a missed slot (GitHub cron gaps 2026-09-21/22, usage limits) delays mail instead of
+  losing it, as the nine threads of 2026-09-18..21 were lost for a week. No new handoff: the live prompt edit
+  rides the 2026-09-29 handoff above, which now carries both sentences. Foundry item `triage-backlog-window`.

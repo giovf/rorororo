@@ -319,3 +319,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   prints `changes 7d: N (mcp M, rest R)`, and the §4 target above now names that column as its
   source. It had read "unknown, likely 0" since launch because nothing counted it.
 - 2026-09-30 exchange: **gankdat distribution — Claude Connectors Directory listing** (score 11: evidence 3 × reach 4 ÷ 0.75 days + 20 owner min; the shelf lists automatically after a policy scan, no third-party gate, and the server today fails three of its checks: no readOnlyHint on 22 tools, no Origin 403, no keyless answer). Lazy OAuth (CIMD + PKCE) queued second (8) so plans bill from Claude/ChatGPT/Cursor; day-30 read 2026-10-30. Parked: Apify quality-score pass (copy lever already spent, needs run data), n8n node (5.1), Snowflake (needs account + provider agreement), pharma registers (3.0, supply). Declined: ChatGPT App Directory (business/tax verification). Comparison: `docs/exchange/2026-W40.md`.
+- 2026-09-30 fallback: Fable's 09:00 slot was refused (weekly allowance), so this run filled it with the
+  highest-scoring small item, `triage-backlog-window` (7). The hourly triage searched `in:inbox is:unread
+  newer_than:3h`, which made the clock the queue: nine threads dated 2026-09-18..21 stayed unread for a week
+  across the GitHub cron gaps of 09-21/22 and cost the owner a re-trigger of the expired Gmail Send-as
+  confirmation and seven late days on Chrome Web Store verification. Step 1 of `docs/routines/inbox-triage.md`
+  now searches `in:inbox is:unread` with no age filter, oldest first, at most 30 threads a run, and step 2
+  marks anything older than 3 h `(backlog)` — unread state is the queue, so a missed slot can only delay mail.
+  The live prompt edit rides the open 2026-09-29 handoff rather than adding a second one.
