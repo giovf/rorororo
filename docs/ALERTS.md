@@ -214,3 +214,7 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   Figma stats yourself, never overwrite it, and only write a row for a venture whose row for today is missing (then say
   `store-metrics job left no row`)." Ten days of `not live yet` rows for live listings is what this ends; foundry item
   `store-metrics-in-ci`, `scripts/store-metrics.ts`, `docs/ci/store-metrics.yml`.
+- 2026-09-30 done (burn-down): the 2026-09-29 Taskmaster handoff is closed without the interactive session —
+  rows 17 (`metrics-change-feed-count`), 18 (`claude-directory-listing`) and 19 (`mcp-oauth-lazy-auth`, migration 0013)
+  are in `.taskmaster/tasks/tasks.json`, filed with the new offline command `npm run task -- add` (`scripts/taskmaster-add.ts`,
+  foundry item `taskmaster-offline-add`). Routines file their own rows from now on; no more Taskmaster handoffs.

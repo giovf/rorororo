@@ -81,7 +81,8 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
 - Use Taskmaster for breaking down work. Before implementing any non-trivial
   feature, check `task-master next` or read `.taskmaster/tasks/tasks.json`.
 - Update task status with `task-master set-status --id <id> --status done` as
-  you complete each one.
+  you complete each one. No CLI or MCP (cloud sandboxes): `npm run task -- add|done|list`
+  edits `tasks.json` offline (`scripts/taskmaster-add.ts`).
 - Don't commit `node_modules/`, `.taskmaster/reports/`, or anything in
   `.gitignore`.
 

@@ -62,7 +62,10 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   contract changes (zod schemas, D1 migrations, `wrangler.jsonc`,
   `plans.json`, API surface, auth/billing flows); refactors >~50 lines across
   files. Manual form works everywhere:
-  `task-master add-task --title="..." --description="..."`.
+  `task-master add-task --title="..." --description="..."`; in a cloud sandbox
+  (no CLI, MCP times out) use the offline form from the repo root instead —
+  `npm run task -- add --title "..." --description "..." [--status done]` and
+  `npm run task -- done <id>` (`scripts/taskmaster-add.ts`, no AI, same JSON).
 - **After filing a task**, complexity-analyse it:
   `task-master analyze-complexity --from=<id> --to=<id>` (AI call, ~1 min;
   view with `task-master complexity-report`). If it scores **>4/10**, expand

@@ -265,3 +265,7 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 19:35 | burn-down | Dry run on the relay bodies gave today's real rows: read-focus 0 users, 2 Firefox downloads; highlight-keep 0 and 0
 - 2026-09-30 19:35 | burn-down | Today's 'not live yet' rows for read-focus and highlight-keep replaced with those rows; ten days of blind rows end here
 - 2026-09-30 19:35 | burn-down | SCHEDULERS.md gains the 06:45 job; the 07:00 routine now only reads the row (prompt sentence handed off in ALERTS)
+- 2026-09-30 19:45 | burn-down | Built foundry taskmaster-offline-add (8): `npm run task -- add|done|list` edits tasks.json with no MCP and no AI
+- 2026-09-30 19:45 | burn-down | scripts/taskmaster-add.ts validates the tag shape, takes the next id and refreshes the metadata counts; 8 tests
+- 2026-09-30 19:45 | burn-down | Filed the three rows the 2026-09-29 handoff was waiting on: 17 change-feed count, 18 directory listing, 19 lazy OAuth
+- 2026-09-30 19:45 | burn-down | That Taskmaster handoff is closed in ALERTS; gankdat and root CLAUDE.md now name the offline form for sandboxes

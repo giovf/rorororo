@@ -398,3 +398,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   a page answers), because the 07:00 routine's sandbox cannot reach the stores and wrote `not live yet` for ten days of live
   listings. The routine now only reads the row (prompt sentence handed off). Next foundry items: `taskmaster-offline-add`,
   `prompts-from-repo` (both 8).
+- 2026-09-30 burn-down: built `taskmaster-offline-add` (8) — `scripts/taskmaster-add.ts` (`npm run task -- add|done|list`) appends
+  Taskmaster rows deterministically because the MCP timed out in every sandbox (seven times) and the CLI is absent; the three
+  rows waiting on the 2026-09-29 handoff (17–19) are filed and the handoff closed. Next foundry item: `prompts-from-repo` (8).
