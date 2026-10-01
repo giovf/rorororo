@@ -351,3 +351,4 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-01 01:45 | burn-down | e2e section 4 proves render, select, highlight, reload, restore in Chromium; 5 unit tests for the URL helpers
 - 2026-10-01 01:45 | burn-down | Comparison page, both listing texts and the welcome page now say PDFs on the web work, local files do not
 - 2026-10-01 01:45 | burn-down | Open 0.1.1 handoff now ships 0.2.0 with the same commands (note added in place)
+- 2026-10-01 01:55 | burn-down | Stopping for time (~43 min): one item done (PDF highlighting, 0.2.0); next is read-focus pdf-viewer (3)
