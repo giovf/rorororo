@@ -1,10 +1,12 @@
 # Foundry ops retro — routine prompt of record
 
 Cloud routine `trig_015Uvn63XZUVqx1TAiWZrZL6`, Saturdays 07:59 UTC, created 2026-09-26 by the build routine
-(`create_trigger`) — **disabled until the interactive session attaches the repository `giovf/rorororo` and
-enables it** (the tool sets no repository source; validation firing stalled, see `docs/SCHEDULERS.md`). This file mirrors the stored prompt so a retro proposal can quote the exact sentence to
+(`create_trigger`); the tool set no repository source, so it stayed disabled until the interactive session attached
+`giovf/rorororo` and enabled it on 2026-09-28 (see `docs/SCHEDULERS.md`). This file mirrors the stored prompt so a retro proposal can quote the exact sentence to
 change; the live prompt is edited from the interactive session (RemoteTrigger API) and this file in the same
 change. Listed in `docs/SCHEDULERS.md`.
+
+Changes: 2026-10-01 — step 3 gained the `npm run handoffs` sentence (foundry `handoff-ledger`).
 
 Since 2026-09-30 (foundry `prompts-from-repo`) this file is the prompt of record: once the stored prompt is the
 bootstrap in `README.md`, the text below the `---` is what the routine runs and a change is a commit here; the
@@ -21,7 +23,7 @@ Read, in this order: `docs/SCHEDULERS.md` (every scheduled job, its slot, tag an
 Measure, for the 7 days ending yesterday, and keep the source of every number:
 1. Slot reliability — for each routine slot in SCHEDULERS.md (metrics 07:00 daily, build 09:00 and 17:00 daily, triage hourly is NOT watched, exchange Wed 08:00, review Sun 08:00, report Mon 07:30, burn-down Wed 18:00–Thu 02:00, retro Sat 07:59): traced (a tagged RUNS line or the routine's commit subject within 2 h), missed (no trace, or a `watchdog | missed:` line), or ran-but-pushed-nothing. Count expected slots vs traced.
 2. Throughput — pipeline items set to done, blocked, dropped this week (`git log -p --since='8 days ago' -- docs/pipeline/queues/`), research runs vs build runs, items that needed more than one run.
-3. Blockers — every `blocked_on`, `handoff:` and `owner:` of the week grouped by cause: no egress from the sandbox, missing token scope or secret, a third party (store review, support ticket), owner identity, model or usage limit, a tool that timed out (e.g. the task-master MCP). A cause seen twice or more is a REPEAT: that is what you queue a general fix for (the fix removes the class, not the instance).
+3. Blockers — run `npm run handoffs` (read-only, allowed like `npm run pipeline`; it prints every still-open `handoff:` / `owner:` entry of `docs/ALERTS.md` with its age — an entry closed with a ` — Done` / ` — Superseded` suffix is not printed and is not a blocker; one printed at more than 3 days old is the step-4 defect) — then every `blocked_on`, `handoff:` and `owner:` of the week grouped by cause: no egress from the sandbox, missing token scope or secret, a third party (store review, support ticket), owner identity, model or usage limit, a tool that timed out (e.g. the task-master MCP). A cause seen twice or more is a REPEAT: that is what you queue a general fix for (the fix removes the class, not the instance).
 4. Defects in the routines themselves — a dataset pushed green that errored on first live run; CI red after a routine pushed (INBOX `Run failed`); a routine that wrote the wrong shape (RUNS lines not `- YYYY-MM-DD HH:MM | <tag> | …` or over 120 chars, a missing STRATEGY §8 line, SCHEDULERS.md not updated with a scheduler change, a queue change not in the same commit as the work); a handoff open for more than 3 days; a prompt instruction that events contradicted (say which routine and quote the sentence); a partial push (work pushed without its docs or queue change).
 5. Owner load — `owner:` lines and OWNER-NOTES messages this week, and the time from each owner note to its `- Claude:` answer. Anything the owner was asked for that a routine could have done itself is a defect.
 

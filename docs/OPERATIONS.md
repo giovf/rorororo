@@ -116,6 +116,15 @@ Mail that our own automation triggers (Apify pricing/publish confirmations, DMAR
 failures on our pushes, the retired SAM key reminder) is listed in `docs/ops/SELF-CAUSED.md`; triage
 logs a match and never escalates it, and the weekly report never makes one a next step.
 
+**Handoff ledger (2026-10-01, foundry `handoff-ledger`).** `npm run handoffs` prints every open
+`handoff:` / `owner:` entry of `docs/ALERTS.md` oldest first with its age (`--stale N` sets the
+threshold, `--all` adds the closed ones, `--json` for scripts); the weekly report's "Waiting on the
+owner" section and the retro's blocker and defect steps read it instead of re-deriving which entries are
+live. Closing one is `npm run handoffs -- close "<first-line text>" --by <routine> --how "<how>"`, which
+appends ` — Done YYYY-MM-DD (<routine>): <how>` (or ` — Superseded …`) to the original entry; a
+routine never writes a separate `done:` line for it and never deletes it. The `notify owner` job
+treats a suffixed line as closed. Proof: no handoff older than 7 days without a suffix over 30 days.
+
 ## Interrupted runs (usage limits, timeouts, crashes)
 
 - Routine sandboxes are discarded when a run dies; nothing reaches `main` unless pushed. Every

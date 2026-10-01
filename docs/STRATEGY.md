@@ -442,3 +442,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-01 burn-down: built read-focus `reader-mode-alternative-page` (6) — the page a burned Reader Mode / bolding / ADHD-reading
   user finds when they search, on the host Search Console indexes; honest 12-row table (PDF "not yet", Docs "no", Helperbird named
   for suites), live install buttons, both listing texts link to it. Distribution before features (§5); proof is Search Console at day 30.
+- 2026-10-01 burn-down: built foundry `handoff-ledger` (5) — `scripts/handoffs.ts` lists open ALERTS handoffs by age and closes one by
+  appending the Done/Superseded suffix to the original entry (no more separate done: lines, no deletions); the report and retro read it.
+  First run: 23 of 34 open entries were already executed; 11 live remain. Proof: no handoff > 7 days without a suffix over 30 days.

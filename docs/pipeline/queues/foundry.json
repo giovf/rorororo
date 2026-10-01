@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-30",
+  "updated": "2026-10-01",
   "items": [
     {
       "id": "fetch-relay",
@@ -238,12 +238,13 @@
     {
       "id": "handoff-ledger",
       "title": "Open handoffs are listed by age with `npm run handoffs`, and a routine that closes one marks the original line instead of writing a new one",
-      "why": "ALERTS.md carried eight open `handoff:` lines on 2026-09-30 evening while the interactive session had not run since 09-28: three were already satisfied by later work (Apify pricing false alarm closed 09-29, store mails logged 09-28, Taskmaster rows filed 09-30) but their lines stayed open, three prompt handoffs were superseded by one, and one (`delete three lines`, 09-29) existed only because a sandbox refused a deletion a routine may make. Every reader (report, retro, exchange, this routine) re-derives which are live. Fix: `scripts/handoffs.ts` prints each open `handoff:` / `owner:` entry with its age and any `Done`/`Superseded` suffix; the weekly report and the retro read it (their `docs/routines/` files gain one sentence); convention in `docs/OPERATIONS.md` §Owner notifications: closing a handoff appends ` — Done YYYY-MM-DD (<routine>): <how>` to the original entry. Evidence 2 (eight open, four stale) × reach 2 (report, retro, interactive session) ÷ 0.1 days.",
+      "why": "ALERTS.md carried eight open `handoff:` lines on 2026-09-30 evening while the interactive session had not run since 09-28: three were already satisfied by later work (Apify pricing false alarm closed 09-29, store mails logged 09-28, Taskmaster rows filed 09-30) but their lines stayed open, three prompt handoffs were superseded by one, and one (`delete three lines`, 09-29) existed only because a sandbox refused a deletion a routine may make. Every reader (report, retro, exchange, this routine) re-derives which are live. Fix: `scripts/handoffs.ts` prints each open `handoff:` / `owner:` entry with its age and any `Done`/`Superseded` suffix; the weekly report and the retro read it (their `docs/routines/` files gain one sentence); convention in `docs/OPERATIONS.md` §Owner notifications: closing a handoff appends ` — Done YYYY-MM-DD (<routine>): <how>` to the original entry. Evidence 2 (eight open, four stale) × reach 2 (report, retro, interactive session) ÷ 0.1 days. DONE 2026-10-01 (burn-down): scripts/handoffs.ts (`npm run handoffs` list/close, 11 tests); convention in ALERTS.md header and OPERATIONS.md §Owner notifications; weekly-report §4 and ops-retro step 3 read the ledger. First run: 33 open entries, 22 of them already executed per later done: lines or the repo — closed with the suffix (plus the nhs-ods Taskmaster row filed, #21); 11 live remain, 1 older than 7 days (the Figma payout confirmation, owner).",
       "effort_days": 0.1,
       "proof": "no handoff older than 7 days without a Done or Superseded suffix over 30 days; the weekly report's 'Waiting on the owner' section lists only live items",
       "score": 5,
-      "status": "todo",
-      "added": "2026-09-30"
+      "status": "done",
+      "added": "2026-09-30",
+      "done_at": "2026-10-01"
     },
     {
       "id": "extension-publish-in-ci",

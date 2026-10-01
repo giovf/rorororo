@@ -336,3 +336,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-01 00:35 | burn-down | Rivals: Reader Mode, the official bolding tool (trademark never named), ADHD Reading; reviews quoted, not claimed
 - 2026-10-01 00:35 | burn-down | Linked from the landing index, the ReadFocus page and both listing texts; sitemap lists it
 - 2026-10-01 00:35 | burn-down | AMO copy of the listing line waits for the next ReadFocus sign (the listing script sets no description)
+- 2026-10-01 00:50 | burn-down | Built foundry handoff-ledger (5): `npm run handoffs` lists every open ALERTS handoff/owner entry by age
+- 2026-10-01 00:50 | burn-down | `npm run handoffs -- close` appends ' — Done <date> (<routine>): <how>' to the original entry; 11 tests
+- 2026-10-01 00:50 | burn-down | Convention in ALERTS.md and OPERATIONS.md; weekly report §4 and retro step 3 now read the ledger
+- 2026-10-01 00:50 | burn-down | First run closed 23 of 34 open entries that later done: lines or the repo prove executed; 11 live remain
+- 2026-10-01 00:50 | burn-down | Only one live entry is older than 7 days: the 09-22 ask to confirm the Figma Stripe payout (owner)
+- 2026-10-01 00:50 | burn-down | nhs-ods Taskmaster row filed retrospectively (#21, offline add); that handoff closed

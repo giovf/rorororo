@@ -5,8 +5,12 @@ sessions read this file first and clear the items that need secrets, accounts or
 browser — the routines cannot do those. Convention: one line per item,
 `- YYYY-MM-DD handoff: <what the next interactive session must do>` for agent-to-agent
 work, and `- YYYY-MM-DD owner: <what and where>` for anything needing the owner — those
-lines are sent to their phone by the `notify owner` job. Delete a line once it is done
-(git keeps the history).
+lines are sent to their phone by the `notify owner` job. Closing an entry **appends** to it —
+`npm run handoffs -- close "<first-line text>" --by <routine> --how "<how>"` writes
+` — Done YYYY-MM-DD (<routine>): <how>` (or ` — Superseded …` with `--superseded`) on the original
+entry; never a new `done:` line, never a deletion by a routine. `npm run handoffs` lists what is still
+open, oldest first, with ages (`scripts/handoffs.ts`, 2026-10-01). An interactive session may prune
+closed entries older than 30 days (git keeps the history).
 
 ## Open
 
@@ -17,33 +21,33 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   (or `npm run dev` with network) and check the row count (~50k) and that `ofsted_rating`
   and `ofsted_last_inspection` are populated. A header change fails loudly
   (`GIAS extract format changed — missing: …`), and the Ofsted join degrades to the
-  Ofsted columns GIAS itself carries rather than failing the load.
+  Ofsted columns GIAS itself carries rather than failing the load. — Done 2026-10-01 (burn-down): executed by the interactive session 2026-09-21 (done: line below): 52,578 schools loaded in wave 5, ofsted columns populated
 - 2026-09-21 handoff: push the new Apify actor `ventures/gankdat/apify/uk-schools`
   (`npx apify-cli push` with `APIFY_TOKEN`) and price it at the same US$0.001/result
   pay-per-event as the others — subject to the new-publisher limit still blocking four
-  actors (support asked 2026-09-20).
+  actors (support asked 2026-09-20). — Done 2026-10-01 (burn-down): pushed and priced 2026-09-21 by the interactive session (actor JpzvkJcNfbaieyqrg)
 - 2026-09-21 handoff: re-publish the MCP registry entry at v0.12.0 (`server.json` now names
-  schools) — needs `mcp-registry-key.pem`; see MARKETPLACE-PREP.md for the two commands.
+  schools) — needs `mcp-registry-key.pem`; see MARKETPLACE-PREP.md for the two commands. — Done 2026-10-01 (burn-down): registry at v0.12.0 since 2026-09-21 (done: line below)
 - 2026-09-21 owner: gankdat looks to have its **first paying account** (today's metrics row:
   6 accounts, 1 paid; no revenue row in the ledger yet). Please confirm it in Stripe — and
   note it re-opens the ICO data protection fee (action 012), which you deferred until the
-  first real customer. Claude will record the net GBP in `docs/LEDGER.md` once confirmed.
+  first real customer. Claude will record the net GBP in `docs/LEDGER.md` once confirmed. — Superseded 2026-10-01 (burn-down): false alarm, see the correction owner line of the same day (internal Apify service account)
 - 2026-09-21 handoff: the 2026-09-21 metrics row reports refresh errors on five sources
   (`sam-exclusions`, `uk-care-locations`, `uk-charities`, `uk-contract-awards`,
   `uk-food-hygiene`) — every D1 wave except wave 2. Read the Worker logs / `refresh_log`
   and force a refresh; if the waves are overrunning the 15-minute Cron Trigger limit,
-  rebalance them (this build added wave 5 at 05:50, so there is room to split wave 3).
+  rebalance them (this build added wave 5 at 05:50, so there is room to split wave 3). — Done 2026-10-01 (burn-down): yesterday's forced runs inside the 24h window; waves 10/12 ok on 2026-09-21 (done: line below)
 - 2026-09-21 handoff: file the Taskmaster row for `uk-schools` retrospectively — the daily
   build container has neither the `task-master` CLI nor a working task-master-ai MCP
   connection (timed out), so the venture's "task before coding" convention could not be
-  honoured this run.
-- 2026-09-21 owner: Telegram notifications are live — this line is the end-to-end test; nothing to do.
-- 2026-09-21 owner: Telegram is wired end to end — this is the CI test message; nothing to do.
-- 2026-09-21 owner: correction — the "first paying account" alert earlier today was a false alarm: the paid-plan account is our own internal service account for the Apify actors, not a customer. No revenue yet; the ICO fee stays deferred; nothing to do. (Metrics now exclude internal accounts.)
+  honoured this run. — Done 2026-10-01 (burn-down): Taskmaster #54 filed 2026-09-21 by the interactive session
+- 2026-09-21 owner: Telegram notifications are live — this line is the end-to-end test; nothing to do. — Done 2026-10-01 (burn-down): end-to-end test line, nothing was owed
+- 2026-09-21 owner: Telegram is wired end to end — this is the CI test message; nothing to do. — Done 2026-10-01 (burn-down): CI test line, nothing was owed
+- 2026-09-21 owner: correction — the "first paying account" alert earlier today was a false alarm: the paid-plan account is our own internal service account for the Apify actors, not a customer. No revenue yet; the ICO fee stays deferred; nothing to do. (Metrics now exclude internal accounts.) — Done 2026-10-01 (burn-down): information only, nothing was owed
 - 2026-09-21 done: handoffs from the daily build executed by the interactive session — registry at v0.12.0, Apify actor uk-schools pushed + priced (JpzvkJcNfbaieyqrg), Taskmaster #54 filed, live ingest verified (52,578 schools loaded in wave 5 at 12:50 UTC), the five-source refresh-error note was yesterday's forced runs inside the 24h window (today's waves: 10/12 ok, two transient origin errors now retried), and the "first paying account" was the internal Apify service account (metrics now exclude internal accounts).
 - 2026-09-22 done: Variables Toolkit launch recorded by the daily build — approval verified against Figma's own notification email (2026-09-21 20:29 UTC), `venture.json` → `launched`, STORE.md → live with the listing URL, ARCHITECTURE/LEDGER notes updated, the apps.gankdat.com product card now links the listing, and day-1/7/30 measurement is set out in `ventures/variables-toolkit/RESEARCH.md` §7. The 07:00 metrics routine reads STORE.md, so real Figma numbers start landing from tomorrow.
 - 2026-09-22 owner: **Variables Toolkit is live on Figma Community** — https://www.figma.com/community/plugin/1682711656065145288. The portfolio's first listing on a shelf that takes payment. One thing only you can check (~2 min): open Figma → Settings → Community/Creator payouts and confirm the **Stripe payout is connected**. Without it Figma can sell the $12 unlock but cannot pay the money out. Nothing else needed — no spend, no account creation.
-- 2026-09-22 handoff: fill in the Figma **community resource uuid** in `ventures/variables-toolkit/STORE.md` (needed to read listing comments) — the daily build container has no egress to `figma.com` (proxy 403). One fetch of `https://www.figma.com/api/search/resources?query=Variables%20Toolkit&resource_type=plugin` from a session with network gets it.
+- 2026-09-22 handoff: fill in the Figma **community resource uuid** in `ventures/variables-toolkit/STORE.md` (needed to read listing comments) — the daily build container has no egress to `figma.com` (proxy 403). One fetch of `https://www.figma.com/api/search/resources?query=Variables%20Toolkit&resource_type=plugin` from a session with network gets it. — Done 2026-10-01 (burn-down): filled in 2026-09-22 (done: line below)
 - 2026-09-22 handoff: verify the new `nhs-ods` ingest against the real files — the build container
   has no egress to `files.digital.nhs.uk` (proxy blocked), so the six file names
   (`etr`, `ets`, `epraccur`, `edispensary`, `egdpprac`, `ephp` under
@@ -51,23 +55,23 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   `src/sources/nhs-ods.ts` come from the ODS file specifications, not a live download. Wave 6
   runs at 05:55; check tomorrow's `refresh_log` / metrics row (~45k rows expected, telephone
   column absent, `status` populated for practices and pharmacies) and fix any file name that
-  404s. A reshaped file fails loudly (`ODS <file> format changed`).
+  404s. A reshaped file fails loudly (`ODS <file> format changed`). — Done 2026-10-01 (burn-down): fixed 2026-09-24 by the interactive session: files moved to odsdatasearchandexport.nhs.uk getReport CSVs (done: line of 2026-09-24)
 - 2026-09-22 handoff: file the Taskmaster row for `nhs-ods` retrospectively (no `task-master`
-  CLI and the task-master-ai MCP timed out in the build container again).
+  CLI and the task-master-ai MCP timed out in the build container again). — Done 2026-10-01 (burn-down): row filed today with npm run task -- add (scripts/taskmaster-add.ts)
 - 2026-09-22 done: Figma community resource uuid filled in (`b376009b-…`); the 07:00 metrics routine can now read listing comments. Stale sandbox clone stalled the 04:05 triage run — every routine prompt now carries a non-destructive fallback (`git switch -c work origin/main`). GitHub-scheduled jobs (owner notes, gankdat metrics) missed most of their slots overnight; both now also run on every push to `main` as a fallback.
 - 2026-09-22 handoff: **ReadFocus** tentatively approved on Firefox Add-ons (AMO), v0.1.0, live at
   https://addons.mozilla.org/addon/readfocus-focus-reading-dyslex/ (Mozilla email 2026-09-22 22:25 UTC,
   ref Addon#3075364 — automated screening only, a human reviewer may still ask for changes or pull it).
-  Update `ventures/readfocus/venture.json`/STORE.md with the AMO listing and note the new channel.
+  Update `ventures/readfocus/venture.json`/STORE.md with the AMO listing and note the new channel. — Done 2026-10-01 (burn-down): recorded 2026-09-30 in ventures/read-focus/STORE.md and RESEARCH.md (Firefox live since 2026-09-22)
 - 2026-09-22 handoff: **Highlight Keep** tentatively approved on Firefox Add-ons (AMO), v0.1.0, live at
   https://addons.mozilla.org/addon/highlight-keep-web-highlighter/ (Mozilla email 2026-09-22 22:40 UTC,
   ref Addon#3075366 — automated screening only, a human reviewer may still ask for changes or pull it).
-  Update `ventures/highlight-keep/venture.json`/STORE.md with the AMO listing and note the new channel.
+  Update `ventures/highlight-keep/venture.json`/STORE.md with the AMO listing and note the new channel. — Done 2026-10-01 (burn-down): recorded 2026-09-30 in ventures/highlight-keep/STORE.md (Firefox live since 2026-09-22)
 - 2026-09-23 handoff: **gankdat** is now listed in the community directory
   `punkpeye/awesome-remote-mcp-servers` — PR #460 merged 2026-09-23 02:21 UTC. Add the
   listing to `ventures/gankdat/STORE.md` distribution channels. The merge-bot comment also
   asks for a Discord username for a "server-author flair" — optional, no action taken (not
-  an owner-identity action, just a nice-to-have; skip unless the owner wants it).
+  an owner-identity action, just a nice-to-have; skip unless the owner wants it). — Done 2026-10-01 (burn-down): recorded as live 2026-09-24 by the interactive session (done: line of 2026-09-24)
 - 2026-09-23 handoff: verify the new `uk-trademark-journal` ingest against a real issue — the build
   container has no egress to ipo.gov.uk (proxy 403), so the file name (`jnl.zip` tried first, then
   `jnl.xml`, the latter confirmed by search-engine index at
@@ -76,14 +80,14 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   assumptions. Wave 7 first runs 06:05 tomorrow; a wrong layout fails loudly in `refresh_log`
   ("no published application recognised … element names seen: …") — paste the real names into
   `LAYOUT`, and check `publication_date`/`opposition_deadline` are populated. One `curl -sI` of
-  `…/2026-038/jnl.zip` and `jnl.xml` settles the file question.
+  `…/2026-038/jnl.zip` and `jnl.xml` settles the file question. — Done 2026-10-01 (burn-down): verified live 2026-09-24: jnl.xml 200, 13,758 records, dates populated (done: line of 2026-09-24)
 - 2026-09-23 handoff: `nhs-ods` errored on its first live wave-6 run (2026-09-23 metrics row) and
   `sam-exclusions` + `uk-charities` errored the same night. Read the `refresh_log` messages (the
   build container cannot) and fix `nhs-ods`; queue item `nhs-ods-refresh-error` is blocked on that
   text. Likely suspects: a file name under `/assets/ods/current/`, a host that refuses the Worker's
-  user agent, or a ZIP with more than one entry (the shared unwrapper reads the first entry only).
+  user agent, or a ZIP with more than one entry (the shared unwrapper reads the first entry only). — Done 2026-10-01 (burn-down): nhs-ods fixed 2026-09-24 (done: line of 2026-09-24)
 - 2026-09-23 handoff: file the Taskmaster row for `uk-trademark-journal` retrospectively (the
-  task-master-ai MCP timed out in the build container again).
+  task-master-ai MCP timed out in the build container again). — Done 2026-10-01 (burn-down): Taskmaster #56 filed 2026-09-24 by the interactive session
 - 2026-09-24 handoff: `uk-gambling-operators` (gankdat queue) is blocked on one page view: read the
   licence field on https://www.data.gov.uk/dataset/operator-licence-register (and, if it is not
   OGL, the terms on https://www.gamblingcommission.gov.uk/public-register/businesses/download) —
@@ -93,7 +97,7 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   (`business-licence-register-{businesses,licences,trading-names,domain-names}.csv`,
   `premises-licence-register.csv`) and note the header rows so the ingest is not written blind.
   Also file the Taskmaster row for `change-feed-upsell` (v0.16.0) retrospectively — no
-  `task-master` CLI in the build container and the MCP timed out again.
+  `task-master` CLI in the build container and the MCP timed out again. — Done 2026-10-01 (burn-down): unblocked 2026-09-24: OGL v3 confirmed, five CSV headers in the queue item, Taskmaster #57 filed (done: line of 2026-09-24)
 - 2026-09-24 done: handoffs from the 2026-09-23/24 builds executed by the interactive session — nhs-ods fixed (files moved to odsdatasearchandexport.nhs.uk getReport CSVs; old ZIP path 403s for every UA); uk-trademark-journal verified live (jnl.xml 200, 13,758 records, publication_date + opposition_deadline populated; jnl.zip is 403 so the code's zip-then-xml order is right); uk-gambling-operators unblocked (OGL v3 confirmed on data.gov.uk + CKAN; five CSV headers recorded in the queue item; activities.csv does not exist); awesome-remote-mcp-servers listing recorded as live; Taskmaster #56 (trademark journal) and #57 (change-feed upsell) filed.
 - 2026-09-25 handoff: activate the run watchdog — `git mv docs/ci/run-watchdog.yml .github/workflows/run-watchdog.yml`
   and push (needs a token with the `workflow` scope; the build routine's git push and GitHub API calls
@@ -101,7 +105,7 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   green, dormant until then) then reports any routine slot with no trace within 2 h as a
   `watchdog | missed:` Telegram bullet. Set foundry queue item `run-watchdog` to `done` in the same
   commit. While there: the queued `workflow-scope` item needs the owner's fine-grained PAT
-  (Contents + Workflows write) as repo secret `WORKFLOW_TOKEN` — batch with the SAM key hand-over.
+  (Contents + Workflows write) as repo secret `WORKFLOW_TOKEN` — batch with the SAM key hand-over. — Done 2026-10-01 (burn-down): run-watchdog.yml moved into .github/workflows by the interactive session 2026-09-28 (foundry item run-watchdog done)
 - 2026-09-25 gankdat/apify: Actor `uk-planning-applications` (faceless-api/uk-planning-applications) flagged "under maintenance" by Apify's automated QA — failing prefilled-input test runs for 3 days; needs investigation (failed run: https://console.apify.com/view/runs/wuRDmzbT84RthY4CB).
 - 2026-09-26 handoff: enable the ops retro routine — `trig_015Uvn63XZUVqx1TAiWZrZL6` "Foundry ops retro"
   (Sat 07:59 UTC, prompt mirrored at `docs/routines/ops-retro.md`) was created by the build routine with
@@ -111,7 +115,7 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   other routines) and enable it, or recreate it from the mirrored prompt (Sonnet, `59 7 * * 6`) and delete
   the disabled one; then set foundry queue item `ops-retro` to `done` and fire it once to get the first
   `docs/retros/2026-W39.md`. The stalled session can be archived. General note recorded in SCHEDULERS.md:
-  routines cannot create working routines, only drafts + this handoff.
+  routines cannot create working routines, only drafts + this handoff. — Done 2026-10-01 (burn-down): attached, set to Sonnet and enabled by the interactive session 2026-09-28 (SCHEDULERS.md row, foundry item ops-retro done); first run Sat 2026-10-03
 - 2026-09-26 owner: launch posts are ready to paste — `ventures/gankdat/docs/LAUNCH-POST-KIT.md` has the Show HN,
   Product Hunt, r/datasets and Indie Hackers copy (current facts, images to take, comment answers, a two-week
   timing table). Optional, as in action 010 §2: these venues need you to post under your own name and answer
@@ -173,10 +177,10 @@ lines are sent to their phone by the `notify owner` job. Delete a line once it i
   2026-09-30 build: same for `claude-directory-listing` (`src/mcp/preview.ts`, the Origin gate
   in `routes/mcp.ts`, `test/mcp-directory.spec.ts`) — task-master-ai timed out again (CONNECT_TIMEOUT).
   2026-09-30 build (17:00): same for `mcp-oauth-lazy-auth` (`src/auth/oauth.ts`, `src/routes/oauth.ts`,
-  migration 0013, `test/oauth.spec.ts`) — CONNECT_TIMEOUT again; the sandbox has no `task-master` CLI.
+  migration 0013, `test/oauth.spec.ts`) — CONNECT_TIMEOUT again; the sandbox has no `task-master` CLI. — Done 2026-10-01 (burn-down): rows 17, 18 and 19 filed 2026-09-30 with npm run task -- add (done: line of 2026-09-30)
 - 2026-09-30 owner: nothing to do yet — heads-up that the exchange chose a **Claude Connectors Directory** listing for
   gankdat (`docs/exchange/2026-W40.md`); once the build routine ships `claude-directory-listing` it will ask you for one
-  portal form at https://claude.ai/directory/manage on your paid Claude plan (~20 min, no new account, no money).
+  portal form at https://claude.ai/directory/manage on your paid Claude plan (~20 min, no new account, no money). — Superseded 2026-10-01 (burn-down): the next owner line (gankdat is ready for the Claude Connectors Directory) is the live ask
 - 2026-09-30 owner: **gankdat is ready for the Claude Connectors Directory** (v0.20.0 deploys with this push:
   tool annotations, Origin check, keyless 5-row preview so every tool answers without a key). One portal form on
   your paid Claude plan, ~20 min, no new account, no money: https://claude.ai/directory/manage → Submit new →

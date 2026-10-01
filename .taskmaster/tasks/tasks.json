@@ -1171,13 +1171,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-09-30T21:36:24.357Z"
+      },
+      {
+        "id": "21",
+        "title": "gankdat nhs-ods: NHS ODS organisations (trusts, sites, GP practices, pharmacies) as a D1 register, wave 6",
+        "description": "Retrospective row for the nhs-ods source shipped 2026-09-22 and fixed 2026-09-24 (files moved to odsdatasearchandexport.nhs.uk getReport CSVs).",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-01T00:28:03.581Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-09-30T21:36:24.357Z",
-      "taskCount": 20,
-      "completedCount": 13,
+      "lastModified": "2026-10-01T00:28:03.581Z",
+      "taskCount": 21,
+      "completedCount": 14,
       "tags": [
         "master"
       ]
