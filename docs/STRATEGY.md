@@ -448,3 +448,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-01 burn-down: foundry `extension-publish-in-ci` (5) built (workflow + script + 7 tests, dry run ok) but the unattended sandbox
   refused to push a workflow that publishes to the stores (and CLAUDE.md lists store publishing as ask-first). Blocked on an attended
   session with the design in the queue item; nothing of it reached main.
+- 2026-10-01 burn-down: built highlight-keep `pdf-highlighting` (3, 0.2.0) — the last todo in the queue and the most-asked rival gap. Own
+  PDF.js viewer page (legacy build, Chrome 116+), popup button for web PDFs, storage keyed by the PDF's URL so nothing else changed;
+  e2e-proven in Chromium. Local-file PDFs stay out and are said so. Ships with the open 0.1.1 handoff (now 0.2.0). Nothing todo is left in
+  the queue; `cws-listing-keywords` stays blocked on the owner's dashboard pass, so the queue is not empty yet.

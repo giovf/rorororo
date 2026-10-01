@@ -2,7 +2,7 @@
   "venture": "highlight-keep",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-30",
+  "updated": "2026-10-01",
   "items": [
     {
       "id": "post-approval-links",
@@ -51,12 +51,13 @@
     {
       "id": "pdf-highlighting",
       "title": "Highlight PDFs opened in the browser (PDF.js viewer page with the same anchoring and library)",
-      "why": "The most-asked gap in every rival's reviews (RESEARCH.md 2026-09-19: Weava 'PDF highlighting broken', Glasp iframe gaps). Real differentiator but a feature: behind the three distribution items above until the funnel shows any install. Needs a bundled PDF.js viewer page, per-file storage keyed by URL/hash, and the anchor model extended to page+offset.",
+      "why": "The most-asked gap in every rival's reviews (RESEARCH.md 2026-09-19: Weava 'PDF highlighting broken', Glasp iframe gaps). Real differentiator but a feature: behind the three distribution items above until the funnel shows any install. Needs a bundled PDF.js viewer page, per-file storage keyed by URL/hash, and the anchor model extended to page+offset. DONE 2026-10-01 (burn-down, 0.2.0): own PDF.js viewer page (legacy build for Chrome 116+), 'Highlight this PDF' in the popup for web PDFs (site permission once, viewer fetches the file), highlights stored under the PDF's URL so popup/library/export are unchanged, library links PDFs back into the viewer; e2e section 4 proves create/restore in Chromium; comparison page, listing texts and welcome page updated; file:// PDFs stay unsupported and are said so. Rides the open 0.1.1 handoff (now 0.2.0).",
       "effort_days": 2,
       "proof": "a 'PDF' mention in a review or support mail; paid conversions after release vs before",
       "score": 3,
-      "status": "todo",
-      "added": "2026-09-30"
+      "status": "done",
+      "added": "2026-09-30",
+      "done_at": "2026-10-01"
     }
   ]
 }

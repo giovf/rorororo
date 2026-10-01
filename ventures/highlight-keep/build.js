@@ -70,6 +70,13 @@ async function statics() {
     ['src/library/library.html', 'library.html'],
     ['src/library/library.css', 'library.css'],
     ['src/welcome/welcome.html', 'welcome.html'],
+    ['src/pdf/pdf.html', 'pdf.html'],
+    ['src/pdf/pdf.css', 'pdf.css'],
+    // PDF.js worker (legacy build: polyfills for Chrome 116+ / Firefox 140), shipped as the upstream file, unminified for Firefox so AMO can match it.
+    [
+      `../../node_modules/pdfjs-dist/legacy/build/pdf.worker${firefox ? '' : '.min'}.mjs`,
+      'pdf.worker.mjs',
+    ],
   ])
     await copyFile(path.join(here, from), path.join(dist, to));
 }
@@ -90,12 +97,17 @@ const bundles = {
   minify: !watch && !firefox, // AMO reviewers read the code; ship Firefox unminified
 };
 
+// The viewer page is an ES module (PDF.js is ESM-only); extension pages may load modules.
+const viewer = { ...bundles, entryPoints: { pdf: 'src/pdf/pdf.ts' }, format: 'esm' };
+
 await statics();
 await icons();
 if (watch) {
   const ctx = await context(bundles);
   await ctx.watch();
+  await (await context(viewer)).watch();
 } else {
   await build(bundles);
+  await build(viewer);
   console.log(`Highlight Keep built → ${path.basename(dist)}/`);
 }

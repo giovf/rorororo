@@ -1,5 +1,6 @@
 import { tierForKey } from '../core/license.js';
 import { toMarkdown, type PageRecord } from '../core/model.js';
+import { isPdfUrl, viewerUrl } from '../core/pdf.js';
 import { loadAllPages, replaceAll, savePage } from '../pages-storage.js';
 import { loadSettings } from '../settings-storage.js';
 
@@ -23,7 +24,7 @@ function render(): void {
       const a = document.createElement('article');
       const h2 = document.createElement('h2');
       const link = document.createElement('a');
-      link.href = p.url;
+      link.href = isPdfUrl(p.url) ? viewerUrl(chrome.runtime.getURL(''), p.url) : p.url;
       link.target = '_blank';
       link.rel = 'noopener';
       link.textContent = p.title || p.url;

@@ -345,3 +345,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-01 00:50 | burn-down | foundry extension-publish-in-ci (5) built and green, but the sandbox refused to push a store-publish workflow
 - 2026-10-01 00:50 | burn-down | Item set blocked on an attended session; the full design is in its queue notes so it lands in minutes
 - 2026-10-01 00:52 | burn-down | Stopping for time (~45 min): two items done (comparison page, handoff ledger), one blocked
+- 2026-10-01 01:45 | burn-down | Built highlight-keep pdf-highlighting (3): 0.2.0 opens web PDFs in its own PDF.js viewer page and highlights them
+- 2026-10-01 01:45 | burn-down | 'Highlight this PDF' in the popup; highlights stored under the PDF's URL so library and export need no new code
+- 2026-10-01 01:45 | burn-down | PDF.js legacy build chosen: the standard one needs a Map method newer than Chrome 116 (e2e caught it)
+- 2026-10-01 01:45 | burn-down | e2e section 4 proves render, select, highlight, reload, restore in Chromium; 5 unit tests for the URL helpers
+- 2026-10-01 01:45 | burn-down | Comparison page, both listing texts and the welcome page now say PDFs on the web work, local files do not
+- 2026-10-01 01:45 | burn-down | Open 0.1.1 handoff now ships 0.2.0 with the same commands (note added in place)

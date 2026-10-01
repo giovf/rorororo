@@ -1,0 +1,17 @@
+:root { color-scheme: light; }
+html, body { margin: 0; background: #E5E7EB; color: #111827; font: 14px/1.4 system-ui, -apple-system, "Segoe UI", sans-serif; }
+#bar { position: sticky; top: 0; z-index: 2; display: flex; gap: 12px; align-items: baseline; padding: 8px 16px; background: #FFFFFF; border-bottom: 1px solid #D1D5DB; }
+#name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.muted { color: #6B7280; }
+#pages { display: flex; flex-direction: column; align-items: center; gap: 16px; padding: 16px; }
+#error { max-width: 640px; margin: 48px auto; padding: 16px; background: #FFFFFF; border-radius: 10px; border: 1px solid #FCA5A5; }
+#error code { word-break: break-all; }
+.page { position: relative; background: #FFFFFF; box-shadow: 0 1px 4px rgba(0,0,0,.2); overflow: hidden; }
+.page canvas { display: block; width: 100%; height: 100%; }
+/* The PDF.js text layer: invisible text positioned over the canvas so selection and <mark> work. */
+.textLayer { position: absolute; inset: 0; overflow: clip; line-height: 1; text-align: initial; letter-spacing: normal; word-spacing: normal; text-size-adjust: none; forced-color-adjust: none; transform-origin: 0 0; z-index: 1; caret-color: CanvasText;
+  --min-font-size: 1; --text-scale-factor: calc(var(--total-scale-factor) * var(--min-font-size)); --min-font-size-inv: calc(1 / var(--min-font-size)); }
+.textLayer :is(span, br) { color: transparent; position: absolute; white-space: pre; cursor: text; transform-origin: 0% 0%; user-select: text; }
+.textLayer br { display: inline; }
+.textLayer span::selection { background: rgba(37, 99, 235, .35); }
+.textLayer mark.hk { color: transparent; }

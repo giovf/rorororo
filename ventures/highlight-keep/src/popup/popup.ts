@@ -1,5 +1,6 @@
 import { activateKey, tierForKey, type Tier } from '../core/license.js';
 import { FREE_SITE_LIMIT, toMarkdown } from '../core/model.js';
+import { documentUrl, isPdfUrl, viewerUrl } from '../core/pdf.js';
 import { isEnabled } from '../core/settings.js';
 import { loadIndex, loadPage, sitesInIndex } from '../pages-storage.js';
 import { loadSettings, saveSettings } from '../settings-storage.js';
@@ -10,14 +11,16 @@ let hostname = '';
 let href = '';
 let tabId: number | null = null;
 let tier: Tier = 'free';
+let inViewer = false; // the active tab is already our PDF viewer
 
 async function activeTab(): Promise<void> {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   tabId = tab?.id ?? null;
   try {
-    const url = new URL(tab?.url ?? '');
+    const url = new URL(documentUrl(tab?.url ?? ''));
     hostname = url.protocol.startsWith('http') ? url.hostname : '';
     href = hostname ? url.href : '';
+    inViewer = href !== (tab?.url ?? '');
   } catch {
     hostname = '';
   }
@@ -34,6 +37,7 @@ async function render(): Promise<void> {
   const index = await loadIndex();
   const sites = sitesInIndex(index);
   $('sites').textContent = tier === 'pro' ? `${Object.keys(index).length} pages saved` : `${sites.size}/${FREE_SITE_LIMIT} free sites used`;
+  $('pdf').hidden = !(href && isPdfUrl(href) && !inViewer);
   if (!href) return;
   const page = await loadPage(href);
   const list = $<HTMLUListElement>('list');
@@ -75,12 +79,24 @@ async function setEnabled(on: boolean): Promise<void> {
   await render();
 }
 
+/** The built-in PDF viewer cannot run the highlighter; open the PDF in ours (needs the site's permission once). */
+async function openPdf(): Promise<void> {
+  if (!hostname || !href) return;
+  if (!(await requestSiteAccess(hostname))) {
+    $('site').textContent = 'Highlight Keep needs permission for this site to read the PDF.';
+    return;
+  }
+  await chrome.tabs.create({ url: viewerUrl(chrome.runtime.getURL(''), href) });
+  window.close();
+}
+
 async function init(): Promise<void> {
   await activeTab();
   tier = await tierForKey((await loadSettings()).licenseKey);
   await render();
   $('enabled').onchange = (e) => void setEnabled((e.target as HTMLInputElement).checked);
   $('library').onclick = () => void chrome.runtime.sendMessage({ type: 'open-library' });
+  $('pdf').onclick = () => void openPdf();
   $('shortcuts').onclick = (e) => {
     e.preventDefault();
     void chrome.tabs.create({ url: 'chrome://extensions/shortcuts' });

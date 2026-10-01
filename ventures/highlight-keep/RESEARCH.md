@@ -103,3 +103,21 @@ both listing descriptions (AMO via `assets/amo-metadata.json` on the 0.1.1 sign;
 on the owner's action-013 dashboard visit). `sitemap.xml` and `robots.txt` now exist on apps.gankdat.com
 (the property is already verified in Search Console). Proof at day 30 (2026-10-30): ≥ 50 impressions or
 ≥ 5 clicks on the page in Search Console; the metrics row shows whether installs follow.
+
+### 2026-10-01 (burn-down) — `pdf-highlighting` built (0.2.0)
+
+The most-asked rival gap (Weava "PDF highlighting broken", Glasp iframe gaps) is closed for PDFs on the
+web. Neither Chrome's nor Firefox's built-in PDF viewer can host a content script, so the extension
+ships its own viewer page (`src/pdf/`, PDF.js 6 legacy build — the standard build needs
+`Map.prototype.getOrInsertComputed`, newer than Chrome 116 / the e2e Chromium). The popup shows
+*Highlight this PDF* on any `http(s)` URL ending in `.pdf`; it asks for that site's permission once
+(the viewer fetches the file itself) and opens `pdf.html?file=<url>`. Highlights are stored under the
+PDF's own URL (`core/pdf.ts documentUrl`), so the popup, the library (which links PDFs back into the
+viewer) and the Markdown export need no PDF-specific code; the text layer is indexed like any page.
+Canvases draw lazily on scroll; text layers for every page are there from the start so highlights
+restore and the whole file is selectable. Not supported, and said so on the comparison page:
+`file://` PDFs (extensions cannot read local files without a setting the stores dislike) and PDFs
+served without a `.pdf` path. e2e (`npm run e2e`, section 4) proves render → select → highlight →
+reload → restore in a real Chromium; 5 unit tests cover the URL helpers. Proof stays as queued: a
+"PDF" mention in a review or support mail, and conversions after 0.2.0 vs before. Ships with the
+open 0.1.1 handoff (now 0.2.0, same commands).

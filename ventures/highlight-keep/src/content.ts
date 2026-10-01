@@ -1,6 +1,7 @@
 import { describe, locate } from './core/anchor.js';
 import { tierForKey } from './core/license.js';
 import { COLOURS, FREE_COLOURS, canAddOnSite, newId, siteOf, type Colour, type Highlight } from './core/model.js';
+import { documentUrl } from './core/pdf.js';
 import { fromPosition, indexText, unwrap, wrapRange, type TextIndex } from './dom.js';
 import { loadIndex, loadPage, savePage, sitesInIndex, upsertHighlight } from './pages-storage.js';
 import { loadSettings } from './settings-storage.js';
@@ -14,6 +15,8 @@ if (window.__highlightKeepLoaded) throw new Error('Highlight Keep already loaded
 window.__highlightKeepLoaded = true;
 
 let pro = false;
+/** Where this page's highlights live: the page URL, or the PDF's own URL on the viewer page. */
+const here = documentUrl(location.href);
 let index: TextIndex = indexText();
 const rendered = new Map<string, Highlight>();
 
@@ -31,7 +34,7 @@ function paint(h: Highlight): boolean {
 }
 
 async function restore(): Promise<void> {
-  const page = await loadPage(location.href);
+  const page = await loadPage(here);
   index = indexText();
   let painted = 0;
   for (const h of page.highlights) if (!rendered.has(h.id) && paint(h)) painted++;
@@ -127,7 +130,7 @@ async function create(colour: Colour, withNote = false): Promise<void> {
     return;
   }
   const idx = await loadIndex();
-  const site = siteOf(location.href);
+  const site = siteOf(here);
   if (!canAddOnSite(sitesInIndex(idx), site, pro)) {
     const hint = document.createElement('span');
     hint.className = 'hk-hint';
@@ -139,7 +142,7 @@ async function create(colour: Colour, withNote = false): Promise<void> {
   window.getSelection()?.removeAllRanges();
   hide();
   paint(h);
-  const page = await loadPage(location.href);
+  const page = await loadPage(here);
   await savePage(upsertHighlight({ ...page, title: document.title }, h));
   if (withNote) editNote(h);
 }
@@ -148,14 +151,14 @@ async function recolour(h: Highlight, colour: Colour): Promise<void> {
   const next = { ...h, colour };
   document.querySelectorAll<HTMLElement>(`mark[data-hk="${h.id}"]`).forEach((m) => (m.className = `hk hk-${colour}${next.note ? ' hk-noted' : ''}`));
   rendered.set(h.id, next);
-  await savePage(upsertHighlight(await loadPage(location.href), next));
+  await savePage(upsertHighlight(await loadPage(here), next));
   hide();
 }
 
 async function remove(h: Highlight): Promise<void> {
   unwrap(h.id);
   rendered.delete(h.id);
-  const page = await loadPage(location.href);
+  const page = await loadPage(here);
   await savePage({ ...page, highlights: page.highlights.filter((x) => x.id !== h.id) });
   hide();
 }
@@ -176,7 +179,7 @@ function editNote(h: Highlight): void {
       if (!note) delete next.note;
       document.querySelectorAll<HTMLElement>(`mark[data-hk="${h.id}"]`).forEach((m) => m.classList.toggle('hk-noted', Boolean(note)));
       rendered.set(h.id, next);
-      await savePage(upsertHighlight(await loadPage(location.href), next));
+      await savePage(upsertHighlight(await loadPage(here), next));
       editing = null;
       hide();
     };
@@ -190,7 +193,7 @@ void (async () => {
     if (area === 'sync' && changes['highlightkeep']) void tierForKey((changes['highlightkeep'].newValue as { licenseKey?: string })?.licenseKey ?? '').then((t) => (pro = t === 'pro'));
     if (area === 'local' && !editing) {
       // another view (popup/library) changed this page's highlights → re-sync
-      void loadPage(location.href).then((page) => {
+      void loadPage(here).then((page) => {
         for (const id of [...rendered.keys()]) if (!page.highlights.some((h) => h.id === id)) {
           unwrap(id);
           rendered.delete(id);

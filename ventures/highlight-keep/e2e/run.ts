@@ -13,7 +13,13 @@ const here = path.dirname(new URL(import.meta.url).pathname);
 const ext = path.join(here, '..', 'dist-test');
 const HOST = '127.0.0.1';
 let fixture = await readFile(path.join(here, 'fixture.html'), 'utf8');
-const server = createServer((_req, res) => {
+const fixturePdf = await readFile(path.join(here, 'fixture.pdf'));
+const server = createServer((req, res) => {
+  if (req.url === '/doc.pdf') {
+    res.setHeader('content-type', 'application/pdf');
+    res.end(fixturePdf);
+    return;
+  }
   res.setHeader('content-type', 'text/html; charset=utf-8');
   res.end(fixture);
 });
@@ -56,7 +62,10 @@ async function selectText(page: Page, selector: string, text: string): Promise<v
 const context = await chromium.launchPersistentContext(
   path.join(tmpdir(), `hk-e2e-${Date.now()}`),
   {
-    channel: 'chromium',
+    // A sandbox with a different Playwright browser build points here (CHROMIUM_PATH=/opt/pw-browsers/chromium).
+    ...(process.env['CHROMIUM_PATH']
+      ? { executablePath: process.env['CHROMIUM_PATH'] }
+      : { channel: 'chromium' as const }),
     headless: true,
     args: [`--disable-extensions-except=${ext}`, `--load-extension=${ext}`],
     viewport: { width: 1280, height: 800 },
@@ -109,7 +118,66 @@ try {
     (await page.locator('.hk-toolbar [data-act="note"]').count()) === 0,
   );
 
-  // 4. Pro: real key → colours + note; recolour; note; remove.
+  // 4. PDFs (free tier): the extension's own viewer page renders the text layer and the highlighter
+  //    stores under the PDF's URL, restoring after reload.
+  const pdfUrl = `${url}doc.pdf`;
+  const viewer = `${sw.url().replace(/\/background\.js$/, '')}/pdf.html?file=${encodeURIComponent(pdfUrl)}`;
+  const pdfPage = await context.newPage();
+  await pdfPage.goto(viewer);
+  await pdfPage.waitForSelector('.textLayer span', { timeout: 10000 });
+  check(
+    'pdf viewer titles the tab from the file name',
+    (await pdfPage.title()).startsWith('doc.pdf'),
+  );
+  check(
+    'pdf text layer has the words',
+    (await pdfPage.locator('.textLayer').innerText()).includes('reads PDF files'),
+  );
+  await pdfPage.evaluate((t) => {
+    const span = [...document.querySelectorAll<HTMLElement>('.textLayer span')].find((s) =>
+      (s.textContent ?? '').includes(t),
+    )!;
+    const node = span.firstChild as Text;
+    const i = node.data.indexOf(t);
+    const range = document.createRange();
+    range.setStart(node, i);
+    range.setEnd(node, i + t.length);
+    const sel = window.getSelection()!;
+    sel.removeAllRanges();
+    sel.addRange(range);
+    const r = span.getBoundingClientRect();
+    span.dispatchEvent(
+      new MouseEvent('mouseup', { bubbles: true, clientX: r.left + 20, clientY: r.top + 10 }),
+    );
+  }, 'reads PDF files');
+  await pdfPage.waitForSelector('.hk-toolbar:not([hidden])', { timeout: 3000 });
+  await pdfPage.click('.hk-toolbar .hk-dot.hk-yellow');
+  await pdfPage.waitForSelector('mark.hk', { timeout: 3000 });
+  check(
+    'pdf highlight created in the text layer',
+    (await pdfPage.locator('.textLayer mark.hk').count()) === 1,
+  );
+  await pdfPage.reload();
+  await pdfPage.waitForSelector('.textLayer mark.hk', { timeout: 10000 });
+  check(
+    'pdf highlight restored after reload',
+    (await pdfPage.locator('mark.hk').innerText()) === 'reads PDF files',
+  );
+  const pdfStored = await sw.evaluate(async (u) => {
+    const all = await chrome.storage.local.get(null);
+    const rec = all[`page:${u}`] as
+      { title: string; highlights: { anchor: { quote: string } }[] } | undefined;
+    return rec ? { title: rec.title, quote: rec.highlights[0]?.anchor.quote } : null;
+  }, pdfUrl);
+  check(
+    'pdf highlights stored under the PDF URL',
+    pdfStored?.quote === 'reads PDF files' && pdfStored.title.startsWith('doc.pdf'),
+    JSON.stringify(pdfStored),
+  );
+  await pdfPage.screenshot({ path: path.join(here, 'out', '03-pdf.png') });
+  await pdfPage.close();
+
+  // 5. Pro: real key → colours + note; recolour; note; remove.
   const key = await issueLicense(process.env['LICENSE_SIGNING_KEY'] ?? '', {
     venture: 'highlight-keep',
     tier: 'pro',
@@ -140,7 +208,7 @@ try {
     (await page.locator('#p3').textContent())?.includes('second highlight') === true,
   );
 
-  // 5. Storage → Markdown (via the popup's pure export) and index.
+  // 6. Storage → Markdown (via the popup's pure export) and index.
   const stored = await sw.evaluate(async () => {
     const all = await chrome.storage.local.get(null);
     const pageKey = Object.keys(all).find((k) => k.startsWith('page:'));
