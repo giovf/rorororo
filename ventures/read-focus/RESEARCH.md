@@ -123,6 +123,7 @@ the multi-store listing is the main upside over V1.
 | 2026-09-30 | Firefox listing recorded live (approved 2026-09-22; STORE.md was 7 days stale) | 0 daily / 2 weekly downloads (AMO API) | — | 0 | source: relay `amo-listings`; Chrome still in review |
 | 2026-09-30 | Chrome Web Store listing found live (relay: page 200, "Add to Chrome"); user count is not in the static HTML | — | — | 0 | approval mail never reached INBOX; foundry `store-metrics-in-ci` queued to read the numbers from CI |
 | 2026-10-01 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.1.0, updated September 21, 2026; firefox: 0 adu, 2 weekly downloads, no ratings, v0.1.0 |
+| 2026-10-01 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "no reviews" on listing) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
