@@ -20,15 +20,15 @@ The bootstrap stored in each trigger (replace `<name>` and `<file>` from the tab
 
 | Routine | File | Trigger | Model | Stored prompt |
 | --- | --- | --- | --- | --- |
-| daily build | `build.md` | `trig_01P9WT733fg3qnuJeKUHE8fx` | Fable | full text — swap pending (handoff 2026-09-30) |
-| build fallback | `fallback.md` | `trig_01GraXN5FPXmq5M9wJSYYeHN` | Opus | full text — swap pending |
-| Wednesday burn-down | `burn-down.md` | `trig_011mbqaUzm3qTK2ZdevCuYpH` (Wed), `trig_013tLPWgysoiHWpciYGgXJQ2` (Thu) | Fable | full text — swap pending |
-| venture exchange | `exchange.md` | `trig_01CaSyBqwyKVL6NiPqPzhM8L` | Fable | full text — swap pending |
-| strategy review | `review.md` | `trig_01Mv7z5Ae9gEGq9zBnrfDH6R` | Fable | full text — swap pending |
-| daily metrics | `metrics.md` | `trig_01JBrWDAZLeWEAhSBBnA9g8K` | Sonnet | full text — swap pending |
-| inbox triage | `inbox-triage.md` | `trig_011NfGaSrEEsr5B1xTHEBRAr` | Sonnet, Gmail | full text — swap pending |
-| weekly report | `weekly-report.md` | `trig_01PjxdBAcvYSAT32fCyzcvQg` | Sonnet | full text — swap pending |
-| ops retro | `ops-retro.md` | `trig_015Uvn63XZUVqx1TAiWZrZL6` | Sonnet | full text — swap pending |
+| daily build | `build.md` | `trig_01P9WT733fg3qnuJeKUHE8fx` | Fable | bootstrap (swapped 2026-10-01) |
+| build fallback | `fallback.md` | `trig_01GraXN5FPXmq5M9wJSYYeHN` | Opus | bootstrap (swapped 2026-10-01) |
+| Wednesday burn-down | `burn-down.md` | `trig_011mbqaUzm3qTK2ZdevCuYpH` (Wed), `trig_013tLPWgysoiHWpciYGgXJQ2` (Thu) | Fable | bootstrap (swapped 2026-10-01) |
+| venture exchange | `exchange.md` | `trig_01CaSyBqwyKVL6NiPqPzhM8L` | Fable | bootstrap (swapped 2026-10-01) |
+| strategy review | `review.md` | `trig_01Mv7z5Ae9gEGq9zBnrfDH6R` | Fable | bootstrap (swapped 2026-10-01) |
+| daily metrics | `metrics.md` | `trig_01JBrWDAZLeWEAhSBBnA9g8K` | Sonnet | bootstrap (swapped 2026-10-01) |
+| inbox triage | `inbox-triage.md` | `trig_011NfGaSrEEsr5B1xTHEBRAr` | Sonnet, Gmail | bootstrap (swapped 2026-10-01) |
+| weekly report | `weekly-report.md` | `trig_01PjxdBAcvYSAT32fCyzcvQg` | Sonnet | bootstrap (swapped 2026-10-01) |
+| ops retro | `ops-retro.md` | `trig_015Uvn63XZUVqx1TAiWZrZL6` | Sonnet | bootstrap (swapped 2026-10-01) |
 
 Provenance: `burn-down.md`, `inbox-triage.md`, `weekly-report.md` and `ops-retro.md` are verbatim
 copies of their stored prompts (plus the sentences queued for them since). `build.md`, `fallback.md`,
@@ -45,5 +45,5 @@ Rules for editing a file here:
   what `docs/SCHEDULERS.md`, the run watchdog and the fallback read — change them there in the same
   commit, or not at all.
 - Never add a step that needs a secret, an account or money; never weaken a `Never …` sentence.
-- Until a routine's stored prompt is the bootstrap (table above), its file is still a mirror and the
-  edit rides a `handoff:` line in `docs/ALERTS.md` as before.
+- All stored prompts are the bootstrap since 2026-10-01: a change to a file here is live at the
+  routine's next run. No handoff needed.

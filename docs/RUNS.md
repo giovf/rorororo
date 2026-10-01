@@ -365,3 +365,6 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-01 09:40 | build | Variables Toolkit research (day 10): v2 relisting live since 09-28, #1 for "unused variables", still 2 views — Figma ranks by user count
 - 2026-10-01 09:40 | build | Variables Toolkit queue: relist-v2 done, 5 scored items added (rank in CI, Google page, free Community file, free companion, relink)
 
+- 2026-10-01 10:40 | interactive | Routine prompts now live in docs/routines: ten triggers swapped to the 3-line bootstrap; a prompt change is a commit
+- 2026-10-01 10:40 | interactive | Five repo-written prompts reconciled with the stored ones (post-push CI note, exchange constraints, never-invent-numbers)
+- 2026-10-01 10:40 | interactive | Owner list refreshed: Connectors Directory submission + two Chrome privacy-URL edits; five answered items closed in the ledger

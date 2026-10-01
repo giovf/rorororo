@@ -19,3 +19,5 @@ Store numbers: the `store metrics` GitHub job (06:45) has already written today'
 Reviews and comments: through the same relay read each Figma plugin's community comments and each extension's store reviews where the listing is live. A new review or comment that mentions a bug, a crash, a refund, privacy or data use, or a rating of 1–2 stars becomes one line in `docs/ALERTS.md` (`- YYYY-MM-DD <venture>: <summary, the review's date and rating>`); a refund, complaint or data-deletion request also gets `- YYYY-MM-DD owner: <what>` (that line reaches the owner's phone). Record `no new comments` in the row's note otherwise. Never reply on a store.
 
 Do not post to `docs/RUNS.md` (daily noise). Commit only if a file changed: `git add ventures/*/RESEARCH.md docs/ALERTS.md && git commit -m 'metrics: <YYYY-MM-DD> daily check' && git push origin main` (on rejection: `git pull --no-rebase` once, push again). Finish with a 3-line summary: rows read, rows written, anything for the owner.
+
+Never invent numbers: a page or API the runner or relay could not read is recorded as `fetch failed: <reason>`, never as a number and never as `not live yet`.

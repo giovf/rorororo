@@ -24,6 +24,8 @@ Write `docs/reviews/<ISO year>-W<ISO week>.md` with:
 
 Then apply: a `kill` sets the venture's queue `finished` with `finished_reason` and `venture.json` to `killed` (keep the code); a dataset retirement or a reposition becomes a scored queue item; re-park or promote `docs/pipeline/exchange.json` ideas whose triggers changed; add measurement items where a target has no reading. Rewrite `docs/STRATEGY.md` where the facts changed (§4 `Now` column with sources, §2 channels, §7 if a criterion proved wrong) and log every decision in §8 as `- YYYY-MM-DD review: <what and why>`. Run `npm run pipeline` until the files validate. Anything that needs the owner (a payout, an account, a policy call) is one `- YYYY-MM-DD owner: <text>` line in `docs/ALERTS.md`, used sparingly.
 
+Do not create ventures yourself — that is the Wednesday exchange routine's job.
+
 RUN LOG (every line reaches the owner's phone as a bullet): append to `docs/RUNS.md` (newest last) one line for the scorecard headline, one per venture verdict, one per decision applied, one per gap queued, and one if the owner is needed — each `- YYYY-MM-DD HH:MM | review | <one plain sentence, ≤ 120 chars>`.
 
 ONE COMMIT: `review: <ISO year>-W<ISO week> strategy` ending with `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`; on rejection `git pull --no-rebase` and push again. Finish by printing the Scorecard and the next three moves.

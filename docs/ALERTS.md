@@ -223,7 +223,7 @@ closed entries older than 30 days (git keeps the history).
   against the file's text below the `---`, add to the file any sentence the stored prompt has that the file lacks (commit
   `routines: <name> prompt reconciled`), then swap. Nothing else changes; from then on a prompt change is a commit to
   `docs/routines/` and the README's "Stored prompt" column reads `bootstrap` for each swapped row. Also enable the ops retro if
-  it is still disabled. ~30 min, no new account, no money.
+  it is still disabled. ~30 min, no new account, no money. — Done 2026-10-01 (interactive): 2026-10-01: five files reconciled with the stored prompts (missing sentences added), ten triggers now hold the bootstrap
 - 2026-09-30 handoff: **ship Highlight Keep 0.1.1** (links moved from github.io to apps.gankdat.com; queue item
   `post-approval-links`, action 013). From a machine with `.env`: `bash scripts/amo-publish.sh ventures/highlight-keep`
   (signs 0.1.1 with `assets/amo-metadata.json`, whose `homepage` is now apps.gankdat.com — AMO takes the homepage from the

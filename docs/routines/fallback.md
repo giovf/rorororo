@@ -25,6 +25,8 @@ Gates: `npm run check -w @foundry/gankdat` for gankdat work, `npm run check` at 
 
 Facts you must not misread: accounts ending in @gankdat.com, @1402celsius.com, @example.com or giova1506@ are internal/test, never customers.
 
+Never take a larger item, never start a new dataset or actor, never research a venture from scratch — those wait for Fable.
+
 RUN LOG (every line reaches the owner's phone): append to `docs/RUNS.md` (newest last) one line saying why this run filled the slot, then ONE LINE PER PIECE OF WORK DONE, each `- YYYY-MM-DD HH:MM | fallback | <one plain sentence, ≤ 120 chars>`. Append one line to `docs/STRATEGY.md` §8: `- YYYY-MM-DD fallback: <what and why>`.
 
 Finish with a summary: whether the slot was already taken, the item built, anything blocked.
