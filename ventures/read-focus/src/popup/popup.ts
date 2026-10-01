@@ -1,6 +1,7 @@
 import { PRESET_STRENGTH, type Preset } from '../core/fixation.js';
 import { activateKey, tierForKey } from '../core/license.js';
 import { effectiveFor, withSiteChange, type SiteSettings } from '../core/settings.js';
+import { documentUrl, isPdfUrl, viewerUrl } from '../core/pdf.js';
 import type { Tier } from '../core/tier.js';
 import { requestSiteAccess } from '../sites.js';
 import { loadSettings, saveSettings } from '../storage.js';
@@ -9,16 +10,32 @@ const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) 
 let hostname = '';
 let tabId: number | null = null;
 let tier: Tier = 'free';
+let href = '';
+let inReader = false; // the active tab is already our PDF reader page
 
 async function activeHostname(): Promise<string> {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   tabId = tab?.id ?? null;
   try {
-    const url = new URL(tab?.url ?? '');
+    const url = new URL(documentUrl(tab?.url ?? ''));
+    inReader = url.href !== (tab?.url ?? '');
+    href = url.protocol.startsWith('http') ? url.href : '';
     return url.protocol.startsWith('http') ? url.hostname : '';
   } catch {
     return '';
   }
+}
+
+/** The browser's own PDF viewer cannot run ReadFocus; open the PDF in our reader (site permission once). */
+async function openPdf(): Promise<void> {
+  if (!hostname || !href) return;
+  if (!(await requestSiteAccess(hostname))) {
+    say('ReadFocus needs permission for this site to read the PDF.');
+    return;
+  }
+  await chrome.runtime.sendMessage({ type: 'enable-site', hostname, tabId: null });
+  await chrome.tabs.create({ url: viewerUrl(chrome.runtime.getURL(''), href) });
+  window.close();
 }
 
 /** Enabling needs the origin permission (asked here, inside the click) then the background does the rest. */
@@ -39,6 +56,7 @@ function say(text: string): void {
 
 function render(site: SiteSettings): void {
   $('site').textContent = hostname || 'Open a web page to use ReadFocus';
+  $('pdf').hidden = !(href && isPdfUrl(href) && !inReader);
   $<HTMLInputElement>('enabled').checked = site.enabled;
   $('controls').classList.toggle('off', !site.enabled);
   $<HTMLInputElement>('bold').checked = site.bold;
@@ -79,6 +97,7 @@ async function init(): Promise<void> {
   render(effectiveFor(settings, hostname));
 
   $('enabled').onchange = (e) => void setEnabled((e.target as HTMLInputElement).checked);
+  $('pdf').onclick = () => void openPdf();
   $('bold').onchange = (e) => void change({ bold: (e.target as HTMLInputElement).checked });
   $('ruler').onchange = (e) => void change({ ruler: (e.target as HTMLInputElement).checked });
   $('focus').onchange = (e) => void change({ focus: (e.target as HTMLInputElement).checked });

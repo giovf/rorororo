@@ -452,3 +452,4 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   PDF.js viewer page (legacy build, Chrome 116+), popup button for web PDFs, storage keyed by the PDF's URL so nothing else changed;
   e2e-proven in Chromium. Local-file PDFs stay out and are said so. Ships with the open 0.1.1 handoff (now 0.2.0). Nothing todo is left in
   the queue; `cws-listing-keywords` stays blocked on the owner's dashboard pass, so the queue is not empty yet.
+- 2026-10-01 burn-down: built read-focus `pdf-viewer` (3) — 0.2.0 reads web PDFs in an own reader page as reflowed real text (a canvas viewer would hide bold starts and fonts); free = first page, unlock = whole file; the niche's most-asked-for feature now sits behind a demo-then-pay gate. Ships with the open handoff.

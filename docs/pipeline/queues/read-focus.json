@@ -51,12 +51,13 @@
     {
       "id": "pdf-viewer",
       "title": "PDF support: open PDFs in a bundled PDF.js viewer so bolding, ruler and fonts work on them (unlock feature)",
-      "why": "RESEARCH.md: 'every top review [of Reader Line, 20k users] asks for PDF support', Bionic-style tools 'want PDF', Reader Mode Pro and the official tool have none — the single most-requested gap in the niche and named in the product decision as the later release. A feature, so it sits behind the three distribution items above (STRATEGY §5); build only once the day-30 review shows installs. Build: bundle pdf.js (Apache-2.0) as an extension page, intercept PDF navigations on sites the user switched on (optional permission already per-site), apply the same content script to the text layer; e2e test with a fixture PDF. Unlock-tier so it gives the free user a reason to pay.",
+      "why": "RESEARCH.md: 'every top review [of Reader Line, 20k users] asks for PDF support', Bionic-style tools 'want PDF', Reader Mode Pro and the official tool have none — the single most-requested gap in the niche and named in the product decision as the later release. A feature, so it sits behind the three distribution items above (STRATEGY §5); build only once the day-30 review shows installs. Build: bundle pdf.js (Apache-2.0) as an extension page, intercept PDF navigations on sites the user switched on (optional permission already per-site), apply the same content script to the text layer; e2e test with a fixture PDF. Unlock-tier so it gives the free user a reason to pay. — BUILT 2026-10-01 (burn-down) as 0.2.0: a reader page (reflowed real text, not a canvas viewer — bold/fonts must be visible); free = first page, unlock = whole file; ships with the open handoff.",
       "effort_days": 3,
       "proof": "Listing review or support mail mentioning PDF; unlock conversion after the release above the pre-release rate",
       "score": 3,
-      "status": "todo",
-      "added": "2026-09-30"
+      "status": "done",
+      "added": "2026-09-30",
+      "done_at": "2026-10-01"
     },
     {
       "id": "edge-add-ons-listing",

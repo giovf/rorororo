@@ -185,6 +185,17 @@ function setFont(font: SiteSettings['font']): void {
 
 let current: SiteSettings | null = null;
 
+/** On the extension's PDF reader page settings are keyed by the PDF's own host (core/pdf.ts documentUrl). */
+function readerHost(): string | undefined {
+  if (!location.pathname.endsWith('/pdf.html') || !location.protocol.endsWith('-extension:')) return undefined;
+  const file = new URL(location.href).searchParams.get('file');
+  try {
+    return file ? new URL(file).hostname : undefined;
+  } catch {
+    return undefined;
+  }
+}
+
 function strengthOf(s: SiteSettings): number {
   return s.strength ?? PRESET_STRENGTH[s.preset];
 }
@@ -216,7 +227,7 @@ function apply(next: SiteSettings): void {
 async function refresh(): Promise<void> {
   const settings = await loadSettings();
   const tier: Tier = await tierForKey(settings.licenseKey);
-  apply(applyTier(effectiveFor(settings, location.hostname), tier));
+  apply(applyTier(effectiveFor(settings, readerHost() ?? location.hostname), tier));
 }
 
 void refresh();

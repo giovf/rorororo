@@ -230,7 +230,8 @@ closed entries older than 30 days (git keeps the history).
   metadata), then `npm run amo-listing -- ventures/highlight-keep` (new `scripts/amo-listing.ts`: uploads the two
   screenshots, sets category Productivity, tags, homepage and support on the AMO listing, idempotent; a 400 on `tags`
   names AMO's allowed list — pick the nearest and rerun; then the same for `ventures/read-focus`, whose
-  `assets/amo-listing.json` is already there), then
+  `assets/amo-listing.json` is already there; **2026-10-01 burn-down: ReadFocus is now 0.2.0 — the PDF reader — so also
+  sign and upload it: `bash scripts/amo-publish.sh ventures/read-focus`, then `cd ventures/read-focus && npm run zip && cd ../.. && node scripts/cws-publish.ts upload dckbdaplggmhimpbekhdbaampglfhdgf ventures/read-focus/read-focus.zip && node scripts/cws-publish.ts publish dckbdaplggmhimpbekhdbaampglfhdgf`; dates into `ventures/read-focus/STORE.md`**), then
   `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
   (2026-10-01 burn-down: the repo is now **0.2.0** — PDF highlighting — the same commands sign and upload it; AMO release notes updated.)
   Record the submission dates in `ventures/highlight-keep/STORE.md`. Do not flip the repo private yet: that waits for the

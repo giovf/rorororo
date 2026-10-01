@@ -138,6 +138,23 @@ async function statics() {
     path.join(dist, 'welcome.html'),
   );
   await copyFile(path.join(here, 'src', 'welcome', 'welcome.css'), path.join(dist, 'welcome.css'));
+  await copyFile(path.join(here, 'src', 'pdf', 'pdf.html'), path.join(dist, 'pdf.html'));
+  await copyFile(path.join(here, 'src', 'pdf', 'pdf.css'), path.join(dist, 'pdf.css'));
+  // PDF.js worker (legacy build: polyfills for Chrome 116+ / Firefox 140), shipped as the upstream
+  // file, unminified for Firefox so AMO can match it.
+  await copyFile(
+    path.join(
+      here,
+      '..',
+      '..',
+      'node_modules',
+      'pdfjs-dist',
+      'legacy',
+      'build',
+      `pdf.worker${firefox ? '' : '.min'}.mjs`,
+    ),
+    path.join(dist, 'pdf.worker.mjs'),
+  );
 }
 
 const bundles = {
@@ -155,14 +172,19 @@ const bundles = {
   minify: !watch && !firefox, // AMO reviewers read the code; ship Firefox unminified
 };
 
+// The PDF reader page is an ES module (PDF.js is ESM-only); extension pages may load modules.
+const reader = { ...bundles, entryPoints: { pdf: 'src/pdf/pdf.ts' }, format: 'esm' };
+
 await statics();
 await icons();
 await fonts();
 if (watch) {
   const ctx = await context(bundles);
   await ctx.watch();
+  await (await context(reader)).watch();
 } else {
   await build(bundles);
+  await build(reader);
   const manifest = JSON.parse(await readFile(path.join(dist, 'manifest.json'), 'utf8'));
   console.log(`ReadFocus ${manifest.version} built → ${path.basename(dist)}/`);
 }

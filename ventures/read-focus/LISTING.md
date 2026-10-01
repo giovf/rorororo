@@ -12,8 +12,9 @@ Long pages, short attention? ReadFocus makes reading on the web easier to start 
 • Text size — scale the page's reading text up to 150% without touching menus or editors.
 • Per-site switch — turn it on for the sites where you read, off everywhere else (Alt+Shift+F). Your text editors, docs and code stay untouched.
 • Works on articles, documentation, forums and infinite-scroll feeds; new content is handled as it loads.
+• PDFs on the web — open a PDF, click the icon and choose "Read this PDF": it opens in ReadFocus's own reader as real text, so bold starts, the ruler and the fonts work on it. First page free. (PDF files stored on your computer are not supported yet.)
 
-Unlock ($12, once): precise bold strength, paragraph focus (dims everything but the paragraph you're on), and OpenDyslexic / Atkinson Hyperlegible fonts. One key for every browser you sign in to; works offline; 14-day refund.
+Unlock ($12, once): precise bold strength, paragraph focus (dims everything but the paragraph you're on), OpenDyslexic / Atkinson Hyperlegible fonts, and whole PDFs (every page). One key for every browser you sign in to; works offline; 14-day refund.
 
 Private by design: ReadFocus runs only on the sites you switch it on for (Chrome asks once per site), collects no data and makes no network requests while you read. The only request it ever makes is a one-time check when you activate a paid key. Settings live in your browser's extension storage.
 
@@ -22,7 +23,7 @@ Made for readers with ADHD or dyslexia, students, and anyone who reads for a liv
 Switching from Reader Mode or another focus-reading extension that stopped working? Side-by-side comparison: https://apps.gankdat.com/reader-mode-alternative.html
 
 **Category:** Accessibility · **Language:** English
-**Single purpose:** Improve readability of web page text for the current user.
+**Single purpose:** Improve readability of web page and web PDF text for the current user.
 **Permissions justification:** `storage` — save your settings. `activeTab` + `scripting` — apply the reading aids to the page you're viewing when you switch it on. Optional host permission, granted per site — Chrome asks once when you enable a site, and ReadFocus only ever runs on sites you've enabled; nothing is read out of the page or sent anywhere.
 **Data-use disclosure:** collects no user data. (Activating a paid key sends the key's order id to our licence server once, to confirm it wasn't refunded.)
 **Privacy policy:** https://apps.gankdat.com/privacy.html · **Support:** info@gankdat.com

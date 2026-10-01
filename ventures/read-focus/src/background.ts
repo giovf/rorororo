@@ -1,3 +1,4 @@
+import { documentUrl } from './core/pdf.js';
 import { effectiveFor, withSiteChange } from './core/settings.js';
 import { injectNow, registerSite, requestSiteAccess, unregisterSite } from './sites.js';
 import { loadSettings, saveSettings } from './storage.js';
@@ -6,7 +7,7 @@ async function activeTab(): Promise<{ id: number; hostname: string } | null> {
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
   if (!tab?.id || !tab.url) return null;
   try {
-    const url = new URL(tab.url);
+    const url = new URL(documentUrl(tab.url));
     return url.protocol.startsWith('http') ? { id: tab.id, hostname: url.hostname } : null;
   } catch {
     return null;

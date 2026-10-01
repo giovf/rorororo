@@ -164,3 +164,20 @@ appended to both listing descriptions (Chrome via `LISTING.md` on the owner's ac
 `assets/amo-metadata.json` on the next version sign — the listing script does not set the description). `sitemap.xml`
 lists it. Proof at day 30 (2026-10-30, the `day-30-funnel-review` item): ≥ 50 impressions or ≥ 5 clicks on the page
 in Search Console; the metrics row shows whether installs follow.
+
+### 2026-10-01 (burn-down) — `pdf-viewer` built: ReadFocus 0.2.0 reads web PDFs
+
+The most-asked-for gap in the niche (every top Reader Line review, the Bionic-style tools' reviews) is now in the
+product. Design decision: PDF.js's usual rendering (canvas + invisible text layer) would hide the product's own
+effect — bold starts and fonts are invisible on transparent text — so ReadFocus ships a **reader page**, not a
+viewer: `src/pdf/pdf.ts` fetches the PDF (host permission granted once from the popup), takes each page's text runs
+and `core/pdf.ts paragraphs()` reflows them into real `<p>` elements (baseline grouping, gap / short-sentence /
+heading paragraph breaks, hyphen joins). The ordinary content script then bolds, rules, focuses and re-fonts them,
+keyed by the PDF's own host (`documentUrl`), so the popup's per-site switch and settings apply unchanged. Pages
+without text (scans) say so; images are not shown — it is a reading view, with "open the original" in the bar.
+Free tier: the first page; the unlock reads the whole file (the queue item's "unlock-tier" decision, implemented as
+a demo-then-pay so a free user sees it work before paying; the note states what they gain). Local `file://` PDFs are
+out: the extension cannot fetch them without the file-URL permission, which store reviewers flag. e2e section 4
+proves reflow → bold → ruler → first-page gate in Chromium; 7 unit tests cover the URL helpers and the reflow.
+Proof (queue `proof`): a review or support mail mentioning PDFs; unlock conversion after 0.2.0 reaches the stores
+above the pre-release rate (0 so far, so any sale counts). Ships with the open 2026-09-30 handoff.

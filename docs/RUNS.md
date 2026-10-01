@@ -352,3 +352,10 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-01 01:45 | burn-down | Comparison page, both listing texts and the welcome page now say PDFs on the web work, local files do not
 - 2026-10-01 01:45 | burn-down | Open 0.1.1 handoff now ships 0.2.0 with the same commands (note added in place)
 - 2026-10-01 01:55 | burn-down | Stopping for time (~43 min): one item done (PDF highlighting, 0.2.0); next is read-focus pdf-viewer (3)
+- 2026-10-01 02:35 | burn-down | Built read-focus pdf-viewer (3): 0.2.0 opens web PDFs in its own reader page as real, reflowed text
+- 2026-10-01 02:35 | burn-down | Reader page, not a canvas viewer: bold starts and fonts would be invisible on PDF.js's transparent text layer
+- 2026-10-01 02:35 | burn-down | 'Read this PDF' in the popup; settings keyed by the PDF's host; free = first page, unlock = whole file
+- 2026-10-01 02:35 | burn-down | e2e section 4 proves reflow → bold → ruler → first-page gate in Chromium; 7 unit tests for URL helpers and reflow
+- 2026-10-01 02:35 | burn-down | Pro e2e sections need the signing key: skipped in the sandbox with a SKIP line, run on a machine with .env
+- 2026-10-01 02:35 | burn-down | Landing page, comparison page, listing texts and welcome page now say web PDFs work, local files not yet
+- 2026-10-01 02:35 | burn-down | Open 2026-09-30 handoff now also signs and uploads ReadFocus 0.2.0 (commands added in place)

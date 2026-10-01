@@ -2,7 +2,7 @@
   "version": {
     "license": "all-rights-reserved",
     "release_notes": {
-      "en-US": "First release."
+      "en-US": "0.2.0: reads web PDFs. Open a PDF, click the ReadFocus icon and choose \"Read this PDF\": the file opens in ReadFocus's own reader page as real text, so bold word starts, the ruler, paragraph focus and the dyslexia-friendly fonts all work on it. Free: the first page; the unlock reads the whole file. Local PDF files are not supported. Nothing leaves your browser."
     }
   },
   "summary": {
