@@ -46,7 +46,7 @@ closed entries older than 30 days (git keeps the history).
 - 2026-09-21 owner: correction — the "first paying account" alert earlier today was a false alarm: the paid-plan account is our own internal service account for the Apify actors, not a customer. No revenue yet; the ICO fee stays deferred; nothing to do. (Metrics now exclude internal accounts.) — Done 2026-10-01 (burn-down): information only, nothing was owed
 - 2026-09-21 done: handoffs from the daily build executed by the interactive session — registry at v0.12.0, Apify actor uk-schools pushed + priced (JpzvkJcNfbaieyqrg), Taskmaster #54 filed, live ingest verified (52,578 schools loaded in wave 5 at 12:50 UTC), the five-source refresh-error note was yesterday's forced runs inside the 24h window (today's waves: 10/12 ok, two transient origin errors now retried), and the "first paying account" was the internal Apify service account (metrics now exclude internal accounts).
 - 2026-09-22 done: Variables Toolkit launch recorded by the daily build — approval verified against Figma's own notification email (2026-09-21 20:29 UTC), `venture.json` → `launched`, STORE.md → live with the listing URL, ARCHITECTURE/LEDGER notes updated, the apps.gankdat.com product card now links the listing, and day-1/7/30 measurement is set out in `ventures/variables-toolkit/RESEARCH.md` §7. The 07:00 metrics routine reads STORE.md, so real Figma numbers start landing from tomorrow.
-- 2026-09-22 owner: **Variables Toolkit is live on Figma Community** — https://www.figma.com/community/plugin/1682711656065145288. The portfolio's first listing on a shelf that takes payment. One thing only you can check (~2 min): open Figma → Settings → Community/Creator payouts and confirm the **Stripe payout is connected**. Without it Figma can sell the $12 unlock but cannot pay the money out. Nothing else needed — no spend, no account creation.
+- 2026-09-22 owner: **Variables Toolkit is live on Figma Community** — https://www.figma.com/community/plugin/1682711656065145288. The portfolio's first listing on a shelf that takes payment. One thing only you can check (~2 min): open Figma → Settings → Community/Creator payouts and confirm the **Stripe payout is connected**. Without it Figma can sell the $12 unlock but cannot pay the money out. Nothing else needed — no spend, no account creation. — Done 2026-10-01 (interactive): owner 2026-09-28: paid Figma checkout implies payouts connected; closed in OUTSTANDING.md
 - 2026-09-22 handoff: fill in the Figma **community resource uuid** in `ventures/variables-toolkit/STORE.md` (needed to read listing comments) — the daily build container has no egress to `figma.com` (proxy 403). One fetch of `https://www.figma.com/api/search/resources?query=Variables%20Toolkit&resource_type=plugin` from a session with network gets it. — Done 2026-10-01 (burn-down): filled in 2026-09-22 (done: line below)
 - 2026-09-22 handoff: verify the new `nhs-ods` ingest against the real files — the build container
   has no egress to `files.digital.nhs.uk` (proxy blocked), so the six file names
@@ -119,12 +119,12 @@ closed entries older than 30 days (git keeps the history).
 - 2026-09-26 owner: launch posts are ready to paste — `ventures/gankdat/docs/LAUNCH-POST-KIT.md` has the Show HN,
   Product Hunt, r/datasets and Indie Hackers copy (current facts, images to take, comment answers, a two-week
   timing table). Optional, as in action 010 §2: these venues need you to post under your own name and answer
-  comments for a few hours; nothing else is needed from you.
+  comments for a few hours; nothing else is needed from you. — Done 2026-10-01 (interactive): owner 2026-09-28 declined launch posts
 - 2026-09-26 owner: ten B2B outreach emails are drafted in your Gmail (gio@1402celsius.com → Drafts): five bid consultancies, five
   charity/care web agencies, all limited companies, generic mailboxes only, Companies House checked. Read
   `ventures/gankdat/docs/OUTREACH-2026-09.md` (§2 lawful basis, §4 how to send), glance at each firm's contact page, pick the
   From address (info@gankdat.com alias if Gmail has it), send two or three a day and note the dates in §6. Delete any draft you
-  do not like. Nothing has been sent.
+  do not like. Nothing has been sent. — Done 2026-10-01 (interactive): owner sent them 2026-09-28
 - 2026-09-28 owner: Variables Toolkit day-7 read: 2 views, 0 installs in 7 days (the one "user" is your approval test). Figma's
   search API shows why — the listing ranks 8th for its own name behind a 2,784-user plugin also called "Variables Toolkit",
   79th for "styles to variables" and nowhere for "convert styles to variables"; Figma ranks on the name first, and the live
@@ -132,7 +132,7 @@ closed entries older than 30 days (git keeps the history).
   Plugins → Development → import `ventures/variables-toolkit/dist-release/manifest.json` after `npm run build:release -w
   @foundry/variables-toolkit` (or just edit the listing) and paste name, tagline, description and tags from
   `ventures/variables-toolkit/LISTING.md` v2 — bold the headings with the editor's B button, no asterisks. Evidence and the
-  day-30 target (≥ 100 views, ≥ 10 installs by 2026-10-21) are in `ventures/variables-toolkit/RESEARCH.md` §8.
+  day-30 target (≥ 100 views, ≥ 10 installs by 2026-10-21) are in `ventures/variables-toolkit/RESEARCH.md` §8. — Done 2026-10-01 (interactive): owner republished v2 listing 2026-09-28
 - 2026-09-28 handoff: inbox backlog catch-up found two store mails that never reached this file — **gankdat's
   MCP server listing is approved and live** on mcpservers.org (email 2026-09-21 07:14 UTC) and **Chrome Web
   Store identity verification is complete** (email 2026-09-21 07:22 UTC, publishing via the CWS API/Developer
@@ -145,7 +145,7 @@ closed entries older than 30 days (git keeps the history).
   account) has been sitting unconfirmed since 2026-09-19 23:11 UTC — only surfaced now via backlog catch-up.
   Confirming it requires clicking the link in that email under your own Google identity; given the age it may
   have expired, in which case re-trigger from Gmail Settings → Accounts and Import → Send mail as. Nothing to
-  do if you don't need to send as info@gankdat.com.
+  do if you don't need to send as info@gankdat.com. — Done 2026-10-01 (interactive): owner confirmed 2026-09-28
 - 2026-09-29 done (build routine): the 2026-09-27 and 2026-09-28 Apify "pricing change" handoffs are false alarms — the
   $1.00 / 1,000 results is the PAY_PER_EVENT price `ventures/gankdat/scripts/publish-actors.mjs` sets on every actor we
   publish (US$0.001 per result, STRATEGY §2); Apify mails the publisher when a pricing model is set. It is revenue we

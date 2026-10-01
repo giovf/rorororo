@@ -3,9 +3,15 @@
 One list, kept current by Claude. Each item says what it unblocks and roughly how long it takes.
 Nothing here spends money. Your answers of 2026-09-28 are applied below.
 
-## Open
+## Open (updated 2026-10-01)
 
-Nothing. (C2 done 2026-09-28: `WORKFLOW_TOKEN` added; the workflow installer is live.)
+| # | Do this | Unblocks | Where |
+| --- | --- | --- | --- |
+| E1 | **Submit gankdat to the Claude Connectors Directory** (~20 min, your paid Claude plan, no new account, no money): https://claude.ai/directory/manage → Submit new → MCP connector → URL `https://gankdat.com/mcp`, authentication "none". Every field (name, one-liner, description, URLs, reviewer instructions, seven acknowledgements) is pre-written in `ventures/gankdat/docs/CLAUDE-DIRECTORY.md`; the only thing to create is a test key at https://gankdat.com/account. | A shelf that opens itself: the directory lists after an automated policy scan; its users are exactly the agents already hitting our paywall | [CLAUDE-DIRECTORY.md](../../ventures/gankdat/docs/CLAUDE-DIRECTORY.md) |
+| E2 | **Chrome Web Store, Highlight Keep** (2 min): https://chrome.google.com/webstore/devconsole → Highlight Keep (`pciignkojfpgmfcmjchmpdhonpjkfepc`) → Privacy tab → Privacy policy URL `https://apps.gankdat.com/privacy.html` → Save → Submit. | Last link keeping the repo public | [action 013](actions/013-repo-private.md) |
+| E3 | **Chrome Web Store, ReadFocus** (same 2 min, same visit): ReadFocus (`dckbdaplggmhimpbekhdbaampglfhdgf`) → Privacy tab → same URL → Save → Submit. Then Claude flips the repo private. | Same | [action 013](actions/013-repo-private.md) |
+
+Both Chrome listings and both Firefox listings are **live** (found 2026-09-30; no approval mail ever arrived). ReadFocus and Highlight Keep 0.2.0 (web-PDF support) are built and waiting for Claude to upload once you say so — store uploads are on the ask-first list.
 
 ## Decided 2026-09-28 (applied)
 
