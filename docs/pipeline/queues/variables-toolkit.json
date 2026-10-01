@@ -40,12 +40,13 @@
     {
       "id": "figma-search-rank-in-ci",
       "title": "Figma search rank in the 06:45 store-metrics job: four buyer queries, rank appended to the Daily check row",
-      "why": "Two relay rounds (day 7, day 10) were spent reading ranks by hand; the day-30 review (2026-10-21) needs the series, not a snapshot. scripts/store-metrics.ts already fetches Figma's versions API from a runner that reaches figma.com; the search API (`figma.com/api/search/resources?query=<term>&resource_type=plugin&sort=relevancy`) returns the community resource id b376009b-… — match on it. Queries: styles to variables, link to variables, unused variables, variables toolkit (RESEARCH.md §9 baseline 75 / 13 / 1 / 8).",
+      "why": "Two relay rounds (day 7, day 10) were spent reading ranks by hand; the day-30 review (2026-10-21) needs the series, not a snapshot. scripts/store-metrics.ts already fetches Figma's versions API from a runner that reaches figma.com; the search API (`figma.com/api/search/resources?query=<term>&resource_type=plugin&sort=relevancy`) returns the community resource id b376009b-… — match on it. Queries: styles to variables, link to variables, unused variables, variables toolkit (RESEARCH.md §9 baseline 75 / 13 / 1 / 8). Done 2026-10-01 (build): `scripts/store-metrics.ts` reads a `Search rank queries` line from STORE.md, asks the search API per query and appends `rank: <query> <position>/<hits>` to the Daily check row; matches on `model.content_id` (the plugin id), `>100` when off the first page, `absent` when the whole list is on it, `unread` on an error; replaying the day-10 relay bodies gives 75/1234, 13/163, 1/48, 8/45 exactly. First CI row 2026-10-02 06:45 (push runs only fill a missing day).",
       "effort_days": 0.3,
       "proof": "a `rank:` field on every Daily check row from the next morning on; the day-30 review quotes it",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-01"
+      "status": "done",
+      "added": "2026-10-01",
+      "done_at": "2026-10-01"
     },
     {
       "id": "figma-styles-to-variables-page",

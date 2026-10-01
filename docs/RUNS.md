@@ -368,3 +368,7 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-01 10:40 | interactive | Routine prompts now live in docs/routines: ten triggers swapped to the 3-line bootstrap; a prompt change is a commit
 - 2026-10-01 10:40 | interactive | Five repo-written prompts reconciled with the stored ones (post-push CI note, exchange constraints, never-invent-numbers)
 - 2026-10-01 10:40 | interactive | Owner list refreshed: Connectors Directory submission + two Chrome privacy-URL edits; five answered items closed in the ledger
+- 2026-10-01 17:20 | build | Built variables-toolkit figma-search-rank-in-ci (5): the 06:45 store-metrics job now reads Figma search rank
+- 2026-10-01 17:20 | build | Four buyer queries listed in STORE.md; each Daily check row gets `rank: <query> <position>/<hits>` from 2026-10-02
+- 2026-10-01 17:20 | build | Parser matches the plugin id, says >100 off the first page, absent or unread honestly; 8 new tests, day-10 bodies replay exactly
+- 2026-10-01 17:20 | build | Day-30 review (10-21) reads the rank series from RESEARCH.md instead of a relay round; next item is the Google-facing page

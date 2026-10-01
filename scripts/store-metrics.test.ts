@@ -7,7 +7,10 @@ import {
   metricsHeader,
   parseChrome,
   parseFigma,
+  parseFigmaRank,
   parseFirefox,
+  rankNote,
+  rankQueriesOf,
   renderRow,
   upsertRow,
 } from './store-metrics.ts';
@@ -273,5 +276,98 @@ describe('flipStore', () => {
     );
     const live = readFileSync('ventures/read-focus/STORE.md', 'utf8');
     expect(flipStore(live, [chromeLive], 'd')).toBe(live);
+  });
+});
+
+// Figma search API shape as the relay returned it on 2026-10-01 (`build-2026-10-01/5.json`,
+// query "unused variables": 48 hits, ours first), trimmed to the fields the parser reads.
+const search = (ids: string[], totalHits = ids.length): string =>
+  JSON.stringify({
+    error: false,
+    status: 200,
+    meta: {
+      results: ids.map((id) => ({
+        model: {
+          id: `uuid-${id}`,
+          content_id: id,
+          rdp_url: `https://www.figma.com/community/plugin/${id}`,
+          user_count: 1,
+        },
+        score: 0,
+      })),
+      total_hits: totalHits,
+    },
+  });
+
+const OURS = '1682711656065145288';
+
+describe('rankQueriesOf', () => {
+  it('reads the four buyer queries from the real variables-toolkit STORE.md', () => {
+    expect(rankQueriesOf(readFileSync('ventures/variables-toolkit/STORE.md', 'utf8'))).toEqual([
+      'styles to variables',
+      'link to variables',
+      'unused variables',
+      'variables toolkit',
+    ]);
+  });
+  it('is empty for a STORE.md without the line', () => {
+    expect(rankQueriesOf(readFileSync('ventures/read-focus/STORE.md', 'utf8'))).toEqual([]);
+    expect(rankQueriesOf('- **Status:** live\n')).toEqual([]);
+  });
+});
+
+describe('parseFigmaRank', () => {
+  it('is the 1-based position on the first page, over total_hits', () => {
+    expect(
+      parseFigmaRank('unused variables', OURS, 200, search([OURS, '1499763131998478678'])),
+    ).toEqual({
+      query: 'unused variables',
+      rank: 1,
+      hits: 2,
+      note: 'unused variables 1/2',
+    });
+    expect(parseFigmaRank('q', OURS, 200, search(['a', 'b', OURS], 1234)).note).toBe('q 3/1234');
+  });
+  it('matches on rdp_url when content_id is missing', () => {
+    const body = search([OURS]).replace(`"content_id":"${OURS}",`, '');
+    expect(parseFigmaRank('q', OURS, 200, body).rank).toBe(1);
+  });
+  it('says >N when the page of N does not hold the plugin but more hits exist, absent when it is the whole list', () => {
+    const page = Array.from({ length: 100 }, (_, i) => `id${i}`);
+    expect(parseFigmaRank('variables', OURS, 200, search(page, 2394))).toEqual({
+      query: 'variables',
+      hits: 2394,
+      note: 'variables >100/2394',
+    });
+    expect(parseFigmaRank('q', OURS, 200, search(['a', 'b'])).note).toBe('q absent/2');
+  });
+  it('is unread, never a rank, on an error or a non-JSON body', () => {
+    expect(parseFigmaRank('q', OURS, 403, '<html>Forbidden</html>')).toEqual({
+      query: 'q',
+      unread: true,
+      note: 'q unread (403, not JSON)',
+    });
+    expect(parseFigmaRank('q', OURS, 500, '{"error":true}').note).toBe('q unread (500)');
+  });
+});
+
+describe('rank: in the Daily check row', () => {
+  const header = '| Date | Event | Users | Likes | Purchases | Notes |';
+  const ranks = [
+    parseFigmaRank('unused variables', OURS, 200, search([OURS], 48)),
+    parseFigmaRank('variables', OURS, 200, search(['a'], 2394)),
+  ];
+  it('appends the clause after the channel notes', () => {
+    expect(rankNote(ranks)).toBe('rank: unused variables 1/48, variables >1/2394');
+    expect(renderRow('2026-10-02', header, [parseFigma(200, figma)], ranks)).toBe(
+      '| 2026-10-02 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 2, unique_run_count 1, comment_count 0, purchase_count 0, version 281046 (2026-09-28); rank: unused variables 1/48, variables >1/2394 |',
+    );
+  });
+  it('keeps the row readable with no queries and on an unread listing', () => {
+    expect(rankNote([])).toBe('');
+    expect(renderRow('2026-10-02', header, [parseFigma(200, figma)])).not.toContain('rank:');
+    expect(renderRow('2026-10-02', header, [parseFigma(403, 'x')], ranks)).toBe(
+      '| 2026-10-02 | Daily check | — | — | — | unread (store-metrics CI: figma: 403, not JSON; rank: unused variables 1/48, variables >1/2394) |',
+    );
   });
 });

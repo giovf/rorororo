@@ -17,7 +17,11 @@
 //      the Figma versions API (JSON, `publishing_status: approved_public`);
 //   3. upserts `| <date> | Daily check | … |` in the venture's `## Metrics` table, in that
 //      table's own columns (Users/Rating/Sales for extensions, Users/Likes/Purchases for Figma);
-//   4. if STORE.md still says `not live yet` for a channel whose page answers, flips that phrase.
+//   4. if STORE.md still says `not live yet` for a channel whose page answers, flips that phrase;
+//   5. for a Figma listing whose STORE.md lists `Search rank queries`, asks the search API for each
+//      query and appends `rank: <query> <position>/<hits>, …` to the Notes column (the day-30
+//      review reads the series instead of a relay round; variables-toolkit item
+//      figma-search-rank-in-ci, 2026-10-01).
 // Field names and page shapes were confirmed on 2026-09-30 through the relay (`cws-pages`,
 // `amo-listings`, `metrics-2026-09-30`), not from memory.
 //
@@ -254,12 +258,88 @@ export function parseFigma(status: number, body: string): Reading {
   return reading;
 }
 
+/** Buyer queries a STORE.md lists for the Figma search rank, on one line:
+ *  `- **Search rank queries:** styles to variables; link to variables; …` (semicolon-separated). */
+export function rankQueriesOf(storeMd: string): string[] {
+  const m = storeMd.match(/^- \*\*Search rank queries[^\n]*?\*\*\s*(.+)$/m);
+  if (!m) return [];
+  return (m[1] as string)
+    .split(';')
+    .map((q) => q.trim())
+    .filter(Boolean);
+}
+
+export interface RankReading {
+  query: string;
+  /** 1-based position in the first page of results (100), when the plugin is on it. */
+  rank?: number;
+  /** `meta.total_hits` of the query. */
+  hits?: number;
+  /** One clause for the `rank:` field, e.g. `unused variables 1/48`, `variables >100/2394`. */
+  note: string;
+  unread?: true;
+}
+
+interface FigmaSearch {
+  meta?: {
+    results?: { model?: { content_id?: string; rdp_url?: string } }[];
+    total_hits?: number;
+  };
+}
+
+export const figmaSearchUrl = (query: string): string =>
+  `https://www.figma.com/api/search/resources?query=${encodeURIComponent(query)}&resource_type=plugin&sort=relevancy`;
+
+/** Figma search API (`/api/search/resources?query=…&resource_type=plugin&sort=relevancy`):
+ *  `meta.results[]` is the first page (100 at most) of `{ model, score }`, `meta.total_hits`
+ *  the count; a plugin's `model.content_id` is its plugin id (shape read through the relay,
+ *  `build-2026-10-01`). Rank = 1-based position; `>N` when the page of N does not hold it but
+ *  more hits exist; `absent` when every hit is on the page and none is the plugin. */
+export function parseFigmaRank(
+  query: string,
+  pluginId: string,
+  status: number,
+  body: string,
+): RankReading {
+  let json: FigmaSearch;
+  try {
+    json = JSON.parse(body) as FigmaSearch;
+  } catch {
+    return { query, unread: true, note: `${query} unread (${status}, not JSON)` };
+  }
+  const results = json.meta?.results;
+  if (status !== 200 || !Array.isArray(results)) {
+    return { query, unread: true, note: `${query} unread (${status})` };
+  }
+  const hits = json.meta?.total_hits ?? results.length;
+  const i = results.findIndex(
+    (r) =>
+      r.model?.content_id === pluginId ||
+      (r.model?.rdp_url ?? '').endsWith(`/community/plugin/${pluginId}`),
+  );
+  if (i !== -1) {
+    return { query, rank: i + 1, hits, note: `${query} ${i + 1}/${hits}` };
+  }
+  const where = hits > results.length ? `>${results.length}` : 'absent';
+  return { query, hits, note: `${query} ${where}/${hits}` };
+}
+
+/** The `rank:` clause for the Notes column, empty when no query was asked. */
+export function rankNote(ranks: RankReading[]): string {
+  return ranks.length ? `rank: ${ranks.map((r) => r.note).join(', ')}` : '';
+}
+
 export const DEFAULT_HEADER = '| Date | Event | Users | Rating | Sales | Notes |';
 
 /** The `Daily check` row in the venture's own columns. Users sums the live channels. A row
  *  says `not live yet` only when every channel answered and none is live; a channel that could
  *  not be read makes it `unread`, so a 403 never reads as a listing gone. */
-export function renderRow(date: string, header: string, readings: Reading[]): string {
+export function renderRow(
+  date: string,
+  header: string,
+  readings: Reading[],
+  ranks: RankReading[] = [],
+): string {
   const cols = header
     .split('|')
     .map((c) => c.trim())
@@ -270,7 +350,8 @@ export function renderRow(date: string, header: string, readings: Reading[]): st
     return vals.length ? String(vals.reduce((a, b) => a + b, 0)) : '—';
   };
   const ratings = live.map((r) => r.rating).filter((r): r is string => Boolean(r));
-  const notes = readings.map((r) => r.note).join('; ');
+  const rank = rankNote(ranks);
+  const notes = [...readings.map((r) => r.note), rank].filter(Boolean).join('; ');
   const cells = cols.map((col) => {
     switch (col) {
       case 'Date':
@@ -353,6 +434,24 @@ export function flipStore(storeMd: string, readings: Reading[], date: string): s
   return storeMd;
 }
 
+async function fetchRank(query: string, pluginId: string): Promise<RankReading> {
+  try {
+    const res = await fetch(figmaSearchUrl(query), {
+      headers: { 'user-agent': USER_AGENT, accept: 'application/json', 'accept-language': 'en' },
+      redirect: 'follow',
+      signal: AbortSignal.timeout(20_000),
+    });
+    return parseFigmaRank(query, pluginId, res.status, await res.text());
+  } catch (e) {
+    const msg = e instanceof Error ? e.message : String(e);
+    return {
+      query,
+      unread: true,
+      note: `${query} unread (fetch failed: ${msg.replace(/\s+/g, ' ').slice(0, 60)})`,
+    };
+  }
+}
+
 async function fetchListing(listing: Listing): Promise<Reading> {
   try {
     const res = await fetch(listing.url, {
@@ -400,9 +499,13 @@ async function main(): Promise<void> {
     if (!listings.length) continue;
     ventures += 1;
     const readings = await Promise.all(listings.map(fetchListing));
+    const figmaId = listings.find((l) => l.channel === 'figma')?.id;
+    const ranks = figmaId
+      ? await Promise.all(rankQueriesOf(storeMd).map((q) => fetchRank(q, figmaId)))
+      : [];
     if (readings.every((r) => r.unread)) failures += 1;
     const md = readFileSync(researchFile, 'utf8');
-    const row = renderRow(date, metricsHeader(md), readings);
+    const row = renderRow(date, metricsHeader(md), readings, ranks);
     const next = upsertRow(md, date, row, ifMissing);
     if (next !== md) writeFileSync(researchFile, next);
     const flipped = flipStore(storeMd, readings, date);

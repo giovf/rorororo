@@ -320,7 +320,10 @@ apps.gankdat.com (Search Console already indexes that host; the extensions got t
 a free Community *file* (playground) that links the plugin (free resources are indexed and shown
 far more than paid plugins), and a free single-job companion listing in the one query we can own
 ("unused variables") that funnels to the paid toolkit. Rank measurement moves into the 06:45
-`store metrics` CI job so the day-30 review (2026-10-21) reads it without a relay round. Five
+`store metrics` CI job so the day-30 review (2026-10-21) reads it without a relay round. **Built
+2026-10-01 (17:00 build):** `scripts/store-metrics.ts` reads the four queries from STORE.md (`Search rank queries`)
+and appends `rank: <query> <position>/<hits>` to every Daily check row from 2026-10-02 on; the day-10
+bodies replayed through it give exactly the table above (75/1234, 13/163, 1/48, 8/45). Five
 scored items in `docs/pipeline/queues/variables-toolkit.json`. Kill date unchanged: 2026-12-20
 with zero sales and zero organic signal (STRATEGY §7).
 
