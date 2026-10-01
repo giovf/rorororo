@@ -150,3 +150,16 @@ Items added (score = evidence × reach ÷ effort):
 Not added: Google Docs support (canvas rendering, documented as a known limit); a video listing asset
 (no evidence it moves installs at this stage). Kill check (STRATEGY §7): zero sales and zero organic
 signal 90 days after every listing is live → 2026-12-21 if nothing moves.
+
+### 2026-10-01 (burn-down) — `reader-mode-alternative-page` built
+`https://apps.gankdat.com/reader-mode-alternative.html` is the search-capture page for "reader mode alternative" /
+"reading ruler chrome" / "adhd reading extension": a 12-row comparison table against Reader Mode, the official
+bolding extension (never named by its trademark — the legal assessment above) and ADHD Reading, one paragraph per
+rival written from the September 2026 review sample in `research/cws-harvest-2026-09-18.json` (quoted as
+"reviews report …", never as our claim; cells we could not confirm say "not shown on the listing"), a paragraph for
+ruler users, an honest "not yet" for PDF and "no" for Google Docs, a pointer to Helperbird for anyone wanting a
+text-to-speech suite, and the two live install buttons. Linked from the landing index and the ReadFocus page, and
+appended to both listing descriptions (Chrome via `LISTING.md` on the owner's action-013 dashboard visit; AMO via
+`assets/amo-metadata.json` on the next version sign — the listing script does not set the description). `sitemap.xml`
+lists it. Proof at day 30 (2026-10-30, the `day-30-funnel-review` item): ≥ 50 impressions or ≥ 5 clicks on the page
+in Search Console; the metrics row shows whether installs follow.

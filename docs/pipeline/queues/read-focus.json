@@ -2,7 +2,7 @@
   "venture": "read-focus",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-09-30",
+  "updated": "2026-10-01",
   "items": [
     {
       "id": "post-approval-links",
@@ -18,12 +18,13 @@
     {
       "id": "reader-mode-alternative-page",
       "title": "apps.gankdat.com/reader-mode-alternative.html: a comparison page for Reader Mode / ADHD-reading users who search for a working alternative, linked from the landing and both listings",
-      "why": "RESEARCH.md 2026-09-18: Reader Mode (100k users, 3.1★) crashes and sold a lifetime promo without the promised features; the official bolding tool (100k, 2.4★, last update Jun 2024) 'doesn't work'; every ruler tool's top reviews ask for PDF; ADHD Reading charges $29/yr or $59 lifetime and 'developers don't respond'. Those users search 'reader mode alternative', 'reading ruler chrome', 'adhd reading extension' and nothing of ours answers it. STRATEGY §5: distribution before features until the funnel converts; apps.gankdat.com is indexed and now has a sitemap (highlight-keep weava-alternative-page shipped the pattern and the table CSS). Page: side-by-side table (local, no account, free tier, $12 once vs $30/yr and $59 lifetime), one honest paragraph per rival written from the September 2026 review sample, a 'not yet' row for PDF and Google Docs, Chrome + Firefox install buttons, the refund line. The trademarked name of the bolding technique never appears (RESEARCH legal assessment) — the rival is named as 'the official bolding extension'.",
+      "why": "RESEARCH.md 2026-09-18: Reader Mode (100k users, 3.1★) crashes and sold a lifetime promo without the promised features; the official bolding tool (100k, 2.4★, last update Jun 2024) 'doesn't work'; every ruler tool's top reviews ask for PDF; ADHD Reading charges $29/yr or $59 lifetime and 'developers don't respond'. Those users search 'reader mode alternative', 'reading ruler chrome', 'adhd reading extension' and nothing of ours answers it. STRATEGY §5: distribution before features until the funnel converts; apps.gankdat.com is indexed and now has a sitemap (highlight-keep weava-alternative-page shipped the pattern and the table CSS). Page: side-by-side table (local, no account, free tier, $12 once vs $30/yr and $59 lifetime), one honest paragraph per rival written from the September 2026 review sample, a 'not yet' row for PDF and Google Docs, Chrome + Firefox install buttons, the refund line. The trademarked name of the bolding technique never appears (RESEARCH legal assessment) — the rival is named as 'the official bolding extension'. DONE 2026-10-01 (burn-down): page live in packages/landing/site, 12-row table + four prose sections, linked from index, readfocus.html, LISTING.md and amo-metadata.json; sitemap updated. The AMO description rides the next version sign (amo-listing.ts does not set descriptions); the Chrome text rides the action-013 dashboard visit.",
       "effort_days": 0.3,
       "proof": "Search Console: ≥ 50 impressions or ≥ 5 clicks on the page in 30 days; any install attributed to it",
       "score": 6,
-      "status": "todo",
-      "added": "2026-09-30"
+      "status": "done",
+      "added": "2026-09-30",
+      "done_at": "2026-10-01"
     },
     {
       "id": "day-30-funnel-review",

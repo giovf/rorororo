@@ -19,6 +19,8 @@ Private by design: ReadFocus runs only on the sites you switch it on for (Chrome
 
 Made for readers with ADHD or dyslexia, students, and anyone who reads for a living.
 
+Switching from Reader Mode or another focus-reading extension that stopped working? Side-by-side comparison: https://apps.gankdat.com/reader-mode-alternative.html
+
 **Category:** Accessibility · **Language:** English
 **Single purpose:** Improve readability of web page text for the current user.
 **Permissions justification:** `storage` — save your settings. `activeTab` + `scripting` — apply the reading aids to the page you're viewing when you switch it on. Optional host permission, granted per site — Chrome asks once when you enable a site, and ReadFocus only ever runs on sites you've enabled; nothing is read out of the page or sent anywhere.

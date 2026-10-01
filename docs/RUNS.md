@@ -332,3 +332,7 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-09-30 23:48 | burn-down | Queued day-30-funnel-review (5, not before 2026-10-30): installs, activations, sales decide keep / fix / kill
 - 2026-09-30 23:48 | burn-down | Queued pdf-viewer (3, feature), cws-promo-tile (3, owner dashboard), edge-add-ons-listing (3, owner account)
 - 2026-09-30 23:55 | burn-down | Stopping for time (~45 min): next is read-focus reader-mode-alternative-page (6), then highlight-keep pdf-highlighting (3)
+- 2026-10-01 00:35 | burn-down | Built read-focus reader-mode-alternative-page (6): apps.gankdat.com/reader-mode-alternative.html, 12-row honest table
+- 2026-10-01 00:35 | burn-down | Rivals: Reader Mode, the official bolding tool (trademark never named), ADHD Reading; reviews quoted, not claimed
+- 2026-10-01 00:35 | burn-down | Linked from the landing index, the ReadFocus page and both listing texts; sitemap lists it
+- 2026-10-01 00:35 | burn-down | AMO copy of the listing line waits for the next ReadFocus sign (the listing script sets no description)
