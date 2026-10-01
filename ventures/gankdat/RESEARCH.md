@@ -53,6 +53,8 @@ Cloudflare Workers Paid ≈ US$5/month (only recurring cost in the portfolio), d
 | 2026-09-28 | Daily numbers | 1 accts (0 paid, +1/24h) | — | 0 x402 paid | MCP 24h: 204 authed, 1717 anon, 48 paywall hits; wanted: list_sources 7, get_usage 6, query_uk_planning 3; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; refresh errors: uk-charities (D1_ERROR: Network connection lost.), uk-insolvency (Unexpected end of JSON input), uk-trademark-journal (D1_ERROR: internal error; reference = pvpjl6o7idm7cdijf25nr275) |
 | 2026-09-29 | Daily numbers | 1 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 198 authed, 1600 anon, 81 paywall hits; wanted: list_sources 8, query_uk_tenders 5, query_uk_sponsors 4; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; refresh errors: uk-insolvency (thegazette.co.uk responded 500) |
 | 2026-09-30 | Daily numbers | 1 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 138 authed, 1393 anon, 1 preview, 83 paywall hits; wanted: list_sources 8, query_uk_companies 5, query_uk_food_hygiene 5; changes 7d: 0 (mcp 0, rest 0); agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; refresh errors: uk-insolvency (thegazette.co.uk page results-page=1: Unexpected end of JSON input after 3 reads (0 bytes,) |
+| 2026-10-01 | Daily numbers | 1 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 177 authed, 1395 anon, 114 preview, 6 paywall hits; wanted: connect_account 6; changes 7d: 0 (mcp 0, rest 0); apify: 104 runs (baseline), 17 users/30d, 17 public; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; oauth: 0 connects/24h, 0/30d; refresh errors: eu-ted (api.ted.europa.eu responded 429) |
+
 
 
 
