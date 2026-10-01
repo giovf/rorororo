@@ -21,6 +21,25 @@ if (!token) {
 }
 const headers = { Authorization: `Bearer ${token}` };
 
+// A push-triggered run only fills a day the 06:30 cron missed (METRICS_IF_MISSING). Before the
+// refresh waves have finished (05:00–06:05 UTC, docs/SCHEDULERS.md) the day's numbers do not
+// exist yet: on 2026-10-01 a 00:23 push wrote the row from the previous day's 24 h — yesterday's
+// refresh errors as today's — the cron was skipped, and every later push left the row alone.
+// So a fill run before the waves leaves the day missing for the cron or the next push.
+const WAVES_DONE_UTC_MINUTES = 6 * 60 + 20;
+{
+  const now = new Date();
+  if (
+    process.env.METRICS_IF_MISSING &&
+    now.getUTCHours() * 60 + now.getUTCMinutes() < WAVES_DONE_UTC_MINUTES
+  ) {
+    console.log(
+      `fill-only run at ${now.toISOString().slice(11, 16)} UTC, before the refresh waves finish (06:20); leaving today's row to the 06:30 cron or a later push`,
+    );
+    process.exit(0);
+  }
+}
+
 async function sql(query) {
   const res = await fetch(
     `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}/d1/database/${DATABASE_ID}/query`,

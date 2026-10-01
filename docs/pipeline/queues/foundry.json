@@ -256,6 +256,28 @@
       "status": "blocked",
       "added": "2026-09-30",
       "blocked_on": "an attended session: the cloud routine built it (2026-10-01 burn-down, gates green, dry run ok) but the sandbox auto-mode classifier refused to push a store-publish workflow (Create Public Surface) — publishing to a store is also a CLAUDE.md ask-first action, so the interactive session (or the owner) lands it"
+    },
+    {
+      "id": "pipeline-starvation",
+      "title": "Pipeline starvation: when nothing is buildable anywhere, `npm run pipeline empty` lists the starved queues (oldest `updated` first) so the build slot researches instead of idling",
+      "why": "2026-10-01 morning: every open item was blocked or dated, no queue flagged needs_research (blocked and scheduled items count as work), `next` printed null and `empty` printed [] — the 02:40 burn-down and the 09:00 build both had nothing to do while five ventures sat with no researched work. Fix in packages/core pipeline.ts (`starved()`, `needsResearch()` fallback only when no candidate exists), tests, README, docs/routines/build.md sentence.",
+      "effort_days": 0.2,
+      "proof": "no build or burn-down RUNS line saying 'nothing left buildable' while an open queue has fewer than 3 todo items, over 30 days",
+      "score": 7,
+      "status": "done",
+      "added": "2026-10-01",
+      "done_at": "2026-10-01"
+    },
+    {
+      "id": "metrics-fill-after-waves",
+      "title": "gankdat metrics fill-only runs (push-triggered, METRICS_IF_MISSING) exit before 06:20 UTC so a day's row is never written from the previous day's refresh",
+      "why": "2026-10-01: a 00:23 push wrote the day's Daily numbers row before the 05:00–06:05 refresh waves, so it carried 2026-09-30's refresh errors (uk-insolvency, the pre-fix wording) as today's; the 06:30 cron was skipped and every later push found the row present and left it. The row was deleted in this commit so the push rewrites it after the waves; refresh-errors-to-queue read the wrong row too.",
+      "effort_days": 0.1,
+      "proof": "no Daily numbers row whose refresh-error text repeats the previous day's verbatim over 30 days; the 2026-10-01 row rewritten by CI after this push",
+      "score": 7,
+      "status": "done",
+      "added": "2026-10-01",
+      "done_at": "2026-10-01"
     }
   ]
 }

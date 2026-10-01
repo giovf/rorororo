@@ -274,3 +274,53 @@ relay request (`docs/relay/requests/vt-day7.txt` in the git history — copy it 
 `vt-day30.txt`). If the republished listing is still under 20 views at day 30, the channel is
 the problem and the next lever is the Figma-file *playground* + a Community *file* resource that
 links the plugin (free resources are indexed and shown far more often than paid plugins).
+
+## 9. Research run (2026-10-01, day 10, three days after the v2 relisting): the shelf cannot be ranked into
+
+Why this run: every venture queue had only blocked or dated items left, so the build slot was
+starved; the pipeline now sends such a slot to research (`docs/pipeline/README.md`, starvation),
+and this queue was first (oldest `updated`). Read through the relay
+(`docs/relay/responses/build-2026-10-01/`: Figma's versions API, the search API for five queries,
+the comments API).
+
+**The relist is live** — version 281046, created 2026-09-28 21:06 UTC, name "Styles to Variables,
+Link & Clean Up Unused Variables — Variables Toolkit" (queue item `relist-v2` is done, not blocked).
+Three days later: install_count 0, view_count 2 (unchanged since day 1), unique_run_count 1 (our
+own), 0 likes, 0 comments, 0 purchases.
+
+| Buyer query | Hits | Rank day 7 (v1 name) | Rank day 10 (v2 name) | #1 result (users) |
+| --- | --- | --- | --- | --- |
+| unused variables | 48 | 41 | **1** | ours (1 user), then Variables Cleaner (1,189) |
+| link to variables | 163 | 14 | 13 | Link spacing variables (4,369) |
+| variables toolkit | 45 | 8 | 8 | Variables Toolkit: Find, Swap and Bind (2,790) |
+| styles to variables | 1,234 | 79 | 75 | Styles & Variables Organizer, $15 × 2,341 (140,117) |
+| variables | 2,394 | absent | absent | variables2css (28,854) |
+
+What it says:
+
+1. **Name matching only moves uncrowded queries.** The new name took #1 for "unused variables"
+   (48 hits) instantly, and nothing else: the queries with buyers in them ("styles to variables",
+   "variables") rank by user count, and every result above us has thousands of users. A one-user
+   listing cannot climb them by wording; §8's "≤ 20 for styles to variables" proof is unreachable
+   from inside the search box.
+2. **The #1 slot brought no views.** Two views in ten days, zero since the relist. The 48-hit query
+   is too small to matter (its leaders have 1–2.5k users after 1–2 years), so being first there is
+   not a channel.
+3. **Newcomers that grew did so with free listings.** Of the 2026 entrants in these result sets,
+   the ones with users are free (Style Teleport 90, Easy Sync 69, Unused Token Finder 43, Variable
+   Mapper and Linker 41, Token Toolkit Pro 18); the paid 2026 entrants sit at 2–20 users and 0–1
+   purchases (My Linter $9 × 0, Varlint $5 × 0, Design System Auditor $2 × 0, Rebind $5 × 0). Figma
+   shows paid plugins less, and a paid newcomer gets no trial installs to seed its rank.
+4. **The product is not implicated.** No comment, no run beyond our own, no bug; nothing in the
+   plugin can be read from zero traffic. Features (relink by name, mode pairing — §5 backlog) stay
+   behind distribution per STRATEGY §5.
+
+Decision: the next levers are **off the Figma search box** — a Google-facing page on
+apps.gankdat.com (Search Console already indexes that host; the extensions got the same page),
+a free Community *file* (playground) that links the plugin (free resources are indexed and shown
+far more than paid plugins), and a free single-job companion listing in the one query we can own
+("unused variables") that funnels to the paid toolkit. Rank measurement moves into the 06:45
+`store metrics` CI job so the day-30 review (2026-10-21) reads it without a relay round. Five
+scored items in `docs/pipeline/queues/variables-toolkit.json`. Kill date unchanged: 2026-12-20
+with zero sales and zero organic signal (STRATEGY §7).
+

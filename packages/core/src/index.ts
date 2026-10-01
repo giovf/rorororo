@@ -9,6 +9,7 @@ export {
   formatPipeline,
   isEmpty,
   needsResearch,
+  starved,
   nextItem,
   parseExchange,
   parseQueue,

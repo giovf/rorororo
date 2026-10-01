@@ -25,5 +25,10 @@ and do not count as "empty". An item that only needs elapsed time rather than a 
 day-7 or day-30 review — stays `todo` and carries `not_before: YYYY-MM-DD`: `npm run pipeline
 next` skips it until that date (listing it on a `scheduled:` line instead) and offers it from
 that day on. Like a blocked item it still counts as work, so it does not put the queue into
-`needs_research`. A `finished` queue is a venture with nothing left to do; only the
-exchange or the review reopens it. Every change to a queue lands in the same commit as the work.
+`needs_research`. **Starvation** (2026-10-01): when no queue is flagged but `next` finds nothing
+buildable anywhere — every open item blocked or dated — `npm run pipeline empty` lists the open
+queues with no buildable item instead, oldest `updated` first, so the build slot researches the
+first of them rather than idling (both slots did nothing on 2026-10-01 morning: `next` null,
+`empty` `[]`). One buildable item anywhere ends the fallback. A `finished` queue is a venture
+with nothing left to do; only the exchange or the review reopens it. Every change to a queue
+lands in the same commit as the work.

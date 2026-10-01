@@ -7,6 +7,7 @@ import {
   nextItem,
   parseExchange,
   parseQueue,
+  starved,
   type VentureQueue,
 } from './pipeline.js';
 
@@ -106,6 +107,36 @@ describe('scheduling', () => {
   it('honours an explicit needs_research flag and ignores finished queues', () => {
     const flagged = parseQueue(queue('gankdat', [item('a', 'todo', 1)], { needs_research: true }));
     expect(needsResearch([flagged, queues[3]!]).map((q) => q.venture)).toEqual(['gankdat']);
+  });
+
+  it('lists starved queues for research only when nothing at all is buildable', () => {
+    // 2026-10-01: every remaining item was blocked or dated, no queue was flagged, and both
+    // build slots had nothing to do — blocked and scheduled items count as work, but a slot
+    // with no buildable item anywhere must research rather than idle.
+    const blockedOnly = parseQueue(
+      queue('gankdat', [item('sc', 'blocked', 4), item('x', 'done', 9)], { updated: '2026-09-30' }),
+    );
+    const datedOnly = parseQueue(
+      queue('toolkit', [{ ...item('day-30', 'todo', 4), not_before: '2026-10-21' }], { updated: '2026-09-29' }),
+    );
+    const buildable = parseQueue(queue('read-focus', [item('page', 'todo', 6)], { updated: '2026-09-28' }));
+    const finished = queues[3]!;
+    const today = { today: '2026-10-01' };
+    // Oldest `updated` first; a finished queue is never starved.
+    expect(starved([blockedOnly, datedOnly, finished], today).map((q) => q.venture)).toEqual(['toolkit', 'gankdat']);
+    expect(needsResearch([blockedOnly, datedOnly, finished], today).map((q) => q.venture)).toEqual([
+      'toolkit',
+      'gankdat',
+    ]);
+    // One buildable item anywhere: the starved queues are not research, the build takes the item.
+    expect(needsResearch([blockedOnly, datedOnly, buildable], today)).toEqual([]);
+    // A flagged or empty queue wins over starvation, as before.
+    const empty = parseQueue(queue('dead-end', [item('rev', 'done', 3)]));
+    expect(needsResearch([blockedOnly, datedOnly, empty], today).map((q) => q.venture)).toEqual(['dead-end']);
+    // The dated item comes due: its queue is buildable again.
+    expect(needsResearch([blockedOnly, datedOnly], { today: '2026-10-21' })).toEqual([]);
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [blockedOnly, datedOnly] });
+    expect(text).toContain('pipeline starved');
   });
 
   it('formats a status summary with the next item', () => {

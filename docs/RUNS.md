@@ -360,3 +360,8 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-01 02:35 | burn-down | Landing page, comparison page, listing texts and welcome page now say web PDFs work, local files not yet
 - 2026-10-01 02:35 | burn-down | Open 2026-09-30 handoff now also signs and uploads ReadFocus 0.2.0 (commands added in place)
 - 2026-10-01 02:40 | burn-down | Nothing left buildable: every open item is blocked on the owner or dated (day-30 reviews); no queue needs research
+- 2026-10-01 09:40 | build | Pipeline was starved (all open items blocked or dated): `pipeline empty` now lists starved queues so slots research instead of idling
+- 2026-10-01 09:40 | build | gankdat metrics: a 00:23 push had written today's row from yesterday's refresh (cron skipped); fill runs now wait for the waves, row rewritten by CI
+- 2026-10-01 09:40 | build | Variables Toolkit research (day 10): v2 relisting live since 09-28, #1 for "unused variables", still 2 views — Figma ranks by user count
+- 2026-10-01 09:40 | build | Variables Toolkit queue: relist-v2 done, 5 scored items added (rank in CI, Google page, free Community file, free companion, relink)
+

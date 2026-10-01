@@ -11,6 +11,10 @@
  * - an open queue with nothing left to do (no todo/doing/blocked) needs research — the build
  *   routine researches before it builds; `needs_research` is also set explicitly by the run
  *   that empties a queue;
+ * - when no queue is flagged but nothing is buildable anywhere (every remaining item is
+ *   blocked or dated), the pipeline is starved: `needsResearch()` then lists the open queues
+ *   with no buildable item, oldest `updated` first, so a build slot researches instead of
+ *   idling (2026-10-01: both build slots found `next` null and `empty` [] and did nothing);
  * - a `finished` queue is a venture with no more work; the weekly exchange routine may reopen
  *   it when enhancing that venture scores above starting a new one.
  */
@@ -220,23 +224,44 @@ export function isEmpty(queue: VentureQueue): boolean {
   return !queue.items.some((it) => it.status === 'todo' || it.status === 'doing' || it.status === 'blocked');
 }
 
-/** Open queues that need research before anything can be built for that venture. */
-export function needsResearch(queues: VentureQueue[]): VentureQueue[] {
-  return queues.filter((q) => q.status === 'open' && (q.needs_research || isEmpty(q)));
+/**
+ * Open queues with no item the build routine could pick today: everything left is blocked or
+ * waits on a `not_before` date. Oldest `updated` first, so research rotates between ventures.
+ */
+export function starved(queues: VentureQueue[], options: { today?: string } = {}): VentureQueue[] {
+  return queues
+    .filter((q) => q.status === 'open' && candidates([q], options).length === 0)
+    .sort((a, b) => a.updated.localeCompare(b.updated) || a.venture.localeCompare(b.venture));
+}
+
+/**
+ * Open queues that need research before anything can be built for that venture: the flagged
+ * or empty ones, else — only when nothing at all is buildable — the starved ones (see above).
+ * `today` overrides the clock (tests).
+ */
+export function needsResearch(queues: VentureQueue[], options: { today?: string } = {}): VentureQueue[] {
+  const flagged = queues.filter((q) => q.status === 'open' && (q.needs_research || isEmpty(q)));
+  if (flagged.length > 0 || nextItem(queues, options) !== undefined) return flagged;
+  return starved(queues, options);
 }
 
 export function formatPipeline(pipeline: Pipeline): string {
   const lines: string[] = [];
+  const today = utcToday();
+  const research = new Set(needsResearch(pipeline.queues, { today }).map((q) => q.venture));
   for (const q of pipeline.queues) {
     const count = (s: ItemStatus): number => q.items.filter((it) => it.status === s).length;
-    const flag = q.status === 'finished' ? 'finished' : needsResearch([q]).length ? 'open — NEEDS RESEARCH' : 'open';
+    const flag = q.status === 'finished' ? 'finished' : research.has(q.venture) ? 'open — NEEDS RESEARCH' : 'open';
     lines.push(
       `${q.venture.padEnd(18)} ${flag.padEnd(22)} todo ${count('todo')}  doing ${count('doing')}  blocked ${count('blocked')}  done ${count('done')}`,
     );
   }
-  const today = utcToday();
   const next = nextItem(pipeline.queues, { today });
-  lines.push(next ? `next: ${next.venture} / ${next.item.id} (score ${next.item.score}) — ${next.item.title}` : 'next: nothing to build — research needed');
+  lines.push(
+    next
+      ? `next: ${next.venture} / ${next.item.id} (score ${next.item.score}) — ${next.item.title}`
+      : `next: nothing to build — research ${[...research][0] ?? 'needed'}${research.size > 0 ? ' (pipeline starved: every open item is blocked or dated)' : ''}`,
+  );
   const scheduled = pipeline.queues
     .filter((q) => q.status === 'open')
     .flatMap((q) => q.items.filter((it) => it.status === 'todo' && it.not_before !== undefined && it.not_before > today).map((it) => `${q.venture}/${it.id} on ${it.not_before!}`));

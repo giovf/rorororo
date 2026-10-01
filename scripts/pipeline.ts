@@ -50,6 +50,8 @@ if (command === 'next') {
   const next = nextItem(pipeline.queues, cap ? { maxEffortDays: Number(cap) } : {});
   console.log(JSON.stringify(next ?? null, null, 2));
 } else if (command === 'empty') {
+  // Flagged or empty queues; when nothing is buildable anywhere, the starved queues instead
+  // (every open item blocked or dated), oldest `updated` first — a build slot researches then.
   console.log(JSON.stringify(needsResearch(pipeline.queues).map((q) => q.venture)));
 } else {
   console.log(formatPipeline(pipeline));

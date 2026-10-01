@@ -453,3 +453,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   e2e-proven in Chromium. Local-file PDFs stay out and are said so. Ships with the open 0.1.1 handoff (now 0.2.0). Nothing todo is left in
   the queue; `cws-listing-keywords` stays blocked on the owner's dashboard pass, so the queue is not empty yet.
 - 2026-10-01 burn-down: built read-focus `pdf-viewer` (3) — 0.2.0 reads web PDFs in an own reader page as reflowed real text (a canvas viewer would hide bold starts and fonts); free = first page, unlock = whole file; the niche's most-asked-for feature now sits behind a demo-then-pay gate. Ships with the open handoff.
+- 2026-10-01 build: pipeline starved (every open item blocked or dated, `next` null, `empty` []) — built foundry `pipeline-starvation` (7):
+  `npm run pipeline empty` now lists the starved queues, oldest `updated` first, so a slot researches instead of idling; and foundry
+  `metrics-fill-after-waves` (7): a push-triggered metrics fill before 06:20 UTC had written today's gankdat row from yesterday's refresh
+  (uk-insolvency's pre-fix error repeated verbatim), the cron was skipped; the row is deleted and CI rewrites it after this push.
+  Then the research run the new rule chose, variables-toolkit (RESEARCH.md §9): the v2 relisting is live (2026-09-28, `relist-v2` done)
+  and took #1 for "unused variables" (48 hits) but views stay at 2 — Figma ranks crowded queries by user count, so the search box cannot
+  seed a one-user paid listing. Five items, distribution off-Figma first: rank in CI (5), Google-facing page (5), free Community file (4),
+  free companion listing (4), relink feature (3); tonight's slot builds the first of them.
+
