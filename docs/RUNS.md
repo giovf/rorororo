@@ -342,3 +342,6 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-01 00:50 | burn-down | First run closed 23 of 34 open entries that later done: lines or the repo prove executed; 11 live remain
 - 2026-10-01 00:50 | burn-down | Only one live entry is older than 7 days: the 09-22 ask to confirm the Figma Stripe payout (owner)
 - 2026-10-01 00:50 | burn-down | nhs-ods Taskmaster row filed retrospectively (#21, offline add); that handoff closed
+- 2026-10-01 00:50 | burn-down | foundry extension-publish-in-ci (5) built and green, but the sandbox refused to push a store-publish workflow
+- 2026-10-01 00:50 | burn-down | Item set blocked on an attended session; the full design is in its queue notes so it lands in minutes
+- 2026-10-01 00:52 | burn-down | Stopping for time (~45 min): two items done (comparison page, handoff ledger), one blocked
