@@ -359,3 +359,4 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-01 02:35 | burn-down | Pro e2e sections need the signing key: skipped in the sandbox with a SKIP line, run on a machine with .env
 - 2026-10-01 02:35 | burn-down | Landing page, comparison page, listing texts and welcome page now say web PDFs work, local files not yet
 - 2026-10-01 02:35 | burn-down | Open 2026-09-30 handoff now also signs and uploads ReadFocus 0.2.0 (commands added in place)
+- 2026-10-01 02:40 | burn-down | Nothing left buildable: every open item is blocked on the owner or dated (day-30 reviews); no queue needs research
