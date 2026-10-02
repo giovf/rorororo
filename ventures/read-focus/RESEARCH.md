@@ -124,6 +124,8 @@ the multi-store listing is the main upside over V1.
 | 2026-09-30 | Chrome Web Store listing found live (relay: page 200, "Add to Chrome"); user count is not in the static HTML | — | — | 0 | approval mail never reached INBOX; foundry `store-metrics-in-ci` queued to read the numbers from CI |
 | 2026-10-01 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.1.0, updated September 20, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.1.0 |
 | 2026-10-01 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "no reviews" on listing) |
+| 2026-10-02 | Daily check | 0 | — | — | store-metrics job left no row; via relay: chrome: 0 users, no ratings, v0.1.0, updated September 21, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.1.0 |
+| 2026-10-02 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing); AMO ratings count 0 |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
