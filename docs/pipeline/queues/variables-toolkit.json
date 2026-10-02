@@ -7,9 +7,9 @@
     {
       "id": "day-7-review",
       "title": "Day-7 review of the Figma listing: installs, likes, comments; fix any reported bug",
-      "why": "First listing on a paying shelf; early comments decide the ranking. Done 2026-09-28: day-7 read 0 installs (the 1 user is our own run), 0 likes, 0 purchases, 2 views, 0 comments \u2014 nothing to answer, no bug reported. Relay-read Figma's search API for 7 buyer queries (RESEARCH.md \u00a78): rank 8 for \"variables toolkit\" behind a 2,784-user namesake, 79 for \"styles to variables\", 41/48 for \"unused variables\", absent from the top 100 for \"variables\", \"design tokens\" and \"convert styles to variables\"; Figma ranks on the name first; the live description shows literal markdown asterisks. Verdict: not findable \u2014 relist v2 (LISTING.md + manifest.json rewritten, owner republishes).",
+      "why": "First listing on a paying shelf; early comments decide the ranking. Done 2026-09-28: day-7 read 0 installs (the 1 user is our own run), 0 likes, 0 purchases, 2 views, 0 comments — nothing to answer, no bug reported. Relay-read Figma's search API for 7 buyer queries (RESEARCH.md §8): rank 8 for \"variables toolkit\" behind a 2,784-user namesake, 79 for \"styles to variables\", 41/48 for \"unused variables\", absent from the top 100 for \"variables\", \"design tokens\" and \"convert styles to variables\"; Figma ranks on the name first; the live description shows literal markdown asterisks. Verdict: not findable — relist v2 (LISTING.md + manifest.json rewritten, owner republishes).",
       "effort_days": 0.3,
-      "proof": "RESEARCH.md \u00a77 day-7 row filled; no unanswered comment",
+      "proof": "RESEARCH.md §7 day-7 row filled; no unanswered comment",
       "score": 4,
       "status": "done",
       "added": "2026-09-22",
@@ -18,9 +18,9 @@
     {
       "id": "relist-v2",
       "title": "Republish the Figma listing as v2: name leads with the searched terms, tagline/description/tags rewritten, no literal markdown",
-      "why": "Day-7 review (RESEARCH.md \u00a78): 2 views and 0 installs in 7 days because the listing is rank 8 for its own name (namesake with 2,784 users) and rank 79 / absent for every buyer query, while rivals published this year get 16\u201369 users in their first weeks from search alone. Figma ranks on the name first, so v2 is 'Styles to Variables, Link & Clean Up Unused Variables \u2014 Variables Toolkit', tagline and first paragraph carry the same three phrases, ten tags in buyer-query order, description pasted without asterisks. Copy in LISTING.md, name in manifest.json (release build picks it up). Evidence 3 (measured ranks) \u00d7 reach 3 (the only shelf) \u00f7 (0.1 days + 15 owner minutes). Done: the owner republished 2026-09-28 21:06 UTC (version 281046, verified through the versions API on 2026-10-01, RESEARCH.md \u00a79); three days later the new name is #1 for \"unused variables\" (48 hits) and unchanged elsewhere \u2014 views still 2.",
+      "why": "Day-7 review (RESEARCH.md §8): 2 views and 0 installs in 7 days because the listing is rank 8 for its own name (namesake with 2,784 users) and rank 79 / absent for every buyer query, while rivals published this year get 16–69 users in their first weeks from search alone. Figma ranks on the name first, so v2 is 'Styles to Variables, Link & Clean Up Unused Variables — Variables Toolkit', tagline and first paragraph carry the same three phrases, ten tags in buyer-query order, description pasted without asterisks. Copy in LISTING.md, name in manifest.json (release build picks it up). Evidence 3 (measured ranks) × reach 3 (the only shelf) ÷ (0.1 days + 15 owner minutes). Done: the owner republished 2026-09-28 21:06 UTC (version 281046, verified through the versions API on 2026-10-01, RESEARCH.md §9); three days later the new name is #1 for \"unused variables\" (48 hits) and unchanged elsewhere — views still 2.",
       "effort_days": 0.1,
-      "proof": "listing shows the v2 name; rank \u2264 20 for 'styles to variables' or \u2264 5 for 'unused variables' at the day-30 check",
+      "proof": "listing shows the v2 name; rank ≤ 20 for 'styles to variables' or ≤ 5 for 'unused variables' at the day-30 check",
       "score": 6,
       "status": "done",
       "added": "2026-09-28",
@@ -28,10 +28,10 @@
     },
     {
       "id": "day-30-review",
-      "title": "Day-30 review (2026-10-21): views, installs, purchases and search rank of the v2 listing against the \u00a71 benchmark",
-      "why": "RESEARCH.md \u00a77 checkpoint. Re-run the vt-day7 relay request as vt-day30 and compare ranks; \u2265 100 views and \u2265 10 installs is the day-30 target set in review 2026-W39. If still under 20 views the channel is the problem: next lever is a free Community file (playground) that links the plugin, since free resources are indexed and surfaced far more than paid plugins. If installs but no purchases: pricing/description problem, fix the listing again before any v0.2 feature.",
+      "title": "Day-30 review (2026-10-21): views, installs, purchases and search rank of the v2 listing against the §1 benchmark",
+      "why": "RESEARCH.md §7 checkpoint. Re-run the vt-day7 relay request as vt-day30 and compare ranks; ≥ 100 views and ≥ 10 installs is the day-30 target set in review 2026-W39. If still under 20 views the channel is the problem: next lever is a free Community file (playground) that links the plugin, since free resources are indexed and surfaced far more than paid plugins. If installs but no purchases: pricing/description problem, fix the listing again before any v0.2 feature.",
       "effort_days": 0.3,
-      "proof": "\u00a77 day-30 row filled with views/installs/purchases/ranks; decision written (keep / relist again / playground file / kill 2026-12-20)",
+      "proof": "§7 day-30 row filled with views/installs/purchases/ranks; decision written (keep / relist again / playground file / kill 2026-12-20)",
       "score": 4,
       "status": "todo",
       "added": "2026-09-28",
@@ -40,7 +40,7 @@
     {
       "id": "figma-search-rank-in-ci",
       "title": "Figma search rank in the 06:45 store-metrics job: four buyer queries, rank appended to the Daily check row",
-      "why": "Two relay rounds (day 7, day 10) were spent reading ranks by hand; the day-30 review (2026-10-21) needs the series, not a snapshot. scripts/store-metrics.ts already fetches Figma's versions API from a runner that reaches figma.com; the search API (`figma.com/api/search/resources?query=<term>&resource_type=plugin&sort=relevancy`) returns the community resource id b376009b-\u2026 \u2014 match on it. Queries: styles to variables, link to variables, unused variables, variables toolkit (RESEARCH.md \u00a79 baseline 75 / 13 / 1 / 8). Done 2026-10-01 (build): `scripts/store-metrics.ts` reads a `Search rank queries` line from STORE.md, asks the search API per query and appends `rank: <query> <position>/<hits>` to the Daily check row; matches on `model.content_id` (the plugin id), `>100` when off the first page, `absent` when the whole list is on it, `unread` on an error; replaying the day-10 relay bodies gives 75/1234, 13/163, 1/48, 8/45 exactly. First CI row 2026-10-02 06:45 (push runs only fill a missing day).",
+      "why": "Two relay rounds (day 7, day 10) were spent reading ranks by hand; the day-30 review (2026-10-21) needs the series, not a snapshot. scripts/store-metrics.ts already fetches Figma's versions API from a runner that reaches figma.com; the search API (`figma.com/api/search/resources?query=<term>&resource_type=plugin&sort=relevancy`) returns the community resource id b376009b-… — match on it. Queries: styles to variables, link to variables, unused variables, variables toolkit (RESEARCH.md §9 baseline 75 / 13 / 1 / 8). Done 2026-10-01 (build): `scripts/store-metrics.ts` reads a `Search rank queries` line from STORE.md, asks the search API per query and appends `rank: <query> <position>/<hits>` to the Daily check row; matches on `model.content_id` (the plugin id), `>100` when off the first page, `absent` when the whole list is on it, `unread` on an error; replaying the day-10 relay bodies gives 75/1234, 13/163, 1/48, 8/45 exactly. First CI row 2026-10-02 06:45 (push runs only fill a missing day).",
       "effort_days": 0.3,
       "proof": "a `rank:` field on every Daily check row from the next morning on; the day-30 review quotes it",
       "score": 5,
@@ -51,9 +51,9 @@
     {
       "id": "figma-styles-to-variables-page",
       "title": "apps.gankdat.com/figma-styles-to-variables.html: a Google-facing page for 'figma styles to variables' / 'figma unused variables', linked from the landing and the listing description",
-      "why": "Figma's own search ranks crowded queries by user count (RESEARCH.md \u00a79: 75th of 1,234 for 'styles to variables' with 1 user, nothing above us under thousands of users), so the search box cannot bring the first users. Google can: Search Console already indexes apps.gankdat.com (the extensions got the same comparison pages 2026-09-30/10-01), and the rival-gap evidence (\u00a75: S&V Organizer $15, 15-minute scans and hangs; Styles to Variables free, colour-only, no modes) is written. Honest table, $12 one-time stated, refund policy linked, install button to the listing. Done 2026-10-02 (build): page live at apps.gankdat.com/figma-styles-to-variables.html (nine-row table against S&V Organizer, Styles to Variables, Variables Pro, every rival cell from the 2026-09-18 comment harvest or the listing, 'not shown' where unverified); linked from the landing card and LISTING.md's Support block (rides the next republish); sitemap entry; Search Console measures it.",
+      "why": "Figma's own search ranks crowded queries by user count (RESEARCH.md §9: 75th of 1,234 for 'styles to variables' with 1 user, nothing above us under thousands of users), so the search box cannot bring the first users. Google can: Search Console already indexes apps.gankdat.com (the extensions got the same comparison pages 2026-09-30/10-01), and the rival-gap evidence (§5: S&V Organizer $15, 15-minute scans and hangs; Styles to Variables free, colour-only, no modes) is written. Honest table, $12 one-time stated, refund policy linked, install button to the listing. Done 2026-10-02 (build): page live at apps.gankdat.com/figma-styles-to-variables.html (nine-row table against S&V Organizer, Styles to Variables, Variables Pro, every rival cell from the 2026-09-18 comment harvest or the listing, 'not shown' where unverified); linked from the landing card and LISTING.md's Support block (rides the next republish); sitemap entry; Search Console measures it.",
       "effort_days": 0.4,
-      "proof": "\u2265 20 Search Console impressions for the page and \u2265 1 click-through to the listing by 2026-10-31 (Daily check views move off 2)",
+      "proof": "≥ 20 Search Console impressions for the page and ≥ 1 click-through to the listing by 2026-10-31 (Daily check views move off 2)",
       "score": 5,
       "status": "done",
       "added": "2026-10-01",
@@ -61,20 +61,21 @@
     },
     {
       "id": "community-playground-file",
-      "title": "Free Figma Community file: a 'Styles \u2192 Variables playground' with before/after pages that link the plugin (owner publishes it, ~10 min)",
-      "why": "Free Community resources are indexed and shown far more than paid plugins (RESEARCH.md \u00a78/\u00a79: every 2026 entrant with users is free; paid 2026 entrants sit at 2\u201320 users). A file costs no code: pages with hard-coded fills, styles to convert and unused variables to clean, a cover that names the three jobs, and a link to the listing. The repo holds the page copy and the cover design; publishing a file is a Figma desktop action (ALERTS owner line when ready).",
+      "title": "Free Figma Community file: a 'Styles → Variables playground' with before/after pages that link the plugin (owner publishes it, ~10 min)",
+      "why": "Free Community resources are indexed and shown far more than paid plugins (RESEARCH.md §8/§9: every 2026 entrant with users is free; paid 2026 entrants sit at 2–20 users). A file costs no code: pages with hard-coded fills, styles to convert and unused variables to clean, a cover that names the three jobs, and a link to the listing. The repo holds the page copy and the cover design; publishing a file is a Figma desktop action (ALERTS owner line when ready). Done 2026-10-02 (build): the file is built by the plugin's dev command \"Build Community playground file\" (`src/figma/playground.ts`; content and ten tests in `src/core/playground.ts`): Cover 1920×960, Start here, three exercise pages (Before/After card for Link, styled sample for Styles to variables, seeded hygiene bait for Clean up), every page linking the listing and the comparison page; listing copy in `PLAYGROUND.md`; owner publishes (ALERTS 2026-10-02, action 017, ~10 min).",
       "effort_days": 0.5,
-      "proof": "file views and plugin listing views in the Daily check row: listing views \u2265 20 within 14 days of the file going live",
+      "proof": "file views and plugin listing views in the Daily check row: listing views ≥ 20 within 14 days of the file going live",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-01"
+      "status": "done",
+      "added": "2026-10-01",
+      "done_at": "2026-10-02"
     },
     {
       "id": "free-unused-variables-finder",
       "title": "Free companion listing 'Unused Variables Finder & Cleaner' built from the hygiene module, funnelling to the paid toolkit (owner publishes, ~15 min)",
-      "why": "The one query we can own is 'unused variables' (48 hits, #1 after the relist, leaders Variables Cleaner 1,189 / Variables Lint 2,090 / Usage Counter 2,499 users \u2014 all free). A free, narrowly named listing gets the trial installs a paid one never does (\u00a79 point 3) and seeds a user count; its result screen links to the toolkit for link + convert. Same codebase (src/core hygiene), a second manifest and bundle. Risk: generative plugins commoditise single-job utilities \u2014 the funnel link is the point, not the utility.",
+      "why": "The one query we can own is 'unused variables' (48 hits, #1 after the relist, leaders Variables Cleaner 1,189 / Variables Lint 2,090 / Usage Counter 2,499 users — all free). A free, narrowly named listing gets the trial installs a paid one never does (§9 point 3) and seeds a user count; its result screen links to the toolkit for link + convert. Same codebase (src/core hygiene), a second manifest and bundle. Risk: generative plugins commoditise single-job utilities — the funnel link is the point, not the utility.",
       "effort_days": 1,
-      "proof": "\u2265 50 installs of the free plugin and \u2265 5 listing views of the paid one attributed within 30 days of publishing",
+      "proof": "≥ 50 installs of the free plugin and ≥ 5 listing views of the paid one attributed within 30 days of publishing",
       "score": 4,
       "status": "todo",
       "added": "2026-10-01"
@@ -82,12 +83,23 @@
     {
       "id": "relink-library-variables",
       "title": "Relink local or broken variable references to library variables with the same name (the asked-for job in Variable Utilities and DSO comments)",
-      "why": "Documented paid-rival gap (RESEARCH.md \u00a75 'More rivals'): Variable Utilities ($17 \u00d7 181) users ask to re-connect broken links to library variables by name; Design System Organizer's swap broke with slots; Token Toolkit Pro put 'Relink' in its name (2026-09, 18 users in 3 weeks). A feature, so it waits behind the distribution items above (STRATEGY \u00a75) \u2014 nothing in the zero-traffic data implicates the product.",
+      "why": "Documented paid-rival gap (RESEARCH.md §5 'More rivals'): Variable Utilities ($17 × 181) users ask to re-connect broken links to library variables by name; Design System Organizer's swap broke with slots; Token Toolkit Pro put 'Relink' in its name (2026-09, 18 users in 3 weeks). A feature, so it waits behind the distribution items above (STRATEGY §5) — nothing in the zero-traffic data implicates the product.",
       "effort_days": 1.5,
-      "proof": "\u2265 1 comment or purchase naming relink within 30 days of release",
+      "proof": "≥ 1 comment or purchase naming relink within 30 days of release",
       "score": 3,
       "status": "todo",
       "added": "2026-10-01"
+    },
+    {
+      "id": "playground-file-views",
+      "title": "Link the live playground file from LISTING.md and the landing card; read its views in the 06:45 store-metrics job",
+      "why": "The file's URL is the referrer the proof of `community-playground-file` depends on (listing views ≥ 20 within 14 days). Once known: a 'Practice file' line in LISTING.md's Support block (rides the next republish), a link on the landing card, and `scripts/store-metrics.ts` reads the file resource's view count (search API, resource_type=file) onto the Daily check row next to the plugin's.",
+      "effort_days": 0.2,
+      "proof": "a `file views:` field on the Daily check row and the file linked from apps.gankdat.com",
+      "score": 3,
+      "status": "blocked",
+      "blocked_on": "owner publishes the file (ALERTS 2026-10-02, action 017) and gives its Community URL",
+      "added": "2026-10-02"
     }
   ]
 }

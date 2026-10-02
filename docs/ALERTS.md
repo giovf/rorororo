@@ -247,3 +247,8 @@ closed entries older than 30 days (git keeps the history).
   giovf account (installation 163075240). Review and accept or ignore at
   https://github.com/settings/installations/163075240/permissions/update — only the owner's GitHub identity can approve
   this; Claude keeps current permissions until you do. No money, no new account.
+- 2026-10-02 owner: **publish the free "Variables Playground" Community file** (~10 min, £0, Figma desktop): build the
+  plugin, run its new dev command "Build Community playground file" in an empty file, set the Cover frame as thumbnail,
+  Publish to Community with the copy in `ventures/variables-toolkit/PLAYGROUND.md`, reply with the URL. Steps:
+  `docs/for-owner/actions/017-figma-playground-file.md`. Why: free files are surfaced far more than paid plugins; the
+  listing has 2 views in 11 days. No new account, no money.

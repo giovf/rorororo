@@ -9,6 +9,7 @@ import { readVariableUsage } from './figma/hygiene.js';
 import { loadColorVariables, loadNumberVariables, scanNodes } from './figma/scan.js';
 import { readLocalStyles } from './figma/styles.js';
 import { createDemoPage } from './figma/demo.js';
+import { createPlaygroundFile } from './figma/playground.js';
 import type { LinkGroup, ToMain, ToUi } from './messages.js';
 
 declare const __DEV__: boolean;
@@ -22,6 +23,10 @@ if (__DEV__ && (figma.command === 'dev-paid' || figma.command === 'dev-unpaid'))
   } catch (err: unknown) {
     figma.closePlugin(`Couldn't set status: ${err instanceof Error ? err.message : String(err)}`);
   }
+} else if (__DEV__ && figma.command === 'playground') {
+  createPlaygroundFile()
+    .then((summary) => figma.closePlugin(summary))
+    .catch((err: unknown) => figma.closePlugin(`Playground failed: ${err instanceof Error ? err.message : String(err)}`));
 } else if (__DEV__ && figma.command === 'demo') {
   createDemoPage()
     .then((name) => figma.closePlugin(`Created page "${name}". Now run Variables Toolkit → Open.`))

@@ -1,7 +1,8 @@
 # Community listing copy — Variables Toolkit (v2, day-7 relisting 2026-09-28)
 
 2026-10-02: the Support & refunds block gained the comparison-page link; it rides the next republish
-(no owner ask for a link alone — the live v2 copy stays until a version needs republishing).
+(no owner ask for a link alone — the live v2 copy stays until a version needs republishing). When the free
+playground file is live (`PLAYGROUND.md`), add `Practice file: <its URL>` to the same block (queue `playground-file-views`).
 
 Why v2: after 7 days live the listing had 2 views and 0 installs. Figma's search API showed the
 cause (`RESEARCH.md` §8): the name collided with a 2,784-user plugin called "Variables Toolkit",

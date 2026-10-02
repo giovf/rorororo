@@ -23,3 +23,7 @@
 - **Comparison page (2026-10-02, build):** https://apps.gankdat.com/figma-styles-to-variables.html — the Google-facing page for
   "figma styles to variables" / "figma unused variables"; linked from the landing index and `LISTING.md` (the live description picks
   it up on the next republish). `sitemap.xml` lists it. Proof: ≥ 20 Search Console impressions and ≥ 1 click-through by 2026-10-31.
+- **Free Community file "Variables Playground" (2026-10-02, build):** built by the dev command "Build Community playground
+  file" (`src/figma/playground.ts`, content in `src/core/playground.ts`); listing copy and the owner's 10-minute publish steps in
+  `PLAYGROUND.md` / `docs/for-owner/actions/017-figma-playground-file.md`. **Not yet published** — waiting for the owner (ALERTS
+  2026-10-02). Live URL goes under "Live file" in `PLAYGROUND.md`; proof: listing views ≥ 20 within 14 days of it going live.

@@ -471,3 +471,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   Rival cells come only from the 2026-09-18 comment harvest and listings; the listing link rides the next republish rather than costing
   an owner action. Proof is Search Console by 2026-10-31; the day-30 review (10-21) reads it with the rank series.
 
+- 2026-10-02 build (17:00): built variables-toolkit `community-playground-file` (4): the free "Variables Playground" Community file,
+  the second lever off the Figma search box (RESEARCH.md §9), because free files are surfaced and duplicated far more than paid
+  plugins and publish with no review. Built as a plugin dev command plus tested content data rather than a hand-made file, so the
+  owner's part is ten minutes (run, set thumbnail, publish — ALERTS owner line, action 017). Proof: listing views ≥ 20 within 14
+  days of the file going live; the file's own views join the metrics job once its URL is known (`playground-file-views`, blocked).

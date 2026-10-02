@@ -377,4 +377,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-02 09:35 | build | Every rival cell traces to the 2026-09-18 comment harvest or a listing fact; mode pairing verified on by default before claiming it
 - 2026-10-02 09:35 | build | Linked from the landing card and LISTING.md (rides the next republish, no owner ask); sitemap lists it; Search Console measures it
 - 2026-10-02 09:35 | build | Next in the queue: community-playground-file (4), a free Community file the owner publishes (~10 min)
-
+- 2026-10-02 17:35 | build | Built variables-toolkit community-playground-file (4): the free "Variables Playground" Community file, ready to publish
+- 2026-10-02 17:35 | build | Plugin dev command "Build Community playground file" builds Cover, Start here and three exercise pages in seconds
+- 2026-10-02 17:35 | build | Content is data with 10 tests: Before card matches the tokens, Light/Dark styles pair, clean-up page names the bait
+- 2026-10-02 17:35 | build | Listing copy, tags and category in PLAYGROUND.md; every page links the plugin listing and the comparison page
+- 2026-10-02 17:35 | build | Owner: publish the file (~10 min, £0, action 017) and reply with the URL; views then join the metrics job
+- 2026-10-02 17:35 | build | Queue: playground-file-views (3) blocked on that URL; next buildable is free-unused-variables-finder (4)

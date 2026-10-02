@@ -4,12 +4,7 @@
  * variables, one that doesn't, a hidden layer, a component + instance, and hygiene bait.
  * Development-only: the "demo" menu command is removed before publishing.
  */
-const rgb = (hex: string): RGB => ({
-  r: parseInt(hex.slice(1, 3), 16) / 255,
-  g: parseInt(hex.slice(3, 5), 16) / 255,
-  b: parseInt(hex.slice(5, 7), 16) / 255,
-});
-const solid = (hex: string): SolidPaint => ({ type: 'SOLID', color: rgb(hex) });
+import { rgb, solid } from './paint.js';
 
 export async function createDemoPage(): Promise<string> {
   const page = figma.createPage();

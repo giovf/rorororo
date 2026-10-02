@@ -23,6 +23,10 @@
       "command": "demo"
     },
     {
+      "name": "Build Community playground file (testing only)",
+      "command": "playground"
+    },
+    {
       "name": "Simulate PAID (testing only)",
       "command": "dev-paid"
     },

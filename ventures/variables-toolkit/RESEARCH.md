@@ -342,3 +342,18 @@ against `core/convert.ts` (on by default). Linked from the landing card and the 
 Measurement: Search Console impressions and clicks for the page, read at the day-30 review (2026-10-21)
 and the proof date (2026-10-31: ≥ 20 impressions, ≥ 1 click; Daily check views off 2).
 
+### 2026-10-02 (build, 17:00) — `community-playground-file` built, waits on one owner click
+The second lever off the search box (§9, decision): a free Community *file* that needs the plugin to
+be useful. Rationale restated with the day-10 numbers: every 2026 entrant with users is free; files
+publish instantly with no review and are duplicated and surfaced far more than paid plugins; a
+practice file reaches the designers who have the job, at the moment they have it. Built as data plus
+a renderer rather than a hand-made file: `src/core/playground.ts` holds the tokens, styles, sample
+card, page copy and cover; `src/figma/playground.ts` builds the five pages in Figma from the dev
+build's new menu command "Build Community playground file"; ten unit tests keep the copy honest
+(the Before card's values match the tokens bar the deliberate magenta; the Light/Dark styles pair
+through the converter's own `pairModes`; the clean-up page names exactly the three unused tokens and
+the one duplicate; free tier, $12 and the refund are stated on the start page). Publishing is the
+only step a sandbox cannot do — ALERTS 2026-10-02 owner line, action 017, ~10 minutes. Listing copy,
+tags and category in `PLAYGROUND.md`. Measurement: listing `view_count` on the Daily check row (≥ 20
+within 14 days of the file going live); the file's own views join `store-metrics.ts` once its URL is
+known (queue item `playground-file-views`, blocked on the URL).
