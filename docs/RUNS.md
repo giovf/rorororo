@@ -372,3 +372,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-01 17:20 | build | Four buyer queries listed in STORE.md; each Daily check row gets `rank: <query> <position>/<hits>` from 2026-10-02
 - 2026-10-01 17:20 | build | Parser matches the plugin id, says >100 off the first page, absent or unread honestly; 8 new tests, day-10 bodies replay exactly
 - 2026-10-01 17:20 | build | Day-30 review (10-21) reads the rank series from RESEARCH.md instead of a relay round; next item is the Google-facing page
+- 2026-10-02 09:35 | build | Built variables-toolkit figma-styles-to-variables-page (5): apps.gankdat.com/figma-styles-to-variables.html is live on the next deploy
+- 2026-10-02 09:35 | build | Nine-row honest table vs S&V Organizer ($15, hangs), Styles to Variables (free, colour-only) and Variables Pro; $12 once and refunds stated
+- 2026-10-02 09:35 | build | Every rival cell traces to the 2026-09-18 comment harvest or a listing fact; mode pairing verified on by default before claiming it
+- 2026-10-02 09:35 | build | Linked from the landing card and LISTING.md (rides the next republish, no owner ask); sitemap lists it; Search Console measures it
+- 2026-10-02 09:35 | build | Next in the queue: community-playground-file (4), a free Community file the owner publishes (~10 min)
+

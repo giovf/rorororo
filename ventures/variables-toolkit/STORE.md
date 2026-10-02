@@ -20,3 +20,6 @@
   `https://www.figma.com/api/search/resources?query=Variables%20Toolkit&resource_type=plugin&sort=relevancy`;
   comments at `https://www.figma.com/api/resources/<uuid>/comments?page_size=50`).
   The 07:00 metrics routine (Gmail/web connector) or an interactive session fills it in.
+- **Comparison page (2026-10-02, build):** https://apps.gankdat.com/figma-styles-to-variables.html — the Google-facing page for
+  "figma styles to variables" / "figma unused variables"; linked from the landing index and `LISTING.md` (the live description picks
+  it up on the next republish). `sitemap.xml` lists it. Proof: ≥ 20 Search Console impressions and ≥ 1 click-through by 2026-10-31.

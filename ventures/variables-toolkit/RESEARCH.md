@@ -329,3 +329,16 @@ bodies replayed through it give exactly the table above (75/1234, 13/163, 1/48, 
 scored items in `docs/pipeline/queues/variables-toolkit.json`. Kill date unchanged: 2026-12-20
 with zero sales and zero organic signal (STRATEGY §7).
 
+### 2026-10-02 (build) — `figma-styles-to-variables-page` built
+`https://apps.gankdat.com/figma-styles-to-variables.html` is the Google-facing page for "figma styles to
+variables" / "figma unused variables" / "link variables figma": the first lever off the Figma search box
+(§9, decision). Nine-row table against Styles & Variables Organizer ($15, ~140k users, >2,000 purchases),
+Styles to Variables (free, colour-only) and Variables Pro (free, swap/import/export); every rival cell is
+a §5 comment theme or a listing fact, "not shown on the listing" where unverified; the four mode-pairing,
+subset, toast and text-style asks from the free converter's thread are each answered by a shipped feature.
+$12 once stated, refund policy linked, two install buttons to the listing, mode-pairing claim checked
+against `core/convert.ts` (on by default). Linked from the landing card and the listing's Support block
+(`LISTING.md`; the live copy picks it up on the next republish — not worth an owner republish on its own).
+Measurement: Search Console impressions and clicks for the page, read at the day-30 review (2026-10-21)
+and the proof date (2026-10-31: ≥ 20 impressions, ≥ 1 click; Daily check views off 2).
+

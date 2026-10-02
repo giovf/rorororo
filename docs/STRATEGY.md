@@ -465,3 +465,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-01 build: built variables-toolkit `figma-search-rank-in-ci` (5): the 06:45 `store metrics` runner now asks Figma's search API for the
   four buyer queries STORE.md lists and writes `rank: <query> <position>/<hits>` on every Daily check row, so the day-30 review (2026-10-21)
   reads a series, not another relay snapshot; two relay rounds were spent on this by hand. Replaying the day-10 bodies gives the §9 table exactly.
+
+- 2026-10-02 build: built variables-toolkit `figma-styles-to-variables-page` (5): the Google-facing comparison page, the first of the §9
+  "off the search box" levers, because Figma ranks crowded queries by user count and Search Console already indexes apps.gankdat.com.
+  Rival cells come only from the 2026-09-18 comment harvest and listings; the listing link rides the next republish rather than costing
+  an owner action. Proof is Search Console by 2026-10-31; the day-30 review (10-21) reads it with the rank series.
+

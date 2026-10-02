@@ -1,5 +1,8 @@
 # Community listing copy — Variables Toolkit (v2, day-7 relisting 2026-09-28)
 
+2026-10-02: the Support & refunds block gained the comparison-page link; it rides the next republish
+(no owner ask for a link alone — the live v2 copy stays until a version needs republishing).
+
 Why v2: after 7 days live the listing had 2 views and 0 installs. Figma's search API showed the
 cause (`RESEARCH.md` §8): the name collided with a 2,784-user plugin called "Variables Toolkit",
 and Figma ranks on the *name* first — we were 79th for "styles to variables" and absent for
@@ -42,6 +45,7 @@ Runs entirely inside your file. No network access, no accounts, nothing leaves F
 
 Support & refunds
 info@gankdat.com · 14-day refund, no questions asked · https://apps.gankdat.com/terms.html
+Compared with Styles & Variables Organizer and the free converters: https://apps.gankdat.com/figma-styles-to-variables.html
 
 **Category:** Design tools (Figma files it under *File organization*, the same category as
 Styles & Variables Organizer, the #1 result — keep it) · **Editor:** Figma Design only
