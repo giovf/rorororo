@@ -1,0 +1,13 @@
+GET https://chromewebstore.google.com/detail/pciignkojfpgmfcmjchmpdhonpjkfepc?hl=en
+GET https://chromewebstore.google.com/detail/pciignkojfpgmfcmjchmpdhonpjkfepc/reviews?hl=en
+GET https://addons.mozilla.org/api/v5/addons/addon/highlight-keep-web-highlighter/
+GET https://chromewebstore.google.com/detail/dckbdaplggmhimpbekhdbaampglfhdgf?hl=en
+GET https://chromewebstore.google.com/detail/dckbdaplggmhimpbekhdbaampglfhdgf/reviews?hl=en
+GET https://addons.mozilla.org/api/v5/addons/addon/readfocus-focus-reading-dyslex/
+GET https://www.figma.com/api/plugins/1682711656065145288/versions
+GET https://fig-stats.com/plugins/1682711656065145288
+GET https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717/comments?page_size=50
+GET https://www.figma.com/api/search/resources?query=styles%20to%20variables&resource_type=plugin&sort=relevancy
+GET https://www.figma.com/api/search/resources?query=link%20to%20variables&resource_type=plugin&sort=relevancy
+GET https://www.figma.com/api/search/resources?query=unused%20variables&resource_type=plugin&sort=relevancy
+GET https://www.figma.com/api/search/resources?query=variables%20toolkit&resource_type=plugin&sort=relevancy
