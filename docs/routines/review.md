@@ -5,7 +5,7 @@ Written 2026-09-30 from `docs/SCHEDULERS.md`, `docs/STRATEGY.md` §4/§7 and the
 (`docs/reviews/2026-W39.md`). Before the swap the interactive session diffs this text against the stored
 prompt and carries over any sentence this file lacks.
 
-Changes: none since written.
+Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `runs-line-length-check`).
 
 ---
 
@@ -26,6 +26,6 @@ Then apply: a `kill` sets the venture's queue `finished` with `finished_reason` 
 
 Do not create ventures yourself — that is the Wednesday exchange routine's job.
 
-RUN LOG (every line reaches the owner's phone as a bullet): append to `docs/RUNS.md` (newest last) one line for the scorecard headline, one per venture verdict, one per decision applied, one per gap queued, and one if the owner is needed — each `- YYYY-MM-DD HH:MM | review | <one plain sentence, ≤ 120 chars>`.
+RUN LOG (every line reaches the owner's phone as a bullet): append to `docs/RUNS.md` (newest last) one line for the scorecard headline, one per venture verdict, one per decision applied, one per gap queued, and one if the owner is needed — each `- YYYY-MM-DD HH:MM | review | <one plain sentence, ≤ 120 chars>`. `npm run runs` (part of `npm run check`) fails the push if any new `docs/RUNS.md` line's text exceeds 120 chars — run it before you commit.
 
 ONE COMMIT: `review: <ISO year>-W<ISO week> strategy` ending with `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`; on rejection `git pull --no-rebase` and push again. Finish by printing the Scorecard and the next three moves.

@@ -476,3 +476,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   plugins and publish with no review. Built as a plugin dev command plus tested content data rather than a hand-made file, so the
   owner's part is ten minutes (run, set thumbnail, publish — ALERTS owner line, action 017). Proof: listing views ≥ 20 within 14
   days of the file going live; the file's own views join the metrics job once its URL is known (`playground-file-views`, blocked).
+
+- 2026-10-03 build (09:00): built foundry `runs-line-length-check` (7): `scripts/runs-check.ts` runs inside `npm run check` and fails
+  any push whose `docs/RUNS.md` lines dated 2026-10-03 or later carry text over 120 chars after the `| <routine> | ` prefix
+  (malformed bullets fail too). A date cutoff rather than the push's diff range because the check workflow clones at depth 1 and a
+  cutoff gives the same verdict locally and in CI. The retro's 88% figure counted whole lines; by the header's own text measure
+  24 of 375 lines broke the cap, all grandfathered. Proof: zero over-cap lines added in the next 30 days (the retro reads it).

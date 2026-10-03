@@ -5,7 +5,8 @@ low-complexity items only). Written 2026-09-30 from `docs/SCHEDULERS.md`, `docs/
 runs and the slot-check sentence queued for it (foundry `fallback-slot-race`). Before the swap the interactive
 session diffs this text against the stored prompt and carries over any sentence this file lacks.
 
-Changes: 2026-09-30 — the trace check is `npm run slot -- check build` (start marker, `docs/ops/SLOTS.md`).
+Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `runs-line-length-check`).
+2026-09-30 — the trace check is `npm run slot -- check build` (start marker, `docs/ops/SLOTS.md`).
 
 ---
 
@@ -27,6 +28,6 @@ Facts you must not misread: accounts ending in @gankdat.com, @1402celsius.com, @
 
 Never take a larger item, never start a new dataset or actor, never research a venture from scratch — those wait for Fable.
 
-RUN LOG (every line reaches the owner's phone): append to `docs/RUNS.md` (newest last) one line saying why this run filled the slot, then ONE LINE PER PIECE OF WORK DONE, each `- YYYY-MM-DD HH:MM | fallback | <one plain sentence, ≤ 120 chars>`. Append one line to `docs/STRATEGY.md` §8: `- YYYY-MM-DD fallback: <what and why>`.
+RUN LOG (every line reaches the owner's phone): append to `docs/RUNS.md` (newest last) one line saying why this run filled the slot, then ONE LINE PER PIECE OF WORK DONE, each `- YYYY-MM-DD HH:MM | fallback | <one plain sentence, ≤ 120 chars>`. Append one line to `docs/STRATEGY.md` §8: `- YYYY-MM-DD fallback: <what and why>`. `npm run runs` (part of `npm run check`) fails the push if any new `docs/RUNS.md` line's text exceeds 120 chars — run it before you commit.
 
 Finish with a summary: whether the slot was already taken, the item built, anything blocked.

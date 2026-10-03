@@ -6,7 +6,7 @@ prompt as run on 2026-09-30 (the routine reading it wrote this file). Once the s
 bootstrap in `README.md`, this text is what the routine runs; until then it is a mirror. Listed in
 `docs/SCHEDULERS.md`.
 
-Changes: none since the copy.
+Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `runs-line-length-check`).
 
 ---
 
@@ -34,6 +34,6 @@ How gankdat datasets are built (the common case): `ventures/gankdat/src/sources/
 
 Facts you must not misread: accounts ending in @gankdat.com, @1402celsius.com, @example.com or giova1506@ are internal/test, never customers.
 
-RUN LOG (every line reaches the owner's phone as a bullet): in each item's commit, append to `docs/RUNS.md` (newest last) ONE LINE PER PIECE OF WORK DONE — the source written, its tests, the landing card, the actor, the version bump, an item blocked/dropped and why, an owner note answered — each `- YYYY-MM-DD HH:MM | burn-down | <one plain sentence, ≤ 120 chars>`. Append one line to `docs/STRATEGY.md` §8 per item: `- YYYY-MM-DD burn-down: <what and why>`.
+RUN LOG (every line reaches the owner's phone as a bullet): in each item's commit, append to `docs/RUNS.md` (newest last) ONE LINE PER PIECE OF WORK DONE — the source written, its tests, the landing card, the actor, the version bump, an item blocked/dropped and why, an owner note answered — each `- YYYY-MM-DD HH:MM | burn-down | <one plain sentence, ≤ 120 chars>`. Append one line to `docs/STRATEGY.md` §8 per item: `- YYYY-MM-DD burn-down: <what and why>`. `npm run runs` (part of `npm run check`) fails the push if any new `docs/RUNS.md` line's text exceeds 120 chars — run it before you commit.
 
 Finish with a summary: items completed this run, items blocked, whether you stopped for time, nothing left, or the limit.

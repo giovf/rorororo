@@ -5,7 +5,7 @@ Cloud routine `trig_01CaSyBqwyKVL6NiPqPzhM8L`, Wednesdays 08:00 UTC, Fable. Writ
 has produced (`docs/exchange/2026-W39.md`, `2026-W40.md`). Before the swap the interactive session diffs
 this text against the stored prompt and carries over any sentence this file lacks.
 
-Changes: none since written.
+Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `runs-line-length-check`).
 
 ---
 
@@ -25,6 +25,6 @@ Then apply the decision: for a new venture create `ventures/<slug>/` with `ventu
 
 Also consider SELF-EXPANSION candidates (owner 2026-09-24): capabilities that make the operation faster or unblock several queued items at once — relays, watchdogs, retros, distribution automation — scored on how many items they unblock; they go to `docs/pipeline/queues/foundry.json`. Weigh heavily whether buyers can actually find and buy the result within a week: a candidate that opens a shelf outranks one that adds supply. Constraints that disqualify outright: needs paid ads or marketing, needs human hours per sale, scraping sites that forbid it, restricted OAuth scopes, ad injection, crypto trading, app stores with tester or fee hurdles, anything the owner's identity or KYC must front beyond a one-off account, launch cost over £10, or recurring cost pushing the portfolio above £10/month without revenue ≥ 3× that. Run `npm run pipeline` and `npm run portfolio` to confirm everything validates. Anything needing the owner (an account on a new channel) goes as `- YYYY-MM-DD owner: <what and where>` in `docs/ALERTS.md`, batched into one line.
 
-RUN LOG (every line reaches the owner's phone as a bullet): append to `docs/RUNS.md` (newest last) one line for the winner and its score, one per item queued, one for what was parked, one for what was declined, one naming the exchange file, and one if the owner will be needed later — each `- YYYY-MM-DD HH:MM | exchange | <one plain sentence, ≤ 120 chars>`.
+RUN LOG (every line reaches the owner's phone as a bullet): append to `docs/RUNS.md` (newest last) one line for the winner and its score, one per item queued, one for what was parked, one for what was declined, one naming the exchange file, and one if the owner will be needed later — each `- YYYY-MM-DD HH:MM | exchange | <one plain sentence, ≤ 120 chars>`. `npm run runs` (part of `npm run check`) fails the push if any new `docs/RUNS.md` line's text exceeds 120 chars — run it before you commit.
 
 ONE COMMIT: `exchange: <ISO year>-W<ISO week> <winner in a few words> (venture exchange)` ending with `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`; on rejection `git pull --no-rebase` and push again. Finish by printing the Decision section.

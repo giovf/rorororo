@@ -286,8 +286,9 @@
       "effort_days": 0.15,
       "proof": "zero RUNS.md lines over 120 chars added in the next 30 days; npm run check fails locally on a violation",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-03"
+      "status": "done",
+      "added": "2026-10-03",
+      "done_at": "2026-10-03"
     },
     {
       "id": "refresh-errors-rolling-window",

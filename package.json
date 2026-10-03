@@ -20,7 +20,7 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run typecheck && npm run portfolio && npm run ledger && npm run pipeline && npm run lint && npm run format:check && npm run test && npm run check -w @foundry/gankdat",
+    "check": "npm run typecheck && npm run portfolio && npm run ledger && npm run pipeline && npm run runs && npm run lint && npm run format:check && npm run test && npm run check -w @foundry/gankdat",
     "portfolio": "node --disable-warning=ExperimentalWarning scripts/portfolio.ts",
     "ledger": "node --disable-warning=ExperimentalWarning scripts/ledger-check.ts",
     "licensing:keygen": "node --disable-warning=ExperimentalWarning scripts/licensing-keygen.ts",
@@ -32,7 +32,8 @@
     "slot": "node --disable-warning=ExperimentalWarning scripts/slot.ts",
     "task": "node --disable-warning=ExperimentalWarning scripts/taskmaster-add.ts",
     "refresh-errors": "node --disable-warning=ExperimentalWarning scripts/refresh-errors-to-queue.ts",
-    "handoffs": "node --disable-warning=ExperimentalWarning scripts/handoffs.ts"
+    "handoffs": "node --disable-warning=ExperimentalWarning scripts/handoffs.ts",
+    "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

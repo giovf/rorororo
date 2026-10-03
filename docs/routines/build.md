@@ -7,7 +7,8 @@ sandbox can read the stored prompt, so before the swap the interactive session d
 https://claude.ai/code/routines and carries over any sentence the stored prompt has that this file lacks.
 Listed in `docs/SCHEDULERS.md`; fallback at :20 in `fallback.md`.
 
-Changes: 2026-09-30 — STEP -1 slot marker (foundry `fallback-slot-race`); Taskmaster rows via
+Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `runs-line-length-check`).
+2026-09-30 — STEP -1 slot marker (foundry `fallback-slot-race`); Taskmaster rows via
 `npm run task -- add` (foundry `taskmaster-offline-add`).
 
 ---
@@ -37,6 +38,6 @@ Facts you must not misread: accounts ending in @gankdat.com, @1402celsius.com, @
 
 What happens after you push (so you do NOT need handoffs for it): CI runs the gates, applies D1 migrations, deploys the Worker, pushes changed Apify actors and prices/publishes them (at most five a day), and publishes `server.json` to the MCP registry when its version is newer; new datasets load at the next morning's cron waves, and the 06:30 metrics job reports refresh errors and queues any source that errors two days running. Only Stripe/payments, DNS, account creation, owner identity or a store upload need a person: `- YYYY-MM-DD owner: <text>` in `docs/ALERTS.md` (sent to the owner's phone; use sparingly) or `- YYYY-MM-DD handoff: <text>` for the interactive session. If you did nothing (STEP 0 heal, or nothing buildable), still push one run-log line saying why.
 
-RUN LOG (every line reaches the owner's phone as a bullet): in the commit, append to `docs/RUNS.md` (newest last) ONE LINE PER PIECE OF WORK DONE — the source written, its tests, the landing card, the actor, the version bump, an item blocked/dropped and why, an owner note answered, anything the owner must do — each `- YYYY-MM-DD HH:MM | build | <one plain sentence, ≤ 120 chars>`. Append one line to `docs/STRATEGY.md` §8: `- YYYY-MM-DD build: <what and why>`.
+RUN LOG (every line reaches the owner's phone as a bullet): in the commit, append to `docs/RUNS.md` (newest last) ONE LINE PER PIECE OF WORK DONE — the source written, its tests, the landing card, the actor, the version bump, an item blocked/dropped and why, an owner note answered, anything the owner must do — each `- YYYY-MM-DD HH:MM | build | <one plain sentence, ≤ 120 chars>`. Append one line to `docs/STRATEGY.md` §8: `- YYYY-MM-DD build: <what and why>`. `npm run runs` (part of `npm run check`) fails the push if any new `docs/RUNS.md` line's text exceeds 120 chars — run it before you commit.
 
 Finish with a summary: the item built or researched, anything blocked, anything for the owner.

@@ -6,7 +6,8 @@ Cloud routine `trig_015Uvn63XZUVqx1TAiWZrZL6`, Saturdays 07:59 UTC, created 2026
 change; the live prompt is edited from the interactive session (RemoteTrigger API) and this file in the same
 change. Listed in `docs/SCHEDULERS.md`.
 
-Changes: 2026-10-01 — step 3 gained the `npm run handoffs` sentence (foundry `handoff-ledger`).
+Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `runs-line-length-check`).
+2026-10-01 — step 3 gained the `npm run handoffs` sentence (foundry `handoff-ledger`).
 
 Since 2026-09-30 (foundry `prompts-from-repo`) this file is the prompt of record: once the stored prompt is the
 bootstrap in `README.md`, the text below the `---` is what the routine runs and a change is a commit here; the
@@ -33,6 +34,6 @@ Then apply: add each proposal scoring 4 or more to `docs/pipeline/queues/foundry
 
 Rules for proposals: concrete and general (removes a class of failure, not one instance); never more runs on Fable — the owner's weekly Fable allowance is the scarce resource (SCHEDULERS.md, Usage limit) — propose moving read-and-summarise work to Sonnet instead; never anything that needs the owner's identity, a new account or money (if the only fix is an owner action, say so in the retro and stop there — the build routine files owner actions, not you); never propose skipping gates or pushing partial work. If a proposal is already covered by a `blocked` foundry item, do not re-add it: say in the retro what it is blocked on and for how long.
 
-RUN LOG (every line reaches the owner's phone as a bullet): before committing, append to `docs/RUNS.md` (newest last) ONE LINE PER FINDING — one for slot reliability (n of m slots traced, which missed), one per repeat blocker cause, one per defect, one per queue item added or extended, and one if something needs the owner. Each line `- YYYY-MM-DD HH:MM | retro | <one plain sentence, ≤ 120 chars>`. A week with nothing wrong still gets one line saying so.
+RUN LOG (every line reaches the owner's phone as a bullet): before committing, append to `docs/RUNS.md` (newest last) ONE LINE PER FINDING — one for slot reliability (n of m slots traced, which missed), one per repeat blocker cause, one per defect, one per queue item added or extended, and one if something needs the owner. Each line `- YYYY-MM-DD HH:MM | retro | <one plain sentence, ≤ 120 chars>`. A week with nothing wrong still gets one line saying so. `npm run runs` (part of `npm run check`) fails the push if any new `docs/RUNS.md` line's text exceeds 120 chars — run it before you commit.
 
 Then `git add docs/retros docs/pipeline/queues/foundry.json docs/RUNS.md && git commit -m 'retro: <ISO year>-W<ISO week> ops' && git push origin main` (on rejection: `git pull --rebase` once, push again). Finish by printing the Proposals section.

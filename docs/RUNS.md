@@ -6,6 +6,8 @@ as a bullet by the `notify owner` CI job. Format:
 writes five lines (dataset built, tests added, actor pushed, doc updated, item blocked …).
 Routines: build, exchange, review, report; interactive sessions too; `watchdog` lines come from
 the `run watchdog` CI job (once active) when a routine slot left no trace within 2 h.
+Since 2026-10-03 `npm run runs` (part of `npm run check`) fails a push whose new lines carry text
+over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathered.
 
 - 2026-09-22 12:05 | interactive | Run log wired: build, exchange, review and report now post a one-line overview here after each run
 - 2026-09-22 15:10 | interactive | Run log now one bullet per piece of work, not one overview line (owner correction)
@@ -391,3 +393,9 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-03 08:06 | retro | Defect: a $15 Cloudflare alert was logged with no owner line; queued billing-alert-to-owner
 - 2026-10-03 08:06 | retro | Defect: this run's shallow clone hid 6 of 8 days of git log; queued retro-clone-depth (6)
 - 2026-10-03 08:06 | retro | Queued 4 foundry items this week (scores 6-7); none needs the owner
+
+- 2026-10-03 09:25 | build | Built foundry runs-line-length-check (7): npm run runs fails a push whose new RUNS.md text tops 120 chars
+- 2026-10-03 09:25 | build | scripts/runs-check.ts + 9 tests; wired into npm run check after the pipeline step; older lines grandfathered
+- 2026-10-03 09:25 | build | The retro's 88% counted whole lines; the header caps the text after the prefix, which 24 of 375 lines broke
+- 2026-10-03 09:25 | build | Seven routine prompts (build, burn-down, exchange, fallback, retro, review, report) now say to run it first
+- 2026-10-03 09:25 | build | Queue: next buildable foundry item is refresh-errors-rolling-window (7); nothing needs the owner
