@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-01",
+  "updated": "2026-10-03",
   "items": [
     {
       "id": "fetch-relay",
@@ -278,6 +278,46 @@
       "status": "done",
       "added": "2026-10-01",
       "done_at": "2026-10-01"
+    },
+    {
+      "id": "runs-line-length-check",
+      "title": "npm run check fails a push that adds a docs/RUNS.md line over the file's own 120-char cap",
+      "why": "Ops retro 2026-W40: 269 of 304 RUNS.md lines written 2026-09-26..2026-10-02 (88%) exceed the header's own `<= 120 chars` rule (several reach 145-149 chars); the shape (`- date time | tag | text`) is always right, only the length is wrong, and nothing has ever machine-checked it since the file was created 2026-09-22. Every line over the cap still reaches the owner's phone as a Telegram bullet, working against the point of the cap. Fix: a script (shape of scripts/handoffs.ts) reads the docs/RUNS.md lines added in the push's diff range and fails if any exceeds 120 chars after the `| <routine> | ` prefix; wire it into npm run check; one sentence in each docs/routines/<name>.md noting the check exists.",
+      "effort_days": 0.15,
+      "proof": "zero RUNS.md lines over 120 chars added in the next 30 days; npm run check fails locally on a violation",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-03"
+    },
+    {
+      "id": "refresh-errors-rolling-window",
+      "title": "refresh-errors-to-queue compares a slug's last 4 Daily-numbers rows, not just yesterday and today, so an every-other-day flake still gets queued",
+      "why": "Ops retro 2026-W40: uk-insolvency errored 09-28/29/30 (fixed that evening by gankdat refresh-uk-insolvency: 4x retry, halved page size), ran clean 10-01, then errored again 10-02 with the same truncation symptom the fix was built to retry past. refresh-errors-to-queue.ts only files/extends an item when a slug errors on two *consecutive* days, so an every-other-day source can never be queued again even after needing a dedicated fix once already. Fix: compare today's error slugs against the last 4 rows instead of just yesterday's, file/extend when a slug appears in >= 2 of them; keep the 14-day done/dropped cool-off and the idempotent id.",
+      "effort_days": 0.1,
+      "proof": "an every-other-day flaky source gets queued within 4 days instead of never; uk-insolvency gets re-queued on its next error under the new rule",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-03"
+    },
+    {
+      "id": "billing-alert-to-owner",
+      "title": "Inbox triage escalates a paid-service billing/usage alert above its LEDGER.md baseline, instead of logging it as plain noise",
+      "why": "Ops retro 2026-W40: the 2026-10-01 17:55 Cloudflare metered-usage alert ($15.00, 20 of 30 days into the billing period, against the ~$5/mo / 3.70 baseline docs/LEDGER.md carries) was triaged as plain `logged` -- no owner: line, no LEDGER.md note -- because docs/ops/SELF-CAUSED.md's Cloudflare row only names deploy-confirmation mail, not cost alerts, so the triage prompt had no branch for it. The one file meant to make a budget overrun visible before the GBP100 cap is at risk never got a row. Fix: one sentence in docs/routines/inbox-triage.md -- a billing/usage alert naming a figure above its docs/LEDGER.md line is never `logged` alone: add an owner: line naming the service, the figure and the baseline it exceeds, and leave an unconfirmed note on that LEDGER.md row for the next reconciliation.",
+      "effort_days": 0.05,
+      "proof": "the next billing alert above its LEDGER.md baseline gets an owner: line and a LEDGER.md note the same day",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-03"
+    },
+    {
+      "id": "retro-clone-depth",
+      "title": "Ops retro unshallows its clone before trusting git log --since, so the 7-8 day window is never silently cut short",
+      "why": "Ops retro 2026-W40 (this run): the sandbox clone was shallow at ~54 commits (git rev-parse --is-shallow-repository true), reaching back only to 2026-10-01T00:35 -- about 2 of the 8 days this routine must measure -- until git fetch --unshallow origin was run by hand. docs/routines/ops-retro.md says nothing about checking this, and a short git log does not error, it just under-counts. At this repo's pace (~50-60 commits/week) any default shallow-clone depth will keep cutting the window short for exactly this routine, every week, silently. Fix: add one step right after checkout: if `git log --since='8 days ago' --format=%cI | tail -1` is less than 7 days old, run `git fetch --unshallow origin` (or `--deepen=200` if unshallow fails) before measuring anything.",
+      "effort_days": 0.05,
+      "proof": "the next retro's git log genuinely spans the full 7-8 day window (oldest line >= 7 days old) with no manual unshallow",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-03"
     }
   ]
 }

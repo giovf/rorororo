@@ -383,3 +383,11 @@ the `run watchdog` CI job (once active) when a routine slot left no trace within
 - 2026-10-02 17:35 | build | Listing copy, tags and category in PLAYGROUND.md; every page links the plugin listing and the comparison page
 - 2026-10-02 17:35 | build | Owner: publish the file (~10 min, £0, action 017) and reply with the URL; views then join the metrics job
 - 2026-10-02 17:35 | build | Queue: playground-file-views (3) blocked on that URL; next buildable is free-unused-variables-finder (4)
+
+- 2026-10-03 08:06 | retro | First run: 25/25 watched slots traced, zero watchdog misses, slot-race fix held all week
+- 2026-10-03 08:06 | retro | Repeat blocker: attended-session/owner-login asks (4x), already covered by a blocked item
+- 2026-10-03 08:06 | retro | Defect: 88% of RUNS.md lines exceed the 120-char cap; queued runs-line-length-check (7)
+- 2026-10-03 08:06 | retro | Defect: refresh-errors-to-queue misses every-other-day flakes; queued a rolling-window fix
+- 2026-10-03 08:06 | retro | Defect: a $15 Cloudflare alert was logged with no owner line; queued billing-alert-to-owner
+- 2026-10-03 08:06 | retro | Defect: this run's shallow clone hid 6 of 8 days of git log; queued retro-clone-depth (6)
+- 2026-10-03 08:06 | retro | Queued 4 foundry items this week (scores 6-7); none needs the owner
