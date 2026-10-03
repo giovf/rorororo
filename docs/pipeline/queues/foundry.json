@@ -293,12 +293,13 @@
     {
       "id": "refresh-errors-rolling-window",
       "title": "refresh-errors-to-queue compares a slug's last 4 Daily-numbers rows, not just yesterday and today, so an every-other-day flake still gets queued",
-      "why": "Ops retro 2026-W40: uk-insolvency errored 09-28/29/30 (fixed that evening by gankdat refresh-uk-insolvency: 4x retry, halved page size), ran clean 10-01, then errored again 10-02 with the same truncation symptom the fix was built to retry past. refresh-errors-to-queue.ts only files/extends an item when a slug errors on two *consecutive* days, so an every-other-day source can never be queued again even after needing a dedicated fix once already. Fix: compare today's error slugs against the last 4 rows instead of just yesterday's, file/extend when a slug appears in >= 2 of them; keep the 14-day done/dropped cool-off and the idempotent id.",
+      "why": "Ops retro 2026-W40: uk-insolvency errored 09-28/29/30 (fixed that evening by gankdat refresh-uk-insolvency: 4x retry, halved page size), ran clean 10-01, then errored again 10-02 with the same truncation symptom the fix was built to retry past. refresh-errors-to-queue.ts only files/extends an item when a slug errors on two *consecutive* days, so an every-other-day source can never be queued again even after needing a dedicated fix once already. Fix: compare today's error slugs against the last 4 rows instead of just yesterday's, file/extend when a slug appears in >= 2 of them; keep the 14-day done/dropped cool-off and the idempotent id. Built 2026-10-03 build: lastRows() takes the last four Daily numbers rows (today's must exist), a slug is filed when it appears in >= 2 of them; a done item counts only rows dated after its done_at and is re-filed once two of them list the slug (the flat 14-day cool-off had shielded uk-insolvency, errored 10-02 and 10-03 after its 09-30 fix); dropped items keep the 14-day cool-off. 11 tests. Run on today's rows it filed gankdat refresh-uk-insolvency-2026-10-03 in the same commit.",
       "effort_days": 0.1,
       "proof": "an every-other-day flaky source gets queued within 4 days instead of never; uk-insolvency gets re-queued on its next error under the new rule",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-03"
+      "status": "done",
+      "added": "2026-10-03",
+      "done_at": "2026-10-03"
     },
     {
       "id": "billing-alert-to-owner",

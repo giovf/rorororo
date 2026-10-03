@@ -482,3 +482,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   (malformed bullets fail too). A date cutoff rather than the push's diff range because the check workflow clones at depth 1 and a
   cutoff gives the same verdict locally and in CI. The retro's 88% figure counted whole lines; by the header's own text measure
   24 of 375 lines broke the cap, all grandfathered. Proof: zero over-cap lines added in the next 30 days (the retro reads it).
+
+- 2026-10-03 build (17:00): built foundry `refresh-errors-rolling-window` (7): `scripts/refresh-errors-to-queue.ts` now judges a
+  source over its last four Daily numbers rows and files it when two of them (today's included) list the slug, instead of today and
+  yesterday only — the retro's every-other-day flake. The flat 14-day cool-off on done items went too: it was the actual blocker, since
+  uk-insolvency (fixed 09-30) errored 10-02 and 10-03 and the morning job still skipped it; a done item now counts only rows dated
+  after its fix and is re-filed once two of them fail. Dropped items keep the cool-off (a drop is a decision). Run on today's rows the
+  new rule queued gankdat `refresh-uk-insolvency-2026-10-03` (6). Proof: an every-other-day source is queued within four days.

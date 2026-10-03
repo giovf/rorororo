@@ -399,3 +399,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-03 09:25 | build | The retro's 88% counted whole lines; the header caps the text after the prefix, which 24 of 375 lines broke
 - 2026-10-03 09:25 | build | Seven routine prompts (build, burn-down, exchange, fallback, retro, review, report) now say to run it first
 - 2026-10-03 09:25 | build | Queue: next buildable foundry item is refresh-errors-rolling-window (7); nothing needs the owner
+- 2026-10-03 17:25 | build | Built foundry refresh-errors-rolling-window (7): a source erroring in 2 of its last 4 rows is queued
+- 2026-10-03 17:25 | build | A done fix is re-filed once two post-fix rows list the slug; dropped items keep the 14-day cool-off
+- 2026-10-03 17:25 | build | Run on today's rows it queued gankdat refresh-uk-insolvency-2026-10-03 (errored 10-02 and 10-03)
+- 2026-10-03 17:25 | build | 11 tests; SCHEDULERS row and the metrics workflow step wording updated (docs/ci drop for the installer)
+- 2026-10-03 17:25 | build | Queue: next buildable is foundry billing-alert-to-owner (6) or the new insolvency fix (6); no owner action

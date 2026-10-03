@@ -1,12 +1,20 @@
-// A dataset that errors on refresh two days running becomes a scored gankdat queue item.
+// A dataset that errors on refresh in two of its last four Daily numbers rows becomes a scored
+// gankdat queue item.
 //
 // Why: uk-insolvency sat in the Daily numbers `refresh errors` field four days running
 // (2026-09-27..30: a 500, an empty body, a 500, a zero-byte body with a declared content-length)
 // and no queue item existed — a routine only sees the row it happens to read, the 09-29 build
 // fixed the 500 case alone, and the live surface served a stale snapshot meanwhile. The 06:30
-// `gankdat metrics` job already writes the row from CI, so it also compares today's error slugs
-// with yesterday's and files an idempotent `refresh-<slug>` item for every slug present both days;
-// `npm run pipeline next` then offers it to the next build (foundry item refresh-errors-to-queue).
+// `gankdat metrics` job already writes the row from CI, so it also files an idempotent
+// `refresh-<slug>` item for every slug that errored today and in at least one more of the last
+// four rows; `npm run pipeline next` then offers it to the next build (foundry item
+// refresh-errors-to-queue). 2026-10-03 (foundry refresh-errors-rolling-window): the rule was
+// "today and yesterday", which an every-other-day flake never meets (uk-insolvency: fixed 09-30,
+// clean 10-01, the same truncation 10-02 and 10-03), and a done item was shielded by a flat 14-day
+// cool-off whatever happened after its fix. Now the window is the last four rows, and a done item
+// is re-filed as soon as two rows dated after its fix list the slug — a fix proven wrong twice is
+// the evidence, not a reason to wait; only a dropped item keeps the 14-day cool-off, because a
+// drop is a decision rather than a fix that may not have worked.
 //
 // Run: npm run refresh-errors [-- --date=YYYY-MM-DD]   (from the repo root, in the metrics job)
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
@@ -16,8 +24,12 @@ import { fileURLToPath } from 'node:url';
 
 export const RESEARCH_FILE = path.join('ventures', 'gankdat', 'RESEARCH.md');
 export const QUEUE_FILE = path.join('docs', 'pipeline', 'queues', 'gankdat.json');
-/** A done or dropped item younger than this is not re-filed (the fix may still be deploying). */
+/** A dropped item younger than this is not re-filed (a drop is a decision, not a fix). */
 export const COOL_OFF_DAYS = 14;
+/** How many Daily numbers rows (today's included) one slug is judged over. */
+export const WINDOW_ROWS = 4;
+/** Rows in the window that must list the slug (today's always one of them) before it is filed. */
+export const MIN_HITS = 2;
 export const SCORE = 6;
 export const EFFORT_DAYS = 0.1;
 
@@ -53,6 +65,30 @@ export function errorsOn(researchMd: string, date: string): RefreshError[] | und
   const m = row.match(/refresh errors: (.*?)\s*\|\s*$/);
   if (!m?.[1]) return [];
   return splitErrors(m[1]);
+}
+
+export interface ErrorRow {
+  date: string;
+  errors: RefreshError[];
+}
+
+/** Every Daily numbers row's `refresh errors:` field, oldest first (a clean row has `[]`). */
+export function allErrorRows(researchMd: string): ErrorRow[] {
+  const rows: ErrorRow[] = [];
+  for (const line of researchMd.split('\n')) {
+    const m = line.match(/^\| (\d{4}-\d{2}-\d{2}) \| Daily numbers \|/);
+    if (!m?.[1]) continue;
+    const errs = errorsOn(line, m[1]);
+    rows.push({ date: m[1], errors: errs ?? [] });
+  }
+  return rows.sort((a, b) => a.date.localeCompare(b.date));
+}
+
+/** The last `n` rows dated on or before `today`, oldest first; empty unless today's row exists. */
+export function lastRows(researchMd: string, today: string, n = WINDOW_ROWS): ErrorRow[] {
+  const rows = allErrorRows(researchMd).filter((r) => r.date <= today);
+  if (!rows.some((r) => r.date === today)) return [];
+  return rows.slice(-n);
 }
 
 /** `a (msg, with commas), b, c (msg)` → one entry per source; parentheses may nest commas. */
@@ -94,59 +130,81 @@ export interface Outcome {
   skipped: string[];
 }
 
+/** The rows in `window` that list `slug`, oldest first. */
+function hitsFor(window: ErrorRow[], slug: string): { date: string; message: string }[] {
+  const out: { date: string; message: string }[] = [];
+  for (const row of window) {
+    const e = row.errors.find((x) => x.slug === slug);
+    if (e) out.push({ date: row.date, message: e.message || 'no message' });
+  }
+  return out;
+}
+
+const evidenceOf = (h: { date: string; message: string }): string => `${h.date} (${h.message})`;
+
 /**
- * Files or extends a `refresh-<slug>` item for every source that errored today and yesterday.
- * Pure: returns a new queue. An open item (todo/doing/blocked) gains today's evidence once; a
- * done or dropped item younger than COOL_OFF_DAYS is left alone; older ones are re-filed as
+ * Files or extends a `refresh-<slug>` item for every source that errored today and in at least
+ * MIN_HITS of the last WINDOW_ROWS Daily numbers rows (today's included). Pure: returns a new
+ * queue. An open item (todo/doing/blocked) gains today's evidence once. A done item counts only
+ * rows dated after its `done_at` (the day its fix landed) and is re-filed once MIN_HITS of them
+ * list the slug; a dropped item younger than COOL_OFF_DAYS is left alone. A re-filed item is
  * `refresh-<slug>-<date>` so the id stays unique.
  */
-export function fileRepeatErrors(
-  researchMd: string,
-  queue: Queue,
-  today: string,
-  yesterday = previousDay(today),
-): Outcome {
-  const todayErrors = errorsOn(researchMd, today);
-  const prevErrors = errorsOn(researchMd, yesterday);
+export function fileRepeatErrors(researchMd: string, queue: Queue, today: string): Outcome {
+  const window = lastRows(researchMd, today);
   const out: Outcome = { queue, added: [], extended: [], skipped: [] };
-  if (!todayErrors || !prevErrors) return out;
-  const prevBySlug = new Map(prevErrors.map((e) => [e.slug, e.message]));
+  const todayRow = window.find((r) => r.date === today);
+  if (!todayRow) return out;
   const items = queue.items.map((it) => ({ ...it }));
   let changed = false;
-  for (const e of todayErrors) {
-    if (!prevBySlug.has(e.slug)) continue;
+  for (const e of todayRow.errors) {
+    const hits = hitsFor(window, e.slug);
+    if (hits.length < MIN_HITS) continue;
     const baseId = `refresh-${e.slug}`;
-    const evidence = `${today}: ${e.message || 'no message'}`;
+    const sameSlug = (it: QueueItem): boolean => it.id === baseId || it.id.startsWith(`${baseId}-`);
     const open = items.find(
       (it) =>
-        (it.id === baseId || it.id.startsWith(`${baseId}-`)) &&
-        (it.status === 'todo' || it.status === 'doing' || it.status === 'blocked'),
+        sameSlug(it) && (it.status === 'todo' || it.status === 'doing' || it.status === 'blocked'),
     );
+    const todayEvidence = `${today}: ${e.message || 'no message'}`;
     if (open) {
       if (!open.why.includes(`${today}:`)) {
-        open.why = `${open.why} Still failing ${evidence}.`;
+        open.why = `${open.why} Still failing ${todayEvidence}.`;
         changed = true;
         out.extended.push(open.id);
       } else out.skipped.push(open.id);
       continue;
     }
-    const recent = items.find(
-      (it) =>
-        (it.id === baseId || it.id.startsWith(`${baseId}-`)) &&
-        (it.status === 'done' || it.status === 'dropped') &&
-        daysBetween(String(it.done_at ?? it.added), today) < COOL_OFF_DAYS,
-    );
-    if (recent) {
-      out.skipped.push(recent.id);
-      continue;
+    const closed = items
+      .filter((it) => sameSlug(it) && (it.status === 'done' || it.status === 'dropped'))
+      .sort((a, b) => String(b.done_at ?? b.added).localeCompare(String(a.done_at ?? a.added)))[0];
+    let evidence = hits;
+    if (closed) {
+      const closedOn = String(closed.done_at ?? closed.added);
+      if (closed.status === 'dropped' && daysBetween(closedOn, today) < COOL_OFF_DAYS) {
+        out.skipped.push(closed.id);
+        continue;
+      }
+      if (closed.status === 'done') {
+        evidence = hits.filter((h) => h.date > closedOn);
+        if (evidence.length < MIN_HITS) {
+          out.skipped.push(closed.id);
+          continue;
+        }
+      }
     }
     const id = items.some((it) => it.id === baseId) ? `${baseId}-${today}` : baseId;
+    const earlier = evidence.slice(0, -1).map(evidenceOf).join(', ');
+    const after =
+      closed?.status === 'done'
+        ? ` after the fix of ${closed.id} (${closed.done_at ?? closed.added})`
+        : '';
     items.push({
       id,
-      title: `${e.slug}: refresh has failed two days running — fix the source or keep the last snapshot without an error row`,
+      title: `${e.slug}: refresh has failed ${evidence.length} times in the last ${window.length} days — fix the source or keep the last snapshot without an error row`,
       why:
-        `Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers row lists ${e.slug} under ` +
-        `refresh errors on ${yesterday} (${prevBySlug.get(e.slug) || 'no message'}) and ${evidence}. The surface serves ` +
+        `Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list ${e.slug} under ` +
+        `refresh errors on ${earlier} and ${todayEvidence}${after}. The surface serves ` +
         `the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/${e.slug}.ts, verify the origin's ` +
         `current response through the relay before changing the parser, and make a transient origin fault log \`skipped\` ` +
         `rather than \`error\` once retries are exhausted.`,
