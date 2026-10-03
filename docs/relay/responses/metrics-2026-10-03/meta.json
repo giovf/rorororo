@@ -1,0 +1,185 @@
+{
+  "request": "metrics-2026-10-03",
+  "fetched_at": "2026-10-03T07:16:27.585Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/pciignkojfpgmfcmjchmpdhonpjkfepc?hl=en",
+      "fetched_at": "2026-10-03T07:16:22.127Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/highlight-keep-%E2%80%94-web-high/pciignkojfpgmfcmjchmpdhonpjkfepc?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 599074,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/pciignkojfpgmfcmjchmpdhonpjkfepc/reviews?hl=en",
+      "fetched_at": "2026-10-03T07:16:22.449Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/highlight-keep-%E2%80%94-web-high/pciignkojfpgmfcmjchmpdhonpjkfepc/reviews?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 571924,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://addons.mozilla.org/api/v5/addons/addon/highlight-keep-web-highlighter/",
+      "fetched_at": "2026-10-03T07:16:22.628Z",
+      "status": 200,
+      "final_url": "https://addons.mozilla.org/api/v5/addons/addon/highlight-keep-web-highlighter/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "1489",
+        "etag": "\"7e4c1fd39a42c4d0d093bdaffff4ad97\""
+      },
+      "file": "3.json",
+      "bytes": 3808,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/dckbdaplggmhimpbekhdbaampglfhdgf?hl=en",
+      "fetched_at": "2026-10-03T07:16:22.818Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/readfocus-%E2%80%94-focus-reading/dckbdaplggmhimpbekhdbaampglfhdgf?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 599073,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/dckbdaplggmhimpbekhdbaampglfhdgf/reviews?hl=en",
+      "fetched_at": "2026-10-03T07:16:22.987Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/readfocus-%E2%80%94-focus-reading/dckbdaplggmhimpbekhdbaampglfhdgf/reviews?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 569239,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://addons.mozilla.org/api/v5/addons/addon/readfocus-focus-reading-dyslex/",
+      "fetched_at": "2026-10-03T07:16:23.166Z",
+      "status": 200,
+      "final_url": "https://addons.mozilla.org/api/v5/addons/addon/readfocus-focus-reading-dyslex/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "1519",
+        "etag": "\"6ae3ce7ad1499ba0923c7e3f49a3bae3\""
+      },
+      "file": "6.json",
+      "bytes": 3904,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/plugins/1682711656065145288/versions",
+      "fetched_at": "2026-10-03T07:16:23.300Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/plugins/1682711656065145288/versions",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "7.json",
+      "bytes": 15775,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://fig-stats.com/plugins/1682711656065145288",
+      "fetched_at": "2026-10-03T07:16:23.496Z",
+      "status": 404,
+      "final_url": "https://fig-stats.com/plugins/1682711656065145288",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 13553,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717/comments?page_size=50",
+      "fetched_at": "2026-10-03T07:16:24.063Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "9.json",
+      "bytes": 127,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=styles%20to%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-03T07:16:24.153Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=styles%20to%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "10.json",
+      "bytes": 622270,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=link%20to%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-03T07:16:25.109Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=link%20to%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "11.json",
+      "bytes": 718561,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=unused%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-03T07:16:26.171Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=unused%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "12.json",
+      "bytes": 351657,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=variables%20toolkit&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-03T07:16:26.873Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=variables%20toolkit&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "13.json",
+      "bytes": 324960,
+      "truncated": false
+    }
+  ]
+}
