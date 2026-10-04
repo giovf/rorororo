@@ -82,9 +82,16 @@ async function change(patch: Partial<SiteSettings>): Promise<void> {
   render(effectiveFor(next, hostname));
 }
 
+// Firefox for Android has no keyboard shortcuts: `chrome.commands` is undefined there.
+const commandsApi: typeof chrome.commands | undefined = chrome.commands;
+
 /** Shows the shortcuts as actually bound on this machine (they differ per platform). */
 async function showShortcuts(): Promise<void> {
-  const commands = await chrome.commands.getAll();
+  if (!commandsApi) {
+    document.body.classList.add('no-shortcuts');
+    return;
+  }
+  const commands = await commandsApi.getAll();
   const label = (name: string): string => commands.find((c) => c.name === name)?.shortcut || 'not set';
   $('kbd-site').textContent = label('toggle-site');
   $('kbd-ruler').textContent = label('toggle-ruler');

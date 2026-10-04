@@ -114,6 +114,9 @@ async function statics() {
         // Firefox's built-in data-collection consent: we collect nothing.
         data_collection_permissions: { required: ['none'] },
       },
+      // Firefox for Android: AMO flags an extension as Android-compatible only when this key is
+      // present. Same build; the popup opens full-width and the ruler/focus follow taps.
+      gecko_android: { strict_min_version: '140.0' },
     };
     delete manifest.minimum_chrome_version;
   }

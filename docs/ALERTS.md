@@ -271,6 +271,11 @@ closed entries older than 30 days (git keeps the history).
   @foundry/variables-toolkit`, import `ventures/variables-toolkit/dist-release/manifest.json`, try Relink on a file with an enabled
   library, then **Publish → new version** and paste the description + tags from `LISTING.md` (bold headings with B, no asterisks). Steps:
   `docs/for-owner/actions/019-figma-toolkit-republish-relink.md`. No new account, no money.
+- 2026-10-04 handoff: **sign and upload ReadFocus 0.2.1** (Firefox for Android: `gecko_android`, phone-width popup, tap-to-place ruler)
+  once 0.2.0 clears review on each store, the same way as 0.2.0: `bash scripts/amo-publish.sh ventures/read-focus` (release notes in
+  `assets/amo-metadata.json`), then `cd ventures/read-focus && npm run zip && cd ../.. && node scripts/cws-publish.ts upload dckbdaplggmhimpbekhdbaampglfhdgf ventures/read-focus/read-focus.zip && node scripts/cws-publish.ts publish dckbdaplggmhimpbekhdbaampglfhdgf`.
+  Afterwards check `https://addons.mozilla.org/api/v5/addons/addon/readfocus-focus-reading-dyslex/` → `current_version.compatibility` lists `android`;
+  if not, the AMO developer hub's version page has the Android compatibility box. Record the date in `ventures/read-focus/STORE.md`. ~5 min.
 - 2026-10-04 handoff: **sign and upload Highlight Keep 0.3.0** (import from Super Simple Highlighter, merging Restore) the
   same way as 0.2.0: `bash scripts/amo-publish.sh ventures/highlight-keep` (release notes already in `assets/amo-metadata.json`),
   then `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.

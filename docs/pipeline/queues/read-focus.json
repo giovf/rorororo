@@ -106,12 +106,13 @@
     {
       "id": "firefox-android-compat",
       "title": "Mark ReadFocus compatible with Firefox for Android (gecko_android, phone-width popup, AMO Android flag)",
-      "why": "AMO shows Android-compatible extensions on its own Android home page (450+ at the 2023 launch), a free shelf with no account beyond the AMO one we have. No evidence yet that dyslexic or ADHD readers install reading tools on mobile Firefox, so it scores below the two pages; build it after them if the slot is otherwise idle, and drop it at the day-30 review if no Android installs show in the AMO API.",
+      "why": "AMO shows Android-compatible extensions on its own Android home page (450+ at the 2023 launch), a free shelf with no account beyond the AMO one we have. No evidence yet that dyslexic or ADHD readers install reading tools on mobile Firefox, so it scores below the two pages; build it after them if the slot is otherwise idle, and drop it at the day-30 review if no Android installs show in the AMO API. BUILT 2026-10-04 (burn-down) as 0.2.1: the Firefox build's manifest carries gecko_android (strict_min_version 140.0, the same floor as desktop); the popup has a viewport meta and a phone-width layout; the keyboard-shortcut API, absent on Android, is guarded in the background and popup; the ruler and paragraph focus listen to pointer events, so a tap places them on touch. Ships with the next AMO sign (handoff in ALERTS: after 0.2.0 clears review). Not verified on a device — the sandbox has no Android Firefox; the AMO API's compatibility field is the proof.",
       "effort_days": 0.3,
       "proof": "AMO API shows the Android flag and ≥ 5 Android installs within 30 days",
       "score": 2,
-      "status": "todo",
-      "added": "2026-10-04"
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
     }
   ]
 }

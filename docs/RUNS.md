@@ -501,3 +501,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 22:44 | burn-down | Linked from index, ReadFocus page, comparison page, sitemap, LISTING.md and AMO metadata
 - 2026-10-04 22:44 | burn-down | Queue: read-focus reading-ruler-page done; proof = 30 impressions or 3 clicks at day 30
 - 2026-10-04 22:50 | burn-down | Stopping for time (~40 min): 3 items built + ReadFocus research; next buildable is firefox-android-compat (2)
+- 2026-10-04 23:21 | burn-down | ReadFocus 0.2.1: Firefox build declares gecko_android (min 140), so AMO can flag it for Firefox for Android
+- 2026-10-04 23:21 | burn-down | Popup: viewport meta, full-width phone layout, bigger touch targets; shortcut hints hidden where commands API is absent
+- 2026-10-04 23:21 | burn-down | Ruler and paragraph focus follow pointer events: a tap places them on touch; shortcut API guarded in background
+- 2026-10-04 23:21 | burn-down | AMO release notes + description line for Android; handoff: sign 0.2.1 after 0.2.0 clears review (not device-tested)
+- 2026-10-04 23:21 | burn-down | Queue: read-focus firefox-android-compat done; proof = AMO compatibility lists android + 5 Android installs by day 30

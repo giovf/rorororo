@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "ReadFocus \u2014 Focus Reading: Bold Word Starts, Reading Ruler & Dyslexia Fonts",
   "short_name": "ReadFocus",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Bold word starts, a reading ruler, text size, paragraph focus and dyslexia fonts; reads web PDFs too. Private.",
   "minimum_chrome_version": "116",
   "permissions": ["storage", "activeTab", "scripting"],

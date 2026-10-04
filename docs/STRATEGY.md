@@ -608,3 +608,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   on three free tools that are abandoned, broken or asking for PDF, the one thing ReadFocus's 0.2.0 reader does. Why: the
   cheapest remaining distribution item; same pattern as the two comparison pages; honest about the band's missing controls.
   Proof: ≥ 30 impressions or ≥ 3 clicks at the 2026-10-30 review.
+- 2026-10-04 burn-down: read-focus `firefox-android-compat` built as 0.2.1 — the Firefox manifest carries `gecko_android`, the
+  popup fits a phone, the ruler and focus go where the finger taps, and the shortcut API (absent on Android) is guarded. Why:
+  the last buildable ReadFocus item; AMO's Android home page is a free shelf that needs no new account; the sandbox cannot run
+  Firefox for Android, so the proof is the AMO API's compatibility field and Android installs at the day-30 review, where the
+  item is dropped if none show. Ships with the next AMO sign, after 0.2.0 clears review.

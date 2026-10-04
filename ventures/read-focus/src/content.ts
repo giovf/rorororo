@@ -109,8 +109,11 @@ function watch(strength: number): void {
 
 // ---------- ruler ----------
 
+// Pointer events cover the mouse and, on a phone (Firefox for Android), a tap: the ruler and the
+// focus block follow the mouse on desktop and go where the finger lands on touch.
+const POINTER_EVENTS = ['pointermove', 'pointerdown'] as const;
 let ruler: HTMLDivElement | null = null;
-const onMove = (e: MouseEvent): void => {
+const onMove = (e: PointerEvent): void => {
   if (ruler) ruler.style.top = `${e.clientY - ruler.offsetHeight / 2}px`;
 };
 function setRuler(on: boolean): void {
@@ -118,11 +121,11 @@ function setRuler(on: boolean): void {
     ruler = document.createElement('div');
     ruler.className = 'rf-ruler';
     document.documentElement.appendChild(ruler);
-    window.addEventListener('mousemove', onMove, { passive: true });
+    for (const ev of POINTER_EVENTS) window.addEventListener(ev, onMove, { passive: true });
   } else if (!on && ruler) {
     ruler.remove();
     ruler = null;
-    window.removeEventListener('mousemove', onMove);
+    for (const ev of POINTER_EVENTS) window.removeEventListener(ev, onMove);
   }
 }
 
@@ -138,7 +141,7 @@ function focusAt(x: number, y: number): void {
   focused = target;
   focused?.classList.add('rf-focus-target');
 }
-const onFocusMove = (e: MouseEvent): void => {
+const onFocusMove = (e: PointerEvent): void => {
   pointer = { x: e.clientX, y: e.clientY };
   focusAt(pointer.x, pointer.y);
 };
@@ -149,10 +152,10 @@ const onFocusScroll = (): void => {
 function setFocus(on: boolean): void {
   document.documentElement.classList.toggle('rf-focus', on);
   if (on) {
-    window.addEventListener('mousemove', onFocusMove, { passive: true });
+    for (const ev of POINTER_EVENTS) window.addEventListener(ev, onFocusMove, { passive: true });
     window.addEventListener('scroll', onFocusScroll, { passive: true, capture: true });
   } else {
-    window.removeEventListener('mousemove', onFocusMove);
+    for (const ev of POINTER_EVENTS) window.removeEventListener(ev, onFocusMove);
     window.removeEventListener('scroll', onFocusScroll, { capture: true });
     focused?.classList.remove('rf-focus-target');
     focused = null;

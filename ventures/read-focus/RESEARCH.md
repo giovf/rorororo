@@ -217,6 +217,10 @@ ReadFocus on the pages a searcher reaches and state those three gaps honestly. I
 | `alternativeto-listing` | 3 (blocked: owner account) | 0.1 d | list ReadFocus as a Reader Mode / Reader View alternative on alternativeto.net (its Reader Mode page is the top result for the query) and on Product Hunt's alternatives page; both need an account under the owner's identity |
 | `firefox-android-compat` | 2 | 0.3 d | `browser_specific_settings.gecko_android` + a popup that works at phone width, then the AMO Android flag: a free shelf (AMO's Android home page) with no evidence yet that dyslexic readers install reading tools on mobile Firefox — build after the two pages, drop at day 30 if no Android installs |
 
+Built 2026-10-04 (burn-down, same night): `firefox-android-compat` as **0.2.1** — `gecko_android` in the Firefox manifest, a
+phone-width popup, guarded shortcut API, tap-to-place ruler and focus. Ships with the next AMO sign; the proof is the AMO
+API's compatibility field plus any Android installs by the day-30 review. Not tested on a device.
+
 Not added: a free companion extension (the Variables Toolkit pattern) — a ruler-only or bold-only free extension would
 sit next to Half Bold and Dyslexly, which are already free and larger, and risks the Chrome Web Store's repetitive-
 content rule; a demo video (no evidence it moves installs). Kill check unchanged: 2026-12-21 if nothing moves.

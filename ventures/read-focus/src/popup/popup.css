@@ -26,3 +26,15 @@ footer { border-top: 1px solid #e6e2d8; padding-top: 8px; }
 #shortcuts { color: inherit; }
 button.wide { display: block; width: 100%; margin: 6px 0 10px; padding: 8px 10px; border-radius: 8px; border: 1px solid #FCD34D; background: #FFFBEB; color: #0F172A; font: inherit; font-weight: 600; cursor: pointer; }
 button.wide:hover { background: #FEF3C7; }
+/* Firefox for Android: the popup opens as a full-width page with no keyboard shortcuts. */
+body.no-shortcuts .shortcuts, body.no-shortcuts kbd { display: none; }
+.touch-hint { display: none; }
+body.no-shortcuts .touch-hint { display: inline; font-size: 11px; color: #6b675e; margin-left: 4px; }
+@media (max-width: 480px) {
+  body { width: auto; padding: 16px; gap: 14px; font-size: 15px; }
+  .row.big { font-size: 16px; }
+  input[type=range] { width: 45vw; }
+  input[type=checkbox] { width: 22px; height: 22px; }
+  .presets button, #activate, input[type=text], select { padding: 9px 8px; }
+  button.wide { padding: 12px 10px; }
+}
