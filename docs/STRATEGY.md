@@ -539,3 +539,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-04 burn-down (18:35): `main` went red mid-run — the watchdog's first CI-minutes warning line in RUNS.md was
   131 chars against the 120 cap `npm run runs` enforces. Shortened the line; `scripts/actions-minutes.mjs` now cuts its
   text at 120 so the guard can never redden `main` again.
+- 2026-10-04 burn-down: `billing-alert-to-owner` built — one sentence in `docs/routines/inbox-triage.md`: a paid service's
+  billing or usage alert above its LEDGER.md line is `needs owner` with an `owner:` line and an unconfirmed ledger note,
+  never plain `logged` (the 10-01 Cloudflare US$15 alert sat unread for three days).

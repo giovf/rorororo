@@ -453,3 +453,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 18:30 | burn-down | Daily numbers row now also lists any source with no ok refresh for 2 days, so a dead runner job shows
 - 2026-10-04 18:30 | burn-down | Queue: refresh-uk-insolvency-2026-10-03 done; proof = 7 clean Daily rows from 10-05
 - 2026-10-04 18:35 | burn-down | main healed: the watchdog's first ci-minutes line was 131 chars; shortened, and the script now cuts at 120
+- 2026-10-04 18:40 | burn-down | Inbox triage: a billing alert above its LEDGER line now gets an owner: line and a ledger note, never plain logged

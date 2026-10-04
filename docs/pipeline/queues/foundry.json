@@ -304,12 +304,13 @@
     {
       "id": "billing-alert-to-owner",
       "title": "Inbox triage escalates a paid-service billing/usage alert above its LEDGER.md baseline, instead of logging it as plain noise",
-      "why": "Ops retro 2026-W40: the 2026-10-01 17:55 Cloudflare metered-usage alert ($15.00, 20 of 30 days into the billing period, against the ~$5/mo / 3.70 baseline docs/LEDGER.md carries) was triaged as plain `logged` -- no owner: line, no LEDGER.md note -- because docs/ops/SELF-CAUSED.md's Cloudflare row only names deploy-confirmation mail, not cost alerts, so the triage prompt had no branch for it. The one file meant to make a budget overrun visible before the GBP100 cap is at risk never got a row. Fix: one sentence in docs/routines/inbox-triage.md -- a billing/usage alert naming a figure above its docs/LEDGER.md line is never `logged` alone: add an owner: line naming the service, the figure and the baseline it exceeds, and leave an unconfirmed note on that LEDGER.md row for the next reconciliation.",
+      "why": "Ops retro 2026-W40: the 2026-10-01 17:55 Cloudflare metered-usage alert ($15.00, 20 of 30 days into the billing period, against the ~$5/mo / 3.70 baseline docs/LEDGER.md carries) was triaged as plain `logged` -- no owner: line, no LEDGER.md note -- because docs/ops/SELF-CAUSED.md's Cloudflare row only names deploy-confirmation mail, not cost alerts, so the triage prompt had no branch for it. The one file meant to make a budget overrun visible before the GBP100 cap is at risk never got a row. Fix: one sentence in docs/routines/inbox-triage.md -- a billing/usage alert naming a figure above its docs/LEDGER.md line is never `logged` alone: add an owner: line naming the service, the figure and the baseline it exceeds, and leave an unconfirmed note on that LEDGER.md row for the next reconciliation. 2026-10-04 burn-down: built — sentence added to step 1 of docs/routines/inbox-triage.md (the live prompt reads that file).",
       "effort_days": 0.05,
       "proof": "the next billing alert above its LEDGER.md baseline gets an owner: line and a LEDGER.md note the same day",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-03"
+      "status": "done",
+      "added": "2026-10-03",
+      "done_at": "2026-10-04"
     },
     {
       "id": "retro-clone-depth",
