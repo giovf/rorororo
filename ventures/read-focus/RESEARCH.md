@@ -188,3 +188,35 @@ out: the extension cannot fetch them without the file-URL permission, which stor
 proves reflow → bold → ruler → first-page gate in Chromium; 7 unit tests cover the URL helpers and the reflow.
 Proof (queue `proof`): a review or support mail mentioning PDFs; unlock conversion after 0.2.0 reaches the stores
 above the pre-release rate (0 so far, so any sale counts). Ships with the open 2026-09-30 handoff.
+
+## Research 2026-10-04 (burn-down; starvation fallback — every open ReadFocus item blocked or dated)
+
+Evidence read: the metrics rows (0 Chrome users, no ratings, 0 Firefox daily users since 2026-09-30; 0.2.0 in
+review on both stores since 10-04, so the PDF reader and the fixed listings are still unmeasured), the 2026-09-18
+competitor table, the 2026-09-30 and 10-01 research notes, STRATEGY §5 (distribution before features) and four web
+searches today for what a searcher actually sees: (1) "reader mode alternative" — AlternativeTo's Reader Mode page,
+Product Hunt's alternatives page and listicles (Medium, Tooltivity, web-highlights.com) that lead with Reader View
+(300k users, free) and Just Read; (2) "reading ruler chrome extension dyslexia pdf" — Dyslexly (dyslexly.com: free, no
+account, five fonts, line focus, reading ruler, PDF viewer, Pro ≈ £2/month), Helperbird and Nook, plus a ruler
+blog; (3) "adhd reading extension" — Half Bold (halfbold.vercel.app: free, no premium, 8,000+ users, 4.8 from 55
+ratings), ADHD Reading Focus, ADHD Reading Help and bushe.co's list; (4) Firefox for Android — AMO lists Android-
+compatible extensions on its own home page (450+ at launch), and compatibility is a developer-hub flag once the
+extension works on mobile. Our comparison page (`reader-mode-alternative.html`, 2026-10-01) names Reader Mode, the
+official bolding tool and ADHD Reading — none of the names in today's results.
+
+Reading: the same findability problem as Highlight Keep, with one twist — the strongest 2026 rivals (Dyslexly, Half
+Bold) are free and local, so the one-time-vs-subscription argument does not land against them; what ReadFocus still
+has is the PDF reflow (0.2.0), paragraph focus and a precise bold strength. The cheap items are the ones that put
+ReadFocus on the pages a searcher reaches and state those three gaps honestly. Items added (score = evidence × reach
+÷ effort):
+
+| Item | Score | Effort | What it does |
+|---|---|---|---|
+| `comparison-page-2026-rivals` | 4 | 0.2 d | Dyslexly and Half Bold columns on `reader-mode-alternative.html` with facts read from their own sites and listings through the relay (allowlist: dyslexly.com, halfbold.vercel.app); honest cells where they win |
+| `reading-ruler-page` | 4 | 0.3 d | `reading-ruler.html`: the search-capture page for "reading ruler chrome extension" — Reader Line (20k, 4.9) reviews all ask for PDF, ReadingLine is abandoned, ReadingRuler "not working after update"; ReadFocus has the ruler and web PDFs since 0.2.0 |
+| `alternativeto-listing` | 3 (blocked: owner account) | 0.1 d | list ReadFocus as a Reader Mode / Reader View alternative on alternativeto.net (its Reader Mode page is the top result for the query) and on Product Hunt's alternatives page; both need an account under the owner's identity |
+| `firefox-android-compat` | 2 | 0.3 d | `browser_specific_settings.gecko_android` + a popup that works at phone width, then the AMO Android flag: a free shelf (AMO's Android home page) with no evidence yet that dyslexic readers install reading tools on mobile Firefox — build after the two pages, drop at day 30 if no Android installs |
+
+Not added: a free companion extension (the Variables Toolkit pattern) — a ruler-only or bold-only free extension would
+sit next to Half Bold and Dyslexly, which are already free and larger, and risks the Chrome Web Store's repetitive-
+content rule; a demo video (no evidence it moves installs). Kill check unchanged: 2026-12-21 if nothing moves.

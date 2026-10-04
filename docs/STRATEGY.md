@@ -593,3 +593,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   arriving from that search found our table missing both; the one-time-vs-subscription argument is now stated against every
   rival on the results page. Web Highlights' dollar prices are client-rendered and unverifiable from HTML, so the page names
   the model and the trial, not a figure. Proof: Search Console impressions ≥ 50 at the 2026-10-30 review.
+- 2026-10-04 burn-down: ReadFocus research pass (starved queue) — four scored items added: Dyslexly and Half Bold columns on the
+  comparison page, a reading-ruler search-capture page, an AlternativeTo/Product Hunt listing (owner account, blocked) and Firefox
+  for Android compatibility (score 2, no demand evidence yet). Why: the 2026 rivals a searcher sees are free and local, so the
+  one-time-price argument does not carry; what ReadFocus can still say is PDF reflow, paragraph focus and bold strength, and the
+  cheapest way to say it is on the pages the search already reaches. A free companion extension was considered and not queued
+  (Half Bold and Dyslexly already own the free slot; repetitive-content risk on the store).
