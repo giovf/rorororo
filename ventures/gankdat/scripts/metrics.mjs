@@ -340,6 +340,51 @@ async function cfUsage() {
 }
 const cfNote = await cfUsage().catch((e) => `cf usage: n/a (${e.message.slice(0, 100)})`);
 
+// Per-dataset authed queries over 30 days (build 2026-10-04, queue `metrics-dataset-queries-30d`):
+// STRATEGY §7 retires a dataset nobody queried for 60 days, and until now nothing in the repo said
+// how many authed REST or MCP calls each dataset received. REST: `rest_data` points carry the slug
+// in blob5; MCP: `mcp_authed` points carry the comma-joined tool names in blob5, and a data tool is
+// `query_<slug with _>`. Zero-call datasets are listed by name so the review sees them. The slug
+// list comes from the source files on disk (each declares `slug: '…'`), not from the API.
+async function datasetQueries30d() {
+  const { readdir } = await import('node:fs/promises');
+  const dir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'src', 'sources');
+  const slugs = new Set();
+  for (const f of await readdir(dir)) {
+    if (!f.endsWith('.ts')) continue;
+    const m = (await readFile(path.join(dir, f), 'utf8')).match(/^\s+slug: '([a-z0-9-]+)',$/m);
+    if (m) slugs.add(m[1]);
+  }
+  const counts = new Map([...slugs].map((s) => [s, 0]));
+  const add = (slug, n) => {
+    if (slug && slugs.has(slug)) counts.set(slug, (counts.get(slug) ?? 0) + Number(n));
+  };
+  const rest = await ae(
+    "SELECT blob5 AS slug, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'rest_data' AND blob5 != '' AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY slug",
+  );
+  for (const r of rest) add(r.slug, r.n);
+  const mcp = await ae(
+    "SELECT blob5 AS tools, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_authed' AND blob5 != '' AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY tools",
+  );
+  for (const r of mcp) {
+    for (const tool of String(r.tools).split(',')) {
+      if (tool.startsWith('query_')) add(tool.slice('query_'.length).replaceAll('_', '-'), r.n);
+    }
+  }
+  const used = [...counts]
+    .filter(([, n]) => n > 0)
+    .sort((a, b) => b[1] - a[1])
+    .map(([s, n]) => `${s} ${Math.round(n)}`);
+  const zero = [...counts]
+    .filter(([, n]) => n === 0)
+    .map(([s]) => s)
+    .sort();
+  return `datasets 30d: ${used.length ? used.join(', ') : 'none'}${zero.length ? `; 0: ${zero.join(', ')}` : ''}`;
+}
+const datasetsNote = await datasetQueries30d().catch(
+  (e) => `datasets 30d: n/a (${e.message.slice(0, 100)})`,
+);
+
 const date = new Date().toISOString().slice(0, 10);
 const users = `${acct.total} accts (${acct.paid ?? 0} paid, +${acct.new24h ?? 0}/24h)`;
 const sales = `${kinds.x402_paid ?? 0} x402 paid`;
@@ -374,6 +419,7 @@ const notes = [
     : 'agent sign-up: n/a',
   oauthNote,
   cfNote,
+  datasetsNote,
   errors.length
     ? `refresh errors: ${errors
         .map((e) => {

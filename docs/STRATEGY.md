@@ -545,3 +545,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-04 burn-down: `retro-clone-depth` built — the retro's checkout step in `docs/routines/ops-retro.md` now checks
   the oldest commit in `git log --since='8 days ago'` and unshallows (or deepens by 200) when the clone covers less
   than 7 days; the W40 retro measured 2 of 8 days until unshallowed by hand.
+- 2026-10-04 burn-down: `metrics-dataset-queries-30d` built — the Daily numbers row now carries `datasets 30d:` (authed
+  REST and MCP calls per dataset over 30 days from Analytics Engine, zero-call datasets named), so §7's per-dataset
+  retirement rule has a reading from the 10-05 row. `metrics-apify-paid-runs` not built this slot: the API cannot
+  separate a buyer's run from Apify's QA runner (note on the item); the next run decides between an `ours/30d`
+  column and the payout mail as the paid reading.

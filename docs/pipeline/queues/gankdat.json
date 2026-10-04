@@ -249,12 +249,13 @@
     {
       "id": "metrics-dataset-queries-30d",
       "title": "Per-dataset authed query count over 30 days in the metrics row, so STRATEGY §7's \"unqueried for 60 days → retire\" rule has a reading",
-      "why": "Review 2026-W40: the `wanted` list carries only the top three keyless tools; nothing in the repo says how many authed REST or MCP calls each of the 17 datasets received in the last 30/60 days, so the per-dataset retirement rule cannot be applied (and with zero customers it would retire everything, which is the whole-line question instead). Analytics Engine already records authed tools/call and REST data points keyed by tool/slug (metrics.mjs). Do: once a week (Sundays, before the review) or daily, print `datasets 30d: <slug> N, …` (authed only, zero-call slugs listed as `0: a, b, c`) in the Daily numbers row or a `Dataset usage` row.",
+      "why": "Review 2026-W40: the `wanted` list carries only the top three keyless tools; nothing in the repo says how many authed REST or MCP calls each of the 17 datasets received in the last 30/60 days, so the per-dataset retirement rule cannot be applied (and with zero customers it would retire everything, which is the whole-line question instead). Analytics Engine already records authed tools/call and REST data points keyed by tool/slug (metrics.mjs). Do: once a week (Sundays, before the review) or daily, print `datasets 30d: <slug> N, …` (authed only, zero-call slugs listed as `0: a, b, c`) in the Daily numbers row or a `Dataset usage` row. 2026-10-04 burn-down: built — metrics.mjs adds `datasets 30d: <slug> N, …; 0: a, b` to the Daily numbers row (authed REST `rest_data` points by slug + `mcp_authed` tool names `query_<slug>`, 30 days, Analytics Engine; slug list scanned from src/sources/*.ts; degrades to `n/a (<reason>)`). First reading in the 2026-10-05 row; the 2026-W41 review reads it.",
       "effort_days": 0.15,
       "proof": "the 2026-W41 review reads per-dataset 30-day counts from RESEARCH.md",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-04"
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
     },
     {
       "id": "oauth-connect-funnel-check",

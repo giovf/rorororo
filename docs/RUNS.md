@@ -455,3 +455,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 18:35 | burn-down | main healed: the watchdog's first ci-minutes line was 131 chars; shortened, and the script now cuts at 120
 - 2026-10-04 18:40 | burn-down | Inbox triage: a billing alert above its LEDGER line now gets an owner: line and a ledger note, never plain logged
 - 2026-10-04 18:42 | burn-down | Ops retro: unshallows a shallow clone before git log --since, so the 7-8 day window is never cut short
+- 2026-10-04 18:50 | burn-down | Daily numbers row gains `datasets 30d:` — authed REST+MCP queries per dataset, zero-call ones named
+- 2026-10-04 18:50 | burn-down | Queue: metrics-dataset-queries-30d done; metrics-apify-paid-runs got an evidence note, not built
