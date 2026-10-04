@@ -42,7 +42,7 @@ so the real figure is unconfirmed until the 10-10 invoice (review 2026-W40, §7 
 | gankdat paying accounts | 0 (1 unpaid account since 09-28; review W40, Daily numbers 2026-10-03) | 5 | `Daily numbers` rows in `ventures/gankdat/RESEARCH.md` |
 | gankdat MRR | £0 (review W40) | £150 | Stripe (weekly report) |
 | Apify actors live | 17 of 17 | 17 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — `P public`; all 17 went public 2026-09-28 |
-| Apify paid runs / month | ~11 runs/day total since 10-01 (≈ 340/month pace), paid share unknown — `metrics-apify-paid-runs` queued (review W40, Daily numbers 2026-10-03) | 100 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — lifetime `R runs` plus the `+d/24h` delta, Apify API `stats.totalRuns` |
+| Apify paid runs / month | ~11 runs/day total since 10-01 (≈ 340/month pace), paid share unknown — `30d: T runs (O ours, X others)` reads from the 2026-10-05 row; `others` is the ceiling (Apify's QA runner is in it), the payout mail the paid figure (review W40, Daily numbers 2026-10-03; burn-down 10-04) | 100 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — lifetime `R runs` plus the `+d/24h` delta (`stats.totalRuns`), 30-day runs by everyone (`stats.publicActorRunStats30Days.TOTAL`) minus our own (`GET /v2/actor-runs`) |
 | Change-feed calls / week | 0 (measured 09-30..10-03; review W40) | 50 | `changes 7d:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — Analytics Engine, MCP `get_changes` + REST `/v1/changes` |
 | Extension + plugin sales | 0 (Figma 4 views, 0 installs; Chrome 0 users; Firefox 3 downloads — review W40, Daily check 2026-10-03) | 20 | Stripe / Figma |
 | Directory listings live | 5 (Claude Connectors Directory built 09-30, awaiting the owner's form — review W40) | 8 | `MARKETPLACE-PREP.md` |
@@ -550,3 +550,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   retirement rule has a reading from the 10-05 row. `metrics-apify-paid-runs` not built this slot: the API cannot
   separate a buyer's run from Apify's QA runner (note on the item); the next run decides between an `ours/30d`
   column and the payout mail as the paid reading.
+- 2026-10-04 burn-down: `metrics-apify-paid-runs` built — the Daily numbers row's `apify:` note gains `30d: T runs (O ours,
+  X others)`: T is every account's runs of our actors in 30 days (`stats.publicActorRunStats30Days.TOTAL`, field confirmed
+  through the relay on web-scraper and uk-no-website-leads), O our own from `GET /v2/actor-runs`, X = T − O. Apify's QA
+  runner sits inside X and the API cannot tell it from a buyer, so X is the ceiling of paid runs and the monthly Apify
+  payout mail (inbox triage) stays the paid figure of record — no `paid/30d` number is invented. §4 row updated.

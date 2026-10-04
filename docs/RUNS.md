@@ -457,3 +457,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 18:42 | burn-down | Ops retro: unshallows a shallow clone before git log --since, so the 7-8 day window is never cut short
 - 2026-10-04 18:50 | burn-down | Daily numbers row gains `datasets 30d:` — authed REST+MCP queries per dataset, zero-call ones named
 - 2026-10-04 18:50 | burn-down | Queue: metrics-dataset-queries-30d done; metrics-apify-paid-runs got an evidence note, not built
+- 2026-10-04 19:20 | burn-down | Daily numbers `apify:` gains `30d: T runs (O ours, X others)` — 30-day runs by everyone minus our own
+- 2026-10-04 19:20 | burn-down | No paid/30d number: Apify's QA runner hides inside `others`; the monthly payout mail stays the paid figure
+- 2026-10-04 19:20 | burn-down | Queue: metrics-apify-paid-runs done; STRATEGY §4 Apify row reads `others` as the ceiling from 10-05

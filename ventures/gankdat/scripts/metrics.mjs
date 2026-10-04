@@ -169,7 +169,44 @@ const changesRest = changeFeed.rest_changes ?? 0;
 // run logs the keys it saw, so a shape change shows up in the log before it shows up in the row.
 // APIFY_TOKEN is optional: without it, or if the API is down, the row still lands as `apify: n/a`
 // rather than losing the D1 and Analytics Engine numbers with it.
+//
+// Who ran what (metrics-apify-paid-runs, burn-down 2026-10-04): review W40 read `17 users/30d` as
+// one user per actor — us or Apify's QA runner, not buyers — and a lifetime total cannot say who ran
+// an actor this month. The actor endpoint also carries `stats.publicActorRunStats30Days.TOTAL`,
+// every account's runs of that actor in the last 30 days (relay `apify-actor-stats`, 2026-10-04:
+// web-scraper 301230, uk-no-website-leads 6), while `GET /v2/actor-runs` lists only the token
+// owner's runs. So the row prints `30d: T runs (O ours, X others)` with X = T − O. Apify's QA
+// runner is one of the "others" and the API cannot tell it from a buyer, so X is the ceiling of
+// paid runs, never a sales figure: the paid reading of record is Apify's monthly payout mail
+// (inbox triage logs it). The own-runs list is read newest first and stops at the first run
+// older than 30 days; if that call fails or has no `startedAt`, ours reads `n/a` and the rest of
+// the row survives.
 const apifyToken = process.env.APIFY_TOKEN;
+const DAY_MS = 86_400_000;
+async function apifyOwnRuns30d(H) {
+  const since = Date.now() - 30 * DAY_MS;
+  let count = 0;
+  let offset = 0;
+  for (;;) {
+    const res = await fetch(
+      `https://api.apify.com/v2/actor-runs?desc=1&limit=1000&offset=${offset}`,
+      {
+        headers: H,
+      },
+    );
+    if (!res.ok) throw new Error(`GET /v2/actor-runs: HTTP ${res.status}`);
+    const items = (await res.json()).data?.items ?? [];
+    if (items.length && !items[0].startedAt) {
+      throw new Error(
+        `GET /v2/actor-runs: no startedAt (keys: ${Object.keys(items[0]).join(',')})`,
+      );
+    }
+    const recent = items.filter((r) => Date.parse(r.startedAt) >= since);
+    count += recent.length;
+    if (recent.length < items.length || items.length < 1000) return count;
+    offset += items.length;
+  }
+}
 async function apifyShelf() {
   if (!apifyToken) return null;
   const H = { Authorization: `Bearer ${apifyToken}` };
@@ -177,25 +214,31 @@ async function apifyShelf() {
   if (!res.ok) throw new Error(`GET /v2/acts: HTTP ${res.status}`);
   const items = (await res.json()).data?.items ?? [];
   let runs = 0;
+  let runs30 = 0;
   let users = 0;
   let publicCount = 0;
   let fromDetail = 0;
   for (const item of items) {
     let act = item;
-    if (!item.stats || item.isPublic === undefined) {
+    if (!item.stats || item.isPublic === undefined || !item.stats.publicActorRunStats30Days) {
       const one = await fetch(`https://api.apify.com/v2/acts/${item.id}`, { headers: H });
       if (!one.ok) throw new Error(`GET /v2/acts/${item.id}: HTTP ${one.status}`);
       act = { ...item, ...((await one.json()).data ?? {}) };
       fromDetail += 1;
     }
     runs += Math.round(Number(act.stats?.totalRuns ?? 0));
+    runs30 += Math.round(Number(act.stats?.publicActorRunStats30Days?.TOTAL ?? 0));
     users += Math.round(Number(act.stats?.totalUsers30Days ?? 0));
     if (act.isPublic) publicCount += 1;
   }
   console.log(
     `apify: ${items.length} actors, ${fromDetail} read from their own endpoint for isPublic (list keys: ${Object.keys(items[0] ?? {}).join(',')})`,
   );
-  return { runs, users, publicCount };
+  const ours30 = await apifyOwnRuns30d(H).catch((e) => {
+    console.error(`apify own runs: ${e.message}`);
+    return null;
+  });
+  return { runs, runs30, ours30, users, publicCount };
 }
 const apify = await apifyShelf().catch((e) => {
   console.error(`apify: ${e.message}`);
@@ -412,7 +455,7 @@ const notes = [
   `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${kinds.mcp_preview ?? 0} preview, ${paywall} paywall hits${wantedNote}`,
   `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
   apify
-    ? `apify: ${apify.runs} runs (${prevRuns === null ? 'baseline' : `+${apify.runs - prevRuns}/24h`}), ${apify.users} users/30d, ${apify.publicCount} public`
+    ? `apify: ${apify.runs} runs (${prevRuns === null ? 'baseline' : `+${apify.runs - prevRuns}/24h`}), 30d: ${apify.runs30} runs (${apify.ours30 === null ? 'ours n/a' : `${apify.ours30} ours, ${apify.runs30 - apify.ours30} others`}), ${apify.users} users/30d, ${apify.publicCount} public`
     : 'apify: n/a',
   agentKeys
     ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`
