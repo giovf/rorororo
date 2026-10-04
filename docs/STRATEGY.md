@@ -522,5 +522,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   bugs fixed on the way — a double-submitted consent form stranding the client on 'expired', and popup-breaking
   headers (COOP, form-action) that left claude.ai spinning. Both now covered by tests. Extensions 0.2.0 shipped to
   both stores; CI trimmed for the private-repo cap.
-- 2026-10-04 build: STEP 0 heal only — `npm run runs` failed on five over-length interactive RUNS.md lines from
-  the OAuth fixes; shortened them, full `npm run check` green, no queue item built this slot.
+- 2026-10-04 burn-down (17:00, STEP 0): `main` was red — `npm run runs` failed on five RUNS.md lines the 15:45–16:40
+  interactive session appended over the 120-char cap (CI did not catch it: the trimmed `check` workflow no longer runs on
+  docs-only pushes, so the next code push would have gone red). Fixed forward by shortening the five lines; no other gate
+  failed. Nothing else built this run, per the heal-first rule.
+- 2026-10-04 build (17:00, STEP 0): found the same red `runs` gate as the burn-down run above and fixed it identically;
+  the burn-down's push landed first, so this slot merged it, confirmed `npm run check` green and built nothing.

@@ -436,12 +436,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 15:10 | interactive | CI-minutes guard added to the watchdog: Telegram bullet when the month projects past 1,700 of the 2,000 cap
 - 2026-10-04 15:10 | interactive | Repo flips private once a measured week is under 350 minutes (baseline 873)
 
-- 2026-10-04 16:40 | interactive | OAuth consent bug fixed: a double-submitted approve form stranded the owner on 'Request expired'; claude.ai got no code
-- 2026-10-04 16:40 | interactive | Approval now idempotent per account (fresh code within 5 min), consent button single-submit, request window 30 min
+- 2026-10-04 16:40 | interactive | OAuth consent bug fixed: a double-submitted approve form left the owner on 'Request expired', claude.ai got no code
+- 2026-10-04 16:40 | interactive | Approval idempotent per account (fresh code within 5 min), consent button single-submit, request window 30 min
 - 2026-10-04 15:45 | interactive | OAuth popup fix: COOP same-origin + form-action 'self' kept claude.ai stuck on 'connecting'; relaxed on /authorize only
-- 2026-10-04 15:50 | interactive | Connectors Directory Step 8 complete: owner connected via OAuth at 15:43 (code exchanged in 1 s, tokens issued)
+- 2026-10-04 15:50 | interactive | Connectors Directory Step 8 complete: owner connected via OAuth at 15:43 (code exchanged in 1 s, full pages)
 - 2026-10-04 15:50 | interactive | Root cause of today's 'connecting…' loop: COOP same-origin + form-action 'self' on consent page; fixed and tested
 - 2026-10-04 16:20 | interactive | Evening burn is now nightly 17:00–02:00 UTC (was Wed only), gated by docs/ops/BURN.json; aim 70–80% weekly usage
 - 2026-10-04 16:20 | interactive | Owner reports usage via a Telegram note (`usage NN% fable NN%`); routines copy it into BURN.json and throttle
-
-- 2026-10-04 17:15 | build | STEP 0 heal: five 16:40–15:50 interactive RUNS.md lines over 120 chars broke npm run check; shortened
+- 2026-10-04 17:15 | burn-down | main healed: five 10-04 interactive RUNS.md lines over the 120-char cap shortened; runs gate green again
+- 2026-10-04 17:15 | build | STEP 0: main was red (runs gate); burn-down healed it in parallel, same fix verified green here; stopped
