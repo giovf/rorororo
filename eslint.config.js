@@ -8,6 +8,7 @@ export default tseslint.config(
     ignores: [
       '**/dist/**',
       '**/dist-release/**',
+      '**/dist-free/**',
       '**/dist-test/**',
       '**/dist-firefox/**',
       '**/build/**',

@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      /* __CSS__ */
+    </style>
+  </head>
+  <body>
+    <header>
+      <strong>Unused Variables Finder</strong>
+      <span class="tag">free</span>
+    </header>
+
+    <section class="panel active">
+      <div class="row">
+        <button id="analyse" class="primary">Analyse file</button>
+        <label class="muted"><input type="checkbox" id="select-all" disabled /> Select all</label>
+      </div>
+      <p id="summary" class="muted">Lists every local variable that nothing in this file references — no layer, no style, no other variable — so you can delete it. Library usage in other files is not visible to plugins.</p>
+      <ul id="list" class="list"></ul>
+      <p id="upsell" class="muted" hidden></p>
+      <a id="toolkit" class="link" target="_blank" rel="noopener" hidden>Get Variables Toolkit →</a>
+      <div class="row end"><button id="delete-selected" class="danger" disabled>Delete selected</button></div>
+    </section>
+
+    <footer>
+      <span id="message" class="muted"></span>
+      <a id="toolkit-footer" class="link" target="_blank" rel="noopener">Variables Toolkit</a>
+    </footer>
+    <script>
+      // __JS__
+    </script>
+  </body>
+</html>

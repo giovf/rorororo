@@ -2,7 +2,7 @@
   "venture": "variables-toolkit",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-02",
+  "updated": "2026-10-04",
   "items": [
     {
       "id": "day-7-review",
@@ -73,12 +73,13 @@
     {
       "id": "free-unused-variables-finder",
       "title": "Free companion listing 'Unused Variables Finder & Cleaner' built from the hygiene module, funnelling to the paid toolkit (owner publishes, ~15 min)",
-      "why": "The one query we can own is 'unused variables' (48 hits, #1 after the relist, leaders Variables Cleaner 1,189 / Variables Lint 2,090 / Usage Counter 2,499 users — all free). A free, narrowly named listing gets the trial installs a paid one never does (§9 point 3) and seeds a user count; its result screen links to the toolkit for link + convert. Same codebase (src/core hygiene), a second manifest and bundle. Risk: generative plugins commoditise single-job utilities — the funnel link is the point, not the utility.",
+      "why": "The one query we can own is 'unused variables' (48 hits, #1 after the relist, leaders Variables Cleaner 1,189 / Variables Lint 2,090 / Usage Counter 2,499 users — all free). A free, narrowly named listing gets the trial installs a paid one never does (§9 point 3) and seeds a user count; its result screen links to the toolkit for link + convert. Same codebase (src/core hygiene), a second manifest and bundle. Risk: generative plugins commoditise single-job utilities — the funnel link is the point, not the utility. 2026-10-04 burn-down (built): src/free/ (code, ui, messages) + src/core/free.ts (summary/upsell copy, 4 tests) + manifest.free.json; build.js --free → dist-free/; LISTING-FREE.md; owner publishes via action 018 (ALERTS 2026-10-04). Proof reads from the store-metrics row once the owner reports the plugin id.",
       "effort_days": 1,
       "proof": "≥ 50 installs of the free plugin and ≥ 5 listing views of the paid one attributed within 30 days of publishing",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-01"
+      "status": "done",
+      "added": "2026-10-01",
+      "done_at": "2026-10-04"
     },
     {
       "id": "relink-library-variables",

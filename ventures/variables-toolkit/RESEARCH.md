@@ -361,3 +361,14 @@ only step a sandbox cannot do — ALERTS 2026-10-02 owner line, action 017, ~10 
 tags and category in `PLAYGROUND.md`. Measurement: listing `view_count` on the Daily check row (≥ 20
 within 14 days of the file going live); the file's own views join `store-metrics.ts` once its URL is
 known (queue item `playground-file-views`, blocked on the URL).
+
+## Free companion listing (2026-10-04, burn-down)
+
+Built `free-unused-variables-finder` (§9 point 3): a free plugin "Unused Variables Finder & Cleaner" from the same
+`src/core/hygiene.ts` + `src/figma/hygiene.ts`, with delete, no payments permission, no network — the one job behind
+the one query we already own ("unused variables": rank 1/48 on 10-02..10-04, 0 installs; the leaders there — Variables
+Cleaner 1,189, Variables Lint 2,090, Usage Counter 2,499 users — are all free). Its result screen names only what the paid
+toolkit would add for *this* file (duplicate-value groups, broken aliases it counted but does not list) and links to the
+toolkit listing (`src/core/free.ts`, tested). Entry `src/free/`, manifest `manifest.free.json`, build `npm run build:free`
+→ `dist-free/`. Copy: `LISTING-FREE.md`; owner publishes (action 018). Proof: ≥ 50 installs of the free plugin and ≥ 5
+views of the paid listing attributed within 30 days of publishing; read by the daily store-metrics row once the id is known.

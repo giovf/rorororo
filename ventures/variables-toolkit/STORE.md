@@ -27,3 +27,8 @@
   file" (`src/figma/playground.ts`, content in `src/core/playground.ts`); listing copy and the owner's 10-minute publish steps in
   `PLAYGROUND.md` / `docs/for-owner/actions/017-figma-playground-file.md`. **Not yet published** — waiting for the owner (ALERTS
   2026-10-02). Live URL goes under "Live file" in `PLAYGROUND.md`; proof: listing views ≥ 20 within 14 days of it going live.
+- **Free companion plugin "Unused Variables Finder & Cleaner" (2026-10-04, burn-down):** `src/free/` + `manifest.free.json`, built by
+  `npm run build:free` into `dist-free/`; the toolkit's hygiene module with delete, no payments, no network; the result screen names what the
+  toolkit adds and links to this listing. Copy and owner steps: `LISTING-FREE.md`, `docs/for-owner/actions/018-figma-unused-variables-finder.md`.
+  **Not yet published** — waiting for the owner (ALERTS 2026-10-04). Proof: ≥ 50 installs of the free plugin and ≥ 5 views of this listing
+  attributed within 30 days of it going live.

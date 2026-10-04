@@ -260,3 +260,8 @@ closed entries older than 30 days (git keeps the history).
   prime suspect) and corrects the ledger. If the deploy token can read the breakdown itself the build routine will say so and
   you can skip this. (2) The Claude Connectors Directory form (OUTSTANDING E1, ~20 min, pre-written) is still the one shelf
   that opens without a third party; nothing else on the list moves a §4 number. No new account, no money.
+- 2026-10-04 owner: **publish the free "Unused Variables Finder & Cleaner" plugin** (~15 min + Figma review, £0, Figma desktop):
+  create the plugin so Figma assigns its id, paste the id into `ventures/variables-toolkit/manifest.free.json`, `npm run build:free -w
+  @foundry/variables-toolkit`, import `dist-free/manifest.json`, publish with the copy in `LISTING-FREE.md`. Steps:
+  `docs/for-owner/actions/018-figma-unused-variables-finder.md`. Why: the toolkit is #1 for "unused variables" yet has 0 installs —
+  every winner of that query is free; this one links to the paid listing. Batch with action 017. No new account, no money.

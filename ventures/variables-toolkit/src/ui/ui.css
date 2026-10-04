@@ -24,6 +24,7 @@ button:disabled { opacity: 0.5; cursor: default; }
 .list li.head { background: none; padding: 6px 0 0; font-weight: 600; }
 .list .name { flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .list .count, .list .sub { color: var(--figma-color-text-secondary); }
+a.link { color: var(--figma-color-text-brand); text-decoration: none; }
 .list .link { background: none; border: none; padding: 0; color: var(--figma-color-text-brand); cursor: pointer; }
 footer { display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-top: auto; padding-top: 6px; border-top: 1px solid var(--figma-color-border); }
 .options label { font-size: 11px; color: var(--figma-color-text-secondary); }

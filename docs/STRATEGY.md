@@ -555,3 +555,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   through the relay on web-scraper and uk-no-website-leads), O our own from `GET /v2/actor-runs`, X = T − O. Apify's QA
   runner sits inside X and the API cannot tell it from a buyer, so X is the ceiling of paid runs and the monthly Apify
   payout mail (inbox triage) stays the paid figure of record — no `paid/30d` number is invented. §4 row updated.
+- 2026-10-04 burn-down: `free-unused-variables-finder` built — a free companion Figma plugin "Unused Variables Finder &
+  Cleaner" from the toolkit's hygiene module (`ventures/variables-toolkit/src/free/`, `manifest.free.json`, `npm run build:free`),
+  with delete, no payments, no network; its result screen names what the paid toolkit adds for that file and links to the
+  listing. Why: the toolkit is #1 for "unused variables" with 0 installs because every winner of that query is free (§9
+  point 3) — the free listing earns the trial install, the link converts. Owner publishes (action 018, batched with 017).
+  Proof: ≥ 50 installs and ≥ 5 attributed toolkit views in 30 days.

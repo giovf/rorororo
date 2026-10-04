@@ -20,6 +20,7 @@ docs/
 *.md
 docs/for-owner/actions/plugin/
 dist-release
+dist-free
 .wrangler
 dist-test
 dist-firefox

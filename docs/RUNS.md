@@ -460,3 +460,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 19:20 | burn-down | Daily numbers `apify:` gains `30d: T runs (O ours, X others)` — 30-day runs by everyone minus our own
 - 2026-10-04 19:20 | burn-down | No paid/30d number: Apify's QA runner hides inside `others`; the monthly payout mail stays the paid figure
 - 2026-10-04 19:20 | burn-down | Queue: metrics-apify-paid-runs done; STRATEGY §4 Apify row reads `others` as the ceiling from 10-05
+- 2026-10-04 19:45 | burn-down | Free Figma plugin 'Unused Variables Finder & Cleaner' built from the toolkit's hygiene module
+- 2026-10-04 19:45 | burn-down | src/free entry + UI, manifest.free.json, build:free → dist-free; result screen links to the paid listing
+- 2026-10-04 19:45 | burn-down | LISTING-FREE.md copy written; 4 tests on the summary/upsell text
+- 2026-10-04 19:45 | burn-down | Owner: create the plugin in Figma, paste its id, publish (action 018, ~15 min, batch with 017)
+- 2026-10-04 19:45 | burn-down | Queue: free-unused-variables-finder done; proof = 50 installs + 5 toolkit views in 30 days
