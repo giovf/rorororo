@@ -582,3 +582,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   taken from the rival's public source, not guessed. Why: the one concrete "bring your highlights" argument against a free rival with
   200k users whose own help page admits lost highlights are lost; distribution before features, and the cheapest buildable item in
   the queue. Proof: ≥ 1 import named in a review or support mail within 60 days of 0.3.0 going live.
+- 2026-10-04 burn-down: `append-only-guard` built the same night it was queued — `npm run runs` fails when `docs/RUNS.md` or
+  `docs/STRATEGY.md` has fewer dated lines than the floor in `docs/ops/RUNS-COUNT.json` (raised in place as the files grow), and
+  the notifier caps one push at 40 run bullets. Why: the 20:39 overwrite passed CI and would have cost the owner 470 phone
+  messages on restore; both files are the operation's memory and its only report to the owner. Proof: a deliberate shrink fails the
+  check (tested); no further whole-file write reaches `main` unnoticed.

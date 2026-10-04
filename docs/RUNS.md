@@ -480,3 +480,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 21:24 | burn-down | Library page: 'Import Super Simple Highlighter'; listing, AMO notes, comparison row, landing, welcome updated
 - 2026-10-04 21:24 | burn-down | Highlight Keep 0.3.0; handoff: sign/upload after 0.2.0 clears review. Queue: import item done
 - 2026-10-04 21:25 | burn-down | Stopping for time (~45 min): heal + import built; next is foundry append-only-guard (6)
+- 2026-10-04 21:35 | burn-down | Time allowed one more item: foundry append-only-guard (6) built
+- 2026-10-04 21:35 | burn-down | npm run runs now fails when RUNS.md or STRATEGY.md lost dated lines (floor in docs/ops/RUNS-COUNT.json)
+- 2026-10-04 21:35 | burn-down | notify-owner sends at most 40 run bullets per push, then one 'N more lines' bullet; 5 tests added
+- 2026-10-04 21:35 | burn-down | Queue: append-only-guard done; next buildable is highlight-keep comparison-page-2026-rivals (4)

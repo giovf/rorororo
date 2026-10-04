@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   addedLines,
   buildMessages,
+  MAX_RUN_BULLETS,
   cursorText,
   ownerItems,
   parseCursor,
@@ -112,6 +113,27 @@ describe('message building', () => {
     expect(m.texts[1]).toBe(
       'Foundry run:\n• burn-down 21:00: Built foundry refresh-errors-to-queue (8)\n• burn-down 21:00: Stopping for time; next is a | b',
     );
+  });
+
+  it('caps one push at MAX_RUN_BULLETS run bullets and says how many it left out', () => {
+    const many = Array.from(
+      { length: 470 },
+      (_, i) => `+- 2026-09-${String(22 + (i % 8)).padStart(2, '0')} 10:00 | build | line ${i}`,
+    ).join('\n');
+    const m = buildMessages({ alertsDiff: '', runsDiff: many, newActions: [] });
+    expect(m.lines).toBe(470);
+    const bullets = (m.texts[0] ?? '').split('\n').slice(1);
+    expect(bullets).toHaveLength(MAX_RUN_BULLETS + 1);
+    expect(bullets[MAX_RUN_BULLETS]).toBe(
+      '… 430 more run lines not sent here — read them in docs/RUNS.md',
+    );
+    expect(
+      buildMessages({
+        alertsDiff: '',
+        runsDiff: many.split('\n').slice(0, 40).join('\n'),
+        newActions: [],
+      }).texts[0],
+    ).not.toContain('more run lines');
   });
 
   it('builds nothing from an empty range', () => {

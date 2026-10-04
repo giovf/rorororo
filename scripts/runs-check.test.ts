@@ -2,7 +2,11 @@ import { describe, expect, it } from 'vitest';
 import {
   CAP,
   CAP_FROM,
+  datedLineCount,
+  floorViolations,
   formatViolation,
+  parseFloor,
+  raisedFloor,
   parseArgs,
   parseRuns,
   textLength,
@@ -99,5 +103,47 @@ describe('parseArgs', () => {
   it('exports the documented constants', () => {
     expect(CAP).toBe(120);
     expect(CAP_FROM).toBe('2026-10-03');
+  });
+});
+
+describe('append-only floor', () => {
+  const floor = { runs: 472, strategy: 569, updated: '2026-10-04' };
+
+  it('counts dated bullets only', () => {
+    expect(datedLineCount(md)).toBe(7);
+    expect(datedLineCount('# Run log\n\nprose 2026-09-22 here\n')).toBe(0);
+  });
+
+  it('fails when either file lost dated lines, naming the loss', () => {
+    const lost = floorViolations({ runs: 3, strategy: 569 }, floor);
+    expect(lost).toHaveLength(1);
+    expect(lost[0]).toMatch(/^docs\/RUNS\.md: 3 dated lines, floor 472 \(469 lost\)/);
+    expect(floorViolations({ runs: 480, strategy: 6 }, floor)[0]).toMatch(
+      /^docs\/STRATEGY\.md: 6 dated lines, floor 569/,
+    );
+    expect(floorViolations({ runs: 472, strategy: 569 }, floor)).toEqual([]);
+    expect(floorViolations({ runs: 500, strategy: 570 }, floor)).toEqual([]);
+  });
+
+  it('raises the floor to the current counts and never lowers it', () => {
+    expect(raisedFloor({ runs: 480, strategy: 569 }, floor, '2026-10-05')).toEqual({
+      runs: 480,
+      strategy: 569,
+      updated: '2026-10-05',
+    });
+    expect(raisedFloor({ runs: 400, strategy: 600 }, floor, '2026-10-05')).toEqual({
+      runs: 472,
+      strategy: 600,
+      updated: '2026-10-05',
+    });
+  });
+
+  it('reads a floor file, tolerating missing fields', () => {
+    expect(parseFloor('{"runs":10,"strategy":20,"updated":"2026-10-04"}')).toEqual({
+      runs: 10,
+      strategy: 20,
+      updated: '2026-10-04',
+    });
+    expect(parseFloor('{}')).toEqual({ runs: 0, strategy: 0, updated: '' });
   });
 });
