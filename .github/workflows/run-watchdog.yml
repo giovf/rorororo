@@ -12,14 +12,12 @@ name: run watchdog
 # a day); its own commit touches only docs/RUNS.md and is ignored, so it cannot loop.
 on:
   schedule:
-    - cron: '40 * * * *'
-  push:
-    branches: [main]
-    paths-ignore: ['docs/RUNS.md']
+    - cron: '40 */2 * * *' # every 2 h (was hourly + every push: 128 runs/week; CI minutes are capped on a private repo)
   workflow_dispatch:
 
 permissions:
   contents: write
+  actions: read
 
 concurrency:
   group: run-watchdog
@@ -37,12 +35,16 @@ jobs:
         with:
           node-version: 22
       - run: node --disable-warning=ExperimentalWarning scripts/run-watchdog.ts
+      - name: CI-minutes guard (warns in RUNS.md when the month projects past 1,700)
+        run: node scripts/actions-minutes.mjs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Commit
         run: |
           git config user.name "foundry-watchdog[bot]"
           git config user.email "info@gankdat.com"
           git add docs/RUNS.md
           git diff --cached --quiet && { echo "no change"; exit 0; }
-          git commit -m "watchdog: missed routine slot"
+          git commit -m "watchdog: missed slot / ci-minutes"
           git pull --rebase origin main
           git push origin HEAD:main

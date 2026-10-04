@@ -49,13 +49,12 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
 
 | Trigger | Kind | Workflow | Does |
 | --- | --- | --- | --- |
-| push to `main` | GitHub Actions `check` | `.github/workflows/check.yml` | full root gate (`npm run check`); a red result is what the daily build fixes first |
-| push touching `ventures/gankdat/**` | GitHub Actions `gankdat` | `.github/workflows/gankdat.yml` | gankdat gate, D1 migrations, then `wrangler deploy` (resets the Worker's cron triggers to `wrangler.jsonc`), then verifies the deployment via the Workers API |
+| push to `main` touching code (packages, ventures code, scripts, workflows, lockfile) **and nightly 03:15** | GitHub Actions `check` | `.github/workflows/check.yml` | full root gate (`npm run check`); docs-only pushes skip it and the nightly run catches them; a red result is what the daily build fixes first (trimmed 2026-10-04 for the private-repo minutes cap) |
+| push touching `ventures/gankdat/**` code (not its docs, markdown or Apify folders) | GitHub Actions `gankdat` | `.github/workflows/gankdat.yml` | gankdat gate, D1 migrations, then `wrangler deploy` (resets the Worker's cron triggers to `wrangler.jsonc`), then verifies the deployment via the Workers API |
 | push touching `ventures/gankdat/apify/**` or `server.json`, **and daily 04:00** (publish only) | GitHub Actions `gankdat publish` | `.github/workflows/gankdat-publish.yml` → `scripts/publish-actors.mjs`, `scripts/registry-publish.sh` | pushes changed Apify actors (changed = the whole push range from a full-depth checkout, 2026-09-30; before that a two-commit push would have crashed the job), prices every actor and makes at most 5 public per run (Apify: 5 publications / 24 h per organisation, support 2026-09-28), publishes the MCP registry entry when `server.json` is newer. **The keys live in CI, not in any Claude sandbox** — this is what makes the daily build fully autonomous |
 | push touching `docs/ci/**` | GitHub Actions `workflow installer` | `.github/workflows/workflow-installer.yml` (uses the owner's `WORKFLOW_TOKEN`) | moves `docs/ci/*.yml` into `.github/workflows/` and pushes — how routines add or change CI jobs without the `workflow` scope |
 | push touching `docs/relay/requests/**` | GitHub Actions `fetch relay` | `.github/workflows/fetch-relay.yml` → `scripts/fetch-relay.mjs` | fetches the listed URLs (allowlisted public hosts) from the runner and commits the responses under `docs/relay/responses/<name>/` — how routines read hosts their sandbox cannot reach |
 | push touching `packages/landing/**` | GitHub Actions `landing` | `.github/workflows/landing.yml` | deploys the static site Worker at apps.gankdat.com |
-| push touching `packages/landing/site/**` | GitHub Actions `Deploy landing site to GitHub Pages` | `.github/workflows/pages.yml` | legacy github.io copy, kept until store listings switch (action 013) |
 | push touching `docs/ALERTS.md`, `docs/RUNS.md` or `docs/for-owner/actions/**` (and `workflow_dispatch` to resend) | GitHub Actions `notify owner` | `.github/workflows/notify-owner.yml` → `scripts/notify-owner.ts` | sends new `owner:` lines and new action files ("Foundry needs you") and new `docs/RUNS.md` lines ("Foundry run", one bullet per line) to the owner's Telegram. Since 2026-09-30 evening it diffs from the commit in `docs/ops/NOTIFIED.md` (`cursor:`) to the tip of `main` and commits the new cursor (`notify: cursor … [skip ci]`, GITHUB_TOKEN, triggers nothing) only after every channel answered 2xx — a crashed run (run 63 lost four bullets), a Telegram 5xx or a cancelled job leaves the cursor where it was and the next push resends; a refused send fails the job so it shows. Runs are serialised (`concurrency`); an unresolvable cursor falls back to the push range, then the last commit. A line closed in the same range (` — Done …`) is not sent |
 
 ## Conventions the schedulers rely on
@@ -116,6 +115,10 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   token a cloud routine holds lack the `workflow` scope (2026-09-25), so a routine writes the job to
   `docs/ci/<name>.yml` and the `workflow installer` (owner's `WORKFLOW_TOKEN`, live 2026-09-28) moves it
   into `.github/workflows/` on the next push — no handoff (`docs/ci/README.md`).
+- **CI minutes (private repo, 2,000/month hard cap)**: the watchdog runs every 2 h (not hourly, not
+  on push), the root check only on code pushes plus nightly, the gankdat deploy only on code
+  changes, and `scripts/actions-minutes.mjs` (in the watchdog job) posts a `watchdog | ci-minutes:`
+  bullet when the 30-day projection passes 1,700. Baseline before the trim: 873 min/week (≈3,740/month).
 - Routines push exactly once, at the end, after the gates; a run killed by a usage limit leaves
   nothing behind (`docs/OPERATIONS.md`, "Interrupted runs").
 - Routine ids and prompts are managed with the RemoteTrigger API from the interactive session.

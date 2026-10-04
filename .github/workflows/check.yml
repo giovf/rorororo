@@ -1,10 +1,27 @@
 name: check
 
-# Every push to main runs the full gate. A red main means an agent pushed incomplete or broken
-# work (e.g. a run cut off by a usage limit); the daily build routine's first duty is to fix it.
+# The full gate runs on every push that touches code, and once a night for everything else
+# (docs-only commits from the routines were 125 runs and 580 minutes a week — the repo goes
+# private, where 2,000 Actions minutes a month is a hard cap). A red main means an agent pushed
+# incomplete or broken work; the daily build routine's first duty is to fix it.
 on:
   push:
     branches: [main]
+    paths:
+      - 'packages/**'
+      - 'ventures/**'
+      - '!ventures/**/*.md'
+      - '!ventures/**/docs/**'
+      - 'scripts/**'
+      - '.github/workflows/check.yml'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'tsconfig*.json'
+      - 'eslint.config.*'
+      - '.prettierrc*'
+      - '.prettierignore'
+  schedule:
+    - cron: '15 3 * * *' # nightly full gate catches docs-only slips
   workflow_dispatch:
 
 jobs:

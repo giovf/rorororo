@@ -431,4 +431,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 14:30 | interactive | Connectors Directory Step 8: read checks pass through the connector; sign-in card needs one owner click
 - 2026-10-04 14:30 | interactive | Repo-private blocked by CI minutes (~3,700/month vs 2,000 free): decision D4 for the owner, trim item queued
 - 2026-10-04 14:30 | interactive | Owner closed E1–E3 (directory submission in review, both Chrome privacy URLs moved)
+- 2026-10-04 15:10 | interactive | Owner wants the repo private: CI trimmed (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs)
+- 2026-10-04 15:10 | interactive | GitHub Pages job deleted (apps.gankdat.com is the host; Pages is unavailable on private free repos)
+- 2026-10-04 15:10 | interactive | CI-minutes guard added to the watchdog: Telegram bullet when the month projects past 1,700 of the 2,000 cap
+- 2026-10-04 15:10 | interactive | Repo flips private once a measured week is under 350 minutes (baseline 873)
 

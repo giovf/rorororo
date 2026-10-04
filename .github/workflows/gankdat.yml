@@ -2,8 +2,14 @@ name: gankdat
 
 on:
   push:
-    branches: [main, feature/data-retrieval-and-manipulation]
-    paths: ['ventures/gankdat/**', '.github/workflows/gankdat.yml', 'package-lock.json']
+    branches: [main]
+    paths:
+      - 'ventures/gankdat/**'
+      - '!ventures/gankdat/docs/**'
+      - '!ventures/gankdat/**/*.md'
+      - '!ventures/gankdat/apify/**'
+      - '.github/workflows/gankdat.yml'
+      - 'package-lock.json'
   pull_request:
     paths: ['ventures/gankdat/**']
   workflow_dispatch:
