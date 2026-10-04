@@ -542,3 +542,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-04 burn-down: `billing-alert-to-owner` built — one sentence in `docs/routines/inbox-triage.md`: a paid service's
   billing or usage alert above its LEDGER.md line is `needs owner` with an `owner:` line and an unconfirmed ledger note,
   never plain `logged` (the 10-01 Cloudflare US$15 alert sat unread for three days).
+- 2026-10-04 burn-down: `retro-clone-depth` built — the retro's checkout step in `docs/routines/ops-retro.md` now checks
+  the oldest commit in `git log --since='8 days ago'` and unshallows (or deepens by 200) when the clone covers less
+  than 7 days; the W40 retro measured 2 of 8 days until unshallowed by hand.
