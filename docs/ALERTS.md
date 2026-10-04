@@ -252,3 +252,11 @@ closed entries older than 30 days (git keeps the history).
   Publish to Community with the copy in `ventures/variables-toolkit/PLAYGROUND.md`, reply with the URL. Steps:
   `docs/for-owner/actions/017-figma-playground-file.md`. Why: free files are surfaced far more than paid plugins; the
   listing has 2 views in 11 days. No new account, no money.
+- 2026-10-04 owner: **two minutes on Cloudflare, then the Claude form.** (1) Cloudflare's budget alert of 2026-10-01 says
+  **US$15.00 of metered usage** for 2026-09-10..10-10 — three times the US$5 Workers Paid line in `docs/LEDGER.md`, with
+  £0 revenue, which trips STRATEGY §7's cost rule. Open https://dash.cloudflare.com/37e56f3ce4dfe49919e85d4380467f44/billing/billable-usage
+  and reply (Telegram or a note) with which line carries it — D1 rows written/read, KV, Analytics Engine or Workers requests —
+  and the figure; the queue item `cloudflare-usage-breakdown` (8) then cuts the driver (the nightly full D1 rewrites are the
+  prime suspect) and corrects the ledger. If the deploy token can read the breakdown itself the build routine will say so and
+  you can skip this. (2) The Claude Connectors Directory form (OUTSTANDING E1, ~20 min, pre-written) is still the one shelf
+  that opens without a third party; nothing else on the list moves a §4 number. No new account, no money.

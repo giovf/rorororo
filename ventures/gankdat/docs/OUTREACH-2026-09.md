@@ -87,18 +87,22 @@ Domains that opted out or bounced — never emailed again by anyone:
 
 ## 6. Send log
 
+All ten sent by the owner from the Gmail drafts on 2026-09-28 20:33 UTC (read from the Sent folder by the
+2026-W40 strategy review on 2026-10-04); nine delivered, one bounced. Verdict due 2026-10-12 (queue item
+`b2b-outreach-results`): ≥ 2 replies or 1 sign-up from the nine delivered.
+
 | # | Firm | Sent (date) | Reply? | Sign-up? | Notes |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Executive Compass | | | | |
-| 2 | Thornton & Lowe | | | | |
-| 3 | Hudson Succeed | | | | |
-| 4 | BWS | | | | |
-| 5 | Bid Solutions | | | | |
-| 6 | Bubble Design | | | | |
-| 7 | Splitpixel | | | | |
-| 8 | Giant Digital | | | | |
-| 9 | Adept | | | | |
-| 10 | Wholegrain Digital | | | | |
+| 1 | Executive Compass | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
+| 2 | Thornton & Lowe | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
+| 3 | Hudson Succeed | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
+| 4 | BWS | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
+| 5 | Bid Solutions | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
+| 6 | Bubble Design | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
+| 7 | Splitpixel | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
+| 8 | Giant Digital | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
+| 9 | Adept | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
+| 10 | Wholegrain Digital | 2026-09-28 20:33 UTC | bounced | — | `550 5.1.1` address not found (hello@wholegraindigital.com) — not delivered; find the current mailbox before any second list |
 
 ## 7. The drafts
 

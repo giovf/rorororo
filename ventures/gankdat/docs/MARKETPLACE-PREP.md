@@ -23,7 +23,8 @@ place for what is listed where, what each channel needs, and the copy-paste blur
 | Smithery | not listed; CLI publish needs a Smithery account (owner) | — |
 | Google Search Console | domain verified 2026-09-20 (owner, DNS TXT); sitemap `https://gankdat.com/sitemap.xml` to submit once | search.google.com/search-console |
 | x402 Bazaar (CDP discovery) | 402 bodies already carry `discoverable: true`; the catalogue lists services once real settlements occur (only 2 test payments so far) | https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources |
-| Apify Store | **uk-food-hygiene-ratings LIVE** (pay-per-result US$0.001, 80/20). Four more built and priced but blocked by the new-publisher limit (`cannot-publish-actor`); support asked 2026-09-20 | https://apify.com/faceless-api/uk-food-hygiene-ratings |
+| Apify Store | **all 17 actors public since 2026-09-28** (pay-per-result, 80/20; the block was a 5-publications-per-24h limit, now respected by the daily publish job). First run reading 2026-10-01: ~11 runs/day across the 17, paid share not yet separated (`metrics-apify-paid-runs`) | https://apify.com/faceless-api |
+| Claude Connectors Directory | **built 2026-09-30** (v0.20.0 annotations, Origin 403, keyless preview, `test/mcp-directory.spec.ts`), **not submitted** — the portal form is the owner's (OUTSTANDING E1, `docs/CLAUDE-DIRECTORY.md`); day-30 read queued for 2026-10-30 | https://claude.ai/directory/manage |
 | RapidAPI | parked (see below) | — |
 
 ## Official MCP Registry

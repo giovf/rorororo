@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "items": [
     {
       "id": "fetch-relay",
@@ -320,6 +320,16 @@
       "score": 6,
       "status": "todo",
       "added": "2026-10-03"
+    },
+    {
+      "id": "metrics-apify-paid-runs",
+      "title": "Daily numbers row separates paid Apify runs (other users, pay-per-result) from our own and Apify's QA runs, so STRATEGY §4's \"paid runs / month\" target has a reading",
+      "why": "Review 2026-W40: `apify: 127 runs (+11/24h), 17 users/30d, 17 public` is the first run reading (metrics-apify-runs, 09-30) but it counts lifetime totals, and `17 users/30d` is exactly one user per actor — consistent with Apify's QA runner plus us, not buyers. The §4 target is paid runs per month and the pivot check on 12-20 reads it. Do: per actor, runs in the last 30 days by users other than the owner account (Apify API `GET /v2/acts/{id}/runs?desc=1` filtered by `userId`, or the actor's `stats` vs our own run list), plus the account's monthly payout/earnings figure if the API exposes it; print `apify: R runs (+d/24h), P paid/30d, U users/30d, 17 public`. Keep the lifetime total so the series stays continuous.",
+      "effort_days": 0.2,
+      "proof": "`P paid/30d` in the Daily numbers row from the day it lands; the 2026-W41 review reads it",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-04"
     }
   ]
 }

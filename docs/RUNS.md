@@ -404,3 +404,17 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-03 17:25 | build | Run on today's rows it queued gankdat refresh-uk-insolvency-2026-10-03 (errored 10-02 and 10-03)
 - 2026-10-03 17:25 | build | 11 tests; SCHEDULERS row and the metrics workflow step wording updated (docs/ci drop for the installer)
 - 2026-10-03 17:25 | build | Queue: next buildable is foundry billing-alert-to-owner (6) or the new insolvency fix (6); no owner action
+
+- 2026-10-04 08:15 | review | Review 2026-W40: every money target flat — 0 paying, £0 MRR, 0 feed calls, 0 sales; Apify 17/17 open, ~11 runs/day
+- 2026-10-04 08:15 | review | gankdat: fix — Cloudflare alert says $15 metered vs £3.70 ledger line with £0 revenue; §7 cost rule tripped
+- 2026-10-04 08:15 | review | Variables Toolkit: keep — 4 views, 0 installs at day 13; levers built, playground waits on owner; day-30 on 10-21
+- 2026-10-04 08:15 | review | ReadFocus and Highlight Keep: keep — both stores live, 3 Firefox downloads, 0 users; 0.2.0 waits on the handoff
+- 2026-10-04 08:15 | review | Queued gankdat cloudflare-usage-breakdown (8): name the product behind the $15, cut it, fix the ledger
+- 2026-10-04 08:15 | review | Ledger: planned £7.40 Cloudflare overage, unconfirmed until the 10-10 invoice; headroom now £30.20
+- 2026-10-04 08:15 | review | Outreach: all ten sent 09-28 (Gmail), Wholegrain bounced, 0 replies at day 6; verdict item dated 2026-10-12
+- 2026-10-04 08:15 | review | Signal: keyless preview turned ~80 paywall hits/day into ~100 previews; connect_account 4-6/day, 0 connects
+- 2026-10-04 08:15 | review | Queued gankdat oauth-connect-funnel-check (5, from 10-09): walk the Claude sign-in hop, find where it drops
+- 2026-10-04 08:15 | review | Gap queued: foundry metrics-apify-paid-runs (6) — the row counts all runs, the §4 target wants paid ones
+- 2026-10-04 08:15 | review | Gap queued: gankdat metrics-dataset-queries-30d (5) — §7 dataset rule has no per-dataset reading
+- 2026-10-04 08:15 | review | STRATEGY §4 Now column refreshed with sources; §1 cost line names the alert; §6 says weekly review
+- 2026-10-04 08:15 | review | Owner: 2 min on the Cloudflare usage page (which line is the $15), and the Claude directory form is still open

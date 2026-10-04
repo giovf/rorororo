@@ -11,7 +11,9 @@
 Cheap-to-run products sold through channels that bring their own buyers. Every product has
 near-zero marginal cost, so **any sale is net profit**; the only real risk is silence. The
 portfolio therefore optimises for *many independent shots where buyers already pay for the
-same thing*, not for one big bet. Capital cap £100; recurring cost today ≈ £4/month.
+same thing*, not for one big bet. Capital cap £100; recurring cost on the ledger ≈ £4/month —
+but Cloudflare's 2026-10-01 budget alert reported US$15 of metered usage 20 days into the period,
+so the real figure is unconfirmed until the 10-10 invoice (review 2026-W40, §7 cost rule).
 
 ## 2. Where the money is (ranked by evidence, 2026-09-20)
 
@@ -37,13 +39,13 @@ same thing*, not for one big bet. Capital cap £100; recurring cost today ≈ £
 
 | Metric | Now | Target | Where measured |
 | --- | --- | --- | --- |
-| gankdat paying accounts | 0 | 5 | `Daily numbers` rows in `ventures/gankdat/RESEARCH.md` |
-| gankdat MRR | £0 | £150 | Stripe (weekly report) |
+| gankdat paying accounts | 0 (1 unpaid account since 09-28; review W40, Daily numbers 2026-10-03) | 5 | `Daily numbers` rows in `ventures/gankdat/RESEARCH.md` |
+| gankdat MRR | £0 (review W40) | £150 | Stripe (weekly report) |
 | Apify actors live | 17 of 17 | 17 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — `P public`; all 17 went public 2026-09-28 |
-| Apify paid runs / month | 0 | 100 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — lifetime `R runs` plus the `+d/24h` delta, Apify API `stats.totalRuns` |
-| Change-feed calls / week | 0 | 50 | `changes 7d:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — Analytics Engine, MCP `get_changes` + REST `/v1/changes` |
-| Extension + plugin sales | 0 | 20 | Stripe / Figma |
-| Directory listings live | 4 | 8 | `MARKETPLACE-PREP.md` |
+| Apify paid runs / month | ~11 runs/day total since 10-01 (≈ 340/month pace), paid share unknown — `metrics-apify-paid-runs` queued (review W40, Daily numbers 2026-10-03) | 100 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — lifetime `R runs` plus the `+d/24h` delta, Apify API `stats.totalRuns` |
+| Change-feed calls / week | 0 (measured 09-30..10-03; review W40) | 50 | `changes 7d:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — Analytics Engine, MCP `get_changes` + REST `/v1/changes` |
+| Extension + plugin sales | 0 (Figma 4 views, 0 installs; Chrome 0 users; Firefox 3 downloads — review W40, Daily check 2026-10-03) | 20 | Stripe / Figma |
+| Directory listings live | 5 (Claude Connectors Directory built 09-30, awaiting the owner's form — review W40) | 8 | `MARKETPLACE-PREP.md` |
 
 If gankdat is < £50 MRR **and** Apify < 20 paid runs/month by 2026-12-20 with all listings
 live, the data line is re-positioned (see kill criteria) rather than extended.
@@ -79,8 +81,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 3. **Build** with the gates (`npm run check`), Blind Mode for personal data, ledger for money.
 4. **Distribute** through channels with their own buyers; owner clicks batched into one action.
 5. **Measure**: daily metrics job + routines; funnel = visits → keys → paywall hits → payments.
-6. **Review**: weekly report (Mondays) for facts; **monthly strategy review** (first Monday,
-   `docs/reviews/YYYY-MM.md`, cloud routine) that scores every venture keep / double-down /
+6. **Review**: weekly report (Mondays) for facts; **weekly strategy review** (Sundays 08:00 UTC,
+   `docs/reviews/YYYY-Www.md`, cloud routine; weekly since 2026-09-22, was monthly) that scores every venture keep / double-down /
    kill, checks the 90-day targets, lists market signals seen (support mail, feedback form,
    directory replies) and proposes the next three moves. Claude rewrites this file after it.
 
@@ -489,3 +491,18 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   uk-insolvency (fixed 09-30) errored 10-02 and 10-03 and the morning job still skipped it; a done item now counts only rows dated
   after its fix and is re-filed once two of them fail. Dropped items keep the cool-off (a drop is a decision). Run on today's rows the
   new rule queued gankdat `refresh-uk-insolvency-2026-10-03` (6). Proof: an every-other-day source is queued within four days.
+
+- 2026-10-04 review (2026-W40): scorecard flat on every money target — 0 paying accounts (1 unpaid), £0 MRR,
+  0 change-feed calls, 0 extension/plugin sales, 5 directories; Apify shelf fully open (17/17) with ~11 runs/day
+  whose paid share is unmeasured. Verdicts: gankdat **fix** (STRATEGY §7's cost rule is tripped on the
+  evidence: Cloudflare reported US$15 of metered usage 20 days into the period against the £3.70 ledger line
+  and £0 revenue; nothing in the repo knows which product carries it — queued `cloudflare-usage-breakdown`
+  (8) as the week's first move, ledger gets an unconfirmed £7.40 planned row, headroom £30.20); Variables
+  Toolkit, ReadFocus, Highlight Keep **keep** (clocks at day 13 and ≤ day 4; nothing to read before 10-21/10-30).
+  Market signal: the keyless preview (10-01) turned ~80 paywall hits/day into ~100 previews/day and
+  `connect_account` is now the most-wanted tool (4–6/day) with 0 completed connects — queued
+  `oauth-connect-funnel-check` (5, from 10-09). Outreach: all ten sent 09-28 (Gmail), one bounce, 0 replies at
+  day 6 — `b2b-outreach-results` is dated 2026-10-12 instead of blocked. Measurement gaps queued:
+  `metrics-apify-paid-runs` (foundry 6), `metrics-dataset-queries-30d` (gankdat 5). Exchange unchanged (no
+  trigger met). One owner line: a 2-minute look at Cloudflare's billable-usage page and the still-open
+  Connectors Directory form. Review: `docs/reviews/2026-W40.md`.

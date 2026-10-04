@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-03",
+  "updated": "2026-10-04",
   "items": [
     {
       "id": "nhs-ods",
@@ -45,7 +45,7 @@
       "proof": "≥ 10 stats pages indexed (Search Console)",
       "score": 4,
       "status": "blocked",
-      "blocked_on": "owner click in Search Console (identity)",
+      "blocked_on": "owner: the sitemap was submitted 2026-09-28 (OUTSTANDING A2); what remains is one export of Search Console \"Pages → not indexed\" (identity), or a Search Console API read through the relay once the owner adds the property credentials — no indexing reading exists in the repo as of the 2026-W40 review",
       "added": "2026-09-20"
     },
     {
@@ -128,13 +128,13 @@
     {
       "id": "b2b-outreach-results",
       "title": "Close the B2B outreach experiment: 14 days after the last send, count replies/sign-ups in OUTREACH-2026-09.md §6, write the verdict to RESEARCH.md and decide on a second list",
-      "why": "The experiment only pays if its result is read. Proof number set 2026-09-24: ≥ 2 replies or 1 sign-up from 10 emails. Replies arrive at info@gankdat.com (inbox triage logs them in docs/INBOX.md); sign-ups show in the Daily numbers row.",
+      "why": "The experiment only pays if its result is read. Proof number set 2026-09-24: ≥ 2 replies or 1 sign-up from 10 emails. Replies arrive at info@gankdat.com (inbox triage logs them in docs/INBOX.md); sign-ups show in the Daily numbers row. Review 2026-W40 (Gmail, read 2026-10-04): all ten mails were sent 2026-09-28 20:33 UTC from the owner's account; Wholegrain Digital bounced (550 5.1.1), nine delivered, 0 replies by 10-04. Verdict date = 14 days after the send = 2026-10-12; send log filled in OUTREACH-2026-09.md §6.",
       "effort_days": 0.1,
       "proof": "verdict line in RESEARCH.md; second list queued or outreach dropped",
       "score": 4,
-      "status": "blocked",
-      "blocked_on": "owner sends the ten Gmail drafts (ALERTS 2026-09-26) — unblock with the send dates in OUTREACH-2026-09.md §6",
-      "added": "2026-09-26"
+      "status": "todo",
+      "added": "2026-09-26",
+      "not_before": "2026-10-12"
     },
     {
       "id": "stats-canonical-fix",
@@ -233,6 +233,37 @@
       "score": 6,
       "status": "todo",
       "added": "2026-10-03"
+    },
+    {
+      "id": "cloudflare-usage-breakdown",
+      "title": "Read Cloudflare's billable-usage breakdown for the gankdat account, name the product behind the $15 metered alert, cut the driver, and put the real monthly figure in the ledger",
+      "why": "Review 2026-W40: Cloudflare's budget alert of 2026-10-01 17:55 reported $15.00 of metered usage for 2026-09-10..10-10, 20 days into the period, against the GBP 3.70/month (US$5 Workers Paid) line docs/LEDGER.md carries and GBP 0 revenue. STRATEGY §7: recurring spend above GBP 10/month needs 3x that in banked revenue — tripped on this evidence. Nothing in the repo knows which product carries it. Prime suspect: D1 rows written — seven D1 registers (uk-food-hygiene, uk-schools, nhs-ods, uk-charities, uk-care-locations, uk-contract-awards, uk-insolvency …) are rewritten in full every night, while the change feeds already compute the delta, so writing only changed rows would cut writes by an order of magnitude; Analytics Engine data points and KV writes are the other candidates. Do: (1) read the breakdown — Cloudflare GraphQL analytics (d1AnalyticsAdaptiveGroups rowsWritten/rowsRead per database, kvOperationsAdaptiveGroups, workersInvocationsAdaptive, analytics engine writes) with the deploy token from a GitHub runner via docs/ci/, or the owner's billable-usage page if the token lacks the scope (owner line 2026-10-04); (2) fix the driver — delta upserts for D1 registers / fewer data points / KV TTLs; (3) write the real figure into docs/LEDGER.md (replace the unconfirmed GBP 7.40 planned row when the 10-10 invoice mail arrives) and add a monthly `cf cost:` reading to the Daily numbers row so the §7 rule has a number.",
+      "effort_days": 0.5,
+      "proof": "Cloudflare invoice for 2026-10-10..11-10 <= US$10; docs/LEDGER.md row confirmed against the invoice; `cf usage:` figure in the Daily numbers row",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-10-04"
+    },
+    {
+      "id": "metrics-dataset-queries-30d",
+      "title": "Per-dataset authed query count over 30 days in the metrics row, so STRATEGY §7's \"unqueried for 60 days → retire\" rule has a reading",
+      "why": "Review 2026-W40: the `wanted` list carries only the top three keyless tools; nothing in the repo says how many authed REST or MCP calls each of the 17 datasets received in the last 30/60 days, so the per-dataset retirement rule cannot be applied (and with zero customers it would retire everything, which is the whole-line question instead). Analytics Engine already records authed tools/call and REST data points keyed by tool/slug (metrics.mjs). Do: once a week (Sundays, before the review) or daily, print `datasets 30d: <slug> N, …` (authed only, zero-call slugs listed as `0: a, b, c`) in the Daily numbers row or a `Dataset usage` row.",
+      "effort_days": 0.15,
+      "proof": "the 2026-W41 review reads per-dataset 30-day counts from RESEARCH.md",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-04"
+    },
+    {
+      "id": "oauth-connect-funnel-check",
+      "title": "Walk the MCP OAuth sign-in hop end to end from a real Claude client and record where the daily connect_account calls drop",
+      "why": "Review 2026-W40: since lazy OAuth shipped (v0.21.0, 2026-09-30) `connect_account` is the most-wanted tool every day (6, 6, 4 calls on 10-01..03) and `oauth: 0 connects/24h, 0/30d` every day — agents start the sign-in, no human completes it. Either the callers are scanners (then the row should say so: client hosts are already printed) or the Connect card → /authorize → magic-link mail → consent → /token hop loses the person (another tab, mail delay, a consent page error). Do, from 2026-10-09 (so a week of rows exists): add gankdat as a custom connector in a Claude client (the interactive session or the relay's browser-shaped agent can drive the HTTP legs; the owner's click is only needed for the mail link), log each leg's status in RESEARCH.md, fix what breaks, and make the Daily numbers row count authorize starts, consent views and token issues separately so the funnel is visible without a probe.",
+      "effort_days": 0.25,
+      "proof": ">= 1 `oauth connect` in the Daily numbers row by 2026-10-18, or the row names the step where every attempt stops",
+      "score": 5,
+      "status": "todo",
+      "not_before": "2026-10-09",
+      "added": "2026-10-04"
     }
   ]
 }
