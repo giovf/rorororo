@@ -1,0 +1,89 @@
+{
+  "data": {
+    "id": "8TjjTeNWoUBKjU66E",
+    "userId": "VcapAQgluym4HTqoG",
+    "name": "uk-no-website-leads",
+    "username": "faceless-api",
+    "description": "Organisations on official UK registers that list no website: CQC care providers, registered charities and schools in England, with name, type, address, postcode, local authority and region. Filter by sector and area. Refreshed daily from official data. Pay per result.",
+    "isPublic": true,
+    "createdAt": "2026-09-21T20:08:28.658Z",
+    "modifiedAt": "2026-09-27T17:35:58.404Z",
+    "taggedBuilds": {
+      "latest": {
+        "buildId": "ZbjvvS5zTq3jTp5NW",
+        "finishedAt": "2026-09-21T20:08:50.174Z",
+        "buildNumberInt": 100001,
+        "buildNumber": "0.1.1"
+      }
+    },
+    "stats": {
+      "totalBuilds": 1,
+      "totalRuns": 6,
+      "totalUsers": 2,
+      "totalUsers7Days": 1,
+      "totalUsers30Days": 1,
+      "totalUsers90Days": 1,
+      "lastRunStartedAt": "2026-10-03T15:50:29.814Z",
+      "actorReviewCount": 0,
+      "actorReviewRating": 0,
+      "bookmarkCount": 0,
+      "publicActorRunStats30Days": {
+        "ABORTED": 0,
+        "FAILED": 0,
+        "SUCCEEDED": 6,
+        "TIMED-OUT": 0,
+        "TOTAL": 6
+      }
+    },
+    "versions": [
+      {
+        "versionNumber": "0.1",
+        "sourceType": "SOURCE_FILES",
+        "buildTag": "latest"
+      }
+    ],
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 3600,
+      "memoryMbytes": 4096
+    },
+    "exampleRunInput": {
+      "body": "{ \"helloWorld\": 123 }",
+      "contentType": "application/json; charset=utf-8"
+    },
+    "categories": [
+      "LEAD_GENERATION",
+      "BUSINESS"
+    ],
+    "isDeprecated": false,
+    "title": "UK Businesses Without a Website (leads for web agencies)",
+    "seoTitle": "UK Businesses Without a Website (leads for web agencies)",
+    "seoDescription": "Organisations on official UK registers that list no website: CQC care providers, registered charities and schools in England, with name, type, address, postcode",
+    "pricingInfos": [
+      {
+        "pricingModel": "PAY_PER_EVENT",
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "result": {
+              "eventTitle": "Result (one record)",
+              "eventDescription": "One record written to the dataset",
+              "eventPriceUsd": 0.001
+            }
+          }
+        },
+        "createdAt": "2026-09-21T20:08:53.222Z",
+        "startedAt": "2026-09-21T20:08:53.222Z",
+        "apifyMarginPercentage": 0.2
+      }
+    ],
+    "notice": "NONE",
+    "isCritical": false,
+    "isGeneric": false,
+    "hasNoDataset": false,
+    "isSourceCodeHidden": true,
+    "standbyUrl": null,
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "readmeSummary": "## UK Businesses Without a Website\n\nAggregates and normalizes organisation-level records from official UK registers to produce prospect lists of organisations that have no website listed; the Actor pulls entries from the Care Quality Commission (CQC) care directory, the Charity Commission register, and the Department for Education Get Information About Schools (GIAS), applies sector and geographic filtering, and returns standardized rows containing organisation identity, location (address, postcode, outward code, local authority, region), sector and organisation type, a size indicator (pupil counts, income, or provider size), registration date, source identifiers and a link back to the original register entry. Coverage includes regulated care locations in England (care homes, GPs, dentists, homecare, hospices), registered charities in England & Wales (with a default income threshold bias), and open schools/academies/colleges/nurseries in England. Source datasets are maintained under OGL v3 and are refreshed on regular schedules (daily/weekly depending on the register).\n\n## Use cases\n\n- Building prospect lists for web agencies  \n- Generating leads for freelance web developers  \n- Sourcing potential customers for SaaS site builders",
+    "deploymentKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQCn7vDsBVnHXS3TT0gE9gQJNtljxNGMVum7xkWmY7l1+m/XFKw40paV1GYN6nUZYzd+FJOhY7cmaHbeoVRH6KsYzWdsxbbpOJ5tJ0nWVKRHYqDGaAKh3QM8h+SzPU58diWukLl0GxHC1MGpmG63oaKeX/njZm7PX0oCPdGlOxW5oACR3Wc+BHphJIb+uJm7YzDdwhXUNOptNw0JwtyxjpKHlC0uHVVDS2rBB7gIU6d6LIJQgz6msM7f9UtcpK72FIQoBfVocXfM4+x+UyQErVtz/lWf2WQngLwtLjTkEQ0Z5Pwn0WJSQN71oP0cKBsJGrp9+gMt0Qk30vT7rWG+3n8D \n"
+  }
+}
