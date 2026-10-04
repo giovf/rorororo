@@ -613,3 +613,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the last buildable ReadFocus item; AMO's Android home page is a free shelf that needs no new account; the sandbox cannot run
   Firefox for Android, so the proof is the AMO API's compatibility field and Android installs at the day-30 review, where the
   item is dropped if none show. Ships with the next AMO sign, after 0.2.0 clears review.
+- 2026-10-04 burn-down: foundry research pass (pipeline starved after the last ReadFocus item) — three scored ops items
+  queued from tonight's own run: the extension e2e fails first time in the sandbox (Playwright build mismatch, root check never
+  runs it), a `doing` item is invisible to `pipeline next` (actions-minutes hid behind a starvation report), and the paid-tier
+  e2e sections skip on every cloud run for want of the signing key. Why: each cost or hid work tonight and would again; all three
+  are small, repo-only, and raise the chance that a shipped extension version is actually tested. No exchange pre-research:
+  the starved-queue rule takes precedence and the budget is spent.

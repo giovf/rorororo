@@ -506,3 +506,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 23:21 | burn-down | Ruler and paragraph focus follow pointer events: a tap places them on touch; shortcut API guarded in background
 - 2026-10-04 23:21 | burn-down | AMO release notes + description line for Android; handoff: sign 0.2.1 after 0.2.0 clears review (not device-tested)
 - 2026-10-04 23:21 | burn-down | Queue: read-focus firefox-android-compat done; proof = AMO compatibility lists android + 5 Android installs by day 30
+- 2026-10-04 23:29 | burn-down | Foundry research (starved pipeline): three ops items from today's evidence, all self-expansion
+- 2026-10-04 23:29 | burn-down | e2e-sandbox-browser (4): e2e failed first time, Playwright wants chromium-1208, sandbox has 1194; check skips e2e
+- 2026-10-04 23:29 | burn-down | pipeline-doing-visibility (4): actions-minutes sat hidden in doing while next reported starvation
+- 2026-10-04 23:29 | burn-down | e2e-pro-sections-test-key (3): pro sections skip on every cloud run for want of the signing key
+- 2026-10-04 23:37 | burn-down | Stopping for time (~45 min): ReadFocus 0.2.1 Android + foundry research; next buildable is e2e-sandbox-browser (4)
