@@ -343,6 +343,16 @@
       "score": 7,
       "status": "doing",
       "added": "2026-10-04"
+    },
+    {
+      "id": "append-only-guard",
+      "title": "Append-only guard for docs/RUNS.md and docs/STRATEGY.md: npm run runs fails when the file lost dated lines; notify-owner caps one run at 40 bullets",
+      "why": "2026-10-04 20:39 (commit 815ab26, burn-down): a run wrote STRATEGY.md and RUNS.md whole with only its new entry — 569 and 472 lines gone, two later runs appended to the stubs, CI stayed green, and the restore (21:25) only avoided resending 470 Telegram bullets because the notify cursor was moved by hand. Nothing checks that either file only grows. Build: scripts/runs-check.ts records the dated-line count of RUNS.md and the decision-log line count of STRATEGY.md in docs/ops/RUNS-COUNT.json (updated by the same check when the count grows) and fails when the live count is lower; scripts/notify-owner.ts sends at most 40 bullets per run and one 'N more lines not sent — see docs/RUNS.md' bullet instead of the rest. Both are unit-tested; depth-1 CI needs no git range for either.",
+      "effort_days": 0.2,
+      "proof": "no further whole-file overwrite reaches main unnoticed; a deliberate test shrink fails npm run check",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-04"
     }
   ]
 }
