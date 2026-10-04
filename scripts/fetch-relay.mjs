@@ -44,6 +44,8 @@ const ALLOWED = [
   '.openstreetmap.org',
   '.web-highlights.com',
   '.marqly.com',
+  '.dyslexly.com',
+  'halfbold.vercel.app',
 ];
 
 function allowed(hostname) {
