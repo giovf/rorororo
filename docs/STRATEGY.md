@@ -518,3 +518,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   first reading (the deploy token has the analytics scope): 87.5M D1 rows written 09-10→10-04, KV,
   Analytics Engine and requests ≈ 0 — D1 writes are the whole overage (≈ US$38 so far, ledger £31
   estimated); the owner's dashboard look is no longer needed.
+- 2026-10-04 interactive: first real OAuth connection to gankdat's MCP server (the owner's account, from Claude). Two
+  bugs fixed on the way — a double-submitted consent form stranding the client on 'expired', and popup-breaking
+  headers (COOP, form-action) that left claude.ai spinning. Both now covered by tests. Extensions 0.2.0 shipped to
+  both stores; CI trimmed for the private-repo cap.
+

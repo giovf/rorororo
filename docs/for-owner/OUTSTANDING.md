@@ -7,7 +7,7 @@ Nothing here spends money. Your answers of 2026-09-28 are applied below.
 
 | # | Do this | Unblocks | Where |
 | --- | --- | --- | --- |
-| E4 | **Finish the Connectors Directory sign-in check** (1 min): in the claude.ai chat where you added the gankdat connector, say "sign in to gankdat" and complete the Connect card once (any email you can read; a free account is created). Claude already ran the read checks (list_sources, a query, get_changes, get_usage) through the connector on 2026-10-04 and they pass. | Ticking "I have tested every tool" on the listing that is now in review | `ventures/gankdat/docs/CLAUDE-DIRECTORY.md` Step 8 |
+| ~~E4~~ | **Done 2026-10-04 15:43 UTC**: owner signed in through the connector; code exchanged, tokens issued, tools answer full pages on the free plan (249 credits left after the test query). Step 8 of the directory pack is complete. | — | — |
 | D4 | **Decided 2026-10-04: repo goes private.** Claude trimmed CI (root check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job removed) and added a minutes guard; the flip happens once a measured week lands under 350 Actions minutes (≈1,500/month against the 2,000 cap). Nothing for you to do. | — | `foundry/actions-minutes` |
 
 E1 (Connectors Directory submission), E2 and E3 (Chrome privacy URLs) done by you 2026-10-04. ReadFocus and Highlight Keep 0.2.0 shipped to both stores the same day (in review).
