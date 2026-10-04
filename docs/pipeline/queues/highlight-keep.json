@@ -2,7 +2,7 @@
   "venture": "highlight-keep",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-01",
+  "updated": "2026-10-04",
   "items": [
     {
       "id": "post-approval-links",
@@ -58,6 +58,47 @@
       "status": "done",
       "added": "2026-09-30",
       "done_at": "2026-10-01"
+    },
+    {
+      "id": "library-backup-restore",
+      "title": "Library backup (JSON) and restore from the library page — the whole store out to one file and back in, merged",
+      "why": "Both rival camps' fear is data loss: Weava 'folders and highlights randomly disappearing' (chrome-stats last-100 rating 2.9, read 2026-10-04), Super Simple's own help page says highlights 'aren't sent anywhere, synced, or backed up … if they're lost, they really are lost'. Highlight Keep has Markdown export only (core/model.ts); a JSON backup/restore is the no-server answer and the move-to-another-computer path, and the restore UI is what import-super-simple-highlighter plugs into. Listing and comparison page gain a 'Backup & restore' line.",
+      "effort_days": 0.3,
+      "proof": "a review or support mail naming backup/restore, or the comparison-page row read by the day-30 review",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-04"
+    },
+    {
+      "id": "import-super-simple-highlighter",
+      "title": "Import a Super Simple Highlighter backup file into the library ('bring your highlights'), said on the listing and the comparison page",
+      "why": "Super Simple Highlighter (200k users, local, free) documents a backup (beta) export holding every style and highlight location (dexterouslogic.com help, read 2026-10-04); its reviews say saved pages disappear and the help page admits no sync or backup. A refugee with that file can move across in one click — the only paid-vs-free argument we can make concrete. Build after library-backup-restore (same restore UI); first obtain a real backup file's layout (install the extension in the e2e Chromium, make two highlights, export) before writing the parser — never guess the format.",
+      "effort_days": 0.5,
+      "proof": "≥ 1 import reported in a review or support mail within 60 days; installs after the listing line vs before",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-04"
+    },
+    {
+      "id": "day-30-funnel-review",
+      "title": "Day-30 funnel review once both 0.2.0 listings are live: installs, key activations, sales, Search Console on the comparison page — keep, fix or kill per STRATEGY §7",
+      "why": "Mirrors read-focus day-30-funnel-review. 0 users through 2026-10-04 with the listing fixes (screenshots, category, keywords, comparison page) days old and 0.2.0 still in review; nothing is readable before the end of October. Reads the metrics rows, AMO API, store-metrics CI and Search Console for weava-alternative.html.",
+      "effort_days": 0.1,
+      "proof": "a written verdict in RESEARCH.md with the numbers; the queue reopened or finished accordingly",
+      "score": 5,
+      "status": "todo",
+      "not_before": "2026-10-30",
+      "added": "2026-10-04"
+    },
+    {
+      "id": "comparison-page-2026-rivals",
+      "title": "weava-alternative.html gains Web Highlights and Marqly rows — the two products that rank for 'weava alternative' in 2026 — with verified pricing",
+      "why": "Today's search results for 'weava alternative' are rival blogs: Web Highlights (100k users, 4.8, web-highlights.com/blog) and Marqly ('best web highlighters 2026'); both sell subscriptions and both are absent from our page, so a reader comparing against what Google shows finds us incomplete. Verify each rival's current price and account requirement from their own pricing pages (WebSearch or relay) before writing the rows; keep the honest 'not yet' cells.",
+      "effort_days": 0.2,
+      "proof": "Search Console impressions for the page at the day-30 review ≥ 50 (unchanged target), rank for 'weava alternative' recorded",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-04"
     }
   ]
 }

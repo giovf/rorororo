@@ -128,3 +128,33 @@ served without a `.pdf` path. e2e (`npm run e2e`, section 4) proves render → s
 reload → restore in a real Chromium; 5 unit tests cover the URL helpers. Proof stays as queued: a
 "PDF" mention in a review or support mail, and conversions after 0.2.0 vs before. Ships with the
 open 0.1.1 handoff (now 0.2.0, same commands).
+
+## Research 2026-10-04 (burn-down; starvation fallback — no buildable item in any queue)
+
+Evidence read: the metrics rows (0 Chrome users, 0 Firefox daily users, 0 weekly downloads every day
+2026-09-30..10-04; 0.2.0 in review on both stores since 10-04, so no reading of the fixed listings exists yet),
+the 2026-09-19 review sample (`research/cws-reviews-2026-09-19.json`: 9 Weava, 8 Glasp, 7 Hypothesis, 7 Super
+Simple reviews — asks: PDF 4, login/account 3, lost data 2, billing 2, Reddit anchoring 1; nobody mentions sync,
+export or Notion), and two web reads today: (1) Super Simple Highlighter's help page documents a **backup
+(beta) file** holding every style and highlight location, loaded back by replacing everything, and states
+highlights "aren't sent anywhere, synced, or backed up … if they're lost, they really are lost"
+(dexterouslogic.com/supersimplehighlighter/help); (2) the 2026 "weava alternative" results are rival blogs —
+Web Highlights (100k users, 4.8) and Marqly's "best web highlighters 2026" — which report Weava's last-100-review
+rating at 2.9 and "folders and highlights randomly disappearing from the dashboard" as the top complaint
+(web-highlights.com, marqly.com, chrome-stats.com). Our comparison page names neither rival.
+
+Reading: still a findability problem first (the listing fixes are days old and unmeasured), so the cheap
+items are the ones that make the comparison page answer today's search results and give a burned user a
+one-click way across. The product has Markdown export only (`core/model.ts toMarkdown`) — no backup, no
+restore, no import — which is the exact fear both rival camps voice. Items added (score = evidence × reach ÷ effort):
+
+| Item | Score | Effort | What it does |
+|---|---|---|---|
+| `library-backup-restore` | 5 | 0.3 d | JSON backup of the whole library and restore (merge), from the library page; the "if lost, really lost" answer and the move-to-another-computer path without a server |
+| `import-super-simple-highlighter` | 5 | 0.5 d | reads a Super Simple Highlighter backup file into the library (verify its JSON layout from a real export first); listing + comparison page say "bring your highlights" |
+| `day-30-funnel-review` | 5 | 0.1 d (not before 2026-10-30) | installs, sales, Search Console on the comparison page; keep, fix or kill per STRATEGY §7 |
+| `comparison-page-2026-rivals` | 4 | 0.2 d | add Web Highlights and Marqly rows (the two that rank for "weava alternative" today) with verified pricing; one-time vs subscription stated plainly |
+
+Not queued: Reddit/XPath anchoring (one review, our anchors are text-quote based — `core/anchor.ts` — check
+on a day-30 complaint, not before); Firefox for Android (unverified demand); Edge (owner account, in the
+ReadFocus queue). Kill check unchanged: 2026-12-21 if nothing moves.
