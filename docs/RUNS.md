@@ -494,3 +494,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 22:21 | burn-down | Queue: comparison-page-2026-rivals done; proof unchanged (≥ 50 impressions at the day-30 review)
 - 2026-10-04 22:30 | burn-down | ReadFocus research: today's results for its three target searches name Dyslexly, Half Bold, AlternativeTo
 - 2026-10-04 22:30 | burn-down | read-focus queue +4: rivals columns (4), reading-ruler page (4), AlternativeTo (3, owner), Android (2)
+- 2026-10-04 22:36 | burn-down | Relay read Half Bold's site + listing and Dyslexly's listing (its site 403s the runner)
+- 2026-10-04 22:36 | burn-down | reader-mode-alternative.html: Half Bold and Dyslexly columns (12 rows) and a paragraph on the pair
+- 2026-10-04 22:36 | burn-down | Queue: read-focus comparison-page-2026-rivals done; next buildable is reading-ruler-page (4)

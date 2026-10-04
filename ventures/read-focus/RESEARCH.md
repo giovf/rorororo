@@ -220,3 +220,16 @@ ReadFocus on the pages a searcher reaches and state those three gaps honestly. I
 Not added: a free companion extension (the Variables Toolkit pattern) — a ruler-only or bold-only free extension would
 sit next to Half Bold and Dyslexly, which are already free and larger, and risks the Chrome Web Store's repetitive-
 content rule; a demo video (no evidence it moves installs). Kill check unchanged: 2026-12-21 if nothing moves.
+
+### 2026-10-04 (burn-down) — `comparison-page-2026-rivals` built
+`reader-mode-alternative.html` now has six columns: Half Bold and Dyslexly joined the three September rivals, with one
+paragraph on the pair. Facts through the relay (`docs/relay/responses/rf-rivals-2026/`, `rf-rivals-2026b/`): **Half Bold** —
+halfbold.vercel.app: "100% free … no premium version, no subscriptions", two engines (CSS-only / tag-wrapping),
+OpenDyslexic, focus modes, PDFs "need conversion first", a Google Docs integration guide; Chrome listing 10,000 users,
+4.8 (55), v2.0.4 updated 2026-03-05. **Dyslexly** — dyslexly.com answers 403 to the runner, so its Chrome listing is the
+source: 271 users, 5.0 (5), v1.6.24 updated 2026-09-28; free tools "do not require an account, subscription or credit
+card": four fonts, spacing, overlays, line focus, reading ruler, read-aloud, a bold-starts mode, per-site settings, a
+built-in reader for text-based PDFs; Pro adds rewriting and voice tools (price not on the listing, so not on our page).
+Reading: both are free, so the page says plainly where they win and keeps ReadFocus's three real differences (bold
+strength, paragraph focus, PDF reflow as real text). Dyslexly's 271 users show it ranks on content, not installs — the
+`reading-ruler-page` item is the same play. Allowlist gained `.dyslexly.com` and `halfbold.vercel.app`.

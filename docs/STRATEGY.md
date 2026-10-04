@@ -599,3 +599,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   one-time-price argument does not carry; what ReadFocus can still say is PDF reflow, paragraph focus and bold strength, and the
   cheapest way to say it is on the pages the search already reaches. A free companion extension was considered and not queued
   (Half Bold and Dyslexly already own the free slot; repetitive-content risk on the store).
+- 2026-10-04 burn-down: read-focus `comparison-page-2026-rivals` built the same night it was queued — Half Bold (10k users,
+  free, no PDFs) and Dyslexly (271 users, free toolkit with ruler and PDF reader) now sit in the ReadFocus comparison table with
+  facts from their own site and listings; where they win the page says so. Why: they are what the search shows today, and a
+  page that omits them reads as stale; ReadFocus's case is narrowed to the three things they lack. Proof unchanged: page
+  impressions ≥ 50 at the 2026-10-30 review.

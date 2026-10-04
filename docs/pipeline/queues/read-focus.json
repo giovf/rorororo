@@ -73,12 +73,13 @@
     {
       "id": "comparison-page-2026-rivals",
       "title": "reader-mode-alternative.html gains Dyslexly and Half Bold columns — the two names in today's \"dyslexia extension\" and \"adhd reading extension\" results — with facts read from their own sites",
-      "why": "2026-10-04 searches: Dyslexly (dyslexly.com; free, no account, five fonts, line focus, ruler, PDF viewer, Pro ≈ £2/month) and Half Bold (halfbold.vercel.app; free, 8,000+ users, 4.8 from 55 ratings) rank for the queries our page targets and are absent from it. Both are free and local, so write the honest cells: where ReadFocus wins (PDF reflow as real text, paragraph focus, precise bold strength), where it does not. Read their pages and Chrome listings through the relay (add dyslexly.com and halfbold.vercel.app to the allowlist) before writing a cell; never use the trademarked bolding term.",
+      "why": "2026-10-04 searches: Dyslexly (dyslexly.com; free, no account, five fonts, line focus, ruler, PDF viewer, Pro ≈ £2/month) and Half Bold (halfbold.vercel.app; free, 8,000+ users, 4.8 from 55 ratings) rank for the queries our page targets and are absent from it. Both are free and local, so write the honest cells: where ReadFocus wins (PDF reflow as real text, paragraph focus, precise bold strength), where it does not. Read their pages and Chrome listings through the relay (add dyslexly.com and halfbold.vercel.app to the allowlist) before writing a cell; never use the trademarked bolding term. Built 2026-10-04 evening: Half Bold from halfbold.vercel.app + its Chrome listing (relay rf-rivals-2026); dyslexly.com returns 403 to the runner, so Dyslexly comes from its Chrome listing only (relay rf-rivals-2026b) and its Pro price is not stated on the page.",
       "effort_days": 0.2,
       "proof": "Search Console impressions for the page at the day-30 review ≥ 50 (unchanged target); rank for \"reader mode alternative\" recorded",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-04"
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
     },
     {
       "id": "reading-ruler-page",
