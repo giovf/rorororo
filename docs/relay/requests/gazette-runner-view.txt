@@ -1,2 +1,0 @@
-GET RANGE=0-4095 https://www.thegazette.co.uk/insolvency/notice/data.json?noticetypes=2452,2401,2402&results-page-size=50&results-page=1
-HEAD https://www.thegazette.co.uk/insolvency/notice/data.json?noticetypes=2452&results-page-size=50&results-page=1

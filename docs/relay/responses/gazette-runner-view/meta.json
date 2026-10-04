@@ -1,0 +1,33 @@
+{
+  "request": "gazette-runner-view",
+  "fetched_at": "2026-10-04T18:18:53.632Z",
+  "results": [
+    {
+      "method": "GET",
+      "range": "0-4095",
+      "url": "https://www.thegazette.co.uk/insolvency/notice/data.json?noticetypes=2452,2401,2402&results-page-size=50&results-page=1",
+      "fetched_at": "2026-10-04T18:18:51.803Z",
+      "status": 200,
+      "final_url": "https://www.thegazette.co.uk/insolvency/notice/data.json?noticetypes=2452,2401,2402&results-page-size=50&results-page=1",
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "last-modified": "Sun, 04 Oct 2026 12:30:10 GMT"
+      },
+      "file": "1.json",
+      "bytes": 101350,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.thegazette.co.uk/insolvency/notice/data.json?noticetypes=2452&results-page-size=50&results-page=1",
+      "fetched_at": "2026-10-04T18:18:52.496Z",
+      "status": 200,
+      "final_url": "https://www.thegazette.co.uk/insolvency/notice/data.json?noticetypes=2452&results-page-size=50&results-page=1",
+      "headers": {
+        "content-type": "application/json;charset=UTF-8",
+        "content-length": "101281",
+        "last-modified": "Sun, 04 Oct 2026 12:30:10 GMT"
+      }
+    }
+  ]
+}
