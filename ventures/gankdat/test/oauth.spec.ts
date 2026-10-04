@@ -413,6 +413,17 @@ describe('/authorize', () => {
     expect(again.status).toBe(410);
   });
 
+  it('serves the consent pages popup-safe: opener kept and the form may redirect to the client', async () => {
+    const { requestId } = await startAuthorize();
+    const res = await SELF.fetch(`${BASE}/authorize?request=${requestId}`);
+    expect(res.status).toBe(200);
+    expect(res.headers.get('cross-origin-opener-policy')).toBe('unsafe-none');
+    expect(res.headers.get('content-security-policy')).toContain("form-action 'self' https:");
+    expect(res.headers.get('x-frame-options')).toBe('DENY');
+    const api = await SELF.fetch(`${BASE}/v1/sources`);
+    expect(api.headers.get('cross-origin-opener-policy')).toBe('same-origin');
+  });
+
   it('answers a repeated approval by the same account with a fresh code (double-submitted form)', async () => {
     const { requestId } = await startAuthorize();
     const cookie = await signInViaMagicLink(requestId!, 'twice@example.com');

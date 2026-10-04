@@ -438,3 +438,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 
 - 2026-10-04 16:40 | interactive | OAuth consent bug fixed: a double-submitted approve form stranded the owner on 'Request expired' and claude.ai never got the code
 - 2026-10-04 16:40 | interactive | Approval is now idempotent for the same account (fresh code within 5 min), consent button single-submit, request window 30 min
+- 2026-10-04 15:45 | interactive | OAuth popup fix: consent pages had COOP same-origin and form-action 'self', which kept claude.ai spinning on 'connecting'; relaxed on /authorize only

@@ -38,6 +38,33 @@ app.use('*', canonicalHost());
 app.use('*', staticAssets());
 app.use('*', requestId());
 app.use('*', structuredLogger());
+// OAuth browser pages (/authorize, /authorize/login, /authorize/decision) run inside the popup
+// a client such as claude.ai opens: they must keep `window.opener` (COOP unsafe-none, so the
+// popup can report back) and their form POST must be allowed to redirect to the client's
+// registered https redirect_uri (Chrome applies form-action to that redirect). Registered
+// BEFORE the global secureHeaders below so its post-handler pass runs last and wins.
+// 2026-10-04: with the strict defaults every claude.ai connect spun on "connecting…".
+const oauthPageHeaders = secureHeaders({
+  xFrameOptions: 'DENY',
+  xContentTypeOptions: 'nosniff',
+  referrerPolicy: 'strict-origin-when-cross-origin',
+  strictTransportSecurity: 'max-age=63072000; includeSubDomains',
+  crossOriginOpenerPolicy: 'unsafe-none',
+  contentSecurityPolicy: {
+    defaultSrc: ["'self'"],
+    scriptSrc: ["'self'"],
+    styleSrc: ["'self'", "'unsafe-inline'"],
+    imgSrc: ["'self'", 'data:'],
+    connectSrc: ["'self'"],
+    formAction: ["'self'", 'https:'],
+    baseUri: ["'none'"],
+    objectSrc: ["'none'"],
+    frameAncestors: ["'none'"],
+  },
+  xXssProtection: false,
+});
+app.use('/authorize', oauthPageHeaders);
+app.use('/authorize/*', oauthPageHeaders);
 // Dynamic-response hardening (JSON API). Static HTML gets the same via
 // public/_headers, applied by the assets binding in staticAssets().
 app.use(
