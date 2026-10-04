@@ -88,8 +88,9 @@
       "effort_days": 0.3,
       "proof": "≥ 30 impressions or ≥ 3 clicks on the page in Search Console at the day-30 review; any install the same day as a click",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-04"
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
     },
     {
       "id": "alternativeto-listing",

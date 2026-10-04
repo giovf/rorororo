@@ -233,3 +233,14 @@ built-in reader for text-based PDFs; Pro adds rewriting and voice tools (price n
 Reading: both are free, so the page says plainly where they win and keeps ReadFocus's three real differences (bold
 strength, paragraph focus, PDF reflow as real text). Dyslexly's 271 users show it ranks on content, not installs — the
 `reading-ruler-page` item is the same play. Allowlist gained `.dyslexly.com` and `halfbold.vercel.app`.
+
+### 2026-10-04 (burn-down) — `reading-ruler-page` built
+`https://apps.gankdat.com/reading-ruler.html` is the search-capture page for "reading ruler chrome extension" / "reading
+ruler pdf": an 11-row table against Reader Line (20,000 users, 4.9, every top review asks for PDF), ReadingLine (8,000,
+3.9, abandoned June 2022, "zero controls") and ReadingRuler (722, 3.4, "not working after recent update"), all from the
+September 2026 harvest (`research/cws-harvest-2026-09-18.json`); honest cells where ReadFocus's ruler is thinner (one
+band, no colour/size controls, no lock-in-place) and the PDF reflow explained as the reason a ruler can work on a web PDF
+at all. Links: landing index, the ReadFocus page, the comparison page, `sitemap.xml`, `LISTING.md` and
+`assets/amo-metadata.json` (the live listings pick the line up on the next dashboard visit / version sign). Proof (queue):
+≥ 30 impressions or ≥ 3 clicks at the 2026-10-30 review. Not built: colour/size controls for the band — a product change,
+queued only if the page or a review asks for it.

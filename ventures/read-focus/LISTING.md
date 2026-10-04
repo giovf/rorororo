@@ -21,6 +21,7 @@ Private by design: ReadFocus runs only on the sites you switch it on for (Chrome
 Made for readers with ADHD or dyslexia, students, and anyone who reads for a living.
 
 Switching from Reader Mode or another focus-reading extension that stopped working? Side-by-side comparison: https://apps.gankdat.com/reader-mode-alternative.html
+Looking for a reading ruler that works on PDFs? https://apps.gankdat.com/reading-ruler.html
 
 **Category:** Accessibility · **Language:** English
 **Single purpose:** Improve readability of web page and web PDF text for the current user.

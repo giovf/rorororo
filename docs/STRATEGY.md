@@ -604,3 +604,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   facts from their own site and listings; where they win the page says so. Why: they are what the search shows today, and a
   page that omits them reads as stale; ReadFocus's case is narrowed to the three things they lack. Proof unchanged: page
   impressions ≥ 50 at the 2026-10-30 review.
+- 2026-10-04 burn-down: read-focus `reading-ruler-page` built — a search-capture page for the ruler query, where 28k users sit
+  on three free tools that are abandoned, broken or asking for PDF, the one thing ReadFocus's 0.2.0 reader does. Why: the
+  cheapest remaining distribution item; same pattern as the two comparison pages; honest about the band's missing controls.
+  Proof: ≥ 30 impressions or ≥ 3 clicks at the 2026-10-30 review.
