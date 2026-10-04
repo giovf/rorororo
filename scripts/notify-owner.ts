@@ -1,7 +1,7 @@
 // Notify owner: sends what the repo says the owner should see to the owner's phone.
 //
 // Sources: newly added `owner:` / `needs owner` lines in docs/ALERTS.md, newly created files under
-// docs/for-owner/actions/ ("Foundry needs you") and newly added run lines in docs/RUNS.md ("Foundry
+// docs/for-owner/actions/ ("Foundry needs you") and newly added `| notify |` run lines in docs/RUNS.md ("Foundry
 // run", one bullet per line). Channels are selected by which secrets exist: Telegram
 // (TELEGRAM_BOT_TOKEN + TELEGRAM_CHAT_ID) and/or WhatsApp via CallMeBot (CALLMEBOT_PHONE +
 // CALLMEBOT_APIKEY). Message text is only what the files say — never secrets.
@@ -91,19 +91,25 @@ export function ownerItems(alertsDiff: string): string[] {
   return addedLines(alertsDiff)
     .filter((l) => /\bowner:|needs owner/i.test(l))
     .filter((l) => !/—\s*(Done|Superseded)\b/.test(l))
-    .map((l) => l.replace(/^-\s*/, '').trim());
+    .map((l) =>
+      l
+        .replace(/^-\s*/, '')
+        .replace(/^\d{4}-\d{2}-\d{2}\s+owner:\s*/i, '')
+        .trim(),
+    );
 }
 
-/** RUNS.md lines (`- YYYY-MM-DD HH:MM | <routine> | <text>`) as phone bullets. */
+/**
+ * Only RUNS.md lines tagged `| notify |` reach the phone (owner 2026-10-04: a new version of an
+ * existing product, a new product live, or something the owner must do — short, non-technical).
+ * Every other run line stays in the repo.
+ */
 export function runBullets(runsDiff: string): string[] {
   return addedLines(runsDiff)
-    .filter((l) => /^-\s*\d{4}-\d{2}-\d{2}/.test(l))
+    .filter((l) => /^-\s*\d{4}-\d{2}-\d{2}[^|]*\|\s*notify\s*\|/.test(l))
     .map((l) => {
-      const [when = '', who = '', ...rest] = l.replace(/^-\s*/, '').split('|');
-      return `• ${who.trim()} ${when.trim().slice(11)}: ${rest.join('|').trim()}`.replace(
-        /\s+:/,
-        ':',
-      );
+      const [, , ...rest] = l.replace(/^-\s*/, '').split('|');
+      return `• ${rest.join('|').trim()}`;
     });
 }
 
@@ -134,10 +140,10 @@ export function buildMessages(input: {
   const texts: string[] = [];
   if (items.length > 0) {
     texts.push(
-      `Foundry needs you:\n${items.map((i) => `• ${i}`).join('\n')}\n\nDetails: Ops page or docs/for-owner in the repo.`,
+      `Foundry needs you:\n${items.map((i) => `• ${i}`).join('\n')}\n\nDetails: docs/for-owner/OUTSTANDING.md`,
     );
   }
-  if (runs.length > 0) texts.push(`Foundry run:\n${runs.join('\n')}`);
+  if (runs.length > 0) texts.push(`Foundry:\n${runs.join('\n')}`);
   return { texts, lines: items.length + runs.length };
 }
 

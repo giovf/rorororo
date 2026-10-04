@@ -1,7 +1,10 @@
 # Run log
 
-One line per piece of work done, newest last; every new line is sent to the owner's Telegram
-as a bullet by the `notify owner` CI job. Format:
+One line per piece of work done, newest last — a repo log; since 2026-10-04 these lines do NOT
+reach the owner's phone. Only lines tagged `| notify |` are sent by the `notify owner` CI job, and
+only for: a new version of an existing product submitted to a store, a new product live on a
+shelf, or something the owner must do. Keep those one plain sentence, ≤ 90 chars, no jargon.
+Format for every line:
 `- YYYY-MM-DD HH:MM | <routine> | <one thing done, ≤ 120 chars>`. A run that did five things
 writes five lines (dataset built, tests added, actor pushed, doc updated, item blocked …).
 Routines: build, exchange, review, report; interactive sessions too; `watchdog` lines come from
@@ -480,3 +483,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 21:24 | burn-down | Library page: 'Import Super Simple Highlighter'; listing, AMO notes, comparison row, landing, welcome updated
 - 2026-10-04 21:24 | burn-down | Highlight Keep 0.3.0; handoff: sign/upload after 0.2.0 clears review. Queue: import item done
 - 2026-10-04 21:25 | burn-down | Stopping for time (~45 min): heal + import built; next is foundry append-only-guard (6)
+- 2026-10-04 16:50 | interactive | Telegram now only for product releases, launches and owner actions (plain one-liners); run bullets stay in the repo
