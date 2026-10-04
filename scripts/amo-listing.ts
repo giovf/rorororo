@@ -131,11 +131,23 @@ export async function main(venture: string): Promise<void> {
       path.basename(p.file),
     );
     form.set('position', String(p.position));
-    if (p.caption) form.set('caption', JSON.stringify({ 'en-US': p.caption }));
+    // AMO rejects a caption inside the multipart upload ("must provide an object of
+    // {lang-code:value}"), so the image goes up first and the caption follows as JSON.
     const up = await api(amoJwt(issuer, secret), 'POST', `${base}previews/`, form, false);
     if (up.status !== 201 && up.status !== 200)
       throw new Error(`preview ${p.file}: ${up.status} ${up.text.slice(0, 500)}`);
     console.log(`uploaded ${p.file} at position ${p.position}`);
+    if (p.caption) {
+      const id = (JSON.parse(up.text) as { id: number }).id;
+      const cap = await api(
+        amoJwt(issuer, secret),
+        'PATCH',
+        `${base}previews/${id}/`,
+        JSON.stringify({ caption: { 'en-US': p.caption } }),
+      );
+      if (cap.status !== 200)
+        console.log(`caption for ${p.file}: ${cap.status} ${cap.text.slice(0, 200)}`);
+    }
   }
   const after = await api(amoJwt(issuer, secret), 'GET', base);
   const d2 = JSON.parse(after.text) as AddonDetail;

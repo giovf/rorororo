@@ -425,3 +425,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 09:31 | build | Ledger: the £7.40 planned Cloudflare row now points at the reading; invoice figure replaces it on 10-10
 - 2026-10-04 09:40 | build | Reading works: 87.5M D1 rows written 09-10→10-04, KV/AE/requests ≈ 0 — D1 writes are the whole overage
 - 2026-10-04 09:40 | build | Owner: skip the Cloudflare dashboard look; ledger planned overage set to ≈ £31 (US$42) until the invoice
+- 2026-10-04 14:30 | interactive | Highlight Keep 0.2.0 shipped: Firefox signed+submitted, Chrome uploaded+published (in review)
+- 2026-10-04 14:30 | interactive | ReadFocus 0.2.0 shipped: Firefox signed+submitted, Chrome uploaded+published (in review)
+- 2026-10-04 14:30 | interactive | AMO listings: valid category/tags/homepage set; screenshot uploads throttled by AMO, re-run queued
+- 2026-10-04 14:30 | interactive | Connectors Directory Step 8: read checks pass through the connector; sign-in card needs one owner click
+- 2026-10-04 14:30 | interactive | Repo-private blocked by CI minutes (~3,700/month vs 2,000 free): decision D4 for the owner, trim item queued
+- 2026-10-04 14:30 | interactive | Owner closed E1–E3 (directory submission in review, both Chrome privacy URLs moved)
+

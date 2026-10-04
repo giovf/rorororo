@@ -235,7 +235,7 @@ closed entries older than 30 days (git keeps the history).
   `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
   (2026-10-01 burn-down: the repo is now **0.2.0** — PDF highlighting — the same commands sign and upload it; AMO release notes updated.)
   Record the submission dates in `ventures/highlight-keep/STORE.md`. Do not flip the repo private yet: that waits for the
-  owner's Chrome dashboard privacy-URL edit (action 013) on both extensions and for ReadFocus's own 0.1.1. ~15 min.
+  owner's Chrome dashboard privacy-URL edit (action 013) on both extensions and for ReadFocus's own 0.1.1. ~15 min. — Done 2026-10-04 (interactive): 2026-10-04: Highlight Keep 0.2.0 and ReadFocus 0.2.0 signed and submitted to AMO and uploaded+published to CWS (both in review); AMO listing fields set, screenshots re-run after AMO's throttle
 - 2026-09-30 owner: **one 2-minute dashboard edit** — the Chrome Web Store privacy-policy URL for Highlight Keep must move
   to `https://apps.gankdat.com/privacy.html` (the page is live; steps in `docs/for-owner/actions/013-repo-private.md`).
   It is the last link keeping the repo public; once you have done it (and the same for ReadFocus, asked the same way

@@ -330,6 +330,16 @@
       "score": 6,
       "status": "todo",
       "added": "2026-10-04"
+    },
+    {
+      "id": "actions-minutes",
+      "title": "Trim GitHub Actions usage below ~1,500 min/month so the repo can go private (free cap 2,000)",
+      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month.",
+      "effort_days": 0.5,
+      "proof": "7-day Actions minutes under 350 for two consecutive weeks",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-04"
     }
   ]
 }
