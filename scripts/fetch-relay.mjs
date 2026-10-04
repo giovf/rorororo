@@ -42,6 +42,8 @@ const ALLOWED = [
   '.ons.gov.uk',
   '.hmrc.gov.uk',
   '.openstreetmap.org',
+  '.web-highlights.com',
+  '.marqly.com',
 ];
 
 function allowed(hostname) {

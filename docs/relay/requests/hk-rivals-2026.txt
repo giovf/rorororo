@@ -1,0 +1,7 @@
+# highlight-keep comparison-page-2026-rivals: verify Web Highlights and Marqly pricing from their own pages
+GET https://web-highlights.com/pricing
+GET https://web-highlights.com/faq
+GET https://www.marqly.com/Pricing/
+GET https://www.marqly.com/web-highlighter
+GET https://chromewebstore.google.com/detail/hldjnlbobkdkghfidgoecgmklcemanhm
+GET https://chromewebstore.google.com/detail/kcadneobjofkppmekgadodnaojoehemc
