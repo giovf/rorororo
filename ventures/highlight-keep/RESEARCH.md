@@ -71,6 +71,8 @@ larger, clearly frustrated audience and three stores (Chrome, Firefox, Edge) fro
 | 2026-10-02 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing); AMO ratings count 0 |
 | 2026-10-03 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.1.0, updated September 21, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.1.0 |
 | 2026-10-03 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing); AMO ratings count 0 |
+| 2026-10-04 | Daily check | — | — | — | store-metrics job left no row |
+| 2026-10-04 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
