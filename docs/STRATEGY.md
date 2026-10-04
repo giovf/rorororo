@@ -528,3 +528,14 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   failed. Nothing else built this run, per the heal-first rule.
 - 2026-10-04 build (17:00, STEP 0): found the same red `runs` gate as the burn-down run above and fixed it identically;
   the burn-down's push landed first, so this slot merged it, confirmed `npm run check` green and built nothing.
+- 2026-10-04 burn-down: `refresh-uk-insolvency-2026-10-03` built. Not a parser fault: the relay read page 1 of The
+  Gazette's feed in full from a GitHub runner this evening (200, 101 KB) while the Worker has read it as 0 bytes every
+  day since 09-28 through two rounds of retries — the origin cuts the body for the Worker's egress. So the source is
+  now runner-fed (`refresh.runner`): the cron waves skip it, a stale KV snapshot is served without an inline attempt,
+  and the `gankdat metrics` job runs the source's own `fetchFresh` on its runner and writes the Worker's exact KV
+  values plus a `refresh_log` row through the REST API (`scripts/runner-refresh.mjs`, bundled with esbuild — new
+  gankdat devDependency). The Daily numbers row also lists any source with no `ok` refresh in two days, so a runner
+  job that silently stops is seen. Proof: uk-insolvency absent from refresh errors for 7 Daily rows from 10-05.
+- 2026-10-04 burn-down (18:35): `main` went red mid-run — the watchdog's first CI-minutes warning line in RUNS.md was
+  131 chars against the 120 cap `npm run runs` enforces. Shortened the line; `scripts/actions-minutes.mjs` now cuts its
+  text at 120 so the guard can never redden `main` again.

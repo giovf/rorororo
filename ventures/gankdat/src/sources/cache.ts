@@ -12,13 +12,40 @@ export interface CachedStats {
   last_refreshed_at: string;
 }
 
-const dataKey = (slug: string): string => `data:${slug}`;
-const statsKey = (slug: string): string => `srcstats:${slug}`;
+export const dataKey = (slug: string): string => `data:${slug}`;
+export const statsKey = (slug: string): string => `srcstats:${slug}`;
 const refreshLockKey = (slug: string): string => `refreshlock:${slug}`;
 
 // Keep the last-good payload well past its freshness window so it can be served
 // stale while the origin is down (freshness is judged in code, not by KV TTL).
 const STALE_RETENTION_FACTOR = 7;
+
+/** KV expiry of a snapshot and its stats blob: the TTL plus a stale-retention margin. */
+export function snapshotTtlSeconds(source: DataSource): number {
+  return Math.max(60, source.refresh.cacheTtlSeconds * STALE_RETENTION_FACTOR);
+}
+
+/**
+ * The two KV writes one refresh makes, as key/value/ttl — shared by the Worker's
+ * refresh and the runner-side refresh (`scripts/runner-refresh.mjs`) so a snapshot
+ * written from a GitHub runner is byte-for-byte what the Worker would have written.
+ */
+export function snapshotWrites(
+  source: DataSource,
+  records: unknown[],
+  lastRefreshedAt: string,
+): { key: string; value: string; ttl: number }[] {
+  const ttl = snapshotTtlSeconds(source);
+  const payload: CachedPayload = { records, last_refreshed_at: lastRefreshedAt };
+  const stats: CachedStats = {
+    stats: computeStats(records, source.stats),
+    last_refreshed_at: lastRefreshedAt,
+  };
+  return [
+    { key: dataKey(source.slug), value: JSON.stringify(payload), ttl },
+    { key: statsKey(source.slug), value: JSON.stringify(stats), ttl },
+  ];
+}
 
 // Best-effort single-flight window. Concurrent request-path refreshers see the
 // lock and serve stale (or 503) instead of each hammering the upstream — which
@@ -44,7 +71,7 @@ export async function putSourceStats(
 ): Promise<void> {
   const payload: CachedStats = { stats, last_refreshed_at: lastRefreshedAt };
   await env.CACHE.put(statsKey(source.slug), JSON.stringify(payload), {
-    expirationTtl: Math.max(60, source.refresh.cacheTtlSeconds * STALE_RETENTION_FACTOR),
+    expirationTtl: snapshotTtlSeconds(source),
   });
 }
 
@@ -77,6 +104,10 @@ export async function readCached(
 ): Promise<CachedPayload> {
   const hit = await env.CACHE.get<CachedPayload>(dataKey(source.slug), 'json');
   if (hit && isFresh(hit, source)) return hit;
+  // A runner-fed source is never refreshed from here while a snapshot exists: the
+  // Worker cannot read its origin (that is why it is runner-fed), and each doomed
+  // attempt would cost the request its retry pauses before serving the same bytes.
+  if (hit && source.refresh.runner) return hit;
 
   const lockKey = refreshLockKey(source.slug);
   let acquired = false;
@@ -144,7 +175,7 @@ export async function refreshSource(
     }
     const payload: CachedPayload = { records, last_refreshed_at: new Date().toISOString() };
     await env.CACHE.put(dataKey(source.slug), JSON.stringify(payload), {
-      expirationTtl: Math.max(60, source.refresh.cacheTtlSeconds * STALE_RETENTION_FACTOR),
+      expirationTtl: snapshotTtlSeconds(source),
     });
     // Precompute /stats over the ≤MAX_RECORDS snapshot so the public page reads
     // a cached blob rather than recomputing per request. Best-effort.

@@ -235,7 +235,12 @@ export const ukInsolvencySource: DataSource<UkInsolvencyRecord> = {
     published_at_after: z.iso.date().optional(),
     published_at_before: z.iso.date().optional(),
   }),
-  refresh: { cron: '0 5 * * *', cacheTtlSeconds: 86_400 },
+  // Runner-fed since 2026-10-04: from 2026-09-28 every Worker read of page 1 came back as 0
+  // bytes (four paced reads a day, page size halved on 09-30, still nothing) while a GitHub
+  // runner read the same URL in full each time — the origin cuts the body for the Worker's
+  // egress, not for the layout. The cron waves skip this source; the `gankdat metrics` job
+  // runs `fetchFresh` below on its runner and writes the KV snapshot and refresh_log row.
+  refresh: { cron: '0 5 * * *', cacheTtlSeconds: 86_400, runner: true },
   fetchFresh: async (env) => {
     try {
       return await fetchFromOrigin();

@@ -148,9 +148,19 @@ export async function refreshOne(
   }
 }
 
+/** A source whose refresh a GitHub runner owns (`RefreshPolicy.runner`): the cron waves skip it. */
+export function isRunnerFed(source: DataSource): boolean {
+  return source.refresh.runner === true;
+}
+
+/** The sources one cron wave refreshes (every wave when the cron is unknown). */
+export function cronSources(wave: RefreshWave | undefined): DataSource[] {
+  return listSources().filter((s) => !isRunnerFed(s) && (wave === undefined || waveOf(s) === wave));
+}
+
 export async function refreshAllSources(env: CloudflareBindings, cron?: string): Promise<void> {
   const wave = waveForCron(cron);
-  const sources = listSources().filter((s) => wave === undefined || waveOf(s) === wave);
+  const sources = cronSources(wave);
   console.log(
     JSON.stringify({
       level: 'info',

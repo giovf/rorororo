@@ -1195,13 +1195,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-04T09:31:44.457Z"
+      },
+      {
+        "id": "23",
+        "title": "gankdat: runner-fed refresh for sources the Worker cannot read (uk-insolvency)",
+        "description": "RefreshPolicy.runner: cron waves skip the source, a stale KV snapshot is served as is; scripts/runner-refresh.mjs (gankdat metrics job) runs fetchFresh on a GitHub runner and writes the KV snapshot + refresh_log row via the Cloudflare REST API. The Gazette served the Worker 0 bytes every day from 2026-09-28 while a runner read the feed in full.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-04T18:23:03.463Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-04T09:31:44.457Z",
-      "taskCount": 22,
-      "completedCount": 15,
+      "lastModified": "2026-10-04T18:23:03.463Z",
+      "taskCount": 23,
+      "completedCount": 16,
       "tags": [
         "master"
       ]

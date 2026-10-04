@@ -1,0 +1,70 @@
+name: gankdat metrics
+
+# GitHub's cron is best-effort (the 06:30 slot was skipped on 2026-09-22), so the job also runs
+# on pushes to main, where it only writes a row if today's is missing (METRICS_IF_MISSING).
+on:
+  schedule:
+    - cron: '30 6 * * *' # daily, before the 07:00 UTC ops routine
+  push:
+    branches: [main]
+    paths-ignore: ['ventures/gankdat/RESEARCH.md', 'docs/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - name: Self-heal cron triggers (a cut-off session may have left a temporary one armed)
+        run: node ventures/gankdat/scripts/schedules.mjs reset
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Install (only the scheduled run needs node_modules, for the runner-side refresh)
+        if: github.event_name != 'push'
+        run: npm ci
+      - name: Refresh the sources whose origin the Worker cannot read (runner-fed, 2026-10-04)
+        # ventures/gankdat/scripts/runner-refresh.mjs: for every source with `refresh.runner`
+        # (uk-insolvency — The Gazette has served the Worker an empty body every day since 09-28
+        # while a runner reads the same URL in full) runs the source's own fetchFresh here and writes
+        # the KV snapshot + stats blob and a refresh_log row through the REST API. The Worker's cron
+        # waves skip these sources. Scheduled and manual runs only (push runs would re-pay npm ci);
+        # a source refreshed under 20 h ago is skipped. A failure lands in refresh_log, so in today's
+        # row below — it must not stop the metrics step.
+        if: github.event_name != 'push'
+        run: npm run runner-refresh
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Append today's numbers to RESEARCH.md
+        run: node ventures/gankdat/scripts/metrics.mjs
+        env:
+          METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Apify actor runs / users for the row (STRATEGY §4 "Apify paid runs / month: 100").
+          # Optional in the script: a missing token degrades the row to `apify: n/a`, never fails it.
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+      - name: Queue a fix for any source that errored on refresh twice in its last four rows
+        # scripts/refresh-errors-to-queue.ts reads the last four `refresh errors` fields and files an
+        # idempotent `refresh-<slug>` todo item in docs/pipeline/queues/gankdat.json for a source that
+        # errored today and in one more of them (2026-09-30: uk-insolvency errored four days with no
+        # item; 2026-10-03: the two-consecutive-days rule missed an every-other-day flake). Only node
+        # builtins, no secrets.
+        run: npm run refresh-errors
+      - name: Commit
+        run: |
+          git config user.name "foundry-metrics[bot]"
+          git config user.email "info@gankdat.com"
+          git add ventures/gankdat/RESEARCH.md docs/pipeline/queues/gankdat.json
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "metrics(gankdat): $(date -u +%F) daily numbers"
+          git pull --rebase origin main
+          git push origin HEAD:main

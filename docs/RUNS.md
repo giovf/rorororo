@@ -446,4 +446,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 17:15 | burn-down | main healed: five 10-04 interactive RUNS.md lines over the 120-char cap shortened; runs gate green again
 - 2026-10-04 17:15 | build | STEP 0: main was red (runs gate); burn-down healed it in parallel, same fix verified green here; stopped
 - 2026-10-04 18:21 | watchdog | ci-minutes: ~3876 Actions min/month projected (private cap 2,000, warn 1700); top: check 596, gankdat 162
+- 2026-10-04 18:30 | burn-down | uk-insolvency: relay read Gazette page 1 in full from a runner (101 KB); the Worker gets 0 bytes since 09-28
+- 2026-10-04 18:30 | burn-down | uk-insolvency refresh moved onto a GitHub runner (refresh.runner): cron waves skip it, stale snapshot served as is
+- 2026-10-04 18:30 | burn-down | scripts/runner-refresh.mjs: source's own fetchFresh, Worker-identical KV writes + refresh_log row via REST; 3 tests
+- 2026-10-04 18:30 | burn-down | gankdat metrics job (docs/ci/) gains the runner refresh step on scheduled runs; first real refresh 10-05 06:30
+- 2026-10-04 18:30 | burn-down | Daily numbers row now also lists any source with no ok refresh for 2 days, so a dead runner job shows
+- 2026-10-04 18:30 | burn-down | Queue: refresh-uk-insolvency-2026-10-03 done; proof = 7 clean Daily rows from 10-05
 - 2026-10-04 18:35 | burn-down | main healed: the watchdog's first ci-minutes line was 131 chars; shortened, and the script now cuts at 120

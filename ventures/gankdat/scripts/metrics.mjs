@@ -79,6 +79,20 @@ const [acct] = await sql(
 const errors = await sql(
   "SELECT source_slug, MAX(message) AS message FROM refresh_log WHERE status = 'error' AND created_at > datetime('now','-1 day') GROUP BY source_slug",
 );
+// Runner-fed sources (2026-10-04, uk-insolvency) write no row at all on a day the runner job never
+// ran, so any source whose last `ok` row is over two days old is listed here too, with the date:
+// the row must show a refresh that died quietly, not just one that errored out loud.
+const stale = await sql(
+  "SELECT source_slug, MAX(CASE WHEN status = 'ok' THEN created_at END) AS last_ok FROM refresh_log WHERE created_at > datetime('now','-30 days') GROUP BY source_slug HAVING last_ok IS NULL OR last_ok < datetime('now','-2 days')",
+);
+for (const s of stale) {
+  if (errors.some((e) => e.source_slug === s.source_slug)) continue;
+  errors.push({
+    source_slug: s.source_slug,
+    message: `no successful refresh since ${s.last_ok ? String(s.last_ok).slice(0, 10) : 'over 30 days'}`,
+  });
+}
+errors.sort((a, b) => a.source_slug.localeCompare(b.source_slug));
 const errorText = (m) =>
   String(m ?? '')
     .replace(/\s+/g, ' ')

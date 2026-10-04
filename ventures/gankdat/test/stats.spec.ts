@@ -1,8 +1,9 @@
 import { env, SELF } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { computeStats } from '../src/lib/stats';
+import { snapshotWrites } from '../src/sources/cache';
 import { listSources } from '../src/sources/registry';
-import { refreshAllSources } from '../src/sources/store';
+import { isRunnerFed, refreshAllSources } from '../src/sources/store';
 import { planningResponse, stubOrigins, tendersResponse } from './helpers/origin-mock';
 
 function stubBoth(): void {
@@ -164,6 +165,14 @@ describe('GET /stats', () => {
     // sources stubBoth doesn't cover); the public page then reads the blob.
     stubBoth();
     await refreshAllSources(env);
+    // Runner-fed sources (uk-insolvency) are written by scripts/runner-refresh.mjs, which makes
+    // exactly these KV writes from the source's own fetchFresh — the page must read them the same.
+    for (const source of listSources().filter(isRunnerFed)) {
+      const records = await source.fetchFresh(env);
+      for (const w of snapshotWrites(source, records, new Date().toISOString())) {
+        await env.CACHE.put(w.key, w.value, { expirationTtl: w.ttl });
+      }
+    }
     for (const source of listSources()) {
       const res = await SELF.fetch(`https://example.com/stats/${source.slug}`);
       expect(res.status, `${source.slug} stats page`).toBe(200);

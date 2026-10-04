@@ -197,7 +197,14 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   expose `last_refreshed_at`. D1 refreshes record what `DataSource.idOf` says was added,
   removed or changed into `source_changes` (90 d; the delta refresh writes them as it goes,
   the full reload diffs generations) — served at `/v1/changes/:source` and the MCP
-  `get_changes` tool.
+  `get_changes` tool. **Runner-fed sources** (`RefreshPolicy.runner`, 2026-10-04; uk-insolvency):
+  an origin that serves the Worker an empty body while a GitHub runner reads it in full (The
+  Gazette, every day from 09-28) is refreshed by `scripts/runner-refresh.mjs` in the `gankdat
+  metrics` job instead — the source's own `fetchFresh`, then the Worker's exact KV writes
+  (`cache.ts snapshotWrites`) and a `refresh_log` row via the REST API; the waves skip it
+  (`store.ts cronSources`) and a stale snapshot is served without an inline attempt. The Daily
+  numbers row lists any source with no `ok` refresh for two days, so a runner that never ran
+  still shows. KV sources only.
   The feed is sold, not just served (2026-09-24): `registry.hasChangeFeed` is the one
   predicate; the refresh precomputes 30 days of added/removed/changed per day into the
   `/stats` blob (`SourceStats.changes`) so the public page shows the activity and the poll

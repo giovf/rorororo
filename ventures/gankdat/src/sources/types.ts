@@ -18,6 +18,15 @@ export interface RefreshPolicy {
    * Defaults: kv → 1, d1 → 2. Budget each wave at well under 15 minutes on a slow D1 day.
    */
   wave?: 1 | 2 | 3 | 4 | 5 | 6 | 7;
+  /**
+   * Refreshed by a GitHub Actions runner (`scripts/runner-refresh.mjs`, in the
+   * `gankdat metrics` job) instead of the Worker's cron: the origin serves the
+   * Worker an empty body while a runner reads the same URL in full (The Gazette,
+   * every day from 2026-09-28). The cron waves skip the source, a stale KV
+   * snapshot is served as is (the runner owns freshness), and only a cold cache
+   * still refreshes inline. KV sources only.
+   */
+  runner?: boolean;
 }
 
 /**

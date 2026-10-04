@@ -227,12 +227,13 @@
     {
       "id": "refresh-uk-insolvency-2026-10-03",
       "title": "uk-insolvency: refresh has failed 2 times in the last 4 days — fix the source or keep the last snapshot without an error row",
-      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-insolvency under refresh errors on 2026-10-02 (thegazette.co.uk page results-page=1: body cut by the origin after 4 reads (0 bytes, conte) and 2026-10-03: thegazette.co.uk page results-page=1: body cut by the origin after 4 reads (0 bytes, conte after the fix of refresh-uk-insolvency (2026-09-30). The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-insolvency.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted. Still failing 2026-10-04: thegazette.co.uk page results-page=1: body cut by the origin after 4 reads (0 bytes, conte.",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-insolvency under refresh errors on 2026-10-02 (thegazette.co.uk page results-page=1: body cut by the origin after 4 reads (0 bytes, conte) and 2026-10-03: thegazette.co.uk page results-page=1: body cut by the origin after 4 reads (0 bytes, conte after the fix of refresh-uk-insolvency (2026-09-30). The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-insolvency.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted. Still failing 2026-10-04: thegazette.co.uk page results-page=1: body cut by the origin after 4 reads (0 bytes, conte. 2026-10-04 burn-down: not a parser fault — the relay read page 1 in full from a runner the same evening (200, 101 KB) while the Worker has read 0 bytes every day since 09-28, so the refresh moved onto a runner: `refresh.runner` on the source, the cron waves skip it, the `gankdat metrics` job runs the source's own fetchFresh and writes the KV snapshot + refresh_log row via the REST API (scripts/runner-refresh.mjs); a stale snapshot is served without an inline attempt; the Daily row also lists any source with no `ok` refresh for 2 days. First runner refresh: 2026-10-05 06:30.",
       "effort_days": 0.1,
       "proof": "uk-insolvency absent from refresh errors for 7 consecutive Daily numbers rows",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-03"
+      "status": "done",
+      "added": "2026-10-03",
+      "done_at": "2026-10-04"
     },
     {
       "id": "cloudflare-usage-breakdown",
