@@ -441,4 +441,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 15:45 | interactive | OAuth popup fix: consent pages had COOP same-origin and form-action 'self', which kept claude.ai spinning on 'connecting'; relaxed on /authorize only
 - 2026-10-04 15:50 | interactive | Connectors Directory Step 8 complete: owner connected via OAuth at 15:43 (code exchanged in 1 s, tokens issued, full pages)
 - 2026-10-04 15:50 | interactive | Root cause of today's 'connecting…' loop: COOP same-origin + form-action 'self' on the consent page; fixed and regression-tested
+- 2026-10-04 16:20 | interactive | Evening burn is now nightly 17:00–02:00 UTC (was Wed only), gated by docs/ops/BURN.json; aim 70–80% weekly usage
+- 2026-10-04 16:20 | interactive | Owner reports usage via a Telegram note (`usage NN% fable NN%`); routines copy it into BURN.json and throttle
 

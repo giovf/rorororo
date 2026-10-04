@@ -3,7 +3,9 @@
 One list, kept current by Claude. Each item says what it unblocks and roughly how long it takes.
 Nothing here spends money. Your answers of 2026-09-28 are applied below.
 
-## Open (updated 2026-10-04)
+## Open (updated 2026-10-04 evening)
+
+**Standing 10-second item**: once a week (Wednesday evening is ideal, just before the Thursday 03:00 UTC reset) send the Telegram bot a note like `usage 62% fable 71%` from your `/usage` screen. The nightly evening-burn routine throttles itself from that number (`docs/ops/BURN.json`), aiming for 70–80% of the week. No note means it keeps running every night.
 
 | # | Do this | Unblocks | Where |
 | --- | --- | --- | --- |

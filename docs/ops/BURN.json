@@ -1,0 +1,8 @@
+{
+  "enabled": true,
+  "nights": ["mon", "tue", "wed", "thu", "fri", "sat", "sun"],
+  "window_utc": "17:00-02:59",
+  "stop_if_weekly_pct_at_least": 80,
+  "report": { "date": "2026-10-04", "total_pct": 14, "fable_pct": null },
+  "notes": "Owner 2026-10-04: use 70-80% of the week's allowance; daytime (before 17:00 UK) stays light because the owner uses Claude at work; after 17:00 UK each 5-hour session may be run to its limit. The owner reports usage with a Telegram note like `usage 62% fable 71%`; any routine that reads it updates `report` here. The weekly allowance resets Thursday 03:00 UTC."
+}
