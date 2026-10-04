@@ -465,3 +465,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 19:45 | burn-down | LISTING-FREE.md copy written; 4 tests on the summary/upsell text
 - 2026-10-04 19:45 | burn-down | Owner: create the plugin in Figma, paste its id, publish (action 018, ~15 min, batch with 017)
 - 2026-10-04 19:45 | burn-down | Queue: free-unused-variables-finder done; proof = 50 installs + 5 toolkit views in 30 days
+- 2026-10-04 20:25 | burn-down | Variables Toolkit gains a Relink tab: local or unpublished bindings move onto library variables by name
+- 2026-10-04 20:25 | burn-down | src/core/relink.ts planner (current/local/stale, type match, ambiguity) with 7 tests; figma/relink.ts rebinds
+- 2026-10-04 20:25 | burn-down | manifest gains teamlibrary permission; LISTING.md Relink block + tag; STORE/RESEARCH notes written
+- 2026-10-04 20:25 | burn-down | Owner: republish the toolkit so the new permission and tab go live (action 019, ~10 min, batch 017/018)
+- 2026-10-04 20:25 | burn-down | Queue: relink-library-variables done; proof = 1 comment or purchase naming relink within 30 days

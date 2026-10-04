@@ -2,10 +2,12 @@ import { planStyleConversion, type StyleInfo } from './core/convert.js';
 import { hygieneReport } from './core/hygiene.js';
 import { groupByVariable, suggestLinks, type ColorVariableRef, type PaintSite } from './core/link.js';
 import { suggestNumberLinks, type NumberSite, type NumberVariableRef } from './core/numbers.js';
+import { planRelink, type RelinkPlan } from './core/relink.js';
 import type { ScanOptions } from './core/scan.js';
 import { FREE_LINKS_PER_DAY, allowedLinks, rollover, today, type TierState } from './core/tier.js';
 import { executePlan, readExistingVariables } from './figma/convert.js';
 import { readVariableUsage } from './figma/hygiene.js';
+import { collectBoundSites, describeVariables, loadLibraryVariables, relinkGroup, type LibraryVariables } from './figma/relink.js';
 import { loadColorVariables, loadNumberVariables, scanNodes } from './figma/scan.js';
 import { readLocalStyles } from './figma/styles.js';
 import { createDemoPage } from './figma/demo.js';
@@ -44,6 +46,7 @@ let lastNumbers: NumberSite[] = [];
 let colorVars: ColorVariableRef[] = [];
 let numberVars: NumberVariableRef[] = [];
 let scanToken = 0;
+let lastRelink: RelinkPlan | null = null;
 
 async function loadTier(): Promise<void> {
   const saved = (await figma.clientStorage.getAsync(TIER_KEY)) as Partial<TierState> | undefined;
@@ -200,6 +203,90 @@ async function deleteVariables(ids: string[]): Promise<void> {
   await hygiene();
 }
 
+// ---------- feature 4: relink to library variables ----------
+
+async function readLibrary(): Promise<LibraryVariables> {
+  try {
+    return await loadLibraryVariables();
+  } catch (err: unknown) {
+    const reason = err instanceof Error ? err.message : String(err);
+    throw new Error(`Couldn't read the enabled libraries (${reason}). Enable a library with variables under Assets → Libraries, then scan again.`, {
+      cause: err,
+    });
+  }
+}
+
+async function relinkScan(scope: 'selection' | 'page', collectionKeys?: string[]): Promise<void> {
+  const roots = scope === 'selection' ? figma.currentPage.selection : figma.currentPage.children;
+  if (roots.length === 0) {
+    post({ type: 'error', message: scope === 'selection' ? 'Select something first.' : 'This page is empty.' });
+    return;
+  }
+  const token = ++scanToken;
+  const library = await readLibrary();
+  if (library.vars.length === 0) {
+    post({ type: 'error', message: 'No enabled library publishes variables. Enable one under Assets → Libraries, then scan again.' });
+    return;
+  }
+  const result = await collectBoundSites(
+    roots,
+    (visited, pending) => post({ type: 'progress', visited, pending }),
+    () => token !== scanToken,
+  );
+  if (!result) {
+    post({ type: 'scan-cancelled' });
+    return;
+  }
+  const known = await describeVariables(result.sites.map((s) => s.variableId));
+  const plan = planRelink(result.sites, known, library.vars, collectionKeys?.length ? { collectionKeys: new Set(collectionKeys) } : {});
+  lastRelink = plan;
+  post({
+    type: 'relink-result',
+    groups: plan.groups.map((g) => ({
+      key: g.library.key,
+      name: g.library.name,
+      libraryName: g.library.libraryName,
+      collectionName: g.library.collectionName,
+      from: g.from.map((f) => ({ name: f.name, reason: f.reason })),
+      sites: g.sites.length,
+    })),
+    unmatched: plan.unmatched.map((u) => ({ name: u.variable.name, type: u.variable.type, sites: u.sites })),
+    ambiguous: plan.ambiguous.map((a) => ({ name: a.variable.name, libraries: a.candidates.map((c) => `${c.libraryName} / ${c.collectionName}`), sites: a.sites })),
+    orphaned: plan.orphaned,
+    current: plan.current,
+    visited: result.visited,
+    collections: library.collections,
+    libraryVariables: library.vars.length,
+  });
+}
+
+async function relinkApply(keys: string[]): Promise<void> {
+  if (!lastRelink) {
+    post({ type: 'error', message: 'Scan first.' });
+    return;
+  }
+  tier = rollover(tier);
+  const wanted = new Set(keys);
+  const todo = lastRelink.groups.filter((g) => wanted.has(g.library.key));
+  const requested = todo.reduce((n, g) => n + g.sites.length, 0);
+  let budget = allowedLinks(tier, requested);
+  let count = 0;
+  for (const g of todo) {
+    if (budget === 0) break;
+    const moved = await relinkGroup(g, budget);
+    count += moved;
+    budget -= moved;
+  }
+  if (!tier.paid) {
+    tier.used += count;
+    await saveTier();
+  }
+  const capped = count < requested;
+  post({ type: 'relinked', count, capped });
+  postStatus();
+  figma.notify(capped ? `Relinked ${count} — free limit reached for today. Unlock for unlimited.` : `Relinked ${count} binding${count === 1 ? '' : 's'} to library variables`);
+}
+
 // ---------- payments ----------
 
 async function upgrade(): Promise<void> {
@@ -227,6 +314,10 @@ figma.ui.onmessage = (msg: ToMain) => {
         return hygiene();
       case 'delete-variables':
         return deleteVariables(msg.ids);
+      case 'relink-scan':
+        return relinkScan(msg.scope, msg.collectionKeys);
+      case 'relink-apply':
+        return relinkApply(msg.keys);
       case 'upgrade':
         return upgrade();
     }

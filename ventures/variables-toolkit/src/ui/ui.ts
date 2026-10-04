@@ -79,6 +79,24 @@ $('hygiene-run').onclick = () => {
 deleteUnused.onclick = () =>
   send({ type: 'delete-variables', ids: [...hygieneList.querySelectorAll<HTMLInputElement>('input:checked')].map((i) => i.value) });
 
+// relink
+const relinkList = $<HTMLUListElement>('relink-list');
+const relinkApply = $<HTMLButtonElement>('relink-apply');
+const relinkCollection = $<HTMLSelectElement>('relink-collection');
+let relinkScope: 'selection' | 'page' = 'selection';
+const collectionFilter = (): string[] => (relinkCollection.value ? [relinkCollection.value] : []);
+const startRelinkScan = (scope: 'selection' | 'page'): void => {
+  relinkScope = scope;
+  cancel.hidden = false;
+  say('Reading libraries and bindings…');
+  send({ type: 'relink-scan', scope, collectionKeys: collectionFilter() });
+};
+$('relink-selection').onclick = () => startRelinkScan('selection');
+$('relink-page').onclick = () => startRelinkScan('page');
+relinkCollection.onchange = () => startRelinkScan(relinkScope);
+relinkApply.onclick = () =>
+  send({ type: 'relink-apply', keys: [...relinkList.querySelectorAll<HTMLInputElement>('input:checked')].map((i) => i.value), collectionKeys: collectionFilter() });
+
 $('upgrade').onclick = () => send({ type: 'upgrade' });
 
 window.onmessage = (event: MessageEvent<{ pluginMessage?: ToUi } | null>) => {
@@ -167,6 +185,48 @@ window.onmessage = (event: MessageEvent<{ pluginMessage?: ToUi } | null>) => {
       say('');
       break;
     }
+    case 'relink-result': {
+      cancel.hidden = true;
+      if (msg.collections.length > 1) {
+        const current = relinkCollection.value;
+        relinkCollection.replaceChildren(
+          new Option('Every library', ''),
+          ...msg.collections.map((c) => new Option(`${c.libraryName} / ${c.name}`, c.key, false, c.key === current)),
+        );
+        relinkCollection.hidden = false;
+      } else {
+        relinkCollection.hidden = true;
+      }
+      const rows: HTMLLIElement[] = [];
+      rows.push(li(`Can move to the library (${msg.groups.length})`, 'head'));
+      rows.push(
+        ...msg.groups.map((g) =>
+          li(
+            `<input type="checkbox" checked value="${esc(g.key)}" /><span class="name" title="${esc(g.from.map((f) => `${f.name} (${f.reason === 'local' ? 'local' : 'unpublished'})`).join(', '))} → ${esc(g.libraryName)}">${esc(g.name)}</span><span class="sub">${esc(g.libraryName)}</span><span class="count">${g.sites}</span>`,
+          ),
+        ),
+      );
+      if (msg.ambiguous.length) {
+        rows.push(li(`Same name in more than one library — pick a collection above (${msg.ambiguous.length})`, 'head'));
+        rows.push(...msg.ambiguous.map((a) => li(`<span class="name" title="${esc(a.libraries.join(' · '))}">${esc(a.name)}</span><span class="count">${a.sites}</span>`)));
+      }
+      if (msg.unmatched.length) {
+        rows.push(li(`No library variable with this name (${msg.unmatched.length})`, 'head'));
+        rows.push(...msg.unmatched.map((u) => li(`<span class="name" title="${esc(u.name)}">${esc(u.name)}</span><span class="sub">${u.type.toLowerCase()}</span><span class="count">${u.sites}</span>`)));
+      }
+      relinkList.replaceChildren(...rows);
+      const movable = msg.groups.reduce((n, g) => n + g.sites, 0);
+      $('relink-summary').textContent =
+        `${msg.visited} layers scanned · ${msg.libraryVariables} library variables · ${movable} bindings can move · ${msg.current} already on the library` +
+        (msg.orphaned ? ` · ${msg.orphaned} point at deleted variables` : '');
+      relinkApply.disabled = movable === 0;
+      say('');
+      break;
+    }
+    case 'relinked':
+      say(msg.capped ? `Relinked ${msg.count}. That's today's free allowance — unlock for unlimited.` : `Relinked ${msg.count}.`);
+      relinkApply.disabled = true;
+      break;
     case 'error':
       say(msg.message);
       break;

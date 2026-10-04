@@ -265,3 +265,9 @@ closed entries older than 30 days (git keeps the history).
   @foundry/variables-toolkit`, import `dist-free/manifest.json`, publish with the copy in `LISTING-FREE.md`. Steps:
   `docs/for-owner/actions/018-figma-unused-variables-finder.md`. Why: the toolkit is #1 for "unused variables" yet has 0 installs —
   every winner of that query is free; this one links to the paid listing. Batch with action 017. No new account, no money.
+- 2026-10-04 owner: **republish the Variables Toolkit** (~10 min, £0, same Figma desktop session as actions 017/018): it gained a
+  fourth tab, **Relink to library variables** (the Variable Utilities / DSO gap from RESEARCH §5), and `manifest.json` now asks for the
+  `teamlibrary` permission, so the live build cannot read libraries until a new version is published. `git pull`, `npm run build:release -w
+  @foundry/variables-toolkit`, import `ventures/variables-toolkit/dist-release/manifest.json`, try Relink on a file with an enabled
+  library, then **Publish → new version** and paste the description + tags from `LISTING.md` (bold headings with B, no asterisks). Steps:
+  `docs/for-owner/actions/019-figma-toolkit-republish-relink.md`. No new account, no money.

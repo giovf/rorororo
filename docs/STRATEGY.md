@@ -561,3 +561,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   listing. Why: the toolkit is #1 for "unused variables" with 0 installs because every winner of that query is free (§9
   point 3) — the free listing earns the trial install, the link converts. Owner publishes (action 018, batched with 017).
   Proof: ≥ 50 installs and ≥ 5 attributed toolkit views in 30 days.
+- 2026-10-04 burn-down: `relink-library-variables` built — the Variables Toolkit's fourth tab moves layers bound to local or
+  no-longer-published variables onto the enabled library's variable of the same name and type (`src/core/relink.ts` planner,
+  `src/figma/relink.ts` via `figma.teamLibrary` + `importVariableByKeyAsync`; new `teamlibrary` permission). Why: the one
+  documented paid-rival gap with repeat comments (Variable Utilities, DSO; Token Toolkit Pro renamed around it) and the only
+  buildable item left in any queue tonight. Not live until the owner republishes (action 019). Proof: ≥ 1 comment or purchase
+  naming relink within 30 days of the republish.

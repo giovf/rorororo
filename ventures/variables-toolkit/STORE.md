@@ -32,3 +32,7 @@
   toolkit adds and links to this listing. Copy and owner steps: `LISTING-FREE.md`, `docs/for-owner/actions/018-figma-unused-variables-finder.md`.
   **Not yet published** — waiting for the owner (ALERTS 2026-10-04). Proof: ≥ 50 installs of the free plugin and ≥ 5 views of this listing
   attributed within 30 days of it going live.
+- **Relink to library variables (2026-10-04, burn-down):** fourth tab in the paid plugin (`src/core/relink.ts`, `src/figma/relink.ts`):
+  layers bound to local or unpublished variables move onto the enabled library's variable of the same name and type; counts against the
+  free daily allowance like Link. `manifest.json` gained the `teamlibrary` permission. **Not yet live** — needs a republish from the Figma
+  desktop app (action 019, batched with 017/018). Proof: ≥ 1 comment or purchase naming relink within 30 days of the republish.

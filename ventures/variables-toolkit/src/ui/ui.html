@@ -15,6 +15,7 @@
       <button data-tab="link" class="tab active">Link</button>
       <button data-tab="convert" class="tab">Styles → Variables</button>
       <button data-tab="hygiene" class="tab">Clean up</button>
+      <button data-tab="relink" class="tab">Relink</button>
     </nav>
 
     <section id="tab-link" class="panel active">
@@ -54,6 +55,20 @@
       <p id="hygiene-summary" class="muted">Finds variables unused in this file, duplicate values and broken aliases. Library usage in other files is not visible to plugins.</p>
       <ul id="hygiene-list" class="list"></ul>
       <div class="row end"><button id="delete-unused" class="danger" disabled>Delete selected</button></div>
+    </section>
+
+    <section id="tab-relink" class="panel">
+      <div class="row">
+        <button id="relink-selection" class="primary">Scan selection</button>
+        <button id="relink-page">Scan page</button>
+        <select id="relink-collection" hidden></select>
+      </div>
+      <p id="relink-summary" class="muted">
+        Finds layers bound to local or no-longer-published variables and moves them onto the enabled library's variable of the same name
+        and type. Enable the library under Assets → Libraries first.
+      </p>
+      <ul id="relink-list" class="list"></ul>
+      <div class="row end"><button id="relink-apply" class="primary" disabled>Relink selected</button></div>
     </section>
 
     <footer>

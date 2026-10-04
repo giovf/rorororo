@@ -84,12 +84,13 @@
     {
       "id": "relink-library-variables",
       "title": "Relink local or broken variable references to library variables with the same name (the asked-for job in Variable Utilities and DSO comments)",
-      "why": "Documented paid-rival gap (RESEARCH.md §5 'More rivals'): Variable Utilities ($17 × 181) users ask to re-connect broken links to library variables by name; Design System Organizer's swap broke with slots; Token Toolkit Pro put 'Relink' in its name (2026-09, 18 users in 3 weeks). A feature, so it waits behind the distribution items above (STRATEGY §5) — nothing in the zero-traffic data implicates the product.",
+      "why": "Documented paid-rival gap (RESEARCH.md §5 'More rivals'): Variable Utilities ($17 × 181) users ask to re-connect broken links to library variables by name; Design System Organizer's swap broke with slots; Token Toolkit Pro put 'Relink' in its name (2026-09, 18 users in 3 weeks). A feature, so it waits behind the distribution items above (STRATEGY §5) — nothing in the zero-traffic data implicates the product. 2026-10-04 burn-down (built): src/core/relink.ts (planner, 7 tests) + src/figma/relink.ts (team library read, import by key, rebind) + Relink tab in the UI; manifest gains the teamlibrary permission; LISTING.md description block and tag added. Covers solid paints and the twelve Link number fields; alias/text/effect bindings deferred. Live after the owner republishes (action 019, ALERTS 2026-10-04).",
       "effort_days": 1.5,
       "proof": "≥ 1 comment or purchase naming relink within 30 days of release",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-01"
+      "status": "done",
+      "added": "2026-10-01",
+      "done_at": "2026-10-04"
     },
     {
       "id": "playground-file-views",

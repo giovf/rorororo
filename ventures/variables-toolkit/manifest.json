@@ -9,7 +9,7 @@
   "networkAccess": {
     "allowedDomains": ["none"]
   },
-  "permissions": ["payments"],
+  "permissions": ["payments", "teamlibrary"],
   "menu": [
     {
       "name": "Open",

@@ -372,3 +372,20 @@ toolkit would add for *this* file (duplicate-value groups, broken aliases it cou
 toolkit listing (`src/core/free.ts`, tested). Entry `src/free/`, manifest `manifest.free.json`, build `npm run build:free`
 → `dist-free/`. Copy: `LISTING-FREE.md`; owner publishes (action 018). Proof: ≥ 50 installs of the free plugin and ≥ 5
 views of the paid listing attributed within 30 days of publishing; read by the daily store-metrics row once the id is known.
+
+## Relink to library variables (2026-10-04, burn-down)
+
+Built `relink-library-variables`, the V1.1 candidate from §5 "More rivals": Variable Utilities ($17 × 181) users ask to
+re-connect broken links to library variables with the same name, Design System Organizer's swap broke with slots, and Token
+Toolkit Pro put "Relink" in its name (18 users in three weeks). Model in `src/core/relink.ts` (7 tests): a binding is
+*current* when its variable's publish key is still among the enabled libraries' variables (so a library file never relinks
+to itself), *local* when the variable is not remote, *stale* when it is remote but its key is no longer published; local and
+stale bindings move onto the library variable with the same trimmed name **and** resolved type, one library only — the same
+name in two libraries is listed as ambiguous until a collection is picked (a `<select>` appears when more than one is
+enabled). Figma side `src/figma/relink.ts`: `figma.teamLibrary` for the catalogue (new `teamlibrary` permission),
+`importVariableByKeyAsync` once per target, then `setBoundVariableForPaint` / `setBoundVariable` per site; chunked
+traversal with the Link tab's cancel. Covers solid fills and strokes plus the twelve number fields Link binds; text,
+effect, stroke-weight and variable-alias bindings are not moved (next slice if a comment asks). Free tier: relinks share
+the 25-a-day link allowance; unlock removes it. Not live until the owner republishes (action 019). Proof: ≥ 1 comment or
+purchase naming relink within 30 days of the republish; the 06:45 store-metrics row also tracks rank for "relink variables"
+once the tag is live.

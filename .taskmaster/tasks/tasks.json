@@ -1207,13 +1207,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-04T18:23:03.463Z"
+      },
+      {
+        "id": "24",
+        "title": "Variables Toolkit: Relink to library variables tab",
+        "description": "Move layers bound to local or unpublished variables onto enabled library variables with the same name and type (src/core/relink.ts planner + src/figma/relink.ts; teamlibrary permission).",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-04T20:19:56.473Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-04T18:23:03.463Z",
-      "taskCount": 23,
-      "completedCount": 16,
+      "lastModified": "2026-10-04T20:19:56.473Z",
+      "taskCount": 24,
+      "completedCount": 17,
       "tags": [
         "master"
       ]
