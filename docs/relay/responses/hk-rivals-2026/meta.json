@@ -1,0 +1,86 @@
+{
+  "request": "hk-rivals-2026",
+  "fetched_at": "2026-10-04T22:17:51.375Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://web-highlights.com/pricing",
+      "fetched_at": "2026-10-04T22:17:49.248Z",
+      "status": 200,
+      "final_url": "https://web-highlights.com/pricing",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 100692,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://web-highlights.com/faq",
+      "fetched_at": "2026-10-04T22:17:50.350Z",
+      "status": 200,
+      "final_url": "https://web-highlights.com/faq",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 219480,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.marqly.com/Pricing/",
+      "fetched_at": "2026-10-04T22:17:50.786Z",
+      "status": 200,
+      "final_url": "https://www.marqly.com/pricing",
+      "headers": {
+        "content-type": "text/html",
+        "etag": "W/\"a00955c1d513ed7eba8222f6b058439e\""
+      },
+      "file": "3.html",
+      "bytes": 114495,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.marqly.com/web-highlighter",
+      "fetched_at": "2026-10-04T22:17:50.914Z",
+      "status": 200,
+      "final_url": "https://www.marqly.com/web-highlighter",
+      "headers": {
+        "content-type": "text/html",
+        "etag": "W/\"6982b04356796731421c2f6ad558e835\""
+      },
+      "file": "4.html",
+      "bytes": 89726,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/hldjnlbobkdkghfidgoecgmklcemanhm",
+      "fetched_at": "2026-10-04T22:17:51.002Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/web-highlights-pdf-web-hi/hldjnlbobkdkghfidgoecgmklcemanhm",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 769826,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/kcadneobjofkppmekgadodnaojoehemc",
+      "fetched_at": "2026-10-04T22:17:51.220Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/marqly-bookmark-manager-n/kcadneobjofkppmekgadodnaojoehemc",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 675903,
+      "truncated": false
+    }
+  ]
+}
