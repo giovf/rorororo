@@ -145,13 +145,14 @@ rating at 2.9 and "folders and highlights randomly disappearing from the dashboa
 
 Reading: still a findability problem first (the listing fixes are days old and unmeasured), so the cheap
 items are the ones that make the comparison page answer today's search results and give a burned user a
-one-click way across. The product has Markdown export only (`core/model.ts toMarkdown`) — no backup, no
-restore, no import — which is the exact fear both rival camps voice. Items added (score = evidence × reach ÷ effort):
+one-click way across. Correction 20:50 (same run): the library page already ships Backup (JSON) and Restore
+(`src/library/library.ts`) and every listing text says so — the first draft of this note missed it. What is
+missing is an *import* from a rival's file, and a restore that merges rather than wipes (`replaceAll`). Items added (score = evidence × reach ÷ effort):
 
 | Item | Score | Effort | What it does |
 |---|---|---|---|
-| `library-backup-restore` | 5 | 0.3 d | JSON backup of the whole library and restore (merge), from the library page; the "if lost, really lost" answer and the move-to-another-computer path without a server |
-| `import-super-simple-highlighter` | 5 | 0.5 d | reads a Super Simple Highlighter backup file into the library (verify its JSON layout from a real export first); listing + comparison page say "bring your highlights" |
+| ~~`library-backup-restore`~~ | — | — | dropped the same run: backup and restore already exist (see correction above); the merge gap moved into the import item |
+| `import-super-simple-highlighter` | 5 | 0.6 d | reads a Super Simple Highlighter backup file into the library through a tested merge that Restore also uses (verify the rival's JSON layout from a real export first); listing + comparison page say "bring your highlights" |
 | `day-30-funnel-review` | 5 | 0.1 d (not before 2026-10-30) | installs, sales, Search Console on the comparison page; keep, fix or kill per STRATEGY §7 |
 | `comparison-page-2026-rivals` | 4 | 0.2 d | add Web Highlights and Marqly rows (the two that rank for "weava alternative" today) with verified pricing; one-time vs subscription stated plainly |
 

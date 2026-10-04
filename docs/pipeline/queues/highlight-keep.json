@@ -62,18 +62,18 @@
     {
       "id": "library-backup-restore",
       "title": "Library backup (JSON) and restore from the library page — the whole store out to one file and back in, merged",
-      "why": "Both rival camps' fear is data loss: Weava 'folders and highlights randomly disappearing' (chrome-stats last-100 rating 2.9, read 2026-10-04), Super Simple's own help page says highlights 'aren't sent anywhere, synced, or backed up … if they're lost, they really are lost'. Highlight Keep has Markdown export only (core/model.ts); a JSON backup/restore is the no-server answer and the move-to-another-computer path, and the restore UI is what import-super-simple-highlighter plugs into. Listing and comparison page gain a 'Backup & restore' line.",
+      "why": "Both rival camps' fear is data loss: Weava 'folders and highlights randomly disappearing' (chrome-stats last-100 rating 2.9, read 2026-10-04), Super Simple's own help page says highlights 'aren't sent anywhere, synced, or backed up … if they're lost, they really are lost'. Highlight Keep has Markdown export only (core/model.ts); a JSON backup/restore is the no-server answer and the move-to-another-computer path, and the restore UI is what import-super-simple-highlighter plugs into. Listing and comparison page gain a 'Backup & restore' line. DROPPED 2026-10-04 (same run, 20:50): wrong premise — the library page already has Backup (JSON) and Restore (src/library/library.ts) and every listing text, the comparison page and the welcome page say so; the research grep covered core/ only. The one real gap (restore replaces the store instead of merging) is folded into import-super-simple-highlighter.",
       "effort_days": 0.3,
       "proof": "a review or support mail naming backup/restore, or the comparison-page row read by the day-30 review",
       "score": 5,
-      "status": "todo",
+      "status": "dropped",
       "added": "2026-10-04"
     },
     {
       "id": "import-super-simple-highlighter",
       "title": "Import a Super Simple Highlighter backup file into the library ('bring your highlights'), said on the listing and the comparison page",
-      "why": "Super Simple Highlighter (200k users, local, free) documents a backup (beta) export holding every style and highlight location (dexterouslogic.com help, read 2026-10-04); its reviews say saved pages disappear and the help page admits no sync or backup. A refugee with that file can move across in one click — the only paid-vs-free argument we can make concrete. Build after library-backup-restore (same restore UI); first obtain a real backup file's layout (install the extension in the e2e Chromium, make two highlights, export) before writing the parser — never guess the format.",
-      "effort_days": 0.5,
+      "why": "Super Simple Highlighter (200k users, local, free) documents a backup (beta) export holding every style and highlight location (dexterouslogic.com help, read 2026-10-04); its reviews say saved pages disappear and the help page admits no sync or backup. A refugee with that file can move across in one click — the only paid-vs-free argument we can make concrete. Build after library-backup-restore (same restore UI); first obtain a real backup file's layout (install the extension in the e2e Chromium, make two highlights, export) before writing the parser — never guess the format. Note 2026-10-04: Backup/Restore already exist on the library page but Restore calls replaceAll (wipes the current store) — build a pure merge (core, tested: newer page wins, highlights unioned by id) and use it for both Restore and this import, so a second machine's highlights survive.",
+      "effort_days": 0.6,
       "proof": "≥ 1 import reported in a review or support mail within 60 days; installs after the listing line vs before",
       "score": 5,
       "status": "todo",

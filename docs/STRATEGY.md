@@ -1,6 +1,5 @@
 
-- 2026-10-04 burn-down: research (highlight-keep, starvation fallback — nothing buildable anywhere): still unmeasured (0 users
-  daily, 0.2.0 in review since 10-04). New evidence: Super Simple Highlighter documents a backup file and admits no sync or backup;
-  2026 "weava alternative" results are Web Highlights and Marqly blogs naming Weava's lost-data bug. Four items queued — library
-  backup/restore (5), import of a Super Simple backup (5), day-30 funnel review (5, not before 10-30), comparison rows for the
-  two 2026 rivals (4). Reddit anchoring and Firefox Android not queued (one review, unverified demand).
+- 2026-10-04 burn-down (20:50): correction to the entry above — `library-backup-restore` dropped: the library page already has Backup (JSON)
+  and Restore and every listing text says so (the research grep covered `core/` only). Restore wipes instead of merging; that gap is now part
+  of `import-super-simple-highlighter` (0.6 d). Lesson for research items: read the venture's UI entry points, not only `core/`, before
+  claiming a feature is missing.
