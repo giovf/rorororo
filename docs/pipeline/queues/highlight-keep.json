@@ -94,12 +94,13 @@
     {
       "id": "comparison-page-2026-rivals",
       "title": "weava-alternative.html gains Web Highlights and Marqly rows — the two products that rank for 'weava alternative' in 2026 — with verified pricing",
-      "why": "Today's search results for 'weava alternative' are rival blogs: Web Highlights (100k users, 4.8, web-highlights.com/blog) and Marqly ('best web highlighters 2026'); both sell subscriptions and both are absent from our page, so a reader comparing against what Google shows finds us incomplete. Verify each rival's current price and account requirement from their own pricing pages (WebSearch or relay) before writing the rows; keep the honest 'not yet' cells.",
+      "why": "Today's search results for 'weava alternative' are rival blogs: Web Highlights (100k users, 4.8, web-highlights.com/blog) and Marqly ('best web highlighters 2026'); both sell subscriptions and both are absent from our page, so a reader comparing against what Google shows finds us incomplete. Verify each rival's current price and account requirement from their own pricing pages (WebSearch or relay) before writing the rows; keep the honest 'not yet' cells. Built 2026-10-04 evening: both rivals' pricing/FAQ pages and store listings read through the relay (hk-rivals-2026). Web Highlights renders its dollar prices only inside the app, so the page states free-offline + subscription-for-sync and names the 7-day trial, not a figure; Marqly's $49/$72/$9 come from its own pricing page.",
       "effort_days": 0.2,
       "proof": "Search Console impressions for the page at the day-30 review ≥ 50 (unchanged target), rank for 'weava alternative' recorded",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-04"
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
     }
   ]
 }

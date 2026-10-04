@@ -587,3 +587,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the notifier caps one push at 40 run bullets. Why: the 20:39 overwrite passed CI and would have cost the owner 470 phone
   messages on restore; both files are the operation's memory and its only report to the owner. Proof: a deliberate shrink fails the
   check (tested); no further whole-file write reaches `main` unnoticed.
+- 2026-10-04 burn-down: `comparison-page-2026-rivals` built — the Weava-alternative page now compares against Web Highlights
+  (200k users, free offline, subscription for sync) and Marqly (1k users, account required, $72/year after a $49 first year),
+  the two names Google shows for the query, with facts read from their own pricing/FAQ pages through the relay. Why: a reader
+  arriving from that search found our table missing both; the one-time-vs-subscription argument is now stated against every
+  rival on the results page. Web Highlights' dollar prices are client-rendered and unverifiable from HTML, so the page names
+  the model and the trial, not a figure. Proof: Search Console impressions ≥ 50 at the 2026-10-30 review.

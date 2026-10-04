@@ -173,3 +173,18 @@ Restore now merges instead of wiping — `pages-storage.mergeInto`), the library
 highlights" line on LISTING.md, AMO metadata, the comparison page (new table row + how-to paragraph), the
 landing and the welcome page. Proof (unchanged): ≥ 1 import named in a review or support mail within 60 days
 of 0.3.0 going live; installs after the listing line vs before. Ships when 0.3.0 is signed (ALERTS handoff).
+
+### 2026-10-04 (burn-down) — `comparison-page-2026-rivals` built
+`weava-alternative.html` now has five columns: Web Highlights and Marqly joined Weava and Super Simple Highlighter, with
+one paragraph on the pair. Facts read through the relay (`docs/relay/responses/hk-rivals-2026/`, 2026-10-04 22:17 UTC)
+from the rivals' own pages, not blogs: **Web Highlights** — Chrome listing 200,000 users, 4.8 (5.1K ratings), v13.0.49
+updated 2026-10-03; "completely free without an account … offline"; Premium/Ultimate subscriptions add cloud sync + web
+app, 7-day trial; FAQ: importing a backup *replaces* all highlights, highlights "may not show up due to URL changes or
+sync issues"; export Markdown/HTML/PDF/Notion/Obsidian; PDFs online and local. Its pricing page renders the dollar
+figures client-side (not in the HTML; third-party listings disagree, $3.49–4.99/mo), so the page says
+"subscription, prices shown only inside the app" rather than a number we could not verify. **Marqly** — Chrome listing
+1,000 users, 3.6 (40 ratings), v9.78 updated 2026-10-03; account required ("Sign up free at app.marqly.com"); free plan
+100 bookmarks + 10 notes; Pro $49 first year then $72/year or $9/month, 7-day trial; six colours + notes, highlights sync
+to the account; imports are bookmarks (Pocket, Raindrop, HTML), not highlights; no highlight export stated. Reading: the
+one-time-vs-subscription line is now stated against every rival a searcher sees; the day-30 review measures whether the
+page earns impressions (proof unchanged: ≥ 50 at 2026-10-30). Relay allowlist gained `.web-highlights.com` and `.marqly.com`.

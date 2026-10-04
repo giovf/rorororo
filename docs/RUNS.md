@@ -488,3 +488,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 21:35 | burn-down | npm run runs now fails when RUNS.md or STRATEGY.md lost dated lines (floor in docs/ops/RUNS-COUNT.json)
 - 2026-10-04 21:35 | burn-down | notify-owner sends at most 40 run bullets per push, then one 'N more lines' bullet; 5 tests added
 - 2026-10-04 21:35 | burn-down | Queue: append-only-guard done; next buildable is highlight-keep comparison-page-2026-rivals (4)
+- 2026-10-04 22:21 | burn-down | Relay read Web Highlights and Marqly pricing/FAQ pages + store listings (allowlist +2 hosts)
+- 2026-10-04 22:21 | burn-down | weava-alternative.html: Web Highlights and Marqly columns (12 rows) and a paragraph on the pair
+- 2026-10-04 22:21 | burn-down | Web Highlights prices render only in-app, so the page says subscription + 7-day trial, no figure
+- 2026-10-04 22:21 | burn-down | Queue: comparison-page-2026-rivals done; proof unchanged (≥ 50 impressions at the day-30 review)
