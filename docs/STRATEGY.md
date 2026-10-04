@@ -522,4 +522,5 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   bugs fixed on the way — a double-submitted consent form stranding the client on 'expired', and popup-breaking
   headers (COOP, form-action) that left claude.ai spinning. Both now covered by tests. Extensions 0.2.0 shipped to
   both stores; CI trimmed for the private-repo cap.
-
+- 2026-10-04 build: STEP 0 heal only — `npm run runs` failed on five over-length interactive RUNS.md lines from
+  the OAuth fixes; shortened them, full `npm run check` green, no queue item built this slot.
