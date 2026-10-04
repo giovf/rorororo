@@ -72,8 +72,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
 - Work queue of record: `docs/pipeline/` (exchange + one queue per venture, see its README;
   `npm run pipeline` validates and prints the next item). Build the next item, mark it in the
   same commit; an emptied queue gets `needs_research: true`.
-- Owner overview: routines append one line per piece of work done to `docs/RUNS.md` (each sent
-  to Telegram as a bullet by CI); interactive sessions do the same when they ship something.
+- Owner overview: routines append one line per piece of work done to `docs/RUNS.md` (repo log).
+  The owner's phone gets ONLY `| notify |` lines — new product version in a store, new product
+  live, owner action needed — and `owner:` ALERTS lines; all short, plain, non-technical.
 - Plan of record: `docs/STRATEGY.md` (thesis, 90-day targets, prioritisation rule, kill
   criteria). Research before build, distribution before new features, monthly review
   (`docs/reviews/`). Rewrite STRATEGY.md when the facts change; log decisions in its §8.

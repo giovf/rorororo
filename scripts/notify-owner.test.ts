@@ -78,6 +78,8 @@ const runsDiff = [
   '+++ b/docs/RUNS.md',
   '+- 2026-09-30 21:00 | burn-down | Built foundry refresh-errors-to-queue (8)',
   '+- 2026-09-30 21:00 | burn-down | Stopping for time; next is a | b',
+  '+- 2026-09-30 21:05 | notify | ReadFocus 0.2 submitted to Chrome and Firefox: reads web PDFs',
+  '+- 2026-09-30 21:06 | notify | Repo flipped private | nothing to do',
   '+not a run line',
 ].join('\n');
 
@@ -88,15 +90,15 @@ describe('message building', () => {
 
   it('sends owner lines, skips handoffs, deletions and lines closed in the same range', () => {
     expect(ownerItems(alertsDiff)).toEqual([
-      '2026-09-30 owner: gankdat is ready for the directory — one portal form',
+      'gankdat is ready for the directory — one portal form',
       'continuation line that needs owner attention',
     ]);
   });
 
-  it('turns run lines into bullets and keeps a | inside the text', () => {
+  it('sends only notify-tagged run lines, as plain bullets, keeping a | inside the text', () => {
     expect(runBullets(runsDiff)).toEqual([
-      '• burn-down 21:00: Built foundry refresh-errors-to-queue (8)',
-      '• burn-down 21:00: Stopping for time; next is a | b',
+      '• ReadFocus 0.2 submitted to Chrome and Firefox: reads web PDFs',
+      '• Repo flipped private | nothing to do',
     ]);
   });
 
@@ -108,17 +110,17 @@ describe('message building', () => {
     });
     expect(m.lines).toBe(5);
     expect(m.texts).toHaveLength(2);
-    expect(m.texts[0]).toContain('Foundry needs you:\n• 2026-09-30 owner: gankdat');
+    expect(m.texts[0]).toContain('Foundry needs you:\n• gankdat is ready for the directory');
     expect(m.texts[0]).toContain('• New request: Rotate the key (docs/for-owner/actions/014-x.md)');
     expect(m.texts[1]).toBe(
-      'Foundry run:\n• burn-down 21:00: Built foundry refresh-errors-to-queue (8)\n• burn-down 21:00: Stopping for time; next is a | b',
+      'Foundry:\n• ReadFocus 0.2 submitted to Chrome and Firefox: reads web PDFs\n• Repo flipped private | nothing to do',
     );
   });
 
   it('caps one push at MAX_RUN_BULLETS run bullets and says how many it left out', () => {
     const many = Array.from(
       { length: 470 },
-      (_, i) => `+- 2026-09-${String(22 + (i % 8)).padStart(2, '0')} 10:00 | build | line ${i}`,
+      (_, i) => `+- 2026-09-${String(22 + (i % 8)).padStart(2, '0')} 10:00 | notify | line ${i}`,
     ).join('\n');
     const m = buildMessages({ alertsDiff: '', runsDiff: many, newActions: [] });
     expect(m.lines).toBe(470);
