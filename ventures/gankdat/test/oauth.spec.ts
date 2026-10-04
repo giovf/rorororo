@@ -413,6 +413,35 @@ describe('/authorize', () => {
     expect(again.status).toBe(410);
   });
 
+  it('answers a repeated approval by the same account with a fresh code (double-submitted form)', async () => {
+    const { requestId } = await startAuthorize();
+    const cookie = await signInViaMagicLink(requestId!, 'twice@example.com');
+    const first = await approve(requestId!, cookie);
+    const second = await approve(requestId!, cookie);
+    expect(second.origin + second.pathname).toBe(first.origin + first.pathname);
+    expect(second.searchParams.get('state')).toBe(first.searchParams.get('state'));
+    expect(second.searchParams.get('code')).toBeTruthy();
+    expect(second.searchParams.get('code')).not.toBe(first.searchParams.get('code'));
+    const exchanged = await token({
+      grant_type: 'authorization_code',
+      code: second.searchParams.get('code')!,
+      code_verifier: VERIFIER,
+      client_id: CLIENT_ID,
+      redirect_uri: CLAUDE_CALLBACK,
+    });
+    expect(exchanged.status).toBe(200);
+    // A different account cannot ride the consumed request.
+    const { requestId: otherRequest } = await startAuthorize();
+    const other = await signInViaMagicLink(otherRequest!, 'someone-else@example.com');
+    const res = await SELF.fetch(`${BASE}/authorize/decision`, {
+      method: 'POST',
+      headers: { ...FORM, Cookie: other },
+      body: new URLSearchParams({ request: requestId!, decision: 'approve' }).toString(),
+      redirect: 'manual',
+    });
+    expect(res.status).toBe(410);
+  });
+
   it('refuses a cross-site decision POST and an approval without a session', async () => {
     const { requestId } = await startAuthorize();
     const crossSite = await SELF.fetch(`${BASE}/authorize/decision`, {

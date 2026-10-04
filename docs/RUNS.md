@@ -436,3 +436,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 15:10 | interactive | CI-minutes guard added to the watchdog: Telegram bullet when the month projects past 1,700 of the 2,000 cap
 - 2026-10-04 15:10 | interactive | Repo flips private once a measured week is under 350 minutes (baseline 873)
 
+- 2026-10-04 16:40 | interactive | OAuth consent bug fixed: a double-submitted approve form stranded the owner on 'Request expired' and claude.ai never got the code
+- 2026-10-04 16:40 | interactive | Approval is now idempotent for the same account (fresh code within 5 min), consent button single-submit, request window 30 min

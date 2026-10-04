@@ -112,11 +112,12 @@ function consentPage(req: AuthRequest, account: SignedIn): string {
 <li>The connection appears as key <code>${escapeHtml(oauthKeyName(req.clientId))}</code> at <a href="/account">/account</a> — revoke it there to disconnect.</li>
 </ul>
 ${redirectHostLine(req.redirectUri)}
-<form method="POST" action="/authorize/decision">
+<form method="POST" action="/authorize/decision" data-single-submit>
 <input type="hidden" name="request" value="${req.id}">
 <button type="submit" name="decision" value="approve">$ approve and connect</button>
 <button type="submit" name="decision" value="deny" class="secondary">cancel</button>
-</form>`,
+</form>
+<script src="/consent.js" defer></script>`,
   );
 }
 
@@ -273,7 +274,17 @@ export const oauthRoutes = new Hono<AppEnv>()
     const body = await c.req.parseBody().catch(() => ({}) as Record<string, unknown>);
     const requestId = typeof body.request === 'string' ? body.request : '';
     const req = REQUEST_ID_RE.test(requestId) ? await readAuthRequest(c.env, requestId) : null;
-    if (!req) return c.html(expiredPage(), 410);
+    if (!req) {
+      // Already consumed: a repeated approval by the account that approved it moments ago
+      // (double-submitted form) is answered again rather than stranded on "expired".
+      const account = body.decision === 'approve' ? await currentAccount(c) : null;
+      const again = account ? await approveAuthRequest(c.env, requestId, account) : null;
+      if (!again) return c.html(expiredPage(), 410);
+      return c.redirect(
+        redirectWith(again.redirectUri, { code: again.code, state: again.state }),
+        302,
+      );
+    }
     if (body.decision === 'deny') {
       const denied = await denyAuthRequest(c.env, req.id);
       if (!denied) return c.html(expiredPage(), 410);

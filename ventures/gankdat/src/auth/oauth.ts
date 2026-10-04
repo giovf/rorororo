@@ -32,7 +32,7 @@ export const ACCESS_TTL_SECONDS = 3600;
 const REFRESH_TTL_MS = 30 * 24 * 3600 * 1000;
 const CODE_TTL_MS = 5 * 60 * 1000;
 /** A pending /authorize request lives this long (the magic-link email is 15 min). */
-const REQUEST_TTL_MS = 15 * 60 * 1000;
+const REQUEST_TTL_MS = 30 * 60 * 1000; // email delivery + the magic-link hop; was 15 min
 /** CIMD documents are re-fetched after this (Claude's own discovery cache is ~5 min). */
 const CLIENT_METADATA_TTL_SECONDS = 600;
 const CLIENT_METADATA_MAX_BYTES = 64 * 1024;
@@ -437,21 +437,24 @@ export async function approveAuthRequest(
   id: string,
   account: { accountId: string; email: string; plan: string },
 ): Promise<Approved | null> {
-  const row = await consumeAuthRequest(env, id);
+  const row = (await consumeAuthRequest(env, id)) ?? (await recentlyApprovedBy(env, id, account));
   if (!row?.redirect_uri || !row.code_challenge) return null;
   const keyId = await ensureClientKey(env, account, row.client_id);
   const code = `${CODE_PREFIX}${randomHex(32)}`;
   const now = Date.now();
+  // The code row's family is the request id, so a repeated approval (double-submitted form,
+  // browser retry) can be recognised and answered with a fresh code — see recentlyApprovedBy.
   await env.DB.prepare(
-    `INSERT INTO oauth_grants (id_hash, kind, family, client_id, redirect_uri, scope, code_challenge, resource, account_id, key_id, created_at, expires_at)
-     VALUES (?1, 'code', ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11)`,
+    `INSERT INTO oauth_grants (id_hash, kind, family, client_id, redirect_uri, scope, state, code_challenge, resource, account_id, key_id, created_at, expires_at)
+     VALUES (?1, 'code', ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)`,
   )
     .bind(
       await hashKey(code),
-      crypto.randomUUID(),
+      id,
       row.client_id,
       row.redirect_uri,
       row.scope,
+      row.state,
       row.code_challenge,
       row.resource,
       account.accountId,
@@ -461,6 +464,29 @@ export async function approveAuthRequest(
     )
     .run();
   return { redirectUri: row.redirect_uri, state: row.state, code };
+}
+
+/**
+ * Idempotent approval: the request was already consumed, but this same account approved it
+ * within the last CODE_TTL_MS. The 2026-10-04 incident: the consent form was submitted twice;
+ * the second POST got "expired" and its navigation cancelled the first one's redirect, so the
+ * client never received a code. Re-issuing to the same signed-in account is safe — the
+ * request's client, redirect_uri and PKCE challenge are copied from the earlier code row.
+ */
+async function recentlyApprovedBy(
+  env: CloudflareBindings,
+  requestId: string,
+  account: { accountId: string },
+): Promise<GrantRow | null> {
+  if (!REQUEST_ID_RE.test(requestId)) return null;
+  return env.DB.prepare(
+    `SELECT client_id, redirect_uri, scope, state, code_challenge, resource, expires_at, family, account_id, key_id
+       FROM oauth_grants
+      WHERE kind = 'code' AND family = ?1 AND account_id = ?2 AND created_at > ?3
+      ORDER BY created_at DESC LIMIT 1`,
+  )
+    .bind(requestId, account.accountId, Date.now() - CODE_TTL_MS)
+    .first<GrantRow>();
 }
 
 /** Consent refused: consume the request and say where to send the error. */
@@ -602,8 +628,10 @@ export async function exchangeAuthorizationCode(
   if (row.key_revoked_at !== null || !row.account_id || !row.key_id) {
     return fail('invalid_grant', 'the connection was revoked');
   }
+  // Tokens get their own family per exchange (refresh rotation / replay revocation scope);
+  // the code row's family is the authorize request id, see approveAuthRequest.
   const body = await issueTokenPair(env, {
-    family: row.family,
+    family: crypto.randomUUID(),
     client_id: row.client_id,
     scope: row.scope,
     account_id: row.account_id,
