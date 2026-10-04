@@ -14,3 +14,5 @@
 
 - 2026-10-04: **Highlight Keep 0.2.0** (web-PDF support) submitted — Chrome Web Store upload SUCCESS + publish (in review), Firefox AMO signed and submitted (listed channel, in review). AMO listing: category/tags/homepage set via `npm run amo-listing`; screenshot uploads were throttled by AMO (429) and re-run later the same day.
 
+- 2026-10-04 (burn-down): repo is **0.3.0** — import from Super Simple Highlighter + merging Restore. Needs signing/upload
+  once 0.2.0 clears review (CWS refuses a new upload while one is pending; AMO takes it any time) — ALERTS handoff.

@@ -577,3 +577,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   and code commits were intact). The notify cursor is moved forward in the same push so the 470 restored run lines are not resent to the
   owner's phone. Rule for every routine: append to these files (`>>`, Edit), never write them whole; a shrink guard is queued in
   `queues/foundry.json` (`append-only-guard`).
+- 2026-10-04 burn-down: `import-super-simple-highlighter` built (Highlight Keep 0.3.0) — a Super Simple Highlighter backup file
+  imports into the library through a pure merge that Restore now uses too (a second machine's highlights survive a restore). Format
+  taken from the rival's public source, not guessed. Why: the one concrete "bring your highlights" argument against a free rival with
+  200k users whose own help page admits lost highlights are lost; distribution before features, and the cheapest buildable item in
+  the queue. Proof: ≥ 1 import named in a review or support mail within 60 days of 0.3.0 going live.

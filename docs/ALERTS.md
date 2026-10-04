@@ -271,3 +271,8 @@ closed entries older than 30 days (git keeps the history).
   @foundry/variables-toolkit`, import `ventures/variables-toolkit/dist-release/manifest.json`, try Relink on a file with an enabled
   library, then **Publish → new version** and paste the description + tags from `LISTING.md` (bold headings with B, no asterisks). Steps:
   `docs/for-owner/actions/019-figma-toolkit-republish-relink.md`. No new account, no money.
+- 2026-10-04 handoff: **sign and upload Highlight Keep 0.3.0** (import from Super Simple Highlighter, merging Restore) the
+  same way as 0.2.0: `bash scripts/amo-publish.sh ventures/highlight-keep` (release notes already in `assets/amo-metadata.json`),
+  then `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
+  CWS rejects an upload while 0.2.0 is still in review — wait for that mail (or it is published) first; AMO accepts it now.
+  Record the dates in `ventures/highlight-keep/STORE.md`. ~5 min.

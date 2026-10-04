@@ -474,3 +474,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 20:52 | burn-down | Stopping for time (~40 min): relink built, highlight-keep researched; next is import-super-simple-highlighter (5)
 - 2026-10-04 21:22 | burn-down | Heal: STRATEGY.md (569 lines) and RUNS.md (472) restored — the 20:39 run had overwritten both with one entry
 - 2026-10-04 21:22 | burn-down | Foundry queue: append-only-guard (6) — fail check when RUNS.md shrinks; cap notify at 40 lines per run
+- 2026-10-04 21:24 | burn-down | highlight-keep: Super Simple Highlighter backup format read from its GitHub source (ldjson + PouchDB dump)
+- 2026-10-04 21:24 | burn-down | src/core/ssh-import.ts parses it into our pages (deleted docs dropped, colours by name or hue), 4 tests
+- 2026-10-04 21:24 | burn-down | src/core/merge.ts pure merge (3 tests); Restore now adds to the library instead of wiping it
+- 2026-10-04 21:24 | burn-down | Library page: 'Import Super Simple Highlighter'; listing, AMO notes, comparison row, landing, welcome updated
+- 2026-10-04 21:24 | burn-down | Highlight Keep 0.3.0; handoff: sign/upload after 0.2.0 clears review. Queue: import item done
+- 2026-10-04 21:25 | burn-down | Stopping for time (~45 min): heal + import built; next is foundry append-only-guard (6)

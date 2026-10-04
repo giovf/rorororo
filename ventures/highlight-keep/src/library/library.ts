@@ -1,7 +1,8 @@
 import { tierForKey } from '../core/license.js';
 import { toMarkdown, type PageRecord } from '../core/model.js';
 import { isPdfUrl, viewerUrl } from '../core/pdf.js';
-import { loadAllPages, replaceAll, savePage } from '../pages-storage.js';
+import { parseSuperSimpleBackup } from '../core/ssh-import.js';
+import { loadAllPages, mergeInto, savePage } from '../pages-storage.js';
 import { loadSettings } from '../settings-storage.js';
 
 const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
@@ -80,7 +81,7 @@ void (async () => {
     locked.textContent =
       'The library is part of the unlock ($12, once). Your highlights are still saved \u2014 open the popup on any page to see that page\u2019s highlights and copy them as Markdown.';
     $('pages').replaceChildren(locked);
-    ['q', 'export-all', 'backup'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
+    ['q', 'export-all', 'backup', 'restore', 'import-ssh'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
     return;
   }
   pages = await loadAllPages();
@@ -98,17 +99,38 @@ void (async () => {
     a.click();
   };
   $<HTMLInputElement>('restore').onchange = async (e) => {
-    const file = (e.target as HTMLInputElement).files?.[0];
+    const input = e.target as HTMLInputElement;
+    const file = input.files?.[0];
     if (!file) return;
     try {
       const data = JSON.parse(await file.text()) as { pages?: PageRecord[] };
-      if (!Array.isArray(data.pages)) throw new Error('not a backup file');
-      await replaceAll(data.pages);
+      if (!Array.isArray(data.pages)) throw new Error('not a Highlight Keep backup file');
+      const { added, pagesChanged } = await mergeInto(data.pages);
       pages = await loadAllPages();
       render();
-      $('status').textContent = `Restored ${pages.length} pages.`;
+      $('status').textContent = added ? `Restored: ${added} highlight${added === 1 ? '' : 's'} added on ${pagesChanged} page${pagesChanged === 1 ? '' : 's'}; everything already here was kept.` : 'Nothing to restore: every highlight in that backup is already here.';
     } catch (err) {
       $('status').textContent = `Could not restore: ${err instanceof Error ? err.message : String(err)}`;
     }
+    input.value = '';
+  };
+  $<HTMLInputElement>('import-ssh').onchange = async (e) => {
+    const input = e.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+    try {
+      const parsed = parseSuperSimpleBackup(await file.text());
+      const { added, pagesChanged } = await mergeInto(parsed.pages);
+      pages = await loadAllPages();
+      render();
+      const notes = [`${added} highlight${added === 1 ? '' : 's'} on ${pagesChanged} page${pagesChanged === 1 ? '' : 's'} brought over`];
+      if (parsed.imported - added > 0) notes.push(`${parsed.imported - added} already here`);
+      if (parsed.deleted) notes.push(`${parsed.deleted} you had deleted there, left out`);
+      if (parsed.skipped) notes.push(`${parsed.skipped} without text or page, skipped`);
+      $('status').textContent = `Imported from Super Simple Highlighter: ${notes.join('; ')}. Each one is anchored to its words, so it shows again when you open that page.`;
+    } catch (err) {
+      $('status').textContent = `Could not import: ${err instanceof Error ? err.message : String(err)}`;
+    }
+    input.value = '';
   };
 })();

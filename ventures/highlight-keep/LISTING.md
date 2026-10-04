@@ -12,8 +12,9 @@ Mark what matters, and keep it.
 • Copy a page's highlights as Markdown (works with Obsidian, Notion, anything).
 • PDFs on the web too: open one in the built-in viewer page from the popup and highlight it like any page.
 • Per-site switch: turn it on for the sites you read on (Alt+Shift+H); it never runs anywhere else.
+• Coming from Super Simple Highlighter? Import its backup file in the library and every highlight comes with you, anchored to its words.
 
-Unlock ($12, once): unlimited sites, six colours, notes and tags, the library — search everything you've kept, export it all, backup and restore as a file. One key for every browser you sign in to; works offline; 14-day refund.
+Unlock ($12, once): unlimited sites, six colours, notes and tags, the library — search everything you've kept, export it all, backup and restore as a file (a restore adds to what is there, it never wipes it). One key for every browser you sign in to; works offline; 14-day refund.
 
 Private by design: no account, no sync server, no data collection. Highlights and notes live in your browser's extension storage. The only request it ever makes is a one-time check when you activate a paid key.
 

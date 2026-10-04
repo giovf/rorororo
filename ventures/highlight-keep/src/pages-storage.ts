@@ -1,3 +1,4 @@
+import { mergePages } from './core/merge.js';
 import { pageKey, siteOf, type Highlight, type PageRecord } from './core/model.js';
 
 /** Highlights live in chrome.storage.local: `page:<key>` → PageRecord; `index` → summary map. */
@@ -50,10 +51,29 @@ export function sitesInIndex(index: PageIndex): Set<string> {
   return new Set(Object.values(index).map((e) => e.site));
 }
 
-export async function replaceAll(pages: PageRecord[]): Promise<void> {
-  const existing = await loadIndex();
-  await chrome.storage.local.remove([...Object.keys(existing).map(keyOf), INDEX]);
-  for (const p of pages) await savePage(p);
+export interface MergeOutcome {
+  /** Highlights that were not in the store before. */
+  added: number;
+  /** Pages written (new, or with new/updated highlights). */
+  pagesChanged: number;
+}
+
+/**
+ * Merges pages into the store (Restore, importers): nothing already saved is removed, so a backup
+ * from another machine adds to this one. Each incoming page is keyed like ours first.
+ */
+export async function mergeInto(incoming: PageRecord[]): Promise<MergeOutcome> {
+  const keyed = incoming.map((p) => {
+    try {
+      return { ...p, url: pageKey(p.url) };
+    } catch {
+      return null;
+    }
+  });
+  const current = await loadAllPages();
+  const { changed, added } = mergePages(current, keyed.filter((p): p is PageRecord => p !== null));
+  for (const p of changed) await savePage(p);
+  return { added, pagesChanged: changed.length };
 }
 
 export function upsertHighlight(page: PageRecord, h: Highlight): PageRecord {

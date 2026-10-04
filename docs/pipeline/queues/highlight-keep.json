@@ -72,12 +72,13 @@
     {
       "id": "import-super-simple-highlighter",
       "title": "Import a Super Simple Highlighter backup file into the library ('bring your highlights'), said on the listing and the comparison page",
-      "why": "Super Simple Highlighter (200k users, local, free) documents a backup (beta) export holding every style and highlight location (dexterouslogic.com help, read 2026-10-04); its reviews say saved pages disappear and the help page admits no sync or backup. A refugee with that file can move across in one click — the only paid-vs-free argument we can make concrete. Build after library-backup-restore (same restore UI); first obtain a real backup file's layout (install the extension in the e2e Chromium, make two highlights, export) before writing the parser — never guess the format. Note 2026-10-04: Backup/Restore already exist on the library page but Restore calls replaceAll (wipes the current store) — build a pure merge (core, tested: newer page wins, highlights unioned by id) and use it for both Restore and this import, so a second machine's highlights survive.",
+      "why": "Super Simple Highlighter (200k users, local, free) documents a backup (beta) export holding every style and highlight location (dexterouslogic.com help, read 2026-10-04); its reviews say saved pages disappear and the help page admits no sync or backup. A refugee with that file can move across in one click — the only paid-vs-free argument we can make concrete. Build after library-backup-restore (same restore UI); first obtain a real backup file's layout (install the extension in the e2e Chromium, make two highlights, export) before writing the parser — never guess the format. Note 2026-10-04: Backup/Restore already exist on the library page but Restore calls replaceAll (wipes the current store) — build a pure merge (core, tested: newer page wins, highlights unioned by id) and use it for both Restore and this import, so a second machine's highlights survive. DONE 2026-10-04 (burn-down, 0.3.0): format read from the rival's own source (github.com/dexterouslogic/super-simple-highlighter, public archive: advanced.js export + db.js document fields — header line with the magic string, a style-definitions line, then a PouchDB replication-stream dump of {verb,match,date,range,className,text,title} docs); src/core/ssh-import.ts parses it (create docs minus the ones a delete doc names, page = our pageKey(match), colour by default class name or hue of a custom style, id ssh_<_id> so a second import is a no-op) with 4 tests; src/core/merge.ts is the pure merge (3 tests) and pages-storage.mergeInto uses it for Restore and the import; library page gains 'Import Super Simple Highlighter'; LISTING, AMO metadata, comparison page (new row + how-to), landing and welcome page say so. Not live until 0.3.0 is signed (ALERTS handoff).",
       "effort_days": 0.6,
       "proof": "≥ 1 import reported in a review or support mail within 60 days; installs after the listing line vs before",
       "score": 5,
-      "status": "doing",
-      "added": "2026-10-04"
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
     },
     {
       "id": "day-30-funnel-review",

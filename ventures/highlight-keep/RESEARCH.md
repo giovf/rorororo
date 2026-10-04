@@ -159,3 +159,17 @@ missing is an *import* from a rival's file, and a restore that merges rather tha
 Not queued: Reddit/XPath anchoring (one review, our anchors are text-quote based — `core/anchor.ts` — check
 on a day-30 complaint, not before); Firefox for Android (unverified demand); Edge (owner account, in the
 ReadFocus queue). Kill check unchanged: 2026-12-21 if nothing moves.
+
+### 2026-10-04 (burn-down) — `import-super-simple-highlighter` built (0.3.0)
+
+Format verified from the rival's own code rather than a guessed export: dexterouslogic/super-simple-highlighter
+on GitHub (public archive, GPL-3; `js/options/controllers/advanced.js` writes the backup, `js/shared/db.js`
+names the fields). The `.ldjson` file is: a header `{"magic":"Super Simple Highlighter Exported Database",
+"version":1}`, the style definitions (`highlightDefinitions[]` with `className` and `style["background-color"]`,
+or null), a PouchDB replication-stream header, then `{"docs":[…]}` lines of `{verb:create|delete, match (url
+without hash, decodeURI'd), date (ms), range (XPath — ignored, we anchor by the quoted text), className, text,
+title, correspondingDocumentId}`. Built: `src/core/ssh-import.ts` (+4 tests), `src/core/merge.ts` (+3 tests;
+Restore now merges instead of wiping — `pages-storage.mergeInto`), the library button, and the "bring your
+highlights" line on LISTING.md, AMO metadata, the comparison page (new table row + how-to paragraph), the
+landing and the welcome page. Proof (unchanged): ≥ 1 import named in a review or support mail within 60 days
+of 0.3.0 going live; installs after the listing line vs before. Ships when 0.3.0 is signed (ALERTS handoff).
