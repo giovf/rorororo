@@ -445,4 +445,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 16:20 | interactive | Owner reports usage via a Telegram note (`usage NN% fable NN%`); routines copy it into BURN.json and throttle
 - 2026-10-04 17:15 | burn-down | main healed: five 10-04 interactive RUNS.md lines over the 120-char cap shortened; runs gate green again
 - 2026-10-04 17:15 | build | STEP 0: main was red (runs gate); burn-down healed it in parallel, same fix verified green here; stopped
-- 2026-10-04 18:21 | watchdog | ci-minutes: ~3876 Actions min/month projected (cap 2,000 on a private repo; warn 1700); top: check 596, gankdat 162, owner notes 38
+- 2026-10-04 18:21 | watchdog | ci-minutes: ~3876 Actions min/month projected (private cap 2,000, warn 1700); top: check 596, gankdat 162
+- 2026-10-04 18:35 | burn-down | main healed: the watchdog's first ci-minutes line was 131 chars; shortened, and the script now cuts at 120

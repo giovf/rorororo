@@ -47,7 +47,14 @@ console.log(
 
 if (projection > WARN_MINUTES) {
   const stamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
-  const line = `- ${stamp} | watchdog | ci-minutes: ~${projection} Actions min/month projected (cap 2,000 on a private repo; warn ${WARN_MINUTES}); top: ${top}`;
+  // RUNS.md caps the text after `| watchdog | ` at 120 chars (`npm run runs`, part of `npm run
+  // check`): the first warning (2026-10-04 18:21, 131 chars) turned main red, so the text is cut.
+  const text =
+    `ci-minutes: ~${projection} Actions min/month projected (private cap 2,000, warn ${WARN_MINUTES}); top: ${top}`.slice(
+      0,
+      120,
+    );
+  const line = `- ${stamp} | watchdog | ${text}`;
   const runsMd = readFileSync('docs/RUNS.md', 'utf8');
   const today = stamp.slice(0, 10);
   if (!runsMd.includes(`${today}`) || !runsMd.includes('| watchdog | ci-minutes:')) {
