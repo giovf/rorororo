@@ -188,6 +188,144 @@ const apify = await apifyShelf().catch((e) => {
   return null;
 });
 
+// Cloudflare metered usage, billing period to date (cloudflare-usage-breakdown, build 2026-10-04).
+// The invoice runs 10th → 10th (the 2026-10-01 budget alert covered 2026-09-10..10-10 and said
+// US$15 against the US$5 Workers Paid line with GBP 0 revenue — STRATEGY §7's cost rule), and
+// nothing in the repo knew which product carried it. GraphQL Analytics (needs "Account
+// Analytics: Read" on the token) gives rows written/read per D1 database, KV operations by
+// kind, Worker requests and D1 storage; data points come from the Analytics Engine SQL API the
+// row already uses. Each reading is its own query, so one missing permission or renamed field
+// degrades to `n/a (<reason>)` in the row — the next routine can fix that query — and never
+// loses the other numbers. Prices are the Workers Paid plan's published rates (USD, 2026-10):
+// the "≈ US$" figure is the overage above the included allowances, to be read against the
+// invoice, not instead of it.
+const CF_PRICES = {
+  d1Writes: { included: 50e6, perMillion: 1.0 },
+  d1Reads: { included: 25e9, perMillion: 0.001 },
+  d1StorageGb: { included: 5, perUnit: 0.75 },
+  kvReads: { included: 10e6, perMillion: 0.5 },
+  kvWrites: { included: 1e6, perMillion: 5.0 },
+  workersRequests: { included: 10e6, perMillion: 0.3 },
+  aePoints: { included: 10e6, perMillion: 0.25 },
+};
+const fmtM = (v) => (v >= 1e9 ? `${(v / 1e9).toFixed(1)}B` : `${(v / 1e6).toFixed(1)}M`);
+const overage = (value, { included, perMillion }) =>
+  Math.max(0, value - included) * (perMillion / 1e6);
+async function cfUsage() {
+  const now = new Date();
+  const periodStart = new Date(
+    Date.UTC(now.getUTCFullYear(), now.getUTCMonth() - (now.getUTCDate() < 10 ? 1 : 0), 10),
+  );
+  const from = periodStart.toISOString().slice(0, 10);
+  const to = now.toISOString().slice(0, 10);
+  const days = Math.max(1, Math.ceil((now - periodStart) / 86_400_000));
+  const gql = async (selection) => {
+    const res = await fetch('https://api.cloudflare.com/client/v4/graphql', {
+      method: 'POST',
+      headers: { ...headers, 'content-type': 'application/json' },
+      body: JSON.stringify({
+        query: `{ viewer { accounts(filter: { accountTag: "${ACCOUNT_ID}" }) { ${selection} } } }`,
+      }),
+    });
+    const body = await res.json();
+    if (body.errors?.length) {
+      throw new Error(
+        body.errors
+          .map((e) => e.message)
+          .join('; ')
+          .slice(0, 100),
+      );
+    }
+    const account = body.data?.viewer?.accounts?.[0];
+    if (!account) throw new Error(`HTTP ${res.status}, no account in response`);
+    return account;
+  };
+  const sumOf = (rows, key) => rows.reduce((acc, r) => acc + Number(r.sum?.[key] ?? 0), 0);
+  const reading = async (label, fn) => {
+    try {
+      return await fn();
+    } catch (e) {
+      console.error(`cf usage ${label}: ${e.message}`);
+      return { error: `${label}: ${e.message}` };
+    }
+  };
+  const d1 = await reading('d1', async () => {
+    const { d1AnalyticsAdaptiveGroups: rows } = await gql(
+      `d1AnalyticsAdaptiveGroups(limit: 1000, filter: { date_geq: "${from}", date_leq: "${to}" }) { dimensions { databaseId } sum { rowsRead rowsWritten readQueries writeQueries } }`,
+    );
+    return { writes: sumOf(rows, 'rowsWritten'), reads: sumOf(rows, 'rowsRead') };
+  });
+  const storage = await reading('d1 storage', async () => {
+    const { d1StorageAdaptiveGroups: rows } = await gql(
+      `d1StorageAdaptiveGroups(limit: 1000, filter: { date_geq: "${from}", date_leq: "${to}" }, orderBy: [date_DESC]) { dimensions { date databaseId } max { databaseSizeBytes } }`,
+    );
+    const latest = rows[0]?.dimensions?.date;
+    const bytes = rows
+      .filter((r) => r.dimensions?.date === latest)
+      .reduce((acc, r) => acc + Number(r.max?.databaseSizeBytes ?? 0), 0);
+    return { gb: bytes / 1e9 };
+  });
+  const kv = await reading('kv', async () => {
+    const { kvOperationsAdaptiveGroups: rows } = await gql(
+      `kvOperationsAdaptiveGroups(limit: 1000, filter: { date_geq: "${from}", date_leq: "${to}" }) { dimensions { actionType } sum { requests } }`,
+    );
+    const reads = sumOf(
+      rows.filter((r) => r.dimensions?.actionType === 'read'),
+      'requests',
+    );
+    return { reads, writes: sumOf(rows, 'requests') - reads };
+  });
+  const workers = await reading('workers', async () => {
+    const { workersInvocationsAdaptive: rows } = await gql(
+      `workersInvocationsAdaptive(limit: 1000, filter: { datetime_geq: "${periodStart.toISOString()}", datetime_leq: "${now.toISOString()}" }) { sum { requests } }`,
+    );
+    return { requests: sumOf(rows, 'requests') };
+  });
+  const aePoints = await reading('ae', async () => {
+    const rows = await ae(
+      `SELECT SUM(_sample_interval) AS points FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '${days}' DAY`,
+    );
+    return { points: Math.round(Number(rows[0]?.points ?? 0)) };
+  });
+  const parts = [];
+  const costs = [];
+  if (!d1.error) {
+    parts.push(`d1 ${fmtM(d1.writes)} writes / ${fmtM(d1.reads)} reads`);
+    costs.push(['d1 writes', overage(d1.writes, CF_PRICES.d1Writes)]);
+    costs.push(['d1 reads', overage(d1.reads, CF_PRICES.d1Reads)]);
+  }
+  if (!storage.error) {
+    parts.push(`${storage.gb.toFixed(1)} GB`);
+    costs.push([
+      'd1 storage',
+      Math.max(0, storage.gb - CF_PRICES.d1StorageGb.included) * CF_PRICES.d1StorageGb.perUnit,
+    ]);
+  }
+  if (!kv.error) {
+    parts.push(`kv ${fmtM(kv.reads)} reads / ${fmtM(kv.writes)} writes`);
+    costs.push(['kv reads', overage(kv.reads, CF_PRICES.kvReads)]);
+    costs.push(['kv writes', overage(kv.writes, CF_PRICES.kvWrites)]);
+  }
+  if (!workers.error) {
+    parts.push(`workers ${fmtM(workers.requests)} req`);
+    costs.push(['workers', overage(workers.requests, CF_PRICES.workersRequests)]);
+  }
+  if (!aePoints.error) {
+    parts.push(`ae ${fmtM(aePoints.points)} pts`);
+    costs.push(['ae', overage(aePoints.points, CF_PRICES.aePoints)]);
+  }
+  const errors = [d1, storage, kv, workers, aePoints].filter((r) => r.error).map((r) => r.error);
+  if (parts.length === 0) return `cf usage: n/a (${errors.join('; ').slice(0, 160)})`;
+  const total = costs.reduce((acc, [, v]) => acc + v, 0);
+  const drivers = costs
+    .filter(([, v]) => v >= 0.5)
+    .sort((a, b) => b[1] - a[1])
+    .map(([k, v]) => `${k} US${v.toFixed(0)}`)
+    .join(', ');
+  return `cf usage (${from.slice(5)}→${to.slice(5)}): ${parts.join(', ')} ≈ US${total.toFixed(0)} overage${drivers ? ` (${drivers})` : ''}${errors.length ? `; n/a: ${errors.join('; ').slice(0, 120)}` : ''}`;
+}
+const cfNote = await cfUsage().catch((e) => `cf usage: n/a (${e.message.slice(0, 100)})`);
+
 const date = new Date().toISOString().slice(0, 10);
 const users = `${acct.total} accts (${acct.paid ?? 0} paid, +${acct.new24h ?? 0}/24h)`;
 const sales = `${kinds.x402_paid ?? 0} x402 paid`;
@@ -221,6 +359,7 @@ const notes = [
     ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`
     : 'agent sign-up: n/a',
   oauthNote,
+  cfNote,
   errors.length
     ? `refresh errors: ${errors
         .map((e) => {

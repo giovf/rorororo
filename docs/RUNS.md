@@ -418,3 +418,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 08:15 | review | Gap queued: gankdat metrics-dataset-queries-30d (5) — §7 dataset rule has no per-dataset reading
 - 2026-10-04 08:15 | review | STRATEGY §4 Now column refreshed with sources; §1 cost line names the alert; §6 says weekly review
 - 2026-10-04 08:15 | review | Owner: 2 min on the Cloudflare usage page (which line is the $15), and the Claude directory form is still open
+- 2026-10-04 09:31 | build | Cloudflare $15 alert traced in code: every night D1 inserted ~1M register rows and deleted ~1M more
+- 2026-10-04 09:31 | build | gankdat: D1 refresh is now an in-place delta — only changed rows written (migration 0014 record_hash)
+- 2026-10-04 09:31 | build | gankdat: the Daily numbers row gains `cf usage:` — D1 writes/reads, KV, requests, ≈ US$ overage
+- 2026-10-04 09:31 | build | If tomorrow's row shows cf usage numbers (not n/a), skip the Cloudflare dashboard look (ALERTS 10-04)
+- 2026-10-04 09:31 | build | Ledger: the £7.40 planned Cloudflare row now points at the reading; invoice figure replaces it on 10-10

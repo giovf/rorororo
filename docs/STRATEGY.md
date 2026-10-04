@@ -506,3 +506,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `metrics-apify-paid-runs` (foundry 6), `metrics-dataset-queries-30d` (gankdat 5). Exchange unchanged (no
   trigger met). One owner line: a 2-minute look at Cloudflare's billable-usage page and the still-open
   Connectors Directory form. Review: `docs/reviews/2026-W40.md`.
+- 2026-10-04 build: `cloudflare-usage-breakdown` built. The US$15 metered alert (§7 cost rule) was traced
+  to D1 rows written: every nightly refresh of the nine D1 registers inserted a whole new generation
+  (~1M rows, two index entries each) and deleted the old one, for registers that move well under 1% a
+  day. The refresh is now an in-place delta (migration 0014 `record_hash`; only changed rows upserted,
+  new ids appended, vanished ids deleted, change-feed rows written as it goes); the first night after
+  deploy is one last full reload that writes the hashes. The Daily numbers row gains `cf usage:` from
+  the GraphQL Analytics API (per-product period-to-date usage and an estimated overage, degrading to
+  `n/a (<reason>)` if the deploy token lacks the analytics scope — then the owner's dashboard look
+  stands). Proof: the 2026-10-10..11-10 invoice ≤ US$10; the ledger row is corrected when it lands.

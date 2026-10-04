@@ -1183,13 +1183,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-01T00:28:03.581Z"
+      },
+      {
+        "id": "22",
+        "title": "gankdat: D1 delta refresh (record_hash, migration 0014) + cf usage reading in the metrics row",
+        "description": "cloudflare-usage-breakdown (queue, score 8): nightly D1 refreshes of id-bearing sources upsert only changed rows, append new ids and delete vanished ones against a stored 53-bit record hash instead of inserting a new generation and deleting the old one (~1M rows written + ~1M deleted a day, the suspected driver of the US$15 Cloudflare budget alert of 2026-10-01); metrics.mjs reads the GraphQL Analytics breakdown (D1 rows written/read, storage, KV ops, Worker requests) plus Analytics Engine points for the 10th-to-10th period and prints cf usage with an estimated overage per driver, tolerant of a missing token scope.",
+        "details": "",
+        "testStrategy": "test/d1store.spec.ts delta suite (in-place delta, change-feed rows, no-op refresh, pre-0014 fallback, 0-record guard) + test/changes.spec.ts; next Daily numbers row carries cf usage",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-04T09:31:44.457Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-01T00:28:03.581Z",
-      "taskCount": 21,
-      "completedCount": 14,
+      "lastModified": "2026-10-04T09:31:44.457Z",
+      "taskCount": 22,
+      "completedCount": 15,
       "tags": [
         "master"
       ]

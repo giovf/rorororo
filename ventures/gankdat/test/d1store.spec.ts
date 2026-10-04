@@ -1,7 +1,7 @@
 import { env } from 'cloudflare:test';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
-import { queryD1Source, refreshD1Source } from '../src/sources/d1store';
+import { hash53, queryD1Source, refreshD1Source } from '../src/sources/d1store';
 import { readSourceStats } from '../src/sources/cache';
 import { computeStats } from '../src/lib/stats';
 import { applyQuery, buildQuerySchema } from '../src/sources/query';
@@ -213,5 +213,112 @@ describe('d1store', () => {
     const parsed = buildQuerySchema(source).parse({});
     const result = await queryD1Source(env, source, parsed);
     expect(result.page.total).toBe(RECORDS.length);
+  });
+});
+
+// Delta refresh (cloudflare-usage-breakdown, 2026-10-04): a source with stable ids
+// is refreshed in place — only changed rows rewritten, new ids appended, vanished
+// ids deleted — instead of a whole new generation a night (D1 bills rows written).
+type Rec = (typeof RECORDS)[number];
+function makeIdSource(slug: string, records: Rec[]): DataSource {
+  return { ...makeSource(slug, records), idOf: (r: unknown) => (r as Rec).name };
+}
+const countRows = async (slug: string): Promise<number> =>
+  (
+    await env.DB.prepare('SELECT COUNT(*) AS n FROM source_records WHERE source_slug = ?1')
+      .bind(slug)
+      .first<{ n: number }>()
+  )?.n ?? 0;
+const metaOf = (slug: string) =>
+  env.DB.prepare('SELECT generation, total FROM source_meta WHERE source_slug = ?1')
+    .bind(slug)
+    .first<{ generation: number; total: number }>();
+
+describe('d1store delta refresh', () => {
+  it('rewrites only what changed, keeps the generation and feeds the changes', async () => {
+    const source = makeIdSource('d1-delta', RECORDS);
+    await refreshD1Source(env, source);
+    expect((await metaOf('d1-delta'))?.generation).toBe(1);
+
+    // Day 2: beta changed, Charlie removed, Zeta added; the rest untouched.
+    const day2: Rec[] = [
+      RECORDS[0],
+      { ...RECORDS[1], amount: 999 },
+      ...RECORDS.slice(3),
+      { ...RECORDS[4], name: 'Zeta Holdings', country: 'NLD' },
+    ];
+    await refreshD1Source(env, { ...source, fetchFresh: () => Promise.resolve(day2) });
+
+    const meta = await metaOf('d1-delta');
+    expect(meta).toEqual({ generation: 1, total: day2.length });
+    expect(await countRows('d1-delta')).toBe(day2.length);
+    const schema = buildQuerySchema(source);
+    for (const raw of QUERIES) {
+      const parsed = schema.parse(raw);
+      const viaSql = await queryD1Source(env, source, parsed);
+      // Row order is by seq: the appended row sorts last, like the JS engine's input order.
+      expect(viaSql.page, JSON.stringify(raw)).toEqual(applyQuery(day2, parsed));
+    }
+    const changes = await env.DB.prepare(
+      "SELECT change, record_id, record FROM source_changes WHERE source_slug = 'd1-delta' ORDER BY change",
+    ).all<{ change: string; record_id: string; record: string }>();
+    expect(changes.results.map((r) => [r.change, r.record_id])).toEqual([
+      ['added', 'Zeta Holdings'],
+      ['changed', 'beta LLC'],
+      ['removed', 'Charlie Person'],
+    ]);
+    expect((JSON.parse(changes.results[1].record) as Rec).amount).toBe(999);
+    const log = await env.DB.prepare(
+      "SELECT message FROM refresh_log WHERE source_slug = 'd1-delta' ORDER BY id DESC LIMIT 1",
+    ).first<{ message: string }>();
+    expect(log?.message).toBe('delta +1 ~1 -1');
+
+    // Day 3, nothing moved: no change rows, no rewrites.
+    await refreshD1Source(env, { ...source, fetchFresh: () => Promise.resolve(day2) });
+    const again = await env.DB.prepare(
+      "SELECT COUNT(*) AS n FROM source_changes WHERE source_slug = 'd1-delta'",
+    ).first<{ n: number }>();
+    expect(again?.n).toBe(3);
+    const quiet = await env.DB.prepare(
+      "SELECT message FROM refresh_log WHERE source_slug = 'd1-delta' ORDER BY id DESC LIMIT 1",
+    ).first<{ message: string }>();
+    expect(quiet?.message).toBe('delta +0 ~0 -0');
+  });
+
+  it('falls back to a full reload when stored rows lack a hash (pre-0014 rows)', async () => {
+    const source = makeIdSource('d1-nohash', RECORDS);
+    await refreshD1Source(env, source);
+    await env.DB.prepare(
+      "UPDATE source_records SET record_hash = NULL WHERE source_slug = 'd1-nohash' AND seq = 0",
+    ).run();
+    await refreshD1Source(env, { ...source, fetchFresh: () => Promise.resolve(RECORDS.slice(1)) });
+    const meta = await metaOf('d1-nohash');
+    expect(meta).toEqual({ generation: 2, total: RECORDS.length - 1 });
+    // The generation diff still feeds the change (Alpha removed) and the new rows carry hashes.
+    const removed = await env.DB.prepare(
+      "SELECT record_id FROM source_changes WHERE source_slug = 'd1-nohash' AND change = 'removed'",
+    ).all<{ record_id: string }>();
+    expect(removed.results.map((r) => r.record_id)).toEqual(['Alpha Corp']);
+    const unhashed = await env.DB.prepare(
+      "SELECT COUNT(*) AS n FROM source_records WHERE source_slug = 'd1-nohash' AND record_hash IS NULL",
+    ).first<{ n: number }>();
+    expect(unhashed?.n).toBe(0);
+  });
+
+  it('changes nothing when the stream yields 0 records', async () => {
+    const source = makeIdSource('d1-delta-empty', RECORDS);
+    await refreshD1Source(env, source);
+    await expect(
+      refreshD1Source(env, { ...source, fetchFresh: () => Promise.resolve([]) }),
+    ).rejects.toThrow('0 records');
+    expect(await countRows('d1-delta-empty')).toBe(RECORDS.length);
+    expect((await metaOf('d1-delta-empty'))?.total).toBe(RECORDS.length);
+  });
+
+  it('hash53 is stable and tells records apart', () => {
+    expect(hash53('')).toBe(hash53(''));
+    expect(hash53('{"a":1}')).toBe(hash53('{"a":1}'));
+    expect(hash53('{"a":1}')).not.toBe(hash53('{"a":2}'));
+    expect(Number.isSafeInteger(hash53('uk-food-hygiene:123456'))).toBe(true);
   });
 });

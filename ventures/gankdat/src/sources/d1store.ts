@@ -68,12 +68,48 @@ function lowercaseStrings(value: unknown): unknown {
 }
 
 /**
- * Full reload into generation+1, then an atomic meta flip. Called ONLY from the
- * scheduled cron (never inline on a request path — a full reload takes seconds
- * to minutes at 100k+ rows, and must not be triggerable by an unauthenticated
- * request; see queryD1Source / the /stats route, which read committed state
- * only). Idempotent per generation, so a crashed attempt self-heals next run.
+ * 53-bit string hash (cyrb53): two 32-bit multiplicative mixes folded into one
+ * safe integer, so it round-trips through a D1 INTEGER column unchanged. Used
+ * for the record id (in memory, so a 600k-row register indexes in ~15 MB of
+ * typed arrays instead of a Map of strings) and for the record JSON (stored as
+ * record_hash, so the next refresh knows what changed without reading the
+ * record text back). Not cryptographic; a collision costs one missed or one
+ * spurious change row, never corrupt data.
  */
+export function hash53(str: string): number {
+  let h1 = 0xdeadbeef;
+  let h2 = 0x41c6ce57;
+  for (let i = 0; i < str.length; i += 1) {
+    const ch = str.charCodeAt(i);
+    h1 = Math.imul(h1 ^ ch, 2654435761);
+    h2 = Math.imul(h2 ^ ch, 1597334677);
+  }
+  h1 = Math.imul(h1 ^ (h1 >>> 16), 2246822507);
+  h1 ^= Math.imul(h2 ^ (h2 >>> 13), 3266489909);
+  h2 = Math.imul(h2 ^ (h2 >>> 16), 2246822507);
+  h2 ^= Math.imul(h1 ^ (h1 >>> 13), 3266489909);
+  return 4294967296 * (2097151 & h2) + (h1 >>> 0);
+}
+
+/** One record as the refresh writes it: search text, record, lowercased copy, id, hash. */
+interface IngestRow {
+  s: string;
+  r: unknown;
+  l: unknown;
+  i: string | null;
+  h: number;
+}
+
+function ingestRow(source: DataSource, record: unknown, json: string): IngestRow {
+  return {
+    s: searchText(record as Record<string, unknown>),
+    r: record,
+    l: lowercaseStrings(record),
+    i: source.idOf ? source.idOf(record) : null,
+    h: hash53(json),
+  };
+}
+
 /** Rows per DELETE statement — a single DELETE of ~600k rows (uk-food-hygiene) tripped D1's
  *  per-statement storage timeout ("operation exceeded timeout which caused object to be
  *  reset", 2026-09-20), so old generations are removed in bounded chunks. */
@@ -210,13 +246,339 @@ export async function queryD1Changes(
   return { rows, total, last_refreshed_at: meta?.last_refreshed_at ?? null };
 }
 
+/** Bytes one ingest row adds to a chunk (the record is stored three ways, plus the search text). */
+function ingestBytes(entry: IngestRow, json: string): number {
+  return json.length * 2 + entry.s.length + (entry.i?.length ?? 0) + 40;
+}
+
+/**
+ * Refreshes a D1 source. Sources with a stable id (`idOf`) whose stored rows
+ * carry record hashes are refreshed IN PLACE (refreshD1Delta): only the rows
+ * whose content changed are rewritten, new ids inserted, vanished ids deleted.
+ * Everything else — a first load, a source without ids, rows written before
+ * migration 0014 — takes the full generation reload (refreshD1Full), which is
+ * also what writes the hashes the next delta needs. Called ONLY from the
+ * scheduled cron (never inline on a request path — a reload takes seconds to
+ * minutes at 100k+ rows and must not be triggerable by an unauthenticated
+ * request; queryD1Source and the /stats route read committed state only).
+ */
 export async function refreshD1Source(
   env: CloudflareBindings,
   source: DataSource,
 ): Promise<SourceMeta> {
   const start = Date.now();
+  const previous = await readMeta(env, source.slug);
+  if (previous && source.idOf) {
+    const index = await loadStoredIndex(env, source.slug, previous.generation).catch(
+      (err: unknown) => {
+        console.log(
+          JSON.stringify({
+            level: 'warn',
+            event: 'delta_index_failed',
+            source: source.slug,
+            reason: err instanceof Error ? err.message : String(err),
+          }),
+        );
+        return null;
+      },
+    );
+    if (index) return refreshD1Delta(env, source, previous, index, start);
+  }
+  return refreshD1Full(env, source, previous, start);
+}
+
+/** Rows per page when reading the stored (seq, id, hash) index back. */
+const INDEX_PAGE = 50_000;
+
+/**
+ * The live generation's rows as parallel typed arrays, sorted by id hash for
+ * binary search: ~20 bytes a row, so uk-food-hygiene's ~610k rows fit in a
+ * Worker's memory with room for the streamed download. `null` when any row
+ * lacks an id or a hash (written before migration 0014) — the caller then does
+ * a full reload, which fills them in.
+ */
+interface StoredIndex {
+  n: number;
+  seq: Uint32Array;
+  idHash: Float64Array;
+  hash: Float64Array;
+  /** Row positions ordered by idHash. */
+  order: Uint32Array;
+  maxSeq: number;
+}
+
+async function loadStoredIndex(
+  env: CloudflareBindings,
+  slug: string,
+  generation: number,
+): Promise<StoredIndex | null> {
+  const gap = await env.DB.prepare(
+    'SELECT 1 AS ok FROM source_records WHERE source_slug = ?1 AND generation = ?2 AND (record_id IS NULL OR record_hash IS NULL) LIMIT 1',
+  )
+    .bind(slug, generation)
+    .first<{ ok: number }>();
+  if (gap) return null;
+  const size = await env.DB.prepare(
+    'SELECT COUNT(*) AS n, COALESCE(MAX(seq), -1) AS max FROM source_records WHERE source_slug = ?1 AND generation = ?2',
+  )
+    .bind(slug, generation)
+    .first<{ n: number; max: number }>();
+  const n = size?.n ?? 0;
+  if (n === 0) return null;
+  const index: StoredIndex = {
+    n,
+    seq: new Uint32Array(n),
+    idHash: new Float64Array(n),
+    hash: new Float64Array(n),
+    order: new Uint32Array(n),
+    maxSeq: size?.max ?? -1,
+  };
+  const page = env.DB.prepare(
+    `SELECT seq, record_id, record_hash FROM source_records
+     WHERE source_slug = ?1 AND generation = ?2 AND seq > ?3 ORDER BY seq LIMIT ${INDEX_PAGE}`,
+  );
+  let filled = 0;
+  let after = -1;
+  for (;;) {
+    const rows = await page
+      .bind(slug, generation, after)
+      .all<{ seq: number; record_id: string; record_hash: number }>();
+    const results = rows.results ?? [];
+    if (results.length === 0) break;
+    for (const row of results) {
+      if (filled >= n) return null; // rows appeared under us — not a cron-only store any more
+      index.seq[filled] = row.seq;
+      index.idHash[filled] = hash53(row.record_id);
+      index.hash[filled] = row.record_hash;
+      index.order[filled] = filled;
+      filled += 1;
+      after = row.seq;
+    }
+    if (results.length < INDEX_PAGE) break;
+  }
+  if (filled !== n) return null;
+  index.order.sort((a, b) => index.idHash[a] - index.idHash[b]);
+  return index;
+}
+
+/** Position of the stored row whose id hashes to `h`, or -1. */
+function findStored(index: StoredIndex, h: number): number {
+  let lo = 0;
+  let hi = index.n - 1;
+  while (lo <= hi) {
+    const mid = (lo + hi) >>> 1;
+    const pos = index.order[mid];
+    const v = index.idHash[pos];
+    if (v === h) return pos;
+    if (v < h) lo = mid + 1;
+    else hi = mid - 1;
+  }
+  return -1;
+}
+
+const UPSERT_SQL = `INSERT INTO source_records (source_slug, generation, seq, search, record, record_lc, record_id, record_hash)
+   SELECT ?1, ?2, json_extract(value, '$.q'), json_extract(value, '$.s'), json_extract(value, '$.r'), json_extract(value, '$.l'), json_extract(value, '$.i'), json_extract(value, '$.h')
+   FROM json_each(?3) WHERE true
+   ON CONFLICT (source_slug, generation, seq) DO UPDATE SET
+     search = excluded.search, record = excluded.record, record_lc = excluded.record_lc,
+     record_id = excluded.record_id, record_hash = excluded.record_hash`;
+/** Change-feed rows copied from the live rows named by seq (after an upsert, or before a delete). */
+const CHANGES_FROM_ROWS_SQL = `INSERT OR IGNORE INTO source_changes (source_slug, changed_at, change, record_id, record, search, record_lc)
+   SELECT source_slug, ?3, ?4, record_id, record, search, record_lc FROM source_records
+   WHERE source_slug = ?1 AND generation = ?2 AND seq IN (SELECT value FROM json_each(?5))`;
+const DELETE_ROWS_SQL = `DELETE FROM source_records
+   WHERE source_slug = ?1 AND generation = ?2 AND seq IN (SELECT value FROM json_each(?3))`;
+
+/**
+ * In-place refresh of the live generation (cloudflare-usage-breakdown, 2026-10-04).
+ * Streams the source once, looks each record up by id hash in the stored index
+ * and writes only what differs: changed rows are upserted by their seq, new ids
+ * appended after the highest seq, and ids the source no longer yields deleted
+ * once the stream ends; each chunk lands with its change-feed rows in one
+ * transactional batch. Registers move by well under 1% a day, so this writes
+ * ~1% of the rows the generation swap wrote (D1 bills rows written). The price
+ * is that a request during the refresh sees today's version of some rows and
+ * yesterday's of the rest — every row is present throughout, nothing is ever
+ * partially loaded, and a crash mid-way self-heals: the next refresh compares
+ * against whatever hashes are stored. A stream that yields 0 records changes
+ * nothing (origin outage vs real-empty is indistinguishable).
+ */
+async function refreshD1Delta(
+  env: CloudflareBindings,
+  source: DataSource,
+  previous: SourceMeta,
+  index: StoredIndex,
+  start: number,
+): Promise<SourceMeta> {
+  const { generation } = previous;
+  const changedAt = new Date().toISOString();
   try {
-    const previous = await readMeta(env, source.slug);
+    // A crashed full reload may have left orphan rows above the live generation.
+    await deleteGenerations(env, source.slug, '>=', generation + 1);
+    const seen = new Uint8Array(index.n);
+    let nextSeq = index.maxSeq + 1;
+    let streamed = 0;
+    let added = 0;
+    let changed = 0;
+    let chunk: (IngestRow & { q: number })[] = [];
+    let addedSeqs: number[] = [];
+    let changedSeqs: number[] = [];
+    let chunkBytes = 0;
+    const flush = async (): Promise<void> => {
+      if (chunk.length === 0) return;
+      const batch = [
+        env.DB.prepare(UPSERT_SQL).bind(source.slug, generation, JSON.stringify(chunk)),
+      ];
+      for (const [kind, seqs] of [
+        ['added', addedSeqs],
+        ['changed', changedSeqs],
+      ] as const) {
+        if (seqs.length === 0) continue;
+        batch.push(
+          env.DB.prepare(CHANGES_FROM_ROWS_SQL).bind(
+            source.slug,
+            generation,
+            changedAt,
+            kind,
+            JSON.stringify(seqs),
+          ),
+        );
+      }
+      await env.DB.batch(batch);
+      chunk = [];
+      addedSeqs = [];
+      changedSeqs = [];
+      chunkBytes = 0;
+    };
+    const records: AsyncIterable<unknown> | unknown[] = source.fetchStream
+      ? source.fetchStream(env)
+      : await source.fetchFresh(env);
+    for await (const record of records) {
+      streamed += 1;
+      const json = JSON.stringify(record);
+      const entry = ingestRow(source, record, json);
+      const pos = findStored(index, hash53(entry.i ?? ''));
+      if (pos >= 0) {
+        seen[pos] = 1;
+        if (index.hash[pos] === entry.h) continue; // unchanged: no write at all
+        changed += 1;
+        changedSeqs.push(index.seq[pos]);
+        chunk.push({ ...entry, q: index.seq[pos] });
+      } else {
+        added += 1;
+        addedSeqs.push(nextSeq);
+        chunk.push({ ...entry, q: nextSeq });
+        nextSeq += 1;
+      }
+      chunkBytes += ingestBytes(entry, json);
+      if (chunk.length >= INSERT_CHUNK || chunkBytes >= INSERT_CHUNK_BYTES) await flush();
+    }
+    if (streamed === 0) throw new Error('refresh returned 0 records');
+    await flush();
+
+    // Rows the source no longer yields: feed row first, then the delete, one batch per chunk.
+    let removed = 0;
+    let removedSeqs: number[] = [];
+    const flushRemoved = async (): Promise<void> => {
+      if (removedSeqs.length === 0) return;
+      const seqs = JSON.stringify(removedSeqs);
+      await env.DB.batch([
+        env.DB.prepare(CHANGES_FROM_ROWS_SQL).bind(
+          source.slug,
+          generation,
+          changedAt,
+          'removed',
+          seqs,
+        ),
+        env.DB.prepare(DELETE_ROWS_SQL).bind(source.slug, generation, seqs),
+      ]);
+      removedSeqs = [];
+    };
+    for (let pos = 0; pos < index.n; pos += 1) {
+      if (seen[pos]) continue;
+      removed += 1;
+      removedSeqs.push(index.seq[pos]);
+      if (removedSeqs.length >= INSERT_CHUNK) await flushRemoved();
+    }
+    await flushRemoved();
+
+    const meta: SourceMeta = {
+      generation,
+      last_refreshed_at: changedAt,
+      total: index.n + added - removed,
+    };
+    await env.DB.batch([
+      env.DB.prepare(
+        'UPDATE source_meta SET last_refreshed_at = ?2, total = ?3 WHERE source_slug = ?1',
+      ).bind(source.slug, meta.last_refreshed_at, meta.total),
+      env.DB.prepare(
+        "DELETE FROM source_changes WHERE source_slug = ?1 AND changed_at < datetime('now', ?2)",
+      ).bind(source.slug, `-${CHANGES_RETENTION_DAYS} days`),
+    ]);
+    console.log(
+      JSON.stringify({
+        level: 'info',
+        event: 'refresh_delta',
+        source: source.slug,
+        streamed,
+        added,
+        changed,
+        removed,
+        unchanged: streamed - added - changed,
+      }),
+    );
+
+    await precomputeStats(env, source, generation, meta);
+    await writeRefreshLog(
+      env,
+      source.slug,
+      'ok',
+      meta.total,
+      Date.now() - start,
+      `delta +${added} ~${changed} -${removed}`,
+    );
+    return meta;
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
+    await writeRefreshLog(env, source.slug, 'error', 0, Date.now() - start, message);
+    throw err;
+  }
+}
+
+/**
+ * Precompute the /stats aggregation once here (cron), so the public,
+ * unauthenticated /stats page never runs a full-table GROUP BY per request.
+ * Best-effort: a stats-cache failure must not fail the data refresh.
+ */
+async function precomputeStats(
+  env: CloudflareBindings,
+  source: DataSource,
+  generation: number,
+  meta: SourceMeta,
+): Promise<void> {
+  try {
+    const stats = await aggregateD1Stats(env, source, generation, meta.total);
+    await putSourceStats(env, source, stats, meta.last_refreshed_at);
+  } catch (statsErr) {
+    console.log(
+      JSON.stringify({
+        level: 'warn',
+        event: 'stats_precompute_failed',
+        source: source.slug,
+        reason: statsErr instanceof Error ? statsErr.message : String(statsErr),
+      }),
+    );
+  }
+}
+
+/** Full reload into generation+1, then the atomic meta flip (see refreshD1Source). */
+async function refreshD1Full(
+  env: CloudflareBindings,
+  source: DataSource,
+  previous: SourceMeta | null,
+  start: number,
+): Promise<SourceMeta> {
+  try {
     const generation = (previous?.generation ?? 0) + 1;
 
     // Idempotency sweep: meta only advances on success, so a prior crashed
@@ -230,12 +592,12 @@ export async function refreshD1Source(
     // (preferred when present) holds only one chunk in memory, so datasets far
     // beyond Worker memory can load; fetchFresh materializes like the KV path.
     const insert = env.DB.prepare(
-      `INSERT INTO source_records (source_slug, generation, seq, search, record, record_lc, record_id)
-       SELECT ?1, ?2, key + ?3, json_extract(value, '$.s'), json_extract(value, '$.r'), json_extract(value, '$.l'), json_extract(value, '$.i')
+      `INSERT INTO source_records (source_slug, generation, seq, search, record, record_lc, record_id, record_hash)
+       SELECT ?1, ?2, key + ?3, json_extract(value, '$.s'), json_extract(value, '$.r'), json_extract(value, '$.l'), json_extract(value, '$.i'), json_extract(value, '$.h')
        FROM json_each(?4)`,
     );
     let total = 0;
-    let chunk: { s: string; r: unknown; l: unknown; i: string | null }[] = [];
+    let chunk: IngestRow[] = [];
     let chunkBytes = 0;
     const flush = async (): Promise<void> => {
       if (chunk.length === 0) return;
@@ -247,14 +609,10 @@ export async function refreshD1Source(
       ? source.fetchStream(env)
       : await source.fetchFresh(env);
     for await (const record of records) {
-      const entry = {
-        s: searchText(record as Record<string, unknown>),
-        r: record,
-        l: lowercaseStrings(record),
-        i: source.idOf ? source.idOf(record) : null,
-      };
+      const json = JSON.stringify(record);
+      const entry = ingestRow(source, record, json);
       chunk.push(entry);
-      chunkBytes += JSON.stringify(entry).length;
+      chunkBytes += ingestBytes(entry, json);
       total += 1;
       if (chunk.length >= INSERT_CHUNK || chunkBytes >= INSERT_CHUNK_BYTES) await flush();
     }
@@ -304,23 +662,7 @@ export async function refreshD1Source(
     // Drop every older generation.
     await deleteGenerations(env, source.slug, '<', generation);
 
-    // Precompute the /stats aggregation once here (cron), so the public,
-    // unauthenticated /stats page never runs a full-table GROUP BY per request.
-    // Best-effort: a stats-cache failure must not fail the data refresh.
-    try {
-      const stats = await aggregateD1Stats(env, source, generation, total);
-      await putSourceStats(env, source, stats, meta.last_refreshed_at);
-    } catch (statsErr) {
-      console.log(
-        JSON.stringify({
-          level: 'warn',
-          event: 'stats_precompute_failed',
-          source: source.slug,
-          reason: statsErr instanceof Error ? statsErr.message : String(statsErr),
-        }),
-      );
-    }
-
+    await precomputeStats(env, source, generation, meta);
     await writeRefreshLog(env, source.slug, 'ok', total, Date.now() - start, null);
     return meta;
   } catch (err) {

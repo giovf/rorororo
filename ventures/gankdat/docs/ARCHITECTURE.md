@@ -124,8 +124,19 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   `UPDATE … WHERE used_at IS NULL`), `agent_signups` (agent-side sign-up requests:
   hashed claim secret, emailed approval token, human-check code; same atomic single-use),
   `source_records`/`source_meta` (rows for `storage:'d1'` datasets too large
-  for a KV snapshot — SQL filters with applyQuery-parity semantics,
-  generation-swap refresh; task 44). Migrations via `wrangler d1 migrations`.
+  for a KV snapshot — SQL filters with applyQuery-parity semantics; task 44).
+  **Delta refresh** (2026-10-04, migration 0014 `record_hash`): a source with `idOf` is
+  refreshed in place — the live generation's (seq, id, hash) index is read into typed arrays,
+  the stream is compared row by row, and only changed rows are upserted, new ids appended and
+  vanished ids deleted, each chunk with its change-feed rows in one transactional batch. The
+  generation swap (a whole new generation inserted and the old one deleted every night, ~1M
+  rows written and ~1M deleted a day for registers that move < 1%) remains for first loads,
+  sources without ids and rows written before the migration; it is what the 2026-10-01
+  Cloudflare budget alert (US$15 metered vs the US$5 plan) was traced to — D1 bills rows
+  written. The trade: during a delta refresh a request sees today's version of some rows and
+  yesterday's of the rest (every row present, nothing partially loaded; `last_refreshed_at`
+  flips at the end, and a crash mid-way self-heals against the stored hashes). `refresh_log`
+  carries `delta +a ~c -r` per source. Migrations via `wrangler d1 migrations`.
 - **KV**: response cache per source (+ precomputed `/stats` blob and a
   best-effort refresh single-flight lock), monthly usage counters per account
   email (`usage:<email>:<yyyymm>`), key-hash → key-record hot-path lookup
@@ -183,8 +194,10 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   05:30 charities + care locations, 05:45 uk-food-hygiene, 05:50 uk-schools, 05:55 nhs-ods,
   06:05 uk-trademark-journal;
   `store.ts waveForCron`) pull sources, write `refresh_log`; responses
-  expose `last_refreshed_at`. D1 refreshes diff generations by `DataSource.idOf` into
-  `source_changes` (90 d) — served at `/v1/changes/:source` and the MCP `get_changes` tool.
+  expose `last_refreshed_at`. D1 refreshes record what `DataSource.idOf` says was added,
+  removed or changed into `source_changes` (90 d; the delta refresh writes them as it goes,
+  the full reload diffs generations) — served at `/v1/changes/:source` and the MCP
+  `get_changes` tool.
   The feed is sold, not just served (2026-09-24): `registry.hasChangeFeed` is the one
   predicate; the refresh precomputes 30 days of added/removed/changed per day into the
   `/stats` blob (`SourceStats.changes`) so the public page shows the activity and the poll
