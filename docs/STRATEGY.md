@@ -514,4 +514,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   deploy is one last full reload that writes the hashes. The Daily numbers row gains `cf usage:` from
   the GraphQL Analytics API (per-product period-to-date usage and an estimated overage, degrading to
   `n/a (<reason>)` if the deploy token lacks the analytics scope — then the owner's dashboard look
-  stands). Proof: the 2026-10-10..11-10 invoice ≤ US$10; the ledger row is corrected when it lands.
+  stands). Proof: the 2026-10-10..11-10 invoice ≤ US$10; the ledger row is corrected when it lands. Same run,
+  first reading (the deploy token has the analytics scope): 87.5M D1 rows written 09-10→10-04, KV,
+  Analytics Engine and requests ≈ 0 — D1 writes are the whole overage (≈ US$38 so far, ledger £31
+  estimated); the owner's dashboard look is no longer needed.

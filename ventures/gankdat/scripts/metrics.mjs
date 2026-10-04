@@ -320,9 +320,9 @@ async function cfUsage() {
   const drivers = costs
     .filter(([, v]) => v >= 0.5)
     .sort((a, b) => b[1] - a[1])
-    .map(([k, v]) => `${k} US${v.toFixed(0)}`)
+    .map(([k, v]) => `${k} US$${v.toFixed(0)}`)
     .join(', ');
-  return `cf usage (${from.slice(5)}→${to.slice(5)}): ${parts.join(', ')} ≈ US${total.toFixed(0)} overage${drivers ? ` (${drivers})` : ''}${errors.length ? `; n/a: ${errors.join('; ').slice(0, 120)}` : ''}`;
+  return `cf usage (${from.slice(5)}→${to.slice(5)}): ${parts.join(', ')} ≈ US$${total.toFixed(0)} overage${drivers ? ` (${drivers})` : ''}${errors.length ? `; n/a: ${errors.join('; ').slice(0, 120)}` : ''}`;
 }
 const cfNote = await cfUsage().catch((e) => `cf usage: n/a (${e.message.slice(0, 100)})`);
 

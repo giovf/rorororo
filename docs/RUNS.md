@@ -423,3 +423,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 09:31 | build | gankdat: the Daily numbers row gains `cf usage:` — D1 writes/reads, KV, requests, ≈ US$ overage
 - 2026-10-04 09:31 | build | If tomorrow's row shows cf usage numbers (not n/a), skip the Cloudflare dashboard look (ALERTS 10-04)
 - 2026-10-04 09:31 | build | Ledger: the £7.40 planned Cloudflare row now points at the reading; invoice figure replaces it on 10-10
+- 2026-10-04 09:40 | build | Reading works: 87.5M D1 rows written 09-10→10-04, KV/AE/requests ≈ 0 — D1 writes are the whole overage
+- 2026-10-04 09:40 | build | Owner: skip the Cloudflare dashboard look; ledger planned overage set to ≈ £31 (US$42) until the invoice
