@@ -668,3 +668,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   called by nobody because every path needed a key or an MCP client; this puts them on four automation shelves without
   an account. Rendered on request once an hour (KV), not at refresh — no D1 cost for feeds nobody reads. Proof: ≥ 20
   distinct user agents on /feeds in 30 days and a key issued with a /feeds referrer (`feeds 30d:` row note; 11-05 read).
+- 2026-10-05 build (09:00 run): pipeline starved (every open item blocked or dated), so the slot researched the
+  oldest queue, highlight-keep (`RESEARCH.md` 2026-10-05). Weava, the refugee pool the comparison page targets, is
+  still abandoned and both rivals that outrank us for "weava alternative" built a Weava import; the 2026-09-19 review
+  sample's unaddressed asks are every-site mode (3), iframe/shadow DOM (2) and export into a notes app (every rival
+  has one, ours is a clipboard copy). Queued: `import-weava-export` (6), `all-sites-mode` (4), `subframe-highlighting`
+  (4), `export-markdown-files-readwise-csv` (4), `import-glasp-hypothesis-exports` (3). Relay allowlist gained the
+  vendors' doc hosts so the parsers are written from real file layouts.

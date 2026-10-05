@@ -190,3 +190,42 @@ figures client-side (not in the HTML; third-party listings disagree, $3.49–4.9
 to the account; imports are bookmarks (Pocket, Raindrop, HTML), not highlights; no highlight export stated. Reading: the
 one-time-vs-subscription line is now stated against every rival a searcher sees; the day-30 review measures whether the
 page earns impressions (proof unchanged: ≥ 50 at 2026-10-30). Relay allowlist gained `.web-highlights.com` and `.marqly.com`.
+
+## Research 2026-10-05 (build 09:00; starvation fallback — no buildable item in any queue)
+
+Evidence read: the metrics rows (0 users on both stores every day 2026-09-30..10-05; 0.2.0 now shows as the live
+Firefox version and the Chrome listing's "updated October 4, 2026", so the fixed listings have had one day — nothing
+is readable), the 2026-09-19 review sample re-counted by ask (31 highlighter reviews: PDF 4, account/login 4,
+**activate on every site by default 3**, lost data/backup 3, billing 2, **iframe/shadow DOM 2**, Reddit anchoring 1,
+toolbar overlap 1), the live source (`sites.ts` registers the content script without `allFrames`; the library's
+"export all" copies Markdown to the clipboard and the only file export is the JSON backup), and web searches today
+(chromewebstore, AMO, web-highlights.com, tooltivity.com and dexterouslogic.com are all blocked from this sandbox;
+only the search index answered): (1) Weava's own knowledge base documents a dashboard export to Word, Excel, CSV and
+plain text carrying resource URL, highlight and annotation, and **both rivals that outrank us for "weava alternative"
+built a Weava import** (Web Highlights "How to import highlights from Weava", Glasp "Import Weava highlights");
+2026 reviews still report Weava "hasn't been updated since Feb 2024, no longer saves highlights", rating 2.9 on its
+last 100 reviews (tooltivity/web-highlights summaries); (2) every rival a searcher sees ships a notes-app path —
+Web Highlights (Notion, Obsidian, Capacities, MD/HTML/PDF), Glasp (Notion, Obsidian, Readwise, Roam, Logseq;
+MD/CSV/JSON), Readwise Highlighter, Hypothesis (JSON/TXT/CSV/HTML export from the sidebar) — while our "exports to
+Markdown" is a clipboard copy; (3) Firefox for Android has a handful of local highlighters ("Highlighter Extension"
+lists Android), none with notes or export — demand unverified, parked until ReadFocus's Android reading exists.
+
+Reading: findability work is done and unmeasured until 10-30, so the next items are the ones that turn a searcher
+who lands on the comparison page into an install — a way across for the Weava refugees the page is written for,
+and parity on the three asks the review sample repeats that we had not addressed (every-site mode, subframes,
+export to a notes app). Items added (score = evidence × reach ÷ effort):
+
+| Item | Score | Effort | What it does |
+|---|---|---|---|
+| `import-weava-export` | 6 | 0.6 d | import Weava's CSV/TXT dashboard export (verify columns via relay first); "bring your highlights from Weava" on listing + page |
+| `all-sites-mode` | 4 | 0.3 d | opt-in "every site" switch via the optional `<all_urls>` permission; per-site stays the default |
+| `subframe-highlighting` | 4 | 0.3 d | `allFrames` + shadow-root-aware anchoring; e2e fixture with an iframe and a shadow root |
+| `export-markdown-files-readwise-csv` | 4 | 0.4 d | download one .md per page (zip, front matter) for a vault, and a Readwise-import CSV; no OAuth integrations |
+| `import-glasp-hypothesis-exports` | 3 | 0.5 d | Glasp CSV/JSON and Hypothesis JSON imports, after the Weava import proves the pattern |
+
+Relay allowlist gained `.weavatools.com`, `weavatools.atlassian.net`, `.readwise.io`, `.glasp.co`, `.hypothes.is`
+so the builds above can read the real file layouts (never guess a format). Not queued: Firefox for Android
+(above); directory pages that rank for the query (tooltivity.com, extpose.com, alternativeto) — extpose indexes
+every Chrome listing by itself, alternativeto needs an owner account (already blocked in the ReadFocus queue),
+tooltivity's submission path could not be read; Reddit/XPath anchoring (one review; ours is text-quote based).
+Kill check unchanged: 2026-12-21 if nothing moves; day-30 review 2026-10-30.

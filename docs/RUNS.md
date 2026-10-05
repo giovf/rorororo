@@ -555,3 +555,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 08:12 | report | Next step: Cloudflare D1-write overage breakdown is highest leverage — £6.60 headroom left under cap
 - 2026-10-05 08:12 | notify | ReadFocus 0.2 submitted to Chrome and Firefox: adds a built-in PDF reader
 - 2026-10-05 08:12 | notify | Highlight Keep 0.2 submitted to Chrome and Firefox: adds PDF highlighting
+- 2026-10-05 09:11 | build | Pipeline starved (every open item blocked or dated): research run for highlight-keep, oldest queue
+- 2026-10-05 09:11 | build | Highlight Keep research: Weava still abandoned; both rivals ranking for its name built a Weava import
+- 2026-10-05 09:11 | build | Review sample re-counted: every-site mode (3), iframe/shadow DOM (2) and notes-app export unaddressed
+- 2026-10-05 09:11 | build | Queue: highlight-keep +5 items; next buildable is import-weava-export (6); relay allowlist +5 hosts

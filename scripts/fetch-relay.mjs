@@ -46,6 +46,11 @@ const ALLOWED = [
   '.marqly.com',
   '.dyslexly.com',
   'halfbold.vercel.app',
+  '.weavatools.com',
+  'weavatools.atlassian.net',
+  '.readwise.io',
+  '.glasp.co',
+  '.hypothes.is',
 ];
 
 function allowed(hostname) {
