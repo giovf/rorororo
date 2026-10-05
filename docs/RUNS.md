@@ -524,6 +524,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 00:42 | burn-down | Production builds checked: real public key baked, no key file; .env.example says e2e needs no key
 - 2026-10-05 00:42 | burn-down | Queue: foundry e2e-pro-sections-test-key done; foundry has no buildable item left (actions-minutes 10-12)
 - 2026-10-05 00:50 | burn-down | Stopping for time (~45 min): three foundry items built; pipeline starved, next fire researches gankdat
+- 2026-10-05 01:14 | watchdog | ci-minutes: ~4215 Actions min/month projected (private cap 2,000, warn 1700); top: check 642, gankdat 173, owner notes 4
 - 2026-10-05 01:21 | burn-down | gankdat research (starved pipeline): 14 Daily numbers rows read, funnel wide at the top, zero at the bottom
 - 2026-10-05 01:21 | burn-down | apify-change-feed-mode (7): change feeds never called; actors only query /v1/data; schedules = monitors
 - 2026-10-05 01:21 | burn-down | d1-delta-cost-check (6, from 10-08): §7 tripped on US$38 D1 writes; read three rows after the delta fix
