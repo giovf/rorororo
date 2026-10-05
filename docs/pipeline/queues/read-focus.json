@@ -139,12 +139,13 @@
     {
       "id": "read-aloud",
       "title": "Read aloud with the browser's own voices (speechSynthesis, nothing leaves the browser), sentence highlighting that follows the voice, play/pause in the popup and a shortcut (unlock)",
-      "why": "Helperbird (500k users, $30/yr) leads its blog with word-by-word read-aloud; Dyslexly's free tier has text-to-speech with word highlighting; Dyslexia Reader (9k) reads a clicked sentence aloud. No review in our sample asks for it and the free \"Read Aloud\" extension serves it standalone, so it scores below the ruler and spacing items; its value is for readers who already use ReadFocus and want ears and eyes together. Helperbird's complaint is voice quality, which is the OS's — the listing must say \"uses your computer's voices\". Research 2026-10-05.",
+      "why": "Helperbird (500k users, $30/yr) leads its blog with word-by-word read-aloud; Dyslexly's free tier has text-to-speech with word highlighting; Dyslexia Reader (9k) reads a clicked sentence aloud. No review in our sample asks for it and the free \"Read Aloud\" extension serves it standalone, so it scores below the ruler and spacing items; its value is for readers who already use ReadFocus and want ears and eyes together. Helperbird's complaint is voice quality, which is the OS's — the listing must say \"uses your computer's voices\". Research 2026-10-05. BUILT 2026-10-05 (burn-down 19:00) in 0.3.0: speechSynthesis per sentence from the first block on screen, CSS Custom Highlight on the sentence, popup play/pause/stop + speed, Alt+Shift+A; 4 unit + 4 e2e checks (no voices in headless, audio unverified).",
       "effort_days": 0.6,
       "proof": "a review or support mail naming read-aloud within 60 days; unlock conversions after vs before the version",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     },
     {
       "id": "google-docs-publish-tip",

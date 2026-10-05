@@ -11,4 +11,4 @@ export function applyTier(site: SiteSettings, tier: Tier): SiteSettings {
   return rest;
 }
 
-export const PRO_FEATURES = ['Precise coverage and weight', 'Paragraph focus', 'Dyslexia-friendly fonts', 'Page tint'] as const;
+export const PRO_FEATURES = ['Precise coverage and weight', 'Paragraph focus', 'Dyslexia-friendly fonts', 'Page tint', 'Read aloud'] as const;

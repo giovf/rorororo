@@ -28,6 +28,13 @@
         "mac": "MacCtrl+Shift+R"
       },
       "description": "Toggle the reading ruler"
+    },
+    "toggle-read": {
+      "suggested_key": {
+        "default": "Alt+Shift+A",
+        "mac": "MacCtrl+Shift+A"
+      },
+      "description": "Read aloud: play or pause"
     }
   },
   "web_accessible_resources": [

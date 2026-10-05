@@ -74,6 +74,7 @@ function render(site: SiteSettings): void {
   $<HTMLInputElement>('ruler-lock').checked = site.rulerLock;
   $<HTMLInputElement>('spacing').checked = site.spacing;
   $<HTMLSelectElement>('tint').value = site.tint;
+  $<HTMLInputElement>('speech-rate').value = String(site.speechRate || 1);
   $<HTMLInputElement>('focus').checked = site.focus;
   $<HTMLSelectElement>('font').value = site.font;
   document.body.classList.toggle('is-pro', tier === 'pro');
@@ -94,6 +95,44 @@ async function change(patch: Partial<SiteSettings>): Promise<void> {
 // Firefox for Android has no keyboard shortcuts: `chrome.commands` is undefined there.
 const commandsApi: typeof chrome.commands | undefined = chrome.commands;
 
+interface ReadState {
+  ok: boolean;
+  playing: boolean;
+  paused: boolean;
+  reason?: 'pro' | 'no-voice' | 'nothing';
+}
+
+/** Asks the page's content script to play / pause / stop reading; the reply drives the buttons. */
+async function readAloud(action: 'toggle' | 'stop' | 'state'): Promise<void> {
+  const note = $('read-note');
+  if (tabId === null || !hostname) return;
+  let state: ReadState | undefined;
+  try {
+    const reply: unknown = await chrome.tabs.sendMessage(tabId, { type: 'read-aloud', action });
+    state = reply as ReadState | undefined;
+  } catch {
+    state = undefined;
+  }
+  if (!state) {
+    if (action !== 'state') {
+      note.hidden = false;
+      note.textContent = 'Switch ReadFocus on for this site first.';
+    }
+    return;
+  }
+  note.hidden = !state.reason;
+  note.textContent =
+    state.reason === 'pro'
+      ? 'Read aloud is part of the unlock.'
+      : state.reason === 'no-voice'
+        ? 'This browser has no voices to read with.'
+        : state.reason === 'nothing'
+          ? 'Nothing to read on this page.'
+          : '';
+  $('read').textContent = state.playing && !state.paused ? '⏸ Pause' : state.playing ? '▶ Resume' : '▶ Read';
+  $('read-stop').hidden = !state.playing;
+}
+
 /** Shows the shortcuts as actually bound on this machine (they differ per platform). */
 async function showShortcuts(): Promise<void> {
   if (!commandsApi) {
@@ -104,6 +143,7 @@ async function showShortcuts(): Promise<void> {
   const label = (name: string): string => commands.find((c) => c.name === name)?.shortcut || 'not set';
   $('kbd-site').textContent = label('toggle-site');
   $('kbd-ruler').textContent = label('toggle-ruler');
+  $('kbd-read').textContent = label('toggle-read');
 }
 
 async function init(): Promise<void> {
@@ -124,6 +164,10 @@ async function init(): Promise<void> {
   $('ruler-lock').onchange = (e) => void change({ rulerLock: (e.target as HTMLInputElement).checked });
   $('spacing').onchange = (e) => void change({ spacing: (e.target as HTMLInputElement).checked });
   $('tint').onchange = (e) => void change({ tint: (e.target as HTMLSelectElement).value as TintChoice });
+  $('read').onclick = () => void readAloud('toggle');
+  $('read-stop').onclick = () => void readAloud('stop');
+  $('speech-rate').onchange = (e) => void change({ speechRate: Number((e.target as HTMLInputElement).value) });
+  void readAloud('state');
   $('focus').onchange = (e) => void change({ focus: (e.target as HTMLInputElement).checked });
   $('font').onchange = (e) => void change({ font: (e.target as HTMLSelectElement).value as SiteSettings['font'] });
   document.querySelectorAll<HTMLButtonElement>('[data-preset]').forEach((b) => {

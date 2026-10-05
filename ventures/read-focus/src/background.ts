@@ -53,6 +53,10 @@ commands?.onCommand.addListener((command) => {
       if (site.enabled) await disableSite(tab.hostname);
       else await enableSite(tab.hostname, tab.id);
     }
+    if (command === 'toggle-read') {
+      if (!site.enabled) return;
+      await chrome.tabs.sendMessage(tab.id, { type: 'read-aloud', action: 'toggle' }).catch(() => undefined);
+    }
     if (command === 'toggle-ruler') {
       if (!site.enabled && !(await enableSite(tab.hostname, tab.id))) return;
       const latest = await loadSettings();

@@ -1,6 +1,7 @@
 import { PRESET_STRENGTH, hasWords, segment } from './core/fixation.js';
 import { tierForKey } from './core/license.js';
 import { effectiveFor, type SiteSettings } from './core/settings.js';
+import { locateSpan, sentenceSpans } from './core/speech.js';
 import { applyTier, type Tier } from './core/tier.js';
 import { loadSettings, onSettingsChange } from './storage.js';
 
@@ -214,6 +215,171 @@ function setTint(choice: SiteSettings['tint']): void {
   if (tint && rgba) tint.style.setProperty('--rf-tint', rgba);
 }
 
+// ---------- read aloud (pro) ----------
+
+// The browser's own voices (speechSynthesis — nothing leaves the browser), one utterance per
+// sentence, and the sentence being read marked through the CSS Custom Highlight API: a Range,
+// not a wrapper, so it lives alongside the bolding spans and is gone the moment reading stops.
+interface Sentence {
+  block: Element;
+  range: Range;
+  text: string;
+}
+const READ_HIGHLIGHT = 'rf-reading';
+let reading: { sentences: Sentence[]; at: number; paused: boolean } | null = null;
+/** Why the last reading stopped on its own (no voices on this machine), shown by the popup. */
+let lastReason: 'no-voice' | undefined;
+const synth: SpeechSynthesis | undefined = typeof speechSynthesis === 'undefined' ? undefined : speechSynthesis;
+
+/** Text nodes that are not readable: code, inputs, editors, our own ruler/tint — bolding wrappers are fine. */
+function unreadable(node: Node): boolean {
+  let el: Element | null = node.parentElement;
+  while (el && el !== document.body) {
+    if (SKIP.has(el.tagName) || (el as HTMLElement).isContentEditable || el.classList.contains('rf-ruler') || el.classList.contains('rf-tint')) return true;
+    el = el.parentElement;
+  }
+  return false;
+}
+
+/** The block's own text nodes (nested blocks excluded) and their concatenation. */
+function ownText(block: Element): { nodes: Text[]; text: string } {
+  const nodes: Text[] = [];
+  const walker = document.createTreeWalker(block, NodeFilter.SHOW_TEXT, {
+    acceptNode: (n) => {
+      const parent = n.parentElement;
+      if (!parent || unreadable(n) || parent.closest(BLOCKS) !== block) return NodeFilter.FILTER_REJECT;
+      return NodeFilter.FILTER_ACCEPT;
+    },
+  });
+  let n: Node | null;
+  while ((n = walker.nextNode())) nodes.push(n as Text);
+  return { nodes, text: nodes.map((t) => t.nodeValue ?? '').join('') };
+}
+
+function sentencesFrom(firstVisible: boolean): Sentence[] {
+  const out: Sentence[] = [];
+  let started = !firstVisible;
+  for (const block of document.querySelectorAll(BLOCKS)) {
+    if (!started) {
+      if (block.getBoundingClientRect().bottom <= 0) continue;
+      started = true;
+    }
+    const { nodes, text } = ownText(block);
+    if (!hasWords(text)) continue;
+    const lengths = nodes.map((t) => (t.nodeValue ?? '').length);
+    for (const span of sentenceSpans(text)) {
+      const at = locateSpan(lengths, span.start, span.end);
+      const startNode = at && nodes[at.startIndex];
+      const endNode = at && nodes[at.endIndex];
+      if (!at || !startNode || !endNode) continue;
+      const range = document.createRange();
+      range.setStart(startNode, at.startOffset);
+      range.setEnd(endNode, at.endOffset);
+      out.push({ block, range, text: span.text });
+    }
+  }
+  return out;
+}
+
+function markSentence(s: Sentence | undefined): void {
+  if (!('highlights' in CSS)) return;
+  if (!s) {
+    CSS.highlights.delete(READ_HIGHLIGHT);
+    return;
+  }
+  CSS.highlights.set(READ_HIGHLIGHT, new Highlight(s.range));
+  const r = s.range.getBoundingClientRect();
+  if (r.top < 0 || r.bottom > window.innerHeight) s.block.scrollIntoView({ block: 'center', behavior: 'smooth' });
+}
+
+function speakNext(): void {
+  if (!reading || !synth) return;
+  const s = reading.sentences[reading.at];
+  if (!s) {
+    stopReading();
+    return;
+  }
+  markSentence(s);
+  const u = new SpeechSynthesisUtterance(s.text);
+  u.rate = Math.min(1.6, Math.max(0.7, current?.speechRate || 1));
+  u.lang = document.documentElement.lang || navigator.language;
+  const session = reading;
+  u.onend = () => {
+    if (reading !== session) return;
+    reading.at++;
+    speakNext();
+  };
+  u.onerror = (e) => {
+    if (reading !== session) return;
+    if (e.error !== 'interrupted' && e.error !== 'canceled') lastReason = 'no-voice';
+    stopReading();
+  };
+  synth.speak(u);
+}
+
+function stopReading(): void {
+  reading = null;
+  synth?.cancel();
+  markSentence(undefined);
+}
+
+export interface ReadState {
+  ok: boolean;
+  playing: boolean;
+  paused: boolean;
+  sentences: number;
+  /** The sentence being read and whether its highlight is registered — what the e2e asserts on. */
+  sentence: string;
+  highlighted: boolean;
+  reason?: 'pro' | 'no-voice' | 'nothing';
+}
+function readState(ok = true, reason?: ReadState['reason']): ReadState {
+  const r: ReadState = {
+    ok,
+    playing: reading !== null,
+    paused: reading?.paused ?? false,
+    sentences: reading?.sentences.length ?? 0,
+    sentence: reading?.sentences[reading.at]?.text ?? '',
+    highlighted: 'highlights' in CSS && CSS.highlights.has(READ_HIGHLIGHT),
+  };
+  const why = reason ?? (reading ? undefined : lastReason);
+  if (why) r.reason = why;
+  return r;
+}
+
+/** Popup and shortcut entry point: toggle = play / pause / resume; stop clears everything. */
+function readAloud(action: 'toggle' | 'stop' | 'state'): ReadState {
+  if (action === 'state') return readState();
+  if (action === 'stop') {
+    stopReading();
+    return readState();
+  }
+  if (tier !== 'pro') return readState(false, 'pro');
+  if (!synth) return readState(false, 'no-voice');
+  if (reading) {
+    if (reading.paused) {
+      reading.paused = false;
+      synth.resume();
+    } else {
+      reading.paused = true;
+      synth.pause();
+    }
+    return readState();
+  }
+  const sentences = sentencesFrom(true);
+  if (sentences.length === 0) return readState(false, 'nothing');
+  lastReason = undefined;
+  reading = { sentences, at: 0, paused: false };
+  speakNext();
+  return readState();
+}
+
+chrome.runtime.onMessage.addListener((msg: { type?: string; action?: 'toggle' | 'stop' | 'state' }, _sender, respond: (r: ReadState) => void) => {
+  if (msg.type !== 'read-aloud') return false;
+  respond(readAloud(msg.action ?? 'toggle'));
+  return false;
+});
+
 // ---------- fonts (pro) ----------
 
 const FONT_FILES: Record<string, { regular: string; bold: string }> = {
@@ -239,6 +405,7 @@ function setFont(font: SiteSettings['font']): void {
 // ---------- orchestration ----------
 
 let current: SiteSettings | null = null;
+let tier: Tier = 'free';
 
 /** On the extension's PDF reader page settings are keyed by the PDF's own host (core/pdf.ts documentUrl). */
 function readerHost(): string | undefined {
@@ -276,6 +443,7 @@ function apply(next: SiteSettings): void {
   document.documentElement.classList.toggle('rf-size', size !== 1);
   document.documentElement.classList.toggle('rf-spacing', next.enabled && next.spacing);
   setTint(next.enabled ? next.tint : 'none');
+  if (!next.enabled && reading) stopReading();
   setRuler(next.enabled && next.ruler, next);
   setFocus(next.enabled && next.focus);
   setFont(next.enabled ? next.font : 'default');
@@ -283,7 +451,7 @@ function apply(next: SiteSettings): void {
 
 async function refresh(): Promise<void> {
   const settings = await loadSettings();
-  const tier: Tier = await tierForKey(settings.licenseKey);
+  tier = await tierForKey(settings.licenseKey);
   apply(applyTier(effectiveFor(settings, readerHost() ?? location.hostname), tier));
 }
 

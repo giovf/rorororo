@@ -17,6 +17,8 @@ html.rf-focus .rf-focus-target { opacity: 1; }
 html.rf-font-opendyslexic :is(body, p, li, a, span, div, td, th, h1, h2, h3, h4, h5, h6, blockquote, label, dd, dt, article, section) { font-family: "ReadFocus opendyslexic", sans-serif !important; }
 html.rf-font-atkinson :is(body, p, li, a, span, div, td, th, h1, h2, h3, h4, h5, h6, blockquote, label, dd, dt, article, section) { font-family: "ReadFocus atkinson", sans-serif !important; }
 html.rf-font-system-sans :is(body, p, li, a, span, div, td, th, h1, h2, h3, h4, h5, h6, blockquote, label, dd, dt, article, section) { font-family: system-ui, -apple-system, "Segoe UI", sans-serif !important; }
+/* Read aloud (pro): the sentence being spoken, a Range highlight (no wrapper). */
+::highlight(rf-reading) { background-color: rgba(255, 214, 10, 0.45); }
 /* Page tint (pro): a fixed layer under the ruler; multiply keeps the text dark and turns white into the tint. */
 .rf-tint { position: fixed; inset: 0; pointer-events: none; z-index: 2147483645; background: var(--rf-tint, transparent); mix-blend-mode: multiply; }
 /* Spacing (free): the dyslexia style-guide numbers on reading blocks; editors untouched. */

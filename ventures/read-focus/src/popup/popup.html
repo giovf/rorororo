@@ -43,6 +43,12 @@
         <label class="row" title="How strong the tint is"><span>Opacity</span><input type="range" id="ruler-opacity" min="0.1" max="0.6" step="0.05" /></label>
         <label class="row" title="The band stays where it is while you scroll; click or tap the page to move it"><span>Lock in place</span><input type="checkbox" id="ruler-lock" /></label>
       </div>
+      <div class="row pro" title="Reads the page aloud with your computer's own voices, from the first paragraph on screen; the sentence being read is highlighted">
+        <span>Read aloud <span class="pro-tag">pro</span><kbd id="kbd-read">…</kbd></span>
+        <span class="buttons"><button id="read" type="button">▶ Read</button><button id="read-stop" type="button" hidden>■ Stop</button></span>
+      </div>
+      <label class="row pro" title="Reading speed"><span>Speed <span class="pro-tag">pro</span></span><input type="range" id="speech-rate" min="0.7" max="1.6" step="0.1" /></label>
+      <p id="read-note" class="muted" hidden></p>
       <label class="row pro"><span>Paragraph focus <span class="pro-tag">pro</span></span><input type="checkbox" id="focus" /></label>
       <label class="row pro"><span>Font <span class="pro-tag">pro</span></span>
         <select id="font">
@@ -68,7 +74,7 @@
     <section id="unlock">
       <details>
         <summary><span id="unlock-title">Unlock everything — $12, once</span></summary>
-        <p class="muted">Precise strength, paragraph focus, dyslexia-friendly fonts and a page tint. One payment; your key works offline on every device you sign in to. Activating contacts our licence server once to confirm the key; nothing else ever leaves your browser.</p>
+        <p class="muted">Precise strength, paragraph focus, dyslexia-friendly fonts, a page tint and read aloud. One payment; your key works offline on every device you sign in to. Activating contacts our licence server once to confirm the key; nothing else ever leaves your browser.</p>
         <a id="buy" href="https://buy.stripe.com/6oUdR2gdfcOtaJU22aefC00" target="_blank" rel="noopener">Get a key — $12, once</a>
         <div class="row"><input type="text" id="key" placeholder="Paste your key (FNDRY1…)" /><button id="activate">Activate</button></div>
         <p id="key-status" class="muted"></p>

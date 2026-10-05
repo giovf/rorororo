@@ -731,3 +731,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   layer, so nothing repaints per element). Why: the BDA style guide's basics that every dyslexia suite ships and ReadFocus
   had none of; spacing free because rivals' is, tint in the unlock so the $12 buys one more visible thing. Proof: a review
   or support mail naming spacing or the tint within 60 days; unlock conversions after vs before.
+- 2026-10-05 burn-down (19:00 run, 4th item): read-focus `read-aloud` (3) built in 0.3.0 — the browser's own voices, one
+  sentence at a time from the first block on screen, the sentence marked through the CSS Custom Highlight API so it sits
+  beside the bolding without touching the DOM; popup play/pause/stop and speed, shortcut Alt+Shift+A; in the unlock. Why:
+  every dyslexia suite ships it (Helperbird leads with it; Dyslexly free) and ours was the only one without; honest copy
+  that the voices are the computer's. Headless Chromium has no voices, so e2e proves the reply and the mark, not the
+  audio. Proof: a review or support mail naming read-aloud within 60 days; unlock conversions.

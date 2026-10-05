@@ -32,6 +32,8 @@ export interface SiteSettings {
   spacing: boolean;
   /** Pro. */
   tint: TintChoice;
+  /** Read-aloud speed, 0.7–1.6 (pro; read-aloud itself is pro). */
+  speechRate: number;
   /** Pro: dim everything except the paragraph under the cursor. */
   focus: boolean;
   /** Pro. */
@@ -57,6 +59,7 @@ export const DEFAULT_SITE: SiteSettings = {
   size: 1,
   spacing: false,
   tint: 'none',
+  speechRate: 1,
   focus: false,
   font: 'default',
 };

@@ -317,3 +317,16 @@ Dyslexia Reader complaint, "the screen blinks"). Free keys get `tint: none` from
 tint layer's computed colour in the pro section and its absence with a bad key. Copy: listing (free bullet, unlock
 line), AMO notes, welcome, the ReadFocus page and the comparison page's ReadFocus cell. Proof: a review or support mail
 naming spacing or the tint within 60 days of 0.3.0 going live; unlock conversions after vs before.
+
+### 2026-10-05 (burn-down 19:00, 3rd item) — `read-aloud` built (0.3.0, unlock)
+`speechSynthesis` only — the computer's own voices, nothing leaves the browser (the listing says so, because Helperbird's
+one complaint is voice quality and that is the OS's). Reading starts at the first block on screen, one utterance per
+sentence (`core/speech.ts`: `Intl.Segmenter` sentences with a regex fallback, and the pure `locateSpan` that maps a
+sentence onto a block's text nodes — 4 unit tests), and the sentence being read is marked through the **CSS Custom
+Highlight API** (a Range, not a wrapper, so it lives beside the bolding spans and vanishes on stop; Chrome 105+, Firefox
+140 = our floor). Popup: ▶ Read / ⏸ Pause / ▶ Resume, ■ Stop, a speed slider (0.7–1.6), plain notes for "part of the
+unlock", "no voices on this browser" and "nothing to read"; shortcut Alt+Shift+A. Switching the site off stops reading.
+e2e (4 checks through the extension's own message, as the popup sends it): refused without a key, starts for a key with
+9 sentences, the first sentence on screen is the one marked with its highlight registered, stop clears it — headless
+Chromium has no voices, so the utterance errors at once and the reply is read synchronously; audio itself is unverified
+here. Proof: a review or support mail naming read-aloud within 60 days of 0.3.0 going live; unlock conversions.

@@ -16,6 +16,9 @@ header { display: flex; justify-content: space-between; align-items: center; }
 body.is-free .row.pro input, body.is-free .row.pro select { opacity: .5; pointer-events: none; }
 body.is-pro .pro-tag { display: none; }
 input[type=range] { width: 130px; }
+.buttons { display: flex; gap: 6px; }
+.buttons button { font: inherit; padding: 5px 10px; border-radius: 6px; border: 1px solid #e6e2d8; background: #fff; cursor: pointer; }
+body.is-free .row.pro .buttons button { opacity: .5; pointer-events: none; }
 /* Ruler options: indented under the ruler row, hidden while the ruler is off. */
 .sub { display: flex; flex-direction: column; gap: 6px; padding-left: 14px; border-left: 2px solid #e6e2d8; }
 .sub.off { display: none; }

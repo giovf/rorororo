@@ -213,6 +213,27 @@ try {
   check('spacing sets letter spacing 0.12em', Math.abs(sp.ls - sp.fs * 0.12) < 0.3, `ls=${sp.ls}`);
   check('textarea spacing untouched', sp.taLs === 'normal', sp.taLs);
   check('no tint without a key', (await page.locator('.rf-tint').count()) === 0);
+  // Read aloud is asked for through the extension's own message, as the popup and shortcut do.
+  const readAloud = (
+    action: string,
+  ): Promise<{
+    ok: boolean;
+    playing: boolean;
+    reason?: string;
+    sentences: number;
+    sentence: string;
+    highlighted: boolean;
+  }> =>
+    sw.evaluate(async (a) => {
+      const [tab] = await chrome.tabs.query({ url: 'http://127.0.0.1/*' });
+      return chrome.tabs.sendMessage(tab!.id!, { type: 'read-aloud', action: a });
+    }, action);
+  const freeRead = await readAloud('toggle');
+  check(
+    'read aloud refused without a key',
+    !freeRead.ok && freeRead.reason === 'pro',
+    JSON.stringify(freeRead),
+  );
 
   // 3. Off → exact restore.
   await setSettings({ enabled: false });
@@ -300,6 +321,29 @@ try {
     .then((el) => el.evaluate((n) => getComputedStyle(n).backgroundColor))
     .catch(() => 'missing');
   check('page tint layer present for pro', tintBg === 'rgba(255, 244, 214, 0.55)', tintBg);
+  const proRead = await readAloud('toggle');
+  check(
+    'read aloud starts for pro',
+    proRead.ok && proRead.playing && proRead.sentences >= 6,
+    JSON.stringify(proRead),
+  );
+  // Headless Chromium has no voices, so the utterance errors at once; the reply to the toggle is
+  // taken synchronously, before that, and says which sentence was marked.
+  check(
+    'first sentence on screen is the one marked',
+    proRead.sentence === 'Reading on screens' && proRead.highlighted,
+    JSON.stringify(proRead),
+  );
+  await page.screenshot({
+    path: path.join(here, 'out', '05-pro-tint.png'),
+    clip: { x: 0, y: 0, width: 1280, height: 260 },
+  });
+  const stopped = await readAloud('stop');
+  check(
+    'stop clears the highlight',
+    !stopped.playing && !stopped.highlighted,
+    JSON.stringify(stopped),
+  );
   check(
     'font class applied',
     await page.evaluate(() => document.documentElement.classList.contains('rf-font-opendyslexic')),

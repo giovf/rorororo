@@ -603,3 +603,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 19:41 | burn-down | Page tint (unlock): cream/pastel/grey as one fixed multiply layer, no per-element repaint; free keys get none
 - 2026-10-05 19:41 | burn-down | tier + settings tests; e2e 2b (4 checks) and tint present for pro, absent for a bad key; 43 e2e checks green
 - 2026-10-05 19:41 | burn-down | Listing, AMO notes, welcome, ReadFocus page, comparison page updated; queue read-focus spacing-and-tint done
+- 2026-10-05 19:45 | burn-down | ReadFocus 0.3.0: read aloud (unlock) with the browser's own voices, one sentence at a time
+- 2026-10-05 19:45 | burn-down | Sentence marked via CSS Custom Highlight (no wrapper); popup play/pause/stop + speed; shortcut Alt+Shift+A
+- 2026-10-05 19:45 | burn-down | core/speech.ts (4 unit tests); e2e 4 checks via the extension message; headless has no voices
+- 2026-10-05 19:45 | burn-down | Listing, AMO notes, welcome, ReadFocus page, comparison page updated; queue read-focus read-aloud done
