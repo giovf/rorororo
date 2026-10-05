@@ -1,0 +1,57 @@
+{
+  "request": "hk-weava-export-2",
+  "fetched_at": "2026-10-05T17:13:54.467Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://blog.glasp.co/how-to-import-highlights-from-weava-into-glasp/",
+      "fetched_at": "2026-10-05T17:13:51.753Z",
+      "status": 403,
+      "final_url": "https://glasp.co/posts/how-to-import-highlights-from-weava-into-glasp",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 5303,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://weavatools.atlassian.net/servicedesk/customer/portal/1/article/163741698",
+      "fetched_at": "2026-10-05T17:13:52.286Z",
+      "status": 200,
+      "final_url": "https://weavatools.atlassian.net/servicedesk/customer/portal/1/article/163741698",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 159291,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://app.weavatools.com/",
+      "fetched_at": "2026-10-05T17:13:52.809Z",
+      "error": "fetch failed"
+    },
+    {
+      "method": "GET",
+      "url": "https://web.weavatools.com/",
+      "fetched_at": "2026-10-05T17:13:52.848Z",
+      "error": "fetch failed"
+    },
+    {
+      "method": "GET",
+      "url": "https://web-highlights.com/docs/integrations",
+      "fetched_at": "2026-10-05T17:13:53.023Z",
+      "status": 403,
+      "final_url": "https://web-highlights.com/docs/integrations/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "5.html",
+      "bytes": 564,
+      "truncated": false
+    }
+  ]
+}
