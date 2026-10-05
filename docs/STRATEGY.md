@@ -769,3 +769,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   cause. Three items queued: concurrency groups + relay re-fire (6), a committed pre-push hook against the three red gates
   in two days (6), and a triage sentence that logs GitHub's reason and files a repeat as an item (4). Evidence added to
   `actions-minutes`. Proof: push runs cancelled unstarted under 5% over a week; zero format-red gates in 30 days.
+- 2026-10-05 burn-down (22:00 run, 2nd item): foundry `ci-runs-never-acquired` (6) built — the five push workflows that stacked
+  behind dead runs now cancel their own older run when a newer commit arrives (per event and ref, so cron runs are safe),
+  and a relay run cancelled unstarted is re-fired by `workflow_dispatch` instead of waited on. Why: 20 of 60 push runs
+  died unstarted this evening and each push queued six more. Proof: under 5% of push runs cancelled with no steps over a
+  week; no relay request unanswered beyond 20 min without a re-fire.

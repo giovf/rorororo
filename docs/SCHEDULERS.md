@@ -69,6 +69,13 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   marker commit is the trace the fallback stops on and the watchdog reads it to tell `stalled` from
   `missed`. The file is not sent to the owner (only RUNS.md and ALERTS.md are). Trade-off accepted: a
   build that stamps and then dies loses its slot to nobody until the watchdog's 2 h `stalled:` line.
+- **Concurrency groups** (2026-10-05, foundry `ci-runs-never-acquired`): `check`, `landing`, `gankdat metrics`,
+  `store metrics` and `owner notes` cancel their own queued or running run for the same event and ref when a newer
+  commit arrives (`cancel-in-progress`), so a burst of burn-down pushes leaves one run per workflow, not six per push;
+  cron and manual runs are separate groups and are never cancelled by a push. Why: on 2026-10-05 20 of 60 push runs
+  were cancelled by GitHub 15 minutes after start with no steps — never acquired by a runner — and every push queued
+  six more behind them. `fetch relay`, `gankdat` (deploy) and `notify owner` keep their behaviour; a dead relay run is
+  re-fired by `workflow_dispatch` (relay README step 3).
 - **Routine prompts of record** (`docs/routines/<name>.md`, 2026-09-30): each stored prompt is a three-line bootstrap that
   clones `main` and reads its file, so a prompt change is a commit to that file in the same commit as the work that needs it
   (the README there has the bootstrap text, the trigger ids and which prompts are swapped). Until a routine is swapped its

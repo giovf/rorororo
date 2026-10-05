@@ -1,0 +1,46 @@
+name: owner notes
+
+# Hourly: the owner can leave notes for Claude by messaging the Telegram bot; they land in
+# docs/OWNER-NOTES.md, which every routine reads at the start of a run.
+# GitHub's cron is best-effort (3 of 14 hourly slots fired on 2026-09-21/22), so the job also
+# runs on every push to main — routines push several times a day, which keeps the lag short.
+on:
+  schedule:
+    - cron: '20 * * * *'
+  push:
+    branches: [main]
+    paths-ignore: ['docs/OWNER-NOTES.md']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Concurrency (2026-10-05, foundry ci-runs-never-acquired): a newer commit cancels this workflow's queued or
+# running run for the same event and ref. On 2026-10-05 one push run in three was cancelled by GitHub 15 min
+# after start with no steps (never acquired by a runner) while each burn-down push queued six more runs behind
+# the dead ones. Scheduled and manual runs keep their own group, so a push never cancels the cron run.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  notes:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: node scripts/owner-notes.mjs
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+      - name: Commit
+        run: |
+          git config user.name "foundry-notes[bot]"
+          git config user.email "info@gankdat.com"
+          git add docs/OWNER-NOTES.md
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "notes: owner notes from Telegram"
+          git pull --rebase origin main
+          git push origin HEAD:main

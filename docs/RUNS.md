@@ -635,3 +635,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 22:33 | burn-down | Three red check runs on main in two days (05ec84d, e7f913f, 547b963), each a push after an unchecked edit
 - 2026-10-05 22:33 | burn-down | Queue foundry: ci-runs-never-acquired (6), pre-push-format-gate (6), triage-run-failed-reason (4)
 - 2026-10-05 22:33 | burn-down | actions-minutes gains evidence: projection 4,215 min/month after the trim; check takes 6-16 min a run
+- 2026-10-05 22:48 | burn-down | Foundry ci-runs-never-acquired: concurrency groups on check, landing, both metrics jobs, owner notes
+- 2026-10-05 22:48 | burn-down | Group is workflow + event + ref, cancel-in-progress: a push never cancels a cron run; files via docs/ci/
+- 2026-10-05 22:48 | burn-down | Relay README step 3 + five prompts: a run cancelled unstarted is re-fired by workflow_dispatch
+- 2026-10-05 22:48 | burn-down | Queue: foundry ci-runs-never-acquired done; next buildable is pre-push-format-gate (6)

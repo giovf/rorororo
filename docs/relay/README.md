@@ -13,7 +13,13 @@ GitHub runner to fetch for it:
    sat `queued` for 16+ minutes with nothing else running; two minutes is the floor, not the norm). Poll, and do
    other work meanwhile:
    `for i in $(seq 1 120); do git fetch -q origin main; git ls-tree --name-only origin/main docs/relay/responses/<name> | grep -q . && break; sleep 10; done; git pull --no-rebase origin main`
-   (write the request first, research or build while it runs, read it last). The `fetch relay` workflow has committed
+   (write the request first, research or build while it runs, read it last). If the loop expires with no
+   response the run is dead, not slow: on 2026-10-05 one push run in three (the `fetch relay` run for
+   `vt-research-2026-10-05` among them) was cancelled by GitHub 15 minutes after start with no steps, never
+   acquired by a runner. Read the latest `fetch relay` run's conclusion (GitHub MCP `actions_list`,
+   `list_workflow_runs`, `fetch-relay.yml`): `cancelled` with no steps → re-fire it with `actions_run_trigger`
+   (`workflow_dispatch`; the job processes every file still under `requests/`) and poll again; `failure` with
+   steps → read its log, the request itself is wrong. Never file a handoff for a dead run. The `fetch relay` workflow has committed
    `docs/relay/responses/<name>/meta.json` (status, headers, bytes, errors per line) and the
    bodies as `1.json`, `2.csv`, … The request file is deleted.
 4. Read what you need, then carry on. Responses are pruned after 7 days.
