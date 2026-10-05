@@ -643,3 +643,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 22:52 | burn-down | Armed by package.json prepare on every npm ci; CI and SKIP_HOOKS=1 skip it; seeded bad file rejected
 - 2026-10-05 22:52 | burn-down | Queue: foundry pre-push-format-gate done; foundry has triage-run-failed-reason (4) left
 - 2026-10-05 22:59 | burn-down | Stopping for time (~47 min): foundry research + 2 items built; next buildable is triage-run-failed-reason (4)
+- 2026-10-05 23:25 | burn-down | Foundry triage-run-failed-reason: triage prompt logs GitHub's reason (red gate / unstarted / superseded)
+- 2026-10-05 23:25 | burn-down | Third same-reason Run failed mail in a day files a foundry item; SELF-CAUSED row 6 carries the readings
+- 2026-10-05 23:25 | burn-down | Queue: foundry triage-run-failed-reason done; foundry has only dated/blocked items left

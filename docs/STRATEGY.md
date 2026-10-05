@@ -778,3 +778,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `npm ci` in every sandbox, re-checks Prettier and ESLint on the pushed files plus the run-log cap and pipeline files, so
   an edit made after the long gate cannot turn `main` red (three times in two days). No new dependency, CI unaffected.
   Proof: zero format or lint failures of `check` on main for 30 days.
+- 2026-10-05 burn-down (23:00 run, 1st item): foundry `triage-run-failed-reason` (4) built — the hourly triage now logs the
+  reason GitHub's run gives for a "Run failed" mail (a red gate with its failing step, a run cancelled unstarted, a run
+  superseded under a concurrency group) instead of a guessed one, and the third same-reason mail in a day files a foundry
+  item; `docs/ops/SELF-CAUSED.md` row 6 carries the same three readings. Why: 21 INBOX rows on 2026-10-05 named a cause
+  that never happened. Proof: over 14 days no INBOX row contradicts the run's job list; a 3× reason has an item the same day.

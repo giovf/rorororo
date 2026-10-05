@@ -418,8 +418,9 @@
       "effort_days": 0.1,
       "proof": "over 14 days no INBOX row names a cause the run's job list contradicts; a reason seen 3+ times in a day has a foundry item the same day",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     },
     {
       "id": "pre-push-format-gate",
