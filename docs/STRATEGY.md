@@ -682,3 +682,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the headers seen — the comparison page asks refugees to mail the first line so the mapping is fixed from a real file, never a
   guess. Ships with the 0.4.0 sign handoff (supersedes 0.3.0). Proof unchanged: a Weava import named in a review or support
   mail within 60 days; comparison-page clicks → installs after the line lands.
+- 2026-10-05 burn-down (17:00 run): highlight-keep `all-sites-mode` (4) built — an opt-in "On for every site" switch in the
+  popup beside the per-site model: it requests the optional http/https host permission the manifest already declares
+  (asked once, from the click) and registers one content script for all of it; off again unregisters it. Why: the
+  largest unaddressed ask in the 2026-09-19 rival-review sample after PDF and login (Hypothesis ×2, Super Simple ×1:
+  "enable on every new website … annoying"). Per-site stays the default and the privacy stance; listing copy says so.
+  Ships inside the unreleased 0.4.0 (handoff amended). Proof: the setting named in a review or support mail; no store
+  policy flag on the next review. Built on the hourly burn while the 17:00 build slot took the Weava import.

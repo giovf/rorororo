@@ -120,8 +120,9 @@
       "effort_days": 0.3,
       "proof": "the setting mentioned in a review or support mail; no store policy flag on the next review",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     },
     {
       "id": "subframe-highlighting",

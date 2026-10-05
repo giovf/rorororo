@@ -4,7 +4,7 @@ import { documentUrl, isPdfUrl, viewerUrl } from '../core/pdf.js';
 import { isEnabled } from '../core/settings.js';
 import { loadIndex, loadPage, sitesInIndex } from '../pages-storage.js';
 import { loadSettings, saveSettings } from '../settings-storage.js';
-import { requestSiteAccess } from '../sites.js';
+import { requestAllSitesAccess, requestSiteAccess } from '../sites.js';
 
 const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
 let hostname = '';
@@ -28,8 +28,10 @@ async function activeTab(): Promise<void> {
 
 async function render(): Promise<void> {
   const settings = await loadSettings();
-  $('site').textContent = hostname || 'Open a web page to use Highlight Keep';
+  $('site').textContent = hostname ? (settings.allSites ? `${hostname} · on everywhere` : hostname) : 'Open a web page to use Highlight Keep';
   $<HTMLInputElement>('enabled').checked = isEnabled(settings, hostname);
+  $<HTMLInputElement>('enabled').disabled = settings.allSites;
+  $<HTMLInputElement>('all-sites').checked = settings.allSites;
   document.body.classList.toggle('is-pro', tier === 'pro');
   $('tier').textContent = tier;
   $('tier').classList.toggle('pro', tier === 'pro');
@@ -79,6 +81,17 @@ async function setEnabled(on: boolean): Promise<void> {
   await render();
 }
 
+/** "On for every site": one optional http/https permission (asked once, from this click), then one content script for all of it. */
+async function setAllSites(on: boolean): Promise<void> {
+  if (on && !(await requestAllSitesAccess())) {
+    $('site').textContent = 'Highlight Keep needs permission for all sites to run everywhere.';
+    await render();
+    return;
+  }
+  await chrome.runtime.sendMessage({ type: on ? 'enable-all-sites' : 'disable-all-sites', tabId });
+  await render();
+}
+
 /** The built-in PDF viewer cannot run the highlighter; open the PDF in ours (needs the site's permission once). */
 async function openPdf(): Promise<void> {
   if (!hostname || !href) return;
@@ -95,6 +108,7 @@ async function init(): Promise<void> {
   tier = await tierForKey((await loadSettings()).licenseKey);
   await render();
   $('enabled').onchange = (e) => void setEnabled((e.target as HTMLInputElement).checked);
+  $('all-sites').onchange = (e) => void setAllSites((e.target as HTMLInputElement).checked);
   $('library').onclick = () => void chrome.runtime.sendMessage({ type: 'open-library' });
   $('pdf').onclick = () => void openPdf();
   $('shortcuts').onclick = (e) => {

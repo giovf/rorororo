@@ -565,3 +565,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 17:18 | build | Highlight Keep 0.4.0: LISTING, AMO notes, comparison page, landing, welcome say 'bring highlights from Weava'
 - 2026-10-05 17:18 | build | Handoff: sign and upload 0.4.0 (supersedes the 0.3.0 handoff); CWS still waits on the 0.2.0 review
 - 2026-10-05 17:18 | build | Queue: highlight-keep import-weava-export done; next buildable is all-sites-mode (4)
+- 2026-10-05 17:22 | burn-down | Highlight Keep: "On for every site" popup switch — optional http/https permission asked once, one script for all sites
+- 2026-10-05 17:22 | burn-down | Switching it off unregisters that script and returns to per-site mode; shortcut and onInstalled honour the setting
+- 2026-10-05 17:22 | burn-down | 3 settings unit tests + e2e section 7: never-enabled localhost gets the highlighter, restores; off unregisters
+- 2026-10-05 17:22 | burn-down | Listing, AMO notes (ships in 0.4.0), welcome, landing and comparison page: "or every site with one setting"
+- 2026-10-05 17:22 | burn-down | Queue: highlight-keep all-sites-mode done; next buildable is subframe-highlighting (4)

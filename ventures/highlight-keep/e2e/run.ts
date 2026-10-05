@@ -1,6 +1,6 @@
 // End-to-end check of Highlight Keep in a real Chromium: create highlights by selecting
 // text, restore them after reload (and after the page text shifts), recolour/note/remove,
-// free-tier gating, Markdown export.
+// free-tier gating, Markdown export, the "on for every site" switch.
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
@@ -26,6 +26,14 @@ const server = createServer((req, res) => {
 });
 await new Promise<void>((r) => server.listen(0, HOST, r));
 const url = `http://${HOST}:${(server.address() as { port: number }).port}/`;
+// A second origin the test build never switched on (its content_scripts match 127.0.0.1 only):
+// localhost, served dual-stack so Chromium reaches it whichever address it resolves first.
+const other = createServer((_req, res) => {
+  res.setHeader('content-type', 'text/html; charset=utf-8');
+  res.end(fixture);
+});
+await new Promise<void>((r) => other.listen(0, r));
+const otherUrl = `http://localhost:${(other.address() as { port: number }).port}/`;
 
 let failures = 0;
 let skipped = false;
@@ -265,9 +273,64 @@ try {
   });
   check('one page stored with one highlight', stored.count === 1, JSON.stringify(stored.index));
   await page.screenshot({ path: path.join(here, 'out', '02-pro-note.png') });
+
+  // 7. "On for every site": localhost was never switched on, so nothing runs there. The popup's
+  //    switch registers one content script for all http/https (the test build already holds the
+  //    optional permission — its prompt cannot be clicked from here); a highlight made there
+  //    restores after reload; switching off unregisters the script again.
+  const otherPage = await context.newPage();
+  await otherPage.goto(otherUrl);
+  await otherPage.waitForTimeout(600);
+  check(
+    'a site never switched on has no highlighter',
+    (await otherPage.locator('.hk-ui').count()) === 0,
+  );
+  const popup = await context.newPage();
+  await popup.goto(`${sw.url().replace(/\/background\.js$/, '')}/popup.html`);
+  await popup.waitForSelector('#all-sites');
+  await popup.check('#all-sites');
+  await popup.waitForFunction(
+    () => (document.getElementById('enabled') as HTMLInputElement).disabled,
+    undefined,
+    { timeout: 4000 },
+  );
+  const registered = await sw.evaluate(() =>
+    chrome.scripting.getRegisteredContentScripts({ ids: ['hk-all-sites'] }),
+  );
+  check(
+    'every-site switch registers one script for http and https',
+    registered.length === 1 && registered[0]!.matches?.join(',') === 'http://*/*,https://*/*',
+    JSON.stringify(registered),
+  );
+  await otherPage.reload();
+  await otherPage.waitForSelector('.hk-ui', { state: 'attached', timeout: 4000 });
+  await selectText(otherPage, '#p1', 'find the start of every word');
+  await otherPage.waitForSelector('.hk-toolbar:not([hidden])', { timeout: 3000 });
+  await otherPage.click('.hk-toolbar .hk-dot');
+  await otherPage.waitForSelector('mark.hk', { timeout: 3000 });
+  await otherPage.reload();
+  await otherPage.waitForSelector('mark.hk', { timeout: 4000 });
+  check(
+    'highlight on the never-enabled site restored after reload',
+    (await otherPage.locator('mark.hk').textContent()) === 'find the start of every word',
+  );
+  await popup.screenshot({ path: path.join(here, 'out', '04-all-sites.png') });
+  await popup.uncheck('#all-sites');
+  await popup.waitForFunction(
+    () => !(document.getElementById('enabled') as HTMLInputElement).disabled,
+    undefined,
+    { timeout: 4000 },
+  );
+  const afterOff = await sw.evaluate(() =>
+    chrome.scripting.getRegisteredContentScripts({ ids: ['hk-all-sites'] }),
+  );
+  check('switching every-site off unregisters the script', afterOff.length === 0);
+  await otherPage.close();
+  await popup.close();
 } finally {
   await context.close();
   server.close();
+  other.close();
 }
 console.log(
   failures === 0

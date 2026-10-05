@@ -52,7 +52,10 @@ async function statics() {
   }
   if (test) {
     manifest.name = manifest.name + ' (test build)';
-    manifest.host_permissions = ['http://127.0.0.1/*'];
+    // The fixture origin is granted so content_scripts below run there; http/https as a whole is
+    // granted too, so the "every site" switch finds its optional permission already there (a
+    // permission prompt cannot be clicked from Playwright) and registers its script for localhost.
+    manifest.host_permissions = ['http://127.0.0.1/*', 'http://*/*', 'https://*/*'];
     manifest.content_scripts = [
       {
         matches: ['http://127.0.0.1/*'],
