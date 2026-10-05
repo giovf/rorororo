@@ -1,6 +1,6 @@
 import { PRESET_STRENGTH, type Preset } from '../core/fixation.js';
 import { activateKey, tierForKey } from '../core/license.js';
-import { effectiveFor, withSiteChange, type RulerColor, type SiteSettings } from '../core/settings.js';
+import { effectiveFor, withSiteChange, type RulerColor, type SiteSettings, type TintChoice } from '../core/settings.js';
 import { documentUrl, isPdfUrl, viewerUrl } from '../core/pdf.js';
 import type { Tier } from '../core/tier.js';
 import { requestSiteAccess } from '../sites.js';
@@ -72,6 +72,8 @@ function render(site: SiteSettings): void {
   $<HTMLSelectElement>('ruler-height').value = String(site.rulerHeight || 34);
   $<HTMLInputElement>('ruler-opacity').value = String(site.rulerOpacity || 0.2);
   $<HTMLInputElement>('ruler-lock').checked = site.rulerLock;
+  $<HTMLInputElement>('spacing').checked = site.spacing;
+  $<HTMLSelectElement>('tint').value = site.tint;
   $<HTMLInputElement>('focus').checked = site.focus;
   $<HTMLSelectElement>('font').value = site.font;
   document.body.classList.toggle('is-pro', tier === 'pro');
@@ -120,6 +122,8 @@ async function init(): Promise<void> {
   $('ruler-height').onchange = (e) => void change({ rulerHeight: Number((e.target as HTMLSelectElement).value) });
   $('ruler-opacity').oninput = (e) => void change({ rulerOpacity: Number((e.target as HTMLInputElement).value) });
   $('ruler-lock').onchange = (e) => void change({ rulerLock: (e.target as HTMLInputElement).checked });
+  $('spacing').onchange = (e) => void change({ spacing: (e.target as HTMLInputElement).checked });
+  $('tint').onchange = (e) => void change({ tint: (e.target as HTMLSelectElement).value as TintChoice });
   $('focus').onchange = (e) => void change({ focus: (e.target as HTMLInputElement).checked });
   $('font').onchange = (e) => void change({ font: (e.target as HTMLSelectElement).value as SiteSettings['font'] });
   document.querySelectorAll<HTMLButtonElement>('[data-preset]').forEach((b) => {

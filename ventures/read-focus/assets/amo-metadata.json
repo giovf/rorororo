@@ -2,7 +2,7 @@
   "version": {
     "license": "all-rights-reserved",
     "release_notes": {
-      "en-US": "0.3.0: the reading ruler gets controls — six colours (white for dark pages), three heights, opacity, and a lock that keeps the band where it is while you scroll (click or tap to move it). 0.2.1: works on Firefox for Android. The popup fits a phone screen, and the reading ruler and paragraph focus go where you tap. 0.2.0: reads web PDFs. Open a PDF, click the ReadFocus icon and choose \"Read this PDF\": the file opens in ReadFocus's own reader page as real text, so bold word starts, the ruler, paragraph focus and the dyslexia-friendly fonts all work on it. Free: the first page; the unlock reads the whole file. Local PDF files are not supported. Nothing leaves your browser."
+      "en-US": "0.3.0: the reading ruler gets controls — six colours (white for dark pages), three heights, opacity, and a lock that keeps the band where it is while you scroll (click or tap to move it). Also new: a wider-spacing switch with the dyslexia style-guide numbers (free) and a page tint — cream or a soft pastel instead of white (unlock). 0.2.1: works on Firefox for Android. The popup fits a phone screen, and the reading ruler and paragraph focus go where you tap. 0.2.0: reads web PDFs. Open a PDF, click the ReadFocus icon and choose \"Read this PDF\": the file opens in ReadFocus's own reader page as real text, so bold word starts, the ruler, paragraph focus and the dyslexia-friendly fonts all work on it. Free: the first page; the unlock reads the whole file. Local PDF files are not supported. Nothing leaves your browser."
     }
   },
   "summary": {

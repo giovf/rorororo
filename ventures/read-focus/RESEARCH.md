@@ -305,3 +305,15 @@ height and `rgba(56, 150, 255, 0.4)` computed on the band, a mouse move leaving 
 it. Copy: listing, AMO notes, welcome page, the ReadFocus page and `reading-ruler.html` (its "one band, no controls" cells
 and the "does not do yet" list now say what is there). Ships as 0.3.0 with the open ALERTS handoff (amended). Proof: a
 ruler review or support mail naming colour/size/opacity within 60 days of the version going live.
+
+### 2026-10-05 (burn-down 19:00, 2nd item) — `spacing-and-tint` built (0.3.0)
+**Wider spacing** (free): one switch sets line height 1.5, letter spacing 0.12em and word spacing 0.16em on reading
+blocks only (editors untouched, as the Dyslexia Friendly review asks) — the BDA guide's 1.5 line spacing and wider
+tracking, at the WCAG 1.4.12 text-spacing values every browser is required to tolerate, so pages do not break.
+**Page tint** (unlock): cream, pale yellow / blue / green / pink or soft grey as one fixed full-viewport layer with
+`mix-blend-mode: multiply` — white turns to the tint, text stays dark, and nothing is repainted per element (the
+Dyslexia Reader complaint, "the screen blinks"). Free keys get `tint: none` from `applyTier` (unit-tested). e2e 2b
+(4 checks: computed line height and letter spacing on a paragraph, textarea untouched, no tint without a key) plus the
+tint layer's computed colour in the pro section and its absence with a bad key. Copy: listing (free bullet, unlock
+line), AMO notes, welcome, the ReadFocus page and the comparison page's ReadFocus cell. Proof: a review or support mail
+naming spacing or the tint within 60 days of 0.3.0 going live; unlock conversions after vs before.

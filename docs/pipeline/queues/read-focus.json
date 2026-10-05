@@ -128,12 +128,13 @@
     {
       "id": "spacing-and-tint",
       "title": "Line, letter and word spacing with the BDA style-guide numbers as the one-click default (free), and a page tint — cream / pale yellow / blue / green / pink / grey — as a soft fixed overlay (unlock)",
-      "why": "The British Dyslexia Association style guide: line spacing 1.5, letter spacing about 35% of the average letter width, cream or a soft pastel instead of white (\"white can appear too dazzling\"). Every dyslexia suite ships both (Dyslexly free: spacing + colour overlay; Helperbird; OpenDyslexic's reviews praise background colour), ReadFocus has neither. Sample: Dyslexia Friendly \"I can change the background colour of the page\", Quiet Reader \"colours are harsh and cannot be changed\", Dyslexia Reader colour changers \"caused the screen to blink\" (so: one soft overlay, no per-element repaint); Dyslexia Friendly \"messes with the spacing of words and entire page layout\" (so: a control, applied to reading blocks only, like text size). Research 2026-10-05.",
+      "why": "The British Dyslexia Association style guide: line spacing 1.5, letter spacing about 35% of the average letter width, cream or a soft pastel instead of white (\"white can appear too dazzling\"). Every dyslexia suite ships both (Dyslexly free: spacing + colour overlay; Helperbird; OpenDyslexic's reviews praise background colour), ReadFocus has neither. Sample: Dyslexia Friendly \"I can change the background colour of the page\", Quiet Reader \"colours are harsh and cannot be changed\", Dyslexia Reader colour changers \"caused the screen to blink\" (so: one soft overlay, no per-element repaint); Dyslexia Friendly \"messes with the spacing of words and entire page layout\" (so: a control, applied to reading blocks only, like text size). Research 2026-10-05. BUILT 2026-10-05 (burn-down 19:00) in 0.3.0: free spacing switch at 1.5 / 0.12em / 0.16em on reading blocks; pro tint as one fixed multiply layer; e2e 2b + pro/bad-key tint checks.",
       "effort_days": 0.4,
       "proof": "a review or support mail naming spacing or the tint within 60 days; unlock conversions after vs before the version",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     },
     {
       "id": "read-aloud",

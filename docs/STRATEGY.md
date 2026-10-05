@@ -726,3 +726,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   all free because every rival's ruler controls are free. Why: the asks were already in the September sample (four across
   the three ruler tools, 28k users) and `reading-ruler.html` conceded the gap in print. Ships with the open sign-and-upload
   handoff, amended from 0.2.1. Proof: a ruler review or support mail naming colour/size/opacity within 60 days.
+- 2026-10-05 burn-down (19:00 run, 3rd item): read-focus `spacing-and-tint` (4) built in 0.3.0 — a free wider-spacing switch
+  (line 1.5, letter 0.12em, word 0.16em on reading blocks only) and a pro page tint (cream or a pastel as one fixed multiply
+  layer, so nothing repaints per element). Why: the BDA style guide's basics that every dyslexia suite ships and ReadFocus
+  had none of; spacing free because rivals' is, tint in the unlock so the $12 buys one more visible thing. Proof: a review
+  or support mail naming spacing or the tint within 60 days; unlock conversions after vs before.

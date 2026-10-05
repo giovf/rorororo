@@ -24,6 +24,7 @@
       <label class="row pro" title="How far into each word the bold part reaches"><span>Coverage <span class="pro-tag">pro</span></span><input type="range" id="strength" min="0.1" max="0.9" step="0.05" /></label>
       <label class="row pro" title="How heavy the bold part is"><span>Weight <span class="pro-tag">pro</span></span><input type="range" id="weight" min="700" max="900" step="25" /></label>
       <label class="row" title="Scales the page's text blocks; leaves editors alone"><span>Text size</span><input type="range" id="size" min="1" max="1.5" step="0.05" /></label>
+      <label class="row" title="Line height 1.5, letter spacing 0.12em, word spacing 0.16em — the dyslexia style-guide numbers; editors untouched"><span>Wider spacing</span><input type="checkbox" id="spacing" /></label>
       <label class="row"><span>Reading ruler <kbd id="kbd-ruler">…</kbd><span class="touch-hint">tap the page to place it</span></span><input type="checkbox" id="ruler" /></label>
       <div id="ruler-options" class="sub">
         <div class="row" role="group" aria-label="Ruler colour">
@@ -51,12 +52,23 @@
           <option value="system-sans">System sans-serif</option>
         </select>
       </label>
+      <label class="row pro" title="A soft colour behind the page instead of white"><span>Page tint <span class="pro-tag">pro</span></span>
+        <select id="tint">
+          <option value="none">None</option>
+          <option value="cream">Cream</option>
+          <option value="yellow">Pale yellow</option>
+          <option value="blue">Pale blue</option>
+          <option value="green">Pale green</option>
+          <option value="pink">Pale pink</option>
+          <option value="grey">Soft grey</option>
+        </select>
+      </label>
     </section>
 
     <section id="unlock">
       <details>
         <summary><span id="unlock-title">Unlock everything — $12, once</span></summary>
-        <p class="muted">Precise strength, paragraph focus and dyslexia-friendly fonts. One payment; your key works offline on every device you sign in to. Activating contacts our licence server once to confirm the key; nothing else ever leaves your browser.</p>
+        <p class="muted">Precise strength, paragraph focus, dyslexia-friendly fonts and a page tint. One payment; your key works offline on every device you sign in to. Activating contacts our licence server once to confirm the key; nothing else ever leaves your browser.</p>
         <a id="buy" href="https://buy.stripe.com/6oUdR2gdfcOtaJU22aefC00" target="_blank" rel="noopener">Get a key — $12, once</a>
         <div class="row"><input type="text" id="key" placeholder="Paste your key (FNDRY1…)" /><button id="activate">Activate</button></div>
         <p id="key-status" class="muted"></p>

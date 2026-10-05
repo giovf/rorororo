@@ -7,6 +7,8 @@ export const RULER_COLORS: readonly RulerColor[] = ['yellow', 'blue', 'green', '
 /** Band height in CSS px: thin / medium / tall. */
 export const RULER_HEIGHTS = [24, 34, 48] as const;
 export const RULER_OPACITY = { min: 0.1, max: 0.6, default: 0.2 } as const;
+/** Page tint behind the text (pro): none, or a pastel instead of white as the dyslexia style guide suggests. */
+export type TintChoice = 'none' | 'cream' | 'yellow' | 'blue' | 'green' | 'pink' | 'grey';
 
 export interface SiteSettings {
   /** Master switch for this site. */
@@ -26,6 +28,10 @@ export interface SiteSettings {
   rulerLock: boolean;
   /** Text size multiplier for reading blocks, 1.0–1.5 (free). */
   size: number;
+  /** Line 1.5, letter 0.12em, word 0.16em on reading blocks — the dyslexia style-guide numbers (free). */
+  spacing: boolean;
+  /** Pro. */
+  tint: TintChoice;
   /** Pro: dim everything except the paragraph under the cursor. */
   focus: boolean;
   /** Pro. */
@@ -49,6 +55,8 @@ export const DEFAULT_SITE: SiteSettings = {
   rulerOpacity: RULER_OPACITY.default,
   rulerLock: false,
   size: 1,
+  spacing: false,
+  tint: 'none',
   focus: false,
   font: 'default',
 };

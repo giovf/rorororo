@@ -188,6 +188,32 @@ function setFocus(on: boolean): void {
   }
 }
 
+// ---------- page tint (pro) ----------
+
+// One fixed layer that multiplies into the page: white turns cream, text stays dark, nothing is
+// repainted per element (a rival's per-element colour change "caused the screen to blink").
+const TINT_RGBA: Record<string, string> = {
+  cream: 'rgba(255, 244, 214, 0.55)',
+  yellow: 'rgba(255, 236, 150, 0.4)',
+  blue: 'rgba(170, 210, 255, 0.4)',
+  green: 'rgba(190, 240, 200, 0.4)',
+  pink: 'rgba(255, 205, 225, 0.4)',
+  grey: 'rgba(200, 200, 200, 0.4)',
+};
+let tint: HTMLDivElement | null = null;
+function setTint(choice: SiteSettings['tint']): void {
+  const rgba = TINT_RGBA[choice];
+  if (rgba && !tint) {
+    tint = document.createElement('div');
+    tint.className = 'rf-tint';
+    document.documentElement.appendChild(tint);
+  } else if (!rgba && tint) {
+    tint.remove();
+    tint = null;
+  }
+  if (tint && rgba) tint.style.setProperty('--rf-tint', rgba);
+}
+
 // ---------- fonts (pro) ----------
 
 const FONT_FILES: Record<string, { regular: string; bold: string }> = {
@@ -248,6 +274,8 @@ function apply(next: SiteSettings): void {
   const size = next.enabled ? Math.min(1.5, Math.max(1, next.size || 1)) : 1;
   document.documentElement.style.setProperty('--rf-size', String(size));
   document.documentElement.classList.toggle('rf-size', size !== 1);
+  document.documentElement.classList.toggle('rf-spacing', next.enabled && next.spacing);
+  setTint(next.enabled ? next.tint : 'none');
   setRuler(next.enabled && next.ruler, next);
   setFocus(next.enabled && next.focus);
   setFont(next.enabled ? next.font : 'default');

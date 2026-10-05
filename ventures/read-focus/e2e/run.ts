@@ -191,6 +191,29 @@ try {
   );
   check('textarea size untouched', sizes.ta < 18, `ta=${sizes.ta}`);
 
+  // 2b. Spacing (free): the style-guide numbers reach a paragraph, the textarea is untouched, and
+  //     the tint needs a key.
+  await setSettings({ enabled: true, bold: false, spacing: true, tint: 'cream' });
+  await page.waitForFunction(() => document.documentElement.classList.contains('rf-spacing'));
+  const sp = await page.evaluate(() => {
+    const cs = getComputedStyle(document.getElementById('p1')!);
+    const ta = getComputedStyle(document.getElementById('ta')!);
+    return {
+      lh: parseFloat(cs.lineHeight),
+      fs: parseFloat(cs.fontSize),
+      ls: parseFloat(cs.letterSpacing),
+      taLs: ta.letterSpacing,
+    };
+  });
+  check(
+    'spacing sets line height 1.5',
+    Math.abs(sp.lh - sp.fs * 1.5) < 0.6,
+    `lh=${sp.lh} fs=${sp.fs}`,
+  );
+  check('spacing sets letter spacing 0.12em', Math.abs(sp.ls - sp.fs * 0.12) < 0.3, `ls=${sp.ls}`);
+  check('textarea spacing untouched', sp.taLs === 'normal', sp.taLs);
+  check('no tint without a key', (await page.locator('.rf-tint').count()) === 0);
+
   // 3. Off → exact restore.
   await setSettings({ enabled: false });
   await page.waitForFunction(() => document.querySelectorAll('.rf-b').length === 0);
@@ -204,6 +227,10 @@ try {
   check(
     'size class removed',
     !(await page.evaluate(() => document.documentElement.classList.contains('rf-size'))),
+  );
+  check(
+    'spacing class removed',
+    !(await page.evaluate(() => document.documentElement.classList.contains('rf-spacing'))),
   );
 
   // 4. PDFs (free): the extension's own reader page reflows the text into paragraphs keyed to the
@@ -262,11 +289,17 @@ try {
       weight: 900,
       focus: true,
       font: 'opendyslexic',
+      tint: 'cream',
     },
     key,
   );
   await page.waitForFunction(() => document.documentElement.classList.contains('rf-focus'));
   check('paragraph focus on', true);
+  const tintBg = await page
+    .waitForSelector('.rf-tint', { timeout: 3000 })
+    .then((el) => el.evaluate((n) => getComputedStyle(n).backgroundColor))
+    .catch(() => 'missing');
+  check('page tint layer present for pro', tintBg === 'rgba(255, 244, 214, 0.55)', tintBg);
   check(
     'font class applied',
     await page.evaluate(() => document.documentElement.classList.contains('rf-font-opendyslexic')),
@@ -297,10 +330,11 @@ try {
 
   // 6. Bad key → free.
   await setSettings(
-    { enabled: true, bold: true, preset: 'medium', focus: true, font: 'atkinson' },
+    { enabled: true, bold: true, preset: 'medium', focus: true, font: 'atkinson', tint: 'cream' },
     'FNDRY1.garbage.garbage',
   );
   await page.waitForFunction(() => !document.documentElement.classList.contains('rf-focus'));
+  check('invalid key gets no tint', (await page.locator('.rf-tint').count()) === 0);
   check(
     'invalid key gets no pro features',
     !(await page.evaluate(() => document.documentElement.classList.contains('rf-font-atkinson'))),
