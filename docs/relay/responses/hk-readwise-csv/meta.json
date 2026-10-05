@@ -1,0 +1,83 @@
+{
+  "request": "hk-readwise-csv",
+  "fetched_at": "2026-10-05T18:25:01.336Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.readwise.io/readwise/docs/importing-highlights/csv",
+      "fetched_at": "2026-10-05T18:24:59.540Z",
+      "status": 404,
+      "final_url": "https://docs.readwise.io/readwise/docs/importing-highlights/csv",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 24605,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.readwise.io/readwise/docs/importing-highlights/csv-upload",
+      "fetched_at": "2026-10-05T18:24:59.873Z",
+      "status": 404,
+      "final_url": "https://docs.readwise.io/readwise/docs/importing-highlights/csv-upload",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 24612,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.readwise.io/llms.txt",
+      "fetched_at": "2026-10-05T18:24:59.976Z",
+      "status": 200,
+      "final_url": "https://docs.readwise.io/llms.txt",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 494797,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.readwise.io/",
+      "fetched_at": "2026-10-05T18:25:00.332Z",
+      "status": 200,
+      "final_url": "https://docs.readwise.io/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"16ao0eopa921fvo\""
+      },
+      "file": "4.html",
+      "bytes": 67322,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://readwise.io/import_bulk",
+      "fetched_at": "2026-10-05T18:25:00.428Z",
+      "status": 200,
+      "final_url": "https://readwise.io/accounts/login/?next=/import_bulk",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 78259,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://readwise.io/",
+      "fetched_at": "2026-10-05T18:25:01.127Z",
+      "status": 200,
+      "final_url": "https://readwise.io/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "1"
+      }
+    }
+  ]
+}
