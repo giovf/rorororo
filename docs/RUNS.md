@@ -590,3 +590,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 18:48 | burn-down | 4 Hypothesis tests; library: 'Import Weava / Glasp (.csv)' and 'Import Hypothesis'; e2e still green
 - 2026-10-05 18:48 | burn-down | Listing, AMO notes, welcome, landing, comparison page: imports from Weava, Glasp, Hypothesis, Super Simple
 - 2026-10-05 18:48 | burn-down | Queue: highlight-keep import-glasp-hypothesis-exports done; ships in 0.4.0 (handoff amended)
+- 2026-10-05 18:55 | burn-down | Stopping for time (~44 min): next is null, every queue starved; 19:00 run researches read-focus first
