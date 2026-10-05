@@ -282,12 +282,13 @@
     {
       "id": "apify-runs-per-actor",
       "title": "Per-actor 30-day runs by other accounts in the Daily numbers row (`apify 30d by actor: slug N, …; 0: a, b`)",
-      "why": "Research 2026-10-05: the 10-04 build added `30d: T runs (O ours, X others)` as one total, so nothing says which registers Apify users actually run — the exchange item `apify-quality-score-pass` triggers on \"≥ 10 actors with 0 runs\", a reading no row gives, and STRATEGY §7's per-dataset retirement rule has only the API side (`datasets 30d`). The per-actor 30-day run count is on each actor's own endpoint (metrics.mjs already reads it per actor for isPublic) and our runs per actor come from /v2/actor-runs (already fetched); the difference per actor is the demand reading. Do: print it in the same shape as `datasets 30d` (zero-run actors named after `0:`), tolerant of a missing token. Score: evidence 2 × reach 2 ÷ 0.1 days, capped at 5 like the other metrics items.",
+      "why": "Research 2026-10-05: the 10-04 build added `30d: T runs (O ours, X others)` as one total, so nothing says which registers Apify users actually run — the exchange item `apify-quality-score-pass` triggers on \"≥ 10 actors with 0 runs\", a reading no row gives, and STRATEGY §7's per-dataset retirement rule has only the API side (`datasets 30d`). The per-actor 30-day run count is on each actor's own endpoint (metrics.mjs already reads it per actor for isPublic) and our runs per actor come from /v2/actor-runs (already fetched); the difference per actor is the demand reading. Do: print it in the same shape as `datasets 30d` (zero-run actors named after `0:`), tolerant of a missing token. Score: evidence 2 × reach 2 ÷ 0.1 days, capped at 5 like the other metrics items. Built 2026-10-05 (burn-down): metrics.mjs keeps each actor's 30-day total (`publicActorRunStats30Days.TOTAL`) and counts our own runs per `actId` from /v2/actor-runs, then prints `apify 30d by actor: <name> N, …; 0: a, b` (N = runs by other accounts, most first; `(all accounts)` when the own-runs list fails; `n/a` without a token) in the Daily numbers row after the `apify:` note. First reading in the 2026-10-06 row.",
       "effort_days": 0.1,
       "proof": "the 2026-W41 strategy review names the actors run by other accounts and the zero-run ones from RESEARCH.md",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     },
     {
       "id": "indexnow-stats-pages",

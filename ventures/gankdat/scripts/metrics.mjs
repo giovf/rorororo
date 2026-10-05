@@ -181,11 +181,21 @@ const changesRest = changeFeed.rest_changes ?? 0;
 // (inbox triage logs it). The own-runs list is read newest first and stops at the first run
 // older than 30 days; if that call fails or has no `startedAt`, ours reads `n/a` and the rest of
 // the row survives.
+//
+// Which actors (apify-runs-per-actor, burn-down 2026-10-05): one total cannot say which registers
+// Apify users run, so the exchange item `apify-quality-score-pass` ("≥ 10 actors with 0 runs")
+// and STRATEGY §7's per-dataset rule had no Apify reading. Each actor's 30-day total minus our
+// own runs of it (`actId` on /v2/actor-runs) is printed per actor as `apify 30d by actor:
+// <name> N, …; 0: a, b` — N = runs by other accounts (Apify's QA runner included), most first,
+// zero-run actors named after `0:` in the `datasets 30d:` shape. Without the own-runs list the
+// per-actor figures are all accounts' and the line says so.
 const apifyToken = process.env.APIFY_TOKEN;
 const DAY_MS = 86_400_000;
+/** Our own runs in the last 30 days: the total and a count per actor id. */
 async function apifyOwnRuns30d(H) {
   const since = Date.now() - 30 * DAY_MS;
   let count = 0;
+  const byActor = new Map();
   let offset = 0;
   for (;;) {
     const res = await fetch(
@@ -203,7 +213,8 @@ async function apifyOwnRuns30d(H) {
     }
     const recent = items.filter((r) => Date.parse(r.startedAt) >= since);
     count += recent.length;
-    if (recent.length < items.length || items.length < 1000) return count;
+    for (const r of recent) byActor.set(r.actId, (byActor.get(r.actId) ?? 0) + 1);
+    if (recent.length < items.length || items.length < 1000) return { count, byActor };
     offset += items.length;
   }
 }
@@ -218,6 +229,7 @@ async function apifyShelf() {
   let users = 0;
   let publicCount = 0;
   let fromDetail = 0;
+  const perActor = [];
   for (const item of items) {
     let act = item;
     if (!item.stats || item.isPublic === undefined || !item.stats.publicActorRunStats30Days) {
@@ -227,18 +239,28 @@ async function apifyShelf() {
       fromDetail += 1;
     }
     runs += Math.round(Number(act.stats?.totalRuns ?? 0));
-    runs30 += Math.round(Number(act.stats?.publicActorRunStats30Days?.TOTAL ?? 0));
+    const actRuns30 = Math.round(Number(act.stats?.publicActorRunStats30Days?.TOTAL ?? 0));
+    runs30 += actRuns30;
+    perActor.push({ id: act.id, name: act.name, runs30: actRuns30 });
     users += Math.round(Number(act.stats?.totalUsers30Days ?? 0));
     if (act.isPublic) publicCount += 1;
   }
   console.log(
     `apify: ${items.length} actors, ${fromDetail} read from their own endpoint for isPublic (list keys: ${Object.keys(items[0] ?? {}).join(',')})`,
   );
-  const ours30 = await apifyOwnRuns30d(H).catch((e) => {
+  const own = await apifyOwnRuns30d(H).catch((e) => {
     console.error(`apify own runs: ${e.message}`);
     return null;
   });
-  return { runs, runs30, ours30, users, publicCount };
+  const ours30 = own ? own.count : null;
+  // Per actor: runs by other accounts (total minus ours), most first; zero-run actors named.
+  const others = perActor
+    .map((a) => ({ name: a.name, n: Math.max(0, a.runs30 - (own?.byActor.get(a.id) ?? 0)) }))
+    .sort((a, b) => b.n - a.n || a.name.localeCompare(b.name));
+  const used = others.filter((a) => a.n > 0).map((a) => `${a.name} ${a.n}`);
+  const zero = others.filter((a) => a.n === 0).map((a) => a.name);
+  const byActor = `apify 30d by actor${own ? '' : ' (all accounts)'}: ${used.length ? used.join(', ') : 'none'}${zero.length ? `; 0: ${zero.join(', ')}` : ''}`;
+  return { runs, runs30, ours30, users, publicCount, byActor };
 }
 const apify = await apifyShelf().catch((e) => {
   console.error(`apify: ${e.message}`);
@@ -457,6 +479,7 @@ const notes = [
   apify
     ? `apify: ${apify.runs} runs (${prevRuns === null ? 'baseline' : `+${apify.runs - prevRuns}/24h`}), 30d: ${apify.runs30} runs (${apify.ours30 === null ? 'ours n/a' : `${apify.ours30} ours, ${apify.runs30 - apify.ours30} others`}), ${apify.users} users/30d, ${apify.publicCount} public`
     : 'apify: n/a',
+  apify ? apify.byActor : 'apify 30d by actor: n/a',
   agentKeys
     ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`
     : 'agent sign-up: n/a',

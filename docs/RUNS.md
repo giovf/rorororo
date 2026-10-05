@@ -534,3 +534,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 01:28 | burn-down | Nine feed-bearing actors: mode/since/change inputs, dataset fields, "Monitor it" README; seven KV actors unchanged
 - 2026-10-05 01:28 | burn-down | Schema test: feed inputs and fields exactly on feed actors; shared client and main.mjs identical in all 16
 - 2026-10-05 01:28 | burn-down | Queue: gankdat apify-change-feed-mode done; next buildable is apify-runs-per-actor (5)
+- 2026-10-05 01:35 | burn-down | metrics.mjs: `apify 30d by actor: name N; 0: …` — per-actor runs by other accounts in the Daily numbers row
+- 2026-10-05 01:35 | burn-down | Queue: gankdat apify-runs-per-actor done; next buildable is indexnow-stats-pages (5)

@@ -651,3 +651,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   repo and the change feeds had never been called by anyone; the seven KV-backed actors have no stable id (the API 404s), so
   they keep data mode only — a deviation from the item's "every actor". Proof: `changes 7d: … rest N` > 0 on ≥ 5 days in the
   30 days after CI republishes the actors.
+- 2026-10-05 burn-down: gankdat `apify-runs-per-actor` built — the Daily numbers row names each Apify actor's 30-day runs
+  by other accounts and the zero-run actors. Why: the shelf total could not say which registers Apify users want, so the
+  exchange's quality-score pass had no trigger reading and §7's per-dataset rule had only the API side; first reading in the
+  2026-10-06 row, read by the 2026-W41 review.
