@@ -515,3 +515,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 00:20 | burn-down | Highlight Keep e2e no longer crashes without the signing key: pro section skipped with a SKIP line
 - 2026-10-05 00:20 | burn-down | Both e2e passed first time in the sandbox; burn-down + build prompts: extension src change runs e2e
 - 2026-10-05 00:20 | burn-down | Queue: foundry e2e-sandbox-browser done; next buildable is pipeline-doing-visibility (4)
+- 2026-10-05 00:32 | burn-down | Pipeline: `doing_since` field, `doing:` status line; a doing item over a day old with no hold is offered again
+- 2026-10-05 00:32 | burn-down | No clock-based validator failure (it would redden the nightly check with no commit to blame); test added
+- 2026-10-05 00:32 | burn-down | actions-minutes converted to todo + not_before 2026-10-12 so the hold shows on the scheduled line
+- 2026-10-05 00:32 | burn-down | Queue: foundry pipeline-doing-visibility done; next buildable is e2e-pro-sections-test-key (3)

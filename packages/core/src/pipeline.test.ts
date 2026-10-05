@@ -3,6 +3,7 @@ import {
   candidates,
   formatPipeline,
   isEmpty,
+  isStaleDoing,
   needsResearch,
   nextItem,
   parseExchange,
@@ -135,8 +136,39 @@ describe('scheduling', () => {
     expect(needsResearch([blockedOnly, datedOnly, empty], today).map((q) => q.venture)).toEqual(['dead-end']);
     // The dated item comes due: its queue is buildable again.
     expect(needsResearch([blockedOnly, datedOnly], { today: '2026-10-21' })).toEqual([]);
-    const text = formatPipeline({ exchange: { ideas: [] }, queues: [blockedOnly, datedOnly] });
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [blockedOnly, datedOnly] }, today);
     expect(text).toContain('pipeline starved');
+  });
+
+  it('offers a stale doing item again and lists every doing item', () => {
+    // 2026-10-04: foundry held a score-7 item in `doing` (a deliberate wait for a measured week)
+    // and `next` reported starvation around it; a cut-off session's leftover would hide the same way.
+    const q = parseQueue(
+      queue('foundry', [
+        { ...item('left', 'doing', 7, '2026-10-01'), doing_since: '2026-10-03' },
+        { ...item('fresh', 'doing', 9, '2026-10-01'), doing_since: '2026-10-04' },
+        { ...item('held', 'doing', 8, '2026-10-01'), not_before: '2026-10-12' },
+        item('small', 'todo', 2),
+      ]),
+    );
+    const left = q.items[0]!;
+    // A day is not stale; more than a day is; a future not_before is a hold, never stale.
+    expect(isStaleDoing(left, '2026-10-04')).toBe(false);
+    expect(isStaleDoing(left, '2026-10-05')).toBe(true);
+    expect(isStaleDoing(q.items[2]!, '2026-10-05')).toBe(false);
+    expect(isStaleDoing(q.items[2]!, '2026-10-12')).toBe(true);
+    // `doing_since` defaults to `added`.
+    expect(isStaleDoing(parseQueue(queue('x', [item('a', 'doing', 1, '2026-10-01')])).items[0]!, '2026-10-05')).toBe(true);
+    expect(nextItem([q], { today: '2026-10-05' })?.item.id).toBe('left');
+    expect(candidates([q], { today: '2026-10-05' }).map((c) => c.item.id)).toEqual(['left', 'small']);
+    expect(nextItem([q], { today: '2026-10-04' })?.item.id).toBe('small');
+    // A stale doing item is buildable, so its queue is not starved.
+    expect(starved([q], { today: '2026-10-05' })).toEqual([]);
+    expect(() => parseQueue(queue('t', [{ ...item('a', 'doing', 1), doing_since: '3 Oct' }]))).toThrow(/doing_since/);
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [q] }, { today: '2026-10-05' });
+    expect(text).toContain('doing: foundry/left since 2026-10-03 (stale — offered again by next)');
+    expect(text).toContain('foundry/held since 2026-10-01 (held until 2026-10-12)');
+    expect(text).toContain('foundry/fresh since 2026-10-04');
   });
 
   it('formats a status summary with the next item', () => {

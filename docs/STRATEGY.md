@@ -625,3 +625,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   tonight. The burn-down and build prompts now run the venture's e2e after any extension `src/` change. Why: every cloud run
   paid a failed attempt or skipped the only test that drives the built extension, so a content-script regression could reach
   main green; both e2e passed first time in the sandbox after the fix. Proof: no browser-mismatch line in RUNS.md in 30 days.
+- 2026-10-05 burn-down: foundry `pipeline-doing-visibility` built — queue items carry `doing_since`, `npm run pipeline` lists
+  every `doing` item, and one doing for more than a day with no future `not_before` is offered again by `next` as a cut-off
+  session's leftover; `actions-minutes` became `todo` with `not_before` 2026-10-12 so the hold is visible. Why: a score-7
+  item sat hidden while the slot reported starvation, and a half-started item could hide the same way for good. Deviation
+  from the item text: no time-based validation failure — that would turn the nightly check red by the clock alone, costing a
+  heal run; re-offering gives the same outcome. Proof: no queue holds an undated doing item older than a day in 30 days.

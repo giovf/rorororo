@@ -337,12 +337,13 @@
     {
       "id": "actions-minutes",
       "title": "Trim GitHub Actions usage below ~1,500 min/month so the repo can go private (free cap 2,000)",
-      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done.",
+      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done. 2026-10-05 burn-down: converted to todo + not_before 2026-10-12 (first measurable week) so the hold is visible on the scheduled: line instead of hidden in doing.",
       "effort_days": 0.5,
       "proof": "7-day Actions minutes under 350 for two consecutive weeks",
       "score": 7,
-      "status": "doing",
-      "added": "2026-10-04"
+      "status": "todo",
+      "added": "2026-10-04",
+      "not_before": "2026-10-12"
     },
     {
       "id": "append-only-guard",
@@ -369,12 +370,13 @@
     {
       "id": "pipeline-doing-visibility",
       "title": "`npm run pipeline` shows `doing` items and flags a stale one: a doing item older than a day with no not_before is a cut-off session's leftover, re-offered by `next`",
-      "why": "2026-10-04 23:22 burn-down: `pipeline next` reported starvation (research foundry) while foundry held `actions-minutes` (score 7) in `doing` — a deliberate hold by the interactive session waiting for a measured week under 350 Actions minutes, which README's `not_before` field exists for. `next` skips `doing` silently, so a cut-off run that marked an item doing (the rules allow it in the same commit as partial docs) would hide it forever, and a hold like today's is invisible to the slot. Fix in packages/core pipeline.ts + scripts/pipeline.ts: print `doing:` lines like `scheduled:`; the validator (`npm run pipeline`, part of check) fails a `doing` item whose `updated`/`added` is more than 1 day old and has neither `not_before` nor a `doing_since` within a day; `next` offers a stale doing item again. Tests; README sentence. Convert actions-minutes to `todo` + `not_before` 2026-10-12 (first measurable week) in the same commit. Evidence 2 (one hidden item today, 7 points of score) × reach 2 (every queue, every slot) ÷ 0.1 days.",
+      "why": "2026-10-04 23:22 burn-down: `pipeline next` reported starvation (research foundry) while foundry held `actions-minutes` (score 7) in `doing` — a deliberate hold by the interactive session waiting for a measured week under 350 Actions minutes, which README's `not_before` field exists for. `next` skips `doing` silently, so a cut-off run that marked an item doing (the rules allow it in the same commit as partial docs) would hide it forever, and a hold like today's is invisible to the slot. Fix in packages/core pipeline.ts + scripts/pipeline.ts: print `doing:` lines like `scheduled:`; the validator (`npm run pipeline`, part of check) fails a `doing` item whose `updated`/`added` is more than 1 day old and has neither `not_before` nor a `doing_since` within a day; `next` offers a stale doing item again. Tests; README sentence. Convert actions-minutes to `todo` + `not_before` 2026-10-12 (first measurable week) in the same commit. Evidence 2 (one hidden item today, 7 points of score) × reach 2 (every queue, every slot) ÷ 0.1 days. 2026-10-05 burn-down: built — `doing_since` field, `doing:` status line, stale doing items (over a day, no future not_before) offered again by next; tests. Deviation: no time-based validator failure — that would turn the nightly check red by the clock alone with no commit to blame; re-offering achieves the same without a heal run.",
       "effort_days": 0.1,
       "proof": "`npm run pipeline` lists every doing item; no queue holds a doing item older than a day without a date within 30 days",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-04"
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-05"
     },
     {
       "id": "e2e-pro-sections-test-key",

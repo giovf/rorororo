@@ -29,6 +29,9 @@ that day on. Like a blocked item it still counts as work, so it does not put the
 buildable anywhere — every open item blocked or dated — `npm run pipeline empty` lists the open
 queues with no buildable item instead, oldest `updated` first, so the build slot researches the
 first of them rather than idling (both slots did nothing on 2026-10-01 morning: `next` null,
-`empty` `[]`). One buildable item anywhere ends the fallback. A `finished` queue is a venture
+`empty` `[]`). One buildable item anywhere ends the fallback. **Doing** (2026-10-05): a `doing` item is one a run is building,
+dated by `doing_since` (else `added`); `npm run pipeline` lists every one on a `doing:` line. One that has been doing
+for more than a day with no future `not_before` is a cut-off session's leftover (nothing of it reached `main`), so
+`next` offers it again; a deliberate hold is `todo` with `not_before` (or carries `not_before` while doing). A `finished` queue is a venture
 with nothing left to do; only the exchange or the review reopens it. Every change to a queue
 lands in the same commit as the work.

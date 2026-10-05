@@ -15,6 +15,11 @@
  *   blocked or dated), the pipeline is starved: `needsResearch()` then lists the open queues
  *   with no buildable item, oldest `updated` first, so a build slot researches instead of
  *   idling (2026-10-01: both build slots found `next` null and `empty` [] and did nothing);
+ * - a `doing` item is one a run is building; a cut-off session may leave one behind (nothing of
+ *   the build reached main). One that has been `doing` for more than a day (`doing_since`, else
+ *   `added`) with no future `not_before` is stale: `candidates()` offers it again and the status
+ *   lists every doing item (2026-10-04: a score-7 hold sat invisible while `next` reported
+ *   starvation). A deliberate hold carries `not_before` — or is `todo` with `not_before`;
  * - a `finished` queue is a venture with no more work; the weekly exchange routine may reopen
  *   it when enhancing that venture scores above starting a new one.
  */
@@ -44,6 +49,8 @@ export interface QueueItem {
    */
   not_before?: string;
   done_at?: string;
+  /** For `doing`: ISO date the build started (defaults to `added` when absent). */
+  doing_since?: string;
   /** For `blocked`: what it waits on (a store review, a support ticket, an owner action). */
   blocked_on?: string;
 }
@@ -130,6 +137,8 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
     const done_at = str(w, r, 'done_at', true);
     const not_before = str(w, r, 'not_before', true);
     if (not_before !== '' && !ISO_DATE.test(not_before)) fail(w, 'not_before must be YYYY-MM-DD');
+    const doing_since = str(w, r, 'doing_since', true);
+    if (doing_since !== '' && !ISO_DATE.test(doing_since)) fail(w, 'doing_since must be YYYY-MM-DD');
     const item: QueueItem = {
       id,
       title: str(w, r, 'title'),
@@ -142,6 +151,7 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
     };
     if (done_at !== '') item.done_at = done_at;
     if (not_before !== '') item.not_before = not_before;
+    if (doing_since !== '') item.doing_since = doing_since;
     if (blocked_on !== '') item.blocked_on = blocked_on;
     return item;
   });
@@ -186,9 +196,23 @@ export function utcToday(now: Date = new Date()): string {
   return now.toISOString().slice(0, 10);
 }
 
+const DAY_MS = 86_400_000;
+
+/**
+ * A `doing` item left behind by a cut-off session: `doing` for more than a day (by
+ * `doing_since`, else `added`) with no `not_before` still in the future. Offered again by
+ * `candidates()`, so a half-started item is redone rather than hidden.
+ */
+export function isStaleDoing(item: QueueItem, today: string = utcToday()): boolean {
+  if (item.status !== 'doing') return false;
+  if (item.not_before !== undefined && item.not_before > today) return false;
+  return Date.parse(today) - Date.parse(item.doing_since ?? item.added) > DAY_MS;
+}
+
 /**
  * Items the build routine may pick: `todo` items on open queues whose `not_before` has
- * arrived, best score first, oldest first on ties. `today` overrides the clock (tests).
+ * arrived, plus stale `doing` items (see `isStaleDoing`), best score first, oldest first on
+ * ties. `today` overrides the clock (tests).
  */
 export function candidates(
   queues: VentureQueue[],
@@ -202,9 +226,9 @@ export function candidates(
       q.items
         .filter(
           (it) =>
-            it.status === 'todo' &&
             it.effort_days <= cap &&
-            (it.not_before === undefined || it.not_before <= today),
+            ((it.status === 'todo' && (it.not_before === undefined || it.not_before <= today)) ||
+              isStaleDoing(it, today)),
         )
         .map((item) => ({ venture: q.venture, item })),
     )
@@ -245,9 +269,10 @@ export function needsResearch(queues: VentureQueue[], options: { today?: string 
   return starved(queues, options);
 }
 
-export function formatPipeline(pipeline: Pipeline): string {
+/** The `npm run pipeline` status text. `today` overrides the clock (tests). */
+export function formatPipeline(pipeline: Pipeline, options: { today?: string } = {}): string {
   const lines: string[] = [];
-  const today = utcToday();
+  const today = options.today ?? utcToday();
   const research = new Set(needsResearch(pipeline.queues, { today }).map((q) => q.venture));
   for (const q of pipeline.queues) {
     const count = (s: ItemStatus): number => q.items.filter((it) => it.status === s).length;
@@ -266,6 +291,17 @@ export function formatPipeline(pipeline: Pipeline): string {
     .filter((q) => q.status === 'open')
     .flatMap((q) => q.items.filter((it) => it.status === 'todo' && it.not_before !== undefined && it.not_before > today).map((it) => `${q.venture}/${it.id} on ${it.not_before!}`));
   if (scheduled.length > 0) lines.push(`scheduled: ${scheduled.join(', ')}`);
+  const doing = pipeline.queues
+    .filter((q) => q.status === 'open')
+    .flatMap((q) =>
+      q.items
+        .filter((it) => it.status === 'doing')
+        .map(
+          (it) =>
+            `${q.venture}/${it.id} since ${it.doing_since ?? it.added}${it.not_before !== undefined && it.not_before > today ? ` (held until ${it.not_before})` : isStaleDoing(it, today) ? ' (stale — offered again by next)' : ''}`,
+        ),
+    );
+  if (doing.length > 0) lines.push(`doing: ${doing.join(', ')}`);
   const parked = pipeline.exchange.ideas.filter((i) => i.status === 'parked').length;
   lines.push(`exchange: ${pipeline.exchange.ideas.length} idea(s), ${parked} parked`);
   return lines.join('\n');
