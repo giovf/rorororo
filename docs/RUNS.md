@@ -615,3 +615,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 20:32 | burn-down | Queue variables-toolkit: relink-howto-page (4), relink-to-local (4), search-rank-relink-queries (3)
 - 2026-10-05 20:32 | burn-down | day-30-review amended: read free-companion installs, not purchases; relay for rival comments still queued
 - 2026-10-05 20:32 | burn-down | Foundry queue: relay-wait-loop (5) — fetch-relay sat queued 16+ min, README's sleep 120 reads nothing
+- 2026-10-05 20:36 | burn-down | Foundry relay-wait-loop: README step 3 polls origin/main for the response commit up to 20 min
+- 2026-10-05 20:36 | burn-down | RELAY sentence in burn-down, build, fallback, exchange, metrics prompts: poll, work meanwhile, no sleep 120
+- 2026-10-05 20:36 | burn-down | Queue: foundry relay-wait-loop done; next buildable is variables-toolkit relink-howto-page (4)

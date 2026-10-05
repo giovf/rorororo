@@ -747,3 +747,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   therefore the shelf's norm for a paid newcomer, not a pricing signal — the day-30 rule now reads the free companion's
   installs first. Forum demand (five threads) is relink in both directions; three items queued (how-to page 4, relink to
   local 4, rank series 3). Foundry: relay-wait-loop (5) after the relay run sat queued 16+ minutes.
+- 2026-10-05 burn-down (20:00 run, 2nd item): foundry `relay-wait-loop` (5) built — the relay README and the five routine
+  prompts that read the relay now poll `origin/main` for the response commit for up to 20 minutes (and work meanwhile)
+  instead of `sleep 120`; the fetch-relay run this evening sat queued 16+ minutes with nothing else running, so a fixed
+  sleep read nothing. Proof: no unread-relay run-log line in 30 days.

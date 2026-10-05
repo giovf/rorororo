@@ -11,6 +11,7 @@ Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `run
 2026-09-30 — STEP -1 slot marker (foundry `fallback-slot-race`); Taskmaster rows via
 `npm run task -- add` (foundry `taskmaster-offline-add`).
 Changes: 2026-10-05 — LOOP step 3: an extension `src/` change runs that venture's e2e before the commit (foundry `e2e-sandbox-browser`).
+Changes: 2026-10-05 — RELAY: poll for the response commit up to 20 min instead of `sleep 120` (foundry `relay-wait-loop`).
 
 ---
 
@@ -22,7 +23,7 @@ STEP 0 — heal before building: run `npm ci` then `npm run check` at the repo r
 
 Read first: `CLAUDE.md`, `docs/OWNER-NOTES.md` (answer each new note in place with a `  - Claude: …` line; an owner note asking for something becomes a queue item), `docs/pipeline/README.md`, `docs/STRATEGY.md` (§5, §7, §8), `docs/ALERTS.md`, `docs/INBOX.md`, `docs/RUNS.md` (what earlier runs today already did — never redo it), `ventures/gankdat/CLAUDE.md` and `ventures/gankdat/docs/ARCHITECTURE.md`.
 
-RELAY — hosts this sandbox cannot reach (figma.com, ipo.gov.uk, nhs.uk, data.gov.uk, gamblingcommission.gov.uk, gankdat.com and most data hosts): do NOT file a handoff and do NOT guess file names or layouts. Write `docs/relay/requests/<name>.txt` with one line per request (`HEAD <url>`, `GET <url>`, or `GET RANGE=0-4095 <url>` for big files), commit and push only that file (`relay: <name>`), `sleep 120`, `git pull`, then read `docs/relay/responses/<name>/meta.json` and the bodies next to it. Allowed hosts are listed in `scripts/fetch-relay.mjs`; add a host there in your commit when a new source needs it. Details: `docs/relay/README.md`.
+RELAY — hosts this sandbox cannot reach (figma.com, ipo.gov.uk, nhs.uk, data.gov.uk, gamblingcommission.gov.uk, gankdat.com and most data hosts): do NOT file a handoff and do NOT guess file names or layouts. Write `docs/relay/requests/<name>.txt` with one line per request (`HEAD <url>`, `GET <url>`, or `GET RANGE=0-4095 <url>` for big files), commit and push only that file (`relay: <name>`), wait for the response commit rather than a fixed sleep — poll `git fetch -q origin main && git ls-tree --name-only origin/main docs/relay/responses/<name>` every 10 s for up to 20 min (hosted runners queue: on 2026-10-05 a request sat queued 16+ min), doing other work meanwhile, then `git pull --no-rebase`, then read `docs/relay/responses/<name>/meta.json` and the bodies next to it. Allowed hosts are listed in `scripts/fetch-relay.mjs`; add a host there in your commit when a new source needs it. Details: `docs/relay/README.md`.
 
 SELF-EXPANSION — improvements to the operation itself (routines, relays, watchdogs) are in scope: when a blocker repeats, add a scored item to `docs/pipeline/queues/foundry.json`; it is built when it wins on score.
 

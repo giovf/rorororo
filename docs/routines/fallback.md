@@ -6,6 +6,7 @@ runs and the slot-check sentence queued for it (foundry `fallback-slot-race`). B
 session diffs this text against the stored prompt and carries over any sentence this file lacks.
 
 Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `runs-line-length-check`).
+Changes: 2026-10-05 — RELAY: poll for the response commit up to 20 min instead of `sleep 120` (foundry `relay-wait-loop`).
 2026-09-30 — the trace check is `npm run slot -- check build` (start marker, `docs/ops/SLOTS.md`).
 
 ---
@@ -20,7 +21,7 @@ Read first: `CLAUDE.md`, `docs/OWNER-NOTES.md` (answer each new note in place wi
 
 THE ITEM: `npm run pipeline -- next --max-effort=0.3` is the item. If it prints nothing buildable, do a RESEARCH run only when `npm run pipeline empty` lists an open queue needing research and the research is cheap (a foundry ops research from the repo's own logs; never a market study — leave that to Fable), otherwise write ONE run-log line saying nothing small was buildable and stop. Set the item `doing`, build it completely, set it `done` with `done_at`; if that empties its queue (nothing todo/doing/blocked) and the queue is not finished, set `needs_research: true`. If you cannot build it (account, key, third party) set it `blocked` with `blocked_on`; if it is not worth doing set it `dropped` and say why in `why`.
 
-RELAY for hosts the sandbox cannot reach: `docs/relay/README.md` (write `docs/relay/requests/<name>.txt`, push only that file as `relay: <name>`, `sleep 120`, `git pull`, read `docs/relay/responses/<name>/`). Never guess a file layout.
+RELAY for hosts the sandbox cannot reach: `docs/relay/README.md` (write `docs/relay/requests/<name>.txt`, push only that file as `relay: <name>`, wait for the response commit rather than a fixed sleep — poll `git fetch -q origin main && git ls-tree --name-only origin/main docs/relay/responses/<name>` every 10 s for up to 20 min (hosted runners queue: on 2026-10-05 a request sat queued 16+ min), doing other work meanwhile, then `git pull --no-rebase`, read `docs/relay/responses/<name>/`). Never guess a file layout.
 
 Gates: `npm run check -w @foundry/gankdat` for gankdat work, `npm run check` at the root otherwise. ONE COMMIT with the work, its docs, the queue change and the run-log lines: message `<area>: <what> (fallback)` ending with `Co-Authored-By: Claude <noreply@anthropic.com>`; on rejection `git pull --no-rebase` and push again. Never push a half-built item. Only Stripe/payments, DNS, account creation or owner identity need a person: `- YYYY-MM-DD owner: <text>` in `docs/ALERTS.md` (sparingly) or `- YYYY-MM-DD handoff: <text>`.
 

@@ -9,7 +9,11 @@ GitHub runner to fetch for it:
    `HEAD https://www.ipo.gov.uk/t-tmj/tm-journals/2026-038/jnl.xml` or
    `GET RANGE=0-4095 https://www.gamblingcommission.gov.uk/downloads/premises-licence-register.csv`.
 2. Commit and push just that file (`relay: <name>`); it is the one exception to "push once at the end".
-3. Wait about two minutes (`sleep 120`), then `git pull`. The `fetch relay` workflow has committed
+3. Wait for the response **commit**, not for a fixed time: GitHub's hosted runners queue (on 2026-10-05 a request
+   sat `queued` for 16+ minutes with nothing else running; two minutes is the floor, not the norm). Poll, and do
+   other work meanwhile:
+   `for i in $(seq 1 120); do git fetch -q origin main; git ls-tree --name-only origin/main docs/relay/responses/<name> | grep -q . && break; sleep 10; done; git pull --no-rebase origin main`
+   (write the request first, research or build while it runs, read it last). The `fetch relay` workflow has committed
    `docs/relay/responses/<name>/meta.json` (status, headers, bytes, errors per line) and the
    bodies as `1.json`, `2.csv`, … The request file is deleted.
 4. Read what you need, then carry on. Responses are pruned after 7 days.
