@@ -1,5 +1,7 @@
 import { tierForKey } from '../core/license.js';
+import { markdownFiles, readwiseCsv } from '../core/export.js';
 import { toMarkdown, type PageRecord } from '../core/model.js';
+import { buildZip } from '../core/zip.js';
 import { isPdfUrl, viewerUrl } from '../core/pdf.js';
 import { parseSuperSimpleBackup } from '../core/ssh-import.js';
 import { parseWeavaExport } from '../core/weava-import.js';
@@ -82,7 +84,7 @@ void (async () => {
     locked.textContent =
       'The library is part of the unlock ($12, once). Your highlights are still saved \u2014 open the popup on any page to see that page\u2019s highlights and copy them as Markdown.';
     $('pages').replaceChildren(locked);
-    ['q', 'export-all', 'backup', 'restore', 'import-ssh', 'import-weava'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
+    ['q', 'export-all', 'download-md', 'download-readwise', 'backup', 'restore', 'import-ssh', 'import-weava'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
     return;
   }
   pages = await loadAllPages();
@@ -92,12 +94,26 @@ void (async () => {
     const md = pages.map(toMarkdown).join('\n---\n\n');
     void navigator.clipboard.writeText(md).then(() => ($('status').textContent = 'Markdown for all pages copied to the clipboard.'));
   };
-  $('backup').onclick = () => {
-    const blob = new Blob([JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), pages }, null, 2)], { type: 'application/json' });
+  const today = (): string => new Date().toISOString().slice(0, 10);
+  const download = (name: string, body: BlobPart, type: string): void => {
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `highlight-keep-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    a.href = URL.createObjectURL(new Blob([body], { type }));
+    a.download = name;
     a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 60_000);
+  };
+  $('download-md').onclick = () => {
+    const files = markdownFiles(pages);
+    download(`highlight-keep-markdown-${today()}.zip`, buildZip(files.map((f) => ({ name: f.name, data: f.content }))), 'application/zip');
+    $('status').textContent = `Downloaded ${files.length} Markdown file${files.length === 1 ? '' : 's'} in a zip \u2014 unzip it into your vault; each file starts with front matter (title, url, dates, tags).`;
+  };
+  $('download-readwise').onclick = () => {
+    const n = pages.reduce((sum, p) => sum + p.highlights.length, 0);
+    download(`highlight-keep-readwise-${today()}.csv`, readwiseCsv(pages), 'text/csv');
+    $('status').textContent = `Downloaded ${n} highlight${n === 1 ? '' : 's'} as a CSV in Readwise\u2019s import columns \u2014 upload it at readwise.io/import_bulk; tags arrive as Readwise tags.`;
+  };
+  $('backup').onclick = () => {
+    download(`highlight-keep-backup-${today()}.json`, JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), pages }, null, 2), 'application/json');
   };
   $<HTMLInputElement>('restore').onchange = async (e) => {
     const input = e.target as HTMLInputElement;

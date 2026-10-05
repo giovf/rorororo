@@ -1,6 +1,7 @@
 // End-to-end check of Highlight Keep in a real Chromium: create highlights by selecting
 // text, restore them after reload (and after the page text shifts), recolour/note/remove,
-// free-tier gating, Markdown export, the "on for every site" switch, frames and shadow DOM.
+// free-tier gating, Markdown export, the "on for every site" switch, frames and shadow DOM, and the
+// library's file exports (Markdown zip, Readwise CSV).
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
@@ -416,6 +417,52 @@ try {
     (await frame2!.locator('mark.hk').textContent()) === 'keeps its own highlights',
   );
   await page.screenshot({ path: path.join(here, 'out', '05-frames-shadow.png') });
+
+  // 9. Library file exports (pro, key set in 5): one Markdown file per page in a zip and a
+  //    Readwise-import CSV, both real downloads from the library page.
+  if (signingKey) {
+    const library = await context.newPage();
+    await library.goto(`${sw.url().replace(/\/background\.js$/, '')}/library.html`);
+    await library.waitForSelector('#download-md:not([disabled])', { timeout: 4000 });
+    const [zipDl] = await Promise.all([
+      library.waitForEvent('download'),
+      library.click('#download-md'),
+    ]);
+    const zipPath = await zipDl.path();
+    const zip = await readFile(zipPath);
+    check(
+      'markdown zip download named by date',
+      /^highlight-keep-markdown-\d{4}-\d{2}-\d{2}\.zip$/.test(zipDl.suggestedFilename()),
+      zipDl.suggestedFilename(),
+    );
+    const zipText = zip.toString('latin1');
+    check(
+      'zip starts with a local file header and ends with the end record',
+      zip.readUInt32LE(0) === 0x04034b50 && zip.readUInt32LE(zip.length - 22) === 0x06054b50,
+    );
+    check(
+      'zip holds a .md per page with front matter',
+      zipText.includes('.md') &&
+        zipText.includes('---\ntitle: ') &&
+        zipText.includes('source: Highlight Keep'),
+    );
+    const [csvDl] = await Promise.all([
+      library.waitForEvent('download'),
+      library.click('#download-readwise'),
+    ]);
+    const csv = await readFile(await csvDl.path(), 'utf8');
+    check(
+      'readwise csv header',
+      csv.startsWith('Highlight,Title,Author,URL,Note,Location,Date\r\n'),
+      csv.split('\r\n')[0],
+    );
+    check(
+      'readwise csv has one row per highlight with the fixture quote',
+      csv.includes('find the start of every word,'),
+      csv.slice(0, 200),
+    );
+    await library.close();
+  }
 } finally {
   await context.close();
   server.close();

@@ -250,3 +250,21 @@ Risk, stated on the page: a real export may spell the columns in a way the patte
 the mail address, and one support mail fixes the mapping. Proof (unchanged): ≥ 1 Weava import named in a review or support
 mail within 60 days of 0.4.0 going live; comparison-page clicks → installs after the line lands. Ships with the 0.4.0 sign
 handoff (ALERTS; supersedes the 0.3.0 one; CWS still waits on the 0.2.0 review).
+
+### 2026-10-05 (burn-down 18:00) — `export-markdown-files-readwise-csv` built (0.4.0)
+
+Readwise's import format, read through the relay (`docs/relay/responses/hk-readwise-csv`, 18:25 UTC): `readwise.io/import_bulk`
+redirects the runner to a login page, so the page itself could not be read; `docs.readwise.io` (its `llms.txt` dump, 495 KB)
+points bulk import at that page and documents inline tags (a note starting with `.word` becomes a tag); a third-party copy of
+the import page (kb.iany.me, web search) lists the columns — Highlight (required), Title, Author, URL, Note (inline tags
+work), Location (integer), Date (`YYYY-MM-DD HH:MM:SS`, UTC). Built: `src/core/export.ts` — `markdownFiles` (one `.md` per
+page, file-system-safe unique name from the title, YAML front matter with title/url/site/created/updated/highlights/tags, then
+the existing page Markdown) and `readwiseCsv` (those seven columns, one row per highlight, Author = site, Location = order on
+the page, tags as `.tag` inline notes, RFC 4180 quoting, CRLF); `src/core/zip.ts` — a store-only ZIP writer (CRC-32, UTF-8
+names, ~90 lines; `unzip -t` and Python's `zipfile` both accept its output) so the Markdown files arrive as one download with
+no new dependency. The library's tools row gains *Download Markdown files* and *Download CSV for Readwise* beside *Copy all
+(Markdown)*; 8 unit tests and e2e section 9 (real downloads in Chromium: zip signature and front matter, CSV header and row).
+Copy: LISTING.md, AMO release notes and description, welcome page, landing page and the comparison page's export row now say
+"Markdown files for Obsidian/Logseq, Readwise CSV" instead of the clipboard-only "exports to Markdown". Not done, on
+purpose: no Notion/Obsidian OAuth integration (needs an account and a server — against the product's stance); Readwise is
+the bridge to those. Proof: Readwise or Obsidian named in a review or support mail; listing conversions after 0.4.0 vs before.

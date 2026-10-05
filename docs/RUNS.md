@@ -577,3 +577,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 17:34 | burn-down | Listing and AMO notes: works inside embedded frames and web components (ships in 0.4.0)
 - 2026-10-05 17:34 | burn-down | Queue: highlight-keep subframe-highlighting done; next buildable is export-markdown-files-readwise-csv (4)
 - 2026-10-05 17:34 | burn-down | Stopping for time (~40 min + gates): all-sites-mode and subframe-highlighting built this run
+- 2026-10-05 18:36 | burn-down | Highlight Keep: 'Download Markdown files' — one .md per page with YAML front matter, zipped for a vault
+- 2026-10-05 18:36 | burn-down | 'Download CSV for Readwise' in its import columns; tags ride as Readwise inline .tag notes, UTC dates
+- 2026-10-05 18:36 | burn-down | src/core/zip.ts: store-only ZIP writer with CRC-32, no dependency; checked with unzip -t and zipfile
+- 2026-10-05 18:36 | burn-down | Readwise columns verified via relay (docs.readwise.io) + web search; import_bulk itself is behind a login
+- 2026-10-05 18:36 | burn-down | 8 unit tests (zip, export) + e2e section 9: real zip and CSV downloads from the library page
+- 2026-10-05 18:36 | burn-down | Listing, AMO notes, welcome, landing, comparison page: Markdown files for Obsidian/Logseq, Readwise CSV
+- 2026-10-05 18:36 | burn-down | Queue: highlight-keep export-markdown-files-readwise-csv done; ships in 0.4.0 (handoff amended)

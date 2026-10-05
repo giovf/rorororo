@@ -697,3 +697,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   rivals (Glasp, Super Simple) in the 2026-09-19 review sample; an embedded reader or a web-component page did nothing
   before. Six e2e checks on a fixture iframe and shadow paragraph. Ships inside the unreleased 0.4.0. Proof: zero
   iframe/shadow complaints in the first reviews.
+- 2026-10-05 burn-down (18:00 run): highlight-keep `export-markdown-files-readwise-csv` (4) built — the library downloads
+  one Markdown file per page (file-safe title name, YAML front matter: title, url, site, created, updated, highlights, tags) in a
+  zip written by a ~90-line store-only ZIP writer of our own (no dependency), and a CSV in Readwise's bulk-import columns
+  (Highlight, Title, Author, URL, Note, Location, Date; tags as Readwise inline `.tag` notes). Why: every rival a searcher
+  sees ships a path into a notes app and our 'exports to Markdown' was the clipboard; this is parity without an OAuth
+  integration, which would break 'no account, no sync server'. Columns verified through the relay (docs.readwise.io) and a
+  third-party copy of the import page; readwise.io/import_bulk itself needs a login. Ships inside the unreleased 0.4.0.
+  Proof: Readwise/Obsidian named in a review or support mail; listing conversions after vs before.
