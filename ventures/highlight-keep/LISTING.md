@@ -12,7 +12,7 @@ Mark what matters, and keep it.
 • Copy a page's highlights as Markdown (works with Obsidian, Notion, anything).
 • PDFs on the web too: open one in the built-in viewer page from the popup and highlight it like any page.
 • Per-site switch: turn it on for the sites you read on (Alt+Shift+H); it never runs anywhere else.
-• Coming from Super Simple Highlighter? Import its backup file in the library and every highlight comes with you, anchored to its words.
+• Coming from Weava or Super Simple Highlighter? Import Weava's .csv export or Super Simple's backup file in the library and every highlight comes with you, with its note, anchored to its words.
 
 Unlock ($12, once): unlimited sites, six colours, notes and tags, the library — search everything you've kept, export it all, backup and restore as a file (a restore adds to what is there, it never wipes it). One key for every browser you sign in to; works offline; 14-day refund.
 

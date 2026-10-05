@@ -229,3 +229,24 @@ so the builds above can read the real file layouts (never guess a format). Not q
 every Chrome listing by itself, alternativeto needs an owner account (already blocked in the ReadFocus queue),
 tooltivity's submission path could not be read; Reddit/XPath anchoring (one review; ours is text-quote based).
 Kill check unchanged: 2026-12-21 if nothing moves; day-30 review 2026-10-30.
+
+### 2026-10-05 (build 17:00) — `import-weava-export` built (0.4.0)
+
+What could be read, through the relay (`docs/relay/responses/hk-weava-export`, `-2`, 17:12–17:14 UTC): weavatools.com's own
+"How To Export Your Highlights and Notes" and the Weava Manual §8 say only that the dashboard's export button writes "Microsoft
+Word, Excel, .csv, or .txt"; the knowledge-base page on the export (`weavatools.atlassian.net/wiki/spaces/WEAV/pages/84967585`)
+redirects to an Atlassian login and the service-desk portal answers 403; `app.weavatools.com` and `web.weavatools.com` do not
+answer at all; Web Highlights' "How to Import Highlights from Weava" (2024-08-04) and Glasp's guide (403 for the runner, read
+from the search index) show the same four steps — open a folder, export icon top right, choose .csv, upload — and name no
+column. So no sample exists in the repo and the parser is what the queue item planned for that case: `src/core/weava-import.ts`
+reads the header row (RFC 4180 cells, delimiter detected from the header: `,` `;` tab `|`, BOM and CRLF tolerated), maps
+columns by name — page URL and highlight text required; note/annotation, title, folder (becomes a tag), colour (by name or hex
+hue, via the shared `colourOfHex`) and date used when present — and refuses any other file with a message naming the headers it
+saw and asking for the first line by mail. Ids are `weava_<fnv><djb2>` of url + quote + note, so a second import adds nothing;
+pages merge through `pages-storage.mergeInto` like Restore and the Super Simple import. 8 tests. The library gains
+*Import Weava*; LISTING.md, the AMO release notes and description, the comparison page (table row; the "About Weava" paragraph
+now tells refugees how to come across instead of "there is no importer"), the landing page and the welcome page say so.
+Risk, stated on the page: a real export may spell the columns in a way the patterns miss — then the user sees the headers and
+the mail address, and one support mail fixes the mapping. Proof (unchanged): ≥ 1 Weava import named in a review or support
+mail within 60 days of 0.4.0 going live; comparison-page clicks → installs after the line lands. Ships with the 0.4.0 sign
+handoff (ALERTS; supersedes the 0.3.0 one; CWS still waits on the 0.2.0 review).

@@ -675,3 +675,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   has one, ours is a clipboard copy). Queued: `import-weava-export` (6), `all-sites-mode` (4), `subframe-highlighting`
   (4), `export-markdown-files-readwise-csv` (4), `import-glasp-hypothesis-exports` (3). Relay allowlist gained the
   vendors' doc hosts so the parsers are written from real file layouts.
+- 2026-10-05 build (17:00 run): `import-weava-export` built (Highlight Keep 0.4.0) — the way across for the Weava refugees the
+  comparison page targets, which both rivals outranking us already offer. No sample file could be read (Weava's knowledge base
+  needs a login, its app host does not answer, the rivals' guides show only the dashboard steps), so the importer is header-driven:
+  page URL and highlight text required, note/title/folder/colour/date used when present, and any other file is refused naming
+  the headers seen — the comparison page asks refugees to mail the first line so the mapping is fixed from a real file, never a
+  guess. Ships with the 0.4.0 sign handoff (supersedes 0.3.0). Proof unchanged: a Weava import named in a review or support
+  mail within 60 days; comparison-page clicks → installs after the line lands.

@@ -2,6 +2,7 @@ import { tierForKey } from '../core/license.js';
 import { toMarkdown, type PageRecord } from '../core/model.js';
 import { isPdfUrl, viewerUrl } from '../core/pdf.js';
 import { parseSuperSimpleBackup } from '../core/ssh-import.js';
+import { parseWeavaExport } from '../core/weava-import.js';
 import { loadAllPages, mergeInto, savePage } from '../pages-storage.js';
 import { loadSettings } from '../settings-storage.js';
 
@@ -81,7 +82,7 @@ void (async () => {
     locked.textContent =
       'The library is part of the unlock ($12, once). Your highlights are still saved \u2014 open the popup on any page to see that page\u2019s highlights and copy them as Markdown.';
     $('pages').replaceChildren(locked);
-    ['q', 'export-all', 'backup', 'restore', 'import-ssh'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
+    ['q', 'export-all', 'backup', 'restore', 'import-ssh', 'import-weava'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
     return;
   }
   pages = await loadAllPages();
@@ -128,6 +129,25 @@ void (async () => {
       if (parsed.deleted) notes.push(`${parsed.deleted} you had deleted there, left out`);
       if (parsed.skipped) notes.push(`${parsed.skipped} without text or page, skipped`);
       $('status').textContent = `Imported from Super Simple Highlighter: ${notes.join('; ')}. Each one is anchored to its words, so it shows again when you open that page.`;
+    } catch (err) {
+      $('status').textContent = `Could not import: ${err instanceof Error ? err.message : String(err)}`;
+    }
+    input.value = '';
+  };
+  $<HTMLInputElement>('import-weava').onchange = async (e) => {
+    const input = e.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+    try {
+      const parsed = parseWeavaExport(await file.text());
+      const { added, pagesChanged } = await mergeInto(parsed.pages);
+      pages = await loadAllPages();
+      render();
+      const notes = [`${added} highlight${added === 1 ? '' : 's'} on ${pagesChanged} page${pagesChanged === 1 ? '' : 's'} brought over`];
+      if (parsed.imported - added > 0) notes.push(`${parsed.imported - added} already here`);
+      if (parsed.skipped) notes.push(`${parsed.skipped} without text or page address, skipped`);
+      const read = (['note', 'title', 'folder', 'colour', 'date'] as const).filter((c) => parsed.columns[c]).map((c) => (c === 'folder' ? 'folder (as a tag)' : c));
+      $('status').textContent = `Imported from Weava: ${notes.join('; ')}${read.length ? `; read ${read.join(', ')} too` : ''}. Each one is anchored to its words, so it shows again when you open that page.`;
     } catch (err) {
       $('status').textContent = `Could not import: ${err instanceof Error ? err.message : String(err)}`;
     }

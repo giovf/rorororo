@@ -69,14 +69,10 @@ function hueOf(hex: string): { hue: number; sat: number } | null {
   return { hue, sat: d / max };
 }
 
-/** Our nearest colour for a Super Simple Highlighter style: by default class name, else by hue. */
-export function colourFor(className: string | undefined, definitions: SshDefinition[]): Colour {
-  if (!className) return 'yellow';
-  for (const [re, colour] of DEFAULT_NAMES) if (re.test(className)) return colour;
-  const def = definitions.find((d) => d.className === className);
-  const bg = def?.style?.['background-color'];
-  const hs = bg ? hueOf(bg) : null;
-  if (!hs || hs.sat < 0.12) return 'yellow';
+/** Our nearest colour for a CSS hex colour, or null when it is not hex or too grey to tell. */
+export function colourOfHex(hex: string): Colour | null {
+  const hs = hueOf(hex);
+  if (!hs || hs.sat < 0.12) return null;
   const { hue } = hs;
   if (hue < 15 || hue >= 300) return 'pink';
   if (hue < 45) return 'orange';
@@ -84,6 +80,15 @@ export function colourFor(className: string | undefined, definitions: SshDefinit
   if (hue < 170) return 'green';
   if (hue < 260) return 'blue';
   return 'purple';
+}
+
+/** Our nearest colour for a Super Simple Highlighter style: by default class name, else by hue. */
+export function colourFor(className: string | undefined, definitions: SshDefinition[]): Colour {
+  if (!className) return 'yellow';
+  for (const [re, colour] of DEFAULT_NAMES) if (re.test(className)) return colour;
+  const def = definitions.find((d) => d.className === className);
+  const bg = def?.style?.['background-color'];
+  return (bg ? colourOfHex(bg) : null) ?? 'yellow';
 }
 
 function parseLines(text: string): unknown[] {

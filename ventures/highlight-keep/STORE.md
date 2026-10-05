@@ -16,3 +16,6 @@
 
 - 2026-10-04 (burn-down): repo is **0.3.0** — import from Super Simple Highlighter + merging Restore. Needs signing/upload
   once 0.2.0 clears review (CWS refuses a new upload while one is pending; AMO takes it any time) — ALERTS handoff.
+
+- 2026-10-05 (build 17:00): repo is **0.4.0** — import from Weava's .csv dashboard export (header-driven: URL + highlight required;
+  note, title, folder→tag, colour, date when present). Needs signing/upload once 0.2.0 clears review — ALERTS handoff (supersedes the 0.3.0 one).

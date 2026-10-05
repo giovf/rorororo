@@ -559,3 +559,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 09:11 | build | Highlight Keep research: Weava still abandoned; both rivals ranking for its name built a Weava import
 - 2026-10-05 09:11 | build | Review sample re-counted: every-site mode (3), iframe/shadow DOM (2) and notes-app export unaddressed
 - 2026-10-05 09:11 | build | Queue: highlight-keep +5 items; next buildable is import-weava-export (6); relay allowlist +5 hosts
+- 2026-10-05 17:18 | build | Weava import: src/core/weava-import.ts maps CSV columns by header name, refuses others listing headers
+- 2026-10-05 17:18 | build | No sample obtainable: Weava KB behind login, app host down, rival guides show steps only (relay, 2 rounds)
+- 2026-10-05 17:18 | build | 8 tests: CSV reader, delimiter, header spellings, colour cells, stable ids, refusal; library 'Import Weava'
+- 2026-10-05 17:18 | build | Highlight Keep 0.4.0: LISTING, AMO notes, comparison page, landing, welcome say 'bring highlights from Weava'
+- 2026-10-05 17:18 | build | Handoff: sign and upload 0.4.0 (supersedes the 0.3.0 handoff); CWS still waits on the 0.2.0 review
+- 2026-10-05 17:18 | build | Queue: highlight-keep import-weava-export done; next buildable is all-sites-mode (4)
