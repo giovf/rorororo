@@ -2,7 +2,7 @@
   "venture": "read-focus",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "items": [
     {
       "id": "post-approval-links",
@@ -113,6 +113,46 @@
       "status": "done",
       "added": "2026-10-04",
       "done_at": "2026-10-04"
+    },
+    {
+      "id": "ruler-controls",
+      "title": "Reading ruler controls in the popup: colour (six swatches, one safe on dark pages), height, opacity and lock-in-place (free)",
+      "why": "The September review sample asks four times across the three ruler tools (28,000 users): ReadingRuler \"the only thing that could make it better would be color and opacity options\", ReadingLine \"wish we could tweak colour, size and opacity\" and \"option to change color — not usable on dark background themes\", Reader Line \"the color filters are nice\". ReadFocus's ruler is one fixed yellow band (content.css) and reading-ruler.html says so. Rivals' controls are free, so these are too. Research 2026-10-05 in RESEARCH.md.",
+      "effort_days": 0.3,
+      "proof": "a ruler review or support mail naming colour/size/opacity within 60 days of the version going live; reading-ruler.html clicks that turn into installs at the day-30 review",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "spacing-and-tint",
+      "title": "Line, letter and word spacing with the BDA style-guide numbers as the one-click default (free), and a page tint — cream / pale yellow / blue / green / pink / grey — as a soft fixed overlay (unlock)",
+      "why": "The British Dyslexia Association style guide: line spacing 1.5, letter spacing about 35% of the average letter width, cream or a soft pastel instead of white (\"white can appear too dazzling\"). Every dyslexia suite ships both (Dyslexly free: spacing + colour overlay; Helperbird; OpenDyslexic's reviews praise background colour), ReadFocus has neither. Sample: Dyslexia Friendly \"I can change the background colour of the page\", Quiet Reader \"colours are harsh and cannot be changed\", Dyslexia Reader colour changers \"caused the screen to blink\" (so: one soft overlay, no per-element repaint); Dyslexia Friendly \"messes with the spacing of words and entire page layout\" (so: a control, applied to reading blocks only, like text size). Research 2026-10-05.",
+      "effort_days": 0.4,
+      "proof": "a review or support mail naming spacing or the tint within 60 days; unlock conversions after vs before the version",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "read-aloud",
+      "title": "Read aloud with the browser's own voices (speechSynthesis, nothing leaves the browser), sentence highlighting that follows the voice, play/pause in the popup and a shortcut (unlock)",
+      "why": "Helperbird (500k users, $30/yr) leads its blog with word-by-word read-aloud; Dyslexly's free tier has text-to-speech with word highlighting; Dyslexia Reader (9k) reads a clicked sentence aloud. No review in our sample asks for it and the free \"Read Aloud\" extension serves it standalone, so it scores below the ruler and spacing items; its value is for readers who already use ReadFocus and want ears and eyes together. Helperbird's complaint is voice quality, which is the OS's — the listing must say \"uses your computer's voices\". Research 2026-10-05.",
+      "effort_days": 0.6,
+      "proof": "a review or support mail naming read-aloud within 60 days; unlock conversions after vs before the version",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "google-docs-publish-tip",
+      "title": "Google Docs tip on the comparison page, the ReadFocus page and the welcome page: File → Share → Publish to web gives a page ReadFocus reads; the editor itself stays a known limit",
+      "why": "Two asks in the sample (the official bolding tool \"doesn't work on … google docs\", ADHD Reader \"wants Docs/Word\") and Half Bold's own FAQ answers \"Does it work with Google Docs?\" with exactly this Publish-to-web route (relay capture rf-rivals-2026/3.html) — a workaround we can give for free in one paragraph without claiming Docs support. Research 2026-10-05.",
+      "effort_days": 0.05,
+      "proof": "the paragraph is live; a Docs-related install or question within 60 days",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-05"
     }
   ]
 }

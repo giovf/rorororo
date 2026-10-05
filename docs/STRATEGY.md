@@ -713,3 +713,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   fixes the mapping by mail. Why: the last unaddressed path in the 2026-10-05 research (rivals' users leave for privacy,
   not data loss, so lower than Weava). Ships inside the unreleased 0.4.0. Proof: a Hypothesis or Glasp import named in a
   review or support mail within 60 days of 0.4.0 going live.
+- 2026-10-05 burn-down (19:00 run): read-focus research (starvation fallback: every open item blocked on an owner account or
+  dated 10-30). The September review sample re-read by ask instead of by rival shows the asks ReadFocus still misses: ruler
+  colour/size/opacity four times across the three ruler tools (28k users), a background tint three times, Google Docs twice;
+  the BDA style guide gives the spacing and tint numbers every dyslexia suite ships and ReadFocus lacks. Four items queued:
+  `ruler-controls` (5, free, reverses the 10-04 "wait for a review" call because the reviews already exist),
+  `spacing-and-tint` (4), `read-aloud` (3, served standalone by a free extension so last) and `google-docs-publish-tip` (3,
+  Half Bold's own Publish-to-web workaround, given honestly). Features before distribution only because every
+  distribution item left needs the owner's identity; the 10-30 numbers still decide.

@@ -250,3 +250,46 @@ at all. Links: landing index, the ReadFocus page, the comparison page, `sitemap.
 `assets/amo-metadata.json` (the live listings pick the line up on the next dashboard visit / version sign). Proof (queue):
 ≥ 30 impressions or ≥ 3 clicks at the 2026-10-30 review. Not built: colour/size controls for the band — a product change,
 queued only if the page or a review asks for it.
+
+## Research 2026-10-05 (burn-down 19:00; starvation fallback — every open ReadFocus item blocked or dated)
+
+Evidence read: the metrics rows (0 Chrome users and no ratings every day since 2026-09-30; 0.2.0 shows as the live Firefox
+version on 10-05 and the Chrome listing's "updated October 4, 2026", so the PDF reader and the fixed listings have had one
+day — nothing readable yet), the two research notes above, STRATEGY §5 (distribution before features; every distribution
+item left is blocked on an owner account — `cws-promo-tile`, `edge-add-ons-listing`, `alternativeto-listing` — and the
+numbers are dated 2026-10-30), the September review sample re-read **by ask** rather than by rival
+(`research/cws-harvest-2026-09-18.json`), the live source (`core/settings.ts`: the ruler is one fixed yellow band with no
+setting; no spacing, no tint, no read-aloud), the British Dyslexia Association style guide (web search: line spacing 1.5,
+letter spacing ≈ 35 % of the average letter width, cream or a soft pastel instead of white — "white can appear too
+dazzling"), two 2026 listicles for "chrome extension dyslexia read aloud" (Dyslexly's free tier: five fonts, spacing,
+colour overlay, line focus, ruler, text-to-speech with word highlighting, PDF viewer; Helperbird's word-by-word read-aloud
+is the feature its blog leads with) and Half Bold's own FAQ from the 10-04 relay capture (`docs/relay/responses/rf-rivals-2026/3.html`):
+"Does it work with Google Docs? Yes! … File → Share → Publish to web, then enable Half Bold on the published page" — a
+workaround, not Docs support, and one ReadFocus can give for free.
+
+Asks in the sample that ReadFocus does not answer today:
+
+| Ask | Where it is said | Count |
+|---|---|---|
+| ruler colour / size / opacity | ReadingRuler ("the only thing that could make it better would be color and opacity options"; praises hex/RGB/HSL/eyedropper), ReadingLine ×2 ("wish we could tweak colour, size and opacity"; "option to change color — not usable on dark background themes"), Reader Line ("the color filters are nice") | 4 |
+| background colour / tint | Dyslexia Friendly ("I can change the background colour of the page … and the font size"), Quiet Reader ("the colours are harsh (black & white) and cannot be changed"), Dyslexia Reader (colour changers "caused the screen to blink" — change the tint gently, once) | 3 |
+| spacing | Dyslexia Friendly ("messes with the spacing of words and entire page layout … increases the zoom" — spacing must be a control, not a side effect) | 1 |
+| Google Docs | the official bolding tool ("doesn't work on pdf documents or google docs"), ADHD Reader ("wants Docs/Word") | 2 |
+| read aloud | none in the sample; it is a suite feature (Helperbird, Dyslexly, Dyslexia Reader's click-a-sentence) and the free "Read Aloud" extension serves it standalone | 0 |
+
+Reading: the 10-04 note deferred ruler controls "until the page or a review asks" — the sample already asks four times
+across the three ruler tools (28,000 users), and our own `reading-ruler.html` admits the band is thinner than Reader
+Line's. Spacing and tint are the BDA basics every dyslexia suite ships and the one thing a cream-background reader
+cannot get from ReadFocus at all. Read-aloud is real but served elsewhere, so it sits last. Items added (score =
+evidence × reach ÷ effort):
+
+| Item | Score | Effort | What it does |
+|---|---|---|---|
+| `ruler-controls` | 5 | 0.3 d | colour (six swatches incl. a dark-page-safe one), height (3 sizes), opacity, and a lock-in-place toggle for the ruler; free, like every rival's ruler |
+| `spacing-and-tint` | 4 | 0.4 d | line / letter / word spacing with the BDA numbers as the one-click default, plus a page tint (cream, pale yellow, blue, green, pink, grey) as a soft fixed overlay; spacing free, tint in the unlock |
+| `read-aloud` | 3 | 0.6 d | the browser's own voices (`speechSynthesis`, nothing leaves the browser), sentence highlighting that follows the voice, play/pause in the popup and a shortcut; in the unlock; listing says plainly it uses the computer's voices |
+| `google-docs-publish-tip` | 3 | 0.05 d | the "Publish to web" route on the comparison page, the ReadFocus page and the welcome page — honest "ReadFocus cannot read the editor itself" kept |
+
+Not added: a Docs editor integration (canvas; Half Bold has none either); a ruler colour picker with hex input (six
+swatches cover the asks; a picker if a review asks); dark mode / page colour inversion (Dark Reader's job, 5M users).
+Kill check unchanged: 2026-12-21 if nothing moves.

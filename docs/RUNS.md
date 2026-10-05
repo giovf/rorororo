@@ -591,3 +591,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 18:48 | burn-down | Listing, AMO notes, welcome, landing, comparison page: imports from Weava, Glasp, Hypothesis, Super Simple
 - 2026-10-05 18:48 | burn-down | Queue: highlight-keep import-glasp-hypothesis-exports done; ships in 0.4.0 (handoff amended)
 - 2026-10-05 18:55 | burn-down | Stopping for time (~44 min): next is null, every queue starved; 19:00 run researches read-focus first
+- 2026-10-05 19:32 | burn-down | ReadFocus research: starvation fallback; review sample re-read by ask, BDA style guide, Half Bold FAQ
+- 2026-10-05 19:32 | burn-down | Ruler colour/size/opacity asked 4x across 28k-user ruler tools; tint 3x; Docs 2x; read-aloud a suite feature
+- 2026-10-05 19:32 | burn-down | Queue read-focus: ruler-controls (5), spacing-and-tint (4), read-aloud (3), google-docs-publish-tip (3)
