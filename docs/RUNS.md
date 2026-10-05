@@ -530,3 +530,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 01:21 | burn-down | d1-delta-cost-check (6, from 10-08): §7 tripped on US$38 D1 writes; read three rows after the delta fix
 - 2026-10-05 01:21 | burn-down | apify-runs-per-actor (5), indexnow-stats-pages (5), change-feed-rss (5): readings and keyless shelves
 - 2026-10-05 01:21 | burn-down | Queue: gankdat +5 items, needs_research false; next buildable is apify-change-feed-mode (7)
+- 2026-10-05 01:28 | burn-down | Apify client: changes mode reads /v1/changes with the same filters; rows = record + change + changed_at
+- 2026-10-05 01:28 | burn-down | Nine feed-bearing actors: mode/since/change inputs, dataset fields, "Monitor it" README; seven KV actors unchanged
+- 2026-10-05 01:28 | burn-down | Schema test: feed inputs and fields exactly on feed actors; shared client and main.mjs identical in all 16
+- 2026-10-05 01:28 | burn-down | Queue: gankdat apify-change-feed-mode done; next buildable is apify-runs-per-actor (5)

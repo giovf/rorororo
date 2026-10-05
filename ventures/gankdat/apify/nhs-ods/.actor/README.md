@@ -13,3 +13,6 @@
 
 ## Data posture
 Organisation-level data as published by NHS England's Organisation Data Service. The telephone column is dropped at ingest and the practitioner files (named GPs and dentists) are never used. Pay per result; set **Maximum results** to control spend. Data from gankdat.com (REST API, MCP server, daily change feeds).
+
+## Monitor it (changes mode)
+Set **Mode** to *Changes since a date (monitor)* and the run returns only the organisation records added, removed or changed in the register since **Changes since** (default: the last 7 days; the feed keeps 90), each item carrying `change` (`added`, `removed` or `changed`) and `changed_at` next to the record's fields. Your filters still apply, so one scheduled run is a watch — **Schedules → daily** on this actor — and you pay only for the rows that changed, typically a few dozen instead of the whole register. Nobody else sells this feed: it is computed from the official extract every day.

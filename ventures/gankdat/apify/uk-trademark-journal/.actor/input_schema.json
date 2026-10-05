@@ -1,8 +1,32 @@
 {
-  "title": "UK Trade Mark Applications Weekly (IPO Journal Watch) \u2014 filters",
+  "title": "UK Trade Mark Applications Weekly (IPO Journal Watch) — filters",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
+    "mode": {
+      "title": "Mode",
+      "type": "string",
+      "description": "Current records (default), or only the records added, removed or changed since a date — schedule a daily run in changes mode to monitor the register and pay only for what changed.",
+      "editor": "select",
+      "enum": ["data", "changes"],
+      "enumTitles": ["Current records", "Changes since a date (monitor)"],
+      "default": "data"
+    },
+    "since": {
+      "title": "Changes since",
+      "type": "string",
+      "description": "Changes mode only: YYYY-MM-DD. Default: the last 7 days. The feed keeps 90 days.",
+      "editor": "textfield",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "change": {
+      "title": "Change type",
+      "type": "string",
+      "description": "Changes mode only: one kind of change. Default: all three.",
+      "editor": "select",
+      "enum": ["added", "removed", "changed"],
+      "enumTitles": ["Added to the register", "Removed from the register", "Changed"]
+    },
     "classes": {
       "type": "string",
       "editor": "textfield",
@@ -13,7 +37,7 @@
       "type": "string",
       "editor": "textfield",
       "title": "Mark text contains",
-      "description": "Filter: mark text contains (case-insensitive substring match) \u2014 your own mark or a similar word."
+      "description": "Filter: mark text contains (case-insensitive substring match) — your own mark or a similar word."
     },
     "applicant": {
       "type": "string",
@@ -31,7 +55,7 @@
       "type": "string",
       "editor": "textfield",
       "title": "Applicant type",
-      "description": "organisation or individual \u2014 leave blank for all."
+      "description": "organisation or individual — leave blank for all."
     },
     "representative": {
       "type": "string",
@@ -61,14 +85,14 @@
       "type": "string",
       "editor": "textfield",
       "title": "Published on or after",
-      "description": "YYYY-MM-DD \u2014 e.g. last week's issue only",
+      "description": "YYYY-MM-DD — e.g. last week's issue only",
       "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
     },
     "opposition_deadline_after": {
       "type": "string",
       "editor": "textfield",
       "title": "Opposition deadline on or after",
-      "description": "YYYY-MM-DD \u2014 marks still open to opposition",
+      "description": "YYYY-MM-DD — marks still open to opposition",
       "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
     },
     "q": {

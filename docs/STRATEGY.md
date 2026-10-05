@@ -645,3 +645,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   IndexNow pings for the stats pages (5), and a keyless Atom feed per register (5). Why these: they put the differentiating
   product where traffic already is or where no account is needed, and give the §7 rules readings; no new dataset — supply is
   not the constraint. Evidence: `ventures/gankdat/RESEARCH.md` "Research 2026-10-05".
+- 2026-10-05 burn-down: gankdat `apify-change-feed-mode` built — the nine Apify actors whose register has a change feed take
+  `mode: changes` (+ `since`, `change`) and return only the rows added, removed or changed, with the same filters, so a daily
+  schedule on the Store is a register monitor paid per changed row. Why: Apify is the only shelf with runs from outside the
+  repo and the change feeds had never been called by anyone; the seven KV-backed actors have no stable id (the API 404s), so
+  they keep data mode only — a deviation from the item's "every actor". Proof: `changes 7d: … rest N` > 0 on ≥ 5 days in the
+  30 days after CI republishes the actors.

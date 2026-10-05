@@ -53,6 +53,12 @@
       },
       "longitude": {
         "type": ["number", "null"]
+      },
+      "change": {
+        "type": ["string", "null"]
+      },
+      "changed_at": {
+        "type": ["string", "null"]
       }
     }
   },

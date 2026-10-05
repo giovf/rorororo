@@ -8,9 +8,17 @@ the account. Publish: `cd <actor> && npx apify-cli push` with `APIFY_TOKEN` set.
 `GANKDAT_API_KEY=… APIFY_LOCAL_STORAGE_DIR=./storage node src/main.mjs` with
 `storage/key_value_stores/default/INPUT.json`.
 
+**Changes mode** (2026-10-05): the nine actors whose source has a change feed (a stable record id —
+`hasChangeFeed` in the registry) take `mode` (`data` | `changes`), `since` (YYYY-MM-DD, default
+7 days back) and `change` (added | removed | changed) and then read `/v1/changes/<slug>` with
+the same filters, pushing each change as the record plus `change` and `changed_at` — a scheduled
+daily run is a register monitor, and the README's "Monitor it" section says so. The other seven
+sources have no feed (the API answers 404), so their inputs do not offer the mode.
+
 Each actor's `.actor/dataset_schema.json` (Apify validates every pushed item against it) and
 `.actor/input_schema.json` (every field is sent as an API query param) must match the source's
-zod `recordSchema` / `queryParams`: `test/apify-schemas.spec.ts` checks both for every folder.
+zod `recordSchema` / `queryParams`: `test/apify-schemas.spec.ts` checks both for every folder, that the feed inputs and fields appear
+exactly on the feed-bearing actors, and that `src/gankdat.mjs` is identical in every folder.
 A type that drifts fails every run — `uk-planning-applications` was flagged "under maintenance"
 by Apify QA on 2026-09-25 because `authority` was declared a string and served as a number.
 

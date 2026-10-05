@@ -1219,13 +1219,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-04T20:19:56.473Z"
+      },
+      {
+        "id": "25",
+        "title": "apify-change-feed-mode: changes mode on the nine feed-bearing Apify actors (mode / since / change inputs → /v1/changes)",
+        "description": "Shared actor client reads /v1/changes/<slug> in changes mode and pushes record + change + changed_at; feed actors offer mode/since/change inputs and a Monitor-it README section; test keeps inputs, dataset fields and the shared client in step. Pipeline item apify-change-feed-mode (score 7), burn-down 2026-10-05.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-05T01:26:51.103Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-04T20:19:56.473Z",
-      "taskCount": 24,
-      "completedCount": 17,
+      "lastModified": "2026-10-05T01:26:51.103Z",
+      "taskCount": 25,
+      "completedCount": 18,
       "tags": [
         "master"
       ]

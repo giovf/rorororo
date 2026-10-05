@@ -1,8 +1,32 @@
 {
-  "title": "UK Care Providers Directory (CQC) \u2014 care homes, GPs, dentists, homecare \u2014 filters",
+  "title": "UK Care Providers Directory (CQC) — care homes, GPs, dentists, homecare — filters",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
+    "mode": {
+      "title": "Mode",
+      "type": "string",
+      "description": "Current records (default), or only the records added, removed or changed since a date — schedule a daily run in changes mode to monitor the register and pay only for what changed.",
+      "editor": "select",
+      "enum": ["data", "changes"],
+      "enumTitles": ["Current records", "Changes since a date (monitor)"],
+      "default": "data"
+    },
+    "since": {
+      "title": "Changes since",
+      "type": "string",
+      "description": "Changes mode only: YYYY-MM-DD. Default: the last 7 days. The feed keeps 90 days.",
+      "editor": "textfield",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "change": {
+      "title": "Change type",
+      "type": "string",
+      "description": "Changes mode only: one kind of change. Default: all three.",
+      "editor": "select",
+      "enum": ["added", "removed", "changed"],
+      "enumTitles": ["Added to the register", "Removed from the register", "Changed"]
+    },
     "service_types": {
       "title": "Service type contains",
       "type": "string",
@@ -24,7 +48,7 @@
     "region": {
       "title": "Region contains",
       "type": "string",
-      "description": "London, South East, North West, Yorkshire & Humberside, \u2026",
+      "description": "London, South East, North West, Yorkshire & Humberside, …",
       "editor": "textfield"
     },
     "local_authority": {
