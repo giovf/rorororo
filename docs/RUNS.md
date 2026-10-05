@@ -639,3 +639,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 22:48 | burn-down | Group is workflow + event + ref, cancel-in-progress: a push never cancels a cron run; files via docs/ci/
 - 2026-10-05 22:48 | burn-down | Relay README step 3 + five prompts: a run cancelled unstarted is re-fired by workflow_dispatch
 - 2026-10-05 22:48 | burn-down | Queue: foundry ci-runs-never-acquired done; next buildable is pre-push-format-gate (6)
+- 2026-10-05 22:52 | burn-down | Foundry pre-push-format-gate: .githooks/pre-push re-checks Prettier, ESLint, runs cap, pipeline on the range
+- 2026-10-05 22:52 | burn-down | Armed by package.json prepare on every npm ci; CI and SKIP_HOOKS=1 skip it; seeded bad file rejected
+- 2026-10-05 22:52 | burn-down | Queue: foundry pre-push-format-gate done; foundry has triage-run-failed-reason (4) left

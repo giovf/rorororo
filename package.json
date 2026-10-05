@@ -34,7 +34,8 @@
     "runner-refresh": "npm run runner-refresh -w @foundry/gankdat",
     "refresh-errors": "node --disable-warning=ExperimentalWarning scripts/refresh-errors-to-queue.ts",
     "handoffs": "node --disable-warning=ExperimentalWarning scripts/handoffs.ts",
-    "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts"
+    "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts",
+    "prepare": "git config core.hooksPath .githooks"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

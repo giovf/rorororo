@@ -1,0 +1,33 @@
+#!/bin/sh
+# Pre-push gate — armed in every clone by `npm ci` (package.json "prepare": git config core.hooksPath .githooks).
+# Foundry `pre-push-format-gate` (2026-10-05): three red `check` runs on main in two days, each a push after an
+# edit made once `npm run check` (6–16 min) had already passed. This re-checks, in well under a minute, what such
+# an edit breaks: Prettier and ESLint on the files about to be pushed, the run-log cap and the pipeline files.
+# Typecheck and tests stay with `npm run check`. CI never runs it (GitHub sets CI); SKIP_HOOKS=1 bypasses it.
+[ -n "$CI" ] && exit 0
+[ "$SKIP_HOOKS" = "1" ] && exit 0
+zero=0000000000000000000000000000000000000000
+files=""
+while read -r lref lsha rref rsha; do
+  [ "$lsha" = "$zero" ] && continue
+  if [ "$rsha" != "$zero" ] && git cat-file -e "$rsha" 2>/dev/null; then
+    base="$rsha"
+  else
+    base=$(git merge-base "$lsha" origin/main 2>/dev/null || echo "$lsha~1")
+  fi
+  files="$files
+$(git diff --name-only --diff-filter=ACMR "$base" "$lsha" 2>/dev/null)"
+done
+files=$(printf '%s\n' "$files" | sed '/^$/d' | sort -u | while read -r f; do [ -f "$f" ] && printf '%s\n' "$f"; done)
+[ -z "$files" ] && exit 0
+echo "pre-push: checking $(printf '%s\n' "$files" | wc -l | tr -d ' ') changed file(s)"
+printf '%s\n' "$files" | xargs npx prettier --check --ignore-unknown \
+  || { echo "pre-push: Prettier would turn the check workflow red — run npm run format, amend, push again"; exit 1; }
+code=$(printf '%s\n' "$files" | grep -E '\.(ts|tsx|js|mjs|cjs)$' || true)
+if [ -n "$code" ]; then
+  printf '%s\n' "$code" | xargs npx eslint --no-warn-ignored \
+    || { echo "pre-push: ESLint would turn the check workflow red"; exit 1; }
+fi
+case "$files" in *docs/RUNS.md*|*docs/STRATEGY.md*) npm run -s runs || exit 1 ;; esac
+case "$files" in *docs/pipeline/*) npm run -s pipeline >/dev/null || exit 1 ;; esac
+exit 0

@@ -54,6 +54,8 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
 - **Atomic pushes:** build fully, run the gates, then ONE commit and push. Never push partial
   work "to save progress" — a session can be cut off by usage limits at any moment, and the
   sandbox is discarded, which is safe only if nothing half-done reached `main`.
+  `.githooks/pre-push` (armed by `npm ci`) re-checks Prettier, ESLint, the run-log cap and the pipeline files on
+  the pushed range, because the edit made after `npm run check` is what turned `main` red three times in two days.
 - **Interruptible side effects:** anything that changes live state and must be undone later
   (temporary cron triggers, schedule edits) is restored by CI's daily self-heal if the session
   dies (`ventures/gankdat/scripts/schedules.mjs`). Apply D1 migrations before pushing code that

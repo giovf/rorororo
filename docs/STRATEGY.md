@@ -774,3 +774,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   and a relay run cancelled unstarted is re-fired by `workflow_dispatch` instead of waited on. Why: 20 of 60 push runs
   died unstarted this evening and each push queued six more. Proof: under 5% of push runs cancelled with no steps over a
   week; no relay request unanswered beyond 20 min without a re-fire.
+- 2026-10-05 burn-down (22:00 run, 3rd item): foundry `pre-push-format-gate` (6) built — a committed pre-push hook, armed by
+  `npm ci` in every sandbox, re-checks Prettier and ESLint on the pushed files plus the run-log cap and pipeline files, so
+  an edit made after the long gate cannot turn `main` red (three times in two days). No new dependency, CI unaffected.
+  Proof: zero format or lint failures of `check` on main for 30 days.
