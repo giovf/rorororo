@@ -1,0 +1,64 @@
+{
+  "request": "hk-glasp-hypothesis",
+  "fetched_at": "2026-10-05T18:38:39.004Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://web.hypothes.is/help/exporting-and-importing-annotations/",
+      "fetched_at": "2026-10-05T18:38:16.800Z",
+      "status": 200,
+      "final_url": "https://web.hypothes.is/help/exporting-and-importing-annotations/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "76609"
+      },
+      "file": "1.html",
+      "bytes": 304759,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://blog.glasp.co/export-your-glasp-highlights-to-note-taking-apps/",
+      "fetched_at": "2026-10-05T18:38:17.208Z",
+      "status": 200,
+      "final_url": "https://blog.glasp.co/export-your-glasp-highlights-to-note-taking-apps/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "6698",
+        "etag": "W/\"62e9-zTZg4jE0nz54p6tfRtFEt7UgZHU\""
+      },
+      "file": "2.html",
+      "bytes": 25321,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://blog.glasp.co/faqs/",
+      "fetched_at": "2026-10-05T18:38:17.366Z",
+      "status": 200,
+      "final_url": "https://blog.glasp.co/faqs/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "17918",
+        "etag": "W/\"1aaeb-0YUKH37Kfx1XzQkq5foGN2FYMKo\""
+      },
+      "file": "3.html",
+      "bytes": 109291,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://web.hypothes.is/blog/reusing-annotations-with-export-import/",
+      "fetched_at": "2026-10-05T18:38:17.377Z",
+      "status": 200,
+      "final_url": "https://web.hypothes.is/blog/reusing-annotations-with-export-import/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "74402"
+      },
+      "file": "4.html",
+      "bytes": 296225,
+      "truncated": false
+    }
+  ]
+}
