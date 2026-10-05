@@ -13,9 +13,10 @@
 - **Price:** $12 one-time through Figma checkout (Figma takes 15%); free tier built into the plugin.
 - **Metrics sources:** `https://www.figma.com/api/plugins/1682711656065145288/versions`,
   `https://fig-stats.com/plugins/1682711656065145288`
-- **Search rank queries:** styles to variables; link to variables; unused variables; variables toolkit
+- **Search rank queries:** styles to variables; link to variables; unused variables; variables toolkit; relink variables; swap variables; library variables
   (read by `scripts/store-metrics.ts` from the 06:45 `store metrics` runner: each Daily check row carries
-  `rank: <query> <position>/<hits>` from Figma's search API, 2026-10-01; baseline day 10: 75/1234, 13/163, 1/48, 8/45).
+  `rank: <query> <position>/<hits>` from Figma's search API, 2026-10-01; baseline day 10: 75/1234, 13/163, 1/48, 8/45;
+  the three relink/swap/library queries were added 2026-10-05 so the day-30 review has the series from before the Relink tab goes live).
 - **Community resource uuid (for comments):** `b376009b-9558-43a8-9080-a6d0d2518717` (read 2026-09-22 from
   `https://www.figma.com/api/search/resources?query=Variables%20Toolkit&resource_type=plugin&sort=relevancy`;
   comments at `https://www.figma.com/api/resources/<uuid>/comments?page_size=50`).

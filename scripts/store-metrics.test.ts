@@ -302,12 +302,15 @@ const search = (ids: string[], totalHits = ids.length): string =>
 const OURS = '1682711656065145288';
 
 describe('rankQueriesOf', () => {
-  it('reads the four buyer queries from the real variables-toolkit STORE.md', () => {
+  it('reads the seven buyer queries from the real variables-toolkit STORE.md', () => {
     expect(rankQueriesOf(readFileSync('ventures/variables-toolkit/STORE.md', 'utf8'))).toEqual([
       'styles to variables',
       'link to variables',
       'unused variables',
       'variables toolkit',
+      'relink variables',
+      'swap variables',
+      'library variables',
     ]);
   });
   it('is empty for a STORE.md without the line', () => {

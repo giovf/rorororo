@@ -626,3 +626,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 21:20 | burn-down | 4 unit tests (11 relink total); dev and release builds pass; UI labels, summary and tooltip follow direction
 - 2026-10-05 21:20 | burn-down | Listing, STORE.md note, how-to page section + limits, RESEARCH §10 outcome; ships with the 019 republish
 - 2026-10-05 21:20 | burn-down | Queue: variables-toolkit relink-to-local done; next buildable is search-rank-relink-queries (3)
+- 2026-10-05 21:30 | burn-down | STORE.md rank queries + relink variables, swap variables, library variables; 06:45 row picks them up
+- 2026-10-05 21:30 | burn-down | Queue: variables-toolkit search-rank-relink-queries done; VT has only dated/blocked items left

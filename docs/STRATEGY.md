@@ -759,3 +759,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   forum's "remap library variables to local" request (44372, 48877, 11143) that only a third-party swap plugin answers.
   Why: reuses the by-name planner and site walker, 0.5 days, rides the pending 019 republish at zero owner minutes. Proof:
   ≥ 1 comment or purchase naming relink-to-local within 30 days of the version going live.
+- 2026-10-05 burn-down: three relink/swap/library search queries added to Variables Toolkit's rank series so the day-30
+  review (2026-10-21) reads the Relink tab's effect against a baseline, not a hand snapshot. Proof: three more rank:
+  fields on every Daily check row from 2026-10-06.
