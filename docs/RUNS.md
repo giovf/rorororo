@@ -598,3 +598,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 19:22 | burn-down | Locked band ignores the mouse, moves on click/tap; old saves backfilled; 1 unit test + e2e 1b (4 checks)
 - 2026-10-05 19:22 | burn-down | Listing, AMO notes, welcome, ReadFocus page, reading-ruler.html say what the ruler now does
 - 2026-10-05 19:22 | burn-down | Handoff amended: sign and upload 0.3.0 (was 0.2.1); queue read-focus ruler-controls done
+- 2026-10-05 19:28 | burn-down | Heal: Prettier rewrite of the two landing pages and e2e/run.ts; the 0.3.0 push had failed the format check
