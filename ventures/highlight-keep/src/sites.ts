@@ -1,7 +1,7 @@
 /**
  * Per-site enablement without broad host permissions: when the user switches a site on,
  * Chrome asks once for that origin; we then register a content script for it (persisted
- * across restarts) and inject into the current tab right away.
+ * across restarts, every frame the permission covers) and inject into the current tab right away.
  *
  * "Highlight on every site" is the same mechanism once: the user asks for the optional
  * http/https host permission the manifest declares, and one content script is registered
@@ -31,7 +31,7 @@ async function register(id: string, matches: string[]): Promise<void> {
   const existing = await chrome.scripting.getRegisteredContentScripts({ ids: [id] });
   if (existing.length > 0) return;
   await chrome.scripting.registerContentScripts([
-    { id, matches, js: ['content.js'], css: ['content.css'], runAt: 'document_idle', persistAcrossSessions: true },
+    { id, matches, js: ['content.js'], css: ['content.css'], runAt: 'document_idle', allFrames: true, persistAcrossSessions: true },
   ]);
 }
 
@@ -45,8 +45,8 @@ export const unregisterSite = (hostname: string): Promise<void> => unregister(sc
 export const registerAllSites = (): Promise<void> => register(ALL_SCRIPT_ID, ALL_ORIGINS);
 export const unregisterAllSites = (): Promise<void> => unregister(ALL_SCRIPT_ID);
 
-/** Injects into an already-open tab (the content script guards against running twice). */
+/** Injects into an already-open tab, frames included (the content script guards against running twice). */
 export async function injectNow(tabId: number): Promise<void> {
-  await chrome.scripting.insertCSS({ target: { tabId }, files: ['content.css'] });
-  await chrome.scripting.executeScript({ target: { tabId }, files: ['content.js'] });
+  await chrome.scripting.insertCSS({ target: { tabId, allFrames: true }, files: ['content.css'] });
+  await chrome.scripting.executeScript({ target: { tabId, allFrames: true }, files: ['content.js'] });
 }

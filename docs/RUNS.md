@@ -570,3 +570,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 17:22 | burn-down | 3 settings unit tests + e2e section 7: never-enabled localhost gets the highlighter, restores; off unregisters
 - 2026-10-05 17:22 | burn-down | Listing, AMO notes (ships in 0.4.0), welcome, landing and comparison page: "or every site with one setting"
 - 2026-10-05 17:22 | burn-down | Queue: highlight-keep all-sites-mode done; next buildable is subframe-highlighting (4)
+- 2026-10-05 17:34 | burn-down | Highlight Keep: content script runs in every frame (allFrames on registration and injection); frame URL is the key
+- 2026-10-05 17:34 | burn-down | Shadow DOM: text walk descends open shadow roots; selection via getComposedRanges; mark styles adopted into the root
+- 2026-10-05 17:34 | burn-down | Mark lookup covers shadow roots (recolour, note, remove); pointer target read from composedPath
+- 2026-10-05 17:34 | burn-down | e2e section 8 (6 checks): iframe and shadow-root highlights created, styled, stored under the frame URL, restored
+- 2026-10-05 17:34 | burn-down | Listing and AMO notes: works inside embedded frames and web components (ships in 0.4.0)
+- 2026-10-05 17:34 | burn-down | Queue: highlight-keep subframe-highlighting done; next buildable is export-markdown-files-readwise-csv (4)
+- 2026-10-05 17:34 | burn-down | Stopping for time (~40 min + gates): all-sites-mode and subframe-highlighting built this run

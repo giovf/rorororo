@@ -689,3 +689,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   "enable on every new website … annoying"). Per-site stays the default and the privacy stance; listing copy says so.
   Ships inside the unreleased 0.4.0 (handoff amended). Proof: the setting named in a review or support mail; no store
   policy flag on the next review. Built on the hourly burn while the 17:00 build slot took the Weava import.
+- 2026-10-05 burn-down (17:00 run, 2nd item): highlight-keep `subframe-highlighting` (4) built — the content script now runs
+  in every frame (`allFrames` on the registered scripts and on the one-off injection; a frame's highlights are keyed by
+  the frame's own URL, so restores find them), the text walk descends open shadow roots, a selection inside one is read
+  through `getComposedRanges` (Chrome's `root.getSelection()` as fallback) and marks in a shadow root get the mark
+  styles adopted into that root, which a content script's CSS never reaches. Why: the one gap named in otherwise-liked
+  rivals (Glasp, Super Simple) in the 2026-09-19 review sample; an embedded reader or a web-component page did nothing
+  before. Six e2e checks on a fixture iframe and shadow paragraph. Ships inside the unreleased 0.4.0. Proof: zero
+  iframe/shadow complaints in the first reviews.

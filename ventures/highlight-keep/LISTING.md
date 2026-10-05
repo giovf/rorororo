@@ -7,7 +7,7 @@
 
 Mark what matters, and keep it.
 
-• Highlight any text on any page — it's there again next visit, anchored to the words, so it survives the page changing.
+• Highlight any text on any page — it's there again next visit, anchored to the words, so it survives the page changing. Works inside embedded frames and web components too.
 • Click a highlight to change its colour, add a note, or remove it.
 • Copy a page's highlights as Markdown (works with Obsidian, Notion, anything).
 • PDFs on the web too: open one in the built-in viewer page from the popup and highlight it like any page.

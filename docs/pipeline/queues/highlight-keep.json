@@ -131,8 +131,9 @@
       "effort_days": 0.3,
       "proof": "a fixture-backed e2e section passing; zero iframe/shadow complaints in the first reviews",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     },
     {
       "id": "export-markdown-files-readwise-csv",

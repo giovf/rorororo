@@ -1,19 +1,20 @@
 // End-to-end check of Highlight Keep in a real Chromium: create highlights by selecting
 // text, restore them after reload (and after the page text shifts), recolour/note/remove,
-// free-tier gating, Markdown export, the "on for every site" switch.
+// free-tier gating, Markdown export, the "on for every site" switch, frames and shadow DOM.
 import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
 import process from 'node:process';
-import { chromium, type Page } from 'playwright';
+import { chromium, type Frame, type Page } from 'playwright';
 import { issueLicense } from '@foundry/licensing';
 
 const here = path.dirname(new URL(import.meta.url).pathname);
 const ext = path.join(here, '..', 'dist-test');
 const HOST = '127.0.0.1';
 let fixture = await readFile(path.join(here, 'fixture.html'), 'utf8');
+const framePage = await readFile(path.join(here, 'frame.html'), 'utf8');
 const fixturePdf = await readFile(path.join(here, 'fixture.pdf'));
 const server = createServer((req, res) => {
   if (req.url === '/doc.pdf') {
@@ -22,7 +23,7 @@ const server = createServer((req, res) => {
     return;
   }
   res.setHeader('content-type', 'text/html; charset=utf-8');
-  res.end(fixture);
+  res.end(req.url === '/frame.html' ? framePage : fixture);
 });
 await new Promise<void>((r) => server.listen(0, HOST, r));
 const url = `http://${HOST}:${(server.address() as { port: number }).port}/`;
@@ -42,7 +43,7 @@ const check = (name: string, ok: boolean, detail = ''): void => {
   if (!ok) failures++;
 };
 
-async function selectText(page: Page, selector: string, text: string): Promise<void> {
+async function selectText(page: Page | Frame, selector: string, text: string): Promise<void> {
   await page.evaluate(
     ([sel, t]) => {
       const el = document.querySelector(sel)!;
@@ -327,6 +328,94 @@ try {
   check('switching every-site off unregisters the script', afterOff.length === 0);
   await otherPage.close();
   await popup.close();
+
+  // 8. Frames and shadow DOM: the content script runs in every frame (all_frames) and a highlight
+  //    made in an embedded page is stored under the frame's own URL; text inside an open shadow
+  //    root is indexed, selectable, painted (styles adopted into the root) and restored.
+  await page.reload();
+  const frame = await (await page.waitForSelector('#frame')).contentFrame();
+  if (!frame) throw new Error('fixture iframe did not load');
+  await frame.waitForSelector('.hk-ui', { state: 'attached', timeout: 4000 });
+  await selectText(frame, '#f1', 'keeps its own highlights');
+  await frame.waitForSelector('.hk-toolbar:not([hidden])', { timeout: 3000 });
+  await frame.click('.hk-toolbar .hk-dot');
+  await frame.waitForSelector('mark.hk', { timeout: 3000 });
+  check(
+    'highlight created inside the iframe',
+    (await frame.locator('mark.hk').textContent()) === 'keeps its own highlights',
+  );
+  const frameStored = await sw.evaluate(async (u) => {
+    const all = await chrome.storage.local.get(null);
+    const rec = all[`page:${u}`] as { highlights: { anchor: { quote: string } }[] } | undefined;
+    return rec?.highlights[0]?.anchor.quote ?? null;
+  }, `${url}frame.html`);
+  check(
+    'iframe highlight stored under the frame URL',
+    frameStored === 'keeps its own highlights',
+    String(frameStored),
+  );
+
+  await page.evaluate((t) => {
+    const root = document.getElementById('host')!.shadowRoot!;
+    const p = root.getElementById('sp')!;
+    const node = p.firstChild as Text;
+    const i = node.data.indexOf(t);
+    const range = document.createRange();
+    range.setStart(node, i);
+    range.setEnd(node, i + t.length);
+    const s = window.getSelection()!;
+    s.removeAllRanges();
+    s.addRange(range);
+    const r = p.getBoundingClientRect();
+    p.dispatchEvent(
+      new MouseEvent('mouseup', {
+        bubbles: true,
+        composed: true,
+        clientX: r.left + 20,
+        clientY: r.top + 10,
+      }),
+    );
+  }, 'inside a web component');
+  await page.waitForSelector('.hk-toolbar:not([hidden])', { timeout: 3000 });
+  await page.click('.hk-toolbar .hk-dot');
+  const shadowMark = (): Promise<{ text: string; bg: string } | null> =>
+    page.evaluate(() => {
+      const m = document.getElementById('host')?.shadowRoot?.querySelector('mark.hk');
+      return m ? { text: m.textContent ?? '', bg: getComputedStyle(m).backgroundColor } : null;
+    });
+  await page.waitForFunction(
+    () => document.getElementById('host')?.shadowRoot?.querySelector('mark.hk') !== null,
+    undefined,
+    { timeout: 3000 },
+  );
+  const sm = await shadowMark();
+  check(
+    'highlight created inside the shadow root',
+    sm?.text === 'inside a web component',
+    JSON.stringify(sm),
+  );
+  check(
+    'shadow-root mark is styled (styles adopted into the root)',
+    sm?.bg === 'rgb(253, 224, 71)',
+    sm?.bg ?? '',
+  );
+  await page.reload();
+  await page.waitForFunction(
+    () => document.getElementById('host')?.shadowRoot?.querySelector('mark.hk') !== null,
+    undefined,
+    { timeout: 4000 },
+  );
+  check(
+    'shadow-root highlight restored after reload',
+    (await shadowMark())?.text === 'inside a web component',
+  );
+  const frame2 = await (await page.waitForSelector('#frame')).contentFrame();
+  await frame2!.waitForSelector('mark.hk', { timeout: 4000 });
+  check(
+    'iframe highlight restored after reload',
+    (await frame2!.locator('mark.hk').textContent()) === 'keeps its own highlights',
+  );
+  await page.screenshot({ path: path.join(here, 'out', '05-frames-shadow.png') });
 } finally {
   await context.close();
   server.close();

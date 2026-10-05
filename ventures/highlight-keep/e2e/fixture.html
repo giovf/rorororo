@@ -28,5 +28,11 @@
       This third paragraph exists so that a second highlight has somewhere to live, far from the
       first one.
     </p>
+    <iframe id="frame" src="/frame.html" title="embedded reader" width="100%" height="120"></iframe>
+    <div id="host"></div>
+    <script>
+      document.getElementById('host').attachShadow({ mode: 'open' }).innerHTML =
+        '<p id="sp">A paragraph inside a web component should highlight like any other text.</p>';
+    </script>
   </body>
 </html>

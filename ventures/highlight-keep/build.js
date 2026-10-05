@@ -62,6 +62,7 @@ async function statics() {
         js: ['content.js'],
         css: ['content.css'],
         run_at: 'document_idle',
+        all_frames: true,
       },
     ];
   }
