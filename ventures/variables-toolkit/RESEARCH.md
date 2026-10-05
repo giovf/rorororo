@@ -212,6 +212,7 @@ variables; (2) pick a subset of styles to convert; (3) toast with counts after e
 | 2026-10-04 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 4, unique_run_count 1, comment_count 0, purchase_count 0, version 281046 (2026-09-28); rank: styles to variables 78/1242, link to variables 13/165, unused variables 1/48, variables toolkit 8/45 |
 | 2026-10-04 | Comments checked (07:00 metrics routine) | — | — | — | no new comments (relay fetch of comments API: empty list) |
 | 2026-10-05 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 6, unique_run_count 2, comment_count 0, purchase_count 0, version 281046 (2026-09-28); rank: styles to variables 70/1240, link to variables 11/164, unused variables 1/48, variables toolkit 8/45 |
+| 2026-10-05 | Comments checked (07:00 metrics routine) | — | — | — | no new comments (relay fetch of comments API: empty list) |
 
 ## 7. Post-launch measurement (day 1 / 7 / 30)
 
