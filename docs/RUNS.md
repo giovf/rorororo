@@ -536,3 +536,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 01:28 | burn-down | Queue: gankdat apify-change-feed-mode done; next buildable is apify-runs-per-actor (5)
 - 2026-10-05 01:35 | burn-down | metrics.mjs: `apify 30d by actor: name N; 0: …` — per-actor runs by other accounts in the Daily numbers row
 - 2026-10-05 01:35 | burn-down | Queue: gankdat apify-runs-per-actor done; next buildable is indexnow-stats-pages (5)
+- 2026-10-05 01:41 | burn-down | Stopping for time (~30 min + gates): gankdat research + 2 items built; next buildable is indexnow-stats-pages (5)
