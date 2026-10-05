@@ -223,6 +223,16 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   refresh with the parent (`aggregateFacets`, a 4-minute budget per source, the rest 503
   "being prepared" until tomorrow) and indexed from the parent page and `sitemap.xml`.
   First use: 45 Nice-class pages for `uk-trademark-journal` (`NICE_CLASSES` in the source).
+- **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
+  `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
+  facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50
+  entries, newest first, each entry linking the stats page and the key sign-up — the change
+  feed on every RSS shelf (Feedly, Inoreader, Slack/Teams RSS, the Zapier/Make/n8n/Power
+  Automate triggers) with the key as the upgrade. Rendered from `source_changes` at most once
+  an hour per feed (KV `feed:*`), rate limited per IP like `/stats`, advertised by
+  `<link rel="alternate">` on the stats pages; `rest_feed` Analytics Engine point (UA, path,
+  hit/miss, slug) → `feeds 30d:` in the Daily numbers row. Entry titles are dataset-agnostic
+  (first two short string fields) — the isolation rule holds.
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05): after each cron wave `refreshAllSources` POSTs
   the parent and facet stats URLs of the sources that refreshed OK to `api.indexnow.org`
   (≤ 10,000 a call, de-duplicated, never throws), proven by the key file the Worker serves at

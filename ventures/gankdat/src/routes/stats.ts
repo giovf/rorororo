@@ -190,7 +190,8 @@ function facetPageHtml(
 removed and changed rows: <code>GET /v1/changes/${esc(source.slug)}?${esc(query)}&amp;since=YYYY-MM-DD</code>
 (add <code>q=&lt;word&gt;</code> for a keyword watch, <code>change=added</code> for new publications only),
 or the MCP tool <code>get_changes</code> with <code>filter: {"${esc(facet.field)}": "${esc(page.value)}"}</code>.
-One credit per page — a weekly watch on every ${esc(facet.segment)} fits the free tier.</p>`
+One credit per page — a weekly watch on every ${esc(facet.segment)} fits the free tier.
+No key at all: subscribe to the <a href="/feeds/${esc(source.slug)}/${esc(facet.segment)}/${esc(page.value)}.xml">Atom feed</a> of this ${esc(facet.segment)} (last 7 days) in any feed reader, Slack, Teams, Zapier, Make or n8n.</p>`
     : '';
   return `<!doctype html>
 <html lang="en">
@@ -201,6 +202,7 @@ One credit per page — a weekly watch on every ${esc(facet.segment)} fits the f
 <title>${esc(title)} — statistics | gankdat</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${pageUrl}">
+${hasChangeFeed(source) ? `<link rel="alternate" type="application/atom+xml" title="${esc(title)} — changes" href="${baseUrl}/feeds/${source.slug}/${facet.segment}/${encodeURIComponent(page.value)}.xml">` : ''}
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="gankdat">
 <meta property="og:title" content="${esc(title)} — statistics">
@@ -258,6 +260,7 @@ function pageHtml(
 <title>${esc(source.title)} — statistics | gankdat</title>
 <meta name="description" content="${esc(description)}">
 <link rel="canonical" href="${baseUrl}/stats/${source.slug}">
+${hasChangeFeed(source) ? `<link rel="alternate" type="application/atom+xml" title="${esc(source.title)} — changes" href="${baseUrl}/feeds/${source.slug}.xml">` : ''}
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="gankdat">
 <meta property="og:title" content="${esc(source.title)} — statistics">

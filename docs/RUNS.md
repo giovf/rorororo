@@ -541,3 +541,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 02:25 | burn-down | Runner-fed sources ping IndexNow from runner-refresh.mjs; `indexnow:` status + URLs in the Daily numbers row
 - 2026-10-05 02:25 | burn-down | 9 tests: key file route, URL list, chunking/rejection, wave hook pings only sources that refreshed OK
 - 2026-10-05 02:25 | burn-down | Queue: gankdat indexnow-stats-pages done; indexnow-day-30-read queued (2026-11-05); next is change-feed-rss (5)
+- 2026-10-05 02:52 | burn-down | Keyless Atom feeds: /feeds/<slug>.xml and per facet value, 7 days of register changes, ≤ 50 entries
+- 2026-10-05 02:52 | burn-down | Feeds cached 1 h in KV, rate limited per IP, rel=alternate on stats pages; `feeds 30d:` in the metrics row
+- 2026-10-05 02:52 | burn-down | 5 tests: Atom shape, dataset-agnostic titles, facet URLs, live feed from seeded changes, 404s
+- 2026-10-05 02:52 | burn-down | Queue: gankdat change-feed-rss done; day-30 read folded into indexnow-day-30-read (2026-11-05)
+- 2026-10-05 02:52 | burn-down | Stopping for time (~40 min + gates): IndexNow + Atom feeds built; gankdat has no buildable item until 10-08

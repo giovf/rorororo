@@ -304,12 +304,13 @@
     {
       "id": "change-feed-rss",
       "title": "Keyless Atom feed per register and facet (`/feeds/<slug>.xml`, last 7 days, ≤ 50 entries) — the change feed on every RSS shelf",
-      "why": "Research 2026-10-05: every delivery path for the change feeds needs an API key or an MCP client, so the product no rival sells is invisible to the tools people already use to watch things: feed readers (Feedly, Inoreader), the Slack and Teams RSS apps, and the RSS triggers in Zapier, Make, n8n and Power Automate — four automation shelves reached without building a connector or opening an account. Watch services charge £180–320 per mark per year to deliver the trade-mark journal by email (exchange 2026-W39); a Nice-class feed is that watch for free with the key as the upgrade. Do: `/feeds/<slug>.xml` (+ `/feeds/<slug>/<segment>/<value>.xml` for facets) rendered from the precomputed change rows at refresh and cached in KV (one D1 read per source per day), each entry linking the stats page and the sign-up, `<link rel=alternate>` on the stats pages, rate limited like preview, an Analytics Engine `rest_feed` point (UA + slug). Score: evidence 2 × reach 2 ÷ 0.5 days = 8, discounted to 5 — a keyless feed converting to a key is unproven.",
+      "why": "Research 2026-10-05: every delivery path for the change feeds needs an API key or an MCP client, so the product no rival sells is invisible to the tools people already use to watch things: feed readers (Feedly, Inoreader), the Slack and Teams RSS apps, and the RSS triggers in Zapier, Make, n8n and Power Automate — four automation shelves reached without building a connector or opening an account. Watch services charge £180–320 per mark per year to deliver the trade-mark journal by email (exchange 2026-W39); a Nice-class feed is that watch for free with the key as the upgrade. Do: `/feeds/<slug>.xml` (+ `/feeds/<slug>/<segment>/<value>.xml` for facets) rendered from the precomputed change rows at refresh and cached in KV (one D1 read per source per day), each entry linking the stats page and the sign-up, `<link rel=alternate>` on the stats pages, rate limited like preview, an Analytics Engine `rest_feed` point (UA + slug). Score: evidence 2 × reach 2 ÷ 0.5 days = 8, discounted to 5 — a keyless feed converting to a key is unproven. Built 2026-10-05 (burn-down): `src/routes/feeds.ts` (Atom 1.0, 7 days, ≤ 50 entries, KV cache 1 h per feed, isolate rate limit 120/min per IP, `rest_feed` AE point with UA/path/hit-miss/slug), `<link rel=alternate>` + a subscribe sentence on the stats pages, `feeds 30d:` in metrics.mjs; 5 tests. Deviation from the item text: rendered on first request each hour rather than at refresh (no D1 read for feeds nobody fetches; the waves finish by 06:20 so readers see the day's diff by 07:20).",
       "effort_days": 0.4,
       "proof": "≥ 20 distinct feed-reader/automation user agents on /feeds in 30 days and ≥ 1 key issued with a /feeds referrer",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     },
     {
       "id": "d1-delta-cost-check",
@@ -324,8 +325,8 @@
     },
     {
       "id": "indexnow-day-30-read",
-      "title": "Day-30 read of IndexNow: Bing `site:gankdat.com/stats` page count and the bing/duckduckgo referrer share on /stats",
-      "why": "Proof of `indexnow-stats-pages` (built 2026-10-05): ≥ 50 /stats pages in Bing's index on 2026-11-05. Do: a Bing search `site:gankdat.com/stats` through the relay (add bing.com to scripts/fetch-relay.mjs if needed) or WebSearch, the `indexnow:` statuses across the 30 rows (any 422/429 days), and the Analytics Engine Referer kinds on /stats if the traffic point carries them; record the count in RESEARCH.md under the 2026-10-05 build note. Decide: keep (≥ 50 pages), or if < 10 pages despite 202s, check the key file from outside and whether Bing drops the facet pages as thin — then queue a content fix, never a second submitter.",
+      "title": "Day-30 read of IndexNow and the Atom feeds: Bing `site:gankdat.com/stats` page count, bing/duckduckgo referrer share, /feeds user agents and any key with a /feeds referrer",
+      "why": "Proof of `indexnow-stats-pages` (built 2026-10-05): ≥ 50 /stats pages in Bing's index on 2026-11-05. Do: a Bing search `site:gankdat.com/stats` through the relay (add bing.com to scripts/fetch-relay.mjs if needed) or WebSearch, the `indexnow:` statuses across the 30 rows (any 422/429 days), and the Analytics Engine Referer kinds on /stats if the traffic point carries them; record the count in RESEARCH.md under the 2026-10-05 build note. Decide: keep (≥ 50 pages), or if < 10 pages despite 202s, check the key file from outside and whether Bing drops the facet pages as thin — then queue a content fix, never a second submitter. Also proof of `change-feed-rss` (built the same night): the `feeds 30d:` readings across the rows — ≥ 20 distinct user agents and ≥ 1 key issued with a /feeds referrer keeps the feeds; fewer means list them on the feed shelves (a Feedly/Inoreader discovery check, the n8n/Zapier RSS-trigger docs pages) before touching the format.",
       "effort_days": 0.05,
       "proof": "page count and referrer share recorded in RESEARCH.md; keep/fix decision in STRATEGY §8",
       "score": 4,

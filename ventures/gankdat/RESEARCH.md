@@ -138,6 +138,16 @@ key file, 429 = throttled, `none/24h` = no wave sent anything); the day-30 read 
 reads the `bing`/`duckduckgo` referrer share — proof is ≥ 50 pages. Not a Google signal: Google
 does not read IndexNow, so `search-console-stats-indexing` stays blocked on the owner.
 
+**Built 2026-10-05 — `change-feed-rss`** (burn-down): every register dataset now has a keyless
+Atom feed (`/feeds/<slug>.xml`, plus one per facet value such as
+`/feeds/uk-trademark-journal/class/09.xml`) of its last 7 days of changes, linked from the stats
+pages with `rel=alternate`, so feed readers and the RSS triggers of Slack, Teams, Zapier, Make,
+n8n and Power Automate can watch a register with no key and no connector. Readings: `feeds 30d:
+N fetches, U user agents, R renders` in the Daily numbers row from 2026-10-06; proof is ≥ 20
+distinct user agents in 30 days and a key issued with a /feeds referrer (the sign-up link in
+every entry carries no tracking — the referrer is the reading). Day-30 read on 2026-11-05 with
+`indexnow-day-30-read`.
+
 Not queued: more datasets (supply is not the constraint — exchange parked items keep their
 triggers), Smithery / n8n node / Snowflake (owner account or £300 MRR triggers unchanged), a
 pricing change (no conversion data to act on). Scores use STRATEGY §5 (evidence × reach ÷ effort)

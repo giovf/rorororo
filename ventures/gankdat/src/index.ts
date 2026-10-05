@@ -23,6 +23,7 @@ import { mcpOriginAllowed, mcpRoute } from './routes/mcp';
 import { oauthRoutes } from './routes/oauth';
 import { llmsRoute } from './routes/llms';
 import { openapiRoute } from './routes/openapi';
+import { feedsRoutes } from './routes/feeds';
 import { statsRoutes } from './routes/stats';
 import { usageRoute } from './routes/usage';
 import { feedbackRoute } from './routes/feedback';
@@ -182,6 +183,8 @@ app.get('/:key{[A-Za-z0-9-]{8,128}\\.txt}', async (c, next) => {
   return c.text(key);
 });
 app.route('/stats', statsRoutes);
+// Keyless Atom feeds of the change feeds (routes/feeds.ts): the register on every RSS shelf.
+app.route('/feeds', feedsRoutes);
 
 app.onError(errorHandler);
 app.notFound(notFoundHandler);

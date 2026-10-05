@@ -158,6 +158,16 @@ const changeFeed = Object.fromEntries(
 const changesMcp = changeFeed.mcp_authed ?? 0;
 const changesRest = changeFeed.rest_changes ?? 0;
 
+// Keyless Atom feeds (build 2026-10-05, queue `change-feed-rss`): proof is ≥ 20 distinct feed-reader /
+// automation user agents on /feeds in 30 days and a key issued with a /feeds referrer, so the row
+// carries the 30-day fetch count and distinct UAs (blob2) plus the cache miss share (blob4).
+const feeds = await ae(
+  "SELECT COUNT(DISTINCT blob2) AS uas, SUM(_sample_interval * double1) AS n, SUM(_sample_interval * double1 * (blob4 = 'miss')) AS misses FROM gankdat_traffic WHERE blob1 = 'rest_feed' AND timestamp > NOW() - INTERVAL '30' DAY",
+).catch(() => null);
+const feedsNote = feeds
+  ? `feeds 30d: ${Math.round(Number(feeds[0]?.n ?? 0))} fetches, ${Math.round(Number(feeds[0]?.uas ?? 0))} user agents, ${Math.round(Number(feeds[0]?.misses ?? 0))} renders`
+  : 'feeds 30d: n/a';
+
 // IndexNow (build 2026-10-05, queue `indexnow-stats-pages`): after each refresh wave the Worker
 // submits the changed /stats pages to api.indexnow.org and writes one `indexnow` point per wave
 // (blob2 = HTTP status, double1 = URLs). 200/202 = accepted; 422 = key file unreadable, 429 =
@@ -491,6 +501,7 @@ const notes = [
   `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${kinds.mcp_preview ?? 0} preview, ${paywall} paywall hits${wantedNote}`,
   `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
   indexnowNote,
+  feedsNote,
   apify
     ? `apify: ${apify.runs} runs (${prevRuns === null ? 'baseline' : `+${apify.runs - prevRuns}/24h`}), 30d: ${apify.runs30} runs (${apify.ours30 === null ? 'ours n/a' : `${apify.ours30} ours, ${apify.runs30 - apify.ours30} others`}), ${apify.users} users/30d, ${apify.publicCount} public`
     : 'apify: n/a',

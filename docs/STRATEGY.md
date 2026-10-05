@@ -661,3 +661,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   since 09-20, and IndexNow needs no account yet feeds Bing, DuckDuckGo, Copilot and ChatGPT search — the shelves where
   agents that "search like humans" find the cite-bait pages. Not a Google signal. Proof: 200/202 daily from the 10-06 row;
   Bing `site:gankdat.com/stats` ≥ 50 pages at the 2026-11-05 read (`indexnow-day-30-read`).
+- 2026-10-05 burn-down: gankdat `change-feed-rss` built — every register dataset has a keyless Atom feed of its last 7 days
+  of changes (`/feeds/<slug>.xml`, plus one per facet value), linked from the stats pages, so feed readers and the RSS
+  triggers of Slack, Teams, Zapier, Make, n8n and Power Automate watch a register with no key and no connector; every
+  entry links the stats page and the key sign-up. Why: the change feeds — the one product no rival sells — had been
+  called by nobody because every path needed a key or an MCP client; this puts them on four automation shelves without
+  an account. Rendered on request once an hour (KV), not at refresh — no D1 cost for feeds nobody reads. Proof: ≥ 20
+  distinct user agents on /feeds in 30 days and a key issued with a /feeds referrer (`feeds 30d:` row note; 11-05 read).
