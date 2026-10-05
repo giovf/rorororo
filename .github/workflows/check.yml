@@ -24,6 +24,14 @@ on:
     - cron: '15 3 * * *' # nightly full gate catches docs-only slips
   workflow_dispatch:
 
+# Concurrency (2026-10-05, foundry ci-runs-never-acquired): a newer commit cancels this workflow's queued or
+# running run for the same event and ref. On 2026-10-05 one push run in three was cancelled by GitHub 15 min
+# after start with no steps (never acquired by a runner) while each burn-down push queued six more runs behind
+# the dead ones. Scheduled and manual runs keep their own group, so a push never cancels the cron run.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   check:
     runs-on: ubuntu-latest
