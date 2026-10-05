@@ -737,3 +737,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   every dyslexia suite ships it (Helperbird leads with it; Dyslexly free) and ours was the only one without; honest copy
   that the voices are the computer's. Headless Chromium has no voices, so e2e proves the reply and the mark, not the
   audio. Proof: a review or support mail naming read-aloud within 60 days; unlock conversions.
+- 2026-10-05 burn-down (19:00 run, 5th item): read-focus `google-docs-publish-tip` (3) built — the Publish-to-web
+  workaround on the comparison page (and Half Bold's cell corrected: its "integration guide" is the same workaround), the
+  ruler page, the ReadFocus page and the welcome tips, each keeping "cannot read the editor itself". Why: two Docs asks in
+  the sample and a rival's FAQ answering with exactly this; free to give, no claim of Docs support.

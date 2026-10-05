@@ -150,12 +150,13 @@
     {
       "id": "google-docs-publish-tip",
       "title": "Google Docs tip on the comparison page, the ReadFocus page and the welcome page: File → Share → Publish to web gives a page ReadFocus reads; the editor itself stays a known limit",
-      "why": "Two asks in the sample (the official bolding tool \"doesn't work on … google docs\", ADHD Reader \"wants Docs/Word\") and Half Bold's own FAQ answers \"Does it work with Google Docs?\" with exactly this Publish-to-web route (relay capture rf-rivals-2026/3.html) — a workaround we can give for free in one paragraph without claiming Docs support. Research 2026-10-05.",
+      "why": "Two asks in the sample (the official bolding tool \"doesn't work on … google docs\", ADHD Reader \"wants Docs/Word\") and Half Bold's own FAQ answers \"Does it work with Google Docs?\" with exactly this Publish-to-web route (relay capture rf-rivals-2026/3.html) — a workaround we can give for free in one paragraph without claiming Docs support. Research 2026-10-05. BUILT 2026-10-05 (burn-down 19:00): comparison page (both cells), reading-ruler page, ReadFocus page, welcome tips.",
       "effort_days": 0.05,
       "proof": "the paragraph is live; a Docs-related install or question within 60 days",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     }
   ]
 }

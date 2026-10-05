@@ -607,3 +607,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 19:45 | burn-down | Sentence marked via CSS Custom Highlight (no wrapper); popup play/pause/stop + speed; shortcut Alt+Shift+A
 - 2026-10-05 19:45 | burn-down | core/speech.ts (4 unit tests); e2e 4 checks via the extension message; headless has no voices
 - 2026-10-05 19:45 | burn-down | Listing, AMO notes, welcome, ReadFocus page, comparison page updated; queue read-focus read-aloud done
+- 2026-10-05 19:50 | burn-down | Google Docs tip (Publish to web, then ReadFocus on that page) on comparison, ruler, ReadFocus and welcome pages
+- 2026-10-05 19:50 | burn-down | Queue: read-focus google-docs-publish-tip done; next is null, every queue starved again

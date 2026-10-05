@@ -330,3 +330,9 @@ e2e (4 checks through the extension's own message, as the popup sends it): refus
 9 sentences, the first sentence on screen is the one marked with its highlight registered, stop clears it — headless
 Chromium has no voices, so the utterance errors at once and the reply is read synchronously; audio itself is unverified
 here. Proof: a review or support mail naming read-aloud within 60 days of 0.3.0 going live; unlock conversions.
+
+### 2026-10-05 (burn-down 19:00, 4th item) — `google-docs-publish-tip` built
+The Publish-to-web route (File → Share → Publish to web, then ReadFocus on the published page) is now on the comparison
+page's Google Docs row (ReadFocus cell, and Half Bold's cell says honestly that its "integration guide" is the same
+workaround), the reading-ruler page's "does not do yet" list, the ReadFocus landing page and the welcome page's tips —
+each keeping "cannot read the editor itself". No product change. Proof: a Docs-related install or question within 60 days.
