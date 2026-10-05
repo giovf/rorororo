@@ -762,3 +762,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-05 burn-down: three relink/swap/library search queries added to Variables Toolkit's rank series so the day-30
   review (2026-10-21) reads the Relink tab's effect against a baseline, not a hand snapshot. Proof: three more rank:
   fields on every Daily check row from 2026-10-06.
+- 2026-10-05 burn-down (22:00 run): foundry research, pipeline starved again (every open item blocked or dated). The day's
+  CI run list showed one push run in three ending `cancelled` after exactly 15 minutes with no steps — never picked up by a
+  runner — while no push workflow carries a concurrency group, so each burn-down push stacked six more runs behind the dead
+  ones; the check gate skipped three commits, the relay run never ran, and the triage logged all 21 mails with an invented
+  cause. Three items queued: concurrency groups + relay re-fire (6), a committed pre-push hook against the three red gates
+  in two days (6), and a triage sentence that logs GitHub's reason and files a repeat as an item (4). Evidence added to
+  `actions-minutes`. Proof: push runs cancelled unstarted under 5% over a week; zero format-red gates in 30 days.

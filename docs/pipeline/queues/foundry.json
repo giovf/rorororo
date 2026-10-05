@@ -337,7 +337,7 @@
     {
       "id": "actions-minutes",
       "title": "Trim GitHub Actions usage below ~1,500 min/month so the repo can go private (free cap 2,000)",
-      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done. 2026-10-05 burn-down: converted to todo + not_before 2026-10-12 (first measurable week) so the hold is visible on the scheduled: line instead of hidden in doing.",
+      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done. 2026-10-05 burn-down: converted to todo + not_before 2026-10-12 (first measurable week) so the hold is visible on the scheduled: line instead of hidden in doing. 2026-10-05 22:30 burn-down (foundry research): the watchdog projection rose after the trim, 3,876 (10-04 18:21) to 4,215 min/month (10-05 01:14), because the burn went nightly; today 19:19-21:46 UTC the 60 push runs took 480 run-minutes, check alone 6-16 min per success (6.3, 8.6, 11.3, 16.5), six workflows per code push. The concurrency groups proposed in ci-runs-never-acquired cut the stacked runs as well, so build that first and re-measure.",
       "effort_days": 0.5,
       "proof": "7-day Actions minutes under 350 for two consecutive weeks",
       "score": 7,
@@ -399,6 +399,36 @@
       "status": "done",
       "added": "2026-10-05",
       "done_at": "2026-10-05"
+    },
+    {
+      "id": "ci-runs-never-acquired",
+      "title": "Push workflows get concurrency groups (newest commit wins) and the relay re-fires when its run was cancelled unstarted; check, landing, metrics, owner-notes stop stacking",
+      "why": "2026-10-05 burn-down (foundry research): of the 60 push-triggered runs on main between 19:19 and 21:46 UTC, 20 (one in three) ended `cancelled` exactly 15:02 after `run_started_at` with an EMPTY step list and no log (GitHub answers 404 for the job log): no hosted runner ever picked them up. They cluster 19:27-20:41 (check x3, landing x5, owner notes x5, gankdat metrics x2, store metrics x1, notify owner x2, fetch relay x1 - run ids 37371290255, 37368566237, 37366507832 among them). Peak overlap was 11 runs, under the 20-concurrent-job cap of the free plan, so this was a GitHub capacity window, but our fan-out made it expensive: no push workflow except notify-owner, run-watchdog and workflow-installer carries a `concurrency` key, so every burn-down push (6 workflows, pushes 5-10 min apart) queued a fresh set behind the stuck ones. Consequences today: (1) the `check` gate never ran on 0e3aaca, 97fb915 and b7a7579, so main was ungated for an hour and the triage logged those mails as healed; (2) the fetch-relay run for vt-research-2026-10-05 (6925944) never ran, the routine waited 16+ min and built relay-wait-loop around the symptom - the wait loop cannot help when the run is dead; (3) 21 INBOX rows and 20 failure mails for nothing. Fix: add `concurrency: { group: <workflow>-${{ github.ref }}, cancel-in-progress: true }` to check.yml, landing.yml, gankdat-metrics.yml, store-metrics.yml and owner-notes.yml (the newest commit's run supersedes queued older ones; a deploy or a fill-run on an older tree is never wanted; fetch-relay, gankdat deploy and notify-owner keep their behaviour); write them to docs/ci/ for the installer; in the RELAY paragraph of docs/relay/README.md and the routine prompts: when the 20-min poll expires, read the run's conclusion with the GitHub MCP (actions_list on fetch-relay.yml) and, if it is `cancelled` with no steps, re-fire it with actions_run_trigger (workflow_dispatch exists) instead of filing anything; SCHEDULERS.md event table gains the concurrency note.",
+      "effort_days": 0.3,
+      "proof": "over 7 days fewer than 5% of push runs end cancelled with no steps; no relay request waits longer than 20 min without a re-fire; check runs on a code push drop to one per 10-minute window",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "triage-run-failed-reason",
+      "title": "Inbox triage logs the reason GitHub gives for a Run failed mail, never a guessed one; the third same-reason mail in a day files a foundry item",
+      "why": "2026-10-05 burn-down (foundry research): the hourly triage wrote `workflow jobs cancelled, superseded by the next push` on 21 INBOX rows today (19:43-20:56), but no push workflow has cancel-in-progress, nothing superseded them - the jobs were never acquired by a runner (see ci-runs-never-acquired). The two real red-gate mails (547b963 10-05 19:24, format check; 05ec84d and e7f913f 10-04, both failed within ~1 min, cause unrecorded) got the same `healed by the next push` wording, so a reader of INBOX cannot tell a red gate from a dead runner from a cancelled duplicate, and a repeat cause 20 times in one evening produced no queue item although docs/routines/inbox-triage.md step 1 and CLAUDE.md say a repeat blocker becomes one. Fix (prompt sentence, docs/routines/inbox-triage.md, after the existing GitHub sentence): \"Log the reason the mail body or the run gives - `failure` with steps = our gate is red, name the failing step; `cancelled` with no steps about 15 min after start = no runner picked it up; `cancelled` under a concurrency group = superseded - never a guessed one. When the same reason appears three times in one day and docs/pipeline/queues/foundry.json has no open item for it, add one (score 4+, the run ids as evidence).\" SELF-CAUSED.md row 6 gains the same three readings in its \"What it really is\" column.",
+      "effort_days": 0.1,
+      "proof": "over 14 days no INBOX row names a cause the run's job list contradicts; a reason seen 3+ times in a day has a foundry item the same day",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "pre-push-format-gate",
+      "title": "A committed pre-push hook (core.hooksPath set by npm prepare) runs prettier, eslint on the changed files, npm run runs and npm run pipeline before any push from a sandbox",
+      "why": "2026-10-05 burn-down (foundry research): three red `check` runs on main in two days, each from a push whose gate had not been re-run after the last edit: 05ec84d (10-04 14:58, failed in 1m1s), e7f913f (10-04 15:33, 1m4s), 547b963 (10-05 19:24, 1m20s - Prettier on two landing pages and e2e/run.ts, healed by 0e3aaca four minutes later, RUNS 19:28). Each costs a heal commit, six more workflow runs (about 15 run-minutes against the private-repo cap, see actions-minutes), an INBOX row, a failure mail and a window in which the nightly 03:15 gate is the only truth about main. The routines do run `npm run check` (6-16 min), so the slip is the edit after the check (listing text, a RUNS line, a format fix), which the long gate invites. Fix with no new dependency: root package.json gains `\"prepare\": \"git config core.hooksPath .githooks\"` (npm ci runs it in every sandbox and in CI, where nothing pushes), and `.githooks/pre-push` (sh, under 30 s) runs `npx prettier --check` and `npx eslint` on the files changed against the upstream ref (or origin/main when none), then `npm run runs` and `npm run pipeline`; it exits non-zero with the offending files, and `SKIP_HOOKS=1` bypasses it for the installer-style pushes. The routine prompts need no change: the hook fires on their existing `git push`. Proof measured from the check workflow's conclusions on push events.",
+      "effort_days": 0.2,
+      "proof": "zero `check` failures on main from format or lint for 30 days after landing; the hook rejects a seeded unformatted file in a local test",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-05"
     }
   ]
 }

@@ -629,3 +629,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 21:30 | burn-down | STORE.md rank queries + relink variables, swap variables, library variables; 06:45 row picks them up
 - 2026-10-05 21:30 | burn-down | Queue: variables-toolkit search-rank-relink-queries done; VT has only dated/blocked items left
 - 2026-10-05 21:38 | burn-down | Exchange pre-research: EA waste carriers register parked (API, 2 paid actors, licence to confirm)
+- 2026-10-05 22:33 | burn-down | Foundry research (starved pipeline): today's 60 push runs on main (19:19-21:46) read via the GitHub API
+- 2026-10-05 22:33 | burn-down | 20 of 60 runs cancelled at 15:02 with no steps: never acquired by a runner; triage called them superseded
+- 2026-10-05 22:33 | burn-down | Dead runs cost: check never ran on 3 commits, the vt-research relay never ran, 21 INBOX rows
+- 2026-10-05 22:33 | burn-down | Three red check runs on main in two days (05ec84d, e7f913f, 547b963), each a push after an unchecked edit
+- 2026-10-05 22:33 | burn-down | Queue foundry: ci-runs-never-acquired (6), pre-push-format-gate (6), triage-run-failed-reason (4)
+- 2026-10-05 22:33 | burn-down | actions-minutes gains evidence: projection 4,215 min/month after the trim; check takes 6-16 min a run
