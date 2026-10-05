@@ -36,3 +36,8 @@
   layers bound to local or unpublished variables move onto the enabled library's variable of the same name and type; counts against the
   free daily allowance like Link. `manifest.json` gained the `teamlibrary` permission. **Not yet live** — needs a republish from the Figma
   desktop app (action 019, batched with 017/018). Proof: ≥ 1 comment or purchase naming relink within 30 days of the republish.
+- **Relink to local variables (2026-10-05, burn-down):** a direction switch on the same tab (`planRelink` option `direction`,
+  `loadLocalVariables` in `src/figma/relink.ts`): every binding to a library variable, available or not, moves onto this file's
+  variable of the same name and type; local bindings are left alone; a name in two local collections waits for a collection pick.
+  Built for the forum's "remap library variables to local variables" request (`RESEARCH.md` §10). Rides the same unpublished
+  republish (019). Proof: ≥ 1 comment or purchase naming relink-to-local within 30 days of the version going live.

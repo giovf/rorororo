@@ -621,3 +621,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 20:40 | burn-down | Variables Toolkit: figma-relink-variables.html — broken variables after a move, Relink steps, honest limits
 - 2026-10-05 20:40 | burn-down | Page says Relink ships with the next published version; comparison page's stale 'no relinking yet' bullet fixed
 - 2026-10-05 20:40 | burn-down | Sitemap entry and landing card link; queue variables-toolkit relink-howto-page done; next is relink-to-local
+- 2026-10-05 21:20 | burn-down | Variables Toolkit Relink: "To local variables" direction — library bindings move onto same-name local variables
+- 2026-10-05 21:20 | burn-down | Planner option direction (current = local; reason library), local catalogue by id, apply refuses a stale plan
+- 2026-10-05 21:20 | burn-down | 4 unit tests (11 relink total); dev and release builds pass; UI labels, summary and tooltip follow direction
+- 2026-10-05 21:20 | burn-down | Listing, STORE.md note, how-to page section + limits, RESEARCH §10 outcome; ships with the 019 republish
+- 2026-10-05 21:20 | burn-down | Queue: variables-toolkit relink-to-local done; next buildable is search-rank-relink-queries (3)

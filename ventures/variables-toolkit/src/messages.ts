@@ -2,7 +2,7 @@ import type { ConversionPlan, StyleInfo } from './core/convert.js';
 import type { HygieneReport } from './core/hygiene.js';
 import type { PaintSite } from './core/link.js';
 import type { NumberSite } from './core/numbers.js';
-import type { RelinkReason } from './core/relink.js';
+import type { RelinkDirection, RelinkReason } from './core/relink.js';
 import type { ScanOptions } from './core/scan.js';
 
 export interface LinkGroup<S> {
@@ -11,7 +11,7 @@ export interface LinkGroup<S> {
   sites: S[];
 }
 
-/** One library variable the Relink tab offers, with what it replaces. */
+/** One target variable the Relink tab offers (library, or local in the to-local direction), with what it replaces. */
 export interface RelinkRow {
   key: string;
   name: string;
@@ -40,6 +40,7 @@ export type ToUi =
   | { type: 'hygiene'; report: HygieneReport; total: number }
   | {
       type: 'relink-result';
+      direction: RelinkDirection;
       groups: RelinkRow[];
       unmatched: { name: string; type: string; sites: number }[];
       ambiguous: { name: string; libraries: string[]; sites: number }[];
@@ -60,6 +61,6 @@ export type ToMain =
   | { type: 'convert-apply'; kinds: StyleInfo['kind'][]; collectionName: string; styleIds: string[] }
   | { type: 'hygiene' }
   | { type: 'delete-variables'; ids: string[] }
-  | { type: 'relink-scan'; scope: 'selection' | 'page'; collectionKeys?: string[] }
-  | { type: 'relink-apply'; keys: string[]; collectionKeys?: string[] }
+  | { type: 'relink-scan'; scope: 'selection' | 'page'; direction?: RelinkDirection; collectionKeys?: string[] }
+  | { type: 'relink-apply'; keys: string[]; direction?: RelinkDirection; collectionKeys?: string[] }
   | { type: 'upgrade' };

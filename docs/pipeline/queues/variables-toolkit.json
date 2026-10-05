@@ -121,8 +121,9 @@
       "effort_days": 0.5,
       "proof": "≥ 1 comment or purchase naming relink-to-local within 30 days of the version going live",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     },
     {
       "id": "search-rank-relink-queries",

@@ -1,6 +1,10 @@
 import type { StyleInfo } from '../core/convert.js';
+import type { RelinkDirection, RelinkReason } from '../core/relink.js';
 import type { ScanOptions } from '../core/scan.js';
 import type { ToMain, ToUi } from '../messages.js';
+
+/** What a relink row's tooltip says a binding points at today. */
+const REASON: Record<RelinkReason, string> = { local: 'local', 'stale-library': 'unpublished', library: 'library' };
 
 const $ = <T extends HTMLElement>(id: string): T => document.getElementById(id) as T;
 const send = (msg: ToMain): void => parent.postMessage({ pluginMessage: msg }, '*');
@@ -83,19 +87,35 @@ deleteUnused.onclick = () =>
 const relinkList = $<HTMLUListElement>('relink-list');
 const relinkApply = $<HTMLButtonElement>('relink-apply');
 const relinkCollection = $<HTMLSelectElement>('relink-collection');
+const relinkDirection = $<HTMLSelectElement>('relink-direction');
 let relinkScope: 'selection' | 'page' = 'selection';
+let relinkScanned = false;
 const collectionFilter = (): string[] => (relinkCollection.value ? [relinkCollection.value] : []);
+const direction = (): RelinkDirection => (relinkDirection.value === 'to-local' ? 'to-local' : 'to-library');
 const startRelinkScan = (scope: 'selection' | 'page'): void => {
   relinkScope = scope;
+  relinkScanned = true;
   cancel.hidden = false;
-  say('Reading libraries and bindings…');
-  send({ type: 'relink-scan', scope, collectionKeys: collectionFilter() });
+  say(direction() === 'to-local' ? 'Reading this file\'s variables and bindings…' : 'Reading libraries and bindings…');
+  send({ type: 'relink-scan', scope, direction: direction(), collectionKeys: collectionFilter() });
 };
 $('relink-selection').onclick = () => startRelinkScan('selection');
 $('relink-page').onclick = () => startRelinkScan('page');
 relinkCollection.onchange = () => startRelinkScan(relinkScope);
+relinkDirection.onchange = () => {
+  // The collection list belongs to the other catalogue; a plan from the other direction must not be applied.
+  relinkCollection.replaceChildren();
+  relinkCollection.hidden = true;
+  relinkApply.disabled = true;
+  if (relinkScanned) startRelinkScan(relinkScope);
+};
 relinkApply.onclick = () =>
-  send({ type: 'relink-apply', keys: [...relinkList.querySelectorAll<HTMLInputElement>('input:checked')].map((i) => i.value), collectionKeys: collectionFilter() });
+  send({
+    type: 'relink-apply',
+    keys: [...relinkList.querySelectorAll<HTMLInputElement>('input:checked')].map((i) => i.value),
+    direction: direction(),
+    collectionKeys: collectionFilter(),
+  });
 
 $('upgrade').onclick = () => send({ type: 'upgrade' });
 
@@ -187,37 +207,38 @@ window.onmessage = (event: MessageEvent<{ pluginMessage?: ToUi } | null>) => {
     }
     case 'relink-result': {
       cancel.hidden = true;
+      const toLocal = msg.direction === 'to-local';
       if (msg.collections.length > 1) {
         const current = relinkCollection.value;
         relinkCollection.replaceChildren(
-          new Option('Every library', ''),
-          ...msg.collections.map((c) => new Option(`${c.libraryName} / ${c.name}`, c.key, false, c.key === current)),
+          new Option(toLocal ? 'Every collection' : 'Every library', ''),
+          ...msg.collections.map((c) => new Option(toLocal ? c.name : `${c.libraryName} / ${c.name}`, c.key, false, c.key === current)),
         );
         relinkCollection.hidden = false;
       } else {
         relinkCollection.hidden = true;
       }
       const rows: HTMLLIElement[] = [];
-      rows.push(li(`Can move to the library (${msg.groups.length})`, 'head'));
+      rows.push(li(toLocal ? `Can move to local variables (${msg.groups.length})` : `Can move to the library (${msg.groups.length})`, 'head'));
       rows.push(
         ...msg.groups.map((g) =>
           li(
-            `<input type="checkbox" checked value="${esc(g.key)}" /><span class="name" title="${esc(g.from.map((f) => `${f.name} (${f.reason === 'local' ? 'local' : 'unpublished'})`).join(', '))} → ${esc(g.libraryName)}">${esc(g.name)}</span><span class="sub">${esc(g.libraryName)}</span><span class="count">${g.sites}</span>`,
+            `<input type="checkbox" checked value="${esc(g.key)}" /><span class="name" title="${esc(g.from.map((f) => `${f.name} (${REASON[f.reason]})`).join(', '))} → ${esc(g.libraryName)}">${esc(g.name)}</span><span class="sub">${esc(g.libraryName)}</span><span class="count">${g.sites}</span>`,
           ),
         ),
       );
       if (msg.ambiguous.length) {
-        rows.push(li(`Same name in more than one library — pick a collection above (${msg.ambiguous.length})`, 'head'));
+        rows.push(li(`Same name in more than one ${toLocal ? 'collection' : 'library'} — pick a collection above (${msg.ambiguous.length})`, 'head'));
         rows.push(...msg.ambiguous.map((a) => li(`<span class="name" title="${esc(a.libraries.join(' · '))}">${esc(a.name)}</span><span class="count">${a.sites}</span>`)));
       }
       if (msg.unmatched.length) {
-        rows.push(li(`No library variable with this name (${msg.unmatched.length})`, 'head'));
+        rows.push(li(`No ${toLocal ? 'local' : 'library'} variable with this name (${msg.unmatched.length})`, 'head'));
         rows.push(...msg.unmatched.map((u) => li(`<span class="name" title="${esc(u.name)}">${esc(u.name)}</span><span class="sub">${u.type.toLowerCase()}</span><span class="count">${u.sites}</span>`)));
       }
       relinkList.replaceChildren(...rows);
       const movable = msg.groups.reduce((n, g) => n + g.sites, 0);
       $('relink-summary').textContent =
-        `${msg.visited} layers scanned · ${msg.libraryVariables} library variables · ${movable} bindings can move · ${msg.current} already on the library` +
+        `${msg.visited} layers scanned · ${msg.libraryVariables} ${toLocal ? 'local' : 'library'} variables · ${movable} bindings can move · ${msg.current} already ${toLocal ? 'local' : 'on the library'}` +
         (msg.orphaned ? ` · ${msg.orphaned} point at deleted variables` : '');
       relinkApply.disabled = movable === 0;
       say('');

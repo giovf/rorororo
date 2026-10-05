@@ -446,3 +446,8 @@ queued; README promises ~2 minutes) — the evidence above is from the day-10 bo
 4. `day-30-review` amended: zero purchases is the 2026 norm for paid newcomers; read installs of the free companion and
    listing views instead, and treat pricing as a question only once installs exist.
 Kill date unchanged: 2026-12-20 with zero sales and zero organic signal (STRATEGY §7).
+
+**Built the same night (burn-down 20:40 and 21:20):** `relink-howto-page` is live at
+`apps.gankdat.com/figma-relink-variables.html`; `relink-to-local` is a direction switch on the Relink tab (planner option
+`direction`, local catalogue read with `getLocalVariablesAsync`, rebinding by variable id) with four unit tests, and the
+how-to page gained a section for it. Both wait on the 019 republish to reach users — no extra owner minutes.

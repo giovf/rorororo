@@ -755,3 +755,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the forum's "variables broken after moving a file / swapping libraries" question, answered by the Relink tab with its
   limits stated and the fact that it ships with the next published version. Why: five forum threads, no native fix, Search
   Console already indexes the host. Proof: ≥ 20 impressions and ≥ 1 click by 2026-12-05.
+- 2026-10-05 burn-down: Variables Toolkit Relink tab gained the reverse direction (library → local variables), the Figma
+  forum's "remap library variables to local" request (44372, 48877, 11143) that only a third-party swap plugin answers.
+  Why: reuses the by-name planner and site walker, 0.5 days, rides the pending 019 republish at zero owner minutes. Proof:
+  ≥ 1 comment or purchase naming relink-to-local within 30 days of the version going live.

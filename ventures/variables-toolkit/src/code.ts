@@ -2,12 +2,12 @@ import { planStyleConversion, type StyleInfo } from './core/convert.js';
 import { hygieneReport } from './core/hygiene.js';
 import { groupByVariable, suggestLinks, type ColorVariableRef, type PaintSite } from './core/link.js';
 import { suggestNumberLinks, type NumberSite, type NumberVariableRef } from './core/numbers.js';
-import { planRelink, type RelinkPlan } from './core/relink.js';
+import { planRelink, type RelinkDirection, type RelinkPlan } from './core/relink.js';
 import type { ScanOptions } from './core/scan.js';
 import { FREE_LINKS_PER_DAY, allowedLinks, rollover, today, type TierState } from './core/tier.js';
 import { executePlan, readExistingVariables } from './figma/convert.js';
 import { readVariableUsage } from './figma/hygiene.js';
-import { collectBoundSites, describeVariables, loadLibraryVariables, relinkGroup, type LibraryVariables } from './figma/relink.js';
+import { collectBoundSites, describeVariables, loadTargets, relinkGroup, type LibraryVariables } from './figma/relink.js';
 import { loadColorVariables, loadNumberVariables, scanNodes } from './figma/scan.js';
 import { readLocalStyles } from './figma/styles.js';
 import { createDemoPage } from './figma/demo.js';
@@ -203,29 +203,38 @@ async function deleteVariables(ids: string[]): Promise<void> {
   await hygiene();
 }
 
-// ---------- feature 4: relink to library variables ----------
+// ---------- feature 4: relink to library variables (or back to local ones) ----------
 
-async function readLibrary(): Promise<LibraryVariables> {
+async function readTargets(direction: RelinkDirection): Promise<LibraryVariables> {
   try {
-    return await loadLibraryVariables();
+    return await loadTargets(direction);
   } catch (err: unknown) {
     const reason = err instanceof Error ? err.message : String(err);
-    throw new Error(`Couldn't read the enabled libraries (${reason}). Enable a library with variables under Assets → Libraries, then scan again.`, {
-      cause: err,
-    });
+    throw new Error(
+      direction === 'to-local'
+        ? `Couldn't read this file's variables (${reason}).`
+        : `Couldn't read the enabled libraries (${reason}). Enable a library with variables under Assets → Libraries, then scan again.`,
+      { cause: err },
+    );
   }
 }
 
-async function relinkScan(scope: 'selection' | 'page', collectionKeys?: string[]): Promise<void> {
+async function relinkScan(scope: 'selection' | 'page', direction: RelinkDirection = 'to-library', collectionKeys?: string[]): Promise<void> {
   const roots = scope === 'selection' ? figma.currentPage.selection : figma.currentPage.children;
   if (roots.length === 0) {
     post({ type: 'error', message: scope === 'selection' ? 'Select something first.' : 'This page is empty.' });
     return;
   }
   const token = ++scanToken;
-  const library = await readLibrary();
+  const library = await readTargets(direction);
   if (library.vars.length === 0) {
-    post({ type: 'error', message: 'No enabled library publishes variables. Enable one under Assets → Libraries, then scan again.' });
+    post({
+      type: 'error',
+      message:
+        direction === 'to-local'
+          ? 'This file has no local variables to move onto. Create or copy a collection first, then scan again.'
+          : 'No enabled library publishes variables. Enable one under Assets → Libraries, then scan again.',
+    });
     return;
   }
   const result = await collectBoundSites(
@@ -238,10 +247,11 @@ async function relinkScan(scope: 'selection' | 'page', collectionKeys?: string[]
     return;
   }
   const known = await describeVariables(result.sites.map((s) => s.variableId));
-  const plan = planRelink(result.sites, known, library.vars, collectionKeys?.length ? { collectionKeys: new Set(collectionKeys) } : {});
+  const plan = planRelink(result.sites, known, library.vars, { direction, ...(collectionKeys?.length ? { collectionKeys: new Set(collectionKeys) } : {}) });
   lastRelink = plan;
   post({
     type: 'relink-result',
+    direction,
     groups: plan.groups.map((g) => ({
       key: g.library.key,
       name: g.library.name,
@@ -260,8 +270,8 @@ async function relinkScan(scope: 'selection' | 'page', collectionKeys?: string[]
   });
 }
 
-async function relinkApply(keys: string[]): Promise<void> {
-  if (!lastRelink) {
+async function relinkApply(keys: string[], direction: RelinkDirection = 'to-library'): Promise<void> {
+  if (!lastRelink || lastRelink.direction !== direction) {
     post({ type: 'error', message: 'Scan first.' });
     return;
   }
@@ -273,7 +283,7 @@ async function relinkApply(keys: string[]): Promise<void> {
   let count = 0;
   for (const g of todo) {
     if (budget === 0) break;
-    const moved = await relinkGroup(g, budget);
+    const moved = await relinkGroup(g, budget, direction);
     count += moved;
     budget -= moved;
   }
@@ -284,7 +294,8 @@ async function relinkApply(keys: string[]): Promise<void> {
   const capped = count < requested;
   post({ type: 'relinked', count, capped });
   postStatus();
-  figma.notify(capped ? `Relinked ${count} — free limit reached for today. Unlock for unlimited.` : `Relinked ${count} binding${count === 1 ? '' : 's'} to library variables`);
+  const where = direction === 'to-local' ? 'local variables' : 'library variables';
+  figma.notify(capped ? `Relinked ${count} — free limit reached for today. Unlock for unlimited.` : `Relinked ${count} binding${count === 1 ? '' : 's'} to ${where}`);
 }
 
 // ---------- payments ----------
@@ -315,9 +326,9 @@ figma.ui.onmessage = (msg: ToMain) => {
       case 'delete-variables':
         return deleteVariables(msg.ids);
       case 'relink-scan':
-        return relinkScan(msg.scope, msg.collectionKeys);
+        return relinkScan(msg.scope, msg.direction, msg.collectionKeys);
       case 'relink-apply':
-        return relinkApply(msg.keys);
+        return relinkApply(msg.keys, msg.direction);
       case 'upgrade':
         return upgrade();
     }

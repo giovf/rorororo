@@ -91,4 +91,53 @@ describe('planRelink', () => {
     );
     expect(plan.groups.map((g) => g.library.key)).toEqual(['k2', 'k1']);
   });
+
+  describe('to-local', () => {
+    const locals = [lib('loc-1', 'color/brand', 'COLOR', 'col-local', 'This file'), lib('loc-2', 'space/md', 'FLOAT', 'col-local', 'This file')];
+
+    it('moves library bindings (available or not) onto the local variable of the same name and type, leaving local ones alone', () => {
+      const plan = planRelink(
+        [paint('n1', 'lib-a'), paint('n2', 'lib-a', 1), field('n3', 'lib-b'), paint('n4', 'mine')],
+        [remote('lib-a', 'color/brand', 'k1'), remote('lib-b', 'space/md', 'k2', 'FLOAT'), local('mine', 'color/accent')],
+        locals,
+        { direction: 'to-local' },
+      );
+      expect(plan.direction).toBe('to-local');
+      expect(plan.groups.map((g) => [g.library.key, g.sites.length])).toEqual([
+        ['loc-1', 2],
+        ['loc-2', 1],
+      ]);
+      expect(plan.groups[0]?.from).toEqual([{ id: 'lib-a', name: 'color/brand', reason: 'library' }]);
+      expect(plan.current).toBe(1);
+      expect(plan.unmatched).toEqual([]);
+    });
+
+    it('lists a library variable with no local twin as unmatched and never matches across types', () => {
+      const plan = planRelink([paint('n1', 'lib-a'), field('n2', 'lib-c')], [remote('lib-a', 'color/other', 'k1'), remote('lib-c', 'color/brand', 'k3', 'FLOAT')], locals, {
+        direction: 'to-local',
+      });
+      expect(plan.groups).toEqual([]);
+      expect(plan.unmatched.map((u) => u.variable.id).sort()).toEqual(['lib-a', 'lib-c']);
+    });
+
+    it('does not treat a local variable as current in the to-library direction, nor a library one as current to-local', () => {
+      const sites = [paint('n1', 'mine')];
+      const toLibrary = planRelink(sites, [local('mine', 'color/brand')], [lib('k1', 'color/brand')]);
+      expect(toLibrary.direction).toBe('to-library');
+      expect(toLibrary.groups).toHaveLength(1);
+      const toLocal = planRelink(sites, [local('mine', 'color/brand')], locals, { direction: 'to-local' });
+      expect(toLocal.groups).toEqual([]);
+      expect(toLocal.current).toBe(1);
+    });
+
+    it('reports a name in two local collections as ambiguous until one is chosen', () => {
+      const twins = [lib('loc-1', 'color/brand', 'COLOR', 'col-a', 'This file'), lib('loc-9', 'color/brand', 'COLOR', 'col-b', 'This file')];
+      const sites = [paint('n1', 'lib-a')];
+      const known = [remote('lib-a', 'color/brand', 'k1')];
+      expect(planRelink(sites, known, twins, { direction: 'to-local' }).ambiguous).toHaveLength(1);
+      const chosen = planRelink(sites, known, twins, { direction: 'to-local', collectionKeys: new Set(['col-b']) });
+      expect(chosen.ambiguous).toEqual([]);
+      expect(chosen.groups.map((g) => g.library.key)).toEqual(['loc-9']);
+    });
+  });
 });

@@ -32,7 +32,9 @@
         and the forum threads asking how to fix that get the same answer: do it by hand, or find a
         plugin. Variables Toolkit's <strong>Relink</strong> tab is that plugin: it finds every layer
         bound to a local or unpublished variable and moves it onto the enabled library's variable
-        with the same name and type, in one click.
+        with the same name and type, in one click. It also runs the other way: a file copied out of
+        a team, or a team leaving a shared library, can move its library bindings back onto local
+        variables of the same names.
       </p>
 
       <p class="install">
@@ -93,6 +95,20 @@
         </li>
       </ol>
 
+      <h2>The other direction: library variables back to local ones</h2>
+      <p>
+        The forum's second ask is the reverse: a file copied out of a team, or a team that stopped
+        using a shared library, wants its layers on <em>local</em> variables again, not on a library
+        it no longer has. Figma offers nothing for that either. On the Relink tab, switch the
+        direction to <strong>To local variables</strong> and scan: every binding to a library
+        variable, whether the library is still enabled or long gone, is listed against this file's
+        variable of the same name and type, and one click moves them. Bindings already on local
+        variables are left alone; a name that two local collections share waits for you to pick the
+        collection. If the file has no local copy of the collection yet, copy or import it first
+        (Figma's "Import variables" plugins, or ours on the Convert tab for styles) — Relink matches
+        names, it does not create variables.
+      </p>
+
       <h2>Honest limits</h2>
       <ul>
         <li>
@@ -101,8 +117,10 @@
           moved yet.
         </li>
         <li>
-          Matching is by trimmed name <em>and</em> resolved type, one library at a time. A variable
-          whose name changed in the library is listed as unmatched, not guessed.
+          Matching is by trimmed name <em>and</em> resolved type, one library (or one local
+          collection) at a time. A variable whose name changed is listed as unmatched, not guessed,
+          and Relink never creates variables: the target collection must already exist in the file
+          or the library.
         </li>
         <li>
           Only the open file. Figma's plugin API cannot reach other files, so a library used across
