@@ -751,3 +751,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   prompts that read the relay now poll `origin/main` for the response commit for up to 20 minutes (and work meanwhile)
   instead of `sleep 120`; the fetch-relay run this evening sat queued 16+ minutes with nothing else running, so a fixed
   sleep read nothing. Proof: no unread-relay run-log line in 30 days.
+- 2026-10-05 burn-down (20:00 run, 3rd item): variables-toolkit `relink-howto-page` (4) built — a Google-facing how-to for
+  the forum's "variables broken after moving a file / swapping libraries" question, answered by the Relink tab with its
+  limits stated and the fact that it ships with the next published version. Why: five forum threads, no native fix, Search
+  Console already indexes the host. Proof: ≥ 20 impressions and ≥ 1 click by 2026-12-05.

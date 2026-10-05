@@ -618,3 +618,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 20:36 | burn-down | Foundry relay-wait-loop: README step 3 polls origin/main for the response commit up to 20 min
 - 2026-10-05 20:36 | burn-down | RELAY sentence in burn-down, build, fallback, exchange, metrics prompts: poll, work meanwhile, no sleep 120
 - 2026-10-05 20:36 | burn-down | Queue: foundry relay-wait-loop done; next buildable is variables-toolkit relink-howto-page (4)
+- 2026-10-05 20:40 | burn-down | Variables Toolkit: figma-relink-variables.html — broken variables after a move, Relink steps, honest limits
+- 2026-10-05 20:40 | burn-down | Page says Relink ships with the next published version; comparison page's stale 'no relinking yet' bullet fixed
+- 2026-10-05 20:40 | burn-down | Sitemap entry and landing card link; queue variables-toolkit relink-howto-page done; next is relink-to-local
