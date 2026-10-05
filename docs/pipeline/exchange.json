@@ -176,6 +176,14 @@
       "why": "Largest reach of any candidate and the Apps SDK is MCP, but submission requires OpenAI business verification with tax documents (KYC beyond a one-off account) and the directory does not bill for us. Declined on constraint (W40); re-raise only if the owner opts into that verification after mcp-oauth-lazy-auth ships.",
       "status": "declined",
       "added": "2026-09-30"
+    },
+    {
+      "id": "ea-waste-carriers-register",
+      "title": "Environment Agency waste carriers, brokers and dealers register (England) on gankdat: lookups + new/expiring/lapsed change feed",
+      "why": "Pre-research 2026-10-05 (burn-down starvation fallback). Supply: the EA electronic Public Register serves the register as an API without registration under the Environment Agency Conditional Licence (api.gov.uk/ea/public-registers-for-environmental-information; data.gov.uk dataset 961d75f3), upper-tier registrations renew every 3 years so expiry is a natural change feed. Demand: two Apify actors already price it — devon_gtme/uk-waste-carriers-register from $2 per 1k results (new/expiring/lapsed tracking, CBDU search) and nerolabs/uk-waste-carrier-monitor at $0.01 per record, $0.05 per detected change — and wastecheck.co.uk sells a real-time carrier-verification API with a free tier; the buyer is the construction, facilities and waste-broker compliance team doing the legal duty-of-care check on every contractor. Same DataSource shape as uk-gambling-operators (register in D1 with idOf on the CBDU number, daily wave). Score ≈ 4: evidence 2 (paid actors and an API vendor, no price above $0.05) × reach 2 (our Apify, MCP and x402 shelves) ÷ 1 build day; owner minutes 0. Parked because STRATEGY §5 puts distribution before new datasets until a shelf converts, and two caveats need the relay first: the Conditional Licence text (commercial reuse and attribution terms, not plain OGL) and the 2026-10-01 EA blog moving registration to GOV.UK, which may change the register endpoint.",
+      "status": "parked",
+      "trigger": "a gankdat shelf converts (≥ 1 paying account or ≥ 20 paid Apify runs/month) or the 2026-10-30 funnel review shows KYB/compliance lookups; then relay-read the Conditional Licence and the register API before scoring for the queue",
+      "added": "2026-10-05"
     }
   ]
 }
