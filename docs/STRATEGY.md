@@ -655,3 +655,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   by other accounts and the zero-run actors. Why: the shelf total could not say which registers Apify users want, so the
   exchange's quality-score pass had no trigger reading and §7's per-dataset rule had only the API side; first reading in the
   2026-10-06 row, read by the 2026-W41 review.
+- 2026-10-05 burn-down: gankdat `indexnow-stats-pages` built — after every refresh wave the Worker tells IndexNow which
+  `/stats` pages (parent + facets, ~1,100 URLs) changed, proven by a key file it serves; the runner does the same for its
+  sources, and the Daily numbers row reads `indexnow: N urls <status>`. Why: the only indexing reading has been owner-blocked
+  since 09-20, and IndexNow needs no account yet feeds Bing, DuckDuckGo, Copilot and ChatGPT search — the shelves where
+  agents that "search like humans" find the cite-bait pages. Not a Google signal. Proof: 200/202 daily from the 10-06 row;
+  Bing `site:gankdat.com/stats` ≥ 50 pages at the 2026-11-05 read (`indexnow-day-30-read`).

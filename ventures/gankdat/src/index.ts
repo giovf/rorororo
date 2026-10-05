@@ -4,6 +4,7 @@ import { requestId } from 'hono/request-id';
 import { secureHeaders } from 'hono/secure-headers';
 import { requireApiKey } from './auth/middleware';
 import { errorHandler, notFoundHandler } from './lib/envelope';
+import { INDEXNOW_KEY_SHAPE } from './lib/indexnow';
 import { meterCredits } from './metering/middleware';
 import { rateLimit } from './metering/ratelimit';
 import { canonicalHost, staticAssets } from './middleware/canonical';
@@ -172,6 +173,14 @@ app.route('/llms.txt', llmsRoute);
 app.get('/googlecc09a1f1a708bfc8.html', (c) =>
   c.text('google-site-verification: googlecc09a1f1a708bfc8.html'),
 );
+// IndexNow key file (lib/indexnow.ts): proves control of the host to api.indexnow.org.
+// The key is a plain var, so the route compares the requested name to it and lets any
+// other *.txt fall through (llms.txt and robots.txt are shorter than the key shape anyway).
+app.get('/:key{[A-Za-z0-9-]{8,128}\\.txt}', async (c, next) => {
+  const key = (c.env.INDEXNOW_KEY ?? '').trim();
+  if (!INDEXNOW_KEY_SHAPE.test(key) || c.req.param('key') !== `${key}.txt`) return next();
+  return c.text(key);
+});
 app.route('/stats', statsRoutes);
 
 app.onError(errorHandler);

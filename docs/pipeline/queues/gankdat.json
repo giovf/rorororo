@@ -293,12 +293,13 @@
     {
       "id": "indexnow-stats-pages",
       "title": "IndexNow pings for changed /stats pages (Bing, DuckDuckGo, Copilot, ChatGPT search index) — no account needed",
-      "why": "Research 2026-10-05: the only indexing reading (Search Console) has been owner-blocked since 09-20 (`search-console-stats-indexing`), and the 1,100+ stats and facet pages exist to be found by people and by agents that \"search like humans\" (AGENT-DISCOVERY §3). IndexNow (indexnow.org) takes a POST of changed URLs with a key proven by a key file at the site root — no account, no identity — and feeds Bing's index, which DuckDuckGo, Copilot and ChatGPT web search read. Do: a constant key in wrangler vars (an IndexNow key is not a secret), `/<key>.txt` served by the Worker, after each refresh wave POST that wave's parent + facet stats URLs (≤ 10,000 per call) to api.indexnow.org from `store.ts`, status into the metrics row (`indexnow: N urls, 202`); a Bing `site:gankdat.com/stats` count through the relay at day 30. Score: evidence 2 × reach 2 ÷ 0.25 days = 16, discounted to 5: no evidence yet that search brings buyers (referrers unread).",
+      "why": "Research 2026-10-05: the only indexing reading (Search Console) has been owner-blocked since 09-20 (`search-console-stats-indexing`), and the 1,100+ stats and facet pages exist to be found by people and by agents that \"search like humans\" (AGENT-DISCOVERY §3). IndexNow (indexnow.org) takes a POST of changed URLs with a key proven by a key file at the site root — no account, no identity — and feeds Bing's index, which DuckDuckGo, Copilot and ChatGPT web search read. Do: a constant key in wrangler vars (an IndexNow key is not a secret), `/<key>.txt` served by the Worker, after each refresh wave POST that wave's parent + facet stats URLs (≤ 10,000 per call) to api.indexnow.org from `store.ts`, status into the metrics row (`indexnow: N urls, 202`); a Bing `site:gankdat.com/stats` count through the relay at day 30. Score: evidence 2 × reach 2 ÷ 0.25 days = 16, discounted to 5: no evidence yet that search brings buyers (referrers unread). Built 2026-10-05 (burn-down): `src/lib/indexnow.ts` (`statsUrlsFor`, `postIndexNow`, `pingStatsPages`), `INDEXNOW_KEY` var + `/<key>.txt` route, the post-wave ping in `store.ts refreshAllSources` (only sources whose `refreshOne` returned true), the runner's ping in `runner-refresh.mjs`, an `indexnow` Analytics Engine point and the `indexnow:` note in metrics.mjs; 9 tests. First reading in the 2026-10-06 row; day-30 read queued as `indexnow-day-30-read`.",
       "effort_days": 0.2,
       "proof": "`indexnow:` 200/202 daily in the Daily numbers row; Bing `site:gankdat.com/stats` ≥ 50 pages at the 2026-11-05 read",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     },
     {
       "id": "change-feed-rss",
@@ -319,6 +320,17 @@
       "score": 6,
       "status": "todo",
       "not_before": "2026-10-08",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "indexnow-day-30-read",
+      "title": "Day-30 read of IndexNow: Bing `site:gankdat.com/stats` page count and the bing/duckduckgo referrer share on /stats",
+      "why": "Proof of `indexnow-stats-pages` (built 2026-10-05): ≥ 50 /stats pages in Bing's index on 2026-11-05. Do: a Bing search `site:gankdat.com/stats` through the relay (add bing.com to scripts/fetch-relay.mjs if needed) or WebSearch, the `indexnow:` statuses across the 30 rows (any 422/429 days), and the Analytics Engine Referer kinds on /stats if the traffic point carries them; record the count in RESEARCH.md under the 2026-10-05 build note. Decide: keep (≥ 50 pages), or if < 10 pages despite 202s, check the key file from outside and whether Bing drops the facet pages as thin — then queue a content fix, never a second submitter.",
+      "effort_days": 0.05,
+      "proof": "page count and referrer share recorded in RESEARCH.md; keep/fix decision in STRATEGY §8",
+      "score": 4,
+      "status": "todo",
+      "not_before": "2026-11-05",
       "added": "2026-10-05"
     }
   ]

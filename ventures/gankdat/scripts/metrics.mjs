@@ -158,6 +158,20 @@ const changeFeed = Object.fromEntries(
 const changesMcp = changeFeed.mcp_authed ?? 0;
 const changesRest = changeFeed.rest_changes ?? 0;
 
+// IndexNow (build 2026-10-05, queue `indexnow-stats-pages`): after each refresh wave the Worker
+// submits the changed /stats pages to api.indexnow.org and writes one `indexnow` point per wave
+// (blob2 = HTTP status, double1 = URLs). 200/202 = accepted; 422 = key file unreadable, 429 =
+// throttled, 0 = network error, none = no wave sent anything (every refresh failed, or the var
+// is unset). Proof: 200/202 daily here; Bing `site:gankdat.com/stats` ≥ 50 pages on 2026-11-05.
+const indexnow = await ae(
+  "SELECT blob2 AS status, SUM(_sample_interval * double1) AS urls, SUM(_sample_interval) AS calls FROM gankdat_traffic WHERE blob1 = 'indexnow' AND timestamp > NOW() - INTERVAL '1' DAY GROUP BY status ORDER BY urls DESC",
+).catch(() => null);
+const indexnowNote = indexnow
+  ? indexnow.length
+    ? `indexnow: ${indexnow.map((r) => `${Math.round(Number(r.urls))} urls ${r.status || 'n/a'}`).join(', ')}`
+    : 'indexnow: none/24h'
+  : 'indexnow: n/a';
+
 // STRATEGY §4 target "Apify paid runs / month: 100" was unmeasured — review 2026-W39 §4 had to
 // write "no run count reaches the repo" — yet all 17 actors are public since 2026-09-28, so the
 // shelf either produces runs or it does not. Field names confirmed against a live
@@ -476,6 +490,7 @@ const notes = [
   // or a presented key is bad. Both are blob1 kinds written by routes/mcp.ts + mcp/server.ts.
   `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${kinds.mcp_preview ?? 0} preview, ${paywall} paywall hits${wantedNote}`,
   `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
+  indexnowNote,
   apify
     ? `apify: ${apify.runs} runs (${prevRuns === null ? 'baseline' : `+${apify.runs - prevRuns}/24h`}), 30d: ${apify.runs30} runs (${apify.ours30 === null ? 'ours n/a' : `${apify.ours30} ours, ${apify.runs30 - apify.ours30} others`}), ${apify.users} users/30d, ${apify.publicCount} public`
     : 'apify: n/a',

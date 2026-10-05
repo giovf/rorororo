@@ -537,3 +537,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 01:35 | burn-down | metrics.mjs: `apify 30d by actor: name N; 0: …` — per-actor runs by other accounts in the Daily numbers row
 - 2026-10-05 01:35 | burn-down | Queue: gankdat apify-runs-per-actor done; next buildable is indexnow-stats-pages (5)
 - 2026-10-05 01:41 | burn-down | Stopping for time (~30 min + gates): gankdat research + 2 items built; next buildable is indexnow-stats-pages (5)
+- 2026-10-05 02:25 | burn-down | IndexNow: Worker submits changed /stats pages (parent + facets) after each refresh wave; key file at /<key>.txt
+- 2026-10-05 02:25 | burn-down | Runner-fed sources ping IndexNow from runner-refresh.mjs; `indexnow:` status + URLs in the Daily numbers row
+- 2026-10-05 02:25 | burn-down | 9 tests: key file route, URL list, chunking/rejection, wave hook pings only sources that refreshed OK
+- 2026-10-05 02:25 | burn-down | Queue: gankdat indexnow-stats-pages done; indexnow-day-30-read queued (2026-11-05); next is change-feed-rss (5)

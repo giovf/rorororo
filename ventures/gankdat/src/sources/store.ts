@@ -1,3 +1,4 @@
+import { pingStatsPages } from '../lib/indexnow';
 import { computeStats } from '../lib/stats';
 import type { SourceStats } from '../lib/stats';
 import { readCached, readSnapshot, readSourceStats, refreshSource } from './cache';
@@ -114,13 +115,13 @@ export function isTransientD1Error(err: unknown): boolean {
   return TRANSIENT_D1_ERROR.test(err instanceof Error ? err.message : String(err));
 }
 
-/** One source's refresh, retried once on a transient D1 error while the wave is young. */
+/** One source's refresh, retried once on a transient D1 error while the wave is young; true when it succeeded. */
 export async function refreshOne(
   env: CloudflareBindings,
   source: DataSource,
   waveStartedAt = Date.now(),
   delayMs = RETRY_DELAY_MS,
-): Promise<void> {
+): Promise<boolean> {
   for (let attempt = 1; ; attempt += 1) {
     try {
       if (source.storage === 'd1') {
@@ -128,7 +129,7 @@ export async function refreshOne(
       } else {
         await refreshSource(env, source);
       }
-      return;
+      return true;
     } catch (err) {
       const retry =
         attempt === 1 && isTransientD1Error(err) && Date.now() - waveStartedAt < RETRY_DEADLINE_MS;
@@ -142,7 +143,7 @@ export async function refreshOne(
           message: err instanceof Error ? err.message : String(err),
         }),
       );
-      if (!retry) return;
+      if (!retry) return false;
       await new Promise((resolve) => setTimeout(resolve, delayMs));
     }
   }
@@ -158,6 +159,11 @@ export function cronSources(wave: RefreshWave | undefined): DataSource[] {
   return listSources().filter((s) => !isRunnerFed(s) && (wave === undefined || waveOf(s) === wave));
 }
 
+/**
+ * One cron wave: refresh its sources in order, then tell IndexNow which public stats
+ * pages changed (`pingStatsPages`) — only the sources that refreshed OK, after the whole
+ * wave, so a failed source keeps yesterday's page and no indexing call ever delays a load.
+ */
 export async function refreshAllSources(env: CloudflareBindings, cron?: string): Promise<void> {
   const wave = waveForCron(cron);
   const sources = cronSources(wave);
@@ -171,7 +177,9 @@ export async function refreshAllSources(env: CloudflareBindings, cron?: string):
     }),
   );
   const startedAt = Date.now();
+  const refreshed: string[] = [];
   for (const source of sources) {
-    await refreshOne(env, source, startedAt);
+    if (await refreshOne(env, source, startedAt)) refreshed.push(source.slug);
   }
+  await pingStatsPages(env, refreshed, String(wave ?? 'all')).catch(() => undefined);
 }

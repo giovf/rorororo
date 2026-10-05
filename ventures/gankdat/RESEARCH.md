@@ -129,6 +129,15 @@ the invoice. Queued in `docs/pipeline/queues/gankdat.json`:
 | `indexnow-stats-pages` | 5 | the indexing reading is owner-blocked; IndexNow needs no account and feeds Bing/DuckDuckGo/Copilot/ChatGPT search |
 | `change-feed-rss` | 5 | keyless Atom per register/facet = the feed on Feedly, Slack, Zapier, Make, n8n, Power Automate without a connector |
 
+**Built 2026-10-05 — `indexnow-stats-pages`** (burn-down): the Worker now submits the changed
+`/stats` pages (parent + facets, ~1,100 URLs across the waves) to IndexNow after every refresh
+wave, proven by the key file at `/<key>.txt`; the runner does the same for uk-insolvency. Readings:
+`indexnow: N urls 202` in the Daily numbers row from 2026-10-06 (422 = Bing could not read the
+key file, 429 = throttled, `none/24h` = no wave sent anything); the day-30 read on 2026-11-05
+(`indexnow-day-30-read`) counts Bing `site:gankdat.com/stats` through the relay or WebSearch and
+reads the `bing`/`duckduckgo` referrer share — proof is ≥ 50 pages. Not a Google signal: Google
+does not read IndexNow, so `search-console-stats-indexing` stays blocked on the owner.
+
 Not queued: more datasets (supply is not the constraint — exchange parked items keep their
 triggers), Smithery / n8n node / Snowflake (owner account or £300 MRR triggers unchanged), a
 pricing change (no conversion data to act on). Scores use STRATEGY §5 (evidence × reach ÷ effort)

@@ -15,6 +15,8 @@
 //   npm run runner-refresh            (repo root or ventures/gankdat; CLOUDFLARE_API_TOKEN set)
 // Idempotent per day: a source whose last `ok` row is under 20 h old is skipped, so the job may
 // run on every push to main as the metrics step does. Exit 1 when any source failed.
+import { postIndexNow, statsUrlsFor } from '../src/lib/indexnow.ts';
+import { computeStats } from '../src/lib/stats.ts';
 import { snapshotWrites } from '../src/sources/cache.ts';
 import { listSources } from '../src/sources/registry.ts';
 import { isRunnerFed } from '../src/sources/store.ts';
@@ -22,6 +24,11 @@ import { isRunnerFed } from '../src/sources/store.ts';
 const ACCOUNT_ID = '37e56f3ce4dfe49919e85d4380467f44'; // not a secret
 const DATABASE_ID = 'ac051277-5f69-46ba-965b-50da2f1ec524'; // wrangler.jsonc
 const CACHE_NAMESPACE_ID = 'eacc87d970e94b9b87ce944985af0b52'; // wrangler.jsonc CACHE binding
+// IndexNow (src/lib/indexnow.ts): the Worker pings after each cron wave; a runner-fed source is
+// refreshed here instead, so the runner sends the same ping for it. Copied from wrangler.jsonc
+// vars (not a secret — it is public at /<key>.txt).
+const INDEXNOW_KEY = '25d4108fe9beff29d13ec9422a302e26';
+const PUBLIC_BASE_URL = 'https://gankdat.com';
 const FRESH_ENOUGH_MS = 20 * 60 * 60 * 1000;
 const API = `https://api.cloudflare.com/client/v4/accounts/${ACCOUNT_ID}`;
 
@@ -95,6 +102,12 @@ for (const source of listSources().filter(isRunnerFed)) {
     for (const write of snapshotWrites(source, records, lastRefreshedAt)) await kvPut(write);
     await refreshLog(source.slug, 'ok', records.length, Date.now() - start, 'runner');
     console.log(`${source.slug}: ${records.length} records written from the runner`);
+    const ping = await postIndexNow({
+      baseUrl: PUBLIC_BASE_URL,
+      key: INDEXNOW_KEY,
+      urls: statsUrlsFor(PUBLIC_BASE_URL, source.slug, computeStats(records, source.stats)),
+    });
+    console.log(`${source.slug}: indexnow ${ping.urls} urls, status ${ping.status ?? 'n/a'}`);
   } catch (err) {
     failed += 1;
     const message = `runner: ${err instanceof Error ? err.message : String(err)}`;

@@ -223,6 +223,14 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   refresh with the parent (`aggregateFacets`, a 4-minute budget per source, the rest 503
   "being prepared" until tomorrow) and indexed from the parent page and `sitemap.xml`.
   First use: 45 Nice-class pages for `uk-trademark-journal` (`NICE_CLASSES` in the source).
+- **IndexNow** (`lib/indexnow.ts`, 2026-10-05): after each cron wave `refreshAllSources` POSTs
+  the parent and facet stats URLs of the sources that refreshed OK to `api.indexnow.org`
+  (≤ 10,000 a call, de-duplicated, never throws), proven by the key file the Worker serves at
+  `/<INDEXNOW_KEY>.txt` (a plain var — public by design, not a secret). Bing's index feeds
+  DuckDuckGo, Copilot and ChatGPT search, so this is the one indexing signal that needs no
+  account while the Search Console reading is owner-blocked. The runner-fed sources get the
+  same ping from `runner-refresh.mjs`. Each Worker ping is an Analytics Engine point
+  (`indexnow`, blob2 status, double1 URLs) → `indexnow:` in the Daily numbers row.
 - **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
   params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
   date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value
