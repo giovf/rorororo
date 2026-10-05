@@ -388,6 +388,16 @@
       "status": "done",
       "added": "2026-10-04",
       "done_at": "2026-10-05"
+    },
+    {
+      "id": "relay-wait-loop",
+      "title": "Relay reads wait on the response commit (poll origin/main up to 20 min) instead of a fixed sleep 120; routine prompts and docs/relay/README.md say so",
+      "why": "2026-10-05 20:15 burn-down: the fetch-relay run for vt-research-2026-10-05 sat 'queued' on GitHub's hosted runners for 16+ minutes with no other run queued (README and every routine prompt say 'sleep 120, git pull'); the same evening's check and landing runs sat 15 minutes before the next push cancelled them. A routine that sleeps 120 s reads nothing and either files a handoff or guesses. Fix: README step 3 and the RELAY paragraph of docs/routines/*.md become 'poll `git ls-tree origin/main docs/relay/responses/<name>` every 10 s for up to 20 min, do other work meanwhile'; scripts/fetch-relay.mjs unchanged. Proof: no run-log line in the next 30 days reporting an unread relay.",
+      "effort_days": 0.1,
+      "proof": "zero 'relay unread / still queued' run-log lines in 30 days; README and the burn-down/build prompts carry the wait loop",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-05"
     }
   ]
 }

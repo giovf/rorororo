@@ -391,3 +391,58 @@ effect, stroke-weight and variable-alias bindings are not moved (next slice if a
 the 25-a-day link allowance; unlock removes it. Not live until the owner republishes (action 019). Proof: ≥ 1 comment or
 purchase naming relink within 30 days of the republish; the 06:45 store-metrics row also tracks rank for "relink variables"
 once the tag is live.
+
+## 10. Research run (2026-10-05, day 14, burn-down starvation fallback): paid newcomers sell nothing on this shelf
+
+Why this run: every venture queue had only dated or blocked items (`docs/pipeline/README.md`, starvation) and this
+queue was first (oldest `updated`). All three built levers still wait on the owner's Figma desktop (actions 017 file,
+018 free plugin, 019 republish with Relink), so the question was what else moves a number without that session.
+
+**Day-14 read (§6):** view_count 6 (4 on day 12), unique_run_count 3 (1 since launch — the first two runs by someone
+other than us, on 2026-10-05), 0 installs, 0 likes, 0 comments, 0 purchases. Rank "styles to variables" 68/1239 (78 on
+day 11), "link to variables" 10/164 (13), "unused variables" 1/48, "variables toolkit" 8/45.
+
+**The day-10 search bodies re-read as a market table** (`docs/relay/responses/build-2026-10-01/`, 333 distinct listings
+across five queries, `monetized_resource_metadata` per listing):
+
+| Listings created in 2026 (index date) | n | median users | ≥ 40 users | purchases |
+| --- | --- | --- | --- | --- |
+| free | 101 | 39 | 50 | — |
+| paid (Figma checkout) | 9 | 13 | 2 | **0 across all nine** |
+
+The nine paid 2026 entrants: JSON Exporter/Importer ($5/mo, 1,480 users), Fig Swiss Knife ($15/mo, 212), My Linter ($9,
+20), Rebind ($5, 15), Figma Quality Guardian ($5, 13), Coverset ($5, 11), Varlint ($5, 6), Design System Auditor ($2,
+7-day trial, 2) and ours ($12, 1) — purchase_count 0 for every one, including the two subscriptions with four-figure and
+three-figure user counts. 14 of the 16 paid listings in the whole set use a freemium code, 2 a timed trial. The only paid
+seller with real sales in the set, Styles & Variables Organizer ($15 × 2,341), carries 140k users from before the index
+date. Reading: in 2026 a paid variables plugin does not sell from Figma's search box at any price or trial shape; users
+come to free listings (half of the free entrants pass 40 users) and buy, if at all, from inside a tool they already run.
+So zero purchases at day 30 is the shelf's norm for a paid newcomer, **not** a signal about $12 — the day-30 item's
+"installs but no purchases = pricing" rule is amended below, and the free companion (018) is the install channel.
+
+**Web, 2026-10-05.** Figma still has no native styles → variables conversion and no unused-variables cleaner (only
+"Detach deleted variables" in quick actions); Variables Cleaner (free) shipped an update in 2026-08 — the jobs remain
+plugin territory, not platform-absorbed (§2 platform-risk note holds). Figma forum: five threads on the same problem —
+layers stuck on the old library's variables after moving a file or swapping libraries, local variables "all broken",
+and a feature request to **remap library variables to local variables** (threads 44372, 48877, 19012, 62854, 11143); the
+only workaround named is a third-party "Swap Variables" plugin. Our Relink tab (action 019) does local → library; the
+forum asks for both directions. Tokens Studio prices its Starter Plus at €39/mo for sync and automation, while plain
+export is free everywhere (variables2css 28.9k users, Export/Import Variables 90.8k) — export alone is not a paid job.
+
+**Relay note.** A relay request for fresh rival comments and twelve uncrowded-query hit counts
+(`docs/relay/requests/vt-research-2026-10-05.txt`) sat queued on GitHub's runners for the whole run (nothing else
+queued; README promises ~2 minutes) — the evidence above is from the day-10 bodies and the web; the bodies land under
+`docs/relay/responses/vt-research-2026-10-05/` for the next run. Logged as a foundry queue item (`relay-wait-loop`).
+
+**Decision and queue (scores per STRATEGY §5):**
+1. `relink-howto-page` (4) — a Google-facing how-to on apps.gankdat.com for "figma variables broken after moving file /
+   swap library / relink variables to library", answering the five forum threads with the Relink tab and its honest limits;
+   linked from the comparison page and the landing card; Search Console measures. No owner minutes.
+2. `relink-to-local` (4) — the forum's other direction: a direction switch on the Relink tab that moves library bindings
+   onto the local variable of the same name and type (the "remap to local" feature request), reusing `core/relink.ts`.
+   Rides the pending 019 republish if built before it, so zero extra owner minutes.
+3. `search-rank-relink-queries` (3) — add "relink variables", "swap variables" and "library variables" to STORE.md's
+   `Search rank queries` so the 06:45 store-metrics row carries the series from before the Relink tag goes live.
+4. `day-30-review` amended: zero purchases is the 2026 norm for paid newcomers; read installs of the free companion and
+   listing views instead, and treat pricing as a question only once installs exist.
+Kill date unchanged: 2026-12-20 with zero sales and zero organic signal (STRATEGY §7).

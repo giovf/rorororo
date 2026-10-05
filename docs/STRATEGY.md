@@ -741,3 +741,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   workaround on the comparison page (and Half Bold's cell corrected: its "integration guide" is the same workaround), the
   ruler page, the ReadFocus page and the welcome tips, each keeping "cannot read the editor itself". Why: two Docs asks in
   the sample and a rival's FAQ answering with exactly this; free to give, no claim of Docs support.
+- 2026-10-05 burn-down (20:00 run, research): variables-toolkit starvation research (RESEARCH.md §10). The day-10 search
+  bodies read as a market table: of 110 variables plugins indexed in 2026, the 101 free ones have a median 39 users and
+  the 9 paid ones 0 purchases between them (two subscriptions with 1,480 and 212 users included). Zero sales at day 30 is
+  therefore the shelf's norm for a paid newcomer, not a pricing signal — the day-30 rule now reads the free companion's
+  installs first. Forum demand (five threads) is relink in both directions; three items queued (how-to page 4, relink to
+  local 4, rank series 3). Foundry: relay-wait-loop (5) after the relay run sat queued 16+ minutes.

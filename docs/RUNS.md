@@ -609,3 +609,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 19:45 | burn-down | Listing, AMO notes, welcome, ReadFocus page, comparison page updated; queue read-focus read-aloud done
 - 2026-10-05 19:50 | burn-down | Google Docs tip (Publish to web, then ReadFocus on that page) on comparison, ruler, ReadFocus and welcome pages
 - 2026-10-05 19:50 | burn-down | Queue: read-focus google-docs-publish-tip done; next is null, every queue starved again
+- 2026-10-05 20:32 | burn-down | Variables Toolkit research (starvation fallback): day-10 bodies re-read as a paid vs free market table
+- 2026-10-05 20:32 | burn-down | 2026 entrants: 101 free (median 39 users) vs 9 paid, 0 purchases across all nine; zero sales is the norm
+- 2026-10-05 20:32 | burn-down | Web: no native Figma styles→variables or unused cleaner; forum asks relink both ways (5 threads)
+- 2026-10-05 20:32 | burn-down | Queue variables-toolkit: relink-howto-page (4), relink-to-local (4), search-rank-relink-queries (3)
+- 2026-10-05 20:32 | burn-down | day-30-review amended: read free-companion installs, not purchases; relay for rival comments still queued
+- 2026-10-05 20:32 | burn-down | Foundry queue: relay-wait-loop (5) — fetch-relay sat queued 16+ min, README's sleep 120 reads nothing
