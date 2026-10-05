@@ -637,3 +637,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   (section 5) now pass in the sandbox with no `.env`. Why: the paid tier was the one part never exercised by any cloud run
   that ships a version; the production key still never leaves `.env`, and the production bundles were checked to carry the
   real key. Proof: no SKIP line for the pro sections in RUNS.md from now on.
+- 2026-10-05 burn-down: gankdat research pass (pipeline starved: every open item blocked or dated). Fourteen Daily numbers
+  rows say the funnel is wide at the top (1,400–1,900 keyless MCP calls a day, 54–117 previews) and zero at the bottom (0 paid,
+  0 keys, 0 OAuth connects), the change feeds — the one product no rival sells — have never been called, Apify is the only
+  shelf with outside runs, and §7's cost rule is tripped on D1 writes. Five items queued: change-feed mode on the Apify actors
+  (7), a three-row D1 write-rate read after the delta refresh (6, from 10-08), per-actor Apify runs in the metrics row (5),
+  IndexNow pings for the stats pages (5), and a keyless Atom feed per register (5). Why these: they put the differentiating
+  product where traffic already is or where no account is needed, and give the §7 rules readings; no new dataset — supply is
+  not the constraint. Evidence: `ventures/gankdat/RESEARCH.md` "Research 2026-10-05".

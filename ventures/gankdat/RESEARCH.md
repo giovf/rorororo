@@ -98,3 +98,38 @@ used a tool in 30 days and ≥ 1 key issued from a claude.ai referrer; `/mcp` ca
 `authed, anon, preview, paywall hits`. Risk accepted: a Community listing without OAuth cannot
 bill inside Claude — `mcp-oauth-lazy-auth` (8) is next.
 
+
+## Research 2026-10-05 (pipeline starved — burn-down)
+
+Every open gankdat item was blocked or dated (`npm run pipeline next` → null), so this is the
+research pass the pipeline rule asks for. Evidence is the last 14 Daily numbers rows above.
+
+| Signal (2026-09-21 → 10-04) | Reading |
+| --- | --- |
+| Paying accounts / x402 paid | 0 / 0 on every row; 1 real account (09-28) |
+| MCP keyless traffic | ~1,400–1,900 anon calls a day; since the keyless preview (09-30) 54–117 preview calls a day and paywall hits fell from ~80 to 3–18 |
+| Conversion | agent sign-up 0 keys/30d; `connect_account` is the most-wanted tool (3–6/day) with `oauth: 0 connects` — queued as `oauth-connect-funnel-check` (10-09) |
+| Change feeds | `changes 7d: 0 (mcp 0, rest 0)` on every row since the counter exists (09-30) — the one product no rival sells has never been called by anyone |
+| Apify | +11/+12/+16 runs a day, 17 users/30d, 17 public actors — the only shelf with activity from outside the repo; the `ours/others` split starts in the 10-05 row, so Apify's QA runner may be part of it |
+| Cost | `cf usage` 09-10→10-04: 87.5M D1 writes ≈ US$38 overage vs the US$5 plan — STRATEGY §7 tripped; the delta refresh (10-04) had its first night on 10-05 |
+| Refresh | uk-insolvency errors daily until the runner path (10-04); eu-ted 429 (10-01) and uk-contract-awards 0 records (10-03) were one-offs |
+
+Reading: the funnel's top (agents hitting the tools keyless) is wide and the bottom is zero, and
+the differentiating product (the change feeds) sits behind a key on a surface with no buyers yet.
+So the items below put the change feed on the shelves that already have traffic or need no account
+(Apify schedules, RSS/automation triggers, Bing's index via IndexNow), make the Apify reading
+per actor so the retirement and quality-score rules can be applied, and read the cost fix before
+the invoice. Queued in `docs/pipeline/queues/gankdat.json`:
+
+| Item | Score | Why now |
+| --- | --- | --- |
+| `apify-change-feed-mode` | 7 | change feeds on the only shelf with runs; a scheduled run becomes a monitor (Apify's recurring-revenue mechanic) |
+| `d1-delta-cost-check` (from 10-08) | 6 | §7 tripped; three rows needed to see the per-day write rate after the delta refresh |
+| `apify-runs-per-actor` | 5 | which registers Apify users run; unlocks `apify-quality-score-pass` and §7 per dataset |
+| `indexnow-stats-pages` | 5 | the indexing reading is owner-blocked; IndexNow needs no account and feeds Bing/DuckDuckGo/Copilot/ChatGPT search |
+| `change-feed-rss` | 5 | keyless Atom per register/facet = the feed on Feedly, Slack, Zapier, Make, n8n, Power Automate without a connector |
+
+Not queued: more datasets (supply is not the constraint — exchange parked items keep their
+triggers), Smithery / n8n node / Snowflake (owner account or £300 MRR triggers unchanged), a
+pricing change (no conversion data to act on). Scores use STRATEGY §5 (evidence × reach ÷ effort)
+and are discounted where demand is inferred rather than measured, as the W40 exchange did.
