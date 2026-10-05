@@ -546,3 +546,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 02:52 | burn-down | 5 tests: Atom shape, dataset-agnostic titles, facet URLs, live feed from seeded changes, 404s
 - 2026-10-05 02:52 | burn-down | Queue: gankdat change-feed-rss done; day-30 read folded into indexnow-day-30-read (2026-11-05)
 - 2026-10-05 02:52 | burn-down | Stopping for time (~40 min + gates): IndexNow + Atom feeds built; gankdat has no buildable item until 10-08
+- 2026-10-05 08:12 | report | Money: spent £7.40, planned £86.00 (+£31 Cloudflare est.), revenue £0, net -£7.40, headroom £6.60/£100 cap
+- 2026-10-05 08:12 | report | gankdat: accounts flat at 1 (0 paid) all week; ~12,000 MCP calls, 255 paywall hits, 0 x402 payments
+- 2026-10-05 08:12 | report | Highlight Keep and ReadFocus now launched; both flat at 0 users/sales; 0.2.0 submitted, in review
+- 2026-10-05 08:12 | report | Variables Toolkit: views 2→6, unique runs 1→2 this week; installs/likes/purchases still 0
+- 2026-10-05 08:12 | report | Alerts: 15 lines 2026-09-28..10-04, 0 self-caused notices; all already tracked or closed
+- 2026-10-05 08:12 | report | Owner/handoffs: 10 open via npm run handoffs (8 owner, 2 handoff), 0 older than 7 days
+- 2026-10-05 08:12 | report | Next step: Cloudflare D1-write overage breakdown is highest leverage — £6.60 headroom left under cap
+- 2026-10-05 08:12 | notify | ReadFocus 0.2 submitted to Chrome and Firefox: adds a built-in PDF reader
+- 2026-10-05 08:12 | notify | Highlight Keep 0.2 submitted to Chrome and Firefox: adds PDF highlighting
