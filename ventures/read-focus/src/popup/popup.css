@@ -16,6 +16,21 @@ header { display: flex; justify-content: space-between; align-items: center; }
 body.is-free .row.pro input, body.is-free .row.pro select { opacity: .5; pointer-events: none; }
 body.is-pro .pro-tag { display: none; }
 input[type=range] { width: 130px; }
+/* Ruler options: indented under the ruler row, hidden while the ruler is off. */
+.sub { display: flex; flex-direction: column; gap: 6px; padding-left: 14px; border-left: 2px solid #e6e2d8; }
+.sub.off { display: none; }
+.sub .row > span:first-child { font-size: 12px; color: #6b675e; }
+.swatches { display: flex; gap: 6px; }
+.swatches button { width: 20px; height: 20px; padding: 0; border-radius: 50%; border: 2px solid #e6e2d8; cursor: pointer; background: var(--swatch, #ffd60a); }
+.swatches button[data-ruler-color=yellow] { --swatch: #ffd60a; }
+.swatches button[data-ruler-color=blue] { --swatch: #3896ff; }
+.swatches button[data-ruler-color=green] { --swatch: #28be6e; }
+.swatches button[data-ruler-color=pink] { --swatch: #ff69b4; }
+.swatches button[data-ruler-color=grey] { --swatch: #787878; }
+.swatches button[data-ruler-color=white] { --swatch: #fff; border-color: #bbb; }
+.swatches button.active { border-color: #b5551b; box-shadow: 0 0 0 2px #fff inset; }
+.sub select { padding: 3px 6px; }
+.sub input[type=range] { width: 110px; }
 input[type=text], select { font: inherit; padding: 5px 8px; border-radius: 6px; border: 1px solid #e6e2d8; background: #fff; }
 input[type=text] { flex: 1; min-width: 0; }
 #activate { font: inherit; padding: 5px 10px; border-radius: 6px; border: 1px solid #e6e2d8; background: #fff; cursor: pointer; }
@@ -34,6 +49,7 @@ body.no-shortcuts .touch-hint { display: inline; font-size: 11px; color: #6b675e
   body { width: auto; padding: 16px; gap: 14px; font-size: 15px; }
   .row.big { font-size: 16px; }
   input[type=range] { width: 45vw; }
+  .swatches button { width: 28px; height: 28px; }
   input[type=checkbox] { width: 22px; height: 22px; }
   .presets button, #activate, input[type=text], select { padding: 9px 8px; }
   button.wide { padding: 12px 10px; }

@@ -131,6 +131,35 @@ try {
   );
   await page.screenshot({ path: path.join(here, 'out', '01-free-medium-ruler.png') });
 
+  // 1b. Ruler controls (free): colour, height and opacity reach the band; locked, it ignores the
+  //     mouse and moves only on a click or tap.
+  await setSettings({
+    enabled: true,
+    bold: true,
+    preset: 'medium',
+    ruler: true,
+    rulerColor: 'blue',
+    rulerHeight: 48,
+    rulerOpacity: 0.4,
+    rulerLock: true,
+  });
+  await page.waitForFunction(() => document.querySelector('.rf-ruler')?.classList.contains('rf-ruler-locked'));
+  const band = await page.locator('.rf-ruler').evaluate((el) => {
+    const cs = getComputedStyle(el);
+    return { height: parseFloat(cs.height), bg: cs.backgroundColor };
+  });
+  check('ruler height follows the setting', Math.abs(band.height - 48) < 1, `height=${band.height}`);
+  check('ruler colour and opacity follow the setting', band.bg === 'rgba(56, 150, 255, 0.4)', band.bg);
+  await page.mouse.move(300, 500);
+  await page.waitForTimeout(100);
+  const lockedTop = await page.locator('.rf-ruler').evaluate((el) => parseFloat((el as HTMLElement).style.top));
+  check('locked ruler ignores the mouse', Math.abs(lockedTop + 17 - 300) < 3, `top=${lockedTop}`);
+  await page.mouse.click(300, 500);
+  await page.waitForTimeout(100);
+  const clickedTop = await page.locator('.rf-ruler').evaluate((el) => parseFloat((el as HTMLElement).style.top));
+  check('a click moves the locked ruler', Math.abs(clickedTop + 24 - 500) < 3, `top=${clickedTop}`);
+  await page.screenshot({ path: path.join(here, 'out', '01b-ruler-controls.png') });
+
   // 2. Text size scales outer blocks only, not the nested list or textarea.
   await setSettings({ enabled: true, bold: true, preset: 'medium', size: 1.3 });
   await page.waitForFunction(() => document.documentElement.classList.contains('rf-size'));

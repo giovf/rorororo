@@ -594,3 +594,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 19:32 | burn-down | ReadFocus research: starvation fallback; review sample re-read by ask, BDA style guide, Half Bold FAQ
 - 2026-10-05 19:32 | burn-down | Ruler colour/size/opacity asked 4x across 28k-user ruler tools; tint 3x; Docs 2x; read-aloud a suite feature
 - 2026-10-05 19:32 | burn-down | Queue read-focus: ruler-controls (5), spacing-and-tint (4), read-aloud (3), google-docs-publish-tip (3)
+- 2026-10-05 19:22 | burn-down | ReadFocus 0.3.0: ruler colour (six swatches, white for dark pages), height, opacity, lock in place
+- 2026-10-05 19:22 | burn-down | Locked band ignores the mouse, moves on click/tap; old saves backfilled; 1 unit test + e2e 1b (4 checks)
+- 2026-10-05 19:22 | burn-down | Listing, AMO notes, welcome, ReadFocus page, reading-ruler.html say what the ruler now does
+- 2026-10-05 19:22 | burn-down | Handoff amended: sign and upload 0.3.0 (was 0.2.1); queue read-focus ruler-controls done

@@ -117,12 +117,13 @@
     {
       "id": "ruler-controls",
       "title": "Reading ruler controls in the popup: colour (six swatches, one safe on dark pages), height, opacity and lock-in-place (free)",
-      "why": "The September review sample asks four times across the three ruler tools (28,000 users): ReadingRuler \"the only thing that could make it better would be color and opacity options\", ReadingLine \"wish we could tweak colour, size and opacity\" and \"option to change color — not usable on dark background themes\", Reader Line \"the color filters are nice\". ReadFocus's ruler is one fixed yellow band (content.css) and reading-ruler.html says so. Rivals' controls are free, so these are too. Research 2026-10-05 in RESEARCH.md.",
+      "why": "The September review sample asks four times across the three ruler tools (28,000 users): ReadingRuler \"the only thing that could make it better would be color and opacity options\", ReadingLine \"wish we could tweak colour, size and opacity\" and \"option to change color — not usable on dark background themes\", Reader Line \"the color filters are nice\". ReadFocus's ruler is one fixed yellow band (content.css) and reading-ruler.html says so. Rivals' controls are free, so these are too. Research 2026-10-05 in RESEARCH.md. BUILT 2026-10-05 (burn-down 19:00) as 0.3.0: six swatches, three heights, opacity slider, lock-in-place (click/tap moves a locked band); e2e section 1b; copy on the listing, AMO notes, welcome, ReadFocus page and reading-ruler.html.",
       "effort_days": 0.3,
       "proof": "a ruler review or support mail naming colour/size/opacity within 60 days of the version going live; reading-ruler.html clicks that turn into installs at the day-30 review",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     },
     {
       "id": "spacing-and-tint",

@@ -25,6 +25,23 @@
       <label class="row pro" title="How heavy the bold part is"><span>Weight <span class="pro-tag">pro</span></span><input type="range" id="weight" min="700" max="900" step="25" /></label>
       <label class="row" title="Scales the page's text blocks; leaves editors alone"><span>Text size</span><input type="range" id="size" min="1" max="1.5" step="0.05" /></label>
       <label class="row"><span>Reading ruler <kbd id="kbd-ruler">…</kbd><span class="touch-hint">tap the page to place it</span></span><input type="checkbox" id="ruler" /></label>
+      <div id="ruler-options" class="sub">
+        <div class="row" role="group" aria-label="Ruler colour">
+          <span>Colour</span>
+          <span class="swatches">
+            <button data-ruler-color="yellow" title="Yellow" aria-label="Yellow"></button><button data-ruler-color="blue" title="Blue" aria-label="Blue"></button><button data-ruler-color="green" title="Green" aria-label="Green"></button><button data-ruler-color="pink" title="Pink" aria-label="Pink"></button><button data-ruler-color="grey" title="Grey" aria-label="Grey"></button><button data-ruler-color="white" title="White — shows on dark pages" aria-label="White, for dark pages"></button>
+          </span>
+        </div>
+        <label class="row"><span>Height</span>
+          <select id="ruler-height">
+            <option value="24">Thin</option>
+            <option value="34">Medium</option>
+            <option value="48">Tall</option>
+          </select>
+        </label>
+        <label class="row" title="How strong the tint is"><span>Opacity</span><input type="range" id="ruler-opacity" min="0.1" max="0.6" step="0.05" /></label>
+        <label class="row" title="The band stays where it is while you scroll; click or tap the page to move it"><span>Lock in place</span><input type="checkbox" id="ruler-lock" /></label>
+      </div>
       <label class="row pro"><span>Paragraph focus <span class="pro-tag">pro</span></span><input type="checkbox" id="focus" /></label>
       <label class="row pro"><span>Font <span class="pro-tag">pro</span></span>
         <select id="font">

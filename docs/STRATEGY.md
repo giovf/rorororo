@@ -721,3 +721,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `spacing-and-tint` (4), `read-aloud` (3, served standalone by a free extension so last) and `google-docs-publish-tip` (3,
   Half Bold's own Publish-to-web workaround, given honestly). Features before distribution only because every
   distribution item left needs the owner's identity; the 10-30 numbers still decide.
+- 2026-10-05 burn-down (19:00 run, 2nd item): read-focus `ruler-controls` (5) built as 0.3.0 — six colours (white for dark
+  pages), three heights, an opacity slider and lock-in-place (a locked band ignores the mouse and moves on a click or tap),
+  all free because every rival's ruler controls are free. Why: the asks were already in the September sample (four across
+  the three ruler tools, 28k users) and `reading-ruler.html` conceded the gap in print. Ships with the open sign-and-upload
+  handoff, amended from 0.2.1. Proof: a ruler review or support mail naming colour/size/opacity within 60 days.

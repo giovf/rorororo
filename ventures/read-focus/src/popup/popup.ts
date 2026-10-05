@@ -1,6 +1,6 @@
 import { PRESET_STRENGTH, type Preset } from '../core/fixation.js';
 import { activateKey, tierForKey } from '../core/license.js';
-import { effectiveFor, withSiteChange, type SiteSettings } from '../core/settings.js';
+import { effectiveFor, withSiteChange, type RulerColor, type SiteSettings } from '../core/settings.js';
 import { documentUrl, isPdfUrl, viewerUrl } from '../core/pdf.js';
 import type { Tier } from '../core/tier.js';
 import { requestSiteAccess } from '../sites.js';
@@ -65,6 +65,13 @@ function render(site: SiteSettings): void {
   $<HTMLInputElement>('weight').value = String(site.weight ?? 700);
   $<HTMLInputElement>('size').value = String(site.size || 1);
   $<HTMLInputElement>('ruler').checked = site.ruler;
+  $('ruler-options').classList.toggle('off', !site.ruler);
+  document
+    .querySelectorAll<HTMLButtonElement>('[data-ruler-color]')
+    .forEach((b) => b.classList.toggle('active', b.dataset['rulerColor'] === site.rulerColor));
+  $<HTMLSelectElement>('ruler-height').value = String(site.rulerHeight || 34);
+  $<HTMLInputElement>('ruler-opacity').value = String(site.rulerOpacity || 0.2);
+  $<HTMLInputElement>('ruler-lock').checked = site.rulerLock;
   $<HTMLInputElement>('focus').checked = site.focus;
   $<HTMLSelectElement>('font').value = site.font;
   document.body.classList.toggle('is-pro', tier === 'pro');
@@ -107,6 +114,12 @@ async function init(): Promise<void> {
   $('pdf').onclick = () => void openPdf();
   $('bold').onchange = (e) => void change({ bold: (e.target as HTMLInputElement).checked });
   $('ruler').onchange = (e) => void change({ ruler: (e.target as HTMLInputElement).checked });
+  document.querySelectorAll<HTMLButtonElement>('[data-ruler-color]').forEach((b) => {
+    b.onclick = () => void change({ rulerColor: b.dataset['rulerColor'] as RulerColor });
+  });
+  $('ruler-height').onchange = (e) => void change({ rulerHeight: Number((e.target as HTMLSelectElement).value) });
+  $('ruler-opacity').oninput = (e) => void change({ rulerOpacity: Number((e.target as HTMLInputElement).value) });
+  $('ruler-lock').onchange = (e) => void change({ rulerLock: (e.target as HTMLInputElement).checked });
   $('focus').onchange = (e) => void change({ focus: (e.target as HTMLInputElement).checked });
   $('font').onchange = (e) => void change({ font: (e.target as HTMLSelectElement).value as SiteSettings['font'] });
   document.querySelectorAll<HTMLButtonElement>('[data-preset]').forEach((b) => {

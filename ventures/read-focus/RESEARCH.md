@@ -293,3 +293,15 @@ evidence × reach ÷ effort):
 Not added: a Docs editor integration (canvas; Half Bold has none either); a ruler colour picker with hex input (six
 swatches cover the asks; a picker if a review asks); dark mode / page colour inversion (Dark Reader's job, 5M users).
 Kill check unchanged: 2026-12-21 if nothing moves.
+
+### 2026-10-05 (burn-down 19:00) — `ruler-controls` built (0.3.0)
+The popup's ruler row now has six colour swatches (yellow, blue, green, pink, grey and white — the one that shows on a dark
+page, the ReadingLine complaint), three heights (24 / 34 / 48 px), an opacity slider (0.1–0.6) and **lock in place**: a
+locked band ignores the mouse and moves only on a click or a tap, so you scroll the page under it (the Reader Line
+behaviour; on a phone it is simply the tap-to-place the 0.2.1 popup already promised). Free, like every rival's ruler
+controls. Implementation: four `SiteSettings` fields with defaults (`normalize` backfills old saves, unit-tested), the
+band styled through three CSS variables on the element, `pointermove` ignored while locked. e2e section 1b (4 checks):
+height and `rgba(56, 150, 255, 0.4)` computed on the band, a mouse move leaving a locked band where it was, a click moving
+it. Copy: listing, AMO notes, welcome page, the ReadFocus page and `reading-ruler.html` (its "one band, no controls" cells
+and the "does not do yet" list now say what is there). Ships as 0.3.0 with the open ALERTS handoff (amended). Proof: a
+ruler review or support mail naming colour/size/opacity within 60 days of the version going live.

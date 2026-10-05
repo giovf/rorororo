@@ -112,11 +112,36 @@ function watch(strength: number): void {
 // Pointer events cover the mouse and, on a phone (Firefox for Android), a tap: the ruler and the
 // focus block follow the mouse on desktop and go where the finger lands on touch.
 const POINTER_EVENTS = ['pointermove', 'pointerdown'] as const;
-let ruler: HTMLDivElement | null = null;
-const onMove = (e: PointerEvent): void => {
-  if (ruler) ruler.style.top = `${e.clientY - ruler.offsetHeight / 2}px`;
+// The band's tint per colour; the inset hairline is the same colour, a little stronger.
+const RULER_RGB: Record<SiteSettings['rulerColor'], string> = {
+  yellow: '255, 214, 10',
+  blue: '56, 150, 255',
+  green: '40, 190, 110',
+  pink: '255, 105, 180',
+  grey: '120, 120, 120',
+  white: '255, 255, 255',
 };
-function setRuler(on: boolean): void {
+let ruler: HTMLDivElement | null = null;
+let rulerLocked = false;
+const placeRuler = (y: number): void => {
+  if (ruler) ruler.style.top = `${y - ruler.offsetHeight / 2}px`;
+};
+const onMove = (e: PointerEvent): void => {
+  // Locked: the band stays put while the page scrolls under it; a click or tap moves it.
+  if (rulerLocked && e.type !== 'pointerdown') return;
+  placeRuler(e.clientY);
+};
+function styleRuler(s: SiteSettings): void {
+  if (!ruler) return;
+  const rgb = (RULER_RGB as Record<string, string>)[s.rulerColor] ?? RULER_RGB.yellow; // stored data may predate a colour
+  const alpha = Math.min(0.6, Math.max(0.1, s.rulerOpacity || 0.2));
+  ruler.style.setProperty('--rf-ruler-h', `${Math.min(80, Math.max(16, s.rulerHeight || 34))}px`);
+  ruler.style.setProperty('--rf-ruler-bg', `rgba(${rgb}, ${alpha.toFixed(2)})`);
+  ruler.style.setProperty('--rf-ruler-line', `rgba(${rgb}, ${Math.min(1, alpha * 2).toFixed(2)})`);
+  rulerLocked = s.rulerLock;
+  ruler.classList.toggle('rf-ruler-locked', rulerLocked);
+}
+function setRuler(on: boolean, s: SiteSettings): void {
   if (on && !ruler) {
     ruler = document.createElement('div');
     ruler.className = 'rf-ruler';
@@ -127,6 +152,7 @@ function setRuler(on: boolean): void {
     ruler = null;
     for (const ev of POINTER_EVENTS) window.removeEventListener(ev, onMove);
   }
+  if (on) styleRuler(s);
 }
 
 // ---------- paragraph focus (pro) ----------
@@ -222,7 +248,7 @@ function apply(next: SiteSettings): void {
   const size = next.enabled ? Math.min(1.5, Math.max(1, next.size || 1)) : 1;
   document.documentElement.style.setProperty('--rf-size', String(size));
   document.documentElement.classList.toggle('rf-size', size !== 1);
-  setRuler(next.enabled && next.ruler);
+  setRuler(next.enabled && next.ruler, next);
   setFocus(next.enabled && next.focus);
   setFont(next.enabled ? next.font : 'default');
 }
