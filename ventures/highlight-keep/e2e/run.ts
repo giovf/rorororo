@@ -1,6 +1,7 @@
 // End-to-end check of Highlight Keep in a real Chromium: create highlights by selecting
 // text, restore them after reload (and after the page text shifts), recolour/note/remove,
 // free-tier gating, Markdown export.
+import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { tmpdir } from 'node:os';
@@ -27,6 +28,7 @@ await new Promise<void>((r) => server.listen(0, HOST, r));
 const url = `http://${HOST}:${(server.address() as { port: number }).port}/`;
 
 let failures = 0;
+let skipped = false;
 const check = (name: string, ok: boolean, detail = ''): void => {
   console.log(`${ok ? 'PASS' : 'FAIL'}  ${name}${detail ? ` — ${detail}` : ''}`);
   if (!ok) failures++;
@@ -59,13 +61,34 @@ async function selectText(page: Page, selector: string, text: string): Promise<v
   }, selector);
 }
 
+// Which Chromium to drive, in order: CHROMIUM_PATH, Playwright's own registry build, then the
+// sandbox's pre-installed build (a cloud sandbox ships an older build than Playwright wants and
+// forbids `playwright install`). Extensions need the full browser, not the headless shell.
+const SANDBOX_CHROMIUM = '/opt/pw-browsers/chromium';
+function resolveBrowser(): { executablePath: string } | { channel: 'chromium' } {
+  const fromEnv = process.env['CHROMIUM_PATH'];
+  if (fromEnv) {
+    console.log(`browser: ${fromEnv} (CHROMIUM_PATH)`);
+    return { executablePath: fromEnv };
+  }
+  const own = chromium.executablePath();
+  if (existsSync(own)) {
+    console.log(`browser: ${own} (Playwright registry)`);
+    return { channel: 'chromium' };
+  }
+  if (existsSync(SANDBOX_CHROMIUM)) {
+    console.log(`browser: ${SANDBOX_CHROMIUM} (sandbox fallback; Playwright wanted ${own})`);
+    return { executablePath: SANDBOX_CHROMIUM };
+  }
+  throw new Error(
+    `no Chromium: ${own} is missing, ${SANDBOX_CHROMIUM} is missing and CHROMIUM_PATH is unset — run \`npx playwright install chromium\` or set CHROMIUM_PATH`,
+  );
+}
+
 const context = await chromium.launchPersistentContext(
   path.join(tmpdir(), `hk-e2e-${Date.now()}`),
   {
-    // A sandbox with a different Playwright browser build points here (CHROMIUM_PATH=/opt/pw-browsers/chromium).
-    ...(process.env['CHROMIUM_PATH']
-      ? { executablePath: process.env['CHROMIUM_PATH'] }
-      : { channel: 'chromium' as const }),
+    ...resolveBrowser(),
     headless: true,
     args: [`--disable-extensions-except=${ext}`, `--load-extension=${ext}`],
     viewport: { width: 1280, height: 800 },
@@ -177,36 +200,43 @@ try {
   await pdfPage.screenshot({ path: path.join(here, 'out', '03-pdf.png') });
   await pdfPage.close();
 
-  // 5. Pro: real key → colours + note; recolour; note; remove.
-  const key = await issueLicense(process.env['LICENSE_SIGNING_KEY'] ?? '', {
-    venture: 'highlight-keep',
-    tier: 'pro',
-    id: 'e2e',
-    issued: '2026-09-19',
-  });
-  await setKey(key);
-  await page.reload();
-  await page.waitForSelector('mark.hk');
-  await selectText(page, '#p3', 'second highlight');
-  await page.waitForSelector('.hk-toolbar:not([hidden])');
-  check('six colours on pro', (await page.locator('.hk-toolbar .hk-dot').count()) === 6);
-  await page.click('.hk-toolbar .hk-dot.hk-green');
-  await page.waitForFunction(() => document.querySelectorAll('mark.hk').length === 2);
-  check('second highlight is green', (await page.locator('mark.hk-green').count()) === 1);
-  await page.click('mark.hk-green');
-  await page.waitForSelector('.hk-toolbar [data-act="note"]');
-  await page.click('.hk-toolbar [data-act="note"]');
-  await page.fill('.hk-toolbar textarea', 'remember this');
-  await page.click('.hk-toolbar .hk-save');
-  await page.waitForSelector('mark.hk-green.hk-noted');
-  check('note saved and marked', true);
-  await page.click('mark.hk-green');
-  await page.click('.hk-toolbar [data-act="delete"]');
-  await page.waitForFunction(() => document.querySelectorAll('mark.hk').length === 1);
-  check(
-    'highlight removed and text intact',
-    (await page.locator('#p3').textContent())?.includes('second highlight') === true,
-  );
+  // 5. Pro: real key → colours + note; recolour; note; remove. Needs LICENSE_SIGNING_KEY (.env);
+  // a sandbox without it skips this section and says so (foundry `e2e-pro-sections-test-key`).
+  const signingKey = process.env['LICENSE_SIGNING_KEY'];
+  if (!signingKey) {
+    console.log('SKIP  pro section (5): no LICENSE_SIGNING_KEY in the environment');
+    skipped = true;
+  } else {
+    const key = await issueLicense(signingKey, {
+      venture: 'highlight-keep',
+      tier: 'pro',
+      id: 'e2e',
+      issued: '2026-09-19',
+    });
+    await setKey(key);
+    await page.reload();
+    await page.waitForSelector('mark.hk');
+    await selectText(page, '#p3', 'second highlight');
+    await page.waitForSelector('.hk-toolbar:not([hidden])');
+    check('six colours on pro', (await page.locator('.hk-toolbar .hk-dot').count()) === 6);
+    await page.click('.hk-toolbar .hk-dot.hk-green');
+    await page.waitForFunction(() => document.querySelectorAll('mark.hk').length === 2);
+    check('second highlight is green', (await page.locator('mark.hk-green').count()) === 1);
+    await page.click('mark.hk-green');
+    await page.waitForSelector('.hk-toolbar [data-act="note"]');
+    await page.click('.hk-toolbar [data-act="note"]');
+    await page.fill('.hk-toolbar textarea', 'remember this');
+    await page.click('.hk-toolbar .hk-save');
+    await page.waitForSelector('mark.hk-green.hk-noted');
+    check('note saved and marked', true);
+    await page.click('mark.hk-green');
+    await page.click('.hk-toolbar [data-act="delete"]');
+    await page.waitForFunction(() => document.querySelectorAll('mark.hk').length === 1);
+    check(
+      'highlight removed and text intact',
+      (await page.locator('#p3').textContent())?.includes('second highlight') === true,
+    );
+  }
 
   // 6. Storage → Markdown (via the popup's pure export) and index.
   const stored = await sw.evaluate(async () => {
@@ -224,5 +254,9 @@ try {
   await context.close();
   server.close();
 }
-console.log(failures === 0 ? '\nALL PASSED' : `\n${failures} FAILED`);
+console.log(
+  failures === 0
+    ? `\nALL PASSED${skipped ? ' (pro section skipped)' : ''}`
+    : `\n${failures} FAILED`,
+);
 process.exit(failures === 0 ? 0 : 1);

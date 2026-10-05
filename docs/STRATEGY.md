@@ -619,3 +619,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   e2e sections skip on every cloud run for want of the signing key. Why: each cost or hid work tonight and would again; all three
   are small, repo-only, and raise the chance that a shipped extension version is actually tested. No exchange pre-research:
   the starved-queue rule takes precedence and the budget is spent.
+- 2026-10-05 burn-down: foundry `e2e-sandbox-browser` built — both extension e2e runners resolve the browser themselves
+  (CHROMIUM_PATH, then Playwright's own build, then the sandbox's `/opt/pw-browsers/chromium`) and say which, and Highlight
+  Keep's runner skips its pro section without the signing key instead of crashing, which it did on its first sandbox run
+  tonight. The burn-down and build prompts now run the venture's e2e after any extension `src/` change. Why: every cloud run
+  paid a failed attempt or skipped the only test that drives the built extension, so a content-script regression could reach
+  main green; both e2e passed first time in the sandbox after the fix. Proof: no browser-mismatch line in RUNS.md in 30 days.

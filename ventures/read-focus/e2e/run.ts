@@ -2,6 +2,7 @@
 //   node --disable-warning=ExperimentalWarning e2e/run.ts        (after `node build.js --test`)
 // Serves the fixture on 127.0.0.1, loads dist-test as an unpacked extension, drives the
 // extension through its own storage (what the popup writes), and asserts on the page.
+import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { tmpdir } from 'node:os';
@@ -36,14 +37,36 @@ const check = (name: string, ok: boolean, detail = ''): void => {
   if (!ok) failures++;
 };
 
+// Which Chromium to drive, in order: CHROMIUM_PATH, Playwright's own registry build, then the
+// sandbox's pre-installed build (a cloud sandbox ships an older build than Playwright wants and
+// forbids `playwright install`). Extensions need the full browser, not the headless shell.
+const SANDBOX_CHROMIUM = '/opt/pw-browsers/chromium';
+function resolveBrowser(): { executablePath: string } | { channel: 'chromium' } {
+  const fromEnv = process.env['CHROMIUM_PATH'];
+  if (fromEnv) {
+    console.log(`browser: ${fromEnv} (CHROMIUM_PATH)`);
+    return { executablePath: fromEnv };
+  }
+  const own = chromium.executablePath();
+  if (existsSync(own)) {
+    console.log(`browser: ${own} (Playwright registry)`);
+    return { channel: 'chromium' };
+  }
+  if (existsSync(SANDBOX_CHROMIUM)) {
+    console.log(`browser: ${SANDBOX_CHROMIUM} (sandbox fallback; Playwright wanted ${own})`);
+    return { executablePath: SANDBOX_CHROMIUM };
+  }
+  throw new Error(
+    `no Chromium: ${own} is missing, ${SANDBOX_CHROMIUM} is missing and CHROMIUM_PATH is unset — run \`npx playwright install chromium\` or set CHROMIUM_PATH`,
+  );
+}
+
 const context = await chromium.launchPersistentContext(
   path.join(tmpdir(), `rf-e2e-${Date.now()}`),
   {
-    channel: 'chromium',
+    ...resolveBrowser(),
     headless: true,
     args: [`--disable-extensions-except=${ext}`, `--load-extension=${ext}`],
-    // A sandbox with a different Playwright browser build points here (CHROMIUM_PATH=/opt/pw-browsers/chromium).
-    ...(process.env['CHROMIUM_PATH'] ? { executablePath: process.env['CHROMIUM_PATH'] } : {}),
     viewport: { width: 1280, height: 800 },
   },
 );

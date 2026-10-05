@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-04",
+  "updated": "2026-10-05",
   "items": [
     {
       "id": "fetch-relay",
@@ -358,12 +358,13 @@
     {
       "id": "e2e-sandbox-browser",
       "title": "Extension e2e runs out of the box in the cloud sandbox: the runner falls back to /opt/pw-browsers/chromium when Playwright's own build is missing, and the burn-down/build prompts say to run it after a content-script change",
-      "why": "2026-10-04 23:15 burn-down: `npm run e2e -w @foundry/read-focus` failed on first run — Playwright 1.58.1 looks for chromium-1208, the sandbox ships chromium-1194 at /opt/pw-browsers/chromium (PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1, so `playwright install` is not an option); the runner already honours CHROMIUM_PATH (comment in e2e/run.ts, both extensions) but nothing sets it, so every cloud run pays one failed attempt or skips e2e. The root `npm run check` does not run e2e at all, so a content-script regression (today's ruler/focus rewrite to pointer events, 0.2.1) reaches main green. Fix: e2e/run.ts in both ventures resolves the browser in order CHROMIUM_PATH → Playwright's registry → /opt/pw-browsers/chromium if it exists, with one log line saying which; `docs/routines/burn-down.md` and `build.md` gain one sentence: a change under `ventures/<ext>/src/` runs `npm run e2e -w @foundry/<ext>` before the commit. Evidence 2 (one failed run today, the comment shows an earlier one) × reach 2 (every extension change in every cloud run) ÷ 0.1 days.",
+      "why": "2026-10-04 23:15 burn-down: `npm run e2e -w @foundry/read-focus` failed on first run — Playwright 1.58.1 looks for chromium-1208, the sandbox ships chromium-1194 at /opt/pw-browsers/chromium (PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1, so `playwright install` is not an option); the runner already honours CHROMIUM_PATH (comment in e2e/run.ts, both extensions) but nothing sets it, so every cloud run pays one failed attempt or skips e2e. The root `npm run check` does not run e2e at all, so a content-script regression (today's ruler/focus rewrite to pointer events, 0.2.1) reaches main green. Fix: e2e/run.ts in both ventures resolves the browser in order CHROMIUM_PATH → Playwright's registry → /opt/pw-browsers/chromium if it exists, with one log line saying which; `docs/routines/burn-down.md` and `build.md` gain one sentence: a change under `ventures/<ext>/src/` runs `npm run e2e -w @foundry/<ext>` before the commit. Evidence 2 (one failed run today, the comment shows an earlier one) × reach 2 (every extension change in every cloud run) ÷ 0.1 days. 2026-10-05 burn-down: built — both runners resolve CHROMIUM_PATH → Playwright registry → /opt/pw-browsers/chromium and log which; Highlight Keep now skips its pro section without the key instead of crashing (it did, on the first sandbox run); both prompts carry the sentence. Both e2e passed first time in the sandbox.",
       "effort_days": 0.1,
       "proof": "the next cloud run's e2e passes first time; no RUNS.md line about a browser mismatch in 30 days",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-04"
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-05"
     },
     {
       "id": "pipeline-doing-visibility",

@@ -511,3 +511,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 23:29 | burn-down | pipeline-doing-visibility (4): actions-minutes sat hidden in doing while next reported starvation
 - 2026-10-04 23:29 | burn-down | e2e-pro-sections-test-key (3): pro sections skip on every cloud run for want of the signing key
 - 2026-10-04 23:37 | burn-down | Stopping for time (~45 min): ReadFocus 0.2.1 Android + foundry research; next buildable is e2e-sandbox-browser (4)
+- 2026-10-05 00:20 | burn-down | Extension e2e runners pick the browser: CHROMIUM_PATH, Playwright's build, else the sandbox's; log which
+- 2026-10-05 00:20 | burn-down | Highlight Keep e2e no longer crashes without the signing key: pro section skipped with a SKIP line
+- 2026-10-05 00:20 | burn-down | Both e2e passed first time in the sandbox; burn-down + build prompts: extension src change runs e2e
+- 2026-10-05 00:20 | burn-down | Queue: foundry e2e-sandbox-browser done; next buildable is pipeline-doing-visibility (4)

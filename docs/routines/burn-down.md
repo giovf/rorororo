@@ -9,6 +9,7 @@ bootstrap in `README.md`, this text is what the routine runs; until then it is a
 
 Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `runs-line-length-check`).
 Changes: 2026-10-04 — nightly instead of Wednesday-only; GATE on `docs/ops/BURN.json`; usage-report notes update that file; empty queues → pre-research exchange candidates.
+Changes: 2026-10-05 — LOOP step 3: an extension `src/` change runs that venture's e2e before the commit (foundry `e2e-sandbox-browser`).
 
 ---
 
@@ -29,7 +30,7 @@ SELF-EXPANSION — improvements to the operation itself (routines, relays, watch
 LOOP — repeat until there is nothing buildable or you have been running about 50 minutes (the next hourly fire continues):
 1. `npm run pipeline empty`: if it lists an open venture queue that needs research, do a RESEARCH item for the first one: study the venture's `RESEARCH.md`, metrics rows, alerts, inbox signals, research docs under `ventures/<slug>/docs/` and the market; add at least three scored items to that queue (STRATEGY §5 score, effort_days, proof, evidence in `why`) or set the queue `finished` with a `finished_reason`; write the evidence to the venture's `RESEARCH.md`; set `needs_research: false` and `updated`.
 2. Otherwise `npm run pipeline next` is the item: set it `doing`, build it completely, set it `done` with `done_at`. If that empties its queue (nothing todo/doing/blocked) and the queue is not finished, set `needs_research: true`. If you cannot build it (needs an account, key, third party), set it `blocked` with `blocked_on` and take the next candidate. If it is not worth doing, set it `dropped` and say why in `why`.
-3. Gates: `npm run check -w @foundry/gankdat` for gankdat work, `npm run check` at the root otherwise (also validates the pipeline files).
+3. Gates: `npm run check -w @foundry/gankdat` for gankdat work, `npm run check` at the root otherwise (also validates the pipeline files). A change under `ventures/read-focus/src/` or `ventures/highlight-keep/src/` also runs `npm run e2e -w @foundry/<slug>` before the commit (a real Chromium drives the built extension; the runner finds the sandbox's browser by itself).
 4. ONE COMMIT PER ITEM containing the work, its docs, the queue change and the run-log lines together, then push immediately: message `<area>: <what> (burn-down)` ending with `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`; on rejection `git pull --no-rebase` and push again. Never push a half-built item; if the limit cuts you off mid-item, nothing of that item reaches `main` and the next run redoes it.
 5. Go back to 1.
 If `npm run pipeline` reports nothing buildable and no queue needs research, do ONE pre-research pass for the exchange instead (max one per night, skip if a `| burn-down |` line today already says `pre-research`): pick a candidate shelf or dataset not yet in `docs/pipeline/exchange.json`, verify its licence and a paid rival through the relay or WebSearch, and add it as a `parked` idea with evidence and a concrete trigger; then write ONE run-log line and stop — never invent build work.

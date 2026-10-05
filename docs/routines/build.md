@@ -10,6 +10,7 @@ Listed in `docs/SCHEDULERS.md`; fallback at :20 in `fallback.md`.
 Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `runs-line-length-check`).
 2026-09-30 — STEP -1 slot marker (foundry `fallback-slot-race`); Taskmaster rows via
 `npm run task -- add` (foundry `taskmaster-offline-add`).
+Changes: 2026-10-05 — LOOP step 3: an extension `src/` change runs that venture's e2e before the commit (foundry `e2e-sandbox-browser`).
 
 ---
 
@@ -28,7 +29,7 @@ SELF-EXPANSION — improvements to the operation itself (routines, relays, watch
 THE ITEM:
 1. `npm run pipeline empty`: if it lists an open venture queue that needs research (empty, `needs_research: true`, or — when nothing at all is buildable — starved: every open item blocked or dated, oldest `updated` first), this run is a RESEARCH run for the first one: study the venture's `RESEARCH.md`, metrics rows, alerts, inbox signals, research docs under `ventures/<slug>/docs/` and the market; add at least three scored items to that queue (STRATEGY §5 score, effort_days, proof, evidence in `why`) or set the queue `finished` with a `finished_reason`; write the evidence to the venture's `RESEARCH.md`; set `needs_research: false` and `updated`.
 2. Otherwise `npm run pipeline next` is the item: set it `doing`, build it completely, set it `done` with `done_at`. If that empties its queue (nothing todo/doing/blocked) and the queue is not finished, set `needs_research: true`. If you cannot build it (needs an account, key, third party), set it `blocked` with `blocked_on` and take the next candidate. If it is not worth doing, set it `dropped` and say why in `why`. A new gankdat module gets its Taskmaster row in the same commit with `npm run task -- add` (no MCP, no AI).
-3. Gates: `npm run check -w @foundry/gankdat` for gankdat work, `npm run check` at the root otherwise (also validates the pipeline files).
+3. Gates: `npm run check -w @foundry/gankdat` for gankdat work, `npm run check` at the root otherwise (also validates the pipeline files). A change under `ventures/read-focus/src/` or `ventures/highlight-keep/src/` also runs `npm run e2e -w @foundry/<slug>` before the commit (a real Chromium drives the built extension; the runner finds the sandbox's browser by itself).
 4. ONE COMMIT containing the work, its docs, the queue change and the run-log lines together, then push: message `<area>: <what> (build)` ending with `Co-Authored-By: Claude Fable 5.1 <noreply@anthropic.com>`; on rejection `git pull --no-rebase` and push again. Never push a half-built item; if the limit cuts you off mid-item, nothing of that item reaches `main` and the next run redoes it.
 If `npm run pipeline` reports nothing buildable and no queue needs research, write ONE run-log line saying so and stop — do not invent work.
 
