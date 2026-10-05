@@ -705,3 +705,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   integration, which would break 'no account, no sync server'. Columns verified through the relay (docs.readwise.io) and a
   third-party copy of the import page; readwise.io/import_bulk itself needs a login. Ships inside the unreleased 0.4.0.
   Proof: Readwise/Obsidian named in a review or support mail; listing conversions after vs before.
+- 2026-10-05 burn-down (18:00 run, 2nd item): highlight-keep `import-glasp-hypothesis-exports` (3) built — a Hypothesis
+  importer (its sidebar's JSON or CSV export; layout read from the Hypothesis client source, not guessed: TextQuoteSelector
+  exact/prefix/suffix become our anchor, the comment a note, tags come along, replies and page notes are skipped because
+  there are no words to anchor), and the header-driven .csv reader built for Weava now covers Glasp's CSV export too,
+  because Glasp documents the formats but not the columns; the refusal message names the headers so the first real file
+  fixes the mapping by mail. Why: the last unaddressed path in the 2026-10-05 research (rivals' users leave for privacy,
+  not data loss, so lower than Weava). Ships inside the unreleased 0.4.0. Proof: a Hypothesis or Glasp import named in a
+  review or support mail within 60 days of 0.4.0 going live.

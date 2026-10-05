@@ -268,3 +268,21 @@ Copy: LISTING.md, AMO release notes and description, welcome page, landing page 
 "Markdown files for Obsidian/Logseq, Readwise CSV" instead of the clipboard-only "exports to Markdown". Not done, on
 purpose: no Notion/Obsidian OAuth integration (needs an account and a server — against the product's stance); Readwise is
 the bridge to those. Proof: Readwise or Obsidian named in a review or support mail; listing conversions after 0.4.0 vs before.
+
+### 2026-10-05 (burn-down 18:00, 2nd item) — `import-glasp-hypothesis-exports` built (0.4.0)
+
+Hypothesis, verified from the vendor's own code (github.com/hypothesis/client, `src/sidebar/services/annotations-exporter.tsx`
+and `src/types/api.ts`, fetched 2026-10-05; the help page "Exporting and Importing Annotations" via relay
+`hk-glasp-hypothesis` confirms Share → Export offers JSON, TXT, CSV, HTML): the JSON file is `{export_date, export_userid,
+client_version, annotations: APIAnnotationData[]}`, each annotation with `uri`, `text` (the comment), `tags`, `created`,
+`document.title`, `target[].selector[]` holding a `TextQuoteSelector` (`exact`, `prefix`, `suffix`) and `references` on a
+reply; the CSV header is `Created at,Author,Page,URL,Group,Type,Quote/description,Comment,Tags` with Type one of Annotation,
+Highlight, Reply, Page note. `src/core/hypothesis-import.ts` reads both: quote + prefix/suffix become the anchor (a better
+start than Weava's bare quote), the comment a note, tags come along, replies and page notes are skipped (nothing to anchor),
+ids are `hyp_<annotation id>` (CSV rows: a hash) so a second import adds nothing; no colours in Hypothesis, so yellow. 4 tests.
+Glasp: blog.glasp.co's export guide and FAQ (same relay) say CSV, Markdown or JSON and name no column, and its site needs a
+login, so no Glasp parser was guessed. Instead the header-driven reader written for Weava — URL + highlight columns required,
+note/title/tags/colour/date optional — is offered as *Import Weava / Glasp (.csv)* and a tags or folder cell is now split on
+commas; an unreadable file lists its headers and the support address. Copy updated in LISTING.md, AMO release notes and
+description, the welcome page, the landing page and the comparison page. Proof: a Hypothesis or Glasp import named in a review
+or support mail within 60 days of 0.4.0 going live; until then, zero "could not import" mails with a Glasp header line.

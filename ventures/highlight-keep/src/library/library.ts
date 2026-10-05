@@ -3,6 +3,7 @@ import { markdownFiles, readwiseCsv } from '../core/export.js';
 import { toMarkdown, type PageRecord } from '../core/model.js';
 import { buildZip } from '../core/zip.js';
 import { isPdfUrl, viewerUrl } from '../core/pdf.js';
+import { parseHypothesisExport } from '../core/hypothesis-import.js';
 import { parseSuperSimpleBackup } from '../core/ssh-import.js';
 import { parseWeavaExport } from '../core/weava-import.js';
 import { loadAllPages, mergeInto, savePage } from '../pages-storage.js';
@@ -84,7 +85,7 @@ void (async () => {
     locked.textContent =
       'The library is part of the unlock ($12, once). Your highlights are still saved \u2014 open the popup on any page to see that page\u2019s highlights and copy them as Markdown.';
     $('pages').replaceChildren(locked);
-    ['q', 'export-all', 'download-md', 'download-readwise', 'backup', 'restore', 'import-ssh', 'import-weava'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
+    ['q', 'export-all', 'download-md', 'download-readwise', 'backup', 'restore', 'import-ssh', 'import-weava', 'import-hypothesis'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
     return;
   }
   pages = await loadAllPages();
@@ -163,7 +164,25 @@ void (async () => {
       if (parsed.imported - added > 0) notes.push(`${parsed.imported - added} already here`);
       if (parsed.skipped) notes.push(`${parsed.skipped} without text or page address, skipped`);
       const read = (['note', 'title', 'folder', 'colour', 'date'] as const).filter((c) => parsed.columns[c]).map((c) => (c === 'folder' ? 'folder (as a tag)' : c));
-      $('status').textContent = `Imported from Weava: ${notes.join('; ')}${read.length ? `; read ${read.join(', ')} too` : ''}. Each one is anchored to its words, so it shows again when you open that page.`;
+      $('status').textContent = `Imported from the .csv: ${notes.join('; ')}${read.length ? `; read ${read.join(', ')} too` : ''}. Each one is anchored to its words, so it shows again when you open that page.`;
+    } catch (err) {
+      $('status').textContent = `Could not import: ${err instanceof Error ? err.message : String(err)}`;
+    }
+    input.value = '';
+  };
+  $<HTMLInputElement>('import-hypothesis').onchange = async (e) => {
+    const input = e.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+    try {
+      const parsed = parseHypothesisExport(await file.text());
+      const { added, pagesChanged } = await mergeInto(parsed.pages);
+      pages = await loadAllPages();
+      render();
+      const notes = [`${added} highlight${added === 1 ? '' : 's'} on ${pagesChanged} page${pagesChanged === 1 ? '' : 's'} brought over`];
+      if (parsed.imported - added > 0) notes.push(`${parsed.imported - added} already here`);
+      if (parsed.skipped) notes.push(`${parsed.skipped} replies or page notes without highlighted words, left out`);
+      $('status').textContent = `Imported from Hypothesis (${parsed.format.toUpperCase()}): ${notes.join('; ')}. Comments became notes and tags came along; each highlight is anchored to its words, so it shows again when you open that page.`;
     } catch (err) {
       $('status').textContent = `Could not import: ${err instanceof Error ? err.message : String(err)}`;
     }

@@ -584,3 +584,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 18:36 | burn-down | 8 unit tests (zip, export) + e2e section 9: real zip and CSV downloads from the library page
 - 2026-10-05 18:36 | burn-down | Listing, AMO notes, welcome, landing, comparison page: Markdown files for Obsidian/Logseq, Readwise CSV
 - 2026-10-05 18:36 | burn-down | Queue: highlight-keep export-markdown-files-readwise-csv done; ships in 0.4.0 (handoff amended)
+- 2026-10-05 18:48 | burn-down | Highlight Keep: Hypothesis import (sidebar Share → Export JSON or CSV), format read from its client source
+- 2026-10-05 18:48 | burn-down | Replies and page notes are left out (no words to anchor); comment → note, tags, title, quote prefix/suffix kept
+- 2026-10-05 18:48 | burn-down | Glasp documents no CSV columns: the header-driven .csv reader takes Glasp too, tags cell split on commas
+- 2026-10-05 18:48 | burn-down | 4 Hypothesis tests; library: 'Import Weava / Glasp (.csv)' and 'Import Hypothesis'; e2e still green
+- 2026-10-05 18:48 | burn-down | Listing, AMO notes, welcome, landing, comparison page: imports from Weava, Glasp, Hypothesis, Super Simple
+- 2026-10-05 18:48 | burn-down | Queue: highlight-keep import-glasp-hypothesis-exports done; ships in 0.4.0 (handoff amended)

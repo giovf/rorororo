@@ -8,6 +8,8 @@
  * parser is driven by the header row: it finds the columns by name — the page URL and the highlighted
  * text are required; a note, a title, a folder, a colour and a date are used when present — and
  * refuses any other file naming the headers it saw, so the first real file tells us what to map.
+ * The same header-driven reader takes Glasp's CSV export (glasp.co documents CSV/Markdown/JSON but no
+ * columns either, blog.glasp.co read through the relay 2026-10-05): a tags/folder cell is split on commas.
  */
 import { pageKey, type Colour, type Highlight, type PageRecord } from './model.js';
 import { colourOfHex } from './ssh-import.js';
@@ -155,7 +157,7 @@ export function parseWeavaExport(text: string): WeavaImport {
     const seen = headers.length ? headers.map((h) => `"${h.trim()}"`).join(', ') : 'none';
     throw new Error(
       `not a Weava .csv export we can read — it needs a page-URL column and a highlight-text column; headers seen: ${seen}. ` +
-        'In Weava open the dashboard, click the export icon and choose .csv; if that is the file you picked, send its first line to info@gankdat.com and we will add it.',
+        'In Weava open the dashboard, click the export icon and choose .csv (in Glasp: My Highlights → Export → CSV); if that is the file you picked, send its first line to info@gankdat.com and we will add it.',
     );
   }
   const pages = new Map<string, PageRecord>();
@@ -184,14 +186,14 @@ export function parseWeavaExport(text: string): WeavaImport {
     if (seenIds.has(id)) continue;
     seenIds.add(id);
     const createdAt = isoDate(cell(row, 'date'));
-    const folder = (cell(row, 'folder') ?? '').trim().replace(/\s+/g, '-');
+    const tags = (cell(row, 'folder') ?? '').split(/[,;]/).map((t) => t.trim().replace(/\s+/g, '-')).filter(Boolean);
     const h: Highlight = {
       id,
       anchor: { quote, prefix: '', suffix: '', start: 0 },
       colour: colourOfCell(cell(row, 'colour')),
       createdAt,
       ...(note ? { note } : {}),
-      ...(folder ? { tags: [folder] } : {}),
+      ...(tags.length ? { tags } : {}),
     };
     const page = pages.get(url) ?? { url, title: '', highlights: [], updatedAt: '' };
     page.highlights.push(h);

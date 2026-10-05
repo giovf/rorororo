@@ -281,7 +281,7 @@ closed entries older than 30 days (git keeps the history).
   then `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
   CWS rejects an upload while 0.2.0 is still in review — wait for that mail (or it is published) first; AMO accepts it now.
   Record the dates in `ventures/highlight-keep/STORE.md`. ~5 min. — Superseded 2026-10-05 (build): 0.4.0 (Weava import) supersedes it; same commands, new handoff below
-- 2026-10-05 handoff: **sign and upload Highlight Keep 0.4.0** (import from Weava's .csv export, the "On for every site" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the 0.3.0 Super Simple
+- 2026-10-05 handoff: **sign and upload Highlight Keep 0.4.0** (imports from Weava/Glasp .csv and Hypothesis exports, the "On for every site" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the 0.3.0 Super Simple
   import and merging Restore) the same way as 0.2.0: `bash scripts/amo-publish.sh ventures/highlight-keep` (release notes already in
   `assets/amo-metadata.json`), then `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
   CWS rejects an upload while 0.2.0 is still in review — wait for that mail (or it is published) first; AMO accepts it now.

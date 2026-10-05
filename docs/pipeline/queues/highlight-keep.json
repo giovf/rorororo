@@ -149,12 +149,13 @@
     {
       "id": "import-glasp-hypothesis-exports",
       "title": "Import Glasp (CSV/JSON) and Hypothesis (JSON) exports into the library, after the Weava import proves the pattern",
-      "why": "Glasp (500k users, account required, highlights public by default — the privacy objection our listing answers) exports MD/CSV/JSON; Hypothesis (300k, 'never completes log in' reviews) exports JSON/CSV/TXT/HTML from its sidebar Share → Export (web.hypothes.is help, read 2026-10-05). Same parser shape as the Weava and Super Simple imports (text + url + note + date → anchored by quoted text, stable ids, merge). Lower than Weava because neither rival is abandoned — their users leave for privacy, not data loss. Verify both file layouts from real exports or the vendors' docs through the relay (glasp.co and hypothes.is added to the allowlist this run) before writing parsers.",
+      "why": "Glasp (500k users, account required, highlights public by default — the privacy objection our listing answers) exports MD/CSV/JSON; Hypothesis (300k, 'never completes log in' reviews) exports JSON/CSV/TXT/HTML from its sidebar Share → Export (web.hypothes.is help, read 2026-10-05). Same parser shape as the Weava and Super Simple imports (text + url + note + date → anchored by quoted text, stable ids, merge). Lower than Weava because neither rival is abandoned — their users leave for privacy, not data loss. Verify both file layouts from real exports or the vendors' docs through the relay (glasp.co and hypothes.is added to the allowlist this run) before writing parsers. DONE 2026-10-05 (burn-down, 0.4.0): Hypothesis verified from its client source (github.com/hypothesis/client annotations-exporter.tsx + types/api.ts via WebFetch; web.hypothes.is help via relay hk-glasp-hypothesis): JSON {export_date, export_userid, client_version, annotations[APIAnnotationData]} with TextQuoteSelector exact/prefix/suffix, text = comment, tags, document.title, references = reply; CSV header 'Created at,Author,Page,URL,Group,Type,Quote/description,Comment,Tags'. src/core/hypothesis-import.ts reads both (replies and page notes skipped: no words to anchor; ids hyp_<id>), 4 tests, library 'Import Hypothesis'. Glasp: blog.glasp.co documents CSV/Markdown/JSON exports but no columns (relay), so no Glasp-specific parser was guessed: the header-driven Weava reader now takes any .csv with a URL and a highlight column, splits a tags/folder cell on commas, and the library entry reads 'Import Weava / Glasp (.csv)'; the refusal message names the headers it saw so the first real Glasp file fixes the mapping by mail. Listing, AMO notes/description, welcome, landing and comparison page name Glasp and Hypothesis. Ships in 0.4.0.",
       "effort_days": 0.5,
       "proof": "≥ 1 import of either named in a review or support mail within 90 days",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-05"
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     }
   ]
 }

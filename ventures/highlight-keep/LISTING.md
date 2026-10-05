@@ -12,7 +12,7 @@ Mark what matters, and keep it.
 • Copy a page's highlights as Markdown (works with Obsidian, Notion, anything); the library downloads one Markdown file per page for your vault, or a CSV for Readwise.
 • PDFs on the web too: open one in the built-in viewer page from the popup and highlight it like any page.
 • Per-site switch: turn it on for the sites you read on (Alt+Shift+H); it never runs anywhere else. Or flip one setting and it is on everywhere.
-• Coming from Weava or Super Simple Highlighter? Import Weava's .csv export or Super Simple's backup file in the library and every highlight comes with you, with its note, anchored to its words.
+• Coming from Weava, Glasp, Hypothesis or Super Simple Highlighter? Import Weava's or Glasp's .csv export, Hypothesis's JSON or CSV export, or Super Simple's backup file in the library and every highlight comes with you, with its note and tags, anchored to its words.
 
 Unlock ($12, once): unlimited sites, six colours, notes and tags, the library — search everything you've kept, export it all as Markdown files, a Readwise CSV or JSON, backup and restore as a file (a restore adds to what is there, it never wipes it). One key for every browser you sign in to; works offline; 14-day refund.
 
