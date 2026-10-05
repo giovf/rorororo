@@ -631,3 +631,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   item sat hidden while the slot reported starvation, and a half-started item could hide the same way for good. Deviation
   from the item text: no time-based validation failure — that would turn the nightly check red by the clock alone, costing a
   heal run; re-offering gives the same outcome. Proof: no queue holds an undated doing item older than a day in 30 days.
+- 2026-10-05 burn-down: foundry `e2e-pro-sections-test-key` built — a `--test` build without the production signing key
+  generates a throwaway Ed25519 pair, bakes its public half into the bundle through an esbuild define and leaves the private
+  half in the git-ignored test directory for the runner, so the paid halves of ReadFocus (sections 5–7) and Highlight Keep
+  (section 5) now pass in the sandbox with no `.env`. Why: the paid tier was the one part never exercised by any cloud run
+  that ships a version; the production key still never leaves `.env`, and the production bundles were checked to carry the
+  real key. Proof: no SKIP line for the pro sections in RUNS.md from now on.

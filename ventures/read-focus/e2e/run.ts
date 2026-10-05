@@ -61,6 +61,21 @@ function resolveBrowser(): { executablePath: string } | { channel: 'chromium' } 
   );
 }
 
+// The key that signs the e2e licence: the production one from .env, else the throwaway private
+// half build.js --test wrote next to the bundle (its public half is baked into the build).
+async function signingKeyForTest(): Promise<string> {
+  const fromEnv = process.env['LICENSE_SIGNING_KEY'];
+  if (fromEnv) {
+    console.log('signing key: production (LICENSE_SIGNING_KEY)');
+    return fromEnv;
+  }
+  const throwaway = (
+    await readFile(path.join(ext, 'test-signing-key.txt'), 'utf8').catch(() => '')
+  ).trim();
+  if (throwaway) console.log('signing key: throwaway test pair from build.js --test');
+  return throwaway;
+}
+
 const context = await chromium.launchPersistentContext(
   path.join(tmpdir(), `rf-e2e-${Date.now()}`),
   {
@@ -181,14 +196,15 @@ try {
   check('free reader shows the first page only', (await pdfPage.locator('.page').count()) === 1);
   check('free reader shows the unlock note', await pdfPage.locator('#unlock').isVisible());
   await pdfPage.screenshot({ path: path.join(here, 'out', '03-pdf-free.png') });
-  // 5. Pro: real key → paragraph focus + font + weight stroke. Needs LICENSE_SIGNING_KEY (.env);
-  //    a sandbox without it skips the pro sections and says so.
-  if (!process.env['LICENSE_SIGNING_KEY']) {
-    console.log('SKIP  pro sections (5–7): no LICENSE_SIGNING_KEY in the environment');
+  // 5. Pro: a signed key → paragraph focus + font + weight stroke. The production signing key
+  //    (LICENSE_SIGNING_KEY, .env) when present, else the throwaway pair `build.js --test` made.
+  const signingKey = await signingKeyForTest();
+  if (!signingKey) {
+    console.log('SKIP  pro sections (5–7): no signing key (neither .env nor dist-test)');
     skipped = true;
     throw new Skip();
   }
-  const key = await issueLicense(process.env['LICENSE_SIGNING_KEY'], {
+  const key = await issueLicense(signingKey, {
     venture: 'read-focus',
     tier: 'pro',
     id: 'e2e',

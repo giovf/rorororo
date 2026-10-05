@@ -519,3 +519,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 00:32 | burn-down | No clock-based validator failure (it would redden the nightly check with no commit to blame); test added
 - 2026-10-05 00:32 | burn-down | actions-minutes converted to todo + not_before 2026-10-12 so the hold shows on the scheduled line
 - 2026-10-05 00:32 | burn-down | Queue: foundry pipeline-doing-visibility done; next buildable is e2e-pro-sections-test-key (3)
+- 2026-10-05 00:42 | burn-down | Extension test builds bake a throwaway Ed25519 public key when .env has no signing key; runner signs with it
+- 2026-10-05 00:42 | burn-down | ReadFocus pro sections 5–7 and Highlight Keep's pro section now PASS in the sandbox; SKIP line gone
+- 2026-10-05 00:42 | burn-down | Production builds checked: real public key baked, no key file; .env.example says e2e needs no key
+- 2026-10-05 00:42 | burn-down | Queue: foundry e2e-pro-sections-test-key done; foundry has no buildable item left (actions-minutes 10-12)
+- 2026-10-05 00:50 | burn-down | Stopping for time (~45 min): three foundry items built; pipeline starved, next fire researches gankdat

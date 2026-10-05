@@ -81,6 +81,18 @@ async function statics() {
     await copyFile(path.join(here, from), path.join(dist, to));
 }
 
+// --test without the production signing key (LICENSE_SIGNING_KEY, .env): a throwaway Ed25519
+// pair — public half baked into the bundle in place of the production key, private half written
+// next to it for e2e/run.ts. dist-test is git-ignored; the pair lives for one run.
+let testPublicKey = '';
+if (test && !process.env.LICENSE_SIGNING_KEY) {
+  const { generateKeyPair } = await import('@foundry/licensing');
+  const pair = await generateKeyPair();
+  testPublicKey = pair.publicKey;
+  await mkdir(dist, { recursive: true });
+  await writeFile(path.join(dist, 'test-signing-key.txt'), pair.privateKey);
+}
+
 const bundles = {
   entryPoints: {
     content: 'src/content.ts',
@@ -95,6 +107,7 @@ const bundles = {
   format: 'iife',
   logLevel: 'info',
   minify: !watch && !firefox, // AMO reviewers read the code; ship Firefox unminified
+  define: { __LICENSE_TEST_PUBLIC_KEY__: JSON.stringify(testPublicKey) },
 };
 
 // The viewer page is an ES module (PDF.js is ESM-only); extension pages may load modules.

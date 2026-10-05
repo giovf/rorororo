@@ -85,6 +85,21 @@ function resolveBrowser(): { executablePath: string } | { channel: 'chromium' } 
   );
 }
 
+// The key that signs the e2e licence: the production one from .env, else the throwaway private
+// half build.js --test wrote next to the bundle (its public half is baked into the build).
+async function signingKeyForTest(): Promise<string> {
+  const fromEnv = process.env['LICENSE_SIGNING_KEY'];
+  if (fromEnv) {
+    console.log('signing key: production (LICENSE_SIGNING_KEY)');
+    return fromEnv;
+  }
+  const throwaway = (
+    await readFile(path.join(ext, 'test-signing-key.txt'), 'utf8').catch(() => '')
+  ).trim();
+  if (throwaway) console.log('signing key: throwaway test pair from build.js --test');
+  return throwaway;
+}
+
 const context = await chromium.launchPersistentContext(
   path.join(tmpdir(), `hk-e2e-${Date.now()}`),
   {
@@ -200,11 +215,11 @@ try {
   await pdfPage.screenshot({ path: path.join(here, 'out', '03-pdf.png') });
   await pdfPage.close();
 
-  // 5. Pro: real key → colours + note; recolour; note; remove. Needs LICENSE_SIGNING_KEY (.env);
-  // a sandbox without it skips this section and says so (foundry `e2e-pro-sections-test-key`).
-  const signingKey = process.env['LICENSE_SIGNING_KEY'];
+  // 5. Pro: a signed key → colours + note; recolour; note; remove. The production signing key
+  // (LICENSE_SIGNING_KEY, .env) when present, else the throwaway pair `build.js --test` made.
+  const signingKey = await signingKeyForTest();
   if (!signingKey) {
-    console.log('SKIP  pro section (5): no LICENSE_SIGNING_KEY in the environment');
+    console.log('SKIP  pro section (5): no signing key (neither .env nor dist-test)');
     skipped = true;
   } else {
     const key = await issueLicense(signingKey, {
