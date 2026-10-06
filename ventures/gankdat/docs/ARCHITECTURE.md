@@ -115,15 +115,20 @@ UA and source slug only, never an IP, denials excluded, so STRATEGY §4's weekly
 change-feed target is readable from the daily metrics row) ·
 stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
 @cloudflare/vitest-pool-workers · ESLint + Prettier · npm · wrangler.
+x402-hono and @coinbase/x402 (and viem beneath them, most of the bundle) are
+imported lazily on the first lit `/x402` request, so cold starts skip them
+while the lane ships dark.
 
 Tests (2026-10-06): pool-workers 0.18 has no isolated per-test storage — one runtime
 and one D1/KV store serve every spec file in turn — so `test/apply-migrations.ts`
 migrates once per file and empties every table and both KV namespaces before each
 test (the earlier `reset()` + full re-migration per test also logged a workerd
-"deleteAllDurableObjects" exception per test). The gate's cost is elsewhere: each of
-the 49 spec files loads the whole `src/index.ts` module graph afresh (~400 module
-fallback requests, mostly ajv via the MCP SDK, plus hono and zod through Vite),
-14–19 s a file, 49 files, three at a time — see foundry `gankdat-test-module-graph`.
+"deleteAllDurableObjects" exception per test). The gate's cost was elsewhere: each of
+the 49 spec files loads the whole `src/index.ts` module graph afresh — ~2,600 modules
+a file before 2026-10-06, 1,194 of them viem via the x402 packages, 17 s a file. Now
+`vitest.config.ts` pre-bundles the heavy dependencies (deps.optimizer, node built-ins
+external) and the x402 packages load lazily, so a file loads ~250 modules and the
+suite runs in 80 s (was 261 s) on four cores; the whole gate in ~100 s.
 On CI the gate runs once per push, in `gankdat.yml` only; the root `check` workflow
 runs `check:root`.
 

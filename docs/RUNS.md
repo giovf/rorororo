@@ -667,3 +667,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-06 17:50 | burn-down | burn-down.md GATE ends the run on starved-and-cooled; SCHEDULERS row updated; foundry item done
 - 2026-10-06 17:52 | burn-down | Probed test module-graph item: optimizer no gain, spec imports moot, pool-workers 0.22 is out
 - 2026-10-06 17:52 | burn-down | Stopping for time (~35 min): 3 foundry items built; next is gankdat-test-module-graph (0.3 d)
+- 2026-10-06 18:05 | build | gankdat tests: pre-bundled viem/stripe/zod/x402 deps in vitest (node built-ins external); 261 s → 133 s
+- 2026-10-06 18:05 | build | gankdat x402 lane imports x402-hono/@coinbase/x402 lazily; suite 80 s, gate 99 s, lighter cold start
+- 2026-10-06 18:05 | build | Merged on the burn-down's parallel gankdat-test-setup commits: its CI split and test setup kept
+- 2026-10-06 18:05 | build | Pre-push hook rejected gankdat .ts files (lint run from root): gankdat eslint config anchors tsconfigRootDir
+- 2026-10-06 18:05 | build | Queue: foundry gankdat-test-module-graph done (proof met: gate under 90 s); 3 foundry items left

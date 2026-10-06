@@ -10,6 +10,10 @@ export default tseslint.config(
   ...tseslint.configs.recommended,
   prettier,
   {
+    // Anchor the parser to this directory: the repo's pre-push hook lints changed files
+    // from the repo root, where two tsconfig roots are candidates and parsing fails
+    // (2026-10-06, the first gankdat push through the hook).
+    languageOptions: { parserOptions: { tsconfigRootDir: import.meta.dirname } },
     rules: {
       '@typescript-eslint/no-explicit-any': 'error',
       '@typescript-eslint/explicit-module-boundary-types': 'error',

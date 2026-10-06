@@ -805,3 +805,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   flagged, starved-but-not-cooling or the night's pre-research unspent; `starved-and-cooled` ends the run at once. Why: four
   firings on the night of 2026-10-05/06 each spent ~20 min and two workflow runs to learn that. Proof: no burn-down run-log
   line over 7 nights whose only content is a starved stop.
+- 2026-10-06 build (17:00 run): foundry `gankdat-test-setup` finished and `gankdat-test-module-graph` (6) done in the same push, built in
+  parallel with the burn-down and merged on top of its commits. The gankdat gate's cost was each of 49 spec files re-fetching ~2,600
+  modules through Vite, 1,194 of them viem via the x402 packages. Vitest's dependency optimizer pre-bundles them once the bundler
+  treats node built-ins as external (the burn-down's probe stopped at that error), and x402-hono/@coinbase/x402 load lazily on the
+  first lit request: suite 261 s → 80 s, whole gankdat gate 99 s, Worker cold start lighter. Lesson for the routines: two runs built
+  the same item at once (build 17:00 and burn-down 17:00); the slot marker covers the fallback, not the burn-down — see ops.
