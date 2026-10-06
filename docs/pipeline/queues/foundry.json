@@ -481,12 +481,13 @@
     {
       "id": "mcp-sandbox-timeout",
       "title": "Stop .mcp.json spawning task-master-ai in cloud sandboxes where it always times out",
-      "why": "Every cloud session starts `npx -y task-master-ai` from the checked-in .mcp.json; in the build sandbox it hits the 30 s connect timeout (this run 2026-10-06 09:10; RUNS 2026-09-30 17:46 and 18:52; three ALERTS entries) — a 30 s start delay and an error block per run for a server the routines never use (`npm run task` is the offline path since taskmaster-offline-add). Fix: move the server definition out of the project .mcp.json into the documented interactive setup (`claude mcp add` line in .taskmaster/CLAUDE.md, or a user-scope config) so sandboxes do not spawn it; keep the placeholder keys out of the repo.",
+      "why": "Every cloud session starts `npx -y task-master-ai` from the checked-in .mcp.json; in the build sandbox it hits the 30 s connect timeout (this run 2026-10-06 09:10; RUNS 2026-09-30 17:46 and 18:52; three ALERTS entries) — a 30 s start delay and an error block per run for a server the routines never use (`npm run task` is the offline path since taskmaster-offline-add). Fix: move the server definition out of the project .mcp.json into the documented interactive setup (`claude mcp add` line in .taskmaster/CLAUDE.md, or a user-scope config) so sandboxes do not spawn it; keep the placeholder keys out of the repo. BUILT 2026-10-06 (burn-down): .mcp.json removed from the repo and gitignored (a local one is user setup, `claude mcp add task-master-ai …` documented in .taskmaster/CLAUDE.md and docs/SETUP.md step 6); the placeholder keys left the repo with it. Proof window starts with the next cloud session.",
       "effort_days": 0.05,
       "proof": "no MCP connect timeout in a routine session for 14 days",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-06"
+      "status": "done",
+      "added": "2026-10-06",
+      "done_at": "2026-10-06"
     },
     {
       "id": "gankdat-test-module-graph",

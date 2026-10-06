@@ -28,6 +28,9 @@ dev-debug.log
 # ── Taskmaster (generated/state files)
 .taskmaster/reports/
 .taskmaster/state.json
+# ── MCP servers are per-machine setup (2026-10-06): a checked-in .mcp.json made every cloud sandbox
+#    spawn task-master-ai and wait 30 s for a timeout. Interactive setup: `claude mcp add` (see .taskmaster/CLAUDE.md).
+.mcp.json
 
 # ── Claude Code local files
 .claude/.credentials.json

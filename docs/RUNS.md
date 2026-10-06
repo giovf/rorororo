@@ -676,3 +676,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-06 18:20 | burn-down | handoffs prints the median open age of owner asks (5 d today) and a notify: digest once an ask passes 7 d
 - 2026-10-06 18:20 | burn-down | Weekly report copies that digest as its one notify line; retro records the median; handoffs joined check
 - 2026-10-06 18:20 | burn-down | Queue: foundry owner-ask-digest done; phone message and for-owner README now link OPEN.md
+- 2026-10-06 18:30 | burn-down | .mcp.json removed and gitignored: sandboxes stop spawning task-master-ai and its 30 s timeout
+- 2026-10-06 18:30 | burn-down | Taskmaster guide and SETUP step 6 now give the claude mcp add line for interactive machines
+- 2026-10-06 18:30 | burn-down | Queue: foundry mcp-sandbox-timeout done; 1 foundry todo left (actions-minutes, dated 2026-10-12)

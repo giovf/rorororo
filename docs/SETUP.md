@@ -119,8 +119,9 @@ at the next natural rebuild; note that in the progress file.
 - `task-master parse-prd .taskmaster/docs/prd.md`
 - `task-master analyze-complexity` then `task-master expand --all` (use
   `--research` flags only if the user has configured a research API key).
-- `.mcp.json` already registers the `task-master-ai` MCP server — the user may
-  see a one-time approval prompt for it; that's expected.
+- The `task-master-ai` MCP server is per-machine setup, not a checked-in `.mcp.json`
+  (since 2026-10-06 — cloud sandboxes timed out on it every session): `claude mcp add
+  --scope user task-master-ai -- npx -y task-master-ai` on the machine that wants it.
 - Sanity check: `task-master next` returns a sensible first task.
 
 ## Step 7 — Update the always-loaded docs

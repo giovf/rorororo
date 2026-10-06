@@ -816,3 +816,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   by the minutes it quotes, prints the median open age and, once any ask is older than 7 days, one plain `notify:` digest line that
   the Monday report sends as its single phone line (count, oldest age, top ask); the retro records the median. Why: eight asks open,
   oldest six days, each sent to the phone exactly once and never ordered or repeated. Proof: median open age under 7 days over a month.
+- 2026-10-06 burn-down (18:00 run, 2nd item): foundry `mcp-sandbox-timeout` (3) built — `.mcp.json` left the repo and is gitignored;
+  the Taskmaster guide and SETUP step 6 give the `claude mcp add --scope user` line for a machine that wants the server. Why: every
+  cloud session spawned `npx -y task-master-ai` and waited 30 s for its timeout (today 18:12 again) for a server no routine uses;
+  the placeholder keys leave the repo with it. Proof: no MCP connect timeout in a routine session for 14 days.
