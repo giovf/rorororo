@@ -783,3 +783,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   superseded under a concurrency group) instead of a guessed one, and the third same-reason mail in a day files a foundry
   item; `docs/ops/SELF-CAUSED.md` row 6 carries the same three readings. Why: 21 INBOX rows on 2026-10-05 named a cause
   that never happened. Proof: over 14 days no INBOX row contradicts the run's job list; a 3× reason has an item the same day.
+- 2026-10-06 build (09:00 run): foundry research, pipeline starved again (next buildable 2026-10-08). Five ops items queued: the
+  gankdat gate spends 697 s re-migrating D1 before each of 384 tests and CI runs it twice per push (7); four idle burn-down
+  firings overnight each spent ~20 min to learn the pipeline was starved (6); the starvation fallback has no memory of what it
+  researched (6); eight owner asks open for up to six days with no reminder (4); task-master-ai MCP times out in every sandbox
+  (3). Proof: gankdat gate under 90 s; no idle burn-down lines; no venture researched twice in 48 h; owner asks under 7 days.

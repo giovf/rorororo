@@ -651,3 +651,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-06 01:23 | burn-down | Stopping: pipeline starved (next buildable 2026-10-08), every queue researched within 24h, night's pre-research spent
 - 2026-10-06 01:25 | watchdog | ci-minutes: ~6223 Actions min/month projected (private cap 2,000, warn 1700); top: check 701, gankdat 171, owner notes 1
 - 2026-10-06 02:19 | burn-down | Stopping: main green, pipeline starved (next buildable 2026-10-08), queues researched <24h, pre-research spent
+- 2026-10-06 09:40 | build | Pipeline starved (every open item blocked or dated): research run for foundry, first starved queue
+- 2026-10-06 09:40 | build | Foundry research: gankdat gate 280 s for 74 s of tests (697 s per-test setup) and run twice per push in CI
+- 2026-10-06 09:40 | build | Four idle burn-down firings overnight each ran npm ci + gate (~20 min) to find the pipeline starved
+- 2026-10-06 09:40 | build | Starvation fallback re-offers a queue researched hours earlier; 8 owner asks open, oldest 6 days
+- 2026-10-06 09:40 | build | Queue: foundry +5 items (test setup 7, burn gate 6, research cooldown 6, owner digest 4, MCP timeout 3)

@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-05",
+  "updated": "2026-10-06",
   "items": [
     {
       "id": "fetch-relay",
@@ -337,7 +337,7 @@
     {
       "id": "actions-minutes",
       "title": "Trim GitHub Actions usage below ~1,500 min/month so the repo can go private (free cap 2,000)",
-      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done. 2026-10-05 burn-down: converted to todo + not_before 2026-10-12 (first measurable week) so the hold is visible on the scheduled: line instead of hidden in doing. 2026-10-05 22:30 burn-down (foundry research): the watchdog projection rose after the trim, 3,876 (10-04 18:21) to 4,215 min/month (10-05 01:14), because the burn went nightly; today 19:19-21:46 UTC the 60 push runs took 480 run-minutes, check alone 6-16 min per success (6.3, 8.6, 11.3, 16.5), six workflows per code push. The concurrency groups proposed in ci-runs-never-acquired cut the stacked runs as well, so build that first and re-measure.",
+      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done. 2026-10-05 burn-down: converted to todo + not_before 2026-10-12 (first measurable week) so the hold is visible on the scheduled: line instead of hidden in doing. 2026-10-05 22:30 burn-down (foundry research): the watchdog projection rose after the trim, 3,876 (10-04 18:21) to 4,215 min/month (10-05 01:14), because the burn went nightly; today 19:19-21:46 UTC the 60 push runs took 480 run-minutes, check alone 6-16 min per success (6.3, 8.6, 11.3, 16.5), six workflows per code push. The concurrency groups proposed in ci-runs-never-acquired cut the stacked runs as well, so build that first and re-measure. 2026-10-06 09:00 build (foundry research): watchdog projection 6,223 min/month at 01:25 (the 60 push runs of 10-05 evening); of the 38 runs since the concurrency groups landed (22:33) none was cancelled, and a docs-only push now starts only owner notes + notify owner. Next lever is gankdat-test-setup (the gate runs twice per gankdat push and spends 697 s on per-test setup).",
       "effort_days": 0.5,
       "proof": "7-day Actions minutes under 350 for two consecutive weeks",
       "score": 7,
@@ -432,6 +432,56 @@
       "status": "done",
       "added": "2026-10-05",
       "done_at": "2026-10-05"
+    },
+    {
+      "id": "gankdat-test-setup",
+      "title": "Cut the gankdat gate from ~5 min to under 90 s and run it once per push, not twice",
+      "why": "Measured 2026-10-06 09:12 in the build sandbox: `vitest run` in ventures/gankdat takes 280 s wall for 74 s of test time because `test/apply-migrations.ts` calls reset() and re-applies every D1 migration before EACH of the 384 tests (setup 697 s across 49 files); the root check took ~7 min of every routine run and 6-16 min per CI success. In CI a gankdat code push runs this gate twice: root `check` chains `npm run check -w @foundry/gankdat` and `gankdat.yml` runs it again — the two top Actions consumers this month are check 701 min and gankdat 171 min (watchdog 10-06 01:25). Fix: apply migrations once per file in beforeAll and rely on the pool-workers isolatedStorage stack for per-test isolation (keep reset() only in files that need it), measure, then drop the gankdat chain from the root `check` on CI (gankdat.yml covers it) while keeping it locally; re-run the timing and record it in the item.",
+      "effort_days": 0.3,
+      "proof": "gankdat gate under 90 s in the sandbox; check CI run under 5 min; one gankdat test run per push",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-06"
+    },
+    {
+      "id": "burn-starvation-gate",
+      "title": "Burn-down stops before npm ci when the pipeline is starved and every queue was researched in the last day",
+      "why": "Night of 2026-10-05/06: four hourly burn-down firings (23:40, 00:21, 01:23, 02:19) each ran npm ci and the full gate (~8 min), read every doc, found the pipeline starved and every queue researched within 24 h, then pushed one run-log line — about 20 min of Fable per firing from trigger to commit for zero work, plus two workflow runs per push (owner notes, notify owner). The GATE in burn-down.md checks only BURN.json. Fix: a dependency-free starvation check (plain Node over docs/pipeline/*.json, no @foundry/core dist needed, so it runs before npm ci) printed as `npm run pipeline cold`; the burn-down GATE runs it first and ends without npm ci and without committing when it reports starved + every open queue and the exchange researched within 24 h (needs the `researched` field from research-cooldown); docs/SCHEDULERS.md and burn-down.md updated in the same commit.",
+      "effort_days": 0.15,
+      "proof": "over 7 nights no burn-down run-log line whose only content is Stopping: starved",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-06"
+    },
+    {
+      "id": "research-cooldown",
+      "title": "The starvation fallback remembers what it researched: a queue researched within 48 h is not offered again",
+      "why": "2026-10-05 had five research runs (gankdat 01:21, highlight-keep 09:11, read-focus 19:32, variables-toolkit 20:32, foundry 22:33) plus the exchange pre-research, and the 2026-10-06 09:00 build was offered foundry again eleven hours after its last research because starved() sorts by `updated`, which every run touches, and no prompt or script records when a queue was last researched; the night runs stopped only by the operator judgement 'every queue researched today', which is written nowhere. Fix: queue field `researched: YYYY-MM-DD` (parseQueue, optional) set by every research run; starved() skips queues with researched within 2 days and `npm run pipeline` lists them on a `cooling:` line; when all starved queues are cooling, `next` prints that and build.md/burn-down.md gain one sentence: write one run-log line and stop. Tests in packages/core.",
+      "effort_days": 0.15,
+      "proof": "over 14 days no venture researched twice within 48 h and no research run-log line that adds zero items",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-06"
+    },
+    {
+      "id": "owner-ask-digest",
+      "title": "One weekly line to the owner listing the open asks by payoff, instead of each ask once as it is written",
+      "why": "2026-10-06: 10 open ALERTS entries, 8 of them owner asks, oldest 6 days (2026-09-30), none acted on; 4 of 5 venture queues carry an item blocked on an owner action (Chrome dashboard 013, Figma publishes 017/018/019, Partner Center) and two extension releases (ReadFocus 0.3.0, Highlight Keep 0.4.0) wait on an attended session. The phone receives each `owner:` line exactly once when it is pushed (notify-owner cursor) and nothing reminds or orders them. Fix: a generated docs/for-owner/OPEN.md (ordered by STRATEGY score ÷ owner minutes, with the action file link and the age) rebuilt by `npm run handoffs`, and the Monday weekly report emits ONE notify line when any owner ask is older than 7 days: count, oldest age, the top one; the retro tracks the median open age.",
+      "effort_days": 0.15,
+      "proof": "median age of open owner asks under 7 days over a month",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-06"
+    },
+    {
+      "id": "mcp-sandbox-timeout",
+      "title": "Stop .mcp.json spawning task-master-ai in cloud sandboxes where it always times out",
+      "why": "Every cloud session starts `npx -y task-master-ai` from the checked-in .mcp.json; in the build sandbox it hits the 30 s connect timeout (this run 2026-10-06 09:10; RUNS 2026-09-30 17:46 and 18:52; three ALERTS entries) — a 30 s start delay and an error block per run for a server the routines never use (`npm run task` is the offline path since taskmaster-offline-add). Fix: move the server definition out of the project .mcp.json into the documented interactive setup (`claude mcp add` line in .taskmaster/CLAUDE.md, or a user-scope config) so sandboxes do not spawn it; keep the placeholder keys out of the repo.",
+      "effort_days": 0.05,
+      "proof": "no MCP connect timeout in a routine session for 14 days",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-06"
     }
   ]
 }
