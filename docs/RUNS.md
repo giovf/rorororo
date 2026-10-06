@@ -679,3 +679,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-06 18:30 | burn-down | .mcp.json removed and gitignored: sandboxes stop spawning task-master-ai and its 30 s timeout
 - 2026-10-06 18:30 | burn-down | Taskmaster guide and SETUP step 6 now give the claude mcp add line for interactive machines
 - 2026-10-06 18:30 | burn-down | Queue: foundry mcp-sandbox-timeout done; 1 foundry todo left (actions-minutes, dated 2026-10-12)
+- 2026-10-06 18:25 | burn-down | Stopping: 2 foundry items built; pipeline starved-and-cooled, pre-research spent, next dated 2026-10-08
