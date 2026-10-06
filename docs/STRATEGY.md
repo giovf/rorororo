@@ -811,3 +811,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   treats node built-ins as external (the burn-down's probe stopped at that error), and x402-hono/@coinbase/x402 load lazily on the
   first lit request: suite 261 s → 80 s, whole gankdat gate 99 s, Worker cold start lighter. Lesson for the routines: two runs built
   the same item at once (build 17:00 and burn-down 17:00); the slot marker covers the fallback, not the burn-down — see ops.
+- 2026-10-06 burn-down (18:00 run): foundry `owner-ask-digest` (4) built — `npm run handoffs` (now in `check:root`) generates
+  `docs/for-owner/OPEN.md`, the open owner asks ordered by the STRATEGY §5 score of the blocked queue items each unblocks divided
+  by the minutes it quotes, prints the median open age and, once any ask is older than 7 days, one plain `notify:` digest line that
+  the Monday report sends as its single phone line (count, oldest age, top ask); the retro records the median. Why: eight asks open,
+  oldest six days, each sent to the phone exactly once and never ordered or repeated. Proof: median open age under 7 days over a month.

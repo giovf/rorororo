@@ -470,12 +470,13 @@
     {
       "id": "owner-ask-digest",
       "title": "One weekly line to the owner listing the open asks by payoff, instead of each ask once as it is written",
-      "why": "2026-10-06: 10 open ALERTS entries, 8 of them owner asks, oldest 6 days (2026-09-30), none acted on; 4 of 5 venture queues carry an item blocked on an owner action (Chrome dashboard 013, Figma publishes 017/018/019, Partner Center) and two extension releases (ReadFocus 0.3.0, Highlight Keep 0.4.0) wait on an attended session. The phone receives each `owner:` line exactly once when it is pushed (notify-owner cursor) and nothing reminds or orders them. Fix: a generated docs/for-owner/OPEN.md (ordered by STRATEGY score ÷ owner minutes, with the action file link and the age) rebuilt by `npm run handoffs`, and the Monday weekly report emits ONE notify line when any owner ask is older than 7 days: count, oldest age, the top one; the retro tracks the median open age.",
+      "why": "2026-10-06: 10 open ALERTS entries, 8 of them owner asks, oldest 6 days (2026-09-30), none acted on; 4 of 5 venture queues carry an item blocked on an owner action (Chrome dashboard 013, Figma publishes 017/018/019, Partner Center) and two extension releases (ReadFocus 0.3.0, Highlight Keep 0.4.0) wait on an attended session. The phone receives each `owner:` line exactly once when it is pushed (notify-owner cursor) and nothing reminds or orders them. Fix: a generated docs/for-owner/OPEN.md (ordered by STRATEGY score ÷ owner minutes, with the action file link and the age) rebuilt by `npm run handoffs`, and the Monday weekly report emits ONE notify line when any owner ask is older than 7 days: count, oldest age, the top one; the retro tracks the median open age. BUILT 2026-10-06 (burn-down): scripts/handoffs.ts rankAsks/renderOpen/digestLine — OPEN.md ordered by unblocked score ÷ quoted minutes (2 of 8 asks unblock queued work today: the Chrome dashboard edit 7, the playground file 3), median open age printed (5 d today), notify: digest line only when an ask is older than 7 days; npm run handoffs joined check:root; weekly-report and ops-retro prompts updated; phone message links OPEN.md.",
       "effort_days": 0.15,
       "proof": "median age of open owner asks under 7 days over a month",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-06"
+      "status": "done",
+      "added": "2026-10-06",
+      "done_at": "2026-10-06"
     },
     {
       "id": "mcp-sandbox-timeout",

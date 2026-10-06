@@ -672,3 +672,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-06 18:05 | build | Merged on the burn-down's parallel gankdat-test-setup commits: its CI split and test setup kept
 - 2026-10-06 18:05 | build | Pre-push hook rejected gankdat .ts files (lint run from root): gankdat eslint config anchors tsconfigRootDir
 - 2026-10-06 18:05 | build | Queue: foundry gankdat-test-module-graph done (proof met: gate under 90 s); 3 foundry items left
+- 2026-10-06 18:20 | burn-down | npm run handoffs now writes docs/for-owner/OPEN.md: open asks ordered by unblocked score over minutes
+- 2026-10-06 18:20 | burn-down | handoffs prints the median open age of owner asks (5 d today) and a notify: digest once an ask passes 7 d
+- 2026-10-06 18:20 | burn-down | Weekly report copies that digest as its one notify line; retro records the median; handoffs joined check
+- 2026-10-06 18:20 | burn-down | Queue: foundry owner-ask-digest done; phone message and for-owner README now link OPEN.md

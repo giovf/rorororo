@@ -21,7 +21,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "check": "npm run check:root && npm run check -w @foundry/gankdat",
-    "check:root": "npm run typecheck && npm run portfolio && npm run ledger && npm run pipeline && npm run runs && npm run lint && npm run format:check && npm run test",
+    "check:root": "npm run typecheck && npm run portfolio && npm run ledger && npm run pipeline && npm run handoffs && npm run runs && npm run lint && npm run format:check && npm run test",
     "portfolio": "node --disable-warning=ExperimentalWarning scripts/portfolio.ts",
     "ledger": "node --disable-warning=ExperimentalWarning scripts/ledger-check.ts",
     "licensing:keygen": "node --disable-warning=ExperimentalWarning scripts/licensing-keygen.ts",

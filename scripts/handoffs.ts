@@ -8,16 +8,22 @@
 // `notify owner` job already treats such a suffix as closed. This script lists what is still open
 // and performs that append so no routine edits the file by hand.
 //
-// Run: npm run handoffs                                → open entries: `<age>d | <kind> | <date> | <text>`
-//      npm run handoffs -- list [--stale 7] [--all] [--json]
+// Run: npm run handoffs                                → open entries: `<age>d | <kind> | <date> | <text>`,
+//                                                        then rebuilds docs/for-owner/OPEN.md (the owner's list, by payoff),
+//                                                        prints the median open age of the owner asks and — when one is older
+//                                                        than 7 days — one `notify:` digest line for the weekly report
+//      npm run handoffs -- list [--stale 7] [--all] [--json] [--no-write]
 //      npm run handoffs -- close "<substring of the entry's first line>" --by <routine> --how "<how>"
 //                               [--superseded] [--on YYYY-MM-DD]
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
-import { readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const ALERTS_FILE = path.join('docs', 'ALERTS.md');
+export const OPEN_FILE = path.join('docs', 'for-owner', 'OPEN.md');
+export const ACTIONS_DIR = path.join('docs', 'for-owner', 'actions');
+export const QUEUES_DIR = path.join('docs', 'pipeline', 'queues');
 export const DEFAULT_STALE_DAYS = 7;
 export const OPEN_KINDS = /^(handoff|owner)\b/;
 export const CLOSED_SUFFIX = /—\s*(Done|Superseded)\b(?:\s+(\d{4}-\d{2}-\d{2}))?/;
@@ -143,6 +149,244 @@ export function closeEntry(md: string, match: string, opts: CloseOptions): strin
   return lines.join('\n');
 }
 
+// ---------------------------------------------------------------------------------------------
+// Owner digest (2026-10-06, foundry `owner-ask-digest`): the phone received each `owner:` line
+// exactly once, when it was pushed, and nothing ordered or reminded — 8 asks were open, the oldest
+// 6 days, none acted on. `npm run handoffs` now also writes docs/for-owner/OPEN.md, the asks ordered
+// by payoff (the STRATEGY §5 score of the queue items each one unblocks ÷ the minutes it takes the
+// owner), and prints one `notify:` line when an ask is older than DIGEST_AFTER_DAYS, which the
+// Monday weekly report copies as its one `| notify |` run line. The retro records the median age.
+
+/** Minutes assumed for an ask whose text gives none (`~N min`). */
+export const DEFAULT_MINUTES = 10;
+/** An owner ask open for more than this many days puts the digest line on the phone. */
+export const DIGEST_AFTER_DAYS = 7;
+/** Phone lines stay short and plain (burn-down / report NOTIFY rule: ≤ 90 chars). */
+export const DIGEST_MAX_CHARS = 90;
+
+/** The `~N min` an ask quotes for the owner's time, or undefined. `~15 min + Figma review` → 15. */
+export function parseMinutes(text: string): number | undefined {
+  const m = /~\s*(\d{1,3})\s*min/i.exec(text) ?? /\b(\d{1,3})-minute\b/i.exec(text);
+  return m ? Number(m[1]) : undefined;
+}
+
+/** Owner action numbers an entry names: `action 013`, `actions 017/018`, `actions/019-…md`. */
+export function actionIds(text: string): string[] {
+  const ids = new Set<string>();
+  for (const m of text.matchAll(/\bactions?\s+((?:\d{3}(?:\s*[/,&]\s*|\s+and\s+)?)+)/gi)) {
+    for (const id of (m[1] ?? '').match(/\d{3}/g) ?? []) ids.add(id);
+  }
+  for (const id of actionFilesNamed(text)) ids.add(id);
+  return [...ids].sort();
+}
+
+/** Only the action files an entry links (`docs/for-owner/actions/NNN-…md`). */
+export function actionFilesNamed(text: string): string[] {
+  const ids = new Set<string>();
+  for (const m of text.matchAll(/\bactions\/(\d{3})-/g)) if (m[1]) ids.add(m[1]);
+  return [...ids].sort();
+}
+
+/**
+ * The actions an ask is about: the step files it links, else every action it mentions. An ask
+ * that says "batch with action 017" is not action 017 and must not inherit what 017 unblocks.
+ */
+export function ownActionIds(text: string): string[] {
+  const files = actionFilesNamed(text);
+  return files.length > 0 ? files : actionIds(text);
+}
+
+/** Short plain title: the entry's first bold phrase, else its text up to the first dash, bracket or colon. */
+export function askTitle(text: string, width = 60): string {
+  const bold = /\*\*(.+?)\*\*/.exec(text);
+  let title = bold?.[1] ?? text.split(/\s[—(]|:\s/)[0] ?? text;
+  title = title.replace(/[`*]/g, '').replace(/\s+/g, ' ').trim();
+  return title.length <= width ? title : `${title.slice(0, width - 1).trimEnd()}…`;
+}
+
+export interface QueueItem {
+  id: string;
+  score?: number;
+  status?: string;
+  blocked_on?: string;
+}
+export interface Queue {
+  venture: string;
+  items: QueueItem[];
+}
+export interface Unblocked {
+  venture: string;
+  id: string;
+  score: number;
+}
+
+/** An open `owner:` entry with what it unblocks and its rank. */
+export interface Ask {
+  entry: Entry;
+  age: number;
+  minutes: number | undefined;
+  actions: string[];
+  unblocks: Unblocked[];
+  /** Sum of the scores of the blocked queue items the ask unblocks. */
+  payoff: number;
+  /** payoff ÷ minutes (DEFAULT_MINUTES when the ask gives none); 0 when nothing queued waits on it. */
+  rank: number;
+}
+
+/**
+ * A blocked queue item waits on an ask when its `blocked_on` names one of the ask's action numbers
+ * or the ask's ALERTS date (`ALERTS 2026-10-02`).
+ */
+export function unblockedBy(entry: Entry, actions: string[], queues: Queue[]): Unblocked[] {
+  const out: Unblocked[] = [];
+  for (const q of queues) {
+    for (const item of q.items) {
+      if (item.status !== 'blocked' || !item.blocked_on) continue;
+      const ids = actionIds(item.blocked_on);
+      const byAction = actions.some((a) => ids.includes(a));
+      const byDate = item.blocked_on.includes(`ALERTS ${entry.date}`);
+      if (byAction || byDate) out.push({ venture: q.venture, id: item.id, score: item.score ?? 0 });
+    }
+  }
+  return out;
+}
+
+/** Open owner asks ranked by payoff ÷ minutes, highest first; equal ranks oldest first. */
+export function rankAsks(open: Entry[], queues: Queue[], today: Date): Ask[] {
+  const asks: Ask[] = open
+    .filter((e) => /^owner\b/.test(e.kind))
+    .map((entry) => {
+      const actions = ownActionIds(entry.text);
+      const unblocks = unblockedBy(entry, actions, queues);
+      const payoff = unblocks.reduce((sum, u) => sum + u.score, 0);
+      const minutes = parseMinutes(entry.text);
+      return {
+        entry,
+        age: ageDays(entry.date, today),
+        minutes,
+        actions,
+        unblocks,
+        payoff,
+        rank: payoff / (minutes ?? DEFAULT_MINUTES),
+      };
+    });
+  return asks.sort(
+    (a, b) =>
+      b.rank - a.rank || a.entry.date.localeCompare(b.entry.date) || a.entry.start - b.entry.start,
+  );
+}
+
+/** Median of the asks' ages in whole days; 0 when there are none. */
+export function medianAge(asks: readonly Ask[]): number {
+  if (asks.length === 0) return 0;
+  const ages = asks.map((a) => a.age).sort((x, y) => x - y);
+  const mid = Math.floor(ages.length / 2);
+  const lo = ages[mid - 1] ?? 0;
+  const hi = ages[mid] ?? 0;
+  return ages.length % 2 === 1 ? hi : Math.round((lo + hi) / 2);
+}
+
+/**
+ * The one plain phone line for the weekly report, or undefined while no ask is older than
+ * DIGEST_AFTER_DAYS: count, oldest age, the top ask by payoff. ≤ DIGEST_MAX_CHARS.
+ */
+export function digestLine(asks: readonly Ask[]): string | undefined {
+  const oldest = Math.max(0, ...asks.map((a) => a.age));
+  if (asks.length === 0 || oldest <= DIGEST_AFTER_DAYS) return undefined;
+  const top = asks[0];
+  if (!top) return undefined;
+  const head = `${asks.length} request${asks.length === 1 ? '' : 's'} waiting on you, oldest ${oldest} days: `;
+  const room = Math.max(12, DIGEST_MAX_CHARS - head.length);
+  return `${head}${askTitle(top.entry.text, room)}`;
+}
+
+const plural = (n: number, word: string): string => `${n} ${word}${n === 1 ? '' : 's'}`;
+
+/** docs/for-owner/OPEN.md: the ranked asks, then handoffs an attended session owes, as plain Markdown. */
+export function renderOpen(
+  asks: readonly Ask[],
+  handoffs: readonly Entry[],
+  today: Date,
+  actionFiles: ReadonlyMap<string, string>,
+): string {
+  const lines: string[] = [
+    '# Open requests — what is waiting on you',
+    '',
+    `Generated by \`npm run handoffs\` on ${isoDate(today)} from the open \`owner:\` entries of \`docs/ALERTS.md\`` +
+      ' (`scripts/handoffs.ts`); edits here are overwritten — a request is closed with `npm run handoffs -- close …`.',
+    'Ordered by payoff: the score of the queued work each request unblocks (`docs/pipeline/`, STRATEGY §5) divided by',
+    'the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already',
+    'taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).',
+    '',
+    `## Requests (${asks.length})`,
+    '',
+  ];
+  if (asks.length === 0) lines.push('Nothing is waiting on you.', '');
+  asks.forEach((ask, i) => {
+    const minutes = ask.minutes === undefined ? 'time not stated' : `~${ask.minutes} min`;
+    const unblocks =
+      ask.unblocks.length === 0
+        ? 'nothing queued waits on it'
+        : `unblocks ${ask.unblocks.map((u) => `${u.venture} \`${u.id}\` (${u.score})`).join(', ')}`;
+    const steps = ask.actions
+      .map((id) => {
+        const file = actionFiles.get(id);
+        return file ? `[${id}](actions/${file})` : id;
+      })
+      .join(', ');
+    lines.push(
+      `${i + 1}. **${askTitle(ask.entry.text)}** — ${minutes}, waiting ${plural(ask.age, 'day')} (since ${ask.entry.date}); ${unblocks}${steps ? `. Steps: ${steps}` : ''}.`,
+      `   ${summary(ask.entry, 320)}`,
+      '',
+    );
+  });
+  lines.push(`## Waiting on an attended Claude session, not you (${handoffs.length})`, '');
+  if (handoffs.length === 0) lines.push('None.', '');
+  for (const h of handoffs) {
+    lines.push(`- ${plural(ageDays(h.date, today), 'day')} (${h.date}) — ${summary(h, 200)}`);
+  }
+  if (handoffs.length > 0) lines.push('');
+  return lines.join('\n');
+}
+
+/** Every queue under docs/pipeline/queues (venture + items); unreadable files are skipped. */
+export function loadQueues(dir: string): Queue[] {
+  if (!existsSync(dir)) return [];
+  const queues: Queue[] = [];
+  for (const file of readdirSync(dir)
+    .filter((f) => f.endsWith('.json'))
+    .sort()) {
+    try {
+      const raw = JSON.parse(readFileSync(path.join(dir, file), 'utf8')) as Partial<Queue>;
+      if (Array.isArray(raw.items)) {
+        queues.push({ venture: raw.venture ?? file.replace(/\.json$/, ''), items: raw.items });
+      }
+    } catch {
+      // a malformed queue is npm run pipeline's finding, not this script's
+    }
+  }
+  return queues;
+}
+
+/** `013` → `013-repo-private.md` for every file under docs/for-owner/actions. */
+export function loadActionFiles(dir: string): Map<string, string> {
+  const map = new Map<string, string>();
+  if (!existsSync(dir)) return map;
+  for (const file of readdirSync(dir)) {
+    const m = /^(\d{3})-.*\.md$/.exec(file);
+    if (m?.[1]) map.set(m[1], file);
+  }
+  return map;
+}
+
+/** Writes OPEN.md when its content changed; returns whether it did. */
+export function writeOpen(file: string, content: string): boolean {
+  const current = existsSync(file) ? readFileSync(file, 'utf8') : undefined;
+  if (current === content) return false;
+  writeFileSync(file, content);
+  return true;
+}
+
 export interface Args {
   command: string;
   positional: string[];
@@ -185,6 +429,22 @@ function main(): void {
       console.log(
         `${book.open.length} open (${book.stale.length} older than ${staleDays} days), ${book.closed.length} closed with a Done/Superseded suffix`,
       );
+      const asks = rankAsks(book.open, loadQueues(path.resolve(QUEUES_DIR)), today);
+      const handoffs = book.open.filter((e) => /^handoff\b/.test(e.kind));
+      console.log(
+        `owner asks: ${asks.length} open, median open age of owner asks: ${medianAge(asks)} d, ${asks.filter((a) => a.payoff > 0).length} unblock queued work`,
+      );
+      const digest = digestLine(asks);
+      if (digest) console.log(`notify: ${digest}`);
+      if (!flags['no-write']) {
+        const content = renderOpen(
+          asks,
+          handoffs,
+          today,
+          loadActionFiles(path.resolve(ACTIONS_DIR)),
+        );
+        if (writeOpen(path.resolve(OPEN_FILE), content)) console.log(`${OPEN_FILE} rebuilt`);
+      }
       return;
     }
     case 'close': {

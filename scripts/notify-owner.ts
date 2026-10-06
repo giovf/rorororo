@@ -154,7 +154,7 @@ export function buildMessages(input: {
   const texts: string[] = [];
   if (items.length > 0) {
     texts.push(
-      `Foundry needs you:\n${items.map((i) => `• ${i}`).join('\n')}\n\nDetails: docs/for-owner/OUTSTANDING.md`,
+      `Foundry needs you:\n${items.map((i) => `• ${i}`).join('\n')}\n\nDetails: docs/for-owner/OPEN.md`,
     );
   }
   if (runs.length > 0) texts.push(`Foundry:\n${runs.join('\n')}`);
