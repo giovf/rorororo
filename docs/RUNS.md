@@ -648,3 +648,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-05 23:25 | burn-down | Queue: foundry triage-run-failed-reason done; foundry has only dated/blocked items left
 - 2026-10-05 23:40 | burn-down | Stopping: 1 item built, pipeline starved, every queue and the exchange already researched today
 - 2026-10-06 00:21 | burn-down | Stopping: pipeline starved, all 5 queues and the exchange researched in the last 24h, nothing to build
+- 2026-10-06 01:23 | burn-down | Stopping: pipeline starved (next buildable 2026-10-08), every queue researched within 24h, night's pre-research spent
