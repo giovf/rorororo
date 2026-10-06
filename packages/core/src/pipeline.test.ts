@@ -9,6 +9,8 @@ import {
   parseExchange,
   parseQueue,
   starved,
+  cooling,
+  isCooling,
   type VentureQueue,
 } from './pipeline.js';
 
@@ -138,6 +140,30 @@ describe('scheduling', () => {
     expect(needsResearch([blockedOnly, datedOnly], { today: '2026-10-21' })).toEqual([]);
     const text = formatPipeline({ exchange: { ideas: [] }, queues: [blockedOnly, datedOnly] }, today);
     expect(text).toContain('pipeline starved');
+  });
+
+  it('does not offer a queue researched within 48 h for research again', () => {
+    // 2026-10-05: five research runs in a day, and the next morning the build was offered the
+    // same venture eleven hours after its research because `updated` was all it had to go on.
+    const blockedOnly = parseQueue(
+      queue('gankdat', [item('sc', 'blocked', 4)], { updated: '2026-10-05', researched: '2026-10-05' }),
+    );
+    const older = parseQueue(
+      queue('toolkit', [{ ...item('day-30', 'todo', 4), not_before: '2026-10-21' }], { updated: '2026-10-05', researched: '2026-10-03' }),
+    );
+    expect(isCooling(blockedOnly, '2026-10-06')).toBe(true);
+    expect(isCooling(blockedOnly, '2026-10-07')).toBe(false);
+    expect(isCooling(older, '2026-10-05')).toBe(false);
+    // Yesterday's research is still cooling; the day-before's is not.
+    expect(starved([blockedOnly, older], { today: '2026-10-06' }).map((q) => q.venture)).toEqual(['toolkit']);
+    expect(cooling([blockedOnly, older], { today: '2026-10-06' }).map((q) => q.venture)).toEqual(['gankdat']);
+    // Every starved queue cooling: nothing to research, and the status says to stop.
+    const allCool = parseQueue(queue('toolkit', [item('sc', 'blocked', 4)], { researched: '2026-10-06' }));
+    expect(needsResearch([blockedOnly, allCool], { today: '2026-10-06' })).toEqual([]);
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [blockedOnly, allCool] }, { today: '2026-10-06' });
+    expect(text).toContain('researched within 48 h');
+    expect(text).toContain('cooling: gankdat (researched 2026-10-05), toolkit (researched 2026-10-06)');
+    expect(() => parseQueue(queue('t', [], { researched: '5 Oct' }))).toThrow(/researched/);
   });
 
   it('offers a stale doing item again and lists every doing item', () => {

@@ -660,3 +660,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-06 17:32 | burn-down | Measured: migrations were not the gate's cost; each of 49 spec files loads the whole module graph (14-19 s)
 - 2026-10-06 17:32 | burn-down | CI: root check workflow now runs check:root; gankdat.yml is the one gankdat gate per push (docs/ci)
 - 2026-10-06 17:32 | burn-down | Queue: foundry gankdat-test-setup done; gankdat-test-module-graph (6) queued with the evidence and five candidates
+- 2026-10-06 17:45 | burn-down | Pipeline: queues carry researched; a venture researched within 48 h is cooling, never re-offered
+- 2026-10-06 17:45 | burn-down | npm run pipeline prints a cooling: line and tells a starved, cooled run to stop; core tests added
+- 2026-10-06 17:45 | burn-down | Queue: foundry research-cooldown done; build.md and burn-down.md research sentences updated

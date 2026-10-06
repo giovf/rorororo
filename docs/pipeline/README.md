@@ -32,6 +32,11 @@ first of them rather than idling (both slots did nothing on 2026-10-01 morning: 
 `empty` `[]`). One buildable item anywhere ends the fallback. **Doing** (2026-10-05): a `doing` item is one a run is building,
 dated by `doing_since` (else `added`); `npm run pipeline` lists every one on a `doing:` line. One that has been doing
 for more than a day with no future `not_before` is a cut-off session's leftover (nothing of it reached `main`), so
-`next` offers it again; a deliberate hold is `todo` with `not_before` (or carries `not_before` while doing). A `finished` queue is a venture
+`next` offers it again; a deliberate hold is `todo` with `not_before` (or carries `not_before` while doing). **Cooling** (2026-10-06): a queue carries
+`researched: YYYY-MM-DD`, the day of its last research run (every research run sets it with `updated`); for 48 h after
+that the starvation fallback skips the queue and `npm run pipeline` lists it on a `cooling:` line, so a venture is not
+researched twice in a day (2026-10-05 had five research runs and the next morning's build was offered the same venture
+eleven hours later). When `next` is null and every starved queue is cooling, `empty` prints `[]` and the status says
+so: the run writes one run-log line and stops (the burn-down's one pre-research pass per night aside). A `finished` queue is a venture
 with nothing left to do; only the exchange or the review reopens it. Every change to a queue
 lands in the same commit as the work.

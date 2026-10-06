@@ -795,3 +795,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   CI split (`check:root` in the root workflow, `gankdat.yml` the only gankdat gate per push — the month's two top minute consumers
   overlapped on every gankdat push), the measurements in the item. The module-graph cost is a new item, `gankdat-test-module-graph`
   (6), with five measured candidates. Proof unchanged: gate under 90 s; one gankdat run per push.
+- 2026-10-06 burn-down (17:00 run, 2nd item): foundry `research-cooldown` (6) built — every queue records `researched`, the day of its
+  last research run; for 48 h the starvation fallback skips it, the status lists it as cooling, and a starved pipeline whose every
+  queue is cooling tells the run to write one line and stop. Why: five research runs on 2026-10-05 and the next morning's build
+  was offered the same venture eleven hours later; the judgement "researched today" lived nowhere. Proof: no venture researched
+  twice within 48 h over 14 days; no research line that adds zero items.

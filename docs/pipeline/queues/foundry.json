@@ -3,6 +3,7 @@
   "status": "open",
   "needs_research": false,
   "updated": "2026-10-06",
+  "researched": "2026-10-06",
   "items": [
     {
       "id": "fetch-relay",
@@ -457,12 +458,13 @@
     {
       "id": "research-cooldown",
       "title": "The starvation fallback remembers what it researched: a queue researched within 48 h is not offered again",
-      "why": "2026-10-05 had five research runs (gankdat 01:21, highlight-keep 09:11, read-focus 19:32, variables-toolkit 20:32, foundry 22:33) plus the exchange pre-research, and the 2026-10-06 09:00 build was offered foundry again eleven hours after its last research because starved() sorts by `updated`, which every run touches, and no prompt or script records when a queue was last researched; the night runs stopped only by the operator judgement 'every queue researched today', which is written nowhere. Fix: queue field `researched: YYYY-MM-DD` (parseQueue, optional) set by every research run; starved() skips queues with researched within 2 days and `npm run pipeline` lists them on a `cooling:` line; when all starved queues are cooling, `next` prints that and build.md/burn-down.md gain one sentence: write one run-log line and stop. Tests in packages/core.",
+      "why": "2026-10-05 had five research runs (gankdat 01:21, highlight-keep 09:11, read-focus 19:32, variables-toolkit 20:32, foundry 22:33) plus the exchange pre-research, and the 2026-10-06 09:00 build was offered foundry again eleven hours after its last research because starved() sorts by `updated`, which every run touches, and no prompt or script records when a queue was last researched; the night runs stopped only by the operator judgement 'every queue researched today', which is written nowhere. Fix: queue field `researched: YYYY-MM-DD` (parseQueue, optional) set by every research run; starved() skips queues with researched within 2 days and `npm run pipeline` lists them on a `cooling:` line; when all starved queues are cooling, `next` prints that and build.md/burn-down.md gain one sentence: write one run-log line and stop. Tests in packages/core. — Built 2026-10-06 burn-down: `researched` on every queue (parseQueue validates it), `isCooling`/`cooling()` in @foundry/core, `starved()` skips cooling queues, the status prints a `cooling:` line and a stop sentence when every starved queue is cooling; the five queues carry their last research day from RUNS; build.md, burn-down.md and the pipeline README say it. Tests in pipeline.test.ts.",
       "effort_days": 0.15,
       "proof": "over 14 days no venture researched twice within 48 h and no research run-log line that adds zero items",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-06"
+      "status": "done",
+      "added": "2026-10-06",
+      "done_at": "2026-10-06"
     },
     {
       "id": "owner-ask-digest",
