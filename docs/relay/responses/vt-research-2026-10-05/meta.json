@@ -1,0 +1,398 @@
+{
+  "request": "vt-research-2026-10-05",
+  "fetched_at": "2026-10-06T07:17:02.843Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=relink%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:43.786Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=relink%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "1.json",
+      "bytes": 143149,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=design%20tokens&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:44.770Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=design%20tokens&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "2.json",
+      "bytes": 663477,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=bind%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:46.290Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=bind%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "3.json",
+      "bytes": 649263,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=library%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:47.537Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=library%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "4.json",
+      "bytes": 745345,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=clean%20up%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:48.695Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=clean%20up%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "5.json",
+      "bytes": 743188,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=detach%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:49.712Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=detach%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "6.json",
+      "bytes": 380171,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=variables%20to%20css&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:50.642Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=variables%20to%20css&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "7.json",
+      "bytes": 612728,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=unused%20styles&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:51.911Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=unused%20styles&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "8.json",
+      "bytes": 351470,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=swap%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:52.449Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=swap%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "9.json",
+      "bytes": 706047,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=convert%20styles&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:53.299Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=convert%20styles&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "10.json",
+      "bytes": 619115,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=variable%20utilities&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:54.570Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=variable%20utilities&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "11.json",
+      "bytes": 183174,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=variables%20audit&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:55.128Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=variables%20audit&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "12.json",
+      "bytes": 675978,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=variables%20export&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:56.072Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=variables%20export&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "13.json",
+      "bytes": 633005,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=variables%20documentation&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:56.828Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=variables%20documentation&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "14.json",
+      "bytes": 703367,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:57.804Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "15.json",
+      "bytes": 654402,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=styles%20to%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-06T07:16:59.143Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=styles%20to%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "16.json",
+      "bytes": 616892,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/1503ee43-33f0-4496-a693-f7fe2684d035/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:00.030Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/1503ee43-33f0-4496-a693-f7fe2684d035/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "17.json",
+      "bytes": 71725,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/794d09a7-beae-41a7-aee3-77883e4f1499/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:00.497Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/794d09a7-beae-41a7-aee3-77883e4f1499/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "18.json",
+      "bytes": 76056,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/859ac2ed-98e9-4ff4-a655-7640a7e0cfb1/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:00.895Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/859ac2ed-98e9-4ff4-a655-7640a7e0cfb1/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "19.json",
+      "bytes": 105249,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/11d8a82c-dbe3-4ce5-b393-480a13202a02/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:01.511Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/11d8a82c-dbe3-4ce5-b393-480a13202a02/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "20.json",
+      "bytes": 68110,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/c5a0e64c-373a-4409-9733-678044c0d155/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:01.917Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/c5a0e64c-373a-4409-9733-678044c0d155/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "21.json",
+      "bytes": 127,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/7d1db498-37d2-4095-a034-69055aa1bb44/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:02.037Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/7d1db498-37d2-4095-a034-69055aa1bb44/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "22.json",
+      "bytes": 127,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/3ae51f0d-fd8b-44df-ad8b-bb64e09a8906/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:02.161Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/3ae51f0d-fd8b-44df-ad8b-bb64e09a8906/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "23.json",
+      "bytes": 127,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/ece15fb7-fba8-43c6-9bde-c193bb24c476/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:02.440Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/ece15fb7-fba8-43c6-9bde-c193bb24c476/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "24.json",
+      "bytes": 15218,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/140eccba-2c12-489e-8a75-7bfa188802b3/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:02.741Z",
+      "status": 202,
+      "final_url": "https://www.figma.com/api/resources/140eccba-2c12-489e-8a75-7bfa188802b3/comments?page_size=50",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "0"
+      },
+      "file": "25.html",
+      "bytes": 0,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/c6893bd4-72b2-43c9-ae8f-ba2357f5cac6/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:02.748Z",
+      "status": 202,
+      "final_url": "https://www.figma.com/api/resources/c6893bd4-72b2-43c9-ae8f-ba2357f5cac6/comments?page_size=50",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "0"
+      },
+      "file": "26.html",
+      "bytes": 0,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/8c3b430c-a194-4499-a091-babd7249b58e/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:02.831Z",
+      "status": 202,
+      "final_url": "https://www.figma.com/api/resources/8c3b430c-a194-4499-a091-babd7249b58e/comments?page_size=50",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "0"
+      },
+      "file": "27.html",
+      "bytes": 0,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/3308082c-4c2f-4eb5-9cf6-0f1a45f9ba02/comments?page_size=50",
+      "fetched_at": "2026-10-06T07:17:02.837Z",
+      "status": 202,
+      "final_url": "https://www.figma.com/api/resources/3308082c-4c2f-4eb5-9cf6-0f1a45f9ba02/comments?page_size=50",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "0"
+      },
+      "file": "28.html",
+      "bytes": 0,
+      "truncated": false
+    }
+  ]
+}
