@@ -665,3 +665,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-06 17:45 | burn-down | Queue: foundry research-cooldown done; build.md and burn-down.md research sentences updated
 - 2026-10-06 17:50 | burn-down | npm run pipeline cold: dependency-free starvation check, runs before npm ci, prints starved-and-cooled
 - 2026-10-06 17:50 | burn-down | burn-down.md GATE ends the run on starved-and-cooled; SCHEDULERS row updated; foundry item done
+- 2026-10-06 17:52 | burn-down | Probed test module-graph item: optimizer no gain, spec imports moot, pool-workers 0.22 is out
+- 2026-10-06 17:52 | burn-down | Stopping for time (~35 min): 3 foundry items built; next is gankdat-test-module-graph (0.3 d)
