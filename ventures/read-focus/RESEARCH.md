@@ -132,6 +132,8 @@ the multi-store listing is the main upside over V1.
 | 2026-10-04 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
 | 2026-10-05 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.1.0, updated October 4, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0 |
 | 2026-10-05 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
+| 2026-10-06 | Daily check | — | — | — | store-metrics job left no row |
+| 2026-10-06 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
