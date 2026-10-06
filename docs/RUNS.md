@@ -650,3 +650,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-06 00:21 | burn-down | Stopping: pipeline starved, all 5 queues and the exchange researched in the last 24h, nothing to build
 - 2026-10-06 01:23 | burn-down | Stopping: pipeline starved (next buildable 2026-10-08), every queue researched within 24h, night's pre-research spent
 - 2026-10-06 01:25 | watchdog | ci-minutes: ~6223 Actions min/month projected (private cap 2,000, warn 1700); top: check 701, gankdat 171, owner notes 1
+- 2026-10-06 02:19 | burn-down | Stopping: main green, pipeline starved (next buildable 2026-10-08), queues researched <24h, pre-research spent
