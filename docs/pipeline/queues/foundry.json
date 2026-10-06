@@ -448,12 +448,13 @@
     {
       "id": "burn-starvation-gate",
       "title": "Burn-down stops before npm ci when the pipeline is starved and every queue was researched in the last day",
-      "why": "Night of 2026-10-05/06: four hourly burn-down firings (23:40, 00:21, 01:23, 02:19) each ran npm ci and the full gate (~8 min), read every doc, found the pipeline starved and every queue researched within 24 h, then pushed one run-log line — about 20 min of Fable per firing from trigger to commit for zero work, plus two workflow runs per push (owner notes, notify owner). The GATE in burn-down.md checks only BURN.json. Fix: a dependency-free starvation check (plain Node over docs/pipeline/*.json, no @foundry/core dist needed, so it runs before npm ci) printed as `npm run pipeline cold`; the burn-down GATE runs it first and ends without npm ci and without committing when it reports starved + every open queue and the exchange researched within 24 h (needs the `researched` field from research-cooldown); docs/SCHEDULERS.md and burn-down.md updated in the same commit.",
+      "why": "Night of 2026-10-05/06: four hourly burn-down firings (23:40, 00:21, 01:23, 02:19) each ran npm ci and the full gate (~8 min), read every doc, found the pipeline starved and every queue researched within 24 h, then pushed one run-log line — about 20 min of Fable per firing from trigger to commit for zero work, plus two workflow runs per push (owner notes, notify owner). The GATE in burn-down.md checks only BURN.json. Fix: a dependency-free starvation check (plain Node over docs/pipeline/*.json, no @foundry/core dist needed, so it runs before npm ci) printed as `npm run pipeline cold`; the burn-down GATE runs it first and ends without npm ci and without committing when it reports starved + every open queue and the exchange researched within 24 h (needs the `researched` field from research-cooldown); docs/SCHEDULERS.md and burn-down.md updated in the same commit. — Built 2026-10-06 burn-down: `npm run pipeline cold` in scripts/pipeline.ts runs before the @foundry/core import (plain reads of the queue files and RUNS.md, so it works in a sandbox before npm ci) and prints `starved-and-cooled` or `work: <reasons>`; the burn-down GATE runs it after BURN.json and ends the run on `starved-and-cooled`; SCHEDULERS row updated.",
       "effort_days": 0.15,
       "proof": "over 7 nights no burn-down run-log line whose only content is Stopping: starved",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-06"
+      "status": "done",
+      "added": "2026-10-06",
+      "done_at": "2026-10-06"
     },
     {
       "id": "research-cooldown",

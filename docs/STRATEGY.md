@@ -800,3 +800,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   queue is cooling tells the run to write one line and stop. Why: five research runs on 2026-10-05 and the next morning's build
   was offered the same venture eleven hours later; the judgement "researched today" lived nowhere. Proof: no venture researched
   twice within 48 h over 14 days; no research line that adds zero items.
+- 2026-10-06 burn-down (17:00 run, 3rd item): foundry `burn-starvation-gate` (6) built — `npm run pipeline cold`, plain Node over the
+  queue files and RUNS.md with no dependency on the built core, tells the burn-down before `npm ci` whether anything is buildable,
+  flagged, starved-but-not-cooling or the night's pre-research unspent; `starved-and-cooled` ends the run at once. Why: four
+  firings on the night of 2026-10-05/06 each spent ~20 min and two workflow runs to learn that. Proof: no burn-down run-log
+  line over 7 nights whose only content is a starved stop.
