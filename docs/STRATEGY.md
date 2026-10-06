@@ -788,3 +788,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   firings overnight each spent ~20 min to learn the pipeline was starved (6); the starvation fallback has no memory of what it
   researched (6); eight owner asks open for up to six days with no reminder (4); task-master-ai MCP times out in every sandbox
   (3). Proof: gankdat gate under 90 s; no idle burn-down lines; no venture researched twice in 48 h; owner asks under 7 days.
+- 2026-10-06 burn-down (17:00 run, 1st item): foundry `gankdat-test-setup` (7) built with a corrected premise — pool-workers 0.18 has
+  no isolated storage at all, and re-migrating D1 per test was not the cost: a single spec file spends ~20 s loading the whole
+  `src/index.ts` module graph (397 module-fallback requests, ajv via the MCP SDK most of them), 49 files three at a time = 260 s.
+  Delivered: migrations once per file + per-test table/KV emptying (test time 71 → 57 s, the per-test workerd exception gone), the
+  CI split (`check:root` in the root workflow, `gankdat.yml` the only gankdat gate per push — the month's two top minute consumers
+  overlapped on every gankdat push), the measurements in the item. The module-graph cost is a new item, `gankdat-test-module-graph`
+  (6), with five measured candidates. Proof unchanged: gate under 90 s; one gankdat run per push.

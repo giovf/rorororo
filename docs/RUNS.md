@@ -656,3 +656,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-06 09:40 | build | Four idle burn-down firings overnight each ran npm ci + gate (~20 min) to find the pipeline starved
 - 2026-10-06 09:40 | build | Starvation fallback re-offers a queue researched hours earlier; 8 owner asks open, oldest 6 days
 - 2026-10-06 09:40 | build | Queue: foundry +5 items (test setup 7, burn gate 6, research cooldown 6, owner digest 4, MCP timeout 3)
+- 2026-10-06 17:32 | burn-down | gankdat test setup rewritten: migrate once per file, empty tables and KV per test; 384 pass, no workerd noise
+- 2026-10-06 17:32 | burn-down | Measured: migrations were not the gate's cost; each of 49 spec files loads the whole module graph (14-19 s)
+- 2026-10-06 17:32 | burn-down | CI: root check workflow now runs check:root; gankdat.yml is the one gankdat gate per push (docs/ci)
+- 2026-10-06 17:32 | burn-down | Queue: foundry gankdat-test-setup done; gankdat-test-module-graph (6) queued with the evidence and five candidates

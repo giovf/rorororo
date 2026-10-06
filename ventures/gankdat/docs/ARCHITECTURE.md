@@ -116,6 +116,17 @@ change-feed target is readable from the daily metrics row) ·
 stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
 @cloudflare/vitest-pool-workers · ESLint + Prettier · npm · wrangler.
 
+Tests (2026-10-06): pool-workers 0.18 has no isolated per-test storage — one runtime
+and one D1/KV store serve every spec file in turn — so `test/apply-migrations.ts`
+migrates once per file and empties every table and both KV namespaces before each
+test (the earlier `reset()` + full re-migration per test also logged a workerd
+"deleteAllDurableObjects" exception per test). The gate's cost is elsewhere: each of
+the 49 spec files loads the whole `src/index.ts` module graph afresh (~400 module
+fallback requests, mostly ajv via the MCP SDK, plus hono and zod through Vite),
+14–19 s a file, 49 files, three at a time — see foundry `gankdat-test-module-graph`.
+On CI the gate runs once per push, in `gankdat.yml` only; the root `check` workflow
+runs `check:root`.
+
 ## Backend & data
 - **D1**: `accounts` (email = identity, holds plan), `api_keys` (belong to
   accounts, inherit plan), `credit_ledger` (append-only audit; NOT the live
