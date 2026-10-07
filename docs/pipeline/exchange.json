@@ -240,6 +240,14 @@
       "status": "parked",
       "trigger": "a live storefront with ≥ 10 listed sellers and a published seller agreement; then score it as a shelf",
       "added": "2026-10-07"
+    },
+    {
+      "id": "uk-land-registry-price-paid",
+      "title": "HM Land Registry Price Paid Data (England & Wales sold house prices) on gankdat: postcode/street lookups + monthly new-sales feed",
+      "why": "Pre-research 2026-10-07 (burn-down starvation fallback). Supply: HM Land Registry publishes every registered residential sale since 1995 as CSV under the Open Government Licence v3.0, commercial use allowed, with the fixed attribution line (\"Contains HM Land Registry data © Crown copyright and database right <year>. This data is licensed under the Open Government Licence v3.0\"); a monthly update file plus yearly files of 115–230 MB (gov.uk price-paid-data-downloads), no registration, no personal names in the rows, so no Blind Mode work. Demand: nine Apify actors already sell exactly this — alinz/uk-sold-house-prices and logiover/uk-land-registry-scraper from $1.50 per 1k, devon_gtme/land-registry-price-paid and kaz_kakyo/uk-property-data $2, bgfc97 $3, scrapers_lat $6.80, plotbench $10 — and propertydata.co.uk sells the same rows inside a £28–£576/month API. The buyer is the proptech, surveyor and lettings tool pulling comparables by postcode. Score ≈ 3: evidence 3 (nine priced rivals, a £28/month API) × reach 2 (Apify, MCP, x402) ÷ 2 build days (the full file is ~30M rows — a rolling 24-month window in D1 with idOf on the transaction id and a monthly wave, not the whole history) ÷ a crowding penalty (nine rivals at $1.50 and up means price, not scarcity, is the only lever, and every Apify category we list in sits at the 2-user floor — exchange 2026-W41). Parked: STRATEGY §5 puts distribution before new datasets until a shelf converts; apify.com and gov.uk are relay-only hosts, so the rivals' user counts and the monthly file layout were not read tonight.",
+      "status": "parked",
+      "trigger": "a gankdat shelf converts (≥ 1 paying account or ≥ 20 paid Apify runs/month) and a relay store read shows ≥ 2 of the nine rivals above 10 users/30 d; then relay-read the monthly update file header and size before scoring for the queue",
+      "added": "2026-10-07"
     }
   ]
 }

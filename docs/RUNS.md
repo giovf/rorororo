@@ -747,3 +747,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 18:30 | burn-down | Cold gate: pipeline-cold.ts counts only `Exchange pre-research:` lines since the night's 17:00 UTC
 - 2026-10-07 18:30 | burn-down | burn-down.md pass rule spells out the same prefix and window; 10 tests; pipeline.ts comment
 - 2026-10-07 18:30 | burn-down | Queue: foundry cold-gate-night-window done (two nights of pre-research were skipped unseen)
+- 2026-10-07 18:48 | burn-down | Exchange pre-research: Land Registry price paid data parked (OGL v3, 9 Apify rivals $1.50-10/1k)
