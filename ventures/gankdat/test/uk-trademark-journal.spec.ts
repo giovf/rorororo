@@ -4,7 +4,9 @@ import type { SuccessEnvelope } from '../src/lib/envelope';
 import { refreshD1Source } from '../src/sources/d1store';
 import {
   DOWNLOADS_PER_RUN,
+  DOWNLOAD_BUDGET_MS,
   ISSUE_FILES,
+  journalClock,
   addMonths,
   candidateIssues,
   decodeEntities,
@@ -508,6 +510,33 @@ describe('GET /v1/data/uk-trademark-journal', () => {
       UkTrademarkJournalRecord[]
     >;
     expect(body.meta?.total).toBe(DOWNLOADS_PER_RUN + 2);
+  });
+
+  it('starts no new download once the run has spent its download budget, and resumes next run', async () => {
+    const issues: Record<string, string> = {};
+    for (let n = 1; n <= DOWNLOADS_PER_RUN + 1; n += 1) issues[id(n)] = smallIssue(n);
+    const mock = serveIssues(issues);
+    // The clock jumps past the budget as soon as one real issue has been fetched (its zip probe
+    // and the xml read are two calls); probes of missing ids do not move it.
+    journalClock.now = (): number =>
+      mock.mock.calls.filter((c) => issueOf(String(c[0])).id in issues).length >= 2
+        ? DOWNLOAD_BUDGET_MS
+        : 0;
+    try {
+      await load();
+    } finally {
+      journalClock.now = (): number => Date.now();
+    }
+    let body = (await (await authedFetch(`${URL_}?per_page=50`)).json()) as SuccessEnvelope<
+      UkTrademarkJournalRecord[]
+    >;
+    expect(body.meta?.total).toBe(1);
+    expect(body.data[0]?.mark_text).toBe(`MARK ${DOWNLOADS_PER_RUN + 1}`);
+    await load();
+    body = (await (await authedFetch(`${URL_}?per_page=50`)).json()) as SuccessEnvelope<
+      UkTrademarkJournalRecord[]
+    >;
+    expect(body.meta?.total).toBe(DOWNLOADS_PER_RUN + 1);
   });
 
   it('fails loudly when an issue has no recognisable application, keeping the previous generation', async () => {

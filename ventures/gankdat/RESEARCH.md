@@ -200,3 +200,13 @@ and the Daily numbers row reads it as `indexnow: N urls S` (`n/a (<reason>)` on 
 Worker's ping and its Analytics Engine point are gone — the endpoint answered 429 to Workers egress
 on every wave, and no Worker-side change can fix an IP throttle. Readings: `indexnow: N urls 200`
 with N ≥ 60 for seven days is the proof; the 11-05 day-30 read is unchanged.
+
+**Built 2026-10-07 — `trademark-journal-silent-refresh`** (burn-down): the journal's refresh starts
+no new issue download once six minutes have elapsed (`DOWNLOAD_BUDGET_MS`; up to four 145 MB
+issues a run was the whole of the 13 min 42 s the 10-04 run took); the issues already cached
+stream into D1 as before and the window keeps filling on later nights, so a run always ends
+inside the 15-minute Cron Trigger budget with a `refresh_log` row. The `tmj_window` log line now
+carries `elapsed_ms` and `download_budget_spent`. Not built: a "started" refresh_log row — the
+two-day stale reading in the Daily numbers row is the detector for a killed wave, and a row per
+start would double the table's writes for one source. Proof: an `ok` row on three consecutive
+nights; the stale reading gone from the row by 2026-10-09.

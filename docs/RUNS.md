@@ -688,3 +688,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 00:40 | burn-down | IndexNow submission moved to the GitHub runner: refreshed sources' stats pages, facets from KV
 - 2026-10-07 00:40 | burn-down | Worker wave-end ping and its Analytics Engine point removed; metrics row reads dist/indexnow.json
 - 2026-10-07 00:40 | burn-down | Queue: gankdat indexnow-from-runner done; next buildable is trademark-journal-silent-refresh (6)
+- 2026-10-07 00:50 | burn-down | Trade-marks journal refresh: no new issue download after 6 min, so wave 7 ends inside its budget
+- 2026-10-07 00:50 | burn-down | tmj_window log carries elapsed_ms and download_budget_spent; budget test with an injected clock
+- 2026-10-07 00:50 | burn-down | Queue: gankdat trademark-journal-silent-refresh done; next buildable feeds-reading-reason (4)

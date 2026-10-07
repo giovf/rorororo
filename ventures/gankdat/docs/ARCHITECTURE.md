@@ -64,7 +64,10 @@ unreachable from the build container, so the reader is layout-tolerant (every as
 `LAYOUT` table; an issue with no recognisable application fails the refresh loudly, naming the
 element names it saw). Organisation-level only: applicant and representative names kept only with
 a corporate designator, addresses reduced to country, mark images never stored. Own refresh
-**wave 7** (06:05).
+**wave 7** (06:05). A refresh starts no new issue download after six minutes
+(`DOWNLOAD_BUDGET_MS`, 2026-10-07): the 10-04 run took 13 min 42 s of the 15-minute Cron Trigger
+budget and the next two nights were killed before writing a `refresh_log` row; the issues cached
+before the cut-off still load and the window fills over the following runs.
 And the Gambling Commission licence register (`uk-gambling-operators`, shipped 2026-09-24 —
 exchange 2026-W39 runner-up, OGL v3 confirmed on the data.gov.uk record; KYB/payments risk,
 affiliate compliance, sector suppliers; rival Apify actors price it from $8 per 1k rows). Five daily

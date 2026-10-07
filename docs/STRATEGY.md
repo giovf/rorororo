@@ -832,3 +832,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   blobs from KV, POSTs every parent and facet page once from its own IP and leaves the result for the Daily numbers row. Why: Bing
   throttles by source IP, Workers share egress, and every wave got 429 while the runner's post got 200. Proof: `indexnow: N urls 200`,
   N ≥ 60, for seven days.
+- 2026-10-07 burn-down (00:00 run, 3rd item): gankdat `trademark-journal-silent-refresh` (6) built — the journal's refresh starts no
+  new issue download after six minutes; what is cached still loads and the window fills over later nights. Why: up to four 145 MB
+  issues a run took 13 min 42 s on 10-04 and the next two nights were killed before writing a row, the one dataset whose change
+  feed is weekly going dark unseen for two days. Proof: an ok row three nights running, stale reading gone by 10-09.
