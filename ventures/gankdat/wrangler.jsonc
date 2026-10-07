@@ -21,9 +21,10 @@
     // URL keeps working as an alias; this is the brand domain.
     "PUBLIC_BASE_URL": "https://gankdat.com",
     // IndexNow key (indexnow.org): not a secret — it is published at /<key>.txt and only
-    // proves control of the host. After each refresh wave store.ts submits the changed
-    // /stats pages to api.indexnow.org (Bing, DuckDuckGo, Copilot, ChatGPT search). The
-    // GitHub runner (runner-refresh.mjs) carries a copy for the runner-fed sources.
+    // proves control of the host. The Worker only serves the key file at /<key>.txt; the
+    // daily submission of the refreshed /stats pages to api.indexnow.org (Bing, DuckDuckGo,
+    // Copilot, ChatGPT search) is made by the GitHub runner (scripts/runner-refresh.mjs
+    // carries a copy of the key) — the endpoint answers 429 to Workers egress.
     "INDEXNOW_KEY": "25d4108fe9beff29d13ec9422a302e26",
   },
   // Custom domains (Cloudflare auto-manages DNS records + certs on deploy).

@@ -15,17 +15,18 @@
 //   npm run runner-refresh            (repo root or ventures/gankdat; CLOUDFLARE_API_TOKEN set)
 // Idempotent per day: a source whose last `ok` row is under 20 h old is skipped, so the job may
 // run on every push to main as the metrics step does. Exit 1 when any source failed.
+import { writeFile } from 'node:fs/promises';
+import { URL } from 'node:url';
 import { postIndexNow, statsUrlsFor } from '../src/lib/indexnow.ts';
-import { computeStats } from '../src/lib/stats.ts';
-import { snapshotWrites } from '../src/sources/cache.ts';
+import { snapshotWrites, statsKey } from '../src/sources/cache.ts';
 import { listSources } from '../src/sources/registry.ts';
 import { isRunnerFed } from '../src/sources/store.ts';
 
 const ACCOUNT_ID = '37e56f3ce4dfe49919e85d4380467f44'; // not a secret
 const DATABASE_ID = 'ac051277-5f69-46ba-965b-50da2f1ec524'; // wrangler.jsonc
 const CACHE_NAMESPACE_ID = 'eacc87d970e94b9b87ce944985af0b52'; // wrangler.jsonc CACHE binding
-// IndexNow (src/lib/indexnow.ts): the Worker pings after each cron wave; a runner-fed source is
-// refreshed here instead, so the runner sends the same ping for it. Copied from wrangler.jsonc
+// IndexNow (src/lib/indexnow.ts): the one daily submission of the refreshed /stats pages is made
+// from this runner (`submitStatsPages` below), never from the Worker. Copied from wrangler.jsonc
 // vars (not a secret — it is public at /<key>.txt).
 const INDEXNOW_KEY = '25d4108fe9beff29d13ec9422a302e26';
 const PUBLIC_BASE_URL = 'https://gankdat.com';
@@ -102,12 +103,6 @@ for (const source of listSources().filter(isRunnerFed)) {
     for (const write of snapshotWrites(source, records, lastRefreshedAt)) await kvPut(write);
     await refreshLog(source.slug, 'ok', records.length, Date.now() - start, 'runner');
     console.log(`${source.slug}: ${records.length} records written from the runner`);
-    const ping = await postIndexNow({
-      baseUrl: PUBLIC_BASE_URL,
-      key: INDEXNOW_KEY,
-      urls: statsUrlsFor(PUBLIC_BASE_URL, source.slug, computeStats(records, source.stats)),
-    });
-    console.log(`${source.slug}: indexnow ${ping.urls} urls, status ${ping.status ?? 'n/a'}`);
   } catch (err) {
     failed += 1;
     const message = `runner: ${err instanceof Error ? err.message : String(err)}`;
@@ -117,4 +112,39 @@ for (const source of listSources().filter(isRunnerFed)) {
     );
   }
 }
+// IndexNow from the runner (2026-10-07, queue `indexnow-from-runner`): api.indexnow.org answers
+// 429 to every POST from Cloudflare Workers egress (shared IPs; each wave on 10-05 and 10-06) and
+// 200 to a GitHub runner (uk-insolvency's ping from this job the same morning), so the one daily
+// submission is made here, after the Worker's waves: every source with an `ok` refresh_log row in
+// the last 26 h, its parent /stats page plus the facet pages from the stats blob the refresh left
+// in KV (read whole, so the ~1,100 facet URLs go too — the Worker's wave-end ping saw ~40). The
+// result lands in dist/indexnow.json next to this bundle for metrics.mjs (`indexnow: N urls S`
+// in the Daily numbers row); a failure is printed, never fails the job.
+/** @param {string} key */
+async function kvGet(key) {
+  const url = `${API}/storage/kv/namespaces/${CACHE_NAMESPACE_ID}/values/${encodeURIComponent(key)}`;
+  const res = await fetch(url, { headers: auth });
+  if (res.status === 404) return null;
+  if (!res.ok) throw new Error(`KV get ${key}: ${res.status}`);
+  return res.json();
+}
+
+async function submitStatsPages() {
+  const rows = await sql(
+    "SELECT DISTINCT source_slug FROM refresh_log WHERE status = 'ok' AND created_at > datetime('now','-26 hours')",
+  );
+  const slugs = rows.map((r) => String(r.source_slug));
+  const urls = [];
+  for (const slug of slugs) {
+    const blob = await kvGet(statsKey(slug)).catch(() => null);
+    urls.push(...statsUrlsFor(PUBLIC_BASE_URL, slug, blob?.stats ?? null));
+  }
+  const result = await postIndexNow({ baseUrl: PUBLIC_BASE_URL, key: INDEXNOW_KEY, urls });
+  const out = { date: new Date().toISOString().slice(0, 10), sources: slugs.length, ...result };
+  await writeFile(new URL('./indexnow.json', import.meta.url), JSON.stringify(out));
+  console.log(
+    `indexnow: ${result.urls} urls, status ${result.status ?? 'n/a'}, ${slugs.length} sources refreshed in 26 h`,
+  );
+}
+await submitStatsPages().catch((e) => console.error(`indexnow: ${e.message}`));
 process.exit(failed ? 1 : 0);

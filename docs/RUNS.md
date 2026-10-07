@@ -685,3 +685,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 00:25 | burn-down | gankdat research: trademark journal logs no refresh since 10-04; feeds reading n/a; eu-ted 429 twice
 - 2026-10-07 00:25 | burn-down | D1 writes fell from ~6M to ~0.2M a day after the delta refresh (10-05→10-06 rows)
 - 2026-10-07 00:25 | burn-down | Queue: gankdat +4 items (indexnow-from-runner 7, journal silent refresh 6, feeds reason 4, ted 429 4)
+- 2026-10-07 00:40 | burn-down | IndexNow submission moved to the GitHub runner: refreshed sources' stats pages, facets from KV
+- 2026-10-07 00:40 | burn-down | Worker wave-end ping and its Analytics Engine point removed; metrics row reads dist/indexnow.json
+- 2026-10-07 00:40 | burn-down | Queue: gankdat indexnow-from-runner done; next buildable is trademark-journal-silent-refresh (6)

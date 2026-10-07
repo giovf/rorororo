@@ -249,14 +249,17 @@ runs `check:root`.
   `<link rel="alternate">` on the stats pages; `rest_feed` Analytics Engine point (UA, path,
   hit/miss, slug) → `feeds 30d:` in the Daily numbers row. Entry titles are dataset-agnostic
   (first two short string fields) — the isolation rule holds.
-- **IndexNow** (`lib/indexnow.ts`, 2026-10-05): after each cron wave `refreshAllSources` POSTs
-  the parent and facet stats URLs of the sources that refreshed OK to `api.indexnow.org`
-  (≤ 10,000 a call, de-duplicated, never throws), proven by the key file the Worker serves at
-  `/<INDEXNOW_KEY>.txt` (a plain var — public by design, not a secret). Bing's index feeds
-  DuckDuckGo, Copilot and ChatGPT search, so this is the one indexing signal that needs no
-  account while the Search Console reading is owner-blocked. The runner-fed sources get the
-  same ping from `runner-refresh.mjs`. Each Worker ping is an Analytics Engine point
-  (`indexnow`, blob2 status, double1 URLs) → `indexnow:` in the Daily numbers row.
+- **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
+  after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
+  stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in
+  KV) to `api.indexnow.org` (≤ 10,000 a call, de-duplicated, never throws), proven by the key
+  file the Worker serves at `/<INDEXNOW_KEY>.txt` (a plain var — public by design, not a
+  secret). Never from the Worker: the endpoint rate-limits by source IP and answered 429 to
+  every wave-end ping from Workers' shared egress (10-05/06) while the runner's post got 200.
+  Bing's index feeds DuckDuckGo, Copilot and ChatGPT search, so this is the one indexing signal
+  that needs no account while the Search Console reading is owner-blocked. The runner leaves
+  `dist/indexnow.json`; `metrics.mjs` reads it → `indexnow: N urls S` in the Daily numbers row
+  (`n/a (<reason>)` on a push run).
 - **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
   params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
   date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value

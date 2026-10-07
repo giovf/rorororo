@@ -827,3 +827,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   first night and eu-ted was throttled twice in six nights. Four items queued (7, 6, 4, 4); no product or pricing change —
   the funnel readings are unchanged. D1 writes fell from ~6M to ~0.2M a day after the delta refresh (cost rule fix confirmed,
   the 10-08 item records the rate). Proof: `indexnow: … 200` for 7 days; an ok journal row 3 nights running; feeds readable.
+- 2026-10-07 burn-down (00:00 run, 2nd item): gankdat `indexnow-from-runner` (7) built — the daily IndexNow submission is the metrics
+  workflow's runner step, not the Worker's wave-end ping: the runner reads which sources refreshed OK in the last 26 h and their stats
+  blobs from KV, POSTs every parent and facet page once from its own IP and leaves the result for the Daily numbers row. Why: Bing
+  throttles by source IP, Workers share egress, and every wave got 429 while the runner's post got 200. Proof: `indexnow: N urls 200`,
+  N ≥ 60, for seven days.

@@ -4,18 +4,17 @@ import { describe, expect, it } from 'vitest';
 import {
   INDEXNOW_ENDPOINT,
   INDEXNOW_KEY_SHAPE,
-  pingStatsPages,
   postIndexNow,
   statsUrlsFor,
 } from '../src/lib/indexnow';
 import type { SourceStats } from '../src/lib/stats';
-import { putSourceStats } from '../src/sources/cache';
 import { refreshOne } from '../src/sources/store';
 import type { DataSource } from '../src/sources/types';
 
-// IndexNow: the key file at the site root, the URL list a refreshed source produces, the
-// POST itself (chunked, never throwing) and the wave hook that only pings sources that
-// refreshed OK. The key is a plain wrangler var read from wrangler.jsonc by the test pool.
+// IndexNow: the key file at the site root, the URL list a refreshed source produces and the
+// POST itself (chunked, never throwing) — made by the GitHub runner, not the Worker, since
+// 2026-10-07 (api.indexnow.org answers 429 to Workers egress). The key is a plain wrangler
+// var read from wrangler.jsonc by the test pool.
 
 const key = env.INDEXNOW_KEY;
 
@@ -173,33 +172,8 @@ function demo(slug: string, fail: boolean): DataSource {
   return source as DataSource;
 }
 
-describe('pingStatsPages', () => {
-  it('submits the parent and facet pages of the sources named, read from the stats blob', async () => {
-    await putSourceStats(env, demo('indexnow-demo', false), stats, new Date().toISOString());
-    const { calls, fetchImpl } = recorder();
-    const result = await pingStatsPages(env, ['indexnow-demo', 'indexnow-bare'], '2', fetchImpl);
-    expect(result).toEqual({ urls: 4, status: 202, calls: 1 });
-    expect(calls[0]?.body.urlList).toEqual([
-      'https://gankdat.com/stats/indexnow-demo',
-      'https://gankdat.com/stats/indexnow-demo/class/09',
-      'https://gankdat.com/stats/indexnow-demo/class/42',
-      'https://gankdat.com/stats/indexnow-bare',
-    ]);
-  });
-
-  it('sends nothing for an empty wave', async () => {
-    const { calls, fetchImpl } = recorder();
-    expect(await pingStatsPages(env, [], '1', fetchImpl)).toEqual({
-      urls: 0,
-      status: null,
-      calls: 0,
-    });
-    expect(calls).toHaveLength(0);
-  });
-});
-
 describe('refreshOne', () => {
-  it('reports whether the source refreshed, so a failed source is never pinged', async () => {
+  it('reports whether the source refreshed, so a wave can tell a failed source apart', async () => {
     expect(await refreshOne(env, demo('indexnow-ok', false), Date.now(), 0)).toBe(true);
     expect(await refreshOne(env, demo('indexnow-fail', true), Date.now(), 0)).toBe(false);
   });

@@ -1,4 +1,3 @@
-import { readSourceStats } from '../sources/cache';
 import type { SourceStats } from './stats';
 
 // IndexNow (indexnow.org): one POST of changed URLs, authenticated by a key file at the
@@ -7,6 +6,10 @@ import type { SourceStats } from './stats';
 // Search Console reading stays owner-blocked (queue `search-console-stats-indexing`).
 // The key is deliberately a plain wrangler var, not a secret: anyone can read it from the
 // key file anyway, and it proves nothing but control of the host.
+// The POST is made from the GitHub runner (scripts/runner-refresh.mjs, daily after the
+// waves), never from the Worker: api.indexnow.org rate-limits by source IP and answered 429
+// to every wave-end ping from Workers' shared egress (2026-10-05/06) while the runner's own
+// post got 200 — queue `indexnow-from-runner`. The Worker only serves the key file.
 
 export const INDEXNOW_ENDPOINT = 'https://api.indexnow.org/IndexNow';
 /** The protocol's ceiling per POST. */
@@ -77,48 +80,4 @@ export async function postIndexNow(opts: {
     if (status !== 200 && status !== 202) break;
   }
   return { urls: unique.length, status, calls };
-}
-
-/**
- * After a refresh wave: submit the stats pages of the sources that refreshed OK and
- * record the outcome as an Analytics Engine point (blob1 'indexnow', blob2 status,
- * blob3 wave, double1 URLs) — the `indexnow:` reading in the Daily numbers row.
- */
-export async function pingStatsPages(
-  env: CloudflareBindings,
-  slugs: string[],
-  wave: string,
-  fetchImpl?: FetchLike,
-): Promise<IndexNowResult> {
-  const key = (env.INDEXNOW_KEY ?? '').trim();
-  if (!INDEXNOW_KEY_SHAPE.test(key) || slugs.length === 0) {
-    return { urls: 0, status: null, calls: 0 };
-  }
-  const urls: string[] = [];
-  for (const slug of slugs) {
-    const cached = await readSourceStats(env, slug).catch(() => null);
-    urls.push(...statsUrlsFor(env.PUBLIC_BASE_URL, slug, cached?.stats ?? null));
-  }
-  const result = await postIndexNow({ baseUrl: env.PUBLIC_BASE_URL, key, urls, fetchImpl });
-  console.log(
-    JSON.stringify({
-      level: result.status === 200 || result.status === 202 ? 'info' : 'warn',
-      event: 'indexnow',
-      wave,
-      sources: slugs,
-      urls: result.urls,
-      status: result.status,
-      calls: result.calls,
-    }),
-  );
-  try {
-    env.TRAFFIC.writeDataPoint({
-      blobs: ['indexnow', String(result.status ?? ''), wave, '', slugs.join(',').slice(0, 256)],
-      doubles: [result.urls],
-      indexes: ['indexnow'],
-    });
-  } catch {
-    // Analytics is best-effort; the ping already happened.
-  }
-  return result;
 }

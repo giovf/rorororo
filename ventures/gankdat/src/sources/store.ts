@@ -1,4 +1,3 @@
-import { pingStatsPages } from '../lib/indexnow';
 import { computeStats } from '../lib/stats';
 import type { SourceStats } from '../lib/stats';
 import { readCached, readSnapshot, readSourceStats, refreshSource } from './cache';
@@ -160,9 +159,9 @@ export function cronSources(wave: RefreshWave | undefined): DataSource[] {
 }
 
 /**
- * One cron wave: refresh its sources in order, then tell IndexNow which public stats
- * pages changed (`pingStatsPages`) — only the sources that refreshed OK, after the whole
- * wave, so a failed source keeps yesterday's page and no indexing call ever delays a load.
+ * One cron wave: refresh its sources in order. The IndexNow submission of the changed
+ * stats pages is the GitHub runner's job after the waves (scripts/runner-refresh.mjs) —
+ * api.indexnow.org answers 429 to Workers egress, so the Worker no longer pings.
  */
 export async function refreshAllSources(env: CloudflareBindings, cron?: string): Promise<void> {
   const wave = waveForCron(cron);
@@ -177,9 +176,7 @@ export async function refreshAllSources(env: CloudflareBindings, cron?: string):
     }),
   );
   const startedAt = Date.now();
-  const refreshed: string[] = [];
   for (const source of sources) {
-    if (await refreshOne(env, source, startedAt)) refreshed.push(source.slug);
+    await refreshOne(env, source, startedAt);
   }
-  await pingStatsPages(env, refreshed, String(wave ?? 'all')).catch(() => undefined);
 }

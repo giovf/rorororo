@@ -168,19 +168,21 @@ const feedsNote = feeds
   ? `feeds 30d: ${Math.round(Number(feeds[0]?.n ?? 0))} fetches, ${Math.round(Number(feeds[0]?.uas ?? 0))} user agents, ${Math.round(Number(feeds[0]?.misses ?? 0))} renders`
   : 'feeds 30d: n/a';
 
-// IndexNow (build 2026-10-05, queue `indexnow-stats-pages`): after each refresh wave the Worker
-// submits the changed /stats pages to api.indexnow.org and writes one `indexnow` point per wave
-// (blob2 = HTTP status, double1 = URLs). 200/202 = accepted; 422 = key file unreadable, 429 =
-// throttled, 0 = network error, none = no wave sent anything (every refresh failed, or the var
-// is unset). Proof: 200/202 daily here; Bing `site:gankdat.com/stats` ≥ 50 pages on 2026-11-05.
-const indexnow = await ae(
-  "SELECT blob2 AS status, SUM(_sample_interval * double1) AS urls, SUM(_sample_interval) AS calls FROM gankdat_traffic WHERE blob1 = 'indexnow' AND timestamp > NOW() - INTERVAL '1' DAY GROUP BY status ORDER BY urls DESC",
-).catch(() => null);
-const indexnowNote = indexnow
-  ? indexnow.length
-    ? `indexnow: ${indexnow.map((r) => `${Math.round(Number(r.urls))} urls ${r.status || 'n/a'}`).join(', ')}`
-    : 'indexnow: none/24h'
-  : 'indexnow: n/a';
+// IndexNow (build 2026-10-05; moved to the runner 2026-10-07, queue `indexnow-from-runner`): the
+// metrics workflow's runner-refresh step submits the day's refreshed /stats pages from the runner's
+// own IP — api.indexnow.org answered 429 to every POST from Workers egress — and leaves the result
+// in dist/indexnow.json; a push run (no runner step) or a dead step reads `n/a (<reason>)`.
+const indexnowNote = await readFile(
+  path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist', 'indexnow.json'),
+  'utf8',
+)
+  .then((text) => {
+    const r = JSON.parse(text);
+    return r.date === new Date().toISOString().slice(0, 10)
+      ? `indexnow: ${r.urls} urls ${r.status ?? 'n/a'}`
+      : `indexnow: n/a (runner result dated ${r.date})`;
+  })
+  .catch((e) => `indexnow: n/a (${e.code === 'ENOENT' ? 'no runner result' : e.message})`);
 
 // STRATEGY §4 target "Apify paid runs / month: 100" was unmeasured — review 2026-W39 §4 had to
 // write "no run count reaches the repo" — yet all 17 actors are public since 2026-09-28, so the

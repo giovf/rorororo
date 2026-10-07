@@ -191,3 +191,12 @@ unchanged from 10-05); nothing in the two rows moves them. Relay readings: `/v1/
 before the delta path added per-row hashing — while every other source refreshed on 10-06 (eu-ted at
 10:56, a request-path refresh after the 05:00 429); `sitemap.xml` lists 61 `/stats` URLs, the set the
 runner can submit; `/health` is 404 and `/v1/data` 401 without a key.
+
+**Built 2026-10-07 — `indexnow-from-runner`** (burn-down): the IndexNow submission moved from the
+Worker's wave-end ping to the metrics workflow's runner step (`runner-refresh.mjs`, daily 06:30
+after wave 7): every source with an `ok` refresh in the last 26 h, parent page plus the facet pages
+from its stats blob in KV, one POST from the runner's IP; the result is left in `dist/indexnow.json`
+and the Daily numbers row reads it as `indexnow: N urls S` (`n/a (<reason>)` on a push run). The
+Worker's ping and its Analytics Engine point are gone — the endpoint answered 429 to Workers egress
+on every wave, and no Worker-side change can fix an IP throttle. Readings: `indexnow: N urls 200`
+with N ≥ 60 for seven days is the proof; the 11-05 day-30 read is unchanged.
