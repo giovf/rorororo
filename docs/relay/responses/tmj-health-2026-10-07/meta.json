@@ -1,0 +1,98 @@
+{
+  "request": "tmj-health-2026-10-07",
+  "fetched_at": "2026-10-07T17:24:36.354Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/v1/health",
+      "fetched_at": "2026-10-07T17:24:33.327Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/v1/health",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 1501,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/stats/uk-trademark-journal",
+      "fetched_at": "2026-10-07T17:24:33.973Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/stats/uk-trademark-journal",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 12230,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-041/jnl.zip",
+      "fetched_at": "2026-10-07T17:24:34.143Z",
+      "status": 403,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-041/jnl.zip",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-041/jnl.xml",
+      "fetched_at": "2026-10-07T17:24:34.306Z",
+      "status": 200,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-041/jnl.xml",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 21 Sep 2020 00:59:59 GMT",
+        "etag": "\"d4d6b92f-01010000:dtagent10347260902154543cshO\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-040/jnl.zip",
+      "fetched_at": "2026-10-07T17:24:34.920Z",
+      "status": 403,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-040/jnl.zip",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-040/jnl.xml",
+      "fetched_at": "2026-10-07T17:24:35.048Z",
+      "status": 200,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-040/jnl.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "last-modified": "Thu, 01 Oct 2026 05:28:14 GMT",
+        "etag": "\"aad1394-65cc0aecc3bc5-gzip:dtagent10347260902154543cshO:dtagent10347260902154543cshO\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-039/jnl.zip",
+      "fetched_at": "2026-10-07T17:24:35.667Z",
+      "status": 403,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-039/jnl.zip",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-039/jnl.xml",
+      "fetched_at": "2026-10-07T17:24:35.763Z",
+      "status": 200,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-039/jnl.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "last-modified": "Thu, 24 Sep 2026 05:38:20 GMT",
+        "etag": "\"b5707f6-65c34020888a6-gzip:dtagent10347260902154543cshO:dtagent10347260902154543cshO\""
+      }
+    }
+  ]
+}
