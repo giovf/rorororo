@@ -510,6 +510,16 @@
       "status": "done",
       "added": "2026-10-07",
       "done_at": "2026-10-07"
+    },
+    {
+      "id": "search-console-api-reading",
+      "title": "Search Console reading in CI: a read-only service account queries impressions/clicks per page and the URL-inspection verdict for the /stats and comparison pages, written to each venture's Daily check row and gankdat's Daily numbers row",
+      "why": "Exchange 2026-W41 self-expansion item (7, scored on items unblocked). Three day-30 reviews (variables-toolkit 10-21, highlight-keep and read-focus 10-30) and the proofs of five Google-facing pages built since 10-01 all read \"Search Console impressions/clicks\", and `search-console-stats-indexing` has been blocked on an owner export since 09-28: no indexing or impressions reading has ever reached the repo. The Search Console API is read-only (scope webmasters.readonly: searchanalytics.query, urlInspection.index.inspect, sitemaps.list). Do: `scripts/search-console.ts` (service-account JWT → access token, no SDK; per-property query by page for the last 7 days, URL inspection for the /stats parent pages and the five comparison/how-to pages, `n/a (<reason>)` when the secret is absent), a step in the 06:45 store-metrics workflow via docs/ci/, and a `search:` field on the Daily check / Daily numbers rows. The owner's part (~10 min: a service account in any Google Cloud project, Search Console API enabled, its email added as a Restricted user on the gankdat.com and apps.gankdat.com properties, the JSON key pasted as the SEARCH_CONSOLE_KEY secret) is raised as one owner: line by the build that ships the script — not before, eight asks are already open.",
+      "effort_days": 0.5,
+      "proof": "a `search:` reading on the rows for seven days; search-console-stats-indexing closed on the API reading; the 10-21 and 10-30 reviews read a series",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-07"
     }
   ]
 }

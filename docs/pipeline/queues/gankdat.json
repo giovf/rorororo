@@ -378,6 +378,38 @@
       "status": "done",
       "added": "2026-10-07",
       "done_at": "2026-10-07"
+    },
+    {
+      "id": "uk-company-lookup-monitor",
+      "title": "Companies House company lookup + monitor: `uk-company-profiles` dataset (profile, status, SIC, accounts and confirmation dates, charges, filing-history events, corporate PSCs — Blind Mode, no person fields), MCP tool, Apify actor \"UK Companies House Lookup & Monitor\" with `mode: changes` over the buyer's own list of company numbers",
+      "why": "Exchange 2026-W41 winner (10.7 raw, 8.0 applied). The relay's Apify Store read (docs/relay/responses/exchange-2026-W41) is the first measurement of which UK-register data Apify users pay for: every category gankdat lists in sits at the 2-user QA floor, while Companies House lookups have 13 paid actors with 5–168 users each (scrapesage 47 users and ~50k runs in 30 days; US$0.80–4 per 1k). None of them offers a monitor (a scheduled run that returns only what changed on the buyer's list) — gankdat's change-feed machinery and the actors' changes mode (10-05) are that shape. Do: a lookup route on the Worker (`/v1/lookup/uk-company/<number>` or the dataset shape with `company_number` as the required filter; ≤ 4 Companies House API calls per company — profile, charges, filing-history, PSC corporate entities — through the existing COMPANIES_HOUSE_API_KEY at 600 req/5 min, KV-cached 24 h, metered as a dataset call, `company_url` attribution), the MCP tool, the Apify actor (input: company numbers or names; `mode: changes` diffs against the previous run's dataset stored in the actor's named key-value store and emits status/charge/accounts-overdue/filing/PSC changes with `change` + `changed_at`), README \"Monitor it\" section, pricing event `result`, schema test. Keep Blind Mode (GDPR.md LIA table: officer/PSC person fields never ingested — filing events carry the category code, not the name); person fields are parked in exchange.json (`uk-company-officers-psc`). Licence: Companies House API terms (free reuse, attribution).",
+      "effort_days": 1.5,
+      "proof": "Apify actor ≥ 5 users from other accounts in its first 30 days (`apify 30d by actor`) and ≥ 1 changes-mode run; `datasets 30d:` for uk-company-profiles above the automated floor",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "docker-mcp-catalog-listing",
+      "title": "List gankdat's MCP server in the Docker MCP Catalog (PR to docker/mcp-registry: server.yaml `type: remote`, streamable-http, oauth block; tools.json empty array; readme.md with the docs link)",
+      "why": "Exchange 2026-W41 runner-up (24 raw, 8 applied: the five agent shelves open have brought ~40k keyless calls and no payer, and Docker's team reviews every PR, so no buyer within a week). Remote servers are accepted per the registry's CONTRIBUTING guide; listed servers appear in Docker Desktop's MCP Toolkit and the docker-agent catalogue with OAuth handled in the browser. Do: the three files in a fork PR from the routine's GitHub token, test access described as the keyless preview + a magic-link account via their credentials form, MARKETPLACE-PREP.md listings-log row, a `/mcp` user-agent note for the Daily numbers row if the Toolkit identifies itself. If the reviewer requires an OSS licence for the server itself, drop the item (our /terms is the answer for a remote) — do not argue it. Dated after oauth-connect-funnel-check (10-09) so the hop a reviewer clicks has been walked from a real client first.",
+      "effort_days": 0.25,
+      "proof": "PR merged and the server visible in the catalogue; ≥ 1 `/mcp` client identifying as Docker MCP Toolkit in the Daily numbers row within 30 days of listing",
+      "score": 8,
+      "status": "todo",
+      "not_before": "2026-10-10",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "uk-company-lookup-day-30",
+      "title": "Day-30 read of the Companies House lookup + monitor: actor users/runs by others, changes-mode runs, dataset calls above the floor; decide officers/PSC (exchange `uk-company-officers-psc`), the Apify keyword pass and GeBIZ",
+      "why": "The exchange 2026-W41 parked three ideas on this reading (uk-company-officers-psc, apify-quality-score-pass, singapore-acra-gebiz). Record the numbers in RESEARCH.md against the proof of uk-company-lookup-monitor and promote or leave parked with the reason.",
+      "effort_days": 0.2,
+      "proof": "numbers recorded in RESEARCH.md; the three parked ideas promoted or re-parked with a reason",
+      "score": 3,
+      "status": "todo",
+      "not_before": "2026-11-07",
+      "added": "2026-10-07"
     }
   ]
 }

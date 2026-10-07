@@ -701,3 +701,14 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 01:15 | burn-down | Queue: foundry research-after-date done; README, build.md and burn-down.md step 1 updated
 - 2026-10-07 01:20 | burn-down | Stopping: 1 research + 5 items built; pipeline starved-and-cooled, every queue waiting on dated reads
 - 2026-10-07 06:24 | watchdog | ci-minutes: ~6291 Actions min/month projected (private cap 2,000, warn 1700); top: check 687, gankdat 186, owner notes 1
+- 2026-10-07 08:30 | exchange | Winner: gankdat Companies House lookup + monitor, score 8.0 (10.7 raw; Blind Mode, no director names)
+- 2026-10-07 08:30 | exchange | Evidence: Apify Store read via relay — every category we list in is at the 2-user QA floor
+- 2026-10-07 08:30 | exchange | Evidence: Companies House lookups have 13 paid actors, 5–168 users each, leader 47 users/30d; none monitors
+- 2026-10-07 08:30 | exchange | Queued: gankdat uk-company-lookup-monitor (8, 1.5 d, 0 owner min)
+- 2026-10-07 08:30 | exchange | Queued: gankdat docker-mcp-catalog-listing (8, 0.25 d, from 10-10) and uk-company-lookup-day-30 (3, 11-07)
+- 2026-10-07 08:30 | exchange | Queued: foundry search-console-api-reading (7): unblocks four dated reviews and five page proofs
+- 2026-10-07 08:30 | exchange | Parked: officer/PSC fields, GeBIZ, /stats CSV checkout, Sheets add-on, Smithery, WuslaHQ reseller
+- 2026-10-07 08:30 | exchange | Parked trigger checked: Apify quality pass not met (no actor at 0 runs); relink marked promoted (built)
+- 2026-10-07 08:30 | exchange | Declined: nothing new — the W39/W40 declines stand under the same rules
+- 2026-10-07 08:30 | exchange | STRATEGY §2 agent-directories row gains Docker; §8 logs the decision; comparison in docs/exchange/2026-W41.md
+- 2026-10-07 08:30 | exchange | Owner (later, not now): ~10 min Search Console service-account step, raised when the script ships

@@ -58,10 +58,10 @@
     {
       "id": "variables-toolkit-v0-2-relink",
       "title": "Variables Toolkit v0.2: relink local/broken variables to library variables by name",
-      "why": "Clearest unmet ask in rival comments (Variable Utilities $17×181, Design System Organizer); scores 7.2 but each release costs an owner publish + Figma re-review and the day-7 read is not in yet.",
-      "status": "parked",
-      "trigger": "day-7 review (2026-09-28) shows ≥ 100 installs, or any listing comment asks for library/relink behaviour",
-      "added": "2026-09-23"
+      "why": "Clearest unmet ask in rival comments (Variable Utilities $17×181, Design System Organizer); scores 7.2 but each release costs an owner publish + Figma re-review and the day-7 read is not in yet. Built 2026-10-04/05 as queue items relink-library-variables and relink-to-local without waiting for the trigger (the only buildable items left that night); live once the owner republishes (action 019). Exchange 2026-W41 records it as promoted.",
+      "status": "promoted",
+      "added": "2026-09-23",
+      "venture": "variables-toolkit"
     },
     {
       "id": "figma-variables-diff",
@@ -110,9 +110,9 @@
     {
       "id": "singapore-acra-gebiz",
       "title": "Singapore ACRA entities + GeBIZ tenders (data.gov.sg)",
-      "why": "Singapore Open Data Licence permits commercial use; English-language; pairs with uk-tenders/eu-ted as an APAC procurement feed. Same caveat as Japan: supply is not the constraint today.",
+      "why": "Singapore Open Data Licence permits commercial use; English-language; pairs with uk-tenders/eu-ted as an APAC procurement feed. Same caveat as Japan: supply is not the constraint today. Evidence raised 2026-W41: two Apify GeBIZ actors have 30 and 24 total users (7 and 11 in 30 days, up to 1,808 runs) — real buyers, but the rivals scrape live notices from gebiz.gov.sg (terms unread; only data.gov.sg carries an open licence) and the shelf has not converted for us yet.",
       "status": "parked",
-      "trigger": "same as japan-gbizinfo-register; pick whichever the exchange scores higher on paid-rival evidence",
+      "trigger": "the Companies House actor (uk-company-lookup-monitor) shows ≥ 5 users/30d; then relay-read GeBIZ's terms of use and data.gov.sg's licence before scoring for the queue",
       "added": "2026-09-24"
     },
     {
@@ -149,9 +149,9 @@
     {
       "id": "apify-quality-score-pass",
       "title": "Apify Store quality-score / README keyword pass over the 17 public actors",
-      "why": "Store search and the Apify MCP search-actors tool weight name, short description, README, categories, then runs and ratings. publish-actors.mjs already sets seoTitle/seoDescription/categories; the copy lever is spent and the rest is the run flywheel, so nothing to change blind (W40 raw score 16, discounted).",
+      "why": "Store search and the Apify MCP search-actors tool weight name, short description, README, categories, then runs and ratings. publish-actors.mjs already sets seoTitle/seoDescription/categories; the copy lever is spent and the rest is the run flywheel, so nothing to change blind (W40 raw score 16, discounted). Trigger checked 2026-W41: no actor is at 0 runs — all 17 sit at the QA floor (6–13 runs, one user each in 30 days) — and the relay store read shows every category we list in is at the 2-user floor for every seller, so copy cannot create buyers; the one category with buyers is Companies House lookups (queued as uk-company-lookup-monitor).",
       "status": "parked",
-      "trigger": "the first 14 days of metrics-apify-runs show ≥ 10 actors with 0 runs; then a keyword pass against store-search data read through the relay",
+      "trigger": "the uk-company-lookup-day-30 read (2026-11-07) shows the Companies House actor converting; then a keyword pass against store-search data for that category",
       "added": "2026-09-30"
     },
     {
@@ -180,10 +180,66 @@
     {
       "id": "ea-waste-carriers-register",
       "title": "Environment Agency waste carriers, brokers and dealers register (England) on gankdat: lookups + new/expiring/lapsed change feed",
-      "why": "Pre-research 2026-10-05 (burn-down starvation fallback). Supply: the EA electronic Public Register serves the register as an API without registration under the Environment Agency Conditional Licence (api.gov.uk/ea/public-registers-for-environmental-information; data.gov.uk dataset 961d75f3), upper-tier registrations renew every 3 years so expiry is a natural change feed. Demand: two Apify actors already price it — devon_gtme/uk-waste-carriers-register from $2 per 1k results (new/expiring/lapsed tracking, CBDU search) and nerolabs/uk-waste-carrier-monitor at $0.01 per record, $0.05 per detected change — and wastecheck.co.uk sells a real-time carrier-verification API with a free tier; the buyer is the construction, facilities and waste-broker compliance team doing the legal duty-of-care check on every contractor. Same DataSource shape as uk-gambling-operators (register in D1 with idOf on the CBDU number, daily wave). Score ≈ 4: evidence 2 (paid actors and an API vendor, no price above $0.05) × reach 2 (our Apify, MCP and x402 shelves) ÷ 1 build day; owner minutes 0. Parked because STRATEGY §5 puts distribution before new datasets until a shelf converts, and two caveats need the relay first: the Conditional Licence text (commercial reuse and attribution terms, not plain OGL) and the 2026-10-01 EA blog moving registration to GOV.UK, which may change the register endpoint.",
+      "why": "Pre-research 2026-10-05 (burn-down starvation fallback). Supply: the EA electronic Public Register serves the register as an API without registration under the Environment Agency Conditional Licence (api.gov.uk/ea/public-registers-for-environmental-information; data.gov.uk dataset 961d75f3), upper-tier registrations renew every 3 years so expiry is a natural change feed. Demand: two Apify actors already price it — devon_gtme/uk-waste-carriers-register from $2 per 1k results (new/expiring/lapsed tracking, CBDU search) and nerolabs/uk-waste-carrier-monitor at $0.01 per record, $0.05 per detected change — and wastecheck.co.uk sells a real-time carrier-verification API with a free tier; the buyer is the construction, facilities and waste-broker compliance team doing the legal duty-of-care check on every contractor. Same DataSource shape as uk-gambling-operators (register in D1 with idOf on the CBDU number, daily wave). Score ≈ 4: evidence 2 (paid actors and an API vendor, no price above $0.05) × reach 2 (our Apify, MCP and x402 shelves) ÷ 1 build day; owner minutes 0. Parked because STRATEGY §5 puts distribution before new datasets until a shelf converts, and two caveats need the relay first: the Conditional Licence text (commercial reuse and attribution terms, not plain OGL) and the 2026-10-01 EA blog moving registration to GOV.UK, which may change the register endpoint. Exchange 2026-W41: the two Apify actors it cited sit at 2 users each (relay store read) — evidence down to 1.",
       "status": "parked",
       "trigger": "a gankdat shelf converts (≥ 1 paying account or ≥ 20 paid Apify runs/month) or the 2026-10-30 funnel review shows KYB/compliance lookups; then relay-read the Conditional Licence and the register API before scoring for the queue",
       "added": "2026-10-05"
+    },
+    {
+      "id": "uk-company-lookup-monitor",
+      "title": "Companies House company lookup + monitor on gankdat (uk-company-profiles dataset, MCP tool, Apify actor with changes mode) — Blind Mode, organisation-level only",
+      "why": "Exchange 2026-W41 winner (10.7 raw, 8.0 applied). The Apify Store read through the relay showed Companies House lookups are the one UK-register category with paying users (13 actors, 5–168 users each, leader 47 users/30d and ~50k runs, US$0.80–4 per 1k) while every category gankdat lists in sits at the QA floor; none of the thirteen sells a monitor over the buyer's own company list, which gankdat's change-feed machinery already does. Key configured, 0 owner minutes, 1.5 days.",
+      "status": "promoted",
+      "venture": "gankdat",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "docker-mcp-catalog",
+      "title": "List gankdat's MCP server in the Docker MCP Catalog (remote server PR to docker/mcp-registry)",
+      "why": "Exchange 2026-W41 runner-up (24 raw, 8 applied): a new shelf at 0.25 days and 0 owner minutes, but the five agent shelves open have produced no payer from ~40k calls and the PR is reviewer-gated, so no buyer within a week. Queued behind the winner, dated after the OAuth funnel check.",
+      "status": "promoted",
+      "venture": "gankdat",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "uk-company-officers-psc",
+      "title": "Officer and PSC person fields on the Companies House lookup (directors, individual PSCs) — the incumbents' hook",
+      "why": "Exchange 2026-W41 #4 (32 raw). Every paid Companies House actor leads with directors & PSCs; gankdat's Blind Mode (GDPR.md: officer/PSC/person fields never ingested) keeps the winner organisation-level, which is why it scores 8 and not 10.7. Person fields are personal data processed at scale and need a fresh LIA line plus the ICO fee the owner deferred until the first real customer (action 012).",
+      "status": "parked",
+      "trigger": "first paying gankdat account and the ICO fee paid (action 012); then a new LIA line in GDPR.md before the fields ship",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "stats-page-csv-checkout",
+      "title": "One-off CSV purchase of a register on its /stats page (Stripe Checkout on the existing account, e.g. the sponsor or care-locations list)",
+      "why": "Exchange 2026-W41 #6 (4.0): the human buyer who lands from Google could pay once instead of taking a key, but the Google reading is unread (Search Console blocked since 09-28), the only sponsor-list seller found is a US$5 Gumroad listing and the register is free on gov.uk — evidence 2, reach 2 until pages index.",
+      "status": "parked",
+      "trigger": "the Search Console reading shows ≥ 100 impressions/week on /stats pages",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "google-sheets-add-on",
+      "title": "Google Sheets add-on on the Workspace Marketplace: custom functions (=UKCOMPANY, =CQC, =TENDERS …) over the gankdat API",
+      "why": "Exchange 2026-W41 #7 (4.0): a marketplace with SMB buyers who pay for add-ons, but publishing needs a billing-enabled Google Cloud project, OAuth consent-screen verification (demo video) and a Marketplace review under the owner's identity — 60+ owner minutes with no customer yet.",
+      "status": "parked",
+      "trigger": "a first paying gankdat account, and the owner opting into a billing-enabled Google Cloud project for the listing",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "smithery-listing",
+      "title": "Smithery listing by URL (smithery.ai/new; scans tools, handles client registration via CIMD)",
+      "why": "Exchange 2026-W41 #8 (22 raw): 0.1 day but an owner account, and the same developer population as the MCP Registry and Glama, which have converted nobody; wait for a reading from a shelf of that kind.",
+      "status": "parked",
+      "trigger": "the Docker MCP Catalog or Claude Connectors Directory listing shows ≥ 20 distinct accounts using a tool in 30 days",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "wusla-reseller-marketplace",
+      "title": "WuslaHQ paid API/MCP marketplace offer: mirror gankdat's MCP endpoint and resell access at a 21% cut (0% for six months)",
+      "why": "Exchange 2026-W41 #9 (0.9): INBOX 2026-10-04 cold pitch; no public trace of the marketplace or its buyers was found, and resale means their billing and their terms over our data. The triage's non-committal holding draft stands; nothing is signed.",
+      "status": "parked",
+      "trigger": "a live storefront with ≥ 10 listed sellers and a published seller agreement; then score it as a shelf",
+      "added": "2026-10-07"
     }
   ]
 }

@@ -24,7 +24,7 @@ so the real figure is unconfirmed until the 10-10 invoice (review 2026-W40, §7 
 | **Change feeds** (`/v1/changes`) | grant-makers, KYB, recruiters | no competitor offers an official-source delta feed | inside plans; upsell later | none |
 | Browser extensions (ReadFocus, Highlight Keep) | consumers | rivals abandoned; low ticket | US$12 one-off | none, but small |
 | Figma plugin (Variables Toolkit) | designers | paid rivals with gaps | one-off | none |
-| **Agent directories** (Claude Connectors Directory; MCP Registry, mcpservers.org, Glama already) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30) |
+| **Agent directories** (Claude Connectors Directory; MCP Registry, mcpservers.org, Glama already; Docker MCP Catalog queued 2026-10-07) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30); ~40k keyless calls and no payer from the five live directories by 2026-10-07 |
 
 ## 3. Unit economics (what has to be true)
 
@@ -846,3 +846,14 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `research_after` on the queue and the starvation fallback skips it until that date; highlight-keep, read-focus and variables-toolkit
   now wait for their day-30 readings (10-30, 10-30, 10-21). Why: three research passes each in eight days on 0 users / 7 views, every
   pass built out within a day; a fourth would have invented work. Proof: no venture researched twice without a changed metrics row in 30 days.
+- 2026-10-07 exchange: **gankdat — Companies House company lookup + monitor** (10.7 raw, 8.0 applied: evidence 4 ×
+  reach 4 ÷ 1.5 days, 0 owner minutes; Blind Mode keeps it organisation-level, so no director names, the incumbents'
+  hook). The relay's Apify Store read is the first measurement of which UK-register data Apify users pay for: every
+  category gankdat's 17 actors list in sits at the 2-user QA floor for every seller, while Companies House lookups have
+  13 paid actors at 5–168 users each (leader 47 users/30d, ~50k runs, US$0.80–4 per 1k) and none sells a monitor over
+  the buyer's own company list — which gankdat's change feeds already are. Docker MCP Catalog listing queued second (24
+  raw → 8: agent shelves have converted nobody, reviewer-gated; from 10-10). Foundry: Search Console API reading (7, unblocks
+  four dated reviews and five page proofs; owner step raised when the script ships). Parked: officer/PSC fields (ICO fee +
+  LIA), GeBIZ (evidence up, terms unread), /stats CSV checkout, Sheets add-on, Smithery, WuslaHQ reseller; quality-score
+  pass re-triggered on the Companies House read; relink marked promoted (built 10-04/05). Comparison:
+  `docs/exchange/2026-W41.md`.
