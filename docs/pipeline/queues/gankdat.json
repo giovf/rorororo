@@ -46,7 +46,7 @@
       "proof": "≥ 10 stats pages indexed (Search Console)",
       "score": 4,
       "status": "blocked",
-      "blocked_on": "owner: the sitemap was submitted 2026-09-28 (OUTSTANDING A2); what remains is one export of Search Console \"Pages → not indexed\" (identity), or a Search Console API read through the relay once the owner adds the property credentials — no indexing reading exists in the repo as of the 2026-W40 review",
+      "blocked_on": "owner action 020 (2026-10-07): the Search Console API reading is built — `scripts/search-console.ts` in the 06:45 store-metrics job URL-inspects /stats and every /stats/<slug> page and writes `indexed I/N` on gankdat's Daily numbers row — and waits only for the owner to add the read-only service account and paste its key as SEARCH_CONSOLE_KEY. Close this item on the first row whose `search:` clause carries an indexed count (the proof reads ≥ 10 indexed), no export needed.",
       "added": "2026-09-20"
     },
     {

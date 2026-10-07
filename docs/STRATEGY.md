@@ -863,3 +863,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   is the monitor nobody on the Store sells (baseline in its own key-value store, only added/changed/removed pushed). Blind
   Mode held: no officers, individual PSCs dropped at ingest, filing codes not names. Proof per the queue: ≥ 5 Apify users
   from other accounts and a changes-mode run in 30 days (`uk-company-lookup-day-30`, 11-07). Zero owner minutes.
+- 2026-10-07 burn-down: foundry `search-console-api-reading` (7) built — `scripts/search-console.ts` in the 06:45 store-metrics job
+  reads 7-day impressions/clicks per venture and URL-inspects the /stats, /stats/<slug> and landing comparison pages through a
+  read-only service account, writing `search: …` on every daily row (`n/a (<reason>)` until owner action 020 lands the key). Why:
+  three day-30 reviews and five page proofs read a Search Console number that had never reached the repo, and the gankdat indexing
+  item sat on an owner export since 09-28. Proof: a `search:` series on the rows for seven days; the 10-21 and 10-30 reviews read it.

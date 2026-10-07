@@ -1243,13 +1243,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-07T09:32:36.895Z"
+      },
+      {
+        "id": "27",
+        "title": "Search Console reading in CI (scripts/search-console.ts)",
+        "description": "Read-only service-account JWT → sites.list, searchAnalytics.query (7 days by page) and urlInspection for the /stats and landing comparison pages; search: clause on each venture's daily metrics row; step in the store-metrics workflow (docs/ci); owner action 020 for the SEARCH_CONSOLE_KEY secret.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-07T17:19:53.409Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-07T09:32:36.895Z",
-      "taskCount": 26,
-      "completedCount": 19,
+      "lastModified": "2026-10-07T17:19:53.409Z",
+      "taskCount": 27,
+      "completedCount": 20,
       "tags": [
         "master"
       ]

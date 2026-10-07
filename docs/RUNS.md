@@ -720,3 +720,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 09:40 | build | Apify actor UK Companies House Lookup & Monitor: list in, changes mode diffs the previous run
 - 2026-10-07 09:40 | build | Landing card, terms row, GDPR row, sitemap, server.json 0.22.0 (registry republishes), ARCHITECTURE
 - 2026-10-07 09:40 | build | Tests: 11 for the lookup, schema test branch for lookup actors; Taskmaster 26; queue item done
+- 2026-10-07 17:35 | burn-down | Gate: check green, pipeline work (foundry search-console-api-reading 7, gankdat tm-journal 6)
+- 2026-10-07 17:35 | burn-down | Search Console reading: service-account JWT, sites.list, 7-day impressions/clicks per venture
+- 2026-10-07 17:35 | burn-down | URL inspection of /stats, /stats/<slug> and the five landing comparison pages (from the sitemaps)
+- 2026-10-07 17:35 | burn-down | `search:` clause upserted on each Daily check row and gankdat's Daily numbers row; 18 tests
+- 2026-10-07 17:35 | burn-down | Step added to the 06:45 store-metrics workflow via docs/ci/; n/a (reason) rows until the key lands
+- 2026-10-07 17:35 | burn-down | Owner action 020 (read-only service account, Restricted user, SEARCH_CONSOLE_KEY secret), ~10 min
+- 2026-10-07 17:35 | burn-down | Queue: foundry search-console-api-reading done; gankdat stats-indexing now waits on 020 only
+- 2026-10-07 17:35 | notify | Please connect Google Search Console (10 min, free): daily rows then show search traffic

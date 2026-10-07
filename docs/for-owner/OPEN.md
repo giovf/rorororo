@@ -5,30 +5,33 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (8)
+## Requests (9)
 
 1. **one 2-minute dashboard edit** — ~2 min, waiting 7 days (since 2026-09-30); unblocks highlight-keep `cws-listing-keywords` (4), read-focus `cws-promo-tile` (3). Steps: [013](actions/013-repo-private.md).
    one 2-minute dashboard edit — the Chrome Web Store privacy-policy URL for Highlight Keep must move to `https://apps.gankdat.com/privacy.html` (the page is live; steps in `docs/for-owner/actions/013-repo-private.md`). It is the last link keeping the repo public; once you have done it (and the same for ReadFocus, asked…
 
-2. **publish the free "Variables Playground" Community file** — ~10 min, waiting 5 days (since 2026-10-02); unblocks variables-toolkit `playground-file-views` (3). Steps: [017](actions/017-figma-playground-file.md).
+2. **let CI read Google Search Console** — ~10 min, waiting 0 days (since 2026-10-07); unblocks gankdat `search-console-stats-indexing` (4). Steps: [020](actions/020-search-console-service-account.md).
+   let CI read Google Search Console (~10 min, £0, no new account): create a read-only service account in Google Cloud, add its email as a *Restricted* user on the gankdat.com and apps.gankdat.com Search Console properties, and paste its JSON key as the `SEARCH_CONSOLE_KEY` repository secret. From then on the 06:45 job w…
+
+3. **publish the free "Variables Playground" Community file** — ~10 min, waiting 5 days (since 2026-10-02); unblocks variables-toolkit `playground-file-views` (3). Steps: [017](actions/017-figma-playground-file.md).
    publish the free "Variables Playground" Community file (~10 min, £0, Figma desktop): build the plugin, run its new dev command "Build Community playground file" in an empty file, set the Cover frame as thumbnail, Publish to Community with the copy in `ventures/variables-toolkit/PLAYGROUND.md`, reply with the URL. Step…
 
-3. **gankdat is ready for the Claude Connectors Directory** — ~20 min, waiting 7 days (since 2026-09-30); nothing queued waits on it.
+4. **gankdat is ready for the Claude Connectors Directory** — ~20 min, waiting 7 days (since 2026-09-30); nothing queued waits on it.
    gankdat is ready for the Claude Connectors Directory (v0.20.0 deploys with this push: tool annotations, Origin check, keyless 5-row preview so every tool answers without a key). One portal form on your paid Claude plan, ~20 min, no new account, no money: https://claude.ai/directory/manage → Submit new → MCP connector,…
 
-4. **the same 2-minute dashboard edit** — ~2 min, waiting 7 days (since 2026-09-30); nothing queued waits on it.
+5. **the same 2-minute dashboard edit** — ~2 min, waiting 7 days (since 2026-09-30); nothing queued waits on it.
    ReadFocus is ready for the same 2-minute dashboard edit as Highlight Keep — Chrome Web Store → ReadFocus (`dckbdaplggmhimpbekhdbaampglfhdgf`) → Privacy tab → privacy policy URL `https://apps.gankdat.com/privacy.html` → Save → Submit. Both extensions in one dashboard visit; then Claude flips the repo private. No new ac…
 
-5. **Claude GitHub App is requesting updated/additional permissi…** — time not stated, waiting 6 days (since 2026-10-01); nothing queued waits on it.
+6. **Claude GitHub App is requesting updated/additional permissi…** — time not stated, waiting 6 days (since 2026-10-01); nothing queued waits on it.
    GitHub emailed that the Claude GitHub App is requesting updated/additional permissions on the giovf account (installation 163075240). Review and accept or ignore at https://github.com/settings/installations/163075240/permissions/update — only the owner's GitHub identity can approve this; Claude keeps current permissio…
 
-6. **two minutes on Cloudflare, then the Claude form.** — ~20 min, waiting 3 days (since 2026-10-04); nothing queued waits on it.
+7. **two minutes on Cloudflare, then the Claude form.** — ~20 min, waiting 3 days (since 2026-10-04); nothing queued waits on it.
    two minutes on Cloudflare, then the Claude form. (1) Cloudflare's budget alert of 2026-10-01 says US$15.00 of metered usage for 2026-09-10..10-10 — three times the US$5 Workers Paid line in `docs/LEDGER.md`, with £0 revenue, which trips STRATEGY §7's cost rule. Open https://dash.cloudflare.com/37e56f3ce4dfe49919e85d43…
 
-7. **publish the free "Unused Variables Finder & Cleaner" plugin** — ~15 min, waiting 3 days (since 2026-10-04); nothing queued waits on it. Steps: [018](actions/018-figma-unused-variables-finder.md).
+8. **publish the free "Unused Variables Finder & Cleaner" plugin** — ~15 min, waiting 3 days (since 2026-10-04); nothing queued waits on it. Steps: [018](actions/018-figma-unused-variables-finder.md).
    publish the free "Unused Variables Finder & Cleaner" plugin (~15 min + Figma review, £0, Figma desktop): create the plugin so Figma assigns its id, paste the id into `ventures/variables-toolkit/manifest.free.json`, `npm run build:free -w @foundry/variables-toolkit`, import `dist-free/manifest.json`, publish with the c…
 
-8. **republish the Variables Toolkit** — ~10 min, waiting 3 days (since 2026-10-04); nothing queued waits on it. Steps: [019](actions/019-figma-toolkit-republish-relink.md).
+9. **republish the Variables Toolkit** — ~10 min, waiting 3 days (since 2026-10-04); nothing queued waits on it. Steps: [019](actions/019-figma-toolkit-republish-relink.md).
    republish the Variables Toolkit (~10 min, £0, same Figma desktop session as actions 017/018): it gained a fourth tab, Relink to library variables (the Variable Utilities / DSO gap from RESEARCH §5), and `manifest.json` now asks for the `teamlibrary` permission, so the live build cannot read libraries until a new versi…
 
 ## Waiting on an attended Claude session, not you (2)
