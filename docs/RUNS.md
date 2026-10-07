@@ -680,3 +680,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-06 18:30 | burn-down | Taskmaster guide and SETUP step 6 now give the claude mcp add line for interactive machines
 - 2026-10-06 18:30 | burn-down | Queue: foundry mcp-sandbox-timeout done; 1 foundry todo left (actions-minutes, dated 2026-10-12)
 - 2026-10-06 18:25 | burn-down | Stopping: 2 foundry items built; pipeline starved-and-cooled, pre-research spent, next dated 2026-10-08
+- 2026-10-07 00:25 | burn-down | Pipeline starved (every open item blocked or dated); 48 h cooling lapsed: research run for gankdat
+- 2026-10-07 00:25 | burn-down | gankdat research: IndexNow 429 on every wave (Workers egress IP); the runner's post got 200
+- 2026-10-07 00:25 | burn-down | gankdat research: trademark journal logs no refresh since 10-04; feeds reading n/a; eu-ted 429 twice
+- 2026-10-07 00:25 | burn-down | D1 writes fell from ~6M to ~0.2M a day after the delta refresh (10-05→10-06 rows)
+- 2026-10-07 00:25 | burn-down | Queue: gankdat +4 items (indexnow-from-runner 7, journal silent refresh 6, feeds reason 4, ted 429 4)

@@ -820,3 +820,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the Taskmaster guide and SETUP step 6 give the `claude mcp add --scope user` line for a machine that wants the server. Why: every
   cloud session spawned `npx -y task-master-ai` and waited 30 s for its timeout (today 18:12 again) for a server no routine uses;
   the placeholder keys leave the repo with it. Proof: no MCP connect timeout in a routine session for 14 days.
+- 2026-10-07 burn-down (00:00 run): gankdat research, pipeline starved again after the 10-05 pass cooled. The two rows since
+  show two of the three 10-05 distribution items not working as shipped: the Worker's IndexNow POSTs get 429 on every wave
+  (Bing throttles by source IP and Workers share egress; the GitHub runner's post got 200 the same morning) and the feeds
+  reading prints `n/a` with its reason swallowed; the trade-marks journal has logged no refresh since the delta refresh's
+  first night and eu-ted was throttled twice in six nights. Four items queued (7, 6, 4, 4); no product or pricing change —
+  the funnel readings are unchanged. D1 writes fell from ~6M to ~0.2M a day after the delta refresh (cost rule fix confirmed,
+  the 10-08 item records the rate). Proof: `indexnow: … 200` for 7 days; an ok journal row 3 nights running; feeds readable.

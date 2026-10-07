@@ -154,3 +154,40 @@ Not queued: more datasets (supply is not the constraint — exchange parked item
 triggers), Smithery / n8n node / Snowflake (owner account or £300 MRR triggers unchanged), a
 pricing change (no conversion data to act on). Scores use STRATEGY §5 (evidence × reach ÷ effort)
 and are discounted where demand is inferred rather than measured, as the W40 exchange did.
+
+## Research 2026-10-07 (pipeline starved — burn-down)
+
+Every open gankdat item was blocked or dated again (`npm run pipeline next` → null; the queue's
+48 h cooling from the 10-05 pass had lapsed), so this is the research pass. Evidence is the
+10-05 and 10-06 Daily numbers rows, the 2026-10-06 scheduled `gankdat metrics` run log (37471105451)
+and the relay request `gankdat-research-2026-10-07` (sitemap, health).
+
+| Signal (2026-10-05 → 10-06) | Reading |
+| --- | --- |
+| Paying accounts / x402 paid | 0 / 0; still 1 real account |
+| MCP keyless traffic | 1,385–1,411 anon, 78–111 preview calls a day; `connect_account` the most-wanted tool, `oauth: 0 connects` (funnel check dated 10-09) |
+| Change feeds | `changes 7d: 0` on both rows; the Atom feeds shipped 10-05 but their reading prints `feeds 30d: n/a` |
+| IndexNow | `41 urls 429` (10-05), `40 urls 429` (10-06): every wave throttled, and ~40 URLs a day instead of ~1,100 |
+| Refresh | eu-ted 429 (10-01, 10-06); uk-trademark-journal `no successful refresh since 2026-10-04` with no error row |
+| Cost | D1 writes 87.5M (10-04) → 93.6M (10-05) → 93.8M (10-06): ~6M a day before the delta refresh, ~0.2M a day after; reads +54M a day. The period's invoice (10-10) will still carry ≈ US$44 of writes |
+| Apify | 169 runs by others in 30 days across 17 actors, 17 users, US$0 in the September developer summary |
+
+Reading: the funnel is unchanged (wide keyless top, zero bottom), so no product or pricing item
+is justified by new evidence; what the two rows do show is that two of the three distribution
+items built on 10-05 are not working as shipped, and two refreshes die on the origin side.
+The cost fix is confirmed working (the 10-08 item reads three rows and writes the daily rate
+into the ledger). Queued in `docs/pipeline/queues/gankdat.json`:
+
+| Item | Score | Why now |
+| --- | --- | --- |
+| `indexnow-from-runner` | 7 | the Worker's api.indexnow.org POSTs get 429 from Cloudflare's shared egress IPs (rankmath.com, asteroad.com confirm: IP-based, no Worker-side fix); the runner's own post for uk-insolvency got `status 200` the same morning, so the submission moves to the metrics workflow's runner step |
+| `trademark-journal-silent-refresh` | 6 | wave 7 (the journal alone) has logged nothing since the night before the delta refresh's first run, and that last run took 13 min 42 s of the 15-minute budget; a refresh killed by the limit writes no row — bound the per-night work and make a killed wave visible |
+| `feeds-reading-reason` | 4 | the feeds query fails and `.catch(() => null)` hides why; `sumIf` per Cloudflare's SQL reference and an `n/a (<reason>)` reading like `cf usage` |
+| `eu-ted-429-backoff` | 4 | two throttled nights in six; copy uk-contract-awards' 429/403 retry so a throttled page does not cost the day |
+
+Not queued: more datasets, a pricing change, Smithery / n8n / Snowflake listings (triggers
+unchanged from 10-05); nothing in the two rows moves them. Relay readings: `/v1/health` (00:20) gives uk-trademark-journal `last_refreshed_at 2026-10-04 06:18:42`
+— 13 min 42 s after wave 7 fired, a minute and a half under the Cron Trigger's 15-minute wall-clock
+before the delta path added per-row hashing — while every other source refreshed on 10-06 (eu-ted at
+10:56, a request-path refresh after the 05:00 429); `sitemap.xml` lists 61 `/stats` URLs, the set the
+runner can submit; `/health` is 404 and `/v1/data` 401 without a key.
