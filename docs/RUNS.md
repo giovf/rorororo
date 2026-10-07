@@ -728,3 +728,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 17:35 | burn-down | Owner action 020 (read-only service account, Restricted user, SEARCH_CONSOLE_KEY secret), ~10 min
 - 2026-10-07 17:35 | burn-down | Queue: foundry search-console-api-reading done; gankdat stats-indexing now waits on 020 only
 - 2026-10-07 17:35 | notify | Please connect Google Search Console (10 min, free): daily rows then show search traffic
+- 2026-10-07 17:50 | build | Slot found its item (search-console-api-reading) already built and pushed by the 17:00 burn-down at 17:35
+- 2026-10-07 17:50 | build | This slot's duplicate (script, 25 tests, action 020) was discarded at push time; nothing reached main
+- 2026-10-07 17:50 | build | No second item taken: the burn-down is mid-loop on the next one; slot ends with one line per rule
+- 2026-10-07 17:50 | build | Queued foundry build-claim-marker (5): a one-line doing push after next so two sessions never build one item

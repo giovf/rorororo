@@ -868,3 +868,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   read-only service account, writing `search: …` on every daily row (`n/a (<reason>)` until owner action 020 lands the key). Why:
   three day-30 reviews and five page proofs read a Search Console number that had never reached the repo, and the gankdat indexing
   item sat on an owner export since 09-28. Proof: a `search:` series on the rows for seven days; the 10-21 and 10-30 reviews read it.
+- 2026-10-07 build (17:00 run): **no item — collision with the evening burn-down.** Both routines took `next` = foundry
+  `search-console-api-reading` at 17:00/17:10 and built it in parallel; the burn-down pushed first (17:35), so this slot's
+  duplicate was discarded unpushed. Queued foundry `build-claim-marker` (5, 0.2 d): a one-line `doing` push right after
+  `next`, the slot marker's precedent, so the other session's `next` skips a claimed item. Why: the 2026-10-05 `doing` guard
+  never reaches `main` before the item's own commit under atomic pushes. Proof: no duplicate item build in 30 days.

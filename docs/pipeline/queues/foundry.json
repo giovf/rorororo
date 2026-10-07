@@ -521,6 +521,16 @@
       "status": "done",
       "added": "2026-10-07",
       "done_at": "2026-10-07"
+    },
+    {
+      "id": "build-claim-marker",
+      "title": "`npm run pipeline claim <venture>/<id>`: a one-line push that marks the item `doing` with `doing_since` before building, so a concurrent build / burn-down session's `next` skips it; build.md and burn-down.md call it right after `next`",
+      "why": "2026-10-07 17:00 run: the 17:00 evening burn-down and the 17:10 daily build both took `next` = foundry `search-console-api-reading` and built it in parallel; the burn-down pushed at 17:35, the build's push was rejected and its 420-line duplicate (script, 25 tests, action 020, docs) was discarded at push time — about 40 minutes of a Fable session for nothing. The `doing` status (2026-10-05) was meant to be that guard (`next` skips an item doing < 1 day), but atomic pushes keep the `doing` edit local until the item's own commit, so no other session can see it. The slot marker (`npm run slot -- start build`, pushed before any work) is the precedent: a `claim` is the same one-line push for the item, and a claim older than a day is a cut-off session's leftover that `next` already offers again. The burn-down's loop claims each item as it starts it.",
+      "effort_days": 0.2,
+      "proof": "no two run-log groups for the same item id within 30 days; `doing:` line in `npm run pipeline` shows a claimed item while its session runs",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-07"
     }
   ]
 }
