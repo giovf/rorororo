@@ -700,3 +700,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 01:15 | burn-down | highlight-keep, read-focus (10-30) and variables-toolkit (10-21) wait for their day-30 reads; evidence logged
 - 2026-10-07 01:15 | burn-down | Queue: foundry research-after-date done; README, build.md and burn-down.md step 1 updated
 - 2026-10-07 01:20 | burn-down | Stopping: 1 research + 5 items built; pipeline starved-and-cooled, every queue waiting on dated reads
+- 2026-10-07 06:24 | watchdog | ci-minutes: ~6291 Actions min/month projected (private cap 2,000, warn 1700); top: check 687, gankdat 186, owner notes 1
