@@ -1,0 +1,136 @@
+{
+  "request": "ch-lookup-specs",
+  "fetched_at": "2026-10-07T09:21:33.112Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/company-profile/company-profile",
+      "fetched_at": "2026-10-07T09:21:30.567Z",
+      "status": 200,
+      "final_url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/company-profile/company-profile",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 28433,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/charges/list",
+      "fetched_at": "2026-10-07T09:21:31.688Z",
+      "status": 200,
+      "final_url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/charges/list",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 27898,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/filing-history/list",
+      "fetched_at": "2026-10-07T09:21:32.179Z",
+      "status": 200,
+      "final_url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/filing-history/list",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 29276,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/persons-with-significant-control/list",
+      "fetched_at": "2026-10-07T09:21:32.296Z",
+      "status": 200,
+      "final_url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/persons-with-significant-control/list",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 29999,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/search/search-companies",
+      "fetched_at": "2026-10-07T09:21:32.416Z",
+      "status": 200,
+      "final_url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/reference/search/search-companies",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "5.html",
+      "bytes": 28647,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/resources/companyprofile?v=latest",
+      "fetched_at": "2026-10-07T09:21:32.527Z",
+      "status": 200,
+      "final_url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/resources/companyprofile?v=latest",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "6.html",
+      "bytes": 70756,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/resources/chargelist?v=latest",
+      "fetched_at": "2026-10-07T09:21:32.649Z",
+      "status": 200,
+      "final_url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/resources/chargelist?v=latest",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "7.html",
+      "bytes": 46110,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/resources/filinghistorylist?v=latest",
+      "fetched_at": "2026-10-07T09:21:32.763Z",
+      "status": 200,
+      "final_url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/resources/filinghistorylist?v=latest",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 38895,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/resources/list?v=latest",
+      "fetched_at": "2026-10-07T09:21:32.890Z",
+      "status": 200,
+      "final_url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/resources/list?v=latest",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.html",
+      "bytes": 50895,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/resources/companysearch?v=latest",
+      "fetched_at": "2026-10-07T09:21:32.997Z",
+      "status": 200,
+      "final_url": "https://developer-specs.company-information.service.gov.uk/companies-house-public-data-api/resources/companysearch?v=latest",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "10.html",
+      "bytes": 40890,
+      "truncated": false
+    }
+  ]
+}
