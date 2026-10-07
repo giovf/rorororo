@@ -1,7 +1,13 @@
 import { env } from 'cloudflare:test';
 import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
-import { hash53, queryD1Source, refreshD1Source } from '../src/sources/d1store';
+import {
+  BACKFILL_BUDGET_MS,
+  backfillClock,
+  hash53,
+  queryD1Source,
+  refreshD1Source,
+} from '../src/sources/d1store';
 import { readSourceStats } from '../src/sources/cache';
 import { computeStats } from '../src/lib/stats';
 import { applyQuery, buildQuerySchema } from '../src/sources/query';
@@ -285,24 +291,76 @@ describe('d1store delta refresh', () => {
     expect(quiet?.message).toBe('delta +0 ~0 -0');
   });
 
-  it('falls back to a full reload when stored rows lack a hash (pre-0014 rows)', async () => {
+  it('backfills the hashes of pre-0014 rows in place, then runs the delta (no full reload)', async () => {
     const source = makeIdSource('d1-nohash', RECORDS);
     await refreshD1Source(env, source);
     await env.DB.prepare(
-      "UPDATE source_records SET record_hash = NULL WHERE source_slug = 'd1-nohash' AND seq = 0",
+      "UPDATE source_records SET record_hash = NULL WHERE source_slug = 'd1-nohash' AND seq IN (0, 5)",
+    ).run();
+    await env.DB.prepare(
+      "UPDATE source_records SET record_id = NULL WHERE source_slug = 'd1-nohash' AND seq = 1",
     ).run();
     await refreshD1Source(env, { ...source, fetchFresh: () => Promise.resolve(RECORDS.slice(1)) });
     const meta = await metaOf('d1-nohash');
-    expect(meta).toEqual({ generation: 2, total: RECORDS.length - 1 });
-    // The generation diff still feeds the change (Alpha removed) and the new rows carry hashes.
-    const removed = await env.DB.prepare(
-      "SELECT record_id FROM source_changes WHERE source_slug = 'd1-nohash' AND change = 'removed'",
-    ).all<{ record_id: string }>();
-    expect(removed.results.map((r) => r.record_id)).toEqual(['Alpha Corp']);
+    // Same generation: the backfill wrote the three missing ids/hashes and the delta removed Alpha.
+    expect(meta).toEqual({ generation: 1, total: RECORDS.length - 1 });
+    const changes = await env.DB.prepare(
+      "SELECT change, record_id FROM source_changes WHERE source_slug = 'd1-nohash' ORDER BY change",
+    ).all<{ change: string; record_id: string }>();
+    expect(changes.results.map((r) => [r.change, r.record_id])).toEqual([
+      ['removed', 'Alpha Corp'],
+    ]);
     const unhashed = await env.DB.prepare(
-      "SELECT COUNT(*) AS n FROM source_records WHERE source_slug = 'd1-nohash' AND record_hash IS NULL",
+      "SELECT COUNT(*) AS n FROM source_records WHERE source_slug = 'd1-nohash' AND (record_hash IS NULL OR record_id IS NULL)",
     ).first<{ n: number }>();
     expect(unhashed?.n).toBe(0);
+    // The backfilled hash is the ingest hash: the rows it touched (beta, José Müller) read as unchanged.
+    const log = await env.DB.prepare(
+      "SELECT status, message FROM refresh_log WHERE source_slug = 'd1-nohash' ORDER BY id DESC LIMIT 1",
+    ).first<{ status: string; message: string }>();
+    expect(log).toEqual({ status: 'ok', message: 'delta +0 ~0 -1' });
+  });
+
+  it('hands a long backfill to the next night with a skipped row, resuming where it stopped', async () => {
+    // 2,100 rows: one full backfill page (2,000) and a remainder.
+    const many: Rec[] = Array.from({ length: 2_100 }, (_, i) => ({
+      ...RECORDS[0],
+      name: `Row ${String(i).padStart(4, '0')}`,
+      amount: i,
+    }));
+    const source = makeIdSource('d1-backfill-budget', many);
+    await refreshD1Source(env, source);
+    await env.DB.prepare(
+      "UPDATE source_records SET record_hash = NULL WHERE source_slug = 'd1-backfill-budget'",
+    ).run();
+    const realNow = backfillClock.now;
+    try {
+      backfillClock.now = (): number => Date.now() + BACKFILL_BUDGET_MS; // budget spent at once
+      await refreshD1Source(env, source);
+      const skipped = await env.DB.prepare(
+        "SELECT status, records, message FROM refresh_log WHERE source_slug = 'd1-backfill-budget' ORDER BY id DESC LIMIT 1",
+      ).first<{ status: string; records: number; message: string }>();
+      expect(skipped).toEqual({
+        status: 'skipped',
+        records: 2_000,
+        message: 'hash backfill: 2000 rows hashed, 100 left; delta refresh resumes once complete',
+      });
+      expect((await metaOf('d1-backfill-budget'))?.generation).toBe(1);
+      const left = await env.DB.prepare(
+        "SELECT COUNT(*) AS n FROM source_records WHERE source_slug = 'd1-backfill-budget' AND record_hash IS NULL",
+      ).first<{ n: number }>();
+      expect(left?.n).toBe(100);
+    } finally {
+      backfillClock.now = realNow;
+    }
+    // Next night: the remaining 100 rows, then the delta in the same run.
+    await refreshD1Source(env, source);
+    const ok = await env.DB.prepare(
+      "SELECT status, message FROM refresh_log WHERE source_slug = 'd1-backfill-budget' ORDER BY id DESC LIMIT 1",
+    ).first<{ status: string; message: string }>();
+    expect(ok).toEqual({ status: 'ok', message: 'delta +0 ~0 -0' });
+    expect((await metaOf('d1-backfill-budget'))?.generation).toBe(1);
+    expect(await countRows('d1-backfill-budget')).toBe(2_100);
   });
 
   it('changes nothing when the stream yields 0 records', async () => {

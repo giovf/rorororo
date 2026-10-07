@@ -539,6 +539,34 @@ describe('GET /v1/data/uk-trademark-journal', () => {
     expect(body.meta?.total).toBe(DOWNLOADS_PER_RUN + 1);
   });
 
+  it('treats the IPO\'s 200 "Page Not Found" HTML as an unpublished issue, not a journal', async () => {
+    // Relay tmj-stub-2026-10-07: jnl.xml of an unpublished issue answers 200 text/html (the
+    // site's error page, last-modified 2020); every jnl.zip answers 403 text/html.
+    const html =
+      '<!DOCTYPE html><html><head><title>Intellectual Property Office - Page Not Found</title></head><body>Page Not Found</body></html>';
+    stubOrigins({
+      ipoJournal: (url) => {
+        const { id: issueId, file } = issueOf(url);
+        if (file === 'jnl.zip')
+          return new Response(html, {
+            status: 403,
+            headers: { 'content-type': 'text/html; charset=UTF-8' },
+          });
+        if (issueId === id(37)) {
+          return new Response(ISSUE_37, { headers: { 'content-type': 'application/xml' } });
+        }
+        return new Response(html, { status: 200, headers: { 'content-type': 'text/html' } });
+      },
+    });
+    await load();
+    const body = (await (await authedFetch(URL_)).json()) as SuccessEnvelope<
+      UkTrademarkJournalRecord[]
+    >;
+    expect(body.meta?.total).toBe(2);
+    expect(await env.CACHE.get(`tmj:missing:${id(38)}`)).toBe('1');
+    expect(await env.CACHE.get(`tmj:issue:${id(38)}`)).toBeNull();
+  });
+
   it('fails loudly when an issue has no recognisable application, keeping the previous generation', async () => {
     serveIssues({ [id(37)]: ISSUE_37 });
     await load();

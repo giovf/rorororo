@@ -873,3 +873,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   duplicate was discarded unpushed. Queued foundry `build-claim-marker` (5, 0.2 d): a one-line `doing` push right after
   `next`, the slot marker's precedent, so the other session's `next` skips a claimed item. Why: the 2026-10-05 `doing` guard
   never reaches `main` before the item's own commit under atomic pushes. Proof: no duplicate item build in 30 days.
+- 2026-10-07 burn-down (17:00 run, 2nd item): gankdat `refresh-uk-trademark-journal` (6) built — the journal's live generation
+  predates migration 0014, so each night since 10-05 started the "one last full reload" of 162k rows and was killed at the Cron
+  Trigger limit before writing a row (the 10-07 download budget could not help: no download was running). d1store now backfills
+  the missing hashes in place, resumably, with a `skipped` refresh_log row (migration 0015) when it hands the rest to the next
+  night, then runs the delta; an IPO "Page Not Found" served as 200 HTML is a missing issue. Why: the only weekly-cadence dataset
+  (watch services' core) had been three days stale and would have errored outright from 10-09. Proof: `ok` rows on three
+  consecutive nights and the journal absent from refresh errors for seven Daily numbers rows.

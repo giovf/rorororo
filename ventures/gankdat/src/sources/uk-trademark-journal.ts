@@ -750,6 +750,13 @@ export async function fetchIssue(id: string): Promise<CachedIssue | null> {
       await res.body?.cancel().catch(() => undefined);
       continue;
     }
+    // The IPO answers an unpublished issue's jnl.xml with its "Page Not Found" HTML and status
+    // 200 (relay `tmj-stub-2026-10-07`: 2026-042 and 2026-053, text/html, last-modified 2020),
+    // and every jnl.zip with 403 text/html. An HTML body is a missing issue, not a journal.
+    if (/text\/html/i.test(res.headers.get('content-type') ?? '')) {
+      await res.body?.cancel().catch(() => undefined);
+      continue;
+    }
     if (!res.ok || !res.body) throw new Error(`TMJ ${id}/${file} download failed: ${res.status}`);
     const stream = file.endsWith('.zip') ? inflateZipEntry(res.body, MAX_BYTES) : res.body;
     const lastModified = isoDate(res.headers.get('last-modified')?.replace(/^\w+,\s*/, '') ?? null);

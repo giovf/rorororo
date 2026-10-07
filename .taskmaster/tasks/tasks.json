@@ -1255,13 +1255,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-07T17:19:53.409Z"
+      },
+      {
+        "id": "28",
+        "title": "d1store: resumable hash backfill for pre-0014 generations (uk-trademark-journal refresh)",
+        "description": "backfillHashes pages the live generation's unhashed rows, writes record_id/record_hash in place under an 8-min budget, writes a skipped refresh_log row (migration 0015 widens the CHECK) when it hands the rest to the next night, then the delta pass runs; journal fetchIssue treats a text/html body as a missing issue (IPO soft-404).",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-07T17:34:33.349Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-07T17:19:53.409Z",
-      "taskCount": 27,
-      "completedCount": 20,
+      "lastModified": "2026-10-07T17:34:33.349Z",
+      "taskCount": 28,
+      "completedCount": 21,
       "tags": [
         "master"
       ]

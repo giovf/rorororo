@@ -732,3 +732,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 17:50 | build | This slot's duplicate (script, 25 tests, action 020) was discarded at push time; nothing reached main
 - 2026-10-07 17:50 | build | No second item taken: the burn-down is mid-loop on the next one; slot ends with one line per rule
 - 2026-10-07 17:50 | build | Queued foundry build-claim-marker (5): a one-line doing push after next so two sessions never build one item
+- 2026-10-07 17:36 | burn-down | Journal refresh: relay read of /v1/health (last ok 10-04, 162k rows) and the IPO issue pages
+- 2026-10-07 17:36 | burn-down | Cause: post-0014 full reload of 162k rows killed at the 15-min cron limit three nights, no row
+- 2026-10-07 17:36 | burn-down | d1store: resumable in-place hash backfill (8-min budget, skipped row, migration 0015), then delta
+- 2026-10-07 17:36 | burn-down | Journal: an IPO 200 text/html body (its Page Not Found) is a missing issue, not a journal; test
+- 2026-10-07 17:36 | burn-down | Tests: backfill hash equality and a 2,100-row hand-over on real D1; metrics row names a skipped run
+- 2026-10-07 17:36 | burn-down | Queue: gankdat refresh-uk-trademark-journal done; ARCHITECTURE delta and journal paragraphs

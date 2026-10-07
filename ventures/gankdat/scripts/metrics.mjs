@@ -85,11 +85,17 @@ const errors = await sql(
 const stale = await sql(
   "SELECT source_slug, MAX(CASE WHEN status = 'ok' THEN created_at END) AS last_ok FROM refresh_log WHERE created_at > datetime('now','-30 days') GROUP BY source_slug HAVING last_ok IS NULL OR last_ok < datetime('now','-2 days')",
 );
+// A `skipped` row (migration 0015, 2026-10-07: the resumable hash backfill that hands its rest to
+// the next night) says why a stale source wrote no `ok` row, so the reading names it.
+const skipped = await sql(
+  "SELECT source_slug, MAX(message) AS message FROM refresh_log WHERE status = 'skipped' AND created_at > datetime('now','-1 day') GROUP BY source_slug",
+);
 for (const s of stale) {
   if (errors.some((e) => e.source_slug === s.source_slug)) continue;
+  const skip = skipped.find((k) => k.source_slug === s.source_slug);
   errors.push({
     source_slug: s.source_slug,
-    message: `no successful refresh since ${s.last_ok ? String(s.last_ok).slice(0, 10) : 'over 30 days'}`,
+    message: `no successful refresh since ${s.last_ok ? String(s.last_ok).slice(0, 10) : 'over 30 days'}${skip ? `; last run skipped: ${skip.message}` : ''}`,
   });
 }
 errors.sort((a, b) => a.source_slug.localeCompare(b.source_slug));

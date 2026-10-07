@@ -67,7 +67,11 @@ a corporate designator, addresses reduced to country, mark images never stored. 
 **wave 7** (06:05). A refresh starts no new issue download after six minutes
 (`DOWNLOAD_BUDGET_MS`, 2026-10-07): the 10-04 run took 13 min 42 s of the 15-minute Cron Trigger
 budget and the next two nights were killed before writing a `refresh_log` row; the issues cached
-before the cut-off still load and the window fills over the following runs.
+before the cut-off still load and the window fills over the following runs. What actually kept
+dying (found 2026-10-07 through `/v1/health` and the relay) was the post-0014 full reload of the
+162k-row window, now replaced by the in-place hash backfill above. The IPO serves an unpublished
+issue's `jnl.xml` as its "Page Not Found" HTML with status 200 (and every `jnl.zip` as 403 HTML),
+so a `text/html` body counts as a missing issue, never as a journal to parse.
 And the Gambling Commission licence register (`uk-gambling-operators`, shipped 2026-09-24 —
 exchange 2026-W39 runner-up, OGL v3 confirmed on the data.gov.uk record; KYB/payments risk,
 affiliate compliance, sector suppliers; rival Apify actors price it from $8 per 1k rows). Five daily
@@ -168,7 +172,13 @@ runs `check:root`.
   vanished ids deleted, each chunk with its change-feed rows in one transactional batch. The
   generation swap (a whole new generation inserted and the old one deleted every night, ~1M
   rows written and ~1M deleted a day for registers that move < 1%) remains for first loads,
-  sources without ids and rows written before the migration; it is what the 2026-10-01
+  sources without ids — not any more for rows written before the migration: those are hashed in
+  place by a resumable **backfill** (`backfillHashes`, migration 0015, 2026-10-07) that pages the
+  live generation's unhashed rows, writes `record_id` and `record_hash` from the stored record
+  text, hands the rest to the next night with a `skipped` refresh_log row when its 8-minute budget
+  runs out, and lets the delta pass follow once complete (uk-trademark-journal's 162k-row "one last
+  full reload" never finished: wave 7 was killed at the Cron Trigger limit three nights running,
+  writing no row). The generation swap is what the 2026-10-01
   Cloudflare budget alert (US$15 metered vs the US$5 plan) was traced to — D1 bills rows
   written. The trade: during a delta refresh a request sees today's version of some rows and
   yesterday's of the rest (every row present, nothing partially loaded; `last_refreshed_at`
