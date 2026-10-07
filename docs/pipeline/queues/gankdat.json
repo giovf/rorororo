@@ -360,12 +360,13 @@
     {
       "id": "feeds-reading-reason",
       "title": "`feeds 30d: n/a` in the Daily numbers row hides its reason — print `n/a (<reason>)` and fix the Analytics Engine query so the change-feed-rss proof is readable",
-      "why": "Research 2026-10-07: the 10-06 row (the first after change-feed-rss shipped) prints `feeds 30d: n/a` because the query in metrics.mjs is wrapped in `.catch(() => null)` — unlike the `cf usage` readings, which degrade to `n/a (<reason>)`. The query multiplies a comparison into a SUM (`double1 * (blob4 = 'miss')`); Cloudflare's SQL reference lists countIf/sumIf (2025-09 enhancements) as the way to express it, and COUNT(DISTINCT) is supported. Do: `sumIf(_sample_interval * double1, blob4 = 'miss')`, carry the error text into the reading, and add the three-figure line to the metrics unit test fixture if one exists. Without it the ≥ 20 user-agent proof of the keyless feeds is unreadable until the 11-05 day-30 read.",
+      "why": "Research 2026-10-07: the 10-06 row (the first after change-feed-rss shipped) prints `feeds 30d: n/a` because the query in metrics.mjs is wrapped in `.catch(() => null)` — unlike the `cf usage` readings, which degrade to `n/a (<reason>)`. The query multiplies a comparison into a SUM (`double1 * (blob4 = 'miss')`); Cloudflare's SQL reference lists countIf/sumIf (2025-09 enhancements) as the way to express it, and COUNT(DISTINCT) is supported. Do: `sumIf(_sample_interval * double1, blob4 = 'miss')`, carry the error text into the reading, and add the three-figure line to the metrics unit test fixture if one exists. Without it the ≥ 20 user-agent proof of the keyless feeds is unreadable until the 11-05 day-30 read. — Built 2026-10-07 (burn-down): metrics.mjs computes the miss share with sumIf and a failed query prints `feeds 30d: n/a (<reason>)`; the first reading is the 10-07 06:30 row (the sandbox cannot query Analytics Engine, so the reason line is the guarantee and sumIf the expected fix).",
       "effort_days": 0.05,
       "proof": "`feeds 30d: N fetches, U user agents, R renders` in the Daily numbers row from the next scheduled metrics run",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-07"
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
     },
     {
       "id": "eu-ted-429-backoff",

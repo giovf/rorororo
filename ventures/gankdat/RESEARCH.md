@@ -210,3 +210,9 @@ carries `elapsed_ms` and `download_budget_spent`. Not built: a "started" refresh
 two-day stale reading in the Daily numbers row is the detector for a killed wave, and a row per
 start would double the table's writes for one source. Proof: an `ok` row on three consecutive
 nights; the stale reading gone from the row by 2026-10-09.
+
+**Built 2026-10-07 — `feeds-reading-reason`** (burn-down): the feeds query's miss share is a `sumIf`
+(the SUM of a value times a comparison is what the first row after the feeds shipped choked on)
+and a failed query now prints `feeds 30d: n/a (<reason>)` instead of a bare `n/a`, as the `cf usage`
+readings do. The sandbox cannot run Analytics Engine queries, so the 2026-10-07 06:30 row is the
+check: either the three figures or the reason to act on.

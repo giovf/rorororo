@@ -691,3 +691,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 00:50 | burn-down | Trade-marks journal refresh: no new issue download after 6 min, so wave 7 ends inside its budget
 - 2026-10-07 00:50 | burn-down | tmj_window log carries elapsed_ms and download_budget_spent; budget test with an injected clock
 - 2026-10-07 00:50 | burn-down | Queue: gankdat trademark-journal-silent-refresh done; next buildable feeds-reading-reason (4)
+- 2026-10-07 00:55 | burn-down | Feeds reading: miss share via sumIf; a failed query prints its reason instead of a bare n/a
+- 2026-10-07 00:55 | burn-down | Queue: gankdat feeds-reading-reason done; next buildable eu-ted-429-backoff (4)

@@ -836,3 +836,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   new issue download after six minutes; what is cached still loads and the window fills over later nights. Why: up to four 145 MB
   issues a run took 13 min 42 s on 10-04 and the next two nights were killed before writing a row, the one dataset whose change
   feed is weekly going dark unseen for two days. Proof: an ok row three nights running, stale reading gone by 10-09.
+- 2026-10-07 burn-down (00:00 run, 4th item): gankdat `feeds-reading-reason` (4) built — the feeds reading uses sumIf for the miss
+  share and carries the query's error text when it fails. Why: the first row after the keyless feeds shipped printed a bare `n/a`
+  and nothing in the repo said why; the ≥ 20 user-agent proof was unreadable. Proof: three figures or a reason in the 10-07 row.
