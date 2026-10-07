@@ -289,3 +289,10 @@ note/title/tags/colour/date optional — is offered as *Import Weava / Glasp (.c
 commas; an unreadable file lists its headers and the support address. Copy updated in LISTING.md, AMO release notes and
 description, the welcome page, the landing page and the comparison page. Proof: a Hypothesis or Glasp import named in a review
 or support mail within 60 days of 0.4.0 going live; until then, zero "could not import" mails with a Glasp header line.
+
+## Research 2026-10-07 (burn-down; starvation fallback — no new evidence)
+
+Third starvation pass in eight days (09-30/10-04, 10-05 built out the same night). Evidence unchanged:
+0 users and no ratings on Chrome (0.2.0 live since 10-06) and Firefox (0.2.0) on every row since listing; 0.4.0 waits on the signing handoff; the listing levers are owner-blocked (action 013). Nothing unblocked is left that the earlier passes did not queue and build, so no items are
+added; the queue carries `research_after: 2026-10-30`, the `day-30-funnel-review` reading, and the fallback skips it until then
+(`docs/pipeline/README.md`, Waiting).

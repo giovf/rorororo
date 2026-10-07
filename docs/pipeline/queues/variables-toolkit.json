@@ -2,7 +2,7 @@
   "venture": "variables-toolkit",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-05",
+  "updated": "2026-10-07",
   "researched": "2026-10-05",
   "items": [
     {
@@ -137,5 +137,6 @@
       "added": "2026-10-05",
       "done_at": "2026-10-05"
     }
-  ]
+  ],
+  "research_after": "2026-10-21"
 }

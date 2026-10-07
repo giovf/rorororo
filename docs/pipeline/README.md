@@ -37,6 +37,10 @@ for more than a day with no future `not_before` is a cut-off session's leftover 
 that the starvation fallback skips the queue and `npm run pipeline` lists it on a `cooling:` line, so a venture is not
 researched twice in a day (2026-10-05 had five research runs and the next morning's build was offered the same venture
 eleven hours later). When `next` is null and every starved queue is cooling, `empty` prints `[]` and the status says
-so: the run writes one run-log line and stops (the burn-down's one pre-research pass per night aside). A `finished` queue is a venture
+so: the run writes one run-log line and stops (the burn-down's one pre-research pass per night aside). **Waiting** (2026-10-07): a
+research run that finds no new evidence — the metrics unchanged since the last pass, every lever built or owner-blocked, the next
+signal a dated reading — sets `research_after: YYYY-MM-DD` (that reading's date) instead of adding items; the fallback treats
+the queue as cooling until then and the status says `waiting until <date>` (three ventures had each been researched three times
+in eight days on an unchanged zero). A `finished` queue is a venture
 with nothing left to do; only the exchange or the review reopens it. Every change to a queue
 lands in the same commit as the work.

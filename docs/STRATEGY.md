@@ -842,3 +842,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-07 burn-down (00:00 run, 5th item): gankdat `eu-ted-429-backoff` (4) built — a throttled TED page is retried with
   Retry-After or a growing pause, at most two minutes inside wave 1. Why: 429 on two of six nights, each costing the EU half of
   the bid-intelligence bundle a day of freshness. Proof: no eu-ted 429 in the refresh errors reading over 14 nights.
+- 2026-10-07 burn-down (00:00 run, 6th item): foundry `research-after-date` (5) built — a research run that finds no new evidence sets
+  `research_after` on the queue and the starvation fallback skips it until that date; highlight-keep, read-focus and variables-toolkit
+  now wait for their day-30 readings (10-30, 10-30, 10-21). Why: three research passes each in eight days on 0 users / 7 views, every
+  pass built out within a day; a fourth would have invented work. Proof: no venture researched twice without a changed metrics row in 30 days.

@@ -22,6 +22,7 @@ if (process.argv[2] === 'cold') {
     status: string;
     needs_research: boolean;
     researched?: string;
+    research_after?: string;
     items: ColdItem[];
   };
   const cold = readdirSync(path.join(dir, 'queues'))
@@ -36,7 +37,8 @@ if (process.argv[2] === 'cold') {
   const open = (it: ColdItem): boolean =>
     it.status === 'todo' || it.status === 'doing' || it.status === 'blocked';
   const cooling = (q: ColdQueue): boolean =>
-    q.researched !== undefined && Date.parse(today) - Date.parse(q.researched) < 2 * dayMs;
+    (q.researched !== undefined && Date.parse(today) - Date.parse(q.researched) < 2 * dayMs) ||
+    (q.research_after !== undefined && q.research_after > today);
   const reasons: string[] = [];
   for (const q of cold) {
     if (q.items.some(buildable)) reasons.push(`${q.venture}: buildable item`);

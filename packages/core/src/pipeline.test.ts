@@ -166,6 +166,30 @@ describe('scheduling', () => {
     expect(() => parseQueue(queue('t', [], { researched: '5 Oct' }))).toThrow(/researched/);
   });
 
+  it('skips a queue whose research run set research_after until that date', () => {
+    // 2026-10-07: highlight-keep, read-focus and variables-toolkit had each been researched three
+    // times in eight days on an unchanged zero (0 users, 7 views); the next evidence is a dated
+    // day-30 review, so the research run points the fallback at it instead of inventing items.
+    const waiting = parseQueue(
+      queue('highlight-keep', [{ ...item('day-30', 'todo', 5), not_before: '2026-10-30' }], {
+        updated: '2026-10-07',
+        researched: '2026-10-05',
+        research_after: '2026-10-30',
+      }),
+    );
+    expect(isCooling(waiting, '2026-10-08')).toBe(true);
+    expect(isCooling(waiting, '2026-10-29')).toBe(true);
+    expect(isCooling(waiting, '2026-10-30')).toBe(false);
+    expect(starved([waiting], { today: '2026-10-15' })).toEqual([]);
+    expect(needsResearch([waiting], { today: '2026-10-15' })).toEqual([]);
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [waiting] }, { today: '2026-10-15' });
+    expect(text).toContain('waits for dated evidence');
+    expect(text).toContain('cooling: highlight-keep (researched 2026-10-05, waiting until 2026-10-30)');
+    // On the day itself the day-30 item is buildable, so nothing is starved anyway.
+    expect(nextItem([waiting], { today: '2026-10-30' })?.item.id).toBe('day-30');
+    expect(() => parseQueue(queue('t', [], { research_after: 'soon' }))).toThrow(/research_after/);
+  });
+
   it('offers a stale doing item again and lists every doing item', () => {
     // 2026-10-04: foundry held a score-7 item in `doing` (a deliberate wait for a measured week)
     // and `next` reported starvation around it; a cut-off session's leftover would hide the same way.

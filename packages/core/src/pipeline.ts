@@ -64,6 +64,12 @@ export interface VentureQueue {
   updated: string;
   /** Day of the last research run for this venture (YYYY-MM-DD); within 48 h the queue is cooling. */
   researched?: string;
+  /**
+   * Set by a research run that found no new evidence (YYYY-MM-DD, normally the next dated reading
+   * such as a day-30 review): the starvation fallback skips the queue until then — cooling with a
+   * reason, instead of a fourth research pass on an unchanged zero (2026-10-07).
+   */
+  research_after?: string;
   items: QueueItem[];
 }
 
@@ -120,6 +126,8 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
   if (status === 'finished' && finished_reason === '') fail(where, 'finished queues need finished_reason');
   const researched = str(where, o, 'researched', true);
   if (researched !== '' && !ISO_DATE.test(researched)) fail(where, 'researched must be YYYY-MM-DD');
+  const research_after = str(where, o, 'research_after', true);
+  if (research_after !== '' && !ISO_DATE.test(research_after)) fail(where, 'research_after must be YYYY-MM-DD');
   if (!Array.isArray(o.items)) fail(where, 'items must be an array');
   const ids = new Set<string>();
   const items = o.items.map((it: unknown, i: number): QueueItem => {
@@ -162,6 +170,7 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
   const queue: VentureQueue = { venture, status, needs_research: o.needs_research, updated, items };
   if (finished_reason !== '') queue.finished_reason = finished_reason;
   if (researched !== '') queue.researched = researched;
+  if (research_after !== '') queue.research_after = research_after;
   return queue;
 }
 
@@ -259,7 +268,18 @@ export function isEmpty(queue: VentureQueue): boolean {
  * morning's build was offered the same venture eleven hours later because nothing recorded it.
  */
 export function isCooling(queue: VentureQueue, today: string = utcToday()): boolean {
-  return queue.researched !== undefined && Date.parse(today) - Date.parse(queue.researched) < 2 * DAY_MS;
+  return (
+    (queue.researched !== undefined && Date.parse(today) - Date.parse(queue.researched) < 2 * DAY_MS) ||
+    (queue.research_after !== undefined && queue.research_after > today)
+  );
+}
+
+/** The `cooling:` line's reason for one queue. */
+function coolingReason(queue: VentureQueue, today: string): string {
+  const waiting = queue.research_after !== undefined && queue.research_after > today;
+  return waiting
+    ? `researched ${queue.researched ?? '—'}, waiting until ${queue.research_after!}`
+    : `researched ${queue.researched!}`;
 }
 
 /**
@@ -274,12 +294,12 @@ export function starved(queues: VentureQueue[], options: { today?: string } = {}
     .sort((a, b) => a.updated.localeCompare(b.updated) || a.venture.localeCompare(b.venture));
 }
 
-/** Open queues researched within 48 h, oldest research first. */
+/** Open queues researched within 48 h or waiting on `research_after`, oldest research first. */
 export function cooling(queues: VentureQueue[], options: { today?: string } = {}): VentureQueue[] {
   const today = options.today ?? utcToday();
   return queues
     .filter((q) => q.status === 'open' && isCooling(q, today))
-    .sort((a, b) => a.researched!.localeCompare(b.researched!) || a.venture.localeCompare(b.venture));
+    .sort((a, b) => (a.researched ?? '').localeCompare(b.researched ?? '') || a.venture.localeCompare(b.venture));
 }
 
 /**
@@ -313,10 +333,10 @@ export function formatPipeline(pipeline: Pipeline, options: { today?: string } =
       : research.size > 0
         ? `next: nothing to build — research ${[...research][0]!} (pipeline starved: every open item is blocked or dated)`
         : cool.length > 0
-          ? 'next: nothing to build — pipeline starved and every starved queue was researched within 48 h: write one run-log line and stop'
+          ? 'next: nothing to build — pipeline starved and every starved queue was researched within 48 h or waits for dated evidence: write one run-log line and stop'
           : 'next: nothing to build — research needed',
   );
-  if (cool.length > 0) lines.push(`cooling: ${cool.map((q) => `${q.venture} (researched ${q.researched!})`).join(', ')}`);
+  if (cool.length > 0) lines.push(`cooling: ${cool.map((q) => `${q.venture} (${coolingReason(q, today)})`).join(', ')}`);
   const scheduled = pipeline.queues
     .filter((q) => q.status === 'open')
     .flatMap((q) => q.items.filter((it) => it.status === 'todo' && it.not_before !== undefined && it.not_before > today).map((it) => `${q.venture}/${it.id} on ${it.not_before!}`));

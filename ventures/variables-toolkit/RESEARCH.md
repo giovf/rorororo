@@ -454,3 +454,10 @@ Kill date unchanged: 2026-12-20 with zero sales and zero organic signal (STRATEG
 `apps.gankdat.com/figma-relink-variables.html`; `relink-to-local` is a direction switch on the Relink tab (planner option
 `direction`, local catalogue read with `getLocalVariablesAsync`, rebinding by variable id) with four unit tests, and the
 how-to page gained a section for it. Both wait on the 019 republish to reach users — no extra owner minutes.
+
+## Research 2026-10-07 (burn-down; starvation fallback — no new evidence)
+
+Third starvation pass in eight days (09-30/10-04, 10-05 built out the same night). Evidence unchanged:
+7 views, 3 runs, 0 installs and 0 purchases unchanged since 09-28; the free finder, the playground file and the relink republish all wait on Figma desktop actions 017–019. Nothing unblocked is left that the earlier passes did not queue and build, so no items are
+added; the queue carries `research_after: 2026-10-21`, the `day-30-review` reading, and the fallback skips it until then
+(`docs/pipeline/README.md`, Waiting).

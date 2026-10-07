@@ -339,3 +339,10 @@ The Publish-to-web route (File → Share → Publish to web, then ReadFocus on t
 page's Google Docs row (ReadFocus cell, and Half Bold's cell says honestly that its "integration guide" is the same
 workaround), the reading-ruler page's "does not do yet" list, the ReadFocus landing page and the welcome page's tips —
 each keeping "cannot read the editor itself". No product change. Proof: a Docs-related install or question within 60 days.
+
+## Research 2026-10-07 (burn-down; starvation fallback — no new evidence)
+
+Third starvation pass in eight days (09-30/10-04, 10-05 built out the same night). Evidence unchanged:
+0 users and no ratings on Chrome and Firefox (0.2.0) on every row; 0.3.0 waits on the signing handoff; Edge, AlternativeTo and the promo tile are owner-blocked. Nothing unblocked is left that the earlier passes did not queue and build, so no items are
+added; the queue carries `research_after: 2026-10-30`, the `day-30-funnel-review` reading, and the fallback skips it until then
+(`docs/pipeline/README.md`, Waiting).

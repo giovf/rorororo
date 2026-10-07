@@ -695,3 +695,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 00:55 | burn-down | Queue: gankdat feeds-reading-reason done; next buildable eu-ted-429-backoff (4)
 - 2026-10-07 01:05 | burn-down | eu-ted: a 429 page is retried three times with Retry-After or a growing pause; two tests
 - 2026-10-07 01:05 | burn-down | Queue: gankdat eu-ted-429-backoff done; gankdat has no buildable item left (all dated or blocked)
+- 2026-10-07 01:15 | burn-down | Fallback offered highlight-keep for a 3rd research pass in 8 days on unchanged zeros; built the fix
+- 2026-10-07 01:15 | burn-down | Pipeline: research_after on a queue keeps it out of the fallback until a dated reading; cooling line says so
+- 2026-10-07 01:15 | burn-down | highlight-keep, read-focus (10-30) and variables-toolkit (10-21) wait for their day-30 reads; evidence logged
+- 2026-10-07 01:15 | burn-down | Queue: foundry research-after-date done; README, build.md and burn-down.md step 1 updated
+- 2026-10-07 01:20 | burn-down | Stopping: 1 research + 5 items built; pipeline starved-and-cooled, every queue waiting on dated reads

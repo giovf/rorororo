@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-06",
+  "updated": "2026-10-07",
   "researched": "2026-10-06",
   "items": [
     {
@@ -499,6 +499,17 @@
       "status": "done",
       "added": "2026-10-06",
       "done_at": "2026-10-06"
+    },
+    {
+      "id": "research-after-date",
+      "title": "A research run that finds no new evidence sets `research_after` on the queue; the starvation fallback skips it until that date instead of re-researching an unchanged zero",
+      "why": "Burn-down 2026-10-07: with gankdat built out for the night, `npm run pipeline` offered highlight-keep for research — its third pass in eight days (09-30, 10-04, 10-05), each on the same rows (0 users, no ratings on both stores) and each built out within a day; read-focus and variables-toolkit (7 views, 0 installs since 09-28) were next in line. The 48 h cooling (research-cooldown) only stops a second pass in a day; nothing let a research run say 'nothing new until the day-30 review on 10-30'. Built the same run: optional `research_after: YYYY-MM-DD` on a queue (core parseQueue, isCooling, the cooling: line prints `waiting until <date>`, the cold check), README Waiting paragraph, build.md and burn-down.md step 1, a core test; the three queues set to their day-30 reading dates with the evidence in each RESEARCH.md.",
+      "effort_days": 0.15,
+      "proof": "no venture researched twice without a changed metrics row over 30 days; no research line that adds zero items without a research_after",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
     }
   ]
 }
