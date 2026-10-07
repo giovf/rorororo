@@ -1,0 +1,444 @@
+{
+  "data": {
+    "total": 165,
+    "count": 10,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "Rightmove Scraper - UK Property API, Rent, Sale & New Homes",
+        "name": "rightmove-scraper",
+        "username": "epctex",
+        "stats": {
+          "totalBuilds": 1237,
+          "totalRuns": 45624,
+          "totalUsers": 167,
+          "totalUsers7Days": 5,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 8,
+          "lastRunStartedAt": "2026-10-06T07:24:13.682Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 9,
+            "FAILED": 12,
+            "SUCCEEDED": 112,
+            "TIMED-OUT": 0,
+            "TOTAL": 133
+          },
+          "actorReviewCount": 10,
+          "actorReviewRating": 4.982362629535378,
+          "bookmarkCount": 16
+        },
+        "description": "Scrape Rightmove rent, sale, new homes and student listings by location or URL. At $0.40 per 1,000 properties and 51 fields per record, it fits agents, investors and PropTech teams. Filters in pasted URLs are honoured.",
+        "categories": [
+          "REAL_ESTATE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/pCCDsymIx8OeL2lhCM5oAYdw_TonpjiVTCmyP2i8dJs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMuYW1hem9uYXdzLmNvbS9Md1I2SlJObDRraGNLWElXby9ZaFlZUVFBeGRkV0M0cmg4Uy1yaWdodG1vdmUtbG9nby0xQjMxNEEwMEVBLXNlZWtsb2dvLmNvbS5qcGVn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 16,
+        "actorReviewRating": 4.982362629535379,
+        "actorReviewCount": 10,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "epctex",
+        "userPictureUrl": "https://images.apifyusercontent.com/8mPoO24sM5-ntL8gkoqmL7u3aUNKuBebtvTVMQstXxM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vd3ZxTW02YUlwVDdvay00NFN6N1M2RElGVnhKbHZwTXhwQVhGdklmeENscy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11WVcxaGVtOXVZWGR6TG1OdmJTOHpjV2hCWTFNeldsSktTelJoTjNWT1J5OW9jelpyTlhvMmFrTk5Oa3BIWTNVMFFpMXpjWFZoY21VdFlteGhZMnN1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Hello! Apify is deprecating rental pricing, so we’re switching this actor to pay-per-event in 15 days. Billing will be per event, not monthly, with no platform costs when running the actor. This keeps it stable and lets us keep improving it.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "list-query": {
+                "eventTitle": "List Query",
+                "eventDescription": "Charged once per search page fetched (up to 24 results), covering rent, sale, new homes, and student channels.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              },
+              "detail-query": {
+                "eventTitle": "Detail Query",
+                "eventDescription": "Charged once per property detail lookup — for start-URL properties, and for search results when includeDetails is true (default).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0001
+              },
+              "dataset-item": {
+                "eventTitle": "Dataset Item",
+                "eventDescription": "Charged once per item written to the dataset, full or summary shape alike.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-02T10:05:23.202Z",
+          "createdAt": "2026-09-18T10:05:24.169Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-18T10:05:44.517Z",
+          "notifiedAboutChangeAt": "2026-10-02T10:05:57.526Z"
+        },
+        "id": "LwR6JRNl4khcKXIWo",
+        "url": "https://apify.com/epctex/rightmove-scraper"
+      },
+      {
+        "title": "Rightmove + AI Deal Scoring $0.95💰 Buy·Rent·Sold·Agents",
+        "name": "rightmove-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 141,
+          "totalRuns": 17813,
+          "totalUsers": 269,
+          "totalUsers7Days": 20,
+          "totalUsers30Days": 41,
+          "totalUsers90Days": 104,
+          "lastRunStartedAt": "2026-10-06T17:52:52.605Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 72,
+            "SUCCEEDED": 4288,
+            "TIMED-OUT": 1,
+            "TOTAL": 4363
+          },
+          "actorReviewCount": 8,
+          "actorReviewRating": 5.000000000000001,
+          "bookmarkCount": 3
+        },
+        "description": "[💰$0.95/1K] All-in-one Rightmove — Buy · Rent · Agents · Commercial · Overseas · Sold Prices, ~100 fields. Plus opt-in AI per area ($0.15): DEAL SCORING — ROI, cashflow, payback & best strategy, ranked — with yields, short-let ADR & occupancy, demand signals. Pay-per-result, free trial.",
+        "categories": [
+          "REAL_ESTATE",
+          "AI",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/7dpeF8bBdxRaEAtJVsP66APZBymDDJeUtdGubRVuPRk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItUDliY1hQTHBxOWZyeXVnMW8teFFlVHZ6RXJJSi1ybTIuanBn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 3,
+        "actorReviewRating": 5.000000000000001,
+        "actorReviewCount": 8,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              },
+              "market-analysis": {
+                "eventTitle": "AI market analysis",
+                "eventDescription": "Charged per area analyzed with the AI market pass (price trends, demand signals, area intelligence). Cached 90 days — repeat lookups of the same area are served from cache and charged only once per fresh analysis. Only when marketAnalysis is enabled and the user is on a paid plan.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.15
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Charged for additional data",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-09-29T00:00:00.000Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-14T09:35:54.040Z",
+          "notifiedAboutFutureChangeAt": "2026-09-14T09:36:15.563Z",
+          "notifiedAboutChangeAt": "2026-09-29T00:06:00.117Z"
+        },
+        "id": "P9bcXPLpq9fryug1o",
+        "url": "https://apify.com/memo23/rightmove-scraper"
+      },
+      {
+        "title": "Rightmove Scraper",
+        "name": "rightmove-scraper",
+        "username": "automation-lab",
+        "stats": {
+          "totalBuilds": 21,
+          "totalRuns": 3995,
+          "totalUsers": 152,
+          "totalUsers7Days": 8,
+          "totalUsers30Days": 21,
+          "totalUsers90Days": 45,
+          "lastRunStartedAt": "2026-10-06T08:04:09.115Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 45,
+            "SUCCEEDED": 305,
+            "TIMED-OUT": 0,
+            "TOTAL": 352
+          }
+        },
+        "description": "Scrape Rightmove property listings for repeatable UK market research. Extract prices, addresses, photos, GPS coordinates, agent details, and key features for sales and rentals; export JSON, CSV, or Excel.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/curxNpfJw-B81AlmW13jtvRRXJI9WGHVa6ld9kJ4DY4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotYWN0b3ItMzJVRUhPMmJ6TUc0a3Jnc2stWUJrbVUyd2JFMS1hY3Rvci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Automation Lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/K_C4LOMfOgJZv5UcVqbze6xlfc6mS23zsoHRS5nDXvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMDdsSFdveGptQlpJN0NMWkJqVi1wUlBjV0ZHRFQyRzIwVjdkVzBRSzBCay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiblJJUTI1b1RsVnJlbGhTTjI1aVZWb3RjSEp2Wm1sc1pTMW9ORkJYYTNsWWVVSmxMV0YxZEc5dFlYUnBiMjR0YkdGaUxYQnliMlpwYkdVdGJHOW5ieTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-25T20:06:30.712Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "start": {
+                "eventTitle": "Run started",
+                "eventDescription": "One-time charge when the scraper starts.",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": true
+              },
+              "property-scraped": {
+                "eventTitle": "Property scraped",
+                "eventDescription": "Charged per property listing extracted from Rightmove.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00345
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00234
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00084
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-04-24T07:25:02.788Z",
+          "createdAt": "2026-08-25T20:06:30.819Z"
+        },
+        "id": "32UEHO2bzMG4krgsk",
+        "url": "https://apify.com/automation-lab/rightmove-scraper"
+      },
+      {
+        "title": "Rightmove, Zoopla & OnTheMarket UK Property Scraper",
+        "name": "rightmove-zoopla-onthemarket-uk-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 559,
+          "totalUsers": 49,
+          "totalUsers7Days": 5,
+          "totalUsers30Days": 9,
+          "totalUsers90Days": 18,
+          "lastRunStartedAt": "2026-10-06T06:14:51.772Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 11,
+            "SUCCEEDED": 202,
+            "TIMED-OUT": 1,
+            "TOTAL": 214
+          }
+        },
+        "description": "Scrapes UK property listings from Rightmove, Zoopla, and OnTheMarket in one run. Returns unified records with price, bedrooms, EPC rating, council tax band, tenure, leasehold details, agent info, and coordinates. Cross-portal coverage with price history from Zoopla.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/7NEn24IPwMwfbFDmqxr3IXsgVGfe1hhPagdNYlrzO4c/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3IteHdYTXRocGFwRE16cmRVR2stc0EzT2I3RlJHQy1yaWdodG1vdmUtem9vcGxhLW9udGhlbWFya2V0LXVrLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:37:30.783Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:37:30.787Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "xwXMthpapDMzrdUGk",
+        "url": "https://apify.com/jungle_synthesizer/rightmove-zoopla-onthemarket-uk-scraper"
+      },
+      {
+        "title": "🚀 Rightmove Scraper · 5,000 Free Listings/Month",
+        "name": "rightmove-scraper",
+        "username": "omkar-cloud",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 42,
+          "totalUsers": 2,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T01:05:00.014Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 41,
+            "TIMED-OUT": 0,
+            "TOTAL": 41
+          }
+        },
+        "description": "Rightmove Scraper gets you Rightmove data ⚡ fast, 🎯 100% accurate and 🔍 ridiculously detailed — UK homes for sale, to rent, new homes, student & commercial, full details, floor plans, EPC & agent phone. 💰 $1 per 1,000 listings, no start fee. Scrape your first 5,000 listings free every month 🚀",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Dy6G_sIb6zLbpo48BDX41YQJYYLIKoQqzlozsQhbAFY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaWVEQzY1dlgzNGg0ZDdnV3ctYWN0b3IteGNtbDBHemI1N3FqRDB3eXMtZ1JjV29sOTdHUi1yaWdodG1vdmUucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Omkar Cloud",
+        "userPictureUrl": "https://images.apifyusercontent.com/nOWVWbD9sSLIIyriIagwwle-xZ9sFLwK4cUmcX2unoA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUHdSUUVSSWVKNHhST2JmTUpkcHg5TF9jZ2RRM0Etb2MxWEkzN1ZGNGwySS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhV1ZFUXpZMWRsZ3pOR2cwWkRkblYzY3ZXVXQ2YkZsSmRXWnhTVXBPTXpGU1RHWXRabUYyYVdOdmJpMHlOVFo0TWpVMkxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              },
+              "details": {
+                "eventTitle": "Full listing details scraped",
+                "eventDescription": "Full listing details scraped",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015
+              }
+            }
+          },
+          "startedAt": "2026-09-07T13:57:51.177Z",
+          "createdAt": "2026-09-07T13:57:51.607Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "xcml0Gzb57qjD0wys",
+        "url": "https://apify.com/omkar-cloud/rightmove-scraper"
+      },
+      {
+        "title": "Rightmove Scraper",
+        "name": "rightmove-scraper",
+        "username": "rigelbytes",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 389,
+          "totalUsers": 30,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 10,
+          "lastRunStartedAt": "2026-10-05T08:15:04.431Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Scrape property listings from Rightmove.co.uk using search URLs. Extract prices, images, property types, sizes, locations, and agency details in structured format. Perfect for UK real estate market research, price monitoring, and property data analysis. Only $10 per 1,000 listings.",
+        "categories": [
+          "LEAD_GENERATION",
+          "REAL_ESTATE",
+          "TRAVEL"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/hOemPTH_GaGBx-27IfXR7a1hQDQKlnirMu_2LYZcYuU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vOFFPbXY4R3loOFB4MGtpNXMtYWN0b3ItZDFpNlNwYmd6a1dDaWMwY1YtREJtM01qbWh2dC1SaWdodG1vdmVfU2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Rigel Bytes",
+        "userPictureUrl": "https://images.apifyusercontent.com/Css0NlDdpWO0WwUqZaVJSChHLAuvQ_ylGzXmzPAU36c/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vM1VhOGdzN0dsWWU5S3JqSWQycVg5a2MyQXlZNDhrQnFCYXRqWmtYeGpNdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZPRkZQYlhZNFIzbG9PRkI0TUd0cE5YTXZlR050ZGxaWFVXRkJUekZWUTFvelpEZ3RVaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "listings",
+                "eventDescription": "listing datasets",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-02-25T01:06:14.389Z",
+          "createdAt": "2026-02-25T01:06:14.983Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "d1i6SpbgzkWCic0cV",
+        "url": "https://apify.com/rigelbytes/rightmove-scraper"
+      }
+    ]
+  }
+}

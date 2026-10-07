@@ -1,0 +1,775 @@
+{
+  "data": {
+    "total": 16,
+    "count": 15,
+    "offset": 0,
+    "limit": 15,
+    "desc": false,
+    "items": [
+      {
+        "title": "UK CQC Care Provider Leads Scraper - Care Homes, GPs & Dentists",
+        "name": "uk-cqc-care-provider-leads",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 112,
+          "totalUsers": 6,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-05T08:40:55.334Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape every CQC-registered care provider in England — care homes, home care, GP & dental practices, hospitals & hospices: phone, website, registered manager, beds, CQC rating, provider & Companies House details, geo + lead score. Filter by region, service & rating. Official CQC data + monitor.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/z-XIZ6Tzh4NIT30VblgtbIObBbzbGuYopgTBmkH2MIY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItWlpxMWg5bE1aaWdGUEZqQ2YtTXQ4V25iWmV1VC1VS19DUUNfQ2FyZV9Qcm92aWRlcl9MZWFkcy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "locationRecord": {
+                "eventTitle": "CQC care provider lead record",
+                "eventDescription": "One CQC-registered care provider location in England from official CQC open data — a care home, home-care agency, supported-living, GP or dental practice, hospital, hospice, ambulance or clinic service — with name, full address, phone, website, named registered manager, care-home beds, latest CQC overall rating (plus five sub-ratings when enabled), regulated activities/service types/specialisms, full provider details, geo coordinates, a derived 0-100 lead score and monitor signals.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.008,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-19T00:59:04.115Z",
+          "createdAt": "2026-07-19T00:59:03.668Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ZZq1h9lMZigFPFjCf",
+        "url": "https://apify.com/scrapesage/uk-cqc-care-provider-leads"
+      },
+      {
+        "title": "CQC Care Services Scraper",
+        "name": "care-quality-commission-scraper",
+        "username": "alkausari_mujahid",
+        "stats": {
+          "totalBuilds": 78,
+          "totalRuns": 286,
+          "totalUsers": 6,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-05T10:06:42.128Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Get ratings, registered managers and inspection reports for any CQC-registered care service in England: care homes, homecare, GPs, dentists, hospitals. Filter by type, area and rating, or schedule it to catch new reports and rating changes.",
+        "categories": [
+          "AUTOMATION",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/dIuSatJ0EE_EmnCjm0v_mMgQlk9xNU9WH-UBzw0Yv88/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUTlXRnFLSllWTzEzaU5WcjctYWN0b3ItNjJZVDdzUGpXeGJGSzYzdVQtOG5hT0NQNkQ0MC1jYXJlLXF1YWxpdHktY29tbWlzaW9uLWxvZ28uanBn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Alkausari M",
+        "userPictureUrl": "https://images.apifyusercontent.com/u7hS7ZpjRgQ_T477VQhbyJqjiUm0kBsUYNU4tWWU9BA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQ08yeUpXNlJEQnpZMXJWcFp4bWFFSWNaNUZGb2N1TFV5THUzUnZmVkxKRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVVGxYUm5GTFNsbFdUekV6YVU1V2NqY3RjSEp2Wm1sc1pTMTBSV3REVTNCVmFFUnJMV0ZzYTJGMWMyRnlhVjl0ZFdwaGFHbGtMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "createdAt": "2026-09-27T18:35:24.939Z",
+          "startedAt": "2026-09-27T18:34:57.017Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "service",
+                "eventDescription": "Charged once for every care service saved to your results: its ratings, who runs it, contact details and latest report link. In monitoring mode, only services with a new report or changed ratings are saved.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-27T18:35:47.549Z"
+        },
+        "id": "62YT7sPjWxbFK63uT",
+        "url": "https://apify.com/alkausari_mujahid/care-quality-commission-scraper"
+      },
+      {
+        "title": "UK Care Home Leads - CQC Registered Locations",
+        "name": "cqc-care-locations-scraper",
+        "username": "scrapersdelight",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 20,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T05:16:48.572Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 17,
+            "TIMED-OUT": 0,
+            "TOTAL": 18
+          }
+        },
+        "description": "From $0.50 per 1,000 locations, no start fee. Every CQC-registered care location in England, from the official monthly register: registered manager, bed count, CQC rating, phone, full address, provider and Companies House number. 57,069 locations, 14,887 care homes. Filter by region, rating or beds.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/3TJ5zV9N__J7Hz401nwkrRJ36sy3pC1xaglS03hMTEg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQlRna3dMRUM0YlpWemI4VmItYWN0b3IteFB1eUg2TTNpYkVvTFI5NVctY2FqeTFaMGxGWi1jcWMtY2FyZS1sb2NhdGlvbnMtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Delight",
+        "userPictureUrl": "https://images.apifyusercontent.com/SjUfVS2plLJy6kHfthU67C5f9v0e6wVrAbVTS2w1R3A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRmxwWnZpaF9memhGWnlPTEI4Ml9FRGhTQm1pUFRiYWJUWWNia00ySUhnNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRbFJuYTNkTVJVTTBZbHBXZW1JNFZtSXRjSEp2Wm1sc1pTMWxTRVJxZW5BMU4wOVlMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZmFuVXhhek5tYW5VeGF6Tm1hblV4YXkxamJHVmhiaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "location-scraped": {
+                "eventTitle": "Per care location returned",
+                "eventDescription": "Charged once for each location delivered to your dataset. Locations excluded by your filters - care homes only, region, rating, beds, postcode - are never delivered and never charged, and there is no run-start fee, so a run that matches nothing costs nothing.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.0005
+              }
+            }
+          },
+          "startedAt": "2026-09-17T00:32:31.000Z",
+          "createdAt": "2026-09-17T00:32:31.986Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "xPuyH6M3ibEoLR95W",
+        "url": "https://apify.com/scrapersdelight/cqc-care-locations-scraper"
+      },
+      {
+        "title": "CQC Care Register Scraper",
+        "name": "cqc-register",
+        "username": "danielainsworth",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 131,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T03:09:15.724Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search 100,000+ CQC-regulated care locations in England. Filter by area, rating, service type. Official open data, updated monthly.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/wjV4F2sucnViWMfZv40iouGkw8bZm0mtaRUkOJqCQJk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSlJMdjRYUmdScnloZ1FJWE8tYWN0b3Itd3VZbW9TeW9vTEhYN3U5V04tdXBHZHYyWFBxVi1jcWNfcmVnaXN0ZXJfYWN0b3IucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Daniel Ainsworth",
+        "userPictureUrl": "https://images.apifyusercontent.com/J7ObjMFyC7unOW7OJT6ejTh_06XB9erTIxwAyjDeqfY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN0F3eFFZcUZpUy0xenFZUEVvQnJMZ2lZVlhJQmdDNkk5bzVNNkhiTkVTby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTWEZyZEZsRllucEpRa1V3TjAxWFNIRmhXRmh5ZFRkcFlWQnlUVlZoWDNaMVpHTkxTV05WUTA0d2RtSjZaMk4z.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-08-05T13:58:52.351Z",
+          "startedAt": "2026-08-19T13:58:52.787Z",
+          "apifyMarginPercentage": 0,
+          "notifiedAboutFutureChangeAt": "2026-08-05T13:59:12.493Z",
+          "notifiedAboutChangeAt": "2026-08-19T14:05:43.679Z"
+        },
+        "id": "wuYmoSyooLHX7u9WN",
+        "url": "https://apify.com/danielainsworth/cqc-register"
+      },
+      {
+        "title": "CQC Provider Verification Check",
+        "name": "cqc-provider-verification-check",
+        "username": "nexgenwatch",
+        "stats": {
+          "totalBuilds": 22,
+          "totalRuns": 55,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T03:55:03.165Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 21,
+            "TIMED-OUT": 0,
+            "TOTAL": 22
+          }
+        },
+        "description": "Verify UK care providers and locations against the official CQC weekly directory — one present/absent verdict per identifier. Billed per PRESENT verdict; absent, ambiguous, and unavailable outcomes are returned but never billed.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ClXGQ_BD60ZnzFtBPhETsqBbnHVOGB8pfqgkz18lxis/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ0x3ZmZxWkVkV3ZzTVZRYWQtYWN0b3ItaEg3S0ZhRGRuV2dsYkJjTG0tMlNTZWNwTDR6ci1jcWMtcHJvdmlkZXItdmVyaWZpY2F0aW9uLWNoZWNrLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Watch",
+        "userPictureUrl": "https://images.apifyusercontent.com/o6OYurOmSCLOfsI4R3iuS80czRV7gduDNvLE1-BSd6U/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vczJLbGtqTVBYR2tyQ01aN0VySWpQc1JxNk4tSVl0S25lajRrS0tLQm9lTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMHgzWm1aeFdrVmtWM1p6VFZaUllXUXRjSEp2Wm1sc1pTMUZTVkphTlVsQmMyNDNMVTVIVnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Activate PPE billing at flip: identical amounts, notification suppressed.",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.02,
+                "isOneTimeEvent": true
+              },
+              "provider_check": {
+                "eventTitle": "Provider Check",
+                "eventDescription": "Charged once per unique provider check delivered.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0335
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-12T18:36:22.185Z",
+          "startedAt": "2026-09-12T18:36:22.185Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "hH7KFaDdnWglbBcLm",
+        "url": "https://apify.com/nexgenwatch/cqc-provider-verification-check"
+      },
+      {
+        "title": "UK Care Services Register Scraper (CQC)",
+        "name": "uk-care-services-register-scraper",
+        "username": "crawlerbros",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 59,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-06T05:35:06.178Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape the official CQC register of every regulated care service in England - care homes, homecare agencies, GP practices, dentists, hospitals, hospices, ambulances and more. Search by type, region, local authority, specialism, or keyword and fetch CQC ratings.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/XIeltFl3_Kw7bwhcr_spiFR5yzuS7jxAhxDtPZggU4g/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMDdpWEluck1jaXVPUzEyaFUtYWN0b3ItbXFSVzg0dTliSmFXeU95RDctVnpVZElLNWs2aS1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Crawler Bros",
+        "userPictureUrl": "https://images.apifyusercontent.com/hVYjvC4925v8WlisGKmn3M3Kt4_rwKbDCBrNuGNCv5k/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbi1rdTRfVWpwQnFkb00yRFNoWm45LXRZeVRSNjJTb0Nyb29HN2RWb1dHay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNRGRwV0VsdWNrMWphWFZQVXpFeWFGVXRjSEp2Wm1sc1pTMDNWMDlVZGxWVmREVlVMV055WVhkc1pYSmljbTl6TFd4dloyOHVhbkJsWncuanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00433
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00367
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-07T14:44:20.003Z",
+          "startedAt": "2026-08-07T14:44:20.003Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "mqRW84u9bJaWyOyD7",
+        "url": "https://apify.com/crawlerbros/uk-care-services-register-scraper"
+      },
+      {
+        "title": "UK Care Home Directory Scraper (CQC)",
+        "name": "cqc-care-home-directory-scraper",
+        "username": "crawlerbros",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 61,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-06T05:32:50.958Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrape the official CQC (Care Quality Commission) register of nursing and residential care homes in England. Search by region, local authority, specialism, keyword or postcode, and fetch official inspection ratings (Outstanding/Good/Requires improvement/Inadequate) per home.",
+        "categories": [
+          "AGENTS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/nUaqK_kI_ri9ca3wzDGUAZlrrrkksdLRQCoMxDWI6LE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMDdpWEluck1jaXVPUzEyaFUtYWN0b3ItYklnbmRCcE9OdEh1TWVRZ24tT0JpaG9keGNETi1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Crawler Bros",
+        "userPictureUrl": "https://images.apifyusercontent.com/hVYjvC4925v8WlisGKmn3M3Kt4_rwKbDCBrNuGNCv5k/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbi1rdTRfVWpwQnFkb00yRFNoWm45LXRZeVRSNjJTb0Nyb29HN2RWb1dHay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNRGRwV0VsdWNrMWphWFZQVXpFeWFGVXRjSEp2Wm1sc1pTMDNWMDlVZGxWVmREVlVMV055WVhkc1pYSmljbTl6TFd4dloyOHVhbkJsWncuanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00433
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00367
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-07T14:41:03.229Z",
+          "startedAt": "2026-08-07T14:41:03.229Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "bIgndBpONtHuMeQgn",
+        "url": "https://apify.com/crawlerbros/cqc-care-home-directory-scraper"
+      },
+      {
+        "title": "CQC Care Provider Directory Scraper",
+        "name": "cqc-care-provider-directory",
+        "username": "nexgenwatch",
+        "stats": {
+          "totalBuilds": 29,
+          "totalRuns": 57,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T18:39:50.907Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 13,
+            "TIMED-OUT": 0,
+            "TOTAL": 14
+          }
+        },
+        "description": "One care_provider_record per CQC-registered location: name, address, postcode, phone, website, service types, latest-check date, specialisms, provider, local authority and region, from the newest official weekly CSV (15-column header validated).",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9y_-IyYnnuWd-4nN-pnREmQzlbBZQBeVecX0IaRnkt8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ0x3ZmZxWkVkV3ZzTVZRYWQtYWN0b3ItMlM1RmZDREluQ2Z3T3F2QkQtS01uYno0MWQybC1jcWMtY2FyZS1wcm92aWRlci1kaXJlY3RvcnkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Watch",
+        "userPictureUrl": "https://images.apifyusercontent.com/o6OYurOmSCLOfsI4R3iuS80czRV7gduDNvLE1-BSd6U/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vczJLbGtqTVBYR2tyQ01aN0VySWpQc1JxNk4tSVl0S25lajRrS0tLQm9lTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMHgzWm1aeFdrVmtWM1p6VFZaUllXUXRjSEp2Wm1sc1pTMUZTVkphTlVsQmMyNDNMVTVIVnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.02,
+                "isOneTimeEvent": true
+              },
+              "registry_record": {
+                "eventTitle": "Registry Record",
+                "eventDescription": "Charged once per unique registry record delivered.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0134
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0134
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0134
+                  }
+                }
+              }
+            }
+          },
+          "isPriceChangeNotificationSuppressed": true,
+          "reasonForChange": "Activate pricing at publication (verbatim, no price change)",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-20T06:02:30.592Z",
+          "startedAt": "2026-09-20T06:02:30.592Z"
+        },
+        "id": "2S5FfCDInCfwOqvBD",
+        "url": "https://apify.com/nexgenwatch/cqc-care-provider-directory"
+      },
+      {
+        "title": "CQC Care Service Change & Risk Signals",
+        "name": "cqc-care-service-change-risk-signals",
+        "username": "starshaped_bullsnake",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 23,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T06:03:13.700Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 21,
+            "TIMED-OUT": 0,
+            "TOTAL": 21
+          }
+        },
+        "description": "Detect decision-useful changes in official CQC care service data.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Starshape Tools",
+        "userPictureUrl": "https://images.apifyusercontent.com/bxoA83nqPa0HXrG9QmufAgbpiqMF8PiNGe7eZBdB6ls/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT2dJeGVwOUhwYXl1VUd0UmRtb1NwZHVYbnFzSFJBLUUwZ3ZUWHY0YS1LOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibVprUjNCbmNEQnBObGRZVVc5VFJqVXRjSEp2Wm1sc1pTMWxSblo1YTJVNVEyUlJMV2xqYjI0dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "CQC care service change signal",
+                "eventDescription": "One qualified CQC care service change or risk signal written to the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-26T10:14:42.216Z",
+          "createdAt": "2026-09-26T10:14:42.503Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-26T10:35:59.497Z"
+        },
+        "id": "JspPo2ZlZ4ZUaqjnf",
+        "url": "https://apify.com/starshaped_bullsnake/cqc-care-service-change-risk-signals"
+      },
+      {
+        "title": "CQC Care Homes & Health Services Directory (England)",
+        "name": "cqc-care-directory",
+        "username": "tapedawn",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 9,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-05T17:14:55.208Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 9,
+            "TIMED-OUT": 0,
+            "TOTAL": 9
+          }
+        },
+        "description": "Every care home, home care agency, GP, dentist, and clinic regulated by CQC in England, with overall and key question ratings, care home beds, services, provider details, and coordinates. Filter by rating, service type, region, or beds.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ed Tan",
+        "userPictureUrl": "https://images.apifyusercontent.com/dP0C3hJ_VHMWcKx9HYE5aCaNrYyLwg71K_gcruPleuA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSEIydzZQNU5CVkpWdkFiT2dETndKTnotSGdjbDZDdWxaVmZxa3lObzAzRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TTBNelUxTWpnMlAzWTlOQQ.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "location": {
+                "eventTitle": "Care location record",
+                "eventDescription": "One CQC-registered care location with ratings and details.",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-25T06:03:17.668Z",
+          "startedAt": "2026-09-25T06:03:17.668Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "EfVrqkGLrkKT2s1M9",
+        "url": "https://apify.com/tapedawn/cqc-care-directory"
+      },
+      {
+        "title": "UK CQC Care Quality Scraper",
+        "name": "uk-cqc-care-quality-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 140,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T05:46:55.422Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrapes CQC-registered care providers by name and location. Returns each provider as a flat row with rating, inspection links, and contact details.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/H8fc3stA94hgPTTpluPOARxSd45CdT9DjFVaMWHXb_s/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItdmRMSTR3NEJWaGdSU1BIZkwtTmxhRldHc3NpSC10aGUtY2FyZS1xdWFsaXR5LWNvbW1pc3Npb24taG93LWl0LXdvcmtzLmpwZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.021
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02033
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01967
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.019
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-26T00:00:00.000Z",
+          "createdAt": "2026-05-26T01:41:02.188Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "vdLI4w4BVhgRSPHfL",
+        "url": "https://apify.com/parseforge/uk-cqc-care-quality-scraper"
+      }
+    ]
+  }
+}

@@ -1,0 +1,749 @@
+{
+  "data": {
+    "total": 51,
+    "count": 10,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "NHS UK Jobs Scraper",
+        "name": "nhs-jobs-scraper",
+        "username": "azzouzana",
+        "stats": {
+          "totalBuilds": 34,
+          "totalRuns": 3437,
+          "totalUsers": 76,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 9,
+          "lastRunStartedAt": "2026-10-06T10:00:05.198Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 326,
+            "TIMED-OUT": 0,
+            "TOTAL": 326
+          },
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 2
+        },
+        "description": "$1/1K 💰 Lightning-fast & affordable NHS UK jobs scraper & pay-per-result 🏥! Extract search results from jobs.nhs.uk and export them to EXCEL, CSV, JSON, HTML, and more. 🔥 Simply provide your search URL, and you're good to go! 👀 Start now and stay ahead!",
+        "categories": [
+          "JOBS",
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/33c4TnC75wI4THYnsETWPtt44AFVAUWw-HVQXJxY42w/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vajdkM3JHN0p0RlA1Z3N6bTYtYWN0b3ItZ1NoYUFUcGxLVUVFQXdibVkta2g3MHB0RHZDQi1qN2Qzckc3SnRGUDVnc3ptNi1hY3Rvci1HTkdQM3BSY1J4M3Z4ZDZJci0zQjYzSHByU0E2LU5IUy1Mb2dvLnBu.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Azzouzana",
+        "userPictureUrl": "https://images.apifyusercontent.com/sDoDFC5mZEXknO3MZ3gqFfOTZ0lKzLVZTUSC-kDtS34/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUERBZ21NdzlOV0xLQm5icFRPd1M3emZOS0FJSU5yaDYzV1FsanZ5NzBtRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhamRrTTNKSE4wcDBSbEExWjNONmJUWXRjSEp2Wm1sc1pTMDVVRVJoU21OS1IyRjVMVEUzTnpFek5ETTFOVE0wTWpjdWFtWnBaZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Enjoy! 🚀",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-04T18:16:52.496Z",
+          "createdAt": "2026-05-04T18:16:54.294Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "gShaATplKUEEAwbmY",
+        "url": "https://apify.com/azzouzana/nhs-jobs-scraper"
+      },
+      {
+        "title": "NHS UK [$0.85💰] Jobs Scraper Richest Output",
+        "name": "nhs-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 47,
+          "totalRuns": 2729,
+          "totalUsers": 65,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 13,
+          "lastRunStartedAt": "2026-10-06T13:02:50.169Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 109,
+            "TIMED-OUT": 0,
+            "TOTAL": 110
+          },
+          "actorReviewCount": 4,
+          "actorReviewRating": 5,
+          "bookmarkCount": 3
+        },
+        "description": "💰 $0.85 per 1,000 results. Collects NHS Jobs listings with metadata like vacancy IDs, employer details, pay scheme/band, normalized closing & posting dates, narrative sections (summary, duties, about us), contact info, person specification, documents, and privacy links.",
+        "categories": [
+          "JOBS",
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Uy7wL4ixwrsRmHC86wD0gaNzYr7eDGGFR1oEvmQ98KU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItOXdqaFhLaG45RVFlcG90NXUtT0EzS2luYm1CYy1uaHMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 3,
+        "actorReviewRating": 5,
+        "actorReviewCount": 4,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.00085,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "createdAt": "2025-11-24T14:44:15.987Z",
+          "startedAt": "2025-11-24T14:44:15.987Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "9wjhXKhn9EQepot5u",
+        "url": "https://apify.com/memo23/nhs-scraper"
+      },
+      {
+        "title": "NHS UK Jobs Scraper",
+        "name": "NHS-UK-jobs-Scraper",
+        "username": "shahidirfan",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 1760,
+          "totalUsers": 57,
+          "totalUsers7Days": 5,
+          "totalUsers30Days": 13,
+          "totalUsers90Days": 22,
+          "lastRunStartedAt": "2026-10-06T10:10:04.761Z",
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 493,
+            "TIMED-OUT": 0,
+            "TOTAL": 493
+          }
+        },
+        "description": "Efficiently extract vacancies from the UK's official health job board. This lightweight actor is designed for speed and reliability. For the best performance and to avoid blocking, using residential proxies is highly recommended. Streamline your healthcare recruitment data today!",
+        "categories": [
+          "JOBS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ijO50DFGZhniIXuSicLqtJVZIoOQcLfj5syB5pgJKVY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbHRERFl5dXg4VENxSmRIdnUtYWN0b3ItREFQMmV2cEdWSWM0c1BYZ08tS3Y0Z29jMmh2My1OSFNfaWNvbi5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 5,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Shahid Irfan",
+        "userPictureUrl": "https://images.apifyusercontent.com/fW89m0Rypcqqcq5ra1IUfzaZrqfh_cUxizFJFEnNGVc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZG12ZGxxVU9KV1JfcmpfMjQ1ZURFMHI0cmRUNXpXdTFUUm5MS0xtZ0pEcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiSFJFUkZsNWRYZzRWRU54U21SSWRuVXRjSEp2Wm1sc1pTMXVTbnA1V0RSb2QwNTZMVFkzTkdRNVpqWTBZemhoTTJNd01URXdOalUwWldKa1pERmxNRE0zTlRBekxtcHdaV2MuanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-03T09:21:04.431Z",
+          "createdAt": "2026-06-19T09:21:05.019Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-06-19T09:21:25.371Z"
+        },
+        "id": "DAP2evpGVIc4sPXgO",
+        "url": "https://apify.com/shahidirfan/nhs-uk-jobs-scraper"
+      },
+      {
+        "title": "NHS Jobs Scraper",
+        "name": "nhs-jobs-scraper",
+        "username": "crawlerbros",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 492,
+          "totalUsers": 43,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 13,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-06T07:37:44.443Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 5,
+            "SUCCEEDED": 48,
+            "TIMED-OUT": 0,
+            "TOTAL": 53
+          }
+        },
+        "description": "Extract UK NHS job vacancies from jobs.nhs.uk including title, employer, salary, band, pay scheme, location, contract type, closing date, full description, and more.",
+        "categories": [
+          "JOBS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/fOfztMJ5_b_wAOpPk1E10dktocKmkSQCuHq4tqOxxl4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMDdpWEluck1jaXVPUzEyaFUtYWN0b3ItVkx1OExhdE9OU2UxZGZBclYtU0t3SjN5alV6YS1uaHMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Crawler Bros",
+        "userPictureUrl": "https://images.apifyusercontent.com/hVYjvC4925v8WlisGKmn3M3Kt4_rwKbDCBrNuGNCv5k/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbi1rdTRfVWpwQnFkb00yRFNoWm45LXRZeVRSNjJTb0Nyb29HN2RWb1dHay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNRGRwV0VsdWNrMWphWFZQVXpFeWFGVXRjSEp2Wm1sc1pTMDNWMDlVZGxWVmREVlVMV055WVhkc1pYSmljbTl6TFd4dloyOHVhbkJsWncuanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00167
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00133
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-04-11T18:14:56.758Z",
+          "createdAt": "2026-04-11T18:14:56.657Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "VLu8LatONSe1dfArV",
+        "url": "https://apify.com/crawlerbros/nhs-jobs-scraper"
+      },
+      {
+        "title": "NHS Job Extractor",
+        "name": "nhs-job-extractor",
+        "username": "kawsar",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 213,
+          "totalUsers": 26,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 6,
+          "totalUsers90Days": 12,
+          "lastRunStartedAt": "2026-10-06T07:53:43.946Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 32
+          }
+        },
+        "description": "NHS Jobs Scraper that pulls vacancy listings from jobs.nhs.uk by keyword, location, and filter, so recruiters and analysts get clean structured job data without manual searching.",
+        "categories": [
+          "JOBS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Zll8-MeGaODj0e1g-8iEKg9LNK-9HrQuhh6WOQMN-Ic/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vU1REbnRaNW5NcThtbXo5UFQtYWN0b3ItUWZvYUJ4VG1lakdydkFBWU4tMGdhc2x4YTZyVy1OSFNfVUsucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Kawsar",
+        "userPictureUrl": "https://images.apifyusercontent.com/NbPj4GhqzRvZ979JRazp7x2iBeV7Gj-kMexG-BjZeaU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOHJVbGI1T2lmTWNCMXU0OTVrTEZwNUZaZExuN2NRSldWQUZTWHhlbDE3OC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVMVJFYm5SYU5XNU5jVGh0YlhvNVVGUXRjSEp2Wm1sc1pTMVBUbVJuUzFoaVZGZ3hMWEJvYjNSdlgzTnRZV3hzWHlVeU9ERWxNamt1YW5CbFp3LmpwZWc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00799
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00699
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00599
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00499
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-23T11:55:37.166Z",
+          "createdAt": "2026-05-23T11:55:35.080Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "QfoaBxTmejGrvAAYN",
+        "url": "https://apify.com/kawsar/nhs-job-extractor"
+      },
+      {
+        "title": "NHS Jobs Scraper",
+        "name": "nhs-jobs-scraper",
+        "username": "automation-lab",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 180,
+          "totalUsers": 19,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 8,
+          "totalUsers90Days": 10,
+          "lastRunStartedAt": "2026-10-06T08:52:59.519Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 6,
+            "SUCCEEDED": 72,
+            "TIMED-OUT": 0,
+            "TOTAL": 78
+          }
+        },
+        "description": "Extract structured NHS Jobs vacancies with salary, pay band, dates, full descriptions, person specifications, employer details, and public recruiter contacts. Export to JSON, CSV, or Excel; schedule runs or use the API.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/1LXxKvbYsUQ4cspCzZ48M8mFymTCM02V1aUhKB0oda8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotYWN0b3ItMDZYcmFSbGZzZ09sdXg3M3ktMWhIZllEMlZ1US1hY3Rvci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Automation Lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/K_C4LOMfOgJZv5UcVqbze6xlfc6mS23zsoHRS5nDXvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMDdsSFdveGptQlpJN0NMWkJqVi1wUlBjV0ZHRFQyRzIwVjdkVzBRSzBCay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiblJJUTI1b1RsVnJlbGhTTjI1aVZWb3RjSEp2Wm1sc1pTMW9ORkJYYTNsWWVVSmxMV0YxZEc5dFlYUnBiMjR0YkdGaUxYQnliMlpwYkdVdGJHOW5ieTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "start": {
+                "eventTitle": "Run started",
+                "eventDescription": "One-time fee charged when a run starts. Covers fixed startup cost (init, proxy warmup, first HTTP setup).",
+                "eventPriceUsd": 0.0003,
+                "isOneTimeEvent": true
+              },
+              "result": {
+                "eventTitle": "Result extracted",
+                "eventDescription": "Charged per result extracted.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00012067
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00010493
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000081846
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.000062958
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.000041972
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000029381
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-25T20:05:41.486Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-25T20:05:41.572Z",
+          "notifiedAboutChangeAt": "2026-08-25T20:35:44.453Z"
+        },
+        "id": "06XraRlfsgOlux73y",
+        "url": "https://apify.com/automation-lab/nhs-jobs-scraper"
+      },
+      {
+        "title": "NHS UK $0.8💰 URL | Keyword |  Deep Search Scraper",
+        "name": "jobs-nhs-uk-scraper",
+        "username": "abotapi",
+        "stats": {
+          "totalBuilds": 22,
+          "totalRuns": 290,
+          "totalUsers": 8,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-06T06:48:35.458Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 47,
+            "TIMED-OUT": 0,
+            "TOTAL": 47
+          }
+        },
+        "description": "From $0.8/1k. Scrape nhs.uk Jobs listings into a flat dataset. Extract 50+ fields, including pay band, salary, full description, essential and desirable criteria, PDFs, sponsorship, DBS, employer details, contacts, and apply URL. Search by filters or use any URL.",
+        "categories": [
+          "JOBS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/JP83CjF0J728iK-ua8pG6W1znFkIvPcp7UC7VhuPNAU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vajNMd1VnM0lnNWNHR0ZVbWUtYWN0b3ItdldsSE9oSThBVXFEWGRwcGItNHh5dmVTbVVmcC1TY3JlZW5zaG90XzIwMjYtMDUtMDRfYXRfMTEuMjguMzBfcG0ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Abot API",
+        "userPictureUrl": "https://images.apifyusercontent.com/V4bboesBNqPPXJ9-hHBndp5sog0EAYDRTnAnxwN4j9Q/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzlhdkFfMWFlc0Ryc2pDM2xzZXlHZ2F3a3dvWDROenRla2l4MnU2ZnR2US9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhak5NZDFWbk0wbG5OV05IUjBaVmJXVXRjSEp2Wm1sc1pTMVdSRU5CZVdSbmVEQlhMV1V3TkRBd01HRXlMVFZoT0dFdE5HWXhPUzA0TURFMUxUSTNNR1EwTURBNVlUSTRPQzV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.02
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00008
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-04T13:13:06.664Z",
+          "createdAt": "2026-05-04T13:13:07.358Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "vWlHOhI8AUqDXdppb",
+        "url": "https://apify.com/abotapi/jobs-nhs-uk-scraper"
+      },
+      {
+        "title": "NHS UK Jobs Scraper 🏥🇬🇧📊 - Cheap",
+        "name": "nhs-uk-jobs-scraper---cheap",
+        "username": "scrapestorm",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 247,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "lastRunStartedAt": "2026-10-05T15:56:44.361Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Looking to extract NHS job listings across the UK? 🔍 The NHS UK Jobs Scraper 🏥 lets you collect jobs by keyword & location, including employer, salary, contract type, location, and closing dates.\n\nFast, structured, and ready for analysis.\n🚫 No proxy needed.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Gfj7YLRbLi6Gtqk9sEq5CYLAhOu1peUGGWYnyxjbGac/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQkFoY29OZWZMY2Y5TDNoUVMtYWN0b3IteG9mSzFhcEU1b01jcEtpUUotRE9SbllFVUgxMy11ay5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Storm_Scraper",
+        "userPictureUrl": "https://images.apifyusercontent.com/VwryAra0QLMEMuC7T20ezHx0tkgf6XoR2o7MqaBC1ZE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN0ktVzd2cjJab1J4VUptZ09LcjlFX2xINUV3cFFzNjhfQ2kwdU9pQzIwOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRa0ZvWTI5T1pXWk1ZMlk1VEROb1VWTXRjSEp2Wm1sc1pTMUVZWE5CUzNKRWVIaGhMVk4wYjNKdExuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00299,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-16T08:43:04.796Z",
+          "createdAt": "2026-09-16T08:43:05.503Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-16T09:06:03.698Z"
+        },
+        "id": "xofK1apE5oMcpKiQJ",
+        "url": "https://apify.com/scrapestorm/nhs-uk-jobs-scraper---cheap"
+      },
+      {
+        "title": "NHS Jobs Scraper - UK Healthcare Vacancies",
+        "name": "nhs-jobs-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 223,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-06T04:26:52.054Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 3,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "Scrape job listings from jobs.nhs.uk, the official NHS England jobs site. Search by keyword and location, extract job titles, employers, salary bands, contract types, and closing dates. No login or cookies required.",
+        "categories": [
+          "JOBS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ss-n3CO184xtxCygkpaM-lCJNSQjqTgz-htxfdRuoUA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3ItRGNBUWw5S0F2bzhqdEM1aDMtcG9vOW5ZN2tWUC1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-27T11:38:51.000Z",
+          "reasonForChange": "Pricing adjusted to reflect infrastructure cost",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.005,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.002,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-13T10:38:51.589Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "DcAQl9KAvo8jtC5h3",
+        "url": "https://apify.com/studio-amba/nhs-jobs-scraper"
+      },
+      {
+        "title": "NHS Jobs Scraper",
+        "name": "nhs-jobs-search-scraper",
+        "username": "jobsapi",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 49,
+          "totalUsers": 4,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-06T07:37:53.787Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Extract rich NHS Jobs records with clean job sections, person-specification criteria, employer and contact details, structured locations, pay bands, salaries, contracts, dates, regulatory checks, documents, and application links.",
+        "categories": [
+          "JOBS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/2ohKCETWjtuOZrtMv4v6zVScDLGcn1fs4ygpHqOPgfo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMWhrYktEUmt1SExCUkVPY3EtYWN0b3ItV2oyaWxuWkRhaW92OVk0dVAtaGd2Z2MwYWhoVy1uaHMtam9icy1zZWFyY2gtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Jobs API",
+        "userPictureUrl": "https://images.apifyusercontent.com/DW-B5VO6KWx6g5ZqPUM6zvIt5gMAuyneCrGwRjv8fpQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSC04VHExc3gwZnFXYWQtQjR5T2hBaG50V3N1bkVyUk81QU5iVDVzSkJaSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNV2hyWWt0RVVtdDFTRXhDVWtWUFkzRXRjSEp2Wm1sc1pTMWhkVGRMVDI5Q2NFOXlMVU5vWVhSSFVGUmZTVzFoWjJWZlNuVnVYekkwWDE4eU1ESTJYMTh4TVY4d05WOHhPRjlRVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "isPPEPlatformUsagePaidByUser": true,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "NHS Jobs Job Record",
+                "eventDescription": "One public NHS Jobs job record with title, employer, location, employment terms, description, and application URL. Each item written to the default dataset is charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00299,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-04T06:12:24.250Z",
+          "startedAt": "2026-09-04T06:12:25.380Z",
+          "notifiedAboutChangeAt": "2026-09-04T06:35:55.036Z"
+        },
+        "id": "Wj2ilnZDaiov9Y4uP",
+        "url": "https://apify.com/jobsapi/nhs-jobs-search-scraper"
+      }
+    ]
+  }
+}

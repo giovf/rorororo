@@ -1,0 +1,313 @@
+{
+  "request": "exchange-2026-W41",
+  "fetched_at": "2026-10-07T08:17:14.350Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=companies%20house&limit=15",
+      "fetched_at": "2026-10-07T08:17:11.530Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=companies%20house&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"cd7f-KkffXSu1IJPqnkZTTCLExTgu698\""
+      },
+      "file": "1.json",
+      "bytes": 52607,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=uk%20companies&limit=15",
+      "fetched_at": "2026-10-07T08:17:11.830Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=uk%20companies&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"d339-5okABzyZEY2jGbf17lP1IvjzPIc\""
+      },
+      "file": "2.json",
+      "bytes": 54073,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=visa%20sponsor&limit=15",
+      "fetched_at": "2026-10-07T08:17:11.908Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=visa%20sponsor&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"b7be-zgcfoy9DTTyE6obYRK52aw/lEoo\""
+      },
+      "file": "3.json",
+      "bytes": 47038,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=planning%20applications&limit=15",
+      "fetched_at": "2026-10-07T08:17:11.976Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=planning%20applications&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"957f-KEXcWWzC1WbYqa2g6oRQ3u3AP4g\""
+      },
+      "file": "4.json",
+      "bytes": 38271,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=food%20hygiene&limit=15",
+      "fetched_at": "2026-10-07T08:17:12.070Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=food%20hygiene&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"c373-AZLdDrBkuBiL4MkRqb4YU/AaNxw\""
+      },
+      "file": "5.json",
+      "bytes": 50035,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=tenders&limit=15",
+      "fetched_at": "2026-10-07T08:17:12.181Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=tenders&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"c3d2-uTTaRshug+EAPE11SVzXRTuplcw\""
+      },
+      "file": "6.json",
+      "bytes": 50130,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=charity&limit=15",
+      "fetched_at": "2026-10-07T08:17:12.257Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=charity&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"bcd6-VUN9Q00YPp94GJ3EabumKTerceI\""
+      },
+      "file": "7.json",
+      "bytes": 48342,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=cqc&limit=15",
+      "fetched_at": "2026-10-07T08:17:12.360Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=cqc&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"9054-2TTw3FW5pJkCQQPsEzR0ikZOJfM\""
+      },
+      "file": "8.json",
+      "bytes": 36948,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=land%20registry&limit=15",
+      "fetched_at": "2026-10-07T08:17:12.440Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=land%20registry&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"a384-ODaIxAiLCk94L/SqV3N/aPL4n4k\""
+      },
+      "file": "9.json",
+      "bytes": 41860,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=waste%20carrier&limit=15",
+      "fetched_at": "2026-10-07T08:17:12.543Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=waste%20carrier&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"db01-5fWyv/yMhU2JtDrThHW2wamssBg\""
+      },
+      "file": "10.json",
+      "bytes": 56065,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=gov.uk&limit=15",
+      "fetched_at": "2026-10-07T08:17:12.606Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=gov.uk&limit=15",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"f24a-7SRFjBi/Ehf5+3NHQMrmr27oVF8\""
+      },
+      "file": "11.json",
+      "bytes": 62026,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=uk&limit=30&sortBy=popularity",
+      "fetched_at": "2026-10-07T08:17:12.665Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=uk&limit=30&sortBy=popularity",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"15e35-wTn3zoCniAlrVYD5b4pM9Vuy2CY\""
+      },
+      "file": "12.json",
+      "bytes": 89653,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=enrichment&limit=20&sortBy=popularity",
+      "fetched_at": "2026-10-07T08:17:12.755Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=enrichment&limit=20&sortBy=popularity",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"12b66-x4vq3jkq7ZeuQibNsYHBJj1G/+g\""
+      },
+      "file": "13.json",
+      "bytes": 76646,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=monitor&limit=20&sortBy=popularity",
+      "fetched_at": "2026-10-07T08:17:12.835Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=monitor&limit=20&sortBy=popularity",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"1df92-4R4urJJlceVe8w2Jn8lW0T3lkZ0\""
+      },
+      "file": "14.json",
+      "bytes": 122770,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=rightmove&limit=10",
+      "fetched_at": "2026-10-07T08:17:12.930Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=rightmove&limit=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"55d9-MAE+i0onc+xUHSOzzahbyVFKTrY\""
+      },
+      "file": "15.json",
+      "bytes": 21977,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=indeed%20uk&limit=10",
+      "fetched_at": "2026-10-07T08:17:13.011Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=indeed%20uk&limit=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"7a2b-CnWFXge2PntCXVDEHXVUTJZ+0bc\""
+      },
+      "file": "16.json",
+      "bytes": 31275,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=ofsted&limit=10",
+      "fetched_at": "2026-10-07T08:17:13.077Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=ofsted&limit=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"7c44-1DocwmIivctcT6oo4WXfrKVaN+k\""
+      },
+      "file": "17.json",
+      "bytes": 31812,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=nhs&limit=10",
+      "fetched_at": "2026-10-07T08:17:13.142Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=nhs&limit=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"8933-o+oVIX/eKrwd5J45PF1QaYPu3cM\""
+      },
+      "file": "18.json",
+      "bytes": 35123,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=epc&limit=10",
+      "fetched_at": "2026-10-07T08:17:13.209Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=epc&limit=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"9160-3TTIU1wSOQ8d2+7FPIteVEBp8Uw\""
+      },
+      "file": "19.json",
+      "bytes": 37216,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://assets.publishing.service.gov.uk/media/68e3b7b9b9b0a1a3f2d9c9f0/2025-10-06_-_Worker_and_Temporary_Worker.csv",
+      "fetched_at": "2026-10-07T08:17:13.407Z",
+      "status": 404,
+      "final_url": "https://assets.publishing.service.gov.uk/media/68e3b7b9b9b0a1a3f2d9c9f0/2025-10-06_-_Worker_and_Temporary_Worker.csv",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "41"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/api/content/government/publications/register-of-licensed-sponsors-workers",
+      "fetched_at": "2026-10-07T08:17:13.947Z",
+      "status": 200,
+      "final_url": "https://www.gov.uk/api/content/government/publications/register-of-licensed-sponsors-workers",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "23834",
+        "etag": "W/\"2241780755310921c4e59b5c668fc56c\""
+      },
+      "file": "21.json",
+      "bytes": 252340,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=faceless-api&limit=20",
+      "fetched_at": "2026-10-07T08:17:14.282Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=faceless-api&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "122",
+        "etag": "W/\"7a-pt1wpmLmtWroy5pMh9P7Bq12gXk\""
+      },
+      "file": "22.json",
+      "bytes": 122,
+      "truncated": false
+    }
+  ]
+}

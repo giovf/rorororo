@@ -1,0 +1,1375 @@
+{
+  "data": {
+    "total": 128,
+    "count": 15,
+    "offset": 0,
+    "limit": 15,
+    "desc": false,
+    "items": [
+      {
+        "title": "Gov.uk Jobs Scraper - Low-cost💲🔥💼🇬🇧",
+        "name": "gov-uk-jobs-scraper-low-cost",
+        "username": "delectable_incubator",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 237,
+          "totalUsers": 10,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-06T00:16:40.216Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 0,
+            "SUCCEEDED": 53,
+            "TIMED-OUT": 20,
+            "TOTAL": 75
+          }
+        },
+        "description": "Scrape Find a Job (DWP) listings 💼🇬🇧 with a powerful UK job scraper. Extract job titles, employer names, locations, salaries, contract types, posting dates and job URLs. Ideal for labour market research, recruitment intelligence, hiring trend analysis and employment datasets 📊🚀",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/SH5wJJr6qKM414KrnXJyPdA-lTPb2TYTTczWCTZ0DyA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vckdURGUxa3FQa3ZESWVLSFAtYWN0b3ItMWI1SE8zSERIYVlDejk4V1gtRG9SSW9rME52eC1HZW1pbmlfR2VuZXJhdGVkX0ltYWdlX2wxaGxqbmwxaGxqbmwxaGwucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Prime Scrape",
+        "userPictureUrl": "https://images.apifyusercontent.com/IZ6_9dL6CotPFZRdGsZ7vvfBCnw6xGlhhINPHq3b8MY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSVpvMDFPdE15dWdKX2ROZW1KamRQWXRXX0tERTlMQk1kQjFNcElKZmRoUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZja2RVUkdVeGEzRlFhM1pFU1dWTFNGQXRjSEp2Wm1sc1pTMTVjbVpZU21ZM1NuZElMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZlpIcGhlbkkyWkhwaGVuSTJaSHBoZWk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00599
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00499
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-05-30T11:54:53.608Z",
+          "createdAt": "2026-05-30T11:54:52.549Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "1b5HO3HDHaYCz98WX",
+        "url": "https://apify.com/delectable_incubator/gov-uk-jobs-scraper-low-cost"
+      },
+      {
+        "title": "Gov.UK Business Scraper",
+        "name": "gov-uk-business-scraper",
+        "username": "techforce.global",
+        "stats": {
+          "totalBuilds": 20,
+          "totalRuns": 870,
+          "totalUsers": 26,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-05T20:58:46.450Z",
+          "actorReviewCount": 10,
+          "actorReviewRating": 4.963471661889883,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape UK Companies House data + auto-enrich with PSC (Persons with Significant Control / beneficial ownership). Filter by SIC code, industry, location, status & date. The only Apify actor with full PSC enrichment. No monthly fee pay per event only.",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/2XUtUZG2dJ0zzRTSvz210To0RQ7fXd6yfmMEbSitOAM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vN3N2VkZCQVNtY3BVelpiaWwtYWN0b3ItMEVMRmI2UTBzeWIzMXI0WFMtbzRsZTZXNkV5Wi1Hb3YuVUtfQnVzaW5lc3NfU2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 4.963471661889883,
+        "actorReviewCount": 10,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Techforce Global",
+        "userPictureUrl": "https://images.apifyusercontent.com/jvxiOo8gemeIaMVi4WiEZyOTNk896tFOyleaUAK_yEk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZERUOWZPSm1EdGVfSTI2SVVsZUxpajh3emRRczVlcGozNVRyZWFqNWttTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOM04yVmtaQ1FWTnRZM0JWZWxwaWFXd3RjSEp2Wm1sc1pTMVVabGRXY0doUWQyWTFMWFJsWTJobWIzSmpaVjlpYjNoZmJHOW5iMTl2Y21GdVoyVXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "The price is increasing to cover the development costs.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "premium": {
+                "eventTitle": "Premium (Without API Key)",
+                "eventDescription": "The Actor will use the in-built API keys",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00133
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00117
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "basic": {
+                "eventTitle": "Basic (With API Key)",
+                "eventDescription": "The Actor will use the Companies House API key provided by the user.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00093
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00087
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0008
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-08-18T05:16:28.408Z",
+          "createdAt": "2026-08-04T05:16:28.137Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-08-04T05:16:48.393Z",
+          "notifiedAboutChangeAt": "2026-08-19T08:06:30.124Z"
+        },
+        "id": "0ELFb6Q0syb31r4XS",
+        "url": "https://apify.com/techforce.global/gov-uk-business-scraper"
+      },
+      {
+        "title": "Company House GOV.UK",
+        "name": "company-house-gov-uk",
+        "username": "nocodeventure",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 1442,
+          "totalUsers": 21,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-05T10:55:05.446Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 3,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Get all the information you need about UK companies in seconds! This scraper grabs data from the official Companies House website - that's where the UK government keeps records of every company.",
+        "categories": [
+          "AUTOMATION",
+          "INTEGRATIONS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9HdAc7yhXuonl8OXPm0XsmikBjxgtnOr_OfaG4YfSos/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vejRjUG5lRm83MnhaSk01bnktYWN0b3ItRzZLdFQ3WHRkUmdWcmF6dDgtR1pqelIxa2o1WC1yZXNob3QtaWNvbi1yZWNpcGVzLWJvb2staS1QMkpNMzlXS0Q0LnN2Zy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 3,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "No-Code Venture",
+        "userPictureUrl": "https://images.apifyusercontent.com/VnyJk2cDzQoJOyEP46s7c9I-uTnUxFZ0cNlBCsb_PTk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdklsTTZCc09XbkUtTVdZdV9sZEpUR2V4bmdVQjhicGpJbGh3eE5PeDI4TS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlalJqVUc1bFJtODNNbmhhU2swMWJua3RjSEp2Wm1sc1pTMTFhMmxIYlhKVmNuRkVMVTVmWlc1ZlZsOU1iMmR2WDBsdVgxcDNZWEowTFZkcGRGOGxNamd4SlRJNUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Decreasing the price of the actor and excluding platform usage. You also pay for the platform usage your Actor runs generate.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0008
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "proxy-group-usage": {
+                "eventTitle": "Proxy Group Usage",
+                "eventDescription": "Could be residential proxies or special proxies.",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.08
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.07
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.06
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.05
+                  }
+                }
+              },
+              "proxy-usage": {
+                "eventTitle": "Proxy Usage",
+                "eventDescription": "Default proxy (Non-residential)",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.02
+                  }
+                }
+              },
+              "proxy-record-surcharge": {
+                "eventTitle": "Proxy record surcharge",
+                "eventDescription": "Surcharge for writing records using the proxy service as the cost of using the actor becomes considerably higher.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                }
+              },
+              "no-result": {
+                "eventTitle": "No Result",
+                "eventDescription": "Charged when invalid company URL's are used or when no results are found for the given query.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "startedAt": "2026-06-05T07:58:34.786Z",
+          "createdAt": "2026-05-22T07:58:35.329Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-05-22T07:58:55.553Z"
+        },
+        "id": "G6KtT7XtdRgVrazt8",
+        "url": "https://apify.com/nocodeventure/company-house-gov-uk"
+      },
+      {
+        "title": "data.gov.uk Datasets Scraper",
+        "name": "data-gov-uk-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 57,
+          "totalRuns": 357,
+          "totalUsers": 10,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-05T11:36:57.120Z",
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrapes dataset listings from data.gov.uk by search query, topic, publisher, or format. Returns each dataset as a flat row with title, description, publisher, licence, and file URLs.",
+        "categories": [
+          "TRAVEL"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/_lYbb0blaXFzyLowa_Im7S5yU4DoXROLbKwFpED1ThI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItTjd5dkh6M1VjOUJyejVNOFAtYk0xcTJkQmN4QS1kYXRhLWdvdi11ay5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 4.999999999999999,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.075
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.06667
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.05833
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.05
+                  }
+                }
+              },
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0012
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-08T17:21:24.000Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-07-24T17:35:14.308Z",
+          "notifiedAboutFutureChangeAt": "2026-07-24T17:35:34.484Z",
+          "notifiedAboutChangeAt": "2026-08-08T17:35:47.306Z"
+        },
+        "id": "N7yvHz3Uc9Brz5M8P",
+        "url": "https://apify.com/parseforge/data-gov-uk-scraper"
+      },
+      {
+        "title": "Company House GOV.UK (PPE)",
+        "name": "company-house-gov-uk-ppe",
+        "username": "nocodeventure",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 265,
+          "totalUsers": 8,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-05T11:13:03.764Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Get all the information you need about UK companies in seconds! This scraper grabs data from the official Companies House website - that's where the UK government keeps records of every company.",
+        "categories": [
+          "AUTOMATION",
+          "REAL_ESTATE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/X2FK7mML5d71DBZ5fS6NduEWwItLM8zgRrN4-hM3igE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vejRjUG5lRm83MnhaSk01bnktYWN0b3IteTF5VXJpQlRLb2RUWkRuQ3QtZG9CWk94YzdGVi16NGNQbmVGbzcyeFpKTTVueS1hY3Rvci1HNkt0VDdYdGRSZ1ZyYXp0OC1HWmp6UjFrajVYLXJlc2hvdC1pY29u.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "No-Code Venture",
+        "userPictureUrl": "https://images.apifyusercontent.com/VnyJk2cDzQoJOyEP46s7c9I-uTnUxFZ0cNlBCsb_PTk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdklsTTZCc09XbkUtTVdZdV9sZEpUR2V4bmdVQjhicGpJbGh3eE5PeDI4TS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlalJqVUc1bFJtODNNbmhhU2swMWJua3RjSEp2Wm1sc1pTMTFhMmxIYlhKVmNuRkVMVTVmWlc1ZlZsOU1iMmR2WDBsdVgxcDNZWEowTFZkcGRGOGxNamd4SlRJNUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Decreasing the price of the actor and excluding platform usage. You also pay for the platform usage your Actor runs generate.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0008
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "proxy-group-usage": {
+                "eventTitle": "Proxy Group Usage",
+                "eventDescription": "Could be residential proxies or special proxies.",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.08
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.07
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.06
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.05
+                  }
+                }
+              },
+              "proxy-usage": {
+                "eventTitle": "Proxy Usage",
+                "eventDescription": "Default proxy (Non-residential)",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.02
+                  }
+                }
+              },
+              "proxy-record-surcharge": {
+                "eventTitle": "Proxy record surcharge",
+                "eventDescription": "Surcharge for writing records using the proxy service as the cost of using the actor becomes considerably higher.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                }
+              },
+              "no-result": {
+                "eventTitle": "No Result",
+                "eventDescription": "Charged when invalid company URL's are used or when no results are found for the given query.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              }
+            }
+          },
+          "startedAt": "2026-06-05T07:58:44.758Z",
+          "createdAt": "2026-05-22T07:58:44.970Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-05-22T07:59:05.161Z"
+        },
+        "id": "y1yUriBTKodTZDnCt",
+        "url": "https://apify.com/nocodeventure/company-house-gov-uk-ppe"
+      },
+      {
+        "title": "Findajob.dwp.gov.uk Scraper",
+        "name": "findajob-dwp-gov-uk-scraper",
+        "username": "lexis-solutions",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 307,
+          "totalUsers": 7,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-05T20:38:32.847Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          },
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 2
+        },
+        "description": "Scrape job listings from the UK Government’s FindAJob portal—collect titles, companies, locations, employment types, salaries, and posting dates. Ideal for job aggregation, labor market research, recruitment intelligence, and competitive monitoring. Fast, reliable, customizable.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/QoeBnuRvpvSLBTJPi5BkTZMkA6lY4de3Hp7p696lQs4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRGV2YmtZM2FkTVRCdW9FQ3QtYWN0b3Ita0tvbEduODNoTE9BVkN3dlktc0FPUUJWaGhLcS1CcmllZmNhc2VfaWNvbi5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Lexis Solutions",
+        "userPictureUrl": "https://images.apifyusercontent.com/w6fgguezd0VqQ371uTghlQ5W1bkPWD36aUaQ5oCDq3Q/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWURtUkRMTnNtT2I3aXM4R0REd211MXZicGQxWW1TLThnbnFkYXN6WWtiRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11WVcxaGVtOXVZWGR6TG1OdmJTOUVaWFppYTFrellXUk5WRUoxYjBWRGRDOUlRVVZCVG1wcE5ETndTRXBtUkdaaVlTMXNiMmR2TFdkeVlXUnBaVzUwTG1wd1p3LmpwZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.011
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.008
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-30T15:51:35.356Z",
+          "startedAt": "2026-09-30T15:51:35.356Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-30T16:05:50.741Z"
+        },
+        "id": "kKolGn83hLOAVCwvY",
+        "url": "https://apify.com/lexis-solutions/findajob-dwp-gov-uk-scraper"
+      },
+      {
+        "title": "GOV.UK Content Sitemap Scraper",
+        "name": "govuk-content-sitemap-scraper",
+        "username": "neuton",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 59,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T04:48:57.364Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Discover GOV.UK URLs from sitemaps and enrich them with GOV.UK Content API metadata for policy monitoring, compliance research, and public-content inventories.",
+        "categories": [
+          "AI",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/aAajZX-IUXl61tOs1U-OsNnMi8T3ZiOj35Hd7K_XtNs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vd3RrQ2lzSHViYVhFcm9HM00tYWN0b3ItTEpGeUZKcmJid0RRZ1k5bG8tdFdoQm9Yc0U4cS1nb3Z1ay1jb250ZW50LXNpdGVtYXAtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Neuton Scripts",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-10T14:36:46.463Z",
+          "startedAt": "2026-08-10T14:36:43.000Z",
+          "reasonForChange": "Initial launch pricing for govuk-content-sitemap-scraper",
+          "isPriceChangeNotificationSuppressed": true,
+          "forceContainsSignificantPriceChange": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single content page row written to the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          }
+        },
+        "id": "LJFyFJrbbwDQgY9lo",
+        "url": "https://apify.com/neuton/govuk-content-sitemap-scraper"
+      },
+      {
+        "title": "Legislation.gov.uk Scraper",
+        "name": "legislation-gov-uk-scraper",
+        "username": "crawlerbros",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 93,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-05T09:31:11.785Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape UK statute law from legislation.gov.uk. Fetch specific Acts and Statutory Instruments, browse by type and year, get the newest legislation, or search by title. Returns clean metadata plus official XML/PDF links.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/QPLyB1ITSzN6uHMRjJYyxwbtBhC7lF8nlX5mK13oNDI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMDdpWEluck1jaXVPUzEyaFUtYWN0b3ItR0cwb0tvaTRVazdYVmd6QzMtSDFhN2FSQmR1Si1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Crawler Bros",
+        "userPictureUrl": "https://images.apifyusercontent.com/hVYjvC4925v8WlisGKmn3M3Kt4_rwKbDCBrNuGNCv5k/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbi1rdTRfVWpwQnFkb00yRFNoWm45LXRZeVRSNjJTb0Nyb29HN2RWb1dHay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNRGRwV0VsdWNrMWphWFZQVXpFeWFGVXRjSEp2Wm1sc1pTMDNWMDlVZGxWVmREVlVMV055WVhkc1pYSmljbTl6TFd4dloyOHVhbkJsWncuanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00433
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00367
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-07-02T19:38:02.352Z",
+          "startedAt": "2026-07-02T19:38:02.352Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "GG0oKoi4Uk7XVgzC3",
+        "url": "https://apify.com/crawlerbros/legislation-gov-uk-scraper"
+      },
+      {
+        "title": "GOV.UK Search & Content Scraper",
+        "name": "gov-uk-search-content-scraper",
+        "username": "moving_beacon-owner1",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 72,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T04:48:48.548Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape GOV.UK search results and page content via the official APIs. Search by keywords or URLs, filter by organisation, and extract metadata, publication dates, links, and full page text with automatic pagination.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/v44nIU6e7C96NffSGuyv7lIX1gLUqh9zdVet6gkw-Pw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcExzcGFDS2ptZ1JOZDNhb3AtYWN0b3ItN0owVTlUa1dONVN2WGYwY2ctWWU2ekk5ejk4Wi1PSVBfJTI4MyUyOS5qcGVn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Jamshaid Arif",
+        "userPictureUrl": "https://images.apifyusercontent.com/XyvR67NX5h8OU9SvxhUxhSDre9IrWyK4hFmyULjHn_E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV2NHaTMwclVtUXlyWFZxbDFOTEVXSWVWNGR2My1XazN0V19yQ3RoQk1HRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblJJT1RscFpUUmtXRXMzV0VjM1REaEZhVlpWTjFCUVZXOHpjek5oWTBoeFgwdERSa0phVDBvd2VrcHBlV2xHZFRj.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00999,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-24T07:17:16.094Z",
+          "createdAt": "2026-07-24T07:17:16.453Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "7J0U9TkWN5SvXf0cg",
+        "url": "https://apify.com/moving_beacon-owner1/gov-uk-search-content-scraper"
+      },
+      {
+        "title": "data.gov.uk Catalog Snapshot",
+        "name": "source-governance-review-sprint",
+        "username": "zentrafoundry",
+        "stats": {
+          "totalBuilds": 23,
+          "totalRuns": 118,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-05T09:06:39.313Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "data.gov.uk CKAN search for transport. Catalog titles, not a source-governance legal review. $0.01.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Zentra",
+        "userPictureUrl": "https://images.apifyusercontent.com/xhZGAd3ceXm8pLfppQSITi5l6p7MhYejQ_cvpwjNi_A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTGwxb0d0Znc5cXZyQUFmSm0wVEoycVFFa25weUJWT3hlZFdWbHVVVnJORS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaSEpTVVZveFNIRmhWMDVIVEZkNldEVXRjSEp2Wm1sc1pTMTRPSGhLU1dGRFYwbGxMWHBsYm5SeVlWOXBZMjl1WDI5dWJIa3VVRTVITG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-02T05:18:24.000Z",
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": 0.5,
+          "reasonForChange": "Unstack PPE: primary event at the Store price, others $0.0001.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-delivered": {
+                "eventTitle": "0.01",
+                "eventDescription": "$0.01 / dataset",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              },
+              "governance-finding": {
+                "eventTitle": "Apify Actor Run Or Buyer Defined Paid Event",
+                "eventDescription": "Charge when Source Governance Review Sprint produces Apify actor run or buyer-defined paid event.",
+                "eventPriceUsd": 0.0001,
+                "isPrimaryEvent": false
+              },
+              "dataset-processed": {
+                "eventTitle": "Successful dataset run",
+                "eventDescription": "Base charge when Source Governance Review Sprint writes a non-empty default dataset.",
+                "eventPriceUsd": 0.0001,
+                "isPrimaryEvent": false
+              },
+              "record-saved": {
+                "eventTitle": "Saved result",
+                "eventDescription": "Charge for each buyer-visible result saved by Source Governance Review Sprint.",
+                "eventPriceUsd": 0.0001,
+                "isPrimaryEvent": false
+              },
+              "enriched-record": {
+                "eventTitle": "Enriched result",
+                "eventDescription": "Charge when Source Governance Review Sprint adds match scoring, source evidence, or enrichment to a saved result.",
+                "eventPriceUsd": 0.0001,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-09-17T05:18:24.268Z",
+          "notifiedAboutFutureChangeAt": "2026-09-17T05:18:44.461Z",
+          "notifiedAboutChangeAt": "2026-10-02T05:35:50.214Z"
+        },
+        "id": "IL3QdYoGg5AaP4s4W",
+        "url": "https://apify.com/zentrafoundry/source-governance-review-sprint"
+      },
+      {
+        "title": "Govuk Articles Info Extractor",
+        "name": "govuk-articles-info-extractor",
+        "username": "getdataforme",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 85,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T03:14:45.727Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "The Govuk Articles Info Parser Spider efficiently extracts and parses data from government articles, ensuring high-quality, accurate information. It offers customizable outputs in JSON, CSV, Excel formats with fast processing and minimal resource usage....",
+        "categories": [
+          "AI",
+          "AUTOMATION",
+          "ECOMMERCE"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "GetDataForMe",
+        "userPictureUrl": "https://images.apifyusercontent.com/IrsUNrGY66yv-Hls478fzfYRDnv3UVinpaya_kucM_A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSk5hcW9sVC1JUXFnd1EwbE9oSGxxSXFJdTRPQ1doNDRpMUJMRzllLTh3MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RTJORGcwTURjM05UOTJQVFE.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.009,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-12T12:06:27.884Z",
+          "createdAt": "2026-07-12T12:06:30.344Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-13T10:36:46.305Z"
+        },
+        "id": "XXeJNdxN6L5gOyXaa",
+        "url": "https://apify.com/getdataforme/govuk-articles-info-extractor"
+      },
+      {
+        "title": "Data.gov.uk Scraper - Cheap 🌐📊🇬🇧",
+        "name": "data-gov-uk-scraper---cheap",
+        "username": "scrapestorm",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 202,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T17:41:08.978Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "🔎 Easily collect dataset listings from data.gov.uk\n\nProvide one or multiple search URLs and extract dataset information such as 📄 Dataset Title 🏢 Published By 🕒 Last Updated 📝 Description 🔗 Dataset URL & more\n\nPerfect for open data research, government data monitoring & dataset discovery 📊🚀",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ocY0yDtFMPN6kl8ESiOKDrFuwCFeusdRspAtwNYjBRE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQkFoY29OZWZMY2Y5TDNoUVMtYWN0b3ItNDBDV3lpUXBQMU93TUFQWjEtOWdzRk44eE5SSi11ay5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Storm_Scraper",
+        "userPictureUrl": "https://images.apifyusercontent.com/VwryAra0QLMEMuC7T20ezHx0tkgf6XoR2o7MqaBC1ZE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN0ktVzd2cjJab1J4VUptZ09LcjlFX2xINUV3cFFzNjhfQ2kwdU9pQzIwOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRa0ZvWTI5T1pXWk1ZMlk1VEROb1VWTXRjSEp2Wm1sc1pTMUVZWE5CUzNKRWVIaGhMVk4wYjNKdExuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00299
+              }
+            }
+          },
+          "startedAt": "2026-09-15T11:22:25.707Z",
+          "createdAt": "2026-09-15T11:22:26.148Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-15T11:36:06.371Z"
+        },
+        "id": "40CWyiQpP1OwMAPZ1",
+        "url": "https://apify.com/scrapestorm/data-gov-uk-scraper---cheap"
+      },
+      {
+        "title": "Data.gov.uk Scraper - Low-cost💲🔥📚🇬🇧",
+        "name": "data-gov-uk-scraper-low-cost",
+        "username": "delectable_incubator",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 134,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T01:24:57.526Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape data.gov.uk dataset listings 🔎📊 with a powerful open data scraper. Extract dataset titles, publishers, update dates, descriptions, tags, and dataset URLs from search results. Ideal for government data monitoring, open data research, dataset discovery, and structured data catalog creation 🚀",
+        "categories": [
+          "LEAD_GENERATION",
+          "JOBS",
+          "TRAVEL"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/UAvX_k54xZ1HRH5N2kCghfu7NU1FPQidw7a0q5-wfsU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vckdURGUxa3FQa3ZESWVLSFAtYWN0b3ItWFBQb2RZcGhoRlhuUmRPQUMtaDAxY0QwYkdsMy1HZW1pbmlfR2VuZXJhdGVkX0ltYWdlX3ZhMmUybXZhMmUybXZhMmUucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Prime Scrape",
+        "userPictureUrl": "https://images.apifyusercontent.com/IZ6_9dL6CotPFZRdGsZ7vvfBCnw6xGlhhINPHq3b8MY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSVpvMDFPdE15dWdKX2ROZW1KamRQWXRXX0tERTlMQk1kQjFNcElKZmRoUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZja2RVUkdVeGEzRlFhM1pFU1dWTFNGQXRjSEp2Wm1sc1pTMTVjbVpZU21ZM1NuZElMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZlpIcGhlbkkyWkhwaGVuSTJaSHBoZWk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00119
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00119
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00119
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00099
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00099
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00099
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-05-23T15:54:08.261Z",
+          "createdAt": "2026-05-23T15:54:08.188Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "XPPodYphhFXnRdOAC",
+        "url": "https://apify.com/delectable_incubator/data-gov-uk-scraper-low-cost"
+      },
+      {
+        "title": "GOV UK Companies Register",
+        "name": "gov-uk-companies-register",
+        "username": "harvestedge",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 167,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T11:58:56.119Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "The UK Companies Scraper for UK Chamber of Commerce. Ideal for lead generation, compliance checks, KYC enrichment, and UK company intelligence workflows. GOV.UK",
+        "categories": [
+          "AUTOMATION",
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/eTkxWoZoQ38jbC6zg9LHENHI3I57WVm6zz0XNjAvSmU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vV2o5THVDSFdrM201ZnR6OVgtYWN0b3ItOFBYU1lFOXdMZ1VQQWprMmMtU2dxRm1qSmZ6dC1Db21iaW5lSGFydmVzdC5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Harvest Edge",
+        "userPictureUrl": "https://images.apifyusercontent.com/FhR4rW39ioSeu3a_RkgOXghqIPFne7SZI_AlRzYSLRA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTVFwajZISTVEYlBMdGFwXzNoblpjYmtBNGE1QkFxbk5pRG9sdG9XUll5TS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWMm81VEhWRFNGZHJNMjAxWm5SNk9WZ3RjSEp2Wm1sc1pTMTNVbGRCV2xOSmJVWm9MV1J2ZDI1c2IyRmtMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.2
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.014,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-04-22T17:08:34.347Z",
+          "createdAt": "2026-04-22T17:08:35.303Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "8PXSYE9wLgUPAjk2c",
+        "url": "https://apify.com/harvestedge/gov-uk-companies-register"
+      },
+      {
+        "title": "Govuk Articles Info Parser Spider",
+        "name": "govuk-articles-info-parser-spider",
+        "username": "getdataforme",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 120,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T04:29:04.353Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "The Govuk Articles Info Parser Spider efficiently extracts and parses data from government articles, ensuring high-quality, accurate information. It offers customizable outputs in JSON, CSV, Excel formats with fast processing and minimal resource usage....",
+        "categories": [
+          "AI",
+          "AUTOMATION",
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/-kFHy-yZGRLrpg5gv0e1LD3QoUWGHlAAGWZlYBoRIdQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vVG1nM0VoZEppNmgzQlN1OFAtYWN0b3ItZXNrbE1kZFVzQlFhMFlJTFktU1lPbUV3eDVwQi1HZW1pbmlfR2VuZXJhdGVkX0ltYWdlX3lybmNyOHlybmNyOHlybmMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "GetDataForMe",
+        "userPictureUrl": "https://images.apifyusercontent.com/IrsUNrGY66yv-Hls478fzfYRDnv3UVinpaya_kucM_A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSk5hcW9sVC1JUXFnd1EwbE9oSGxxSXFJdTRPQ1doNDRpMUJMRzllLTh3MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RTJORGcwTURjM05UOTJQVFE.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.009,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-06-07T12:16:56.417Z",
+          "createdAt": "2026-06-07T12:16:57.657Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "esklMddUsBQa0YILY",
+        "url": "https://apify.com/getdataforme/govuk-articles-info-parser-spider"
+      }
+    ]
+  }
+}

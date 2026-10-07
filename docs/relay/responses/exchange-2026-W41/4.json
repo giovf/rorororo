@@ -1,0 +1,806 @@
+{
+  "data": {
+    "total": 495,
+    "count": 15,
+    "offset": 0,
+    "limit": 15,
+    "desc": false,
+    "items": [
+      {
+        "title": "Uk Planning Applications",
+        "name": "uk-planning-applications-planit",
+        "username": "devon_gtme",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 2029,
+          "totalUsers": 82,
+          "totalUsers7Days": 4,
+          "totalUsers30Days": 10,
+          "totalUsers90Days": 22,
+          "lastRunStartedAt": "2026-10-05T13:38:50.597Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 3,
+            "FAILED": 3,
+            "SUCCEEDED": 327,
+            "TIMED-OUT": 1,
+            "TOTAL": 334
+          }
+        },
+        "description": "Extract UK planning applications from 381 planning authorities across England, Scotland, Wales and Northern Ireland. Site addresses, decision dates, planning agent details, dwelling counts and direct council portal links. Filter by council, size, status, postcode radius and date. No API key.",
+        "categories": [
+          "OTHER",
+          "DEVELOPER_TOOLS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/OzPYAYP_wXiiX2VCwYjcBEYBAlD1jKL2d8dc7vuSbGM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vN1hnbkhkaUV5Qm1TczF3bGItYWN0b3ItRFBIZGQzZVVIdnRrN1ZFanotdUtoclUxamVGMy1pY29uLnN2Zy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Devon Kellar",
+        "userPictureUrl": "https://images.apifyusercontent.com/ZP01WrfG-nT5lJbEj4pOZEyo7z9IeYhMjk3k2b3KEyU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSmU2TVZtNW5fUWFyQXU3R0lqcjktc0xQM0JESUQ3LVZfd0NySU1Sd21lcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOMWhuYmtoa2FVVjVRbTFUY3pGM2JHSXRjSEp2Wm1sc1pTMWFTbE0wYm1kc2VITjBMV2hsWVdSemFHOTBMbXB3WldjLmpwZWc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-29T02:57:02.816Z",
+          "createdAt": "2026-07-15T02:57:03.976Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-15T02:57:24.356Z",
+          "notifiedAboutChangeAt": "2026-07-29T03:05:40.874Z"
+        },
+        "id": "DPHdd3eUHvtk7VEjz",
+        "url": "https://apify.com/devon_gtme/uk-planning-applications-planit"
+      },
+      {
+        "title": "UK Planning Applications Scraper — All Councils",
+        "name": "uk-planning-applications-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 51,
+          "totalRuns": 156,
+          "totalUsers": 29,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 24,
+          "lastRunStartedAt": "2026-10-05T20:06:31.135Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 39,
+            "TIMED-OUT": 0,
+            "TOTAL": 39
+          }
+        },
+        "description": "Get every UK planning application in one run — all ~420 councils, no API key. Filter by council, type, status, size or date and export address, decision, dates, coordinates and the architect firm behind each project. Ideal for construction leads. Billed per result.",
+        "categories": [
+          "REAL_ESTATE",
+          "AI",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/vhgcoT3xuqCW8u2Grvy9D8I1tOQGsH64b_9rWBtGm0M/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItU3loN0tsWGhnRkgxZmJNOEItRFJqSzhHZmw1ci1wbGFuLWl0LWxvZ28uc285YWtvLnZpZXcueXRhLmpwZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "One planning application in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.01
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Extra data enrichment charged per enriched record (email/contact discovery).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-10-03T00:00:00.000Z",
+          "createdAt": "2026-09-18T22:13:23.196Z",
+          "notifiedAboutFutureChangeAt": "2026-09-18T22:13:43.605Z",
+          "notifiedAboutChangeAt": "2026-10-03T00:05:46.979Z"
+        },
+        "id": "Syh7KlXhgFH1fbM8B",
+        "url": "https://apify.com/memo23/uk-planning-applications-scraper"
+      },
+      {
+        "title": "UK Council Planning Applications Monitor",
+        "name": "uk-planning-monitor",
+        "username": "illehius",
+        "stats": {
+          "totalBuilds": 29,
+          "totalRuns": 419,
+          "totalUsers": 16,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-06T05:30:09.056Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 20,
+            "SUCCEEDED": 54,
+            "TIMED-OUT": 1,
+            "TOTAL": 75
+          }
+        },
+        "description": "Monitor newly validated, decided, or updated planning applications across selected UK council portals (Idox PublicAccess, Northgate Planning Explorer). HTTP-only; designed for scheduled runs with onlyNew dedupe.",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION",
+          "REAL_ESTATE"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Siddhant",
+        "userPictureUrl": "https://images.apifyusercontent.com/ZEmMdfVpKsU0e_6IY9xJDGzdgoeKmRLuoKGXNrPh86k/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYkhzR0t2S1IzckNON2hYa1NLR3RiZ2RVNkpqd251QUpQa2VYQi01YmdKRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVlJxTlZwWmRWSjRkV294UXpoeWQyRTBOazh3TkV4a1MzUnBTMjkyWVMxSlIzSm1OakJTYUdGUVJqVlZTMjFXZVVnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-09-09T20:38:33.162Z",
+          "startedAt": "2026-09-23T20:38:32.675Z",
+          "apifyMarginPercentage": 0,
+          "notifiedAboutFutureChangeAt": "2026-09-09T20:38:53.662Z",
+          "notifiedAboutChangeAt": "2026-09-23T21:05:44.424Z"
+        },
+        "id": "1e65gdNsDseA5Ep9s",
+        "url": "https://apify.com/illehius/uk-planning-monitor"
+      },
+      {
+        "title": "Ireland Planning Applications",
+        "name": "ireland-planning-applications",
+        "username": "devon_gtme",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 71,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T02:41:04.007Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Ireland Planning Applications Scraper\n\nEvery planning application in the Republic of Ireland, all 31 local authorities, a full archive back to 2010, and the documents that were actually filed.\n\nIt opens the planning file, so you get the drawings, the planner's report and the Chief Executive's Order.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/AE6stBJYx3gr4vDXAoxL51hotTp0kunUDslYG54Brmg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vN1hnbkhkaUV5Qm1TczF3bGItYWN0b3ItazZuWXp6ZEdkamE2SlFlS1gtYlZRbzRyV3hzVi1pcmVsYW5kLXBsYW5uaW5nLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Devon Kellar",
+        "userPictureUrl": "https://images.apifyusercontent.com/ZP01WrfG-nT5lJbEj4pOZEyo7z9IeYhMjk3k2b3KEyU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSmU2TVZtNW5fUWFyQXU3R0lqcjktc0xQM0JESUQ3LVZfd0NySU1Sd21lcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOMWhuYmtoa2FVVjVRbTFUY3pGM2JHSXRjSEp2Wm1sc1pTMWFTbE0wYm1kc2VITjBMV2hsWVdSemFHOTBMbXB3WldjLmpwZWc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Planning application",
+                "eventDescription": "One Irish planning application, with its full document index where the council publishes one.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              },
+              "document-extracted": {
+                "eventTitle": "Document text extracted",
+                "eventDescription": "One planning document whose text was successfully extracted and is legible. Documents 1 to 999 in a run. Scans carrying only a council stamp, unreadable font encodings and failed OCR are not charged.",
+                "eventPriceUsd": 0.05
+              },
+              "document-extracted-1k": {
+                "eventTitle": "Document text extracted, volume 1,000+",
+                "eventDescription": "Documents 1,000 to 1,999 in the same run, at the reduced volume rate.",
+                "eventPriceUsd": 0.04
+              },
+              "document-extracted-2k": {
+                "eventTitle": "Document text extracted, volume 2,000+",
+                "eventDescription": "Documents 2,000 and beyond in the same run, at the lowest volume rate.",
+                "eventPriceUsd": 0.035
+              }
+            }
+          },
+          "createdAt": "2026-08-01T12:02:38.911Z",
+          "startedAt": "2026-08-01T12:02:38.911Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "k6nYzzdGdja6JQeKX",
+        "url": "https://apify.com/devon_gtme/ireland-planning-applications"
+      },
+      {
+        "title": "UK Planning Applications Scraper & Intelligence API",
+        "name": "uk-planning-applications-scraper",
+        "username": "interactapps",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 78,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T03:52:46.331Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Track UK planning applications across 24 verified council portals. Filter by work type, date and decision status. Clean JSON with postcode, lead type and residential flags. Monitor mode returns only new applications — and charges only for those. For builders, developers and AI agents.",
+        "categories": [
+          "LEAD_GENERATION",
+          "REAL_ESTATE",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/7yJYV1OXHKgtKWsukpC2QzT9RHssTFy02ubFGcR1Mk8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vM1dTTEIxWElrOExaWWc3NWMtYWN0b3ItaTgzYnRpcFFZMmZzb01lTDEtdzhxQk9Ba2RtWi11ay1wbGFubmluZy1pY29uLnN2Zy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Nina Mackie",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": 0.5,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "result": {
+                "eventTitle": "Application delivered",
+                "eventDescription": "One planning application delivered to your dataset. Applications filtered out by monitor mode are not charged.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.08
+              }
+            }
+          },
+          "createdAt": "2026-07-28T12:52:46.133Z",
+          "startedAt": "2026-07-28T12:52:46.133Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "i83btipQY2fsoMeL1",
+        "url": "https://apify.com/interactapps/uk-planning-applications-scraper"
+      },
+      {
+        "title": "UK Planning Applications Scraper: Building Leads by Postcode",
+        "name": "uk-planning-applications-scraper",
+        "username": "oski",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 191,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T05:51:00.317Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Find new UK planning applications by postcode radius, council or map area. Address, description, type, status, dates, coordinates and the trades each job implies, from 400+ planning authorities, updated daily. Ready-made leads for builders, roofers and installers.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/CWCFqODJou-Qxs6CTNwumkcX3TExXZLBpJNSJmzlKXs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbW9UYThuR2R6emFFVXBWOGUtYWN0b3ItZlRuZjFPVzdxSldjRTlXU2ctUDdTdEZHY0NxWi11ay1wbGFubmluZy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Oski",
+        "userPictureUrl": "https://images.apifyusercontent.com/oQ-tiqOFxJwLkedmuDzCFL_eTiOpD1ElXVlAaOudpOY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOVVNRHBxQlRIZmVSb1BMYUpxcHktQktKLXlDT0x1T195X0NnMXI5a2NLSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVzlVWVRodVIyUjZlbUZGVlhCV09HVXRjSEp2Wm1sc1pTMUxSM3BpVUhCTlJFWmFMVVpmWDJkd2JFUlhORUZCVG5wc01DNXFjR2MuanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Run start",
+                "eventDescription": "Flat fee each time a run starts.",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002
+                  }
+                }
+              },
+              "application": {
+                "eventTitle": "Planning application",
+                "eventDescription": "One planning application returned.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00396
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00392
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00388
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00388
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00388
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-18T00:06:15.732Z",
+          "startedAt": "2026-09-18T00:06:15.732Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-21T12:36:22.311Z"
+        },
+        "id": "fTnf1OW7qJWcE9WSg",
+        "url": "https://apify.com/oski/uk-planning-applications-scraper"
+      },
+      {
+        "title": "England Planning Application Monitor: API Data",
+        "name": "england-planning-application-monitor",
+        "username": "getascraper",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 69,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T05:25:01.196Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Monitor England planning-application entities from the official Planning Data API. Return references, descriptions, dates, statuses, geometry, and source links with coverage metadata. Send changes to Google Sheets, Airtable, n8n, or Slack.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/qTJmnxRUZ_YLDr_qVByK7YhT8UQUNqGbfJHGKJECcE0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vak5EYkZhYmJWeE1oblFOYjQtYWN0b3ItUm92aXVpdDNYU3dhRXRmQUctRnd0YUFRTDZHby1pbWFnZXNfJTI4MzElMjkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "GetAScraper",
+        "userPictureUrl": "https://images.apifyusercontent.com/zYb0X321JkLF2Rh8Ul3sTD36xCu_EXV79sfnQlCAMvg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdEFRTW4xMjV6V01tRVRnU0p4enlYODRxNTJwTFliSEcxSEZBQkRjVFdXOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhazVFWWtaaFltSldlRTFvYmxGT1lqUXRjSEp2Wm1sc1pTMU5PSGxtUWt0bWVsUlZMVU5vWVhSSFVGUmZTVzFoWjJWZlNuVnVYemhmWHpJd01qWmZYekEwWHpNeFh6VXpYMUJOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Planning record",
+                "eventDescription": "One planning application with status, dates, geometry, and source link.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00175
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00146
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00131
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00131
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00131
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-05T16:00:36.203Z",
+          "createdAt": "2026-08-05T16:00:36.741Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Roviuit3XSwaEtfAG",
+        "url": "https://apify.com/getascraper/england-planning-application-monitor"
+      },
+      {
+        "title": "UK Planning Applications Scraper",
+        "name": "uk-planning-applications",
+        "username": "automation-lab",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 38,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T19:36:41.751Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search and export official planning.data.gov.uk planning applications with council identifiers, proposals, dates, decisions, geometry, and provenance.",
+        "categories": [
+          "REAL_ESTATE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/hId6kTH3oVDUN_HFFhw_strTizT6sO04L-FWdFQ5zCw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotYWN0b3ItOFQ1WTlzMTB3WThma0tGQXAtdE41UmdCQ3ZEaC1hY3Rvci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Automation Lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/K_C4LOMfOgJZv5UcVqbze6xlfc6mS23zsoHRS5nDXvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMDdsSFdveGptQlpJN0NMWkJqVi1wUlBjV0ZHRFQyRzIwVjdkVzBRSzBCay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiblJJUTI1b1RsVnJlbGhTTjI1aVZWb3RjSEp2Wm1sc1pTMW9ORkJYYTNsWWVVSmxMV0YxZEc5dFlYUnBiMjR0YkdGaUxYQnliMlpwYkdVdGJHOW5ieTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-31T06:56:20.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "start": {
+                "eventTitle": "Run started",
+                "eventDescription": "One-time fee charged when a run starts. Covers fixed startup cost (init, proxy warmup, first HTTP setup).",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": true
+              },
+              "item": {
+                "eventTitle": "Item extracted",
+                "eventDescription": "Charged per item extracted.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0092
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00624
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0048
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0032
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00224
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-31T06:57:20.779Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "8T5Y9s10wY8fkKFAp",
+        "url": "https://apify.com/automation-lab/uk-planning-applications"
+      },
+      {
+        "title": "UK Planning Applications Scraper — All Councils",
+        "name": "uk-planning-applications-scraper",
+        "username": "scrapersdelight",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 46,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T11:02:54.207Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape UK planning applications from every council in one run: site address with postcode and GPS, proposal text, application type, size, status, decision and dates, plus the agent firm behind the application. Filter by council, date range, keyword or postcode radius.",
+        "categories": [
+          "LEAD_GENERATION",
+          "REAL_ESTATE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/l6yt2JX7I3d94HTCtjA-9_uVJiOuysgyWzMNVqxMe_Q/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQlRna3dMRUM0YlpWemI4VmItYWN0b3ItNmJXbktoSGFnaTRPaHF5WXctNHp1cTh6V2ZlQi03NS11ay1wbGFubmluZy1hcHBsaWNhdGlvbnMtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Delight",
+        "userPictureUrl": "https://images.apifyusercontent.com/SjUfVS2plLJy6kHfthU67C5f9v0e6wVrAbVTS2w1R3A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRmxwWnZpaF9memhGWnlPTEI4Ml9FRGhTQm1pUFRiYWJUWWNia00ySUhnNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRbFJuYTNkTVJVTTBZbHBXZW1JNFZtSXRjSEp2Wm1sc1pTMWxTRVJxZW5BMU4wOVlMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZmFuVXhhek5tYW5VeGF6Tm1hblV4YXkxamJHVmhiaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "application-scraped": {
+                "eventTitle": "Per application returned",
+                "eventDescription": "Charged once for each planning application returned.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.004
+              }
+            }
+          },
+          "startedAt": "2026-08-26T19:08:25.000Z",
+          "createdAt": "2026-08-26T19:08:26.974Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "6bWnKhHagi4OhqyYw",
+        "url": "https://apify.com/scrapersdelight/uk-planning-applications-scraper"
+      },
+      {
+        "title": "Planning & Zoning Application Scraper",
+        "name": "planning-zoning-application-scraper",
+        "username": "moving_beacon-owner1",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 45,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T08:58:37.575Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrapes UK planning and zoning applications from the PlanIt aggregator API, covering 400+ local planning authorities. Supports keyword, authority, status, and date-range filters, returning application details, addresses, decisions, dates, locations, and official application URLs.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/7Yd5_exmIwjw2T_abbc7fL9i-hzyNgcoZdax8cemVCQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcExzcGFDS2ptZ1JOZDNhb3AtYWN0b3ItQjlZa0prdjVLeXI4OENQdHMtNWFvUkJsTFd1Ny1DaGF0R1BUX0ltYWdlX0F1Z18yMV9fMjAyNl9fMTFfMjRfMTVfUE0ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Jamshaid Arif",
+        "userPictureUrl": "https://images.apifyusercontent.com/XyvR67NX5h8OU9SvxhUxhSDre9IrWyK4hFmyULjHn_E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV2NHaTMwclVtUXlyWFZxbDFOTEVXSWVWNGR2My1XazN0V19yQ3RoQk1HRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblJJT1RscFpUUmtXRXMzV0VjM1REaEZhVlpWTjFCUVZXOHpjek5oWTBoeFgwdERSa0phVDBvd2VrcHBlV2xHZFRj.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00999,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-21T18:24:58.274Z",
+          "createdAt": "2026-08-21T18:24:58.704Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "B9YkJkv5Kyr88CPts",
+        "url": "https://apify.com/moving_beacon-owner1/planning-zoning-application-scraper"
+      },
+      {
+        "title": "UK Planning Applications — Camden, Worthing, Adur, Doncaster",
+        "name": "uk-planning-application-records",
+        "username": "nexgensignal",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 43,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T05:16:45.152Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 19,
+            "TIMED-OUT": 0,
+            "TOTAL": 19
+          }
+        },
+        "description": "Planning applications from the government Planning Data platform for four councils (Camden, Worthing, Adur, Doncaster; 100,627, newest decisions Sep 2025): reference, decision date, council decision wording, site point. Search by council, decision, date or place. OGL v3.0. Pay per record.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Db0QxVatH6toaYSq-rS41k99heOkJ8ijTB-pIuhWoxs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSFVFVlB2UEdTb3pJUmFoVHktYWN0b3ItdVJYN3NCNm1UQVJRd2ZuVVUtcEhkTXNySlNFby11ay1wbGFubmluZy1hcHBsaWNhdGlvbi1yZWNvcmRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Signal",
+        "userPictureUrl": "https://images.apifyusercontent.com/E2AM6xIR3RFe1AIRY7pK-UJ_GvYpK4KjdTJNvRKmJj8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vS0lmSk1xRkFqZlVObzZfNkFoOEtwaWtaQUJXU0tma3U1RDlsdG90M2FHNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTRlZGVmxCMlVFZFRiM3BKVW1Gb1ZIa3RjSEp2Wm1sc1pTMXhUR3AzTjB0VVpXTnBMVTVIVXk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": true,
+          "reasonForChange": "W4-B4 birth activation: GOLD-laddered $0.05 per-record pricing.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "planning_application_record": {
+                "eventTitle": "Planning application record",
+                "eventDescription": "One UK planning-application entity delivered.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0335
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-03T06:39:44.695Z",
+          "startedAt": "2026-09-03T06:39:44.695Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "uRX7sB6mTARQwfnUU",
+        "url": "https://apify.com/nexgensignal/uk-planning-application-records"
+      }
+    ]
+  }
+}

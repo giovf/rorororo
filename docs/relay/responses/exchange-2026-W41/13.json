@@ -1,0 +1,1634 @@
+{
+  "data": {
+    "total": 1618,
+    "count": 20,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "LinkedIn Profile Scraper for cheap lead enrichment ✅",
+        "name": "linkedin-profile-enrichment",
+        "username": "anchor",
+        "stats": {
+          "totalBuilds": 168,
+          "totalRuns": 1578155,
+          "totalUsers": 9979,
+          "totalUsers7Days": 139,
+          "totalUsers30Days": 430,
+          "totalUsers90Days": 905,
+          "lastRunStartedAt": "2026-10-06T10:18:53.604Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 57,
+            "FAILED": 2,
+            "SUCCEEDED": 168636,
+            "TIMED-OUT": 276,
+            "TOTAL": 168971
+          },
+          "actorReviewCount": 21,
+          "actorReviewRating": 4.860083256001899,
+          "bookmarkCount": 181
+        },
+        "description": "Extract LIVE LinkedIn profile data from LinkedIn URLs. Works with people and companies. Upload a CSV of LinkedIn URLs or use the API. Automate your LinkedIn enrichment with N8N, Make, Zapier integrations... No Cookies. Cheap, high-quality, live lead enrichment for LinkedIn profiles !",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/az5GrVuW0uohk2Pl1l4qPH6QTQJ7YKUcubMfMuQS4io/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQWdmS2swc1FReGtwUUoxRHQvQnVKWHQ3TGlJT2c5OTU3V0gtNzE0NjViMWItZmUxZS00OWU0LTkzZjctOWU0MjI5ZTNkOTEyXyUyODElMjkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 181,
+        "actorReviewRating": 4.860083256001899,
+        "actorReviewCount": 21,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Anchor",
+        "userPictureUrl": "https://images.apifyusercontent.com/3JJDIwRpqXkIe-3smVNUdue2JAcvGpfsCAklgBJkpqk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRkpSZG5jdkhIZGNwNFBOSklMa3NpcTc2ZUpUZjNQRWJiT3NoMExaRUk3NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMmxEZFhwWU5rUkxSRnBRV0hJelREWXZOMGhuUzFkblpVVklSSGxSV2tFNFQxSXRhV052Ymk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "TLDR: for most of our users, the pricing will remain almost the same.\n\nWe add a new event for long-running actors, charged per minute. We decided to waive the first minute so that people who only need 1 profile won't pay for this new event.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "profile-enriched": {
+                "eventTitle": "Profile Enriched",
+                "eventDescription": "Profile was enriched",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.006,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              },
+              "actor-runtime": {
+                "eventTitle": "Actor Long Run",
+                "eventDescription": "Charged for each minute the Actor is running. The first minute is free.",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.003
+              }
+            }
+          },
+          "startedAt": "2026-01-26T11:31:40.259Z",
+          "createdAt": "2026-01-12T11:31:40.612Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-01-12T11:32:04.862Z"
+        },
+        "id": "AgfKk0sQQxkpQJ1Dt",
+        "url": "https://apify.com/anchor/linkedin-profile-enrichment"
+      },
+      {
+        "title": "Email ✉️  & Phone ☎️ Extractor",
+        "name": "email-phone-extractor",
+        "username": "anchor",
+        "stats": {
+          "totalBuilds": 172,
+          "totalRuns": 309619,
+          "totalUsers": 8232,
+          "totalUsers7Days": 7,
+          "totalUsers30Days": 24,
+          "totalUsers90Days": 50,
+          "lastRunStartedAt": "2026-10-06T09:38:49.940Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 6,
+            "FAILED": 0,
+            "SUCCEEDED": 240,
+            "TIMED-OUT": 0,
+            "TOTAL": 246
+          },
+          "actorReviewCount": 21,
+          "actorReviewRating": 3.944580056788765,
+          "bookmarkCount": 106
+        },
+        "description": "Extract emails, phone numbers, and other contact information like Twitter, LinkedIn, Instagram... from websites you provide. Best for lead generation and data enrichment. Export data in structured formats and dominate your outreach game. Capture your leads almost for free, fast, and without limits.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/PGFvd-vwTlWxfh_AHHNRWbgdswFriVFI2K3IgRWpNlQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ2lDdXpYNkRLRFpQWHIzTDYtYWN0b3ItYnhyYWJLaEx2MWMzZkxtb2otRGMzSDFMeVA2YS1lbWFpbC1uZXcucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 106,
+        "actorReviewRating": 3.944580056788765,
+        "actorReviewCount": 21,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Anchor",
+        "userPictureUrl": "https://images.apifyusercontent.com/3JJDIwRpqXkIe-3smVNUdue2JAcvGpfsCAklgBJkpqk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRkpSZG5jdkhIZGNwNFBOSklMa3NpcTc2ZUpUZjNQRWJiT3NoMExaRUk3NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMmxEZFhwWU5rUkxSRnBRV0hJelREWXZOMGhuUzFkblpVVklSSGxSV2tFNFQxSXRhV052Ymk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Following Apify, we have to change the actor pricing model to PPE",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.015
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "unreachable-page": {
+                "eventTitle": "page unreachable",
+                "eventDescription": "Page is unreachable",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003
+              }
+            }
+          },
+          "startedAt": "2026-09-17T21:01:31.794Z",
+          "createdAt": "2026-09-03T21:01:32.303Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-03T21:01:56.895Z",
+          "notifiedAboutChangeAt": "2026-09-21T12:36:20.642Z"
+        },
+        "id": "bxrabKhLv1c3fLmoj",
+        "url": "https://apify.com/anchor/email-phone-extractor"
+      },
+      {
+        "title": "Advanced LinkedIn Job Search API",
+        "name": "advanced-linkedin-job-search-api",
+        "username": "fantastic-jobs",
+        "stats": {
+          "totalBuilds": 71,
+          "totalRuns": 803541,
+          "totalUsers": 15535,
+          "totalUsers7Days": 873,
+          "totalUsers30Days": 1845,
+          "totalUsers90Days": 5617,
+          "lastRunStartedAt": "2026-10-06T10:26:41.049Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 18,
+            "FAILED": 42,
+            "SUCCEEDED": 122192,
+            "TIMED-OUT": 4,
+            "TOTAL": 122256
+          },
+          "actorReviewCount": 20,
+          "actorReviewRating": 2.915999199818073,
+          "bookmarkCount": 94
+        },
+        "description": "Access our real-time LinkedIn Jobs database with over 10 million new jobs per month. With detailed company data, recruiter data, and AI enrichments! Get exact results with our advanced filters on title, description, location, company description, no. of employees, industry. Powered by Fantastic.jobs",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/1361xXweKPO_MYY5tShhQfLPtYcPoeZXrVV_GcOY9Wo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNDgyTHpZcEhDYzM2ek5hM2YtYWN0b3ItdklHeGpSckhxRFRQdUU2TTQtZDlLRkI4NlVBUy1TcXVhcmVfRmFudGFzdGljLmpvYnNfbG9nby5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 94,
+        "actorReviewRating": 2.915999199818073,
+        "actorReviewCount": 20,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Fantastic.jobs",
+        "userPictureUrl": "https://images.apifyusercontent.com/9Ex2NJP1cU2b3JlBj5LtVu06dN6MSeptFWGCFziQedY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT3F4STJHUHpxSjdTS0pnTXRIRGdCZTh6Y1MxRWpzT1RLTWMySUdrTnktcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZORGd5VEhwWmNFaERZek0yZWs1aE0yWXRjSEp2Wm1sc1pTMXFaVzVSVDNJNFJWcE5MVVpoYm5SaGMzUnBZeTVxYjJKelgyeHZaMjhsTWpneUpUSTVMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "We're introducing a new parameter to include only jobs with a recruiter profile. This parameter comes at an additional cost",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "job",
+                "eventDescription": "Each job written to the dataset",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0001
+                  }
+                }
+              },
+              "recruiter-url-filtered-result": {
+                "eventTitle": "Optional add-on: only jobs with recruiter",
+                "eventDescription": "Extra cost per job if you choose to include only jobs with a recruiter profile",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-06-09T11:52:29.847Z",
+          "createdAt": "2026-05-26T11:52:31.298Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-05-26T11:53:05.721Z"
+        },
+        "id": "vIGxjRrHqDTPuE6M4",
+        "url": "https://apify.com/fantastic-jobs/advanced-linkedin-job-search-api"
+      },
+      {
+        "title": "Bulk Linkedin Email Finder⚡ $0.8/1K Emails, Super Cheap.",
+        "name": "bulk-linkedin-email-finder",
+        "username": "snipercoder",
+        "stats": {
+          "totalBuilds": 98,
+          "totalRuns": 458152,
+          "totalUsers": 3919,
+          "totalUsers7Days": 204,
+          "totalUsers30Days": 633,
+          "totalUsers90Days": 1295,
+          "lastRunStartedAt": "2026-10-06T10:24:29.050Z",
+          "actorReviewCount": 13,
+          "actorReviewRating": 4.747759368369334,
+          "bookmarkCount": 68,
+          "publicActorRunStats30Days": {
+            "ABORTED": 22,
+            "FAILED": 1,
+            "SUCCEEDED": 36215,
+            "TIMED-OUT": 2,
+            "TOTAL": 36240
+          }
+        },
+        "description": "|Input: linkedIn|  |Output: Name, Email, Title, Company, etc. In Bulk| Perfect for Email campaigns, Data Enrichment, Linkedin/Linkedin sales nav Leads. ✅Forget Instantly.ai, apollo.io, and hunter.io, they are all to break the Bank.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9qvwyDldROCPJZn8u5A09y_65lUzTMp8yuRpZyGRBpU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTjlLVENCOWZYdkJ3WHl6dDYtYWN0b3ItZGRndzJvR0ZhSDY0NUJGQXEtUTRkNHB2bGwzbS1OOUtUQ0I5Zlh2QndYeXp0Ni1hY3Rvci1VTWRBTlF5cXgzYjJKVnV4Zy1RY045WkRBejdGLWxpbmtlZGluLWlj.webp",
+        "notice": "NONE",
+        "bookmarkCount": 68,
+        "actorReviewRating": 4.747759368369334,
+        "actorReviewCount": 13,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sniper Coder",
+        "userPictureUrl": "https://images.apifyusercontent.com/fMmkyxpqqUegDwpQ0Ym9dHC83jFVzOgr8PxvSWmCc-E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWWtPemlUb3c5LUs1R1R2dFpuZzFNdFQtSTlLZmtiQ0NyTHhnVWRZSTZLQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUamxMVkVOQ09XWllka0ozV0hsNmREWXRjSEp2Wm1sc1pTMTFlR2R6VGtJeGIySk1MVFl4TnpBeE9EWXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Emails",
+                "eventDescription": "Person's Email+Details in the dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2025-11-26T19:01:31.945Z",
+          "createdAt": "2025-11-26T19:01:32.392Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ddgw2oGFaH645BFAq",
+        "url": "https://apify.com/snipercoder/bulk-linkedin-email-finder"
+      },
+      {
+        "title": "Decision makers Email finder📧 $1/1K Emails, Super cheap.",
+        "name": "decision-maker-email-finder",
+        "username": "snipercoder",
+        "stats": {
+          "totalBuilds": 247,
+          "totalRuns": 1661500,
+          "totalUsers": 2314,
+          "totalUsers7Days": 107,
+          "totalUsers30Days": 246,
+          "totalUsers90Days": 675,
+          "lastRunStartedAt": "2026-10-06T10:20:39.516Z",
+          "actorReviewCount": 12,
+          "actorReviewRating": 3.914558150653632,
+          "bookmarkCount": 58,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 280646,
+            "TIMED-OUT": 0,
+            "TOTAL": 280646
+          }
+        },
+        "description": "|Input: Domain|  |Output: Name, Email, Title, Company, etc of Decision makers.| Perfect for Lead Generation, Email campaigns, Data Enrichment. ✅Forget AnymailFinder, apollo.io, hunter.io, they are all to break the Bank.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/uJTGKu8G3X_QUkzNRO4AHhG7-pt0D9Bk7HIBkD2UhrI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTjlLVENCOWZYdkJ3WHl6dDYtYWN0b3ItMGQ5MmJNMzZyaVZNWE52cDMtQ29ib0dwMWFkNC1mZjk4MTNlMGE1MzZmZWNhNzFmMTRmMWIzYTk0YWVmNi5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 58,
+        "actorReviewRating": 3.914558150653631,
+        "actorReviewCount": 12,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sniper Coder",
+        "userPictureUrl": "https://images.apifyusercontent.com/fMmkyxpqqUegDwpQ0Ym9dHC83jFVzOgr8PxvSWmCc-E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWWtPemlUb3c5LUs1R1R2dFpuZzFNdFQtSTlLZmtiQ0NyTHhnVWRZSTZLQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUamxMVkVOQ09XWllka0ozV0hsNmREWXRjSEp2Wm1sc1pTMTFlR2R6VGtJeGIySk1MVFl4TnpBeE9EWXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Discount for paying users🎉",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-03-25T11:18:33.748Z",
+          "createdAt": "2026-03-11T11:18:34.237Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-03-11T11:18:55.481Z"
+        },
+        "id": "0d92bM36riVMXNvp3",
+        "url": "https://apify.com/snipercoder/decision-maker-email-finder"
+      },
+      {
+        "title": "LinkedIn Company Finder - Company Page URL From Any Domain",
+        "name": "free-linkedin-company-finder---linkedin-address-from-any-site",
+        "username": "s-r",
+        "stats": {
+          "totalBuilds": 35,
+          "totalRuns": 451398,
+          "totalUsers": 1182,
+          "totalUsers7Days": 30,
+          "totalUsers30Days": 90,
+          "totalUsers90Days": 227,
+          "lastRunStartedAt": "2026-10-06T10:12:54.838Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 7899,
+            "TIMED-OUT": 0,
+            "TOTAL": 7900
+          },
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 57
+        },
+        "description": "Find LinkedIn company pages for any domain name. This powerful actor searches and extracts LinkedIn company URLs for domains, supporting international LinkedIn subdomains and bulk processing. Perfect for sales teams, recruiters, and data enrichment.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/YkPKJzi2H0mSWk_tP7d4xGDHHeem7oFa6uFtbiVLpfc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vVFVZWm5IZjN3RURjcXFzb2gtYWN0b3Itc3Q1a1BldDFwbVd1V1p1VUItcWdUNE5CNkVaRC0yNDk2MDk3LnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 57,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SR",
+        "userPictureUrl": "https://images.apifyusercontent.com/0Jsfrod6O50LzPQ7MPpFm47dJEdICS01fuz--1M4kBE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNUl1ZEw2WGQ0dzNZOGNJbVZ2WGF6ajFBQUtiTTF5LUFsd2RKTXk5RFNZQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWRlZaV201SVpqTjNSVVJqY1hGemIyZ3RjSEp2Wm1sc1pTMTRZVW8wUjJ4Wk5URTNMV2x0WVdkbGN5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": 0.01,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "li-address",
+                "eventDescription": "Single li-address in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.007
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-15T07:51:57.885Z",
+          "createdAt": "2026-09-01T07:51:58.148Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-01T07:52:22.546Z",
+          "notifiedAboutChangeAt": "2026-09-15T08:05:58.283Z"
+        },
+        "id": "st5kPet1pmWuWZuUB",
+        "url": "https://apify.com/s-r/free-linkedin-company-finder---linkedin-address-from-any-site"
+      },
+      {
+        "title": "Contact Info Scraper",
+        "name": "contact-info-scraper",
+        "username": "delicious_zebu",
+        "stats": {
+          "totalBuilds": 23,
+          "totalRuns": 6686,
+          "totalUsers": 855,
+          "totalUsers7Days": 27,
+          "totalUsers30Days": 81,
+          "totalUsers90Days": 224,
+          "lastRunStartedAt": "2026-10-06T01:25:13.574Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 53,
+            "FAILED": 6,
+            "SUCCEEDED": 1096,
+            "TIMED-OUT": 91,
+            "TOTAL": 1246
+          },
+          "actorReviewCount": 29,
+          "actorReviewRating": 5,
+          "bookmarkCount": 44
+        },
+        "description": "Crawl any website and get one deduplicated row per company: emails with deliverability checks (MX, role mailbox), validated phone numbers, 15 social networks, address and opening hours. Optional social profile enrichment. HTTP-first, browser only when a page needs it.",
+        "categories": [
+          "LEAD_GENERATION",
+          "SOCIAL_MEDIA"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/1g96czWM1QUFOJbCdRBTNofaWRyGEr8qsY4z86czyso/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWks0UlJkY2k4OER1SWtDcXYvbmJGNjRJWENPY3I2MWNQQXktMTExMS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 44,
+        "actorReviewRating": 5,
+        "actorReviewCount": 29,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Zebu Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/vzlzeOBJPiZPmGgClI20WOn2L2Xxar95YRvkRri2Bx0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOHBpbkdfU1RLdmZJWnBudG5jS3hRNFFaYldMbzFOb1BzblpsbzNLdlYyMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSVEZHUTFScE1VOWhNM0pWUXpaVlNHTXZibWM0Wlhsb2MyMUpWbTVyY2xKaVlsTXRZV0ZoTG1wd1p3LmpwZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "We are introducing a more flexible pricing model. Furthermore, we have enhanced the actor's performance and scraping capabilities, added information collection for several social media platforms, along with many other new features.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.008
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-04-12T11:53:57.887Z",
+          "createdAt": "2026-03-29T11:53:59.671Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-03-29T11:54:20.091Z"
+        },
+        "id": "ZK4RRdci88DuIkCqv",
+        "url": "https://apify.com/delicious_zebu/contact-info-scraper"
+      },
+      {
+        "title": "Linkedin Email Finder⚡ $1/1K Emails, Super Cheap.",
+        "name": "linkedin-email-finder",
+        "username": "snipercoder",
+        "stats": {
+          "totalBuilds": 89,
+          "totalRuns": 898705,
+          "totalUsers": 913,
+          "totalUsers7Days": 27,
+          "totalUsers30Days": 78,
+          "totalUsers90Days": 192,
+          "lastRunStartedAt": "2026-10-06T09:30:35.594Z",
+          "actorReviewCount": 5,
+          "actorReviewRating": 4.516311719554007,
+          "bookmarkCount": 28,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 31799,
+            "TIMED-OUT": 0,
+            "TOTAL": 31799
+          }
+        },
+        "description": "|Input: linkedin|  |Output: Name, Email, Title, Company, etc.| Perfect for Email campaigns, Data Enrichment, Linkedin/Linkedin sales nav Leads. ✅Forget Instantly.ai, apollo.io, and hunter.io, they are all to break the Bank.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Y90VQ4w3DE6Usp4D2jZQ8Bfn1elqFsNu4l2TYRCpANU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTjlLVENCOWZYdkJ3WHl6dDYtYWN0b3ItVU1kQU5ReXF4M2IySlZ1eGctUWNOOVpEQXo3Ri1saW5rZWRpbi1pY29uLTEwXyUyODElMjkuanBn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 28,
+        "actorReviewRating": 4.516311719554007,
+        "actorReviewCount": 5,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sniper Coder",
+        "userPictureUrl": "https://images.apifyusercontent.com/fMmkyxpqqUegDwpQ0Ym9dHC83jFVzOgr8PxvSWmCc-E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWWtPemlUb3c5LUs1R1R2dFpuZzFNdFQtSTlLZmtiQ0NyTHhnVWRZSTZLQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUamxMVkVOQ09XWllka0ozV0hsNmREWXRjSEp2Wm1sc1pTMTFlR2R6VGtJeGIySk1MVFl4TnpBeE9EWXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "createdAt": "2026-01-19T20:11:56.474Z",
+          "startedAt": "2026-01-19T20:11:56.474Z",
+          "apifyMarginPercentage": 0.2,
+          "isPriceChangeNotificationSuppressed": true,
+          "reasonForChange": "Migration from Pay Per Result to Pay Per Event with apify-default-dataset-item event",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  }
+                }
+              }
+            }
+          },
+          "forceContainsSignificantPriceChange": false
+        },
+        "id": "UMdANQyqx3b2JVuxg",
+        "url": "https://apify.com/snipercoder/linkedin-email-finder"
+      },
+      {
+        "title": "Clutch.co Search Results Scraper ( Pay Per Results)",
+        "name": "clutch-companies-scraper",
+        "username": "gopalakrishnan",
+        "stats": {
+          "totalBuilds": 28,
+          "totalRuns": 1576,
+          "totalUsers": 467,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 17,
+          "lastRunStartedAt": "2026-10-05T08:24:52.580Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          },
+          "actorReviewCount": 3,
+          "actorReviewRating": 3.945867669238758,
+          "bookmarkCount": 23
+        },
+        "description": "This Apify actor swiftly scrapes Clutch.co search results for lead generation. Get essential company data—names, URLs, ratings—for $2/1000 results. Integrates seamlessly with enrichment tools. Fast, efficient, and cost-effective!",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/T7IvhYgLjRJbzO1xvmlHDok49kJmNo4_-yRZPIYReGA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQkRudW1RQUJzWmJFTmh2R20tYWN0b3ItVDBWR2QyUDdpQ2xYWlpXQVEtQXJaU2RiSmNVUS1VbnRpdGxlZF9kZXNpZ25fJTI4MjglMjkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 23,
+        "actorReviewRating": 3.945867669238759,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Gopalakrishnan",
+        "userPictureUrl": "https://images.apifyusercontent.com/GMa5IMICyS4atVld2uH77G9CcQiqWy5XNXfEgVn7l8c/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTkI3eUFSWm5GNkhycjdQYmNjY01ZMXk1U05IMy1fbHJDR0FvYTNDQmx0dy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVU5wUkRCTGRtWkpXRlZrUWtwdlQzaGliRk5QTjAxcU1UZEdkV3BWTWxGdlFqbDVaMnB5UjBWUUxURTA.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "we're moving to Pay-Per-Event billing. Search results stay the same price. New optional add-on: per-company profile enrichment (website, contact info, reviews) for an extra fee, since search results alone don't include that data.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "profile-scraped": {
+                "eventTitle": "Profile Scraped",
+                "eventDescription": "Company details collected from Clutch.co profile pages",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "reviews-scraped": {
+                "eventTitle": "Reviews Scraped",
+                "eventDescription": "Collecting reviews from profile pages",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00175
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00175
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00175
+                  }
+                }
+              },
+              "search-result-scraped": {
+                "eventTitle": "Search Result Scraped",
+                "eventDescription": "Header details collected from search results URL",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-06-19T07:59:52.056Z",
+          "startedAt": "2026-06-19T07:59:52.056Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "T0VGd2P7iClXZZWAQ",
+        "url": "https://apify.com/gopalakrishnan/clutch-companies-scraper"
+      },
+      {
+        "title": "LinkedIn Profile Extractor & Enricher (No Login Required) ✅",
+        "name": "LinkedIn-Profile",
+        "username": "unseenuser",
+        "stats": {
+          "totalBuilds": 66,
+          "totalRuns": 472646,
+          "totalUsers": 2316,
+          "totalUsers7Days": 543,
+          "totalUsers30Days": 1055,
+          "totalUsers90Days": 1429,
+          "lastRunStartedAt": "2026-10-06T10:08:00.862Z",
+          "actorReviewCount": 4,
+          "actorReviewRating": 5.000000000000001,
+          "bookmarkCount": 22,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 174743,
+            "TIMED-OUT": 4,
+            "TOTAL": 174748
+          }
+        },
+        "description": "Extract complete LinkedIn profile data - experience, education, skills, certifications, location, headline. No login, no cookies. Built for B2B sales and lead-gen teams.",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION",
+          "SOCIAL_MEDIA"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/aUOmJ6I3pFC67MZrd0uoKhFYROnmkXnJp6X5pkH3fto/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc0NDU2R3bm1LTUoxUTJzVG4tYWN0b3ItTWdKZVpPc3YyaTRXa0NxRHktWGdKeUVJMUpsbC1TcGFyc2VfaW5zdHJ1bWVudGF0aW9uX19kaXJlY3RfbHlyaWNzX191cmJhbl9yZWFsaXNtX195b3V0aGZ1bF9y.webp",
+        "notice": "NONE",
+        "bookmarkCount": 22,
+        "actorReviewRating": 5,
+        "actorReviewCount": 4,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Unseen User",
+        "userPictureUrl": "https://images.apifyusercontent.com/JDqOEea2Ipw9zxwMSjgIgvd6yatqX-V8tZvPY9m7WMw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbDFQUmFzZ3A2bFJraEZadTVTOVh5Wjg2S0xzYmlxWnZDS0QxTE96TC1pWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjME5EVTJSM2JtMUxUVW94VVRKelZHNHRjSEp2Wm1sc1pTMXRUMUJRTjJkdmJFNVZMVk53WVhKelpWOXBibk4wY25WdFpXNTBZWFJwYjI1ZlgyUnBjbVZqZEY5c2VYSnBZM05mWDNWeVltRnVYM0psWVd4cGMyMWZYM2x2ZFhSb1puVnNYM0k.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-03-31T18:05:32.337Z",
+          "createdAt": "2026-03-31T18:05:34.241Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "MgJeZOsv2i4WkCqDy",
+        "url": "https://apify.com/unseenuser/linkedin-profile"
+      },
+      {
+        "title": "Product Hunt Scraper with Founders & Emails",
+        "name": "product-hunt-scraper-fast-reliable-4-1k",
+        "username": "fatihtahta",
+        "stats": {
+          "totalBuilds": 235,
+          "totalRuns": 5637,
+          "totalUsers": 486,
+          "totalUsers7Days": 10,
+          "totalUsers30Days": 38,
+          "totalUsers90Days": 87,
+          "lastRunStartedAt": "2026-10-06T09:00:49.407Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 10,
+            "FAILED": 116,
+            "SUCCEEDED": 201,
+            "TIMED-OUT": 27,
+            "TOTAL": 354
+          },
+          "actorReviewCount": 8,
+          "actorReviewRating": 4.235082730488282,
+          "bookmarkCount": 21
+        },
+        "description": "Extract structured Product Hunt launches with founders, emails, votes, comments, topics, websites, social media and more. Built for enterprise-grade startup intelligence, founder discovery, market analysis, and automated lead enrichment or analytics pipelines.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/TqZW3XeEsWYWbh98UlZzr329xybMI5noTynVbWDajAc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdG9aTkxYVnBGajlBNUZjeTMtYWN0b3ItdHE2UEdWazVJenVqSTdlaVktTWJLRUJNZGp0RS1VbnRpdGxlZF9kZXNpZ24tMTcucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 21,
+        "actorReviewRating": 4.235082730488282,
+        "actorReviewCount": 8,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Fatih Tahta",
+        "userPictureUrl": "https://images.apifyusercontent.com/nGmpIxipfkH15vvxhRF62_9Bh9aha1SI7aDFNWxX_iA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaFNseGRHQUFfM25wbk5RV0ZLazFwdGp0MEswSnY4SG50TzRBVjN2UEIway9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkRzlhVGt4WVZuQkdhamxCTlVaamVUTXZSRXhZWTFkRmFqbFVlVWwyYTB4RVlXOHRUVVpVWDNCb01WOHlYMk52Y0hsaGN5NXFjR2MuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": 1,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Products",
+                "eventDescription": "Charged for each product saved to the dataset",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00075
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0005
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "outputmaker": {
+                "eventTitle": "Founders (optional)",
+                "eventDescription": "Charged for each founder saved in a product record",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              },
+              "outputmail": {
+                "eventTitle": "Founder Emails (optional)",
+                "eventDescription": "Charged for each discovered founder email",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              }
+            }
+          },
+          "startedAt": "2026-05-19T11:29:51.122Z",
+          "createdAt": "2026-05-19T11:29:51.452Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "tq6PGVk5IzujI7eiY",
+        "url": "https://apify.com/fatihtahta/product-hunt-scraper-fast-reliable-4-1k"
+      },
+      {
+        "title": "🔥 Indeed Jobs Scraper API/Keyword or URL/No Login · Emails",
+        "name": "apify-indeed-cheerio-ppr",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 213,
+          "totalRuns": 81471,
+          "totalUsers": 1062,
+          "totalUsers7Days": 89,
+          "totalUsers30Days": 286,
+          "totalUsers90Days": 535,
+          "lastRunStartedAt": "2026-10-06T17:30:21.320Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 86,
+            "FAILED": 11,
+            "SUCCEEDED": 36400,
+            "TIMED-OUT": 0,
+            "TOTAL": 36497
+          },
+          "actorReviewCount": 8,
+          "actorReviewRating": 4.506569133807813,
+          "bookmarkCount": 21
+        },
+        "description": "Indeed jobs + company-leads scraper — search by keyword or URL. Returns salaries, GPS, full descriptions, the resolved external/ATS apply URL, and employer firmographics (CEO, revenue, industry, website) plus optional contact-email enrichment. Clean flat output; hard maxJobs cap.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/tclrSuXdopaXrawKvxJwfl111_vOTELu_uN7c7XGKLo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItSURCMkFmTFlKU1BibXNEaEYtYUZpYkZZUWRpZS1pbmRlZWQucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 21,
+        "actorReviewRating": 4.506569133807813,
+        "actorReviewCount": 8,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00149
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00139
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00129
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00119
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00109
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00099
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.007
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Extra data enrichment charged per enriched record (email/contact discovery).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-09-14T00:00:00.000Z",
+          "createdAt": "2026-08-30T20:23:52.721Z",
+          "notifiedAboutFutureChangeAt": "2026-08-30T20:24:18.142Z",
+          "notifiedAboutChangeAt": "2026-09-14T00:05:57.978Z"
+        },
+        "id": "IDB2AfLYJSPbmsDhF",
+        "url": "https://apify.com/memo23/apify-indeed-cheerio-ppr"
+      },
+      {
+        "title": "German Imprint Scraper",
+        "name": "imprint-contact-scraper",
+        "username": "dominic-quaiser",
+        "stats": {
+          "totalBuilds": 179,
+          "totalRuns": 504518,
+          "totalUsers": 572,
+          "totalUsers7Days": 9,
+          "totalUsers30Days": 23,
+          "totalUsers90Days": 56,
+          "lastRunStartedAt": "2026-10-06T09:02:43.439Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 23,
+            "FAILED": 0,
+            "SUCCEEDED": 4436,
+            "TIMED-OUT": 4,
+            "TOTAL": 4463
+          },
+          "actorReviewCount": 3,
+          "actorReviewRating": 3.91648176535629,
+          "bookmarkCount": 19
+        },
+        "description": "An Actor that automatically locates and scrapes key contact details from German website imprint pages (Impressum). It extracts information such as company name, address, phone numbers, emails, and decision-makers (Entscheider, Entscheidungsträger)",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/fCQYBOZIjZXxls2mEVufWYXNBuKsPLP8I2nRJ740unw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTXdFaGJ6dXJ5OHBjbzNSd2ItYWN0b3ItWXB6WjRSbnpsamx1VXpCczEtT0gzT1RQd2RZZC1pbXByaW50X3NjcmFwZXJfaWNvbl9sYXJnZS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 19,
+        "actorReviewRating": 3.91648176535629,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Dominic M. Quaiser",
+        "userPictureUrl": "https://images.apifyusercontent.com/N6DB_H1qXkS1BMIDbjyptxS0jMIACxgBlYdr7MAaDm4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWTZ0T2JPVXN2aFdjcWpQeTctOVM1Q3JHUjAwZXFTU3d1QkZnV1BvaXRVVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUWGRGYUdKNmRYSjVPSEJqYnpOU2QySXRjSEp2Wm1sc1pTMUdWamxzTlVNd1p6ZDVMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYemxmWHpJd01qVmZYekV4WHpJMVh6TTNYMEZOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Prices are being adjusted to sustain quality, reliability and more accurately reflect the platform and API costs. The pricing is now more uniform cross all tiers. GOLD users save 40% vs FREE tier. New rates range from $7/1k (FREE) to $4.20/1k (GOLD).",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.08
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.009
+                  }
+                }
+              },
+              "website-processed": {
+                "eventTitle": "Website Processed",
+                "eventDescription": "Charged for each website that is successfully crawled and processed for imprint extraction.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00104
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00088
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00072
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00072
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00072
+                  }
+                }
+              },
+              "decision-maker-extracted": {
+                "eventTitle": "Decision Maker Extracted",
+                "eventDescription": "Charged on top of the successful results, that called the API to get the names of decision makers. This is an additional charge when the actor identifies and extracts decision-maker information (e.g., CEO, founder, managing director).",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00087
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00073
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  }
+                }
+              },
+              "headless-browser": {
+                "eventTitle": "Headless Browser Request",
+                "eventDescription": "Charged when a headless browser is used to render JavaScript-heavy websites for imprint extraction.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00052
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00044
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00036
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00036
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00036
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0042
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00364
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00308
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00252
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00252
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00252
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-03-30T18:31:20.874Z",
+          "createdAt": "2026-03-16T18:31:21.480Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-03-16T18:31:42.862Z"
+        },
+        "id": "YpzZ4RnzljluUzBs1",
+        "url": "https://apify.com/dominic-quaiser/imprint-contact-scraper"
+      },
+      {
+        "title": "LinkedIn Company Posts Scraper - Bulk Export [NO LOGIN] ✅",
+        "name": "Company-Posts",
+        "username": "unseenuser",
+        "stats": {
+          "totalBuilds": 68,
+          "totalRuns": 3882,
+          "totalUsers": 197,
+          "totalUsers7Days": 30,
+          "totalUsers30Days": 92,
+          "totalUsers90Days": 138,
+          "lastRunStartedAt": "2026-10-06T10:26:00.236Z",
+          "actorReviewCount": 3,
+          "actorReviewRating": 5,
+          "bookmarkCount": 18,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 756,
+            "TIMED-OUT": 0,
+            "TOTAL": 756
+          }
+        },
+        "description": "LinkedIn post scraper for company pages - bulk-export posts with engagement, hashtags, mentions, and author profile enrichment (headline, industry, location, followers). Filter by keyword; sort by top engagement. Paste URLs or bare handles like 'google'. No login, no cookies. >99% success.",
+        "categories": [
+          "SOCIAL_MEDIA",
+          "LEAD_GENERATION",
+          "JOBS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/SSzP5Ji3xrwlQ6Ax8KFs7dJJuEKYu6i7sw7vn0YJ-Bs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc0NDU2R3bm1LTUoxUTJzVG4tYWN0b3ItdVI0QmpoODNqcFNjZTRKNWQtMW9wMU1ucmI2TS1TcGFyc2VfaW5zdHJ1bWVudGF0aW9uX19kaXJlY3RfbHlyaWNzX191cmJhbl9yZWFsaXNtX195b3V0aGZ1bF9y.webp",
+        "notice": "NONE",
+        "bookmarkCount": 18,
+        "actorReviewRating": 5,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Unseen User",
+        "userPictureUrl": "https://images.apifyusercontent.com/JDqOEea2Ipw9zxwMSjgIgvd6yatqX-V8tZvPY9m7WMw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbDFQUmFzZ3A2bFJraEZadTVTOVh5Wjg2S0xzYmlxWnZDS0QxTE96TC1pWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjME5EVTJSM2JtMUxUVW94VVRKelZHNHRjSEp2Wm1sc1pTMXRUMUJRTjJkdmJFNVZMVk53WVhKelpWOXBibk4wY25WdFpXNTBZWFJwYjI1ZlgyUnBjbVZqZEY5c2VYSnBZM05mWDNWeVltRnVYM0psWVd4cGMyMWZYM2x2ZFhSb1puVnNYM0k.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Splitting billing into per-URL and per-post events. Source-API call cost is now itemized instead of bundled. Total is similar for most runs.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "post-scraped": {
+                "eventTitle": "post-scraped",
+                "eventDescription": "One LinkedIn post row with content, author, and engagement metrics. Only real posts trigger this event.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "url-processed": {
+                "eventTitle": "URL processed",
+                "eventDescription": "One LinkedIn company URL checked against the source API. Covers the API call cost whether posts are returned or not.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004
+              }
+            }
+          },
+          "startedAt": "2026-09-16T08:23:55.129Z",
+          "createdAt": "2026-09-02T08:23:56.243Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-02T08:24:17.183Z",
+          "notifiedAboutChangeAt": "2026-09-16T08:35:55.035Z"
+        },
+        "id": "uR4Bjh83jpSce4J5d",
+        "url": "https://apify.com/unseenuser/company-posts"
+      },
+      {
+        "title": "Bulk Decision makers Email finder📧 💲$0.8/1K Emails, cheap.",
+        "name": "bulk-decision-makers-email-finder",
+        "username": "snipercoder",
+        "stats": {
+          "totalBuilds": 105,
+          "totalRuns": 62374,
+          "totalUsers": 1022,
+          "totalUsers7Days": 24,
+          "totalUsers30Days": 79,
+          "totalUsers90Days": 220,
+          "lastRunStartedAt": "2026-10-06T10:14:53.601Z",
+          "actorReviewCount": 5,
+          "actorReviewRating": 1.555987927294433,
+          "bookmarkCount": 16,
+          "publicActorRunStats30Days": {
+            "ABORTED": 6,
+            "FAILED": 0,
+            "SUCCEEDED": 3933,
+            "TIMED-OUT": 0,
+            "TOTAL": 3939
+          }
+        },
+        "description": "|Input: Domain|  |Output: Name, Email, Title, Company, etc of Decision makers In Bulk.| Perfect for Lead Generation, Email campaigns, and Data Enrichment. \n✅Forget AnymailFinder, apollo.io, hunter.io, they are all to break the Bank.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/jKgyfXTGT8UJEW8gqS4-L91SZT5Mr4DkbWWEWT6i124/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTjlLVENCOWZYdkJ3WHl6dDYtYWN0b3ItZ0thaXVOTWFWMjNhZXZJbngta25ZdTZCR1N1Vy1mZjk4MTNlMGE1MzZmZWNhNzFmMTRmMWIzYTk0YWVmNi5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 16,
+        "actorReviewRating": 1.555987927294432,
+        "actorReviewCount": 5,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sniper Coder",
+        "userPictureUrl": "https://images.apifyusercontent.com/fMmkyxpqqUegDwpQ0Ym9dHC83jFVzOgr8PxvSWmCc-E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWWtPemlUb3c5LUs1R1R2dFpuZzFNdFQtSTlLZmtiQ0NyTHhnVWRZSTZLQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUamxMVkVOQ09XWllka0ozV0hsNmREWXRjSEp2Wm1sc1pTMTFlR2R6VGtJeGIySk1MVFl4TnpBeE9EWXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Emails",
+                "eventDescription": "Person's Email+Details in the dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2025-11-26T19:03:43.202Z",
+          "createdAt": "2025-11-26T19:03:43.611Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "gKaiuNMaV23aevInx",
+        "url": "https://apify.com/snipercoder/bulk-decision-makers-email-finder"
+      },
+      {
+        "title": "Google search Parser google maps / my business",
+        "name": "google-search-parser-google-maps-my-business",
+        "username": "saswave",
+        "stats": {
+          "totalBuilds": 58,
+          "totalRuns": 84651,
+          "totalUsers": 870,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 11,
+          "lastRunStartedAt": "2026-10-05T18:50:07.630Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 188,
+            "TIMED-OUT": 0,
+            "TOTAL": 188
+          },
+          "actorReviewCount": 2,
+          "actorReviewRating": 1.359679412949698,
+          "bookmarkCount": 16
+        },
+        "description": "Extract company infos from google search results, right side box (website, phone number, reviews, social accounts, address..)\nAllows you to automate enrichment using queries with a combination of company name, website domain and street address (complete or partial). Check readme for some exemples.",
+        "categories": [
+          "SOCIAL_MEDIA",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/5ExFmqtGpJQpTBdOS7vHsM9LwtCUySgguzFWTT7orXU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNjZIQXhPZ281N0kyMVBRNEsvalNrcGVGb0R1dGN2b0w5c0EtZG93bmxvYWQuanBlZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 16,
+        "actorReviewRating": 1,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SASWAVE",
+        "userPictureUrl": "https://images.apifyusercontent.com/6WQg-tP0LdHvXx-BPLZuT_c4A4Zwi5PDKuEQM9hP48Q/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbFdTTU52Q2ZzamhMUTI5ZFRXR0NsLURSeVNTYnlhUFRwdU1xaHVPWm4wQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11WVcxaGVtOXVZWGR6TG1OdmJTOXhja3RwTkhSMFdFZEdTRnBOWkhCYWNDOU5aRkZCTTIxQlJYWTRaa3Q1VTNVMlNDMVRRVk5YUVZaRkxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-25T14:39:06.149Z",
+          "createdAt": "2026-09-11T14:39:06.332Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutRentalToPpePriceChangeAt": "2026-09-11T14:39:26.672Z",
+          "notifiedAboutFutureChangeAt": "2026-09-11T14:39:27.055Z",
+          "notifiedAboutChangeAt": "2026-09-25T15:05:53.764Z"
+        },
+        "id": "66HAxOgo57I21PQ4K",
+        "url": "https://apify.com/saswave/google-search-parser-google-maps-my-business"
+      },
+      {
+        "title": "LinkedIn Company Scraper (No Login) ✅ Bulk",
+        "name": "linkedin-company-scraper",
+        "username": "sourabhbgp",
+        "stats": {
+          "totalBuilds": 42,
+          "totalRuns": 50976,
+          "totalUsers": 243,
+          "totalUsers7Days": 35,
+          "totalUsers30Days": 82,
+          "totalUsers90Days": 140,
+          "lastRunStartedAt": "2026-10-06T10:21:03.769Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 15,
+          "publicActorRunStats30Days": {
+            "ABORTED": 243,
+            "FAILED": 7,
+            "SUCCEEDED": 28428,
+            "TIMED-OUT": 7,
+            "TOTAL": 28685
+          }
+        },
+        "description": "Bulk LinkedIn company scraper for B2B lead enrichment. Returns 33 fields per company: employees, all office locations with postal codes, followers, recent posts with reactions, products, similar companies and live open-job count. Company names and IDs accepted. No login. $1 per 1,000 results.",
+        "categories": [
+          "LEAD_GENERATION",
+          "SOCIAL_MEDIA",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/5a9ufEnmpQ3fQUw_VTneHhm25Rp2D6kx3r6hub8opx4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMnBoS0RNN3hBYWZCUG9xNTItYWN0b3ItbDVKZVpadk85VnJHZWVtVWUtRnQyYjZ2SVhkMy1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 15,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sourabh Kumar",
+        "userPictureUrl": "https://images.apifyusercontent.com/uq1C6hPqYQCuTGFe12JYd1mVAyxIgoxfdC4wYGxG0qQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRlcxY1dscWc4TU9PVVhGM2pZMHpjWWV2T04tZVBMRWFobjk2RjVzQlpWUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNbkJvUzBSTk4zaEJZV1pDVUc5eE5USXRjSEp2Wm1sc1pTMTVVVEkxVDB4bmFEbHNMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekk0WDE4eU1ESTJYMTh3TVY4MU1WOHdNRjlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-07-14T09:57:23.128Z",
+          "startedAt": "2026-07-28T09:57:05.317Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "One company scraped.",
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.001,
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "notifiedAboutFutureChangeAt": "2026-07-14T09:57:43.890Z",
+          "notifiedAboutChangeAt": "2026-07-28T10:05:40.114Z"
+        },
+        "id": "l5JeZZvO9VrGeemUe",
+        "url": "https://apify.com/sourabhbgp/linkedin-company-scraper"
+      },
+      {
+        "title": "Website Tech Stack Scanner | Website Technology Detector",
+        "name": "website-tech-stack-scanner",
+        "username": "misterkhan",
+        "stats": {
+          "totalBuilds": 77,
+          "totalRuns": 8427,
+          "totalUsers": 482,
+          "totalUsers7Days": 5,
+          "totalUsers30Days": 22,
+          "totalUsers90Days": 90,
+          "lastRunStartedAt": "2026-10-06T09:20:43.736Z",
+          "actorReviewCount": 3,
+          "actorReviewRating": 5,
+          "bookmarkCount": 14,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 130,
+            "TIMED-OUT": 0,
+            "TOTAL": 130
+          }
+        },
+        "description": "Scan any website to detect 7,000+ technologies, from CMSs, analytics, and marketing pixels to JS frameworks, CDNs, and hosting. Use it for market research, lead enrichment, and competitor tech profiling at scale.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/FvwKmnRjw820heyaiRjQPiY8NlgjsvwIfOqXEaUBuv4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNWpsYTFPTE5BSTZoWkYwRVktYWN0b3ItS3pQTjVhbGRsSWhibGpjVEwtNWxQNHJucEFiSS1raGFuLXdlYnNpdGUtdGVjaC1zdGFjay5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 14,
+        "actorReviewRating": 5,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Khan",
+        "userPictureUrl": "https://images.apifyusercontent.com/M_alIIxi4Tw2lIO0b6bPEFMaBI8d6XKg8m9Kzy6icbk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSklidmxjTVlUanNTS3RQaVd4ZXpBMlRKbjUwZmRXSi1jMHU0Rk5nYWlCWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOV3BzWVRGUFRFNUJTVFpvV2tZd1JWa3RjSEp2Wm1sc1pTMXVXWFJ3Ym5OcE5qRTJMVXRvWVc0dFFYWmhkR0Z5TG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.1
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.09
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.08
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.07
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.07
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.07
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-04-10T00:00:00.000Z",
+          "createdAt": "2026-04-03T15:05:59.698Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "KzPN5aldlIhbljcTL",
+        "url": "https://apify.com/misterkhan/website-tech-stack-scanner"
+      }
+    ]
+  }
+}

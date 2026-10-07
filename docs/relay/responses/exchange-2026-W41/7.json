@@ -1,0 +1,1029 @@
+{
+  "data": {
+    "total": 234,
+    "count": 15,
+    "offset": 0,
+    "limit": 15,
+    "desc": false,
+    "items": [
+      {
+        "title": "CharityJob.co.uk [Only$1.5💰] Scraper · Emails",
+        "name": "charityjob-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 60,
+          "totalRuns": 503,
+          "totalUsers": 16,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-06T08:40:03.834Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 9,
+            "SUCCEEDED": 150,
+            "TIMED-OUT": 1,
+            "TOTAL": 160
+          }
+        },
+        "description": "[Only$1.5💰] Scrape UK charity-sector job postings from CharityJob.co.uk — title, salary band, workplace type, employer, posted/closing dates, full description. Works with any search URL, filter combo or single job URL. Optional company enrichment adds website domain and About copy. JSON or CSV out.",
+        "categories": [
+          "JOBS",
+          "AUTOMATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/hFhSttg735tW13oMsUUvvFpYyY-NKAG3kPWD91R8wyI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItelF1Wng0NXIzQlBUM0JFZnMtUW5YZXdxRzZWVi1jaGFyaXR5am9iLmpwZWc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": 0.4,
+          "isPriceChangeNotificationSuppressed": false,
+          "startedAt": "2026-09-23T09:31:39.167Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Charged for additional data",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              },
+              "hiring-market-analysis": {
+                "eventTitle": "AI hiring-market analysis",
+                "eventDescription": "Charged per (role, region) group analyzed with the AI hiring-market pass (salary bands, top employers, demand signals). Cached 30 days. Failed or thin-signal groups are never charged. Only when hiringMarketAnalysis is enabled and the user is on a paid plan.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.15
+              }
+            }
+          },
+          "createdAt": "2026-09-07T09:32:36.430Z",
+          "notifiedAboutFutureChangeAt": "2026-09-07T09:32:56.727Z",
+          "notifiedAboutChangeAt": "2026-09-23T09:35:57.718Z"
+        },
+        "id": "zQuZx45r3BPT3BEfs",
+        "url": "https://apify.com/memo23/charityjob-scraper"
+      },
+      {
+        "title": "IRS 990 Nonprofit Search - Charity KYB & Grant Leads",
+        "name": "irs-990-nonprofit-search",
+        "username": "pink_comic",
+        "stats": {
+          "totalBuilds": 20,
+          "totalRuns": 838,
+          "totalUsers": 24,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-06T05:00:19.372Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search IRS-derived nonprofit profiles and Form 990 filings via ProPublica for charity KYB and grant prospecting. Lookup EIN or search name, state, NTEE, 501(c). Source links and PDFs. $0.002/result. Related: FAC Single Audit, Grants.gov.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/N2-0SJ6zA5NkdI7rGffK5JevwDzBwqhJ-_YnmFt7-JE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcUhCNFdCdVdsUmtraUdIWXctYWN0b3ItZE1lWnFjZVZkbXhOZEw0ZHAtdGdGek1MSTU5QS1pcnMtOTkwLW5vbnByb2ZpdC1zZWFyY2gucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ava Torres",
+        "userPictureUrl": "https://images.apifyusercontent.com/xHIQ8NPgSWhC7jbdKz1bniz5JDgrODfO99BuuEXmJbQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV19KMWN2OFBpYlc5enZjT2ZWUVcxTnNyQVk1eU9Sd0F3QkMwWWYzWGpRSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVWhDTkZkQ2RWZHNVbXRyYVVkSVdYY3RjSEp2Wm1sc1pTMW1NakYwYkdwVFFraDNMWE5qY21WbGJuTm9iM1JmTWpBeU5pMHdNeTB5TkY5aGRGODRMalExTGpFMVgwRk5MbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-03-28T06:25:21.288Z",
+          "startedAt": "2026-03-28T06:25:21.288Z"
+        },
+        "id": "dMeZqceVdmxNdL4dp",
+        "url": "https://apify.com/pink_comic/irs-990-nonprofit-search"
+      },
+      {
+        "title": "UK Charity Commission Search",
+        "name": "uk-charity-commission",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 257,
+          "totalUsers": 9,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-05T16:46:54.074Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search the official Charity Commission register for England and Wales to retrieve structured data on 170,000+ registered charities.",
+        "categories": [
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Cn7_v67Knu4ln689LrB2NVHsb0ramgNUiyip-fn8AWo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vczJGTTV1Rkg5RjJlWjRwWjktYWN0b3ItcDd6OVBYcFJzTG1PbUFobHctbndWQ0plOHBHVy11ay1jaGFyaXR5LWNvbW1pc3Npb24ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-03-13T20:41:31.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "charity-fetched": {
+                "eventTitle": "Charity fetched",
+                "eventDescription": "Charged per charity record retrieved from the Charity Commission.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-02-27T19:42:00.437Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-02-27T19:42:20.601Z"
+        },
+        "id": "p7z9PXpRsLmOmAhlw",
+        "url": "https://apify.com/ryanclinton/uk-charity-commission"
+      },
+      {
+        "title": "Global Charity & Non-Profit Search API",
+        "name": "global-charity-api",
+        "username": "dev00",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 162,
+          "totalUsers": 7,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T02:35:00.555Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 33,
+            "TIMED-OUT": 0,
+            "TOTAL": 33
+          }
+        },
+        "description": "Search global registered charities and non-profit organizations. Filter by country code and retrieve lists with up to 10,000 results.",
+        "categories": [
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/j3Y8gG3Dk6SUp2ut7G0lrlNK9XrGBuKjYkV6BScI_K8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZEdkMEs0bGZCazYzOFhxdDItYWN0b3ItUVRlWkpzSXZzQWNlT3V4SzctV21lWUVPcG0yUS1wZXJjZW50X2xvZ28uanBlZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "dev00",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "charity-query": {
+                "eventTitle": "Successful Charity Query",
+                "eventDescription": "Charged per successful charity dataset query.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-19T13:37:56.537Z",
+          "createdAt": "2026-05-19T13:37:56.859Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "QTeZJsIvsAceOuxK7",
+        "url": "https://apify.com/dev00/global-charity-api"
+      },
+      {
+        "title": "Canada Charity Data — Directors & Financials (CRA T3010)",
+        "name": "ca-charity-data",
+        "username": "foxlabs",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 109,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-05T11:17:09.631Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Search 80K+ Canadian registered charities from the official CRA T3010 open data — identity, category, address, website, plus optional directors/trustees and detailed financials (revenue, expenditures, assets). Open Government Licence — Canada, no key.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/NAy8yHGj2onY1fh02--VxkjFa4c5cGDx4sxMpf0wlbU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1htTW5VaXhrRTdUSkdlSWYtYWN0b3ItRUxwc0tiOGJxRHFiN0Rac2wtWkQ0aHRUVTRlUC1GbGFnX29mX0NhbmFkYS5zdmcucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Berkan Kaplan",
+        "userPictureUrl": "https://images.apifyusercontent.com/kMBdvurXqT-jNhSrS0j6jlsQX8nxa_26e0fFkIgDWSw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veWtzd1Y4WDVsOUlZdGN0dHRxbjlpTENFWE5tRFhfN2tPZjE0SlNZeC1DYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMWh0VFc1VmFYaHJSVGRVU2tkbFNXWXRjSEp2Wm1sc1pTMVRNMDlLWTFsMFVXdDJMVWxOUjE4eU1ESTJNRE13TWw4eE1qVTNOVFZmY21WemFYcGxaQzVLVUVWSA.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0035,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-09T21:23:34.042Z",
+          "createdAt": "2026-07-09T21:23:33.685Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-13T10:36:31.703Z"
+        },
+        "id": "ELpsKb8bqDqb7DZsl",
+        "url": "https://apify.com/foxlabs/ca-charity-data"
+      },
+      {
+        "title": "Nonprofit Explorer 990 Search - Charity KYB Verification",
+        "name": "nonprofit-explorer-990-search",
+        "username": "pink_comic",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 726,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-06T10:04:00.887Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search IRS Form 990 nonprofit and 501(c)(3) data by name, state, or NTEE for charity KYB and grant leads. Export EINs, revenue, expenses, assets, filing years, and PDF links. Related: irs-990-nonprofit-search, federal-audit-clearinghouse.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/bvvqreSuXKo8Keyayq6mlewa3JJFD7iZJC_AFaIbz1M/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcUhCNFdCdVdsUmtraUdIWXctYWN0b3ItZ0hZWDc5R2ZPU0NRdVVlVVktWlZhTVp0ek5lcC1ub25wcm9maXQtZXhwbG9yZXItOTkwLXNlYXJjaC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ava Torres",
+        "userPictureUrl": "https://images.apifyusercontent.com/xHIQ8NPgSWhC7jbdKz1bniz5JDgrODfO99BuuEXmJbQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV19KMWN2OFBpYlc5enZjT2ZWUVcxTnNyQVk1eU9Sd0F3QkMwWWYzWGpRSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVWhDTkZkQ2RWZHNVbXRyYVVkSVdYY3RjSEp2Wm1sc1pTMW1NakYwYkdwVFFraDNMWE5qY21WbGJuTm9iM1JmTWpBeU5pMHdNeTB5TkY5aGRGODRMalExTGpFMVgwRk5MbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-03-29T22:21:19.557Z",
+          "startedAt": "2026-03-29T22:21:19.557Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "gHYX79GfOSCQuUeUY",
+        "url": "https://apify.com/pink_comic/nonprofit-explorer-990-search"
+      },
+      {
+        "title": "Singapore Charities & IPC Directory",
+        "name": "sg-charities-scraper",
+        "username": "hipersoft",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 70,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T06:32:57.275Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search Singapore's official Charity Portal in bulk: charity name, UEN, charity & IPC status, IPC validity, sector, classification, activities and registration dates. Verify IPC status and generate leads. No setup.",
+        "categories": [
+          "LEAD_GENERATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/-pdRsw8l41IXQlkhQIOtVpVPvvhmtP-AUXzaGxRUUNA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vYTVMdDZkbWQxZTlwUklGWGEtYWN0b3ItT0dIYk5UakprTElwRzlBbXUtNXNMck1JTGJRQy1zZ2NoYXJpdGllcy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "hiper soft",
+        "userPictureUrl": "https://images.apifyusercontent.com/5jDNWOXS0jbJETXx0n8_XFhxi7McbXBp3RacBGYtNLQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSzlITHlxb2k5MnBNZGVkRWVWT2ktVmh5WHBzNmJ4bTNKVzQ5V3ctbGlZYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZVFZNZERaa2JXUXhaVGx3VWtsR1dHRXRjSEp2Wm1sc1pTMHlXVGwwU1had1VEQkxMV2hwY0dWeUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "charity-scraped": {
+                "eventTitle": "Charity returned",
+                "eventDescription": "One charity/IPC record returned.",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00325
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0025
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "api-request": {
+                "eventTitle": "Search request",
+                "eventDescription": "One page of charity search results (100).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-08-06T20:37:53.665Z",
+          "createdAt": "2026-08-06T20:37:54.036Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-06T21:05:50.765Z"
+        },
+        "id": "OGHbNTjJkLIpG9Amu",
+        "url": "https://apify.com/hipersoft/sg-charities-scraper"
+      },
+      {
+        "title": "Charityjob Urls Scraper",
+        "name": "charityjob-urls-scraper",
+        "username": "getdataforme",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 168,
+          "totalUsers": 3,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T02:50:42.506Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "The Charityjob Urls Scraper extracts detailed job listing data from Charityjob.co.uk for market research, competitive analysis, and content aggregation....",
+        "categories": [
+          "AI",
+          "ECOMMERCE",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/dbgPqSO38w2b-9cOi1J2kL6XM8382OwkFSa7eKiD_xQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vVG1nM0VoZEppNmgzQlN1OFAtYWN0b3Ita2M1RkFHdGdmNUthTVFGUVEtVHBmZFFyS0luZS1DaGF0R1BUX0ltYWdlX0phbl8xNl9fMjAyNl9fMDFfMzZfMDRfUE0ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "GetDataForMe",
+        "userPictureUrl": "https://images.apifyusercontent.com/IrsUNrGY66yv-Hls478fzfYRDnv3UVinpaya_kucM_A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSk5hcW9sVC1JUXFnd1EwbE9oSGxxSXFJdTRPQ1doNDRpMUJMRzllLTh3MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RTJORGcwTURjM05UOTJQVFE.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.009,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-04-22T09:06:51.031Z",
+          "createdAt": "2026-04-22T09:06:51.760Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "kc5FAGtgf5KaMQFQQ",
+        "url": "https://apify.com/getdataforme/charityjob-urls-scraper"
+      },
+      {
+        "title": "UK Charity Commission Register Scraper",
+        "name": "uk-charity-commission-register-scraper",
+        "username": "neuton",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 70,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T09:04:42.015Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search the official Charity Commission public register extract for registered UK charities, income bands, activities, websites, and contact fields.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/-My2P8BzI7SPbH9dIHzpMi-tZCVOyeTj2-qeHPl5-4Q/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vd3RrQ2lzSHViYVhFcm9HM00tYWN0b3ItcjMxTFNWbERCZVdYNUpkWFctWWx5T280S0ZMSy11ay1jaGFyaXR5LWNvbW1pc3Npb24tcmVnaXN0ZXItc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Neuton Scripts",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-06T21:19:33.634Z",
+          "startedAt": "2026-08-06T21:19:30.000Z",
+          "reasonForChange": "Initial launch pricing for uk-charity-commission-register-scraper",
+          "isPriceChangeNotificationSuppressed": true,
+          "forceContainsSignificantPriceChange": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single charity row written to the default dataset.",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          }
+        },
+        "id": "r31LSVlDBeWX5JdXW",
+        "url": "https://apify.com/neuton/uk-charity-commission-register-scraper"
+      },
+      {
+        "title": "NY Attorney General Charities Bureau Registry Scraper",
+        "name": "ny-charities-bureau-registry-scraper",
+        "username": "crawlerbros",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 85,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-06T02:16:49.668Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 2,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search the NY Attorney General's Charities Bureau registry by organization name, registration number, EIN, city, or state. Returns registration status, EIN, address, and links to filings, dissolution/merger transactions, and Pennies for Charity fundraising reports.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/NBjXsr-khN_g3YvYRX29ecebSjJW7NZSWY3gPudAS4w/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMDdpWEluck1jaXVPUzEyaFUtYWN0b3ItVUxONHcyQUFjcmExcGZ4OVEtRHV4N29qbmFnNy1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Crawler Bros",
+        "userPictureUrl": "https://images.apifyusercontent.com/hVYjvC4925v8WlisGKmn3M3Kt4_rwKbDCBrNuGNCv5k/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbi1rdTRfVWpwQnFkb00yRFNoWm45LXRZeVRSNjJTb0Nyb29HN2RWb1dHay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNRGRwV0VsdWNrMWphWFZQVXpFeWFGVXRjSEp2Wm1sc1pTMDNWMDlVZGxWVmREVlVMV055WVhkc1pYSmljbTl6TFd4dloyOHVhbkJsWncuanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00433
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00367
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-07-11T10:47:16.548Z",
+          "startedAt": "2026-07-11T10:47:16.548Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-13T10:36:40.486Z"
+        },
+        "id": "ULN4w2AAcra1pfx9Q",
+        "url": "https://apify.com/crawlerbros/ny-charities-bureau-registry-scraper"
+      },
+      {
+        "title": "Canada Charities Data — CRA Registered Charities",
+        "name": "canada-charities",
+        "username": "truenorthdata",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 169,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-05T17:57:03.894Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "The CRA List of Charities as clean data — every registered Canadian charity with identifiers, category, and location, joined into one JSON/CSV file. For vendors selling to nonprofits (your full prospect universe) and for researchers analyzing the sector. Reference data, updated on the CRA's cadence.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Wfjp0uwTOAOacey-eCJDZyIWRRHHmQpHnjZ0vDtQwDU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaGhSSE9Rd2xaTzdySWZDVmwtYWN0b3ItbWhZR0hkcEVYQXU4ZE9XMHQtRzJTRWdoc3cxeS1jYW5hZGEtY2hhcml0aWVzLWxvZ28ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Vadim Zabin",
+        "userPictureUrl": "https://images.apifyusercontent.com/oXbBt-ZwpUhpBu61FOSSywvQ-HhdX8kS5-fjcq87IjE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUGhOODRNaC1MTWxtNXFwUkxOUDlDSUJHN0ZPYXFwX0tzempVSlRyMUozdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTM05ZTVhkWWNEUkxhV2w0WTA0MWNWSldTSE5YV0ZkZk1qTjJRMWhLUTFwclRGbHpVa2RYZFU1SVYyeFpkMnBIUjBVOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.006,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-06T01:49:33.438Z",
+          "createdAt": "2026-07-06T01:49:33.448Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "mhYGHdpEXAu8dOW0t",
+        "url": "https://apify.com/truenorthdata/canada-charities"
+      },
+      {
+        "title": "UK Charity Data — Trustees, Contact & Financials",
+        "name": "uk-charity-data",
+        "username": "foxlabs",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 100,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-05T11:16:41.129Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search 170K+ UK charities from the official Charity Commission register (England & Wales) open data — identity, status, contact (email/phone/web), latest income & expenditure, plus optional trustees and detailed annual-report financials. Open Government Licence, no key.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/pta1Scbv7OBm8gUX6Emd9ei7cJ_8WhjUeXjnkG12sJM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1htTW5VaXhrRTdUSkdlSWYtYWN0b3ItdFBWUDJCTDZITUZnY2JZeFctOXBsRVJYM2YxNi1GbGFnX29mX3RoZV9Vbml0ZWRfS2luZ2RvbV8lMjgzLTUlMjkuc3ZnLndlYnA.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Berkan Kaplan",
+        "userPictureUrl": "https://images.apifyusercontent.com/kMBdvurXqT-jNhSrS0j6jlsQX8nxa_26e0fFkIgDWSw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veWtzd1Y4WDVsOUlZdGN0dHRxbjlpTENFWE5tRFhfN2tPZjE0SlNZeC1DYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMWh0VFc1VmFYaHJSVGRVU2tkbFNXWXRjSEp2Wm1sc1pTMVRNMDlLWTFsMFVXdDJMVWxOUjE4eU1ESTJNRE13TWw4eE1qVTNOVFZmY21WemFYcGxaQzVLVUVWSA.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-09T21:21:46.213Z",
+          "createdAt": "2026-07-09T21:21:45.857Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-13T10:36:31.683Z"
+        },
+        "id": "tPVP2BL6HMFgcbYxW",
+        "url": "https://apify.com/foxlabs/uk-charity-data"
+      },
+      {
+        "title": "Doing Good Leeds Jobs Scraper - Charity Vacancies",
+        "name": "doinggoodleeds-jobs-scraper",
+        "username": "benthepythondev",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 91,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T03:12:51.822Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape public Leeds and Yorkshire third-sector jobs with employer, location, type, salary, added date, closing date, logo and vacancy URL.",
+        "categories": [
+          "JOBS",
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9yxnJzK7HcCol1ozPsO5p8BvlWr9ZqBkRcdoRhq4ZqI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vT3JOQ0NWNm8xajU1THlPVFotYWN0b3ItQktROUJqNFVqYlNYRFVvajEtbVF6SjNJSXVzcC1kb2luZ2dvb2RsZWVkcy1qb2JzLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ben",
+        "userPictureUrl": "https://images.apifyusercontent.com/2uHzQHA1ompnXtYvA4IUQM5GaLvBCLIBmsVFdLt-evY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVzhUaGJqVkNtY24taDZwUUo5ZmM3ME9KajlUcFhGc1VHUGlDUUxpMF9Cdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUM0pPUTBOV05tOHhhalUxVEhsUFZGb3RjSEp2Wm1sc1pTMTJNRlZsUjJkMVMyaHNMV0psYm5Sb1pYQjVkR2h2Ym1SbGRpNXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-02T09:42:00.000Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Add progressive Apify plan discounts while preserving every existing Free-tier event price.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0000425
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0000375
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000035
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Charged for each vacancy saved to the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-18T09:44:00.796Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-18T09:44:20.934Z",
+          "notifiedAboutChangeAt": "2026-08-05T15:06:25.852Z"
+        },
+        "id": "BKQ9Bj4UjbSXDUoj1",
+        "url": "https://apify.com/benthepythondev/doinggoodleeds-jobs-scraper"
+      },
+      {
+        "title": "UK Charity Commission Register Scraper",
+        "name": "uk-charity-commission-register-scraper",
+        "username": "crawlerbros",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 62,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-06T01:40:44.294Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search the official Register of Charities for England and Wales. Filter by name, number, income, expenditure, classification, or area of operation, or fetch a full charity record (trustees, financial history, governance, accounts) by charity number.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/vRSW7whmCZn3KHZxTz1slz_u6yDTygjBZj1f9OZ5lsM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMDdpWEluck1jaXVPUzEyaFUtYWN0b3ItSFkwdXdCVnNEME9CY2RjTjAtZG5WTmVVZWc0Mi1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Crawler Bros",
+        "userPictureUrl": "https://images.apifyusercontent.com/hVYjvC4925v8WlisGKmn3M3Kt4_rwKbDCBrNuGNCv5k/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbi1rdTRfVWpwQnFkb00yRFNoWm45LXRZeVRSNjJTb0Nyb29HN2RWb1dHay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNRGRwV0VsdWNrMWphWFZQVXpFeWFGVXRjSEp2Wm1sc1pTMDNWMDlVZGxWVmREVlVMV055WVhkc1pYSmljbTl6TFd4dloyOHVhbkJsWncuanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00433
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00367
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-03T10:50:51.400Z",
+          "startedAt": "2026-08-03T10:50:51.400Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "HY0uwBVsD0OBcdcN0",
+        "url": "https://apify.com/crawlerbros/uk-charity-commission-register-scraper"
+      }
+    ]
+  }
+}

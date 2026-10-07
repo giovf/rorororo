@@ -1,0 +1,1167 @@
+{
+  "data": {
+    "total": 1123,
+    "count": 15,
+    "offset": 0,
+    "limit": 15,
+    "desc": false,
+    "items": [
+      {
+        "title": "UK Companies House Bulk Scraper",
+        "name": "uk-companies-house-bulk-scraper",
+        "username": "logiover",
+        "stats": {
+          "totalBuilds": 38,
+          "totalRuns": 431,
+          "totalUsers": 66,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 13,
+          "totalUsers90Days": 31,
+          "lastRunStartedAt": "2026-10-07T00:02:26.567Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 42,
+            "FAILED": 2,
+            "SUCCEEDED": 59,
+            "TIMED-OUT": 14,
+            "TOTAL": 117
+          }
+        },
+        "description": "Companies House API alternative. Bulk download & export 5M+ UK companies to CSV/JSON. Filter by SIC code, location, status. No API key.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/u_lXRgnIwZGEvs6KHWLPuR-fFdQGx1adNJEOYGue3Dw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vR2pTNm5ROHFhdU9kcTlLR3ktYWN0b3ItcEtqcEhxd3JyUXh2d0FMNGQtallqTk1OREd3ci1jb21wYW5pZXNfaG91c2VfbG9nby5qcGVn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Logiover",
+        "userPictureUrl": "https://images.apifyusercontent.com/kxSRwmWqUkC5jJXw5FI9NYpfuhuSdnO30XYx7OCQu1M/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZ1JTQnpIUXlnbFY4YTFCakgwNjlyQUNheTdtQjRlenN2NFJmanFPTWNJTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSMnBUTm01Uk9IRmhkVTlrY1RsTFIza3RjSEp2Wm1sc1pTMVlWMUl6VEdGWGFVNVBMVWRxVXpadVVUaHhZWFZQWkhFNVMwZDVMWEJ5YjJacGJHVXRlR1ZYTkhaUE1GUlRWUzExYm01aGJXVmtMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "isPriceChangeNotificationSuppressed": true,
+          "reasonForChange": "Switched to tiered pay-per-result so every feature stays reachable on the free plan.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isPrimaryEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.000035
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.000035
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000035
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00135
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00105
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00105
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00105
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-11T09:13:03.698Z",
+          "startedAt": "2026-09-11T09:13:03.698Z"
+        },
+        "id": "pKjpHqwrrQxvwAL4d",
+        "url": "https://apify.com/logiover/uk-companies-house-bulk-scraper"
+      },
+      {
+        "title": "Companies House Scraper — UK Companies, Directors & PSCs",
+        "name": "companies-house-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 20,
+          "totalRuns": 49928,
+          "totalUsers": 115,
+          "totalUsers7Days": 17,
+          "totalUsers30Days": 47,
+          "totalUsers90Days": 82,
+          "lastRunStartedAt": "2026-10-06T07:13:12.772Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 9,
+            "FAILED": 0,
+            "SUCCEEDED": 18378,
+            "TIMED-OUT": 0,
+            "TOTAL": 18387
+          }
+        },
+        "description": "Scrape the UK Companies House register: company profiles, directors, PSCs (beneficial owners), SIC codes, addresses, accounts dates, filing history & charges. Search by keyword, company number, SIC code, location or incorporation date. No API key. Monitoring mode. Export JSON, CSV, Excel.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/vW8nMBzI0DjIpPykMKdOEzf6dT8lke3nkByKrgTRoPE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItQldjcDFYVW91S0V1Q3ZZNDEtTzhVR1I3OXFhRC1Db21wYW5pZXNfSG91c2UucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company": {
+                "eventTitle": "Company Scraped",
+                "eventDescription": "One Uk company record: full profile (status, type, incorporation date, registered office, SIC codes, accounts & confirmation-statement dates, previous names) plus officers/directors, PSCs, optional filings & charges, and a lead score.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "officer": {
+                "eventTitle": "Officer Lead Record",
+                "eventDescription": "One flat officer/director lead record, (name, role, DOB, nationality, occupation, address, appointed/resigned dates) with company context. Billed only when \"Emit one lead record per officer\" is enabled.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              }
+            }
+          },
+          "startedAt": "2026-06-16T01:49:08.254Z",
+          "createdAt": "2026-06-16T01:49:08.837Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "BWcp1XUouKEuCvY41",
+        "url": "https://apify.com/scrapesage/companies-house-scraper"
+      },
+      {
+        "title": "UK Companies House Scraper",
+        "name": "uk-companies-house-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 22,
+          "totalRuns": 4732,
+          "totalUsers": 99,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 20,
+          "lastRunStartedAt": "2026-10-05T20:18:45.226Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "Scrapes UK Companies House for company profiles and officer details. Returns company number, name, status, address, and more as flat rows. Search by company name or registration number.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/fB4TYUvfkmjM72Fg9BebplgJ2eoUdsEuGF3ydzcxiNg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItTFZCSzJvNGs3cFhSZTN1Z0ktUTRCdnJpTkVPUy1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Adds the platform start fee. It is billed once per GB of run memory, which is $0.02 per run at this Actor's default of 128 MB. The price per result does not change and no other charge is added.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0075
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00733
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00717
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.007
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01924
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01852
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0178
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0178
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0178
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-10-07T00:46:22.875Z",
+          "createdAt": "2026-09-22T00:46:23.569Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-22T00:46:44.093Z"
+        },
+        "id": "LVBK2o4k7pXRe3ugI",
+        "url": "https://apify.com/parseforge/uk-companies-house-scraper"
+      },
+      {
+        "title": "UK Companies House Enricher",
+        "name": "uk-companies-house-enricher",
+        "username": "silentflow",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 258,
+          "totalUsers": 26,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 7,
+          "lastRunStartedAt": "2026-10-05T20:23:43.284Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 0,
+            "SUCCEEDED": 41,
+            "TIMED-OUT": 0,
+            "TOTAL": 43
+          }
+        },
+        "description": "Enrich any UK company with profile, directors, shareholders, and financial data (cash, net worth, assets, liabilities). 5-year history included. Proxies included.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Xo0X7QynZSOlGX3umQavZODYIYrgDsjy_nwHXfEYg3U/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaTlmMUJhSzlvVnhZRnk0b0ktYWN0b3ItRDE4YllrVU1aMW1VV0JYZVItbm1mVGI1d2dlYS11a2NvbXBhbmllcy1sb2dvLmpwZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SilentFlow",
+        "userPictureUrl": "https://images.apifyusercontent.com/iFlkZp4jvg7Yxa7alfhSLS4_CEc3mLYF6ukjxDJWnrY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT2FVaXRaMjdYa1FibDVYOUJ5YkR1VlRMTXY4TzJVNUhaTkVxX215VnVlRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhVGxtTVVKaFN6bHZWbmhaUm5rMGIwa3RjSEp2Wm1sc1pTMWFWMWhyTVRKVGFIcHVMVk5wYkdWdWRFWnNiM2N4TGpFdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00667
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00633
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.006
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-04-08T13:48:42.018Z",
+          "createdAt": "2026-04-08T13:48:42.249Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "D18bYkUMZ1mUWBXeR",
+        "url": "https://apify.com/silentflow/uk-companies-house-enricher"
+      },
+      {
+        "title": "Business Registration Lookup — SEC EDGAR & UK Companies House",
+        "name": "business-registration-lookup",
+        "username": "nexgendata",
+        "stats": {
+          "totalBuilds": 64,
+          "totalRuns": 272,
+          "totalUsers": 34,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-06T08:39:30.739Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Confirm a company legally exists and pull its registration record from SEC EDGAR (US) and Companies House (UK). Returns legal entity name, jurisdiction, status, CIK/company number and filing history. Built for KYB, lead validation and diligence.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/1L7ikeV4rhsqSTrRLfEkBRNWotw7kKGbusIA5brtPVI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFFZaExmMkt1NllxeUNXYngtYWN0b3ItMjVDZW9TbWNpV1F1ZXptYlEtYVJjb2xQQnhROC1idXNpbmVzcy1yZWdpc3RyYXRpb24tbG9va3VwLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGenData",
+        "userPictureUrl": "https://images.apifyusercontent.com/DFoEfAV1iSBokBNjpIZdoeMlxK2y6UEav2Se4BxUDrI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU5Nancta2JUQ2FFN3lQUTNGZnR1SHBQX0FoWkVNVlVFLTdfSVFOTjNzby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVRkZaYUV4bU1rdDFObGx4ZVVOWFluZ3RjSEp2Wm1sc1pTMXVSMmRzVGxZeU5VVkRMVzVuWkMxemRHRmphMlZrTFd4dlkydDFjQzFrWVhKckxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-17T01:26:46.000Z",
+          "reasonForChange": "A9 metadata normalization (Steve-authorized 2026-07-17): explicit isPrimaryEvent:false on apify-actor-start. SAME PRICE - no price value changes.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": false
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Business registration record",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.05,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-17T01:26:46.992Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "25CeoSmciWQuezmbQ",
+        "url": "https://apify.com/nexgendata/business-registration-lookup"
+      },
+      {
+        "title": "UK Companies House Scraper",
+        "name": "uk-companies-house-scraper",
+        "username": "parsebird",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 56,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T01:14:48.676Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 38,
+            "TIMED-OUT": 0,
+            "TOTAL": 38
+          }
+        },
+        "description": "Stream the full UK Companies House data snapshot and filter 5M+ companies by SIC code, status, location, and incorporation date. Fast, free, server-side filtering at scale.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/SJclVyyXMoXEAu-lqtQEqYKqOg-I7PDolipkj3LuAwU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc2ZucEJvV2tRWE1rU1V2ZnQtYWN0b3ItamJxZ3VaTDU1SUh5dWM4VEctOHpQZU53RlRLRC1zdmdfaW1hZ2VfLV8yMDI2LTA4LTI1VDIwMjI0NS42MjIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseBird",
+        "userPictureUrl": "https://images.apifyusercontent.com/OlHWJQ_zdtWlC6re6HWpLIRb2eq_YxPvjeLZnYwiz0M/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSFBFUEVXcWdKUHptR0huN21mT2QzVXQ2WEhPZVhZUHgtWTFnaWdWRlRwTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjMlp1Y0VKdlYydFJXRTFyVTFWMlpuUXRjSEp2Wm1sc1pTMHdVRGxXY0ZCMVRHVlFMV1poZG1samIyNHVjM1puTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-extracted": {
+                "eventTitle": "Company",
+                "eventDescription": "Charge per company record saved to the dataset",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0011
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-25T12:24:20.872Z",
+          "createdAt": "2026-08-25T12:24:21.103Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "jbqguZL55IHyuc8TG",
+        "url": "https://apify.com/parsebird/uk-companies-house-scraper"
+      },
+      {
+        "title": "UK Companies House Search",
+        "name": "uk-companies-house",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 1130,
+          "totalUsers": 33,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-05T15:18:58.960Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 55,
+            "TIMED-OUT": 0,
+            "TOTAL": 55
+          }
+        },
+        "description": "Search the official UK Companies House registry for company profiles, directors, officers, filing history, and registered addresses.",
+        "categories": [
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/AlWCv-w7nhSuOPDU6fw4b-6A6bHs9bejQWphapdLhnw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vczJGTTV1Rkg5RjJlWjRwWjktYWN0b3ItQ1BZNWJhTWVlNzNvTWtvbGEtR3NlUndub09KYS1DaGF0R1BUX0ltYWdlX01hcl8xNV9fMjAyNl9fMDlfMTdfMjdfUE0ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-03-13T20:41:31.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-fetched": {
+                "eventTitle": "Company fetched",
+                "eventDescription": "Charged per company record retrieved from UK Companies House.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-02-27T19:41:57.556Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-02-27T19:42:17.713Z"
+        },
+        "id": "CPY5baMee73oMkola",
+        "url": "https://apify.com/ryanclinton/uk-companies-house"
+      },
+      {
+        "title": "Companies House [$4💰] UK Companies, Directors, PSCs + Emails",
+        "name": "companies-house-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 53,
+          "totalRuns": 118,
+          "totalUsers": 16,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 14,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-06T06:42:54.280Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape UK Companies House: company profiles, directors, PSCs (owners), filing history, charges, overdue flags and a lead score. Search by keyword, SIC code, location or incorporation date, or paste company numbers. Optional confirmed website and email, director rows, new-company monitoring.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AI",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/7xHPt05T2KbMsJrKr0dL_LdgM9zBCcD2feAwzMWkpoA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItSG9uaGVXSTJVVng1RWR5WXYtTnJyN2ZqNTVLbC1nb3ZfdWsucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": true,
+          "startedAt": "2026-09-27T22:26:12.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company": {
+                "eventTitle": "Company",
+                "eventDescription": "One UK company record: profile, registered office, SIC codes, accounts and confirmation-statement deadlines with overdue flags, charges and insolvency flags, officers, PSCs and a lead score, plus filing history and charges when enabled.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.004
+              },
+              "officer-lead": {
+                "eventTitle": "Officer row",
+                "eventDescription": "One flat row per active director or secretary, with the company's name, number, link, and its website and email when found. Only charged when 'Also output one row per active officer' is on.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              },
+              "contact-email": {
+                "eventTitle": "Contact email",
+                "eventDescription": "A contact email read from the company's own website, used only when that site shows the company number, registered postcode or registered name. Only charged when email enrichment is on, never for a miss.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.05
+              }
+            }
+          },
+          "createdAt": "2026-09-27T20:26:12.472Z"
+        },
+        "id": "HonheWI2UVx5EdyYv",
+        "url": "https://apify.com/memo23/companies-house-scraper"
+      },
+      {
+        "title": "Companies House UK Company Search Scraper",
+        "name": "companies-house-uk-company-search-scraper",
+        "username": "automation-lab",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 121,
+          "totalUsers": 11,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 7,
+          "lastRunStartedAt": "2026-10-05T23:06:54.434Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 1,
+            "TOTAL": 28
+          }
+        },
+        "description": "Scrape official UK Companies House public company records with status, addresses, SIC codes, officers, PSCs, and filing history.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/7dxR2usTa9RVgVSjq1-5i0YpwMaXtLoCncEVwEKnHh8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotYWN0b3ItRmNJbHljS2FQZ0l6N29GTzUtampqeTgwN05LUy1hY3Rvci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Automation Lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/K_C4LOMfOgJZv5UcVqbze6xlfc6mS23zsoHRS5nDXvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMDdsSFdveGptQlpJN0NMWkJqVi1wUlBjV0ZHRFQyRzIwVjdkVzBRSzBCay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiblJJUTI1b1RsVnJlbGhTTjI1aVZWb3RjSEp2Wm1sc1pTMW9ORkJYYTNsWWVVSmxMV0YxZEc5dFlYUnBiMjR0YkdGaUxYQnliMlpwYkdVdGJHOW5ieTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-25T20:02:42.179Z",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "start": {
+                "eventTitle": "Run started",
+                "eventDescription": "One-time fee charged when a run starts. Covers fixed startup cost.",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": true
+              },
+              "item": {
+                "eventTitle": "Company record extracted",
+                "eventDescription": "Charged per Companies House company record extracted.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.000063875
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000055543
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000043324
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.000033326
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.000022217
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000015552
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-08-25T20:02:42.283Z"
+        },
+        "id": "FcIlycKaPgIz7oFO5",
+        "url": "https://apify.com/automation-lab/companies-house-uk-company-search-scraper"
+      },
+      {
+        "title": "UK New Company Leads — New Incorporations by SIC Code",
+        "name": "uk-new-companies",
+        "username": "kaz_kakyo",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 133,
+          "totalUsers": 8,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-06T05:52:54.940Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 43,
+            "TIMED-OUT": 0,
+            "TOTAL": 43
+          }
+        },
+        "description": "Find newly registered UK companies by SIC code and incorporation date. Returns company names, registered addresses, SIC codes and source links from Companies House. Set maxItems to limit results; use the built-in key or your own API key.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/T7OOHv8Iu8cuQyb94NG2H9EMB_MGOGCbQFIueRdHTNE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbkxKczVwYTJnYzlEa3lDM2MtYWN0b3ItMm9FeFljb2ZVVU5Jbm1weGctdWUzV0pOd3NibC1lbnRlcnByaXNlXzEwMGRwX0UzRTNFM19GSUxMMF93Z2h0NDAwX0dSQUQwX29wc3o0OC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Heim AI",
+        "userPictureUrl": "https://images.apifyusercontent.com/LNscMJFUE_amLslSHAUye7I1covaoDJYjOpBrhmQ-k8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vY0VKaTM1U25FbkNXdTNRVFNWUlVaZnRKVGV0U0x0dnJKQnY5NnBpczlycy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZia3hLY3pWd1lUSm5ZemxFYTNsRE0yTXRjSEp2Wm1sc1pTMWpRWGRvYVhkeWVWZ3dMV2hsYVcxZllXbGZiRzluYnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "lead-found": {
+                "eventTitle": "Lead found",
+                "eventDescription": "One lead row in the dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              },
+              "lead-enriched": {
+                "eventTitle": "Lead enriched",
+                "eventDescription": "One lead enriched with its current directors.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.006
+              },
+              "lead-found-zero-setup": {
+                "eventTitle": "Lead found (zero setup)",
+                "eventDescription": "One lead, run on the built-in key (no setup needed).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "lead-enriched-zero-setup": {
+                "eventTitle": "Lead enriched (zero setup)",
+                "eventDescription": "One enriched lead (with directors), run on the built-in key.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.012
+              }
+            }
+          },
+          "startedAt": "2026-07-06T23:49:50.182Z",
+          "createdAt": "2026-07-06T23:49:51.633Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-13T10:36:13.343Z"
+        },
+        "id": "2oExYcofUUNInmpxg",
+        "url": "https://apify.com/kaz_kakyo/uk-new-companies"
+      },
+      {
+        "title": "UK Companies House",
+        "name": "uk-companies-house",
+        "username": "artificially",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 33,
+          "totalUsers": 7,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-05-22T14:45:35.689Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "Search and extract company data from UK Companies House. Get company details, officers, filing history, and more from the official UK government registry.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AI",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/fETG-E-nUTMOaQOsPAiaFYO8MSQ1m3fVShIVuTtJ_Uc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaExGZXZJR3huQldiSmNaS0ItYWN0b3IteGJsSzl3ODJjZnp6WnNVRUctTHltMUU2ZzBkUi1hcnRpZmljaWFsbHktdWstY29tcGFuaWVzLWhvdXNlLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Artificially",
+        "userPictureUrl": "https://images.apifyusercontent.com/BKltTSq_Z9qxi40RAPuV1o2eNIMGSTuYsf4tqWspfnY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veEZBQ0V5ajMwZmw0Z0pDbHZGZHlTYU83aDhVemw3cFZxRnlfcFh0QlgtSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhRXhHWlhaSlIzaHVRbGRpU21OYVMwSXRjSEp2Wm1sc1pTMXZhVzVPWWxvM1UwcFhMV0Z5ZEdsbWFXTnBZV3hzZVMxdmMybHRMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.035
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.035
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.035
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-01-22T14:25:09.647Z",
+          "createdAt": "2026-01-22T14:25:10.256Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "xblK9w82cfzzZsUEG",
+        "url": "https://apify.com/artificially/uk-companies-house"
+      },
+      {
+        "title": "Companies UK Latest Search Scraper",
+        "name": "companies-UK-search",
+        "username": "leadsbrary",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 162,
+          "totalUsers": 5,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T01:02:39.839Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "$0.85/1000 result. Search the latest registered companies in the UK using CompanyGoUK database. Filter by registration date, company number, company name, website, industry, and status.",
+        "categories": [
+          "LEAD_GENERATION",
+          "SEO_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/qRpsMIx9whrAxFzauwqzZmgplnoY8c6okRoqgxuFwO4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZnE1NHZrTTh1V3VsbktBbnItYWN0b3ItQUROOUxWY1RQZE5BeExHSEstZ3k3bkpHNFFWNS1nb3YudWsud2VicA.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Alexandre Manguis",
+        "userPictureUrl": "https://images.apifyusercontent.com/6qUz5dNbUY4MxtuEJnD24yjux-mhBKAPNSneJdoy92A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRThDZUlyMEJBS3JVSnIwQVkwcWN5VDNuNnNaMklkUmp0UEFzSTRuSUFhVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZabkUxTkhaclRUaDFWM1ZzYmt0QmJuSXRjSEp2Wm1sc1pTMDBXWEpaVFhaQlQyRnpMV3h2WjI5ZmNISnZabWxzWlM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00085
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00085
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00085
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-12T07:40:31.801Z",
+          "createdAt": "2026-05-12T07:40:31.892Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ADN9LVcTPdNAxLGHK",
+        "url": "https://apify.com/leadsbrary/companies-uk-search"
+      },
+      {
+        "title": "UK Companies House · Search, Directors & PSC",
+        "name": "uk-companies-house-scraper",
+        "username": "corent1robert",
+        "stats": {
+          "totalBuilds": 27,
+          "totalRuns": 458,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-09-23T08:59:07.697Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 4,
+            "TIMED-OUT": 0,
+            "TOTAL": 5
+          }
+        },
+        "description": "Paste a Companies House search URL or company numbers — address, SIC, directors and PSC. Companion Actors: French Companies, Germany Handelsregister. No API key. Official public register.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/W2EAa1VIQWbcFhWcpGaMSCua0QnQSDKpxPuevPrYXZY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUVk2THUzd1M2OW93V3VUYjItYWN0b3ItS0J5ZUNldkN6WTh6NVNQNGEtdzQzaHA5M05RTC1nb3Z1ay1sb2dvLWI4NTUzZjY4ODEzMWZhZDY2NWU1MmE4YzJkZjc2MzNmOWNkMWMwZmZmYjlmNjk3MDNjYzY4.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Corentin Robert",
+        "userPictureUrl": "https://images.apifyusercontent.com/TyI_VJkclQhXIKULXxKOg_HGeEKLebxmFhRgEBF37ak/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWm5WdUJ3NzJTWEZ6SDZWODhYRTZiTTFTWm4xUzhISDJVYW5peEJ5SE9sYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVVmsyVEhVemQxTTJPVzkzVjNWVVlqSXRjSEp2Wm1sc1pTMW5TakZLU0dSbFoxWnFMVkJJVDFSUFgwTlBVa1ZPVkVsT1gweFBSMFZOUlU1VVFWUlpVRWxSVlVWZk1pNXFjR2MuanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "isPriceChangeNotificationSuppressed": true,
+          "createdAt": "2026-09-07T19:20:47.164Z",
+          "startedAt": "2026-09-07T19:19:53.000Z",
+          "reasonForChange": "Store quality score: FREE→GOLD discounts (10/20/30). PPE includes compute (usage not billed to user). List prices aligned to Store comps; no list-price increase.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-basic": {
+                "eventTitle": "Company retrieved — Basic",
+                "eventDescription": "Address, SIC codes, company status and type, incorporation date",
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                }
+              },
+              "company-officers": {
+                "eventTitle": "Company retrieved — Officers",
+                "eventDescription": "Basic data + director first/last name, DOB, nationality, appointment date",
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0036
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0032
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0028
+                  }
+                }
+              },
+              "company-kyb": {
+                "eventTitle": "Company retrieved — KYB",
+                "eventDescription": "Officers data + PSC beneficial owner name, nature of control, notification date",
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0054
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0048
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0042
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0042
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0042
+                  }
+                }
+              },
+              "company-website-contacts": {
+                "eventTitle": "Website contacts (add-on)",
+                "eventDescription": "Optional add-on when website enrich is ON: discover the company site and harvest public email, phone and socials (up to 3 pages). Charged in addition to the selected enrichment level.",
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0036
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0032
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0028
+                  }
+                }
+              }
+            }
+          }
+        },
+        "id": "KByeCevCzY8z5SP4a",
+        "url": "https://apify.com/corent1robert/uk-companies-house-scraper"
+      }
+    ]
+  }
+}

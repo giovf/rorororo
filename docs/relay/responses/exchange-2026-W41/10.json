@@ -1,0 +1,1184 @@
+{
+  "data": {
+    "total": 55,
+    "count": 15,
+    "offset": 0,
+    "limit": 15,
+    "desc": false,
+    "items": [
+      {
+        "title": "Uk Waste Carriers Register",
+        "name": "uk-waste-carriers-register",
+        "username": "devon_gtme",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 80,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T13:00:37.455Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Monitor the Environment Agency's official Waste Carriers, Brokers & Dealers register (England). Track NEW, EXPIRING and LAPSED registrations, or search by name, postcode or CBDU number. Trigger data and supplier verification for equipment suppliers, insurers, compliance and B2B prospecting.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/xX9z6f9kzci-cGOrHhEFtWruxqo7qWIXbEYoePnrWbs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vN1hnbkhkaUV5Qm1TczF3bGItYWN0b3ItNmZyVmFWaGZYVDU2a0IzdUgtY2ZiQWljcEFQdS11ay13YXN0ZS1jYXJyaWVycy1yZWdpc3Rlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Devon Kellar",
+        "userPictureUrl": "https://images.apifyusercontent.com/ZP01WrfG-nT5lJbEj4pOZEyo7z9IeYhMjk3k2b3KEyU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSmU2TVZtNW5fUWFyQXU3R0lqcjktc0xQM0JESUQ3LVZfd0NySU1Sd21lcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOMWhuYmtoa2FVVjVRbTFUY3pGM2JHSXRjSEp2Wm1sc1pTMWFTbE0wYm1kc2VITjBMV2hsWVdSemFHOTBMbXB3WldjLmpwZWc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "One waste-carrier registration record (business, tier, registration/expiry dates, address, CH company number).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-16T16:35:33.399Z",
+          "startedAt": "2026-07-16T16:35:33.399Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "6frVaVhfXT56kB3uH",
+        "url": "https://apify.com/devon_gtme/uk-waste-carriers-register"
+      },
+      {
+        "title": "UK EA EPR Industrial Permit Portfolio Status Monitor",
+        "name": "uk-ea-epr-industrial-permit-portfolio-status-monitor",
+        "username": "plym-actor-factory",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 10,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T21:33:09.033Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 7,
+            "TIMED-OUT": 0,
+            "TOTAL": 7
+          }
+        },
+        "description": "Watch UK Environment Agency EPR industrial installations Permit Numbers (EPR/…) and emit typed APPEARED/DROPPED/HOLDER_CHANGED events from official registration.json. Not waste-carrier twin; not a national dump billed as rows.",
+        "categories": [
+          "AUTOMATION",
+          "AI",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Daniel Witney",
+        "userPictureUrl": "https://images.apifyusercontent.com/P1uggaJ7WUFX8y3NrHxjb6YlIKQ8XuxpF2i0jUYVCWg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN19fN2wxWmJhbXJnZmZEODJmb19XM1BoaWxOb2hpNnMzWkMwRE54clI3QS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TXhNVEl6TlRBNU5EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Initial PPE Phase 3 #52 UK EA EPR industrial permit (private)",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "epr-permit-status-event-delivered": {
+                "eventTitle": "EPR permit status event delivered",
+                "eventDescription": "Charged once per unique watched EA EPR industrial Permit Number status/membership event successfully pushed. Never charged for RUN_STATUS, baselines, quiet books, invalids, duplicates, retries, or fixture health runs.",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-24T01:02:51.579Z",
+          "startedAt": "2026-09-24T01:02:51.579Z"
+        },
+        "id": "4QZAKJtaQC8eXuGzL",
+        "url": "https://apify.com/plym-actor-factory/uk-ea-epr-industrial-permit-portfolio-status-monitor"
+      },
+      {
+        "title": "Bulk Phone Validator — Line Type, Carrier & Reverse Lookup",
+        "name": "phone-number-validator-bulk",
+        "username": "ntriqpro",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 98,
+          "totalUsers": 11,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-05T13:02:50.076Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 39,
+            "TIMED-OUT": 0,
+            "TOTAL": 39
+          }
+        },
+        "description": "Bulk phone number validator and reverse phone lookup. One rich row per number: valid/invalid verdict, line type (mobile, VoIP, toll-free, premium rate), country, carrier, region, time zone, 4 formats, SMS-capability, risk flags, plus a batch summary. Offline, no API keys.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/xNa9Abl7r9U3Bv3SQa_u9jAQ6n5b0xqI4ZKEATaX_YU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veXl0blFXY1VJZ1VXUEJMc2stYWN0b3ItRk1XS09RWjd0ZG83TnVZTVUtZ2pJM2V3dzg4VC1waG9uZS1udW1iZXItdmFsaWRhdG9yLWJ1bGsucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "daehwan kim",
+        "userPictureUrl": "https://images.apifyusercontent.com/UQXLOlsozKBCHQuRniGO9GmM9_88PHeqtmuO9PJ8uDY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOS1EUFl5V2FnQ0xRSF8yUmtIT18tM3RmWDlWTm5vbW5qOUY1Y1RlcUlZby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlWGwwYmxGWFkxVkpaMVZYVUVKTWMyc3RjSEp2Wm1sc1pTMW9TbFZWTkZBNVUzTlVMVzUwY21seFgzQnliMlpwYkdWZk1UQTRNQzV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "startedAt": "2026-09-18T09:41:30.000Z",
+          "reasonForChange": "Store discounts for paid plans (Bronze 20%, Silver 35%, Gold+ 48% off) and a primary event for the Store price estimate. FREE prices unchanged.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "run-started": {
+                "eventTitle": "Run started",
+                "eventDescription": "Charged once per run when the batch is accepted and analysis begins.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00325
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0026
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0026
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0026
+                  }
+                }
+              },
+              "number-resolved": {
+                "eventTitle": "Number resolved",
+                "eventDescription": "Charged once for each phone number written to the dataset with a full verdict - valid and invalid verdicts alike. Batch summary and notice rows are not charged.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0065
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0052
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0052
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0052
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-18T08:41:31.504Z",
+          "notifiedAboutFutureChangeAt": "2026-09-18T08:41:51.670Z",
+          "notifiedAboutChangeAt": "2026-09-21T12:36:24.002Z"
+        },
+        "id": "FMWKOQZ7tdo7NuYMU",
+        "url": "https://apify.com/ntriqpro/phone-number-validator-bulk"
+      },
+      {
+        "title": "EU Industrial Waste Transfer Records — EEA IED",
+        "name": "eu-industrial-waste-transfer-records",
+        "username": "nexgensignal",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 54,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T17:08:42.700Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Keyless pay-per-record EEA IED off-site waste transfers — waste class (HW/NONHW), treatment (D/R), tonnes, transboundary flag, country. Receiver identity and address structurally excluded; no person data. Gold $0.0335/record.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Y0Nd8H6JDrTelj5sFUAsPU5qclPcc_e3fsWb9qhvCLI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSFVFVlB2UEdTb3pJUmFoVHktYWN0b3ItYXhKU0JIdmpNaFVUbnNrVUctc2YySjlkWFF4Vy1ldS1pbmR1c3RyaWFsLXdhc3RlLXRyYW5zZmVyLXJlY29yZHMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Signal",
+        "userPictureUrl": "https://images.apifyusercontent.com/E2AM6xIR3RFe1AIRY7pK-UJ_GvYpK4KjdTJNvRKmJj8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vS0lmSk1xRkFqZlVObzZfNkFoOEtwaWtaQUJXU0tma3U1RDlsdG90M2FHNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTRlZGVmxCMlVFZFRiM3BKVW1Gb1ZIa3RjSEp2Wm1sc1pTMXhUR3AzTjB0VVpXTnBMVTVIVXk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "PRICING ACTIVATION FIX: re-file identical amounts with the activation flag (isPriceChangeNotificationSuppressed) so the saved price actually bills customers.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "waste_transfer_record": {
+                "eventTitle": "Waste transfer record",
+                "eventDescription": "One record per off-site waste transfer (class + treatment + tonnes) from the EEA IED registry.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0335
+                  }
+                }
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "isPriceChangeNotificationSuppressed": true,
+          "createdAt": "2026-08-26T22:08:41.325Z",
+          "startedAt": "2026-08-26T22:08:41.325Z"
+        },
+        "id": "axJSBHvjMhUTnskUG",
+        "url": "https://apify.com/nexgensignal/eu-industrial-waste-transfer-records"
+      },
+      {
+        "title": "Bulk Phone Number Format Validator",
+        "name": "bulk-phone-number-format-validator",
+        "username": "rock-ai-tools",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 17,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T17:44:55.124Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 16,
+            "TIMED-OUT": 0,
+            "TOTAL": 16
+          }
+        },
+        "description": "Normalize a batch of phone numbers to E.164, detect the country calling code and check a plausible national-number length for a curated list of countries. Format/plausibility only, no live carrier lookup.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Rock AI Tools",
+        "userPictureUrl": "https://images.apifyusercontent.com/svw0kCrVBGNiZ8Kflk7_5fsj4wTMKRzYkmQJm0ip3OA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRzE3Qy15dzVNTHdWczF2VWk2bW00YkMwRXRUcHljWm1heDZLVXA5eEVYSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblJPTmxOVlpqaEpiamhNZGtZemNtcERUVlY1WkZSVmR6Tk9lRjgxUzFWSVZtaEZORUZXUjFOSVFtSjRaV1pCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "phone-checked": {
+                "eventPriceUsd": 0.0015,
+                "eventTitle": "Phone checked",
+                "eventDescription": "One phone number normalized and validated (E.164 format, country code, national number length).",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-18T00:00:00.000Z",
+          "createdAt": "2026-09-18T13:31:41.070Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "a7Cxg3xgedZIBYCNl",
+        "url": "https://apify.com/rock-ai-tools/bulk-phone-number-format-validator"
+      },
+      {
+        "title": "ResQ Club Scraper - Surplus Food Offers & Venues",
+        "name": "resq-club-surplus-food-scraper",
+        "username": "abotapi",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 21,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T07:38:55.599Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 11,
+            "TIMED-OUT": 0,
+            "TOTAL": 12
+          }
+        },
+        "description": "Scrape ResQ Club surplus food offers in Finland, Sweden and Estonia: name, price, current price, discount, portions left, pickup and order windows, tags and photo, plus the venue address, phone, website, coordinates and ratings. Search by area, name or country, or paste venue links.",
+        "categories": [
+          "ECOMMERCE",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/0ziMEjCCTTe4iJOxhfKsQky3bzo9kqF6D8PBQd7zgqk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vajNMd1VnM0lnNWNHR0ZVbWUtYWN0b3ItV0VPQXk1Z1ZRWEx2YzVwYWYtSmpjdU82cWpQdy1TY3JlZW5zaG90XzIwMjYtMDktMjJfYXRfOS4zNS4yMV9wbS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Abot API",
+        "userPictureUrl": "https://images.apifyusercontent.com/V4bboesBNqPPXJ9-hHBndp5sog0EAYDRTnAnxwN4j9Q/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzlhdkFfMWFlc0Ryc2pDM2xzZXlHZ2F3a3dvWDROenRla2l4MnU2ZnR2US9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhak5NZDFWbk0wbG5OV05IUjBaVmJXVXRjSEp2Wm1sc1pTMVdSRU5CZVdSbmVEQlhMV1V3TkRBd01HRXlMVFZoT0dFdE5HWXhPUzA0TURFMUxUSTNNR1EwTURBNVlUSTRPQzV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Offer or venue record",
+                "eventDescription": "Charged for each record returned in the dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0012
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "venue-directory": {
+                "eventTitle": "Venue directory record",
+                "eventDescription": "Charged once per directory record returned for a venue that lists no offer right now. Only fires when the venue directory option is switched on.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0005
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.06
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.03
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-09-22T11:38:23.608Z",
+          "createdAt": "2026-09-22T11:38:24.270Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "WEOAy5gVQXLvc5paf",
+        "url": "https://apify.com/abotapi/resq-club-surplus-food-scraper"
+      },
+      {
+        "title": "Phone Number Validator - Bulk Format, Type & Carrier",
+        "name": "phone-number-validator",
+        "username": "dami_studio",
+        "stats": {
+          "totalBuilds": 16,
+          "totalRuns": 86,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T13:11:45.074Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 17,
+            "TIMED-OUT": 0,
+            "TOTAL": 17
+          }
+        },
+        "description": "Validate phone numbers in bulk: valid or not and why, mobile or landline, country, and E.164, international and national forms. Valid numbers also get region, original carrier and time zones. Paste a list or check a dataset field. Nobody is called. $0.26 per 1,000 numbers.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/fa1IJGKJhHZCvb2st2ZQbCduPue7GIG8cptWYM7fYv4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQ1ZLZnBubVZTSkxQVWVHa1QtYWN0b3ItYnlOWThBYUxuV3JtaXB4a0ctQnhXVUVzN1Z1TC1pY29uXzI1Ni5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Dami's Studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/YUEyVQ4w3LNN7SR7CGhx1DkmkdjSHXYxL4yAR0OqwsM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vazIzQzJKcGFZclJXOHFLWE5RSWY4SHFhalF2NjhwTTYtYW0tdnlWRC12SS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRMVpMWm5CdWJWWlRTa3hRVldWSGExUXRjSEp2Wm1sc1pTMTBNMVYyUzFCd1ZXVnFMV2xqYjI0dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "number-checked": {
+                "eventTitle": "Number",
+                "eventDescription": "One distinct phone number checked and returned in the dataset, valid or not. Blank entries and repeats in the same run are never charged.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00026
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000258
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000256
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.000254
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.000254
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000254
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00031
+              }
+            }
+          },
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "reasonForChange": "Paid plans now pay a little less: Starter, Scale and Business each get a small discount, and the Free plan price stays the same.",
+          "createdAt": "2026-10-03T22:02:15.964Z",
+          "startedAt": "2026-10-03T22:02:15.964Z",
+          "notifiedAboutChangeAt": "2026-10-03T22:06:06.960Z"
+        },
+        "id": "byNY8AaLnWrmipxkG",
+        "url": "https://apify.com/dami_studio/phone-number-validator"
+      },
+      {
+        "title": "Independent Insurance Agencies · IIABA Contacts",
+        "name": "independent-insurance-agencies",
+        "username": "corent1robert",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 98,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-05T21:28:52.443Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 73,
+            "TIMED-OUT": 0,
+            "TOTAL": 73
+          }
+        },
+        "description": "Export US independent agencies — published email, phone, website, LinkedIn, carriers. Filter by state or paste profile URLs. Mailboxes copied, never invented. One row per agency. No login.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/uTDdoT0x7xzEXbsyD1QPRW9DPSZ3fNRugd43toijLkU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUVk2THUzd1M2OW93V3VUYjItYWN0b3ItT2ZEWTdTSGw2d0JQZkpMTm0tSVk5UldUaURGYy1pbWFnZXMuanBlZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Corentin Robert",
+        "userPictureUrl": "https://images.apifyusercontent.com/TyI_VJkclQhXIKULXxKOg_HGeEKLebxmFhRgEBF37ak/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWm5WdUJ3NzJTWEZ6SDZWODhYRTZiTTFTWm4xUzhISDJVYW5peEJ5SE9sYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVVmsyVEhVemQxTTJPVzkzVjNWVVlqSXRjSEp2Wm1sc1pTMW5TakZLU0dSbFoxWnFMVkJJVDFSUFgwTlBVa1ZPVkVsT1gweFBSMFZOUlU1VVFWUlpVRWxSVlVWZk1pNXFjR2MuanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "isPriceChangeNotificationSuppressed": true,
+          "createdAt": "2026-09-07T19:06:37.807Z",
+          "startedAt": "2026-09-07T19:04:27.000Z",
+          "reasonForChange": "Store quality score: FREE→GOLD discounts (10/20/30). PPE includes compute (usage not billed to user). List prices aligned to Store comps; no list-price increase.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00005
+                  }
+                }
+              },
+              "agency-with-email": {
+                "eventTitle": "Agency with email",
+                "eventDescription": "One independent agency with a mailbox published on the public directory (never invented).",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00399
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00359
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00319
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00279
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00279
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00279
+                  }
+                }
+              },
+              "agency-with-phone": {
+                "eventTitle": "Agency with phone",
+                "eventDescription": "Agency with a published phone and no mailbox.",
+                "isPrimaryEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00249
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00224
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00199
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00174
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00174
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00174
+                  }
+                }
+              }
+            }
+          }
+        },
+        "id": "OfDY7SHl6wBPfJLNm",
+        "url": "https://apify.com/corent1robert/independent-insurance-agencies"
+      },
+      {
+        "title": "Phone Number Active Status Checker - Bulk Validation",
+        "name": "phone-number-active-checker",
+        "username": "clearpath",
+        "stats": {
+          "totalBuilds": 19,
+          "totalRuns": 319,
+          "totalUsers": 108,
+          "totalUsers7Days": 4,
+          "totalUsers30Days": 11,
+          "totalUsers90Days": 43,
+          "lastRunStartedAt": "2026-10-05T22:54:55.979Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 8,
+            "SUCCEEDED": 72,
+            "TIMED-OUT": 0,
+            "TOTAL": 80
+          }
+        },
+        "description": "Check phone numbers in bulk for active, inactive, or unknown status. Clean call lists, cut SMS bounce rates, and verify leads. Upload CSV/XLSX or paste up to 100,000 numbers per run and export results to CSV, JSON, or Excel.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/csRAqcDWzgfi4Xl-Uws5HsvxkJvO1tFtYRI5gSrN6hc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFN2TUNBd3N1Zk15WmVMeXQtYWN0b3ItUUdvTXRmRVgwd0pCUjNPNUQtNzVrMlBkdGdtcC1waG9uZS1hY3RpdmUtY2hlY2tlci1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ClearPath",
+        "userPictureUrl": "https://images.apifyusercontent.com/g3LfeX-eHh6DHWymIWx3s3F_AboAOKaYxmjA4ZRWv_Y/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vU2JPZnFsaFhZUHhMWjM4TVNITWNIM2kzZmtIQnV0Y3JjZUUwM2Fuc0M4MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRk4yVFVOQmQzTjFaazE1V21WTWVYUXRjSEp2Wm1sc1pTMXpkalZaTjJOUGJVMW9MV05zWldGeWNHRjBhQzFzYjJkdkxXRndhV1o1TG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "number_checked": {
+                "eventTitle": "Number checked",
+                "eventDescription": "One phone number checked for active status.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01199
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00999
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00799
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00699
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00699
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00699
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Dataset item",
+                "eventDescription": "Automatically charged by Apify for each item written to the run default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.01
+              }
+            }
+          },
+          "startedAt": "2026-06-10T05:25:11.898Z",
+          "createdAt": "2026-06-10T05:25:12.429Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "QGoMtfEX0wJBR3O5D",
+        "url": "https://apify.com/clearpath/phone-number-active-checker"
+      },
+      {
+        "title": "Universal E-commerce Scraper",
+        "name": "universal-ecommerce-scraper",
+        "username": "lofomachines",
+        "stats": {
+          "totalBuilds": 93,
+          "totalRuns": 980,
+          "totalUsers": 86,
+          "totalUsers7Days": 4,
+          "totalUsers30Days": 20,
+          "totalUsers90Days": 36,
+          "lastRunStartedAt": "2026-10-06T08:14:50.761Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 15,
+            "FAILED": 77,
+            "SUCCEEDED": 480,
+            "TIMED-OUT": 5,
+            "TOTAL": 577
+          }
+        },
+        "description": "Turn any e-commerce category or product page into clean, structured data. Paste a category page or product URL.Some sites may block bots, but if reachable, the process is fully automated.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/jFhl3jCpCjd1aFvN95Z_FofbDn97NrPgZbD8A2iMuxs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUmVkNnNHSEFOa0x6b3NzdkUtYWN0b3ItZk1pT3RUZ0xYbDdwcTh4ZmYteWd5cTdyRXRzeC1sb2dvdW5pdmVyc2FsLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Lofomachines",
+        "userPictureUrl": "https://images.apifyusercontent.com/PHi3Py-51URv-VOyJ1EVi53Xh5aQawWfTq_BM6sz4JA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20va2NzM2JqZXVFa2RGdlVXVkVGczltYWVhLUhpZmVwTW9UWi1SQS0zdl9Xdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVbVZrTm5OSFNFRk9hMHg2YjNOemRrVXRjSEp2Wm1sc1pTMDFORUY1WVZCWGFESldMV3h2WjI5aGNHbG1lUzV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.01
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0025
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-29T16:35:11.264Z",
+          "createdAt": "2026-05-29T16:35:11.544Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "fMiOtTgLXl7pq8xff",
+        "url": "https://apify.com/lofomachines/universal-ecommerce-scraper"
+      },
+      {
+        "title": "PhoneInfoga Cloud - International Phone Number OSINT | Bulk",
+        "name": "phoneinfoga-phone-osint",
+        "username": "anshumanatrey",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 631,
+          "totalUsers": 275,
+          "totalUsers7Days": 9,
+          "totalUsers30Days": 28,
+          "totalUsers90Days": 59,
+          "lastRunStartedAt": "2026-10-06T06:26:55.127Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 143,
+            "TIMED-OUT": 0,
+            "TOTAL": 143
+          }
+        },
+        "description": "Scan international phone numbers with PhoneInfoga: validate format, identify country, and generate OSINT footprint URLs across social media, reputation sites, disposable-number databases, and paste/document searches. Wraps the 16K-star OSINT tool by sundowndev.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/L4h5U-iHblmhQhjBCmqAjFpHRTPo6kxxd12HUt9mxw0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaDhvRFcxNFFidWdyNWdxU20tYWN0b3Itb0NBNHdxTWRRQkcwSnd4dHgteGREZ00zclVxZy1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Anshuman Atrey",
+        "userPictureUrl": "https://images.apifyusercontent.com/G7hHNmu6dsPbK3o6Qx4-TJwe_xqUHNC6RmdfzoZmVk0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYTBJVmFIeVB0Y29WZFRzZjUyYWpmWnlDdVZrTTZSZmRSb0Vscmt6M1RRMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTM2hFT1hkbWFYTlJZM2swUkRReWFWWnFXalJZTTE5SWQyRlJjRmxaWlZsV2REY3dYM05KYzFnekxVTm1ZMGRFYlhSaVFUMXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Initial pricing. Pay-per-result model: $0.02 per phone number scanned (covers libphonenumber validation + Google OSINT footprint URLs across 5 categories). Actor-start fee discourages bad-input runs.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Phone OSINT result",
+                "eventDescription": "Single phone-number record in the default dataset (includes country, validation, carrier hints, and OSINT footprint URLs).",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-05-24T13:36:50.731Z",
+          "startedAt": "2026-05-24T13:36:50.731Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "oCA4wqMdQBG0Jwxtx",
+        "url": "https://apify.com/anshumanatrey/phoneinfoga-phone-osint"
+      },
+      {
+        "title": "Real Estate Skip Trace | Owner Phone & Email | $12/1K",
+        "name": "property-skip-tracing",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 67,
+          "totalRuns": 142,
+          "totalUsers": 25,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 22,
+          "totalUsers90Days": 22,
+          "lastRunStartedAt": "2026-10-07T01:36:31.157Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 111,
+            "TIMED-OUT": 0,
+            "TOTAL": 111
+          }
+        },
+        "description": "Paste a US property address and get the people on it: phones, emails, mailing address, absentee flag, relatives. One row per person. Deep-search extra sites on a miss, plus Dallas County owner-of-record. Pay only on matches. $12 per 1,000 matches. Lawful B2B — not for FCRA.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/WoCl_Vx4BhZ_LoAuscJxxywVk7mRWdZA1V-WTiObF4c/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItaDBNNGhLVURodktNaXFiNU8tckpFWHlrSFVFaS1UaGF0c3RoZW1fZjg2YjUyMTcxMi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "SkipTraceMatch": {
+                "eventTitle": "Skip Trace Match",
+                "eventDescription": "Charged only when an address returns at least one connected person. Empty lookups are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.012,
+                "isPrimaryEvent": true
+              },
+              "ContactInfo": {
+                "eventTitle": "Contact info (phone/email)",
+                "eventDescription": "Charged once per delivered person who has at least one full phone number or email on file. People without contact data are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003
+              },
+              "OwnerRecord": {
+                "eventTitle": "Owner record",
+                "eventDescription": "Charged per owner-only row: an address where no people-search site found anyone, returned with the county owner of record (name, mailing address, account id, absentee flag).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0025
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "createdAt": "2026-09-22T08:42:14.511Z",
+          "startedAt": "2026-09-22T08:42:14.511Z",
+          "notifiedAboutChangeAt": "2026-09-22T09:06:01.542Z"
+        },
+        "id": "h0M4hKUDhvKMiqb5O",
+        "url": "https://apify.com/memo23/property-skip-tracing"
+      },
+      {
+        "title": "Skiplagged Scraper 💰$2.50/1k — Flights & Hotels",
+        "name": "skiplagged-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 60,
+          "totalUsers": 16,
+          "totalUsers7Days": 15,
+          "totalUsers30Days": 16,
+          "totalUsers90Days": 16,
+          "lastRunStartedAt": "2026-10-05T20:00:05.888Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 2,
+            "SUCCEEDED": 50,
+            "TIMED-OUT": 0,
+            "TOTAL": 52
+          }
+        },
+        "description": "Skiplagged flights, hidden-city fares, flex calendars, and hotel rates in one actor. One JSON or CSV row per itinerary, date, or hotel — airlines, stops, and times included. Search by route, paste a /flights/ or /hotels/ URL, or set destination to anywhere. $2.50 per 1,000 results.",
+        "categories": [
+          "TRAVEL",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/huNAy_DOIA28wiXdGkIpsMvM4z_VKTMV1T72nl0HLC0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItTEwzY2VubWFUWFVmdDJEakctazlxUURSemx3OS1za2lwbGFnZ2VkLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result row",
+                "eventDescription": "One flight itinerary, flexible-date calendar cell, or hotel in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.0025
+              }
+            }
+          },
+          "createdAt": "2026-09-13T11:57:32.895Z",
+          "startedAt": "2026-09-13T11:57:32.895Z"
+        },
+        "id": "LL3cenmaTXUft2DjG",
+        "url": "https://apify.com/memo23/skiplagged-scraper"
+      },
+      {
+        "title": "Uline Product Catalog Scraper: Bulk Pricing, Dimensions & Stock",
+        "name": "uline-scraper",
+        "username": "getascraper",
+        "stats": {
+          "totalBuilds": 19,
+          "totalRuns": 127,
+          "totalUsers": 6,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-03T09:38:53.089Z",
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape Uline's product catalog across the US, Canada, and Mexico: SKUs, prices, bulk quantity tiers, dimensions, shipping weight, stock status, country of origin, and specs. Search by keyword, paste category URLs, or sweep the full catalog. Export to CSV, JSON, Excel, or Sheets.",
+        "categories": [
+          "ECOMMERCE",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/N6h4VMEG69cBzcuT2ur2KRHuZXHiROP8Z_DlV4yCZyw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vak5EYkZhYmJWeE1oblFOYjQtYWN0b3ItYWp3SHRQbjF4NWRwSlA5dlYtVTVST0NjZUd0TS1nZUxYT1lXcWpjQWNaeDRMMC1hY3Rvci0wTDRrOGNGQnAxak1CWHlzUC1VMEd5SmlpWWZTLWljb24ud2VicA.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 5.000000000000001,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "GetAScraper",
+        "userPictureUrl": "https://images.apifyusercontent.com/zYb0X321JkLF2Rh8Ul3sTD36xCu_EXV79sfnQlCAMvg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdEFRTW4xMjV6V01tRVRnU0p4enlYODRxNTJwTFliSEcxSEZBQkRjVFdXOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhazVFWWtaaFltSldlRTFvYmxGT1lqUXRjSEp2Wm1sc1pTMU5PSGxtUWt0bWVsUlZMVU5vWVhSSFVGUmZTVzFoWjJWZlNuVnVYemhmWHpJd01qWmZYekEwWHpNeFh6VXpYMUJOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Product record",
+                "eventDescription": "One product with SKU, bulk price tiers, dimensions, and stock.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00367
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00333
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-02T21:34:29.838Z",
+          "createdAt": "2026-07-02T21:34:30.293Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ajwHtPn1x5dpJP9vV",
+        "url": "https://apify.com/getascraper/uline-scraper"
+      }
+    ]
+  }
+}
