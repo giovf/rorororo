@@ -1,3 +1,0 @@
-GET https://gankdat.com/health
-GET RANGE=0-8191 https://gankdat.com/sitemap.xml
-GET https://gankdat.com/v1/data/uk-trademark-journal?limit=1
