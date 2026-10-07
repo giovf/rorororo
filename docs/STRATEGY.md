@@ -880,3 +880,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   night, then runs the delta; an IPO "Page Not Found" served as 200 HTML is a missing issue. Why: the only weekly-cadence dataset
   (watch services' core) had been three days stale and would have errored outright from 10-09. Proof: `ok` rows on three
   consecutive nights and the journal absent from refresh errors for seven Daily numbers rows.
+- 2026-10-07 burn-down (17:00 run, 3rd item): foundry `build-claim-marker` (5) built — `npm run pipeline claim <venture>/<id>`
+  pushes the item's `doing` line before any work, so a concurrent session's `next` skips it; both routine prompts call it right
+  after `next`. Why: at 17:00 the burn-down and the daily build each built `search-console-api-reading` in full and the second
+  push was discarded — ~40 min of a Fable session lost to a guard that only existed locally. Proof: no two run-log groups for
+  one item id in 30 days.

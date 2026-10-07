@@ -738,3 +738,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 17:36 | burn-down | Journal: an IPO 200 text/html body (its Page Not Found) is a missing issue, not a journal; test
 - 2026-10-07 17:36 | burn-down | Tests: backfill hash equality and a 2,100-row hand-over on real D1; metrics row names a skipped run
 - 2026-10-07 17:36 | burn-down | Queue: gankdat refresh-uk-trademark-journal done; ARCHITECTURE delta and journal paragraphs
+- 2026-10-07 17:48 | burn-down | Claim marker: `npm run pipeline claim <venture>/<id> --by=<routine>` pushes the doing line first
+- 2026-10-07 17:48 | burn-down | Refuses another session's claim under a day old, takes over a leftover; watchdog ignores it
+- 2026-10-07 17:48 | burn-down | build.md and burn-down.md step 2 claim right after next; README, SCHEDULERS, CLAUDE.md; 9 tests
+- 2026-10-07 17:48 | burn-down | Queue: foundry build-claim-marker done (filed by the 17:10 build after today's duplicate)

@@ -50,7 +50,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
 - **Slot start (routines that have a fallback — today the 09:00/17:00 build):** the very first action of
   the run, before `npm ci`, is `npm run slot -- start build`: it pushes a one-line marker so the :20
   fallback and the watchdog can see the slot is in flight (`docs/ops/SLOTS.md`). Burn-down, exchange,
-  review and retro runs do not need it.
+  review and retro runs do not need it. Every build and burn-down run claims its item right after
+  `npm run pipeline next` with `npm run pipeline claim <venture>/<id> --by=<routine>` (one `doing` push),
+  so two sessions never build the same item (2026-10-07).
 - **Atomic pushes:** build fully, run the gates, then ONE commit and push. Never push partial
   work "to save progress" — a session can be cut off by usage limits at any moment, and the
   sandbox is discarded, which is safe only if nothing half-done reached `main`.

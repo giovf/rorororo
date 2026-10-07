@@ -32,7 +32,12 @@ first of them rather than idling (both slots did nothing on 2026-10-01 morning: 
 `empty` `[]`). One buildable item anywhere ends the fallback. **Doing** (2026-10-05): a `doing` item is one a run is building,
 dated by `doing_since` (else `added`); `npm run pipeline` lists every one on a `doing:` line. One that has been doing
 for more than a day with no future `not_before` is a cut-off session's leftover (nothing of it reached `main`), so
-`next` offers it again; a deliberate hold is `todo` with `not_before` (or carries `not_before` while doing). **Cooling** (2026-10-06): a queue carries
+`next` offers it again; a deliberate hold is `todo` with `not_before` (or carries `not_before` while doing). **Claim** (2026-10-07): the
+`doing` edit only guards other sessions once it is on `main`, so a session runs `npm run pipeline claim <venture>/<id>
+--by=<routine>` right after `next` — one commit of the queue file (`pipeline: claim <venture>/<id> (<routine>)`), pushed
+before any work, like the slot marker; a claim refused because another session's `doing` is under a day old means take
+`next` again (on 2026-10-07 the 17:00 burn-down and the 17:10 build each built `search-console-api-reading` in full, and the
+second push was discarded). The watchdog never counts a claim commit as a slot's trace. **Cooling** (2026-10-06): a queue carries
 `researched: YYYY-MM-DD`, the day of its last research run (every research run sets it with `updated`); for 48 h after
 that the starvation fallback skips the queue and `npm run pipeline` lists it on a `cooling:` line, so a venture is not
 researched twice in a day (2026-10-05 had five research runs and the next morning's build was offered the same venture

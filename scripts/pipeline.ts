@@ -1,5 +1,6 @@
 // Reads the work pipeline (docs/pipeline/) and prints it; fails on any invalid file.
-// Run: npm run pipeline [status|next|empty|cold]   (Node 22 runs .ts directly — keep syntax erasable)
+// Run: npm run pipeline [status|next|empty|cold|claim <venture>/<id> [--by=<routine>]]
+// (Node 22 runs .ts directly — keep syntax erasable)
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 
@@ -12,6 +13,20 @@ const dir = path.resolve(import.meta.dirname, '..', 'docs', 'pipeline');
 // is spent (a `| burn-down |` line today or yesterday saying `pre-research`) — the run then ends
 // without npm ci; otherwise `work`. The night of 2026-10-05/06 four firings spent ~20 min each
 // (npm ci + the full gate) to learn exactly this.
+// `claim` (2026-10-07, foundry build-claim-marker): the one-line `doing` push made right after
+// `next`, before any work, so a concurrent build / burn-down session's `next` skips the item.
+// Plain node, no dist, like `cold`; the logic and its tests are in scripts/pipeline-claim.ts.
+if (process.argv[2] === 'claim') {
+  const { main } = await import('./pipeline-claim.ts');
+  try {
+    main(process.argv.slice(3));
+  } catch (err) {
+    console.error(err instanceof Error ? err.message : String(err));
+    process.exit(2);
+  }
+  process.exit(0);
+}
+
 if (process.argv[2] === 'cold') {
   const today = new Date().toISOString().slice(0, 10);
   const yesterday = new Date(Date.now() - 86_400_000).toISOString().slice(0, 10);
