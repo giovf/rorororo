@@ -371,12 +371,13 @@
     {
       "id": "eu-ted-429-backoff",
       "title": "Back off and retry on 429 from api.ted.europa.eu the way uk-contract-awards does, so a throttled page does not cost eu-ted its day",
-      "why": "Research 2026-10-07: eu-ted's refresh failed with `api.ted.europa.eu responded 429` on 10-01 and again on 10-06 (two of six nights); fetchFromOrigin throws on the first non-OK page with no retry, while uk-contract-awards retries 429/403 three times at 45 s steps since the 2026-09-21 wave. Each failure leaves the bid-intelligence bundle's EU half a day stale and a `refresh errors` entry that the auto-filer turns into an item on the second occurrence in four rows. Do: the same RETRIES/RETRY_DELAY_MS loop honouring Retry-After when present, in wave 1's budget (eu-ted shares the wave; keep the total under 15 min), with a unit test for a 429-then-200 origin.",
+      "why": "Research 2026-10-07: eu-ted's refresh failed with `api.ted.europa.eu responded 429` on 10-01 and again on 10-06 (two of six nights); fetchFromOrigin throws on the first non-OK page with no retry, while uk-contract-awards retries 429/403 three times at 45 s steps since the 2026-09-21 wave. Each failure leaves the bid-intelligence bundle's EU half a day stale and a `refresh errors` entry that the auto-filer turns into an item on the second occurrence in four rows. Do: the same RETRIES/RETRY_DELAY_MS loop honouring Retry-After when present, in wave 1's budget (eu-ted shares the wave; keep the total under 15 min), with a unit test for a 429-then-200 origin. — Built 2026-10-07 (burn-down): fetchPage retries a 429 up to three times, pausing Retry-After when it is under 120 s else 20 s × attempt (≤ 2 min worst case inside wave 1); two tests (throttled-then-served, throttled throughout → fixtures fallback as before).",
       "effort_days": 0.1,
       "proof": "no eu-ted 429 in the refresh errors reading over 14 nights",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-07"
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
     }
   ]
 }

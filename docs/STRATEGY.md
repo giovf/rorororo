@@ -839,3 +839,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-07 burn-down (00:00 run, 4th item): gankdat `feeds-reading-reason` (4) built — the feeds reading uses sumIf for the miss
   share and carries the query's error text when it fails. Why: the first row after the keyless feeds shipped printed a bare `n/a`
   and nothing in the repo said why; the ≥ 20 user-agent proof was unreadable. Proof: three figures or a reason in the 10-07 row.
+- 2026-10-07 burn-down (00:00 run, 5th item): gankdat `eu-ted-429-backoff` (4) built — a throttled TED page is retried with
+  Retry-After or a growing pause, at most two minutes inside wave 1. Why: 429 on two of six nights, each costing the EU half of
+  the bid-intelligence bundle a day of freshness. Proof: no eu-ted 429 in the refresh errors reading over 14 nights.

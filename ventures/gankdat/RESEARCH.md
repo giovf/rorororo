@@ -216,3 +216,9 @@ nights; the stale reading gone from the row by 2026-10-09.
 and a failed query now prints `feeds 30d: n/a (<reason>)` instead of a bare `n/a`, as the `cf usage`
 readings do. The sandbox cannot run Analytics Engine queries, so the 2026-10-07 06:30 row is the
 check: either the three figures or the reason to act on.
+
+**Built 2026-10-07 — `eu-ted-429-backoff`** (burn-down): a throttled TED page is retried up to
+three times, pausing for `Retry-After` when it is under two minutes and otherwise 20 s × attempt,
+so a burst-limited morning no longer costs eu-ted its refresh (10-01 and 10-06 each waited for a
+request-path retry hours later). Worst case adds two minutes to wave 1; a page still throttled after
+the retries fails as before. Proof: no eu-ted 429 in the refresh errors reading over 14 nights.

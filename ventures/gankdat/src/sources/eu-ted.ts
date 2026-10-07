@@ -20,6 +20,14 @@ const PAGE_SIZE = 250;
 // roughly the latest half-day of EU-wide activity.
 const MAX_RECORDS = 1000;
 const WINDOW_QUERY = 'publication-date>=today(-3) SORT BY publication-number DESC';
+/**
+ * TED throttles bursts (429 on 2026-10-01 and 10-06, each costing the day's refresh until a
+ * request-path retry hours later — queue `eu-ted-429-backoff`): a 429 page is retried a few
+ * times with a growing pause, honouring Retry-After when it is short enough, inside wave 1's
+ * budget. `delayMs` is a mutable so tests run the loop without waiting.
+ */
+const RETRIES = 3;
+export const tedRetry = { delayMs: 20_000, maxRetryAfterMs: 120_000 };
 const FIELDS = [
   'publication-number',
   'publication-date',
@@ -122,14 +130,9 @@ function mapNotices(notices: unknown[]): EuTedRecord[] {
   return records;
 }
 
-async function fetchFromOrigin(): Promise<EuTedRecord[]> {
-  const records: EuTedRecord[] = [];
-  // Hard page cap: reaching MAX_RECORDS needs a handful of pages; this bounds
-  // the loop even if the origin returns full pages whose notices all fail to
-  // parse (schema drift), which would otherwise never grow `records`.
-  const maxPages = Math.ceil(MAX_RECORDS / PAGE_SIZE) + 1;
-  for (let page = 1; records.length < MAX_RECORDS && page <= maxPages; page += 1) {
-    const res = await fetch(ORIGIN_URL, {
+async function fetchPage(page: number): Promise<Response> {
+  const post = (): Promise<Response> =>
+    fetch(ORIGIN_URL, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',
@@ -138,6 +141,27 @@ async function fetchFromOrigin(): Promise<EuTedRecord[]> {
       },
       body: JSON.stringify({ query: WINDOW_QUERY, fields: FIELDS, limit: PAGE_SIZE, page }),
     });
+  let res = await post();
+  for (let attempt = 1; res.status === 429 && attempt <= RETRIES; attempt += 1) {
+    const retryAfter = Number(res.headers.get('retry-after')) * 1000;
+    const pause =
+      retryAfter > 0 && retryAfter <= tedRetry.maxRetryAfterMs
+        ? retryAfter
+        : tedRetry.delayMs * attempt;
+    await new Promise((resolve) => setTimeout(resolve, pause));
+    res = await post();
+  }
+  return res;
+}
+
+async function fetchFromOrigin(): Promise<EuTedRecord[]> {
+  const records: EuTedRecord[] = [];
+  // Hard page cap: reaching MAX_RECORDS needs a handful of pages; this bounds
+  // the loop even if the origin returns full pages whose notices all fail to
+  // parse (schema drift), which would otherwise never grow `records`.
+  const maxPages = Math.ceil(MAX_RECORDS / PAGE_SIZE) + 1;
+  for (let page = 1; records.length < MAX_RECORDS && page <= maxPages; page += 1) {
+    const res = await fetchPage(page);
     if (!res.ok) throw new Error(`api.ted.europa.eu responded ${res.status}`);
     const { notices } = searchResponseSchema.parse(await res.json());
     records.push(...mapNotices(notices));
