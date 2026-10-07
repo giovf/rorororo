@@ -857,3 +857,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   LIA), GeBIZ (evidence up, terms unread), /stats CSV checkout, Sheets add-on, Smithery, WuslaHQ reseller; quality-score
   pass re-triggered on the Companies House read; relink marked promoted (built 10-04/05). Comparison:
   `docs/exchange/2026-W41.md`.
+- 2026-10-07 build: **gankdat — Companies House lookup + monitor shipped** (`uk-company-profiles`, exchange W41 winner, 8.0).
+  The register is not mirrored: a new `DataSource.lookup` shape reads one company on request from the official API (≤ 4
+  calls, KV per key 24 h) — the first dataset the platform serves without a snapshot — and the Apify actor's changes mode
+  is the monitor nobody on the Store sells (baseline in its own key-value store, only added/changed/removed pushed). Blind
+  Mode held: no officers, individual PSCs dropped at ingest, filing codes not names. Proof per the queue: ≥ 5 Apify users
+  from other accounts and a changes-mode run in 30 days (`uk-company-lookup-day-30`, 11-07). Zero owner minutes.

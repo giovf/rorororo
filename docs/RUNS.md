@@ -712,3 +712,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 08:30 | exchange | Declined: nothing new — the W39/W40 declines stand under the same rules
 - 2026-10-07 08:30 | exchange | STRATEGY §2 agent-directories row gains Docker; §8 logs the decision; comparison in docs/exchange/2026-W41.md
 - 2026-10-07 08:30 | exchange | Owner (later, not now): ~10 min Search Console service-account step, raised when the script ships
+- 2026-10-07 09:40 | build | Built gankdat uk-company-lookup-monitor (8): first on-demand dataset, DataSource.lookup + lookup.ts
+- 2026-10-07 09:40 | build | uk-company-profiles: profile, charges, filings, corporate PSCs in one record; KV per key 24 h; 30/min
+- 2026-10-07 09:40 | build | Layouts verified through the relay (ch-lookup-specs, 10 spec pages in 10 min); fixture built to them
+- 2026-10-07 09:40 | build | Blind Mode kept: officers never called, individual PSCs dropped whole, filing events carry the code
+- 2026-10-07 09:40 | build | MCP tool query_uk_company_profiles (400/tool error without a key), lookup /stats page, llms.txt note
+- 2026-10-07 09:40 | build | Apify actor UK Companies House Lookup & Monitor: list in, changes mode diffs the previous run
+- 2026-10-07 09:40 | build | Landing card, terms row, GDPR row, sitemap, server.json 0.22.0 (registry republishes), ARCHITECTURE
+- 2026-10-07 09:40 | build | Tests: 11 for the lookup, schema test branch for lookup actors; Taskmaster 26; queue item done

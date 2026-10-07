@@ -1,6 +1,7 @@
 import { Hono } from 'hono';
 import type { Context } from 'hono';
 import { failure, success } from '../lib/envelope';
+import { missingLookupKey } from '../sources/lookup';
 import { getSource, hasChangeFeed, listSources } from '../sources/registry';
 import { buildQuerySchema, omitEmptyParams } from '../sources/query';
 import { querySource } from '../sources/store';
@@ -25,6 +26,11 @@ export async function handleSourceQuery(c: Context<AppEnv>): Promise<Response> {
       message: issue.message,
     }));
     return c.json(failure('bad_request', 'Invalid query parameters', details), 400);
+  }
+  // A lookup source serves one record per request and needs its key named.
+  const missing = missingLookupKey(source, parsed.data);
+  if (missing) {
+    return c.json(failure('bad_request', missing), 400);
   }
 
   // HEAD is unmetered (meterCredits skips it), so don't run the query — that
@@ -67,6 +73,8 @@ export const dataRoutes = new Hono<AppEnv>()
       refresh_cron: source.refresh.cron,
       credit_cost: source.creditCost ?? 1,
       change_feed: hasChangeFeed(source) ? `/v1/changes/${source.slug}` : null,
+      // On-demand datasets: one record per request, named by one of these params.
+      lookup: source.lookup ? [...source.lookup.keys] : null,
     }));
     return c.json(success(sources, { total: sources.length }));
   })

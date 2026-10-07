@@ -82,6 +82,24 @@ Organisation level: the personal licence registers are never fetched. Written wi
 access (gamblingcommission.gov.uk is unreachable from the build container; headers recorded by the
 interactive session), with a 90 s per-file timeout; runs in **wave 2** (05:15) after the two
 sources there, ~15k rows.
+And the **Companies House company lookup** (`uk-company-profiles`, shipped 2026-10-07 — exchange
+2026-W41 winner: the one Apify category where UK-register buyers measurably pay has thirteen
+lookup actors and no monitor). The first **on-demand dataset** (`DataSource.lookup`,
+`src/sources/lookup.ts`): the 5.4M-company register is never mirrored; a request names one
+company by `company_number` (zero-padded like the register) or `company` (the search
+endpoint's top hit) and the Worker reads ≤ 4 resources of the official public-data API —
+profile, charges, filing history, persons with significant control — into one record, cached
+in KV per key for 24 h (a confirmed miss for 1 h), metered as one credit, rate-limited at
+30/min per account so a full-speed client stays inside the 600 req / 5 min key quota shared
+with `uk-companies`. No snapshot, no cron wave, no change feed; `/stats/<slug>` is a lookup
+page, not counts; `/v1/data` and `list_sources` carry `lookup: [keys]` and a keyless query
+answers 400 naming them. Blind Mode: officer resources never called, individual PSCs dropped
+whole at ingest (corporate/legal-person entries and counts kept), filing events keep the
+form type and description code (not `description_values`, where the officer's name is),
+charge holders and address lines dropped. The monitor is the Apify actor's `changes` mode
+(`runLookupActor`): the previous run's records in the actor's named key-value store are the
+baseline; a run pushes only `added` / `changed` (+ `changed_fields`) / `removed` companies.
+Layouts verified through the relay (`docs/relay/responses/ch-lookup-specs`, 2026-10-07).
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo
@@ -288,8 +306,9 @@ runs `check:root`.
   US public domain, D&B address fields stripped at ingest, read from the
   keyless daily public extract (no API key since 2026-09-20); The Gazette
   linked-data API — OGL v3, fair-use paced, corporate notices only;
-  Companies House advanced search — Crown copyright, public register,
-  needs `COMPANIES_HOUSE_API_KEY`, 600 req/5 min). No scraping.
+  Companies House advanced search and public-data API (company profile, charges,
+  filing history, PSC list, search — Crown copyright, public register,
+  needs `COMPANIES_HOUSE_API_KEY`, 600 req/5 min shared by both sources). No scraping.
 - **CI/CD** — GitHub Actions: lint/typecheck/test; deploy on main gated on
   `CLOUDFLARE_API_TOKEN` secret existing.
 

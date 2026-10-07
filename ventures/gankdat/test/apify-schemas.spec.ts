@@ -54,6 +54,14 @@ const inputSchemas = import.meta.glob<InputSchema>('../apify/*/.actor/input_sche
 const CHANGE_FIELDS = ['change', 'changed_at'];
 /** Actor inputs that drive the change feed rather than filter the source. */
 const FEED_INPUTS = ['mode', 'since', 'change'];
+/**
+ * Lookup actors (2026-10-07, uk-company-profiles): the input is the buyer's own list (array
+ * inputs, one value per lookup) plus `mode`; the monitor pushes the record with `change`,
+ * `changed_at` and `changed_fields` (runLookupActor in src/gankdat.mjs diffs against the
+ * previous run), so those are the only dataset fields beyond the source's own.
+ */
+const LOOKUP_CHANGE_FIELDS = ['change', 'changed_at', 'changed_fields'];
+const LOOKUP_INPUTS = ['mode', 'max_results'];
 
 const sources = import.meta.glob<string>('../apify/*/src/*.mjs', {
   eager: true,
@@ -67,7 +75,7 @@ const folders = Object.keys(actorSchemas)
 
 describe('Apify actor dataset schemas match the source record schemas', () => {
   it('finds one actor folder per dataset actor', () => {
-    expect(folders.length).toBeGreaterThanOrEqual(16);
+    expect(folders.length).toBeGreaterThanOrEqual(17);
   });
 
   for (const folder of folders) {
@@ -82,13 +90,16 @@ describe('Apify actor dataset schemas match the source record schemas', () => {
       const sourceProps = sourceJson.properties ?? {};
       const problems: string[] = [];
       const feed = hasChangeFeed(source);
+      const lookup = source.lookup !== undefined;
       for (const key of CHANGE_FIELDS) {
         expect(key in actor.fields.properties, `${key} declared iff the source has a feed`).toBe(
-          feed,
+          feed || lookup,
         );
       }
+      expect('changed_fields' in actor.fields.properties, 'changed_fields iff lookup').toBe(lookup);
       for (const [field, prop] of Object.entries(actor.fields.properties)) {
         if (feed && CHANGE_FIELDS.includes(field)) continue;
+        if (lookup && LOOKUP_CHANGE_FIELDS.includes(field)) continue;
         const wanted = jsonTypes(sourceProps[field]);
         if (!(field in sourceProps)) {
           problems.push(`${field}: declared by the actor but not in the record schema`);
@@ -127,6 +138,20 @@ describe('Apify actor dataset schemas match the source record schemas', () => {
         ).properties ?? {};
       const problems: string[] = [];
       const feed = hasChangeFeed(source);
+      if (source.lookup) {
+        // The list to look up (array inputs) and the monitor switch; nothing filters the source.
+        const mode = input.properties.mode as { enum?: string[]; default?: string };
+        expect(mode.enum).toEqual(['data', 'changes']);
+        expect(mode.default).toBe('data');
+        const lists = Object.entries(input.properties).filter(
+          ([field]) => !LOOKUP_INPUTS.includes(field),
+        );
+        expect(lists.length, 'at least one list input').toBeGreaterThan(0);
+        for (const [field, prop] of lists) {
+          expect(prop.type, `${field} must be an array of values to look up`).toBe('array');
+        }
+        return;
+      }
       for (const key of FEED_INPUTS) {
         expect(key in input.properties, `${key} offered iff the source has a feed`).toBe(feed);
       }
@@ -172,9 +197,11 @@ describe('Apify actor dataset schemas match the source record schemas', () => {
       const squash = (code: string): string => code.replace(/\s+/g, ' ').replace(/, \}/g, ' }');
       const main = squash(of(mains, folder) ?? '');
       const source = getSource(folder);
-      const call = hasChangeFeed(source as never)
-        ? `runDatasetActor('${folder}', filters, Number(maxResults), { mode, since, change })`
-        : `runDatasetActor('${folder}', filters, Number(maxResults))`;
+      const call = source?.lookup
+        ? `runLookupActor('${folder}', keyOf, companies, Number(maxResults), { mode })`
+        : hasChangeFeed(source as never)
+          ? `runDatasetActor('${folder}', filters, Number(maxResults), { mode, since, change })`
+          : `runDatasetActor('${folder}', filters, Number(maxResults))`;
       expect(main, `apify/${folder}/src/main.mjs call`).toContain(squash(call));
     }
   });

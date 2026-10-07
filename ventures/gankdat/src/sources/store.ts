@@ -2,6 +2,7 @@ import { computeStats } from '../lib/stats';
 import type { SourceStats } from '../lib/stats';
 import { readCached, readSnapshot, readSourceStats, refreshSource } from './cache';
 import { queryD1Source, refreshD1Source } from './d1store';
+import { isLookup, lookupRecord } from './lookup';
 import { applyQuery } from './query';
 import type { QueryPage } from './query';
 import { listSources } from './registry';
@@ -21,6 +22,9 @@ export async function querySource(
   source: DataSource,
   parsed: Record<string, unknown>,
 ): Promise<SourceQueryResult> {
+  if (isLookup(source)) {
+    return lookupRecord(env, source, parsed);
+  }
   if (source.storage === 'd1') {
     return queryD1Source(env, source, parsed);
   }
@@ -52,7 +56,7 @@ export async function sourceStats(
   const cached = await readSourceStats(env, source.slug);
   if (cached) return { stats: cached.stats, last_refreshed_at: cached.last_refreshed_at };
 
-  if (source.storage !== 'd1') {
+  if (source.storage !== 'd1' && !isLookup(source)) {
     const snapshot = await readSnapshot(env, source.slug);
     if (snapshot) {
       return {
@@ -153,9 +157,11 @@ export function isRunnerFed(source: DataSource): boolean {
   return source.refresh.runner === true;
 }
 
-/** The sources one cron wave refreshes (every wave when the cron is unknown). */
+/** The sources one cron wave refreshes (every wave when the cron is unknown); lookup sources have nothing to refresh. */
 export function cronSources(wave: RefreshWave | undefined): DataSource[] {
-  return listSources().filter((s) => !isRunnerFed(s) && (wave === undefined || waveOf(s) === wave));
+  return listSources().filter(
+    (s) => !isRunnerFed(s) && !isLookup(s) && (wave === undefined || waveOf(s) === wave),
+  );
 }
 
 /**

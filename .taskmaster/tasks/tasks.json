@@ -1231,13 +1231,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-05T01:26:51.103Z"
+      },
+      {
+        "id": "26",
+        "title": "gankdat: uk-company-profiles lookup + monitor (Companies House)",
+        "description": "On-demand dataset (DataSource.lookup, src/sources/lookup.ts): one company by number or name from the Companies House public-data API (profile, charges, filing history, corporate PSCs), KV-cached 24 h, MCP tool query_uk_company_profiles, Apify actor uk-companies-house-lookup-monitor with mode: changes over the buyer's list (runLookupActor). Blind Mode: officers never called, individual PSCs dropped at ingest. Exchange 2026-W41 winner; queue item uk-company-lookup-monitor.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-07T09:32:36.895Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-05T01:26:51.103Z",
-      "taskCount": 25,
-      "completedCount": 18,
+      "lastModified": "2026-10-07T09:32:36.895Z",
+      "taskCount": 26,
+      "completedCount": 19,
       "tags": [
         "master"
       ]

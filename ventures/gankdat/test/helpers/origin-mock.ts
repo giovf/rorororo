@@ -9,6 +9,7 @@ const SAM_DOWNLOAD_ORIGIN = 'https://sam.gov/api/prod/fileextractservices/v1/api
 const SAM_FILE_ORIGIN = 'https://falextracts.s3.amazonaws.com/';
 const GAZETTE_ORIGIN = 'https://www.thegazette.co.uk/insolvency/notice/data.json';
 const CH_ORIGIN = 'https://api.company-information.service.gov.uk/advanced-search/companies';
+const CH_API_ORIGIN = 'https://api.company-information.service.gov.uk/';
 const FHRS_ORIGIN = 'https://ratings.food.gov.uk/api/open-data-files/';
 const GOVUK_CONTENT_ORIGIN = 'https://www.gov.uk/api/content/';
 const GOVUK_ASSET_ORIGIN = 'https://assets.publishing.service.gov.uk/';
@@ -36,6 +37,8 @@ export function stubOrigins(handlers: {
   samFile?: () => Response;
   gazette?: () => Response;
   companies?: () => Response;
+  /** Called with the Companies House public-data URL (…/company/<n>[/charges|/filing-history|/persons-with-significant-control], …/search/companies?q=) so a test can serve each resource. */
+  companyApi?: (url: string) => Response;
   fhrs?: () => Response;
   govukContent?: () => Response;
   govukAsset?: () => Response;
@@ -80,6 +83,9 @@ export function stubOrigins(handlers: {
     }
     if (url.startsWith(CH_ORIGIN) && handlers.companies) {
       return Promise.resolve(handlers.companies());
+    }
+    if (url.startsWith(CH_API_ORIGIN) && handlers.companyApi) {
+      return Promise.resolve(handlers.companyApi(url));
     }
     if (url.startsWith(FHRS_ORIGIN) && handlers.fhrs) {
       return Promise.resolve(handlers.fhrs());

@@ -183,6 +183,11 @@ describe('/mcp directory conformance', () => {
       if (name === 'claim_api_key')
         args = { request_id: req.request_id, claim_secret: req.claim_secret };
       if (name === 'get_changes') args = { source: feed };
+      // A lookup tool needs its key; the origin is offline here, so the bundled sample answers.
+      const lookup = listSources().find(
+        (s) => `query_${s.slug.replaceAll('-', '_')}` === name && s.lookup,
+      )?.lookup;
+      if (lookup) args = { ...lookup.example };
       const result = await call(name, args);
       expect(result?.isError, `${name}: ${result?.content?.[0]?.text ?? ''}`).toBeFalsy();
       expect((result?.structuredContent as { ok: boolean }).ok, name).toBe(true);

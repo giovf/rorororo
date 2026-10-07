@@ -15,6 +15,15 @@ the same filters, pushing each change as the record plus `change` and `changed_a
 daily run is a register monitor, and the README's "Monitor it" section says so. The other seven
 sources have no feed (the API answers 404), so their inputs do not offer the mode.
 
+**Lookup actors** (2026-10-07): `uk-company-profiles` is an on-demand dataset (one record per
+request, named by `company_number` or `company`), so its actor takes the buyer's own list
+(`companies`, numbers or names) and calls the API once per entry (`runLookupActor` in the shared
+client). Its `mode: changes` is a **monitor**: the previous run's records live in the actor's named
+key-value store `gankdat-uk-company-profiles-baseline`, and a run pushes only companies that are new
+to the list (`added`), differ from the baseline (`changed` + `changed_fields`) or vanished from the
+register (`removed`) — the thing none of the thirteen Companies House actors on the Store sells
+(exchange 2026-W41).
+
 Each actor's `.actor/dataset_schema.json` (Apify validates every pushed item against it) and
 `.actor/input_schema.json` (every field is sent as an API query param) must match the source's
 zod `recordSchema` / `queryParams`: `test/apify-schemas.spec.ts` checks both for every folder, that the feed inputs and fields appear
@@ -37,6 +46,7 @@ by Apify QA on 2026-09-25 because `authority` was declared a string and served a
 | `uk-trademark-journal` | pushed by CI on the 2026-09-23 commit | https://console.apify.com/actors |
 | `uk-gambling-operators` | pushed by CI on the 2026-09-24 commit | https://console.apify.com/actors |
 | `uk-no-website-leads` | pushed by CI on the 2026-09-21 commit (merged feed: care + charities + schools with `website_present=false`) | https://console.apify.com/actors |
+| `uk-company-profiles` | pushed by CI on the 2026-10-07 commit (`uk-companies-house-lookup-monitor`: lookup + monitor over the buyer's list) | https://console.apify.com/actors |
 
 Pricing (`result` event) and Store publication are set through the API once payout billing
 info exists on the account (Apify refuses monetisation without it — action 014 step 4).

@@ -36,6 +36,7 @@ describe('registry', () => {
       'nhs-ods',
       'uk-trademark-journal',
       'uk-gambling-operators',
+      'uk-company-profiles',
     ]);
   });
 });

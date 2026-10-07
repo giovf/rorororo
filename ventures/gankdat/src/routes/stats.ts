@@ -3,6 +3,7 @@ import { publicBaseUrl } from '../lib/constants';
 import { failure } from '../lib/envelope';
 import type { FacetPage, FacetStats, MonthlyTrend, SourceStats, StatsGroup } from '../lib/stats';
 import { isolateRateLimit } from '../metering/ratelimit';
+import { isLookup } from '../sources/lookup';
 import { getSource, hasChangeFeed, listSources } from '../sources/registry';
 import { sourceStats } from '../sources/store';
 import type { DataSource } from '../sources/types';
@@ -239,6 +240,67 @@ the last-refreshed date.</p>
 </main></body></html>`;
 }
 
+/**
+ * The public page of an on-demand dataset (DataSource.lookup): there is no
+ * snapshot to count, so the page states what one lookup returns, the fields,
+ * the query and the monitor — the same cite-bait slot, nothing computed per
+ * request.
+ */
+function lookupPageHtml(source: DataSource, baseUrl: string): string {
+  const spec = source.lookup;
+  if (!spec) return '';
+  const example = Object.entries(spec.example)
+    .map(([k, v]) => `${encodeURIComponent(k)}=${encodeURIComponent(v)}`)
+    .join('&');
+  const shape = source.recordSchema as unknown as { shape?: Record<string, unknown> };
+  const fields = Object.keys(shape.shape ?? {});
+  const description = `${source.title}: one record per lookup by ${spec.keys.join(' or ')}, read live from the official source and cached ${Math.round(spec.cacheTtlSeconds / 3600)} h. Free JSON API and MCP tool.`;
+  return `<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/png" href="/favicon.png">
+<title>${esc(source.title)} — statistics | gankdat</title>
+<meta name="description" content="${esc(description)}">
+<link rel="canonical" href="${baseUrl}/stats/${source.slug}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="gankdat">
+<meta property="og:title" content="${esc(source.title)}">
+<meta property="og:description" content="${esc(description)}">
+<meta property="og:url" content="${baseUrl}/stats/${source.slug}">
+<script type="application/ld+json">${jsonLd(source, baseUrl, null)}</script>
+<style>${STYLE}</style>
+</head>
+<body><main>
+<p class="muted"><a href="/">gankdat</a> / <a href="/stats">stats</a></p>
+<h1>${esc(source.title)} — <b>lookup</b></h1>
+<p class="muted">${esc(source.description)}</p>
+<h2>headline</h2>
+<table><tbody>
+<tr><td>records in dataset</td><td>the whole register, one company per lookup</td></tr>
+<tr><td>lookup by</td><td>${esc(spec.keys.join(', '))}</td></tr>
+<tr><td>freshness</td><td>read from the official source on request, cached ${Math.round(spec.cacheTtlSeconds / 3600)} h</td></tr>
+</tbody></table>
+<h2>fields in one record</h2>
+<p class="muted">${fields.map((f) => `<code>${esc(f)}</code>`).join(' ')}</p>
+<h2>look one up</h2>
+<p class="muted"><code>GET /v1/data/${esc(source.slug)}?${esc(example)}</code> — one credit per lookup, or the MCP tool
+<code>query_${esc(source.slug.replaceAll('-', '_'))}</code> with the same arguments. A list of
+companies is one call each; the Apify actor takes the whole list and, scheduled daily in its
+changes mode, returns only what changed since the previous run.</p>
+<h2>methodology</h2>
+<p class="muted">Served from the same official source the gankdat API reads — no scraping. This
+dataset's licence and personal-data posture are stated in the <a href="/terms">terms</a>. Cite a
+record with its URL and the <code>last_refreshed_at</code> the response carries.</p>
+<div class="cta">
+<b>Get this data as JSON</b><br>
+<span class="muted">free tier, 250 req/mo — or MCP for agents</span><br><br>
+<a href="/docs">docs</a> <a href="/account">get a key</a> <a href="/llms.txt">llms.txt</a>
+</div>
+</main></body></html>`;
+}
+
 function pageHtml(
   source: DataSource,
   stats: SourceStats,
@@ -309,7 +371,7 @@ export const statsRoutes = new Hono<AppEnv>()
     const items = listSources()
       .map(
         (s) =>
-          `<li><a href="/stats/${s.slug}">${esc(s.title)}</a>${hasChangeFeed(s) ? ' <span class="muted">· daily change feed</span>' : ''} — <span class="muted">${esc(s.description)}</span></li>`,
+          `<li><a href="/stats/${s.slug}">${esc(s.title)}</a>${hasChangeFeed(s) ? ' <span class="muted">· daily change feed</span>' : ''}${isLookup(s) ? ' <span class="muted">· on-demand lookup</span>' : ''} — <span class="muted">${esc(s.description)}</span></li>`,
       )
       .join('');
     c.header('Cache-Control', 'public, max-age=3600');
@@ -328,6 +390,10 @@ export const statsRoutes = new Hono<AppEnv>()
   .get('/:source', async (c) => {
     const source = getSource(c.req.param('source'));
     if (!source) return c.json(failure('not_found', 'Unknown source'), 404);
+    if (isLookup(source)) {
+      c.header('Cache-Control', 'public, max-age=3600');
+      return c.html(lookupPageHtml(source, publicBaseUrl(c.env)));
+    }
     // Precomputed read only — this page is public and unauthenticated, so it
     // must never drive an origin refresh or a full-table aggregation.
     const result = await sourceStats(c.env, source);
