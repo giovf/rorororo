@@ -743,3 +743,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 17:48 | burn-down | build.md and burn-down.md step 2 claim right after next; README, SCHEDULERS, CLAUDE.md; 9 tests
 - 2026-10-07 17:48 | burn-down | Queue: foundry build-claim-marker done (filed by the 17:10 build after today's duplicate)
 - 2026-10-07 17:42 | burn-down | Stopping: 3 items built (search console, journal backfill, claim); pipeline starved-and-cooled
+- 2026-10-07 18:30 | burn-down | Gate: cold said starved-and-cooled, but its pre-research match was a Stopping line, not a pass
+- 2026-10-07 18:30 | burn-down | Cold gate: pipeline-cold.ts counts only `Exchange pre-research:` lines since the night's 17:00 UTC
+- 2026-10-07 18:30 | burn-down | burn-down.md pass rule spells out the same prefix and window; 10 tests; pipeline.ts comment
+- 2026-10-07 18:30 | burn-down | Queue: foundry cold-gate-night-window done (two nights of pre-research were skipped unseen)

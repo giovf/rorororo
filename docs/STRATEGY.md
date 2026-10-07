@@ -885,3 +885,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   after `next`. Why: at 17:00 the burn-down and the daily build each built `search-console-api-reading` in full and the second
   push was discarded — ~40 min of a Fable session lost to a guard that only existed locally. Proof: no two run-log groups for
   one item id in 30 days.
+- 2026-10-07 burn-down: `npm run pipeline cold` now counts the night's exchange pre-research as spent only from an
+  `Exchange pre-research:` burn-down line stamped since the night's 17:00 UTC (`scripts/pipeline-cold.ts`). Why: the old
+  match (any line today or yesterday containing `pre-research`) was satisfied by each night's `Stopping: … pre-research
+  spent` line, so the one allowed pass ran once (10-05) and was silently skipped on 10-06 and 10-07. Proof: one
+  `Exchange pre-research:` line on every starved burn night from 2026-10-08.

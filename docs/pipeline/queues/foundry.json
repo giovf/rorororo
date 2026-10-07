@@ -532,6 +532,17 @@
       "status": "done",
       "added": "2026-10-07",
       "done_at": "2026-10-07"
+    },
+    {
+      "id": "cold-gate-night-window",
+      "title": "`npm run pipeline cold` counts the night's exchange pre-research pass only from an `Exchange pre-research:` burn-down line stamped since the night's 17:00 UTC, never from a `Stopping: … pre-research spent` line or from yesterday's day",
+      "why": "2026-10-07 18:11 burn-down: `cold` printed `starved-and-cooled` although the night's pre-research pass was unspent. Its match was any `| burn-down |` line today or yesterday containing `pre-research`, and the `Stopping: … pre-research spent` lines (10-06 01:23, 02:19, 18:25) satisfied it each night, so the only real pass since the gate shipped is 2026-10-05 21:38 — two nights of the one allowed exchange pre-research were silently skipped, and the stopping line of each night kept the gate shut for the next. Built 2026-10-07 (burn-down): scripts/pipeline-cold.ts (nightStart = most recent 17:00 UTC; preResearchSpent needs the `Exchange pre-research:` prefix on a burn-down line stamped at or after it), used by `cold`; burn-down.md spells out the same rule; 10 tests.",
+      "effort_days": 0.1,
+      "proof": "every burn night from 2026-10-08 that ends starved shows one `Exchange pre-research:` line in docs/RUNS.md",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
     }
   ]
 }

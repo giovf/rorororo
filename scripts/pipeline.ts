@@ -10,9 +10,11 @@ const dir = path.resolve(import.meta.dirname, '..', 'docs', 'pipeline');
 // must not need @foundry/core's dist. Plain reads of the queue files and docs/RUNS.md; prints
 // `starved-and-cooled` when nothing is buildable, no queue is flagged or empty, every starved
 // queue was researched within 48 h (research-cooldown) and the night's one exchange pre-research
-// is spent (a `| burn-down |` line today or yesterday saying `pre-research`) — the run then ends
-// without npm ci; otherwise `work`. The night of 2026-10-05/06 four firings spent ~20 min each
-// (npm ci + the full gate) to learn exactly this.
+// is spent (a `| burn-down |` line since the night's 17:00 UTC starting `Exchange pre-research:`,
+// scripts/pipeline-cold.ts) — the run then ends without npm ci; otherwise `work`. The night of
+// 2026-10-05/06 four firings spent ~20 min each (npm ci + the full gate) to learn exactly this.
+// Until 2026-10-07 the match was any line today or yesterday containing `pre-research`, which the
+// `Stopping: … pre-research spent` lines satisfied for two nights after the one real pass.
 // `claim` (2026-10-07, foundry build-claim-marker): the one-line `doing` push made right after
 // `next`, before any work, so a concurrent build / burn-down session's `next` skips the item.
 // Plain node, no dist, like `cold`; the logic and its tests are in scripts/pipeline-claim.ts.
@@ -29,7 +31,6 @@ if (process.argv[2] === 'claim') {
 
 if (process.argv[2] === 'cold') {
   const today = new Date().toISOString().slice(0, 10);
-  const yesterday = new Date(Date.now() - 86_400_000).toISOString().slice(0, 10);
   const dayMs = 86_400_000;
   type ColdItem = { status: string; not_before?: string; doing_since?: string; added: string };
   type ColdQueue = {
@@ -61,15 +62,9 @@ if (process.argv[2] === 'cold') {
     else if (!cooling(q)) reasons.push(`${q.venture}: starved, not cooling`);
   }
   const runs = readFileSync(path.resolve(dir, '..', 'RUNS.md'), 'utf8');
-  const preResearched = runs
-    .split('\n')
-    .some(
-      (l) =>
-        (l.startsWith(`- ${today}`) || l.startsWith(`- ${yesterday}`)) &&
-        l.includes('| burn-down |') &&
-        l.includes('pre-research'),
-    );
-  if (!preResearched) reasons.push('exchange: pre-research pass unspent this night');
+  const { preResearchSpent } = await import('./pipeline-cold.ts');
+  if (!preResearchSpent(runs, new Date()))
+    reasons.push('exchange: pre-research pass unspent this night');
   console.log(reasons.length === 0 ? 'starved-and-cooled' : `work: ${reasons.join('; ')}`);
   process.exit(0);
 }
