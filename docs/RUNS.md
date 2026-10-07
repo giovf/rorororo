@@ -742,3 +742,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 17:48 | burn-down | Refuses another session's claim under a day old, takes over a leftover; watchdog ignores it
 - 2026-10-07 17:48 | burn-down | build.md and burn-down.md step 2 claim right after next; README, SCHEDULERS, CLAUDE.md; 9 tests
 - 2026-10-07 17:48 | burn-down | Queue: foundry build-claim-marker done (filed by the 17:10 build after today's duplicate)
+- 2026-10-07 17:42 | burn-down | Stopping: 3 items built (search console, journal backfill, claim); pipeline starved-and-cooled
