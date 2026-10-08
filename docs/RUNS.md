@@ -756,6 +756,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-08 00:38 | burn-down | Foundry research: claim --by flag eaten by npm (61275b2 says build); dated items offered at 00:00
 - 2026-10-08 00:38 | burn-down | Foundry research: OPEN.md date-only churn rides every commit; npm update banner on every npm run
 - 2026-10-08 00:38 | burn-down | Queue: foundry +4 items (claim flag 4, dated items wait 07:00 4, OPEN.md stable 3, npmrc 2)
+- 2026-10-08 00:23 | watchdog | ci-minutes: ~5140 Actions min/month projected (private cap 2,000, warn 1700); top: check 489, owner notes 170, gankdat 1
 - 2026-10-08 00:23 | burn-down | Claim flag: routineFrom reads --by= from argv, else npm_config_by (npm eats a bare --by=); test
 - 2026-10-08 00:23 | burn-down | build.md, burn-down.md, CLAUDE.md, pipeline README show `-- --by=<routine>`; this claim says burn-down
 - 2026-10-08 00:23 | burn-down | Queue: foundry claim-by-npm-flag done
