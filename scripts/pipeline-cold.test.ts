@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { lineStamp, nightStart, preResearchSpent } from './pipeline-cold.ts';
+import { datedArrived, lineStamp, nightStart, preResearchSpent } from './pipeline-cold.ts';
 
 const pass =
   '- 2026-10-07 21:38 | burn-down | Exchange pre-research: EA waste carriers register parked';
@@ -46,5 +46,15 @@ describe('preResearchSpent', () => {
   });
   it('is false on an empty log', () => {
     expect(preResearchSpent('', new Date('2026-10-07T22:10:00Z'))).toBe(false);
+  });
+});
+
+describe('datedArrived', () => {
+  it('counts today only from 07:00 UTC, any earlier day always, no date always', () => {
+    expect(datedArrived('2026-10-08', new Date('2026-10-08T00:13:00Z'))).toBe(false);
+    expect(datedArrived('2026-10-08', new Date('2026-10-08T07:00:00Z'))).toBe(true);
+    expect(datedArrived('2026-10-07', new Date('2026-10-08T00:13:00Z'))).toBe(true);
+    expect(datedArrived('2026-10-09', new Date('2026-10-08T23:59:00Z'))).toBe(false);
+    expect(datedArrived(undefined, new Date('2026-10-08T00:13:00Z'))).toBe(true);
   });
 });

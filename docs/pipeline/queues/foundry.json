@@ -558,13 +558,13 @@
     {
       "id": "dated-items-wait-for-row",
       "title": "A dated item (`not_before` today) is offered at 00:00 UTC, 6–7 h before the day's Daily numbers row it was dated for exists",
-      "why": "Seen 2026-10-08 00:13 (burn-down): gankdat `d1-delta-cost-check` (not_before 2026-10-08, proof \"in the 10-08 row\") was `next` at the night's first fire; the 10-08 row is written by the 06:30 gankdat metrics / 06:45 store metrics jobs, so the read used the 10-05..10-07 rows and the 10-08 row is unread. Every day-30 reading in the queues (claude-directory-day-30, indexnow-day-30-read, uk-company-lookup-day-30, the three funnel reviews) is dated the same way and would fire on its midnight. Fix: in @foundry/core pipeline.ts, scripts/pipeline.ts (cold) and scripts/pipeline-claim.ts, a `not_before` equal to today counts as buildable only from 07:00 UTC (after both metrics jobs), dated earlier in the day stays on the `scheduled:` line; tests in all three.",
+      "why": "Seen 2026-10-08 00:13 (burn-down): gankdat `d1-delta-cost-check` (not_before 2026-10-08, proof \"in the 10-08 row\") was `next` at the night's first fire; the 10-08 row is written by the 06:30 gankdat metrics / 06:45 store metrics jobs, so the read used the 10-05..10-07 rows and the 10-08 row is unread. Every day-30 reading in the queues (claude-directory-day-30, indexnow-day-30-read, uk-company-lookup-day-30, the three funnel reviews) is dated the same way and would fire on its midnight. Fix: in @foundry/core pipeline.ts, scripts/pipeline.ts (cold) and scripts/pipeline-claim.ts, a `not_before` equal to today counts as buildable only from 07:00 UTC (after both metrics jobs), dated earlier in the day stays on the `scheduled:` line; tests in all three. Built 2026-10-08 (burn-down): @foundry/core `notBeforeArrived(not_before, now)` + DATED_READY_HOUR_UTC = 7 (candidates/nextItem/starved/cooling/needsResearch/formatPipeline take `now` or the old `today`, which means noon); the `scheduled:` line shows \"on <date> from 07:00 UTC\" for the day itself; scripts/pipeline-cold.ts `datedArrived` for the cold gate; `claimItem(…, utcHour)` refuses a same-day claim before 07:00; tests in all three; pipeline README.",
       "effort_days": 0.1,
       "proof": "a dated reading item is first offered after 07:00 UTC on its day (next run-log line for one shows a time after 07:00)",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-08",
-      "doing_since": "2026-10-08"
+      "done_at": "2026-10-08"
     },
     {
       "id": "open-md-stable-render",

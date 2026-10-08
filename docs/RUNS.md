@@ -760,3 +760,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-08 00:23 | burn-down | Claim flag: routineFrom reads --by= from argv, else npm_config_by (npm eats a bare --by=); test
 - 2026-10-08 00:23 | burn-down | build.md, burn-down.md, CLAUDE.md, pipeline README show `-- --by=<routine>`; this claim says burn-down
 - 2026-10-08 00:23 | burn-down | Queue: foundry claim-by-npm-flag done
+- 2026-10-08 00:27 | burn-down | Dated items: not_before today counts from 07:00 UTC (notBeforeArrived in core, cold gate, claim); tests
+- 2026-10-08 00:27 | burn-down | scheduled: line shows "on <date> from 07:00 UTC" for the day itself; pipeline README paragraph
+- 2026-10-08 00:27 | burn-down | Queue: foundry dated-items-wait-for-row done

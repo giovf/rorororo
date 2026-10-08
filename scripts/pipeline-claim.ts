@@ -29,6 +29,8 @@ import { fileURLToPath } from 'node:url';
 
 export const DEFAULT_BY = 'build';
 const DAY_MS = 86_400_000;
+/** Same as @foundry/core's DATED_READY_HOUR_UTC (no dist import here). */
+const DATED_READY_HOUR_UTC = 7;
 
 interface ClaimItem {
   id: string;
@@ -51,13 +53,14 @@ export function parseTarget(target: string | undefined): { venture: string; id: 
 
 /**
  * The queue text with the item set `doing` as of `today`. Refuses an item that is not `todo`,
- * dated after today, or `doing` since less than a day (another session's live claim) — the
+ * dated after today (or today before `utcHour` 07), or `doing` since less than a day (another session's live claim) — the
  * caller must take `next` again. A `doing` item older than a day is a leftover and claimable.
  */
 export function claimItem(
   queueText: string,
   id: string,
   today: string,
+  utcHour = 12,
 ): { text: string; item: ClaimItem } {
   const queue = JSON.parse(queueText) as ClaimQueue;
   const item = queue.items.find((it) => it.id === id);
@@ -65,6 +68,12 @@ export function claimItem(
   if (item.not_before !== undefined && item.not_before > today) {
     throw new Error(
       `claim: ${queue.venture}/${id} is dated ${item.not_before}, not buildable today`,
+    );
+  }
+  // An item dated today waits for the morning metrics rows (core DATED_READY_HOUR_UTC).
+  if (item.not_before === today && utcHour < DATED_READY_HOUR_UTC) {
+    throw new Error(
+      `claim: ${queue.venture}/${id} is dated ${item.not_before}, buildable from 07:00 UTC`,
     );
   }
   if (item.status === 'doing') {
@@ -136,10 +145,16 @@ export function main(argv: string[]): void {
   const { venture, id } = parseTarget(target);
   const root = path.resolve(import.meta.dirname, '..');
   const file = path.join('docs', 'pipeline', 'queues', `${venture}.json`);
-  const today = new Date().toISOString().slice(0, 10);
+  const now = new Date();
+  const today = now.toISOString().slice(0, 10);
   // Claim what main has now, not a stale clone: the other session's claim may already be there.
   git(root, 'pull -q --no-rebase --no-edit origin main');
-  const { text } = claimItem(readFileSync(path.join(root, file), 'utf8'), id, today);
+  const { text } = claimItem(
+    readFileSync(path.join(root, file), 'utf8'),
+    id,
+    today,
+    now.getUTCHours(),
+  );
   writeFileSync(path.join(root, file), text);
   git(root, `add ${JSON.stringify(file)}`);
   git(root, `commit -q -m ${JSON.stringify(claimSubject(venture, id, by))}`);

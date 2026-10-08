@@ -30,8 +30,10 @@ if (process.argv[2] === 'claim') {
 }
 
 if (process.argv[2] === 'cold') {
-  const today = new Date().toISOString().slice(0, 10);
+  const now = new Date();
+  const today = now.toISOString().slice(0, 10);
   const dayMs = 86_400_000;
+  const { datedArrived, preResearchSpent } = await import('./pipeline-cold.ts');
   type ColdItem = { status: string; not_before?: string; doing_since?: string; added: string };
   type ColdQueue = {
     venture: string;
@@ -46,10 +48,10 @@ if (process.argv[2] === 'cold') {
     .map((f) => JSON.parse(readFileSync(path.join(dir, 'queues', f), 'utf8')) as ColdQueue)
     .filter((q) => q.status === 'open');
   const buildable = (it: ColdItem): boolean =>
-    (it.status === 'todo' && (it.not_before === undefined || it.not_before <= today)) ||
-    (it.status === 'doing' &&
-      (it.not_before === undefined || it.not_before <= today) &&
-      Date.parse(today) - Date.parse(it.doing_since ?? it.added) > dayMs);
+    datedArrived(it.not_before, now) &&
+    (it.status === 'todo' ||
+      (it.status === 'doing' &&
+        Date.parse(today) - Date.parse(it.doing_since ?? it.added) > dayMs));
   const open = (it: ColdItem): boolean =>
     it.status === 'todo' || it.status === 'doing' || it.status === 'blocked';
   const cooling = (q: ColdQueue): boolean =>
@@ -62,9 +64,7 @@ if (process.argv[2] === 'cold') {
     else if (!cooling(q)) reasons.push(`${q.venture}: starved, not cooling`);
   }
   const runs = readFileSync(path.resolve(dir, '..', 'RUNS.md'), 'utf8');
-  const { preResearchSpent } = await import('./pipeline-cold.ts');
-  if (!preResearchSpent(runs, new Date()))
-    reasons.push('exchange: pre-research pass unspent this night');
+  if (!preResearchSpent(runs, now)) reasons.push('exchange: pre-research pass unspent this night');
   console.log(reasons.length === 0 ? 'starved-and-cooled' : `work: ${reasons.join('; ')}`);
   process.exit(0);
 }

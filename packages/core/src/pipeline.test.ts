@@ -6,6 +6,7 @@ import {
   isStaleDoing,
   needsResearch,
   nextItem,
+  notBeforeArrived,
   parseExchange,
   parseQueue,
   starved,
@@ -89,6 +90,30 @@ describe('scheduling', () => {
     expect(isEmpty(parseQueue(queue('t', [{ ...item('later', 'todo', 9), not_before: '2026-12-01' }])))).toBe(false);
     expect(() => parseQueue(queue('t', [{ ...item('a', 'todo', 1), not_before: '21-10-2026' }]))).toThrow(
       /not_before/,
+    );
+  });
+
+  it('offers an item dated today only from 07:00 UTC, after the morning metrics rows', () => {
+    const q = parseQueue(queue('gankdat', [{ ...item('d1-read', 'todo', 6), not_before: '2026-10-08' }]));
+    const night = new Date('2026-10-08T00:13:00Z');
+    const morning = new Date('2026-10-08T07:00:00Z');
+    expect(notBeforeArrived('2026-10-08', night)).toBe(false);
+    expect(notBeforeArrived('2026-10-08', morning)).toBe(true);
+    expect(notBeforeArrived('2026-10-07', night)).toBe(true);
+    expect(notBeforeArrived(undefined, night)).toBe(true);
+    expect(nextItem([q], { now: night })).toBeUndefined();
+    expect(nextItem([q], { now: morning })?.item.id).toBe('d1-read');
+    // A stale doing item dated today waits the same way.
+    const stale = parseQueue(
+      queue('gankdat', [{ ...item('d1-read', 'doing', 6), doing_since: '2026-10-01', not_before: '2026-10-08' }]),
+    );
+    expect(nextItem([stale], { now: night })).toBeUndefined();
+    expect(nextItem([stale], { now: morning })?.item.id).toBe('d1-read');
+    // The status text lists it as scheduled with the hour, and the queue counts as starved, not empty.
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [q] }, { now: night });
+    expect(text).toContain('scheduled: gankdat/d1-read on 2026-10-08 from 07:00 UTC');
+    expect(formatPipeline({ exchange: { ideas: [] }, queues: [q] }, { now: morning })).toContain(
+      'next: gankdat / d1-read',
     );
   });
 

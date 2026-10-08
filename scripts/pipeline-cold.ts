@@ -10,6 +10,15 @@
 
 export const NIGHT_START_HOUR_UTC = 17;
 export const PRE_RESEARCH_PREFIX = 'Exchange pre-research:';
+/** Same as @foundry/core's DATED_READY_HOUR_UTC (the gate runs before any dist exists). */
+export const DATED_READY_HOUR_UTC = 7;
+
+/** A `not_before` date has arrived at `now`: an earlier day, or today from 07:00 UTC (foundry `dated-items-wait-for-row`). */
+export function datedArrived(not_before: string | undefined, now: Date): boolean {
+  if (not_before === undefined) return true;
+  const today = now.toISOString().slice(0, 10);
+  return not_before < today || (not_before === today && now.getUTCHours() >= DATED_READY_HOUR_UTC);
+}
 
 const pad = (n: number): string => String(n).padStart(2, '0');
 

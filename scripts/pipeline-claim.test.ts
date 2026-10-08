@@ -62,6 +62,10 @@ describe('claimItem', () => {
     expect(() => claimItem(live, 'claim-me', '2026-10-08')).toThrow('already doing');
     const dated = queue([{ ...todo, not_before: '2026-10-09' }]);
     expect(() => claimItem(dated, 'claim-me', '2026-10-07')).toThrow('dated 2026-10-09');
+    // Dated today: not before 07:00 UTC (the morning metrics rows), then claimable.
+    expect(() => claimItem(dated, 'claim-me', '2026-10-09', 0)).toThrow('buildable from 07:00 UTC');
+    expect(claimItem(dated, 'claim-me', '2026-10-09', 7).item.status).toBe('doing');
+    expect(claimItem(dated, 'claim-me', '2026-10-10', 0).item.status).toBe('doing');
     expect(() => claimItem(queue([{ ...todo, status: 'done' }]), 'claim-me', '2026-10-07')).toThrow(
       'is done, not todo',
     );

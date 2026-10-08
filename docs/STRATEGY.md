@@ -901,3 +901,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-08 burn-down: foundry `claim-by-npm-flag` (4) built — `npm run pipeline claim … --by=x` reached the script as the
   env var `npm_config_by`, so tonight's first claim (61275b2) was committed as (build). `routineFrom` reads argv, then that
   env var; the prompts show `-- --by=`. Proof: the next burn-down claim commit says (burn-down) — ebb112c already does.
+- 2026-10-08 burn-down: foundry `dated-items-wait-for-row` (4) built — an item dated `not_before` today is buildable from
+  07:00 UTC (after the 06:30/06:45 metrics rows), not from midnight, in `next`, the cold gate and `claim`. Why: tonight's
+  first fire read `d1-delta-cost-check` ("the 10-08 row") at 00:13 against the 10-07 rows; every day-30 reading is dated
+  the same way. Proof: the next dated reading's run-log line is stamped after 07:00 UTC.

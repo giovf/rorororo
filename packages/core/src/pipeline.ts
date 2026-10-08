@@ -7,7 +7,8 @@
  *
  * Rules (mirrored in docs/pipeline/README.md):
  * - the build routine takes the highest-scoring `todo` item across OPEN queues, skipping any
- *   whose `not_before` date has not arrived (a dated checkpoint, e.g. a day-30 review);
+ *   whose `not_before` date has not arrived (a dated checkpoint, e.g. a day-30 review; the
+ *   day itself counts from 07:00 UTC, after the morning metrics rows — `notBeforeArrived`);
  * - an open queue with nothing left to do (no todo/doing/blocked) needs research — the build
  *   routine researches before it builds; `needs_research` is also set explicitly by the run
  *   that empties a queue;
@@ -213,6 +214,30 @@ export function utcToday(now: Date = new Date()): string {
 const DAY_MS = 86_400_000;
 
 /**
+ * Hour (UTC) from which an item dated today is buildable. The Daily numbers rows a dated reading
+ * is usually dated for are written by the 06:30 gankdat metrics and 06:45 store metrics jobs;
+ * offered at 00:00 the item read the previous rows (2026-10-08, foundry `dated-items-wait-for-row`).
+ */
+export const DATED_READY_HOUR_UTC = 7;
+
+/** A `not_before` date has arrived at `now`: an earlier day, or today from DATED_READY_HOUR_UTC. */
+export function notBeforeArrived(not_before: string | undefined, now: Date): boolean {
+  if (not_before === undefined) return true;
+  const today = utcToday(now);
+  return not_before < today || (not_before === today && now.getUTCHours() >= DATED_READY_HOUR_UTC);
+}
+
+/** Clock options: `now` (a Date), or `today` (that day at noon UTC — tests), else the real clock. */
+export interface ClockOptions {
+  today?: string;
+  now?: Date;
+}
+
+function clock(options: ClockOptions): Date {
+  return options.now ?? (options.today !== undefined ? new Date(`${options.today}T12:00:00Z`) : new Date());
+}
+
+/**
  * A `doing` item left behind by a cut-off session: `doing` for more than a day (by
  * `doing_since`, else `added`) with no `not_before` still in the future. Offered again by
  * `candidates()`, so a half-started item is redone rather than hidden.
@@ -230,10 +255,11 @@ export function isStaleDoing(item: QueueItem, today: string = utcToday()): boole
  */
 export function candidates(
   queues: VentureQueue[],
-  options: { maxEffortDays?: number; today?: string } = {},
+  options: ClockOptions & { maxEffortDays?: number } = {},
 ): { venture: string; item: QueueItem }[] {
   const cap = options.maxEffortDays ?? Number.POSITIVE_INFINITY;
-  const today = options.today ?? utcToday();
+  const now = clock(options);
+  const today = utcToday(now);
   return queues
     .filter((q) => q.status === 'open')
     .flatMap((q) =>
@@ -241,8 +267,8 @@ export function candidates(
         .filter(
           (it) =>
             it.effort_days <= cap &&
-            ((it.status === 'todo' && (it.not_before === undefined || it.not_before <= today)) ||
-              isStaleDoing(it, today)),
+            notBeforeArrived(it.not_before, now) &&
+            (it.status === 'todo' || isStaleDoing(it, today)),
         )
         .map((item) => ({ venture: q.venture, item })),
     )
@@ -252,7 +278,7 @@ export function candidates(
 /** The next item to build (optionally only items up to `maxEffortDays`), or undefined when nothing qualifies. */
 export function nextItem(
   queues: VentureQueue[],
-  options: { maxEffortDays?: number; today?: string } = {},
+  options: ClockOptions & { maxEffortDays?: number } = {},
 ): { venture: string; item: QueueItem } | undefined {
   return candidates(queues, options)[0];
 }
@@ -287,16 +313,16 @@ function coolingReason(queue: VentureQueue, today: string): string {
  * waits on a `not_before` date. Oldest `updated` first, so research rotates between ventures;
  * a cooling queue is left out (`cooling()` lists those).
  */
-export function starved(queues: VentureQueue[], options: { today?: string } = {}): VentureQueue[] {
-  const today = options.today ?? utcToday();
+export function starved(queues: VentureQueue[], options: ClockOptions = {}): VentureQueue[] {
+  const today = utcToday(clock(options));
   return queues
     .filter((q) => q.status === 'open' && candidates([q], options).length === 0 && !isCooling(q, today))
     .sort((a, b) => a.updated.localeCompare(b.updated) || a.venture.localeCompare(b.venture));
 }
 
 /** Open queues researched within 48 h or waiting on `research_after`, oldest research first. */
-export function cooling(queues: VentureQueue[], options: { today?: string } = {}): VentureQueue[] {
-  const today = options.today ?? utcToday();
+export function cooling(queues: VentureQueue[], options: ClockOptions = {}): VentureQueue[] {
+  const today = utcToday(clock(options));
   return queues
     .filter((q) => q.status === 'open' && isCooling(q, today))
     .sort((a, b) => (a.researched ?? '').localeCompare(b.researched ?? '') || a.venture.localeCompare(b.venture));
@@ -307,17 +333,18 @@ export function cooling(queues: VentureQueue[], options: { today?: string } = {}
  * or empty ones, else — only when nothing at all is buildable — the starved ones (see above).
  * `today` overrides the clock (tests).
  */
-export function needsResearch(queues: VentureQueue[], options: { today?: string } = {}): VentureQueue[] {
+export function needsResearch(queues: VentureQueue[], options: ClockOptions = {}): VentureQueue[] {
   const flagged = queues.filter((q) => q.status === 'open' && (q.needs_research || isEmpty(q)));
   if (flagged.length > 0 || nextItem(queues, options) !== undefined) return flagged;
   return starved(queues, options);
 }
 
 /** The `npm run pipeline` status text. `today` overrides the clock (tests). */
-export function formatPipeline(pipeline: Pipeline, options: { today?: string } = {}): string {
+export function formatPipeline(pipeline: Pipeline, options: ClockOptions = {}): string {
   const lines: string[] = [];
-  const today = options.today ?? utcToday();
-  const research = new Set(needsResearch(pipeline.queues, { today }).map((q) => q.venture));
+  const now = clock(options);
+  const today = utcToday(now);
+  const research = new Set(needsResearch(pipeline.queues, { now }).map((q) => q.venture));
   for (const q of pipeline.queues) {
     const count = (s: ItemStatus): number => q.items.filter((it) => it.status === s).length;
     const flag = q.status === 'finished' ? 'finished' : research.has(q.venture) ? 'open — NEEDS RESEARCH' : 'open';
@@ -325,8 +352,8 @@ export function formatPipeline(pipeline: Pipeline, options: { today?: string } =
       `${q.venture.padEnd(18)} ${flag.padEnd(22)} todo ${count('todo')}  doing ${count('doing')}  blocked ${count('blocked')}  done ${count('done')}`,
     );
   }
-  const next = nextItem(pipeline.queues, { today });
-  const cool = cooling(pipeline.queues, { today });
+  const next = nextItem(pipeline.queues, { now });
+  const cool = cooling(pipeline.queues, { now });
   lines.push(
     next
       ? `next: ${next.venture} / ${next.item.id} (score ${next.item.score}) — ${next.item.title}`
@@ -339,7 +366,11 @@ export function formatPipeline(pipeline: Pipeline, options: { today?: string } =
   if (cool.length > 0) lines.push(`cooling: ${cool.map((q) => `${q.venture} (${coolingReason(q, today)})`).join(', ')}`);
   const scheduled = pipeline.queues
     .filter((q) => q.status === 'open')
-    .flatMap((q) => q.items.filter((it) => it.status === 'todo' && it.not_before !== undefined && it.not_before > today).map((it) => `${q.venture}/${it.id} on ${it.not_before!}`));
+    .flatMap((q) =>
+      q.items
+        .filter((it) => it.status === 'todo' && !notBeforeArrived(it.not_before, now))
+        .map((it) => `${q.venture}/${it.id} on ${it.not_before!}${it.not_before === today ? ` from ${String(DATED_READY_HOUR_UTC).padStart(2, '0')}:00 UTC` : ''}`),
+    );
   if (scheduled.length > 0) lines.push(`scheduled: ${scheduled.join(', ')}`);
   const doing = pipeline.queues
     .filter((q) => q.status === 'open')
