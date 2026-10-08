@@ -562,8 +562,9 @@
       "effort_days": 0.1,
       "proof": "a dated reading item is first offered after 07:00 UTC on its day (next run-log line for one shows a time after 07:00)",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-08"
+      "status": "doing",
+      "added": "2026-10-08",
+      "doing_since": "2026-10-08"
     },
     {
       "id": "open-md-stable-render",
