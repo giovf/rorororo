@@ -423,6 +423,17 @@
       "status": "done",
       "added": "2026-10-07",
       "done_at": "2026-10-07"
+    },
+    {
+      "id": "mcp-live-probe",
+      "title": "Runner-side MCP probe: the 06:30 metrics job does initialize + tools/list + one preview tools/call against the live /mcp and writes the HTTP status into the Daily numbers row; a non-200 queues a fix like a refresh error",
+      "why": "Glama's hourly health check got 'HTTP 500 – Error connecting to MCP' on 2026-10-08 06:09 and ranked gankdat unhealthy in its directory; the 2026-09-19 Bot Fight Mode 403s were also found by Glama and CI, not by us. No sandbox can reach gankdat.com (proxy 403, relay is GET/HEAD only) and Worker logs are not read anywhere, so the build routine could not tell whether /mcp errors for real traffic or only for Glama's test profile; the ALERTS handoff waits for an attended session. A probe in the runner (it already holds CLOUDFLARE_API_TOKEN and reaches the edge) sees exactly what directories see, within a day, and the existing twice-in-four-rows rule queues the fix. Optional second probe with a GANKDAT_PROBE_KEY secret covers the authed path Glama's key takes.",
+      "effort_days": 0.3,
+      "proof": "mcp probe: 200/200/200 in every Daily numbers row; a Glama unhealthy mail is preceded by a non-200 row",
+      "score": 6,
+      "status": "doing",
+      "added": "2026-10-08",
+      "doing_since": "2026-10-08"
     }
   ]
 }
