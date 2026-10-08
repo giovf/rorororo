@@ -14,6 +14,13 @@ closed entries older than 30 days (git keeps the history).
 
 ## Open
 
+- 2026-10-08 handoff: Glama's hourly health check on the gankdat MCP connector got
+  "HTTP 500 – Error connecting to MCP" (mail 2026-10-08 06:09 UTC, support@glama.ai) — gankdat is now
+  ranked **unhealthy**, below healthy connectors, in Glama's directory. Check whether `gankdat.com/mcp`
+  is actually erroring for real traffic (Worker logs) or only for Glama's test profile (it uses its own
+  test-profile credentials, separate from personal connections — review at
+  https://glama.ai/mcp/connectors/com.gankdat/gankdat/admin/test-profile), fix whatever returns the 500,
+  then use Test Connection there (or wait for the next hourly check) to clear the unhealthy mark.
 - 2026-09-21 handoff: verify the new `uk-schools` ingest against the real files — the daily
   build container has no egress to `ea-edubase-api-prod.azurewebsites.net` or `www.gov.uk`
   (proxy 403), so the GIAS and Ofsted column mappings in `src/sources/uk-schools.ts` are
