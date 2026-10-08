@@ -551,8 +551,9 @@
       "effort_days": 0.05,
       "proof": "the next claim commit from the burn-down says (burn-down)",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-08"
+      "status": "doing",
+      "added": "2026-10-08",
+      "doing_since": "2026-10-08"
     },
     {
       "id": "dated-items-wait-for-row",
