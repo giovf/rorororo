@@ -894,3 +894,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   in-place delta refresh cut ~6M writes a day to ~0.1M, so §7's cost rule is cleared from 10-06 on; the 09-10→10-10
   invoice still carries ≈ US$44 ≈ £33 of writes (LEDGER planned row raised 31 → 33). No source swaps generations
   nightly (all nine D1 sources have `idOf`); the journal backfill is the last one-off. Invoice check stays on 11-10.
+- 2026-10-08 burn-down (foundry research, pipeline starved): four operation fixes queued from tonight's own run — npm eats
+  `--by=<routine>` so every claim commit says (build); a `not_before` item is offered at 00:00 UTC, hours before the Daily
+  numbers row it was dated for; OPEN.md's generated-on date and day counts churn every commit; npm's update banner on every
+  command. Scores 4/4/3/2; the top two are built when they win.

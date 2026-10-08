@@ -2,8 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-07",
-  "researched": "2026-10-06",
+  "updated": "2026-10-08",
+  "researched": "2026-10-08",
   "items": [
     {
       "id": "fetch-relay",
@@ -543,6 +543,46 @@
       "status": "done",
       "added": "2026-10-07",
       "done_at": "2026-10-07"
+    },
+    {
+      "id": "claim-by-npm-flag",
+      "title": "`npm run pipeline claim … --by=<routine>` loses the routine: npm eats the flag, every claim commit says (build)",
+      "why": "Seen 2026-10-08 00:17 (burn-down): `npm run pipeline claim gankdat/d1-delta-cost-check --by=burn-down` pushed `pipeline: claim gankdat/d1-delta-cost-check (build)` (61275b2) — npm consumes `--by=…` as its own config (it reaches the script only as the env var `npm_config_by`) unless the caller writes `-- --by=…`, and the three prompts (burn-down.md, build.md, CLAUDE.md) show it without the `--`. The subject is what the watchdog and a reader use to tell which routine holds an item, so every claim is misattributed. Fix: scripts/pipeline-claim.ts reads `--by=` from argv or `npm_config_by` from the environment (a pure `routineFrom(argv, env)` with tests), and the docs show the `-- --by=` form.",
+      "effort_days": 0.05,
+      "proof": "the next claim commit from the burn-down says (burn-down)",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-08"
+    },
+    {
+      "id": "dated-items-wait-for-row",
+      "title": "A dated item (`not_before` today) is offered at 00:00 UTC, 6–7 h before the day's Daily numbers row it was dated for exists",
+      "why": "Seen 2026-10-08 00:13 (burn-down): gankdat `d1-delta-cost-check` (not_before 2026-10-08, proof \"in the 10-08 row\") was `next` at the night's first fire; the 10-08 row is written by the 06:30 gankdat metrics / 06:45 store metrics jobs, so the read used the 10-05..10-07 rows and the 10-08 row is unread. Every day-30 reading in the queues (claude-directory-day-30, indexnow-day-30-read, uk-company-lookup-day-30, the three funnel reviews) is dated the same way and would fire on its midnight. Fix: in @foundry/core pipeline.ts, scripts/pipeline.ts (cold) and scripts/pipeline-claim.ts, a `not_before` equal to today counts as buildable only from 07:00 UTC (after both metrics jobs), dated earlier in the day stays on the `scheduled:` line; tests in all three.",
+      "effort_days": 0.1,
+      "proof": "a dated reading item is first offered after 07:00 UTC on its day (next run-log line for one shows a time after 07:00)",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-08"
+    },
+    {
+      "id": "open-md-stable-render",
+      "title": "OPEN.md changes every day with no new ask: the generated-on date and \"waiting N days\" make a 24-line diff ride every routine commit",
+      "why": "Seen 2026-10-08 (burn-down): `npm run check` (its handoffs step) rewrote docs/for-owner/OPEN.md with only the date and nine day-counts changed, so the run either commits a diff unrelated to its item (f8d9577 did) or leaves the tree dirty for the pre-push hook. Fix: scripts/handoffs.ts renderOpen drops the generated-on date and the day counts from the file (keep `since <date>`; the `notify:` summary line keeps the ages), so the file changes only when an ask opens, closes or its unblocked work changes; test that two renders a day apart are identical.",
+      "effort_days": 0.05,
+      "proof": "OPEN.md unchanged by `npm run check` on a day with no ALERTS change",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-08"
+    },
+    {
+      "id": "npmrc-update-notifier-off",
+      "title": "Silence npm's \"New major version of npm available\" banner in the sandbox (`update-notifier=false` in .npmrc)",
+      "why": "Seen 2026-10-08 (burn-down): every `npm run …` in the sandbox prints a five-line `npm notice` banner (10.9.4 → 12.2.0) that every routine then filters out of its tool output; `.npmrc` with `update-notifier=false` removes it for every session and CI with no other effect.",
+      "effort_days": 0.01,
+      "proof": "no `npm notice New major version` line in a routine's `npm run pipeline` output",
+      "score": 2,
+      "status": "todo",
+      "added": "2026-10-08"
     }
   ]
 }

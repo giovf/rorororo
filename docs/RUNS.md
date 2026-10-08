@@ -752,3 +752,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-08 00:28 | burn-down | No source swaps generations nightly: all nine D1 sources have idOf; journal backfill is one-off
 - 2026-10-08 00:28 | burn-down | LEDGER planned row 10-10 raised 31 → 33 (≈ US$44 of writes); RESEARCH table, ARCHITECTURE note
 - 2026-10-08 00:28 | burn-down | Queue: gankdat d1-delta-cost-check done; STRATEGY §7 cost rule cleared going forward
+- 2026-10-08 00:38 | burn-down | Pipeline starved after the D1 read (every open item blocked or dated): foundry research pass
+- 2026-10-08 00:38 | burn-down | Foundry research: claim --by flag eaten by npm (61275b2 says build); dated items offered at 00:00
+- 2026-10-08 00:38 | burn-down | Foundry research: OPEN.md date-only churn rides every commit; npm update banner on every npm run
+- 2026-10-08 00:38 | burn-down | Queue: foundry +4 items (claim flag 4, dated items wait 07:00 4, OPEN.md stable 3, npmrc 2)
