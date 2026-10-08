@@ -573,8 +573,9 @@
       "effort_days": 0.05,
       "proof": "OPEN.md unchanged by `npm run check` on a day with no ALERTS change",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-08"
+      "status": "doing",
+      "added": "2026-10-08",
+      "doing_since": "2026-10-08"
     },
     {
       "id": "npmrc-update-notifier-off",
