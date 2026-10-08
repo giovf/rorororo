@@ -905,3 +905,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   07:00 UTC (after the 06:30/06:45 metrics rows), not from midnight, in `next`, the cold gate and `claim`. Why: tonight's
   first fire read `d1-delta-cost-check` ("the 10-08 row") at 00:13 against the 10-07 rows; every day-30 reading is dated
   the same way. Proof: the next dated reading's run-log line is stamped after 07:00 UTC.
+- 2026-10-08 burn-down: foundry `open-md-stable-render` (3) built — OPEN.md carries no date or day counts, so `npm run check`
+  rewrites it only when an ask opens, closes or its unblocked work changes; the ages stay in the `notify:` digest. Why: a
+  24-line date-only diff rode every routine commit (f8d9577 tonight). Proof: OPEN.md untouched by the gate on a quiet day.

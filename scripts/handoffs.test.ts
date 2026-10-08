@@ -304,17 +304,22 @@ describe('owner digest (OPEN.md, notify line, median age)', () => {
     const book = ledger(asksMd, now);
     const asks = rankAsks(book.open, queues, now);
     const handoffs = book.open.filter((e) => e.kind === 'handoff');
-    const md = renderOpen(asks, handoffs, now, new Map([['013', '013-repo-private.md']]));
+    const md = renderOpen(asks, handoffs, new Map([['013', '013-repo-private.md']]));
     expect(md).toContain('## Requests (4)');
     expect(md).toContain(
-      '1. **one 2-minute dashboard edit** — ~2 min, waiting 16 days (since 2026-09-20); unblocks highlight-keep `cws-listing-keywords` (4), read-focus `cws-promo-tile` (3). Steps: [013](actions/013-repo-private.md).',
+      '1. **one 2-minute dashboard edit** — ~2 min, since 2026-09-20; unblocks highlight-keep `cws-listing-keywords` (4), read-focus `cws-promo-tile` (3). Steps: [013](actions/013-repo-private.md).',
     );
     expect(md).toContain('Steps: 017.');
-    expect(md).toContain('time not stated, waiting 6 days');
+    expect(md).toContain('time not stated, since 2026-09-30');
     expect(md).toContain('## Waiting on an attended Claude session, not you (1)');
-    expect(md).toContain('- 6 days (2026-09-30) — sign and upload ReadFocus 0.3.0');
+    expect(md).toContain('- since 2026-09-30 — sign and upload ReadFocus 0.3.0');
     expect(md).not.toContain('closed one');
-    const empty = renderOpen([], [], now, new Map());
+    // No clock in the file: the same asks a day later render byte-identical (no daily churn).
+    const later = new Date(now.getTime() + 86_400_000);
+    const laterAsks = rankAsks(ledger(asksMd, later).open, queues, later);
+    expect(renderOpen(laterAsks, handoffs, new Map([['013', '013-repo-private.md']]))).toBe(md);
+    expect(md).not.toMatch(/waiting \d+ days|on 20\d\d-\d\d-\d\d from the open/);
+    const empty = renderOpen([], [], new Map());
     expect(empty).toContain('Nothing is waiting on you.');
     expect(empty).toContain('None.');
   });

@@ -763,3 +763,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-08 00:27 | burn-down | Dated items: not_before today counts from 07:00 UTC (notBeforeArrived in core, cold gate, claim); tests
 - 2026-10-08 00:27 | burn-down | scheduled: line shows "on <date> from 07:00 UTC" for the day itself; pipeline README paragraph
 - 2026-10-08 00:27 | burn-down | Queue: foundry dated-items-wait-for-row done
+- 2026-10-08 00:29 | burn-down | OPEN.md has no clock now: no generated-on date, "since <date>" instead of day counts; test
+- 2026-10-08 00:29 | burn-down | Queue: foundry open-md-stable-render done
