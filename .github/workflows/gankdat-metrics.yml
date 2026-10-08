@@ -52,6 +52,18 @@ jobs:
         continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Probe the live MCP endpoint the way a directory's health check does
+        # scripts/mcp-probe.ts (gankdat mcp-live-probe, 2026-10-08): initialize, tools/list and one
+        # preview tools/call against https://gankdat.com/mcp from the runner — the edge as Glama,
+        # Smithery and the Claude directory see it (Glama mailed "HTTP 500 – Error connecting to
+        # MCP" on 2026-10-08 and no sandbox could look). Leaves dist/mcp-probe.json for metrics.mjs,
+        # which renders `mcp probe: …` and lists a failed step under `refresh errors` as `mcp-probe`
+        # so the step below queues a fix on a repeat. Builtins only (push runs skip npm ci); never
+        # fails the job. GANKDAT_PROBE_KEY is optional: with it the same calls also run with a key.
+        run: node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts
+        continue-on-error: true
+        env:
+          GANKDAT_PROBE_KEY: ${{ secrets.GANKDAT_PROBE_KEY }}
       - name: Append today's numbers to RESEARCH.md
         run: node ventures/gankdat/scripts/metrics.mjs
         env:
