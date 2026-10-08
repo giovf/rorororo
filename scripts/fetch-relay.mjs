@@ -30,6 +30,7 @@ const ALLOWED = [
   'chromewebstore.google.com',
   '.addons.mozilla.org',
   '.apify.com',
+  '.ico.org.uk',
   'registry.modelcontextprotocol.io',
   '.glama.ai',
   '.mcpservers.org',

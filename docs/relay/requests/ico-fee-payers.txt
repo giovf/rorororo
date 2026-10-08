@@ -1,0 +1,7 @@
+# ICO register of fee payers (pre-research 2026-10-08): download page, licence text, file link/size; two Apify rivals
+HEAD https://ico.org.uk/about-the-ico/what-we-do/register-of-fee-payers/download-the-register/
+GET https://ico.org.uk/about-the-ico/what-we-do/register-of-fee-payers/download-the-register/
+GET https://ico.org.uk/about-the-ico/what-we-do/register-of-fee-payers/
+GET https://apify.com/uksignals/ico-signals
+GET https://apify.com/uksignals/ico-signals/pricing
+GET https://apify.com/spookyweb/uk-ico-enforcement-actions
