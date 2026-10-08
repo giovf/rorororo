@@ -320,9 +320,10 @@
       "effort_days": 0.1,
       "proof": "daily D1 writes < 1M in the 10-08 row recorded in RESEARCH.md, or a queued fix naming the source(s)",
       "score": 6,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-10-08",
-      "added": "2026-10-05"
+      "added": "2026-10-05",
+      "doing_since": "2026-10-08"
     },
     {
       "id": "indexnow-day-30-read",
