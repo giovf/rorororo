@@ -34,7 +34,7 @@ dated by `doing_since` (else `added`); `npm run pipeline` lists every one on a `
 for more than a day with no future `not_before` is a cut-off session's leftover (nothing of it reached `main`), so
 `next` offers it again; a deliberate hold is `todo` with `not_before` (or carries `not_before` while doing). **Claim** (2026-10-07): the
 `doing` edit only guards other sessions once it is on `main`, so a session runs `npm run pipeline claim <venture>/<id>
---by=<routine>` right after `next` — one commit of the queue file (`pipeline: claim <venture>/<id> (<routine>)`), pushed
+-- --by=<routine>` right after `next` (the `--` matters: npm keeps a bare `--by=` for itself, 2026-10-08) — one commit of the queue file (`pipeline: claim <venture>/<id> (<routine>)`), pushed
 before any work, like the slot marker; a claim refused because another session's `doing` is under a day old means take
 `next` again (on 2026-10-07 the 17:00 burn-down and the 17:10 build each built `search-console-api-reading` in full, and the
 second push was discarded). The watchdog never counts a claim commit as a slot's trace. **Cooling** (2026-10-06): a queue carries

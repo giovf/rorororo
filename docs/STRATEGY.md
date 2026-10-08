@@ -898,3 +898,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `--by=<routine>` so every claim commit says (build); a `not_before` item is offered at 00:00 UTC, hours before the Daily
   numbers row it was dated for; OPEN.md's generated-on date and day counts churn every commit; npm's update banner on every
   command. Scores 4/4/3/2; the top two are built when they win.
+- 2026-10-08 burn-down: foundry `claim-by-npm-flag` (4) built — `npm run pipeline claim … --by=x` reached the script as the
+  env var `npm_config_by`, so tonight's first claim (61275b2) was committed as (build). `routineFrom` reads argv, then that
+  env var; the prompts show `-- --by=`. Proof: the next burn-down claim commit says (burn-down) — ebb112c already does.

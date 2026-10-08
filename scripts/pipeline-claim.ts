@@ -14,6 +14,11 @@
 // trace for the watchdog (`claimMarkerRoutine`): a session that claimed and died still reads as
 // stalled, not as done.
 //
+// `--by=<routine>` (foundry `claim-by-npm-flag`, 2026-10-08): npm consumes a `--flag=value` written
+// after `npm run pipeline claim …` as its own config and hands the script only the env var
+// `npm_config_by`, so the first burn-down claim was committed as `(build)`; `routineFrom` reads
+// argv first (the `-- --by=…` form) and that env var second.
+//
 // The edit is JSON.parse → JSON.stringify(…, null, 2): the queue files are kept in exactly that
 // shape (Prettier agrees), so the pre-push hook's format check passes. Only node builtins.
 // Node 22 runs .ts directly — keep syntax erasable.
@@ -77,6 +82,22 @@ export function claimItem(
   return { text: `${JSON.stringify(queue, null, 2)}\n`, item };
 }
 
+/**
+ * The routine a claim is made by: `--by=<routine>` in argv (the `npm run pipeline claim … -- --by=x`
+ * form), else npm's `npm_config_by` (what `npm run … --by=x` without the `--` leaves), else build.
+ */
+export function routineFrom(
+  argv: readonly string[],
+  env: Readonly<Record<string, string | undefined>>,
+): string {
+  const by =
+    argv.find((a) => a.startsWith('--by='))?.slice('--by='.length) ??
+    env['npm_config_by'] ??
+    DEFAULT_BY;
+  if (!/^[a-z-]+$/.test(by)) throw new Error(`claim: --by must be a routine name, got "${by}"`);
+  return by;
+}
+
 /** Commit subject of a claim: `pipeline: claim <venture>/<id> (<routine>)`. */
 export function claimSubject(venture: string, id: string, by: string): string {
   return `pipeline: claim ${venture}/${id} (${by})`;
@@ -111,8 +132,7 @@ function pushWithRetry(root: string): void {
 
 export function main(argv: string[]): void {
   const target = argv.find((a) => !a.startsWith('--'));
-  const by = argv.find((a) => a.startsWith('--by='))?.slice('--by='.length) ?? DEFAULT_BY;
-  if (!/^[a-z-]+$/.test(by)) throw new Error(`claim: --by must be a routine name, got "${by}"`);
+  const by = routineFrom(argv, process.env);
   const { venture, id } = parseTarget(target);
   const root = path.resolve(import.meta.dirname, '..');
   const file = path.join('docs', 'pipeline', 'queues', `${venture}.json`);

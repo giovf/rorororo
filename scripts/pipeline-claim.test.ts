@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { claimItem, claimMarkerRoutine, claimSubject, parseTarget } from './pipeline-claim.ts';
+import {
+  claimItem,
+  claimMarkerRoutine,
+  claimSubject,
+  parseTarget,
+  routineFrom,
+} from './pipeline-claim.ts';
 
 const queue = (items: Record<string, unknown>[]): string =>
   `${JSON.stringify({ venture: 'foundry', status: 'open', needs_research: false, updated: '2026-10-07', items }, null, 2)}\n`;
@@ -80,5 +86,17 @@ describe('claim commit subject', () => {
     expect(claimMarkerRoutine('pipeline: claim gankdat/x (build)')).toBe('build');
     expect(claimMarkerRoutine('foundry: Search Console reading in CI (burn-down)')).toBeUndefined();
     expect(claimMarkerRoutine('build: slot 2026-10-01 09:03 UTC started (build)')).toBeUndefined();
+  });
+});
+
+describe('routineFrom', () => {
+  it('reads --by= from argv, else the npm_config_by npm leaves when the flag had no `--`, else build', () => {
+    expect(routineFrom(['foundry/x', '--by=burn-down'], {})).toBe('burn-down');
+    expect(routineFrom(['foundry/x'], { npm_config_by: 'burn-down' })).toBe('burn-down');
+    expect(routineFrom(['foundry/x', '--by=exchange'], { npm_config_by: 'build' })).toBe(
+      'exchange',
+    );
+    expect(routineFrom(['foundry/x'], {})).toBe('build');
+    expect(() => routineFrom(['foundry/x'], { npm_config_by: 'Build 1' })).toThrow(/routine name/);
   });
 });

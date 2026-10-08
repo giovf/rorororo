@@ -547,13 +547,13 @@
     {
       "id": "claim-by-npm-flag",
       "title": "`npm run pipeline claim … --by=<routine>` loses the routine: npm eats the flag, every claim commit says (build)",
-      "why": "Seen 2026-10-08 00:17 (burn-down): `npm run pipeline claim gankdat/d1-delta-cost-check --by=burn-down` pushed `pipeline: claim gankdat/d1-delta-cost-check (build)` (61275b2) — npm consumes `--by=…` as its own config (it reaches the script only as the env var `npm_config_by`) unless the caller writes `-- --by=…`, and the three prompts (burn-down.md, build.md, CLAUDE.md) show it without the `--`. The subject is what the watchdog and a reader use to tell which routine holds an item, so every claim is misattributed. Fix: scripts/pipeline-claim.ts reads `--by=` from argv or `npm_config_by` from the environment (a pure `routineFrom(argv, env)` with tests), and the docs show the `-- --by=` form.",
+      "why": "Seen 2026-10-08 00:17 (burn-down): `npm run pipeline claim gankdat/d1-delta-cost-check --by=burn-down` pushed `pipeline: claim gankdat/d1-delta-cost-check (build)` (61275b2) — npm consumes `--by=…` as its own config (it reaches the script only as the env var `npm_config_by`) unless the caller writes `-- --by=…`, and the three prompts (burn-down.md, build.md, CLAUDE.md) show it without the `--`. The subject is what the watchdog and a reader use to tell which routine holds an item, so every claim is misattributed. Fix: scripts/pipeline-claim.ts reads `--by=` from argv or `npm_config_by` from the environment (a pure `routineFrom(argv, env)` with tests), and the docs show the `-- --by=` form. Built 2026-10-08 (burn-down): `routineFrom(argv, env)` in scripts/pipeline-claim.ts (argv `--by=`, then `npm_config_by`, then build; tests), and the four docs show `-- --by=`. The claim for this very item (ebb112c) used the `--` form and says (burn-down).",
       "effort_days": 0.05,
       "proof": "the next claim commit from the burn-down says (burn-down)",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-08",
-      "doing_since": "2026-10-08"
+      "done_at": "2026-10-08"
     },
     {
       "id": "dated-items-wait-for-row",
