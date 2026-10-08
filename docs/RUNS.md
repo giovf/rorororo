@@ -765,3 +765,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-08 00:27 | burn-down | Queue: foundry dated-items-wait-for-row done
 - 2026-10-08 00:29 | burn-down | OPEN.md has no clock now: no generated-on date, "since <date>" instead of day counts; test
 - 2026-10-08 00:29 | burn-down | Queue: foundry open-md-stable-render done
+- 2026-10-08 00:30 | burn-down | .npmrc update-notifier=false: no npm version banner on any npm run; queue foundry npmrc item done

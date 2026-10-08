@@ -580,13 +580,13 @@
     {
       "id": "npmrc-update-notifier-off",
       "title": "Silence npm's \"New major version of npm available\" banner in the sandbox (`update-notifier=false` in .npmrc)",
-      "why": "Seen 2026-10-08 (burn-down): every `npm run …` in the sandbox prints a five-line `npm notice` banner (10.9.4 → 12.2.0) that every routine then filters out of its tool output; `.npmrc` with `update-notifier=false` removes it for every session and CI with no other effect.",
+      "why": "Seen 2026-10-08 (burn-down): every `npm run …` in the sandbox prints a five-line `npm notice` banner (10.9.4 → 12.2.0) that every routine then filters out of its tool output; `.npmrc` with `update-notifier=false` removes it for every session and CI with no other effect. Built 2026-10-08 (burn-down): `update-notifier=false` in .npmrc; `npm run pipeline cold` prints no npm notice line.",
       "effort_days": 0.01,
       "proof": "no `npm notice New major version` line in a routine's `npm run pipeline` output",
       "score": 2,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-08",
-      "doing_since": "2026-10-08"
+      "done_at": "2026-10-08"
     }
   ]
 }
