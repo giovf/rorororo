@@ -584,8 +584,9 @@
       "effort_days": 0.01,
       "proof": "no `npm notice New major version` line in a routine's `npm run pipeline` output",
       "score": 2,
-      "status": "todo",
-      "added": "2026-10-08"
+      "status": "doing",
+      "added": "2026-10-08",
+      "doing_since": "2026-10-08"
     }
   ]
 }
