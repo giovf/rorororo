@@ -890,3 +890,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   match (any line today or yesterday containing `pre-research`) was satisfied by each night's `Stopping: … pre-research
   spent` line, so the one allowed pass ran once (10-05) and was silently skipped on 10-06 and 10-07. Proof: one
   `Exchange pre-research:` line on every starved burn night from 2026-10-08.
+- 2026-10-08 burn-down: `d1-delta-cost-check` read — D1 writes 87.5M → 93.6M → 93.8M → 93.8M (10-04..10-07): the
+  in-place delta refresh cut ~6M writes a day to ~0.1M, so §7's cost rule is cleared from 10-06 on; the 09-10→10-10
+  invoice still carries ≈ US$44 ≈ £33 of writes (LEDGER planned row raised 31 → 33). No source swaps generations
+  nightly (all nine D1 sources have `idOf`); the journal backfill is the last one-off. Invoice check stays on 11-10.

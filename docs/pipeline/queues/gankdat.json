@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-07",
+  "updated": "2026-10-08",
   "researched": "2026-10-07",
   "items": [
     {
@@ -316,14 +316,14 @@
     {
       "id": "d1-delta-cost-check",
       "title": "Read three days of `cf usage` after the delta refresh: are D1 writes under ~1M a day, and which sources still swap generations",
-      "why": "Research 2026-10-05: STRATEGY §7's cost rule is tripped (10-04 row: 87.5M D1 writes since 09-10 ≈ US$38 overage, GBP 0 revenue) and the fix (in-place delta refresh, migration 0014) had its first night on 10-05; `cf usage` is cumulative for the 10th-to-10th period, so the per-day write rate only shows across consecutive rows. Do from 10-08: difference the `d1 … writes` figure across the 10-05..10-08 rows; if a day is still above ~1M writes, read `refresh_log` (`delta +a ~c -r` vs full) through the REST API for the sources still doing a generation swap (first loads, no `idOf`, pre-migration rows) and file the fix as a queue item; write the daily rate into the LEDGER planned row. The invoice check (proof of `cloudflare-usage-breakdown`) stays for 11-10.",
+      "why": "Research 2026-10-05: STRATEGY §7's cost rule is tripped (10-04 row: 87.5M D1 writes since 09-10 ≈ US$38 overage, GBP 0 revenue) and the fix (in-place delta refresh, migration 0014) had its first night on 10-05; `cf usage` is cumulative for the 10th-to-10th period, so the per-day write rate only shows across consecutive rows. Do from 10-08: difference the `d1 … writes` figure across the 10-05..10-08 rows; if a day is still above ~1M writes, read `refresh_log` (`delta +a ~c -r` vs full) through the REST API for the sources still doing a generation swap (first loads, no `idOf`, pre-migration rows) and file the fix as a queue item; write the daily rate into the LEDGER planned row. The invoice check (proof of `cloudflare-usage-breakdown`) stays for 11-10. Read 2026-10-08 (burn-down): cf usage 87.5M (10-04) → 93.6M (10-05) → 93.8M (10-06) → 93.8M (10-07): +6.1M on the last full-reload night (every D1 source's \"one last full reload\" after migration 0014), then +0.2M and +0.0M a day — under the ~1M line on both delta days, ~30× below the ~6M/day of the generation swap. No source swaps generations nightly any more: all nine D1 sources define idOf, so the swap is left for a first load only; uk-trademark-journal's pre-0014 rows are hashed in place by the 10-07 backfill (≤ 162k writes, one or two nights) and then go delta. No refresh_log read needed (the conditional branch was for a day above 1M). Period 09-10→10-10 ends at ≈ 44M billable writes ≈ US$44 ≈ £33 — written into the LEDGER planned row; the invoice check stays with cloudflare-usage-breakdown on 11-10. Reads run +45-54M a day (billed at US$0.001/M, 25B included — nil).",
       "effort_days": 0.1,
       "proof": "daily D1 writes < 1M in the 10-08 row recorded in RESEARCH.md, or a queued fix naming the source(s)",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-10-08",
       "added": "2026-10-05",
-      "doing_since": "2026-10-08"
+      "done_at": "2026-10-08"
     },
     {
       "id": "indexnow-day-30-read",

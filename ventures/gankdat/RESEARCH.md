@@ -223,3 +223,26 @@ three times, pausing for `Retry-After` when it is under two minutes and otherwis
 so a burst-limited morning no longer costs eu-ted its refresh (10-01 and 10-06 each waited for a
 request-path retry hours later). Worst case adds two minutes to wave 1; a page still throttled after
 the retries fails as before. Proof: no eu-ted 429 in the refresh errors reading over 14 nights.
+
+## Read 2026-10-08 — `d1-delta-cost-check` (burn-down)
+
+Three Daily numbers rows after the delta refresh's first night (10-05), `cf usage` cumulative for the
+09-10→10-10 billing period:
+
+| Row | D1 writes | Δ day | D1 reads | Δ day |
+| --- | --- | --- | --- | --- |
+| 10-04 (last swap night ahead) | 87.5M | — | 723.4M | — |
+| 10-05 | 93.6M | +6.1M (every D1 source's "one last full reload" after migration 0014) | 794.4M | +71M |
+| 10-06 | 93.8M | +0.2M | 848.3M | +54M |
+| 10-07 | 93.8M | +0.0M (under the 0.1M rounding) | 893.3M | +45M |
+
+Verdict: daily D1 writes are ~0.1M, well under the ~1M line and ~30× below the ~6M a day the nightly
+generation swap cost; STRATEGY §7's cost rule is no longer tripped going forward (the period's invoice
+on 10-10 still carries ≈ 44M billable writes ≈ US$44 ≈ £33, LEDGER planned row updated; the invoice
+check stays with `cloudflare-usage-breakdown` on 11-10). Which sources still swap generations: none
+nightly — all nine D1 sources (nhs-ods, sam-exclusions, uk-care-locations, uk-charities,
+uk-food-hygiene, uk-gambling-operators, uk-schools, uk-sponsors, uk-trademark-journal) define `idOf`,
+so the swap is left for a first load only. uk-trademark-journal's pre-0014 rows (162k) are hashed in
+place by the 10-07 backfill (≤ 162k writes over one or two nights, visible as a small bump in the 10-08
+or 10-09 row) and then go delta. The `refresh_log` read through the REST API was the branch for a day
+above 1M and was not needed. Reads (+45–71M a day, 25B included, US$0.001/M beyond) cost nothing.

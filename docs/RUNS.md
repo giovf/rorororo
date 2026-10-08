@@ -748,3 +748,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-07 18:30 | burn-down | burn-down.md pass rule spells out the same prefix and window; 10 tests; pipeline.ts comment
 - 2026-10-07 18:30 | burn-down | Queue: foundry cold-gate-night-window done (two nights of pre-research were skipped unseen)
 - 2026-10-07 18:48 | burn-down | Exchange pre-research: Land Registry price paid data parked (OGL v3, 9 Apify rivals $1.50-10/1k)
+- 2026-10-08 00:28 | burn-down | D1 writes 87.5M→93.6M→93.8M→93.8M (10-04..07): ~0.1M a day after the delta refresh, was ~6M
+- 2026-10-08 00:28 | burn-down | No source swaps generations nightly: all nine D1 sources have idOf; journal backfill is one-off
+- 2026-10-08 00:28 | burn-down | LEDGER planned row 10-10 raised 31 → 33 (≈ US$44 of writes); RESEARCH table, ARCHITECTURE note
+- 2026-10-08 00:28 | burn-down | Queue: gankdat d1-delta-cost-check done; STRATEGY §7 cost rule cleared going forward

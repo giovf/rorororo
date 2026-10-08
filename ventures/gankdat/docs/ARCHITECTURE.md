@@ -180,7 +180,7 @@ runs `check:root`.
   full reload" never finished: wave 7 was killed at the Cron Trigger limit three nights running,
   writing no row). The generation swap is what the 2026-10-01
   Cloudflare budget alert (US$15 metered vs the US$5 plan) was traced to — D1 bills rows
-  written. The trade: during a delta refresh a request sees today's version of some rows and
+  written (measured 2026-10-08: ~6M writes a day before the delta refresh, 0.0–0.2M a day after). The trade: during a delta refresh a request sees today's version of some rows and
   yesterday's of the rest (every row present, nothing partially loaded; `last_refreshed_at`
   flips at the end, and a crash mid-way self-heals against the stored hashes). `refresh_log`
   carries `delta +a ~c -r` per source. Migrations via `wrangler d1 migrations`.
