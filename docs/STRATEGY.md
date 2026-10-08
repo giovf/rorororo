@@ -916,3 +916,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   score, built it: `scripts/mcp-probe.ts` runs in the metrics job and the Daily numbers row carries
   `mcp probe: …`; a failed step lists `mcp-probe` under refresh errors so the repeat rule queues the fix. Why:
   two incidents (09-19 Bot Fight Mode, 10-08 Glama 500) were found by directories, not by us.
+- 2026-10-08 build: 17:00 slot — nothing buildable (every queue cooling or waiting on dated evidence, next gankdat
+  `oauth-connect-funnel-check` 2026-10-09); no research run, per the cooling rule; the morning probe already answers
+  the Glama handoff for anonymous traffic, so nothing to add there.

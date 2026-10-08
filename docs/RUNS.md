@@ -776,3 +776,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-08 10:05 | build | docs/ci/gankdat-metrics.yml: probe step before metrics (installer moves it); ARCHITECTURE, SCHEDULERS
 - 2026-10-08 10:05 | build | Queue: gankdat mcp-live-probe done; Taskmaster 29; Glama handoff kept (test-profile check)
 - 2026-10-08 10:35 | build | First live probe (CI 09:32): /mcp keyless init/tools/call all 200, 23 tools; Glama 500 not general
+- 2026-10-08 17:20 | build | Nothing buildable: pipeline starved, every queue cooling or dated (next 10-09); no new owner notes
