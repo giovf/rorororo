@@ -1267,13 +1267,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-07T17:34:33.349Z"
+      },
+      {
+        "id": "29",
+        "title": "Live MCP probe from the metrics runner (gankdat mcp-live-probe)",
+        "description": "scripts/mcp-probe.ts: initialize, tools/list and one preview tools/call against the live /mcp from the gankdat metrics job (keyless, plus GANKDAT_PROBE_KEY when set); metrics.mjs renders mcp probe: in the Daily numbers row and lists a failed step under refresh errors as mcp-probe so refresh-errors-to-queue files a fix. Why: Glama health check HTTP 500 on 2026-10-08, no sandbox can reach the edge.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-08T09:27:49.081Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-07T17:34:33.349Z",
-      "taskCount": 28,
-      "completedCount": 21,
+      "lastModified": "2026-10-08T09:27:49.081Z",
+      "taskCount": 29,
+      "completedCount": 22,
       "tags": [
         "master"
       ]

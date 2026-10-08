@@ -767,3 +767,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-08 00:29 | burn-down | Queue: foundry open-md-stable-render done
 - 2026-10-08 00:30 | burn-down | .npmrc update-notifier=false: no npm version banner on any npm run; queue foundry npmrc item done
 - 2026-10-08 00:30 | burn-down | Stopping: 5 items built (D1 read, claim flag, dated 07:00, OPEN.md, npmrc) + foundry research; starved-and-cooled
+- 2026-10-08 09:15 | build | Nothing buildable: pipeline starved, every queue cooling (researched ≤48 h or dated); no owner notes
+- 2026-10-08 09:40 | build | Glama 500 handoff read: deploy 10-07 green, CH key shared with live source, no sandbox can probe /mcp
+- 2026-10-08 09:40 | build | Queued and claimed gankdat mcp-live-probe (6): the top score, built this run instead of 17:00
+- 2026-10-08 10:05 | build | scripts/mcp-probe.ts: initialize, tools/list, preview tools/call against live /mcp from the runner
+- 2026-10-08 10:05 | build | metrics.mjs row gains `mcp probe: …`; a failed step lists `mcp-probe` under refresh errors
+- 2026-10-08 10:05 | build | refresh-errors-to-queue files a failed probe with its own wording; 9 + 1 tests
+- 2026-10-08 10:05 | build | docs/ci/gankdat-metrics.yml: probe step before metrics (installer moves it); ARCHITECTURE, SCHEDULERS
+- 2026-10-08 10:05 | build | Queue: gankdat mcp-live-probe done; Taskmaster 29; Glama handoff kept (test-profile check)

@@ -21,6 +21,10 @@ closed entries older than 30 days (git keeps the history).
   test-profile credentials, separate from personal connections — review at
   https://glama.ai/mcp/connectors/com.gankdat/gankdat/admin/test-profile), fix whatever returns the 500,
   then use Test Connection there (or wait for the next hourly check) to clear the unhealthy mark.
+  — 2026-10-08 09:50 build: the 10-07 deploys are green and the sandbox cannot reach /mcp; from the next
+  `gankdat metrics` run the Daily numbers row carries `mcp probe: …` (initialize / tools/list / tools/call
+  from the runner, gankdat `mcp-live-probe`), which says whether the edge errors for everyone; the Glama
+  test-profile check stays yours.
 - 2026-09-21 handoff: verify the new `uk-schools` ingest against the real files — the daily
   build container has no egress to `ea-edubase-api-prod.azurewebsites.net` or `www.gov.uk`
   (proxy 403), so the GIAS and Ofsted column mappings in `src/sources/uk-schools.ts` are

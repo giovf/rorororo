@@ -31,6 +31,8 @@ export const WINDOW_ROWS = 4;
 /** Rows in the window that must list the slug (today's always one of them) before it is filed. */
 export const MIN_HITS = 2;
 export const SCORE = 6;
+/** The slug scripts/mcp-probe.ts reports a failed live /mcp probe under (2026-10-08). */
+export const PROBE_SLUG = 'mcp-probe';
 export const EFFORT_DAYS = 0.1;
 
 export interface RefreshError {
@@ -199,15 +201,25 @@ export function fileRepeatErrors(researchMd: string, queue: Queue, today: string
       closed?.status === 'done'
         ? ` after the fix of ${closed.id} (${closed.done_at ?? closed.added})`
         : '';
+    const listed =
+      `Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list ${e.slug} under ` +
+      `refresh errors on ${earlier} and ${todayEvidence}${after}.`;
     items.push({
       id,
-      title: `${e.slug}: refresh has failed ${evidence.length} times in the last ${window.length} days — fix the source or keep the last snapshot without an error row`,
+      title:
+        e.slug === PROBE_SLUG
+          ? `live /mcp has failed the CI probe ${evidence.length} times in the last ${window.length} days — find what answers a directory's initialize / tools/list / tools/call with an error and fix it`
+          : `${e.slug}: refresh has failed ${evidence.length} times in the last ${window.length} days — fix the source or keep the last snapshot without an error row`,
       why:
-        `Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list ${e.slug} under ` +
-        `refresh errors on ${earlier} and ${todayEvidence}${after}. The surface serves ` +
-        `the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/${e.slug}.ts, verify the origin's ` +
-        `current response through the relay before changing the parser, and make a transient origin fault log \`skipped\` ` +
-        `rather than \`error\` once retries are exhausted.`,
+        e.slug === PROBE_SLUG
+          ? `${listed} The probe (scripts/mcp-probe.ts, from the metrics runner) is what Glama, Smithery and the ` +
+            `Claude directory see; every directory ranks an erroring server below healthy ones. The step and status are ` +
+            `in the message; reproduce it against the local Worker (test/mcp-directory.spec.ts) with the same request, ` +
+            `read \`/v1/health\` through the relay, and fix the Worker — not the probe.`
+          : `${listed} The surface serves ` +
+            `the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/${e.slug}.ts, verify the origin's ` +
+            `current response through the relay before changing the parser, and make a transient origin fault log \`skipped\` ` +
+            `rather than \`error\` once retries are exhausted.`,
       effort_days: EFFORT_DAYS,
       proof: `${e.slug} absent from refresh errors for 7 consecutive Daily numbers rows`,
       score: SCORE,

@@ -195,6 +195,30 @@ const indexnowNote = await readFile(
   })
   .catch((e) => `indexnow: n/a (${e.code === 'ENOENT' ? 'no runner result' : e.message})`);
 
+// Live MCP probe (gankdat `mcp-live-probe`, 2026-10-08): scripts/mcp-probe.ts runs before this
+// script in the metrics job (push runs too — builtins only) and leaves in dist/mcp-probe.json the
+// HTTP status of `initialize`, `tools/list` and one preview `tools/call` against the live /mcp,
+// keyless and, with GANKDAT_PROBE_KEY, with a bearer key — what Glama's hourly health check sees
+// (it mailed "HTTP 500 – Error connecting to MCP" on 2026-10-08 and no sandbox could look). A
+// failed step is also listed under `refresh errors` as `mcp-probe`, so the two-rows-in-four rule
+// queues a fix; a probe dated another day or missing reads `n/a (<reason>)` and lists nothing.
+const { probeNote, probeError } = await import('../../../scripts/mcp-probe.ts');
+const probeResult = await readFile(
+  path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist', 'mcp-probe.json'),
+  'utf8',
+)
+  .then((text) => {
+    const r = JSON.parse(text);
+    return r.date === new Date().toISOString().slice(0, 10) ? r : null;
+  })
+  .catch(() => null);
+const mcpProbeNote = probeResult ? probeNote(probeResult) : 'mcp probe: n/a (no probe result)';
+const mcpProbeError = probeResult ? probeError(probeResult) : null;
+if (mcpProbeError) {
+  errors.push({ source_slug: mcpProbeError.slug, message: mcpProbeError.message });
+  errors.sort((a, b) => a.source_slug.localeCompare(b.source_slug));
+}
+
 // STRATEGY §4 target "Apify paid runs / month: 100" was unmeasured — review 2026-W39 §4 had to
 // write "no run count reaches the repo" — yet all 17 actors are public since 2026-09-28, so the
 // shelf either produces runs or it does not. Field names confirmed against a live
@@ -514,6 +538,7 @@ const notes = [
   `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${kinds.mcp_preview ?? 0} preview, ${paywall} paywall hits${wantedNote}`,
   `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
   indexnowNote,
+  mcpProbeNote,
   feedsNote,
   apify
     ? `apify: ${apify.runs} runs (${prevRuns === null ? 'baseline' : `+${apify.runs - prevRuns}/24h`}), 30d: ${apify.runs30} runs (${apify.ours30 === null ? 'ours n/a' : `${apify.ours30} ours, ${apify.runs30 - apify.ours30} others`}), ${apify.users} users/30d, ${apify.publicCount} public`

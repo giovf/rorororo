@@ -910,3 +910,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   24-line date-only diff rode every routine commit (f8d9577 tonight). Proof: OPEN.md untouched by the gate on a quiet day.
 - 2026-10-08 burn-down: foundry `npmrc-update-notifier-off` (2) built — `.npmrc` `update-notifier=false` removes the five-line
   npm version banner every routine filtered out of every command's output.
+- 2026-10-08 build: 09:00 slot — nothing buildable (every queue cooling, next dated item gankdat oauth-connect-funnel-check
+  2026-10-09); no research run, per the cooling rule. Read the Glama "HTTP 500" handoff: the 10-07 deploys are
+  green and nothing in the sandbox can reach /mcp, so queued gankdat `mcp-live-probe` (6) and, it being the top
+  score, built it: `scripts/mcp-probe.ts` runs in the metrics job and the Daily numbers row carries
+  `mcp probe: …`; a failed step lists `mcp-probe` under refresh errors so the repeat rule queues the fix. Why:
+  two incidents (09-19 Bot Fight Mode, 10-08 Glama 500) were found by directories, not by us.

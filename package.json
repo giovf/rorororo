@@ -34,6 +34,7 @@
     "task": "node --disable-warning=ExperimentalWarning scripts/taskmaster-add.ts",
     "runner-refresh": "npm run runner-refresh -w @foundry/gankdat",
     "refresh-errors": "node --disable-warning=ExperimentalWarning scripts/refresh-errors-to-queue.ts",
+    "mcp-probe": "node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts",
     "handoffs": "node --disable-warning=ExperimentalWarning scripts/handoffs.ts",
     "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts",
     "prepare": "git config core.hooksPath .githooks"

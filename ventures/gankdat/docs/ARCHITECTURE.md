@@ -291,6 +291,16 @@ runs `check:root`.
   that needs no account while the Search Console reading is owner-blocked. The runner leaves
   `dist/indexnow.json`; `metrics.mjs` reads it → `indexnow: N urls S` in the Daily numbers row
   (`n/a (<reason>)` on a push run).
+- **Live MCP probe** (`scripts/mcp-probe.ts`, 2026-10-08, queue `mcp-live-probe`): the metrics job's
+  runner does what an agent directory's health checker does — `initialize`, `tools/list`, one keyless
+  preview `tools/call` on the first listing data tool — against the live `/mcp` and, with the optional
+  `GANKDAT_PROBE_KEY` secret, the same with a bearer key; `metrics.mjs` renders `mcp probe: …` in the
+  Daily numbers row and lists a failed step under `refresh errors` as `mcp-probe`, so the repeat rule
+  files a fix item. Why: Glama's hourly check mailed "HTTP 500 – Error connecting to MCP" on
+  2026-10-08 (and found the 2026-09-19 Bot Fight Mode challenges) while no sandbox can reach
+  gankdat.com and Worker logs are read nowhere — the probe is the only reading of the edge as
+  directories see it. Push runs probe too (node builtins only); a dead probe is a reading, never a
+  failed job.
 - **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
   params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
   date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value
