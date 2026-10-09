@@ -792,3 +792,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 01:40 | burn-down | metrics.mjs skips the probe's user agent in MCP 24h, change-feed and datasets-30d counts
 - 2026-10-09 01:40 | burn-down | docs/ci/gankdat-metrics.yml: probe step gets CLOUDFLARE_API_TOKEN; ARCHITECTURE, SCHEDULERS
 - 2026-10-09 01:40 | burn-down | Queue: gankdat probe-key-from-runner done; proof is an authed probe reading on every row
+- 2026-10-09 01:45 | burn-down | Metrics crons moved off the half-hour: gankdat metrics 37 6, store metrics 52 6 (docs/ci, installer moves)
+- 2026-10-09 01:45 | burn-down | SCHEDULERS rows and pipeline README updated; queued foundry metrics-crons-day-7-read (not before 10-17)
+- 2026-10-09 01:45 | burn-down | Queue: foundry metrics-crons-off-the-half-hour done; proof is five of seven scheduled starts before 08:00

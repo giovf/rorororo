@@ -935,3 +935,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   internal probe account through the D1 REST API, runs the authed MCP probe with it and deletes it, so the keyed path
   (every paying client's) is read daily with no repository secret; why: the 10-08 row read `authed: n/a` and the
   secret was an owner action. Proof: an authed probe reading on every Daily numbers row.
+- 2026-10-09 burn-down: foundry `metrics-crons-off-the-half-hour` (3) built — both daily metrics crons moved to `37 6`
+  and `52 6` because GitHub fired the half-hour slots 5–8 h late every day 10-03..10-08, so the runner-only steps
+  (uk-insolvency refresh, IndexNow, the MCP probe, the error filer) landed after the 07:00 routines had read the row;
+  a day-7 read (10-17) decides whether the push run must take over those steps.

@@ -595,9 +595,22 @@
       "effort_days": 0.05,
       "proof": "the scheduled gankdat metrics run starts before 08:00 UTC on five of seven days",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-09",
-      "doing_since": "2026-10-09"
+      "doing_since": "2026-10-09",
+      "done_at": "2026-10-09",
+      "done_note": "2026-10-09 burn-down: `37 6` and `52 6` written to docs/ci/gankdat-metrics.yml and docs/ci/store-metrics.yml (installer moves them), SCHEDULERS rows updated; the seven-day reading is metrics-crons-day-7-read."
+    },
+    {
+      "id": "metrics-crons-day-7-read",
+      "title": "Day-7 read of the odd-minute metrics crons: do `gankdat metrics` (37 6) and `store metrics` (52 6) now start before 08:00 UTC?",
+      "why": "Proof of metrics-crons-off-the-half-hour (built 2026-10-09): on `30 6` / `45 6` both scheduled runs started 11:51–15:17 UTC every day 10-03..10-08. Do: list the scheduled runs of both workflows since 10-10 (GitHub MCP actions_list, event schedule) and record the start times here and in SCHEDULERS.md. Five of seven before 08:00 → done. Still hours late → build the fallback named in the parent item: the push run (any push after 08:00 UTC) performs the runner-only steps — runner-refresh, wave logs, IndexNow, the MCP probe, the error filer — when the day's scheduled run has not happened, so the 07:00 routines and the Daily numbers row never wait seven hours.",
+      "effort_days": 0.05,
+      "proof": "start times recorded; either five of seven days before 08:00 UTC or the push-run fallback queued",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-09",
+      "not_before": "2026-10-17"
     }
   ]
 }

@@ -1,0 +1,69 @@
+name: store metrics
+
+# Store listing numbers for every venture with a STORE.md (Chrome Web Store, Firefox Add-ons,
+# Figma Community), written from a runner because the 07:00 metrics routine's sandbox cannot
+# reach the stores and wrote `not live yet` for ten days of live listings (foundry item
+# store-metrics-in-ci, 2026-09-30). Runs before that routine, which then only reads the row.
+# GitHub's cron is best-effort, so the job also runs on pushes to main, where it only writes a
+# row if today's is missing (STORE_METRICS_IF_MISSING). Since 2026-10-07 a second step adds the Search
+# Console reading (`search: …`) to the same rows and to gankdat's Daily numbers row.
+# Odd minute (foundry metrics-crons-off-the-half-hour, 2026-10-09): on `45 6` the scheduled run
+# started 12:52–15:17 UTC every day 10-04..10-08; GitHub delays crons on busy minutes most.
+on:
+  schedule:
+    - cron: '52 6 * * *' # daily, after gankdat metrics (06:37), before the 07:00 metrics routine
+  push:
+    branches: [main]
+    paths-ignore: ['ventures/*/RESEARCH.md', 'ventures/*/STORE.md', 'docs/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Concurrency (2026-10-05, foundry ci-runs-never-acquired): a newer commit cancels this workflow's queued or
+# running run for the same event and ref. On 2026-10-05 one push run in three was cancelled by GitHub 15 min
+# after start with no steps (never acquired by a runner) while each burn-down push queued six more runs behind
+# the dead ones. Scheduled and manual runs keep their own group, so a push never cancels the cron run.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - name: Append today's Daily check row to each venture's RESEARCH.md
+        run: node --disable-warning=ExperimentalWarning scripts/store-metrics.ts
+        env:
+          STORE_METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
+      - name: Search Console reading on today's rows (impressions, clicks, indexing verdicts)
+        # scripts/search-console.ts (foundry search-console-api-reading, 2026-10-07): a read-only
+        # service account (scope webmasters.readonly; owner action 020 adds it as a Restricted user on
+        # the gankdat.com and apps.gankdat.com properties and pastes its JSON key as the secret) reads
+        # 7-day impressions/clicks per page and URL-inspects the /stats and comparison pages, then adds
+        # `search: …` to each venture's Daily check row written above and to gankdat's Daily numbers
+        # row (06:30 job). Without the secret the rows read `search: n/a (<reason>)` — never a gap.
+        # Only node builtins; a failure must not lose the store rows, hence continue-on-error.
+        run: node --disable-warning=ExperimentalWarning scripts/search-console.ts
+        continue-on-error: true
+        env:
+          SEARCH_CONSOLE_KEY: ${{ secrets.SEARCH_CONSOLE_KEY }}
+          STORE_METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
+      - name: Commit
+        run: |
+          git config user.name "foundry-metrics[bot]"
+          git config user.email "info@gankdat.com"
+          git add ventures/*/RESEARCH.md ventures/*/STORE.md
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "store-metrics: $(date -u +%F) daily check"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

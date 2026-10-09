@@ -24,7 +24,7 @@ ties; `proof` is the number that would show it worked; `blocked` items name what
 and do not count as "empty". An item that only needs elapsed time rather than a blocker — a
 day-7 or day-30 review — stays `todo` and carries `not_before: YYYY-MM-DD`: `npm run pipeline
 next` skips it until that date (listing it on a `scheduled:` line instead) and offers it from
-07:00 UTC on that day — after the 06:30/06:45 metrics jobs have written the Daily numbers row a
+07:00 UTC on that day — after the 06:37/06:52 metrics jobs have written the Daily numbers row a
 dated reading is usually dated for (2026-10-08: the midnight burn-down read a "10-08 row" item
 against the 10-07 rows); `cold` and `claim` apply the same hour. Like a blocked item it still counts as work, so it does not put the queue into
 `needs_research`. **Starvation** (2026-10-01): when no queue is flagged but `next` finds nothing
