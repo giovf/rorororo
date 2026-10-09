@@ -1,0 +1,5 @@
+GET https://www.tax.service.gov.uk/view-my-valuation/terms-and-conditions
+GET https://www.tax.service.gov.uk/business-rates-find/ordnance-terms-and-conditions
+GET https://voaratinglists.blob.core.windows.net/html/rlidata.htm
+GET https://apify.com/spookyweb/uk-business-rates.md
+GET https://assets.publishing.service.gov.uk/media/5a82c71ae5274a2e8ab594ce/Data_Information.pdf
