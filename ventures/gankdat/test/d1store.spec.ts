@@ -3,6 +3,8 @@ import { describe, expect, it } from 'vitest';
 import { z } from 'zod';
 import {
   BACKFILL_BUDGET_MS,
+  BACKFILL_HANDOVER_MS,
+  BACKFILL_UPDATE_SQL,
   backfillClock,
   hash53,
   queryD1Source,
@@ -361,6 +363,84 @@ describe('d1store delta refresh', () => {
     expect(ok).toEqual({ status: 'ok', message: 'delta +0 ~0 -0' });
     expect((await metaOf('d1-backfill-budget'))?.generation).toBe(1);
     expect(await countRows('d1-backfill-budget')).toBe(2_100);
+  });
+
+  it('probes each backfill page by primary key — the plan the 15-minute wave depends on', async () => {
+    // 2026-10-09: written as UPDATE … FROM a json_each subquery, SQLite walked the whole
+    // generation and scanned the 2,000 entries per row (200 s a page at 162k rows), so wave 7
+    // died before the budget check. The entries must be the outer loop, the rows PK lookups.
+    const plan = await env.DB.prepare(`EXPLAIN QUERY PLAN ${BACKFILL_UPDATE_SQL}`)
+      .bind('d1-plan', 1, JSON.stringify([{ q: 0, i: 'a', h: 1 }]))
+      .all<{ detail: string }>();
+    const details = plan.results.map((r) => r.detail);
+    const scanEntries = details.findIndex((d) => /^SCAN j\b/.test(d));
+    const probeRows = details.findIndex((d) => /^SEARCH r USING .*seq=\?/.test(d));
+    expect(scanEntries, details.join(' | ')).toBeGreaterThanOrEqual(0);
+    expect(probeRows, details.join(' | ')).toBeGreaterThan(scanEntries);
+    expect(
+      details.some((d) => /^SCAN r\b/.test(d)),
+      details.join(' | '),
+    ).toBe(false);
+  });
+
+  it('leaves the delta to the next night when the backfill used minutes of the wave', async () => {
+    const source = makeIdSource('d1-backfill-handover', RECORDS);
+    await refreshD1Source(env, source);
+    await env.DB.prepare(
+      "UPDATE source_records SET record_hash = NULL WHERE source_slug = 'd1-backfill-handover'",
+    ).run();
+    const realNow = backfillClock.now;
+    try {
+      backfillClock.now = (): number => Date.now() + BACKFILL_HANDOVER_MS; // 3 min gone
+      await refreshD1Source(env, {
+        ...source,
+        fetchFresh: () => Promise.resolve(RECORDS.slice(1)),
+      });
+    } finally {
+      backfillClock.now = realNow;
+    }
+    const skipped = await env.DB.prepare(
+      "SELECT status, records, message FROM refresh_log WHERE source_slug = 'd1-backfill-handover' ORDER BY id DESC LIMIT 1",
+    ).first<{ status: string; records: number; message: string }>();
+    expect(skipped).toEqual({
+      status: 'skipped',
+      records: RECORDS.length,
+      message: `hash backfill: ${RECORDS.length} rows hashed, 0 left in 180 s; delta refresh runs next night`,
+    });
+    // Every hash written, nothing else touched: the delta waits for a wave of its own.
+    const left = await env.DB.prepare(
+      "SELECT COUNT(*) AS n FROM source_records WHERE source_slug = 'd1-backfill-handover' AND record_hash IS NULL",
+    ).first<{ n: number }>();
+    expect(left?.n).toBe(0);
+    expect(await metaOf('d1-backfill-handover')).toEqual({ generation: 1, total: RECORDS.length });
+    await refreshD1Source(env, { ...source, fetchFresh: () => Promise.resolve(RECORDS.slice(1)) });
+    const ok = await env.DB.prepare(
+      "SELECT status, message FROM refresh_log WHERE source_slug = 'd1-backfill-handover' ORDER BY id DESC LIMIT 1",
+    ).first<{ status: string; message: string }>();
+    expect(ok).toEqual({ status: 'ok', message: 'delta +0 ~0 -1' });
+  });
+
+  it('writes an error row when the backfill itself throws, so the night is never silent', async () => {
+    const source = makeIdSource('d1-backfill-throws', RECORDS);
+    await refreshD1Source(env, source);
+    await env.DB.prepare(
+      "UPDATE source_records SET record_id = NULL WHERE source_slug = 'd1-backfill-throws' AND seq = 2",
+    ).run();
+    const broken: DataSource = {
+      ...source,
+      idOf: (r: unknown) => {
+        if ((r as Rec).name === RECORDS[2]?.name) throw new Error('id of a stored row blew up');
+        return (r as Rec).name;
+      },
+    };
+    await expect(refreshD1Source(env, broken)).rejects.toThrow('id of a stored row blew up');
+    const log = await env.DB.prepare(
+      "SELECT status, message FROM refresh_log WHERE source_slug = 'd1-backfill-throws' ORDER BY id DESC LIMIT 1",
+    ).first<{ status: string; message: string }>();
+    expect(log).toEqual({
+      status: 'error',
+      message: 'hash backfill failed: id of a stored row blew up',
+    });
   });
 
   it('changes nothing when the stream yields 0 records', async () => {

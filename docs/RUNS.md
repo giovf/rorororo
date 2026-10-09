@@ -803,3 +803,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 09:30 | build | RESEARCH walk table: which legs a sandbox can drive, how to read the 10-10 row; ARCHITECTURE note
 - 2026-10-09 09:30 | build | Relay allowlist gains claude.ai (public client documents); Taskmaster 31
 - 2026-10-09 09:30 | build | Queue: gankdat oauth-connect-funnel-check done; proof read from the Daily numbers row from 10-10
+- 2026-10-09 17:45 | build | Wave log read: 8 journal lines in 24 h, all requests, none from the 06:05 wave — died before any row
+- 2026-10-09 17:45 | build | Reproduced offline: backfill page UPDATE scanned 162k rows × 2,000 entries, 200 s a page in SQLite
+- 2026-10-09 17:45 | build | d1store: backfill entries as a MATERIALIZED CTE — rows probed by primary key, 0.03 s a page; plan test
+- 2026-10-09 17:45 | build | d1store: a backfill that throws writes an error row; over 3 min it hands the delta to the next night
+- 2026-10-09 17:45 | build | 3 tests in d1store.spec (plan, hand-over, error row); ARCHITECTURE, RESEARCH table of four plans
+- 2026-10-09 17:45 | build | Queue: gankdat refresh-uk-trademark-journal-2026-10-09 done; proof is the 10-10/10-11 Daily numbers rows

@@ -337,3 +337,44 @@ nobody clicks (the card copy / tool description is the lever); authorize > 0 wit
 the page and do not type an email (the page is the lever); email > 0 and consent 0 = the mail hop loses them (deliverability
 or the other-tab finish); approved > 0 and token 0 = Claude's callback leg. The item's proof (≥ 1 connect by 10-18, or
 the row names the stopping step) is now readable from the row alone; the day-30 directory read (10-30) carries it.
+
+## Build 2026-10-09 — `refresh-uk-trademark-journal-2026-10-09` (build, 17:00)
+
+**Reading.** The 10-09 Daily numbers row still says `uk-trademark-journal (no successful refresh since
+2026-10-04)` with neither an error nor a `skipped` row, two nights after the 10-07 backfill fix deployed
+(gankdat run 105, green, migration 0015 applied). The first wave-log reading (metrics run 37938660892, 13:43 UTC)
+returned 8 lines in 24 h for the slug — every one a `GET /v1/data/…` or `/stats/…/class/NN` request line, none
+from the 06:05 wave (`refresh_wave`, `hash_backfill`, `tmj_window`, `refresh_failed` all absent). So the wave
+wrote nothing a slug search could find and died before any row; the IPO origin was not even reached.
+
+**Cause (reproduced offline).** `BACKFILL_UPDATE_SQL` was `UPDATE source_records AS r … FROM (SELECT … FROM
+json_each(?3)) AS j WHERE r.source_slug = ?1 AND r.generation = ?2 AND r.seq = j.q`. SQLite's plan:
+`SEARCH r USING COVERING INDEX (source_slug=? AND generation=?)` as the outer loop, `SCAN j` as the inner — every
+one of the generation's 162k rows scans the 2,000-entry JSON array, 324M `json_extract` evaluations a page. On a
+162k-row table of 1.5 KB records in this sandbox's SQLite one page took **198–203 s**; D1 is slower, so the
+first page or two ate the 15-minute wave and the budget check *between* pages never ran — no `skipped` row, no
+`hash_backfill` line, nothing. The 10-07 test (2,100 rows, one page) could not see it: the cost is rows × entries.
+
+| Form of the page update | Plan | One 2,000-row page at 162k rows |
+| --- | --- | --- |
+| `UPDATE … FROM (json_each subquery) AS j` (10-07) | SEARCH r (slug, gen) → SCAN j | 203 s |
+| `seq IN (json_each)` + correlated subqueries | SEARCH r by PK → 2 × SCAN json_each per row | 3.1 s |
+| `WITH j AS MATERIALIZED (…) UPDATE … FROM j` (shipped) | MATERIALIZE j → SCAN j → SEARCH r by PK | **0.03 s** |
+| CTE + `seq IN` + correlated subqueries | SEARCH r by PK → SCAN j per row | 0.17 s |
+
+**Built.** (1) The materialized-CTE form, with the plan asserted on D1 in `d1store.spec` (`SCAN j` before
+`SEARCH r … seq=?`, never `SCAN r`). (2) A backfill that throws now writes an `error` row (`hash backfill
+failed: …`) — it sat outside the two paths that write rows, so a throw also left a silent night. (3)
+`BACKFILL_HANDOVER_MS` (3 min): a backfill that used that much of the wave hands the delta to the next night
+even when it finished, so the journal's first good night is a `skipped` row (`… 0 left in N s; delta refresh
+runs next night`) and the delta gets a wave of its own — the 10-04 full reload took 13 min 42 s, and a
+backfill plus a delta must never share one 15-minute wave. The other delta statements (`UPSERT_SQL`,
+`CHANGES_FROM_ROWS_SQL`, `DELETE_ROWS_SQL`) use `seq IN (SELECT value FROM json_each(…))`, which probes the
+primary key — checked, left alone.
+
+**What tomorrow's row should say.** 10-10: `last run skipped: hash backfill: 162370 rows hashed, 0 left in N s`
+(81 pages; expected N ≪ 180 on D1, in which case the delta runs the same night and the row is `ok` with
+`delta +a ~c -r`). 10-11 at the latest: `ok`. If the row is still silent on 10-10 the wave never reached the
+backfill at all — then read the cron invocation itself (`$workers.outcome`, `$workers.event.cron`) rather than
+the slug: the needle reading only proves request lines are searchable, not that a structured
+`console.log(JSON.stringify({…}))` line without a `message` key is.

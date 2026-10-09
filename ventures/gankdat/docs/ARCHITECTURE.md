@@ -178,7 +178,13 @@ runs `check:root`.
   text, hands the rest to the next night with a `skipped` refresh_log row when its 8-minute budget
   runs out, and lets the delta pass follow once complete (uk-trademark-journal's 162k-row "one last
   full reload" never finished: wave 7 was killed at the Cron Trigger limit three nights running,
-  writing no row). The generation swap is what the 2026-10-01
+  writing no row). The page update MATERIALIZES its 2,000 (seq, id, hash) entries so SQLite loops
+  over them and probes each row by primary key: written as `UPDATE … FROM` a `json_each` subquery
+  (10-07) the planner walked the whole generation and scanned the entries per row — 200 s a page
+  at 162k rows, so the budget check between pages never ran and 10-08/10-09 died silent too
+  (2026-10-09; plan asserted in `d1store.spec`). A backfill that took over three minutes
+  (`BACKFILL_HANDOVER_MS`) hands the delta to the next night even when complete, and a backfill
+  that throws writes an `error` row — a night is never silent again. The generation swap is what the 2026-10-01
   Cloudflare budget alert (US$15 metered vs the US$5 plan) was traced to — D1 bills rows
   written (measured 2026-10-08: ~6M writes a day before the delta refresh, 0.0–0.2M a day after). The trade: during a delta refresh a request sees today's version of some rows and
   yesterday's of the rest (every row present, nothing partially loaded; `last_refreshed_at`

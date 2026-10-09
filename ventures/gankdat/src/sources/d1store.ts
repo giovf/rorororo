@@ -269,9 +269,23 @@ export async function refreshD1Source(
   const start = Date.now();
   const previous = await readMeta(env, source.slug);
   if (previous && source.idOf) {
-    const backfill = await backfillHashes(env, source, previous, start);
-    if (backfill.left > 0 || backfillClock.now() - start >= BACKFILL_BUDGET_MS) {
-      const message = `hash backfill: ${backfill.done} rows hashed, ${backfill.left} left; delta refresh resumes once complete`;
+    let backfill: { done: number; left: number };
+    try {
+      backfill = await backfillHashes(env, source, previous, start);
+    } catch (err) {
+      // Outside refreshD1Delta/Full, which write their own rows: without this the night leaves
+      // no refresh_log row at all and refreshOne's "already recorded" assumption is wrong.
+      const message = `hash backfill failed: ${err instanceof Error ? err.message : String(err)}`;
+      await writeRefreshLog(env, source.slug, 'error', 0, Date.now() - start, message);
+      throw err;
+    }
+    const elapsed = backfillClock.now() - start;
+    const handOver = elapsed >= BACKFILL_HANDOVER_MS;
+    if (backfill.left > 0 || elapsed >= BACKFILL_BUDGET_MS || handOver) {
+      const message =
+        backfill.left > 0
+          ? `hash backfill: ${backfill.done} rows hashed, ${backfill.left} left; delta refresh resumes once complete`
+          : `hash backfill: ${backfill.done} rows hashed, 0 left in ${Math.round(elapsed / 1000)} s; delta refresh runs next night`;
       console.log(
         JSON.stringify({ level: 'info', event: 'hash_backfill', source: source.slug, ...backfill }),
       );
@@ -313,16 +327,31 @@ const BACKFILL_PAGE = 2_000;
  * remains of the 15-minute Cron Trigger budget is for the delta pass that follows.
  */
 export const BACKFILL_BUDGET_MS = 8 * 60_000;
+/**
+ * A backfill that took this long leaves the delta pass to the next night even when it finished:
+ * the journal's full reload took 13 min 42 s of the 15-minute wave on 2026-10-04, so a backfill
+ * of some minutes and a delta of some more must never share one wave (2026-10-09).
+ */
+export const BACKFILL_HANDOVER_MS = 3 * 60_000;
 /** Injectable clock for the backfill budget (tests drive it; production is Date.now). */
 export const backfillClock = { now: (): number => Date.now() };
 
 const BACKFILL_SELECT_SQL = `SELECT seq, record FROM source_records
    WHERE source_slug = ?1 AND generation = ?2 AND seq > ?3 AND (record_id IS NULL OR record_hash IS NULL)
    ORDER BY seq LIMIT ${BACKFILL_PAGE}`;
-const BACKFILL_UPDATE_SQL = `UPDATE source_records AS r SET record_id = j.i, record_hash = j.h
-   FROM (SELECT json_extract(value, '$.q') AS q, json_extract(value, '$.i') AS i, json_extract(value, '$.h') AS h
-         FROM json_each(?3)) AS j
-   WHERE r.source_slug = ?1 AND r.generation = ?2 AND r.seq = j.q`;
+/**
+ * The page's ids and hashes written by seq. The 2,000 entries are MATERIALIZED first so SQLite
+ * loops over them and probes each row through the primary key (`SCAN j` then `SEARCH r … seq=?`).
+ * Written as an UPDATE … FROM a json_each subquery (2026-10-07) the planner did the reverse —
+ * walked every row of the generation and scanned the 2,000 entries for each one, 324M evaluations
+ * a page for uk-trademark-journal's 162k rows: 200 s a page measured in SQLite, longer on D1, so
+ * the budget check between pages never ran before the 15-minute Cron Trigger limit killed the
+ * wave with no refresh_log row (10-08, 10-09). The plan is asserted in d1store.spec.
+ */
+export const BACKFILL_UPDATE_SQL = `WITH j(q, i, h) AS MATERIALIZED (
+     SELECT json_extract(value, '$.q'), json_extract(value, '$.i'), json_extract(value, '$.h') FROM json_each(?3))
+   UPDATE source_records AS r SET record_id = j.i, record_hash = j.h
+   FROM j WHERE r.source_slug = ?1 AND r.generation = ?2 AND r.seq = j.q`;
 const BACKFILL_LEFT_SQL = `SELECT COUNT(*) AS n FROM source_records
    WHERE source_slug = ?1 AND generation = ?2 AND (record_id IS NULL OR record_hash IS NULL)`;
 
