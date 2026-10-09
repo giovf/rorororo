@@ -265,9 +265,10 @@
       "effort_days": 0.25,
       "proof": ">= 1 `oauth connect` in the Daily numbers row by 2026-10-18, or the row names the step where every attempt stops",
       "score": 5,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-10-09",
-      "added": "2026-10-04"
+      "added": "2026-10-04",
+      "doing_since": "2026-10-09"
     },
     {
       "id": "apify-change-feed-mode",
