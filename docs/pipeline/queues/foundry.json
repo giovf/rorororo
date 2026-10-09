@@ -595,8 +595,9 @@
       "effort_days": 0.05,
       "proof": "the scheduled gankdat metrics run starts before 08:00 UTC on five of seven days",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-09"
+      "status": "doing",
+      "added": "2026-10-09",
+      "doing_since": "2026-10-09"
     }
   ]
 }
