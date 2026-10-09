@@ -32,6 +32,7 @@ const ALLOWED = [
   '.apify.com',
   '.ico.org.uk',
   'registry.modelcontextprotocol.io',
+  'claude.ai', // Claude's public OAuth client metadata document (CIMD), read by the OAuth funnel walk
   '.glama.ai',
   '.mcpservers.org',
   '.gankdat.com',
