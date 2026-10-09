@@ -38,6 +38,12 @@ import type { AppEnv } from '../types';
 // Claude — happen in THAT tab, and the popup just says so. Deterministic and
 // script-free; if the daily numbers show the hop losing people, a poller in the
 // popup is the next step.
+//
+// Every leg writes one `oauth_funnel` analytics point (gankdat
+// oauth-connect-funnel-check, 2026-10-09): `connect_account` was the most-wanted
+// tool for a week with `oauth: 0 connects`, and nothing between the 401 and the
+// code row said where the person stopped. The Daily numbers row reads the steps
+// side by side (metrics.mjs), so the funnel is visible without anyone walking it.
 
 interface SignedIn {
   accountId: string;
@@ -53,6 +59,37 @@ async function currentAccount(c: Context<AppEnv>): Promise<SignedIn | null> {
     .bind(rec.accountId)
     .first<{ plan: string }>();
   return { accountId: rec.accountId, email: rec.email, plan: acct?.plan ?? 'free' };
+}
+
+/** One leg of the connect funnel, in the order a person walks them. */
+type FunnelStep =
+  | 'authorize' // a valid request was created (client document and redirect_uri verified)
+  | 'authorize_rejected' // detail: bad_query | unknown_client | redirect_not_allowed | <protocol error>
+  | 'signin_shown' // no session: the magic-link form (detail: new | continue | decision)
+  | 'consent_shown' // signed in: the approve/cancel form (detail: new | continue)
+  | 'email_sent' // detail: the magic-link outcome (sent | capped | disabled | send_failed)
+  | 'approved' // detail: '' | repeat (a double-submitted form answered again)
+  | 'denied'
+  | 'expired' // a 410 page; detail: which leg found the request gone
+  | 'token' // detail: grant_type
+  | 'token_rejected'; // detail: <error>: <description>
+
+/**
+ * blob1 'oauth_funnel', blob2 user agent, blob3 step, blob4 the client host (what the
+ * consent page names), blob5 detail. UA only, never an IP or an email.
+ */
+function funnel(c: Context<AppEnv>, step: FunnelStep, clientId: string | null, detail = ''): void {
+  c.env.TRAFFIC.writeDataPoint({
+    blobs: [
+      'oauth_funnel',
+      c.req.header('User-Agent') ?? '',
+      step,
+      clientId ? clientHost(clientId) : '',
+      detail.slice(0, 160),
+    ],
+    doubles: [1],
+    indexes: ['oauth_funnel'],
+  });
 }
 
 // ── Pages ────────────────────────────────────────────────────────────────
@@ -155,8 +192,10 @@ async function renderAuthorize(
   c: Context<AppEnv>,
   req: AuthRequest,
   status: 200 | 401 = 200,
+  how: 'new' | 'continue' | 'decision' = 'new',
 ): Promise<Response> {
   const account = await currentAccount(c);
+  funnel(c, account ? 'consent_shown' : 'signin_shown', req.clientId, how);
   return c.html(account ? consentPage(req, account) : signInPage(req, null), status);
 }
 
@@ -193,12 +232,16 @@ export const oauthRoutes = new Hono<AppEnv>()
     const requestId = c.req.query('request');
     if (requestId !== undefined) {
       const req = REQUEST_ID_RE.test(requestId) ? await readAuthRequest(c.env, requestId) : null;
-      if (!req) return c.html(expiredPage(), 410);
-      return renderAuthorize(c, req);
+      if (!req) {
+        funnel(c, 'expired', null, 'authorize');
+        return c.html(expiredPage(), 410);
+      }
+      return renderAuthorize(c, req, 200, 'continue');
     }
 
     const parsed = authorizeQuerySchema.safeParse(c.req.query());
     if (!parsed.success) {
+      funnel(c, 'authorize_rejected', c.req.query('client_id') ?? null, 'bad_query');
       return c.html(errorPage('Invalid request', 'client_id and redirect_uri are required.'), 400);
     }
     const q = parsed.data;
@@ -206,6 +249,7 @@ export const oauthRoutes = new Hono<AppEnv>()
     // that URI: an unverified redirect target never receives an error either.
     const client = await fetchClientMetadata(c.env, q.client_id);
     if (!client) {
+      funnel(c, 'authorize_rejected', q.client_id, 'unknown_client');
       return c.html(
         errorPage(
           'Unknown client',
@@ -215,6 +259,7 @@ export const oauthRoutes = new Hono<AppEnv>()
       );
     }
     if (!redirectUriAllowed(q.redirect_uri, client.redirectUris)) {
+      funnel(c, 'authorize_rejected', q.client_id, 'redirect_not_allowed');
       return c.html(
         errorPage(
           'Redirect not allowed',
@@ -225,6 +270,12 @@ export const oauthRoutes = new Hono<AppEnv>()
     }
     const paramError = validateAuthorizeParams(c.env, q);
     if (paramError) {
+      funnel(
+        c,
+        'authorize_rejected',
+        q.client_id,
+        `${paramError.error}: ${paramError.description}`,
+      );
       return c.redirect(
         redirectWith(q.redirect_uri, {
           error: paramError.error,
@@ -242,6 +293,7 @@ export const oauthRoutes = new Hono<AppEnv>()
       scope: OAUTH_SCOPE,
       resource: q.resource ?? null,
     });
+    funnel(c, 'authorize', q.client_id);
     return renderAuthorize(c, req);
   })
   // Email the magic link with `next` pointing back at this request.
@@ -252,11 +304,15 @@ export const oauthRoutes = new Hono<AppEnv>()
     const body = await c.req.parseBody().catch(() => ({}) as Record<string, unknown>);
     const requestId = typeof body.request === 'string' ? body.request : '';
     const req = REQUEST_ID_RE.test(requestId) ? await readAuthRequest(c.env, requestId) : null;
-    if (!req) return c.html(expiredPage(), 410);
+    if (!req) {
+      funnel(c, 'expired', null, 'login');
+      return c.html(expiredPage(), 410);
+    }
     const email = z.email().safeParse(typeof body.email === 'string' ? body.email.trim() : '');
     if (!email.success) return c.html(signInPage(req, 'Enter a valid email address.'), 400);
     const next = safeNext(`/authorize?request=${req.id}`);
     const outcome = await startMagicLinkSignIn(c.env, email.data, next);
+    funnel(c, 'email_sent', req.clientId, outcome);
     switch (outcome) {
       case 'disabled':
         return c.html(signInPage(req, 'Email sign-in is not configured yet.'), 503);
@@ -279,7 +335,11 @@ export const oauthRoutes = new Hono<AppEnv>()
       // (double-submitted form) is answered again rather than stranded on "expired".
       const account = body.decision === 'approve' ? await currentAccount(c) : null;
       const again = account ? await approveAuthRequest(c.env, requestId, account) : null;
-      if (!again) return c.html(expiredPage(), 410);
+      if (!again) {
+        funnel(c, 'expired', null, 'decision');
+        return c.html(expiredPage(), 410);
+      }
+      funnel(c, 'approved', again.clientId, 'repeat');
       return c.redirect(
         redirectWith(again.redirectUri, { code: again.code, state: again.state }),
         302,
@@ -287,7 +347,11 @@ export const oauthRoutes = new Hono<AppEnv>()
     }
     if (body.decision === 'deny') {
       const denied = await denyAuthRequest(c.env, req.id);
-      if (!denied) return c.html(expiredPage(), 410);
+      if (!denied) {
+        funnel(c, 'expired', req.clientId, 'decision');
+        return c.html(expiredPage(), 410);
+      }
+      funnel(c, 'denied', req.clientId);
       return c.redirect(
         redirectWith(denied.redirectUri, {
           error: 'access_denied',
@@ -298,9 +362,13 @@ export const oauthRoutes = new Hono<AppEnv>()
       );
     }
     const account = await currentAccount(c);
-    if (!account) return renderAuthorize(c, req, 401);
+    if (!account) return renderAuthorize(c, req, 401, 'decision');
     const approved = await approveAuthRequest(c.env, req.id, account);
-    if (!approved) return c.html(expiredPage(), 410);
+    if (!approved) {
+      funnel(c, 'expired', req.clientId, 'decision');
+      return c.html(expiredPage(), 410);
+    }
+    funnel(c, 'approved', req.clientId);
     return c.redirect(
       redirectWith(approved.redirectUri, { code: approved.code, state: approved.state }),
       302,
@@ -361,8 +429,10 @@ export const oauthRoutes = new Hono<AppEnv>()
         };
     }
     if (!result.ok) {
+      funnel(c, 'token_rejected', str('client_id'), `${result.error}: ${result.description}`);
       return c.json({ error: result.error, error_description: result.description }, 400, noStore);
     }
+    funnel(c, 'token', result.clientId, str('grant_type') ?? '');
     // The proof number for this build: tokens issued per client (blob4 = the
     // client host — claude.ai, Claude Code's, Cursor's), grant type in blob3.
     c.env.TRAFFIC.writeDataPoint({

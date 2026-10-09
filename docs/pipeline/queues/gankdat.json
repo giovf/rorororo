@@ -261,14 +261,14 @@
     {
       "id": "oauth-connect-funnel-check",
       "title": "Walk the MCP OAuth sign-in hop end to end from a real Claude client and record where the daily connect_account calls drop",
-      "why": "Review 2026-W40: since lazy OAuth shipped (v0.21.0, 2026-09-30) `connect_account` is the most-wanted tool every day (6, 6, 4 calls on 10-01..03) and `oauth: 0 connects/24h, 0/30d` every day — agents start the sign-in, no human completes it. Either the callers are scanners (then the row should say so: client hosts are already printed) or the Connect card → /authorize → magic-link mail → consent → /token hop loses the person (another tab, mail delay, a consent page error). Do, from 2026-10-09 (so a week of rows exists): add gankdat as a custom connector in a Claude client (the interactive session or the relay's browser-shaped agent can drive the HTTP legs; the owner's click is only needed for the mail link), log each leg's status in RESEARCH.md, fix what breaks, and make the Daily numbers row count authorize starts, consent views and token issues separately so the funnel is visible without a probe.",
+      "why": "Review 2026-W40: since lazy OAuth shipped (v0.21.0, 2026-09-30) `connect_account` is the most-wanted tool every day (6, 6, 4 calls on 10-01..03) and `oauth: 0 connects/24h, 0/30d` every day — agents start the sign-in, no human completes it. Either the callers are scanners (then the row should say so: client hosts are already printed) or the Connect card → /authorize → magic-link mail → consent → /token hop loses the person (another tab, mail delay, a consent page error). Do, from 2026-10-09 (so a week of rows exists): add gankdat as a custom connector in a Claude client (the interactive session or the relay's browser-shaped agent can drive the HTTP legs; the owner's click is only needed for the mail link), log each leg's status in RESEARCH.md, fix what breaks, and make the Daily numbers row count authorize starts, consent views and token issues separately so the funnel is visible without a probe. Built 2026-10-09 (build): the relay walked the GET legs live — discovery documents 200, Claude's two real client documents (claude.ai/oauth/mcp-oauth-client-metadata, …/claude-code-client-metadata) fetched 200 and /authorize with each rendered the sign-in page; the POST legs (email, consent, /token) cannot be driven from a sandbox and the only human walk is the owner's 10-04 one (token issued, internal account). So every leg now writes an `oauth_funnel` analytics point and the Daily numbers row carries `oauth funnel 7d: …` plus `connect_account 7d by UA: …` (the user agents behind the 401s, readable from a week of existing points on the 10-10 row). Proof unchanged; a scanner UA on 10-10 closes the question, a human UA with 0 authorize means Claude never opens the popup for these calls.",
       "effort_days": 0.25,
       "proof": ">= 1 `oauth connect` in the Daily numbers row by 2026-10-18, or the row names the step where every attempt stops",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-10-09",
       "added": "2026-10-04",
-      "doing_since": "2026-10-09"
+      "done_at": "2026-10-09"
     },
     {
       "id": "apify-change-feed-mode",

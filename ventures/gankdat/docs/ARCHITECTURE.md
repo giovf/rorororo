@@ -226,6 +226,20 @@ runs `check:root`.
   `KeyContext` for both credentials. Only hashes are stored; the daily numbers carry
   `oauth: … connects` (D1 codes for real accounts) and the `oauth_token` analytics point per
   client host. `test/oauth.spec.ts`.
+  **Connect funnel** (2026-10-09, queue `oauth-connect-funnel-check`): `connect_account` was the
+  most-wanted tool for a week (4–6 keyless calls a day) with `oauth: 0 connects`, and nothing between
+  the 401 and the code row said where a person stopped — no sandbox can POST to the live hop, and
+  the only end-to-end walk was the owner's (10-04). So every leg of `routes/oauth.ts` writes an
+  `oauth_funnel` analytics point (blob3 step: `authorize`, `authorize_rejected`, `signin_shown`,
+  `consent_shown`, `email_sent`, `approved`, `denied`, `expired`, `token`, `token_rejected`; blob4
+  the client host; blob5 the detail — a rejection cause, the email outcome, the grant type, the
+  token error) and the Daily numbers row carries `oauth funnel 7d: N challenges (…), N authorize,
+  … N token errors` plus `connect_account 7d by UA: …` (the user agents behind the 401s, read from
+  the existing `mcp_denied` points — a scanner's UA ends the question; `src/lib/oauth-funnel.ts`).
+  Claude's real client documents are `https://claude.ai/oauth/mcp-oauth-client-metadata` (hosted
+  apps, redirect `https://claude.ai/api/mcp/auth_callback`) and
+  `https://claude.ai/oauth/claude-code-client-metadata` (Claude Code, port-less loopbacks), both
+  verified through the relay on 2026-10-09; `/authorize` with either rendered the sign-in page live.
   **Agent-side sign-up** (2026-09-25, `src/auth/signup.ts`): the paywall's audience is
   agents that cannot click a magic link, so the two keyless tools `request_api_key`
   (user's email → approval email with a short code, RFC 8628-style) and `claim_api_key`

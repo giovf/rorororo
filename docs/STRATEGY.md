@@ -939,3 +939,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   and `52 6` because GitHub fired the half-hour slots 5–8 h late every day 10-03..10-08, so the runner-only steps
   (uk-insolvency refresh, IndexNow, the MCP probe, the error filer) landed after the 07:00 routines had read the row;
   a day-7 read (10-17) decides whether the push run must take over those steps.
+- 2026-10-09 build: gankdat `oauth-connect-funnel-check` (5) built — the relay walked every GET leg of the MCP OAuth hop
+  live (discovery, Claude's two real client documents, `/authorize` rendering the sign-in page for the hosted apps and
+  Claude Code); the POST legs no sandbox can drive now each write an `oauth_funnel` point, and the Daily numbers row reads
+  the funnel and the user agents behind the `connect_account` 401s, so "scanner or lost human" is a number on 10-10.

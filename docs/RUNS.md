@@ -796,3 +796,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 01:45 | burn-down | SCHEDULERS rows and pipeline README updated; queued foundry metrics-crons-day-7-read (not before 10-17)
 - 2026-10-09 01:45 | burn-down | Queue: foundry metrics-crons-off-the-half-hour done; proof is five of seven scheduled starts before 08:00
 - 2026-10-09 01:50 | burn-down | Stopping: pipeline starved and cooled after two items; pre-research pass spent at 17:21
+- 2026-10-09 09:30 | build | Relay walked the OAuth hop live: discovery 200, Claude's 2 real client docs 200, /authorize 200 for both
+- 2026-10-09 09:30 | build | Test fixture used a 404 client_id (claude.ai/.well-known/oauth-client.json); now the real CIMD URL
+- 2026-10-09 09:30 | build | routes/oauth.ts: one oauth_funnel analytics point per leg (step, client host, detail); 2 tests
+- 2026-10-09 09:30 | build | metrics.mjs row gains `connect_account 7d by UA` and `oauth funnel 7d: …` (lib/oauth-funnel.ts, 4 tests)
+- 2026-10-09 09:30 | build | RESEARCH walk table: which legs a sandbox can drive, how to read the 10-10 row; ARCHITECTURE note
+- 2026-10-09 09:30 | build | Relay allowlist gains claude.ai (public client documents); Taskmaster 31
+- 2026-10-09 09:30 | build | Queue: gankdat oauth-connect-funnel-check done; proof read from the Daily numbers row from 10-10

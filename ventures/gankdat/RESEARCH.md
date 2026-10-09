@@ -294,3 +294,46 @@ Queued in `docs/pipeline/queues/gankdat.json`:
 
 Not queued: more datasets, a pricing change, listings (triggers unchanged since 10-05); the funnel's
 bottom is still zero and the next signal is today's `oauth-connect-funnel-check`.
+
+## Walk 2026-10-09 — `oauth-connect-funnel-check` (build)
+
+Question (review 2026-W40): `connect_account` is the most-wanted MCP tool every day (6, 6, 4, 3, 6, 5, 4, 5 keyless
+calls 10-01..10-08) and `oauth: 0 connects/24h, 0/30d` every day. Scanners, or a hop that loses the person?
+
+**What the relay could walk (GET legs, live, 09:15–09:25 UTC; `docs/relay/responses/oauth-funnel-2026-10-09*`):**
+
+| Leg | Request | Status | Reading |
+|---|---|---|---|
+| RFC 9728 | `/.well-known/oauth-protected-resource` and `…/mcp` | 200 JSON | resource `https://gankdat.com/mcp`, issuer gankdat.com, scope `data:read` |
+| RFC 8414 | `/.well-known/oauth-authorization-server` | 200 JSON | `token_endpoint_auth_methods_supported: ["none"]` + `client_id_metadata_document_supported: true` — both present, so Claude picks CIMD (its documented condition) |
+| Claude's client document (hosted apps) | `https://claude.ai/oauth/mcp-oauth-client-metadata` | 200 | `redirect_uris: ["https://claude.ai/api/mcp/auth_callback"]`, `token_endpoint_auth_method: none` |
+| Claude Code's client document | `https://claude.ai/oauth/claude-code-client-metadata` | 200 | `http://localhost/callback`, `http://127.0.0.1/callback` — port-less, matched port-agnostically by `redirectUriAllowed` |
+| `/authorize`, hosted-apps client_id + Claude callback | full PKCE query | **200** | "Connect gankdat to claude.ai" sign-in page, request id minted — the Worker fetched Claude's document and verified the redirect |
+| `/authorize`, Claude Code client_id + `http://localhost:3118/callback` | full PKCE query | **200** | same page, loopback on an ephemeral port accepted |
+| `/authorize` with the test suite's old guess `https://claude.ai/.well-known/oauth-client.json` | — | 400 "Unknown client" | that URL is a 404 on claude.ai; the fixture is now the real document (`test/oauth.spec.ts`) |
+| `/authorize?request=<unknown>` | — | 410 | "Request expired" page, as designed |
+| `/consent.js` | HEAD | 200 | the single-submit guard from the 10-04 double-submit fix is served |
+| `GET /mcp` | — | 404 JSON | POST-only route; a browser opening the URL gets a JSON not_found, not a page (directories POST) |
+
+**What no sandbox can walk:** `POST /authorize/login` (sends the magic-link mail), the emailed `/v1/auth/verify` hop,
+`POST /authorize/decision` and `POST /token`. The one full human walk is the owner's on 2026-10-04 (claude.ai): it found
+the double-submit bug, fixed the same day, and a token was issued (`7d by client: claude.ai 1` from the 10-05 row) on an
+internal account, so `connects` stayed 0 by definition. Claude's own reports of the same hop
+([anthropics/claude-ai-mcp#313](https://github.com/anthropics/claude-ai-mcp/issues/313): a 307 from the consent POST
+makes the browser POST the callback — ours is a 302; [#1110](https://github.com/anthropics/claude-ai-mcp/issues/1110):
+tokens issued, tools listed, connector still "Connect" in Settings — open, no cause) say the Claude side can also drop a
+finished hop silently.
+
+**What the server could not tell us, and now does:** nothing between the 401 and the code row was counted. From this
+deploy every leg of `routes/oauth.ts` writes an `oauth_funnel` analytics point (step, client host, detail) and the Daily
+numbers row reads, over 7 days: `connect_account 7d by UA: …` (the user agents behind the 401s — this one reads from a
+week of *existing* `mcp_denied` points, so the 10-10 row already answers "scanner or Claude"), then
+`oauth funnel 7d: N challenges (protected_tool …, preview_exhausted …), N authorize, N rejected (…), N sign-in, N email
+(…), N consent, N approved, N denied, N expired (…), N token (…), N token errors (…)`.
+
+**How to read the 10-10 row:** a `python-requests`/`Go-http-client`/directory UA with 0 authorize = scanners calling
+every listed tool (drop the worry, keep the gate); `Claude-User` with 0 authorize = Claude shows the Connect card and
+nobody clicks (the card copy / tool description is the lever); authorize > 0 with sign-in > 0 and email 0 = people reach
+the page and do not type an email (the page is the lever); email > 0 and consent 0 = the mail hop loses them (deliverability
+or the other-tab finish); approved > 0 and token 0 = Claude's callback leg. The item's proof (≥ 1 connect by 10-18, or
+the row names the stopping step) is now readable from the row alone; the day-30 directory read (10-30) carries it.

@@ -11,6 +11,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { connectCallersNote, oauthFunnelNote } from '../src/lib/oauth-funnel.ts';
 
 const ACCOUNT_ID = '37e56f3ce4dfe49919e85d4380467f44'; // not a secret
 const DATABASE_ID = 'ac051277-5f69-46ba-965b-50da2f1ec524'; // wrangler.jsonc
@@ -128,6 +129,23 @@ const oauthClients = await ae(
 const oauthNote = oauth
   ? `oauth: ${oauth.connects24h ?? 0} connects/24h, ${oauth.connects30d ?? 0}/30d${oauthClients.length ? ` (7d by client: ${oauthClients.map((r) => `${r.client} ${Math.round(Number(r.n))}`).join(', ')})` : ''}`
   : 'oauth: n/a';
+// The connect funnel (gankdat oauth-connect-funnel-check, 2026-10-09): connect_account was the
+// most-wanted tool for a week with 0 connects and nothing said where the person stopped. Three
+// readings over 7 days: who sends the 401s (user agents of the keyless connect_account calls —
+// a scanner's UA ends the question), the challenges by reason, and every leg of routes/oauth.ts
+// as `oauth_funnel` points (blob3 step, blob5 detail) so the drop-off step is a number.
+const connectCallers = await ae(
+  "SELECT blob2 AS ua, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_denied' AND blob5 LIKE '%connect_account%' AND timestamp > NOW() - INTERVAL '7' DAY GROUP BY ua ORDER BY n DESC LIMIT 3",
+).catch(() => []);
+const challenges = await ae(
+  "SELECT blob4 AS reason, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_denied' AND blob4 IN ('protected_tool', 'preview_exhausted') AND timestamp > NOW() - INTERVAL '7' DAY GROUP BY reason ORDER BY n DESC",
+).catch(() => []);
+const funnelRows = await ae(
+  "SELECT blob3 AS step, blob5 AS detail, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'oauth_funnel' AND timestamp > NOW() - INTERVAL '7' DAY GROUP BY step, detail ORDER BY n DESC",
+).catch(() => []);
+const funnelNote = oauthFunnelNote(challenges, funnelRows);
+const connectCallersText = connectCallersNote(connectCallers);
+
 // The live MCP probe (scripts/mcp-probe.ts) makes three authed and three keyless calls a day
 // under its own user agent (blob2); the counts below are real traffic, so it is skipped
 // (gankdat `probe-key-from-runner`, 2026-10-09 — before the one-run key the authed count read
@@ -570,6 +588,8 @@ const notes = [
     ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`
     : 'agent sign-up: n/a',
   oauthNote,
+  connectCallersText,
+  funnelNote,
   cfNote,
   datasetsNote,
   errors.length

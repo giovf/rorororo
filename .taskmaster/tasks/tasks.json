@@ -1291,13 +1291,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-09T00:25:52.985Z"
+      },
+      {
+        "id": "31",
+        "title": "OAuth connect funnel: oauth_funnel analytics points per leg + Daily numbers funnel and connect_account UA readings",
+        "description": "gankdat oauth-connect-funnel-check (build 2026-10-09): routes/oauth.ts writes one oauth_funnel point per leg (authorize, authorize_rejected, signin_shown, consent_shown, email_sent, approved, denied, expired, token, token_rejected; client host, detail); src/lib/oauth-funnel.ts renders 'oauth funnel 7d: …' and 'connect_account 7d by UA: …' for metrics.mjs. Relay walked the GET legs live with Claude's real client documents.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-09T09:29:40.785Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-09T00:25:52.985Z",
-      "taskCount": 30,
-      "completedCount": 23,
+      "lastModified": "2026-10-09T09:29:40.785Z",
+      "taskCount": 31,
+      "completedCount": 24,
       "tags": [
         "master"
       ]
