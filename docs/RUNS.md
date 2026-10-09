@@ -795,3 +795,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 01:45 | burn-down | Metrics crons moved off the half-hour: gankdat metrics 37 6, store metrics 52 6 (docs/ci, installer moves)
 - 2026-10-09 01:45 | burn-down | SCHEDULERS rows and pipeline README updated; queued foundry metrics-crons-day-7-read (not before 10-17)
 - 2026-10-09 01:45 | burn-down | Queue: foundry metrics-crons-off-the-half-hour done; proof is five of seven scheduled starts before 08:00
+- 2026-10-09 01:50 | burn-down | Stopping: pipeline starved and cooled after two items; pre-research pass spent at 17:21
