@@ -453,8 +453,9 @@
       "effort_days": 0.1,
       "proof": "no uk-tenders 429 in the refresh errors reading over 14 nights",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-09"
+      "status": "doing",
+      "added": "2026-10-09",
+      "doing_since": "2026-10-09"
     },
     {
       "id": "probe-key-from-runner",
