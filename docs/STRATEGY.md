@@ -929,3 +929,5 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   carries each one's newest line; a wave killed at the Cron Trigger limit (no refresh_log row) is read instead of
   guessed. Why: the journal's silent nights 10-05..10-08 cost two research passes and relays. Proof: the first
   scheduled row names the journal's last log line (or the token scope to add).
+- 2026-10-09 burn-down: gankdat `uk-tenders-429-backoff` (4) built — Find a Tender's first throttled wave (10-08) now
+  retries like eu-ted instead of throwing on the first 429; proof: no uk-tenders 429 in the refresh errors over 14 nights.

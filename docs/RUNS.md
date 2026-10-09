@@ -785,3 +785,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 00:30 | burn-down | runner-refresh.mjs reads 24 h of Worker log lines per stale/erroring source into dist/wave-logs.json
 - 2026-10-09 00:30 | burn-down | metrics.mjs carries `wave log: <slug> [level] <line> <age>`; ARCHITECTURE, SCHEDULERS; runner comment fixed
 - 2026-10-09 00:30 | burn-down | Queue: gankdat wave-log-reading done; proof is the first scheduled row after a stale source
+- 2026-10-09 00:32 | burn-down | uk-tenders: a throttled Find a Tender page is retried 3× (Retry-After or 20 s × attempt); 2 tests
+- 2026-10-09 00:32 | burn-down | Queue: gankdat uk-tenders-429-backoff done

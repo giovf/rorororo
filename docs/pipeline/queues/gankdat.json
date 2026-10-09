@@ -449,13 +449,13 @@
     {
       "id": "uk-tenders-429-backoff",
       "title": "Back off and retry on 429 from find-tender.service.gov.uk the way eu-ted and uk-contract-awards do",
-      "why": "Research 2026-10-09: the 10-08 row lists `uk-tenders (find-tender.service.gov.uk responded 429)` — the first throttled night for Find a Tender; /v1/health shows the source refreshed at 05:02:01 the same morning (a later attempt served), so the day was not lost, but fetchFromOrigin in uk-tenders.ts has no retry at all while eu-ted (built 10-07) and uk-contract-awards retry. Do: the same fetchPage loop — up to three retries, Retry-After when under 120 s else 20 s × attempt, inside wave 1's budget — and a test for a 429-then-200 origin.",
+      "why": "Research 2026-10-09: the 10-08 row lists `uk-tenders (find-tender.service.gov.uk responded 429)` — the first throttled night for Find a Tender; /v1/health shows the source refreshed at 05:02:01 the same morning (a later attempt served), so the day was not lost, but fetchFromOrigin in uk-tenders.ts has no retry at all while eu-ted (built 10-07) and uk-contract-awards retry. Do: the same fetchPage loop — up to three retries, Retry-After when under 120 s else 20 s × attempt, inside wave 1's budget — and a test for a 429-then-200 origin. — Built 2026-10-09 (burn-down): fetchPage retries a 429 up to three times, pausing Retry-After when it is under 120 s else 20 s × attempt (≤ 2 min worst case inside wave 1); two tests (throttled-then-served with Retry-After honoured, throttled throughout → fixtures fallback as before).",
       "effort_days": 0.1,
       "proof": "no uk-tenders 429 in the refresh errors reading over 14 nights",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-09",
-      "doing_since": "2026-10-09"
+      "done_at": "2026-10-09"
     },
     {
       "id": "probe-key-from-runner",

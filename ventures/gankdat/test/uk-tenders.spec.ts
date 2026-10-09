@@ -1,7 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import fixtureReleases from '../src/sources/fixtures/uk-tenders.json';
-import type { UkTendersRecord } from '../src/sources/uk-tenders';
+import { tendersRetry, type UkTendersRecord } from '../src/sources/uk-tenders';
 import { authedFetch, issueKey } from './helpers/auth';
 import { stubOrigins } from './helpers/origin-mock';
 
@@ -16,6 +16,52 @@ afterEach(() => {
 });
 
 describe('GET /v1/data/uk-tenders', () => {
+  it('retries a throttled page, honouring Retry-After, and still serves the day', async () => {
+    let calls = 0;
+    stubOrigins({
+      tenders: () =>
+        (calls += 1) < 3
+          ? new Response('slow down', { status: 429, headers: { 'retry-after': '1' } })
+          : packageResponse(),
+    });
+    const delays: number[] = [];
+    const realSetTimeout = globalThis.setTimeout;
+    vi.stubGlobal('setTimeout', ((fn: () => void, ms?: number) => {
+      delays.push(ms ?? 0);
+      return realSetTimeout(fn, 0);
+    }) as typeof setTimeout);
+    try {
+      const res = await authedFetch(TENDERS_URL);
+      expect(res.status).toBe(200);
+      const body = (await res.json()) as SuccessEnvelope<UkTendersRecord[]>;
+      expect(body.data).toHaveLength(3);
+    } finally {
+      vi.stubGlobal('setTimeout', realSetTimeout);
+    }
+    expect(calls).toBe(3);
+    // Retry-After of 1 s is honoured on both pauses (under the cap), not the growing default.
+    expect(delays.filter((d) => d === 1000).length).toBe(2);
+  });
+
+  it('gives up after the retries and falls back when Find a Tender keeps throttling', async () => {
+    let calls = 0;
+    stubOrigins({
+      tenders: () => {
+        calls += 1;
+        return new Response('slow down', { status: 429 });
+      },
+    });
+    const saved = tendersRetry.delayMs;
+    tendersRetry.delayMs = 0;
+    try {
+      const res = await authedFetch(TENDERS_URL);
+      expect(res.status).toBe(200);
+    } finally {
+      tendersRetry.delayMs = saved;
+    }
+    expect(calls).toBe(4);
+  });
+
   it('flattens OCDS releases and never exposes contact data (Blind Mode)', async () => {
     stubOrigins({ tenders: packageResponse });
     const res = await authedFetch(TENDERS_URL);
