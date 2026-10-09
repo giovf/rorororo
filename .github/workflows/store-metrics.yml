@@ -7,9 +7,11 @@ name: store metrics
 # GitHub's cron is best-effort, so the job also runs on pushes to main, where it only writes a
 # row if today's is missing (STORE_METRICS_IF_MISSING). Since 2026-10-07 a second step adds the Search
 # Console reading (`search: …`) to the same rows and to gankdat's Daily numbers row.
+# Odd minute (foundry metrics-crons-off-the-half-hour, 2026-10-09): on `45 6` the scheduled run
+# started 12:52–15:17 UTC every day 10-04..10-08; GitHub delays crons on busy minutes most.
 on:
   schedule:
-    - cron: '45 6 * * *' # daily, after gankdat metrics (06:30), before the 07:00 metrics routine
+    - cron: '52 6 * * *' # daily, after gankdat metrics (06:37), before the 07:00 metrics routine
   push:
     branches: [main]
     paths-ignore: ['ventures/*/RESEARCH.md', 'ventures/*/STORE.md', 'docs/**']
