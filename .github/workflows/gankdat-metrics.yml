@@ -2,9 +2,12 @@ name: gankdat metrics
 
 # GitHub's cron is best-effort (the 06:30 slot was skipped on 2026-09-22), so the job also runs
 # on pushes to main, where it only writes a row if today's is missing (METRICS_IF_MISSING).
+# Odd minute (foundry metrics-crons-off-the-half-hour, 2026-10-09): on `30 6` the scheduled run
+# started 11:51–15:04 UTC every day 10-03..10-08 — GitHub delays crons on busy minutes most — so
+# the runner-fed refresh, IndexNow, the MCP probe and the error filer landed ~7 h after the waves.
 on:
   schedule:
-    - cron: '30 6 * * *' # daily, before the 07:00 UTC ops routine
+    - cron: '37 6 * * *' # daily, before the 07:00 UTC ops routine
   push:
     branches: [main]
     paths-ignore: ['ventures/gankdat/RESEARCH.md', 'docs/**']
