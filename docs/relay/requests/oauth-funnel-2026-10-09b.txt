@@ -1,7 +1,0 @@
-# OAuth connect funnel walk, leg 2 (build 2026-10-09): Claude's REAL client documents (the hosted
-# apps' and Claude Code's — claude.com/docs/connectors/building/authentication) and /authorize with
-# the hosted apps' client_id, which should render the sign-in page (one pending request row, 30 min).
-GET https://claude.ai/oauth/mcp-oauth-client-metadata
-GET https://claude.ai/oauth/claude-code-client-metadata
-GET https://gankdat.com/authorize?response_type=code&client_id=https%3A%2F%2Fclaude.ai%2Foauth%2Fmcp-oauth-client-metadata&redirect_uri=https%3A%2F%2Fclaude.ai%2Fapi%2Fmcp%2Fauth_callback&state=relay-2026-10-09&scope=data%3Aread&code_challenge=tEfTL6gwhgspUVphW_d9EBZi1SPI0pzohVToxjcMTcg&code_challenge_method=S256&resource=https%3A%2F%2Fgankdat.com%2Fmcp
-GET https://gankdat.com/authorize?response_type=code&client_id=https%3A%2F%2Fclaude.ai%2Foauth%2Fclaude-code-client-metadata&redirect_uri=http%3A%2F%2Flocalhost%3A3118%2Fcallback&state=relay-2026-10-09&scope=data%3Aread&code_challenge=tEfTL6gwhgspUVphW_d9EBZi1SPI0pzohVToxjcMTcg&code_challenge_method=S256&resource=https%3A%2F%2Fgankdat.com%2Fmcp
