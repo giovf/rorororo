@@ -469,6 +469,16 @@
       "added": "2026-10-09",
       "doing_since": "2026-10-09",
       "done_at": "2026-10-09"
+    },
+    {
+      "id": "refresh-uk-trademark-journal-2026-10-09",
+      "title": "uk-trademark-journal: refresh has failed 2 times in the last 4 days — fix the source or keep the last snapshot without an error row",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-trademark-journal under refresh errors on 2026-10-08 (no successful refresh since 2026-10-04); search: n/a (no SEARCH_CONSOLE_KEY secret; owner action 020) and 2026-10-09: no successful refresh since 2026-10-04 after the fix of refresh-uk-trademark-journal (2026-10-07). The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-trademark-journal.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted.",
+      "effort_days": 0.1,
+      "proof": "uk-trademark-journal absent from refresh errors for 7 consecutive Daily numbers rows",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-09"
     }
   ]
 }
