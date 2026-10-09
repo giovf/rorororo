@@ -59,11 +59,15 @@ jobs:
         # MCP" on 2026-10-08 and no sandbox could look). Leaves dist/mcp-probe.json for metrics.mjs,
         # which renders `mcp probe: …` and lists a failed step under `refresh errors` as `mcp-probe`
         # so the step below queues a fix on a repeat. Builtins only (push runs skip npm ci); never
-        # fails the job. GANKDAT_PROBE_KEY is optional: with it the same calls also run with a key.
+        # fails the job. The same calls also run with a key minted for this run (gankdat
+        # probe-key-from-runner, 2026-10-09): the script inserts a fresh key's hash under the internal
+        # probe@gankdat.com account through the D1 REST API with CLOUDFLARE_API_TOKEN and deletes it
+        # afterwards, so no probe secret is owed. GANKDAT_PROBE_KEY, if ever set, is used instead.
         run: node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts
         continue-on-error: true
         env:
           GANKDAT_PROBE_KEY: ${{ secrets.GANKDAT_PROBE_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: Append today's numbers to RESEARCH.md
         run: node ventures/gankdat/scripts/metrics.mjs
         env:
