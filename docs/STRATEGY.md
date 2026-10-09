@@ -943,6 +943,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   live (discovery, Claude's two real client documents, `/authorize` rendering the sign-in page for the hosted apps and
   Claude Code); the POST legs no sandbox can drive now each write an `oauth_funnel` point, and the Daily numbers row reads
   the funnel and the user agents behind the `connect_account` 401s, so "scanner or lost human" is a number on 10-10.
+- 2026-10-09 burn-down: exchange pre-research — VOA non-domestic rating list declined: the free weekly-updated downloads carry a
+  restricted NDR-purposes licence ("an open government licence does not apply", onward disclosure prohibited), the same category
+  as CCOD/OCOD and the FCA register; the one Apify rival ($0.60/1k, 2 users) resells it regardless. Trigger: the VO moves to the OGL.
 - 2026-10-09 build: gankdat `refresh-uk-trademark-journal-2026-10-09` (6) built — the first wave-log reading showed the 06:05
   wave wrote no line at all, and the cause reproduced offline: the hash backfill's page UPDATE made SQLite walk all 162k
   rows and scan the 2,000 entries for each (200 s a page), so the wave died before the budget check could write a row;

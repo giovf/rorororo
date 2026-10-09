@@ -38,6 +38,7 @@ const ALLOWED = [
   '.gankdat.com',
   'ea-edubase-api-prod.azurewebsites.net',
   'ccewuksprdoneregsadata1.blob.core.windows.net',
+  'voaratinglists.blob.core.windows.net', // VOA non-domestic rating list downloads (exchange pre-research 2026-10-09)
   '.companieshouse.gov.uk',
   '.gamblingcommission.gov.uk',
   '.data.gov.uk',
