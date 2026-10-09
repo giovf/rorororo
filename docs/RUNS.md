@@ -803,3 +803,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 09:30 | build | RESEARCH walk table: which legs a sandbox can drive, how to read the 10-10 row; ARCHITECTURE note
 - 2026-10-09 09:30 | build | Relay allowlist gains claude.ai (public client documents); Taskmaster 31
 - 2026-10-09 09:30 | build | Queue: gankdat oauth-connect-funnel-check done; proof read from the Daily numbers row from 10-10
+- 2026-10-09 17:28 | burn-down | Exchange pre-research: VOA rating list declined (restricted licence, OGL does not apply; Apify rival $0.60/1k, 2 users)
+- 2026-10-09 17:28 | burn-down | Relay allowlist gains voaratinglists.blob.core.windows.net (VO rating list downloads); response read
