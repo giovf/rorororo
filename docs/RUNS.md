@@ -781,3 +781,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 00:25 | burn-down | gankdat research: journal still stale after the 10-07 fix (114 h, no row); CQC 403 and FaT 429 transient
 - 2026-10-09 00:25 | burn-down | Queued gankdat wave-log-reading (5), uk-tenders-429-backoff (4), probe-key-from-runner (4)
 - 2026-10-09 00:25 | burn-down | Queued foundry metrics-crons-off-the-half-hour (3): both daily crons fire ~7 h late every day
+- 2026-10-09 00:30 | burn-down | lib/wave-logs.ts: observability query body, tolerant event parse, `wave log:` reading; 6 tests
+- 2026-10-09 00:30 | burn-down | runner-refresh.mjs reads 24 h of Worker log lines per stale/erroring source into dist/wave-logs.json
+- 2026-10-09 00:30 | burn-down | metrics.mjs carries `wave log: <slug> [level] <line> <age>`; ARCHITECTURE, SCHEDULERS; runner comment fixed
+- 2026-10-09 00:30 | burn-down | Queue: gankdat wave-log-reading done; proof is the first scheduled row after a stale source

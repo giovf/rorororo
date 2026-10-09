@@ -1279,13 +1279,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-08T09:27:49.081Z"
+      },
+      {
+        "id": "30",
+        "title": "gankdat: wave log reading from the metrics runner (Workers observability query)",
+        "description": "scripts/runner-refresh.mjs queries Workers observability for the last 24 h of Worker log lines of every source with no ok refresh_log row in 26 h or an error row today; src/lib/wave-logs.ts holds the query body, the tolerant parse and the Daily numbers reading (wave log: …) metrics.mjs prints. Queue item gankdat/wave-log-reading.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-09T00:25:52.985Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-08T09:27:49.081Z",
-      "taskCount": 29,
-      "completedCount": 22,
+      "lastModified": "2026-10-09T00:25:52.985Z",
+      "taskCount": 30,
+      "completedCount": 23,
       "tags": [
         "master"
       ]

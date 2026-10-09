@@ -214,6 +214,23 @@ const probeResult = await readFile(
   .catch(() => null);
 const mcpProbeNote = probeResult ? probeNote(probeResult) : 'mcp probe: n/a (no probe result)';
 const mcpProbeError = probeResult ? probeError(probeResult) : null;
+
+// Wave log reading (gankdat `wave-log-reading`, 2026-10-09): the runner-refresh step asks Workers
+// observability for the last 24 h of log lines of every source with no `ok` row in 26 h or an
+// error row today and leaves them in dist/wave-logs.json; the row names each one's newest line
+// and age, so a wave killed at the Cron Trigger limit (no refresh_log row at all) is read, not
+// guessed. A push run (no runner step) or a result dated another day reads `n/a (<reason>)`.
+const { waveLogNote } = await import('../src/lib/wave-logs.ts');
+const waveLogFile = await readFile(
+  path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist', 'wave-logs.json'),
+  'utf8',
+)
+  .then((text) => {
+    const r = JSON.parse(text);
+    return r.date === new Date().toISOString().slice(0, 10) ? r : null;
+  })
+  .catch(() => null);
+const waveLogText = waveLogNote(waveLogFile, Date.now());
 if (mcpProbeError) {
   errors.push({ source_slug: mcpProbeError.slug, message: mcpProbeError.message });
   errors.sort((a, b) => a.source_slug.localeCompare(b.source_slug));
@@ -539,6 +556,7 @@ const notes = [
   `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
   indexnowNote,
   mcpProbeNote,
+  waveLogText,
   feedsNote,
   apify
     ? `apify: ${apify.runs} runs (${prevRuns === null ? 'baseline' : `+${apify.runs - prevRuns}/24h`}), 30d: ${apify.runs30} runs (${apify.ours30 === null ? 'ours n/a' : `${apify.ours30} ours, ${apify.runs30 - apify.ours30} others`}), ${apify.users} users/30d, ${apify.publicCount} public`

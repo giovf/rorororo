@@ -924,3 +924,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   15 URLs are one per source because only the journal has facet pages. Queued wave-log-reading (5) so a killed wave's
   Worker log reaches the row, uk-tenders-429-backoff (4), probe-key-from-runner (4); foundry: both GitHub crons fire
   ~7 h late daily — move them off the half-hour (3).
+- 2026-10-09 burn-down: gankdat `wave-log-reading` (5) built — the metrics runner queries Workers observability for the
+  last 24 h of log lines of every source with no `ok` row in 26 h or an error row today and the Daily numbers row
+  carries each one's newest line; a wave killed at the Cron Trigger limit (no refresh_log row) is read instead of
+  guessed. Why: the journal's silent nights 10-05..10-08 cost two research passes and relays. Proof: the first
+  scheduled row names the journal's last log line (or the token scope to add).

@@ -280,10 +280,20 @@ runs `check:root`.
   `<link rel="alternate">` on the stats pages; `rest_feed` Analytics Engine point (UA, path,
   hit/miss, slug) → `feeds 30d:` in the Daily numbers row. Entry titles are dataset-agnostic
   (first two short string fields) — the isolation rule holds.
+- **Wave log reading** (`lib/wave-logs.ts`, 2026-10-09): a wave killed at the 15-minute Cron
+  Trigger limit writes no `refresh_log` row, and no sandbox or relay can read Worker logs (the
+  journal's silent nights 10-05..10-08 were guessed at twice). So the metrics workflow's
+  `runner-refresh.mjs` step, which holds the deploy token, POSTs the Workers observability
+  Query Builder (`/workers/observability/telemetry/query`, service `faceless-api`, needle = the
+  slug, last 24 h, 20 lines) for every source with no `ok` row in 26 h or an error row today,
+  prints the lines in the job log and leaves `dist/wave-logs.json`; `metrics.mjs` reads it as
+  `wave log: <slug> [level] <newest line> <age> (N lines)` — `n/a (HTTP 403 …)` names the
+  missing token scope, `no stale source` a clean night. Pure parse + reading in the lib, tests
+  in `test/wave-logs.spec.ts`; never fails the job.
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
   after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
   stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in
-  KV) to `api.indexnow.org` (≤ 10,000 a call, de-duplicated, never throws), proven by the key
+  KV — only the journal has them, 45 Nice classes, so a day it is stale submits one URL per source) to `api.indexnow.org` (≤ 10,000 a call, de-duplicated, never throws), proven by the key
   file the Worker serves at `/<INDEXNOW_KEY>.txt` (a plain var — public by design, not a
   secret). Never from the Worker: the endpoint rate-limits by source IP and answered 429 to
   every wave-end ping from Workers' shared egress (10-05/06) while the runner's post got 200.
