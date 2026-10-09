@@ -778,3 +778,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-08 10:35 | build | First live probe (CI 09:32): /mcp keyless init/tools/call all 200, 23 tools; Glama 500 not general
 - 2026-10-08 17:20 | build | Nothing buildable: pipeline starved, every queue cooling or dated (next 10-09); no new owner notes
 - 2026-10-08 17:21 | burn-down | Exchange pre-research: ICO fee payers register parked (OGL bar personal data, daily 77 MB zip, 1 rival $3/1k, 2 users)
+- 2026-10-09 00:25 | burn-down | gankdat research: journal still stale after the 10-07 fix (114 h, no row); CQC 403 and FaT 429 transient
+- 2026-10-09 00:25 | burn-down | Queued gankdat wave-log-reading (5), uk-tenders-429-backoff (4), probe-key-from-runner (4)
+- 2026-10-09 00:25 | burn-down | Queued foundry metrics-crons-off-the-half-hour (3): both daily crons fire ~7 h late every day

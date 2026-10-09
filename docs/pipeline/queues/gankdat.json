@@ -2,8 +2,8 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-08",
-  "researched": "2026-10-07",
+  "updated": "2026-10-09",
+  "researched": "2026-10-09",
   "items": [
     {
       "id": "nhs-ods",
@@ -434,6 +434,36 @@
       "status": "done",
       "added": "2026-10-08",
       "done_at": "2026-10-08"
+    },
+    {
+      "id": "wave-log-reading",
+      "title": "Read last night's Worker log lines for every stale or erroring source from the metrics runner (Workers observability query API), so a wave killed at the 15-minute limit leaves a trace",
+      "why": "Research 2026-10-09: uk-trademark-journal's wave 7 has written no refresh_log row since 10-04 06:18 (/v1/health through the relay at 00:16 on 10-09: age 114 h), including the night after the 10-07 resumable backfill (deployed 17:36, run 37660375524 green), which should have left an `ok` or a `skipped` row inside its 8-min budget — the 10-08 row shows neither. Two silent wave deaths in five days (10-05..07, 10-08) each cost a research pass and a relay to guess at; the sandbox cannot read Worker logs, while the metrics runner holds CLOUDFLARE_API_TOKEN and wrangler.jsonc has observability on. Do: in scripts/runner-refresh.mjs (or a sibling run from the same step), for each source with no `ok` row in 26 h or an error row today, POST the Workers observability telemetry query (`/accounts/{id}/workers/observability/telemetry/query`, dataset cloudflare-workers, service gankdat, the slug in the message, last 24 h) and print the last 20 events (timestamp, level, message, the tmj_window fields) into the job log and `dist/wave-logs.json`; the Daily numbers row gains `wave log: <slug> <last event> <age>`, `n/a (<reason>)` when the token lacks the observability scope (then one ALERTS owner line names the scope to add). Also correct the runner-refresh comment: facet pages exist only for the journal (45 Nice classes; the sitemap has 62 /stats URLs), so `indexnow: 15 urls` is one URL per refreshed source, not a KV fault. Tests on a mocked query response.",
+      "effort_days": 0.3,
+      "proof": "the first Daily numbers row after a stale source names the Worker's last log line for it, and the journal's cause is read from it instead of guessed",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-09"
+    },
+    {
+      "id": "uk-tenders-429-backoff",
+      "title": "Back off and retry on 429 from find-tender.service.gov.uk the way eu-ted and uk-contract-awards do",
+      "why": "Research 2026-10-09: the 10-08 row lists `uk-tenders (find-tender.service.gov.uk responded 429)` — the first throttled night for Find a Tender; /v1/health shows the source refreshed at 05:02:01 the same morning (a later attempt served), so the day was not lost, but fetchFromOrigin in uk-tenders.ts has no retry at all while eu-ted (built 10-07) and uk-contract-awards retry. Do: the same fetchPage loop — up to three retries, Retry-After when under 120 s else 20 s × attempt, inside wave 1's budget — and a test for a 429-then-200 origin.",
+      "effort_days": 0.1,
+      "proof": "no uk-tenders 429 in the refresh errors reading over 14 nights",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-09"
+    },
+    {
+      "id": "probe-key-from-runner",
+      "title": "Authed MCP probe without an owner secret: the metrics runner mints a one-run probe key in D1, probes with it, deletes it",
+      "why": "Research 2026-10-09: the 10-08 row's `mcp probe` reads `authed: n/a (no GANKDAT_PROBE_KEY)` — the keyed path (the one Glama's test profile and every paying client use) is never probed, and a GANKDAT_PROBE_KEY repository secret is an owner action. api_keys stores only the SHA-256 of a key (migration 0002), and the runner already writes D1 through the REST API, so it can generate a random key per run, insert its hash for an internal probe account (`probe@gankdat.com`, excluded from the accounts reading like the other internal addresses), run the three authed calls, then delete the row — no secret, no owner. Do: scripts/mcp-probe.ts takes the key from runner-refresh's hand-off (or mints it itself with CLOUDFLARE_API_TOKEN), the row reads `authed: init 200, tools 200, call 200`; a leftover row from a killed run is deleted on the next run; tests for mint/delete and the exclusion.",
+      "effort_days": 0.2,
+      "proof": "the Daily numbers row carries an authed probe reading every day with no new repository secret",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-09"
     }
   ]
 }

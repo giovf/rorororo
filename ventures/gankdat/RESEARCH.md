@@ -247,3 +247,49 @@ so the swap is left for a first load only. uk-trademark-journal's pre-0014 rows 
 place by the 10-07 backfill (≤ 162k writes over one or two nights, visible as a small bump in the 10-08
 or 10-09 row) and then go delta. The `refresh_log` read through the REST API was the branch for a day
 above 1M and was not needed. Reads (+45–71M a day, 25B included, US$0.001/M beyond) cost nothing.
+
+## Research 2026-10-09 (pipeline starved — burn-down)
+
+Every open gankdat item was blocked or dated (`npm run pipeline next` → null; the 48 h cooling from the
+10-07 pass had lapsed at midnight), so this is the research pass. Evidence: the 10-07 and 10-08 Daily
+numbers rows, the 2026-10-08 scheduled `gankdat metrics` run log (37787292017) and the relay request
+`gankdat-research-2026-10-09` (`/v1/health`, `sitemap.xml`, the CQC directory page and the Find a
+Tender API from a runner IP, 00:16 UTC).
+
+| Signal (2026-10-07 → 10-08) | Reading |
+| --- | --- |
+| Paying accounts / x402 paid | 0 / 0; still 1 real account |
+| MCP keyless traffic | 1,369–1,451 anon, 90–115 preview calls a day; `connect_account` wanted 4–5 a day, `oauth: 0 connects` — the funnel check is dated today from 07:00 UTC |
+| MCP probe (new 10-08) | keyless init/tools/call all 200, 23 tools; `authed: n/a (no GANKDAT_PROBE_KEY)` |
+| Change feeds | `changes 7d: 0`; feeds 30d: 4 → 6 fetches, 3 user agents (the sumIf fix reads) |
+| IndexNow | `15 urls 200` both days, `15 sources refreshed in 26 h` in the log — one URL per source: facet pages exist only for uk-trademark-journal (45 Nice classes; the sitemap lists 62 `/stats` URLs = 17 parents + 45 classes), so the runner comment's "~1,100 facet URLs" was wrong and N ≥ 60 needs the journal refreshed |
+| Refresh | 10-08: uk-care-locations `CQC directory download failed: 403`, uk-tenders `429`, uk-trademark-journal `no successful refresh since 2026-10-04` |
+| Cost | D1 writes 93.8M → 93.9M (+0.1M a day, delta refresh holding); reads +70M a day |
+| Apify | 193 runs by others in 30 days, 18 users, uk-companies-house-lookup-monitor 1 run (ours) |
+| Search Console | `n/a (no SEARCH_CONSOLE_KEY secret; owner action 020)` |
+
+Relay readings (10-09 00:16): `/v1/health` shows every source refreshed on 10-08 between 05:01 and 05:56
+(uk-insolvency 13:50 from the runner) **except uk-trademark-journal, still 2026-10-04 06:18:42 (114 h)**
+and uk-company-profiles (lookup, never refreshed by design); so the CQC 403 and the Find a Tender 429 were
+transient — uk-care-locations refreshed at 05:31:59 and uk-tenders at 05:02:01 the same morning, and
+the CQC page answers 200 (`last-modified 2026-10-08 12:46`) to a runner. The journal is the one real
+failure: the 10-07 resumable backfill (deployed 17:36, run 37660375524 green) should have left an `ok`
+or a `skipped` row on 10-08 and left neither — the wave died silently again, and nothing in a sandbox or
+the relay can read why. The auto-filer refiles `refresh-uk-trademark-journal-<date>` once the 10-09 row
+lists it again (two rows after the 10-07 fix); the lever that makes the cause readable is queued below.
+
+Scheduling: both GitHub crons fire ~7 h late every day (`gankdat metrics` 06:30 → 13:48 on 10-08, 13:40,
+13:28, 15:04, 12:38, 11:51 on the days before; `store metrics` 06:45 → 14:03, 13:57, 13:38, 15:17, 12:52).
+The push fallback fills the rows by ~07:16, but the runner-fed refresh, IndexNow, the probe and the
+error filer run only on the scheduled run. Queued in `docs/pipeline/queues/foundry.json` (score 3).
+
+Queued in `docs/pipeline/queues/gankdat.json`:
+
+| Item | Score | Why now |
+| --- | --- | --- |
+| `wave-log-reading` | 5 | two silent wave deaths in five days; the metrics runner can query Workers observability and print the last log lines of any stale source into the row |
+| `uk-tenders-429-backoff` | 4 | first throttled night for Find a Tender, no retry in the source; eu-ted's loop from 10-07 |
+| `probe-key-from-runner` | 4 | the authed MCP path is never probed; the runner can mint a one-run key in D1 (hash only is stored) with no owner secret |
+
+Not queued: more datasets, a pricing change, listings (triggers unchanged since 10-05); the funnel's
+bottom is still zero and the next signal is today's `oauth-connect-funnel-check`.

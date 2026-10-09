@@ -919,3 +919,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-08 build: 17:00 slot — nothing buildable (every queue cooling or waiting on dated evidence, next gankdat
   `oauth-connect-funnel-check` 2026-10-09); no research run, per the cooling rule; the morning probe already answers
   the Glama handoff for anonymous traffic, so nothing to add there.
+- 2026-10-09 burn-down (gankdat research, pipeline starved): the 10-07 journal fix left no row on 10-08 either (health 114 h);
+  the CQC 403 and Find a Tender 429 were transient (both refreshed the same morning, CQC 200 to a runner); IndexNow's
+  15 URLs are one per source because only the journal has facet pages. Queued wave-log-reading (5) so a killed wave's
+  Worker log reaches the row, uk-tenders-429-backoff (4), probe-key-from-runner (4); foundry: both GitHub crons fire
+  ~7 h late daily — move them off the half-hour (3).

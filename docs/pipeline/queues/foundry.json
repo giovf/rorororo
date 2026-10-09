@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-08",
+  "updated": "2026-10-09",
   "researched": "2026-10-08",
   "items": [
     {
@@ -587,6 +587,16 @@
       "status": "done",
       "added": "2026-10-08",
       "done_at": "2026-10-08"
+    },
+    {
+      "id": "metrics-crons-off-the-half-hour",
+      "title": "Move the 06:30 and 06:45 metrics crons to odd minutes and measure whether GitHub still fires them ~7 h late",
+      "why": "Seen 2026-10-09 (burn-down research): both scheduled jobs fired hours late every day — `gankdat metrics` (cron 30 6) at 11:51, 12:38, 15:04, 13:28, 13:40, 13:48 UTC on 10-03..10-08 and `store metrics` (cron 45 6) at 12:52, 15:17, 13:38, 13:57, 14:03 on 10-04..10-08. The push fallback fills the Daily rows by ~07:16, but the runner-fed uk-insolvency refresh, the IndexNow submission, the MCP probe and the refresh-error filer run only on the scheduled run, so each lands seven hours after the waves and the 07:00 routines read a row the 13:50 run then replaces. GitHub documents that crons on busy minutes are delayed most. Do: `37 6` and `52 6` in docs/ci/gankdat-metrics.yml and docs/ci/store-metrics.yml (the installer moves them), SCHEDULERS.md rows; read the run start times after seven days; if still hours late, make the push-run do the runner steps too when the day's scheduled run has not happened by 08:00.",
+      "effort_days": 0.05,
+      "proof": "the scheduled gankdat metrics run starts before 08:00 UTC on five of seven days",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-09"
     }
   ]
 }
