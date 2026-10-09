@@ -464,8 +464,9 @@
       "effort_days": 0.2,
       "proof": "the Daily numbers row carries an authed probe reading every day with no new repository secret",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-09"
+      "status": "doing",
+      "added": "2026-10-09",
+      "doing_since": "2026-10-09"
     }
   ]
 }
