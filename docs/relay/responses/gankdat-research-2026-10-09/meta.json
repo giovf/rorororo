@@ -1,0 +1,73 @@
+{
+  "request": "gankdat-research-2026-10-09",
+  "fetched_at": "2026-10-09T00:16:46.242Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/v1/health",
+      "fetched_at": "2026-10-09T00:16:44.649Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/v1/health",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 1495,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/sitemap.xml",
+      "fetched_at": "2026-10-09T00:16:45.257Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/sitemap.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "etag": "W/\"bfe34773c4d7aa8807fbf184365da528\""
+      },
+      "file": "2.xml",
+      "bytes": 5104,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.cqc.org.uk/about-us/transparency/using-cqc-data",
+      "fetched_at": "2026-10-09T00:16:45.299Z",
+      "status": 200,
+      "final_url": "https://www.cqc.org.uk/about-us/transparency/using-cqc-data",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "15328",
+        "last-modified": "Thu, 08 Oct 2026 12:46:19 GMT",
+        "etag": "\"1791463579-gzip\""
+      }
+    },
+    {
+      "method": "GET",
+      "range": "0-4095",
+      "url": "https://www.cqc.org.uk/about-us/transparency/using-cqc-data",
+      "fetched_at": "2026-10-09T00:16:45.606Z",
+      "status": 206,
+      "final_url": "https://www.cqc.org.uk/about-us/transparency/using-cqc-data",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "4096",
+        "last-modified": "Thu, 08 Oct 2026 12:46:19 GMT",
+        "etag": "\"1791463579\""
+      },
+      "file": "4.html",
+      "bytes": 4096,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=1",
+      "fetched_at": "2026-10-09T00:16:45.732Z",
+      "status": 400,
+      "final_url": "https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=1",
+      "headers": {
+        "content-type": "text/plain;charset=utf-8"
+      }
+    }
+  ]
+}
