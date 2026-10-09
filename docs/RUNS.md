@@ -787,3 +787,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 00:30 | burn-down | Queue: gankdat wave-log-reading done; proof is the first scheduled row after a stale source
 - 2026-10-09 00:32 | burn-down | uk-tenders: a throttled Find a Tender page is retried 3× (Retry-After or 20 s × attempt); 2 tests
 - 2026-10-09 00:32 | burn-down | Queue: gankdat uk-tenders-429-backoff done
+- 2026-10-09 00:36 | watchdog | ci-minutes: ~4745 Actions min/month projected (private cap 2,000, warn 1700); top: check 403, owner notes 171, gankdat 1
