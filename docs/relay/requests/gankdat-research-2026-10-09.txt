@@ -1,0 +1,5 @@
+GET https://gankdat.com/v1/health
+GET https://gankdat.com/sitemap.xml
+HEAD https://www.cqc.org.uk/about-us/transparency/using-cqc-data
+GET RANGE=0-4095 https://www.cqc.org.uk/about-us/transparency/using-cqc-data
+HEAD https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=1
