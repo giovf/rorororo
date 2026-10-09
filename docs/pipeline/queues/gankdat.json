@@ -442,8 +442,9 @@
       "effort_days": 0.3,
       "proof": "the first Daily numbers row after a stale source names the Worker's last log line for it, and the journal's cause is read from it instead of guessed",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-09"
+      "status": "doing",
+      "added": "2026-10-09",
+      "doing_since": "2026-10-09"
     },
     {
       "id": "uk-tenders-429-backoff",
