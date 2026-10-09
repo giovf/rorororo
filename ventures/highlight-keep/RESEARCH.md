@@ -82,6 +82,7 @@ larger, clearly frustrated audience and three stores (Chrome, Firefox, Edge) fro
 | 2026-10-08 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search: n/a (no SEARCH_CONSOLE_KEY secret; owner action 020) |
 | 2026-10-08 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
 | 2026-10-09 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search: n/a (no SEARCH_CONSOLE_KEY secret; owner action 020) |
+| 2026-10-09 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
