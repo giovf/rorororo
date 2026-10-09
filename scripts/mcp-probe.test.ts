@@ -1,13 +1,22 @@
+import { readFileSync } from 'node:fs';
 import { describe, expect, it } from 'vitest';
 import {
+  deleteProbeKey,
+  generateProbeKey,
+  mintProbeKey,
   PER_PAGE,
   pickTool,
   probe,
+  PROBE_EMAIL,
   probeError,
   probeNote,
   probeOnce,
   rpcBody,
+  sha256Hex,
   USER_AGENT,
+  withProbeKey,
+  type ProbeResult,
+  type SqlFn,
 } from './mcp-probe.ts';
 
 const TOOLS = [
@@ -142,9 +151,24 @@ describe('probe, probeNote and probeError', () => {
     expect(result.date).toBe('2026-10-08');
     expect(result.runs).toHaveLength(1);
     expect(probeNote(result)).toBe(
-      'mcp probe: init 200, tools 200 (4 tools), call 200; authed: n/a (no GANKDAT_PROBE_KEY)',
+      'mcp probe: init 200, tools 200 (4 tools), call 200; authed: n/a (no key)',
     );
     expect(probeError(result)).toBeNull();
+  });
+
+  it('names why the authed run was skipped and lists a failed mint under refresh errors', async () => {
+    const s = server(healthy);
+    const result = await probe('https://x/mcp', s.fetch, undefined, '2026-10-09');
+    result.authed_skipped = 'no CLOUDFLARE_API_TOKEN to mint a probe key';
+    expect(probeNote(result)).toContain(
+      'authed: n/a (no CLOUDFLARE_API_TOKEN to mint a probe key)',
+    );
+    expect(probeError(result)).toBeNull();
+    result.authed_skipped = 'mint failed: D1: [{"code":7403,"message":"not, authorized"}]';
+    expect(probeError(result)).toEqual({
+      slug: 'mcp-probe',
+      message: 'authed mint failed: D1: [{"code":7403;"message":"not; authorized"}]',
+    });
   });
 
   it('runs the authed pass too and lists a failed one under refresh errors', async () => {
@@ -167,5 +191,145 @@ describe('probe, probeNote and probeError', () => {
     const s = server(() => json({ error: 'a, b, c' }, 500));
     const result = await probe('https://x/mcp', s.fetch, undefined);
     expect(probeError(result)?.message).not.toContain(',');
+  });
+});
+
+/** A D1 stand-in: records every statement, answers the account lookup, holds `api_keys` rows. */
+function d1(): {
+  sql: SqlFn;
+  statements: { query: string; params: unknown[] }[];
+  keys: Map<string, Record<string, unknown>>;
+} {
+  const statements: { query: string; params: unknown[] }[] = [];
+  const keys = new Map<string, Record<string, unknown>>();
+  const sql: SqlFn = (query, params = []) => {
+    statements.push({ query, params });
+    if (query.startsWith('SELECT id FROM accounts')) return Promise.resolve([{ id: 'acct-1' }]);
+    if (query.startsWith('INSERT INTO api_keys')) {
+      const [id, key_hash, email, name, plan, credits, account_id] = params;
+      keys.set(String(id), { id, key_hash, email, name, plan, credits, account_id });
+    }
+    if (query.startsWith('DELETE FROM api_keys WHERE account_id')) keys.clear();
+    if (query.startsWith('DELETE FROM api_keys WHERE id')) keys.delete(String(params[0]));
+    return Promise.resolve([]);
+  };
+  return { sql, statements, keys };
+}
+
+describe('one-run probe key', () => {
+  it('generateProbeKey has the Worker key shape and sha256Hex matches the stored form', () => {
+    const key = generateProbeKey();
+    expect(key).toMatch(/^fapi_[A-Za-z0-9]{32}$/);
+    expect(generateProbeKey()).not.toBe(key);
+    // Rejection sampling: bytes at or above 248 are skipped, never folded (255 % 62 would be 'H').
+    const skewed = generateProbeKey((n) => new Uint8Array(n).map((_, i) => (i % 2 ? 255 : 0)));
+    expect(skewed).toBe(`fapi_${'A'.repeat(32)}`);
+    expect(sha256Hex('abc')).toBe(
+      'ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad',
+    );
+  });
+
+  it('mintProbeKey creates the account once, sweeps a leftover key and inserts only the hash', async () => {
+    const db = d1();
+    db.keys.set('old', { id: 'old', account_id: 'acct-1' });
+    const minted = await mintProbeKey(db.sql, 'fapi_' + 'x'.repeat(32));
+    expect(minted.hash).toBe(sha256Hex(minted.key));
+    expect(db.statements.map((s) => s.query.split(' ').slice(0, 3).join(' '))).toEqual([
+      'INSERT INTO accounts',
+      'SELECT id FROM',
+      'DELETE FROM api_keys',
+      'INSERT INTO api_keys',
+    ]);
+    expect(db.statements[0]?.params[1]).toBe(PROBE_EMAIL);
+    expect(db.keys.has('old')).toBe(false);
+    expect([...db.keys.values()]).toEqual([
+      expect.objectContaining({
+        id: minted.keyId,
+        key_hash: minted.hash,
+        email: PROBE_EMAIL,
+        plan: 'free',
+        account_id: 'acct-1',
+      }),
+    ]);
+    expect(JSON.stringify(db.statements)).not.toContain(minted.key);
+  });
+
+  it('deleteProbeKey removes the row and the KV hot-path copy, tolerating a KV failure', async () => {
+    const db = d1();
+    const minted = await mintProbeKey(db.sql);
+    const deleted: string[] = [];
+    await deleteProbeKey(
+      db.sql,
+      (k) => {
+        deleted.push(k);
+        return Promise.reject(new Error('KV delete: 404'));
+      },
+      minted,
+    );
+    expect(db.keys.size).toBe(0);
+    expect(deleted).toEqual([`key:${minted.hash}`]);
+  });
+
+  it('withProbeKey prefers GANKDAT_PROBE_KEY, else mints, probes and deletes even on a throw', async () => {
+    const seen: (string | undefined)[] = [];
+    const empty: ProbeResult = { date: 'd', url: 'u', runs: [] };
+    const run = (key: string | undefined): Promise<ProbeResult> => {
+      seen.push(key);
+      return Promise.resolve({ ...empty });
+    };
+    const db = d1();
+    const kv: string[] = [];
+    const cf = (): { sql: SqlFn; kvDelete: (k: string) => Promise<void> } => ({
+      sql: db.sql,
+      kvDelete: (k) => {
+        kv.push(k);
+        return Promise.resolve();
+      },
+    });
+
+    await withProbeKey({ GANKDAT_PROBE_KEY: 'owner-key', CLOUDFLARE_API_TOKEN: 't' }, cf, run);
+    expect(seen).toEqual(['owner-key']);
+    expect(db.statements).toHaveLength(0);
+
+    const skipped = await withProbeKey({}, cf, run);
+    expect(seen[1]).toBeUndefined();
+    expect(skipped.authed_skipped).toBe('no CLOUDFLARE_API_TOKEN to mint a probe key');
+
+    const minted = await withProbeKey({ CLOUDFLARE_API_TOKEN: 't' }, cf, run);
+    expect(seen[2]).toMatch(/^fapi_[A-Za-z0-9]{32}$/);
+    expect(minted.authed_skipped).toBeUndefined();
+    expect(db.keys.size).toBe(0);
+    expect(kv).toHaveLength(1);
+
+    await expect(
+      withProbeKey({ CLOUDFLARE_API_TOKEN: 't' }, cf, () => Promise.reject(new Error('boom'))),
+    ).rejects.toThrow('boom');
+    expect(db.keys.size).toBe(0);
+    expect(kv).toHaveLength(2);
+
+    const failing: SqlFn = () => Promise.reject(new Error('D1: [{"code":7403}]'));
+    const unminted = await withProbeKey(
+      { CLOUDFLARE_API_TOKEN: 't' },
+      () => ({ sql: failing, kvDelete: () => Promise.resolve() }),
+      run,
+    );
+    expect(seen[3]).toBeUndefined();
+    expect(unminted.authed_skipped).toBe('mint failed: D1: [{"code":7403}]');
+  });
+
+  it('the probe account and user agent are excluded from every metrics reading', () => {
+    const metrics = readFileSync('ventures/gankdat/scripts/metrics.mjs', 'utf8');
+    // Every account-level query carries the internal-mailbox filter; the probe's domain is in it.
+    const patterns = [...metrics.matchAll(/NOT LIKE '([^']+)'/g)].map((m) => m[1]!);
+    const domain = `%@${PROBE_EMAIL.split('@')[1]}`;
+    expect(patterns).toContain(domain);
+    for (const query of metrics.match(/"SELECT [^"]*\bFROM (accounts|agent_signups)\b[^"]*"/g) ??
+      [])
+      expect(query).toContain(`NOT LIKE '${domain}'`);
+    // The traffic counts the probe would inflate (MCP 24h authed, per-dataset 30d) skip its UA.
+    const ua = USER_AGENT.split('/')[0]!;
+    for (const query of metrics.match(/"SELECT [^"]*gankdat_traffic[^"]*GROUP BY (kind|tools)"/g) ??
+      [])
+      expect(query).toContain(`blob2 NOT LIKE '${ua}/%'`);
   });
 });

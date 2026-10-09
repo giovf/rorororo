@@ -128,10 +128,14 @@ const oauthClients = await ae(
 const oauthNote = oauth
   ? `oauth: ${oauth.connects24h ?? 0} connects/24h, ${oauth.connects30d ?? 0}/30d${oauthClients.length ? ` (7d by client: ${oauthClients.map((r) => `${r.client} ${Math.round(Number(r.n))}`).join(', ')})` : ''}`
   : 'oauth: n/a';
+// The live MCP probe (scripts/mcp-probe.ts) makes three authed and three keyless calls a day
+// under its own user agent (blob2); the counts below are real traffic, so it is skipped
+// (gankdat `probe-key-from-runner`, 2026-10-09 — before the one-run key the authed count read
+// clean only because no authed probe ran).
 const kinds = Object.fromEntries(
   (
     await ae(
-      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '1' DAY GROUP BY kind",
+      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '1' DAY AND blob2 NOT LIKE 'gankdat-mcp-probe/%' GROUP BY kind",
     )
   ).map((r) => [r.kind, Math.round(Number(r.n))]),
 );
@@ -157,7 +161,7 @@ const wantedNote = wanted.length
 const changeFeed = Object.fromEntries(
   (
     await ae(
-      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '7' DAY AND ((blob1 = 'mcp_authed' AND blob5 LIKE '%get_changes%') OR blob1 = 'rest_changes') GROUP BY kind",
+      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '7' DAY AND blob2 NOT LIKE 'gankdat-mcp-probe/%' AND ((blob1 = 'mcp_authed' AND blob5 LIKE '%get_changes%') OR blob1 = 'rest_changes') GROUP BY kind",
     )
   ).map((r) => [r.kind, Math.round(Number(r.n))]),
 );
@@ -507,7 +511,7 @@ async function datasetQueries30d() {
   );
   for (const r of rest) add(r.slug, r.n);
   const mcp = await ae(
-    "SELECT blob5 AS tools, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_authed' AND blob5 != '' AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY tools",
+    "SELECT blob5 AS tools, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_authed' AND blob5 != '' AND blob2 NOT LIKE 'gankdat-mcp-probe/%' AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY tools",
   );
   for (const r of mcp) {
     for (const tool of String(r.tools).split(',')) {

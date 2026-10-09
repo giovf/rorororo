@@ -12,13 +12,24 @@
 // `ventures/gankdat/scripts/metrics.mjs` renders it as `mcp probe: …` and lists a non-200 under
 // `refresh errors` as `mcp-probe`, so the two-rows-in-four rule
 // (scripts/refresh-errors-to-queue.ts) queues a fix the way it does for a dying source.
-// With `GANKDAT_PROBE_KEY` set the same three calls also run with that bearer key — the path a
-// checker with a test-profile key takes (Glama's is a free-tier key). Optional: without it the
-// row says so once, in the note, and nothing is owed by anyone.
+// The same three calls also run with a bearer key — the path a checker with a test-profile key
+// takes (Glama's is a free-tier key) and the one every paying client uses. The key is minted
+// for this one run (gankdat `probe-key-from-runner`, 2026-10-09): `api_keys` stores only the
+// SHA-256 of a key (migration 0002) and the runner already writes D1 through the REST API with
+// `CLOUDFLARE_API_TOKEN`, so `mintProbeKey` inserts a fresh key's hash under the internal
+// `probe@gankdat.com` account (an `@gankdat.com` address — excluded from the accounts, sign-up
+// and OAuth readings like the other internal mailboxes; the traffic readings exclude the probe
+// by its user agent), the probe runs, and `deleteProbeKey` removes the row and the Worker's
+// 60-second KV copy of it. A row left by a killed run is deleted by the next mint. The raw key
+// lives in this process only — never in a log, the result file or a repository secret. The
+// 10-08 row read `authed: n/a (no GANKDAT_PROBE_KEY)` because that secret is an owner action;
+// `GANKDAT_PROBE_KEY`, when set, still wins and nothing is minted. Without either the note says
+// why and the keyless run stands alone.
 //
 // Run: node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts   (metrics job, before
 //      metrics.mjs; on push runs too — only node builtins, no npm ci). Never exits non-zero: a
 //      dead probe is a reading, not a failed job.
+import { createHash, randomBytes } from 'node:crypto';
 import { mkdirSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -57,6 +68,123 @@ export interface ProbeResult {
   date: string;
   url: string;
   runs: ProbeRun[];
+  /** Why no authed run happened (no key and none could be minted); absent when one ran. */
+  authed_skipped?: string;
+}
+
+// --- one-run probe key -------------------------------------------------------------------------
+
+/** The internal account the probe key hangs off; `@gankdat.com` keeps it out of every reading. */
+export const PROBE_EMAIL = 'probe@gankdat.com';
+export const PROBE_KEY_NAME = 'metrics probe (one run)';
+/** Same shape as the Worker's `generateKey` (src/auth/keys.ts): `fapi_` + 32 base62 chars. */
+const KEY_PREFIX = 'fapi_';
+const KEY_LENGTH = 32;
+const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+const FREE_TIER_CREDITS = 250;
+// Cloudflare ids, copied from ventures/gankdat/wrangler.jsonc and scripts/runner-refresh.mjs —
+// not secrets. The CACHE namespace holds the Worker's `key:<hash>` hot-path copy of a key.
+const CF_ACCOUNT_ID = '37e56f3ce4dfe49919e85d4380467f44';
+const D1_DATABASE_ID = 'ac051277-5f69-46ba-965b-50da2f1ec524';
+const CACHE_NAMESPACE_ID = 'eacc87d970e94b9b87ce944985af0b52';
+const CF_API = `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}`;
+
+export type SqlFn = (query: string, params?: unknown[]) => Promise<Record<string, unknown>[]>;
+export type KvDeleteFn = (key: string) => Promise<void>;
+
+export interface ProbeKey {
+  key: string;
+  keyId: string;
+  hash: string;
+}
+
+/** `fapi_` + 32 uniform base62 chars (rejection sampling, like the Worker's generator). */
+export function generateProbeKey(
+  random: (n: number) => Uint8Array = (n) => randomBytes(n),
+): string {
+  const chars: string[] = [];
+  const limit = 256 - (256 % ALPHABET.length);
+  while (chars.length < KEY_LENGTH) {
+    for (const byte of random(KEY_LENGTH * 2)) {
+      if (byte < limit && chars.length < KEY_LENGTH) chars.push(ALPHABET[byte % ALPHABET.length]!);
+    }
+  }
+  return `${KEY_PREFIX}${chars.join('')}`;
+}
+
+/** Hex SHA-256 — the only form of a key `api_keys` holds (src/auth/keys.ts `hashKey`). */
+export function sha256Hex(text: string): string {
+  return createHash('sha256').update(text).digest('hex');
+}
+
+/**
+ * Insert a fresh key for the probe account and return the raw key for this process only. The
+ * account is created once (`ON CONFLICT DO NOTHING`, like the Worker's `getOrCreateAccount`);
+ * any key still on it is a killed run's leftover and goes first, so at most one exists.
+ */
+export async function mintProbeKey(sql: SqlFn, key = generateProbeKey()): Promise<ProbeKey> {
+  await sql('INSERT INTO accounts (id, email) VALUES (?1, ?2) ON CONFLICT (email) DO NOTHING', [
+    crypto.randomUUID(),
+    PROBE_EMAIL,
+  ]);
+  const [account] = await sql('SELECT id FROM accounts WHERE email = ?1', [PROBE_EMAIL]);
+  const accountId = account?.id;
+  if (typeof accountId !== 'string' || !accountId) throw new Error('probe account not found');
+  await sql('DELETE FROM api_keys WHERE account_id = ?1', [accountId]);
+  const keyId = crypto.randomUUID();
+  const hash = sha256Hex(key);
+  await sql(
+    'INSERT INTO api_keys (id, key_hash, email, name, plan, credits_granted, account_id) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)',
+    [keyId, hash, PROBE_EMAIL, PROBE_KEY_NAME, 'free', FREE_TIER_CREDITS, accountId],
+  );
+  return { key, keyId, hash };
+}
+
+/**
+ * Remove the key: the D1 row, then the Worker's 60-second KV copy (`key:<hash>`, src/auth/
+ * middleware.ts) so the key stops authenticating now rather than at the TTL. Best effort on
+ * the KV side — the row is what matters, and the next mint sweeps the account anyway.
+ */
+export async function deleteProbeKey(
+  sql: SqlFn,
+  kvDelete: KvDeleteFn,
+  probeKey: Pick<ProbeKey, 'keyId' | 'hash'>,
+): Promise<void> {
+  await sql('DELETE FROM api_keys WHERE id = ?1', [probeKey.keyId]);
+  try {
+    await kvDelete(`key:${probeKey.hash}`);
+  } catch {
+    // KV copy expires within a minute on its own.
+  }
+}
+
+/** The two REST calls the mint needs, bound to a Cloudflare API token. */
+export function cloudflare(token: string): { sql: SqlFn; kvDelete: KvDeleteFn } {
+  const auth = { Authorization: `Bearer ${token}` };
+  return {
+    sql: async (query, params = []) => {
+      const res = await fetch(`${CF_API}/d1/database/${D1_DATABASE_ID}/query`, {
+        method: 'POST',
+        headers: { ...auth, 'content-type': 'application/json' },
+        body: JSON.stringify({ sql: query, params }),
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+      });
+      const body = (await res.json()) as {
+        success?: boolean;
+        errors?: unknown;
+        result?: { results?: Record<string, unknown>[] }[];
+      };
+      if (!body.success) throw new Error(`D1: ${JSON.stringify(body.errors).slice(0, 200)}`);
+      return body.result?.[0]?.results ?? [];
+    },
+    kvDelete: async (key) => {
+      const res = await fetch(
+        `${CF_API}/storage/kv/namespaces/${CACHE_NAMESPACE_ID}/values/${encodeURIComponent(key)}`,
+        { method: 'DELETE', headers: auth, signal: AbortSignal.timeout(TIMEOUT_MS) },
+      );
+      if (!res.ok) throw new Error(`KV delete: ${res.status}`);
+    },
+  };
 }
 
 interface RpcMessage {
@@ -263,28 +391,66 @@ export function probeNote(result: ProbeResult): string {
     const text = run.steps.map((s) => stepText(s, run)).join(', ');
     return run.authed ? `authed: ${text}` : text;
   });
-  if (!result.runs.some((r) => r.authed)) parts.push('authed: n/a (no GANKDAT_PROBE_KEY)');
+  if (!result.runs.some((r) => r.authed))
+    parts.push(`authed: n/a (${result.authed_skipped ?? 'no key'})`);
   return `mcp probe: ${parts.join('; ')}`;
 }
 
 /** The `refresh errors` entry for a failed probe, or null when every run was clean. */
 export function probeError(result: ProbeResult): { slug: string; message: string } | null {
   const failed = result.runs.filter(runFailed);
-  if (failed.length === 0) return null;
-  const message = failed
-    .map((run) => {
-      const bad = run.steps.find((s) => !stepOk(s)) ?? run.steps[run.steps.length - 1];
-      const text = bad ? stepText(bad, run) : 'no step ran';
-      return run.authed ? `authed ${text}` : text;
-    })
-    .join('; ');
-  return { slug: PROBE_SLUG, message: message.replace(/,/g, ';') };
+  const parts = failed.map((run) => {
+    const bad = run.steps.find((s) => !stepOk(s)) ?? run.steps[run.steps.length - 1];
+    const text = bad ? stepText(bad, run) : 'no step ran';
+    return run.authed ? `authed ${text}` : text;
+  });
+  // A mint that failed is the authed reading missing for a reason this side can fix.
+  if (result.authed_skipped?.startsWith('mint failed'))
+    parts.push(`authed ${result.authed_skipped}`);
+  if (parts.length === 0) return null;
+  return { slug: PROBE_SLUG, message: parts.join('; ').replace(/,/g, ';') };
+}
+
+/**
+ * The key for the authed run: `GANKDAT_PROBE_KEY` when set, else one minted for this run with
+ * `CLOUDFLARE_API_TOKEN` and deleted after `run`, whatever `run` does. A mint that fails is a
+ * reading (`authed_skipped`, listed under `refresh errors` like a failed step so a repeat files
+ * a fix), never a crash: the keyless run still stands.
+ */
+export async function withProbeKey(
+  env: { GANKDAT_PROBE_KEY?: string; CLOUDFLARE_API_TOKEN?: string },
+  cf: (token: string) => { sql: SqlFn; kvDelete: KvDeleteFn },
+  run: (key: string | undefined) => Promise<ProbeResult>,
+): Promise<ProbeResult> {
+  if (env.GANKDAT_PROBE_KEY) return run(env.GANKDAT_PROBE_KEY);
+  if (!env.CLOUDFLARE_API_TOKEN) {
+    const result = await run(undefined);
+    result.authed_skipped = 'no CLOUDFLARE_API_TOKEN to mint a probe key';
+    return result;
+  }
+  const { sql, kvDelete } = cf(env.CLOUDFLARE_API_TOKEN);
+  let minted: ProbeKey;
+  try {
+    minted = await mintProbeKey(sql);
+  } catch (e) {
+    const result = await run(undefined);
+    result.authed_skipped = excerpt(`mint failed: ${e instanceof Error ? e.message : String(e)}`);
+    return result;
+  }
+  try {
+    return await run(minted.key);
+  } finally {
+    await deleteProbeKey(sql, kvDelete, minted).catch((e: unknown) => {
+      console.log(`probe key delete failed: ${e instanceof Error ? e.message : String(e)}`);
+    });
+  }
 }
 
 async function main(): Promise<void> {
   const url = process.env.GANKDAT_MCP_URL || DEFAULT_URL;
-  const key = process.env.GANKDAT_PROBE_KEY || undefined;
-  const result = await probe(url, (u, init) => fetch(u, init), key);
+  const result = await withProbeKey(process.env, cloudflare, (key) =>
+    probe(url, (u, init) => fetch(u, init), key),
+  );
   const file = path.resolve(RESULT_FILE);
   mkdirSync(path.dirname(file), { recursive: true });
   writeFileSync(file, `${JSON.stringify(result, null, 2)}\n`);

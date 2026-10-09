@@ -303,14 +303,22 @@ runs `check:root`.
   (`n/a (<reason>)` on a push run).
 - **Live MCP probe** (`scripts/mcp-probe.ts`, 2026-10-08, queue `mcp-live-probe`): the metrics job's
   runner does what an agent directory's health checker does — `initialize`, `tools/list`, one keyless
-  preview `tools/call` on the first listing data tool — against the live `/mcp` and, with the optional
-  `GANKDAT_PROBE_KEY` secret, the same with a bearer key; `metrics.mjs` renders `mcp probe: …` in the
-  Daily numbers row and lists a failed step under `refresh errors` as `mcp-probe`, so the repeat rule
-  files a fix item. Why: Glama's hourly check mailed "HTTP 500 – Error connecting to MCP" on
-  2026-10-08 (and found the 2026-09-19 Bot Fight Mode challenges) while no sandbox can reach
-  gankdat.com and Worker logs are read nowhere — the probe is the only reading of the edge as
-  directories see it. Push runs probe too (node builtins only); a dead probe is a reading, never a
-  failed job.
+  preview `tools/call` on the first listing data tool — against the live `/mcp` and the same with a
+  bearer key; `metrics.mjs` renders `mcp probe: …` in the Daily numbers row and lists a failed step
+  under `refresh errors` as `mcp-probe`, so the repeat rule files a fix item. Why: Glama's hourly
+  check mailed "HTTP 500 – Error connecting to MCP" on 2026-10-08 (and found the 2026-09-19 Bot
+  Fight Mode challenges) while no sandbox can reach gankdat.com and Worker logs are read nowhere —
+  the probe is the only reading of the edge as directories see it. Push runs probe too (node
+  builtins only); a dead probe is a reading, never a failed job. **One-run probe key** (2026-10-09,
+  queue `probe-key-from-runner`): the authed pass needs no repository secret — `api_keys` holds
+  only a key's SHA-256 and the job already holds `CLOUDFLARE_API_TOKEN`, so the probe inserts a fresh
+  key's hash under the internal `probe@gankdat.com` account through the D1 REST API, runs the three
+  calls with it, then deletes the row and the Worker's 60 s KV copy (`key:<hash>`); a row left by a
+  killed run is swept by the next mint, the raw key never leaves the process, and a failed mint is
+  itself a `refresh errors` entry. The account is an `@gankdat.com` address, so the accounts,
+  sign-up and OAuth readings skip it like the other internal mailboxes, and the traffic counts
+  (`MCP 24h`, change feed, `datasets 30d`) skip the probe's user agent. `GANKDAT_PROBE_KEY`, if ever
+  set, still takes precedence and nothing is minted.
 - **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
   params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
   date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value

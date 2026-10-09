@@ -788,3 +788,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 00:32 | burn-down | uk-tenders: a throttled Find a Tender page is retried 3× (Retry-After or 20 s × attempt); 2 tests
 - 2026-10-09 00:32 | burn-down | Queue: gankdat uk-tenders-429-backoff done
 - 2026-10-09 00:36 | watchdog | ci-minutes: ~4745 Actions min/month projected (private cap 2,000, warn 1700); top: check 403, owner notes 171, gankdat 1
+- 2026-10-09 01:40 | burn-down | mcp-probe.ts mints a one-run key via the D1 REST API, probes with it, deletes row + KV copy; 8 tests
+- 2026-10-09 01:40 | burn-down | metrics.mjs skips the probe's user agent in MCP 24h, change-feed and datasets-30d counts
+- 2026-10-09 01:40 | burn-down | docs/ci/gankdat-metrics.yml: probe step gets CLOUDFLARE_API_TOKEN; ARCHITECTURE, SCHEDULERS
+- 2026-10-09 01:40 | burn-down | Queue: gankdat probe-key-from-runner done; proof is an authed probe reading on every row

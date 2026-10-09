@@ -931,3 +931,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   scheduled row names the journal's last log line (or the token scope to add).
 - 2026-10-09 burn-down: gankdat `uk-tenders-429-backoff` (4) built — Find a Tender's first throttled wave (10-08) now
   retries like eu-ted instead of throwing on the first 429; proof: no uk-tenders 429 in the refresh errors over 14 nights.
+- 2026-10-09 burn-down: gankdat `probe-key-from-runner` (4) built — the metrics runner mints a key for the run under the
+  internal probe account through the D1 REST API, runs the authed MCP probe with it and deletes it, so the keyed path
+  (every paying client's) is read daily with no repository secret; why: the 10-08 row read `authed: n/a` and the
+  secret was an owner action. Proof: an authed probe reading on every Daily numbers row.
