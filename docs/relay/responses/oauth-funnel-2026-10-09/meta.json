@@ -1,0 +1,149 @@
+{
+  "request": "oauth-funnel-2026-10-09",
+  "fetched_at": "2026-10-09T09:22:07.645Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/.well-known/oauth-protected-resource/mcp",
+      "fetched_at": "2026-10-09T09:22:05.804Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/.well-known/oauth-protected-resource/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 242,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/.well-known/oauth-protected-resource",
+      "fetched_at": "2026-10-09T09:22:06.274Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/.well-known/oauth-protected-resource",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 242,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/.well-known/oauth-authorization-server",
+      "fetched_at": "2026-10-09T09:22:06.296Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/.well-known/oauth-authorization-server",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 499,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://claude.ai/.well-known/oauth-client.json",
+      "fetched_at": "2026-10-09T09:22:06.322Z",
+      "status": 404,
+      "final_url": "https://claude.ai/.well-known/oauth-client.json",
+      "headers": {
+        "content-type": "text/plain; charset=UTF-8",
+        "content-length": "9"
+      },
+      "file": "4.txt",
+      "bytes": 9,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://claude.ai/.well-known/oauth-client-metadata",
+      "fetched_at": "2026-10-09T09:22:06.392Z",
+      "status": 404,
+      "final_url": "https://claude.ai/.well-known/oauth-client-metadata",
+      "headers": {
+        "content-type": "text/plain; charset=UTF-8",
+        "content-length": "9"
+      },
+      "file": "5.txt",
+      "bytes": 9,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/authorize?response_type=code&client_id=https%3A%2F%2Fclaude.ai%2F.well-known%2Foauth-client.json&redirect_uri=https%3A%2F%2Fclaude.ai%2Fapi%2Fmcp%2Fauth_callback&state=relay-2026-10-09&scope=data%3Aread&code_challenge=tEfTL6gwhgspUVphW_d9EBZi1SPI0pzohVToxjcMTcg&code_challenge_method=S256&resource=https%3A%2F%2Fgankdat.com%2Fmcp",
+      "fetched_at": "2026-10-09T09:22:06.446Z",
+      "status": 400,
+      "final_url": "https://gankdat.com/authorize?response_type=code&client_id=https%3A%2F%2Fclaude.ai%2F.well-known%2Foauth-client.json&redirect_uri=https%3A%2F%2Fclaude.ai%2Fapi%2Fmcp%2Fauth_callback&state=relay-2026-10-09&scope=data%3Aread&code_challenge=tEfTL6gwhgspUVphW_d9EBZi1SPI0pzohVToxjcMTcg&code_challenge_method=S256&resource=https%3A%2F%2Fgankdat.com%2Fmcp",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "6.html",
+      "bytes": 3042,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/authorize?request=00000000000000000000000000000000",
+      "fetched_at": "2026-10-09T09:22:06.609Z",
+      "status": 410,
+      "final_url": "https://gankdat.com/authorize?request=00000000000000000000000000000000",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "7.html",
+      "bytes": 2960,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/authorize",
+      "fetched_at": "2026-10-09T09:22:07.276Z",
+      "status": 400,
+      "final_url": "https://gankdat.com/authorize",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 2902,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/consent.js",
+      "fetched_at": "2026-10-09T09:22:07.294Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/consent.js",
+      "headers": {
+        "content-type": "text/javascript",
+        "etag": "W/\"32f79b39737d545c1007844b81a472e7\""
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/mcp",
+      "fetched_at": "2026-10-09T09:22:07.540Z",
+      "status": 404,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "10.json",
+      "bytes": 123,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/account",
+      "fetched_at": "2026-10-09T09:22:07.559Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/account",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "11.html",
+      "bytes": 16287,
+      "truncated": false
+    }
+  ]
+}
