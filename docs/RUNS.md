@@ -817,3 +817,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 00:24 | burn-down | Foundry research: sandbox clone depth 50, 139 commits behind; pull refused was lag, not divergence
 - 2026-10-10 00:24 | burn-down | Foundry research: starved-and-cooled every night since 10-05; one pre-research candidate a day is the ceiling
 - 2026-10-10 00:24 | burn-down | Queue: foundry +3 items (cron-drift dispatch 6, clone unshallow 3, build-slot pre-research 3); 2 items gain evidence
+- 2026-10-10 00:29 | burn-down | metrics.md MISSING ROWS: dispatch gankdat/store metrics via workflow_dispatch, poll 10 min, then relay
+- 2026-10-10 00:29 | burn-down | SCHEDULERS: measured cron drift on both metrics jobs, owner notes (1 fire in 6) and the watchdog (6 of 14)
+- 2026-10-10 00:29 | burn-down | Queue: foundry cron-drift-dispatch-row done; proof is rows present before the 07:00 summary from 10-11

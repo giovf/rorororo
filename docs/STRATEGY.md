@@ -955,3 +955,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   06:37/06:52 move changed nothing on day 1), so the 07:00 routine will dispatch the metrics jobs itself (queued, 6);
   the sandbox clone is `--depth 50`, which makes `git pull` refuse a plain fast-forward as divergence (3); and the
   pipeline has ended starved every night since 10-05, so the build slot gains the day's pre-research pass (3).
+- 2026-10-10 burn-down: foundry `cron-drift-dispatch-row` (6) built — the 07:00 metrics routine now fires the two metrics
+  workflows by `workflow_dispatch` when the day's commit is missing and waits up to 10 min, because GitHub starts every
+  cron here ~7 h late whatever the minute while a dispatched run starts at once; proof: no `left no row` note from 10-11.
