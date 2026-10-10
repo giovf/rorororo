@@ -119,14 +119,17 @@ function authorizeUrl(overrides: Record<string, string | null> = {}): string {
   return url.toString();
 }
 
-async function startAuthorize(overrides: Record<string, string | null> = {}): Promise<{
+async function startAuthorize(
+  overrides: Record<string, string | null> = {},
+  ip = '203.0.113.42', // /authorize is limited per IP in the isolate for the whole file
+): Promise<{
   res: Response;
   html: string;
   requestId: string | null;
 }> {
   const res = await SELF.fetch(
     authorizeUrl({ code_challenge: await pkceChallenge(VERIFIER), ...overrides }),
-    { redirect: 'manual', headers: { 'CF-Connecting-IP': '203.0.113.42' } },
+    { redirect: 'manual', headers: { 'CF-Connecting-IP': ip } },
   );
   const html = res.headers.get('content-type')?.includes('text/html') ? await res.text() : '';
   const requestId = /name="request" value="([a-f0-9]{32})"/.exec(html)?.[1] ?? null;
@@ -259,8 +262,195 @@ describe('discovery', () => {
       code_challenge_methods_supported: ['S256'],
       token_endpoint_auth_methods_supported: ['none'],
       client_id_metadata_document_supported: true,
+      registration_endpoint: `${PUBLIC}/register`,
       grant_types_supported: ['authorization_code', 'refresh_token'],
     });
+  });
+});
+
+// RFC 7591: Docker's MCP Toolkit, Cursor, ChatGPT and VS Code register a client
+// instead of hosting a metadata document (only Claude does CIMD).
+describe('/register (dynamic client registration)', () => {
+  // The per-IP limiter lives in the isolate for the whole file: every registration gets its
+  // own address so the tests do not spend each other's budget (10 a minute per IP).
+  let nextIp = 1;
+  async function register(
+    body: unknown,
+    ip = `198.51.100.${nextIp++}`,
+  ): Promise<{ status: number; body: Record<string, unknown>; res: Response }> {
+    const res = await SELF.fetch(`${BASE}/register`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+        'CF-Connecting-IP': ip,
+        'User-Agent': 'docker-mcp-gateway',
+      },
+      body: typeof body === 'string' ? body : JSON.stringify(body),
+    });
+    return { status: res.status, body: (await res.json()) as Record<string, unknown>, res };
+  }
+
+  it('rate-limits registrations per IP like /authorize', async () => {
+    const ip = '198.51.100.250';
+    let last = 0;
+    for (let i = 0; i < 11; i++) {
+      last = (await register({ redirect_uris: ['http://127.0.0.1/cb'] }, ip)).status;
+    }
+    expect(last).toBe(429);
+  });
+
+  it('issues a public client_id for a loopback native app and echoes the metadata', async () => {
+    const { status, body, res } = await register({
+      client_name: 'Docker MCP Toolkit',
+      redirect_uris: ['http://127.0.0.1:8765/callback'],
+      token_endpoint_auth_method: 'none',
+      grant_types: ['authorization_code', 'refresh_token'],
+      response_types: ['code'],
+    });
+    expect(status).toBe(201);
+    expect(res.headers.get('cache-control')).toBe('no-store');
+    expect(body.client_id).toMatch(/^gkcl_docker-mcp-toolkit_[a-f0-9]{32}$/);
+    expect(body).toMatchObject({
+      client_name: 'Docker MCP Toolkit',
+      redirect_uris: ['http://127.0.0.1:8765/callback'],
+      token_endpoint_auth_method: 'none',
+      grant_types: ['authorization_code', 'refresh_token'],
+      response_types: ['code'],
+      scope: OAUTH_SCOPE,
+    });
+    expect(typeof body.client_id_issued_at).toBe('number');
+    expect(body.client_secret).toBeUndefined();
+    const row = await env.DB.prepare('SELECT client_name FROM oauth_clients WHERE client_id = ?1')
+      .bind(body.client_id)
+      .first<{ client_name: string }>();
+    expect(row?.client_name).toBe('Docker MCP Toolkit');
+  });
+
+  it('labels an https client by its redirect host, never by a name that claims one', async () => {
+    const hosted = await register({
+      client_name: 'claude.ai',
+      redirect_uris: ['https://app.example.org/oauth/cb', 'http://localhost/cb'],
+    });
+    expect(hosted.status).toBe(201);
+    expect(hosted.body.client_id).toMatch(/^gkcl_app\.example\.org_/);
+    const nameOnly = await register({
+      client_name: 'claude.ai',
+      redirect_uris: ['http://localhost/cb'],
+    });
+    expect(nameOnly.body.client_id).toMatch(/^gkcl_claude-ai_/);
+    const nameless = await register({ redirect_uris: ['http://[::1]:9/cb'] });
+    expect(nameless.body.client_id).toMatch(/^gkcl_local-app_/);
+    expect(nameless.body.client_name).toBeUndefined();
+  });
+
+  it('rejects confidential clients, bad redirect URIs, foreign grants and non-JSON with RFC 7591 errors', async () => {
+    const cases: [unknown, string][] = [
+      [{ redirect_uris: [] }, 'invalid_redirect_uri'],
+      [{ redirect_uris: ['http://evil.example/cb'] }, 'invalid_redirect_uri'],
+      [{ redirect_uris: ['https://10.0.0.1/cb'] }, 'invalid_redirect_uri'],
+      [{ redirect_uris: ['https://ok.example/cb#frag'] }, 'invalid_redirect_uri'],
+      [
+        {
+          redirect_uris: ['https://ok.example/cb'],
+          token_endpoint_auth_method: 'client_secret_basic',
+        },
+        'invalid_client_metadata',
+      ],
+      [
+        { redirect_uris: ['https://ok.example/cb'], grant_types: ['implicit'] },
+        'invalid_client_metadata',
+      ],
+      [
+        { redirect_uris: ['https://ok.example/cb'], response_types: ['token'] },
+        'invalid_client_metadata',
+      ],
+      ['not json', 'invalid_client_metadata'],
+      [[], 'invalid_client_metadata'],
+    ];
+    for (const [input, error] of cases) {
+      const { status, body } = await register(input);
+      expect(status, JSON.stringify(input)).toBe(400);
+      expect(body.error, JSON.stringify(input)).toBe(error);
+      expect(typeof body.error_description).toBe('string');
+    }
+    expect(
+      await env.DB.prepare('SELECT COUNT(*) AS n FROM oauth_clients').first<{ n: number }>(),
+    ).toEqual({ n: 0 });
+  });
+
+  it('runs the whole flow for a registered client: consent names the label, the key is oauth:<label>', async () => {
+    const spy = vi.spyOn(env.TRAFFIC, 'writeDataPoint');
+    const registered = await register({
+      client_name: 'Docker MCP Toolkit',
+      redirect_uris: ['http://127.0.0.1/callback'],
+    });
+    const clientId = registered.body.client_id as string;
+    const redirectUri = 'http://127.0.0.1:51234/callback';
+    const { res, html, requestId } = await startAuthorize(
+      { client_id: clientId, redirect_uri: redirectUri },
+      '198.51.100.99',
+    );
+    expect(res.status).toBe(200);
+    expect(html).toContain('Connect gankdat to docker-mcp-toolkit');
+    expect(requestId).toBeTruthy();
+    const cookie = await signInViaMagicLink(requestId!, 'toolkit-user@example.com');
+    const consent = await SELF.fetch(`${BASE}/authorize?request=${requestId}`, {
+      headers: { Cookie: cookie, 'CF-Connecting-IP': '198.51.100.99' },
+    });
+    const consentHtml = await consent.text();
+    expect(consentHtml).toContain('registered itself with gankdat');
+    expect(consentHtml).toContain('oauth:docker-mcp-toolkit');
+    const redirected = await approve(requestId!, cookie);
+    expect(redirected.origin).toBe('http://127.0.0.1:51234');
+    const exchanged = await token({
+      grant_type: 'authorization_code',
+      code: redirected.searchParams.get('code')!,
+      code_verifier: VERIFIER,
+      client_id: clientId,
+      redirect_uri: redirectUri,
+    });
+    expect(exchanged.status).toBe(200);
+    expect(exchanged.body.access_token).toMatch(/^gkat_/);
+    const key = await env.DB.prepare(
+      "SELECT name FROM api_keys WHERE email = ?1 AND name LIKE 'oauth:%'",
+    )
+      .bind('toolkit-user@example.com')
+      .first<{ name: string }>();
+    expect(key?.name).toBe('oauth:docker-mcp-toolkit');
+    const call = await mcpCall(
+      'connect_account',
+      {},
+      { Authorization: `Bearer ${exchanged.body.access_token}` },
+    );
+    expect(call.status).toBe(200);
+    const steps = spy.mock.calls
+      .map((call) => (call[0] as { blobs: string[] }).blobs)
+      .filter((blobs) => blobs[0] === 'oauth_funnel')
+      .map((blobs) => [blobs[2], blobs[3]]);
+    expect(steps[0]).toEqual(['registered', 'docker-mcp-toolkit']);
+    expect(steps).toContainEqual(['token', 'docker-mcp-toolkit']);
+    spy.mockRestore();
+  });
+
+  it('refuses an unknown or malformed registered client_id with a page, never a redirect', async () => {
+    const unknown = await startAuthorize(
+      { client_id: `gkcl_nobody_${'0'.repeat(32)}`, redirect_uri: 'http://127.0.0.1/cb' },
+      '198.51.100.98',
+    );
+    expect(unknown.res.status).toBe(400);
+    expect(unknown.html).toContain('Unknown client');
+    const malformed = await startAuthorize(
+      { client_id: 'gkcl_', redirect_uri: 'http://127.0.0.1/cb' },
+      '198.51.100.98',
+    );
+    expect(malformed.res.status).toBe(400);
+    const registered = await register({ redirect_uris: ['https://app.example.org/cb'] });
+    const wrongRedirect = await startAuthorize(
+      { client_id: registered.body.client_id as string, redirect_uri: 'https://evil.example/cb' },
+      '198.51.100.98',
+    );
+    expect(wrongRedirect.res.status).toBe(400);
+    expect(wrongRedirect.html).toContain('Redirect not allowed');
   });
 });
 

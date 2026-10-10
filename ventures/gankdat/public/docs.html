@@ -208,8 +208,9 @@ https://gankdat.com/mcp
 # Full pages and your plan's credits: say "sign in to gankdat" (the connect_account tool) or
 # keep going until the preview runs out — Claude shows a Connect button, you sign in with your
 # email (a free account with 250 credits/month is created if needed, no card) and approve once.
-# That is standard OAuth (PKCE, no client secret): Cursor, ChatGPT and any MCP client that
-# follows the 401 challenge get the same flow. The connection appears as a key named
+# That is standard OAuth (PKCE, no client secret, dynamic client registration at /register):
+# Docker's MCP Toolkit, Cursor, ChatGPT, VS Code and any MCP client that follows the 401
+# challenge get the same flow. The connection appears as a key named
 # oauth:&lt;client&gt; at /account — revoke it there to disconnect.
 # Clients without OAuth: request_api_key / claim_api_key get a key from inside the chat, or
 # create one at /account and send it as "Authorization: Bearer fapi_..." (config above).</code></pre>

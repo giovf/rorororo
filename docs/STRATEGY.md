@@ -985,3 +985,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   £3.70/month); the metrics job files a score-8 `cf-overage-<period>` item from the row's `cf usage`
   figure (`scripts/cf-overage-to-queue.ts`). Cloudflare's own budget email stays at US$10 (the API
   token cannot edit notification policies); inbox triage escalates it as before.
+- 2026-10-10 burn-down: gankdat offers RFC 7591 dynamic client registration (`POST /register`,
+  v0.23.0) because only Claude signs in by client-id metadata documents; Docker's MCP Toolkit,
+  Cursor, ChatGPT and VS Code all register, so the OAuth hop built on 2026-09-30 worked for one
+  client. The Docker catalogue entry gains its `oauth` block in a second PR once listed.

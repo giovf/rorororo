@@ -216,9 +216,9 @@ runs `check:root`.
   directory. A bare `Authorization: Bearer` with no token counts as no key (2026-10-10,
   `presentsCredential` in `routes/mcp.ts`): Docker's MCP gateway templates the header for every
   Toolkit user and sends it empty until a key is pasted; a token after the scheme is still
-  validated. The Toolkit's own OAuth registers clients by RFC 7591, which the Worker does not
-  offer (CIMD only; queued), so the Docker MCP Catalog entry (`docs/docker-mcp-catalog/`) ships
-  keyless + optional key. KV rate limiters fail open on KV errors.
+  validated. The Docker MCP Catalog entry (`docs/docker-mcp-catalog/`) ships keyless + optional key;
+  its `oauth` block is a second PR once the Worker's dynamic registration (below) is live and the
+  entry listed. KV rate limiters fail open on KV errors.
   **Lazy OAuth** (2026-09-30, `src/auth/oauth.ts` + `src/routes/oauth.ts`, migration 0013
   `oauth_grants`): Claude, Cursor and ChatGPT start sign-in only on an HTTP 401 with
   `WWW-Authenticate: Bearer resource_metadata=…` (a 200 tool error never does), so the Worker
@@ -251,6 +251,21 @@ runs `check:root`.
   apps, redirect `https://claude.ai/api/mcp/auth_callback`) and
   `https://claude.ai/oauth/claude-code-client-metadata` (Claude Code, port-less loopbacks), both
   verified through the relay on 2026-10-09; `/authorize` with either rendered the sign-in page live.
+  **Dynamic client registration** (2026-10-10, queue `oauth-dynamic-client-registration`, migration
+  0016 `oauth_clients`, v0.23.0): only Claude carries a client-id metadata document — Docker's MCP
+  gateway (`PerformDCR`: "no registration endpoint found"), Cursor, ChatGPT and VS Code register
+  by RFC 7591 — so `POST /register` (JSON in, 201 out, 10 a minute per IP) stores a public
+  client's name and 1–10 redirect URIs (https with a dotted host, or http loopback; auth method
+  `none`, code + PKCE, no secret issued) under a random `gkcl_<label>_<hex>` client_id and the
+  RFC 8414 document names `registration_endpoint`. The label is the host of the first https
+  redirect_uri, else the client_name slugified without dots (a loopback-only client cannot call
+  itself `claude.ai`), and it is what `clientHost` returns, so the consent page, the
+  `oauth:<label>` key and the funnel points work unchanged; the consent page adds that the client
+  registered itself and nobody verified who runs it. `/authorize` resolves a registered id first,
+  then CIMD (`resolveClient`); `/token` is untouched (the code row carries the client_id). Funnel
+  steps `registered` (detail loopback/https) and `register_rejected`. Registered clients with no
+  grant row are swept after 90 days with the expired grants. Proof: a `token` step for a client
+  host other than claude.ai within 30 days; the Docker entry's oauth block merged.
   **Agent-side sign-up** (2026-09-25, `src/auth/signup.ts`): the paywall's audience is
   agents that cannot click a magic link, so the two keyless tools `request_api_key`
   (user's email → approval email with a short code, RFC 8628-style) and `claim_api_key`

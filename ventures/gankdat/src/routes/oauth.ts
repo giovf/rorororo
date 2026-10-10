@@ -9,15 +9,19 @@ import {
   createAuthRequest,
   denyAuthRequest,
   exchangeAuthorizationCode,
-  fetchClientMetadata,
   isLoopbackRedirect,
+  isRegisteredClientId,
   oauthKeyName,
   OAUTH_SCOPE,
+  parseRegistration,
   protectedResourceMetadata,
   readAuthRequest,
   redirectUriAllowed,
   refreshAccessToken,
+  registerClient,
+  registrationResponse,
   REQUEST_ID_RE,
+  resolveClient,
   validateAuthorizeParams,
 } from '../auth/oauth';
 import type { AuthRequest, TokenResult } from '../auth/oauth';
@@ -27,8 +31,11 @@ import { isolateRateLimit, rateLimit } from '../metering/ratelimit';
 import type { AppEnv } from '../types';
 
 // OAuth 2.1 authorization server for the MCP endpoint (auth/oauth.ts has the
-// why). Three surfaces:
+// why). Four surfaces:
 //   discovery  — the two RFC 9728 documents and the RFC 8414 one, public JSON
+//   /register  — RFC 7591: a client POSTs its metadata (JSON) and gets a public
+//                client_id back; Docker's MCP Toolkit, Cursor, ChatGPT and VS Code
+//                sign in this way, Claude by CIMD (2026-10-10)
 //   /authorize — browser pages: sign-in (magic link, when there is no session),
 //                consent (when there is), both plain forms under the strict CSP
 //   /token     — form-urlencoded, PKCE, no client secret, JSON out, never cached
@@ -63,6 +70,8 @@ async function currentAccount(c: Context<AppEnv>): Promise<SignedIn | null> {
 
 /** One leg of the connect funnel, in the order a person walks them. */
 type FunnelStep =
+  | 'registered' // RFC 7591 /register issued a client_id (detail: the label it carries)
+  | 'register_rejected' // detail: <error>: <description>
   | 'authorize' // a valid request was created (client document and redirect_uri verified)
   | 'authorize_rejected' // detail: bad_query | unknown_client | redirect_not_allowed | <protocol error>
   | 'signin_shown' // no session: the magic-link form (detail: new | continue | decision)
@@ -139,10 +148,16 @@ function checkEmailPage(req: AuthRequest, email: string): string {
 
 function consentPage(req: AuthRequest, account: SignedIn): string {
   const host = clientHost(req.clientId);
+  // A CIMD client's host is verified (its document lives there); a registered client only
+  // said who it is, so the page says so and leans on the redirect line below.
+  const selfRegistered = isRegisteredClientId(req.clientId)
+    ? `<p class="warn">${escapeHtml(host)} registered itself with gankdat; nobody has verified who runs it. Approve only if you just started this from that app.</p>`
+    : '';
   return page(
     'Approve connection',
     `<h1>Connect gankdat to ${escapeHtml(host)}</h1>
 <p>Signed in as <strong>${escapeHtml(account.email)}</strong> (${escapeHtml(account.plan)} plan).</p>
+${selfRegistered}
 <ul>
 <li><strong>${escapeHtml(host)}</strong> will be able to query datasets and change feeds using your plan's credits (scope <code>${OAUTH_SCOPE}</code>).</li>
 <li>It cannot see or manage your keys, billing or email.</li>
@@ -208,6 +223,7 @@ const authorizeLoginRateLimit = rateLimit({
 });
 
 const AUTHORIZE_LIMIT = 30;
+const REGISTER_LIMIT = 10; // a client registers once; a burst is a scanner
 const TOKEN_LIMIT = 300; // refreshes arrive from Claude's shared egress range
 
 function ipLimited(c: Context<AppEnv>, scope: string, limit: number): Response | null {
@@ -224,6 +240,33 @@ export const oauthRoutes = new Hono<AppEnv>()
   .get('/.well-known/oauth-protected-resource', (c) => c.json(protectedResourceMetadata(c.env)))
   .get('/.well-known/oauth-protected-resource/mcp', (c) => c.json(protectedResourceMetadata(c.env)))
   .get('/.well-known/oauth-authorization-server', (c) => c.json(authorizationServerMetadata(c.env)))
+  // RFC 7591 §3: JSON in, 201 + the registered metadata out, 400 + {error} otherwise.
+  // Open registration (no initial access token), public clients only, no secret issued:
+  // a registered client can do nothing a CIMD client cannot, and the user still approves
+  // every connection on the consent page, which says the client named itself.
+  .post('/register', async (c) => {
+    const limited = ipLimited(c, 'oauth:register', REGISTER_LIMIT);
+    if (limited) return limited;
+    let body: unknown;
+    try {
+      body = await c.req.json();
+    } catch {
+      body = null;
+    }
+    const parsed = parseRegistration(body);
+    if ('error' in parsed) {
+      funnel(c, 'register_rejected', null, `${parsed.error}: ${parsed.description}`);
+      return c.json({ error: parsed.error, error_description: parsed.description }, 400, noStore);
+    }
+    const client = await registerClient(c.env, parsed);
+    funnel(
+      c,
+      'registered',
+      client.clientId,
+      client.redirectUris.some(isLoopbackRedirect) ? 'loopback' : 'https',
+    );
+    return c.json(registrationResponse(client), 201, noStore);
+  })
   .get('/authorize', async (c) => {
     const limited = ipLimited(c, 'oauth:authorize', AUTHORIZE_LIMIT);
     if (limited) return limited;
@@ -247,13 +290,13 @@ export const oauthRoutes = new Hono<AppEnv>()
     const q = parsed.data;
     // The client and its redirect_uri are verified BEFORE anything is sent to
     // that URI: an unverified redirect target never receives an error either.
-    const client = await fetchClientMetadata(c.env, q.client_id);
+    const client = await resolveClient(c.env, q.client_id);
     if (!client) {
       funnel(c, 'authorize_rejected', q.client_id, 'unknown_client');
       return c.html(
         errorPage(
           'Unknown client',
-          `${q.client_id} is not a valid client — the client_id must be an https URL serving a client metadata document whose client_id field equals that URL.`,
+          `${q.client_id} is not a valid client — the client_id must be one issued by POST /register (RFC 7591) or an https URL serving a client metadata document whose client_id field equals that URL.`,
         ),
         400,
       );

@@ -6,10 +6,13 @@
 //
 //   /.well-known/oauth-protected-resource[/mcp]   RFC 9728 — who issues tokens
 //   /.well-known/oauth-authorization-server       RFC 8414 — where /authorize + /token are
-//   /authorize   CIMD (draft-ietf-oauth-client-id-metadata-document): the
-//                client_id IS an https URL; we fetch it, check redirect_uri
-//                against the document, and render consent on the magic-link
-//                session. No client database, no dynamic registration.
+//   /register    RFC 7591 dynamic client registration (2026-10-10): Docker's MCP
+//                Toolkit, Cursor, ChatGPT and VS Code POST their metadata and get a
+//                random public client_id back (D1 `oauth_clients`, migration 0016).
+//   /authorize   a registered client_id is looked up; otherwise CIMD
+//                (draft-ietf-oauth-client-id-metadata-document): the client_id
+//                IS an https URL; we fetch it, check redirect_uri against the
+//                document, and render consent on the magic-link session.
 //   /token       PKCE S256, public clients only (token_endpoint_auth_method
 //                none), rotating refresh tokens, invalid_grant on replay.
 //
@@ -42,6 +45,13 @@ const TOKEN_CACHE_TTL_SECONDS = 60;
 
 const LOOPBACK_HOSTS = new Set(['localhost', '127.0.0.1', '[::1]']);
 
+/** A registered (RFC 7591) client_id: `gkcl_<label>_<32 hex>`, the label being its display host. */
+export const REGISTERED_CLIENT_PREFIX = 'gkcl_';
+const REGISTERED_CLIENT_RE = /^gkcl_([a-z0-9][a-z0-9.-]{0,63})_([a-f0-9]{32})$/;
+const MAX_REDIRECT_URIS = 10;
+/** A registered client with no grant row (no pending request, code or live token) this long is swept. */
+const CLIENT_IDLE_MS = 90 * 24 * 3600 * 1000;
+
 // ── Discovery documents ──────────────────────────────────────────────────
 
 export function resourceUrl(env: CloudflareBindings): string {
@@ -68,8 +78,8 @@ export function protectedResourceMetadata(env: CloudflareBindings): Record<strin
 /**
  * RFC 8414. Claude picks CIMD only when BOTH `client_id_metadata_document_supported`
  * and `"none"` in `token_endpoint_auth_methods_supported` are present (its CIMD
- * client is a public client); otherwise it looks for a registration endpoint we
- * do not have.
+ * client is a public client); every other client looks for `registration_endpoint`
+ * (Docker's gateway fails with "no registration endpoint found" without it).
  */
 export function authorizationServerMetadata(env: CloudflareBindings): Record<string, unknown> {
   const base = publicBaseUrl(env);
@@ -84,6 +94,7 @@ export function authorizationServerMetadata(env: CloudflareBindings): Record<str
     token_endpoint_auth_methods_supported: ['none'],
     code_challenge_methods_supported: ['S256'],
     client_id_metadata_document_supported: true,
+    registration_endpoint: `${base}/register`,
     service_documentation: `${base}/docs#claude`,
   };
 }
@@ -108,6 +119,8 @@ export interface ClientMetadata {
   clientId: string;
   redirectUris: string[];
   clientName: string | null;
+  /** `cimd`: the host of the client_id URL is verified; `registered`: the client named itself. */
+  kind?: 'cimd' | 'registered';
 }
 
 /**
@@ -133,9 +146,209 @@ export function parseClientId(clientId: string): URL | null {
   return url;
 }
 
-/** What the consent screen names as the asking app: the client_id URL's host, never the self-asserted client_name. */
+/**
+ * What the consent screen names as the asking app: the client_id URL's host for a CIMD
+ * client, never the self-asserted client_name; for a registered client the label its
+ * client_id carries (the host of its first https redirect_uri, else its name slugified
+ * without dots, so a loopback-only client cannot call itself `claude.ai`).
+ */
 export function clientHost(clientId: string): string {
+  const registered = REGISTERED_CLIENT_RE.exec(clientId);
+  if (registered) return registered[1]!;
   return parseClientId(clientId)?.hostname ?? 'unknown client';
+}
+
+export function isRegisteredClientId(clientId: string): boolean {
+  return REGISTERED_CLIENT_RE.test(clientId);
+}
+
+// ── Dynamic client registration (RFC 7591) ───────────────────────────────
+
+export interface Registration {
+  clientName: string | null;
+  redirectUris: string[];
+}
+
+export type RegistrationError = {
+  error: 'invalid_redirect_uri' | 'invalid_client_metadata';
+  description: string;
+};
+
+/**
+ * A redirect_uri a registering client may claim: https with a real dotted
+ * hostname (no IP literal, credentials or fragment), or an http loopback for a
+ * native app (RFC 8252 §7.3; the port is ignored at authorize time).
+ */
+export function validRedirectUri(value: string): boolean {
+  let url: URL;
+  try {
+    url = new URL(value);
+  } catch {
+    return false;
+  }
+  if (url.hash !== '' || url.username !== '' || url.password !== '') return false;
+  if (url.protocol === 'http:') return LOOPBACK_HOSTS.has(url.hostname);
+  if (url.protocol !== 'https:') return false;
+  const host = url.hostname;
+  if (LOOPBACK_HOSTS.has(host) || host.startsWith('[') || /^\d+\.\d+\.\d+\.\d+$/.test(host)) {
+    return false;
+  }
+  return host.includes('.');
+}
+
+const ALLOWED_GRANT_TYPES = new Set(['authorization_code', 'refresh_token']);
+
+/** Validate an RFC 7591 request body: public clients, code + PKCE, 1–10 redirect URIs. */
+export function parseRegistration(body: unknown): Registration | RegistrationError {
+  if (typeof body !== 'object' || body === null || Array.isArray(body)) {
+    return { error: 'invalid_client_metadata', description: 'a JSON object is required' };
+  }
+  const b = body as Record<string, unknown>;
+  if (!Array.isArray(b.redirect_uris) || b.redirect_uris.length === 0) {
+    return {
+      error: 'invalid_redirect_uri',
+      description: 'redirect_uris must list at least one URI',
+    };
+  }
+  if (b.redirect_uris.length > MAX_REDIRECT_URIS) {
+    return {
+      error: 'invalid_redirect_uri',
+      description: `at most ${MAX_REDIRECT_URIS} redirect_uris`,
+    };
+  }
+  const redirectUris: string[] = [];
+  for (const uri of b.redirect_uris) {
+    if (typeof uri !== 'string' || uri.length > 2048 || !validRedirectUri(uri)) {
+      return {
+        error: 'invalid_redirect_uri',
+        description: `${typeof uri === 'string' ? uri.slice(0, 200) : 'a redirect_uri'} must be an https URL with a hostname, or an http loopback (127.0.0.1, [::1], localhost)`,
+      };
+    }
+    if (!redirectUris.includes(uri)) redirectUris.push(uri);
+  }
+  if (b.token_endpoint_auth_method !== undefined && b.token_endpoint_auth_method !== 'none') {
+    return {
+      error: 'invalid_client_metadata',
+      description: 'public clients only: token_endpoint_auth_method must be "none" (PKCE)',
+    };
+  }
+  if (b.grant_types !== undefined) {
+    const grants = Array.isArray(b.grant_types) ? b.grant_types : null;
+    if (
+      !grants ||
+      !grants.includes('authorization_code') ||
+      grants.some((g) => !ALLOWED_GRANT_TYPES.has(g as string))
+    ) {
+      return {
+        error: 'invalid_client_metadata',
+        description: 'grant_types must be authorization_code, optionally with refresh_token',
+      };
+    }
+  }
+  if (b.response_types !== undefined) {
+    const types = Array.isArray(b.response_types) ? b.response_types : null;
+    if (!types || types.some((t) => t !== 'code')) {
+      return { error: 'invalid_client_metadata', description: 'response_types must be ["code"]' };
+    }
+  }
+  const clientName =
+    typeof b.client_name === 'string' && b.client_name.trim() !== ''
+      ? b.client_name.trim().slice(0, 80)
+      : null;
+  return { clientName, redirectUris };
+}
+
+/**
+ * The label a registered client_id carries, which the consent page and the `oauth:<label>`
+ * key name show: the host of the first https redirect_uri (the one party that actually
+ * receives the code), else the client_name slugified without dots, else `local-app`.
+ */
+export function registeredClientLabel(reg: Registration): string {
+  for (const uri of reg.redirectUris) {
+    try {
+      const url = new URL(uri);
+      if (url.protocol === 'https:') return url.hostname.toLowerCase().slice(0, 64);
+    } catch {
+      // validated already
+    }
+  }
+  const slug = (reg.clientName ?? '')
+    .toLowerCase()
+    .replaceAll(/[^a-z0-9]+/g, '-')
+    .replaceAll(/^-+|-+$/g, '')
+    .slice(0, 40);
+  return slug || 'local-app';
+}
+
+export interface RegisteredClient extends Registration {
+  clientId: string;
+  /** Epoch seconds, as RFC 7591 `client_id_issued_at`. */
+  issuedAt: number;
+}
+
+export async function registerClient(
+  env: CloudflareBindings,
+  reg: Registration,
+): Promise<RegisteredClient> {
+  const clientId = `${REGISTERED_CLIENT_PREFIX}${registeredClientLabel(reg)}_${randomHex(16)}`;
+  const now = Date.now();
+  await env.DB.prepare(
+    'INSERT INTO oauth_clients (client_id, client_name, redirect_uris, created_at) VALUES (?1, ?2, ?3, ?4)',
+  )
+    .bind(clientId, reg.clientName, JSON.stringify(reg.redirectUris), now)
+    .run();
+  return { ...reg, clientId, issuedAt: Math.floor(now / 1000) };
+}
+
+/** RFC 7591 §3.2.1 response body: what was registered, no secret. */
+export function registrationResponse(client: RegisteredClient): Record<string, unknown> {
+  return {
+    client_id: client.clientId,
+    client_id_issued_at: client.issuedAt,
+    client_name: client.clientName ?? undefined,
+    redirect_uris: client.redirectUris,
+    token_endpoint_auth_method: 'none',
+    grant_types: ['authorization_code', 'refresh_token'],
+    response_types: ['code'],
+    scope: OAUTH_SCOPE,
+  };
+}
+
+export async function readRegisteredClient(
+  env: CloudflareBindings,
+  clientId: string,
+): Promise<ClientMetadata | null> {
+  if (!isRegisteredClientId(clientId)) return null;
+  const row = await env.DB.prepare(
+    'SELECT client_name, redirect_uris FROM oauth_clients WHERE client_id = ?1',
+  )
+    .bind(clientId)
+    .first<{ client_name: string | null; redirect_uris: string }>();
+  if (!row) return null;
+  let redirectUris: unknown;
+  try {
+    redirectUris = JSON.parse(row.redirect_uris);
+  } catch {
+    return null;
+  }
+  if (!Array.isArray(redirectUris)) return null;
+  return {
+    clientId,
+    redirectUris: redirectUris.filter((u): u is string => typeof u === 'string'),
+    clientName: row.client_name,
+    kind: 'registered',
+  };
+}
+
+/** The client behind a client_id, however it was established: registered row first, else CIMD. */
+export async function resolveClient(
+  env: CloudflareBindings,
+  clientId: string,
+): Promise<ClientMetadata | null> {
+  if (isRegisteredClientId(clientId)) return readRegisteredClient(env, clientId);
+  if (clientId.startsWith(REGISTERED_CLIENT_PREFIX)) return null;
+  const cimd = await fetchClientMetadata(env, clientId);
+  return cimd ? { ...cimd, kind: 'cimd' } : null;
 }
 
 const clientCacheKey = async (clientId: string): Promise<string> =>
@@ -552,6 +765,10 @@ async function issueTokenPair(
     // Sweep: anything a day past its expiry (a used refresh token must outlive
     // its expiry only long enough for replay detection, which this keeps).
     env.DB.prepare('DELETE FROM oauth_grants WHERE expires_at < ?1').bind(now - 86_400_000),
+    // ...and registered clients that never came back: no grant row at all and 90 days old.
+    env.DB.prepare(
+      'DELETE FROM oauth_clients WHERE created_at < ?1 AND client_id NOT IN (SELECT client_id FROM oauth_grants)',
+    ).bind(now - CLIENT_IDLE_MS),
   ]);
   return {
     access_token: access,

@@ -147,9 +147,10 @@
           <td>You connect gankdat from an AI client such as Claude</td>
           <td>
             The sign-in request, authorization code, access token (1 hour) and refresh token (30
-            days) are stored only as SHA-256 hashes, together with the client's identifier (a URL)
-            and the key on your account they act through. Revoking that key at /account ends the
-            connection; expired tokens are deleted within a day.
+            days) are stored only as SHA-256 hashes, together with the client's identifier (a URL,
+            or the id of a client that registered itself with its name and redirect addresses — no
+            personal data) and the key on your account they act through. Revoking that key at
+            /account ends the connection; expired tokens are deleted within a day.
           </td>
         </tr>
         <tr>
