@@ -255,7 +255,7 @@ closed entries older than 30 days (git keeps the history).
   when its item lands) Claude flips the repo to private. No new account, no money. — Done 2026-10-10 (interactive): done by the owner 2026-10-04 (directory submitted, both privacy URLs moved); the Cloudflare budget alert is superseded by the 2026-10-10 invoice entry
 - 2026-09-30 owner: ReadFocus is ready for **the same 2-minute dashboard edit** as Highlight Keep — Chrome Web Store →
   ReadFocus (`dckbdaplggmhimpbekhdbaampglfhdgf`) → Privacy tab → privacy policy URL `https://apps.gankdat.com/privacy.html` →
-  Save → Submit. Both extensions in one dashboard visit; then Claude flips the repo private. No new account, no money.
+  Save → Submit. Both extensions in one dashboard visit; then Claude flips the repo private. No new account, no money. — Done 2026-10-10 (interactive): done by the owner 2026-10-04 (both privacy URLs moved; repo flip waits on the Actions-minutes measurement, not_before 2026-10-12)
 - 2026-10-01 owner: GitHub emailed that the **Claude GitHub App is requesting updated/additional permissions** on the
   giovf account (installation 163075240). Review and accept or ignore at
   https://github.com/settings/installations/163075240/permissions/update — only the owner's GitHub identity can approve
