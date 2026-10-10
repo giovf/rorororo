@@ -72,6 +72,26 @@ export interface StatsSpec {
 }
 
 /**
+ * An on-demand dataset (2026-10-07, uk-company-profiles): the register is far
+ * too large to mirror, so a record is read from the origin when a request
+ * names it — by one of the `keys` query params — and cached in KV per key.
+ * Lookup sources are never refreshed by the cron waves and have no change
+ * feed; `fetchFresh` returns the bundled sample records so the schema checks
+ * (Blind Mode, Apify) see what the source produces. The generic engine lives
+ * in `lookup.ts`; everything origin-specific stays in the source file.
+ */
+export interface LookupSpec<TRecord = unknown> {
+  /** Query params that identify one record; a request must present at least one. */
+  keys: readonly string[];
+  /** Example args for docs, llms.txt and the directory conformance test, e.g. { company_number: '00000006' }. */
+  example: Readonly<Record<string, string>>;
+  /** How long a looked-up record (or a confirmed miss) stays cached in KV. */
+  cacheTtlSeconds: number;
+  /** Read one record from the origin by the presented key(s); null when the origin has no such record. */
+  fetchOne(env: CloudflareBindings, params: Record<string, unknown>): Promise<TRecord | null>;
+}
+
+/**
  * One dataset behind the platform. Everything dataset-specific lives in the
  * implementing file + a registry entry (CLAUDE.md isolation rule).
  *
@@ -120,6 +140,8 @@ export interface DataSource<TRecord = unknown> {
    * `/v1/changes/<slug>` (task 51). Sources without a stable id have no feed.
    */
   idOf?(record: TRecord): string;
+  /** On-demand lookup by key (see LookupSpec); such a source has no snapshot, refresh or feed. */
+  lookup?: LookupSpec<TRecord>;
   /** Pull fresh records from the origin (called by cron refresh / cache miss). */
   fetchFresh(env: CloudflareBindings): Promise<TRecord[]>;
   /**

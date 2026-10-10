@@ -24,7 +24,7 @@ so the real figure is unconfirmed until the 10-10 invoice (review 2026-W40, §7 
 | **Change feeds** (`/v1/changes`) | grant-makers, KYB, recruiters | no competitor offers an official-source delta feed | inside plans; upsell later | none |
 | Browser extensions (ReadFocus, Highlight Keep) | consumers | rivals abandoned; low ticket | US$12 one-off | none, but small |
 | Figma plugin (Variables Toolkit) | designers | paid rivals with gaps | one-off | none |
-| **Agent directories** (Claude Connectors Directory; MCP Registry, mcpservers.org, Glama already) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30) |
+| **Agent directories** (Claude Connectors Directory; MCP Registry, mcpservers.org, Glama already; Docker MCP Catalog entry built 2026-10-10, PR on the handoff list) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30); ~40k keyless calls and no payer from the five live directories by 2026-10-07 |
 
 ## 3. Unit economics (what has to be true)
 
@@ -582,3 +582,391 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   taken from the rival's public source, not guessed. Why: the one concrete "bring your highlights" argument against a free rival with
   200k users whose own help page admits lost highlights are lost; distribution before features, and the cheapest buildable item in
   the queue. Proof: ≥ 1 import named in a review or support mail within 60 days of 0.3.0 going live.
+- 2026-10-04 burn-down: `append-only-guard` built the same night it was queued — `npm run runs` fails when `docs/RUNS.md` or
+  `docs/STRATEGY.md` has fewer dated lines than the floor in `docs/ops/RUNS-COUNT.json` (raised in place as the files grow), and
+  the notifier caps one push at 40 run bullets. Why: the 20:39 overwrite passed CI and would have cost the owner 470 phone
+  messages on restore; both files are the operation's memory and its only report to the owner. Proof: a deliberate shrink fails the
+  check (tested); no further whole-file write reaches `main` unnoticed.
+- 2026-10-04 burn-down: `comparison-page-2026-rivals` built — the Weava-alternative page now compares against Web Highlights
+  (200k users, free offline, subscription for sync) and Marqly (1k users, account required, $72/year after a $49 first year),
+  the two names Google shows for the query, with facts read from their own pricing/FAQ pages through the relay. Why: a reader
+  arriving from that search found our table missing both; the one-time-vs-subscription argument is now stated against every
+  rival on the results page. Web Highlights' dollar prices are client-rendered and unverifiable from HTML, so the page names
+  the model and the trial, not a figure. Proof: Search Console impressions ≥ 50 at the 2026-10-30 review.
+- 2026-10-04 burn-down: ReadFocus research pass (starved queue) — four scored items added: Dyslexly and Half Bold columns on the
+  comparison page, a reading-ruler search-capture page, an AlternativeTo/Product Hunt listing (owner account, blocked) and Firefox
+  for Android compatibility (score 2, no demand evidence yet). Why: the 2026 rivals a searcher sees are free and local, so the
+  one-time-price argument does not carry; what ReadFocus can still say is PDF reflow, paragraph focus and bold strength, and the
+  cheapest way to say it is on the pages the search already reaches. A free companion extension was considered and not queued
+  (Half Bold and Dyslexly already own the free slot; repetitive-content risk on the store).
+- 2026-10-04 burn-down: read-focus `comparison-page-2026-rivals` built the same night it was queued — Half Bold (10k users,
+  free, no PDFs) and Dyslexly (271 users, free toolkit with ruler and PDF reader) now sit in the ReadFocus comparison table with
+  facts from their own site and listings; where they win the page says so. Why: they are what the search shows today, and a
+  page that omits them reads as stale; ReadFocus's case is narrowed to the three things they lack. Proof unchanged: page
+  impressions ≥ 50 at the 2026-10-30 review.
+- 2026-10-04 burn-down: read-focus `reading-ruler-page` built — a search-capture page for the ruler query, where 28k users sit
+  on three free tools that are abandoned, broken or asking for PDF, the one thing ReadFocus's 0.2.0 reader does. Why: the
+  cheapest remaining distribution item; same pattern as the two comparison pages; honest about the band's missing controls.
+  Proof: ≥ 30 impressions or ≥ 3 clicks at the 2026-10-30 review.
+- 2026-10-04 burn-down: read-focus `firefox-android-compat` built as 0.2.1 — the Firefox manifest carries `gecko_android`, the
+  popup fits a phone, the ruler and focus go where the finger taps, and the shortcut API (absent on Android) is guarded. Why:
+  the last buildable ReadFocus item; AMO's Android home page is a free shelf that needs no new account; the sandbox cannot run
+  Firefox for Android, so the proof is the AMO API's compatibility field and Android installs at the day-30 review, where the
+  item is dropped if none show. Ships with the next AMO sign, after 0.2.0 clears review.
+- 2026-10-04 burn-down: foundry research pass (pipeline starved after the last ReadFocus item) — three scored ops items
+  queued from tonight's own run: the extension e2e fails first time in the sandbox (Playwright build mismatch, root check never
+  runs it), a `doing` item is invisible to `pipeline next` (actions-minutes hid behind a starvation report), and the paid-tier
+  e2e sections skip on every cloud run for want of the signing key. Why: each cost or hid work tonight and would again; all three
+  are small, repo-only, and raise the chance that a shipped extension version is actually tested. No exchange pre-research:
+  the starved-queue rule takes precedence and the budget is spent.
+- 2026-10-05 burn-down: foundry `e2e-sandbox-browser` built — both extension e2e runners resolve the browser themselves
+  (CHROMIUM_PATH, then Playwright's own build, then the sandbox's `/opt/pw-browsers/chromium`) and say which, and Highlight
+  Keep's runner skips its pro section without the signing key instead of crashing, which it did on its first sandbox run
+  tonight. The burn-down and build prompts now run the venture's e2e after any extension `src/` change. Why: every cloud run
+  paid a failed attempt or skipped the only test that drives the built extension, so a content-script regression could reach
+  main green; both e2e passed first time in the sandbox after the fix. Proof: no browser-mismatch line in RUNS.md in 30 days.
+- 2026-10-05 burn-down: foundry `pipeline-doing-visibility` built — queue items carry `doing_since`, `npm run pipeline` lists
+  every `doing` item, and one doing for more than a day with no future `not_before` is offered again by `next` as a cut-off
+  session's leftover; `actions-minutes` became `todo` with `not_before` 2026-10-12 so the hold is visible. Why: a score-7
+  item sat hidden while the slot reported starvation, and a half-started item could hide the same way for good. Deviation
+  from the item text: no time-based validation failure — that would turn the nightly check red by the clock alone, costing a
+  heal run; re-offering gives the same outcome. Proof: no queue holds an undated doing item older than a day in 30 days.
+- 2026-10-05 burn-down: foundry `e2e-pro-sections-test-key` built — a `--test` build without the production signing key
+  generates a throwaway Ed25519 pair, bakes its public half into the bundle through an esbuild define and leaves the private
+  half in the git-ignored test directory for the runner, so the paid halves of ReadFocus (sections 5–7) and Highlight Keep
+  (section 5) now pass in the sandbox with no `.env`. Why: the paid tier was the one part never exercised by any cloud run
+  that ships a version; the production key still never leaves `.env`, and the production bundles were checked to carry the
+  real key. Proof: no SKIP line for the pro sections in RUNS.md from now on.
+- 2026-10-05 burn-down: gankdat research pass (pipeline starved: every open item blocked or dated). Fourteen Daily numbers
+  rows say the funnel is wide at the top (1,400–1,900 keyless MCP calls a day, 54–117 previews) and zero at the bottom (0 paid,
+  0 keys, 0 OAuth connects), the change feeds — the one product no rival sells — have never been called, Apify is the only
+  shelf with outside runs, and §7's cost rule is tripped on D1 writes. Five items queued: change-feed mode on the Apify actors
+  (7), a three-row D1 write-rate read after the delta refresh (6, from 10-08), per-actor Apify runs in the metrics row (5),
+  IndexNow pings for the stats pages (5), and a keyless Atom feed per register (5). Why these: they put the differentiating
+  product where traffic already is or where no account is needed, and give the §7 rules readings; no new dataset — supply is
+  not the constraint. Evidence: `ventures/gankdat/RESEARCH.md` "Research 2026-10-05".
+- 2026-10-05 burn-down: gankdat `apify-change-feed-mode` built — the nine Apify actors whose register has a change feed take
+  `mode: changes` (+ `since`, `change`) and return only the rows added, removed or changed, with the same filters, so a daily
+  schedule on the Store is a register monitor paid per changed row. Why: Apify is the only shelf with runs from outside the
+  repo and the change feeds had never been called by anyone; the seven KV-backed actors have no stable id (the API 404s), so
+  they keep data mode only — a deviation from the item's "every actor". Proof: `changes 7d: … rest N` > 0 on ≥ 5 days in the
+  30 days after CI republishes the actors.
+- 2026-10-05 burn-down: gankdat `apify-runs-per-actor` built — the Daily numbers row names each Apify actor's 30-day runs
+  by other accounts and the zero-run actors. Why: the shelf total could not say which registers Apify users want, so the
+  exchange's quality-score pass had no trigger reading and §7's per-dataset rule had only the API side; first reading in the
+  2026-10-06 row, read by the 2026-W41 review.
+- 2026-10-05 burn-down: gankdat `indexnow-stats-pages` built — after every refresh wave the Worker tells IndexNow which
+  `/stats` pages (parent + facets, ~1,100 URLs) changed, proven by a key file it serves; the runner does the same for its
+  sources, and the Daily numbers row reads `indexnow: N urls <status>`. Why: the only indexing reading has been owner-blocked
+  since 09-20, and IndexNow needs no account yet feeds Bing, DuckDuckGo, Copilot and ChatGPT search — the shelves where
+  agents that "search like humans" find the cite-bait pages. Not a Google signal. Proof: 200/202 daily from the 10-06 row;
+  Bing `site:gankdat.com/stats` ≥ 50 pages at the 2026-11-05 read (`indexnow-day-30-read`).
+- 2026-10-05 burn-down: gankdat `change-feed-rss` built — every register dataset has a keyless Atom feed of its last 7 days
+  of changes (`/feeds/<slug>.xml`, plus one per facet value), linked from the stats pages, so feed readers and the RSS
+  triggers of Slack, Teams, Zapier, Make, n8n and Power Automate watch a register with no key and no connector; every
+  entry links the stats page and the key sign-up. Why: the change feeds — the one product no rival sells — had been
+  called by nobody because every path needed a key or an MCP client; this puts them on four automation shelves without
+  an account. Rendered on request once an hour (KV), not at refresh — no D1 cost for feeds nobody reads. Proof: ≥ 20
+  distinct user agents on /feeds in 30 days and a key issued with a /feeds referrer (`feeds 30d:` row note; 11-05 read).
+- 2026-10-05 build (09:00 run): pipeline starved (every open item blocked or dated), so the slot researched the
+  oldest queue, highlight-keep (`RESEARCH.md` 2026-10-05). Weava, the refugee pool the comparison page targets, is
+  still abandoned and both rivals that outrank us for "weava alternative" built a Weava import; the 2026-09-19 review
+  sample's unaddressed asks are every-site mode (3), iframe/shadow DOM (2) and export into a notes app (every rival
+  has one, ours is a clipboard copy). Queued: `import-weava-export` (6), `all-sites-mode` (4), `subframe-highlighting`
+  (4), `export-markdown-files-readwise-csv` (4), `import-glasp-hypothesis-exports` (3). Relay allowlist gained the
+  vendors' doc hosts so the parsers are written from real file layouts.
+- 2026-10-05 build (17:00 run): `import-weava-export` built (Highlight Keep 0.4.0) — the way across for the Weava refugees the
+  comparison page targets, which both rivals outranking us already offer. No sample file could be read (Weava's knowledge base
+  needs a login, its app host does not answer, the rivals' guides show only the dashboard steps), so the importer is header-driven:
+  page URL and highlight text required, note/title/folder/colour/date used when present, and any other file is refused naming
+  the headers seen — the comparison page asks refugees to mail the first line so the mapping is fixed from a real file, never a
+  guess. Ships with the 0.4.0 sign handoff (supersedes 0.3.0). Proof unchanged: a Weava import named in a review or support
+  mail within 60 days; comparison-page clicks → installs after the line lands.
+- 2026-10-05 burn-down (17:00 run): highlight-keep `all-sites-mode` (4) built — an opt-in "On for every site" switch in the
+  popup beside the per-site model: it requests the optional http/https host permission the manifest already declares
+  (asked once, from the click) and registers one content script for all of it; off again unregisters it. Why: the
+  largest unaddressed ask in the 2026-09-19 rival-review sample after PDF and login (Hypothesis ×2, Super Simple ×1:
+  "enable on every new website … annoying"). Per-site stays the default and the privacy stance; listing copy says so.
+  Ships inside the unreleased 0.4.0 (handoff amended). Proof: the setting named in a review or support mail; no store
+  policy flag on the next review. Built on the hourly burn while the 17:00 build slot took the Weava import.
+- 2026-10-05 burn-down (17:00 run, 2nd item): highlight-keep `subframe-highlighting` (4) built — the content script now runs
+  in every frame (`allFrames` on the registered scripts and on the one-off injection; a frame's highlights are keyed by
+  the frame's own URL, so restores find them), the text walk descends open shadow roots, a selection inside one is read
+  through `getComposedRanges` (Chrome's `root.getSelection()` as fallback) and marks in a shadow root get the mark
+  styles adopted into that root, which a content script's CSS never reaches. Why: the one gap named in otherwise-liked
+  rivals (Glasp, Super Simple) in the 2026-09-19 review sample; an embedded reader or a web-component page did nothing
+  before. Six e2e checks on a fixture iframe and shadow paragraph. Ships inside the unreleased 0.4.0. Proof: zero
+  iframe/shadow complaints in the first reviews.
+- 2026-10-05 burn-down (18:00 run): highlight-keep `export-markdown-files-readwise-csv` (4) built — the library downloads
+  one Markdown file per page (file-safe title name, YAML front matter: title, url, site, created, updated, highlights, tags) in a
+  zip written by a ~90-line store-only ZIP writer of our own (no dependency), and a CSV in Readwise's bulk-import columns
+  (Highlight, Title, Author, URL, Note, Location, Date; tags as Readwise inline `.tag` notes). Why: every rival a searcher
+  sees ships a path into a notes app and our 'exports to Markdown' was the clipboard; this is parity without an OAuth
+  integration, which would break 'no account, no sync server'. Columns verified through the relay (docs.readwise.io) and a
+  third-party copy of the import page; readwise.io/import_bulk itself needs a login. Ships inside the unreleased 0.4.0.
+  Proof: Readwise/Obsidian named in a review or support mail; listing conversions after vs before.
+- 2026-10-05 burn-down (18:00 run, 2nd item): highlight-keep `import-glasp-hypothesis-exports` (3) built — a Hypothesis
+  importer (its sidebar's JSON or CSV export; layout read from the Hypothesis client source, not guessed: TextQuoteSelector
+  exact/prefix/suffix become our anchor, the comment a note, tags come along, replies and page notes are skipped because
+  there are no words to anchor), and the header-driven .csv reader built for Weava now covers Glasp's CSV export too,
+  because Glasp documents the formats but not the columns; the refusal message names the headers so the first real file
+  fixes the mapping by mail. Why: the last unaddressed path in the 2026-10-05 research (rivals' users leave for privacy,
+  not data loss, so lower than Weava). Ships inside the unreleased 0.4.0. Proof: a Hypothesis or Glasp import named in a
+  review or support mail within 60 days of 0.4.0 going live.
+- 2026-10-05 burn-down (19:00 run): read-focus research (starvation fallback: every open item blocked on an owner account or
+  dated 10-30). The September review sample re-read by ask instead of by rival shows the asks ReadFocus still misses: ruler
+  colour/size/opacity four times across the three ruler tools (28k users), a background tint three times, Google Docs twice;
+  the BDA style guide gives the spacing and tint numbers every dyslexia suite ships and ReadFocus lacks. Four items queued:
+  `ruler-controls` (5, free, reverses the 10-04 "wait for a review" call because the reviews already exist),
+  `spacing-and-tint` (4), `read-aloud` (3, served standalone by a free extension so last) and `google-docs-publish-tip` (3,
+  Half Bold's own Publish-to-web workaround, given honestly). Features before distribution only because every
+  distribution item left needs the owner's identity; the 10-30 numbers still decide.
+- 2026-10-05 burn-down (19:00 run, 2nd item): read-focus `ruler-controls` (5) built as 0.3.0 — six colours (white for dark
+  pages), three heights, an opacity slider and lock-in-place (a locked band ignores the mouse and moves on a click or tap),
+  all free because every rival's ruler controls are free. Why: the asks were already in the September sample (four across
+  the three ruler tools, 28k users) and `reading-ruler.html` conceded the gap in print. Ships with the open sign-and-upload
+  handoff, amended from 0.2.1. Proof: a ruler review or support mail naming colour/size/opacity within 60 days.
+- 2026-10-05 burn-down (19:00 run, 3rd item): read-focus `spacing-and-tint` (4) built in 0.3.0 — a free wider-spacing switch
+  (line 1.5, letter 0.12em, word 0.16em on reading blocks only) and a pro page tint (cream or a pastel as one fixed multiply
+  layer, so nothing repaints per element). Why: the BDA style guide's basics that every dyslexia suite ships and ReadFocus
+  had none of; spacing free because rivals' is, tint in the unlock so the $12 buys one more visible thing. Proof: a review
+  or support mail naming spacing or the tint within 60 days; unlock conversions after vs before.
+- 2026-10-05 burn-down (19:00 run, 4th item): read-focus `read-aloud` (3) built in 0.3.0 — the browser's own voices, one
+  sentence at a time from the first block on screen, the sentence marked through the CSS Custom Highlight API so it sits
+  beside the bolding without touching the DOM; popup play/pause/stop and speed, shortcut Alt+Shift+A; in the unlock. Why:
+  every dyslexia suite ships it (Helperbird leads with it; Dyslexly free) and ours was the only one without; honest copy
+  that the voices are the computer's. Headless Chromium has no voices, so e2e proves the reply and the mark, not the
+  audio. Proof: a review or support mail naming read-aloud within 60 days; unlock conversions.
+- 2026-10-05 burn-down (19:00 run, 5th item): read-focus `google-docs-publish-tip` (3) built — the Publish-to-web
+  workaround on the comparison page (and Half Bold's cell corrected: its "integration guide" is the same workaround), the
+  ruler page, the ReadFocus page and the welcome tips, each keeping "cannot read the editor itself". Why: two Docs asks in
+  the sample and a rival's FAQ answering with exactly this; free to give, no claim of Docs support.
+- 2026-10-05 burn-down (20:00 run, research): variables-toolkit starvation research (RESEARCH.md §10). The day-10 search
+  bodies read as a market table: of 110 variables plugins indexed in 2026, the 101 free ones have a median 39 users and
+  the 9 paid ones 0 purchases between them (two subscriptions with 1,480 and 212 users included). Zero sales at day 30 is
+  therefore the shelf's norm for a paid newcomer, not a pricing signal — the day-30 rule now reads the free companion's
+  installs first. Forum demand (five threads) is relink in both directions; three items queued (how-to page 4, relink to
+  local 4, rank series 3). Foundry: relay-wait-loop (5) after the relay run sat queued 16+ minutes.
+- 2026-10-05 burn-down (20:00 run, 2nd item): foundry `relay-wait-loop` (5) built — the relay README and the five routine
+  prompts that read the relay now poll `origin/main` for the response commit for up to 20 minutes (and work meanwhile)
+  instead of `sleep 120`; the fetch-relay run this evening sat queued 16+ minutes with nothing else running, so a fixed
+  sleep read nothing. Proof: no unread-relay run-log line in 30 days.
+- 2026-10-05 burn-down (20:00 run, 3rd item): variables-toolkit `relink-howto-page` (4) built — a Google-facing how-to for
+  the forum's "variables broken after moving a file / swapping libraries" question, answered by the Relink tab with its
+  limits stated and the fact that it ships with the next published version. Why: five forum threads, no native fix, Search
+  Console already indexes the host. Proof: ≥ 20 impressions and ≥ 1 click by 2026-12-05.
+- 2026-10-05 burn-down: Variables Toolkit Relink tab gained the reverse direction (library → local variables), the Figma
+  forum's "remap library variables to local" request (44372, 48877, 11143) that only a third-party swap plugin answers.
+  Why: reuses the by-name planner and site walker, 0.5 days, rides the pending 019 republish at zero owner minutes. Proof:
+  ≥ 1 comment or purchase naming relink-to-local within 30 days of the version going live.
+- 2026-10-05 burn-down: three relink/swap/library search queries added to Variables Toolkit's rank series so the day-30
+  review (2026-10-21) reads the Relink tab's effect against a baseline, not a hand snapshot. Proof: three more rank:
+  fields on every Daily check row from 2026-10-06.
+- 2026-10-05 burn-down (22:00 run): foundry research, pipeline starved again (every open item blocked or dated). The day's
+  CI run list showed one push run in three ending `cancelled` after exactly 15 minutes with no steps — never picked up by a
+  runner — while no push workflow carries a concurrency group, so each burn-down push stacked six more runs behind the dead
+  ones; the check gate skipped three commits, the relay run never ran, and the triage logged all 21 mails with an invented
+  cause. Three items queued: concurrency groups + relay re-fire (6), a committed pre-push hook against the three red gates
+  in two days (6), and a triage sentence that logs GitHub's reason and files a repeat as an item (4). Evidence added to
+  `actions-minutes`. Proof: push runs cancelled unstarted under 5% over a week; zero format-red gates in 30 days.
+- 2026-10-05 burn-down (22:00 run, 2nd item): foundry `ci-runs-never-acquired` (6) built — the five push workflows that stacked
+  behind dead runs now cancel their own older run when a newer commit arrives (per event and ref, so cron runs are safe),
+  and a relay run cancelled unstarted is re-fired by `workflow_dispatch` instead of waited on. Why: 20 of 60 push runs
+  died unstarted this evening and each push queued six more. Proof: under 5% of push runs cancelled with no steps over a
+  week; no relay request unanswered beyond 20 min without a re-fire.
+- 2026-10-05 burn-down (22:00 run, 3rd item): foundry `pre-push-format-gate` (6) built — a committed pre-push hook, armed by
+  `npm ci` in every sandbox, re-checks Prettier and ESLint on the pushed files plus the run-log cap and pipeline files, so
+  an edit made after the long gate cannot turn `main` red (three times in two days). No new dependency, CI unaffected.
+  Proof: zero format or lint failures of `check` on main for 30 days.
+- 2026-10-05 burn-down (23:00 run, 1st item): foundry `triage-run-failed-reason` (4) built — the hourly triage now logs the
+  reason GitHub's run gives for a "Run failed" mail (a red gate with its failing step, a run cancelled unstarted, a run
+  superseded under a concurrency group) instead of a guessed one, and the third same-reason mail in a day files a foundry
+  item; `docs/ops/SELF-CAUSED.md` row 6 carries the same three readings. Why: 21 INBOX rows on 2026-10-05 named a cause
+  that never happened. Proof: over 14 days no INBOX row contradicts the run's job list; a 3× reason has an item the same day.
+- 2026-10-06 build (09:00 run): foundry research, pipeline starved again (next buildable 2026-10-08). Five ops items queued: the
+  gankdat gate spends 697 s re-migrating D1 before each of 384 tests and CI runs it twice per push (7); four idle burn-down
+  firings overnight each spent ~20 min to learn the pipeline was starved (6); the starvation fallback has no memory of what it
+  researched (6); eight owner asks open for up to six days with no reminder (4); task-master-ai MCP times out in every sandbox
+  (3). Proof: gankdat gate under 90 s; no idle burn-down lines; no venture researched twice in 48 h; owner asks under 7 days.
+- 2026-10-06 burn-down (17:00 run, 1st item): foundry `gankdat-test-setup` (7) built with a corrected premise — pool-workers 0.18 has
+  no isolated storage at all, and re-migrating D1 per test was not the cost: a single spec file spends ~20 s loading the whole
+  `src/index.ts` module graph (397 module-fallback requests, ajv via the MCP SDK most of them), 49 files three at a time = 260 s.
+  Delivered: migrations once per file + per-test table/KV emptying (test time 71 → 57 s, the per-test workerd exception gone), the
+  CI split (`check:root` in the root workflow, `gankdat.yml` the only gankdat gate per push — the month's two top minute consumers
+  overlapped on every gankdat push), the measurements in the item. The module-graph cost is a new item, `gankdat-test-module-graph`
+  (6), with five measured candidates. Proof unchanged: gate under 90 s; one gankdat run per push.
+- 2026-10-06 burn-down (17:00 run, 2nd item): foundry `research-cooldown` (6) built — every queue records `researched`, the day of its
+  last research run; for 48 h the starvation fallback skips it, the status lists it as cooling, and a starved pipeline whose every
+  queue is cooling tells the run to write one line and stop. Why: five research runs on 2026-10-05 and the next morning's build
+  was offered the same venture eleven hours later; the judgement "researched today" lived nowhere. Proof: no venture researched
+  twice within 48 h over 14 days; no research line that adds zero items.
+- 2026-10-06 burn-down (17:00 run, 3rd item): foundry `burn-starvation-gate` (6) built — `npm run pipeline cold`, plain Node over the
+  queue files and RUNS.md with no dependency on the built core, tells the burn-down before `npm ci` whether anything is buildable,
+  flagged, starved-but-not-cooling or the night's pre-research unspent; `starved-and-cooled` ends the run at once. Why: four
+  firings on the night of 2026-10-05/06 each spent ~20 min and two workflow runs to learn that. Proof: no burn-down run-log
+  line over 7 nights whose only content is a starved stop.
+- 2026-10-06 build (17:00 run): foundry `gankdat-test-setup` finished and `gankdat-test-module-graph` (6) done in the same push, built in
+  parallel with the burn-down and merged on top of its commits. The gankdat gate's cost was each of 49 spec files re-fetching ~2,600
+  modules through Vite, 1,194 of them viem via the x402 packages. Vitest's dependency optimizer pre-bundles them once the bundler
+  treats node built-ins as external (the burn-down's probe stopped at that error), and x402-hono/@coinbase/x402 load lazily on the
+  first lit request: suite 261 s → 80 s, whole gankdat gate 99 s, Worker cold start lighter. Lesson for the routines: two runs built
+  the same item at once (build 17:00 and burn-down 17:00); the slot marker covers the fallback, not the burn-down — see ops.
+- 2026-10-06 burn-down (18:00 run): foundry `owner-ask-digest` (4) built — `npm run handoffs` (now in `check:root`) generates
+  `docs/for-owner/OPEN.md`, the open owner asks ordered by the STRATEGY §5 score of the blocked queue items each unblocks divided
+  by the minutes it quotes, prints the median open age and, once any ask is older than 7 days, one plain `notify:` digest line that
+  the Monday report sends as its single phone line (count, oldest age, top ask); the retro records the median. Why: eight asks open,
+  oldest six days, each sent to the phone exactly once and never ordered or repeated. Proof: median open age under 7 days over a month.
+- 2026-10-06 burn-down (18:00 run, 2nd item): foundry `mcp-sandbox-timeout` (3) built — `.mcp.json` left the repo and is gitignored;
+  the Taskmaster guide and SETUP step 6 give the `claude mcp add --scope user` line for a machine that wants the server. Why: every
+  cloud session spawned `npx -y task-master-ai` and waited 30 s for its timeout (today 18:12 again) for a server no routine uses;
+  the placeholder keys leave the repo with it. Proof: no MCP connect timeout in a routine session for 14 days.
+- 2026-10-07 burn-down (00:00 run): gankdat research, pipeline starved again after the 10-05 pass cooled. The two rows since
+  show two of the three 10-05 distribution items not working as shipped: the Worker's IndexNow POSTs get 429 on every wave
+  (Bing throttles by source IP and Workers share egress; the GitHub runner's post got 200 the same morning) and the feeds
+  reading prints `n/a` with its reason swallowed; the trade-marks journal has logged no refresh since the delta refresh's
+  first night and eu-ted was throttled twice in six nights. Four items queued (7, 6, 4, 4); no product or pricing change —
+  the funnel readings are unchanged. D1 writes fell from ~6M to ~0.2M a day after the delta refresh (cost rule fix confirmed,
+  the 10-08 item records the rate). Proof: `indexnow: … 200` for 7 days; an ok journal row 3 nights running; feeds readable.
+- 2026-10-07 burn-down (00:00 run, 2nd item): gankdat `indexnow-from-runner` (7) built — the daily IndexNow submission is the metrics
+  workflow's runner step, not the Worker's wave-end ping: the runner reads which sources refreshed OK in the last 26 h and their stats
+  blobs from KV, POSTs every parent and facet page once from its own IP and leaves the result for the Daily numbers row. Why: Bing
+  throttles by source IP, Workers share egress, and every wave got 429 while the runner's post got 200. Proof: `indexnow: N urls 200`,
+  N ≥ 60, for seven days.
+- 2026-10-07 burn-down (00:00 run, 3rd item): gankdat `trademark-journal-silent-refresh` (6) built — the journal's refresh starts no
+  new issue download after six minutes; what is cached still loads and the window fills over later nights. Why: up to four 145 MB
+  issues a run took 13 min 42 s on 10-04 and the next two nights were killed before writing a row, the one dataset whose change
+  feed is weekly going dark unseen for two days. Proof: an ok row three nights running, stale reading gone by 10-09.
+- 2026-10-07 burn-down (00:00 run, 4th item): gankdat `feeds-reading-reason` (4) built — the feeds reading uses sumIf for the miss
+  share and carries the query's error text when it fails. Why: the first row after the keyless feeds shipped printed a bare `n/a`
+  and nothing in the repo said why; the ≥ 20 user-agent proof was unreadable. Proof: three figures or a reason in the 10-07 row.
+- 2026-10-07 burn-down (00:00 run, 5th item): gankdat `eu-ted-429-backoff` (4) built — a throttled TED page is retried with
+  Retry-After or a growing pause, at most two minutes inside wave 1. Why: 429 on two of six nights, each costing the EU half of
+  the bid-intelligence bundle a day of freshness. Proof: no eu-ted 429 in the refresh errors reading over 14 nights.
+- 2026-10-07 burn-down (00:00 run, 6th item): foundry `research-after-date` (5) built — a research run that finds no new evidence sets
+  `research_after` on the queue and the starvation fallback skips it until that date; highlight-keep, read-focus and variables-toolkit
+  now wait for their day-30 readings (10-30, 10-30, 10-21). Why: three research passes each in eight days on 0 users / 7 views, every
+  pass built out within a day; a fourth would have invented work. Proof: no venture researched twice without a changed metrics row in 30 days.
+- 2026-10-07 exchange: **gankdat — Companies House company lookup + monitor** (10.7 raw, 8.0 applied: evidence 4 ×
+  reach 4 ÷ 1.5 days, 0 owner minutes; Blind Mode keeps it organisation-level, so no director names, the incumbents'
+  hook). The relay's Apify Store read is the first measurement of which UK-register data Apify users pay for: every
+  category gankdat's 17 actors list in sits at the 2-user QA floor for every seller, while Companies House lookups have
+  13 paid actors at 5–168 users each (leader 47 users/30d, ~50k runs, US$0.80–4 per 1k) and none sells a monitor over
+  the buyer's own company list — which gankdat's change feeds already are. Docker MCP Catalog listing queued second (24
+  raw → 8: agent shelves have converted nobody, reviewer-gated; from 10-10). Foundry: Search Console API reading (7, unblocks
+  four dated reviews and five page proofs; owner step raised when the script ships). Parked: officer/PSC fields (ICO fee +
+  LIA), GeBIZ (evidence up, terms unread), /stats CSV checkout, Sheets add-on, Smithery, WuslaHQ reseller; quality-score
+  pass re-triggered on the Companies House read; relink marked promoted (built 10-04/05). Comparison:
+  `docs/exchange/2026-W41.md`.
+- 2026-10-07 build: **gankdat — Companies House lookup + monitor shipped** (`uk-company-profiles`, exchange W41 winner, 8.0).
+  The register is not mirrored: a new `DataSource.lookup` shape reads one company on request from the official API (≤ 4
+  calls, KV per key 24 h) — the first dataset the platform serves without a snapshot — and the Apify actor's changes mode
+  is the monitor nobody on the Store sells (baseline in its own key-value store, only added/changed/removed pushed). Blind
+  Mode held: no officers, individual PSCs dropped at ingest, filing codes not names. Proof per the queue: ≥ 5 Apify users
+  from other accounts and a changes-mode run in 30 days (`uk-company-lookup-day-30`, 11-07). Zero owner minutes.
+- 2026-10-07 burn-down: foundry `search-console-api-reading` (7) built — `scripts/search-console.ts` in the 06:45 store-metrics job
+  reads 7-day impressions/clicks per venture and URL-inspects the /stats, /stats/<slug> and landing comparison pages through a
+  read-only service account, writing `search: …` on every daily row (`n/a (<reason>)` until owner action 020 lands the key). Why:
+  three day-30 reviews and five page proofs read a Search Console number that had never reached the repo, and the gankdat indexing
+  item sat on an owner export since 09-28. Proof: a `search:` series on the rows for seven days; the 10-21 and 10-30 reviews read it.
+- 2026-10-07 build (17:00 run): **no item — collision with the evening burn-down.** Both routines took `next` = foundry
+  `search-console-api-reading` at 17:00/17:10 and built it in parallel; the burn-down pushed first (17:35), so this slot's
+  duplicate was discarded unpushed. Queued foundry `build-claim-marker` (5, 0.2 d): a one-line `doing` push right after
+  `next`, the slot marker's precedent, so the other session's `next` skips a claimed item. Why: the 2026-10-05 `doing` guard
+  never reaches `main` before the item's own commit under atomic pushes. Proof: no duplicate item build in 30 days.
+- 2026-10-07 burn-down (17:00 run, 2nd item): gankdat `refresh-uk-trademark-journal` (6) built — the journal's live generation
+  predates migration 0014, so each night since 10-05 started the "one last full reload" of 162k rows and was killed at the Cron
+  Trigger limit before writing a row (the 10-07 download budget could not help: no download was running). d1store now backfills
+  the missing hashes in place, resumably, with a `skipped` refresh_log row (migration 0015) when it hands the rest to the next
+  night, then runs the delta; an IPO "Page Not Found" served as 200 HTML is a missing issue. Why: the only weekly-cadence dataset
+  (watch services' core) had been three days stale and would have errored outright from 10-09. Proof: `ok` rows on three
+  consecutive nights and the journal absent from refresh errors for seven Daily numbers rows.
+- 2026-10-07 burn-down (17:00 run, 3rd item): foundry `build-claim-marker` (5) built — `npm run pipeline claim <venture>/<id>`
+  pushes the item's `doing` line before any work, so a concurrent session's `next` skips it; both routine prompts call it right
+  after `next`. Why: at 17:00 the burn-down and the daily build each built `search-console-api-reading` in full and the second
+  push was discarded — ~40 min of a Fable session lost to a guard that only existed locally. Proof: no two run-log groups for
+  one item id in 30 days.
+- 2026-10-07 burn-down: `npm run pipeline cold` now counts the night's exchange pre-research as spent only from an
+  `Exchange pre-research:` burn-down line stamped since the night's 17:00 UTC (`scripts/pipeline-cold.ts`). Why: the old
+  match (any line today or yesterday containing `pre-research`) was satisfied by each night's `Stopping: … pre-research
+  spent` line, so the one allowed pass ran once (10-05) and was silently skipped on 10-06 and 10-07. Proof: one
+  `Exchange pre-research:` line on every starved burn night from 2026-10-08.
+- 2026-10-08 burn-down: `d1-delta-cost-check` read — D1 writes 87.5M → 93.6M → 93.8M → 93.8M (10-04..10-07): the
+  in-place delta refresh cut ~6M writes a day to ~0.1M, so §7's cost rule is cleared from 10-06 on; the 09-10→10-10
+  invoice still carries ≈ US$44 ≈ £33 of writes (LEDGER planned row raised 31 → 33). No source swaps generations
+  nightly (all nine D1 sources have `idOf`); the journal backfill is the last one-off. Invoice check stays on 11-10.
+- 2026-10-08 burn-down (foundry research, pipeline starved): four operation fixes queued from tonight's own run — npm eats
+  `--by=<routine>` so every claim commit says (build); a `not_before` item is offered at 00:00 UTC, hours before the Daily
+  numbers row it was dated for; OPEN.md's generated-on date and day counts churn every commit; npm's update banner on every
+  command. Scores 4/4/3/2; the top two are built when they win.
+- 2026-10-08 burn-down: foundry `claim-by-npm-flag` (4) built — `npm run pipeline claim … --by=x` reached the script as the
+  env var `npm_config_by`, so tonight's first claim (61275b2) was committed as (build). `routineFrom` reads argv, then that
+  env var; the prompts show `-- --by=`. Proof: the next burn-down claim commit says (burn-down) — ebb112c already does.
+- 2026-10-08 burn-down: foundry `dated-items-wait-for-row` (4) built — an item dated `not_before` today is buildable from
+  07:00 UTC (after the 06:30/06:45 metrics rows), not from midnight, in `next`, the cold gate and `claim`. Why: tonight's
+  first fire read `d1-delta-cost-check` ("the 10-08 row") at 00:13 against the 10-07 rows; every day-30 reading is dated
+  the same way. Proof: the next dated reading's run-log line is stamped after 07:00 UTC.
+- 2026-10-08 burn-down: foundry `open-md-stable-render` (3) built — OPEN.md carries no date or day counts, so `npm run check`
+  rewrites it only when an ask opens, closes or its unblocked work changes; the ages stay in the `notify:` digest. Why: a
+  24-line date-only diff rode every routine commit (f8d9577 tonight). Proof: OPEN.md untouched by the gate on a quiet day.
+- 2026-10-08 burn-down: foundry `npmrc-update-notifier-off` (2) built — `.npmrc` `update-notifier=false` removes the five-line
+  npm version banner every routine filtered out of every command's output.
+- 2026-10-08 build: 09:00 slot — nothing buildable (every queue cooling, next dated item gankdat oauth-connect-funnel-check
+  2026-10-09); no research run, per the cooling rule. Read the Glama "HTTP 500" handoff: the 10-07 deploys are
+  green and nothing in the sandbox can reach /mcp, so queued gankdat `mcp-live-probe` (6) and, it being the top
+  score, built it: `scripts/mcp-probe.ts` runs in the metrics job and the Daily numbers row carries
+  `mcp probe: …`; a failed step lists `mcp-probe` under refresh errors so the repeat rule queues the fix. Why:
+  two incidents (09-19 Bot Fight Mode, 10-08 Glama 500) were found by directories, not by us.
+- 2026-10-08 build: 17:00 slot — nothing buildable (every queue cooling or waiting on dated evidence, next gankdat
+  `oauth-connect-funnel-check` 2026-10-09); no research run, per the cooling rule; the morning probe already answers
+  the Glama handoff for anonymous traffic, so nothing to add there.
+- 2026-10-09 burn-down (gankdat research, pipeline starved): the 10-07 journal fix left no row on 10-08 either (health 114 h);
+  the CQC 403 and Find a Tender 429 were transient (both refreshed the same morning, CQC 200 to a runner); IndexNow's
+  15 URLs are one per source because only the journal has facet pages. Queued wave-log-reading (5) so a killed wave's
+  Worker log reaches the row, uk-tenders-429-backoff (4), probe-key-from-runner (4); foundry: both GitHub crons fire
+  ~7 h late daily — move them off the half-hour (3).
+- 2026-10-09 burn-down: gankdat `wave-log-reading` (5) built — the metrics runner queries Workers observability for the
+  last 24 h of log lines of every source with no `ok` row in 26 h or an error row today and the Daily numbers row
+  carries each one's newest line; a wave killed at the Cron Trigger limit (no refresh_log row) is read instead of
+  guessed. Why: the journal's silent nights 10-05..10-08 cost two research passes and relays. Proof: the first
+  scheduled row names the journal's last log line (or the token scope to add).
+- 2026-10-09 burn-down: gankdat `uk-tenders-429-backoff` (4) built — Find a Tender's first throttled wave (10-08) now
+  retries like eu-ted instead of throwing on the first 429; proof: no uk-tenders 429 in the refresh errors over 14 nights.
+- 2026-10-09 burn-down: gankdat `probe-key-from-runner` (4) built — the metrics runner mints a key for the run under the
+  internal probe account through the D1 REST API, runs the authed MCP probe with it and deletes it, so the keyed path
+  (every paying client's) is read daily with no repository secret; why: the 10-08 row read `authed: n/a` and the
+  secret was an owner action. Proof: an authed probe reading on every Daily numbers row.
+- 2026-10-09 burn-down: foundry `metrics-crons-off-the-half-hour` (3) built — both daily metrics crons moved to `37 6`
+  and `52 6` because GitHub fired the half-hour slots 5–8 h late every day 10-03..10-08, so the runner-only steps
+  (uk-insolvency refresh, IndexNow, the MCP probe, the error filer) landed after the 07:00 routines had read the row;
+  a day-7 read (10-17) decides whether the push run must take over those steps.
+- 2026-10-09 build: gankdat `oauth-connect-funnel-check` (5) built — the relay walked every GET leg of the MCP OAuth hop
+  live (discovery, Claude's two real client documents, `/authorize` rendering the sign-in page for the hosted apps and
+  Claude Code); the POST legs no sandbox can drive now each write an `oauth_funnel` point, and the Daily numbers row reads
+  the funnel and the user agents behind the `connect_account` 401s, so "scanner or lost human" is a number on 10-10.
+- 2026-10-09 burn-down: exchange pre-research — VOA non-domestic rating list declined: the free weekly-updated downloads carry a
+  restricted NDR-purposes licence ("an open government licence does not apply", onward disclosure prohibited), the same category
+  as CCOD/OCOD and the FCA register; the one Apify rival ($0.60/1k, 2 users) resells it regardless. Trigger: the VO moves to the OGL.
+- 2026-10-09 build: gankdat `refresh-uk-trademark-journal-2026-10-09` (6) built — the first wave-log reading showed the 06:05
+  wave wrote no line at all, and the cause reproduced offline: the hash backfill's page UPDATE made SQLite walk all 162k
+  rows and scan the 2,000 entries for each (200 s a page), so the wave died before the budget check could write a row;
+  the entries are now a MATERIALIZED CTE probed by primary key (0.03 s a page, plan asserted in the spec), a throwing
+  backfill writes an error row and a long one hands the delta to the next night — a silent night is no longer possible.
+- 2026-10-10 burn-down: foundry research — GitHub fires this repo's crons 7 h late or not at all whatever the minute (the
+  06:37/06:52 move changed nothing on day 1), so the 07:00 routine will dispatch the metrics jobs itself (queued, 6);
+  the sandbox clone is `--depth 50`, which makes `git pull` refuse a plain fast-forward as divergence (3); and the
+  pipeline has ended starved every night since 10-05, so the build slot gains the day's pre-research pass (3).
+- 2026-10-10 burn-down: foundry `cron-drift-dispatch-row` (6) built — the 07:00 metrics routine now fires the two metrics
+  workflows by `workflow_dispatch` when the day's commit is missing and waits up to 10 min, because GitHub starts every
+  cron here ~7 h late whatever the minute while a dispatched run starts at once; proof: no `left no row` note from 10-11.
+- 2026-10-10 burn-down: foundry `sandbox-clone-unshallow` (3) built — every routine body now unshallows the depth-50 sandbox
+  clone first, because a days-old snapshot made `git pull` call a plain fast-forward a divergence and cut every `git log
+  --since` short; the stored bootstrap gains the same line at its next attended edit.
+- 2026-10-10 burn-down: foundry `build-slot-pre-research` (3) built — a build slot that finds the pipeline starved and cooled
+  now does the day's one exchange pre-research pass (gate `npm run pipeline cold -- --routine=build`, window from 07:00 UTC)
+  instead of idling, because the exchange was the only producer of new items and one candidate a night was the ceiling.
+- 2026-10-10 build: gankdat `docker-mcp-catalog-listing` (8) built to the sandbox's edge — the entry passed Docker's own
+  validator and ships keyless preview + optional key with no `oauth` block, because the Toolkit's OAuth needs RFC 7591
+  dynamic client registration and gankdat is CIMD-only (queued at 6: Cursor, ChatGPT and VS Code register the same way,
+  so the 2026-09-30 OAuth hop works for Claude alone); the MCP route now treats a bare `Bearer` header, which the Toolkit
+  sends until a key is pasted, as no key (v0.22.1). The fork PR itself needs a token this sandbox lacks (handoff), so a
+  third-party PR relay is queued (3).

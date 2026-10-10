@@ -30,18 +30,30 @@ const ALLOWED = [
   'chromewebstore.google.com',
   '.addons.mozilla.org',
   '.apify.com',
+  '.ico.org.uk',
   'registry.modelcontextprotocol.io',
+  'claude.ai', // Claude's public OAuth client metadata document (CIMD), read by the OAuth funnel walk
   '.glama.ai',
   '.mcpservers.org',
   '.gankdat.com',
   'ea-edubase-api-prod.azurewebsites.net',
   'ccewuksprdoneregsadata1.blob.core.windows.net',
+  'voaratinglists.blob.core.windows.net', // VOA non-domestic rating list downloads (exchange pre-research 2026-10-09)
   '.companieshouse.gov.uk',
   '.gamblingcommission.gov.uk',
   '.data.gov.uk',
   '.ons.gov.uk',
   '.hmrc.gov.uk',
   '.openstreetmap.org',
+  '.web-highlights.com',
+  '.marqly.com',
+  '.dyslexly.com',
+  'halfbold.vercel.app',
+  '.weavatools.com',
+  'weavatools.atlassian.net',
+  '.readwise.io',
+  '.glasp.co',
+  '.hypothes.is',
 ];
 
 function allowed(hostname) {

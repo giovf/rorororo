@@ -1,0 +1,874 @@
+{
+  "data": {
+    "total": 6258,
+    "count": 15,
+    "offset": 0,
+    "limit": 15,
+    "desc": false,
+    "items": [
+      {
+        "title": "Poland EKW Land Registry Scraper Ksiegi Wieczyste",
+        "name": "ekw-ksiegi-wieczyste-scraper",
+        "username": "regdata",
+        "stats": {
+          "totalBuilds": 87,
+          "totalRuns": 2103,
+          "totalUsers": 90,
+          "totalUsers7Days": 10,
+          "totalUsers30Days": 21,
+          "totalUsers90Days": 33,
+          "lastRunStartedAt": "2026-10-06T10:20:51.131Z",
+          "actorReviewCount": 3,
+          "actorReviewRating": 3.22326966592246,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 50,
+            "SUCCEEDED": 851,
+            "TIMED-OUT": 1,
+            "TOTAL": 904
+          }
+        },
+        "description": "Extract property data from Poland's Electronic Land Registry (Elektroniczne Ksiegi Wieczyste): ownership, mortgages, restrictions, property details. Keyless - no proxy or API key needed. For property due diligence and credit-risk checks. Pay per result.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/E-3yDbLXbYClzT1DHw2keYlJF5p3aqBCSEVCZoTizYI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMHVKUVZ6eVRmbnlwVHlPOG8tYWN0b3ItQ3RxZTVaWWkydDJjY2xoaW4tQWdPSE1JSzJxZC1la3ctaWNvbi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 3.223269665922459,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "getregdata",
+        "userPictureUrl": "https://images.apifyusercontent.com/d8RApraTOL_e2yvNuB8M2xkOmO4okE8CbkOElLKqXF4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcU9aMVRZTDRQZ1FWcHhhOC1ES3ZkdldCVk9XcWhOMmhtb3V5YWg2NE4xNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNSFZLVVZaNmVWUm1ibmx3VkhsUE9HOHRjSEp2Wm1sc1pTMDFTbFp2U1hSTmRETnVMV2RsZEhKbFoyUmhkR0V0Ykc5bmJ5MDBNREF1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "KW Extracted",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.005
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.025
+              }
+            }
+          },
+          "startedAt": "2026-04-11T15:38:55.901Z",
+          "createdAt": "2026-04-11T15:38:56.827Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Ctqe5ZYi2t2cclhin",
+        "url": "https://apify.com/regdata/ekw-ksiegi-wieczyste-scraper"
+      },
+      {
+        "title": "UK Land Registry Price Paid — Valuation & Deal Finder",
+        "name": "uk-land-registry",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 1053,
+          "totalUsers": 13,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T16:16:59.579Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 54,
+            "TIMED-OUT": 0,
+            "TOTAL": 54
+          }
+        },
+        "description": "Turn HM Land Registry Price Paid data into decisions: fair value, comparable sales, deal-check verdicts, market scores, repeat-sale growth, street rankings and below-market deal finding across England & Wales. Deterministic, no AI, free government data.",
+        "categories": [
+          "REAL_ESTATE",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/rxq-qAIAM7u0CPDCBWiZuPkKb-cYr8JE3O6j0zoNfeA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vczJGTTV1Rkg5RjJlWjRwWjktYWN0b3Itdm0zWmlOUGdRWkR0bVljdlAtMUFCZEZkSENVQS11ay1sYW5kLXJlZ2lzdHJ5LnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-03-13T20:41:31.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "record-fetched": {
+                "eventTitle": "Record fetched",
+                "eventDescription": "Charged per land registry price paid record retrieved.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-02-27T19:41:59.475Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-02-27T19:42:19.686Z"
+        },
+        "id": "vm3ZiNPgQZDtmYcvP",
+        "url": "https://apify.com/ryanclinton/uk-land-registry"
+      },
+      {
+        "title": "HK Land Registry Transactions — 土地註冊 API",
+        "name": "hk-land-registry-transactions",
+        "username": "nexgendata",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 166,
+          "totalUsers": 7,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-05T10:56:43.708Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Retrieve Hong Kong Land Registry property transactions where the source is available. Clean JSON for analysts and AI agents.",
+        "categories": [
+          "REAL_ESTATE",
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/_yyFFxI4c_j4MFOGggjci1EGZQ5hphDQIfkiiVBGudY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFFZaExmMkt1NllxeUNXYngtYWN0b3ItMkJKZ1BmaGVwSXJHT2IwRzAtQTNJcXcwRmV4SS1oay1sYW5kLXJlZ2lzdHJ5LXRyYW5zYWN0aW9ucy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGenData",
+        "userPictureUrl": "https://images.apifyusercontent.com/DFoEfAV1iSBokBNjpIZdoeMlxK2y6UEav2Se4BxUDrI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU5Nancta2JUQ2FFN3lQUTNGZnR1SHBQX0FoWkVNVlVFLTdfSVFOTjNzby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVRkZaYUV4bU1rdDFObGx4ZVVOWFluZ3RjSEp2Wm1sc1pTMXVSMmRzVGxZeU5VVkRMVzVuWkMxemRHRmphMlZrTFd4dlkydDFjQzFrWVhKckxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Two-tier cut sheet reduction (Steve order 2026-08-04): apify-default-dataset-item $0.15->$0.05",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true,
+                "isPrimaryEvent": false
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Dataset item",
+                "eventDescription": "Charged per HK Land Registry property transaction record returned",
+                "eventPriceUsd": 0.05,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-17T01:35:43.092Z",
+          "createdAt": "2026-08-04T20:00:14.362Z",
+          "startedAt": "2026-08-04T20:00:14.362Z"
+        },
+        "id": "2BJgPfhepIrGOb0G0",
+        "url": "https://apify.com/nexgendata/hk-land-registry-transactions"
+      },
+      {
+        "title": "UK Sold House Prices (HM Land Registry, official)",
+        "name": "uk-sold-property-prices",
+        "username": "plotbench",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 98,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-05T13:20:49.934Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Every recorded sale for any UK postcode (England & Wales) from HM Land Registry Price Paid Data: price, date, address, property type, new-build flag. Official open data, updated monthly, no key.",
+        "categories": [
+          "REAL_ESTATE"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Plotbench Studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/bGS_VbqABV4zhnzB9gfs44EUdVryNGyC8Aop_LJo6Sg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20venBVTVlYNVRYODlNNmEwUm1GVnQwUDRMM2VUakFPejR5SHhobHpvdFA3OC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNV1ZFVGpWd2VISnZOa2Q1Y2xOM2NWVXRjSEp2Wm1sc1pTMXNhV0pOUjJ4SU4zZDJMV3h2WjI4dE1TMXdiRzkwWW1WdVkyZ3RZWFpoZEdGeUxXbGpiMjR1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Flat fee per run.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02
+              },
+              "result": {
+                "eventTitle": "Sale record extracted",
+                "eventDescription": "One recorded property sale pushed to the dataset (price, date, full address, property type, tenure, new-build flag).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-17T23:44:48.327Z",
+          "createdAt": "2026-07-17T23:44:47.318Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Io6xHxGBobkmBukr7",
+        "url": "https://apify.com/plotbench/uk-sold-property-prices"
+      },
+      {
+        "title": "UK Sold House Prices - Land Registry Price Paid Data",
+        "name": "land-registry-price-paid",
+        "username": "devon_gtme",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 78,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T17:16:44.002Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 20,
+            "TIMED-OUT": 7,
+            "TOTAL": 27
+          }
+        },
+        "description": "Sold house prices for England & Wales from HM Land Registry Price Paid Data. Search by postcode, outcode or town; filter by date, price, type and new-build. Every transaction plus a comps summary (median, mean, min/max) per area. For agents, investors, analysts and valuations. No API key needed.",
+        "categories": [
+          "REAL_ESTATE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/k1tyVxrSYWTE65uGFKbiH6An2BGeihauAaHnqNnt__U/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vN1hnbkhkaUV5Qm1TczF3bGItYWN0b3ItYmhJZWhDVkVMRlFYejFyazEtMnlNNktkc3JJQi1sYW5kLXJlZ2lzdHJ5LXByaWNlLXBhaWQucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Devon Kellar",
+        "userPictureUrl": "https://images.apifyusercontent.com/ZP01WrfG-nT5lJbEj4pOZEyo7z9IeYhMjk3k2b3KEyU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSmU2TVZtNW5fUWFyQXU3R0lqcjktc0xQM0JESUQ3LVZfd0NySU1Sd21lcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOMWhuYmtoa2FVVjVRbTFUY3pGM2JHSXRjSEp2Wm1sc1pTMWFTbE0wYm1kc2VITjBMV2hsWVdSemFHOTBMbXB3WldjLmpwZWc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "record",
+                "eventDescription": "One HM Land Registry Price Paid sale record (address, price, date, property type).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-07-23T04:59:25.682Z",
+          "startedAt": "2026-07-23T04:59:25.682Z"
+        },
+        "id": "bhIehCVELFQXz1rk1",
+        "url": "https://apify.com/devon_gtme/land-registry-price-paid"
+      },
+      {
+        "title": "Land Registry Price Paid UK",
+        "name": "land-registry-price-paid-uk",
+        "username": "nocodeventure",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 155,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-06T04:56:54.831Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrapes the UK HM Land Registry Price Paid Data. Search by address, postcode, town or street and filter by date range, price, property type, and estate type. Covers residential property sales in England and Wales from 1995 onwards.",
+        "categories": [
+          "REAL_ESTATE",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/NJRbqJ7p_nV1R_5aRGq97I_ngTdbvqO1DK2Dmc601Qg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vejRjUG5lRm83MnhaSk01bnktYWN0b3ItQkVraHg0d3RXZXhTN2d3NjItdm10YXdEYkJJZC0zV1A5c29HNnVLdGtFUGJuVy1hY3Rvci1xdWVrZ3lBTjZEYWpDcGpIWS02WHNpSjc5R1BPLWdvdnVrLWxvZ290.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "No-Code Venture",
+        "userPictureUrl": "https://images.apifyusercontent.com/VnyJk2cDzQoJOyEP46s7c9I-uTnUxFZ0cNlBCsb_PTk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdklsTTZCc09XbkUtTVdZdV9sZEpUR2V4bmdVQjhicGpJbGh3eE5PeDI4TS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlalJqVUc1bFJtODNNbmhhU2swMWJua3RjSEp2Wm1sc1pTMTFhMmxIYlhKVmNuRkVMVTVmWlc1ZlZsOU1iMmR2WDBsdVgxcDNZWEowTFZkcGRGOGxNamd4SlRJNUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "land-registry-query": {
+                "eventTitle": "Land Registry Search",
+                "eventDescription": "Fired at the start of every request handler — once for the initial query and once for each pagination page.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              },
+              "retry-event": {
+                "eventTitle": "Retry event",
+                "eventDescription": "Once per retry attempt (up to maxRequestRetries = 3 per request).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.01
+              },
+              "event-proxy": {
+                "eventTitle": "Proxy",
+                "eventDescription": "Fired once at Actor startup when the user has configured Apify Proxy (standard tier, no group).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.15
+              },
+              "event-proxy-group": {
+                "eventTitle": "Proxy Group",
+                "eventDescription": "Fired once at Actor startup when the user has configured Apify Proxy with a named group (e.g. RESIDENTIAL, DATACENTER).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.225
+              }
+            }
+          },
+          "startedAt": "2026-05-14T12:00:51.556Z",
+          "createdAt": "2026-05-14T12:00:57.194Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "BEkhx4wtWexS7gw62",
+        "url": "https://apify.com/nocodeventure/land-registry-price-paid-uk"
+      },
+      {
+        "title": "UK Sold House Prices Scraper — Land Registry Price Paid",
+        "name": "uk-land-registry-scraper",
+        "username": "vladignatyev",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 146,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-05T13:32:57.736Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Download UK sold house prices (HM Land Registry Price Paid Data) as clean JSON, CSV or Excel — uncapped, by postcode, town, county or year, with a monthly monitor for new sales. Price, date, address, property type and tenure. The sold-price dataset for valuers, PropTech, investors and analysts.",
+        "categories": [
+          "REAL_ESTATE",
+          "INTEGRATIONS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/N3SWG_7oZL26Qa3EeCKWjRtqhxjpIC_0_nOJZCcQmyg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaFpkY2xtTjdIZUlQc0JHbW8tYWN0b3ItUFo5emFvc01VUXExdWkyb2stYVdSbWdtQzQ5QS1pY29uLWdiLTUxMi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Vladimir Ignatev",
+        "userPictureUrl": "https://images.apifyusercontent.com/wGRTxz1MkPs0yKfFPTzUmJObKzDZYbBo10pl7N4rxXc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZHQtZGJxQXQ0azctUHNmUTFKRmVfUEt1XzVETkplS3kzTVMwbUZCOWQ4SS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhRnBrWTJ4dFRqZElaVWxRYzBKSGJXOHRjSEp2Wm1sc1pTMUxSRUpuV2xWUFVtSllMV0YyWVMxMGNtbHVaMnd1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-06-03T20:25:09.851Z",
+          "createdAt": "2026-06-03T20:25:10.306Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "PZ9zaosMUQq1ui2ok",
+        "url": "https://apify.com/vladignatyev/uk-land-registry-scraper"
+      },
+      {
+        "title": "UK Sold House Prices | Official Land Registry Data",
+        "name": "uk-sold-house-prices",
+        "username": "alinz",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 37,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T05:24:34.299Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Real sold prices for UK property from HM Land Registry Price Paid Data - not asking prices. Search 31.5M official transactions by town, district, county or postcode, with date, price, property type, tenure and new-build flags. Includes quarterly market statistics.",
+        "categories": [
+          "REAL_ESTATE",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/QBvpgra4XK2NMepak1Rxv1IQyoj6dGPa9O3kqbIhiCo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQWV1UUtyNWpFSGRreEs5UDItYWN0b3ItWmVEazNQd2VrRWt5bTlheWQtZGR3Q0dMTlBYVC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "אלון זריהן",
+        "userPictureUrl": "https://images.apifyusercontent.com/x28sAiKpZnAzu5wqhPWpbd8aNqHvCWY2k6q_tTUx-zY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVV8xTGlYLVFPaUF6M284TnQzSmFkZzZEQmxMXzFSdzIwbEVXTjBnU2RISS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUR3RmTWtvNFkzZEdjbXhSVDB0TWEzaDNkV2RPTlZoQlVubHBiWGRMVHpWS09IQXlhRUZOYlVNMlVGSXRNa05CUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.02
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-30T15:57:56.215Z",
+          "createdAt": "2026-08-30T15:57:57.222Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ZeDk3PwekEkym9ayd",
+        "url": "https://apify.com/alinz/uk-sold-house-prices"
+      },
+      {
+        "title": "UK Land Registry Sold Prices",
+        "name": "uk-land-registry-sold-prices",
+        "username": "wildorigins",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 88,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T06:02:52.734Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "🏷️ From $0.60 / 1K | Sold house prices from HM Land Registry Price Paid Data, every residential sale in England and Wales since 1995. Filter by postcode, street, town, district, county, date window and price window.",
+        "categories": [
+          "REAL_ESTATE",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/toKorIl9DLQrt7LuEmia8-0SgOybCXLnxSvr4ceEw8I/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vejBKdktlamoxM2ZRRmdMbEEtYWN0b3ItY2hWblVVeE83MEs3dEtYSjctTFU4YVBHT2oyMS11ay1sYW5kLXJlZ2lzdHJ5LXNvbGQtcHJpY2VzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Wild Origins",
+        "userPictureUrl": "https://images.apifyusercontent.com/Zc8sA0Pbl_3wCm06Z-od0494gzkpsk7V2c1jmGTEO04/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQm5HVU5zaG5mdVZOOUtwaTVFZi12TmlyX1I0ck9HLU9JeUtuaVgwTTFEcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlakJLZGt0bGFtb3hNMlpSUm1kTWJFRXRjSEp2Wm1sc1pTMWhSREZ1ZFdKUGQyZ3hMWEJ5YjJacGJHVXRjR2xqZEhWeVpTMDNNakF1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-16T20:48:04.648Z",
+          "startedAt": "2026-08-16T20:47:55.785Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "sale-record": {
+                "eventTitle": "Sale",
+                "eventDescription": "Charged for each property sale returned.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00085
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0004
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-08-19T08:06:26.037Z"
+        },
+        "id": "chVnUUxO70K7tKXJ7",
+        "url": "https://apify.com/wildorigins/uk-land-registry-sold-prices"
+      },
+      {
+        "title": "UK Land Registry Sold Prices Scraper",
+        "name": "uk-land-registry-sold-prices-scraper",
+        "username": "devilscrapes",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 33,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T01:04:59.324Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Pull HM Land Registry Price Paid Data — every registered property sale in England and Wales — as flat, spreadsheet-ready rows. We flatten the nested linked-data envelope, convert dates to ISO-8601, and split addresses into BS7666 components. Filter by postcode, town, district, county, price or date.",
+        "categories": [
+          "REAL_ESTATE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/OWOoL2b9sHOQGj-TVdn5BN8UVXUvwAlNRwO4WWR9aIU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vVE9iWEhQUlpzb2t0MFNCUGUtYWN0b3ItRWVIWDhONkE3eGl0bnp0WVYtYTFES1FQU0x3ZS1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "DevilScrapes",
+        "userPictureUrl": "https://images.apifyusercontent.com/2sThxlwPh-1eu3WVnVJ3mpJKE6PaiB1ZYZLuK5Vnepw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZFJGejhXcmFtUUJZTE5hSmllR1VtaFdST2RqV0drQndZMFJTeWdLeGt1NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWRTlpV0VoUVVscHpiMnQwTUZOQ1VHVXRjSEp2Wm1sc1pTMTJiVTlJTjNsbFdHTkhMV1JsZG1sc2MyTnlZWEJsY3kxcFkyOXVMbk4yWnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricePerUnitUsd": 0.0001,
+          "minimalMaxTotalChargeUsd": 0,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Charged once when the Actor begins a run.",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "transaction-scraped": {
+                "eventTitle": "Transaction scraped",
+                "eventDescription": "Charged for each sold-price transaction row written to the dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-02T12:20:15.598Z",
+          "startedAt": "2026-09-02T12:20:15.598Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "EeHX8N6A7xitnztYV",
+        "url": "https://apify.com/devilscrapes/uk-land-registry-sold-prices-scraper"
+      },
+      {
+        "title": "UK Land Registry Prices Scraper",
+        "name": "uk-land-registry-prices-scraper",
+        "username": "muhammadafzal",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 101,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T00:34:50.057Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Filter official HM Land Registry Price Paid Data for England and Wales by postcode, location, date, price, property type, new-build status, tenure, category, and monthly record status. Returns one normalized sale record per dataset item.",
+        "categories": [
+          "REAL_ESTATE",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/iQlncFjqRjv2yYQ_TmIwEQQ1CVcvClvHpLDVIRJvjxc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdW1xSGw0TGhxbVBIY0JoMEwtYWN0b3ItZjJCNW5ZYnI5RklJWFAwV0UtWEwwdWZvZHVwdi1VS19MYW5kX1JlZ2lzdHJ5X1ByaWNlcy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhammad Afzal",
+        "userPictureUrl": "https://images.apifyusercontent.com/qyNOWf6DvGK-3ypCN8Nn3H7SSXQisiiQVeIRmrfpKYI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vam1jWUZudEFobWsySTVrbW9XUDJWNVlhSk5LMTgzWlFia3lfREtLUDZ3Zy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkVzF4U0d3MFRHaHhiVkJJWTBKb01Fd3RjSEp2Wm1sc1pTMWpUM294WVRrelIweGpMVTExYUdGdGJXVmtYMEZtZW1Gc1gwMWhiR2xyWDJrdFJsaFRhMUpNWkMxWU15NXFjR2MuanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-20T10:43:45.776Z",
+          "startedAt": "2026-09-20T10:43:45.458Z",
+          "reasonForChange": "Updated tiered event prices to recover measured platform usage and maintain a positive operating margin.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Property sale record",
+                "eventDescription": "One schema-valid HM Land Registry Price Paid Data record written to the default dataset.",
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00195
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0019
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0016
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.006251
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.006094
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005938
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.005
+                  }
+                }
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.01,
+          "notifiedAboutChangeAt": "2026-09-21T12:36:35.448Z"
+        },
+        "id": "f2B5nYbr9FIIXP0WE",
+        "url": "https://apify.com/muhammadafzal/uk-land-registry-prices-scraper"
+      },
+      {
+        "title": "HM Land Registry Price Paid Scraper (UK Sales)",
+        "name": "hm-land-registry-price-paid",
+        "username": "knotty_mistveil",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 22,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T22:46:57.800Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 19,
+            "TIMED-OUT": 0,
+            "TOTAL": 19
+          }
+        },
+        "description": "Property sales in England and Wales from HM Land Registry Price Paid Data: price paid, transfer date, full address, postcode, property type, tenure, new build.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Jason",
+        "userPictureUrl": "https://images.apifyusercontent.com/u8gC8BlKv5WrKIUlglCxUtKw_cB6TE_xSkCNY2bTRp4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vR1hKVi1JNTlzUDJ1OVhiWjR2bzAxcFRZYWRVVFpuajk1NThhWmxfVHNkQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RTNPVE15TkRJNE5EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Sale returned",
+                "eventDescription": "One HM Land Registry price paid transaction delivered to the dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-08T11:48:35.002Z",
+          "startedAt": "2026-09-08T11:48:35.002Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "U9AM3wdc5cXyed15p",
+        "url": "https://apify.com/knotty_mistveil/hm-land-registry-price-paid"
+      }
+    ]
+  }
+}

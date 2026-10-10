@@ -1,0 +1,1049 @@
+{
+  "data": {
+    "total": 1794,
+    "count": 15,
+    "offset": 0,
+    "limit": 15,
+    "desc": false,
+    "items": [
+      {
+        "title": "EU TED Tenders — Public Procurement Notice Scraper",
+        "name": "ted-tenders",
+        "username": "foxlabs",
+        "stats": {
+          "totalBuilds": 28,
+          "totalRuns": 450,
+          "totalUsers": 41,
+          "totalUsers7Days": 4,
+          "totalUsers30Days": 11,
+          "totalUsers90Days": 23,
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-07T07:49:32.148Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 7,
+            "SUCCEEDED": 102,
+            "TIMED-OUT": 0,
+            "TOTAL": 109
+          }
+        },
+        "description": "Fetches structured public procurement notices from the official EU TED (Tenders Electronic Daily) API. Filter by country, CPV code, date, value, and notice type. Free, unauthenticated API; clean JSON output ready for CRM/dashboard ingestion.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/do2PoKSsQb42ApfvGO34gdHrVuAHb8JgM3hUaW9KS28/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1htTW5VaXhrRTdUSkdlSWYtYWN0b3ItV3JqYmpJdjZWcWlia3dEM3ItaG9sTGtNRkc3VC10ZWR0ZW5kZXJzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Berkan Kaplan",
+        "userPictureUrl": "https://images.apifyusercontent.com/kMBdvurXqT-jNhSrS0j6jlsQX8nxa_26e0fFkIgDWSw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veWtzd1Y4WDVsOUlZdGN0dHRxbjlpTENFWE5tRFhfN2tPZjE0SlNZeC1DYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMWh0VFc1VmFYaHJSVGRVU2tkbFNXWXRjSEp2Wm1sc1pTMVRNMDlLWTFsMFVXdDJMVWxOUjE4eU1ESTJNRE13TWw4eE1qVTNOVFZmY21WemFYcGxaQzVLVUVWSA.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-15T13:08:18.852Z",
+          "createdAt": "2026-05-15T13:08:17.851Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "WrjbjIv6VqibkwD3r",
+        "url": "https://apify.com/foxlabs/ted-tenders"
+      },
+      {
+        "title": "GeBIZ Singapore Government Tender Scraper",
+        "name": "gebiz-procurement-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 28,
+          "totalRuns": 732,
+          "totalUsers": 30,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 7,
+          "totalUsers90Days": 12,
+          "lastRunStartedAt": "2026-10-06T05:55:02.125Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 1,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 10,
+            "SUCCEEDED": 181,
+            "TIMED-OUT": 2,
+            "TOTAL": 194
+          }
+        },
+        "description": "Extract Singapore government tenders from GeBIZ — tender ID, agency, category, closing date, contact person, and email for open procurement opportunities",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ReTFuJTYS3pLDU8WbnwJYPb8sbASPcLNoMV-7foE74o/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItZnJTRDRma0d1b2F0Y1B5N0cta3pCYnZycEUzYS1nZWJpei1wcm9jdXJlbWVudC1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 1,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:25:35.033Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.01
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:25:35.078Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "frSD4fkGuoatcPy7G",
+        "url": "https://apify.com/jungle_synthesizer/gebiz-procurement-scraper"
+      },
+      {
+        "title": "🇩🇪 German Tenders Scraper — Federal + Regional Vergabe",
+        "name": "german-tender-scraper",
+        "username": "inexhaustible_glass",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 234,
+          "totalUsers": 10,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 8,
+          "lastRunStartedAt": "2026-10-06T00:06:46.419Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 69,
+            "TIMED-OUT": 0,
+            "TOTAL": 69
+          }
+        },
+        "description": "Scrape ALL German public tenders from the official oeffentlichevergabe.de API — federal + every Bundesland, incl. regional tenders that TED/EU scrapers miss. Buyer, contact email, region, CPV industry, deadline. Filter by Bundesland, CPV, keyword. Daily monitor mode. Free, no proxy.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Hitman studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/-dGl0H4SMe4cEFtN8UXxE58LOeVSdgZw0FkVyr_0kGY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOXlPcDNDdExSX25iUHB6WVF0aVBYOEFZa1NJbW8yc25BaVBLTVp5akY1RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbnBRTFcxSVozaEJVRmxwTFV0RE9HRnhUR3RtV0RSMVQwNVVRemRyTTFaUlpXZFdTbFkyY1V0WVZrbDBUblpCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "To continue delivering high-quality public data, faster updates, and ongoing maintenance, we're updating our pricing. Thank you for your support.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.02
+              }
+            }
+          },
+          "startedAt": "2026-07-23T17:21:35.594Z",
+          "createdAt": "2026-07-09T17:21:36.174Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-09T17:21:56.354Z",
+          "notifiedAboutChangeAt": "2026-07-23T17:35:40.359Z"
+        },
+        "id": "qHb0CLNygTdseqGf3",
+        "url": "https://apify.com/inexhaustible_glass/german-tender-scraper"
+      },
+      {
+        "title": "🦅 TenderHawk — Indian Government Tenders Scraper",
+        "name": "tenderhawk",
+        "username": "inexhaustible_glass",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 372,
+          "totalUsers": 40,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 13,
+          "actorReviewCount": 3,
+          "actorReviewRating": 2.961010109032408,
+          "bookmarkCount": 2,
+          "lastRunStartedAt": "2026-10-06T04:36:55.495Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 67,
+            "TIMED-OUT": 0,
+            "TOTAL": 68
+          }
+        },
+        "description": "🇮🇳 Never miss an Indian government tender. Scrapes live tenders from CPPP (eprocure.gov.in). Filter by keyword, category, organization. Auto-categorization: construction, IT, electrical, railway, defence, healthcare, solar. For contractors, MSMEs, PSU vendors. Zero blocks.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/y88Zcb03V9cfrYowN27eAFixyD83oey7kllf_UZrltU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaDA3Y3ZyWVhDNmdHYnkzT2EtYWN0b3ItaGY5S3NLSFBWUnp2TjF1T20tQjBIYmtNbEVjdi10ZW5kZXIuanBn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 2.961010109032408,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Hitman studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/-dGl0H4SMe4cEFtN8UXxE58LOeVSdgZw0FkVyr_0kGY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOXlPcDNDdExSX25iUHB6WVF0aVBYOEFZa1NJbW8yc25BaVBLTVp5akY1RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbnBRTFcxSVozaEJVRmxwTFV0RE9HRnhUR3RtV0RSMVQwNVVRemRyTTFaUlpXZFdTbFkyY1V0WVZrbDBUblpCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.008,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.02
+              }
+            }
+          },
+          "startedAt": "2026-07-09T07:58:42.000Z",
+          "createdAt": "2026-07-09T07:58:42.642Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-13T10:36:27.959Z"
+        },
+        "id": "hf9KsKHPVRzvN1uOm",
+        "url": "https://apify.com/inexhaustible_glass/tenderhawk"
+      },
+      {
+        "title": "Singapore GeBIZ Tender Opportunities Scraper",
+        "name": "singapore-gebiz-tender-opportunities-scraper",
+        "username": "automation-lab",
+        "stats": {
+          "totalBuilds": 23,
+          "totalRuns": 1808,
+          "totalUsers": 24,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 11,
+          "totalUsers90Days": 18,
+          "lastRunStartedAt": "2026-10-06T06:30:56.402Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 187,
+            "TIMED-OUT": 0,
+            "TOTAL": 187
+          }
+        },
+        "description": "Scrape Singapore GeBIZ tenders, quotations, and procurement opportunity details for monitoring, lead generation, and market research.",
+        "categories": [
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/4yqDdhhcqj8DxfrTpzI2kNQgfeN3gYU4aMtvz-OUmdM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotYWN0b3ItNnl5WWhGRGNHTFVwU2NZcWwtdmVvY0FhcTNlRS1hY3Rvci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Automation Lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/K_C4LOMfOgJZv5UcVqbze6xlfc6mS23zsoHRS5nDXvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMDdsSFdveGptQlpJN0NMWkJqVi1wUlBjV0ZHRFQyRzIwVjdkVzBRSzBCay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiblJJUTI1b1RsVnJlbGhTTjI1aVZWb3RjSEp2Wm1sc1pTMW9ORkJYYTNsWWVVSmxMV0YxZEc5dFlYUnBiMjR0YkdGaUxYQnliMlpwYkdVdGJHOW5ieTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-25T20:06:52.061Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "start": {
+                "eventTitle": "Start",
+                "eventDescription": "One-time fee per run",
+                "eventPriceUsd": 0.02,
+                "isOneTimeEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "GeBIZ opportunity record",
+                "eventDescription": "Per GeBIZ opportunity record saved",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0003156
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00027444
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00021406
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00016466
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00010978
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000076843
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-25T20:06:52.209Z"
+        },
+        "id": "6yyYhFDcGLUpScYql",
+        "url": "https://apify.com/automation-lab/singapore-gebiz-tender-opportunities-scraper"
+      },
+      {
+        "title": "EU TED Tenders Scraper - Public Procurement Contracts API",
+        "name": "eu-ted-tenders-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 21,
+          "totalRuns": 153,
+          "totalUsers": 6,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T05:58:53.530Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "Scrape EU public procurement notices from TED (Tenders Electronic Daily) with no API key. Filter tenders by country, CPV code, notice type, procedure, value and deadline. Get buyer and winner contacts, contract values, CPV and NUTS codes, award data and document links. Export JSON, CSV, Excel.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/UiDwi2sXk29jCroYTZkE2h3GHwt8dr9s9yiwxh-FjVs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItMGV0QkluZzR4TGxZUnU1anotRTAwMmNSUGFGcC10ZW5kZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0026
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0022
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002
+                  }
+                }
+              },
+              "details": {
+                "eventTitle": "details",
+                "eventDescription": "Single result with details in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0026
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0024
+                  }
+                }
+              },
+              "ai_summary": {
+                "eventTitle": "AI summary",
+                "eventDescription": "AI plain-English summary of a TED notice (what is procured, by whom, key value & deadline). Charged only when a summary is produced. Opt-in.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.012
+                  }
+                }
+              },
+              "ai_extract": {
+                "eventTitle": "AI structured extract",
+                "eventDescription": "AI-extracted structured fields: buyer, value/budget, deadline, CPV, eligibility. Charged only when fields are produced. Opt-in.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.015
+                  }
+                }
+              },
+              "ai_translate": {
+                "eventTitle": "AI translate to English",
+                "eventDescription": "AI translation of a non-English TED notice title/description to English. Charged only when a translation is produced. Opt-in.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.012
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-08-29T06:26:21.000Z",
+          "notifiedAboutFutureChangeAt": "2026-06-30T23:50:48.177Z",
+          "notifiedAboutChangeAt": "2026-07-16T00:05:42.906Z",
+          "createdAt": "2026-08-14T06:26:22.802Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "0etBIng4xLlYRu5jz",
+        "url": "https://apify.com/scrapers_lat/eu-ted-tenders-scraper"
+      },
+      {
+        "title": "Global Public Tenders & Government Contracts Scraper",
+        "name": "public-tenders-scraper",
+        "username": "lofomachines",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 895,
+          "totalUsers": 75,
+          "totalUsers7Days": 4,
+          "totalUsers30Days": 6,
+          "totalUsers90Days": 18,
+          "lastRunStartedAt": "2026-10-06T03:30:06.661Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 67,
+            "TIMED-OUT": 1,
+            "TOTAL": 68
+          }
+        },
+        "description": "Find open public tenders, government contracts, public procurement notices, bids, and RFP opportunities across Italy, France, Germany, Spain, the UK, the US, and India in one normalized JSON feed.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/1utHcnu764V2ZrdG46g9UbhSAfRStCJNrqe491K9zNE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUmVkNnNHSEFOa0x6b3NzdkUtYWN0b3ItTGZaZGJjQU9oTlpvRzZTc08tcTNKYzNDSFZiMy1sb2dvX3RlbmRlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Lofomachines",
+        "userPictureUrl": "https://images.apifyusercontent.com/PHi3Py-51URv-VOyJ1EVi53Xh5aQawWfTq_BM6sz4JA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20va2NzM2JqZXVFa2RGdlVXVkVGczltYWVhLUhpZmVwTW9UWi1SQS0zdl9Xdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVbVZrTm5OSFNFRk9hMHg2YjNOemRrVXRjSEp2Wm1sc1pTMDFORUY1WVZCWGFESldMV3h2WjI5aGNHbG1lUzV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0028
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-06-13T08:05:58.570Z",
+          "createdAt": "2026-05-30T08:05:58.795Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-05-30T08:06:19.250Z"
+        },
+        "id": "LfZdbcAOhNZoG6SsO",
+        "url": "https://apify.com/lofomachines/public-tenders-scraper"
+      },
+      {
+        "title": "TED Europa Scraper: EU Public Procurement Tenders",
+        "name": "ted-europa-scraper",
+        "username": "dltik",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 410,
+          "totalUsers": 34,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 10,
+          "lastRunStartedAt": "2026-10-05T14:12:05.627Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 3,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 116,
+            "TIMED-OUT": 0,
+            "TOTAL": 116
+          }
+        },
+        "description": "Scrape EU public procurement tenders from TED (Tenders Electronic Daily). 28 EU countries + UK + EEA. Filter by keywords, country, CPV code, deadline, value, buyer. Get buyer, deadline, contract value, winner, document URLs. For procurement intelligence, B2B public-sector sales. $5/1K tenders.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "MARKETING"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/5iH1C-aHwT-EmXS1i6fi1n5u6hnRVQl8Fb7bfj1RiNk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTVJNT3kwWXJhZzF1RE9oYkMtYWN0b3ItUkk1N0d2ZWtwMlM1dnhjUHMtZzlQT0c3ZjlSVi10ZWQtZXVyb3BhLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 3,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Walid",
+        "userPictureUrl": "https://images.apifyusercontent.com/tO4Oc4n6FT14mzuI_C_IUeiYOhcpbiTVsfJ49jz2ne4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRzlNaFBPalNQZFZfQmhKMVF5Rk9jSlVJUFVQTC1IS3ozM3VTYnJ3d0ZFYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURlozV21wNlJrVmpYMFkwZUZOelkxRlhUazVNV1Roc2NXdFlkRmt3Y0haR1pWaEpNRmxhZDFKck5FTTJObWhS.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "tender-scraped": {
+                "eventTitle": "Tender scraped",
+                "eventDescription": "One EU public procurement tender with buyer CONTACT (name, email, phone, contact point, website), value, deadline, CPV, place of performance, procedure, and winner (name, country, email) on award notices.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "tender-analyzed": {
+                "eventTitle": "AI tender analysis (premium)",
+                "eventDescription": "Optional AI enrichment per tender when analyzeTenders=true: plain-language summary, extracted deliverables, recommended action (bid/watch/skip) and, with a business profile, a 0-100 relevance score. Charged ON TOP of tender-scraped only when the user opts into AI analysis.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "startedAt": "2026-07-16T19:05:59.000Z",
+          "createdAt": "2026-07-01T19:06:01.329Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-01T19:06:21.657Z",
+          "notifiedAboutChangeAt": "2026-07-16T19:35:42.791Z"
+        },
+        "id": "RI57Gvekp2S5vxcPs",
+        "url": "https://apify.com/dltik/ted-europa-scraper"
+      },
+      {
+        "title": "TED & SAM.gov Scraper — Bid Alerts and Federal Tenders",
+        "name": "procurement-intel-actor",
+        "username": "taroyamada",
+        "stats": {
+          "totalBuilds": 82,
+          "totalRuns": 895,
+          "totalUsers": 20,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 14,
+          "lastRunStartedAt": "2026-10-06T00:46:49.747Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 49,
+            "TIMED-OUT": 0,
+            "TOTAL": 49
+          }
+        },
+        "description": "TED/SAM bid alerts → opportunity rows. No login/API key. Open Input → leave defaults → Start (1 TED ≈ USD 0.008/row): https://console.apify.com/actors/sPoMkYr4vxlkkJnZu/input From USD 8/1k.",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/3_vE8wPBA8_lQvVwUApKhfgNsmvSv3TXLcH8K89G_48/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaGp3elZIdWVEWkVjR2dJTmMtYWN0b3Itc1BvTWtZcjR2eGxra0puWnUta1RoZDdWcWpyUS1zdG9yZS10aHVtYm5haWwucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "naoki anzai",
+        "userPictureUrl": "https://images.apifyusercontent.com/ii1-AEMwRnF2-l9hO_DZzmhF9GYllcznIEI5NBf7uA0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWU5CXzlWZGFPcjRIQ0pHZ0xIa3hOZ2ZzelMwV083TnMwT3NiVTkwbnFmcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTWFZsVUVOT1pDMW1TM0U0VlU4ME1FMDNla3hsZDI1NUxYaDRObVYzY0hGMlZrWk5ORW8yT1hWd2RVVjZOemQzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Procurement opportunity or alert row",
+                "eventDescription": "Charged for one delivered source-linked procurement opportunity or stateful alert row.",
+                "eventPriceUsd": 0.008,
+                "isPrimaryEvent": true
+              },
+              "procurement-summary-report": {
+                "eventTitle": "Procurement summary report",
+                "eventDescription": "Charged for one source-linked executive procurement report generated from matched notices or alerts.",
+                "eventPriceUsd": 5,
+                "isPrimaryEvent": false
+              },
+              "procurement-opportunity-export": {
+                "eventTitle": "Procurement opportunity export",
+                "eventDescription": "Charged for one source-linked opportunity export bundle generated from matched notices or alerts.",
+                "eventPriceUsd": 7,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "startedAt": "2026-09-07T00:25:10.440Z",
+          "createdAt": "2026-08-24T00:20:13.994Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-08-24T00:20:34.290Z",
+          "notifiedAboutChangeAt": "2026-09-07T00:35:54.552Z"
+        },
+        "id": "sPoMkYr4vxlkkJnZu",
+        "url": "https://apify.com/taroyamada/procurement-intel-actor"
+      },
+      {
+        "title": "India Govt Tenders Scraper — CPPP, IOCL, State & Defence",
+        "name": "india-eprocure-tender-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 25,
+          "totalRuns": 826,
+          "totalUsers": 93,
+          "totalUsers7Days": 5,
+          "totalUsers30Days": 14,
+          "totalUsers90Days": 36,
+          "lastRunStartedAt": "2026-10-06T07:08:42.793Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 1,
+            "SUCCEEDED": 163,
+            "TIMED-OUT": 18,
+            "TOTAL": 183
+          }
+        },
+        "description": "Scrapes active tenders from India's NIC GePNIC eProcurement portals — CPPP, IOCL, and major state & defence portals (Maharashtra, Uttar Pradesh, Tamil Nadu, and more). Filter by one or more organisations; extracts tender ID, title, organisation, type, value, EMD, dates, contact and document links.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/qZSErqo1TOlP_oFF_0rOOhtCQYG_cC8YyST89teKBKc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItTURsbGYxNnVIZ2lpSGRWS1AtYmM5Z0NvZzNPWC1pbmRpYS1lcHJvY3VyZS10ZW5kZXItc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:27:50.904Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.002
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:27:50.926Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "MDllf16uHgiiHdVKP",
+        "url": "https://apify.com/jungle_synthesizer/india-eprocure-tender-scraper"
+      },
+      {
+        "title": "Tendersontime.com [Only $1💰] Leads Scraper",
+        "name": "tendersontime-leads-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 71,
+          "totalRuns": 501,
+          "totalUsers": 36,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 8,
+          "lastRunStartedAt": "2026-10-06T07:58:52.126Z",
+          "actorReviewCount": 3,
+          "actorReviewRating": 3.59091831322569,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 8,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 37
+          }
+        },
+        "description": "💰 $1 per 1,000 results – No limits, no quotas, unlimited extraction. Extracts detailed tender data from TendersOnTime: titles, descriptions, reference numbers, deadlines, values, locations, documents, and more for efficient opportunity tracking.",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/1CJCbkcLtYPwrZZas8by7NP4v6oO8_jQ74nzfZQGZm4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItdEd4U3BETk4wZjVnN3d0Tm0tVW1HSEVlVmFTci10ZW5kZXJzb250aW1lLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 3.59091831322569,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Extra data enrichment charged per enriched record (email/contact discovery).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-09-22T00:00:00.000Z",
+          "createdAt": "2026-09-07T08:32:06.394Z",
+          "notifiedAboutFutureChangeAt": "2026-09-07T08:32:26.621Z",
+          "notifiedAboutChangeAt": "2026-09-22T00:05:56.755Z"
+        },
+        "id": "tGxSpDNN0f5g7wtNm",
+        "url": "https://apify.com/memo23/tendersontime-leads-scraper"
+      },
+      {
+        "title": "Russian Tender Search & Monitor: 44-FZ / 223-FZ",
+        "name": "zakupki-tender-monitor",
+        "username": "isolovyev",
+        "stats": {
+          "totalBuilds": 30,
+          "totalRuns": 233,
+          "totalUsers": 22,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 7,
+          "totalUsers90Days": 10,
+          "lastRunStartedAt": "2026-10-06T05:30:22.020Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 3,
+            "FAILED": 0,
+            "SUCCEEDED": 87,
+            "TIMED-OUT": 1,
+            "TOTAL": 91
+          }
+        },
+        "description": "Find and monitor Russian tenders under 44-FZ and 223-FZ, with product-match evidence. Поиск закупок по 44-ФЗ и 223-ФЗ, мониторинг изменений и совпадения товаров в позициях и документах.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/qTDU-41MYB1t2qzoFv6p8Vf1RF7ODkYZoXyv7qxySOU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTTBTUzd6aHFVNWJhb0xHenotYWN0b3ItRVRZUmRnRzM3Z3lhT29SdlAtaDNnS3F3bmdpYS16YWt1cGtpLXRlbmRlci1tb25pdG9yLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ivan Solovyev",
+        "userPictureUrl": "https://images.apifyusercontent.com/z840ZImnV5uLTzCa7AIoDEQW-Qnjefnv0MTg4W7PX3A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVkx5VE5oVzN5dmJXZjhic0VoQ2dqOVBEdWRuUWttVmhMUDBuWVVJVzBMSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTV3RwVWtGVVRrOXNRemt4UVV4aFZEQkJXRU5SUjBwUlRqTXdRbk4wYTJ0R2NWVldPV2wzWW1KVGNFTlNUa1ZrV2tnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "tender-list": {
+                "eventTitle": "Tender (list level)",
+                "eventDescription": "Charged once per tender returned at the \"list\" detail level: registry number, law (44-FZ/223-FZ), subject, customer, start price, dates and link.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "tender-positions": {
+                "eventTitle": "Tender (positions level)",
+                "eventDescription": "Charged once per tender returned at the \"positions\" detail level: everything from list plus KTRU line items (goods, codes, quantities).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              },
+              "tender-full": {
+                "eventTitle": "Tender (full level)",
+                "eventDescription": "Charged once per tender returned at the \"full\" detail level: positions plus downloaded and parsed tender documents, with vendor-radar product matches.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.03
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-07-13T10:36:43.738Z",
+          "createdAt": "2026-09-20T18:43:38.140Z",
+          "startedAt": "2026-09-20T18:43:38.140Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ETYRdgG37gyaOoRvP",
+        "url": "https://apify.com/isolovyev/zakupki-tender-monitor"
+      },
+      {
+        "title": "Etimad Saudi Government Tenders Scraper",
+        "name": "etimad-saudi-government-tenders-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 175,
+          "totalUsers": 11,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 7,
+          "lastRunStartedAt": "2026-10-06T03:11:32.593Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 3,
+            "SUCCEEDED": 86,
+            "TIMED-OUT": 0,
+            "TOTAL": 91
+          }
+        },
+        "description": "Structured tender notices from Saudi Arabia's national e-procurement platform, including agency, activity, dates, execution details and award outcomes.",
+        "categories": [
+          "BUSINESS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/CZG4yc27tUEMQC5Jz8WXIqFDDCO7cqyQZuW_zAV8GUE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItbUl4RkFRY3huMlhabjRJdngtVmFmdFdpN0NSUS1ldGltYWQtc2F1ZGktZ292ZXJubWVudC10ZW5kZXJzLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-09T06:15:47.055Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0009000000000000001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-09T06:15:47.217Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "mIxFAQcxn2XZn4Ivx",
+        "url": "https://apify.com/jungle_synthesizer/etimad-saudi-government-tenders-scraper"
+      }
+    ]
+  }
+}

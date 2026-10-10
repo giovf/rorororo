@@ -1,0 +1,64 @@
+{
+  "request": "tmj-stub-2026-10-07",
+  "fetched_at": "2026-10-07T17:27:23.043Z",
+  "results": [
+    {
+      "method": "GET",
+      "range": "0-4095",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-041/jnl.xml",
+      "fetched_at": "2026-10-07T17:27:21.384Z",
+      "status": 404,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-041/jnl.xml",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "4096",
+        "last-modified": "Mon, 21 Sep 2020 01:00:00 GMT",
+        "etag": "\"d4d6b92f-01010000\""
+      },
+      "file": "1.html",
+      "bytes": 4096,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "range": "0-2047",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-040/jnl.xml",
+      "fetched_at": "2026-10-07T17:27:22.128Z",
+      "status": 206,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-040/jnl.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "content-length": "2048",
+        "last-modified": "Thu, 01 Oct 2026 05:28:16 GMT",
+        "etag": "\"aad1394-65cc0aecc3bc5\""
+      },
+      "file": "2.xml",
+      "bytes": 2048,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-042/jnl.xml",
+      "fetched_at": "2026-10-07T17:27:22.722Z",
+      "status": 200,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-042/jnl.xml",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 21 Sep 2020 00:59:59 GMT",
+        "etag": "\"d4d6b92f-01010000:dtagent10347260902154543cshO\""
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-053/jnl.xml",
+      "fetched_at": "2026-10-07T17:27:22.875Z",
+      "status": 200,
+      "final_url": "https://www.ipo.gov.uk/t-tmj/tm-journals/2026-053/jnl.xml",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 21 Sep 2020 00:59:59 GMT",
+        "etag": "\"d4d6b92f-01010000:dtagent10347260902154543cshO\""
+      }
+    }
+  ]
+}

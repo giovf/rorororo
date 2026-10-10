@@ -7,10 +7,14 @@
         <h1>Your highlights</h1>
         <div class="tools">
           <input id="q" type="search" placeholder="Search quotes, notes, tags, titles…" aria-label="Search" />
-          <button id="export-all" type="button">Export all (Markdown)</button>
+          <button id="export-all" type="button" title="All pages as one Markdown text, to paste anywhere">Copy all (Markdown)</button>
+          <button id="download-md" type="button" title="A .zip with one Markdown file per page (front matter: title, url, dates, tags) — unzip into an Obsidian or Logseq vault">Download Markdown files</button>
+          <button id="download-readwise" type="button" title="A .csv in Readwise's import columns: readwise.io/import_bulk, then on to Notion, Obsidian or Anki through Readwise">Download CSV for Readwise</button>
           <button id="backup" type="button">Backup (JSON)</button>
           <label class="file"><input id="restore" type="file" accept="application/json" />Restore</label>
           <label class="file" title="Super Simple Highlighter → Options → Advanced → Backup: pick the .ldjson file it saved"><input id="import-ssh" type="file" accept=".ldjson,.json,text/plain,application/json" />Import Super Simple Highlighter</label>
+          <label class="file" title="Weava: dashboard → export icon (top right) → .csv. Glasp: My Highlights → Export → CSV. Any .csv with a page-URL column and a highlight column works"><input id="import-weava" type="file" accept=".csv,text/csv,text/plain" />Import Weava / Glasp (.csv)</label>
+          <label class="file" title="Hypothesis sidebar → Share → Export → JSON (or CSV): pick the file it saved"><input id="import-hypothesis" type="file" accept=".json,.csv,application/json,text/csv,text/plain" />Import Hypothesis</label>
         </div>
       </header>
       <p id="status" class="muted"></p>

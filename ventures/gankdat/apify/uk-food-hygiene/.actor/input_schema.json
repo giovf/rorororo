@@ -1,8 +1,32 @@
 {
-  "title": "UK Food Hygiene Ratings \u2014 filters",
+  "title": "UK Food Hygiene Ratings — filters",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
+    "mode": {
+      "title": "Mode",
+      "type": "string",
+      "description": "Current records (default), or only the records added, removed or changed since a date — schedule a daily run in changes mode to monitor the register and pay only for what changed.",
+      "editor": "select",
+      "enum": ["data", "changes"],
+      "enumTitles": ["Current records", "Changes since a date (monitor)"],
+      "default": "data"
+    },
+    "since": {
+      "title": "Changes since",
+      "type": "string",
+      "description": "Changes mode only: YYYY-MM-DD. Default: the last 7 days. The feed keeps 90 days.",
+      "editor": "textfield",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "change": {
+      "title": "Change type",
+      "type": "string",
+      "description": "Changes mode only: one kind of change. Default: all three.",
+      "editor": "select",
+      "enum": ["added", "removed", "changed"],
+      "enumTitles": ["Added to the register", "Removed from the register", "Changed"]
+    },
     "rating_value": {
       "title": "Rating",
       "type": "string",
@@ -23,12 +47,12 @@
       ],
       "enumTitles": [
         "Any",
-        "0 \u2014 urgent improvement",
-        "1 \u2014 major improvement",
-        "2 \u2014 improvement necessary",
-        "3 \u2014 generally satisfactory",
-        "4 \u2014 good",
-        "5 \u2014 very good",
+        "0 — urgent improvement",
+        "1 — major improvement",
+        "2 — improvement necessary",
+        "3 — generally satisfactory",
+        "4 — good",
+        "5 — very good",
         "Awaiting inspection",
         "Exempt",
         "Pass (Scotland)",
@@ -57,7 +81,7 @@
     "rating_date_after": {
       "title": "Inspected on or after",
       "type": "string",
-      "description": "YYYY-MM-DD \u2014 only businesses inspected on or after this date (new ratings, recent changes).",
+      "description": "YYYY-MM-DD — only businesses inspected on or after this date (new ratings, recent changes).",
       "editor": "textfield",
       "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
     },

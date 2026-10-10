@@ -201,7 +201,7 @@ export async function refreshSource(
 export async function writeRefreshLog(
   env: CloudflareBindings,
   slug: string,
-  status: 'ok' | 'error',
+  status: 'ok' | 'error' | 'skipped',
   records: number,
   durationMs: number,
   message: string | null,

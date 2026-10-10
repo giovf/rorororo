@@ -1,0 +1,77 @@
+{
+  "request": "hk-weava-export",
+  "fetched_at": "2026-10-05T17:12:23.948Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://weavatools.atlassian.net/wiki/spaces/WEAV/pages/84967585",
+      "fetched_at": "2026-10-05T17:12:21.476Z",
+      "status": 200,
+      "final_url": "https://id.atlassian.com/login?continue=https%3A%2F%2Fid.atlassian.com%2Fjoin%2Fuser-access%3Fresource%3Dari%253Acloud%253Aconfluence%253A%253Asite%252Fb7c871c5-167d-4494-8060-9ed68b511028%26continue%3Dhttps%253A%252F%252Fweavatools.atlassian.net%252Fwiki%252Fspaces%252FWEAV%252Fpages%252F84967585&application=confluence&orgId=a2e08fd5-90d3-4e85-b99c-cd3539848614",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 30 Sep 2026 15:54:07 GMT",
+        "etag": "W/\"b28241fd85b8554ce83592c79563a738\""
+      },
+      "file": "1.html",
+      "bytes": 4222,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.weavatools.com/how-to-export-your-highlights-and-notes/",
+      "fetched_at": "2026-10-05T17:12:22.611Z",
+      "status": 200,
+      "final_url": "https://www.weavatools.com/how-to-export-your-highlights-and-notes/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "23411"
+      },
+      "file": "2.html",
+      "bytes": 117833,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://web-highlights.com/blog/import-research-from-weava-highlighter-to-web-highlights/",
+      "fetched_at": "2026-10-05T17:12:22.883Z",
+      "status": 200,
+      "final_url": "https://web-highlights.com/blog/import-research-from-weava-highlighter-to-web-highlights/",
+      "headers": {
+        "content-type": "text/html;charset=utf-8",
+        "last-modified": "Mon, 05 Oct 2026 14:03:38 GMT",
+        "etag": "W/\"NNBqTtdDs7\""
+      },
+      "file": "3.html",
+      "bytes": 244329,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://glasp.co/features/weava-highlight-import",
+      "fetched_at": "2026-10-05T17:12:23.628Z",
+      "status": 403,
+      "final_url": "https://glasp.co/features/weava-highlight-import",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 5304,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.weavatools.com/the-weava-manual/",
+      "fetched_at": "2026-10-05T17:12:23.697Z",
+      "status": 200,
+      "final_url": "https://www.weavatools.com/the-weava-manual/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "26253"
+      },
+      "file": "5.html",
+      "bytes": 127905,
+      "truncated": false
+    }
+  ]
+}

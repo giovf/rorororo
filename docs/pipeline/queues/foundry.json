@@ -2,7 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-04",
+  "updated": "2026-10-10",
+  "researched": "2026-10-10",
   "items": [
     {
       "id": "fetch-relay",
@@ -337,22 +338,342 @@
     {
       "id": "actions-minutes",
       "title": "Trim GitHub Actions usage below ~1,500 min/month so the repo can go private (free cap 2,000)",
-      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done.",
+      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done. 2026-10-05 burn-down: converted to todo + not_before 2026-10-12 (first measurable week) so the hold is visible on the scheduled: line instead of hidden in doing. 2026-10-05 22:30 burn-down (foundry research): the watchdog projection rose after the trim, 3,876 (10-04 18:21) to 4,215 min/month (10-05 01:14), because the burn went nightly; today 19:19-21:46 UTC the 60 push runs took 480 run-minutes, check alone 6-16 min per success (6.3, 8.6, 11.3, 16.5), six workflows per code push. The concurrency groups proposed in ci-runs-never-acquired cut the stacked runs as well, so build that first and re-measure. 2026-10-06 09:00 build (foundry research): watchdog projection 6,223 min/month at 01:25 (the 60 push runs of 10-05 evening); of the 38 runs since the concurrency groups landed (22:33) none was cancelled, and a docs-only push now starts only owner notes + notify owner. Next lever is gankdat-test-setup (the gate runs twice per gankdat push and spends 697 s on per-test setup). 2026-10-10 burn-down research: the 100 runs 10-08 17:10..10-10 00:17 took 58 wall-clock run-minutes in 31 h (≈1,340 min/month; `check` median 1.5 min after gankdat-test-setup, 9 runs; owner notes 35 runs at 0.2 min) — the watchdog's 10-09 projection of 4,745 counts billed job-minutes, so the 10-12 reading should name which figure the private cap meters.",
       "effort_days": 0.5,
       "proof": "7-day Actions minutes under 350 for two consecutive weeks",
       "score": 7,
-      "status": "doing",
-      "added": "2026-10-04"
+      "status": "todo",
+      "added": "2026-10-04",
+      "not_before": "2026-10-12"
     },
     {
       "id": "append-only-guard",
       "title": "Append-only guard for docs/RUNS.md and docs/STRATEGY.md: npm run runs fails when the file lost dated lines; notify-owner caps one run at 40 bullets",
-      "why": "2026-10-04 20:39 (commit 815ab26, burn-down): a run wrote STRATEGY.md and RUNS.md whole with only its new entry — 569 and 472 lines gone, two later runs appended to the stubs, CI stayed green, and the restore (21:25) only avoided resending 470 Telegram bullets because the notify cursor was moved by hand. Nothing checks that either file only grows. Build: scripts/runs-check.ts records the dated-line count of RUNS.md and the decision-log line count of STRATEGY.md in docs/ops/RUNS-COUNT.json (updated by the same check when the count grows) and fails when the live count is lower; scripts/notify-owner.ts sends at most 40 bullets per run and one 'N more lines not sent — see docs/RUNS.md' bullet instead of the rest. Both are unit-tested; depth-1 CI needs no git range for either.",
+      "why": "2026-10-04 20:39 (commit 815ab26, burn-down): a run wrote STRATEGY.md and RUNS.md whole with only its new entry — 569 and 472 lines gone, two later runs appended to the stubs, CI stayed green, and the restore (21:25) only avoided resending 470 Telegram bullets because the notify cursor was moved by hand. Nothing checks that either file only grows. Build: scripts/runs-check.ts records the dated-line count of RUNS.md and the decision-log line count of STRATEGY.md in docs/ops/RUNS-COUNT.json (updated by the same check when the count grows) and fails when the live count is lower; scripts/notify-owner.ts sends at most 40 bullets per run and one 'N more lines not sent — see docs/RUNS.md' bullet instead of the rest. Both are unit-tested; depth-1 CI needs no git range for either. DONE 2026-10-04 (burn-down, same night): scripts/runs-check.ts compares the dated-bullet counts of docs/RUNS.md and docs/STRATEGY.md with docs/ops/RUNS-COUNT.json and fails when either fell (a 20-line stub fails with '450 lost'), raising the floor in place when they grew; scripts/notify-owner.ts sends at most 40 run bullets per push plus one '… N more run lines not sent here' line, the cursor still advancing past all of them. 4 + 1 tests.",
       "effort_days": 0.2,
       "proof": "no further whole-file overwrite reaches main unnoticed; a deliberate test shrink fails npm run check",
       "score": 6,
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
+    },
+    {
+      "id": "e2e-sandbox-browser",
+      "title": "Extension e2e runs out of the box in the cloud sandbox: the runner falls back to /opt/pw-browsers/chromium when Playwright's own build is missing, and the burn-down/build prompts say to run it after a content-script change",
+      "why": "2026-10-04 23:15 burn-down: `npm run e2e -w @foundry/read-focus` failed on first run — Playwright 1.58.1 looks for chromium-1208, the sandbox ships chromium-1194 at /opt/pw-browsers/chromium (PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD=1, so `playwright install` is not an option); the runner already honours CHROMIUM_PATH (comment in e2e/run.ts, both extensions) but nothing sets it, so every cloud run pays one failed attempt or skips e2e. The root `npm run check` does not run e2e at all, so a content-script regression (today's ruler/focus rewrite to pointer events, 0.2.1) reaches main green. Fix: e2e/run.ts in both ventures resolves the browser in order CHROMIUM_PATH → Playwright's registry → /opt/pw-browsers/chromium if it exists, with one log line saying which; `docs/routines/burn-down.md` and `build.md` gain one sentence: a change under `ventures/<ext>/src/` runs `npm run e2e -w @foundry/<ext>` before the commit. Evidence 2 (one failed run today, the comment shows an earlier one) × reach 2 (every extension change in every cloud run) ÷ 0.1 days. 2026-10-05 burn-down: built — both runners resolve CHROMIUM_PATH → Playwright registry → /opt/pw-browsers/chromium and log which; Highlight Keep now skips its pro section without the key instead of crashing (it did, on the first sandbox run); both prompts carry the sentence. Both e2e passed first time in the sandbox.",
+      "effort_days": 0.1,
+      "proof": "the next cloud run's e2e passes first time; no RUNS.md line about a browser mismatch in 30 days",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "pipeline-doing-visibility",
+      "title": "`npm run pipeline` shows `doing` items and flags a stale one: a doing item older than a day with no not_before is a cut-off session's leftover, re-offered by `next`",
+      "why": "2026-10-04 23:22 burn-down: `pipeline next` reported starvation (research foundry) while foundry held `actions-minutes` (score 7) in `doing` — a deliberate hold by the interactive session waiting for a measured week under 350 Actions minutes, which README's `not_before` field exists for. `next` skips `doing` silently, so a cut-off run that marked an item doing (the rules allow it in the same commit as partial docs) would hide it forever, and a hold like today's is invisible to the slot. Fix in packages/core pipeline.ts + scripts/pipeline.ts: print `doing:` lines like `scheduled:`; the validator (`npm run pipeline`, part of check) fails a `doing` item whose `updated`/`added` is more than 1 day old and has neither `not_before` nor a `doing_since` within a day; `next` offers a stale doing item again. Tests; README sentence. Convert actions-minutes to `todo` + `not_before` 2026-10-12 (first measurable week) in the same commit. Evidence 2 (one hidden item today, 7 points of score) × reach 2 (every queue, every slot) ÷ 0.1 days. 2026-10-05 burn-down: built — `doing_since` field, `doing:` status line, stale doing items (over a day, no future not_before) offered again by next; tests. Deviation: no time-based validator failure — that would turn the nightly check red by the clock alone with no commit to blame; re-offering achieves the same without a heal run.",
+      "effort_days": 0.1,
+      "proof": "`npm run pipeline` lists every doing item; no queue holds a doing item older than a day without a date within 30 days",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "e2e-pro-sections-test-key",
+      "title": "Extension e2e pro sections run without the production signing key: the test build accepts a throwaway Ed25519 key pair generated by the runner",
+      "why": "Every e2e run in the sandbox prints `SKIP pro sections (5–7): no LICENSE_SIGNING_KEY in the environment` (RUNS 2026-10-01 02:35, again 2026-10-04 23:20) — paragraph focus, custom strength/weight and the dyslexia fonts, the paid half of ReadFocus and the whole reason for the key, are never exercised in CI or in the cloud routines that ship the versions; only a machine with `.env` runs them. Fix: `build.js --test` reads an optional `LICENSE_TEST_PUBLIC_KEY` and bakes it in place of the production public key; e2e/run.ts generates an Ed25519 pair with node:crypto, signs a test key with @foundry/licensing's own signer, and runs sections 5–7 against it (same for highlight-keep). The production key never leaves .env; the test key lives for one run. Evidence 2 (skipped on every cloud run since 10-01) × reach 2 (both extensions, the paid tier) ÷ 0.2 days. 2026-10-05 burn-down: built — build.js --test without LICENSE_SIGNING_KEY generates an Ed25519 pair with @foundry/licensing, bakes the public half via an esbuild define (src/core/license.ts falls back to the production key), writes the private half to the git-ignored dist-test/ for e2e/run.ts. Both extensions: pro sections PASS in the sandbox with no .env; production builds verified to carry the real key and no key file.",
+      "effort_days": 0.2,
+      "proof": "sandbox e2e prints PASS for sections 5–7 with no .env; the SKIP line disappears from RUNS.md",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "relay-wait-loop",
+      "title": "Relay reads wait on the response commit (poll origin/main up to 20 min) instead of a fixed sleep 120; routine prompts and docs/relay/README.md say so",
+      "why": "2026-10-05 20:15 burn-down: the fetch-relay run for vt-research-2026-10-05 sat 'queued' on GitHub's hosted runners for 16+ minutes with no other run queued (README and every routine prompt say 'sleep 120, git pull'); the same evening's check and landing runs sat 15 minutes before the next push cancelled them. A routine that sleeps 120 s reads nothing and either files a handoff or guesses. Fix: README step 3 and the RELAY paragraph of docs/routines/*.md become 'poll `git ls-tree origin/main docs/relay/responses/<name>` every 10 s for up to 20 min, do other work meanwhile'; scripts/fetch-relay.mjs unchanged. Proof: no run-log line in the next 30 days reporting an unread relay. Done 2026-10-05 (burn-down, same run): README step 3 is a 20-minute poll on `git ls-tree origin/main docs/relay/responses/<name>` with 'do other work meanwhile'; the RELAY sentence in burn-down, build, fallback, exchange and metrics prompts says the same; each file's Changes line records it.",
+      "effort_days": 0.1,
+      "proof": "zero 'relay unread / still queued' run-log lines in 30 days; README and the burn-down/build prompts carry the wait loop",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "ci-runs-never-acquired",
+      "title": "Push workflows get concurrency groups (newest commit wins) and the relay re-fires when its run was cancelled unstarted; check, landing, metrics, owner-notes stop stacking",
+      "why": "2026-10-05 burn-down (foundry research): of the 60 push-triggered runs on main between 19:19 and 21:46 UTC, 20 (one in three) ended `cancelled` exactly 15:02 after `run_started_at` with an EMPTY step list and no log (GitHub answers 404 for the job log): no hosted runner ever picked them up. They cluster 19:27-20:41 (check x3, landing x5, owner notes x5, gankdat metrics x2, store metrics x1, notify owner x2, fetch relay x1 - run ids 37371290255, 37368566237, 37366507832 among them). Peak overlap was 11 runs, under the 20-concurrent-job cap of the free plan, so this was a GitHub capacity window, but our fan-out made it expensive: no push workflow except notify-owner, run-watchdog and workflow-installer carries a `concurrency` key, so every burn-down push (6 workflows, pushes 5-10 min apart) queued a fresh set behind the stuck ones. Consequences today: (1) the `check` gate never ran on 0e3aaca, 97fb915 and b7a7579, so main was ungated for an hour and the triage logged those mails as healed; (2) the fetch-relay run for vt-research-2026-10-05 (6925944) never ran, the routine waited 16+ min and built relay-wait-loop around the symptom - the wait loop cannot help when the run is dead; (3) 21 INBOX rows and 20 failure mails for nothing. Fix: add `concurrency: { group: <workflow>-${{ github.ref }}, cancel-in-progress: true }` to check.yml, landing.yml, gankdat-metrics.yml, store-metrics.yml and owner-notes.yml (the newest commit's run supersedes queued older ones; a deploy or a fill-run on an older tree is never wanted; fetch-relay, gankdat deploy and notify-owner keep their behaviour); write them to docs/ci/ for the installer; in the RELAY paragraph of docs/relay/README.md and the routine prompts: when the 20-min poll expires, read the run's conclusion with the GitHub MCP (actions_list on fetch-relay.yml) and, if it is `cancelled` with no steps, re-fire it with actions_run_trigger (workflow_dispatch exists) instead of filing anything; SCHEDULERS.md event table gains the concurrency note. Done 2026-10-05 (burn-down, same run): docs/ci/{check,landing,gankdat-metrics,store-metrics,owner-notes}.yml carry `concurrency: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}`, cancel-in-progress (the installer moves them; cron and manual runs are their own group so a push never cancels the 06:30 refresh or the nightly gate); relay README step 3 and the RELAY sentence of the build, burn-down, exchange, fallback and metrics prompts re-fire a dead run by workflow_dispatch; SCHEDULERS.md conventions note.",
+      "effort_days": 0.3,
+      "proof": "over 7 days fewer than 5% of push runs end cancelled with no steps; no relay request waits longer than 20 min without a re-fire; check runs on a code push drop to one per 10-minute window",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "triage-run-failed-reason",
+      "title": "Inbox triage logs the reason GitHub gives for a Run failed mail, never a guessed one; the third same-reason mail in a day files a foundry item",
+      "why": "2026-10-05 burn-down (foundry research): the hourly triage wrote `workflow jobs cancelled, superseded by the next push` on 21 INBOX rows today (19:43-20:56), but no push workflow has cancel-in-progress, nothing superseded them - the jobs were never acquired by a runner (see ci-runs-never-acquired). The two real red-gate mails (547b963 10-05 19:24, format check; 05ec84d and e7f913f 10-04, both failed within ~1 min, cause unrecorded) got the same `healed by the next push` wording, so a reader of INBOX cannot tell a red gate from a dead runner from a cancelled duplicate, and a repeat cause 20 times in one evening produced no queue item although docs/routines/inbox-triage.md step 1 and CLAUDE.md say a repeat blocker becomes one. Fix (prompt sentence, docs/routines/inbox-triage.md, after the existing GitHub sentence): \"Log the reason the mail body or the run gives - `failure` with steps = our gate is red, name the failing step; `cancelled` with no steps about 15 min after start = no runner picked it up; `cancelled` under a concurrency group = superseded - never a guessed one. When the same reason appears three times in one day and docs/pipeline/queues/foundry.json has no open item for it, add one (score 4+, the run ids as evidence).\" SELF-CAUSED.md row 6 gains the same three readings in its \"What it really is\" column.",
+      "effort_days": 0.1,
+      "proof": "over 14 days no INBOX row names a cause the run's job list contradicts; a reason seen 3+ times in a day has a foundry item the same day",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "pre-push-format-gate",
+      "title": "A committed pre-push hook (core.hooksPath set by npm prepare) runs prettier, eslint on the changed files, npm run runs and npm run pipeline before any push from a sandbox",
+      "why": "2026-10-05 burn-down (foundry research): three red `check` runs on main in two days, each from a push whose gate had not been re-run after the last edit: 05ec84d (10-04 14:58, failed in 1m1s), e7f913f (10-04 15:33, 1m4s), 547b963 (10-05 19:24, 1m20s - Prettier on two landing pages and e2e/run.ts, healed by 0e3aaca four minutes later, RUNS 19:28). Each costs a heal commit, six more workflow runs (about 15 run-minutes against the private-repo cap, see actions-minutes), an INBOX row, a failure mail and a window in which the nightly 03:15 gate is the only truth about main. The routines do run `npm run check` (6-16 min), so the slip is the edit after the check (listing text, a RUNS line, a format fix), which the long gate invites. Fix with no new dependency: root package.json gains `\"prepare\": \"git config core.hooksPath .githooks\"` (npm ci runs it in every sandbox and in CI, where nothing pushes), and `.githooks/pre-push` (sh, under 30 s) runs `npx prettier --check` and `npx eslint` on the files changed against the upstream ref (or origin/main when none), then `npm run runs` and `npm run pipeline`; it exits non-zero with the offending files, and `SKIP_HOOKS=1` bypasses it for the installer-style pushes. The routine prompts need no change: the hook fires on their existing `git push`. Proof measured from the check workflow's conclusions on push events. Done 2026-10-05 (burn-down, same run): .githooks/pre-push (sh) runs prettier --check and eslint on the files of the pushed range, npm run runs when RUNS/STRATEGY changed and npm run pipeline when docs/pipeline changed; package.json \"prepare\" arms it on every npm ci; CI (CI set) and SKIP_HOOKS=1 skip it. Tested: the last commit's 16 files pass, a seeded unformatted scripts/_hook-seed.ts is rejected with exit 1.",
+      "effort_days": 0.2,
+      "proof": "zero `check` failures on main from format or lint for 30 days after landing; the hook rejects a seeded unformatted file in a local test",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "gankdat-test-setup",
+      "title": "Cut the gankdat gate from ~5 min to under 90 s and run it once per push, not twice",
+      "why": "Measured 2026-10-06 09:12 in the build sandbox: `vitest run` in ventures/gankdat takes 280 s wall for 74 s of test time because `test/apply-migrations.ts` calls reset() and re-applies every D1 migration before EACH of the 384 tests (setup 697 s across 49 files); the root check took ~7 min of every routine run and 6-16 min per CI success. In CI a gankdat code push runs this gate twice: root `check` chains `npm run check -w @foundry/gankdat` and `gankdat.yml` runs it again — the two top Actions consumers this month are check 701 min and gankdat 171 min (watchdog 10-06 01:25). Fix: apply migrations once per file in beforeAll and rely on the pool-workers isolatedStorage stack for per-test isolation (keep reset() only in files that need it), measure, then drop the gankdat chain from the root `check` on CI (gankdat.yml covers it) while keeping it locally; re-run the timing and record it in the item. — Built 2026-10-06 burn-down: the premise was wrong — pool-workers 0.18 has no isolatedStorage option at all (one runtime, one store for every file), and migrations were not the cost. Measured in the burn-down sandbox (4 CPUs): baseline 271 s wall, setup 677 s, tests 71 s; with migrations once per file + per-test table/KV emptying the hooks are cheap, but a single spec file still takes ~20 s (`setup` 18.9 s with the setup file, `import` 20 s without it) because every file loads the whole src/index module graph afresh: 397 module-fallback requests (ajv/ajv-formats via the MCP SDK ~380, hono/zod via Vite), CPU-bound in Node (user 21 s). Vitest's ssr deps optimizer: `@coinbase/x402`/`x402-hono` break it (ox imports node:worker_threads); without them 17.6 s vs 20.0 s. Delivered: the setup rewrite (no more per-test deleteAllDurableObjects exception), the CI split (root `check:root`; gankdat.yml the only gankdat run per push), the measured numbers; the module-graph cost is `gankdat-test-module-graph`. Finished 2026-10-06 by the 17:00 build run (built in parallel, merged on top): the optimizer does work once node built-ins are external (`rolldownOptions.external: [/^node:/, ...builtinModules]` — the ox/worker_threads failure was the bundler, not a dead end) and x402-hono/@coinbase/x402 are imported lazily in src/x402/routes.ts (viem, 1,194 modules, was ≈2.4 s of evaluation per file): suite 261 s → 80 s on the same 4-core sandbox, whole gankdat gate 99 s. Proof met.",
+      "effort_days": 0.3,
+      "proof": "gankdat gate under 90 s in the sandbox; check CI run under 5 min; one gankdat test run per push",
+      "score": 7,
+      "status": "done",
+      "added": "2026-10-06",
+      "done_at": "2026-10-06"
+    },
+    {
+      "id": "burn-starvation-gate",
+      "title": "Burn-down stops before npm ci when the pipeline is starved and every queue was researched in the last day",
+      "why": "Night of 2026-10-05/06: four hourly burn-down firings (23:40, 00:21, 01:23, 02:19) each ran npm ci and the full gate (~8 min), read every doc, found the pipeline starved and every queue researched within 24 h, then pushed one run-log line — about 20 min of Fable per firing from trigger to commit for zero work, plus two workflow runs per push (owner notes, notify owner). The GATE in burn-down.md checks only BURN.json. Fix: a dependency-free starvation check (plain Node over docs/pipeline/*.json, no @foundry/core dist needed, so it runs before npm ci) printed as `npm run pipeline cold`; the burn-down GATE runs it first and ends without npm ci and without committing when it reports starved + every open queue and the exchange researched within 24 h (needs the `researched` field from research-cooldown); docs/SCHEDULERS.md and burn-down.md updated in the same commit. — Built 2026-10-06 burn-down: `npm run pipeline cold` in scripts/pipeline.ts runs before the @foundry/core import (plain reads of the queue files and RUNS.md, so it works in a sandbox before npm ci) and prints `starved-and-cooled` or `work: <reasons>`; the burn-down GATE runs it after BURN.json and ends the run on `starved-and-cooled`; SCHEDULERS row updated.",
+      "effort_days": 0.15,
+      "proof": "over 7 nights no burn-down run-log line whose only content is Stopping: starved",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-06",
+      "done_at": "2026-10-06"
+    },
+    {
+      "id": "research-cooldown",
+      "title": "The starvation fallback remembers what it researched: a queue researched within 48 h is not offered again",
+      "why": "2026-10-05 had five research runs (gankdat 01:21, highlight-keep 09:11, read-focus 19:32, variables-toolkit 20:32, foundry 22:33) plus the exchange pre-research, and the 2026-10-06 09:00 build was offered foundry again eleven hours after its last research because starved() sorts by `updated`, which every run touches, and no prompt or script records when a queue was last researched; the night runs stopped only by the operator judgement 'every queue researched today', which is written nowhere. Fix: queue field `researched: YYYY-MM-DD` (parseQueue, optional) set by every research run; starved() skips queues with researched within 2 days and `npm run pipeline` lists them on a `cooling:` line; when all starved queues are cooling, `next` prints that and build.md/burn-down.md gain one sentence: write one run-log line and stop. Tests in packages/core. — Built 2026-10-06 burn-down: `researched` on every queue (parseQueue validates it), `isCooling`/`cooling()` in @foundry/core, `starved()` skips cooling queues, the status prints a `cooling:` line and a stop sentence when every starved queue is cooling; the five queues carry their last research day from RUNS; build.md, burn-down.md and the pipeline README say it. Tests in pipeline.test.ts.",
+      "effort_days": 0.15,
+      "proof": "over 14 days no venture researched twice within 48 h and no research run-log line that adds zero items",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-06",
+      "done_at": "2026-10-06"
+    },
+    {
+      "id": "owner-ask-digest",
+      "title": "One weekly line to the owner listing the open asks by payoff, instead of each ask once as it is written",
+      "why": "2026-10-06: 10 open ALERTS entries, 8 of them owner asks, oldest 6 days (2026-09-30), none acted on; 4 of 5 venture queues carry an item blocked on an owner action (Chrome dashboard 013, Figma publishes 017/018/019, Partner Center) and two extension releases (ReadFocus 0.3.0, Highlight Keep 0.4.0) wait on an attended session. The phone receives each `owner:` line exactly once when it is pushed (notify-owner cursor) and nothing reminds or orders them. Fix: a generated docs/for-owner/OPEN.md (ordered by STRATEGY score ÷ owner minutes, with the action file link and the age) rebuilt by `npm run handoffs`, and the Monday weekly report emits ONE notify line when any owner ask is older than 7 days: count, oldest age, the top one; the retro tracks the median open age. BUILT 2026-10-06 (burn-down): scripts/handoffs.ts rankAsks/renderOpen/digestLine — OPEN.md ordered by unblocked score ÷ quoted minutes (2 of 8 asks unblock queued work today: the Chrome dashboard edit 7, the playground file 3), median open age printed (5 d today), notify: digest line only when an ask is older than 7 days; npm run handoffs joined check:root; weekly-report and ops-retro prompts updated; phone message links OPEN.md.",
+      "effort_days": 0.15,
+      "proof": "median age of open owner asks under 7 days over a month",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-06",
+      "done_at": "2026-10-06"
+    },
+    {
+      "id": "mcp-sandbox-timeout",
+      "title": "Stop .mcp.json spawning task-master-ai in cloud sandboxes where it always times out",
+      "why": "Every cloud session starts `npx -y task-master-ai` from the checked-in .mcp.json; in the build sandbox it hits the 30 s connect timeout (this run 2026-10-06 09:10; RUNS 2026-09-30 17:46 and 18:52; three ALERTS entries) — a 30 s start delay and an error block per run for a server the routines never use (`npm run task` is the offline path since taskmaster-offline-add). Fix: move the server definition out of the project .mcp.json into the documented interactive setup (`claude mcp add` line in .taskmaster/CLAUDE.md, or a user-scope config) so sandboxes do not spawn it; keep the placeholder keys out of the repo. BUILT 2026-10-06 (burn-down): .mcp.json removed from the repo and gitignored (a local one is user setup, `claude mcp add task-master-ai …` documented in .taskmaster/CLAUDE.md and docs/SETUP.md step 6); the placeholder keys left the repo with it. Proof window starts with the next cloud session.",
+      "effort_days": 0.05,
+      "proof": "no MCP connect timeout in a routine session for 14 days",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-06",
+      "done_at": "2026-10-06"
+    },
+    {
+      "id": "gankdat-test-module-graph",
+      "title": "Cut the per-file module-graph load of the gankdat test suite (49 files × 14–19 s) so the gate runs under 90 s",
+      "why": "Measured 2026-10-06 burn-down (gankdat-test-setup): one spec file costs ~20 s before its first test — not migrations (hooks now cost 0.3 s a file) but loading the whole `src/index.ts` graph into workerd: 397 module-fallback requests per file (ajv + ajv-formats ≈ 380 of them, pulled by @modelcontextprotocol/sdk's CJS build; hono's ~376 and zod's ~124 modules go through Vite's runner), CPU-bound in the Node side (user 21 s for one file). 49 files three at a time = 254–271 s wall, 677–687 s of setup, on every routine `npm run check` and every gankdat CI run. Probed: vitest `deps.optimizer.ssr` with hono/zod/stripe/MCP SDK/@hono/mcp pre-bundled → 17.6 s vs 20.0 s (the x402 packages cannot be bundled: ox imports node:worker_threads). Candidates, measure each on one file first: (a) spec files that import only the route/module under test instead of `src/index.ts` (most of the 49 import the full app for one route); (b) lazy-import the MCP SDK (`src/mcp/*`) so REST specs never load ajv; (c) merge the per-source spec files that share a fixture setup into fewer files (49 → ~15 halves the graph loads); (d) `deps.optimizer.ssr.include` for ajv/ajv-formats/@modelcontextprotocol/sdk only, with x402 excluded; (e) check whether pool-workers' module runner caches evaluated node_modules across files in a newer release (0.18.8 today) before building anything. Probed 2026-10-06 17:50 burn-down: (d) bundling ajv + ajv-formats + the MCP SDK via deps.optimizer.ssr gives nothing (19.5 s vs 20.0 s for one file) — drop it; (a) is moot: only 2 of 49 specs import src/index, the rest drive SELF, and pool-workers loads the worker's `main` graph for every file regardless, so the spec's own imports are not the lever; (e) is live: @cloudflare/vitest-pool-workers 0.22.0 is published (0.18.8 here) — try the upgrade first on one file (lockfile change, full suite, then `npm run check`), then (c) fewer spec files. Done 2026-10-06 (build, 17:00 run, merged with the burn-down's commits): the lever was viem, not ajv — the vite:transform trace of one file showed 2,010 Vite-served modules (viem 1,194, stripe 191, zod 126, ox 102, axios 55, jose 46, abitype 44, hono 40, zod-to-json-schema 39) on top of ~600 module-fallback requests. (d) works when node built-ins are marked external for the optimizer's bundler (`rolldownOptions.external`), listing x402-hono, @coinbase/x402, the five x402 subpaths (no root export), viem, ox, stripe, zod, hono, @hono/mcp, the MCP SDK's server/mcp.js, jose, axios, abitype, zod-to-json-schema and @coinbase/cdp-sdk: a file loads ~250 modules instead of ~2,600, suite 261 s → 133 s. Plus (b)-style lazy import of x402-hono/@coinbase/x402 on the first lit /x402 request (src/x402/routes.ts): ≈2.4 s of evaluation per file saved and a lighter Worker cold start, suite → 80 s (setup 697 s → 119 s), whole gate 99 s. 8 workers instead of 4 gave only 133 → 118 s (Vite's single thread serves every module request), so (c) fewer files and (e) the 0.22 upgrade are not needed for the proof; (e) stays a routine dependency bump.",
+      "effort_days": 0.3,
+      "proof": "gankdat gate under 90 s in the sandbox (today 271 s); check CI run under 5 min",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-06",
+      "done_at": "2026-10-06"
+    },
+    {
+      "id": "research-after-date",
+      "title": "A research run that finds no new evidence sets `research_after` on the queue; the starvation fallback skips it until that date instead of re-researching an unchanged zero",
+      "why": "Burn-down 2026-10-07: with gankdat built out for the night, `npm run pipeline` offered highlight-keep for research — its third pass in eight days (09-30, 10-04, 10-05), each on the same rows (0 users, no ratings on both stores) and each built out within a day; read-focus and variables-toolkit (7 views, 0 installs since 09-28) were next in line. The 48 h cooling (research-cooldown) only stops a second pass in a day; nothing let a research run say 'nothing new until the day-30 review on 10-30'. Built the same run: optional `research_after: YYYY-MM-DD` on a queue (core parseQueue, isCooling, the cooling: line prints `waiting until <date>`, the cold check), README Waiting paragraph, build.md and burn-down.md step 1, a core test; the three queues set to their day-30 reading dates with the evidence in each RESEARCH.md.",
+      "effort_days": 0.15,
+      "proof": "no venture researched twice without a changed metrics row over 30 days; no research line that adds zero items without a research_after",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
+    },
+    {
+      "id": "search-console-api-reading",
+      "title": "Search Console reading in CI: a read-only service account queries impressions/clicks per page and the URL-inspection verdict for the /stats and comparison pages, written to each venture's Daily check row and gankdat's Daily numbers row",
+      "why": "Exchange 2026-W41 self-expansion item (7, scored on items unblocked). Three day-30 reviews (variables-toolkit 10-21, highlight-keep and read-focus 10-30) and the proofs of five Google-facing pages built since 10-01 all read \"Search Console impressions/clicks\", and `search-console-stats-indexing` has been blocked on an owner export since 09-28: no indexing or impressions reading has ever reached the repo. The Search Console API is read-only (scope webmasters.readonly: searchanalytics.query, urlInspection.index.inspect, sitemaps.list). Do: `scripts/search-console.ts` (service-account JWT → access token, no SDK; per-property query by page for the last 7 days, URL inspection for the /stats parent pages and the five comparison/how-to pages, `n/a (<reason>)` when the secret is absent), a step in the 06:45 store-metrics workflow via docs/ci/, and a `search:` field on the Daily check / Daily numbers rows. The owner's part (~10 min: a service account in any Google Cloud project, Search Console API enabled, its email added as a Restricted user on the gankdat.com and apps.gankdat.com properties, the JSON key pasted as the SEARCH_CONSOLE_KEY secret) is raised as one owner: line by the build that ships the script — not before, eight asks are already open. Built 2026-10-07 (burn-down): `scripts/search-console.ts` + 18 tests, the step in `docs/ci/store-metrics.yml`, owner action 020 and the `owner:` line; the first `search: n/a (no SEARCH_CONSOLE_KEY secret; owner action 020)` reading is on the 10-07 rows.",
+      "effort_days": 0.5,
+      "proof": "a `search:` reading on the rows for seven days; search-console-stats-indexing closed on the API reading; the 10-21 and 10-30 reviews read a series",
+      "score": 7,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
+    },
+    {
+      "id": "build-claim-marker",
+      "title": "`npm run pipeline claim <venture>/<id>`: a one-line push that marks the item `doing` with `doing_since` before building, so a concurrent build / burn-down session's `next` skips it; build.md and burn-down.md call it right after `next`",
+      "why": "2026-10-07 17:00 run: the 17:00 evening burn-down and the 17:10 daily build both took `next` = foundry `search-console-api-reading` and built it in parallel; the burn-down pushed at 17:35, the build's push was rejected and its 420-line duplicate (script, 25 tests, action 020, docs) was discarded at push time — about 40 minutes of a Fable session for nothing. The `doing` status (2026-10-05) was meant to be that guard (`next` skips an item doing < 1 day), but atomic pushes keep the `doing` edit local until the item's own commit, so no other session can see it. The slot marker (`npm run slot -- start build`, pushed before any work) is the precedent: a `claim` is the same one-line push for the item, and a claim older than a day is a cut-off session's leftover that `next` already offers again. The burn-down's loop claims each item as it starts it. Built 2026-10-07 (burn-down, the same evening): `scripts/pipeline-claim.ts` (claimItem refuses a live claim under a day old, a dated or non-todo item; takes over a leftover; subject `pipeline: claim <venture>/<id> (<routine>)`), dispatched from `npm run pipeline claim` before the core import; the watchdog's hasTrace excludes claim commits like start markers; build.md and burn-down.md step 2, README Claim paragraph, SCHEDULERS, CLAUDE.md; 9 tests.",
+      "effort_days": 0.2,
+      "proof": "no two run-log groups for the same item id within 30 days; `doing:` line in `npm run pipeline` shows a claimed item while its session runs",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
+    },
+    {
+      "id": "cold-gate-night-window",
+      "title": "`npm run pipeline cold` counts the night's exchange pre-research pass only from an `Exchange pre-research:` burn-down line stamped since the night's 17:00 UTC, never from a `Stopping: … pre-research spent` line or from yesterday's day",
+      "why": "2026-10-07 18:11 burn-down: `cold` printed `starved-and-cooled` although the night's pre-research pass was unspent. Its match was any `| burn-down |` line today or yesterday containing `pre-research`, and the `Stopping: … pre-research spent` lines (10-06 01:23, 02:19, 18:25) satisfied it each night, so the only real pass since the gate shipped is 2026-10-05 21:38 — two nights of the one allowed exchange pre-research were silently skipped, and the stopping line of each night kept the gate shut for the next. Built 2026-10-07 (burn-down): scripts/pipeline-cold.ts (nightStart = most recent 17:00 UTC; preResearchSpent needs the `Exchange pre-research:` prefix on a burn-down line stamped at or after it), used by `cold`; burn-down.md spells out the same rule; 10 tests.",
+      "effort_days": 0.1,
+      "proof": "every burn night from 2026-10-08 that ends starved shows one `Exchange pre-research:` line in docs/RUNS.md",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
+    },
+    {
+      "id": "claim-by-npm-flag",
+      "title": "`npm run pipeline claim … --by=<routine>` loses the routine: npm eats the flag, every claim commit says (build)",
+      "why": "Seen 2026-10-08 00:17 (burn-down): `npm run pipeline claim gankdat/d1-delta-cost-check --by=burn-down` pushed `pipeline: claim gankdat/d1-delta-cost-check (build)` (61275b2) — npm consumes `--by=…` as its own config (it reaches the script only as the env var `npm_config_by`) unless the caller writes `-- --by=…`, and the three prompts (burn-down.md, build.md, CLAUDE.md) show it without the `--`. The subject is what the watchdog and a reader use to tell which routine holds an item, so every claim is misattributed. Fix: scripts/pipeline-claim.ts reads `--by=` from argv or `npm_config_by` from the environment (a pure `routineFrom(argv, env)` with tests), and the docs show the `-- --by=` form. Built 2026-10-08 (burn-down): `routineFrom(argv, env)` in scripts/pipeline-claim.ts (argv `--by=`, then `npm_config_by`, then build; tests), and the four docs show `-- --by=`. The claim for this very item (ebb112c) used the `--` form and says (burn-down).",
+      "effort_days": 0.05,
+      "proof": "the next claim commit from the burn-down says (burn-down)",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-08",
+      "done_at": "2026-10-08"
+    },
+    {
+      "id": "dated-items-wait-for-row",
+      "title": "A dated item (`not_before` today) is offered at 00:00 UTC, 6–7 h before the day's Daily numbers row it was dated for exists",
+      "why": "Seen 2026-10-08 00:13 (burn-down): gankdat `d1-delta-cost-check` (not_before 2026-10-08, proof \"in the 10-08 row\") was `next` at the night's first fire; the 10-08 row is written by the 06:30 gankdat metrics / 06:45 store metrics jobs, so the read used the 10-05..10-07 rows and the 10-08 row is unread. Every day-30 reading in the queues (claude-directory-day-30, indexnow-day-30-read, uk-company-lookup-day-30, the three funnel reviews) is dated the same way and would fire on its midnight. Fix: in @foundry/core pipeline.ts, scripts/pipeline.ts (cold) and scripts/pipeline-claim.ts, a `not_before` equal to today counts as buildable only from 07:00 UTC (after both metrics jobs), dated earlier in the day stays on the `scheduled:` line; tests in all three. Built 2026-10-08 (burn-down): @foundry/core `notBeforeArrived(not_before, now)` + DATED_READY_HOUR_UTC = 7 (candidates/nextItem/starved/cooling/needsResearch/formatPipeline take `now` or the old `today`, which means noon); the `scheduled:` line shows \"on <date> from 07:00 UTC\" for the day itself; scripts/pipeline-cold.ts `datedArrived` for the cold gate; `claimItem(…, utcHour)` refuses a same-day claim before 07:00; tests in all three; pipeline README.",
+      "effort_days": 0.1,
+      "proof": "a dated reading item is first offered after 07:00 UTC on its day (next run-log line for one shows a time after 07:00)",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-08",
+      "done_at": "2026-10-08"
+    },
+    {
+      "id": "open-md-stable-render",
+      "title": "OPEN.md changes every day with no new ask: the generated-on date and \"waiting N days\" make a 24-line diff ride every routine commit",
+      "why": "Seen 2026-10-08 (burn-down): `npm run check` (its handoffs step) rewrote docs/for-owner/OPEN.md with only the date and nine day-counts changed, so the run either commits a diff unrelated to its item (f8d9577 did) or leaves the tree dirty for the pre-push hook. Fix: scripts/handoffs.ts renderOpen drops the generated-on date and the day counts from the file (keep `since <date>`; the `notify:` summary line keeps the ages), so the file changes only when an ask opens, closes or its unblocked work changes; test that two renders a day apart are identical. Built 2026-10-08 (burn-down): renderOpen takes no clock — no generated-on date, asks read \"since <date>\" instead of \"waiting N days\", handoff lines \"since <date>\"; the ages stay in the notify: digest. Test: the same asks a day later render byte-identical.",
+      "effort_days": 0.05,
+      "proof": "OPEN.md unchanged by `npm run check` on a day with no ALERTS change",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-08",
+      "done_at": "2026-10-08"
+    },
+    {
+      "id": "npmrc-update-notifier-off",
+      "title": "Silence npm's \"New major version of npm available\" banner in the sandbox (`update-notifier=false` in .npmrc)",
+      "why": "Seen 2026-10-08 (burn-down): every `npm run …` in the sandbox prints a five-line `npm notice` banner (10.9.4 → 12.2.0) that every routine then filters out of its tool output; `.npmrc` with `update-notifier=false` removes it for every session and CI with no other effect. Built 2026-10-08 (burn-down): `update-notifier=false` in .npmrc; `npm run pipeline cold` prints no npm notice line.",
+      "effort_days": 0.01,
+      "proof": "no `npm notice New major version` line in a routine's `npm run pipeline` output",
+      "score": 2,
+      "status": "done",
+      "added": "2026-10-08",
+      "done_at": "2026-10-08"
+    },
+    {
+      "id": "metrics-crons-off-the-half-hour",
+      "title": "Move the 06:30 and 06:45 metrics crons to odd minutes and measure whether GitHub still fires them ~7 h late",
+      "why": "Seen 2026-10-09 (burn-down research): both scheduled jobs fired hours late every day — `gankdat metrics` (cron 30 6) at 11:51, 12:38, 15:04, 13:28, 13:40, 13:48 UTC on 10-03..10-08 and `store metrics` (cron 45 6) at 12:52, 15:17, 13:38, 13:57, 14:03 on 10-04..10-08. The push fallback fills the Daily rows by ~07:16, but the runner-fed uk-insolvency refresh, the IndexNow submission, the MCP probe and the refresh-error filer run only on the scheduled run, so each lands seven hours after the waves and the 07:00 routines read a row the 13:50 run then replaces. GitHub documents that crons on busy minutes are delayed most. Do: `37 6` and `52 6` in docs/ci/gankdat-metrics.yml and docs/ci/store-metrics.yml (the installer moves them), SCHEDULERS.md rows; read the run start times after seven days; if still hours late, make the push-run do the runner steps too when the day's scheduled run has not happened by 08:00.",
+      "effort_days": 0.05,
+      "proof": "the scheduled gankdat metrics run starts before 08:00 UTC on five of seven days",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-09",
+      "doing_since": "2026-10-09",
+      "done_at": "2026-10-09",
+      "done_note": "2026-10-09 burn-down: `37 6` and `52 6` written to docs/ci/gankdat-metrics.yml and docs/ci/store-metrics.yml (installer moves them), SCHEDULERS rows updated; the seven-day reading is metrics-crons-day-7-read."
+    },
+    {
+      "id": "metrics-crons-day-7-read",
+      "title": "Day-7 read of the odd-minute metrics crons: do `gankdat metrics` (37 6) and `store metrics` (52 6) now start before 08:00 UTC?",
+      "why": "Proof of metrics-crons-off-the-half-hour (built 2026-10-09): on `30 6` / `45 6` both scheduled runs started 11:51–15:17 UTC every day 10-03..10-08. Do: list the scheduled runs of both workflows since 10-10 (GitHub MCP actions_list, event schedule) and record the start times here and in SCHEDULERS.md. Five of seven before 08:00 → done. Still hours late → build the fallback named in the parent item: the push run (any push after 08:00 UTC) performs the runner-only steps — runner-refresh, wave logs, IndexNow, the MCP probe, the error filer — when the day's scheduled run has not happened, so the 07:00 routines and the Daily numbers row never wait seven hours. Day-1 reading 2026-10-10 (burn-down research, actions_list over the 100 runs 10-08 17:10..10-10 00:17): gankdat metrics `37 6` started 13:41, store metrics `52 6` 13:49 on 10-09 — the minute move changed nothing on day 1; check `15 3` started 10:36, gankdat publish `0 4` 10:59, owner notes `20 * * * *` fired 5 of 31 hours, run watchdog `40 */2` 6 of 14 slots, while every push and workflow_dispatch run started within the minute. The fallback is queued now as cron-drift-dispatch-row (the 07:00 routine dispatches the jobs itself); this read still records the seven starts.",
+      "effort_days": 0.05,
+      "proof": "start times recorded; either five of seven days before 08:00 UTC or the push-run fallback queued",
+      "score": 3,
       "status": "todo",
-      "added": "2026-10-04"
+      "added": "2026-10-09",
+      "not_before": "2026-10-17"
+    },
+    {
+      "id": "cron-drift-dispatch-row",
+      "title": "The 07:00 metrics routine dispatches the two metrics workflows itself when the day's scheduled run has not happened",
+      "why": "Research 2026-10-10 (burn-down): GitHub runs this repo's crons hours late or not at all, whatever the minute — in the 31 h to 10-10 00:17 (100 runs read with actions_list) gankdat metrics `37 6` started 13:41, store metrics `52 6` 13:49, check `15 3` 10:36, gankdat publish `0 4` 10:59; owner notes `20 * * * *` fired 5 of 31 hours and run watchdog `40 */2` 6 of 14 slots (every 4–7 h), while every push and workflow_dispatch run started within the minute. So the 06:37/06:52 move (metrics-crons-off-the-half-hour, built 10-09) changed nothing on day 1, and metrics.md still tells the 07:00 routine to note `metrics job left no row` or spend a 20-min relay on store pages the runner reads in 12 s. Both workflows already carry `workflow_dispatch`. Build: docs/routines/metrics.md — at the start, when `git log origin/main --since=<today 00:00> --grep='^metrics: <date>'` (and `^store-metrics: <date>`) finds nothing, fire each missing workflow with the GitHub MCP `actions_run_trigger` (workflow_dispatch, ref main; gankdat-metrics.yml, store-metrics.yml), poll `git fetch -q origin main` every 10 s for up to 10 min for those commits, `git pull --no-rebase`, then read the rows; the relay path stays the fallback when the dispatch fails. SCHEDULERS.md rows for both jobs, the watchdog and owner notes state the measured drift so no routine moves a cron minute again; metrics-crons-day-7-read keeps its 10-17 reading of the seven starts. BUILT 2026-10-10 (burn-down): metrics.md MISSING ROWS paragraph (dispatch + 10-min poll before any relay, `metrics(gankdat):` / `store-metrics:` subjects, the late cron rewrites the row); SCHEDULERS rows for both jobs, the 07:00 routine, owner notes and the watchdog carry the measured drift.",
+      "effort_days": 0.1,
+      "proof": "from the first morning after the change every Daily numbers and Daily check row is written before the 07:00 routine's summary, no `left no row` note",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-10",
+      "done_at": "2026-10-10"
+    },
+    {
+      "id": "sandbox-clone-unshallow",
+      "title": "Every routine body starts by unshallowing the sandbox clone; a pull refused on a shallow clone is lag, not divergence",
+      "why": "Research 2026-10-10 (burn-down): the sandbox clone is `--depth 50` (reflog: `fetch --depth 50 origin main`) and its snapshot is days old — this run's tip was 10-06 02:19, 139 commits behind. `git fetch origin` then reports `forced update` and `git pull` refuses with `divergent branches` although the old tip is a plain ancestor (`git fetch --deepen=200` proved it), so every run after ~50 commits land takes the `work` fallback for nothing, and every `git log --since` in a routine (this run's 3-day grep saw 56 commits; ops retro W40 §4 saw 2 of its 8 days) under-counts silently. Only ops-retro.md got the unshallow step (retro proposal 4). The `into work` merge commits on main (18, 10-04..10-09) are rejected pushes resolved by `git pull --no-rebase`, not the fallback's doing. Build: first sentence under the `---` of build.md, burn-down.md, exchange.md, review.md, weekly-report.md, inbox-triage.md, metrics.md and fallback.md: `[ \"$(git rev-parse --is-shallow-repository)\" = true ] && git fetch --unshallow origin` (a no-op once complete) before any `git log --since` or push; routines/README.md bootstrap paragraph notes that a pull refused on a shallow clone is lag, so the next attended edit of the stored prompts puts the unshallow before the pull; CLAUDE.md session-start line gains it. BUILT 2026-10-10 (burn-down): CLONE paragraph first under the `---` of the eight routine files plus a Changes line each; routines/README.md bootstrap note; CLAUDE.md session-start line.",
+      "effort_days": 0.1,
+      "proof": "a routine's `git log --since` window spans its full period (oldest line as old as the window) on the next retro and weekly report; the `work` fallback fires only on a real divergence",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-10",
+      "done_at": "2026-10-10"
+    },
+    {
+      "id": "build-slot-pre-research",
+      "title": "The 09:00/17:00 build slot does the day's one exchange pre-research pass when the pipeline is starved and cooled",
+      "why": "Research 2026-10-10 (burn-down): the pipeline has ended starved-and-cooled every night since 10-05 (RUNS 10-05 23:xx, 10-06 00..02, 10-07 01:20 and 18:30, 10-08 00:30, 10-09 01:50) and the 10-08 09:15 build slot stopped with `Nothing buildable`; the only producers of new build items are the Wednesday exchange and the burn-down's one pre-research pass per night (10-07 Land Registry parked, 10-09 VOA declined on licence), so one candidate a day is the throughput ceiling while 34 exchange ideas sit 19 parked. Build: build.md's starved-and-cooled sentence gains the same pre-research pass as burn-down.md — an `Exchange pre-research:` line stamped since 07:00 UTC spends the day's pass, the burn-down's night window stays 17:00 (scripts/pipeline-cold.ts counts a `| build |` line in the day window; tests); SCHEDULERS.md build row. The slot has already started, so the pass adds ~10 min to a session the owner's daytime-light rule already allows. BUILT 2026-10-10 (burn-down): pipeline-cold.ts dayStart/passWindowStart, `preResearchSpent(runs, now, routine)` counting build and burn-down pass lines; `npm run pipeline cold -- --routine=build`; build.md step 1 sentence, burn-down.md pass rule, pipeline README, SCHEDULERS build row; 4 tests.",
+      "effort_days": 0.05,
+      "proof": "two exchange candidates a day (one day, one night) on starved days; a build item traced to a day pass within 14 days",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-10",
+      "done_at": "2026-10-10"
+    },
+    {
+      "id": "burn-down-watchdog-nightly",
+      "title": "Run watchdog's burn-down slot (and the retro's own prompt text) still assume Wednesday-only, six days after the schedule moved to nightly",
+      "why": "Ops retro 2026-W41: docs/SCHEDULERS.md has said nightly 17:00-02:00 UTC for the evening burn since the 2026-10-04 16:20 interactive-session commit, but scripts/run-watchdog.ts's ROUTINES array still has the burn-down entry at `days: [3]` (Wednesday only), and docs/routines/ops-retro.md's own Measure step 1 still lists \"burn-down Wed 18:00-Thu 02:00\". Nothing was silently missed this week only because every night's burn-down happened to ship something (6/6 nights traced by inspection of docs/RUNS.md); the exposure is that a genuinely silent Monday/Tuesday/Thursday/Friday/Saturday night burn-down would produce zero `watchdog | missed:` lines, since 5 of those 6 nights have no silence-detector running at all. Fix: drop the `days` restriction on the `burn-down` entry in scripts/run-watchdog.ts (watch the first hour, 17:00 UTC, every night, keeping the existing \"only the first hour\" comment and rationale), update the SCHEDULERS.md \"every routine slot is watched\" convention bullet and the watchdog job row to say nightly, and replace docs/routines/ops-retro.md's sentence \"burn-down Wed 18:00-Thu 02:00\" with \"burn-down nightly 17:00 UTC (first hour only; later hours may be usage-limit cutoffs)\" in the same commit.",
+      "effort_days": 0.1,
+      "proof": "the watchdog reports a slot for every night of the following week (7 burn-down entries in its internal slot list, not 1); a deliberately silent non-Wednesday night produces a watchdog | missed: line within 2 h in a dry run",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-10"
+    },
+    {
+      "id": "handoff-aging-escalation",
+      "title": "Open handoff: entries (agent work only an attended session can clear) get no staleness signal, unlike owner: asks",
+      "why": "Ops retro 2026-W41: the 2026-10-06 owner-ask-digest gives owner: lines a 7-day notify escalation (scripts/handoffs.ts digestLine), but handoff: entries - in practice clearable only by the owner opening Claude Code with .env - get none: renderOpen just lists them under \"Waiting on an attended Claude session, not you\" in docs/for-owner/OPEN.md with no age-based alert. This week that silence cost two fully built, gate-green releases 5-6 days of sitting unsigned with nothing on the owner's phone naming them: ReadFocus 0.3.0 (handoff opened 10-04, 6 days old) and Highlight Keep 0.4.0 (opened 10-05, 5 days old), both blocked on the same extension-publish-in-ci cause (score 5, blocked 10 days). Fix: extend digestLine in scripts/handoffs.ts (or add a second notify line alongside it) to also count open handoff: entries against a threshold shorter than the 7-day owner-ask default (these are typically few-minute signing jobs blocking an already-finished release) - e.g. \"N releases waiting on your next Claude Code session, oldest N days\" - printed whenever any handoff: entry passes it; docs/routines/weekly-report.md's notify-line sentence picks it up the same way it already does the owner digest.",
+      "effort_days": 0.1,
+      "proof": "the next handoff: entry that crosses the threshold produces a notify: line within a day of crossing it; a month from now no shipped-but-unsigned release handoff is older than the threshold without one",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-10"
+    },
+    {
+      "id": "third-party-pr-relay",
+      "title": "Open fork pull requests on third-party repositories from CI: a routine writes `docs/relay/prs/<name>/` (target repo, branch, title, body, files) and a workflow forks, pushes and opens the PR with an owner-granted token",
+      "why": "Repeat blocker: every directory listing that is a PR has needed the interactive session — public-apis and APIs.guru (2026-09-20), awesome-remote-mcp-servers (2026-09-23) — and on 2026-10-10 the build routine finished the Docker MCP Catalog entry (validated with Docker's own tool) and still had to hand the PR off: the sandbox's GitHub token is scoped to giovf/rorororo (`fork_repository` and `create_pull_request` on docker/mcp-registry are refused, the REST API answers 403) and CI's WORKFLOW_TOKEN is a fine-grained PAT on this repo only. Build: `docs/ci/pr-relay.yml` triggered on push to `docs/relay/prs/**` runs `gh repo fork <owner/repo> --clone=false`, clones the fork, copies the files, pushes `<branch>` and `gh pr create` with the stored title and body, then writes the PR URL to `docs/relay/prs/<name>/result.json` (the relay README gains the section). Needs one owner action: a classic PAT with `public_repo` (fine-grained tokens cannot fork another account's repository) stored as `PR_TOKEN` — batch it with the next owner action. Reach: the Docker PR now, the Smithery/awesome-list PRs the exchange keeps parking, and any upstream fix (e.g. a Docker gateway bug report with a patch).",
+      "effort_days": 0.25,
+      "proof": "the Docker MCP Catalog PR (or the next listing PR) opened by the workflow, URL in result.json, without an interactive session",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-10"
     }
   ]
 }

@@ -14,7 +14,9 @@ const BASE = 'https://example.com';
 const PUBLIC = 'https://gankdat.com';
 const MCP_URL = `${BASE}/mcp`;
 const RESOURCE = `${PUBLIC}/mcp`;
-const CLIENT_ID = 'https://claude.ai/.well-known/oauth-client.json';
+// Claude's real hosted-apps client document (claude.com/docs/connectors/building/authentication,
+// confirmed through the relay 2026-10-09); the Worker is generic — any CIMD URL works the same.
+const CLIENT_ID = 'https://claude.ai/oauth/mcp-oauth-client-metadata';
 const CLAUDE_CALLBACK = 'https://claude.ai/api/mcp/auth_callback';
 const VERIFIER = 'dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk-abcdefghijklmnop';
 
@@ -622,3 +624,92 @@ async function sha256(value: string): Promise<string> {
   const digest = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(value));
   return [...new Uint8Array(digest)].map((b) => b.toString(16).padStart(2, '0')).join('');
 }
+
+// The connect funnel (gankdat oauth-connect-funnel-check, 2026-10-09): one `oauth_funnel`
+// analytics point per leg, blob3 the step, blob4 the client host, blob5 the detail. The Daily
+// numbers row reads them side by side (src/lib/oauth-funnel.ts), so an attempt that stops at
+// the sign-in page is a number, not a guess.
+describe('connect funnel points', () => {
+  const funnelCalls = (spy: { mock: { calls: unknown[][] } }): string[][] =>
+    spy.mock.calls
+      .map((call) => (call[0] as { blobs: string[] }).blobs)
+      .filter((blobs) => blobs[0] === 'oauth_funnel')
+      .map((blobs) => blobs.slice(2));
+
+  it('counts every leg of the happy path with the client host', async () => {
+    const spy = vi.spyOn(env.TRAFFIC, 'writeDataPoint');
+    const { requestId } = await startAuthorize();
+    const cookie = await signInViaMagicLink(requestId!, 'funnel@example.com');
+    const consent = await SELF.fetch(`${BASE}/authorize?request=${requestId}`, {
+      headers: { Cookie: cookie, 'CF-Connecting-IP': '203.0.113.42' },
+    });
+    expect(consent.status).toBe(200);
+    const redirected = await approve(requestId!, cookie);
+    const exchanged = await token({
+      grant_type: 'authorization_code',
+      code: redirected.searchParams.get('code')!,
+      code_verifier: VERIFIER,
+      client_id: CLIENT_ID,
+      redirect_uri: CLAUDE_CALLBACK,
+    });
+    expect(exchanged.status).toBe(200);
+    const refreshed = await token({
+      grant_type: 'refresh_token',
+      refresh_token: exchanged.body.refresh_token!,
+      client_id: CLIENT_ID,
+    });
+    expect(refreshed.status).toBe(200);
+    expect(funnelCalls(spy)).toEqual([
+      ['authorize', 'claude.ai', ''],
+      ['signin_shown', 'claude.ai', 'new'],
+      ['email_sent', 'claude.ai', 'sent'],
+      ['consent_shown', 'claude.ai', 'continue'],
+      ['approved', 'claude.ai', ''],
+      ['token', 'claude.ai', 'authorization_code'],
+      ['token', 'claude.ai', 'refresh_token'],
+    ]);
+    spy.mockRestore();
+  });
+
+  it('names the leg that rejected, denied, expired or refused', async () => {
+    const spy = vi.spyOn(env.TRAFFIC, 'writeDataPoint');
+    stubOutbound(null);
+    await startAuthorize();
+    stubOutbound();
+    await startAuthorize({ redirect_uri: 'https://evil.example/cb' });
+    await startAuthorize({ code_challenge_method: 'plain' });
+    await SELF.fetch(`${BASE}/authorize`, { headers: { 'CF-Connecting-IP': '203.0.113.42' } });
+    await SELF.fetch(`${BASE}/authorize?request=${'0'.repeat(32)}`, {
+      headers: { 'CF-Connecting-IP': '203.0.113.42' },
+    });
+    const { requestId } = await startAuthorize();
+    const cookie = await signInViaMagicLink(requestId!, 'funnel-deny@example.com');
+    const denied = await SELF.fetch(`${BASE}/authorize/decision`, {
+      method: 'POST',
+      headers: { ...FORM, Cookie: cookie },
+      body: new URLSearchParams({ request: requestId!, decision: 'deny' }).toString(),
+      redirect: 'manual',
+    });
+    expect(denied.status).toBe(302);
+    const refused = await token({
+      grant_type: 'authorization_code',
+      code: 'gkac_nope',
+      code_verifier: VERIFIER,
+      client_id: CLIENT_ID,
+    });
+    expect(refused.status).toBe(400);
+    expect(funnelCalls(spy)).toEqual([
+      ['authorize_rejected', 'claude.ai', 'unknown_client'],
+      ['authorize_rejected', 'claude.ai', 'redirect_not_allowed'],
+      ['authorize_rejected', 'claude.ai', 'invalid_request: code_challenge_method must be S256'],
+      ['authorize_rejected', '', 'bad_query'],
+      ['expired', '', 'authorize'],
+      ['authorize', 'claude.ai', ''],
+      ['signin_shown', 'claude.ai', 'new'],
+      ['email_sent', 'claude.ai', 'sent'],
+      ['denied', 'claude.ai', ''],
+      ['token_rejected', 'claude.ai', 'invalid_grant: unknown or expired code'],
+    ]);
+    spy.mockRestore();
+  });
+});

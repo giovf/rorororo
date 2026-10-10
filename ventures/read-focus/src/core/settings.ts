@@ -1,6 +1,14 @@
 import type { Preset } from './fixation.js';
 
 export type FontChoice = 'default' | 'opendyslexic' | 'atkinson' | 'system-sans';
+/** Ruler band colours; `white` is the one that shows on a dark page. */
+export type RulerColor = 'yellow' | 'blue' | 'green' | 'pink' | 'grey' | 'white';
+export const RULER_COLORS: readonly RulerColor[] = ['yellow', 'blue', 'green', 'pink', 'grey', 'white'];
+/** Band height in CSS px: thin / medium / tall. */
+export const RULER_HEIGHTS = [24, 34, 48] as const;
+export const RULER_OPACITY = { min: 0.1, max: 0.6, default: 0.2 } as const;
+/** Page tint behind the text (pro): none, or a pastel instead of white as the dyslexia style guide suggests. */
+export type TintChoice = 'none' | 'cream' | 'yellow' | 'blue' | 'green' | 'pink' | 'grey';
 
 export interface SiteSettings {
   /** Master switch for this site. */
@@ -12,8 +20,20 @@ export interface SiteSettings {
   /** Pro: extra thickness of the emphasised part, 700 (plain bold) … 900 (+0.8px stroke). */
   weight?: number;
   ruler: boolean;
+  /** Ruler band colour, height (px) and tint opacity — free, like every rival's ruler controls. */
+  rulerColor: RulerColor;
+  rulerHeight: number;
+  rulerOpacity: number;
+  /** Locked: the band stays where it is; a click or tap moves it. Unlocked: it follows the pointer. */
+  rulerLock: boolean;
   /** Text size multiplier for reading blocks, 1.0–1.5 (free). */
   size: number;
+  /** Line 1.5, letter 0.12em, word 0.16em on reading blocks — the dyslexia style-guide numbers (free). */
+  spacing: boolean;
+  /** Pro. */
+  tint: TintChoice;
+  /** Read-aloud speed, 0.7–1.6 (pro; read-aloud itself is pro). */
+  speechRate: number;
   /** Pro: dim everything except the paragraph under the cursor. */
   focus: boolean;
   /** Pro. */
@@ -32,7 +52,14 @@ export const DEFAULT_SITE: SiteSettings = {
   bold: true,
   preset: 'medium',
   ruler: false,
+  rulerColor: 'yellow',
+  rulerHeight: 34,
+  rulerOpacity: RULER_OPACITY.default,
+  rulerLock: false,
   size: 1,
+  spacing: false,
+  tint: 'none',
+  speechRate: 1,
   focus: false,
   font: 'default',
 };

@@ -16,3 +16,10 @@
 
 - 2026-10-04 (burn-down): repo is **0.3.0** — import from Super Simple Highlighter + merging Restore. Needs signing/upload
   once 0.2.0 clears review (CWS refuses a new upload while one is pending; AMO takes it any time) — ALERTS handoff.
+
+- 2026-10-05 (build 17:00): repo is **0.4.0** — import from Weava's .csv dashboard export (header-driven: URL + highlight required;
+  note, title, folder→tag, colour, date when present). Needs signing/upload once 0.2.0 clears review — ALERTS handoff (supersedes the 0.3.0 one).
+- 2026-10-05 (burn-down 17:00): 0.4.0 also carries the **"On for every site"** popup switch (optional http/https permission asked once,
+  one registered content script; off again unregisters it). AMO release notes updated; no further version bump.
+- 2026-10-05 (burn-down 17:00, 2nd item): 0.4.0 also highlights inside iframes (every frame; stored under the frame's URL) and
+  open shadow roots (web components), with the mark styles adopted into the root. AMO release notes updated.

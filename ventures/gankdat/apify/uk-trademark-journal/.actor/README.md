@@ -13,3 +13,6 @@
 
 ## Data posture
 Public-register data reduced to organisation level: an applicant or representative name is kept only when it is an organisation; individual applicants are recorded as "individual or unincorporated" without a name, addresses are reduced to the country, and mark images are never stored. Pay per result; set **Maximum results** to control spend. Data from gankdat.com (REST API, MCP server, weekly change feed).
+
+## Monitor it (changes mode)
+Set **Mode** to *Changes since a date (monitor)* and the run returns only the applications published since **Changes since** (default: the last 7 days; the feed keeps 90), each item carrying `change` (`added`, `removed` or `changed`) and `changed_at` next to the record's fields. Your filters still apply, so one scheduled run is a watch — **Schedules → daily** on this actor — and you pay only for the rows that changed, typically a few dozen instead of the whole register. Nobody else sells this feed: it is computed from the official extract every day.

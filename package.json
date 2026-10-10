@@ -20,7 +20,8 @@
     "format:check": "prettier --check .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run typecheck && npm run portfolio && npm run ledger && npm run pipeline && npm run runs && npm run lint && npm run format:check && npm run test && npm run check -w @foundry/gankdat",
+    "check": "npm run check:root && npm run check -w @foundry/gankdat",
+    "check:root": "npm run typecheck && npm run portfolio && npm run ledger && npm run pipeline && npm run handoffs && npm run runs && npm run lint && npm run format:check && npm run test",
     "portfolio": "node --disable-warning=ExperimentalWarning scripts/portfolio.ts",
     "ledger": "node --disable-warning=ExperimentalWarning scripts/ledger-check.ts",
     "licensing:keygen": "node --disable-warning=ExperimentalWarning scripts/licensing-keygen.ts",
@@ -33,8 +34,10 @@
     "task": "node --disable-warning=ExperimentalWarning scripts/taskmaster-add.ts",
     "runner-refresh": "npm run runner-refresh -w @foundry/gankdat",
     "refresh-errors": "node --disable-warning=ExperimentalWarning scripts/refresh-errors-to-queue.ts",
+    "mcp-probe": "node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts",
     "handoffs": "node --disable-warning=ExperimentalWarning scripts/handoffs.ts",
-    "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts"
+    "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts",
+    "prepare": "git config core.hooksPath .githooks"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",

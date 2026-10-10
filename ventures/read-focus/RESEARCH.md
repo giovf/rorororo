@@ -130,6 +130,18 @@ the multi-store listing is the main upside over V1.
 | 2026-10-03 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing); AMO ratings count 0 |
 | 2026-10-04 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.1.0, updated September 21, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.1.0 |
 | 2026-10-04 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
+| 2026-10-05 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.1.0, updated October 4, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0 |
+| 2026-10-05 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
+| 2026-10-06 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0 |
+| 2026-10-06 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
+| 2026-10-07 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search: n/a (no SEARCH_CONSOLE_KEY secret; owner action 020) |
+| 2026-10-07 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
+| 2026-10-08 | Daily check | 1 | — | — | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search: n/a (no SEARCH_CONSOLE_KEY secret; owner action 020) |
+| 2026-10-08 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
+| 2026-10-09 | Daily check | 0 | — | — | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search: n/a (no SEARCH_CONSOLE_KEY secret; owner action 020) |
+| 2026-10-09 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
+| 2026-10-10 | Daily check | 2 | — | — | via store-metrics CI: chrome: 2 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search: n/a (no SEARCH_CONSOLE_KEY secret; owner action 020) |
+| 2026-10-10 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "No ratings" on listing) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
@@ -188,3 +200,156 @@ out: the extension cannot fetch them without the file-URL permission, which stor
 proves reflow → bold → ruler → first-page gate in Chromium; 7 unit tests cover the URL helpers and the reflow.
 Proof (queue `proof`): a review or support mail mentioning PDFs; unlock conversion after 0.2.0 reaches the stores
 above the pre-release rate (0 so far, so any sale counts). Ships with the open 2026-09-30 handoff.
+
+## Research 2026-10-04 (burn-down; starvation fallback — every open ReadFocus item blocked or dated)
+
+Evidence read: the metrics rows (0 Chrome users, no ratings, 0 Firefox daily users since 2026-09-30; 0.2.0 in
+review on both stores since 10-04, so the PDF reader and the fixed listings are still unmeasured), the 2026-09-18
+competitor table, the 2026-09-30 and 10-01 research notes, STRATEGY §5 (distribution before features) and four web
+searches today for what a searcher actually sees: (1) "reader mode alternative" — AlternativeTo's Reader Mode page,
+Product Hunt's alternatives page and listicles (Medium, Tooltivity, web-highlights.com) that lead with Reader View
+(300k users, free) and Just Read; (2) "reading ruler chrome extension dyslexia pdf" — Dyslexly (dyslexly.com: free, no
+account, five fonts, line focus, reading ruler, PDF viewer, Pro ≈ £2/month), Helperbird and Nook, plus a ruler
+blog; (3) "adhd reading extension" — Half Bold (halfbold.vercel.app: free, no premium, 8,000+ users, 4.8 from 55
+ratings), ADHD Reading Focus, ADHD Reading Help and bushe.co's list; (4) Firefox for Android — AMO lists Android-
+compatible extensions on its own home page (450+ at launch), and compatibility is a developer-hub flag once the
+extension works on mobile. Our comparison page (`reader-mode-alternative.html`, 2026-10-01) names Reader Mode, the
+official bolding tool and ADHD Reading — none of the names in today's results.
+
+Reading: the same findability problem as Highlight Keep, with one twist — the strongest 2026 rivals (Dyslexly, Half
+Bold) are free and local, so the one-time-vs-subscription argument does not land against them; what ReadFocus still
+has is the PDF reflow (0.2.0), paragraph focus and a precise bold strength. The cheap items are the ones that put
+ReadFocus on the pages a searcher reaches and state those three gaps honestly. Items added (score = evidence × reach
+÷ effort):
+
+| Item | Score | Effort | What it does |
+|---|---|---|---|
+| `comparison-page-2026-rivals` | 4 | 0.2 d | Dyslexly and Half Bold columns on `reader-mode-alternative.html` with facts read from their own sites and listings through the relay (allowlist: dyslexly.com, halfbold.vercel.app); honest cells where they win |
+| `reading-ruler-page` | 4 | 0.3 d | `reading-ruler.html`: the search-capture page for "reading ruler chrome extension" — Reader Line (20k, 4.9) reviews all ask for PDF, ReadingLine is abandoned, ReadingRuler "not working after update"; ReadFocus has the ruler and web PDFs since 0.2.0 |
+| `alternativeto-listing` | 3 (blocked: owner account) | 0.1 d | list ReadFocus as a Reader Mode / Reader View alternative on alternativeto.net (its Reader Mode page is the top result for the query) and on Product Hunt's alternatives page; both need an account under the owner's identity |
+| `firefox-android-compat` | 2 | 0.3 d | `browser_specific_settings.gecko_android` + a popup that works at phone width, then the AMO Android flag: a free shelf (AMO's Android home page) with no evidence yet that dyslexic readers install reading tools on mobile Firefox — build after the two pages, drop at day 30 if no Android installs |
+
+Built 2026-10-04 (burn-down, same night): `firefox-android-compat` as **0.2.1** — `gecko_android` in the Firefox manifest, a
+phone-width popup, guarded shortcut API, tap-to-place ruler and focus. Ships with the next AMO sign; the proof is the AMO
+API's compatibility field plus any Android installs by the day-30 review. Not tested on a device.
+
+Not added: a free companion extension (the Variables Toolkit pattern) — a ruler-only or bold-only free extension would
+sit next to Half Bold and Dyslexly, which are already free and larger, and risks the Chrome Web Store's repetitive-
+content rule; a demo video (no evidence it moves installs). Kill check unchanged: 2026-12-21 if nothing moves.
+
+### 2026-10-04 (burn-down) — `comparison-page-2026-rivals` built
+`reader-mode-alternative.html` now has six columns: Half Bold and Dyslexly joined the three September rivals, with one
+paragraph on the pair. Facts through the relay (`docs/relay/responses/rf-rivals-2026/`, `rf-rivals-2026b/`): **Half Bold** —
+halfbold.vercel.app: "100% free … no premium version, no subscriptions", two engines (CSS-only / tag-wrapping),
+OpenDyslexic, focus modes, PDFs "need conversion first", a Google Docs integration guide; Chrome listing 10,000 users,
+4.8 (55), v2.0.4 updated 2026-03-05. **Dyslexly** — dyslexly.com answers 403 to the runner, so its Chrome listing is the
+source: 271 users, 5.0 (5), v1.6.24 updated 2026-09-28; free tools "do not require an account, subscription or credit
+card": four fonts, spacing, overlays, line focus, reading ruler, read-aloud, a bold-starts mode, per-site settings, a
+built-in reader for text-based PDFs; Pro adds rewriting and voice tools (price not on the listing, so not on our page).
+Reading: both are free, so the page says plainly where they win and keeps ReadFocus's three real differences (bold
+strength, paragraph focus, PDF reflow as real text). Dyslexly's 271 users show it ranks on content, not installs — the
+`reading-ruler-page` item is the same play. Allowlist gained `.dyslexly.com` and `halfbold.vercel.app`.
+
+### 2026-10-04 (burn-down) — `reading-ruler-page` built
+`https://apps.gankdat.com/reading-ruler.html` is the search-capture page for "reading ruler chrome extension" / "reading
+ruler pdf": an 11-row table against Reader Line (20,000 users, 4.9, every top review asks for PDF), ReadingLine (8,000,
+3.9, abandoned June 2022, "zero controls") and ReadingRuler (722, 3.4, "not working after recent update"), all from the
+September 2026 harvest (`research/cws-harvest-2026-09-18.json`); honest cells where ReadFocus's ruler is thinner (one
+band, no colour/size controls, no lock-in-place) and the PDF reflow explained as the reason a ruler can work on a web PDF
+at all. Links: landing index, the ReadFocus page, the comparison page, `sitemap.xml`, `LISTING.md` and
+`assets/amo-metadata.json` (the live listings pick the line up on the next dashboard visit / version sign). Proof (queue):
+≥ 30 impressions or ≥ 3 clicks at the 2026-10-30 review. Not built: colour/size controls for the band — a product change,
+queued only if the page or a review asks for it.
+
+## Research 2026-10-05 (burn-down 19:00; starvation fallback — every open ReadFocus item blocked or dated)
+
+Evidence read: the metrics rows (0 Chrome users and no ratings every day since 2026-09-30; 0.2.0 shows as the live Firefox
+version on 10-05 and the Chrome listing's "updated October 4, 2026", so the PDF reader and the fixed listings have had one
+day — nothing readable yet), the two research notes above, STRATEGY §5 (distribution before features; every distribution
+item left is blocked on an owner account — `cws-promo-tile`, `edge-add-ons-listing`, `alternativeto-listing` — and the
+numbers are dated 2026-10-30), the September review sample re-read **by ask** rather than by rival
+(`research/cws-harvest-2026-09-18.json`), the live source (`core/settings.ts`: the ruler is one fixed yellow band with no
+setting; no spacing, no tint, no read-aloud), the British Dyslexia Association style guide (web search: line spacing 1.5,
+letter spacing ≈ 35 % of the average letter width, cream or a soft pastel instead of white — "white can appear too
+dazzling"), two 2026 listicles for "chrome extension dyslexia read aloud" (Dyslexly's free tier: five fonts, spacing,
+colour overlay, line focus, ruler, text-to-speech with word highlighting, PDF viewer; Helperbird's word-by-word read-aloud
+is the feature its blog leads with) and Half Bold's own FAQ from the 10-04 relay capture (`docs/relay/responses/rf-rivals-2026/3.html`):
+"Does it work with Google Docs? Yes! … File → Share → Publish to web, then enable Half Bold on the published page" — a
+workaround, not Docs support, and one ReadFocus can give for free.
+
+Asks in the sample that ReadFocus does not answer today:
+
+| Ask | Where it is said | Count |
+|---|---|---|
+| ruler colour / size / opacity | ReadingRuler ("the only thing that could make it better would be color and opacity options"; praises hex/RGB/HSL/eyedropper), ReadingLine ×2 ("wish we could tweak colour, size and opacity"; "option to change color — not usable on dark background themes"), Reader Line ("the color filters are nice") | 4 |
+| background colour / tint | Dyslexia Friendly ("I can change the background colour of the page … and the font size"), Quiet Reader ("the colours are harsh (black & white) and cannot be changed"), Dyslexia Reader (colour changers "caused the screen to blink" — change the tint gently, once) | 3 |
+| spacing | Dyslexia Friendly ("messes with the spacing of words and entire page layout … increases the zoom" — spacing must be a control, not a side effect) | 1 |
+| Google Docs | the official bolding tool ("doesn't work on pdf documents or google docs"), ADHD Reader ("wants Docs/Word") | 2 |
+| read aloud | none in the sample; it is a suite feature (Helperbird, Dyslexly, Dyslexia Reader's click-a-sentence) and the free "Read Aloud" extension serves it standalone | 0 |
+
+Reading: the 10-04 note deferred ruler controls "until the page or a review asks" — the sample already asks four times
+across the three ruler tools (28,000 users), and our own `reading-ruler.html` admits the band is thinner than Reader
+Line's. Spacing and tint are the BDA basics every dyslexia suite ships and the one thing a cream-background reader
+cannot get from ReadFocus at all. Read-aloud is real but served elsewhere, so it sits last. Items added (score =
+evidence × reach ÷ effort):
+
+| Item | Score | Effort | What it does |
+|---|---|---|---|
+| `ruler-controls` | 5 | 0.3 d | colour (six swatches incl. a dark-page-safe one), height (3 sizes), opacity, and a lock-in-place toggle for the ruler; free, like every rival's ruler |
+| `spacing-and-tint` | 4 | 0.4 d | line / letter / word spacing with the BDA numbers as the one-click default, plus a page tint (cream, pale yellow, blue, green, pink, grey) as a soft fixed overlay; spacing free, tint in the unlock |
+| `read-aloud` | 3 | 0.6 d | the browser's own voices (`speechSynthesis`, nothing leaves the browser), sentence highlighting that follows the voice, play/pause in the popup and a shortcut; in the unlock; listing says plainly it uses the computer's voices |
+| `google-docs-publish-tip` | 3 | 0.05 d | the "Publish to web" route on the comparison page, the ReadFocus page and the welcome page — honest "ReadFocus cannot read the editor itself" kept |
+
+Not added: a Docs editor integration (canvas; Half Bold has none either); a ruler colour picker with hex input (six
+swatches cover the asks; a picker if a review asks); dark mode / page colour inversion (Dark Reader's job, 5M users).
+Kill check unchanged: 2026-12-21 if nothing moves.
+
+### 2026-10-05 (burn-down 19:00) — `ruler-controls` built (0.3.0)
+The popup's ruler row now has six colour swatches (yellow, blue, green, pink, grey and white — the one that shows on a dark
+page, the ReadingLine complaint), three heights (24 / 34 / 48 px), an opacity slider (0.1–0.6) and **lock in place**: a
+locked band ignores the mouse and moves only on a click or a tap, so you scroll the page under it (the Reader Line
+behaviour; on a phone it is simply the tap-to-place the 0.2.1 popup already promised). Free, like every rival's ruler
+controls. Implementation: four `SiteSettings` fields with defaults (`normalize` backfills old saves, unit-tested), the
+band styled through three CSS variables on the element, `pointermove` ignored while locked. e2e section 1b (4 checks):
+height and `rgba(56, 150, 255, 0.4)` computed on the band, a mouse move leaving a locked band where it was, a click moving
+it. Copy: listing, AMO notes, welcome page, the ReadFocus page and `reading-ruler.html` (its "one band, no controls" cells
+and the "does not do yet" list now say what is there). Ships as 0.3.0 with the open ALERTS handoff (amended). Proof: a
+ruler review or support mail naming colour/size/opacity within 60 days of the version going live.
+
+### 2026-10-05 (burn-down 19:00, 2nd item) — `spacing-and-tint` built (0.3.0)
+**Wider spacing** (free): one switch sets line height 1.5, letter spacing 0.12em and word spacing 0.16em on reading
+blocks only (editors untouched, as the Dyslexia Friendly review asks) — the BDA guide's 1.5 line spacing and wider
+tracking, at the WCAG 1.4.12 text-spacing values every browser is required to tolerate, so pages do not break.
+**Page tint** (unlock): cream, pale yellow / blue / green / pink or soft grey as one fixed full-viewport layer with
+`mix-blend-mode: multiply` — white turns to the tint, text stays dark, and nothing is repainted per element (the
+Dyslexia Reader complaint, "the screen blinks"). Free keys get `tint: none` from `applyTier` (unit-tested). e2e 2b
+(4 checks: computed line height and letter spacing on a paragraph, textarea untouched, no tint without a key) plus the
+tint layer's computed colour in the pro section and its absence with a bad key. Copy: listing (free bullet, unlock
+line), AMO notes, welcome, the ReadFocus page and the comparison page's ReadFocus cell. Proof: a review or support mail
+naming spacing or the tint within 60 days of 0.3.0 going live; unlock conversions after vs before.
+
+### 2026-10-05 (burn-down 19:00, 3rd item) — `read-aloud` built (0.3.0, unlock)
+`speechSynthesis` only — the computer's own voices, nothing leaves the browser (the listing says so, because Helperbird's
+one complaint is voice quality and that is the OS's). Reading starts at the first block on screen, one utterance per
+sentence (`core/speech.ts`: `Intl.Segmenter` sentences with a regex fallback, and the pure `locateSpan` that maps a
+sentence onto a block's text nodes — 4 unit tests), and the sentence being read is marked through the **CSS Custom
+Highlight API** (a Range, not a wrapper, so it lives beside the bolding spans and vanishes on stop; Chrome 105+, Firefox
+140 = our floor). Popup: ▶ Read / ⏸ Pause / ▶ Resume, ■ Stop, a speed slider (0.7–1.6), plain notes for "part of the
+unlock", "no voices on this browser" and "nothing to read"; shortcut Alt+Shift+A. Switching the site off stops reading.
+e2e (4 checks through the extension's own message, as the popup sends it): refused without a key, starts for a key with
+9 sentences, the first sentence on screen is the one marked with its highlight registered, stop clears it — headless
+Chromium has no voices, so the utterance errors at once and the reply is read synchronously; audio itself is unverified
+here. Proof: a review or support mail naming read-aloud within 60 days of 0.3.0 going live; unlock conversions.
+
+### 2026-10-05 (burn-down 19:00, 4th item) — `google-docs-publish-tip` built
+The Publish-to-web route (File → Share → Publish to web, then ReadFocus on the published page) is now on the comparison
+page's Google Docs row (ReadFocus cell, and Half Bold's cell says honestly that its "integration guide" is the same
+workaround), the reading-ruler page's "does not do yet" list, the ReadFocus landing page and the welcome page's tips —
+each keeping "cannot read the editor itself". No product change. Proof: a Docs-related install or question within 60 days.
+
+## Research 2026-10-07 (burn-down; starvation fallback — no new evidence)
+
+Third starvation pass in eight days (09-30/10-04, 10-05 built out the same night). Evidence unchanged:
+0 users and no ratings on Chrome and Firefox (0.2.0) on every row; 0.3.0 waits on the signing handoff; Edge, AlternativeTo and the promo tile are owner-blocked. Nothing unblocked is left that the earlier passes did not queue and build, so no items are
+added; the queue carries `research_after: 2026-10-30`, the `day-30-funnel-review` reading, and the fallback skips it until then
+(`docs/pipeline/README.md`, Waiting).

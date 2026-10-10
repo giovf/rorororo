@@ -11,15 +11,23 @@
 // Why a date cutoff and not the push's diff range: the `check` workflow checks out depth 1, so
 // no range exists in CI, and a cutoff gives the same verdict locally and in CI for the same file.
 //
-// Run: npm run runs                       → check lines dated >= CAP_FROM, exit 1 on a violation
+// Append-only floor (2026-10-04, foundry `append-only-guard`): commit 815ab26 wrote docs/RUNS.md and
+// docs/STRATEGY.md whole with only its new entry (472 and 569 lines gone, CI green, two later runs
+// appended to the stubs). `check` now also compares the dated-bullet count of both files with the
+// floor in docs/ops/RUNS-COUNT.json: lower fails (a whole-file write), higher raises the floor in
+// place so the next commit carries it. No git range needed, so depth-1 CI gives the same verdict.
+//
+// Run: npm run runs                       → check lines dated >= CAP_FROM and the floor, exit 1 on a violation
 //      npm run runs -- check [--from YYYY-MM-DD] [--cap 120]
 //      npm run runs -- list  [--from YYYY-MM-DD] [--cap 120]   → every offender, never fails
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
-import { readFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 
 export const RUNS_FILE = path.join('docs', 'RUNS.md');
+export const STRATEGY_FILE = path.join('docs', 'STRATEGY.md');
+export const FLOOR_FILE = path.join('docs', 'ops', 'RUNS-COUNT.json');
 export const CAP = 120;
 /** Lines dated before this day are grandfathered; the check landed on this date. */
 export const CAP_FROM = '2026-10-03';
@@ -103,6 +111,55 @@ export function formatViolation(v: Violation, cap = CAP): string {
     : `${RUNS_FILE}:${v.line}: not \`- YYYY-MM-DD HH:MM | <routine> | <text>\`: ${head}`;
 }
 
+/** Dated bullets (`- YYYY-MM-DD …`) in a file: run lines, or decision-log entries. */
+export function datedLineCount(md: string): number {
+  return md.split('\n').filter((l) => DATED.test(l)).length;
+}
+
+export interface Floor {
+  /** Dated bullets in docs/RUNS.md the last time the check ran. */
+  runs: number;
+  /** Dated bullets in docs/STRATEGY.md (the decision log) the last time the check ran. */
+  strategy: number;
+  updated: string;
+}
+
+export function parseFloor(json: string): Floor {
+  const raw = JSON.parse(json) as Partial<Floor>;
+  return {
+    runs: typeof raw.runs === 'number' ? raw.runs : 0,
+    strategy: typeof raw.strategy === 'number' ? raw.strategy : 0,
+    updated: typeof raw.updated === 'string' ? raw.updated : '',
+  };
+}
+
+/** One message per file whose dated-bullet count fell below the floor; empty when both grew or held. */
+export function floorViolations(
+  counts: { runs: number; strategy: number },
+  floor: Floor,
+): string[] {
+  const out: string[] = [];
+  const say = (file: string, now: number, was: number): string =>
+    `${file}: ${now} dated lines, floor ${was} (${was - now} lost) — the file is append-only; a whole-file write replaced it. Restore it from git and append your lines.`;
+  if (counts.runs < floor.runs) out.push(say(RUNS_FILE, counts.runs, floor.runs));
+  if (counts.strategy < floor.strategy)
+    out.push(say(STRATEGY_FILE, counts.strategy, floor.strategy));
+  return out;
+}
+
+/** The floor after a passing check: never lower than before, raised to today's counts. */
+export function raisedFloor(
+  counts: { runs: number; strategy: number },
+  floor: Floor,
+  today: string,
+): Floor {
+  return {
+    runs: Math.max(floor.runs, counts.runs),
+    strategy: Math.max(floor.strategy, counts.strategy),
+    updated: today,
+  };
+}
+
 export interface Args {
   command: string;
   flags: Record<string, string | true>;
@@ -140,13 +197,40 @@ function main(): void {
         console.log(
           `runs: every ${RUNS_FILE} line dated ${from} or later keeps its text ≤ ${cap} chars`,
         );
+      } else {
+        for (const v of found) console.error(formatViolation(v, cap));
+        console.error(
+          `runs: ${found.length} line(s) dated ${from} or later break the ${cap}-char cap — shorten the text after \`| <routine> | \``,
+        );
+        process.exitCode = 1;
+      }
+      const counts = {
+        runs: datedLineCount(md),
+        strategy: existsSync(path.resolve(STRATEGY_FILE))
+          ? datedLineCount(readFileSync(path.resolve(STRATEGY_FILE), 'utf8'))
+          : 0,
+      };
+      const floorPath = path.resolve(FLOOR_FILE);
+      const floor = existsSync(floorPath)
+        ? parseFloor(readFileSync(floorPath, 'utf8'))
+        : { runs: 0, strategy: 0, updated: '' };
+      const lost = floorViolations(counts, floor);
+      if (lost.length > 0) {
+        for (const l of lost) console.error(`runs: ${l}`);
+        process.exitCode = 1;
         return;
       }
-      for (const v of found) console.error(formatViolation(v, cap));
-      console.error(
-        `runs: ${found.length} line(s) dated ${from} or later break the ${cap}-char cap — shorten the text after \`| <routine> | \``,
-      );
-      process.exitCode = 1;
+      const next = raisedFloor(counts, floor, new Date().toISOString().slice(0, 10));
+      if (next.runs !== floor.runs || next.strategy !== floor.strategy) {
+        writeFileSync(floorPath, `${JSON.stringify(next, null, 2)}\n`);
+        console.log(
+          `runs: floor raised to ${next.runs} run lines / ${next.strategy} decision-log lines (${FLOOR_FILE}, commit it)`,
+        );
+      } else {
+        console.log(
+          `runs: ${counts.runs} run lines and ${counts.strategy} decision-log lines, at or above the floor`,
+        );
+      }
       return;
     }
     case 'list': {

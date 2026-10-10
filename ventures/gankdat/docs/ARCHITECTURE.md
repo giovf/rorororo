@@ -64,7 +64,14 @@ unreachable from the build container, so the reader is layout-tolerant (every as
 `LAYOUT` table; an issue with no recognisable application fails the refresh loudly, naming the
 element names it saw). Organisation-level only: applicant and representative names kept only with
 a corporate designator, addresses reduced to country, mark images never stored. Own refresh
-**wave 7** (06:05).
+**wave 7** (06:05). A refresh starts no new issue download after six minutes
+(`DOWNLOAD_BUDGET_MS`, 2026-10-07): the 10-04 run took 13 min 42 s of the 15-minute Cron Trigger
+budget and the next two nights were killed before writing a `refresh_log` row; the issues cached
+before the cut-off still load and the window fills over the following runs. What actually kept
+dying (found 2026-10-07 through `/v1/health` and the relay) was the post-0014 full reload of the
+162k-row window, now replaced by the in-place hash backfill above. The IPO serves an unpublished
+issue's `jnl.xml` as its "Page Not Found" HTML with status 200 (and every `jnl.zip` as 403 HTML),
+so a `text/html` body counts as a missing issue, never as a journal to parse.
 And the Gambling Commission licence register (`uk-gambling-operators`, shipped 2026-09-24 —
 exchange 2026-W39 runner-up, OGL v3 confirmed on the data.gov.uk record; KYB/payments risk,
 affiliate compliance, sector suppliers; rival Apify actors price it from $8 per 1k rows). Five daily
@@ -79,6 +86,24 @@ Organisation level: the personal licence registers are never fetched. Written wi
 access (gamblingcommission.gov.uk is unreachable from the build container; headers recorded by the
 interactive session), with a 90 s per-file timeout; runs in **wave 2** (05:15) after the two
 sources there, ~15k rows.
+And the **Companies House company lookup** (`uk-company-profiles`, shipped 2026-10-07 — exchange
+2026-W41 winner: the one Apify category where UK-register buyers measurably pay has thirteen
+lookup actors and no monitor). The first **on-demand dataset** (`DataSource.lookup`,
+`src/sources/lookup.ts`): the 5.4M-company register is never mirrored; a request names one
+company by `company_number` (zero-padded like the register) or `company` (the search
+endpoint's top hit) and the Worker reads ≤ 4 resources of the official public-data API —
+profile, charges, filing history, persons with significant control — into one record, cached
+in KV per key for 24 h (a confirmed miss for 1 h), metered as one credit, rate-limited at
+30/min per account so a full-speed client stays inside the 600 req / 5 min key quota shared
+with `uk-companies`. No snapshot, no cron wave, no change feed; `/stats/<slug>` is a lookup
+page, not counts; `/v1/data` and `list_sources` carry `lookup: [keys]` and a keyless query
+answers 400 naming them. Blind Mode: officer resources never called, individual PSCs dropped
+whole at ingest (corporate/legal-person entries and counts kept), filing events keep the
+form type and description code (not `description_values`, where the officer's name is),
+charge holders and address lines dropped. The monitor is the Apify actor's `changes` mode
+(`runLookupActor`): the previous run's records in the actor's named key-value store are the
+baseline; a run pushes only `added` / `changed` (+ `changed_fields`) / `removed` companies.
+Layouts verified through the relay (`docs/relay/responses/ch-lookup-specs`, 2026-10-07).
 Solo-operator product: everything self-serve, <2 hrs/week ops.
 Customer-facing brand: **gankdat** (gankdat.com, live Stripe billing);
 "faceless" survives only as the internal infra codename (Worker, D1, repo
@@ -115,6 +140,22 @@ UA and source slug only, never an IP, denials excluded, so STRATEGY §4's weekly
 change-feed target is readable from the daily metrics row) ·
 stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
 @cloudflare/vitest-pool-workers · ESLint + Prettier · npm · wrangler.
+x402-hono and @coinbase/x402 (and viem beneath them, most of the bundle) are
+imported lazily on the first lit `/x402` request, so cold starts skip them
+while the lane ships dark.
+
+Tests (2026-10-06): pool-workers 0.18 has no isolated per-test storage — one runtime
+and one D1/KV store serve every spec file in turn — so `test/apply-migrations.ts`
+migrates once per file and empties every table and both KV namespaces before each
+test (the earlier `reset()` + full re-migration per test also logged a workerd
+"deleteAllDurableObjects" exception per test). The gate's cost was elsewhere: each of
+the 49 spec files loads the whole `src/index.ts` module graph afresh — ~2,600 modules
+a file before 2026-10-06, 1,194 of them viem via the x402 packages, 17 s a file. Now
+`vitest.config.ts` pre-bundles the heavy dependencies (deps.optimizer, node built-ins
+external) and the x402 packages load lazily, so a file loads ~250 modules and the
+suite runs in 80 s (was 261 s) on four cores; the whole gate in ~100 s.
+On CI the gate runs once per push, in `gankdat.yml` only; the root `check` workflow
+runs `check:root`.
 
 ## Backend & data
 - **D1**: `accounts` (email = identity, holds plan), `api_keys` (belong to
@@ -131,9 +172,21 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   vanished ids deleted, each chunk with its change-feed rows in one transactional batch. The
   generation swap (a whole new generation inserted and the old one deleted every night, ~1M
   rows written and ~1M deleted a day for registers that move < 1%) remains for first loads,
-  sources without ids and rows written before the migration; it is what the 2026-10-01
+  sources without ids — not any more for rows written before the migration: those are hashed in
+  place by a resumable **backfill** (`backfillHashes`, migration 0015, 2026-10-07) that pages the
+  live generation's unhashed rows, writes `record_id` and `record_hash` from the stored record
+  text, hands the rest to the next night with a `skipped` refresh_log row when its 8-minute budget
+  runs out, and lets the delta pass follow once complete (uk-trademark-journal's 162k-row "one last
+  full reload" never finished: wave 7 was killed at the Cron Trigger limit three nights running,
+  writing no row). The page update MATERIALIZES its 2,000 (seq, id, hash) entries so SQLite loops
+  over them and probes each row by primary key: written as `UPDATE … FROM` a `json_each` subquery
+  (10-07) the planner walked the whole generation and scanned the entries per row — 200 s a page
+  at 162k rows, so the budget check between pages never ran and 10-08/10-09 died silent too
+  (2026-10-09; plan asserted in `d1store.spec`). A backfill that took over three minutes
+  (`BACKFILL_HANDOVER_MS`) hands the delta to the next night even when complete, and a backfill
+  that throws writes an `error` row — a night is never silent again. The generation swap is what the 2026-10-01
   Cloudflare budget alert (US$15 metered vs the US$5 plan) was traced to — D1 bills rows
-  written. The trade: during a delta refresh a request sees today's version of some rows and
+  written (measured 2026-10-08: ~6M writes a day before the delta refresh, 0.0–0.2M a day after). The trade: during a delta refresh a request sees today's version of some rows and
   yesterday's of the rest (every row present, nothing partially loaded; `last_refreshed_at`
   flips at the end, and a crash mid-way self-heals against the stored hashes). `refresh_log`
   carries `delta +a ~c -r` per source. Migrations via `wrangler d1 migrations`.
@@ -160,7 +213,12 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   only writes, neither destructive). `/mcp` validates a present `Origin` (own host,
   claude.ai/claude.com, loopback; else 403, CORS mirrors the list) — non-browser clients
   send none. `test/mcp-directory.spec.ts` is the conformance test for any agent
-  directory. KV rate limiters fail open on KV errors.
+  directory. A bare `Authorization: Bearer` with no token counts as no key (2026-10-10,
+  `presentsCredential` in `routes/mcp.ts`): Docker's MCP gateway templates the header for every
+  Toolkit user and sends it empty until a key is pasted; a token after the scheme is still
+  validated. The Toolkit's own OAuth registers clients by RFC 7591, which the Worker does not
+  offer (CIMD only; queued), so the Docker MCP Catalog entry (`docs/docker-mcp-catalog/`) ships
+  keyless + optional key. KV rate limiters fail open on KV errors.
   **Lazy OAuth** (2026-09-30, `src/auth/oauth.ts` + `src/routes/oauth.ts`, migration 0013
   `oauth_grants`): Claude, Cursor and ChatGPT start sign-in only on an HTTP 401 with
   `WWW-Authenticate: Bearer resource_metadata=…` (a 200 tool error never does), so the Worker
@@ -179,6 +237,20 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   `KeyContext` for both credentials. Only hashes are stored; the daily numbers carry
   `oauth: … connects` (D1 codes for real accounts) and the `oauth_token` analytics point per
   client host. `test/oauth.spec.ts`.
+  **Connect funnel** (2026-10-09, queue `oauth-connect-funnel-check`): `connect_account` was the
+  most-wanted tool for a week (4–6 keyless calls a day) with `oauth: 0 connects`, and nothing between
+  the 401 and the code row said where a person stopped — no sandbox can POST to the live hop, and
+  the only end-to-end walk was the owner's (10-04). So every leg of `routes/oauth.ts` writes an
+  `oauth_funnel` analytics point (blob3 step: `authorize`, `authorize_rejected`, `signin_shown`,
+  `consent_shown`, `email_sent`, `approved`, `denied`, `expired`, `token`, `token_rejected`; blob4
+  the client host; blob5 the detail — a rejection cause, the email outcome, the grant type, the
+  token error) and the Daily numbers row carries `oauth funnel 7d: N challenges (…), N authorize,
+  … N token errors` plus `connect_account 7d by UA: …` (the user agents behind the 401s, read from
+  the existing `mcp_denied` points — a scanner's UA ends the question; `src/lib/oauth-funnel.ts`).
+  Claude's real client documents are `https://claude.ai/oauth/mcp-oauth-client-metadata` (hosted
+  apps, redirect `https://claude.ai/api/mcp/auth_callback`) and
+  `https://claude.ai/oauth/claude-code-client-metadata` (Claude Code, port-less loopbacks), both
+  verified through the relay on 2026-10-09; `/authorize` with either rendered the sign-in page live.
   **Agent-side sign-up** (2026-09-25, `src/auth/signup.ts`): the paywall's audience is
   agents that cannot click a magic link, so the two keyless tools `request_api_key`
   (user's email → approval email with a short code, RFC 8628-style) and `claim_api_key`
@@ -223,6 +295,55 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   refresh with the parent (`aggregateFacets`, a 4-minute budget per source, the rest 503
   "being prepared" until tomorrow) and indexed from the parent page and `sitemap.xml`.
   First use: 45 Nice-class pages for `uk-trademark-journal` (`NICE_CLASSES` in the source).
+- **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
+  `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
+  facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50
+  entries, newest first, each entry linking the stats page and the key sign-up — the change
+  feed on every RSS shelf (Feedly, Inoreader, Slack/Teams RSS, the Zapier/Make/n8n/Power
+  Automate triggers) with the key as the upgrade. Rendered from `source_changes` at most once
+  an hour per feed (KV `feed:*`), rate limited per IP like `/stats`, advertised by
+  `<link rel="alternate">` on the stats pages; `rest_feed` Analytics Engine point (UA, path,
+  hit/miss, slug) → `feeds 30d:` in the Daily numbers row. Entry titles are dataset-agnostic
+  (first two short string fields) — the isolation rule holds.
+- **Wave log reading** (`lib/wave-logs.ts`, 2026-10-09): a wave killed at the 15-minute Cron
+  Trigger limit writes no `refresh_log` row, and no sandbox or relay can read Worker logs (the
+  journal's silent nights 10-05..10-08 were guessed at twice). So the metrics workflow's
+  `runner-refresh.mjs` step, which holds the deploy token, POSTs the Workers observability
+  Query Builder (`/workers/observability/telemetry/query`, service `faceless-api`, needle = the
+  slug, last 24 h, 20 lines) for every source with no `ok` row in 26 h or an error row today,
+  prints the lines in the job log and leaves `dist/wave-logs.json`; `metrics.mjs` reads it as
+  `wave log: <slug> [level] <newest line> <age> (N lines)` — `n/a (HTTP 403 …)` names the
+  missing token scope, `no stale source` a clean night. Pure parse + reading in the lib, tests
+  in `test/wave-logs.spec.ts`; never fails the job.
+- **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
+  after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
+  stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in
+  KV — only the journal has them, 45 Nice classes, so a day it is stale submits one URL per source) to `api.indexnow.org` (≤ 10,000 a call, de-duplicated, never throws), proven by the key
+  file the Worker serves at `/<INDEXNOW_KEY>.txt` (a plain var — public by design, not a
+  secret). Never from the Worker: the endpoint rate-limits by source IP and answered 429 to
+  every wave-end ping from Workers' shared egress (10-05/06) while the runner's post got 200.
+  Bing's index feeds DuckDuckGo, Copilot and ChatGPT search, so this is the one indexing signal
+  that needs no account while the Search Console reading is owner-blocked. The runner leaves
+  `dist/indexnow.json`; `metrics.mjs` reads it → `indexnow: N urls S` in the Daily numbers row
+  (`n/a (<reason>)` on a push run).
+- **Live MCP probe** (`scripts/mcp-probe.ts`, 2026-10-08, queue `mcp-live-probe`): the metrics job's
+  runner does what an agent directory's health checker does — `initialize`, `tools/list`, one keyless
+  preview `tools/call` on the first listing data tool — against the live `/mcp` and the same with a
+  bearer key; `metrics.mjs` renders `mcp probe: …` in the Daily numbers row and lists a failed step
+  under `refresh errors` as `mcp-probe`, so the repeat rule files a fix item. Why: Glama's hourly
+  check mailed "HTTP 500 – Error connecting to MCP" on 2026-10-08 (and found the 2026-09-19 Bot
+  Fight Mode challenges) while no sandbox can reach gankdat.com and Worker logs are read nowhere —
+  the probe is the only reading of the edge as directories see it. Push runs probe too (node
+  builtins only); a dead probe is a reading, never a failed job. **One-run probe key** (2026-10-09,
+  queue `probe-key-from-runner`): the authed pass needs no repository secret — `api_keys` holds
+  only a key's SHA-256 and the job already holds `CLOUDFLARE_API_TOKEN`, so the probe inserts a fresh
+  key's hash under the internal `probe@gankdat.com` account through the D1 REST API, runs the three
+  calls with it, then deletes the row and the Worker's 60 s KV copy (`key:<hash>`); a row left by a
+  killed run is swept by the next mint, the raw key never leaves the process, and a failed mint is
+  itself a `refresh errors` entry. The account is an `@gankdat.com` address, so the accounts,
+  sign-up and OAuth readings skip it like the other internal mailboxes, and the traffic counts
+  (`MCP 24h`, change feed, `datasets 30d`) skip the probe's user agent. `GANKDAT_PROBE_KEY`, if ever
+  set, still takes precedence and nothing is minted.
 - **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
   params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
   date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value
@@ -248,8 +369,9 @@ stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
   US public domain, D&B address fields stripped at ingest, read from the
   keyless daily public extract (no API key since 2026-09-20); The Gazette
   linked-data API — OGL v3, fair-use paced, corporate notices only;
-  Companies House advanced search — Crown copyright, public register,
-  needs `COMPANIES_HOUSE_API_KEY`, 600 req/5 min). No scraping.
+  Companies House advanced search and public-data API (company profile, charges,
+  filing history, PSC list, search — Crown copyright, public register,
+  needs `COMPANIES_HOUSE_API_KEY`, 600 req/5 min shared by both sources). No scraping.
 - **CI/CD** — GitHub Actions: lint/typecheck/test; deploy on main gated on
   `CLOUDFLARE_API_TOKEN` secret existing.
 

@@ -1,0 +1,1 @@
+{"ok":false,"error":{"code":"unauthorized","message":"Missing API key. Send it as: Authorization: Bearer <key>. No key yet? Sign in at /account, or from an agent: POST /v1/auth/agent-signup {\"email\"} — the user approves one emailed link, then POST /v1/auth/agent-signup/claim returns the key.","docs_url":"https://gankdat.com/docs#unauthorized"}}

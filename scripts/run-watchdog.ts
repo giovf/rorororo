@@ -19,6 +19,7 @@ import { execSync } from 'node:child_process';
 import { appendFileSync, existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { claimMarkerRoutine } from './pipeline-claim.ts';
 import { SLOTS_FILE, parseStarted, startMarkerRoutine } from './slot.ts';
 
 export interface RoutineSlot {
@@ -222,8 +223,14 @@ export function hasTrace(slot: DueSlot, traces: Trace[]): boolean {
   return traces.some((t) => {
     const ms = t.at.getTime();
     if (ms < from || ms > to) return false;
+    // Neither marker is a trace: a slot that stamped SLOTS.md or claimed its item and then died
+    // must still read as stalled (start marker 2026-09-30, claim marker 2026-10-07).
     if (t.kind === 'commit')
-      return startMarkerRoutine(t.text) === undefined && slot.def.commit.test(t.text);
+      return (
+        startMarkerRoutine(t.text) === undefined &&
+        claimMarkerRoutine(t.text) === undefined &&
+        slot.def.commit.test(t.text)
+      );
     return slot.def.tags.includes(t.kind);
   });
 }

@@ -24,11 +24,30 @@ ties; `proof` is the number that would show it worked; `blocked` items name what
 and do not count as "empty". An item that only needs elapsed time rather than a blocker — a
 day-7 or day-30 review — stays `todo` and carries `not_before: YYYY-MM-DD`: `npm run pipeline
 next` skips it until that date (listing it on a `scheduled:` line instead) and offers it from
-that day on. Like a blocked item it still counts as work, so it does not put the queue into
+07:00 UTC on that day — after the 06:37/06:52 metrics jobs have written the Daily numbers row a
+dated reading is usually dated for (2026-10-08: the midnight burn-down read a "10-08 row" item
+against the 10-07 rows); `cold` and `claim` apply the same hour. Like a blocked item it still counts as work, so it does not put the queue into
 `needs_research`. **Starvation** (2026-10-01): when no queue is flagged but `next` finds nothing
 buildable anywhere — every open item blocked or dated — `npm run pipeline empty` lists the open
 queues with no buildable item instead, oldest `updated` first, so the build slot researches the
 first of them rather than idling (both slots did nothing on 2026-10-01 morning: `next` null,
-`empty` `[]`). One buildable item anywhere ends the fallback. A `finished` queue is a venture
+`empty` `[]`). One buildable item anywhere ends the fallback. **Doing** (2026-10-05): a `doing` item is one a run is building,
+dated by `doing_since` (else `added`); `npm run pipeline` lists every one on a `doing:` line. One that has been doing
+for more than a day with no future `not_before` is a cut-off session's leftover (nothing of it reached `main`), so
+`next` offers it again; a deliberate hold is `todo` with `not_before` (or carries `not_before` while doing). **Claim** (2026-10-07): the
+`doing` edit only guards other sessions once it is on `main`, so a session runs `npm run pipeline claim <venture>/<id>
+-- --by=<routine>` right after `next` (the `--` matters: npm keeps a bare `--by=` for itself, 2026-10-08) — one commit of the queue file (`pipeline: claim <venture>/<id> (<routine>)`), pushed
+before any work, like the slot marker; a claim refused because another session's `doing` is under a day old means take
+`next` again (on 2026-10-07 the 17:00 burn-down and the 17:10 build each built `search-console-api-reading` in full, and the
+second push was discarded). The watchdog never counts a claim commit as a slot's trace. **Cooling** (2026-10-06): a queue carries
+`researched: YYYY-MM-DD`, the day of its last research run (every research run sets it with `updated`); for 48 h after
+that the starvation fallback skips the queue and `npm run pipeline` lists it on a `cooling:` line, so a venture is not
+researched twice in a day (2026-10-05 had five research runs and the next morning's build was offered the same venture
+eleven hours later). When `next` is null and every starved queue is cooling, `empty` prints `[]` and the status says
+so: the run writes one run-log line and stops (the one exchange pre-research pass per window aside — the burn-down's night from 17:00 UTC, the build's day from 07:00 UTC since 2026-10-10, `npm run pipeline cold [-- --routine=build]` says whether it is spent). **Waiting** (2026-10-07): a
+research run that finds no new evidence — the metrics unchanged since the last pass, every lever built or owner-blocked, the next
+signal a dated reading — sets `research_after: YYYY-MM-DD` (that reading's date) instead of adding items; the fallback treats
+the queue as cooling until then and the status says `waiting until <date>` (three ventures had each been researched three times
+in eight days on an unchanged zero). A `finished` queue is a venture
 with nothing left to do; only the exchange or the review reopens it. Every change to a queue
 lands in the same commit as the work.

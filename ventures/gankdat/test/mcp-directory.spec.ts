@@ -183,10 +183,37 @@ describe('/mcp directory conformance', () => {
       if (name === 'claim_api_key')
         args = { request_id: req.request_id, claim_secret: req.claim_secret };
       if (name === 'get_changes') args = { source: feed };
+      // A lookup tool needs its key; the origin is offline here, so the bundled sample answers.
+      const lookup = listSources().find(
+        (s) => `query_${s.slug.replaceAll('-', '_')}` === name && s.lookup,
+      )?.lookup;
+      if (lookup) args = { ...lookup.example };
       const result = await call(name, args);
       expect(result?.isError, `${name}: ${result?.content?.[0]?.text ?? ''}`).toBeFalsy();
       expect((result?.structuredContent as { ok: boolean }).ok, name).toBe(true);
     }
+  });
+
+  it('treats a bare Bearer header (a client whose key secret is unset) as no key', async () => {
+    await seedEmptyDatasets();
+    // Docker's MCP gateway sends `Authorization: Bearer ${GANKDAT_API_KEY}` for every
+    // Toolkit user and leaves the variable empty until a key is pasted (mcp-gateway
+    // pkg/mcp/remote.go): that user is keyless and gets the preview, not a 401.
+    const bare = { Authorization: 'Bearer' };
+    const list = await post({ jsonrpc: '2.0', id: 1, method: 'tools/list', params: {} }, bare);
+    expect(list.status).toBe(200);
+    const slug = listSources().find((s) => !s.lookup)?.slug;
+    expect(slug).toBeTruthy();
+    const tool = `query_${slug!.replaceAll('-', '_')}`;
+    const result = await call(tool, {}, bare);
+    expect(result?.isError, result?.content?.[0]?.text ?? '').toBeFalsy();
+    expect((result?.structuredContent as { ok: boolean }).ok).toBe(true);
+    // Anything after the scheme is still a presented key and 401s loudly.
+    const { status } = await post(
+      { jsonrpc: '2.0', id: 1, method: 'tools/call', params: { name: tool, arguments: {} } },
+      { Authorization: 'Bearer not-a-key' },
+    );
+    expect(status).toBe(401);
   });
 
   it('caps the preview at PREVIEW_ROWS rows and names the plans once the daily budget is spent', async () => {

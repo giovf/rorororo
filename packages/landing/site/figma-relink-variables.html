@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      Figma variables broken after moving a file or swapping libraries: relink them in one click
+    </title>
+    <meta
+      name="description"
+      content="Copied a Figma file to another team, swapped a library, or detached a collection, and now layers point at local or missing variables? How to relink them to the enabled library's variables by name with Variables Toolkit, what Figma's own 'swap library' does not fix, and the honest limits."
+    />
+    <link rel="canonical" href="https://apps.gankdat.com/figma-relink-variables.html" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <a class="brand" href="./">Foundry</a>
+      <nav>
+        <a href="./#products">Products</a><a href="privacy.html">Privacy</a
+        ><a href="terms.html">Terms</a>
+      </nav>
+    </header>
+    <main>
+      <h1>Figma variables broken after moving a file? Relink them to the library by name.</h1>
+      <p class="lead">
+        It happens the same way every time. A file is copied to another team or account, a design
+        system library is swapped for a newer one, or a collection is published and then renamed,
+        and suddenly every fill, stroke, padding and radius points at a <em>local</em> copy of the
+        variable, or at a library variable that no longer exists. Figma's "swap library" moves
+        component instances, but the plain frames and layers on the page stay on the old variables,
+        and the forum threads asking how to fix that get the same answer: do it by hand, or find a
+        plugin. Variables Toolkit's <strong>Relink</strong> tab is that plugin: it finds every layer
+        bound to a local or unpublished variable and moves it onto the enabled library's variable
+        with the same name and type, in one click. It also runs the other way: a file copied out of
+        a team, or a team leaving a shared library, can move its library bindings back onto local
+        variables of the same names.
+      </p>
+
+      <p class="install">
+        <a class="button" href="https://www.figma.com/community/plugin/1682711656065145288"
+          >Open in Figma Community</a
+        >
+        <span class="muted"
+          >Free to install. The Relink tab is built and ships with the next published version of the
+          plugin; the listing shows it as soon as Figma publishes that version. The styles, link and
+          clean-up tabs are live today.</span
+        >
+      </p>
+
+      <h2>What actually breaks, and why "swap library" does not fix it</h2>
+      <ul>
+        <li>
+          <strong>Copying a file out of a team.</strong> Variables are owned by the file that
+          published them. In the new team the library is not enabled, so Figma keeps the bindings as
+          references to variables the file can no longer resolve: the values still render, but
+          nothing updates and the variable picker shows them as detached or local.
+        </li>
+        <li>
+          <strong>Swapping or republishing a library.</strong> "Swap library" rewires component
+          instances. Frames, text and shapes drawn on the page keep their old variable ids, which is
+          why a page looks right until the old library is unpublished and then goes grey.
+        </li>
+        <li>
+          <strong>Renaming a collection, or duplicating it locally.</strong> A local collection with
+          the same variable names is a different set of ids. Every layer bound to it has to be
+          rebound before the library can be the single source of truth again.
+        </li>
+      </ul>
+      <p>
+        Figma's quick action <em>Detach deleted variables</em> only removes bindings to variables
+        that were deleted; it does not point them at anything. Relinking means finding the matching
+        library variable for each binding and rebinding it, layer by layer.
+      </p>
+
+      <h2>How Relink works</h2>
+      <ol>
+        <li>
+          Enable the library in the file (Assets → Libraries). Relink reads the enabled libraries'
+          variables through Figma's team-library API; it never sees other files.
+        </li>
+        <li>
+          Open Variables Toolkit, pick the <strong>Relink</strong> tab, and choose the selection or
+          the whole page. The scan runs in chunks with a live count and a Cancel button, so a large
+          page never freezes Figma.
+        </li>
+        <li>
+          Review the plan: each group names the local or unpublished variable, the library variable
+          it will move to, and how many layers that touches. A name that two enabled libraries both
+          publish waits until you pick the collection.
+        </li>
+        <li>
+          Click Relink. Layers already bound to the library are left alone, so running it twice is
+          harmless.
+        </li>
+      </ol>
+
+      <h2>The other direction: library variables back to local ones</h2>
+      <p>
+        The forum's second ask is the reverse: a file copied out of a team, or a team that stopped
+        using a shared library, wants its layers on <em>local</em> variables again, not on a library
+        it no longer has. Figma offers nothing for that either. On the Relink tab, switch the
+        direction to <strong>To local variables</strong> and scan: every binding to a library
+        variable, whether the library is still enabled or long gone, is listed against this file's
+        variable of the same name and type, and one click moves them. Bindings already on local
+        variables are left alone; a name that two local collections share waits for you to pick the
+        collection. If the file has no local copy of the collection yet, copy or import it first
+        (Figma's "Import variables" plugins, or ours on the Convert tab for styles) — Relink matches
+        names, it does not create variables.
+      </p>
+
+      <h2>Honest limits</h2>
+      <ul>
+        <li>
+          Relink moves solid fills and strokes, and the number properties Link binds: padding, gaps,
+          corner radii and sizes. Text, effect, stroke-weight and variable-alias bindings are not
+          moved yet.
+        </li>
+        <li>
+          Matching is by trimmed name <em>and</em> resolved type, one library (or one local
+          collection) at a time. A variable whose name changed is listed as unmatched, not guessed,
+          and Relink never creates variables: the target collection must already exist in the file
+          or the library.
+        </li>
+        <li>
+          Only the open file. Figma's plugin API cannot reach other files, so a library used across
+          a workspace is relinked file by file.
+        </li>
+        <li>
+          Free tier: relinks share the 25-a-day link allowance; the $12 unlock removes it. Nothing
+          leaves your file: no network access, no account.
+        </li>
+      </ul>
+
+      <h2>The same plugin does the rest of the move</h2>
+      <p>
+        Relinking is usually one step of a bigger migration. The other tabs convert the old colour,
+        text and effect styles into variables, link every hard-coded value on a page to the variable
+        that holds it, and list the variables nothing uses any more. The
+        <a href="figma-styles-to-variables.html">comparison page</a> sets that against Styles &amp;
+        Variables Organizer and the free converters.
+      </p>
+
+      <h2>Unlock — $12, once</h2>
+      <ul>
+        <li>Unlimited links and relinks</li>
+        <li>Text and effect styles to variables</li>
+        <li>Delete unused variables from the report</li>
+        <li>
+          Per Figma account, bought in Figma's own checkout; 14-day refund, no questions asked
+        </li>
+      </ul>
+      <p>
+        <a class="button" href="https://www.figma.com/community/plugin/1682711656065145288"
+          >Get Variables Toolkit on Figma Community</a
+        ><br />
+        <span class="muted"
+          >Install free from the listing; the unlock is bought inside the plugin through Figma,
+          which charges the right VAT for your country. Refunds and support:
+          <a href="terms.html">terms</a> · info@gankdat.com.</span
+        >
+      </p>
+    </main>
+  </body>
+</html>

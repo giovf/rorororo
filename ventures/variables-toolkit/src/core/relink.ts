@@ -1,22 +1,38 @@
 import type { NumberField } from './numbers.js';
 
 /**
- * Pure model of "relink to library variables by name": layers in a file are bound
- * to local variables (a copied collection, a detached file) or to library variables
- * whose library has since been unpublished or replaced. When a library enabled for
- * the file publishes a variable with the same name and type, the binding can move
- * onto it. Everything Figma-specific stays in figma/relink.ts.
+ * Pure model of "relink variables by name", in either direction. Everything
+ * Figma-specific stays in figma/relink.ts.
+ *
+ * - `to-library` (default): layers are bound to local variables (a copied collection, a
+ *   detached file) or to library variables whose library has since been unpublished or
+ *   replaced. When a library enabled for the file publishes a variable with the same name
+ *   and type, the binding can move onto it.
+ * - `to-local`: the reverse — a file copied out of a team, or a team leaving a shared
+ *   library, wants its layers back on the local variable of the same name and type
+ *   (Figma forum request 44372). Every binding to a library variable, available or not,
+ *   is a candidate; bindings already on local variables are left alone.
  */
-export interface LibraryVariableRef {
-  /** Figma's publish key — the handle `importVariableByKeyAsync` takes. */
+export type RelinkDirection = 'to-library' | 'to-local';
+
+/** A variable a binding can move onto: a library variable, or (to-local) a local one. */
+export interface TargetVariableRef {
+  /**
+   * The handle the adapter rebinds with: Figma's publish key (`importVariableByKeyAsync`)
+   * for a library variable, the variable id (`getVariableByIdAsync`) for a local one.
+   */
   key: string;
   name: string;
   /** Figma's resolved type name ('COLOR', 'FLOAT', …); a relink never changes type. */
   type: string;
   collectionKey: string;
   collectionName: string;
+  /** The library's name, or 'This file' for a local target. */
   libraryName: string;
 }
+
+/** @deprecated name kept for the to-library callers; same shape as {@link TargetVariableRef}. */
+export type LibraryVariableRef = TargetVariableRef;
 
 /** A bound-variable reference found on a layer. */
 export interface BoundSite {
@@ -37,43 +53,57 @@ export interface ReferencedVariable {
   key: string;
 }
 
-export type RelinkReason = 'local' | 'stale-library';
+/** Why a binding is offered: what it points at today. `library` only occurs in the to-local direction. */
+export type RelinkReason = 'local' | 'stale-library' | 'library';
 
 export interface RelinkGroup {
-  library: LibraryVariableRef;
-  /** The variables currently bound that this library variable replaces. */
+  /** The target variable (library variable, or local variable in the to-local direction). */
+  library: TargetVariableRef;
+  /** The variables currently bound that this target replaces. */
   from: { id: string; name: string; reason: RelinkReason }[];
   sites: BoundSite[];
 }
 
 export interface RelinkPlan {
-  /** One group per library variable, most sites first. */
+  direction: RelinkDirection;
+  /** One group per target variable, most sites first. */
   groups: RelinkGroup[];
-  /** Local or stale variables with no library variable of the same name and type. */
+  /** Variables with no target variable of the same name and type. */
   unmatched: { variable: ReferencedVariable; sites: number }[];
-  /** The same name and type is published by more than one enabled library. */
-  ambiguous: { variable: ReferencedVariable; candidates: LibraryVariableRef[]; sites: number }[];
+  /** The same name and type exists in more than one collection (two libraries, or two local collections). */
+  ambiguous: { variable: ReferencedVariable; candidates: TargetVariableRef[]; sites: number }[];
   /** Sites whose variable the file no longer knows at all — no name, nothing to match. */
   orphaned: number;
-  /** Sites already bound to an available library variable — left alone. */
+  /** Sites already where the direction wants them (on an available library variable, or on a local one) — left alone. */
   current: number;
 }
 
 export interface RelinkOptions {
-  /** Only consider library variables from these collections (keys); every collection when omitted. */
+  /** Only consider target variables from these collections (keys); every collection when omitted. */
   collectionKeys?: Set<string>;
+  /** Which way bindings move; `to-library` when omitted. */
+  direction?: RelinkDirection;
 }
 
 const nameKey = (name: string, type: string): string => `${type}|${name.trim()}`;
 
+/**
+ * @param targets every variable a binding may move onto: the enabled libraries' variables
+ *   (to-library) or this file's local variables (to-local).
+ */
 export function planRelink(
   sites: BoundSite[],
   known: ReferencedVariable[],
-  library: LibraryVariableRef[],
+  targets: TargetVariableRef[],
   options: RelinkOptions = {},
 ): RelinkPlan {
-  const candidates = options.collectionKeys ? library.filter((v) => options.collectionKeys?.has(v.collectionKey)) : library;
-  const availableKeys = new Set(library.map((v) => v.key));
+  const direction = options.direction ?? 'to-library';
+  const candidates = options.collectionKeys ? targets.filter((v) => options.collectionKeys?.has(v.collectionKey)) : targets;
+  const availableKeys = new Set(targets.map((v) => v.key));
+  // Already where this direction wants it: on a published variable the file can still reach
+  // (or this file is the library itself), or — moving to local — on a local variable.
+  const isCurrent = (v: ReferencedVariable): boolean => (direction === 'to-local' ? !v.remote : availableKeys.has(v.key));
+  const reasonOf = (v: ReferencedVariable): RelinkReason => (direction === 'to-local' ? 'library' : v.remote ? 'stale-library' : 'local');
   const byName = new Map<string, LibraryVariableRef[]>();
   for (const v of candidates) {
     const k = nameKey(v.name, v.type);
@@ -85,7 +115,7 @@ export function planRelink(
   for (const s of sites) sitesByVariable.set(s.variableId, [...(sitesByVariable.get(s.variableId) ?? []), s]);
 
   const groups = new Map<string, RelinkGroup>();
-  const plan: RelinkPlan = { groups: [], unmatched: [], ambiguous: [], orphaned: 0, current: 0 };
+  const plan: RelinkPlan = { direction, groups: [], unmatched: [], ambiguous: [], orphaned: 0, current: 0 };
 
   for (const [variableId, list] of sitesByVariable) {
     const variable = knownById.get(variableId);
@@ -93,8 +123,7 @@ export function planRelink(
       plan.orphaned += list.length;
       continue;
     }
-    if (availableKeys.has(variable.key)) {
-      // Bound to a published variable the file can still reach (or this file is the library itself).
+    if (isCurrent(variable)) {
       plan.current += list.length;
       continue;
     }
@@ -109,7 +138,7 @@ export function planRelink(
       continue;
     }
     const g = groups.get(target.key) ?? { library: target, from: [], sites: [] };
-    g.from.push({ id: variable.id, name: variable.name, reason: variable.remote ? 'stale-library' : 'local' });
+    g.from.push({ id: variable.id, name: variable.name, reason: reasonOf(variable) });
     g.sites.push(...list);
     groups.set(target.key, g);
   }

@@ -1,0 +1,657 @@
+{
+  "data": {
+    "total": 54,
+    "count": 10,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "Indeed UK Jobs Scraper — Full Descriptions & Salary",
+        "name": "indeed-uk-jobs-scraper",
+        "username": "totaka",
+        "stats": {
+          "totalBuilds": 34,
+          "totalRuns": 224,
+          "totalUsers": 52,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 19,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-06T08:45:14.533Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 14,
+            "TOTAL": 47
+          }
+        },
+        "description": "Scrape job listings from Indeed UK (uk.indeed.com) — job title, company, location, salary, and full description. Ideal for UK recruitment intelligence and salary benchmarking.",
+        "categories": [
+          "JOBS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/tnH64gzf3dkyXMptVP2276KA8OhmpofQ4Ap79tBkg_Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWHJaSnl0MlhLVEFtSDdxQU0tYWN0b3ItRWxlZm5MQVJ5TjRsc2liSDEtQWoxd0xaNFNPWS1pbl91ay5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Thomas Gharbi",
+        "userPictureUrl": "https://images.apifyusercontent.com/VNPdgrCXweYZR1Dt3EZ6mtdgjYcyEfB5iSmNt2ki_qw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYXBqanA0eG56MXFxcmQ1ZUdESkdxQjZXZnh3UnFMdDVFZjh4UjVlcUFTOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVzVJUjNST1EwOU5WSGh3YUdSdk5GVkliVjlJVms1S1MzUlljSFJKTUV0Uk5rVTRlWFpoVFhKMldYVndiWE0yY3oxek9UWXRZdw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-23T19:32:11.035Z",
+          "createdAt": "2026-05-23T19:32:11.120Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ElefnLARyN4lsibH1",
+        "url": "https://apify.com/totaka/indeed-uk-jobs-scraper"
+      },
+      {
+        "title": "Indeed UK Jobs Scraper",
+        "name": "indeed-uk-scraper",
+        "username": "unfenced-group",
+        "stats": {
+          "totalBuilds": 14,
+          "totalRuns": 211,
+          "totalUsers": 19,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 12,
+          "lastRunStartedAt": "2026-10-05T19:02:45.371Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 103,
+            "TIMED-OUT": 0,
+            "TOTAL": 103
+          }
+        },
+        "description": "Scrape job listings from Indeed UK. Returns titles, full descriptions, salary, company profiles, geo-coordinates and hiring signals. Pay per result.",
+        "categories": [
+          "JOBS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/b24Xu9ygNUGRhCipxAhGS0qGnLylOojP7t6hUcBuS38/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaHNYeWVzb2NyUWRGTWtTU0otYWN0b3ItTVlSZWQ3UjF6dWhmelVJOUgtdmxlZ0FudGxGOC1kb3dubG9hZF8lMjgyMSUyOS5wbmc.webp",
+        "notice": null,
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Unfenced Group",
+        "userPictureUrl": "https://images.apifyusercontent.com/O2gTr_xuA-OQOC2mA3QSOumltdZ8RTUDCT-T6hxKey8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYjlsWTZ0U21XaEdLTFJ5ay1QQ2d4Y1dDVVBDYTg2d25rdVhGMkF0MmpSSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhSE5ZZVdWemIyTnlVV1JHVFd0VFUwb3RjSEp2Wm1sc1pTMXBhVzUyVm5wRlJFTjFMV3h2WjI4dGRXNW1aVzVqWldRdFozSnZkWEF0WW5ZdWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Job",
+                "eventDescription": "One job listing extracted and saved to the dataset.",
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00079
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00076
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00073
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00067
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00064
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-07-02T07:48:03.766Z",
+          "startedAt": "2026-07-02T07:48:03.766Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "MYRed7R1zuhfzUI9H",
+        "url": "https://apify.com/unfenced-group/indeed-uk-scraper"
+      },
+      {
+        "title": "Indeed Jobs Scraper — 15 Countries · Salary & Ratings",
+        "name": "indeed-scraper",
+        "username": "gio21",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 100,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-05T23:42:43.365Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search Indeed by keyword and location across 15 countries: title, company, salary range, rating, review count, posting date and apply link. No login required. $0.0042/item, 30% cheaper than the leading direct comparable.",
+        "categories": [
+          "JOBS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/g9d5pdc_XhySwBab40kh85yIEDnRBEVGHeJA2XcDyxc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZm5TUVJHYUd0OFRhdjdRZkYtYWN0b3ItRUFDSE1tZEp5aGI5NzZ3QUMtSVhKbExPQjE2ZC1pbmRlZXMtbG9nby5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Gio",
+        "userPictureUrl": "https://images.apifyusercontent.com/wqQe2a-05KMWcEYRyaswgePG12qtblRrbQbimpNugPQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcEZITGhkemlYTUxPT3RqRXo0ZFp5MEoyWFZTSzJ1YTEwOHdtd1pWckJXMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZabTVUVVZKSFlVZDBPRlJoZGpkUlprWXRjSEp2Wm1sc1pTMXplbmhhZWpkdFF6UkJMV2RwYnk1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "item-scraped": {
+                "eventTitle": "Job listing scraped",
+                "eventDescription": "One Indeed job listing returned.",
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "reasonForChange": "Initial pricing",
+          "createdAt": "2026-07-20T07:44:22.236Z",
+          "startedAt": "2026-07-20T07:44:22.236Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-20T08:05:45.767Z"
+        },
+        "id": "EACHMmdJyhb976wAC",
+        "url": "https://apify.com/gio21/indeed-scraper"
+      },
+      {
+        "title": "Indeed Jobs Scraper: Salaries, Full Descriptions, No Login",
+        "name": "indeed-jobs-scraper",
+        "username": "agnes.developer.queen",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 16,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-07T07:12:37.295Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "Collect public Indeed jobs with salary ranges, company, location and optional full descriptions. Filter titles and schedule a monitor that skips jobs already delivered. No login required.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/gTQiGJhBLt3Y7Yxl13QXZgHuLdCOcqzWOcjW7EFan2Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQ3YydlRGaG1aNUVQZlRUNVMtYWN0b3ItazAyWHc1T0NWTWgxdUJKODAtM2c1Qk5iVWVTOS1pY29uLTUxMi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Agnes Maina",
+        "userPictureUrl": "https://images.apifyusercontent.com/C5msRe1q8JsPaABP1_4SLi4IbX3dKvDJxSGzGyuR8Fc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vc1g1bE1lWDhJRXg2MGNjc2daTXVLbzVyeWs0VFNzSlk1RW04NktGQ1g3TS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRM1l5ZGxSR2FHMWFOVVZRWmxSVU5WTXRjSEp2Wm1sc1pTMHljVGsyUm13MlF6aElMV0YyWVhSaGNpNXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-07T06:46:39.000Z",
+          "createdAt": "2026-10-07T06:46:38.289Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.00005,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "job-with-description": {
+                "eventPriceUsd": 0.002,
+                "eventTitle": "Job with full description",
+                "isPrimaryEvent": true,
+                "eventDescription": "Charged when a job is delivered with its full description text."
+              },
+              "job": {
+                "eventPriceUsd": 0.001,
+                "eventTitle": "Job",
+                "eventDescription": "Charged when a job is delivered without a full description (not requested or not available)."
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "k02Xw5OCVMh1uBJ80",
+        "url": "https://apify.com/agnes.developer.queen/indeed-jobs-scraper"
+      },
+      {
+        "title": "Indeed Flex Shift Monitor: US & UK Pay Rates and Shift Alerts",
+        "name": "indeed-flex-shift-monitor",
+        "username": "getascraper",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 54,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T17:31:10.089Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Pull live shift listings from Indeed Flex US and UK with real hourly pay ranges (min, max, currency, unit), role, sector, city, employment type, and shift pattern. Get JSON or CSV output, filter by role/sector/city, and turn on monitor mode for new-shift alerts. $0.00088/listing.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/WNH8j-5XP6FIPEdBK63V06pH5RWGXYfFFAc54IW2ZS0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vak5EYkZhYmJWeE1oblFOYjQtYWN0b3ItdnpvSmpnRUdrMHBuYnhRcUktV01iTHE4dzBJai0weDBfJTI4MiUyOS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "GetAScraper",
+        "userPictureUrl": "https://images.apifyusercontent.com/zYb0X321JkLF2Rh8Ul3sTD36xCu_EXV79sfnQlCAMvg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdEFRTW4xMjV6V01tRVRnU0p4enlYODRxNTJwTFliSEcxSEZBQkRjVFdXOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhazVFWWtaaFltSldlRTFvYmxGT1lqUXRjSEp2Wm1sc1pTMU5PSGxtUWt0bWVsUlZMVU5vWVhSSFVGUmZTVzFoWjJWZlNuVnVYemhmWHpJd01qWmZYekEwWHpNeFh6VXpYMUJOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Shift listing",
+                "eventDescription": "One live shift with pay range, role, and location.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00088
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00081
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00073
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00066
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00066
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00066
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-08T08:06:50.838Z",
+          "createdAt": "2026-09-08T08:06:51.460Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "vzoJjgEGk0pnbxQqI",
+        "url": "https://apify.com/getascraper/indeed-flex-shift-monitor"
+      },
+      {
+        "title": "Indeed Jobs Scraper - Canada, US, UK, Australia & More",
+        "name": "indeed-jobs-scraper",
+        "username": "akhil_rajesh",
+        "stats": {
+          "totalBuilds": 47,
+          "totalRuns": 167,
+          "totalUsers": 5,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T03:04:47.829Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape Indeed jobs in 8 countries: Canada, the US, UK, Ireland, Australia, New Zealand, India and Germany. Search a city, a region, or a whole country swept city by city. Full descriptions, pay, employer details and direct apply links. Scheduled runs can return only jobs you have not seen before.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/oMO4OUBPgajkZyXx3zE4sS0LcXnT6V-lwA18p5QHyWg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUE1naDVlak50eGI5VUpIeWUtYWN0b3ItWEtja1hqSFNrTXBxMXRMeGEtdTR1WWU4Sld3VC1pbmRlZWQtYmx1ZS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Akhil rajesh",
+        "userPictureUrl": "https://images.apifyusercontent.com/woX-_sjx5Dlkb1mdM4ybQ-iXJhJcUSsabMkt9sqrP_4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcGl2dDZBLVZLR2FEeGs0cTVEV2NpOG1paUlINHQ1NjdkQ0ZNSkp0QXVUWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMlJyU2pCcWN6TTRVRE5MVlZKSlRGSjNUVXBXY2tKb1VuZHNhbVJyTUhoQmNFSm9lbmR4U2t0WFRtTnVNekJZU1Qxek9UWXRZdw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": 0.05,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00005
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-09-22T13:02:47.453Z",
+          "createdAt": "2026-09-22T13:02:45.605Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-22T13:05:51.129Z"
+        },
+        "id": "XKckXjHSkMpq1tLxa",
+        "url": "https://apify.com/akhil_rajesh/indeed-jobs-scraper"
+      },
+      {
+        "title": "Indeed Scraper: Jobs, Salaries, Company Ratings",
+        "name": "indeed-scraper",
+        "username": "dltik",
+        "stats": {
+          "totalBuilds": 17,
+          "totalRuns": 16,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T09:19:01.914Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 4,
+            "TIMED-OUT": 0,
+            "TOTAL": 4
+          }
+        },
+        "description": "Scrape Indeed jobs by keyword and location: title, company, salary range, company rating & review count, remote flag, job type, posting date and apply URL. US, UK, FR, DE, CA and more. No login, no API key.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/iA3bNYKRo5lxDRpGCAhQ_7ywoKTtPoM8R-EKAVET02g/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTVJNT3kwWXJhZzF1RE9oYkMtYWN0b3ItbkRKbGtKdUl4SlFJeGVHM0MtVFJ3YjBlWnZhaC1pbWFnZV8yMDI2LTEwLTAxXzIyMDAxMzYwOS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Walid",
+        "userPictureUrl": "https://images.apifyusercontent.com/tO4Oc4n6FT14mzuI_C_IUeiYOhcpbiTVsfJ49jz2ne4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRzlNaFBPalNQZFZfQmhKMVF5Rk9jSlVJUFVQTC1IS3ozM3VTYnJ3d0ZFYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURlozV21wNlJrVmpYMFkwZUZOelkxRlhUazVNV1Roc2NXdFlkRmt3Y0haR1pWaEpNRmxhZDFKck5FTTJObWhS.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "job-scraped": {
+                "eventTitle": "Job scraped",
+                "eventDescription": "One Indeed job with title, company, location, salary range, company rating + review count, remote flag, job type, posting date and apply URL. Cloudflare cleared via a stealth browser over residential proxy. $5.00 per 1,000 jobs.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "job-enriched": {
+                "eventTitle": "Full description (premium)",
+                "eventDescription": "Opt-in: the job's full description + structured fields (employment type, exact post date, full address, direct-apply) from its detail page. $10.00 per 1,000 enriched jobs.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-10-01T19:34:53.019Z",
+          "startedAt": "2026-10-01T19:34:53.019Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "nDJlkJuIxJQIxeG3C",
+        "url": "https://apify.com/dltik/indeed-scraper"
+      },
+      {
+        "title": "Indeed Scraper — Jobs, Salary Filters & AI (US+JP)",
+        "name": "indeed-pro-scraper",
+        "username": "akagifreeez",
+        "stats": {
+          "totalBuilds": 23,
+          "totalRuns": 151,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T06:18:33.577Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Indeed scraper for US, Japan (求人) and more: normalized salaries (USD & JPY 万円), date/job-type/remote filters, dedup, full descriptions, optional AI skill & seniority enrichment. Pay per result.",
+        "categories": [
+          "JOBS"
+        ],
+        "notice": null,
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "koki yonai",
+        "userPictureUrl": "https://images.apifyusercontent.com/MiiI6JS_fX3uciz8d4jqYAmgIKhNVM48oBHsrWxcdRI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veXlLSTBQOXJUUndJNXBxQlYybHA1SWhzWm1kNzQwYTVEb2dkc3QtcVRQZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RTJNVFE1TWpVNE5qOTJQVFE.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "job-scraped": {
+                "eventTitle": "Job scraped",
+                "eventDescription": "Charged once per unique job collected from the search results.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "job-detail-scraped": {
+                "eventTitle": "Full job description",
+                "eventDescription": "Charged per job when full-description scraping is enabled (visits each job page).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              },
+              "job-ai-enriched": {
+                "eventTitle": "AI enrichment",
+                "eventDescription": "Charged per job when AI skills/seniority/summary enrichment is enabled.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-06-07T13:41:08.269Z",
+          "createdAt": "2026-06-07T13:41:10.168Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "LCFWd5h8wvr80KTaK",
+        "url": "https://apify.com/akagifreeez/indeed-pro-scraper"
+      },
+      {
+        "title": "Indeed Jobs Scraper — Multi-Country Jobs & Salaries",
+        "name": "indeed-jobs-scraper",
+        "username": "dltik",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 143,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T00:58:40.241Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 47,
+            "TIMED-OUT": 0,
+            "TOTAL": 47
+          }
+        },
+        "description": "Scrape Indeed jobs in any country (US, UK, FR, DE, CA, ES, IT, NL, AU...) by keyword + location. Get title, company, rating, salary min/max, remote, job type, posted date, snippet + full description. Deduped by jobkey. Search + job-detail modes. No rate limits or page caps.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "MARKETING"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/LHh6gmDEUY7pXpDqThqmj8bd4F1Ru8tXnD9jGzBZlo4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTVJNT3kwWXJhZzF1RE9oYkMtYWN0b3ItaFJZMjNRbGJQYVhZd0RoejAtbExTanBvb1BkVi1pbmRlZWQtam9icy1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Walid",
+        "userPictureUrl": "https://images.apifyusercontent.com/tO4Oc4n6FT14mzuI_C_IUeiYOhcpbiTVsfJ49jz2ne4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRzlNaFBPalNQZFZfQmhKMVF5Rk9jSlVJUFVQTC1IS3ozM3VTYnJ3d0ZFYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURlozV21wNlJrVmpYMFkwZUZOelkxRlhUazVNV1Roc2NXdFlkRmt3Y0haR1pWaEpNRmxhZDFKck5FTTJObWhS.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "result-scraped": {
+                "eventTitle": "Result scraped",
+                "eventDescription": "One Indeed job extracted (search card or full detail): title, company, rating, salary, location + GPS, remote/hybrid, job type, benefits, skills, apply URL, hiring signals, posted date/age, and full description (HTML). Deduped by jobkey. Cloudflare-challenged runs, instruction rows and the bookmark CTA are NOT charged.",
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "startedAt": "2026-09-30T09:32:32.000Z",
+          "reasonForChange": "Start fee reduced from $0.02 to $0.005 per run - net saving for every run. Per-job price ($0.0015, $1.50/1000 jobs) is unchanged. Cloudflare-challenged runs still do NOT charge any events.",
+          "createdAt": "2026-09-15T09:32:31.607Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-15T09:32:51.857Z",
+          "notifiedAboutChangeAt": "2026-09-30T09:35:53.860Z"
+        },
+        "id": "hRY23QlbPaXYwDhz0",
+        "url": "https://apify.com/dltik/indeed-jobs-scraper"
+      }
+    ]
+  }
+}

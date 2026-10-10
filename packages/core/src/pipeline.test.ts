@@ -3,11 +3,15 @@ import {
   candidates,
   formatPipeline,
   isEmpty,
+  isStaleDoing,
   needsResearch,
   nextItem,
+  notBeforeArrived,
   parseExchange,
   parseQueue,
   starved,
+  cooling,
+  isCooling,
   type VentureQueue,
 } from './pipeline.js';
 
@@ -89,6 +93,30 @@ describe('scheduling', () => {
     );
   });
 
+  it('offers an item dated today only from 07:00 UTC, after the morning metrics rows', () => {
+    const q = parseQueue(queue('gankdat', [{ ...item('d1-read', 'todo', 6), not_before: '2026-10-08' }]));
+    const night = new Date('2026-10-08T00:13:00Z');
+    const morning = new Date('2026-10-08T07:00:00Z');
+    expect(notBeforeArrived('2026-10-08', night)).toBe(false);
+    expect(notBeforeArrived('2026-10-08', morning)).toBe(true);
+    expect(notBeforeArrived('2026-10-07', night)).toBe(true);
+    expect(notBeforeArrived(undefined, night)).toBe(true);
+    expect(nextItem([q], { now: night })).toBeUndefined();
+    expect(nextItem([q], { now: morning })?.item.id).toBe('d1-read');
+    // A stale doing item dated today waits the same way.
+    const stale = parseQueue(
+      queue('gankdat', [{ ...item('d1-read', 'doing', 6), doing_since: '2026-10-01', not_before: '2026-10-08' }]),
+    );
+    expect(nextItem([stale], { now: night })).toBeUndefined();
+    expect(nextItem([stale], { now: morning })?.item.id).toBe('d1-read');
+    // The status text lists it as scheduled with the hour, and the queue counts as starved, not empty.
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [q] }, { now: night });
+    expect(text).toContain('scheduled: gankdat/d1-read on 2026-10-08 from 07:00 UTC');
+    expect(formatPipeline({ exchange: { ideas: [] }, queues: [q] }, { now: morning })).toContain(
+      'next: gankdat / d1-read',
+    );
+  });
+
   it('caps candidates by effort when asked', () => {
     const q = parseQueue(
       queue('x', [{ ...item('big', 'todo', 9), effort_days: 2 }, { ...item('small', 'todo', 3), effort_days: 0.2 }]),
@@ -135,8 +163,87 @@ describe('scheduling', () => {
     expect(needsResearch([blockedOnly, datedOnly, empty], today).map((q) => q.venture)).toEqual(['dead-end']);
     // The dated item comes due: its queue is buildable again.
     expect(needsResearch([blockedOnly, datedOnly], { today: '2026-10-21' })).toEqual([]);
-    const text = formatPipeline({ exchange: { ideas: [] }, queues: [blockedOnly, datedOnly] });
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [blockedOnly, datedOnly] }, today);
     expect(text).toContain('pipeline starved');
+  });
+
+  it('does not offer a queue researched within 48 h for research again', () => {
+    // 2026-10-05: five research runs in a day, and the next morning the build was offered the
+    // same venture eleven hours after its research because `updated` was all it had to go on.
+    const blockedOnly = parseQueue(
+      queue('gankdat', [item('sc', 'blocked', 4)], { updated: '2026-10-05', researched: '2026-10-05' }),
+    );
+    const older = parseQueue(
+      queue('toolkit', [{ ...item('day-30', 'todo', 4), not_before: '2026-10-21' }], { updated: '2026-10-05', researched: '2026-10-03' }),
+    );
+    expect(isCooling(blockedOnly, '2026-10-06')).toBe(true);
+    expect(isCooling(blockedOnly, '2026-10-07')).toBe(false);
+    expect(isCooling(older, '2026-10-05')).toBe(false);
+    // Yesterday's research is still cooling; the day-before's is not.
+    expect(starved([blockedOnly, older], { today: '2026-10-06' }).map((q) => q.venture)).toEqual(['toolkit']);
+    expect(cooling([blockedOnly, older], { today: '2026-10-06' }).map((q) => q.venture)).toEqual(['gankdat']);
+    // Every starved queue cooling: nothing to research, and the status says to stop.
+    const allCool = parseQueue(queue('toolkit', [item('sc', 'blocked', 4)], { researched: '2026-10-06' }));
+    expect(needsResearch([blockedOnly, allCool], { today: '2026-10-06' })).toEqual([]);
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [blockedOnly, allCool] }, { today: '2026-10-06' });
+    expect(text).toContain('researched within 48 h');
+    expect(text).toContain('cooling: gankdat (researched 2026-10-05), toolkit (researched 2026-10-06)');
+    expect(() => parseQueue(queue('t', [], { researched: '5 Oct' }))).toThrow(/researched/);
+  });
+
+  it('skips a queue whose research run set research_after until that date', () => {
+    // 2026-10-07: highlight-keep, read-focus and variables-toolkit had each been researched three
+    // times in eight days on an unchanged zero (0 users, 7 views); the next evidence is a dated
+    // day-30 review, so the research run points the fallback at it instead of inventing items.
+    const waiting = parseQueue(
+      queue('highlight-keep', [{ ...item('day-30', 'todo', 5), not_before: '2026-10-30' }], {
+        updated: '2026-10-07',
+        researched: '2026-10-05',
+        research_after: '2026-10-30',
+      }),
+    );
+    expect(isCooling(waiting, '2026-10-08')).toBe(true);
+    expect(isCooling(waiting, '2026-10-29')).toBe(true);
+    expect(isCooling(waiting, '2026-10-30')).toBe(false);
+    expect(starved([waiting], { today: '2026-10-15' })).toEqual([]);
+    expect(needsResearch([waiting], { today: '2026-10-15' })).toEqual([]);
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [waiting] }, { today: '2026-10-15' });
+    expect(text).toContain('waits for dated evidence');
+    expect(text).toContain('cooling: highlight-keep (researched 2026-10-05, waiting until 2026-10-30)');
+    // On the day itself the day-30 item is buildable, so nothing is starved anyway.
+    expect(nextItem([waiting], { today: '2026-10-30' })?.item.id).toBe('day-30');
+    expect(() => parseQueue(queue('t', [], { research_after: 'soon' }))).toThrow(/research_after/);
+  });
+
+  it('offers a stale doing item again and lists every doing item', () => {
+    // 2026-10-04: foundry held a score-7 item in `doing` (a deliberate wait for a measured week)
+    // and `next` reported starvation around it; a cut-off session's leftover would hide the same way.
+    const q = parseQueue(
+      queue('foundry', [
+        { ...item('left', 'doing', 7, '2026-10-01'), doing_since: '2026-10-03' },
+        { ...item('fresh', 'doing', 9, '2026-10-01'), doing_since: '2026-10-04' },
+        { ...item('held', 'doing', 8, '2026-10-01'), not_before: '2026-10-12' },
+        item('small', 'todo', 2),
+      ]),
+    );
+    const left = q.items[0]!;
+    // A day is not stale; more than a day is; a future not_before is a hold, never stale.
+    expect(isStaleDoing(left, '2026-10-04')).toBe(false);
+    expect(isStaleDoing(left, '2026-10-05')).toBe(true);
+    expect(isStaleDoing(q.items[2]!, '2026-10-05')).toBe(false);
+    expect(isStaleDoing(q.items[2]!, '2026-10-12')).toBe(true);
+    // `doing_since` defaults to `added`.
+    expect(isStaleDoing(parseQueue(queue('x', [item('a', 'doing', 1, '2026-10-01')])).items[0]!, '2026-10-05')).toBe(true);
+    expect(nextItem([q], { today: '2026-10-05' })?.item.id).toBe('left');
+    expect(candidates([q], { today: '2026-10-05' }).map((c) => c.item.id)).toEqual(['left', 'small']);
+    expect(nextItem([q], { today: '2026-10-04' })?.item.id).toBe('small');
+    // A stale doing item is buildable, so its queue is not starved.
+    expect(starved([q], { today: '2026-10-05' })).toEqual([]);
+    expect(() => parseQueue(queue('t', [{ ...item('a', 'doing', 1), doing_since: '3 Oct' }]))).toThrow(/doing_since/);
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [q] }, { today: '2026-10-05' });
+    expect(text).toContain('doing: foundry/left since 2026-10-03 (stale — offered again by next)');
+    expect(text).toContain('foundry/held since 2026-10-01 (held until 2026-10-12)');
+    expect(text).toContain('foundry/fresh since 2026-10-04');
   });
 
   it('formats a status summary with the next item', () => {

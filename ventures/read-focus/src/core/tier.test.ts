@@ -3,11 +3,11 @@ import { DEFAULT_SITE } from './settings.js';
 import { applyTier } from './tier.js';
 
 describe('applyTier', () => {
-  const pro = { ...DEFAULT_SITE, enabled: true, strength: 0.42, weight: 800, focus: true, font: 'opendyslexic' as const };
+  const pro = { ...DEFAULT_SITE, enabled: true, strength: 0.42, weight: 800, focus: true, font: 'opendyslexic' as const, tint: 'cream' as const, spacing: true, speechRate: 1.2 };
   it('keeps everything for pro', () => {
     expect(applyTier(pro, 'pro')).toEqual(pro);
   });
   it('drops pro options for free but keeps the free ones', () => {
-    expect(applyTier(pro, 'free')).toEqual({ ...DEFAULT_SITE, enabled: true, focus: false, font: 'default' });
+    expect(applyTier(pro, 'free')).toEqual({ ...DEFAULT_SITE, enabled: true, focus: false, font: 'default', tint: 'none', spacing: true, speechRate: 1.2 });
   });
 });

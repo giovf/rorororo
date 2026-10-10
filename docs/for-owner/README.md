@@ -8,7 +8,8 @@ Claude runs the project; this folder is the only part written for you. Read top 
 
 ## Right now
 
-**Start here: [OUTSTANDING.md](OUTSTANDING.md) — the single list of everything waiting on you, kept current.**
+**Start here: [OPEN.md](OPEN.md) — every open request, ordered by what it unblocks, regenerated with every push.**
+[OUTSTANDING.md](OUTSTANDING.md) keeps the decisions you have taken and the history.
 
 The table below is the older per-item history.
 

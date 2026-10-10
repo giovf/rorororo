@@ -324,6 +324,22 @@
           </td>
         </tr>
         <tr>
+          <td><code>uk-company-profiles</code></td>
+          <td>
+            Companies House public data API — company profile, charges, filing history and
+            persons-with-significant-control resources, read on request (official; register public
+            under the Companies Act 2006)
+          </td>
+          <td>Crown copyright — attribute Companies House if you republish</td>
+          <td>
+            <strong>Blind Mode</strong>: organisation-level fields only. Officer resources are never
+            called; individual persons with significant control are dropped whole at ingest (only
+            corporate and legal-person entries and the counts are kept); filing events carry the
+            form type and description code, never the person's name; charge holders and
+            registered-office address lines are dropped. Each lookup is cached for 24 hours
+          </td>
+        </tr>
+        <tr>
           <td><code>uk-food-hygiene</code></td>
           <td>
             Food Standards Agency — Food Hygiene Rating Scheme open-data file (official, all UK)

@@ -55,7 +55,7 @@ task-master generate                                         # Update task markd
 - `CLAUDE.md` - Auto-loaded context for Claude Code (this file)
 - `.claude/settings.json` - Claude Code tool allowlist and preferences
 - `.claude/commands/` - Custom slash commands for repeated workflows
-- `.mcp.json` - MCP server configuration (project-specific)
+- `.mcp.json` - MCP server configuration — **not checked in** (gitignored since 2026-10-06, see MCP Integration)
 
 ### Directory Structure
 
@@ -83,7 +83,18 @@ project/
 
 ## MCP Integration
 
-Task Master provides an MCP server that Claude Code can connect to. Configure in `.mcp.json`:
+Task Master provides an MCP server that Claude Code can connect to. **Foundry does not check in a
+`.mcp.json`** (2026-10-06, foundry `mcp-sandbox-timeout`): the cloud routines never use the server and every
+sandbox spent 30 s timing out on `npx -y task-master-ai` at session start; the routines edit `tasks.json`
+offline with `npm run task -- add|done|list`. An interactive machine that wants the MCP server adds it to
+its own config (user scope, or a local `.mcp.json`, which is gitignored):
+
+```bash
+claude mcp add --scope user task-master-ai -e TASK_MASTER_TOOLS=core -- npx -y task-master-ai
+```
+
+The equivalent `.mcp.json` (API keys only if a non-`claude-code` provider is configured — the shipped
+`.taskmaster/config.json` needs none):
 
 ```json
 {

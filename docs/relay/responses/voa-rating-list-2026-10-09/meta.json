@@ -1,0 +1,78 @@
+{
+  "request": "voa-rating-list-2026-10-09",
+  "fetched_at": "2026-10-09T17:20:32.002Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.tax.service.gov.uk/view-my-valuation/terms-and-conditions",
+      "fetched_at": "2026-10-09T17:20:29.474Z",
+      "status": 200,
+      "final_url": "https://www.tax.service.gov.uk/business-rates-find/terms-and-conditions",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 25979,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tax.service.gov.uk/business-rates-find/ordnance-terms-and-conditions",
+      "fetched_at": "2026-10-09T17:20:30.191Z",
+      "status": 200,
+      "final_url": "https://www.tax.service.gov.uk/business-rates-find/ordnance-terms-and-conditions",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 20053,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://voaratinglists.blob.core.windows.net/html/rlidata.htm",
+      "fetched_at": "2026-10-09T17:20:30.342Z",
+      "status": 200,
+      "final_url": "https://voaratinglists.blob.core.windows.net/html/rlidata.htm",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "33414",
+        "last-modified": "Wed, 07 Oct 2026 12:57:14 GMT",
+        "etag": "\"0x8DF247282931319\""
+      },
+      "file": "3.html",
+      "bytes": 33414,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/spookyweb/uk-business-rates.md",
+      "fetched_at": "2026-10-09T17:20:30.889Z",
+      "status": 404,
+      "final_url": "https://apify.com/spookyweb/uk-business-rates.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 209,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://assets.publishing.service.gov.uk/media/5a82c71ae5274a2e8ab594ce/Data_Information.pdf",
+      "fetched_at": "2026-10-09T17:20:31.075Z",
+      "status": 200,
+      "final_url": "https://assets.publishing.service.gov.uk/media/5a82c71ae5274a2e8ab594ce/Data_Information.pdf",
+      "headers": {
+        "content-type": "application/pdf",
+        "content-length": "167344",
+        "content-disposition": "inline; filename=\"Data_Information.pdf\"",
+        "last-modified": "Thu, 24 Aug 2017 07:49:05 GMT",
+        "etag": "\"599e84f1-28db0\""
+      },
+      "file": "5.bin",
+      "bytes": 167344,
+      "truncated": false
+    }
+  ]
+}

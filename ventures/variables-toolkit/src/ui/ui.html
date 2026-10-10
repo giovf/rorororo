@@ -61,11 +61,16 @@
       <div class="row">
         <button id="relink-selection" class="primary">Scan selection</button>
         <button id="relink-page">Scan page</button>
+        <select id="relink-direction" title="Which way bindings move">
+          <option value="to-library">To library variables</option>
+          <option value="to-local">To local variables</option>
+        </select>
         <select id="relink-collection" hidden></select>
       </div>
       <p id="relink-summary" class="muted">
         Finds layers bound to local or no-longer-published variables and moves them onto the enabled library's variable of the same name
-        and type. Enable the library under Assets → Libraries first.
+        and type. Enable the library under Assets → Libraries first. Switch to "To local variables" to bring library bindings back onto this
+        file's own variables instead.
       </p>
       <ul id="relink-list" class="list"></ul>
       <div class="row end"><button id="relink-apply" class="primary" disabled>Relink selected</button></div>

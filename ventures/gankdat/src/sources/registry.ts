@@ -4,6 +4,7 @@ import { samExclusionsSource } from './sam-exclusions';
 import { ukCareLocationsSource } from './uk-care-locations';
 import { ukCharitiesSource } from './uk-charities';
 import { ukCompaniesSource } from './uk-companies';
+import { ukCompanyProfilesSource } from './uk-company-profiles';
 import { ukContractAwardsSource } from './uk-contract-awards';
 import { ukFoodHygieneSource } from './uk-food-hygiene';
 import { ukGamblingOperatorsSource } from './uk-gambling-operators';
@@ -34,6 +35,7 @@ const SOURCES: DataSource[] = [
   nhsOdsSource,
   ukTrademarkJournalSource,
   ukGamblingOperatorsSource,
+  ukCompanyProfilesSource,
 ];
 
 export const registry: ReadonlyMap<string, DataSource> = new Map(

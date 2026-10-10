@@ -1,0 +1,46 @@
+{
+  "request": "metrics-2026-10-05",
+  "fetched_at": "2026-10-05T07:16:47.793Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/pciignkojfpgmfcmjchmpdhonpjkfepc/reviews?hl=en",
+      "fetched_at": "2026-10-05T07:16:46.959Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/highlight-keep-%E2%80%94-web-high/pciignkojfpgmfcmjchmpdhonpjkfepc/reviews?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 566801,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/dckbdaplggmhimpbekhdbaampglfhdgf/reviews?hl=en",
+      "fetched_at": "2026-10-05T07:16:47.467Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/readfocus-%E2%80%94-focus-reading/dckbdaplggmhimpbekhdbaampglfhdgf/reviews?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 569259,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717/comments?page_size=50",
+      "fetched_at": "2026-10-05T07:16:47.614Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717/comments?page_size=50",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "3.json",
+      "bytes": 127,
+      "truncated": false
+    }
+  ]
+}

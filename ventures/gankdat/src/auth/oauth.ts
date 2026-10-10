@@ -426,6 +426,7 @@ export interface Approved {
   redirectUri: string;
   state: string | null;
   code: string;
+  clientId: string;
 }
 
 /**
@@ -463,7 +464,7 @@ export async function approveAuthRequest(
       now + CODE_TTL_MS,
     )
     .run();
-  return { redirectUri: row.redirect_uri, state: row.state, code };
+  return { redirectUri: row.redirect_uri, state: row.state, code, clientId: row.client_id };
 }
 
 /**

@@ -15,6 +15,27 @@ const ORIGIN_URL = 'https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePa
 const PAGE_SIZE = 100;
 // Snapshot cap, same rationale as uk-planning (KV value limits, Worker memory).
 const MAX_RECORDS = 1000;
+// 429 back-off (2026-10-09, queue `uk-tenders-429-backoff`): Find a Tender throttled the 10-08
+// wave (first time) and fetchFromOrigin threw on the first non-OK page. Same loop as eu-ted:
+// up to RETRIES retries, pausing Retry-After when it is under the cap, else delayMs × attempt —
+// ≤ 2 min worst case inside wave 1's budget. A page still throttled afterwards fails as before.
+const RETRIES = 3;
+export const tendersRetry = { delayMs: 20_000, maxRetryAfterMs: 120_000 };
+
+async function fetchPage(url: string): Promise<Response> {
+  const get = (): Promise<Response> => fetch(url, { headers: { accept: 'application/json' } });
+  let res = await get();
+  for (let attempt = 1; res.status === 429 && attempt <= RETRIES; attempt += 1) {
+    const retryAfter = Number(res.headers.get('retry-after')) * 1000;
+    const pause =
+      retryAfter > 0 && retryAfter <= tendersRetry.maxRetryAfterMs
+        ? retryAfter
+        : tendersRetry.delayMs * attempt;
+    await new Promise((resolve) => setTimeout(resolve, pause));
+    res = await get();
+  }
+  return res;
+}
 
 const rawReleaseSchema = z.object({
   id: z.string(),
@@ -102,7 +123,7 @@ async function fetchFromOrigin(): Promise<UkTendersRecord[]> {
   const records: UkTendersRecord[] = [];
   let url = `${ORIGIN_URL}?limit=${PAGE_SIZE}`;
   for (;;) {
-    const res = await fetch(url, { headers: { accept: 'application/json' } });
+    const res = await fetchPage(url);
     if (!res.ok) throw new Error(`find-tender.service.gov.uk responded ${res.status}`);
     const page = packageSchema.parse(await res.json());
     records.push(...mapReleases(page.releases));

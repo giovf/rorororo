@@ -1,5 +1,6 @@
 # Outstanding — everything that is waiting on you (updated 2026-10-04)
 
+Since 2026-10-06 the live, ordered list of open requests is generated in [OPEN.md](OPEN.md) with every push; this page keeps the decisions and history.
 One list, kept current by Claude. Each item says what it unblocks and roughly how long it takes.
 Nothing here spends money. Your answers of 2026-09-28 are applied below.
 

@@ -1219,13 +1219,97 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-04T20:19:56.473Z"
+      },
+      {
+        "id": "25",
+        "title": "apify-change-feed-mode: changes mode on the nine feed-bearing Apify actors (mode / since / change inputs → /v1/changes)",
+        "description": "Shared actor client reads /v1/changes/<slug> in changes mode and pushes record + change + changed_at; feed actors offer mode/since/change inputs and a Monitor-it README section; test keeps inputs, dataset fields and the shared client in step. Pipeline item apify-change-feed-mode (score 7), burn-down 2026-10-05.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-05T01:26:51.103Z"
+      },
+      {
+        "id": "26",
+        "title": "gankdat: uk-company-profiles lookup + monitor (Companies House)",
+        "description": "On-demand dataset (DataSource.lookup, src/sources/lookup.ts): one company by number or name from the Companies House public-data API (profile, charges, filing history, corporate PSCs), KV-cached 24 h, MCP tool query_uk_company_profiles, Apify actor uk-companies-house-lookup-monitor with mode: changes over the buyer's list (runLookupActor). Blind Mode: officers never called, individual PSCs dropped at ingest. Exchange 2026-W41 winner; queue item uk-company-lookup-monitor.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-07T09:32:36.895Z"
+      },
+      {
+        "id": "27",
+        "title": "Search Console reading in CI (scripts/search-console.ts)",
+        "description": "Read-only service-account JWT → sites.list, searchAnalytics.query (7 days by page) and urlInspection for the /stats and landing comparison pages; search: clause on each venture's daily metrics row; step in the store-metrics workflow (docs/ci); owner action 020 for the SEARCH_CONSOLE_KEY secret.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-07T17:19:53.409Z"
+      },
+      {
+        "id": "28",
+        "title": "d1store: resumable hash backfill for pre-0014 generations (uk-trademark-journal refresh)",
+        "description": "backfillHashes pages the live generation's unhashed rows, writes record_id/record_hash in place under an 8-min budget, writes a skipped refresh_log row (migration 0015 widens the CHECK) when it hands the rest to the next night, then the delta pass runs; journal fetchIssue treats a text/html body as a missing issue (IPO soft-404).",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-07T17:34:33.349Z"
+      },
+      {
+        "id": "29",
+        "title": "Live MCP probe from the metrics runner (gankdat mcp-live-probe)",
+        "description": "scripts/mcp-probe.ts: initialize, tools/list and one preview tools/call against the live /mcp from the gankdat metrics job (keyless, plus GANKDAT_PROBE_KEY when set); metrics.mjs renders mcp probe: in the Daily numbers row and lists a failed step under refresh errors as mcp-probe so refresh-errors-to-queue files a fix. Why: Glama health check HTTP 500 on 2026-10-08, no sandbox can reach the edge.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-08T09:27:49.081Z"
+      },
+      {
+        "id": "30",
+        "title": "gankdat: wave log reading from the metrics runner (Workers observability query)",
+        "description": "scripts/runner-refresh.mjs queries Workers observability for the last 24 h of Worker log lines of every source with no ok refresh_log row in 26 h or an error row today; src/lib/wave-logs.ts holds the query body, the tolerant parse and the Daily numbers reading (wave log: …) metrics.mjs prints. Queue item gankdat/wave-log-reading.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-09T00:25:52.985Z"
+      },
+      {
+        "id": "31",
+        "title": "OAuth connect funnel: oauth_funnel analytics points per leg + Daily numbers funnel and connect_account UA readings",
+        "description": "gankdat oauth-connect-funnel-check (build 2026-10-09): routes/oauth.ts writes one oauth_funnel point per leg (authorize, authorize_rejected, signin_shown, consent_shown, email_sent, approved, denied, expired, token, token_rejected; client host, detail); src/lib/oauth-funnel.ts renders 'oauth funnel 7d: …' and 'connect_account 7d by UA: …' for metrics.mjs. Relay walked the GET legs live with Claude's real client documents.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-09T09:29:40.785Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-04T20:19:56.473Z",
-      "taskCount": 24,
-      "completedCount": 17,
+      "lastModified": "2026-10-09T09:29:40.785Z",
+      "taskCount": 31,
+      "completedCount": 24,
       "tags": [
         "master"
       ]

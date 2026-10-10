@@ -484,6 +484,363 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 21:24 | burn-down | Highlight Keep 0.3.0; handoff: sign/upload after 0.2.0 clears review. Queue: import item done
 - 2026-10-04 21:25 | burn-down | Stopping for time (~45 min): heal + import built; next is foundry append-only-guard (6)
 - 2026-10-04 16:50 | interactive | Telegram now only for product releases, launches and owner actions (plain one-liners); run bullets stay in the repo
+- 2026-10-04 21:35 | burn-down | Time allowed one more item: foundry append-only-guard (6) built
+- 2026-10-04 21:35 | burn-down | npm run runs now fails when RUNS.md or STRATEGY.md lost dated lines (floor in docs/ops/RUNS-COUNT.json)
+- 2026-10-04 21:35 | burn-down | notify-owner sends at most 40 run bullets per push, then one 'N more lines' bullet; 5 tests added
+- 2026-10-04 21:35 | burn-down | Queue: append-only-guard done; next buildable is highlight-keep comparison-page-2026-rivals (4)
+- 2026-10-04 22:21 | burn-down | Relay read Web Highlights and Marqly pricing/FAQ pages + store listings (allowlist +2 hosts)
+- 2026-10-04 22:21 | burn-down | weava-alternative.html: Web Highlights and Marqly columns (12 rows) and a paragraph on the pair
+- 2026-10-04 22:21 | burn-down | Web Highlights prices render only in-app, so the page says subscription + 7-day trial, no figure
+- 2026-10-04 22:21 | burn-down | Queue: comparison-page-2026-rivals done; proof unchanged (≥ 50 impressions at the day-30 review)
+- 2026-10-04 22:30 | burn-down | ReadFocus research: today's results for its three target searches name Dyslexly, Half Bold, AlternativeTo
+- 2026-10-04 22:30 | burn-down | read-focus queue +4: rivals columns (4), reading-ruler page (4), AlternativeTo (3, owner), Android (2)
+- 2026-10-04 22:36 | burn-down | Relay read Half Bold's site + listing and Dyslexly's listing (its site 403s the runner)
+- 2026-10-04 22:36 | burn-down | reader-mode-alternative.html: Half Bold and Dyslexly columns (12 rows) and a paragraph on the pair
+- 2026-10-04 22:36 | burn-down | Queue: read-focus comparison-page-2026-rivals done; next buildable is reading-ruler-page (4)
+- 2026-10-04 22:44 | burn-down | reading-ruler.html: ruler page vs Reader Line, ReadingLine, ReadingRuler; PDF reflow explained
+- 2026-10-04 22:44 | burn-down | Linked from index, ReadFocus page, comparison page, sitemap, LISTING.md and AMO metadata
+- 2026-10-04 22:44 | burn-down | Queue: read-focus reading-ruler-page done; proof = 30 impressions or 3 clicks at day 30
+- 2026-10-04 22:50 | burn-down | Stopping for time (~40 min): 3 items built + ReadFocus research; next buildable is firefox-android-compat (2)
+- 2026-10-04 23:21 | burn-down | ReadFocus 0.2.1: Firefox build declares gecko_android (min 140), so AMO can flag it for Firefox for Android
+- 2026-10-04 23:21 | burn-down | Popup: viewport meta, full-width phone layout, bigger touch targets; shortcut hints hidden where commands API is absent
+- 2026-10-04 23:21 | burn-down | Ruler and paragraph focus follow pointer events: a tap places them on touch; shortcut API guarded in background
+- 2026-10-04 23:21 | burn-down | AMO release notes + description line for Android; handoff: sign 0.2.1 after 0.2.0 clears review (not device-tested)
+- 2026-10-04 23:21 | burn-down | Queue: read-focus firefox-android-compat done; proof = AMO compatibility lists android + 5 Android installs by day 30
+- 2026-10-04 23:29 | burn-down | Foundry research (starved pipeline): three ops items from today's evidence, all self-expansion
+- 2026-10-04 23:29 | burn-down | e2e-sandbox-browser (4): e2e failed first time, Playwright wants chromium-1208, sandbox has 1194; check skips e2e
+- 2026-10-04 23:29 | burn-down | pipeline-doing-visibility (4): actions-minutes sat hidden in doing while next reported starvation
+- 2026-10-04 23:29 | burn-down | e2e-pro-sections-test-key (3): pro sections skip on every cloud run for want of the signing key
+- 2026-10-04 23:37 | burn-down | Stopping for time (~45 min): ReadFocus 0.2.1 Android + foundry research; next buildable is e2e-sandbox-browser (4)
+- 2026-10-05 00:20 | burn-down | Extension e2e runners pick the browser: CHROMIUM_PATH, Playwright's build, else the sandbox's; log which
+- 2026-10-05 00:20 | burn-down | Highlight Keep e2e no longer crashes without the signing key: pro section skipped with a SKIP line
+- 2026-10-05 00:20 | burn-down | Both e2e passed first time in the sandbox; burn-down + build prompts: extension src change runs e2e
+- 2026-10-05 00:20 | burn-down | Queue: foundry e2e-sandbox-browser done; next buildable is pipeline-doing-visibility (4)
+- 2026-10-05 00:32 | burn-down | Pipeline: `doing_since` field, `doing:` status line; a doing item over a day old with no hold is offered again
+- 2026-10-05 00:32 | burn-down | No clock-based validator failure (it would redden the nightly check with no commit to blame); test added
+- 2026-10-05 00:32 | burn-down | actions-minutes converted to todo + not_before 2026-10-12 so the hold shows on the scheduled line
+- 2026-10-05 00:32 | burn-down | Queue: foundry pipeline-doing-visibility done; next buildable is e2e-pro-sections-test-key (3)
+- 2026-10-05 00:42 | burn-down | Extension test builds bake a throwaway Ed25519 public key when .env has no signing key; runner signs with it
+- 2026-10-05 00:42 | burn-down | ReadFocus pro sections 5–7 and Highlight Keep's pro section now PASS in the sandbox; SKIP line gone
+- 2026-10-05 00:42 | burn-down | Production builds checked: real public key baked, no key file; .env.example says e2e needs no key
+- 2026-10-05 00:42 | burn-down | Queue: foundry e2e-pro-sections-test-key done; foundry has no buildable item left (actions-minutes 10-12)
+- 2026-10-05 00:50 | burn-down | Stopping for time (~45 min): three foundry items built; pipeline starved, next fire researches gankdat
+- 2026-10-05 01:14 | watchdog | ci-minutes: ~4215 Actions min/month projected (private cap 2,000, warn 1700); top: check 642, gankdat 173, owner notes 4
+- 2026-10-05 01:21 | burn-down | gankdat research (starved pipeline): 14 Daily numbers rows read, funnel wide at the top, zero at the bottom
+- 2026-10-05 01:21 | burn-down | apify-change-feed-mode (7): change feeds never called; actors only query /v1/data; schedules = monitors
+- 2026-10-05 01:21 | burn-down | d1-delta-cost-check (6, from 10-08): §7 tripped on US$38 D1 writes; read three rows after the delta fix
+- 2026-10-05 01:21 | burn-down | apify-runs-per-actor (5), indexnow-stats-pages (5), change-feed-rss (5): readings and keyless shelves
+- 2026-10-05 01:21 | burn-down | Queue: gankdat +5 items, needs_research false; next buildable is apify-change-feed-mode (7)
+- 2026-10-05 01:28 | burn-down | Apify client: changes mode reads /v1/changes with the same filters; rows = record + change + changed_at
+- 2026-10-05 01:28 | burn-down | Nine feed-bearing actors: mode/since/change inputs, dataset fields, "Monitor it" README; seven KV actors unchanged
+- 2026-10-05 01:28 | burn-down | Schema test: feed inputs and fields exactly on feed actors; shared client and main.mjs identical in all 16
+- 2026-10-05 01:28 | burn-down | Queue: gankdat apify-change-feed-mode done; next buildable is apify-runs-per-actor (5)
+- 2026-10-05 01:35 | burn-down | metrics.mjs: `apify 30d by actor: name N; 0: …` — per-actor runs by other accounts in the Daily numbers row
+- 2026-10-05 01:35 | burn-down | Queue: gankdat apify-runs-per-actor done; next buildable is indexnow-stats-pages (5)
+- 2026-10-05 01:41 | burn-down | Stopping for time (~30 min + gates): gankdat research + 2 items built; next buildable is indexnow-stats-pages (5)
+- 2026-10-05 02:25 | burn-down | IndexNow: Worker submits changed /stats pages (parent + facets) after each refresh wave; key file at /<key>.txt
+- 2026-10-05 02:25 | burn-down | Runner-fed sources ping IndexNow from runner-refresh.mjs; `indexnow:` status + URLs in the Daily numbers row
+- 2026-10-05 02:25 | burn-down | 9 tests: key file route, URL list, chunking/rejection, wave hook pings only sources that refreshed OK
+- 2026-10-05 02:25 | burn-down | Queue: gankdat indexnow-stats-pages done; indexnow-day-30-read queued (2026-11-05); next is change-feed-rss (5)
+- 2026-10-05 02:52 | burn-down | Keyless Atom feeds: /feeds/<slug>.xml and per facet value, 7 days of register changes, ≤ 50 entries
+- 2026-10-05 02:52 | burn-down | Feeds cached 1 h in KV, rate limited per IP, rel=alternate on stats pages; `feeds 30d:` in the metrics row
+- 2026-10-05 02:52 | burn-down | 5 tests: Atom shape, dataset-agnostic titles, facet URLs, live feed from seeded changes, 404s
+- 2026-10-05 02:52 | burn-down | Queue: gankdat change-feed-rss done; day-30 read folded into indexnow-day-30-read (2026-11-05)
+- 2026-10-05 02:52 | burn-down | Stopping for time (~40 min + gates): IndexNow + Atom feeds built; gankdat has no buildable item until 10-08
+- 2026-10-05 08:12 | report | Money: spent £7.40, planned £86.00 (+£31 Cloudflare est.), revenue £0, net -£7.40, headroom £6.60/£100 cap
+- 2026-10-05 08:12 | report | gankdat: accounts flat at 1 (0 paid) all week; ~12,000 MCP calls, 255 paywall hits, 0 x402 payments
+- 2026-10-05 08:12 | report | Highlight Keep and ReadFocus now launched; both flat at 0 users/sales; 0.2.0 submitted, in review
+- 2026-10-05 08:12 | report | Variables Toolkit: views 2→6, unique runs 1→2 this week; installs/likes/purchases still 0
+- 2026-10-05 08:12 | report | Alerts: 15 lines 2026-09-28..10-04, 0 self-caused notices; all already tracked or closed
+- 2026-10-05 08:12 | report | Owner/handoffs: 10 open via npm run handoffs (8 owner, 2 handoff), 0 older than 7 days
+- 2026-10-05 08:12 | report | Next step: Cloudflare D1-write overage breakdown is highest leverage — £6.60 headroom left under cap
+- 2026-10-05 08:12 | notify | ReadFocus 0.2 submitted to Chrome and Firefox: adds a built-in PDF reader
+- 2026-10-05 08:12 | notify | Highlight Keep 0.2 submitted to Chrome and Firefox: adds PDF highlighting
+- 2026-10-05 09:11 | build | Pipeline starved (every open item blocked or dated): research run for highlight-keep, oldest queue
+- 2026-10-05 09:11 | build | Highlight Keep research: Weava still abandoned; both rivals ranking for its name built a Weava import
+- 2026-10-05 09:11 | build | Review sample re-counted: every-site mode (3), iframe/shadow DOM (2) and notes-app export unaddressed
+- 2026-10-05 09:11 | build | Queue: highlight-keep +5 items; next buildable is import-weava-export (6); relay allowlist +5 hosts
+- 2026-10-05 17:18 | build | Weava import: src/core/weava-import.ts maps CSV columns by header name, refuses others listing headers
+- 2026-10-05 17:18 | build | No sample obtainable: Weava KB behind login, app host down, rival guides show steps only (relay, 2 rounds)
+- 2026-10-05 17:18 | build | 8 tests: CSV reader, delimiter, header spellings, colour cells, stable ids, refusal; library 'Import Weava'
+- 2026-10-05 17:18 | build | Highlight Keep 0.4.0: LISTING, AMO notes, comparison page, landing, welcome say 'bring highlights from Weava'
+- 2026-10-05 17:18 | build | Handoff: sign and upload 0.4.0 (supersedes the 0.3.0 handoff); CWS still waits on the 0.2.0 review
+- 2026-10-05 17:18 | build | Queue: highlight-keep import-weava-export done; next buildable is all-sites-mode (4)
+- 2026-10-05 17:22 | burn-down | Highlight Keep: "On for every site" popup switch — optional http/https permission asked once, one script for all sites
+- 2026-10-05 17:22 | burn-down | Switching it off unregisters that script and returns to per-site mode; shortcut and onInstalled honour the setting
+- 2026-10-05 17:22 | burn-down | 3 settings unit tests + e2e section 7: never-enabled localhost gets the highlighter, restores; off unregisters
+- 2026-10-05 17:22 | burn-down | Listing, AMO notes (ships in 0.4.0), welcome, landing and comparison page: "or every site with one setting"
+- 2026-10-05 17:22 | burn-down | Queue: highlight-keep all-sites-mode done; next buildable is subframe-highlighting (4)
+- 2026-10-05 17:34 | burn-down | Highlight Keep: content script runs in every frame (allFrames on registration and injection); frame URL is the key
+- 2026-10-05 17:34 | burn-down | Shadow DOM: text walk descends open shadow roots; selection via getComposedRanges; mark styles adopted into the root
+- 2026-10-05 17:34 | burn-down | Mark lookup covers shadow roots (recolour, note, remove); pointer target read from composedPath
+- 2026-10-05 17:34 | burn-down | e2e section 8 (6 checks): iframe and shadow-root highlights created, styled, stored under the frame URL, restored
+- 2026-10-05 17:34 | burn-down | Listing and AMO notes: works inside embedded frames and web components (ships in 0.4.0)
+- 2026-10-05 17:34 | burn-down | Queue: highlight-keep subframe-highlighting done; next buildable is export-markdown-files-readwise-csv (4)
+- 2026-10-05 17:34 | burn-down | Stopping for time (~40 min + gates): all-sites-mode and subframe-highlighting built this run
+- 2026-10-05 18:36 | burn-down | Highlight Keep: 'Download Markdown files' — one .md per page with YAML front matter, zipped for a vault
+- 2026-10-05 18:36 | burn-down | 'Download CSV for Readwise' in its import columns; tags ride as Readwise inline .tag notes, UTC dates
+- 2026-10-05 18:36 | burn-down | src/core/zip.ts: store-only ZIP writer with CRC-32, no dependency; checked with unzip -t and zipfile
+- 2026-10-05 18:36 | burn-down | Readwise columns verified via relay (docs.readwise.io) + web search; import_bulk itself is behind a login
+- 2026-10-05 18:36 | burn-down | 8 unit tests (zip, export) + e2e section 9: real zip and CSV downloads from the library page
+- 2026-10-05 18:36 | burn-down | Listing, AMO notes, welcome, landing, comparison page: Markdown files for Obsidian/Logseq, Readwise CSV
+- 2026-10-05 18:36 | burn-down | Queue: highlight-keep export-markdown-files-readwise-csv done; ships in 0.4.0 (handoff amended)
+- 2026-10-05 18:48 | burn-down | Highlight Keep: Hypothesis import (sidebar Share → Export JSON or CSV), format read from its client source
+- 2026-10-05 18:48 | burn-down | Replies and page notes are left out (no words to anchor); comment → note, tags, title, quote prefix/suffix kept
+- 2026-10-05 18:48 | burn-down | Glasp documents no CSV columns: the header-driven .csv reader takes Glasp too, tags cell split on commas
+- 2026-10-05 18:48 | burn-down | 4 Hypothesis tests; library: 'Import Weava / Glasp (.csv)' and 'Import Hypothesis'; e2e still green
+- 2026-10-05 18:48 | burn-down | Listing, AMO notes, welcome, landing, comparison page: imports from Weava, Glasp, Hypothesis, Super Simple
+- 2026-10-05 18:48 | burn-down | Queue: highlight-keep import-glasp-hypothesis-exports done; ships in 0.4.0 (handoff amended)
+- 2026-10-05 18:55 | burn-down | Stopping for time (~44 min): next is null, every queue starved; 19:00 run researches read-focus first
+- 2026-10-05 19:32 | burn-down | ReadFocus research: starvation fallback; review sample re-read by ask, BDA style guide, Half Bold FAQ
+- 2026-10-05 19:32 | burn-down | Ruler colour/size/opacity asked 4x across 28k-user ruler tools; tint 3x; Docs 2x; read-aloud a suite feature
+- 2026-10-05 19:32 | burn-down | Queue read-focus: ruler-controls (5), spacing-and-tint (4), read-aloud (3), google-docs-publish-tip (3)
+- 2026-10-05 19:22 | burn-down | ReadFocus 0.3.0: ruler colour (six swatches, white for dark pages), height, opacity, lock in place
+- 2026-10-05 19:22 | burn-down | Locked band ignores the mouse, moves on click/tap; old saves backfilled; 1 unit test + e2e 1b (4 checks)
+- 2026-10-05 19:22 | burn-down | Listing, AMO notes, welcome, ReadFocus page, reading-ruler.html say what the ruler now does
+- 2026-10-05 19:22 | burn-down | Handoff amended: sign and upload 0.3.0 (was 0.2.1); queue read-focus ruler-controls done
+- 2026-10-05 19:28 | burn-down | Heal: Prettier rewrite of the two landing pages and e2e/run.ts; the 0.3.0 push had failed the format check
+- 2026-10-05 19:41 | burn-down | ReadFocus 0.3.0: 'Wider spacing' switch (line 1.5, letter 0.12em, word 0.16em on reading blocks, free)
+- 2026-10-05 19:41 | burn-down | Page tint (unlock): cream/pastel/grey as one fixed multiply layer, no per-element repaint; free keys get none
+- 2026-10-05 19:41 | burn-down | tier + settings tests; e2e 2b (4 checks) and tint present for pro, absent for a bad key; 43 e2e checks green
+- 2026-10-05 19:41 | burn-down | Listing, AMO notes, welcome, ReadFocus page, comparison page updated; queue read-focus spacing-and-tint done
+- 2026-10-05 19:45 | burn-down | ReadFocus 0.3.0: read aloud (unlock) with the browser's own voices, one sentence at a time
+- 2026-10-05 19:45 | burn-down | Sentence marked via CSS Custom Highlight (no wrapper); popup play/pause/stop + speed; shortcut Alt+Shift+A
+- 2026-10-05 19:45 | burn-down | core/speech.ts (4 unit tests); e2e 4 checks via the extension message; headless has no voices
+- 2026-10-05 19:45 | burn-down | Listing, AMO notes, welcome, ReadFocus page, comparison page updated; queue read-focus read-aloud done
+- 2026-10-05 19:50 | burn-down | Google Docs tip (Publish to web, then ReadFocus on that page) on comparison, ruler, ReadFocus and welcome pages
+- 2026-10-05 19:50 | burn-down | Queue: read-focus google-docs-publish-tip done; next is null, every queue starved again
+- 2026-10-05 20:32 | burn-down | Variables Toolkit research (starvation fallback): day-10 bodies re-read as a paid vs free market table
+- 2026-10-05 20:32 | burn-down | 2026 entrants: 101 free (median 39 users) vs 9 paid, 0 purchases across all nine; zero sales is the norm
+- 2026-10-05 20:32 | burn-down | Web: no native Figma styles→variables or unused cleaner; forum asks relink both ways (5 threads)
+- 2026-10-05 20:32 | burn-down | Queue variables-toolkit: relink-howto-page (4), relink-to-local (4), search-rank-relink-queries (3)
+- 2026-10-05 20:32 | burn-down | day-30-review amended: read free-companion installs, not purchases; relay for rival comments still queued
+- 2026-10-05 20:32 | burn-down | Foundry queue: relay-wait-loop (5) — fetch-relay sat queued 16+ min, README's sleep 120 reads nothing
+- 2026-10-05 20:36 | burn-down | Foundry relay-wait-loop: README step 3 polls origin/main for the response commit up to 20 min
+- 2026-10-05 20:36 | burn-down | RELAY sentence in burn-down, build, fallback, exchange, metrics prompts: poll, work meanwhile, no sleep 120
+- 2026-10-05 20:36 | burn-down | Queue: foundry relay-wait-loop done; next buildable is variables-toolkit relink-howto-page (4)
+- 2026-10-05 20:40 | burn-down | Variables Toolkit: figma-relink-variables.html — broken variables after a move, Relink steps, honest limits
+- 2026-10-05 20:40 | burn-down | Page says Relink ships with the next published version; comparison page's stale 'no relinking yet' bullet fixed
+- 2026-10-05 20:40 | burn-down | Sitemap entry and landing card link; queue variables-toolkit relink-howto-page done; next is relink-to-local
+- 2026-10-05 21:20 | burn-down | Variables Toolkit Relink: "To local variables" direction — library bindings move onto same-name local variables
+- 2026-10-05 21:20 | burn-down | Planner option direction (current = local; reason library), local catalogue by id, apply refuses a stale plan
+- 2026-10-05 21:20 | burn-down | 4 unit tests (11 relink total); dev and release builds pass; UI labels, summary and tooltip follow direction
+- 2026-10-05 21:20 | burn-down | Listing, STORE.md note, how-to page section + limits, RESEARCH §10 outcome; ships with the 019 republish
+- 2026-10-05 21:20 | burn-down | Queue: variables-toolkit relink-to-local done; next buildable is search-rank-relink-queries (3)
+- 2026-10-05 21:30 | burn-down | STORE.md rank queries + relink variables, swap variables, library variables; 06:45 row picks them up
+- 2026-10-05 21:30 | burn-down | Queue: variables-toolkit search-rank-relink-queries done; VT has only dated/blocked items left
+- 2026-10-05 21:38 | burn-down | Exchange pre-research: EA waste carriers register parked (API, 2 paid actors, licence to confirm)
+- 2026-10-05 22:33 | burn-down | Foundry research (starved pipeline): today's 60 push runs on main (19:19-21:46) read via the GitHub API
+- 2026-10-05 22:33 | burn-down | 20 of 60 runs cancelled at 15:02 with no steps: never acquired by a runner; triage called them superseded
+- 2026-10-05 22:33 | burn-down | Dead runs cost: check never ran on 3 commits, the vt-research relay never ran, 21 INBOX rows
+- 2026-10-05 22:33 | burn-down | Three red check runs on main in two days (05ec84d, e7f913f, 547b963), each a push after an unchecked edit
+- 2026-10-05 22:33 | burn-down | Queue foundry: ci-runs-never-acquired (6), pre-push-format-gate (6), triage-run-failed-reason (4)
+- 2026-10-05 22:33 | burn-down | actions-minutes gains evidence: projection 4,215 min/month after the trim; check takes 6-16 min a run
+- 2026-10-05 22:48 | burn-down | Foundry ci-runs-never-acquired: concurrency groups on check, landing, both metrics jobs, owner notes
+- 2026-10-05 22:48 | burn-down | Group is workflow + event + ref, cancel-in-progress: a push never cancels a cron run; files via docs/ci/
+- 2026-10-05 22:48 | burn-down | Relay README step 3 + five prompts: a run cancelled unstarted is re-fired by workflow_dispatch
+- 2026-10-05 22:48 | burn-down | Queue: foundry ci-runs-never-acquired done; next buildable is pre-push-format-gate (6)
+- 2026-10-05 22:52 | burn-down | Foundry pre-push-format-gate: .githooks/pre-push re-checks Prettier, ESLint, runs cap, pipeline on the range
+- 2026-10-05 22:52 | burn-down | Armed by package.json prepare on every npm ci; CI and SKIP_HOOKS=1 skip it; seeded bad file rejected
+- 2026-10-05 22:52 | burn-down | Queue: foundry pre-push-format-gate done; foundry has triage-run-failed-reason (4) left
+- 2026-10-05 22:59 | burn-down | Stopping for time (~47 min): foundry research + 2 items built; next buildable is triage-run-failed-reason (4)
+- 2026-10-05 23:25 | burn-down | Foundry triage-run-failed-reason: triage prompt logs GitHub's reason (red gate / unstarted / superseded)
+- 2026-10-05 23:25 | burn-down | Third same-reason Run failed mail in a day files a foundry item; SELF-CAUSED row 6 carries the readings
+- 2026-10-05 23:25 | burn-down | Queue: foundry triage-run-failed-reason done; foundry has only dated/blocked items left
+- 2026-10-05 23:40 | burn-down | Stopping: 1 item built, pipeline starved, every queue and the exchange already researched today
+- 2026-10-06 00:21 | burn-down | Stopping: pipeline starved, all 5 queues and the exchange researched in the last 24h, nothing to build
+- 2026-10-06 01:23 | burn-down | Stopping: pipeline starved (next buildable 2026-10-08), every queue researched within 24h, night's pre-research spent
+- 2026-10-06 01:25 | watchdog | ci-minutes: ~6223 Actions min/month projected (private cap 2,000, warn 1700); top: check 701, gankdat 171, owner notes 1
+- 2026-10-06 02:19 | burn-down | Stopping: main green, pipeline starved (next buildable 2026-10-08), queues researched <24h, pre-research spent
+- 2026-10-06 09:40 | build | Pipeline starved (every open item blocked or dated): research run for foundry, first starved queue
+- 2026-10-06 09:40 | build | Foundry research: gankdat gate 280 s for 74 s of tests (697 s per-test setup) and run twice per push in CI
+- 2026-10-06 09:40 | build | Four idle burn-down firings overnight each ran npm ci + gate (~20 min) to find the pipeline starved
+- 2026-10-06 09:40 | build | Starvation fallback re-offers a queue researched hours earlier; 8 owner asks open, oldest 6 days
+- 2026-10-06 09:40 | build | Queue: foundry +5 items (test setup 7, burn gate 6, research cooldown 6, owner digest 4, MCP timeout 3)
+- 2026-10-06 17:32 | burn-down | gankdat test setup rewritten: migrate once per file, empty tables and KV per test; 384 pass, no workerd noise
+- 2026-10-06 17:32 | burn-down | Measured: migrations were not the gate's cost; each of 49 spec files loads the whole module graph (14-19 s)
+- 2026-10-06 17:32 | burn-down | CI: root check workflow now runs check:root; gankdat.yml is the one gankdat gate per push (docs/ci)
+- 2026-10-06 17:32 | burn-down | Queue: foundry gankdat-test-setup done; gankdat-test-module-graph (6) queued with the evidence and five candidates
+- 2026-10-06 17:45 | burn-down | Pipeline: queues carry researched; a venture researched within 48 h is cooling, never re-offered
+- 2026-10-06 17:45 | burn-down | npm run pipeline prints a cooling: line and tells a starved, cooled run to stop; core tests added
+- 2026-10-06 17:45 | burn-down | Queue: foundry research-cooldown done; build.md and burn-down.md research sentences updated
+- 2026-10-06 17:50 | burn-down | npm run pipeline cold: dependency-free starvation check, runs before npm ci, prints starved-and-cooled
+- 2026-10-06 17:50 | burn-down | burn-down.md GATE ends the run on starved-and-cooled; SCHEDULERS row updated; foundry item done
+- 2026-10-06 17:52 | burn-down | Probed test module-graph item: optimizer no gain, spec imports moot, pool-workers 0.22 is out
+- 2026-10-06 17:52 | burn-down | Stopping for time (~35 min): 3 foundry items built; next is gankdat-test-module-graph (0.3 d)
+- 2026-10-06 18:05 | build | gankdat tests: pre-bundled viem/stripe/zod/x402 deps in vitest (node built-ins external); 261 s → 133 s
+- 2026-10-06 18:05 | build | gankdat x402 lane imports x402-hono/@coinbase/x402 lazily; suite 80 s, gate 99 s, lighter cold start
+- 2026-10-06 18:05 | build | Merged on the burn-down's parallel gankdat-test-setup commits: its CI split and test setup kept
+- 2026-10-06 18:05 | build | Pre-push hook rejected gankdat .ts files (lint run from root): gankdat eslint config anchors tsconfigRootDir
+- 2026-10-06 18:05 | build | Queue: foundry gankdat-test-module-graph done (proof met: gate under 90 s); 3 foundry items left
+- 2026-10-06 18:20 | burn-down | npm run handoffs now writes docs/for-owner/OPEN.md: open asks ordered by unblocked score over minutes
+- 2026-10-06 18:20 | burn-down | handoffs prints the median open age of owner asks (5 d today) and a notify: digest once an ask passes 7 d
+- 2026-10-06 18:20 | burn-down | Weekly report copies that digest as its one notify line; retro records the median; handoffs joined check
+- 2026-10-06 18:20 | burn-down | Queue: foundry owner-ask-digest done; phone message and for-owner README now link OPEN.md
+- 2026-10-06 18:30 | burn-down | .mcp.json removed and gitignored: sandboxes stop spawning task-master-ai and its 30 s timeout
+- 2026-10-06 18:30 | burn-down | Taskmaster guide and SETUP step 6 now give the claude mcp add line for interactive machines
+- 2026-10-06 18:30 | burn-down | Queue: foundry mcp-sandbox-timeout done; 1 foundry todo left (actions-minutes, dated 2026-10-12)
+- 2026-10-06 18:25 | burn-down | Stopping: 2 foundry items built; pipeline starved-and-cooled, pre-research spent, next dated 2026-10-08
+- 2026-10-07 00:25 | burn-down | Pipeline starved (every open item blocked or dated); 48 h cooling lapsed: research run for gankdat
+- 2026-10-07 00:25 | burn-down | gankdat research: IndexNow 429 on every wave (Workers egress IP); the runner's post got 200
+- 2026-10-07 00:25 | burn-down | gankdat research: trademark journal logs no refresh since 10-04; feeds reading n/a; eu-ted 429 twice
+- 2026-10-07 00:25 | burn-down | D1 writes fell from ~6M to ~0.2M a day after the delta refresh (10-05→10-06 rows)
+- 2026-10-07 00:25 | burn-down | Queue: gankdat +4 items (indexnow-from-runner 7, journal silent refresh 6, feeds reason 4, ted 429 4)
+- 2026-10-07 00:40 | burn-down | IndexNow submission moved to the GitHub runner: refreshed sources' stats pages, facets from KV
+- 2026-10-07 00:40 | burn-down | Worker wave-end ping and its Analytics Engine point removed; metrics row reads dist/indexnow.json
+- 2026-10-07 00:40 | burn-down | Queue: gankdat indexnow-from-runner done; next buildable is trademark-journal-silent-refresh (6)
+- 2026-10-07 00:50 | burn-down | Trade-marks journal refresh: no new issue download after 6 min, so wave 7 ends inside its budget
+- 2026-10-07 00:50 | burn-down | tmj_window log carries elapsed_ms and download_budget_spent; budget test with an injected clock
+- 2026-10-07 00:50 | burn-down | Queue: gankdat trademark-journal-silent-refresh done; next buildable feeds-reading-reason (4)
+- 2026-10-07 00:55 | burn-down | Feeds reading: miss share via sumIf; a failed query prints its reason instead of a bare n/a
+- 2026-10-07 00:55 | burn-down | Queue: gankdat feeds-reading-reason done; next buildable eu-ted-429-backoff (4)
+- 2026-10-07 01:05 | burn-down | eu-ted: a 429 page is retried three times with Retry-After or a growing pause; two tests
+- 2026-10-07 01:05 | burn-down | Queue: gankdat eu-ted-429-backoff done; gankdat has no buildable item left (all dated or blocked)
+- 2026-10-07 01:15 | burn-down | Fallback offered highlight-keep for a 3rd research pass in 8 days on unchanged zeros; built the fix
+- 2026-10-07 01:15 | burn-down | Pipeline: research_after on a queue keeps it out of the fallback until a dated reading; cooling line says so
+- 2026-10-07 01:15 | burn-down | highlight-keep, read-focus (10-30) and variables-toolkit (10-21) wait for their day-30 reads; evidence logged
+- 2026-10-07 01:15 | burn-down | Queue: foundry research-after-date done; README, build.md and burn-down.md step 1 updated
+- 2026-10-07 01:20 | burn-down | Stopping: 1 research + 5 items built; pipeline starved-and-cooled, every queue waiting on dated reads
+- 2026-10-07 06:24 | watchdog | ci-minutes: ~6291 Actions min/month projected (private cap 2,000, warn 1700); top: check 687, gankdat 186, owner notes 1
+- 2026-10-07 08:30 | exchange | Winner: gankdat Companies House lookup + monitor, score 8.0 (10.7 raw; Blind Mode, no director names)
+- 2026-10-07 08:30 | exchange | Evidence: Apify Store read via relay — every category we list in is at the 2-user QA floor
+- 2026-10-07 08:30 | exchange | Evidence: Companies House lookups have 13 paid actors, 5–168 users each, leader 47 users/30d; none monitors
+- 2026-10-07 08:30 | exchange | Queued: gankdat uk-company-lookup-monitor (8, 1.5 d, 0 owner min)
+- 2026-10-07 08:30 | exchange | Queued: gankdat docker-mcp-catalog-listing (8, 0.25 d, from 10-10) and uk-company-lookup-day-30 (3, 11-07)
+- 2026-10-07 08:30 | exchange | Queued: foundry search-console-api-reading (7): unblocks four dated reviews and five page proofs
+- 2026-10-07 08:30 | exchange | Parked: officer/PSC fields, GeBIZ, /stats CSV checkout, Sheets add-on, Smithery, WuslaHQ reseller
+- 2026-10-07 08:30 | exchange | Parked trigger checked: Apify quality pass not met (no actor at 0 runs); relink marked promoted (built)
+- 2026-10-07 08:30 | exchange | Declined: nothing new — the W39/W40 declines stand under the same rules
+- 2026-10-07 08:30 | exchange | STRATEGY §2 agent-directories row gains Docker; §8 logs the decision; comparison in docs/exchange/2026-W41.md
+- 2026-10-07 08:30 | exchange | Owner (later, not now): ~10 min Search Console service-account step, raised when the script ships
+- 2026-10-07 09:40 | build | Built gankdat uk-company-lookup-monitor (8): first on-demand dataset, DataSource.lookup + lookup.ts
+- 2026-10-07 09:40 | build | uk-company-profiles: profile, charges, filings, corporate PSCs in one record; KV per key 24 h; 30/min
+- 2026-10-07 09:40 | build | Layouts verified through the relay (ch-lookup-specs, 10 spec pages in 10 min); fixture built to them
+- 2026-10-07 09:40 | build | Blind Mode kept: officers never called, individual PSCs dropped whole, filing events carry the code
+- 2026-10-07 09:40 | build | MCP tool query_uk_company_profiles (400/tool error without a key), lookup /stats page, llms.txt note
+- 2026-10-07 09:40 | build | Apify actor UK Companies House Lookup & Monitor: list in, changes mode diffs the previous run
+- 2026-10-07 09:40 | build | Landing card, terms row, GDPR row, sitemap, server.json 0.22.0 (registry republishes), ARCHITECTURE
+- 2026-10-07 09:40 | build | Tests: 11 for the lookup, schema test branch for lookup actors; Taskmaster 26; queue item done
+- 2026-10-07 17:35 | burn-down | Gate: check green, pipeline work (foundry search-console-api-reading 7, gankdat tm-journal 6)
+- 2026-10-07 17:35 | burn-down | Search Console reading: service-account JWT, sites.list, 7-day impressions/clicks per venture
+- 2026-10-07 17:35 | burn-down | URL inspection of /stats, /stats/<slug> and the five landing comparison pages (from the sitemaps)
+- 2026-10-07 17:35 | burn-down | `search:` clause upserted on each Daily check row and gankdat's Daily numbers row; 18 tests
+- 2026-10-07 17:35 | burn-down | Step added to the 06:45 store-metrics workflow via docs/ci/; n/a (reason) rows until the key lands
+- 2026-10-07 17:35 | burn-down | Owner action 020 (read-only service account, Restricted user, SEARCH_CONSOLE_KEY secret), ~10 min
+- 2026-10-07 17:35 | burn-down | Queue: foundry search-console-api-reading done; gankdat stats-indexing now waits on 020 only
+- 2026-10-07 17:35 | notify | Please connect Google Search Console (10 min, free): daily rows then show search traffic
+- 2026-10-07 17:50 | build | Slot found its item (search-console-api-reading) already built and pushed by the 17:00 burn-down at 17:35
+- 2026-10-07 17:50 | build | This slot's duplicate (script, 25 tests, action 020) was discarded at push time; nothing reached main
+- 2026-10-07 17:50 | build | No second item taken: the burn-down is mid-loop on the next one; slot ends with one line per rule
+- 2026-10-07 17:50 | build | Queued foundry build-claim-marker (5): a one-line doing push after next so two sessions never build one item
+- 2026-10-07 17:36 | burn-down | Journal refresh: relay read of /v1/health (last ok 10-04, 162k rows) and the IPO issue pages
+- 2026-10-07 17:36 | burn-down | Cause: post-0014 full reload of 162k rows killed at the 15-min cron limit three nights, no row
+- 2026-10-07 17:36 | burn-down | d1store: resumable in-place hash backfill (8-min budget, skipped row, migration 0015), then delta
+- 2026-10-07 17:36 | burn-down | Journal: an IPO 200 text/html body (its Page Not Found) is a missing issue, not a journal; test
+- 2026-10-07 17:36 | burn-down | Tests: backfill hash equality and a 2,100-row hand-over on real D1; metrics row names a skipped run
+- 2026-10-07 17:36 | burn-down | Queue: gankdat refresh-uk-trademark-journal done; ARCHITECTURE delta and journal paragraphs
+- 2026-10-07 17:48 | burn-down | Claim marker: `npm run pipeline claim <venture>/<id> --by=<routine>` pushes the doing line first
+- 2026-10-07 17:48 | burn-down | Refuses another session's claim under a day old, takes over a leftover; watchdog ignores it
+- 2026-10-07 17:48 | burn-down | build.md and burn-down.md step 2 claim right after next; README, SCHEDULERS, CLAUDE.md; 9 tests
+- 2026-10-07 17:48 | burn-down | Queue: foundry build-claim-marker done (filed by the 17:10 build after today's duplicate)
+- 2026-10-07 17:42 | burn-down | Stopping: 3 items built (search console, journal backfill, claim); pipeline starved-and-cooled
+- 2026-10-07 18:30 | burn-down | Gate: cold said starved-and-cooled, but its pre-research match was a Stopping line, not a pass
+- 2026-10-07 18:30 | burn-down | Cold gate: pipeline-cold.ts counts only `Exchange pre-research:` lines since the night's 17:00 UTC
+- 2026-10-07 18:30 | burn-down | burn-down.md pass rule spells out the same prefix and window; 10 tests; pipeline.ts comment
+- 2026-10-07 18:30 | burn-down | Queue: foundry cold-gate-night-window done (two nights of pre-research were skipped unseen)
+- 2026-10-07 18:48 | burn-down | Exchange pre-research: Land Registry price paid data parked (OGL v3, 9 Apify rivals $1.50-10/1k)
+- 2026-10-08 00:28 | burn-down | D1 writes 87.5M→93.6M→93.8M→93.8M (10-04..07): ~0.1M a day after the delta refresh, was ~6M
+- 2026-10-08 00:28 | burn-down | No source swaps generations nightly: all nine D1 sources have idOf; journal backfill is one-off
+- 2026-10-08 00:28 | burn-down | LEDGER planned row 10-10 raised 31 → 33 (≈ US$44 of writes); RESEARCH table, ARCHITECTURE note
+- 2026-10-08 00:28 | burn-down | Queue: gankdat d1-delta-cost-check done; STRATEGY §7 cost rule cleared going forward
+- 2026-10-08 00:38 | burn-down | Pipeline starved after the D1 read (every open item blocked or dated): foundry research pass
+- 2026-10-08 00:38 | burn-down | Foundry research: claim --by flag eaten by npm (61275b2 says build); dated items offered at 00:00
+- 2026-10-08 00:38 | burn-down | Foundry research: OPEN.md date-only churn rides every commit; npm update banner on every npm run
+- 2026-10-08 00:38 | burn-down | Queue: foundry +4 items (claim flag 4, dated items wait 07:00 4, OPEN.md stable 3, npmrc 2)
+- 2026-10-08 00:23 | watchdog | ci-minutes: ~5140 Actions min/month projected (private cap 2,000, warn 1700); top: check 489, owner notes 170, gankdat 1
+- 2026-10-08 00:23 | burn-down | Claim flag: routineFrom reads --by= from argv, else npm_config_by (npm eats a bare --by=); test
+- 2026-10-08 00:23 | burn-down | build.md, burn-down.md, CLAUDE.md, pipeline README show `-- --by=<routine>`; this claim says burn-down
+- 2026-10-08 00:23 | burn-down | Queue: foundry claim-by-npm-flag done
+- 2026-10-08 00:27 | burn-down | Dated items: not_before today counts from 07:00 UTC (notBeforeArrived in core, cold gate, claim); tests
+- 2026-10-08 00:27 | burn-down | scheduled: line shows "on <date> from 07:00 UTC" for the day itself; pipeline README paragraph
+- 2026-10-08 00:27 | burn-down | Queue: foundry dated-items-wait-for-row done
+- 2026-10-08 00:29 | burn-down | OPEN.md has no clock now: no generated-on date, "since <date>" instead of day counts; test
+- 2026-10-08 00:29 | burn-down | Queue: foundry open-md-stable-render done
+- 2026-10-08 00:30 | burn-down | .npmrc update-notifier=false: no npm version banner on any npm run; queue foundry npmrc item done
+- 2026-10-08 00:30 | burn-down | Stopping: 5 items built (D1 read, claim flag, dated 07:00, OPEN.md, npmrc) + foundry research; starved-and-cooled
+- 2026-10-08 09:15 | build | Nothing buildable: pipeline starved, every queue cooling (researched ≤48 h or dated); no owner notes
+- 2026-10-08 09:40 | build | Glama 500 handoff read: deploy 10-07 green, CH key shared with live source, no sandbox can probe /mcp
+- 2026-10-08 09:40 | build | Queued and claimed gankdat mcp-live-probe (6): the top score, built this run instead of 17:00
+- 2026-10-08 10:05 | build | scripts/mcp-probe.ts: initialize, tools/list, preview tools/call against live /mcp from the runner
+- 2026-10-08 10:05 | build | metrics.mjs row gains `mcp probe: …`; a failed step lists `mcp-probe` under refresh errors
+- 2026-10-08 10:05 | build | refresh-errors-to-queue files a failed probe with its own wording; 9 + 1 tests
+- 2026-10-08 10:05 | build | docs/ci/gankdat-metrics.yml: probe step before metrics (installer moves it); ARCHITECTURE, SCHEDULERS
+- 2026-10-08 10:05 | build | Queue: gankdat mcp-live-probe done; Taskmaster 29; Glama handoff kept (test-profile check)
+- 2026-10-08 10:35 | build | First live probe (CI 09:32): /mcp keyless init/tools/call all 200, 23 tools; Glama 500 not general
+- 2026-10-08 17:20 | build | Nothing buildable: pipeline starved, every queue cooling or dated (next 10-09); no new owner notes
+- 2026-10-08 17:21 | burn-down | Exchange pre-research: ICO fee payers register parked (OGL bar personal data, daily 77 MB zip, 1 rival $3/1k, 2 users)
+- 2026-10-09 00:25 | burn-down | gankdat research: journal still stale after the 10-07 fix (114 h, no row); CQC 403 and FaT 429 transient
+- 2026-10-09 00:25 | burn-down | Queued gankdat wave-log-reading (5), uk-tenders-429-backoff (4), probe-key-from-runner (4)
+- 2026-10-09 00:25 | burn-down | Queued foundry metrics-crons-off-the-half-hour (3): both daily crons fire ~7 h late every day
+- 2026-10-09 00:30 | burn-down | lib/wave-logs.ts: observability query body, tolerant event parse, `wave log:` reading; 6 tests
+- 2026-10-09 00:30 | burn-down | runner-refresh.mjs reads 24 h of Worker log lines per stale/erroring source into dist/wave-logs.json
+- 2026-10-09 00:30 | burn-down | metrics.mjs carries `wave log: <slug> [level] <line> <age>`; ARCHITECTURE, SCHEDULERS; runner comment fixed
+- 2026-10-09 00:30 | burn-down | Queue: gankdat wave-log-reading done; proof is the first scheduled row after a stale source
+- 2026-10-09 00:32 | burn-down | uk-tenders: a throttled Find a Tender page is retried 3× (Retry-After or 20 s × attempt); 2 tests
+- 2026-10-09 00:32 | burn-down | Queue: gankdat uk-tenders-429-backoff done
+- 2026-10-09 00:36 | watchdog | ci-minutes: ~4745 Actions min/month projected (private cap 2,000, warn 1700); top: check 403, owner notes 171, gankdat 1
+- 2026-10-09 01:40 | burn-down | mcp-probe.ts mints a one-run key via the D1 REST API, probes with it, deletes row + KV copy; 8 tests
+- 2026-10-09 01:40 | burn-down | metrics.mjs skips the probe's user agent in MCP 24h, change-feed and datasets-30d counts
+- 2026-10-09 01:40 | burn-down | docs/ci/gankdat-metrics.yml: probe step gets CLOUDFLARE_API_TOKEN; ARCHITECTURE, SCHEDULERS
+- 2026-10-09 01:40 | burn-down | Queue: gankdat probe-key-from-runner done; proof is an authed probe reading on every row
+- 2026-10-09 01:45 | burn-down | Metrics crons moved off the half-hour: gankdat metrics 37 6, store metrics 52 6 (docs/ci, installer moves)
+- 2026-10-09 01:45 | burn-down | SCHEDULERS rows and pipeline README updated; queued foundry metrics-crons-day-7-read (not before 10-17)
+- 2026-10-09 01:45 | burn-down | Queue: foundry metrics-crons-off-the-half-hour done; proof is five of seven scheduled starts before 08:00
+- 2026-10-09 01:50 | burn-down | Stopping: pipeline starved and cooled after two items; pre-research pass spent at 17:21
+- 2026-10-09 09:30 | build | Relay walked the OAuth hop live: discovery 200, Claude's 2 real client docs 200, /authorize 200 for both
+- 2026-10-09 09:30 | build | Test fixture used a 404 client_id (claude.ai/.well-known/oauth-client.json); now the real CIMD URL
+- 2026-10-09 09:30 | build | routes/oauth.ts: one oauth_funnel analytics point per leg (step, client host, detail); 2 tests
+- 2026-10-09 09:30 | build | metrics.mjs row gains `connect_account 7d by UA` and `oauth funnel 7d: …` (lib/oauth-funnel.ts, 4 tests)
+- 2026-10-09 09:30 | build | RESEARCH walk table: which legs a sandbox can drive, how to read the 10-10 row; ARCHITECTURE note
+- 2026-10-09 09:30 | build | Relay allowlist gains claude.ai (public client documents); Taskmaster 31
+- 2026-10-09 09:30 | build | Queue: gankdat oauth-connect-funnel-check done; proof read from the Daily numbers row from 10-10
+- 2026-10-09 17:28 | burn-down | Exchange pre-research: VOA rating list declined (restricted licence, OGL does not apply; Apify rival $0.60/1k, 2 users)
+- 2026-10-09 17:28 | burn-down | Relay allowlist gains voaratinglists.blob.core.windows.net (VO rating list downloads); response read
+- 2026-10-09 17:45 | build | Wave log read: 8 journal lines in 24 h, all requests, none from the 06:05 wave — died before any row
+- 2026-10-09 17:45 | build | Reproduced offline: backfill page UPDATE scanned 162k rows × 2,000 entries, 200 s a page in SQLite
+- 2026-10-09 17:45 | build | d1store: backfill entries as a MATERIALIZED CTE — rows probed by primary key, 0.03 s a page; plan test
+- 2026-10-09 17:45 | build | d1store: a backfill that throws writes an error row; over 3 min it hands the delta to the next night
+- 2026-10-09 17:45 | build | 3 tests in d1store.spec (plan, hand-over, error row); ARCHITECTURE, RESEARCH table of four plans
+- 2026-10-09 17:45 | build | Queue: gankdat refresh-uk-trademark-journal-2026-10-09 done; proof is the 10-10/10-11 Daily numbers rows
+- 2026-10-10 00:17 | watchdog | ci-minutes: ~4693 Actions min/month projected (private cap 2,000, warn 1700); top: check 377, owner notes 175, gankdat 1
+- 2026-10-10 00:24 | burn-down | Pipeline starved, foundry out of cooling (researched 10-08): foundry research pass
+- 2026-10-10 00:24 | burn-down | Foundry research: crons start 7 h late on any minute (metrics 13:41/13:49, check 10:36); dispatch runs at once
+- 2026-10-10 00:24 | burn-down | Foundry research: sandbox clone depth 50, 139 commits behind; pull refused was lag, not divergence
+- 2026-10-10 00:24 | burn-down | Foundry research: starved-and-cooled every night since 10-05; one pre-research candidate a day is the ceiling
+- 2026-10-10 00:24 | burn-down | Queue: foundry +3 items (cron-drift dispatch 6, clone unshallow 3, build-slot pre-research 3); 2 items gain evidence
+- 2026-10-10 00:29 | burn-down | metrics.md MISSING ROWS: dispatch gankdat/store metrics via workflow_dispatch, poll 10 min, then relay
+- 2026-10-10 00:29 | burn-down | SCHEDULERS: measured cron drift on both metrics jobs, owner notes (1 fire in 6) and the watchdog (6 of 14)
+- 2026-10-10 00:29 | burn-down | Queue: foundry cron-drift-dispatch-row done; proof is rows present before the 07:00 summary from 10-11
+- 2026-10-10 00:32 | burn-down | CLONE paragraph in eight routine bodies: unshallow the depth-50 clone before any git log or push
+- 2026-10-10 00:32 | burn-down | routines/README bootstrap note and CLAUDE.md session-start line: a refused pull on a shallow clone is lag
+- 2026-10-10 00:32 | burn-down | Queue: foundry sandbox-clone-unshallow done; proof is full git-log windows on the next retro and report
+- 2026-10-10 00:36 | burn-down | pipeline cold -- --routine=build: day window from 07:00; build and burn-down pass lines both count; 4 tests
+- 2026-10-10 00:36 | burn-down | build.md step 1: a starved-and-cooled slot does the day's exchange pre-research pass; burn-down.md, README
+- 2026-10-10 00:36 | burn-down | Queue: foundry build-slot-pre-research done; proof is a build item traced to a day pass within 14 days
+- 2026-10-10 00:37 | burn-down | Stopping: foundry research + 3 items built (dispatch, unshallow, build pass); starved-and-cooled, pass spent
+- 2026-10-10 08:05 | retro | Slot reliability: 26/26 watched slots traced; burn-down watchdog still Wed-only despite nightly schedule
+- 2026-10-10 08:05 | retro | Repeat blocker: attended-session signing blocked 10d, now stalls 2 built releases (ReadFocus 0.3, HK 0.4)
+- 2026-10-10 08:05 | retro | Defect: run-watchdog's burn-down slot still Wed-only; schedule went nightly 10-04, 5/6 nights unwatched
+- 2026-10-10 08:05 | retro | Defect: handoff: entries get no aging signal; 2 releases sat unsigned 5-6 days with nothing on the phone
+- 2026-10-10 08:05 | retro | Defect: uk-trademark-journal's first fix (10-07) was itself too slow for the cron budget it fixed
+- 2026-10-10 08:05 | retro | Queued foundry burn-down-watchdog-nightly (7): watch every night, not just Wednesday
+- 2026-10-10 08:05 | retro | Queued foundry handoff-aging-escalation (5): notify line for aging handoff: entries too
+- 2026-10-10 08:05 | retro | Owner load: median open-ask age 8d (5 of 12 over 7d); all genuinely need the owner
+- 2026-10-10 09:24 | build | Docker MCP Catalog entry written and passed Docker's own validator: remote, keyless preview + optional key
+- 2026-10-10 09:24 | build | No oauth block: Docker's Toolkit signs in by RFC 7591 DCR only, which gankdat lacks (CIMD); queued at 6
+- 2026-10-10 09:24 | build | mcp route: a bare Bearer header (Toolkit user, no key pasted yet) is keyless, not a 401; 1 test; v0.22.1
+- 2026-10-10 09:24 | build | PR not opened: the sandbox token is scoped to this repo and cannot fork docker/mcp-registry; handoff
+- 2026-10-10 09:24 | build | Queue: gankdat docker-mcp-catalog-listing blocked on the handoff; foundry third-party-pr-relay queued (3)
+- 2026-10-10 09:24 | build | Listings log, STRATEGY §4 row and §8, ARCHITECTURE note, SELF-CAUSED row for the PR's review mail
 - 2026-10-10 11:30 | interactive | Cloudflare invoice US$49 explained: 94M D1 rows written vs 50M included (nightly full reloads, fixed 4 Oct); ledger updated
 - 2026-10-10 11:30 | notify | Cloudflare bill of $49 failed to charge: one-off overage, already fixed; please pay or update the card
 

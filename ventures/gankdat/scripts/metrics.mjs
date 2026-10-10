@@ -11,6 +11,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { connectCallersNote, oauthFunnelNote } from '../src/lib/oauth-funnel.ts';
 
 const ACCOUNT_ID = '37e56f3ce4dfe49919e85d4380467f44'; // not a secret
 const DATABASE_ID = 'ac051277-5f69-46ba-965b-50da2f1ec524'; // wrangler.jsonc
@@ -85,11 +86,17 @@ const errors = await sql(
 const stale = await sql(
   "SELECT source_slug, MAX(CASE WHEN status = 'ok' THEN created_at END) AS last_ok FROM refresh_log WHERE created_at > datetime('now','-30 days') GROUP BY source_slug HAVING last_ok IS NULL OR last_ok < datetime('now','-2 days')",
 );
+// A `skipped` row (migration 0015, 2026-10-07: the resumable hash backfill that hands its rest to
+// the next night) says why a stale source wrote no `ok` row, so the reading names it.
+const skipped = await sql(
+  "SELECT source_slug, MAX(message) AS message FROM refresh_log WHERE status = 'skipped' AND created_at > datetime('now','-1 day') GROUP BY source_slug",
+);
 for (const s of stale) {
   if (errors.some((e) => e.source_slug === s.source_slug)) continue;
+  const skip = skipped.find((k) => k.source_slug === s.source_slug);
   errors.push({
     source_slug: s.source_slug,
-    message: `no successful refresh since ${s.last_ok ? String(s.last_ok).slice(0, 10) : 'over 30 days'}`,
+    message: `no successful refresh since ${s.last_ok ? String(s.last_ok).slice(0, 10) : 'over 30 days'}${skip ? `; last run skipped: ${skip.message}` : ''}`,
   });
 }
 errors.sort((a, b) => a.source_slug.localeCompare(b.source_slug));
@@ -122,10 +129,31 @@ const oauthClients = await ae(
 const oauthNote = oauth
   ? `oauth: ${oauth.connects24h ?? 0} connects/24h, ${oauth.connects30d ?? 0}/30d${oauthClients.length ? ` (7d by client: ${oauthClients.map((r) => `${r.client} ${Math.round(Number(r.n))}`).join(', ')})` : ''}`
   : 'oauth: n/a';
+// The connect funnel (gankdat oauth-connect-funnel-check, 2026-10-09): connect_account was the
+// most-wanted tool for a week with 0 connects and nothing said where the person stopped. Three
+// readings over 7 days: who sends the 401s (user agents of the keyless connect_account calls —
+// a scanner's UA ends the question), the challenges by reason, and every leg of routes/oauth.ts
+// as `oauth_funnel` points (blob3 step, blob5 detail) so the drop-off step is a number.
+const connectCallers = await ae(
+  "SELECT blob2 AS ua, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_denied' AND blob5 LIKE '%connect_account%' AND timestamp > NOW() - INTERVAL '7' DAY GROUP BY ua ORDER BY n DESC LIMIT 3",
+).catch(() => []);
+const challenges = await ae(
+  "SELECT blob4 AS reason, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_denied' AND blob4 IN ('protected_tool', 'preview_exhausted') AND timestamp > NOW() - INTERVAL '7' DAY GROUP BY reason ORDER BY n DESC",
+).catch(() => []);
+const funnelRows = await ae(
+  "SELECT blob3 AS step, blob5 AS detail, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'oauth_funnel' AND timestamp > NOW() - INTERVAL '7' DAY GROUP BY step, detail ORDER BY n DESC",
+).catch(() => []);
+const funnelNote = oauthFunnelNote(challenges, funnelRows);
+const connectCallersText = connectCallersNote(connectCallers);
+
+// The live MCP probe (scripts/mcp-probe.ts) makes three authed and three keyless calls a day
+// under its own user agent (blob2); the counts below are real traffic, so it is skipped
+// (gankdat `probe-key-from-runner`, 2026-10-09 — before the one-run key the authed count read
+// clean only because no authed probe ran).
 const kinds = Object.fromEntries(
   (
     await ae(
-      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '1' DAY GROUP BY kind",
+      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '1' DAY AND blob2 NOT LIKE 'gankdat-mcp-probe/%' GROUP BY kind",
     )
   ).map((r) => [r.kind, Math.round(Number(r.n))]),
 );
@@ -151,12 +179,84 @@ const wantedNote = wanted.length
 const changeFeed = Object.fromEntries(
   (
     await ae(
-      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '7' DAY AND ((blob1 = 'mcp_authed' AND blob5 LIKE '%get_changes%') OR blob1 = 'rest_changes') GROUP BY kind",
+      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '7' DAY AND blob2 NOT LIKE 'gankdat-mcp-probe/%' AND ((blob1 = 'mcp_authed' AND blob5 LIKE '%get_changes%') OR blob1 = 'rest_changes') GROUP BY kind",
     )
   ).map((r) => [r.kind, Math.round(Number(r.n))]),
 );
 const changesMcp = changeFeed.mcp_authed ?? 0;
 const changesRest = changeFeed.rest_changes ?? 0;
+
+// Keyless Atom feeds (build 2026-10-05, queue `change-feed-rss`): proof is ≥ 20 distinct feed-reader /
+// automation user agents on /feeds in 30 days and a key issued with a /feeds referrer, so the row
+// carries the 30-day fetch count and distinct UAs (blob2) plus the cache miss share (blob4).
+// 2026-10-07 (`feeds-reading-reason`): the miss share is a sumIf — the first row after the feeds
+// shipped read `n/a` because the SUM of a value times a comparison was rejected and the reason was
+// swallowed; a failed reading now carries it like the `cf usage` readings do.
+const feedsNote = await ae(
+  "SELECT COUNT(DISTINCT blob2) AS uas, SUM(_sample_interval * double1) AS n, sumIf(_sample_interval * double1, blob4 = 'miss') AS misses FROM gankdat_traffic WHERE blob1 = 'rest_feed' AND timestamp > NOW() - INTERVAL '30' DAY",
+)
+  .then(
+    (feeds) =>
+      `feeds 30d: ${Math.round(Number(feeds[0]?.n ?? 0))} fetches, ${Math.round(Number(feeds[0]?.uas ?? 0))} user agents, ${Math.round(Number(feeds[0]?.misses ?? 0))} renders`,
+  )
+  .catch((e) => `feeds 30d: n/a (${String(e instanceof Error ? e.message : e).slice(0, 120)})`);
+
+// IndexNow (build 2026-10-05; moved to the runner 2026-10-07, queue `indexnow-from-runner`): the
+// metrics workflow's runner-refresh step submits the day's refreshed /stats pages from the runner's
+// own IP — api.indexnow.org answered 429 to every POST from Workers egress — and leaves the result
+// in dist/indexnow.json; a push run (no runner step) or a dead step reads `n/a (<reason>)`.
+const indexnowNote = await readFile(
+  path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist', 'indexnow.json'),
+  'utf8',
+)
+  .then((text) => {
+    const r = JSON.parse(text);
+    return r.date === new Date().toISOString().slice(0, 10)
+      ? `indexnow: ${r.urls} urls ${r.status ?? 'n/a'}`
+      : `indexnow: n/a (runner result dated ${r.date})`;
+  })
+  .catch((e) => `indexnow: n/a (${e.code === 'ENOENT' ? 'no runner result' : e.message})`);
+
+// Live MCP probe (gankdat `mcp-live-probe`, 2026-10-08): scripts/mcp-probe.ts runs before this
+// script in the metrics job (push runs too — builtins only) and leaves in dist/mcp-probe.json the
+// HTTP status of `initialize`, `tools/list` and one preview `tools/call` against the live /mcp,
+// keyless and, with GANKDAT_PROBE_KEY, with a bearer key — what Glama's hourly health check sees
+// (it mailed "HTTP 500 – Error connecting to MCP" on 2026-10-08 and no sandbox could look). A
+// failed step is also listed under `refresh errors` as `mcp-probe`, so the two-rows-in-four rule
+// queues a fix; a probe dated another day or missing reads `n/a (<reason>)` and lists nothing.
+const { probeNote, probeError } = await import('../../../scripts/mcp-probe.ts');
+const probeResult = await readFile(
+  path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist', 'mcp-probe.json'),
+  'utf8',
+)
+  .then((text) => {
+    const r = JSON.parse(text);
+    return r.date === new Date().toISOString().slice(0, 10) ? r : null;
+  })
+  .catch(() => null);
+const mcpProbeNote = probeResult ? probeNote(probeResult) : 'mcp probe: n/a (no probe result)';
+const mcpProbeError = probeResult ? probeError(probeResult) : null;
+
+// Wave log reading (gankdat `wave-log-reading`, 2026-10-09): the runner-refresh step asks Workers
+// observability for the last 24 h of log lines of every source with no `ok` row in 26 h or an
+// error row today and leaves them in dist/wave-logs.json; the row names each one's newest line
+// and age, so a wave killed at the Cron Trigger limit (no refresh_log row at all) is read, not
+// guessed. A push run (no runner step) or a result dated another day reads `n/a (<reason>)`.
+const { waveLogNote } = await import('../src/lib/wave-logs.ts');
+const waveLogFile = await readFile(
+  path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'dist', 'wave-logs.json'),
+  'utf8',
+)
+  .then((text) => {
+    const r = JSON.parse(text);
+    return r.date === new Date().toISOString().slice(0, 10) ? r : null;
+  })
+  .catch(() => null);
+const waveLogText = waveLogNote(waveLogFile, Date.now());
+if (mcpProbeError) {
+  errors.push({ source_slug: mcpProbeError.slug, message: mcpProbeError.message });
+  errors.sort((a, b) => a.source_slug.localeCompare(b.source_slug));
+}
 
 // STRATEGY §4 target "Apify paid runs / month: 100" was unmeasured — review 2026-W39 §4 had to
 // write "no run count reaches the repo" — yet all 17 actors are public since 2026-09-28, so the
@@ -181,11 +281,21 @@ const changesRest = changeFeed.rest_changes ?? 0;
 // (inbox triage logs it). The own-runs list is read newest first and stops at the first run
 // older than 30 days; if that call fails or has no `startedAt`, ours reads `n/a` and the rest of
 // the row survives.
+//
+// Which actors (apify-runs-per-actor, burn-down 2026-10-05): one total cannot say which registers
+// Apify users run, so the exchange item `apify-quality-score-pass` ("≥ 10 actors with 0 runs")
+// and STRATEGY §7's per-dataset rule had no Apify reading. Each actor's 30-day total minus our
+// own runs of it (`actId` on /v2/actor-runs) is printed per actor as `apify 30d by actor:
+// <name> N, …; 0: a, b` — N = runs by other accounts (Apify's QA runner included), most first,
+// zero-run actors named after `0:` in the `datasets 30d:` shape. Without the own-runs list the
+// per-actor figures are all accounts' and the line says so.
 const apifyToken = process.env.APIFY_TOKEN;
 const DAY_MS = 86_400_000;
+/** Our own runs in the last 30 days: the total and a count per actor id. */
 async function apifyOwnRuns30d(H) {
   const since = Date.now() - 30 * DAY_MS;
   let count = 0;
+  const byActor = new Map();
   let offset = 0;
   for (;;) {
     const res = await fetch(
@@ -203,7 +313,8 @@ async function apifyOwnRuns30d(H) {
     }
     const recent = items.filter((r) => Date.parse(r.startedAt) >= since);
     count += recent.length;
-    if (recent.length < items.length || items.length < 1000) return count;
+    for (const r of recent) byActor.set(r.actId, (byActor.get(r.actId) ?? 0) + 1);
+    if (recent.length < items.length || items.length < 1000) return { count, byActor };
     offset += items.length;
   }
 }
@@ -218,6 +329,7 @@ async function apifyShelf() {
   let users = 0;
   let publicCount = 0;
   let fromDetail = 0;
+  const perActor = [];
   for (const item of items) {
     let act = item;
     if (!item.stats || item.isPublic === undefined || !item.stats.publicActorRunStats30Days) {
@@ -227,18 +339,28 @@ async function apifyShelf() {
       fromDetail += 1;
     }
     runs += Math.round(Number(act.stats?.totalRuns ?? 0));
-    runs30 += Math.round(Number(act.stats?.publicActorRunStats30Days?.TOTAL ?? 0));
+    const actRuns30 = Math.round(Number(act.stats?.publicActorRunStats30Days?.TOTAL ?? 0));
+    runs30 += actRuns30;
+    perActor.push({ id: act.id, name: act.name, runs30: actRuns30 });
     users += Math.round(Number(act.stats?.totalUsers30Days ?? 0));
     if (act.isPublic) publicCount += 1;
   }
   console.log(
     `apify: ${items.length} actors, ${fromDetail} read from their own endpoint for isPublic (list keys: ${Object.keys(items[0] ?? {}).join(',')})`,
   );
-  const ours30 = await apifyOwnRuns30d(H).catch((e) => {
+  const own = await apifyOwnRuns30d(H).catch((e) => {
     console.error(`apify own runs: ${e.message}`);
     return null;
   });
-  return { runs, runs30, ours30, users, publicCount };
+  const ours30 = own ? own.count : null;
+  // Per actor: runs by other accounts (total minus ours), most first; zero-run actors named.
+  const others = perActor
+    .map((a) => ({ name: a.name, n: Math.max(0, a.runs30 - (own?.byActor.get(a.id) ?? 0)) }))
+    .sort((a, b) => b.n - a.n || a.name.localeCompare(b.name));
+  const used = others.filter((a) => a.n > 0).map((a) => `${a.name} ${a.n}`);
+  const zero = others.filter((a) => a.n === 0).map((a) => a.name);
+  const byActor = `apify 30d by actor${own ? '' : ' (all accounts)'}: ${used.length ? used.join(', ') : 'none'}${zero.length ? `; 0: ${zero.join(', ')}` : ''}`;
+  return { runs, runs30, ours30, users, publicCount, byActor };
 }
 const apify = await apifyShelf().catch((e) => {
   console.error(`apify: ${e.message}`);
@@ -407,7 +529,7 @@ async function datasetQueries30d() {
   );
   for (const r of rest) add(r.slug, r.n);
   const mcp = await ae(
-    "SELECT blob5 AS tools, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_authed' AND blob5 != '' AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY tools",
+    "SELECT blob5 AS tools, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_authed' AND blob5 != '' AND blob2 NOT LIKE 'gankdat-mcp-probe/%' AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY tools",
   );
   for (const r of mcp) {
     for (const tool of String(r.tools).split(',')) {
@@ -454,13 +576,20 @@ const notes = [
   // or a presented key is bad. Both are blob1 kinds written by routes/mcp.ts + mcp/server.ts.
   `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${kinds.mcp_preview ?? 0} preview, ${paywall} paywall hits${wantedNote}`,
   `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
+  indexnowNote,
+  mcpProbeNote,
+  waveLogText,
+  feedsNote,
   apify
     ? `apify: ${apify.runs} runs (${prevRuns === null ? 'baseline' : `+${apify.runs - prevRuns}/24h`}), 30d: ${apify.runs30} runs (${apify.ours30 === null ? 'ours n/a' : `${apify.ours30} ours, ${apify.runs30 - apify.ours30} others`}), ${apify.users} users/30d, ${apify.publicCount} public`
     : 'apify: n/a',
+  apify ? apify.byActor : 'apify 30d by actor: n/a',
   agentKeys
     ? `agent sign-up: ${agentKeys.requests24h ?? 0} req/24h, ${agentKeys.keys24h ?? 0} keys/24h, ${agentKeys.keys30d ?? 0} keys/30d`
     : 'agent sign-up: n/a',
   oauthNote,
+  connectCallersText,
+  funnelNote,
   cfNote,
   datasetsNote,
   errors.length

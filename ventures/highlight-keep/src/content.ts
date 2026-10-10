@@ -2,7 +2,7 @@ import { describe, locate } from './core/anchor.js';
 import { tierForKey } from './core/license.js';
 import { COLOURS, FREE_COLOURS, canAddOnSite, newId, siteOf, type Colour, type Highlight } from './core/model.js';
 import { documentUrl } from './core/pdf.js';
-import { fromPosition, indexText, unwrap, wrapRange, type TextIndex } from './dom.js';
+import { fromPosition, indexText, marksOf, unwrap, wrapRange, type TextIndex } from './dom.js';
 import { loadIndex, loadPage, savePage, sitesInIndex, upsertHighlight } from './pages-storage.js';
 import { loadSettings } from './settings-storage.js';
 
@@ -15,7 +15,7 @@ if (window.__highlightKeepLoaded) throw new Error('Highlight Keep already loaded
 window.__highlightKeepLoaded = true;
 
 let pro = false;
-/** Where this page's highlights live: the page URL, or the PDF's own URL on the viewer page. */
+/** Where this page's highlights live: the page URL (a frame's own URL inside a frame), or the PDF's own URL on the viewer page. */
 const here = documentUrl(location.href);
 let index: TextIndex = indexText();
 const rendered = new Map<string, Highlight>();
@@ -94,19 +94,46 @@ const hide = (): void => {
   pendingRange = null;
 };
 
-document.addEventListener('mouseup', (e) => {
-  if ((e.target as Element).closest?.('.hk-ui')) return;
+/** The element really under the pointer — inside an open shadow root too, where e.target is only the host. */
+function elementAt(e: Event): Element | null {
+  const t = e.composedPath()[0] ?? e.target;
+  return t instanceof Element ? t : t instanceof Node ? t.parentElement : null;
+}
+
+/** The selected range with its real nodes: for a selection inside an open shadow root the document's
+ *  own range is rescoped to the host, so ask for the composed range (or Chrome's root.getSelection()). */
+function selectionRange(target: Element | null): Range | null {
   const sel = window.getSelection();
-  if (!sel || sel.isCollapsed || sel.rangeCount === 0) return;
-  const range = sel.getRangeAt(0);
-  if (range.toString().trim().length < 2) return;
+  if (!sel || sel.rangeCount === 0) return null;
+  const root = target?.getRootNode();
+  if (root instanceof ShadowRoot) {
+    type Composed = Selection & { getComposedRanges?: (o: { shadowRoots: ShadowRoot[] }) => StaticRange[] };
+    const composed = (sel as Composed).getComposedRanges?.({ shadowRoots: [root] })?.[0];
+    if (composed) {
+      const r = document.createRange();
+      r.setStart(composed.startContainer, composed.startOffset);
+      r.setEnd(composed.endContainer, composed.endOffset);
+      return r;
+    }
+    const inner = (root as ShadowRoot & { getSelection?: () => Selection | null }).getSelection?.();
+    if (inner && inner.rangeCount > 0) return inner.getRangeAt(0);
+  }
+  if (sel.isCollapsed) return null;
+  return sel.getRangeAt(0);
+}
+
+document.addEventListener('mouseup', (e) => {
+  const target = elementAt(e);
+  if (target?.closest('.hk-ui')) return;
+  const range = selectionRange(target);
+  if (!range || range.toString().trim().length < 2) return;
   pendingRange = range.cloneRange();
   showToolbar(e.clientX, e.clientY, 'new');
 });
 document.addEventListener('mousedown', (e) => {
-  const target = e.target as Element;
-  if (target.closest?.('.hk-ui')) return;
-  const mark = target.closest?.<HTMLElement>('mark[data-hk]') ?? null;
+  const target = elementAt(e);
+  if (target?.closest('.hk-ui')) return;
+  const mark = target?.closest<HTMLElement>('mark[data-hk]') ?? null;
   if (mark) {
     const h = rendered.get(mark.dataset['hk'] ?? '');
     if (h) {
@@ -149,7 +176,7 @@ async function create(colour: Colour, withNote = false): Promise<void> {
 
 async function recolour(h: Highlight, colour: Colour): Promise<void> {
   const next = { ...h, colour };
-  document.querySelectorAll<HTMLElement>(`mark[data-hk="${h.id}"]`).forEach((m) => (m.className = `hk hk-${colour}${next.note ? ' hk-noted' : ''}`));
+  marksOf(h.id).forEach((m) => (m.className = `hk hk-${colour}${next.note ? ' hk-noted' : ''}`));
   rendered.set(h.id, next);
   await savePage(upsertHighlight(await loadPage(here), next));
   hide();
@@ -177,7 +204,7 @@ function editNote(h: Highlight): void {
       const note = ta?.value.trim() ?? '';
       const next: Highlight = { ...h, ...(note ? { note } : {}) };
       if (!note) delete next.note;
-      document.querySelectorAll<HTMLElement>(`mark[data-hk="${h.id}"]`).forEach((m) => m.classList.toggle('hk-noted', Boolean(note)));
+      marksOf(h.id).forEach((m) => m.classList.toggle('hk-noted', Boolean(note)));
       rendered.set(h.id, next);
       await savePage(upsertHighlight(await loadPage(here), next));
       editing = null;

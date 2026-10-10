@@ -13,9 +13,10 @@
 - **Price:** $12 one-time through Figma checkout (Figma takes 15%); free tier built into the plugin.
 - **Metrics sources:** `https://www.figma.com/api/plugins/1682711656065145288/versions`,
   `https://fig-stats.com/plugins/1682711656065145288`
-- **Search rank queries:** styles to variables; link to variables; unused variables; variables toolkit
+- **Search rank queries:** styles to variables; link to variables; unused variables; variables toolkit; relink variables; swap variables; library variables
   (read by `scripts/store-metrics.ts` from the 06:45 `store metrics` runner: each Daily check row carries
-  `rank: <query> <position>/<hits>` from Figma's search API, 2026-10-01; baseline day 10: 75/1234, 13/163, 1/48, 8/45).
+  `rank: <query> <position>/<hits>` from Figma's search API, 2026-10-01; baseline day 10: 75/1234, 13/163, 1/48, 8/45;
+  the three relink/swap/library queries were added 2026-10-05 so the day-30 review has the series from before the Relink tab goes live).
 - **Community resource uuid (for comments):** `b376009b-9558-43a8-9080-a6d0d2518717` (read 2026-09-22 from
   `https://www.figma.com/api/search/resources?query=Variables%20Toolkit&resource_type=plugin&sort=relevancy`;
   comments at `https://www.figma.com/api/resources/<uuid>/comments?page_size=50`).
@@ -36,3 +37,8 @@
   layers bound to local or unpublished variables move onto the enabled library's variable of the same name and type; counts against the
   free daily allowance like Link. `manifest.json` gained the `teamlibrary` permission. **Not yet live** — needs a republish from the Figma
   desktop app (action 019, batched with 017/018). Proof: ≥ 1 comment or purchase naming relink within 30 days of the republish.
+- **Relink to local variables (2026-10-05, burn-down):** a direction switch on the same tab (`planRelink` option `direction`,
+  `loadLocalVariables` in `src/figma/relink.ts`): every binding to a library variable, available or not, moves onto this file's
+  variable of the same name and type; local bindings are left alone; a name in two local collections waits for a collection pick.
+  Built for the forum's "remap library variables to local variables" request (`RESEARCH.md` §10). Rides the same unpublished
+  republish (019). Proof: ≥ 1 comment or purchase naming relink-to-local within 30 days of the version going live.

@@ -14,6 +14,19 @@ closed entries older than 30 days (git keeps the history).
 
 ## Open
 
+- 2026-10-08 handoff: Glama's hourly health check on the gankdat MCP connector got
+  "HTTP 500 – Error connecting to MCP" (mail 2026-10-08 06:09 UTC, support@glama.ai) — gankdat is now
+  ranked **unhealthy**, below healthy connectors, in Glama's directory. Check whether `gankdat.com/mcp`
+  is actually erroring for real traffic (Worker logs) or only for Glama's test profile (it uses its own
+  test-profile credentials, separate from personal connections — review at
+  https://glama.ai/mcp/connectors/com.gankdat/gankdat/admin/test-profile), fix whatever returns the 500,
+  then use Test Connection there (or wait for the next hourly check) to clear the unhealthy mark.
+  — 2026-10-08 09:50 build: the 10-07 deploys are green and the sandbox cannot reach /mcp; from the next
+  `gankdat metrics` run the Daily numbers row carries `mcp probe: …` (initialize / tools/list / tools/call
+  from the runner, gankdat `mcp-live-probe`), which says whether the edge errors for everyone; the Glama
+  test-profile check stays yours. First reading 09:32 UTC (run 37757280911): `init 200, tools 200 (23 tools),
+  call 200` keyless — the edge is healthy for anonymous traffic, so the 500 was transient or specific to Glama's
+  keyed test profile; a `GANKDAT_PROBE_KEY` repository secret (any free-tier key) would add that path to the row.
 - 2026-09-21 handoff: verify the new `uk-schools` ingest against the real files — the daily
   build container has no egress to `ea-edubase-api-prod.azurewebsites.net` or `www.gov.uk`
   (proxy 403), so the GIAS and Ofsted column mappings in `src/sources/uk-schools.ts` are
@@ -271,10 +284,35 @@ closed entries older than 30 days (git keeps the history).
   @foundry/variables-toolkit`, import `ventures/variables-toolkit/dist-release/manifest.json`, try Relink on a file with an enabled
   library, then **Publish → new version** and paste the description + tags from `LISTING.md` (bold headings with B, no asterisks). Steps:
   `docs/for-owner/actions/019-figma-toolkit-republish-relink.md`. No new account, no money.
+- 2026-10-04 handoff: **sign and upload ReadFocus 0.3.0** (ruler colour / height / opacity / lock-in-place controls, plus 0.2.1's Firefox for Android: `gecko_android`, phone-width popup, tap-to-place ruler)
+  once 0.2.0 clears review on each store, the same way as 0.2.0: `bash scripts/amo-publish.sh ventures/read-focus` (release notes in
+  `assets/amo-metadata.json`), then `cd ventures/read-focus && npm run zip && cd ../.. && node scripts/cws-publish.ts upload dckbdaplggmhimpbekhdbaampglfhdgf ventures/read-focus/read-focus.zip && node scripts/cws-publish.ts publish dckbdaplggmhimpbekhdbaampglfhdgf`.
+  Afterwards check `https://addons.mozilla.org/api/v5/addons/addon/readfocus-focus-reading-dyslex/` → `current_version.compatibility` lists `android`;
+  if not, the AMO developer hub's version page has the Android compatibility box. Record the date in `ventures/read-focus/STORE.md`. ~5 min.
 - 2026-10-04 handoff: **sign and upload Highlight Keep 0.3.0** (import from Super Simple Highlighter, merging Restore) the
   same way as 0.2.0: `bash scripts/amo-publish.sh ventures/highlight-keep` (release notes already in `assets/amo-metadata.json`),
   then `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
   CWS rejects an upload while 0.2.0 is still in review — wait for that mail (or it is published) first; AMO accepts it now.
+  Record the dates in `ventures/highlight-keep/STORE.md`. ~5 min. — Superseded 2026-10-05 (build): 0.4.0 (Weava import) supersedes it; same commands, new handoff below
+- 2026-10-05 handoff: **sign and upload Highlight Keep 0.4.0** (imports from Weava/Glasp .csv and Hypothesis exports, the "On for every site" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the 0.3.0 Super Simple
+  import and merging Restore) the same way as 0.2.0: `bash scripts/amo-publish.sh ventures/highlight-keep` (release notes already in
+  `assets/amo-metadata.json`), then `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
+  CWS rejects an upload while 0.2.0 is still in review — wait for that mail (or it is published) first; AMO accepts it now.
+  Record the dates in `ventures/highlight-keep/STORE.md`, then write the `notify` line ("Highlight Keep 0.4 submitted …: imports Weava highlights"). ~5 min.
+- 2026-10-07 owner: **let CI read Google Search Console** (~10 min, £0, no new account): create a read-only service account in
+  Google Cloud, add its email as a *Restricted* user on the gankdat.com and apps.gankdat.com Search Console properties, and paste
+  its JSON key as the `SEARCH_CONSOLE_KEY` repository secret. From then on the 06:45 job writes search impressions, clicks and the
+  indexing verdict of the /stats and comparison pages on every venture's daily row — the first Search Console number to reach the
+  repo (three day-30 reviews and the gankdat indexing item read it). Steps: `docs/for-owner/actions/020-search-console-service-account.md`.
+- 2026-10-10 handoff: **open the Docker MCP Catalog PR** (~3 min, £0, needs `gh` signed in as giovf): the entry in
+  `ventures/gankdat/docs/docker-mcp-catalog/` passed Docker's validator in the sandbox, but the sandbox token cannot fork
+  `docker/mcp-registry` or open a PR there. From the repo root: `gh repo fork docker/mcp-registry --clone=false && git clone --depth 1
+  https://github.com/giovf/mcp-registry /tmp/mcp-registry && cd /tmp/mcp-registry && git checkout -b add-gankdat && mkdir -p servers/gankdat &&
+  cp "$OLDPWD"/ventures/gankdat/docs/docker-mcp-catalog/{server.yaml,tools.json,readme.md} servers/gankdat/ && git add servers/gankdat &&
+  git commit -m "Add gankdat (remote)" && git push -u origin add-gankdat && gh pr create -R docker/mcp-registry --title "Add gankdat (remote):
+  UK and EU government registers" --body-file "$OLDPWD"/ventures/gankdat/docs/docker-mcp-catalog/PR.md`. Then paste the PR URL into the
+  Docker row of `ventures/gankdat/docs/MARKETPLACE-PREP.md` and the item's `blocked_on` in `docs/pipeline/queues/gankdat.json`. No test
+  credentials form is needed (keyless preview); if a reviewer insists on an OSS licence, drop the item — do not argue.
   Record the dates in `ventures/highlight-keep/STORE.md`. ~5 min.
 - 2026-10-10 owner: Cloudflare could not charge your card for invoice IN-83063702 (US$49: the one-off D1 overage already fixed); please pay it or update the card in Cloudflare Billing before they suspend Workers.
 

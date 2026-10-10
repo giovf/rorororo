@@ -125,6 +125,17 @@ appends ` — Done YYYY-MM-DD (<routine>): <how>` (or ` — Superseded …`) to 
 routine never writes a separate `done:` line for it and never deletes it. The `notify owner` job
 treats a suffixed line as closed. Proof: no handoff older than 7 days without a suffix over 30 days.
 
+**Owner digest (2026-10-06, foundry `owner-ask-digest`).** The phone received each `owner:` line once, when it was
+pushed, and nothing ordered or reminded: on 2026-10-06 eight asks were open, the oldest six days, none acted on.
+`npm run handoffs` (now part of `npm run check`, so every gated commit refreshes it) also writes
+`docs/for-owner/OPEN.md`: the open asks ordered by payoff — the STRATEGY §5 score of the blocked queue items each
+ask unblocks (a `blocked_on` naming its action number or `ALERTS <date>`) divided by the `~N min` the ask quotes —
+with the age, the step-file links and, below, the `handoff:` entries an attended session owes. It prints the
+median open age of the owner asks (the retro records it; proof: under 7 days over a month) and, when an ask is
+older than 7 days, one `notify:` line (count, oldest age, the top ask; ≤ 90 chars, plain) that the Monday weekly
+report copies as its single `| notify |` run line — one digest a week at most, never a new `owner:` entry for it.
+The "Foundry needs you" phone message links OPEN.md; `OUTSTANDING.md` keeps the decisions and history.
+
 ## Interrupted runs (usage limits, timeouts, crashes)
 
 - Routine sandboxes are discarded when a run dies; nothing reaches `main` unless pushed. Every

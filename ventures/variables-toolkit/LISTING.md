@@ -8,6 +8,10 @@ playground file is live (`PLAYGROUND.md`), add `Practice file: <its URL>` to the
 from the Variable Utilities / DSO comment gap in `RESEARCH.md` §5); `manifest.json` now asks for the `teamlibrary`
 permission, which Figma lists on the plugin page as "Read team library". Both ride the next republish (action 019).
 
+2026-10-05 (burn-down): the Relink block gained the reverse direction — a "To local variables" switch on the tab moves
+library bindings onto this file's variable of the same name and type (Figma forum request 44372 and the
+"remap library variables to local" threads, `RESEARCH.md` §10). Rides the same republish (action 019).
+
 Why v2: after 7 days live the listing had 2 views and 0 installs. Figma's search API showed the
 cause (`RESEARCH.md` §8): the name collided with a 2,784-user plugin called "Variables Toolkit",
 and Figma ranks on the *name* first — we were 79th for "styles to variables" and absent for
@@ -36,8 +40,8 @@ Turns your colour, text and effect styles into variables in a collection you nam
 Link variables
 Scans a selection or a page for fills, strokes, padding, gaps and corner radii whose value equals one of your local variables, then binds them in one click. Handles hidden layers and component instances your way, skips widgets and FigJam objects, and never freezes: scans run in chunks with a live count and a Cancel button.
 
-Relink to library variables
-Finds layers bound to local variables, or to library variables that are no longer published, and moves them onto the enabled library's variable with the same name and type — fills, strokes, padding, gaps, radii and sizes, in one click. Layers already on the library are left alone; a name published by two libraries waits for you to pick the collection.
+Relink to library variables — or back to local ones
+Finds layers bound to local variables, or to library variables that are no longer published, and moves them onto the enabled library's variable with the same name and type — fills, strokes, padding, gaps, radii and sizes, in one click. Layers already on the library are left alone; a name published by two libraries waits for you to pick the collection. Switch the direction to "To local variables" and it does the reverse: a file copied out of a team, or a team leaving a shared library, gets its layers back on the local variables of the same names.
 
 Clean up unused variables
 A report of variables unused in this file, variables that share a value, and aliases pointing at nothing. Delete what you don't need.

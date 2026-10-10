@@ -126,6 +126,13 @@ export interface Messages {
   lines: number;
 }
 
+/**
+ * Most run bullets one push may put on the phone (2026-10-04, foundry `append-only-guard`): a
+ * restored or re-pushed RUNS.md would otherwise arrive as hundreds of Telegram messages. The rest
+ * is summarised in one line; the cursor still advances past every line.
+ */
+export const MAX_RUN_BULLETS = 40;
+
 /** The messages to send: "Foundry needs you" (owner items + new actions) and "Foundry run". */
 export function buildMessages(input: {
   alertsDiff: string;
@@ -136,15 +143,22 @@ export function buildMessages(input: {
   for (const a of input.newActions) {
     items.push(`New request: ${a.title} (docs/for-owner/actions/${path.basename(a.file)})`);
   }
-  const runs = runBullets(input.runsDiff);
+  const allRuns = runBullets(input.runsDiff);
+  const runs =
+    allRuns.length > MAX_RUN_BULLETS
+      ? [
+          ...allRuns.slice(0, MAX_RUN_BULLETS),
+          `… ${allRuns.length - MAX_RUN_BULLETS} more run lines not sent here — read them in docs/RUNS.md`,
+        ]
+      : allRuns;
   const texts: string[] = [];
   if (items.length > 0) {
     texts.push(
-      `Foundry needs you:\n${items.map((i) => `• ${i}`).join('\n')}\n\nDetails: docs/for-owner/OUTSTANDING.md`,
+      `Foundry needs you:\n${items.map((i) => `• ${i}`).join('\n')}\n\nDetails: docs/for-owner/OPEN.md`,
     );
   }
   if (runs.length > 0) texts.push(`Foundry:\n${runs.join('\n')}`);
-  return { texts, lines: items.length + runs.length };
+  return { texts, lines: items.length + allRuns.length };
 }
 
 export interface Channels {

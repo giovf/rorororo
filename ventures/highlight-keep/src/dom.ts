@@ -1,10 +1,17 @@
 /**
- * DOM ↔ text mapping for anchoring. `indexText` walks the readable text nodes of the page
+ * DOM ↔ text mapping for anchoring. `indexText` walks the readable text nodes of the page —
+ * descending into open shadow roots, so text inside web components anchors like any other —
  * and produces the normalised page text plus a map from normalised offsets back to nodes.
  */
 import { normalise } from './core/anchor.js';
 
 const SKIP = new Set(['SCRIPT', 'STYLE', 'NOSCRIPT', 'TEXTAREA', 'INPUT', 'SELECT', 'SVG', 'MATH', 'BUTTON']);
+
+/** Mark styling for shadow roots, which a content script's CSS never reaches. Keep in step with content.css. */
+const MARK_CSS = `mark.hk { background: #FDE047; color: inherit; padding: 0; border-radius: 2px; cursor: pointer; }
+mark.hk-green { background: #86EFAC; } mark.hk-blue { background: #93C5FD; } mark.hk-pink { background: #F9A8D4; }
+mark.hk-orange { background: #FDBA74; } mark.hk-purple { background: #C4B5FD; }
+mark.hk-noted { box-shadow: 0 2px 0 0 #1F2937; }`;
 
 export interface Segment {
   node: Text;
@@ -20,27 +27,33 @@ export interface TextIndex {
   segments: Segment[];
 }
 
-function skippable(node: Node): boolean {
-  let el: Node | null = node.parentNode;
-  while (el && el !== document.body) {
-    if (el instanceof Element) {
-      if (SKIP.has(el.tagName.toUpperCase()) || (el as HTMLElement).isContentEditable || el.classList.contains('hk-ui')) return true;
+/** Open shadow roots seen by the last walks: where marks may live besides the document. */
+const shadowRoots = new Set<ShadowRoot>();
+const styledRoots = new WeakSet<ShadowRoot>();
+
+function skipElement(el: Element): boolean {
+  return SKIP.has(el.tagName.toUpperCase()) || (el as HTMLElement).isContentEditable || el.classList.contains('hk-ui');
+}
+
+function* textNodes(node: Node): Generator<Text> {
+  for (const child of node.childNodes) {
+    if (child.nodeType === Node.TEXT_NODE) yield child as Text;
+    else if (child instanceof Element) {
+      if (skipElement(child)) continue;
+      if (child.shadowRoot) {
+        shadowRoots.add(child.shadowRoot);
+        yield* textNodes(child.shadowRoot);
+      }
+      yield* textNodes(child);
     }
-    el = el.parentNode;
   }
-  return false;
 }
 
 export function indexText(root: Node = document.body): TextIndex {
-  const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
-    acceptNode: (n) => (skippable(n) ? NodeFilter.FILTER_REJECT : NodeFilter.FILTER_ACCEPT),
-  });
   const segments: Segment[] = [];
   let text = '';
   let lastWasSpace = true; // collapse leading whitespace of the whole document
-  let n: Node | null;
-  while ((n = walker.nextNode())) {
-    const node = n as Text;
+  for (const node of textNodes(root)) {
     const raw = node.data;
     const rawOffsets: number[] = [];
     const start = text.length;
@@ -91,6 +104,21 @@ export function fromPosition(index: TextIndex, node: Node, rawOffset: number): n
   return seg.start + i;
 }
 
+/** A shadow root gets the mark styles once, the first time a mark lands in it. */
+function styleShadowRoot(root: ShadowRoot): void {
+  if (styledRoots.has(root)) return;
+  styledRoots.add(root);
+  try {
+    const sheet = new CSSStyleSheet();
+    sheet.replaceSync(MARK_CSS);
+    root.adoptedStyleSheets = [...root.adoptedStyleSheets, sheet];
+  } catch {
+    const style = document.createElement('style');
+    style.textContent = MARK_CSS;
+    root.appendChild(style);
+  }
+}
+
 /** Wraps [start, end) in <mark> elements, one per text node crossed. Returns the marks. */
 export function wrapRange(index: TextIndex, start: number, end: number, cls: string, id: string): HTMLElement[] {
   const marks: HTMLElement[] = [];
@@ -107,13 +135,23 @@ export function wrapRange(index: TextIndex, start: number, end: number, cls: str
     mark.className = cls;
     mark.dataset['hk'] = id;
     range.surroundContents(mark);
+    const root = seg.node.getRootNode();
+    if (root instanceof ShadowRoot) styleShadowRoot(root);
     marks.push(mark);
   }
   return marks;
 }
 
+/** Every <mark> of a highlight, in the document and in the shadow roots the walks have seen. */
+export function marksOf(id: string): HTMLElement[] {
+  const selector = `mark[data-hk="${id}"]`;
+  const out = [...document.querySelectorAll<HTMLElement>(selector)];
+  for (const root of shadowRoots) out.push(...root.querySelectorAll<HTMLElement>(selector));
+  return out;
+}
+
 export function unwrap(id: string): void {
-  for (const mark of document.querySelectorAll<HTMLElement>(`mark[data-hk="${id}"]`)) {
+  for (const mark of marksOf(id)) {
     const parent = mark.parentNode;
     if (!parent) continue;
     while (mark.firstChild) parent.insertBefore(mark.firstChild, mark);

@@ -171,3 +171,29 @@ describe('fileRepeatErrors', () => {
     expect(previousDay('2026-10-01')).toBe('2026-09-30');
   });
 });
+
+describe('a failed live /mcp probe', () => {
+  it('is filed with its own wording, not as a source refresh', () => {
+    const probeMd = [
+      '## Metrics',
+      '',
+      '| Date | Event | Users | Rating | Sales | Notes |',
+      '|---|---|---|---|---|---|',
+      row('2026-10-08', 'refresh errors: mcp-probe (init 500 (Internal server error))'),
+      row('2026-10-09', 'refresh errors: mcp-probe (authed init 500 (Internal server error))'),
+    ].join('\n');
+    const queue: Queue = {
+      venture: 'gankdat',
+      status: 'open',
+      needs_research: false,
+      updated: '2026-10-01',
+      items: [],
+    };
+    const out = fileRepeatErrors(probeMd, queue, '2026-10-09');
+    expect(out.added).toEqual(['refresh-mcp-probe']);
+    const item = out.queue.items[0];
+    expect(item?.title).toContain('live /mcp has failed the CI probe 2 times');
+    expect(item?.why).toContain('scripts/mcp-probe.ts');
+    expect(item?.why).not.toContain('src/sources/mcp-probe.ts');
+  });
+});

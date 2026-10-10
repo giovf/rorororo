@@ -7,14 +7,24 @@
   paint-order: stroke fill;
 }
 .rf-ruler {
-  position: fixed; left: 0; right: 0; height: 34px; pointer-events: none; z-index: 2147483646;
-  background: rgba(255, 214, 10, 0.18); box-shadow: 0 0 0 1px rgba(255, 180, 0, 0.35) inset;
+  position: fixed; left: 0; right: 0; height: var(--rf-ruler-h, 34px); pointer-events: none; z-index: 2147483646;
+  background: var(--rf-ruler-bg, rgba(255, 214, 10, 0.2)); box-shadow: 0 0 0 1px var(--rf-ruler-line, rgba(255, 214, 10, 0.4)) inset;
 }
+/* Locked: a stronger edge says "this one stays"; the band itself is unchanged. */
+.rf-ruler.rf-ruler-locked { box-shadow: 0 0 0 2px var(--rf-ruler-line, rgba(255, 214, 10, 0.4)) inset; }
 html.rf-focus :is(p, li, h1, h2, h3, h4, h5, h6, blockquote, dd, dt, td, th, figcaption, pre):not(.rf-focus-target) { opacity: 0.35; transition: opacity 120ms; }
 html.rf-focus .rf-focus-target { opacity: 1; }
 html.rf-font-opendyslexic :is(body, p, li, a, span, div, td, th, h1, h2, h3, h4, h5, h6, blockquote, label, dd, dt, article, section) { font-family: "ReadFocus opendyslexic", sans-serif !important; }
 html.rf-font-atkinson :is(body, p, li, a, span, div, td, th, h1, h2, h3, h4, h5, h6, blockquote, label, dd, dt, article, section) { font-family: "ReadFocus atkinson", sans-serif !important; }
 html.rf-font-system-sans :is(body, p, li, a, span, div, td, th, h1, h2, h3, h4, h5, h6, blockquote, label, dd, dt, article, section) { font-family: system-ui, -apple-system, "Segoe UI", sans-serif !important; }
+/* Read aloud (pro): the sentence being spoken, a Range highlight (no wrapper). */
+::highlight(rf-reading) { background-color: rgba(255, 214, 10, 0.45); }
+/* Page tint (pro): a fixed layer under the ruler; multiply keeps the text dark and turns white into the tint. */
+.rf-tint { position: fixed; inset: 0; pointer-events: none; z-index: 2147483645; background: var(--rf-tint, transparent); mix-blend-mode: multiply; }
+/* Spacing (free): the dyslexia style-guide numbers on reading blocks; editors untouched. */
+html.rf-spacing :is(p, li, dd, dt, blockquote, td, th, figcaption, h1, h2, h3, h4, h5, h6):not([contenteditable], [contenteditable] *) {
+  line-height: 1.5 !important; letter-spacing: 0.12em !important; word-spacing: 0.16em !important;
+}
 /* Text size: scale the outermost reading blocks only, so nested blocks don't compound. */
 html.rf-size :is(p, li, dd, dt, blockquote, td, th, figcaption, article > div, section > div):not(:is(p, li, dd, dt, blockquote, td, th, figcaption) *):not([contenteditable], textarea, input) {
   font-size: calc(1em * var(--rf-size, 1)) !important;

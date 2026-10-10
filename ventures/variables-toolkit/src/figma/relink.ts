@@ -1,5 +1,5 @@
 import type { NumberField } from '../core/numbers.js';
-import type { BoundSite, LibraryVariableRef, ReferencedVariable, RelinkGroup } from '../core/relink.js';
+import type { BoundSite, ReferencedVariable, RelinkDirection, RelinkGroup, TargetVariableRef } from '../core/relink.js';
 import { decide, type ScanOptions } from '../core/scan.js';
 
 /** Every number field the Link tab can bind; a relink moves whatever is bound, options or not. */
@@ -20,15 +20,19 @@ const NUMBER_FIELDS: readonly NumberField[] = [
 
 const RELINK_SCAN: ScanOptions = { includeHidden: true, skipInstances: false, numbers: true, sizes: true };
 
+/** The variables bindings may move onto, grouped by collection — library or local depending on the direction. */
 export interface LibraryVariables {
-  vars: LibraryVariableRef[];
+  vars: TargetVariableRef[];
   collections: { key: string; name: string; libraryName: string }[];
 }
+
+/** What the UI shows as the library name of a local target. */
+export const THIS_FILE = 'This file';
 
 /** Reads every variable published by the libraries enabled for this file (needs the `teamlibrary` permission). */
 export async function loadLibraryVariables(): Promise<LibraryVariables> {
   const collections = await figma.teamLibrary.getAvailableLibraryVariableCollectionsAsync();
-  const vars: LibraryVariableRef[] = [];
+  const vars: TargetVariableRef[] = [];
   for (const c of collections) {
     const list = await figma.teamLibrary.getVariablesInLibraryCollectionAsync(c.key);
     for (const v of list) {
@@ -36,6 +40,27 @@ export async function loadLibraryVariables(): Promise<LibraryVariables> {
     }
   }
   return { vars, collections: collections.map((c) => ({ key: c.key, name: c.name, libraryName: c.libraryName })) };
+}
+
+/**
+ * Reads this file's own variables as relink targets (the to-local direction): the key is
+ * the variable id, the collection key its collection id, so no publish is needed.
+ */
+export async function loadLocalVariables(): Promise<LibraryVariables> {
+  const collections = await figma.variables.getLocalVariableCollectionsAsync();
+  const byId = new Map(collections.map((c) => [c.id, c]));
+  const vars: TargetVariableRef[] = [];
+  for (const v of await figma.variables.getLocalVariablesAsync()) {
+    const c = byId.get(v.variableCollectionId);
+    if (!c) continue;
+    vars.push({ key: v.id, name: v.name, type: v.resolvedType, collectionKey: c.id, collectionName: c.name, libraryName: THIS_FILE });
+  }
+  return { vars, collections: collections.map((c) => ({ key: c.id, name: c.name, libraryName: THIS_FILE })) };
+}
+
+/** Loads whichever catalogue the direction moves bindings onto. */
+export function loadTargets(direction: RelinkDirection): Promise<LibraryVariables> {
+  return direction === 'to-local' ? loadLocalVariables() : loadLibraryVariables();
 }
 
 type BoundMap = Record<string, VariableAlias | VariableAlias[] | undefined>;
@@ -100,12 +125,15 @@ export async function describeVariables(ids: Iterable<string>): Promise<Referenc
 }
 
 /**
- * Imports the library variable and rebinds the group's sites to it, stopping when `budget`
- * runs out. Returns how many bindings moved.
+ * Resolves the group's target (importing the library variable, or looking the local one up)
+ * and rebinds the group's sites to it, stopping when `budget` runs out. Returns how many
+ * bindings moved; 0 when the local target has been deleted since the scan.
  */
-export async function relinkGroup(group: RelinkGroup, budget: number): Promise<number> {
+export async function relinkGroup(group: RelinkGroup, budget: number, direction: RelinkDirection = 'to-library'): Promise<number> {
   if (budget <= 0) return 0;
-  const variable = await figma.variables.importVariableByKeyAsync(group.library.key);
+  const variable =
+    direction === 'to-local' ? await figma.variables.getVariableByIdAsync(group.library.key) : await figma.variables.importVariableByKeyAsync(group.library.key);
+  if (!variable) return 0;
   let count = 0;
   for (const site of group.sites) {
     if (count >= budget) break;

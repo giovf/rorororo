@@ -1,0 +1,60 @@
+{
+  "request": "rf-rivals-2026",
+  "fetched_at": "2026-10-04T22:33:25.796Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://dyslexly.com/",
+      "fetched_at": "2026-10-04T22:33:25.115Z",
+      "status": 403,
+      "final_url": "https://dyslexly.com/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 5552,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dyslexly.com/download",
+      "fetched_at": "2026-10-04T22:33:25.301Z",
+      "status": 403,
+      "final_url": "https://dyslexly.com/download",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 5598,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://halfbold.vercel.app/",
+      "fetched_at": "2026-10-04T22:33:25.362Z",
+      "status": 200,
+      "final_url": "https://halfbold.vercel.app/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline",
+        "etag": "W/\"789b3040fdbfa70e90b2b7a0bffcd870\""
+      },
+      "file": "3.html",
+      "bytes": 51031,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/ndgbjebkdbfehipdojkdldkddgggbdoj",
+      "fetched_at": "2026-10-04T22:33:25.507Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/half-bold-speed-reading-d/ndgbjebkdbfehipdojkdldkddgggbdoj",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 653645,
+      "truncated": false
+    }
+  ]
+}

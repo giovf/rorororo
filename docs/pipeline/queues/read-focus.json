@@ -2,7 +2,8 @@
   "venture": "read-focus",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-01",
+  "updated": "2026-10-07",
+  "researched": "2026-10-05",
   "items": [
     {
       "id": "post-approval-links",
@@ -69,6 +70,95 @@
       "status": "blocked",
       "blocked_on": "owner: Microsoft Partner Center developer account (identity; batch with other account asks)",
       "added": "2026-09-30"
+    },
+    {
+      "id": "comparison-page-2026-rivals",
+      "title": "reader-mode-alternative.html gains Dyslexly and Half Bold columns — the two names in today's \"dyslexia extension\" and \"adhd reading extension\" results — with facts read from their own sites",
+      "why": "2026-10-04 searches: Dyslexly (dyslexly.com; free, no account, five fonts, line focus, ruler, PDF viewer, Pro ≈ £2/month) and Half Bold (halfbold.vercel.app; free, 8,000+ users, 4.8 from 55 ratings) rank for the queries our page targets and are absent from it. Both are free and local, so write the honest cells: where ReadFocus wins (PDF reflow as real text, paragraph focus, precise bold strength), where it does not. Read their pages and Chrome listings through the relay (add dyslexly.com and halfbold.vercel.app to the allowlist) before writing a cell; never use the trademarked bolding term. Built 2026-10-04 evening: Half Bold from halfbold.vercel.app + its Chrome listing (relay rf-rivals-2026); dyslexly.com returns 403 to the runner, so Dyslexly comes from its Chrome listing only (relay rf-rivals-2026b) and its Pro price is not stated on the page.",
+      "effort_days": 0.2,
+      "proof": "Search Console impressions for the page at the day-30 review ≥ 50 (unchanged target); rank for \"reader mode alternative\" recorded",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
+    },
+    {
+      "id": "reading-ruler-page",
+      "title": "reading-ruler.html: the search-capture page for \"reading ruler chrome extension\" — ruler tools with 28k users all abandoned or asking for PDF; ReadFocus has the ruler and web PDFs since 0.2.0",
+      "why": "Reader Line (20,000 users, 4.9): every top review asks for PDF support; ReadingLine (8,000) abandoned since 2022 with \"zero controls\"; ReadingRuler \"not working after recent update\". Today's results for the query are a blog post plus Dyslexly and Helperbird suites. Same pattern and table CSS as reader-mode-alternative.html; link from the landing index, the ReadFocus page, sitemap.xml and the listing texts; one paragraph on how the ruler works on a web PDF. Never the trademarked bolding term.",
+      "effort_days": 0.3,
+      "proof": "≥ 30 impressions or ≥ 3 clicks on the page in Search Console at the day-30 review; any install the same day as a click",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
+    },
+    {
+      "id": "alternativeto-listing",
+      "title": "List ReadFocus as a Reader Mode / Reader View alternative on alternativeto.net and on Product Hunt's Reader Mode alternatives page",
+      "why": "alternativeto.net/software/reader-mode/ and producthunt.com/products/reader-mode/alternatives are the top two results for \"reader mode alternative\" on 2026-10-04 — the exact query our comparison page targets. Both directories take submissions only from an account, which puts the owner's identity on a service, so this waits for the owner (batch with the other account asks). Copy is ready in LISTING.md.",
+      "effort_days": 0.1,
+      "proof": "the listing appears; ≥ 1 referral from either domain in the landing analytics within 30 days",
+      "score": 3,
+      "status": "blocked",
+      "blocked_on": "owner: an AlternativeTo account and a Product Hunt account (identity; batch with the Partner Center ask)",
+      "added": "2026-10-04"
+    },
+    {
+      "id": "firefox-android-compat",
+      "title": "Mark ReadFocus compatible with Firefox for Android (gecko_android, phone-width popup, AMO Android flag)",
+      "why": "AMO shows Android-compatible extensions on its own Android home page (450+ at the 2023 launch), a free shelf with no account beyond the AMO one we have. No evidence yet that dyslexic or ADHD readers install reading tools on mobile Firefox, so it scores below the two pages; build it after them if the slot is otherwise idle, and drop it at the day-30 review if no Android installs show in the AMO API. BUILT 2026-10-04 (burn-down) as 0.2.1: the Firefox build's manifest carries gecko_android (strict_min_version 140.0, the same floor as desktop); the popup has a viewport meta and a phone-width layout; the keyboard-shortcut API, absent on Android, is guarded in the background and popup; the ruler and paragraph focus listen to pointer events, so a tap places them on touch. Ships with the next AMO sign (handoff in ALERTS: after 0.2.0 clears review). Not verified on a device — the sandbox has no Android Firefox; the AMO API's compatibility field is the proof.",
+      "effort_days": 0.3,
+      "proof": "AMO API shows the Android flag and ≥ 5 Android installs within 30 days",
+      "score": 2,
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
+    },
+    {
+      "id": "ruler-controls",
+      "title": "Reading ruler controls in the popup: colour (six swatches, one safe on dark pages), height, opacity and lock-in-place (free)",
+      "why": "The September review sample asks four times across the three ruler tools (28,000 users): ReadingRuler \"the only thing that could make it better would be color and opacity options\", ReadingLine \"wish we could tweak colour, size and opacity\" and \"option to change color — not usable on dark background themes\", Reader Line \"the color filters are nice\". ReadFocus's ruler is one fixed yellow band (content.css) and reading-ruler.html says so. Rivals' controls are free, so these are too. Research 2026-10-05 in RESEARCH.md. BUILT 2026-10-05 (burn-down 19:00) as 0.3.0: six swatches, three heights, opacity slider, lock-in-place (click/tap moves a locked band); e2e section 1b; copy on the listing, AMO notes, welcome, ReadFocus page and reading-ruler.html.",
+      "effort_days": 0.3,
+      "proof": "a ruler review or support mail naming colour/size/opacity within 60 days of the version going live; reading-ruler.html clicks that turn into installs at the day-30 review",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "spacing-and-tint",
+      "title": "Line, letter and word spacing with the BDA style-guide numbers as the one-click default (free), and a page tint — cream / pale yellow / blue / green / pink / grey — as a soft fixed overlay (unlock)",
+      "why": "The British Dyslexia Association style guide: line spacing 1.5, letter spacing about 35% of the average letter width, cream or a soft pastel instead of white (\"white can appear too dazzling\"). Every dyslexia suite ships both (Dyslexly free: spacing + colour overlay; Helperbird; OpenDyslexic's reviews praise background colour), ReadFocus has neither. Sample: Dyslexia Friendly \"I can change the background colour of the page\", Quiet Reader \"colours are harsh and cannot be changed\", Dyslexia Reader colour changers \"caused the screen to blink\" (so: one soft overlay, no per-element repaint); Dyslexia Friendly \"messes with the spacing of words and entire page layout\" (so: a control, applied to reading blocks only, like text size). Research 2026-10-05. BUILT 2026-10-05 (burn-down 19:00) in 0.3.0: free spacing switch at 1.5 / 0.12em / 0.16em on reading blocks; pro tint as one fixed multiply layer; e2e 2b + pro/bad-key tint checks.",
+      "effort_days": 0.4,
+      "proof": "a review or support mail naming spacing or the tint within 60 days; unlock conversions after vs before the version",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "read-aloud",
+      "title": "Read aloud with the browser's own voices (speechSynthesis, nothing leaves the browser), sentence highlighting that follows the voice, play/pause in the popup and a shortcut (unlock)",
+      "why": "Helperbird (500k users, $30/yr) leads its blog with word-by-word read-aloud; Dyslexly's free tier has text-to-speech with word highlighting; Dyslexia Reader (9k) reads a clicked sentence aloud. No review in our sample asks for it and the free \"Read Aloud\" extension serves it standalone, so it scores below the ruler and spacing items; its value is for readers who already use ReadFocus and want ears and eyes together. Helperbird's complaint is voice quality, which is the OS's — the listing must say \"uses your computer's voices\". Research 2026-10-05. BUILT 2026-10-05 (burn-down 19:00) in 0.3.0: speechSynthesis per sentence from the first block on screen, CSS Custom Highlight on the sentence, popup play/pause/stop + speed, Alt+Shift+A; 4 unit + 4 e2e checks (no voices in headless, audio unverified).",
+      "effort_days": 0.6,
+      "proof": "a review or support mail naming read-aloud within 60 days; unlock conversions after vs before the version",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "google-docs-publish-tip",
+      "title": "Google Docs tip on the comparison page, the ReadFocus page and the welcome page: File → Share → Publish to web gives a page ReadFocus reads; the editor itself stays a known limit",
+      "why": "Two asks in the sample (the official bolding tool \"doesn't work on … google docs\", ADHD Reader \"wants Docs/Word\") and Half Bold's own FAQ answers \"Does it work with Google Docs?\" with exactly this Publish-to-web route (relay capture rf-rivals-2026/3.html) — a workaround we can give for free in one paragraph without claiming Docs support. Research 2026-10-05. BUILT 2026-10-05 (burn-down 19:00): comparison page (both cells), reading-ruler page, ReadFocus page, welcome tips.",
+      "effort_days": 0.05,
+      "proof": "the paragraph is live; a Docs-related install or question within 60 days",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     }
-  ]
+  ],
+  "research_after": "2026-10-30"
 }

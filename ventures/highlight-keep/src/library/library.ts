@@ -1,7 +1,11 @@
 import { tierForKey } from '../core/license.js';
+import { markdownFiles, readwiseCsv } from '../core/export.js';
 import { toMarkdown, type PageRecord } from '../core/model.js';
+import { buildZip } from '../core/zip.js';
 import { isPdfUrl, viewerUrl } from '../core/pdf.js';
+import { parseHypothesisExport } from '../core/hypothesis-import.js';
 import { parseSuperSimpleBackup } from '../core/ssh-import.js';
+import { parseWeavaExport } from '../core/weava-import.js';
 import { loadAllPages, mergeInto, savePage } from '../pages-storage.js';
 import { loadSettings } from '../settings-storage.js';
 
@@ -81,7 +85,7 @@ void (async () => {
     locked.textContent =
       'The library is part of the unlock ($12, once). Your highlights are still saved \u2014 open the popup on any page to see that page\u2019s highlights and copy them as Markdown.';
     $('pages').replaceChildren(locked);
-    ['q', 'export-all', 'backup', 'restore', 'import-ssh'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
+    ['q', 'export-all', 'download-md', 'download-readwise', 'backup', 'restore', 'import-ssh', 'import-weava', 'import-hypothesis'].forEach((id) => ($<HTMLInputElement>(id).disabled = true));
     return;
   }
   pages = await loadAllPages();
@@ -91,12 +95,26 @@ void (async () => {
     const md = pages.map(toMarkdown).join('\n---\n\n');
     void navigator.clipboard.writeText(md).then(() => ($('status').textContent = 'Markdown for all pages copied to the clipboard.'));
   };
-  $('backup').onclick = () => {
-    const blob = new Blob([JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), pages }, null, 2)], { type: 'application/json' });
+  const today = (): string => new Date().toISOString().slice(0, 10);
+  const download = (name: string, body: BlobPart, type: string): void => {
     const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `highlight-keep-backup-${new Date().toISOString().slice(0, 10)}.json`;
+    a.href = URL.createObjectURL(new Blob([body], { type }));
+    a.download = name;
     a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 60_000);
+  };
+  $('download-md').onclick = () => {
+    const files = markdownFiles(pages);
+    download(`highlight-keep-markdown-${today()}.zip`, buildZip(files.map((f) => ({ name: f.name, data: f.content }))), 'application/zip');
+    $('status').textContent = `Downloaded ${files.length} Markdown file${files.length === 1 ? '' : 's'} in a zip \u2014 unzip it into your vault; each file starts with front matter (title, url, dates, tags).`;
+  };
+  $('download-readwise').onclick = () => {
+    const n = pages.reduce((sum, p) => sum + p.highlights.length, 0);
+    download(`highlight-keep-readwise-${today()}.csv`, readwiseCsv(pages), 'text/csv');
+    $('status').textContent = `Downloaded ${n} highlight${n === 1 ? '' : 's'} as a CSV in Readwise\u2019s import columns \u2014 upload it at readwise.io/import_bulk; tags arrive as Readwise tags.`;
+  };
+  $('backup').onclick = () => {
+    download(`highlight-keep-backup-${today()}.json`, JSON.stringify({ version: 1, exportedAt: new Date().toISOString(), pages }, null, 2), 'application/json');
   };
   $<HTMLInputElement>('restore').onchange = async (e) => {
     const input = e.target as HTMLInputElement;
@@ -128,6 +146,43 @@ void (async () => {
       if (parsed.deleted) notes.push(`${parsed.deleted} you had deleted there, left out`);
       if (parsed.skipped) notes.push(`${parsed.skipped} without text or page, skipped`);
       $('status').textContent = `Imported from Super Simple Highlighter: ${notes.join('; ')}. Each one is anchored to its words, so it shows again when you open that page.`;
+    } catch (err) {
+      $('status').textContent = `Could not import: ${err instanceof Error ? err.message : String(err)}`;
+    }
+    input.value = '';
+  };
+  $<HTMLInputElement>('import-weava').onchange = async (e) => {
+    const input = e.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+    try {
+      const parsed = parseWeavaExport(await file.text());
+      const { added, pagesChanged } = await mergeInto(parsed.pages);
+      pages = await loadAllPages();
+      render();
+      const notes = [`${added} highlight${added === 1 ? '' : 's'} on ${pagesChanged} page${pagesChanged === 1 ? '' : 's'} brought over`];
+      if (parsed.imported - added > 0) notes.push(`${parsed.imported - added} already here`);
+      if (parsed.skipped) notes.push(`${parsed.skipped} without text or page address, skipped`);
+      const read = (['note', 'title', 'folder', 'colour', 'date'] as const).filter((c) => parsed.columns[c]).map((c) => (c === 'folder' ? 'folder (as a tag)' : c));
+      $('status').textContent = `Imported from the .csv: ${notes.join('; ')}${read.length ? `; read ${read.join(', ')} too` : ''}. Each one is anchored to its words, so it shows again when you open that page.`;
+    } catch (err) {
+      $('status').textContent = `Could not import: ${err instanceof Error ? err.message : String(err)}`;
+    }
+    input.value = '';
+  };
+  $<HTMLInputElement>('import-hypothesis').onchange = async (e) => {
+    const input = e.target as HTMLInputElement;
+    const file = input.files?.[0];
+    if (!file) return;
+    try {
+      const parsed = parseHypothesisExport(await file.text());
+      const { added, pagesChanged } = await mergeInto(parsed.pages);
+      pages = await loadAllPages();
+      render();
+      const notes = [`${added} highlight${added === 1 ? '' : 's'} on ${pagesChanged} page${pagesChanged === 1 ? '' : 's'} brought over`];
+      if (parsed.imported - added > 0) notes.push(`${parsed.imported - added} already here`);
+      if (parsed.skipped) notes.push(`${parsed.skipped} replies or page notes without highlighted words, left out`);
+      $('status').textContent = `Imported from Hypothesis (${parsed.format.toUpperCase()}): ${notes.join('; ')}. Comments became notes and tags came along; each highlight is anchored to its words, so it shows again when you open that page.`;
     } catch (err) {
       $('status').textContent = `Could not import: ${err instanceof Error ? err.message : String(err)}`;
     }

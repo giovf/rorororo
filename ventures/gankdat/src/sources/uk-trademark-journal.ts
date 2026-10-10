@@ -42,6 +42,15 @@ export const ISSUE_FILES: readonly string[] = ['jnl.zip', 'jnl.xml'];
 export const WINDOW_ISSUES = 52;
 /** Newest issues downloaded per refresh (each ~145 MB inflated); the window fills over successive runs. */
 export const DOWNLOADS_PER_RUN = 4;
+/**
+ * No new download starts once this much of the refresh has elapsed: the run of 2026-10-04 took
+ * 13 min 42 s of wave 7's 15-minute Cron Trigger budget and the next two nights were killed
+ * before writing a refresh_log row (queue `trademark-journal-silent-refresh`). What was cached
+ * before the cut-off still streams into D1; the window keeps filling next run.
+ */
+export const DOWNLOAD_BUDGET_MS = 6 * 60_000;
+/** Injectable clock for the download budget (tests drive it; production is Date.now). */
+export const journalClock = { now: (): number => Date.now() };
 /** Issue ids probed per year (the journal runs to 052 or 053). */
 const ISSUES_PER_YEAR = 53;
 /** Inflated cap per issue; the XML embeds mark images, hence the size. */
@@ -741,6 +750,13 @@ export async function fetchIssue(id: string): Promise<CachedIssue | null> {
       await res.body?.cancel().catch(() => undefined);
       continue;
     }
+    // The IPO answers an unpublished issue's jnl.xml with its "Page Not Found" HTML and status
+    // 200 (relay `tmj-stub-2026-10-07`: 2026-042 and 2026-053, text/html, last-modified 2020),
+    // and every jnl.zip with 403 text/html. An HTML body is a missing issue, not a journal.
+    if (/text\/html/i.test(res.headers.get('content-type') ?? '')) {
+      await res.body?.cancel().catch(() => undefined);
+      continue;
+    }
     if (!res.ok || !res.body) throw new Error(`TMJ ${id}/${file} download failed: ${res.status}`);
     const stream = file.endsWith('.zip') ? inflateZipEntry(res.body, MAX_BYTES) : res.body;
     const lastModified = isoDate(res.headers.get('last-modified')?.replace(/^\w+,\s*/, '') ?? null);
@@ -801,8 +817,10 @@ async function* streamFromOrigin(
 ): AsyncGenerator<UkTrademarkJournalRecord> {
   const today = new Date();
   const currentYear = String(today.getUTCFullYear());
+  const startedAt = journalClock.now();
   let included = 0;
   let downloaded = 0;
+  let budgetSpent = false;
   const seen = new Set<string>();
   const log = (event: string, extra: Record<string, unknown>): void => {
     console.log(JSON.stringify({ level: 'info', event, source: 'uk-trademark-journal', ...extra }));
@@ -813,6 +831,10 @@ async function* streamFromOrigin(
     if (!issue) {
       if (await env.CACHE.get(missingKey(id))) continue;
       if (downloaded >= DOWNLOADS_PER_RUN) continue; // window keeps filling next run
+      if (journalClock.now() - startedAt >= DOWNLOAD_BUDGET_MS) {
+        budgetSpent = true;
+        continue; // same: the cached issues still load, the rest waits for the next run
+      }
       const fetched = await fetchIssue(id);
       if (!fetched) {
         const ttl = id.startsWith(currentYear) ? MISSING_TTL_CURRENT_YEAR : MISSING_TTL_PAST_YEAR;
@@ -826,6 +848,7 @@ async function* streamFromOrigin(
         issue: id,
         records: issue.records.length,
         date: issue.publication_date,
+        elapsed_ms: journalClock.now() - startedAt,
       });
     }
     included += 1;
@@ -835,7 +858,12 @@ async function* streamFromOrigin(
       yield record;
     }
   }
-  log('tmj_window', { issues: included, downloaded });
+  log('tmj_window', {
+    issues: included,
+    downloaded,
+    elapsed_ms: journalClock.now() - startedAt,
+    download_budget_spent: budgetSpent,
+  });
   if (included === 0) throw new Error('TMJ: no journal issue could be read');
 }
 

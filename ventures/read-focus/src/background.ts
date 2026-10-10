@@ -41,7 +41,9 @@ chrome.runtime.onMessage.addListener((msg: { type: string; hostname?: string; ta
   return true; // async response
 });
 
-chrome.commands.onCommand.addListener((command) => {
+// Firefox for Android has no keyboard-shortcut API: `chrome.commands` is undefined there.
+const commands: typeof chrome.commands | undefined = chrome.commands;
+commands?.onCommand.addListener((command) => {
   void (async () => {
     const tab = await activeTab();
     if (!tab) return;
@@ -50,6 +52,10 @@ chrome.commands.onCommand.addListener((command) => {
     if (command === 'toggle-site') {
       if (site.enabled) await disableSite(tab.hostname);
       else await enableSite(tab.hostname, tab.id);
+    }
+    if (command === 'toggle-read') {
+      if (!site.enabled) return;
+      await chrome.tabs.sendMessage(tab.id, { type: 'read-aloud', action: 'toggle' }).catch(() => undefined);
     }
     if (command === 'toggle-ruler') {
       if (!site.enabled && !(await enableSite(tab.hostname, tab.id))) return;

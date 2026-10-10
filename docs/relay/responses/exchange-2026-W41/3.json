@@ -1,0 +1,960 @@
+{
+  "data": {
+    "total": 880,
+    "count": 15,
+    "offset": 0,
+    "limit": 15,
+    "desc": false,
+    "items": [
+      {
+        "title": "Visa Sponsor Leads Scraper - PERM, H-2A & H-2B Employers",
+        "name": "visa-sponsor-leads-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 101,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-05T12:03:09.212Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Scrape US visa-sponsor employer leads from official DOL OFLC data: PERM (green card), H-2A & H-2B. Get employer, named contact, email, phone, FEIN, NAICS, wage & lead score. Filter by state, status & date. Monitor mode returns only new filings. No login, no browser.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/R5FCyTGql--b9boRni1b-dLvZLnf67uzGu_FR-c16iU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItMWFBYXR5S1lmVkhQWUNWb3AtMXhlMkQySk5PTC1VU19WaXNhX1Nwb25zb3JfTGVhZHNfX19QRVJNX0dyZWVuX0NhcmRfX0gtMkFfX19ILTJCLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "lead": {
+                "eventTitle": "Visa-sponsor employer lead",
+                "eventDescription": "One US visa-sponsor / foreign-labor employer lead from official DOL OFLC disclosure data (PERM, H-2A or H-2B): employer name & full address, named point-of-contact with direct email & phone, employer phone, FEIN, NAICS industry, case status, job title & SOC, offered wage, worksite, attorney/agent, and a 0–100 lead score.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00595
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0049
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00386
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00266
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00175
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-13T00:20:52.162Z",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "introducing tiered pricing — FREE tier unchanged, higher plan tiers discounted",
+          "startedAt": "2026-08-13T00:20:52.162Z",
+          "notifiedAboutChangeAt": "2026-08-19T08:06:14.818Z"
+        },
+        "id": "1aAatyKYfVHPYCVop",
+        "url": "https://apify.com/scrapesage/visa-sponsor-leads-scraper"
+      },
+      {
+        "title": "Visa Sponsored Jobs Scraper — International Tech Roles",
+        "name": "visa-sponsored-jobs-scraper",
+        "username": "khadinakbar",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 422,
+          "totalUsers": 89,
+          "totalUsers7Days": 6,
+          "totalUsers30Days": 8,
+          "totalUsers90Days": 29,
+          "lastRunStartedAt": "2026-10-05T10:19:21.470Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 49,
+            "TIMED-OUT": 0,
+            "TOTAL": 49
+          }
+        },
+        "description": "Scrape visa-sponsored tech jobs from Relocate.me with company, country, role, seniority, tech stack and relocation package such as flights and housing help. Filter by country, role, level and posting date.",
+        "categories": [
+          "JOBS",
+          "AUTOMATION",
+          "MCP_SERVERS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/3-Yr3RYfRFSgI5oKSJm6JR0s2AvWsQZFx7tvOtr5kJM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcU5IdjFhTkZKZGk3cUNwV2UtYWN0b3ItbnU3QW9DY2NHU253Z0szbVQtakFzTVFUQlJyMi1zZWxmcmlkZ2VzLXJldGFpbC1saW1pdGVkLWFpZGljZDFiZGxxMC5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Khadin Akbar",
+        "userPictureUrl": "https://images.apifyusercontent.com/HbwQpQhiljFdnh_PO70uT83X5JYxLKszGnmTkdJFssQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veWdCaE5vQ05rTzJNYmI1ZFpkdEJlX3JaSEZ1b2llWTBHS1V1Z2JOZVROdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVTVJZGpGaFRrWktaR2szY1VOd1YyVXRjSEp2Wm1sc1pTMXZPWGhqUmtwVlNFNUpMVGs1TmtSRE1UZ3lMVGt6UlVNdE5EQTVNaTA1UlRORExUa3dOa1UwTmpJd1JqWkJRbDgwWHpVd01EVmZZeTVxY0dWbi5qcGVn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "job-found": {
+                "eventTitle": "Job scraped",
+                "eventDescription": "Charged per visa-sponsored job returned with full relocation package, tech stack, and apply URL.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "reasonForChange": "Restore required Pay per event plus platform usage pass-through.",
+          "startedAt": "2026-08-04T20:29:34.070Z",
+          "createdAt": "2026-07-21T20:24:08.141Z",
+          "notifiedAboutFutureChangeAt": "2026-07-21T20:24:29.063Z",
+          "notifiedAboutChangeAt": "2026-08-05T15:06:36.475Z"
+        },
+        "id": "nu7AoCccGSnwgK3mT",
+        "url": "https://apify.com/khadinakbar/visa-sponsored-jobs-scraper"
+      },
+      {
+        "title": "🇬🇧 UK Visa Sponsor Verifier",
+        "name": "uk-visa-sponsor-verifier",
+        "username": "dakheera47",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 4401,
+          "totalUsers": 32,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 10,
+          "totalUsers90Days": 13,
+          "lastRunStartedAt": "2026-10-06T04:25:24.371Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 116,
+            "TIMED-OUT": 0,
+            "TOTAL": 116
+          }
+        },
+        "description": "Instantly cross-reference any list of companies against the live UK Home Office Register of Licensed Sponsors. Verify Tier 2 / Skilled Worker visa sponsorship status in seconds using advanced fuzzy matching. Perfect for enriching job boards, ATS data, and B2B lead lists. 🇬🇧",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/raH8fTzjZfkJhDFnqCpSr2lPLfR9JA1JDy-Oqt7wC_0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcEdGQ0dwWkJVM1JJcjQ3TTUtYWN0b3ItQkhsUFVESlhDT1RZYTFGVFgtZFhycUQxYWtIWS1HZW1pbmlfR2VuZXJhdGVkX0ltYWdlX2tiMWtseWtiMWtseWtiMWsucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Shaheer Sarfaraz",
+        "userPictureUrl": "https://images.apifyusercontent.com/teoyKYXOx8uH7u_EH2iHAlzjqPcbJLz0mlZK_PFzH8c/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNDF6WTlGdElVNTRaS2dKZEN0eUlVcWFnZ25ac051b0g5bVI0b0Q3UkJPMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURFZRYVMxNmVEUTJZV2hLVFdsaU1scExlSFJ6VUUxbVNGZzNRVFEwWkROZmJuSlhORTlYTUc1TmNHeFFPRms1VlQxek9UWXRZdw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE"
+        },
+        "id": "BHlPUDJXCOTYa1FTX",
+        "url": "https://apify.com/dakheera47/uk-visa-sponsor-verifier"
+      },
+      {
+        "title": "Germany Visa-Sponsored Jobs",
+        "name": "germany-visa-jobs",
+        "username": "cg_nguyen",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 190,
+          "totalUsers": 16,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-06T04:56:50.062Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 37,
+            "TIMED-OUT": 0,
+            "TOTAL": 37
+          }
+        },
+        "description": "Find Germany jobs that sponsor work visas (Blue Card, Skilled Worker, ICT). Pulls the federal Bundesagentur Jobboerse, enriches with full descriptions, classifies visa-sponsorship likelihood (regex + opt-in LLM tie-breaker), and dedupes across runs. For relocation services and intl. job seekers.",
+        "categories": [
+          "JOBS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/4uQnpTOdVx3vUCAeCN9q5SDG44e8s84MF_uGzW_QBhM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ0NyTjdVTmZmV3ZVdks2aDktYWN0b3ItUHZBMnVkekluYW9iYnlFRDgtMHJhU3d5cGtBRS1pY29uLXYxLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "CG Nguyễn",
+        "userPictureUrl": "https://images.apifyusercontent.com/GOWP_B_nyWP7qFKaFF6M_uTt9sSBY_tMIURPQSC-FvQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWmZITFlIU0ptc3hVWXlmTGprWlI0SjZPWUlCMmJ2cVc3UU1ZY3N6c25nby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMnhMT0dWQ1pXbFRTMTlFUTJsSVZUZHZRa3A2Y0V0dWJXZE1Rbkp3VGs4elpHUm5jMVpOZEZSaldYTm5WMFJZWW1ZOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.00001
+              },
+              "enriched-result": {
+                "eventTitle": "Enriched job result",
+                "eventDescription": "Charged once per job emitted to the dataset with the full federal listing detail (description,       │     salary, locations).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "llm-tiebreaker-call": {
+                "eventTitle": "LLM tie-breaker classification",
+                "eventDescription": "Charged when the visa-sponsorship classifier escalates an ambiguous listing to a small LLM (Claude   │     Haiku) for a final decision. Opt-in via input flag; rate-limited per run by llmTiebreakerMaxFraction.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-05-17T12:05:21.716Z",
+          "createdAt": "2026-05-17T12:05:22.753Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "PvA2udzInaobbyED8",
+        "url": "https://apify.com/cg_nguyen/germany-visa-jobs"
+      },
+      {
+        "title": "🛂 H-1B Visa Salary & Sponsor Database",
+        "name": "h1b-salary-database",
+        "username": "inexhaustible_glass",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 146,
+          "totalUsers": 9,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 6,
+          "lastRunStartedAt": "2026-10-05T08:30:41.728Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Search every H-1B visa filing (LCA) by employer, job title, city & year and get the EXACT base salary filed with the US Dept of Labor, worksite, filing & start dates + salary stats (avg/median/range). For job seekers, recruiters, immigration lawyers, HR. Free, no key, no proxy.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Hitman studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/-dGl0H4SMe4cEFtN8UXxE58LOeVSdgZw0FkVyr_0kGY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOXlPcDNDdExSX25iUHB6WVF0aVBYOEFZa1NJbW8yc25BaVBLTVp5akY1RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbnBRTFcxSVozaEJVRmxwTFV0RE9HRnhUR3RtV0RSMVQwNVVRemRyTTFaUlpXZFdTbFkyY1V0WVZrbDBUblpCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.01
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single H-1B filing in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-06-15T18:15:16.976Z",
+          "startedAt": "2026-06-15T18:15:16.976Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "pVhIM4ZC5aD1cMRa0",
+        "url": "https://apify.com/inexhaustible_glass/h1b-salary-database"
+      },
+      {
+        "title": "LinkedIn Visa Sponsorship Jobs Intelligence",
+        "name": "linkedin-visa-sponsorship-jobs-intelligence",
+        "username": "neuton",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 62,
+          "totalUsers": 9,
+          "totalUsers7Days": 5,
+          "totalUsers30Days": 7,
+          "totalUsers90Days": 7,
+          "lastRunStartedAt": "2026-10-06T09:48:37.902Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 16,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 46
+          }
+        },
+        "description": "Find public LinkedIn jobs that explicitly mention employment visa sponsorship or H-1B support.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/RkNpYIkHJjXPhUQw6TlHCzFWw2cHXAVs5vvw7SfCB3k/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vd3RrQ2lzSHViYVhFcm9HM00tYWN0b3ItUjBseTl5WGloS3FYV052UDYtVXBZV3RUWEFjWS1saW5rZWRpbi1qb2ItZGV0YWlscy1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Neuton Scripts",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-26T19:31:52.552Z",
+          "startedAt": "2026-08-26T19:31:49.000Z",
+          "reasonForChange": "Initial launch pricing for linkedin-visa-sponsorship-jobs-intelligence",
+          "isPriceChangeNotificationSuppressed": true,
+          "forceContainsSignificantPriceChange": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single job with explicit sponsorship evidence written to the default dataset.",
+                "eventPriceUsd": 0.018,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          }
+        },
+        "id": "R0ly9yXihKqXWNvP6",
+        "url": "https://apify.com/neuton/linkedin-visa-sponsorship-jobs-intelligence"
+      },
+      {
+        "title": "H1B Visa Sponsor & Salary Database Scraper",
+        "name": "h1bdata-scraper",
+        "username": "fanndev",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 70,
+          "totalUsers": 7,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T02:26:51.676Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 26,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 53
+          }
+        },
+        "description": "Search the US Department of Labor's public H1B LCA filing history by employer, job title, city, or year -- salary, worksite, and (optionally) full case detail including sponsoring attorney and employer contact. No account or API key needed.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/58B8hLIj-Twb0vmwWjVv5pi5cpCYdirQRoAwskP6paM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20va3Q1QndlYTNSNGVWc1VkTnUtYWN0b3ItRURIRTRXbGVheVJ4TzFaekQtN003QlV1T0FMay1pbWFnZXNfJTI4MyUyOS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Faisal Ahdan naufal",
+        "userPictureUrl": "https://images.apifyusercontent.com/RoJLHDBvE4YzIJaTBOvEsNCGV5nuv6gphnqPv584BKY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vd1RXYXBQYTAtVWR5VDlyanRwNnpVVWFNUzBuT1BrRHp6Z0xJUXJneDFVTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhM1ExUW5kbFlUTlNOR1ZXYzFWa1RuVXRjSEp2Wm1sc1pTMW9aMFk1Y3pGVFZsUkRMV0V6WkdZeVlUSmpOekppTWpsaVpEbGlPV1ZrTTJabFlUVXlNVEkxWkRaaUxtcHdady5qcGc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "H-1B record",
+                "eventDescription": "Single filing or case-detail record in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00035
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00035
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00035
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-09-06T16:53:51.018Z",
+          "createdAt": "2026-09-06T16:53:51.452Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-06T17:05:49.508Z"
+        },
+        "id": "EDHE4WleayRxO1ZzD",
+        "url": "https://apify.com/fanndev/h1bdata-scraper"
+      },
+      {
+        "title": "US H-1B Visa Sponsorship Data",
+        "name": "us-h1b-visa",
+        "username": "ivosandoval",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 77,
+          "totalUsers": 6,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-06T02:50:57.589Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 32,
+            "TIMED-OUT": 0,
+            "TOTAL": 32
+          }
+        },
+        "description": "Search H-1B visa sponsorship data from US Department of Labor LCA disclosures. Filter by employer, job title, state, city, and salary range. Covers fiscal years 2020-2026 with 800K+ records per year. Ideal for job seekers, recruiters, and immigration research.",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/MMuUxAb5r4lJz4qiu76gFj-inEM78XfSxUNnbkYJtNc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZU94ZURIOGg4VjF4ZVBnMFAtYWN0b3ItMkJGTkozQXJ2YmhJMW1KaVctYk9QdHpUck1PWS1pY29uLnN2Zy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ivo Sandoval",
+        "userPictureUrl": "https://images.apifyusercontent.com/iYo46L1eWtdgcJRZk_wBYKKUEOo7Fs-U1fX863qKTeQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vX0RrVVpFLUVYb2lkNS1QR3IyRW1oOFpJYmNSX1dfdXdneUFFaTY3UHIzWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTa2hmWWpoaE5UZFhVbEF0WVRKb1Iwb3dWbU50YVVoaVEyWXRhSGh3YWw5cVIyUXROR1YwZURBdE0zZExZMGxCVEhR.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-17T12:46:02.590Z",
+          "createdAt": "2026-08-17T12:46:03.543Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "2BFNJ3ArvbhI1mJiW",
+        "url": "https://apify.com/ivosandoval/us-h1b-visa"
+      },
+      {
+        "title": "H-1B LCA Search - Visa Sponsor & Salary Leads (DOL)",
+        "name": "dol-h1b-lca-visa-sponsor-salary-leads",
+        "username": "pink_comic",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 92,
+          "totalUsers": 4,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-05T15:54:47.242Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 39,
+            "TIMED-OUT": 0,
+            "TOTAL": 39
+          }
+        },
+        "description": "Find H-1B, H-1B1, and E-3 sponsor leads in official DOL LCA disclosures. Employers, job titles, SOC/NAICS, worksites, wages, case status. Related: us-business-entity-search for employer KYB.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/J00guJUklABQUxFsSZDOqdKRqwcgJrGptF8nnC8pDGc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcUhCNFdCdVdsUmtraUdIWXctYWN0b3ItVGVUWnNUZ3NzaFhjcTcyc2ctS3E1RkFHUUhHNS1kb2wtaDFiLWxjYS12aXNhLXNwb25zb3Itc2FsYXJ5LWxlYWRzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ava Torres",
+        "userPictureUrl": "https://images.apifyusercontent.com/xHIQ8NPgSWhC7jbdKz1bniz5JDgrODfO99BuuEXmJbQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV19KMWN2OFBpYlc5enZjT2ZWUVcxTnNyQVk1eU9Sd0F3QkMwWWYzWGpRSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVWhDTkZkQ2RWZHNVbXRyYVVkSVdYY3RjSEp2Wm1sc1pTMW1NakYwYkdwVFFraDNMWE5qY21WbGJuTm9iM1JmTWpBeU5pMHdNeTB5TkY5aGRGODRMalExTGpFMVgwRk5MbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "DOL H-1B LCA evidence record",
+                "eventDescription": "One normalized official LCA disclosure record or explicit evidence-status item written to the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-22T12:13:30.532Z",
+          "startedAt": "2026-07-22T12:13:30.190Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "TeTZsTgsshXcq72sg",
+        "url": "https://apify.com/pink_comic/dol-h1b-lca-visa-sponsor-salary-leads"
+      },
+      {
+        "title": "Visa Sponsorship Jobs Finder (Laya & JEV AI)",
+        "name": "visa-sponsorship-jobs-finder",
+        "username": "eternallabs",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 8,
+          "totalUsers": 4,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-05T07:00:04.368Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 7,
+            "TIMED-OUT": 0,
+            "TOTAL": 7
+          }
+        },
+        "description": "Find visa sponsorship jobs worldwide from XING, StepStone, Reed, Wellfound, Welcome to the Jungle, and official sponsor registers with Laya & JEV AI.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/0PjtsYZYe-JLXfRlw138pM8jwv4yjo3Z8U3p6pGKUdE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRUFtMmttd0xwbUNNODNOd2stYWN0b3ItVk9SQ1doMEtPSWw3dzdLTVktWnpPSVltZTBHWC1TY3JlZW5zaG90XzIwMjYtMDktMjVfYXRfNC4xMC4xM19QTS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Jona",
+        "userPictureUrl": "https://images.apifyusercontent.com/ZZsI63YkRhEbgTwFd-AuHXqnynRiBMbEZFlcYDVuEuM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMkY1Q1JLWTJjZzlPREZiVWtWMy1pZnVxR3l5NXJySzU0QWRYYVpaUkhYay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSVUZ0TW10dGQweHdiVU5OT0ROT2Qyc3RjSEp2Wm1sc1pTMXZSa1p6TjJkblIzWm9MVU5vWVhSSFVGUmZTVzFoWjJWZlNuVnVYelJmWHpJd01qWmZYekF4WHpVMlh6RXdYMEZOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE"
+        },
+        "id": "VORCWh0KOIl7w7KMY",
+        "url": "https://apify.com/eternallabs/visa-sponsorship-jobs-finder"
+      },
+      {
+        "title": "Dice Jobs [💰$0.6] | Tech Salaries | Visa Sponsorship | Remote",
+        "name": "dice-scraper",
+        "username": "ahmed_jasarevic",
+        "stats": {
+          "totalBuilds": 25,
+          "totalRuns": 54,
+          "totalUsers": 3,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T05:12:39.739Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Extract Dice.com tech job listings with salary data, visa sponsorship signals, and remote indicators",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/w_q107YKPVZMJV-KwmObLaSUK5ZWNtyQtbEd4s_Hi5s/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZHRSN3FuVGJRck5pU0NtajctYWN0b3ItbTF4NDhwNXVBQzhIMzRrN1ktSkE3bnRhWFFkWC1pbWFnZXNfJTI4NiUyOS5qZmlm.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ahmed Jasarevic",
+        "userPictureUrl": "https://images.apifyusercontent.com/sOFwvadrtmy4TiyJZKxhdbX8UbYtSConFE5EhX2tvk0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vM29DNkN0amExcmdMU0JCN0FXYy1Za1F3Si1rNWhlOERPSzlzODNJR0JJZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVGalNGUjBZemxOTTFKTFVYRkNTVWRMYzBkdGRrRnJjbmRYZVRaRE4wTlJkblF0WlVsdFduZDRieTFKUVE.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTitle": "Actor Start",
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "isOneTimeEvent": false,
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00057
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0005799999999999999
+                  },
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00057
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0005899999999999999
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00057
+                  }
+                },
+                "eventTitle": "result",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "isPriceChangeNotificationSuppressed": false,
+          "startedAt": "2026-09-14T12:55:48.192Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-14T12:56:50.481Z",
+          "pricingModel": "PAY_PER_EVENT",
+          "notifiedAboutChangeAt": "2026-09-14T13:06:04.939Z"
+        },
+        "id": "m1x48p5uAC8H34k7Y",
+        "url": "https://apify.com/ahmed_jasarevic/dice-scraper"
+      },
+      {
+        "title": "Visa Sponsorship & H1B Jobs Scraper — US Jobs That Sponsor",
+        "name": "visa-sponsorship-jobs-scraper",
+        "username": "northbell",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 9,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T17:16:44.761Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 6,
+            "TIMED-OUT": 0,
+            "TOTAL": 6
+          }
+        },
+        "description": "Every US tech job whose employer says it will sponsor a work visa (H1B / H-1B and similar), from Dice: title, company, location, remote flag, employment type, posting date, full description — plus job alerts: only jobs new since your last run. Leave the search empty for all ~900. No login.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/RI_Ro0Nrqv3U0oIe2mLmBpmCJRZKGx4bZCKKlytDu1s/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQ0Z0Nll3UTMwbDA3NlREa0UtYWN0b3ItbkxtdHFtcGtmb1hyVE5zSHctdWY5dWw1MmlheS1qb2ItdmlzYS1zcG9uc29yc2hpcC1qb2JzLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Northbell",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Run started",
+                "eventDescription": "Charged once per run. Put all your searches in one run and you pay this once.",
+                "eventPriceUsd": 0.01
+              },
+              "job": {
+                "eventTitle": "Job",
+                "eventDescription": "One job with its fields. $2.00 per 1,000. Closed-job rows and errors are not charged.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0016
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-30T21:40:50.919Z",
+          "startedAt": "2026-09-30T21:40:50.919Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "nLmtqmpkfoXrTNsHw",
+        "url": "https://apify.com/northbell/visa-sponsorship-jobs-scraper"
+      },
+      {
+        "title": "H-1B Visa & LCA Sponsor Scraper - Employer Leads",
+        "name": "h1b-visa-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 83,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T01:30:27.182Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrape US DOL H-1B / LCA visa data: sponsoring employers, salaries, job titles, worksites, FEIN & NAICS, HR contacts (email & phone) and immigration attorneys & law firms. Search by employer, job or city, build sponsor profiles, monitor new filings. No API key. Export JSON, CSV, Excel.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/mSbc4FRf8keoiNHiABh_Qv06_w0cNQTX8arrD8yUmn4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItNGtISTBYcmNlTU1rem1HRmktekd5anl0cHNNcS1ILTFCX1Zpc2FfX19MQ0FfU3BvbnNvcl9TY3JhcGVyXy1fRW1wbG95ZXJfTGVhZHMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "filing": {
+                "eventTitle": "H-1B / LCA filing",
+                "eventDescription": "One H-1B/LCA visa filing row: sponsoring employer, job title, annual salary, worksite city/state, submit & start dates, case number and program.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "case_details": {
+                "eventTitle": "H-1B case full record",
+                "eventDescription": "One complete LCA disclosure record: employer firmographics (phone, FEIN, NAICS, address), named HR/global-mobility contact with email & phone, immigration attorney & law firm with email & phone, worksite, wage + prevailing wage + wage level and compliance flags.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.012
+              },
+              "employer_profile": {
+                "eventTitle": "Visa sponsor profile",
+                "eventDescription": "One aggregated employer/sponsor record: total filings, salary stats, top job titles & worksite locations, plus representative firmographics and HR/attorney contacts.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.012
+              }
+            }
+          },
+          "startedAt": "2026-07-19T00:47:17.589Z",
+          "createdAt": "2026-07-19T00:47:17.144Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "4kHI0XrceMMkzmGFi",
+        "url": "https://apify.com/scrapesage/h1b-visa-scraper"
+      },
+      {
+        "title": "US Visa Sponsor Leads - PERM Green Card, H-2A & H-2B",
+        "name": "us-visa-sponsor-leads-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 93,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-05T08:32:51.674Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape US employers that sponsor green cards (PERM) and seasonal work visas (H-2A farm & H-2B non-ag) from official DOL OFLC disclosure data: employer name, address, phone, FEIN, NAICS, attorney/agent, job, wage & worksite. B2B immigration-intent leads + lead score + monitoring.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/nyaq4B7JMhGp4e0yc0quPWOGrqosSxvFaS7Nk0VpjEA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItdnlSdGs3bk1WWFRCRnVqcVUtNUFxODFOWWxNdy1VU19WaXNhX1Nwb25zb3JfTGVhZHNfX19QRVJNX0dyZWVuX0NhcmRfX0gtMkFfX19ILTJCLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "sponsorRecord": {
+                "eventTitle": "Visa sponsor filing",
+                "eventDescription": "One US visa-sponsorship filing from the official DOL OFLC disclosure data (PERM green-card, H-2A or H-2B): employer name & trade name, full address, phone, FEIN, NAICS industry, employer contact + attorney/agent name, firm, email & phone, job title, SOC occupation, offered & prevailing wage, worksite, worker counts, employment dates, case status & decision date, lead score and the full raw source record.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.006,
+                "isPrimaryEvent": true
+              },
+              "employerProfile": {
+                "eventTitle": "Sponsor (employer) profile",
+                "eventDescription": "One aggregated visa-sponsor profile: a single employer with firmographics, every program sponsored (PERM/H-2A/H-2B), total filings & workers, certified/denied/withdrawn counts, approval rate, top job titles, worksite states, wage range, best contact/attorney email and a lead score.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.012
+              }
+            }
+          },
+          "startedAt": "2026-07-19T00:58:38.731Z",
+          "createdAt": "2026-07-19T00:58:38.280Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "vyRtk7nMVXTBFujqU",
+        "url": "https://apify.com/scrapesage/us-visa-sponsor-leads-scraper"
+      }
+    ]
+  }
+}

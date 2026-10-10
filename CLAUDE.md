@@ -42,7 +42,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
 
 ## Workflow
 - **Session start (every interactive session):** `git status` — uncommitted work from a
-  cut-off session is finished or discarded, never left; `git pull --no-rebase`; read
+  cut-off session is finished or discarded, never left; `git fetch --unshallow origin` when
+  `git rev-parse --is-shallow-repository` says true (a depth-50 sandbox clone makes a plain
+  fast-forward look diverged, 2026-10-10); `git pull --no-rebase`; read
   `docs/OWNER-NOTES.md` (answer new notes in place), `docs/ALERTS.md` (`handoff:` lines are
   yours to execute) and `docs/INBOX.md`; check CI is
   green (`gh run list -L 3`) and fix `main` first if not; `npm run schedules -w @foundry/gankdat`
@@ -50,10 +52,14 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
 - **Slot start (routines that have a fallback — today the 09:00/17:00 build):** the very first action of
   the run, before `npm ci`, is `npm run slot -- start build`: it pushes a one-line marker so the :20
   fallback and the watchdog can see the slot is in flight (`docs/ops/SLOTS.md`). Burn-down, exchange,
-  review and retro runs do not need it.
+  review and retro runs do not need it. Every build and burn-down run claims its item right after
+  `npm run pipeline next` with `npm run pipeline claim <venture>/<id> -- --by=<routine>` (one `doing` push),
+  so two sessions never build the same item (2026-10-07).
 - **Atomic pushes:** build fully, run the gates, then ONE commit and push. Never push partial
   work "to save progress" — a session can be cut off by usage limits at any moment, and the
   sandbox is discarded, which is safe only if nothing half-done reached `main`.
+  `.githooks/pre-push` (armed by `npm ci`) re-checks Prettier, ESLint, the run-log cap and the pipeline files on
+  the pushed range, because the edit made after `npm run check` is what turned `main` red three times in two days.
 - **Interruptible side effects:** anything that changes live state and must be undone later
   (temporary cron triggers, schedule edits) is restored by CI's daily self-heal if the session
   dies (`ventures/gankdat/scripts/schedules.mjs`). Apply D1 migrations before pushing code that

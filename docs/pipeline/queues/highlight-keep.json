@@ -2,7 +2,8 @@
   "venture": "highlight-keep",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-04",
+  "updated": "2026-10-07",
+  "researched": "2026-10-05",
   "items": [
     {
       "id": "post-approval-links",
@@ -94,12 +95,69 @@
     {
       "id": "comparison-page-2026-rivals",
       "title": "weava-alternative.html gains Web Highlights and Marqly rows — the two products that rank for 'weava alternative' in 2026 — with verified pricing",
-      "why": "Today's search results for 'weava alternative' are rival blogs: Web Highlights (100k users, 4.8, web-highlights.com/blog) and Marqly ('best web highlighters 2026'); both sell subscriptions and both are absent from our page, so a reader comparing against what Google shows finds us incomplete. Verify each rival's current price and account requirement from their own pricing pages (WebSearch or relay) before writing the rows; keep the honest 'not yet' cells.",
+      "why": "Today's search results for 'weava alternative' are rival blogs: Web Highlights (100k users, 4.8, web-highlights.com/blog) and Marqly ('best web highlighters 2026'); both sell subscriptions and both are absent from our page, so a reader comparing against what Google shows finds us incomplete. Verify each rival's current price and account requirement from their own pricing pages (WebSearch or relay) before writing the rows; keep the honest 'not yet' cells. Built 2026-10-04 evening: both rivals' pricing/FAQ pages and store listings read through the relay (hk-rivals-2026). Web Highlights renders its dollar prices only inside the app, so the page states free-offline + subscription-for-sync and names the 7-day trial, not a figure; Marqly's $49/$72/$9 come from its own pricing page.",
       "effort_days": 0.2,
       "proof": "Search Console impressions for the page at the day-30 review ≥ 50 (unchanged target), rank for 'weava alternative' recorded",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-04"
+      "status": "done",
+      "added": "2026-10-04",
+      "done_at": "2026-10-04"
+    },
+    {
+      "id": "import-weava-export",
+      "title": "Import a Weava dashboard export (CSV/TXT) into the library — 'bring your highlights from Weava' on the listing and the comparison page",
+      "why": "Weava (200k users, abandoned since Feb 2024, rating 2.9 on its last 100 reviews, 'highlights disappearing' the top complaint — web search 2026-10-05) is the refugee pool the whole comparison page targets, yet the page offers them no way across. Weava's own knowledge base (weavatools.atlassian.net, weavatools.com 'How to export your highlights and notes') documents a dashboard export to Word, Excel, CSV and plain text with resource URL, highlight and annotation. Both rivals that outrank us for 'weava alternative' built exactly this: Web Highlights ('How to import highlights from Weava') and Glasp ('Import Weava highlights to Glasp'). Same shape as the Super Simple import (text + URL + note → anchored by the quoted text, id weava_<hash> so a re-import is a no-op, merged through pages-storage.mergeInto). Verify the real CSV/TXT columns through the relay (weavatools.com + weavatools.atlassian.net added to the allowlist this run) before writing the parser; if the KB has no sample, parse by header names and fail loudly listing the headers seen. DONE 2026-10-05 (build 17:00, 0.4.0): the relay could not get a sample — Weava's KB page on the export redirects to an Atlassian login, app.weavatools.com does not answer, the Web Highlights and Glasp guides show only the dashboard steps, and weavatools.com's own how-to and manual say just 'Word, Excel, .csv or .txt' — so src/core/weava-import.ts reads the header row and maps columns by name (URL and highlight text required; note, title, folder→tag, colour by name or hex, date when present; id weava_<hash of url+quote+note> so a re-import is a no-op; merged through pages-storage.mergeInto) and refuses any other file listing the headers it saw, as planned. 8 tests (RFC 4180 reader, delimiter detection, header spellings, colour cells, stable ids, refusal text). Library gains 'Import Weava'; LISTING, AMO release notes and description, comparison page (row + the About Weava paragraph now tells refugees how to come across and to mail us the first line if the columns differ), landing and welcome page say so. Not live until 0.4.0 is signed (ALERTS handoff, supersedes the 0.3.0 one). First real file seen in support mail → fix the mapping the same day.",
+      "effort_days": 0.6,
+      "proof": "≥ 1 Weava import named in a review or support mail within 60 days; weava-alternative.html clicks → installs in Search Console/metrics after the line lands",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "all-sites-mode",
+      "title": "Opt-in 'Highlight on every site' switch (optional <all_urls> host permission, asked once) beside the per-site model",
+      "why": "Three of the 31 rival reviews in research/cws-reviews-2026-09-19.json ask for exactly this (Hypothesis ×2: 'a way to activate it for all webpages', 'wished it stayed active or automatically activated on every page'; Super Simple: 'can't figure out how to enable this extension on all websites by default … annoying to first enable on every new website') — the largest single ask after PDF and login. Our per-site switch is the privacy stance and stays the default; the manifest already declares optional_host_permissions for http/https, so a settings toggle that calls chrome.permissions.request({origins:['<all_urls>']}) and registers one content script for all sites is allowed by both stores as a user-triggered optional permission. Listing copy: 'on by default only where you switch it on; one setting turns it on everywhere'. e2e: toggle on, open a never-enabled site, highlight restores.",
+      "effort_days": 0.3,
+      "proof": "the setting mentioned in a review or support mail; no store policy flag on the next review",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "subframe-highlighting",
+      "title": "Highlight inside iframes and shadow DOM: allFrames on the registered content script, shadow-root-aware range walking",
+      "why": "Two rival reviews name it as the one gap in otherwise-liked products (Glasp: 'in some area like iFrame or Shadow DOM, i cant highlight'; Super Simple: 'really wish I could highlight in subframes'); Glasp's own listing text admits iframe/shadow-DOM gaps (2026-09-19 table). sites.ts registers content.js without allFrames, so a highlight attempted in an embedded reader or a web-component page does nothing. Fix: allFrames:true on registerContentScripts and injectNow (frame URL as the page key when it differs from the top page, so restores find it), composedPath/getRootNode in dom.ts so a selection inside an open shadow root anchors to its own text; store nothing extra. e2e: a fixture page with an iframe and a shadow-root paragraph, highlight both, reload, both restore.",
+      "effort_days": 0.3,
+      "proof": "a fixture-backed e2e section passing; zero iframe/shadow complaints in the first reviews",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "export-markdown-files-readwise-csv",
+      "title": "Export: download one Markdown file per page (zip) for an Obsidian/Logseq vault, and a Readwise-import CSV — instead of clipboard only",
+      "why": "Every rival a searcher sees ships a path into a notes app: Web Highlights (Notion, Obsidian, Capacities, Markdown/HTML/PDF), Glasp (Notion, Obsidian, Readwise, Roam, Logseq; MD/CSV/JSON), Readwise Highlighter (Reader → Obsidian/Notion/Logseq/Roam), Hypothesis (JSON/TXT/CSV/HTML) — web search 2026-10-05. Ours copies all pages' Markdown to the clipboard and saves a JSON backup; our listing's 'exports to Markdown' is the clipboard. Cheapest parity without any OAuth integration (which would break 'no account, no sync server'): (1) 'Download Markdown' — one .md per page named from the title, YAML front matter with url/date, zipped (a ~1 KB store-free zip writer or JSZip), dropped straight into a vault; (2) 'Download CSV for Readwise' in Readwise's documented import columns (Highlight, Title, Author, URL, Note, Location, Date — verify on docs.readwise.io through the relay; readwise.io added to the allowlist this run), which then flows to Notion/Obsidian/Anki through Readwise's own sync. Listing + comparison page: 'exports to Markdown files, JSON and Readwise CSV'. DONE 2026-10-05 (burn-down, 0.4.0): src/core/export.ts (markdownFiles: one .md per page, file-safe unique name from the title, YAML front matter title/url/site/created/updated/highlights/tags; readwiseCsv: Highlight,Title,Author,URL,Note,Location,Date, tags as Readwise inline '.tag' notes, UTC dates) + src/core/zip.ts (store-only ZIP writer, CRC-32, UTF-8 names, ~90 lines, no dependency; verified with unzip -t and Python zipfile). Readwise columns verified: readwise.io/import_bulk is behind a login for the relay runner; docs.readwise.io (relay hk-readwise-csv) names the page and the inline-tag rule, and a third-party copy of the import page (kb.iany.me, web search) lists the seven columns with Highlight the only required one. Library: 'Download Markdown files' and 'Download CSV for Readwise' beside 'Copy all'; 8 unit tests + e2e section 9 (real downloads: zip signature, front matter, CSV header and row). Listing, AMO notes/description, welcome, landing and comparison page say 'Markdown files for Obsidian/Logseq, Readwise CSV'. Ships in 0.4.0 (handoff amended).",
+      "effort_days": 0.4,
+      "proof": "Readwise/Obsidian named in a review or support mail; downloads cannot be counted (no telemetry), so proof is listing conversions after vs before",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "import-glasp-hypothesis-exports",
+      "title": "Import Glasp (CSV/JSON) and Hypothesis (JSON) exports into the library, after the Weava import proves the pattern",
+      "why": "Glasp (500k users, account required, highlights public by default — the privacy objection our listing answers) exports MD/CSV/JSON; Hypothesis (300k, 'never completes log in' reviews) exports JSON/CSV/TXT/HTML from its sidebar Share → Export (web.hypothes.is help, read 2026-10-05). Same parser shape as the Weava and Super Simple imports (text + url + note + date → anchored by quoted text, stable ids, merge). Lower than Weava because neither rival is abandoned — their users leave for privacy, not data loss. Verify both file layouts from real exports or the vendors' docs through the relay (glasp.co and hypothes.is added to the allowlist this run) before writing parsers. DONE 2026-10-05 (burn-down, 0.4.0): Hypothesis verified from its client source (github.com/hypothesis/client annotations-exporter.tsx + types/api.ts via WebFetch; web.hypothes.is help via relay hk-glasp-hypothesis): JSON {export_date, export_userid, client_version, annotations[APIAnnotationData]} with TextQuoteSelector exact/prefix/suffix, text = comment, tags, document.title, references = reply; CSV header 'Created at,Author,Page,URL,Group,Type,Quote/description,Comment,Tags'. src/core/hypothesis-import.ts reads both (replies and page notes skipped: no words to anchor; ids hyp_<id>), 4 tests, library 'Import Hypothesis'. Glasp: blog.glasp.co documents CSV/Markdown/JSON exports but no columns (relay), so no Glasp-specific parser was guessed: the header-driven Weava reader now takes any .csv with a URL and a highlight column, splits a tags/folder cell on commas, and the library entry reads 'Import Weava / Glasp (.csv)'; the refusal message names the headers it saw so the first real Glasp file fixes the mapping by mail. Listing, AMO notes/description, welcome, landing and comparison page name Glasp and Hypothesis. Ships in 0.4.0.",
+      "effort_days": 0.5,
+      "proof": "≥ 1 import of either named in a review or support mail within 90 days",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     }
-  ]
+  ],
+  "research_after": "2026-10-30"
 }

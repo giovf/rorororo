@@ -2,7 +2,8 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-04",
+  "updated": "2026-10-10",
+  "researched": "2026-10-09",
   "items": [
     {
       "id": "nhs-ods",
@@ -45,7 +46,7 @@
       "proof": "≥ 10 stats pages indexed (Search Console)",
       "score": 4,
       "status": "blocked",
-      "blocked_on": "owner: the sitemap was submitted 2026-09-28 (OUTSTANDING A2); what remains is one export of Search Console \"Pages → not indexed\" (identity), or a Search Console API read through the relay once the owner adds the property credentials — no indexing reading exists in the repo as of the 2026-W40 review",
+      "blocked_on": "owner action 020 (2026-10-07): the Search Console API reading is built — `scripts/search-console.ts` in the 06:45 store-metrics job URL-inspects /stats and every /stats/<slug> page and writes `indexed I/N` on gankdat's Daily numbers row — and waits only for the owner to add the read-only service account and paste its key as SEARCH_CONSOLE_KEY. Close this item on the first row whose `search:` clause carries an indexed count (the proof reads ≥ 10 indexed), no export needed.",
       "added": "2026-09-20"
     },
     {
@@ -260,13 +261,237 @@
     {
       "id": "oauth-connect-funnel-check",
       "title": "Walk the MCP OAuth sign-in hop end to end from a real Claude client and record where the daily connect_account calls drop",
-      "why": "Review 2026-W40: since lazy OAuth shipped (v0.21.0, 2026-09-30) `connect_account` is the most-wanted tool every day (6, 6, 4 calls on 10-01..03) and `oauth: 0 connects/24h, 0/30d` every day — agents start the sign-in, no human completes it. Either the callers are scanners (then the row should say so: client hosts are already printed) or the Connect card → /authorize → magic-link mail → consent → /token hop loses the person (another tab, mail delay, a consent page error). Do, from 2026-10-09 (so a week of rows exists): add gankdat as a custom connector in a Claude client (the interactive session or the relay's browser-shaped agent can drive the HTTP legs; the owner's click is only needed for the mail link), log each leg's status in RESEARCH.md, fix what breaks, and make the Daily numbers row count authorize starts, consent views and token issues separately so the funnel is visible without a probe.",
+      "why": "Review 2026-W40: since lazy OAuth shipped (v0.21.0, 2026-09-30) `connect_account` is the most-wanted tool every day (6, 6, 4 calls on 10-01..03) and `oauth: 0 connects/24h, 0/30d` every day — agents start the sign-in, no human completes it. Either the callers are scanners (then the row should say so: client hosts are already printed) or the Connect card → /authorize → magic-link mail → consent → /token hop loses the person (another tab, mail delay, a consent page error). Do, from 2026-10-09 (so a week of rows exists): add gankdat as a custom connector in a Claude client (the interactive session or the relay's browser-shaped agent can drive the HTTP legs; the owner's click is only needed for the mail link), log each leg's status in RESEARCH.md, fix what breaks, and make the Daily numbers row count authorize starts, consent views and token issues separately so the funnel is visible without a probe. Built 2026-10-09 (build): the relay walked the GET legs live — discovery documents 200, Claude's two real client documents (claude.ai/oauth/mcp-oauth-client-metadata, …/claude-code-client-metadata) fetched 200 and /authorize with each rendered the sign-in page; the POST legs (email, consent, /token) cannot be driven from a sandbox and the only human walk is the owner's 10-04 one (token issued, internal account). So every leg now writes an `oauth_funnel` analytics point and the Daily numbers row carries `oauth funnel 7d: …` plus `connect_account 7d by UA: …` (the user agents behind the 401s, readable from a week of existing points on the 10-10 row). Proof unchanged; a scanner UA on 10-10 closes the question, a human UA with 0 authorize means Claude never opens the popup for these calls.",
       "effort_days": 0.25,
       "proof": ">= 1 `oauth connect` in the Daily numbers row by 2026-10-18, or the row names the step where every attempt stops",
       "score": 5,
-      "status": "todo",
+      "status": "done",
       "not_before": "2026-10-09",
-      "added": "2026-10-04"
+      "added": "2026-10-04",
+      "done_at": "2026-10-09"
+    },
+    {
+      "id": "apify-change-feed-mode",
+      "title": "Change-feed mode on every Apify actor (`mode: changes`, `since`, `change`) so a scheduled run is a register monitor",
+      "why": "Research 2026-10-05 (starved pipeline): Apify is the only shelf with runs from outside the repo (Daily numbers 10-01..10-04: +12/+11/+16 runs a day, 17 users/30d — the `ours/others` split starts in the 10-05 row, so part of that may be Apify QA), while the change feeds — the one thing no rival sells (STRATEGY §5, 2026-09-24) — read `changes 7d: 0 (mcp 0, rest 0)` on every row since the counter exists (09-30). The 17 actors call only /v1/data (shared `src/gankdat.mjs`; no actor folder has a changes input), so an Apify user cannot schedule \"what is new this week\" — and scheduled runs are the Store's recurring-revenue mechanic (Schedules + pay per result). Do: `mode` (data|changes, default data), `since` (YYYY-MM-DD, default 7 days back) and `change` (added|removed|changed) inputs on every single-source actor (`uk-no-website-leads` merges three sources — skip it); the shared client calls /v1/changes/<slug> with the same filters and pushes one row per change (`change`, `observed_at`, the record); a \"Monitor it\" README section with the daily schedule recipe; `test/apify-schemas.spec.ts` allows the feed keys; `publish-actors.mjs` pushes as usual. Score: evidence 2 × reach 3 ÷ 0.6 days = 10, discounted to 7 because no Apify run is yet known to be a buyer's. Built 2026-10-05 (burn-down): the shared actor client (`apify/*/src/gankdat.mjs`, identical in all 16 single-source folders) reads /v1/changes/<slug> in changes mode and pushes each change as the record plus `change` and `changed_at`; the nine actors whose source has a feed (nhs-ods, sam-exclusions, uk-care-locations, uk-charities, uk-food-hygiene, uk-gambling-operators, uk-schools, uk-sponsors, uk-trademark-journal) offer `mode` / `since` / `change` inputs, declare the two fields in their dataset schema and carry a \"Monitor it\" README section; the other seven (KV sources, no stable id — the API answers 404) are unchanged beyond the client copy. Deviation from the title: not every actor, only the feed-bearing ones, for that reason. `test/apify-schemas.spec.ts` now checks the inputs and fields appear exactly on feed actors and that the client and main.mjs template are identical across folders. CI pushes the changed folders (publish-actors.mjs).",
+      "effort_days": 0.5,
+      "proof": "rest change-feed calls in the Daily numbers row (`changes 7d: … rest N`) > 0 on ≥ 5 days in the 30 days after publish",
+      "score": 7,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "apify-runs-per-actor",
+      "title": "Per-actor 30-day runs by other accounts in the Daily numbers row (`apify 30d by actor: slug N, …; 0: a, b`)",
+      "why": "Research 2026-10-05: the 10-04 build added `30d: T runs (O ours, X others)` as one total, so nothing says which registers Apify users actually run — the exchange item `apify-quality-score-pass` triggers on \"≥ 10 actors with 0 runs\", a reading no row gives, and STRATEGY §7's per-dataset retirement rule has only the API side (`datasets 30d`). The per-actor 30-day run count is on each actor's own endpoint (metrics.mjs already reads it per actor for isPublic) and our runs per actor come from /v2/actor-runs (already fetched); the difference per actor is the demand reading. Do: print it in the same shape as `datasets 30d` (zero-run actors named after `0:`), tolerant of a missing token. Score: evidence 2 × reach 2 ÷ 0.1 days, capped at 5 like the other metrics items. Built 2026-10-05 (burn-down): metrics.mjs keeps each actor's 30-day total (`publicActorRunStats30Days.TOTAL`) and counts our own runs per `actId` from /v2/actor-runs, then prints `apify 30d by actor: <name> N, …; 0: a, b` (N = runs by other accounts, most first; `(all accounts)` when the own-runs list fails; `n/a` without a token) in the Daily numbers row after the `apify:` note. First reading in the 2026-10-06 row.",
+      "effort_days": 0.1,
+      "proof": "the 2026-W41 strategy review names the actors run by other accounts and the zero-run ones from RESEARCH.md",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "indexnow-stats-pages",
+      "title": "IndexNow pings for changed /stats pages (Bing, DuckDuckGo, Copilot, ChatGPT search index) — no account needed",
+      "why": "Research 2026-10-05: the only indexing reading (Search Console) has been owner-blocked since 09-20 (`search-console-stats-indexing`), and the 1,100+ stats and facet pages exist to be found by people and by agents that \"search like humans\" (AGENT-DISCOVERY §3). IndexNow (indexnow.org) takes a POST of changed URLs with a key proven by a key file at the site root — no account, no identity — and feeds Bing's index, which DuckDuckGo, Copilot and ChatGPT web search read. Do: a constant key in wrangler vars (an IndexNow key is not a secret), `/<key>.txt` served by the Worker, after each refresh wave POST that wave's parent + facet stats URLs (≤ 10,000 per call) to api.indexnow.org from `store.ts`, status into the metrics row (`indexnow: N urls, 202`); a Bing `site:gankdat.com/stats` count through the relay at day 30. Score: evidence 2 × reach 2 ÷ 0.25 days = 16, discounted to 5: no evidence yet that search brings buyers (referrers unread). Built 2026-10-05 (burn-down): `src/lib/indexnow.ts` (`statsUrlsFor`, `postIndexNow`, `pingStatsPages`), `INDEXNOW_KEY` var + `/<key>.txt` route, the post-wave ping in `store.ts refreshAllSources` (only sources whose `refreshOne` returned true), the runner's ping in `runner-refresh.mjs`, an `indexnow` Analytics Engine point and the `indexnow:` note in metrics.mjs; 9 tests. First reading in the 2026-10-06 row; day-30 read queued as `indexnow-day-30-read`.",
+      "effort_days": 0.2,
+      "proof": "`indexnow:` 200/202 daily in the Daily numbers row; Bing `site:gankdat.com/stats` ≥ 50 pages at the 2026-11-05 read",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "change-feed-rss",
+      "title": "Keyless Atom feed per register and facet (`/feeds/<slug>.xml`, last 7 days, ≤ 50 entries) — the change feed on every RSS shelf",
+      "why": "Research 2026-10-05: every delivery path for the change feeds needs an API key or an MCP client, so the product no rival sells is invisible to the tools people already use to watch things: feed readers (Feedly, Inoreader), the Slack and Teams RSS apps, and the RSS triggers in Zapier, Make, n8n and Power Automate — four automation shelves reached without building a connector or opening an account. Watch services charge £180–320 per mark per year to deliver the trade-mark journal by email (exchange 2026-W39); a Nice-class feed is that watch for free with the key as the upgrade. Do: `/feeds/<slug>.xml` (+ `/feeds/<slug>/<segment>/<value>.xml` for facets) rendered from the precomputed change rows at refresh and cached in KV (one D1 read per source per day), each entry linking the stats page and the sign-up, `<link rel=alternate>` on the stats pages, rate limited like preview, an Analytics Engine `rest_feed` point (UA + slug). Score: evidence 2 × reach 2 ÷ 0.5 days = 8, discounted to 5 — a keyless feed converting to a key is unproven. Built 2026-10-05 (burn-down): `src/routes/feeds.ts` (Atom 1.0, 7 days, ≤ 50 entries, KV cache 1 h per feed, isolate rate limit 120/min per IP, `rest_feed` AE point with UA/path/hit-miss/slug), `<link rel=alternate>` + a subscribe sentence on the stats pages, `feeds 30d:` in metrics.mjs; 5 tests. Deviation from the item text: rendered on first request each hour rather than at refresh (no D1 read for feeds nobody fetches; the waves finish by 06:20 so readers see the day's diff by 07:20).",
+      "effort_days": 0.4,
+      "proof": "≥ 20 distinct feed-reader/automation user agents on /feeds in 30 days and ≥ 1 key issued with a /feeds referrer",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "d1-delta-cost-check",
+      "title": "Read three days of `cf usage` after the delta refresh: are D1 writes under ~1M a day, and which sources still swap generations",
+      "why": "Research 2026-10-05: STRATEGY §7's cost rule is tripped (10-04 row: 87.5M D1 writes since 09-10 ≈ US$38 overage, GBP 0 revenue) and the fix (in-place delta refresh, migration 0014) had its first night on 10-05; `cf usage` is cumulative for the 10th-to-10th period, so the per-day write rate only shows across consecutive rows. Do from 10-08: difference the `d1 … writes` figure across the 10-05..10-08 rows; if a day is still above ~1M writes, read `refresh_log` (`delta +a ~c -r` vs full) through the REST API for the sources still doing a generation swap (first loads, no `idOf`, pre-migration rows) and file the fix as a queue item; write the daily rate into the LEDGER planned row. The invoice check (proof of `cloudflare-usage-breakdown`) stays for 11-10. Read 2026-10-08 (burn-down): cf usage 87.5M (10-04) → 93.6M (10-05) → 93.8M (10-06) → 93.8M (10-07): +6.1M on the last full-reload night (every D1 source's \"one last full reload\" after migration 0014), then +0.2M and +0.0M a day — under the ~1M line on both delta days, ~30× below the ~6M/day of the generation swap. No source swaps generations nightly any more: all nine D1 sources define idOf, so the swap is left for a first load only; uk-trademark-journal's pre-0014 rows are hashed in place by the 10-07 backfill (≤ 162k writes, one or two nights) and then go delta. No refresh_log read needed (the conditional branch was for a day above 1M). Period 09-10→10-10 ends at ≈ 44M billable writes ≈ US$44 ≈ £33 — written into the LEDGER planned row; the invoice check stays with cloudflare-usage-breakdown on 11-10. Reads run +45-54M a day (billed at US$0.001/M, 25B included — nil).",
+      "effort_days": 0.1,
+      "proof": "daily D1 writes < 1M in the 10-08 row recorded in RESEARCH.md, or a queued fix naming the source(s)",
+      "score": 6,
+      "status": "done",
+      "not_before": "2026-10-08",
+      "added": "2026-10-05",
+      "done_at": "2026-10-08"
+    },
+    {
+      "id": "indexnow-day-30-read",
+      "title": "Day-30 read of IndexNow and the Atom feeds: Bing `site:gankdat.com/stats` page count, bing/duckduckgo referrer share, /feeds user agents and any key with a /feeds referrer",
+      "why": "Proof of `indexnow-stats-pages` (built 2026-10-05): ≥ 50 /stats pages in Bing's index on 2026-11-05. Do: a Bing search `site:gankdat.com/stats` through the relay (add bing.com to scripts/fetch-relay.mjs if needed) or WebSearch, the `indexnow:` statuses across the 30 rows (any 422/429 days), and the Analytics Engine Referer kinds on /stats if the traffic point carries them; record the count in RESEARCH.md under the 2026-10-05 build note. Decide: keep (≥ 50 pages), or if < 10 pages despite 202s, check the key file from outside and whether Bing drops the facet pages as thin — then queue a content fix, never a second submitter. Also proof of `change-feed-rss` (built the same night): the `feeds 30d:` readings across the rows — ≥ 20 distinct user agents and ≥ 1 key issued with a /feeds referrer keeps the feeds; fewer means list them on the feed shelves (a Feedly/Inoreader discovery check, the n8n/Zapier RSS-trigger docs pages) before touching the format.",
+      "effort_days": 0.05,
+      "proof": "page count and referrer share recorded in RESEARCH.md; keep/fix decision in STRATEGY §8",
+      "score": 4,
+      "status": "todo",
+      "not_before": "2026-11-05",
+      "added": "2026-10-05"
+    },
+    {
+      "id": "indexnow-from-runner",
+      "title": "Submit the /stats pages to IndexNow from the GitHub runner (metrics workflow), not from the Worker: api.indexnow.org answers 429 to Cloudflare Workers egress",
+      "why": "Research 2026-10-07: the indexnow reading is `41 urls 429` (10-05) and `40 urls 429` (10-06) — every wave since the feature shipped, so the proof of indexnow-stats-pages (≥ 50 Bing pages by 11-05) cannot be met. The same day the runner-side refresh posted uk-insolvency's page from a GitHub runner and got `status 200` (gankdat metrics run 37471105451 log). Cause confirmed on the web: Bing's IndexNow endpoints rate-limit by source IP and Workers share egress IPs with thousands of other Workers, so a 5-URL POST gets 429 and no code change in the Worker fixes it (rankmath.com/kb/how-to-fix-429-error-with-indexnow-api, asteroad.com/manuals/indexnow-cloudflare-worker). Second defect in the same reading: the waves posted only ~40 URLs a day for 17 sources, not the ~1,100 the item expected, because pingStatsPages reads the stats cache the moment the wave ends. Do: in scripts/runner-refresh.mjs (already in gankdat-metrics.yml, daily 06:30 after wave 7), read /health (last_ok per slug) and public/sitemap.xml (61 /stats URLs) plus each refreshed source's /stats facet pages, POST once from the runner with postIndexNow, print `indexnow N urls status S` and make metrics.mjs carry that figure (the Worker's own ping and its Analytics Engine point are removed, so the row no longer prints a 429 the Worker cannot avoid). Keep lib/indexnow.ts pure as it is. — Built 2026-10-07 (burn-down): runner-refresh.mjs submits the day's refreshed /stats pages (refresh_log ok in 26 h, facets from the KV stats blob) and leaves dist/indexnow.json; metrics.mjs reads it; the Worker's ping, its Analytics Engine point and the pingStatsPages tests are removed.",
+      "effort_days": 0.2,
+      "proof": "`indexnow: N urls 200` (or 202) in the Daily numbers row for 7 consecutive days with N ≥ 60; the 11-05 day-30 read then measures Bing pages",
+      "score": 7,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
+    },
+    {
+      "id": "trademark-journal-silent-refresh",
+      "title": "uk-trademark-journal has written no refresh_log row since 2026-10-04 — its last ok took 13 min 42 s of wave 7's 15-minute budget; bound the nightly work",
+      "why": "Research 2026-10-07: the 10-06 Daily numbers row carries `uk-trademark-journal (no successful refresh since 2026-10-04)` with no error row either — the stale reading added 2026-10-04 for a refresh that dies without writing. The journal is alone in wave 7 (06:05, registered in wrangler.jsonc and WAVE_BY_MINUTE); its last ok row is the night before the in-place delta refresh (migration 0014) had its first run (10-05), and the journal is the one D1 source with a 52-issue rolling window (tens of thousands of rows hashed and compared every night, issues re-read from the KV issue cache). A Worker killed by the Cron Trigger wall-clock or CPU limit writes nothing, which matches a missing row better than a thrown error. Confirmed through the relay (/v1/health, 2026-10-07 00:20): last_refreshed_at 2026-10-04 06:18:42, i.e. 13 min 42 s after the 06:05 wave fired — already within a minute and a half of the Cron Trigger's 15-minute wall-clock, before the delta path added a hash read and compare per row; every other source refreshed on 10-06. Do: reproduce the delta path over a 52-issue fixture in the test, and either bound the per-night work (compare hashes by issue, skip unchanged issues before loading records) or split the journal's delta into chunks under the limit; add a `refresh started` row or a wave-end log line so a killed refresh is visible next time. If the auto-filer (refresh-errors-to-queue) adds a refresh-uk-trademark-journal item on 10-07, merge it into this one. — Built 2026-10-07 (burn-down): DOWNLOAD_BUDGET_MS (6 min) in streamFromOrigin — no new issue download after it, cached issues still stream to D1, the window fills over later runs; tmj_window logs elapsed_ms and download_budget_spent; test with an injected clock. A started row in refresh_log was not added: the stale reading detects a killed wave within two days.",
+      "effort_days": 0.2,
+      "proof": "an `ok` refresh_log row for uk-trademark-journal on three consecutive nights and the stale reading gone from the Daily numbers row",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
+    },
+    {
+      "id": "feeds-reading-reason",
+      "title": "`feeds 30d: n/a` in the Daily numbers row hides its reason — print `n/a (<reason>)` and fix the Analytics Engine query so the change-feed-rss proof is readable",
+      "why": "Research 2026-10-07: the 10-06 row (the first after change-feed-rss shipped) prints `feeds 30d: n/a` because the query in metrics.mjs is wrapped in `.catch(() => null)` — unlike the `cf usage` readings, which degrade to `n/a (<reason>)`. The query multiplies a comparison into a SUM (`double1 * (blob4 = 'miss')`); Cloudflare's SQL reference lists countIf/sumIf (2025-09 enhancements) as the way to express it, and COUNT(DISTINCT) is supported. Do: `sumIf(_sample_interval * double1, blob4 = 'miss')`, carry the error text into the reading, and add the three-figure line to the metrics unit test fixture if one exists. Without it the ≥ 20 user-agent proof of the keyless feeds is unreadable until the 11-05 day-30 read. — Built 2026-10-07 (burn-down): metrics.mjs computes the miss share with sumIf and a failed query prints `feeds 30d: n/a (<reason>)`; the first reading is the 10-07 06:30 row (the sandbox cannot query Analytics Engine, so the reason line is the guarantee and sumIf the expected fix).",
+      "effort_days": 0.05,
+      "proof": "`feeds 30d: N fetches, U user agents, R renders` in the Daily numbers row from the next scheduled metrics run",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
+    },
+    {
+      "id": "eu-ted-429-backoff",
+      "title": "Back off and retry on 429 from api.ted.europa.eu the way uk-contract-awards does, so a throttled page does not cost eu-ted its day",
+      "why": "Research 2026-10-07: eu-ted's refresh failed with `api.ted.europa.eu responded 429` on 10-01 and again on 10-06 (two of six nights); fetchFromOrigin throws on the first non-OK page with no retry, while uk-contract-awards retries 429/403 three times at 45 s steps since the 2026-09-21 wave. Each failure leaves the bid-intelligence bundle's EU half a day stale and a `refresh errors` entry that the auto-filer turns into an item on the second occurrence in four rows. Do: the same RETRIES/RETRY_DELAY_MS loop honouring Retry-After when present, in wave 1's budget (eu-ted shares the wave; keep the total under 15 min), with a unit test for a 429-then-200 origin. — Built 2026-10-07 (burn-down): fetchPage retries a 429 up to three times, pausing Retry-After when it is under 120 s else 20 s × attempt (≤ 2 min worst case inside wave 1); two tests (throttled-then-served, throttled throughout → fixtures fallback as before).",
+      "effort_days": 0.1,
+      "proof": "no eu-ted 429 in the refresh errors reading over 14 nights",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
+    },
+    {
+      "id": "uk-company-lookup-monitor",
+      "title": "Companies House company lookup + monitor: `uk-company-profiles` dataset (profile, status, SIC, accounts and confirmation dates, charges, filing-history events, corporate PSCs — Blind Mode, no person fields), MCP tool, Apify actor \"UK Companies House Lookup & Monitor\" with `mode: changes` over the buyer's own list of company numbers",
+      "why": "Exchange 2026-W41 winner (10.7 raw, 8.0 applied). The relay's Apify Store read (docs/relay/responses/exchange-2026-W41) is the first measurement of which UK-register data Apify users pay for: every category gankdat lists in sits at the 2-user QA floor, while Companies House lookups have 13 paid actors with 5–168 users each (scrapesage 47 users and ~50k runs in 30 days; US$0.80–4 per 1k). None of them offers a monitor (a scheduled run that returns only what changed on the buyer's list) — gankdat's change-feed machinery and the actors' changes mode (10-05) are that shape. Do: a lookup route on the Worker (`/v1/lookup/uk-company/<number>` or the dataset shape with `company_number` as the required filter; ≤ 4 Companies House API calls per company — profile, charges, filing-history, PSC corporate entities — through the existing COMPANIES_HOUSE_API_KEY at 600 req/5 min, KV-cached 24 h, metered as a dataset call, `company_url` attribution), the MCP tool, the Apify actor (input: company numbers or names; `mode: changes` diffs against the previous run's dataset stored in the actor's named key-value store and emits status/charge/accounts-overdue/filing/PSC changes with `change` + `changed_at`), README \"Monitor it\" section, pricing event `result`, schema test. Keep Blind Mode (GDPR.md LIA table: officer/PSC person fields never ingested — filing events carry the category code, not the name); person fields are parked in exchange.json (`uk-company-officers-psc`). Licence: Companies House API terms (free reuse, attribution). — Built 2026-10-07 (build): first on-demand dataset (`DataSource.lookup` + `src/sources/lookup.ts`, per-key KV cache 24 h, miss 1 h, 400 naming the keys, no wave/feed); `uk-company-profiles` reads profile + charges + filing history + PSC list (≤ 4 calls, name resolved via search), 30/min per account; MCP tool, lookup /stats page, landing card, terms row, GDPR row, server.json 0.22.0; Apify actor `uk-companies-house-lookup-monitor` with `runLookupActor` (monitor = diff against the previous run in the actor's named KV store: added/changed+changed_fields/removed); layouts verified via the relay (ch-lookup-specs); 11 tests + schema test branch for lookup actors.",
+      "effort_days": 1.5,
+      "proof": "Apify actor ≥ 5 users from other accounts in its first 30 days (`apify 30d by actor`) and ≥ 1 changes-mode run; `datasets 30d:` for uk-company-profiles above the automated floor",
+      "score": 8,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
+    },
+    {
+      "id": "docker-mcp-catalog-listing",
+      "title": "List gankdat's MCP server in the Docker MCP Catalog (PR to docker/mcp-registry: server.yaml `type: remote`, streamable-http, oauth block; tools.json empty array; readme.md with the docs link)",
+      "why": "Exchange 2026-W41 runner-up (24 raw, 8 applied: the five agent shelves open have brought ~40k keyless calls and no payer, and Docker's team reviews every PR, so no buyer within a week). Remote servers are accepted per the registry's CONTRIBUTING guide; listed servers appear in Docker Desktop's MCP Toolkit and the docker-agent catalogue with OAuth handled in the browser. Do: the three files in a fork PR from the routine's GitHub token, test access described as the keyless preview + a magic-link account via their credentials form, MARKETPLACE-PREP.md listings-log row, a `/mcp` user-agent note for the Daily numbers row if the Toolkit identifies itself. If the reviewer requires an OSS licence for the server itself, drop the item (our /terms is the answer for a remote) — do not argue it. Dated after oauth-connect-funnel-check (10-09) so the hop a reviewer clicks has been walked from a real client first.",
+      "effort_days": 0.25,
+      "proof": "PR merged and the server visible in the catalogue; ≥ 1 `/mcp` client identifying as Docker MCP Toolkit in the Daily numbers row within 30 days of listing",
+      "score": 8,
+      "status": "blocked",
+      "not_before": "2026-10-10",
+      "added": "2026-10-07",
+      "blocked_on": "the fork PR (2026-10-10 build): the entry is written and passed Docker's own `cmd/validate` (`ventures/gankdat/docs/docker-mcp-catalog/` — server.yaml, tools.json, readme.md, PR.md), but the sandbox's GitHub token is scoped to giovf/rorororo (fork and pull-request calls on docker/mcp-registry are refused) and CI's WORKFLOW_TOKEN is repo-scoped too, so the handoff of 2026-10-10 in ALERTS.md carries the exact gh commands for the interactive session; foundry `third-party-pr-relay` is the general fix. The entry ships keyless preview + optional `gankdat.api_key` secret and NO oauth block: the Toolkit signs in by RFC 7591 dynamic client registration only (mcp-gateway-oauth-helpers dcr.go: \"no registration endpoint found\"), which gankdat lacks — gankdat `oauth-dynamic-client-registration` adds it and a second PR then adds the block. Close when the PR is merged and the catalogue shows the server; if Docker insists on an OSS licence, drop (do not argue).",
+      "updated": "2026-10-10"
+    },
+    {
+      "id": "uk-company-lookup-day-30",
+      "title": "Day-30 read of the Companies House lookup + monitor: actor users/runs by others, changes-mode runs, dataset calls above the floor; decide officers/PSC (exchange `uk-company-officers-psc`), the Apify keyword pass and GeBIZ",
+      "why": "The exchange 2026-W41 parked three ideas on this reading (uk-company-officers-psc, apify-quality-score-pass, singapore-acra-gebiz). Record the numbers in RESEARCH.md against the proof of uk-company-lookup-monitor and promote or leave parked with the reason.",
+      "effort_days": 0.2,
+      "proof": "numbers recorded in RESEARCH.md; the three parked ideas promoted or re-parked with a reason",
+      "score": 3,
+      "status": "todo",
+      "not_before": "2026-11-07",
+      "added": "2026-10-07"
+    },
+    {
+      "id": "refresh-uk-trademark-journal",
+      "title": "uk-trademark-journal: refresh has failed 2 times in the last 4 days — fix the source or keep the last snapshot without an error row",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-trademark-journal under refresh errors on 2026-10-06 (no successful refresh since 2026-10-04) and 2026-10-07: no successful refresh since 2026-10-04. The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-trademark-journal.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted. Built 2026-10-07 (burn-down): relay `tmj-health-2026-10-07` / `tmj-stub-2026-10-07` — /v1/health last ok 10-04, 162,370 rows; the live generation predates migration 0014, so every night since 10-05 began the \"one last full reload\" the migration promised, swept the previous night's partial generation and was killed at the 15-minute Cron Trigger limit before any row. Fix in d1store: a resumable in-place hash backfill (`backfillHashes`, 8-min budget, `skipped` refresh_log row via migration 0015 when it hands the rest to the next night), then the delta pass; two D1 tests (hash equality on real D1, a 2,100-row budget hand-over). Also: the IPO now serves an unpublished issue's jnl.xml as 200 text/html (its Page-Not-Found page) and jnl.zip as 403 HTML — an HTML body is now a missing issue (test); the 5-day missing markers from 10-04 would have let that break the refresh on 10-09. Metrics row names a skipped run.",
+      "effort_days": 0.1,
+      "proof": "uk-trademark-journal absent from refresh errors for 7 consecutive Daily numbers rows",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-07",
+      "done_at": "2026-10-07"
+    },
+    {
+      "id": "mcp-live-probe",
+      "title": "Runner-side MCP probe: the 06:30 metrics job does initialize + tools/list + one preview tools/call against the live /mcp and writes the HTTP status into the Daily numbers row; a non-200 queues a fix like a refresh error",
+      "why": "Glama's hourly health check got 'HTTP 500 – Error connecting to MCP' on 2026-10-08 06:09 and ranked gankdat unhealthy in its directory; the 2026-09-19 Bot Fight Mode 403s were also found by Glama and CI, not by us. No sandbox can reach gankdat.com (proxy 403, relay is GET/HEAD only) and Worker logs are not read anywhere, so the build routine could not tell whether /mcp errors for real traffic or only for Glama's test profile; the ALERTS handoff waits for an attended session. A probe in the runner (it already holds CLOUDFLARE_API_TOKEN and reaches the edge) sees exactly what directories see, within a day, and the existing twice-in-four-rows rule queues the fix. Optional second probe with a GANKDAT_PROBE_KEY secret covers the authed path Glama's key takes. Built 2026-10-08 (build): scripts/mcp-probe.ts + metrics.mjs reading + docs/ci/gankdat-metrics.yml step; refresh-errors-to-queue files `refresh-mcp-probe` with probe wording.",
+      "effort_days": 0.3,
+      "proof": "mcp probe: 200/200/200 in every Daily numbers row; a Glama unhealthy mail is preceded by a non-200 row",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-08",
+      "done_at": "2026-10-08"
+    },
+    {
+      "id": "wave-log-reading",
+      "title": "Read last night's Worker log lines for every stale or erroring source from the metrics runner (Workers observability query API), so a wave killed at the 15-minute limit leaves a trace",
+      "why": "Research 2026-10-09: uk-trademark-journal's wave 7 has written no refresh_log row since 10-04 06:18 (/v1/health through the relay at 00:16 on 10-09: age 114 h), including the night after the 10-07 resumable backfill (deployed 17:36, run 37660375524 green), which should have left an `ok` or a `skipped` row inside its 8-min budget — the 10-08 row shows neither. Two silent wave deaths in five days (10-05..07, 10-08) each cost a research pass and a relay to guess at; the sandbox cannot read Worker logs, while the metrics runner holds CLOUDFLARE_API_TOKEN and wrangler.jsonc has observability on. Do: in scripts/runner-refresh.mjs (or a sibling run from the same step), for each source with no `ok` row in 26 h or an error row today, POST the Workers observability telemetry query (`/accounts/{id}/workers/observability/telemetry/query`, dataset cloudflare-workers, service gankdat, the slug in the message, last 24 h) and print the last 20 events (timestamp, level, message, the tmj_window fields) into the job log and `dist/wave-logs.json`; the Daily numbers row gains `wave log: <slug> <last event> <age>`, `n/a (<reason>)` when the token lacks the observability scope (then one ALERTS owner line names the scope to add). Also correct the runner-refresh comment: facet pages exist only for the journal (45 Nice classes; the sitemap has 62 /stats URLs), so `indexnow: 15 urls` is one URL per refreshed source, not a KV fault. Tests on a mocked query response. — Built 2026-10-09 (burn-down): src/lib/wave-logs.ts (query body, tolerant parse of the Query Builder response, one-line reading; 6 tests), runner-refresh.mjs readWaveLogs after the IndexNow step, metrics.mjs `wave log: …`; the runner comment corrected (facets only on the journal). The first scheduled run shows the response shape and whether the deploy token carries the observability scope.",
+      "effort_days": 0.3,
+      "proof": "the first Daily numbers row after a stale source names the Worker's last log line for it, and the journal's cause is read from it instead of guessed",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-09",
+      "done_at": "2026-10-09"
+    },
+    {
+      "id": "uk-tenders-429-backoff",
+      "title": "Back off and retry on 429 from find-tender.service.gov.uk the way eu-ted and uk-contract-awards do",
+      "why": "Research 2026-10-09: the 10-08 row lists `uk-tenders (find-tender.service.gov.uk responded 429)` — the first throttled night for Find a Tender; /v1/health shows the source refreshed at 05:02:01 the same morning (a later attempt served), so the day was not lost, but fetchFromOrigin in uk-tenders.ts has no retry at all while eu-ted (built 10-07) and uk-contract-awards retry. Do: the same fetchPage loop — up to three retries, Retry-After when under 120 s else 20 s × attempt, inside wave 1's budget — and a test for a 429-then-200 origin. — Built 2026-10-09 (burn-down): fetchPage retries a 429 up to three times, pausing Retry-After when it is under 120 s else 20 s × attempt (≤ 2 min worst case inside wave 1); two tests (throttled-then-served with Retry-After honoured, throttled throughout → fixtures fallback as before).",
+      "effort_days": 0.1,
+      "proof": "no uk-tenders 429 in the refresh errors reading over 14 nights",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-09",
+      "done_at": "2026-10-09"
+    },
+    {
+      "id": "probe-key-from-runner",
+      "title": "Authed MCP probe without an owner secret: the metrics runner mints a one-run probe key in D1, probes with it, deletes it",
+      "why": "Research 2026-10-09: the 10-08 row's `mcp probe` reads `authed: n/a (no GANKDAT_PROBE_KEY)` — the keyed path (the one Glama's test profile and every paying client use) is never probed, and a GANKDAT_PROBE_KEY repository secret is an owner action. api_keys stores only the SHA-256 of a key (migration 0002), and the runner already writes D1 through the REST API, so it can generate a random key per run, insert its hash for an internal probe account (`probe@gankdat.com`, excluded from the accounts reading like the other internal addresses), run the three authed calls, then delete the row — no secret, no owner. Do: scripts/mcp-probe.ts takes the key from runner-refresh's hand-off (or mints it itself with CLOUDFLARE_API_TOKEN), the row reads `authed: init 200, tools 200, call 200`; a leftover row from a killed run is deleted on the next run; tests for mint/delete and the exclusion. Built 2026-10-09 (burn-down): mcp-probe.ts mints the key itself (`withProbeKey`: GANKDAT_PROBE_KEY wins, else mint with CLOUDFLARE_API_TOKEN, probe, delete the D1 row and the Worker's `key:<hash>` KV copy in a finally; the next mint sweeps a killed run's row), a failed mint reads `authed: n/a (mint failed: …)` and lists under refresh errors; the probe step gets CLOUDFLARE_API_TOKEN in docs/ci/gankdat-metrics.yml (installer moves it); metrics.mjs skips the probe's user agent in the MCP 24h, change-feed and datasets-30d traffic counts. 8 tests. Push runs mint too (three cheap REST calls), so the fill row carries the reading as well.",
+      "effort_days": 0.2,
+      "proof": "the Daily numbers row carries an authed probe reading every day with no new repository secret",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-09",
+      "doing_since": "2026-10-09",
+      "done_at": "2026-10-09"
+    },
+    {
+      "id": "refresh-uk-trademark-journal-2026-10-09",
+      "title": "uk-trademark-journal: refresh has failed 2 times in the last 4 days — fix the source or keep the last snapshot without an error row",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-trademark-journal under refresh errors on 2026-10-08 (no successful refresh since 2026-10-04); search: n/a (no SEARCH_CONSOLE_KEY secret; owner action 020) and 2026-10-09: no successful refresh since 2026-10-04 after the fix of refresh-uk-trademark-journal (2026-10-07). The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-trademark-journal.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted. Built 2026-10-09 (build): the first wave-log reading showed no line from the 06:05 wave at all, only request lines; reproduced offline — the hash backfill's page UPDATE (`UPDATE … FROM` a json_each subquery) made SQLite walk all 162k rows and scan the 2,000 entries for each, 200 s a page in SQLite and longer on D1, so the wave was killed before the budget check between pages could write the skipped row. Fix in d1store: the entries are a MATERIALIZED CTE, so SQLite loops over them and probes rows by primary key (0.03 s a page; plan asserted on D1 in the spec); a backfill that throws writes an error row; a backfill over 3 min hands the delta to the next night (BACKFILL_HANDOVER_MS). The origin was never the problem: no request reached the IPO on 10-08/10-09. Expect a skipped-then-ok pair of rows by 10-11.",
+      "effort_days": 0.1,
+      "proof": "uk-trademark-journal absent from refresh errors for 7 consecutive Daily numbers rows",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-09",
+      "done_at": "2026-10-09"
+    },
+    {
+      "id": "oauth-dynamic-client-registration",
+      "title": "RFC 7591 dynamic client registration for the OAuth server: `/register` (public clients, PKCE, redirect_uris stored), `registration_endpoint` in the RFC 8414 metadata, `/authorize` accepting a registered client_id beside a CIMD URL",
+      "why": "Found building the Docker MCP Catalog entry (2026-10-10): Docker's gateway starts OAuth for a remote server only through RFC 7591 — `PerformDCR` fails with \"no registration endpoint found\" when the RFC 8414 document has none (docker/mcp-gateway, vendor/github.com/docker/mcp-gateway-oauth-helpers/dcr.go:121) — and Cursor, ChatGPT and VS Code register clients the same way; only Claude uses client-id metadata documents, so the 2026-09-30 OAuth hop works for Claude alone and the Docker entry ships without an `oauth` block. Build: a D1 table (or KV, 30-day TTL) of registered public clients keyed by a random client_id with client_name, redirect_uris (https or loopback, same rules as CIMD), `token_endpoint_auth_method: none`; `/register` rate-limited per IP like /authorize; `/authorize` and `/token` resolve a registered id first, then CIMD; consent page names the registered client_name; `oauth_funnel` points carry the client kind. Then a second docker/mcp-registry PR adds `oauth: [{provider: gankdat, secret: gankdat.personal_access_token, env: GANKDAT_PERSONAL_ACCESS_TOKEN}]` and the Toolkit handles sign-in in the browser. Effort 0.5 day, 0 owner minutes.",
+      "effort_days": 0.5,
+      "proof": "a `token` step in the Daily numbers row's `oauth funnel 7d` for a client host other than claude.ai within 30 days of deploy; the Docker entry's oauth block merged",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-10"
     }
   ]
 }

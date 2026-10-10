@@ -1,0 +1,691 @@
+{
+  "data": {
+    "total": 225,
+    "count": 10,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "Immoweb Scraper — Belgium Real Estate, Prices, EPC | $1.19/1K",
+        "name": "immoweb-properties-scraper",
+        "username": "bovi",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 124,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T09:58:42.898Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 1,
+            "TOTAL": 28
+          }
+        },
+        "description": "Scrape Immoweb (Belgium #1 real estate portal) by operation + location. Returns title, price, operation, property type, bedrooms, living area m², EPC/energy rating, location/postcode, agency/owner, features, URL, image URLs, and id.",
+        "categories": [
+          "REAL_ESTATE",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/UOdZBN2OZj2E04ArThKp83-V1DF0EED2u8CnXlJoaS4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNXpaSmFydGROVHpHcDZ1VTktYWN0b3ItcTVoNzJvMzRnbFV5cXVaMlUtT0FTcWtETTNYcS1pbW1vd2ViLXByb3BlcnRpZXMtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Vitalii Bondarev",
+        "userPictureUrl": "https://images.apifyusercontent.com/366A2-rL_Tsix1Ca4RkV0mSisG_m99hKsvrk4FhsOv0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNXNYbDRtMlFubGhoaGhLYVY3YkphQWc0SEFmTXpfeGdSME5mSXJqdVFoRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTamxqYmpkeFVVNTVYMEk1UjFObWNWWmthbUpMTlVaeE1XczVjMkZtT1d0T2VVOXRWa0pNTWxRNWJIZDRSMmxCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-06-20T06:26:25.524Z",
+          "startedAt": "2026-06-20T06:26:25.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "property-item": {
+                "eventTitle": "Property",
+                "eventDescription": "One property with all fields (price, EPC, bedrooms, surface m2, locality, type, images).",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00119
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0011781
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0011662
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0011543
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0011424
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0011305
+                  }
+                }
+              }
+            }
+          }
+        },
+        "id": "q5h72o34glUyquZ2U",
+        "url": "https://apify.com/bovi/immoweb-properties-scraper"
+      },
+      {
+        "title": "Rightmove Scraper — Price History, Agent Contacts & EPC",
+        "name": "rightmove-scraper",
+        "username": "haketa",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 138,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-06T03:47:09.555Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 37,
+            "TIMED-OUT": 0,
+            "TOTAL": 37
+          }
+        },
+        "description": "Scrape Rightmove UK largest property portal via Next.js JSON extraction. Buy, rent, sold, commercial & overseas listings with price history (reduced/new), agent phone, tenure, floorplans, EPC and full descriptions. Pure HTTP, no proxy or login needed.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/pwhWBoBb3QnAYLmgKyr5mpKwAKXp3FfkhAdJ0_lq10Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaExlVmUxWExQbE80b3htaXotYWN0b3ItNUVPUE1rVmJhbzdCMnNrczctZGNqY2diTVlkay1JTUdfMDI0NS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Haketa",
+        "userPictureUrl": "https://images.apifyusercontent.com/v3INZBe8i9FXs3yDWNyES48f4AFPoPUh94BdLRQfLb4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT284Rms2eVdKT3A0OG9NOUxmeDExWGppY1VhNm5sbTJkZzhQdl9NcXRHRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhRXhsVm1VeFdFeFFiRTgwYjNodGFYb3RjSEp2Wm1sc1pTMUJUREpzTUdRMlQzRktMVmRvWVhSelFYQndYMGx0WVdkbFh6SXdNall0TURRdE1UUmZZWFJmTVRjdU5ETXVNVGN1YW5CbFp3LmpwZWc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0023
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-07-26T12:59:40.506Z",
+          "createdAt": "2026-07-12T12:59:40.882Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-12T13:00:01.125Z",
+          "notifiedAboutChangeAt": "2026-07-26T13:05:36.633Z"
+        },
+        "id": "5EOPMkVbao7B2sks7",
+        "url": "https://apify.com/haketa/rightmove-scraper"
+      },
+      {
+        "title": "Belgium EPC Distress Leads — E/F/G Energy-Sieve Property Feed",
+        "name": "belgium-epc-distress-leads",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 180,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T10:22:49.927Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 3,
+            "SUCCEEDED": 22,
+            "TIMED-OUT": 1,
+            "TOTAL": 26
+          }
+        },
+        "description": "Find EPC E, F and G property listings (energy sieves) in Belgium. Runs Immoweb, 2dehands, Immovlan and Zimmo, keeps only energy-sieve listings, attaches a region-specific renovation-obligation urgency flag (Flanders/Wallonia/Brussels), dedupes across portals, and flags private-owner vs agency.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/sihE4eMNshNb3bWQ-HNk1YoPMa6gD-94LVAblm00LqU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3Itc2RSWjlGdmpKclNIWGJ0WjgtZkpUa0IzT0RJay1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-24T14:38:04.000Z",
+          "reasonForChange": "Switching to automatic per-result billing",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.005,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0012
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-24T14:33:04.745Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "sdRZ9FvjJrSHXbtZ8",
+        "url": "https://apify.com/studio-amba/belgium-epc-distress-leads"
+      },
+      {
+        "title": "UK EPC Register Scraper - Energy Certificates",
+        "name": "uk-energy-certificate-scraper",
+        "username": "automation_craft",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 76,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T05:58:48.241Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search the official UK energy certificate register by postcode, street or certificate number, no account needed. Get EPC, CEPC, DEC and AC certificates with ratings, floor area, energy use, CO2, improvement steps and assessor contacts. Covers England, Wales and NI. Export CSV or JSON, pay per row.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/cr6QGHnABLL4WN28eqO_M0eADN_X0BZYR84paGLd9KA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vVzE2M0hGU1FseEpTV0hCR0stYWN0b3ItSVdRSkJPbEJwelM5VVZzcFYteXZiZkRqMVAzRS1lcGMtaWNvbi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Automation Craft",
+        "userPictureUrl": "https://images.apifyusercontent.com/oDx_o4RspeDKeBgzghZVUfUK8n3VPgp9qwqxtcXFAdU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vLVIyTnd2eG1VSjdHb0tQbml3UVFnWkQwOEl6WS1XWUEwME5YMGpIS0h4US9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMFJaTTNOVFJuQnFOWFo1Tm5aNFltaHVYMmRNYzJ0R1VXRlBVMUZwUWtNeFdrb3RORmROWldKMFNYTlNhbGxu.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": null,
+          "reasonForChange": "Event descriptions now state that the Store figure is per 1,000 and give the per-item price. No price change.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "search-result": {
+                "eventTitle": "Search result",
+                "eventDescription": "One certificate row from a postcode or street search: address, current rating, certificate type, valid-until date and the certificate link.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0008
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "certificate-detail": {
+                "eventTitle": "Certificate",
+                "eventDescription": "One fully parsed certificate: current and potential rating and score, floor area, energy use, CO2, improvement steps with cost ranges and assessor contacts. The figure shown is per 1,000 certificates. One certificate costs half a cent or less.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0045
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004
+                  }
+                }
+              }
+            }
+          },
+          "isPriceChangeNotificationSuppressed": true,
+          "createdAt": "2026-09-16T14:44:03.704Z",
+          "startedAt": "2026-09-16T14:44:03.704Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "IWQJBOlBpzS9UVspV",
+        "url": "https://apify.com/automation_craft/uk-energy-certificate-scraper"
+      },
+      {
+        "title": "EPC SEPA SCT BIC Portfolio Status Monitor",
+        "name": "eu-epc-sepa-sct-bic-portfolio-status-monitor",
+        "username": "plym-actor-factory",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 8,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T12:06:54.941Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 5,
+            "TIMED-OUT": 0,
+            "TOTAL": 5
+          }
+        },
+        "description": "Watch EPC SEPA Credit Transfer (SCT) participant BICs; emit APPEARED/DROPPED/LEAVING_CHANGED/OPTIONS_CHANGED and attribute events from the official EPC SCT Register of Participants CSV. Not a VOP twin; not an EBA PSD2 twin; not an IBAN validator; not a full SCT dump billed as rows.",
+        "categories": [
+          "AI",
+          "AUTOMATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Daniel Witney",
+        "userPictureUrl": "https://images.apifyusercontent.com/P1uggaJ7WUFX8y3NrHxjb6YlIKQ8XuxpF2i0jUYVCWg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN19fN2wxWmJhbXJnZmZEODJmb19XM1BoaWxOb2hpNnMzWkMwRE54clI3QS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TXhNVEl6TlRBNU5EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Initial PPE Phase 3 #66 EPC SEPA SCT BIC portfolio (private)",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "epc-sepa-sct-status-event-delivered": {
+                "eventTitle": "EPC SEPA SCT status event delivered",
+                "eventDescription": "Charged once per unique watched EPC SEPA SCT BIC membership/leaving/options/attribute event successfully pushed. Never charged for RUN_STATUS, baselines, quiet books, invalids, duplicates, retries, or fixture health runs. Not a VOP twin.",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-09-24T03:41:22.436Z",
+          "startedAt": "2026-09-24T03:41:22.436Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "jWOfaCzq49seJ9T7K",
+        "url": "https://apify.com/plym-actor-factory/eu-epc-sepa-sct-bic-portfolio-status-monitor"
+      },
+      {
+        "title": "EPC SEPA VOP BIC Portfolio Status Monitor",
+        "name": "eu-epc-sepa-vop-bic-portfolio-status-monitor",
+        "username": "plym-actor-factory",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 8,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T12:06:53.740Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 5,
+            "TIMED-OUT": 0,
+            "TOTAL": 5
+          }
+        },
+        "description": "Watch EPC SEPA Verification of Payee (VOP) participant BICs; emit APPEARED/DROPPED/STATUS_CHANGED/ROLE_CHANGED/LEAVING_CHANGED and attribute events from the official EPC VOP Register of Participants CSV. Not an EBA PSD2 twin; not an IBAN validator; not a full VOP dump billed as rows.",
+        "categories": [
+          "AI",
+          "AUTOMATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Daniel Witney",
+        "userPictureUrl": "https://images.apifyusercontent.com/P1uggaJ7WUFX8y3NrHxjb6YlIKQ8XuxpF2i0jUYVCWg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN19fN2wxWmJhbXJnZmZEODJmb19XM1BoaWxOb2hpNnMzWkMwRE54clI3QS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TXhNVEl6TlRBNU5EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "x",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "epc-sepa-vop-status-event-delivered": {
+                "eventTitle": "EPC SEPA VOP status event delivered",
+                "eventDescription": "x",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-09-24T03:32:37.606Z",
+          "startedAt": "2026-09-24T03:32:37.606Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "UpU045JFXJfla6ial",
+        "url": "https://apify.com/plym-actor-factory/eu-epc-sepa-vop-bic-portfolio-status-monitor"
+      },
+      {
+        "title": "UK Property Data API - EPC, Comps, Council Tax, Flood Risk",
+        "name": "uk-property-data-api",
+        "username": "nabeelbaghoor",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 22,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-06T07:48:39.990Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 20,
+            "TIMED-OUT": 0,
+            "TOTAL": 20
+          }
+        },
+        "description": "Look up any of 30 million UK homes by UPRN: price and rent estimates with gross yield, land registry sale history and tenure, EPC ratings and scores, council tax band and cost, flood and coastal risk, title and plot, broadband and mobile coverage, comparable listings and the seller disclosure pack.",
+        "categories": [
+          "REAL_ESTATE",
+          "BUSINESS",
+          "OTHER"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Nabeel Hassan",
+        "userPictureUrl": "https://images.apifyusercontent.com/N5BXXkDuLbfeQd4735e15yPK_0fc0r_frdtpeslpm3E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vb3ZmR29HSVVnR29BT05RYWw4Tk4xdHNoTzNreTl4b2tzY0kwUm9EY0RqYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbll5ZDJWT04zZGhYMmRpWldJek1teHVPRWd5UVUxUlRGUnhOUzF2ZGpGRWMxWk1MVTR6VUdzMWVYUmtUakpSV21ROWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "address-match": {
+                "eventTitle": "Address matched",
+                "eventDescription": "Charged once for each UK address matched to a free text phrase or listed inside a postcode: the UPRN, the full address broken into flat, building, street, town and postcode, the local authority and dependent locality, the Ordnance Survey classification code and its description, latitude and longitude, eastings and northings, and the provider's own match score so a partial address gives you ranked candidates rather than a guess. Phrases and postcodes that match nothing are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "property-record": {
+                "eventTitle": "Property record returned",
+                "eventDescription": "Charged once for each property read in full: the address, UPRN, coordinates and grid reference, property type and classification, bedrooms, bathrooms, receptions and floor area, the model price estimate, rent estimate and gross yield alongside the land registry value and the last recorded sale price and date, tenure and title number, council tax band with its monthly and annual cost, current and potential EPC ratings and scores with the certificate number and date, flood risk from rivers and seas and from surface water, coastal erosion and conservation area status, plot area, broadband speeds at three tiers and indoor mobile coverage for four networks. UPRNs the provider does not recognise are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": false
+              },
+              "material-information": {
+                "eventTitle": "Material information pack returned",
+                "eventDescription": "Charged once for each seller disclosure pack: tenure with lease term remaining, ground rent and its review period, service charge and deposit, construction type and whether it is non-standard, main heating, radon risk, plot size, floor level, parking and its cost and proximity, listed building and conservation status, greenbelt, area of outstanding natural beauty, national park and common land, restrictive covenants with their details, coalfield and coastal erosion flags, pylon and tree order proximity, reservoir risk on wet and dry days, flood depth bands for surface water and for rivers and seas in both the present day and future horizons, building safety, and the accessibility features. Properties with no pack are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": false
+              },
+              "comparable-listing": {
+                "eventTitle": "Comparable listing returned",
+                "eventDescription": "Charged once for each comparable listing near a property: its UPRN and full address, the price with its formatted display, property type, bedrooms and tenure, the listing status alongside the status that was asked for, the listing, withdrawal, sold subject to contract and let agreed dates, time on market, distance from the subject in miles, floor area in feet and metres, price per square foot, the listing agent, how many images and floorplans it carries, links to the listing on each portal and a street view link. Properties with no comparables in that status are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.008,
+                "isPrimaryEvent": false
+              },
+              "sold-comparable": {
+                "eventTitle": "Registered sale returned",
+                "eventDescription": "Charged once for each completed sale recorded at the land registry near a property: the address and postcode, the registered price and the date it sold, property type, bedrooms and tenure, coordinates, distance from the subject, floor area in feet and metres, price per square foot and a street view link. These are registered transactions rather than marketing states, and they are kept in their own row type for that reason. Properties with no recorded sales nearby are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.008,
+                "isPrimaryEvent": false
+              },
+              "school-record": {
+                "eventTitle": "School returned",
+                "eventDescription": "Charged once for each school near the property: its name, Ofsted rating, pupil count, the phases it teaches from nursery through college and whether it is private, its distance from the property and its coordinates. Properties with no school data are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": false
+              },
+              "transport-record": {
+                "eventTitle": "Transport link returned",
+                "eventDescription": "Charged once for each transport link near the property, flattened out of the provider's six groups so rail stations, bus stops, ferry terminals, trunk roads, airports and local connections sit in one sortable list with the group, the link name, the distance and the coordinates. Properties with no transport data are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": false
+              },
+              "tree-order-record": {
+                "eventTitle": "Tree preservation order returned",
+                "eventDescription": "Charged once for each tree preservation order around the property, with its order reference, the species it protects and its coordinates. Properties with no orders nearby are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": false
+              },
+              "listed-building-record": {
+                "eventTitle": "Listed building returned",
+                "eventDescription": "Charged once for each listed building around the property, with its name, its listing grade and the date it was listed, and its coordinates. Properties with no listed buildings nearby are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": false
+              },
+              "insider-listing": {
+                "eventTitle": "Insider listing returned",
+                "eventDescription": "Charged once for each property seen on the market across a postcode outcode: the address and UPRN with the provider's match confidence, the asking price, the agent, property type, listing status, bedrooms and tenure, whether it is a new build and whether it is sold subject to contract, the key features and description, when it was first scanned and submitted, the withdrawal date on the withdrawn feed, the coordinates and links to the listing on each portal. Outcodes with no listings are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.006,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-09-13T21:48:40.913Z",
+          "startedAt": "2026-09-13T21:48:40.913Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "8ovwMc30ZqJgX6z8o",
+        "url": "https://apify.com/nabeelbaghoor/uk-property-data-api"
+      },
+      {
+        "title": "UK Property Market Data API - Prices, Rents, Yields, EPC",
+        "name": "uk-property-market-data-api",
+        "username": "nabeelbaghoor",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 16,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-05T13:05:08.576Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 15,
+            "TIMED-OUT": 0,
+            "TOTAL": 15
+          }
+        },
+        "description": "Read UK property data by postcode, coordinates, what3words or town: asking and sold prices, rents, yields, growth and demand, planning applications, listed buildings, flood risk, EPC ratings, UPRNs, title ownership and leases, sale and rental valuations, and investment sourcing lists.",
+        "categories": [
+          "REAL_ESTATE",
+          "BUSINESS",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Nabeel Hassan",
+        "userPictureUrl": "https://images.apifyusercontent.com/N5BXXkDuLbfeQd4735e15yPK_0fc0r_frdtpeslpm3E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vb3ZmR29HSVVnR29BT05RYWw4Tk4xdHNoTzNreTl4b2tzY0kwUm9EY0RqYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbll5ZDJWT04zZGhYMmRpWldJek1teHVPRWd5UVUxUlRGUnhOUzF2ZGpGRWMxWk1MVTR6VUdzMWVYUmtUakpSV21ROWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "market-record": {
+                "eventTitle": "Local market record returned",
+                "eventDescription": "Charged once for each local area reading: asking prices, sold prices, long let and HMO rents, rental yields, capital growth, sales and rental demand, price per square foot, estate agent market share, build and rebuild costs, flood risk, conservation area and green belt checks, crime, demographics, income, population, council tax, internet speed and property stock by type or tenure. One row is a complete answer about one area. Locations the provider holds no data for are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.012,
+                "isPrimaryEvent": true
+              },
+              "property-record": {
+                "eventTitle": "Property or valuation record returned",
+                "eventDescription": "Charged once for each single property answer: a property by its UPRN with its address parts, coordinates, use class and registered leases with their remaining years, a title number matched to a UPRN, a title with its address, type, ownership and lease information, an address matched to its UPRN, and sale, rental, HMO and historical valuations with the provider's estimate, margin and confidence. Priced above an area reading because one row is about one property rather than a neighbourhood.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.018,
+                "isPrimaryEvent": false
+              },
+              "list-record": {
+                "eventTitle": "List record returned",
+                "eventDescription": "Charged once for each record in a list answer: one planning application, one listed building, one freehold title, one UPRN, one EPC rating, one known floor area, one HMO register entry, one nearby school or one sourced investment property. Priced well below an area reading because a single request commonly returns dozens of these. Requests the provider returns nothing for are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": false
+              },
+              "account-record": {
+                "eventTitle": "Account record returned",
+                "eventDescription": "Charged once for reading your own provider account: credits used and credits remaining on your plan. This is free at the provider and costs no credits there, so it is priced near zero here: checking what you have left before spending it should not itself cost anything worth counting.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-09-20T12:06:00.351Z",
+          "startedAt": "2026-09-20T12:06:00.351Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "FBa2aVpPmCkSbegDb",
+        "url": "https://apify.com/nabeelbaghoor/uk-property-market-data-api"
+      }
+    ]
+  }
+}

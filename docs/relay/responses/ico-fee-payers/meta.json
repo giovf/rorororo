@@ -1,0 +1,84 @@
+{
+  "request": "ico-fee-payers",
+  "fetched_at": "2026-10-08T17:19:54.547Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://ico.org.uk/about-the-ico/what-we-do/register-of-fee-payers/download-the-register/",
+      "fetched_at": "2026-10-08T17:19:52.899Z",
+      "status": 200,
+      "final_url": "https://ico.org.uk/about-the-ico/what-we-do/register-of-fee-payers/download-the-register/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://ico.org.uk/about-the-ico/what-we-do/register-of-fee-payers/download-the-register/",
+      "fetched_at": "2026-10-08T17:19:53.312Z",
+      "status": 200,
+      "final_url": "https://ico.org.uk/about-the-ico/what-we-do/register-of-fee-payers/download-the-register/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 30490,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://ico.org.uk/about-the-ico/what-we-do/register-of-fee-payers/",
+      "fetched_at": "2026-10-08T17:19:53.708Z",
+      "status": 200,
+      "final_url": "https://ico.org.uk/about-the-ico/what-we-do/register-of-fee-payers/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 35146,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/uksignals/ico-signals",
+      "fetched_at": "2026-10-08T17:19:53.847Z",
+      "status": 200,
+      "final_url": "https://apify.com/uksignals/ico-signals",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"11qwj32cwci9hzc\""
+      },
+      "file": "4.html",
+      "bytes": 443253,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/uksignals/ico-signals/pricing",
+      "fetched_at": "2026-10-08T17:19:54.276Z",
+      "status": 200,
+      "final_url": "https://apify.com/uksignals/ico-signals/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"16jxo72s0km99sv\""
+      },
+      "file": "5.html",
+      "bytes": 432656,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/spookyweb/uk-ico-enforcement-actions",
+      "fetched_at": "2026-10-08T17:19:54.442Z",
+      "status": 404,
+      "final_url": "https://apify.com/spookyweb/uk-ico-enforcement-actions",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"qbq8m1wp803kln\""
+      },
+      "file": "6.html",
+      "bytes": 166680,
+      "truncated": false
+    }
+  ]
+}

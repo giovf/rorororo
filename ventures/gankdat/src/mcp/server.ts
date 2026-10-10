@@ -27,6 +27,7 @@ import {
 import type { PreviewContext } from './preview';
 import { z } from 'zod';
 import { buildQuerySchema } from '../sources/query';
+import { missingLookupKey } from '../sources/lookup';
 import { queryD1Changes } from '../sources/d1store';
 import { changeFiltersSchema, changesQuerySchema } from '../routes/changes';
 import { querySource } from '../sources/store';
@@ -162,6 +163,7 @@ function sourceListing(): Record<string, unknown>[] {
     supported_params: [...Object.keys(source.queryParams.shape), 'q'],
     credit_cost: source.creditCost ?? 1,
     change_feed: hasChangeFeed(source) ? 'get_changes' : null,
+    lookup: source.lookup ? [...source.lookup.keys] : null,
   }));
 }
 
@@ -178,11 +180,13 @@ function registerQueryTool(
     toolName,
     {
       title: source.title,
-      description: `${source.description} Filters combine with AND; q searches all text fields. Costs ${creditCost(source)} credit(s) per call with an API key; without one, a preview of up to ${PREVIEW_ROWS} rows (${PREVIEW_CALLS_PER_DAY} calls/day).`,
+      description: `${source.description} ${source.lookup ? `One record per call, named by ${source.lookup.keys.join(' or ')} (e.g. ${JSON.stringify(source.lookup.example)}).` : 'Filters combine with AND; q searches all text fields.'} Costs ${creditCost(source)} credit(s) per call with an API key; without one, a preview of up to ${PREVIEW_ROWS} rows (${PREVIEW_CALLS_PER_DAY} calls/day).`,
       inputSchema: schema.shape,
       annotations: { ...READ_ONLY, title: source.title },
     },
     async (args: Record<string, unknown>): Promise<ToolResult> => {
+      const missing = missingLookupKey(source, args);
+      if (missing) return errorResult(missing);
       const gate = await gateDataCall(env, keyCtx, preview, source, toolName);
       if (gate.kind === 'denied') return errorResult(gate.message);
 

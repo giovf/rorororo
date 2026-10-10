@@ -2,7 +2,8 @@
   "venture": "variables-toolkit",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-04",
+  "updated": "2026-10-07",
+  "researched": "2026-10-05",
   "items": [
     {
       "id": "day-7-review",
@@ -29,7 +30,7 @@
     {
       "id": "day-30-review",
       "title": "Day-30 review (2026-10-21): views, installs, purchases and search rank of the v2 listing against the §1 benchmark",
-      "why": "RESEARCH.md §7 checkpoint. Re-run the vt-day7 relay request as vt-day30 and compare ranks; ≥ 100 views and ≥ 10 installs is the day-30 target set in review 2026-W39. If still under 20 views the channel is the problem: next lever is a free Community file (playground) that links the plugin, since free resources are indexed and surfaced far more than paid plugins. If installs but no purchases: pricing/description problem, fix the listing again before any v0.2 feature.",
+      "why": "RESEARCH.md §7 checkpoint. Re-run the vt-day7 relay request as vt-day30 and compare ranks; ≥ 100 views and ≥ 10 installs is the day-30 target set in review 2026-W39. If still under 20 views the channel is the problem: next lever is a free Community file (playground) that links the plugin, since free resources are indexed and surfaced far more than paid plugins. If installs but no purchases: pricing/description problem, fix the listing again before any v0.2 feature. Amended 2026-10-05 (RESEARCH.md §10): the day-10 search bodies show purchase_count 0 for every paid variables plugin launched in 2026 (nine listings, two of them with 1,480 and 212 users), so zero purchases at day 30 is the shelf's norm for a paid newcomer, not a $12 signal — read the free companion's installs and the listing's views first, and treat pricing as a question only once installs exist.",
       "effort_days": 0.3,
       "proof": "§7 day-30 row filled with views/installs/purchases/ranks; decision written (keep / relist again / playground file / kill 2026-12-20)",
       "score": 4,
@@ -102,6 +103,40 @@
       "status": "blocked",
       "blocked_on": "owner publishes the file (ALERTS 2026-10-02, action 017) and gives its Community URL",
       "added": "2026-10-02"
+    },
+    {
+      "id": "relink-howto-page",
+      "title": "apps.gankdat.com/figma-relink-variables.html: a Google-facing how-to for 'figma variables broken after moving a file / swap library / relink variables to library', answered by the Relink tab",
+      "why": "RESEARCH.md §10: five Figma forum threads (44372, 48877, 19012, 62854, 11143) ask the same thing — layers stuck on an old library's variables after a file move or a library swap, 'local variables are all broken' — and the only workaround named is a third-party plugin; Figma's help offers nothing past 'swap library'. The comparison page already proves Search Console indexes this host for the extensions and the toolkit. Honest page: what Relink does (local or unpublished → enabled library, same name and type), what it does not (text, effect, alias bindings), $12 once, refund linked, install button; linked from the comparison page and the landing card; sitemap entry. Evidence 2 (threads, no volumes) × reach 2 (Google) ÷ 0.3 days. Done 2026-10-05 (burn-down, same run): apps.gankdat.com/figma-relink-variables.html — what breaks (file copied out of a team, library swap, renamed or duplicated collection), why 'swap library' and 'Detach deleted variables' do not fix it, the four Relink steps, the honest limits (solid paints + the twelve number fields; text/effect/alias not moved; one file; 25-a-day free), $12 once and the refund; states plainly that Relink ships with the next published version. Sitemap entry, landing card link, and the comparison page's stale 'no relinking yet' bullet replaced with the same statement.",
+      "effort_days": 0.3,
+      "proof": "≥ 20 Search Console impressions and ≥ 1 click-through to the listing by 2026-12-05",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "relink-to-local",
+      "title": "Relink direction switch: move library bindings onto the local variable with the same name and type (the forum's 'remap library variables to local variables' request)",
+      "why": "RESEARCH.md §10: forum feature request 44372 and threads 48877/11143 ask for the reverse of what the Relink tab ships in action 019 — a copied-out file, or a team leaving a shared library, wants layers on local variables again; the 'Swap Variables' workaround plugin is what people are pointed at. The planner in src/core/relink.ts already matches by trimmed name and resolved type; the local direction swaps the catalogue (local collections) for the library read and rebinds with the same site walker. Built before the owner republishes (019) it rides that version at zero extra owner minutes; otherwise it waits for the next version. Evidence 2 × reach 2 ÷ 0.5 days.",
+      "effort_days": 0.5,
+      "proof": "≥ 1 comment or purchase naming relink-to-local within 30 days of the version going live",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
+    },
+    {
+      "id": "search-rank-relink-queries",
+      "title": "Track 'relink variables', 'swap variables' and 'library variables' in the 06:45 store-metrics rank series (STORE.md Search rank queries)",
+      "why": "RESEARCH.md §10: the Relink tab (019) and the relink-to-local item target the forum's relink/swap asks, and the day-30 review (2026-10-21) needs the rank series from before the tag goes live, not a snapshot read by hand; scripts/store-metrics.ts reads the query list from STORE.md, so this is a one-line change that the next 06:45 row picks up. Evidence 2 × reach 1 ÷ 0.05 days.",
+      "effort_days": 0.05,
+      "proof": "three more rank: fields on every Daily check row from the next morning on",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-05",
+      "done_at": "2026-10-05"
     }
-  ]
+  ],
+  "research_after": "2026-10-21"
 }

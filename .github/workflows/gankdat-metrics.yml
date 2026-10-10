@@ -2,9 +2,12 @@ name: gankdat metrics
 
 # GitHub's cron is best-effort (the 06:30 slot was skipped on 2026-09-22), so the job also runs
 # on pushes to main, where it only writes a row if today's is missing (METRICS_IF_MISSING).
+# Odd minute (foundry metrics-crons-off-the-half-hour, 2026-10-09): on `30 6` the scheduled run
+# started 11:51–15:04 UTC every day 10-03..10-08 — GitHub delays crons on busy minutes most — so
+# the runner-fed refresh, IndexNow, the MCP probe and the error filer landed ~7 h after the waves.
 on:
   schedule:
-    - cron: '30 6 * * *' # daily, before the 07:00 UTC ops routine
+    - cron: '37 6 * * *' # daily, before the 07:00 UTC ops routine
   push:
     branches: [main]
     paths-ignore: ['ventures/gankdat/RESEARCH.md', 'docs/**']
@@ -12,6 +15,14 @@ on:
 
 permissions:
   contents: write
+
+# Concurrency (2026-10-05, foundry ci-runs-never-acquired): a newer commit cancels this workflow's queued or
+# running run for the same event and ref. On 2026-10-05 one push run in three was cancelled by GitHub 15 min
+# after start with no steps (never acquired by a runner) while each burn-down push queued six more runs behind
+# the dead ones. Scheduled and manual runs keep their own group, so a push never cancels the cron run.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
 
 jobs:
   metrics:
@@ -43,6 +54,22 @@ jobs:
         run: npm run runner-refresh
         continue-on-error: true
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Probe the live MCP endpoint the way a directory's health check does
+        # scripts/mcp-probe.ts (gankdat mcp-live-probe, 2026-10-08): initialize, tools/list and one
+        # preview tools/call against https://gankdat.com/mcp from the runner — the edge as Glama,
+        # Smithery and the Claude directory see it (Glama mailed "HTTP 500 – Error connecting to
+        # MCP" on 2026-10-08 and no sandbox could look). Leaves dist/mcp-probe.json for metrics.mjs,
+        # which renders `mcp probe: …` and lists a failed step under `refresh errors` as `mcp-probe`
+        # so the step below queues a fix on a repeat. Builtins only (push runs skip npm ci); never
+        # fails the job. The same calls also run with a key minted for this run (gankdat
+        # probe-key-from-runner, 2026-10-09): the script inserts a fresh key's hash under the internal
+        # probe@gankdat.com account through the D1 REST API with CLOUDFLARE_API_TOKEN and deletes it
+        # afterwards, so no probe secret is owed. GANKDAT_PROBE_KEY, if ever set, is used instead.
+        run: node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts
+        continue-on-error: true
+        env:
+          GANKDAT_PROBE_KEY: ${{ secrets.GANKDAT_PROBE_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: Append today's numbers to RESEARCH.md
         run: node ventures/gankdat/scripts/metrics.mjs

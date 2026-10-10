@@ -1,0 +1,19 @@
+{
+  "request": "rf-rivals-2026b",
+  "fetched_at": "2026-10-04T22:35:43.277Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://chromewebstore.google.com/detail/mbokfhkochkhlbiepagabmjndgmcbbil",
+      "fetched_at": "2026-10-04T22:35:42.890Z",
+      "status": 200,
+      "final_url": "https://chromewebstore.google.com/detail/dyslexly-dyslexia-toolkit/mbokfhkochkhlbiepagabmjndgmcbbil",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 689650,
+      "truncated": false
+    }
+  ]
+}

@@ -25,6 +25,7 @@ place for what is listed where, what each channel needs, and the copy-paste blur
 | x402 Bazaar (CDP discovery) | 402 bodies already carry `discoverable: true`; the catalogue lists services once real settlements occur (only 2 test payments so far) | https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources |
 | Apify Store | **all 17 actors public since 2026-09-28** (pay-per-result, 80/20; the block was a 5-publications-per-24h limit, now respected by the daily publish job). First run reading 2026-10-01: ~11 runs/day across the 17, paid share not yet separated (`metrics-apify-paid-runs`) | https://apify.com/faceless-api |
 | Claude Connectors Directory | **built 2026-09-30** (v0.20.0 annotations, Origin 403, keyless preview, `test/mcp-directory.spec.ts`), **not submitted** — the portal form is the owner's (OUTSTANDING E1, `docs/CLAUDE-DIRECTORY.md`); day-30 read queued for 2026-10-30 | https://claude.ai/directory/manage |
+| Docker MCP Catalog | **entry built and validated 2026-10-10** (`docs/docker-mcp-catalog/`: `type: remote`, keyless preview + optional `gankdat.api_key` secret, no OAuth block — the Toolkit signs in by RFC 7591 dynamic client registration only, queued as `oauth-dynamic-client-registration`), **PR not yet opened** — the sandbox token cannot fork `docker/mcp-registry`; ALERTS handoff 2026-10-10 with the `gh` commands. Listed servers appear in Docker Desktop's MCP Toolkit within 24 h of approval | https://hub.docker.com/mcp |
 | RapidAPI | parked (see below) | — |
 
 ## Official MCP Registry

@@ -2,6 +2,7 @@ import { computeStats } from '../lib/stats';
 import type { SourceStats } from '../lib/stats';
 import { readCached, readSnapshot, readSourceStats, refreshSource } from './cache';
 import { queryD1Source, refreshD1Source } from './d1store';
+import { isLookup, lookupRecord } from './lookup';
 import { applyQuery } from './query';
 import type { QueryPage } from './query';
 import { listSources } from './registry';
@@ -21,6 +22,9 @@ export async function querySource(
   source: DataSource,
   parsed: Record<string, unknown>,
 ): Promise<SourceQueryResult> {
+  if (isLookup(source)) {
+    return lookupRecord(env, source, parsed);
+  }
   if (source.storage === 'd1') {
     return queryD1Source(env, source, parsed);
   }
@@ -52,7 +56,7 @@ export async function sourceStats(
   const cached = await readSourceStats(env, source.slug);
   if (cached) return { stats: cached.stats, last_refreshed_at: cached.last_refreshed_at };
 
-  if (source.storage !== 'd1') {
+  if (source.storage !== 'd1' && !isLookup(source)) {
     const snapshot = await readSnapshot(env, source.slug);
     if (snapshot) {
       return {
@@ -114,13 +118,13 @@ export function isTransientD1Error(err: unknown): boolean {
   return TRANSIENT_D1_ERROR.test(err instanceof Error ? err.message : String(err));
 }
 
-/** One source's refresh, retried once on a transient D1 error while the wave is young. */
+/** One source's refresh, retried once on a transient D1 error while the wave is young; true when it succeeded. */
 export async function refreshOne(
   env: CloudflareBindings,
   source: DataSource,
   waveStartedAt = Date.now(),
   delayMs = RETRY_DELAY_MS,
-): Promise<void> {
+): Promise<boolean> {
   for (let attempt = 1; ; attempt += 1) {
     try {
       if (source.storage === 'd1') {
@@ -128,7 +132,7 @@ export async function refreshOne(
       } else {
         await refreshSource(env, source);
       }
-      return;
+      return true;
     } catch (err) {
       const retry =
         attempt === 1 && isTransientD1Error(err) && Date.now() - waveStartedAt < RETRY_DEADLINE_MS;
@@ -142,7 +146,7 @@ export async function refreshOne(
           message: err instanceof Error ? err.message : String(err),
         }),
       );
-      if (!retry) return;
+      if (!retry) return false;
       await new Promise((resolve) => setTimeout(resolve, delayMs));
     }
   }
@@ -153,11 +157,18 @@ export function isRunnerFed(source: DataSource): boolean {
   return source.refresh.runner === true;
 }
 
-/** The sources one cron wave refreshes (every wave when the cron is unknown). */
+/** The sources one cron wave refreshes (every wave when the cron is unknown); lookup sources have nothing to refresh. */
 export function cronSources(wave: RefreshWave | undefined): DataSource[] {
-  return listSources().filter((s) => !isRunnerFed(s) && (wave === undefined || waveOf(s) === wave));
+  return listSources().filter(
+    (s) => !isRunnerFed(s) && !isLookup(s) && (wave === undefined || waveOf(s) === wave),
+  );
 }
 
+/**
+ * One cron wave: refresh its sources in order. The IndexNow submission of the changed
+ * stats pages is the GitHub runner's job after the waves (scripts/runner-refresh.mjs) —
+ * api.indexnow.org answers 429 to Workers egress, so the Worker no longer pings.
+ */
 export async function refreshAllSources(env: CloudflareBindings, cron?: string): Promise<void> {
   const wave = waveForCron(cron);
   const sources = cronSources(wave);

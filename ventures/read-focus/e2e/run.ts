@@ -2,6 +2,7 @@
 //   node --disable-warning=ExperimentalWarning e2e/run.ts        (after `node build.js --test`)
 // Serves the fixture on 127.0.0.1, loads dist-test as an unpacked extension, drives the
 // extension through its own storage (what the popup writes), and asserts on the page.
+import { existsSync } from 'node:fs';
 import { readFile } from 'node:fs/promises';
 import { createServer } from 'node:http';
 import { tmpdir } from 'node:os';
@@ -36,14 +37,51 @@ const check = (name: string, ok: boolean, detail = ''): void => {
   if (!ok) failures++;
 };
 
+// Which Chromium to drive, in order: CHROMIUM_PATH, Playwright's own registry build, then the
+// sandbox's pre-installed build (a cloud sandbox ships an older build than Playwright wants and
+// forbids `playwright install`). Extensions need the full browser, not the headless shell.
+const SANDBOX_CHROMIUM = '/opt/pw-browsers/chromium';
+function resolveBrowser(): { executablePath: string } | { channel: 'chromium' } {
+  const fromEnv = process.env['CHROMIUM_PATH'];
+  if (fromEnv) {
+    console.log(`browser: ${fromEnv} (CHROMIUM_PATH)`);
+    return { executablePath: fromEnv };
+  }
+  const own = chromium.executablePath();
+  if (existsSync(own)) {
+    console.log(`browser: ${own} (Playwright registry)`);
+    return { channel: 'chromium' };
+  }
+  if (existsSync(SANDBOX_CHROMIUM)) {
+    console.log(`browser: ${SANDBOX_CHROMIUM} (sandbox fallback; Playwright wanted ${own})`);
+    return { executablePath: SANDBOX_CHROMIUM };
+  }
+  throw new Error(
+    `no Chromium: ${own} is missing, ${SANDBOX_CHROMIUM} is missing and CHROMIUM_PATH is unset — run \`npx playwright install chromium\` or set CHROMIUM_PATH`,
+  );
+}
+
+// The key that signs the e2e licence: the production one from .env, else the throwaway private
+// half build.js --test wrote next to the bundle (its public half is baked into the build).
+async function signingKeyForTest(): Promise<string> {
+  const fromEnv = process.env['LICENSE_SIGNING_KEY'];
+  if (fromEnv) {
+    console.log('signing key: production (LICENSE_SIGNING_KEY)');
+    return fromEnv;
+  }
+  const throwaway = (
+    await readFile(path.join(ext, 'test-signing-key.txt'), 'utf8').catch(() => '')
+  ).trim();
+  if (throwaway) console.log('signing key: throwaway test pair from build.js --test');
+  return throwaway;
+}
+
 const context = await chromium.launchPersistentContext(
   path.join(tmpdir(), `rf-e2e-${Date.now()}`),
   {
-    channel: 'chromium',
+    ...resolveBrowser(),
     headless: true,
     args: [`--disable-extensions-except=${ext}`, `--load-extension=${ext}`],
-    // A sandbox with a different Playwright browser build points here (CHROMIUM_PATH=/opt/pw-browsers/chromium).
-    ...(process.env['CHROMIUM_PATH'] ? { executablePath: process.env['CHROMIUM_PATH'] } : {}),
     viewport: { width: 1280, height: 800 },
   },
 );
@@ -93,6 +131,49 @@ try {
   );
   await page.screenshot({ path: path.join(here, 'out', '01-free-medium-ruler.png') });
 
+  // 1b. Ruler controls (free): colour, height and opacity reach the band; locked, it ignores the
+  //     mouse and moves only on a click or tap.
+  await setSettings({
+    enabled: true,
+    bold: true,
+    preset: 'medium',
+    ruler: true,
+    rulerColor: 'blue',
+    rulerHeight: 48,
+    rulerOpacity: 0.4,
+    rulerLock: true,
+  });
+  await page.waitForFunction(() =>
+    document.querySelector('.rf-ruler')?.classList.contains('rf-ruler-locked'),
+  );
+  const band = await page.locator('.rf-ruler').evaluate((el) => {
+    const cs = getComputedStyle(el);
+    return { height: parseFloat(cs.height), bg: cs.backgroundColor };
+  });
+  check(
+    'ruler height follows the setting',
+    Math.abs(band.height - 48) < 1,
+    `height=${band.height}`,
+  );
+  check(
+    'ruler colour and opacity follow the setting',
+    band.bg === 'rgba(56, 150, 255, 0.4)',
+    band.bg,
+  );
+  await page.mouse.move(300, 500);
+  await page.waitForTimeout(100);
+  const lockedTop = await page
+    .locator('.rf-ruler')
+    .evaluate((el) => parseFloat((el as HTMLElement).style.top));
+  check('locked ruler ignores the mouse', Math.abs(lockedTop + 17 - 300) < 3, `top=${lockedTop}`);
+  await page.mouse.click(300, 500);
+  await page.waitForTimeout(100);
+  const clickedTop = await page
+    .locator('.rf-ruler')
+    .evaluate((el) => parseFloat((el as HTMLElement).style.top));
+  check('a click moves the locked ruler', Math.abs(clickedTop + 24 - 500) < 3, `top=${clickedTop}`);
+  await page.screenshot({ path: path.join(here, 'out', '01b-ruler-controls.png') });
+
   // 2. Text size scales outer blocks only, not the nested list or textarea.
   await setSettings({ enabled: true, bold: true, preset: 'medium', size: 1.3 });
   await page.waitForFunction(() => document.documentElement.classList.contains('rf-size'));
@@ -110,6 +191,50 @@ try {
   );
   check('textarea size untouched', sizes.ta < 18, `ta=${sizes.ta}`);
 
+  // 2b. Spacing (free): the style-guide numbers reach a paragraph, the textarea is untouched, and
+  //     the tint needs a key.
+  await setSettings({ enabled: true, bold: false, spacing: true, tint: 'cream' });
+  await page.waitForFunction(() => document.documentElement.classList.contains('rf-spacing'));
+  const sp = await page.evaluate(() => {
+    const cs = getComputedStyle(document.getElementById('p1')!);
+    const ta = getComputedStyle(document.getElementById('ta')!);
+    return {
+      lh: parseFloat(cs.lineHeight),
+      fs: parseFloat(cs.fontSize),
+      ls: parseFloat(cs.letterSpacing),
+      taLs: ta.letterSpacing,
+    };
+  });
+  check(
+    'spacing sets line height 1.5',
+    Math.abs(sp.lh - sp.fs * 1.5) < 0.6,
+    `lh=${sp.lh} fs=${sp.fs}`,
+  );
+  check('spacing sets letter spacing 0.12em', Math.abs(sp.ls - sp.fs * 0.12) < 0.3, `ls=${sp.ls}`);
+  check('textarea spacing untouched', sp.taLs === 'normal', sp.taLs);
+  check('no tint without a key', (await page.locator('.rf-tint').count()) === 0);
+  // Read aloud is asked for through the extension's own message, as the popup and shortcut do.
+  const readAloud = (
+    action: string,
+  ): Promise<{
+    ok: boolean;
+    playing: boolean;
+    reason?: string;
+    sentences: number;
+    sentence: string;
+    highlighted: boolean;
+  }> =>
+    sw.evaluate(async (a) => {
+      const [tab] = await chrome.tabs.query({ url: 'http://127.0.0.1/*' });
+      return chrome.tabs.sendMessage(tab!.id!, { type: 'read-aloud', action: a });
+    }, action);
+  const freeRead = await readAloud('toggle');
+  check(
+    'read aloud refused without a key',
+    !freeRead.ok && freeRead.reason === 'pro',
+    JSON.stringify(freeRead),
+  );
+
   // 3. Off → exact restore.
   await setSettings({ enabled: false });
   await page.waitForFunction(() => document.querySelectorAll('.rf-b').length === 0);
@@ -123,6 +248,10 @@ try {
   check(
     'size class removed',
     !(await page.evaluate(() => document.documentElement.classList.contains('rf-size'))),
+  );
+  check(
+    'spacing class removed',
+    !(await page.evaluate(() => document.documentElement.classList.contains('rf-spacing'))),
   );
 
   // 4. PDFs (free): the extension's own reader page reflows the text into paragraphs keyed to the
@@ -158,14 +287,15 @@ try {
   check('free reader shows the first page only', (await pdfPage.locator('.page').count()) === 1);
   check('free reader shows the unlock note', await pdfPage.locator('#unlock').isVisible());
   await pdfPage.screenshot({ path: path.join(here, 'out', '03-pdf-free.png') });
-  // 5. Pro: real key → paragraph focus + font + weight stroke. Needs LICENSE_SIGNING_KEY (.env);
-  //    a sandbox without it skips the pro sections and says so.
-  if (!process.env['LICENSE_SIGNING_KEY']) {
-    console.log('SKIP  pro sections (5–7): no LICENSE_SIGNING_KEY in the environment');
+  // 5. Pro: a signed key → paragraph focus + font + weight stroke. The production signing key
+  //    (LICENSE_SIGNING_KEY, .env) when present, else the throwaway pair `build.js --test` made.
+  const signingKey = await signingKeyForTest();
+  if (!signingKey) {
+    console.log('SKIP  pro sections (5–7): no signing key (neither .env nor dist-test)');
     skipped = true;
     throw new Skip();
   }
-  const key = await issueLicense(process.env['LICENSE_SIGNING_KEY'], {
+  const key = await issueLicense(signingKey, {
     venture: 'read-focus',
     tier: 'pro',
     id: 'e2e',
@@ -180,11 +310,40 @@ try {
       weight: 900,
       focus: true,
       font: 'opendyslexic',
+      tint: 'cream',
     },
     key,
   );
   await page.waitForFunction(() => document.documentElement.classList.contains('rf-focus'));
   check('paragraph focus on', true);
+  const tintBg = await page
+    .waitForSelector('.rf-tint', { timeout: 3000 })
+    .then((el) => el.evaluate((n) => getComputedStyle(n).backgroundColor))
+    .catch(() => 'missing');
+  check('page tint layer present for pro', tintBg === 'rgba(255, 244, 214, 0.55)', tintBg);
+  const proRead = await readAloud('toggle');
+  check(
+    'read aloud starts for pro',
+    proRead.ok && proRead.playing && proRead.sentences >= 6,
+    JSON.stringify(proRead),
+  );
+  // Headless Chromium has no voices, so the utterance errors at once; the reply to the toggle is
+  // taken synchronously, before that, and says which sentence was marked.
+  check(
+    'first sentence on screen is the one marked',
+    proRead.sentence === 'Reading on screens' && proRead.highlighted,
+    JSON.stringify(proRead),
+  );
+  await page.screenshot({
+    path: path.join(here, 'out', '05-pro-tint.png'),
+    clip: { x: 0, y: 0, width: 1280, height: 260 },
+  });
+  const stopped = await readAloud('stop');
+  check(
+    'stop clears the highlight',
+    !stopped.playing && !stopped.highlighted,
+    JSON.stringify(stopped),
+  );
   check(
     'font class applied',
     await page.evaluate(() => document.documentElement.classList.contains('rf-font-opendyslexic')),
@@ -215,10 +374,11 @@ try {
 
   // 6. Bad key → free.
   await setSettings(
-    { enabled: true, bold: true, preset: 'medium', focus: true, font: 'atkinson' },
+    { enabled: true, bold: true, preset: 'medium', focus: true, font: 'atkinson', tint: 'cream' },
     'FNDRY1.garbage.garbage',
   );
   await page.waitForFunction(() => !document.documentElement.classList.contains('rf-focus'));
+  check('invalid key gets no tint', (await page.locator('.rf-tint').count()) === 0);
   check(
     'invalid key gets no pro features',
     !(await page.evaluate(() => document.documentElement.classList.contains('rf-font-atkinson'))),

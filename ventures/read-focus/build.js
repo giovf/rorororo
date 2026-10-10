@@ -114,6 +114,9 @@ async function statics() {
         // Firefox's built-in data-collection consent: we collect nothing.
         data_collection_permissions: { required: ['none'] },
       },
+      // Firefox for Android: AMO flags an extension as Android-compatible only when this key is
+      // present. Same build; the popup opens full-width and the ruler/focus follow taps.
+      gecko_android: { strict_min_version: '140.0' },
     };
     delete manifest.minimum_chrome_version;
   }
@@ -157,6 +160,18 @@ async function statics() {
   );
 }
 
+// --test without the production signing key (LICENSE_SIGNING_KEY, .env): a throwaway Ed25519
+// pair — public half baked into the bundle in place of the production key, private half written
+// next to it for e2e/run.ts. dist-test is git-ignored; the pair lives for one run.
+let testPublicKey = '';
+if (test && !process.env.LICENSE_SIGNING_KEY) {
+  const { generateKeyPair } = await import('@foundry/licensing');
+  const pair = await generateKeyPair();
+  testPublicKey = pair.publicKey;
+  await mkdir(dist, { recursive: true });
+  await writeFile(path.join(dist, 'test-signing-key.txt'), pair.privateKey);
+}
+
 const bundles = {
   entryPoints: {
     content: 'src/content.ts',
@@ -170,6 +185,7 @@ const bundles = {
   format: 'iife',
   logLevel: 'info',
   minify: !watch && !firefox, // AMO reviewers read the code; ship Firefox unminified
+  define: { __LICENSE_TEST_PUBLIC_KEY__: JSON.stringify(testPublicKey) },
 };
 
 // The PDF reader page is an ES module (PDF.js is ESM-only); extension pages may load modules.

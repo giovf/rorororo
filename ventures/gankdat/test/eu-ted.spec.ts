@@ -1,6 +1,7 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import fixtureNotices from '../src/sources/fixtures/eu-ted.json';
+import { tedRetry } from '../src/sources/eu-ted';
 import type { EuTedRecord } from '../src/sources/eu-ted';
 import { authedFetch, issueKey } from './helpers/auth';
 import { stubOrigins } from './helpers/origin-mock';
@@ -86,6 +87,52 @@ describe('GET /v1/data/eu-ted', () => {
       await authedFetch(`${EU_TED_URL}?published_at_before=2026-07-09`, key)
     ).json()) as SuccessEnvelope<EuTedRecord[]>;
     expect(none.data).toEqual([]);
+  });
+
+  it('retries a throttled page with a pause and reads it once TED answers', async () => {
+    let calls = 0;
+    stubOrigins({
+      euTed: () =>
+        (calls += 1) < 3
+          ? new Response('slow down', { status: 429, headers: { 'retry-after': '1' } })
+          : searchResponse(),
+    });
+    const delays: number[] = [];
+    const realSetTimeout = globalThis.setTimeout;
+    vi.stubGlobal('setTimeout', ((fn: () => void, ms?: number) => {
+      delays.push(ms ?? 0);
+      return realSetTimeout(fn, 0);
+    }) as typeof setTimeout);
+    try {
+      const res = await authedFetch(EU_TED_URL);
+      expect(res.status).toBe(200);
+      const body = (await res.json()) as SuccessEnvelope<EuTedRecord[]>;
+      expect(body.data.length).toBeGreaterThan(0);
+    } finally {
+      vi.stubGlobal('setTimeout', realSetTimeout);
+    }
+    expect(calls).toBe(3);
+    // Retry-After of 1 s is honoured on both pauses (under the cap), not the growing default.
+    expect(delays.filter((d) => d === 1000).length).toBe(2);
+  });
+
+  it('gives up after the retries and falls back when TED keeps throttling', async () => {
+    let calls = 0;
+    stubOrigins({
+      euTed: () => {
+        calls += 1;
+        return new Response('slow down', { status: 429 });
+      },
+    });
+    const saved = tedRetry.delayMs;
+    tedRetry.delayMs = 0;
+    try {
+      const res = await authedFetch(EU_TED_URL);
+      expect(res.status).toBe(200);
+    } finally {
+      tedRetry.delayMs = saved;
+    }
+    expect(calls).toBe(4);
   });
 
   it('falls back to bundled fixtures when the origin fails', async () => {

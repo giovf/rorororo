@@ -1,6 +1,4 @@
-import { createFacilitatorConfig } from '@coinbase/x402';
 import { Hono } from 'hono';
-import { paymentMiddleware } from 'x402-hono';
 import { failure } from '../lib/envelope';
 import { handleSourceQuery } from '../routes/data';
 import { listSources } from '../sources/registry';
@@ -13,6 +11,12 @@ import type { AppEnv } from '../types';
 // Protocol flow (x402-hono): unpaid request → 402 + payment-requirements body
 // → agent pays → retries with X-PAYMENT header → middleware verifies via the
 // facilitator → handler runs → settlement recorded in X-PAYMENT-RESPONSE.
+//
+// x402-hono and @coinbase/x402 are imported lazily, on the first lit request:
+// together they pull in viem (≈1,200 modules, most of the 7.8 MB bundle), which
+// every other route never needs. Loading them up front cost each of the 49 test
+// files ≈2.4 s of module evaluation (gankdat-test-setup, 2026-10-06) and weighs
+// on every Worker cold start while the lane ships dark.
 
 const DEFAULT_PRICE_USD = '$0.005';
 const DEFAULT_NETWORK = 'base';
@@ -37,6 +41,11 @@ export const x402Routes = new Hono<AppEnv>()
       );
       return c.json(failure('unavailable', 'x402 is misconfigured; retry later'), 503);
     }
+
+    const [{ createFacilitatorConfig }, { paymentMiddleware }] = await Promise.all([
+      import('@coinbase/x402'),
+      import('x402-hono'),
+    ]);
 
     // Facilitator (verify + settle): prefer Coinbase CDP (authenticated, works
     // on base + base-sepolia) when CDP creds are set; else an explicit URL; else

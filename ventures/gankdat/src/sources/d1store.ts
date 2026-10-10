@@ -269,6 +269,36 @@ export async function refreshD1Source(
   const start = Date.now();
   const previous = await readMeta(env, source.slug);
   if (previous && source.idOf) {
+    let backfill: { done: number; left: number };
+    try {
+      backfill = await backfillHashes(env, source, previous, start);
+    } catch (err) {
+      // Outside refreshD1Delta/Full, which write their own rows: without this the night leaves
+      // no refresh_log row at all and refreshOne's "already recorded" assumption is wrong.
+      const message = `hash backfill failed: ${err instanceof Error ? err.message : String(err)}`;
+      await writeRefreshLog(env, source.slug, 'error', 0, Date.now() - start, message);
+      throw err;
+    }
+    const elapsed = backfillClock.now() - start;
+    const handOver = elapsed >= BACKFILL_HANDOVER_MS;
+    if (backfill.left > 0 || elapsed >= BACKFILL_BUDGET_MS || handOver) {
+      const message =
+        backfill.left > 0
+          ? `hash backfill: ${backfill.done} rows hashed, ${backfill.left} left; delta refresh resumes once complete`
+          : `hash backfill: ${backfill.done} rows hashed, 0 left in ${Math.round(elapsed / 1000)} s; delta refresh runs next night`;
+      console.log(
+        JSON.stringify({ level: 'info', event: 'hash_backfill', source: source.slug, ...backfill }),
+      );
+      await writeRefreshLog(
+        env,
+        source.slug,
+        'skipped',
+        backfill.done,
+        Date.now() - start,
+        message,
+      );
+      return previous;
+    }
     const index = await loadStoredIndex(env, source.slug, previous.generation).catch(
       (err: unknown) => {
         console.log(
@@ -289,6 +319,95 @@ export async function refreshD1Source(
 
 /** Rows per page when reading the stored (seq, id, hash) index back. */
 const INDEX_PAGE = 50_000;
+
+/** Rows per hash-backfill page (the record text comes back, ~1–2 KB each). */
+const BACKFILL_PAGE = 2_000;
+/**
+ * Wall-clock the backfill may take of a wave before it hands the rest to the next night: what
+ * remains of the 15-minute Cron Trigger budget is for the delta pass that follows.
+ */
+export const BACKFILL_BUDGET_MS = 8 * 60_000;
+/**
+ * A backfill that took this long leaves the delta pass to the next night even when it finished:
+ * the journal's full reload took 13 min 42 s of the 15-minute wave on 2026-10-04, so a backfill
+ * of some minutes and a delta of some more must never share one wave (2026-10-09).
+ */
+export const BACKFILL_HANDOVER_MS = 3 * 60_000;
+/** Injectable clock for the backfill budget (tests drive it; production is Date.now). */
+export const backfillClock = { now: (): number => Date.now() };
+
+const BACKFILL_SELECT_SQL = `SELECT seq, record FROM source_records
+   WHERE source_slug = ?1 AND generation = ?2 AND seq > ?3 AND (record_id IS NULL OR record_hash IS NULL)
+   ORDER BY seq LIMIT ${BACKFILL_PAGE}`;
+/**
+ * The page's ids and hashes written by seq. The 2,000 entries are MATERIALIZED first so SQLite
+ * loops over them and probes each row through the primary key (`SCAN j` then `SEARCH r … seq=?`).
+ * Written as an UPDATE … FROM a json_each subquery (2026-10-07) the planner did the reverse —
+ * walked every row of the generation and scanned the 2,000 entries for each one, 324M evaluations
+ * a page for uk-trademark-journal's 162k rows: 200 s a page measured in SQLite, longer on D1, so
+ * the budget check between pages never ran before the 15-minute Cron Trigger limit killed the
+ * wave with no refresh_log row (10-08, 10-09). The plan is asserted in d1store.spec.
+ */
+export const BACKFILL_UPDATE_SQL = `WITH j(q, i, h) AS MATERIALIZED (
+     SELECT json_extract(value, '$.q'), json_extract(value, '$.i'), json_extract(value, '$.h') FROM json_each(?3))
+   UPDATE source_records AS r SET record_id = j.i, record_hash = j.h
+   FROM j WHERE r.source_slug = ?1 AND r.generation = ?2 AND r.seq = j.q`;
+const BACKFILL_LEFT_SQL = `SELECT COUNT(*) AS n FROM source_records
+   WHERE source_slug = ?1 AND generation = ?2 AND (record_id IS NULL OR record_hash IS NULL)`;
+
+/**
+ * Writes the id and hash of the live rows that lack them, in place and resumably, so a
+ * generation loaded before migration 0014 reaches the delta path without "one last full reload".
+ * uk-trademark-journal (162k rows, 52 journal issues re-read from KV) never finished that reload:
+ * wave 7 was killed at the 15-minute Cron Trigger limit on 2026-10-05, 10-06 and 10-07 before any
+ * refresh_log row, each night first sweeping the previous night's partial generation and then
+ * dying again. The hash is `hash53(JSON.stringify(record))` exactly as ingestRow computes it, so
+ * the next delta pass finds every untouched row unchanged (asserted on real D1 in d1store.spec).
+ * Pages are keyed by seq, so a row whose id is null cannot be re-selected forever. Returns how
+ * many rows this run hashed and how many still lack a hash when the budget ran out.
+ */
+async function backfillHashes(
+  env: CloudflareBindings,
+  source: DataSource,
+  previous: SourceMeta,
+  start: number,
+): Promise<{ done: number; left: number }> {
+  const { generation } = previous;
+  const idOf = source.idOf;
+  if (!idOf) return { done: 0, left: 0 };
+  const select = env.DB.prepare(BACKFILL_SELECT_SQL);
+  const update = env.DB.prepare(BACKFILL_UPDATE_SQL);
+  let done = 0;
+  let after = -1;
+  let exhausted = false;
+  for (;;) {
+    const rows = await select
+      .bind(source.slug, generation, after)
+      .all<{ seq: number; record: string }>();
+    const results = rows.results ?? [];
+    if (results.length === 0) {
+      exhausted = true;
+      break;
+    }
+    const entries = results.map((row) => {
+      const record: unknown = JSON.parse(row.record);
+      return { q: row.seq, i: idOf(record), h: hash53(JSON.stringify(record)) };
+    });
+    await update.bind(source.slug, generation, JSON.stringify(entries)).run();
+    done += results.length;
+    after = results[results.length - 1]?.seq ?? after;
+    if (results.length < BACKFILL_PAGE) {
+      exhausted = true;
+      break;
+    }
+    if (backfillClock.now() - start >= BACKFILL_BUDGET_MS) break;
+  }
+  if (done === 0 && exhausted) return { done: 0, left: 0 };
+  const left = await env.DB.prepare(BACKFILL_LEFT_SQL)
+    .bind(source.slug, generation)
+    .first<{ n: number }>();
+  return { done, left: left?.n ?? 0 };
+}
 
 /**
  * The live generation's rows as parallel typed arrays, sorted by id hash for

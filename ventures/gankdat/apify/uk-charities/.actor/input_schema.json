@@ -1,8 +1,32 @@
 {
-  "title": "UK Charities Register (Charity Commission) \u2014 leads & due diligence \u2014 filters",
+  "title": "UK Charities Register (Charity Commission) — leads & due diligence — filters",
   "type": "object",
   "schemaVersion": 1,
   "properties": {
+    "mode": {
+      "title": "Mode",
+      "type": "string",
+      "description": "Current records (default), or only the records added, removed or changed since a date — schedule a daily run in changes mode to monitor the register and pay only for what changed.",
+      "editor": "select",
+      "enum": ["data", "changes"],
+      "enumTitles": ["Current records", "Changes since a date (monitor)"],
+      "default": "data"
+    },
+    "since": {
+      "title": "Changes since",
+      "type": "string",
+      "description": "Changes mode only: YYYY-MM-DD. Default: the last 7 days. The feed keeps 90 days.",
+      "editor": "textfield",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}$"
+    },
+    "change": {
+      "title": "Change type",
+      "type": "string",
+      "description": "Changes mode only: one kind of change. Default: all three.",
+      "editor": "select",
+      "enum": ["added", "removed", "changed"],
+      "enumTitles": ["Added to the register", "Removed from the register", "Changed"]
+    },
     "name": {
       "title": "Name contains",
       "type": "string",
@@ -28,16 +52,16 @@
       "editor": "textfield"
     },
     "latest_income_min": {
-      "title": "Minimum latest income (\u00a3)",
+      "title": "Minimum latest income (£)",
       "type": "integer",
       "minimum": 0,
-      "description": "Filter: Minimum latest income (\u00a3)."
+      "description": "Filter: Minimum latest income (£)."
     },
     "latest_income_max": {
-      "title": "Maximum latest income (\u00a3)",
+      "title": "Maximum latest income (£)",
       "type": "integer",
       "minimum": 0,
-      "description": "Filter: Maximum latest income (\u00a3)."
+      "description": "Filter: Maximum latest income (£)."
     },
     "date_of_registration_after": {
       "title": "Registered on or after",

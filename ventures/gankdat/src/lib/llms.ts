@@ -17,7 +17,14 @@ function datasetLines(baseUrl: string): string {
       const params = Object.keys(buildQuerySchema(source).shape).join(', ');
       const cost = creditCost(source);
       const costNote = cost === 1 ? '' : ` Costs ${cost} credits/request.`;
-      return `- GET ${baseUrl}/v1/data/${source.slug} — ${source.description}${costNote}\n  Filters: ${params}.`;
+      const lookup = source.lookup
+        ? ` One record per request, named by ${source.lookup.keys.join(' or ')} (e.g. ?${Object.entries(
+            source.lookup.example,
+          )
+            .map(([k, v]) => `${k}=${v}`)
+            .join('&')}).`
+        : '';
+      return `- GET ${baseUrl}/v1/data/${source.slug} — ${source.description}${costNote}${lookup}\n  Filters: ${params}.`;
     })
     .join('\n');
 }
