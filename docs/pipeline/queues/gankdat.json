@@ -490,8 +490,9 @@
       "effort_days": 0.5,
       "proof": "a `token` step in the Daily numbers row's `oauth funnel 7d` for a client host other than claude.ai within 30 days of deploy; the Docker entry's oauth block merged",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-10"
+      "status": "doing",
+      "added": "2026-10-10",
+      "doing_since": "2026-10-10"
     }
   ]
 }
