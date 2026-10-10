@@ -641,8 +641,9 @@
       "effort_days": 0.05,
       "proof": "two exchange candidates a day (one day, one night) on starved days; a build item traced to a day pass within 14 days",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-10"
+      "status": "doing",
+      "added": "2026-10-10",
+      "doing_since": "2026-10-10"
     }
   ]
 }
