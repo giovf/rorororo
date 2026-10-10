@@ -30,6 +30,8 @@ export interface RoutineSlot {
   minute: number;
   /** Days of week (0 = Sunday); omitted = every day. */
   days?: number[];
+  /** Slot exists from this instant (UTC ms): earlier days are never reported (a schedule change). */
+  since?: number;
   /** Minutes after the slot by which a trace must exist. */
   graceMinutes: number;
   /** RUNS.md tags that count as this routine's trace. */
@@ -43,6 +45,8 @@ export const SINCE = Date.parse('2026-09-25T17:00:00Z');
 /** How far back a late-firing GitHub cron may still report a miss (GitHub's cron is best-effort). */
 export const LOOKBACK_HOURS = 48;
 export const GRACE_MINUTES = 120;
+/** The evening burn went nightly at this slot (docs/SCHEDULERS.md); it was Wednesday 18:00 before. */
+export const BURN_DOWN_NIGHTLY_SINCE = Date.parse('2026-10-04T17:00:00Z');
 
 // Mirrors docs/SCHEDULERS.md — update both in the same commit when a routine's slot changes.
 // Hourly inbox triage is not watched: it commits only when there is new mail.
@@ -109,11 +113,13 @@ export const ROUTINES: RoutineSlot[] = [
   },
   {
     // Only the first burn-down hour is watched: later hours are expected to be cut off by
-    // the usage limit; a silent 18:00 slot is exactly the "allowance already gone" case.
+    // the usage limit; a silent 17:00 slot is exactly the "allowance already gone" case.
+    // Nightly since 2026-10-04 (was Wednesday 18:00; the watchdog followed on 2026-10-10 —
+    // foundry `burn-down-watchdog-nightly`, after five of six nights ran unwatched).
     routine: 'burn-down',
-    hour: 18,
+    hour: 17,
     minute: 0,
-    days: [3],
+    since: BURN_DOWN_NIGHTLY_SINCE,
     graceMinutes: GRACE_MINUTES,
     tags: ['burn-down'],
     commit: /\(burn-down\)$/,
@@ -171,6 +177,7 @@ export function slotsDue(
       );
       const deadline = new Date(at.getTime() + def.graceMinutes * MINUTE);
       if (at.getTime() < floor || deadline.getTime() > now.getTime()) continue;
+      if (def.since !== undefined && at.getTime() < def.since) continue;
       out.push({ routine: def.routine, at, deadline, def });
     }
   }
