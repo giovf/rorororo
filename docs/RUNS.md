@@ -835,3 +835,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 08:05 | retro | Queued foundry burn-down-watchdog-nightly (7): watch every night, not just Wednesday
 - 2026-10-10 08:05 | retro | Queued foundry handoff-aging-escalation (5): notify line for aging handoff: entries too
 - 2026-10-10 08:05 | retro | Owner load: median open-ask age 8d (5 of 12 over 7d); all genuinely need the owner
+- 2026-10-10 09:24 | build | Docker MCP Catalog entry written and passed Docker's own validator: remote, keyless preview + optional key
+- 2026-10-10 09:24 | build | No oauth block: Docker's Toolkit signs in by RFC 7591 DCR only, which gankdat lacks (CIMD); queued at 6
+- 2026-10-10 09:24 | build | mcp route: a bare Bearer header (Toolkit user, no key pasted yet) is keyless, not a 401; 1 test; v0.22.1
+- 2026-10-10 09:24 | build | PR not opened: the sandbox token is scoped to this repo and cannot fork docker/mcp-registry; handoff
+- 2026-10-10 09:24 | build | Queue: gankdat docker-mcp-catalog-listing blocked on the handoff; foundry third-party-pr-relay queued (3)
+- 2026-10-10 09:24 | build | Listings log, STRATEGY §4 row and §8, ARCHITECTURE note, SELF-CAUSED row for the PR's review mail

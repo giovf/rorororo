@@ -24,7 +24,7 @@ so the real figure is unconfirmed until the 10-10 invoice (review 2026-W40, §7 
 | **Change feeds** (`/v1/changes`) | grant-makers, KYB, recruiters | no competitor offers an official-source delta feed | inside plans; upsell later | none |
 | Browser extensions (ReadFocus, Highlight Keep) | consumers | rivals abandoned; low ticket | US$12 one-off | none, but small |
 | Figma plugin (Variables Toolkit) | designers | paid rivals with gaps | one-off | none |
-| **Agent directories** (Claude Connectors Directory; MCP Registry, mcpservers.org, Glama already; Docker MCP Catalog queued 2026-10-07) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30); ~40k keyless calls and no payer from the five live directories by 2026-10-07 |
+| **Agent directories** (Claude Connectors Directory; MCP Registry, mcpservers.org, Glama already; Docker MCP Catalog entry built 2026-10-10, PR on the handoff list) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30); ~40k keyless calls and no payer from the five live directories by 2026-10-07 |
 
 ## 3. Unit economics (what has to be true)
 
@@ -964,3 +964,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-10 burn-down: foundry `build-slot-pre-research` (3) built — a build slot that finds the pipeline starved and cooled
   now does the day's one exchange pre-research pass (gate `npm run pipeline cold -- --routine=build`, window from 07:00 UTC)
   instead of idling, because the exchange was the only producer of new items and one candidate a night was the ceiling.
+- 2026-10-10 build: gankdat `docker-mcp-catalog-listing` (8) built to the sandbox's edge — the entry passed Docker's own
+  validator and ships keyless preview + optional key with no `oauth` block, because the Toolkit's OAuth needs RFC 7591
+  dynamic client registration and gankdat is CIMD-only (queued at 6: Cursor, ChatGPT and VS Code register the same way,
+  so the 2026-09-30 OAuth hop works for Claude alone); the MCP route now treats a bare `Bearer` header, which the Toolkit
+  sends until a key is pasted, as no key (v0.22.1). The fork PR itself needs a token this sandbox lacks (handoff), so a
+  third-party PR relay is queued (3).

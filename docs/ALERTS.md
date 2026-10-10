@@ -304,3 +304,12 @@ closed entries older than 30 days (git keeps the history).
   its JSON key as the `SEARCH_CONSOLE_KEY` repository secret. From then on the 06:45 job writes search impressions, clicks and the
   indexing verdict of the /stats and comparison pages on every venture's daily row — the first Search Console number to reach the
   repo (three day-30 reviews and the gankdat indexing item read it). Steps: `docs/for-owner/actions/020-search-console-service-account.md`.
+- 2026-10-10 handoff: **open the Docker MCP Catalog PR** (~3 min, £0, needs `gh` signed in as giovf): the entry in
+  `ventures/gankdat/docs/docker-mcp-catalog/` passed Docker's validator in the sandbox, but the sandbox token cannot fork
+  `docker/mcp-registry` or open a PR there. From the repo root: `gh repo fork docker/mcp-registry --clone=false && git clone --depth 1
+  https://github.com/giovf/mcp-registry /tmp/mcp-registry && cd /tmp/mcp-registry && git checkout -b add-gankdat && mkdir -p servers/gankdat &&
+  cp "$OLDPWD"/ventures/gankdat/docs/docker-mcp-catalog/{server.yaml,tools.json,readme.md} servers/gankdat/ && git add servers/gankdat &&
+  git commit -m "Add gankdat (remote)" && git push -u origin add-gankdat && gh pr create -R docker/mcp-registry --title "Add gankdat (remote):
+  UK and EU government registers" --body-file "$OLDPWD"/ventures/gankdat/docs/docker-mcp-catalog/PR.md`. Then paste the PR URL into the
+  Docker row of `ventures/gankdat/docs/MARKETPLACE-PREP.md` and the item's `blocked_on` in `docs/pipeline/queues/gankdat.json`. No test
+  credentials form is needed (keyless preview); if a reviewer insists on an OSS licence, drop the item — do not argue.

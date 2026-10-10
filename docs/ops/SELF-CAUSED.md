@@ -48,8 +48,10 @@ as `store` and add the ALERTS line as before (`store-approval-to-store-md` will 
 `STORE.md`). A person writing to info@gankdat.com is always `customer`. An invoice or receipt
 from a service we pay (Cloudflare Workers Paid, a domain renewal) is a real cost for
 `docs/LEDGER.md`, not a false alarm.
+| `github.com` | `[docker/mcp-registry]` … (review comments, CI results, approval or merge on the gankdat entry PR) | the Docker MCP Catalog listing PR — entry in `ventures/gankdat/docs/docker-mcp-catalog/`, opened by the interactive session per the 2026-10-10 handoff | Docker's reviewers and CI on our own submission; a review asking for changes is the build routine's work (gankdat queue `docker-mcp-catalog-listing`), never the owner's | `logged (self-caused: docker-mcp-catalog PR)` |
 
 ## History
 
 - 2026-09-29 — file created (foundry `self-caused-alerts`); triage and weekly-report prompts
   point here (`docs/routines/inbox-triage.md`, `docs/routines/weekly-report.md`). Rows 1–8.
+- 2026-10-10 — row for the docker/mcp-registry PR mail (build routine, gankdat `docker-mcp-catalog-listing`).

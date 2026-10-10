@@ -213,7 +213,12 @@ runs `check:root`.
   only writes, neither destructive). `/mcp` validates a present `Origin` (own host,
   claude.ai/claude.com, loopback; else 403, CORS mirrors the list) — non-browser clients
   send none. `test/mcp-directory.spec.ts` is the conformance test for any agent
-  directory. KV rate limiters fail open on KV errors.
+  directory. A bare `Authorization: Bearer` with no token counts as no key (2026-10-10,
+  `presentsCredential` in `routes/mcp.ts`): Docker's MCP gateway templates the header for every
+  Toolkit user and sends it empty until a key is pasted; a token after the scheme is still
+  validated. The Toolkit's own OAuth registers clients by RFC 7591, which the Worker does not
+  offer (CIMD only; queued), so the Docker MCP Catalog entry (`docs/docker-mcp-catalog/`) ships
+  keyless + optional key. KV rate limiters fail open on KV errors.
   **Lazy OAuth** (2026-09-30, `src/auth/oauth.ts` + `src/routes/oauth.ts`, migration 0013
   `oauth_grants`): Claude, Cursor and ChatGPT start sign-in only on an HTTP 401 with
   `WWW-Authenticate: Bearer resource_metadata=…` (a 200 tool error never does), so the Worker

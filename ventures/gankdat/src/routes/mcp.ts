@@ -76,8 +76,20 @@ export function mcpOriginAllowed(origin: string, env: CloudflareBindings): boole
 // what makes Claude show its Connect card (auth/oauth.ts).
 type AnonymousKind = 'introspection' | 'signup' | 'request' | 'preview' | 'protected' | null;
 
+/**
+ * Whether an Authorization header carries a credential at all. Absent, empty
+ * or a bare `Bearer` with no token is NO key: Docker's MCP gateway templates
+ * `Authorization: Bearer ${GANKDAT_API_KEY}` for every Toolkit user and sends it
+ * with the variable empty until a key is pasted (mcp-gateway pkg/mcp/remote.go),
+ * so a bare scheme is a keyless user owed the preview, not a typo'd key. Anything
+ * after the scheme is still validated and 401s loudly (2026-10-10).
+ */
+export function presentsCredential(header: string | undefined): boolean {
+  return header !== undefined && !/^(?:Bearer)?\s*$/i.test(header);
+}
+
 async function anonymousKind(c: Context<AppEnv>): Promise<AnonymousKind> {
-  if (c.req.header('Authorization')) return null;
+  if (presentsCredential(c.req.header('Authorization'))) return null;
   let body: unknown;
   try {
     body = await c.req.json();
@@ -235,7 +247,7 @@ export const mcpRoute = new Hono<AppEnv>().post(
           'mcp_denied',
           c.req.header('User-Agent') ?? '',
           shape.methods,
-          c.req.header('Authorization') ? 'bad_key' : 'no_key',
+          presentsCredential(c.req.header('Authorization')) ? 'bad_key' : 'no_key',
           shape.tools,
         ],
         doubles: [1],

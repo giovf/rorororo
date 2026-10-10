@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-09",
+  "updated": "2026-10-10",
   "researched": "2026-10-09",
   "items": [
     {
@@ -399,10 +399,11 @@
       "effort_days": 0.25,
       "proof": "PR merged and the server visible in the catalogue; ≥ 1 `/mcp` client identifying as Docker MCP Toolkit in the Daily numbers row within 30 days of listing",
       "score": 8,
-      "status": "doing",
+      "status": "blocked",
       "not_before": "2026-10-10",
       "added": "2026-10-07",
-      "doing_since": "2026-10-10"
+      "blocked_on": "the fork PR (2026-10-10 build): the entry is written and passed Docker's own `cmd/validate` (`ventures/gankdat/docs/docker-mcp-catalog/` — server.yaml, tools.json, readme.md, PR.md), but the sandbox's GitHub token is scoped to giovf/rorororo (fork and pull-request calls on docker/mcp-registry are refused) and CI's WORKFLOW_TOKEN is repo-scoped too, so the handoff of 2026-10-10 in ALERTS.md carries the exact gh commands for the interactive session; foundry `third-party-pr-relay` is the general fix. The entry ships keyless preview + optional `gankdat.api_key` secret and NO oauth block: the Toolkit signs in by RFC 7591 dynamic client registration only (mcp-gateway-oauth-helpers dcr.go: \"no registration endpoint found\"), which gankdat lacks — gankdat `oauth-dynamic-client-registration` adds it and a second PR then adds the block. Close when the PR is merged and the catalogue shows the server; if Docker insists on an OSS licence, drop (do not argue).",
+      "updated": "2026-10-10"
     },
     {
       "id": "uk-company-lookup-day-30",
@@ -481,6 +482,16 @@
       "status": "done",
       "added": "2026-10-09",
       "done_at": "2026-10-09"
+    },
+    {
+      "id": "oauth-dynamic-client-registration",
+      "title": "RFC 7591 dynamic client registration for the OAuth server: `/register` (public clients, PKCE, redirect_uris stored), `registration_endpoint` in the RFC 8414 metadata, `/authorize` accepting a registered client_id beside a CIMD URL",
+      "why": "Found building the Docker MCP Catalog entry (2026-10-10): Docker's gateway starts OAuth for a remote server only through RFC 7591 — `PerformDCR` fails with \"no registration endpoint found\" when the RFC 8414 document has none (docker/mcp-gateway, vendor/github.com/docker/mcp-gateway-oauth-helpers/dcr.go:121) — and Cursor, ChatGPT and VS Code register clients the same way; only Claude uses client-id metadata documents, so the 2026-09-30 OAuth hop works for Claude alone and the Docker entry ships without an `oauth` block. Build: a D1 table (or KV, 30-day TTL) of registered public clients keyed by a random client_id with client_name, redirect_uris (https or loopback, same rules as CIMD), `token_endpoint_auth_method: none`; `/register` rate-limited per IP like /authorize; `/authorize` and `/token` resolve a registered id first, then CIMD; consent page names the registered client_name; `oauth_funnel` points carry the client kind. Then a second docker/mcp-registry PR adds `oauth: [{provider: gankdat, secret: gankdat.personal_access_token, env: GANKDAT_PERSONAL_ACCESS_TOKEN}]` and the Toolkit handles sign-in in the browser. Effort 0.5 day, 0 owner minutes.",
+      "effort_days": 0.5,
+      "proof": "a `token` step in the Daily numbers row's `oauth funnel 7d` for a client host other than claude.ai within 30 days of deploy; the Docker entry's oauth block merged",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-10"
     }
   ]
 }

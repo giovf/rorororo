@@ -8,3 +8,5 @@ design/
 *.md
 *.pdf
 apify/**/storage/
+# Docker MCP Catalog entry: must satisfy docker/mcp-registry's default-Prettier check, not ours (2026-10-10)
+docs/docker-mcp-catalog/server.yaml
