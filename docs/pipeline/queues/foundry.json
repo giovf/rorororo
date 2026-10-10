@@ -630,8 +630,9 @@
       "effort_days": 0.1,
       "proof": "a routine's `git log --since` window spans its full period (oldest line as old as the window) on the next retro and weekly report; the `work` fallback fires only on a real divergence",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-10"
+      "status": "doing",
+      "added": "2026-10-10",
+      "doing_since": "2026-10-10"
     },
     {
       "id": "build-slot-pre-research",
