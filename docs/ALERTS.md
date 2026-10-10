@@ -201,7 +201,7 @@ closed entries older than 30 days (git keeps the history).
   `ventures/gankdat/docs/CLAUDE-DIRECTORY.md` (name, one-liner, description, URLs, reviewer instructions, the
   seven acknowledgments); the only thing to create is a test key at https://gankdat.com/account under an
   @gankdat.com mailbox for the reviewer box. Before ticking "tested in Claude": add it as a custom connector
-  and ask one question. Day-30 read is queued for 2026-10-30.
+  and ask one question. Day-30 read is queued for 2026-10-30. — Done 2026-10-10 (interactive): done by the owner 2026-10-04 (directory submitted, both privacy URLs moved); the Cloudflare budget alert is superseded by the 2026-10-10 invoice entry
 - 2026-09-30 done (fallback routine): triage's `newer_than:3h` window is gone from the prompt mirror
   (`docs/routines/inbox-triage.md` step 1) — the search is now `in:inbox is:unread` with no age filter, oldest
   first, at most 30 threads a run, and step 2 marks any thread older than 3 h `(backlog)`. Unread state, not the
@@ -252,7 +252,7 @@ closed entries older than 30 days (git keeps the history).
 - 2026-09-30 owner: **one 2-minute dashboard edit** — the Chrome Web Store privacy-policy URL for Highlight Keep must move
   to `https://apps.gankdat.com/privacy.html` (the page is live; steps in `docs/for-owner/actions/013-repo-private.md`).
   It is the last link keeping the repo public; once you have done it (and the same for ReadFocus, asked the same way
-  when its item lands) Claude flips the repo to private. No new account, no money.
+  when its item lands) Claude flips the repo to private. No new account, no money. — Done 2026-10-10 (interactive): done by the owner 2026-10-04 (directory submitted, both privacy URLs moved); the Cloudflare budget alert is superseded by the 2026-10-10 invoice entry
 - 2026-09-30 owner: ReadFocus is ready for **the same 2-minute dashboard edit** as Highlight Keep — Chrome Web Store →
   ReadFocus (`dckbdaplggmhimpbekhdbaampglfhdgf`) → Privacy tab → privacy policy URL `https://apps.gankdat.com/privacy.html` →
   Save → Submit. Both extensions in one dashboard visit; then Claude flips the repo private. No new account, no money.
@@ -272,7 +272,7 @@ closed entries older than 30 days (git keeps the history).
   and the figure; the queue item `cloudflare-usage-breakdown` (8) then cuts the driver (the nightly full D1 rewrites are the
   prime suspect) and corrects the ledger. If the deploy token can read the breakdown itself the build routine will say so and
   you can skip this. (2) The Claude Connectors Directory form (OUTSTANDING E1, ~20 min, pre-written) is still the one shelf
-  that opens without a third party; nothing else on the list moves a §4 number. No new account, no money.
+  that opens without a third party; nothing else on the list moves a §4 number. No new account, no money. — Done 2026-10-10 (interactive): done by the owner 2026-10-04 (directory submitted, both privacy URLs moved); the Cloudflare budget alert is superseded by the 2026-10-10 invoice entry
 - 2026-10-04 owner: **publish the free "Unused Variables Finder & Cleaner" plugin** (~15 min + Figma review, £0, Figma desktop):
   create the plugin so Figma assigns its id, paste the id into `ventures/variables-toolkit/manifest.free.json`, `npm run build:free -w
   @foundry/variables-toolkit`, import `dist-free/manifest.json`, publish with the copy in `LISTING-FREE.md`. Steps:

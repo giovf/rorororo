@@ -841,6 +841,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 09:24 | build | PR not opened: the sandbox token is scoped to this repo and cannot fork docker/mcp-registry; handoff
 - 2026-10-10 09:24 | build | Queue: gankdat docker-mcp-catalog-listing blocked on the handoff; foundry third-party-pr-relay queued (3)
 - 2026-10-10 09:24 | build | Listings log, STRATEGY §4 row and §8, ARCHITECTURE note, SELF-CAUSED row for the PR's review mail
-- 2026-10-10 11:30 | interactive | Cloudflare invoice US$49 explained: 94M D1 rows written vs 50M included (nightly full reloads, fixed 4 Oct); ledger updated
+- 2026-10-10 11:30 | interactive | Cloudflare invoice US$49 explained: 94M D1 rows written vs 50M included (full reloads, fixed 4 Oct)
 - 2026-10-10 11:30 | notify | Cloudflare bill of $49 failed to charge: one-off overage, already fixed; please pay or update the card
 

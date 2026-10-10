@@ -5,7 +5,7 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (9)
+## Requests (10)
 
 1. **one 2-minute dashboard edit** — ~2 min, since 2026-09-30; unblocks highlight-keep `cws-listing-keywords` (4), read-focus `cws-promo-tile` (3). Steps: [013](actions/013-repo-private.md).
    one 2-minute dashboard edit — the Chrome Web Store privacy-policy URL for Highlight Keep must move to `https://apps.gankdat.com/privacy.html` (the page is live; steps in `docs/for-owner/actions/013-repo-private.md`). It is the last link keeping the repo public; once you have done it (and the same for ReadFocus, asked…
@@ -33,6 +33,9 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 9. **republish the Variables Toolkit** — ~10 min, since 2026-10-04; nothing queued waits on it. Steps: [019](actions/019-figma-toolkit-republish-relink.md).
    republish the Variables Toolkit (~10 min, £0, same Figma desktop session as actions 017/018): it gained a fourth tab, Relink to library variables (the Variable Utilities / DSO gap from RESEARCH §5), and `manifest.json` now asks for the `teamlibrary` permission, so the live build cannot read libraries until a new versi…
+
+10. **Cloudflare could not charge your card for invoice IN-830637…** — time not stated, since 2026-10-10; nothing queued waits on it.
+   Cloudflare could not charge your card for invoice IN-83063702 (US$49: the one-off D1 overage already fixed); please pay it or update the card in Cloudflare Billing before they suspend Workers.
 
 ## Waiting on an attended Claude session, not you (4)
 
