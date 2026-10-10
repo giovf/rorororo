@@ -827,3 +827,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 00:36 | burn-down | build.md step 1: a starved-and-cooled slot does the day's exchange pre-research pass; burn-down.md, README
 - 2026-10-10 00:36 | burn-down | Queue: foundry build-slot-pre-research done; proof is a build item traced to a day pass within 14 days
 - 2026-10-10 00:37 | burn-down | Stopping: foundry research + 3 items built (dispatch, unshallow, build pass); starved-and-cooled, pass spent
+- 2026-10-10 08:05 | retro | Slot reliability: 26/26 watched slots traced; burn-down watchdog still Wed-only despite nightly schedule
+- 2026-10-10 08:05 | retro | Repeat blocker: attended-session signing blocked 10d, now stalls 2 built releases (ReadFocus 0.3, HK 0.4)
+- 2026-10-10 08:05 | retro | Defect: run-watchdog's burn-down slot still Wed-only; schedule went nightly 10-04, 5/6 nights unwatched
+- 2026-10-10 08:05 | retro | Defect: handoff: entries get no aging signal; 2 releases sat unsigned 5-6 days with nothing on the phone
+- 2026-10-10 08:05 | retro | Defect: uk-trademark-journal's first fix (10-07) was itself too slow for the cron budget it fixed
+- 2026-10-10 08:05 | retro | Queued foundry burn-down-watchdog-nightly (7): watch every night, not just Wednesday
+- 2026-10-10 08:05 | retro | Queued foundry handoff-aging-escalation (5): notify line for aging handoff: entries too
+- 2026-10-10 08:05 | retro | Owner load: median open-ask age 8d (5 of 12 over 7d); all genuinely need the owner
