@@ -24,7 +24,7 @@ A pull refused on a fresh sandbox is usually lag, not divergence (2026-10-10, fo
 | --- | --- | --- | --- | --- |
 | daily build | `build.md` | `trig_01P9WT733fg3qnuJeKUHE8fx` | Fable | bootstrap (swapped 2026-10-01) |
 | build fallback | `fallback.md` | `trig_01GraXN5FPXmq5M9wJSYYeHN` | Opus | bootstrap (swapped 2026-10-01) |
-| Wednesday burn-down | `burn-down.md` | `trig_011mbqaUzm3qTK2ZdevCuYpH` (Wed), `trig_013tLPWgysoiHWpciYGgXJQ2` (Thu) | Fable | bootstrap (swapped 2026-10-01) |
+| Evening burn (nightly 17:00–02:00 UTC since 2026-10-04) | `burn-down.md` | `trig_011mbqaUzm3qTK2ZdevCuYpH` (17:00–23:00), `trig_013tLPWgysoiHWpciYGgXJQ2` (00:00–02:00) | Fable | bootstrap (swapped 2026-10-01) |
 | venture exchange | `exchange.md` | `trig_01CaSyBqwyKVL6NiPqPzhM8L` | Fable | bootstrap (swapped 2026-10-01) |
 | strategy review | `review.md` | `trig_01Mv7z5Ae9gEGq9zBnrfDH6R` | Fable | bootstrap (swapped 2026-10-01) |
 | daily metrics | `metrics.md` | `trig_01JBrWDAZLeWEAhSBBnA9g8K` | Sonnet | bootstrap (swapped 2026-10-01) |

@@ -33,9 +33,9 @@ describe('slotsDue', () => {
   });
 
   it('knows the weekly slots by weekday and keeps to the lookback window', () => {
-    // Thursday 2026-10-01 12:00: Wednesday's exchange + burn-down are due, Monday's report and
-    // Sunday's review are outside 48 h (Tuesday 17:00 is just inside), today's 17:00 build is
-    // not due yet.
+    // Thursday 2026-10-01 12:00: Wednesday's exchange is due, Monday's report and Sunday's
+    // review are outside 48 h (Tuesday 17:00 is just inside), today's 17:00 build is not due
+    // yet; the burn-down slot did not exist before it went nightly on 2026-10-04.
     const keys = slotsDue(ROUTINES, at('2026-10-01T12:00:00Z'), 0, 48).map((s) =>
       slotKey(s.routine, s.at),
     );
@@ -45,7 +45,6 @@ describe('slotsDue', () => {
       'exchange@2026-09-30 08:00',
       'build@2026-09-30 09:00',
       'build@2026-09-30 17:00',
-      'burn-down@2026-09-30 18:00',
       'metrics@2026-10-01 07:00',
       'build@2026-10-01 09:00',
     ]);
@@ -58,6 +57,26 @@ describe('slotsDue', () => {
     expect(keys).toContain('review@2026-09-27 08:00');
     expect(keys).toContain('report@2026-09-28 07:30');
     expect(keys).not.toContain('exchange@2026-09-27 08:00');
+  });
+
+  it('watches the burn-down every night at 17:00 from 2026-10-04, not only Wednesdays', () => {
+    // Monday 2026-10-05 and Tuesday 2026-10-06 are not Wednesdays; both nights are watched.
+    const keys = slotsDue(ROUTINES, at('2026-10-07T12:00:00Z'), 0, 48).map((s) =>
+      slotKey(s.routine, s.at),
+    );
+    expect(keys).toContain('burn-down@2026-10-05 17:00');
+    expect(keys).toContain('burn-down@2026-10-06 17:00');
+    expect(keys.filter((k) => k.startsWith('burn-down@'))).toHaveLength(2);
+    // A full week lists seven burn-down slots, one per night.
+    const week = slotsDue(ROUTINES, at('2026-10-18T12:00:00Z'), 0, 7 * 24).filter(
+      (s) => s.routine === 'burn-down',
+    );
+    expect(week).toHaveLength(7);
+    // Before the schedule went nightly there was no slot to miss (Wednesday 18:00 included).
+    const before = slotsDue(ROUTINES, at('2026-10-04T12:00:00Z'), 0, 7 * 24).filter(
+      (s) => s.routine === 'burn-down',
+    );
+    expect(before).toEqual([]);
   });
 
   it('includes the Saturday ops retro only on Saturdays', () => {

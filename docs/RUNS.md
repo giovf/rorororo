@@ -847,6 +847,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 12:00 | interactive | Cloudflare invoice paid by the owner; cap rule recorded: net outlay ≤ £100, overspend comes from profit
 - 2026-10-10 12:00 | interactive | Ledger check now fails past cap + revenue, warns under 3 months of headroom; ICO fee marked contingent
 - 2026-10-10 12:00 | interactive | Metrics job files a score-8 cf-overage item the day the Daily numbers row shows ≥ US$1 overage
+- 2026-10-10 17:17 | build | Watchdog: burn-down slot now 17:00 nightly (was Wed 18:00), from 2026-10-04; 3 tests, 7 slots a week
+- 2026-10-10 17:17 | build | Dry run: a silent Tuesday-night burn-down yields a watchdog missed: line; real repo has no miss
+- 2026-10-10 17:17 | build | SCHEDULERS watchdog row and bullet, ops-retro step 1 and routines/README say nightly 17:00
+- 2026-10-10 17:17 | build | Queue: foundry burn-down-watchdog-nightly done; proof is 7 burn-down slots in next week's watchdog
 - 2026-10-10 17:21 | burn-down | burn-down-watchdog-nightly dropped mid-edit: the 17:10 build claimed it first; took next instead
 - 2026-10-10 17:21 | burn-down | gankdat POST /register (RFC 7591): D1 oauth_clients, migration 0016; public clients, PKCE, no secret
 - 2026-10-10 17:21 | burn-down | registration_endpoint in the RFC 8414 document; /authorize resolves gkcl_ ids before CIMD

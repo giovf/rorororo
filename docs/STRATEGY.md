@@ -985,6 +985,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   £3.70/month); the metrics job files a score-8 `cf-overage-<period>` item from the row's `cf usage`
   figure (`scripts/cf-overage-to-queue.ts`). Cloudflare's own budget email stays at US$10 (the API
   token cannot edit notification policies); inbox triage escalates it as before.
+- 2026-10-10 build: foundry `burn-down-watchdog-nightly` (7) built — the run watchdog watches the evening burn's first hour
+  (17:00 UTC) every night instead of Wednesday 18:00; the schedule went nightly on 2026-10-04 and five of six nights had no
+  silence detector. Why: a silent non-Wednesday night left nothing on the owner's phone; the retro found it by inspection only.
 - 2026-10-10 burn-down: gankdat offers RFC 7591 dynamic client registration (`POST /register`,
   v0.23.0) because only Claude signs in by client-id metadata documents; Docker's MCP Toolkit,
   Cursor, ChatGPT and VS Code all register, so the OAuth hop built on 2026-09-30 worked for one
