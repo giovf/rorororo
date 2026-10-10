@@ -820,3 +820,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 00:29 | burn-down | metrics.md MISSING ROWS: dispatch gankdat/store metrics via workflow_dispatch, poll 10 min, then relay
 - 2026-10-10 00:29 | burn-down | SCHEDULERS: measured cron drift on both metrics jobs, owner notes (1 fire in 6) and the watchdog (6 of 14)
 - 2026-10-10 00:29 | burn-down | Queue: foundry cron-drift-dispatch-row done; proof is rows present before the 07:00 summary from 10-11
+- 2026-10-10 00:32 | burn-down | CLONE paragraph in eight routine bodies: unshallow the depth-50 clone before any git log or push
+- 2026-10-10 00:32 | burn-down | routines/README bootstrap note and CLAUDE.md session-start line: a refused pull on a shallow clone is lag
+- 2026-10-10 00:32 | burn-down | Queue: foundry sandbox-clone-unshallow done; proof is full git-log windows on the next retro and report

@@ -42,7 +42,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
 
 ## Workflow
 - **Session start (every interactive session):** `git status` — uncommitted work from a
-  cut-off session is finished or discarded, never left; `git pull --no-rebase`; read
+  cut-off session is finished or discarded, never left; `git fetch --unshallow origin` when
+  `git rev-parse --is-shallow-repository` says true (a depth-50 sandbox clone makes a plain
+  fast-forward look diverged, 2026-10-10); `git pull --no-rebase`; read
   `docs/OWNER-NOTES.md` (answer new notes in place), `docs/ALERTS.md` (`handoff:` lines are
   yours to execute) and `docs/INBOX.md`; check CI is
   green (`gh run list -L 3`) and fix `main` first if not; `npm run schedules -w @foundry/gankdat`

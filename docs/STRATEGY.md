@@ -958,3 +958,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-10 burn-down: foundry `cron-drift-dispatch-row` (6) built — the 07:00 metrics routine now fires the two metrics
   workflows by `workflow_dispatch` when the day's commit is missing and waits up to 10 min, because GitHub starts every
   cron here ~7 h late whatever the minute while a dispatched run starts at once; proof: no `left no row` note from 10-11.
+- 2026-10-10 burn-down: foundry `sandbox-clone-unshallow` (3) built — every routine body now unshallows the depth-50 sandbox
+  clone first, because a days-old snapshot made `git pull` call a plain fast-forward a divergence and cut every `git log
+  --since` short; the stored bootstrap gains the same line at its next attended edit.
