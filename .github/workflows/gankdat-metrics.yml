@@ -86,6 +86,12 @@ jobs:
         # item; 2026-10-03: the two-consecutive-days rule missed an every-other-day flake). Only node
         # builtins, no secrets.
         run: npm run refresh-errors
+      - name: Queue a fix for any Cloudflare metered overage in today's row
+        # scripts/cf-overage-to-queue.ts reads the row's `cf usage … ≈ US$N overage` figure and files an
+        # idempotent `cf-overage-<period start>` item once N ≥ 1 (2026-10-10: the 09-10→10-10 invoice was
+        # US$49 of D1 writes nobody read until Cloudflare's email; the owner's rule makes any metered
+        # charge a bug to fix the day it shows). Only node builtins, no secrets.
+        run: npm run cf-overage
       - name: Commit
         run: |
           git config user.name "foundry-metrics[bot]"

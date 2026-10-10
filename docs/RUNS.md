@@ -844,3 +844,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 11:30 | interactive | Cloudflare invoice US$49 explained: 94M D1 rows written vs 50M included (full reloads, fixed 4 Oct)
 - 2026-10-10 11:30 | notify | Cloudflare bill of $49 failed to charge: one-off overage, already fixed; please pay or update the card
 
+- 2026-10-10 12:00 | interactive | Cloudflare invoice paid by the owner; cap rule recorded: net outlay ≤ £100, overspend comes from profit
+- 2026-10-10 12:00 | interactive | Ledger check now fails past cap + revenue, warns under 3 months of headroom; ICO fee marked contingent
+- 2026-10-10 12:00 | interactive | Metrics job files a score-8 cf-overage item the day the Daily numbers row shows ≥ US$1 overage

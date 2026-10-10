@@ -11,9 +11,11 @@
 Cheap-to-run products sold through channels that bring their own buyers. Every product has
 near-zero marginal cost, so **any sale is net profit**; the only real risk is silence. The
 portfolio therefore optimises for *many independent shots where buyers already pay for the
-same thing*, not for one big bet. Capital cap £100; recurring cost on the ledger ≈ £4/month —
-but Cloudflare's 2026-10-01 budget alert reported US$15 of metered usage 20 days into the period,
-so the real figure is unconfirmed until the 10-10 invoice (review 2026-W40, §7 cost rule).
+same thing*, not for one big bet. Capital cap £100 = the owner's **net outlay** (owner,
+2026-10-10): `spent + planned` may pass it only by revenue already received, so anything beyond
+the cap comes out of profit. Recurring cost £3.70/month (Workers Paid, owner-paid); the 10-10
+invoice (US$49, £37) was a one-off D1 overage from the nightly full reloads, fixed 2026-10-04,
+and `npm run ledger` now reports the months of headroom the recurring line leaves (12 on 10-10).
 
 ## 2. Where the money is (ranked by evidence, 2026-09-20)
 
@@ -95,6 +97,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   one buyer type (bid intelligence or KYB) and sell the change feeds as the product.
 - Recurring cost creep: anything that pushes recurring spend above £10/month needs revenue
   ≥ 3× that cost already banked.
+- Cap rule (owner, 2026-10-10): the owner's net outlay never passes £100 — `npm run ledger` fails
+  the gate when `spent + planned > £100 + revenue`, and warns under three months of headroom at
+  the recurring rate; the review then decides what stops or what pays. A metered Cloudflare charge
+  above the US$5 plan is a bug, not a cost: the metrics job files `cf-overage-<period>` (score 8)
+  the day the Daily numbers row shows ≥ US$1 of overage.
 
 ## 8. Decision log
 
@@ -970,3 +977,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   so the 2026-09-30 OAuth hop works for Claude alone); the MCP route now treats a bare `Bearer` header, which the Toolkit
   sends until a key is pasted, as no key (v0.22.1). The fork PR itself needs a token this sandbox lacks (handoff), so a
   third-party PR relay is queued (3).
+- 2026-10-10 interactive (owner): the US$49 Cloudflare invoice is paid; the owner keeps paying the US$5
+  Workers Paid subscription monthly and set the budget rule — the £100 cap is their net outlay, anything
+  beyond it comes out of profit. Applied: the ledger gains `contingent` rows (the ICO fee, deferred
+  until the first customer, no longer reserves £47 of the cap) and a Recurring table; `npm run ledger`
+  fails on `committed > cap + revenue` and warns under 3 months of headroom (12 today: £47.60 left at
+  £3.70/month); the metrics job files a score-8 `cf-overage-<period>` item from the row's `cf usage`
+  figure (`scripts/cf-overage-to-queue.ts`). Cloudflare's own budget email stays at US$10 (the API
+  token cannot edit notification policies); inbox triage escalates it as before.

@@ -314,5 +314,5 @@ closed entries older than 30 days (git keeps the history).
   Docker row of `ventures/gankdat/docs/MARKETPLACE-PREP.md` and the item's `blocked_on` in `docs/pipeline/queues/gankdat.json`. No test
   credentials form is needed (keyless preview); if a reviewer insists on an OSS licence, drop the item — do not argue.
   Record the dates in `ventures/highlight-keep/STORE.md`. ~5 min.
-- 2026-10-10 owner: Cloudflare could not charge your card for invoice IN-83063702 (US$49: the one-off D1 overage already fixed); please pay it or update the card in Cloudflare Billing before they suspend Workers.
+- 2026-10-10 owner: Cloudflare could not charge your card for invoice IN-83063702 (US$49: the one-off D1 overage already fixed); please pay it or update the card in Cloudflare Billing before they suspend Workers. — Done 2026-10-10 (interactive): paid by the owner 2026-10-10; cap rule recorded in LEDGER.md and enforced by npm run ledger + the metrics job's cf-overage item
 

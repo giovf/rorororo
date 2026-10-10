@@ -5,7 +5,7 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (7)
+## Requests (5)
 
 1. **let CI read Google Search Console** — ~10 min, since 2026-10-07; unblocks gankdat `search-console-stats-indexing` (4). Steps: [020](actions/020-search-console-service-account.md).
    let CI read Google Search Console (~10 min, £0, no new account): create a read-only service account in Google Cloud, add its email as a *Restricted* user on the gankdat.com and apps.gankdat.com Search Console properties, and paste its JSON key as the `SEARCH_CONSOLE_KEY` repository secret. From then on the 06:45 job w…
@@ -13,20 +13,14 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 2. **publish the free "Variables Playground" Community file** — ~10 min, since 2026-10-02; unblocks variables-toolkit `playground-file-views` (3). Steps: [017](actions/017-figma-playground-file.md).
    publish the free "Variables Playground" Community file (~10 min, £0, Figma desktop): build the plugin, run its new dev command "Build Community playground file" in an empty file, set the Cover frame as thumbnail, Publish to Community with the copy in `ventures/variables-toolkit/PLAYGROUND.md`, reply with the URL. Step…
 
-3. **the same 2-minute dashboard edit** — ~2 min, since 2026-09-30; nothing queued waits on it.
-   ReadFocus is ready for the same 2-minute dashboard edit as Highlight Keep — Chrome Web Store → ReadFocus (`dckbdaplggmhimpbekhdbaampglfhdgf`) → Privacy tab → privacy policy URL `https://apps.gankdat.com/privacy.html` → Save → Submit. Both extensions in one dashboard visit; then Claude flips the repo private. No new ac…
-
-4. **Claude GitHub App is requesting updated/additional permissi…** — time not stated, since 2026-10-01; nothing queued waits on it.
+3. **Claude GitHub App is requesting updated/additional permissi…** — time not stated, since 2026-10-01; nothing queued waits on it.
    GitHub emailed that the Claude GitHub App is requesting updated/additional permissions on the giovf account (installation 163075240). Review and accept or ignore at https://github.com/settings/installations/163075240/permissions/update — only the owner's GitHub identity can approve this; Claude keeps current permissio…
 
-5. **publish the free "Unused Variables Finder & Cleaner" plugin** — ~15 min, since 2026-10-04; nothing queued waits on it. Steps: [018](actions/018-figma-unused-variables-finder.md).
+4. **publish the free "Unused Variables Finder & Cleaner" plugin** — ~15 min, since 2026-10-04; nothing queued waits on it. Steps: [018](actions/018-figma-unused-variables-finder.md).
    publish the free "Unused Variables Finder & Cleaner" plugin (~15 min + Figma review, £0, Figma desktop): create the plugin so Figma assigns its id, paste the id into `ventures/variables-toolkit/manifest.free.json`, `npm run build:free -w @foundry/variables-toolkit`, import `dist-free/manifest.json`, publish with the c…
 
-6. **republish the Variables Toolkit** — ~10 min, since 2026-10-04; nothing queued waits on it. Steps: [019](actions/019-figma-toolkit-republish-relink.md).
+5. **republish the Variables Toolkit** — ~10 min, since 2026-10-04; nothing queued waits on it. Steps: [019](actions/019-figma-toolkit-republish-relink.md).
    republish the Variables Toolkit (~10 min, £0, same Figma desktop session as actions 017/018): it gained a fourth tab, Relink to library variables (the Variable Utilities / DSO gap from RESEARCH §5), and `manifest.json` now asks for the `teamlibrary` permission, so the live build cannot read libraries until a new versi…
-
-7. **Cloudflare could not charge your card for invoice IN-830637…** — time not stated, since 2026-10-10; nothing queued waits on it.
-   Cloudflare could not charge your card for invoice IN-83063702 (US$49: the one-off D1 overage already fixed); please pay it or update the card in Cloudflare Billing before they suspend Workers.
 
 ## Waiting on an attended Claude session, not you (4)
 
