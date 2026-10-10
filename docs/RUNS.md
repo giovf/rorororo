@@ -823,3 +823,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 00:32 | burn-down | CLONE paragraph in eight routine bodies: unshallow the depth-50 clone before any git log or push
 - 2026-10-10 00:32 | burn-down | routines/README bootstrap note and CLAUDE.md session-start line: a refused pull on a shallow clone is lag
 - 2026-10-10 00:32 | burn-down | Queue: foundry sandbox-clone-unshallow done; proof is full git-log windows on the next retro and report
+- 2026-10-10 00:36 | burn-down | pipeline cold -- --routine=build: day window from 07:00; build and burn-down pass lines both count; 4 tests
+- 2026-10-10 00:36 | burn-down | build.md step 1: a starved-and-cooled slot does the day's exchange pre-research pass; burn-down.md, README
+- 2026-10-10 00:36 | burn-down | Queue: foundry build-slot-pre-research done; proof is a build item traced to a day pass within 14 days
+- 2026-10-10 00:37 | burn-down | Stopping: foundry research + 3 items built (dispatch, unshallow, build pass); starved-and-cooled, pass spent

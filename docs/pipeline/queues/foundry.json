@@ -637,13 +637,13 @@
     {
       "id": "build-slot-pre-research",
       "title": "The 09:00/17:00 build slot does the day's one exchange pre-research pass when the pipeline is starved and cooled",
-      "why": "Research 2026-10-10 (burn-down): the pipeline has ended starved-and-cooled every night since 10-05 (RUNS 10-05 23:xx, 10-06 00..02, 10-07 01:20 and 18:30, 10-08 00:30, 10-09 01:50) and the 10-08 09:15 build slot stopped with `Nothing buildable`; the only producers of new build items are the Wednesday exchange and the burn-down's one pre-research pass per night (10-07 Land Registry parked, 10-09 VOA declined on licence), so one candidate a day is the throughput ceiling while 34 exchange ideas sit 19 parked. Build: build.md's starved-and-cooled sentence gains the same pre-research pass as burn-down.md — an `Exchange pre-research:` line stamped since 07:00 UTC spends the day's pass, the burn-down's night window stays 17:00 (scripts/pipeline-cold.ts counts a `| build |` line in the day window; tests); SCHEDULERS.md build row. The slot has already started, so the pass adds ~10 min to a session the owner's daytime-light rule already allows.",
+      "why": "Research 2026-10-10 (burn-down): the pipeline has ended starved-and-cooled every night since 10-05 (RUNS 10-05 23:xx, 10-06 00..02, 10-07 01:20 and 18:30, 10-08 00:30, 10-09 01:50) and the 10-08 09:15 build slot stopped with `Nothing buildable`; the only producers of new build items are the Wednesday exchange and the burn-down's one pre-research pass per night (10-07 Land Registry parked, 10-09 VOA declined on licence), so one candidate a day is the throughput ceiling while 34 exchange ideas sit 19 parked. Build: build.md's starved-and-cooled sentence gains the same pre-research pass as burn-down.md — an `Exchange pre-research:` line stamped since 07:00 UTC spends the day's pass, the burn-down's night window stays 17:00 (scripts/pipeline-cold.ts counts a `| build |` line in the day window; tests); SCHEDULERS.md build row. The slot has already started, so the pass adds ~10 min to a session the owner's daytime-light rule already allows. BUILT 2026-10-10 (burn-down): pipeline-cold.ts dayStart/passWindowStart, `preResearchSpent(runs, now, routine)` counting build and burn-down pass lines; `npm run pipeline cold -- --routine=build`; build.md step 1 sentence, burn-down.md pass rule, pipeline README, SCHEDULERS build row; 4 tests.",
       "effort_days": 0.05,
       "proof": "two exchange candidates a day (one day, one night) on starved days; a build item traced to a day pass within 14 days",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-10",
-      "doing_since": "2026-10-10"
+      "done_at": "2026-10-10"
     }
   ]
 }

@@ -1,5 +1,5 @@
 // Reads the work pipeline (docs/pipeline/) and prints it; fails on any invalid file.
-// Run: npm run pipeline [status|next|empty|cold|claim <venture>/<id> [--by=<routine>]]
+// Run: npm run pipeline [status|next|empty|cold [--routine=build]|claim <venture>/<id> [--by=<routine>]]
 // (Node 22 runs .ts directly — keep syntax erasable)
 import { readdirSync, readFileSync } from 'node:fs';
 import path from 'node:path';
@@ -64,7 +64,15 @@ if (process.argv[2] === 'cold') {
     else if (!cooling(q)) reasons.push(`${q.venture}: starved, not cooling`);
   }
   const runs = readFileSync(path.resolve(dir, '..', 'RUNS.md'), 'utf8');
-  if (!preResearchSpent(runs, now)) reasons.push('exchange: pre-research pass unspent this night');
+  // `-- --routine=build` (npm keeps a bare flag for itself, so npm_config_routine is read too)
+  const routineArg =
+    process.argv.find((a) => a.startsWith('--routine='))?.slice('--routine='.length) ??
+    process.env['npm_config_routine'];
+  const routine = routineArg === 'build' ? 'build' : 'burn-down';
+  if (!preResearchSpent(runs, now, routine))
+    reasons.push(
+      `exchange: pre-research pass unspent this ${routine === 'build' ? 'day' : 'night'}`,
+    );
   console.log(reasons.length === 0 ? 'starved-and-cooled' : `work: ${reasons.join('; ')}`);
   process.exit(0);
 }

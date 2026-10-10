@@ -1,5 +1,11 @@
 import { describe, expect, it } from 'vitest';
-import { datedArrived, lineStamp, nightStart, preResearchSpent } from './pipeline-cold.ts';
+import {
+  datedArrived,
+  dayStart,
+  lineStamp,
+  nightStart,
+  preResearchSpent,
+} from './pipeline-cold.ts';
 
 const pass =
   '- 2026-10-07 21:38 | burn-down | Exchange pre-research: EA waste carriers register parked';
@@ -41,11 +47,37 @@ describe('preResearchSpent', () => {
     expect(preResearchSpent(runs(stopping), new Date('2026-10-07T19:00:00Z'))).toBe(false);
   });
   it("ignores the prefix on another routine's line", () => {
-    const other = pass.replace('| burn-down |', '| build |');
+    const other = pass.replace('| burn-down |', '| exchange |');
     expect(preResearchSpent(runs(other), new Date('2026-10-07T22:10:00Z'))).toBe(false);
+  });
+  it("counts a build pass inside the burn-down's night (the 17:10 build and the 17:00 burn)", () => {
+    const build =
+      '- 2026-10-07 17:25 | build | Exchange pre-research: EA waste carriers register parked';
+    expect(preResearchSpent(runs(build), new Date('2026-10-07T18:10:00Z'))).toBe(true);
+  });
+  it("reads the build's day window from 07:00 with --routine=build", () => {
+    const morning =
+      '- 2026-10-07 09:40 | build | Exchange pre-research: EA waste carriers register parked';
+    expect(preResearchSpent(runs(morning), new Date('2026-10-07T17:15:00Z'), 'build')).toBe(true);
+    expect(preResearchSpent(runs(morning), new Date('2026-10-08T09:15:00Z'), 'build')).toBe(false);
+    // a burn-down pass of the night before (01:30) is outside the day that starts at 07:00
+    const night =
+      '- 2026-10-08 01:30 | burn-down | Exchange pre-research: EA waste carriers register parked';
+    expect(preResearchSpent(runs(night), new Date('2026-10-08T09:15:00Z'), 'build')).toBe(false);
+    // but a burn-down pass at 17:21 spends the build's day too (the day runs to the next 07:00)
+    const evening =
+      '- 2026-10-08 17:21 | burn-down | Exchange pre-research: VOA rating list declined';
+    expect(preResearchSpent(runs(evening), new Date('2026-10-08T17:40:00Z'), 'build')).toBe(true);
   });
   it('is false on an empty log', () => {
     expect(preResearchSpent('', new Date('2026-10-07T22:10:00Z'))).toBe(false);
+  });
+});
+
+describe('dayStart', () => {
+  it('is today 07:00 from 07:00 on, yesterday 07:00 before it', () => {
+    expect(dayStart(new Date('2026-10-07T09:10:00Z'))).toBe('2026-10-07 07:00');
+    expect(dayStart(new Date('2026-10-08T02:10:00Z'))).toBe('2026-10-07 07:00');
   });
 });
 

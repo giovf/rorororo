@@ -961,3 +961,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-10 burn-down: foundry `sandbox-clone-unshallow` (3) built — every routine body now unshallows the depth-50 sandbox
   clone first, because a days-old snapshot made `git pull` call a plain fast-forward a divergence and cut every `git log
   --since` short; the stored bootstrap gains the same line at its next attended edit.
+- 2026-10-10 burn-down: foundry `build-slot-pre-research` (3) built — a build slot that finds the pipeline starved and cooled
+  now does the day's one exchange pre-research pass (gate `npm run pipeline cold -- --routine=build`, window from 07:00 UTC)
+  instead of idling, because the exchange was the only producer of new items and one candidate a night was the ceiling.
