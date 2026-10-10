@@ -867,3 +867,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 17:34 | burn-down | Owner action 021 (classic PAT as PR_TOKEN); Docker PR handoff superseded by the relay request
 - 2026-10-10 17:34 | burn-down | Queue: foundry third-party-pr-relay blocked on action 021; gankdat docker listing points at it
 - 2026-10-10 17:34 | notify | One 3-minute GitHub token lets Claude open listing pull requests itself; steps in action 021
+- 2026-10-10 17:39 | burn-down | Exchange pre-research: uk-grants-360giving parked (Funds Online £450/yr rival, no actor; licence per publisher)
