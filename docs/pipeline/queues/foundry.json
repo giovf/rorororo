@@ -663,8 +663,9 @@
       "effort_days": 0.1,
       "proof": "the next handoff: entry that crosses the threshold produces a notify: line within a day of crossing it; a month from now no shipped-but-unsigned release handoff is older than the threshold without one",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-10"
+      "status": "doing",
+      "added": "2026-10-10",
+      "doing_since": "2026-10-10"
     },
     {
       "id": "third-party-pr-relay",
