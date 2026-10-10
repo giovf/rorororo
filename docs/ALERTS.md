@@ -313,6 +313,9 @@ closed entries older than 30 days (git keeps the history).
   UK and EU government registers" --body-file "$OLDPWD"/ventures/gankdat/docs/docker-mcp-catalog/PR.md`. Then paste the PR URL into the
   Docker row of `ventures/gankdat/docs/MARKETPLACE-PREP.md` and the item's `blocked_on` in `docs/pipeline/queues/gankdat.json`. No test
   credentials form is needed (keyless preview); if a reviewer insists on an OSS licence, drop the item — do not argue.
-  Record the dates in `ventures/highlight-keep/STORE.md`. ~5 min.
+  Record the dates in `ventures/highlight-keep/STORE.md`. ~5 min. — Superseded 2026-10-10 (burn-down): the pr relay opens it from CI once PR_TOKEN is set (action 021); request in docs/relay/prs/docker-mcp-catalog/
 - 2026-10-10 owner: Cloudflare could not charge your card for invoice IN-83063702 (US$49: the one-off D1 overage already fixed); please pay it or update the card in Cloudflare Billing before they suspend Workers. — Done 2026-10-10 (interactive): paid by the owner 2026-10-10; cap rule recorded in LEDGER.md and enforced by npm run ledger + the metrics job's cf-overage item
 
+- 2026-10-10 owner: **let CI open pull requests on other repositories** (~3 min, £0): create a classic GitHub token with
+  `public_repo` and save it as the `PR_TOKEN` repository secret; the Docker MCP Catalog PR then opens itself (and every
+  future listing PR). Steps: `docs/for-owner/actions/021-pr-relay-token.md`.

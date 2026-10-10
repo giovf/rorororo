@@ -995,3 +995,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-10 burn-down: foundry `handoff-aging-escalation` (5) built — open `handoff:` entries older
   than 3 days reach the owner's phone through the run watchdog (within 2 h, then weekly); two
   built releases sat unsigned 5–6 days with nothing on the phone naming them.
+- 2026-10-10 burn-down: foundry `third-party-pr-relay` (3) built — a request folder under
+  `docs/relay/prs/` becomes a fork pull request from CI, so directory listings (Docker MCP
+  Catalog first) and upstream fixes no longer wait for the interactive session; one owner token
+  (action 021) arms it.

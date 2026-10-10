@@ -1,0 +1,12 @@
+{
+  "repo": "docker/mcp-registry",
+  "branch": "add-gankdat",
+  "title": "Add gankdat (remote): UK and EU government registers",
+  "body_file": "ventures/gankdat/docs/docker-mcp-catalog/PR.md",
+  "commit": "Add gankdat (remote)",
+  "files": {
+    "servers/gankdat/server.yaml": "ventures/gankdat/docs/docker-mcp-catalog/server.yaml",
+    "servers/gankdat/tools.json": "ventures/gankdat/docs/docker-mcp-catalog/tools.json",
+    "servers/gankdat/readme.md": "ventures/gankdat/docs/docker-mcp-catalog/readme.md"
+  }
+}

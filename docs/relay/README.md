@@ -28,3 +28,26 @@ Rules: only hosts on the allowlist in `scripts/fetch-relay.mjs` (public data and
 GET bodies are capped at 8 MB — use `RANGE` for large files and `HEAD` to check existence;
 never put a credential in a request; everything fetched lands in a public repo, so public data
 only. Add a host to the allowlist in the same commit as the source that needs it.
+
+## PR relay — opening a pull request on someone else's repository
+
+A cloud sandbox's GitHub token and CI's `WORKFLOW_TOKEN` are scoped to this repository, so a
+fork or a pull request on `docker/mcp-registry`, an awesome-list or an upstream fix answers 403
+(every directory-listing PR to 2026-10-10 needed the interactive session). Instead:
+
+1. Write `docs/relay/prs/<name>/request.json`: `repo` (`owner/name`), `branch`, `title`,
+   `body_file` (a path in this repo, e.g. the entry's `PR.md`) or `body`, optional `commit`, and
+   `files` — published path in the target repository → source path in this one. Keep the
+   sources in the venture's docs so they stay reviewable here.
+2. Commit it with the work (no separate push needed; `relay: pr <name>` if on its own).
+3. The `pr relay` workflow (`docs/ci/pr-relay.yml` → `scripts/pr-relay.ts`, owner's classic
+   PAT `PR_TOKEN` with `public_repo`, action 021) forks the target, pushes `<branch>` on the
+   fork with the files, opens the PR (or finds the open one for that branch) and commits
+   `docs/relay/prs/<name>/result.json` — `{ pr, fork, branch, base, done_at }` or
+   `{ error, failed_at }`. Copy the PR URL into the item's `blocked_on` and the listing log, and
+   add the review mail to `docs/ops/SELF-CAUSED.md`.
+4. While `PR_TOKEN` is unset the run prints `PR_TOKEN not set` and the request stays pending;
+   the next push under `docs/relay/prs/**` or a `workflow_dispatch` retries. A finished request
+   (with `result.json`) is never re-run: delete the folder to open it again.
+
+Public repositories only; never a credential in the files; the body is posted as written.

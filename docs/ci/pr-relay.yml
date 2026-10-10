@@ -1,0 +1,40 @@
+name: pr relay
+
+# Routines write docs/relay/prs/<name>/request.json (target repo, branch, title, body, files);
+# this forks the target with the owner's classic PAT, pushes the branch and opens the PR, then
+# commits docs/relay/prs/<name>/result.json. See docs/relay/README.md § PR relay.
+on:
+  push:
+    branches: [main]
+    paths: ['docs/relay/prs/**']
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: pr-relay
+  cancel-in-progress: false
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: node --disable-warning=ExperimentalWarning scripts/pr-relay.ts
+        env:
+          GH_TOKEN: ${{ secrets.PR_TOKEN }}
+      - name: Commit results
+        run: |
+          git config user.name "foundry-relay[bot]"
+          git config user.email "info@gankdat.com"
+          git add -A docs/relay/prs
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "relay: pr $(git diff --cached --name-only | grep -oE 'prs/[^/]+' | sort -u | sed 's#prs/##' | tr '\n' ' ')"
+          git pull --rebase origin main
+          git push origin HEAD:main

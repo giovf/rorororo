@@ -100,3 +100,4 @@ incoming/
 # ── gankdat (Cloudflare Worker) local secrets/state
 .dev.vars
 backup-*.sql
+.pr-relay/

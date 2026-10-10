@@ -862,3 +862,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 17:28 | burn-down | run-watchdog.ts: sends that digest as a notify line within 2 h of crossing, weekly while it holds
 - 2026-10-10 17:28 | burn-down | weekly-report.md section 4 and SCHEDULERS watchdog row updated; 5 tests
 - 2026-10-10 17:28 | burn-down | Queue: foundry handoff-aging-escalation done; proof is a notify line within a day of crossing
+- 2026-10-10 17:34 | burn-down | PR relay: scripts/pr-relay.ts + docs/ci/pr-relay.yml fork, push and open a PR from a request folder
+- 2026-10-10 17:34 | burn-down | Request validator with 2 tests; relay README section; SCHEDULERS row; first request: Docker catalog
+- 2026-10-10 17:34 | burn-down | Owner action 021 (classic PAT as PR_TOKEN); Docker PR handoff superseded by the relay request
+- 2026-10-10 17:34 | burn-down | Queue: foundry third-party-pr-relay blocked on action 021; gankdat docker listing points at it
+- 2026-10-10 17:34 | notify | One 3-minute GitHub token lets Claude open listing pull requests itself; steps in action 021
