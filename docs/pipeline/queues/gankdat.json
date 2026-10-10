@@ -399,9 +399,10 @@
       "effort_days": 0.25,
       "proof": "PR merged and the server visible in the catalogue; ≥ 1 `/mcp` client identifying as Docker MCP Toolkit in the Daily numbers row within 30 days of listing",
       "score": 8,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-10-10",
-      "added": "2026-10-07"
+      "added": "2026-10-07",
+      "doing_since": "2026-10-10"
     },
     {
       "id": "uk-company-lookup-day-30",
