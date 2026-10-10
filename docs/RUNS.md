@@ -811,3 +811,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 17:45 | build | d1store: a backfill that throws writes an error row; over 3 min it hands the delta to the next night
 - 2026-10-09 17:45 | build | 3 tests in d1store.spec (plan, hand-over, error row); ARCHITECTURE, RESEARCH table of four plans
 - 2026-10-09 17:45 | build | Queue: gankdat refresh-uk-trademark-journal-2026-10-09 done; proof is the 10-10/10-11 Daily numbers rows
+- 2026-10-10 00:17 | watchdog | ci-minutes: ~4693 Actions min/month projected (private cap 2,000, warn 1700); top: check 377, owner notes 175, gankdat 1
