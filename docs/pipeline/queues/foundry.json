@@ -674,8 +674,9 @@
       "effort_days": 0.25,
       "proof": "the Docker MCP Catalog PR (or the next listing PR) opened by the workflow, URL in result.json, without an interactive session",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-10"
+      "status": "doing",
+      "added": "2026-10-10",
+      "doing_since": "2026-10-10"
     }
   ]
 }
