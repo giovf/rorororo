@@ -811,3 +811,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-09 17:45 | build | d1store: a backfill that throws writes an error row; over 3 min it hands the delta to the next night
 - 2026-10-09 17:45 | build | 3 tests in d1store.spec (plan, hand-over, error row); ARCHITECTURE, RESEARCH table of four plans
 - 2026-10-09 17:45 | build | Queue: gankdat refresh-uk-trademark-journal-2026-10-09 done; proof is the 10-10/10-11 Daily numbers rows
+- 2026-10-10 00:24 | burn-down | Pipeline starved, foundry out of cooling (researched 10-08): foundry research pass
+- 2026-10-10 00:24 | burn-down | Foundry research: crons start 7 h late on any minute (metrics 13:41/13:49, check 10:36); dispatch runs at once
+- 2026-10-10 00:24 | burn-down | Foundry research: sandbox clone depth 50, 139 commits behind; pull refused was lag, not divergence
+- 2026-10-10 00:24 | burn-down | Foundry research: starved-and-cooled every night since 10-05; one pre-research candidate a day is the ceiling
+- 2026-10-10 00:24 | burn-down | Queue: foundry +3 items (cron-drift dispatch 6, clone unshallow 3, build-slot pre-research 3); 2 items gain evidence

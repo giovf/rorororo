@@ -2,8 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-09",
-  "researched": "2026-10-08",
+  "updated": "2026-10-10",
+  "researched": "2026-10-10",
   "items": [
     {
       "id": "fetch-relay",
@@ -338,7 +338,7 @@
     {
       "id": "actions-minutes",
       "title": "Trim GitHub Actions usage below ~1,500 min/month so the repo can go private (free cap 2,000)",
-      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done. 2026-10-05 burn-down: converted to todo + not_before 2026-10-12 (first measurable week) so the hold is visible on the scheduled: line instead of hidden in doing. 2026-10-05 22:30 burn-down (foundry research): the watchdog projection rose after the trim, 3,876 (10-04 18:21) to 4,215 min/month (10-05 01:14), because the burn went nightly; today 19:19-21:46 UTC the 60 push runs took 480 run-minutes, check alone 6-16 min per success (6.3, 8.6, 11.3, 16.5), six workflows per code push. The concurrency groups proposed in ci-runs-never-acquired cut the stacked runs as well, so build that first and re-measure. 2026-10-06 09:00 build (foundry research): watchdog projection 6,223 min/month at 01:25 (the 60 push runs of 10-05 evening); of the 38 runs since the concurrency groups landed (22:33) none was cancelled, and a docs-only push now starts only owner notes + notify owner. Next lever is gankdat-test-setup (the gate runs twice per gankdat push and spends 697 s on per-test setup).",
+      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done. 2026-10-05 burn-down: converted to todo + not_before 2026-10-12 (first measurable week) so the hold is visible on the scheduled: line instead of hidden in doing. 2026-10-05 22:30 burn-down (foundry research): the watchdog projection rose after the trim, 3,876 (10-04 18:21) to 4,215 min/month (10-05 01:14), because the burn went nightly; today 19:19-21:46 UTC the 60 push runs took 480 run-minutes, check alone 6-16 min per success (6.3, 8.6, 11.3, 16.5), six workflows per code push. The concurrency groups proposed in ci-runs-never-acquired cut the stacked runs as well, so build that first and re-measure. 2026-10-06 09:00 build (foundry research): watchdog projection 6,223 min/month at 01:25 (the 60 push runs of 10-05 evening); of the 38 runs since the concurrency groups landed (22:33) none was cancelled, and a docs-only push now starts only owner notes + notify owner. Next lever is gankdat-test-setup (the gate runs twice per gankdat push and spends 697 s on per-test setup). 2026-10-10 burn-down research: the 100 runs 10-08 17:10..10-10 00:17 took 58 wall-clock run-minutes in 31 h (≈1,340 min/month; `check` median 1.5 min after gankdat-test-setup, 9 runs; owner notes 35 runs at 0.2 min) — the watchdog's 10-09 projection of 4,745 counts billed job-minutes, so the 10-12 reading should name which figure the private cap meters.",
       "effort_days": 0.5,
       "proof": "7-day Actions minutes under 350 for two consecutive weeks",
       "score": 7,
@@ -604,13 +604,43 @@
     {
       "id": "metrics-crons-day-7-read",
       "title": "Day-7 read of the odd-minute metrics crons: do `gankdat metrics` (37 6) and `store metrics` (52 6) now start before 08:00 UTC?",
-      "why": "Proof of metrics-crons-off-the-half-hour (built 2026-10-09): on `30 6` / `45 6` both scheduled runs started 11:51–15:17 UTC every day 10-03..10-08. Do: list the scheduled runs of both workflows since 10-10 (GitHub MCP actions_list, event schedule) and record the start times here and in SCHEDULERS.md. Five of seven before 08:00 → done. Still hours late → build the fallback named in the parent item: the push run (any push after 08:00 UTC) performs the runner-only steps — runner-refresh, wave logs, IndexNow, the MCP probe, the error filer — when the day's scheduled run has not happened, so the 07:00 routines and the Daily numbers row never wait seven hours.",
+      "why": "Proof of metrics-crons-off-the-half-hour (built 2026-10-09): on `30 6` / `45 6` both scheduled runs started 11:51–15:17 UTC every day 10-03..10-08. Do: list the scheduled runs of both workflows since 10-10 (GitHub MCP actions_list, event schedule) and record the start times here and in SCHEDULERS.md. Five of seven before 08:00 → done. Still hours late → build the fallback named in the parent item: the push run (any push after 08:00 UTC) performs the runner-only steps — runner-refresh, wave logs, IndexNow, the MCP probe, the error filer — when the day's scheduled run has not happened, so the 07:00 routines and the Daily numbers row never wait seven hours. Day-1 reading 2026-10-10 (burn-down research, actions_list over the 100 runs 10-08 17:10..10-10 00:17): gankdat metrics `37 6` started 13:41, store metrics `52 6` 13:49 on 10-09 — the minute move changed nothing on day 1; check `15 3` started 10:36, gankdat publish `0 4` 10:59, owner notes `20 * * * *` fired 5 of 31 hours, run watchdog `40 */2` 6 of 14 slots, while every push and workflow_dispatch run started within the minute. The fallback is queued now as cron-drift-dispatch-row (the 07:00 routine dispatches the jobs itself); this read still records the seven starts.",
       "effort_days": 0.05,
       "proof": "start times recorded; either five of seven days before 08:00 UTC or the push-run fallback queued",
       "score": 3,
       "status": "todo",
       "added": "2026-10-09",
       "not_before": "2026-10-17"
+    },
+    {
+      "id": "cron-drift-dispatch-row",
+      "title": "The 07:00 metrics routine dispatches the two metrics workflows itself when the day's scheduled run has not happened",
+      "why": "Research 2026-10-10 (burn-down): GitHub runs this repo's crons hours late or not at all, whatever the minute — in the 31 h to 10-10 00:17 (100 runs read with actions_list) gankdat metrics `37 6` started 13:41, store metrics `52 6` 13:49, check `15 3` 10:36, gankdat publish `0 4` 10:59; owner notes `20 * * * *` fired 5 of 31 hours and run watchdog `40 */2` 6 of 14 slots (every 4–7 h), while every push and workflow_dispatch run started within the minute. So the 06:37/06:52 move (metrics-crons-off-the-half-hour, built 10-09) changed nothing on day 1, and metrics.md still tells the 07:00 routine to note `metrics job left no row` or spend a 20-min relay on store pages the runner reads in 12 s. Both workflows already carry `workflow_dispatch`. Build: docs/routines/metrics.md — at the start, when `git log origin/main --since=<today 00:00> --grep='^metrics: <date>'` (and `^store-metrics: <date>`) finds nothing, fire each missing workflow with the GitHub MCP `actions_run_trigger` (workflow_dispatch, ref main; gankdat-metrics.yml, store-metrics.yml), poll `git fetch -q origin main` every 10 s for up to 10 min for those commits, `git pull --no-rebase`, then read the rows; the relay path stays the fallback when the dispatch fails. SCHEDULERS.md rows for both jobs, the watchdog and owner notes state the measured drift so no routine moves a cron minute again; metrics-crons-day-7-read keeps its 10-17 reading of the seven starts.",
+      "effort_days": 0.1,
+      "proof": "from the first morning after the change every Daily numbers and Daily check row is written before the 07:00 routine's summary, no `left no row` note",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-10"
+    },
+    {
+      "id": "sandbox-clone-unshallow",
+      "title": "Every routine body starts by unshallowing the sandbox clone; a pull refused on a shallow clone is lag, not divergence",
+      "why": "Research 2026-10-10 (burn-down): the sandbox clone is `--depth 50` (reflog: `fetch --depth 50 origin main`) and its snapshot is days old — this run's tip was 10-06 02:19, 139 commits behind. `git fetch origin` then reports `forced update` and `git pull` refuses with `divergent branches` although the old tip is a plain ancestor (`git fetch --deepen=200` proved it), so every run after ~50 commits land takes the `work` fallback for nothing, and every `git log --since` in a routine (this run's 3-day grep saw 56 commits; ops retro W40 §4 saw 2 of its 8 days) under-counts silently. Only ops-retro.md got the unshallow step (retro proposal 4). The `into work` merge commits on main (18, 10-04..10-09) are rejected pushes resolved by `git pull --no-rebase`, not the fallback's doing. Build: first sentence under the `---` of build.md, burn-down.md, exchange.md, review.md, weekly-report.md, inbox-triage.md, metrics.md and fallback.md: `[ \"$(git rev-parse --is-shallow-repository)\" = true ] && git fetch --unshallow origin` (a no-op once complete) before any `git log --since` or push; routines/README.md bootstrap paragraph notes that a pull refused on a shallow clone is lag, so the next attended edit of the stored prompts puts the unshallow before the pull; CLAUDE.md session-start line gains it.",
+      "effort_days": 0.1,
+      "proof": "a routine's `git log --since` window spans its full period (oldest line as old as the window) on the next retro and weekly report; the `work` fallback fires only on a real divergence",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-10"
+    },
+    {
+      "id": "build-slot-pre-research",
+      "title": "The 09:00/17:00 build slot does the day's one exchange pre-research pass when the pipeline is starved and cooled",
+      "why": "Research 2026-10-10 (burn-down): the pipeline has ended starved-and-cooled every night since 10-05 (RUNS 10-05 23:xx, 10-06 00..02, 10-07 01:20 and 18:30, 10-08 00:30, 10-09 01:50) and the 10-08 09:15 build slot stopped with `Nothing buildable`; the only producers of new build items are the Wednesday exchange and the burn-down's one pre-research pass per night (10-07 Land Registry parked, 10-09 VOA declined on licence), so one candidate a day is the throughput ceiling while 34 exchange ideas sit 19 parked. Build: build.md's starved-and-cooled sentence gains the same pre-research pass as burn-down.md — an `Exchange pre-research:` line stamped since 07:00 UTC spends the day's pass, the burn-down's night window stays 17:00 (scripts/pipeline-cold.ts counts a `| build |` line in the day window; tests); SCHEDULERS.md build row. The slot has already started, so the pass adds ~10 min to a session the owner's daytime-light rule already allows.",
+      "effort_days": 0.05,
+      "proof": "two exchange candidates a day (one day, one night) on starved days; a build item traced to a day pass within 14 days",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-10"
     }
   ]
 }

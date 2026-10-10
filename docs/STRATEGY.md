@@ -951,3 +951,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   rows and scan the 2,000 entries for each (200 s a page), so the wave died before the budget check could write a row;
   the entries are now a MATERIALIZED CTE probed by primary key (0.03 s a page, plan asserted in the spec), a throwing
   backfill writes an error row and a long one hands the delta to the next night — a silent night is no longer possible.
+- 2026-10-10 burn-down: foundry research — GitHub fires this repo's crons 7 h late or not at all whatever the minute (the
+  06:37/06:52 move changed nothing on day 1), so the 07:00 routine will dispatch the metrics jobs itself (queued, 6);
+  the sandbox clone is `--depth 50`, which makes `git pull` refuse a plain fast-forward as divergence (3); and the
+  pipeline has ended starved every night since 10-05, so the build slot gains the day's pre-research pass (3).
