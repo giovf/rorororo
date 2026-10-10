@@ -276,3 +276,5 @@ closed entries older than 30 days (git keeps the history).
   then `cd ventures/highlight-keep && npm run zip && cd ../.. && node scripts/cws-publish.ts upload pciignkojfpgmfcmjchmpdhonpjkfepc ventures/highlight-keep/highlight-keep.zip && node scripts/cws-publish.ts publish pciignkojfpgmfcmjchmpdhonpjkfepc`.
   CWS rejects an upload while 0.2.0 is still in review — wait for that mail (or it is published) first; AMO accepts it now.
   Record the dates in `ventures/highlight-keep/STORE.md`. ~5 min.
+- 2026-10-10 owner: Cloudflare could not charge your card for invoice IN-83063702 (US$49: the one-off D1 overage already fixed); please pay it or update the card in Cloudflare Billing before they suspend Workers.
+

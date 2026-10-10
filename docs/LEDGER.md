@@ -14,7 +14,7 @@ fails the build if `cost + planned` exceeds the **£100** capital cap.
 | 2026-09-10 | gankdat   | cost    | 3.70 | Cloudflare Workers Paid — US$5/month recurring since 2026-07-10 (owner-paid before adoption; counted from Sep 2026); ≈£3.70 at ~1.35 |
 | 2026-09-27 | gankdat   | planned | 47.00 | ICO data protection fee, tier 1, direct debit (legal requirement; action 012) |
 | 2027-07-08 | gankdat   | planned | 8.00 | gankdat.com renewal — Cloudflare Registrar, auto-renew on, expires 2027-07-08; ≈US$10.50 at cost |
-| 2026-10-10 | gankdat   | planned | 31.00 | Cloudflare metered-usage overage, ESTIMATED from the GraphQL reading of 2026-10-04 (`cf usage:` in the Daily numbers row): 87.5M D1 rows written 2026-09-10..10-04, 37.5M over the 50M allowance ≈ US$38 at US$1/M, plus one last full-reload night and five delta nights ≈ US$42 ≈ £31 at ~1.35 (the 10-01 budget alert said US$15 — the invoice decides); KV, Analytics Engine and requests within allowance; replace with the invoice figure when the 10-10 mail lands (queue `cloudflare-usage-breakdown`, built 2026-10-04) |
+| 2026-10-10 | gankdat   | cost    | 37.00 | Cloudflare invoice #IN-83063702, US$49.00 (≈ £37): Workers Paid US$5 + D1 row-write overage ≈ US$44 — 93.9M rows written 2026-09-10→10-10 against the 50M allowance, caused by nightly full reloads of nine D1 registers (5–6M rows/day 09-20→10-05). Fixed 2026-10-04 (delta refresh): 0.02–0.14M rows/day since 10-06, so next period stays inside the allowance. Payment FAILED on the card; owner to pay/update card |
 | 2026-09-17 | portfolio | cost    | 3.70 | Chrome Web Store developer registration — US$5.00 incl. VAT on Mastercard 17 Sep (order CWS.5162-7768-2586-70036); £3.70 at ~1.35, exact GBP per card statement |
 
 ## Conventions

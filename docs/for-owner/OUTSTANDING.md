@@ -3,7 +3,11 @@
 One list, kept current by Claude. Each item says what it unblocks and roughly how long it takes.
 Nothing here spends money. Your answers of 2026-09-28 are applied below.
 
-## Open (updated 2026-10-04 evening)
+## Open (updated 2026-10-10)
+
+| # | Do this | Why | Where |
+| --- | --- | --- | --- |
+| F1 | **Pay the Cloudflare invoice #IN-83063702 (US$49) or update the card** — the charge failed on 10 Oct and Cloudflare retries for a few days before suspending Workers (which would take gankdat.com, the API and the MCP server offline). Dashboard → Billing → Invoices. | It is a one-off: Workers Paid (US$5) plus a D1 overage of about US$44 from the nightly full reloads of nine registers between 20 Sep and 5 Oct (94M rows written vs 50M included). The cause was fixed on 4 Oct; writes are now ~0.1M/day, so next month returns to ~US$5. | ledger row 2026-10-10 |
 
 **Standing 10-second item**: once a week (Wednesday evening is ideal, just before the Thursday 03:00 UTC reset) send the Telegram bot a note like `usage 62% fable 71%` from your `/usage` screen. The nightly evening-burn routine throttles itself from that number (`docs/ops/BURN.json`), aiming for 70–80% of the week. No note means it keeps running every night.
 

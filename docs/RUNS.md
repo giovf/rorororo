@@ -484,3 +484,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-04 21:24 | burn-down | Highlight Keep 0.3.0; handoff: sign/upload after 0.2.0 clears review. Queue: import item done
 - 2026-10-04 21:25 | burn-down | Stopping for time (~45 min): heal + import built; next is foundry append-only-guard (6)
 - 2026-10-04 16:50 | interactive | Telegram now only for product releases, launches and owner actions (plain one-liners); run bullets stay in the repo
+- 2026-10-10 11:30 | interactive | Cloudflare invoice US$49 explained: 94M D1 rows written vs 50M included (nightly full reloads, fixed 4 Oct); ledger updated
+- 2026-10-10 11:30 | notify | Cloudflare bill of $49 failed to charge: one-off overage, already fixed; please pay or update the card
+
