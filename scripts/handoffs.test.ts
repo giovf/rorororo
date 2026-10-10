@@ -6,6 +6,7 @@ import {
   askTitle,
   closeEntry,
   digestLine,
+  handoffDigestLine,
   formatLine,
   isOpen,
   ledger,
@@ -219,6 +220,24 @@ describe('owner digest (OPEN.md, notify line, median age)', () => {
     },
   ];
   const now = new Date('2026-10-06T18:00:00Z');
+
+  it('digests aging handoff: entries separately, oldest first, only past 3 days', () => {
+    const open = ledger(asksMd, now).open;
+    const line = handoffDigestLine(open, now);
+    expect(line).toMatch(
+      /^1 job for your next Claude Code session, oldest 6 days: sign and upload ReadFocus 0\.3\.0/,
+    );
+    expect(line?.length).toBeLessThanOrEqual(DIGEST_MAX_CHARS);
+    expect(handoffDigestLine(open, new Date('2026-10-03T00:00:00Z'))).toBeUndefined();
+    expect(handoffDigestLine([], now)).toBeUndefined();
+    const two = ledger(
+      `${asksMd}- 2026-10-05 handoff: **sign and upload Highlight Keep 0.4.0** (imports) the same way.\n`,
+      now,
+    ).open;
+    expect(handoffDigestLine(two, now)).toMatch(
+      /^2 jobs for your next Claude Code session, oldest 6 days: /,
+    );
+  });
 
   it('reads the minutes an ask quotes and the actions it names', () => {
     expect(parseMinutes('(~15 min + Figma review, £0)')).toBe(15);

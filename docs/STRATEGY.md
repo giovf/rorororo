@@ -992,3 +992,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   v0.23.0) because only Claude signs in by client-id metadata documents; Docker's MCP Toolkit,
   Cursor, ChatGPT and VS Code all register, so the OAuth hop built on 2026-09-30 worked for one
   client. The Docker catalogue entry gains its `oauth` block in a second PR once listed.
+- 2026-10-10 burn-down: foundry `handoff-aging-escalation` (5) built — open `handoff:` entries older
+  than 3 days reach the owner's phone through the run watchdog (within 2 h, then weekly); two
+  built releases sat unsigned 5–6 days with nothing on the phone naming them.

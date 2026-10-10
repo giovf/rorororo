@@ -858,3 +858,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 17:21 | burn-down | 6 tests in oauth.spec (shape, labels, rejections, limiter, full flow, unknown id); v0.23.0
 - 2026-10-10 17:21 | burn-down | ARCHITECTURE, privacy row, docs page, MARKETPLACE-PREP Docker row (oauth block = second PR)
 - 2026-10-10 17:21 | burn-down | Queue: gankdat oauth-dynamic-client-registration done; proof is a non-claude.ai token step
+- 2026-10-10 17:28 | burn-down | handoffs.ts: handoff digest line for open handoff: entries older than 3 days (≤ 90 chars)
+- 2026-10-10 17:28 | burn-down | run-watchdog.ts: sends that digest as a notify line within 2 h of crossing, weekly while it holds
+- 2026-10-10 17:28 | burn-down | weekly-report.md section 4 and SCHEDULERS watchdog row updated; 5 tests
+- 2026-10-10 17:28 | burn-down | Queue: foundry handoff-aging-escalation done; proof is a notify line within a day of crossing

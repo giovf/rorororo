@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   ROUTINES,
+  handoffNotifyLine,
   missedLine,
   missedSlots,
   parseCommits,
@@ -181,5 +182,38 @@ describe('missedLine', () => {
     );
     const text = line.split('|')[2]?.trim() ?? '';
     expect(text.length).toBeLessThanOrEqual(120);
+  });
+});
+
+describe('handoffNotifyLine', () => {
+  const alerts = [
+    '# Alerts',
+    '',
+    '- 2026-10-04 handoff: **sign and upload ReadFocus 0.3.0** (ruler controls) with amo-publish.sh.',
+    '- 2026-10-05 handoff: **sign and upload Highlight Keep 0.4.0** (Weava import) the same way.',
+    '- 2026-10-07 owner: **let CI read Google Search Console** (~10 min, £0).',
+    '- 2026-10-01 handoff: closed one — Done 2026-10-02 (build): done.',
+    '',
+  ].join('\n');
+  const now = at('2026-10-10T08:40:00Z');
+
+  it('sends one phone line naming the oldest handoff once any is older than 3 days', () => {
+    expect(handoffNotifyLine(alerts, '# Run log\n', now)).toBe(
+      '- 2026-10-10 08:40 | notify | 2 jobs for your next Claude Code session, oldest 6 days: sign and upload ReadFocus 0.3.0',
+    );
+    expect(handoffNotifyLine(alerts, '# Run log\n', at('2026-10-07T08:40:00Z'))).toBeUndefined();
+  });
+
+  it('repeats it only after 7 days: the notify line in RUNS.md is the dedupe record', () => {
+    const line = handoffNotifyLine(alerts, '# Run log\n', at('2026-10-08T06:40:00Z'))!;
+    const runsText = `# Run log\n${line}\n`;
+    expect(handoffNotifyLine(alerts, runsText, now)).toBeUndefined();
+    expect(handoffNotifyLine(alerts, runsText, at('2026-10-15T08:40:00Z'))).toMatch(
+      /^- 2026-10-15 08:40 \| notify \| 2 jobs for your next Claude Code session, oldest 11 days: /,
+    );
+    // Another notify line (an owner-ask digest) is not the record.
+    const other =
+      '# Run log\n- 2026-10-09 07:30 | notify | 5 requests waiting on you, oldest 9 days: x\n';
+    expect(handoffNotifyLine(alerts, other, now)).toBeDefined();
   });
 });

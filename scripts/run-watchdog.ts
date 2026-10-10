@@ -19,6 +19,7 @@ import { execSync } from 'node:child_process';
 import { appendFileSync, existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { ALERTS_FILE, HANDOFF_DIGEST_MARK, handoffDigestLine, ledger } from './handoffs.ts';
 import { claimMarkerRoutine } from './pipeline-claim.ts';
 import { SLOTS_FILE, parseStarted, startMarkerRoutine } from './slot.ts';
 
@@ -290,6 +291,30 @@ export function missedLine(slot: MissedSlot, now: Date): string {
   return `- ${stamp(now)} | watchdog | missed: ${slot.routine} slot ${stamp(slot.at)} UTC left no commit or run line by ${hhmm}; usage limit? see claude.ai/code/routines`;
 }
 
+/** A handoff digest sent this many days ago is not repeated: one phone line a week while it holds. */
+export const HANDOFF_NOTIFY_EVERY_DAYS = 7;
+
+/**
+ * The `| notify |` line for aging `handoff:` entries (foundry handoff-aging-escalation,
+ * 2026-10-10), or undefined when none is older than HANDOFF_AFTER_DAYS or RUNS.md already
+ * carries one from the last HANDOFF_NOTIFY_EVERY_DAYS days (the dedupe record, like a missed
+ * line; matched on the phrase every digest carries, since the count and age change daily).
+ */
+export function handoffNotifyLine(
+  alertsText: string,
+  runsText: string,
+  now: Date,
+): string | undefined {
+  const digest = handoffDigestLine(ledger(alertsText, now).open, now);
+  if (!digest) return undefined;
+  const floor = now.getTime() - HANDOFF_NOTIFY_EVERY_DAYS * 86_400_000;
+  const sent = parseRuns(runsText).some(
+    (t) => t.kind === 'notify' && t.text.includes(HANDOFF_DIGEST_MARK) && t.at.getTime() >= floor,
+  );
+  if (sent) return undefined;
+  return `- ${stamp(now)} | notify | ${digest}`;
+}
+
 function main(): void {
   const root = path.resolve(import.meta.dirname, '..');
   const runsPath = path.join(root, 'docs', 'RUNS.md');
@@ -305,9 +330,14 @@ function main(): void {
   const missed = missedSlots({ now, runsText, commitsText, slotsText });
   if (missed.length === 0) {
     console.log(`watchdog: every slot due before ${now.toISOString()} left a trace`);
-    return;
   }
   const lines = missed.map((slot) => missedLine(slot, now));
+  const alertsPath = path.join(root, ALERTS_FILE);
+  const handoffs = existsSync(alertsPath)
+    ? handoffNotifyLine(readFileSync(alertsPath, 'utf8'), runsText, now)
+    : undefined;
+  if (handoffs) lines.push(handoffs);
+  if (lines.length === 0) return;
   appendFileSync(runsPath, `${runsText.endsWith('\n') ? '' : '\n'}${lines.join('\n')}\n`);
   for (const line of lines) console.log(line);
 }

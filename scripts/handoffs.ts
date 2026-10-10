@@ -156,11 +156,23 @@ export function closeEntry(md: string, match: string, opts: CloseOptions): strin
 // by payoff (the STRATEGY §5 score of the queue items each one unblocks ÷ the minutes it takes the
 // owner), and prints one `notify:` line when an ask is older than DIGEST_AFTER_DAYS, which the
 // Monday weekly report copies as its one `| notify |` run line. The retro records the median age.
+// Open `handoff:` entries get their own digest (handoffDigestLine, HANDOFF_AFTER_DAYS): the
+// 2-hourly run watchdog appends it to RUNS.md as a `| notify |` line, once a week while it holds.
 
 /** Minutes assumed for an ask whose text gives none (`~N min`). */
 export const DEFAULT_MINUTES = 10;
 /** An owner ask open for more than this many days puts the digest line on the phone. */
 export const DIGEST_AFTER_DAYS = 7;
+/**
+ * A `handoff:` entry (agent work only an attended Claude Code session can clear — signing a
+ * built release, a fork PR) older than this is a job the owner's next session owes; shorter than
+ * the owner-ask threshold because the work is already done and the hop is minutes (foundry
+ * handoff-aging-escalation, 2026-10-10: ReadFocus 0.3.0 and Highlight Keep 0.4.0 sat unsigned
+ * 5–6 days with nothing on the phone naming them).
+ */
+export const HANDOFF_AFTER_DAYS = 3;
+/** Every handoff digest line carries this phrase: the watchdog dedupes on it. */
+export const HANDOFF_DIGEST_MARK = 'your next Claude Code session';
 /** Phone lines stay short and plain (burn-down / report NOTIFY rule: ≤ 90 chars). */
 export const DIGEST_MAX_CHARS = 90;
 
@@ -298,6 +310,25 @@ export function digestLine(asks: readonly Ask[]): string | undefined {
   const head = `${asks.length} request${asks.length === 1 ? '' : 's'} waiting on you, oldest ${oldest} days: `;
   const room = Math.max(12, DIGEST_MAX_CHARS - head.length);
   return `${head}${askTitle(top.entry.text, room)}`;
+}
+
+/**
+ * The phone line for open `handoff:` entries, or undefined while none is older than
+ * HANDOFF_AFTER_DAYS: count, oldest age, the oldest entry's title. ≤ DIGEST_MAX_CHARS. The run
+ * watchdog sends it (once per week while it holds, `run-watchdog.ts handoffNotifyLine`); the
+ * weekly report never copies it.
+ */
+export function handoffDigestLine(handoffs: readonly Entry[], today: Date): string | undefined {
+  const aged = handoffs
+    .filter((e) => /^handoff\b/.test(e.kind))
+    .map((e) => ({ entry: e, age: ageDays(e.date, today) }))
+    .sort((a, b) => b.age - a.age);
+  const oldest = aged[0];
+  if (!oldest || oldest.age <= HANDOFF_AFTER_DAYS) return undefined;
+  const n = aged.length;
+  const head = `${n} job${n === 1 ? '' : 's'} for ${HANDOFF_DIGEST_MARK}, oldest ${oldest.age} days: `;
+  const room = Math.max(12, DIGEST_MAX_CHARS - head.length);
+  return `${head}${askTitle(oldest.entry.text, room)}`;
 }
 
 /**
@@ -439,6 +470,8 @@ function main(): void {
       );
       const digest = digestLine(asks);
       if (digest) console.log(`notify: ${digest}`);
+      const handoffDigest = handoffDigestLine(handoffs, today);
+      if (handoffDigest) console.log(`handoffs (the watchdog sends this one): ${handoffDigest}`);
       if (!flags['no-write']) {
         const content = renderOpen(asks, handoffs, loadActionFiles(path.resolve(ACTIONS_DIR)));
         if (writeOpen(path.resolve(OPEN_FILE), content)) console.log(`${OPEN_FILE} rebuilt`);
