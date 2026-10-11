@@ -40,6 +40,10 @@ jobs:
       - run: npm ci
       - name: Browser
         run: npx playwright install --with-deps chromium
+      - name: ffmpeg
+        # The webm → mp4 conversion (scripts/demo-video.ts convertToMp4) needs ffmpeg, which the
+        # ubuntu-latest image no longer carries (run 38171416646, 2026-10-11: `spawnSync ffmpeg ENOENT`).
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg >/dev/null && ffmpeg -version | head -1
       - name: Record
         run: node --disable-warning=ExperimentalWarning scripts/demo-${{ inputs.entry }}.ts
         env:
