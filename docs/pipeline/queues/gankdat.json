@@ -533,8 +533,9 @@
       "effort_days": 0.2,
       "proof": "an ok uk-planning refresh with records > 0 on two consecutive nights, or the source retired with the row and /stats saying so",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-11"
+      "status": "doing",
+      "added": "2026-10-11",
+      "doing_since": "2026-10-11"
     }
   ]
 }
