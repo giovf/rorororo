@@ -684,8 +684,9 @@
       "effort_days": 0.2,
       "proof": "a numeric Sales reading on both extensions' Daily check rows for 7 days; the 10-30 funnel reviews read it",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-11"
+      "status": "doing",
+      "added": "2026-10-11",
+      "doing_since": "2026-10-11"
     }
   ]
 }
