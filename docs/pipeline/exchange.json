@@ -311,6 +311,30 @@
       "status": "parked",
       "trigger": "1,000 monthly visitors to the stats pages (Search Console reading)",
       "added": "2026-10-11"
+    },
+    {
+      "id": "x402-aggregator-mcp",
+      "title": "x402 aggregator: one MCP server / API gateway that proxies many third-party x402-paid APIs (Coinbase Bazaar listings) for agents at a small markup — the agent pays us, we pay the upstream per call",
+      "why": "Owner idea 2026-10-11: take a small cut of money already flowing rather than an all-or-nothing prize. gankdat already has the x402 server, a funded Base wallet, metering and MCP; the new part is the x402 client side and a catalogue. Margin per call is cents, but it needs no capital, no buyer to convince beyond the agent directories we are already in, and it compounds with every new Bazaar seller. Primary sources to read: the Bazaar discovery API (resources and prices), x402 client spec, each upstream's terms on resale.",
+      "status": "parked",
+      "trigger": "next exchange (2026-10-14) scores it against the queue: count of Bazaar resources with prices, the markup agents will bear, and whether upstream terms allow proxying",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "onchain-keeper-rewards",
+      "title": "Permissionless keeper work on Base: calling public protocol functions that pay the caller a small reward (liquidations with a bonus, harvests, rebalances, oracle pokes) from the existing wallet, gas-limited to a £10 budget",
+      "why": "Owner idea 2026-10-11. Many DeFi protocols pay whoever triggers maintenance — by design, so it is allowed. The money is small and flows constantly; the competition on L2s is thinner than on mainnet. Not trading (no position, no price view): ARCHITECTURE's trading rejection does not cover it, but the ledger rule does — a gas budget of £10 at most, simulated before any spend, stop on the first unprofitable week. Primary sources: the protocols' own docs and contracts (Aave v3, Morpho, Compound v3 on Base), Base gas prices, a simulation over recent blocks.",
+      "status": "parked",
+      "trigger": "next exchange (2026-10-14): a simulation over the last 7 days of Base blocks shows net positive reward after gas for at least one protocol; otherwise re-park with the number",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "x402-facilitator-fee",
+      "title": "Run an x402 facilitator (payment verification + settlement) that other sellers configure, taking a per-transaction fee",
+      "why": "The facilitator sees every payment of every seller that picks it; Coinbase's is free today, so sellers need a reason to switch (features, jurisdictions, other chains). Infrastructure is a Worker plus an RPC; the sale is to sellers, which is the slow part.",
+      "status": "parked",
+      "trigger": "x402-aggregator-mcp live and 100 paid calls a day through it (we would be our own first facilitator customer)",
+      "added": "2026-10-11"
     }
   ]
 }
