@@ -46,8 +46,9 @@
       "effort_days": 0.2,
       "proof": "the table exists and the weekly report reads it",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-11"
+      "status": "doing",
+      "added": "2026-10-11",
+      "doing_since": "2026-10-11"
     },
     {
       "id": "bounty-tenstorrent-tt-metal-59732",
