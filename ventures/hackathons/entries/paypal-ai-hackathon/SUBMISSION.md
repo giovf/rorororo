@@ -1,0 +1,102 @@
+# PayPal AI Hackathon — submission text (Devpost form)
+
+Prepared 2026-10-11 by the burn-down routine; the owner pastes these fields into the Devpost form
+(https://paypalaihackathon.devpost.com/, submissions close 2026-11-12). Edit freely — the voice is
+the owner's. Facts below are checked against the code in `ventures/gankdat/` at v0.24.0.
+
+## Project name
+
+gankdat — agentic commerce for official data: AI agents buy their own API credits with PayPal
+
+## Tagline (≤ 60 chars)
+
+AI agents buy official-data credits with PayPal, in chat
+
+## Inspiration
+
+gankdat serves official UK and EU registers (companies, insolvency, sanctions, tenders, planning,
+charities, schools, NHS, trade marks) as one clean JSON API and an MCP server that Claude, Cursor and
+ChatGPT connect to. Agents already pay per request with USDC (x402) and humans subscribe through
+Stripe — but the most common moment in practice is an agent in the middle of a due-diligence task
+hitting "monthly credit quota exhausted". Until now the only answer was "ask your human to open a
+browser and subscribe". This entry makes that moment a PayPal checkout the agent starts itself.
+
+## What it does
+
+- **Credit packs**: one-off packs (1,000 / 5,000 / 20,000 credits) sold through PayPal's Orders API,
+  added to a *top-up balance* that the API spends once the month's plan allowance is gone. They never
+  expire, work on the free plan, and show up on every usage reading (`topup`).
+- **The agent buys in chat**: two MCP tools, `buy_credits` and `confirm_credit_purchase`. The agent
+  creates the order and hands the human PayPal's approval link; the human approves on PayPal (the
+  agent never sees a card, a password or a PayPal login); the agent captures the order and carries on
+  with the task on the new credits. Keyless callers get an OAuth sign-in prompt first.
+- **REST twins and a human path**: `POST /v1/billing/paypal/orders` → `…/capture` for any client, and
+  "credit packs" buttons on the account page where PayPal returns the browser to a capture endpoint.
+- **Metering that knows which balance paid**: every metered response says `X-Credits-Source: plan`
+  or `topup`; the 402 names the pack and the tool that buys one.
+
+## How we built it
+
+- Cloudflare Worker (Hono, TypeScript) — the existing gankdat service; PayPal Orders API v2 with
+  client-credentials auth, orders created with `payment_source.paypal.experience_context` and
+  captured server-side; the order row's `created → completed` update is the idempotency guard.
+- D1 for orders and the audit ledger, KV for the live top-up balance beside the monthly counters —
+  the same split gankdat already uses for Stripe.
+- One budget decision shared by REST metering and the MCP tools so the two surfaces never disagree.
+- Built with Claude Code under the owner's direction, as a scheduled routine of an autonomous
+  portfolio operation; 10 integration tests stub PayPal's sandbox at the fetch layer.
+
+## Challenges we ran into
+
+- Making an agent purchase safe: the agent must never hold payment credentials. The approval step is
+  PayPal's own page; the agent only ever sees an order id and an approval URL.
+- Spending from two balances without touching the hot path: the top-up is read only when the plan
+  allowance is exhausted, so the common request costs the same one KV read as before.
+- Idempotency across three capture paths (agent, REST, browser return) that can all fire for the same
+  order — solved with one conditional UPDATE instead of a lock.
+
+## Accomplishments that we're proud of
+
+An end-to-end agentic commerce loop on a live product with real data: an agent runs out of credits,
+buys more with PayPal, and finishes its job — with the human in the loop exactly once, at the
+payment approval.
+
+## What we learned
+
+PayPal's Orders API maps cleanly onto an agent flow because approval and capture are separate HTTP
+steps: the agent owns the two API calls, the human owns the click between them.
+
+## What's next
+
+Live PayPal checkout (currently sandbox only, by design), a `credits_low` hint in tool results so
+the agent buys *before* it is blocked, and packs priced per dataset tier.
+
+## Built with
+
+cloudflare-workers, hono, typescript, paypal-orders-api, model-context-protocol, d1, workers-kv,
+zod, vitest, claude-code
+
+## Links
+
+- Try it: https://gankdat.com/account (credit packs) · MCP: https://gankdat.com/mcp (tools `buy_credits`, `confirm_credit_purchase`)
+- Code: https://github.com/giovf/rorororo — `ventures/gankdat/src/billing/paypal.ts`, `src/metering/budget.ts`, `src/mcp/server.ts`, `test/paypal.spec.ts`
+- Walkthrough: `ventures/gankdat/scripts/paypal-walkthrough.mjs`
+- Demo video: (attach the mp4 produced by the demo-video pipeline)
+
+## PayPal integration (judging criterion: "PayPal integration must be central")
+
+The whole new capability is the PayPal rail: orders created and captured through the Orders API v2,
+credits granted only on a successful capture, and a PayPal checkout started by an AI agent over MCP.
+Sandbox credentials; no live money moves during the hackathon.
+
+## AI usage (judging criterion: "AI must be meaningful")
+
+The buyer *is* the AI agent: an MCP client (Claude, Cursor, ChatGPT) decides it needs credits, calls
+`buy_credits`, relays the approval link, and completes the purchase with `confirm_credit_purchase` —
+then spends the credits on the data tools that answer its user's question. The product itself exists
+for agents (MCP server, keyless preview, agent-side sign-up, x402).
+
+## Disclosure
+
+This project was built with Claude Code, directed and owned by the entrant (a UK sole trader). All
+code is in the public repository above.

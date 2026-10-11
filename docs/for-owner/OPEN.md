@@ -5,9 +5,10 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (0)
+## Requests (1)
 
-Nothing is waiting on you.
+1. **PayPal needs tax info added to the sandbox developer accoun…** — time not stated, since 2026-10-11; nothing queued waits on it. Steps: [022](actions/022-prize-and-bounty-accounts.md).
+   PayPal needs tax info added to the sandbox developer account from action 022 — log in to PayPal and click "Add Tax Info" to keep using it.
 
 ## Waiting on an attended Claude session, not you (3)
 

@@ -4,10 +4,12 @@ import { clearNegativeKeyCache, invalidateKeyCache } from '../auth/middleware';
 import { requireSession } from '../auth/session';
 import { createCheckoutUrl, createPortalUrl } from '../billing/checkout';
 import { stripeClient } from '../billing/client';
+import { createCreditOrder, paypalEnabled } from '../billing/paypal';
 import { FREE_TIER_CREDITS, publicBaseUrl } from '../lib/constants';
 import { failure, success } from '../lib/envelope';
 import { currentPeriod, getUsage } from '../metering/counters';
 import { usageSummary } from '../metering/quota';
+import { getTopup } from '../metering/topup';
 import type { AppEnv } from '../types';
 
 const NOT_CONFIGURED = failure(
@@ -24,7 +26,8 @@ export const accountRoutes = new Hono<AppEnv>()
     const acct = c.get('accountCtx')!;
     const period = currentPeriod();
     const used = await getUsage(c.env, acct.email, period);
-    const { granted, remaining, alerts } = usageSummary(acct.plan, used);
+    const topup = await getTopup(c.env, acct.email);
+    const { granted, remaining, alerts } = usageSummary(acct.plan, used, topup);
     const { results: keys } = await c.env.DB.prepare(
       'SELECT id, name, created_at, revoked_at FROM api_keys WHERE account_id = ?1 ORDER BY created_at DESC',
     )
@@ -38,6 +41,7 @@ export const accountRoutes = new Hono<AppEnv>()
         used,
         granted,
         remaining,
+        topup,
         alerts,
         keys,
       }),
@@ -120,4 +124,23 @@ export const accountRoutes = new Hono<AppEnv>()
     const result = await createPortalUrl(stripe, c.env, acct.accountId, '/account');
     if (!result.ok) return c.json(failure(result.code, result.message), result.status);
     return c.json(success({ url: result.url }));
+  })
+  // Credit pack via PayPal (sandbox): the browser twin of POST /v1/billing/paypal/orders.
+  // The buyer approves on PayPal and lands on /v1/billing/paypal/return, which captures.
+  .post('/paypal/orders', async (c) => {
+    if (!paypalEnabled(c.env)) {
+      return c.json(
+        failure('unavailable', 'Credit packs are not configured yet (PayPal keys missing)'),
+        503,
+      );
+    }
+    const acct = c.get('accountCtx')!;
+    const body = (await c.req.json().catch(() => ({}))) as { pack?: unknown };
+    const result = await createCreditOrder(c.env, {
+      accountId: acct.accountId,
+      pack: typeof body.pack === 'string' ? body.pack : '',
+      baseUrl: publicBaseUrl(c.env),
+    });
+    if (!result.ok) return c.json(failure(result.code, result.message), result.status);
+    return c.json(success({ url: result.order.approveUrl, order_id: result.order.orderId }));
   });

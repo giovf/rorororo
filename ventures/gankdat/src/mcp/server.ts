@@ -4,16 +4,14 @@ import { emailSendAllowed, recordEmailSend } from '../auth/emailcap';
 import { claimAgentKey, createAgentSignup, CLAIM_RETRY_SECONDS } from '../auth/signup';
 import { emailEnabled, sendEmail } from '../email/send';
 import { agentKeyRequestEmail } from '../email/templates';
-import {
-  API_BASE_URL,
-  APP_VERSION,
-  DOCS_ERRORS_URL,
-  FREE_TIER_CREDITS,
-  publicBaseUrl,
-} from '../lib/constants';
+import { APP_VERSION, FREE_TIER_CREDITS, publicBaseUrl } from '../lib/constants';
 import { creditCost } from '../metering/costs';
-import { currentPeriod, getUsage, incrementUsage } from '../metering/counters';
-import { planAllowance } from '../billing/plans';
+import { currentPeriod, getUsage } from '../metering/counters';
+import { chargeBudget, checkBudget, exhaustedMessage } from '../metering/budget';
+import { getTopup } from '../metering/topup';
+import type { BudgetCheck } from '../metering/budget';
+import { CREDIT_PACKS, packListing } from '../billing/packs';
+import { captureCreditOrder, createCreditOrder, findOrder, paypalEnabled } from '../billing/paypal';
 import { usageSummary } from '../metering/quota';
 import {
   clampPreviewArgs,
@@ -68,7 +66,11 @@ export const SIGNUP_TOOLS: ReadonlySet<string> = new Set(['request_api_key', 'cl
  * Claude show its Connect card — the explicit "sign in" entry point next to
  * the implicit one (a spent preview budget).
  */
-export const PROTECTED_TOOLS: ReadonlySet<string> = new Set(['connect_account']);
+export const PROTECTED_TOOLS: ReadonlySet<string> = new Set([
+  'connect_account',
+  'buy_credits',
+  'confirm_credit_purchase',
+]);
 
 /** Free, keyless, never gated: metadata about the server and the caller's own budget. */
 export const FREE_TOOLS: ReadonlySet<string> = new Set(['list_sources', 'get_usage']);
@@ -98,7 +100,7 @@ const WRITE_SAFE = {
 // directory lists this server without credentials, so every data tool must
 // answer without one. The gate below decides per call.
 type DataGate =
-  | { kind: 'key'; granted: number; cost: number }
+  | { kind: 'key'; check: Extract<BudgetCheck, { ok: true }> }
   | { kind: 'preview'; remaining: number }
   | { kind: 'denied'; message: string };
 
@@ -111,15 +113,10 @@ async function gateDataCall(
 ): Promise<DataGate> {
   const cost = creditCost(source);
   if (keyCtx) {
-    const granted = planAllowance(keyCtx.plan);
-    const used = await getUsage(env, keyCtx.usageSubject, currentPeriod());
-    if (used + cost > granted) {
-      return {
-        kind: 'denied',
-        message: `Monthly credit quota exhausted (${granted}). Upgrade via POST ${API_BASE_URL}/v1/billing/checkout — see ${DOCS_ERRORS_URL}#quota_exceeded`,
-      };
-    }
-    return { kind: 'key', granted, cost };
+    // Plan allowance first, then the top-up balance (credit packs) — metering/budget.ts.
+    const check = await checkBudget(env, keyCtx, cost);
+    if (!check.ok) return { kind: 'denied', message: exhaustedMessage(check.granted) };
+    return { kind: 'key', check };
   }
   const taken = await takePreviewCall(env, preview.clientId);
   if (!taken.allowed) {
@@ -142,8 +139,8 @@ async function settleDataCall(
   gate: Exclude<DataGate, { kind: 'denied' }>,
 ): Promise<Record<string, unknown>> {
   if (gate.kind === 'key' && keyCtx) {
-    const newUsed = await incrementUsage(env, keyCtx.usageSubject, gate.cost, currentPeriod());
-    return { credits_remaining: Math.max(0, gate.granted - newUsed) };
+    const charged = await chargeBudget(env, keyCtx, gate.check);
+    return { credits_remaining: charged.remaining, credits_source: charged.source };
   }
   return {
     preview: {
@@ -384,6 +381,103 @@ function registerSignupTools(server: McpServer, env: CloudflareBindings): void {
 }
 
 /**
+ * Agentic commerce (PayPal AI Hackathon entry, 2026-10-11): an agent whose
+ * user has run out of credits buys a credit pack without leaving the chat.
+ * buy_credits creates a PayPal (sandbox) order for the signed-in account and
+ * hands back the approval link — the human approves the payment on PayPal's
+ * page, never inside the agent — then confirm_credit_purchase captures it and
+ * the credits land on the account's top-up balance, which the data tools spend
+ * once the month's plan allowance is gone. Both tools are PROTECTED_TOOLS: a
+ * keyless call gets the OAuth 401 that starts sign-in. Sandbox only: no live
+ * PayPal money moves.
+ */
+function registerCreditTools(
+  server: McpServer,
+  env: CloudflareBindings,
+  keyCtx: KeyContext | null,
+): void {
+  const packNames = Object.keys(CREDIT_PACKS) as [string, ...string[]];
+  const packText = packListing()
+    .map((p) => `${p.pack} = ${p.credits.toLocaleString('en-GB')} credits for US$${p.usd}`)
+    .join('; ');
+  server.registerTool(
+    'buy_credits',
+    {
+      title: 'Buy a credit pack with PayPal (sandbox)',
+      description: `Start a one-off credit purchase for the signed-in account: ${packText}. Returns a PayPal approval link to show the user — they approve the payment on PayPal's page (never paste card details into the chat); then call confirm_credit_purchase with the order_id. Pack credits are spent after the monthly plan allowance and never expire. Sandbox only: test money. Free to call; needs the user's account.`,
+      annotations: { ...WRITE_SAFE, title: 'Buy a credit pack with PayPal (sandbox)' },
+      inputSchema: {
+        pack: z.enum(packNames).describe('Which pack to buy'),
+      },
+    },
+    async (args: { pack: string }): Promise<ToolResult> => {
+      if (!keyCtx) return errorResult('Sign in required: ' + previewNextStep());
+      if (!paypalEnabled(env)) return errorResult('Credit packs are not configured yet');
+      const result = await createCreditOrder(env, {
+        accountId: keyCtx.accountId,
+        pack: args.pack,
+        baseUrl: publicBaseUrl(env),
+      });
+      if (!result.ok) return errorResult(result.message);
+      const { orderId, approveUrl, pack, credits, amountUsd } = result.order;
+      return jsonResult({
+        ok: true,
+        data: {
+          order_id: orderId,
+          approve_url: approveUrl,
+          pack,
+          credits,
+          amount_usd: amountUsd,
+          next: `Tell the user: "Approve US$${amountUsd} for ${credits.toLocaleString('en-GB')} gankdat credits at ${approveUrl}." When they say it is approved, call confirm_credit_purchase with order_id ${orderId}.`,
+        },
+      });
+    },
+  );
+
+  server.registerTool(
+    'confirm_credit_purchase',
+    {
+      title: 'Capture an approved PayPal order and add the credits',
+      description:
+        "After the user approves the buy_credits link on PayPal, capture the order: the pack credits are added to the account and the new balance returned. Safe to repeat — an order is captured at most once. Free to call; needs the user's account.",
+      annotations: { ...WRITE_SAFE, title: 'Capture an approved PayPal order and add the credits' },
+      inputSchema: {
+        order_id: z.string().min(1).describe('The order_id returned by buy_credits'),
+      },
+    },
+    async (args: { order_id: string }): Promise<ToolResult> => {
+      if (!keyCtx) return errorResult('Sign in required: ' + previewNextStep());
+      if (!paypalEnabled(env)) return errorResult('Credit packs are not configured yet');
+      const order = await findOrder(env, args.order_id);
+      if (!order || order.account_id !== keyCtx.accountId) {
+        return errorResult('No such order on this account');
+      }
+      const result = await captureCreditOrder(env, order, keyCtx.usageSubject);
+      if (!result.ok) {
+        return errorResult(
+          result.code === 'payment_required'
+            ? `${result.message}; ask them to open the approval link, then retry`
+            : result.message,
+        );
+      }
+      return jsonResult({
+        ok: true,
+        data: {
+          order_id: order.order_id,
+          status: result.status,
+          credits_added: result.status === 'completed' ? result.credits : 0,
+          topup: result.topup,
+          message:
+            result.status === 'completed'
+              ? `Added ${result.credits.toLocaleString('en-GB')} credits; ${result.topup.toLocaleString('en-GB')} top-up credits now wait behind the monthly allowance.`
+              : 'This order was already captured; nothing more was added.',
+        },
+      });
+    },
+  );
+}
+
+/**
  * keyCtx is null for anonymous calls (introspection and the keyless preview —
  * see routes/mcp.ts): registries and directories index tools without a key,
  * so every tool registers with its full schema regardless of auth, and every
@@ -435,10 +529,11 @@ export function buildMcpServer(
       }
       const period = currentPeriod();
       const used = await getUsage(env, keyCtx.usageSubject, period);
-      const { granted, remaining, alerts } = usageSummary(keyCtx.plan, used);
+      const topup = await getTopup(env, keyCtx.usageSubject);
+      const { granted, remaining, alerts } = usageSummary(keyCtx.plan, used, topup);
       return jsonResult({
         ok: true,
-        data: { plan: keyCtx.plan, period, used, granted, remaining, alerts },
+        data: { plan: keyCtx.plan, period, used, granted, remaining, topup, alerts },
       });
     },
   );
@@ -458,7 +553,8 @@ export function buildMcpServer(
       if (!keyCtx) return errorResult('Sign in required: ' + previewNextStep());
       const period = currentPeriod();
       const used = await getUsage(env, keyCtx.usageSubject, period);
-      const { granted, remaining } = usageSummary(keyCtx.plan, used);
+      const topup = await getTopup(env, keyCtx.usageSubject);
+      const { granted, remaining } = usageSummary(keyCtx.plan, used, topup);
       return jsonResult({
         ok: true,
         data: {
@@ -469,6 +565,7 @@ export function buildMcpServer(
           used,
           granted,
           remaining,
+          topup,
           message: `Connected as ${keyCtx.usageSubject} (${keyCtx.plan} plan): data tools now return full pages and bill this account's credits.`,
         },
       });
@@ -476,6 +573,7 @@ export function buildMcpServer(
   );
 
   registerSignupTools(server, env);
+  registerCreditTools(server, env, keyCtx);
   for (const source of listSources()) {
     registerQueryTool(server, env, keyCtx, preview, source);
   }

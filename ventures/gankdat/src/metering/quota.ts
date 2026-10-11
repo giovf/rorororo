@@ -21,19 +21,24 @@ export interface UsageSummary {
   plan: string;
   granted: number;
   used: number;
+  /** Plan credits left this month plus the top-up balance (credit packs). */
   remaining: number;
+  /** Bought credits waiting behind the plan allowance; never reset (metering/topup.ts). */
+  topup: number;
   alert?: '80' | '100';
   alerts: string[];
 }
 
-export function usageSummary(plan: string, used: number): UsageSummary {
+export function usageSummary(plan: string, used: number, topup = 0): UsageSummary {
   const granted = planAllowance(plan);
-  const alert = alertThreshold(used, granted);
+  // A buyer holding top-up credits is not nudged to upgrade: they already paid.
+  const alert = topup > 0 ? undefined : alertThreshold(used, granted);
   return {
     plan,
     granted,
     used,
-    remaining: Math.max(0, granted - used),
+    remaining: Math.max(0, granted - used) + topup,
+    topup,
     alert,
     alerts: alert ? [alert] : [],
   };

@@ -178,12 +178,20 @@
         Nothing in these terms reduces rights you have by law.
       </p>
 
-      <h2>6. Pay-per-request (x402)</h2>
+      <h2>6. Pay-per-request (x402) and credit packs (PayPal)</h2>
       <p>
         Endpoints under <code>/x402/</code> accept per-request payment in USDC on the Base network,
         with no account required. A payment is complete when it settles on-chain; settled payments
         are <strong>non-refundable</strong> (we could not identify the payer to refund them). The
         response to a paid request is delivered at the time of settlement.
+      </p>
+      <p>
+        Credit packs are one-off purchases of credits for an account, paid through PayPal in USD and
+        added to a top-up balance that is spent once the month's plan allowance is used up; they do
+        not expire and do not renew. While the PayPal AI Hackathon runs (to 2026-11-12) the PayPal
+        checkout is PayPal's <strong>sandbox</strong>: it accepts test accounts only and no real
+        money changes hands. Section 5 (refunds) applies to packs bought with real money if the
+        checkout ever goes live, which we will announce here first.
       </p>
 
       <h2>7. Your use of the data — per-dataset licences</h2>

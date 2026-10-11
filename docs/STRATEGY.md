@@ -1075,3 +1075,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   rather than capture new audiences; many small legal sources over one big payout; all within law and terms. Written
   into §1 and the exchange prompt; three such ideas parked for the 2026-10-14 exchange (x402 aggregator, keeper
   rewards, facilitator fee).
+- 2026-10-11 burn-down: hackathons `paypal-ai-hackathon-entry` (9 × 2) built — the first item of the money-on-offer line.
+  gankdat v0.24.0 adds a PayPal **sandbox** rail: one-off credit packs (1k/5k/20k, US$8/35/120) on a top-up balance
+  the metering spends once the plan allowance is gone, bought by an agent in chat (`buy_credits` →
+  human approves on PayPal → `confirm_credit_purchase`), by REST, or on /account. Sandbox by construction: no
+  live money, no card, nothing for the ledger. The write-up, transcript and shot list are in
+  `ventures/hackathons/entries/paypal-ai-hackathon/`; the demo video is the next hackathons item and the owner
+  submits (action 023) before 2026-11-12. Going live with PayPal is a separate decision — Stripe stays the live rail.

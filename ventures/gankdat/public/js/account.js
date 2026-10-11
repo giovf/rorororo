@@ -32,6 +32,15 @@ function showBanner(text, kind) {
     );
   else if (p.get('checkout') === 'cancelled')
     showBanner('[--] checkout cancelled — no charge was made.', '');
+  else if (p.get('paypal') === 'success')
+    showBanner('[OK] credits added — your top-up balance is updated below.', 'ok');
+  else if (p.get('paypal') === 'cancelled')
+    showBanner('[--] PayPal checkout cancelled — no charge was made.', '');
+  else if (p.get('paypal') === 'error')
+    showBanner(
+      '[ERR] PayPal could not complete the order — nothing was charged; try again.',
+      'err',
+    );
   if (p.toString()) history.replaceState(null, '', location.pathname);
 })();
 
@@ -87,7 +96,9 @@ function render(d) {
   const pct = d.granted ? Math.min(100, Math.round((d.used / d.granted) * 100)) : 0;
   $('usage-bar').style.width = pct + '%';
   $('usage-nums').textContent =
-    `${d.used.toLocaleString()} / ${d.granted.toLocaleString()} credits`;
+    `${d.used.toLocaleString()} / ${d.granted.toLocaleString()} credits` +
+    (d.topup ? ` + ${d.topup.toLocaleString()} top-up` : '');
+  $('credit-packs').classList.remove('hidden');
 
   const paid = d.plan && d.plan !== 'free';
   $('upgrade').classList.toggle('hidden', paid);
@@ -184,6 +195,12 @@ document.querySelectorAll('button.buy').forEach((b) =>
   b.addEventListener('click', () => {
     b.disabled = true;
     redirectTo('/v1/account/checkout', { plan: b.dataset.plan });
+  }),
+);
+document.querySelectorAll('button.buy-pack').forEach((b) =>
+  b.addEventListener('click', () => {
+    b.disabled = true;
+    redirectTo('/v1/account/paypal/orders', { pack: b.dataset.pack });
   }),
 );
 

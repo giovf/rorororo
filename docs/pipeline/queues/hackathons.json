@@ -20,7 +20,7 @@
     {
       "id": "demo-video-pipeline",
       "title": "Demo video pipeline: a Playwright script per entry that drives the live product in a headless browser with on-screen captions, recorded to webm and converted to mp4 by ffmpeg in CI, published as a workflow artifact the owner attaches to the submission",
-      "why": "Every Devpost portal asks for a short demo video and judges watch it first; no routine can record a screen today, so each entry would stall on the owner. Playwright's `recordVideo` and ffmpeg run on a GitHub runner; captions come from the script, no narration needed.",
+      "why": "Every Devpost portal asks for a short demo video and judges watch it first; no routine can record a screen today, so each entry would stall on the owner. Playwright's `recordVideo` and ffmpeg run on a GitHub runner; captions come from the script, no narration needed. First entry to record: the PayPal shot list is ventures/hackathons/entries/paypal-ai-hackathon/DEMO-SCRIPT.md (2026-10-11); when the mp4 exists, write the owner: line for action 023 and unblock paypal-ai-hackathon-submit.",
       "effort_days": 0.5,
       "proof": "one mp4 under 3 minutes produced from CI for the first entry",
       "score": 6,
@@ -30,13 +30,13 @@
     {
       "id": "paypal-ai-hackathon-entry",
       "title": "PayPal AI Hackathon entry (closes 2026-11-12, $67,500 pool): a PayPal sandbox checkout for gankdat credits (Orders API, sandbox only) beside Stripe and x402, an agent walkthrough where Claude buys and spends credits through the MCP server, the Devpost write-up, repo link and demo video",
-      "why": "RESEARCH §2: existing projects qualify with meaningful progress in the period, the PayPal integration must be central and AI meaningful — gankdat is already an AI-agent data product with two payment rails, so the sandbox rail is the whole new work. Prize tiers $12k / $8k / $5k plus category awards. Needs the owner's Devpost and PayPal developer sandbox accounts (action 022); the owner submits the package. Unblocked 2026-10-11: owner registered on Devpost and joined the hackathon; PayPal sandbox client id and secret are in .env and set as Worker secrets PAYPAL_SANDBOX_CLIENT_ID / PAYPAL_SANDBOX_SECRET (interactive). Sandbox only: no live PayPal money moves.",
+      "why": "RESEARCH §2: existing projects qualify with meaningful progress in the period, the PayPal integration must be central and AI meaningful — gankdat is already an AI-agent data product with two payment rails, so the sandbox rail is the whole new work. Prize tiers $12k / $8k / $5k plus category awards. Needs the owner's Devpost and PayPal developer sandbox accounts (action 022); the owner submits the package. Unblocked 2026-10-11: owner registered on Devpost and joined the hackathon; PayPal sandbox client id and secret are in .env and set as Worker secrets PAYPAL_SANDBOX_CLIENT_ID / PAYPAL_SANDBOX_SECRET (interactive). Sandbox only: no live PayPal money moves. Built 2026-10-11 (burn-down): gankdat v0.24.0 — PayPal Orders v2 sandbox credit packs (src/billing/paypal.ts, packs.json, migration 0017 paypal_orders, KV top-up balance spent after the plan allowance via metering/budget.ts), REST POST /v1/billing/paypal/orders + capture + browser return, MCP buy_credits / confirm_credit_purchase (protected), /account credit-pack buttons, terms §6, OpenAPI, 10 tests; write-up, agent transcript and shot list in ventures/hackathons/entries/paypal-ai-hackathon/, scripts/paypal-walkthrough.mjs. The video is demo-video-pipeline's; the submission is paypal-ai-hackathon-submit (owner, action 023).",
       "effort_days": 2,
       "proof": "submission accepted on Devpost before the deadline; any placing is the venture's proof",
       "score": 9,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-11",
-      "doing_since": "2026-10-11"
+      "done_at": "2026-10-11"
     },
     {
       "id": "nebius-nvidia-hackathon-entry",
@@ -48,6 +48,17 @@
       "status": "dropped",
       "added": "2026-10-11",
       "done_at": "2026-10-11"
+    },
+    {
+      "id": "paypal-ai-hackathon-submit",
+      "title": "Submit the PayPal AI Hackathon entry on Devpost (owner, action 023): paste SUBMISSION.md, attach the demo video, repo and try-it links; record the submission URL in RESEARCH.md",
+      "why": "The entry is built (paypal-ai-hackathon-entry, 2026-10-11) and submissions close 2026-11-12; Devpost's Terms forbid automated access, so the owner submits by hand from docs/for-owner/actions/023-paypal-hackathon-submission.md. Waits on the demo video (every Devpost portal asks for one).",
+      "effort_days": 0.1,
+      "proof": "submission accepted on Devpost before 2026-11-12; any placing is the venture's proof",
+      "score": 9,
+      "status": "blocked",
+      "added": "2026-10-11",
+      "blocked_on": "demo-video-pipeline (the mp4), then the owner's Devpost form — action 023; the owner: line is written when the video exists"
     }
   ]
 }

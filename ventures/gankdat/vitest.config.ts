@@ -14,6 +14,9 @@ export default defineConfig({
           ADMIN_TOKEN: 'test-admin-token',
           STRIPE_SECRET_KEY: 'sk_test_dummy',
           STRIPE_WEBHOOK_SECRET: 'whsec_testsecret',
+          // PayPal sandbox (credit packs): tests stub api-m.sandbox.paypal.com.
+          PAYPAL_SANDBOX_CLIENT_ID: 'test-paypal-client',
+          PAYPAL_SANDBOX_SECRET: 'test-paypal-secret',
           RESEND_API_KEY: 're_test_dummy',
           // Data-source API keys: tests stub the HTTP layer, so the VALUE is
           // irrelevant — but it must be present, else the source bails to

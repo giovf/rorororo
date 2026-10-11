@@ -120,8 +120,10 @@ names — never rename those; see memory/git history for why).
 - `src/auth/` — email accounts (identity), magic-link sign-in, KV sessions,
   API-key verify/revoke (SHA-256 at rest, KV hot path)
 - `src/email/` — transactional email via Resend REST (dark until configured)
-- `src/metering/` — credit costs, KV monthly counters, quota headers
-- `src/billing/` — Stripe checkout/portal, webhooks → account plan + ledger
+- `src/metering/` — credit costs, KV monthly counters, top-up balance, one budget decision
+  (plan first, then top-up) for REST and MCP, quota headers
+- `src/billing/` — Stripe checkout/portal, webhooks → account plan + ledger; PayPal (sandbox)
+  credit packs → top-up balance + ledger (`paypal.ts`, `packs.json`)
 - `src/mcp/` — MCP server at `/mcp`, tools generated from the registry
 - `src/x402/` — x402-gated pay-per-request routes (dark until configured)
 - `public/` — landing page, docs (Scalar embed), robots/sitemap (Workers
@@ -195,7 +197,8 @@ runs `check:root`.
   carries `delta +a ~c -r` per source. Migrations via `wrangler d1 migrations`.
 - **KV**: response cache per source (+ precomputed `/stats` blob and a
   best-effort refresh single-flight lock), monthly usage counters per account
-  email (`usage:<email>:<yyyymm>`), key-hash → key-record hot-path lookup
+  email (`usage:<email>:<yyyymm>`), the top-up balance (`topup:<email>`, no period, no TTL —
+  credit packs bought through PayPal, spent once the month's allowance is gone), key-hash → key-record hot-path lookup
   (with short negative + revocation-tombstone entries), sessions (7 d idle,
   30 d absolute cap).
 - **Auth**: bearer API key per request for data; passwordless magic-link
@@ -409,6 +412,20 @@ runs `check:root`.
   domain); dark (503 on login) until `RESEND_API_KEY` is set.
 - **x402** (agent payments) — LIVE on Base mainnet via Coinbase CDP
   facilitator; enabled only when `X402_WALLET_ADDRESS` is set.
+- **PayPal** (credit packs, **sandbox only**) — built 2026-10-11 as the PayPal AI Hackathon entry
+  (v0.24.0, migration 0017 `paypal_orders`, `docs/PAYPAL-SETUP.md`): Orders API v2 against
+  `api-m.sandbox.paypal.com` by construction, no live switch. One-off packs (`src/billing/packs.json`,
+  1k/5k/20k credits for US$8/35/120) add to the account's top-up balance (KV `topup:<email>`), which
+  `metering/budget.ts` spends only once the plan allowance is gone — `X-Credits-Source: plan|topup`,
+  no upgrade nudge on a top-up call; `/v1/usage`, `get_usage` and /account show `topup`. Surfaces:
+  `POST /v1/billing/paypal/orders` + `…/<id>/capture` (key), the MCP tools `buy_credits` /
+  `confirm_credit_purchase` (protected: the keyless 401 starts sign-in — the agent hands the human
+  PayPal's approval link and never sees a card), the /account "credit packs" buttons (session) with
+  PayPal returning the browser to `GET /v1/billing/paypal/return`, which captures. The
+  `paypal_orders` row's `created → completed` UPDATE is the capture guard (replays, a second return
+  hit and PayPal's `ORDER_ALREADY_CAPTURED` grant nothing); `credit_ledger` gets `paypal:<pack>`.
+  Dark (503 / tool error) until `PAYPAL_SANDBOX_CLIENT_ID` + `PAYPAL_SANDBOX_SECRET` are set.
+  `scripts/paypal-walkthrough.mjs` runs the five-call agent path from a terminal.
 - **Data origins** — official open-licence government APIs only
   (planning.data.gov.uk, Find a Tender OCDS, FCDO UKSL — all OGL v3;
   TED Search API — Commission Decision 2011/833/EU; SAM.gov Exclusions —

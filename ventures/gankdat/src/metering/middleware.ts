@@ -1,8 +1,7 @@
 import type { MiddlewareHandler } from 'hono';
+import { chargeBudget, checkBudget, exhaustedMessage } from './budget';
 import { creditCost } from './costs';
-import { currentPeriod, getUsage, incrementUsage } from './counters';
 import { alertThreshold, NUDGE_MESSAGES } from './quota';
-import { planAllowance } from '../billing/plans';
 import { failure } from '../lib/envelope';
 import { getSource } from '../sources/registry';
 import type { AppEnv } from '../types';
@@ -10,7 +9,10 @@ import type { AppEnv } from '../types';
 /**
  * Runs after auth on metered routes. Rejects exhausted quotas with a 402
  * envelope; otherwise charges successful responses, sets credit headers, and
- * surfaces upgrade nudges (header + meta.usage_alert) from 80% usage.
+ * surfaces upgrade nudges (header + meta.usage_alert) from 80% usage. A call
+ * the plan allowance cannot cover is paid from the top-up balance (credit
+ * packs, metering/budget.ts): X-Credits-Source says which, and a top-up call
+ * carries no nudge.
  */
 export function meterCredits(): MiddlewareHandler<AppEnv> {
   return async (c, next) => {
@@ -22,30 +24,26 @@ export function meterCredits(): MiddlewareHandler<AppEnv> {
     if (c.req.method === 'HEAD') return next();
 
     const cost = creditCost(getSource(c.req.param('source') ?? ''));
-    const period = currentPeriod();
-    const granted = planAllowance(keyCtx.plan);
-    const used = await getUsage(c.env, keyCtx.usageSubject, period);
+    const check = await checkBudget(c.env, keyCtx, cost);
 
-    if (used + cost > granted) {
-      c.header('X-Credits-Limit', String(granted));
+    if (!check.ok) {
+      c.header('X-Credits-Limit', String(check.granted));
       c.header('X-Credits-Remaining', '0');
-      return c.json(
-        failure(
-          'quota_exceeded',
-          `Monthly credit quota exhausted (${granted}); upgrade or wait for the next period`,
-        ),
-        402,
-      );
+      return c.json(failure('quota_exceeded', exhaustedMessage(check.granted)), 402);
     }
 
     await next();
     if (!c.res.ok) return; // only successful responses are charged
 
-    const newUsed = await incrementUsage(c.env, keyCtx.usageSubject, cost, period);
+    const charged = await chargeBudget(c.env, keyCtx, check);
+    const granted = check.granted;
     c.set('creditsCharged', cost);
     c.res.headers.set('X-Credits-Limit', String(granted));
-    c.res.headers.set('X-Credits-Remaining', String(Math.max(0, granted - newUsed)));
+    c.res.headers.set('X-Credits-Remaining', String(charged.remaining));
+    c.res.headers.set('X-Credits-Source', charged.source);
+    if (charged.source === 'topup') return; // bought credits: no upgrade nudge
 
+    const newUsed = charged.used;
     const alert = alertThreshold(newUsed, granted);
     if (!alert) return;
 

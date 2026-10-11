@@ -114,6 +114,74 @@ const billingPaths: JsonObject = {
       },
     },
   },
+  '/v1/billing/paypal/orders': {
+    post: {
+      operationId: 'create_paypal_order',
+      summary: 'Buy a one-off credit pack with PayPal (sandbox): returns the approval URL',
+      description:
+        'Credit packs (pack_1k, pack_5k, pack_20k; GET /v1/billing/paypal/packs lists them) add to a top-up balance spent once the monthly plan allowance is gone; they never expire. The order is captured when the buyer returns from PayPal, or by POST /v1/billing/paypal/orders/{id}/capture. PayPal sandbox only — no live money moves.',
+      tags: ['platform'],
+      security: [{ bearerAuth: [] }],
+      requestBody: {
+        required: true,
+        content: {
+          'application/json': { schema: toSchema(z.object({ pack: z.string() })) },
+        },
+      },
+      responses: {
+        '200': jsonResponse(
+          'Order created; the buyer approves at approve_url',
+          successEnvelope(
+            z.object({
+              order_id: z.string(),
+              approve_url: z.string(),
+              pack: z.string(),
+              credits: z.int(),
+              amount_usd: z.string(),
+              next: z.string(),
+            }),
+          ),
+        ),
+        '400': errorResponse('Unknown pack'),
+        '401': errorResponse('Missing, unknown, or revoked API key'),
+        '503': errorResponse('Credit packs not configured, or PayPal unavailable'),
+      },
+    },
+  },
+  '/v1/billing/paypal/orders/{id}/capture': {
+    post: {
+      operationId: 'capture_paypal_order',
+      summary: 'Capture an approved PayPal order and add its credits (idempotent)',
+      tags: ['platform'],
+      security: [{ bearerAuth: [] }],
+      parameters: [
+        {
+          name: 'id',
+          in: 'path',
+          required: true,
+          schema: { type: 'string' },
+          description: 'The order_id from create_paypal_order',
+        },
+      ],
+      responses: {
+        '200': jsonResponse(
+          'Order captured (status completed) or already captured (already_completed)',
+          successEnvelope(
+            z.object({
+              order_id: z.string(),
+              status: z.enum(['completed', 'already_completed']),
+              credits_added: z.int(),
+              topup: z.int(),
+            }),
+          ),
+        ),
+        '401': errorResponse('Missing, unknown, or revoked API key'),
+        '404': errorResponse('No such order on this account'),
+        '409': errorResponse('The buyer has not approved the order yet (code: payment_required)'),
+        '503': errorResponse('Credit packs not configured, or PayPal unavailable'),
+      },
+    },
+  },
   '/v1/billing/portal': {
     get: {
       operationId: 'billing_portal',

@@ -10,6 +10,8 @@ interface __BaseEnv_CloudflareBindings {
 	ADMIN_TOKEN: string;
 	STRIPE_SECRET_KEY: string;
 	STRIPE_WEBHOOK_SECRET: string;
+	PAYPAL_SANDBOX_CLIENT_ID: string;
+	PAYPAL_SANDBOX_SECRET: string;
 	X402_WALLET_ADDRESS: string;
 	X402_PRICE_USD: string;
 	X402_NETWORK: string;
@@ -36,7 +38,7 @@ type StringifyValues<EnvType extends Record<string, unknown>> = {
 	[Binding in keyof EnvType]: EnvType[Binding] extends string ? EnvType[Binding] : string;
 };
 declare namespace NodeJS {
-	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "ADMIN_TOKEN" | "STRIPE_SECRET_KEY" | "STRIPE_WEBHOOK_SECRET" | "X402_WALLET_ADDRESS" | "X402_PRICE_USD" | "X402_NETWORK" | "X402_FACILITATOR_URL" | "FIXTURE_FALLBACK" | "TURNSTILE_SECRET_KEY" | "CDP_API_KEY_ID" | "CDP_API_KEY_SECRET" | "RESEND_API_KEY" | "EMAIL_FROM" | "PUBLIC_BASE_URL" | "INDEXNOW_KEY" | "SAM_API_KEY" | "COMPANIES_HOUSE_API_KEY">> {}
+	interface ProcessEnv extends StringifyValues<Pick<Cloudflare.Env, "ADMIN_TOKEN" | "STRIPE_SECRET_KEY" | "STRIPE_WEBHOOK_SECRET" | "PAYPAL_SANDBOX_CLIENT_ID" | "PAYPAL_SANDBOX_SECRET" | "X402_WALLET_ADDRESS" | "X402_PRICE_USD" | "X402_NETWORK" | "X402_FACILITATOR_URL" | "FIXTURE_FALLBACK" | "TURNSTILE_SECRET_KEY" | "CDP_API_KEY_ID" | "CDP_API_KEY_SECRET" | "RESEND_API_KEY" | "EMAIL_FROM" | "PUBLIC_BASE_URL" | "INDEXNOW_KEY" | "SAM_API_KEY" | "COMPANIES_HOUSE_API_KEY">> {}
 }
 
 // Begin runtime types

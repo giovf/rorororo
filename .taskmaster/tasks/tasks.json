@@ -1315,13 +1315,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-11T09:18:06.682Z"
+      },
+      {
+        "id": "33",
+        "title": "gankdat: PayPal sandbox credit packs (PayPal AI Hackathon entry)",
+        "description": "Orders API v2 sandbox checkout for one-off credit packs on a KV top-up balance spent after the plan allowance; REST, MCP buy_credits/confirm_credit_purchase, /account; migration 0017 paypal_orders; docs/PAYPAL-SETUP.md",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-11T17:27:50.166Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-11T09:18:06.682Z",
-      "taskCount": 32,
-      "completedCount": 25,
+      "lastModified": "2026-10-11T17:27:50.166Z",
+      "taskCount": 33,
+      "completedCount": 26,
       "tags": [
         "master"
       ]

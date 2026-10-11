@@ -1,6 +1,7 @@
 import { env, SELF } from 'cloudflare:test';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { PREVIEW_CALLS_PER_DAY, PREVIEW_ROWS } from '../src/mcp/preview';
+import { PROTECTED_TOOLS } from '../src/mcp/server';
 import { listSources } from '../src/sources/registry';
 import { bearer, issueKey } from './helpers/auth';
 
@@ -125,8 +126,15 @@ describe('/mcp directory conformance', () => {
     expect(readOnly).toEqual(
       expect.arrayContaining(['list_sources', 'get_usage', 'get_changes', 'query_uk_tenders']),
     );
+    // The sign-up pair and the credit-purchase pair (PayPal sandbox, 2026-10-11) are the
+    // only writes; none destroys anything.
     const writes = tools.filter((t) => !t.annotations?.readOnlyHint).map((t) => t.name);
-    expect(writes.sort()).toEqual(['claim_api_key', 'request_api_key']);
+    expect(writes.sort()).toEqual([
+      'buy_credits',
+      'claim_api_key',
+      'confirm_credit_purchase',
+      'request_api_key',
+    ]);
     expect(tools.some((t) => t.annotations?.destructiveHint)).toBe(false);
   });
 
@@ -167,9 +175,10 @@ describe('/mcp directory conformance', () => {
     for (const name of names) {
       let args: Record<string, unknown> = {};
       if (name === 'request_api_key') continue;
-      if (name === 'connect_account') {
-        // The one deliberately protected tool: a transport-level 401 with the
-        // OAuth challenge is the sanctioned lazy-auth answer (oauth.spec.ts).
+      if (PROTECTED_TOOLS.has(name)) {
+        // The deliberately protected tools (connect_account and the two credit-purchase
+        // tools): a transport-level 401 with the OAuth challenge is the sanctioned
+        // lazy-auth answer (oauth.spec.ts) — a purchase needs the user's account.
         const { status, res } = await post({
           jsonrpc: '2.0',
           id: 1,

@@ -920,3 +920,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 14:30 | interactive | PayPal sandbox keys set as Worker secrets; no live PayPal money moves in the hackathon entry
 - 2026-10-11 15:00 | interactive | Owner idea parked for the exchange: small cuts of flowing money (x402 aggregator, keeper rewards, facilitator)
 - 2026-10-11 15:20 | interactive | Owner mentality recorded: attach to money already flowing, many small legal sources, no new audiences
+- 2026-10-11 17:28 | burn-down | gankdat 0.24.0: PayPal sandbox credit packs (Orders v2), top-up balance spent after the plan allowance
+- 2026-10-11 17:28 | burn-down | REST orders/capture/return, MCP buy_credits + confirm_credit_purchase, /account packs, terms, 10 tests
+- 2026-10-11 17:28 | burn-down | Hackathon package: SUBMISSION.md, agent WALKTHROUGH.md, DEMO-SCRIPT.md, walkthrough script, action 023
+- 2026-10-11 17:28 | burn-down | Queue: hackathons paypal-ai-hackathon-entry done; submit item blocked on the demo video + owner form

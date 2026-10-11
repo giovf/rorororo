@@ -11,6 +11,11 @@ ADMIN_TOKEN=dev-admin-token
 STRIPE_SECRET_KEY=
 STRIPE_WEBHOOK_SECRET=
 
+# PayPal developer SANDBOX app (credit packs; docs/PAYPAL-SETUP.md). Sandbox only —
+# the code never talks to the live PayPal API. Dark (503 on /v1/billing/paypal/*) until set.
+PAYPAL_SANDBOX_CLIENT_ID=
+PAYPAL_SANDBOX_SECRET=
+
 # x402 agent payments — ALL routes under /x402 stay dark (404) until a wallet
 # is set. See docs/X402-SETUP.md. Keep empty defaults unless working on x402.
 X402_WALLET_ADDRESS=
