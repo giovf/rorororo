@@ -42,13 +42,13 @@
     {
       "id": "bounty-claim-ledger",
       "title": "Claim ledger: a table in RESEARCH.md of every bounty attempted (issue, amount, PR, opened, merged, paid) kept by the build routine, and a weekly line in the report",
-      "why": "The line's §4 numbers (claims, merges, payouts) have nowhere to live; without them the review cannot apply the kill rule.",
+      "why": "The line's §4 numbers (claims, merges, payouts) have nowhere to live; without them the review cannot apply the kill rule. Built 2026-10-11 (burn-down): `## Claims` table in RESEARCH.md seeded with the three 10-11 reads, scripts/bounty-claims.ts (`npm run claims`, in `npm run check`) validates it and prints totals, kill-rule count and the week line; build, burn-down, weekly-report and review prompts updated; STRATEGY §4 row.",
       "effort_days": 0.2,
       "proof": "the table exists and the weekly report reads it",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-11",
-      "doing_since": "2026-10-11"
+      "done_at": "2026-10-11"
     },
     {
       "id": "bounty-tenstorrent-tt-metal-59732",

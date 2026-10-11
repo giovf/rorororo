@@ -941,3 +941,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 18:24 | burn-down | Action 024 written: sandbox buyer email and password as secrets; owner line in ALERTS; action 023 updated
 - 2026-10-11 18:24 | notify | The hackathon demo video records itself now; it needs your PayPal test login, 5 minutes
 - 2026-10-11 18:31 | burn-down | Stopping for time: 1 item built this slot; next is oss-bounties bounty-claim-ledger (5 × 2)
+- 2026-10-11 19:18 | burn-down | oss-bounties Claims table in RESEARCH.md: issue, amount, status, PR, opened, merged, paid; 3 reads seeded
+- 2026-10-11 19:18 | burn-down | scripts/bounty-claims.ts: npm run claims validates the table, prints totals, kill-rule count and week line
+- 2026-10-11 19:18 | burn-down | npm run claims joins npm run check; 13 tests on the parser, totals and week window
+- 2026-10-11 19:18 | burn-down | Prompts: build and burn-down move a bounty's Claims row per commit; weekly report and review read it
+- 2026-10-11 19:18 | burn-down | STRATEGY §4 row "Bounty PRs merged / paid": 0/0/0, three reads dropped; §8 decision logged
+- 2026-10-11 19:18 | burn-down | Queue: oss-bounties bounty-claim-ledger done; proof is the report's week line from npm run claims

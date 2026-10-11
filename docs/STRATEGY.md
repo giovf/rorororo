@@ -51,6 +51,7 @@ rows of the new period (10-10, 10-11) read US$0 overage and 0.0M D1 writes a day
 | Change-feed calls / week | 0 (`changes 7d: 0` on every row 09-30..10-11; the keyless Atom feeds: 16 fetches in 30 d by 4 user agents; review W41) | 50 | `changes 7d:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — Analytics Engine, MCP `get_changes` + REST `/v1/changes` |
 | Extension + plugin sales | 0 (Figma 7 views, 3 unique runs, 0 installs, 0 purchases; Chrome: ReadFocus 3 users on 10-11 — its first — Highlight Keep 0; Firefox 0 weekly downloads on both; extension sales have no reading until foundry `metrics-extension-sales` — review W41, Daily check 2026-10-11) | 20 | Stripe / Figma |
 | Directory listings live | 5 (+ Claude Connectors Directory submitted by the owner 10-04, in review, no directory mail yet; Docker MCP Catalog entry built 10-10, PR waits on action 021 — review W41) | 8 | `MARKETPLACE-PREP.md` |
+| Bounty PRs merged / paid | 0 claimed, 0 merged, 0 paid; 3 read and dropped on 2026-10-11 (`npm run claims`) | first payout by 2026-12-20; kill at 5 merged PRs unpaid for 60 days (RESEARCH §5) | `## Claims` table in `ventures/oss-bounties/RESEARCH.md` (`npm run claims`, weekly report) |
 
 If gankdat is < £50 MRR **and** Apify < 20 paid runs/month by 2026-12-20 with all listings
 live, the data line is re-positioned (see kill criteria) rather than extended.
@@ -1093,3 +1094,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   Cloudflare REST API, cleaned up after; sandbox throughout); the `demo video` workflow publishes the artifact. The live
   recording waits on one owner step, the sandbox buyer login as two secrets (action 024), then `demo-video-paypal-record`
   fires the job and action 023 (the Devpost form) gets the link. Proof: the mp4 under 3 minutes in the artifact.
+- 2026-10-11 burn-down: oss-bounties `bounty-claim-ledger` (5 × 2) built — the line's numbers had nowhere to live. The
+  `## Claims` table in its `RESEARCH.md` records every bounty taken up (issue, amount, status, PR, opened, merged, paid);
+  `scripts/bounty-claims.ts` (`npm run claims`, in `npm run check`) validates the rows and prints the totals, the §5
+  kill-rule count and the week line; build and burn-down move the row in the commit that moves the claim; the weekly
+  report and the Sunday review read it. §4 gains the `Bounty PRs merged / paid` row (now 0/0/0, three reads dropped).

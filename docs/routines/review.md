@@ -7,6 +7,7 @@ prompt and carries over any sentence this file lacks.
 
 Changes: 2026-10-03 — RUN LOG gained the `npm run runs` sentence (foundry `runs-line-length-check`).
 Changes: 2026-10-10 — CLONE: unshallow the depth-50 sandbox clone before any `git log --since` or push (foundry `sandbox-clone-unshallow`).
+Changes: 2026-10-11 — step 2: the oss-bounties kill rule reads `npm run claims` and the `## Claims` table (oss-bounties `bounty-claim-ledger`).
 ---
 
 CLONE (2026-10-10, foundry `sandbox-clone-unshallow`): the sandbox clone is `--depth 50` and its snapshot days old, so `git fetch` prints `forced update`, `git pull` refuses a plain fast-forward as `divergent branches` (that is why you may be on `work`: stay there, it tracks `origin/main`) and any `git log --since` under-counts silently. Before any `git log`, read of history or push: `[ "$(git rev-parse --is-shallow-repository)" = true ] && git fetch --unshallow origin` (a no-op once the clone is complete).
@@ -19,7 +20,7 @@ Read first: `CLAUDE.md`, `docs/OWNER-NOTES.md` (answer each new note in place wi
 
 Write `docs/reviews/<ISO year>-W<ISO week>.md` with:
 1. **Scorecard** — one row per STRATEGY §4 metric: baseline, now (with the source file and date), target, trend since last week's review.
-2. **Per venture** — revenue to date, organic signal, listing status, queue state, verdict (keep / fix / double-down / kill) with §7 applied literally (kill = zero sales AND zero organic signal 90 days after every planned listing is live; a gankdat dataset unqueried for 60 days is retired from the surface; the whole data line repositions at < £300 MRR after 4 months live) and the reasoning in two or three sentences. Cash: spent, planned, headroom under the £100 cap.
+2. **Per venture** — revenue to date, organic signal, listing status, queue state, verdict (keep / fix / double-down / kill) with §7 applied literally (kill = zero sales AND zero organic signal 90 days after every planned listing is live; a gankdat dataset unqueried for 60 days is retired from the surface; the whole data line repositions at < £300 MRR after 4 months live); for oss-bounties the kill rule is its `RESEARCH.md` §5 read from the `## Claims` table — `npm run claims` prints `kill rule: N of 5 merged PRs unpaid for 60 days` — and a funded, free board row absent for a week (STRATEGY §8 2026-10-11) and the reasoning in two or three sentences. Cash: spent, planned, headroom under the £100 cap.
 3. **Market signals** — what buyers reached for this week (wanted tools, paywall hits, store searches, inbound mail), what nobody touched.
 4. **Queue weights** — set every queue's `weight` from STRATEGY §5's table (2 for a line in its first 30 days or one collecting money already on offer; 1 for earning ventures, first-shelf ventures and `foundry`; 0.5 for a launched venture with no revenue 30 days after its listings went live) and say which changed and why; the owner's rule (2026-10-11) is that a new income line outweighs improving a product that has not earned.
 5. **Gaps and next three moves** — a target with no reading in the repo is a gap: queue a measurement item before any feature; then the three moves that most move §4, each pointing at a queue item (existing or added).

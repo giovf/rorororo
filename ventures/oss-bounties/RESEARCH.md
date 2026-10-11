@@ -71,6 +71,22 @@ tests win) is wrong and the kill rule applies early. Algora's own site is unreac
 Proof: the first bounty paid out, recorded as a `revenue` row. Kill: five merged-quality PRs with no
 payout in 60 days → `finished`.
 
+## Claims
+
+Every bounty the routines took up, one row each — the line's record for STRATEGY §4 and the §5 kill
+rule, kept by the build and burn-down routines in the same commit as the step (oss-bounties
+`bounty-claim-ledger`, 2026-10-11). Status runs `reading` (item taken, issue being read) → `claimed`
+(PR open with `/claim`) → `merged` → `paid` (a `revenue` row in `docs/LEDGER.md` the same day), or ends
+`rejected` (PR closed unmerged) or `dropped` (not taken; Notes start with the date and say why).
+`npm run claims` (part of `npm run check`) validates the table and prints the totals, the kill-rule
+count and the `week:` line the weekly report copies.
+
+| Issue | Amount | Status | PR | Opened | Merged | Paid | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| [tenstorrent/tt-metal#59732](https://github.com/tenstorrent/tt-metal/issues/59732) | $3000 | dropped | — | — | — | — | 2026-10-11: assigned 10-08 with PR #60225 submitted; acceptance needs Wormhole and Blackhole hardware |
+| [tursodatabase/turso#8749](https://github.com/tursodatabase/turso/issues/8749) | $650 | dropped | — | — | — | — | 2026-10-11: a contributor's own `/bounty` ask on 09-18, no maintainer or bot funded it; one attempt, two offers |
+| [Arrow-air/project-quiver#256](https://github.com/Arrow-air/project-quiver/issues/256) | $1219 | dropped | — | — | — | — | 2026-10-11: a platform-engineering report for a hardware project, not code with tests |
+
 ## Metrics
 
 | Date | Event | Users | Rating | Sales | Notes |
@@ -79,3 +95,4 @@ payout in 60 days → `finished`.
 | 2026-10-11 | Board | — | — | — | first board: 498 read, 56 kept; three items filed (blocked on actions 021/022) |
 | 2026-10-11 | Unblocked | — | — | — | PR_TOKEN present, owner signed in to the board; first bounty PR is buildable |
 | 2026-10-11 | No claim | — | — | — | top three unbuildable (assigned + hardware, unfunded request, report); scanner now marks funding and taken; first-bounty-pr blocked on a free funded row |
+| 2026-10-11 | Claim ledger | — | — | — | `## Claims` table + `npm run claims`: 0 claimed, 0 merged, 0 paid, 3 dropped; weekly report reads it |
