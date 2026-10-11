@@ -19,6 +19,14 @@ language and conventions.
 - Amounts on the first page of results: $50 to $800 per issue.
 - The first page is dominated by one repository that is a security-testing sandbox; the scanner
   excludes such repositories and anything whose issue is a vulnerability report.
+- Corrected the same day by the scanner's first run: the label alone is thin and stale (287 of the
+  522 sit outside three fixture repositories, 182 of those in one more), while the bounty bot's
+  `/bounty $N` command appears on 1,496 issues created since 2026-09-01. The board therefore reads
+  `"/bounty $" in:comments` over the last 90 days plus the label. First board (`docs/bounties/BOARD.md`,
+  2026-10-11): 498 issues read, 56 kept with an amount after dropping sandboxes and security
+  repositories (103), repositories under 20 stars (262), forks, archived and stale ones; top amounts
+  $3,000 (tenstorrent/tt-metal, Python), $1,219 (Arrow-air, a hardware report — poor fit), $650
+  (tursodatabase/turso, Rust).
 
 ## 3. Validation gate
 
@@ -43,3 +51,4 @@ payout in 60 days → `finished`.
 | Date | Event | Users | Rating | Sales | Notes |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-11 | Validated | — | — | — | 553 open labelled bounties; scanner queued; PR_TOKEN and sign-in pending |
+| 2026-10-11 | Board | — | — | — | first board: 498 read, 56 kept; three items filed (blocked on actions 021/022) |

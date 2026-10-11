@@ -35,6 +35,7 @@
     "runner-refresh": "npm run runner-refresh -w @foundry/gankdat",
     "refresh-errors": "node --disable-warning=ExperimentalWarning scripts/refresh-errors-to-queue.ts",
     "cf-overage": "node --disable-warning=ExperimentalWarning scripts/cf-overage-to-queue.ts",
+    "bounties": "node --disable-warning=ExperimentalWarning scripts/bounty-scanner.ts",
     "mcp-probe": "node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts",
     "handoffs": "node --disable-warning=ExperimentalWarning scripts/handoffs.ts",
     "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts",
