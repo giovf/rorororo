@@ -1016,3 +1016,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   each actor's failed runs and lists a newly failing actor under refresh errors, so the auto-filer
   queues the fix a day before Apify's "under maintenance" mail (both flags so far arrived three days
   late while the row counted the failed runs as use).
+- 2026-10-11 burn-down: gankdat `refresh-zero-records-evidence` (4) built — a refresh that yields nothing
+  now fails with the first page the origin served (status, bytes, JSON keys, URL), so an emptied
+  dataset and a 5xx page read differently in the Daily numbers row and the fix can be scoped
+  without a relay round-trip (uk-contract-awards 10-03 and uk-planning 10-10 both needed one).

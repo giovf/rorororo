@@ -295,6 +295,14 @@ runs `check:root`.
   (`store.ts cronSources`) and a stale snapshot is served without an inline attempt. The Daily
   numbers row lists any source with no `ok` refresh for two days, so a runner that never ran
   still shows. KV sources only.
+  **Zero-record evidence** (2026-10-11): sources fetch their origin through `origin.ts
+  originFetch` and both stores run a refresh inside `traceOrigin`, so a refresh that yields
+  nothing fails with the first page the origin served — `refresh returned 0 records: GET 200
+  36 B keys entities,links,count from <url>` (status, Content-Length or bytes seen, top-level
+  JSON keys / array length / first 80 chars, plus a page count and the last page when there were
+  several) — and the Daily numbers row tells an emptied dataset from a 5xx page without a relay
+  round-trip. The body is peeked from a cancelled clone (4 kB), never consumed; no parentheses
+  or pipes in the text because `refresh-errors-to-queue` splits the row on them.
   The feed is sold, not just served (2026-09-24): `registry.hasChangeFeed` is the one
   predicate; the refresh precomputes 30 days of added/removed/changed per day into the
   `/stats` blob (`SourceStats.changes`) so the public page shows the activity and the poll

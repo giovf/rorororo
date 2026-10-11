@@ -3,6 +3,7 @@ import { csvRows } from './csv';
 import fixtureRecords from './fixtures/nhs-ods.json';
 import type { DataSource } from './types';
 import { byteCapTransform } from './zip';
+import { originFetch } from './origin';
 
 // NHS organisation register — the Organisation Data Service (ODS) run by NHS
 // England: GP practices, NHS trusts and their sites, pharmacies, dental
@@ -201,10 +202,10 @@ async function fetchFile(file: string): Promise<Response> {
   if (url.protocol !== 'https:' || !FILE_HOST.test(url.hostname)) {
     throw new Error(`ODS file on unexpected host (${url.hostname})`);
   }
-  let res = await fetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
+  let res = await originFetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
   for (let attempt = 1; res.status >= 500 && attempt <= 3; attempt += 1) {
     await new Promise((r) => setTimeout(r, 20_000 * attempt));
-    res = await fetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
+    res = await originFetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
   }
   if (!res.ok || !res.body) throw new Error(`ODS ${file} download failed: ${res.status}`);
   return res;

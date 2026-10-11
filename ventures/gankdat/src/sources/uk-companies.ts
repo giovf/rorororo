@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import fixtureItems from './fixtures/uk-companies.json';
 import type { DataSource } from './types';
+import { originFetch } from './origin';
 
 // Companies House — new UK incorporations (task 42). The register is public
 // by statute (Companies Act 2006) and Companies House's personal-information
@@ -108,7 +109,7 @@ async function fetchFromOrigin(key: string): Promise<UkCompaniesRecord[]> {
       startIndex += PAGE_SIZE, pageNum += 1
     ) {
       const url = `${ORIGIN_URL}?incorporated_from=${date}&incorporated_to=${date}&size=${PAGE_SIZE}&start_index=${startIndex}`;
-      const res = await fetch(url, {
+      const res = await originFetch(url, {
         headers: { authorization: auth, 'user-agent': 'gankdat.com data refresh' },
       });
       if (!res.ok) throw new Error(`company-information.service.gov.uk responded ${res.status}`);

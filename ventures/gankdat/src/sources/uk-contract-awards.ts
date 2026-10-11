@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import fixtureReleases from './fixtures/uk-contract-awards.json';
 import type { DataSource } from './types';
+import { originFetch } from './origin';
 
 // UK public-sector contract AWARDS with the winning suppliers, from Contracts
 // Finder's open OCDS search API (Cabinet Office; task 53). Where uk-tenders is
@@ -158,7 +159,7 @@ async function fetchFromOrigin(): Promise<UkContractAwardsRecord[]> {
   const records: UkContractAwardsRecord[] = [];
   let url = `${ORIGIN_URL}?stages=award&publishedFrom=${isoDaysAgo(WINDOW_DAYS)}&limit=${PAGE_SIZE}`;
   for (;;) {
-    let res = await fetch(url, {
+    let res = await originFetch(url, {
       headers: { accept: 'application/json', 'user-agent': 'gankdat.com data refresh' },
     });
     // Contracts Finder rate-limits bursts (429/403, seen at the 05:00 wave 2026-09-21):
@@ -169,7 +170,7 @@ async function fetchFromOrigin(): Promise<UkContractAwardsRecord[]> {
       attempt += 1
     ) {
       await new Promise((r) => setTimeout(r, RETRY_DELAY_MS * attempt));
-      res = await fetch(url, {
+      res = await originFetch(url, {
         headers: { accept: 'application/json', 'user-agent': 'gankdat.com data refresh' },
       });
     }

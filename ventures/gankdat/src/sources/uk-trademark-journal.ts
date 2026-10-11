@@ -2,6 +2,7 @@ import { z } from 'zod';
 import fixtureRecords from './fixtures/uk-trademark-journal.json';
 import type { DataSource } from './types';
 import { inflateZipEntry } from './zip';
+import { originFetch } from './origin';
 
 // UK Trade Marks Journal — the Intellectual Property Office's weekly list of
 // trade mark applications (UK filings and international registrations
@@ -734,10 +735,10 @@ async function fetchIssueFile(id: string, file: string): Promise<Response> {
   if (url.protocol !== 'https:' || !ISSUE_HOST.test(url.hostname)) {
     throw new Error(`journal file on unexpected host (${url.hostname})`);
   }
-  let res = await fetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
+  let res = await originFetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
   for (let attempt = 1; res.status >= 500 && attempt <= 2; attempt += 1) {
     await new Promise((r) => setTimeout(r, 15_000 * attempt));
-    res = await fetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
+    res = await originFetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
   }
   return res;
 }

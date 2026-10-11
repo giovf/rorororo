@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import fixtureReleases from './fixtures/uk-tenders.json';
 import type { DataSource } from './types';
+import { originFetch } from './origin';
 
 // Origin (verified 2026-07-06):
 //   GET https://www.find-tender.service.gov.uk/api/1.0/ocdsReleasePackages?limit=100
@@ -23,7 +24,8 @@ const RETRIES = 3;
 export const tendersRetry = { delayMs: 20_000, maxRetryAfterMs: 120_000 };
 
 async function fetchPage(url: string): Promise<Response> {
-  const get = (): Promise<Response> => fetch(url, { headers: { accept: 'application/json' } });
+  const get = (): Promise<Response> =>
+    originFetch(url, { headers: { accept: 'application/json' } });
   let res = await get();
   for (let attempt = 1; res.status === 429 && attempt <= RETRIES; attempt += 1) {
     const retryAfter = Number(res.headers.get('retry-after')) * 1000;

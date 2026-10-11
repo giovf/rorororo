@@ -1,6 +1,7 @@
 import { computeStats } from '../lib/stats';
 import type { SourceStats } from '../lib/stats';
 import type { DataSource } from './types';
+import { traceOrigin, zeroRecordsError } from './origin';
 
 export interface CachedPayload {
   records: unknown[];
@@ -165,14 +166,17 @@ export async function refreshSource(
 ): Promise<CachedPayload> {
   const start = Date.now();
   try {
-    const records = await source.fetchFresh(env);
     // A live source that suddenly returns nothing is almost always an origin
     // outage or schema change, not a real empty dataset. Treat it as an error so
     // the good cache is retained (readCached serves it stale) and refresh_log
     // shows the failure, instead of silently caching an empty result as healthy.
-    if (records.length === 0) {
-      throw new Error('refresh returned 0 records');
-    }
+    // The error names the first page the origin served (origin.ts) so the row
+    // tells an emptied dataset from a 5xx page without a relay round-trip.
+    const records = await traceOrigin(async () => {
+      const fetched = await source.fetchFresh(env);
+      if (fetched.length === 0) throw zeroRecordsError();
+      return fetched;
+    });
     const payload: CachedPayload = { records, last_refreshed_at: new Date().toISOString() };
     await env.CACHE.put(dataKey(source.slug), JSON.stringify(payload), {
       expirationTtl: snapshotTtlSeconds(source),

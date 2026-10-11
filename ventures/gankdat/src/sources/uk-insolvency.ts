@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import fixtureEntries from './fixtures/uk-insolvency.json';
 import type { DataSource } from './types';
+import { originFetch } from './origin';
 
 // The Gazette — corporate insolvency notices (task 41). Official public
 // record, Crown copyright, OGL v3; the OGL grant EXCLUDES personal data, so
@@ -141,7 +142,7 @@ function shortBody(text: string, declared: string | null): boolean {
 // 4xx and network errors are not retried here (they fall back to fixtures as before).
 async function fetchJsonWithRetry(url: string): Promise<unknown> {
   for (let attempt = 1; ; attempt += 1) {
-    const res = await fetch(url, {
+    const res = await originFetch(url, {
       headers: { 'user-agent': 'gankdat.com data refresh (info@gankdat.com)' },
     });
     if (!res.ok) {

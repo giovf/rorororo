@@ -3,6 +3,7 @@ import { csvRows } from './csv';
 import fixtureRecords from './fixtures/uk-charities.json';
 import type { DataSource } from './types';
 import { inflateZipEntry } from './zip';
+import { originFetch } from './origin';
 
 // Register of charities in England & Wales — every currently registered
 // charity, from the Charity Commission's daily public extract (task 49).
@@ -142,7 +143,7 @@ function normalizeRow(cols: string[], idx: Map<string, number>): UkCharitiesReco
 }
 
 async function* streamFromOrigin(): AsyncGenerator<UkCharitiesRecord> {
-  const res = await fetch(ORIGIN_URL, { headers: { 'user-agent': USER_AGENT } });
+  const res = await originFetch(ORIGIN_URL, { headers: { 'user-agent': USER_AGENT } });
   if (!res.ok || !res.body) throw new Error(`charity extract download failed: ${res.status}`);
   let idx: Map<string, number> | null = null;
   let yielded = 0;

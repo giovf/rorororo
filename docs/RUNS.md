@@ -885,3 +885,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 00:52 | burn-down | metrics.mjs wired with a previous-row baseline (no baseline flags nothing); 6 tests; ARCHITECTURE
 - 2026-10-11 00:52 | burn-down | Queue: gankdat apify-run-outcomes-reading done; proof is a failing actor in the row before Apify mails
 - 2026-10-11 00:55 | burn-down | Stopping for time: research + 3 items built this slot; next is refresh-zero-records-evidence (4)
+- 2026-10-11 01:28 | burn-down | origin.ts: originFetch + traceOrigin; zero-record error names status, bytes, shape and URL
+- 2026-10-11 01:28 | burn-down | Both stores run refreshes traced; 15 sources fetch through originFetch; 8 tests on the relay page
+- 2026-10-11 01:28 | burn-down | Queue: gankdat refresh-zero-records-evidence done; proof is the row naming the origin page

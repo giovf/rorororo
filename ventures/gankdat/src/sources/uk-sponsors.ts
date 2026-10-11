@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { csvRows } from './csv';
 import fixtureRecords from './fixtures/uk-sponsors.json';
 import type { DataSource } from './types';
+import { originFetch } from './origin';
 
 // UK register of licensed sponsors (Worker and Temporary Worker routes) — every
 // organisation the Home Office licenses to sponsor visa workers, from the
@@ -82,7 +83,7 @@ interface ContentApiResponse {
 
 /** Current CSV attachment URL from the GOV.UK Content API (the asset URL changes per publication). */
 async function currentCsvUrl(): Promise<string> {
-  const res = await fetch(CONTENT_API_URL, {
+  const res = await originFetch(CONTENT_API_URL, {
     headers: { 'user-agent': USER_AGENT, accept: 'application/json' },
   });
   if (!res.ok) throw new Error(`GOV.UK content API failed: ${res.status}`);
@@ -115,7 +116,7 @@ function byteCapTransform(limit: number): TransformStream<Uint8Array, Uint8Array
 
 async function* streamFromOrigin(): AsyncGenerator<UkSponsorsRecord> {
   const csvUrl = await currentCsvUrl();
-  const res = await fetch(csvUrl, { headers: { 'user-agent': USER_AGENT } });
+  const res = await originFetch(csvUrl, { headers: { 'user-agent': USER_AGENT } });
   if (!res.ok || !res.body) throw new Error(`sponsor register download failed: ${res.status}`);
   let idx: Map<string, number> | null = null;
   let yielded = 0;

@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { csvRows } from './csv';
 import fixtureRecords from './fixtures/uk-food-hygiene.json';
 import type { DataSource } from './types';
+import { originFetch } from './origin';
 
 // UK Food Hygiene Rating Scheme (FHRS) — every rated food business in
 // England, Wales and Northern Ireland (plus Scotland's FHIS pass/improvement
@@ -150,7 +151,7 @@ function byteCapTransform(limit: number): TransformStream<Uint8Array, Uint8Array
 }
 
 async function* streamFromOrigin(): AsyncGenerator<UkFoodHygieneRecord> {
-  const res = await fetch(ORIGIN_URL, { headers: { 'user-agent': USER_AGENT } });
+  const res = await originFetch(ORIGIN_URL, { headers: { 'user-agent': USER_AGENT } });
   if (!res.ok || !res.body) throw new Error(`FHRS download failed: ${res.status}`);
   let idx: Map<string, number> | null = null;
   let yielded = 0;

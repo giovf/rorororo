@@ -4,6 +4,7 @@ import { PRESENT_SUFFIX, type QueryPage } from './query';
 import type { ChangeDay, FacetStats, MonthlyTrend, SourceStats, StatsGroup } from '../lib/stats';
 import { sortGroupRows } from '../lib/stats';
 import { putSourceStats, writeRefreshLog } from './cache';
+import { traceOrigin, zeroRecordsError } from './origin';
 
 /** Thrown when a D1 source is queried before cron has loaded it (routes → 503). */
 export class SourceNotLoadedError extends Error {
@@ -312,9 +313,9 @@ export async function refreshD1Source(
         return null;
       },
     );
-    if (index) return refreshD1Delta(env, source, previous, index, start);
+    if (index) return traceOrigin(() => refreshD1Delta(env, source, previous, index, start));
   }
-  return refreshD1Full(env, source, previous, start);
+  return traceOrigin(() => refreshD1Full(env, source, previous, start));
 }
 
 /** Rows per page when reading the stored (seq, id, hash) index back. */
@@ -520,7 +521,8 @@ const DELETE_ROWS_SQL = `DELETE FROM source_records
  * yesterday's of the rest — every row is present throughout, nothing is ever
  * partially loaded, and a crash mid-way self-heals: the next refresh compares
  * against whatever hashes are stored. A stream that yields 0 records changes
- * nothing (origin outage vs real-empty is indistinguishable).
+ * nothing (origin outage vs real-empty is indistinguishable; the error names the
+ * first page the origin served, origin.ts).
  */
 async function refreshD1Delta(
   env: CloudflareBindings,
@@ -592,7 +594,7 @@ async function refreshD1Delta(
       chunkBytes += ingestBytes(entry, json);
       if (chunk.length >= INSERT_CHUNK || chunkBytes >= INSERT_CHUNK_BYTES) await flush();
     }
-    if (streamed === 0) throw new Error('refresh returned 0 records');
+    if (streamed === 0) throw zeroRecordsError();
     await flush();
 
     // Rows the source no longer yields: feed row first, then the delete, one batch per chunk.
@@ -740,7 +742,7 @@ async function refreshD1Full(
       // Never flip meta to an empty generation (origin outage vs real-empty is
       // indistinguishable); readers keep the prior generation. The partial rows
       // at this generation are cleared by the next attempt's idempotency sweep.
-      throw new Error('refresh returned 0 records');
+      throw zeroRecordsError();
     }
 
     const meta: SourceMeta = {

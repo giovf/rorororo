@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { csvRows } from './csv';
 import fixtureRecords from './fixtures/uk-sanctions.json';
 import type { DataSource } from './types';
+import { originFetch } from './origin';
 
 // UK Sanctions List (UKSL) — the FCDO's single list of all UK sanctions
 // designations since the 28 Jan 2026 consolidation (it also carries UN
@@ -169,7 +170,7 @@ export const ukSanctionsSource: DataSource<UkSanctionsRecord> = {
   refresh: { cron: '0 5 * * *', cacheTtlSeconds: 86_400 },
   async fetchFresh(env: CloudflareBindings): Promise<UkSanctionsRecord[]> {
     try {
-      const res = await fetch(UKSL_CSV_URL, {
+      const res = await originFetch(UKSL_CSV_URL, {
         headers: { accept: 'text/csv', 'user-agent': 'gankdat.com data refresh' },
       });
       if (!res.ok || !res.body) {

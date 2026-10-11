@@ -1,6 +1,7 @@
 import { z } from 'zod';
 import fixtureEntities from './fixtures/uk-planning.json';
 import type { DataSource } from './types';
+import { originFetch } from './origin';
 
 // Origin (verified 2026-07-06):
 //   GET https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=500&offset=N
@@ -85,7 +86,7 @@ function mapEntities(entities: unknown[]): UkPlanningRecord[] {
 
 async function fetchPage(offset: number): Promise<z.infer<typeof pageSchema>> {
   const url = `${ORIGIN_URL}?dataset=planning-application&limit=${PAGE_SIZE}&offset=${offset}`;
-  const res = await fetch(url, { headers: { accept: 'application/json' } });
+  const res = await originFetch(url, { headers: { accept: 'application/json' } });
   if (!res.ok) throw new Error(`planning.data.gov.uk responded ${res.status}`);
   return pageSchema.parse(await res.json());
 }

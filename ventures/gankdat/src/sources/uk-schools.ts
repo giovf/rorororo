@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { csvRows } from './csv';
 import fixtureRecords from './fixtures/uk-schools.json';
 import type { DataSource } from './types';
+import { originFetch } from './origin';
 
 // Schools, colleges and nurseries in England — DfE "Get Information About
 // Schools" (GIAS) all-establishment extract, enriched with Ofsted's monthly
@@ -226,7 +227,7 @@ async function giasResponse(): Promise<Response> {
     if (url.protocol !== 'https:' || !GIAS_HOST.test(url.hostname)) {
       throw new Error(`GIAS extract on unexpected host (${url.hostname})`);
     }
-    const res = await fetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
+    const res = await originFetch(url.toString(), { headers: { 'user-agent': USER_AGENT } });
     if (res.ok && res.body) return res;
     lastStatus = res.status;
   }
@@ -241,7 +242,7 @@ interface ContentApiResponse {
 
 /** Ofsted's "most recent inspections" CSV attachment, via the GOV.UK Content API. */
 async function ofstedCsvUrl(): Promise<string> {
-  const res = await fetch(OFSTED_CONTENT_API_URL, {
+  const res = await originFetch(OFSTED_CONTENT_API_URL, {
     headers: { 'user-agent': USER_AGENT, accept: 'application/json' },
   });
   if (!res.ok) throw new Error(`GOV.UK content API failed: ${res.status}`);
@@ -292,7 +293,7 @@ export interface OfstedOutcome {
  */
 async function ofstedOutcomes(): Promise<Map<string, OfstedOutcome>> {
   const outcomes = new Map<string, OfstedOutcome>();
-  const res = await fetch(await ofstedCsvUrl(), { headers: { 'user-agent': USER_AGENT } });
+  const res = await originFetch(await ofstedCsvUrl(), { headers: { 'user-agent': USER_AGENT } });
   if (!res.ok || !res.body) throw new Error(`Ofsted outcomes download failed: ${res.status}`);
   let idx: Map<string, number> | null = null;
   for await (const row of csvRows(

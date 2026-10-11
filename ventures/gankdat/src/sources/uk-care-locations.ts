@@ -2,6 +2,7 @@ import { z } from 'zod';
 import { csvRows } from './csv';
 import fixtureRecords from './fixtures/uk-care-locations.json';
 import type { DataSource } from './types';
+import { originFetch } from './origin';
 
 // CQC care directory — every health and social care location regulated by the
 // Care Quality Commission in England (hospitals, care homes, GP practices,
@@ -130,7 +131,7 @@ function normalizeRow(cols: string[], idx: Map<string, number>): UkCareLocations
 
 /** Current weekly CSV URL from CQC's open-data page (the path is dated). */
 async function currentCsvUrl(): Promise<string> {
-  const res = await fetch(INDEX_URL, { headers: { 'user-agent': USER_AGENT } });
+  const res = await originFetch(INDEX_URL, { headers: { 'user-agent': USER_AGENT } });
   if (!res.ok) throw new Error(`CQC data page failed: ${res.status}`);
   const html = await res.text();
   const match = /href="([^"]*CQC_directory\.csv)"/i.exec(html);
@@ -159,11 +160,11 @@ function byteCapTransform(limit: number): TransformStream<Uint8Array, Uint8Array
 
 async function* streamFromOrigin(): AsyncGenerator<UkCareLocationsRecord> {
   const csvUrl = await currentCsvUrl();
-  let res = await fetch(csvUrl, { headers: { 'user-agent': USER_AGENT } });
+  let res = await originFetch(csvUrl, { headers: { 'user-agent': USER_AGENT } });
   // CQC's file host answers 503 now and then (05:33 wave, 2026-09-21): retry before failing.
   for (let attempt = 1; res.status >= 500 && attempt <= 3; attempt += 1) {
     await new Promise((r) => setTimeout(r, 30_000 * attempt));
-    res = await fetch(csvUrl, { headers: { 'user-agent': USER_AGENT } });
+    res = await originFetch(csvUrl, { headers: { 'user-agent': USER_AGENT } });
   }
   if (!res.ok || !res.body) throw new Error(`CQC directory download failed: ${res.status}`);
   let idx: Map<string, number> | null = null;

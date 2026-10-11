@@ -3,6 +3,7 @@ import { csvRows } from './csv';
 import fixtureRecords from './fixtures/sam-exclusions.json';
 import type { DataSource } from './types';
 import { inflateZipEntry } from './zip';
+import { originFetch } from './origin';
 
 // US SAM.gov Exclusions (debarment) — every party excluded from US federal
 // awards, from GSA's official daily PUBLIC extract (task 40; rebuilt 2026-09-20).
@@ -143,7 +144,7 @@ const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout
 async function listedExtractKey(): Promise<string | null> {
   for (let attempt = 1; attempt <= LIST_ATTEMPTS; attempt += 1) {
     try {
-      const res = await fetch(LIST_URL, { headers: { 'user-agent': USER_AGENT } });
+      const res = await originFetch(LIST_URL, { headers: { 'user-agent': USER_AGENT } });
       if (res.ok) {
         const body = (await res.json()) as ExtractListing;
         let best: { serial: number; key: string } | null = null;
@@ -204,7 +205,10 @@ export function computedExtractKeys(
  */
 async function openExtract(key: string): Promise<Response | null> {
   const url = `${DOWNLOAD_BASE}${key.split('/').map(encodeURIComponent).join('/')}?privacy=Public`;
-  const first = await fetch(url, { headers: { 'user-agent': USER_AGENT }, redirect: 'manual' });
+  const first = await originFetch(url, {
+    headers: { 'user-agent': USER_AGENT },
+    redirect: 'manual',
+  });
   if (first.status === 204 || first.status === 404) return null;
   if (first.status >= 300 && first.status < 400) {
     const location = first.headers.get('location') ?? '';
@@ -217,7 +221,7 @@ async function openExtract(key: string): Promise<Response | null> {
     if (target.protocol !== 'https:' || !REDIRECT_HOSTS.test(target.hostname)) {
       throw new Error(`SAM extract download redirected off-origin (${target.hostname})`);
     }
-    const second = await fetch(target, {
+    const second = await originFetch(target, {
       headers: { 'user-agent': USER_AGENT },
       redirect: 'manual',
     });

@@ -3,6 +3,7 @@ import { csvRows } from './csv';
 import fixtureRecords from './fixtures/uk-gambling-operators.json';
 import type { DataSource } from './types';
 import { byteCapTransform } from './zip';
+import { originFetch } from './origin';
 
 // Gambling Commission licence register — every operating licence held by a
 // gambling business in Great Britain (remote and non-remote betting, casino,
@@ -212,7 +213,7 @@ async function fetchFile(file: keyof typeof REGISTER_FILES): Promise<Response> {
     throw new Error(`Gambling Commission file on unexpected host (${url.hostname})`);
   }
   const get = (): Promise<Response> =>
-    fetch(url.toString(), {
+    originFetch(url.toString(), {
       headers: { 'user-agent': USER_AGENT, accept: 'text/csv,*/*' },
       signal: AbortSignal.timeout(FETCH_TIMEOUT_MS),
     });
