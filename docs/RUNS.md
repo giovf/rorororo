@@ -881,3 +881,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 00:46 | burn-down | DataSource.notice: dated origin note on /stats, /v1/data and list_sources; uk-planning first; 2 tests
 - 2026-10-11 00:46 | burn-down | v0.23.1; ARCHITECTURE and RESEARCH decision (§7 clock); weekly re-read item dated 10-18
 - 2026-10-11 00:46 | burn-down | Queue: gankdat refresh-uk-planning-2026-10-11 done; proof is the row naming the state nightly
+- 2026-10-11 00:52 | burn-down | apify-outcomes lib: (F failed) per actor in the row; apify-<name> under refresh errors when F rises
+- 2026-10-11 00:52 | burn-down | metrics.mjs wired with a previous-row baseline (no baseline flags nothing); 6 tests; ARCHITECTURE
+- 2026-10-11 00:52 | burn-down | Queue: gankdat apify-run-outcomes-reading done; proof is a failing actor in the row before Apify mails

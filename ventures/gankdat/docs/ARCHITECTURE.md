@@ -349,6 +349,13 @@ runs `check:root`.
   that needs no account while the Search Console reading is owner-blocked. The runner leaves
   `dist/indexnow.json`; `metrics.mjs` reads it → `indexnow: N urls S` in the Daily numbers row
   (`n/a (<reason>)` on a push run).
+- **Apify run outcomes** (`lib/apify-outcomes.ts`, 2026-10-11): each actor's public 30-day run stats
+  are by status, so the Daily numbers row's `apify 30d by actor` carries `(F failed)` (failed +
+  timed-out, every account, Apify's QA runner included) and an actor whose F rose since the previous
+  row is listed under `refresh errors` as `apify-<name>`, which the auto-filer turns into
+  `refresh-apify-<name>` by its two-rows-in-four rule. Why rising, not non-zero: both maintenance
+  flags so far (09-25, 10-10) were learned from Apify's mail three days in, and a fixed actor must
+  drop out the next day rather than be re-filed for the 30 days its old failures stay in the window.
 - **Live MCP probe** (`scripts/mcp-probe.ts`, 2026-10-08, queue `mcp-live-probe`): the metrics job's
   runner does what an agent directory's health checker does — `initialize`, `tools/list`, one keyless
   preview `tools/call` on the first listing data tool — against the live `/mcp` and the same with a

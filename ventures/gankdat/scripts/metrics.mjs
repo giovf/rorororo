@@ -289,6 +289,14 @@ if (mcpProbeError) {
 // <name> N, …; 0: a, b` — N = runs by other accounts (Apify's QA runner included), most first,
 // zero-run actors named after `0:` in the `datasets 30d:` shape. Without the own-runs list the
 // per-actor figures are all accounts' and the line says so.
+//
+// Outcomes (apify-run-outcomes-reading, burn-down 2026-10-11): `publicActorRunStats30Days` is by
+// status, so each actor gets a `(F failed)` suffix (failed + timed-out, every account) and an actor
+// whose F rose since the previous row is listed under `refresh errors` as `apify-<name>` — the
+// auto-filer then files `refresh-apify-<name>` a day before Apify's "under maintenance" mail.
+// Rules and parsing in src/lib/apify-outcomes.ts.
+const { byActorNote, failedCount, newlyFailing, previousFailed } =
+  await import('../src/lib/apify-outcomes.ts');
 const apifyToken = process.env.APIFY_TOKEN;
 const DAY_MS = 86_400_000;
 /** Our own runs in the last 30 days: the total and a count per actor id. */
@@ -341,7 +349,12 @@ async function apifyShelf() {
     runs += Math.round(Number(act.stats?.totalRuns ?? 0));
     const actRuns30 = Math.round(Number(act.stats?.publicActorRunStats30Days?.TOTAL ?? 0));
     runs30 += actRuns30;
-    perActor.push({ id: act.id, name: act.name, runs30: actRuns30 });
+    perActor.push({
+      id: act.id,
+      name: act.name,
+      runs30: actRuns30,
+      failed: failedCount(act.stats?.publicActorRunStats30Days),
+    });
     users += Math.round(Number(act.stats?.totalUsers30Days ?? 0));
     if (act.isPublic) publicCount += 1;
   }
@@ -354,13 +367,14 @@ async function apifyShelf() {
   });
   const ours30 = own ? own.count : null;
   // Per actor: runs by other accounts (total minus ours), most first; zero-run actors named.
-  const others = perActor
-    .map((a) => ({ name: a.name, n: Math.max(0, a.runs30 - (own?.byActor.get(a.id) ?? 0)) }))
-    .sort((a, b) => b.n - a.n || a.name.localeCompare(b.name));
-  const used = others.filter((a) => a.n > 0).map((a) => `${a.name} ${a.n}`);
-  const zero = others.filter((a) => a.n === 0).map((a) => a.name);
-  const byActor = `apify 30d by actor${own ? '' : ' (all accounts)'}: ${used.length ? used.join(', ') : 'none'}${zero.length ? `; 0: ${zero.join(', ')}` : ''}`;
-  return { runs, runs30, ours30, users, publicCount, byActor };
+  const outcomes = perActor.map((a) => ({
+    name: a.name,
+    n: Math.max(0, a.runs30 - (own?.byActor.get(a.id) ?? 0)),
+    total: a.runs30,
+    failed: a.failed,
+  }));
+  const byActor = byActorNote(outcomes, Boolean(own));
+  return { runs, runs30, ours30, users, publicCount, byActor, outcomes };
 }
 const apify = await apifyShelf().catch((e) => {
   console.error(`apify: ${e.message}`);
@@ -569,6 +583,11 @@ const prevRuns = (() => {
   }
   return null;
 })();
+// Actors whose 30-day failed count rose since the previous row → refresh errors (see the Apify
+// block above); no previous reading → nothing flagged, never a failed job.
+for (const e of apify ? newlyFailing(apify.outcomes, previousFailed(md, date)) : []) {
+  errors.push({ source_slug: e.source_slug, message: e.message });
+}
 
 const notes = [
   // preview = keyless data-tool calls (5 rows, 20/day per client, since 2026-09-30 for the

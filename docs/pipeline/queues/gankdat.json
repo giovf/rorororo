@@ -509,13 +509,14 @@
     {
       "id": "apify-run-outcomes-reading",
       "title": "Daily numbers row reads Apify run outcomes per actor and lists a failing actor under refresh errors",
-      "why": "Research 2026-10-11: both actor flags so far (uk-planning-applications 2026-09-25, uk-no-website-leads 2026-10-10) were learned from Apify's \"under maintenance\" mail after three days of failed runs, while the row's `apify 30d by actor` counted those runs as use — it reads the count and never the outcome. metrics.mjs already pages /v2/actor-runs for the 30-day split (apifyOwnRuns30d), and each run carries `status` (SUCCEEDED, FAILED, TIMED-OUT, ABORTED). Do: print `slug N (F failed)` per actor where F > 0 and, for an actor with ≥ 2 non-succeeded runs in the last 24 h (QA runs the prefilled input daily), add `apify-<slug> (N of M runs failed in 24 h: <last status message>)` to the refresh errors reading so scripts/refresh-errors-to-queue.ts files `refresh-apify-<slug>` by the existing two-of-four rule; tests on fixture run lists. Never fails the job; `n/a` without APIFY_TOKEN as today.",
+      "why": "Research 2026-10-11: both actor flags so far (uk-planning-applications 2026-09-25, uk-no-website-leads 2026-10-10) were learned from Apify's \"under maintenance\" mail after three days of failed runs, while the row's `apify 30d by actor` counted those runs as use — it reads the count and never the outcome. metrics.mjs already pages /v2/actor-runs for the 30-day split (apifyOwnRuns30d), and each run carries `status` (SUCCEEDED, FAILED, TIMED-OUT, ABORTED). Do: print `slug N (F failed)` per actor where F > 0 and, for an actor with ≥ 2 non-succeeded runs in the last 24 h (QA runs the prefilled input daily), add `apify-<slug> (N of M runs failed in 24 h: <last status message>)` to the refresh errors reading so scripts/refresh-errors-to-queue.ts files `refresh-apify-<slug>` by the existing two-of-four rule; tests on fixture run lists. Never fails the job; `n/a` without APIFY_TOKEN as today. Built 2026-10-11 (burn-down): src/lib/apify-outcomes.ts — failed = FAILED + TIMED-OUT from each actor's publicActorRunStats30Days (every account, so QA runs count), `(F failed)` suffix in `apify 30d by actor`, and `apify-<name>` under refresh errors only when F ROSE since the previous row (previous-row baseline like the runs delta; no baseline → nothing), so a fixed actor drops out the next day and the 30-day window rolling failures off never flags; 6 tests; metrics.mjs wired; ARCHITECTURE bullet. Proof reads from the 10-12 row on (10-11 is the baseline).",
       "effort_days": 0.2,
       "proof": "an actor whose runs start failing appears in the Daily numbers row the same day and a queue item exists before Apify's mail arrives",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-11",
-      "doing_since": "2026-10-11"
+      "doing_since": "2026-10-11",
+      "done_at": "2026-10-11"
     },
     {
       "id": "refresh-zero-records-evidence",

@@ -1012,3 +1012,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   last snapshot is served under a dated notice, the refresh names the cause nightly and a weekly
   relay re-read decides re-point or retire (§7 clock: 60 days unqueried). Not retired: 88 calls and
   13 Apify runs in 30 days.
+- 2026-10-11 burn-down: gankdat `apify-run-outcomes-reading` (5) built — the Daily numbers row now reads
+  each actor's failed runs and lists a newly failing actor under refresh errors, so the auto-filer
+  queues the fix a day before Apify's "under maintenance" mail (both flags so far arrived three days
+  late while the row counted the failed runs as use).
