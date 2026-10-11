@@ -1065,3 +1065,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   one owner account each) and **oss-bounties** (GitHub search: 553 open labelled bounties; scanner is the next
   build); parked prize competitions needing compute and affiliate links; declined vulnerability programmes (out of
   scope). The Figma Playground file (action 017) dropped at the owner's word; 018–020 done by the owner.
+- 2026-10-11 interactive (owner asked for a legal/ToS check before signing up): hackathon rules allow AI tools and
+  require the owner to be the entrant and owner of the work — satisfied, with disclosure in the write-up; Devpost's
+  Terms forbid automated access, so `hackathon-scanner` is dropped and the exchange finds hackathons from sponsors'
+  sites; GitHub permits automation under a personal account (PR_TOKEN, added today — the Docker catalog PR and the
+  PR relay are unblocked); Algora forbids bots on its own site, which the scanner never touches. Evidence in
+  `ventures/hackathons/RESEARCH.md` §3 and action 022.

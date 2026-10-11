@@ -10,6 +10,24 @@ Your direction of 2026-10-11 ("take the money available on the internet") opened
 evidence is in `ventures/hackathons/RESEARCH.md` and `ventures/oss-bounties/RESEARCH.md`. Each needs
 one account in your name; everything else is built by the routines.
 
+## Policy check (your question of 2026-10-11)
+
+Read from the official rules of both hackathons, Devpost's Terms of Service, GitHub's Terms and
+Algora's Terms the same day:
+
+- **Hackathons.** Nothing in either rule set restricts AI tools (PayPal's rules say any AI tool works).
+  The entry must be your original work, solely owned by you — code Claude writes for you is yours —
+  and you are the entrant: you register, you submit, you would receive the prize. The write-up will
+  say the project was built with Claude Code under your direction. Judges may discount that; the
+  rules do not forbid it.
+- **Devpost** forbids automated access to its site, so Claude never scans or scrapes it; the
+  hackathon-scanner item is dropped. You registering for two hackathons is ordinary use.
+- **Bounties.** GitHub allows automation under a personal account with the human responsible, which
+  is what `PR_TOKEN` does; every PR will say how it was built, and a project whose contribution rules
+  forbid AI-assisted work is skipped. Algora forbids bots on algora.io — the scanner reads GitHub's
+  API, never algora.io, and the only algora.io action is your sign-in.
+- **Tax.** Prizes and bounties are income of your sole trade; the ledger records them.
+
 ## Actions
 
 ### 1. Devpost account

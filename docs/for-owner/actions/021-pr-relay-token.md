@@ -1,7 +1,7 @@
 # Owner action request #021 — a token so CI can open pull requests on other repositories
 
 - **Date:** 2026-10-10
-- **Status:** pending
+- **Status:** done
 - **Your time:** ~3 minutes
 - **Cost:** £0.00
 - **Blocks:** foundry `third-party-pr-relay`; gankdat `docker-mcp-catalog-listing` (the Docker MCP

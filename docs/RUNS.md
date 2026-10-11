@@ -914,3 +914,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 12:30 | interactive | Owner did actions 018, 019, 020 and the GitHub App review; Playground file (017) dropped
 - 2026-10-11 12:30 | notify | Two new ways to earn: hackathon prizes and paid open-source issues. Four free accounts needed, 15 min
 - 2026-10-11 13:10 | interactive | Built the bounty scanner: daily board of paid open-source issues; first board 56 bounties, top $3,000
+- 2026-10-11 14:00 | interactive | ToS check for the owner: hackathon rules allow AI tools, owner is the entrant; Devpost scanner dropped
+- 2026-10-11 14:00 | interactive | PR_TOKEN in place: Docker MCP Catalog PR and the PR relay unblocked; bounties wait on the sign-in

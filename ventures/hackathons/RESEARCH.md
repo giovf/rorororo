@@ -34,7 +34,13 @@ majority; the UK is not on any exclusion list. Entries are submitted by the owne
 - Recurring job: Devpost lists tens of open online hackathons at any time; a scanner keeps the board fresh.
 - Competitor gap: entries are judged on working software and a clear story; the portfolio's entrants are live products with real data, which most hackathon entries are not.
 - ≤ 1 week to build: each entry reuses a live product; the new part is the sponsor-specific integration and the submission package.
-- Policy: no ToS risk; the owner holds the account, routines prepare the package, the owner clicks submit (a Devpost submission is the entrant's act).
+- Policy (checked 2026-10-11 at the owner's request, from the official rules and Devpost's Terms of Service):
+  - Neither hackathon's rules restrict AI tools; PayPal's say "Any AI tool works, as long as PayPal integration is central". Judging weighs "genuine effort and a working, non-trivial implementation", which is what the entry must show.
+  - The Submission must be the Entrant's original work, solely owned by the Entrant. Code produced by Claude Code at the owner's direction is the owner's to own under Anthropic's terms, so this holds; the write-up states plainly that the project was built with Claude Code under the owner's direction — judges may discount that, but nothing forbids it.
+  - The Entrant is a human individual (the owner), who registers, submits and would receive the prize; routines prepare the package only. Existing projects qualify if "significantly updated" during the submission period, and the entrant must explain how.
+  - **Devpost's Terms of Service §4 forbid automated software to access, scrape or crawl the site.** The 2026-10-11 API read was a one-off and is not repeated: the `hackathon-scanner` item is dropped, and hackathons are found from sponsors' own sites.
+  - Prizes are income of the owner's sole trade (the ledger records them; the £1,000 trading allowance and Self Assessment rules apply as for any revenue).
+  - Nebius's terms page could not be read from here (404); the Nebius entry item re-reads the sign-up terms before any build and stops if they exclude the use.
 
 ## 4. Costs
 

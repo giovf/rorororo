@@ -9,12 +9,13 @@
     {
       "id": "hackathon-scanner",
       "title": "Hackathon scanner: read Devpost's public hackathon API daily from CI, keep docs/hackathons/BOARD.md (open online hackathons with a cash pool, close date, requirements excerpt, UK eligibility, existing-project rule) and file a queue item for every entry whose requirements a live product already meets",
-      "why": "Owner 2026-10-11: money already on offer must be collected, not waited for. Devpost lists 38 open online hackathons today (RESEARCH §2); which ones fit changes weekly and no routine reads the board. The API is keyless JSON (`/api/hackathons?status[]=open&challenge_type[]=online`); the rules page carries the prize table and eligibility. A GitHub runner reaches devpost.com (the routine sandbox may not): run it in the store-metrics job like the other store reads.",
+      "why": "Owner 2026-10-11: money already on offer must be collected, not waited for. Devpost lists 38 open online hackathons today (RESEARCH §2); which ones fit changes weekly and no routine reads the board. The API is keyless JSON (`/api/hackathons?status[]=open&challenge_type[]=online`); the rules page carries the prize table and eligibility. A GitHub runner reaches devpost.com (the routine sandbox may not): run it in the store-metrics job like the other store reads. Dropped 2026-10-11 (owner asked for a ToS check): Devpost's Terms of Service §4 forbid using automated software to access or scrape the site, so no scanner; hackathons are found by the weekly exchange from sponsors' own sites and the owner's pointers, one page read at a time.",
       "effort_days": 0.3,
       "proof": "BOARD.md refreshed daily; every hackathon that fits has a queue item within a day of appearing",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-11"
+      "status": "dropped",
+      "added": "2026-10-11",
+      "done_at": "2026-10-11"
     },
     {
       "id": "demo-video-pipeline",

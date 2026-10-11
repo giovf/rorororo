@@ -318,5 +318,5 @@ closed entries older than 30 days (git keeps the history).
 
 - 2026-10-10 owner: **let CI open pull requests on other repositories** (~3 min, £0): create a classic GitHub token with
   `public_repo` and save it as the `PR_TOKEN` repository secret; the Docker MCP Catalog PR then opens itself (and every
-  future listing PR). Steps: `docs/for-owner/actions/021-pr-relay-token.md`.
+  future listing PR). Steps: `docs/for-owner/actions/021-pr-relay-token.md`. — Done 2026-10-11 (interactive): PR_TOKEN added by the owner 2026-10-11 (secret present)
 - 2026-10-11 owner: four free accounts for the prize and bounty lines (Devpost, PayPal sandbox, Nebius, Algora), ~15 min, £0 — docs/for-owner/actions/022-prize-and-bounty-accounts.md

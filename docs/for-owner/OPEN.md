@@ -5,12 +5,9 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (2)
+## Requests (1)
 
-1. **let CI open pull requests on other repositories** — ~3 min, since 2026-10-10; unblocks foundry `third-party-pr-relay` (3), gankdat `docker-mcp-catalog-listing` (8), oss-bounties `first-bounty-pr` (9), oss-bounties `bounty-tenstorrent-tt-metal-59732` (7), oss-bounties `bounty-tursodatabase-turso-8749` (7), oss-bounties `bounty-arrow-air-project-quiver-256` (7). Steps: [021](actions/021-pr-relay-token.md).
-   let CI open pull requests on other repositories (~3 min, £0): create a classic GitHub token with `public_repo` and save it as the `PR_TOKEN` repository secret; the Docker MCP Catalog PR then opens itself (and every future listing PR). Steps: `docs/for-owner/actions/021-pr-relay-token.md`.
-
-2. **four free accounts for the prize and bounty lines** — ~15 min, since 2026-10-11; unblocks hackathons `paypal-ai-hackathon-entry` (9), hackathons `nebius-nvidia-hackathon-entry` (8). Steps: [022](actions/022-prize-and-bounty-accounts.md).
+1. **four free accounts for the prize and bounty lines** — ~15 min, since 2026-10-11; unblocks hackathons `paypal-ai-hackathon-entry` (9), hackathons `nebius-nvidia-hackathon-entry` (8), oss-bounties `first-bounty-pr` (9), oss-bounties `bounty-tenstorrent-tt-metal-59732` (7), oss-bounties `bounty-tursodatabase-turso-8749` (7), oss-bounties `bounty-arrow-air-project-quiver-256` (7). Steps: [022](actions/022-prize-and-bounty-accounts.md).
    four free accounts for the prize and bounty lines (Devpost, PayPal sandbox, Nebius, Algora), ~15 min, £0 — docs/for-owner/actions/022-prize-and-bounty-accounts.md
 
 ## Waiting on an attended Claude session, not you (3)
