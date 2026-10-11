@@ -544,13 +544,23 @@
     {
       "id": "refresh-uk-planning-reread-2026-10-18",
       "title": "uk-planning weekly origin re-read: has planning.data.gov.uk republished the planning-application dataset?",
-      "why": "Decision 2026-10-11 (burn-down, RESEARCH.md): the planning-application dataset was emptied on the platform on 2026-10-10 (entity-count 0, phase alpha, no replacement-dataset; relay planning-origin-2026-10-11); gankdat serves the 10-09 snapshot under a dated notice and the nightly refresh fails loudly with that evidence. The dataset is still queried (88 REST calls, 13 Apify runs in 30 days), so STRATEGY §7 does not retire it yet. Do, through the relay: GET https://www.planning.data.gov.uk/dataset/planning-application.json and entity.json?dataset=planning-application&limit=5. If entity-count > 0: verify the layout against the response, drop `notice` and the count-0 throw's date, refresh, done. If still 0: move this item's not_before a week on, keep the clock in RESEARCH.md (retire per §7 when the dataset goes 60 days without a customer query, or re-point when the page names a replacement-dataset). The id starts with refresh-uk-planning- on purpose: scripts/refresh-errors-to-queue.ts then appends each night's evidence to this open item instead of filing a new refresh-uk-planning-<date> every two days.",
+      "why": "Decision 2026-10-11 (burn-down, RESEARCH.md): the planning-application dataset was emptied on the platform on 2026-10-10 (entity-count 0, phase alpha, no replacement-dataset; relay planning-origin-2026-10-11); gankdat serves the 10-09 snapshot under a dated notice and the nightly refresh fails loudly with that evidence. The dataset is still queried (88 REST calls, 13 Apify runs in 30 days), so STRATEGY §7 does not retire it yet. Do, through the relay: GET https://www.planning.data.gov.uk/dataset/planning-application.json and entity.json?dataset=planning-application&limit=5. If entity-count > 0: verify the layout against the response, drop `notice` and the count-0 throw's date, refresh, done. If still 0: move this item's not_before a week on, keep the clock in RESEARCH.md (retire per §7 when the dataset goes 60 days without a customer query, or re-point when the page names a replacement-dataset). The id starts with refresh-uk-planning- on purpose: scripts/refresh-errors-to-queue.ts then appends each night's evidence to this open item instead of filing a new refresh-uk-planning-<date> every two days. Still failing 2026-10-11: refresh returned 0 records.",
       "effort_days": 0.05,
       "proof": "either an ok uk-planning refresh with records > 0, or a dated line in RESEARCH.md moving the clock on with the entity-count read that week",
       "score": 4,
       "status": "todo",
       "added": "2026-10-11",
       "not_before": "2026-10-18"
+    },
+    {
+      "id": "refresh-uk-insolvency-2026-10-11",
+      "title": "uk-insolvency: refresh has failed 2 times in the last 4 days — fix the source or keep the last snapshot without an error row",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-insolvency under refresh errors on 2026-10-10 (runner: thegazette.co.uk responded 503 after 2 reads) and 2026-10-11: runner: thegazette.co.uk responded 503 after 2 reads after the fix of refresh-uk-insolvency-2026-10-03 (2026-10-04). The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-insolvency.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted.",
+      "effort_days": 0.1,
+      "proof": "uk-insolvency absent from refresh errors for 7 consecutive Daily numbers rows",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-11"
     }
   ]
 }
