@@ -20,7 +20,9 @@ docs/pipeline/queues/<venture>.json  one queue per venture: status open|finished
 | **Interactive session** | when the owner opens Claude Code | Same rules; also takes `blocked` items whose blocker was an owner action. |
 
 Item fields: `score` is STRATEGY §5 (evidence × reach ÷ effort), higher first, oldest first on
-ties; `proof` is the number that would show it worked; `blocked` items name what they wait on
+ties — ranked across queues by **score × the queue's `weight`** (2026-10-11, owner: a new income line
+outweighs improving a product that has not earned; STRATEGY §5's table says which queue gets 2, 1 or
+0.5, the Sunday review keeps it current, `npm run pipeline` prints it); `proof` is the number that would show it worked; `blocked` items name what they wait on
 and do not count as "empty". An item that only needs elapsed time rather than a blocker — a
 day-7 or day-30 review — stays `todo` and carries `not_before: YYYY-MM-DD`: `npm run pipeline
 next` skips it until that date (listing it on a `scheduled:` line instead) and offers it from

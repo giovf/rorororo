@@ -1,0 +1,52 @@
+{
+  "venture": "hackathons",
+  "status": "open",
+  "needs_research": false,
+  "updated": "2026-10-11",
+  "researched": "2026-10-11",
+  "weight": 2,
+  "items": [
+    {
+      "id": "hackathon-scanner",
+      "title": "Hackathon scanner: read Devpost's public hackathon API daily from CI, keep docs/hackathons/BOARD.md (open online hackathons with a cash pool, close date, requirements excerpt, UK eligibility, existing-project rule) and file a queue item for every entry whose requirements a live product already meets",
+      "why": "Owner 2026-10-11: money already on offer must be collected, not waited for. Devpost lists 38 open online hackathons today (RESEARCH §2); which ones fit changes weekly and no routine reads the board. The API is keyless JSON (`/api/hackathons?status[]=open&challenge_type[]=online`); the rules page carries the prize table and eligibility. A GitHub runner reaches devpost.com (the routine sandbox may not): run it in the store-metrics job like the other store reads.",
+      "effort_days": 0.3,
+      "proof": "BOARD.md refreshed daily; every hackathon that fits has a queue item within a day of appearing",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "demo-video-pipeline",
+      "title": "Demo video pipeline: a Playwright script per entry that drives the live product in a headless browser with on-screen captions, recorded to webm and converted to mp4 by ffmpeg in CI, published as a workflow artifact the owner attaches to the submission",
+      "why": "Every Devpost portal asks for a short demo video and judges watch it first; no routine can record a screen today, so each entry would stall on the owner. Playwright's `recordVideo` and ffmpeg run on a GitHub runner; captions come from the script, no narration needed.",
+      "effort_days": 0.5,
+      "proof": "one mp4 under 3 minutes produced from CI for the first entry",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "paypal-ai-hackathon-entry",
+      "title": "PayPal AI Hackathon entry (closes 2026-11-12, $67,500 pool): a PayPal sandbox checkout for gankdat credits (Orders API, sandbox only) beside Stripe and x402, an agent walkthrough where Claude buys and spends credits through the MCP server, the Devpost write-up, repo link and demo video",
+      "why": "RESEARCH §2: existing projects qualify with meaningful progress in the period, the PayPal integration must be central and AI meaningful — gankdat is already an AI-agent data product with two payment rails, so the sandbox rail is the whole new work. Prize tiers $12k / $8k / $5k plus category awards. Needs the owner's Devpost and PayPal developer sandbox accounts (action 022); the owner submits the package.",
+      "effort_days": 2,
+      "proof": "submission accepted on Devpost before the deadline; any placing is the venture's proof",
+      "score": 9,
+      "status": "blocked",
+      "blocked_on": "owner action 022: Devpost account and PayPal developer sandbox credentials (sandbox client id/secret in .env)",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "nebius-nvidia-hackathon-entry",
+      "title": "Nebius × NVIDIA hackathon entry (closes 2026-10-30, $50,000 pool): a UK counterparty due-diligence agent on a Nemotron model served by Nebius Token Factory, using gankdat's MCP tools (companies, insolvency, sanctions, sponsors, charities) with a one-page report output; write-up, repo, demo video",
+      "why": "RESEARCH §2: the only hard rule is running on Nebius with an NVIDIA open model; the 'best apps and agents' track wants something people would use. The agent is a thin orchestration over tools that already exist. Needs the owner's Devpost and Nebius accounts (action 022; drop if Nebius asks for a card).",
+      "effort_days": 1.5,
+      "proof": "submission accepted on Devpost before the deadline",
+      "score": 8,
+      "status": "blocked",
+      "blocked_on": "owner action 022: Devpost and Nebius Token Factory accounts (API key in .env)",
+      "added": "2026-10-11"
+    }
+  ]
+}

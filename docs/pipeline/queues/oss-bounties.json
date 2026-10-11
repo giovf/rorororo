@@ -1,0 +1,41 @@
+{
+  "venture": "oss-bounties",
+  "status": "open",
+  "needs_research": false,
+  "updated": "2026-10-11",
+  "researched": "2026-10-11",
+  "weight": 2,
+  "items": [
+    {
+      "id": "bounty-scanner",
+      "title": "Bounty scanner: a CI job that searches GitHub daily for open issues with a bounty label or `/bounty $` comment, reads amount, language, repo activity, licence and contribution rules, excludes security-testing repositories and vulnerability reports, ranks by amount × fit ÷ age, writes docs/bounties/BOARD.md and files a queue item for the top three",
+      "why": "RESEARCH §2: 553 open labelled bounties today and no routine reads them; the GitHub API is reachable from every sandbox and the runner (GITHUB_TOKEN suffices for search). Fit = TypeScript/JavaScript/Python/Rust, tests present, a CONTRIBUTING that does not forbid AI-assisted work.",
+      "effort_days": 0.4,
+      "proof": "BOARD.md refreshed daily with ranked bounties; three queue items filed from it",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "first-bounty-pr",
+      "title": "First bounty: take the scanner's top-ranked issue, fork, fix with tests in the project's conventions, open the PR with `/claim #<issue>` and a plain note on how it was built, then track it to merge",
+      "why": "The posted amount is the proof of demand; a merged PR is the whole sale. Needs PR_TOKEN (action 021) to push the fork from CI and the board sign-in (action 022) so the claim resolves to the owner's account.",
+      "effort_days": 1,
+      "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
+      "score": 9,
+      "status": "blocked",
+      "blocked_on": "owner actions 021 (PR_TOKEN) and 022 (board sign-in); the scanner's first board",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "bounty-claim-ledger",
+      "title": "Claim ledger: a table in RESEARCH.md of every bounty attempted (issue, amount, PR, opened, merged, paid) kept by the build routine, and a weekly line in the report",
+      "why": "The line's §4 numbers (claims, merges, payouts) have nowhere to live; without them the review cannot apply the kill rule.",
+      "effort_days": 0.2,
+      "proof": "the table exists and the weekly report reads it",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-11"
+    }
+  ]
+}

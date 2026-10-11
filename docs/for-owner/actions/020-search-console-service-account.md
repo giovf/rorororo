@@ -1,7 +1,7 @@
 # Owner action request #020 — let CI read Google Search Console
 
 - **Date:** 2026-10-07
-- **Status:** pending
+- **Status:** Done
 - **Your time:** ~10 minutes
 - **Cost:** £0.00 (a Google Cloud project with only the Search Console API enabled bills nothing)
 - **Blocks:** gankdat `search-console-stats-indexing` (4); the day-30 reviews of variables-toolkit (10-21), highlight-keep

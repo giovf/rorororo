@@ -5,25 +5,13 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (6)
+## Requests (2)
 
-1. **let CI open pull requests on other repositories** — ~3 min, since 2026-10-10; unblocks foundry `third-party-pr-relay` (3), gankdat `docker-mcp-catalog-listing` (8). Steps: [021](actions/021-pr-relay-token.md).
+1. **let CI open pull requests on other repositories** — ~3 min, since 2026-10-10; unblocks foundry `third-party-pr-relay` (3), gankdat `docker-mcp-catalog-listing` (8), oss-bounties `first-bounty-pr` (9). Steps: [021](actions/021-pr-relay-token.md).
    let CI open pull requests on other repositories (~3 min, £0): create a classic GitHub token with `public_repo` and save it as the `PR_TOKEN` repository secret; the Docker MCP Catalog PR then opens itself (and every future listing PR). Steps: `docs/for-owner/actions/021-pr-relay-token.md`.
 
-2. **let CI read Google Search Console** — ~10 min, since 2026-10-07; unblocks gankdat `search-console-stats-indexing` (4). Steps: [020](actions/020-search-console-service-account.md).
-   let CI read Google Search Console (~10 min, £0, no new account): create a read-only service account in Google Cloud, add its email as a *Restricted* user on the gankdat.com and apps.gankdat.com Search Console properties, and paste its JSON key as the `SEARCH_CONSOLE_KEY` repository secret. From then on the 06:45 job w…
-
-3. **publish the free "Variables Playground" Community file** — ~10 min, since 2026-10-02; unblocks variables-toolkit `playground-file-views` (3). Steps: [017](actions/017-figma-playground-file.md).
-   publish the free "Variables Playground" Community file (~10 min, £0, Figma desktop): build the plugin, run its new dev command "Build Community playground file" in an empty file, set the Cover frame as thumbnail, Publish to Community with the copy in `ventures/variables-toolkit/PLAYGROUND.md`, reply with the URL. Step…
-
-4. **Claude GitHub App is requesting updated/additional permissi…** — time not stated, since 2026-10-01; nothing queued waits on it.
-   GitHub emailed that the Claude GitHub App is requesting updated/additional permissions on the giovf account (installation 163075240). Review and accept or ignore at https://github.com/settings/installations/163075240/permissions/update — only the owner's GitHub identity can approve this; Claude keeps current permissio…
-
-5. **publish the free "Unused Variables Finder & Cleaner" plugin** — ~15 min, since 2026-10-04; nothing queued waits on it. Steps: [018](actions/018-figma-unused-variables-finder.md).
-   publish the free "Unused Variables Finder & Cleaner" plugin (~15 min + Figma review, £0, Figma desktop): create the plugin so Figma assigns its id, paste the id into `ventures/variables-toolkit/manifest.free.json`, `npm run build:free -w @foundry/variables-toolkit`, import `dist-free/manifest.json`, publish with the c…
-
-6. **republish the Variables Toolkit** — ~10 min, since 2026-10-04; nothing queued waits on it. Steps: [019](actions/019-figma-toolkit-republish-relink.md).
-   republish the Variables Toolkit (~10 min, £0, same Figma desktop session as actions 017/018): it gained a fourth tab, Relink to library variables (the Variable Utilities / DSO gap from RESEARCH §5), and `manifest.json` now asks for the `teamlibrary` permission, so the live build cannot read libraries until a new versi…
+2. **four free accounts for the prize and bounty lines** — ~15 min, since 2026-10-11; unblocks hackathons `paypal-ai-hackathon-entry` (9), hackathons `nebius-nvidia-hackathon-entry` (8). Steps: [022](actions/022-prize-and-bounty-accounts.md).
+   four free accounts for the prize and bounty lines (Devpost, PayPal sandbox, Nebius, Algora), ~15 min, £0 — docs/for-owner/actions/022-prize-and-bounty-accounts.md
 
 ## Waiting on an attended Claude session, not you (3)
 

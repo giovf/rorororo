@@ -259,12 +259,12 @@ closed entries older than 30 days (git keeps the history).
 - 2026-10-01 owner: GitHub emailed that the **Claude GitHub App is requesting updated/additional permissions** on the
   giovf account (installation 163075240). Review and accept or ignore at
   https://github.com/settings/installations/163075240/permissions/update — only the owner's GitHub identity can approve
-  this; Claude keeps current permissions until you do. No money, no new account.
+  this; Claude keeps current permissions until you do. No money, no new account. — Done 2026-10-11 (interactive): done by the owner 2026-10-11 (action files marked done locally; SEARCH_CONSOLE_KEY in the repository secrets)
 - 2026-10-02 owner: **publish the free "Variables Playground" Community file** (~10 min, £0, Figma desktop): build the
   plugin, run its new dev command "Build Community playground file" in an empty file, set the Cover frame as thumbnail,
   Publish to Community with the copy in `ventures/variables-toolkit/PLAYGROUND.md`, reply with the URL. Steps:
   `docs/for-owner/actions/017-figma-playground-file.md`. Why: free files are surfaced far more than paid plugins; the
-  listing has 2 views in 11 days. No new account, no money.
+  listing has 2 views in 11 days. No new account, no money. — Done 2026-10-11 (interactive): dropped 2026-10-11 at the owner's word (let's forget about the figma plugin); queue item playground-file-views dropped
 - 2026-10-04 owner: **two minutes on Cloudflare, then the Claude form.** (1) Cloudflare's budget alert of 2026-10-01 says
   **US$15.00 of metered usage** for 2026-09-10..10-10 — three times the US$5 Workers Paid line in `docs/LEDGER.md`, with
   £0 revenue, which trips STRATEGY §7's cost rule. Open https://dash.cloudflare.com/37e56f3ce4dfe49919e85d4380467f44/billing/billable-usage
@@ -277,13 +277,13 @@ closed entries older than 30 days (git keeps the history).
   create the plugin so Figma assigns its id, paste the id into `ventures/variables-toolkit/manifest.free.json`, `npm run build:free -w
   @foundry/variables-toolkit`, import `dist-free/manifest.json`, publish with the copy in `LISTING-FREE.md`. Steps:
   `docs/for-owner/actions/018-figma-unused-variables-finder.md`. Why: the toolkit is #1 for "unused variables" yet has 0 installs —
-  every winner of that query is free; this one links to the paid listing. Batch with action 017. No new account, no money.
+  every winner of that query is free; this one links to the paid listing. Batch with action 017. No new account, no money. — Done 2026-10-11 (interactive): done by the owner 2026-10-11 (action files marked done locally; SEARCH_CONSOLE_KEY in the repository secrets)
 - 2026-10-04 owner: **republish the Variables Toolkit** (~10 min, £0, same Figma desktop session as actions 017/018): it gained a
   fourth tab, **Relink to library variables** (the Variable Utilities / DSO gap from RESEARCH §5), and `manifest.json` now asks for the
   `teamlibrary` permission, so the live build cannot read libraries until a new version is published. `git pull`, `npm run build:release -w
   @foundry/variables-toolkit`, import `ventures/variables-toolkit/dist-release/manifest.json`, try Relink on a file with an enabled
   library, then **Publish → new version** and paste the description + tags from `LISTING.md` (bold headings with B, no asterisks). Steps:
-  `docs/for-owner/actions/019-figma-toolkit-republish-relink.md`. No new account, no money.
+  `docs/for-owner/actions/019-figma-toolkit-republish-relink.md`. No new account, no money. — Done 2026-10-11 (interactive): done by the owner 2026-10-11 (action files marked done locally; SEARCH_CONSOLE_KEY in the repository secrets)
 - 2026-10-04 handoff: **sign and upload ReadFocus 0.3.0** (ruler colour / height / opacity / lock-in-place controls, plus 0.2.1's Firefox for Android: `gecko_android`, phone-width popup, tap-to-place ruler)
   once 0.2.0 clears review on each store, the same way as 0.2.0: `bash scripts/amo-publish.sh ventures/read-focus` (release notes in
   `assets/amo-metadata.json`), then `cd ventures/read-focus && npm run zip && cd ../.. && node scripts/cws-publish.ts upload dckbdaplggmhimpbekhdbaampglfhdgf ventures/read-focus/read-focus.zip && node scripts/cws-publish.ts publish dckbdaplggmhimpbekhdbaampglfhdgf`.
@@ -303,7 +303,7 @@ closed entries older than 30 days (git keeps the history).
   Google Cloud, add its email as a *Restricted* user on the gankdat.com and apps.gankdat.com Search Console properties, and paste
   its JSON key as the `SEARCH_CONSOLE_KEY` repository secret. From then on the 06:45 job writes search impressions, clicks and the
   indexing verdict of the /stats and comparison pages on every venture's daily row — the first Search Console number to reach the
-  repo (three day-30 reviews and the gankdat indexing item read it). Steps: `docs/for-owner/actions/020-search-console-service-account.md`.
+  repo (three day-30 reviews and the gankdat indexing item read it). Steps: `docs/for-owner/actions/020-search-console-service-account.md`. — Done 2026-10-11 (interactive): done by the owner 2026-10-11 (action files marked done locally; SEARCH_CONSOLE_KEY in the repository secrets)
 - 2026-10-10 handoff: **open the Docker MCP Catalog PR** (~3 min, £0, needs `gh` signed in as giovf): the entry in
   `ventures/gankdat/docs/docker-mcp-catalog/` passed Docker's validator in the sandbox, but the sandbox token cannot fork
   `docker/mcp-registry` or open a PR there. From the repo root: `gh repo fork docker/mcp-registry --clone=false && git clone --depth 1
@@ -319,3 +319,4 @@ closed entries older than 30 days (git keeps the history).
 - 2026-10-10 owner: **let CI open pull requests on other repositories** (~3 min, £0): create a classic GitHub token with
   `public_repo` and save it as the `PR_TOKEN` repository secret; the Docker MCP Catalog PR then opens itself (and every
   future listing PR). Steps: `docs/for-owner/actions/021-pr-relay-token.md`.
+- 2026-10-11 owner: four free accounts for the prize and bounty lines (Devpost, PayPal sandbox, Nebius, Algora), ~15 min, £0 — docs/for-owner/actions/022-prize-and-bounty-accounts.md

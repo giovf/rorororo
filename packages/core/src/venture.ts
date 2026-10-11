@@ -8,7 +8,9 @@ export type Channel =
   | 'figma-community'
   | 'vscode-marketplace'
   | 'web'
-  | 'api-marketplace';
+  | 'api-marketplace'
+  | 'hackathon' // cash-prize competitions (Devpost and the sponsors' own portals)
+  | 'bounty-board'; // paid open-source issues (Algora-style boards on GitHub)
 
 export type VentureStatus =
   | 'idea' // named, not yet validated

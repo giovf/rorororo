@@ -27,6 +27,8 @@ rows of the new period (10-10, 10-11) read US$0 overage and 0.0M D1 writes a day
 | **Change feeds** (`/v1/changes`) | grant-makers, KYB, recruiters | no competitor offers an official-source delta feed | inside plans; upsell later | none |
 | Browser extensions (ReadFocus, Highlight Keep) | consumers | rivals abandoned; low ticket | US$12 one-off | none, but small |
 | Figma plugin (Variables Toolkit) | designers | paid rivals with gaps | one-off | none |
+| **Hackathon prizes** (`ventures/hackathons`, 2026-10-11: Devpost lists 38 open online hackathons; PayPal AI $67.5k to 11-12, Nebius × NVIDIA $50k to 10-30, both accepting existing projects and UK entrants) | sponsors who have already committed the prize money; judges | the prize tables in the official rules | $5k–$20k per placing | one account per portal (owner), the entry package built by routines, the owner clicks submit |
+| **Open-source bounties** (`ventures/oss-bounties`, 2026-10-11: 553 open GitHub issues carry a bounty label, $50–$800 each on the first page) | maintainers who posted cash on an issue | the amount is on the issue | $50–$800 per merged PR | none per PR; `PR_TOKEN` and one board sign-in up front |
 | **Agent directories** (MCP Registry, mcpservers.org, Glama, awesome-remote-mcp-servers and the Apify Store live; Claude Connectors Directory submitted by the owner 2026-10-04, in review; Docker MCP Catalog entry built 2026-10-10, PR waits on the owner's token, action 021) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30); ~46k keyless calls and no payer from the five live directories by 2026-10-11; the first client to exhaust the keyless preview (10-11: 47 wall hits on contract awards, sanctions and TED) was offered sign-in only — gankdat `preview-wall-next-steps` (review W41) |
 
 ## 3. Unit economics (what has to be true)
@@ -59,7 +61,17 @@ live, the data line is re-positioned (see kill criteria) rather than extended.
 `npm run pipeline` prints the next item.** The text below is the rationale and history.
 
 Score = (evidence of paying demand × reach of the channel) ÷ (build days + owner minutes).
-Build only what scores above the best distribution task still undone. **Distribution beats
+Build only what scores above the best distribution task still undone.
+
+**Queue weights (owner, 2026-10-11 — "a new venture should greatly outweigh improving a current
+one").** `npm run pipeline next` ranks items by score × the queue's `weight`, which the Sunday
+review sets from this table and the exchange sets for a new queue:
+
+| Queue | Weight | Rule |
+| --- | --- | --- |
+| a line in its first 30 days, or one that collects money already on offer (prizes, bounties) | 2 | new income first |
+| a venture earning, or still putting its first listings on shelves (gankdat), and `foundry` | 1 | the baseline |
+| a launched venture with no revenue 30 days after its listings went live (variables-toolkit, read-focus, highlight-keep on 2026-10-11) | 0.5 | improvements wait behind new lines; the day-30 funnel review decides keep or kill | **Distribution beats
 new datasets** until the funnel shows conversion: as of today the queue is (1) publish the
 remaining Apify actors, (2) Datarade approval, (3) directory PRs merged, (4) Search Console
 indexing of the stats pages, (5) then the next dataset. Research done 2026-09-20 (`ventures/gankdat/docs/NICHE-RESEARCH-2026-09-B.md`):
@@ -1044,3 +1056,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   refresh, because the `refresh errors` reading took every error row of the last 24 h. Fixed the reading (an error counts only
   while no later `ok` row exists), made the source retry a 5xx four times over ~13 s, and gave the runner a `skipped` row for an
   origin that stays 5xx — the last snapshot is served, the day is the origin's, and the auto-filer no longer files a fix for it.
+- 2026-10-11 interactive (owner): "take the money that is available on the internet without relying on people to
+  buy our products"; new ventures must greatly outweigh improvements to current ones; research from own reasoning
+  and primary sources, not money-making content. Applied: §1 "Take, don't wait"; §5 queue weights (`weight` on
+  every queue, `npm run pipeline` ranks by score × weight — hackathons and oss-bounties 2, gankdat and foundry 1,
+  the three £0 consumer products 0.5); two lines opened from primary data read the same day — **hackathons**
+  (Devpost API: 38 open online hackathons; PayPal AI $67.5k and Nebius × NVIDIA $50k entries queued, blocked on
+  one owner account each) and **oss-bounties** (GitHub search: 553 open labelled bounties; scanner is the next
+  build); parked prize competitions needing compute and affiliate links; declined vulnerability programmes (out of
+  scope). The Figma Playground file (action 017) dropped at the owner's word; 018–020 done by the owner.

@@ -128,6 +128,8 @@ const channelName: Record<string, string> = {
   web: 'Web',
   'vscode-marketplace': 'VS Code',
   'api-marketplace': 'API marketplace',
+  hackathon: 'Hackathon prizes',
+  'bounty-board': 'Bounty boards',
 };
 const price = (v: VentureManifest): string =>
   v.pricing.kind === 'one-time'

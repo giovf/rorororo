@@ -1,7 +1,7 @@
 # Owner action request #017 — publish the free "Variables Playground" file on Figma Community
 
 - **Date:** 2026-10-02
-- **Status:** pending
+- **Status:** dropped 2026-10-11 (owner: "let's forget about the figma plugin")
 - **Your time:** ~10 minutes
 - **Cost:** £0.00
 - **Blocks:** queue item `playground-file-views` (variables-toolkit) — the file's URL is all it needs

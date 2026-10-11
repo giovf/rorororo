@@ -1,7 +1,7 @@
 # Owner action request #019 — republish the Variables Toolkit with the Relink tab
 
 - **Date:** 2026-10-04
-- **Status:** pending
+- **Status:** done
 - **Your time:** ~10 minutes (plus Figma's review of the new version, usually 1–3 days)
 - **Cost:** £0.00
 - **Blocks:** queue item `relink-library-variables` proof (variables-toolkit) — a comment or purchase naming relink

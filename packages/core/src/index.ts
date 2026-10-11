@@ -12,6 +12,7 @@ export {
 export type { LedgerKind, LedgerRow, LedgerSummary, RecurringRow } from './ledger.js';
 export {
   candidates,
+  effectiveScore,
   formatPipeline,
   isEmpty,
   needsResearch,

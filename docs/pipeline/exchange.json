@@ -272,6 +272,45 @@
       "why": "Pre-research 2026-10-10 (burn-down starvation pass, WebSearch only — the sandbox resolves no data host, so the file headers are unread). Supply: 360Giving aggregates grants that UK funders publish in its open standard; GrantNav offers the entire dataset as CSV or JSON for download (very large; \"store locally\"), updated once a day overnight, and GrantNav loads only data published under a licence allowing re-use for any purpose (OGL or CC BY 4.0, attribution to each publisher) — but the licence is set per publisher and a data.gov.uk record describes the GrantNav release as CC BY-SA, so a build must read each publisher's licence field and drop share-alike publishers (a BY-SA row would taint the product). The Datastore (bulk route 360Giving recommends) needs a request form and a code of conduct whose commercial-use terms were not readable from here; GrantNav's own API is explicitly not for building on. Scale from a dated 360Giving post: 583,000 grants worth over £108bn from 196 funders; recipients carry charity and company numbers, so the join to uk-charities / uk-company-profiles is free. Demand: Funds Online (Directory of Social Change) sells funder data at £450–475 + VAT per user per year (8,000 funders, £8bn), with charity tiers to £1,416 — the paying buyer is fundraisers and bid writers wanting \"who funded organisations like mine, how much, when\"; no Apify actor covers 360Giving or UK charitable grants (the nearest, parseforge/ukri-gateway-to-research-scraper, is research grants), so the shelf has no rival at all. Blind Mode: individual recipients (the standard allows them) dropped whole, organisation recipients kept; grant titles/descriptions kept. Score ≈ 3: evidence 3 (a priced incumbent at £450/yr, an empty Apify shelf, but no inbound ask and the licence per publisher unverified) × reach 2 (Apify, MCP, x402, the /stats funder pages) ÷ 2 build days (daily bulk file → D1 with idOf on the grant identifier, licence filter, per-funder facets, actor + landing card) — above the ICO and Land Registry parks, still behind the distribution items STRATEGY §5 puts first. Parked, not promoted: every data shelf sits at the 2-user floor (exchange 2026-W41) and the share-alike question decides whether the dataset can exist.",
       "trigger": "a gankdat shelf converts (≥ 1 paying account or ≥ 20 paid Apify runs/month), or an inbound request names grants, funders or bid writing; then relay-read `HEAD` of the GrantNav CSV/JSON bulk download, `GET RANGE=0-8191` of it (header, licence column, recipient id columns) and the Datastore code of conduct page before scoring it for the gankdat queue; drop the idea if the aggregate is share-alike or the code of conduct forbids resale",
       "added": "2026-10-10"
+    },
+    {
+      "id": "hackathon-prizes",
+      "title": "Cash-prize hackathons entered with the live products (Devpost; PayPal AI $67.5k to 11-12, Nebius×NVIDIA $50k to 10-30)",
+      "why": "Owner 2026-10-11: collect money already on offer. Devpost's API lists 38 open online hackathons; UK eligible; existing projects accepted; prizes paid to placings.",
+      "status": "promoted",
+      "venture": "hackathons",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "oss-issue-bounties",
+      "title": "Paid open-source issues on bounty boards (553 open GitHub issues carry Algora's bounty label)",
+      "why": "The amount is posted before the work; a merged PR is the sale. Feature and bug-fix issues only.",
+      "status": "promoted",
+      "venture": "oss-bounties",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "data-science-prize-competitions",
+      "title": "Prize competitions judged on model performance (Kaggle-style, ARC-style)",
+      "why": "Large pools, open entry; but each needs GPU compute and weeks of iteration, beyond the £100 cap and the routine slots.",
+      "status": "parked",
+      "trigger": "a competition whose solution is code-only (no training compute) or a free compute grant; or the hackathon line pays out and funds compute",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "vulnerability-bounty-programs",
+      "title": "Security vulnerability bounty programmes",
+      "why": "Out of scope for this operation: security testing of third parties is not work it takes on, whatever the programme's terms.",
+      "status": "declined",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "affiliate-links-on-stats-pages",
+      "title": "Affiliate or referral links on the gankdat stats pages and actor READMEs (services the readers already buy)",
+      "why": "Passive and legal, but it rides on traffic the pages do not yet have.",
+      "status": "parked",
+      "trigger": "1,000 monthly visitors to the stats pages (Search Console reading)",
+      "added": "2026-10-11"
     }
   ]
 }

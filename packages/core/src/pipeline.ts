@@ -71,6 +71,14 @@ export interface VentureQueue {
    * reason, instead of a fourth research pass on an unchanged zero (2026-10-07).
    */
   research_after?: string;
+  /**
+   * Multiplier on every item's score when the build routines rank work across queues (owner,
+   * 2026-10-11: a new income line outweighs improvements to a product that has not earned). Set by
+   * the Sunday review from STRATEGY §5's table: 2 for a line in its first 30 days or one that
+   * collects money already on offer (prizes, bounties), 1 for a venture earning or still on its
+   * first shelves, 0.5 for a launched venture with no revenue after 30 days. Absent = 1.
+   */
+  weight?: number;
   items: QueueItem[];
 }
 
@@ -129,6 +137,8 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
   if (researched !== '' && !ISO_DATE.test(researched)) fail(where, 'researched must be YYYY-MM-DD');
   const research_after = str(where, o, 'research_after', true);
   if (research_after !== '' && !ISO_DATE.test(research_after)) fail(where, 'research_after must be YYYY-MM-DD');
+  const weight = o.weight === undefined ? 1 : o.weight;
+  if (typeof weight !== 'number' || !Number.isFinite(weight) || weight <= 0) fail(where, 'weight must be a positive number');
   if (!Array.isArray(o.items)) fail(where, 'items must be an array');
   const ids = new Set<string>();
   const items = o.items.map((it: unknown, i: number): QueueItem => {
@@ -172,6 +182,7 @@ export function parseQueue(text: string, where = 'queue'): VentureQueue {
   if (finished_reason !== '') queue.finished_reason = finished_reason;
   if (researched !== '') queue.researched = researched;
   if (research_after !== '') queue.research_after = research_after;
+  if (weight !== 1) queue.weight = weight;
   return queue;
 }
 
@@ -253,6 +264,11 @@ export function isStaleDoing(item: QueueItem, today: string = utcToday()): boole
  * arrived, plus stale `doing` items (see `isStaleDoing`), best score first, oldest first on
  * ties. `today` overrides the clock (tests).
  */
+/** An item's rank across queues: its score times its queue's weight (STRATEGY §5, 2026-10-11). */
+export function effectiveScore(queue: VentureQueue, item: QueueItem): number {
+  return item.score * (queue.weight ?? 1);
+}
+
 export function candidates(
   queues: VentureQueue[],
   options: ClockOptions & { maxEffortDays?: number } = {},
@@ -270,9 +286,10 @@ export function candidates(
             notBeforeArrived(it.not_before, now) &&
             (it.status === 'todo' || isStaleDoing(it, today)),
         )
-        .map((item) => ({ venture: q.venture, item })),
+        .map((item) => ({ venture: q.venture, item, rank: effectiveScore(q, item) })),
     )
-    .sort((a, b) => b.item.score - a.item.score || a.item.added.localeCompare(b.item.added));
+    .sort((a, b) => b.rank - a.rank || b.item.score - a.item.score || a.item.added.localeCompare(b.item.added))
+    .map(({ venture, item }) => ({ venture, item }));
 }
 
 /** The next item to build (optionally only items up to `maxEffortDays`), or undefined when nothing qualifies. */
@@ -340,6 +357,10 @@ export function needsResearch(queues: VentureQueue[], options: ClockOptions = {}
 }
 
 /** The `npm run pipeline` status text. `today` overrides the clock (tests). */
+function weightOf(pipeline: Pipeline, venture: string): number {
+  return pipeline.queues.find((q) => q.venture === venture)?.weight ?? 1;
+}
+
 export function formatPipeline(pipeline: Pipeline, options: ClockOptions = {}): string {
   const lines: string[] = [];
   const now = clock(options);
@@ -349,14 +370,14 @@ export function formatPipeline(pipeline: Pipeline, options: ClockOptions = {}): 
     const count = (s: ItemStatus): number => q.items.filter((it) => it.status === s).length;
     const flag = q.status === 'finished' ? 'finished' : research.has(q.venture) ? 'open — NEEDS RESEARCH' : 'open';
     lines.push(
-      `${q.venture.padEnd(18)} ${flag.padEnd(22)} todo ${count('todo')}  doing ${count('doing')}  blocked ${count('blocked')}  done ${count('done')}`,
+      `${q.venture.padEnd(18)} ${flag.padEnd(22)} todo ${count('todo')}  doing ${count('doing')}  blocked ${count('blocked')}  done ${count('done')}${(q.weight ?? 1) === 1 ? '' : `  weight ${q.weight}`}`,
     );
   }
   const next = nextItem(pipeline.queues, { now });
   const cool = cooling(pipeline.queues, { now });
   lines.push(
     next
-      ? `next: ${next.venture} / ${next.item.id} (score ${next.item.score}) — ${next.item.title}`
+      ? `next: ${next.venture} / ${next.item.id} (score ${next.item.score}${weightOf(pipeline, next.venture) === 1 ? '' : ` × weight ${weightOf(pipeline, next.venture)}`}) — ${next.item.title}`
       : research.size > 0
         ? `next: nothing to build — research ${[...research][0]!} (pipeline starved: every open item is blocked or dated)`
         : cool.length > 0

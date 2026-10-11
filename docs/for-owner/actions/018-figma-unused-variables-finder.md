@@ -1,7 +1,7 @@
 # Owner action request #018 — publish the free "Unused Variables Finder & Cleaner" plugin
 
 - **Date:** 2026-10-04
-- **Status:** pending
+- **Status:** done
 - **Your time:** ~15 minutes (plus Figma's review, usually 1–5 days)
 - **Cost:** £0.00
 - **Blocks:** queue item `free-unused-variables-finder` proof (variables-toolkit) — installs of the free plugin and the

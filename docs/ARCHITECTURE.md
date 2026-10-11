@@ -31,6 +31,8 @@ ventures/<slug>/         one workspace per product: venture.json, RESEARCH.md, s
 ventures/variables-toolkit   V1 Figma plugin — launched 2026-09-21 on Figma Community, $12 one-time
 ventures/gankdat         V4 data API (gankdat.com) — Cloudflare Worker, Stripe + x402; adopted 2026-09-19,
                          self-contained gates (`npm run check -w @foundry/gankdat`), deploys via CI
+ventures/hackathons      cash-prize hackathon entries built from the live products (Devpost; opened 2026-10-11)
+ventures/oss-bounties    paid open-source issues on bounty boards, feature and bug-fix work only (opened 2026-10-11)
 docs/LEDGER.md           every pound in and out, per venture (£100 cap enforced)
 docs/launch/             per-channel launch checklists
 docs/for-owner/actions/      batched requests that need the owner's identity/wallet
@@ -73,4 +75,6 @@ Owner performs account creation; keys go in `.env` (see `.env.example`).
 - Google Play / App Store apps (tester and fee hurdles).
 - Paid infrastructure, paid ads, paid marketing of any kind.
 - RapidAPI / VS Code paid extensions (parked — weak economics).
-- Bug-bounty income line (parked until the product pipeline runs).
+- Security testing or vulnerability programmes of any kind (out of scope for this operation; the
+  income lines that collect money already on offer are hackathon prizes and open-source issue
+  bounties, STRATEGY §1).

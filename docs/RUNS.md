@@ -907,3 +907,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 09:18 | build | uk-insolvency: a 5xx is retried 4 times over ~13 s; OriginUnavailableError when it outlasts them
 - 2026-10-11 09:18 | build | runner-refresh: an unavailable origin writes a skipped refresh_log row, not error; 3 tests; ARCHITECTURE
 - 2026-10-11 09:18 | build | Queue: gankdat refresh-uk-insolvency-2026-10-11 done; proof is 7 rows without uk-insolvency under errors
+- 2026-10-11 12:30 | interactive | Owner direction: take money already on offer; new lines outweigh product improvements (STRATEGY §1, §5)
+- 2026-10-11 12:30 | interactive | Queue weights: pipeline ranks by score × weight; hackathons and oss-bounties 2, the £0 consumer products 0.5
+- 2026-10-11 12:30 | interactive | Opened hackathons: Devpost API shows 38 open; PayPal AI $67.5k and Nebius×NVIDIA $50k entries queued
+- 2026-10-11 12:30 | interactive | Opened oss-bounties: 553 open GitHub issues carry a bounty label; scanner is the next build
+- 2026-10-11 12:30 | interactive | Owner did actions 018, 019, 020 and the GitHub App review; Playground file (017) dropped
+- 2026-10-11 12:30 | notify | Two new ways to earn: hackathon prizes and paid open-source issues. Four free accounts needed, 15 min

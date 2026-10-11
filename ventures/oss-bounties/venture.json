@@ -1,0 +1,11 @@
+{
+  "slug": "oss-bounties",
+  "name": "Open-source bounties",
+  "channel": "bounty-board",
+  "status": "validated",
+  "pricing": {
+    "kind": "free"
+  },
+  "thesis": "Maintainers post cash on specific GitHub issues (Algora-style bounty boards) and pay the author of the merged pull request; a Claude-run operation can read the whole board, pick the issues it can close well, and collect the posted amount without any buyer to convince.",
+  "statusChangedOn": "2026-10-11"
+}

@@ -2,8 +2,10 @@
   "venture": "variables-toolkit",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-07",
+  "updated": "2026-10-11",
   "researched": "2026-10-05",
+  "research_after": "2026-10-21",
+  "weight": 0.5,
   "items": [
     {
       "id": "day-7-review",
@@ -96,13 +98,13 @@
     {
       "id": "playground-file-views",
       "title": "Link the live playground file from LISTING.md and the landing card; read its views in the 06:45 store-metrics job",
-      "why": "The file's URL is the referrer the proof of `community-playground-file` depends on (listing views ≥ 20 within 14 days). Once known: a 'Practice file' line in LISTING.md's Support block (rides the next republish), a link on the landing card, and `scripts/store-metrics.ts` reads the file resource's view count (search API, resource_type=file) onto the Daily check row next to the plugin's.",
+      "why": "The file's URL is the referrer the proof of `community-playground-file` depends on (listing views ≥ 20 within 14 days). Once known: a 'Practice file' line in LISTING.md's Support block (rides the next republish), a link on the landing card, and `scripts/store-metrics.ts` reads the file resource's view count (search API, resource_type=file) onto the Daily check row next to the plugin's. Dropped 2026-10-11: the owner declined the Playground file (\"let's forget about the figma plugin\").",
       "effort_days": 0.2,
       "proof": "a `file views:` field on the Daily check row and the file linked from apps.gankdat.com",
       "score": 3,
-      "status": "blocked",
-      "blocked_on": "owner publishes the file (ALERTS 2026-10-02, action 017) and gives its Community URL",
-      "added": "2026-10-02"
+      "status": "dropped",
+      "added": "2026-10-02",
+      "done_at": "2026-10-11"
     },
     {
       "id": "relink-howto-page",
@@ -137,6 +139,5 @@
       "added": "2026-10-05",
       "done_at": "2026-10-05"
     }
-  ],
-  "research_after": "2026-10-21"
+  ]
 }

@@ -253,3 +253,19 @@ describe('scheduling', () => {
     expect(text).toContain('next: gankdat / old');
   });
 });
+
+describe('queue weight', () => {
+  it('ranks items by score × weight across queues and keeps score order within a queue', () => {
+    const a = parseQueue(queue('alpha', [item('a1', 'todo', 8), item('a2', 'todo', 5)]));
+    const b = parseQueue(queue('beta', [item('b1', 'todo', 5)], { weight: 2 }));
+    expect(candidates([a, b]).map((c) => `${c.venture}/${c.item.id}`)).toEqual(['beta/b1', 'alpha/a1', 'alpha/a2']);
+    expect(a.weight).toBeUndefined();
+    expect(b.weight).toBe(2);
+    expect(formatPipeline({ exchange: { ideas: [] }, queues: [a, b] })).toMatch(/next: beta \/ b1 \(score 5 × weight 2\)/);
+    expect(formatPipeline({ exchange: { ideas: [] }, queues: [a, b] })).toMatch(/beta .*weight 2/);
+  });
+  it('rejects a weight that is not a positive number', () => {
+    expect(() => parseQueue(queue('alpha', [], { weight: 0 }))).toThrow(/weight must be a positive number/);
+    expect(() => parseQueue(queue('alpha', [], { weight: 'high' }))).toThrow(/weight/);
+  });
+});
