@@ -320,5 +320,5 @@ closed entries older than 30 days (git keeps the history).
   `public_repo` and save it as the `PR_TOKEN` repository secret; the Docker MCP Catalog PR then opens itself (and every
   future listing PR). Steps: `docs/for-owner/actions/021-pr-relay-token.md`. — Done 2026-10-11 (interactive): PR_TOKEN added by the owner 2026-10-11 (secret present)
 - 2026-10-11 owner: four free accounts for the prize and bounty lines (Devpost, PayPal sandbox, Nebius, Algora), ~15 min, £0 — docs/for-owner/actions/022-prize-and-bounty-accounts.md — Done 2026-10-11 (interactive): done by the owner 2026-10-11 except Nebius (asked for a card; entry dropped)
-- 2026-10-11 owner: PayPal needs tax info added to the sandbox developer account from action 022 — log in to PayPal and click "Add Tax Info" to keep using it.
-- 2026-10-11 owner: PayPal demo video needs your sandbox buyer login as two GitHub secrets, ~5 min, £0 — docs/for-owner/actions/024-paypal-sandbox-buyer.md
+- 2026-10-11 owner: PayPal needs tax info added to the sandbox developer account from action 022 — log in to PayPal and click "Add Tax Info" to keep using it. — Done 2026-10-11 (interactive): owner added the tax info 2026-10-11
+- 2026-10-11 owner: PayPal demo video needs your sandbox buyer login as two GitHub secrets, ~5 min, £0 — docs/for-owner/actions/024-paypal-sandbox-buyer.md — Done 2026-10-11 (interactive): both secrets present 2026-10-11; demo video workflow dispatched

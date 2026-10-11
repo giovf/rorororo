@@ -1,7 +1,7 @@
 # Owner action request #024 — PayPal sandbox buyer for the demo video
 
 - **Date:** 2026-10-11
-- **Status:** pending
+- **Status:** done
 - **Your time:** ~5 minutes
 - **Cost:** £0.00
 - **Blocks:** hackathons `demo-video-paypal-record`, then `paypal-ai-hackathon-submit` (action 023)
