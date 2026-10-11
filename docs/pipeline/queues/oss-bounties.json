@@ -13,8 +13,9 @@
       "effort_days": 0.4,
       "proof": "BOARD.md refreshed daily with ranked bounties; three queue items filed from it",
       "score": 8,
-      "status": "todo",
-      "added": "2026-10-11"
+      "status": "doing",
+      "added": "2026-10-11",
+      "doing_since": "2026-10-11"
     },
     {
       "id": "first-bounty-pr",
