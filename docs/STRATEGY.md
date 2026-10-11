@@ -1003,3 +1003,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   silently broke the Apify lead-feed actor (its entry function vanished; Apify flagged it 10-10), so the
   queue gains the restore (7), the uk-planning origin now answering zero entities (6), a per-actor run-outcome reading so a failing actor is seen the day it
   fails rather than when Apify mails (5), and evidence in the zero-record refresh error (4).
+- 2026-10-11 burn-down: gankdat `apify-lead-feed-client-restore` (7) built — the merged lead-feed actor
+  has its own client back and the gate now resolves every actor's imports. The one shelf with outside
+  users showed a broken actor for four days because the Daily numbers row counts runs, never outcomes;
+  that reading is queued at 5.

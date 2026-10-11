@@ -874,3 +874,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 00:35 | burn-down | Queued apify-lead-feed-client-restore (7), apify-run-outcomes-reading (5), refresh-zero-records-evidence (4)
 - 2026-10-11 00:35 | burn-down | Relay request gankdat-research-2026-10-11: planning origin, /v1/health, flagged actor and its failed run
 - 2026-10-11 00:42 | burn-down | Relay: journal refreshed 10-10 06:10; planning dataset emptied upstream (entity-count 0); queued refresh-uk-planning (6)
+- 2026-10-11 00:31 | burn-down | uk-no-website-leads: own client (runLeadFeed) restored; the 10-07 rollout had copied the shared one over it
+- 2026-10-11 00:31 | burn-down | apify-schemas.spec: every main.mjs import must exist in its folder's client (all folders); README rule
+- 2026-10-11 00:31 | burn-down | Queue: gankdat apify-lead-feed-client-restore done; proof is the flag lifted and 3 green QA runs

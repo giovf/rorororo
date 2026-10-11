@@ -27,7 +27,9 @@ register (`removed`) — the thing none of the thirteen Companies House actors o
 Each actor's `.actor/dataset_schema.json` (Apify validates every pushed item against it) and
 `.actor/input_schema.json` (every field is sent as an API query param) must match the source's
 zod `recordSchema` / `queryParams`: `test/apify-schemas.spec.ts` checks both for every folder, that the feed inputs and fields appear
-exactly on the feed-bearing actors, and that `src/gankdat.mjs` is identical in every folder.
+exactly on the feed-bearing actors, that `src/gankdat.mjs` is identical in every single-source folder
+(the merged `uk-no-website-leads` keeps its own client — the 2026-10-07 rollout copied the shared one over it
+and every run died at import until 2026-10-11), and that every name a `main.mjs` imports exists in its folder's client.
 A type that drifts fails every run — `uk-planning-applications` was flagged "under maintenance"
 by Apify QA on 2026-09-25 because `authority` was declared a string and served as a number.
 

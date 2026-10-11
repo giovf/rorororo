@@ -497,13 +497,14 @@
     {
       "id": "apify-lead-feed-client-restore",
       "title": "Restore the uk-no-website-leads actor's own client (runLeadFeed) and make an unresolved actor import fail the gate",
-      "why": "Research 2026-10-11: Apify flagged faceless-api/uk-no-website-leads \"under maintenance\" on 2026-10-10 after three days of failed QA runs (run 0aYfr2UQ7cElJsLj0; INBOX 10-10 08:09). Cause is in git: 3ede4af (2026-10-07, the company-lookup build) rolled the shared single-source client into every actor folder, this one included, so apify/uk-no-website-leads/src/gankdat.mjs lost `runLeadFeed` (34d73aa, 09-21: three registers, website_present=false, one merged row shape) while main.mjs still imports it — every run since 10-07 dies at module load before Actor.init(). The byte-identical test excludes this folder for its row shape and no test resolves an actor's imports, so the gate was blind; the row counts the actor's 11 runs/30d without their outcome. Do: restore the feed's own client from 34d73aa (user agent 1.2 like the shared one), add a test that every name main.mjs imports from ./gankdat.mjs is exported by that folder's file (all folders, the lead feed included), push — publish-actors.mjs rebuilds the changed actor from CI and Apify's QA re-runs on the new build.",
+      "why": "Research 2026-10-11: Apify flagged faceless-api/uk-no-website-leads \"under maintenance\" on 2026-10-10 after three days of failed QA runs (run 0aYfr2UQ7cElJsLj0; INBOX 10-10 08:09). Cause is in git: 3ede4af (2026-10-07, the company-lookup build) rolled the shared single-source client into every actor folder, this one included, so apify/uk-no-website-leads/src/gankdat.mjs lost `runLeadFeed` (34d73aa, 09-21: three registers, website_present=false, one merged row shape) while main.mjs still imports it — every run since 10-07 dies at module load before Actor.init(). The byte-identical test excludes this folder for its row shape and no test resolves an actor's imports, so the gate was blind; the row counts the actor's 11 runs/30d without their outcome. Do: restore the feed's own client from 34d73aa (user agent 1.2 like the shared one), add a test that every name main.mjs imports from ./gankdat.mjs is exported by that folder's file (all folders, the lead feed included), push — publish-actors.mjs rebuilds the changed actor from CI and Apify's QA re-runs on the new build. Built 2026-10-11 (burn-down): the feed's client from 34d73aa is back (user agent 1.2), the negative run of the new spec names the exact import (\"main.mjs imports runLeadFeed; src/gankdat.mjs does not export it\") and the README states the rule; publish-actors.mjs republishes the changed folder on this push.",
       "effort_days": 0.1,
       "proof": "the maintenance flag is lifted and three consecutive QA runs of uk-no-website-leads succeed; the import test fails on a folder whose main.mjs imports a name its client lacks",
       "score": 7,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-11",
-      "doing_since": "2026-10-11"
+      "doing_since": "2026-10-11",
+      "done_at": "2026-10-11"
     },
     {
       "id": "apify-run-outcomes-reading",

@@ -206,6 +206,40 @@ describe('Apify actor dataset schemas match the source record schemas', () => {
     }
   });
 
+  it("every name a main.mjs imports from './gankdat.mjs' is exported by that folder's client", () => {
+    // 2026-10-07 rolled the shared client into apify/uk-no-website-leads/ as well, whose main.mjs
+    // imports `runLeadFeed` from its own client: every run from then on died at module load
+    // ("does not provide an export named 'runLeadFeed'") and Apify flagged the actor "under
+    // maintenance" on 2026-10-10. The byte-identical check above skips that folder for its row
+    // shape, so the imports are resolved here for every folder, the merged feed included.
+    const everyFolder = [
+      ...new Set(Object.keys(sources).map((p) => /\.\.\/apify\/([^/]+)\//.exec(p)?.[1] ?? '')),
+    ].filter(Boolean);
+    expect(everyFolder).toContain('uk-no-website-leads');
+    const problems: string[] = [];
+    for (const folder of everyFolder) {
+      const main = sources[`../apify/${folder}/src/main.mjs`] ?? '';
+      const client = sources[`../apify/${folder}/src/gankdat.mjs`] ?? '';
+      const imported = /import\s*\{([^}]*)\}\s*from\s*'\.\/gankdat\.mjs'/.exec(main)?.[1] ?? '';
+      const names = imported
+        .split(',')
+        .map((s) => s.trim())
+        .filter(Boolean);
+      expect(
+        names.length,
+        `apify/${folder}/src/main.mjs imports nothing from its client`,
+      ).toBeGreaterThan(0);
+      for (const name of names) {
+        const exported = new RegExp(`export\\s+(async\\s+)?(function\\*?|const|let)\\s+${name}\\b`);
+        if (!exported.test(client))
+          problems.push(
+            `apify/${folder}: main.mjs imports ${name}; src/gankdat.mjs does not export it`,
+          );
+      }
+    }
+    expect(problems, problems.join('\n')).toEqual([]);
+  });
+
   it('lists every dataset with an actor folder (the merged lead feed aside)', () => {
     const missing = listSources()
       .map((s) => s.slug)
