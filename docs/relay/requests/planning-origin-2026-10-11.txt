@@ -1,0 +1,6 @@
+GET https://www.planning.data.gov.uk/dataset/planning-application.json
+GET https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=5&offset=0&entry_date_year=2026
+GET https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=3&offset=1000
+GET https://www.planning.data.gov.uk/entity.json?limit=5&dataset=planning-application&geometry_relation=intersects
+GET RANGE=0-4095 https://files.planning.data.gov.uk/dataset/planning-application.csv
+GET RANGE=0-4095 https://www.planning.data.gov.uk/dataset.json
