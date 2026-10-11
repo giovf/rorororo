@@ -955,3 +955,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 19:26 | burn-down | Hashed client id in blob6 on the wall, keyless /mcp, protected_tool and x402_paid analytics points
 - 2026-10-11 19:26 | burn-down | Daily numbers row gains "after wall 1h (7d): … request_api_key N, x402 N, connect N, gone N"; 3 tests
 - 2026-10-11 19:26 | burn-down | Queue: gankdat preview-wall-next-steps done; proof is a request, payment or connect from a wall-hitter
+- 2026-10-11 19:31 | burn-down | scripts/license-sales.ts: counts licence Worker KV keys and activations per venture; 7 tests
+- 2026-10-11 19:31 | burn-down | store-metrics job gains a third step filling the extensions' Sales column (docs/ci, installer moves it)
+- 2026-10-11 19:31 | burn-down | Test and revoked keys counted apart; "sales: n/a (<reason>)" when the token lacks the KV scope
+- 2026-10-11 19:31 | burn-down | Queue: foundry metrics-extension-sales done; proof is a numeric Sales cell on both rows for 7 days

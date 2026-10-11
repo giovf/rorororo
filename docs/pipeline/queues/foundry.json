@@ -680,13 +680,13 @@
     {
       "id": "metrics-extension-sales",
       "title": "Extension sales reading: the 06:52 store-metrics runner counts the licence Worker's `license:*` KV records per product and fills the Daily check row's `Sales` column (keys issued, activations)",
-      "why": "Review 2026-W41: STRATEGY §4 'Extension + plugin sales' has a reading for the plugin (Figma `purchase_count`) and none for ReadFocus or Highlight Keep — their Daily check rows print `—` under Sales, and the only record of a sale would be a Stripe payout mail. The licence Worker (packages/license-worker) stores every issued key as `license:<id>` in the LICENSES KV namespace with its activations, so the count exists and nothing reads it. Do: a step in `scripts/store-metrics.ts` (or `docs/ci/store-metrics.yml`) lists the namespace through the Cloudflare API with the existing deploy token, counts keys and activations per product, prints `Sales N (activations A)`, and prints `n/a (<reason>)` when the token lacks the scope; the day-30 funnel reviews (10-30) read it. ReadFocus showed its first 3 Chrome users on 10-08..10-11, so the column is about to matter.",
+      "why": "Review 2026-W41: STRATEGY §4 'Extension + plugin sales' has a reading for the plugin (Figma `purchase_count`) and none for ReadFocus or Highlight Keep — their Daily check rows print `—` under Sales, and the only record of a sale would be a Stripe payout mail. The licence Worker (packages/license-worker) stores every issued key as `license:<id>` in the LICENSES KV namespace with its activations, so the count exists and nothing reads it. Do: a step in `scripts/store-metrics.ts` (or `docs/ci/store-metrics.yml`) lists the namespace through the Cloudflare API with the existing deploy token, counts keys and activations per product, prints `Sales N (activations A)`, and prints `n/a (<reason>)` when the token lacks the scope; the day-30 funnel reviews (10-30) read it. ReadFocus showed its first 3 Chrome users on 10-08..10-11, so the column is about to matter. Built 2026-10-11 (burn-down): scripts/license-sales.ts lists the LICENSES namespace (id from the Worker's wrangler.toml) through the Cloudflare KV API, counts live keys and activations per venture (internal mailboxes and revoked keys apart) and fills the Sales cell + `sales: …` clause on today's Daily check row of every venture with a Sales column; third step of docs/ci/store-metrics.yml (installer moves it); 7 tests; dry run wrote `sales: n/a (no CLOUDFLARE_API_TOKEN)` in the sandbox, reverted — the first real reading is the 10-12 06:52 run.",
       "effort_days": 0.2,
       "proof": "a numeric Sales reading on both extensions' Daily check rows for 7 days; the 10-30 funnel reviews read it",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-11",
-      "doing_since": "2026-10-11"
+      "done_at": "2026-10-11"
     }
   ]
 }

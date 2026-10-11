@@ -1109,3 +1109,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `connect_account`/account; the challenge headline and the `connect_account` description say the same. The wall and
   the three continuations carry the preview's hashed client id, and the Daily numbers row reads `after wall 1h (7d): …
   gone N`, so the next wall-hitter's choice is a number. Proof: a request, payment or connect from a wall-hitter in 30 days.
+- 2026-10-11 burn-down: foundry `metrics-extension-sales` (5) built — §4 "Extension + plugin sales" had no reading for
+  the two extensions. `scripts/license-sales.ts` (third step of the 06:52 store-metrics job) counts the licence Worker's
+  `license:*` KV records per venture and fills the Sales column with `sales: N keys (A activations, …)`; test and revoked
+  keys are counted apart, a missing scope reads `n/a (<reason>)`. Proof: a numeric Sales cell on both rows for 7 days.
