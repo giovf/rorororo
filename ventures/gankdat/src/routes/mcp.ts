@@ -279,10 +279,19 @@ export const mcpRoute = new Hono<AppEnv>().post(
       c.req.header('CF-Connecting-IP') ?? 'unknown',
       userAgent,
     );
-    // blob6 = hashed client id on keyless calls only (a key already names the caller), so a
-    // request_api_key call after the preview wall is attributable to the client that hit it.
+    // blob6 = the key's account id on authed calls (an opaque D1 id, so `datasets 30d external`
+    // can leave our own accounts out — metrics-dataset-queries-external, 2026-10-11), else the
+    // hashed client id, so a request_api_key call after the preview wall is attributable to the
+    // client that hit it.
     c.env.TRAFFIC.writeDataPoint({
-      blobs: [kind, userAgent, shape.methods, '', shape.tools, keyCtx ? '' : clientId],
+      blobs: [
+        kind,
+        userAgent,
+        shape.methods,
+        '',
+        shape.tools,
+        keyCtx ? keyCtx.accountId : clientId,
+      ],
       doubles: [1],
       indexes: [kind],
     });

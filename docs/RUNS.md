@@ -959,3 +959,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 19:31 | burn-down | store-metrics job gains a third step filling the extensions' Sales column (docs/ci, installer moves it)
 - 2026-10-11 19:31 | burn-down | Test and revoked keys counted apart; "sales: n/a (<reason>)" when the token lacks the KV scope
 - 2026-10-11 19:31 | burn-down | Queue: foundry metrics-extension-sales done; proof is a numeric Sales cell on both rows for 7 days
+- 2026-10-11 19:34 | burn-down | gankdat: authed REST and MCP analytics points carry the key's account id (opaque D1 id, no email)
+- 2026-10-11 19:34 | burn-down | Daily numbers row adds "datasets 30d external: …" without the Apify, probe and owner accounts
+- 2026-10-11 19:34 | burn-down | Queue: gankdat metrics-dataset-queries-external done; proof is the W42 review applying §7 from it

@@ -403,7 +403,13 @@ runs `check:root`.
   itself a `refresh errors` entry. The account is an `@gankdat.com` address, so the accounts,
   sign-up and OAuth readings skip it like the other internal mailboxes, and the traffic counts
   (`MCP 24h`, change feed, `datasets 30d`) skip the probe's user agent. `GANKDAT_PROBE_KEY`, if ever
-  set, still takes precedence and nothing is minted.
+  set, still takes precedence and nothing is minted. **External dataset demand** (2026-10-11, queue
+  `metrics-dataset-queries-external`): `datasets 30d` counted every authed call, and the Apify actors
+  (the repo's own key) plus the probe were every call on every register — §7's 60-day retirement clock
+  read our own automation. Authed `rest_data` (blob4) and `mcp_authed` (blob6) points now carry the
+  key's account id (an opaque D1 id, never an email), and the row adds `datasets 30d external: …`,
+  which leaves out every account with an internal mailbox (`INTERNAL_EMAIL_SQL` in `metrics.mjs`) and
+  the untagged points from before 10-11; the W42 review applies §7 from that line.
 - **Query language** (generic, never per-dataset; `query.ts` + `d1store.ts` in parity): string
   params are case-insensitive substrings, numbers/booleans strict, `<field>_after/_before`
   date ranges, `<field>_min/_max` numeric ranges, `<field>_present=true|false` has-a-value

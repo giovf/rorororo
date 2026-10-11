@@ -41,7 +41,7 @@ describe('REST traffic analytics', () => {
           'rest_changes',
           expect.any(String),
           '/v1/changes/uk-care-locations',
-          '',
+          expect.stringMatching(/./), // the key's account id (datasets 30d external)
           'uk-care-locations',
         ],
         indexes: ['rest_changes'],
@@ -61,7 +61,7 @@ describe('REST traffic analytics', () => {
           'rest_data',
           expect.any(String),
           '/v1/data/uk-care-locations',
-          '',
+          expect.stringMatching(/./),
           'uk-care-locations',
         ],
         indexes: ['rest_data'],

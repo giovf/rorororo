@@ -548,7 +548,17 @@ const cfNote = await cfUsage().catch((e) => `cf usage: n/a (${e.message.slice(0,
 // in blob5; MCP: `mcp_authed` points carry the comma-joined tool names in blob5, and a data tool is
 // `query_<slug with _>`. Zero-call datasets are listed by name so the review sees them. The slug
 // list comes from the source files on disk (each declares `slug: '…'`), not from the API.
-async function datasetQueries30d() {
+//
+// External (gankdat `metrics-dataset-queries-external`, 2026-10-11): the count above was our own
+// automation — the Apify actors run on the repo's key, the probe calls every tool daily — so every
+// register sat at 85–100 calls with the floor rising in lockstep, and §7's 60-day clock read a
+// polluted number. Authed points now carry the key's account id (`rest_data` blob4, `mcp_authed`
+// blob6, both since 10-11); the second line leaves out every account with an internal mailbox
+// (the Apify key's, the probe's, the owner's — INTERNAL_EMAIL_SQL below) and the points from before
+// the tag, which have no account and cannot be told apart. The first line stays for continuity.
+const INTERNAL_EMAIL_SQL =
+  "email LIKE '%@gankdat.com' OR email LIKE '%@1402celsius.com' OR email LIKE '%@example.com' OR email LIKE 'giova1506@%'";
+async function sourceSlugs() {
   const { readdir } = await import('node:fs/promises');
   const dir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'src', 'sources');
   const slugs = new Set();
@@ -557,16 +567,21 @@ async function datasetQueries30d() {
     const m = (await readFile(path.join(dir, f), 'utf8')).match(/^\s+slug: '([a-z0-9-]+)',$/m);
     if (m) slugs.add(m[1]);
   }
+  return slugs;
+}
+/** `{ label, restWhere, mcpWhere }` → `datasets 30d<label>: <slug> N, …; 0: a, b`. */
+async function datasetQueries30d(label = '', restWhere = '', mcpWhere = '') {
+  const slugs = await sourceSlugs();
   const counts = new Map([...slugs].map((s) => [s, 0]));
   const add = (slug, n) => {
     if (slug && slugs.has(slug)) counts.set(slug, (counts.get(slug) ?? 0) + Number(n));
   };
   const rest = await ae(
-    "SELECT blob5 AS slug, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'rest_data' AND blob5 != '' AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY slug",
+    `SELECT blob5 AS slug, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'rest_data' AND blob5 != ''${restWhere} AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY slug`,
   );
   for (const r of rest) add(r.slug, r.n);
   const mcp = await ae(
-    "SELECT blob5 AS tools, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_authed' AND blob5 != '' AND blob2 NOT LIKE 'gankdat-mcp-probe/%' AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY tools",
+    `SELECT blob5 AS tools, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_authed' AND blob5 != '' AND blob2 NOT LIKE 'gankdat-mcp-probe/%'${mcpWhere} AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY tools`,
   );
   for (const r of mcp) {
     for (const tool of String(r.tools).split(',')) {
@@ -581,11 +596,21 @@ async function datasetQueries30d() {
     .filter(([, n]) => n === 0)
     .map(([s]) => s)
     .sort();
-  return `datasets 30d: ${used.length ? used.join(', ') : 'none'}${zero.length ? `; 0: ${zero.join(', ')}` : ''}`;
+  return `datasets 30d${label}: ${used.length ? used.join(', ') : 'none'}${zero.length ? `; 0: ${zero.join(', ')}` : ''}`;
 }
 const datasetsNote = await datasetQueries30d().catch(
   (e) => `datasets 30d: n/a (${e.message.slice(0, 100)})`,
 );
+const internalAccountIds = await sql(`SELECT id FROM accounts WHERE ${INTERNAL_EMAIL_SQL}`)
+  .then((rows) => rows.map((r) => String(r.id)).filter((id) => /^[\w-]+$/.test(id)))
+  .catch(() => null);
+const notIn = (blob) =>
+  ` AND ${blob} != ''${internalAccountIds.length ? ` AND ${blob} NOT IN (${internalAccountIds.map((id) => `'${id}'`).join(', ')})` : ''}`;
+const datasetsExternalNote = internalAccountIds
+  ? await datasetQueries30d(' external', notIn('blob4'), notIn('blob6')).catch(
+      (e) => `datasets 30d external: n/a (${e.message.slice(0, 100)})`,
+    )
+  : 'datasets 30d external: n/a (internal accounts unreadable from D1)';
 
 const date = new Date().toISOString().slice(0, 10);
 const users = `${acct.total} accts (${acct.paid ?? 0} paid, +${acct.new24h ?? 0}/24h)`;
@@ -635,6 +660,7 @@ const notes = [
   afterWallText,
   cfNote,
   datasetsNote,
+  datasetsExternalNote,
   errors.length
     ? `refresh errors: ${errors
         .map((e) => {

@@ -578,13 +578,13 @@
     {
       "id": "metrics-dataset-queries-external",
       "title": "`datasets 30d` counts customers only: exclude the Apify actors' key, the metrics probe account and the owner's keys, so STRATEGY §7's 60-day retirement rule reads outside demand",
-      "why": "Review 2026-W41: the reading built 10-04 (`metrics-dataset-queries-30d`) counts every authed call, and the Apify actors run on the repo's own `GANKDAT_API_KEY` (apify/*/src/gankdat.mjs) while the metrics runner's probe account calls every tool daily — so on 10-11 every register sits at 85–100 calls in 30 d (uk-care-locations 169, uk-food-hygiene 109) with the floor rising ~3 a day in lockstep across all 17: that is our own automation plus Apify's QA runner, not a buyer. With one real account the external figure is probably 0 for every slug, and that is the number §7 needs (uk-planning's 60-day clock started 10-10 on the polluted count). Do: tag the Analytics Engine `rest_data` / `mcp_authed` points with the key's account id (already in the auth context), keep an `INTERNAL_ACCOUNTS` list in metrics.mjs (the account behind the Apify key, the probe account, the owner's), print `datasets 30d (external): <slug> N, …; 0: a, b, c` next to the existing line, and keep the old line for continuity.",
+      "why": "Review 2026-W41: the reading built 10-04 (`metrics-dataset-queries-30d`) counts every authed call, and the Apify actors run on the repo's own `GANKDAT_API_KEY` (apify/*/src/gankdat.mjs) while the metrics runner's probe account calls every tool daily — so on 10-11 every register sits at 85–100 calls in 30 d (uk-care-locations 169, uk-food-hygiene 109) with the floor rising ~3 a day in lockstep across all 17: that is our own automation plus Apify's QA runner, not a buyer. With one real account the external figure is probably 0 for every slug, and that is the number §7 needs (uk-planning's 60-day clock started 10-10 on the polluted count). Do: tag the Analytics Engine `rest_data` / `mcp_authed` points with the key's account id (already in the auth context), keep an `INTERNAL_ACCOUNTS` list in metrics.mjs (the account behind the Apify key, the probe account, the owner's), print `datasets 30d (external): <slug> N, …; 0: a, b, c` next to the existing line, and keep the old line for continuity. Built 2026-10-11 (burn-down): authed rest_data (blob4) and mcp_authed (blob6) points carry the key's account id; metrics.mjs reads the internal account ids from D1 by mailbox (INTERNAL_EMAIL_SQL) and prints `datasets 30d external: …` next to the old line, leaving out those accounts and the untagged points from before 10-11; ARCHITECTURE note.",
       "effort_days": 0.15,
       "proof": "the 2026-W42 review reads an external per-dataset count and applies §7 from it",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-11",
-      "doing_since": "2026-10-11"
+      "done_at": "2026-10-11"
     }
   ]
 }

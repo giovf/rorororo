@@ -9,10 +9,13 @@ import type { AppEnv } from '../types';
 // so `npm run traffic` and `metrics.mjs` can union the two:
 //
 //   blob1 kind ('rest_data' | 'rest_changes')   blob2 User-Agent
-//   blob3 path                                  blob4 '' (reserved)
+//   blob3 path                                  blob4 account id of the key (since 2026-10-11)
 //   blob5 source slug
 //
-// UA only, never an IP (data-minimization, same rule as the MCP route).
+// UA only, never an IP (data-minimization, same rule as the MCP route). blob4 is the key's
+// account id (an opaque D1 id, no email) so `datasets 30d external` in metrics.mjs can leave our
+// own accounts out — the Apify actors, the probe and the owner were every call on every register
+// (gankdat `metrics-dataset-queries-external`, 2026-10-11).
 // Fire-and-forget after the handler: a write failure must never fail a paid
 // request, and Analytics Engine writes do not add request-path latency.
 export function restTraffic(kind: 'rest_data' | 'rest_changes'): MiddlewareHandler<AppEnv> {
@@ -27,7 +30,7 @@ export function restTraffic(kind: 'rest_data' | 'rest_changes'): MiddlewareHandl
           kind,
           c.req.header('User-Agent') ?? '',
           c.req.path,
-          '',
+          c.get('keyCtx')?.accountId ?? '',
           c.req.param('source') ?? '',
         ],
         doubles: [1],

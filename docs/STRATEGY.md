@@ -1113,3 +1113,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the two extensions. `scripts/license-sales.ts` (third step of the 06:52 store-metrics job) counts the licence Worker's
   `license:*` KV records per venture and fills the Sales column with `sales: N keys (A activations, …)`; test and revoked
   keys are counted apart, a missing scope reads `n/a (<reason>)`. Proof: a numeric Sales cell on both rows for 7 days.
+- 2026-10-11 burn-down: gankdat `metrics-dataset-queries-external` (5) built — `datasets 30d` counted our own Apify actors
+  and the probe, so every register read 85–100 calls and §7's 60-day clock ran on our automation. Authed REST and MCP
+  points now carry the key's account id and the Daily numbers row adds `datasets 30d external: …` without the internal
+  mailboxes' accounts (and without the untagged points before 10-11). The W42 review applies §7 from that line; expect
+  it to read `none` at first — that is the honest number.
