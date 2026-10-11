@@ -82,7 +82,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   STRATEGY §5 table) — never re-rank by hand.
 - **Take, don't wait (owner 2026-10-11, STRATEGY §1):** money already on offer (prize pools, posted
   bounties) is collected by doing the work well; research it from primary sources (the board's own
-  rules and amounts), never from money-making content. Rules that follow from the terms read on
+  rules and amounts), never from money-making content. Prefer lines that take a small cut of money
+  already flowing (per call, per transaction, per task) over anything that must capture a new
+  audience; many small legal sources beat one big payout. Rules that follow from the terms read on
   2026-10-11: never scan or scrape Devpost (its Terms forbid automated access); every pull request on
   another project says it was built with Claude Code and respects that project's contribution rules
   (a project that forbids AI-assisted work is skipped); hackathon entries are submitted by the owner;

@@ -1071,3 +1071,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   sites; GitHub permits automation under a personal account (PR_TOKEN, added today — the Docker catalog PR and the
   PR relay are unblocked); Algora forbids bots on its own site, which the scanner never touches. Evidence in
   `ventures/hackathons/RESEARCH.md` §3 and action 022.
+- 2026-10-11 interactive (owner): standing mentality for money-collection ventures — attach to money already flowing
+  rather than capture new audiences; many small legal sources over one big payout; all within law and terms. Written
+  into §1 and the exchange prompt; three such ideas parked for the 2026-10-14 exchange (x402 aggregator, keeper
+  rewards, facilitator fee).
