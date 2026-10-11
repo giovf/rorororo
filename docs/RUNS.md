@@ -962,3 +962,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 19:34 | burn-down | gankdat: authed REST and MCP analytics points carry the key's account id (opaque D1 id, no email)
 - 2026-10-11 19:34 | burn-down | Daily numbers row adds "datasets 30d external: …" without the Apify, probe and owner accounts
 - 2026-10-11 19:34 | burn-down | Queue: gankdat metrics-dataset-queries-external done; proof is the W42 review applying §7 from it
+- 2026-10-11 19:37 | burn-down | Queue: foundry third-party-pr-relay done — proof met by tonight's Docker PR, no interactive session
+- 2026-10-11 19:37 | burn-down | Pipeline starved after 5 items: nothing buildable, every queue cooling; exchange pre-research next

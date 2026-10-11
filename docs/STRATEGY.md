@@ -1118,3 +1118,5 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   points now carry the key's account id and the Daily numbers row adds `datasets 30d external: …` without the internal
   mailboxes' accounts (and without the untagged points before 10-11). The W42 review applies §7 from that line; expect
   it to read `none` at first — that is the honest number.
+- 2026-10-11 burn-down: foundry `third-party-pr-relay` (3) done — its proof arrived tonight: the relay's first run opened the
+  Docker MCP Catalog PR (#5622) from CI with the owner's `PR_TOKEN`, so listing PRs no longer wait for a person.
