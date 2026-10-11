@@ -5,7 +5,7 @@ open issues that received a `/bounty $N` command in the last 90 days or carry a 
 bug-fix work only: sandbox and security repositories and issues that read as security findings are dropped by
 rule. Rank = amount × language fit ÷ (1 + age in months). The top 3 become `oss-bounties` queue items.
 
-Read 498 issues, kept 56; dropped: under 20 stars 262, sandbox or security repository 103, no amount found 40, fork 12, reads as a security finding 11, no push in 90 days 11, archived 2, already rewarded 1.
+Read 498 issues, kept 56; dropped: under 20 stars 261, sandbox or security repository 103, no amount found 41, fork 12, reads as a security finding 11, no push in 90 days 11, archived 2, already rewarded 1.
 
 | Amount | Rank | Repository | Issue | Age | Attempts |
 | --- | --- | --- | --- | --- | --- |
