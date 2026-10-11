@@ -920,3 +920,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 14:30 | interactive | PayPal sandbox keys set as Worker secrets; no live PayPal money moves in the hackathon entry
 - 2026-10-11 15:00 | interactive | Owner idea parked for the exchange: small cuts of flowing money (x402 aggregator, keeper rewards, facilitator)
 - 2026-10-11 15:20 | interactive | Owner mentality recorded: attach to money already flowing, many small legal sources, no new audiences
+- 2026-10-11 17:27 | build | Claim: hackathons paypal entry already doing (burn-down); took oss-bounties first-bounty-pr
+- 2026-10-11 17:27 | build | Board top three read on github.com: tt-metal#59732 assigned + PR + hardware; turso#8749 unfunded ask
+- 2026-10-11 17:27 | build | Arrow-air#256 is a hardware report; SUSU#37 has 2 PRs; omi $250 rows are authors' proposals
+- 2026-10-11 17:27 | build | Dropped the three bounty items with reasons; first-bounty-pr blocked on a free funded board row
+- 2026-10-11 17:27 | build | Scanner: fundingOf (label/bot/maintainer only), openPrs from the timeline, takenBy; proposals dropped
+- 2026-10-11 17:27 | build | Board gains a Taken column, rank ÷ (1 + PRs + assigned), only free issues filed; 10 tests green
+- 2026-10-11 17:27 | build | Queue: oss-bounties bounty-scanner-funding-and-taken done; proof is tomorrow's 05:17 board
+- 2026-10-11 17:27 | build | RESEARCH §2a: every funded issue read had an agent PR within days; kill rule applies early if empty
