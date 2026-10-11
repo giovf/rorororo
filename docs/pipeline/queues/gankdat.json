@@ -582,8 +582,9 @@
       "effort_days": 0.15,
       "proof": "the 2026-W42 review reads an external per-dataset count and applies §7 from it",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-11"
+      "status": "doing",
+      "added": "2026-10-11",
+      "doing_since": "2026-10-11"
     }
   ]
 }
