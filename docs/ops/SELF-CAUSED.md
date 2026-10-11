@@ -49,9 +49,11 @@ as `store` and add the ALERTS line as before (`store-approval-to-store-md` will 
 from a service we pay (Cloudflare Workers Paid, a domain renewal) is a real cost for
 `docs/LEDGER.md`, not a false alarm.
 | `github.com` | `[docker/mcp-registry]` … (review comments, CI results, approval or merge on the gankdat entry PR) | the Docker MCP Catalog listing PR — entry in `ventures/gankdat/docs/docker-mcp-catalog/`, opened by the interactive session per the 2026-10-10 handoff | Docker's reviewers and CI on our own submission; a review asking for changes is the build routine's work (gankdat queue `docker-mcp-catalog-listing`), never the owner's | `logged (self-caused: docker-mcp-catalog PR)` |
+| `devpost.com` | `Check out your new achievement!`, `You're Registered!`, `You're in! Here's what you need to know` for a hackathon | Owner action 022 (2026-10-11, `docs/for-owner/actions/022-prize-and-bounty-accounts.md`): the owner created a Devpost account and registered for the PayPal AI Hackathon and the Nebius x NVIDIA Global AI Hackathon | Devpost confirming the account and registrations the owner made; carries no action itself (the Nebius Token Factory compute account is a separate, still-open item — see ALERTS.md) | `logged (self-caused: Devpost account signup, action 022)` |
 
 ## History
 
 - 2026-09-29 — file created (foundry `self-caused-alerts`); triage and weekly-report prompts
   point here (`docs/routines/inbox-triage.md`, `docs/routines/weekly-report.md`). Rows 1–8.
 - 2026-10-10 — row for the docker/mcp-registry PR mail (build routine, gankdat `docker-mcp-catalog-listing`).
+- 2026-10-11 — row for Devpost account/hackathon-registration confirmation mail (owner action 022, inbox triage).
