@@ -2,7 +2,7 @@
   "venture": "read-focus",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-07",
+  "updated": "2026-10-11",
   "researched": "2026-10-05",
   "items": [
     {
@@ -63,12 +63,11 @@
     {
       "id": "edge-add-ons-listing",
       "title": "Edge Add-ons listing (free channel, same zip) once the owner has a Microsoft Partner Center account",
-      "why": "RESEARCH.md product decision lists Edge Add-ons as the third free channel; Edge users install from its own store search, which is far less crowded than Chrome's. Same build as Chrome (Manifest V3), listing text from LISTING.md. Blocked on an account that carries the owner's identity (CLAUDE.md: ask before creating) — batched into the next owner request with the other account asks, not a separate ALERTS line.",
+      "why": "RESEARCH.md product decision lists Edge Add-ons as the third free channel; Edge users install from its own store search, which is far less crowded than Chrome's. Same build as Chrome (Manifest V3), listing text from LISTING.md. Blocked on an account that carries the owner's identity (CLAUDE.md: ask before creating) — batched into the next owner request with the other account asks, not a separate ALERTS line. — Dropped 2026-10-11 (review 2026-W41): the owner's decision D2 of 2026-09-28 (Edge: drop; action 006 closed) had already removed Edge from the plan, so the blocker can never clear.",
       "effort_days": 0.2,
       "proof": "Edge listing live; a store-metrics row for Edge",
       "score": 3,
-      "status": "blocked",
-      "blocked_on": "owner: Microsoft Partner Center developer account (identity; batch with other account asks)",
+      "status": "dropped",
       "added": "2026-09-30"
     },
     {

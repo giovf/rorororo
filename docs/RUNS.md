@@ -890,3 +890,15 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 01:28 | burn-down | Queue: gankdat refresh-zero-records-evidence done; proof is the row naming the origin page
 - 2026-10-11 01:27 | burn-down | Stopping: pipeline starved and cooled after 1 item; tonight's exchange pre-research already done at 17:39
 - 2026-10-11 06:23 | watchdog | ci-minutes: ~4753 Actions min/month projected (private cap 2,000, warn 1700); top: check 353, owner notes 182, gankdat 1
+- 2026-10-11 08:12 | review | Review 2026-W41: money targets all zero — 0 paying, £0 MRR, 0 feed calls, 0 sales, 0 paid Apify runs in Sept
+- 2026-10-11 08:12 | review | gankdat: keep (was fix) — D1 overage cut, US$0 in the new period, invoice paid; 0 conversions on every shelf
+- 2026-10-11 08:12 | review | ReadFocus: keep — first 3 Chrome users (10-08..11) in the week 0.2.0 went live; 0.3.0 unsigned 7 days
+- 2026-10-11 08:12 | review | Highlight Keep: keep — 0 users on both stores at day ~20 of 90; 0.4.0 unsigned 6 days
+- 2026-10-11 08:12 | review | Variables Toolkit: keep — 7 views, 3 runs, 0 installs at day 20; three publish steps wait on the owner
+- 2026-10-11 08:12 | review | Signal: first agent to exhaust the preview — 47 wall hits on awards, sanctions, TED; offered sign-in only
+- 2026-10-11 08:12 | review | Queued gankdat preview-wall-next-steps (6): name request_api_key and x402 in the wall, read what follows
+- 2026-10-11 08:12 | review | Gap queued: gankdat metrics-dataset-queries-external (5) — datasets 30d counts our Apify key and probe
+- 2026-10-11 08:12 | review | Gap queued: foundry metrics-extension-sales (5) — the extensions' Sales column has never had a reading
+- 2026-10-11 08:12 | review | Dropped read-focus edge-add-ons-listing (owner D2 of 09-28); exchange unchanged, no trigger met
+- 2026-10-11 08:12 | review | STRATEGY §4 Now refreshed with 10-11 sources; §2 agent row: Claude in review, Docker on action 021
+- 2026-10-11 08:12 | review | Cash: spent £44.40, planned £8, ICO £47 contingent, revenue £0; headroom £47.60, 12 months at £3.70

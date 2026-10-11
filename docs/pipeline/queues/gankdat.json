@@ -561,6 +561,26 @@
       "score": 6,
       "status": "todo",
       "added": "2026-10-11"
+    },
+    {
+      "id": "preview-wall-next-steps",
+      "title": "The preview wall names every way to continue — sign-in for a person, `request_api_key` for an agent, x402 pay-per-call on REST — and the Daily numbers row reads what a client does in the hour after `preview_exhausted`",
+      "why": "Review 2026-W41: the 10-11 Daily numbers row carries the first client to hit the keyless preview limit — 47 `preview_exhausted` challenges in a day (the 7-day funnel went 36 → 87) with the wanted tools query_uk_contract_awards 16, query_uk_sanctions 16, query_eu_ted 10 (bid intelligence and compliance, the §2 buyer shape), 54 paywall hits, and then 0 authorize, 0 `request_api_key` requests, 0 keys, 0 x402 payments. `oauthChallenge(c, 'preview_exhausted')` in src/routes/mcp.ts answers 'Preview limit reached; sign in to gankdat to continue with your plan' — a person's path only. An autonomous agent cannot sign in, and the two agent-native paths that already exist (the `request_api_key` tool, live since 09-25 with 0 requests in 16 days, and x402 on `/v1/data`) are not named in the wall. Do: (1) the exhausted challenge (MCP error text and the 401/402 bodies) lists the three continuations with the exact tool name, the x402 endpoint and the per-call price, in the order an agent can act on them; (2) the funnel reading adds `after wall 1h: request_api_key N, x402 N, authorize N, gone N`, keyed on the challenged client id, so the next row says what the next wall-hitter did; (3) the `connect_account` tool description says the same. Score 6: evidence 3 (the first measured wall-hitter, a §2 buyer shape) × reach 4 (every keyless agent on all five live shelves) ÷ 0.2 d, applied down from the raw figure because one client is one client.",
+      "effort_days": 0.2,
+      "proof": "≥ 1 `request_api_key` request or x402 payment from a client that hit the wall within 30 days, or the row names where wall-hitters go instead",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "metrics-dataset-queries-external",
+      "title": "`datasets 30d` counts customers only: exclude the Apify actors' key, the metrics probe account and the owner's keys, so STRATEGY §7's 60-day retirement rule reads outside demand",
+      "why": "Review 2026-W41: the reading built 10-04 (`metrics-dataset-queries-30d`) counts every authed call, and the Apify actors run on the repo's own `GANKDAT_API_KEY` (apify/*/src/gankdat.mjs) while the metrics runner's probe account calls every tool daily — so on 10-11 every register sits at 85–100 calls in 30 d (uk-care-locations 169, uk-food-hygiene 109) with the floor rising ~3 a day in lockstep across all 17: that is our own automation plus Apify's QA runner, not a buyer. With one real account the external figure is probably 0 for every slug, and that is the number §7 needs (uk-planning's 60-day clock started 10-10 on the polluted count). Do: tag the Analytics Engine `rest_data` / `mcp_authed` points with the key's account id (already in the auth context), keep an `INTERNAL_ACCOUNTS` list in metrics.mjs (the account behind the Apify key, the probe account, the owner's), print `datasets 30d (external): <slug> N, …; 0: a, b, c` next to the existing line, and keep the old line for continuity.",
+      "effort_days": 0.15,
+      "proof": "the 2026-W42 review reads an external per-dataset count and applies §7 from it",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-11"
     }
   ]
 }

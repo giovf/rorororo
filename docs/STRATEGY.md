@@ -15,7 +15,8 @@ same thing*, not for one big bet. Capital cap £100 = the owner's **net outlay**
 2026-10-10): `spent + planned` may pass it only by revenue already received, so anything beyond
 the cap comes out of profit. Recurring cost £3.70/month (Workers Paid, owner-paid); the 10-10
 invoice (US$49, £37) was a one-off D1 overage from the nightly full reloads, fixed 2026-10-04,
-and `npm run ledger` now reports the months of headroom the recurring line leaves (12 on 10-10).
+and `npm run ledger` now reports the months of headroom the recurring line leaves (12 on 10-10); the first
+rows of the new period (10-10, 10-11) read US$0 overage and 0.0M D1 writes a day (review W41).
 
 ## 2. Where the money is (ranked by evidence, 2026-09-20)
 
@@ -26,7 +27,7 @@ and `npm run ledger` now reports the months of headroom the recurring line leave
 | **Change feeds** (`/v1/changes`) | grant-makers, KYB, recruiters | no competitor offers an official-source delta feed | inside plans; upsell later | none |
 | Browser extensions (ReadFocus, Highlight Keep) | consumers | rivals abandoned; low ticket | US$12 one-off | none, but small |
 | Figma plugin (Variables Toolkit) | designers | paid rivals with gaps | one-off | none |
-| **Agent directories** (Claude Connectors Directory; MCP Registry, mcpservers.org, Glama already; Docker MCP Catalog entry built 2026-10-10, PR on the handoff list) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30); ~40k keyless calls and no payer from the five live directories by 2026-10-07 |
+| **Agent directories** (MCP Registry, mcpservers.org, Glama, awesome-remote-mcp-servers and the Apify Store live; Claude Connectors Directory submitted by the owner 2026-10-04, in review; Docker MCP Catalog entry built 2026-10-10, PR waits on the owner's token, action 021) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30); ~46k keyless calls and no payer from the five live directories by 2026-10-11; the first client to exhaust the keyless preview (10-11: 47 wall hits on contract awards, sanctions and TED) was offered sign-in only — gankdat `preview-wall-next-steps` (review W41) |
 
 ## 3. Unit economics (what has to be true)
 
@@ -41,13 +42,13 @@ and `npm run ledger` now reports the months of headroom the recurring line leave
 
 | Metric | Now | Target | Where measured |
 | --- | --- | --- | --- |
-| gankdat paying accounts | 0 (1 unpaid account since 09-28; review W40, Daily numbers 2026-10-03) | 5 | `Daily numbers` rows in `ventures/gankdat/RESEARCH.md` |
-| gankdat MRR | £0 (review W40) | £150 | Stripe (weekly report) |
-| Apify actors live | 17 of 17 | 17 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — `P public`; all 17 went public 2026-09-28 |
-| Apify paid runs / month | ~11 runs/day total since 10-01 (≈ 340/month pace), paid share unknown — `30d: T runs (O ours, X others)` reads from the 2026-10-05 row; `others` is the ceiling (Apify's QA runner is in it), the payout mail the paid figure (review W40, Daily numbers 2026-10-03; burn-down 10-04) | 100 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — lifetime `R runs` plus the `+d/24h` delta (`stats.totalRuns`), 30-day runs by everyone (`stats.publicActorRunStats30Days.TOTAL`) minus our own (`GET /v2/actor-runs`) |
-| Change-feed calls / week | 0 (measured 09-30..10-03; review W40) | 50 | `changes 7d:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — Analytics Engine, MCP `get_changes` + REST `/v1/changes` |
-| Extension + plugin sales | 0 (Figma 4 views, 0 installs; Chrome 0 users; Firefox 3 downloads — review W40, Daily check 2026-10-03) | 20 | Stripe / Figma |
-| Directory listings live | 5 (Claude Connectors Directory built 09-30, awaiting the owner's form — review W40) | 8 | `MARKETPLACE-PREP.md` |
+| gankdat paying accounts | 0 (1 unpaid account since 09-28, `+0/24h` every day; review W41, Daily numbers 2026-10-11) | 5 | `Daily numbers` rows in `ventures/gankdat/RESEARCH.md` |
+| gankdat MRR | £0 (no `revenue` row, `0 paid` on every row; review W41) | £150 | Stripe (weekly report) |
+| Apify actors live | 18 of 18 (`uk-companies-house-lookup-monitor` public 2026-10-07; review W41) | 17 — met | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — `P public`; all 17 went public 2026-09-28 |
+| Apify paid runs / month | **0 paid** (September developer summary, INBOX 2026-10-06: US$0, 1 unique user); 235 runs by others in the 30 days to 10-11 (≈ 8/day; +96 lifetime runs this week), `18 users/30d` = one per actor = Apify's QA runner — `30d: T runs (O ours, X others)` is the ceiling, the monthly summary mail the paid figure (review W41, Daily numbers 2026-10-11) | 100 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — lifetime `R runs` plus the `+d/24h` delta (`stats.totalRuns`), 30-day runs by everyone (`stats.publicActorRunStats30Days.TOTAL`) minus our own (`GET /v2/actor-runs`) |
+| Change-feed calls / week | 0 (`changes 7d: 0` on every row 09-30..10-11; the keyless Atom feeds: 16 fetches in 30 d by 4 user agents; review W41) | 50 | `changes 7d:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — Analytics Engine, MCP `get_changes` + REST `/v1/changes` |
+| Extension + plugin sales | 0 (Figma 7 views, 3 unique runs, 0 installs, 0 purchases; Chrome: ReadFocus 3 users on 10-11 — its first — Highlight Keep 0; Firefox 0 weekly downloads on both; extension sales have no reading until foundry `metrics-extension-sales` — review W41, Daily check 2026-10-11) | 20 | Stripe / Figma |
+| Directory listings live | 5 (+ Claude Connectors Directory submitted by the owner 10-04, in review, no directory mail yet; Docker MCP Catalog entry built 10-10, PR waits on action 021 — review W41) | 8 | `MARKETPLACE-PREP.md` |
 
 If gankdat is < £50 MRR **and** Apify < 20 paid runs/month by 2026-12-20 with all listings
 live, the data line is re-positioned (see kill criteria) rather than extended.
@@ -1020,3 +1021,21 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   now fails with the first page the origin served (status, bytes, JSON keys, URL), so an emptied
   dataset and a 5xx page read differently in the Daily numbers row and the fix can be scoped
   without a relay round-trip (uk-contract-awards 10-03 and uk-planning 10-10 both needed one).
+- 2026-10-11 review (W41): every money target still zero — 0 paying accounts, £0 MRR, 0 change-feed calls in 12 days of
+  counting, 0 extension/plugin sales, 0 paid Apify runs (September summary US$0, 1 unique user); Apify 18/18 public, five
+  directories live, Claude in review. gankdat **keep** (was fix in W40: the D1 overage is cut — US$0 in the new period —
+  the invoice is paid and the cap re-based on 10-10, so §7's cost rule is no longer tripped; 0 conversions on every shelf,
+  pivot check stays 12-20). ReadFocus keep (first 3 Chrome users 10-08..10-11, the week 0.2.0 went live), Highlight Keep keep
+  (0 users at day ~20 of 90), Variables Toolkit keep (7 views, 3 runs, 0 installs at day 20; three publish steps wait on the
+  owner). No kill: no venture is 90 days past its listings going live (earliest 2026-12-20).
+- 2026-10-11 review: gankdat `preview-wall-next-steps` (6) queued — the 10-11 row carries the first client to exhaust the
+  keyless preview (47 wall hits in a day on contract awards, sanctions and TED, then 0 sign-ups, 0 x402) and the wall says
+  "sign in" only; the fix names `request_api_key` and x402 for agents and reads what the next wall-hitter does.
+- 2026-10-11 review: gaps queued — gankdat `metrics-dataset-queries-external` (5): `datasets 30d` counts the Apify actors'
+  own key and the probe account, so §7's 60-day retirement rule still has no clean reading; foundry
+  `metrics-extension-sales` (5): the extensions' Sales column has never had a reading although the licence KV holds it.
+- 2026-10-11 review: §4 `Now` column refreshed with 10-11 sources (Apify target met at 18/18); §2 agent-directories row
+  updated (Claude submitted 10-04, Docker on action 021, first wall-hitter); read-focus `edge-add-ons-listing` dropped
+  (owner decision D2 of 2026-09-28 had already dropped Edge); `exchange.json` unchanged — no parked trigger met, and
+  WuslaHQ's 10-09 bump adds no evidence (the holding draft is the owner's to send or not). Owner: nothing new — the six
+  open asks stand; 021 (3 min) unblocks the top-scored item, 020 (10 min) three dated reviews.

@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-10",
+  "updated": "2026-10-11",
   "researched": "2026-10-10",
   "items": [
     {
@@ -677,6 +677,16 @@
       "status": "blocked",
       "added": "2026-10-10",
       "blocked_on": "owner action 021 (2026-10-10): the relay is built — scripts/pr-relay.ts, docs/ci/pr-relay.yml (installer moves it), docs/relay/README.md § PR relay, first request docs/relay/prs/docker-mcp-catalog/ — and waits only for the owner to store a classic PAT with public_repo as PR_TOKEN. Close when result.json of that first request carries a PR URL."
+    },
+    {
+      "id": "metrics-extension-sales",
+      "title": "Extension sales reading: the 06:52 store-metrics runner counts the licence Worker's `license:*` KV records per product and fills the Daily check row's `Sales` column (keys issued, activations)",
+      "why": "Review 2026-W41: STRATEGY §4 'Extension + plugin sales' has a reading for the plugin (Figma `purchase_count`) and none for ReadFocus or Highlight Keep — their Daily check rows print `—` under Sales, and the only record of a sale would be a Stripe payout mail. The licence Worker (packages/license-worker) stores every issued key as `license:<id>` in the LICENSES KV namespace with its activations, so the count exists and nothing reads it. Do: a step in `scripts/store-metrics.ts` (or `docs/ci/store-metrics.yml`) lists the namespace through the Cloudflare API with the existing deploy token, counts keys and activations per product, prints `Sales N (activations A)`, and prints `n/a (<reason>)` when the token lacks the scope; the day-30 funnel reviews (10-30) read it. ReadFocus showed its first 3 Chrome users on 10-08..10-11, so the column is about to matter.",
+      "effort_days": 0.2,
+      "proof": "a numeric Sales reading on both extensions' Daily check rows for 7 days; the 10-30 funnel reviews read it",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-11"
     }
   ]
 }
