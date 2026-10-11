@@ -257,6 +257,17 @@ runs `check:root`.
   apps, redirect `https://claude.ai/api/mcp/auth_callback`) and
   `https://claude.ai/oauth/claude-code-client-metadata` (Claude Code, port-less loopbacks), both
   verified through the relay on 2026-10-09; `/authorize` with either rendered the sign-in page live.
+  **Preview wall next steps** (2026-10-11, queue `preview-wall-next-steps`, v0.24.1): the first client to
+  spend the preview budget (47 `preview_exhausted` challenges on 10-11, bid-intelligence tools) was told
+  only to sign in — a person's path — while the two agent paths went unnamed. The wall now names every
+  way on in the order an agent can act (`previewNextStep` in `src/mcp/preview.ts`, also the `preview.next`
+  meta and the `connect_account` description): pay per call at `/x402/data/<source>` (x402, from
+  `X402_DEFAULT_PRICE_USD`), the free key through `request_api_key` → `claim_api_key`, then `connect_account`
+  or /account; the 401's `WWW-Authenticate` headline says the same in 120 chars. The wall, the keyless `/mcp`
+  points, the `protected_tool` challenge and `x402_paid` carry the preview's hashed client id in blob6
+  (never an IP), and the Daily numbers row reads `after wall 1h (7d): N clients — request_api_key N, x402 N,
+  connect N, gone N` (`afterWallNote` in `src/lib/oauth-funnel.ts`) so the next row says what a wall-hitter
+  did next. Proof: a request, a payment or a connect from a wall-hitter within 30 days, or `gone` naming it.
   **Dynamic client registration** (2026-10-10, queue `oauth-dynamic-client-registration`, migration
   0016 `oauth_clients`, v0.23.0): only Claude carries a client-id metadata document — Docker's MCP
   gateway (`PerformDCR`: "no registration endpoint found"), Cursor, ChatGPT and VS Code register

@@ -63,3 +63,54 @@ export function connectCallersNote(rows: { ua: string | null; n: number | string
     (ua ?? '').replace(/\s+/g, ' ').replace(/[|;]/g, '/').trim().slice(0, 48) || '(no UA)';
   return `connect_account 7d by UA: ${rows.map((r) => `${uaText(r.ua)} ${whole(r.n)}`).join(', ')}`;
 }
+
+export type WallMove = 'request_api_key' | 'x402' | 'connect';
+
+export interface WallRow {
+  /** blob6: the preview's hashed client id. */
+  client: string;
+  /** Analytics Engine timestamp (`YYYY-MM-DD HH:MM:SS` UTC) or epoch seconds/milliseconds. */
+  ts: string | number;
+}
+
+export interface MoveRow extends WallRow {
+  kind: WallMove;
+}
+
+export const AFTER_WALL_WINDOW_MS = 3_600_000;
+
+/** Analytics Engine hands timestamps over as `YYYY-MM-DD HH:MM:SS` (UTC); tests may pass epochs. */
+export function toMillis(ts: string | number): number {
+  if (typeof ts === 'number') return ts < 1e12 ? ts * 1000 : ts;
+  const parsed = Date.parse(/[TZ]/.test(ts) ? ts : `${ts.replace(' ', 'T')}Z`);
+  return Number.isFinite(parsed) ? parsed : Number.NaN;
+}
+
+/**
+ * `after wall 1h (7d): 3 clients — request_api_key 1, x402 0, connect 1, gone 1` — what each
+ * client that hit the preview wall did within the hour after any of its challenges: called
+ * `request_api_key` (the free key path), paid an x402 call, or called `connect_account` (the
+ * sign-in path, seen as its `protected_tool` challenge); `gone` did none of them. A client
+ * counts once per path (gankdat preview-wall-next-steps, 2026-10-11: the first wall-hitter —
+ * 47 challenges — left 0 requests, 0 payments and 0 sign-ins, and nothing said what it did next).
+ */
+export function afterWallNote(walls: WallRow[], moves: MoveRow[]): string {
+  const wallTimes = new Map<string, number[]>();
+  for (const w of walls) {
+    const t = toMillis(w.ts);
+    if (!w.client || !Number.isFinite(t)) continue;
+    wallTimes.set(w.client, [...(wallTimes.get(w.client) ?? []), t]);
+  }
+  const did = new Map<string, Set<WallMove>>();
+  for (const m of moves) {
+    const times = wallTimes.get(m.client);
+    const t = toMillis(m.ts);
+    if (!times || !Number.isFinite(t)) continue;
+    if (times.some((w) => t > w && t - w <= AFTER_WALL_WINDOW_MS)) {
+      did.set(m.client, (did.get(m.client) ?? new Set<WallMove>()).add(m.kind));
+    }
+  }
+  const count = (kind: WallMove): number => [...did.values()].filter((s) => s.has(kind)).length;
+  const gone = [...wallTimes.keys()].filter((c) => !did.has(c)).length;
+  return `after wall 1h (7d): ${wallTimes.size} clients — request_api_key ${count('request_api_key')}, x402 ${count('x402')}, connect ${count('connect')}, gone ${gone}`;
+}

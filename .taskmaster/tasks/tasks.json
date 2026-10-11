@@ -1327,13 +1327,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-11T17:27:50.166Z"
+      },
+      {
+        "id": "34",
+        "title": "Preview wall names every way on; after-wall reading (v0.24.1)",
+        "description": "previewNextStep lists x402 pay-per-call, request_api_key and connect_account in agent order; hashed client id in blob6 on the wall, keyless /mcp, protected_tool and x402_paid points; Daily numbers row gains 'after wall 1h' (afterWallNote). Queue gankdat/preview-wall-next-steps.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-11T19:26:07.873Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-11T17:27:50.166Z",
-      "taskCount": 33,
-      "completedCount": 26,
+      "lastModified": "2026-10-11T19:26:07.873Z",
+      "taskCount": 34,
+      "completedCount": 27,
       "tags": [
         "master"
       ]

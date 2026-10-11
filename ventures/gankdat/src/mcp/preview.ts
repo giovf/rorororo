@@ -1,5 +1,5 @@
 import { PAID_PLANS } from '../billing/plans';
-import { API_BASE_URL, FREE_TIER_CREDITS } from '../lib/constants';
+import { API_BASE_URL, FREE_TIER_CREDITS, X402_DEFAULT_PRICE_USD } from '../lib/constants';
 
 // Keyless preview (build routine 2026-09-30, Claude Connectors Directory).
 // An authless directory listing cannot carry an API key, and the directory's
@@ -84,13 +84,20 @@ function cheapestPaid(): { name: string; gbp: number; credits: number } | null {
   return first ? { name: first.displayName, gbp: first.gbpPerMonth, credits: first.credits } : null;
 }
 
-/** What a keyless caller is told, both alongside preview rows and once the budget is spent. */
+/**
+ * What a keyless caller is told, both alongside preview rows and once the budget is spent.
+ * Every way to continue, in the order an agent can act on them (gankdat preview-wall-next-steps,
+ * 2026-10-11: the first client to hit the wall — 47 challenges in a day, bid-intelligence tools —
+ * was told only to sign in, which an autonomous agent cannot do, and the two agent paths that
+ * already existed went unnamed): pay per call with no account at all, a free key by email
+ * through the agent, or a person's sign-in.
+ */
 export function previewNextStep(): string {
   const paid = cheapestPaid();
   const paidLine = paid
     ? ` Paid plans from £${paid.gbp}/month (${paid.name}: ${paid.credits.toLocaleString('en-GB')} credits) at ${API_BASE_URL}/#pricing.`
     : '';
-  return `A free API key gives ${FREE_TIER_CREDITS} credits/month with full pages (no card): in Claude call connect_account to sign in; elsewhere call request_api_key with the user's email, or sign in at ${API_BASE_URL}/account, then send the key as "Authorization: Bearer <key>".${paidLine}`;
+  return `Three ways to continue: (1) no account, pay per call — GET ${API_BASE_URL}/x402/data/<source> with an x402 payment (USDC on Base, from ${X402_DEFAULT_PRICE_USD} a call; the 402 body states the exact terms); (2) a free API key through this chat — call request_api_key with the user's email, then claim_api_key: ${FREE_TIER_CREDITS} credits/month, full pages, no card; (3) a person — in Claude call connect_account to sign in, or sign in at ${API_BASE_URL}/account. Send a key as "Authorization: Bearer <key>".${paidLine}`;
 }
 
 export function previewExhaustedMessage(): string {

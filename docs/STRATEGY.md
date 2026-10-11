@@ -1103,3 +1103,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   (the relay never fired on its own: `PR_TOKEN` landed after the request was pushed, so the run was dispatched by hand;
   a request pending when the token arrives needs a dispatch — noted in the relay README). The item is blocked on Docker's
   review: merged → done plus the `oauth` block follow-up PR; a demand for an OSS licence on the server → dropped.
+- 2026-10-11 burn-down: gankdat `preview-wall-next-steps` (6) built, v0.24.1 — the first client to spend the keyless preview
+  (47 challenges on 10-11, bid-intelligence tools, then nothing) was told only to sign in. The wall now names every way on
+  in the order an agent can act: x402 pay-per-call on `/x402/data/<source>`, the free key through `request_api_key`, then
+  `connect_account`/account; the challenge headline and the `connect_account` description say the same. The wall and
+  the three continuations carry the preview's hashed client id, and the Daily numbers row reads `after wall 1h (7d): …
+  gone N`, so the next wall-hitter's choice is a number. Proof: a request, payment or connect from a wall-hitter in 30 days.

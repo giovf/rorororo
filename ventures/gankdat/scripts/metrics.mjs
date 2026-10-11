@@ -11,7 +11,7 @@
 import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { connectCallersNote, oauthFunnelNote } from '../src/lib/oauth-funnel.ts';
+import { afterWallNote, connectCallersNote, oauthFunnelNote } from '../src/lib/oauth-funnel.ts';
 
 const ACCOUNT_ID = '37e56f3ce4dfe49919e85d4380467f44'; // not a secret
 const DATABASE_ID = 'ac051277-5f69-46ba-965b-50da2f1ec524'; // wrangler.jsonc
@@ -149,6 +149,25 @@ const funnelRows = await ae(
 ).catch(() => []);
 const funnelNote = oauthFunnelNote(challenges, funnelRows);
 const connectCallersText = connectCallersNote(connectCallers);
+// After the wall (gankdat preview-wall-next-steps, 2026-10-11): the wall and the three ways on
+// now carry the preview's hashed client id in blob6 (routes/mcp.ts, mcp/server.ts, x402/routes.ts),
+// so the row says what a wall-hitter did in the following hour — the free-key request, an x402
+// payment, the connect_account sign-in attempt — or that it left. Points written before 10-11
+// have no blob6 and are left out.
+const wallRows = await ae(
+  "SELECT blob6 AS client, timestamp AS ts FROM gankdat_traffic WHERE blob1 = 'mcp_denied' AND blob4 = 'preview_exhausted' AND blob6 != '' AND timestamp > NOW() - INTERVAL '7' DAY LIMIT 5000",
+).catch(() => []);
+const moveRows = await ae(
+  "SELECT blob6 AS client, timestamp AS ts, blob1 AS kind FROM gankdat_traffic WHERE blob6 != '' AND timestamp > NOW() - INTERVAL '7' DAY AND ((blob1 = 'mcp_anon' AND blob5 LIKE '%request_api_key%') OR blob1 = 'x402_paid' OR (blob1 = 'mcp_denied' AND blob4 = 'protected_tool')) LIMIT 5000",
+).catch(() => []);
+const afterWallText = afterWallNote(
+  wallRows,
+  moveRows.map((r) => ({
+    client: r.client,
+    ts: r.ts,
+    kind: r.kind === 'x402_paid' ? 'x402' : r.kind === 'mcp_denied' ? 'connect' : 'request_api_key',
+  })),
+);
 
 // The live MCP probe (scripts/mcp-probe.ts) makes three authed and three keyless calls a day
 // under its own user agent (blob2); the counts below are real traffic, so it is skipped
@@ -613,6 +632,7 @@ const notes = [
   oauthNote,
   connectCallersText,
   funnelNote,
+  afterWallText,
   cfNote,
   datasetsNote,
   errors.length

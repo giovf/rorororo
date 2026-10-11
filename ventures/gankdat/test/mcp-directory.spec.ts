@@ -268,9 +268,23 @@ describe('/mcp directory conformance', () => {
     expect(overBody.error_description).toContain('Preview limit reached');
     expect(overBody.error_description).toContain('£5/month');
     expect(overBody.error_description).toContain('250 credits/month');
+    // Every way on, in the order an agent can act (preview-wall-next-steps): pay per call,
+    // the free key through the chat, a person's sign-in — in the body and the header line.
+    expect(overBody.error_description).toContain('/x402/data/<source>');
+    expect(overBody.error_description).toContain('request_api_key');
+    expect(overBody.error_description).toContain('connect_account');
+    expect(over.res.headers.get('www-authenticate')).toContain('request_api_key');
+    expect(over.res.headers.get('www-authenticate')).toContain('/x402/data/');
     expect(spy).toHaveBeenCalledWith(
       expect.objectContaining({
-        blobs: ['mcp_denied', 'budget-test', 'tools/call', 'preview_exhausted', 'query_uk_tenders'],
+        blobs: [
+          'mcp_denied',
+          'budget-test',
+          'tools/call',
+          'preview_exhausted',
+          'query_uk_tenders',
+          expect.stringMatching(/^[0-9a-f]{16}$/),
+        ],
       }),
     );
     spy.mockRestore();

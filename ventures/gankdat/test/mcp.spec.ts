@@ -144,7 +144,14 @@ describe('/mcp', () => {
     expect(keyless.status).toBe(200);
     expect(spy).toHaveBeenCalledWith(
       expect.objectContaining({
-        blobs: ['mcp_preview', expect.any(String), 'tools/call', '', 'list_sources'],
+        blobs: [
+          'mcp_preview',
+          expect.any(String),
+          'tools/call',
+          '',
+          'list_sources',
+          expect.stringMatching(/^[0-9a-f]{16}$/), // the preview's hashed client id (after wall 1h)
+        ],
         indexes: ['mcp_preview'],
       }),
     );
@@ -172,7 +179,14 @@ describe('/mcp', () => {
     await rpc(null, 'tools/list');
     expect(spy).toHaveBeenCalledWith(
       expect.objectContaining({
-        blobs: ['mcp_anon', expect.any(String), 'tools/list', '', ''],
+        blobs: [
+          'mcp_anon',
+          expect.any(String),
+          'tools/list',
+          '',
+          '',
+          expect.stringMatching(/^[0-9a-f]{16}$/),
+        ],
       }),
     );
 

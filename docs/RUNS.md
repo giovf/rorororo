@@ -950,3 +950,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 19:24 | burn-down | pr relay dispatched by hand (never fired: PR_TOKEN landed after the request); docker/mcp-registry#5622 open
 - 2026-10-11 19:24 | burn-down | Docker MCP Catalog: listing log row, STRATEGY §4 listings row, relay README note on dispatching a pending request
 - 2026-10-11 19:24 | burn-down | Queue: gankdat docker-mcp-catalog-listing blocked on Docker's review of PR #5622; merged → done, licence demand → drop
+- 2026-10-11 19:26 | burn-down | gankdat 0.24.1: the preview wall names x402 pay-per-call, request_api_key and connect_account in agent order
+- 2026-10-11 19:26 | burn-down | Wall text in the tool error, preview.next meta, 401 body and header headline; connect_account says the same
+- 2026-10-11 19:26 | burn-down | Hashed client id in blob6 on the wall, keyless /mcp, protected_tool and x402_paid analytics points
+- 2026-10-11 19:26 | burn-down | Daily numbers row gains "after wall 1h (7d): … request_api_key N, x402 N, connect N, gone N"; 3 tests
+- 2026-10-11 19:26 | burn-down | Queue: gankdat preview-wall-next-steps done; proof is a request, payment or connect from a wall-hitter

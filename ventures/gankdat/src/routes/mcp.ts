@@ -182,8 +182,12 @@ async function oauthChallenge(
   reason: 'protected_tool' | 'preview_exhausted',
 ): Promise<Response> {
   const shape = await requestShape(c);
+  const userAgent = c.req.header('User-Agent') ?? '';
+  // blob6 = the preview's hashed client id (IP + UA), so the Daily numbers row can follow
+  // a wall-hitter for an hour (`after wall 1h`, gankdat preview-wall-next-steps). No raw IP.
+  const clientId = await previewClientId(c.req.header('CF-Connecting-IP') ?? 'unknown', userAgent);
   c.env.TRAFFIC.writeDataPoint({
-    blobs: ['mcp_denied', c.req.header('User-Agent') ?? '', shape.methods, reason, shape.tools],
+    blobs: ['mcp_denied', userAgent, shape.methods, reason, shape.tools, clientId],
     doubles: [1],
     indexes: ['mcp_denied'],
   });
@@ -191,10 +195,11 @@ async function oauthChallenge(
     reason === 'protected_tool'
       ? 'Sign in to gankdat to use this tool with your account'
       : previewExhaustedMessage();
+  // The header text is what a client shows first (120 chars, auth/oauth.ts): name every way on.
   const headline =
     reason === 'protected_tool'
       ? description
-      : 'Preview limit reached; sign in to gankdat to continue with your plan';
+      : 'Preview limit reached: pay per call at /x402/data/<source>, call request_api_key for a free key, or sign in';
   return c.json({ error: 'invalid_token', error_description: description }, 401, {
     'WWW-Authenticate': bearerChallenge(c.env, headline),
   });
@@ -270,16 +275,19 @@ export const mcpRoute = new Hono<AppEnv>().post(
       !keyCtx && shape.tools !== '' && shape.tools.split(',').some((t) => !SIGNUP_TOOLS.has(t));
     const kind = keyCtx ? 'mcp_authed' : previewCall ? 'mcp_preview' : 'mcp_anon';
     const userAgent = c.req.header('User-Agent') ?? '';
+    const clientId = await previewClientId(
+      c.req.header('CF-Connecting-IP') ?? 'unknown',
+      userAgent,
+    );
+    // blob6 = hashed client id on keyless calls only (a key already names the caller), so a
+    // request_api_key call after the preview wall is attributable to the client that hit it.
     c.env.TRAFFIC.writeDataPoint({
-      blobs: [kind, userAgent, shape.methods, '', shape.tools],
+      blobs: [kind, userAgent, shape.methods, '', shape.tools, keyCtx ? '' : clientId],
       doubles: [1],
       indexes: [kind],
     });
 
-    const server = buildMcpServer(c.env, keyCtx, {
-      clientId: await previewClientId(c.req.header('CF-Connecting-IP') ?? 'unknown', userAgent),
-      userAgent,
-    });
+    const server = buildMcpServer(c.env, keyCtx, { clientId, userAgent });
     const transport = new StreamableHTTPTransport();
     await server.connect(transport);
     const response = await transport.handleRequest(c);

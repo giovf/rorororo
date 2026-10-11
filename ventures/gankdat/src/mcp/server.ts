@@ -121,9 +121,17 @@ async function gateDataCall(
   const taken = await takePreviewCall(env, preview.clientId);
   if (!taken.allowed) {
     // The paywall signal the daily numbers count (metrics.mjs "paywall hits"):
-    // an agent wanted data and got the plan text instead. UA only, no IP.
+    // an agent wanted data and got the plan text instead. UA only, no IP; blob6 is
+    // the hashed client id so `after wall 1h` can follow this client.
     env.TRAFFIC.writeDataPoint({
-      blobs: ['mcp_denied', preview.userAgent, 'tools/call', 'preview_exhausted', toolName],
+      blobs: [
+        'mcp_denied',
+        preview.userAgent,
+        'tools/call',
+        'preview_exhausted',
+        toolName,
+        preview.clientId,
+      ],
       doubles: [1],
       indexes: ['mcp_denied'],
     });
@@ -543,7 +551,7 @@ export function buildMcpServer(
     {
       title: 'Sign in so this chat uses your gankdat plan',
       description:
-        "Connect the user's gankdat account (OAuth sign-in prompt in clients that support it, such as Claude): afterwards every tool answers with full pages and the account's credits instead of the preview. Returns the plan and usage once connected. Free to call.",
+        "Connect the user's gankdat account (OAuth sign-in prompt in clients that support it, such as Claude): afterwards every tool answers with full pages and the account's credits instead of the preview. Returns the plan and usage once connected. Free to call. No person to sign in? Call request_api_key with the user's email for a free key instead, or pay per call with no account at GET https://gankdat.com/x402/data/<source> (x402, USDC on Base).",
       inputSchema: {},
       annotations: { ...READ_ONLY, title: 'Sign in so this chat uses your gankdat plan' },
     },

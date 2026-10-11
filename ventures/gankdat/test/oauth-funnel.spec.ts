@@ -1,5 +1,10 @@
 import { describe, expect, it } from 'vitest';
-import { connectCallersNote, oauthFunnelNote } from '../src/lib/oauth-funnel';
+import {
+  afterWallNote,
+  connectCallersNote,
+  oauthFunnelNote,
+  toMillis,
+} from '../src/lib/oauth-funnel';
 
 // The two Daily numbers sentences of gankdat oauth-connect-funnel-check (2026-10-09), rendered
 // from Analytics Engine rows as metrics.mjs hands them over (numbers arrive as strings).
@@ -58,5 +63,44 @@ describe('connectCallersNote', () => {
       'connect_account 7d by UA: Claude-User/1.0 (claude.ai/ +https://anthropic.c 5, python-httpx/0.27 2, (no UA) 1',
     );
     expect(connectCallersNote([])).toBe('connect_account 7d by UA: none');
+  });
+});
+
+describe('afterWallNote', () => {
+  it('follows each wall-hitter for an hour and counts a client once per path', () => {
+    const note = afterWallNote(
+      [
+        { client: 'aaaa', ts: '2026-10-11 10:00:00' },
+        { client: 'aaaa', ts: '2026-10-11 10:05:00' },
+        { client: 'bbbb', ts: '2026-10-11 12:00:00' },
+        { client: 'cccc', ts: '2026-10-11 13:00:00' },
+        { client: '', ts: '2026-10-11 13:00:00' },
+      ],
+      [
+        { client: 'aaaa', ts: '2026-10-11 10:30:00', kind: 'request_api_key' },
+        { client: 'aaaa', ts: '2026-10-11 10:31:00', kind: 'request_api_key' },
+        { client: 'aaaa', ts: '2026-10-11 11:04:00', kind: 'connect' }, // 59 min after the second wall
+        { client: 'bbbb', ts: '2026-10-11 13:30:00', kind: 'x402' }, // 90 min: outside the hour
+        { client: 'bbbb', ts: '2026-10-11 11:59:00', kind: 'x402' }, // before the wall
+        { client: 'dddd', ts: '2026-10-11 13:10:00', kind: 'x402' }, // never hit the wall
+      ],
+    );
+    expect(note).toBe(
+      'after wall 1h (7d): 3 clients — request_api_key 1, x402 0, connect 1, gone 2',
+    );
+  });
+
+  it('reads as zeros when nobody hit the wall', () => {
+    expect(afterWallNote([], [])).toBe(
+      'after wall 1h (7d): 0 clients — request_api_key 0, x402 0, connect 0, gone 0',
+    );
+  });
+
+  it('reads Analytics Engine timestamps as UTC and epochs in seconds or milliseconds', () => {
+    expect(toMillis('2026-10-11 10:00:00')).toBe(Date.UTC(2026, 9, 11, 10));
+    expect(toMillis('2026-10-11T10:00:00Z')).toBe(Date.UTC(2026, 9, 11, 10));
+    expect(toMillis(1_791_000_000)).toBe(1_791_000_000_000);
+    expect(toMillis(1_791_000_000_000)).toBe(1_791_000_000_000);
+    expect(Number.isNaN(toMillis('yesterday'))).toBe(true);
   });
 });

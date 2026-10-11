@@ -489,6 +489,7 @@ describe('the 401 gate on /mcp', () => {
           'tools/call',
           'preview_exhausted',
           'query_uk_tenders',
+          await previewId('198.51.100.9', 'spent-budget'),
         ],
       }),
     );

@@ -1,5 +1,7 @@
 import { Hono } from 'hono';
+import { X402_DEFAULT_PRICE_USD } from '../lib/constants';
 import { failure } from '../lib/envelope';
+import { previewClientId } from '../mcp/preview';
 import { handleSourceQuery } from '../routes/data';
 import { listSources } from '../sources/registry';
 import type { AppEnv } from '../types';
@@ -18,7 +20,7 @@ import type { AppEnv } from '../types';
 // files ≈2.4 s of module evaluation (gankdat-test-setup, 2026-10-06) and weighs
 // on every Worker cold start while the lane ships dark.
 
-const DEFAULT_PRICE_USD = '$0.005';
+const DEFAULT_PRICE_USD = X402_DEFAULT_PRICE_USD;
 const DEFAULT_NETWORK = 'base';
 // x402-hono networks we accept as an override (it throws on anything else).
 const SUPPORTED_NETWORKS = new Set(['base', 'base-sepolia']);
@@ -85,9 +87,20 @@ export const x402Routes = new Hono<AppEnv>()
     if (paid && outcome.ok) {
       console.log(JSON.stringify({ level: 'info', event: 'x402_paid', path: c.req.path, price }));
       // Revenue analytics (90-day history via `npm run traffic`) — Workers
-      // Logs alone rotates out in days. UA names the paying agent.
+      // Logs alone rotates out in days. UA names the paying agent; blob6 is the
+      // same hashed IP+UA client id the preview wall writes, so the Daily numbers
+      // row can tell whether a wall-hitter came back here (`after wall 1h`,
+      // gankdat preview-wall-next-steps, 2026-10-11). No raw IP.
+      const userAgent = c.req.header('User-Agent') ?? '';
       c.env.TRAFFIC.writeDataPoint({
-        blobs: ['x402_paid', c.req.header('User-Agent') ?? '', c.req.path],
+        blobs: [
+          'x402_paid',
+          userAgent,
+          c.req.path,
+          '',
+          c.req.param('source') ?? '',
+          await previewClientId(c.req.header('CF-Connecting-IP') ?? 'unknown', userAgent),
+        ],
         doubles: [1],
         indexes: ['x402_paid'],
       });
