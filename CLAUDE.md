@@ -77,7 +77,16 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   triage and the weekly report read it and never escalate a match.
 - Work queue of record: `docs/pipeline/` (exchange + one queue per venture, see its README;
   `npm run pipeline` validates and prints the next item). Build the next item, mark it in the
-  same commit; an emptied queue gets `needs_research: true`.
+  same commit; an emptied queue gets `needs_research: true`. Items rank by score × the queue's
+  `weight` (owner 2026-10-11: a new income line outweighs improving a product that has not earned;
+  STRATEGY §5 table) — never re-rank by hand.
+- **Take, don't wait (owner 2026-10-11, STRATEGY §1):** money already on offer (prize pools, posted
+  bounties) is collected by doing the work well; research it from primary sources (the board's own
+  rules and amounts), never from money-making content. Rules that follow from the terms read on
+  2026-10-11: never scan or scrape Devpost (its Terms forbid automated access); every pull request on
+  another project says it was built with Claude Code and respects that project's contribution rules
+  (a project that forbids AI-assisted work is skipped); hackathon entries are submitted by the owner;
+  no security testing or vulnerability programmes, no card on a £0 line.
 - Owner overview: routines append one line per piece of work done to `docs/RUNS.md` (repo log).
   The owner's phone gets ONLY `| notify |` lines — new product version in a store, new product
   live, owner action needed — and `owner:` ALERTS lines; all short, plain, non-technical.
