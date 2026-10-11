@@ -6,7 +6,8 @@ name: store metrics
 # store-metrics-in-ci, 2026-09-30). Runs before that routine, which then only reads the row.
 # GitHub's cron is best-effort, so the job also runs on pushes to main, where it only writes a
 # row if today's is missing (STORE_METRICS_IF_MISSING). Since 2026-10-07 a second step adds the Search
-# Console reading (`search: …`) to the same rows and to gankdat's Daily numbers row.
+# Console reading (`search: …`) to the same rows and to gankdat's Daily numbers row; since 2026-10-11 a
+# third fills the extensions' Sales column from the licence Worker's KV records (`sales: …`).
 # Odd minute (foundry metrics-crons-off-the-half-hour, 2026-10-09): on `45 6` the scheduled run
 # started 12:52–15:17 UTC every day 10-04..10-08; GitHub delays crons on busy minutes most.
 on:
@@ -54,6 +55,18 @@ jobs:
         continue-on-error: true
         env:
           SEARCH_CONSOLE_KEY: ${{ secrets.SEARCH_CONSOLE_KEY }}
+          STORE_METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
+      - name: Licence sales on today's rows (keys issued and activations per extension)
+        # scripts/license-sales.ts (foundry metrics-extension-sales, 2026-10-11): lists the licence
+        # Worker's `license:*` records in the LICENSES KV namespace with the deploy token (the same
+        # CLOUDFLARE_API_TOKEN the gankdat jobs use; its template carries Workers KV Storage, action
+        # 003) and fills the Sales column + a `sales: …` clause on each extension's Daily check row.
+        # Without the scope the rows read `sales: n/a (<reason>)` — never a gap. continue-on-error for
+        # the same reason as the step above: the store rows must land whatever this one does.
+        run: node --disable-warning=ExperimentalWarning scripts/license-sales.ts
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           STORE_METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
       - name: Commit
         run: |
