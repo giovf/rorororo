@@ -2,8 +2,8 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-10",
-  "researched": "2026-10-09",
+  "updated": "2026-10-11",
+  "researched": "2026-10-11",
   "items": [
     {
       "id": "nhs-ods",
@@ -493,6 +493,46 @@
       "status": "done",
       "added": "2026-10-10",
       "done_at": "2026-10-10"
+    },
+    {
+      "id": "apify-lead-feed-client-restore",
+      "title": "Restore the uk-no-website-leads actor's own client (runLeadFeed) and make an unresolved actor import fail the gate",
+      "why": "Research 2026-10-11: Apify flagged faceless-api/uk-no-website-leads \"under maintenance\" on 2026-10-10 after three days of failed QA runs (run 0aYfr2UQ7cElJsLj0; INBOX 10-10 08:09). Cause is in git: 3ede4af (2026-10-07, the company-lookup build) rolled the shared single-source client into every actor folder, this one included, so apify/uk-no-website-leads/src/gankdat.mjs lost `runLeadFeed` (34d73aa, 09-21: three registers, website_present=false, one merged row shape) while main.mjs still imports it — every run since 10-07 dies at module load before Actor.init(). The byte-identical test excludes this folder for its row shape and no test resolves an actor's imports, so the gate was blind; the row counts the actor's 11 runs/30d without their outcome. Do: restore the feed's own client from 34d73aa (user agent 1.2 like the shared one), add a test that every name main.mjs imports from ./gankdat.mjs is exported by that folder's file (all folders, the lead feed included), push — publish-actors.mjs rebuilds the changed actor from CI and Apify's QA re-runs on the new build.",
+      "effort_days": 0.1,
+      "proof": "the maintenance flag is lifted and three consecutive QA runs of uk-no-website-leads succeed; the import test fails on a folder whose main.mjs imports a name its client lacks",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "apify-run-outcomes-reading",
+      "title": "Daily numbers row reads Apify run outcomes per actor and lists a failing actor under refresh errors",
+      "why": "Research 2026-10-11: both actor flags so far (uk-planning-applications 2026-09-25, uk-no-website-leads 2026-10-10) were learned from Apify's \"under maintenance\" mail after three days of failed runs, while the row's `apify 30d by actor` counted those runs as use — it reads the count and never the outcome. metrics.mjs already pages /v2/actor-runs for the 30-day split (apifyOwnRuns30d), and each run carries `status` (SUCCEEDED, FAILED, TIMED-OUT, ABORTED). Do: print `slug N (F failed)` per actor where F > 0 and, for an actor with ≥ 2 non-succeeded runs in the last 24 h (QA runs the prefilled input daily), add `apify-<slug> (N of M runs failed in 24 h: <last status message>)` to the refresh errors reading so scripts/refresh-errors-to-queue.ts files `refresh-apify-<slug>` by the existing two-of-four rule; tests on fixture run lists. Never fails the job; `n/a` without APIFY_TOKEN as today.",
+      "effort_days": 0.2,
+      "proof": "an actor whose runs start failing appears in the Daily numbers row the same day and a queue item exists before Apify's mail arrives",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "refresh-zero-records-evidence",
+      "title": "`refresh returned 0 records` names what the origin served (status, bytes, shape, first page URL)",
+      "why": "Research 2026-10-11: the 10-10 row lists uk-planning (refresh returned 0 records) and the 10-03 row listed uk-contract-awards with the same text; the guard (cache.ts:174, d1store.ts:595/743) throws when a stream yields nothing and says nothing about why — a 200 with an empty `entities` array (dataset renamed or filter changed upstream), a 5xx HTML page the parser skipped, or a truncated body all read identically, so neither night could be diagnosed from the row and the relay had to be asked the next day. Do: let a source's stream report the first page it read (URL, status, bytes, top-level keys or the first 80 chars) through the existing refresh context, and the zero-record error carry it — generic, in the store/cache layer, no per-dataset logic; a test per store with a fixture origin that answers 200 and an empty page; uk-planning and uk-contract-awards verified against the relay reading of 2026-10-11 (planning.data.gov.uk entity.json page 1).",
+      "effort_days": 0.15,
+      "proof": "the next zero-record night's refresh errors entry names the origin status and body shape so the fix item can be scoped from the row alone",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-11"
+    },
+    {
+      "id": "refresh-uk-planning-2026-10-11",
+      "title": "uk-planning: the planning.data.gov.uk planning-application dataset has been emptied (entity-count 0, alpha) — stale-origin handling and a weekly re-read",
+      "why": "Research 2026-10-11: the 10-10 Daily numbers row lists uk-planning (refresh returned 0 records) and the relay (gankdat-research-2026-10-11, 00:28 UTC) shows it is not transient: `GET https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=5&offset=0` answers 200 `{\"entities\":[],\"links\":{},\"count\":0}`, and /v1/health has uk-planning last refreshed 2026-10-09 05:01:52 while every other wave source refreshed on 10-10. The surface (88 REST calls and 13 Apify runs in 30 days) serves a stale snapshot. The second relay request `planning-origin-2026-10-11` reads the dataset page (`/dataset/planning-application.json`), a 2026 entry-date filter, offset 1000, the bulk CSV head and the dataset list: answered 00:40 UTC (`docs/relay/responses/planning-origin-2026-10-11/`): the dataset page `/dataset/planning-application.json` reports `\"entity-count\": 0`, `\"phase\": \"alpha\"`, `\"replacement-dataset\": \"\"` (consideration `planning-applications-decisions`), every entity query answers `count 0` (a 2026 entry-date filter, offset 1000, a geometry relation) and the bulk CSV at files.planning.data.gov.uk is 403 — the dataset has been emptied on the platform, not moved or re-parameterised. So this is stale-origin handling, not a parser fix: keep serving the 10-09 snapshot, make the state visible (a dated \"origin paused\" notice on /stats/uk-planning and in list_sources/health, the refresh error naming `origin dataset empty (entity-count 0)` instead of the bare zero-record text), and start the STRATEGY §7 clock in RESEARCH.md: the dataset still has 88 REST calls and 13 Apify runs in 30 days, so it is not retired yet; re-read the dataset page through the relay weekly (an item with not_before) and re-point only when entity-count moves or a replacement-dataset is named. Filed under the auto-filer's id (refresh-<slug>-<date>) so the 06:30 job extends this item with tomorrow's evidence rather than filing a twin.",
+      "effort_days": 0.2,
+      "proof": "an ok uk-planning refresh with records > 0 on two consecutive nights, or the source retired with the row and /stats saying so",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-11"
     }
   ]
 }

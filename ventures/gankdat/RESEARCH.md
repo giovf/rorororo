@@ -380,3 +380,56 @@ primary key — checked, left alone.
 backfill at all — then read the cron invocation itself (`$workers.outcome`, `$workers.event.cron`) rather than
 the slug: the needle reading only proves request lines are searchable, not that a structured
 `console.log(JSON.stringify({…}))` line without a `message` key is.
+
+## Research 2026-10-11 (pipeline starved — burn-down)
+
+Every open gankdat item was blocked (owner actions 020, 021) or dated (10-17 … 11-05), `npm run
+pipeline next` → null and the 48 h cooling from the 10-09 pass lapsed at midnight, so this is the
+research pass. Evidence: the 10-09 and 10-10 Daily numbers rows, the INBOX entry of 2026-10-10 08:09
+(Apify QA), the git history of the actor folders and the relay request `gankdat-research-2026-10-11`
+(planning origin, `/v1/health`, the flagged actor and its failed run — answered 00:30 UTC) and a second,
+`planning-origin-2026-10-11` (the dataset's own page, its bulk file and the dataset list).
+
+| Signal (2026-10-09 → 10-10) | Reading |
+| --- | --- |
+| Paying accounts / x402 paid | 0 / 0; still 1 real account |
+| MCP keyless traffic | 1,402–1,609 anon, 118–119 preview calls a day; `connect_account` wanted 5 a day; funnel 7d: 35–36 challenges, 0 authorize, 1 token (`refresh_token`, claude.ai — the owner's existing connection renewing, not a new connect) |
+| uk-trademark-journal | the 10-10 row is the first since 10-05 that does not list it under refresh errors, and `indexnow` went 15 → 41 URLs (facet pages re-enter the submission only after an `ok` journal refresh), so the 10-09 materialised-CTE backfill went through; `/v1/health` through the relay confirms it: `last_refreshed_at 2026-10-10 06:10:56`, 5 min 56 s into wave 7 — the first good night since 10-04 |
+| Refresh | 10-10: uk-insolvency (runner) `thegazette.co.uk responded 503 after 2 reads` — first 503, the source already retries a 5xx once; uk-planning `refresh returned 0 records` — first time for this source (uk-contract-awards read the same on 10-03) **and not transient**: at 00:28 UTC the origin still answers `entity.json?dataset=planning-application&limit=5` with 200 `{"entities":[],"count":0}` and `/v1/health` has uk-planning last refreshed 10-09 05:01, so the surface serves a stale snapshot until the origin or the source changes; the insolvency 503 is a single row the repeat rule owns |
+| Cost | new billing period from 10-10: ≈ US$0 overage, D1 0.0M writes / 49.7M reads a day |
+| Apify | 226 runs by others in 30 days, 18 users; `uk-no-website-leads` 11 runs/30d — **and flagged "under maintenance" on 10-10 after three days of failed QA runs** (run 0aYfr2UQ7cElJsLj0) |
+| Change feeds | `changes 7d: 0`; feeds 30d: 10 fetches, 3 user agents |
+| Search Console | `n/a (no SEARCH_CONSOLE_KEY secret; owner action 020)` |
+
+**The flagged actor, from git alone.** 34d73aa (2026-09-21) gave `uk-no-website-leads` its own client:
+`src/gankdat.mjs` exported `runLeadFeed` (three registers, `website_present=false`, one merged row
+shape). 3ede4af (2026-10-07, the company-lookup build) "rolled the shared client out to every actor
+folder" — this one included — so that file is now the single-source client (`runDatasetActor`,
+`runLookupActor`) and `main.mjs`'s `import { runLeadFeed } from './gankdat.mjs'` has no export to
+bind: every run since 10-07 dies at module load, before `Actor.init()`, which is exactly "three days
+of failed test runs" on 10-10. Nothing in the gate saw it — the byte-identical test excludes the folder
+because of its row shape, and no test resolves an actor's imports — and nothing in the row saw it
+either: `apify 30d by actor` counts runs without their outcome, so three days of failures (QA's and
+any buyer's) read as use. Apify's mail is the only detector, three days late, for the second time
+(uk-planning-applications 09-25, the lead feed 10-10). The fix is small (restore the feed's own
+client, add the import check) and the reading lever is the general one.
+
+**The relay's reading of the actor.** Apify's run 0aYfr2UQ7cElJsLj0 (`origin: TEST`, 10-09 20:20 UTC, 1.4 s,
+exit 1) logs `SyntaxError: The requested module './gankdat.mjs' does not provide an export named
+'runLeadFeed'` at `src/main.mjs:2` — the cause above, verbatim. The actor's public stats: 11 runs by 2
+users in 30 days, 9 succeeded (all before build 0.1.2 of 10-07 09:40), 2 failed since; `isDeprecated
+false`, still public, so a green build lifts the flag.
+
+Queued in `docs/pipeline/queues/gankdat.json`:
+
+| Item | Score | Why now |
+| --- | --- | --- |
+| `apify-lead-feed-client-restore` | 7 | the one shelf with outside users shows a broken actor again; cause known from git, fix ≤ 0.1 day, CI republishes on push |
+| `apify-run-outcomes-reading` | 5 | the metrics job already pages `/v2/actor-runs` (which carries `status`); print failed counts per actor and list an actor failing twice in a day under `refresh errors` so the repeat rule files the fix the day it starts, not when Apify writes |
+| `refresh-uk-planning-2026-10-11` | 6 | the origin's planning-application dataset is empty, not moved (relay `planning-origin-2026-10-11`, 00:40): `/dataset/planning-application.json` reports `entity-count 0`, `phase alpha`, `replacement-dataset ""`, every entity query (2026 entry dates, offset 1000, geometry) answers `count 0` and the bulk CSV is 403; the surface serves the 10-09 snapshot — decide stale-origin handling (notice on /stats and health, keep the snapshot, §7 timer) rather than a parser fix; filed under the auto-filer's id so tomorrow's row extends it |
+| `refresh-zero-records-evidence` | 4 | `refresh returned 0 records` (uk-contract-awards 10-03, uk-planning 10-10) says nothing about what the origin served — status, bytes, shape — so an outage and a renamed dataset read the same and neither night could be diagnosed from the row |
+
+Not queued: the uk-insolvency 503 (retried once already, a single row — the repeat rule owns it);
+more datasets, a pricing change, further listings (triggers unchanged since 10-05); the funnel (the
+bottom is still zero, the 10-09 instrumentation is the walk and the next signal is the 10-30 day-30
+directory read).

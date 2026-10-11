@@ -869,3 +869,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-10 17:34 | notify | One 3-minute GitHub token lets Claude open listing pull requests itself; steps in action 021
 - 2026-10-10 17:39 | burn-down | Exchange pre-research: uk-grants-360giving parked (Funds Online £450/yr rival, no actor; licence per publisher)
 - 2026-10-10 18:49 | notify | 3 jobs for your next Claude Code session, oldest 6 days: sign and upload ReadFocus 0.3.0
+- 2026-10-11 00:35 | burn-down | Research gankdat: starved queue, 10-09/10-10 rows read; journal refresh back, cf overage US$0 in new period
+- 2026-10-11 00:35 | burn-down | Found via git: 10-07 shared-client rollout erased uk-no-website-leads' runLeadFeed; Apify flagged it 10-10
+- 2026-10-11 00:35 | burn-down | Queued apify-lead-feed-client-restore (7), apify-run-outcomes-reading (5), refresh-zero-records-evidence (4)
+- 2026-10-11 00:35 | burn-down | Relay request gankdat-research-2026-10-11: planning origin, /v1/health, flagged actor and its failed run
+- 2026-10-11 00:42 | burn-down | Relay: journal refreshed 10-10 06:10; planning dataset emptied upstream (entity-count 0); queued refresh-uk-planning (6)

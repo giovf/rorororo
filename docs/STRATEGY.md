@@ -999,3 +999,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `docs/relay/prs/` becomes a fork pull request from CI, so directory listings (Docker MCP
   Catalog first) and upstream fixes no longer wait for the interactive session; one owner token
   (action 021) arms it.
+- 2026-10-11 burn-down: gankdat research pass (starved queue) — the 2026-10-07 shared-client rollout
+  silently broke the Apify lead-feed actor (its entry function vanished; Apify flagged it 10-10), so the
+  queue gains the restore (7), the uk-planning origin now answering zero entities (6), a per-actor run-outcome reading so a failing actor is seen the day it
+  fails rather than when Apify mails (5), and evidence in the zero-record refresh error (4).
