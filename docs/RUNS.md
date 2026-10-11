@@ -932,3 +932,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 17:28 | burn-down | REST orders/capture/return, MCP buy_credits + confirm_credit_purchase, /account packs, terms, 10 tests
 - 2026-10-11 17:28 | burn-down | Hackathon package: SUBMISSION.md, agent WALKTHROUGH.md, DEMO-SCRIPT.md, walkthrough script, action 023
 - 2026-10-11 17:28 | burn-down | Queue: hackathons paypal-ai-hackathon-entry done; submit item blocked on the demo video + owner form
+- 2026-10-11 17:34 | burn-down | Stopping for time: 1 item built this slot; next is hackathons demo-video-pipeline (6 × 2)
