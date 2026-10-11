@@ -9,6 +9,15 @@
 // `"/bounty $" in:comments` over the last 90 days plus the label search, de-duplicated, with the
 // amount read from labels, the body and (for the shortlist) the comments.
 //
+// Funding and competition (build 2026-10-11, oss-bounties `bounty-scanner-funding-and-taken`): the first
+// board's top three were a $3,000 issue already assigned with a PR submitted, a "$650" that a contributor
+// had asked for and nobody funded, and an $80 issue with two PRs open; the omi "$250" rows were the issue
+// authors' own "bounty proposals". So a `$N` counts as funded only when it comes from a label, from the
+// bounty bot, or from a maintainer (the issue's author or a `/bounty` commenter with OWNER, MEMBER or
+// COLLABORATOR association) and the text is not a proposal; everything else is "proposed" and dropped.
+// The shortlist also reads assignees and the timeline's open linked PRs: a taken issue stays on the board
+// (ranked down by its competition) but is never filed as a queue item.
+//
 // Run: npm run bounties [-- --date=YYYY-MM-DD]   (GITHUB_TOKEN in CI; `gh auth token` locally)
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
 import { execSync } from 'node:child_process';
@@ -47,6 +56,26 @@ export interface Repo {
   description: string | null;
 }
 
+export type Funding = 'funded' | 'proposed' | 'none';
+/** GitHub `author_association` values that mean the writer can fund a bounty on the repository. */
+export const MAINTAINER = new Set(['OWNER', 'MEMBER', 'COLLABORATOR']);
+/** Text that offers or asks for a bounty rather than posting one. */
+export const PROPOSAL_RE =
+  /propos|suggest|request(ing|ed)? (a )?bounty|would (like|love) (a )?bounty|asking for|if (a |the )?bounty/i;
+
+export interface IssueText {
+  title: string;
+  body: string;
+  labels: string[];
+  /** `author_association` of the issue author. */
+  author_association: string;
+}
+export interface Comment {
+  body: string;
+  login: string;
+  author_association: string;
+}
+
 export interface Bounty {
   repo: string;
   number: number;
@@ -58,6 +87,11 @@ export interface Bounty {
   amount: number;
   /** `/attempt` or `/claim` comments seen (0 when comments were not read). */
   attempts: number;
+  funding: Funding;
+  /** The issue has an assignee. */
+  assigned: boolean;
+  /** Open pull requests linked to the issue (timeline cross-references); 0 when not read. */
+  prs: number;
   stars: number;
   language: string | null;
   license: string | null;
@@ -74,6 +108,63 @@ export function parseAmount(texts: string[]): number {
     }
   }
   return best;
+}
+
+/**
+ * Amount and provenance. Funded: a `$N` in a label, in the bounty bot's comment, in a maintainer's
+ * `/bounty` command, or in a maintainer's own issue text; a labelled bounty issue is funded whatever
+ * its author's association (the bot only labels what it holds). Proposed: a `$N` written by anyone
+ * else, or any text that reads as a proposal or a request. The largest funded figure wins; a proposed
+ * figure is reported only when nothing funded it.
+ */
+export function fundingOf(
+  issue: IssueText,
+  comments: Comment[],
+): { amount: number; funding: Funding } {
+  const funded: string[] = [...issue.labels];
+  const proposed: string[] = [];
+  const own = `${issue.title}\n${issue.body}`;
+  const labelled = issue.labels.some((l) => /bounty/i.test(l));
+  const ownIsProposal = PROPOSAL_RE.test(own);
+  if ((labelled || MAINTAINER.has(issue.author_association)) && !ownIsProposal) funded.push(own);
+  else proposed.push(own);
+  for (const c of comments) {
+    const body = c.body ?? '';
+    if (!/bounty/i.test(body)) continue;
+    const bot = /\[bot\]$/.test(c.login) || /^algora/i.test(c.login);
+    const command = /^\s*\/bounty\b/m.test(body);
+    if (bot || (command && MAINTAINER.has(c.author_association) && !PROPOSAL_RE.test(body))) {
+      funded.push(body);
+    } else {
+      proposed.push(body);
+    }
+  }
+  const amount = parseAmount(funded);
+  if (amount > 0) return { amount, funding: 'funded' };
+  const asked = parseAmount(proposed);
+  return asked > 0 ? { amount: asked, funding: 'proposed' } : { amount: 0, funding: 'none' };
+}
+
+export interface TimelineEvent {
+  event: string;
+  source?: { issue?: { state?: string; pull_request?: unknown } };
+}
+
+/** Open pull requests that reference the issue (GitHub's "Development" links arrive as cross-references). */
+export function openPrs(events: TimelineEvent[]): number {
+  return events.filter(
+    (e) =>
+      e.event === 'cross-referenced' &&
+      e.source?.issue?.pull_request !== undefined &&
+      e.source.issue.state === 'open',
+  ).length;
+}
+
+/** What stands between a new claim and the money: `free`, `assigned`, or the open PRs. */
+export function takenBy(b: Pick<Bounty, 'assigned' | 'prs'>): string {
+  if (b.assigned) return 'assigned';
+  if (b.prs > 0) return `${b.prs} PR${b.prs === 1 ? '' : 's'} open`;
+  return 'free';
 }
 
 export function repoExcluded(repo: Repo, today: string): string | undefined {
@@ -97,16 +188,21 @@ export function daysBetween(a: string, b: string): number {
   return Math.round((Date.parse(`${b}T00:00:00Z`) - Date.parse(`${a}T00:00:00Z`)) / 86_400_000);
 }
 
-/** amount × language fit ÷ (1 + age in months): a fresh $400 TypeScript issue outranks an old $700 one. */
+/**
+ * amount × language fit ÷ (1 + age in months) ÷ (1 + competition): a fresh $400 TypeScript issue
+ * outranks an old $700 one, and one with two PRs open ranks a third of a free one. Competition is
+ * the open linked PRs plus one when the issue is assigned.
+ */
 export function rankOf(
   amount: number,
   language: string | null,
   created: string,
   today: string,
+  competition = 0,
 ): number {
   const fit = language && PREFERRED_LANGUAGES.has(language) ? 1 : 0.4;
   const age = Math.max(0, daysBetween(created.slice(0, 10), today));
-  return Math.round((amount * fit) / (1 + age / 30));
+  return Math.round((amount * fit) / (1 + age / 30) / (1 + Math.max(0, competition)));
 }
 
 export function renderBoard(
@@ -118,7 +214,7 @@ export function renderBoard(
     .slice(0, BOARD_SIZE)
     .map(
       (b) =>
-        `| $${b.amount} | ${b.rank} | [${b.repo}](https://github.com/${b.repo}) (${b.stars}★, ${b.language ?? '—'}, ${b.license ?? 'no licence'}) | [#${b.number}](${b.url}) ${b.title.replaceAll('|', '\\|').slice(0, 90)} | ${daysBetween(b.created_at.slice(0, 10), today)} d | ${b.attempts} |`,
+        `| $${b.amount} | ${b.rank} | [${b.repo}](https://github.com/${b.repo}) (${b.stars}★, ${b.language ?? '—'}, ${b.license ?? 'no licence'}) | [#${b.number}](${b.url}) ${b.title.replaceAll('|', '\\|').slice(0, 90)} | ${daysBetween(b.created_at.slice(0, 10), today)} d | ${takenBy(b)} | ${b.attempts} |`,
     );
   const dropped = Object.entries(stats.dropped)
     .sort((a, b) => b[1] - a[1])
@@ -129,12 +225,14 @@ export function renderBoard(
 Written daily by \`scripts/bounty-scanner.ts\` (\`.github/workflows/bounty-board.yml\`) from GitHub's search API:
 open issues that received a \`/bounty $N\` command in the last ${LOOKBACK_DAYS} days or carry a bounty label. Feature and
 bug-fix work only: sandbox and security repositories and issues that read as security findings are dropped by
-rule. Rank = amount × language fit ÷ (1 + age in months). The top ${FILE_TOP} become \`oss-bounties\` queue items.
+rule. Only money a maintainer, the bounty bot or a label posted counts; a contributor's "bounty proposal" is dropped.
+Rank = amount × language fit ÷ (1 + age in months) ÷ (1 + open PRs + assigned). Taken says what stands between a new
+claim and the money; the top ${FILE_TOP} free ones become \`oss-bounties\` queue items.
 
 Read ${stats.raw} issues, kept ${stats.kept}; dropped: ${dropped || 'none'}.
 
-| Amount | Rank | Repository | Issue | Age | Attempts |
-| --- | --- | --- | --- | --- | --- |
+| Amount | Rank | Repository | Issue | Age | Taken | Attempts |
+| --- | --- | --- | --- | --- | --- | --- |
 ${rows.join('\n')}
 `;
 }
@@ -143,7 +241,10 @@ export function itemId(b: Bounty): string {
   return `bounty-${b.repo.toLowerCase().replace(/[^a-z0-9]+/g, '-')}-${b.number}`;
 }
 
-/** Files the top bounties as queue items, idempotent on id; blocked until CI can push a fork. */
+/**
+ * Files the top free bounties (no assignee, no open PR) as queue items, idempotent on id; blocked
+ * until CI can push a fork.
+ */
 export function fileBounties(
   queue: Queue,
   bounties: Bounty[],
@@ -152,13 +253,13 @@ export function fileBounties(
 ): { queue: Queue; added: string[] } {
   const items = queue.items.map((it) => ({ ...it }));
   const added: string[] = [];
-  for (const b of bounties.slice(0, FILE_TOP)) {
+  for (const b of bounties.filter((x) => takenBy(x) === 'free').slice(0, FILE_TOP)) {
     const id = itemId(b);
     if (items.some((it) => it.id === id)) continue;
     const item: QueueItem = {
       id,
       title: `Bounty $${b.amount} on ${b.repo}#${b.number}: ${b.title.slice(0, 100)} — fork, fix with tests in the project's conventions, open the PR with \`/claim #${b.number}\` and a plain note on how it was built`,
-      why: `Filed by the bounty scanner (${today}, docs/bounties/BOARD.md): $${b.amount} posted on ${b.url}; ${b.repo} has ${b.stars} stars, ${b.language ?? 'no main language'}, ${b.license ?? 'no licence file'}, ${b.attempts} attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.`,
+      why: `Filed by the bounty scanner (${today}, docs/bounties/BOARD.md): $${b.amount} posted on ${b.url} by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); ${b.repo} has ${b.stars} stars, ${b.language ?? 'no main language'}, ${b.license ?? 'no licence file'}, ${b.attempts} attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.`,
       effort_days: EFFORT_DAYS,
       proof: 'PR merged and the bounty paid (revenue row in docs/LEDGER.md)',
       score: SCORE,
@@ -213,6 +314,8 @@ interface SearchItem {
   labels: { name: string }[];
   body: string | null;
   comments: number;
+  author_association?: string;
+  assignees?: { login: string }[];
 }
 
 async function search(tok: string, q: string, pages: number): Promise<SearchItem[]> {
@@ -247,6 +350,7 @@ async function main(): Promise<void> {
     dropped[why] = (dropped[why] ?? 0) + 1;
   };
   const repos = new Map<string, Repo | undefined>();
+  const authors = new Map<string, string>();
   const kept: Bounty[] = [];
   for (const it of raw.values()) {
     const full = it.repository_url.replace('https://api.github.com/repos/', '');
@@ -286,7 +390,16 @@ async function main(): Promise<void> {
       drop(rwhy);
       continue;
     }
-    const amount = parseAmount([...labels, it.title, it.body ?? '']);
+    const first = fundingOf(
+      {
+        title: it.title,
+        body: it.body ?? '',
+        labels,
+        author_association: it.author_association ?? 'NONE',
+      },
+      [],
+    );
+    authors.set(it.html_url, it.author_association ?? 'NONE');
     kept.push({
       repo: full,
       number: it.number,
@@ -295,29 +408,59 @@ async function main(): Promise<void> {
       created_at: it.created_at,
       labels,
       body: it.body ?? '',
-      amount,
+      amount: first.amount,
       attempts: 0,
+      funding: first.funding,
+      assigned: (it.assignees?.length ?? 0) > 0,
+      prs: 0,
       stars: repo.stargazers_count,
       language: repo.language,
       license: repo.license,
       rank: 0,
     });
   }
-  // Comments carry the bot's `$N bounty` line and the attempts; read them for the shortlist only.
+  // Comments carry the bot's `$N bounty` line, who posted it and the attempts; the timeline carries
+  // the linked PRs. Both are read for the shortlist only (two calls per issue).
   kept.sort((a, b) => b.amount - a.amount || a.created_at.localeCompare(b.created_at));
   for (const b of kept.slice(0, SHORTLIST)) {
-    const comments = await gh<{ body: string }[]>(
-      tok,
-      `https://api.github.com/repos/${b.repo}/issues/${b.number}/comments?per_page=100`,
-    ).catch(() => []);
-    const texts = comments.map((c) => c.body ?? '');
-    b.amount = Math.max(b.amount, parseAmount(texts.filter((t) => /bounty/i.test(t))));
-    b.attempts = texts.filter((t) => /^\s*\/(attempt|claim)\b/m.test(t)).length;
+    const comments = await gh<
+      { body: string | null; user?: { login?: string }; author_association?: string }[]
+    >(tok, `https://api.github.com/repos/${b.repo}/issues/${b.number}/comments?per_page=100`).catch(
+      () => [],
+    );
+    const read: Comment[] = comments.map((c) => ({
+      body: c.body ?? '',
+      login: c.user?.login ?? '',
+      author_association: c.author_association ?? 'NONE',
+    }));
+    const f = fundingOf(
+      {
+        title: b.title,
+        body: b.body,
+        labels: b.labels,
+        author_association: authors.get(b.url) ?? 'NONE',
+      },
+      read,
+    );
+    b.amount = f.amount;
+    b.funding = f.funding;
+    b.attempts = read.filter((c) => /^\s*\/(attempt|claim)\b/m.test(c.body)).length;
+    b.prs = openPrs(
+      await gh<TimelineEvent[]>(
+        tok,
+        `https://api.github.com/repos/${b.repo}/issues/${b.number}/timeline?per_page=100`,
+      ).catch(() => []),
+    );
   }
   const board = kept
-    .filter((b) => b.amount > 0)
-    .map((b) => ({ ...b, rank: rankOf(b.amount, b.language, b.created_at, today) }));
-  const noAmount = kept.length - board.length;
+    .filter((b) => b.funding === 'funded' && b.amount > 0)
+    .map((b) => ({
+      ...b,
+      rank: rankOf(b.amount, b.language, b.created_at, today, b.prs + (b.assigned ? 1 : 0)),
+    }));
+  const proposedOnly = kept.filter((b) => b.funding === 'proposed').length;
+  if (proposedOnly) dropped['proposed, not funded'] = proposedOnly;
+  const noAmount = kept.length - board.length - proposedOnly;
   if (noAmount) dropped['no amount found'] = noAmount;
   board.sort((a, b) => b.rank - a.rank || b.amount - a.amount);
   mkdirSync(path.dirname(BOARD_FILE), { recursive: true });

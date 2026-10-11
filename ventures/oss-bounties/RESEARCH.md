@@ -28,6 +28,31 @@ language and conventions.
   $3,000 (tenstorrent/tt-metal, Python), $1,219 (Arrow-air, a hardware report — poor fit), $650
   (tursodatabase/turso, Rust).
 
+### 2a. What the first board taught (2026-10-11, build run, read on github.com)
+
+The board's amounts were not all money on offer, and the money on offer was not all free to claim:
+
+- tenstorrent/tt-metal#59732 ($3,000, a real Tenstorrent bounty): assigned on 10-08, a PR submitted by
+  10-11, and the acceptance criteria require runs on Wormhole and Blackhole hardware. Dropped.
+- tursodatabase/turso#8749 ("$650"): a contributor wrote `/bounty $650` on 09-18 asking to be paid; no
+  maintainer or bot funded it. One `/attempt`, two more offers. Dropped — nothing is posted.
+- Arrow-air/project-quiver#256 ($1,219): a platform-engineering report for a hardware project — not code
+  with tests. Dropped.
+- SUSU-LABS/susu-indexer#37 ($80, posted by the maintainer): two PRs open within two days, payout terms
+  unstated, wallet addresses in the comments. Not taken.
+- BasedHardware/omi "$250"/"$50" rows: the issue authors' own "bounty proposals", each with the author's
+  PR already open.
+
+Every funded issue read had at least one agent-written PR or comment within days (one account posted
+near-identical "verified patch" comments with payout details on four of the threads read). So the
+scanner now (a) counts a `$N` as funded only when a label, the bounty bot or a maintainer (OWNER,
+MEMBER or COLLABORATOR) posted it and the text is not a proposal — contributor proposals are dropped
+as `proposed, not funded`; (b) reads assignees and the timeline's open linked PRs, shows them in a
+`Taken` column, divides the rank by (1 + open PRs + assigned) and files only free issues. Expect the
+next board to be much shorter than 56 rows; if it is empty for a week, the line's thesis (speed and
+tests win) is wrong and the kill rule applies early. Algora's own site is unreachable from the sandbox
+(DNS), so GitHub stays the only source.
+
 ## 3. Validation gate
 
 - Buyers with money: the amount is posted on the issue before any work starts.
@@ -53,3 +78,4 @@ payout in 60 days → `finished`.
 | 2026-10-11 | Validated | — | — | — | 553 open labelled bounties; scanner queued; PR_TOKEN and sign-in pending |
 | 2026-10-11 | Board | — | — | — | first board: 498 read, 56 kept; three items filed (blocked on actions 021/022) |
 | 2026-10-11 | Unblocked | — | — | — | PR_TOKEN present, owner signed in to the board; first bounty PR is buildable |
+| 2026-10-11 | No claim | — | — | — | top three unbuildable (assigned + hardware, unfunded request, report); scanner now marks funding and taken; first-bounty-pr blocked on a free funded row |
