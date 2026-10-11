@@ -513,8 +513,9 @@
       "effort_days": 0.2,
       "proof": "an actor whose runs start failing appears in the Daily numbers row the same day and a queue item exists before Apify's mail arrives",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-11"
+      "status": "doing",
+      "added": "2026-10-11",
+      "doing_since": "2026-10-11"
     },
     {
       "id": "refresh-zero-records-evidence",
