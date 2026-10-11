@@ -501,8 +501,9 @@
       "effort_days": 0.1,
       "proof": "the maintenance flag is lifted and three consecutive QA runs of uk-no-website-leads succeed; the import test fails on a folder whose main.mjs imports a name its client lacks",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-11"
+      "status": "doing",
+      "added": "2026-10-11",
+      "doing_since": "2026-10-11"
     },
     {
       "id": "apify-run-outcomes-reading",
