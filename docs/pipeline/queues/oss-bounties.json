@@ -20,12 +20,11 @@
     {
       "id": "first-bounty-pr",
       "title": "First bounty: take the scanner's top-ranked issue, fork, fix with tests in the project's conventions, open the PR with `/claim #<issue>` and a plain note on how it was built, then track it to merge",
-      "why": "The posted amount is the proof of demand; a merged PR is the whole sale. Needs PR_TOKEN (action 021) to push the fork from CI and the board sign-in (action 022) so the claim resolves to the owner's account.",
+      "why": "The posted amount is the proof of demand; a merged PR is the whole sale. Needs PR_TOKEN (action 021) to push the fork from CI and the board sign-in (action 022) so the claim resolves to the owner's account. Unblocked 2026-10-11: PR_TOKEN present and the owner signed in to the board with their GitHub account.",
       "effort_days": 1,
       "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
       "score": 9,
-      "status": "blocked",
-      "blocked_on": "owner action 022 (board sign-in with the owner's GitHub account); PR_TOKEN is in place since 2026-10-11",
+      "status": "todo",
       "added": "2026-10-11"
     },
     {
@@ -41,35 +40,32 @@
     {
       "id": "bounty-tenstorrent-tt-metal-59732",
       "title": "Bounty $3000 on tenstorrent/tt-metal#59732: [Bounty $3,000] Fix ttnn.sampling distribution bias from low-precision random threshold — fork, fix with tests in the project's conventions, open the PR with `/claim #59732` and a plain note on how it was built",
-      "why": "Filed by the bounty scanner (2026-10-11, docs/bounties/BOARD.md): $3000 posted on https://github.com/tenstorrent/tt-metal/issues/59732; tenstorrent/tt-metal has 1697 stars, Python, Apache-2.0, 1 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.",
+      "why": "Filed by the bounty scanner (2026-10-11, docs/bounties/BOARD.md): $3000 posted on https://github.com/tenstorrent/tt-metal/issues/59732; tenstorrent/tt-metal has 1697 stars, Python, Apache-2.0, 1 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped. Unblocked 2026-10-11: PR_TOKEN present and the owner signed in to the board with their GitHub account.",
       "effort_days": 1,
       "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
       "score": 7,
-      "status": "blocked",
-      "added": "2026-10-11",
-      "blocked_on": "owner action 022 (board sign-in with the owner's GitHub account); PR_TOKEN is in place since 2026-10-11"
+      "status": "todo",
+      "added": "2026-10-11"
     },
     {
       "id": "bounty-tursodatabase-turso-8749",
       "title": "Bounty $650 on tursodatabase/turso#8749: An expression index under a LEFT JOIN reads NULL, so a GROUP BY gives one row — fork, fix with tests in the project's conventions, open the PR with `/claim #8749` and a plain note on how it was built",
-      "why": "Filed by the bounty scanner (2026-10-11, docs/bounties/BOARD.md): $650 posted on https://github.com/tursodatabase/turso/issues/8749; tursodatabase/turso has 24715 stars, Rust, MIT, 1 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.",
+      "why": "Filed by the bounty scanner (2026-10-11, docs/bounties/BOARD.md): $650 posted on https://github.com/tursodatabase/turso/issues/8749; tursodatabase/turso has 24715 stars, Rust, MIT, 1 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped. Unblocked 2026-10-11: PR_TOKEN present and the owner signed in to the board with their GitHub account.",
       "effort_days": 1,
       "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
       "score": 7,
-      "status": "blocked",
-      "added": "2026-10-11",
-      "blocked_on": "owner action 022 (board sign-in with the owner's GitHub account); PR_TOKEN is in place since 2026-10-11"
+      "status": "todo",
+      "added": "2026-10-11"
     },
     {
       "id": "bounty-arrow-air-project-quiver-256",
       "title": "Bounty $1219 on Arrow-air/project-quiver#256: T-09: Platform Engineering Report, the decision register from PT1 to the 2026 dev kit — fork, fix with tests in the project's conventions, open the PR with `/claim #256` and a plain note on how it was built",
-      "why": "Filed by the bounty scanner (2026-10-11, docs/bounties/BOARD.md): $1219 posted on https://github.com/Arrow-air/project-quiver/issues/256; Arrow-air/project-quiver has 555 stars, HTML, CERN-OHL-S-2.0, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.",
+      "why": "Filed by the bounty scanner (2026-10-11, docs/bounties/BOARD.md): $1219 posted on https://github.com/Arrow-air/project-quiver/issues/256; Arrow-air/project-quiver has 555 stars, HTML, CERN-OHL-S-2.0, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped. Unblocked 2026-10-11: PR_TOKEN present and the owner signed in to the board with their GitHub account.",
       "effort_days": 1,
       "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
       "score": 7,
-      "status": "blocked",
-      "added": "2026-10-11",
-      "blocked_on": "owner action 022 (board sign-in with the owner's GitHub account); PR_TOKEN is in place since 2026-10-11"
+      "status": "todo",
+      "added": "2026-10-11"
     }
   ]
 }

@@ -30,24 +30,23 @@
     {
       "id": "paypal-ai-hackathon-entry",
       "title": "PayPal AI Hackathon entry (closes 2026-11-12, $67,500 pool): a PayPal sandbox checkout for gankdat credits (Orders API, sandbox only) beside Stripe and x402, an agent walkthrough where Claude buys and spends credits through the MCP server, the Devpost write-up, repo link and demo video",
-      "why": "RESEARCH §2: existing projects qualify with meaningful progress in the period, the PayPal integration must be central and AI meaningful — gankdat is already an AI-agent data product with two payment rails, so the sandbox rail is the whole new work. Prize tiers $12k / $8k / $5k plus category awards. Needs the owner's Devpost and PayPal developer sandbox accounts (action 022); the owner submits the package.",
+      "why": "RESEARCH §2: existing projects qualify with meaningful progress in the period, the PayPal integration must be central and AI meaningful — gankdat is already an AI-agent data product with two payment rails, so the sandbox rail is the whole new work. Prize tiers $12k / $8k / $5k plus category awards. Needs the owner's Devpost and PayPal developer sandbox accounts (action 022); the owner submits the package. Unblocked 2026-10-11: owner registered on Devpost and joined the hackathon; PayPal sandbox client id and secret are in .env and set as Worker secrets PAYPAL_SANDBOX_CLIENT_ID / PAYPAL_SANDBOX_SECRET (interactive). Sandbox only: no live PayPal money moves.",
       "effort_days": 2,
       "proof": "submission accepted on Devpost before the deadline; any placing is the venture's proof",
       "score": 9,
-      "status": "blocked",
-      "blocked_on": "owner action 022: Devpost account and PayPal developer sandbox credentials (sandbox client id/secret in .env)",
+      "status": "todo",
       "added": "2026-10-11"
     },
     {
       "id": "nebius-nvidia-hackathon-entry",
       "title": "Nebius × NVIDIA hackathon entry (closes 2026-10-30, $50,000 pool): a UK counterparty due-diligence agent on a Nemotron model served by Nebius Token Factory, using gankdat's MCP tools (companies, insolvency, sanctions, sponsors, charities) with a one-page report output; write-up, repo, demo video",
-      "why": "RESEARCH §2: the only hard rule is running on Nebius with an NVIDIA open model; the 'best apps and agents' track wants something people would use. The agent is a thin orchestration over tools that already exist. Needs the owner's Devpost and Nebius accounts (action 022; drop if Nebius asks for a card).",
+      "why": "RESEARCH §2: the only hard rule is running on Nebius with an NVIDIA open model; the 'best apps and agents' track wants something people would use. The agent is a thin orchestration over tools that already exist. Needs the owner's Devpost and Nebius accounts (action 022; drop if Nebius asks for a card). Dropped 2026-10-11: Nebius sign-up asked for a credit card (owner); the ledger rule allows no card on a £0 line.",
       "effort_days": 1.5,
       "proof": "submission accepted on Devpost before the deadline",
       "score": 8,
-      "status": "blocked",
-      "blocked_on": "owner action 022: Devpost and Nebius Token Factory accounts (API key in .env)",
-      "added": "2026-10-11"
+      "status": "dropped",
+      "added": "2026-10-11",
+      "done_at": "2026-10-11"
     }
   ]
 }

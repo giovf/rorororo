@@ -5,10 +5,9 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (1)
+## Requests (0)
 
-1. **four free accounts for the prize and bounty lines** — ~15 min, since 2026-10-11; unblocks hackathons `paypal-ai-hackathon-entry` (9), hackathons `nebius-nvidia-hackathon-entry` (8), oss-bounties `first-bounty-pr` (9), oss-bounties `bounty-tenstorrent-tt-metal-59732` (7), oss-bounties `bounty-tursodatabase-turso-8749` (7), oss-bounties `bounty-arrow-air-project-quiver-256` (7). Steps: [022](actions/022-prize-and-bounty-accounts.md).
-   four free accounts for the prize and bounty lines (Devpost, PayPal sandbox, Nebius, Algora), ~15 min, £0 — docs/for-owner/actions/022-prize-and-bounty-accounts.md
+Nothing is waiting on you.
 
 ## Waiting on an attended Claude session, not you (3)
 

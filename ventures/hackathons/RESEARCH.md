@@ -19,7 +19,7 @@ Devpost's public API (`GET devpost.com/api/hackathons?status[]=open&challenge_ty
 | Hackathon | Pool | Submissions close | What it requires | Fit |
 | --- | --- | --- | --- | --- |
 | PayPal AI Hackathon | $67,500 (1st $12k, 2nd $8k, 3rd $5k + category prizes) | 2026-11-12 | integrate the PayPal developer platform (free sandbox) + AI; new or existing projects with meaningful progress during the period; functional demo | **high** — gankdat sells data to agents; a PayPal sandbox checkout for credits + the MCP server is "agentic commerce" end to end |
-| Nebius × NVIDIA Global AI Hackathon | $50,000 (grand $20k, 2nd $10k, 3rd $6k + track awards) | 2026-10-30 | run on Nebius Token Factory / AI Cloud with at least one NVIDIA open model; tracks: coding & agentic engineering, best apps & agents, personal AI | **high** — a due-diligence agent on Nemotron over gankdat's MCP tools (UK registers) is a working app, not a toy |
+| Nebius × NVIDIA Global AI Hackathon | $50,000 (grand $20k, 2nd $10k, 3rd $6k + track awards) | 2026-10-30 | run on Nebius Token Factory / AI Cloud with at least one NVIDIA open model | **dropped 2026-10-11** — Nebius sign-up asked the owner for a credit card; no card on a £0 line |
 | GitLab "Life After Code" | $45,000 | 2026-10-27 | GitLab Duo Agent Platform features; Path B needs an MIT-licensed project (this repo is GPL-3) | low — Duo access and a licence mismatch |
 | Amazon Developer Hackathon | $138,000 | 2026-10-23 | Fire TV / Alexa tracks | none |
 | Meta VR Start | $1,000,000 | 2026-11-18 | AR/VR | none |
@@ -63,3 +63,4 @@ submissions with no placing and no judge feedback → `finished`.
 | Date | Event | Users | Rating | Sales | Notes |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-11 | Validated | — | — | — | 38 open online hackathons on Devpost; two high-fit entries queued; owner action 022 (accounts) |
+| 2026-10-11 | Accounts | — | — | — | owner on Devpost + joined PayPal AI; PayPal sandbox keys set; Nebius dropped (card required) |

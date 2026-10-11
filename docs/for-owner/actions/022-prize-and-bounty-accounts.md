@@ -1,7 +1,7 @@
 # Owner action request #022 — accounts for the two new income lines
 
 - **Date:** 2026-10-11
-- **Status:** pending
+- **Status:** done 2026-10-11 except #3 (Nebius asked for a card — entry dropped)
 - **Your time:** ~15 minutes
 - **Cost:** £0.00 (if any sign-up asks for a card, stop and tell me — the ledger rule is net outlay ≤ £100)
 - **Blocks:** hackathons `paypal-ai-hackathon-entry` (9), `nebius-nvidia-hackathon-entry` (8); oss-bounties `first-bounty-pr` (9)
