@@ -335,6 +335,14 @@
       "status": "parked",
       "trigger": "x402-aggregator-mcp live and 100 paid calls a day through it (we would be our own first facilitator customer)",
       "added": "2026-10-11"
+    },
+    {
+      "id": "x402-bazaar-listing",
+      "title": "List gankdat's 17 pay-per-call endpoints in the x402 Bazaar (Coinbase CDP facilitator discovery): route keys with method + path, a description, mime type and input schema per register, then the first settled call indexes them",
+      "why": "Pre-research 2026-10-11 (burn-down, WebSearch of the primary docs): the Bazaar is the catalogue agents query for x402-paid services (CDP `discover-services`, `list-bazaar-resources` MCP tool). Listing is automatic — no form, no fee: a seller behind the CDP facilitator (ours, live on Base) configures discovery metadata on each route (explicit `GET /x402/data/<slug>`, description, mimeType, input schema; `validate-endpoint` dry-runs it without paying) and the first successful settled call indexes the resource (docs.cdp.coinbase.com/x402/seller/get-discovered, /x402/bazaar). Size: ~16k resources in the catalogue in September (cdp-sdk issue #806, a seller's pull of 15,874), 34,062 listings on 2,158 hosts in a third-party 2026-10-09 snapshot of which 44.7% are templated bulk hosts — so ~18k real listings and no UK government-register seller found by name. Demand: x402 on Base passed 100M transactions in three quarters (Chainalysis); Artemis/Visa count ~109.6M transactions and ~US$15M filtered volume to 2026-04-21, headline counters are stale or leaderboard-inflated (Coinbase: 25–30% may be leaderboard farming). Our side: `/x402/data/<slug>` is live at US$0.005–0.01 a call with 0 payments ever; the routes are keyed by path only with no description or schema, so nothing could be indexed even after a sale; tonight the preview wall names x402 first (gankdat `preview-wall-next-steps`), which is the one place a keyless agent learns the endpoint exists. Build ≈ 0.2 d (route config + a `validate-endpoint` probe through the relay; add docs.cdp.coinbase.com to the relay hosts), £0; indexing needs one real paid call, which the sandbox never makes (a self-paid half-cent is still money and a leaderboard-shaped signal). Not a paid-rival market: the shelf is the channel; the rivals are the other ~18k listings. Risk: sellers report resources passing validation yet never indexed (issues #806, #759) — the proof must be read from `list-bazaar-resources`, not assumed.",
+      "status": "parked",
+      "trigger": "the first x402 payment on gankdat (Daily numbers `x402_paid` or `after wall 1h: x402 ≥ 1`) — then queue it in gankdat.json at score 6 (evidence 3 × reach 4 ÷ 0.2 d) and read the proof from the Bazaar's own list; or the 2026-W42 review deciding the x402 lane is worth a listing before any sale",
+      "added": "2026-10-11"
     }
   ]
 }

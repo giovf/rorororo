@@ -964,3 +964,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 19:34 | burn-down | Queue: gankdat metrics-dataset-queries-external done; proof is the W42 review applying §7 from it
 - 2026-10-11 19:37 | burn-down | Queue: foundry third-party-pr-relay done — proof met by tonight's Docker PR, no interactive session
 - 2026-10-11 19:37 | burn-down | Pipeline starved after 5 items: nothing buildable, every queue cooling; exchange pre-research next
+- 2026-10-11 19:48 | burn-down | Exchange pre-research: x402 Bazaar listing parked (auto-index on first paid call; ~18k real listings; 0 x402 sales yet)
