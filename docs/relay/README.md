@@ -47,7 +47,7 @@ fork or a pull request on `docker/mcp-registry`, an awesome-list or an upstream 
    `{ error, failed_at }`. Copy the PR URL into the item's `blocked_on` and the listing log, and
    add the review mail to `docs/ops/SELF-CAUSED.md`.
 4. While `PR_TOKEN` is unset the run prints `PR_TOKEN not set` and the request stays pending;
-   the next push under `docs/relay/prs/**` or a `workflow_dispatch` retries. A finished request
+   the next push under `docs/relay/prs/**` or a `workflow_dispatch` retries. A request that was pending when the token arrived does not re-run by itself: dispatch `pr-relay.yml` (GitHub MCP `actions_run_trigger`) — the Docker request waited a day that way, 2026-10-11. A finished request
    (with `result.json`) is never re-run: delete the folder to open it again.
 
 Public repositories only; never a credential in the files; the body is posted as written.

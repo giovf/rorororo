@@ -947,3 +947,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 19:18 | burn-down | Prompts: build and burn-down move a bounty's Claims row per commit; weekly report and review read it
 - 2026-10-11 19:18 | burn-down | STRATEGY §4 row "Bounty PRs merged / paid": 0/0/0, three reads dropped; §8 decision logged
 - 2026-10-11 19:18 | burn-down | Queue: oss-bounties bounty-claim-ledger done; proof is the report's week line from npm run claims
+- 2026-10-11 19:24 | burn-down | pr relay dispatched by hand (never fired: PR_TOKEN landed after the request); docker/mcp-registry#5622 open
+- 2026-10-11 19:24 | burn-down | Docker MCP Catalog: listing log row, STRATEGY §4 listings row, relay README note on dispatching a pending request
+- 2026-10-11 19:24 | burn-down | Queue: gankdat docker-mcp-catalog-listing blocked on Docker's review of PR #5622; merged → done, licence demand → drop
