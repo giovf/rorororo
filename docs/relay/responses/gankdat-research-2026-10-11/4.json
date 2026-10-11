@@ -1,0 +1,95 @@
+{
+  "data": {
+    "id": "0aYfr2UQ7cElJsLj0",
+    "actId": "8TjjTeNWoUBKjU66E",
+    "userId": "oXGvkqYp4ceEB4zyM",
+    "startedAt": "2026-10-09T20:20:49.983Z",
+    "finishedAt": "2026-10-09T20:20:51.477Z",
+    "status": "FAILED",
+    "meta": {
+      "origin": "TEST",
+      "userAgent": "ApifyClient/2.23.4 (Linux; Node/v24.21.0); isAtHome/false"
+    },
+    "stats": {
+      "inputBodyLen": 85,
+      "migrationCount": 0,
+      "rebootCount": 0,
+      "restartCount": 0,
+      "durationMillis": 1351,
+      "resurrectCount": 0,
+      "runTimeSecs": 1.351,
+      "metamorph": 0,
+      "computeUnits": 0.00018763888888888888,
+      "memAvgBytes": 8634368,
+      "memMaxBytes": 8634368,
+      "memCurrentBytes": 0,
+      "cpuAvgUsage": 0,
+      "cpuMaxUsage": 0,
+      "cpuCurrentUsage": 0,
+      "netRxBytes": 412,
+      "netTxBytes": 442
+    },
+    "options": {
+      "build": "latest",
+      "timeoutSecs": 300,
+      "memoryMbytes": 512,
+      "maxTotalChargeUsd": 999999999,
+      "maxItems": 999999999,
+      "isMaxTotalChargeUsdSetByUser": false,
+      "diskMbytes": 8192
+    },
+    "buildId": "y1sQwx8Q0pQyGGK59",
+    "exitCode": 1,
+    "defaultKeyValueStoreId": "ozrl66ahzOf4Tc0ve",
+    "defaultDatasetId": "BS8zvrwzfwIK0xkJ7",
+    "defaultRequestQueueId": "JRTrcbI6VGWkqKFMb",
+    "storageIds": {
+      "keyValueStores": {
+        "default": "ozrl66ahzOf4Tc0ve"
+      },
+      "datasets": {
+        "default": "BS8zvrwzfwIK0xkJ7"
+      },
+      "requestQueues": {
+        "default": "JRTrcbI6VGWkqKFMb"
+      }
+    },
+    "pricingInfo": {
+      "pricingModel": "PAY_PER_EVENT",
+      "createdAt": "2026-09-21T20:08:53.222Z",
+      "startedAt": "2026-09-21T20:08:53.222Z",
+      "apifyMarginPercentage": 0.2,
+      "pricingPerEvent": {
+        "actorChargeEvents": {
+          "result": {
+            "eventTitle": "Result (one record)",
+            "eventDescription": "One record written to the dataset",
+            "eventPriceUsd": 0.001
+          }
+        }
+      }
+    },
+    "chargedEventCounts": {
+      "result": 0
+    },
+    "platformUsageBillingModel": "DEVELOPER",
+    "accountedChargedEventCounts": {
+      "result": 0
+    },
+    "standby": null,
+    "generalAccess": "FOLLOW_USER_SETTING",
+    "buildNumber": "0.1.2",
+    "containerUrl": "https://qm7nzyetztvb.runs.apify.net",
+    "usageTotalUsd": 0,
+    "consoleUrl": "https://console.apify.com/view/runs/0aYfr2UQ7cElJsLj0",
+    "eventUsage": {
+      "result": {
+        "eventTitle": "Result (one record)",
+        "eventTotalUsd": 0
+      }
+    },
+    "output": {
+      "results": "https://api.apify.com/v2/datasets/BS8zvrwzfwIK0xkJ7/items"
+    }
+  }
+}

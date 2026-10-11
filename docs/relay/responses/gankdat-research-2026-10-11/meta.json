@@ -1,0 +1,74 @@
+{
+  "request": "gankdat-research-2026-10-11",
+  "fetched_at": "2026-10-11T00:17:20.498Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=5&offset=0",
+      "fetched_at": "2026-10-11T00:17:19.213Z",
+      "status": 200,
+      "final_url": "https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=5&offset=0",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "36"
+      },
+      "file": "1.json",
+      "bytes": 36,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/v1/health",
+      "fetched_at": "2026-10-11T00:17:19.524Z",
+      "status": 200,
+      "final_url": "https://gankdat.com/v1/health",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 1496,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/acts/faceless-api~uk-no-website-leads",
+      "fetched_at": "2026-10-11T00:17:20.133Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/acts/faceless-api~uk-no-website-leads",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"116d-Wp7paGFbtKMfNkNDibj15Qx0JfQ\""
+      },
+      "file": "3.json",
+      "bytes": 4461,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/actor-runs/0aYfr2UQ7cElJsLj0",
+      "fetched_at": "2026-10-11T00:17:20.311Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/actor-runs/0aYfr2UQ7cElJsLj0",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "4.json",
+      "bytes": 2625,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/logs/0aYfr2UQ7cElJsLj0",
+      "fetched_at": "2026-10-11T00:17:20.371Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/logs/0aYfr2UQ7cElJsLj0",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "content-disposition": "inline; filename=\"0aYfr2UQ7cElJsLj0.log\""
+      },
+      "file": "5.txt",
+      "bytes": 1056,
+      "truncated": false
+    }
+  ]
+}
