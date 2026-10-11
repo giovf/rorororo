@@ -433,3 +433,18 @@ Not queued: the uk-insolvency 503 (retried once already, a single row — the re
 more datasets, a pricing change, further listings (triggers unchanged since 10-05); the funnel (the
 bottom is still zero, the 10-09 instrumentation is the walk and the next signal is the 10-30 day-30
 directory read).
+
+## Decision 2026-10-11 — uk-planning origin paused (burn-down)
+
+planning.data.gov.uk emptied its planning-application dataset on 2026-10-10 (relay
+`planning-origin-2026-10-11`: `/dataset/planning-application.json` reports `entity-count 0`, `phase
+alpha`, `replacement-dataset ""`; every entity query answers `count 0`; the bulk CSV is 403). The
+dataset is still queried — 88 REST calls and 13 Apify runs in the 30 days to 10-10 — so STRATEGY §7's
+60-day rule does not retire it. What ships: the 10-09 snapshot stays served; `DataSource.notice` (a
+dated sentence, generic field, text owned by the source file) shows the state on `/stats/uk-planning`,
+in `/v1/data` and `list_sources`; the refresh throws `origin dataset empty: … count 0` on a count-0
+first page so the Daily numbers row carries the cause every night and the auto-filer extends the open
+re-read item (`refresh-uk-planning-reread-2026-10-18`, weekly through the relay) rather than filing a
+new fix item every two days. **Clock:** retire per §7 when the dataset goes 60 days without a customer
+query (the `datasets 30d` reading), or re-point when the platform names a `replacement-dataset`;
+either way the row says so.

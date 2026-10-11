@@ -163,6 +163,7 @@ function sourceListing(): Record<string, unknown>[] {
     supported_params: [...Object.keys(source.queryParams.shape), 'q'],
     credit_cost: source.creditCost ?? 1,
     change_feed: hasChangeFeed(source) ? 'get_changes' : null,
+    notice: source.notice ?? null,
     lookup: source.lookup ? [...source.lookup.keys] : null,
   }));
 }

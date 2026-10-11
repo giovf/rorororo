@@ -216,6 +216,7 @@ ${hasChangeFeed(source) ? `<link rel="alternate" type="application/atom+xml" tit
 <p class="muted"><a href="/">gankdat</a> / <a href="/stats">stats</a> / <a href="/stats/${esc(source.slug)}">${esc(source.slug)}</a> / ${esc(facet.segment)} ${esc(page.value)}</p>
 <h1>${esc(source.title)} — <b>${esc(facet.segment)} ${esc(page.value)}: ${esc(page.label)}</b></h1>
 <p class="muted">${esc(source.description)}</p>
+${source.notice ? `<p><b>origin notice:</b> ${esc(source.notice)}</p>` : ''}
 <h2>headline</h2>
 <table><tbody>
 <tr><td>records in ${esc(facet.segment)} ${esc(page.value)}</td><td>${page.total.toLocaleString('en-GB')}</td></tr>
@@ -276,6 +277,7 @@ function lookupPageHtml(source: DataSource, baseUrl: string): string {
 <p class="muted"><a href="/">gankdat</a> / <a href="/stats">stats</a></p>
 <h1>${esc(source.title)} — <b>lookup</b></h1>
 <p class="muted">${esc(source.description)}</p>
+${source.notice ? `<p><b>origin notice:</b> ${esc(source.notice)}</p>` : ''}
 <h2>headline</h2>
 <table><tbody>
 <tr><td>records in dataset</td><td>the whole register, one company per lookup</td></tr>
@@ -335,6 +337,7 @@ ${hasChangeFeed(source) ? `<link rel="alternate" type="application/atom+xml" tit
 <p class="muted"><a href="/">gankdat</a> / <a href="/stats">stats</a></p>
 <h1>${esc(source.title)} — <b>statistics</b></h1>
 <p class="muted">${esc(source.description)}</p>
+${source.notice ? `<p><b>origin notice:</b> ${esc(source.notice)}</p>` : ''}
 <h2>headline</h2>
 <table><tbody>
 <tr><td>records in dataset</td><td>${stats.total.toLocaleString('en-GB')}</td></tr>

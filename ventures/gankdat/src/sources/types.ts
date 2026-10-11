@@ -111,6 +111,12 @@ export interface DataSource<TRecord = unknown> {
   /** One-liner used by the sources listing, OpenAPI spec, and MCP tool descriptions. */
   description: string;
   /**
+   * A dated, plain sentence shown on /stats, in /v1/data and list_sources while the origin is
+   * paused or emptied (2026-10-11: planning.data.gov.uk emptied its planning-application
+   * dataset; the last snapshot is served and the refresh keeps failing loudly). Unset = nothing.
+   */
+  notice?: string;
+  /**
    * Where records live. 'kv' (default): one cached snapshot value, filtered in
    * JS per request — right for datasets up to a few MB. 'd1': rows in the
    * source_records table, filtered in SQL — for datasets too large for a KV

@@ -8,6 +8,15 @@ import type { DataSource } from './types';
 // Entity fields are hyphenated (entry-date, organisation-entity, decision-date, …),
 // missing values are empty strings, `organisation-entity` is the numeric id of the
 // local planning authority, `point` is WKT. Open Government Licence.
+// 2026-10-10: the platform emptied the dataset — /dataset/planning-application.json reports
+// entity-count 0, phase alpha, no replacement-dataset, every entity query answers count 0 and
+// the bulk CSV is 403 (relay planning-origin-2026-10-11). A first page with count 0 is that
+// state, named as such so the refresh row and the auto-filer read it (the generic guard would
+// only say "refresh returned 0 records"); the last good snapshot stays served under NOTICE.
+const ORIGIN_EMPTY_SINCE = '2026-10-10';
+/** The platform's dataset is empty — a real state, never masked by the dev fixture fallback. */
+class OriginEmptyError extends Error {}
+const NOTICE = `Origin paused: planning.data.gov.uk emptied its planning-application dataset on ${ORIGIN_EMPTY_SINCE} (entity-count 0, phase alpha). The snapshot of 2026-10-09 is served unchanged until the platform republishes.`;
 const ORIGIN_URL = 'https://www.planning.data.gov.uk/entity.json';
 const PAGE_SIZE = 500;
 // Snapshot cap: KV values max 25 MB and Worker memory is bounded; v1 serves the
@@ -86,6 +95,11 @@ async function fetchFromOrigin(): Promise<UkPlanningRecord[]> {
   let offset = 0;
   for (;;) {
     const page = await fetchPage(offset);
+    if (offset === 0 && page.count === 0 && page.entities.length === 0) {
+      throw new OriginEmptyError(
+        `origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.uk since ${ORIGIN_EMPTY_SINCE}; the last snapshot is served)`,
+      );
+    }
     records.push(...mapEntities(page.entities));
     offset += PAGE_SIZE;
     if (page.entities.length === 0 || offset >= Math.min(page.count, MAX_RECORDS)) {
@@ -110,6 +124,7 @@ export const ukPlanningSource: DataSource<UkPlanningRecord> = {
   title: 'UK planning applications',
   description:
     'Planning applications from the official planning.data.gov.uk feed, normalized to one schema. Blind Mode: no applicant personal data.',
+  notice: NOTICE,
   stats: {
     date: { field: 'entry_date', title: 'Applications recorded by month' },
     groupBy: [
@@ -128,6 +143,8 @@ export const ukPlanningSource: DataSource<UkPlanningRecord> = {
     try {
       return await fetchFromOrigin();
     } catch (err) {
+      // An emptied origin is the dataset's real state: fail so the last snapshot is served.
+      if (err instanceof OriginEmptyError) throw err;
       // Offline-capable local dev only; production must fail loudly so the
       // refresh log shows it (FIXTURE_FALLBACK is unset in production).
       // String() so the check survives the generated literal binding type

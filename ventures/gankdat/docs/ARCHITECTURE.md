@@ -15,7 +15,10 @@ across niches in parallel — validation comes from shipped-product signal
 gate; weak datasets are cheap to retire because everything dataset-specific
 sits behind the swappable `DataSource` abstraction (one file + registry
 entry; the exposure surface regenerates itself — see NICHE-LAUNCH-CHECKLIST).
-Live datasets: UK planning applications (`uk-planning`), procurement
+Live datasets: UK planning applications (`uk-planning`; **origin paused since 2026-10-10** — planning.data.gov.uk
+emptied its alpha planning-application dataset (entity-count 0, no replacement named), so the 10-09
+snapshot is served under a dated `notice` and the refresh fails loudly with that evidence; §7 clock in
+RESEARCH.md, weekly re-read queued), procurement
 notices (`uk-tenders`), UK sanctions designations (`uk-sanctions`,
 shipped 2026-07-11 with per-dataset terms; debarment list monitored —
 still empty upstream, see NICHE-NEXT-SANCTIONS.md), EU procurement
@@ -320,6 +323,11 @@ runs `check:root`.
   `<link rel="alternate">` on the stats pages; `rest_feed` Analytics Engine point (UA, path,
   hit/miss, slug) → `feeds 30d:` in the Daily numbers row. Entry titles are dataset-agnostic
   (first two short string fields) — the isolation rule holds.
+- **Origin notice** (`DataSource.notice`, 2026-10-11): a dated plain sentence on a source whose origin is
+  paused or emptied, shown on `/stats/<slug>`, in `/v1/data` and `list_sources` (`notice`, null
+  otherwise). The refresh keeps failing with the evidence (`origin dataset empty: …`) so the Daily
+  numbers row and the auto-filer see the state every night, and the last snapshot stays served; the
+  source file owns the text (isolation rule). First use: uk-planning.
 - **Wave log reading** (`lib/wave-logs.ts`, 2026-10-09): a wave killed at the 15-minute Cron
   Trigger limit writes no `refresh_log` row, and no sandbox or relay can read Worker logs (the
   journal's silent nights 10-05..10-08 were guessed at twice). So the metrics workflow's

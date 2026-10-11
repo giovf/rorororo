@@ -9,7 +9,7 @@ import worker from '../src/index';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import { refreshSource } from '../src/sources/cache';
 import type { DataSource } from '../src/sources/types';
-import type { UkPlanningRecord } from '../src/sources/uk-planning';
+import { ukPlanningSource, type UkPlanningRecord } from '../src/sources/uk-planning';
 import { authedFetch, issueKey } from './helpers/auth';
 import { stubOrigins, tendersResponse } from './helpers/origin-mock';
 
@@ -132,6 +132,24 @@ describe('GET /v1/data/uk-planning', () => {
     const body = (await res.json()) as SuccessEnvelope<UkPlanningRecord[]>;
     expect(body.data.length).toBeGreaterThan(0);
     expect(body.data[0]?.reference).toBe('23/00002/FUL');
+  });
+});
+
+describe('origin emptied (2026-10-10)', () => {
+  it('fails loudly with the evidence when the first page answers count 0, never with the bare zero-record text', async () => {
+    mockOrigin(() => Response.json({ entities: [], links: {}, count: 0 }));
+    await expect(
+      ukPlanningSource.fetchFresh({ ...env, FIXTURE_FALLBACK: 'false' }),
+    ).rejects.toThrow('origin dataset empty: planning-application answered count 0');
+  });
+
+  it('lists the dated notice on /v1/data so a buyer sees why the snapshot is not moving', async () => {
+    const res = await authedFetch('https://example.com/v1/data');
+    const body = (await res.json()) as SuccessEnvelope<{ slug: string; notice: string | null }[]>;
+    const planning = body.data.find((s) => s.slug === 'uk-planning');
+    expect(planning?.notice).toContain('Origin paused');
+    expect(planning?.notice).toContain('2026-10-10');
+    expect(body.data.find((s) => s.slug === 'uk-tenders')?.notice).toBeNull();
   });
 });
 

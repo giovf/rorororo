@@ -245,6 +245,12 @@ const sourceListingSchema = z.array(
       .string()
       .nullable()
       .describe('Path of the daily change feed (register datasets), else null'),
+    notice: z
+      .string()
+      .nullable()
+      .describe(
+        'A dated note while the origin is paused or emptied (last snapshot served), else null',
+      ),
   }),
 );
 

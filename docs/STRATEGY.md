@@ -1007,3 +1007,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   has its own client back and the gate now resolves every actor's imports. The one shelf with outside
   users showed a broken actor for four days because the Daily numbers row counts runs, never outcomes;
   that reading is queued at 5.
+- 2026-10-11 burn-down: gankdat `refresh-uk-planning-2026-10-11` (6) built as stale-origin handling, not a
+  parser fix — planning.data.gov.uk emptied its alpha planning-application dataset on 10-10, so the
+  last snapshot is served under a dated notice, the refresh names the cause nightly and a weekly
+  relay re-read decides re-point or retire (§7 clock: 60 days unqueried). Not retired: 88 calls and
+  13 Apify runs in 30 days.

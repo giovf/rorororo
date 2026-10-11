@@ -73,6 +73,8 @@ export const dataRoutes = new Hono<AppEnv>()
       refresh_cron: source.refresh.cron,
       credit_cost: source.creditCost ?? 1,
       change_feed: hasChangeFeed(source) ? `/v1/changes/${source.slug}` : null,
+      // A dated sentence while the origin is paused or emptied (the last snapshot is served).
+      notice: source.notice ?? null,
       // On-demand datasets: one record per request, named by one of these params.
       lookup: source.lookup ? [...source.lookup.keys] : null,
     }));

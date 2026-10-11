@@ -877,3 +877,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 00:31 | burn-down | uk-no-website-leads: own client (runLeadFeed) restored; the 10-07 rollout had copied the shared one over it
 - 2026-10-11 00:31 | burn-down | apify-schemas.spec: every main.mjs import must exist in its folder's client (all folders); README rule
 - 2026-10-11 00:31 | burn-down | Queue: gankdat apify-lead-feed-client-restore done; proof is the flag lifted and 3 green QA runs
+- 2026-10-11 00:46 | burn-down | uk-planning: origin emptied 10-10; refresh now says origin dataset empty (count 0), snapshot kept
+- 2026-10-11 00:46 | burn-down | DataSource.notice: dated origin note on /stats, /v1/data and list_sources; uk-planning first; 2 tests
+- 2026-10-11 00:46 | burn-down | v0.23.1; ARCHITECTURE and RESEARCH decision (§7 clock); weekly re-read item dated 10-18
+- 2026-10-11 00:46 | burn-down | Queue: gankdat refresh-uk-planning-2026-10-11 done; proof is the row naming the state nightly
