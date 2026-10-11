@@ -127,7 +127,7 @@ export class Recorder {
   readonly dryRun: boolean;
   private readonly browser: Browser;
   private readonly context: BrowserContext;
-  private readonly outDir: string;
+  readonly outDir: string;
   private readonly timeScale: number;
   private caption = '';
   private readonly log: string[] = [];
@@ -181,6 +181,11 @@ export class Recorder {
       await this.page.evaluate(appendJs('term', terminalLineHtml(line)));
       await this.wait(lineDelayMs);
     }
+  }
+
+  /** A line for shots.txt from the entry script (a skipped step, a failure it survived). */
+  note(line: string): void {
+    this.log.push(line);
   }
 
   async wait(ms: number): Promise<void> {

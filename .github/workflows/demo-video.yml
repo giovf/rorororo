@@ -56,5 +56,6 @@ jobs:
           path: |
             dist/demo/*.mp4
             dist/demo/shots.txt
+            dist/demo/failure-*
           if-no-files-found: error
           retention-days: 60

@@ -241,23 +241,100 @@ interface Buyer {
   password: string;
 }
 
+/** Every button PayPal's checkout has used for "pay now" / "continue" across its layouts. */
+const PAY_BUTTONS = [
+  '#payment-submit-btn',
+  '#consentButton',
+  '#confirmButtonTop',
+  'button[data-testid="submit-button-initial"]',
+  'button:has-text("Pay Now")',
+  'button:has-text("Continue")',
+  'button:has-text("Agree & Continue")',
+].join(', ');
+
+/**
+ * What the page showed when the approval failed: a screenshot and the visible text, published with
+ * the run's artifact so the next fix is read from evidence (the first live run, 2026-10-11, timed out
+ * on `#payment-submit-btn` with nothing to look at). Never the buyer's credentials.
+ */
+async function failureEvidence(page: Page, outDir: string, why: string): Promise<void> {
+  try {
+    await page.screenshot({ path: path.join(outDir, 'failure-paypal.png'), fullPage: true });
+    const buttons = await page
+      .locator('button, input[type=submit], a[role=button]')
+      .allInnerTexts()
+      .then((t) =>
+        t
+          .map((x) => x.trim())
+          .filter(Boolean)
+          .slice(0, 40),
+      )
+      .catch(() => [] as string[]);
+    const notices = await page
+      .locator('#notifications, .notification, [role=alert]')
+      .allInnerTexts()
+      .then((t) =>
+        t
+          .map((x) => x.trim())
+          .filter(Boolean)
+          .slice(0, 10),
+      )
+      .catch(() => [] as string[]);
+    await writeFile(
+      path.join(outDir, 'failure-paypal.txt'),
+      [
+        `why: ${why}`,
+        `url: ${page.url()}`,
+        `title: ${await page.title().catch(() => '?')}`,
+        `buttons: ${JSON.stringify(buttons)}`,
+        `notices: ${JSON.stringify(notices)}`,
+        '',
+      ].join('\n'),
+    );
+  } catch {
+    // Evidence is best-effort; the shot's own error is what the run reports.
+  }
+}
+
 /** The sandbox buyer approves the order on PayPal's page; the browser lands back on gankdat. */
-async function approveOnPayPal(page: Page, approveUrl: string, buyer: Buyer): Promise<void> {
-  await page.goto(approveUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 });
-  const email = page.locator('#email');
-  await email.waitFor({ state: 'visible', timeout: 45_000 });
-  await email.fill(buyer.email);
-  const next = page.locator('#btnNext');
-  if (await next.isVisible().catch(() => false)) await next.click();
-  const password = page.locator('#password');
-  await password.waitFor({ state: 'visible', timeout: 45_000 });
-  await password.fill(buyer.password);
-  await page.locator('#btnLogin').click();
-  const pay = page.locator('#payment-submit-btn');
-  await pay.waitFor({ state: 'visible', timeout: 60_000 });
-  await page.waitForTimeout(1500);
-  await pay.click();
-  await page.waitForURL(/\/account\?paypal=/, { timeout: 90_000 });
+async function approveOnPayPal(
+  page: Page,
+  approveUrl: string,
+  buyer: Buyer,
+  outDir: string,
+): Promise<void> {
+  try {
+    await page.goto(approveUrl, { waitUntil: 'domcontentloaded', timeout: 60_000 });
+    // The login may render inline or inside PayPal's login iframe; take whichever shows `#email`.
+    const frame = page.frameLocator('iframe[name="injectedUl"], #injectedUnifiedLogin iframe');
+    const inlineEmail = page.locator('#email');
+    const framed = await frame
+      .locator('#email')
+      .waitFor({ state: 'visible', timeout: 15_000 })
+      .then(() => true)
+      .catch(() => false);
+    const scope = framed ? frame : page;
+    if (!framed) await inlineEmail.waitFor({ state: 'visible', timeout: 45_000 });
+    await scope.locator('#email').fill(buyer.email);
+    const next = scope.locator('#btnNext');
+    if (await next.isVisible().catch(() => false)) await next.click();
+    const password = scope.locator('#password');
+    await password.waitFor({ state: 'visible', timeout: 45_000 });
+    await password.fill(buyer.password);
+    await scope.locator('#btnLogin').click();
+    const pay = page.locator(PAY_BUTTONS).first();
+    await pay.waitFor({ state: 'visible', timeout: 60_000 });
+    await page.waitForTimeout(1500);
+    await pay.click();
+    await page.waitForURL(/\/account\?paypal=/, { timeout: 90_000 });
+  } catch (err) {
+    await failureEvidence(
+      page,
+      outDir,
+      err instanceof Error ? (err.message.split('\n')[0] ?? '') : String(err),
+    );
+    throw err;
+  }
 }
 
 export interface Seed {
@@ -357,6 +434,9 @@ export async function record(options: {
     );
     await rec.terminal(term, lines);
   });
+  // A failed approval must not cost the whole video: the shot records what PayPal showed, the
+  // capture shot says so, and the mp4 still ships with the failure evidence beside it.
+  let approved = rec.dryRun;
   await take(3, async (page) => {
     if (rec.dryRun || !buyer || !order) {
       await rec.open(
@@ -365,10 +445,25 @@ export async function record(options: {
       );
       return;
     }
-    await approveOnPayPal(page, order.approve_url, buyer);
+    try {
+      await approveOnPayPal(page, order.approve_url, buyer, rec.outDir);
+      approved = true;
+    } catch (err) {
+      rec.note(
+        `shot 3: approval failed — ${err instanceof Error ? (err.message.split('\n')[0] ?? '') : String(err)} (see failure-paypal.png/.txt)`,
+      );
+    }
   });
   await take(4, async () => {
     if (!order) throw new Error('no order to capture');
+    if (!approved) {
+      lines.push(
+        '',
+        '[3] capture skipped in this recording: the sandbox approval did not complete',
+      );
+      await rec.terminal(term, lines.slice(-2));
+      return;
+    }
     const captured = await product.capture(order.order_id);
     const after = await product.usage();
     lines.push(
