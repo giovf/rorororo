@@ -294,7 +294,15 @@ runs `check:root`.
   (`cache.ts snapshotWrites`) and a `refresh_log` row via the REST API; the waves skip it
   (`store.ts cronSources`) and a stale snapshot is served without an inline attempt. The Daily
   numbers row lists any source with no `ok` refresh for two days, so a runner that never ran
-  still shows. KV sources only.
+  still shows. KV sources only. **Origin unavailable** (2026-10-11): a source whose origin
+  answers 5xx on every read it allows throws `origin.ts OriginUnavailableError` (uk-insolvency:
+  four reads over ~13 s of growing fair-use pauses, up from two 2 s apart); the runner logs that
+  as a `skipped` refresh_log row, not `error` — the day is the origin's, the last snapshot stays
+  served, and a second such day surfaces through the stale `no successful refresh since …; last
+  run skipped: …` reading. The `refresh errors` reading itself (`metrics.mjs`) counts an error row
+  only while no later `ok` row of the same source exists: The Gazette's one 503 of 2026-10-10
+  13:00 was still listed in the 10-11 row written 18 h later, right after a 1000-record refresh,
+  and the auto-filer read the two rows as two failures.
   **Zero-record evidence** (2026-10-11): sources fetch their origin through `origin.ts
   originFetch` and both stores run a refresh inside `traceOrigin`, so a refresh that yields
   nothing fails with the first page the origin served — `refresh returned 0 records: GET 200

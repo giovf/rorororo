@@ -69,6 +69,34 @@ export async function originFetch(input: string | URL, init?: RequestInit): Prom
   return res;
 }
 
+/**
+ * The origin answered 5xx (or nothing) on every read a refresh was allowed — the day's fault
+ * is the origin's, not the parser's. The runner-side refresh logs this as a `skipped`
+ * refresh_log row instead of `error` (refresh-uk-insolvency-2026-10-11): The Gazette's one
+ * 503 on 2026-10-10 13:00 was read as a two-day failure, filed as a queue item and the Daily
+ * numbers row kept naming it after the next refresh had already written 1000 records. The
+ * last snapshot stays served either way; a source whose origin stays down shows up through
+ * the two-day `no successful refresh since` reading, which also quotes the skipped row.
+ */
+export class OriginUnavailableError extends Error {
+  readonly status: number;
+  readonly attempts: number;
+  constructor(host: string, status: number, attempts: number) {
+    super(`${host} responded ${status}${attempts > 1 ? ` after ${attempts} reads` : ''}`);
+    this.name = 'OriginUnavailableError';
+    this.status = status;
+    this.attempts = attempts;
+  }
+}
+
+/** True for an `OriginUnavailableError`, across bundles (the runner script imports a copy). */
+export function isOriginUnavailable(err: unknown): err is OriginUnavailableError {
+  return (
+    err instanceof OriginUnavailableError ||
+    (err instanceof Error && err.name === 'OriginUnavailableError')
+  );
+}
+
 /** The zero-record error, carrying the pages the current trace saw. */
 export function zeroRecordsError(): Error {
   return new Error(`refresh returned 0 records: ${describeTrace(traces.getStore())}`);

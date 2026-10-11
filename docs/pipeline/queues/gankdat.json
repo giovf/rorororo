@@ -555,13 +555,14 @@
     {
       "id": "refresh-uk-insolvency-2026-10-11",
       "title": "uk-insolvency: refresh has failed 2 times in the last 4 days — fix the source or keep the last snapshot without an error row",
-      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-insolvency under refresh errors on 2026-10-10 (runner: thegazette.co.uk responded 503 after 2 reads) and 2026-10-11: runner: thegazette.co.uk responded 503 after 2 reads after the fix of refresh-uk-insolvency-2026-10-03 (2026-10-04). The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-insolvency.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted.",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list uk-insolvency under refresh errors on 2026-10-10 (runner: thegazette.co.uk responded 503 after 2 reads) and 2026-10-11: runner: thegazette.co.uk responded 503 after 2 reads after the fix of refresh-uk-insolvency-2026-10-03 (2026-10-04). The surface serves the last good snapshot meanwhile (Blind Mode). Read ventures/gankdat/src/sources/uk-insolvency.ts, verify the origin's current response through the relay before changing the parser, and make a transient origin fault log `skipped` rather than `error` once retries are exhausted. Built 2026-10-11 (build): the two \"failures\" were one — the gankdat metrics logs show the 10-10 13:00 runner read 503 twice 3 s apart (error row), and the 10-11 07:15 runner read the feed in full (1000 records, ok row); the 10-11 row still listed the 10-10 error because metrics.mjs read every error row of the last 24 h, so the origin needed no relay check and the parser no change. Fixed three ways: uk-insolvency retries a 5xx four times over ~13 s of growing pauses (was two reads 2 s apart) and throws origin.ts OriginUnavailableError when the 5xx outlasts them; runner-refresh.mjs logs that as a `skipped` refresh_log row (not `error`, not a failed job) so the last snapshot stays served without an error row; metrics.mjs counts an error row only while no later `ok` row of the same source exists. 3 tests; ARCHITECTURE.",
       "effort_days": 0.1,
       "proof": "uk-insolvency absent from refresh errors for 7 consecutive Daily numbers rows",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-11",
-      "doing_since": "2026-10-11"
+      "doing_since": "2026-10-11",
+      "done_at": "2026-10-11"
     },
     {
       "id": "preview-wall-next-steps",

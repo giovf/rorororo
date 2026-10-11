@@ -77,8 +77,12 @@ const [acct] = await sql(
 // sources 2026-09-28) a routine saw a slug in this row and could not fix it because refresh_log
 // is not reachable from a sandbox. One line per source, whitespace collapsed, table-safe, capped;
 // anything shaped like a credential in a URL is redacted before it lands in a public repo.
+// An error row that a later `ok` row of the same source has already recovered from is not
+// today's state (refresh-uk-insolvency-2026-10-11: the 10-10 13:00 runner 503 was still listed
+// in the 10-11 row written 18 h later, right after a 1000-record refresh, and the auto-filer
+// read the two rows as two failures) — only an error newer than the source's last `ok` counts.
 const errors = await sql(
-  "SELECT source_slug, MAX(message) AS message FROM refresh_log WHERE status = 'error' AND created_at > datetime('now','-1 day') GROUP BY source_slug",
+  "SELECT e.source_slug, MAX(e.message) AS message FROM refresh_log e WHERE e.status = 'error' AND e.created_at > datetime('now','-1 day') AND NOT EXISTS (SELECT 1 FROM refresh_log o WHERE o.source_slug = e.source_slug AND o.status = 'ok' AND o.created_at > e.created_at) GROUP BY e.source_slug",
 );
 // Runner-fed sources (2026-10-04, uk-insolvency) write no row at all on a day the runner job never
 // ran, so any source whose last `ok` row is over two days old is listed here too, with the date:

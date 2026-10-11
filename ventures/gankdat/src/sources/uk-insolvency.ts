@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import fixtureEntries from './fixtures/uk-insolvency.json';
 import type { DataSource } from './types';
-import { originFetch } from './origin';
+import { OriginUnavailableError, originFetch } from './origin';
 
 // The Gazette — corporate insolvency notices (task 41). Official public
 // record, Crown copyright, OGL v3; the OGL grant EXCLUDES personal data, so
@@ -127,10 +127,14 @@ const sleep = (ms: number): Promise<void> => new Promise((resolve) => setTimeout
 // 0 bytes three times in a row within ~6 s while a GitHub runner got the full 204 KB, so the cut
 // is momentary and on the origin's side; the pauses now span ~13 s.
 const FETCH_ATTEMPTS = 4;
-// A 5xx is retried once after the fair-use pause: "thegazette.co.uk responded 500" cost the
-// 2026-09-29 wave-1 refresh its day (the fifth uk-insolvency refresh error in eight days), and
-// the Gazette's 500s are momentary — the same page reads fine seconds later.
-const SERVER_ERROR_ATTEMPTS = 2;
+// A 5xx is retried like a cut body — four reads over ~13 s of growing fair-use pauses. It was
+// one retry after 2.1 s ("thegazette.co.uk responded 500" cost the 2026-09-29 wave-1 refresh
+// its day); on 2026-10-10 13:00 the runner read 503 twice 3 s apart and lost the day, while the
+// next run read the feed in full. A 5xx that outlasts the four reads is the origin's fault for
+// the day, not the parser's: it is thrown as OriginUnavailableError so the runner logs the
+// refresh as `skipped` and the last snapshot stays served without an error row.
+const SERVER_ERROR_ATTEMPTS = 4;
+const ORIGIN_HOST = 'thegazette.co.uk';
 
 /** A body the origin cut: nothing, or fewer bytes than it declared. */
 function shortBody(text: string, declared: string | null): boolean {
@@ -146,13 +150,14 @@ async function fetchJsonWithRetry(url: string): Promise<unknown> {
       headers: { 'user-agent': 'gankdat.com data refresh (info@gankdat.com)' },
     });
     if (!res.ok) {
-      if (res.status >= 500 && attempt < SERVER_ERROR_ATTEMPTS) {
-        await sleep(PAGE_DELAY_MS * attempt);
-        continue;
+      if (res.status >= 500) {
+        if (attempt < SERVER_ERROR_ATTEMPTS) {
+          await sleep(PAGE_DELAY_MS * attempt);
+          continue;
+        }
+        throw new OriginUnavailableError(ORIGIN_HOST, res.status, attempt);
       }
-      throw new Error(
-        `thegazette.co.uk responded ${res.status}${attempt > 1 ? ` after ${attempt} reads` : ''}`,
-      );
+      throw new Error(`${ORIGIN_HOST} responded ${res.status}`);
     }
     // Read the bytes first so a truncated body fails with evidence (bytes seen vs the
     // declared length, and the tail) — three refreshes failed on "Unexpected end of JSON

@@ -1039,3 +1039,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   (owner decision D2 of 2026-09-28 had already dropped Edge); `exchange.json` unchanged — no parked trigger met, and
   WuslaHQ's 10-09 bump adds no evidence (the holding draft is the owner's to send or not). Owner: nothing new — the six
   open asks stand; 021 (3 min) unblocks the top-scored item, 020 (10 min) three dated reviews.
+- 2026-10-11 build: gankdat `refresh-uk-insolvency-2026-10-11` (6) built. The metrics job logs show the "2 failures in 4 days"
+  were one Gazette 503 (10-10 13:00, two reads 3 s apart) that the 10-11 row re-listed 18 h later, right after a 1000-record
+  refresh, because the `refresh errors` reading took every error row of the last 24 h. Fixed the reading (an error counts only
+  while no later `ok` row exists), made the source retry a 5xx four times over ~13 s, and gave the runner a `skipped` row for an
+  origin that stays 5xx — the last snapshot is served, the day is the origin's, and the auto-filer no longer files a fix for it.

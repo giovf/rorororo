@@ -902,3 +902,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 08:12 | review | Dropped read-focus edge-add-ons-listing (owner D2 of 09-28); exchange unchanged, no trigger met
 - 2026-10-11 08:12 | review | STRATEGY §4 Now refreshed with 10-11 sources; §2 agent row: Claude in review, Docker on action 021
 - 2026-10-11 08:12 | review | Cash: spent £44.40, planned £8, ICO £47 contingent, revenue £0; headroom £47.60, 12 months at £3.70
+- 2026-10-11 09:18 | build | uk-insolvency: the two 503 "failures" were one — 10-10 13:00 503 twice 3 s apart, 10-11 07:15 ok (1000 rows)
+- 2026-10-11 09:18 | build | metrics.mjs: an error row counts under refresh errors only while no later ok row of that source exists
+- 2026-10-11 09:18 | build | uk-insolvency: a 5xx is retried 4 times over ~13 s; OriginUnavailableError when it outlasts them
+- 2026-10-11 09:18 | build | runner-refresh: an unavailable origin writes a skipped refresh_log row, not error; 3 tests; ARCHITECTURE
+- 2026-10-11 09:18 | build | Queue: gankdat refresh-uk-insolvency-2026-10-11 done; proof is 7 rows without uk-insolvency under errors

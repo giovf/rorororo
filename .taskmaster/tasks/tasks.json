@@ -1303,13 +1303,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-09T09:29:40.785Z"
+      },
+      {
+        "id": "32",
+        "title": "uk-insolvency: origin-unavailable skip and refresh-errors reading fix",
+        "description": "OriginUnavailableError in src/sources/origin.ts thrown by uk-insolvency after four 5xx reads; runner-refresh.mjs logs it as a skipped refresh_log row; metrics.mjs lists an error row only while no later ok row exists (refresh-uk-insolvency-2026-10-11).",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-11T09:18:06.682Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-09T09:29:40.785Z",
-      "taskCount": 31,
-      "completedCount": 24,
+      "lastModified": "2026-10-11T09:18:06.682Z",
+      "taskCount": 32,
+      "completedCount": 25,
       "tags": [
         "master"
       ]

@@ -20,6 +20,7 @@ import { URL } from 'node:url';
 import { postIndexNow, statsUrlsFor } from '../src/lib/indexnow.ts';
 import { WAVE_LOG_QUERY_PATH, parseWaveLogEvents, waveLogQuery } from '../src/lib/wave-logs.ts';
 import { snapshotWrites, statsKey } from '../src/sources/cache.ts';
+import { isOriginUnavailable } from '../src/sources/origin.ts';
 import { listSources } from '../src/sources/registry.ts';
 import { isRunnerFed } from '../src/sources/store.ts';
 
@@ -65,7 +66,7 @@ async function kvPut(write) {
     throw new Error(`KV put ${write.key}: ${res.status} ${(await res.text()).slice(0, 200)}`);
 }
 
-/** @param {string} slug @param {'ok'|'error'} status @param {number} records @param {number} ms @param {string|null} message */
+/** @param {string} slug @param {'ok'|'error'|'skipped'} status @param {number} records @param {number} ms @param {string|null} message */
 async function refreshLog(slug, status, records, ms, message) {
   await sql(
     'INSERT INTO refresh_log (source_slug, status, records, duration_ms, message) VALUES (?1, ?2, ?3, ?4, ?5)',
@@ -105,10 +106,15 @@ for (const source of listSources().filter(isRunnerFed)) {
     await refreshLog(source.slug, 'ok', records.length, Date.now() - start, 'runner');
     console.log(`${source.slug}: ${records.length} records written from the runner`);
   } catch (err) {
-    failed += 1;
     const message = `runner: ${err instanceof Error ? err.message : String(err)}`;
-    console.error(`${source.slug}: ${message}`);
-    await refreshLog(source.slug, 'error', 0, Date.now() - start, message).catch((e) =>
+    // An origin that answered 5xx on every read the source allowed (OriginUnavailableError,
+    // refresh-uk-insolvency-2026-10-11) is the origin's day off, not a failed refresh: a
+    // `skipped` row keeps the fact without listing the source under `refresh errors` (the last
+    // snapshot is served as before; two such days surface through the stale reading).
+    const status = isOriginUnavailable(err) ? 'skipped' : 'error';
+    if (status === 'error') failed += 1;
+    console.error(`${source.slug}: ${status}: ${message}`);
+    await refreshLog(source.slug, status, 0, Date.now() - start, message).catch((e) =>
       console.error(`${source.slug}: refresh_log write failed too: ${e.message}`),
     );
   }

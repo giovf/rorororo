@@ -1,6 +1,8 @@
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import type { ErrorEnvelope, SuccessEnvelope } from '../src/lib/envelope';
 import fixtureEntries from '../src/sources/fixtures/uk-insolvency.json';
+import { OriginUnavailableError, isOriginUnavailable } from '../src/sources/origin';
+import { ukInsolvencySource } from '../src/sources/uk-insolvency';
 import type { UkInsolvencyRecord } from '../src/sources/uk-insolvency';
 import { authedFetch, issueKey } from './helpers/auth';
 import { stubOrigins } from './helpers/origin-mock';
@@ -60,7 +62,7 @@ describe('GET /v1/data/uk-insolvency', () => {
     expect(none.data).toEqual([]);
   });
 
-  it('retries a momentary 5xx once and serves the origin data', async () => {
+  it('retries a momentary 5xx and serves the origin data', async () => {
     let calls = 0;
     const mock = stubOrigins({
       gazette: () => {
@@ -121,10 +123,41 @@ describe('GET /v1/data/uk-insolvency', () => {
     const mock = stubOrigins({ gazette: () => new Response('gone fishing', { status: 500 }) });
     const res = await authedFetch(INSOLVENCY_URL);
     expect(res.status).toBe(200);
-    // One retry only: the wave budget and the Gazette's fair-use pacing both cap it.
-    expect(mock).toHaveBeenCalledTimes(2);
+    // Four reads over ~13 s of growing fair-use pauses, like a cut body — 2026-10-10 13:00 the
+    // runner read 503 twice 3 s apart and lost the day while the next run read the feed in full.
+    expect(mock).toHaveBeenCalledTimes(4);
     const body = (await res.json()) as SuccessEnvelope<UkInsolvencyRecord[]>;
     expect(body.data).toHaveLength(25);
+  });
+
+  it('a 5xx that outlasts every read is the origin being unavailable, not a parser failure', async () => {
+    // What the runner sees (prod and the runner pin FIXTURE_FALLBACK "false"): the typed error
+    // the runner-side refresh turns into a `skipped` refresh_log row instead of `error`.
+    const mock = stubOrigins({
+      gazette: () => new Response('Service Unavailable', { status: 503 }),
+    });
+    const env = { FIXTURE_FALLBACK: 'false' } as unknown as CloudflareBindings;
+    const failure = await ukInsolvencySource.fetchFresh(env).then(
+      () => null,
+      (err: unknown) => err,
+    );
+    expect(mock).toHaveBeenCalledTimes(4);
+    expect(failure).toBeInstanceOf(OriginUnavailableError);
+    expect(isOriginUnavailable(failure)).toBe(true);
+    expect((failure as Error).message).toBe('thegazette.co.uk responded 503 after 4 reads');
+    expect((failure as OriginUnavailableError).status).toBe(503);
+  });
+
+  it('a 4xx is a plain failure: never retried, never read as the origin being unavailable', async () => {
+    const mock = stubOrigins({ gazette: () => new Response('Not Found', { status: 404 }) });
+    const env = { FIXTURE_FALLBACK: 'false' } as unknown as CloudflareBindings;
+    const failure = await ukInsolvencySource.fetchFresh(env).then(
+      () => null,
+      (err: unknown) => err,
+    );
+    expect(mock).toHaveBeenCalledTimes(1);
+    expect(isOriginUnavailable(failure)).toBe(false);
+    expect((failure as Error).message).toBe('thegazette.co.uk responded 404');
   });
 
   it('rejects malformed date params with a 400 envelope', async () => {
