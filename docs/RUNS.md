@@ -888,3 +888,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 01:28 | burn-down | origin.ts: originFetch + traceOrigin; zero-record error names status, bytes, shape and URL
 - 2026-10-11 01:28 | burn-down | Both stores run refreshes traced; 15 sources fetch through originFetch; 8 tests on the relay page
 - 2026-10-11 01:28 | burn-down | Queue: gankdat refresh-zero-records-evidence done; proof is the row naming the origin page
+- 2026-10-11 01:27 | burn-down | Stopping: pipeline starved and cooled after 1 item; tonight's exchange pre-research already done at 17:39
