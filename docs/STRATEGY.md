@@ -1087,3 +1087,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   live money, no card, nothing for the ledger. The write-up, transcript and shot list are in
   `ventures/hackathons/entries/paypal-ai-hackathon/`; the demo video is the next hackathons item and the owner
   submits (action 023) before 2026-11-12. Going live with PayPal is a separate decision — Stripe stays the live rail.
+- 2026-10-11 burn-down: hackathons `demo-video-pipeline` (6 × 2) built — every Devpost portal asks for a demo video and
+  no routine could record one. `scripts/demo-video.ts` records a captioned 1280×720 headless Chromium and ffmpeg writes
+  the mp4; `scripts/demo-paypal-ai-hackathon.ts` plays the PayPal shot list against the live product (seeded through the
+  Cloudflare REST API, cleaned up after; sandbox throughout); the `demo video` workflow publishes the artifact. The live
+  recording waits on one owner step, the sandbox buyer login as two secrets (action 024), then `demo-video-paypal-record`
+  fires the job and action 023 (the Devpost form) gets the link. Proof: the mp4 under 3 minutes in the artifact.

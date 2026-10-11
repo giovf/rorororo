@@ -14,6 +14,12 @@ from this script, no narration). Runs against https://gankdat.com with a sandbox
 | 7 | 140–170 | Claude (or MCP Inspector) tools list showing `buy_credits`, `confirm_credit_purchase`; one `buy_credits` call | "Over MCP the two tools do the same — the agent buys in chat." |
 | 8 | 170–180 | repo: `src/billing/paypal.ts` and `test/paypal.spec.ts` | "Open source. Built with Claude Code. Sandbox only during the hackathon." |
 
-Needs before recording: a sandbox buyer account (developer dashboard → Sandbox Accounts), a gankdat
-key on a free account with its monthly usage at 250 (seed by calling any dataset 250 times, or ask
-the interactive session to set KV `usage:<email>:<yyyymm>` to 250).
+Recorded by `scripts/demo-paypal-ai-hackathon.ts` through the `demo video` workflow (2026-10-11,
+`demo-video-pipeline`): a headless Chromium at 1280×720, this table's captions on a bar at the
+bottom of every frame, the terminal shots rendered from the real API responses, Playwright's
+webm turned into an h264 mp4 by ffmpeg and published as the run's `demo-video-paypal-ai-hackathon`
+artifact. The job seeds what it needs through the Cloudflare REST API (a key for the run under the
+internal `demo@gankdat.com` account, its month's usage at 250, a browser session for shot 6) and
+removes it afterwards; shot 3 logs in as the owner's PayPal **sandbox** buyer from the
+`PAYPAL_SANDBOX_BUYER_EMAIL` / `PAYPAL_SANDBOX_BUYER_PASSWORD` secrets (action 024). `DEMO_DRY_RUN=1`
+records the same shots from canned answers with every frame marked DRY RUN (pipeline check only).

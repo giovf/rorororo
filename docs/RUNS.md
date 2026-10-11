@@ -933,3 +933,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 17:28 | burn-down | Hackathon package: SUBMISSION.md, agent WALKTHROUGH.md, DEMO-SCRIPT.md, walkthrough script, action 023
 - 2026-10-11 17:28 | burn-down | Queue: hackathons paypal-ai-hackathon-entry done; submit item blocked on the demo video + owner form
 - 2026-10-11 17:34 | burn-down | Stopping for time: 1 item built this slot; next is hackathons demo-video-pipeline (6 × 2)
+- 2026-10-11 18:24 | burn-down | Demo video recorder: Playwright 1280x720 page, caption bar on every frame, terminal pages, webm to mp4
+- 2026-10-11 18:24 | burn-down | PayPal entry script: the eight DEMO-SCRIPT shots from real API, MCP and PayPal sandbox steps; dry-run mode
+- 2026-10-11 18:24 | burn-down | Seeding via Cloudflare REST: one-run key, usage 250 and session for demo@gankdat.com, removed after
+- 2026-10-11 18:24 | burn-down | docs/ci/demo-video.yml: dispatch job, mp4 artifact 60 days; SCHEDULERS row; 9 tests; dry run mp4 ok
+- 2026-10-11 18:24 | burn-down | Queue: hackathons demo-video-pipeline done; demo-video-paypal-record blocked on action 024 secrets
+- 2026-10-11 18:24 | burn-down | Action 024 written: sandbox buyer email and password as secrets; owner line in ALERTS; action 023 updated
+- 2026-10-11 18:24 | notify | The hackathon demo video records itself now; it needs your PayPal test login, 5 minutes

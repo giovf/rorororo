@@ -91,11 +91,14 @@ const CF_API = `https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT_ID}`;
 
 export type SqlFn = (query: string, params?: unknown[]) => Promise<Record<string, unknown>[]>;
 export type KvDeleteFn = (key: string) => Promise<void>;
+export type KvPutFn = (key: string, value: string, ttlSeconds?: number) => Promise<void>;
 
 export interface ProbeKey {
   key: string;
   keyId: string;
   hash: string;
+  /** The internal account the key hangs off (the demo video signs its browser in as it). */
+  accountId: string;
 }
 
 /** `fapi_` + 32 uniform base62 chars (rejection sampling, like the Worker's generator). */
@@ -122,12 +125,17 @@ export function sha256Hex(text: string): string {
  * account is created once (`ON CONFLICT DO NOTHING`, like the Worker's `getOrCreateAccount`);
  * any key still on it is a killed run's leftover and goes first, so at most one exists.
  */
-export async function mintProbeKey(sql: SqlFn, key = generateProbeKey()): Promise<ProbeKey> {
+export async function mintProbeKey(
+  sql: SqlFn,
+  key = generateProbeKey(),
+  email = PROBE_EMAIL,
+  name = PROBE_KEY_NAME,
+): Promise<ProbeKey> {
   await sql('INSERT INTO accounts (id, email) VALUES (?1, ?2) ON CONFLICT (email) DO NOTHING', [
     crypto.randomUUID(),
-    PROBE_EMAIL,
+    email,
   ]);
-  const [account] = await sql('SELECT id FROM accounts WHERE email = ?1', [PROBE_EMAIL]);
+  const [account] = await sql('SELECT id FROM accounts WHERE email = ?1', [email]);
   const accountId = account?.id;
   if (typeof accountId !== 'string' || !accountId) throw new Error('probe account not found');
   await sql('DELETE FROM api_keys WHERE account_id = ?1', [accountId]);
@@ -135,9 +143,9 @@ export async function mintProbeKey(sql: SqlFn, key = generateProbeKey()): Promis
   const hash = sha256Hex(key);
   await sql(
     'INSERT INTO api_keys (id, key_hash, email, name, plan, credits_granted, account_id) VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7)',
-    [keyId, hash, PROBE_EMAIL, PROBE_KEY_NAME, 'free', FREE_TIER_CREDITS, accountId],
+    [keyId, hash, email, name, 'free', FREE_TIER_CREDITS, accountId],
   );
-  return { key, keyId, hash };
+  return { key, keyId, hash, accountId };
 }
 
 /**
@@ -158,8 +166,8 @@ export async function deleteProbeKey(
   }
 }
 
-/** The two REST calls the mint needs, bound to a Cloudflare API token. */
-export function cloudflare(token: string): { sql: SqlFn; kvDelete: KvDeleteFn } {
+/** The REST calls the mint needs (and the demo video's KV seeding), bound to a Cloudflare API token. */
+export function cloudflare(token: string): { sql: SqlFn; kvDelete: KvDeleteFn; kvPut: KvPutFn } {
   const auth = { Authorization: `Bearer ${token}` };
   return {
     sql: async (query, params = []) => {
@@ -183,6 +191,19 @@ export function cloudflare(token: string): { sql: SqlFn; kvDelete: KvDeleteFn } 
         { method: 'DELETE', headers: auth, signal: AbortSignal.timeout(TIMEOUT_MS) },
       );
       if (!res.ok) throw new Error(`KV delete: ${res.status}`);
+    },
+    kvPut: async (key, value, ttlSeconds) => {
+      const url = new URL(
+        `${CF_API}/storage/kv/namespaces/${CACHE_NAMESPACE_ID}/values/${encodeURIComponent(key)}`,
+      );
+      if (ttlSeconds) url.searchParams.set('expiration_ttl', String(ttlSeconds));
+      const res = await fetch(url, {
+        method: 'PUT',
+        headers: { ...auth, 'content-type': 'text/plain' },
+        body: value,
+        signal: AbortSignal.timeout(TIMEOUT_MS),
+      });
+      if (!res.ok) throw new Error(`KV put: ${res.status}`);
     },
   };
 }

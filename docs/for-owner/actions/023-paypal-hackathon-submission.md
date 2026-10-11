@@ -1,7 +1,7 @@
 # Owner action request #023 — submit the PayPal AI Hackathon entry
 
 - **Date:** 2026-10-11
-- **Status:** waiting for the demo video (queue `hackathons/demo-video-pipeline`); you will get an `owner:` line when the mp4 exists
+- **Status:** waiting for the demo video — the recorder is built (2026-10-11); it needs the sandbox buyer login from action 024, then the `demo video` workflow records the mp4 (queue `hackathons/demo-video-paypal-record`) and you get an `owner:` line with the link
 - **Your time:** ~10 minutes
 - **Cost:** £0.00
 - **Deadline:** submissions close **2026-11-12** (https://paypalaihackathon.devpost.com/)

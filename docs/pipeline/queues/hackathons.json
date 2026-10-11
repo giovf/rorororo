@@ -20,13 +20,13 @@
     {
       "id": "demo-video-pipeline",
       "title": "Demo video pipeline: a Playwright script per entry that drives the live product in a headless browser with on-screen captions, recorded to webm and converted to mp4 by ffmpeg in CI, published as a workflow artifact the owner attaches to the submission",
-      "why": "Every Devpost portal asks for a short demo video and judges watch it first; no routine can record a screen today, so each entry would stall on the owner. Playwright's `recordVideo` and ffmpeg run on a GitHub runner; captions come from the script, no narration needed. First entry to record: the PayPal shot list is ventures/hackathons/entries/paypal-ai-hackathon/DEMO-SCRIPT.md (2026-10-11); when the mp4 exists, write the owner: line for action 023 and unblock paypal-ai-hackathon-submit.",
+      "why": "Every Devpost portal asks for a short demo video and judges watch it first; no routine can record a screen today, so each entry would stall on the owner. Playwright's `recordVideo` and ffmpeg run on a GitHub runner; captions come from the script, no narration needed. First entry to record: the PayPal shot list is ventures/hackathons/entries/paypal-ai-hackathon/DEMO-SCRIPT.md (2026-10-11); when the mp4 exists, write the owner: line for action 023 and unblock paypal-ai-hackathon-submit. Built 2026-10-11 (burn-down): scripts/demo-video.ts (recorder, captions, webm→mp4) + scripts/demo-paypal-ai-hackathon.ts (the eight shots, live and dry-run modes) + docs/ci/demo-video.yml (dispatch; artifact demo-video-<entry>); a dry run recorded in the sandbox (1280×720 h264, captions on every frame). The live recording waits on the sandbox buyer login (action 024) — item demo-video-paypal-record.",
       "effort_days": 0.5,
       "proof": "one mp4 under 3 minutes produced from CI for the first entry",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-11",
-      "doing_since": "2026-10-11"
+      "done_at": "2026-10-11"
     },
     {
       "id": "paypal-ai-hackathon-entry",
@@ -51,6 +51,17 @@
       "done_at": "2026-10-11"
     },
     {
+      "id": "demo-video-paypal-record",
+      "title": "Record the PayPal AI Hackathon demo video: run the `demo video` workflow (entry paypal-ai-hackathon) once the sandbox buyer secrets exist, check the artifact (mp4 under 3 min, every shot present), paste its run link into action 023 and write the owner: line for the submission",
+      "why": "The pipeline is built (demo-video-pipeline, 2026-10-11) and verified with a dry run; the PayPal approval shot logs in as the owner's sandbox buyer, whose email and password are the PAYPAL_SANDBOX_BUYER_* repository secrets (action 024). A routine fires the workflow with actions_run_trigger and reads the run with actions_get; a failed PayPal login shows in the run log (selectors #email, #password, #payment-submit-btn — fix the script if PayPal's sandbox page changed). Artifacts expire after 60 days: record no earlier than needed and before 2026-11-12.",
+      "effort_days": 0.2,
+      "proof": "one mp4 under 3 minutes in the workflow's artifact, listed in action 023",
+      "score": 9,
+      "status": "blocked",
+      "added": "2026-10-11",
+      "blocked_on": "owner action 024 (PAYPAL_SANDBOX_BUYER_EMAIL and PAYPAL_SANDBOX_BUYER_PASSWORD secrets)"
+    },
+    {
       "id": "paypal-ai-hackathon-submit",
       "title": "Submit the PayPal AI Hackathon entry on Devpost (owner, action 023): paste SUBMISSION.md, attach the demo video, repo and try-it links; record the submission URL in RESEARCH.md",
       "why": "The entry is built (paypal-ai-hackathon-entry, 2026-10-11) and submissions close 2026-11-12; Devpost's Terms forbid automated access, so the owner submits by hand from docs/for-owner/actions/023-paypal-hackathon-submission.md. Waits on the demo video (every Devpost portal asks for one).",
@@ -59,7 +70,7 @@
       "score": 9,
       "status": "blocked",
       "added": "2026-10-11",
-      "blocked_on": "demo-video-pipeline (the mp4), then the owner's Devpost form — action 023; the owner: line is written when the video exists"
+      "blocked_on": "demo-video-paypal-record (the mp4 from the demo video workflow, after the owner's action 024 secrets), then the owner's Devpost form — action 023; the owner: line is written when the video exists"
     }
   ]
 }

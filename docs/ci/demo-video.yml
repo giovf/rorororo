@@ -1,0 +1,60 @@
+name: demo video
+
+# Records a hackathon entry's demo video from the runner (hackathons `demo-video-pipeline`,
+# 2026-10-11): scripts/demo-<entry>.ts drives the live product in a headless Chromium with
+# on-screen captions, Playwright records the page and ffmpeg (preinstalled on ubuntu-latest)
+# writes the mp4 that this job publishes as the `demo-video-<entry>` artifact — the owner
+# downloads it and attaches it to the Devpost form (docs/for-owner/actions/023-…). Dispatch only:
+# the owner from the Actions tab, or a routine with `actions_run_trigger`, once the PayPal
+# sandbox buyer secrets exist (action 024). A dry run (no network, placeholder pages, every
+# frame marked DRY RUN) checks the pipeline itself without the secrets.
+on:
+  workflow_dispatch:
+    inputs:
+      entry:
+        description: 'Entry to record (scripts/demo-<entry>.ts)'
+        default: paypal-ai-hackathon
+        required: true
+      dry_run:
+        description: 'Placeholder recording, no network or secrets'
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ${{ github.workflow }}-${{ inputs.entry }}
+  cancel-in-progress: false
+
+jobs:
+  record:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Browser
+        run: npx playwright install --with-deps chromium
+      - name: Record
+        run: node --disable-warning=ExperimentalWarning scripts/demo-${{ inputs.entry }}.ts
+        env:
+          DEMO_DRY_RUN: ${{ inputs.dry_run && '1' || '' }}
+          DEMO_OUT: dist/demo
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          PAYPAL_SANDBOX_BUYER_EMAIL: ${{ secrets.PAYPAL_SANDBOX_BUYER_EMAIL }}
+          PAYPAL_SANDBOX_BUYER_PASSWORD: ${{ secrets.PAYPAL_SANDBOX_BUYER_PASSWORD }}
+      - name: Publish the mp4
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: demo-video-${{ inputs.entry }}${{ inputs.dry_run && '-dry-run' || '' }}
+          path: |
+            dist/demo/*.mp4
+            dist/demo/shots.txt
+          if-no-files-found: error
+          retention-days: 60

@@ -5,9 +5,12 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (1)
+## Requests (2)
 
-1. **PayPal needs tax info added to the sandbox developer accoun…** — time not stated, since 2026-10-11; nothing queued waits on it. Steps: [022](actions/022-prize-and-bounty-accounts.md).
+1. **PayPal demo video needs your sandbox buyer login as two Git…** — ~5 min, since 2026-10-11; unblocks hackathons `demo-video-paypal-record` (9), hackathons `paypal-ai-hackathon-submit` (9). Steps: [024](actions/024-paypal-sandbox-buyer.md).
+   PayPal demo video needs your sandbox buyer login as two GitHub secrets, ~5 min, £0 — docs/for-owner/actions/024-paypal-sandbox-buyer.md
+
+2. **PayPal needs tax info added to the sandbox developer accoun…** — time not stated, since 2026-10-11; nothing queued waits on it. Steps: [022](actions/022-prize-and-bounty-accounts.md).
    PayPal needs tax info added to the sandbox developer account from action 022 — log in to PayPal and click "Add Tax Info" to keep using it.
 
 ## Waiting on an attended Claude session, not you (3)

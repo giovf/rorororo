@@ -65,3 +65,4 @@ submissions with no placing and no judge feedback → `finished`.
 | 2026-10-11 | Validated | — | — | — | 38 open online hackathons on Devpost; two high-fit entries queued; owner action 022 (accounts) |
 | 2026-10-11 | Accounts | — | — | — | owner on Devpost + joined PayPal AI; PayPal sandbox keys set; Nebius dropped (card required) |
 | 2026-10-11 | Built | — | — | — | PayPal entry built: sandbox credit packs live in gankdat v0.24.0 (REST, MCP buy_credits, /account), write-up and walkthrough in `entries/paypal-ai-hackathon/`; waits on the demo video, then the owner submits |
+| 2026-10-11 | Demo pipeline | — | — | — | CI records entry demo videos (Playwright + ffmpeg); PayPal video waits on the sandbox buyer secrets (action 024) |
