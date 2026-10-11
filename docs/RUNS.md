@@ -940,3 +940,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 18:24 | burn-down | Queue: hackathons demo-video-pipeline done; demo-video-paypal-record blocked on action 024 secrets
 - 2026-10-11 18:24 | burn-down | Action 024 written: sandbox buyer email and password as secrets; owner line in ALERTS; action 023 updated
 - 2026-10-11 18:24 | notify | The hackathon demo video records itself now; it needs your PayPal test login, 5 minutes
+- 2026-10-11 18:31 | burn-down | Stopping for time: 1 item built this slot; next is oss-bounties bounty-claim-ledger (5 × 2)
