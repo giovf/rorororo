@@ -571,8 +571,9 @@
       "effort_days": 0.2,
       "proof": "≥ 1 `request_api_key` request or x402 payment from a client that hit the wall within 30 days, or the row names where wall-hitters go instead",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-11"
+      "status": "doing",
+      "added": "2026-10-11",
+      "doing_since": "2026-10-11"
     },
     {
       "id": "metrics-dataset-queries-external",
