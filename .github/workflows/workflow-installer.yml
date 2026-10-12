@@ -20,6 +20,10 @@ concurrency:
 jobs:
   install:
     runs-on: ubuntu-latest
+    # The install push deletes the files under docs/ci and so matched this job's own trigger: every
+    # docs/ci change ran it twice, the second run finding nothing to move (one billed minute each,
+    # 2026-10-12, foundry actions-floor-trim). Its own commit subject is skipped.
+    if: "${{ !startsWith(github.event.head_commit.message, 'ci: install workflow(s)') }}"
     steps:
       - uses: actions/checkout@v7
         with:
