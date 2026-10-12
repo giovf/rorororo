@@ -133,9 +133,10 @@
       "effort_days": 0.1,
       "proof": "verdict line in RESEARCH.md; second list queued or outreach dropped",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-09-26",
-      "not_before": "2026-10-12"
+      "not_before": "2026-10-12",
+      "doing_since": "2026-10-12"
     },
     {
       "id": "stats-canonical-fix",
