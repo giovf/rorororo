@@ -1145,3 +1145,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-12 burn-down: oss-bounties `bounty-useagenthq-useagent-113` dropped — the "$5" pays a person to use the maintainer's
   product on a real-time recording and email a report from a sign-up address, with AI-driven runs prohibited; not a repository
   change and not claimable by a routine.
+- 2026-10-12 burn-down: oss-bounties `bounty-salamlang-salam-1713` dropped — a community reward for publishing a new app in
+  Salam under the owner's account, paying only the first two accepted projects with at least nine complete submissions already
+  ahead; expected payout nil.

@@ -1019,3 +1019,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 09:40 | build | Watchdog ci-minutes line now reports billed minutes (scripts/actions-minutes.mjs), the metered figure
 - 2026-10-12 09:40 | build | Queue: actions-minutes back to todo, next reading 10-19; actions-floor-trim (5) filed with the levers
 - 2026-10-12 17:20 | burn-down | Queue: oss-bounties useagent#113 dropped — a $5 usage task (record and email), not a fix; AI runs banned
+- 2026-10-12 17:24 | burn-down | Queue: oss-bounties Salam#1713 dropped — a build-an-app reward paying the first 2 of 9+ entries ahead
