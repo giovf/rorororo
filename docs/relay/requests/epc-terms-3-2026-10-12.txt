@@ -1,0 +1,4 @@
+# Exchange pre-research 2026-10-12, round 3: the licensing and data-protection pages the guidance index links to
+GET https://get-energy-performance-data.communities.gov.uk/guidance/licensing-restrictions
+GET https://get-energy-performance-data.communities.gov.uk/guidance/data-protection-requirements
+GET https://get-energy-performance-data.communities.gov.uk/guidance/energy-certificate-data-apis
