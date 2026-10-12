@@ -1151,3 +1151,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-12 burn-down: oss-bounties `bounty-scanner-contest-floor` (6 × 2) built — five of five scanner-filed items were dropped
   unbuilt; the last two were a usage task and a contest, neither a repository change. The scanner now drops an issue whose
   title or body reads as a contest or usage task and files nothing under $25; the line's first real claim waits on the next board.
+- 2026-10-12 burn-down: foundry `actions-floor-trim` (5) built — the clean-week projection after the poller trim was ≈531 billed
+  min/week against a 350 proof line and the 2,000/month private cap. Four levers through `docs/ci/`: a lockfile-keyed
+  `node_modules` cache in `check` and `gankdat`, the gankdat gate and deploy as one job, the installer skipping its own
+  install push, and the watchdog folded into `notify owner` (every routine push + a 6-hourly net) with its own cron gone.
+  The 10-26 reading measures the trimmed shape and decides on the repo flip.

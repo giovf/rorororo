@@ -1022,3 +1022,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 17:24 | burn-down | Queue: oss-bounties Salam#1713 dropped — a build-an-app reward paying the first 2 of 9+ entries ahead
 - 2026-10-12 17:30 | burn-down | Scanner drops contests and usage tasks (title + body) and files nothing under $25; 2 tests
 - 2026-10-12 17:30 | burn-down | Queue: oss-bounties bounty-scanner-contest-floor done; proof is the next board filing a real fix
+- 2026-10-12 17:50 | burn-down | check and gankdat restore node_modules from a lockfile-keyed cache; npm ci only on a miss (docs/ci)
+- 2026-10-12 17:50 | burn-down | gankdat.yml is one job: gate then deploy on the same runner, deploy skipped on pull requests
+- 2026-10-12 17:50 | burn-down | Installer skips its own install push; watchdog + ci-minutes ride notify owner, 6-hourly net
+- 2026-10-12 17:50 | burn-down | Queue: foundry actions-floor-trim done; proof is the 10-26 reading under 350 billed min/week
