@@ -974,4 +974,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 00:45 | burn-down | actions-minutes evidence: 59 wall vs ~128 billed minutes in 10.8 h; the 10-12 read quotes billing
 - 2026-10-12 00:45 | burn-down | Glama handoff closed: authed MCP probe 200/200/200 daily since 10-09; what is left is Glama's own page
 - 2026-10-12 00:45 | burn-down | Seen, not queued: BURN.json report still 10-04 (gate inert), 00:00 trigger text still says Thursday
-- 2026-10-12 00:52 | burn-down | Stopping for time: research pass this slot; next is }, 01:00 fire takes it
+- 2026-10-12 00:52 | burn-down | Stopping for time: research pass this slot; next is foundry poller-push-triggers (6); the 01:00 fire takes it
