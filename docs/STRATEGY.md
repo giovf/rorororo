@@ -1164,3 +1164,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `bounty-scanner-work-shape` (6 × 2) on top of the burn-down's contest floor from the same slot: the scanner also drops
   real-device, maintainer-assigned and hardware shapes. Two routines read the same board in one slot (the claim-first fix
   from 01:35 kept them off the same item, but not off the same fix); the line's first real claim waits on the next board.
+- 2026-10-12 burn-down: exchange pre-research — EPC register (MHCLG bulk data + API) declined: the address and postcode fields sit
+  under an Ordnance Survey/Royal Mail notice limited to energy-efficiency purposes, address-level rows are personal data with the
+  re-user as controller, the official API is free and the ECO4 lead market it would serve ends 2026-12-31. Bespoke feed for a
+  permitted buyer only; never a shelf listing.
