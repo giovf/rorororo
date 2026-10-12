@@ -54,6 +54,7 @@ const ALLOWED = [
   '.readwise.io',
   '.glasp.co',
   '.hypothes.is',
+  '.opendatacommunities.org', // EPC open data terms (exchange pre-research 2026-10-12)
 ];
 
 function allowed(hostname) {
