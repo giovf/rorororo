@@ -1133,3 +1133,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-12 burn-down: foundry `append-only-union-merge` (5) built — the append-only logs (RUNS.md, INBOX.md) and the run-line
   floor file merge with git's `union` driver, so the concurrent evening pushes (30 merges in 7 days, two resolved by hand) no
   longer stop a cut-off-prone session at a conflict; `npm run runs` reads the higher floor and rewrites the file cleanly.
+- 2026-10-12 burn-down: foundry `claim-before-install` (4) built — `npm run pipeline next` no longer needs the built dist, so
+  both evening slots claim their item within a minute of firing instead of after a 5–7 min install (the cause of the 10-07
+  duplicate build and the 10-10 dropped one); the two routine prompts move the claim before `npm ci`.

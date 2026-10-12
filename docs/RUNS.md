@@ -982,3 +982,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 01:25 | burn-down | .gitattributes: RUNS.md, INBOX.md and RUNS-COUNT.json merge with union, so two appends never conflict
 - 2026-10-12 01:25 | burn-down | runs-check reads the higher count a union merge leaves in RUNS-COUNT.json and rewrites it clean; 3 tests
 - 2026-10-12 01:25 | burn-down | Queue: foundry append-only-union-merge done; proof is no hand-resolved merge on those files in 14 days
+- 2026-10-12 01:35 | burn-down | npm run pipeline next/empty/status run on plain Node: the queue code is imported from core src, no dist
+- 2026-10-12 01:35 | burn-down | pipeline-plain.test.ts: 3 guards (source import, module import-free, cold and claim builtins only)
+- 2026-10-12 01:35 | burn-down | Prompts: burn-down GATE and build STEP -1 claim the first item before npm ci; a red STEP 0 releases it
+- 2026-10-12 01:35 | burn-down | Queue: foundry claim-before-install done; proof is claims within 2 min of the slot for 7 days

@@ -41,7 +41,7 @@ for more than a day with no future `not_before` is a cut-off session's leftover 
 -- --by=<routine>` right after `next` (the `--` matters: npm keeps a bare `--by=` for itself, 2026-10-08) — one commit of the queue file (`pipeline: claim <venture>/<id> (<routine>)`), pushed
 before any work, like the slot marker; a claim refused because another session's `doing` is under a day old means take
 `next` again (on 2026-10-07 the 17:00 burn-down and the 17:10 build each built `search-console-api-reading` in full, and the
-second push was discarded). The watchdog never counts a claim commit as a slot's trace. **Cooling** (2026-10-06): a queue carries
+second push was discarded). The watchdog never counts a claim commit as a slot's trace. **Plain Node** (2026-10-12, foundry `claim-before-install`): `next`, `empty` and `status` read the queue code from `packages/core/src/pipeline.ts` through Node's type stripping, so like `cold` and `claim` they run before `npm ci`; the build and burn-down routines claim their first item right after their gate, within a minute of the slot, not after the 5–7 min install that used to precede the first working `next` (the 17:00 and 17:10 slots collided on 10-07 and 10-10 because of it). **Cooling** (2026-10-06): a queue carries
 `researched: YYYY-MM-DD`, the day of its last research run (every research run sets it with `updated`); for 48 h after
 that the starvation fallback skips the queue and `npm run pipeline` lists it on a `cooling:` line, so a venture is not
 researched twice in a day (2026-10-05 had five research runs and the next morning's build was offered the same venture

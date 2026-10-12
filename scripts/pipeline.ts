@@ -18,6 +18,13 @@ const dir = path.resolve(import.meta.dirname, '..', 'docs', 'pipeline');
 // `claim` (2026-10-07, foundry build-claim-marker): the one-line `doing` push made right after
 // `next`, before any work, so a concurrent build / burn-down session's `next` skips the item.
 // Plain node, no dist, like `cold`; the logic and its tests are in scripts/pipeline-claim.ts.
+// `next`, `empty` and `status` (2026-10-12, foundry claim-before-install): plain node too — the
+// parse/rank code is imported from packages/core/src/pipeline.ts through Node's type stripping
+// (no imports of its own, erasable syntax), not from @foundry/core's dist, which exists only after
+// `npm ci` + `tsc -b`. Until then `next` failed with ERR_MODULE_NOT_FOUND for the first 5–7 minutes
+// of every slot, so the 17:00 burn-down and the 17:10 build claimed their items after their own
+// install and gate and still collided (10-07 duplicate build, 10-10 dropped build). The routines
+// now run `next` + `claim` right after the GATE, before `npm ci`.
 if (process.argv[2] === 'claim') {
   const { main } = await import('./pipeline-claim.ts');
   try {
@@ -78,8 +85,8 @@ if (process.argv[2] === 'cold') {
 }
 
 const { formatPipeline, needsResearch, nextItem, parseExchange, parseQueue } =
-  await import('@foundry/core');
-type Pipeline = import('@foundry/core').Pipeline;
+  await import('../packages/core/src/pipeline.ts');
+type Pipeline = import('../packages/core/src/pipeline.ts').Pipeline;
 const errors: string[] = [];
 const queues = readdirSync(path.join(dir, 'queues'))
   .filter((f) => f.endsWith('.json'))
