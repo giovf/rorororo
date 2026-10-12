@@ -9,6 +9,7 @@ import {
   rankOf,
   renderBoard,
   repoExcluded,
+  shapeExcluded,
   takenBy,
   type Bounty,
   type Comment,
@@ -171,6 +172,50 @@ describe('exclusions', () => {
     ).toBe('reads as a security finding');
     expect(issueExcluded('Handle out-of-disk gracefully', ['💎 Bounty', '💰 Rewarded'])).toBe(
       'already rewarded',
+    );
+  });
+});
+
+describe('shapeExcluded', () => {
+  // Wording quoted from the three issues the 2026-10-12 build dropped after a read.
+  it("drops the mobile app that needs real phones and the maintainer's assignment", () => {
+    expect(
+      shapeExcluded(
+        'Build the UseAgent mobile app for iOS and Android\nBuilds that install on a real iPhone and a real Android phone and a screen recording of each in the pull request. A maintainer assigns this issue before work counts.',
+      ),
+    ).toBe("needs a real device or the claimant's own recording");
+    expect(
+      shapeExcluded(
+        'Add the Discord transport\nA maintainer assigns this issue before work counts.',
+      ),
+    ).toBe('the maintainer picks the claimant first');
+  });
+  it('drops the paid user-testing task and the community showcase reward', () => {
+    expect(
+      shapeExcluded(
+        'Coding with an agent: 3 tasks\n$5 per task, to the first person whose report checks out. No scripts, tools or other AIs sending prompts for you. Record the whole session in one continuous screen recording.',
+      ),
+    ).toBe('a paid user-testing task');
+    expect(
+      shapeExcluded(
+        '🎁 Build Something with Salam Programming Language (Community Reward)\nFirst accepted project: $5 AUD',
+      ),
+    ).toBe('a showcase or community reward');
+    expect(shapeExcluded('Fix sampling bias\nMust be verified on real hardware (Wormhole).')).toBe(
+      'needs hardware the sandbox lacks',
+    );
+  });
+  it('keeps ordinary feature and bug-fix work, through issueExcluded', () => {
+    expect(
+      shapeExcluded(
+        'Add CSV export to the table view\nRecord the export in the audit log and add a test; $400 bounty via the bot.',
+      ),
+    ).toBeUndefined();
+    expect(
+      issueExcluded('Add CSV export', ['💎 Bounty'], 'Please add a test for the session store.'),
+    ).toBeUndefined();
+    expect(issueExcluded('Student kit', [], 'Each developer gets a community reward of $30.')).toBe(
+      'a showcase or community reward',
     );
   });
 });

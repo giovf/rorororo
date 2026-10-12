@@ -1142,3 +1142,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   is re-dated to 10-19. The watchdog line now reports the billed figure; the remaining one-minute floors (gankdat's two
   jobs, check's install, notify owner on every push, the watchdog cron, the installer's self-trigger) are filed as
   `actions-floor-trim` (5) to build before that week is measured.
+- 2026-10-12 build: the second bounty board's three free items dropped on read (a maintainer-assigned mobile app verified on
+  real phones, a $5 hand-run user-testing task, a community showcase reward) — six of six filed items in two days were
+  never code with tests. Built the general fix instead of a seventh read: the scanner's SHAPE_RULES drop those shapes
+  from the title and body before ranking. The line's thesis stays untested until a free code bounty reaches the queue;
+  a board empty of code work for a week triggers the §5 kill rule early.

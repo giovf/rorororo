@@ -1018,3 +1018,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 09:40 | build | Clean days 10-06..10-11 give 911 billed/week; without the pollers trimmed on 10-12 still 531 — no flip
 - 2026-10-12 09:40 | build | Watchdog ci-minutes line now reports billed minutes (scripts/actions-minutes.mjs), the metered figure
 - 2026-10-12 09:40 | build | Queue: actions-minutes back to todo, next reading 10-19; actions-floor-trim (5) filed with the levers
+- 2026-10-12 17:18 | build | Bounty useagent#61 ($80) dropped: maintainer assigns one of 4 claimants; real-phone recordings; weeks for $80
+- 2026-10-12 17:18 | build | Bounty useagent#113 ($5/task) dropped: paid user-testing by hand, forbids runs by other AIs; not code
+- 2026-10-12 17:18 | build | Bounty Salam#1713 (AUD $5) dropped: community reward for a showcase repo on the owner's account
+- 2026-10-12 17:18 | build | Claims ledger: 3 rows dropped (6 of 6 filed in two days); first-bounty-pr stays blocked on a code item
+- 2026-10-12 17:18 | build | Scanner SHAPE_RULES drop showcase, user-testing, device-recording, assigned, hardware issues; 3 tests
+- 2026-10-12 17:18 | build | Queue: oss-bounties bounty-scanner-work-shape filed (6) and done; proof is three boards with no shape drop

@@ -26,7 +26,7 @@
       "score": 9,
       "status": "blocked",
       "added": "2026-10-11",
-      "blocked_on": "a funded bounty with no assignee and no open PR on docs/bounties/BOARD.md — none on the 2026-10-11 board (top three: assigned with a PR, unfunded request, hardware report); the scanner now marks funding and taken, so the next board that files a free funded item unblocks this"
+      "blocked_on": "a funded bounty with no assignee and no open PR that is code with tests — none on the 2026-10-11 or 2026-10-12 boards (10-12 top three: a mobile app needing maintainer assignment and real-device recordings, a $5 user-testing task that forbids AI-run sessions, a $5 showcase-project community reward); the scanner now also drops those shapes (bounty-scanner-work-shape), so the next board that files a free funded code item unblocks this"
     },
     {
       "id": "bounty-scanner-funding-and-taken",
@@ -86,33 +86,46 @@
     {
       "id": "bounty-useagenthq-useagent-61",
       "title": "Bounty $80 on useagenthq/useagent#61: Build the UseAgent mobile app for iOS and Android — fork, fix with tests in the project's conventions, open the PR with `/claim #61` and a plain note on how it was built",
-      "why": "Filed by the bounty scanner (2026-10-12, docs/bounties/BOARD.md): $80 posted on https://github.com/useagenthq/useagent/issues/61 by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); useagenthq/useagent has 381 stars, TypeScript, AGPL-3.0, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.",
+      "why": "Filed by the bounty scanner (2026-10-12, docs/bounties/BOARD.md): $80 posted on https://github.com/useagenthq/useagent/issues/61 by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); useagenthq/useagent has 381 stars, TypeScript, AGPL-3.0, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped. Dropped 2026-10-12 (build): the issue says a maintainer must assign the claimant before work counts and none of the four who asked since 10-05 was picked; acceptance needs installable builds on a real iPhone and a real Android phone with the claimant's own screen recordings and answers in their own words, which is owner hours, not admin; a full Expo app with browser sign-in, live threads and push notifications is weeks of work for $80.",
       "effort_days": 1,
       "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
       "score": 7,
-      "status": "doing",
+      "status": "dropped",
       "added": "2026-10-12",
-      "doing_since": "2026-10-12"
+      "dropped_at": "2026-10-12"
     },
     {
       "id": "bounty-useagenthq-useagent-113",
       "title": "Bounty $5 on useagenthq/useagent#113: Coding with an agent: 3 tasks (website, real bug fix, tests) — fork, fix with tests in the project's conventions, open the PR with `/claim #113` and a plain note on how it was built",
-      "why": "Filed by the bounty scanner (2026-10-12, docs/bounties/BOARD.md): $5 posted on https://github.com/useagenthq/useagent/issues/113 by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); useagenthq/useagent has 381 stars, TypeScript, AGPL-3.0, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.",
+      "why": "Filed by the bounty scanner (2026-10-12, docs/bounties/BOARD.md): $5 posted on https://github.com/useagenthq/useagent/issues/113 by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); useagenthq/useagent has 381 stars, TypeScript, AGPL-3.0, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped. Dropped 2026-10-12 (build): not code with tests but a paid user-testing task: $5 per task to a person who starts each run by hand, forbids runs sent by scripts or other AIs, and records one continuous session of themselves; the first report was rejected 10-12 for running tasks in parallel. Nothing a routine may do.",
       "effort_days": 1,
       "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-12"
+      "status": "dropped",
+      "added": "2026-10-12",
+      "dropped_at": "2026-10-12"
     },
     {
       "id": "bounty-salamlang-salam-1713",
       "title": "Bounty $5 on SalamLang/Salam#1713: 🎁 Build Something with Salam Programming Language (Community Reward) — fork, fix with tests in the project's conventions, open the PR with `/claim #1713` and a plain note on how it was built",
-      "why": "Filed by the bounty scanner (2026-10-12, docs/bounties/BOARD.md): $5 posted on https://github.com/SalamLang/Salam/issues/1713 by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); SalamLang/Salam has 53 stars, TeX, GPL-3.0, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.",
+      "why": "Filed by the bounty scanner (2026-10-12, docs/bounties/BOARD.md): $5 posted on https://github.com/SalamLang/Salam/issues/1713 by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); SalamLang/Salam has 53 stars, TeX, GPL-3.0, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped. Dropped 2026-10-12 (build): a community reward (AUD $5 per person, once) for a showcase project in the Salam language on the owner's own GitHub account, with the VS Code extension installed, the repo starred and forked and 6+ commits; 10+ submissions wait ahead, payment is \"at the end of the event\" by GitHub Sponsors with none confirmed; not feature or bug-fix work on a project, and ~£2.50 is below the cost of the owner steps.",
       "effort_days": 1,
       "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-12"
+      "status": "dropped",
+      "added": "2026-10-12",
+      "dropped_at": "2026-10-12"
+    },
+    {
+      "id": "bounty-scanner-work-shape",
+      "title": "Bounty scanner: drop issues whose reward is not code with tests on the project (user-testing sessions, showcase or community rewards, real-device recordings, maintainer-assigned claims) before they reach the queue",
+      "why": "Six items filed in two boards (10-11, 10-12), six dropped by hand after a read: tt-metal needed hardware, turso was unfunded, quiver was a report, useagent#61 needs maintainer assignment and real-device recordings, useagent#113 pays for hand-run recorded sessions, Salam#1713 is a community reward for a showcase repo. Each read costs a build slot that could build a gankdat item. The scanner reads the issue body already; signals to drop or demote: \"community reward\", \"build something with\", \"screen recording\"/\"recording of\", \"real device\"/\"real iPhone\", \"maintainer must assign\"/\"maintainer picks\", \"no scripts or other AIs\", \"per task\"; keep only labelled or /bounty-funded feature or bug-fix work. Also write the reason into the BOARD table so the drop is visible without a read. Built 2026-10-12 (build): SHAPE_RULES + shapeExcluded in scripts/bounty-scanner.ts, applied through issueExcluded on title and body at the first pass; 3 tests on the three issues' real wording; board header and SCHEDULERS row say so.",
+      "effort_days": 0.5,
+      "proof": "the next three boards file no item that a read then drops for shape; first-bounty-pr unblocks on a real code item",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-12",
+      "done_at": "2026-10-12"
     }
   ]
 }
