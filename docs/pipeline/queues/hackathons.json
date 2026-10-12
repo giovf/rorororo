@@ -53,13 +53,13 @@
     {
       "id": "demo-video-paypal-record",
       "title": "Record the PayPal AI Hackathon demo video: run the `demo video` workflow (entry paypal-ai-hackathon) once the sandbox buyer secrets exist, check the artifact (mp4 under 3 min, every shot present), paste its run link into action 023 and write the owner: line for the submission",
-      "why": "The pipeline is built (demo-video-pipeline, 2026-10-11) and verified with a dry run; the PayPal approval shot logs in as the owner's sandbox buyer, whose email and password are the PAYPAL_SANDBOX_BUYER_* repository secrets (action 024). A routine fires the workflow with actions_run_trigger and reads the run with actions_get; a failed PayPal login shows in the run log (selectors #email, #password, #payment-submit-btn — fix the script if PayPal's sandbox page changed). Artifacts expire after 60 days: record no earlier than needed and before 2026-11-12.",
+      "why": "The pipeline is built (demo-video-pipeline, 2026-10-11) and verified with a dry run; the PayPal approval shot logs in as the owner's sandbox buyer, whose email and password are the PAYPAL_SANDBOX_BUYER_* repository secrets (action 024). A routine fires the workflow with actions_run_trigger and reads the run with actions_get; a failed PayPal login shows in the run log (selectors #email, #password, #payment-submit-btn — fix the script if PayPal's sandbox page changed). Artifacts expire after 60 days: record no earlier than needed and before 2026-11-12. Done 2026-10-11 (interactive): run 38171740523 produced paypal-ai-hackathon.mp4 (2 min 24 s, eight shots, sandbox approval completed); fixes on the way: PayPal login iframe + failure evidence, ffmpeg on the runner.",
       "effort_days": 0.2,
       "proof": "one mp4 under 3 minutes in the workflow's artifact, listed in action 023",
       "score": 9,
-      "status": "blocked",
+      "status": "done",
       "added": "2026-10-11",
-      "blocked_on": "owner action 024 (PAYPAL_SANDBOX_BUYER_EMAIL and PAYPAL_SANDBOX_BUYER_PASSWORD secrets)"
+      "done_at": "2026-10-11"
     },
     {
       "id": "paypal-ai-hackathon-submit",
@@ -70,7 +70,7 @@
       "score": 9,
       "status": "blocked",
       "added": "2026-10-11",
-      "blocked_on": "demo-video-paypal-record (the mp4 from the demo video workflow, after the owner's action 024 secrets), then the owner's Devpost form — action 023; the owner: line is written when the video exists"
+      "blocked_on": "the owner submits the Devpost form (action 023); video artifact: https://github.com/giovf/rorororo/actions/runs/38171740523"
     }
   ]
 }

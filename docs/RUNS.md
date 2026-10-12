@@ -965,3 +965,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 19:37 | burn-down | Queue: foundry third-party-pr-relay done — proof met by tonight's Docker PR, no interactive session
 - 2026-10-11 19:37 | burn-down | Pipeline starved after 5 items: nothing buildable, every queue cooling; exchange pre-research next
 - 2026-10-11 19:48 | burn-down | Exchange pre-research: x402 Bazaar listing parked (auto-index on first paid call; ~18k real listings; 0 x402 sales yet)
+- 2026-10-11 20:40 | interactive | PayPal demo video recorded on CI (2m24s, sandbox approval completed) after two fixes: login iframe, ffmpeg
+- 2026-10-11 20:40 | notify | PayPal hackathon entry is ready to submit: video and text are prepared, about 10 minutes
