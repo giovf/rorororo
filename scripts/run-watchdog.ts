@@ -6,14 +6,15 @@
 // This script enumerates each routine's slots, checks for that trace within the grace window,
 // and appends ONE `| watchdog | missed: …` line per silent slot to docs/RUNS.md. The
 // `notify owner` CI job turns that line into a Telegram bullet; the line itself is the
-// dedupe record, so re-runs (hourly cron + every push) never report a slot twice.
+// dedupe record, so re-runs (every routine push + a 6-hourly cron) never report a slot twice.
 //
 // A slot that STARTED (`npm run slot -- start <routine>` stamped docs/ops/SLOTS.md, 2026-09-30) but
 // never finished is reported as `stalled:` — the start marker is never mistaken for the work.
 //
 // Run in CI: node --disable-warning=ExperimentalWarning scripts/run-watchdog.ts
-// Workflow: docs/ci/run-watchdog.yml (drafted 2026-09-25; routine tokens lack the `workflow` scope,
-// so the interactive session moves it to .github/workflows/ — until then the script is dormant).
+// Workflow: a step of .github/workflows/notify-owner.yml since 2026-10-12 (foundry actions-floor-trim:
+// every routine push already starts that job and GitHub delivered this script's own 2-hourly cron
+// about half the time); run-watchdog.yml keeps a workflow_dispatch for a by-hand run.
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
 import { execSync } from 'node:child_process';
 import { appendFileSync, existsSync, readFileSync } from 'node:fs';

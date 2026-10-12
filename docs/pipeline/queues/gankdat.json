@@ -129,13 +129,14 @@
     {
       "id": "b2b-outreach-results",
       "title": "Close the B2B outreach experiment: 14 days after the last send, count replies/sign-ups in OUTREACH-2026-09.md §6, write the verdict to RESEARCH.md and decide on a second list",
-      "why": "The experiment only pays if its result is read. Proof number set 2026-09-24: ≥ 2 replies or 1 sign-up from 10 emails. Replies arrive at info@gankdat.com (inbox triage logs them in docs/INBOX.md); sign-ups show in the Daily numbers row. Review 2026-W40 (Gmail, read 2026-10-04): all ten mails were sent 2026-09-28 20:33 UTC from the owner's account; Wholegrain Digital bounced (550 5.1.1), nine delivered, 0 replies by 10-04. Verdict date = 14 days after the send = 2026-10-12; send log filled in OUTREACH-2026-09.md §6.",
+      "why": "The experiment only pays if its result is read. Proof number set 2026-09-24: ≥ 2 replies or 1 sign-up from 10 emails. Replies arrive at info@gankdat.com (inbox triage logs them in docs/INBOX.md); sign-ups show in the Daily numbers row. Review 2026-W40 (Gmail, read 2026-10-04): all ten mails were sent 2026-09-28 20:33 UTC from the owner's account; Wholegrain Digital bounced (550 5.1.1), nine delivered, 0 replies by 10-04. Verdict date = 14 days after the send = 2026-10-12; send log filled in OUTREACH-2026-09.md §6. Closed 2026-10-12 (burn-down): 0 replies from the nine delivered by the 14-day mark (no mail from any target domain in docs/INBOX.md), no attributable sign-up (the 10-12 +2 accounts cannot be tied to a target and the demo-video runs seed an internal account); proof not met, outreach dropped as a channel, no second list; verdict in RESEARCH.md and OUTREACH-2026-09.md §6, bounce added to the suppression list.",
       "effort_days": 0.1,
       "proof": "verdict line in RESEARCH.md; second list queued or outreach dropped",
       "score": 4,
-      "status": "todo",
+      "status": "done",
       "added": "2026-09-26",
-      "not_before": "2026-10-12"
+      "not_before": "2026-10-12",
+      "done_at": "2026-10-12"
     },
     {
       "id": "stats-canonical-fix",

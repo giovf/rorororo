@@ -88,6 +88,13 @@ charities with income ≥ £25k 17,508 of 75,574; open schools 2,572 of 27,233 �
 2026-09-26: first (and only, until it proves out) B2B outreach — ten UK limited companies, generic mailboxes,
 Companies House checked, drafts for the owner in Gmail; kit and lawful basis in `docs/OUTREACH-2026-09.md`,
 LIA C in `docs/GDPR.md`. Proof: ≥ 2 replies or 1 sign-up from 10; verdict due 14 days after the last send.
+**Verdict 2026-10-12 (burn-down, `b2b-outreach-results`): failed and closed.** Nine delivered on 2026-09-28 (one bounce),
+0 replies and no attributable sign-up by 2026-10-12 (`docs/OUTREACH-2026-09.md` §6). Cold email to generic agency and
+bid-consultancy mailboxes is dropped as a channel: no second list. What the result says about the thesis: the
+no-website lead feed and the contract-awards feed have not yet found a buyer who answers unsolicited mail; the
+distribution that does move numbers is the shelves (MCP directories, Apify, the comparison pages), so the budget of
+effort stays there (STRATEGY §5: distribution before new features). Revisit only on an inbound lead or a paid
+customer naming its firm type.
 
 ## Claude Connectors Directory (2026-09-30)
 

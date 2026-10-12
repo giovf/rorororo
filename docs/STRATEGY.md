@@ -1151,6 +1151,14 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-12 burn-down: oss-bounties `bounty-scanner-contest-floor` (6 × 2) built — five of five scanner-filed items were dropped
   unbuilt; the last two were a usage task and a contest, neither a repository change. The scanner now drops an issue whose
   title or body reads as a contest or usage task and files nothing under $25; the line's first real claim waits on the next board.
+- 2026-10-12 burn-down: foundry `actions-floor-trim` (5) built — the clean-week projection after the poller trim was ≈531 billed
+  min/week against a 350 proof line and the 2,000/month private cap. Four levers through `docs/ci/`: a lockfile-keyed
+  `node_modules` cache in `check` and `gankdat`, the gankdat gate and deploy as one job, the installer skipping its own
+  install push, and the watchdog folded into `notify owner` (every routine push + a 6-hourly net) with its own cron gone.
+  The 10-26 reading measures the trimmed shape and decides on the repo flip.
+- 2026-10-12 burn-down: gankdat `b2b-outreach-results` (4) closed — the ten-firm cold-email experiment of 2026-09-28 got 0 replies
+  from nine delivered and no attributable sign-up by its 14-day mark; cold email to generic mailboxes is dropped as a channel
+  (no second list), effort stays on the shelves. Kit and suppression list kept for an inbound lead.
 - 2026-10-12 build: oss-bounties `bounty-useagenthq-useagent-61` ($80) dropped — a whole mobile app the maintainer assigns to
   one of four claimants and verifies on real phones with the claimant's own recordings: owner hours, weeks of work. Built
   `bounty-scanner-work-shape` (6 × 2) on top of the burn-down's contest floor from the same slot: the scanner also drops

@@ -40,8 +40,19 @@ jobs:
       - uses: actions/setup-node@v6
         with:
           node-version: 22
-          cache: npm
-      - run: npm ci
+      # node_modules cache (2026-10-12, foundry actions-floor-trim): GitHub bills every job rounded up
+      # to a whole minute and `npm ci` alone took ~50 s of each run (setup-node's npm cache only saves
+      # the download). The installed tree is restored keyed on the lockfile; `npm ci` runs on a miss.
+      # The 10-26 actions-minutes reading decides whether the restore beats the install.
+      - uses: actions/cache@v4
+        id: node-modules
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: node-modules-${{ runner.os }}-22-${{ hashFiles('package-lock.json') }}
+      - if: steps.node-modules.outputs.cache-hit != 'true'
+        run: npm ci
       # check:root (2026-10-06, foundry gankdat-test-setup): the gankdat gate used to run here AND in
       # gankdat.yml on every gankdat push — the two top Actions consumers of the month. gankdat.yml
       # owns it on CI; `npm run check` locally still chains it.

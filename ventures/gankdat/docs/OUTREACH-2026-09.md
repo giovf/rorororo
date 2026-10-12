@@ -83,7 +83,7 @@ Domains that opted out or bounced — never emailed again by anyone:
 
 | Domain | Date | Reason |
 | --- | --- | --- |
-| _(none yet)_ | | |
+| wholegraindigital.com | 2026-09-28 | bounced `550 5.1.1` (hello@ not found); a current mailbox is needed before any contact |
 
 ## 6. Send log
 
@@ -91,17 +91,26 @@ All ten sent by the owner from the Gmail drafts on 2026-09-28 20:33 UTC (read fr
 2026-W40 strategy review on 2026-10-04); nine delivered, one bounced. Verdict due 2026-10-12 (queue item
 `b2b-outreach-results`): ≥ 2 replies or 1 sign-up from the nine delivered.
 
+**Verdict 2026-10-12 (burn-down, 14 days after the send): failed.** 0 replies from the nine delivered — no mail from
+any of the ten domains reached info@gankdat.com (`docs/INBOX.md` has no line from them, 09-28..10-12; the only
+inbound B2B mail in the window is WuslaHQ's unrelated marketplace pitch), no "no thanks", no bounce beyond #10.
+Sign-ups: the Daily numbers row went 1 → 3 accounts on 10-12 (+2/24 h), but neither can be tied to a target
+(no reply, no mention, no domain in the repo) and the demo-video runs of 10-11 seed and remove an internal
+`demo@gankdat.com` account, so the count is not evidence either way. Proof line (≥ 2 replies or 1 sign-up) not
+met: no second list; the kit, the lawful-basis reading and the suppression list stay for an inbound lead or a
+changed thesis (a reply to a *sent* mail, or a paid customer naming its firm type).
+
 | # | Firm | Sent (date) | Reply? | Sign-up? | Notes |
 | --- | --- | --- | --- | --- | --- |
-| 1 | Executive Compass | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
-| 2 | Thornton & Lowe | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
-| 3 | Hudson Succeed | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
-| 4 | BWS | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
-| 5 | Bid Solutions | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
-| 6 | Bubble Design | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
-| 7 | Splitpixel | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
-| 8 | Giant Digital | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
-| 9 | Adept | 2026-09-28 20:33 UTC | none (as of 2026-10-04) | none | delivered |
+| 1 | Executive Compass | 2026-09-28 20:33 UTC | none (as of 2026-10-12) | none | delivered |
+| 2 | Thornton & Lowe | 2026-09-28 20:33 UTC | none (as of 2026-10-12) | none | delivered |
+| 3 | Hudson Succeed | 2026-09-28 20:33 UTC | none (as of 2026-10-12) | none | delivered |
+| 4 | BWS | 2026-09-28 20:33 UTC | none (as of 2026-10-12) | none | delivered |
+| 5 | Bid Solutions | 2026-09-28 20:33 UTC | none (as of 2026-10-12) | none | delivered |
+| 6 | Bubble Design | 2026-09-28 20:33 UTC | none (as of 2026-10-12) | none | delivered |
+| 7 | Splitpixel | 2026-09-28 20:33 UTC | none (as of 2026-10-12) | none | delivered |
+| 8 | Giant Digital | 2026-09-28 20:33 UTC | none (as of 2026-10-12) | none | delivered |
+| 9 | Adept | 2026-09-28 20:33 UTC | none (as of 2026-10-12) | none | delivered |
 | 10 | Wholegrain Digital | 2026-09-28 20:33 UTC | bounced | — | `550 5.1.1` address not found (hello@wholegraindigital.com) — not delivered; find the current mailbox before any second list |
 
 ## 7. The drafts
