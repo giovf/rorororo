@@ -696,8 +696,9 @@
       "effort_days": 0.15,
       "proof": "push-triggered runs of the three workflows per day drop from ~50 to 0 (notify owner may carry the poll); the next 7-day Actions reading shows billed minutes within 1.5× wall minutes",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-12"
+      "status": "doing",
+      "added": "2026-10-12",
+      "doing_since": "2026-10-12"
     },
     {
       "id": "append-only-union-merge",
