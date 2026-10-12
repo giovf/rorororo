@@ -17,6 +17,12 @@
 // floor in docs/ops/RUNS-COUNT.json: lower fails (a whole-file write), higher raises the floor in
 // place so the next commit carries it. No git range needed, so depth-1 CI gives the same verdict.
 //
+// Union merges (2026-10-12, foundry `append-only-union-merge`): .gitattributes gives docs/RUNS.md,
+// docs/INBOX.md and docs/ops/RUNS-COUNT.json the `union` merge driver, so two sessions appending in
+// the same hour no longer conflict (two of the last 30 merges were resolved by hand). A merged
+// RUNS-COUNT.json then carries both sides' `"runs":` lines: parseFloor reads the higher value of every
+// key, and `check` rewrites the file whenever its text is not the clean serialisation of that floor.
+//
 // Run: npm run runs                       → check lines dated >= CAP_FROM and the floor, exit 1 on a violation
 //      npm run runs -- check [--from YYYY-MM-DD] [--cap 120]
 //      npm run runs -- list  [--from YYYY-MM-DD] [--cap 120]   → every offender, never fails
@@ -124,13 +130,27 @@ export interface Floor {
   updated: string;
 }
 
+/** Every `"<key>": N` in the text — a union-merged file carries one line per side. */
+function everyNumber(json: string, key: string): number[] {
+  return [...json.matchAll(new RegExp(`"${key}"\\s*:\\s*(\\d+)`, 'g'))].map((m) => Number(m[1]));
+}
+
+/** The floor file; after a union merge the higher of each side's counts (the floor only rises). */
 export function parseFloor(json: string): Floor {
   const raw = JSON.parse(json) as Partial<Floor>;
   return {
-    runs: typeof raw.runs === 'number' ? raw.runs : 0,
-    strategy: typeof raw.strategy === 'number' ? raw.strategy : 0,
+    runs: Math.max(typeof raw.runs === 'number' ? raw.runs : 0, ...everyNumber(json, 'runs')),
+    strategy: Math.max(
+      typeof raw.strategy === 'number' ? raw.strategy : 0,
+      ...everyNumber(json, 'strategy'),
+    ),
     updated: typeof raw.updated === 'string' ? raw.updated : '',
   };
+}
+
+/** The file's one shape; anything else (a union merge's doubled lines) gets rewritten. */
+export function serialiseFloor(floor: Floor): string {
+  return `${JSON.stringify(floor, null, 2)}\n`;
 }
 
 /** One message per file whose dated-bullet count fell below the floor; empty when both grew or held. */
@@ -211,9 +231,8 @@ function main(): void {
           : 0,
       };
       const floorPath = path.resolve(FLOOR_FILE);
-      const floor = existsSync(floorPath)
-        ? parseFloor(readFileSync(floorPath, 'utf8'))
-        : { runs: 0, strategy: 0, updated: '' };
+      const floorText = existsSync(floorPath) ? readFileSync(floorPath, 'utf8') : '';
+      const floor = floorText ? parseFloor(floorText) : { runs: 0, strategy: 0, updated: '' };
       const lost = floorViolations(counts, floor);
       if (lost.length > 0) {
         for (const l of lost) console.error(`runs: ${l}`);
@@ -222,9 +241,14 @@ function main(): void {
       }
       const next = raisedFloor(counts, floor, new Date().toISOString().slice(0, 10));
       if (next.runs !== floor.runs || next.strategy !== floor.strategy) {
-        writeFileSync(floorPath, `${JSON.stringify(next, null, 2)}\n`);
+        writeFileSync(floorPath, serialiseFloor(next));
         console.log(
           `runs: floor raised to ${next.runs} run lines / ${next.strategy} decision-log lines (${FLOOR_FILE}, commit it)`,
+        );
+      } else if (floorText !== serialiseFloor(floor)) {
+        writeFileSync(floorPath, serialiseFloor(floor));
+        console.log(
+          `runs: ${FLOOR_FILE} rewritten in its one shape after a union merge (commit it)`,
         );
       } else {
         console.log(

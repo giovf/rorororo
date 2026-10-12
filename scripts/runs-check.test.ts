@@ -1,3 +1,7 @@
+import { execFileSync } from 'node:child_process';
+import { mkdtempSync, rmSync, writeFileSync } from 'node:fs';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
 import { describe, expect, it } from 'vitest';
 import {
   CAP,
@@ -7,6 +11,7 @@ import {
   formatViolation,
   parseFloor,
   raisedFloor,
+  serialiseFloor,
   parseArgs,
   parseRuns,
   textLength,
@@ -145,5 +150,61 @@ describe('append-only floor', () => {
       updated: '2026-10-04',
     });
     expect(parseFloor('{}')).toEqual({ runs: 0, strategy: 0, updated: '' });
+  });
+});
+
+describe('union merge (2026-10-12, append-only-union-merge)', () => {
+  const unionMerge = (base: string, ours: string, theirs: string): string => {
+    const dir = mkdtempSync(path.join(tmpdir(), 'union-'));
+    const file = (name: string, text: string): string => {
+      const p = path.join(dir, name);
+      writeFileSync(p, text);
+      return p;
+    };
+    const out = execFileSync(
+      'git',
+      [
+        'merge-file',
+        '-p',
+        '--union',
+        file('ours', ours),
+        file('base', base),
+        file('theirs', theirs),
+      ],
+      { encoding: 'utf8' },
+    );
+    rmSync(dir, { recursive: true, force: true });
+    return out;
+  };
+
+  it('keeps every line of two concurrent appends to RUNS.md exactly once', () => {
+    const base = '# Run log\n\n- 2026-10-11 17:05 | build | first\n';
+    const ours = `${base}- 2026-10-11 17:20 | burn-down | ours A\n- 2026-10-11 17:21 | burn-down | ours B\n`;
+    const theirs = `${base}- 2026-10-11 17:22 | build | theirs C\n`;
+    const merged = unionMerge(base, ours, theirs);
+    const lines = merged.split('\n').filter((l) => l.startsWith('- '));
+    expect(lines).toHaveLength(4);
+    expect(new Set(lines).size).toBe(4);
+    for (const l of ['first', 'ours A', 'ours B', 'theirs C'])
+      expect(lines.filter((x) => x.endsWith(l))).toHaveLength(1);
+    expect(merged).not.toContain('<<<<<<<');
+    expect(violations(merged, '2026-10-03')).toEqual([]);
+  });
+
+  it('keeps both sides of a union-merged RUNS-COUNT.json and parseFloor reads the higher count', () => {
+    const base = serialiseFloor({ runs: 954, strategy: 187, updated: '2026-10-12' });
+    const ours = serialiseFloor({ runs: 957, strategy: 188, updated: '2026-10-12' });
+    const theirs = serialiseFloor({ runs: 960, strategy: 187, updated: '2026-10-12' });
+    const merged = unionMerge(base, ours, theirs);
+    expect(merged).not.toContain('<<<<<<<');
+    expect(merged.match(/"runs"/g)).toHaveLength(2);
+    expect(parseFloor(merged)).toEqual({ runs: 960, strategy: 188, updated: '2026-10-12' });
+    expect(merged).not.toBe(serialiseFloor(parseFloor(merged)));
+  });
+
+  it('parseFloor of a clean file is unchanged and serialises back to the same text', () => {
+    const text = serialiseFloor({ runs: 10, strategy: 20, updated: '2026-10-04' });
+    expect(parseFloor(text)).toEqual({ runs: 10, strategy: 20, updated: '2026-10-04' });
+    expect(serialiseFloor(parseFloor(text))).toBe(text);
   });
 });

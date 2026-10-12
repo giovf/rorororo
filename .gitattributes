@@ -1,2 +1,12 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+# Append-only logs merge themselves (2026-10-12, foundry `append-only-union-merge`): three sessions
+# push to main in the same hour most evenings and each appends to these files, so git's default
+# driver conflicted on two of the last 30 merges. `union` keeps both sides' lines. Only files that
+# are append-only by rule (scripts/runs-check.ts enforces it for RUNS.md): never ALERTS.md,
+# OWNER-NOTES.md or the queue files, which are edited in place. RUNS-COUNT.json keeps both sides'
+# `"runs":` lines too; `npm run runs` reads the higher one and rewrites the file cleanly.
+docs/RUNS.md merge=union
+docs/INBOX.md merge=union
+docs/ops/RUNS-COUNT.json merge=union

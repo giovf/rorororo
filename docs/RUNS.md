@@ -979,3 +979,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 01:45 | burn-down | notify owner polls Telegram after its sends and commits owner notes with the cursor: one billed minute
 - 2026-10-12 01:45 | burn-down | Fill-only env flags and the push-only step guards removed from the two metrics jobs; SCHEDULERS rows updated
 - 2026-10-12 01:45 | burn-down | Queue: foundry poller-push-triggers done; proof is the 10-19 Actions reading (push pollers 0 a day)
+- 2026-10-12 01:25 | burn-down | .gitattributes: RUNS.md, INBOX.md and RUNS-COUNT.json merge with union, so two appends never conflict
+- 2026-10-12 01:25 | burn-down | runs-check reads the higher count a union merge leaves in RUNS-COUNT.json and rewrites it clean; 3 tests
+- 2026-10-12 01:25 | burn-down | Queue: foundry append-only-union-merge done; proof is no hand-resolved merge on those files in 14 days

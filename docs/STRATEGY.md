@@ -1130,3 +1130,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   metrics) no longer run on every push to `main` (56 of the last 100 Actions runs, ≈56 billed minutes for 14 wall); the
   per-push owner-notes poll rides `notify owner` instead, the hourly cron stays, and the metrics rows come from the cron and
   the 07:00 dispatch only. Private-repo cap (foundry `actions-minutes`) reads the effect on 10-19.
+- 2026-10-12 burn-down: foundry `append-only-union-merge` (5) built — the append-only logs (RUNS.md, INBOX.md) and the run-line
+  floor file merge with git's `union` driver, so the concurrent evening pushes (30 merges in 7 days, two resolved by hand) no
+  longer stop a cut-off-prone session at a conflict; `npm run runs` reads the higher floor and rewrites the file cleanly.
