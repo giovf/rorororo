@@ -53,17 +53,16 @@ next board to be much shorter than 56 rows; if it is empty for a week, the line'
 tests win) is wrong and the kill rule applies early. Algora's own site is unreachable from the sandbox
 (DNS), so GitHub stays the only source.
 
-The second board (2026-10-12, 498 read, 16 kept) filed three free funded items and the 17:00 build dropped all
-three after a read: useagent#61 ($80) is a whole Expo app the maintainer assigns to one of four claimants and
-verifies on a real iPhone and Android with the claimant's own recordings; useagent#113 ($5 per task) pays a
-person to run recorded sessions by hand and forbids runs by other AIs; Salam#1713 (AUD $5) is a community
-reward for a showcase repo on the contributor's own account. Six of six filed items dropped in two days, each
-read costing a build slot, so the scanner now reads the title and body for those shapes (`SHAPE_RULES` in
-`scripts/bounty-scanner.ts`: community or showcase rewards, paid user-testing, real-device recordings, claims
-the maintainer hands out first, hardware) and drops them before ranking, with the reason in the board's
-dropped counts. Proof: the next three boards file no item a read then drops for shape. The thesis is still
-untested — no code bounty free of competition has reached the queue yet; the kill rule in §5 applies to a
-board empty of code work for a week as much as to an empty board.
+The second board (2026-10-12, 498 read, 16 kept) filed three free funded items and both 17:00 routines
+dropped them after a read: useagent#61 ($80) is a whole Expo app the maintainer assigns to one of four
+claimants and verifies on a real iPhone and Android with the claimant's own recordings; useagent#113 ($5 per
+task) pays a person to run recorded sessions by hand and forbids runs by other AIs; Salam#1713 (AUD $5) is a
+community reward for a showcase repo. Six of six filed items dropped in two days, each read costing a slot,
+so the scanner now reads the title and body for those shapes: `CONTEST_ISSUE` (contests, showcases, usage
+tasks) with a $25 floor from the burn-down, and `SHAPE_RULES` (real-device recordings, claims the maintainer
+hands out first, hardware) from the build, each with its reason in the board's dropped counts. The thesis is
+still untested — no code bounty free of competition has reached the queue; a board empty of code work for a
+week triggers the §5 kill rule as much as an empty board does.
 
 ## 3. Validation gate
 
@@ -98,9 +97,9 @@ count and the `week:` line the weekly report copies.
 | [tenstorrent/tt-metal#59732](https://github.com/tenstorrent/tt-metal/issues/59732) | $3000 | dropped | — | — | — | — | 2026-10-11: assigned 10-08 with PR #60225 submitted; acceptance needs Wormhole and Blackhole hardware |
 | [tursodatabase/turso#8749](https://github.com/tursodatabase/turso/issues/8749) | $650 | dropped | — | — | — | — | 2026-10-11: a contributor's own `/bounty` ask on 09-18, no maintainer or bot funded it; one attempt, two offers |
 | [Arrow-air/project-quiver#256](https://github.com/Arrow-air/project-quiver/issues/256) | $1219 | dropped | — | — | — | — | 2026-10-11: a platform-engineering report for a hardware project, not code with tests |
-| [useagenthq/useagent#61](https://github.com/useagenthq/useagent/issues/61) | $80 | dropped | — | — | — | — | 2026-10-12: maintainer must assign (four asked since 10-05, none picked); real iPhone and Android builds with the claimant's own recordings; weeks of app work for $80 |
-| [useagenthq/useagent#113](https://github.com/useagenthq/useagent/issues/113) | $5 | dropped | — | — | — | — | 2026-10-12: paid user-testing task, hand-run recorded sessions, forbids runs by scripts or other AIs; not code |
-| [SalamLang/Salam#1713](https://github.com/SalamLang/Salam/issues/1713) | $5 | dropped | — | — | — | — | 2026-10-12: AUD $5 community reward for a showcase repo on the owner's account (extension, star, fork, 6+ commits); 10+ ahead, payment unconfirmed |
+| [useagenthq/useagent#61](https://github.com/useagenthq/useagent/issues/61) | $80 | dropped | — | — | — | — | 2026-10-12: maintainer assigns one of four claimants (none picked since 10-05); real iPhone and Android builds with the claimant's own recordings; weeks of app work for $80 |
+| [useagenthq/useagent#113](https://github.com/useagenthq/useagent/issues/113) | $5 | dropped | — | — | — | — | 2026-10-12: a usage task, not a fix — record yourself using their product and email a report from a sign-up address; AI-driven runs banned; all 3 tasks claimed 10-11 |
+| [SalamLang/Salam#1713](https://github.com/SalamLang/Salam/issues/1713) | $5 | dropped | — | — | — | — | 2026-10-12: a community reward for publishing a new app in Salam, not a fix; only the first two accepted projects are paid and nine complete submissions were ahead |
 
 ## Metrics
 
@@ -111,4 +110,5 @@ count and the `week:` line the weekly report copies.
 | 2026-10-11 | Unblocked | — | — | — | PR_TOKEN present, owner signed in to the board; first bounty PR is buildable |
 | 2026-10-11 | No claim | — | — | — | top three unbuildable (assigned + hardware, unfunded request, report); scanner now marks funding and taken; first-bounty-pr blocked on a free funded row |
 | 2026-10-11 | Claim ledger | — | — | — | `## Claims` table + `npm run claims`: 0 claimed, 0 merged, 0 paid, 3 dropped; weekly report reads it |
-| 2026-10-12 | No claim | — | — | — | second board's top three dropped on read (mobile app needing assignment + device recordings, user-testing task, showcase reward); 6 of 6 filed items dropped; scanner shape filter queued |
+| 2026-10-12 | Scanner fix | — | — | — | 5 of 5 filed items dropped unbuilt (assigned, unfunded, report, usage task, contest); scanner now drops contests and usage tasks and files nothing under $25 |
+| 2026-10-12 | No claim | — | — | — | useagent#61 ($80) dropped on read: maintainer-assigned, real-phone recordings, weeks of app work; 6 of 6 filed items dropped; scanner also drops device, assigned and hardware shapes |

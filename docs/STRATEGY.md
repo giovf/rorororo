@@ -1142,8 +1142,17 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   is re-dated to 10-19. The watchdog line now reports the billed figure; the remaining one-minute floors (gankdat's two
   jobs, check's install, notify owner on every push, the watchdog cron, the installer's self-trigger) are filed as
   `actions-floor-trim` (5) to build before that week is measured.
-- 2026-10-12 build: the second bounty board's three free items dropped on read (a maintainer-assigned mobile app verified on
-  real phones, a $5 hand-run user-testing task, a community showcase reward) — six of six filed items in two days were
-  never code with tests. Built the general fix instead of a seventh read: the scanner's SHAPE_RULES drop those shapes
-  from the title and body before ranking. The line's thesis stays untested until a free code bounty reaches the queue;
-  a board empty of code work for a week triggers the §5 kill rule early.
+- 2026-10-12 burn-down: oss-bounties `bounty-useagenthq-useagent-113` dropped — the "$5" pays a person to use the maintainer's
+  product on a real-time recording and email a report from a sign-up address, with AI-driven runs prohibited; not a repository
+  change and not claimable by a routine.
+- 2026-10-12 burn-down: oss-bounties `bounty-salamlang-salam-1713` dropped — a community reward for publishing a new app in
+  Salam under the owner's account, paying only the first two accepted projects with at least nine complete submissions already
+  ahead; expected payout nil.
+- 2026-10-12 burn-down: oss-bounties `bounty-scanner-contest-floor` (6 × 2) built — five of five scanner-filed items were dropped
+  unbuilt; the last two were a usage task and a contest, neither a repository change. The scanner now drops an issue whose
+  title or body reads as a contest or usage task and files nothing under $25; the line's first real claim waits on the next board.
+- 2026-10-12 build: oss-bounties `bounty-useagenthq-useagent-61` ($80) dropped — a whole mobile app the maintainer assigns to
+  one of four claimants and verifies on real phones with the claimant's own recordings: owner hours, weeks of work. Built
+  `bounty-scanner-work-shape` (6 × 2) on top of the burn-down's contest floor from the same slot: the scanner also drops
+  real-device, maintainer-assigned and hardware shapes. Two routines read the same board in one slot (the claim-first fix
+  from 01:35 kept them off the same item, but not off the same fix); the line's first real claim waits on the next board.

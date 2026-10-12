@@ -18,12 +18,19 @@
 // The shortlist also reads assignees and the timeline's open linked PRs: a taken issue stays on the board
 // (ranked down by its competition) but is never filed as a queue item.
 //
-// Shape (build 2026-10-12, oss-bounties `bounty-scanner-work-shape`): six items filed from two boards were
-// all dropped after a read — a mobile app the maintainer assigns and verifies on real phones with the
-// claimant's own recordings (useagent#61), a $5-per-task user-testing job that forbids runs by other AIs
-// (useagent#113), a community reward for a showcase repo in a toy language (Salam#1713), a fix that needs
-// vendor hardware (tt-metal#59732). Each read cost a build slot. SHAPE_RULES reads the title and body for
-// those signals and drops the issue before it is ranked, with the reason in the board's dropped counts.
+// Contests and usage tasks (burn-down 2026-10-12, oss-bounties `bounty-scanner-contest-floor`): the next
+// two filed items were a "$5 per task" ask to record oneself using the maintainer's product and email a
+// report, and a "build something with our language" community reward paying the first two of twenty
+// submissions. Neither is a fix on the repository, so an issue whose title or body reads as a contest,
+// a showcase or a usage task is dropped by rule, and nothing under MIN_AMOUNT is filed: a day of work
+// for $5 is not a line of income (STRATEGY §4 counts $50–$800 per merged PR).
+//
+// Shape (build 2026-10-12, oss-bounties `bounty-scanner-work-shape`, same slot as the contest floor above):
+// the third filed item, useagent#61 ($80), was a whole mobile app the maintainer assigns to one of four
+// claimants and verifies on a real iPhone and Android with the claimant's own recordings; tt-metal#59732
+// needed vendor hardware. SHAPE_RULES catches those three shapes the contest regex does not — a result
+// the claimant records on a real device, a claim the maintainer hands out first, a fix that needs
+// hardware — on the title and body, each with its own reason in the board's dropped counts.
 //
 // Run: npm run bounties [-- --date=YYYY-MM-DD]   (GITHUB_TOKEN in CI; `gh auth token` locally)
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
@@ -41,6 +48,8 @@ export const MAX_REPO_AGE_DAYS = 90;
 export const BOARD_SIZE = 40;
 export const SHORTLIST = 60;
 export const FILE_TOP = 3;
+/** Smallest posted amount worth a queue item; smaller ones stay on the board for the record. */
+export const MIN_AMOUNT = 25;
 export const SCORE = 7;
 export const EFFORT_DAYS = 1;
 /** Languages the routines build in well; others rank at 0.4. */
@@ -51,24 +60,22 @@ export const EXCLUDED_REPO =
 /** An issue that reads as a security finding rather than a feature or bug-fix task. */
 export const EXCLUDED_ISSUE =
   /vulnerab|exploit|\bcve-?\d|\bxss\b|injection|auth(entication|orization)? bypass|privilege|csrf|ssrf|\brce\b|security (bug|issue|flaw)|unauthenticated/i;
+/**
+ * An issue that pays for something other than a change to the repository: a contest, a showcase, a
+ * "build something with X" reward, or a task that asks the taker to use the product, record it and
+ * email a report. Matched against the title and the body.
+ */
+export const CONTEST_ISSUE =
+  /community reward|build something with|giveaway|\bcontest\b|taking task \d|\$\s?\d+ (each|per (task|run|submission|project))|screen[- ]?record|recording link|email [\w.-]+@[\w.-]+|post (the|your|a) (public )?(repo|repository|project) link|submit (your|a) (project|repo|repository|app) (link|url|as a comment)|first (\d+ |two |three |five )?accepted (projects?|submissions?|reports?)|one reward per/i;
 
 /**
- * Work no routine can deliver as a pull request with tests: a showcase or community reward, a paid
- * user-testing session, a result the claimant must record on a real device, a claim the maintainer hands
- * out first, or a fix that needs hardware. Read on the title and body; the first rule that matches names
- * the drop reason in the board's counts.
+ * Work no routine can deliver as a pull request with tests, beyond CONTEST_ISSUE: a result the claimant
+ * must record on a real device, a claim the maintainer hands out before work counts, a fix that needs
+ * hardware. The first rule that matches names the drop reason.
  */
 export const SHAPE_RULES: readonly { re: RegExp; why: string }[] = [
   {
-    re: /community reward|build something (with|using|in)\b|showcase project|starter project/i,
-    why: 'a showcase or community reward',
-  },
-  {
-    re: /\$\s?\d+ (per|each|for each) (task|run|report|session)\b|other ais sending|by another ai\b|do the runs yourself|user[- ]testing/i,
-    why: 'a paid user-testing task',
-  },
-  {
-    re: /real (iphone|android|device|phone)|screen recording|continuous recording|record(ing)? (of )?(the )?(whole|entire|full|your) session|installable builds?/i,
+    re: /real (iphone|android|device|phone)|installable builds?|record(ing)? (of )?(the )?(whole|entire|full|your) session/i,
     why: "needs a real device or the claimant's own recording",
   },
   {
@@ -222,7 +229,9 @@ export function repoExcluded(repo: Repo, today: string): string | undefined {
 export function issueExcluded(title: string, labels: string[], body = ''): string | undefined {
   if (EXCLUDED_ISSUE.test(title)) return 'reads as a security finding';
   if (labels.some((l) => /rewarded|paid|completed/i.test(l))) return 'already rewarded';
-  return shapeExcluded(`${title}\n${body}`);
+  const text = `${title}\n${body}`;
+  if (CONTEST_ISSUE.test(text)) return 'contest or usage task, not a fix';
+  return shapeExcluded(text);
 }
 
 export function daysBetween(a: string, b: string): number {
@@ -266,11 +275,11 @@ export function renderBoard(
 Written daily by \`scripts/bounty-scanner.ts\` (\`.github/workflows/bounty-board.yml\`) from GitHub's search API:
 open issues that received a \`/bounty $N\` command in the last ${LOOKBACK_DAYS} days or carry a bounty label. Feature and
 bug-fix work only: sandbox and security repositories and issues that read as security findings are dropped by
-rule, as are issues whose reward is not code with tests on the project (showcase or community rewards, paid user-testing
-sessions, results the claimant must record on a real device, claims the maintainer hands out first, hardware fixes).
+rule, and so are contests, showcases and usage tasks that pay for something other than a change to the repository,
+results the claimant must record on a real device, claims the maintainer hands out first, and fixes that need hardware.
 Only money a maintainer, the bounty bot or a label posted counts; a contributor's "bounty proposal" is dropped.
 Rank = amount × language fit ÷ (1 + age in months) ÷ (1 + open PRs + assigned). Taken says what stands between a new
-claim and the money; the top ${FILE_TOP} free ones become \`oss-bounties\` queue items.
+claim and the money; the top ${FILE_TOP} free ones at $${MIN_AMOUNT} or more become \`oss-bounties\` queue items.
 
 Read ${stats.raw} issues, kept ${stats.kept}; dropped: ${dropped || 'none'}.
 
@@ -285,8 +294,8 @@ export function itemId(b: Bounty): string {
 }
 
 /**
- * Files the top free bounties (no assignee, no open PR) as queue items, idempotent on id; blocked
- * until CI can push a fork.
+ * Files the top free bounties (no assignee, no open PR, at least MIN_AMOUNT) as queue items,
+ * idempotent on id; blocked until CI can push a fork.
  */
 export function fileBounties(
   queue: Queue,
@@ -296,7 +305,9 @@ export function fileBounties(
 ): { queue: Queue; added: string[] } {
   const items = queue.items.map((it) => ({ ...it }));
   const added: string[] = [];
-  for (const b of bounties.filter((x) => takenBy(x) === 'free').slice(0, FILE_TOP)) {
+  for (const b of bounties
+    .filter((x) => takenBy(x) === 'free' && x.amount >= MIN_AMOUNT)
+    .slice(0, FILE_TOP)) {
     const id = itemId(b);
     if (items.some((it) => it.id === id)) continue;
     const item: QueueItem = {

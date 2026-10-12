@@ -1019,8 +1019,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 09:40 | build | Watchdog ci-minutes line now reports billed minutes (scripts/actions-minutes.mjs), the metered figure
 - 2026-10-12 09:40 | build | Queue: actions-minutes back to todo, next reading 10-19; actions-floor-trim (5) filed with the levers
 - 2026-10-12 17:18 | build | Bounty useagent#61 ($80) dropped: maintainer assigns one of 4 claimants; real-phone recordings; weeks for $80
-- 2026-10-12 17:18 | build | Bounty useagent#113 ($5/task) dropped: paid user-testing by hand, forbids runs by other AIs; not code
-- 2026-10-12 17:18 | build | Bounty Salam#1713 (AUD $5) dropped: community reward for a showcase repo on the owner's account
-- 2026-10-12 17:18 | build | Claims ledger: 3 rows dropped (6 of 6 filed in two days); first-bounty-pr stays blocked on a code item
-- 2026-10-12 17:18 | build | Scanner SHAPE_RULES drop showcase, user-testing, device-recording, assigned, hardware issues; 3 tests
+- 2026-10-12 17:18 | build | useagent#113 and Salam#1713 read the same way; the 17:00 burn-down dropped them first, its rows kept
+- 2026-10-12 17:18 | build | Claims ledger: #61 row dropped (6 of 6 filed in two days); first-bounty-pr stays blocked on a code item
+- 2026-10-12 17:18 | build | Scanner SHAPE_RULES add device-recording, maintainer-assigned, hardware drops to the contest floor; 2 tests
+- 2026-10-12 17:18 | build | Merged over the burn-down's same-slot scanner fix; its CONTEST_ISSUE and $25 floor kept, mine layered on
 - 2026-10-12 17:18 | build | Queue: oss-bounties bounty-scanner-work-shape filed (6) and done; proof is three boards with no shape drop
+- 2026-10-12 17:20 | burn-down | Queue: oss-bounties useagent#113 dropped — a $5 usage task (record and email), not a fix; AI runs banned
+- 2026-10-12 17:24 | burn-down | Queue: oss-bounties Salam#1713 dropped — a build-an-app reward paying the first 2 of 9+ entries ahead
+- 2026-10-12 17:30 | burn-down | Scanner drops contests and usage tasks (title + body) and files nothing under $25; 2 tests
+- 2026-10-12 17:30 | burn-down | Queue: oss-bounties bounty-scanner-contest-floor done; proof is the next board filing a real fix
