@@ -987,3 +987,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 01:35 | burn-down | Prompts: burn-down GATE and build STEP -1 claim the first item before npm ci; a red STEP 0 releases it
 - 2026-10-12 01:35 | burn-down | Queue: foundry claim-before-install done; proof is claims within 2 min of the slot for 7 days
 - 2026-10-12 01:28 | burn-down | Pipeline starved after 3 items, every queue cooling, tonight's exchange pass spent at 19:48: stopping
+- 2026-10-12 06:28 | watchdog | ci-minutes: ~4200 Actions min/month projected (private cap 2,000, warn 1700); top: check 254, owner notes 183, gankdat 1
