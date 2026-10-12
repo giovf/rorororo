@@ -1120,3 +1120,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   it to read `none` at first — that is the honest number.
 - 2026-10-11 burn-down: foundry `third-party-pr-relay` (3) done — its proof arrived tonight: the relay's first run opened the
   Docker MCP Catalog PR (#5622) from CI with the owner's `PR_TOKEN`, so listing PRs no longer wait for a person.
+- 2026-10-12 burn-down: foundry research (starved pipeline, every other queue cooling or dated). Three ops items queued from
+  measured evidence: `poller-push-triggers` (6) — 56 of the last 100 Actions runs were owner-notes/metrics pollers started by
+  pushes, ≈56 billed minutes for 14 wall; `append-only-union-merge` (5) — two hand-resolved conflicts in RUNS/INBOX/RUNS-COUNT
+  in two days out of 30 merges; `claim-before-install` (4) — `next` needs the built dist, so the 17:00/17:10 slots still claim
+  after a 5–7 min install and collided on 10-10. The Glama handoff is closed on the probe's 200s. Not queued: the burn gate
+  has had no usage reading since 10-04 (the owner's Telegram channel is silent; the harm is bounded to the night window).

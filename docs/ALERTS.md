@@ -26,7 +26,7 @@ closed entries older than 30 days (git keeps the history).
   from the runner, gankdat `mcp-live-probe`), which says whether the edge errors for everyone; the Glama
   test-profile check stays yours. First reading 09:32 UTC (run 37757280911): `init 200, tools 200 (23 tools),
   call 200` keyless — the edge is healthy for anonymous traffic, so the 500 was transient or specific to Glama's
-  keyed test profile; a `GANKDAT_PROBE_KEY` repository secret (any free-tier key) would add that path to the row.
+  keyed test profile; a `GANKDAT_PROBE_KEY` repository secret (any free-tier key) would add that path to the row. — Done 2026-10-12 (burn-down): the keyed path is in the row since 10-09 (gankdat `probe-key-from-runner`, a one-run key minted by the runner) and reads `init 200, tools 200, call 200` keyless and authed on the 10-10 and 10-11 rows, so the edge is not erroring for anyone; Glama's own test-profile page is the only thing left and a recurrence shows as a non-200 probe row or a new Glama mail in INBOX.md.
 - 2026-09-21 handoff: verify the new `uk-schools` ingest against the real files — the daily
   build container has no egress to `ea-edubase-api-prod.azurewebsites.net` or `www.gov.uk`
   (proxy 403), so the GIAS and Ofsted column mappings in `src/sources/uk-schools.ts` are

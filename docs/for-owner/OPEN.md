@@ -10,8 +10,7 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 1. **PayPal hackathon video is ready** — ~10 min, since 2026-10-11; unblocks hackathons `paypal-ai-hackathon-submit` (9). Steps: [023](actions/023-paypal-hackathon-submission.md).
    PayPal hackathon video is ready (~10 min): download it from the CI run in action 023 and submit the Devpost form
 
-## Waiting on an attended Claude session, not you (3)
+## Waiting on an attended Claude session, not you (2)
 
 - since 2026-10-04 — sign and upload ReadFocus 0.3.0 (ruler colour / height / opacity / lock-in-place controls, plus 0.2.1's Firefox for Android: `gecko_android`, phone-width popup, tap-to-place ruler) once 0.2.0 clears…
 - since 2026-10-05 — sign and upload Highlight Keep 0.4.0 (imports from Weava/Glasp .csv and Hypothesis exports, the "On for every site" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the…
-- since 2026-10-08 — Glama's hourly health check on the gankdat MCP connector got "HTTP 500 – Error connecting to MCP" (mail 2026-10-08 06:09 UTC, support@glama.ai) — gankdat is now ranked unhealthy, below healthy connec…

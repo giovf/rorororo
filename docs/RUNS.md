@@ -967,3 +967,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-11 19:48 | burn-down | Exchange pre-research: x402 Bazaar listing parked (auto-index on first paid call; ~18k real listings; 0 x402 sales yet)
 - 2026-10-11 20:40 | interactive | PayPal demo video recorded on CI (2m24s, sandbox approval completed) after two fixes: login iframe, ffmpeg
 - 2026-10-11 20:40 | notify | PayPal hackathon entry is ready to submit: video and text are prepared, about 10 minutes
+- 2026-10-12 00:45 | burn-down | Research pass (foundry starved, 48 h cooling over): 100 Actions runs, 30 merges, tonight's own run read
+- 2026-10-12 00:45 | burn-down | Queued poller-push-triggers (6): 56 of 100 runs were pollers fired by pushes, ~56 billed min for 14
+- 2026-10-12 00:45 | burn-down | Queued append-only-union-merge (5): two hand-resolved RUNS/INBOX conflicts in two days, 30 merges/7d
+- 2026-10-12 00:45 | burn-down | Queued claim-before-install (4): next needs the built dist, so claims land 5-7 min after the slot
+- 2026-10-12 00:45 | burn-down | actions-minutes evidence: 59 wall vs ~128 billed minutes in 10.8 h; the 10-12 read quotes billing
+- 2026-10-12 00:45 | burn-down | Glama handoff closed: authed MCP probe 200/200/200 daily since 10-09; what is left is Glama's own page
+- 2026-10-12 00:45 | burn-down | Seen, not queued: BURN.json report still 10-04 (gate inert), 00:00 trigger text still says Thursday

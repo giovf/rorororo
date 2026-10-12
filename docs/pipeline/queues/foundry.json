@@ -2,8 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-11",
-  "researched": "2026-10-10",
+  "updated": "2026-10-12",
+  "researched": "2026-10-12",
   "items": [
     {
       "id": "fetch-relay",
@@ -338,7 +338,7 @@
     {
       "id": "actions-minutes",
       "title": "Trim GitHub Actions usage below ~1,500 min/month so the repo can go private (free cap 2,000)",
-      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done. 2026-10-05 burn-down: converted to todo + not_before 2026-10-12 (first measurable week) so the hold is visible on the scheduled: line instead of hidden in doing. 2026-10-05 22:30 burn-down (foundry research): the watchdog projection rose after the trim, 3,876 (10-04 18:21) to 4,215 min/month (10-05 01:14), because the burn went nightly; today 19:19-21:46 UTC the 60 push runs took 480 run-minutes, check alone 6-16 min per success (6.3, 8.6, 11.3, 16.5), six workflows per code push. The concurrency groups proposed in ci-runs-never-acquired cut the stacked runs as well, so build that first and re-measure. 2026-10-06 09:00 build (foundry research): watchdog projection 6,223 min/month at 01:25 (the 60 push runs of 10-05 evening); of the 38 runs since the concurrency groups landed (22:33) none was cancelled, and a docs-only push now starts only owner notes + notify owner. Next lever is gankdat-test-setup (the gate runs twice per gankdat push and spends 697 s on per-test setup). 2026-10-10 burn-down research: the 100 runs 10-08 17:10..10-10 00:17 took 58 wall-clock run-minutes in 31 h (≈1,340 min/month; `check` median 1.5 min after gankdat-test-setup, 9 runs; owner notes 35 runs at 0.2 min) — the watchdog's 10-09 projection of 4,745 counts billed job-minutes, so the 10-12 reading should name which figure the private cap meters.",
+      "why": "Last week: 867 min (≈3,700/month). The root check runs on every push (125 runs, 583 min). Fixes: run only the affected workspace's gate on push (root check nightly), skip CI for docs-only commits, watchdog every 2 h, cache node_modules. Owner wants the repo private once listings moved (action 013); flipping now would stop CI mid-month. 2026-10-04 interactive: trim applied (check on code pushes + nightly, watchdog 2-hourly, deploy ignores docs, Pages job deleted) and a ci-minutes guard added to the watchdog. Flip the repo private once a measured week lands under 350 min; then set done. 2026-10-05 burn-down: converted to todo + not_before 2026-10-12 (first measurable week) so the hold is visible on the scheduled: line instead of hidden in doing. 2026-10-05 22:30 burn-down (foundry research): the watchdog projection rose after the trim, 3,876 (10-04 18:21) to 4,215 min/month (10-05 01:14), because the burn went nightly; today 19:19-21:46 UTC the 60 push runs took 480 run-minutes, check alone 6-16 min per success (6.3, 8.6, 11.3, 16.5), six workflows per code push. The concurrency groups proposed in ci-runs-never-acquired cut the stacked runs as well, so build that first and re-measure. 2026-10-06 09:00 build (foundry research): watchdog projection 6,223 min/month at 01:25 (the 60 push runs of 10-05 evening); of the 38 runs since the concurrency groups landed (22:33) none was cancelled, and a docs-only push now starts only owner notes + notify owner. Next lever is gankdat-test-setup (the gate runs twice per gankdat push and spends 697 s on per-test setup). 2026-10-10 burn-down research: the 100 runs 10-08 17:10..10-10 00:17 took 58 wall-clock run-minutes in 31 h (≈1,340 min/month; `check` median 1.5 min after gankdat-test-setup, 9 runs; owner notes 35 runs at 0.2 min) — the watchdog's 10-09 projection of 4,745 counts billed job-minutes, so the 10-12 reading should name which figure the private cap meters. 2026-10-12 00:30 burn-down (foundry research): the 100 Actions runs of 10-11 13:13..10-12 00:03 UTC (10.8 h) took 59 wall-clock minutes but ≈128 billed minutes (one minute per run is the floor and each job is rounded up): 56 of the 100 were push-triggered pollers — owner notes 30, gankdat metrics 13, store metrics 13 at 0.2–0.5 min each — and the store-metrics push runs committed five `daily check` commits (gankdat metrics two) that re-trigger owner notes again. The reading item stays this one; the lever is foundry `poller-push-triggers` (queued tonight). The 10-12 reading should quote GitHub billing (Settings → Billing → Actions usage) rather than wall minutes.",
       "effort_days": 0.5,
       "proof": "7-day Actions minutes under 350 for two consecutive weeks",
       "score": 7,
@@ -688,6 +688,36 @@
       "status": "done",
       "added": "2026-10-11",
       "done_at": "2026-10-11"
+    },
+    {
+      "id": "poller-push-triggers",
+      "title": "Stop the three pollers (owner notes, gankdat metrics, store metrics) running on every push to main",
+      "why": "Research 2026-10-12 (burn-down): `.github/workflows/owner-notes.yml`, `gankdat-metrics.yml` and `store-metrics.yml` carry a `push: branches [main]` trigger with a docs-only `paths-ignore`, so every routine code push starts all three. In the 10.8 h to 2026-10-12 00:03 UTC that was 56 of 100 Actions runs (owner notes 30, gankdat metrics 13, store metrics 13), 0.2–0.5 min each, ≈14 wall minutes but ≈56 billed minutes (a job bills at least one minute), and the store-metrics push runs committed five `daily check` commits on 10-11 (gankdat metrics two) that each start owner notes again. The owner-notes push trigger dates from 2026-09-21/22 (3 of 14 hourly cron slots fired) — since then the 07:00 metrics routine dispatches the day's metrics workflows itself when the cron is late (`cron-drift-dispatch-row`, 10-10) and the odd-minute crons are being measured (`metrics-crons-day-7-read`, 10-17); Telegram notes have been silent since 09-21 while the owner works in the interactive session. Do: drop `push:` from the two metrics workflows (the daily cron, the 07:00 dispatch and `workflow_dispatch` remain; a Daily numbers row is a daily reading, not a per-push one); for owner notes either drop `push:` too or poll from inside the `notify owner` job that already runs per routine push (one billed minute instead of two) — decide from the 10-17 cron reading if it is in, else keep the hourly cron and fold the poll into notify owner; write the three files to `docs/ci/` for the installer, update their header comments and the SCHEDULERS rows. Evidence 3 (measured on 100 runs) × reach 2 (the private-repo cap, foundry `actions-minutes`) ÷ 0.15 days.",
+      "effort_days": 0.15,
+      "proof": "push-triggered runs of the three workflows per day drop from ~50 to 0 (notify owner may carry the poll); the next 7-day Actions reading shows billed minutes within 1.5× wall minutes",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-12"
+    },
+    {
+      "id": "append-only-union-merge",
+      "title": "Append-only logs merge themselves: `merge=union` for RUNS.md and INBOX.md, and the RUNS floor recomputed instead of conflicting",
+      "why": "Research 2026-10-12 (burn-down): three sessions push to `main` in the same hour most evenings (the 17:00 burn-down, the 17:10 build, the owner's interactive session) and every one appends to the same files, so a push rejected by a concurrent push needs a merge. 30 merge commits landed in the last 7 days; two of them were conflicts resolved by hand — d1ef377 (10-10 17:24, \"run logs appended both sides\": `docs/RUNS.md` plus `docs/ops/RUNS-COUNT.json`, whose `runs` counter both sides had raised) and 1f5db79 (10-11 20:08, `docs/ALERTS.md`, `docs/INBOX.md`, `docs/ops/NOTIFIED.md`). Two appends at the end of the same file always conflict in git's default driver, and a routine told to \"pull --no-rebase and push again\" stops dead at a conflict it must resolve in a session that may be cut off any minute. Do: a `.gitattributes` line `docs/RUNS.md merge=union` and `docs/INBOX.md merge=union` (git's built-in driver keeps both sides' lines; both files are append-only by rule, `runs-check.ts` enforces it); have `npm run runs` recompute `docs/ops/RUNS-COUNT.json` from the merged file (the floor only ever rises, so the merged count is the right floor) or give it `merge=union` plus a max-of-both read; a vitest that merges two appended copies with `git merge-file --union` and sees every line once. `docs/ALERTS.md` and `docs/OWNER-NOTES.md` stay on the default driver: they are edited in place (the `— Done` suffix, the `  - Claude:` answers), where union would keep both versions of a line. Evidence 2 (two hand-resolved conflicts in two days, both in append-only files) × reach 3 (every concurrent pair of sessions, nightly) ÷ 0.15 days.",
+      "effort_days": 0.15,
+      "proof": "no hand-resolved merge commit (a merge whose message is not git's default) touching RUNS.md, INBOX.md or RUNS-COUNT.json in the following 14 days; the union test passes",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-12"
+    },
+    {
+      "id": "claim-before-install",
+      "title": "Claim the item in the first minute: `npm run pipeline next` runs on plain Node, before `npm ci` and the gate",
+      "why": "Research 2026-10-12 (burn-down): `npm run pipeline claim` (10-07) is dependency-free like `cold`, but `next` imports `@foundry/core`'s dist, which only exists after `npm ci` + `npm run check` (`tsc -b`) — tonight `npm run pipeline next` failed with ERR_MODULE_NOT_FOUND until the gate had built it, 5–7 minutes into the run. So the 17:00 burn-down and the 17:10 build each claim their item only after their own install and gate, and still collide: 2026-10-10 17:21 the burn-down had `burn-down-watchdog-nightly` mid-edit when the build's claim landed first and dropped the work (RUNS line); 2026-10-07 the same pair built `search-console-api-reading` twice (≈40 min) before claims existed. Do: make `next` (and the status it prints) run on plain Node — import the pure parse/rank code from `packages/core/src` through Node's type stripping the way `scripts/pipeline-cold.ts` and `pipeline-claim.ts` already run, or move `nextItem`/`parseQueue` into a dependency-free script module that `@foundry/core` re-exports; then move \"next + claim\" in `docs/routines/build.md` and `burn-down.md` to right after the GATE, before `npm ci` (the gate still runs before any build). Evidence 2 (one dropped build and one duplicate build in four days) × reach 2 (the two overlapping slots every evening) ÷ 0.2 days.",
+      "effort_days": 0.2,
+      "proof": "queue `doing_since`/claim commits land within 2 minutes of the slot for 7 days; no \"claimed it first\" or duplicate-item run-log line in 30 days",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-12"
     }
   ]
 }
