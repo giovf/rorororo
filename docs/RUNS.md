@@ -1034,3 +1034,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 17:50 | burn-down | Queue: foundry actions-floor-trim done; proof is the 10-26 reading under 350 billed min/week
 - 2026-10-12 17:32 | burn-down | B2B outreach closed at day 14: 9 delivered, 0 replies, no attributable sign-up; no second list
 - 2026-10-12 17:32 | burn-down | Queue: gankdat b2b-outreach-results done; verdict in RESEARCH.md and OUTREACH §6, bounce suppressed
+- 2026-10-12 17:33 | burn-down | Exchange pre-research: EPC register declined (address fields under OS/Royal Mail notice, personal data; free API)
