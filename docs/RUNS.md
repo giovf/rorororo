@@ -1014,3 +1014,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 07:52 | report | Owner action #17 open: Figma Playground file dropped 2026-10-11 by owner decision
 - 2026-10-12 07:52 | report | Owner action #23 open: PayPal AI Hackathon submission ready — owner to download video, submit form
 - 2026-10-12 07:52 | report | Next step: submit the PayPal AI Hackathon entry (action 023, ~10 min, deadline 2026-11-12)
+- 2026-10-12 09:40 | build | Actions reading: 782 runs/805 jobs in 7 days, 731 wall min but 1,334 billed (GitHub rounds each job up)
+- 2026-10-12 09:40 | build | Clean days 10-06..10-11 give 911 billed/week; without the pollers trimmed on 10-12 still 531 — no flip
+- 2026-10-12 09:40 | build | Watchdog ci-minutes line now reports billed minutes (scripts/actions-minutes.mjs), the metered figure
+- 2026-10-12 09:40 | build | Queue: actions-minutes back to todo, next reading 10-19; actions-floor-trim (5) filed with the levers

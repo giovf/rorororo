@@ -4,6 +4,13 @@
 // the last 7 days of completed runs (GITHUB_TOKEN, actions:read) and, when the 30-day projection
 // passes WARN_MINUTES, appends one `| watchdog | ci-minutes:` line to docs/RUNS.md (the watchdog
 // job commits it and the notifier sends it). Prints the figures either way.
+//
+// Which figure the cap meters (2026-10-12, foundry actions-minutes): GitHub bills every job's
+// duration rounded UP to the next whole minute, so a 12-second poller run costs one minute and the
+// week's bill is well above its wall-clock sum (10-05..10-12: 805 jobs, 731 wall min, 1,334 billed).
+// Per-run rounding (one job per run here, gankdat's two aside) matched the per-job sum within 1 %
+// on the six clean days (773 vs 781), so `billed` below is max(1, ceil(run minutes)) per run and is
+// the headline; the wall sum stays in the line for comparison.
 import { appendFileSync, readFileSync } from 'node:fs';
 
 const repo = process.env.GITHUB_REPOSITORY ?? 'giovf/rorororo';
@@ -14,6 +21,7 @@ const headers = { Authorization: `Bearer ${token}`, accept: 'application/vnd.git
 
 let page = 1;
 let minutes = 0;
+let billed = 0;
 let runs = 0;
 const byName = new Map();
 for (;;) {
@@ -28,21 +36,23 @@ for (;;) {
   for (const r of items) {
     if (r.status !== 'completed' || !r.run_started_at || !r.updated_at) continue;
     const m = (Date.parse(r.updated_at) - Date.parse(r.run_started_at)) / 60_000;
+    const b = Math.max(1, Math.ceil(m));
     minutes += m;
+    billed += b;
     runs += 1;
-    byName.set(r.name, (byName.get(r.name) ?? 0) + m);
+    byName.set(r.name, (byName.get(r.name) ?? 0) + b);
   }
   if (items.length < 100 || page >= 10) break;
   page += 1;
 }
-const projection = Math.round((minutes * 30) / 7);
+const projection = Math.round((billed * 30) / 7);
 const top = [...byName.entries()]
   .sort((a, b) => b[1] - a[1])
   .slice(0, 3)
   .map(([n, m]) => `${n} ${Math.round(m)}`)
   .join(', ');
 console.log(
-  `actions-minutes: ${Math.round(minutes)} min in 7 days over ${runs} runs → ~${projection}/month (top: ${top})`,
+  `actions-minutes: ${billed} billed min in 7 days over ${runs} runs (${Math.round(minutes)} wall) → ~${projection}/month (top: ${top})`,
 );
 
 if (projection > WARN_MINUTES) {
@@ -50,7 +60,7 @@ if (projection > WARN_MINUTES) {
   // RUNS.md caps the text after `| watchdog | ` at 120 chars (`npm run runs`, part of `npm run
   // check`): the first warning (2026-10-04 18:21, 131 chars) turned main red, so the text is cut.
   const text =
-    `ci-minutes: ~${projection} Actions min/month projected (private cap 2,000, warn ${WARN_MINUTES}); top: ${top}`.slice(
+    `ci-minutes: ${billed} billed min/7d (~${projection}/month, wall ${Math.round(minutes)}; private cap 2,000, warn ${WARN_MINUTES}); top: ${top}`.slice(
       0,
       120,
     );

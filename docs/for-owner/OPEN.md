@@ -5,10 +5,13 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (1)
+## Requests (2)
 
 1. **PayPal hackathon video is ready** — ~10 min, since 2026-10-11; unblocks hackathons `paypal-ai-hackathon-submit` (9). Steps: [023](actions/023-paypal-hackathon-submission.md).
    PayPal hackathon video is ready (~10 min): download it from the CI run in action 023 and submit the Devpost form
+
+2. **Nebius says your Token Factory account is active** — time not stated, since 2026-10-12; nothing queued waits on it.
+   Nebius says your Token Factory account is active — check if the dropped hackathon entry can proceed.
 
 ## Waiting on an attended Claude session, not you (2)
 

@@ -1136,3 +1136,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-12 burn-down: foundry `claim-before-install` (4) built — `npm run pipeline next` no longer needs the built dist, so
   both evening slots claim their item within a minute of firing instead of after a 5–7 min install (the cause of the 10-07
   duplicate build and the 10-10 dropped one); the two routine prompts move the claim before `npm ci`.
+- 2026-10-12 build: foundry `actions-minutes` 10-12 reading — GitHub meters billed minutes (each job rounded up to a whole
+  minute), not wall time: the week to 09:00 UTC was 731 wall but 1,334 billed over 805 jobs; the six clean days project
+  ≈911/week, ≈531 once the 10-12 poller trim is netted out — over the 350/week proof, so the repo stays public and the item
+  is re-dated to 10-19. The watchdog line now reports the billed figure; the remaining one-minute floors (gankdat's two
+  jobs, check's install, notify owner on every push, the watchdog cron, the installer's self-trigger) are filed as
+  `actions-floor-trim` (5) to build before that week is measured.

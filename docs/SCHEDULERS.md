@@ -133,6 +133,11 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   on push), the root check only on code pushes plus nightly, the gankdat deploy only on code
   changes, and `scripts/actions-minutes.mjs` (in the watchdog job) posts a `watchdog | ci-minutes:`
   bullet when the 30-day projection passes 1,700. Baseline before the trim: 873 min/week (≈3,740/month).
+  **Billed, not wall, minutes** (2026-10-12, foundry `actions-minutes` reading): GitHub meters every job
+  rounded up to the next whole minute, so the script's headline and projection are that sum (per run,
+  within 1 % of the per-job sum); the week to 2026-10-12 09:00 was 731 wall but 1,334 billed minutes
+  over 805 jobs, ≈531/week once the 10-12 poller trim is netted out — the remaining one-minute floors
+  are the foundry `actions-floor-trim` item.
 - Routines push exactly once, at the end, after the gates; a run killed by a usage limit leaves
   nothing behind (`docs/OPERATIONS.md`, "Interrupted runs").
 - Routine ids and prompts are managed with the RemoteTrigger API from the interactive session.
