@@ -1,0 +1,102 @@
+name: gankdat metrics
+
+# GitHub's cron is best-effort (the 06:30 slot was skipped on 2026-09-22), so from then the job
+# also ran on pushes to main, filling a missing row (METRICS_IF_MISSING). Dropped 2026-10-12
+# (foundry poller-push-triggers): 13 of the 100 Actions runs in the 10.8 h to 2026-10-12 00:03 UTC
+# were this job started by a push (0.5 min of work, a full minute billed each), and their fill
+# commits started `owner notes` again. A Daily numbers row is a daily reading: the cron below and
+# the 07:00 metrics routine's workflow_dispatch (foundry cron-drift-dispatch-row, 2026-10-10)
+# write it; a push never does.
+# Odd minute (foundry metrics-crons-off-the-half-hour, 2026-10-09): on `30 6` the scheduled run
+# started 11:51–15:04 UTC every day 10-03..10-08 — GitHub delays crons on busy minutes most — so
+# the runner-fed refresh, IndexNow, the MCP probe and the error filer landed ~7 h after the waves.
+on:
+  schedule:
+    - cron: '37 6 * * *' # daily, before the 07:00 UTC ops routine
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+# Concurrency (2026-10-05, foundry ci-runs-never-acquired): a newer commit cancels this workflow's queued or
+# running run for the same event and ref. On 2026-10-05 one push run in three was cancelled by GitHub 15 min
+# after start with no steps (never acquired by a runner) while each burn-down push queued six more runs behind
+# the dead ones. Scheduled and manual runs keep their own group, so a push never cancels the cron run.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - name: Self-heal cron triggers (a cut-off session may have left a temporary one armed)
+        run: node ventures/gankdat/scripts/schedules.mjs reset
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Install (node_modules for the runner-side refresh)
+        run: npm ci
+      - name: Refresh the sources whose origin the Worker cannot read (runner-fed, 2026-10-04)
+        # ventures/gankdat/scripts/runner-refresh.mjs: for every source with `refresh.runner`
+        # (uk-insolvency — The Gazette has served the Worker an empty body every day since 09-28
+        # while a runner reads the same URL in full) runs the source's own fetchFresh here and writes
+        # the KV snapshot + stats blob and a refresh_log row through the REST API. The Worker's cron
+        # waves skip these sources. Scheduled and manual runs only (push runs would re-pay npm ci);
+        # a source refreshed under 20 h ago is skipped. A failure lands in refresh_log, so in today's
+        # row below — it must not stop the metrics step.
+        run: npm run runner-refresh
+        continue-on-error: true
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Probe the live MCP endpoint the way a directory's health check does
+        # scripts/mcp-probe.ts (gankdat mcp-live-probe, 2026-10-08): initialize, tools/list and one
+        # preview tools/call against https://gankdat.com/mcp from the runner — the edge as Glama,
+        # Smithery and the Claude directory see it (Glama mailed "HTTP 500 – Error connecting to
+        # MCP" on 2026-10-08 and no sandbox could look). Leaves dist/mcp-probe.json for metrics.mjs,
+        # which renders `mcp probe: …` and lists a failed step under `refresh errors` as `mcp-probe`
+        # so the step below queues a fix on a repeat. Builtins only; never
+        # fails the job. The same calls also run with a key minted for this run (gankdat
+        # probe-key-from-runner, 2026-10-09): the script inserts a fresh key's hash under the internal
+        # probe@gankdat.com account through the D1 REST API with CLOUDFLARE_API_TOKEN and deletes it
+        # afterwards, so no probe secret is owed. GANKDAT_PROBE_KEY, if ever set, is used instead.
+        run: node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts
+        continue-on-error: true
+        env:
+          GANKDAT_PROBE_KEY: ${{ secrets.GANKDAT_PROBE_KEY }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: Append today's numbers to RESEARCH.md
+        run: node ventures/gankdat/scripts/metrics.mjs
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          # Apify actor runs / users for the row (STRATEGY §4 "Apify paid runs / month: 100").
+          # Optional in the script: a missing token degrades the row to `apify: n/a`, never fails it.
+          APIFY_TOKEN: ${{ secrets.APIFY_TOKEN }}
+      - name: Queue a fix for any source that errored on refresh twice in its last four rows
+        # scripts/refresh-errors-to-queue.ts reads the last four `refresh errors` fields and files an
+        # idempotent `refresh-<slug>` todo item in docs/pipeline/queues/gankdat.json for a source that
+        # errored today and in one more of them (2026-09-30: uk-insolvency errored four days with no
+        # item; 2026-10-03: the two-consecutive-days rule missed an every-other-day flake). Only node
+        # builtins, no secrets.
+        run: npm run refresh-errors
+      - name: Queue a fix for any Cloudflare metered overage in today's row
+        # scripts/cf-overage-to-queue.ts reads the row's `cf usage … ≈ US$N overage` figure and files an
+        # idempotent `cf-overage-<period start>` item once N ≥ 1 (2026-10-10: the 09-10→10-10 invoice was
+        # US$49 of D1 writes nobody read until Cloudflare's email; the owner's rule makes any metered
+        # charge a bug to fix the day it shows). Only node builtins, no secrets.
+        run: npm run cf-overage
+      - name: Commit
+        run: |
+          git config user.name "foundry-metrics[bot]"
+          git config user.email "info@gankdat.com"
+          git add ventures/gankdat/RESEARCH.md docs/pipeline/queues/gankdat.json
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "metrics(gankdat): $(date -u +%F) daily numbers"
+          git pull --rebase origin main
+          git push origin HEAD:main

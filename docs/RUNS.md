@@ -975,3 +975,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 00:45 | burn-down | Glama handoff closed: authed MCP probe 200/200/200 daily since 10-09; what is left is Glama's own page
 - 2026-10-12 00:45 | burn-down | Seen, not queued: BURN.json report still 10-04 (gate inert), 00:00 trigger text still says Thursday
 - 2026-10-12 00:52 | burn-down | Stopping for time: research pass this slot; next is foundry poller-push-triggers (6); the 01:00 fire takes it
+- 2026-10-12 01:45 | burn-down | owner notes, gankdat metrics, store metrics lose their push trigger: four docs/ci files for the installer
+- 2026-10-12 01:45 | burn-down | notify owner polls Telegram after its sends and commits owner notes with the cursor: one billed minute
+- 2026-10-12 01:45 | burn-down | Fill-only env flags and the push-only step guards removed from the two metrics jobs; SCHEDULERS rows updated
+- 2026-10-12 01:45 | burn-down | Queue: foundry poller-push-triggers done; proof is the 10-19 Actions reading (push pollers 0 a day)

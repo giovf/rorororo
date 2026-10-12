@@ -1126,3 +1126,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   in two days out of 30 merges; `claim-before-install` (4) — `next` needs the built dist, so the 17:00/17:10 slots still claim
   after a 5–7 min install and collided on 10-10. The Glama handoff is closed on the probe's 200s. Not queued: the burn gate
   has had no usage reading since 10-04 (the owner's Telegram channel is silent; the harm is bounded to the night window).
+- 2026-10-12 burn-down: foundry `poller-push-triggers` (6) built — the three pollers (owner notes, gankdat metrics, store
+  metrics) no longer run on every push to `main` (56 of the last 100 Actions runs, ≈56 billed minutes for 14 wall); the
+  per-push owner-notes poll rides `notify owner` instead, the hourly cron stays, and the metrics rows come from the cron and
+  the 07:00 dispatch only. Private-repo cap (foundry `actions-minutes`) reads the effect on 10-19.
