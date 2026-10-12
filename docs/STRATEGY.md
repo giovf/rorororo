@@ -1156,3 +1156,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `node_modules` cache in `check` and `gankdat`, the gankdat gate and deploy as one job, the installer skipping its own
   install push, and the watchdog folded into `notify owner` (every routine push + a 6-hourly net) with its own cron gone.
   The 10-26 reading measures the trimmed shape and decides on the repo flip.
+- 2026-10-12 burn-down: gankdat `b2b-outreach-results` (4) closed — the ten-firm cold-email experiment of 2026-09-28 got 0 replies
+  from nine delivered and no attributable sign-up by its 14-day mark; cold email to generic mailboxes is dropped as a channel
+  (no second list), effort stays on the shelves. Kit and suppression list kept for an inbound lead.
