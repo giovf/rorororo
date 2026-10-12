@@ -86,6 +86,7 @@ count and the `week:` line the weekly report copies.
 | [tenstorrent/tt-metal#59732](https://github.com/tenstorrent/tt-metal/issues/59732) | $3000 | dropped | — | — | — | — | 2026-10-11: assigned 10-08 with PR #60225 submitted; acceptance needs Wormhole and Blackhole hardware |
 | [tursodatabase/turso#8749](https://github.com/tursodatabase/turso/issues/8749) | $650 | dropped | — | — | — | — | 2026-10-11: a contributor's own `/bounty` ask on 09-18, no maintainer or bot funded it; one attempt, two offers |
 | [Arrow-air/project-quiver#256](https://github.com/Arrow-air/project-quiver/issues/256) | $1219 | dropped | — | — | — | — | 2026-10-11: a platform-engineering report for a hardware project, not code with tests |
+| [useagenthq/useagent#113](https://github.com/useagenthq/useagent/issues/113) | $5 | dropped | — | — | — | — | 2026-10-12: a usage task, not a fix — record yourself using their product and email a report from a sign-up address; AI-driven runs banned; all 3 tasks claimed 10-11 |
 
 ## Metrics
 

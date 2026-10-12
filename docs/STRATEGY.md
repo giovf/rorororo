@@ -1142,3 +1142,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   is re-dated to 10-19. The watchdog line now reports the billed figure; the remaining one-minute floors (gankdat's two
   jobs, check's install, notify owner on every push, the watchdog cron, the installer's self-trigger) are filed as
   `actions-floor-trim` (5) to build before that week is measured.
+- 2026-10-12 burn-down: oss-bounties `bounty-useagenthq-useagent-113` dropped — the "$5" pays a person to use the maintainer's
+  product on a real-time recording and email a report from a sign-up address, with AI-driven runs prohibited; not a repository
+  change and not claimable by a routine.
