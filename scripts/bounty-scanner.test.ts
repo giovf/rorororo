@@ -9,6 +9,7 @@ import {
   rankOf,
   renderBoard,
   repoExcluded,
+  shapeExcluded,
   takenBy,
   type Bounty,
   type Comment,
@@ -192,6 +193,46 @@ describe('exclusions', () => {
     );
     expect(
       issueExcluded('Add CSV export', ['$200'], 'Users email us about this every week.'),
+    ).toBeUndefined();
+  });
+});
+
+describe('shapeExcluded', () => {
+  // Wording quoted from useagent#61, the 2026-10-12 build's read; the other shapes are CONTEST_ISSUE's.
+  it('drops the mobile app that needs real phones, then the maintainer-assigned claim', () => {
+    const body =
+      'Builds that install on a real iPhone and a real Android phone and a screen recording of each in the pull request. A maintainer assigns this issue before work counts.';
+    expect(shapeExcluded(`Build the UseAgent mobile app for iOS and Android\n${body}`)).toBe(
+      "needs a real device or the claimant's own recording",
+    );
+    expect(
+      shapeExcluded(
+        'Add the Discord transport\nA maintainer assigns this issue before work counts.',
+      ),
+    ).toBe('the maintainer picks the claimant first');
+    expect(shapeExcluded('Fix sampling bias\nMust be verified on real hardware (Wormhole).')).toBe(
+      'needs hardware the sandbox lacks',
+    );
+    // The contest regex already catches "screen recording"; the shape rule catches the device alone.
+    expect(issueExcluded('Build the mobile app', ['bounty: $80'], body)).toBe(
+      'contest or usage task, not a fix',
+    );
+    expect(
+      issueExcluded(
+        'Build the mobile app',
+        ['bounty: $80'],
+        'Builds that install on a real iPhone and a real Android phone. A maintainer assigns this issue before work counts.',
+      ),
+    ).toBe("needs a real device or the claimant's own recording");
+  });
+  it('keeps ordinary feature and bug-fix work', () => {
+    expect(
+      shapeExcluded(
+        'Add CSV export to the table view\nRecord the export in the audit log, add a test; the maintainer assigns reviewers.',
+      ),
+    ).toBeUndefined();
+    expect(
+      issueExcluded('Add CSV export', ['💎 Bounty'], 'Please add a test for the session store.'),
     ).toBeUndefined();
   });
 });

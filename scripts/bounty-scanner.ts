@@ -25,6 +25,13 @@
 // a showcase or a usage task is dropped by rule, and nothing under MIN_AMOUNT is filed: a day of work
 // for $5 is not a line of income (STRATEGY §4 counts $50–$800 per merged PR).
 //
+// Shape (build 2026-10-12, oss-bounties `bounty-scanner-work-shape`, same slot as the contest floor above):
+// the third filed item, useagent#61 ($80), was a whole mobile app the maintainer assigns to one of four
+// claimants and verifies on a real iPhone and Android with the claimant's own recordings; tt-metal#59732
+// needed vendor hardware. SHAPE_RULES catches those three shapes the contest regex does not — a result
+// the claimant records on a real device, a claim the maintainer hands out first, a fix that needs
+// hardware — on the title and body, each with its own reason in the board's dropped counts.
+//
 // Run: npm run bounties [-- --date=YYYY-MM-DD]   (GITHUB_TOKEN in CI; `gh auth token` locally)
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
 import { execSync } from 'node:child_process';
@@ -60,6 +67,31 @@ export const EXCLUDED_ISSUE =
  */
 export const CONTEST_ISSUE =
   /community reward|build something with|giveaway|\bcontest\b|taking task \d|\$\s?\d+ (each|per (task|run|submission|project))|screen[- ]?record|recording link|email [\w.-]+@[\w.-]+|post (the|your|a) (public )?(repo|repository|project) link|submit (your|a) (project|repo|repository|app) (link|url|as a comment)|first (\d+ |two |three |five )?accepted (projects?|submissions?|reports?)|one reward per/i;
+
+/**
+ * Work no routine can deliver as a pull request with tests, beyond CONTEST_ISSUE: a result the claimant
+ * must record on a real device, a claim the maintainer hands out before work counts, a fix that needs
+ * hardware. The first rule that matches names the drop reason.
+ */
+export const SHAPE_RULES: readonly { re: RegExp; why: string }[] = [
+  {
+    re: /real (iphone|android|device|phone)|installable builds?|record(ing)? (of )?(the )?(whole|entire|full|your) session/i,
+    why: "needs a real device or the claimant's own recording",
+  },
+  {
+    re: /maintainer (must |will |has to |needs to )?assigns? (this|the) issue|assigned by a maintainer|maintainer picks|before (any )?work counts/i,
+    why: 'the maintainer picks the claimant first',
+  },
+  {
+    re: /requires? (access to )?(real |physical )?hardware|on (real |physical )hardware|hardware (access|required|needed)/i,
+    why: 'needs hardware the sandbox lacks',
+  },
+];
+
+/** The SHAPE_RULES reason for an issue's title and body, or undefined when it reads as code work. */
+export function shapeExcluded(text: string): string | undefined {
+  return SHAPE_RULES.find((r) => r.re.test(text))?.why;
+}
 
 export interface Repo {
   full_name: string;
@@ -197,8 +229,9 @@ export function repoExcluded(repo: Repo, today: string): string | undefined {
 export function issueExcluded(title: string, labels: string[], body = ''): string | undefined {
   if (EXCLUDED_ISSUE.test(title)) return 'reads as a security finding';
   if (labels.some((l) => /rewarded|paid|completed/i.test(l))) return 'already rewarded';
-  if (CONTEST_ISSUE.test(`${title}\n${body}`)) return 'contest or usage task, not a fix';
-  return undefined;
+  const text = `${title}\n${body}`;
+  if (CONTEST_ISSUE.test(text)) return 'contest or usage task, not a fix';
+  return shapeExcluded(text);
 }
 
 export function daysBetween(a: string, b: string): number {
@@ -242,7 +275,8 @@ export function renderBoard(
 Written daily by \`scripts/bounty-scanner.ts\` (\`.github/workflows/bounty-board.yml\`) from GitHub's search API:
 open issues that received a \`/bounty $N\` command in the last ${LOOKBACK_DAYS} days or carry a bounty label. Feature and
 bug-fix work only: sandbox and security repositories and issues that read as security findings are dropped by
-rule, and so are contests, showcases and usage tasks that pay for something other than a change to the repository.
+rule, and so are contests, showcases and usage tasks that pay for something other than a change to the repository,
+results the claimant must record on a real device, claims the maintainer hands out first, and fixes that need hardware.
 Only money a maintainer, the bounty bot or a label posted counts; a contributor's "bounty proposal" is dropped.
 Rank = amount × language fit ÷ (1 + age in months) ÷ (1 + open PRs + assigned). Taken says what stands between a new
 claim and the money; the top ${FILE_TOP} free ones at $${MIN_AMOUNT} or more become \`oss-bounties\` queue items.

@@ -1159,3 +1159,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-12 burn-down: gankdat `b2b-outreach-results` (4) closed — the ten-firm cold-email experiment of 2026-09-28 got 0 replies
   from nine delivered and no attributable sign-up by its 14-day mark; cold email to generic mailboxes is dropped as a channel
   (no second list), effort stays on the shelves. Kit and suppression list kept for an inbound lead.
+- 2026-10-12 build: oss-bounties `bounty-useagenthq-useagent-61` ($80) dropped — a whole mobile app the maintainer assigns to
+  one of four claimants and verifies on real phones with the claimant's own recordings: owner hours, weeks of work. Built
+  `bounty-scanner-work-shape` (6 × 2) on top of the burn-down's contest floor from the same slot: the scanner also drops
+  real-device, maintainer-assigned and hardware shapes. Two routines read the same board in one slot (the claim-first fix
+  from 01:35 kept them off the same item, but not off the same fix); the line's first real claim waits on the next board.
