@@ -988,3 +988,29 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 01:35 | burn-down | Queue: foundry claim-before-install done; proof is claims within 2 min of the slot for 7 days
 - 2026-10-12 01:28 | burn-down | Pipeline starved after 3 items, every queue cooling, tonight's exchange pass spent at 19:48: stopping
 - 2026-10-12 06:28 | watchdog | ci-minutes: ~4200 Actions min/month projected (private cap 2,000, warn 1700); top: check 254, owner notes 183, gankdat 1
+- 2026-10-12 07:52 | report | Money: £0 revenue, £44.40 spent, £8.00 planned, £47.00 contingent, net -£44.40, £47.60 headroom/£100 cap
+- 2026-10-12 07:52 | report | gankdat: accounts 1→2 (+1 this week, 0 paid); ~11,300 MCP calls, 84 paywall hits, 0 x402 payments
+- 2026-10-12 07:52 | report | Highlight Keep: flat at 0 users/sales all week, no change from 7 days ago; 0.4.0 built, queued
+- 2026-10-12 07:52 | report | ReadFocus: Chrome users 0→3 this week; sales 0 real keys (2 test); 0.3.0 built, queued behind review
+- 2026-10-12 07:52 | report | Variables Toolkit: views 6→7, unique runs flat at 3; installs/likes/purchases still 0 all week
+- 2026-10-12 07:52 | report | Hackathon prizes: PayPal entry built, demo video recorded; Devpost submission still waits on owner
+- 2026-10-12 07:52 | report | Open-source bounties: week to 10-12: 0 PRs opened/merged/paid ($0), 3 dropped; no claims yet
+- 2026-10-12 07:52 | report | Alert 10-05: Highlight Keep 0.4.0 sign/upload queued, still open (agent work, not owner)
+- 2026-10-12 07:52 | report | Alert 10-07 (owner): Search Console CI access granted — done 2026-10-11
+- 2026-10-12 07:52 | report | Alert 10-08: Glama marked gankdat unhealthy (500) — closed 2026-10-12, probe green since 10-09
+- 2026-10-12 07:52 | report | Alert 10-10: Docker MCP Catalog PR opened itself via new PR relay — superseded, now PR #5622
+- 2026-10-12 07:52 | report | Alert 10-10 (owner): Cloudflare couldn't charge card for invoice IN-83063702 — done, owner paid
+- 2026-10-12 07:52 | report | Alert 10-10 (owner): PR_TOKEN for cross-repo PRs added — done 2026-10-11
+- 2026-10-12 07:52 | report | Alert 10-11 (owner): four hackathon/bounty accounts — done except Nebius (card asked; dropped)
+- 2026-10-12 07:52 | report | Alert 10-11 (owner): PayPal sandbox tax info requested — done 2026-10-11
+- 2026-10-12 07:52 | report | Alert 10-11 (owner): PayPal demo-video buyer secrets requested — done 2026-10-11
+- 2026-10-12 07:52 | report | Alert 10-11 (owner): PayPal account blocked pending tax info — done 2026-10-11 (same request)
+- 2026-10-12 07:52 | report | Alert 10-11 (owner): PayPal hackathon video ready to submit — still open, 1 day old
+- 2026-10-12 07:52 | report | Owner action #1 open: channel accounts top-level status stale "pending", sub-items all done
+- 2026-10-12 07:52 | report | Owner action #6 open: Firefox/Chrome done, Edge dropped by owner — status text just not "DONE"
+- 2026-10-12 07:52 | report | Owner action #11 open: Datarade rejected sole proprietors, revisit only if a company forms
+- 2026-10-12 07:52 | report | Owner action #12 open: ICO fee deferred by owner until gankdat's first paid customer
+- 2026-10-12 07:52 | report | Owner action #13 open: repo-private still waiting on the Chrome Web Store privacy-URL edit
+- 2026-10-12 07:52 | report | Owner action #17 open: Figma Playground file dropped 2026-10-11 by owner decision
+- 2026-10-12 07:52 | report | Owner action #23 open: PayPal AI Hackathon submission ready — owner to download video, submit form
+- 2026-10-12 07:52 | report | Next step: submit the PayPal AI Hackathon entry (action 023, ~10 min, deadline 2026-11-12)
