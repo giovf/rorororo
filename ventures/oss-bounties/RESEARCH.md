@@ -98,3 +98,4 @@ count and the `week:` line the weekly report copies.
 | 2026-10-11 | Unblocked | — | — | — | PR_TOKEN present, owner signed in to the board; first bounty PR is buildable |
 | 2026-10-11 | No claim | — | — | — | top three unbuildable (assigned + hardware, unfunded request, report); scanner now marks funding and taken; first-bounty-pr blocked on a free funded row |
 | 2026-10-11 | Claim ledger | — | — | — | `## Claims` table + `npm run claims`: 0 claimed, 0 merged, 0 paid, 3 dropped; weekly report reads it |
+| 2026-10-12 | Scanner fix | — | — | — | 5 of 5 filed items dropped unbuilt (assigned, unfunded, report, usage task, contest); scanner now drops contests and usage tasks and files nothing under $25 |

@@ -173,6 +173,27 @@ describe('exclusions', () => {
       'already rewarded',
     );
   });
+  it('drops contests, showcases and usage tasks that pay for something other than a fix', () => {
+    const contest = 'contest or usage task, not a fix';
+    expect(
+      issueExcluded('🎁 Build Something with Salam Programming Language (Community Reward)', [
+        '$5',
+      ]),
+    ).toBe(contest);
+    expect(
+      issueExcluded(
+        'Coding with an agent: 3 tasks (website, real bug fix, tests)',
+        ['bounty: $5'],
+        'Payment: $5 per task to the first report that passes. Claim with "Taking task N", record the whole session and email hi@useagent.org.',
+      ),
+    ).toBe(contest);
+    expect(issueExcluded('Fix parse_duration on negative input', ['$100'], 'Repro below')).toBe(
+      undefined,
+    );
+    expect(
+      issueExcluded('Add CSV export', ['$200'], 'Users email us about this every week.'),
+    ).toBeUndefined();
+  });
 });
 
 describe('rankOf', () => {
@@ -194,14 +215,16 @@ describe('board and queue', () => {
       bounty({ rank: 400 }),
       bounty({ number: 43, rank: 100, amount: 100 }),
       bounty({ number: 44, rank: 50, amount: 100, prs: 2 }),
+      bounty({ number: 45, rank: 20, amount: 20 }),
     ];
-    const md = renderBoard(b, { raw: 500, kept: 4, dropped: { fork: 3 } }, '2026-10-11');
-    expect(md).toMatch(/Read 500 issues, kept 4; dropped: fork 3/);
+    const md = renderBoard(b, { raw: 500, kept: 5, dropped: { fork: 3 } }, '2026-10-11');
+    expect(md).toMatch(/Read 500 issues, kept 5; dropped: fork 3/);
+    expect(md).toMatch(/\| \$20 \| 20 \| /);
     expect(md).toMatch(/\| \$900 \| 900 \| \[acme\/widgets\].* \| assigned \| 1 \|/);
     expect(md).toMatch(/\| \$400 \| 400 \| \[acme\/widgets\].* \| free \| 1 \|/);
     expect(md).toMatch(/\| 2 PRs open \| 1 \|/);
     const out = fileBounties(queue, b, '2026-10-11', false);
-    expect(out.added).toEqual(['bounty-acme-widgets-42', 'bounty-acme-widgets-43']);
+    expect(out.added).toEqual(['bounty-acme-widgets-42', 'bounty-acme-widgets-43']); // #45 is under $25
     expect(out.queue.items[0]!.why).toMatch(/free when filed/);
     expect(out.queue.items[0]!.status).toBe('blocked');
     expect(out.queue.items[0]!.blocked_on).toMatch(/021/);

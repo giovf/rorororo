@@ -18,6 +18,13 @@
 // The shortlist also reads assignees and the timeline's open linked PRs: a taken issue stays on the board
 // (ranked down by its competition) but is never filed as a queue item.
 //
+// Contests and usage tasks (burn-down 2026-10-12, oss-bounties `bounty-scanner-contest-floor`): the next
+// two filed items were a "$5 per task" ask to record oneself using the maintainer's product and email a
+// report, and a "build something with our language" community reward paying the first two of twenty
+// submissions. Neither is a fix on the repository, so an issue whose title or body reads as a contest,
+// a showcase or a usage task is dropped by rule, and nothing under MIN_AMOUNT is filed: a day of work
+// for $5 is not a line of income (STRATEGY §4 counts $50–$800 per merged PR).
+//
 // Run: npm run bounties [-- --date=YYYY-MM-DD]   (GITHUB_TOKEN in CI; `gh auth token` locally)
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
 import { execSync } from 'node:child_process';
@@ -34,6 +41,8 @@ export const MAX_REPO_AGE_DAYS = 90;
 export const BOARD_SIZE = 40;
 export const SHORTLIST = 60;
 export const FILE_TOP = 3;
+/** Smallest posted amount worth a queue item; smaller ones stay on the board for the record. */
+export const MIN_AMOUNT = 25;
 export const SCORE = 7;
 export const EFFORT_DAYS = 1;
 /** Languages the routines build in well; others rank at 0.4. */
@@ -44,6 +53,13 @@ export const EXCLUDED_REPO =
 /** An issue that reads as a security finding rather than a feature or bug-fix task. */
 export const EXCLUDED_ISSUE =
   /vulnerab|exploit|\bcve-?\d|\bxss\b|injection|auth(entication|orization)? bypass|privilege|csrf|ssrf|\brce\b|security (bug|issue|flaw)|unauthenticated/i;
+/**
+ * An issue that pays for something other than a change to the repository: a contest, a showcase, a
+ * "build something with X" reward, or a task that asks the taker to use the product, record it and
+ * email a report. Matched against the title and the body.
+ */
+export const CONTEST_ISSUE =
+  /community reward|build something with|giveaway|\bcontest\b|taking task \d|\$\s?\d+ (each|per (task|run|submission|project))|screen[- ]?record|recording link|email [\w.-]+@[\w.-]+|post (the|your|a) (public )?(repo|repository|project) link|submit (your|a) (project|repo|repository|app) (link|url|as a comment)|first (\d+ |two |three |five )?accepted (projects?|submissions?|reports?)|one reward per/i;
 
 export interface Repo {
   full_name: string;
@@ -178,9 +194,10 @@ export function repoExcluded(repo: Repo, today: string): string | undefined {
   return undefined;
 }
 
-export function issueExcluded(title: string, labels: string[]): string | undefined {
+export function issueExcluded(title: string, labels: string[], body = ''): string | undefined {
   if (EXCLUDED_ISSUE.test(title)) return 'reads as a security finding';
   if (labels.some((l) => /rewarded|paid|completed/i.test(l))) return 'already rewarded';
+  if (CONTEST_ISSUE.test(`${title}\n${body}`)) return 'contest or usage task, not a fix';
   return undefined;
 }
 
@@ -225,9 +242,10 @@ export function renderBoard(
 Written daily by \`scripts/bounty-scanner.ts\` (\`.github/workflows/bounty-board.yml\`) from GitHub's search API:
 open issues that received a \`/bounty $N\` command in the last ${LOOKBACK_DAYS} days or carry a bounty label. Feature and
 bug-fix work only: sandbox and security repositories and issues that read as security findings are dropped by
-rule. Only money a maintainer, the bounty bot or a label posted counts; a contributor's "bounty proposal" is dropped.
+rule, and so are contests, showcases and usage tasks that pay for something other than a change to the repository.
+Only money a maintainer, the bounty bot or a label posted counts; a contributor's "bounty proposal" is dropped.
 Rank = amount × language fit ÷ (1 + age in months) ÷ (1 + open PRs + assigned). Taken says what stands between a new
-claim and the money; the top ${FILE_TOP} free ones become \`oss-bounties\` queue items.
+claim and the money; the top ${FILE_TOP} free ones at $${MIN_AMOUNT} or more become \`oss-bounties\` queue items.
 
 Read ${stats.raw} issues, kept ${stats.kept}; dropped: ${dropped || 'none'}.
 
@@ -242,8 +260,8 @@ export function itemId(b: Bounty): string {
 }
 
 /**
- * Files the top free bounties (no assignee, no open PR) as queue items, idempotent on id; blocked
- * until CI can push a fork.
+ * Files the top free bounties (no assignee, no open PR, at least MIN_AMOUNT) as queue items,
+ * idempotent on id; blocked until CI can push a fork.
  */
 export function fileBounties(
   queue: Queue,
@@ -253,7 +271,9 @@ export function fileBounties(
 ): { queue: Queue; added: string[] } {
   const items = queue.items.map((it) => ({ ...it }));
   const added: string[] = [];
-  for (const b of bounties.filter((x) => takenBy(x) === 'free').slice(0, FILE_TOP)) {
+  for (const b of bounties
+    .filter((x) => takenBy(x) === 'free' && x.amount >= MIN_AMOUNT)
+    .slice(0, FILE_TOP)) {
     const id = itemId(b);
     if (items.some((it) => it.id === id)) continue;
     const item: QueueItem = {
@@ -355,7 +375,7 @@ async function main(): Promise<void> {
   for (const it of raw.values()) {
     const full = it.repository_url.replace('https://api.github.com/repos/', '');
     const labels = it.labels.map((l) => l.name);
-    const why = issueExcluded(it.title, labels);
+    const why = issueExcluded(it.title, labels, it.body ?? '');
     if (why) {
       drop(why);
       continue;

@@ -115,6 +115,17 @@
       "status": "dropped",
       "added": "2026-10-12",
       "dropped_at": "2026-10-12"
+    },
+    {
+      "id": "bounty-scanner-contest-floor",
+      "title": "Scanner: drop contests, showcases and usage tasks (an issue whose title or body pays for something other than a change to the repository) and file nothing under $25",
+      "why": "Five of five scanner-filed items were dropped unbuilt by 2026-10-12: after the funding fix the next two were useagent#113 (\"$5 per task\" for recording oneself using the maintainer's product and emailing a report, AI runs banned) and Salam#1713 (a \"build something with our language\" reward paying the first two of twenty submissions). Neither is a fix on the repository and a day of work for $5 is not a line of income (STRATEGY §4 counts $50–$800 per merged PR). Built 2026-10-12 (burn-down): CONTEST_ISSUE on title + body in issueExcluded, MIN_AMOUNT = 25 in fileBounties (small ones stay on the board for the record), board header updated, 2 tests.",
+      "effort_days": 0.2,
+      "proof": "the next board files no contest or sub-$25 item; the first filed item after this is a repository fix that a run can at least attempt",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-12",
+      "done_at": "2026-10-12"
     }
   ]
 }

@@ -1148,3 +1148,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-12 burn-down: oss-bounties `bounty-salamlang-salam-1713` dropped — a community reward for publishing a new app in
   Salam under the owner's account, paying only the first two accepted projects with at least nine complete submissions already
   ahead; expected payout nil.
+- 2026-10-12 burn-down: oss-bounties `bounty-scanner-contest-floor` (6 × 2) built — five of five scanner-filed items were dropped
+  unbuilt; the last two were a usage task and a contest, neither a repository change. The scanner now drops an issue whose
+  title or body reads as a contest or usage task and files nothing under $25; the line's first real claim waits on the next board.
