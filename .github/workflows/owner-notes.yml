@@ -2,14 +2,15 @@ name: owner notes
 
 # Hourly: the owner can leave notes for Claude by messaging the Telegram bot; they land in
 # docs/OWNER-NOTES.md, which every routine reads at the start of a run.
-# GitHub's cron is best-effort (3 of 14 hourly slots fired on 2026-09-21/22), so the job also
-# runs on every push to main — routines push several times a day, which keeps the lag short.
+# GitHub's cron is best-effort (3 of 14 hourly slots fired on 2026-09-21/22), so from 2026-09-22
+# the job also ran on every push to main. Dropped 2026-10-12 (foundry poller-push-triggers): 30 of
+# the 100 Actions runs in the 10.8 h to 2026-10-12 00:03 UTC were this job started by a push, each
+# billed a full minute for 0.2 of work, and the Telegram channel had been silent since 09-21. The
+# per-push poll now rides the `notify owner` job (one billed minute instead of two), which every
+# routine push already starts; this cron and workflow_dispatch remain.
 on:
   schedule:
     - cron: '20 * * * *'
-  push:
-    branches: [main]
-    paths-ignore: ['docs/OWNER-NOTES.md']
   workflow_dispatch:
 
 permissions:

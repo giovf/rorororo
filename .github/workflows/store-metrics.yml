@@ -4,8 +4,12 @@ name: store metrics
 # Figma Community), written from a runner because the 07:00 metrics routine's sandbox cannot
 # reach the stores and wrote `not live yet` for ten days of live listings (foundry item
 # store-metrics-in-ci, 2026-09-30). Runs before that routine, which then only reads the row.
-# GitHub's cron is best-effort, so the job also runs on pushes to main, where it only writes a
-# row if today's is missing (STORE_METRICS_IF_MISSING). Since 2026-10-07 a second step adds the Search
+# GitHub's cron is best-effort, so until 2026-10-12 the job also ran on pushes to main, filling a
+# missing row (STORE_METRICS_IF_MISSING). Dropped (foundry poller-push-triggers): 13 of the 100
+# Actions runs in the 10.8 h to 2026-10-12 00:03 UTC were this job started by a push, a full minute
+# billed each, and five of their `daily check` fill commits on 10-11 started `owner notes` again.
+# The cron below and the 07:00 metrics routine's workflow_dispatch (foundry cron-drift-dispatch-row,
+# 2026-10-10) write the row; a push never does. Since 2026-10-07 a second step adds the Search
 # Console reading (`search: …`) to the same rows and to gankdat's Daily numbers row; since 2026-10-11 a
 # third fills the extensions' Sales column from the licence Worker's KV records (`sales: …`).
 # Odd minute (foundry metrics-crons-off-the-half-hour, 2026-10-09): on `45 6` the scheduled run
@@ -13,9 +17,6 @@ name: store metrics
 on:
   schedule:
     - cron: '52 6 * * *' # daily, after gankdat metrics (06:37), before the 07:00 metrics routine
-  push:
-    branches: [main]
-    paths-ignore: ['ventures/*/RESEARCH.md', 'ventures/*/STORE.md', 'docs/**']
   workflow_dispatch:
 
 permissions:
@@ -41,8 +42,6 @@ jobs:
           node-version: 22
       - name: Append today's Daily check row to each venture's RESEARCH.md
         run: node --disable-warning=ExperimentalWarning scripts/store-metrics.ts
-        env:
-          STORE_METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
       - name: Search Console reading on today's rows (impressions, clicks, indexing verdicts)
         # scripts/search-console.ts (foundry search-console-api-reading, 2026-10-07): a read-only
         # service account (scope webmasters.readonly; owner action 020 adds it as a Restricted user on
@@ -55,7 +54,6 @@ jobs:
         continue-on-error: true
         env:
           SEARCH_CONSOLE_KEY: ${{ secrets.SEARCH_CONSOLE_KEY }}
-          STORE_METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
       - name: Licence sales on today's rows (keys issued and activations per extension)
         # scripts/license-sales.ts (foundry metrics-extension-sales, 2026-10-11): lists the licence
         # Worker's `license:*` records in the LICENSES KV namespace with the deploy token (the same
@@ -67,7 +65,6 @@ jobs:
         continue-on-error: true
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          STORE_METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
       - name: Commit
         run: |
           git config user.name "foundry-metrics[bot]"

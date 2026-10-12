@@ -1,16 +1,18 @@
 name: gankdat metrics
 
-# GitHub's cron is best-effort (the 06:30 slot was skipped on 2026-09-22), so the job also runs
-# on pushes to main, where it only writes a row if today's is missing (METRICS_IF_MISSING).
+# GitHub's cron is best-effort (the 06:30 slot was skipped on 2026-09-22), so from then the job
+# also ran on pushes to main, filling a missing row (METRICS_IF_MISSING). Dropped 2026-10-12
+# (foundry poller-push-triggers): 13 of the 100 Actions runs in the 10.8 h to 2026-10-12 00:03 UTC
+# were this job started by a push (0.5 min of work, a full minute billed each), and their fill
+# commits started `owner notes` again. A Daily numbers row is a daily reading: the cron below and
+# the 07:00 metrics routine's workflow_dispatch (foundry cron-drift-dispatch-row, 2026-10-10)
+# write it; a push never does.
 # Odd minute (foundry metrics-crons-off-the-half-hour, 2026-10-09): on `30 6` the scheduled run
 # started 11:51–15:04 UTC every day 10-03..10-08 — GitHub delays crons on busy minutes most — so
 # the runner-fed refresh, IndexNow, the MCP probe and the error filer landed ~7 h after the waves.
 on:
   schedule:
     - cron: '37 6 * * *' # daily, before the 07:00 UTC ops routine
-  push:
-    branches: [main]
-    paths-ignore: ['ventures/gankdat/RESEARCH.md', 'docs/**']
   workflow_dispatch:
 
 permissions:
@@ -39,8 +41,7 @@ jobs:
         run: node ventures/gankdat/scripts/schedules.mjs reset
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      - name: Install (only the scheduled run needs node_modules, for the runner-side refresh)
-        if: github.event_name != 'push'
+      - name: Install (node_modules for the runner-side refresh)
         run: npm ci
       - name: Refresh the sources whose origin the Worker cannot read (runner-fed, 2026-10-04)
         # ventures/gankdat/scripts/runner-refresh.mjs: for every source with `refresh.runner`
@@ -50,7 +51,6 @@ jobs:
         # waves skip these sources. Scheduled and manual runs only (push runs would re-pay npm ci);
         # a source refreshed under 20 h ago is skipped. A failure lands in refresh_log, so in today's
         # row below — it must not stop the metrics step.
-        if: github.event_name != 'push'
         run: npm run runner-refresh
         continue-on-error: true
         env:
@@ -61,7 +61,7 @@ jobs:
         # Smithery and the Claude directory see it (Glama mailed "HTTP 500 – Error connecting to
         # MCP" on 2026-10-08 and no sandbox could look). Leaves dist/mcp-probe.json for metrics.mjs,
         # which renders `mcp probe: …` and lists a failed step under `refresh errors` as `mcp-probe`
-        # so the step below queues a fix on a repeat. Builtins only (push runs skip npm ci); never
+        # so the step below queues a fix on a repeat. Builtins only; never
         # fails the job. The same calls also run with a key minted for this run (gankdat
         # probe-key-from-runner, 2026-10-09): the script inserts a fresh key's hash under the internal
         # probe@gankdat.com account through the D1 REST API with CLOUDFLARE_API_TOKEN and deletes it
@@ -74,7 +74,6 @@ jobs:
       - name: Append today's numbers to RESEARCH.md
         run: node ventures/gankdat/scripts/metrics.mjs
         env:
-          METRICS_IF_MISSING: ${{ github.event_name == 'push' && '1' || '' }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           # Apify actor runs / users for the row (STRATEGY §4 "Apify paid runs / month: 100").
           # Optional in the script: a missing token degrades the row to `apify: n/a`, never fails it.
