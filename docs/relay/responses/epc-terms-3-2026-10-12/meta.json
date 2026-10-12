@@ -1,0 +1,45 @@
+{
+  "request": "epc-terms-3-2026-10-12",
+  "fetched_at": "2026-10-12T17:29:29.990Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://get-energy-performance-data.communities.gov.uk/guidance/licensing-restrictions",
+      "fetched_at": "2026-10-12T17:29:29.051Z",
+      "status": 200,
+      "final_url": "https://get-energy-performance-data.communities.gov.uk/guidance/licensing-restrictions",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 19402,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://get-energy-performance-data.communities.gov.uk/guidance/data-protection-requirements",
+      "fetched_at": "2026-10-12T17:29:29.584Z",
+      "status": 200,
+      "final_url": "https://get-energy-performance-data.communities.gov.uk/guidance/data-protection-requirements",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 19054,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://get-energy-performance-data.communities.gov.uk/guidance/energy-certificate-data-apis",
+      "fetched_at": "2026-10-12T17:29:29.698Z",
+      "status": 200,
+      "final_url": "https://get-energy-performance-data.communities.gov.uk/guidance/energy-certificate-data-apis",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 17872,
+      "truncated": false
+    }
+  ]
+}
