@@ -1,0 +1,32 @@
+{
+  "request": "epc-terms-2-2026-10-12",
+  "fetched_at": "2026-10-12T17:28:41.793Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://get-energy-performance-data.communities.gov.uk/guidance",
+      "fetched_at": "2026-10-12T17:28:41.431Z",
+      "status": 200,
+      "final_url": "https://get-energy-performance-data.communities.gov.uk/guidance",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 16512,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://get-energy-performance-data.communities.gov.uk/data-access-options",
+      "fetched_at": "2026-10-12T17:28:41.696Z",
+      "status": 200,
+      "final_url": "https://get-energy-performance-data.communities.gov.uk/data-access-options",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 15720,
+      "truncated": false
+    }
+  ]
+}
