@@ -707,8 +707,9 @@
       "effort_days": 0.15,
       "proof": "no hand-resolved merge commit (a merge whose message is not git's default) touching RUNS.md, INBOX.md or RUNS-COUNT.json in the following 14 days; the union test passes",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-12"
+      "status": "doing",
+      "added": "2026-10-12",
+      "doing_since": "2026-10-12"
     },
     {
       "id": "claim-before-install",
