@@ -342,9 +342,10 @@
       "effort_days": 0.5,
       "proof": "7-day Actions minutes under 350 for two consecutive weeks",
       "score": 7,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-04",
-      "not_before": "2026-10-12"
+      "not_before": "2026-10-12",
+      "doing_since": "2026-10-12"
     },
     {
       "id": "append-only-guard",
