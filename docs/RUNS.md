@@ -986,3 +986,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 01:35 | burn-down | pipeline-plain.test.ts: 3 guards (source import, module import-free, cold and claim builtins only)
 - 2026-10-12 01:35 | burn-down | Prompts: burn-down GATE and build STEP -1 claim the first item before npm ci; a red STEP 0 releases it
 - 2026-10-12 01:35 | burn-down | Queue: foundry claim-before-install done; proof is claims within 2 min of the slot for 7 days
+- 2026-10-12 01:28 | burn-down | Pipeline starved after 3 items, every queue cooling, tonight's exchange pass spent at 19:48: stopping
