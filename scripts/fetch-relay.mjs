@@ -55,6 +55,10 @@ const ALLOWED = [
   '.glasp.co',
   '.hypothes.is',
   '.opendatacommunities.org', // EPC open data terms (exchange pre-research 2026-10-12)
+  '.nebius.com', // Token Factory billing rule and Nemotron catalogue (hackathons research 2026-10-13)
+  '.genai.works', // Open Agent Hackathon rules (hackathons research 2026-10-13)
+  'lablab.ai', // lablab.ai hackathon pages (hackathons research 2026-10-13)
+  'developer.amazon.com', // Amazon developer hackathon / Alexa+ pages (hackathons research 2026-10-13)
 ];
 
 function allowed(hostname) {
