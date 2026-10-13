@@ -1,0 +1,143 @@
+{
+  "request": "hackathons-2026-10-13",
+  "fetched_at": "2026-10-13T00:17:12.890Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.tokenfactory.nebius.com/other-capabilities/billing-new.md",
+      "fetched_at": "2026-10-13T00:17:06.852Z",
+      "status": 200,
+      "final_url": "https://docs.tokenfactory.nebius.com/other-capabilities/billing-new.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline"
+      },
+      "file": "1.txt",
+      "bytes": 4982,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.tokenfactory.nebius.com/other-capabilities/billing.md",
+      "fetched_at": "2026-10-13T00:17:07.258Z",
+      "status": 404,
+      "final_url": "https://docs.tokenfactory.nebius.com/other-capabilities/billing.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "728",
+        "content-disposition": "inline"
+      },
+      "file": "2.txt",
+      "bytes": 728,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://tokenfactory.nebius.com/model-catalog.md",
+      "fetched_at": "2026-10-13T00:17:07.476Z",
+      "status": 200,
+      "final_url": "https://tokenfactory.nebius.com/model-catalog.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "5381",
+        "etag": "W/\"1505-P1/5nzdGv7o/bBodg3n5jk1F7+8\""
+      },
+      "file": "3.txt",
+      "bytes": 5381,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://nebius.com/services/token-factory/models/nvidia-nemotron-models-inference",
+      "fetched_at": "2026-10-13T00:17:07.915Z",
+      "status": 200,
+      "final_url": "https://nebius.com/services/token-factory/models/nvidia-nemotron-models-inference",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"wu8avjopr75b8c\""
+      },
+      "file": "4.html",
+      "bytes": 247865,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://nebius.com/blog/posts/introducing-the-nebius-ai-builder-program",
+      "fetched_at": "2026-10-13T00:17:09.144Z",
+      "status": 200,
+      "final_url": "https://nebius.com/blog/posts/introducing-the-nebius-ai-builder-program",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"cn15nj079h50ao\""
+      },
+      "file": "5.html",
+      "bytes": 233755,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://hackathon.genai.works/event/open-agent-hackathon-2026",
+      "fetched_at": "2026-10-13T00:17:09.820Z",
+      "status": 200,
+      "final_url": "https://hackathon.genai.works/event/open-agent-hackathon-2026",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 160517,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://academy.genai.works/courses/open-agent-hackathon-2026/details",
+      "fetched_at": "2026-10-13T00:17:10.192Z",
+      "status": 200,
+      "final_url": "https://academy.genai.works/courses/open-agent-hackathon-2026/details",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 102924,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://lablab.ai/ai-hackathons/ai-agents-ai-week-hackathon",
+      "fetched_at": "2026-10-13T00:17:11.481Z",
+      "status": 200,
+      "final_url": "https://lablab.ai/ai-hackathons/ai-agents-ai-week-hackathon",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 1108839,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.amazon.com/apps-and-games/events",
+      "fetched_at": "2026-10-13T00:17:11.873Z",
+      "status": 200,
+      "final_url": "https://developer.amazon.com/apps-and-games/events",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "9.html",
+      "bytes": 194659,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.amazon.com/events/2026-alexa-partner-summit",
+      "fetched_at": "2026-10-13T00:17:12.273Z",
+      "status": 200,
+      "final_url": "https://developer.amazon.com/alexaplus",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 129384,
+      "truncated": false
+    }
+  ]
+}
