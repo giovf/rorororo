@@ -79,8 +79,9 @@
       "effort_days": 1.5,
       "proof": "the agent produces a correct report for three real companies in dry-run and live mode; demo recorded under 3 minutes",
       "score": 8,
-      "status": "todo",
-      "added": "2026-10-13"
+      "status": "doing",
+      "added": "2026-10-13",
+      "doing_since": "2026-10-13"
     },
     {
       "id": "nebius-nvidia-hackathon-submit",
