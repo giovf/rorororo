@@ -1052,3 +1052,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-13 00:40 | burn-down | Queue: oss-bounties research_after 2026-10-14 — two boards under the new shape rules first; review trigger noted
 - 2026-10-13 09:16 | build | Exchange pre-research: Ofsted childcare providers parked (OGL v3, twice-yearly 19 MB CSV, Apify rivals ≤5 users)
 - 2026-10-13 17:17 | burn-down | Exchange pre-research: Ireland CRO company register parked (CC BY 4.0, 825k rows daily; 3 Apify clones ≤2 users)
+- 2026-10-13 17:17 | build | Nothing buildable: every queue cooling or dated, exchange pre-research pass spent at 09:16; stopping
