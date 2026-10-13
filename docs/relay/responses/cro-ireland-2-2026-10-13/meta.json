@@ -1,0 +1,73 @@
+{
+  "request": "cro-ireland-2-2026-10-13",
+  "fetched_at": "2026-10-13T17:16:08.922Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://opendata.cro.ie/dataset/bf6f837d-0946-4c14-9a99-82cd6980c121/resource/3fef41bc-b8f4-4b10-8434-ce51c29b1bba/download/companies.csv.zip",
+      "fetched_at": "2026-10-13T17:16:05.846Z",
+      "status": 403,
+      "final_url": "https://nl-ams-1.linodeobjects.com/cro-bulk-store-public/dataset/resources/3fef41bc-b8f4-4b10-8434-ce51c29b1bba/companies.csv.zip?response-content-disposition=attachment%3B%20filename%3Dcompanies.csv.zip&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=W27H6JTS6HVVMNSVTPL1%2F20261013%2Fnl-ams-1%2Fs3%2Faws4_request&X-Amz-Date=20261013T171606Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Signature=7feb2b4db9bb56d935520d71b24e8a6f4751fe3b7f4f3b475de33ea03423387c",
+      "headers": {
+        "content-type": "application/xml",
+        "content-length": "2848"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://opendata.cro.ie/dataset/companies",
+      "fetched_at": "2026-10-13T17:16:07.234Z",
+      "status": 200,
+      "final_url": "https://opendata.cro.ie/dataset/companies",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "14980"
+      },
+      "file": "2.html",
+      "bytes": 14980,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://opendata.cro.ie/dataset",
+      "fetched_at": "2026-10-13T17:16:08.131Z",
+      "status": 200,
+      "final_url": "https://opendata.cro.ie/dataset",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "20131"
+      },
+      "file": "3.html",
+      "bytes": 20131,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://opendata.cro.ie/api/3/action/package_show?id=companies",
+      "fetched_at": "2026-10-13T17:16:08.582Z",
+      "status": 200,
+      "final_url": "https://opendata.cro.ie/api/3/action/package_show?id=companies",
+      "headers": {
+        "content-type": "application/json;charset=utf-8",
+        "content-length": "4467"
+      },
+      "file": "4.json",
+      "bytes": 4467,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://opendata.cro.ie/api/3/action/datastore_search?resource_id=3fef41bc-b8f4-4b10-8434-ce51c29b1bba&limit=2",
+      "fetched_at": "2026-10-13T17:16:08.694Z",
+      "status": 200,
+      "final_url": "https://opendata.cro.ie/api/3/action/datastore_search?resource_id=3fef41bc-b8f4-4b10-8434-ce51c29b1bba&limit=2",
+      "headers": {
+        "content-type": "application/json;charset=utf-8",
+        "content-length": "4992"
+      },
+      "file": "5.json",
+      "bytes": 4992,
+      "truncated": false
+    }
+  ]
+}
