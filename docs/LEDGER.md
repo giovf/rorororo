@@ -29,7 +29,7 @@ their sum. Add a row the day a subscription starts, remove it the day it stops.
 
 | Venture | GBP/month | Note                                                                 |
 | ------- | --------- | -------------------------------------------------------------------- |
-| gankdat | 3.70      | Cloudflare Workers Paid, US$5/month on the 10th; owner-paid, confirmed 2026-10-10. Metered overage on top of it is a bug, not a cost: the metrics job files a queue item the day one shows |
+| gankdat | 3.70      | Cloudflare Workers Paid, US$5/month on the 10th; owner-paid, confirmed 2026-10-10. Metered overage on top of it is a bug, not a cost: the metrics job files a queue item the day one shows. unconfirmed: $49.00, alert of 2026-10-12 |
 
 ## Conventions
 
