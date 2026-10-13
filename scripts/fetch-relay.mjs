@@ -59,6 +59,10 @@ const ALLOWED = [
   '.genai.works', // Open Agent Hackathon rules (hackathons research 2026-10-13)
   'lablab.ai', // lablab.ai hackathon pages (hackathons research 2026-10-13)
   'developer.amazon.com', // Amazon developer hackathon / Alexa+ pages (hackathons research 2026-10-13)
+  '.cro.ie', // Irish Companies Registration Office open data, API and bulk-licence pages (exchange pre-research 2026-10-13)
+  '.data.gov.ie', // Irish open data portal dataset pages (exchange pre-research 2026-10-13)
+  '.vision-net.ie', // CRIF Vision-net price list, the paid rival (exchange pre-research 2026-10-13)
+  '.solocheck.ie', // SoloCheck (CRIF) company-report prices, the paid rival (exchange pre-research 2026-10-13)
 ];
 
 function allowed(hostname) {
