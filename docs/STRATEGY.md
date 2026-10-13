@@ -1186,3 +1186,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   fix — the free rows are the shapes dropped on 10-12, the rest sit under 1–14 open PRs for years. No items; `research_after` 10-14,
   after two boards under the new rules. Flagged for the Sunday review: a board-count trigger beside the PR-based kill rule if the
   free-fix count stays at zero.
+- 2026-10-13 build: nothing buildable (every queue cooling or dated), so the day's exchange pre-research pass: Ofsted's childcare
+  providers register parked — OGL v3 and a clean 19 MB provider CSV, but published twice a year (no change feed, gankdat's edge), half
+  the rows are childminders Blind Mode drops, and the paid demand is in contact lists (RD Marketing £170–295/1k) or Apify actors with
+  ≤ 5 users each — the same thin signal uk-schools met. Trigger: a first paid call on the lead-gen bundle, or a monthly Ofsted file.
