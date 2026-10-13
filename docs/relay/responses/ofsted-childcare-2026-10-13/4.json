@@ -1,0 +1,1208 @@
+{
+  "data": {
+    "total": 17,
+    "count": 17,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "Ofsted Children's Home Inspection Reports Scraper",
+        "name": "ofsted-reports-data-scraper",
+        "username": "alkausari_mujahid",
+        "stats": {
+          "totalBuilds": 43,
+          "totalRuns": 624,
+          "totalUsers": 5,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-11T22:00:15.254Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 58,
+            "TIMED-OUT": 4,
+            "TOTAL": 63
+          }
+        },
+        "description": "Finds Ofsted children's home full inspection reports in your date range and parses each PDF into 18 clean fields. Get ratings, registered managers, responsible individuals, enforcement actions, inspectors, home capacity and home type. Schedule it daily for new reports, export to CSV or database.",
+        "categories": [
+          "INTEGRATIONS",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/iTBujWo48Q7VgvU2oPbzqPcUWaOFiFk3RBT8IJqYPVI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUTlXRnFLSllWTzEzaU5WcjctYWN0b3ItVU5tQ0xGcWZINnpYYTNNZmMtdWozVXVMVFdWUi1vZnN0ZWQtbG9nby5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Alkausari M",
+        "userPictureUrl": "https://images.apifyusercontent.com/u7hS7ZpjRgQ_T477VQhbyJqjiUm0kBsUYNU4tWWU9BA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQ08yeUpXNlJEQnpZMXJWcFp4bWFFSWNaNUZGb2N1TFV5THUzUnZmVkxKRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVVGxYUm5GTFNsbFdUekV6YVU1V2NqY3RjSEp2Wm1sc1pTMTBSV3REVTNCVmFFUnJMV0ZzYTJGMWMyRnlhVjl0ZFdwaGFHbGtMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Previously, platform usage was passed to users. With this update, platform usage is now free, so you only pay for the inspection reports processed.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "report",
+                "eventDescription": "A single Ofsted inspection report processed and saved to the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-09-24T12:58:14.393Z",
+          "createdAt": "2026-09-10T12:58:34.325Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-10T12:58:54.506Z",
+          "notifiedAboutChangeAt": "2026-09-24T13:06:03.910Z"
+        },
+        "id": "UNmCLFqfH6zXa3Mfc",
+        "url": "https://apify.com/alkausari_mujahid/ofsted-reports-data-scraper"
+      },
+      {
+        "title": "Ofsted Providers Companies House Enrichment",
+        "name": "ofsted-providers-companies-house-enrichment",
+        "username": "alkausari_mujahid",
+        "stats": {
+          "totalBuilds": 17,
+          "totalRuns": 83,
+          "totalUsers": 2,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-11T02:13:00.688Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 9,
+            "TIMED-OUT": 0,
+            "TOTAL": 9
+          }
+        },
+        "description": "Syncs UK Ofsted provider names from a configurable source table, matches each one against Companies House using fuzzy search, and stores verified company profiles, registered addresses, and active directors back into your MySQL or Supabase database — automatically skipping duplicates and aliases.",
+        "categories": [
+          "AUTOMATION",
+          "INTEGRATIONS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/0s2jFGeU2vtgeCUcbjokcInS5GdCn_qJjAZnzYNZmJM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUTlXRnFLSllWTzEzaU5WcjctYWN0b3ItbjdhYnk1NGVsdjBCS1hjZFAtalAzejVvOVh6dS11ay5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Alkausari M",
+        "userPictureUrl": "https://images.apifyusercontent.com/u7hS7ZpjRgQ_T477VQhbyJqjiUm0kBsUYNU4tWWU9BA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQ08yeUpXNlJEQnpZMXJWcFp4bWFFSWNaNUZGb2N1TFV5THUzUnZmVkxKRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVVGxYUm5GTFNsbFdUekV6YVU1V2NqY3RjSEp2Wm1sc1pTMTBSV3REVTNCVmFFUnJMV0ZzYTJGMWMyRnlhVjl0ZFdwaGFHbGtMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-04-24T08:24:14.809Z",
+          "createdAt": "2026-04-24T08:24:17.309Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "n7aby54elv0BKXcdP",
+        "url": "https://apify.com/alkausari_mujahid/ofsted-providers-companies-house-enrichment"
+      },
+      {
+        "title": "UK Ofsted Inspections Scraper",
+        "name": "uk-ofsted-inspections-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 14,
+          "totalRuns": 145,
+          "totalUsers": 3,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-12T03:40:51.760Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrapes Ofsted inspection records for schools, nurseries, and childcare providers by name, postcode, or URN. Returns each inspection as a flat row with provider details and ratings.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/OwujlApSFYFYLbrMWaqWgBdKEc9xISlvxe4eiKWOsEw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItMXJlTnkwSnFrTW9GdUdxTWQtQlNjc2g1MGV0eC11ay1vZnN0ZWQtaW5zcGVjdGlvbnMtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5.000000000000001,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.021
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02033
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01967
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.019
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-25T21:30:00.000Z",
+          "createdAt": "2026-05-25T22:22:39.392Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "1reNy0JqkMoFuGqMd",
+        "url": "https://apify.com/parseforge/uk-ofsted-inspections-scraper"
+      },
+      {
+        "title": "Ofsted Reports Data Scraper",
+        "name": "ofsted-reports-data-scraper",
+        "username": "solidcode",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 114,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T07:04:56.877Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "[💰 $8.0 / 1K] Extract Ofsted inspection reports and ratings for England's schools, nurseries, childminders, colleges, and children's social care providers. Get provider name, URN, address, latest judgement, sub-grades, inspection dates, and report PDF links.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/-enyfpzjQ9LgrliCo0HlHzy-Q_MqulHv-T_LYUtakqg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc01VSWpTcEpUMXpia1BpTk0tYWN0b3ItN2hpTTF6YThtUDhnSXFxVGQtSjRlYWx5VFhZYS1vZnN0ZWQucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SolidCode",
+        "userPictureUrl": "https://images.apifyusercontent.com/pOybr7SLIDt4uWHCBExLbYFkPZpc5-7gG1nnWMwTEgc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVmN6WEh5MHJwY3VXMkZ5OVE0Q1djQjg4dGFBZkhBU1k1VXptMUZSMmtmby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjMDFWU1dwVGNFcFVNWHBpYTFCcFRrMHRjSEp2Wm1sc1pTMDNZVW81Y0dKWlZXTkpMVTF2WkdWeWJsOXphR2xsYkdSZmJHOW5iMTkzYVhSb1gzUmxZV3hmY0dGMGFGOGxNamd4SlRJNUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "Initial pricing.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0096
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00905
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0085
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.008
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "createdAt": "2026-07-16T18:07:39.132Z",
+          "startedAt": "2026-07-16T18:07:39.132Z"
+        },
+        "id": "7hiM1za8mP8gIqqTd",
+        "url": "https://apify.com/solidcode/ofsted-reports-data-scraper"
+      },
+      {
+        "title": "Ofsted State-Funded Schools Register",
+        "name": "ofsted-school-register",
+        "username": "nexgenwatch",
+        "stats": {
+          "totalBuilds": 28,
+          "totalRuns": 58,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-11T07:42:54.808Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 20,
+            "TIMED-OUT": 0,
+            "TOTAL": 20
+          }
+        },
+        "description": "Each record carries the URN, school name, phase, region, trust/sponsor, pupil count, and the latest inspection date and OEIF outcome grades, with honest nulls where a school has no current grade.",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/45e4zDwQasJy8tnXb-TiKmJWtytrwgFtIsfF5FTB-Tw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ0x3ZmZxWkVkV3ZzTVZRYWQtYWN0b3ItZGNaZkVLVXJ0SW4ybzJKMkYtMXZ4YnJwR2hRSy1vZnN0ZWQtc2Nob29sLXJlZ2lzdGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Watch",
+        "userPictureUrl": "https://images.apifyusercontent.com/o6OYurOmSCLOfsI4R3iuS80czRV7gduDNvLE1-BSd6U/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vczJLbGtqTVBYR2tyQ01aN0VySWpQc1JxNk4tSVl0S25lajRrS0tLQm9lTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMHgzWm1aeFdrVmtWM1p6VFZaUllXUXRjSEp2Wm1sc1pTMUZTVkphTlVsQmMyNDNMVTVIVnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.02,
+                "isOneTimeEvent": true
+              },
+              "school_record": {
+                "eventTitle": "School Record",
+                "eventDescription": "Charged once per unique registry row delivered.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0134
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0134
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0134
+                  }
+                }
+              }
+            }
+          },
+          "isPriceChangeNotificationSuppressed": true,
+          "reasonForChange": "Activate pricing at publication (verbatim, no price change)",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-19T01:20:06.894Z",
+          "startedAt": "2026-09-19T01:20:06.894Z"
+        },
+        "id": "dcZfEKUrtIn2o2J2F",
+        "url": "https://apify.com/nexgenwatch/ofsted-school-register"
+      },
+      {
+        "title": "UK Ofsted Provider Inspection Check",
+        "name": "uk-ofsted-provider-inspection-check",
+        "username": "nexgenwatch",
+        "stats": {
+          "totalBuilds": 22,
+          "totalRuns": 59,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T10:10:35.971Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "A per-identity check: submit identifiers, get one official answer each. Billed per completed official resolution — a not-found, ambiguous, or unavailable outcome is returned but never charged.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/KVbwOUROFnJtDoyDyGG6gdfmuUvJc4K44ST38RTgu8k/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ0x3ZmZxWkVkV3ZzTVZRYWQtYWN0b3ItNVNKT2JnTWJoNGllSGZsenEtTHVjOHYyOXRocS11ay1vZnN0ZWQtcHJvdmlkZXItaW5zcGVjdGlvbi1jaGVjay5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Watch",
+        "userPictureUrl": "https://images.apifyusercontent.com/o6OYurOmSCLOfsI4R3iuS80czRV7gduDNvLE1-BSd6U/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vczJLbGtqTVBYR2tyQ01aN0VySWpQc1JxNk4tSVl0S25lajRrS0tLQm9lTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMHgzWm1aeFdrVmtWM1p6VFZaUllXUXRjSEp2Wm1sc1pTMUZTVkphTlVsQmMyNDNMVTVIVnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Activate PPE billing at flip: identical amounts, notification suppressed.",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.02,
+                "isOneTimeEvent": true
+              },
+              "provider-inspection-check": {
+                "eventTitle": "Provider Inspection Check",
+                "eventDescription": "Charged once per completed official answer.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0335
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-10T19:53:15.976Z",
+          "startedAt": "2026-09-10T19:53:15.976Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "5SJObgMbh4ieHflzq",
+        "url": "https://apify.com/nexgenwatch/uk-ofsted-provider-inspection-check"
+      },
+      {
+        "title": "Ofsted School Register Scraper",
+        "name": "ofsted-register",
+        "username": "danielainsworth",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 135,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T08:52:37.747Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Search 22,000+ UK state-funded schools with Ofsted inspection grades. Filter by local authority, region, postcode or name. Official GOV.UK data, updated monthly.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/sMzXxZKIMJQEvHsRYVso1ubGvzZ0tMiY1jUqDDNwsY8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSlJMdjRYUmdScnloZ1FJWE8tYWN0b3ItUjNkbjB3ZDc1RVl1bHYwR20taGRHWHVpV0RrUS1veGZvcmRfcmVnaXN0ZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Daniel Ainsworth",
+        "userPictureUrl": "https://images.apifyusercontent.com/J7ObjMFyC7unOW7OJT6ejTh_06XB9erTIxwAyjDeqfY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN0F3eFFZcUZpUy0xenFZUEVvQnJMZ2lZVlhJQmdDNkk5bzVNNkhiTkVTby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTWEZyZEZsRllucEpRa1V3TjAxWFNIRmhXRmh5ZFRkcFlWQnlUVlZoWDNaMVpHTkxTV05WUTA0d2RtSjZaMk4z.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-08-05T13:59:16.259Z",
+          "startedAt": "2026-08-19T13:59:16.703Z",
+          "apifyMarginPercentage": 0,
+          "notifiedAboutFutureChangeAt": "2026-08-05T13:59:36.513Z",
+          "notifiedAboutChangeAt": "2026-08-19T14:05:43.744Z"
+        },
+        "id": "R3dn0wd75EYulv0Gm",
+        "url": "https://apify.com/danielainsworth/ofsted-register"
+      },
+      {
+        "title": "UK Ofsted Inspection Reports Data Scraper",
+        "name": "uk-ofsted-inspections-scraper",
+        "username": "muhammadafzal",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 51,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T10:06:34.791Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Scrape public Ofsted provider records in England, including URNs, categories, addresses, ratings, inspection history, publication dates, and official PDF report links.",
+        "categories": [
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/KpBYBwVcMbj6sfiuKHV6uVmLEz899qZw7nU1NrC0ac8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdW1xSGw0TGhxbVBIY0JoMEwtYWN0b3ItSThJenZId2EwbENUYTY2a2QtRDhxVmoxa2FmVi1VS19PZnN0ZWRfSW5zcGVjdGlvbi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhammad Afzal",
+        "userPictureUrl": "https://images.apifyusercontent.com/qyNOWf6DvGK-3ypCN8Nn3H7SSXQisiiQVeIRmrfpKYI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vam1jWUZudEFobWsySTVrbW9XUDJWNVlhSk5LMTgzWlFia3lfREtLUDZ3Zy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkVzF4U0d3MFRHaHhiVkJJWTBKb01Fd3RjSEp2Wm1sc1pTMWpUM294WVRrelIweGpMVTExYUdGdGJXVmtYMEZtZW1Gc1gwMWhiR2xyWDJrdFJsaFRhMUpNWkMxWU15NXFjR2MuanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-20T10:43:45.991Z",
+          "startedAt": "2026-09-20T10:43:45.655Z",
+          "reasonForChange": "Updated tiered event prices to recover measured platform usage and maintain a positive operating margin.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "ofsted-provider-record": {
+                "eventTitle": "Ofsted provider record",
+                "eventDescription": "One unique public Ofsted provider record with inspection history and official report links.",
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.004875
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00475
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.006251
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.006094
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005938
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.005
+                  }
+                }
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.011252,
+          "notifiedAboutChangeAt": "2026-09-21T12:36:35.459Z"
+        },
+        "id": "I8IzvHwa0lCTa66kd",
+        "url": "https://apify.com/muhammadafzal/uk-ofsted-inspections-scraper"
+      },
+      {
+        "title": "Ofsted Inspections",
+        "name": "uk-ofsted-inspections",
+        "username": "wildorigins",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 74,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-11T08:04:47.523Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "🏷️ From $0.60 / 1K | Ofsted inspection ratings and reports for every school, nursery, childminder and children's social care provider in England. Search by name, URN, postcode radius, local authority, region, type or rating and get the judgements, history and report links.",
+        "categories": [
+          "REAL_ESTATE",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/3GIhdyENgT59Df2x_LVdPmgFxhM2rsC6zzyT1jVRzdo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vejBKdktlamoxM2ZRRmdMbEEtYWN0b3ItRWVyZ3lmS2VaMFM0dEZGT2EtaTRLNmprUzBZZC11ay1vZnN0ZWQtaW5zcGVjdGlvbnMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Wild Origins",
+        "userPictureUrl": "https://images.apifyusercontent.com/Zc8sA0Pbl_3wCm06Z-od0494gzkpsk7V2c1jmGTEO04/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQm5HVU5zaG5mdVZOOUtwaTVFZi12TmlyX1I0ck9HLU9JeUtuaVgwTTFEcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlakJLZGt0bGFtb3hNMlpSUm1kTWJFRXRjSEp2Wm1sc1pTMWhSREZ1ZFdKUGQyZ3hMWEJ5YjJacGJHVXRjR2xqZEhWeVpTMDNNakF1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-16T20:48:05.239Z",
+          "startedAt": "2026-08-16T20:47:55.785Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "provider-record": {
+                "eventTitle": "Provider",
+                "eventDescription": "Charged for each provider returned with its inspection history.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00085
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0004
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-08-19T08:06:26.057Z"
+        },
+        "id": "EergyfKeZ0S4tFFOa",
+        "url": "https://apify.com/wildorigins/uk-ofsted-inspections"
+      },
+      {
+        "title": "UK Ofsted URN Portfolio Inspection Outcome Event Monitor",
+        "name": "uk-ofsted-urn-portfolio-inspection-monitor",
+        "username": "plym-actor-factory",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 23,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-11T19:41:04.812Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 17,
+            "TIMED-OUT": 0,
+            "TOTAL": 17
+          }
+        },
+        "description": "Watch a book of England state-funded school URNs and emit typed inspection-outcome / overall-effectiveness / safeguarding-inclusion-curriculum standard events from the official Ofsted monthly MI CSV on GOV.UK. Not HTML scrape of reports.ofsted.gov.uk; not MATpulse/Observatory; not a nationwide dump.",
+        "categories": [
+          "AI",
+          "AUTOMATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Daniel Witney",
+        "userPictureUrl": "https://images.apifyusercontent.com/P1uggaJ7WUFX8y3NrHxjb6YlIKQ8XuxpF2i0jUYVCWg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN19fN2wxWmJhbXJnZmZEODJmb19XM1BoaWxOb2hpNnMzWkMwRE54clI3QS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TXhNVEl6TlRBNU5EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Initial PPE Phase 3 #26 UK Ofsted URN portfolio (private)",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-17T01:57:48.807Z",
+          "startedAt": "2026-09-17T01:59:48.000Z",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "ofsted-inspection-outcome-event-delivered": {
+                "eventTitle": "Ofsted inspection outcome event delivered",
+                "eventDescription": "Charged once per unique watched URN inspection-outcome / grade / standard event from official Ofsted monthly MI CSV. Never charged for RUN_STATUS, baselines, quiet books, invalids, duplicates, or fixture health.",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true
+              }
+            }
+          }
+        },
+        "id": "bPxL6iHvE1iKQWNJk",
+        "url": "https://apify.com/plym-actor-factory/uk-ofsted-urn-portfolio-inspection-monitor"
+      },
+      {
+        "title": "Ofsted Children's Home Reports to Supabase",
+        "name": "ofsted-inspection-reports-to-supabase",
+        "username": "alkausari_mujahid",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 25,
+          "totalUsers": 1,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-11T22:00:05.331Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 21,
+            "TIMED-OUT": 0,
+            "TOTAL": 22
+          }
+        },
+        "description": "Send Ofsted children's home inspection reports straight into your Supabase table: ratings, provider, manager, inspectors, capacity and home type. One row per home, updated on every run, so nothing duplicates. Schedule it daily. No Make or Zapier needed.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/qLn8STMnHTY3n8sr3Ff1CFNvqNdceQwoLdqef9R8OeM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUTlXRnFLSllWTzEzaU5WcjctYWN0b3ItdVZ1SmRVbFNJa0J0TDZ0aUItQXdYQUJ4bVVjVS1PZnN0ZWQtU3VwYWJhc2UtT2wtbmFtZWQtcmVwb3J0LWRyb3AtaW4ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Alkausari M",
+        "userPictureUrl": "https://images.apifyusercontent.com/u7hS7ZpjRgQ_T477VQhbyJqjiUm0kBsUYNU4tWWU9BA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQ08yeUpXNlJEQnpZMXJWcFp4bWFFSWNaNUZGb2N1TFV5THUzUnZmVkxKRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVVGxYUm5GTFNsbFdUekV6YVU1V2NqY3RjSEp2Wm1sc1pTMTBSV3REVTNCVmFFUnJMV0ZzYTJGMWMyRnlhVjl0ZFdwaGFHbGtMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-25T21:40:18.399Z",
+          "createdAt": "2026-09-25T21:40:41.717Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "uVuJdUlSIkBtL6tiB",
+        "url": "https://apify.com/alkausari_mujahid/ofsted-inspection-reports-to-supabase"
+      },
+      {
+        "title": "Rightmove Scraper",
+        "name": "rightmove-scraper",
+        "username": "silentflow",
+        "stats": {
+          "totalBuilds": 21,
+          "totalRuns": 549,
+          "totalUsers": 21,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 7,
+          "lastRunStartedAt": "2026-10-12T11:16:46.086Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 4,
+            "SUCCEEDED": 38,
+            "TIMED-OUT": 0,
+            "TOTAL": 42
+          }
+        },
+        "description": "Rightmove scraper for UK property data. Extract houses and flats for sale or to rent, sold house prices by postcode, commercial property and overseas listings, with estate agent contacts, price history, nearest schools with OFSTED ratings, stations, EPC and floorplans.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/XhfHZ6i7NXS-Jal7QVPDQJQg0PJhYStNWZxHPzXKNT8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaTlmMUJhSzlvVnhZRnk0b0ktYWN0b3ItenEwOUg1eVhpbjFhNkNhb3gtalZ1dWJBelo1NC1hcHAtc3RvcmUucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SilentFlow",
+        "userPictureUrl": "https://images.apifyusercontent.com/iFlkZp4jvg7Yxa7alfhSLS4_CEc3mLYF6ukjxDJWnrY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT2FVaXRaMjdYa1FibDVYOUJ5YkR1VlRMTXY4TzJVNUhaTkVxX215VnVlRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhVGxtTVVKaFN6bHZWbmhaUm5rMGIwa3RjSEp2Wm1sc1pTMWFWMWhyTVRKVGFIcHVMVk5wYkdWdWRFWnNiM2N4TGpFdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00167
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00133
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-04-16T09:35:37.496Z",
+          "createdAt": "2026-04-16T09:35:38.054Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "zq09H5yXin1a6Caox",
+        "url": "https://apify.com/silentflow/rightmove-scraper"
+      },
+      {
+        "title": "UK ESFA APAR Provider Monitor (UKPRN Watchlist)",
+        "name": "uk-esfa-apar-ukprn-status-monitor",
+        "username": "plym-actor-factory",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 17,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T10:36:36.617Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 13,
+            "TIMED-OUT": 0,
+            "TOTAL": 13
+          }
+        },
+        "description": "Watch UKPRNs on the DfE/ESFA Apprenticeship Provider and Assessment Register for employers and EPAs: appear/leave, Status, and CanDeliverApprenticeships/Units changes. Not Ofsted URN or Ofqual AO twin; not a full UKRLP scrape.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Daniel Witney",
+        "userPictureUrl": "https://images.apifyusercontent.com/P1uggaJ7WUFX8y3NrHxjb6YlIKQ8XuxpF2i0jUYVCWg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN19fN2wxWmJhbXJnZmZEODJmb19XM1BoaWxOb2hpNnMzWkMwRE54clI3QS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TXhNVEl6TlRBNU5EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apar-ukprn-status-event-delivered": {
+                "eventTitle": "APAR UKPRN status event delivered",
+                "eventDescription": "Charged once per unique watched UKPRN APAR APPEARED/DROPPED/STATUS_CHANGED/DELIVER_* event successfully pushed. Never charged for RUN_STATUS, baselines, quiet books, invalids, duplicates, retries, or fixture health runs.",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "reasonForChange": "Initial PPE Phase 3 #43 ESFA APAR UKPRN (private)",
+          "isPriceChangeNotificationSuppressed": true,
+          "createdAt": "2026-09-17T04:47:56.673Z",
+          "startedAt": "2026-09-17T04:47:56.673Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "9Ij8qd0NDG6V0SqNO",
+        "url": "https://apify.com/plym-actor-factory/uk-esfa-apar-ukprn-status-monitor"
+      },
+      {
+        "title": "Rightmove Scraper",
+        "name": "rightmove-co-uk-scraper",
+        "username": "solidcode",
+        "stats": {
+          "totalBuilds": 20,
+          "totalRuns": 299,
+          "totalUsers": 9,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 6,
+          "lastRunStartedAt": "2026-10-12T10:24:36.419Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 23,
+            "TIMED-OUT": 2,
+            "TOTAL": 25
+          }
+        },
+        "description": "[💰 $0.9 / 1K] Extract property listings from Rightmove.co.uk — buy, rent, and sold prices. Search by location or paste URLs, filter by price, bedrooms, property type, and radius. Get full details: agent contacts, photos, floorplans, EPC, council tax, and more.",
+        "categories": [
+          "REAL_ESTATE",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/XjPSlClgJrV4XzgBEPc8TajPZ6dUBabBGAm_QdGMo9U/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc01VSWpTcEpUMXpia1BpTk0tYWN0b3ItTGszMmV5Z0x1UXpYVlcwZVMtUUtIc21HYzU3Ty1yaWdodG1vdmUucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SolidCode",
+        "userPictureUrl": "https://images.apifyusercontent.com/pOybr7SLIDt4uWHCBExLbYFkPZpc5-7gG1nnWMwTEgc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVmN6WEh5MHJwY3VXMkZ5OVE0Q1djQjg4dGFBZkhBU1k1VXptMUZSMmtmby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjMDFWU1dwVGNFcFVNWHBpYTFCcFRrMHRjSEp2Wm1sc1pTMDNZVW81Y0dKWlZXTkpMVTF2WkdWeWJsOXphR2xsYkdSZmJHOW5iMTkzYVhSb1gzUmxZV3hmY0dGMGFGOGxNamd4SlRJNUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.0009,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-08T11:33:21.171Z",
+          "createdAt": "2026-05-08T11:33:21.362Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Lk32eygLuQzXVW0eS",
+        "url": "https://apify.com/solidcode/rightmove-co-uk-scraper"
+      },
+      {
+        "title": "Teaching Vacancies UK Scraper: DfE School Jobs and Change Feed",
+        "name": "teaching-vacancies-uk-scraper",
+        "username": "getascraper",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 27,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T08:07:04.285Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 12,
+            "TIMED-OUT": 0,
+            "TOTAL": 12
+          }
+        },
+        "description": "Scrape public England school vacancies from the DfE Teaching Vacancies service. Export typed salaries, closing dates, roles, schools, application links, and safe new/changed/removed records for Google Sheets, Make, Zapier, or scheduled hiring feeds. No login. $0.0025 per vacancy.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/4Dxrsnh3jIRzKZtp8C6MrYoaqngBobrTd-ZGATeQhyk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vak5EYkZhYmJWeE1oblFOYjQtYWN0b3ItMHIxTUhsV3ZjTWRCa0M5UGctS2F0blpGZ1BhMy1nb3Z1ay1zY2hlbWEtcGxhY2Vob2xkZXItMXgxLTI2NzJjMGZiN2E1ZDVmOTQ3ZDg4MDUyMmM1MDllYmU3ZjJi.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "GetAScraper",
+        "userPictureUrl": "https://images.apifyusercontent.com/zYb0X321JkLF2Rh8Ul3sTD36xCu_EXV79sfnQlCAMvg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdEFRTW4xMjV6V01tRVRnU0p4enlYODRxNTJwTFliSEcxSEZBQkRjVFdXOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhazVFWWtaaFltSldlRTFvYmxGT1lqUXRjSEp2Wm1sc1pTMU5PSGxtUWt0bWVsUlZMVU5vWVhSSFVGUmZTVzFoWjJWZlNuVnVYemhmWHpJd01qWmZYekEwWHpNeFh6VXpYMUJOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Job posting",
+                "eventDescription": "One vacancy with salary, school, and application details.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00229
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00209
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00188
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00188
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00188
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-09-27T17:18:38.149Z",
+          "createdAt": "2026-09-27T17:18:38.724Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "0r1MHlWvcMdBkC9Pg",
+        "url": "https://apify.com/getascraper/teaching-vacancies-uk-scraper"
+      },
+      {
+        "title": "Teaching Vacancies GOV UK Scraper (DfE)",
+        "name": "teaching-vacancies-uk-scraper",
+        "username": "santamaria-automations",
+        "stats": {
+          "totalBuilds": 19,
+          "totalRuns": 86,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-11T08:46:52.918Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Extract UK teaching jobs from teaching-vacancies.service.gov.uk, the official DfE board for state schools and academies. Returns title, school, trust, local authority, phase, key stage, subject, salary scale, ECT suitability, closing date and apply URL. Pay-per-result.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/G2ESgAKhonuvmRVmqPQhOPOzqPPmOkv3yRIN2abMEuM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSlBUdXNDcmFZcGFic2pEWHEtYWN0b3ItQ0tJNXJxYkNXZ1pPYWUwaTMtWDNjc2VCbTNidS1pY29uLXRlYWNoaW5nLXZhY2FuY2llcy1nb3YtdWstc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NanoScrape",
+        "userPictureUrl": "https://images.apifyusercontent.com/7aoyvDSYVKjMBDKkOZ5CweA9eg0v0pvmfmOcxCsBHxE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTmpRYW1hMjd4cDNUdlVEeXZwWUNteV9scWFpcWJ2QmVmakJfdkFSMEg0TS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTbEJVZFhORGNtRlpjR0ZpYzJwRVdIRXRjSEp2Wm1sc1pTMTRkRUZ0T1dGRFNFcDVMWGx2ZFhSMVltVXRZWFpoZEdGeUxUZ3dNQzV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "job-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Once per run",
+                "eventPriceUsd": 0.001,
+                "isOneTimeEvent": true,
+                "isPrimaryEvent": false
+              },
+              "job-serp-result": {
+                "eventTitle": "SERP job (fast)",
+                "eventDescription": "Job from search page",
+                "eventPriceUsd": 0.003,
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true
+              },
+              "job-detail-result": {
+                "eventTitle": "Full job (detail)",
+                "eventDescription": "Job with detail-page enrichment",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": false
+              },
+              "company-detail-result": {
+                "eventTitle": "School profile (unique school)",
+                "eventDescription": "Unique school /organisations/{slug} page fetched once per run (dedup)",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-08-20T12:06:43.302Z",
+          "startedAt": "2026-08-20T12:06:43.302Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "CKI5rqbCWgZOae0i3",
+        "url": "https://apify.com/santamaria-automations/teaching-vacancies-uk-scraper"
+      }
+    ]
+  }
+}

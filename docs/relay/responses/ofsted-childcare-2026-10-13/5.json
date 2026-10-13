@@ -1,0 +1,1181 @@
+{
+  "data": {
+    "total": 24,
+    "count": 20,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "Netherlands Childcare Register - Nursery & Daycare Leads",
+        "name": "lrk-childcare-nl-scraper",
+        "username": "scrapersdelight",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 18,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-11T21:13:03.818Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 16,
+            "TIMED-OUT": 0,
+            "TOTAL": 16
+          }
+        },
+        "description": "From $1.20 per 1,000 locations, no start fee. The official Dutch LRK register: 18,399 registered nurseries, out-of-school care sites and childminder agencies with email (97.5% filled), phone, website, named contact, licensed child places, operator KvK number and coordinates.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/QcY6I0HWa7hZoXGJT-eoPf-cV9rxPkBH8oxeqE_tsBM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQlRna3dMRUM0YlpWemI4VmItYWN0b3ItM0JSNVVaSVRyaTRHYjZDUmgtQ0tNZjkwUDdocy1scmstY2hpbGRjYXJlLW5sLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Delight",
+        "userPictureUrl": "https://images.apifyusercontent.com/SjUfVS2plLJy6kHfthU67C5f9v0e6wVrAbVTS2w1R3A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRmxwWnZpaF9memhGWnlPTEI4Ml9FRGhTQm1pUFRiYWJUWWNia00ySUhnNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRbFJuYTNkTVJVTTBZbHBXZW1JNFZtSXRjSEp2Wm1sc1pTMWxTRVJxZW5BMU4wOVlMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZmFuVXhhek5tYW5VeGF6Tm1hblV4YXkxamJHVmhiaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "location-scraped": {
+                "eventTitle": "Per childcare location returned",
+                "eventDescription": "Charged once for each location row delivered to your dataset, including its operator and KvK columns - the operator lookup is not charged separately. Rows removed by your filters (email required, minimum child places, VVE only, type, status), duplicate locations, rows the register leaked through its own status filter, and pages we could not read are never delivered and never charged. There is no run-start fee, so a run that matches nothing costs nothing.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.0012
+              }
+            }
+          },
+          "startedAt": "2026-09-17T02:16:23.000Z",
+          "createdAt": "2026-09-17T02:16:23.923Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "3BR5UZITri4Gb6CRh",
+        "url": "https://apify.com/scrapersdelight/lrk-childcare-nl-scraper"
+      },
+      {
+        "title": "Calscape California Native Plants Scraper",
+        "name": "calscape-california-native-plants-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 31,
+          "totalRuns": 183,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-12T06:25:04.322Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape Calscape's full catalog of California native plants — botanical name, water needs, bee/hummingbird/butterfly-host wildlife flags, and 24+ plant attributes. Built for CA nurseries, landscape architects, and ecological garden planners.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/aaTMb68n5oGGc06UvkliK-ZYgOfiG25RYRKuJS2MokE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItUG5wR3RkWnZvT3VFdzlxUmQtdkVpb0FEcGZpUS1jYWxzY2FwZS1jYWxpZm9ybmlhLW5hdGl2ZS1wbGFudHMtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:17:26.960Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:17:26.981Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-19T09:17:47.357Z",
+          "notifiedAboutChangeAt": "2026-10-04T09:36:09.819Z"
+        },
+        "id": "PnpGtdZvoOuEw9qRd",
+        "url": "https://apify.com/jungle_synthesizer/calscape-california-native-plants-scraper"
+      },
+      {
+        "title": "UK Ofsted Inspections Scraper",
+        "name": "uk-ofsted-inspections-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 14,
+          "totalRuns": 145,
+          "totalUsers": 3,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-12T03:40:51.760Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrapes Ofsted inspection records for schools, nurseries, and childcare providers by name, postcode, or URN. Returns each inspection as a flat row with provider details and ratings.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/OwujlApSFYFYLbrMWaqWgBdKEc9xISlvxe4eiKWOsEw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItMXJlTnkwSnFrTW9GdUdxTWQtQlNjc2g1MGV0eC11ay1vZnN0ZWQtaW5zcGVjdGlvbnMtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5.000000000000001,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.021
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02033
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01967
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.019
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-25T21:30:00.000Z",
+          "createdAt": "2026-05-25T22:22:39.392Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "1reNy0JqkMoFuGqMd",
+        "url": "https://apify.com/parseforge/uk-ofsted-inspections-scraper"
+      },
+      {
+        "title": "Ofsted Reports Data Scraper",
+        "name": "ofsted-reports-data-scraper",
+        "username": "solidcode",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 114,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T07:04:56.877Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "[💰 $8.0 / 1K] Extract Ofsted inspection reports and ratings for England's schools, nurseries, childminders, colleges, and children's social care providers. Get provider name, URN, address, latest judgement, sub-grades, inspection dates, and report PDF links.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/-enyfpzjQ9LgrliCo0HlHzy-Q_MqulHv-T_LYUtakqg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc01VSWpTcEpUMXpia1BpTk0tYWN0b3ItN2hpTTF6YThtUDhnSXFxVGQtSjRlYWx5VFhZYS1vZnN0ZWQucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SolidCode",
+        "userPictureUrl": "https://images.apifyusercontent.com/pOybr7SLIDt4uWHCBExLbYFkPZpc5-7gG1nnWMwTEgc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVmN6WEh5MHJwY3VXMkZ5OVE0Q1djQjg4dGFBZkhBU1k1VXptMUZSMmtmby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjMDFWU1dwVGNFcFVNWHBpYTFCcFRrMHRjSEp2Wm1sc1pTMDNZVW81Y0dKWlZXTkpMVTF2WkdWeWJsOXphR2xsYkdSZmJHOW5iMTkzYVhSb1gzUmxZV3hmY0dGMGFGOGxNamd4SlRJNUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "Initial pricing.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0096
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00905
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0085
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.008
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "createdAt": "2026-07-16T18:07:39.132Z",
+          "startedAt": "2026-07-16T18:07:39.132Z"
+        },
+        "id": "7hiM1za8mP8gIqqTd",
+        "url": "https://apify.com/solidcode/ofsted-reports-data-scraper"
+      },
+      {
+        "title": "Mamas And Papas Scraper",
+        "name": "mamas-and-papas-scraper",
+        "username": "mrdoe",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 32,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-11T21:40:38.232Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape product listings from Mamas & Papas - prices, descriptions, availability, images, and variants across the UK baby and nursery retailer's full catalog. No login required, built for price monitoring and catalog research. Give it a category or search URL and get one row per product.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/YMYsbYmwJMG8mZkN58151QjTIyEg_ArR44vM-U0lrvg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vb0Z1WXF5MHo1UmhuUjNKaXQtYWN0b3ItTXlWZVlCV0VWSmlQZVVnNlQtb05oTEhVbmhyYy1TY3JlZW5zaG90XzIwMjYtMDktMjVfYXRfMTAuNDMuMDMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "MrDoe",
+        "userPictureUrl": "https://images.apifyusercontent.com/idqm9J86BVSoaK4INjAGgZXFv7ola9ty_WS_swA9M9w/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMEM4STlxRl9kMUhGR3pmOHpIRVl4UDctUTV5eDJWOVduR0xpQXpLeFpfUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiMFoxV1hGNU1IbzFVbWh1VWpOS2FYUXRjSEp2Wm1sc1pTMXhaVk5RYW14bWVHZFJMVU5vWVhSSFVGUmZTVzFoWjJWZlFYVm5YekU0WDE4eU1ESTJYMTh3TVY4ME1WOHhORjlRVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.1
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-08T06:30:35.648Z",
+          "createdAt": "2026-09-08T06:30:36.165Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "MyVeYBWEVJiPeUg6T",
+        "url": "https://apify.com/mrdoe/mamas-and-papas-scraper"
+      },
+      {
+        "title": "Ofsted Inspections",
+        "name": "uk-ofsted-inspections",
+        "username": "wildorigins",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 74,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-11T08:04:47.523Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "🏷️ From $0.60 / 1K | Ofsted inspection ratings and reports for every school, nursery, childminder and children's social care provider in England. Search by name, URN, postcode radius, local authority, region, type or rating and get the judgements, history and report links.",
+        "categories": [
+          "REAL_ESTATE",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/3GIhdyENgT59Df2x_LVdPmgFxhM2rsC6zzyT1jVRzdo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vejBKdktlamoxM2ZRRmdMbEEtYWN0b3ItRWVyZ3lmS2VaMFM0dEZGT2EtaTRLNmprUzBZZC11ay1vZnN0ZWQtaW5zcGVjdGlvbnMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Wild Origins",
+        "userPictureUrl": "https://images.apifyusercontent.com/Zc8sA0Pbl_3wCm06Z-od0494gzkpsk7V2c1jmGTEO04/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQm5HVU5zaG5mdVZOOUtwaTVFZi12TmlyX1I0ck9HLU9JeUtuaVgwTTFEcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlakJLZGt0bGFtb3hNMlpSUm1kTWJFRXRjSEp2Wm1sc1pTMWhSREZ1ZFdKUGQyZ3hMWEJ5YjJacGJHVXRjR2xqZEhWeVpTMDNNakF1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-16T20:48:05.239Z",
+          "startedAt": "2026-08-16T20:47:55.785Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "provider-record": {
+                "eventTitle": "Provider",
+                "eventDescription": "Charged for each provider returned with its inspection history.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00085
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0004
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-08-19T08:06:26.057Z"
+        },
+        "id": "EergyfKeZ0S4tFFOa",
+        "url": "https://apify.com/wildorigins/uk-ofsted-inspections"
+      },
+      {
+        "title": "CPSC Product Recalls Scraper - SaferProducts Data",
+        "name": "us-product-recalls-scraper",
+        "username": "maydit",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 131,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-12T01:06:41.376Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape full CPSC product recall data from SaferProducts.gov - retailers, UPCs, hazards, remedies, units affected. No API key. Export JSON/CSV for compliance monitoring.",
+        "categories": [
+          "NEWS",
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/_DX3xh3vCvPH4WDgq92jk6s_4B2wc_Kxgz6M0lMB7F0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcjRSVnFoUEtXQUNKc0s5enAtYWN0b3ItRHFYMlNNVnV3Vkw4blBlWUItTE1nZWROYXJzdi11cy1wcm9kdWN0LXJlY2FsbHMtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Brandt May",
+        "userPictureUrl": "https://images.apifyusercontent.com/4qflwiQ3WOzq6GhRZiUi-k70SbfTyTOspD87N4_yMD4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaW9WZU9Hb3ZiWDNteTJuaFQ5aUtFTTVRRGFUajJQQnNsSVZEMGVuTmQ0cy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTa2RxUldoV1VteEpjMWRDUlZjelF6SnljMlJUTkhKdk1XMTFOMUZvVW1RMWF5MUZXazlRZFVoelQzcFZjR0pWY3oxek9UWXRZdw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Price reduction plus new volume tiers for subscribers.",
+          "createdAt": "2026-07-20T20:26:32.639Z",
+          "startedAt": "2026-07-20T20:26:24.741Z",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00005
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0032
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0024
+                  }
+                }
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-07-20T20:35:43.758Z"
+        },
+        "id": "DqX2SMVuwVL8nPeYB",
+        "url": "https://apify.com/maydit/us-product-recalls-scraper"
+      },
+      {
+        "title": "USDA Plant Hardiness Zone Lookup (by ZIP Code)",
+        "name": "phzmapi-usda-plant-hardiness-zone-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 150,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-11T07:07:07.449Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Resolves US ZIP codes to USDA 2023 Plant Hardiness Zones via phzmapi.org. Run once for the full ~33K-zip lookup table or supply a custom ZIP list. Output includes zone string, numeric zone parts, temperature range, and coordinates.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/bHAd8KPHaLpT6XfCevvXHad8S8_g1umPzJwVMGfYeZM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItcUg5T3hTR1VySDFLdElTczItaWQxRGhDcmV0eC1waHptYXBpLXVzZGEtcGxhbnQtaGFyZGluZXNzLXpvbmUtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:34:58.841Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.0005
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:34:58.817Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-19T09:35:19.014Z",
+          "notifiedAboutChangeAt": "2026-10-04T09:36:12.379Z"
+        },
+        "id": "qH9OxSGUrH1KtISs2",
+        "url": "https://apify.com/jungle_synthesizer/phzmapi-usda-plant-hardiness-zone-scraper"
+      },
+      {
+        "title": "Wildflower.org Native Plant Database Scraper",
+        "name": "wildflower-org-native-plant-database-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 163,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-11T12:46:45.433Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 1,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrapes the Lady Bird Johnson Wildflower Center NPIN — the canonical US native-plant database with ~9,000 species. Returns scientific name, common names, USDA symbol, growing conditions, bloom data, wildlife value, pollinator and butterfly larval-host data, and commercial availability.",
+        "categories": [
+          "ECOMMERCE",
+          "EDUCATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/lVdrY3PEeGtXFwTgo9kskysgT0B9WGTXDcKKQMXneuo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItSEFGc1V4T0c3QW1YYmJmSjktbGZwZVhvZkdnbi13aWxkZmxvd2VyLW9yZy1uYXRpdmUtcGxhbnQtZGF0YWJhc2Utc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5.000000000000001,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:12:22.440Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.003
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:12:22.444Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-19T09:12:42.685Z",
+          "notifiedAboutChangeAt": "2026-10-04T09:36:08.894Z"
+        },
+        "id": "HAFsUxOG7AmXbbfJ9",
+        "url": "https://apify.com/jungle_synthesizer/wildflower-org-native-plant-database-scraper"
+      },
+      {
+        "title": "Jollyroom Norway Scraper — Baby, Kids & Family",
+        "name": "jollyroom-no-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 94,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T10:48:31.843Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Scrape products, prices, and availability from Jollyroom.no. Norwegian online retailer for baby, kids & family products. Supports search and category browsing.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-27T11:37:10.000Z",
+          "reasonForChange": "Pricing adjusted to reflect infrastructure cost",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.005,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.002,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-13T10:37:11.420Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-13T10:37:31.518Z",
+          "notifiedAboutChangeAt": "2026-07-27T12:05:46.080Z"
+        },
+        "id": "ZyJ3CdoXPiD0dW3yp",
+        "url": "https://apify.com/studio-amba/jollyroom-no-scraper"
+      },
+      {
+        "title": "Jollyroom Denmark Scraper — Baby, Kids & Family Products",
+        "name": "jollyroom-dk-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 94,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T10:48:32.068Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Scrape products, prices, and availability from Jollyroom.dk, the Nordic online retailer for baby, kids & family products in Denmark. Supports search and category browsing.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-27T11:37:09.000Z",
+          "reasonForChange": "Pricing adjusted to reflect infrastructure cost",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.005,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.002,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-13T10:37:10.082Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-13T10:37:30.207Z",
+          "notifiedAboutChangeAt": "2026-07-27T12:05:46.051Z"
+        },
+        "id": "9S7sg88IXaV5KF3Ol",
+        "url": "https://apify.com/studio-amba/jollyroom-dk-scraper"
+      },
+      {
+        "title": "Baby-Walz Scraper — German Baby & Kids Products",
+        "name": "baby-walz-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 168,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T05:57:10.607Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape baby & kids products, prices, and details from baby-walz.de — Germany's largest baby retailer.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/WELUW95v21Pq08HmFFaBoxoVisx_M9mXIEaKRezwIz4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3ItMEtHWWtldURUYUpGdjUzdVAtd0tZTVFaRWU1Vi1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-27T11:32:54.000Z",
+          "reasonForChange": "Pricing adjusted to reflect infrastructure cost",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.005,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.002,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-13T10:32:55.159Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-13T10:33:15.312Z",
+          "notifiedAboutChangeAt": "2026-07-27T11:35:36.642Z"
+        },
+        "id": "0KGYkeuDTaJFv53uP",
+        "url": "https://apify.com/studio-amba/baby-walz-scraper"
+      },
+      {
+        "title": "USDA PLANTS Database Scraper",
+        "name": "usda-plants-database-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 144,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-12T10:50:40.946Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Extract the full USDA PLANTS database — taxonomy, growth habits, native/wetland status, document URLs, and physical characteristics for 2,000+ plant species. Public-domain government data from plants.usda.gov.",
+        "categories": [
+          "OTHER",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/FJANnhKtOsm6dILa7f2bCtlsAb6h5-dL1oQPnqJ7yG4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItWnNzRHlwQWk2T2lmbndhamstRFE2SlpuMlVjZy11c2RhLXBsYW50cy1kYXRhYmFzZS1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5.000000000000001,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:43:43.417Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.0005
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:43:43.399Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-19T09:44:03.624Z",
+          "notifiedAboutChangeAt": "2026-10-04T10:05:59.355Z"
+        },
+        "id": "ZssDypAi6Oifnwajk",
+        "url": "https://apify.com/jungle_synthesizer/usda-plants-database-scraper"
+      },
+      {
+        "title": "Audubon Native Plants for Birds by ZIP Code",
+        "name": "audubon-native-plants-for-birds-zipcode-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 148,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-12T04:18:45.823Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape Audubon's \"Plants for Birds\" database by US ZIP code — returns native plants ranked for bird habitat value with bird species attracted, plant type, and wildlife resources provided. Unique zip → native-plant → bird-ecology join not available elsewhere as a structured data feed.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "EDUCATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/HroxtELQ0xzVbI2kkXq4OCKVaq8F7QgrWAgXC8J-_mc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItNlZITTFnYzlkckNnUHlycDUtVDBVUGY1NzFEdS1hdWR1Ym9uLW5hdGl2ZS1wbGFudHMtZm9yLWJpcmRzLXppcGNvZGUtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:14:42.145Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.0005
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:14:42.172Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-19T09:15:02.502Z",
+          "notifiedAboutChangeAt": "2026-10-04T09:36:09.448Z"
+        },
+        "id": "6VHM1gc9drCgPyrp5",
+        "url": "https://apify.com/jungle_synthesizer/audubon-native-plants-for-birds-zipcode-scraper"
+      },
+      {
+        "title": "Ofsted School Register Scraper",
+        "name": "ofsted-register",
+        "username": "danielainsworth",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 135,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T08:52:37.747Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Search 22,000+ UK state-funded schools with Ofsted inspection grades. Filter by local authority, region, postcode or name. Official GOV.UK data, updated monthly.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/sMzXxZKIMJQEvHsRYVso1ubGvzZ0tMiY1jUqDDNwsY8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSlJMdjRYUmdScnloZ1FJWE8tYWN0b3ItUjNkbjB3ZDc1RVl1bHYwR20taGRHWHVpV0RrUS1veGZvcmRfcmVnaXN0ZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Daniel Ainsworth",
+        "userPictureUrl": "https://images.apifyusercontent.com/J7ObjMFyC7unOW7OJT6ejTh_06XB9erTIxwAyjDeqfY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN0F3eFFZcUZpUy0xenFZUEVvQnJMZ2lZVlhJQmdDNkk5bzVNNkhiTkVTby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTWEZyZEZsRllucEpRa1V3TjAxWFNIRmhXRmh5ZFRkcFlWQnlUVlZoWDNaMVpHTkxTV05WUTA0d2RtSjZaMk4z.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-08-05T13:59:16.259Z",
+          "startedAt": "2026-08-19T13:59:16.703Z",
+          "apifyMarginPercentage": 0,
+          "notifiedAboutFutureChangeAt": "2026-08-05T13:59:36.513Z",
+          "notifiedAboutChangeAt": "2026-08-19T14:05:43.744Z"
+        },
+        "id": "R3dn0wd75EYulv0Gm",
+        "url": "https://apify.com/danielainsworth/ofsted-register"
+      },
+      {
+        "title": "Babymarkt Scraper — German Baby & Kids Products",
+        "name": "babymarkt-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 144,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T05:25:03.966Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape products, prices, ratings, and availability from babymarkt.de. Germany's leading baby and kids products retailer. Supports search, category browsing, and full catalog via sitemap.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Dd65Yrz_xevtugSKAcS5qDPH8ZBBQCmeMNcZsqaecYw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3IteGZmaGFGT1BXZE1MeThhUGctNUFqZUpISGZuZy1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-27T11:32:55.000Z",
+          "reasonForChange": "Pricing adjusted to reflect infrastructure cost",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.005,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.002,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-13T10:32:56.390Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-13T10:33:16.601Z",
+          "notifiedAboutChangeAt": "2026-07-27T11:35:36.653Z"
+        },
+        "id": "xffhaFOPWdMLy8aPg",
+        "url": "https://apify.com/studio-amba/babymarkt-scraper"
+      },
+      {
+        "title": "Jollyroom Scraper — Nordic Baby, Kids & Family Products",
+        "name": "jollyroom-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 170,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-12T05:58:52.296Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape products, prices, and availability from Jollyroom.se. Nordic online retailer for baby, kids & family products. Supports search and category browsing.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/EjnjPIcNqFf2KztYcjvFHjzHGB5KmPzWR72Mri4T58o/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3ItdFZDUGFRdVZJMzFYYWFEakstRGR0elFCZnFtSC1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-27T11:37:12.000Z",
+          "reasonForChange": "Pricing adjusted to reflect infrastructure cost",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.005,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.002,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-13T10:37:12.745Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-13T10:37:32.880Z",
+          "notifiedAboutChangeAt": "2026-07-27T12:05:46.099Z"
+        },
+        "id": "tVCPaQuVI31XaaDjK",
+        "url": "https://apify.com/studio-amba/jollyroom-scraper"
+      }
+    ]
+  }
+}

@@ -1,7 +1,0 @@
-GET https://www.gov.uk/api/content/government/statistics/childcare-providers-and-inspections-as-at-31-march-2026
-GET https://www.gov.uk/api/search.json?q=childcare+providers+and+inspections+management+information&count=20&fields=title,link,public_timestamp,format
-GET https://www.data.gov.uk/collections/people/early-years-and-childcare-inspections-and-outcomes
-GET https://api.apify.com/v2/store?search=ofsted&limit=20
-GET https://api.apify.com/v2/store?search=nursery&limit=20
-GET https://apify.com/parseforge/uk-ofsted-inspections-scraper
-GET https://apify.com/danielainsworth/ofsted-register
