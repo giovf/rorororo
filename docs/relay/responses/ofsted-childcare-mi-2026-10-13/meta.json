@@ -1,0 +1,50 @@
+{
+  "request": "ofsted-childcare-mi-2026-10-13",
+  "fetched_at": "2026-10-13T09:15:20.407Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.gov.uk/api/content/government/statistical-data-sets/childcare-providers-and-inspections-management-information",
+      "fetched_at": "2026-10-13T09:15:19.026Z",
+      "status": 200,
+      "final_url": "https://www.gov.uk/api/content/government/statistical-data-sets/childcare-providers-and-inspections-management-information",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "6932",
+        "etag": "W/\"2070a9926fa7bbf07a04d04f09a65968\""
+      },
+      "file": "1.json",
+      "bytes": 172984,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=childcare&limit=20",
+      "fetched_at": "2026-10-13T09:15:20.076Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=childcare&limit=20",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"e114-d8CsYyK0XwkoTbBy/hpGQ3C1rTM\""
+      },
+      "file": "2.json",
+      "bytes": 57620,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/acts/crawlerbros~ofsted-childcare-provider-scraper",
+      "fetched_at": "2026-10-13T09:15:20.354Z",
+      "status": 404,
+      "final_url": "https://api.apify.com/v2/acts/crawlerbros~ofsted-childcare-provider-scraper",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "115",
+        "etag": "W/\"73-rm0q0VUHpl/pNsNm1owiLBFubWU\""
+      },
+      "file": "3.json",
+      "bytes": 115,
+      "truncated": false
+    }
+  ]
+}
