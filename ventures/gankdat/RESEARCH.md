@@ -459,3 +459,24 @@ re-read item (`refresh-uk-planning-reread-2026-10-18`, weekly through the relay)
 new fix item every two days. **Clock:** retire per §7 when the dataset goes 60 days without a customer
 query (the `datasets 30d` reading), or re-point when the platform names a `replacement-dataset`;
 either way the row says so.
+
+## Research 2026-10-13 (pipeline starved — burn-down)
+
+Read: the 10-10 → 10-12 Daily numbers rows, `docs/INBOX.md` to 10-12 23:12, `docs/ALERTS.md`, the
+queue. **What changed since the 10-11 pass:** the 10-12 row shows **3 accounts, +2 in 24 h** — the
+first external sign-ups since launch (the counter excludes @gankdat.com and the other internal
+domains) — the day after gankdat v0.24.0 shipped the PayPal credit packs and the tool count went
+from 23 to 25; the same row has paywall hits down from 55 to 5 and preview calls from 169 to 115,
+`connect_account` back among the wanted tools (5). Nothing in the inbox names the two accounts (no
+sign-up mail reaches us — the account page and OAuth connect are silent by design), so their route
+and whether they call tools are not readable yet: the 10-13 and 10-14 rows (authed MCP calls,
+paywall hits, `x402 paid`, `0 paid` or not) are the reading. **Levers:** unchanged — every
+distribution lever is built or waiting on a third party (Docker MCP Catalog PR #5622 under review,
+Search Console indexing on action 020's data now flowing, the Claude directory read dated 10-30),
+the uk-planning origin is on its weekly re-read (10-18), cold B2B outreach was closed on 10-12, and
+the marketplace pitch (WuslaHQ, 21 %) is a Sunday-review decision, not a build. The Nebius hackathon
+agent built tonight (`scripts/nebius-diligence-agent.ts`) is a new reference client for the MCP
+server and goes in the directory listings' "used by" lines when the entry is submitted — no gankdat
+change needed. **No items added:** `research_after: 2026-10-15`, when two more rows say what the
+two accounts did; if either converts or hits the paywall, the next pass files the follow-up (the
+`buy_credits` path is live for them already).

@@ -1046,3 +1046,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-13 00:30 | burn-down | Agent tests (8): budget caps, dry-run report, Nebius request shape, MCP tool filter; dry run prints the report
 - 2026-10-13 00:30 | burn-down | Entry docs: entries/nebius-nvidia-hackathon SUBMISSION.md, WALKTHROUGH.md (dry-run transcript), DEMO-SCRIPT.md
 - 2026-10-13 00:30 | burn-down | Queue: hackathons nebius-diligence-agent done; the recording script moves to the submit item (owner key)
+- 2026-10-13 00:36 | burn-down | gankdat research: 10-12 row has the first 2 external sign-ups (+2/24h), paywall hits 55→5; no lever changed
+- 2026-10-13 00:36 | burn-down | Queue: gankdat research_after 2026-10-15 — the 10-13/10-14 rows say what the two accounts did

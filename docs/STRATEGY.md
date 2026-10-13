@@ -1178,3 +1178,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   Token Factory works gankdat's seven diligence registers over MCP and writes a cited one-page report; a hard budget (Nano-class
   model, 40 calls, 300k tokens) is the cost control the 10-11 drop asked for. Dry-run mode carries the tests and the rehearsal
   until the owner's key lands (action 025); the live recording and the Devpost form are the submit item, due before 10-30.
+- 2026-10-13 burn-down: gankdat researched (starved queue): the 10-12 row carries the first two external sign-ups and a drop in
+  paywall hits the day after the PayPal packs shipped, but their route and activity are not readable until two more daily rows
+  land; every lever is built or third-party-blocked, so no items — `research_after` 10-15. The Nebius agent is a reference MCP
+  client for the listings, not a gankdat change.
