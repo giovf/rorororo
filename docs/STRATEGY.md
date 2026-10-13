@@ -1190,3 +1190,4 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   providers register parked — OGL v3 and a clean 19 MB provider CSV, but published twice a year (no change feed, gankdat's edge), half
   the rows are childminders Blind Mode drops, and the paid demand is in contact lists (RD Marketing £170–295/1k) or Apify actors with
   ≤ 5 users each — the same thin signal uk-schools met. Trigger: a first paid call on the lead-gen bundle, or a monthly Ofsted file.
+- 2026-10-13 build (17:10): nothing buildable and the day's exchange pre-research pass already spent by the 09:16 run, so no work; main green.
