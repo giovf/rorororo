@@ -1042,3 +1042,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-13 00:22 | burn-down | lablab.ai Rise of AI Agents (Vultr cash track, MIT, date TBA) gets a dated reading on 2026-10-20
 - 2026-10-13 00:22 | burn-down | Action 025 written (Nebius API key, ~5 min); £2 planned ledger row; relay allowlist +4 sponsor hosts
 - 2026-10-13 00:22 | notify | Nebius hackathon is back on: please create a Token Factory API key (5 min, under £2)
+- 2026-10-13 00:30 | burn-down | Nebius agent: scripts/nebius-diligence-agent.ts — Token Factory tool loop over gankdat MCP, 40-call guard, dry run
+- 2026-10-13 00:30 | burn-down | Agent tests (8): budget caps, dry-run report, Nebius request shape, MCP tool filter; dry run prints the report
+- 2026-10-13 00:30 | burn-down | Entry docs: entries/nebius-nvidia-hackathon SUBMISSION.md, WALKTHROUGH.md (dry-run transcript), DEMO-SCRIPT.md
+- 2026-10-13 00:30 | burn-down | Queue: hackathons nebius-diligence-agent done; the recording script moves to the submit item (owner key)

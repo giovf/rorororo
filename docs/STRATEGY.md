@@ -1174,3 +1174,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   £2 planned in the ledger. Split into a buildable agent item (fixtures, dry-run) and an owner-blocked submit item (action 025).
   GenAI.Works Open Agent declined (must be built in Cursor; existing projects top out at $1,000) and Amazon's Alexa+ track declined
   (partner-only toolchain); lablab.ai's Vultr cash track is watched for its date. No pre-research pass tonight: the queue is fed.
+- 2026-10-13 burn-down: hackathons `nebius-diligence-agent` (8 × 2) built — the Nebius × NVIDIA entry's agent: Nemotron 3.5 Lightning on
+  Token Factory works gankdat's seven diligence registers over MCP and writes a cited one-page report; a hard budget (Nano-class
+  model, 40 calls, 300k tokens) is the cost control the 10-11 drop asked for. Dry-run mode carries the tests and the rehearsal
+  until the owner's key lands (action 025); the live recording and the Devpost form are the submit item, due before 10-30.

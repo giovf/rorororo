@@ -75,19 +75,19 @@
     {
       "id": "nebius-diligence-agent",
       "title": "Nebius × NVIDIA hackathon entry, part 1 (submissions close 2026-10-30 10:00 PT, $50,000 pool): a UK counterparty due-diligence agent on NVIDIA Nemotron 3.5 Lightning served by Nebius Token Factory (OpenAI-compatible chat API) that calls gankdat's MCP tools over uk-companies, uk-company-profiles, uk-insolvency, uk-sanctions, uk-sponsors, uk-charities and uk-contract-awards and writes a one-page risk report; a hard spend guard (Nano-class model only, ≤ 40 model calls and ≤ 300k tokens per run, abort beyond); a recorded-fixture dry-run mode so the tests and the demo shot list run without a key; ventures/hackathons/entries/nebius-nvidia-hackathon/ with SUBMISSION.md draft, WALKTHROUGH.md and DEMO-SCRIPT.md; scripts/demo-nebius-hackathon.ts on the demo-video pipeline",
-      "why": "RESEARCH §2 (rules read 2026-10-11): the only hard rule is running on Nebius with an NVIDIA open model; the 'apps and agents' track wants something people would use, and a due-diligence agent over seven official registers is one. RESEARCH §2b (2026-10-13, relay reads of docs.tokenfactory.nebius.com and nebius.com): Token Factory serves nvidia/Nemotron-3_5-Lightning and nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B at US$0.06 input / US$0.24 output per million tokens with a 262k–1M context, so a complete entry (build, tests, demo) stays under US$2; every account gets US$1 of trial credit for 30 days. The owner's Token Factory account is active since 2026-10-12 (inbox); the key arrives through action 025. Everything here runs against fixtures until then — the live run is the submit item.",
+      "why": "RESEARCH §2 (rules read 2026-10-11): the only hard rule is running on Nebius with an NVIDIA open model; the 'apps and agents' track wants something people would use, and a due-diligence agent over seven official registers is one. RESEARCH §2b (2026-10-13, relay reads of docs.tokenfactory.nebius.com and nebius.com): Token Factory serves nvidia/Nemotron-3_5-Lightning and nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B at US$0.06 input / US$0.24 output per million tokens with a 262k–1M context, so a complete entry (build, tests, demo) stays under US$2; every account gets US$1 of trial credit for 30 days. The owner's Token Factory account is active since 2026-10-12 (inbox); the key arrives through action 025. Everything here runs against fixtures until then — the live run is the submit item. Built 2026-10-13 (burn-down): scripts/nebius-diligence-agent.ts (Token Factory tool loop, MCP tool discovery limited to the seven registers, Budget guard, dry-run model + fixtures, CLI) with 8 tests; entries/nebius-nvidia-hackathon/ SUBMISSION.md, WALKTHROUGH.md (dry-run transcript) and DEMO-SCRIPT.md. The recording script scripts/demo-nebius-nvidia-hackathon.ts moves to the submit item, where the live run it records happens.",
       "effort_days": 1.5,
       "proof": "the agent produces a correct report for three real companies in dry-run and live mode; demo recorded under 3 minutes",
       "score": 8,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-13",
-      "doing_since": "2026-10-13"
+      "done_at": "2026-10-13"
     },
     {
       "id": "nebius-nvidia-hackathon-submit",
-      "title": "Nebius × NVIDIA hackathon entry, part 2: run the agent live on Token Factory with the owner's key, record the demo with the demo-video workflow (entry nebius-nvidia-hackathon), finish SUBMISSION.md with the live transcript, write the owner: line; the owner submits on Devpost by 2026-10-30 10:00 PT and the submission URL goes in RESEARCH.md",
+      "title": "Nebius × NVIDIA hackathon entry, part 2: write scripts/demo-nebius-nvidia-hackathon.ts from DEMO-SCRIPT.md on the demo-video pipeline, run the agent live on Token Factory with the owner's key, record the demo with the demo-video workflow (entry nebius-nvidia-hackathon), finish SUBMISSION.md with the live transcript, write the owner: line; the owner submits on Devpost by 2026-10-30 10:00 PT and the submission URL goes in RESEARCH.md",
       "why": "The live run needs NEBIUS_API_KEY in .env and as a repository secret (action 025: ~5 min, the owner also says whether a card is on the account — Nebius's billing page says onboarding needs one; the agent's call cap keeps the whole entry under US$2 and the ledger carries a £2 planned row). Devpost's Terms forbid automated access, so the owner submits by hand, as for action 023. Prize tiers $20k / $10k / $6k plus track awards (RESEARCH §2).",
-      "effort_days": 0.5,
+      "effort_days": 0.7,
       "proof": "submission accepted on Devpost before 2026-10-30; any placing is the venture's proof",
       "score": 8,
       "status": "blocked",
