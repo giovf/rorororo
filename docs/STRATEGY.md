@@ -1182,3 +1182,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   paywall hits the day after the PayPal packs shipped, but their route and activity are not readable until two more daily rows
   land; every lever is built or third-party-blocked, so no items — `research_after` 10-15. The Nebius agent is a reference MCP
   client for the listings, not a gankdat change.
+- 2026-10-13 burn-down: oss-bounties researched (starved queue): the 10-12 board keeps 16 of 498 issues and none is a free funded
+  fix — the free rows are the shapes dropped on 10-12, the rest sit under 1–14 open PRs for years. No items; `research_after` 10-14,
+  after two boards under the new rules. Flagged for the Sunday review: a board-count trigger beside the PR-based kill rule if the
+  free-fix count stays at zero.

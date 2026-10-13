@@ -101,6 +101,22 @@ count and the `week:` line the weekly report copies.
 | [useagenthq/useagent#113](https://github.com/useagenthq/useagent/issues/113) | $5 | dropped | — | — | — | — | 2026-10-12: a usage task, not a fix — record yourself using their product and email a report from a sign-up address; AI-driven runs banned; all 3 tasks claimed 10-11 |
 | [SalamLang/Salam#1713](https://github.com/SalamLang/Salam/issues/1713) | $5 | dropped | — | — | — | — | 2026-10-12: a community reward for publishing a new app in Salam, not a fix; only the first two accepted projects are paid and nine complete submissions were ahead |
 
+## Research 2026-10-13 (pipeline starved — burn-down)
+
+Read: `docs/bounties/BOARD.md` of 2026-10-12 (written 13:12 UTC, before the 17:18 shape rules), the
+`## Claims` table, the queue. **The board:** 498 read, 16 kept, and not one free funded fix among them —
+the three free rows are useagent#61 (device recordings, maintainer-assigned), useagent#113 (a usage
+task) and Salam#1713 (a contest), all dropped on 10-12 and all shapes the scanner now drops by rule;
+every other row carries 1–14 open PRs and is 2–5 years old (gyroflow #45/#150/#742, onyx #2281,
+EdgeChains, highlight), where a fifteenth PR is a lottery, not work. **What changes next:** the
+05:17 board of 10-13 is the first run with the contest, usage-task, device and assignment drops and
+the US$25 floor, and the 10-14 board the second; the scanner files the queue item itself when a free
+funded fix appears, so a research pass before then has nothing to read. **No items added:**
+`research_after: 2026-10-14`. **For the Sunday review (STRATEGY §7):** if two boards under the new
+rules keep 0 free funded fixes, the line's recurring-job assumption (§3) is weaker than the 10-11
+count of 553 labelled issues suggested — most of that money is assigned, crowded or not a fix — and
+the review should set a board-count trigger beside the PR-based kill rule.
+
 ## Metrics
 
 | Date | Event | Users | Rating | Sales | Notes |
@@ -112,3 +128,4 @@ count and the `week:` line the weekly report copies.
 | 2026-10-11 | Claim ledger | — | — | — | `## Claims` table + `npm run claims`: 0 claimed, 0 merged, 0 paid, 3 dropped; weekly report reads it |
 | 2026-10-12 | Scanner fix | — | — | — | 5 of 5 filed items dropped unbuilt (assigned, unfunded, report, usage task, contest); scanner now drops contests and usage tasks and files nothing under $25 |
 | 2026-10-12 | No claim | — | — | — | useagent#61 ($80) dropped on read: maintainer-assigned, real-phone recordings, weeks of app work; 6 of 6 filed items dropped; scanner also drops device, assigned and hardware shapes |
+| 2026-10-13 | Research | — | — | — | 10-12 board: 16 kept, 0 free funded fixes (free rows are dropped shapes, the rest 1–14 PRs deep); research_after 10-14 after two boards under the new rules |

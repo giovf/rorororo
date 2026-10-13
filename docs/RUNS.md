@@ -1048,3 +1048,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-13 00:30 | burn-down | Queue: hackathons nebius-diligence-agent done; the recording script moves to the submit item (owner key)
 - 2026-10-13 00:36 | burn-down | gankdat research: 10-12 row has the first 2 external sign-ups (+2/24h), paywall hits 55→5; no lever changed
 - 2026-10-13 00:36 | burn-down | Queue: gankdat research_after 2026-10-15 — the 10-13/10-14 rows say what the two accounts did
+- 2026-10-13 00:40 | burn-down | oss-bounties research: 10-12 board has 0 free funded fixes (free rows are dropped shapes; rest 1–14 PRs deep)
+- 2026-10-13 00:40 | burn-down | Queue: oss-bounties research_after 2026-10-14 — two boards under the new shape rules first; review trigger noted

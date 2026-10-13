@@ -2,8 +2,8 @@
   "venture": "oss-bounties",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-12",
-  "researched": "2026-10-11",
+  "updated": "2026-10-13",
+  "researched": "2026-10-13",
   "weight": 2,
   "items": [
     {
@@ -138,5 +138,6 @@
       "added": "2026-10-12",
       "done_at": "2026-10-12"
     }
-  ]
+  ],
+  "research_after": "2026-10-14"
 }
