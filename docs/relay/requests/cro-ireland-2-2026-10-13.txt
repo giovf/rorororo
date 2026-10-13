@@ -1,0 +1,5 @@
+HEAD https://opendata.cro.ie/dataset/bf6f837d-0946-4c14-9a99-82cd6980c121/resource/3fef41bc-b8f4-4b10-8434-ce51c29b1bba/download/companies.csv.zip
+GET https://opendata.cro.ie/dataset/companies
+GET https://opendata.cro.ie/dataset
+GET https://opendata.cro.ie/api/3/action/package_show?id=companies
+GET https://opendata.cro.ie/api/3/action/datastore_search?resource_id=3fef41bc-b8f4-4b10-8434-ce51c29b1bba&limit=2
