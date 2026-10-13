@@ -1036,3 +1036,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-12 17:32 | burn-down | Queue: gankdat b2b-outreach-results done; verdict in RESEARCH.md and OUTREACH §6, bounce suppressed
 - 2026-10-12 17:33 | burn-down | Exchange pre-research: EPC register declined (address fields under OS/Royal Mail notice, personal data; free API)
 - 2026-10-13 00:08 | watchdog | ci-minutes: 847 billed min/7d (~3630/month, wall 386; private cap 2,000, warn 1700); top: owner notes 220, check 126, no
+- 2026-10-13 00:22 | burn-down | Hackathons research: Nebius Token Factory terms via relay — card at onboarding, US$1 trial, Nemotron $0.06/0.24 per M
+- 2026-10-13 00:22 | burn-down | Nebius entry revived as nebius-diligence-agent (todo, 8×2) + nebius-nvidia-hackathon-submit (blocked on key)
+- 2026-10-13 00:22 | burn-down | Declined GenAI.Works Open Agent (Cursor-only rule, $1k top for existing projects) and Amazon Alexa+ (partner-only)
+- 2026-10-13 00:22 | burn-down | lablab.ai Rise of AI Agents (Vultr cash track, MIT, date TBA) gets a dated reading on 2026-10-20
+- 2026-10-13 00:22 | burn-down | Action 025 written (Nebius API key, ~5 min); £2 planned ledger row; relay allowlist +4 sponsor hosts
+- 2026-10-13 00:22 | notify | Nebius hackathon is back on: please create a Token Factory API key (5 min, under £2)

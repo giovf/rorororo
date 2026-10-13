@@ -1168,3 +1168,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   under an Ordnance Survey/Royal Mail notice limited to energy-efficiency purposes, address-level rows are personal data with the
   re-user as controller, the official API is free and the ECO4 lead market it would serve ends 2026-12-31. Bespoke feed for a
   permitted buyer only; never a shelf listing.
+- 2026-10-13 burn-down: hackathons researched (starved queue). The Nebius × NVIDIA entry ($50k, closes 10-30) is revived: the
+  owner's Token Factory account went active on 10-12 and the official billing page (relay) shows the risk the 10-11 drop guarded
+  against is bounded — US$1 trial credit, Nemotron Nano-class at US$0.06/0.24 per M tokens, the agent capped at 40 calls per run,
+  £2 planned in the ledger. Split into a buildable agent item (fixtures, dry-run) and an owner-blocked submit item (action 025).
+  GenAI.Works Open Agent declined (must be built in Cursor; existing projects top out at $1,000) and Amazon's Alexa+ track declined
+  (partner-only toolchain); lablab.ai's Vultr cash track is watched for its date. No pre-research pass tonight: the queue is fed.

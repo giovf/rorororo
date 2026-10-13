@@ -324,5 +324,6 @@ closed entries older than 30 days (git keeps the history).
 - 2026-10-11 owner: PayPal demo video needs your sandbox buyer login as two GitHub secrets, ~5 min, £0 — docs/for-owner/actions/024-paypal-sandbox-buyer.md — Done 2026-10-11 (interactive): both secrets present 2026-10-11; demo video workflow dispatched
 - 2026-10-11 owner: PayPal has now blocked send/withdraw/receive on the account pending the tax info already requested — log in to PayPal to provide it (escalates the 12:46 request above). — Done 2026-10-11 (interactive): owner added the tax info 2026-10-11 (same request)
 - 2026-10-11 owner: PayPal hackathon video is ready (~10 min): download it from the CI run in action 023 and submit the Devpost form
-- 2026-10-12 owner: Nebius says your Token Factory account is active — check if the dropped hackathon entry can proceed.
+- 2026-10-12 owner: Nebius says your Token Factory account is active — check if the dropped hackathon entry can proceed. — Done 2026-10-13 (burn-down): it can; terms in ventures/hackathons/RESEARCH.md §2b, entry queued, key requested below
+- 2026-10-13 owner: Nebius hackathon is back on: create a Token Factory API key (~5 min, under £2 of usage) — docs/for-owner/actions/025-nebius-token-factory-key.md
 - 2026-10-13 owner: Cloudflare confirms a $49 charge (12 Oct); ledger baseline is $5/month — check billing for a duplicate or new overage.

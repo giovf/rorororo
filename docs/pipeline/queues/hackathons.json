@@ -2,8 +2,8 @@
   "venture": "hackathons",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-11",
-  "researched": "2026-10-11",
+  "updated": "2026-10-13",
+  "researched": "2026-10-13",
   "weight": 2,
   "items": [
     {
@@ -42,7 +42,7 @@
     {
       "id": "nebius-nvidia-hackathon-entry",
       "title": "Nebius × NVIDIA hackathon entry (closes 2026-10-30, $50,000 pool): a UK counterparty due-diligence agent on a Nemotron model served by Nebius Token Factory, using gankdat's MCP tools (companies, insolvency, sanctions, sponsors, charities) with a one-page report output; write-up, repo, demo video",
-      "why": "RESEARCH §2: the only hard rule is running on Nebius with an NVIDIA open model; the 'best apps and agents' track wants something people would use. The agent is a thin orchestration over tools that already exist. Needs the owner's Devpost and Nebius accounts (action 022; drop if Nebius asks for a card). Dropped 2026-10-11: Nebius sign-up asked for a credit card (owner); the ledger rule allows no card on a £0 line.",
+      "why": "RESEARCH §2: the only hard rule is running on Nebius with an NVIDIA open model; the 'best apps and agents' track wants something people would use. The agent is a thin orchestration over tools that already exist. Needs the owner's Devpost and Nebius accounts (action 022; drop if Nebius asks for a card). Dropped 2026-10-11: Nebius sign-up asked for a credit card (owner); the ledger rule allows no card on a £0 line. Revived 2026-10-13 (burn-down): Nebius welcomed the owner's Token Factory account on 2026-10-12 (inbox); the official billing page read through the relay says onboarding needs a bank card and grants US$1 of trial credit for 30 days, and Nemotron 3.5 Lightning / 3 Nano cost US$0.06 in, US$0.24 out per million tokens — a whole entry is well under US$2 with the call cap below. Split into nebius-diligence-agent (buildable now, dry-run) and nebius-nvidia-hackathon-submit (owner key, action 025).",
       "effort_days": 1.5,
       "proof": "submission accepted on Devpost before the deadline",
       "score": 8,
@@ -71,6 +71,38 @@
       "status": "blocked",
       "added": "2026-10-11",
       "blocked_on": "the owner submits the Devpost form (action 023); video artifact: https://github.com/giovf/rorororo/actions/runs/38171740523"
+    },
+    {
+      "id": "nebius-diligence-agent",
+      "title": "Nebius × NVIDIA hackathon entry, part 1 (submissions close 2026-10-30 10:00 PT, $50,000 pool): a UK counterparty due-diligence agent on NVIDIA Nemotron 3.5 Lightning served by Nebius Token Factory (OpenAI-compatible chat API) that calls gankdat's MCP tools over uk-companies, uk-company-profiles, uk-insolvency, uk-sanctions, uk-sponsors, uk-charities and uk-contract-awards and writes a one-page risk report; a hard spend guard (Nano-class model only, ≤ 40 model calls and ≤ 300k tokens per run, abort beyond); a recorded-fixture dry-run mode so the tests and the demo shot list run without a key; ventures/hackathons/entries/nebius-nvidia-hackathon/ with SUBMISSION.md draft, WALKTHROUGH.md and DEMO-SCRIPT.md; scripts/demo-nebius-hackathon.ts on the demo-video pipeline",
+      "why": "RESEARCH §2 (rules read 2026-10-11): the only hard rule is running on Nebius with an NVIDIA open model; the 'apps and agents' track wants something people would use, and a due-diligence agent over seven official registers is one. RESEARCH §2b (2026-10-13, relay reads of docs.tokenfactory.nebius.com and nebius.com): Token Factory serves nvidia/Nemotron-3_5-Lightning and nvidia/NVIDIA-Nemotron-3-Nano-30B-A3B at US$0.06 input / US$0.24 output per million tokens with a 262k–1M context, so a complete entry (build, tests, demo) stays under US$2; every account gets US$1 of trial credit for 30 days. The owner's Token Factory account is active since 2026-10-12 (inbox); the key arrives through action 025. Everything here runs against fixtures until then — the live run is the submit item.",
+      "effort_days": 1.5,
+      "proof": "the agent produces a correct report for three real companies in dry-run and live mode; demo recorded under 3 minutes",
+      "score": 8,
+      "status": "todo",
+      "added": "2026-10-13"
+    },
+    {
+      "id": "nebius-nvidia-hackathon-submit",
+      "title": "Nebius × NVIDIA hackathon entry, part 2: run the agent live on Token Factory with the owner's key, record the demo with the demo-video workflow (entry nebius-nvidia-hackathon), finish SUBMISSION.md with the live transcript, write the owner: line; the owner submits on Devpost by 2026-10-30 10:00 PT and the submission URL goes in RESEARCH.md",
+      "why": "The live run needs NEBIUS_API_KEY in .env and as a repository secret (action 025: ~5 min, the owner also says whether a card is on the account — Nebius's billing page says onboarding needs one; the agent's call cap keeps the whole entry under US$2 and the ledger carries a £2 planned row). Devpost's Terms forbid automated access, so the owner submits by hand, as for action 023. Prize tiers $20k / $10k / $6k plus track awards (RESEARCH §2).",
+      "effort_days": 0.5,
+      "proof": "submission accepted on Devpost before 2026-10-30; any placing is the venture's proof",
+      "score": 8,
+      "status": "blocked",
+      "added": "2026-10-13",
+      "blocked_on": "nebius-diligence-agent built; owner action 025 (NEBIUS_API_KEY in .env and the repository secrets, billing state confirmed)"
+    },
+    {
+      "id": "lablab-rise-of-agents-date-read",
+      "title": "Re-read lablab.ai's 'The Rise of AI Agents' hackathon page (relay) for its online build window; when it is announced and at least five days away, file an entry item for the 'Best use of Vultr' cash track with the gankdat agent reused under an MIT-licensed entry folder",
+      "why": "Read 2026-10-13 through the relay: lablab.ai lists the hackathon as hybrid (online build phase for everyone, on-site finale in Dubai by invitation), date 'Fall 2026 / TBA', solo entry allowed, 'Best use of Vultr' pays $5,000 / $3,000 / $1,000 cash plus API credits, 'Best use of Gemini' pays GCP credits only; submissions must be original and MIT-compliant (the entry's own code can be MIT while gankdat stays as is), and a project must deploy on a Vultr VM with 30-day credits (a payment method only if kept afterwards). Aggregators quote 26 Oct–2 Nov online; the official page does not, so the date is read, not assumed. Not an entry until the window is known.",
+      "effort_days": 0.1,
+      "proof": "an entry item filed with the official dates, or the item dropped with the reason",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-13",
+      "not_before": "2026-10-20"
     }
   ]
 }
