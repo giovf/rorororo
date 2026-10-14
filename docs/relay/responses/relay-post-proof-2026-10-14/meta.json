@@ -1,0 +1,42 @@
+{
+  "request": "relay-post-proof-2026-10-14",
+  "fetched_at": "2026-10-14T17:45:43.759Z",
+  "results": [
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_blockNumber\",\"params\":[]}",
+      "fetched_at": "2026-10-14T17:45:36.137Z",
+      "status": 200,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "45"
+      },
+      "file": "1.json",
+      "bytes": 45,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/validate",
+      "body": "{\"resource\":\"https://gankdat.com/x402/data/uk-tenders\",\"method\":\"GET\"}",
+      "fetched_at": "2026-10-14T17:45:41.277Z",
+      "status": 200,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/validate",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 10964,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"eth_blockNumber\",\"params\":[],\"api_key\":\"not-a-real-key\"}",
+      "error": "refused: $.api_key is a credential-shaped key (never a credential through the relay)",
+      "fetched_at": "2026-10-14T17:45:43.759Z"
+    }
+  ]
+}
