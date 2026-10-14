@@ -1059,3 +1059,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 00:40 | burn-down | Queue: foundry +3 (slot utilisation 4, metrics cron short-circuit 2, pre-research shelf cap 3, dated 10-19)
 - 2026-10-14 00:40 | burn-down | Queue: actions-minutes and metrics-crons-day-7-read gain the post-trim and day-3/4 readings
 - 2026-10-14 00:24 | watchdog | ci-minutes: 797 billed min/7d (~3416/month, wall 363; private cap 2,000, warn 1700); top: owner notes 202, check 111, no
+- 2026-10-14 01:26 | burn-down | Slot utilisation: npm run slots classifies every slot of 7 days from RUNS.md + ROUTINES; 14 tests
+- 2026-10-14 01:26 | burn-down | W42 slots: burn-down 70 fires, 17 built, 49 cold (gate, no line), 0 silent; build 14, 7 built
+- 2026-10-14 01:26 | burn-down | Stopping for time is not a starved signal (only Stopping:); a silent hour after it is silent
+- 2026-10-14 01:26 | burn-down | Monday report gains a Slots section + usage-note ask on its digest; retro and review read the table
+- 2026-10-14 01:26 | burn-down | Queue: foundry slot-utilisation-report done; proof is the W43 report's Slots table vs a hand count

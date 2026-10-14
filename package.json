@@ -40,6 +40,7 @@
     "handoffs": "node --disable-warning=ExperimentalWarning scripts/handoffs.ts",
     "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts",
     "claims": "node --disable-warning=ExperimentalWarning scripts/bounty-claims.ts",
+    "slots": "node --disable-warning=ExperimentalWarning scripts/slot-utilisation.ts",
     "prepare": "git config core.hooksPath .githooks"
   },
   "devDependencies": {

@@ -145,6 +145,13 @@ The "Foundry needs you" phone message links OPEN.md; `OUTSTANDING.md` keeps the 
   the `run watchdog` CI job (drafted 2026-09-25 at `docs/ci/run-watchdog.yml`, active once moved
   into `.github/workflows/`) within 2 h as a `watchdog | missed:` line in `docs/RUNS.md` → Telegram
   bullet, so silence is never mistaken for a quiet day (`docs/SCHEDULERS.md`).
+- Utilisation (2026-10-14, foundry `slot-utilisation-report`): `npm run slots` (`scripts/slot-utilisation.ts`,
+  plain Node) classifies every slot of the last 7 days — the watchdog's list plus every hourly burn-down
+  fire — as built / researched / pre-research / ran / cold (ended at the `pipeline cold` gate, no line by
+  design) / silent (no line and no starved signal: the usage limit) / missed. The Monday report carries
+  the table, the retro's measures 1–2 start from it, the Sunday review reads it against the 70–80%
+  target, and it asks the owner for a fresh `usage NN%` note when `docs/ops/BURN.json`'s report is
+  older than 7 days (once per 7 days, through the report's digest line).
 - Slot race (2026-09-29/30, three collisions in two days): the fallback's :20 check could only see a
   build that had already committed, and builds commit 26–45 min after the slot. Since 2026-09-30 the
   build routine's first push is a start marker (`npm run slot -- start build` → `docs/ops/SLOTS.md` +

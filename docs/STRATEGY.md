@@ -1201,3 +1201,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   ten days stale and cold-gated fires leave no trace — so `slot-utilisation-report` (4) gives the Monday report and the Sunday review a
   slot table; `pre-research-shelf-cap` (3, dated 10-19) puts the night pass itself to the review: 10 passes since 10-05 parked 10 ideas and
   promoted none while every trigger waits on a first paid call. The exchange runs this morning with two ideas dated for it.
+- 2026-10-14 burn-down: `slot-utilisation-report` built — `npm run slots` classifies every slot of the week (the watchdog's list plus
+  every hourly burn-down fire) from RUNS.md as built / researched / pre-research / ran / cold / silent / missed and prints the table
+  the Monday report carries, the retro starts from and the Sunday review reads against the 70–80% target; it also asks for a fresh
+  `usage NN%` note when BURN.json's report is older than 7 days. First reading, W42: 70 burn-down fires, 17 built, 49 cold (the
+  `pipeline cold` gate ending the run with no line, as designed), 0 silent; 14 build slots, 7 built — about half the week's slots had
+  nothing queued, which is the exchange-cadence question the review now owns, not a limit problem.
