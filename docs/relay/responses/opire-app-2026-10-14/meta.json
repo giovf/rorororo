@@ -1,0 +1,102 @@
+{
+  "request": "opire-app-2026-10-14",
+  "fetched_at": "2026-10-14T17:17:36.713Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.github.com/search/issues?q=%22app.opire.dev%2Fissues%22+in%3Abody+is%3Aissue+is%3Aopen&sort=created&order=desc&per_page=100",
+      "fetched_at": "2026-10-14T17:17:34.516Z",
+      "status": 200,
+      "final_url": "https://api.github.com/search/issues?q=%22app.opire.dev%2Fissues%22+in%3Abody+is%3Aissue+is%3Aopen&sort=created&order=desc&per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "1.json",
+      "bytes": 8798,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/search/issues?q=%22app.opire.dev%2Fissues%22+in%3Abody+is%3Aissue&sort=created&order=desc&per_page=100",
+      "fetched_at": "2026-10-14T17:17:34.881Z",
+      "status": 200,
+      "final_url": "https://api.github.com/search/issues?q=%22app.opire.dev%2Fissues%22+in%3Abody+is%3Aissue&sort=created&order=desc&per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "2.json",
+      "bytes": 13285,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/search/issues?q=%22app.opire.dev%2Fissues%22+in%3Abody%2Ccomments+is%3Aissue+is%3Aopen+created%3A%3E%3D2026-01-01&sort=created&order=desc&per_page=100",
+      "fetched_at": "2026-10-14T17:17:35.148Z",
+      "status": 200,
+      "final_url": "https://api.github.com/search/issues?q=%22app.opire.dev%2Fissues%22+in%3Abody%2Ccomments+is%3Aissue+is%3Aopen+created%3A%3E%3D2026-01-01&sort=created&order=desc&per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "104"
+      },
+      "file": "3.json",
+      "bytes": 101,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/FalkorDB/FalkorDB/issues/1482/comments?per_page=100",
+      "fetched_at": "2026-10-14T17:17:35.379Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/FalkorDB/FalkorDB/issues/1482/comments?per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"b2bf40485a097b5cb163b6f719eeaa4f3a60a85acb5943b74db7b97256506f81\""
+      },
+      "file": "4.json",
+      "bytes": 33715,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/FalkorDB/FalkorDB/issues/1492/comments?per_page=100",
+      "fetched_at": "2026-10-14T17:17:35.585Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/FalkorDB/FalkorDB/issues/1492/comments?per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"b397f5dd953e297e788f034bf4ed68d05a3c8fba27a2ac0118a9de21767ad68b\""
+      },
+      "file": "5.json",
+      "bytes": 30542,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/probe-rs/probe-rs/issues/4422/comments?per_page=100",
+      "fetched_at": "2026-10-14T17:17:35.772Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/probe-rs/probe-rs/issues/4422/comments?per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1426",
+        "etag": "W/\"360e4f8ee478735a0b23a70f1fe19162ae95222b284f869f5b35071cc8942eb2\""
+      },
+      "file": "6.json",
+      "bytes": 8706,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://app.opire.dev/issues/01HWTY9ZE1GM8XSS2QQGD84068",
+      "fetched_at": "2026-10-14T17:17:35.923Z",
+      "status": 200,
+      "final_url": "https://app.opire.dev/issues/01HWTY9ZE1GM8XSS2QQGD84068",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 82989,
+      "truncated": false
+    }
+  ]
+}
