@@ -1084,3 +1084,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 09:55 | build | gankdat v0.25.0 (constants + server.json); Taskmaster 35; queue x402-bazaar-listing done; 357 v1 packages dropped
 - 2026-10-14 09:55 | build | Owner: action 026 — one half-cent x402 payment (≤ 10 min) indexes the 17 endpoints; £0.80 planned ledger row
 - 2026-10-14 09:55 | notify | One half-cent x402 payment (~5 min) lists gankdat in Coinbase's agent marketplace
+- 2026-10-14 17:31 | burn-down | Bazaar clause on the Daily numbers row: payTo read from the route's 402, CDP merchant endpoint, own counts
+- 2026-10-14 17:31 | burn-down | scripts/x402-bazaar-read.ts: payTo parse, merchant/discovery shapes, clause, probe spacing rule; 9 tests
+- 2026-10-14 17:31 | burn-down | Metrics job probe step (docs/ci): X402_PROBE_KEY repeats the half-cent call while 0 listed, monthly, ≤ 1/week
+- 2026-10-14 17:31 | burn-down | Queue: gankdat metrics-bazaar-merchant-read done; proof is tomorrow's row carrying `bazaar:`

@@ -103,9 +103,15 @@ Docs: `docs.cdp.coinbase.com/x402/seller/get-discovered` (read 2026-10-14 throug
    key becomes a repository secret so the runner can repeat it.
 3. **Read the catalogue, never assume** — sellers report resources that validate yet
    never index (cdp-sdk issues #806, #759): the proof is our `payTo` returning the
-   resources from `GET /platform/v2/x402/discovery/resources` (queued:
-   `metrics-bazaar-merchant-read` writes `bazaar: N listed, C calls/30d, P payers` on the
-   row; day-30 read 2026-11-14). New endpoints "rank conservatively until usage accrues";
+   resources from `GET /platform/v2/x402/discovery/merchant?payTo=…` — since 2026-10-14
+   the metrics runner reads the wallet from the first route's 402 (`PAYMENT-REQUIRED`),
+   asks that keyless endpoint and writes `bazaar: N listed, C calls/30d, P payers, last
+   <date>` on the Daily numbers row (`bazaar: 0 listed` until indexed, `n/a (<reason>)`
+   when a read fails; `scripts/x402-bazaar-read.ts`); day-30 read 2026-11-14. With the
+   `X402_PROBE_KEY` secret (option B of action 026) the job's probe step
+   (`scripts/x402-probe.mjs`) repeats the settled call: never twice in 7 days, only while
+   the clause reads `0 listed`, on the 1st of each month (liveness), or when the
+   workflow's `x402_probe` input is set (a re-screen after a metadata change). New endpoints "rank conservatively until usage accrues";
    curation (featured tier) needs live mainnet payments, ≥ 99% availability and complete
    metadata — that is editorial, not a step.
 

@@ -1351,13 +1351,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-14T09:49:18.010Z"
+      },
+      {
+        "id": "36",
+        "title": "x402 Bazaar reading on the Daily numbers row + runner probe step (gankdat metrics-bazaar-merchant-read, burn-down 2026-10-14)",
+        "description": "ventures/gankdat/scripts/x402-bazaar-read.ts (payTo from PAYMENT-REQUIRED, merchant endpoint parsing, bazaar clause, shouldProbe rule; test/x402-bazaar-read.spec.ts), the bazaar: clause in scripts/metrics.mjs, scripts/x402-probe.mjs run by the gankdat metrics job (docs/ci/gankdat-metrics.yml) with the X402_PROBE_KEY secret.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-14T17:31:10.994Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-14T09:49:18.010Z",
-      "taskCount": 35,
-      "completedCount": 28,
+      "lastModified": "2026-10-14T17:31:10.994Z",
+      "taskCount": 36,
+      "completedCount": 29,
       "tags": [
         "master"
       ]

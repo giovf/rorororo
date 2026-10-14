@@ -601,13 +601,13 @@
     {
       "id": "metrics-bazaar-merchant-read",
       "title": "Bazaar reading on the Daily numbers row: the metrics runner lists our resources in the x402 Bazaar (GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources filtered by our payTo, or the merchant endpoint; keyless, answered 200 to the runner on 2026-10-14) and writes `bazaar: N listed, C calls/30d, P payers, last <date>` from each item's quality.l30DaysTotalCalls / l30DaysUniquePayers / lastCalledAt; `bazaar: 0 listed` until indexed",
-      "why": "The proof of x402-bazaar-listing is the catalogue's own count, not our x402_paid points (which include the owner's indexing call); the Bazaar ranks resources by these numbers, so the row also says whether we rank. Reuses the metrics runner's fetch pattern (Apify stats, IndexNow). Exchange 2026-W42. 2026-10-14 build: when the owner chooses action 026 option B, the repository secret X402_PROBE_KEY holds a US$1 buyer wallet — this item also wires the runner probe that repeats the settled call (scripts/x402-test-client.mjs, UA gankdat-x402-probe/…, counted as internal).",
+      "why": "The proof of x402-bazaar-listing is the catalogue's own count, not our x402_paid points (which include the owner's indexing call); the Bazaar ranks resources by these numbers, so the row also says whether we rank. Reuses the metrics runner's fetch pattern (Apify stats, IndexNow). Exchange 2026-W42. 2026-10-14 build: when the owner chooses action 026 option B, the repository secret X402_PROBE_KEY holds a US$1 buyer wallet — this item also wires the runner probe that repeats the settled call (scripts/x402-test-client.mjs, UA gankdat-x402-probe/…, counted as internal). Built 2026-10-14 (burn-down): scripts/x402-bazaar-read.ts (payTo from the 402's PAYMENT-REQUIRED, merchant endpoint parsing, clause, probe rule; 9 tests), the `bazaar:` clause in metrics.mjs after `x402 validate:`, and the metrics job's probe step scripts/x402-probe.mjs (docs/ci) gated on X402_PROBE_KEY — pays only while `0 listed`, monthly, or on the x402_probe dispatch input, never twice in 7 days.",
       "effort_days": 0.1,
       "proof": "the clause appears on the row the day after the build; the day-30 read quotes it",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-14",
-      "doing_since": "2026-10-14"
+      "done_at": "2026-10-14"
     },
     {
       "id": "x402-bazaar-day-30",

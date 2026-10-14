@@ -46,7 +46,9 @@ Wait for the deploy first: `curl -s https://gankdat.com/v1/health` must show `"v
   1. Create a new account in your wallet app (never reuse an account that holds anything else).
   2. Send it US$1 of USDC on the Base network.
   3. Save its private key as the repository secret `X402_PROBE_KEY`
-     (GitHub → Settings → Secrets and variables → Actions). The next build wires the runner probe.
+     (GitHub → Settings → Secrets and variables → Actions). The daily metrics job already holds the
+     probe step (built 2026-10-14): it pays again only while the catalogue still shows us unlisted,
+     once a month after that, and never twice in a week.
   4. Make the first call yourself as in option A, with that key.
 - **Give back:** "done, option B".
 - **Cost:** US$1 (≈ £0.80) of USDC parked in the probe wallet; spent half a cent at a time.

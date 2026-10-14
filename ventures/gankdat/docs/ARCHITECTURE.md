@@ -445,7 +445,17 @@ runs `check:root`.
   only after one settled payment: the owner's half-cent call (action 026) is the
   onboarding step; the metrics runner dry-runs every route against CDP's keyless
   validate endpoint daily (`x402 validate:` clause) and counts payments under the
-  `gankdat-x402-probe/…` user agent as internal, never as sales.
+  `gankdat-x402-probe/…` user agent as internal, never as sales. **Bazaar reading
+  (`metrics-bazaar-merchant-read`, 2026-10-14):** the same runner reads the receiving
+  wallet from the first route's 402 (`PAYMENT-REQUIRED`, keyless), asks CDP's keyless
+  `GET /platform/v2/x402/discovery/merchant?payTo=…` for every active resource under it
+  and writes `bazaar: N listed, C calls/30d, P payers, last <date>` from the catalogue's
+  own `quality` numbers (`bazaar: 0 listed` until indexed; parsing in
+  `scripts/x402-bazaar-read.ts`). With the `X402_PROBE_KEY` secret (action 026 option
+  B) the metrics job's probe step (`scripts/x402-probe.mjs`) repeats the settled
+  half-cent call through the test client — never twice in 7 days, only while the
+  clause reads `0 listed`, on the 1st of the month, or on the `x402_probe` dispatch
+  input.
 - **PayPal** (credit packs, **sandbox only**) — built 2026-10-11 as the PayPal AI Hackathon entry
   (v0.24.0, migration 0017 `paypal_orders`, `docs/PAYPAL-SETUP.md`): Orders API v2 against
   `api-m.sandbox.paypal.com` by construction, no live switch. One-off packs (`src/billing/packs.json`,

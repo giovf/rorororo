@@ -1232,3 +1232,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   Indexing needs one settled payment no runner can make: action 026 asks the owner for a half-cent call from a wallet of
   theirs, or a US$1 probe wallet as the `X402_PROBE_KEY` secret (£0.80 planned). The proof is read from the catalogue by
   `metrics-bazaar-merchant-read` (next gankdat item), day-30 read 2026-11-14; nothing is assumed from validation alone.
+- 2026-10-14 burn-down: gankdat `metrics-bazaar-merchant-read` built — the Daily numbers row now carries `bazaar: N listed,
+  C calls/30d, P payers, last <date>` read from CDP's keyless merchant discovery endpoint (the wallet taken from the route's
+  own 402, so no new secret), `0 listed` until the owner's action-026 payment indexes us; the metrics job gained a probe
+  step that, given `X402_PROBE_KEY` (option B), repeats the half-cent call only while unlisted, monthly after, never twice
+  in a week. The day-30 read (2026-11-14) quotes this clause, never our own x402_paid count.

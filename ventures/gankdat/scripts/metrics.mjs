@@ -12,6 +12,12 @@ import { readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { afterWallNote, connectCallersNote, oauthFunnelNote } from '../src/lib/oauth-funnel.ts';
+import {
+  bazaarClause,
+  bazaarSummary,
+  merchantResources,
+  payToFromPaymentRequired,
+} from './x402-bazaar-read.ts';
 
 const ACCOUNT_ID = '37e56f3ce4dfe49919e85d4380467f44'; // not a secret
 const DATABASE_ID = 'ac051277-5f69-46ba-965b-50da2f1ec524'; // wrangler.jsonc
@@ -669,11 +675,18 @@ function firstPreflightFailure(body) {
 // first preflight failure each, or `n/a (<reason>)` when the listing or the endpoint cannot be
 // read. Validation does not cover the metadata content policy: the indexed count comes from
 // the discovery API (`metrics-bazaar-merchant-read`), never from this line.
-const x402ValidateNote = await (async () => {
-  const base = (process.env.PUBLIC_BASE_URL || 'https://gankdat.com').replace(/\/+$/, '');
-  const listing = await fetch(`${base}/v1/data`, { signal: AbortSignal.timeout(15_000) });
+const x402Base = (process.env.PUBLIC_BASE_URL || 'https://gankdat.com').replace(/\/+$/, '');
+// The live source list, shared by the validate and Bazaar clauses below (one read; a failure
+// makes both `n/a` with the same reason).
+const x402Slugs = (async () => {
+  const listing = await fetch(`${x402Base}/v1/data`, { signal: AbortSignal.timeout(15_000) });
   if (!listing.ok) throw new Error(`/v1/data ${listing.status}`);
-  const slugs = (await listing.json()).data.map((s) => s.slug);
+  return (await listing.json()).data.map((s) => s.slug);
+})();
+x402Slugs.catch(() => {}); // each clause reports the rejection itself
+const x402ValidateNote = await (async () => {
+  const base = x402Base;
+  const slugs = await x402Slugs;
   const results = [];
   for (let i = 0; i < slugs.length; i += 4) {
     results.push(
@@ -708,6 +721,42 @@ const x402ValidateNote = await (async () => {
   (e) => `x402 validate: n/a (${String(e instanceof Error ? e.message : e).slice(0, 100)})`,
 );
 
+// x402 Bazaar reading (gankdat `metrics-bazaar-merchant-read`, 2026-10-14): the proof of the
+// listing is the catalogue's own count, never our x402_paid points (which include the owner's
+// indexing call). The receiving wallet is a Worker secret, so the runner reads it from the 402 of
+// the first live route (`PAYMENT-REQUIRED`, keyless, no payment), then asks CDP's keyless merchant
+// discovery endpoint for every active resource under that payTo and sums the quality numbers the
+// Bazaar ranks by. `bazaar: 0 listed` until the one settled payment indexes us (action 026);
+// `n/a (<reason>)` when either read fails. Pure parsing lives in scripts/x402-bazaar-read.ts.
+const bazaarNote = await (async () => {
+  const slugs = await x402Slugs;
+  if (!slugs.length) throw new Error('no live sources');
+  const unpaid = await fetch(`${x402Base}/x402/data/${slugs[0]}?per_page=1`, {
+    headers: { 'User-Agent': 'gankdat-metrics/1 (+https://gankdat.com)' },
+    signal: AbortSignal.timeout(15_000),
+  });
+  const payTo = payToFromPaymentRequired(
+    unpaid.headers.get('payment-required'),
+    await unpaid.json().catch(() => null),
+  );
+  if (!payTo) throw new Error(`no payTo in the ${unpaid.status} from /x402/data/${slugs[0]}`);
+  const resources = [];
+  for (let offset = 0, page = 0; page < 5; page++, offset += 100) {
+    const url = `https://api.cdp.coinbase.com/platform/v2/x402/discovery/merchant?payTo=${payTo}&limit=100&offset=${offset}`;
+    const res = await fetch(url, {
+      headers: { Accept: 'application/json' },
+      signal: AbortSignal.timeout(20_000),
+    });
+    if (!res.ok) throw new Error(`merchant HTTP ${res.status}`);
+    const body = await res.json();
+    const items = merchantResources(body);
+    resources.push(...items);
+    const total = Number(body?.pagination?.total ?? 0);
+    if (items.length < 100 || resources.length >= total) break;
+  }
+  return bazaarClause(bazaarSummary(resources, x402Base));
+})().catch((e) => `bazaar: n/a (${String(e instanceof Error ? e.message : e).slice(0, 100)})`);
+
 const notes = [
   // preview = keyless data-tool calls (5 rows, 20/day per client, since 2026-09-30 for the
   // Claude Connectors Directory); paywall hits = the plan text shown when that budget is spent
@@ -716,6 +765,7 @@ const notes = [
   `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
   indexnowNote,
   x402ValidateNote,
+  bazaarNote,
   mcpProbeNote,
   waveLogText,
   feedsNote,
