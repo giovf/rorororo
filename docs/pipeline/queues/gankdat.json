@@ -605,8 +605,9 @@
       "effort_days": 0.1,
       "proof": "the clause appears on the row the day after the build; the day-30 read quotes it",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-14"
+      "status": "doing",
+      "added": "2026-10-14",
+      "doing_since": "2026-10-14"
     },
     {
       "id": "x402-bazaar-day-30",
