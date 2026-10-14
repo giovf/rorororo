@@ -180,7 +180,7 @@ describe('/x402/data/:source', () => {
     expect(bazaar, 'extensions.bazaar declared').toBeTruthy();
     expect(bazaar!.info.input.type).toBe('http');
     expect(bazaar!.info.input.method).toBe('GET');
-    expect(bazaar!.info.input.queryParams).toEqual({ per_page: '5' });
+    expect(bazaar!.info.input.queryParams).toEqual({ per_page: 5 });
     // The query schema is the source's zod params plus the platform's page/per_page/q.
     const params = bazaar!.schema.properties.input.properties.queryParams.properties;
     expect(Object.keys(params)).toEqual(

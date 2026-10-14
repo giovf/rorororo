@@ -100,12 +100,33 @@ export function bazaarTags(source: DataSource): string[] {
   return tags;
 }
 
-/** Example query an agent could send as-is: the lookup key for a lookup source, else a small page. */
-export function bazaarExampleInput(source: DataSource): Record<string, string> {
-  return source.lookup ? { ...source.lookup.example } : { per_page: '5' };
-}
-
 type JsonObject = Record<string, unknown>;
+
+/**
+ * Example query an agent could send as-is: the lookup key for a lookup source, else a small page.
+ * Each value carries the type the input schema declares for it (CDP's validator checks the example
+ * against our own schema: `per_page: '5'` under an integer property failed every route's `parse`
+ * preflight with "Expected: integer, given: string" on 2026-10-14 — relay relay-post-proof).
+ */
+export function bazaarExampleInput(source: DataSource): Record<string, string | number | boolean> {
+  const raw: Record<string, string> = source.lookup
+    ? { ...source.lookup.example }
+    : { per_page: '5' };
+  const properties = (bazaarInputSchema(source).properties ?? {}) as Record<string, JsonObject>;
+  const typed: Record<string, string | number | boolean> = {};
+  for (const [key, value] of Object.entries(raw)) {
+    const declared = properties[key]?.type;
+    const type = Array.isArray(declared) ? declared.find((t) => t !== 'null') : declared;
+    if ((type === 'integer' || type === 'number') && /^-?\d+(\.\d+)?$/.test(value)) {
+      typed[key] = Number(value);
+    } else if (type === 'boolean' && (value === 'true' || value === 'false')) {
+      typed[key] = value === 'true';
+    } else {
+      typed[key] = value;
+    }
+  }
+  return typed;
+}
 
 /** JSON Schema of the query parameters (filters + page, per_page, q), as the OpenAPI document states them. */
 export function bazaarInputSchema(source: DataSource): JsonObject {

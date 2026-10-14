@@ -444,7 +444,9 @@ runs `check:root`.
   longer served (0 payments in three months). The CDP Bazaar indexes a resource
   only after one settled payment: the owner's half-cent call (action 026) is the
   onboarding step; the metrics runner dry-runs every route against CDP's keyless
-  validate endpoint daily (`x402 validate:` clause) and counts payments under the
+  validate endpoint daily (`x402 validate:` clause — v0.25.1, 2026-10-14 evening: the first
+  validate read rejected every route because the example query typed `per_page` as a string
+  under an integer property; example values now carry the schema's types) and counts payments under the
   `gankdat-x402-probe/…` user agent as internal, never as sales. **Bazaar reading
   (`metrics-bazaar-merchant-read`, 2026-10-14):** the same runner reads the receiving
   wallet from the first route's 402 (`PAYMENT-REQUIRED`, keyless), asks CDP's keyless

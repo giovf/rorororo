@@ -1246,3 +1246,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   on Base, the Bazaar's POST-only validate endpoint), same host allowlist and caps, a credential-shaped key or value refused
   before anything is sent. Two of the W42 exchange's three relay rounds had died on GET-only reads; the keeper-rewards
   trigger and any future chain or search read now have a path.
+- 2026-10-14 burn-down: the relay's first POST (the proof of `relay-post-json`) read CDP's validate verdict on our x402
+  routes: rejected — the Bazaar declaration's example query typed `per_page` as a string under an integer property, so
+  the morning's listing would never have indexed, payment or not. Fixed in v0.25.1 (example values take the schema's
+  types, test over all 17 sources); the daily `x402 validate:` clause reads the verdict from tomorrow.

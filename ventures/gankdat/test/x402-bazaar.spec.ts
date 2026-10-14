@@ -3,6 +3,7 @@ import { describe, expect, it } from 'vitest';
 import { listSources } from '../src/sources/registry';
 import {
   bazaarDescription,
+  bazaarExampleInput,
   bazaarInputSchema,
   bazaarOutputExample,
   bazaarRoute,
@@ -88,6 +89,27 @@ describe('x402 Bazaar declarations', () => {
       { required: ['company_number'] },
       { required: ['company'] },
     ]);
+  });
+
+  it('types every example query value as the input schema declares it (CDP validate rejected strings)', () => {
+    for (const source of listSources()) {
+      const example = bazaarExampleInput(source);
+      const schema = bazaarInputSchema(source) as {
+        properties: Record<string, { type?: unknown }>;
+      };
+      expect(Object.keys(example).length, source.slug).toBeGreaterThan(0);
+      for (const [key, value] of Object.entries(example)) {
+        const declared = schema.properties[key]?.type;
+        const type = Array.isArray(declared) ? declared.find((t) => t !== 'null') : declared;
+        expect(type, `${source.slug}.${key} is in the schema`).toBeDefined();
+        if (type === 'integer') expect(Number.isInteger(value), `${source.slug}.${key}`).toBe(true);
+        else if (type === 'number') expect(typeof value, `${source.slug}.${key}`).toBe('number');
+        else if (type === 'boolean') expect(typeof value, `${source.slug}.${key}`).toBe('boolean');
+        else expect(typeof value, `${source.slug}.${key}`).toBe('string');
+      }
+    }
+    const page = listSources().find((s) => !s.lookup)!;
+    expect(bazaarExampleInput(page)).toEqual({ per_page: 5 });
   });
 
   it('gives each source a schema-shaped output example that its record schema accepts', () => {
