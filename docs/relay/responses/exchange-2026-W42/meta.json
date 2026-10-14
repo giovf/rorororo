@@ -1,0 +1,192 @@
+{
+  "request": "exchange-2026-W42",
+  "fetched_at": "2026-10-14T08:18:03.095Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100",
+      "fetched_at": "2026-10-14T08:17:56.381Z",
+      "status": 200,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 376003,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=100",
+      "fetched_at": "2026-10-14T08:17:57.635Z",
+      "status": 200,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=100",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 318205,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.cdp.coinbase.com/x402/bazaar",
+      "fetched_at": "2026-10-14T08:17:59.438Z",
+      "status": 200,
+      "final_url": "https://docs.cdp.coinbase.com/x402/buyer/discover-services",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"evrwd1zi3alkpt\""
+      },
+      "file": "3.html",
+      "bytes": 1006798,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.cdp.coinbase.com/x402/seller/get-discovered",
+      "fetched_at": "2026-10-14T08:17:59.808Z",
+      "status": 200,
+      "final_url": "https://docs.cdp.coinbase.com/x402/seller/get-discovered",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"bc1kmfenoymwyk\""
+      },
+      "file": "4.html",
+      "bytes": 1069341,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.coinbase.com/developer-platform/discover/launches/x402facilitator-polygon",
+      "fetched_at": "2026-10-14T08:17:59.884Z",
+      "status": 403,
+      "final_url": "https://www.coinbase.com/developer-platform/discover/launches/x402facilitator-polygon",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "5.html",
+      "bytes": 5981,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.coinbase.com/legal/developer-platform/terms-of-service",
+      "fetched_at": "2026-10-14T08:17:59.938Z",
+      "status": 403,
+      "final_url": "https://www.coinbase.com/legal/developer-platform/terms-of-service",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "6.html",
+      "bytes": 5903,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://base.blockscout.com/api/v2/stats",
+      "fetched_at": "2026-10-14T08:17:59.971Z",
+      "status": 403,
+      "final_url": "https://base.blockscout.com/api/v2/stats",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "7.html",
+      "bytes": 5691,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://base.blockscout.com/api/v2/blocks?type=block",
+      "fetched_at": "2026-10-14T08:18:00.041Z",
+      "status": 403,
+      "final_url": "https://base.blockscout.com/api/v2/blocks?type=block",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 5784,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://base.blockscout.com/api?module=logs&action=getLogs&fromBlock=52285835&toBlock=latest&address=0xA238Dd80C259a72e81d7e4664a9801593F98d1c5&topic0=0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286",
+      "fetched_at": "2026-10-14T08:18:00.073Z",
+      "status": 403,
+      "final_url": "https://base.blockscout.com/api?module=logs&action=getLogs&fromBlock=52285835&toBlock=latest&address=0xA238Dd80C259a72e81d7e4664a9801593F98d1c5&topic0=0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.html",
+      "bytes": 6568,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://base.blockscout.com/api?module=logs&action=getLogs&fromBlock=51985835&toBlock=latest&address=0xA238Dd80C259a72e81d7e4664a9801593F98d1c5&topic0=0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286",
+      "fetched_at": "2026-10-14T08:18:00.099Z",
+      "status": 403,
+      "final_url": "https://base.blockscout.com/api?module=logs&action=getLogs&fromBlock=51985835&toBlock=latest&address=0xA238Dd80C259a72e81d7e4664a9801593F98d1c5&topic0=0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "10.html",
+      "bytes": 6568,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://build.avax.network/events/5ce3a8c2-21db-40fa-b40f-f82ecdde99db",
+      "fetched_at": "2026-10-14T08:18:00.130Z",
+      "status": 200,
+      "final_url": "https://build.avax.network/events/5ce3a8c2-21db-40fa-b40f-f82ecdde99db",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 151106,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://solana.com/x402/hackathon",
+      "fetched_at": "2026-10-14T08:18:00.865Z",
+      "status": 200,
+      "final_url": "https://solana.com/x402/hackathon",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.html",
+      "bytes": 981415,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.opire.dev/",
+      "fetched_at": "2026-10-14T08:18:01.466Z",
+      "status": 200,
+      "final_url": "https://docs.opire.dev/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline; filename=\"index.html\"",
+        "last-modified": "Tue, 22 Sep 2026 18:46:49 GMT"
+      },
+      "file": "13.html",
+      "bytes": 4601,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.algora.io/bounties/workflow",
+      "fetched_at": "2026-10-14T08:18:02.321Z",
+      "status": 404,
+      "final_url": "https://algora.io/bounties/workflow",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.html",
+      "bytes": 5852,
+      "truncated": false
+    }
+  ]
+}
