@@ -30,6 +30,7 @@ rows of the new period (10-10, 10-11) read US$0 overage and 0.0M D1 writes a day
 | **Hackathon prizes** (`ventures/hackathons`, 2026-10-11: Devpost lists 38 open online hackathons; PayPal AI $67.5k to 11-12, Nebius × NVIDIA $50k to 10-30, both accepting existing projects and UK entrants) | sponsors who have already committed the prize money; judges | the prize tables in the official rules | $5k–$20k per placing | one account per portal (owner), the entry package built by routines, the owner clicks submit |
 | **Open-source bounties** (`ventures/oss-bounties`, 2026-10-11: 553 open GitHub issues carry a bounty label, $50–$800 each on the first page) | maintainers who posted cash on an issue | the amount is on the issue | $50–$800 per merged PR | none per PR; `PR_TOKEN` and one board sign-in up front |
 | **Agent directories** (MCP Registry, mcpservers.org, Glama, awesome-remote-mcp-servers and the Apify Store live; Claude Connectors Directory submitted by the owner 2026-10-04, in review; Docker MCP Catalog entry built 2026-10-10, PR waits on the owner's token, action 021) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30); ~46k keyless calls and no payer from the five live directories by 2026-10-11; the first client to exhaust the keyless preview (10-11: 47 wall hits on contract awards, sanctions and TED) was offered sign-in only — gankdat `preview-wall-next-steps` (review W41) |
+| **x402 Bazaar** (Coinbase CDP discovery catalogue; exchange 2026-W42: 34,668 resources, the top 200 took 518,867 paid calls from 17,160 payer-slots in 30 days at a median US$0.003; no UK or company register, tender or sanctions resource listed; gankdat's x402 lane live since July at US$0.005 with 0 payments, unlisted — `x402-bazaar-listing` queued 2026-10-14) | AI agents holding USDC on Base that search the Bazaar by intent (searchX402Resources, the Bazaar MCP, agentic.market) | the catalogue's own per-resource 30-day call and payer counts; resellers of Exa search at US$0.01 with 168 payers | US$0.005 per call (CDP Facilitator: 1,000 settlements/month free, then US$0.001 each) | none — one settled payment indexes a resource; the owner makes it once (≤ 10 min) |
 
 ## 3. Unit economics (what has to be true)
 
@@ -1211,3 +1212,15 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   right after checkout when the 07:00 dispatch already wrote today's row, so the 7–9 h late cron stops repeating install, the
   runner refresh, IndexNow and the MCP probe (≈2 of 4 billed minutes a day, 14/week against the 350/week proof); a dispatched
   run always writes and the schedule stays the fallback for a morning nothing dispatched.
+- 2026-10-14 exchange: **gankdat — x402 Bazaar listing** (13.7 raw, 9 applied: evidence 4 × reach 4 ÷ 1 day + 10 owner
+  minutes). The CDP discovery API, read keyless through the relay, is the first shelf where agents' per-call payments are
+  measured resource by resource: 34,668 resources; the top 200 took 518,867 paid calls from 17,160 payer-slots in 30 days
+  (median price US$0.003, one entertainment endpoint 70% of calls); resellers of Exa search outsell the origin; no UK or
+  company register, tender or sanctions resource anywhere in it. gankdat's x402 lane has been live on Base at US$0.005 since
+  July with 0 payments because it is listed nowhere (v1 routes, no metadata, never the one settled call that indexes).
+  Queued: the v2 lane with agent-ready metadata (9), a `bazaar:` reading on the Daily numbers row (4), day-30 read 11-14 (3).
+  Parked with measured triggers: the x402 aggregator (4.0 — the best reseller in the catalogue nets ≈ US$38/month after the
+  US$0.001 facilitator fee; waits for our listing to convert) and the on-chain keeper (the 7-day simulation needs a POST relay
+  — foundry `relay-post-json` (3) queued; Blockscout 403, Routescan no Base). oss-bounties gains Opire as a second source (4):
+  Algora's public board page 404s and two boards kept 0 free funded fixes. Owner: nothing now; the settled payment (≤ 10 min)
+  is raised by the build that ships the metadata. `docs/exchange/2026-W42.md`.

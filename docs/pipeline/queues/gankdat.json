@@ -586,6 +586,37 @@
       "status": "done",
       "added": "2026-10-11",
       "done_at": "2026-10-11"
+    },
+    {
+      "id": "x402-bazaar-listing",
+      "title": "List gankdat's 17 pay-per-call endpoints in the x402 Bazaar: move the x402 lane from x402-hono 1.2 (v1) to the x402 v2 packages (@x402/hono + @x402/extensions/bazaar, or the CDP SDK's createX402Server) with an extensions.bazaar declaration per /x402/data/<slug> route generated from the registry (description that says when to use it, input schema from the source's zod query params, output example from page 1, price, network), keep CDP as the facilitator, dry-run every route with the keyless POST /platform/v2/x402/validate through the relay (add the validate call as a relay POST or run it from the metrics runner), then write the owner: line for the one settled payment that indexes the resources",
+      "why": "Exchange 2026-W42 winner (13.7 raw, 9 applied). The Bazaar's discovery API (keyless, read 2026-10-14) is the first shelf where agents' per-call payments are measured per resource: 34,668 resources, the top 200 took 518,867 paid calls from 17,160 payer-slots in 30 days at a median US$0.003; no UK or company register, tender or sanctions resource exists in it. gankdat's x402 lane has been live on Base at US$0.005 since July with 0 payments ever because it is listed nowhere — v1 routes with price and network only, and never the one settled payment the CDP docs say indexes a resource ('Every validated endpoint is eligible for indexing in the CDP Bazaar after a successful settled payment'). Every indexed resource read today is x402 v2, and the docs describe only the v2 declaration (declareDiscoveryExtension). Metadata must describe, never instruct (content policy: screened before and after indexing). Facilitator cost: first 1,000 onchain settlements a month free, then US$0.001 each. The settled payment needs a funded buyer wallet no sandbox or runner holds: when the metadata is live, write the owner: line (≤ 10 min — one x402-fetch call from the owner's own wallet, or a US$1 buyer wallet as a repository secret so the metrics runner can make and repeat it; the owner's call) and the ledger row if the owner funds a wallet. The self-paid half-cent is the documented onboarding step: the Daily numbers row must count it as internal (x402_paid from the probe's client id). Sellers report resources passing validation yet never indexed (cdp-sdk issues #806, #759): the proof is read from the catalogue, never assumed. Evidence and sources: docs/exchange/2026-W42.md, docs/relay/responses/exchange-2026-W42{,-b}/.",
+      "effort_days": 1,
+      "proof": "our payTo address returns ≥ 17 resources from GET /platform/v2/x402/discovery/resources within a week of the settled call; ≥ 50 paid calls from ≥ 5 payers (not ours) in the first 30 days (metrics-bazaar-merchant-read)",
+      "score": 9,
+      "status": "todo",
+      "added": "2026-10-14"
+    },
+    {
+      "id": "metrics-bazaar-merchant-read",
+      "title": "Bazaar reading on the Daily numbers row: the metrics runner lists our resources in the x402 Bazaar (GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources filtered by our payTo, or the merchant endpoint; keyless, answered 200 to the runner on 2026-10-14) and writes `bazaar: N listed, C calls/30d, P payers, last <date>` from each item's quality.l30DaysTotalCalls / l30DaysUniquePayers / lastCalledAt; `bazaar: 0 listed` until indexed",
+      "why": "The proof of x402-bazaar-listing is the catalogue's own count, not our x402_paid points (which include the owner's indexing call); the Bazaar ranks resources by these numbers, so the row also says whether we rank. Reuses the metrics runner's fetch pattern (Apify stats, IndexNow). Exchange 2026-W42.",
+      "effort_days": 0.1,
+      "proof": "the clause appears on the row the day after the build; the day-30 read quotes it",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-14"
+    },
+    {
+      "id": "x402-bazaar-day-30",
+      "title": "Day-30 read of the x402 Bazaar listing: resources indexed, calls and payers by resource from the `bazaar:` clause and the discovery API, our rank for a sample intent search (searchX402Resources 'UK company lookup', 'sanctions list', 'public tenders'), x402_paid excluding internal; record in RESEARCH.md and decide: extend (more routes, curation tier, the aggregator idea's trigger) or leave listed",
+      "why": "Exchange 2026-W42 proof (≥ 50 paid calls from ≥ 5 payers in 30 days). The reading also settles the parked x402-aggregator-mcp trigger (our listing converts) and whether compliance/register data has buyers in the catalogue at all (EDGAR 69 calls / 29 payers and an OFAC screen 12 / 10 were the only compliance-shaped resources in the top 200 on 2026-10-14).",
+      "effort_days": 0.1,
+      "proof": "numbers recorded in RESEARCH.md; keep/extend decision in STRATEGY §8; parked ideas re-triggered or left with the reason",
+      "score": 3,
+      "status": "todo",
+      "not_before": "2026-11-14",
+      "added": "2026-10-14"
     }
   ],
   "research_after": "2026-10-15"

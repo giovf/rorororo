@@ -2,7 +2,7 @@
   "venture": "oss-bounties",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-13",
+  "updated": "2026-10-14",
   "researched": "2026-10-13",
   "weight": 2,
   "items": [
@@ -137,6 +137,16 @@
       "status": "done",
       "added": "2026-10-12",
       "done_at": "2026-10-12"
+    },
+    {
+      "id": "bounty-board-opire-source",
+      "title": "Opire as a second bounty source: read docs.opire.dev/overview/commands and /rewards/pricing through the relay (the site is client-rendered; its landing page was read 2026-10-14), add OpireBot's funding comments and the Opire reward label to scripts/bounty-scanner.ts's funded-detection with a `not escrowed` note in the Taken column, and re-read the board once",
+      "why": "Exchange 2026-W42: two boards under the new shape rules kept 0 free funded fixes, the Algora public board page (algora.io/bounties) now 404s and its docs host redirects to a recruiting site, so the Algora-labelled supply the line was validated on is thinner than the 10-11 count suggested. Opire's own page: bounties start at US$20, developers claim by pull request, and 'a claim does not create an automatic payment; the creator arranges payment only if the pull request meets the issue requirements' — weaker than an escrowed board, so the scanner must show it as such. A second source is the one lever left before the Sunday review applies a board-count kill trigger.",
+      "effort_days": 0.3,
+      "proof": "the next board lists Opire-funded issues with their amounts and a `not escrowed` mark; the dropped-count table names the new rule",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-14"
     }
   ],
   "research_after": "2026-10-14"

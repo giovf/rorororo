@@ -1068,3 +1068,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 01:36 | burn-down | gankdat's cron-trigger self-heal still runs on a skipped run; a dispatched run never skips
 - 2026-10-14 01:36 | burn-down | Queue: foundry metrics-cron-short-circuit done; proof is 7 scheduled runs billing 1 min each
 - 2026-10-14 01:37 | burn-down | Stopping: 2 foundry items built (slot table, metrics short-circuit); starved-and-cooled, pass spent 17:17
+- 2026-10-14 08:50 | exchange | Winner: gankdat x402 Bazaar listing, score 9 — the one shelf where agents' per-call payments are measured
+- 2026-10-14 08:50 | exchange | Queue: gankdat x402-bazaar-listing (9), metrics-bazaar-merchant-read (4), x402-bazaar-day-30 (3, 11-14)
+- 2026-10-14 08:50 | exchange | Queue: foundry relay-post-json (3) — JSON-RPC and validate calls are POST; two relay rounds died on GET
+- 2026-10-14 08:50 | exchange | Queue: oss-bounties bounty-board-opire-source (4) — Algora's board page 404s, two boards had 0 free fixes
+- 2026-10-14 08:50 | exchange | Parked: x402 aggregator (4.0, best reseller nets ~US$38/mo), keeper rewards (no POST relay), AI-crawler paywall
+- 2026-10-14 08:50 | exchange | Declined: nothing new; GitLab Life After Code not entered (MIT and Duo rules); x402 hackathons were 2025
+- 2026-10-14 08:50 | exchange | Exchange file docs/exchange/2026-W42.md; Bazaar read in docs/relay/responses/exchange-2026-W42
+- 2026-10-14 08:50 | exchange | Owner later: one settled x402 payment (≤ 10 min) to index the listing, raised by the build that ships it
