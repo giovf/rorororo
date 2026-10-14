@@ -37,12 +37,34 @@ jobs:
       - uses: actions/checkout@v7
         with:
           ref: main
+      - name: Skip the late scheduled run when the dispatch already wrote today's row
+        # foundry metrics-cron-short-circuit (2026-10-14): since cron-drift-dispatch-row (10-10) the
+        # 07:00 routine dispatches this job when the day's row is missing, and GitHub still starts the
+        # cron 7–9 h late (16:10 on 10-12, 14:36 on 10-13), repeating the whole job for nothing — the writer
+        # leaves an existing row alone. A SCHEDULED run that finds today's row already on main ends
+        # here (every later step is skipped on `steps.row.outputs.skip`); a dispatched run always does
+        # the work, and the schedule stays the fallback for a morning nothing dispatched.
+        id: row
+        if: github.event_name == 'schedule'
+        run: |
+          today=$(date -u +%F)
+          missing=0
+          for store in ventures/*/STORE.md; do
+            grep -q "^| $today | Daily check |" "$(dirname "$store")/RESEARCH.md" || missing=1
+          done
+          if [ "$missing" = 0 ]; then
+            echo "::notice::today's Daily check rows ($today) are already on main; the late scheduled run has nothing to write"
+            echo "skip=true" >> "$GITHUB_OUTPUT"
+          fi
       - uses: actions/setup-node@v6
+        if: steps.row.outputs.skip != 'true'
         with:
           node-version: 22
       - name: Append today's Daily check row to each venture's RESEARCH.md
+        if: steps.row.outputs.skip != 'true'
         run: node --disable-warning=ExperimentalWarning scripts/store-metrics.ts
       - name: Search Console reading on today's rows (impressions, clicks, indexing verdicts)
+        if: steps.row.outputs.skip != 'true'
         # scripts/search-console.ts (foundry search-console-api-reading, 2026-10-07): a read-only
         # service account (scope webmasters.readonly; owner action 020 adds it as a Restricted user on
         # the gankdat.com and apps.gankdat.com properties and pastes its JSON key as the secret) reads
@@ -55,6 +77,7 @@ jobs:
         env:
           SEARCH_CONSOLE_KEY: ${{ secrets.SEARCH_CONSOLE_KEY }}
       - name: Licence sales on today's rows (keys issued and activations per extension)
+        if: steps.row.outputs.skip != 'true'
         # scripts/license-sales.ts (foundry metrics-extension-sales, 2026-10-11): lists the licence
         # Worker's `license:*` records in the LICENSES KV namespace with the deploy token (the same
         # CLOUDFLARE_API_TOKEN the gankdat jobs use; its template carries Workers KV Storage, action
@@ -66,6 +89,7 @@ jobs:
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: Commit
+        if: steps.row.outputs.skip != 'true'
         run: |
           git config user.name "foundry-metrics[bot]"
           git config user.email "info@gankdat.com"
