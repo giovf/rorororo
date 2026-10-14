@@ -7,7 +7,8 @@ programmes of any kind — those are out of scope for this operation (STRATEGY �
 ## 1. The job
 
 A maintainer or sponsor attaches cash to a GitHub issue through a bounty board (Algora is the
-largest: the issue gets a `💎 Bounty` label and a `/bounty $N` comment); whoever opens the pull
+largest: the issue gets a `💎 Bounty` label and a `/bounty $N` comment; Opire is the second, read
+since 2026-10-14 — a code owner's `/reward N`, paid by hand after the merge, not escrowed); whoever opens the pull
 request that closes it writes `/claim #<issue>` and is paid when the maintainer merges and
 releases the reward. The work is ordinary software engineering with tests, in the project's
 language and conventions.
@@ -117,6 +118,48 @@ rules keep 0 free funded fixes, the line's recurring-job assumption (§3) is wea
 count of 553 labelled issues suggested — most of that money is assigned, crowded or not a fix — and
 the review should set a board-count trigger beside the PR-based kill rule.
 
+## Research 2026-10-14 (build, `bounty-board-opire-source`): Opire as a second source
+
+Read through the relay: `docs.opire.dev` (overview/commands, rewards/pricing, rewards/lifecycle, faq,
+install-bot — a Docusaurus site, pre-rendered), Opire's app page (`app.opire.dev`, server-rendered), five
+GitHub searches and six issue threads (`docs/relay/responses/opire-*-2026-10-14/`).
+
+**How Opire works.** Only a code owner creates a bounty, from US$20, with `/reward N` (USD, no `$`) in an
+issue or comment of a repository where OpireBot is installed, or from the app dashboard. Developers post
+`/try`, then `/claim #N` on the pull request. "Creating or claiming a bounty does not create an automatic
+payment … each creator reviews whether it meets the requirements described in the issue. If it does, that
+creator arranges payment for their own bounty" — Opire publishes and tracks; nobody holds the money. So an
+Opire row is `not escrowed` on the board and in the filed item.
+
+**What it leaves on GitHub.** OpireBot appends the same footer to every issue of a repository it is on
+("This repo is using Opire … commenting `/reward 100`"), funded or not — 525 open issues created since
+07-16 carry it, 89 of them in three agent-farm repositories the repository rules drop. A reward created
+from the app leaves nothing a search finds (oxc#611, Opire's own showcase: the funder's manual comment and
+a link to app.opire.dev; 1 open issue on all of GitHub links an Opire issue page). OpireBot's reply to a
+`/try` on an unfunded issue is "😅 Ups... this issue does not have any reward yet!" (probe-rs#4355). No
+funded `/reward` by a code owner turned up in the 300 footer issues read.
+
+**How big it is (Opire's own page, 2026-10-14).** 44 bounties paid ever, US$4,975.87 in total; **6 open
+rewards worth US$212** on five issues: rodrigompy/bugb#1 ($100, a 2026-05 repository with one issue and
+no language — sandbox-shaped, under 20 stars), radumarias/rencfs#3 ($42, Rust, 2024-07, "research
+implementation for Windows" — research, not a fix), trovu/trovu#329 ($30, TypeScript, 2024-04, 38 trying
+and 23 claimants), flowese/UdioWrapper#7 ($20, Python, 2024-04, "auto solve hCaptcha" — CAPTCHA
+circumvention, out by policy), buape/kiai-bounties#1 ($20, 2025-06, a Discord-bot feature, nobody trying).
+Nothing here is a free funded fix the routines would take.
+
+**What the scanner now does.** Strips the footer before any text is read (its `/reward 100` and
+`/tip 20` are examples); searches the footer issues (one page, most recently updated) and reads the comments of up to 40
+of them for a code owner's `/reward N` or OpireBot's reward comment; reads Opire's app page for the open
+rewards and adds each listed open issue to the pool at the listed amount; marks such money
+`escrowed: false` (escrowed money wins over an Opire reward of the same size); drops a `/reward` from
+anyone but a code owner as `reward not from a code owner`; the Taken column reads `free, not escrowed`
+and the filed item's title says `(Opire, not escrowed)`. The board header counts the Opire list.
+
+**Verdict for the Sunday review.** Opire adds at most a handful of rows a year: its whole open supply is
+five issues and US$212, four of them from 2024–2025, and the money is a promise, not an escrow. It does
+not change the board-count picture — the 10-14 board had 8 kept, 0 free funded fixes — and it is not a
+reason to keep the line open on its own. The board-count trigger asked for on 10-13 stands.
+
 ## Metrics
 
 | Date | Event | Users | Rating | Sales | Notes |
@@ -129,3 +172,4 @@ the review should set a board-count trigger beside the PR-based kill rule.
 | 2026-10-12 | Scanner fix | — | — | — | 5 of 5 filed items dropped unbuilt (assigned, unfunded, report, usage task, contest); scanner now drops contests and usage tasks and files nothing under $25 |
 | 2026-10-12 | No claim | — | — | — | useagent#61 ($80) dropped on read: maintainer-assigned, real-phone recordings, weeks of app work; 6 of 6 filed items dropped; scanner also drops device, assigned and hardware shapes |
 | 2026-10-13 | Research | — | — | — | 10-12 board: 16 kept, 0 free funded fixes (free rows are dropped shapes, the rest 1–14 PRs deep); research_after 10-14 after two boards under the new rules |
+| 2026-10-14 | Second source | — | — | — | Opire read: 6 open rewards worth $212 on 5 issues, none a free funded fix; scanner reads Opire's list and `/reward`, marks rows `not escrowed`; 10-14 board 8 kept, 0 free |

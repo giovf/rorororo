@@ -1084,3 +1084,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 09:55 | build | gankdat v0.25.0 (constants + server.json); Taskmaster 35; queue x402-bazaar-listing done; 357 v1 packages dropped
 - 2026-10-14 09:55 | build | Owner: action 026 — one half-cent x402 payment (≤ 10 min) indexes the 17 endpoints; £0.80 planned ledger row
 - 2026-10-14 09:55 | notify | One half-cent x402 payment (~5 min) lists gankdat in Coinbase's agent marketplace
+- 2026-10-14 17:40 | build | Opire read via relay: docs (Docusaurus), app page, 5 GitHub searches, 6 threads; api.github.com on the allowlist
+- 2026-10-14 17:40 | build | Opire: code owner's /reward N, paid by hand after merge; bot footer on every issue; app rewards leave no trace
+- 2026-10-14 17:40 | build | Scanner: footer stripped, /reward + OpireBot read in footer issues, app list read, rows `not escrowed`
+- 2026-10-14 17:40 | build | Tests: 16 pass (footer, /reward, escrowed precedence, app-page parser on the real payload shape)
+- 2026-10-14 17:40 | build | Opire supply 10-14: 6 open rewards, $212, 5 issues (4 from 2024–25), none a free funded fix; board 8 kept, 0 free
+- 2026-10-14 17:40 | build | Queue: oss-bounties bounty-board-opire-source done; verdict for the Sunday review in RESEARCH.md

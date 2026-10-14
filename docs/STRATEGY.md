@@ -1232,3 +1232,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   Indexing needs one settled payment no runner can make: action 026 asks the owner for a half-cent call from a wallet of
   theirs, or a US$1 probe wallet as the `X402_PROBE_KEY` secret (£0.80 planned). The proof is read from the catalogue by
   `metrics-bazaar-merchant-read` (next gankdat item), day-30 read 2026-11-14; nothing is assumed from validation alone.
+- 2026-10-14 build: Opire added to the bounty scanner as a second source (`bounty-board-opire-source`): a code owner's
+  `/reward N` and Opire's own open list are read, OpireBot's footer is stripped, and such rows are `not escrowed` because the
+  creator pays by hand after the merge. Opire's whole open supply is six rewards worth US$212 on five issues, four of them from
+  2024–2025 — it does not change the board-count picture (10-14: 8 kept, 0 free funded fixes), so the board-count trigger the
+  10-13 research asked for stays on the Sunday review's list.
