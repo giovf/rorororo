@@ -770,13 +770,13 @@
     {
       "id": "relay-post-json",
       "title": "Fetch relay: a `POST <url> <json>` request line (JSON body, same host allowlist, body capped at 4 kB, response capped at 8 MB, never a credential) in scripts/fetch-relay.mjs + README, so routines can read JSON-RPC (Base/Ethereum public RPCs: eth_getLogs, eth_blockNumber) and POST-only search/validation endpoints (the Bazaar's /platform/v2/x402/validate)",
-      "why": "Exchange 2026-W42: two of the day's three relay rounds died on GET-only reads — Blockscout's Base API answered 403 to the runner, Routescan has no Base, and JSON-RPC itself is POST. The onchain-keeper-rewards idea's trigger (a 7-day simulation over Base liquidation logs) and the Bazaar validate dry-run both need it; so will any future chain or search read. Public hosts and public bodies only, as today.",
+      "why": "Exchange 2026-W42: two of the day's three relay rounds died on GET-only reads — Blockscout's Base API answered 403 to the runner, Routescan has no Base, and JSON-RPC itself is POST. The onchain-keeper-rewards idea's trigger (a 7-day simulation over Base liquidation logs) and the Bazaar validate dry-run both need it; so will any future chain or search read. Public hosts and public bodies only, as today. Built 2026-10-14 (burn-down): scripts/fetch-relay-lines.ts parses `POST <url> <json>` (body = rest of the line, ≤ 4 kB, valid JSON, credential-shaped keys and values refused with the reason in meta.json; 6 tests), fetch-relay.mjs sends it as application/json under the same allowlist and 8 MB cap, mainnet.base.org added; proof request relay-post-proof-2026-10-14 (eth_blockNumber, the CDP validate call, one refused line).",
       "effort_days": 0.2,
       "proof": "one request file with a POST line returns the JSON body under docs/relay/responses/<name>/; a credential-shaped body is refused",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-14",
-      "doing_since": "2026-10-14"
+      "done_at": "2026-10-14"
     }
   ]
 }

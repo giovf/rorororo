@@ -1363,13 +1363,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-14T17:31:10.994Z"
+      },
+      {
+        "id": "37",
+        "title": "Fetch relay POST lines (foundry relay-post-json, burn-down 2026-10-14)",
+        "description": "scripts/fetch-relay-lines.ts (POST <url> <json> parsing, 4 kB cap, credential-shaped refusal; fetch-relay-lines.test.ts), fetch-relay.mjs sends JSON bodies, README syntax, mainnet.base.org on the allowlist.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-14T17:42:20.379Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-14T17:31:10.994Z",
-      "taskCount": 36,
-      "completedCount": 29,
+      "lastModified": "2026-10-14T17:42:20.379Z",
+      "taskCount": 37,
+      "completedCount": 30,
       "tags": [
         "master"
       ]

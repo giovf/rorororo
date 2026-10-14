@@ -1,0 +1,5 @@
+# foundry relay-post-json proof (2026-10-14): a JSON-RPC read and a POST-only validation endpoint.
+POST https://mainnet.base.org {"jsonrpc":"2.0","id":1,"method":"eth_blockNumber","params":[]}
+POST https://api.cdp.coinbase.com/platform/v2/x402/validate {"resource":"https://gankdat.com/x402/data/uk-tenders","method":"GET"}
+# a credential-shaped body must be refused in meta.json and never sent:
+POST https://mainnet.base.org {"jsonrpc":"2.0","id":2,"method":"eth_blockNumber","params":[],"api_key":"not-a-real-key"}

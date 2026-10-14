@@ -6,10 +6,15 @@
 // docs/relay/responses/<name>/ (files + meta.json). The routine pulls a minute or two later.
 //
 // Line syntax:   [HEAD|GET] [RANGE=a-b] <https url>      (# comments and blank lines ignored)
+//                POST <https url> <json>                  (foundry relay-post-json, 2026-10-14)
 // Only hosts on the allowlist below are fetched (public data and store pages — never anything
-// that needs a credential). GET bodies are capped at MAX_BYTES; use RANGE for big files.
+// that needs a credential). GET bodies are capped at MAX_BYTES; use RANGE for big files. A POST
+// body is one JSON document, ≤ 4 kB, refused when a key or value is credential-shaped
+// (scripts/fetch-relay-lines.ts) — for JSON-RPC reads and POST-only validation endpoints.
 import { mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
+
+import { parseLine } from './fetch-relay-lines.ts';
 
 const ROOT = path.resolve(import.meta.dirname, '..', 'docs', 'relay');
 const MAX_BYTES = 8 * 1024 * 1024;
@@ -72,27 +77,13 @@ const ALLOWED = [
   'algora.io', // Algora's own open-bounty board, server-rendered (exchange 2026-W42)
   '.opire.dev', // Opire bounty platform pages (exchange 2026-W42)
   'api.routescan.io', // Routescan keyless Etherscan-compatible API for Base: liquidation logs, gas price (exchange 2026-W42, keeper idea)
+  'mainnet.base.org', // Base's public JSON-RPC endpoint (POST eth_blockNumber, eth_getLogs — foundry relay-post-json, 2026-10-14)
   'api.github.com', // GitHub REST API, unauthenticated: issue comments and searches a bounty scanner rule is verified against (oss-bounties `bounty-board-opire-source`, 2026-10-14)
 ];
 
 function allowed(hostname) {
   const h = hostname.toLowerCase();
   return ALLOWED.some((a) => (a.startsWith('.') ? h === a.slice(1) || h.endsWith(a) : h === a));
-}
-
-function parseLine(line) {
-  const t = line.trim();
-  if (t === '' || t.startsWith('#')) return null;
-  const parts = t.split(/\s+/);
-  let method = 'GET';
-  let range;
-  while (parts.length > 1) {
-    const p = parts[0].toUpperCase();
-    if (p === 'GET' || p === 'HEAD') method = parts.shift().toUpperCase();
-    else if (p.startsWith('RANGE=')) range = parts.shift().slice(6);
-    else break;
-  }
-  return { method, range, url: parts.join(' ') };
 }
 
 function extOf(contentType) {
@@ -117,12 +108,18 @@ async function fetchOne(req, outDir, index) {
   if (url.protocol !== 'https:' || !allowed(url.hostname)) {
     return { ...meta, error: `host not on the relay allowlist: ${url.hostname}` };
   }
+  if (req.error) return { ...meta, error: req.error }; // a malformed or credential-shaped POST line
   const headers = { 'user-agent': USER_AGENT, accept: '*/*' };
   if (req.range) headers.range = `bytes=${req.range}`;
+  if (req.method === 'POST') {
+    headers['content-type'] = 'application/json';
+    headers.accept = 'application/json, */*';
+  }
   try {
     const res = await fetch(url, {
       method: req.method,
       headers,
+      body: req.method === 'POST' ? req.body : undefined,
       redirect: 'follow',
       signal: globalThis.AbortSignal.timeout(TIMEOUT_MS),
     });

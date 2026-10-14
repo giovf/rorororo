@@ -1242,3 +1242,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   own 402, so no new secret), `0 listed` until the owner's action-026 payment indexes us; the metrics job gained a probe
   step that, given `X402_PROBE_KEY` (option B), repeats the half-cent call only while unlisted, monthly after, never twice
   in a week. The day-30 read (2026-11-14) quotes this clause, never our own x402_paid count.
+- 2026-10-14 burn-down: foundry `relay-post-json` built — the fetch relay takes `POST <url> <json>` lines (JSON-RPC reads
+  on Base, the Bazaar's POST-only validate endpoint), same host allowlist and caps, a credential-shaped key or value refused
+  before anything is sent. Two of the W42 exchange's three relay rounds had died on GET-only reads; the keeper-rewards
+  trigger and any future chain or search read now have a path.

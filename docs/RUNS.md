@@ -1094,3 +1094,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 17:40 | build | Tests: 16 pass (footer, /reward, escrowed precedence, app-page parser on the real payload shape)
 - 2026-10-14 17:40 | build | Opire supply 10-14: 6 open rewards, $212, 5 issues (4 from 2024–25), none a free funded fix; board 8 kept, 0 free
 - 2026-10-14 17:40 | build | Queue: oss-bounties bounty-board-opire-source done; verdict for the Sunday review in RESEARCH.md
+- 2026-10-14 17:42 | burn-down | Fetch relay: `POST <url> <json>` lines (≤ 4 kB JSON, same allowlist, 8 MB cap); mainnet.base.org allowed
+- 2026-10-14 17:42 | burn-down | scripts/fetch-relay-lines.ts refuses credential-shaped keys and values before sending; 6 tests
+- 2026-10-14 17:42 | burn-down | Relay request relay-post-proof-2026-10-14: eth_blockNumber, CDP validate, one refused line
+- 2026-10-14 17:42 | burn-down | Queue: foundry relay-post-json done; proof is that request's meta.json on main
