@@ -1207,3 +1207,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `usage NN%` note when BURN.json's report is older than 7 days. First reading, W42: 70 burn-down fires, 17 built, 49 cold (the
   `pipeline cold` gate ending the run with no line, as designed), 0 silent; 14 build slots, 7 built — about half the week's slots had
   nothing queued, which is the exchange-cadence question the review now owns, not a limit problem.
+- 2026-10-14 burn-down: `metrics-cron-short-circuit` built — both metrics workflows (drafted in `docs/ci/`) end a scheduled run
+  right after checkout when the 07:00 dispatch already wrote today's row, so the 7–9 h late cron stops repeating install, the
+  runner refresh, IndexNow and the MCP probe (≈2 of 4 billed minutes a day, 14/week against the 350/week proof); a dispatched
+  run always writes and the schedule stays the fallback for a morning nothing dispatched.

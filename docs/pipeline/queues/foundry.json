@@ -748,13 +748,13 @@
     {
       "id": "metrics-cron-short-circuit",
       "title": "The late `37 6` / `52 6` metrics schedules exit in their first step when the day's Daily numbers row already exists",
-      "why": "Research 2026-10-14 00:40 (burn-down, actions_list): since cron-drift-dispatch-row (10-10) the 07:00 routine dispatches both metrics jobs at once (07:15 on 10-12, 07:14 on 10-13) and the scheduled runs still fire 7–9 h late (gankdat metrics 16:01 / 14:31, store metrics 16:10 / 14:36), repeating the whole job — checkout, install, the runner refresh, IndexNow, the MCP probe — for 1 + 3 billed minutes a day (28/week against the 350/week proof of actions-minutes) while metrics.mjs leaves the existing row alone (one row per day on 10-12 and 10-13). Build: a first step in both workflows (docs/ci/) that greps today's `| Daily numbers |` row out of ventures/gankdat/RESEARCH.md (store metrics: its own row file) and ends the job with a ::notice:: when it is there, before checkout of node_modules; the schedule stays as the fallback for a morning the routine did not dispatch. Saves ~2 of 4 billed minutes a day and the duplicate IndexNow ping; the row's source is already the dispatch (metrics-crons-day-7-read evidence).",
+      "why": "Research 2026-10-14 00:40 (burn-down, actions_list): since cron-drift-dispatch-row (10-10) the 07:00 routine dispatches both metrics jobs at once (07:15 on 10-12, 07:14 on 10-13) and the scheduled runs still fire 7–9 h late (gankdat metrics 16:01 / 14:31, store metrics 16:10 / 14:36), repeating the whole job — checkout, install, the runner refresh, IndexNow, the MCP probe — for 1 + 3 billed minutes a day (28/week against the 350/week proof of actions-minutes) while metrics.mjs leaves the existing row alone (one row per day on 10-12 and 10-13). Build: a first step in both workflows (docs/ci/) that greps today's `| Daily numbers |` row out of ventures/gankdat/RESEARCH.md (store metrics: its own row file) and ends the job with a ::notice:: when it is there, before checkout of node_modules; the schedule stays as the fallback for a morning the routine did not dispatch. Saves ~2 of 4 billed minutes a day and the duplicate IndexNow ping; the row's source is already the dispatch (metrics-crons-day-7-read evidence). Built 2026-10-14 (burn-down): docs/ci/gankdat-metrics.yml and docs/ci/store-metrics.yml (the installer moves them) gain a `row` step after checkout, on `schedule` events only, that greps today's `| Daily numbers |` row (gankdat) or every STORE.md venture's `| Daily check |` row (store metrics) and sets `skip=true` with a `::notice::`; every later step carries `if: steps.row.outputs.skip != 'true'` except gankdat's self-heal of cron triggers, which stays the daily restore for a dead session. A dispatched run never skips. Proof reading: the scheduled runs from 10-15 on.",
       "effort_days": 0.1,
       "proof": "the next 7 scheduled runs of both jobs bill 1 minute each and write no refresh or IndexNow lines (actions_list + job logs)",
       "score": 2,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-14",
-      "doing_since": "2026-10-14"
+      "done_at": "2026-10-14"
     },
     {
       "id": "pre-research-shelf-cap",

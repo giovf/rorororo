@@ -1064,3 +1064,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 01:26 | burn-down | Stopping for time is not a starved signal (only Stopping:); a silent hour after it is silent
 - 2026-10-14 01:26 | burn-down | Monday report gains a Slots section + usage-note ask on its digest; retro and review read the table
 - 2026-10-14 01:26 | burn-down | Queue: foundry slot-utilisation-report done; proof is the W43 report's Slots table vs a hand count
+- 2026-10-14 01:36 | burn-down | Metrics workflows (docs/ci): a scheduled run ends after checkout when today's row already exists
+- 2026-10-14 01:36 | burn-down | gankdat's cron-trigger self-heal still runs on a skipped run; a dispatched run never skips
+- 2026-10-14 01:36 | burn-down | Queue: foundry metrics-cron-short-circuit done; proof is 7 scheduled runs billing 1 min each
+- 2026-10-14 01:37 | burn-down | Stopping: 2 foundry items built (slot table, metrics short-circuit); starved-and-cooled, pass spent 17:17
