@@ -1058,3 +1058,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 00:40 | burn-down | Nothing measures the 70–80% target: usage note 10 days stale, 7 cold burn fires on 10-13 left no line
 - 2026-10-14 00:40 | burn-down | Queue: foundry +3 (slot utilisation 4, metrics cron short-circuit 2, pre-research shelf cap 3, dated 10-19)
 - 2026-10-14 00:40 | burn-down | Queue: actions-minutes and metrics-crons-day-7-read gain the post-trim and day-3/4 readings
+- 2026-10-14 00:24 | watchdog | ci-minutes: 797 billed min/7d (~3416/month, wall 363; private cap 2,000, warn 1700); top: owner notes 202, check 111, no
