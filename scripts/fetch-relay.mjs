@@ -72,6 +72,7 @@ const ALLOWED = [
   'algora.io', // Algora's own open-bounty board, server-rendered (exchange 2026-W42)
   '.opire.dev', // Opire bounty platform pages (exchange 2026-W42)
   'api.routescan.io', // Routescan keyless Etherscan-compatible API for Base: liquidation logs, gas price (exchange 2026-W42, keeper idea)
+  'api.github.com', // GitHub REST API, unauthenticated: issue comments and searches a bounty scanner rule is verified against (oss-bounties `bounty-board-opire-source`, 2026-10-14)
 ];
 
 function allowed(hostname) {
