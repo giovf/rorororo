@@ -1101,3 +1101,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 17:50 | burn-down | Relay POST proof: eth_blockNumber 200, CDP validate 200, api_key line refused unsent (meta.json)
 - 2026-10-14 17:50 | burn-down | CDP validate rejected every x402 route: example per_page was a string under an integer schema
 - 2026-10-14 17:50 | burn-down | gankdat v0.25.1: Bazaar example query values typed from the input schema; test over 17 sources
+- 2026-10-14 17:55 | burn-down | Exchange pre-research: UK VAT number check parked (rivals US$0.01–0.09/check; HMRC access terms via relay)

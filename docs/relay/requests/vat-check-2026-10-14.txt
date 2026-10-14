@@ -1,0 +1,6 @@
+# exchange pre-research 2026-10-14 (uk-vat-number-check): HMRC API access terms and the Apify rival
+GET https://www.tax.service.gov.uk/api-documentation/docs/api/service/vat-registered-companies-api/1.0
+GET https://www.tax.service.gov.uk/api-documentation/docs/api/service/vat-registered-companies-api/2.0
+GET https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/vat-registered-companies-api/1.0
+GET https://developer.service.hmrc.gov.uk/api-documentation/docs/terms-of-use
+GET https://apify.com/nocodeventure/uk-vat-hmrc-api

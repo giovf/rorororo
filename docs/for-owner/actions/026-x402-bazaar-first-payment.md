@@ -17,7 +17,7 @@ metadata the catalogue reads — one entry per dataset, 17 in all. The catalogue
 funded wallet. That one payment is yours to make. It is the documented onboarding step, not a sale;
 the metrics row counts it as internal.
 
-Wait for the deploy first: `curl -s https://gankdat.com/v1/health` must show `"version":"0.25.1"` (0.25.1, pushed 2026-10-14 evening, fixes the metadata CDP rejected: `per_page` typed as a string)
+Wait for the deploy first: `curl -s https://gankdat.com/v1/health` must show `"version":"0.25.1"` (0.25.1, pushed 2026-10-14 evening, fixes the metadata CDP rejected: `per_page` typed as a string — a payment made against 0.25.0 did not index anything, so if you already paid today, one more call after 0.25.1 is live is needed)
 (CI deploys within ~10 minutes of the build's push).
 
 ## Actions
