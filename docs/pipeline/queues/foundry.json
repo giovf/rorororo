@@ -752,8 +752,9 @@
       "effort_days": 0.1,
       "proof": "the next 7 scheduled runs of both jobs bill 1 minute each and write no refresh or IndexNow lines (actions_list + job logs)",
       "score": 2,
-      "status": "todo",
-      "added": "2026-10-14"
+      "status": "doing",
+      "added": "2026-10-14",
+      "doing_since": "2026-10-14"
     },
     {
       "id": "pre-research-shelf-cap",
