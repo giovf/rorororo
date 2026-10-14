@@ -6,11 +6,15 @@ import {
   itemId,
   openPrs,
   parseAmount,
+  parseOpireRewards,
+  parseReward,
   rankOf,
   renderBoard,
   repoExcluded,
   shapeExcluded,
+  stripOpireFooter,
   takenBy,
+  takenColumn,
   type Bounty,
   type Comment,
   type Repo,
@@ -39,6 +43,7 @@ const bounty = (over: Partial<Bounty> = {}): Bounty => ({
   amount: 400,
   attempts: 1,
   funding: 'funded',
+  escrowed: true,
   assigned: false,
   prs: 0,
   stars: 900,
@@ -83,21 +88,23 @@ describe('fundingOf', () => {
     expect(fundingOf(issue('Add CSV export', '', 'NONE', ['💎 Bounty', '$400']), [])).toEqual({
       amount: 400,
       funding: 'funded',
+      escrowed: true,
+      ignored: 0,
     });
     expect(
       fundingOf(issue('Fix parse_duration'), [
         comment('💎 **$1,200 bounty** created by acme', { login: 'algora-pbc[bot]' }),
       ]),
-    ).toEqual({ amount: 1200, funding: 'funded' });
+    ).toEqual({ amount: 1200, funding: 'funded', escrowed: true, ignored: 0 });
     expect(
       fundingOf(issue('Fix parse_duration'), [
         comment('/bounty $250', { author_association: 'MEMBER' }),
       ]),
-    ).toEqual({ amount: 250, funding: 'funded' });
+    ).toEqual({ amount: 250, funding: 'funded', escrowed: true, ignored: 0 });
     // tt-metal#59732: the amount sits in a maintainer's own title.
     expect(
       fundingOf(issue('[Bounty $3,000] Fix sampling bias', 'Reward: $3,000 USD', 'MEMBER'), []),
-    ).toEqual({ amount: 3000, funding: 'funded' });
+    ).toEqual({ amount: 3000, funding: 'funded', escrowed: true, ignored: 0 });
   });
   it('reads a contributor asking for money as a proposal, not a bounty', () => {
     // turso#8749: a contributor wrote `/bounty $650` and nobody funded it.
@@ -107,18 +114,20 @@ describe('fundingOf', () => {
           author_association: 'CONTRIBUTOR',
         }),
       ]),
-    ).toEqual({ amount: 650, funding: 'proposed' });
+    ).toEqual({ amount: 650, funding: 'proposed', escrowed: false, ignored: 0 });
     // omi#20175: the issue author's "Proposed Bounty: $150 – $250 USDC".
     expect(
       fundingOf(issue('[Bug]: token refresh', 'Proposed Bounty: $150 – $250 USDC to 0xabc'), []),
-    ).toEqual({ amount: 250, funding: 'proposed' });
+    ).toEqual({ amount: 250, funding: 'proposed', escrowed: false, ignored: 0 });
     // A maintainer's own text that reads as a proposal is still a proposal.
     expect(
       fundingOf(issue('fix(x): one bad doc 500s ($50 bounty proposal)', '', 'MEMBER'), []),
-    ).toEqual({ amount: 50, funding: 'proposed' });
+    ).toEqual({ amount: 50, funding: 'proposed', escrowed: false, ignored: 0 });
     expect(fundingOf(issue('Handle out-of-disk'), [comment('I can take this')])).toEqual({
       amount: 0,
       funding: 'none',
+      escrowed: false,
+      ignored: 0,
     });
   });
   it('lets a funded figure win over a larger proposed one', () => {
@@ -126,7 +135,116 @@ describe('fundingOf', () => {
       fundingOf(issue('Fix it', 'I propose $900 for this'), [
         comment('/bounty $100', { author_association: 'OWNER' }),
       ]),
-    ).toEqual({ amount: 100, funding: 'funded' });
+    ).toEqual({ amount: 100, funding: 'funded', escrowed: true, ignored: 0 });
+  });
+  // Opire (docs.opire.dev/overview/commands and /rewards/pricing, read 2026-10-14): a code owner's
+  // `/reward 20` is USD with no `$`; the creator pays by hand after the merge, so nothing is escrowed.
+  it("reads a code owner's /reward as funded but not escrowed, and ignores anyone else's", () => {
+    expect(
+      fundingOf(issue('Open target URLs in the default browser'), [
+        comment('/reward 30', { author_association: 'OWNER' }),
+      ]),
+    ).toEqual({ amount: 30, funding: 'funded', escrowed: false, ignored: 0 });
+    expect(
+      fundingOf(issue('Add a Windows build', '/reward 42\nSee the thread.', 'OWNER'), []),
+    ).toEqual({ amount: 42, funding: 'funded', escrowed: false, ignored: 0 });
+    expect(
+      fundingOf(issue('Fix the installer on Alpine'), [
+        comment('/reward 100', { author_association: 'NONE' }),
+        comment('/try', { author_association: 'NONE' }),
+        comment('😅 Ups... this issue does not have any reward yet!', { login: 'opirebot[bot]' }),
+      ]),
+    ).toEqual({ amount: 0, funding: 'none', escrowed: false, ignored: 1 });
+    expect(
+      fundingOf(issue('Fix it'), [
+        comment('💵 A reward of $25 was created for this issue', { login: 'opirebot[bot]' }),
+      ]),
+    ).toEqual({ amount: 25, funding: 'funded', escrowed: false, ignored: 0 });
+    // Escrowed money wins over an Opire reward of the same size; a larger reward wins on amount.
+    expect(
+      fundingOf(issue('Fix it', '', 'NONE', ['$50']), [
+        comment('/reward 50', { author_association: 'MEMBER' }),
+      ]),
+    ).toEqual({ amount: 50, funding: 'funded', escrowed: true, ignored: 0 });
+    expect(
+      fundingOf(issue('Fix it', '', 'NONE', ['$50']), [
+        comment('/reward 80', { author_association: 'MEMBER' }),
+      ]),
+    ).toEqual({ amount: 80, funding: 'funded', escrowed: false, ignored: 0 });
+  });
+});
+
+describe('Opire footer and rewards', () => {
+  // The footer OpireBot appends to every issue of a repository it is installed on (probe-rs#4355,
+  // read 2026-10-14) — the `/reward 100` and `/tip 20` in it are examples, not money.
+  const footer =
+    '<br/>\n<hr/>\n\n<details><summary>This repo is using Opire - what does it mean? 👇</summary><br/>💵 Everyone can add rewards for this issue commenting <code>/reward 100</code> (replace <code>100</code> with the amount).<br/>🕵️‍♂️ If someone starts working on this issue to earn the rewards, they can comment <code>/try</code> to let everyone know!<br/>🙌 And when they open the PR, they can comment <code>/claim #35</code> either in the PR description or in a PR\'s comment.<br/><br/>🪙 Also, everyone can tip any user commenting <code>/tip 20 @someone</code> (replace <code>20</code> with the amount, and <code>@someone</code> with the user to tip).<br/><br/>📖 If you want to learn more, check out our <a href="https://docs.opire.dev">documentation</a>.</details>';
+  it('strips the footer and the badge and marks the repository', () => {
+    const body = `Installer fails on Alpine.\n\n${footer}`;
+    expect(stripOpireFooter(body)).toEqual({ text: 'Installer fails on Alpine.', opire: true });
+    const badge =
+      '[![Opire Bounty](https://img.shields.io/badge/bounty-Opire-emerald?style=for-the-badge)](https://github.com/x/y)\n<br/>\n<hr/>\n\n' +
+      footer.replace(/^<br\/>\n<hr\/>\n\n/, '');
+    expect(stripOpireFooter(`Fix the flag leak.\n\n---\n\n${badge}`)).toEqual({
+      text: 'Fix the flag leak.\n\n---',
+      opire: true,
+    });
+    expect(stripOpireFooter('Plain issue')).toEqual({ text: 'Plain issue', opire: false });
+    expect(parseReward([footer])).toBe(0);
+    expect(parseReward(['/reward 20', 'please /reward 1,000 this', '/reward $35'])).toBe(35);
+  });
+  it('reads the open rewards from the app page and skips what is not an issue', () => {
+    const reward = (url: string, cents: number, extra: Record<string, unknown> = {}) => ({
+      id: 'x',
+      title: 'Open target URLs [PWA] not in PWA',
+      url,
+      platform: 'GITHUB',
+      programmingLanguages: ['TypeScript'],
+      pendingPrice: { value: cents, unit: 'USD_CENT' },
+      tryingUsers: [{ id: 'a' }, { id: 'b' }],
+      claimerUsers: [{ id: 'a' }],
+      ...extra,
+    });
+    const flight = JSON.stringify([
+      '$',
+      'div',
+      null,
+      {
+        initialRewards: [
+          reward('https://github.com/trovu/trovu/issues/329', 3000),
+          reward('https://github.com/radumarias/rencfs/issues/3', 4200, {
+            programmingLanguages: ['Rust'],
+            tryingUsers: [],
+            claimerUsers: [],
+          }),
+          reward('https://gitlab.com/x/y/-/issues/1', 2000),
+          reward('https://github.com/a/b/issues/9', 0),
+        ],
+        stats: { bountiesAvailable: 6 },
+      },
+    ]);
+    const half = Math.floor(flight.length / 2);
+    const html = `<html><script>self.__next_f.push([1,${JSON.stringify(flight.slice(0, half))}])</script><script>self.__next_f.push([1,${JSON.stringify(flight.slice(half))}])</script></html>`;
+    expect(parseOpireRewards(html)).toEqual([
+      {
+        url: 'https://github.com/trovu/trovu/issues/329',
+        amount: 30,
+        trying: 2,
+        claimers: 1,
+        languages: ['TypeScript'],
+      },
+      {
+        url: 'https://github.com/radumarias/rencfs/issues/3',
+        amount: 42,
+        trying: 0,
+        claimers: 0,
+        languages: ['Rust'],
+      },
+    ]);
+    expect(parseOpireRewards('<html>no payload</html>')).toEqual([]);
+    expect(
+      parseOpireRewards('<script>self.__next_f.push([1,"\\"initialRewards\\":[{"])</script>'),
+    ).toEqual([]);
   });
 });
 
@@ -144,6 +262,11 @@ describe('openPrs and takenBy', () => {
     expect(takenBy({ assigned: true, prs: 1 })).toBe('assigned');
     expect(takenBy({ assigned: false, prs: 2 })).toBe('2 PRs open');
     expect(takenBy({ assigned: false, prs: 1 })).toBe('1 PR open');
+    expect(takenColumn({ assigned: false, prs: 0, escrowed: true })).toBe('free');
+    expect(takenColumn({ assigned: false, prs: 0, escrowed: false })).toBe('free, not escrowed');
+    expect(takenColumn({ assigned: false, prs: 2, escrowed: false })).toBe(
+      '2 PRs open, not escrowed',
+    );
   });
 });
 
@@ -257,16 +380,33 @@ describe('board and queue', () => {
       bounty({ number: 43, rank: 100, amount: 100 }),
       bounty({ number: 44, rank: 50, amount: 100, prs: 2 }),
       bounty({ number: 45, rank: 20, amount: 20 }),
+      bounty({ number: 46, rank: 30, amount: 30, escrowed: false }),
     ];
-    const md = renderBoard(b, { raw: 500, kept: 5, dropped: { fork: 3 } }, '2026-10-11');
-    expect(md).toMatch(/Read 500 issues, kept 5; dropped: fork 3/);
+    const md = renderBoard(b, { raw: 500, kept: 6, dropped: { fork: 3 }, opire: 5 }, '2026-10-11');
+    expect(md).toMatch(/Read 500 issues \(5 listed on Opire\), kept 6; dropped: fork 3/);
+    expect(md).toMatch(/\| \$30 \| 30 \| .* \| free, not escrowed \| 1 \|/);
+    expect(renderBoard([], { raw: 1, kept: 0, dropped: {} }, '2026-10-11')).toMatch(
+      /Read 1 issues, kept 0; dropped: none/,
+    );
     expect(md).toMatch(/\| \$20 \| 20 \| /);
     expect(md).toMatch(/\| \$900 \| 900 \| \[acme\/widgets\].* \| assigned \| 1 \|/);
     expect(md).toMatch(/\| \$400 \| 400 \| \[acme\/widgets\].* \| free \| 1 \|/);
     expect(md).toMatch(/\| 2 PRs open \| 1 \|/);
     const out = fileBounties(queue, b, '2026-10-11', false);
-    expect(out.added).toEqual(['bounty-acme-widgets-42', 'bounty-acme-widgets-43']); // #45 is under $25
+    // #45 is under $25; #46 is the third free one, an Opire reward, and says so.
+    expect(out.added).toEqual([
+      'bounty-acme-widgets-42',
+      'bounty-acme-widgets-43',
+      'bounty-acme-widgets-46',
+    ]);
     expect(out.queue.items[0]!.why).toMatch(/free when filed/);
+    expect(out.queue.items[0]!.title).not.toMatch(/escrowed/);
+    expect(out.queue.items[2]!.title).toMatch(
+      /^Bounty \$30 \(Opire, not escrowed\) on acme\/widgets#46/,
+    );
+    expect(out.queue.items[2]!.why).toMatch(
+      /not escrowed: the creator arranges payment after the merge/,
+    );
     expect(out.queue.items[0]!.status).toBe('blocked');
     expect(out.queue.items[0]!.blocked_on).toMatch(/021/);
     const again = fileBounties(out.queue, b, '2026-10-12', true);

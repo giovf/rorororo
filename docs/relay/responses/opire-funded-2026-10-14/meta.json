@@ -1,0 +1,175 @@
+{
+  "request": "opire-funded-2026-10-14",
+  "fetched_at": "2026-10-14T17:15:44.575Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.github.com/search/issues?q=%22This+repo+is+using+Opire%22+in%3Abody+is%3Aissue+is%3Aopen+created%3A%3E%3D2026-07-16&sort=created&order=desc&per_page=100",
+      "fetched_at": "2026-10-14T17:15:37.569Z",
+      "status": 200,
+      "final_url": "https://api.github.com/search/issues?q=%22This+repo+is+using+Opire%22+in%3Abody+is%3Aissue+is%3Aopen+created%3A%3E%3D2026-07-16&sort=created&order=desc&per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "1.json",
+      "bytes": 708963,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/search/issues?q=%22This+repo+is+using+Opire%22+in%3Abody+is%3Aissue+is%3Aopen+created%3A%3E%3D2026-07-16+comments%3A%3E0&sort=updated&order=desc&per_page=100",
+      "fetched_at": "2026-10-14T17:15:38.416Z",
+      "status": 200,
+      "final_url": "https://api.github.com/search/issues?q=%22This+repo+is+using+Opire%22+in%3Abody+is%3Aissue+is%3Aopen+created%3A%3E%3D2026-07-16+comments%3A%3E0&sort=updated&order=desc&per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "2.json",
+      "bytes": 815895,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/search/issues?q=%22using+Opire%22+%22%2Freward%22+in%3Abody%2Ccomments+is%3Aissue+is%3Aopen&sort=updated&order=desc&per_page=100",
+      "fetched_at": "2026-10-14T17:15:39.441Z",
+      "status": 200,
+      "final_url": "https://api.github.com/search/issues?q=%22using+Opire%22+%22%2Freward%22+in%3Abody%2Ccomments+is%3Aissue+is%3Aopen&sort=updated&order=desc&per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "3.json",
+      "bytes": 702315,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/strapi/strapi/issues/11998",
+      "fetched_at": "2026-10-14T17:15:40.345Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/strapi/strapi/issues/11998",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1924",
+        "last-modified": "Tue, 29 Sep 2026 12:18:59 GMT",
+        "etag": "W/\"82132c0c1f88a0faa751e0fa8c16a94b79c98d813a3e3adc989f717cb32f6f3c\""
+      },
+      "file": "4.json",
+      "bytes": 6123,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/oxc-project/oxc/issues/611",
+      "fetched_at": "2026-10-14T17:15:40.549Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/oxc-project/oxc/issues/611",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1506",
+        "last-modified": "Wed, 16 Sep 2026 20:19:20 GMT",
+        "etag": "W/\"f00fa9d4d8a282181dbef8dd3bff3d63ab89d7d9f1c8fa080ddd1baba9ad3279\""
+      },
+      "file": "5.json",
+      "bytes": 5063,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/Smech-Labs/smechos-issues/issues/17/comments?per_page=100",
+      "fetched_at": "2026-10-14T17:15:40.787Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/Smech-Labs/smechos-issues/issues/17/comments?per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1443",
+        "etag": "W/\"972b8b5cdce0e89b8616d05a7879268b0b4712bbe4e0be4813f2709fca56914b\""
+      },
+      "file": "6.json",
+      "bytes": 5166,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/probe-rs/probe-rs/issues/4355/comments?per_page=100",
+      "fetched_at": "2026-10-14T17:15:40.932Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/probe-rs/probe-rs/issues/4355/comments?per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1769",
+        "etag": "W/\"05aaac9f2442f2c36e6d443109212304d9879a11ddc3f2528f77015f1b2a3c0b\""
+      },
+      "file": "7.json",
+      "bytes": 12281,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/browser-use/browser-use/issues/5844/comments?per_page=100",
+      "fetched_at": "2026-10-14T17:15:41.122Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/browser-use/browser-use/issues/5844/comments?per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1437",
+        "etag": "W/\"78faa0743fef91fa7938e9a284bbaef4bfb1da53576e153b578dc2a6dba494bd\""
+      },
+      "file": "8.json",
+      "bytes": 5112,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/browser-use/browser-use/issues/5801/comments?per_page=100",
+      "fetched_at": "2026-10-14T17:15:41.296Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/browser-use/browser-use/issues/5801/comments?per_page=100",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"2d72bc5bc28df6fdcd37d4155abe2fc080daa18a056354c3e730d4ad531283bf\""
+      },
+      "file": "9.json",
+      "bytes": 13388,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.opire.dev/",
+      "fetched_at": "2026-10-14T17:15:41.454Z",
+      "status": 404,
+      "final_url": "https://api.opire.dev/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 139,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.opire.dev/issues",
+      "fetched_at": "2026-10-14T17:15:42.820Z",
+      "status": 404,
+      "final_url": "https://api.opire.dev/issues",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 145,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://app.opire.dev/issues",
+      "fetched_at": "2026-10-14T17:15:43.170Z",
+      "status": 404,
+      "final_url": "https://app.opire.dev/issues",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.html",
+      "bytes": 13331,
+      "truncated": false
+    }
+  ]
+}

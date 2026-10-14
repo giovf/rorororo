@@ -1,0 +1,32 @@
+{
+  "request": "opire-home-2026-10-14",
+  "fetched_at": "2026-10-14T17:19:47.875Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://app.opire.dev/",
+      "fetched_at": "2026-10-14T17:19:45.179Z",
+      "status": 200,
+      "final_url": "https://app.opire.dev/home",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 71771,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://app.opire.dev/?page=2",
+      "fetched_at": "2026-10-14T17:19:46.893Z",
+      "status": 200,
+      "final_url": "https://app.opire.dev/home?page=2",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 71810,
+      "truncated": false
+    }
+  ]
+}

@@ -1088,3 +1088,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 17:31 | burn-down | scripts/x402-bazaar-read.ts: payTo parse, merchant/discovery shapes, clause, probe spacing rule; 9 tests
 - 2026-10-14 17:31 | burn-down | Metrics job probe step (docs/ci): X402_PROBE_KEY repeats the half-cent call while 0 listed, monthly, ≤ 1/week
 - 2026-10-14 17:31 | burn-down | Queue: gankdat metrics-bazaar-merchant-read done; proof is tomorrow's row carrying `bazaar:`
+- 2026-10-14 17:40 | build | Opire read via relay: docs (Docusaurus), app page, 5 GitHub searches, 6 threads; api.github.com on the allowlist
+- 2026-10-14 17:40 | build | Opire: code owner's /reward N, paid by hand after merge; bot footer on every issue; app rewards leave no trace
+- 2026-10-14 17:40 | build | Scanner: footer stripped, /reward + OpireBot read in footer issues, app list read, rows `not escrowed`
+- 2026-10-14 17:40 | build | Tests: 16 pass (footer, /reward, escrowed precedence, app-page parser on the real payload shape)
+- 2026-10-14 17:40 | build | Opire supply 10-14: 6 open rewards, $212, 5 issues (4 from 2024–25), none a free funded fix; board 8 kept, 0 free
+- 2026-10-14 17:40 | build | Queue: oss-bounties bounty-board-opire-source done; verdict for the Sunday review in RESEARCH.md

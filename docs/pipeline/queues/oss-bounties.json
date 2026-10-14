@@ -141,13 +141,13 @@
     {
       "id": "bounty-board-opire-source",
       "title": "Opire as a second bounty source: read docs.opire.dev/overview/commands and /rewards/pricing through the relay (the site is client-rendered; its landing page was read 2026-10-14), add OpireBot's funding comments and the Opire reward label to scripts/bounty-scanner.ts's funded-detection with a `not escrowed` note in the Taken column, and re-read the board once",
-      "why": "Exchange 2026-W42: two boards under the new shape rules kept 0 free funded fixes, the Algora public board page (algora.io/bounties) now 404s and its docs host redirects to a recruiting site, so the Algora-labelled supply the line was validated on is thinner than the 10-11 count suggested. Opire's own page: bounties start at US$20, developers claim by pull request, and 'a claim does not create an automatic payment; the creator arranges payment only if the pull request meets the issue requirements' — weaker than an escrowed board, so the scanner must show it as such. A second source is the one lever left before the Sunday review applies a board-count kill trigger.",
+      "why": "Built 2026-10-14 (build): docs.opire.dev read through the relay (Docusaurus, pre-rendered) with Opire's app page and five GitHub searches. Only a code owner creates a bounty (`/reward N`, USD, from $20) and pays by hand after the merge; OpireBot's footer sits on every issue of a repository it is on (525 open since 07-16, three agent farms among them) and app-created rewards leave no GitHub trace, so the scanner strips the footer, reads a code owner's `/reward` and OpireBot's reward comment in the comments of footer issues, reads Opire's own open list from its server-rendered app page, marks the money `escrowed: false` (`free, not escrowed` under Taken; `(Opire, not escrowed)` in the filed title) and drops a `/reward` from anyone else as `reward not from a code owner`. Opire's whole open supply on 10-14: 6 rewards worth $212 on five issues, four from 2024–2025, none a free funded fix (RESEARCH.md). Original reason: Exchange 2026-W42: two boards under the new shape rules kept 0 free funded fixes, the Algora public board page (algora.io/bounties) now 404s and its docs host redirects to a recruiting site, so the Algora-labelled supply the line was validated on is thinner than the 10-11 count suggested. Opire's own page: bounties start at US$20, developers claim by pull request, and 'a claim does not create an automatic payment; the creator arranges payment only if the pull request meets the issue requirements' — weaker than an escrowed board, so the scanner must show it as such. A second source is the one lever left before the Sunday review applies a board-count kill trigger.",
       "effort_days": 0.3,
       "proof": "the next board lists Opire-funded issues with their amounts and a `not escrowed` mark; the dropped-count table names the new rule",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-14",
-      "doing_since": "2026-10-14"
+      "done_at": "2026-10-14"
     }
   ],
   "research_after": "2026-10-14"

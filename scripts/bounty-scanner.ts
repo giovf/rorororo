@@ -32,6 +32,17 @@
 // the claimant records on a real device, a claim the maintainer hands out first, a fix that needs
 // hardware — on the title and body, each with its own reason in the board's dropped counts.
 //
+// Opire (build 2026-10-14, oss-bounties `bounty-board-opire-source`): a second source beside Algora, read from
+// docs.opire.dev and GitHub through the relay. OpireBot appends the same footer ("This repo is using Opire …
+// commenting `/reward 100`") to every issue of a repository it is installed on, funded or not, so the footer
+// is stripped before any text is read and only marks the repository; a reward is a code owner's `/reward N`
+// (USD, no `$`) in the issue text or a comment, or OpireBot's own reward comment. Opire holds no money:
+// "a claim does not create an automatic payment; the creator arranges payment only if the pull request meets
+// the issue requirements" (rewards/pricing), so such a row is `not escrowed` in the Taken column and the
+// filed item says so. A `/reward` from anyone else is dropped as `reward not from a code owner` (Opire
+// ignores it: only code owners create bounties). The footer search (`"This repo is using Opire" in:body`)
+// found 525 open issues since 07-16, three agent farms among them; the repository rules drop those.
+//
 // Run: npm run bounties [-- --date=YYYY-MM-DD]   (GITHUB_TOKEN in CI; `gh auth token` locally)
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
 import { execSync } from 'node:child_process';
@@ -110,6 +121,115 @@ export const MAINTAINER = new Set(['OWNER', 'MEMBER', 'COLLABORATOR']);
 /** Text that offers or asks for a bounty rather than posting one. */
 export const PROPOSAL_RE =
   /propos|suggest|request(ing|ed)? (a )?bounty|would (like|love) (a )?bounty|asking for|if (a |the )?bounty/i;
+/**
+ * OpireBot's footer on every issue of a repository it is installed on, and the badge some add above it;
+ * both carry example amounts (`/reward 100`, `/tip 20`) that are not money on offer.
+ */
+export const OPIRE_FOOTER_RE =
+  /(\[!\[Opire Bounty\]\([^)]*\)\]\([^)]*\)\s*)?(<br\s*\/?>\s*)*(<hr\s*\/?>\s*)*<details>\s*<summary>This repo is using Opire[\s\S]*?<\/details>/i;
+/** Opire's reward command (USD, no `$`): `/reward 20` by a code owner in the issue text or a comment. */
+export const REWARD_RE = /^\s*\/reward\s+\$?(\d{1,3}(?:,\d{3})*|\d+)(?:\.\d+)?\b/m;
+/** OpireBot's login on GitHub. */
+export const OPIRE_BOT = /^opirebot\[bot\]$/i;
+/** The search that finds issues in repositories where OpireBot is installed (its footer is on every one). */
+export const OPIRE_QUERY = '"This repo is using Opire" in:body is:issue is:open';
+/** Most Opire-footer issues whose comments are read for a `/reward` per run (two calls each). */
+export const OPIRE_READ = 40;
+
+/** The issue text without OpireBot's footer, and whether the footer was there. */
+export function stripOpireFooter(body: string): { text: string; opire: boolean } {
+  const text = body.replace(OPIRE_FOOTER_RE, '').trimEnd();
+  return { text, opire: text !== body.trimEnd() };
+}
+
+/** Where Opire lists its open rewards; a server-rendered Next.js page the scanner's runner can read. */
+export const OPIRE_APP = 'https://app.opire.dev/';
+export interface OpireReward {
+  /** The GitHub issue URL. */
+  url: string;
+  /** Pending reward in USD. */
+  amount: number;
+  trying: number;
+  claimers: number;
+  languages: string[];
+}
+
+/**
+ * Opire's open rewards from its app page: the Next.js flight payload (`self.__next_f.push([1, "…"])`
+ * chunks) carries an `initialRewards` array with each issue's URL and `pendingPrice` in USD cents.
+ * Rewards created from the app leave no `/reward` on GitHub (oxc#611 read 2026-10-14), so this is
+ * the only complete list. Empty when the page's shape changed — the board then says 0 from Opire.
+ */
+export function parseOpireRewards(html: string): OpireReward[] {
+  const chunks = [...html.matchAll(/self\.__next_f\.push\(\[1,("(?:[^"\\]|\\.)*")\]\)/g)];
+  let flat = '';
+  for (const m of chunks) {
+    try {
+      flat += JSON.parse(m[1] ?? '""') as string;
+    } catch {
+      /* a chunk that is not a JSON string literal carries no data */
+    }
+  }
+  const at = flat.indexOf('"initialRewards":');
+  if (at < 0) return [];
+  const start = flat.indexOf('[', at);
+  if (start < 0) return [];
+  let depth = 0;
+  let inString = false;
+  let end = -1;
+  for (let i = start; i < flat.length; i++) {
+    const ch = flat[i];
+    if (inString) {
+      if (ch === '\\') i++;
+      else if (ch === '"') inString = false;
+      continue;
+    }
+    if (ch === '"') inString = true;
+    else if (ch === '[') depth++;
+    else if (ch === ']' && --depth === 0) {
+      end = i;
+      break;
+    }
+  }
+  if (end < 0) return [];
+  let rows: unknown;
+  try {
+    rows = JSON.parse(flat.slice(start, end + 1));
+  } catch {
+    return [];
+  }
+  if (!Array.isArray(rows)) return [];
+  const out: OpireReward[] = [];
+  for (const r of rows as Record<string, unknown>[]) {
+    const url = typeof r.url === 'string' ? r.url : '';
+    const price = r.pendingPrice as { value?: unknown; unit?: unknown } | undefined;
+    const cents = typeof price?.value === 'number' ? price.value : 0;
+    if (!/^https:\/\/github\.com\/[^/]+\/[^/]+\/issues\/\d+$/.test(url) || cents <= 0) continue;
+    const count = (v: unknown): number => (Array.isArray(v) ? v.length : 0);
+    out.push({
+      url,
+      amount: Math.round(cents) / 100,
+      trying: count(r.tryingUsers),
+      claimers: count(r.claimerUsers),
+      languages: Array.isArray(r.programmingLanguages)
+        ? r.programmingLanguages.filter((l): l is string => typeof l === 'string')
+        : [],
+    });
+  }
+  return out;
+}
+
+/** The largest `/reward N` command amount in the texts; 0 when none. */
+export function parseReward(texts: string[]): number {
+  let best = 0;
+  for (const t of texts) {
+    for (const m of t.matchAll(new RegExp(REWARD_RE.source, 'gm'))) {
+      const n = Number((m[1] ?? '0').replaceAll(',', ''));
+      if (n > best) best = n;
+    }
+  }
+  return best;
+}
 
 export interface IssueText {
   title: string;
@@ -136,6 +256,11 @@ export interface Bounty {
   /** `/attempt` or `/claim` comments seen (0 when comments were not read). */
   attempts: number;
   funding: Funding;
+  /**
+   * The board holds the money (Algora's label, bot or `/bounty`); false when the only funding is an Opire
+   * reward, which the creator pays by hand after the merge, if at all.
+   */
+  escrowed: boolean;
   /** The issue has an assignee. */
   assigned: boolean;
   /** Open pull requests linked to the issue (timeline cross-references); 0 when not read. */
@@ -161,23 +286,42 @@ export function parseAmount(texts: string[]): number {
 /**
  * Amount and provenance. Funded: a `$N` in a label, in the bounty bot's comment, in a maintainer's
  * `/bounty` command, or in a maintainer's own issue text; a labelled bounty issue is funded whatever
- * its author's association (the bot only labels what it holds). Proposed: a `$N` written by anyone
- * else, or any text that reads as a proposal or a request. The largest funded figure wins; a proposed
- * figure is reported only when nothing funded it.
+ * its author's association (the bot only labels what it holds). An Opire reward — a maintainer's
+ * `/reward N` in the issue text or a comment, or OpireBot's own reward comment — is funded too but
+ * `escrowed: false`; a `/reward` from anyone else is `ignored` (Opire only takes a code owner's).
+ * Proposed: a `$N` written by anyone else, or any text that reads as a proposal or a request. The
+ * largest funded figure wins, escrowed money over an Opire reward of the same size; a proposed figure
+ * is reported only when nothing funded it.
  */
 export function fundingOf(
   issue: IssueText,
   comments: Comment[],
-): { amount: number; funding: Funding } {
+): { amount: number; funding: Funding; escrowed: boolean; ignored: number } {
   const funded: string[] = [...issue.labels];
+  const rewarded: string[] = [];
   const proposed: string[] = [];
-  const own = `${issue.title}\n${issue.body}`;
+  let ignored = 0;
+  const own = stripOpireFooter(`${issue.title}\n${issue.body}`).text;
   const labelled = issue.labels.some((l) => /bounty/i.test(l));
   const ownIsProposal = PROPOSAL_RE.test(own);
-  if ((labelled || MAINTAINER.has(issue.author_association)) && !ownIsProposal) funded.push(own);
+  const maintainer = MAINTAINER.has(issue.author_association);
+  if ((labelled || maintainer) && !ownIsProposal) funded.push(own);
   else proposed.push(own);
+  if (REWARD_RE.test(own)) {
+    if (maintainer) rewarded.push(own);
+    else ignored += 1;
+  }
   for (const c of comments) {
     const body = c.body ?? '';
+    if (OPIRE_BOT.test(c.login)) {
+      if (/reward/i.test(body) && !/not have any reward/i.test(body)) rewarded.push(body);
+      continue;
+    }
+    if (REWARD_RE.test(body)) {
+      if (MAINTAINER.has(c.author_association)) rewarded.push(body);
+      else ignored += 1;
+      continue;
+    }
     if (!/bounty/i.test(body)) continue;
     const bot = /\[bot\]$/.test(c.login) || /^algora/i.test(c.login);
     const command = /^\s*\/bounty\b/m.test(body);
@@ -187,10 +331,16 @@ export function fundingOf(
       proposed.push(body);
     }
   }
-  const amount = parseAmount(funded);
-  if (amount > 0) return { amount, funding: 'funded' };
+  const escrowedAmount = parseAmount(funded);
+  const rewardAmount = Math.max(parseReward(rewarded), parseAmount(rewarded));
+  if (escrowedAmount > 0 && escrowedAmount >= rewardAmount)
+    return { amount: escrowedAmount, funding: 'funded', escrowed: true, ignored };
+  if (rewardAmount > 0)
+    return { amount: rewardAmount, funding: 'funded', escrowed: false, ignored };
   const asked = parseAmount(proposed);
-  return asked > 0 ? { amount: asked, funding: 'proposed' } : { amount: 0, funding: 'none' };
+  return asked > 0
+    ? { amount: asked, funding: 'proposed', escrowed: false, ignored }
+    : { amount: 0, funding: 'none', escrowed: false, ignored };
 }
 
 export interface TimelineEvent {
@@ -213,6 +363,11 @@ export function takenBy(b: Pick<Bounty, 'assigned' | 'prs'>): string {
   if (b.assigned) return 'assigned';
   if (b.prs > 0) return `${b.prs} PR${b.prs === 1 ? '' : 's'} open`;
   return 'free';
+}
+
+/** The Taken column: `takenBy` plus `not escrowed` when no board holds the money (an Opire reward). */
+export function takenColumn(b: Pick<Bounty, 'assigned' | 'prs' | 'escrowed'>): string {
+  return b.escrowed ? takenBy(b) : `${takenBy(b)}, not escrowed`;
 }
 
 export function repoExcluded(repo: Repo, today: string): string | undefined {
@@ -257,14 +412,14 @@ export function rankOf(
 
 export function renderBoard(
   bounties: Bounty[],
-  stats: { raw: number; kept: number; dropped: Record<string, number> },
+  stats: { raw: number; kept: number; dropped: Record<string, number>; opire?: number },
   today: string,
 ): string {
   const rows = bounties
     .slice(0, BOARD_SIZE)
     .map(
       (b) =>
-        `| $${b.amount} | ${b.rank} | [${b.repo}](https://github.com/${b.repo}) (${b.stars}★, ${b.language ?? '—'}, ${b.license ?? 'no licence'}) | [#${b.number}](${b.url}) ${b.title.replaceAll('|', '\\|').slice(0, 90)} | ${daysBetween(b.created_at.slice(0, 10), today)} d | ${takenBy(b)} | ${b.attempts} |`,
+        `| $${b.amount} | ${b.rank} | [${b.repo}](https://github.com/${b.repo}) (${b.stars}★, ${b.language ?? '—'}, ${b.license ?? 'no licence'}) | [#${b.number}](${b.url}) ${b.title.replaceAll('|', '\\|').slice(0, 90)} | ${daysBetween(b.created_at.slice(0, 10), today)} d | ${takenColumn(b)} | ${b.attempts} |`,
     );
   const dropped = Object.entries(stats.dropped)
     .sort((a, b) => b[1] - a[1])
@@ -273,15 +428,18 @@ export function renderBoard(
   return `# Open-source bounty board — ${today}
 
 Written daily by \`scripts/bounty-scanner.ts\` (\`.github/workflows/bounty-board.yml\`) from GitHub's search API:
-open issues that received a \`/bounty $N\` command in the last ${LOOKBACK_DAYS} days or carry a bounty label. Feature and
+open issues that received a \`/bounty $N\` command in the last ${LOOKBACK_DAYS} days or carry a bounty label, plus the issues
+of repositories where OpireBot is installed (its footer on every issue) whose code owner posted a \`/reward N\`. Feature and
 bug-fix work only: sandbox and security repositories and issues that read as security findings are dropped by
 rule, and so are contests, showcases and usage tasks that pay for something other than a change to the repository,
 results the claimant must record on a real device, claims the maintainer hands out first, and fixes that need hardware.
-Only money a maintainer, the bounty bot or a label posted counts; a contributor's "bounty proposal" is dropped.
+Only money a maintainer, the bounty bot or a label posted counts; a contributor's "bounty proposal" is dropped, and so
+is a \`/reward\` from anyone but a code owner (Opire ignores it). Algora holds the money it lists; Opire does not — the
+creator arranges payment after the merge, if the PR meets the issue — so an Opire row reads \`not escrowed\` under Taken.
 Rank = amount × language fit ÷ (1 + age in months) ÷ (1 + open PRs + assigned). Taken says what stands between a new
 claim and the money; the top ${FILE_TOP} free ones at $${MIN_AMOUNT} or more become \`oss-bounties\` queue items.
 
-Read ${stats.raw} issues, kept ${stats.kept}; dropped: ${dropped || 'none'}.
+Read ${stats.raw} issues${stats.opire === undefined ? '' : ` (${stats.opire} listed on Opire)`}, kept ${stats.kept}; dropped: ${dropped || 'none'}.
 
 | Amount | Rank | Repository | Issue | Age | Taken | Attempts |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -312,8 +470,8 @@ export function fileBounties(
     if (items.some((it) => it.id === id)) continue;
     const item: QueueItem = {
       id,
-      title: `Bounty $${b.amount} on ${b.repo}#${b.number}: ${b.title.slice(0, 100)} — fork, fix with tests in the project's conventions, open the PR with \`/claim #${b.number}\` and a plain note on how it was built`,
-      why: `Filed by the bounty scanner (${today}, docs/bounties/BOARD.md): $${b.amount} posted on ${b.url} by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); ${b.repo} has ${b.stars} stars, ${b.language ?? 'no main language'}, ${b.license ?? 'no licence file'}, ${b.attempts} attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.`,
+      title: `Bounty $${b.amount}${b.escrowed ? '' : ' (Opire, not escrowed)'} on ${b.repo}#${b.number}: ${b.title.slice(0, 100)} — fork, fix with tests in the project's conventions, open the PR with \`/claim #${b.number}\` and a plain note on how it was built`,
+      why: `Filed by the bounty scanner (${today}, docs/bounties/BOARD.md): $${b.amount} posted on ${b.url} by ${b.escrowed ? 'a maintainer, the bounty bot or a label' : "a code owner's Opire reward — not escrowed: the creator arranges payment after the merge only if the PR meets the issue, so read the thread for how earlier rewards were paid before building"}; free when filed (no assignee, no open PR); ${b.repo} has ${b.stars} stars, ${b.language ?? 'no main language'}, ${b.license ?? 'no licence file'}, ${b.attempts} attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.`,
       effort_days: EFFORT_DAYS,
       proof: 'PR merged and the bounty paid (revenue row in docs/LEDGER.md)',
       score: SCORE,
@@ -393,11 +551,34 @@ async function main(): Promise<void> {
     .slice(0, 10);
   const tok = token();
   const raw = new Map<string, SearchItem>();
-  for (const q of [
-    `is:issue is:open "/bounty $" in:comments created:>=${since}`,
-    'is:issue is:open label:"💎 Bounty" -label:"💰 Rewarded"',
-  ]) {
-    for (const it of await search(tok, q, 3)) raw.set(it.html_url, it);
+  for (const [q, pages] of [
+    [`is:issue is:open "/bounty $" in:comments created:>=${since}`, 3],
+    ['is:issue is:open label:"💎 Bounty" -label:"💰 Rewarded"', 3],
+    // Repositories with OpireBot installed: its footer is on every issue, funded or not; the
+    // `/reward N` that funds one is read from the body here and from the comments below.
+    [`${OPIRE_QUERY} created:>=${since}`, 1],
+  ] as const) {
+    for (const it of await search(tok, q, pages)) raw.set(it.html_url, it);
+  }
+  // Opire's own list: rewards created from its app leave no trace on GitHub, so each listed issue
+  // is read by its API URL and joins the pool as funded (not escrowed) at the listed amount.
+  const opireApp = new Map<string, OpireReward>();
+  for (const r of parseOpireRewards(
+    await fetch(OPIRE_APP, {
+      headers: { 'User-Agent': 'foundry-bounty-scanner' },
+      signal: AbortSignal.timeout(30_000),
+    })
+      .then((res) => (res.ok ? res.text() : ''))
+      .catch(() => ''),
+  )) {
+    opireApp.set(r.url, r);
+    if (raw.has(r.url)) continue;
+    const api = r.url.replace('https://github.com/', 'https://api.github.com/repos/');
+    const it = await gh<SearchItem & { state?: string; repository_url?: string }>(tok, api).catch(
+      () => undefined,
+    );
+    if (!it || it.state !== 'open') continue;
+    raw.set(r.url, { ...it, repository_url: api.replace(/\/issues\/\d+$/, '') });
   }
   const dropped: Record<string, number> = {};
   const drop = (why: string): void => {
@@ -405,11 +586,16 @@ async function main(): Promise<void> {
   };
   const repos = new Map<string, Repo | undefined>();
   const authors = new Map<string, string>();
+  /** Issues carrying OpireBot's footer, with their comment counts: a `/reward` may sit in the comments. */
+  const opire = new Map<string, number>();
+  const ignored = new Map<string, number>();
   const kept: Bounty[] = [];
   for (const it of raw.values()) {
     const full = it.repository_url.replace('https://api.github.com/repos/', '');
     const labels = it.labels.map((l) => l.name);
-    const why = issueExcluded(it.title, labels, it.body ?? '');
+    const stripped = stripOpireFooter(it.body ?? '');
+    if (stripped.opire) opire.set(it.html_url, it.comments);
+    const why = issueExcluded(it.title, labels, stripped.text);
     if (why) {
       drop(why);
       continue;
@@ -444,16 +630,21 @@ async function main(): Promise<void> {
       drop(rwhy);
       continue;
     }
-    const first = fundingOf(
+    let first = fundingOf(
       {
         title: it.title,
-        body: it.body ?? '',
+        body: stripped.text,
         labels,
         author_association: it.author_association ?? 'NONE',
       },
       [],
     );
     authors.set(it.html_url, it.author_association ?? 'NONE');
+    ignored.set(it.html_url, first.ignored);
+    const listed = opireApp.get(it.html_url);
+    if (listed && listed.amount > first.amount) {
+      first = { ...first, amount: listed.amount, funding: 'funded', escrowed: false };
+    }
     kept.push({
       repo: full,
       number: it.number,
@@ -461,10 +652,11 @@ async function main(): Promise<void> {
       title: it.title,
       created_at: it.created_at,
       labels,
-      body: it.body ?? '',
+      body: stripped.text,
       amount: first.amount,
       attempts: 0,
       funding: first.funding,
+      escrowed: first.escrowed,
       assigned: (it.assignees?.length ?? 0) > 0,
       prs: 0,
       stars: repo.stargazers_count,
@@ -474,9 +666,17 @@ async function main(): Promise<void> {
     });
   }
   // Comments carry the bot's `$N bounty` line, who posted it and the attempts; the timeline carries
-  // the linked PRs. Both are read for the shortlist only (two calls per issue).
+  // the linked PRs. Both are read for the shortlist only (two calls per issue), plus the newest
+  // OPIRE_READ commented issues of OpireBot repositories, whose `/reward` leaves no label to sort by.
   kept.sort((a, b) => b.amount - a.amount || a.created_at.localeCompare(b.created_at));
-  for (const b of kept.slice(0, SHORTLIST)) {
+  const toRead = new Set(kept.slice(0, SHORTLIST));
+  for (const b of kept
+    .filter((x) => !toRead.has(x) && (opire.get(x.url) ?? 0) > 0)
+    .sort((a, b) => b.created_at.localeCompare(a.created_at))
+    .slice(0, OPIRE_READ)) {
+    toRead.add(b);
+  }
+  for (const b of toRead) {
     const comments = await gh<
       { body: string | null; user?: { login?: string }; author_association?: string }[]
     >(tok, `https://api.github.com/repos/${b.repo}/issues/${b.number}/comments?per_page=100`).catch(
@@ -487,7 +687,7 @@ async function main(): Promise<void> {
       login: c.user?.login ?? '',
       author_association: c.author_association ?? 'NONE',
     }));
-    const f = fundingOf(
+    let f = fundingOf(
       {
         title: b.title,
         body: b.body,
@@ -496,9 +696,18 @@ async function main(): Promise<void> {
       },
       read,
     );
+    const listed = opireApp.get(b.url);
+    if (listed && listed.amount > f.amount) {
+      f = { ...f, amount: listed.amount, funding: 'funded', escrowed: false };
+    }
     b.amount = f.amount;
     b.funding = f.funding;
-    b.attempts = read.filter((c) => /^\s*\/(attempt|claim)\b/m.test(c.body)).length;
+    b.escrowed = f.escrowed;
+    ignored.set(b.url, f.ignored);
+    b.attempts = Math.max(
+      read.filter((c) => /^\s*\/(attempt|claim|try)\b/m.test(c.body)).length,
+      listed?.trying ?? 0,
+    );
     b.prs = openPrs(
       await gh<TimelineEvent[]>(
         tok,
@@ -512,21 +721,27 @@ async function main(): Promise<void> {
       ...b,
       rank: rankOf(b.amount, b.language, b.created_at, today, b.prs + (b.assigned ? 1 : 0)),
     }));
-  const proposedOnly = kept.filter((b) => b.funding === 'proposed').length;
+  const rewardIgnored = kept.filter(
+    (b) => b.funding !== 'funded' && (ignored.get(b.url) ?? 0) > 0,
+  ).length;
+  if (rewardIgnored) dropped['reward not from a code owner'] = rewardIgnored;
+  const proposedOnly = kept.filter(
+    (b) => b.funding === 'proposed' && !(ignored.get(b.url) ?? 0),
+  ).length;
   if (proposedOnly) dropped['proposed, not funded'] = proposedOnly;
-  const noAmount = kept.length - board.length - proposedOnly;
+  const noAmount = kept.length - board.length - proposedOnly - rewardIgnored;
   if (noAmount) dropped['no amount found'] = noAmount;
   board.sort((a, b) => b.rank - a.rank || b.amount - a.amount);
   mkdirSync(path.dirname(BOARD_FILE), { recursive: true });
   writeFileSync(
     BOARD_FILE,
-    renderBoard(board, { raw: raw.size, kept: board.length, dropped }, today),
+    renderBoard(board, { raw: raw.size, kept: board.length, dropped, opire: opireApp.size }, today),
   );
   const queue = JSON.parse(readFileSync(QUEUE_FILE, 'utf8')) as Queue;
   const out = fileBounties(queue, board, today, Boolean(process.env.PR_TOKEN_PRESENT));
   if (out.queue !== queue) writeFileSync(QUEUE_FILE, serialize(out.queue));
   console.log(
-    `bounties ${today}: read ${raw.size}, kept ${board.length}, filed [${out.added.join(', ')}]; dropped ${JSON.stringify(dropped)}`,
+    `bounties ${today}: read ${raw.size} (${opireApp.size} listed on Opire), kept ${board.length}, filed [${out.added.join(', ')}]; dropped ${JSON.stringify(dropped)}`,
   );
 }
 
