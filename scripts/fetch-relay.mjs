@@ -69,6 +69,9 @@ const ALLOWED = [
   'solana.com', // Solana x402 hackathon page (exchange 2026-W42)
   'docs.opire.dev', // Opire bounty bot docs (exchange 2026-W42, bounty boards)
   'docs.algora.io', // Algora bounty workflow docs (exchange 2026-W42, bounty boards)
+  'algora.io', // Algora's own open-bounty board, server-rendered (exchange 2026-W42)
+  '.opire.dev', // Opire bounty platform pages (exchange 2026-W42)
+  'api.routescan.io', // Routescan keyless Etherscan-compatible API for Base: liquidation logs, gas price (exchange 2026-W42, keeper idea)
 ];
 
 function allowed(hostname) {

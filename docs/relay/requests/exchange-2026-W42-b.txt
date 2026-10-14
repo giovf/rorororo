@@ -1,0 +1,13 @@
+# Venture exchange 2026-W42, second read: Base liquidation logs via Routescan's keyless Etherscan-compatible API (blockscout answered 403 to the runner), Algora's own bounty board, Opire, CDP x402 docs index for the facilitator fee
+GET https://api.routescan.io/v2/network/mainnet/evm/8453/etherscan/api?module=proxy&action=eth_blockNumber
+GET https://api.routescan.io/v2/network/mainnet/evm/8453/etherscan/api?module=proxy&action=eth_gasPrice
+GET https://api.routescan.io/v2/network/mainnet/evm/8453/etherscan/api?module=logs&action=getLogs&fromBlock=52285835&toBlock=latest&address=0xA238Dd80C259a72e81d7e4664a9801593F98d1c5&topic0=0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286
+GET https://api.routescan.io/v2/network/mainnet/evm/8453/etherscan/api?module=logs&action=getLogs&fromBlock=51985835&toBlock=52285835&address=0xA238Dd80C259a72e81d7e4664a9801593F98d1c5&topic0=0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286
+GET https://api.routescan.io/v2/network/mainnet/evm/8453/etherscan/api?module=logs&action=getLogs&fromBlock=52285835&toBlock=latest&address=0xb125E6687d4313864e53df431d5425969c15Eb2F&topic0=0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e
+GET https://algora.io/bounties
+GET https://docs.algora.io/
+GET https://opire.dev/
+GET https://docs.opire.dev/llms.txt
+GET https://docs.cdp.coinbase.com/llms.txt
+GET https://docs.cdp.coinbase.com/x402/welcome
+GET https://docs.cdp.coinbase.com/x402/core-concepts/facilitator
