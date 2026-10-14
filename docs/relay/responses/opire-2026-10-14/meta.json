@@ -1,0 +1,79 @@
+{
+  "request": "opire-2026-10-14",
+  "fetched_at": "2026-10-14T17:11:41.145Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.opire.dev/overview/commands",
+      "fetched_at": "2026-10-14T17:11:39.367Z",
+      "status": 200,
+      "final_url": "https://docs.opire.dev/overview/commands",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline; filename=\"commands.html\"",
+        "last-modified": "Tue, 22 Sep 2026 18:46:49 GMT"
+      },
+      "file": "1.html",
+      "bytes": 19841,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.opire.dev/rewards/pricing",
+      "fetched_at": "2026-10-14T17:11:40.039Z",
+      "status": 200,
+      "final_url": "https://docs.opire.dev/rewards/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline; filename=\"pricing.html\"",
+        "last-modified": "Tue, 22 Sep 2026 18:46:49 GMT"
+      },
+      "file": "2.html",
+      "bytes": 16712,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.opire.dev/faq",
+      "fetched_at": "2026-10-14T17:11:40.171Z",
+      "status": 200,
+      "final_url": "https://docs.opire.dev/faq",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline; filename=\"faq.html\"",
+        "last-modified": "Tue, 22 Sep 2026 18:46:49 GMT"
+      },
+      "file": "3.html",
+      "bytes": 16633,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.opire.dev/sitemap.xml",
+      "fetched_at": "2026-10-14T17:11:40.286Z",
+      "status": 200,
+      "final_url": "https://docs.opire.dev/sitemap.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "content-disposition": "inline; filename=\"sitemap.xml\"",
+        "last-modified": "Tue, 22 Sep 2026 18:46:49 GMT"
+      },
+      "file": "4.xml",
+      "bytes": 2039,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://opire.dev/open-startup",
+      "fetched_at": "2026-10-14T17:11:40.413Z",
+      "status": 500,
+      "final_url": "https://opire.dev/open-startup",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 47946,
+      "truncated": false
+    }
+  ]
+}
