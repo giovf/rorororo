@@ -14,6 +14,11 @@ on:
   schedule:
     - cron: '37 6 * * *' # daily, before the 07:00 UTC ops routine
   workflow_dispatch:
+    inputs:
+      x402_probe:
+        description: 'Pay the half-cent x402 probe today whatever the spacing rule says (a re-screen after a metadata change; needs X402_PROBE_KEY)'
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -91,6 +96,22 @@ jobs:
         env:
           GANKDAT_PROBE_KEY: ${{ secrets.GANKDAT_PROBE_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+      - name: x402 probe payment (half a cent from the probe wallet, only when due)
+        if: steps.row.outputs.skip != 'true'
+        # ventures/gankdat/scripts/x402-probe.mjs (gankdat metrics-bazaar-merchant-read, 2026-10-14; owner
+        # action 026 option B): with the X402_PROBE_KEY secret (a US$1 buyer wallet the owner funded —
+        # absent, the step prints "skipped" and nothing is owed) it repeats the settled half-cent call
+        # that indexes gankdat's 17 routes in the x402 Bazaar through scripts/x402-test-client.mjs
+        # (UA gankdat-x402-probe/…, counted as `own probe` by metrics.mjs, never a sale). It pays only
+        # when no probe or owner payment shows on a Daily numbers row of the last 7 days AND the latest
+        # `bazaar:` clause still reads `0 listed` or today is the 1st (monthly liveness), or when the
+        # x402_probe dispatch input is set. A failed payment never fails the job: the row's
+        # `bazaar:` clause below is the reading that matters.
+        run: node ventures/gankdat/scripts/x402-probe.mjs
+        continue-on-error: true
+        env:
+          PRIVATE_KEY: ${{ secrets.X402_PROBE_KEY }}
+          X402_PROBE_FORCE: ${{ github.event.inputs.x402_probe }}
       - name: Append today's numbers to RESEARCH.md
         if: steps.row.outputs.skip != 'true'
         run: node ventures/gankdat/scripts/metrics.mjs
