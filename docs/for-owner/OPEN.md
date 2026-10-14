@@ -5,7 +5,7 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (3)
+## Requests (4)
 
 1. **Nebius hackathon is back on** — ~5 min, since 2026-10-13; unblocks hackathons `nebius-nvidia-hackathon-submit` (8). Steps: [025](actions/025-nebius-token-factory-key.md).
    Nebius hackathon is back on: create a Token Factory API key (~5 min, under £2 of usage) — docs/for-owner/actions/025-nebius-token-factory-key.md
@@ -15,6 +15,9 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 3. **Cloudflare confirms a $49 charge** — time not stated, since 2026-10-13; nothing queued waits on it.
    Cloudflare confirms a $49 charge (12 Oct); ledger baseline is $5/month — check billing for a duplicate or new overage.
+
+4. **one half-cent x402 payment** — ~5 min, since 2026-10-14; nothing queued waits on it. Steps: [026](actions/026-x402-bazaar-first-payment.md).
+   one half-cent x402 payment (~5 min) lists gankdat's 17 endpoints in Coinbase's x402 Bazaar — docs/for-owner/actions/026-x402-bazaar-first-payment.md
 
 ## Waiting on an attended Claude session, not you (2)
 

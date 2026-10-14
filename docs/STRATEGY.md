@@ -1224,3 +1224,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   — foundry `relay-post-json` (3) queued; Blockscout 403, Routescan no Base). oss-bounties gains Opire as a second source (4):
   Algora's public board page 404s and two boards kept 0 free funded fixes. Owner: nothing now; the settled payment (≤ 10 min)
   is raised by the build that ships the metadata. `docs/exchange/2026-W42.md`.
+- 2026-10-14 build: **gankdat x402 Bazaar listing (9) built** — the pay-per-call lane is x402 v2 (`@x402/hono` + the CDP
+  facilitator) with a Bazaar declaration per dataset generated from the registry's zod schemas (`src/x402/bazaar.ts`:
+  description cut to whole sentences, query JSON Schema, schema-derived output example), v0.25.0; 357 v1 packages dropped.
+  The metrics runner dry-runs every route at CDP's keyless validate endpoint daily (`x402 validate:` on the Daily numbers
+  row — the sandbox proxy refuses api.cdp.coinbase.com) and counts payments under the probe user agent as internal.
+  Indexing needs one settled payment no runner can make: action 026 asks the owner for a half-cent call from a wallet of
+  theirs, or a US$1 probe wallet as the `X402_PROBE_KEY` secret (£0.80 planned). The proof is read from the catalogue by
+  `metrics-bazaar-merchant-read` (next gankdat item), day-30 read 2026-11-14; nothing is assumed from validation alone.

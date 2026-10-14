@@ -1,29 +1,67 @@
 import { Hono } from 'hono';
-import { X402_DEFAULT_PRICE_USD } from '../lib/constants';
+import type { MiddlewareHandler } from 'hono';
+import { X402_DEFAULT_PRICE_USD, publicBaseUrl } from '../lib/constants';
 import { failure } from '../lib/envelope';
 import { previewClientId } from '../mcp/preview';
 import { handleSourceQuery } from '../routes/data';
-import { listSources } from '../sources/registry';
+import { getSource } from '../sources/registry';
 import type { AppEnv } from '../types';
+import { bazaarRoutes, isX402Network, X402_NETWORKS, type X402Lane } from './bazaar';
 
 // Pay-per-request lane for agents with no account: payment IS the auth, so no
 // API key and no credit metering here. Dark by default — everything 404s until
 // X402_WALLET_ADDRESS is configured (PRD: ships dark, wallet is open question).
 //
-// Protocol flow (x402-hono): unpaid request → 402 + payment-requirements body
-// → agent pays → retries with X-PAYMENT header → middleware verifies via the
-// facilitator → handler runs → settlement recorded in X-PAYMENT-RESPONSE.
+// Protocol (x402 v2, @x402/hono since 2026-10-14 — gankdat `x402-bazaar-listing`):
+// unpaid request → 402 whose PAYMENT-REQUIRED header carries the base64 JSON
+// payment-required document (accepts[], resource, and the Bazaar discovery
+// extension generated from the registry in bazaar.ts) → agent pays → retries with
+// PAYMENT-SIGNATURE → the middleware verifies with the facilitator → handler runs →
+// settlement receipt in PAYMENT-RESPONSE. v1 clients (X-PAYMENT, requirements in
+// the body) are no longer served: the lane had 0 payments in three months and every
+// resource the CDP catalogue indexes is v2.
 //
-// x402-hono and @coinbase/x402 are imported lazily, on the first lit request:
-// together they pull in viem (≈1,200 modules, most of the 7.8 MB bundle), which
-// every other route never needs. Loading them up front cost each of the 49 test
-// files ≈2.4 s of module evaluation (gankdat-test-setup, 2026-10-06) and weighs
-// on every Worker cold start while the lane ships dark.
+// The x402 packages (and viem beneath @x402/evm, most of the bundle) are imported
+// lazily on the first lit request: loading them up front cost each of the test files
+// ≈2.4 s of module evaluation (gankdat-test-setup, 2026-10-06) and weighs on every
+// Worker cold start while the lane ships dark. The resource server is then kept per
+// configuration for the isolate's life: its facilitator handshake (GET /supported)
+// runs once, not per request, and the 17 route declarations are built once.
 
 const DEFAULT_PRICE_USD = X402_DEFAULT_PRICE_USD;
 const DEFAULT_NETWORK = 'base';
-// x402-hono networks we accept as an override (it throws on anything else).
-const SUPPORTED_NETWORKS = new Set(['base', 'base-sepolia']);
+
+const lanes = new Map<string, Promise<MiddlewareHandler>>();
+
+async function buildLane(env: CloudflareBindings, lane: X402Lane): Promise<MiddlewareHandler> {
+  const [
+    { paymentMiddleware },
+    { HTTPFacilitatorClient, x402ResourceServer },
+    { ExactEvmScheme },
+    { bazaarResourceServerExtension, declareDiscoveryExtension },
+    { createFacilitatorConfig },
+  ] = await Promise.all([
+    import('@x402/hono'),
+    import('@x402/core/server'),
+    import('@x402/evm/exact/server'),
+    import('@x402/extensions/bazaar'),
+    import('@coinbase/x402'),
+  ]);
+
+  // Facilitator (verify + settle, and the Bazaar's indexer): Coinbase CDP when its
+  // credentials are set (mainnet Base; the only one that indexes), else an explicit
+  // URL, else the public x402.org facilitator (Base Sepolia only — probing).
+  const facilitator =
+    env.CDP_API_KEY_ID && env.CDP_API_KEY_SECRET
+      ? createFacilitatorConfig(env.CDP_API_KEY_ID, env.CDP_API_KEY_SECRET)
+      : env.X402_FACILITATOR_URL
+        ? { url: env.X402_FACILITATOR_URL }
+        : undefined;
+  const server = new x402ResourceServer(new HTTPFacilitatorClient(facilitator))
+    .register(X402_NETWORKS[lane.network], new ExactEvmScheme())
+    .registerExtension(bazaarResourceServerExtension);
+  return paymentMiddleware(bazaarRoutes(lane, declareDiscoveryExtension), server);
+}
 
 export const x402Routes = new Hono<AppEnv>()
   .use('/data/:source', async (c, next) => {
@@ -34,63 +72,45 @@ export const x402Routes = new Hono<AppEnv>()
 
     const price = c.env.X402_PRICE_USD || DEFAULT_PRICE_USD;
     const network = c.env.X402_NETWORK || DEFAULT_NETWORK;
-    // Validate the operator-supplied overrides up front: paymentMiddleware THROWS
+    // Validate the operator-supplied overrides up front: the route builder THROWS
     // on a bad price/network, which would 500 every request (paid and unpaid).
     // A clean 503 + log names the misconfiguration instead.
-    if (!/^\$\d+(\.\d+)?$/.test(price) || !SUPPORTED_NETWORKS.has(network)) {
+    if (!/^\$\d+(\.\d+)?$/.test(price) || !isX402Network(network)) {
       console.error(
         JSON.stringify({ level: 'error', event: 'x402_misconfigured', price, network }),
       );
       return c.json(failure('unavailable', 'x402 is misconfigured; retry later'), 503);
     }
 
-    const [{ createFacilitatorConfig }, { paymentMiddleware }] = await Promise.all([
-      import('@coinbase/x402'),
-      import('x402-hono'),
-    ]);
+    const lane: X402Lane = { baseUrl: publicBaseUrl(c.env), payTo: wallet, price, network };
+    const facilitatorKey = c.env.CDP_API_KEY_ID ? 'cdp' : (c.env.X402_FACILITATOR_URL ?? '');
+    const key = [lane.baseUrl, wallet, price, network, facilitatorKey].join('|');
+    let middleware = lanes.get(key);
+    if (!middleware) {
+      middleware = buildLane(c.env, lane).catch((error: unknown) => {
+        lanes.delete(key); // a failed build is retried by the next request, not cached
+        throw error;
+      });
+      lanes.set(key, middleware);
+    }
 
-    // Facilitator (verify + settle): prefer Coinbase CDP (authenticated, works
-    // on base + base-sepolia) when CDP creds are set; else an explicit URL; else
-    // the default public facilitator (rate-limited — fine only for probing).
-    const facilitator =
-      c.env.CDP_API_KEY_ID && c.env.CDP_API_KEY_SECRET
-        ? createFacilitatorConfig(c.env.CDP_API_KEY_ID, c.env.CDP_API_KEY_SECRET)
-        : c.env.X402_FACILITATOR_URL
-          ? { url: c.env.X402_FACILITATOR_URL as `${string}://${string}` }
-          : undefined;
-    // Built per request: Workers only expose env at request time, and the
-    // middleware itself only calls the facilitator when a payment is presented.
-    // Per-source pricing (source.x402PriceUsd, default the platform price) so each
-    // niche can be priced to its value. Built from the registry.
-    const routesConfig = Object.fromEntries(
-      listSources().map((s) => [
-        `/x402/data/${s.slug}`,
-        { price: s.x402PriceUsd || price, network: network as 'base' },
-      ]),
-    );
-    const middleware = paymentMiddleware(
-      wallet as `0x${string}`,
-      routesConfig,
-      // @coinbase/x402 and x402-hono ship structurally-identical but nominally
-      // distinct FacilitatorConfig types (url: string vs `${string}://${string}`).
-      facilitator as Parameters<typeof paymentMiddleware>[2],
-    );
-    const paid = c.req.header('X-PAYMENT') !== undefined;
-    const response = await middleware(c, async () => {
-      await next();
-    });
-    // On a rejected payment the middleware RETURNS its 402 (so `response` is the
-    // 402); on success it mutates c.res and may return void. Check the actual
-    // outcome, not c.res.ok alone — the c.res getter lazily materializes a 200
-    // when unset, which would log a false settlement for every failed payment.
+    const response = await (await middleware)(c, next);
+    // The middleware returns its own 402/5xx; on a settled payment it sets c.res (the
+    // data response plus the PAYMENT-RESPONSE receipt). Only that receipt marks a sale.
     const outcome = response ?? c.res;
-    if (paid && outcome.ok) {
-      console.log(JSON.stringify({ level: 'info', event: 'x402_paid', path: c.req.path, price }));
+    if (outcome.ok && outcome.headers.has('PAYMENT-RESPONSE')) {
+      const slug = c.req.param('source') ?? '';
+      const paidPrice = getSource(slug)?.x402PriceUsd || price;
+      console.log(
+        JSON.stringify({ level: 'info', event: 'x402_paid', path: c.req.path, price: paidPrice }),
+      );
       // Revenue analytics (90-day history via `npm run traffic`) — Workers
       // Logs alone rotates out in days. UA names the paying agent; blob6 is the
       // same hashed IP+UA client id the preview wall writes, so the Daily numbers
       // row can tell whether a wall-hitter came back here (`after wall 1h`,
-      // gankdat preview-wall-next-steps, 2026-10-11). No raw IP.
+      // gankdat preview-wall-next-steps, 2026-10-11). No raw IP. The owner's own
+      // indexing payment and the runner's probe send `gankdat-x402-probe/…` as
+      // the UA; the metrics runner counts those as internal, never as sales.
       const userAgent = c.req.header('User-Agent') ?? '';
       c.env.TRAFFIC.writeDataPoint({
         blobs: [
@@ -98,7 +118,7 @@ export const x402Routes = new Hono<AppEnv>()
           userAgent,
           c.req.path,
           '',
-          c.req.param('source') ?? '',
+          slug,
           await previewClientId(c.req.header('CF-Connecting-IP') ?? 'unknown', userAgent),
         ],
         doubles: [1],

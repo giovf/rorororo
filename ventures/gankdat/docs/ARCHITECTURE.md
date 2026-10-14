@@ -125,7 +125,8 @@ names — never rename those; see memory/git history for why).
 - `src/billing/` — Stripe checkout/portal, webhooks → account plan + ledger; PayPal (sandbox)
   credit packs → top-up balance + ledger (`paypal.ts`, `packs.json`)
 - `src/mcp/` — MCP server at `/mcp`, tools generated from the registry
-- `src/x402/` — x402-gated pay-per-request routes (dark until configured)
+- `src/x402/` — x402 v2 pay-per-request routes (dark until configured); `bazaar.ts`
+  generates each route's Bazaar discovery declaration from the registry
 - `public/` — landing page, docs (Scalar embed), robots/sitemap (Workers
   Assets); `llms.txt` is Worker-generated from the source registry
 - `src/middleware/canonical.ts` — one URL per page: `www.` and `http://` and
@@ -143,11 +144,13 @@ and since 2026-09-29 the REST surface too — `src/middleware/traffic.ts` writes
 `rest_data`/`rest_changes` for every served `/v1/data/:source` and `/v1/changes/:source`,
 UA and source slug only, never an IP, denials excluded, so STRATEGY §4's weekly
 change-feed target is readable from the daily metrics row) ·
-stripe-node (fetch client) · official MCP TS SDK · x402-hono · vitest with
+stripe-node (fetch client) · official MCP TS SDK · @x402/hono (x402 v2, since
+2026-10-14; x402-hono 1.2 before) · vitest with
 @cloudflare/vitest-pool-workers · ESLint + Prettier · npm · wrangler.
-x402-hono and @coinbase/x402 (and viem beneath them, most of the bundle) are
-imported lazily on the first lit `/x402` request, so cold starts skip them
-while the lane ships dark.
+The x402 packages (@x402/hono, @x402/core, @x402/evm, @x402/extensions,
+@coinbase/x402 — and viem beneath them, most of the bundle) are imported lazily
+on the first lit `/x402` request, so cold starts skip them while the lane ships
+dark; the resource server is then kept per configuration for the isolate's life.
 
 Tests (2026-10-06): pool-workers 0.18 has no isolated per-test storage — one runtime
 and one D1/KV store serve every spec file in turn — so `test/apply-migrations.ts`
@@ -428,7 +431,21 @@ runs `check:root`.
 - **Resend** — magic-link email from `no-reply@mail.gankdat.com` (verified
   domain); dark (503 on login) until `RESEND_API_KEY` is set.
 - **x402** (agent payments) — LIVE on Base mainnet via Coinbase CDP
-  facilitator; enabled only when `X402_WALLET_ADDRESS` is set.
+  facilitator; enabled only when `X402_WALLET_ADDRESS` is set. **x402 v2 since
+  2026-10-14** (v0.25.0, gankdat `x402-bazaar-listing`, exchange 2026-W42): the
+  402 carries the payment-required document in the `PAYMENT-REQUIRED` header
+  (base64 JSON: `accepts[]` with CAIP-2 networks `eip155:8453`/`84532`, the
+  resource, and an `extensions.bazaar` declaration per route — description,
+  query-parameter JSON Schema from the source's zod params, a schema-shaped
+  output example — generated in `src/x402/bazaar.ts` from the registry so a new
+  dataset is discoverable the day it ships); payment arrives in
+  `PAYMENT-SIGNATURE`, the receipt in `PAYMENT-RESPONSE`; the unpaid body is the
+  platform's `payment_required` error envelope. v1 clients (`X-PAYMENT`) are no
+  longer served (0 payments in three months). The CDP Bazaar indexes a resource
+  only after one settled payment: the owner's half-cent call (action 026) is the
+  onboarding step; the metrics runner dry-runs every route against CDP's keyless
+  validate endpoint daily (`x402 validate:` clause) and counts payments under the
+  `gankdat-x402-probe/…` user agent as internal, never as sales.
 - **PayPal** (credit packs, **sandbox only**) — built 2026-10-11 as the PayPal AI Hackathon entry
   (v0.24.0, migration 0017 `paypal_orders`, `docs/PAYPAL-SETUP.md`): Orders API v2 against
   `api-m.sandbox.paypal.com` by construction, no live switch. One-off packs (`src/billing/packs.json`,

@@ -1076,3 +1076,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 08:50 | exchange | Declined: nothing new; GitLab Life After Code not entered (MIT and Duo rules); x402 hackathons were 2025
 - 2026-10-14 08:50 | exchange | Exchange file docs/exchange/2026-W42.md; Bazaar read in docs/relay/responses/exchange-2026-W42
 - 2026-10-14 08:50 | exchange | Owner later: one settled x402 payment (≤ 10 min) to index the listing, raised by the build that ships it
+- 2026-10-14 09:55 | build | x402 lane moved to x402 v2 (@x402/hono, CDP facilitator): terms in PAYMENT-REQUIRED, receipt in PAYMENT-RESPONSE
+- 2026-10-14 09:55 | build | src/x402/bazaar.ts: a Bazaar declaration per route from the registry — description, zod query schema, output example
+- 2026-10-14 09:55 | build | Tests: x402.spec (v2 402, metadata, lookup price, settled payment, rejects) + x402-bazaar.spec (17 declarations)
+- 2026-10-14 09:55 | build | Metrics runner validates all 17 routes at CDP's keyless validate endpoint daily (x402 validate:); probe UA internal
+- 2026-10-14 09:55 | build | x402-test-client.mjs on @x402/fetch v2 (Base mainnet default, gankdat-x402-probe UA); X402-SETUP, AGENT-DISCOVERY fixed
+- 2026-10-14 09:55 | build | gankdat v0.25.0 (constants + server.json); Taskmaster 35; queue x402-bazaar-listing done; 357 v1 packages dropped
+- 2026-10-14 09:55 | build | Owner: action 026 — one half-cent x402 payment (≤ 10 min) indexes the 17 endpoints; £0.80 planned ledger row
+- 2026-10-14 09:55 | notify | One half-cent x402 payment (~5 min) lists gankdat in Coinbase's agent marketplace

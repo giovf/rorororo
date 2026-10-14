@@ -13,7 +13,7 @@ Agents find tools through six channels. Ranked by leverage-per-effort for us:
 | # | Channel | How it finds us | Effort | Status |
 |---|---------|-----------------|--------|--------|
 | 1 | **Official MCP Registry** (registry.modelcontextprotocol.io) | We publish a `server.json`; aggregators (Glama, PulseMCP, …) syndicate from it | Low — no public repo needed for remote servers | **Published 2026-07-09** (v0.1.0, active) |
-| 2 | **x402 Bazaar / Agentic.Market / x402scan** | **Automatic** — CDP facilitator catalogs the route on first mainnet settlement (`discoverable: true` is already our default) | Zero code | Waiting on first real settlement |
+| 2 | **x402 Bazaar / Agentic.Market / x402scan** | **Built 2026-10-14** — x402 v2 lane with an `extensions.bazaar` declaration per route (`src/x402/bazaar.ts`); the catalogue indexes a resource after one settled payment through the CDP facilitator (owner action 026) | One day | Waiting on the owner's payment, then the `bazaar:` reading |
 | 3 | **Web search by agents** | Agents search like humans, then read `llms.txt` / `/docs` / `openapi.json` | Low — fill static-surface gaps | Shipped (task 27) |
 | 4 | **MCP directories** (Glama ~20k servers, PulseMCP 18k+, Smithery) | Crawl + form submission; they introspect `tools/list` | Low | Unblocked (task 26); listing is operator-gated |
 | 5 | **Claude Connectors Directory** (first-party, highest trust) | Portal submission; requires **OAuth 2.1 + PKCE** — our bearer keys don't pass | High (OAuth build) | Deferred — revisit after Stage 0 |
@@ -42,15 +42,22 @@ The fix (unauthenticated handshake + `tools/list`, key required for
 `tools/call`, `WWW-Authenticate` on the 401) is the single highest-leverage
 code change in this doc.
 
-**x402 discovery is automatic — a genuine edge.** Coinbase's x402 Bazaar
-(paginated catalog + semantic search APIs under
-`/v2/x402/discovery/*`) and the public Agentic.Market front-end catalog
-services from **on-chain settlement activity** seen by the CDP facilitator.
-There is no registration step: the first successful mainnet payment against
-`/x402/data/:source` gets us cataloged (quality metrics recompute ~6-hourly).
-`x402-hono` defaults `discoverable: true`, and we run the CDP facilitator on
-Base mainnet, so this channel costs nothing. x402scan indexes the same
-on-chain activity independently.
+**x402 discovery needs metadata and one payment — corrected 2026-10-14.** Coinbase's
+x402 Bazaar (paginated catalog + search APIs under `/v2/x402/discovery/*`, the
+Bazaar MCP server, Amazon Bedrock AgentCore, Agentic.Market) catalogs resources
+from settlement activity seen by the CDP facilitator — but only resources whose
+402 carries an x402 **v2** `extensions.bazaar` declaration (method, input schema,
+output example; the docs describe no v1 path), and only after **one settled
+payment** ("every validated endpoint is eligible for indexing after a successful
+settled payment"). The v1 lane's `discoverable: true` flag never did that: three
+months live, 0 payments, listed nowhere (exchange 2026-W42, read of the first
+200 catalogue entries — every one v2). Since 2026-10-14 the lane is v2 with a
+declaration per route generated from the registry (`src/x402/bazaar.ts`); the
+metrics runner dry-runs every route against the keyless validate endpoint daily
+(`x402 validate:` on the Daily numbers row) and the owner's one half-cent call
+(action 026) triggers indexing. Metadata is screened against a content policy
+(descriptive text only); the indexed count is read from the discovery API, never
+assumed. x402scan indexes on-chain activity independently.
 
 **Agents also just… search the web.** Coding agents routinely hit web search
 and read docs pages. `llms.txt` adoption is ~10% of domains and no major

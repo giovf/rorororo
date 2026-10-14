@@ -35,6 +35,7 @@ export default defineConfig({
     // modules through Vite per file (viem 1,194, stripe 191, zod 126, ox 102 …) — 17 s of setup
     // per file, 261 s for the suite on 4 cores. Bundled, a file loads ~250 modules; with the x402
     // packages imported lazily (src/x402/routes.ts) the suite ran in 80 s on the same sandbox.
+    // 2026-10-14: the lane moved to the x402 v2 packages (@x402/*); the same lazy rule applies.
     // Only packages with a root export, or explicit subpaths, can be listed.
     deps: {
       optimizer: {
@@ -43,13 +44,11 @@ export default defineConfig({
           // Node built-ins stay external: workerd's module fallback resolves them at run time.
           rolldownOptions: { external: [/^node:/, ...builtinModules] },
           include: [
-            'x402-hono',
+            '@x402/hono',
+            '@x402/core/server',
+            '@x402/evm/exact/server',
+            '@x402/extensions/bazaar',
             '@coinbase/x402',
-            'x402/paywall',
-            'x402/schemes',
-            'x402/shared',
-            'x402/types',
-            'x402/verify',
             'viem',
             'ox',
             'stripe',

@@ -25,15 +25,19 @@
     "@coinbase/x402": "^2.1.0",
     "@hono/mcp": "^0.3.0",
     "@modelcontextprotocol/sdk": "^1.29.0",
+    "@x402/core": "^2.28.0",
+    "@x402/evm": "^2.28.0",
+    "@x402/extensions": "^2.28.0",
+    "@x402/hono": "^2.28.0",
     "hono": "^4.12.27",
     "hono-rate-limiter": "^0.5.4",
     "stripe": "^22.3.0",
-    "x402-hono": "^1.2.0",
     "zod": "^4.4.3"
   },
   "devDependencies": {
     "@cloudflare/vitest-pool-workers": "^0.18.0",
     "@eslint/js": "^10.0.1",
+    "@x402/fetch": "^2.28.0",
     "esbuild": "^0.28.2",
     "eslint": "^10.6.0",
     "eslint-config-prettier": "^10.1.8",
@@ -41,7 +45,6 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.46.4",
     "vitest": "^4.1.10",
-    "wrangler": "^4.4.0",
-    "x402-fetch": "^1.2.0"
+    "wrangler": "^4.4.0"
   }
 }

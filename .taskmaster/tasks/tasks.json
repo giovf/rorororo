@@ -1339,13 +1339,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-11T19:26:07.873Z"
+      },
+      {
+        "id": "35",
+        "title": "gankdat: x402 v2 lane with Bazaar discovery metadata (v0.25.0)",
+        "description": "Move /x402/data/<slug> from x402-hono 1.2 (v1) to @x402/hono + @x402/core + @x402/evm + @x402/extensions with the CDP facilitator; src/x402/bazaar.ts generates an extensions.bazaar declaration per route from the registry (description, query JSON Schema from zod, schema-derived output example); 402 terms move to the PAYMENT-REQUIRED header, payment to PAYMENT-SIGNATURE, receipt to PAYMENT-RESPONSE; resource server memoised per configuration; metrics runner validates every route against CDP's keyless validate endpoint daily and counts gankdat-x402-probe payments as internal; owner action 026 asks for the one settled payment that indexes the resources.",
+        "details": "",
+        "testStrategy": "test/x402.spec.ts (402 header, Bazaar metadata, lookup pricing, malformed and rejected payments, settled happy path, misconfig 503) + test/x402-bazaar.spec.ts (library validator over all 17 declarations, content-policy wording, tag limits, schema-derived examples parse against each record schema, header size)",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-14T09:49:18.010Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-11T19:26:07.873Z",
-      "taskCount": 34,
-      "completedCount": 27,
+      "lastModified": "2026-10-14T09:49:18.010Z",
+      "taskCount": 35,
+      "completedCount": 28,
       "tags": [
         "master"
       ]

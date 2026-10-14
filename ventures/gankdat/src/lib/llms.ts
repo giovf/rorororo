@@ -100,9 +100,10 @@ ${feeds.map((s) => `- GET ${baseUrl}/v1/changes/${s.slug} — ${s.title}`).join(
 - MCP server (Streamable HTTP): ${baseUrl}/mcp — anonymous initialize,
   tools/list and the two sign-up tools; data tools use the same bearer key.
   Tools: ${tools}. Structured JSON results with credits_remaining in meta.
-- x402 pay-per-request (no account, USDC on Base):
-  GET /x402/data/{source} → HTTP 402 with payment requirements → pay → retry
-  with X-PAYMENT header. ~$0.005/request.
+- x402 v2 pay-per-request (no account, USDC on Base; discovery metadata for the
+  x402 Bazaar): GET /x402/data/{source} → HTTP 402 whose PAYMENT-REQUIRED header
+  carries the price, the query schema and an output example → pay → retry with
+  PAYMENT-SIGNATURE. ~$0.005/request.
 
 ## Docs
 

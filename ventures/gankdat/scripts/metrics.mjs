@@ -158,7 +158,7 @@ const wallRows = await ae(
   "SELECT blob6 AS client, timestamp AS ts FROM gankdat_traffic WHERE blob1 = 'mcp_denied' AND blob4 = 'preview_exhausted' AND blob6 != '' AND timestamp > NOW() - INTERVAL '7' DAY LIMIT 5000",
 ).catch(() => []);
 const moveRows = await ae(
-  "SELECT blob6 AS client, timestamp AS ts, blob1 AS kind FROM gankdat_traffic WHERE blob6 != '' AND timestamp > NOW() - INTERVAL '7' DAY AND ((blob1 = 'mcp_anon' AND blob5 LIKE '%request_api_key%') OR blob1 = 'x402_paid' OR (blob1 = 'mcp_denied' AND blob4 = 'protected_tool')) LIMIT 5000",
+  "SELECT blob6 AS client, timestamp AS ts, blob1 AS kind FROM gankdat_traffic WHERE blob6 != '' AND timestamp > NOW() - INTERVAL '7' DAY AND ((blob1 = 'mcp_anon' AND blob5 LIKE '%request_api_key%') OR (blob1 = 'x402_paid' AND blob2 NOT LIKE 'gankdat-x402-probe/%') OR (blob1 = 'mcp_denied' AND blob4 = 'protected_tool')) LIMIT 5000",
 ).catch(() => []);
 const afterWallText = afterWallNote(
   wallRows,
@@ -176,7 +176,7 @@ const afterWallText = afterWallNote(
 const kinds = Object.fromEntries(
   (
     await ae(
-      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '1' DAY AND blob2 NOT LIKE 'gankdat-mcp-probe/%' GROUP BY kind",
+      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '1' DAY AND blob2 NOT LIKE 'gankdat-mcp-probe/%' AND blob2 NOT LIKE 'gankdat-x402-probe/%' GROUP BY kind",
     )
   ).map((r) => [r.kind, Math.round(Number(r.n))]),
 );
@@ -202,7 +202,7 @@ const wantedNote = wanted.length
 const changeFeed = Object.fromEntries(
   (
     await ae(
-      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '7' DAY AND blob2 NOT LIKE 'gankdat-mcp-probe/%' AND ((blob1 = 'mcp_authed' AND blob5 LIKE '%get_changes%') OR blob1 = 'rest_changes') GROUP BY kind",
+      "SELECT blob1 AS kind, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE timestamp > NOW() - INTERVAL '7' DAY AND blob2 NOT LIKE 'gankdat-mcp-probe/%' AND blob2 NOT LIKE 'gankdat-x402-probe/%' AND ((blob1 = 'mcp_authed' AND blob5 LIKE '%get_changes%') OR blob1 = 'rest_changes') GROUP BY kind",
     )
   ).map((r) => [r.kind, Math.round(Number(r.n))]),
 );
@@ -581,7 +581,7 @@ async function datasetQueries30d(label = '', restWhere = '', mcpWhere = '') {
   );
   for (const r of rest) add(r.slug, r.n);
   const mcp = await ae(
-    `SELECT blob5 AS tools, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_authed' AND blob5 != '' AND blob2 NOT LIKE 'gankdat-mcp-probe/%'${mcpWhere} AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY tools`,
+    `SELECT blob5 AS tools, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'mcp_authed' AND blob5 != '' AND blob2 NOT LIKE 'gankdat-mcp-probe/%' AND blob2 NOT LIKE 'gankdat-x402-probe/%'${mcpWhere} AND timestamp > NOW() - INTERVAL '30' DAY GROUP BY tools`,
   );
   for (const r of mcp) {
     for (const tool of String(r.tools).split(',')) {
@@ -614,7 +614,14 @@ const datasetsExternalNote = internalAccountIds
 
 const date = new Date().toISOString().slice(0, 10);
 const users = `${acct.total} accts (${acct.paid ?? 0} paid, +${acct.new24h ?? 0}/24h)`;
-const sales = `${kinds.x402_paid ?? 0} x402 paid`;
+// The owner's indexing payment and any runner probe pay under `gankdat-x402-probe/…`
+// (scripts/x402-test-client.mjs): excluded from the sale count above, shown beside it.
+const ownX402 = await ae(
+  "SELECT SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'x402_paid' AND blob2 LIKE 'gankdat-x402-probe/%' AND timestamp > NOW() - INTERVAL '1' DAY",
+)
+  .then((rows) => Math.round(Number(rows[0]?.n ?? 0)))
+  .catch(() => 0);
+const sales = `${kinds.x402_paid ?? 0} x402 paid${ownX402 ? ` (+${ownX402} own probe)` : ''}`;
 
 const file = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'RESEARCH.md');
 let md = await readFile(file, 'utf8');
@@ -637,6 +644,70 @@ for (const e of apify ? newlyFailing(apify.outcomes, previousFailed(md, date)) :
   errors.push({ source_slug: e.source_slug, message: e.message });
 }
 
+/** The first failed check in a validate response, whatever shape `preflight` takes; else the outcome. */
+function firstPreflightFailure(body) {
+  const found = [];
+  const walk = (v) => {
+    if (Array.isArray(v)) return v.forEach(walk);
+    if (!v || typeof v !== 'object') return;
+    if (v.passed === false || /^(fail|failed|error)$/i.test(String(v.status ?? v.result ?? ''))) {
+      found.push(
+        String(v.message ?? v.name ?? v.check ?? v.code ?? JSON.stringify(v)).slice(0, 80),
+      );
+    }
+    Object.values(v).forEach(walk);
+  };
+  walk(body.preflight ?? body);
+  return found[0] ?? String(body.simulation?.outcome ?? body.error ?? 'invalid').slice(0, 80);
+}
+
+// x402 Bazaar dry run (gankdat `x402-bazaar-listing`, 2026-10-14): CDP's keyless validate
+// endpoint checks a resource the way the Bazaar's indexer does — reachable, answers 402,
+// advertises a valid extensions.bazaar block — and is reachable from the runner (the sandbox
+// proxy refuses api.cdp.coinbase.com, so no build can run it). One POST per live source, four
+// at a time; the row reads `x402 validate: 17/17 valid`, or names the failing slugs with the
+// first preflight failure each, or `n/a (<reason>)` when the listing or the endpoint cannot be
+// read. Validation does not cover the metadata content policy: the indexed count comes from
+// the discovery API (`metrics-bazaar-merchant-read`), never from this line.
+const x402ValidateNote = await (async () => {
+  const base = (process.env.PUBLIC_BASE_URL || 'https://gankdat.com').replace(/\/+$/, '');
+  const listing = await fetch(`${base}/v1/data`, { signal: AbortSignal.timeout(15_000) });
+  if (!listing.ok) throw new Error(`/v1/data ${listing.status}`);
+  const slugs = (await listing.json()).data.map((s) => s.slug);
+  const results = [];
+  for (let i = 0; i < slugs.length; i += 4) {
+    results.push(
+      ...(await Promise.all(
+        slugs.slice(i, i + 4).map(async (slug) => {
+          try {
+            const res = await fetch('https://api.cdp.coinbase.com/platform/v2/x402/validate', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({ resource: `${base}/x402/data/${slug}`, method: 'GET' }),
+              signal: AbortSignal.timeout(20_000),
+            });
+            const body = await res.json().catch(() => ({}));
+            if (!res.ok) return { slug, reason: `HTTP ${res.status}` };
+            return body.valid === true ? { slug } : { slug, reason: firstPreflightFailure(body) };
+          } catch (e) {
+            return { slug, reason: String(e instanceof Error ? e.message : e).slice(0, 60) };
+          }
+        }),
+      )),
+    );
+  }
+  const failing = results.filter((r) => r.reason);
+  const head = `x402 validate: ${results.length - failing.length}/${results.length} valid`;
+  return failing.length
+    ? `${head} (${failing
+        .map((r) => `${r.slug}: ${r.reason}`)
+        .join(', ')
+        .slice(0, 300)})`
+    : head;
+})().catch(
+  (e) => `x402 validate: n/a (${String(e instanceof Error ? e.message : e).slice(0, 100)})`,
+);
+
 const notes = [
   // preview = keyless data-tool calls (5 rows, 20/day per client, since 2026-09-30 for the
   // Claude Connectors Directory); paywall hits = the plan text shown when that budget is spent
@@ -644,6 +715,7 @@ const notes = [
   `MCP 24h: ${kinds.mcp_authed ?? 0} authed, ${kinds.mcp_anon ?? 0} anon, ${kinds.mcp_preview ?? 0} preview, ${paywall} paywall hits${wantedNote}`,
   `changes 7d: ${changesMcp + changesRest} (mcp ${changesMcp}, rest ${changesRest})`,
   indexnowNote,
+  x402ValidateNote,
   mcpProbeNote,
   waveLogText,
   feedsNote,
