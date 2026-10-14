@@ -1,0 +1,72 @@
+{
+  "request": "vat-check-2026-10-14",
+  "fetched_at": "2026-10-14T17:55:35.456Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.tax.service.gov.uk/api-documentation/docs/api/service/vat-registered-companies-api/1.0",
+      "fetched_at": "2026-10-14T17:55:32.217Z",
+      "status": 404,
+      "final_url": "https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/vat-registered-companies-api/1.0",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 15138,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.tax.service.gov.uk/api-documentation/docs/api/service/vat-registered-companies-api/2.0",
+      "fetched_at": "2026-10-14T17:55:33.012Z",
+      "status": 200,
+      "final_url": "https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/vat-registered-companies-api/2.0",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 26733,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/vat-registered-companies-api/1.0",
+      "fetched_at": "2026-10-14T17:55:33.998Z",
+      "status": 404,
+      "final_url": "https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/vat-registered-companies-api/1.0",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 15138,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.service.hmrc.gov.uk/api-documentation/docs/terms-of-use",
+      "fetched_at": "2026-10-14T17:55:34.359Z",
+      "status": 200,
+      "final_url": "https://developer.service.hmrc.gov.uk/api-documentation/docs/terms-of-use",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 53026,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/nocodeventure/uk-vat-hmrc-api",
+      "fetched_at": "2026-10-14T17:55:35.114Z",
+      "status": 200,
+      "final_url": "https://apify.com/nocodeventure/uk-vat-hmrc-api",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"7a9yhtllpwai9o\""
+      },
+      "file": "5.html",
+      "bytes": 490392,
+      "truncated": false
+    }
+  ]
+}
