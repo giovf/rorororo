@@ -774,8 +774,9 @@
       "effort_days": 0.2,
       "proof": "one request file with a POST line returns the JSON body under docs/relay/responses/<name>/; a credential-shaped body is refused",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-14"
+      "status": "doing",
+      "added": "2026-10-14",
+      "doing_since": "2026-10-14"
     }
   ]
 }
