@@ -741,8 +741,9 @@
       "effort_days": 0.3,
       "proof": "the 2026-W43 Monday report carries the Slots table for the week before it, with counts that match a hand count of RUNS.md",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-14"
+      "status": "doing",
+      "added": "2026-10-14",
+      "doing_since": "2026-10-14"
     },
     {
       "id": "metrics-cron-short-circuit",
