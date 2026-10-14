@@ -63,6 +63,12 @@ const ALLOWED = [
   '.data.gov.ie', // Irish open data portal dataset pages (exchange pre-research 2026-10-13)
   '.vision-net.ie', // CRIF Vision-net price list, the paid rival (exchange pre-research 2026-10-13)
   '.solocheck.ie', // SoloCheck (CRIF) company-report prices, the paid rival (exchange pre-research 2026-10-13)
+  '.coinbase.com', // x402 Bazaar discovery API, CDP docs, facilitator pricing and CDP terms (exchange 2026-W42)
+  'base.blockscout.com', // Base block explorer public API: Aave v3 liquidation logs and gas prices (exchange 2026-W42, keeper idea)
+  'build.avax.network', // Avalanche Hack2Build x402 hackathon page (exchange 2026-W42)
+  'solana.com', // Solana x402 hackathon page (exchange 2026-W42)
+  'docs.opire.dev', // Opire bounty bot docs (exchange 2026-W42, bounty boards)
+  'docs.algora.io', // Algora bounty workflow docs (exchange 2026-W42, bounty boards)
 ];
 
 function allowed(hostname) {
