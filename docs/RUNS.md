@@ -1053,3 +1053,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-13 09:16 | build | Exchange pre-research: Ofsted childcare providers parked (OGL v3, twice-yearly 19 MB CSV, Apify rivals ≤5 users)
 - 2026-10-13 17:17 | burn-down | Exchange pre-research: Ireland CRO company register parked (CC BY 4.0, 825k rows daily; 3 Apify clones ≤2 users)
 - 2026-10-13 17:17 | build | Nothing buildable: every queue cooling or dated, exchange pre-research pass spent at 09:16; stopping
+- 2026-10-14 00:40 | burn-down | Foundry research: 10-13 ran 31 Actions runs (56 on 10-12), check 0 min with the cache, no failure
+- 2026-10-14 00:40 | burn-down | Metrics schedules still 7–9 h late (14:31/14:36 on 10-13) but the 07:14 dispatch wrote the row first
+- 2026-10-14 00:40 | burn-down | Nothing measures the 70–80% target: usage note 10 days stale, 7 cold burn fires on 10-13 left no line
+- 2026-10-14 00:40 | burn-down | Queue: foundry +3 (slot utilisation 4, metrics cron short-circuit 2, pre-research shelf cap 3, dated 10-19)
+- 2026-10-14 00:40 | burn-down | Queue: actions-minutes and metrics-crons-day-7-read gain the post-trim and day-3/4 readings

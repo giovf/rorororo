@@ -1195,3 +1195,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   high-value dataset, 825k companies refreshed daily with a keyless CKAN API, no director fields; CRIF (Vision-net €2.10/search,
   SoloCheck) sells directors, judgments and credit the open data lacks, and three Apify clones of the exact lookup + change-feed shape
   have ≤ 2 users each (nerolabs already does x402 + MCP). Trigger: a first paid company-register call, ours or theirs.
+- 2026-10-14 burn-down: foundry researched (starved queue). Actions after the 10-12 floor trim: 31 runs on 10-13 against 56, check at 0
+  billed-rounded minutes (cache hits), no failed run; the metrics schedules still start 7–9 h late but the 07:00 dispatch writes the row
+  first, so the schedule is a duplicate (`metrics-cron-short-circuit`, 2). The owner's 70–80% target has no measure — the usage note is
+  ten days stale and cold-gated fires leave no trace — so `slot-utilisation-report` (4) gives the Monday report and the Sunday review a
+  slot table; `pre-research-shelf-cap` (3, dated 10-19) puts the night pass itself to the review: 10 passes since 10-05 parked 10 ideas and
+  promoted none while every trigger waits on a first paid call. The exchange runs this morning with two ideas dated for it.
