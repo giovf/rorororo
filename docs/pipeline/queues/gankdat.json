@@ -594,8 +594,9 @@
       "effort_days": 1,
       "proof": "our payTo address returns ≥ 17 resources from GET /platform/v2/x402/discovery/resources within a week of the settled call; ≥ 50 paid calls from ≥ 5 payers (not ours) in the first 30 days (metrics-bazaar-merchant-read)",
       "score": 9,
-      "status": "todo",
-      "added": "2026-10-14"
+      "status": "doing",
+      "added": "2026-10-14",
+      "doing_since": "2026-10-14"
     },
     {
       "id": "metrics-bazaar-merchant-read",
