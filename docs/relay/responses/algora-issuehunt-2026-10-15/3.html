@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="AgEBBBgDDUUuZGEQDx8sDiYLKzpVCUowUMDAZgT4ZS9OPFzXooRpm0yo">
+
+    <title data-suffix=" | Algora">
+      API Help bounties
+     | Algora</title>
+
+      <meta name="twitter:title" content="API Help bounties">
+      <meta property="og:title" content="API Help bounties">
+
+
+      <meta name="description" content="Algora connects companies and engineers for full-time and contract work">
+      <meta name="twitter:description" content="Algora connects companies and engineers for full-time and contract work">
+      <meta property="og:description" content="Algora connects companies and engineers for full-time and contract work">
+
+    <meta name="twitter:image:src" content="https://algora.io/og/api/bounties">
+    <meta property="og:image" content="https://algora.io/og/api/bounties">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+
+      <meta property="og:url" content="https://algora.io/api/bounties">
+
+    <meta name="twitter:site" content="@algoraio">
+    <meta property="og:site_name" content="Algora">
+    <meta property="og:type" content="website">
+
+    
+
+    <link rel="icon" href="/favicon-4d1310e26d20fa51d2c2dbbf7ba46bdb.ico?vsn=d">
+    <link rel="icon" type="image/png" sizes="192x192" href="/images/logo-192px-3af980e2ae655a21129079b00a574a8c.png?vsn=d">
+    <link rel="icon" type="image/png" sizes="512x512" href="/images/logo-512px-13f745e9640e7882366719848ac4b85e.png?vsn=d">
+    <link rel="apple-touch-icon" sizes="192x192" href="/images/logo-192px-3af980e2ae655a21129079b00a574a8c.png?vsn=d">
+    <link rel="apple-touch-icon" sizes="512x512" href="/images/logo-512px-13f745e9640e7882366719848ac4b85e.png?vsn=d">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link phx-track-static rel="stylesheet" href="/assets/app-2624cd44f2e1f6ba4d7266c75870b892.css?vsn=d">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap">
+    </noscript>
+    <script defer phx-track-static type="text/javascript" src="/assets/app-9c1d4439fb4fa50e0c9bd880d3a95ad1.js?vsn=d">
+    </script>
+    <script async data-exclude="/preferences/**" src="https://plausible.io/js/pa-K2_PRCUzHnAdNVAIVrSLM.js">
+    </script>
+    <script>
+      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
+      plausible.init()
+    </script>
+  </head>
+  <body class="dark">
+    
+
+
+<div class="relative pt-16">
+  
+
+
+  <header class="absolute inset-x-0 top-0 z-50">
+  
+  <nav class="flex px-6 py-4 container items-center justify-between lg:px-8 lg:py-6 mx-auto" aria-label="Global">
+    <div class="flex lg:flex-1">
+      <a href="/" data-phx-link="redirect" data-phx-link-state="push" aria-label="Algora">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.14 39.42" fill="currentColor" class="fill-current text-foreground w-auto h-8">
+  <g>
+    <path d="M19.25 9v19.24H16v-2.37a9.63 9.63 0 1 1 0-14.51V9ZM16 18.63A6.32 6.32 0 1 0 9.64 25 6.32 6.32 0 0 0 16 18.63ZM22.29 0h3.29v28.24h-3.29ZM47.6 34.27v.07a5.41 5.41 0 0 1-.69 2.52 4.78 4.78 0 0 1-1.39 1.54 5.61 5.61 0 0 1-3.25 1H34a5.21 5.21 0 0 1-3.88-1.5 6.25 6.25 0 0 1-1.53-4.2l3.29.11a2.58 2.58 0 0 0 .62 1.83 2 2 0 0 0 1.5.47h8.29c1.68 0 2-1.1 2-1.75a2 2 0 0 0-2-1.76h-8.2a5.35 5.35 0 0 1-5.52-5.51 6.07 6.07 0 0 1 1.24-3.62 9.5 9.5 0 0 1-1.31-4.86A9.62 9.62 0 0 1 38.11 9a9.72 9.72 0 0 1 5.37 1.61A5.78 5.78 0 0 1 47.53 9v3.28a2.54 2.54 0 0 0-1.72.63 9.67 9.67 0 0 1 1.86 5.7 9.79 9.79 0 0 1-5.44 8.7 10 10 0 0 1-4.16.91 9.75 9.75 0 0 1-6.07-2.1 3 3 0 0 0-.18.95 2.08 2.08 0 0 0 2.23 2.27h8.18a5.61 5.61 0 0 1 3.25 1.05 5.45 5.45 0 0 1 2.12 3.88ZM31.78 18.63a6.46 6.46 0 0 0 .84 3.15 5.88 5.88 0 0 0 1.43 1.71A6.34 6.34 0 0 0 38.11 25a6.26 6.26 0 0 0 6.32-6.32 6.27 6.27 0 0 0-2.16-4.71 6.2 6.2 0 0 0-4.16-1.61 6.35 6.35 0 0 0-6.33 6.27ZM68.54 18.63A9.63 9.63 0 1 1 58.93 9a9.62 9.62 0 0 1 9.61 9.63Zm-9.61-6.32a6.32 6.32 0 1 0 6.32 6.32 6.35 6.35 0 0 0-6.32-6.32ZM80.35 14.1h-3.28a1.9 1.9 0 0 0-.4-1.31 2 2 0 0 0-1.28-.48 1.83 1.83 0 0 0-2 1.57v14.36h-3.27V9h3.29v.4a5.24 5.24 0 0 1 1.9-.4 5.47 5.47 0 0 1 3.62 1.35 5 5 0 0 1 1.42 3.75ZM100.14 9v19.24h-3.29v-2.37a9.63 9.63 0 1 1 0-14.51V9Zm-3.29 9.64A6.32 6.32 0 1 0 90.53 25a6.32 6.32 0 0 0 6.32-6.37Z">
+    </path>
+  </g>
+</svg>
+</a>
+    </div>
+    <!-- Desktop nav -->
+    
+
+    <div class="flex items-center justify-end gap-4 lg:flex-1">
+      <a href="tel:+16504202207" class="hidden lg:flex items-center justify-center text-sm text-foreground/80 hover:text-foreground">
+        <span class="tabler-phone size-5 shrink-0"></span>
+        <span class="ml-1 shrink-0 font-medium">1-650-420-2207</span>
+      </a>
+      
+      
+  <a href="https://cal.com/ioannisflo" class="hidden px-4 py-2 rounded-lg border-background/20 bg-foreground text-background transition-colors whitespace-nowrap items-center justify-center font-semibold shadow text-sm h-9 focus-visible:outline-background focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-1 lg:inline-flex disabled:cursor-not-allowed disabled:opacity-50 disabled:opacity-75 hover:border-background/40 hover:bg-foreground/90 border phx-submit-loading:opacity-75" rel="noopener" target="_blank">
+    
+        Schedule a call
+      
+  </a>
+
+      
+      <!-- Mobile menu button -->
+      <div class="flex lg:hidden">
+        <button type="button" class="rounded-md p-2.5 text-muted-foreground hover:text-foreground" onclick="document.getElementById('mobile-menu').classList.remove('hidden'); document.body.classList.add('overflow-hidden')">
+          <span class="sr-only">Open main menu</span>
+          <span class="tabler-menu h-6 w-6"></span>
+        </button>
+      </div>
+      
+      
+    </div>
+  </nav>
+  <!-- Mobile menu -->
+  <div id="mobile-menu" class="lg:hidden hidden" role="dialog" aria-modal="true">
+    <div class="fixed inset-0 z-50"></div>
+    <div class="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-4 sm:max-w-sm sm:ring-1 sm:ring-border scrollbar-thin">
+      <!-- Mobile menu content -->
+      <div class="flex items-center justify-between">
+        <a href="/" data-phx-link="redirect" data-phx-link-state="push" aria-label="Algora">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.14 39.42" fill="currentColor" class="fill-current text-foreground w-auto h-8">
+  <g>
+    <path d="M19.25 9v19.24H16v-2.37a9.63 9.63 0 1 1 0-14.51V9ZM16 18.63A6.32 6.32 0 1 0 9.64 25 6.32 6.32 0 0 0 16 18.63ZM22.29 0h3.29v28.24h-3.29ZM47.6 34.27v.07a5.41 5.41 0 0 1-.69 2.52 4.78 4.78 0 0 1-1.39 1.54 5.61 5.61 0 0 1-3.25 1H34a5.21 5.21 0 0 1-3.88-1.5 6.25 6.25 0 0 1-1.53-4.2l3.29.11a2.58 2.58 0 0 0 .62 1.83 2 2 0 0 0 1.5.47h8.29c1.68 0 2-1.1 2-1.75a2 2 0 0 0-2-1.76h-8.2a5.35 5.35 0 0 1-5.52-5.51 6.07 6.07 0 0 1 1.24-3.62 9.5 9.5 0 0 1-1.31-4.86A9.62 9.62 0 0 1 38.11 9a9.72 9.72 0 0 1 5.37 1.61A5.78 5.78 0 0 1 47.53 9v3.28a2.54 2.54 0 0 0-1.72.63 9.67 9.67 0 0 1 1.86 5.7 9.79 9.79 0 0 1-5.44 8.7 10 10 0 0 1-4.16.91 9.75 9.75 0 0 1-6.07-2.1 3 3 0 0 0-.18.95 2.08 2.08 0 0 0 2.23 2.27h8.18a5.61 5.61 0 0 1 3.25 1.05 5.45 5.45 0 0 1 2.12 3.88ZM31.78 18.63a6.46 6.46 0 0 0 .84 3.15 5.88 5.88 0 0 0 1.43 1.71A6.34 6.34 0 0 0 38.11 25a6.26 6.26 0 0 0 6.32-6.32 6.27 6.27 0 0 0-2.16-4.71 6.2 6.2 0 0 0-4.16-1.61 6.35 6.35 0 0 0-6.33 6.27ZM68.54 18.63A9.63 9.63 0 1 1 58.93 9a9.62 9.62 0 0 1 9.61 9.63Zm-9.61-6.32a6.32 6.32 0 1 0 6.32 6.32 6.35 6.35 0 0 0-6.32-6.32ZM80.35 14.1h-3.28a1.9 1.9 0 0 0-.4-1.31 2 2 0 0 0-1.28-.48 1.83 1.83 0 0 0-2 1.57v14.36h-3.27V9h3.29v.4a5.24 5.24 0 0 1 1.9-.4 5.47 5.47 0 0 1 3.62 1.35 5 5 0 0 1 1.42 3.75ZM100.14 9v19.24h-3.29v-2.37a9.63 9.63 0 1 1 0-14.51V9Zm-3.29 9.64A6.32 6.32 0 1 0 90.53 25a6.32 6.32 0 0 0 6.32-6.37Z">
+    </path>
+  </g>
+</svg>
+</a>
+        <button type="button" class="rounded-md p-2.5 text-muted-foreground hover:text-foreground" onclick="document.getElementById('mobile-menu').classList.add('hidden'); document.body.classList.remove('overflow-hidden')">
+          <span class="sr-only">Close menu</span>
+          <span class="tabler-x h-6 w-6"></span>
+        </button>
+      </div>
+
+      <div class="mt-6 flow-root">
+        <div class="-my-6">
+          
+          <div class="space-y-4 py-6">
+            <a href="https://cal.com/ioannisflo" class="w-full md:w-auto flex items-center rounded-lg border border-gray-500 py-2 pl-2 pr-3.5 text-xs text-foreground/90 hover:text-foreground transition-colors hover:border-gray-400" rel="noopener">
+              <span class="tabler-calendar-clock size-4"></span>
+              <span class="ml-1.5">Schedule a call</span>
+            </a>
+            <a href="tel:+16504202207" class="w-full md:w-auto flex items-center rounded-lg border border-gray-500 py-2 pl-2 pr-3.5 text-xs text-foreground/90 hover:text-foreground transition-colors hover:border-gray-400">
+              <span class="tabler-phone size-4"></span> <span class="font-bold ml-1">US</span>
+              <span class="ml-1">+1 (650) 420-2207</span>
+            </a>
+            <a href="tel:+306973184144" class="w-full md:w-auto flex items-center rounded-lg border border-gray-500 py-2 pl-2 pr-3.5 text-xs text-foreground/90 hover:text-foreground transition-colors hover:border-gray-400">
+              <span class="tabler-phone size-4"></span>
+              <span class="font-bold ml-1">EU</span>
+              <span class="ml-1">+30 (697) 318-4144</span>
+            </a>
+          </div>
+          <div class="py-6 space-y-8">
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-foreground">
+                <a href="/customers" data-phx-link="redirect" data-phx-link-state="push" class="hover:text-foreground/80 transition-colors">
+                  Customer stories
+                </a>
+              </p>
+              <ul role="list" class="mt-4 space-y-3">
+                <li>
+                  <a href="/customers/coderabbit" data-phx-link="redirect" data-phx-link-state="push" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    CodeRabbit
+                  </a>
+                </li><li>
+                  <a href="/customers/comfy" data-phx-link="redirect" data-phx-link-state="push" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    ComfyUI
+                  </a>
+                </li><li>
+                  <a href="/customers/firecrawl" data-phx-link="redirect" data-phx-link-state="push" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Firecrawl
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-foreground">
+                Connect
+              </p>
+              <ul role="list" class="mt-4 space-y-3">
+                <li>
+                  <a href="https://www.youtube.com/watch?v=ZXz74ZewxwY&amp;list=PLRIG8mKLBXFotOxF234rEIREidMRh98Hv&amp;t=229s" class="text-sm text-muted-foreground hover:text-foreground transition-colors" rel="noopener" target="_blank">
+                    OSS Founder Podcast
+                  </a>
+                </li>
+                <li>
+                  <a href="https://github.com/algora-io" class="text-sm text-muted-foreground hover:text-foreground transition-colors" rel="noopener" target="_blank">
+                    GitHub
+                  </a>
+                </li>
+                <li>
+                  <a href="https://x.com/algoraio" class="text-sm text-muted-foreground hover:text-foreground transition-colors" rel="noopener" target="_blank">
+                    X (Twitter)
+                  </a>
+                </li>
+                <li>
+                  <a href="https://linkedin.com/company/algorapbc" class="text-sm text-muted-foreground hover:text-foreground transition-colors" rel="noopener" target="_blank">
+                    LinkedIn
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div>
+              <p class="text-xs font-semibold uppercase tracking-wider text-foreground">
+                Company
+              </p>
+              <ul role="list" class="mt-4 space-y-3">
+                <li>
+                  <a href="/privacy" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Privacy
+                  </a>
+                </li>
+                <li>
+                  <a href="/terms" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="/brand" data-phx-link="redirect" data-phx-link-state="push" class="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    Brand
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+  <div class="container mx-auto px-6 pt-8 lg:px-8">
+  <div class="mb-6">
+    <div class="flex flex-wrap items-center justify-between gap-4 lg:flex-nowrap">
+      <a href="/api/home" class="group flex items-center gap-4">
+        <div class="relative rounded-full shrink-0 overflow-hidden w-12 h-12 md:w-14 md:h-14">
+  
+          <img id="avatar-image-GN6L8_TySsocG5Bh" alt="API Help" class="aspect-square w-full h-full" phx-hook="AvatarImage">
+          <span class="flex rounded-full bg-muted items-center justify-center w-full h-full">
+  AP
+</span>
+        
+</div>
+        <div>
+          <h1 class="flex items-center gap-1 text-2xl font-bold text-foreground">
+            <span class="group-hover:underline">API Help</span>
+            <span class="tabler-chevron-right h-5 w-5 text-muted-foreground"></span> Bounties
+          </h1>
+          <p class="text-sm text-muted-foreground">
+            Cash rewards for contributors who solve open issues
+          </p>
+        </div>
+      </a>
+      <div>
+        <div class="grid h-full w-full grid-cols-2 items-center justify-center gap-1 rounded-md p-1 bg-muted text-card-foreground">
+          
+  <a href="/api/bounties?status=open" class="inline-flex px-4 py-2 rounded-lg border-primary/80 bg-primary/50 text-foreground transition-colors whitespace-nowrap items-center justify-center font-medium shadow text-sm h-9 focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-1 focus-visible:outline-primary-600 disabled:cursor-not-allowed disabled:opacity-50 disabled:opacity-75 hover:border-primary hover:bg-primary/30 border data-[state=open]:bg-primary-500/80 data-[state=open]:outline-primary-600 phx-submit-loading:opacity-75">
+    
+            <div class="relative flex items-center gap-2.5 text-sm md:text-base">
+              <div class="truncate">Open</div>
+              <span class="min-w-[1ch] font-mono text-emerald-200">
+                0
+              </span>
+            </div>
+          
+  </a>
+
+          
+  <a href="/api/bounties?status=completed" class="inline-flex px-4 py-2 rounded-lg transition-colors whitespace-nowrap items-center justify-center font-medium text-sm h-9 focus-visible:ring-ring focus-visible:outline-none focus-visible:ring-1 disabled:cursor-not-allowed disabled:opacity-50 disabled:opacity-75 hover:bg-accent hover:text-accent-foreground phx-submit-loading:opacity-75">
+    
+            <div class="relative flex items-center gap-2.5 text-sm md:text-base">
+              <div class="truncate">Completed</div>
+              <span class="min-w-[1ch] font-mono text-gray-400">
+                0
+              </span>
+            </div>
+          
+  </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="overflow-hidden rounded-xl border border-white/15">
+  
+    <div class="flex flex-col items-center justify-center py-16 text-center">
+      <span class="tabler-diamond mb-4 h-16 w-16 text-muted-foreground/50"></span>
+      <h3 class="text-lg font-semibold text-foreground">No open bounties</h3>
+    </div>
+  
+</div>
+  
+
+  
+</div>
+  <footer aria-labelledby="footer-heading" class="relative mt-16 overflow-hidden">
+  <h2 id="footer-heading" class="sr-only">Footer</h2>
+
+  <div class="relative pt-16 px-6 container border-white/10 lg:px-8 border-t mx-auto">
+    <div>
+      <div class="grid grid-cols-2 gap-x-8 gap-y-12 sm:grid-cols-2 lg:grid-cols-4">
+        
+        <div class="sm:col-span-1">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-white">
+            <a href="/" data-phx-link="redirect" data-phx-link-state="push" aria-label="Algora">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100.14 39.42" fill="currentColor" class="fill-current text-white w-auto h-6 md:h-8">
+  <g>
+    <path d="M19.25 9v19.24H16v-2.37a9.63 9.63 0 1 1 0-14.51V9ZM16 18.63A6.32 6.32 0 1 0 9.64 25 6.32 6.32 0 0 0 16 18.63ZM22.29 0h3.29v28.24h-3.29ZM47.6 34.27v.07a5.41 5.41 0 0 1-.69 2.52 4.78 4.78 0 0 1-1.39 1.54 5.61 5.61 0 0 1-3.25 1H34a5.21 5.21 0 0 1-3.88-1.5 6.25 6.25 0 0 1-1.53-4.2l3.29.11a2.58 2.58 0 0 0 .62 1.83 2 2 0 0 0 1.5.47h8.29c1.68 0 2-1.1 2-1.75a2 2 0 0 0-2-1.76h-8.2a5.35 5.35 0 0 1-5.52-5.51 6.07 6.07 0 0 1 1.24-3.62 9.5 9.5 0 0 1-1.31-4.86A9.62 9.62 0 0 1 38.11 9a9.72 9.72 0 0 1 5.37 1.61A5.78 5.78 0 0 1 47.53 9v3.28a2.54 2.54 0 0 0-1.72.63 9.67 9.67 0 0 1 1.86 5.7 9.79 9.79 0 0 1-5.44 8.7 10 10 0 0 1-4.16.91 9.75 9.75 0 0 1-6.07-2.1 3 3 0 0 0-.18.95 2.08 2.08 0 0 0 2.23 2.27h8.18a5.61 5.61 0 0 1 3.25 1.05 5.45 5.45 0 0 1 2.12 3.88ZM31.78 18.63a6.46 6.46 0 0 0 .84 3.15 5.88 5.88 0 0 0 1.43 1.71A6.34 6.34 0 0 0 38.11 25a6.26 6.26 0 0 0 6.32-6.32 6.27 6.27 0 0 0-2.16-4.71 6.2 6.2 0 0 0-4.16-1.61 6.35 6.35 0 0 0-6.33 6.27ZM68.54 18.63A9.63 9.63 0 1 1 58.93 9a9.62 9.62 0 0 1 9.61 9.63Zm-9.61-6.32a6.32 6.32 0 1 0 6.32 6.32 6.35 6.35 0 0 0-6.32-6.32ZM80.35 14.1h-3.28a1.9 1.9 0 0 0-.4-1.31 2 2 0 0 0-1.28-.48 1.83 1.83 0 0 0-2 1.57v14.36h-3.27V9h3.29v.4a5.24 5.24 0 0 1 1.9-.4 5.47 5.47 0 0 1 3.62 1.35 5 5 0 0 1 1.42 3.75ZM100.14 9v19.24h-3.29v-2.37a9.63 9.63 0 1 1 0-14.51V9Zm-3.29 9.64A6.32 6.32 0 1 0 90.53 25a6.32 6.32 0 0 0 6.32-6.37Z">
+    </path>
+  </g>
+</svg>
+</a>
+          </h3>
+          <ul role="list" class="mt-6 space-y-3">
+            <li class="text-sm font-medium text-muted-foreground">
+              Algora PBC © 2026
+            </li>
+            <li>
+              <a href="https://cal.com/ioannisflo" class="flex items-center text-sm text-muted-foreground hover:text-white transition-colors" rel="noopener">
+                <span class="tabler-calendar-clock size-3 md:size-4"></span>
+                <span class="ml-1.5">Schedule a call</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+16504202207" class="flex items-center text-sm text-muted-foreground hover:text-white transition-colors" target="_blank">
+                <span class="tabler-phone size-3 md:size-4"></span>
+                <span class="font-bold ml-1 hidden md:inline">US</span>
+                <span class="ml-1">+1 (650) 420-2207</span>
+              </a>
+            </li>
+            <li>
+              <a href="tel:+306973184144" class="flex items-center text-sm text-muted-foreground hover:text-white transition-colors" target="_blank">
+                <span class="tabler-phone size-3 md:size-4"></span>
+                <span class="font-bold ml-1 hidden md:inline">EU</span>
+                <span class="ml-1">+30 (697) 318-4144</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div class="sm:col-span-1">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-white">
+            <a href="/customers" data-phx-link="redirect" data-phx-link-state="push" class="hover:text-white/80 transition-colors">
+              Customer stories
+            </a>
+          </h3>
+          <ul role="list" class="mt-6 space-y-3">
+            <li>
+              <a href="/customers/coderabbit" data-phx-link="redirect" data-phx-link-state="push" class="text-sm text-muted-foreground hover:text-white transition-colors">
+                CodeRabbit
+              </a>
+            </li><li>
+              <a href="/customers/comfy" data-phx-link="redirect" data-phx-link-state="push" class="text-sm text-muted-foreground hover:text-white transition-colors">
+                ComfyUI
+              </a>
+            </li><li>
+              <a href="/customers/firecrawl" data-phx-link="redirect" data-phx-link-state="push" class="text-sm text-muted-foreground hover:text-white transition-colors">
+                Firecrawl
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        
+        
+
+        
+        <div class="sm:col-span-1">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-white">
+            Connect
+          </h3>
+          <ul role="list" class="mt-6 space-y-3">
+            <li>
+              <a href="https://www.youtube.com/watch?v=ZXz74ZewxwY&amp;list=PLRIG8mKLBXFotOxF234rEIREidMRh98Hv&amp;t=229s" class="text-sm text-muted-foreground hover:text-white transition-colors" rel="noopener" target="_blank">
+                OSS Founder Podcast
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/algora-io" class="text-sm text-muted-foreground hover:text-white transition-colors" rel="noopener" target="_blank">
+                GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://x.com/algoraio" class="text-sm text-muted-foreground hover:text-white transition-colors" rel="noopener" target="_blank">
+                X (Twitter)
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/company/algorapbc" class="text-sm text-muted-foreground hover:text-white transition-colors" rel="noopener" target="_blank">
+                LinkedIn
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        
+        <div class="sm:col-span-1">
+          <h3 class="text-sm font-semibold uppercase tracking-wider text-white">
+            Company
+          </h3>
+          <ul role="list" class="mt-6 space-y-3">
+            <li>
+              <a href="/privacy" class="text-sm text-muted-foreground hover:text-white transition-colors">
+                Privacy
+              </a>
+            </li>
+            <li>
+              <a href="/terms" class="text-sm text-muted-foreground hover:text-white transition-colors">
+                Terms of Service
+              </a>
+            </li>
+            <li>
+              <a href="/brand" data-phx-link="redirect" data-phx-link-state="push" class="text-sm text-muted-foreground hover:text-white transition-colors">
+                Brand
+              </a>
+            </li>
+            <li>
+              <a href="/llms.txt" class="text-sm text-muted-foreground hover:text-white transition-colors">
+                llms.txt
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    
+    <div class="mt-12 relative w-full left-1/2 -translate-x-1/2 h-[28vw] overflow-hidden pointer-events-none select-none">
+      <div class="absolute inset-x-0 top-0 w-full min-h-[36vw]" style="background: url(/images/patterns/footer-wordmark-heatmap-e71b768e4b4e49e0f5e0b9e5bc76cc5e.svg?vsn=d) center top / 100% auto no-repeat; opacity: 0.4">
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+
+
+
+    <div id="capture" phx-hook="Capture" data-token="phc_nDyZ681jxQhmzhZcpxCKPdFEPGWzEEvV4vsb4Qd3Ia" data-host="https://algora.io/ingest">
+    </div>
+  </body>
+</html>

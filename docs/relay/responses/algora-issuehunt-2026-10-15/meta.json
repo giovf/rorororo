@@ -1,0 +1,88 @@
+{
+  "request": "algora-issuehunt-2026-10-15",
+  "fetched_at": "2026-10-15T00:19:42.227Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://console.algora.io/api/trpc/bounty.list?batch=1&input=%7B%220%22%3A%7B%22json%22%3A%7B%22limit%22%3A100%2C%22status%22%3A%22active%22%7D%7D%7D",
+      "fetched_at": "2026-10-15T00:19:40.934Z",
+      "status": 200,
+      "final_url": "https://console.algora.io/api/trpc/bounty.list?batch=1&input=%7B%220%22%3A%7B%22json%22%3A%7B%22limit%22%3A100%2C%22status%22%3A%22active%22%7D%7D%7D",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "1.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://console.algora.io/api/trpc/bounty.list?input=%7B%22json%22%3A%7B%22limit%22%3A100%2C%22status%22%3A%22active%22%7D%7D",
+      "fetched_at": "2026-10-15T00:19:41.152Z",
+      "status": 200,
+      "final_url": "https://console.algora.io/api/trpc/bounty.list?input=%7B%22json%22%3A%7B%22limit%22%3A100%2C%22status%22%3A%22active%22%7D%7D",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "2.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://console.algora.io/api/bounties?status=active&limit=100",
+      "fetched_at": "2026-10-15T00:19:41.243Z",
+      "status": 200,
+      "final_url": "https://algora.io/api/bounties?status=active&limit=100",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 24371,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://console.algora.io/bounties",
+      "fetched_at": "2026-10-15T00:19:41.705Z",
+      "status": 404,
+      "final_url": "https://algora.io/bounties",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 5852,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://oss.issuehunt.io/",
+      "fetched_at": "2026-10-15T00:19:41.922Z",
+      "status": 200,
+      "final_url": "https://oss.issuehunt.io/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "27376",
+        "etag": "\"6af0-ORhXg1Zrn2QteUv9mMu4+YfHuw4\""
+      },
+      "file": "5.html",
+      "bytes": 27376,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://oss.issuehunt.io/r?q=&status=open",
+      "fetched_at": "2026-10-15T00:19:41.990Z",
+      "status": 200,
+      "final_url": "https://oss.issuehunt.io/r?q=&status=open",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "155851",
+        "etag": "\"260cb-3CodTsQTHUDv3J2FLmd0SJW/4Ww\""
+      },
+      "file": "6.html",
+      "bytes": 155851,
+      "truncated": false
+    }
+  ]
+}
