@@ -177,6 +177,17 @@ if it shows free funded fixes GitHub's search misses (bounties posted from the c
 Sunday review that sets the board-count trigger; if it keeps the line open, the exchange files the
 Algora-API source item from the relay reading.
 
+**Relay reading, the same night (`docs/relay/responses/algora-issuehunt-2026-10-15/`).** Algora's
+console tRPC `bounty.list` with `status: "active"` and no org answers 200 with `items: []` (both
+call shapes), and `/api/bounties` redirects to an HTML page reading "Open 0, Completed 0, No open
+bounties": there is no keyless cross-org list — Algora's money is only readable per org with that
+org's token, so the `/bounty` comments GitHub's search already finds stay the Algora source.
+IssueHunt's browse page lists repositories by cumulative funds raised (Boostnote US$7,060, remotion
+US$6,909, ant-design US$6,188 …) under a 2019 BoostIO footer; the amounts are lifetime totals on
+mostly dormant projects, not open issues, and a supply read would need every repository's own
+issue page. Neither becomes a scanner source; the Sunday review decides the line on the board
+count alone.
+
 ## Metrics
 
 | Date | Event | Users | Rating | Sales | Notes |
