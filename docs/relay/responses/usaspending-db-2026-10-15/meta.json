@@ -1,0 +1,38 @@
+{
+  "request": "usaspending-db-2026-10-15",
+  "fetched_at": "2026-10-15T09:15:30.181Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about/DBInfo.jsx",
+      "fetched_at": "2026-10-15T09:15:29.452Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about/DBInfo.jsx",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "5883",
+        "last-modified": "Wed, 14 Oct 2026 18:19:53 GMT",
+        "etag": "\"e0bb2a49a180f1e92531129c914f3e1fa6d143d8\""
+      },
+      "file": "1.json",
+      "bytes": 5883,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about/DataQuality.jsx",
+      "fetched_at": "2026-10-15T09:15:29.861Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about/DataQuality.jsx",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "9784",
+        "last-modified": "Wed, 14 Oct 2026 18:19:53 GMT",
+        "etag": "\"fe28d64d9853707753658528b196d3488ab694e7\""
+      },
+      "file": "2.json",
+      "bytes": 9784,
+      "truncated": false
+    }
+  ]
+}
