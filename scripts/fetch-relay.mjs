@@ -28,6 +28,10 @@ const ALLOWED = [
   '.nhs.uk',
   '.europa.eu',
   '.sam.gov',
+  '.usaspending.gov', // USAspending API + site (exchange pre-research 2026-10-15)
+  'open.gsa.gov', // GSA API docs: SAM.gov opportunities rate limits (exchange pre-research 2026-10-15)
+  '.highergov.com', // paid rival price page (exchange pre-research 2026-10-15)
+  '.govtribe.com', // paid rival price page (exchange pre-research 2026-10-15)
   '.thegazette.co.uk',
   '.cqc.org.uk',
   '.figma.com',

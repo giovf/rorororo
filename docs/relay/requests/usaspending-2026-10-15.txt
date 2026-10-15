@@ -1,0 +1,17 @@
+GET https://api.usaspending.gov/
+GET https://api.usaspending.gov/api/v2/awards/last_updated/
+POST https://api.usaspending.gov/api/v2/search/spending_by_award/ {"filters":{"award_type_codes":["A","B","C","D"],"time_period":[{"start_date":"2026-10-01","end_date":"2026-10-15"}]},"fields":["Award ID","Recipient Name","Award Amount","Start Date","End Date","Awarding Agency","Awarding Sub Agency","NAICS","Description","recipient_id","generated_internal_id","Place of Performance State Code"],"limit":5,"page":1,"sort":"Start Date","order":"desc"}
+GET https://api.usaspending.gov/api/v2/references/data_dictionary/
+GET https://www.usaspending.gov/about
+GET https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about
+GET https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about/AboutContent.jsx
+GET https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about/Licensing.jsx
+GET https://api.github.com/repos/fedspendingtransparency/usaspending-api/license
+GET https://open.gsa.gov/api/get-opportunities-public-api/
+GET https://apify.com/haketa/usaspending-scraper
+GET https://apify.com/thoob/federal-spending-feed
+GET https://apify.com/scrapesage/usaspending-scraper
+GET https://apify.com/logiover/usaspending-gov-scraper
+GET https://apify.com/scrapers_lat/usaspending-awards-scraper
+GET https://www.highergov.com/pricing/
+GET https://govtribe.com/pricing
