@@ -1,0 +1,252 @@
+{
+  "request": "usaspending-2026-10-15",
+  "fetched_at": "2026-10-15T09:13:50.011Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.usaspending.gov/",
+      "fetched_at": "2026-10-15T09:13:44.083Z",
+      "status": 200,
+      "final_url": "https://api.usaspending.gov/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "5162"
+      },
+      "file": "1.html",
+      "bytes": 5162,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.usaspending.gov/api/v2/awards/last_updated/",
+      "fetched_at": "2026-10-15T09:13:44.466Z",
+      "status": 200,
+      "final_url": "https://api.usaspending.gov/api/v2/awards/last_updated/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "29"
+      },
+      "file": "2.json",
+      "bytes": 29,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://api.usaspending.gov/api/v2/search/spending_by_award/",
+      "body": "{\"filters\":{\"award_type_codes\":[\"A\",\"B\",\"C\",\"D\"],\"time_period\":[{\"start_date\":\"2026-10-01\",\"end_date\":\"2026-10-15\"}]},\"fields\":[\"Award ID\",\"Recipient Name\",\"Award Amount\",\"Start Date\",\"End Date\",\"Awarding Agency\",\"Awarding Sub Agency\",\"NAICS\",\"Description\",\"recipient_id\",\"generated_internal_id\",\"Place of Performance State Code\"],\"limit\":5,\"page\":1,\"sort\":\"Start Date\",\"order\":\"desc\"}",
+      "fetched_at": "2026-10-15T09:13:44.714Z",
+      "status": 200,
+      "final_url": "https://api.usaspending.gov/api/v2/search/spending_by_award/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "3779"
+      },
+      "file": "3.json",
+      "bytes": 3779,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.usaspending.gov/api/v2/references/data_dictionary/",
+      "fetched_at": "2026-10-15T09:13:44.939Z",
+      "status": 200,
+      "final_url": "https://api.usaspending.gov/api/v2/references/data_dictionary/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "358054"
+      },
+      "file": "4.json",
+      "bytes": 358054,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.usaspending.gov/about",
+      "fetched_at": "2026-10-15T09:13:45.301Z",
+      "status": 200,
+      "final_url": "https://www.usaspending.gov/about",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 21:32:37 GMT",
+        "etag": "W/\"d7a5d4c4583cb40ecd4d52f77ee21b65\""
+      },
+      "file": "5.html",
+      "bytes": 2917,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about",
+      "fetched_at": "2026-10-15T09:13:45.541Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "12862",
+        "last-modified": "Wed, 14 Oct 2026 18:20:00 GMT",
+        "etag": "\"0ef20416a9ca6ab34fd92df6c74ed44ba77ff3b0\""
+      },
+      "file": "6.json",
+      "bytes": 12862,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about/AboutContent.jsx",
+      "fetched_at": "2026-10-15T09:13:45.848Z",
+      "status": 404,
+      "final_url": "https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about/AboutContent.jsx",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "141"
+      },
+      "file": "7.json",
+      "bytes": 141,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about/Licensing.jsx",
+      "fetched_at": "2026-10-15T09:13:46.076Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/fedspendingtransparency/usaspending-website/contents/src/js/components/about/Licensing.jsx",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "5896",
+        "last-modified": "Wed, 14 Oct 2026 18:19:53 GMT",
+        "etag": "\"f80022f66b38d31e73ec92e588ceb2dad91c676a\""
+      },
+      "file": "8.json",
+      "bytes": 5896,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/fedspendingtransparency/usaspending-api/license",
+      "fetched_at": "2026-10-15T09:13:47.208Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/fedspendingtransparency/usaspending-api/license",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "5176",
+        "last-modified": "Wed, 14 Oct 2026 21:24:00 GMT",
+        "etag": "W/\"a22e5ad90dbe8928487d60b2fad42e9b78087ad2fcc2981278021ebc44f65108\""
+      },
+      "file": "9.json",
+      "bytes": 10900,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://open.gsa.gov/api/get-opportunities-public-api/",
+      "fetched_at": "2026-10-15T09:13:47.358Z",
+      "status": 200,
+      "final_url": "https://open.gsa.gov/api/get-opportunities-public-api/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "10099",
+        "last-modified": "Thu, 12 Sep 2024 15:05:24 GMT",
+        "etag": "\"85fc7ebea1c49b9f415862d11b091efc\""
+      },
+      "file": "10.html",
+      "bytes": 46217,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/haketa/usaspending-scraper",
+      "fetched_at": "2026-10-15T09:13:47.687Z",
+      "status": 200,
+      "final_url": "https://apify.com/haketa/usaspending-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"39hilu5oxpd1yl\""
+      },
+      "file": "11.html",
+      "bytes": 609715,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/thoob/federal-spending-feed",
+      "fetched_at": "2026-10-15T09:13:48.080Z",
+      "status": 200,
+      "final_url": "https://apify.com/thoob/federal-spending-feed",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"dxnsvkzip3a2q1\""
+      },
+      "file": "12.html",
+      "bytes": 470153,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/scrapesage/usaspending-scraper",
+      "fetched_at": "2026-10-15T09:13:48.315Z",
+      "status": 200,
+      "final_url": "https://apify.com/scrapesage/usaspending-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"3o09szkdqzblr3\""
+      },
+      "file": "13.html",
+      "bytes": 541841,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/logiover/usaspending-gov-scraper",
+      "fetched_at": "2026-10-15T09:13:48.810Z",
+      "status": 200,
+      "final_url": "https://apify.com/logiover/usaspending-gov-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"kmm873txmsbeiq\""
+      },
+      "file": "14.html",
+      "bytes": 532446,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/scrapers_lat/usaspending-awards-scraper",
+      "fetched_at": "2026-10-15T09:13:49.230Z",
+      "status": 200,
+      "final_url": "https://apify.com/scrapers_lat/usaspending-awards-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"3rjl6zba45ch9x\""
+      },
+      "file": "15.html",
+      "bytes": 582351,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.highergov.com/pricing/",
+      "fetched_at": "2026-10-15T09:13:49.591Z",
+      "status": 200,
+      "final_url": "https://www.highergov.com/pricing/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.html",
+      "bytes": 67755,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://govtribe.com/pricing",
+      "fetched_at": "2026-10-15T09:13:49.758Z",
+      "status": 200,
+      "final_url": "https://govtribe.com/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.html",
+      "bytes": 176322,
+      "truncated": false
+    }
+  ]
+}
