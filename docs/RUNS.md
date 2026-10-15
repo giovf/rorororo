@@ -1114,3 +1114,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-15 09:17 | build | Pipeline starved and cooled (7 queues within 48 h); this slot is the day's exchange pre-research pass
 - 2026-10-15 09:17 | build | Exchange pre-research: USAspending contract awards parked (commercial use OK bar D&B fields; HigherGov $500/yr)
 - 2026-10-15 09:17 | build | Relay read: USAspending API keyless, daily; 5 Apify rivals ≤4 users; SAM.gov opportunities need a per-day key
+- 2026-10-15 09:17 | watchdog | missed: metrics slot 2026-10-15 07:00 UTC left no commit or run line by 09:00; usage limit? see claude.ai/code/routines
