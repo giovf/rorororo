@@ -149,6 +149,7 @@ the multi-store listing is the main upside over V1.
 | 2026-10-13 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 10-12: 0 impressions, 0 clicks, indexed 0/3, not: URL is unknown to Google ×3; sales: 0 keys (2 test) |
 | 2026-10-14 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 10-13: 0 impressions, 0 clicks, indexed 0/3, not: URL is unknown to Google ×3; sales: 0 keys (2 test) |
 | 2026-10-14 | Reviews checked (07:00 metrics routine) | — | — | — | no new Chrome reviews (relay fetch of reviews page: "There are currently no reviews for this item") |
+| 2026-10-15 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 10-14: 0 impressions, 0 clicks, indexed 0/3, not: URL is unknown to Google ×3; sales: 0 keys (2 test) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
