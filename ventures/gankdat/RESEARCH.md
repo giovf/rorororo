@@ -484,3 +484,23 @@ server and goes in the directory listings' "used by" lines when the entry is sub
 change needed. **No items added:** `research_after: 2026-10-15`, when two more rows say what the
 two accounts did; if either converts or hits the paywall, the next pass files the follow-up (the
 `buy_credits` path is live for them already).
+
+## Research 2026-10-15 (pipeline starved — burn-down)
+
+Read: the 10-13 and 10-14 Daily numbers rows (the two the 10-13 pass waited for), `docs/INBOX.md` to
+10-14 08:00, `docs/ALERTS.md`, the queue. **What the two accounts did:** nothing readable — still 3
+accounts, 0 paid, +0 in 24 h on both rows, `datasets 30d external: none`, `after wall 1h: 0 clients`,
+0 x402 paid, 0 keys issued by the agent path; authed MCP calls rose 139 → 160 a day and anonymous
+1775 → 2572, paywall hits 6 a day. **One new number:** the OAuth funnel moved for the first time —
+`2 authorize, 2 sign-in, 0 email` on 10-13 and 10-14 (0 on every earlier row): two real OAuth clients
+reached the sign-in page from a 401 and neither entered an email address (`signin_shown` 2,
+`email_sent` 0, nothing rejected or expired). Two is not a pattern; if the 7-day window reaches
+≥ 5 sign-in views with 0 emails, the next pass files a sign-in-page item (copy, what the page promises,
+whether the form is reachable from the client's embedded browser) — the 10-09 funnel walk saw the page
+work from a desktop client. **Levers:** unchanged since 10-13 (Docker PR #5622 under review, Search
+Console 7/19 indexed with 0 clicks, uk-planning on its 10-18 re-read, the Bazaar listing waiting on
+action 026, the Claude directory read on 10-30); the 10-14 builds (Bazaar clause, validate verdict,
+v0.25.1 typed examples) write their first readings on the 10-15 row, after this pass. **No items
+added:** `research_after: 2026-10-16` — the 10-15 and 10-16 rows carry the first `bazaar:` and
+`x402 validate:` clauses since the v0.25.1 fix and show whether the sign-in drop repeats.
+

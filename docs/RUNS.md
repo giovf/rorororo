@@ -1104,3 +1104,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-14 17:55 | burn-down | Exchange pre-research: UK VAT number check parked (rivals US$0.01–0.09/check; HMRC access terms via relay)
 - 2026-10-15 00:15 | burn-down | Hackathons research: web sweep of Oct–Dec boards, nothing new fits; Colosseum Agent Hackathon closed in Feb
 - 2026-10-15 00:15 | burn-down | Vultr Agent Rush (3–8 Nov, prizes TBA) folded into the 10-20 lablab relay read; queue waits until 10-20
+- 2026-10-15 00:18 | burn-down | gankdat research: 10-13/10-14 rows read, 3 accounts silent, 0 paid; 2 OAuth sign-in views with no email
+- 2026-10-15 00:18 | burn-down | gankdat queue waits until 10-16 for the first bazaar and x402 validate clauses after v0.25.1

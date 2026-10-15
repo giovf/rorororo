@@ -1255,3 +1255,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   Vultr's Agent Rush (lablab.ai, 3–8 Nov) has no prize table or tracks yet, Meta's "$1M" developer hackathon has no
   published rules, the rest are student-only, in-person or credits-only. Both queued entries wait on the owner (actions
   023 and 025), so the queue waits until the 2026-10-20 lablab read, which now also reads the Vultr page.
+- 2026-10-15 burn-down: gankdat research (starved queue) — the two rows the 10-13 pass waited for show the three
+  accounts doing nothing readable (0 paid, no external dataset call, no key issued) while the OAuth funnel moved for
+  the first time: two clients reached the sign-in page and neither entered an email. Two is not a pattern; the pass
+  sets the threshold (≥ 5 sign-in views, 0 emails in 7 days) that files a sign-in-page item, and waits until 10-16
+  for the first Bazaar and validate clauses since the v0.25.1 fix.
+
