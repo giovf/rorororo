@@ -619,6 +619,17 @@
       "status": "todo",
       "not_before": "2026-11-14",
       "added": "2026-10-14"
+    },
+    {
+      "id": "googlebot-401-noindex",
+      "title": "Keep Googlebot out of the keyless 401/402 API answers: read the Search Console URL list, then noindex or robots-disallow those paths",
+      "why": "Inbox 2026-10-15 12:02 and 12:31: Search Console reports a new reason gankdat.com pages are not indexed — 'Blocked due to unauthorised request (401)'. robots.txt disallows only /account and /v1/auth/, so Googlebot follows the /v1/data and /mcp links from docs and llms.txt into keyless-preview walls that answer 401/402 (the sitemap itself lists only /, /docs and /stats pages). Do: read which URLs the 06:45 Search Console reading names (SEARCH_CONSOLE_KEY, action 020 done 10-11) in the 10-16 Daily numbers row; then either add `X-Robots-Tag: noindex` to every 401/402 body the Worker sends (src/lib/errors.ts / the preview wall) or disallow /v1/data and /mcp for all crawlers in public/robots.txt — prefer the header: the API paths stay crawlable for agents that read 402 bodies, only indexing is declined. Proof: the 401 reason gone from the next Search Console notice and the indexing clause of the Daily row. Score 4: evidence 2 (two notices, one reason, no URL list yet) × reach 2 (every stats page's crawl budget) ÷ 0.1 day, applied down to 4 while no number ties indexing to a buyer.",
+      "effort_days": 0.1,
+      "proof": "Search Console no longer lists the 401 reason; the Daily numbers row indexing clause shows no 401 URLs",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-15",
+      "not_before": "2026-10-16"
     }
   ],
   "research_after": "2026-10-16"
