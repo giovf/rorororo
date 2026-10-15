@@ -1111,3 +1111,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-15 00:18 | watchdog | ci-minutes: 728 billed min/7d (~3120/month, wall 334; private cap 2,000, warn 1700); top: owner notes 175, notify owner 
 - 2026-10-15 00:20 | burn-down | Relay: Algora keyless bounty.list answers an empty list, IssueHunt shows lifetime totals; no third source
 - 2026-10-15 00:20 | burn-down | Stopping: 3 research passes (hackathons, gankdat, oss-bounties), 0 builds; starved-and-cooled, pass spent 17:55
+- 2026-10-15 09:17 | build | Pipeline starved and cooled (7 queues within 48 h); this slot is the day's exchange pre-research pass
+- 2026-10-15 09:17 | build | Exchange pre-research: USAspending contract awards parked (commercial use OK bar D&B fields; HigherGov $500/yr)
+- 2026-10-15 09:17 | build | Relay read: USAspending API keyless, daily; 5 Apify rivals ≤4 users; SAM.gov opportunities need a per-day key

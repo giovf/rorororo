@@ -1265,3 +1265,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   Algora's console tRPC list (keyless for two third-party scanners, unverified) and IssueHunt's funded list go through
   the relay now so the review reads a real answer; BountyHub and Gitpay show no supply, Bountysource is gone.
 
+- 2026-10-15 build: exchange pre-research (starved-and-cooled pipeline, no build) — USAspending federal contract awards parked
+  in the exchange: the keyless API's licence allows commercial reuse subject to the Dun & Bradstreet limitation (addresses
+  dropped, the sam-exclusions posture), HigherGov sells the same data from US$500/year and GovTribe from US$1,500/year, but the
+  five Apify actors reselling the API have ≤4 users each and none of our procurement endpoints has a paid call, so it waits on
+  the first paid US/EU procurement call; the SAM.gov opportunities half stays out (per-day keyed API, system account needs the
+  owner's identity). Relay hosts added: usaspending.gov, open.gsa.gov, highergov.com, govtribe.com.
