@@ -1108,3 +1108,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-15 00:18 | burn-down | gankdat queue waits until 10-16 for the first bazaar and x402 validate clauses after v0.25.1
 - 2026-10-15 00:18 | burn-down | oss-bounties research: 10-14 board 0 free (2nd under new rules); Algora tRPC list + IssueHunt sent to relay
 - 2026-10-15 00:18 | burn-down | oss-bounties queue waits until the 10-18 review's board-count decision; two relay hosts allowed
+- 2026-10-15 00:18 | watchdog | ci-minutes: 728 billed min/7d (~3120/month, wall 334; private cap 2,000, warn 1700); top: owner notes 175, notify owner 
