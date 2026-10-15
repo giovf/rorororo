@@ -1271,3 +1271,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   five Apify actors reselling the API have ≤4 users each and none of our procurement endpoints has a paid call, so it waits on
   the first paid US/EU procurement call; the SAM.gov opportunities half stays out (per-day keyed API, system account needs the
   owner's identity). Relay hosts added: usaspending.gov, open.gsa.gov, highergov.com, govtribe.com.
+- 2026-10-15 burn-down: Exchange pre-research (starved-and-cooled pipeline, night pass; the 17:10 build slot held the only
+  item): SEC EDGAR filings index + XBRL company financials parked in the exchange — the submissions, companyfacts, frames and
+  full-text APIs are keyless public-domain JSON (data.sec.gov and efts.sec.gov answered the relay 200; www.sec.gov answered
+  403 'undeclared automated tool' / 'rate threshold' to a browser-style agent, so a build sends the declared
+  'gankdat <mailbox>' agent and never crawls pages), sec-api.io sells the same data at US$49–199/month, Financial Modeling
+  Prep at US$19–99, and AgentFilings already sells it to agents over MCP + x402 on Base; but over 60 Apify EDGAR actors sit at
+  2–4 users each (one free one at 108, the Form D funding-leads one at 50) and our only US register has no paid call, so it
+  waits on the first paid sam-exclusions call or a US-finance intent in the x402 Bazaar day-30 read; the Form D funding-leads
+  slice goes first when it does. Relay hosts added: sec.gov, sec-api.io, financialmodelingprep.com.

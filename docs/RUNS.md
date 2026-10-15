@@ -1115,3 +1115,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-15 09:17 | build | Exchange pre-research: USAspending contract awards parked (commercial use OK bar D&B fields; HigherGov $500/yr)
 - 2026-10-15 09:17 | build | Relay read: USAspending API keyless, daily; 5 Apify rivals ≤4 users; SAM.gov opportunities need a per-day key
 - 2026-10-15 09:17 | watchdog | missed: metrics slot 2026-10-15 07:00 UTC left no commit or run line by 09:00; usage limit? see claude.ai/code/routines
+- 2026-10-15 17:18 | burn-down | Exchange pre-research: SEC EDGAR filings/XBRL financials parked (sec-api $49–199/mo; 60+ Apify actors, x402 rival live)
