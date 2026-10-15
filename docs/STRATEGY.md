@@ -1250,3 +1250,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   routes: rejected — the Bazaar declaration's example query typed `per_page` as a string under an integer property, so
   the morning's listing would never have indexed, payment or not. Fixed in v0.25.1 (example values take the schema's
   types, test over all 17 sources); the daily `x402 validate:` clause reads the verdict from tomorrow.
+- 2026-10-15 burn-down: hackathons research (starved queue) — a web sweep of the October–December boards found nothing
+  an existing project can enter: Colosseum's Agent Hackathon (US$100k, agent-written code only) closed in February,
+  Vultr's Agent Rush (lablab.ai, 3–8 Nov) has no prize table or tracks yet, Meta's "$1M" developer hackathon has no
+  published rules, the rest are student-only, in-person or credits-only. Both queued entries wait on the owner (actions
+  023 and 025), so the queue waits until the 2026-10-20 lablab read, which now also reads the Vultr page.

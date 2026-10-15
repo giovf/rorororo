@@ -33,6 +33,24 @@ Read 2026-10-13 (burn-down) from the sponsors' and organisers' own pages through
 | The Rise of AI Agents (lablab.ai, Dubai AI Week) | "$60,000+" headline; cash only in "Best use of Vultr": $5,000 / $3,000 / $1,000 + $1,000 API credits each; "Best use of Gemini" pays GCP credits ($25k / $15k / $10k) | "Fall 2026 / TBA" on the official page (aggregators say 26 Oct–2 Nov online) | hybrid: global online build phase, on-site finale in Dubai by invitation (travel not covered); solo entry allowed; "Submissions must be original and MIT-compliant"; the Vultr track deploys on a Vultr VM with 30-day credits (a payment method only to keep resources afterwards) | **watch** — `lablab-rise-of-agents-date-read` re-reads the page on 2026-10-20 and files an entry once the window is known; the entry's own code would carry an MIT licence in its folder |
 | Build, Ship, Shape — Amazon Developer Hackathon | $190K cash and AWS credits (Fire TV, Alexa+, Ring, Bee tracks) | 2026-10-23 | the Alexa+ track takes "Agent Skills, MCP-based experiences"; developer.amazon.com says Alexa+ for Builders "is currently available to select partners working directly with our team"; rules only on Devpost | **declined** — an existing MCP server fits the track on paper, but the toolchain is partner-only and ten days remain |
 
+Read 2026-10-15 (burn-down) — a market sweep by web search (the sandbox resolves neither lablab.ai nor the
+organisers' hosts, so what a search index shows is the evidence; a primary read goes through the relay on
+2026-10-20 with the lablab item). Nothing new fits an existing-project entry; no item added:
+
+| Candidate | What the search index shows | Verdict |
+| --- | --- | --- |
+| Vultr: Agent Rush (lablab.ai, hybrid) | online build 3–8 Nov 2026, registration opens 2026-11-03 15:00 UTC, submissions close 2026-11-08 22:00 UTC; tracks TBA, no prize table on the page yet ("winners get highlighted"); aggregators quote $9,000 + $5,000 credits | **watch** — read with the lablab page on 2026-10-20 (same relay round); an entry only if a cash track is published and existing projects qualify |
+| lablab.ai AI Genesis / The Rise of AI Agents | lablab's own profile lists AI Genesis 26 Oct–3 Nov 2026, projects due 2 Nov; aggregators attach the "$60,000" figure to one or the other | already watched (`lablab-rise-of-agents-date-read`, 2026-10-20) |
+| Colosseum Agent Hackathon ($100k USDC) | submission window was 2–12 Feb 2026; "all code must be written by AI agents" | closed — its next edition would fit this operation unusually well (the whole portfolio is agent-built); the exchange watches colosseum.com |
+| Meta Global AI Developer Hackathon ("$1,000,000", virtual) | aggregator listings only; "complete eligibility rules have not yet been published"; no official page found | unverifiable — re-search on 2026-10-20 |
+| IBM / Tara Research Steerability Challenge (cash, due 2026-11-21) | a model-alignment benchmark (suppress deception), not an application | none |
+| GSA MCP Server and AI Agent Government Hackathon | Sept–Nov 2026, online, "cannot offer cross-agency monetary prizes" | none (no cash) |
+| Gloo AI Hackathon ($200k) | 6–8 Oct 2026 in Boulder, in person | none |
+| Cosmo Hacks, Global Virtual Hackathon | December, students only | none |
+
+Both queued entries are owner-blocked (action 023: submit PayPal on Devpost; action 025: Nebius key), so the
+next signal is the 2026-10-20 reading; `research_after` set to it.
+
 ### 2b. Nebius Token Factory terms (official docs, read 2026-10-13 through the relay)
 
 - Billing (`docs.tokenfactory.nebius.com/other-capabilities/billing-new`): "Billing setup is mandatory — you
@@ -97,3 +115,4 @@ submissions with no placing and no judge feedback → `finished`.
 | 2026-10-11 | Built | — | — | — | PayPal entry built: sandbox credit packs live in gankdat v0.24.0 (REST, MCP buy_credits, /account), write-up and walkthrough in `entries/paypal-ai-hackathon/`; waits on the demo video, then the owner submits |
 | 2026-10-11 | Demo pipeline | — | — | — | CI records entry demo videos (Playwright + ffmpeg); PayPal video waits on the sandbox buyer secrets (action 024) |
 | 2026-10-13 | Research | — | — | — | Nebius entry revived (account active 2026-10-12; Token Factory terms in §2b, entry under US$2); GenAI.Works Open Agent (Cursor-only) and Amazon Build, Ship, Shape (Alexa+ partner-only) declined; lablab.ai Rise of AI Agents watched for its date |
+| 2026-10-15 | Research | — | — | — | market sweep: Vultr Agent Rush (3–8 Nov, prizes TBA) added to the 10-20 lablab read; Colosseum Agent Hackathon closed in Feb; nothing new fits; waiting until 2026-10-20 |

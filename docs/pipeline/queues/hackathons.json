@@ -2,8 +2,8 @@
   "venture": "hackathons",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-13",
-  "researched": "2026-10-13",
+  "updated": "2026-10-15",
+  "researched": "2026-10-15",
   "weight": 2,
   "items": [
     {
@@ -97,7 +97,7 @@
     {
       "id": "lablab-rise-of-agents-date-read",
       "title": "Re-read lablab.ai's 'The Rise of AI Agents' hackathon page (relay) for its online build window; when it is announced and at least five days away, file an entry item for the 'Best use of Vultr' cash track with the gankdat agent reused under an MIT-licensed entry folder",
-      "why": "Read 2026-10-13 through the relay: lablab.ai lists the hackathon as hybrid (online build phase for everyone, on-site finale in Dubai by invitation), date 'Fall 2026 / TBA', solo entry allowed, 'Best use of Vultr' pays $5,000 / $3,000 / $1,000 cash plus API credits, 'Best use of Gemini' pays GCP credits only; submissions must be original and MIT-compliant (the entry's own code can be MIT while gankdat stays as is), and a project must deploy on a Vultr VM with 30-day credits (a payment method only if kept afterwards). Aggregators quote 26 Oct–2 Nov online; the official page does not, so the date is read, not assumed. Not an entry until the window is known.",
+      "why": "Read 2026-10-13 through the relay: lablab.ai lists the hackathon as hybrid (online build phase for everyone, on-site finale in Dubai by invitation), date 'Fall 2026 / TBA', solo entry allowed, 'Best use of Vultr' pays $5,000 / $3,000 / $1,000 cash plus API credits, 'Best use of Gemini' pays GCP credits only; submissions must be original and MIT-compliant (the entry's own code can be MIT while gankdat stays as is), and a project must deploy on a Vultr VM with 30-day credits (a payment method only if kept afterwards). Aggregators quote 26 Oct–2 Nov online; the official page does not, so the date is read, not assumed. Not an entry until the window is known. Research 2026-10-15 (burn-down): read Vultr: Agent Rush (lablab.ai/ai-hackathons/vultr-hackathon — online build 3–8 Nov, registration opens 2026-11-03, tracks and prizes TBA on the page) in the same relay round and file an entry item for it too if a cash track is published and an existing project qualifies; also re-search for Meta's 'Global AI Developer Hackathon' official rules (aggregators only on 10-15).",
       "effort_days": 0.1,
       "proof": "an entry item filed with the official dates, or the item dropped with the reason",
       "score": 4,
@@ -105,5 +105,6 @@
       "added": "2026-10-13",
       "not_before": "2026-10-20"
     }
-  ]
+  ],
+  "research_after": "2026-10-20"
 }
