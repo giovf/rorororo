@@ -1116,3 +1116,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-15 09:17 | build | Relay read: USAspending API keyless, daily; 5 Apify rivals ≤4 users; SAM.gov opportunities need a per-day key
 - 2026-10-15 09:17 | watchdog | missed: metrics slot 2026-10-15 07:00 UTC left no commit or run line by 09:00; usage limit? see claude.ai/code/routines
 - 2026-10-15 17:18 | burn-down | Exchange pre-research: SEC EDGAR filings/XBRL financials parked (sec-api $49–199/mo; 60+ Apify actors, x402 rival live)
+- 2026-10-15 17:17 | build | trovu#329 ($30 Opire) dropped: maintainer wants an Android video and an "I am a human" line; PR #718 open
+- 2026-10-15 17:17 | build | Scanner reads up to 5 pages of comments and timeline (trovu#329's open PR sat past page 1); 1 test
+- 2026-10-15 17:17 | build | Scanner drops issues wanting a video on a phone or a human-written statement; 1 test, 7 of 7 filed dropped
+- 2026-10-15 17:17 | build | gankdat item filed from Search Console's 401 notice: noindex the keyless 401/402 answers, after the 10-16 row
+- 2026-10-15 17:17 | build | Pipeline then starved and cooled (7 queues within 48 h); the day's exchange pass was spent at 09:17

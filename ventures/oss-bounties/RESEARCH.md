@@ -101,6 +101,7 @@ count and the `week:` line the weekly report copies.
 | [useagenthq/useagent#61](https://github.com/useagenthq/useagent/issues/61) | $80 | dropped | — | — | — | — | 2026-10-12: maintainer assigns one of four claimants (none picked since 10-05); real iPhone and Android builds with the claimant's own recordings; weeks of app work for $80 |
 | [useagenthq/useagent#113](https://github.com/useagenthq/useagent/issues/113) | $5 | dropped | — | — | — | — | 2026-10-12: a usage task, not a fix — record yourself using their product and email a report from a sign-up address; AI-driven runs banned; all 3 tasks claimed 10-11 |
 | [SalamLang/Salam#1713](https://github.com/SalamLang/Salam/issues/1713) | $5 | dropped | — | — | — | — | 2026-10-12: a community reward for publishing a new app in Salam, not a fix; only the first two accepted projects are paid and nine complete submissions were ahead |
+| [trovu/trovu#329](https://github.com/trovu/trovu/issues/329) | $30 | dropped | — | — | — | — | 2026-10-15: not escrowed (Opire); the maintainer's 05-23 edit takes PRs only with a video recorded on an Android phone and the line "I am a human who is writing this comment, not an AI", the 06-17 edit says it may be technically impossible; PR #718 open, 60+ claimants since 2024, nothing merged |
 
 ## Research 2026-10-13 (pipeline starved — burn-down)
 
@@ -202,3 +203,4 @@ count alone.
 | 2026-10-13 | Research | — | — | — | 10-12 board: 16 kept, 0 free funded fixes (free rows are dropped shapes, the rest 1–14 PRs deep); research_after 10-14 after two boards under the new rules |
 | 2026-10-14 | Second source | — | — | — | Opire read: 6 open rewards worth $212 on 5 issues, none a free funded fix; scanner reads Opire's list and `/reward`, marks rows `not escrowed`; 10-14 board 8 kept, 0 free |
 | 2026-10-15 | Research | — | — | — | 10-14 board 8 kept, 0 free (second board under the new rules); Algora tRPC list + IssueHunt sent to the relay; waiting until the 10-18 review |
+| 2026-10-15 | No claim | — | — | — | trovu#329 ($30, Opire) dropped on read: Android video + human statement required, PR #718 open; scanner now pages the timeline and drops both shapes; 7 of 7 filed items dropped |

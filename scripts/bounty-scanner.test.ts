@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import {
   fileBounties,
   fundingOf,
+  ghAll,
   issueExcluded,
   itemId,
   openPrs,
@@ -248,6 +249,30 @@ describe('Opire footer and rewards', () => {
   });
 });
 
+describe('ghAll', () => {
+  it('reads every page up to the first short one, and no more than maxPages', async () => {
+    const calls: string[] = [];
+    const pages: string[][] = [
+      new Array<string>(100).fill('a'),
+      new Array<string>(100).fill('b'),
+      ['c'],
+    ];
+    const get = (u: string): Promise<string[]> => {
+      calls.push(u);
+      return Promise.resolve(pages[Number(/&page=(\d+)$/.exec(u)?.[1]) - 1] ?? []);
+    };
+    expect((await ghAll(get, 'https://x/issues/329/timeline?per_page=100')).length).toBe(201);
+    expect(calls).toEqual([
+      'https://x/issues/329/timeline?per_page=100&page=1',
+      'https://x/issues/329/timeline?per_page=100&page=2',
+      'https://x/issues/329/timeline?per_page=100&page=3',
+    ]);
+    calls.length = 0;
+    const full = (): Promise<string[]> => Promise.resolve(new Array<string>(100).fill('x'));
+    expect((await ghAll(full, 'https://x/list', 2)).length).toBe(200);
+  });
+});
+
 describe('openPrs and takenBy', () => {
   it('counts open linked pull requests from the timeline and names what blocks a claim', () => {
     expect(
@@ -347,6 +372,22 @@ describe('shapeExcluded', () => {
         'Builds that install on a real iPhone and a real Android phone. A maintainer assigns this issue before work counts.',
       ),
     ).toBe("needs a real device or the claimant's own recording");
+  });
+  // Wording quoted from trovu#329's 2026-05-23 edit, the 2026-10-15 build's read.
+  it('drops the phone video and the human statement the trovu maintainer asks for', () => {
+    expect(
+      shapeExcluded(
+        'Open target URLs not in PWA but in default browser\nA video recorded on an Android device, showing: you open the PWA.',
+      ),
+    ).toBe("needs a real device or the claimant's own recording");
+    expect(
+      shapeExcluded(
+        'Open target URLs in default browser\nThe following statement: `I am a human who is writing this comment, not an AI.`',
+      ),
+    ).toBe('the maintainer wants a human in the thread');
+    expect(
+      shapeExcluded('Fix the video player\nThe video stutters on an Android phone.'),
+    ).toBeUndefined();
   });
   it('keeps ordinary feature and bug-fix work', () => {
     expect(

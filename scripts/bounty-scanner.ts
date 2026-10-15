@@ -43,6 +43,13 @@
 // ignores it: only code owners create bounties). The footer search (`"This repo is using Opire" in:body`)
 // found 525 open issues since 07-16, three agent farms among them; the repository rules drop those.
 //
+// Pages and two more shapes (build 2026-10-15, trovu#329): the first Opire item filed as "free" had PR #718
+// open — the timeline read one page of 100 events and the issue had 100+, so every PR of 2026 sat on page
+// two; comments and timeline now read up to MAX_PAGES. The same issue's body asks for a video recorded on
+// an Android phone and the line "I am a human who is writing this comment, not an AI", which neither the
+// contest regex nor the device rule matched: SHAPE_RULES gained both (no routine records a phone or
+// signs a human statement), and the 10-14 Opire read had already judged the issue not takeable.
+//
 // Run: npm run bounties [-- --date=YYYY-MM-DD]   (GITHUB_TOKEN in CI; `gh auth token` locally)
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
 import { execSync } from 'node:child_process';
@@ -86,8 +93,12 @@ export const CONTEST_ISSUE =
  */
 export const SHAPE_RULES: readonly { re: RegExp; why: string }[] = [
   {
-    re: /real (iphone|android|device|phone)|installable builds?|record(ing)? (of )?(the )?(whole|entire|full|your) session/i,
+    re: /real (iphone|android|device|phone)|installable builds?|record(ing)? (of )?(the )?(whole|entire|full|your) session|(video|screencast|recording) (recorded |captured |made |taken )?(on|from) (an? |your |the )?(real |physical )?(android|ios|iphone|mobile) (device|phone)/i,
     why: "needs a real device or the claimant's own recording",
+  },
+  {
+    re: /i am a human|written by a human|human,? not (an )?ai\b|not (an )?ai\.?`/i,
+    why: 'the maintainer wants a human in the thread',
   },
   {
     re: /maintainer (must |will |has to |needs to )?assigns? (this|the) issue|assigned by a maintainer|maintainer picks|before (any )?work counts/i,
@@ -356,6 +367,27 @@ export function openPrs(events: TimelineEvent[]): number {
       e.source?.issue?.pull_request !== undefined &&
       e.source.issue.state === 'open',
   ).length;
+}
+
+/** Pages read per list endpoint: trovu#329 had 100+ timeline events and its open PR sat on page two. */
+export const MAX_PAGES = 5;
+
+/**
+ * Every page of a `per_page=100` list endpoint, up to `maxPages`, through `get` (the authenticated
+ * reader; injected so a test can count pages). Stops at the first short page.
+ */
+export async function ghAll<T>(
+  get: (url: string) => Promise<T[]>,
+  url: string,
+  maxPages = MAX_PAGES,
+): Promise<T[]> {
+  const out: T[] = [];
+  for (let page = 1; page <= maxPages; page++) {
+    const items = await get(`${url}${url.includes('?') ? '&' : '?'}page=${page}`);
+    out.push(...items);
+    if (items.length < 100) break;
+  }
+  return out;
 }
 
 /** What stands between a new claim and the money: `free`, `assigned`, or the open PRs. */
@@ -666,7 +698,7 @@ async function main(): Promise<void> {
     });
   }
   // Comments carry the bot's `$N bounty` line, who posted it and the attempts; the timeline carries
-  // the linked PRs. Both are read for the shortlist only (two calls per issue), plus the newest
+  // the linked PRs. Both are read for the shortlist only (two calls per issue, more for a busy one), plus the newest
   // OPIRE_READ commented issues of OpireBot repositories, whose `/reward` leaves no label to sort by.
   kept.sort((a, b) => b.amount - a.amount || a.created_at.localeCompare(b.created_at));
   const toRead = new Set(kept.slice(0, SHORTLIST));
@@ -677,11 +709,14 @@ async function main(): Promise<void> {
     toRead.add(b);
   }
   for (const b of toRead) {
-    const comments = await gh<
-      { body: string | null; user?: { login?: string }; author_association?: string }[]
-    >(tok, `https://api.github.com/repos/${b.repo}/issues/${b.number}/comments?per_page=100`).catch(
-      () => [],
-    );
+    const comments = await ghAll<{
+      body: string | null;
+      user?: { login?: string };
+      author_association?: string;
+    }>(
+      (u) => gh(tok, u),
+      `https://api.github.com/repos/${b.repo}/issues/${b.number}/comments?per_page=100`,
+    ).catch(() => []);
     const read: Comment[] = comments.map((c) => ({
       body: c.body ?? '',
       login: c.user?.login ?? '',
@@ -709,8 +744,8 @@ async function main(): Promise<void> {
       listed?.trying ?? 0,
     );
     b.prs = openPrs(
-      await gh<TimelineEvent[]>(
-        tok,
+      await ghAll<TimelineEvent>(
+        (u) => gh(tok, u),
         `https://api.github.com/repos/${b.repo}/issues/${b.number}/timeline?per_page=100`,
       ).catch(() => []),
     );

@@ -1271,6 +1271,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   five Apify actors reselling the API have ≤4 users each and none of our procurement endpoints has a paid call, so it waits on
   the first paid US/EU procurement call; the SAM.gov opportunities half stays out (per-day keyed API, system account needs the
   owner's identity). Relay hosts added: usaspending.gov, open.gsa.gov, highergov.com, govtribe.com.
+- 2026-10-15 build: the first Opire item, trovu#329 ($30, not escrowed), dropped on read — the maintainer's own body edits take a
+  PR only with a video recorded on an Android phone and the sentence "I am a human who is writing this comment, not an AI",
+  neither of which a routine can truthfully supply, and say the feature may be impossible as PWAs stand; PR #718 was open and
+  the scanner had filed it as free because its one-page timeline read ended before 2026. Seven of seven filed bounty items are
+  now dropped unbuilt: the scanner pages busy issues and drops both shapes, and the 10-18 review's board-count call stands.
 - 2026-10-15 burn-down: Exchange pre-research (starved-and-cooled pipeline, night pass; the 17:10 build slot held the only
   item): SEC EDGAR filings index + XBRL company financials parked in the exchange — the submissions, companyfacts, frames and
   full-text APIs are keyless public-domain JSON (data.sec.gov and efts.sec.gov answered the relay 200; www.sec.gov answered
