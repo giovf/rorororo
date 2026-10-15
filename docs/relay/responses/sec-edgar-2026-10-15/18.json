@@ -1,0 +1,1378 @@
+{
+  "data": {
+    "total": 416,
+    "count": 20,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "SEC Filings Scraper [Just 💰$2] — EDGAR & XBRL Data",
+        "name": "sec-filings-scraper",
+        "username": "blackfalcondata",
+        "stats": {
+          "totalBuilds": 33,
+          "totalRuns": 385,
+          "totalUsers": 6,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-15T06:35:05.840Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "💰 $2 per 1,000 filings. Scrape sec.gov — official SEC filings by ticker or full-text search · 10-K · 10-Q · 8-K & Form 4 with company name · filing date & structured XBRL financial data. Incremental mode tracks new and changed filings across scheduled runs.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Black Falcon Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/8lDnbOg80xCVrjeH5M-RIo2buaJVIq4p3Ki6zOG-8dI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vU1dsSjJhRUVyakFEdktQeHFKVWh3OXJrUUd5YWRYVmh2SThIX0I2a1pKYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjbEIxU2pOamMxTkNValZzYVRWbWQxUXRjSEp2Wm1sc1pTMUtUM1p3YUZoNFozcEpMVUpzWVdOclptRnNZMjl1WkdGMFlWOXNiMmR2TG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "recent-result": {
+                "eventTitle": "Recent filing result",
+                "eventDescription": "Charged per filing dated within the last 12 months.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              },
+              "historical-result": {
+                "eventTitle": "Historical filing result",
+                "eventDescription": "Charged per filing older than 12 months.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0005
+              },
+              "financials-result": {
+                "eventTitle": "Financials result (per company)",
+                "eventDescription": "Charged once per company for which XBRL financial facts are returned (includeFinancials). Billed per company, not per fact.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              }
+            }
+          },
+          "reasonForChange": "A start fee of $0.005 per run covers the fixed cost every run has before it returns a filing.",
+          "startedAt": "2026-10-04T00:00:00.000Z",
+          "createdAt": "2026-09-19T18:06:08.744Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-19T18:06:29.060Z",
+          "notifiedAboutChangeAt": "2026-10-04T00:05:50.358Z"
+        },
+        "id": "7hZTEHioqp3ZcAfDc",
+        "url": "https://apify.com/blackfalcondata/sec-filings-scraper"
+      },
+      {
+        "title": "SEC EDGAR Scraper — 10-K/10-Q Filings & XBRL Data",
+        "name": "sec-edgar-scraper",
+        "username": "bovi",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 5,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-03T01:32:15.246Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "Scrape SEC EDGAR company filings (10-K, 10-Q, 8-K and more), structured XBRL financial facts (Assets, Revenue, Net Income), and full-text search across all SEC filings. Uses official SEC JSON APIs — no proxy, no auth required. Supports ticker symbols and CIK numbers. Pay per result.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS",
+          "MCP_SERVERS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/V24BCV5J_D06t46foQ4wofPXUBO0cWtLzNNE99URozo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNXpaSmFydGROVHpHcDZ1VTktYWN0b3ItTzliNUVJRGZYWjB5ZUo4OTQtS3JuYVFjdHZIdy1zZWMtZWRnYXItc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Vitalii Bondarev",
+        "userPictureUrl": "https://images.apifyusercontent.com/366A2-rL_Tsix1Ca4RkV0mSisG_m99hKsvrk4FhsOv0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNXNYbDRtMlFubGhoaGhLYVY3YkphQWc0SEFmTXpfeGdSME5mSXJqdVFoRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTamxqYmpkeFVVNTVYMEk1UjFObWNWWmthbUpMTlVaeE1XczVjMkZtT1d0T2VVOXRWa0pNTWxRNWJIZDRSMmxCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-20T18:25:56.954Z",
+          "startedAt": "2026-08-20T18:25:56.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0000495
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000049
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0000485
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.000048
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0000475
+                  }
+                }
+              },
+              "filing-item": {
+                "eventTitle": "Filing item",
+                "eventDescription": "One SEC EDGAR filing record with metadata, form type and document links.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0099
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.009801
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.009702
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.009603
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.009504
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.009405
+                  }
+                }
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-08-20T18:35:44.158Z"
+        },
+        "id": "O9b5EIDfXZ0yeJ894",
+        "url": "https://apify.com/bovi/sec-edgar-scraper"
+      },
+      {
+        "title": "SEC XBRL Company Facts Scraper API - Financial Metrics",
+        "name": "sec-xbrl-company-facts-financial-metrics",
+        "username": "pink_comic",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 71,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-14T22:52:37.195Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Extract source-linked public-company revenue, income, assets, liabilities, and other issuer-filed XBRL facts from SEC Company Facts. Resolve ticker/company/CIK; filter concepts, units, forms, fiscal periods, dates, and amendments.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/AAep1QQwC-KMWERCjKrO0UobpGQmHPXSFDjb3YMTLv4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcUhCNFdCdVdsUmtraUdIWXctYWN0b3ItblZEcE9QYXN1dktSZ01RNnctTjBwUVlMeVhGVC1zZWMteGJybC1jb21wYW55LWZhY3RzLWZpbmFuY2lhbC1tZXRyaWNzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ava Torres",
+        "userPictureUrl": "https://images.apifyusercontent.com/xHIQ8NPgSWhC7jbdKz1bniz5JDgrODfO99BuuEXmJbQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV19KMWN2OFBpYlc5enZjT2ZWUVcxTnNyQVk1eU9Sd0F3QkMwWWYzWGpRSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVWhDTkZkQ2RWZHNVbXRyYVVkSVdYY3RjSEp2Wm1sc1pTMW1NakYwYkdwVFFraDNMWE5qY21WbGJuTm9iM1JmTWpBeU5pMHdNeTB5TkY5aGRGODRMalExTGpFMVgwRk5MbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "SEC XBRL Company Facts Scraper API - Financial Met evidence item",
+                "eventDescription": "One source-linked result or explicit evidence-status item written to the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-31T05:31:52.438Z",
+          "startedAt": "2026-07-31T05:31:52.129Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "nVDpOPasuvKRgMQ6w",
+        "url": "https://apify.com/pink_comic/sec-xbrl-company-facts-financial-metrics"
+      },
+      {
+        "title": "EDGAR Company Filings & XBRL Fundamentals Extractor",
+        "name": "edgar-xbrl-fundamentals",
+        "username": "gp005",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 163,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-15T09:10:08.915Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "SEC EDGAR API: extract SEC filings (10-K, 10-Q, 8-K, Form 4, 13F-HR, S-1, DEF 14A) and XBRL financial data — revenue, EPS, assets, equity — for any US public company by ticker or CIK. Structured JSON from the official data.sec.gov companyfacts API; no login, no API key.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/2yNoAvoOO72NF_ZzK0xw940qAIDfw0IVGdXnF6B42ho/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQjRGZ3RMbWhFalVVY3d6ZFItYWN0b3ItcXI1R3BNdDZqTmRZdHRPcW4tbjdNMXFaZmhacC1lZGdhci14YnJsLWZ1bmRhbWVudGFscy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Geo",
+        "userPictureUrl": "https://images.apifyusercontent.com/p93pYdaFKa3zPX_cfuo5LBX8mEidH3DKXnNZ6QiXhKs/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYXRLZll1QUNYNm5zc1Nub3N5WWZRMXJvY3UwTzZXMXU3MGhYMUVMRGdSNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMGhQVDBjeVluZDRaelpYWmtRdE1GWlZOVzVQZWtwUFIwcGxZVmxFZUVkWlgzUkVUR0ppWnpWT05tdGtRVGgz.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-23T02:27:46.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Charged when the Actor starts running.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.005
+                  }
+                }
+              },
+              "filing-fetched": {
+                "eventTitle": "Filing fetched",
+                "eventDescription": "Charged per SEC filing record returned (10-K, 10-Q, 8-K, 13-F, etc.).",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0027
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                }
+              },
+              "financial-concept-fetched": {
+                "eventTitle": "Financial concept fetched",
+                "eventDescription": "Charged per XBRL financial concept extracted, with its full historical value series.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0025
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-07-08T02:27:46.449Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-08T02:28:06.626Z",
+          "notifiedAboutChangeAt": "2026-07-23T02:35:35.437Z"
+        },
+        "id": "qr5GpMt6jNdYttOqn",
+        "url": "https://apify.com/gp005/edgar-xbrl-fundamentals"
+      },
+      {
+        "title": "SEC XBRL Peer Financial Change Report",
+        "name": "sec-xbrl-peer-financial-change-report",
+        "username": "taroyamada",
+        "stats": {
+          "totalBuilds": 19,
+          "totalRuns": 117,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-15T10:44:39.696Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Compare SEC XBRL financials. No API key / no login. Open Input → leave defaults → Start (1 SEC XBRL fact row ≈ USD 0.006/row): https://console.apify.com/actors/FSd131FypRhVArDWF/input From USD 6/1k.",
+        "categories": [
+          "NEWS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ot5c2sx8W1sxEQRY3Q2g1_kzrEv-uhyHAXAdl23Ldd8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaGp3elZIdWVEWkVjR2dJTmMtYWN0b3ItRlNkMTMxRnlwUmhWQXJEV0YtdDR1dlJKUnhXdS1zdG9yZS10aHVtYm5haWwucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "naoki anzai",
+        "userPictureUrl": "https://images.apifyusercontent.com/ii1-AEMwRnF2-l9hO_DZzmhF9GYllcznIEI5NBf7uA0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWU5CXzlWZGFPcjRIQ0pHZ0xIa3hOZ2ZzelMwV083TnMwT3NiVTkwbnFmcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTWFZsVUVOT1pDMW1TM0U0VlU4ME1FMDNla3hsZDI1NUxYaDRObVYzY0hGMlZrWk5ORW8yT1hWd2RVVjZOemQzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "sec-financial-fact-row": {
+                "eventTitle": "SEC XBRL financial fact row",
+                "eventDescription": "Charged only when a sec xbrl financial fact row row is delivered.",
+                "eventPriceUsd": 0.006,
+                "isPrimaryEvent": true
+              },
+              "sec-financial-metric-change-alert": {
+                "eventTitle": "SEC financial metric change alert",
+                "eventDescription": "Charged only when a sec financial metric change alert row is delivered.",
+                "eventPriceUsd": 0.25,
+                "isPrimaryEvent": false
+              },
+              "sec-peer-variance-report": {
+                "eventTitle": "SEC peer variance report",
+                "eventDescription": "Charged only when a sec peer variance report row is delivered.",
+                "eventPriceUsd": 12,
+                "isPrimaryEvent": false
+              },
+              "sec-financial-export": {
+                "eventTitle": "SEC financial evidence export",
+                "eventDescription": "Charged only when a sec financial evidence export row is delivered.",
+                "eventPriceUsd": 8,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "startedAt": "2026-07-27T17:04:51.951Z",
+          "createdAt": "2026-07-27T17:05:52.829Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "FSd131FypRhVArDWF",
+        "url": "https://apify.com/taroyamada/sec-xbrl-peer-financial-change-report"
+      },
+      {
+        "title": "SEC XBRL Fact API",
+        "name": "sec-xbrl-fact-api",
+        "username": "bb-tradetec",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 65,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-14T12:34:44.981Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Normalize official SEC Company Facts into stable records with exact concepts, periods, units, filing references, and provenance.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/sh5bKzezmsAtnAwWOUl9yWtC-SPzDlPGM_HpyypJH3s/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcHJINklONlJyNnB2c0N3a0gtYWN0b3ItUng4ZlBCcVNNQlpjSmE1RGstMlNpUXphRElOai1zZWMteGJybC1mYWN0LWFwaS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BB",
+        "userPictureUrl": "https://images.apifyusercontent.com/imhwvsW0FPK9hQYF6qKBzYt8EKU9lL6pqpra4RC6mas/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNGZDazBlOWJLUl8yYXpING1oeGZTWkRPemlod0IxdWtMMElBbHhYcWVtVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpOW1OekpoTVRabE5XTmpaRFV4TWpZNU5URmtaREZqTUdKbFpqQTNZelF3WmpReE4yRmpNelJqT0RVM05XUTNORGcwTnpabE9EWTFNR1JpTUdGaU5qYzVQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.0004,
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "XBRL fact",
+                "eventDescription": "One validated primary Dataset item emitted by this Actor.",
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 2.51,
+          "reasonForChange": "Apply the exact SEC Suite PPE proposal approved on 2026-07-29 under the current 2026-08-16 monetization authorization.",
+          "createdAt": "2026-08-16T12:58:40.840Z",
+          "startedAt": "2026-08-16T12:58:40.840Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-19T08:06:23.693Z"
+        },
+        "id": "Rx8fPBqSMBZcJa5Dk",
+        "url": "https://apify.com/bb-tradetec/sec-xbrl-fact-api"
+      },
+      {
+        "title": "SEC XBRL Company Facts Scraper",
+        "name": "sec-xbrl-company-facts-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 131,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-14T12:38:34.435Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrapes standardized XBRL financial facts from the SEC EDGAR Company Facts API for a list of tickers or CIK numbers. Returns each observation as a flat row with the company, concept, value, period, and form type.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/KbQIyoG2VerGLvquRlIVD980WdXojAP9k2WIkXh6N84/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3IteERZVmJuQkl3c3laYXh5Z0EtTWlmM1RIZzIyQy1zZWMteGJybC1jb21wYW55LWZhY3RzLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00367
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00333
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-06-05T16:14:02.191Z",
+          "createdAt": "2026-06-05T16:14:01.586Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "xDYVbnBIwsyZaxygA",
+        "url": "https://apify.com/parseforge/sec-xbrl-company-facts-scraper"
+      },
+      {
+        "title": "SEC Xbrl Financials Scraper — No Login, $12.5/1k",
+        "name": "sec-xbrl-financials-scraper",
+        "username": "fortuitous_pirate",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 154,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-14T13:34:36.480Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Extract audited financial data directly from SEC EDGAR XBRL filings. Look up any public company by ticker symbol to get annual Revenue, Net Income, Assets, EPS, and 500+ other GAAP metrics from 10-K filings. Data from official. No login or cookies. MCP-ready for AI agents. $12.5 per 1,000 records.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Fortuitous Pirate",
+        "userPictureUrl": "https://images.apifyusercontent.com/8JeKpijqTl7G8i50eCe0PpBnie_-hPRhosraMzNT46o/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNXNtNUpBWHdTbWxZbVV3VUxQT3AyblFTN1hSZ3JRS3Qtdk1CRmVlMlBfVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RXlNelEwTWpNMU1B.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-17T00:00:00.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00465
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0125,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-03T01:55:05.924Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-03T01:55:26.062Z",
+          "notifiedAboutChangeAt": "2026-09-17T00:06:03.436Z"
+        },
+        "id": "4Yd4dmmcYMcinfgZw",
+        "url": "https://apify.com/fortuitous_pirate/sec-xbrl-financials-scraper"
+      },
+      {
+        "title": "SEC EDGAR Filings Scraper | 16 Fields + XBRL, No API Key",
+        "name": "sec-edgar-filings",
+        "username": "themineworks",
+        "stats": {
+          "totalBuilds": 32,
+          "totalRuns": 95,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-14T11:00:30.197Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "Scrape SEC EDGAR filings (10-K, 10-Q, 8-K, S-1, Form 4) as clean JSON with XBRL financials & RAG ready text. Ticker to CIK auto resolve, no API key. Use in Claude, ChatGPT & any MCP agent. Free on empty runs.",
+        "categories": [
+          "BUSINESS",
+          "NEWS",
+          "MCP_SERVERS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/MvnJPPq9pHgoi-pjTOllTEwMOkRZTolvqO8wwtVtF3s/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMlNkdDA1UXlwQVN1bGJVbjEtYWN0b3Itb1JrSGQzRWZySzVtUTRDMGstcHh3SDRUNlNiSy1nb3Zlcm5tZW50LnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "The Mine Works",
+        "userPictureUrl": "https://images.apifyusercontent.com/1-r6dF1T_wzvAVHZxqUZuMULYNxNGWTt3wMnIuAiILo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vM3pGaEtVaVRxZmozWkJ0NXUtbVVtQ0FYNUJYSGx1NzRPU2dSZ1MzRWVUTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNbE5rZERBMVVYbHdRVk4xYkdKVmJqRXRjSEp2Wm1sc1pTMDViVWRvY3psd2NuSnpMVlJOVjE5TWIyZHZMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-22T00:00:00.000Z",
+          "reasonForChange": "Correcting the 3 Sep batch, which repriced the primary event but silently dropped the queued $0.005 actor-start fee for this actor as a side effect (single-pending-entry rule) or left an old mispriced value in place. Per-result price unchanged.",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "filing-scraped": {
+                "eventTitle": "Filing scraped",
+                "eventDescription": "Charged per SEC filing successfully delivered to the dataset",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00075
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "createdAt": "2026-09-07T07:56:37.152Z",
+          "notifiedAboutFutureChangeAt": "2026-09-07T07:56:57.363Z",
+          "notifiedAboutChangeAt": "2026-09-22T00:05:54.975Z"
+        },
+        "id": "oRkHd3EfrK5mQ4C0k",
+        "url": "https://apify.com/themineworks/sec-edgar-filings"
+      },
+      {
+        "title": "SEC XBRL Financial Frames — Structured Fundamentals",
+        "name": "sec-xbrl-financial-frames",
+        "username": "nexgendata",
+        "stats": {
+          "totalBuilds": 21,
+          "totalRuns": 196,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-14T15:56:39.429Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Track XBRL financial-statement frames from SEC EDGAR — parsed, source-linked JSON for analysts, funds and AI agents.",
+        "categories": [
+          "BUSINESS",
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/l2fKbgAQb64aXHgjNgutf-EYaz8xDbF0gFteOQ1hBx4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFFZaExmMkt1NllxeUNXYngtYWN0b3ItQjZkRUFwZXJyYk5FSXVyRngtMm1kV0lZWXBjVi1zZWMteGJybC1maW5hbmNpYWwtZnJhbWVzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGenData",
+        "userPictureUrl": "https://images.apifyusercontent.com/DFoEfAV1iSBokBNjpIZdoeMlxK2y6UEav2Se4BxUDrI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU5Nancta2JUQ2FFN3lQUTNGZnR1SHBQX0FoWkVNVlVFLTdfSVFOTjNzby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVRkZaYUV4bU1rdDFObGx4ZVVOWFluZ3RjSEp2Wm1sc1pTMXVSMmRzVGxZeU5VVkRMVzVuWkMxemRHRmphMlZrTFd4dlkydDFjQzFrWVhKckxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Two-tier cut sheet reduction (Steve order 2026-08-04): apify-default-dataset-item $0.1->$0.05",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "XBRL financial frame",
+                "eventDescription": "Charged per result row returned.",
+                "eventPriceUsd": 0.05,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-14T05:35:44.281Z",
+          "createdAt": "2026-08-04T20:00:10.814Z",
+          "startedAt": "2026-08-04T20:00:10.814Z"
+        },
+        "id": "B6dEAperrbNEIurFx",
+        "url": "https://apify.com/nexgendata/sec-xbrl-financial-frames"
+      },
+      {
+        "title": "SEC Financials Normalizer — EDGAR XBRL to Clean JSON",
+        "name": "sec-financials-normalizer",
+        "username": "shelvick",
+        "stats": {
+          "totalBuilds": 30,
+          "totalRuns": 132,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-15T06:14:31.595Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "SEC financial statements API: normalize EDGAR XBRL into comparable 10-K financials as JSON. Give a ticker or CIK; get a standardized income statement, balance sheet and cash flow, each line citing its XBRL tag and checked against accounting identities. Fundamentals data, sector-aware.",
+        "categories": [
+          "AI",
+          "DEVELOPER_TOOLS",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/TiMiZWexfFVf1EcOw9QFUnQ0HiETkhviYr8wj0oeG64/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veXB3WmlPRHRuclg1QWE0UVYtYWN0b3ItM2dCaVhxdExjSHhjR1ZmZ2gtV2ZISVlITjFmTy1sb2dvLnN2Zy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scott Helvick",
+        "userPictureUrl": "https://images.apifyusercontent.com/4bc-fTPuMl4nOjq0DECWhgAy5UcROe82comXtLk21fo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdVRNTW1lekJzZzR1R2hqNzNTajZLZTNEQzRCUDhQRVBnVmhLcGNRb1luRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlWEIzV21sUFJIUnVjbGcxUVdFMFVWWXRjSEp2Wm1sc1pTMWlPVXd3ZDFOeFNEbFVMVEUyT1RVME5UWXlNak0xTURZdWFuQmxady5qcGVn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": 0.1,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "financials-normalized": {
+                "eventTitle": "Company-period normalized",
+                "eventDescription": "Charged once per company-period successfully normalized, after that record is pushed to the dataset. Covers SEC fact retrieval, sector-aware concept resolution, accounting-identity validation, and output assembly. Never charged for companies that fail to resolve or have no usable annual facts.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0475
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0425
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0425
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0425
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "createdAt": "2026-06-16T06:37:57.008Z",
+          "startedAt": "2026-06-16T06:37:56.000Z"
+        },
+        "id": "3gBiXqtLcHxcGVfgh",
+        "url": "https://apify.com/shelvick/sec-financials-normalizer"
+      },
+      {
+        "title": "Company Financial Fundamentals — SEC XBRL Metrics API",
+        "name": "company-financial-fundamentals-sec",
+        "username": "nexgendata",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 113,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-14T19:28:36.109Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Track company financial fundamentals from SEC XBRL from SEC EDGAR — parsed, source-linked JSON for analysts, funds and AI agents.",
+        "categories": [
+          "BUSINESS",
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/1tdm4bNDKXrjrx6UkJSO3gmqjB9xdiyDG1C5sTuhxYo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFFZaExmMkt1NllxeUNXYngtYWN0b3ItdTBDNlJJbjJqRkVsNDVSYkEtR2RZVTgxYVhCUC1jb21wYW55LWZpbmFuY2lhbC1mdW5kYW1lbnRhbHMtc2VjLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGenData",
+        "userPictureUrl": "https://images.apifyusercontent.com/DFoEfAV1iSBokBNjpIZdoeMlxK2y6UEav2Se4BxUDrI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU5Nancta2JUQ2FFN3lQUTNGZnR1SHBQX0FoWkVNVlVFLTdfSVFOTjNzby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVRkZaYUV4bU1rdDFObGx4ZVVOWFluZ3RjSEp2Wm1sc1pTMXVSMmRzVGxZeU5VVkRMVzVuWkMxemRHRmphMlZrTFd4dlkydDFjQzFrWVhKckxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-06-20T05:49:23.000Z",
+          "reasonForChange": "Launch pricing.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "financial-record": {
+                "eventTitle": "Financial record",
+                "eventDescription": "Charged per financial fundamental record returned.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.03,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-06-20T05:49:25.150Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "u0C6RIn2jFEl45RbA",
+        "url": "https://apify.com/nexgendata/company-financial-fundamentals-sec"
+      },
+      {
+        "title": "SEC EDGAR Scraper - Filings, XBRL Financials & Search",
+        "name": "sec-edgar-scraper",
+        "username": "renzomacar",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 118,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-15T08:12:46.223Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape SEC EDGAR for any US public company: filings (10-K, 10-Q, 8-K, Form 4), XBRL financial statements, and full-text filing search. Official government data straight from SEC, no API key, pay per result. Feed financial models, screeners, risk monitoring and investment research.",
+        "categories": [
+          "BUSINESS",
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/wcRCLjir8pcjXZ62p1GCb5PeYsQIncsPw5w7lMr583Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMFZ2bnJaeE1FOW4xczV5NG8tYWN0b3ItRWQ1MzV0VDBEeWNRT0U0a2UtRmdaN1N0OUduei1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Renzo Madueno",
+        "userPictureUrl": "https://images.apifyusercontent.com/s31Rek4H-pWcTXjpz1MsdSPjgj8lZKp_j_6AQFStM8k/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vazUxdklzYkczUGk1TTh5ZVZwRk1vQ2JueEQ3eDNVWWxTUkhaLTVmMFdpMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSFJMZFhkeFowVk1SVjlNUjJaV1IxSjFRVkpzVFZBNVpWVnNWbkZWWVhkbmRFTlhSMFEwVXpKRlkzRmhNM0Iz.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-20T01:18:52.313Z",
+          "reasonForChange": "Apify Store subscription discounts: lower unit prices at higher plan tiers. No tier pays more than before.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Once per run.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0094
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0093
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0092
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0091
+                  }
+                }
+              },
+              "company-data": {
+                "eventTitle": "Company",
+                "eventDescription": "Per company.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0094
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0093
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0092
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0091
+                  }
+                }
+              },
+              "search-query": {
+                "eventTitle": "Search query",
+                "eventDescription": "Per full-text search.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0094
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0093
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0092
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0091
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-20T01:18:57.240Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-20T01:35:58.944Z"
+        },
+        "id": "Ed535tT0DycQOE4ke",
+        "url": "https://apify.com/renzomacar/sec-edgar-scraper"
+      },
+      {
+        "title": "SEC EDGAR Deep — Filings + XBRL Financials Feed",
+        "name": "sec-edgar-deep",
+        "username": "bikram07",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 119,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-15T00:04:31.299Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Recent SEC EDGAR filings (10-K, 10-Q, 8-K and more) for any ticker watchlist, each enriched with headline XBRL financials — revenue, net income, total assets and shareholders' equity. Official keyless SEC APIs, clean JSON. Zero-config: 8 large-cap filings with financials.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "NEWS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Bikram",
+        "userPictureUrl": "https://images.apifyusercontent.com/D_p_FGQAehIVlRvJErmHwKZunGhQo3TBbu8_ms0Yh-8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZnBTazZMT0pzN3lWQ21fSlpKVHNwRXJna01oNmFVbkZlUFJHZTFoVi1aQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVWd3ZERJNFdYQXRPVVpGYjNkVVdXaEJXVjg1UjNoeWQzcFVVRGd3YUd4Vk5ITnRkRTlYTldwbU1FNDVjMEZrUkRoU2R6MXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-07-20T13:46:18.000Z",
+          "startedAt": "2026-08-03T13:46:17.726Z",
+          "apifyMarginPercentage": 0,
+          "notifiedAboutFutureChangeAt": "2026-07-20T13:46:38.156Z",
+          "notifiedAboutChangeAt": "2026-08-05T15:06:30.080Z"
+        },
+        "id": "PWc0mcGNbBkMgsz7j",
+        "url": "https://apify.com/bikram07/sec-edgar-deep"
+      },
+      {
+        "title": "SEC EDGAR Scraper: Reported XBRL Financial Facts",
+        "name": "secedgar-xbrl-scraper",
+        "username": "naimurhasanrwd",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 6,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-14T23:52:32.871Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 5,
+            "TIMED-OUT": 0,
+            "TOTAL": 5
+          }
+        },
+        "description": "Pull as-reported XBRL financial facts for any US SEC filer — revenue, assets, cash flow and any other tag — straight from EDGAR company concept data. No login, no proxy, no browser.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/WCSdhGvedCHFPn9HVu76e1uT3qj0ySuKBehlfn1QRUo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZFl3bDJjY1dQOUphY2hjb0YtYWN0b3ItUDZBanh1SG5GcEI3N081YjEtOXEySzNqcUNhdC1zZWNlZGdhci14YnJsLXNjcmFwZXIuc3ZnLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Naimur Hasan",
+        "userPictureUrl": "https://images.apifyusercontent.com/6vBq2gdnPKrgdrya6QyAPo6uMfZZMMI3lQAy9ZYf92s/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZXNMbGxIeDg5cXlNbi1SQUFjRUVfamd0UzdFLW9ncnA0Q3NmR3huRU5IQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURVo2TUVsemExRXdSamR5V1dFdE4wMHRWMk16UmpjNU1WWnBhVmh1WVZod1dtOVVTbVZXU0hka2RFWmhlbFF5ZEhSUFVUMXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE"
+        },
+        "id": "P6AjxuHnFpB77O5b1",
+        "url": "https://apify.com/naimurhasanrwd/secedgar-xbrl-scraper"
+      },
+      {
+        "title": "SEC EDGAR Filings Scraper: 10-K, 10-Q, 8-K, XBRL",
+        "name": "sec-edgar-filings",
+        "username": "smartmoney-data",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 24,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-15T05:28:29.665Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 18,
+            "TIMED-OUT": 0,
+            "TOTAL": 18
+          }
+        },
+        "description": "Get public SEC EDGAR filings by ticker or CIK from official SEC APIs: 10-K, 10-Q, 8-K and more, with document links, key XBRL financials, and optional Risk Factors and MD&A text.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SmartMoney Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/HOy0iTPtL7VIrWUktG9TSp7_2JXFtHqCiwPZ_Le-UdM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUzUteEotM0RxYjgwbXMyNnRUS3NvTENUaUFkTDN1ZlNBUTNNVEVNdTd0Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZla2xGYzJJM1lUaHdWM0pLUWtzMlJXOHRjSEp2Wm1sc1pTMHpkSE5EZDNKRmJVWmlMVU5vWVhSSFVGUmZTVzFoWjJWZlUyVndYekkyWDE4eU1ESTJYMTh4TWw4ek4xOHlNRjlRVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "filing-fetched": {
+                "eventTitle": "Filing fetched (incl. full-text search hit)",
+                "eventDescription": "One SEC EDGAR filing fetched, including full-text search hit.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "xbrl-fact-fetched": {
+                "eventTitle": "XBRL financial fact fetched",
+                "eventDescription": "One XBRL financial fact fetched.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-09-25T07:43:13.832Z",
+          "createdAt": "2026-09-25T07:43:14.037Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "xGM5PLIlQKJzO8Vrz",
+        "url": "https://apify.com/smartmoney-data/sec-edgar-filings"
+      },
+      {
+        "title": "SEC Company Financials Scraper - XBRL Facts",
+        "name": "sec-company-facts-scraper",
+        "username": "compass_lab",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 7,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-15T06:38:32.086Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 6,
+            "TIMED-OUT": 0,
+            "TOTAL": 6
+          }
+        },
+        "description": "SEC company financials scraper and API: export reported XBRL facts (revenue, net income, EPS, assets, cash...) per company and period, with filing, fiscal quarter and restatements, to JSON, CSV or Excel. Data from the SEC's public APIs. Track new quarters and restatements.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "COMPASSLAB",
+        "userPictureUrl": "https://images.apifyusercontent.com/VjeXt70C1pb5e1nPwRYt8UDpq8_kPfB2XIWeR9exHHQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTXZKYkJHek9JNmY2SW82VGNVQ19tc0NGOEQtOExZSzBmSXBmaENPaHk5US9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSbFZ3ZFhOTGFXbHpVakZGWTB0U1Jua3RjSEp2Wm1sc1pTMHpiVlJ4WTNabWRGWmhMV052YlhCaGMzTnNZV0l0YVdOdmJpNXpkbWN1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "One result in the dataset",
+                "eventPriceUsd": 0.0014
+              }
+            }
+          },
+          "createdAt": "2026-10-09T18:34:07.423Z",
+          "startedAt": "2026-10-09T18:34:07.423Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-09T19:00:20.664Z"
+        },
+        "id": "dqqVi6xsGKe1FfSwS",
+        "url": "https://apify.com/compass_lab/sec-company-facts-scraper"
+      },
+      {
+        "title": "SEC Company Financials API: Annual and Quarterly XBRL",
+        "name": "sec-company-financials-api",
+        "username": "conserving_celerytop",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 13,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-14T12:10:51.538Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 8,
+            "TIMED-OUT": 0,
+            "TOTAL": 8
+          }
+        },
+        "description": "Get SEC company financials by ticker or CIK: revenue, net income, EPS, assets, liabilities, equity, operating cash flow and shares, annual and quarterly, with the filing each row comes from. $0.01 per company.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/Npt_EIr3MLbghH2bvhOwT0dt1l9pBdw8TN1AJt2I0mc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vVzBWOHdIYnNDV2h5cVhFQUctYWN0b3Itb01DdzVJVlQxMmdvN3U5aXQtUGRMbGZCT0NHOC1zZWMtY29tcGFueS1maW5hbmNpYWxzLWFwaS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Don Mangu",
+        "userPictureUrl": "https://images.apifyusercontent.com/OuHeMJHwJhQVSfh8MU_f46doHE6F0T5k2KhY3pm_c5M/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOVFLSGdpODhrQVdWMlJOYnRKRWhZQWJIam1ENk1vamFiWHRTSmozZlJIay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWekJXT0hkSVluTkRWMmg1Y1ZoRlFVY3RjSEp2Wm1sc1pTMWFWV1JtV25OTU0yUlNMV1J2YmkxdFlXNW5kUzFoZG1GMFlYSXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-financials": {
+                "eventTitle": "Company financials",
+                "eventDescription": "Annual and quarterly financials of one company from SEC filings, any number of periods",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.007
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-04T16:37:33.739Z",
+          "createdAt": "2026-10-04T16:37:34.511Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "oMCw5IVT12go7u9it",
+        "url": "https://apify.com/conserving_celerytop/sec-company-financials-api"
+      }
+    ]
+  }
+}
