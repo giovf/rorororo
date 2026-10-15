@@ -1260,4 +1260,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the first time: two clients reached the sign-in page and neither entered an email. Two is not a pattern; the pass
   sets the threshold (≥ 5 sign-in views, 0 emails in 7 days) that files a sign-in-page item, and waits until 10-16
   for the first Bazaar and validate clauses since the v0.25.1 fix.
+- 2026-10-15 burn-down: oss-bounties research (starved queue) — the 10-14 board is the second under the 10-12 shape rules
+  with 0 free funded fixes, so the board-count trigger is the 10-18 review's call. Third sources checked by search:
+  Algora's console tRPC list (keyless for two third-party scanners, unverified) and IssueHunt's funded list go through
+  the relay now so the review reads a real answer; BountyHub and Gitpay show no supply, Bountysource is gone.
 

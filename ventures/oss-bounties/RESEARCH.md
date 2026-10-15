@@ -160,6 +160,23 @@ five issues and US$212, four of them from 2024–2025, and the money is a promis
 not change the board-count picture — the 10-14 board had 8 kept, 0 free funded fixes — and it is not a
 reason to keep the line open on its own. The board-count trigger asked for on 10-13 stands.
 
+## Research 2026-10-15 (pipeline starved — burn-down)
+
+Read: the 10-14 board (498 read, 8 kept, 0 free funded fixes — the second board under the 10-12 shape
+rules, so the board-count trigger the 10-13 pass asked for is now the Sunday review's decision on
+10-18), the 10-14 Opire verdict, the `## Claims` table, the queue. **Third sources, by web search
+(the sandbox resolves none of the boards' hosts):** Algora's documented API is org-scoped behind a
+bearer token (`docs.algora.io/refs/bounty`), but its console's tRPC endpoint (`bounty.list` with
+`status: "active"` and no org, the call its own SDK makes) is what two keyless third-party scanners
+read — unverified; IssueHunt (`oss.issuehunt.io`) still lists funded issues; BountyHub and Gitpay
+are directory entries with no visible supply; Bountysource is discontinued. A relay request
+(`algora-issuehunt-2026-10-15`) reads the Algora endpoint and IssueHunt's funded list so the review
+has the answer on `main`; a keyless cross-org list would make Algora a third scanner source only
+if it shows free funded fixes GitHub's search misses (bounties posted from the console without a
+`/bounty` comment, or older than 90 days). **No items added:** `research_after: 2026-10-18`, the
+Sunday review that sets the board-count trigger; if it keeps the line open, the exchange files the
+Algora-API source item from the relay reading.
+
 ## Metrics
 
 | Date | Event | Users | Rating | Sales | Notes |
@@ -173,3 +190,4 @@ reason to keep the line open on its own. The board-count trigger asked for on 10
 | 2026-10-12 | No claim | — | — | — | useagent#61 ($80) dropped on read: maintainer-assigned, real-phone recordings, weeks of app work; 6 of 6 filed items dropped; scanner also drops device, assigned and hardware shapes |
 | 2026-10-13 | Research | — | — | — | 10-12 board: 16 kept, 0 free funded fixes (free rows are dropped shapes, the rest 1–14 PRs deep); research_after 10-14 after two boards under the new rules |
 | 2026-10-14 | Second source | — | — | — | Opire read: 6 open rewards worth $212 on 5 issues, none a free funded fix; scanner reads Opire's list and `/reward`, marks rows `not escrowed`; 10-14 board 8 kept, 0 free |
+| 2026-10-15 | Research | — | — | — | 10-14 board 8 kept, 0 free (second board under the new rules); Algora tRPC list + IssueHunt sent to the relay; waiting until the 10-18 review |

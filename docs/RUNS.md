@@ -1106,3 +1106,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-15 00:15 | burn-down | Vultr Agent Rush (3–8 Nov, prizes TBA) folded into the 10-20 lablab relay read; queue waits until 10-20
 - 2026-10-15 00:18 | burn-down | gankdat research: 10-13/10-14 rows read, 3 accounts silent, 0 paid; 2 OAuth sign-in views with no email
 - 2026-10-15 00:18 | burn-down | gankdat queue waits until 10-16 for the first bazaar and x402 validate clauses after v0.25.1
+- 2026-10-15 00:18 | burn-down | oss-bounties research: 10-14 board 0 free (2nd under new rules); Algora tRPC list + IssueHunt sent to relay
+- 2026-10-15 00:18 | burn-down | oss-bounties queue waits until the 10-18 review's board-count decision; two relay hosts allowed

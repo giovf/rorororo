@@ -75,6 +75,8 @@ const ALLOWED = [
   'docs.opire.dev', // Opire bounty bot docs (exchange 2026-W42, bounty boards)
   'docs.algora.io', // Algora bounty workflow docs (exchange 2026-W42, bounty boards)
   'algora.io', // Algora's own open-bounty board, server-rendered (exchange 2026-W42)
+  'console.algora.io', // Algora console API: keyless tRPC bounty.list read (oss-bounties research 2026-10-15)
+  'oss.issuehunt.io', // IssueHunt funded-issue list (oss-bounties research 2026-10-15)
   '.opire.dev', // Opire bounty platform pages (exchange 2026-W42)
   'api.routescan.io', // Routescan keyless Etherscan-compatible API for Base: liquidation logs, gas price (exchange 2026-W42, keeper idea)
   'mainnet.base.org', // Base's public JSON-RPC endpoint (POST eth_blockNumber, eth_getLogs — foundry relay-post-json, 2026-10-14)
