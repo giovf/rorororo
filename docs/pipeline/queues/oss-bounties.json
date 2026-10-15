@@ -148,6 +148,16 @@
       "status": "done",
       "added": "2026-10-14",
       "done_at": "2026-10-14"
+    },
+    {
+      "id": "bounty-trovu-trovu-329",
+      "title": "Bounty $30 (Opire, not escrowed) on trovu/trovu#329: Open target URLs not in PWA but in default browser — fork, fix with tests in the project's conventions, open the PR with `/claim #329` and a plain note on how it was built",
+      "why": "Filed by the bounty scanner (2026-10-15, docs/bounties/BOARD.md): $30 posted on https://github.com/trovu/trovu/issues/329 by a code owner's Opire reward — not escrowed: the creator arranges payment after the merge only if the PR meets the issue, so read the thread for how earlier rewards were paid before building; free when filed (no assignee, no open PR); trovu/trovu has 77 stars, TypeScript, AGPL-3.0, 63 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.",
+      "effort_days": 1,
+      "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-15"
     }
   ],
   "research_after": "2026-10-18"
