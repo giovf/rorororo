@@ -818,8 +818,9 @@
       "effort_days": 0.1,
       "proof": "the 2026-10-17 Daily numbers row carries `search: … indexed I/N …` and the googlebot-401-noindex proof can be read from it",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-16"
+      "status": "doing",
+      "added": "2026-10-16",
+      "doing_since": "2026-10-16"
     }
   ]
 }

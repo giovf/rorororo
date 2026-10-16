@@ -1,0 +1,95 @@
+{
+  "request": "sra-register-2026-10-16",
+  "fetched_at": "2026-10-16T17:16:12.421Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.sra.org.uk/sra/how-we-work/privacy-data-information/data-sharing/",
+      "fetched_at": "2026-10-16T17:16:08.559Z",
+      "status": 200,
+      "final_url": "https://www.sra.org.uk/sra/how-we-work/privacy-data-information/data-sharing/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 111390,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.sra.org.uk/sra/how-we-work/privacy-data-information/data-sharing/terms-conditions/",
+      "fetched_at": "2026-10-16T17:16:10.697Z",
+      "status": 200,
+      "final_url": "https://www.sra.org.uk/sra/how-we-work/privacy-data-information/data-sharing/terms-conditions/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 112455,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.sra.org.uk/solicitors/resources/data/register-api/",
+      "fetched_at": "2026-10-16T17:16:11.033Z",
+      "status": 404,
+      "final_url": "https://www.sra.org.uk/solicitors/resources/data/register-api/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 89984,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.sra.org.uk/consumers/register/",
+      "fetched_at": "2026-10-16T17:16:11.318Z",
+      "status": 200,
+      "final_url": "https://www.sra.org.uk/consumers/register/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 118488,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.sra.org.uk/datasharing",
+      "fetched_at": "2026-10-16T17:16:11.528Z",
+      "status": 200,
+      "final_url": "https://www.sra.org.uk/datasharing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 112290,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://www.sra.org.uk/",
+      "fetched_at": "2026-10-16T17:16:11.719Z",
+      "status": 200,
+      "final_url": "https://www.sra.org.uk/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/jungle_synthesizer/sra-solicitors-scraper",
+      "fetched_at": "2026-10-16T17:16:11.901Z",
+      "status": 200,
+      "final_url": "https://apify.com/jungle_synthesizer/sra-solicitors-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"seuf3drsv1asbq\""
+      },
+      "file": "7.html",
+      "bytes": 503412,
+      "truncated": false
+    }
+  ]
+}

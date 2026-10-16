@@ -163,12 +163,24 @@
     {
       "id": "bounty-verdikta-verdikta-applications-76",
       "title": "Bounty $30 on verdikta/verdikta-applications#76: [BOUNTY ~$30 x4] Post and fund a real task on Verdikta, publish a write-up (paid on Poidh, Base) — fork, fix with tests in the project's conventions, open the PR with `/claim #76` and a plain note on how it was built",
-      "why": "Filed by the bounty scanner (2026-10-16, docs/bounties/BOARD.md): $30 posted on https://github.com/verdikta/verdikta-applications/issues/76 by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); verdikta/verdikta-applications has 32 stars, JavaScript, MIT, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.",
+      "why": "Filed by the bounty scanner (2026-10-16, docs/bounties/BOARD.md): $30 posted on https://github.com/verdikta/verdikta-applications/issues/76 by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); verdikta/verdikta-applications has 32 stars, JavaScript, MIT, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped. Dropped 2026-10-16 (build): not a change to the repository — the claimant must post and fund an on-chain task from their own wallet (at least 0.0041 ETH, about $10, plus gas) on Base, get it completed by someone else, publish a 300-word write-up, and claim on Poidh with the funding transaction hash; the issue says \"Nothing is paid for comments or pull requests on this issue\". A £0 line spends nothing, crypto is out of scope (ARCHITECTURE), and the paying wallet is the owner's identity. The scanner now drops the shape (bounty-scanner-off-platform-pay).",
       "effort_days": 1,
       "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-16"
+      "status": "dropped",
+      "added": "2026-10-16",
+      "dropped_at": "2026-10-16"
+    },
+    {
+      "id": "bounty-scanner-off-platform-pay",
+      "title": "Bounty scanner: also drop tasks the claimant must fund (post and fund, funded with at least N ETH, funding transaction hash) and slots paid to a wallet off GitHub (claim on Poidh not here, nothing is paid for pull requests)",
+      "why": "Built 2026-10-16 (build): the eighth scanner-filed item in a row was dropped unbuilt — verdikta#76 ($30 x4) passed CONTEST_ISSUE and the three shape rules because it pays for posting and funding a task on-chain and claiming on Poidh, a shape no rule named. Fifth SHAPE_RULE in scripts/bounty-scanner.ts on #76's real wording, 6 assertions in the test, board header names the shape. The 10-16 board had 9 kept rows and this was its only free one; the next board shows whether anything free remains once the shape is gone.",
+      "effort_days": 0.1,
+      "proof": "the next three boards file no item a read then drops for funding or off-GitHub payment",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-16",
+      "done_at": "2026-10-16"
     }
   ],
   "research_after": "2026-10-18"

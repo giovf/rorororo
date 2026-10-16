@@ -389,6 +389,38 @@ describe('shapeExcluded', () => {
       shapeExcluded('Fix the video player\nThe video stutters on an Android phone.'),
     ).toBeUndefined();
   });
+  // Wording quoted from verdikta/verdikta-applications#76, the 2026-10-16 build's read.
+  it('drops the campaign the claimant funds from a wallet and that pays on Poidh, not on GitHub', () => {
+    expect(
+      shapeExcluded(
+        '[BOUNTY ~$30 x4] Post and fund a real task on Verdikta, publish a write-up (paid on Poidh, Base)\nFour solo bounties on Poidh (Base chain), about 0.0125 ETH (~$30) each, for builders who post and fund a real task.',
+      ),
+    ).toBe('the claimant must fund it or it pays to a wallet off GitHub');
+    expect(
+      shapeExcluded(
+        'Bring a Task, Build a Habit\nPost a real task on Verdikta Bounties on Base, funded with at least 0.0041 ETH (about $10).',
+      ),
+    ).toBe('the claimant must fund it or it pays to a wallet off GitHub');
+    expect(shapeExcluded('Slots\nSlots (claim on Poidh, not here; one payout per person).')).toBe(
+      'the claimant must fund it or it pays to a wallet off GitHub',
+    );
+    expect(
+      shapeExcluded('Campaign index\nNothing is paid for comments or pull requests on this issue.'),
+    ).toBe('the claimant must fund it or it pays to a wallet off GitHub');
+    expect(
+      issueExcluded(
+        'Post and fund a real task on Verdikta',
+        ['bounty'],
+        'put the task URL, the funding transaction hash and the write-up URL in the claim text',
+      ),
+    ).toBe('the claimant must fund it or it pays to a wallet off GitHub');
+    // Ordinary wallet or funding talk in a fix is not the shape.
+    expect(
+      shapeExcluded(
+        'Fix the wallet balance rounding\nThe fund transfer form shows 0.0041 ETH as 0.004.',
+      ),
+    ).toBeUndefined();
+  });
   it('keeps ordinary feature and bug-fix work', () => {
     expect(
       shapeExcluded(
