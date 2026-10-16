@@ -50,13 +50,6 @@ export function allowed(env: Bindings, email: string): boolean {
   return e !== '' && env.OWNER_EMAILS.split(',').map((x) => x.trim().toLowerCase()).includes(e);
 }
 
-function sameOrigin(c: Ctx): boolean {
-  const site = c.req.header('sec-fetch-site');
-  if (site && site !== 'same-origin' && site !== 'none') return false;
-  const origin = c.req.header('origin');
-  return !origin || origin === new URL(c.req.url).origin;
-}
-
 async function session(c: Ctx): Promise<string | null> {
   const id = getCookie(c, SESSION_COOKIE);
   if (!id) return null;
@@ -97,6 +90,9 @@ app.use('/ops', async (c, next) => {
 });
 
 // ------------------------------------------------------------------ sign-in
+// No Origin / Sec-Fetch-Site gate on the forms (2026-10-16: the owner's browser got "forbidden" on a
+// legitimate post). The session cookie is SameSite=Lax and scoped to /ops, so a cross-site post
+// carries no session: login only emails an allow-listed address, verify needs the emailed code.
 
 app.get('/ops', async (c) => {
   const email = await session(c);
@@ -106,7 +102,6 @@ app.get('/ops', async (c) => {
 });
 
 app.post('/ops/login', async (c) => {
-  if (!sameOrigin(c)) return c.text('forbidden', 403);
   const form = await c.req.parseBody();
   const email = field(form, 'email').trim().toLowerCase();
   const ip = c.req.header('cf-connecting-ip') ?? 'unknown';
@@ -123,7 +118,6 @@ app.post('/ops/login', async (c) => {
 });
 
 app.post('/ops/verify', async (c) => {
-  if (!sameOrigin(c)) return c.text('forbidden', 403);
   const form = await c.req.parseBody();
   const email = field(form, 'email').trim().toLowerCase();
   const code = field(form, 'code').replace(/\D/g, '');
@@ -168,7 +162,6 @@ async function ideas(env: Bindings): Promise<Idea[]> {
 }
 
 app.post('/ops/ideas', async (c) => {
-  if (!sameOrigin(c)) return c.text('forbidden', 403);
   if (!(await session(c))) return c.redirect('/ops');
   const form = await c.req.parseBody();
   const text = field(form, 'text').trim().slice(0, 2000);
