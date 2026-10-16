@@ -100,3 +100,38 @@ for agents (MCP server, keyless preview, agent-side sign-up, x402).
 
 This project was built with Claude Code, directed and owned by the entrant (a UK sole trader). All
 code is in the public repository above.
+
+## Required form fields (added 2026-10-16 — the Devpost form asks these separately)
+
+**If it existed before, explain what already existed and what you built or changed during the submission period.**
+gankdat existed before the hackathon: a Cloudflare Worker serving 16 official UK and EU registers as a JSON API and an MCP server, with Stripe subscriptions for humans and x402 USDC micropayments for agents, live since July 2026. Everything PayPal-related was built during the submission period (release 0.24.0, 11 October 2026): the PayPal Orders API v2 integration (`src/billing/paypal.ts`), one-off credit packs on a new top-up balance that the metering spends after the monthly plan allowance, the two MCP tools `buy_credits` and `confirm_credit_purchase` so an agent can buy in chat, the REST twins (`POST /v1/billing/paypal/orders` and `…/capture`), the credit-pack buttons and PayPal return handling on the account page, the `X-Credits-Source` header that says which balance paid, ten integration tests that stub PayPal's sandbox, the agent walkthrough script and the demo video pipeline. The commit history in the public repo shows the dates.
+
+**Explain how your project meets the main technology requirement.**
+PayPal is the whole new capability, not an add-on. Credit packs are sold only through PayPal: an order is created with the Orders API v2 (client-credentials auth, `payment_source.paypal.experience_context`), the buyer approves on PayPal's own page, and the order is captured server-side; credits are granted only on a successful capture, recorded in D1 with a conditional `created → completed` update that makes capture idempotent across the three paths (agent, REST, browser return). The AI part is the buyer: an MCP client such as Claude starts the PayPal checkout itself when it runs out of credits, hands the human the approval link, confirms the order and continues its task. Sandbox credentials throughout the hackathon; no live money moves.
+
+**Which additional sponsor tool(s) did you use for this project?**
+None. The project uses PayPal's Orders API with Cloudflare Workers, Hono, D1, Workers KV and the Model Context Protocol.
+
+**Provide a URL to your public code repository.**
+https://github.com/giovf/rorororo (the service is `ventures/gankdat/`; PayPal code in `ventures/gankdat/src/billing/paypal.ts`, metering in `src/metering/budget.ts`, MCP tools in `src/mcp/server.ts`, tests in `test/paypal.spec.ts`).
+
+**Provide a URL to a working demo, hosted application or test build.**
+https://gankdat.com/account (credit packs; sign in with any email, free plan) and the MCP server at https://gankdat.com/mcp (tools `buy_credits`, `confirm_credit_purchase`). The demo video shows the full sandbox purchase end to end.
+
+**How would you rate your overall experience integrating PayPal?** *(your call — suggested: 4 of 5)*
+
+**Overall experience rating: please share why or provide additional feedback.** *(suggested, in your words)*
+The Orders API v2 maps cleanly onto an agent flow because approval and capture are separate HTTP steps: the agent owns the two API calls and the human owns the click between them, so the agent never holds a payment credential. The sandbox was good for an automated test suite. Friction we hit: the developer account asked for tax information days after sign-up and briefly restricted the sandbox account until it was supplied, which is surprising for sandbox-only use; and the hosted checkout's login renders inside an iframe in some layouts, which took a retry to automate for our demo recording. Clear, stable docs on the `experience_context` options and on which checkout layout a given account sees would have saved the most time.
+
+**Are you open to us contacting you for additional feedback?** *(your call — suggested: yes)*
+
+**Attestations (age of majority, eligible jurisdiction, not an employee or agent of the promotion entities).** You tick these yourself: you are an adult UK resident entering as an individual and have no connection to PayPal or Devpost.
+
+**Which AI tools have you leveraged while working on this project?**
+Claude Code (Anthropic's Claude model, Fable 5.1) wrote the code, the tests, the demo video pipeline and the first draft of this submission, working as scheduled routines of an autonomous portfolio operation that I direct and own. Playwright recorded the demo. The buyer in the product is itself an AI agent over MCP (Claude, Cursor or ChatGPT).
+
+**Describe the level of learning you/your team derived from the project.**
+High. The main lesson is a design pattern for agentic commerce: keep the agent on the API side of a payment (create and capture) and the human on the approval side, with idempotency enforced by a single conditional database update rather than a lock. We also learned where two balances (plan and top-up) can be spent without touching the hot path, and what it takes to run an end-to-end sandbox purchase unattended in CI.
+
+**Did you gain AI value that you can use in your career?**
+Yes. The project is a working example of an AI agent completing a purchase safely on a live product, and of running an AI-built engineering operation (routines, tests, CI-recorded demos) end to end. Both are directly reusable.
