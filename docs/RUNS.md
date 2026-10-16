@@ -1137,3 +1137,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 01:25 | burn-down | parseHosts/hostAllowed in fetch-relay-lines.ts: a malformed line fails the relay loud; 3 tests, one on the file
 - 2026-10-16 01:25 | burn-down | README, SCHEDULERS and the build, burn-down and retro prompts name hosts.txt instead of the script
 - 2026-10-16 01:25 | burn-down | Queue: foundry relay-allowlist-as-data done; proof is the next five new-host relay commits starting no check run
+- 2026-10-16 01:30 | burn-down | Stopping: foundry research + 2 items built (metrics slot trace, relay hosts file); starved-and-cooled, pass spent 17:18
