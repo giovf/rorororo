@@ -2,7 +2,7 @@
   "venture": "oss-bounties",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "researched": "2026-10-15",
   "weight": 2,
   "items": [
@@ -159,6 +159,16 @@
       "status": "dropped",
       "added": "2026-10-15",
       "dropped_at": "2026-10-15"
+    },
+    {
+      "id": "bounty-verdikta-verdikta-applications-76",
+      "title": "Bounty $30 on verdikta/verdikta-applications#76: [BOUNTY ~$30 x4] Post and fund a real task on Verdikta, publish a write-up (paid on Poidh, Base) — fork, fix with tests in the project's conventions, open the PR with `/claim #76` and a plain note on how it was built",
+      "why": "Filed by the bounty scanner (2026-10-16, docs/bounties/BOARD.md): $30 posted on https://github.com/verdikta/verdikta-applications/issues/76 by a maintainer, the bounty bot or a label; free when filed (no assignee, no open PR); verdikta/verdikta-applications has 32 stars, JavaScript, MIT, 0 attempt comment(s). Read CONTRIBUTING first; a project that forbids AI-assisted work is skipped and the item dropped.",
+      "effort_days": 1,
+      "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-16"
     }
   ],
   "research_after": "2026-10-18"
