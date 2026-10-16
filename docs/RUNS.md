@@ -1148,3 +1148,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 17:25 | burn-down | gankdat metrics job reads Search Console after its own Daily numbers row (via docs/ci, installer moves it)
 - 2026-10-16 17:25 | burn-down | search-console.ts takes STORE_METRICS_VENTURES (unknown slug fails loud); 3 tests; store job keeps the 3 landings
 - 2026-10-16 17:25 | burn-down | Queue: foundry search-console-gankdat-row-race done; proof is a `search:` clause on the 10-17 gankdat row
+- 2026-10-16 12:00 | interactive | Public mirror github.com/giovf/gankdat created and synced by CI; hackathon links point there; repo flip waits on minutes
+- 2026-10-16 17:20 | build | Bounty verdikta#76 dropped: claimant funds an on-chain task from a wallet, paid on Poidh, "nothing paid for PRs"
+- 2026-10-16 17:20 | build | Scanner: fifth shape rule drops tasks the claimant must fund or that pay to a wallet off GitHub; 6 assertions
+- 2026-10-16 17:20 | build | Claims table: verdikta#76 row dropped (8th scanner-filed drop in a row); queue item bounty-scanner-off-platform-pay done
+- 2026-10-16 17:20 | build | Claim lost: foundry search-console-gankdat-row-race taken by the 17:00 burn-down seconds earlier; next null, empty []
+- 2026-10-16 17:27 | build | Exchange pre-research: SRA law-firm register parked (free commercial reuse, key via portal; Apify rival $1.60/1k)

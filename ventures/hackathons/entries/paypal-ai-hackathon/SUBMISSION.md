@@ -79,7 +79,7 @@ zod, vitest, claude-code
 ## Links
 
 - Try it: https://gankdat.com/account (credit packs) · MCP: https://gankdat.com/mcp (tools `buy_credits`, `confirm_credit_purchase`)
-- Code: https://github.com/giovf/rorororo — `ventures/gankdat/src/billing/paypal.ts`, `src/metering/budget.ts`, `src/mcp/server.ts`, `test/paypal.spec.ts`
+- Code: https://github.com/giovf/gankdat (public mirror of the service) — `src/billing/paypal.ts`, `src/metering/budget.ts`, `src/mcp/server.ts`, `test/paypal.spec.ts`
 - Walkthrough: `ventures/gankdat/scripts/paypal-walkthrough.mjs`
 - Demo video: (attach the mp4 produced by the demo-video pipeline)
 
@@ -98,13 +98,13 @@ for agents (MCP server, keyless preview, agent-side sign-up, x402).
 
 ## Disclosure
 
-This project was built with Claude Code, directed and owned by the entrant (a UK sole trader). All
-code is in the public repository above.
+This project was built with Claude Code, directed and owned by the entrant (a UK sole trader). The
+service's code is in the public mirror above.
 
 ## Required form fields (added 2026-10-16 — the Devpost form asks these separately)
 
 **If it existed before, explain what already existed and what you built or changed during the submission period.**
-gankdat existed before the hackathon: a Cloudflare Worker serving 16 official UK and EU registers as a JSON API and an MCP server, with Stripe subscriptions for humans and x402 USDC micropayments for agents, live since July 2026. Everything PayPal-related was built during the submission period (release 0.24.0, 11 October 2026): the PayPal Orders API v2 integration (`src/billing/paypal.ts`), one-off credit packs on a new top-up balance that the metering spends after the monthly plan allowance, the two MCP tools `buy_credits` and `confirm_credit_purchase` so an agent can buy in chat, the REST twins (`POST /v1/billing/paypal/orders` and `…/capture`), the credit-pack buttons and PayPal return handling on the account page, the `X-Credits-Source` header that says which balance paid, ten integration tests that stub PayPal's sandbox, the agent walkthrough script and the demo video pipeline. The commit history in the public repo shows the dates.
+gankdat existed before the hackathon: a Cloudflare Worker serving 16 official UK and EU registers as a JSON API and an MCP server, with Stripe subscriptions for humans and x402 USDC micropayments for agents, live since July 2026. Everything PayPal-related was built during the submission period (release 0.24.0, 11 October 2026): the PayPal Orders API v2 integration (`src/billing/paypal.ts`), one-off credit packs on a new top-up balance that the metering spends after the monthly plan allowance, the two MCP tools `buy_credits` and `confirm_credit_purchase` so an agent can buy in chat, the REST twins (`POST /v1/billing/paypal/orders` and `…/capture`), the credit-pack buttons and PayPal return handling on the account page, the `X-Credits-Source` header that says which balance paid, ten integration tests that stub PayPal's sandbox, the agent walkthrough script and the demo video pipeline (release 0.24.0 of the service, 11 October 2026; the public mirror is synced from the private monorepo, and its README names the upstream commit).
 
 **Explain how your project meets the main technology requirement.**
 PayPal is the whole new capability, not an add-on. Credit packs are sold only through PayPal: an order is created with the Orders API v2 (client-credentials auth, `payment_source.paypal.experience_context`), the buyer approves on PayPal's own page, and the order is captured server-side; credits are granted only on a successful capture, recorded in D1 with a conditional `created → completed` update that makes capture idempotent across the three paths (agent, REST, browser return). The AI part is the buyer: an MCP client such as Claude starts the PayPal checkout itself when it runs out of credits, hands the human the approval link, confirms the order and continues its task. Sandbox credentials throughout the hackathon; no live money moves.
@@ -113,7 +113,7 @@ PayPal is the whole new capability, not an add-on. Credit packs are sold only th
 None. The project uses PayPal's Orders API with Cloudflare Workers, Hono, D1, Workers KV and the Model Context Protocol.
 
 **Provide a URL to your public code repository.**
-https://github.com/giovf/rorororo (the service is `ventures/gankdat/`; PayPal code in `ventures/gankdat/src/billing/paypal.ts`, metering in `src/metering/budget.ts`, MCP tools in `src/mcp/server.ts`, tests in `test/paypal.spec.ts`).
+https://github.com/giovf/gankdat — the public mirror of the gankdat service (PayPal code in `src/billing/paypal.ts`, metering in `src/metering/budget.ts`, MCP tools in `src/mcp/server.ts`, tests in `test/paypal.spec.ts`). The service is developed in a private monorepo; the mirror's README names the upstream commit it was synced from.
 
 **Provide a URL to a working demo, hosted application or test build.**
 https://gankdat.com/account (credit packs; sign in with any email, free plan) and the MCP server at https://gankdat.com/mcp (tools `buy_credits`, `confirm_credit_purchase`). The demo video shows the full sandbox purchase end to end.
@@ -135,3 +135,12 @@ High. The main lesson is a design pattern for agentic commerce: keep the agent o
 
 **Did you gain AI value that you can use in your career?**
 Yes. The project is a working example of an AI agent completing a purchase safely on a live product, and of running an AI-built engineering operation (routines, tests, CI-recorded demos) end to end. Both are directly reusable.
+
+**Testing instructions or credentials the judges need (optional field).**
+Everything runs on the live service with PayPal's sandbox; no real money can move.
+
+1. *Human path (2 minutes).* Go to https://gankdat.com/account, enter any email address and click the sign-in link you receive (free plan, 250 credits). Under "Credit packs" choose a pack: you land on PayPal's **sandbox** checkout. Approve it with a PayPal sandbox personal account (free: developer.paypal.com → Testing Tools → Sandbox Accounts → Create account → Personal) and PayPal returns you to the account page with the credits added and `topup` shown in the usage line.
+2. *Agent path over MCP (5 minutes).* In Claude, Cursor or ChatGPT add the MCP server `https://gankdat.com/mcp` (no key needed to list tools and preview data). Ask the agent to buy 1,000 credits: it calls `buy_credits`, which starts a sign-in (the same email link), creates the sandbox order and returns PayPal's approval link; approve it as in step 1, then tell the agent to continue: it calls `confirm_credit_purchase` and the next data tool call shows the credits coming from the top-up balance.
+3. *REST path (curl).* With the API key from the account page: `POST https://gankdat.com/v1/billing/paypal/orders` with body `{"pack":"pack_1k"}` returns `approve_url`; after approval, `POST https://gankdat.com/v1/billing/paypal/orders/<id>/capture` adds the credits; any `GET /v1/data/<dataset>` then carries `X-Credits-Source`.
+
+The demo video shows the full loop. Code: https://github.com/giovf/gankdat (`src/billing/paypal.ts`, `src/mcp/server.ts`, `test/paypal.spec.ts`). *(Optional: if you create a second sandbox personal account for the judges, paste its email and password here — test money only, never a real PayPal login.)*

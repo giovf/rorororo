@@ -102,6 +102,7 @@ count and the `week:` line the weekly report copies.
 | [useagenthq/useagent#113](https://github.com/useagenthq/useagent/issues/113) | $5 | dropped | — | — | — | — | 2026-10-12: a usage task, not a fix — record yourself using their product and email a report from a sign-up address; AI-driven runs banned; all 3 tasks claimed 10-11 |
 | [SalamLang/Salam#1713](https://github.com/SalamLang/Salam/issues/1713) | $5 | dropped | — | — | — | — | 2026-10-12: a community reward for publishing a new app in Salam, not a fix; only the first two accepted projects are paid and nine complete submissions were ahead |
 | [trovu/trovu#329](https://github.com/trovu/trovu/issues/329) | $30 | dropped | — | — | — | — | 2026-10-15: not escrowed (Opire); the maintainer's 05-23 edit takes PRs only with a video recorded on an Android phone and the line "I am a human who is writing this comment, not an AI", the 06-17 edit says it may be technically impossible; PR #718 open, 60+ claimants since 2024, nothing merged |
+| [verdikta/verdikta-applications#76](https://github.com/verdikta/verdikta-applications/issues/76) | $30 | dropped | — | — | — | — | 2026-10-16: not a change to the repository — the claimant posts and funds an on-chain task from their own wallet (≥ 0.0041 ETH on Base) and claims on Poidh; "Nothing is paid for comments or pull requests on this issue"; a £0 line spends nothing and crypto is out of scope; scanner now drops the shape |
 
 ## Research 2026-10-13 (pipeline starved — burn-down)
 
