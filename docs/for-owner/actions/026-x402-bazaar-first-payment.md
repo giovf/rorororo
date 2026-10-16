@@ -1,7 +1,7 @@
 # Owner action request #026 — one x402 payment to list gankdat in Coinbase's x402 Bazaar
 
 - **Date:** 2026-10-14
-- **Status:** pending
+- **Status:** done 2026-10-16, option B — by Claude: the x402 test wallet from 2026-09-19 already held US$1.11 USDC on Base, so its key became the `X402_PROBE_KEY` secret and the first paid call (US$0.005, HTTP 200, settled) was made against v0.25.1. Nothing needed from the owner.
 - **Your time:** ~5 minutes (option A) or ~10 minutes (option B)
 - **Cost:** half a cent of USDC (option A) or US$1 of USDC in a probe wallet (option B); `planned` £0.80 in `docs/LEDGER.md`
 - **Deadline:** none hard — the sooner the call is made, the sooner the 30-day reading (2026-11-14) means something
