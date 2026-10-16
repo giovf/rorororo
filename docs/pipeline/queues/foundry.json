@@ -810,6 +810,16 @@
       "status": "todo",
       "added": "2026-10-16",
       "not_before": "2026-10-19"
+    },
+    {
+      "id": "search-console-gankdat-row-race",
+      "title": "Give gankdat its Search Console clause: run scripts/search-console.ts after the gankdat metrics job writes its Daily numbers row, not two minutes before",
+      "why": "Build 2026-10-16 09:10 (googlebot-401-noindex needed the URL list the clause carries): the Search Console step lives in store-metrics.yml, dispatched by the 07:00 metrics routine at 07:17, while gankdat-metrics.yml appends the Daily numbers row at 07:19 (run 38866236856 log: `gankdat: no Daily numbers row for 2026-10-16, nothing to write on`); search-console.ts never writes a row of its own, so gankdat has had no `search:` clause on any row since the key landed 10-11 (10-07..10-10 read `n/a (no SEARCH_CONSOLE_KEY)`; 10-11..10-16 nothing) — the one property the owner's action 020 was for is the one never read, and the indexing proof of googlebot-401-noindex cannot be read. Do: add a `Search Console reading on today's Daily numbers row` step to gankdat-metrics.yml after `Append today's numbers to RESEARCH.md` (same `node scripts/search-console.ts` with SEARCH_CONSOLE_KEY, `continue-on-error: true`, before Commit) and make the script take a `STORE_METRICS_VENTURES=gankdat` filter so the store job stops trying gankdat (or leave it: it no-ops when the row is missing and `STORE_METRICS_IF_MISSING=1` keeps a clause already written); a script test for the filter. Score 6: evidence 3 (six daily rows lost, one log line naming the cause, two proofs waiting on it) × reach 2 (every gankdat /stats page's indexing verdict) ÷ 0.1 day, applied down to 6.",
+      "effort_days": 0.1,
+      "proof": "the 2026-10-17 Daily numbers row carries `search: … indexed I/N …` and the googlebot-401-noindex proof can be read from it",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-16"
     }
   ]
 }

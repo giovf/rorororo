@@ -1300,3 +1300,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-16 burn-down: `relay-allowlist-as-data` built — the relay's allowed hosts are a data file (`docs/relay/hosts.txt`) the
   script parses at start, so a research or pre-research pass that needs one more host pushes docs, not code: no `check` run, no
   pre-push lint on the way to a relay read (13 script commits since 10-08, almost all one host each).
+- 2026-10-16 build: `googlebot-401-noindex` built — every 401 and 402 the gankdat Worker sends carries `X-Robots-Tag: noindex`
+  (`src/middleware/robots.ts`, after the assets fetcher, covering the keyless REST and MCP 401s, the preview / quota / x402
+  402s and the HTTPException path); robots.txt keeps /v1/data and /mcp crawlable so agents still read the wall bodies for the
+  sign-up and payment hints. Why: Search Console 2026-10-15 reported "Blocked due to unauthorised request (401)" after Googlebot
+  followed the docs' links into the walls. The URL list the item wanted could not be read: the Search Console step runs in
+  store-metrics at 07:17, two minutes before gankdat-metrics writes the Daily numbers row, so gankdat has had no `search:` clause
+  since the key landed 10-11 — queued as foundry `search-console-gankdat-row-race` (score 6).

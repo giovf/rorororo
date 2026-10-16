@@ -8,6 +8,7 @@ import { INDEXNOW_KEY_SHAPE } from './lib/indexnow';
 import { meterCredits } from './metering/middleware';
 import { rateLimit } from './metering/ratelimit';
 import { canonicalHost, staticAssets } from './middleware/canonical';
+import { noindexWalls } from './middleware/robots';
 import { structuredLogger } from './middleware/logging';
 import { restTraffic } from './middleware/traffic';
 import { refreshAllSources } from './sources/store';
@@ -38,6 +39,8 @@ const app = new Hono<AppEnv>();
 // must not pass through secureHeaders below), then the dynamic middleware.
 app.use('*', canonicalHost());
 app.use('*', staticAssets());
+// Every 401/402 wall answers `X-Robots-Tag: noindex` (Search Console 2026-10-15; middleware/robots.ts).
+app.use('*', noindexWalls());
 app.use('*', requestId());
 app.use('*', structuredLogger());
 // OAuth browser pages (/authorize, /authorize/login, /authorize/decision) run inside the popup

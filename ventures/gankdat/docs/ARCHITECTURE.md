@@ -134,6 +134,11 @@ names — never rename those; see memory/git history for why).
   their bytes), and the static files are served through `env.ASSETS` with
   `run_worker_first` so the redirect covers them too (Search Console duplicate
   fix, 2026-09-27)
+- `src/middleware/robots.ts` — every 401/402 the Worker sends carries `X-Robots-Tag:
+  noindex` (Search Console 2026-10-15 "Blocked due to unauthorised request (401)":
+  Googlebot followed the docs' /v1/data and /mcp links into the keyless walls). The
+  paths stay crawlable in robots.txt because agents read the wall bodies for the
+  sign-up and payment hints; only indexing is declined (2026-10-16)
 - `docs/` — architecture, runbook, setup docs; `.taskmaster/` — PRD + backlog
 
 ## Stack

@@ -1138,3 +1138,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 01:25 | burn-down | README, SCHEDULERS and the build, burn-down and retro prompts name hosts.txt instead of the script
 - 2026-10-16 01:25 | burn-down | Queue: foundry relay-allowlist-as-data done; proof is the next five new-host relay commits starting no check run
 - 2026-10-16 01:30 | burn-down | Stopping: foundry research + 2 items built (metrics slot trace, relay hosts file); starved-and-cooled, pass spent 17:18
+- 2026-10-16 09:15 | build | gankdat: every 401/402 wall now answers X-Robots-Tag: noindex (middleware/robots.ts); robots.txt unchanged
+- 2026-10-16 09:15 | build | 4 tests: keyless REST and MCP 401s, a 402, a thrown 401, a route's own tag kept; 200 and 404 pages untouched
+- 2026-10-16 09:15 | build | Search Console URL list unread: store-metrics reads gankdat 2 min before its Daily numbers row exists (since 10-11)
+- 2026-10-16 09:15 | build | Queue: foundry search-console-gankdat-row-race added (6); gankdat googlebot-401-noindex done, proof waits on it
