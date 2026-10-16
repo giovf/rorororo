@@ -10,8 +10,10 @@ name: store metrics
 # billed each, and five of their `daily check` fill commits on 10-11 started `owner notes` again.
 # The cron below and the 07:00 metrics routine's workflow_dispatch (foundry cron-drift-dispatch-row,
 # 2026-10-10) write the row; a push never does. Since 2026-10-07 a second step adds the Search
-# Console reading (`search: …`) to the same rows and to gankdat's Daily numbers row; since 2026-10-11 a
-# third fills the extensions' Sales column from the licence Worker's KV records (`sales: …`).
+# Console reading (`search: …`) to the same rows (until 2026-10-16 also to gankdat's Daily numbers
+# row, which did not exist yet when this job ran — gankdat metrics reads its own since then, foundry
+# search-console-gankdat-row-race); since 2026-10-11 a third fills the extensions' Sales column from
+# the licence Worker's KV records (`sales: …`).
 # Odd minute (foundry metrics-crons-off-the-half-hour, 2026-10-09): on `45 6` the scheduled run
 # started 12:52–15:17 UTC every day 10-04..10-08; GitHub delays crons on busy minutes most.
 on:
@@ -69,13 +71,17 @@ jobs:
         # service account (scope webmasters.readonly; owner action 020 adds it as a Restricted user on
         # the gankdat.com and apps.gankdat.com properties and pastes its JSON key as the secret) reads
         # 7-day impressions/clicks per page and URL-inspects the /stats and comparison pages, then adds
-        # `search: …` to each venture's Daily check row written above and to gankdat's Daily numbers
-        # row (06:30 job). Without the secret the rows read `search: n/a (<reason>)` — never a gap.
+        # `search: …` to each venture's Daily check row written above. gankdat's Daily numbers row is
+        # read by the gankdat metrics job since 2026-10-16 (foundry search-console-gankdat-row-race:
+        # this job ran two minutes before that row existed, so the clause never landed), hence the
+        # venture list below — a new landing venture is added here and in the script's VENTURES.
+        # Without the secret the rows read `search: n/a (<reason>)` — never a gap.
         # Only node builtins; a failure must not lose the store rows, hence continue-on-error.
         run: node --disable-warning=ExperimentalWarning scripts/search-console.ts
         continue-on-error: true
         env:
           SEARCH_CONSOLE_KEY: ${{ secrets.SEARCH_CONSOLE_KEY }}
+          STORE_METRICS_VENTURES: highlight-keep,read-focus,variables-toolkit
       - name: Licence sales on today's rows (keys issued and activations per extension)
         if: steps.row.outputs.skip != 'true'
         # scripts/license-sales.ts (foundry metrics-extension-sales, 2026-10-11): lists the licence
