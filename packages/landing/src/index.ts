@@ -101,7 +101,8 @@ app.use('/ops', async (c, next) => {
 app.get('/ops', async (c) => {
   const email = await session(c);
   if (!email) return c.html(page('Sign in', loginForm()));
-  return c.html(page('Foundry Ops', dashboard(c.req.query('view') ?? 'overview', await ideas(c.env))));
+  const view = c.req.query('view') ?? 'overview';
+  return c.html(page(view.charAt(0).toUpperCase() + view.slice(1), dashboard(view, await ideas(c.env))));
 });
 
 app.post('/ops/login', async (c) => {
@@ -438,5 +439,5 @@ function ownerView(kvIdeas: Idea[]): string {
 <div class="card"><p class="small mute" style="margin:0 0 8px">Write it as you would say it. The hourly collector adds it to the owner notes; the next exchange or build run assesses it from primary sources, answers here, and queues work if it earns its place.</p>
 <form method="post" action="/ops/ideas"><textarea name="text" maxlength="2000" required placeholder="e.g. Could the sanctions feed be sold to payment companies as a daily email?"></textarea><div class="row" style="margin-top:8px"><button type="submit">Send to Claude</button></div></form></div>
 <div class="card" style="margin-top:12px">${ideaList}</div>
-${o.closed_recent.length ? `<h2>Closed in the last 7 days</h2><div class="card"><ul class="clean small">${o.closed_recent.map((e) => `<li>${esc(e.text.slice(0, 200))}${e.text.length > 200 ? '…' : ''}<div class="mute num">closed ${esc(e.closed_on ?? '')}</div></li>`).join('')}</ul></div>` : ''}`;
+${o.closed_recent.length ? `<div class="card" style="margin-top:12px"><details><summary>Closed recently (${o.closed_recent.length}, newest first)</summary><ul class="clean small">${o.closed_recent.map((e) => `<li>${esc(e.text.slice(0, 160))}${e.text.length > 160 ? '…' : ''}<div class="mute num">closed ${esc(e.closed_on ?? '')}</div></li>`).join('')}</ul></details></div>` : ''}`;
 }
