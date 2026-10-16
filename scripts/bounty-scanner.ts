@@ -108,6 +108,12 @@ export const SHAPE_RULES: readonly { re: RegExp; why: string }[] = [
     re: /requires? (access to )?(real |physical )?hardware|on (real |physical )hardware|hardware (access|required|needed)/i,
     why: 'needs hardware the sandbox lacks',
   },
+  {
+    // verdikta#76 (2026-10-16): the claimant posts and funds an on-chain task from their own wallet and
+    // the slot pays on Poidh, "not here"; the issue says nothing is paid for pull requests.
+    re: /\b(post|create|publish|open) and fund\b|fund(ed)? (it |one |a task )?with at least|funding (transaction|tx) hash|claim (it )?on \w+,? not here|nothing is paid for (comments (or|and) )?pull requests|paid (out )?(on|via|in) (poidh|base|ethereum|solana|polygon|arbitrum|optimism|crypto|a wallet)/i,
+    why: 'the claimant must fund it or it pays to a wallet off GitHub',
+  },
 ];
 
 /** The SHAPE_RULES reason for an issue's title and body, or undefined when it reads as code work. */
@@ -464,7 +470,8 @@ open issues that received a \`/bounty $N\` command in the last ${LOOKBACK_DAYS} 
 of repositories where OpireBot is installed (its footer on every issue) whose code owner posted a \`/reward N\`. Feature and
 bug-fix work only: sandbox and security repositories and issues that read as security findings are dropped by
 rule, and so are contests, showcases and usage tasks that pay for something other than a change to the repository,
-results the claimant must record on a real device, claims the maintainer hands out first, and fixes that need hardware.
+results the claimant must record on a real device, claims the maintainer hands out first, fixes that need hardware, and
+tasks the claimant must fund or that pay to a wallet off GitHub.
 Only money a maintainer, the bounty bot or a label posted counts; a contributor's "bounty proposal" is dropped, and so
 is a \`/reward\` from anyone but a code owner (Opire ignores it). Algora holds the money it lists; Opire does not — the
 creator arranges payment after the merge, if the PR meets the issue — so an Opire row reads \`not escrowed\` under Taken.
