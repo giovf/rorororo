@@ -1317,3 +1317,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   only the three landing ventures. Why: the store job dispatched at 07:17 and gankdat's row landed at 07:19, so the one
   property owner action 020 was for never got a `search:` clause (10-11..10-16) and the googlebot-401-noindex proof could not
   be read. Proof: the 2026-10-17 Daily numbers row carries `search: … indexed I/N …`.
+- 2026-10-16 interactive (owner): the dashboard at apps.gankdat.com/ops (email code sign-in; ventures, pipeline, owner
+  page, idea box → OWNER-NOTES) and a dependency-currency system: `docs/ops/VERSIONS.md`, a monthly check of routine
+  Claude models and Node against public pages, Dependabot with gated auto-merge. The first check found Opus 5.5 and
+  Sonnet 5.5 already published; after two probe runs the four Sonnet routines and the Opus fallback run on 5.5.

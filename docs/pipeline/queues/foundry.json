@@ -821,6 +821,17 @@
       "status": "done",
       "added": "2026-10-16",
       "done_at": "2026-10-16"
+    },
+    {
+      "id": "node-24-runners",
+      "title": "Move every GitHub workflow's `node-version` (and the devcontainer) from Node 22 to Node 24, the active LTS, in one change with the full gate green",
+      "why": "docs/ops/VERSIONS.md (owner 2026-10-16: nothing the schedulers depend on may age silently): the first versions check found 14 workflows pinned to 22 while the active LTS is 24. Node 22 is still maintained, so this is currency, not a fix; do it when a run has the whole gate's time (`npm run check` plus the gankdat gate), and update the register's Node row.",
+      "effort_days": 0.3,
+      "proof": "versions check reports no Node finding; CI green on Node 24 for a week",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-16",
+      "not_before": "2026-10-20"
     }
   ]
 }

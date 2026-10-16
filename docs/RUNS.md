@@ -1159,3 +1159,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 15:30 | interactive | x402 Bazaar onboarding paid: first settled half-cent call from the existing test wallet; probe key set for CI
 - 2026-10-16 17:00 | interactive | Owner dashboard built at apps.gankdat.com/ops: email code sign-in, ventures, pipeline, owner page, idea box
 - 2026-10-16 17:00 | notify | Your dashboard is live at apps.gankdat.com/ops. Sign in with your email, no password
+- 2026-10-16 18:40 | interactive | Versions check built; Sonnet routines and the Opus fallback moved to 5.5 after probe runs; Node 24 queued

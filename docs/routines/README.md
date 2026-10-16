@@ -27,10 +27,10 @@ A pull refused on a fresh sandbox is usually lag, not divergence (2026-10-10, fo
 | Evening burn (nightly 17:00–02:00 UTC since 2026-10-04) | `burn-down.md` | `trig_011mbqaUzm3qTK2ZdevCuYpH` (17:00–23:00), `trig_013tLPWgysoiHWpciYGgXJQ2` (00:00–02:00) | Fable | bootstrap (swapped 2026-10-01) |
 | venture exchange | `exchange.md` | `trig_01CaSyBqwyKVL6NiPqPzhM8L` | Fable | bootstrap (swapped 2026-10-01) |
 | strategy review | `review.md` | `trig_01Mv7z5Ae9gEGq9zBnrfDH6R` | Fable | bootstrap (swapped 2026-10-01) |
-| daily metrics | `metrics.md` | `trig_01JBrWDAZLeWEAhSBBnA9g8K` | Sonnet | bootstrap (swapped 2026-10-01) |
-| inbox triage | `inbox-triage.md` | `trig_011NfGaSrEEsr5B1xTHEBRAr` | Sonnet, Gmail | bootstrap (swapped 2026-10-01) |
-| weekly report | `weekly-report.md` | `trig_01PjxdBAcvYSAT32fCyzcvQg` | Sonnet | bootstrap (swapped 2026-10-01) |
-| ops retro | `ops-retro.md` | `trig_015Uvn63XZUVqx1TAiWZrZL6` | Sonnet | bootstrap (swapped 2026-10-01) |
+| daily metrics | `metrics.md` | `trig_01JBrWDAZLeWEAhSBBnA9g8K` | Sonnet 5.5 (was Sonnet 5 until 2026-10-16) | bootstrap (swapped 2026-10-01) |
+| inbox triage | `inbox-triage.md` | `trig_011NfGaSrEEsr5B1xTHEBRAr` | Sonnet 5.5 (was Sonnet 5 until 2026-10-16), Gmail | bootstrap (swapped 2026-10-01) |
+| weekly report | `weekly-report.md` | `trig_01PjxdBAcvYSAT32fCyzcvQg` | Sonnet 5.5 (was Sonnet 5 until 2026-10-16) | bootstrap (swapped 2026-10-01) |
+| ops retro | `ops-retro.md` | `trig_015Uvn63XZUVqx1TAiWZrZL6` | Sonnet 5.5 (was Sonnet 5 until 2026-10-16) | bootstrap (swapped 2026-10-01) |
 
 Provenance: `burn-down.md`, `inbox-triage.md`, `weekly-report.md` and `ops-retro.md` are verbatim
 copies of their stored prompts (plus the sentences queued for them since). `build.md`, `fallback.md`,
