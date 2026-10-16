@@ -41,7 +41,7 @@ jobs:
         with:
           ref: main # the tip, not github.sha: everything since the cursor goes out in one run
           fetch-depth: 0 # the cursor may be many commits back
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
       - name: Run watchdog and CI-minutes guard (pushed first, sent by the next step)
