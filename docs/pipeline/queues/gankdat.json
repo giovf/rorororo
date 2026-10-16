@@ -627,9 +627,10 @@
       "effort_days": 0.1,
       "proof": "Search Console no longer lists the 401 reason; the Daily numbers row indexing clause shows no 401 URLs",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-15",
-      "not_before": "2026-10-16"
+      "not_before": "2026-10-16",
+      "doing_since": "2026-10-16"
     }
   ],
   "research_after": "2026-10-16"
