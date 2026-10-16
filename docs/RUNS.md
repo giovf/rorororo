@@ -1128,3 +1128,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 00:40 | burn-down | Owner notes cron delivered 6/24 and 5/24 fires; longest Telegram-to-repo gap 4 h 56 min on 10-15 afternoon
 - 2026-10-16 00:40 | burn-down | Queue: foundry +3 (metrics slot trace 4, relay allowlist as data 2, owner notes poll gap 2 dated 10-19)
 - 2026-10-16 00:40 | burn-down | Queue: actions-minutes and metrics-crons-day-7-read gain the 10-13..15 readings
+- 2026-10-16 00:20 | watchdog | ci-minutes: 677 billed min/7d (~2901/month, wall 319; private cap 2,000, warn 1700); top: owner notes 151, notify owner 
