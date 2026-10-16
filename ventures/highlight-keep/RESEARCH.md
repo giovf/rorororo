@@ -49,6 +49,8 @@ larger, clearly frustrated audience and three stores (Chrome, Firefox, Edge) fro
 
 ## Metrics
 
+_Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10-01..10-14 and stopped on 2026-10-16 (foundry `metrics-slot-trace`): a quiet check now writes nothing; a new review or comment goes to `docs/ALERTS.md`._
+
 | Date | Event | Users | Rating | Sales | Notes |
 |---|---|---|---|---|---|
 | 2026-09-19 | Built + e2e-tested; Stripe link live; awaiting owner's store upload | — | — | 0 | zero owner testing |

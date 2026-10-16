@@ -1292,3 +1292,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   green, 728 billed min/7d, the floor now the run count itself; `relay-allowlist-as-data` (2) removes the check run each new relay
   host triggers; `owner-notes-poll-gap` (2, dated 10-19) puts the five-hour daytime Telegram gap to the Actions reading rather than
   spending minutes on it now. The two dated readings carry the day-5/6 cron starts (12:01–12:26, exiting in 8–14 s) and the run mix.
+- 2026-10-16 burn-down: `metrics-slot-trace` built — the watchdog and the Monday slot table take the 07:00 routine's SLOTS.md start
+  marker together with the two commits its dispatch produces as the slot's trace (marker alone is still `stalled:`, the commits
+  alone are a late cron's), the routine stamps that marker first, and its quiet-day `Reviews checked` row — the only reason it ever
+  committed — is gone. Why: a correct quiet morning was indistinguishable from a dead one, and the Monday table would have counted
+  it missed.

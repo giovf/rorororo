@@ -156,6 +156,28 @@ describe('classifySlots', () => {
     expect(byKey.get('burn-down@18')).toBe('silent');
   });
 
+  it('counts the metrics routine as ran when its start marker and both dispatched commits exist', () => {
+    const now = at('2026-10-15T12:00:00Z');
+    const metrics = ROUTINES.filter((d) => d.routine === 'metrics');
+    const slots = slotsIn(metrics, day('2026-10-15').from, day('2026-10-15').to, now);
+    const commitsText = [
+      '2026-10-15T07:02:10+00:00\tmetrics: slot 2026-10-15 07:02 UTC started (metrics)',
+      '2026-10-15T07:15:40+00:00\tstore-metrics: 2026-10-15 daily check',
+      '2026-10-15T07:17:05+00:00\tmetrics(gankdat): 2026-10-15 daily numbers',
+      '',
+    ].join('\n');
+    const slotsText = '# Slot starts\n\n- 2026-10-15 07:02 | metrics | started\n';
+    const ran = classifySlots({ runsText: '# Run log\n', commitsText, slotsText, slots });
+    expect(ran.map((s) => s.class)).toEqual(['ran']);
+    expect(ran[0]?.traces.map((t) => t.text)).toEqual([
+      'store-metrics: 2026-10-15 daily check',
+      'metrics(gankdat): 2026-10-15 daily numbers',
+    ]);
+    // Without the marker the same commits are the late cron's: the slot stays missed.
+    const missed = classifySlots({ runsText: '# Run log\n', commitsText, slots });
+    expect(missed.map((s) => s.class)).toEqual(['missed']);
+  });
+
   it('never counts a start or claim marker commit as the trace', () => {
     const commits = [
       '2026-10-12T17:01:00+00:00\tpipeline: claim foundry/x (burn-down)',

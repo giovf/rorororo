@@ -1128,3 +1128,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 00:40 | burn-down | Owner notes cron delivered 6/24 and 5/24 fires; longest Telegram-to-repo gap 4 h 56 min on 10-15 afternoon
 - 2026-10-16 00:40 | burn-down | Queue: foundry +3 (metrics slot trace 4, relay allowlist as data 2, owner notes poll gap 2 dated 10-19)
 - 2026-10-16 00:40 | burn-down | Queue: actions-minutes and metrics-crons-day-7-read gain the 10-13..15 readings
+- 2026-10-16 01:05 | burn-down | Watchdog: metrics slot traced by its SLOTS.md marker plus the two dispatched job commits; marker alone stays stalled
+- 2026-10-16 01:05 | burn-down | Slot table (npm run slots) reads SLOTS.md and counts such a metrics morning as ran; 2 tests across both scripts
+- 2026-10-16 01:05 | burn-down | Metrics routine prompt: `npm run slot -- start metrics` first; a quiet reviews check writes no row (33 rows since 10-04)
+- 2026-10-16 01:05 | burn-down | Queue: foundry metrics-slot-trace done; proof is a week of markers with no `missed: metrics` line

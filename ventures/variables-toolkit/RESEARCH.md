@@ -185,6 +185,8 @@ variables; (2) pick a subset of styles to convert; (3) toast with counts after e
 
 ## 6. Metrics
 
+_Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10-01..10-14 and stopped on 2026-10-16 (foundry `metrics-slot-trace`): a quiet check now writes nothing; a new review or comment goes to `docs/ALERTS.md`._
+
 | Date | Event | Users | Likes | Purchases | Notes |
 |---|---|---|---|---|---|
 | 2026-09-18 | Submitted to Figma Community review | — | — | — | release build; $12 one-time |

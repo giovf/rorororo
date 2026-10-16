@@ -46,13 +46,14 @@ import {
   type RoutineSlot,
   SINCE,
   type Trace,
+  dispatchedTraces,
   parseCommits,
   parseRuns,
   reportedSlots,
   slotKey,
   stamp,
 } from './run-watchdog.ts';
-import { startMarkerRoutine } from './slot.ts';
+import { SLOTS_FILE, startMarkerRoutine } from './slot.ts';
 
 /** The burn-down's hourly fires (docs/SCHEDULERS.md: 17:00–23:00 and 00:00–02:00 UTC, nightly). */
 export const BURN_DOWN_HOURS: readonly number[] = [17, 18, 19, 20, 21, 22, 23, 0, 1, 2];
@@ -211,6 +212,8 @@ export interface ClassifiedSlot extends Slot {
 export interface ClassifyInput {
   runsText: string;
   commitsText?: string;
+  /** docs/ops/SLOTS.md — start markers; a routine with `dispatched` jobs is traced by marker + their commits. */
+  slotsText?: string;
   slots: readonly Slot[];
 }
 
@@ -223,6 +226,8 @@ export function classifySlots(input: ClassifyInput): ClassifiedSlot[] {
   return input.slots.map((slot) => {
     const own = bySlot.get(slot) ?? [];
     if (own.length > 0) return { ...slot, class: classOfTraces(own), traces: own };
+    const dispatched = dispatchedTraces(slot, traces, input.slotsText ?? '');
+    if (dispatched.length > 0) return { ...slot, class: 'ran', traces: dispatched };
     if (reported.has(slotKey(slot.routine, slot.at)))
       return { ...slot, class: 'missed', traces: own };
     if (slot.routine === 'burn-down' && slot.at.getUTCHours() !== 17) {
@@ -377,7 +382,9 @@ function main(argv: string[]): void {
     // A clone without history still gets the RUNS.md reading.
   }
   const slots = slotsIn(utilisationRoutines(), from, to, now);
-  const classified = classifySlots({ runsText, commitsText, slots });
+  const slotsPath = path.join(root, SLOTS_FILE);
+  const slotsText = existsSync(slotsPath) ? readFileSync(slotsPath, 'utf8') : '';
+  const classified = classifySlots({ runsText, commitsText, slotsText, slots });
   console.log(table(classified, from, to));
   const idle = idleLines(classified);
   if (idle.length > 0) console.log(['', 'idle slots:', ...idle.map((l) => `- ${l}`)].join('\n'));

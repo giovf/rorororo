@@ -157,6 +157,33 @@ describe('missedSlots', () => {
     );
   });
 
+  it('takes the metrics start marker plus both dispatched job commits as the 07:00 trace', () => {
+    // 2026-10-15 as it happened: the routine dispatched both jobs at 07:14, the rows landed by
+    // 07:17, and its own `metrics:` commit never came (nothing changed). Only that day's slots
+    // are in scope (`since`); the 09:00 build slot is due too at 11:30, give it its line.
+    const later = at('2026-10-15T11:30:00Z');
+    const since = Date.parse('2026-10-15T00:00:00Z');
+    const runsText = '# Run log\n- 2026-10-15 09:17 | build | Pipeline starved and cooled\n';
+    const slotsText = '# Slot starts\n\n- 2026-10-15 07:02 | metrics | started\n';
+    const marker =
+      '2026-10-15T07:02:10+00:00\tmetrics: slot 2026-10-15 07:02 UTC started (metrics)\n';
+    const store = `${marker}2026-10-15T07:15:40+00:00\tstore-metrics: 2026-10-15 daily check\n`;
+    const both = `${store}2026-10-15T07:17:05+00:00\tmetrics(gankdat): 2026-10-15 daily numbers\n`;
+    const keys = (commitsText: string, slots = slotsText): string[] =>
+      missedSlots({ now: later, runsText, commitsText, slotsText: slots, since }).map(
+        (s) => `${slotKey(s.routine, s.at)}${s.startedAt ? ' stalled' : ''}`,
+      );
+    expect(keys(both)).toEqual([]);
+    // One job's commit is not enough: the run stamped its marker and died before the second dispatch.
+    expect(keys(store)).toEqual(['metrics@2026-10-15 07:00 stalled']);
+    // The marker commit alone is a start, not a trace, even though it begins with `metrics: `.
+    expect(keys(marker)).toEqual(['metrics@2026-10-15 07:00 stalled']);
+    // Both commits with no marker are a late cron's work, not the routine's: still missed.
+    expect(keys(both.replace(marker, ''), '')).toEqual(['metrics@2026-10-15 07:00']);
+    // A build slot has no dispatched jobs: a marker plus unrelated commits never traces it.
+    expect(ROUTINES.find((d) => d.routine === 'build')?.dispatched).toBeUndefined();
+  });
+
   it('never reports the same slot twice: the RUNS.md line is the dedupe record', () => {
     const first = missedSlots({ now, runsText: '# Run log\n', commitsText: '' });
     expect(first).toHaveLength(1);

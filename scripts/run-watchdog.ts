@@ -40,6 +40,15 @@ export interface RoutineSlot {
   tags: string[];
   /** Commit subjects on main that count as this routine's trace. */
   commit: RegExp;
+  /**
+   * Commit subjects written by jobs the routine dispatches. When every one of them landed in the
+   * window and docs/ops/SLOTS.md carries the routine's start marker, the slot is traced: the
+   * dispatch was the run's work (foundry `metrics-slot-trace`, 2026-10-16 — the 07:00 metrics
+   * routine dispatched both metrics jobs on 10-15 and was reported missed because its only
+   * commit used to be a daily `Reviews checked` row). The marker alone stays `stalled:`, the
+   * commits alone stay missed (a late cron writes the same subjects).
+   */
+  dispatched?: RegExp[];
 }
 
 /** Slots before this instant are never reported (the watchdog did not exist). */
@@ -60,6 +69,7 @@ export const ROUTINES: RoutineSlot[] = [
     graceMinutes: GRACE_MINUTES,
     tags: [],
     commit: /^metrics: /,
+    dispatched: [/^store-metrics: /, /^metrics\(gankdat\): /],
   },
   {
     routine: 'report',
@@ -253,6 +263,24 @@ export function startedAt(slot: DueSlot, slotsText: string): Date | undefined {
   )?.at;
 }
 
+/** The dispatched jobs' commits inside the slot's window, when the routine also stamped its start marker. */
+export function dispatchedTraces(slot: DueSlot, traces: Trace[], slotsText: string): Trace[] {
+  const patterns = slot.def.dispatched ?? [];
+  if (patterns.length === 0 || startedAt(slot, slotsText) === undefined) return [];
+  const from = slot.at.getTime() - 5 * MINUTE;
+  const to = slot.deadline.getTime();
+  const commits = traces.filter(
+    (t) => t.kind === 'commit' && t.at.getTime() >= from && t.at.getTime() <= to,
+  );
+  const found = patterns.map((re) => commits.find((t) => re.test(t.text)));
+  return found.every((t) => t !== undefined) ? found : [];
+}
+
+/** True when the start marker plus every dispatched job's commit stand in for the routine's own commit. */
+export function hasDispatchedTrace(slot: DueSlot, traces: Trace[], slotsText: string): boolean {
+  return dispatchedTraces(slot, traces, slotsText).length > 0;
+}
+
 export interface WatchInput {
   now: Date;
   runsText: string;
@@ -275,7 +303,12 @@ export function missedSlots(input: WatchInput): MissedSlot[] {
   const reported = reportedSlots(input.runsText);
   const slotsText = input.slotsText ?? '';
   return slotsDue(input.defs ?? ROUTINES, input.now, input.since, input.lookbackHours)
-    .filter((slot) => !reported.has(slotKey(slot.routine, slot.at)) && !hasTrace(slot, traces))
+    .filter(
+      (slot) =>
+        !reported.has(slotKey(slot.routine, slot.at)) &&
+        !hasTrace(slot, traces) &&
+        !hasDispatchedTrace(slot, traces, slotsText),
+    )
     .map((slot) => {
       const started = startedAt(slot, slotsText);
       return started ? { ...slot, startedAt: started } : slot;
