@@ -1121,3 +1121,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-15 17:17 | build | Scanner drops issues wanting a video on a phone or a human-written statement; 1 test, 7 of 7 filed dropped
 - 2026-10-15 17:17 | build | gankdat item filed from Search Console's 401 notice: noindex the keyless 401/402 answers, after the 10-16 row
 - 2026-10-15 17:17 | build | Pipeline then starved and cooled (7 queues within 48 h); the day's exchange pass was spent at 09:17
+- 2026-10-16 00:40 | burn-down | Foundry research: the 10-15 metrics slot was not missed — it dispatched both jobs 07:14, rows landed 07:15–07:17
+- 2026-10-16 00:40 | burn-down | Metrics routine's only trace was a daily `Reviews checked` row (33 since 10-04); a quiet run leaves none
+- 2026-10-16 00:40 | burn-down | Scheduled metrics crons still 5 h late (12:01–12:26) but exit on the existing row in 8–14 s since 10-14
+- 2026-10-16 00:40 | burn-down | Actions 10-13..15: 100 runs in 59 h, all green, 728 billed min/7d; the floor is now the run count (~285/wk)
+- 2026-10-16 00:40 | burn-down | Owner notes cron delivered 6/24 and 5/24 fires; longest Telegram-to-repo gap 4 h 56 min on 10-15 afternoon
+- 2026-10-16 00:40 | burn-down | Queue: foundry +3 (metrics slot trace 4, relay allowlist as data 2, owner notes poll gap 2 dated 10-19)
+- 2026-10-16 00:40 | burn-down | Queue: actions-minutes and metrics-crons-day-7-read gain the 10-13..15 readings

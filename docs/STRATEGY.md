@@ -1285,3 +1285,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   2–4 users each (one free one at 108, the Form D funding-leads one at 50) and our only US register has no paid call, so it
   waits on the first paid sam-exclusions call or a US-finance intent in the x402 Bazaar day-30 read; the Form D funding-leads
   slice goes first when it does. Relay hosts added: sec.gov, sec-api.io, financialmodelingprep.com.
+- 2026-10-16 burn-down: foundry researched (starved queue, 48 h after the last pass). The watchdog's `missed: metrics 10-15 07:00`
+  was a false alarm: the routine dispatched both metrics jobs at 07:14 and the rows landed by 07:17, but its only trace was the
+  `metrics:` commit it made each day 10-04..10-14 by appending a `Reviews checked` row per venture, and a quiet day makes none —
+  `metrics-slot-trace` (4) gives it a SLOTS.md marker and ends the second row. Actions after every trim: 100 runs in 59 h, all
+  green, 728 billed min/7d, the floor now the run count itself; `relay-allowlist-as-data` (2) removes the check run each new relay
+  host triggers; `owner-notes-poll-gap` (2, dated 10-19) puts the five-hour daytime Telegram gap to the Actions reading rather than
+  spending minutes on it now. The two dated readings carry the day-5/6 cron starts (12:01–12:26, exiting in 8–14 s) and the run mix.
