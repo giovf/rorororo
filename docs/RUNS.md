@@ -1154,3 +1154,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 17:20 | build | Claims table: verdikta#76 row dropped (8th scanner-filed drop in a row); queue item bounty-scanner-off-platform-pay done
 - 2026-10-16 17:20 | build | Claim lost: foundry search-console-gankdat-row-race taken by the 17:00 burn-down seconds earlier; next null, empty []
 - 2026-10-16 17:27 | build | Exchange pre-research: SRA law-firm register parked (free commercial reuse, key via portal; Apify rival $1.60/1k)
+- 2026-10-16 17:31 | burn-down | Stopping: 1 item built (gankdat Search Console row race, workflows installed); starved-and-cooled, pass spent 17:27
