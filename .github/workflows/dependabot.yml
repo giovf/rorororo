@@ -1,0 +1,32 @@
+name: dependabot
+
+# Runs the full gate on a Dependabot pull request and merges it when green and it is a
+# minor/patch group (owner 2026-10-16: dependency currency without an attended session per bump).
+# Majors stay open for an attended session. `check.yml` does not run on pull requests, so the
+# gate runs here.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  gate-and-merge:
+    if: github.actor == 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run check
+      - name: Merge minor/patch groups when green
+        if: contains(github.event.pull_request.title, 'minor-and-patch') || contains(github.event.pull_request.title, 'actions group')
+        run: gh pr merge --squash --auto "$PR_URL"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}

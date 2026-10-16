@@ -37,6 +37,7 @@
     "cf-overage": "node --disable-warning=ExperimentalWarning scripts/cf-overage-to-queue.ts",
     "bounties": "node --disable-warning=ExperimentalWarning scripts/bounty-scanner.ts",
     "ops:data": "node --disable-warning=ExperimentalWarning scripts/ops-data.ts",
+    "versions": "node --disable-warning=ExperimentalWarning scripts/versions-check.ts",
     "mcp-probe": "node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts",
     "handoffs": "node --disable-warning=ExperimentalWarning scripts/handoffs.ts",
     "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts",

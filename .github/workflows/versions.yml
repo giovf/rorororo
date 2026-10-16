@@ -1,0 +1,41 @@
+name: versions
+
+# Monthly currency check for what Dependabot cannot see (owner 2026-10-16; docs/ops/VERSIONS.md):
+# the Claude model ids the cloud routines run on against the public models page, and the Node
+# major the workflows pin against the active LTS. A finding is one handoff line in docs/ALERTS.md
+# for the next attended session; the notify job does not forward handoffs. Only node builtins.
+on:
+  schedule:
+    - cron: '41 7 3 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: ${{ github.workflow }}
+  cancel-in-progress: true
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 22
+      - run: node --disable-warning=ExperimentalWarning scripts/versions-check.ts
+      - name: Commit
+        run: |
+          git config user.name "foundry-versions[bot]"
+          git config user.email "info@gankdat.com"
+          git add docs/ALERTS.md
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "versions: $(date -u +%F) check"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep $((i * 5))
+          done
+          exit 1

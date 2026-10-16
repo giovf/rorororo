@@ -10,7 +10,8 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 1. **PayPal hackathon video is ready** — ~10 min, since 2026-10-11; nothing queued waits on it. Steps: [023](actions/023-paypal-hackathon-submission.md).
    PayPal hackathon video is ready (~10 min): download it from the CI run in action 023 and submit the Devpost form
 
-## Waiting on an attended Claude session, not you (2)
+## Waiting on an attended Claude session, not you (3)
 
 - since 2026-10-04 — sign and upload ReadFocus 0.3.0 (ruler colour / height / opacity / lock-in-place controls, plus 0.2.1's Firefox for Android: `gecko_android`, phone-width popup, tap-to-place ruler) once 0.2.0 clears…
 - since 2026-10-05 — sign and upload Highlight Keep 0.4.0 (imports from Weava/Glasp .csv and Hypothesis exports, the "On for every site" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the…
+- since 2026-10-16 — versions check (docs/ops/VERSIONS.md): routine models behind the models page: claude-opus-5 → claude-opus-5-5, claude-sonnet-5 → claude-sonnet-5-5; workflows pin Node 22 while the active LTS is 24 —…
