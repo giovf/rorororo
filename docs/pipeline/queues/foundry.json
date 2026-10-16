@@ -785,8 +785,9 @@
       "effort_days": 0.15,
       "proof": "seven days with a `| metrics | started` line each morning, no `missed: metrics` watchdog line and no new `Reviews checked` rows",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-16"
+      "status": "doing",
+      "added": "2026-10-16",
+      "doing_since": "2026-10-16"
     },
     {
       "id": "relay-allowlist-as-data",
