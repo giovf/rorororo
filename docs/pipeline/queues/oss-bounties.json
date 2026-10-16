@@ -167,8 +167,9 @@
       "effort_days": 1,
       "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-16"
+      "status": "doing",
+      "added": "2026-10-16",
+      "doing_since": "2026-10-16"
     }
   ],
   "research_after": "2026-10-18"
