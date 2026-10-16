@@ -64,13 +64,13 @@
     {
       "id": "paypal-ai-hackathon-submit",
       "title": "Submit the PayPal AI Hackathon entry on Devpost (owner, action 023): paste SUBMISSION.md, attach the demo video, repo and try-it links; record the submission URL in RESEARCH.md",
-      "why": "The entry is built (paypal-ai-hackathon-entry, 2026-10-11) and submissions close 2026-11-12; Devpost's Terms forbid automated access, so the owner submits by hand from docs/for-owner/actions/023-paypal-hackathon-submission.md. Waits on the demo video (every Devpost portal asks for one).",
+      "why": "The entry is built (paypal-ai-hackathon-entry, 2026-10-11) and submissions close 2026-11-12; Devpost's Terms forbid automated access, so the owner submits by hand from docs/for-owner/actions/023-paypal-hackathon-submission.md. Waits on the demo video (every Devpost portal asks for one). Done 2026-10-16: the owner submitted the entry on Devpost (text, 15 images, video, judges' testing instructions; code link = the public mirror). Results after 2026-11-12.",
       "effort_days": 0.1,
       "proof": "submission accepted on Devpost before 2026-11-12; any placing is the venture's proof",
       "score": 9,
-      "status": "blocked",
+      "status": "done",
       "added": "2026-10-11",
-      "blocked_on": "the owner submits the Devpost form (action 023); video artifact: https://github.com/giovf/rorororo/actions/runs/38171740523"
+      "done_at": "2026-10-16"
     },
     {
       "id": "nebius-diligence-agent",

@@ -1,7 +1,7 @@
 # Owner action request #023 — submit the PayPal AI Hackathon entry
 
 - **Date:** 2026-10-11
-- **Status:** ready — the demo video is recorded (2 min 24 s). Download it from the run artifact `demo-video-paypal-ai-hackathon`: https://github.com/giovf/rorororo/actions/runs/38171740523 (unzip; the file is `paypal-ai-hackathon.mp4`).
+- **Status:** done — submitted by the owner on Devpost 2026-10-16 (results after the 2026-11-12 close)
 - **Your time:** ~10 minutes
 - **Cost:** £0.00
 - **Deadline:** submissions close **2026-11-12** (https://paypalaihackathon.devpost.com/)
