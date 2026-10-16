@@ -1,7 +1,7 @@
 # Owner action request #025 — Nebius Token Factory API key for the hackathon entry
 
 - **Date:** 2026-10-13
-- **Status:** pending
+- **Status:** declined by the owner 2026-10-16 (Nebius onboarding needs a bank card) — entry dropped
 - **Your time:** ~5 minutes
 - **Cost:** up to £2.00 of Nebius inference beyond the US$1 trial credit (recorded as `planned` in `docs/LEDGER.md`)
 - **Deadline:** the hackathon closes **2026-10-30 10:00 PT**; the key is needed by about 2026-10-24 to record and submit in time

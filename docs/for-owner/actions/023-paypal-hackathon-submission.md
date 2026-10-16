@@ -12,6 +12,10 @@ tool, the account page). Everything to paste is in
 `ventures/hackathons/entries/paypal-ai-hackathon/SUBMISSION.md`; the agent transcript for the
 "How it works" section is `WALKTHROUGH.md` next to it.
 
+## Project media
+
+Fifteen gallery images (1280×720) with captions in upload order: `ventures/hackathons/entries/paypal-ai-hackathon/MEDIA.md`, files in `media/` (open the folder on GitHub and download each, or `git pull`). 01 is the thumbnail.
+
 ## Steps
 
 1. Sign in to Devpost (your account from action 022) and open the hackathon page → "Submit project".

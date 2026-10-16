@@ -116,3 +116,4 @@ submissions with no placing and no judge feedback → `finished`.
 | 2026-10-11 | Demo pipeline | — | — | — | CI records entry demo videos (Playwright + ffmpeg); PayPal video waits on the sandbox buyer secrets (action 024) |
 | 2026-10-13 | Research | — | — | — | Nebius entry revived (account active 2026-10-12; Token Factory terms in §2b, entry under US$2); GenAI.Works Open Agent (Cursor-only) and Amazon Build, Ship, Shape (Alexa+ partner-only) declined; lablab.ai Rise of AI Agents watched for its date |
 | 2026-10-15 | Research | — | — | — | market sweep: Vultr Agent Rush (3–8 Nov, prizes TBA) added to the 10-20 lablab read; Colosseum Agent Hackathon closed in Feb; nothing new fits; waiting until 2026-10-20 |
+| 2026-10-16 | Nebius dropped | — | — | — | owner declined action 025 (card required for onboarding); PayPal entry media (15 images) prepared for the Devpost form |

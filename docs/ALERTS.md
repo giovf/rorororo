@@ -325,6 +325,6 @@ closed entries older than 30 days (git keeps the history).
 - 2026-10-11 owner: PayPal has now blocked send/withdraw/receive on the account pending the tax info already requested — log in to PayPal to provide it (escalates the 12:46 request above). — Done 2026-10-11 (interactive): owner added the tax info 2026-10-11 (same request)
 - 2026-10-11 owner: PayPal hackathon video is ready (~10 min): download it from the CI run in action 023 and submit the Devpost form
 - 2026-10-12 owner: Nebius says your Token Factory account is active — check if the dropped hackathon entry can proceed. — Done 2026-10-13 (burn-down): it can; terms in ventures/hackathons/RESEARCH.md §2b, entry queued, key requested below
-- 2026-10-13 owner: Nebius hackathon is back on: create a Token Factory API key (~5 min, under £2 of usage) — docs/for-owner/actions/025-nebius-token-factory-key.md
-- 2026-10-13 owner: Cloudflare confirms a $49 charge (12 Oct); ledger baseline is $5/month — check billing for a duplicate or new overage.
+- 2026-10-13 owner: Nebius hackathon is back on: create a Token Factory API key (~5 min, under £2 of usage) — docs/for-owner/actions/025-nebius-token-factory-key.md — Done 2026-10-16 (interactive): owner 2026-10-16: the $49 is the paid 10-10 invoice, not a duplicate; Nebius declined (card required)
+- 2026-10-13 owner: Cloudflare confirms a $49 charge (12 Oct); ledger baseline is $5/month — check billing for a duplicate or new overage. — Done 2026-10-16 (interactive): owner 2026-10-16: the $49 is the paid 10-10 invoice, not a duplicate; Nebius declined (card required)
 - 2026-10-14 owner: one half-cent x402 payment (~5 min) lists gankdat's 17 endpoints in Coinbase's x402 Bazaar — docs/for-owner/actions/026-x402-bazaar-first-payment.md

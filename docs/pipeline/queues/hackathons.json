@@ -2,7 +2,7 @@
   "venture": "hackathons",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-15",
+  "updated": "2026-10-16",
   "researched": "2026-10-15",
   "weight": 2,
   "items": [
@@ -86,13 +86,13 @@
     {
       "id": "nebius-nvidia-hackathon-submit",
       "title": "Nebius × NVIDIA hackathon entry, part 2: write scripts/demo-nebius-nvidia-hackathon.ts from DEMO-SCRIPT.md on the demo-video pipeline, run the agent live on Token Factory with the owner's key, record the demo with the demo-video workflow (entry nebius-nvidia-hackathon), finish SUBMISSION.md with the live transcript, write the owner: line; the owner submits on Devpost by 2026-10-30 10:00 PT and the submission URL goes in RESEARCH.md",
-      "why": "The live run needs NEBIUS_API_KEY in .env and as a repository secret (action 025: ~5 min, the owner also says whether a card is on the account — Nebius's billing page says onboarding needs one; the agent's call cap keeps the whole entry under US$2 and the ledger carries a £2 planned row). Devpost's Terms forbid automated access, so the owner submits by hand, as for action 023. Prize tiers $20k / $10k / $6k plus track awards (RESEARCH §2).",
+      "why": "The live run needs NEBIUS_API_KEY in .env and as a repository secret (action 025: ~5 min, the owner also says whether a card is on the account — Nebius's billing page says onboarding needs one; the agent's call cap keeps the whole entry under US$2 and the ledger carries a £2 planned row). Devpost's Terms forbid automated access, so the owner submits by hand, as for action 023. Prize tiers $20k / $10k / $6k plus track awards (RESEARCH §2). Dropped 2026-10-16: the owner declined action 025 (Nebius onboarding needs a bank card; no card on a £0 line). The agent built against fixtures stays in the repo.",
       "effort_days": 0.7,
       "proof": "submission accepted on Devpost before 2026-10-30; any placing is the venture's proof",
       "score": 8,
-      "status": "blocked",
+      "status": "dropped",
       "added": "2026-10-13",
-      "blocked_on": "nebius-diligence-agent built; owner action 025 (NEBIUS_API_KEY in .env and the repository secrets, billing state confirmed)"
+      "done_at": "2026-10-16"
     },
     {
       "id": "lablab-rise-of-agents-date-read",
