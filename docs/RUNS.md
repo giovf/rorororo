@@ -1132,3 +1132,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 01:05 | burn-down | Slot table (npm run slots) reads SLOTS.md and counts such a metrics morning as ran; 2 tests across both scripts
 - 2026-10-16 01:05 | burn-down | Metrics routine prompt: `npm run slot -- start metrics` first; a quiet reviews check writes no row (33 rows since 10-04)
 - 2026-10-16 01:05 | burn-down | Queue: foundry metrics-slot-trace done; proof is a week of markers with no `missed: metrics` line
+- 2026-10-16 00:20 | watchdog | ci-minutes: 677 billed min/7d (~2901/month, wall 319; private cap 2,000, warn 1700); top: owner notes 151, notify owner 
