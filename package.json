@@ -13,7 +13,7 @@
     "ventures/*"
   ],
   "scripts": {
-    "typecheck": "tsc -b && tsc -p scripts && tsc -p ventures/variables-toolkit && tsc -p ventures/read-focus && tsc -p ventures/read-focus/e2e && tsc -p ventures/highlight-keep && tsc -p ventures/highlight-keep/e2e",
+    "typecheck": "tsc -b && tsc -p scripts && tsc -p packages/landing && tsc -p ventures/variables-toolkit && tsc -p ventures/read-focus && tsc -p ventures/read-focus/e2e && tsc -p ventures/highlight-keep && tsc -p ventures/highlight-keep/e2e",
     "build": "tsc -b",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -36,6 +36,7 @@
     "refresh-errors": "node --disable-warning=ExperimentalWarning scripts/refresh-errors-to-queue.ts",
     "cf-overage": "node --disable-warning=ExperimentalWarning scripts/cf-overage-to-queue.ts",
     "bounties": "node --disable-warning=ExperimentalWarning scripts/bounty-scanner.ts",
+    "ops:data": "node --disable-warning=ExperimentalWarning scripts/ops-data.ts",
     "mcp-probe": "node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts",
     "handoffs": "node --disable-warning=ExperimentalWarning scripts/handoffs.ts",
     "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts",

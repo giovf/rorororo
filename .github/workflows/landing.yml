@@ -3,7 +3,12 @@ name: landing
 on:
   push:
     branches: [main]
-    paths: ['packages/landing/**', '.github/workflows/landing.yml']
+    paths: ['packages/landing/**', 'scripts/ops-data.ts', '.github/workflows/landing.yml']
+  schedule:
+    # The /ops dashboard is rendered from src/ops-data.json, rebuilt from the repo at deploy time;
+    # four deploys a day keep it under six hours stale without a deploy per routine push
+    # (owner dashboard, 2026-10-16). Odd minute: GitHub delays busy-minute crons most.
+    - cron: '35 */6 * * *'
   workflow_dispatch:
 
 # Concurrency (2026-10-05, foundry ci-runs-never-acquired): a newer commit cancels this workflow's queued or
@@ -28,7 +33,10 @@ jobs:
           cache: npm
       - run: npm ci
         working-directory: .
-      - name: Deploy landing site (static-assets Worker, apps.gankdat.com)
+      - name: Build the dashboard data snapshot from the repo (scripts/ops-data.ts)
+        run: npm run build --silent && npm run ops:data
+        working-directory: .
+      - name: Deploy landing site + /ops dashboard (Worker with static assets, apps.gankdat.com)
         run: npx wrangler deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

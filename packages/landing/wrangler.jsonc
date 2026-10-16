@@ -1,12 +1,27 @@
 {
   "$schema": "../../node_modules/wrangler/config-schema.json",
-  // Foundry landing + policy pages as a static-assets Worker (Cloudflare, free plan).
-  // Replaces GitHub Pages so the repo can be private. Deploy: `npx wrangler deploy` here
-  // (CI: .github/workflows/landing.yml).
+  // Foundry landing + policy pages as a static-assets Worker, plus the owner's operations
+  // dashboard at /ops (2026-10-16: email one-time-code sign-in, ventures, pipeline, owner page,
+  // idea box). Deploy: `npx wrangler deploy` here (CI: .github/workflows/landing.yml, which first
+  // regenerates src/ops-data.json from the repo with `npm run ops:data`).
   "name": "foundry-landing",
+  "main": "src/index.ts",
   "compatibility_date": "2026-07-06",
   // html_handling none: the store listings and extensions link to the .html paths verbatim.
-  "assets": { "directory": "site", "html_handling": "none", "not_found_handling": "none" },
+  "assets": {
+    "directory": "site",
+    "binding": "ASSETS",
+    "html_handling": "none",
+    "not_found_handling": "none",
+    "run_worker_first": ["/ops", "/ops/*"],
+  },
+  "kv_namespaces": [{ "binding": "OPS_KV", "id": "445a391f7ec14e4b9ee7976ff592a3ff" }],
+  "vars": {
+    // Who may sign in to /ops (comma-separated, case-insensitive). Codes go only to these.
+    "OWNER_EMAILS": "gio@1402celsius.com,giova1506@hotmail.com",
+    "EMAIL_FROM": "Foundry Ops <no-reply@mail.gankdat.com>",
+  },
+  // Secrets (wrangler secret put): RESEND_API_KEY, OPS_INTERNAL_TOKEN.
   "routes": [{ "pattern": "apps.gankdat.com", "custom_domain": true }],
   "workers_dev": true,
 }

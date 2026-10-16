@@ -1,0 +1,15 @@
+{
+  "name": "@foundry/landing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "apps.gankdat.com: public product pages (static assets) and the owner's operations dashboard at /ops",
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "deploy": "wrangler deploy",
+    "cf-typegen": "wrangler types"
+  },
+  "dependencies": {
+    "hono": "^4.13.8"
+  }
+}
