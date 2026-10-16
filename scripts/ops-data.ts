@@ -209,6 +209,16 @@ async function main(): Promise<void> {
   }
   const entries = parseEntries(await read('docs/ALERTS.md'));
   const now = new Date();
+  // Plain text for the dashboard: no markdown emphasis or code ticks, and a closed entry's
+  // "— Done …" tail (the handoff ledger's closing note) left out.
+  const plain = (t: string): string =>
+    t
+      .replace(/^- \d{4}-\d{2}-\d{2} [^:]+: ?/, '')
+      .replace(/\s+—\s+(Done|Superseded)\b[\s\S]*$/, '')
+      .replace(/\*\*/g, '')
+      .replace(/`/g, '')
+      .trim()
+      .slice(0, 400);
   const toView = (e: {
     date: string;
     kind: string;
@@ -218,7 +228,7 @@ async function main(): Promise<void> {
     date: e.date,
     kind: e.kind,
     age_days: ageDays(e.date, now),
-    text: e.text.replace(/^- \d{4}-\d{2}-\d{2} [^:]+: ?/, '').slice(0, 400),
+    text: plain(e.text),
     ...(e.closed?.on ? { closed_on: e.closed.on } : {}),
   });
   const open = entries.filter(isOpen);
@@ -230,6 +240,11 @@ async function main(): Promise<void> {
       .filter(
         (e) => e.closed && (e.closed.on ?? '') >= weekAgo && /^(owner|handoff)\b/.test(e.kind),
       )
+      .sort(
+        (a, b) =>
+          (b.closed?.on ?? '').localeCompare(a.closed?.on ?? '') || b.date.localeCompare(a.date),
+      )
+      .slice(0, 8)
       .map(toView),
   };
   const notes = parseNotes(await read('docs/OWNER-NOTES.md').catch(() => '')).slice(0, 30);
