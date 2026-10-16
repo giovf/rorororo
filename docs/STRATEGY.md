@@ -1307,3 +1307,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   followed the docs' links into the walls. The URL list the item wanted could not be read: the Search Console step runs in
   store-metrics at 07:17, two minutes before gankdat-metrics writes the Daily numbers row, so gankdat has had no `search:` clause
   since the key landed 10-11 — queued as foundry `search-console-gankdat-row-race` (score 6).
+- 2026-10-16 interactive (owner: keep the repo private, surface only what is needed): public mirror
+  `github.com/giovf/gankdat` of the service minus internal files, synced by CI on every push; the hackathon
+  entry, the MCP registry and the Docker catalog point there. The monorepo flips private when the Actions
+  reading (foundry `actions-minutes`, 10-19) fits the 2,000-minute private cap — today's projection is ~3,050.
