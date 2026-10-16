@@ -796,8 +796,9 @@
       "effort_days": 0.1,
       "proof": "the next five relay requests that add a host start no check run (actions_list shows only fetch relay for their commits)",
       "score": 2,
-      "status": "todo",
-      "added": "2026-10-16"
+      "status": "doing",
+      "added": "2026-10-16",
+      "doing_since": "2026-10-16"
     },
     {
       "id": "owner-notes-poll-gap",
