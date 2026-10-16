@@ -9,6 +9,7 @@ import {
   propertyFor,
   SCOPE,
   searchNote,
+  selectVentures,
   TOKEN_URL,
   upsertSearch,
   VENTURES,
@@ -161,6 +162,25 @@ describe('venturePages / inspectTargets', () => {
       (_, i) => `<url><loc>https://gankdat.com/stats/ds-${i}</loc></url>`,
     ).join('');
     expect(inspectTargets(xml, venture('gankdat'))).toHaveLength(INSPECT_CAP);
+  });
+});
+
+describe('selectVentures', () => {
+  it('reads every venture when the filter is unset or blank', () => {
+    expect(selectVentures(undefined)).toBe(VENTURES);
+    expect(selectVentures('')).toBe(VENTURES);
+    expect(selectVentures(' , ')).toBe(VENTURES);
+  });
+  it('keeps the named ventures in the order given, so each job owns its rows', () => {
+    expect(selectVentures('gankdat').map((v) => v.slug)).toEqual(['gankdat']);
+    expect(
+      selectVentures(' read-focus, highlight-keep ,variables-toolkit').map((v) => v.slug),
+    ).toEqual(['read-focus', 'highlight-keep', 'variables-toolkit']);
+  });
+  it('fails loud on a slug no venture has, naming the real ones', () => {
+    expect(() => selectVentures('gankdat,gankdta')).toThrow(
+      /STORE_METRICS_VENTURES names gankdta, not a venture here \(gankdat, highlight-keep/,
+    );
   });
 });
 

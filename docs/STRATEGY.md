@@ -1307,3 +1307,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   followed the docs' links into the walls. The URL list the item wanted could not be read: the Search Console step runs in
   store-metrics at 07:17, two minutes before gankdat-metrics writes the Daily numbers row, so gankdat has had no `search:` clause
   since the key landed 10-11 — queued as foundry `search-console-gankdat-row-race` (score 6).
+- 2026-10-16 burn-down: `search-console-gankdat-row-race` built — the gankdat metrics job runs `scripts/search-console.ts`
+  (scoped by the new `STORE_METRICS_VENTURES`) right after it writes the Daily numbers row, and the store metrics job keeps
+  only the three landing ventures. Why: the store job dispatched at 07:17 and gankdat's row landed at 07:19, so the one
+  property owner action 020 was for never got a `search:` clause (10-11..10-16) and the googlebot-401-noindex proof could not
+  be read. Proof: the 2026-10-17 Daily numbers row carries `search: … indexed I/N …`.

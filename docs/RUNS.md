@@ -1145,3 +1145,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 10:00 | interactive | PayPal entry media: 15 gallery images with captions for the Devpost form (video frames, cards, live pages)
 - 2026-10-16 10:00 | interactive | Owner: $49 Cloudflare charge is the paid invoice, not a duplicate; Nebius entry dropped (card required)
 - 2026-10-16 11:00 | interactive | PayPal entry: answers drafted for the 14 required Devpost form fields (SUBMISSION.md)
+- 2026-10-16 17:25 | burn-down | gankdat metrics job reads Search Console after its own Daily numbers row (via docs/ci, installer moves it)
+- 2026-10-16 17:25 | burn-down | search-console.ts takes STORE_METRICS_VENTURES (unknown slug fails loud); 3 tests; store job keeps the 3 landings
+- 2026-10-16 17:25 | burn-down | Queue: foundry search-console-gankdat-row-race done; proof is a `search:` clause on the 10-17 gankdat row

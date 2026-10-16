@@ -22,11 +22,18 @@
 //      coverage states of the rest;
 //   5. upserts `search: …` in today's `Daily check` (store-metrics) or `Daily numbers` (gankdat
 //      metrics) row of `ventures/<slug>/RESEARCH.md`. Never writes a row of its own.
+// Two jobs run it (foundry `search-console-gankdat-row-race`, 2026-10-16): `store metrics` for the
+// landing ventures, after their Daily check rows, and `gankdat metrics` for gankdat, after
+// metrics.mjs wrote the Daily numbers row — the store job used to try gankdat two minutes before
+// that row existed, so no gankdat row carried a clause from the day the key landed (10-11) to 10-16.
+// `STORE_METRICS_VENTURES` names the ventures a job owns.
 // Without the secret every row reads `search: n/a (no SEARCH_CONSOLE_KEY …)` — a reading that
 // says why, never a silent gap. A property the account cannot see reads `n/a (no property …)`.
 //
 // Run: node --disable-warning=ExperimentalWarning scripts/search-console.ts
 // Env: SEARCH_CONSOLE_KEY            the service account's JSON key (secret, never logged)
+//      STORE_METRICS_VENTURES=a,b    only these ventures (default: all of VENTURES; an unknown
+//                                    slug fails the run loud instead of silently reading nothing)
 //      STORE_METRICS_IF_MISSING=1    leave a row that already has a `search:` clause alone
 //      STORE_METRICS_DATE=YYYY-MM-DD row date (default: today, UTC)
 // Node 22 runs .ts directly — keep syntax erasable, import only node builtins.
@@ -88,6 +95,25 @@ export const VENTURES: Venture[] = [
     ...landing(['/figma-styles-to-variables.html', '/figma-relink-variables.html']),
   },
 ];
+
+/** The ventures a run writes for: `STORE_METRICS_VENTURES` as a comma list of slugs, or every
+ *  venture when unset. A slug that is not in the list is a typo in a workflow, so it throws. */
+export function selectVentures(filter: string | undefined, ventures = VENTURES): Venture[] {
+  const slugs = (filter ?? '')
+    .split(',')
+    .map((s) => s.trim())
+    .filter(Boolean);
+  if (!slugs.length) return ventures;
+  return slugs.map((slug) => {
+    const v = ventures.find((x) => x.slug === slug);
+    if (!v) {
+      throw new Error(
+        `STORE_METRICS_VENTURES names ${slug}, not a venture here (${ventures.map((x) => x.slug).join(', ')})`,
+      );
+    }
+    return v;
+  });
+}
 
 interface ServiceAccountKey {
   client_email: string;
@@ -374,7 +400,7 @@ async function main(): Promise<void> {
   }
 
   const byProperty = new Map<string, PageRow[]>();
-  for (const venture of VENTURES) {
+  for (const venture of selectVentures(process.env.STORE_METRICS_VENTURES)) {
     const file = path.join(root, 'ventures', venture.slug, 'RESEARCH.md');
     if (!existsSync(file)) continue;
     const md = readFileSync(file, 'utf8');
