@@ -792,13 +792,13 @@
     {
       "id": "relay-allowlist-as-data",
       "title": "The relay's allowed-hosts list moves out of scripts/fetch-relay.mjs into a data file so adding a host is not a code push",
-      "why": "Research 2026-10-16 00:40 (burn-down): 13 commits touched scripts/fetch-relay.mjs since 10-08, almost all `relay: <name>` requests adding one or two hosts to ALLOWED; each is a code push under check.yml's `scripts/**` path (3 of the 14 check runs 10-13..10-15 were such relay commits, 37–57 s, one billed minute each) and each passes through the pre-push Prettier/ESLint gate before the routine can even send the request. Build: `docs/relay/hosts.txt` (one suffix or host per line, comments allowed) read by fetch-relay.mjs at start; `allowed()` unchanged; a test that every current ALLOWED entry is in the file and that a malformed line fails loud; README step 2 says to add the host there. check.yml stays as it is (docs/** is already outside its paths).",
+      "why": "Research 2026-10-16 00:40 (burn-down): 13 commits touched scripts/fetch-relay.mjs since 10-08, almost all `relay: <name>` requests adding one or two hosts to ALLOWED; each is a code push under check.yml's `scripts/**` path (3 of the 14 check runs 10-13..10-15 were such relay commits, 37–57 s, one billed minute each) and each passes through the pre-push Prettier/ESLint gate before the routine can even send the request. Build: `docs/relay/hosts.txt` (one suffix or host per line, comments allowed) read by fetch-relay.mjs at start; `allowed()` unchanged; a test that every current ALLOWED entry is in the file and that a malformed line fails loud; README step 2 says to add the host there. check.yml stays as it is (docs/** is already outside its paths). BUILT 2026-10-16 01:25 (burn-down): docs/relay/hosts.txt carries the 64 entries with their comments; parseHosts()/hostAllowed() in scripts/fetch-relay-lines.ts (a malformed line throws with its number), fetch-relay.mjs reads the file at start; README, SCHEDULERS, build/burn-down/ops-retro prompts point at the file; 3 tests, one over the real file.",
       "effort_days": 0.1,
       "proof": "the next five relay requests that add a host start no check run (actions_list shows only fetch relay for their commits)",
       "score": 2,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-16",
-      "doing_since": "2026-10-16"
+      "done_at": "2026-10-16"
     },
     {
       "id": "owner-notes-poll-gap",

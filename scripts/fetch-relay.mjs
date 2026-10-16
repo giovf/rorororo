@@ -7,14 +7,14 @@
 //
 // Line syntax:   [HEAD|GET] [RANGE=a-b] <https url>      (# comments and blank lines ignored)
 //                POST <https url> <json>                  (foundry relay-post-json, 2026-10-14)
-// Only hosts on the allowlist below are fetched (public data and store pages — never anything
-// that needs a credential). GET bodies are capped at MAX_BYTES; use RANGE for big files. A POST
+// Only hosts listed in docs/relay/hosts.txt are fetched (public data and store pages — never
+// anything that needs a credential; a data file since 2026-10-16 so adding a host is not a code push). GET bodies are capped at MAX_BYTES; use RANGE for big files. A POST
 // body is one JSON document, ≤ 4 kB, refused when a key or value is credential-shaped
 // (scripts/fetch-relay-lines.ts) — for JSON-RPC reads and POST-only validation endpoints.
 import { mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
-import { parseLine } from './fetch-relay-lines.ts';
+import { hostAllowed, parseHosts, parseLine } from './fetch-relay-lines.ts';
 
 const ROOT = path.resolve(import.meta.dirname, '..', 'docs', 'relay');
 const MAX_BYTES = 8 * 1024 * 1024;
@@ -22,77 +22,12 @@ const KEEP_DAYS = 7;
 const TIMEOUT_MS = 90_000;
 const USER_AGENT =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36 gankdat-relay';
-/** Host suffixes (".x" matches x and any subdomain) and exact hosts the relay will fetch. */
-const ALLOWED = [
-  '.gov.uk',
-  '.nhs.uk',
-  '.europa.eu',
-  '.sam.gov',
-  '.usaspending.gov', // USAspending API + site (exchange pre-research 2026-10-15)
-  'open.gsa.gov', // GSA API docs: SAM.gov opportunities rate limits (exchange pre-research 2026-10-15)
-  '.highergov.com', // paid rival price page (exchange pre-research 2026-10-15)
-  '.govtribe.com', // paid rival price page (exchange pre-research 2026-10-15)
-  '.sec.gov', // SEC EDGAR: www (fair-access policy, indexes), data (submissions, XBRL APIs), efts (full-text search) (exchange pre-research 2026-10-15 night)
-  'sec-api.io', // paid rival price page (exchange pre-research 2026-10-15 night)
-  '.financialmodelingprep.com', // paid rival price page (exchange pre-research 2026-10-15 night)
-  '.thegazette.co.uk',
-  '.cqc.org.uk',
-  '.figma.com',
-  '.fig-stats.com',
-  'chromewebstore.google.com',
-  '.addons.mozilla.org',
-  '.apify.com',
-  '.ico.org.uk',
-  'registry.modelcontextprotocol.io',
-  'claude.ai', // Claude's public OAuth client metadata document (CIMD), read by the OAuth funnel walk
-  '.glama.ai',
-  '.mcpservers.org',
-  '.gankdat.com',
-  'ea-edubase-api-prod.azurewebsites.net',
-  'ccewuksprdoneregsadata1.blob.core.windows.net',
-  'voaratinglists.blob.core.windows.net', // VOA non-domestic rating list downloads (exchange pre-research 2026-10-09)
-  '.companieshouse.gov.uk',
-  '.gamblingcommission.gov.uk',
-  '.data.gov.uk',
-  '.ons.gov.uk',
-  '.hmrc.gov.uk',
-  '.openstreetmap.org',
-  '.web-highlights.com',
-  '.marqly.com',
-  '.dyslexly.com',
-  'halfbold.vercel.app',
-  '.weavatools.com',
-  'weavatools.atlassian.net',
-  '.readwise.io',
-  '.glasp.co',
-  '.hypothes.is',
-  '.opendatacommunities.org', // EPC open data terms (exchange pre-research 2026-10-12)
-  '.nebius.com', // Token Factory billing rule and Nemotron catalogue (hackathons research 2026-10-13)
-  '.genai.works', // Open Agent Hackathon rules (hackathons research 2026-10-13)
-  'lablab.ai', // lablab.ai hackathon pages (hackathons research 2026-10-13)
-  'developer.amazon.com', // Amazon developer hackathon / Alexa+ pages (hackathons research 2026-10-13)
-  '.cro.ie', // Irish Companies Registration Office open data, API and bulk-licence pages (exchange pre-research 2026-10-13)
-  '.data.gov.ie', // Irish open data portal dataset pages (exchange pre-research 2026-10-13)
-  '.vision-net.ie', // CRIF Vision-net price list, the paid rival (exchange pre-research 2026-10-13)
-  '.solocheck.ie', // SoloCheck (CRIF) company-report prices, the paid rival (exchange pre-research 2026-10-13)
-  '.coinbase.com', // x402 Bazaar discovery API, CDP docs, facilitator pricing and CDP terms (exchange 2026-W42)
-  'base.blockscout.com', // Base block explorer public API: Aave v3 liquidation logs and gas prices (exchange 2026-W42, keeper idea)
-  'build.avax.network', // Avalanche Hack2Build x402 hackathon page (exchange 2026-W42)
-  'solana.com', // Solana x402 hackathon page (exchange 2026-W42)
-  'docs.opire.dev', // Opire bounty bot docs (exchange 2026-W42, bounty boards)
-  'docs.algora.io', // Algora bounty workflow docs (exchange 2026-W42, bounty boards)
-  'algora.io', // Algora's own open-bounty board, server-rendered (exchange 2026-W42)
-  'console.algora.io', // Algora console API: keyless tRPC bounty.list read (oss-bounties research 2026-10-15)
-  'oss.issuehunt.io', // IssueHunt funded-issue list (oss-bounties research 2026-10-15)
-  '.opire.dev', // Opire bounty platform pages (exchange 2026-W42)
-  'api.routescan.io', // Routescan keyless Etherscan-compatible API for Base: liquidation logs, gas price (exchange 2026-W42, keeper idea)
-  'mainnet.base.org', // Base's public JSON-RPC endpoint (POST eth_blockNumber, eth_getLogs — foundry relay-post-json, 2026-10-14)
-  'api.github.com', // GitHub REST API, unauthenticated: issue comments and searches a bounty scanner rule is verified against (oss-bounties `bounty-board-opire-source`, 2026-10-14)
-];
+/** Allowed hosts live in docs/relay/hosts.txt (suffixes `.x` match x and any subdomain; exact hosts otherwise). */
+const HOSTS_FILE = path.join(ROOT, 'hosts.txt');
+const ALLOWED = parseHosts(readFileSync(HOSTS_FILE, 'utf8'));
 
 function allowed(hostname) {
-  const h = hostname.toLowerCase();
-  return ALLOWED.some((a) => (a.startsWith('.') ? h === a.slice(1) || h.endsWith(a) : h === a));
+  return hostAllowed(hostname, ALLOWED);
 }
 
 function extOf(contentType) {

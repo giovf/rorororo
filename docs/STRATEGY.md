@@ -1297,3 +1297,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   alone are a late cron's), the routine stamps that marker first, and its quiet-day `Reviews checked` row — the only reason it ever
   committed — is gone. Why: a correct quiet morning was indistinguishable from a dead one, and the Monday table would have counted
   it missed.
+- 2026-10-16 burn-down: `relay-allowlist-as-data` built — the relay's allowed hosts are a data file (`docs/relay/hosts.txt`) the
+  script parses at start, so a research or pre-research pass that needs one more host pushes docs, not code: no `check` run, no
+  pre-push lint on the way to a relay read (13 script commits since 10-08, almost all one host each).

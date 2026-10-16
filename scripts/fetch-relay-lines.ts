@@ -111,3 +111,31 @@ export function parseLine(line: string): RelayLine | null {
   if (range) out.error ??= 'RANGE does not apply to POST';
   return out;
 }
+
+/** An allowlist entry: an exact host, or a `.suffix` that matches the suffix itself and any subdomain. */
+const HOST_ENTRY = /^\.?[a-z0-9](?:[a-z0-9-]*[a-z0-9])?(?:\.[a-z0-9](?:[a-z0-9-]*[a-z0-9])?)+$/;
+
+/**
+ * docs/relay/hosts.txt → entries (foundry `relay-allowlist-as-data`, 2026-10-16). One entry per
+ * line, `#` comments and blank lines ignored; a line that is not a lower-case host or `.suffix`
+ * throws with its line number, so a typo fails the relay run loud instead of silently allowing
+ * nothing — or everything.
+ */
+export function parseHosts(text: string): string[] {
+  const out: string[] = [];
+  text.split('\n').forEach((raw, i) => {
+    const line = raw.replace(/#.*$/, '').trim();
+    if (!line) return;
+    if (/\s/.test(line) || !HOST_ENTRY.test(line)) {
+      throw new Error(`docs/relay/hosts.txt line ${i + 1}: not a host or .suffix: ${raw.trim()}`);
+    }
+    out.push(line);
+  });
+  return out;
+}
+
+/** True when `hostname` is an exact entry or under a `.suffix` entry of `hosts`. */
+export function hostAllowed(hostname: string, hosts: readonly string[]): boolean {
+  const h = hostname.toLowerCase();
+  return hosts.some((a) => (a.startsWith('.') ? h === a.slice(1) || h.endsWith(a) : h === a));
+}

@@ -1,0 +1,73 @@
+# Fetch relay — allowed hosts (foundry `relay-allowlist-as-data`, 2026-10-16; was the ALLOWED array in
+# scripts/fetch-relay.mjs). One entry per line: an exact host (`api.github.com`) or a suffix starting
+# with a dot (`.gov.uk` matches gov.uk and every subdomain). Lower-case letters, digits, dots and
+# hyphens only; `#` starts a comment, blank lines are ignored; a malformed line fails the relay loud.
+# Public data and store pages only — never a host that needs a credential: everything fetched lands
+# in this public repo. Add the host here in the same commit as the source or research that needs it;
+# this file is docs, so the push starts only the `fetch relay` job, never `check` (13 commits to the
+# script since 2026-10-08 each spent a check run on one new host).
+
+.gov.uk
+.nhs.uk
+.europa.eu
+.sam.gov
+.usaspending.gov  # USAspending API + site (exchange pre-research 2026-10-15)
+open.gsa.gov  # GSA API docs: SAM.gov opportunities rate limits (exchange pre-research 2026-10-15)
+.highergov.com  # paid rival price page (exchange pre-research 2026-10-15)
+.govtribe.com  # paid rival price page (exchange pre-research 2026-10-15)
+.sec.gov  # SEC EDGAR: www (fair-access policy, indexes), data (submissions, XBRL APIs), efts (full-text search) (exchange pre-research 2026-10-15 night)
+sec-api.io  # paid rival price page (exchange pre-research 2026-10-15 night)
+.financialmodelingprep.com  # paid rival price page (exchange pre-research 2026-10-15 night)
+.thegazette.co.uk
+.cqc.org.uk
+.figma.com
+.fig-stats.com
+chromewebstore.google.com
+.addons.mozilla.org
+.apify.com
+.ico.org.uk
+registry.modelcontextprotocol.io
+claude.ai  # Claude's public OAuth client metadata document (CIMD), read by the OAuth funnel walk
+.glama.ai
+.mcpservers.org
+.gankdat.com
+ea-edubase-api-prod.azurewebsites.net
+ccewuksprdoneregsadata1.blob.core.windows.net
+voaratinglists.blob.core.windows.net  # VOA non-domestic rating list downloads (exchange pre-research 2026-10-09)
+.companieshouse.gov.uk
+.gamblingcommission.gov.uk
+.data.gov.uk
+.ons.gov.uk
+.hmrc.gov.uk
+.openstreetmap.org
+.web-highlights.com
+.marqly.com
+.dyslexly.com
+halfbold.vercel.app
+.weavatools.com
+weavatools.atlassian.net
+.readwise.io
+.glasp.co
+.hypothes.is
+.opendatacommunities.org  # EPC open data terms (exchange pre-research 2026-10-12)
+.nebius.com  # Token Factory billing rule and Nemotron catalogue (hackathons research 2026-10-13)
+.genai.works  # Open Agent Hackathon rules (hackathons research 2026-10-13)
+lablab.ai  # lablab.ai hackathon pages (hackathons research 2026-10-13)
+developer.amazon.com  # Amazon developer hackathon / Alexa+ pages (hackathons research 2026-10-13)
+.cro.ie  # Irish Companies Registration Office open data, API and bulk-licence pages (exchange pre-research 2026-10-13)
+.data.gov.ie  # Irish open data portal dataset pages (exchange pre-research 2026-10-13)
+.vision-net.ie  # CRIF Vision-net price list, the paid rival (exchange pre-research 2026-10-13)
+.solocheck.ie  # SoloCheck (CRIF) company-report prices, the paid rival (exchange pre-research 2026-10-13)
+.coinbase.com  # x402 Bazaar discovery API, CDP docs, facilitator pricing and CDP terms (exchange 2026-W42)
+base.blockscout.com  # Base block explorer public API: Aave v3 liquidation logs and gas prices (exchange 2026-W42, keeper idea)
+build.avax.network  # Avalanche Hack2Build x402 hackathon page (exchange 2026-W42)
+solana.com  # Solana x402 hackathon page (exchange 2026-W42)
+docs.opire.dev  # Opire bounty bot docs (exchange 2026-W42, bounty boards)
+docs.algora.io  # Algora bounty workflow docs (exchange 2026-W42, bounty boards)
+algora.io  # Algora's own open-bounty board, server-rendered (exchange 2026-W42)
+console.algora.io  # Algora console API: keyless tRPC bounty.list read (oss-bounties research 2026-10-15)
+oss.issuehunt.io  # IssueHunt funded-issue list (oss-bounties research 2026-10-15)
+.opire.dev  # Opire bounty platform pages (exchange 2026-W42)
+api.routescan.io  # Routescan keyless Etherscan-compatible API for Base: liquidation logs, gas price (exchange 2026-W42, keeper idea)
+mainnet.base.org  # Base's public JSON-RPC endpoint (POST eth_blockNumber, eth_getLogs — foundry relay-post-json, 2026-10-14)
+api.github.com  # GitHub REST API, unauthenticated: issue comments and searches a bounty scanner rule is verified against (oss-bounties `bounty-board-opire-source`, 2026-10-14)

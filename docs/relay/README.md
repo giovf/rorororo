@@ -33,10 +33,10 @@ GitHub runner to fetch for it:
    bodies as `1.json`, `2.csv`, … The request file is deleted.
 4. Read what you need, then carry on. Responses are pruned after 7 days.
 
-Rules: only hosts on the allowlist in `scripts/fetch-relay.mjs` (public data and store pages);
+Rules: only hosts listed in `docs/relay/hosts.txt` (public data and store pages; one host or `.suffix` per line, since 2026-10-16 a data file so adding one is not a code push);
 GET and POST responses are capped at 8 MB — use `RANGE` for large files and `HEAD` to check existence;
 never put a credential in a request; everything fetched lands in a public repo, so public data
-only. Add a host to the allowlist in the same commit as the source that needs it.
+only. Add a host to `docs/relay/hosts.txt` in the same commit as the source that needs it.
 
 ## PR relay — opening a pull request on someone else's repository
 

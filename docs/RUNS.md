@@ -1133,3 +1133,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 01:05 | burn-down | Metrics routine prompt: `npm run slot -- start metrics` first; a quiet reviews check writes no row (33 rows since 10-04)
 - 2026-10-16 01:05 | burn-down | Queue: foundry metrics-slot-trace done; proof is a week of markers with no `missed: metrics` line
 - 2026-10-16 00:20 | watchdog | ci-minutes: 677 billed min/7d (~2901/month, wall 319; private cap 2,000, warn 1700); top: owner notes 151, notify owner 
+- 2026-10-16 01:25 | burn-down | Relay allowlist moved to docs/relay/hosts.txt (64 entries, comments kept); a new host is a docs push now
+- 2026-10-16 01:25 | burn-down | parseHosts/hostAllowed in fetch-relay-lines.ts: a malformed line fails the relay loud; 3 tests, one on the file
+- 2026-10-16 01:25 | burn-down | README, SCHEDULERS and the build, burn-down and retro prompts name hosts.txt instead of the script
+- 2026-10-16 01:25 | burn-down | Queue: foundry relay-allowlist-as-data done; proof is the next five new-host relay commits starting no check run

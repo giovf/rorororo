@@ -1,5 +1,14 @@
 import { describe, expect, it } from 'vitest';
-import { POST_MAX_BYTES, credentialShaped, parseLine, postBodyError } from './fetch-relay-lines.ts';
+import { readFileSync } from 'node:fs';
+import path from 'node:path';
+import {
+  POST_MAX_BYTES,
+  credentialShaped,
+  hostAllowed,
+  parseHosts,
+  parseLine,
+  postBodyError,
+} from './fetch-relay-lines.ts';
 
 describe('parseLine', () => {
   it('keeps the GET/HEAD/RANGE syntax as it was', () => {
@@ -120,5 +129,46 @@ describe('credential refusal', () => {
         '{"tokenAddress":"0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913","requestKey":"q-1"}',
       ),
     ).toBeNull();
+  });
+});
+
+describe('hosts.txt allowlist', () => {
+  it('reads entries, drops comments and blank lines, and fails loud on a malformed line', () => {
+    expect(parseHosts('# c\n\n.gov.uk  # suffix\napi.github.com\n')).toEqual([
+      '.gov.uk',
+      'api.github.com',
+    ]);
+    expect(() => parseHosts('.gov.uk\nhttps://a.gov.uk\n')).toThrow(/line 2: not a host/);
+    expect(() => parseHosts('Api.GitHub.com')).toThrow(/line 1/);
+    expect(() => parseHosts('a.gov.uk b.gov.uk')).toThrow(/line 1/);
+    expect(() => parseHosts('localhost')).toThrow(/line 1/);
+  });
+
+  it('matches a suffix entry on the host itself and its subdomains, an exact entry only exactly', () => {
+    const hosts = ['.gov.uk', 'api.github.com'];
+    expect(hostAllowed('gov.uk', hosts)).toBe(true);
+    expect(hostAllowed('data.gov.uk', hosts)).toBe(true);
+    expect(hostAllowed('GOV.UK', hosts)).toBe(true);
+    expect(hostAllowed('notgov.uk', hosts)).toBe(false);
+    expect(hostAllowed('api.github.com', hosts)).toBe(true);
+    expect(hostAllowed('github.com', hosts)).toBe(false);
+    expect(hostAllowed('evil.api.github.com', hosts)).toBe(false);
+  });
+
+  it('parses the real docs/relay/hosts.txt and keeps the entries the routines rely on', () => {
+    const file = path.resolve(import.meta.dirname, '..', 'docs', 'relay', 'hosts.txt');
+    const hosts = parseHosts(readFileSync(file, 'utf8'));
+    expect(hosts.length).toBeGreaterThan(50);
+    for (const h of [
+      '.gov.uk',
+      '.figma.com',
+      'chromewebstore.google.com',
+      '.gankdat.com',
+      'api.github.com',
+    ])
+      expect(hosts).toContain(h);
+    expect(new Set(hosts).size).toBe(hosts.length);
+    expect(hostAllowed('find-and-update.company-information.service.gov.uk', hosts)).toBe(true);
+    expect(hostAllowed('example.com', hosts)).toBe(false);
   });
 });
