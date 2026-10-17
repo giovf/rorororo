@@ -1219,3 +1219,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 19:38 | burn-down | Spike HMRC VAT: rivals US$0.003-0.09 a check; Apify UK rival 14 users, 4 monthly, scrapes the GOV.UK form
 - 2026-10-17 19:38 | burn-down | Spike docs/exchange/spikes/hmrc-vat-lookup.md written: declined; exchange uk-vat-number-check declined
 - 2026-10-17 19:38 | burn-down | Queue: new-ventures spike-hmrc-vat-lookup done; queue empty, needs_research set (cooling until 10-19)
+- 2026-10-17 19:24 | burn-down | inbox-triage.md WHO DOES WHAT: amounts/statuses the repo records are reconciled before a needs owner
+- 2026-10-17 19:24 | burn-down | Queue: foundry triage-reconcile-before-owner done (proof: 4 weeks without an owner line answered from the repo)

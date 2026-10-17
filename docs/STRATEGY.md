@@ -1378,3 +1378,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   and has 4 monthly users at US$0.005 a result; RapidAPI, vatstack and TrustComponent sell the check at
   US$0.003–0.09. Declined: no lawful keyless route, owner identity required, and the price floor is already where
   gankdat would sit. Exchange idea `uk-vat-number-check` declined; the spike file holds the evidence.
+- 2026-10-17 burn-down: foundry `triage-reconcile-before-owner` — the triage prompt's WHO DOES WHAT paragraph now says a
+  mail stating an amount or status the repo already records (ledger, a venture's RESEARCH.md) is reconciled against
+  that file first and is `needs owner` only when the amounts differ or the owner's identity, card or login is needed.
+  Why: two W42 owner lines (Nebius 10-12, Cloudflare $49 10-13) sent the owner to check what the repo already said.
