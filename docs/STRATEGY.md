@@ -1341,3 +1341,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   workflow for its first live run (one `workflow_dispatch` when nothing fired; publish, mirror and demo-video never
   forced), log `<name> first run: …` and fix a failure in the same run. Why: three W42 first runs failed and one never
   fired, each found by mail a day later; the first run is the only test these workflows get.
+- 2026-10-17 interactive (owner: "I see scheduled work for existing ventures but none for new ones"): the exchange decided
+  weekly but its output was invisible and its new-line candidates sat parked behind triggers. Now `docs/pipeline/queues/
+  new-ventures.json` (weight 2) is the exchange's backlog of research spikes — small evidence items for the best candidates,
+  executed by idle build slots, each ending in `docs/exchange/spikes/<id>.md` with a promote / park call — refilled to 2–4
+  every Wednesday; four seeded today (x402 aggregator margins, pay-per-crawl on the stats pages, keeper-rewards simulation,
+  HMRC VAT lookup). The dashboard gained a "New ventures" tab: next run, last decision, spikes, promoted and parked ideas.

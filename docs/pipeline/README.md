@@ -8,6 +8,8 @@ and write, validated by `npm run pipeline` (part of `npm run check`).
 ```
 docs/pipeline/exchange.json          ideas not yet assigned to a venture (parked / promoted / declined)
 docs/pipeline/queues/<venture>.json  one queue per venture: status open|finished, scored items
+docs/pipeline/queues/new-ventures.json  the exchange's backlog of research spikes for new lines (weight 2;
+                                     owner 2026-10-17: new-venture work visible and scheduled, built by idle slots)
 ```
 
 | Who | When | Does |

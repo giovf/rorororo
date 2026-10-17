@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-17T13:46:01.918Z",
-  "commit": "38bb06e231e0",
+  "generated_at": "2026-10-17T13:54:00.642Z",
+  "commit": "bd474625ae71",
   "money": {
     "spent": 44.4,
     "planned": 8,
@@ -676,6 +676,30 @@
       "done_recent": []
     },
     {
+      "venture": "new-ventures",
+      "status": "open",
+      "weight": 2,
+      "needs_research": false,
+      "counts": {
+        "todo": 4,
+        "doing": 0,
+        "blocked": 0,
+        "done": 0,
+        "dropped": 0
+      },
+      "next": {
+        "id": "spike-x402-aggregator-margins",
+        "title": "Research spike: x402 aggregator margin map — from the Bazaar's top 200 resources (price, 30-day paid calls, payer count) compute what a 20–40% markup gateway…",
+        "score": 8,
+        "status": "todo",
+        "added": "2026-10-17"
+      },
+      "doing": [],
+      "blocked": [],
+      "scheduled": [],
+      "done_recent": []
+    },
+    {
       "venture": "oss-bounties",
       "status": "open",
       "weight": 2,
@@ -906,6 +930,380 @@
       }
     ]
   },
+  "exchange": {
+    "last_run": "2026-W42",
+    "decision": "Extend the gankdat queue (weight 1) with `x402-bazaar-listing` (9, the winner: the Bazaar is the first",
+    "next_run": "2026-10-21 08:00 UTC",
+    "promoted": [
+      {
+        "id": "hackathon-prizes",
+        "title": "Cash-prize hackathons entered with the live products (Devpost; PayPal AI $67.5k to 11-12, Nebius×NVIDIA $50k to 10-30)",
+        "status": "promoted",
+        "added": "2026-10-11",
+        "venture": "hackathons"
+      },
+      {
+        "id": "oss-issue-bounties",
+        "title": "Paid open-source issues on bounty boards (553 open GitHub issues carry Algora's bounty label)",
+        "status": "promoted",
+        "added": "2026-10-11",
+        "venture": "oss-bounties"
+      },
+      {
+        "id": "x402-bazaar-listing",
+        "title": "List gankdat's 17 pay-per-call endpoints in the x402 Bazaar (Coinbase CDP facilitator discovery): route keys with method + path, a descri…",
+        "status": "promoted",
+        "added": "2026-10-11",
+        "venture": "gankdat"
+      },
+      {
+        "id": "uk-company-lookup-monitor",
+        "title": "Companies House company lookup + monitor on gankdat (uk-company-profiles dataset, MCP tool, Apify actor with changes mode) — Blind Mode, …",
+        "status": "promoted",
+        "added": "2026-10-07",
+        "venture": "gankdat"
+      },
+      {
+        "id": "docker-mcp-catalog",
+        "title": "List gankdat's MCP server in the Docker MCP Catalog (remote server PR to docker/mcp-registry)",
+        "status": "promoted",
+        "added": "2026-10-07",
+        "venture": "gankdat"
+      },
+      {
+        "id": "claude-connectors-directory",
+        "title": "List gankdat's MCP server in the Claude Connectors Directory (then lazy OAuth so plans bill from Claude)",
+        "status": "promoted",
+        "added": "2026-09-30",
+        "venture": "gankdat"
+      },
+      {
+        "id": "uk-trademark-journal",
+        "title": "UK Trade Marks Journal — weekly accepted applications as a dataset + change feed (trade-mark watch)",
+        "status": "promoted",
+        "added": "2026-09-23",
+        "venture": "gankdat"
+      },
+      {
+        "id": "uk-gambling-operators",
+        "title": "Gambling Commission operator register (operators, premises, regulatory actions)",
+        "status": "promoted",
+        "added": "2026-09-23",
+        "venture": "gankdat"
+      },
+      {
+        "id": "variables-toolkit-v0-2-relink",
+        "title": "Variables Toolkit v0.2: relink local/broken variables to library variables by name",
+        "status": "promoted",
+        "added": "2026-09-23",
+        "venture": "variables-toolkit"
+      },
+      {
+        "id": "no-website-lead-feed",
+        "title": "Businesses without a website — lead feed for web agencies",
+        "status": "promoted",
+        "added": "2026-09-21",
+        "venture": "gankdat"
+      }
+    ],
+    "parked": [
+      {
+        "id": "sra-firm-register",
+        "title": "SRA firm data web service on gankdat: every law firm the Solicitors Regulation Authority regulates in England and Wales (SRA number, offi…",
+        "status": "parked",
+        "added": "2026-10-16",
+        "trigger": "the owner creates the free SRA developer-portal account and pastes the primary Subscription Key as a gankdat secret (batch it with the next owner request; same category as the Companies House key),…"
+      },
+      {
+        "id": "usaspending-contract-awards",
+        "title": "US federal contract awards (USAspending.gov API: every FPDS contract, task order and IDV with recipient, agency, NAICS, amount, place of …",
+        "status": "parked",
+        "added": "2026-10-15",
+        "trigger": "uk-contract-awards, sam-exclusions or eu-ted records its first paid call or paid Apify run, or any USAspending Apify actor passes 10 total users — then queue the awards half in gankdat.json at scor…"
+      },
+      {
+        "id": "sec-edgar-filings-xbrl",
+        "title": "SEC EDGAR on gankdat: company filings index (10-K, 10-Q, 8-K, S-1, Form D by CIK or ticker, new-filings change feed) and XBRL company fin…",
+        "status": "parked",
+        "added": "2026-10-15",
+        "trigger": "sam-exclusions records its first paid call or paid Apify run, or the x402 Bazaar day-30 read (gankdat/x402-bazaar-day-30, 2026-11-14) shows intent searches for US company financials or SEC filings …"
+      },
+      {
+        "id": "ai-crawler-paywall-stats-pages",
+        "title": "Charge AI crawlers per fetch of the gankdat stats pages (Cloudflare Pay Per Crawl / Pay Per Use, or TollBit's bot paywall) — a toggle on …",
+        "status": "parked",
+        "added": "2026-10-14",
+        "trigger": "a relay read of developers.cloudflare.com's Pay Per Crawl / Pay Per Use docs and TollBit's terms names general availability and at least one paying crawler, and the stats pages' AI-bot fetches (use…"
+      },
+      {
+        "id": "x402-sponsor-hackathons",
+        "title": "x402 hackathons run by chain sponsors (Solana x402 Hackathon up to $135k; Avalanche Hack2Build: Payments x402 $25k) entered with gankdat'…",
+        "status": "parked",
+        "added": "2026-10-14",
+        "trigger": "a 2026 edition announced on solana.com/x402/hackathon or build.avax.network with its rules; then score against the hackathons queue"
+      },
+      {
+        "id": "uk-vat-number-check",
+        "title": "UK VAT number validation on gankdat (HMRC Check a UK VAT number API: registered name and address for a VAT registration number, optional …",
+        "status": "parked",
+        "added": "2026-10-14",
+        "trigger": "the relay read of HMRC's 1.0 and 2.0 documentation shows an open-access lookup (no Developer Hub application needed) and the Apify rival's users/price are known — then score it against the gankdat …"
+      },
+      {
+        "id": "ofsted-childcare-providers",
+        "title": "Ofsted childcare providers register (England nurseries, pre-schools, out-of-school clubs; childminders dropped) with Early Years Register…",
+        "status": "parked",
+        "added": "2026-10-13",
+        "trigger": "uk-schools or uk-care-locations records its first paid call or paid Apify run (the lead-gen bundle proves a buyer), or Ofsted moves the management information to monthly or weekly — then queue it i…"
+      },
+      {
+        "id": "ireland-cro-company-register",
+        "title": "Ireland CRO company register (825k companies, daily snapshot, EU high-value dataset) on gankdat as a lookup + change feed beside uk-compa…",
+        "status": "parked",
+        "added": "2026-10-13",
+        "trigger": "uk-companies or uk-company-profiles records its first paid call or paid Apify run, or nerolabs/ireland-cro-monitor passes 10 users — then queue it in gankdat.json at score 2 (evidence 1 × reach 2 ÷…"
+      },
+      {
+        "id": "data-science-prize-competitions",
+        "title": "Prize competitions judged on model performance (Kaggle-style, ARC-style)",
+        "status": "parked",
+        "added": "2026-10-11",
+        "trigger": "a competition whose solution is code-only (no training compute) or a free compute grant; or the hackathon line pays out and funds compute"
+      },
+      {
+        "id": "affiliate-links-on-stats-pages",
+        "title": "Affiliate or referral links on the gankdat stats pages and actor READMEs (services the readers already buy)",
+        "status": "parked",
+        "added": "2026-10-11",
+        "trigger": "1,000 monthly visitors to the stats pages (Search Console reading)"
+      },
+      {
+        "id": "x402-aggregator-mcp",
+        "title": "x402 aggregator: one MCP server / API gateway that proxies many third-party x402-paid APIs (Coinbase Bazaar listings) for agents at a sma…",
+        "status": "parked",
+        "added": "2026-10-11",
+        "trigger": "gankdat's own x402 Bazaar listing shows ≥ 50 paid calls/30 d from payers other than ours (x402-bazaar-day-30, 2026-11-14); then score an aggregator of the categories agents actually pay for, with e…"
+      },
+      {
+        "id": "onchain-keeper-rewards",
+        "title": "Permissionless keeper work on Base: calling public protocol functions that pay the caller a small reward (liquidations with a bonus, harv…",
+        "status": "parked",
+        "added": "2026-10-11",
+        "trigger": "foundry relay-post-json built, then a runner script reads 7 days of Aave v3 Pool LiquidationCall and Compound v3 AbsorbCollateral logs on Base and measures the blocks between a position becoming li…"
+      },
+      {
+        "id": "x402-facilitator-fee",
+        "title": "Run an x402 facilitator (payment verification + settlement) that other sellers configure, taking a per-transaction fee",
+        "status": "parked",
+        "added": "2026-10-11",
+        "trigger": "x402-aggregator-mcp live and 100 paid calls a day through it (we would be our own first facilitator customer)"
+      },
+      {
+        "id": "uk-grants-360giving",
+        "title": "UK grants awarded (360Giving / GrantNav aggregate, ~580k grants from ~200 funders) on gankdat: funder and recipient lookup + new-grants c…",
+        "status": "parked",
+        "added": "2026-10-10",
+        "trigger": "a gankdat shelf converts (≥ 1 paying account or ≥ 20 paid Apify runs/month), or an inbound request names grants, funders or bid writing; then relay-read `HEAD` of the GrantNav CSV/JSON bulk downloa…"
+      },
+      {
+        "id": "ico-register-of-fee-payers",
+        "title": "ICO register of fee payers (1.4M UK data controllers) on gankdat: registration lookup + expiry/new-registration feeds",
+        "status": "parked",
+        "added": "2026-10-08",
+        "trigger": "a gankdat shelf converts (≥ 1 paying account or ≥ 20 paid Apify runs/month), or an inbound request names ICO registration / supplier due diligence; then relay-read RANGE=0-4095 of the day's zip (CS…"
+      },
+      {
+        "id": "uk-company-officers-psc",
+        "title": "Officer and PSC person fields on the Companies House lookup (directors, individual PSCs) — the incumbents' hook",
+        "status": "parked",
+        "added": "2026-10-07",
+        "trigger": "first paying gankdat account and the ICO fee paid (action 012); then a new LIA line in GDPR.md before the fields ship"
+      },
+      {
+        "id": "stats-page-csv-checkout",
+        "title": "One-off CSV purchase of a register on its /stats page (Stripe Checkout on the existing account, e.g. the sponsor or care-locations list)",
+        "status": "parked",
+        "added": "2026-10-07",
+        "trigger": "the Search Console reading shows ≥ 100 impressions/week on /stats pages"
+      },
+      {
+        "id": "google-sheets-add-on",
+        "title": "Google Sheets add-on on the Workspace Marketplace: custom functions (=UKCOMPANY, =CQC, =TENDERS …) over the gankdat API",
+        "status": "parked",
+        "added": "2026-10-07",
+        "trigger": "a first paying gankdat account, and the owner opting into a billing-enabled Google Cloud project for the listing"
+      },
+      {
+        "id": "smithery-listing",
+        "title": "Smithery listing by URL (smithery.ai/new; scans tools, handles client registration via CIMD)",
+        "status": "parked",
+        "added": "2026-10-07",
+        "trigger": "the Docker MCP Catalog or Claude Connectors Directory listing shows ≥ 20 distinct accounts using a tool in 30 days"
+      },
+      {
+        "id": "wusla-reseller-marketplace",
+        "title": "WuslaHQ paid API/MCP marketplace offer: mirror gankdat's MCP endpoint and resell access at a 21% cut (0% for six months)",
+        "status": "parked",
+        "added": "2026-10-07",
+        "trigger": "a live storefront with ≥ 10 listed sellers and a published seller agreement; then score it as a shelf"
+      },
+      {
+        "id": "uk-land-registry-price-paid",
+        "title": "HM Land Registry Price Paid Data (England & Wales sold house prices) on gankdat: postcode/street lookups + monthly new-sales feed",
+        "status": "parked",
+        "added": "2026-10-07",
+        "trigger": "a gankdat shelf converts (≥ 1 paying account or ≥ 20 paid Apify runs/month) and a relay store read shows ≥ 2 of the nine rivals above 10 users/30 d; then relay-read the monthly update file header a…"
+      },
+      {
+        "id": "ea-waste-carriers-register",
+        "title": "Environment Agency waste carriers, brokers and dealers register (England) on gankdat: lookups + new/expiring/lapsed change feed",
+        "status": "parked",
+        "added": "2026-10-05",
+        "trigger": "a gankdat shelf converts (≥ 1 paying account or ≥ 20 paid Apify runs/month) or the 2026-10-30 funnel review shows KYB/compliance lookups; then relay-read the Conditional Licence and the register AP…"
+      },
+      {
+        "id": "apify-quality-score-pass",
+        "title": "Apify Store quality-score / README keyword pass over the 17 public actors",
+        "status": "parked",
+        "added": "2026-09-30",
+        "trigger": "the uk-company-lookup-day-30 read (2026-11-07) shows the Companies House actor converting; then a keyword pass against store-search data for that category"
+      },
+      {
+        "id": "n8n-community-node",
+        "title": "n8n verified community node for gankdat (npm publish with provenance via GitHub Actions)",
+        "status": "parked",
+        "added": "2026-09-30",
+        "trigger": "the Claude directory listing shows ≥ 20 distinct accounts using a tool in 30 days"
+      },
+      {
+        "id": "snowflake-marketplace",
+        "title": "Snowflake Marketplace data listing for the gankdat registers",
+        "status": "parked",
+        "added": "2026-09-30",
+        "trigger": "data line passes £300 MRR (same as limited-company)"
+      },
+      {
+        "id": "pharma-registers-line",
+        "title": "Pharma regulatory registers on gankdat: FDA shortages, Orange Book, Drugs@FDA, EMA, MHRA (from ARE's verified source inventory)",
+        "status": "parked",
+        "added": "2026-09-28",
+        "trigger": "a shelf converts (≥ 1 paying account or ≥ 20 paid Apify runs/month) and the Apify run data shows demand for non-UK registers"
+      },
+      {
+        "id": "region-delta-feed",
+        "title": "Region-delta feed: drugs authorised in the EU/UK but absent from Drugs@FDA (and the reverse), daily diff",
+        "status": "parked",
+        "added": "2026-09-28",
+        "trigger": "pharma-registers-line shipped and queried by at least one external key"
+      },
+      {
+        "id": "japan-gbizinfo-register",
+        "title": "Japan corporate register (gBizINFO) dataset + Apify actor",
+        "status": "parked",
+        "added": "2026-09-24",
+        "trigger": "two shelves open (Apify actors public, stats pages indexed) and gankdat still < 3 real signups 30 days later"
+      },
+      {
+        "id": "singapore-acra-gebiz",
+        "title": "Singapore ACRA entities + GeBIZ tenders (data.gov.sg)",
+        "status": "parked",
+        "added": "2026-09-24",
+        "trigger": "the Companies House actor (uk-company-lookup-monitor) shows ≥ 5 users/30d; then relay-read GeBIZ's terms of use and data.gov.sg's licence before scoring for the queue"
+      },
+      {
+        "id": "figma-variables-diff",
+        "title": "Second Figma plugin: variables diff / compare across files",
+        "status": "parked",
+        "added": "2026-09-23",
+        "trigger": "Variables Toolkit day-30 (2026-10-21) shows ≥ 1 purchase or ≥ 500 installs"
+      },
+      {
+        "id": "digital-services-marketplace",
+        "title": "Marketplace where people request digital services on top of the APIs",
+        "status": "parked",
+        "added": "2026-09-21",
+        "trigger": "≈1,000 monthly API/stats users, or the no-website lead feed selling to agencies who ask for fulfilment"
+      },
+      {
+        "id": "limited-company",
+        "title": "Form a UK limited company to unlock Datarade / AWS Data Exchange listings",
+        "status": "parked",
+        "added": "2026-09-21",
+        "trigger": "data line passes £300 MRR"
+      },
+      {
+        "id": "algorithmic-trading",
+        "title": "Use portfolio revenue to fund algorithmic trading",
+        "status": "parked",
+        "added": "2026-09-20",
+        "trigger": "£1,000 of banked net revenue and a written risk plan reviewed by the owner"
+      }
+    ],
+    "declined": [
+      {
+        "id": "epc-register-retrofit-leads",
+        "title": "EPC register (England & Wales Energy Performance Certificates, MHCLG bulk data + API) on gankdat: rating lookup by UPRN/postcode and a D–…",
+        "status": "declined",
+        "added": "2026-10-12",
+        "trigger": "a buyer who is itself a permitted user under the OS/Royal Mail notice (a PAS 2030 installer, a letting agent, a council) asks for a private per-customer feed under their own purpose and controllers…"
+      },
+      {
+        "id": "vulnerability-bounty-programs",
+        "title": "Security vulnerability bounty programmes",
+        "status": "declined",
+        "added": "2026-10-11"
+      },
+      {
+        "id": "voa-rating-list",
+        "title": "VOA non-domestic rating list (England & Wales business rates) on gankdat: rateable-value lookup + weekly change feed",
+        "status": "declined",
+        "added": "2026-10-09",
+        "trigger": "the Valuation Office moves the downloads to the Open Government Licence (the 2023 'transparency and disclosure of information on business rates valuations' consultation points that way) — then rela…"
+      },
+      {
+        "id": "chatgpt-app-directory",
+        "title": "ChatGPT App Directory app on the gankdat MCP server (Apps SDK)",
+        "status": "declined",
+        "added": "2026-09-30"
+      },
+      {
+        "id": "are-port",
+        "title": "Port the ARE (Asset Retrieval Engine) product into Foundry",
+        "status": "declined",
+        "added": "2026-09-28"
+      },
+      {
+        "id": "shopify-app",
+        "title": "Shopify App Store app",
+        "status": "declined",
+        "added": "2026-09-23"
+      },
+      {
+        "id": "stripe-app-marketplace",
+        "title": "Stripe App Marketplace app",
+        "status": "declined",
+        "added": "2026-09-23"
+      },
+      {
+        "id": "browser-extension-3",
+        "title": "Third browser extension",
+        "status": "declined",
+        "added": "2026-09-23"
+      },
+      {
+        "id": "fca-register",
+        "title": "FCA Financial Services Register dataset",
+        "status": "declined",
+        "added": "2026-09-23"
+      },
+      {
+        "id": "outreach-service",
+        "title": "Contact businesses lacking a website by email / AI phone and sell them sites",
+        "status": "declined",
+        "added": "2026-09-21"
+      }
+    ]
+  },
   "notes": [
     {
       "when": "2026-09-21 11:48",
@@ -914,6 +1312,11 @@
     }
   ],
   "runs": [
+    {
+      "when": "2026-10-17 10:00",
+      "who": "interactive",
+      "text": "New-ventures queue (4 research spikes, weight 2) and a New ventures dashboard tab: next run, decision, parked ideas"
+    },
     {
       "when": "2026-10-17 09:00",
       "who": "interactive",
@@ -968,11 +1371,6 @@
       "when": "2026-10-17 08:10",
       "who": "retro",
       "text": "Repeat blocker: signing ReadFocus 0.3 and HK 0.4 waits 13 d on blocked extension-publish-in-ci"
-    },
-    {
-      "when": "2026-10-17 08:10",
-      "who": "retro",
-      "text": "Slot reliability: 33 of 33 slots ran; metrics 10-15 was mis-reported missed (fixed 10-16)"
     }
   ]
 }

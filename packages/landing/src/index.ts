@@ -144,19 +144,19 @@ app.post('/ops/logout', async (c) => {
 
 // ------------------------------------------------------------------ ideas
 
-interface Idea {
+interface KvIdea {
   id: string;
   text: string;
   created: string;
   delivered?: string;
 }
 
-async function ideas(env: Bindings): Promise<Idea[]> {
+async function ideas(env: Bindings): Promise<KvIdea[]> {
   const list = await env.OPS_KV.list({ prefix: 'idea:', limit: 100 });
-  const out: Idea[] = [];
+  const out: KvIdea[] = [];
   for (const k of list.keys) {
     const v = await env.OPS_KV.get(k.name);
-    if (v) out.push(JSON.parse(v) as Idea);
+    if (v) out.push(JSON.parse(v) as KvIdea);
   }
   return out.sort((a, b) => b.created.localeCompare(a.created));
 }
@@ -168,7 +168,7 @@ app.post('/ops/ideas', async (c) => {
   if (text.length >= 3) {
     const created = new Date().toISOString();
     const id = `${created}-${randomId().slice(0, 6)}`;
-    await c.env.OPS_KV.put(`idea:${id}`, JSON.stringify({ id, text, created } satisfies Idea));
+    await c.env.OPS_KV.put(`idea:${id}`, JSON.stringify({ id, text, created } satisfies KvIdea));
   }
   return c.redirect('/ops?view=owner#ideas');
 });
@@ -194,7 +194,7 @@ app.post('/ops/api/ideas/ack', async (c) => {
   for (const id of body.ids ?? []) {
     const raw = await c.env.OPS_KV.get(`idea:${id}`);
     if (!raw) continue;
-    await c.env.OPS_KV.put(`idea:${id}`, JSON.stringify({ ...(JSON.parse(raw) as Idea), delivered: when }));
+    await c.env.OPS_KV.put(`idea:${id}`, JSON.stringify({ ...(JSON.parse(raw) as KvIdea), delivered: when }));
     n += 1;
   }
   return c.json({ acknowledged: n });
@@ -303,6 +303,14 @@ interface OwnerEntry {
   text: string;
   closed_on?: string;
 }
+interface Idea {
+  id: string;
+  title: string;
+  status: string;
+  added: string;
+  trigger?: string;
+  venture?: string;
+}
 interface OpsData {
   generated_at: string;
   commit: string;
@@ -310,6 +318,7 @@ interface OpsData {
   ventures: Venture[];
   queues: Queue[];
   owner: { open: OwnerEntry[]; waiting_on_claude: OwnerEntry[]; closed_recent: OwnerEntry[] };
+  exchange: { last_run: string | null; decision: string; next_run: string; promoted: Idea[]; parked: Idea[]; declined: Idea[] };
   notes: { when: string; text: string; answer: string }[];
   runs: { when: string; who: string; text: string }[];
 }
@@ -325,14 +334,14 @@ const priceText = (p: Venture['pricing']): string =>
 const queueName = (v: string): string => (v === 'foundry' ? 'the operation itself' : v);
 
 function nav(view: string): string {
-  const tabs: [string, string][] = [['overview', 'Overview'], ['ventures', 'Ventures'], ['pipeline', 'Pipeline'], ['owner', 'Owner']];
+  const tabs: [string, string][] = [['overview', 'Overview'], ['ventures', 'Ventures'], ['pipeline', 'Pipeline'], ['new', 'New ventures'], ['owner', 'Owner']];
   return `<nav>${tabs.map(([k, l]) => `<a href="/ops?view=${k}" class="${view === k ? 'on' : ''}">${l}</a>`).join('')}</nav>`;
 }
 
-function dashboard(view: string, kvIdeas: Idea[]): string {
+function dashboard(view: string, kvIdeas: KvIdea[]): string {
   const generated = data.generated_at.slice(0, 16).replace('T', ' ');
   const head = `<header><div><h1>Foundry Ops</h1><small>data as of ${esc(generated)} UTC · commit ${esc(data.commit)}</small></div>${nav(view)}<form method="post" action="/ops/logout"><button class="ghost" type="submit">Sign out</button></form></header>`;
-  const body = view === 'ventures' ? venturesView() : view === 'pipeline' ? pipelineView() : view === 'owner' ? ownerView(kvIdeas) : overview(kvIdeas);
+  const body = view === 'ventures' ? venturesView() : view === 'pipeline' ? pipelineView() : view === 'new' ? newVenturesView() : view === 'owner' ? ownerView(kvIdeas) : overview(kvIdeas);
   return head + body;
 }
 
@@ -348,7 +357,7 @@ function moneyStrip(): string {
 </div>`;
 }
 
-function overview(kvIdeas: Idea[]): string {
+function overview(kvIdeas: KvIdea[]): string {
   const next = data.queues
     .filter((q): q is Queue & { next: Item } => q.status === 'open' && q.next !== null)
     .sort((a, b) => b.next.score * b.weight - a.next.score * a.weight)
@@ -413,9 +422,34 @@ function pipelineView(): string {
 ${finished.length ? `<h2>Finished</h2><div class="grid">${finished.map(queueCard).join('')}</div>` : ''}`;
 }
 
-function ownerView(kvIdeas: Idea[]): string {
+function newVenturesView(): string {
+  const x = data.exchange;
+  const spikes = data.queues.find((q) => q.venture === 'new-ventures');
+  const ideaLine = (i: Idea): string =>
+    `<li>${esc(i.title)}<div class="small mute">${i.venture ? `→ ${esc(i.venture)} · ` : ''}${i.trigger ? `promotes when: ${esc(i.trigger)} · ` : ''}added ${esc(i.added)}</div></li>`;
+  const spikeItems = spikes ? [...spikes.doing, ...(spikes.next ? [spikes.next] : [])] : [];
+  const todoCount = spikes?.counts.todo ?? 0;
+  return `<div class="strip">
+<div class="kpi"><b class="num">${esc(x.next_run)}</b><span>next exchange run (weekly)</span></div>
+<div class="kpi"><b class="num">${todoCount}</b><span>research spikes queued</span></div>
+<div class="kpi"><b class="num">${x.promoted.filter((i) => i.added >= monthAgo()).length}</b><span>ideas promoted in 30 days</span></div>
+<div class="kpi"><b class="num">${x.parked.length}</b><span>ideas parked with a trigger</span></div>
+</div>
+<p class="small mute">Every Wednesday the exchange weighs new lines against improving what exists. Between runs, idle build slots work the research spikes below so each candidate arrives at the next exchange with numbers, not opinions. Spikes carry weight 2, like every new income line.</p>
+<h2>Last decision${x.last_run ? ` · ${esc(x.last_run)}` : ''}</h2><div class="card"><p class="small" style="margin:0">${x.decision ? esc(x.decision) : '<span class="empty">No exchange file yet.</span>'}</p></div>
+<h2>Research spikes (new-ventures queue)</h2><div class="card">${spikes ? `${spikeItems.length ? `<p class="small" style="margin:0 0 6px"><b>Next:</b> ${esc(spikeItems[0]!.title)}</p>` : ''}<p class="small mute num" style="margin:0">${spikes.counts.todo} to do · ${spikes.counts.doing} in progress · ${spikes.counts.done} done</p>${spikes.done_recent.length ? `<details><summary>Done in the last 7 days (${spikes.done_recent.length})</summary><ul class="clean small">${spikes.done_recent.map(itemLine).join('')}</ul></details>` : ''}` : '<p class="empty">No spikes queue.</p>'}</div>
+<h2>Promoted to a venture</h2><div class="card"><ul class="clean small">${x.promoted.slice(0, 8).map(ideaLine).join('')}</ul>${x.promoted.length > 8 ? `<details><summary>Earlier (${x.promoted.length - 8})</summary><ul class="clean small">${x.promoted.slice(8).map(ideaLine).join('')}</ul></details>` : ''}</div>
+<h2>Parked, each with the trigger that promotes it</h2><div class="card"><details><summary>${x.parked.length} parked ideas</summary><ul class="clean small">${x.parked.map(ideaLine).join('')}</ul></details></div>
+<div class="card" style="margin-top:12px"><details><summary>Declined recently (${x.declined.length})</summary><ul class="clean small">${x.declined.map(ideaLine).join('')}</ul></details></div>`;
+}
+
+function monthAgo(): string {
+  return new Date(Date.now() - 30 * 86_400_000).toISOString().slice(0, 10);
+}
+
+function ownerView(kvIdeas: KvIdea[]): string {
   const o = data.owner;
-  const noteFor = (idea: Idea): { when: string; text: string; answer: string } | undefined =>
+  const noteFor = (idea: KvIdea): { when: string; text: string; answer: string } | undefined =>
     data.notes.find((n) => n.text.includes(idea.text.slice(0, 60)));
   const ideaList = kvIdeas.length
     ? `<ul class="clean">${kvIdeas.map((i) => {
