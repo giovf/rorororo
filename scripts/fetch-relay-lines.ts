@@ -139,3 +139,25 @@ export function hostAllowed(hostname: string, hosts: readonly string[]): boolean
   const h = hostname.toLowerCase();
   return hosts.some((a) => (a.startsWith('.') ? h === a.slice(1) || h.endsWith(a) : h === a));
 }
+
+/** Statuses the relay retries after a pause (rate limit, overloaded backend). */
+export const RETRY_STATUSES: ReadonlySet<number> = new Set([429, 503]);
+/** Retries per line after the first attempt (1 s, 2 s, 4 s → 7 s at most per line). */
+export const MAX_RETRIES = 3;
+/** Pause between two consecutive lines to the same host (keeper spike 2026-10-17: Base's public RPC
+ * answered 429 `request limit reached` to every log query fired back to back; the first three
+ * calls in the same second had been served). */
+export const SAME_HOST_PACE_MS = 500;
+const RETRY_AFTER_CAP_MS = 30_000;
+
+/**
+ * How long to wait before retry `attempt` (0-based): the server's `Retry-After` seconds when it
+ * sends a sane one (capped at 30 s), else 1 s doubling per attempt.
+ */
+export function retryDelayMs(retryAfter: string | null | undefined, attempt: number): number {
+  const secs = Number(retryAfter);
+  if (retryAfter && Number.isFinite(secs) && secs > 0) {
+    return Math.min(Math.round(secs * 1000), RETRY_AFTER_CAP_MS);
+  }
+  return 1000 * 2 ** Math.max(0, attempt);
+}

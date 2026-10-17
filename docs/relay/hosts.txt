@@ -78,3 +78,5 @@ exa.ai  # Exa terms of service: resale clause for the x402 aggregator margin spi
 .polymarket.com  # Polymarket terms of use (new-ventures spike 2026-10-17)
 developer.x.com  # X developer agreement: redistribution / resale clause (new-ventures spike 2026-10-17)
 .dexscreener.com  # DexScreener API terms (new-ventures spike 2026-10-17)
+base-rpc.publicnode.com  # PublicNode's keyless Base JSON-RPC: eth_getLogs for the keeper-rewards spike (new-ventures 2026-10-17)
+base.drpc.org  # dRPC's keyless Base JSON-RPC, second source for the same log reads (new-ventures 2026-10-17)

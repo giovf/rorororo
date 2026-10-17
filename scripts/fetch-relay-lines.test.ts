@@ -2,12 +2,16 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import {
+  MAX_RETRIES,
   POST_MAX_BYTES,
+  RETRY_STATUSES,
+  SAME_HOST_PACE_MS,
   credentialShaped,
   hostAllowed,
   parseHosts,
   parseLine,
   postBodyError,
+  retryDelayMs,
 } from './fetch-relay-lines.ts';
 
 describe('parseLine', () => {
@@ -170,5 +174,25 @@ describe('hosts.txt allowlist', () => {
     expect(new Set(hosts).size).toBe(hosts.length);
     expect(hostAllowed('find-and-update.company-information.service.gov.uk', hosts)).toBe(true);
     expect(hostAllowed('example.com', hosts)).toBe(false);
+  });
+});
+
+describe('retryDelayMs', () => {
+  it('honours a sane Retry-After, capped at 30 s, else backs off 1 s doubling', () => {
+    expect(retryDelayMs('2', 0)).toBe(2000);
+    expect(retryDelayMs('0.5', 3)).toBe(500);
+    expect(retryDelayMs('120', 0)).toBe(30_000);
+    expect(retryDelayMs(null, 0)).toBe(1000);
+    expect(retryDelayMs(undefined, 1)).toBe(2000);
+    expect(retryDelayMs('Wed, 21 Oct 2026 07:28:00 GMT', 2)).toBe(4000);
+    expect(retryDelayMs('0', 2)).toBe(4000);
+    expect(retryDelayMs('-3', 0)).toBe(1000);
+  });
+
+  it('retries 429 and 503 only, three times, with a half-second same-host pace', () => {
+    expect([...RETRY_STATUSES].sort()).toEqual([429, 503]);
+    expect(RETRY_STATUSES.has(500)).toBe(false);
+    expect(MAX_RETRIES).toBe(3);
+    expect(SAME_HOST_PACE_MS).toBe(500);
   });
 });
