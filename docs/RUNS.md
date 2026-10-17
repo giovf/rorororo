@@ -1213,3 +1213,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 18:55 | burn-down | Spike keeper-rewards: gas US$0.08-0.17 a tx; declined on capital and cadence, harvest-fee trigger kept
 - 2026-10-17 18:55 | burn-down | Queue: new-ventures spike-keeper-rewards-simulation done; exchange onchain-keeper-rewards re-parked
 - 2026-10-17 18:57 | burn-down | Stopping: 1 spike done (keeper rewards, declined) after 9 relay rounds; spike-hmrc-vat-lookup left for 19:00
+- 2026-10-17 18:54 | notify | 3 jobs for your next Claude Code session, oldest 13 days: sign and upload ReadFocus 0.3.0
