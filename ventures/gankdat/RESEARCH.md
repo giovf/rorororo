@@ -559,4 +559,8 @@ hypothesis (a)/(b) of `refresh-uk-trademark-journal-2026-10-17`, `ok` with no re
 ran and wrote nothing (a code path, not the platform), `no invocation in 26 h` means the trigger never
 fired (c). If the row reads `wave 06:05: unknown`, the invocation rows carry no `$workers.outcome` in the
 API's shape — read the printed first row in the job log and rename the fields.
+Relay `cf-query-builder-2026-10-17` (read the same run): the Query Builder page names `$workers.cpuTimeMs`,
+`$workers.event.request.path` and `$metadata.message` as filter keys, so the `$workers.*` reads follow the
+documented naming; `wrangler tail`'s object (`outcome: "ok"`, `event`, `eventTimestamp`) is the same record.
+`refresh-uk-trademark-journal-2026-10-17` waits for the 10-17 row (`not_before` 2026-10-18).
 

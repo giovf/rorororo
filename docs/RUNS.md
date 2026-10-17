@@ -1174,3 +1174,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 01:20 | burn-down | store.ts CRON_BY_WAVE + cronOfSource; runner-refresh.mjs queries each stale source's wave; 14 tests
 - 2026-10-17 01:20 | burn-down | x402 lane mutes the workerd codegen warning only (withoutCodegenWarning); docs host relayed
 - 2026-10-17 01:20 | burn-down | Queue: gankdat wave-log-cron-outcome-reading done; proof is `wave 06:05:` on the next stale row
+- 2026-10-17 01:25 | burn-down | Relay: Query Builder docs name $workers.cpuTimeMs, so the $workers.* reads follow the docs
+- 2026-10-17 01:25 | burn-down | Queue: gankdat refresh-uk-trademark-journal-2026-10-17 dated 10-18, needs the 10-17 outcome row
+- 2026-10-17 01:26 | burn-down | Stopping: 1 item built (cron outcome reading); next item dated; starved-and-cooled, pass spent 17:27
