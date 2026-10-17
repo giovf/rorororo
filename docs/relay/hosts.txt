@@ -72,3 +72,4 @@ api.routescan.io  # Routescan keyless Etherscan-compatible API for Base: liquida
 mainnet.base.org  # Base's public JSON-RPC endpoint (POST eth_blockNumber, eth_getLogs — foundry relay-post-json, 2026-10-14)
 api.github.com  # GitHub REST API, unauthenticated: issue comments and searches a bounty scanner rule is verified against (oss-bounties `bounty-board-opire-source`, 2026-10-14)
 .sra.org.uk  # SRA firm data web service terms and the public register (exchange pre-research 2026-10-16)
+developers.cloudflare.com  # Workers Logs / Query Builder field reference (gankdat wave-log-cron-outcome-reading, 2026-10-17)
