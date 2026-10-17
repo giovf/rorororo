@@ -859,13 +859,13 @@
     {
       "id": "empty-skips-cooling-queues",
       "title": "`npm run pipeline empty` leaves a cooling queue out even when it is flagged or emptied — the prompt says it does, the code lists it",
-      "why": "2026-10-17 burn-down: the last new-ventures spike emptied the queue, so step 2's rule set needs_research: true, and `empty` printed [\"new-ventures\"] although the queue was researched that day — needsResearch() in packages/core/src/pipeline.ts applies the 48-h cooling filter only to starved queues, not to flagged or empty ones, while burn-down.md step 1 says a cooling queue 'is never researched again' and that `empty` leaves it out. The operator rule saved the night; the next slot's runner has to know it. Fix: needsResearch() drops cooling queues from the flagged list too (they return when the 48 h or research_after pass; `cold` already reads the same rule), one test in packages/core, one sentence in docs/pipeline/README.md.",
+      "why": "2026-10-17 burn-down: the last new-ventures spike emptied the queue, so step 2's rule set needs_research: true, and `empty` printed [\"new-ventures\"] although the queue was researched that day — needsResearch() in packages/core/src/pipeline.ts applies the 48-h cooling filter only to starved queues, not to flagged or empty ones, while burn-down.md step 1 says a cooling queue 'is never researched again' and that `empty` leaves it out. The operator rule saved the night; the next slot's runner has to know it. Fix: needsResearch() drops cooling queues from the flagged list too (they return when the 48 h or research_after pass; `cold` already reads the same rule), one test in packages/core, one sentence in docs/pipeline/README.md. — Built 2026-10-17 burn-down: needsResearch() and the `cold` gate both skip a cooling queue whether flagged, emptied or starved; test in packages/core; README sentence.",
       "effort_days": 0.05,
       "proof": "over 14 days no research run-log line names a venture whose queue shows `researched` within the previous 48 h",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-17",
-      "doing_since": "2026-10-17"
+      "done_at": "2026-10-17"
     }
   ]
 }

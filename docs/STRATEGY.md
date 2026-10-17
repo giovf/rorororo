@@ -1386,3 +1386,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   start 4.5–9.5 h late (0 of 8 before 08:00) whatever the minute, while the 07:00 routine's dispatch wrote the rows at
   07:13–07:17 on all eight days. The crons stay as the safety net for a missed routine (≈ 2 billed minutes a day); no
   further fallback is built. Why: the number decides it, and the dispatch already made the schedule irrelevant.
+- 2026-10-17 burn-down: foundry `empty-skips-cooling-queues` — `npm run pipeline empty` and the `cold` gate now leave a
+  cooling queue out even when it is flagged or emptied, as the burn-down prompt already said they did; the code applied
+  the 48 h only to starved queues, so the spike that emptied new-ventures tonight listed it for research hours after
+  its research run. Why: the rule lived only in the operator's reading; now the tool enforces it.

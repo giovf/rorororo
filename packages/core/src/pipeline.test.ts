@@ -167,6 +167,23 @@ describe('scheduling', () => {
     expect(text).toContain('pipeline starved');
   });
 
+  it('leaves a flagged or emptied queue out of research while it is cooling', () => {
+    // 2026-10-17: the last new-ventures spike emptied the queue, the build rule flagged it, and
+    // `empty` listed a venture researched that same day — the prompt said it would not.
+    const spent = parseQueue(
+      queue('new-ventures', [item('spike', 'done', 6)], { needs_research: true, researched: '2026-10-17' }),
+    );
+    const buildable = parseQueue(queue('foundry', [item('fix', 'todo', 4)]));
+    expect(needsResearch([spent, buildable], { today: '2026-10-17' })).toEqual([]);
+    expect(needsResearch([spent, buildable], { today: '2026-10-18' })).toEqual([]);
+    expect(needsResearch([spent, buildable], { today: '2026-10-19' }).map((q) => q.venture)).toEqual(['new-ventures']);
+    // Nothing buildable and the flagged queue cooling: starved and cooled, not research.
+    expect(needsResearch([spent], { today: '2026-10-18' })).toEqual([]);
+    expect(formatPipeline({ exchange: { ideas: [] }, queues: [spent] }, { today: '2026-10-18' })).toContain(
+      'cooling: new-ventures (researched 2026-10-17)',
+    );
+  });
+
   it('does not offer a queue researched within 48 h for research again', () => {
     // 2026-10-05: five research runs in a day, and the next morning the build was offered the
     // same venture eleven hours after its research because `updated` was all it had to go on.

@@ -67,8 +67,10 @@ if (process.argv[2] === 'cold') {
   const reasons: string[] = [];
   for (const q of cold) {
     if (q.items.some(buildable)) reasons.push(`${q.venture}: buildable item`);
+    else if (cooling(q))
+      continue; // researched within 48 h or waiting: flagged or not, not tonight
     else if (q.needs_research || !q.items.some(open)) reasons.push(`${q.venture}: needs research`);
-    else if (!cooling(q)) reasons.push(`${q.venture}: starved, not cooling`);
+    else reasons.push(`${q.venture}: starved, not cooling`);
   }
   const runs = readFileSync(path.resolve(dir, '..', 'RUNS.md'), 'utf8');
   // `-- --routine=build` (npm keeps a bare flag for itself, so npm_config_routine is read too)

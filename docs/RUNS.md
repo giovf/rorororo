@@ -1224,3 +1224,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 19:21 | burn-down | Day-7 cron read: metrics crons started 11:08-16:10 UTC on 10-10..10-17, 0 of 8 before 08:00; dispatch 07:13-07:17 daily
 - 2026-10-17 19:21 | burn-down | SCHEDULERS.md: day-7 verdict on both metrics rows; crons kept as the safety net, dispatch is the source
 - 2026-10-17 19:21 | burn-down | Queue: foundry metrics-crons-day-7-read done; empty-skips-cooling-queues queued (score 4, cooling vs empty)
+- 2026-10-17 19:22 | burn-down | pipeline.ts: needsResearch and cold skip a cooling queue even when flagged or emptied; 1 test
+- 2026-10-17 19:22 | burn-down | docs/pipeline/README.md: cooling covers flagged and emptied queues (empty and cold leave them out)
+- 2026-10-17 19:22 | burn-down | Queue: foundry empty-skips-cooling-queues done (filed and built this run; empty printed new-ventures)
