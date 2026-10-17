@@ -863,8 +863,9 @@
       "effort_days": 0.05,
       "proof": "over 14 days no research run-log line names a venture whose queue shows `researched` within the previous 48 h",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-17"
+      "status": "doing",
+      "added": "2026-10-17",
+      "doing_since": "2026-10-17"
     }
   ]
 }
