@@ -1190,3 +1190,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 09:13 | watchdog | missed: metrics slot 2026-10-17 07:00 UTC left no commit or run line by 09:00; usage limit? see claude.ai/code/routines
 - 2026-10-17 09:00 | interactive | Venture stages corrected on the dashboard: hackathons launched (entry submitted), oss-bounties building
 - 2026-10-17 10:00 | interactive | New-ventures queue (4 research spikes, weight 2) and a New ventures dashboard tab: next run, decision, parked ideas
+- 2026-10-17 17:10 | build | Spike x402 aggregator: Bazaar top 700 of 47,204 read; US$9,970/30 d proxyable, 68% one endpoint
+- 2026-10-17 17:10 | build | Spike x402 aggregator: 30% gateway nets ~US$730/mo at 100% capture, US$16–74 at 2–10%; park
+- 2026-10-17 17:10 | build | Spike x402 aggregator: Exa, X, CoinGecko terms forbid resale; markup under the fee where allowed
+- 2026-10-17 17:10 | build | Relay hosts: exa.ai, coingecko, polymarket, developer.x.com, dexscreener added for the terms read
+- 2026-10-17 17:10 | build | Queue: new-ventures spike-x402-aggregator-margins done; exchange x402-aggregator-mcp re-parked

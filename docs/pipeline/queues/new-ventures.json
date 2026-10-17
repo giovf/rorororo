@@ -9,13 +9,13 @@
     {
       "id": "spike-x402-aggregator-margins",
       "title": "Research spike: x402 aggregator margin map — from the Bazaar's top 200 resources (price, 30-day paid calls, payer count) compute what a 20–40% markup gateway would net per month at observed volumes, which upstreams allow proxying, and the three categories where agents pay most; write docs/exchange/spikes/x402-aggregator-margins.md with a promote / park recommendation",
-      "why": "Owner 2026-10-11: prefer small cuts of money already flowing. The W42 exchange parked the aggregator on one data point (the best known reseller nets about US$38/month) and a trigger that depends on our own listing converting. The Bazaar discovery API is public and lists 34,668 priced resources with usage counts (relay GET), so the margin question can be answered from the whole market now, not from our listing later.",
+      "why": "Owner 2026-10-11: prefer small cuts of money already flowing. The W42 exchange parked the aggregator on one data point (the best known reseller nets about US$38/month) and a trigger that depends on our own listing converting. The Bazaar discovery API is public and lists 34,668 priced resources with usage counts (relay GET), so the margin question can be answered from the whole market now, not from our listing later. — Spike 2026-10-17 (docs/exchange/spikes/x402-aggregator-margins.md): park — ceiling ≈ US$730/month at 100 % capture, US$16–74 at 2–10 %; the markup clears the US$0.001 fee only where resale is forbidden.",
       "effort_days": 0.3,
       "proof": "the spike file exists with the numbers and a recommendation the 2026-10-21 exchange cites",
       "score": 8,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-17",
-      "doing_since": "2026-10-17"
+      "done_at": "2026-10-17"
     },
     {
       "id": "spike-pay-per-crawl-stats-pages",
