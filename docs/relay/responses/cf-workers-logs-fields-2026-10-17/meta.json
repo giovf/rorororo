@@ -1,0 +1,45 @@
+{
+  "request": "cf-workers-logs-fields-2026-10-17",
+  "fetched_at": "2026-10-17T01:09:16.217Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/workers/observability/logs/workers-logs/",
+      "fetched_at": "2026-10-17T01:09:15.917Z",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/workers/observability/logs/workers-logs/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "1.html",
+      "bytes": 228575,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/workers/observability/logs/query-builder/",
+      "fetched_at": "2026-10-17T01:09:16.068Z",
+      "status": 404,
+      "final_url": "https://developers.cloudflare.com/workers/observability/logs/query-builder/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "2.html",
+      "bytes": 142124,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/workers/observability/logs/workers-logs/filters-and-fields/",
+      "fetched_at": "2026-10-17T01:09:16.135Z",
+      "status": 404,
+      "final_url": "https://developers.cloudflare.com/workers/observability/logs/workers-logs/filters-and-fields/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "3.html",
+      "bytes": 142124,
+      "truncated": false
+    }
+  ]
+}
