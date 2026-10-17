@@ -31,13 +31,13 @@
     {
       "id": "spike-keeper-rewards-simulation",
       "title": "Research spike: on-chain keeper rewards on Base — with the POST relay now built (foundry relay-post-json, 2026-10-14), read 7 days of liquidation and harvest events on Aave v3 and Morpho on Base from a public RPC or explorer API, count the rewards paid to callers, the number of distinct callers and median gas, and state whether a £10 gas budget could have netted anything; write docs/exchange/spikes/keeper-rewards.md",
-      "why": "Owner idea 2026-10-11, parked by the W42 exchange because the measurement needed a POST relay that did not exist; it exists now. The answer is a number, not an opinion, and it decides the idea either way.",
+      "why": "Owner idea 2026-10-11, parked by the W42 exchange because the measurement needed a POST relay that did not exist; it exists now. The answer is a number, not an opinion, and it decides the idea either way. — Spike 2026-10-17 (docs/exchange/spikes/keeper-rewards.md): Aave v3 US$6,523 of bonus to 13 addresses (93 % to one), Morpho Blue US$153,005 to 48 callers (85 % to five, 97 % on two crash days), long-tail median US$18.72 a week; gas US$0.08–0.17 a transaction; liquidations need repayment capital or a contract. Declined; the parked idea keeps one trigger (harvest call fees).",
       "effort_days": 0.4,
       "proof": "the spike file holds the 7-day reward total, caller count, gas median and a net figure for a £10 budget",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-17",
-      "doing_since": "2026-10-17"
+      "done_at": "2026-10-17"
     },
     {
       "id": "spike-hmrc-vat-lookup",

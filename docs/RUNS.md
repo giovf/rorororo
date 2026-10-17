@@ -1206,3 +1206,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 17:33 | burn-down | Exchange ai-crawler-paywall-stats-pages re-parked with two dated triggers; handoff: token Zone Analytics Read
 - 2026-10-17 17:33 | burn-down | Queue: new-ventures spike-pay-per-crawl-stats-pages done (declined on eligibility and traffic)
 - 2026-10-17 17:35 | burn-down | Stopping: 1 spike done (pay-per-crawl, declined); next spike-keeper-rewards-simulation left for 18:00
+- 2026-10-17 18:55 | burn-down | Relay: 429/503 retried with backoff, same-host lines paced 0.5 s (fetch-relay.mjs); 2 tests
+- 2026-10-17 18:55 | burn-down | Relay: Base logs served only by Tenderly's gateway, 1,000 blocks a call; 8 dead RPC hosts dropped
+- 2026-10-17 18:55 | burn-down | Spike keeper-rewards: Aave v3 Base 37 liquidations, US$6,523 bonus, 93% to one address
+- 2026-10-17 18:55 | burn-down | Spike keeper-rewards: Morpho 620 events, US$153k incentive, 85% to 5 of 48; long tail US$19/wk
+- 2026-10-17 18:55 | burn-down | Spike keeper-rewards: gas US$0.08-0.17 a tx; declined on capital and cadence, harvest-fee trigger kept
+- 2026-10-17 18:55 | burn-down | Queue: new-ventures spike-keeper-rewards-simulation done; exchange onchain-keeper-rewards re-parked
+- 2026-10-17 18:57 | burn-down | Stopping: 1 spike done (keeper rewards, declined) after 9 relay rounds; spike-hmrc-vat-lookup left for 19:00

@@ -9,7 +9,8 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 Nothing is waiting on you.
 
-## Waiting on an attended Claude session, not you (2)
+## Waiting on an attended Claude session, not you (3)
 
 - since 2026-10-04 — sign and upload ReadFocus 0.3.0 (ruler colour / height / opacity / lock-in-place controls, plus 0.2.1's Firefox for Android: `gecko_android`, phone-width popup, tap-to-place ruler) once 0.2.0 clears…
 - since 2026-10-05 — sign and upload Highlight Keep 0.4.0 (imports from Weava/Glasp .csv and Hypothesis exports, the "On for every site" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the…
+- since 2026-10-17 — the CI Cloudflare token (CLOUDFLARE_API_TOKEN) lacks Zone Read + Zone Analytics Read for gankdat.com, so the Daily numbers `stats crawlers: zone` reading (AI-crawler fetches of /stats… over 30 d, spi…

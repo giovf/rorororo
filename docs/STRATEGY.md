@@ -1362,3 +1362,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   parked idea carries two dated triggers (plan table opens to Free/Pro AND ≥ 3,000 AI fetches/30 d) and the Daily numbers
   row now measures the crawler share daily. Why: a free zone cannot switch the toggle on, and the crawlers that do visit are
   the ones we want unmetered.
+- 2026-10-17 burn-down: new-ventures spike `keeper-rewards-simulation` — 7 days of Base liquidations read on-chain through
+  the relay (nine rounds; only Tenderly's public gateway serves `eth_getLogs`, 1,000 blocks a call). Aave v3: 37 events,
+  US$6,523 of bonus, 93 % to one address, median event US$0.66. Morpho Blue: 620 events, US$153,005 of incentive, 85 % to
+  five of 48 callers, 97 % of events on two crash days; the 43 long-tail callers earned a median US$18.72 for the week.
+  Gas is US$0.08–0.17 a transaction, so a £10 budget buys 77–158 attempts — the constraints are repayment capital
+  (median Morpho event repays ≈ US$49, the wallet holds US$1.11) or a flash-liquidation contract, a sub-block cadence and
+  a paid RPC. Liquidation keeping declined; the parked idea keeps one trigger, harvest call fees (the capital-free shape).
+  By-product: the relay retries 429/503 with backoff and paces same-host lines, and hosts.txt records which Base RPC
+  serves logs. Why: the number the owner's idea needed now exists, and it says the money is real but already taken.
