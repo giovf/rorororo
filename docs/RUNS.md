@@ -1169,3 +1169,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 00:35 | burn-down | /stats/<slug> with no blob renders the notice page (200) instead of a JSON 503; probe skips paused tools
 - 2026-10-17 00:35 | burn-down | Queue: gankdat uk-planning-paused-snapshot-retention done; the lost 10-09 snapshot cannot be re-created
 - 2026-10-17 00:39 | burn-down | Stopping: research + 1 item built (snapshot retention); next wave-log-cron-outcome-reading left for 01:00
+- 2026-10-17 01:20 | burn-down | wave-logs.ts: noise lines (request lines, x402 Ajv warning) dropped, refresh event preferred
+- 2026-10-17 01:20 | burn-down | wave-logs.ts: cron invocation query per wave (cf-worker-event + cron needle), outcome/wall reading
+- 2026-10-17 01:20 | burn-down | store.ts CRON_BY_WAVE + cronOfSource; runner-refresh.mjs queries each stale source's wave; 14 tests
+- 2026-10-17 01:20 | burn-down | x402 lane mutes the workerd codegen warning only (withoutCodegenWarning); docs host relayed
+- 2026-10-17 01:20 | burn-down | Queue: gankdat wave-log-cron-outcome-reading done; proof is `wave 06:05:` on the next stale row

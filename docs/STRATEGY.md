@@ -1331,3 +1331,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   description carries it so the metrics probe picks a live source, and `/stats/<slug>` with no blob renders the notice as a
   page. Why: the 10-11 decision to keep serving uk-planning's snapshot held for exactly the 7-day KV TTL. Limit: the expired
   snapshot is gone for good; uk-planning answers with its notice until the origin serves rows again or §7 retires it.
+- 2026-10-17 burn-down: gankdat `wave-log-cron-outcome-reading` built — the wave-log reading drops request lines and the x402
+  Ajv warning, prefers a structured refresh event, and reads each stale source's wave by its Cron Trigger (invocation log
+  type `cf-worker-event`, cron as needle, `$workers.outcome` / wall time when carried); the warning is muted at the lane.
+  Why: the reading built 10-09 showed only noise on its first real test (10-16) and the journal's third silent streak read
+  nothing; the next stale row names the wave's outcome, which is what `refresh-uk-trademark-journal-2026-10-17` needs first.
+

@@ -538,3 +538,25 @@ Not queued: the x402 warning at source (only if cheap inside the reading item �
 more datasets, pricing, listings (triggers unchanged since 10-05); the Bazaar reading (dated 11-14, the
 10-17 row shows whether the 10-16 payment indexed the routes); the sign-in drop (two events, no repeat).
 `researched: 2026-10-17`; the first item is buildable now and `next` names it.
+
+## Build 2026-10-17 — cron outcome reading (burn-down)
+
+Built `wave-log-cron-outcome-reading` (score 6). What changed: the wave-log reading drops the invocation
+request lines and @x402/hono's Ajv warning before it picks a line, prefers a structured refresh event, and
+reads each stale source's wave by its Cron Trigger as a second observability query. Evidence read this
+run: the Workers Logs docs through the relay (`docs/relay/responses/cf-workers-logs-fields-2026-10-17`,
+page 1 of 3 — the query-builder and fields pages 404 at the guessed paths; a second request,
+`cf-query-builder-2026-10-17`, asks for the sidebar's `/workers/observability/query-builder/` and the
+real-time-logs page for the outcome shape): an invocation log is `$metadata.type = "cf-worker-event"`,
+and a cron invocation's message is the schedule itself (`5 6 * * *`), so the query filters on that type
+and uses the cron as the needle; `$workers.outcome`, `$workers.wallTimeMs` and `$workers.event.cron` are
+read when present (the docs page does not list them; the runner prints the first raw invocation row when
+nothing parsed, so the 10-17 metrics log confirms or corrects the field names). The x402 warning is muted
+at the lane for that exact message only (`withoutCodegenWarning`), because 17 warn lines per isolate
+start were the newest line of every stale source's reading. What the next row should say: for
+uk-trademark-journal, `wave 06:05: <outcome> <wall>s <age>` — `exceededCpu` or `exceededMemory` confirms
+hypothesis (a)/(b) of `refresh-uk-trademark-journal-2026-10-17`, `ok` with no refresh line means the wave
+ran and wrote nothing (a code path, not the platform), `no invocation in 26 h` means the trigger never
+fired (c). If the row reads `wave 06:05: unknown`, the invocation rows carry no `$workers.outcome` in the
+API's shape — read the printed first row in the job log and rename the fields.
+
