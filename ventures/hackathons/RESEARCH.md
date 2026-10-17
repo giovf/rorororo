@@ -118,3 +118,4 @@ submissions with no placing and no judge feedback → `finished`.
 | 2026-10-15 | Research | — | — | — | market sweep: Vultr Agent Rush (3–8 Nov, prizes TBA) added to the 10-20 lablab read; Colosseum Agent Hackathon closed in Feb; nothing new fits; waiting until 2026-10-20 |
 | 2026-10-16 | Nebius dropped | — | — | — | owner declined action 025 (card required for onboarding); PayPal entry media (15 images) prepared for the Devpost form |
 | 2026-10-16 | Submitted | — | — | — | PayPal AI Hackathon entry submitted by the owner on Devpost (pool $67,500; judging after 2026-11-12) |
+| 2026-10-17 | Status | — | — | — | venture.json → launched as of the 2026-10-16 submission (an entry on the shelf is the line's 'live'); earning = a prize credited |

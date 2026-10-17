@@ -205,3 +205,4 @@ count alone.
 | 2026-10-14 | Second source | — | — | — | Opire read: 6 open rewards worth $212 on 5 issues, none a free funded fix; scanner reads Opire's list and `/reward`, marks rows `not escrowed`; 10-14 board 8 kept, 0 free |
 | 2026-10-15 | Research | — | — | — | 10-14 board 8 kept, 0 free (second board under the new rules); Algora tRPC list + IssueHunt sent to the relay; waiting until the 10-18 review |
 | 2026-10-15 | No claim | — | — | — | trovu#329 ($30, Opire) dropped on read: Android video + human statement required, PR #718 open; scanner now pages the timeline and drops both shapes; 7 of 7 filed items dropped |
+| 2026-10-17 | Status | — | — | — | venture.json → building: the board runs daily (3 boards so far), 8 candidates filed and all dropped by the shape rules (already rewarded, contest-style, paid off-platform, claimant must fund); launched = the first claim PR open |

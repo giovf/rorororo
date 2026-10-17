@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-10-16T18:38:40.519Z",
-  "commit": "98f85e8c7d05",
+  "generated_at": "2026-10-17T13:46:01.918Z",
+  "commit": "38bb06e231e0",
   "money": {
     "spent": 44.4,
     "planned": 8,
@@ -29,14 +29,14 @@
       },
       "thesis": "Bid-intelligence and counterparty-risk teams, and the AI agents working for them, pay for official UK/EU procurement, planning, sanctions and company data served as one clean JSON schema (REST + MCP + x402 pay-per-req…",
       "latest": {
-        "date": "2026-10-16",
+        "date": "2026-10-17",
         "event": "Daily numbers",
         "users": "3 accts (0 paid, +0/24h)",
         "rating": "—",
-        "sales": "0 x402 paid",
-        "notes": "MCP 24h: 170 authed, 2519 anon, 84 preview, 4 paywall hits; wanted: connect_account 4; changes 7d: 0 (mcp 0, rest 0); indexnow: 14 urls 200; x402 validate: 17/17 valid; bazaar: 1 listed, 0 calls/30d, 0 payers, last 2026-07-10; mcp probe:…"
+        "sales": "0 x402 paid (+1 own probe)",
+        "notes": "MCP 24h: 156 authed, 2533 anon, 83 preview, 3 paywall hits; wanted: connect_account 3; changes 7d: 0 (mcp 0, rest 0); indexnow: 15 urls 200; x402 validate: 17/17 valid; bazaar: 1 listed, 1 calls/30d, 1 payers, last 2026-10-16; mcp probe:…"
       },
-      "metricRows": 28,
+      "metricRows": 29,
       "revenue": 0,
       "cost": 40.7
     },
@@ -45,21 +45,21 @@
       "name": "Hackathon prizes",
       "channel": "hackathon",
       "group": "Prize entries",
-      "status": "building",
-      "statusChangedOn": "2026-10-11",
+      "status": "launched",
+      "statusChangedOn": "2026-10-16",
       "pricing": {
         "kind": "free"
       },
       "thesis": "Sponsors have already committed cash prizes to online hackathons that accept existing projects, are open to UK individuals and are judged on merit; entering the portfolio's live products (gankdat's MCP server and agen…",
       "latest": {
-        "date": "2026-10-16",
-        "event": "Submitted",
+        "date": "2026-10-17",
+        "event": "Status",
         "users": "—",
         "rating": "—",
         "sales": "—",
-        "notes": "PayPal AI Hackathon entry submitted by the owner on Devpost (pool $67,500; judging after 2026-11-12)"
+        "notes": "venture.json → launched as of the 2026-10-16 submission (an entry on the shelf is the line's 'live'); earning = a prize credited"
       },
-      "metricRows": 8,
+      "metricRows": 9,
       "revenue": 0,
       "cost": 0
     },
@@ -76,14 +76,14 @@
       },
       "thesis": "Students, researchers and analysts pay once for a private, local web highlighter that keeps their highlights and exports them, because the paid incumbent is abandoned with billing horror stories and the free ones need…",
       "latest": {
-        "date": "2026-10-16",
+        "date": "2026-10-17",
         "event": "Daily check",
         "users": "0",
         "rating": "—",
         "sales": "0",
-        "notes": "via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-15: 0 impressions, 0 clicks, indexed 0/2, not: URL is unknown to Google ×2; sales…"
+        "notes": "via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-16: 0 impressions, 0 clicks, indexed 0/2, not: URL is unknown to Google ×2; sales…"
       },
-      "metricRows": 43,
+      "metricRows": 44,
       "revenue": 0,
       "cost": 0
     },
@@ -92,21 +92,21 @@
       "name": "Open-source bounties",
       "channel": "bounty-board",
       "group": "Bounties",
-      "status": "validated",
+      "status": "building",
       "statusChangedOn": "2026-10-11",
       "pricing": {
         "kind": "free"
       },
       "thesis": "Maintainers post cash on specific GitHub issues (Algora-style bounty boards) and pay the author of the merged pull request; a Claude-run operation can read the whole board, pick the issues it can close well, and colle…",
       "latest": {
-        "date": "2026-10-15",
-        "event": "No claim",
+        "date": "2026-10-17",
+        "event": "Status",
         "users": "—",
         "rating": "—",
         "sales": "—",
-        "notes": "trovu#329 ($30, Opire) dropped on read: Android video + human statement required, PR #718 open; scanner now pages the timeline and drops both shapes; 7 of 7 filed items dropped"
+        "notes": "venture.json → building: the board runs daily (3 boards so far), 8 candidates filed and all dropped by the shape rules (already rewarded, contest-style, paid off-platform, claimant must fund); launched = the first claim PR open"
       },
-      "metricRows": 11,
+      "metricRows": 12,
       "revenue": 0,
       "cost": 0
     },
@@ -123,14 +123,14 @@
       },
       "thesis": "Readers with ADHD, dyslexia or heavy reading loads pay once for a reliable, private focus-reading tool, because the popular ones are abandoned or broken and the good ones lack maintenance.",
       "latest": {
-        "date": "2026-10-16",
+        "date": "2026-10-17",
         "event": "Daily check",
-        "users": "0",
+        "users": "3",
         "rating": "—",
         "sales": "0",
-        "notes": "via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 10-15: 0 impressions, 0 clicks, indexed 0/3, not: URL is unknown to Google ×3; sales…"
+        "notes": "via store-metrics CI: chrome: 3 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 10-16: 0 impressions, 0 clicks, indexed 0/3, not: URL is unknown to Google ×3; sales…"
       },
-      "metricRows": 46,
+      "metricRows": 47,
       "revenue": 0,
       "cost": 0
     },
@@ -147,14 +147,14 @@
       },
       "thesis": "Design-system teams pay to migrate legacy styles and hard-coded values onto Figma variables and keep collections clean, because Figma's own tooling for this is manual and its Variables API is Enterprise-only.",
       "latest": {
-        "date": "2026-10-16",
+        "date": "2026-10-17",
         "event": "Daily check",
         "users": "0",
         "rating": "0",
         "sales": "0",
-        "notes": "via store-metrics CI: figma: install_count 0, like_count 0, view_count 12, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1271, link to variables 10/175, unused variables …"
+        "notes": "via store-metrics CI: figma: install_count 0, like_count 0, view_count 14, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1271, link to variables 10/175, unused variables …"
       },
-      "metricRows": 45,
+      "metricRows": 46,
       "revenue": 0,
       "cost": 0
     }
@@ -166,13 +166,19 @@
       "weight": 1,
       "needs_research": false,
       "counts": {
-        "todo": 5,
+        "todo": 6,
         "doing": 0,
         "blocked": 1,
-        "done": 69,
+        "done": 70,
         "dropped": 0
       },
-      "next": null,
+      "next": {
+        "id": "triage-reconcile-before-owner",
+        "title": "Triage reconciles an amount or status against the ledger/RESEARCH before it files an owner: line",
+        "score": 4,
+        "status": "todo",
+        "added": "2026-10-17"
+      },
       "doing": [],
       "blocked": [
         {
@@ -185,14 +191,6 @@
         }
       ],
       "scheduled": [
-        {
-          "id": "metrics-crons-day-7-read",
-          "title": "Day-7 read of the odd-minute metrics crons: do `gankdat metrics` (37 6) and `store metrics` (52 6) now start before 08:00 UTC?",
-          "score": 3,
-          "status": "todo",
-          "not_before": "2026-10-17",
-          "added": "2026-10-09"
-        },
         {
           "id": "actions-minutes",
           "title": "Trim GitHub Actions usage below ~1,500 min/month so the repo can go private (free cap 2,000)",
@@ -227,6 +225,14 @@
         }
       ],
       "done_recent": [
+        {
+          "id": "first-run-check-new-workflows",
+          "title": "Dispatch a routine-written workflow once after the installer lands it and fix a failing first run in that same run",
+          "score": 5,
+          "status": "done",
+          "done_at": "2026-10-17",
+          "added": "2026-10-17"
+        },
         {
           "id": "metrics-slot-trace",
           "title": "The 07:00 metrics routine leaves a slot marker, and its reviews/comments check stops adding a second row per venture per day",
@@ -362,14 +368,6 @@
           "status": "done",
           "done_at": "2026-10-10",
           "added": "2026-10-10"
-        },
-        {
-          "id": "metrics-crons-off-the-half-hour",
-          "title": "Move the 06:30 and 06:45 metrics crons to odd minutes and measure whether GitHub still fires them ~7 h late",
-          "score": 3,
-          "status": "done",
-          "done_at": "2026-10-09",
-          "added": "2026-10-09"
         }
       ]
     },
@@ -379,10 +377,10 @@
       "weight": 1,
       "needs_research": false,
       "counts": {
-        "todo": 5,
+        "todo": 6,
         "doing": 0,
         "blocked": 2,
-        "done": 49,
+        "done": 51,
         "dropped": 0
       },
       "next": null,
@@ -414,6 +412,14 @@
           "status": "todo",
           "not_before": "2026-10-18",
           "added": "2026-10-11"
+        },
+        {
+          "id": "refresh-uk-trademark-journal-2026-10-17",
+          "title": "uk-trademark-journal: third silent-night streak since 10-04 (no refresh_log row 10-15, 10-16 after ok 10-14 06:10) — read the wave outcome, find why wave 7 d…",
+          "score": 6,
+          "status": "todo",
+          "not_before": "2026-10-18",
+          "added": "2026-10-17"
         },
         {
           "id": "claude-directory-day-30",
@@ -449,6 +455,22 @@
         }
       ],
       "done_recent": [
+        {
+          "id": "uk-planning-paused-snapshot-retention",
+          "title": "Keep a paused source's last snapshot alive: a failed refresh with a snapshot in KV re-puts the snapshot and its stats blob with a fresh TTL, /stats/<slug> re…",
+          "score": 7,
+          "status": "done",
+          "done_at": "2026-10-17",
+          "added": "2026-10-17"
+        },
+        {
+          "id": "wave-log-cron-outcome-reading",
+          "title": "Wave-log reading: read the wave's own cron invocation outcome (`$workers.event.cron`, `$workers.outcome`, wall time) for a stale source and drop request line…",
+          "score": 6,
+          "status": "done",
+          "done_at": "2026-10-17",
+          "added": "2026-10-17"
+        },
         {
           "id": "googlebot-401-noindex",
           "title": "Keep Googlebot out of the keyless 401/402 API answers: read the Search Console URL list, then noindex or robots-disallow those paths",
@@ -546,47 +568,6 @@
           "status": "done",
           "done_at": "2026-10-10",
           "added": "2026-10-10"
-        },
-        {
-          "id": "oauth-connect-funnel-check",
-          "title": "Walk the MCP OAuth sign-in hop end to end from a real Claude client and record where the daily connect_account calls drop",
-          "score": 5,
-          "status": "done",
-          "not_before": "2026-10-09",
-          "done_at": "2026-10-09",
-          "added": "2026-10-04"
-        },
-        {
-          "id": "wave-log-reading",
-          "title": "Read last night's Worker log lines for every stale or erroring source from the metrics runner (Workers observability query API), so a wave killed at the 15-m…",
-          "score": 5,
-          "status": "done",
-          "done_at": "2026-10-09",
-          "added": "2026-10-09"
-        },
-        {
-          "id": "uk-tenders-429-backoff",
-          "title": "Back off and retry on 429 from find-tender.service.gov.uk the way eu-ted and uk-contract-awards do",
-          "score": 4,
-          "status": "done",
-          "done_at": "2026-10-09",
-          "added": "2026-10-09"
-        },
-        {
-          "id": "probe-key-from-runner",
-          "title": "Authed MCP probe without an owner secret: the metrics runner mints a one-run probe key in D1, probes with it, deletes it",
-          "score": 4,
-          "status": "done",
-          "done_at": "2026-10-09",
-          "added": "2026-10-09"
-        },
-        {
-          "id": "refresh-uk-trademark-journal-2026-10-09",
-          "title": "uk-trademark-journal: refresh has failed 2 times in the last 4 days — fix the source or keep the last snapshot without an error row",
-          "score": 6,
-          "status": "done",
-          "done_at": "2026-10-09",
-          "added": "2026-10-09"
         }
       ]
     },
@@ -856,13 +837,13 @@
       {
         "date": "2026-10-04",
         "kind": "handoff",
-        "age_days": 12,
+        "age_days": 13,
         "text": "sign and upload ReadFocus 0.3.0 (ruler colour / height / opacity / lock-in-place controls, plus 0.2.1's Firefox for Android: gecko_android, phone-width popup, tap-to-place ruler) once 0.2.0 clears review on each store, the same way as 0.2.0: bash scripts/amo-publish.sh ventures/read-focus (release notes in assets/amo-metadata.json), then cd ventures/read-focus && npm run zip && cd ../.. && node sc"
       },
       {
         "date": "2026-10-05",
         "kind": "handoff",
-        "age_days": 11,
+        "age_days": 12,
         "text": "sign and upload Highlight Keep 0.4.0 (imports from Weava/Glasp .csv and Hypothesis exports, the \"On for every site\" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the 0.3.0 Super Simple import and merging Restore) the same way as 0.2.0: bash scripts/amo-publish.sh ventures/highlight-keep (release notes already in assets/amo-metadata.json), then cd ventures/highlight"
       }
     ],
@@ -870,56 +851,56 @@
       {
         "date": "2026-10-16",
         "kind": "handoff",
-        "age_days": 0,
+        "age_days": 1,
         "text": "versions check (docs/ops/VERSIONS.md): routine models behind the models page: claude-opus-5 → claude-opus-5-5, claude-sonnet-5 → claude-sonnet-5-5; workflows pin Node 22 while the active LTS is 24 — an attended session tests the newer ids on one routine, updates the routine configs and the register, or records why not.",
         "closed_on": "2026-10-16"
       },
       {
         "date": "2026-10-14",
         "kind": "owner",
-        "age_days": 2,
+        "age_days": 3,
         "text": "one half-cent x402 payment (~5 min) lists gankdat's 17 endpoints in Coinbase's x402 Bazaar — docs/for-owner/actions/026-x402-bazaar-first-payment.md",
         "closed_on": "2026-10-16"
       },
       {
         "date": "2026-10-13",
         "kind": "owner",
-        "age_days": 3,
+        "age_days": 4,
         "text": "Nebius hackathon is back on: create a Token Factory API key (~5 min, under £2 of usage) — docs/for-owner/actions/025-nebius-token-factory-key.md",
         "closed_on": "2026-10-16"
       },
       {
         "date": "2026-10-13",
         "kind": "owner",
-        "age_days": 3,
+        "age_days": 4,
         "text": "Cloudflare confirms a $49 charge (12 Oct); ledger baseline is $5/month — check billing for a duplicate or new overage.",
         "closed_on": "2026-10-16"
       },
       {
         "date": "2026-10-11",
         "kind": "owner",
-        "age_days": 5,
+        "age_days": 6,
         "text": "PayPal hackathon video is ready (~10 min): download it from the CI run in action 023 and submit the Devpost form",
         "closed_on": "2026-10-16"
       },
       {
         "date": "2026-10-12",
         "kind": "owner",
-        "age_days": 4,
+        "age_days": 5,
         "text": "Nebius says your Token Factory account is active — check if the dropped hackathon entry can proceed.",
         "closed_on": "2026-10-13"
       },
       {
         "date": "2026-10-08",
         "kind": "handoff",
-        "age_days": 8,
+        "age_days": 9,
         "text": "Glama's hourly health check on the gankdat MCP connector got \"HTTP 500 – Error connecting to MCP\" (mail 2026-10-08 06:09 UTC, support@glama.ai) — gankdat is now ranked unhealthy, below healthy connectors, in Glama's directory. Check whether gankdat.com/mcp is actually erroring for real traffic (Worker logs) or only for Glama's test profile (it uses its own test-profile credentials, separate from p",
         "closed_on": "2026-10-12"
       },
       {
         "date": "2026-10-11",
         "kind": "owner",
-        "age_days": 5,
+        "age_days": 6,
         "text": "four free accounts for the prize and bounty lines (Devpost, PayPal sandbox, Nebius, Algora), ~15 min, £0 — docs/for-owner/actions/022-prize-and-bounty-accounts.md",
         "closed_on": "2026-10-11"
       }
@@ -934,64 +915,64 @@
   ],
   "runs": [
     {
-      "when": "2026-10-16 18:40",
+      "when": "2026-10-17 09:00",
       "who": "interactive",
-      "text": "Versions check built; Sonnet routines and the Opus fallback moved to 5.5 after probe runs; Node 24 queued"
+      "text": "Venture stages corrected on the dashboard: hackathons launched (entry submitted), oss-bounties building"
     },
     {
-      "when": "2026-10-16 17:00",
-      "who": "notify",
-      "text": "Your dashboard is live at apps.gankdat.com/ops. Sign in with your email, no password"
+      "when": "2026-10-17 09:13",
+      "who": "watchdog",
+      "text": "missed: metrics slot 2026-10-17 07:00 UTC left no commit or run line by 09:00; usage limit? see claude.ai/code/routines"
     },
     {
-      "when": "2026-10-16 17:00",
-      "who": "interactive",
-      "text": "Owner dashboard built at apps.gankdat.com/ops: email code sign-in, ventures, pipeline, owner page, idea box"
-    },
-    {
-      "when": "2026-10-16 15:30",
-      "who": "interactive",
-      "text": "x402 Bazaar onboarding paid: first settled half-cent call from the existing test wallet; probe key set for CI"
-    },
-    {
-      "when": "2026-10-16 15:00",
-      "who": "interactive",
-      "text": "PayPal AI Hackathon entry submitted on Devpost by the owner; results after 12 Nov"
-    },
-    {
-      "when": "2026-10-16 17:31",
-      "who": "burn-down",
-      "text": "Stopping: 1 item built (gankdat Search Console row race, workflows installed); starved-and-cooled, pass spent 17:27"
-    },
-    {
-      "when": "2026-10-16 17:27",
+      "when": "2026-10-17 09:12",
       "who": "build",
-      "text": "Exchange pre-research: SRA law-firm register parked (free commercial reuse, key via portal; Apify rival $1.60/1k)"
+      "text": "Queue: foundry first-run-check-new-workflows done; proof is a first run: line within a day"
     },
     {
-      "when": "2026-10-16 17:20",
+      "when": "2026-10-17 09:12",
       "who": "build",
-      "text": "Claim lost: foundry search-console-gankdat-row-race taken by the 17:00 burn-down seconds earlier; next null, empty []"
+      "text": "docs/ci README and SCHEDULERS note the first-run check; publish, mirror, demo never dispatched"
     },
     {
-      "when": "2026-10-16 17:20",
+      "when": "2026-10-17 09:12",
       "who": "build",
-      "text": "Claims table: verdikta#76 row dropped (8th scanner-filed drop in a row); queue item bounty-scanner-off-platform-pay done"
+      "text": "Routines: CI WORKFLOWS step reads a new workflow's first run, dispatches once, fixes in-run"
     },
     {
-      "when": "2026-10-16 17:20",
+      "when": "2026-10-17 09:12",
       "who": "build",
-      "text": "Scanner: fifth shape rule drops tasks the claimant must fund or that pay to a wallet off GitHub; 6 assertions"
+      "text": "store-metrics.yml first run: success (07:13 UTC dispatch after the 10-16 17:28 install)"
     },
     {
-      "when": "2026-10-16 17:20",
+      "when": "2026-10-17 09:12",
       "who": "build",
-      "text": "Bounty verdikta#76 dropped: claimant funds an on-chain task from a wallet, paid on Poidh, \"nothing paid for PRs\""
+      "text": "gankdat-metrics.yml first run: success (07:13 UTC dispatch after the 10-16 17:28 install)"
     },
     {
-      "when": "2026-10-16 12:00",
-      "who": "interactive",
-      "text": "Public mirror github.com/giovf/gankdat created and synced by CI; hackathon links point there; repo flip waits on minutes"
+      "when": "2026-10-17 08:10",
+      "who": "retro",
+      "text": "Queued foundry first-run-check-new-workflows (5) and triage-reconcile-before-owner (4)"
+    },
+    {
+      "when": "2026-10-17 08:10",
+      "who": "retro",
+      "text": "Defect: two owner: asks (Nebius, Cloudflare $49) were answerable from the repo, against triage rule"
+    },
+    {
+      "when": "2026-10-17 08:10",
+      "who": "retro",
+      "text": "Defect: new workflows fail on first live run (demo video x2, landing deploy), found by mail"
+    },
+    {
+      "when": "2026-10-17 08:10",
+      "who": "retro",
+      "text": "Repeat blocker: signing ReadFocus 0.3 and HK 0.4 waits 13 d on blocked extension-publish-in-ci"
+    },
+    {
+      "when": "2026-10-17 08:10",
+      "who": "retro",
+      "text": "Slot reliability: 33 of 33 slots ran; metrics 10-15 was mis-reported missed (fixed 10-16)"
     }
   ]
 }
