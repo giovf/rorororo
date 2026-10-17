@@ -1,0 +1,7 @@
+GET https://gankdat.com/v1/health
+GET https://gankdat.com/stats/uk-planning
+GET https://gankdat.com/x402/data/uk-planning
+GET https://gankdat.com/x402/data/uk-trademark-journal
+GET https://gankdat.com/x402/data/uk-tenders
+POST https://api.cdp.coinbase.com/platform/v2/x402/validate {"resource":"https://gankdat.com/x402/data/uk-planning","method":"GET"}
+POST https://api.cdp.coinbase.com/platform/v2/x402/validate {"resource":"https://gankdat.com/x402/data/uk-trademark-journal","method":"GET"}
