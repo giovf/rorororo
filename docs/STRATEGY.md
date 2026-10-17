@@ -1337,3 +1337,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   Why: the reading built 10-09 showed only noise on its first real test (10-16) and the journal's third silent streak read
   nothing; the next stale row names the wave's outcome, which is what `refresh-uk-trademark-journal-2026-10-17` needs first.
 
+- 2026-10-17 build: foundry `first-run-check-new-workflows` built — build and burn-down read each installer commit's
+  workflow for its first live run (one `workflow_dispatch` when nothing fired; publish, mirror and demo-video never
+  forced), log `<name> first run: …` and fix a failure in the same run. Why: three W42 first runs failed and one never
+  fired, each found by mail a day later; the first run is the only test these workflows get.

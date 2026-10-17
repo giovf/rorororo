@@ -836,13 +836,13 @@
     {
       "id": "first-run-check-new-workflows",
       "title": "Dispatch a routine-written workflow once after the installer lands it and fix a failing first run in that same run",
-      "why": "Ops retro 2026-W42: demo-video.yml failed twice on its first live runs (INBOX 2026-10-11 20:11 and 20:19; ENOENT ffmpeg, then a PayPal-approval step), pr-relay.yml never fired for the request it was built for (RUNS 2026-10-11 19:24, dispatched by hand) and the 10-16 landing deploy failed 13 s in (INBOX 10-16 18:25). Each was found by mail and fixed by the interactive session. Add to docs/routines/burn-down.md and docs/routines/build.md after the step that writes to docs/ci/: \"When the next slot finds the installer commit (`ci: install workflow(s) <name>`) for a workflow you wrote and it has a `workflow_dispatch` trigger, dispatch it once with `mcp__github__actions_run_trigger`, read the conclusion with `actions_get`, and append `- YYYY-MM-DD HH:MM | <tag> | <name> first run: <success|failure + failing step>` to docs/RUNS.md; on failure fix it in that same run, not a later one.\"",
+      "why": "Ops retro 2026-W42: demo-video.yml failed twice on its first live runs (INBOX 2026-10-11 20:11 and 20:19; ENOENT ffmpeg, then a PayPal-approval step), pr-relay.yml never fired for the request it was built for (RUNS 2026-10-11 19:24, dispatched by hand) and the 10-16 landing deploy failed 13 s in (INBOX 10-16 18:25). Each was found by mail and fixed by the interactive session. Add to docs/routines/burn-down.md and docs/routines/build.md after the step that writes to docs/ci/: \"When the next slot finds the installer commit (`ci: install workflow(s) <name>`) for a workflow you wrote and it has a `workflow_dispatch` trigger, dispatch it once with `mcp__github__actions_run_trigger`, read the conclusion with `actions_get`, and append `- YYYY-MM-DD HH:MM | <tag> | <name> first run: <success|failure + failing step>` to docs/RUNS.md; on failure fix it in that same run, not a later one.\" Built 2026-10-17 (build): CI WORKFLOWS paragraph in both routine files (installer-commit scan, actions_list/actions_get read, one dispatch when no run started, same-run fix via docs/ci/, never dispatch publish/mirror/demo-video); first live runs of the 10-16 gankdat-metrics and store-metrics edits read as success (07:13 UTC).",
       "effort_days": 0.2,
       "proof": "For 14 days after landing, every `ci: install workflow(s)` commit for a routine-written workflow has a `first run:` RUNS line within 1 day and no INBOX `Run failed` line names a workflow within an hour of its installer commit.",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-17",
-      "doing_since": "2026-10-17"
+      "done_at": "2026-10-17"
     },
     {
       "id": "triage-reconcile-before-owner",

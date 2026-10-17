@@ -1182,3 +1182,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 08:10 | retro | Defect: new workflows fail on first live run (demo video x2, landing deploy), found by mail
 - 2026-10-17 08:10 | retro | Defect: two owner: asks (Nebius, Cloudflare $49) were answerable from the repo, against triage rule
 - 2026-10-17 08:10 | retro | Queued foundry first-run-check-new-workflows (5) and triage-reconcile-before-owner (4)
+- 2026-10-17 09:12 | build | gankdat-metrics.yml first run: success (07:13 UTC dispatch after the 10-16 17:28 install)
+- 2026-10-17 09:12 | build | store-metrics.yml first run: success (07:13 UTC dispatch after the 10-16 17:28 install)
+- 2026-10-17 09:12 | build | Routines: CI WORKFLOWS step reads a new workflow's first run, dispatches once, fixes in-run
+- 2026-10-17 09:12 | build | docs/ci README and SCHEDULERS note the first-run check; publish, mirror, demo never dispatched
+- 2026-10-17 09:12 | build | Queue: foundry first-run-check-new-workflows done; proof is a first run: line within a day
