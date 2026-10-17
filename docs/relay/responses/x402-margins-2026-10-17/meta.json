@@ -1,0 +1,99 @@
+{
+  "request": "x402-margins-2026-10-17",
+  "fetched_at": "2026-10-17T17:13:05.377Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100",
+      "fetched_at": "2026-10-17T17:12:56.889Z",
+      "status": 200,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 374693,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=100",
+      "fetched_at": "2026-10-17T17:12:58.822Z",
+      "status": 200,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=100",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 359317,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=200",
+      "fetched_at": "2026-10-17T17:13:00.401Z",
+      "status": 200,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=200",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 358051,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=300",
+      "fetched_at": "2026-10-17T17:13:01.673Z",
+      "status": 200,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=300",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "4.json",
+      "bytes": 351096,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=400",
+      "fetched_at": "2026-10-17T17:13:03.445Z",
+      "status": 200,
+      "final_url": "https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=400",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 312928,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.cdp.coinbase.com/x402/core-concepts/facilitator",
+      "fetched_at": "2026-10-17T17:13:04.848Z",
+      "status": 200,
+      "final_url": "https://docs.cdp.coinbase.com/x402/seller/facilitator",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"268fat1vwae31t\""
+      },
+      "file": "6.html",
+      "bytes": 657172,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.cdp.coinbase.com/x402/bazaar",
+      "fetched_at": "2026-10-17T17:13:05.161Z",
+      "status": 200,
+      "final_url": "https://docs.cdp.coinbase.com/x402/buyer/discover-services",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"a1rxfjrespf76y\""
+      },
+      "file": "7.html",
+      "bytes": 709223,
+      "truncated": false
+    }
+  ]
+}
