@@ -366,6 +366,15 @@ runs `check:root`.
   otherwise). The refresh keeps failing with the evidence (`origin dataset empty: …`) so the Daily
   numbers row and the auto-filer see the state every night, and the last snapshot stays served; the
   source file owns the text (isolation rule). First use: uk-planning.
+  **Retention** (2026-10-17, queue `uk-planning-paused-snapshot-retention`): the KV snapshot and stats blob
+  expire at 7 × the cache TTL and a failing refresh wrote nothing, so uk-planning's 10-09 snapshot was gone on
+  10-16 and every REST, MCP, x402 and Apify call 503'd "retry later" while /stats/uk-planning was a JSON 503.
+  Now `cache.ts retainSnapshot` re-puts both keys with a fresh TTL after every failed refresh (no origin read),
+  the 503 / tool error for a `notice` source carries the notice (`store.ts unavailableMessage`), the tool
+  description ends with `Origin notice: …` so the metrics probe picks a live source, and `/stats/<slug>` with no
+  blob renders the notice as a page. The data itself returns only with the origin: a snapshot already expired
+  cannot be re-created, which is why uk-planning stays unavailable (with the notice) until planning.data.gov.uk
+  serves rows again or the §7 clock retires it.
 - **Wave log reading** (`lib/wave-logs.ts`, 2026-10-09): a wave killed at the 15-minute Cron
   Trigger limit writes no `refresh_log` row, and no sandbox or relay can read Worker logs (the
   journal's silent nights 10-05..10-08 were guessed at twice). So the metrics workflow's

@@ -1326,3 +1326,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   everywhere (REST, MCP probe, Apify actor, the indexed /stats page). Queued the retention fix (score 7), a cron-outcome wave-log
   reading (the slug search returned only @x402/hono's Ajv-under-workerd warning for both stale sources, and nothing from the
   journal's wave, which has died silently on three nights in four since 10-04) and the journal's third refresh item.
+- 2026-10-17 burn-down: `uk-planning-paused-snapshot-retention` built — a failed KV refresh now keeps the last snapshot and stats
+  blob alive (fresh TTL, no origin read), the REST 503 / MCP tool error for a `notice` source says the notice, the tool
+  description carries it so the metrics probe picks a live source, and `/stats/<slug>` with no blob renders the notice as a
+  page. Why: the 10-11 decision to keep serving uk-planning's snapshot held for exactly the 7-day KV TTL. Limit: the expired
+  snapshot is gone for good; uk-planning answers with its notice until the origin serves rows again or §7 retires it.

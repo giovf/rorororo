@@ -1164,3 +1164,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 00:24 | burn-down | Research gankdat: x402 bazaar log warning is Ajv codegen under workerd, lane fine; journal silent 10-15/16
 - 2026-10-17 00:24 | burn-down | Queue: 3 gankdat items added (snapshot retention 7, cron-outcome reading 6, journal refresh 6)
 - 2026-10-17 00:27 | watchdog | ci-minutes: 654 billed min/7d (~2803/month, wall 321; private cap 2,000, warn 1700); top: owner notes 127, notify owner 
+- 2026-10-17 00:35 | burn-down | cache.ts retainSnapshot: a failed KV refresh re-puts snapshot + stats with a fresh TTL; 2 tests
+- 2026-10-17 00:35 | burn-down | REST 503 and MCP tool errors carry a paused source's notice; tool description ends Origin notice
+- 2026-10-17 00:35 | burn-down | /stats/<slug> with no blob renders the notice page (200) instead of a JSON 503; probe skips paused tools
+- 2026-10-17 00:35 | burn-down | Queue: gankdat uk-planning-paused-snapshot-retention done; the lost 10-09 snapshot cannot be re-created
