@@ -1,7 +1,0 @@
-GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100
-GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=100
-GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=200
-GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=300
-GET https://api.cdp.coinbase.com/platform/v2/x402/discovery/resources?limit=100&offset=400
-GET https://docs.cdp.coinbase.com/x402/core-concepts/facilitator
-GET https://docs.cdp.coinbase.com/x402/bazaar
