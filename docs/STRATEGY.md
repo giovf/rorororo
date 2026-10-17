@@ -1347,3 +1347,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   executed by idle build slots, each ending in `docs/exchange/spikes/<id>.md` with a promote / park call — refilled to 2–4
   every Wednesday; four seeded today (x402 aggregator margins, pay-per-crawl on the stats pages, keeper-rewards simulation,
   HMRC VAT lookup). The dashboard gained a "New ventures" tab: next run, last decision, spikes, promoted and parked ideas.
+
+- 2026-10-17 build: new-ventures spike `x402-aggregator-margins` — the Bazaar's own 30-day counts (top 700 of 47,204
+  resources) put proxyable spend at US$9,970 a month, US$3,231 without one entertainment endpoint; a 20–40 % gateway
+  nets US$408–1,054 a month at full capture and US$16–74 at 2–10 %, while 187 of 488 resources cannot carry a 30 %
+  markup past the US$0.001 settlement fee and the upstreams that could (Exa, X, Google Trends, CoinGecko) forbid resale.
+  Parked with a numeric trigger (≥ US$30k/30 d proxyable); the own-listing item stays the x402 line. Why: the owner's
+  10-11 idea deserved the whole market's numbers, not one reseller's; they say the cut is cents a month.

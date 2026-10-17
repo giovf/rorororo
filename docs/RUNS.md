@@ -1193,3 +1193,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 17:21 | burn-down | crawler-hits.ts: AI crawler families; stats-page readings from logs, zone and /mcp; 9 tests
 - 2026-10-17 17:21 | burn-down | metrics.mjs: Daily numbers row gains stats crawlers (logs 7d, zone 30d, /mcp 30d), n/a per reading
 - 2026-10-17 17:21 | burn-down | Relay: Pay Per Crawl docs read: closed beta via sign-up form, Cloudflare is MoR, one price per zone
+- 2026-10-17 17:10 | build | Spike x402 aggregator: Bazaar top 700 of 47,204 read; US$9,970/30 d proxyable, 68% one endpoint
+- 2026-10-17 17:10 | build | Spike x402 aggregator: 30% gateway nets ~US$730/mo at 100% capture, US$16–74 at 2–10%; park
+- 2026-10-17 17:10 | build | Spike x402 aggregator: Exa, X, CoinGecko terms forbid resale; markup under the fee where allowed
+- 2026-10-17 17:10 | build | Relay hosts: exa.ai, coingecko, polymarket, developer.x.com, dexscreener added for the terms read
+- 2026-10-17 17:10 | build | Queue: new-ventures spike-x402-aggregator-margins done; exchange x402-aggregator-mcp re-parked
