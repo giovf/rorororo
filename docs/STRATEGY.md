@@ -1382,3 +1382,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   mail stating an amount or status the repo already records (ledger, a venture's RESEARCH.md) is reconciled against
   that file first and is `needs owner` only when the amounts differ or the owner's identity, card or login is needed.
   Why: two W42 owner lines (Nebius 10-12, Cloudflare $49 10-13) sent the owner to check what the repo already said.
+- 2026-10-17 burn-down: foundry `metrics-crons-day-7-read` — eight days of scheduled runs read: both metrics crons still
+  start 4.5–9.5 h late (0 of 8 before 08:00) whatever the minute, while the 07:00 routine's dispatch wrote the rows at
+  07:13–07:17 on all eight days. The crons stay as the safety net for a missed routine (≈ 2 billed minutes a day); no
+  further fallback is built. Why: the number decides it, and the dispatch already made the schedule irrelevant.
