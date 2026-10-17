@@ -1168,3 +1168,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 00:35 | burn-down | REST 503 and MCP tool errors carry a paused source's notice; tool description ends Origin notice
 - 2026-10-17 00:35 | burn-down | /stats/<slug> with no blob renders the notice page (200) instead of a JSON 503; probe skips paused tools
 - 2026-10-17 00:35 | burn-down | Queue: gankdat uk-planning-paused-snapshot-retention done; the lost 10-09 snapshot cannot be re-created
+- 2026-10-17 00:39 | burn-down | Stopping: research + 1 item built (snapshot retention); next wave-log-cron-outcome-reading left for 01:00
