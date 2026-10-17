@@ -639,8 +639,9 @@
       "effort_days": 0.3,
       "proof": "The 10-18 (or first post-deploy) Daily numbers row's `mcp probe:` reads `call 200` with no tool error on both passes; GET /stats/uk-planning through the relay answers 200 with the notice; /v1/health still shows uk-planning last refreshed 10-09 (the snapshot, not a new refresh); uk-planning-applications' failed count on the row stops rising",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-17"
+      "status": "doing",
+      "added": "2026-10-17",
+      "doing_since": "2026-10-17"
     },
     {
       "id": "wave-log-cron-outcome-reading",
