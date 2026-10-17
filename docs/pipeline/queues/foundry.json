@@ -609,9 +609,10 @@
       "effort_days": 0.05,
       "proof": "start times recorded; either five of seven days before 08:00 UTC or the push-run fallback queued",
       "score": 3,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-09",
-      "not_before": "2026-10-17"
+      "not_before": "2026-10-17",
+      "doing_since": "2026-10-17"
     },
     {
       "id": "cron-drift-dispatch-row",
