@@ -1163,3 +1163,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 00:24 | burn-down | Research gankdat: uk-planning snapshot + stats blob expired 10-16 (KV TTL x7), /stats 503, probe red
 - 2026-10-17 00:24 | burn-down | Research gankdat: x402 bazaar log warning is Ajv codegen under workerd, lane fine; journal silent 10-15/16
 - 2026-10-17 00:24 | burn-down | Queue: 3 gankdat items added (snapshot retention 7, cron-outcome reading 6, journal refresh 6)
+- 2026-10-17 00:27 | watchdog | ci-minutes: 654 billed min/7d (~2803/month, wall 321; private cap 2,000, warn 1700); top: owner notes 127, notify owner 
