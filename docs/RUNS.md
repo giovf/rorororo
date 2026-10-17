@@ -1187,3 +1187,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 09:12 | build | Routines: CI WORKFLOWS step reads a new workflow's first run, dispatches once, fixes in-run
 - 2026-10-17 09:12 | build | docs/ci README and SCHEDULERS note the first-run check; publish, mirror, demo never dispatched
 - 2026-10-17 09:12 | build | Queue: foundry first-run-check-new-workflows done; proof is a first run: line within a day
+- 2026-10-17 09:13 | watchdog | missed: metrics slot 2026-10-17 07:00 UTC left no commit or run line by 09:00; usage limit? see claude.ai/code/routines
