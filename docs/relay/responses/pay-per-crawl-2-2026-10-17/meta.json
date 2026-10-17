@@ -1,0 +1,123 @@
+{
+  "request": "pay-per-crawl-2-2026-10-17",
+  "fetched_at": "2026-10-17T17:19:22.146Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/enable-in-account-settings/index.md",
+      "fetched_at": "2026-10-17T17:19:21.550Z",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/enable-in-account-settings/index.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "1.txt",
+      "bytes": 4563,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/set-a-pay-per-crawl-price/index.md",
+      "fetched_at": "2026-10-17T17:19:21.671Z",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/set-a-pay-per-crawl-price/index.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 4324,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/select-crawlers-to-charge/index.md",
+      "fetched_at": "2026-10-17T17:19:21.711Z",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/select-crawlers-to-charge/index.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 4547,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/manage-payouts/index.md",
+      "fetched_at": "2026-10-17T17:19:21.744Z",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/manage-payouts/index.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "4.txt",
+      "bytes": 4781,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/monitor-activity/index.md",
+      "fetched_at": "2026-10-17T17:19:21.813Z",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/monitor-activity/index.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "5.txt",
+      "bytes": 4856,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/advanced-configuration/index.md",
+      "fetched_at": "2026-10-17T17:19:21.904Z",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-site-owner/advanced-configuration/index.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "6.txt",
+      "bytes": 7577,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-ai-owner/crawl-pages/index.md",
+      "fetched_at": "2026-10-17T17:19:21.948Z",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/features/pay-per-crawl/use-pay-per-crawl-as-ai-owner/crawl-pages/index.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "7.txt",
+      "bytes": 6737,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/features/analyze-ai-traffic/index.md",
+      "fetched_at": "2026-10-17T17:19:22.010Z",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/features/analyze-ai-traffic/index.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "8.txt",
+      "bytes": 11380,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.cloudflare.com/ai-crawl-control/get-started/index.md",
+      "fetched_at": "2026-10-17T17:19:22.057Z",
+      "status": 200,
+      "final_url": "https://developers.cloudflare.com/ai-crawl-control/get-started/index.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "9.txt",
+      "bytes": 6926,
+      "truncated": false
+    }
+  ]
+}
