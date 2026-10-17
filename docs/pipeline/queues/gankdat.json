@@ -650,8 +650,9 @@
       "effort_days": 0.15,
       "proof": "The next Daily numbers row with a stale source carries `wave HH:MM: <outcome> <wall>s` for it and its `wave log:` line is a refresh event, never `x402: Route`; the journal's silent night has a named outcome",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-17"
+      "status": "doing",
+      "added": "2026-10-17",
+      "doing_since": "2026-10-17"
     },
     {
       "id": "refresh-uk-trademark-journal-2026-10-17",
