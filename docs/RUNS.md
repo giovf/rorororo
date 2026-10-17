@@ -1177,3 +1177,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 01:25 | burn-down | Relay: Query Builder docs name $workers.cpuTimeMs, so the $workers.* reads follow the docs
 - 2026-10-17 01:25 | burn-down | Queue: gankdat refresh-uk-trademark-journal-2026-10-17 dated 10-18, needs the 10-17 outcome row
 - 2026-10-17 01:26 | burn-down | Stopping: 1 item built (cron outcome reading); next item dated; starved-and-cooled, pass spent 17:27
+- 2026-10-17 08:10 | retro | Slot reliability: 33 of 33 slots ran; metrics 10-15 was mis-reported missed (fixed 10-16)
+- 2026-10-17 08:10 | retro | Repeat blocker: signing ReadFocus 0.3 and HK 0.4 waits 13 d on blocked extension-publish-in-ci
+- 2026-10-17 08:10 | retro | Defect: new workflows fail on first live run (demo video x2, landing deploy), found by mail
+- 2026-10-17 08:10 | retro | Defect: two owner: asks (Nebius, Cloudflare $49) were answerable from the repo, against triage rule
+- 2026-10-17 08:10 | retro | Queued foundry first-run-check-new-workflows (5) and triage-reconcile-before-owner (4)

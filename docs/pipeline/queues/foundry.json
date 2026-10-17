@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-16",
+  "updated": "2026-10-17",
   "researched": "2026-10-16",
   "items": [
     {
@@ -832,6 +832,26 @@
       "status": "todo",
       "added": "2026-10-16",
       "not_before": "2026-10-20"
+    },
+    {
+      "id": "first-run-check-new-workflows",
+      "title": "Dispatch a routine-written workflow once after the installer lands it and fix a failing first run in that same run",
+      "why": "Ops retro 2026-W42: demo-video.yml failed twice on its first live runs (INBOX 2026-10-11 20:11 and 20:19; ENOENT ffmpeg, then a PayPal-approval step), pr-relay.yml never fired for the request it was built for (RUNS 2026-10-11 19:24, dispatched by hand) and the 10-16 landing deploy failed 13 s in (INBOX 10-16 18:25). Each was found by mail and fixed by the interactive session. Add to docs/routines/burn-down.md and docs/routines/build.md after the step that writes to docs/ci/: \"When the next slot finds the installer commit (`ci: install workflow(s) <name>`) for a workflow you wrote and it has a `workflow_dispatch` trigger, dispatch it once with `mcp__github__actions_run_trigger`, read the conclusion with `actions_get`, and append `- YYYY-MM-DD HH:MM | <tag> | <name> first run: <success|failure + failing step>` to docs/RUNS.md; on failure fix it in that same run, not a later one.\"",
+      "effort_days": 0.2,
+      "proof": "For 14 days after landing, every `ci: install workflow(s)` commit for a routine-written workflow has a `first run:` RUNS line within 1 day and no INBOX `Run failed` line names a workflow within an hour of its installer commit.",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-17"
+    },
+    {
+      "id": "triage-reconcile-before-owner",
+      "title": "Triage reconciles an amount or status against the ledger/RESEARCH before it files an owner: line",
+      "why": "Ops retro 2026-W42: two owner: lines asked the owner to check what the repo already stated, against inbox-triage.md line 34 (\"`needs owner` is reserved for things only the owner can do\"): ALERTS 2026-10-12 Nebius account active, 'check if the dropped entry can proceed' (answered from ventures/hackathons/RESEARCH.md §2b by the 10-13 burn-down) and 2026-10-13 Cloudflare $49 'check billing for a duplicate' (docs/LEDGER.md already held the 10-10 invoice row; the owner confirmed on 10-16). Append to the WHO DOES WHAT paragraph of docs/routines/inbox-triage.md: \"A mail that states an amount or a status the repo already records (docs/LEDGER.md, a venture's RESEARCH.md) is reconciled against that file first and logged with the matching row; it is `needs owner` only when the amounts differ or the action needs the owner's identity, card or login.\"",
+      "effort_days": 0.1,
+      "proof": "Over 4 weeks no owner: line in docs/ALERTS.md is closed Done with 'already in the ledger' or 'answered from the repo'.",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-17"
     }
   ]
 }
