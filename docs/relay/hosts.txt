@@ -73,3 +73,8 @@ mainnet.base.org  # Base's public JSON-RPC endpoint (POST eth_blockNumber, eth_g
 api.github.com  # GitHub REST API, unauthenticated: issue comments and searches a bounty scanner rule is verified against (oss-bounties `bounty-board-opire-source`, 2026-10-14)
 .sra.org.uk  # SRA firm data web service terms and the public register (exchange pre-research 2026-10-16)
 developers.cloudflare.com  # Workers Logs / Query Builder field reference (gankdat wave-log-cron-outcome-reading, 2026-10-17)
+exa.ai  # Exa terms of service: resale clause for the x402 aggregator margin spike (new-ventures 2026-10-17)
+.coingecko.com  # CoinGecko API terms: redistribution clause (new-ventures spike 2026-10-17)
+.polymarket.com  # Polymarket terms of use (new-ventures spike 2026-10-17)
+developer.x.com  # X developer agreement: redistribution / resale clause (new-ventures spike 2026-10-17)
+.dexscreener.com  # DexScreener API terms (new-ventures spike 2026-10-17)
