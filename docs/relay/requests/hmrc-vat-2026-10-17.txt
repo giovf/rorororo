@@ -1,9 +1,0 @@
-GET https://developer.service.hmrc.gov.uk/api-documentation/docs/api/service/vat-registered-companies-api/2.0/oas/page
-GET https://developer.service.hmrc.gov.uk/api-documentation/docs/api/download/hmrc/vat-registered-companies-api/2.0/oas/application.yaml
-GET https://developer.service.hmrc.gov.uk/api-documentation/docs/reference-guide
-GET https://developer.service.hmrc.gov.uk/api-documentation/docs/authorisation/application-restricted-endpoints
-GET https://api.service.hmrc.gov.uk/organisations/vat/check-vat-number/lookup/123456789
-GET https://test-api.service.hmrc.gov.uk/organisations/vat/check-vat-number/lookup/123456789
-GET https://api.apify.com/v2/store?search=vat&limit=50
-GET https://api.apify.com/v2/store?search=hmrc&limit=50
-HEAD https://www.tax.service.gov.uk/check-vat-number/enter-vat-details
