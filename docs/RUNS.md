@@ -1227,3 +1227,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 19:22 | burn-down | pipeline.ts: needsResearch and cold skip a cooling queue even when flagged or emptied; 1 test
 - 2026-10-17 19:22 | burn-down | docs/pipeline/README.md: cooling covers flagged and emptied queues (empty and cold leave them out)
 - 2026-10-17 19:22 | burn-down | Queue: foundry empty-skips-cooling-queues done (filed and built this run; empty printed new-ventures)
+- 2026-10-17 19:30 | burn-down | Exchange pre-research: UK food hygiene ratings parked (FHRS API free, OGL; ~30 Apify wrappers at 1-6 users each)
+- 2026-10-17 19:30 | burn-down | Stopping: 4 items built (hmrc-vat spike, triage reconcile, day-7 cron read, empty cooling), pipeline starved-and-cooled
