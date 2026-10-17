@@ -20,13 +20,13 @@
     {
       "id": "spike-pay-per-crawl-stats-pages",
       "title": "Research spike: AI-crawler pay-per-crawl on the gankdat stats pages — read Cloudflare's Pay Per Crawl docs and eligibility through the relay, count the AI crawler hits on gankdat.com stats pages over 30 days from the traffic analytics (user-agent families: GPTBot, ClaudeBot, PerplexityBot, Bytespider, CCBot …), and estimate the monthly take at the published per-request price; write docs/exchange/spikes/pay-per-crawl.md",
-      "why": "A cut of money already flowing in its purest form: crawlers already fetch the public register pages; Cloudflare's pay-per-crawl charges them per request on our behalf with no audience to capture. Parked on 2026-10-14 for want of the docs read; the traffic reading is ours to take today.",
+      "why": "A cut of money already flowing in its purest form: crawlers already fetch the public register pages; Cloudflare's pay-per-crawl charges them per request on our behalf with no audience to capture. Parked on 2026-10-14 for want of the docs read; the traffic reading is ours to take today. — Spike 2026-10-17 (docs/exchange/spikes/pay-per-crawl.md): closed beta, charging is Enterprise with Bot Management only (plan table), min US$0.001/crawl, no paying crawler named; gankdat.com (Free zone) is not eligible. Declined; parked idea re-written with two dated triggers; the stats pages' crawler hits are now a daily reading: 0 AI fetches at the Worker in 7 d, 236 AI-family requests of 63,763 on /mcp in 30 d (US$0.24–11.80/month at any allowed price).",
       "effort_days": 0.3,
       "proof": "the spike file states eligibility (beta / waitlist / open), our 30-day crawler hits and the estimated monthly take",
       "score": 7,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-17",
-      "doing_since": "2026-10-17"
+      "done_at": "2026-10-17"
     },
     {
       "id": "spike-keeper-rewards-simulation",

@@ -1200,3 +1200,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 17:10 | build | Queue: new-ventures spike-x402-aggregator-margins done; exchange x402-aggregator-mcp re-parked
 - 2026-10-17 17:28 | burn-down | Metrics dispatched 17:22: /mcp 30d 63,756 req, AI 236; logs query HTTP 400, zone needs token perm
 - 2026-10-17 17:28 | burn-down | crawler-hits.ts: needle is the bare /stats path, limit 1000; metrics.mjs shows the 400 body
+- 2026-10-17 17:33 | burn-down | Metrics #247: logs 18 lines/7d match /stats, none a request line, AI 0; /mcp 30d AI 236 of 63,763
+- 2026-10-17 17:33 | burn-down | crawler-hits.ts: a zero reading says how many lines matched; 10 tests
+- 2026-10-17 17:33 | burn-down | Spike docs/exchange/spikes/pay-per-crawl.md: closed beta, Enterprise+Bot Management only, take US$0-12/mo
+- 2026-10-17 17:33 | burn-down | Exchange ai-crawler-paywall-stats-pages re-parked with two dated triggers; handoff: token Zone Analytics Read
+- 2026-10-17 17:33 | burn-down | Queue: new-ventures spike-pay-per-crawl-stats-pages done (declined on eligibility and traffic)
+- 2026-10-17 17:35 | burn-down | Stopping: 1 spike done (pay-per-crawl, declined); next spike-keeper-rewards-simulation left for 18:00

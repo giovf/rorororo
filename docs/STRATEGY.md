@@ -1354,3 +1354,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   markup past the US$0.001 settlement fee and the upstreams that could (Exa, X, Google Trends, CoinGecko) forbid resale.
   Parked with a numeric trigger (≥ US$30k/30 d proxyable); the own-listing item stays the x402 line. Why: the owner's
   10-11 idea deserved the whole market's numbers, not one reseller's; they say the cut is cents a month.
+- 2026-10-17 burn-down: new-ventures spike `pay-per-crawl-stats-pages` — Cloudflare's own docs (relay) put Pay Per Crawl
+  in closed beta and give the charge capability to Enterprise plans with Bot Management only; minimum US$0.001 a crawl,
+  one price per zone, Cloudflare as MoR paying monthly through a dedicated Stripe Connect account, no paying crawler named.
+  Our traffic: 0 AI-crawler fetches of /stats… at the Worker in 7 days, 236 AI-family requests of 63,763 on /mcp in 30 days
+  (193 Claude-User — prospects, not training crawlers), so the take is US$0–12 a month at any allowed price. Declined; the
+  parked idea carries two dated triggers (plan table opens to Free/Pro AND ≥ 3,000 AI fetches/30 d) and the Daily numbers
+  row now measures the crawler share daily. Why: a free zone cannot switch the toggle on, and the crawlers that do visit are
+  the ones we want unmetered.
