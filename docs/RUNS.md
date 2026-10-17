@@ -1214,3 +1214,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 18:55 | burn-down | Queue: new-ventures spike-keeper-rewards-simulation done; exchange onchain-keeper-rewards re-parked
 - 2026-10-17 18:57 | burn-down | Stopping: 1 spike done (keeper rewards, declined) after 9 relay rounds; spike-hmrc-vat-lookup left for 19:00
 - 2026-10-17 18:54 | notify | 3 jobs for your next Claude Code session, oldest 13 days: sign and upload ReadFocus 0.3.0
+- 2026-10-17 19:38 | burn-down | Relay hmrc-vat-2026-10-17: v2 endpoints, reference guide, auth page, 2 keyless probes, Apify store search
+- 2026-10-17 19:38 | burn-down | Spike HMRC VAT: v1 gone Feb 2025; v2 needs the owner's Developer Hub app, 2 weeks, 3 req/s, due-diligence only
+- 2026-10-17 19:38 | burn-down | Spike HMRC VAT: rivals US$0.003-0.09 a check; Apify UK rival 14 users, 4 monthly, scrapes the GOV.UK form
+- 2026-10-17 19:38 | burn-down | Spike docs/exchange/spikes/hmrc-vat-lookup.md written: declined; exchange uk-vat-number-check declined
+- 2026-10-17 19:38 | burn-down | Queue: new-ventures spike-hmrc-vat-lookup done; queue empty, needs_research set (cooling until 10-19)

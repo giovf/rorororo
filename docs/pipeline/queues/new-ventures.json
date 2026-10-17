@@ -1,7 +1,7 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": false,
+  "needs_research": true,
   "updated": "2026-10-17",
   "researched": "2026-10-17",
   "weight": 2,
@@ -42,13 +42,13 @@
     {
       "id": "spike-hmrc-vat-lookup",
       "title": "Research spike: HMRC VAT number check as a gankdat dataset or lookup tool — relay read of HMRC's Check a UK VAT number API documentation (v1 and v2): open access or developer-account only, rate limits, terms on resale and caching; count the Apify actors and RapidAPI listings that resell the same lookup and their prices; write docs/exchange/spikes/hmrc-vat-lookup.md",
-      "why": "Parked 2026-10-14 pending the docs read. A VAT check is a KYB step every invoicing and payments product performs, and the lookup pattern already exists in gankdat (uk-company-profiles), so the build is small if the terms allow it.",
+      "why": "Parked 2026-10-14 pending the docs read. A VAT check is a KYB step every invoicing and payments product performs, and the lookup pattern already exists in gankdat (uk-company-profiles), so the build is small if the terms allow it. — Spike 2026-10-17 (docs/exchange/spikes/hmrc-vat-lookup.md): v1 removed 17 Feb 2025, v2 is application-restricted (owner's Developer Hub registration, ~2 weeks, 3 req/s), sole purpose is a trader's own due diligence; rivals at US$0.003–0.09 a check, the Apify UK rival has 4 monthly users. Declined.",
       "effort_days": 0.2,
       "proof": "the spike file states access terms, limits and three competitor prices, with a recommendation",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-17",
-      "doing_since": "2026-10-17"
+      "done_at": "2026-10-17"
     }
   ]
 }

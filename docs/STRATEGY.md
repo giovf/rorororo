@@ -1371,3 +1371,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   a paid RPC. Liquidation keeping declined; the parked idea keeps one trigger, harvest call fees (the capital-free shape).
   By-product: the relay retries 429/503 with backoff and paces same-host lines, and hosts.txt records which Base RPC
   serves logs. Why: the number the owner's idea needed now exists, and it says the money is real but already taken.
+- 2026-10-17 burn-down: new-ventures spike `hmrc-vat-lookup` — HMRC's Check a UK VAT number API read through the relay:
+  v1 (keyless) removed 17 Feb 2025; v2 is application-restricted (OAuth client credentials behind a Developer Hub
+  registration in the owner's name, ~2 weeks, 3 requests/s per application) and declares its sole purpose as a
+  trader's own due diligence. Keyless probes answer 404. The Apify rival scrapes the GOV.UK web form (out of bounds)
+  and has 4 monthly users at US$0.005 a result; RapidAPI, vatstack and TrustComponent sell the check at
+  US$0.003–0.09. Declined: no lawful keyless route, owner identity required, and the price floor is already where
+  gankdat would sit. Exchange idea `uk-vat-number-check` declined; the spike file holds the evidence.
