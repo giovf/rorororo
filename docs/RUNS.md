@@ -1190,3 +1190,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 09:13 | watchdog | missed: metrics slot 2026-10-17 07:00 UTC left no commit or run line by 09:00; usage limit? see claude.ai/code/routines
 - 2026-10-17 09:00 | interactive | Venture stages corrected on the dashboard: hackathons launched (entry submitted), oss-bounties building
 - 2026-10-17 10:00 | interactive | New-ventures queue (4 research spikes, weight 2) and a New ventures dashboard tab: next run, decision, parked ideas
+- 2026-10-17 17:21 | burn-down | crawler-hits.ts: AI crawler families; stats-page readings from logs, zone and /mcp; 9 tests
+- 2026-10-17 17:21 | burn-down | metrics.mjs: Daily numbers row gains stats crawlers (logs 7d, zone 30d, /mcp 30d), n/a per reading
+- 2026-10-17 17:21 | burn-down | Relay: Pay Per Crawl docs read: closed beta via sign-up form, Cloudflare is MoR, one price per zone
