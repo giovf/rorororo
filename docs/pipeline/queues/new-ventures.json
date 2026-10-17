@@ -24,8 +24,9 @@
       "effort_days": 0.3,
       "proof": "the spike file states eligibility (beta / waitlist / open), our 30-day crawler hits and the estimated monthly take",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-17"
+      "status": "doing",
+      "added": "2026-10-17",
+      "doing_since": "2026-10-17"
     },
     {
       "id": "spike-keeper-rewards-simulation",
