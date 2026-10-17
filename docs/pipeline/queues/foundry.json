@@ -840,8 +840,9 @@
       "effort_days": 0.2,
       "proof": "For 14 days after landing, every `ci: install workflow(s)` commit for a routine-written workflow has a `first run:` RUNS line within 1 day and no INBOX `Run failed` line names a workflow within an hour of its installer commit.",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-17"
+      "status": "doing",
+      "added": "2026-10-17",
+      "doing_since": "2026-10-17"
     },
     {
       "id": "triage-reconcile-before-owner",
