@@ -1,6 +1,0 @@
-GET https://ratings.food.gov.uk/open-data
-GET https://www.food.gov.uk/terms-and-conditions
-GET https://api.ratings.food.gov.uk/help
-GET https://api.ratings.food.gov.uk/Regions
-GET https://api.ratings.food.gov.uk/Establishments/basic/1/3
-GET https://api.apify.com/v2/store?search=food%20hygiene&limit=50
