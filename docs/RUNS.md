@@ -1198,3 +1198,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 17:10 | build | Spike x402 aggregator: Exa, X, CoinGecko terms forbid resale; markup under the fee where allowed
 - 2026-10-17 17:10 | build | Relay hosts: exa.ai, coingecko, polymarket, developer.x.com, dexscreener added for the terms read
 - 2026-10-17 17:10 | build | Queue: new-ventures spike-x402-aggregator-margins done; exchange x402-aggregator-mcp re-parked
+- 2026-10-17 17:28 | burn-down | Metrics dispatched 17:22: /mcp 30d 63,756 req, AI 236; logs query HTTP 400, zone needs token perm
+- 2026-10-17 17:28 | burn-down | crawler-hits.ts: needle is the bare /stats path, limit 1000; metrics.mjs shows the 400 body
