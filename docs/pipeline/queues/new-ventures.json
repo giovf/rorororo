@@ -35,8 +35,9 @@
       "effort_days": 0.4,
       "proof": "the spike file holds the 7-day reward total, caller count, gas median and a net figure for a £10 budget",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-17"
+      "status": "doing",
+      "added": "2026-10-17",
+      "doing_since": "2026-10-17"
     },
     {
       "id": "spike-hmrc-vat-lookup",
