@@ -508,3 +508,33 @@ v0.25.1 typed examples) write their first readings on the 10-15 row, after this 
 added:** `research_after: 2026-10-16` — the 10-15 and 10-16 rows carry the first `bazaar:` and
 `x402 validate:` clauses since the v0.25.1 fix and show whether the sign-in drop repeats.
 
+
+## Research 2026-10-17 (pipeline starved — burn-down)
+
+Read: the 10-15 and 10-16 Daily numbers rows (the two the 10-15 pass waited for), `docs/INBOX.md` to
+10-16 21:03, `docs/ALERTS.md`, the queue, the 10-16 metrics job log (run 38866226604) and the relay
+request `gankdat-research-2026-10-17` (`/v1/health`, `/stats/uk-planning`, three x402 402s, CDP validate
+for the two flagged routes — answered 00:17 UTC). **Unchanged:** 3 accounts, 0 paid, 0 x402 paid, `datasets
+30d external: none`, `after wall 1h: 0 clients`, the OAuth sign-in reading still the same two 10-13 events
+(`2 authorize, 2 sign-in, 0 email`, below the ≥ 5 threshold), `bazaar: 1 listed, 0 calls` (the 10-16 row
+was written at 07:19, eight hours before the first settled half-cent call — the 10-17 row is the first that
+can show the listing grow), `x402 validate: 17/17 valid`. **Three new readings, two of them defects:**
+
+| Signal | Reading |
+| --- | --- |
+| uk-planning | `/v1/health`: last refreshed 2026-10-09 05:01, 187 h; `GET /stats/uk-planning` → **503** `Statistics are being prepared`; the 10-16 MCP probe's keyless and authed `tools/call` both got `tool error: Source 'uk-planning' is temporarily unavailable`. Cause: `cache.ts` keeps a KV snapshot for `cacheTtlSeconds × 7` = 7 days and the failing refresh (by design since 10-11) writes nothing, so the 10-09 snapshot and its stats blob expired 10-16 ~05:00 — the "last snapshot stays served" of the 10-11 decision held for exactly seven days. Every REST/MCP/x402/Apify call on the dataset now fails; the indexed stats page is a JSON 503 |
+| Worker log noise | both stale slugs' wave-log lines were `x402: Route "GET /x402/data/<slug>" has an invalid bazaar extension: Schema validation failed: Code generation from strings disallowed for this context` — @x402/hono's `validateBazaarRouteExtensions` runs Ajv (`new Function`) on each isolate's first lit request and workerd forbids code generation; it logs for all 17 routes (the slug search sees only the two stale ones). Reproduced locally: Node has codegen, so the same call only prints Ajv's "unknown format date" notices. No effect on the lane — the 402 bodies and `PAYMENT-REQUIRED` are intact and CDP's validate answers `valid: true` for both routes — but the reading's one newest line is this noise |
+| uk-trademark-journal | `no successful refresh since 2026-10-14` with no error and no skipped row; the 24-h slug log has no wave line at all (6 lines: three requests, two `[error] GET /stats/…/class/NN`, the warning above). Third silent streak since 10-04: ok 10-10, silent 10-11..13, ok 10-14 (06:10:42), silent 10-15..16 — success every fourth night, both ok nights under 6 min |
+
+Queued in `docs/pipeline/queues/gankdat.json`:
+
+| Item | Score | Why now |
+| --- | --- | --- |
+| `uk-planning-paused-snapshot-retention` | 7 | a failed refresh with a snapshot re-puts data + stats with a fresh TTL (a touch, no origin read); `/stats/<slug>` renders the notice when the blob is gone; the 503 / tool error for a `notice` source says the notice. Live 503 on an indexed page, the probe red on both passes, an Apify actor with 19 outside runs/30d failing |
+| `wave-log-cron-outcome-reading` | 6 | drop request lines and the x402 warning from the slug search and read the wave's own cron invocation (`$workers.event.cron`, `$workers.outcome`, wall time) — the reading the 10-09 build notes asked for when a night is silent; built 10-09, its first real test showed noise |
+| `refresh-uk-trademark-journal-2026-10-17` | 6 | why wave 7 dies three nights in four (hypotheses ordered: a new-issue night exceeding the CPU/wall limit; memory on the 162k-row index + XML parse; the trigger), fix so every night writes a row; filed under the auto-filer's id so the 10-17 row extends it |
+
+Not queued: the x402 warning at source (only if cheap inside the reading item — the lane is unaffected);
+more datasets, pricing, listings (triggers unchanged since 10-05); the Bazaar reading (dated 11-14, the
+10-17 row shows whether the 10-16 payment indexed the routes); the sign-in drop (two events, no repeat).
+`researched: 2026-10-17`; the first item is buildable now and `next` names it.

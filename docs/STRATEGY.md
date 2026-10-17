@@ -1321,3 +1321,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   page, idea box → OWNER-NOTES) and a dependency-currency system: `docs/ops/VERSIONS.md`, a monthly check of routine
   Claude models and Node against public pages, Dependabot with gated auto-merge. The first check found Opus 5.5 and
   Sonnet 5.5 already published; after two probe runs the four Sonnet routines and the Opus fallback run on 5.5.
+- 2026-10-17 burn-down: gankdat research pass — the 10-11 "keep serving the uk-planning snapshot" decision lasted seven days: the
+  KV snapshot and stats blob expire at 7 × the cache TTL and a failing refresh never re-writes them, so since 10-16 the dataset 503s
+  everywhere (REST, MCP probe, Apify actor, the indexed /stats page). Queued the retention fix (score 7), a cron-outcome wave-log
+  reading (the slug search returned only @x402/hono's Ajv-under-workerd warning for both stale sources, and nothing from the
+  journal's wave, which has died silently on three nights in four since 10-04) and the journal's third refresh item.

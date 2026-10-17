@@ -5,10 +5,9 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (1)
+## Requests (0)
 
-1. **PayPal hackathon video is ready** — ~10 min, since 2026-10-11; nothing queued waits on it. Steps: [023](actions/023-paypal-hackathon-submission.md).
-   PayPal hackathon video is ready (~10 min): download it from the CI run in action 023 and submit the Devpost form
+Nothing is waiting on you.
 
 ## Waiting on an attended Claude session, not you (2)
 

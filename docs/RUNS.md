@@ -1160,3 +1160,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 17:00 | interactive | Owner dashboard built at apps.gankdat.com/ops: email code sign-in, ventures, pipeline, owner page, idea box
 - 2026-10-16 17:00 | notify | Your dashboard is live at apps.gankdat.com/ops. Sign in with your email, no password
 - 2026-10-16 18:40 | interactive | Versions check built; Sonnet routines and the Opus fallback moved to 5.5 after probe runs; Node 24 queued
+- 2026-10-17 00:24 | burn-down | Research gankdat: uk-planning snapshot + stats blob expired 10-16 (KV TTL x7), /stats 503, probe red
+- 2026-10-17 00:24 | burn-down | Research gankdat: x402 bazaar log warning is Ajv codegen under workerd, lane fine; journal silent 10-15/16
+- 2026-10-17 00:24 | burn-down | Queue: 3 gankdat items added (snapshot retention 7, cron-outcome reading 6, journal refresh 6)
