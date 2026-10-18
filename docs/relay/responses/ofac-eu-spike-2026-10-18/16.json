@@ -1,0 +1,1214 @@
+{
+  "data": {
+    "total": 377,
+    "count": 20,
+    "offset": 0,
+    "limit": 20,
+    "desc": false,
+    "items": [
+      {
+        "title": "Sanctions & Watchlist Screening — Risk-Scored Decisions",
+        "name": "opensanctions-search",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 1910,
+          "totalUsers": 53,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 10,
+          "lastRunStartedAt": "2026-10-17T14:10:53.846Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 54,
+            "TIMED-OUT": 0,
+            "TOTAL": 54
+          }
+        },
+        "description": "Screen names against OFAC, EU, UN, UK sanctions, PEP and watchlist data via OpenSanctions and get a risk-scored decision per match: block, escalate, review, or clear, with the evidence, review priority, and change monitoring. Batch screening and ongoing watchlist monitoring built in.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/W5px7erQSg6oTc3KOj5GBX8Ts58EhsY9mPlsMQxOPEA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vczJGTTV1Rkg5RjJlWjRwWjktYWN0b3ItNlpsa3owd2pkWGV3ZnEzeUstSmxNQUgwQmRKZi1DaGF0R1BUX0ltYWdlX01hcl8xNV9fMjAyNl9fMDlfMThfNTBfUE0ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-03-13T20:41:31.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "entity-fetched": {
+                "eventTitle": "Entity fetched",
+                "eventDescription": "Charged per sanctioned entity record retrieved from OpenSanctions.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-02-27T19:42:14.648Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-02-27T19:42:34.778Z"
+        },
+        "id": "6Zlkz0wjdXewfq3yK",
+        "url": "https://apify.com/ryanclinton/opensanctions-search"
+      },
+      {
+        "title": "Sanctions Screening API",
+        "name": "sanctions-screening",
+        "username": "zinin",
+        "stats": {
+          "totalBuilds": 18,
+          "totalRuns": 393,
+          "totalUsers": 9,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-17T17:31:18.530Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 33,
+            "TIMED-OUT": 0,
+            "TOTAL": 33
+          }
+        },
+        "description": "Screen up to 100 names against fresh official OFAC SDN primary and alias files plus the EU consolidated sanctions list. Get ranked potential-match evidence, exact source coverage, confidence, gaps, failure truth, billing metadata, and a manual review action. Not sanctions clearance or legal advice.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/FEb3rpn9PJgAjMI49j7dPpxFG0VRFIKhY5WECz3JQCo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbkJiNzNWeFM4QTdDSWw4bXQtYWN0b3ItUll3dVdIdDNhZmZsMjFtZ3ItaDhEQTdMMnIyTy1zYW5jdGlvbnMtc2NyZWVuaW5nLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Tim Zinin",
+        "userPictureUrl": "https://images.apifyusercontent.com/1LleKlYRG1HVIZD4cyFM5PyoqHgANZop5T64Mo7y3iQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZ0dOV2NFR3ZOY2dzc0JHcHRFM1lHOGhKX1NXcVhPZGlnV1JhZUZoZmNyRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblZoZFVKSmJIRlBjM0ZhUlZoclJVd3hRMGhZU1dsMVFuZzBYMjFYWTNNMU9GaFpTMGMyVVRWTmFIa3phbEZqZUhkdWR6MXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Clarify result-found as one useful delivered screening row for one unique submitted name. Normalized duplicates, source-failure advisories, incomplete no-match rows, pricing diagnostics, and budget advisories remain free of result-found charges.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00475
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00425
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0041
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0045
+                  }
+                },
+                "eventTitle": "Actor Start",
+                "isOneTimeEvent": true,
+                "isPrimaryEvent": false
+              },
+              "result-found": {
+                "eventDescription": "One useful screening row delivered for one unique submitted name, with ranked OFAC and EU potential-match evidence, exact list-coverage status, confidence, gaps, a manual review action, and settlement-neutral billing metadata. It is a fuzzy-name screening signal, not identity verification, sanctions clearance, or legal advice.",
+                "eventTieredPricingUsd": {
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00475
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00425
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0041
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0045
+                  }
+                },
+                "eventTitle": "Delivered sanctions screening row",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-08-12T14:10:15.771Z",
+          "startedAt": "2026-08-12T14:10:15.771Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-19T08:06:10.279Z"
+        },
+        "id": "RYwuWHt3affl21mgr",
+        "url": "https://apify.com/zinin/sanctions-screening"
+      },
+      {
+        "title": "OFAC Sanctions Screening API - KYC AML Compliance",
+        "name": "ofac-sanctions-screening",
+        "username": "pink_comic",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 823,
+          "totalUsers": 9,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-18T09:43:01.397Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Screen counterparties against the official OFAC SDN List for KYC/AML and KYB. Returns possible matches with aliases, IDs, record URLs, and scope caveats for fintech onboarding, trade compliance, and vendor diligence. SDN-only; not identity verification.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/mP-obZ7K_1KYRSHEKNkvu2AmT340leIgaWFTsa2xd8Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcUhCNFdCdVdsUmtraUdIWXctYWN0b3ItYTZDaVV4aVprTkV3M3V2b1AtU3BIVVR6TUkwRi1vZmFjLXNhbmN0aW9ucy1zY3JlZW5pbmcucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ava Torres",
+        "userPictureUrl": "https://images.apifyusercontent.com/xHIQ8NPgSWhC7jbdKz1bniz5JDgrODfO99BuuEXmJbQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV19KMWN2OFBpYlc5enZjT2ZWUVcxTnNyQVk1eU9Sd0F3QkMwWWYzWGpRSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVWhDTkZkQ2RWZHNVbXRyYVVkSVdYY3RjSEp2Wm1sc1pTMW1NakYwYkdwVFFraDNMWE5qY21WbGJuTm9iM1JmTWpBeU5pMHdNeTB5TkY5aGRGODRMalExTGpFMVgwRk5MbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-04-19T00:00:00.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-04-04T06:09:00.860Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-04-04T06:09:21.061Z"
+        },
+        "id": "a6CiUxiZkNEw3uvoP",
+        "url": "https://apify.com/pink_comic/ofac-sanctions-screening"
+      },
+      {
+        "title": "Sanctions & PEP Screening — OFAC, UN, EU, UK (KYC/AML)",
+        "name": "sanctions-screener",
+        "username": "inexhaustible_glass",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 122,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 4,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-17T14:30:28.757Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Screen any name or company against OFAC SDN, UN, EU and UK HMT sanctions watchlists at once. Fuzzy matching, PEP and risk scoring for KYC, AML, CFT, due diligence and compliance. No API key — free official government lists.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Hitman studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/-dGl0H4SMe4cEFtN8UXxE58LOeVSdgZw0FkVyr_0kGY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOXlPcDNDdExSX25iUHB6WVF0aVBYOEFZa1NJbW8yc25BaVBLTVp5akY1RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbnBRTFcxSVozaEJVRmxwTFV0RE9HRnhUR3RtV0RSMVQwNVVRemRyTTFaUlpXZFdTbFkyY1V0WVZrbDBUblpCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.02
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Name screened",
+                "eventDescription": "One name checked against all lists.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-27T15:47:41.092Z",
+          "startedAt": "2026-09-27T15:47:41.092Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-27T16:05:57.885Z"
+        },
+        "id": "UtOfJKq7ZcPZThBMo",
+        "url": "https://apify.com/inexhaustible_glass/sanctions-screener"
+      },
+      {
+        "title": "Sanctions Screening API for OFAC EU UN and UK",
+        "name": "full-sanctions-screener",
+        "username": "george.the.developer",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 10,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-14T01:51:57.511Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 0,
+            "TIMED-OUT": 1,
+            "TOTAL": 1
+          }
+        },
+        "description": "Use a sanctions checker for an OFAC sanctions check and screening against EU, UN, and UK lists. Match entity names and aliases, set similarity thresholds, and review scored potential matches.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ryqLBHZlETNDRpO8SYO6Y_agspW3SyTZcZS3EK93Ae8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTERZcHRKMGR2V0tBSlVkS3QtYWN0b3ItNlJ3QzhhVTNVcjRXcHpOekwtdzhaM1F6dW9VTS1zYW5jdGlvbnMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "George Kioko",
+        "userPictureUrl": "https://images.apifyusercontent.com/fBEtvNATgSgq0bdRMJLsRKZlvaHNUPKbxplUNWFR6YY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMTdVZkw2RWhGRWljcUF6Sk1xSnhJa2NoZjRZa0dKVDZCb0ZGV3RkQjVqYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZURVJaY0hSS01HUjJWMHRCU2xWa1MzUXRjSEp2Wm1sc1pTMW9jVVJ3WTJGNFRHSm1MWEJ5YjJacGJHVkJVR2xtZVM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-04-11T21:41:20.595Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "entity-screened": {
+                "eventTitle": "Entity screened",
+                "eventDescription": "Charged for each entity screened against sanctions lists",
+                "eventPriceUsd": 0.015,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-03-27T21:41:22.572Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-03-27T21:41:42.732Z"
+        },
+        "id": "6RwC8aU3Ur4WpzNzL",
+        "url": "https://apify.com/george.the.developer/full-sanctions-screener"
+      },
+      {
+        "title": "Sanctions & Watchlist Screening Scraper: OFAC + UK",
+        "name": "sanctions-watchlist-scraper",
+        "username": "scrapemint",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 96,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-18T10:08:41.373Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Download and screen official government sanctions lists: OFAC SDN and Consolidated (US Treasury) and UK HMT. List mode returns filterable entities with aliases, addresses and sanction programs; screen mode checks your names against every list. Keyless, fresh each run, no API key.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ken M",
+        "userPictureUrl": "https://images.apifyusercontent.com/Y6r8_YC1Vbd9rQFfrkqE3V7tygLapXJi-M5laAoWe-g/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRWY5TTJQdFE1ZlpKZFZJbldGeTZqaWoydXFkd2lLNlQ1eFpJaFozV2dQcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaVnB1VTNkQ2JVZEdTRFpLY1c1eGVVTXRjSEp2Wm1sc1pTMVpRbFpQWlZoS05rZHBMVEl5TWpJdWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-27T00:00:00.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "record": {
+                "eventTitle": "Sanctions record",
+                "eventDescription": "One sanctioned entity (list mode) or one name match (screen mode), with aliases, addresses and sanction programs from OFAC/UK official lists. First 2 rows per run are free.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-12T20:19:04.906Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-27T00:05:44.627Z"
+        },
+        "id": "TL1hGEXavuA6B8Ahy",
+        "url": "https://apify.com/scrapemint/sanctions-watchlist-scraper"
+      },
+      {
+        "title": "AML & Sanctions Screening for AI Agents (OFAC, EU, UN, UK)",
+        "name": "sanctions-screening",
+        "username": "haketa",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 112,
+          "totalUsers": 3,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T10:52:37.944Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 32,
+            "TIMED-OUT": 0,
+            "TOTAL": 32
+          }
+        },
+        "description": "Screen any name or company against global sanctions & watchlists (OFAC SDN, EU, UN, UK OFSI) for KYC/AML. Fuzzy name matching with risk scores, programs, aliases, dates of birth & source lists. Real-time compliance grounding for AI agents & LLMs.",
+        "categories": [
+          "AI",
+          "AGENTS",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Haketa",
+        "userPictureUrl": "https://images.apifyusercontent.com/v3INZBe8i9FXs3yDWNyES48f4AFPoPUh94BdLRQfLb4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT284Rms2eVdKT3A0OG9NOUxmeDExWGppY1VhNm5sbTJkZzhQdl9NcXRHRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhRXhsVm1VeFdFeFFiRTgwYjNodGFYb3RjSEp2Wm1sc1pTMUJUREpzTUdRMlQzRktMVmRvWVhSelFYQndYMGx0WVdkbFh6SXdNall0TURRdE1UUmZZWFJmTVRjdU5ETXVNVGN1YW5CbFp3LmpwZWc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-06T14:02:12.329Z",
+          "createdAt": "2026-07-06T14:02:13.088Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-13T10:36:10.537Z"
+        },
+        "id": "W0DRTLEWvVeOahrYE",
+        "url": "https://apify.com/haketa/sanctions-screening"
+      },
+      {
+        "title": "Sanctions Screening: EU, UK & US OFAC Lists (Official)",
+        "name": "sanctions-screening-eu-uk-ofac",
+        "username": "frenchdatalab",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 38,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T11:14:36.349Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 21,
+            "TIMED-OUT": 2,
+            "TOTAL": 23
+          }
+        },
+        "description": "Screen names of people and companies against the official EU, UK (FCDO) and US OFAC sanctions lists in one run: fuzzy, any-script matching with birth year and country checks, or export and monitor new designations. Lists downloaded fresh at every run.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/P_0VygaeFnt_PKBfXQCoLlfeKzLHowGBM82XOC3uLgw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTjhHMW8zM2pYYUdHeHFjcjMtYWN0b3ItcmxpaVM3S0g4MUtoT2Rjd24tY295dXBCT0RlaS1pY29uLXNhbmN0aW9ucy1zY3JlZW5pbmctNTEyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "French Data lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/x88KnwCbMORfbW_RXPWDrCkl2sJdOyOlVZtxHCbmIAU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdk4zZXBUdm1ZMU5GNW5uVC1BNGhyTGpvZTFKZGJ3a3dJU2NEb3lzT0h6RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUamhITVc4ek0ycFlZVWRIZUhGamNqTXRjSEp2Wm1sc1pTMHdRbEZyWjI0NVZUVnVMV2x0WVdkbExURTNPVEEzTmpJd016YzRNRFV1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-10-02T15:56:40.524Z",
+          "startedAt": "2026-10-02T15:56:40.000Z",
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "screening": {
+                "eventTitle": "Name screened",
+                "eventDescription": "One name screened against the selected official lists (POTENTIAL_MATCH or NO_MATCH). Empty or invalid inputs are free.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              },
+              "entry": {
+                "eventTitle": "List entry exported",
+                "eventDescription": "One sanctions list entry exported (export and monitoring mode).",
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": false
+              }
+            }
+          }
+        },
+        "id": "rliiS7KH81KhOdcwn",
+        "url": "https://apify.com/frenchdatalab/sanctions-screening-eu-uk-ofac"
+      },
+      {
+        "title": "OFAC Sanctions Screening - SDN & Consolidated Lists",
+        "name": "ofac-sanctions-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 81,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T18:02:37.045Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Screen any list of names against US Treasury OFAC sanctions - the SDN and Consolidated lists - with fuzzy matching and match scores: aliases (AKA), programs, entity type, addresses and remarks per hit. Official public data, straight from OFAC - no API key, no browser.",
+        "categories": [
+          "OTHER",
+          "AGENTS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/HwnoZFbz13mpws6Kg9_wLx6SY_k-cbYfxKb1UD7qO7I/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItZVM5UXo5SUxscUZkcHQ0eU4tcVAzUnZENTBBTC1PRkFDX1NhbmN0aW9uc19TY3JlZW5pbmdfLV9TRE5fX19Db25zb2xpZGF0ZWRfTGlzdHMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "screening": {
+                "eventTitle": "Name screened",
+                "eventDescription": "One screening result: a sanctions-list match (with score, aliases, programs, addresses and remarks) or an auditable all-clear row for a screened name.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0011
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00076
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0005
+                  }
+                },
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.02,
+          "createdAt": "2026-08-15T05:32:29.113Z",
+          "startedAt": "2026-08-15T05:32:29.113Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "eS9Qz9ILlqFdpt4yN",
+        "url": "https://apify.com/scrapesage/ofac-sanctions-scraper"
+      },
+      {
+        "title": "Sanctions & Watchlist Screening — Risk-Scored Decisions",
+        "name": "sanctions-screening",
+        "username": "maximedupre",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 139,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T12:28:30.789Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 1,
+            "TOTAL": 26
+          }
+        },
+        "description": "Screen up to 500 names against OFAC, EU, UK OFSI, and UN sanctions lists. Get possible matches, risk levels, review steps, source links, and clear outcomes without a separate data API key.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/WRYLo0AmO6LmtnVPE8t0H6RdRqdTD-dacCluOpXwlf4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ2VMWE9ZV3FqY0FjWng0TDAtYWN0b3ItVldCS2NiMDNlQTN6bnhaVnUtOExRQnplOWlQTy1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Maxime Dupré",
+        "userPictureUrl": "https://images.apifyusercontent.com/rphAVS3cnUgZlUxGcpMm57KYTFWYekrE_5yAgDTZm-E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdHROY21HdkhUcmFXQ0F3WktNdlFROTAxZHdlZTU0eWVlMmhad0pLVXNGQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMlZNV0U5WlYzRnFZMEZqV25nMFREQXRjSEp2Wm1sc1pTMHpRbXRRVFVkeVVGWkVMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekl4WDE4eU1ESTJYMTh4TUY4MU0xODFORjlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "name-screened": {
+                "eventTitle": "Name screened",
+                "eventDescription": "Charged once for each submitted name screened against the selected sanctions and watchlists, including screens with no potential match.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00155
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00135
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00135
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00135
+                  }
+                }
+              }
+            }
+          },
+          "isPriceChangeNotificationSuppressed": true,
+          "createdAt": "2026-07-28T18:55:10.366Z",
+          "startedAt": "2026-07-28T18:55:10.366Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "VWBKcb03eA3znxZVu",
+        "url": "https://apify.com/maximedupre/sanctions-screening"
+      },
+      {
+        "title": "Sanctions & PEP Screening API: OFAC, EU, UK",
+        "name": "sanctions-pep-screening-api-ofac-eu-uk",
+        "username": "reclarative_kernel",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 143,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T20:50:35.736Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Screen names against OFAC (SDN + Consolidated), EU and UK sanctions and PEP lists. Fuzzy + alias matching with explainable match scores. First-pass AML filter.",
+        "categories": [
+          "AI",
+          "AGENTS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Marcus AureliusII",
+        "userPictureUrl": "https://images.apifyusercontent.com/I7O2smOb7CuUNI4y6mITWzrUVkceBSzPldNCyoHXg7s/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcEV3ZDVuSVpvVkF1ZWQtXy1OZ3ZEbUplQWZNTFdVVnd3WmJITzZUQnBUTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMFZVWldWNVJHVTFjRzR6Vm5VNFRtVk5PSEZ6ZVROcFNFTXdWRWxrVEZSelMxbEdiMWhTVGpNeU5rTTVkV2gzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "screening": {
+                "eventTitle": "Sanctions screening",
+                "eventDescription": "One name screened against OFAC, EU and UK sanctions lists with fuzzy matching",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.08,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              }
+            }
+          },
+          "startedAt": "2026-06-01T20:56:16.501Z",
+          "createdAt": "2026-06-01T20:56:17.681Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "f2eKuawFmDUuBlpmX",
+        "url": "https://apify.com/reclarative_kernel/sanctions-pep-screening-api-ofac-eu-uk"
+      },
+      {
+        "title": "Global Sanctions Screening API - OFAC, EU, UK & UN Watchlists",
+        "name": "sanctions-screening-api",
+        "username": "webdata_labs",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 227,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T06:00:09.520Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "[💵 $2.00 / 1K] Screen any person or company against the consolidated OFAC, EU, UK OFSI and UN sanctions lists in one call. Fuzzy name matching with scored, explained hits - or export the full normalized watchlist. Built from primary government sources, not a re-publisher.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/FUfgF0hFg6qPOwbEvmqbhAnJzWK_V_1u4vbAcEhunFA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcEhhdUJjTHRqa3NNZWNRQnEtYWN0b3ItSmpSVmJGQ3ZENDBsanI2UG4tcHNubHl2SXVkay1pbWFnZS0xNzgyODQ2MDUyNDk5LnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "WebData Labs",
+        "userPictureUrl": "https://images.apifyusercontent.com/McZjuwsQb9r68ni1C0Oq4CE5p90MU53JHGVRhPbEhPU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbU5NUmVnOENYaFZYMUhfTlNKUmpwQmNKeW5Dckd6VHJTRUhndWl4RldLWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjRWhoZFVKalRIUnFhM05OWldOUlFuRXRjSEp2Wm1sc1pTMTFVemRMVUZJd1dqRnVMV2x0WVdkbExURTNPREl3TnpZMU5qRXhOVGN1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Screening result",
+                "eventDescription": "One result row: a screened name with its scored sanctions-list matches, or one normalized watchlist entity in list mode.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00175
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-07-19T11:32:53.956Z",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "Lower customer price to improve trial conversion while keeping platform usage included.",
+          "createdAt": "2026-07-19T11:25:17.392Z",
+          "notifiedAboutFutureChangeAt": "2026-07-19T11:25:37.536Z",
+          "notifiedAboutChangeAt": "2026-07-19T11:35:41.184Z"
+        },
+        "id": "JjRVbFCvD40ljr6Pn",
+        "url": "https://apify.com/webdata_labs/sanctions-screening-api"
+      },
+      {
+        "title": "OFAC SDN and EU Sanctions Screening for Companies",
+        "name": "sanctions-entity-screening",
+        "username": "nightwave-owner",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 35,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T08:48:37.986Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 9,
+            "TIMED-OUT": 1,
+            "TOTAL": 10
+          }
+        },
+        "description": "Screens company names against the OFAC SDN, OFAC Consolidated and EU sanctions lists with fuzzy matching. Returns each hit with score, programs, listing date, aliases, countries and IMO or registration numbers. Entities, vessels and aircraft only: individuals are never returned.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Viktor Wiberg",
+        "userPictureUrl": "https://images.apifyusercontent.com/9tyXiDu1Ixnkvmq14wPOPJ4CASMbwIPRebVC1TaV8Ck/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYk1YRnZJRkZ0cmVsdVJlWEtoaWEzWFBZUW9tbm5CYWRGcmI3ZE1udHdFYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURFIzTkZObGNYaDBYMDlFYTFkeVUwSjFiQzAwYTJKNGFYTldTbXhFUTBzd2RXaFNTemN6WlROcVRtYzJSMFJEY2xJ.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "screened-name": {
+                "eventTitle": "Screened name",
+                "eventDescription": "One name screened against the selected sanctions lists, with or without matches.",
+                "eventPriceUsd": 0.01
+              },
+              "list-record": {
+                "eventTitle": "List record",
+                "eventDescription": "One recently listed or amended record returned in watch mode (no names given).",
+                "eventPriceUsd": 0.002
+              }
+            }
+          },
+          "startedAt": "2026-10-04T06:28:37.000Z",
+          "createdAt": "2026-10-04T06:28:44.663Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "eVFWxs2CNppnLYHUe",
+        "url": "https://apify.com/nightwave-owner/sanctions-entity-screening"
+      },
+      {
+        "title": "OFAC Sanctions Name Screening",
+        "name": "ofac-sanctions-name-screening",
+        "username": "automation-lab",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 20,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T03:42:35.397Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 17,
+            "TIMED-OUT": 0,
+            "TOTAL": 17
+          }
+        },
+        "description": "Screen supplied names against official public OFAC SDN and alias CSV files; export per-name candidate matches, SDN IDs, aliases and source provenance. Informational only.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/7qdE8pI_apT3IvWFIeHHoFKY51nBf6n49tG54-d09p4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotYWN0b3ItMERMZWpRRVl2SWF3aHBiYU0tUlVxYUVQdGtkZS1hY3Rvci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Automation Lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/K_C4LOMfOgJZv5UcVqbze6xlfc6mS23zsoHRS5nDXvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMDdsSFdveGptQlpJN0NMWkJqVi1wUlBjV0ZHRFQyRzIwVjdkVzBRSzBCay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiblJJUTI1b1RsVnJlbGhTTjI1aVZWb3RjSEp2Wm1sc1pTMW9ORkJYYTNsWWVVSmxMV0YxZEc5dFlYUnBiMjR0YkdGaUxYQnliMlpwYkdVdGJHOW5ieTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-29T20:16:29.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "start": {
+                "eventTitle": "Run started",
+                "eventDescription": "One-time fee charged when a run starts. Covers fixed startup cost (init, proxy warmup, first HTTP setup).",
+                "eventPriceUsd": 0.0035,
+                "isOneTimeEvent": true
+              },
+              "item": {
+                "eventTitle": "Item extracted",
+                "eventDescription": "Charged per item extracted.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00276
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001872
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00144
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00144
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00144
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-29T20:16:30.813Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "0DLejQEYvIawhpbaM",
+        "url": "https://apify.com/automation-lab/ofac-sanctions-name-screening"
+      },
+      {
+        "title": "Sanctions Screening Check: OFAC, EU and UK Lists",
+        "name": "sanctions-screening-check",
+        "username": "accountable_eel",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 19,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T04:10:50.188Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 12,
+            "TIMED-OUT": 2,
+            "TOTAL": 14
+          }
+        },
+        "description": "Screen people and company names against three official sanctions lists: US Treasury OFAC (SDN), the EU consolidated list and the UK Sanctions List. Screen a supplier list, or check a person with a date of birth. Aliases and scored reasons, to Google Sheets. A screening aid, not a compliance verdict.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ZhTKYiQf9T_FH-KcJ2fP40SManvIRd83PcB2GPq7fqU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNkVMTUNxazg0eEpBSHU2SmQtYWN0b3ItRk9nR3JoenpDY25XNEF1ZnctajFIejZheVlsZy1zYW5jdGlvbnMtc2NyZWVuaW5nLWNoZWNrLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Adriana Voss",
+        "userPictureUrl": "https://images.apifyusercontent.com/CGe0bLNDet-YF5zEdso7hmRkv8G729sNu_uWbXRy0eU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdWEwVVBjRXJSeE5hSEx2WDBJMW9pSGk4Z0x0YWdOY2VTMEhzNlhBMXBjby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOa1ZNVFVOeGF6ZzBlRXBCU0hVMlNtUXRjSEp2Wm1sc1pTMXZPV2RHUVc5SWRqQjJMWEJsZUdWc2N5MWhiblJ2Ym1sdkxXSmhkR2x1YVdNdE1qVTNNelF6TkMwME1UWTBOREU0TG1wd1p3LmpwZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "entity-screened": {
+                "eventTitle": "Entity screened",
+                "eventDescription": "Charged once per name screened against every list you selected, whether the result is CLEAR or a possible match — a CLEAR answer is the answer you asked for. A name is never charged when a requested list could not be loaded (status PARTIAL), and a run that screens nothing is never charged.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.016
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0136
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0104
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.008
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-10-01T09:53:13.865Z",
+          "startedAt": "2026-10-01T09:53:13.865Z"
+        },
+        "id": "FOgGrhzzCcnW4Aufw",
+        "url": "https://apify.com/accountable_eel/sanctions-screening-check"
+      },
+      {
+        "title": "Bulk Sanctions & PEP Screening (EU, UN, UK, OFAC) from CSV",
+        "name": "bulk-sanctions-pep-screening",
+        "username": "factline",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 5,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T17:58:36.960Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 4,
+            "TIMED-OUT": 0,
+            "TOTAL": 4
+          }
+        },
+        "description": "Screen a whole customer, supplier or contact list against the EU, UN, UK and US OFAC sanctions lists and the PEP list. Paste names or give a CSV file, get one row per name with a verdict and match scores. Pay per name.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Matthew Sammels",
+        "userPictureUrl": "https://images.apifyusercontent.com/jIsIYu7muVX7eieJSNqHeMQJjA40NXfZpnIKoC0A-5w/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVkxwRnZKSzdhQlJHMW05N3p2M3lzNmhvODBsLU9zMXFCVkQ0dmV4R0xkay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUR3A1WlU1c2JVOXhaVzFFWTIweVEwNWpSSGRGY0RoVmRYRlFTRlpxYW1aVVN6ZDNla0ZMUjBWcFgyb3llVTkzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "name-screened": {
+                "eventTitle": "Name screened",
+                "eventDescription": "One name screened against EU, UN, UK and US OFAC sanctions and PEP",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-14T17:42:20.013Z",
+          "createdAt": "2026-10-14T17:42:20.980Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "fSbh9d78n8jieUcos",
+        "url": "https://apify.com/factline/bulk-sanctions-pep-screening"
+      },
+      {
+        "title": "Sanctions Screening – OFAC, EU, UN & UK Sanctions List Check",
+        "name": "sanctions-screening",
+        "username": "wsystem",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 8,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T16:09:04.184Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 3,
+            "TIMED-OUT": 0,
+            "TOTAL": 3
+          }
+        },
+        "description": "Sanctions screening and sanctions list check for people and companies against official OFAC SDN, EU, UN and UK lists, with fuzzy name matching, transliteration and match scores. Lists refreshed daily. KYC/KYB & AML ready.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "W System",
+        "userPictureUrl": "https://images.apifyusercontent.com/V-9m_c9IcvJkNvo3fCeRlZRFK4zjuvBSqRioTaJpj7c/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vY29GdzRWNDFVMURHT2x6MlhmYUJUN1NBakZaeWI5Z0J0STF0X3lZNnRtby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpODNNVEkyT0RZMVpUa3hOMlV4Wm1JeFkyTTRabUpoTmpVeU1tUTBZV0ZpTTJFeFpUaGxOamMxTkdZeFl6VXdaVEF3WmpZME0yVmpZVFUxTmpNM09XVXdQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.005
+              },
+              "name-screened": {
+                "eventTitle": "Name screened",
+                "eventDescription": "One name screened against EU, UN, OFAC and UK sanctions lists.",
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "createdAt": "2026-10-15T13:30:05.868Z",
+          "startedAt": "2026-10-15T13:30:05.868Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-15T13:30:30.991Z"
+        },
+        "id": "KZecSwzdty3JE6HIX",
+        "url": "https://apify.com/wsystem/sanctions-screening"
+      }
+    ]
+  }
+}
