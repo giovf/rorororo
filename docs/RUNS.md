@@ -1313,3 +1313,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 17:40 | burn-down | Stopping: 3 items built (prompt cadence, bounty scanner, planning re-read), 1 spike seeded; starved-and-cooled
 - 2026-10-18 17:45 | build | CI red on d1eec60c: the deadline test's cold uk-tenders call ran past 10 s on the runner; snapshot seeded
 - 2026-10-18 17:45 | build | server.ts: an expired call's work runs on under waitUntil, so a cold refresh still writes its snapshot
+- 2026-10-18 18:25 | burn-down | relay ofac-eu-spike: OFAC export names, EU FSF public-token files, OpenSanctions credits, Apify shelf read
+- 2026-10-18 18:25 | burn-down | spike ofac-eu-sanctions-screening: parked — rivals €0.03–0.10 a query, uk-sanctions 0 external calls
+- 2026-10-18 18:25 | burn-down | Apify: 17 screening actors at US$0.002–0.08 a name share ~20 monthly users; EU list needs no account
+- 2026-10-18 18:25 | burn-down | Queue: new-ventures spike-ofac-eu-sanctions-screening done; queue empty, needs_research (cooling)

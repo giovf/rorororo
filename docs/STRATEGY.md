@@ -1498,3 +1498,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   awaited fetch handler (the SSE path ran it after the Response was returned, work a Worker may drop), and every data tool runs
   under a 10 s deadline that names the phase it reached. Why: directories score a hang as an outage; a bounded error is a reading.
   The x402 Ajv `Error compiling schema` log line (11 of 12 uk-planning lines) is queued at 3, not fixed in this run.
+- 2026-10-18 burn-down: `spike-ofac-eu-sanctions-screening` parked (`docs/exchange/spikes/ofac-eu-sanctions-screening.md`).
+  Supply is clean — OFAC SDN and consolidated exports are public domain with verified file names and a delta feed, the EU
+  FSF XML/CSV answer the Commission's public token with no account, each list has a stable id — and rivals do charge
+  above the floor (OpenSanctions €0.10 → €0.03 a query by bundle; the Apify shelf US$0.002–0.08 a name). But
+  `uk-sanctions` has 0 external calls in 30 days, no dataset has one, and the 17 Apify screening actors share about 20
+  monthly users, so a matcher that carries false-negative liability is not a new income line. §5's distribution-first
+  rule holds for the two list datasets too. Re-open on the first external `uk-sanctions`/`sam-exclusions` call, a paid
+  x402 call on either, or a screening request; the file is the ingest recipe for that day.
