@@ -1,6 +1,7 @@
 // Bounty scanner (oss-bounties `bounty-scanner`, 2026-10-11): reads GitHub for open issues that carry
 // a posted cash bounty, drops the noise, ranks what is left and writes docs/bounties/BOARD.md plus
-// up to three queue items. Feature and bug-fix work only — issues that read as security findings and
+// up to three queue items (none while the queue is `finished`; weekly since 2026-10-18, the board is the
+// exchange's re-open reading). Feature and bug-fix work only — issues that read as security findings and
 // repositories that are testing sandboxes are excluded by rule, never ranked.
 //
 // Why these searches (measured 2026-10-11): the `💎 Bounty` label alone is thin and stale — 522 open
@@ -492,14 +493,17 @@ export function itemId(b: Bounty): string {
 
 /**
  * Files the top free bounties (no assignee, no open PR, at least MIN_AMOUNT) as queue items,
- * idempotent on id; blocked until CI can push a fork.
+ * idempotent on id; blocked until CI can push a fork. A `finished` queue (review 2026-W42 killed
+ * oss-bounties) is returned untouched with `finished: true`: the board is still written as the
+ * exchange's re-open reading, but no row may reopen work in it (foundry `bounty-scanner-finished-queue`).
  */
 export function fileBounties(
   queue: Queue,
   bounties: Bounty[],
   today: string,
   canPush: boolean,
-): { queue: Queue; added: string[] } {
+): { queue: Queue; added: string[]; finished?: boolean } {
+  if (queue.status === 'finished') return { queue, added: [], finished: true };
   const items = queue.items.map((it) => ({ ...it }));
   const added: string[] = [];
   for (const b of bounties
@@ -783,7 +787,7 @@ async function main(): Promise<void> {
   const out = fileBounties(queue, board, today, Boolean(process.env.PR_TOKEN_PRESENT));
   if (out.queue !== queue) writeFileSync(QUEUE_FILE, serialize(out.queue));
   console.log(
-    `bounties ${today}: read ${raw.size} (${opireApp.size} listed on Opire), kept ${board.length}, filed [${out.added.join(', ')}]; dropped ${JSON.stringify(dropped)}`,
+    `bounties ${today}: read ${raw.size} (${opireApp.size} listed on Opire), kept ${board.length}, ${out.finished ? 'queue finished — not filing' : `filed [${out.added.join(', ')}]`}; dropped ${JSON.stringify(dropped)}`,
   );
 }
 

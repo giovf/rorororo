@@ -1483,6 +1483,16 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   new-ventures.json when fewer than two are open (skipped at two) instead of parking an idea. Why: the W42 review found ten passes
   since 10-05 parked ten ideas and promoted none, while the four spikes seeded 10-17 were done the same day; a spike is work the next
   slot builds. Prompt text in docs/routines/burn-down.md, build.md and exchange.md; the W43 review keeps or reverses it.
+- 2026-10-18 burn-down: bounty-scanner-finished-queue — the scanner files nothing into a `finished` queue (the board is still
+  written as the exchange's re-open reading) and runs weekly on Mondays instead of daily. Why: the W42 review killed oss-bounties,
+  and a stray funded row would have reopened work the next morning while seven daily reads a week served one weekly reading.
+- 2026-10-18 burn-down: uk-planning weekly origin re-read — planning.data.gov.uk still serves entity-count 0 with no replacement
+  dataset; the snapshot stays served under its notice and the next read is 10-25. Why: the Apify actor still ran 21 times in 30 days
+  for outside users, so STRATEGY §7's 60-day no-demand clock has not started.
+- 2026-10-18 burn-down: first pre-research pass under the spike rule seeded `spike-ofac-eu-sanctions-screening` (6) in new-ventures
+  instead of parking an idea: OFAC's SDN exports are public-domain flat CSV (last modified 10-15), OpenSanctions sells per-query
+  screening and reseller licences, gankdat already streams the UK list. The spike's number — rival per-query prices against x402's
+  floor and the UK list's external calls (0 in 30 d) — decides promote or park at the 10-21 exchange.
 - 2026-10-18 build: gankdat `refresh-mcp-probe` — the 10-18 keyless probe hang (20 s, keyed call fine, snapshot fresh, no log line)
   is answered with two Worker guards rather than a guess: `/mcp` answers a POST with one JSON body so the tool call runs inside the
   awaited fetch handler (the SSE path ran it after the Response was returned, work a Worker may drop), and every data tool runs

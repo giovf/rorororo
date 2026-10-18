@@ -1301,3 +1301,13 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 17:30 | build | Queue: gankdat refresh-mcp-probe done (cause unproven, next hang readable); x402-ajv-compile-log-noise (3)
 - 2026-10-18 17:30 | build | Evidence: /v1/health 17:15 has uk-trademark-journal last ok 10-17 06:11 (35 h) — wave 7 silent 10-18
 - 2026-10-18 17:30 | build | Taskmaster row 39; ARCHITECTURE note; CI first runs all recorded; owner: nothing
+- 2026-10-18 17:30 | burn-down | bounty-scanner: fileBounties returns a finished queue untouched; log says `queue finished — not filing`
+- 2026-10-18 17:30 | burn-down | bounty-scanner.test: finished-queue branch covered (20 tests); guard checked against the real queue
+- 2026-10-18 17:30 | burn-down | docs/ci/bounty-board.yml: cron moved to Mondays 05:17 (was daily); the installer moves it into place
+- 2026-10-18 17:30 | burn-down | SCHEDULERS: bounty board row moved to the Weekly table (Monday 05:17, no items while finished)
+- 2026-10-18 17:30 | burn-down | Queue: foundry bounty-scanner-finished-queue done; proof is Monday 10-19's run log line
+- 2026-10-18 17:35 | burn-down | uk-planning re-read (relay planning-origin-2026-10-18): origin still empty, count 0, no replacement dataset
+- 2026-10-18 17:35 | burn-down | Queue: gankdat refresh-uk-planning-reread not_before moved to 10-25; clock kept in RESEARCH.md (Apify demand holds)
+- 2026-10-18 17:40 | burn-down | bounty-board.yml first run: success (17:22 dispatch; log says queue finished — not filing; BOARD.md only)
+- 2026-10-18 17:40 | burn-down | Exchange pre-research: spike-ofac-eu-sanctions-screening seeded in new-ventures (6); OFAC exports, OpenSanctions read
+- 2026-10-18 17:40 | burn-down | Stopping: 3 items built (prompt cadence, bounty scanner, planning re-read), 1 spike seeded; starved-and-cooled

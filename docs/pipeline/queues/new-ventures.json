@@ -1,8 +1,8 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": true,
-  "updated": "2026-10-17",
+  "needs_research": false,
+  "updated": "2026-10-18",
   "researched": "2026-10-17",
   "weight": 2,
   "items": [
@@ -49,6 +49,16 @@
       "status": "done",
       "added": "2026-10-17",
       "done_at": "2026-10-17"
+    },
+    {
+      "id": "spike-ofac-eu-sanctions-screening",
+      "title": "Research spike: cross-list sanctions screening next to gankdat's uk-sanctions — OFAC SDN and consolidated non-SDN exports (Sanctions List Service: export names, SDN.CSV layout, advanced XML, update cadence), the EU consolidated financial sanctions list's access route and terms, two paid rivals' per-query prices (OpenSanctions screening credits and reseller licence, sanctions.io or ComplyAdvantage) and gankdat's uk-sanctions external calls; write docs/exchange/spikes/ofac-eu-sanctions-screening.md with a promote / park call",
+      "why": "Exchange pre-research 2026-10-18 (burn-down, relay sanctions-lists-2026-10-18, the first pass under the spike rule): SDN.CSV answers HEAD 200 text/csv, last-modified 2026-10-15 16:34 UTC, and its first 4 kB are `ent_num,name,type,program,…` rows with `-0-` placeholders (a flat per-entry CSV, simpler than the UK list's per-name CSV); `CONS_ADVANCED.XML` answered 400, so the export names must be read from the service page first; ofac.treasury.gov/sanctions-list-service is 200 with the Advanced Sanctions Data Model documentation (a US government work — public domain, no licence step); opensanctions.org/licensing confirms the paid shape — hosted screening billed per query through prepaid credit bundles plus a wholesale reseller licence for redistribution — but shows no figure on that page; sanctions.io/pricing is 404 (moved); the data.europa.eu dataset slug guessed for the EU list is 404. Why it is worth a spike and not a parked idea: a screening call is a per-query cut of money already flowing (KYC/KYB checks every payments, invoicing and marketplace product runs), gankdat already streams the UK list (uk-sanctions: 162 calls in 30 d, 0 external) so the ingest pattern and the Blind Mode minimisation exist, and the open question is a number — do rivals charge enough per query for a three-list `screen_name` tool to clear x402's floor, and does any external caller use the UK list at all. Park if no rival sells cross-list screening above US$0.01 a query or the EU list needs an account.",
+      "effort_days": 0.3,
+      "proof": "the spike file states the three lists' access terms and update cadence, the real OFAC export names, two rival per-query prices and gankdat's uk-sanctions external-call count, with a promote / park recommendation the 2026-10-21 exchange cites",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-18"
     }
   ]
 }

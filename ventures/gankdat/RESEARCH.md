@@ -468,6 +468,13 @@ new fix item every two days. **Clock:** retire per §7 when the dataset goes 60 
 query (the `datasets 30d` reading), or re-point when the platform names a `replacement-dataset`;
 either way the row says so.
 
+Re-read 2026-10-18 (burn-down, relay `planning-origin-2026-10-18`): unchanged — `entity-count 0`,
+`phase alpha`, `replacement-dataset ""`, `entity.json?limit=5` answers `count 0`; the page now carries
+`consideration: planning-applications-decisions` and `github-discussion 25` (the platform's own
+design thread for the dataset — the re-point candidate when it republishes). Demand holds: the Apify
+actor ran 21 times in 30 days for 18 outside users (5 failed on the empty origin), so the §7 clock does
+not start. Next read 2026-10-25 (`refresh-uk-planning-reread-2026-10-18`, `not_before` moved a week).
+
 ## Research 2026-10-13 (pipeline starved — burn-down)
 
 Read: the 10-10 → 10-12 Daily numbers rows, `docs/INBOX.md` to 10-12 23:12, `docs/ALERTS.md`, the
