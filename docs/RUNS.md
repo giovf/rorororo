@@ -1243,3 +1243,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 00:45 | burn-down | docs/ci/notify-owner.yml: watchdog step runs dependabot-gate.ts, pull-requests read, queue file in its commit
 - 2026-10-18 00:45 | burn-down | SCHEDULERS notify-owner row and VERSIONS.md auto-merge rule name the red-gate filing; proof is the next red gate
 - 2026-10-18 00:45 | burn-down | Queue: foundry dependabot-red-gate-to-queue done; installer commit's first run is the next slot's check
+- 2026-10-18 00:50 | burn-down | run-watchdog.ts: a workflow_dispatch run of both metrics jobs in the window traces the 07:00 slot; 3 tests
+- 2026-10-18 00:50 | burn-down | run-watchdog.ts: main reads the dispatched runs from the Actions API, [] without token or on error
+- 2026-10-18 00:50 | burn-down | SCHEDULERS metrics row day 8 (10-17 dispatched, no marker, false missed); metrics.md: marker still owed
+- 2026-10-18 00:50 | burn-down | Queue: foundry watchdog-dispatch-event-trace done; proof is a marker-less dispatch morning with no missed line

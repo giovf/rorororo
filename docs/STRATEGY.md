@@ -1410,3 +1410,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   dependabot:` line (deduped by PR and sha) and an idempotent foundry item `dependabot-pr-<N>` (5 for minor/patch, 3
   for majors), the refresh-errors-to-queue pattern. Why: GitHub mails that failure only to dependabot[bot]; the
   auto-merge rule was silent for 30 h exactly when it needed a person, and the queue is where a routine looks.
+- 2026-10-18 burn-down: foundry `watchdog-dispatch-event-trace` — the run watchdog now reads the Actions API and takes a
+  `workflow_dispatch` run of both metrics workflows inside the 07:00 window as the slot's trace, marker or not; a
+  `schedule` run never counts, which keeps the late cron from faking a trace. Why: the 10-17 routine dispatched both
+  jobs and skipped its marker, and the second false `missed: metrics` in three days went to the run log; the event is
+  the fact the marker only approximated.

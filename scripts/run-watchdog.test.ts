@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import {
   ROUTINES,
+  dispatchRunsFrom,
   handoffNotifyLine,
   missedLine,
   missedSlots,
@@ -182,6 +183,65 @@ describe('missedSlots', () => {
     expect(keys(both.replace(marker, ''), '')).toEqual(['metrics@2026-10-15 07:00']);
     // A build slot has no dispatched jobs: a marker plus unrelated commits never traces it.
     expect(ROUTINES.find((d) => d.routine === 'build')?.dispatched).toBeUndefined();
+  });
+
+  it('takes a workflow_dispatch run of both metrics jobs as the 07:00 trace when the marker is missing', () => {
+    // 2026-10-17 as it happened: the routine dispatched both jobs at 07:13 and never stamped
+    // docs/ops/SLOTS.md; the rows landed 07:14 and 07:17 and the 09:13 watchdog wrote `missed:`.
+    const later = at('2026-10-17T09:13:00Z');
+    const since = Date.parse('2026-10-17T00:00:00Z');
+    const runsText = '# Run log\n';
+    const commitsText = [
+      '2026-10-17T07:14:30+00:00\tstore-metrics: 2026-10-17 daily check',
+      '2026-10-17T07:17:05+00:00\tmetrics(gankdat): 2026-10-17 daily numbers',
+      '',
+    ].join('\n');
+    const run = (workflow: string, event: string, iso: string) => ({
+      workflow,
+      event,
+      startedAt: at(iso),
+    });
+    const both = [
+      run('gankdat-metrics.yml', 'workflow_dispatch', '2026-10-17T07:13:53Z'),
+      run('store-metrics.yml', 'workflow_dispatch', '2026-10-17T07:13:40Z'),
+    ];
+    const keys = (dispatchRuns: ReturnType<typeof run>[]): string[] =>
+      missedSlots({ now: later, runsText, commitsText, slotsText: '', since, dispatchRuns }).map(
+        (s) => slotKey(s.routine, s.at),
+      );
+    expect(keys(both)).toEqual([]);
+    // The late cron's runs carry `schedule`: commits plus scheduled runs stay missed.
+    expect(keys(both.map((r) => ({ ...r, event: 'schedule' })))).toEqual([
+      'metrics@2026-10-17 07:00',
+    ]);
+    // One dispatched workflow of two is a run that died between its dispatches.
+    expect(keys(both.slice(0, 1))).toEqual(['metrics@2026-10-17 07:00']);
+    // A dispatch outside the window (yesterday's 17:22 re-run) is not this slot's.
+    expect(keys(both.map((r) => ({ ...r, startedAt: at('2026-10-16T17:22:38Z') })))).toEqual([
+      'metrics@2026-10-17 07:00',
+    ]);
+    // Without the API (no token, an error) the input is absent and the 10-17 morning is still missed.
+    expect(keys([])).toEqual(['metrics@2026-10-17 07:00']);
+  });
+
+  it('maps the Actions API run list to dispatch runs and drops runs that never started', () => {
+    expect(
+      dispatchRunsFrom([
+        {
+          path: '.github/workflows/gankdat-metrics.yml',
+          event: 'workflow_dispatch',
+          run_started_at: '2026-10-17T07:13:53Z',
+        },
+        { path: '.github/workflows/check.yml', event: 'push', run_started_at: null },
+        { event: 'workflow_dispatch', run_started_at: '2026-10-17T07:13:53Z' },
+      ]),
+    ).toEqual([
+      {
+        workflow: 'gankdat-metrics.yml',
+        event: 'workflow_dispatch',
+        startedAt: at('2026-10-17T07:13:53Z'),
+      },
+    ]);
   });
 
   it('never reports the same slot twice: the RUNS.md line is the dedupe record', () => {
