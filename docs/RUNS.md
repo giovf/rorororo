@@ -1300,3 +1300,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 17:30 | burn-down | Queue: foundry bounty-scanner-finished-queue done; proof is Monday 10-19's run log line
 - 2026-10-18 17:35 | burn-down | uk-planning re-read (relay planning-origin-2026-10-18): origin still empty, count 0, no replacement dataset
 - 2026-10-18 17:35 | burn-down | Queue: gankdat refresh-uk-planning-reread not_before moved to 10-25; clock kept in RESEARCH.md (Apify demand holds)
+- 2026-10-18 17:40 | burn-down | bounty-board.yml first run: success (17:22 dispatch; log says queue finished — not filing; BOARD.md only)
+- 2026-10-18 17:40 | burn-down | Exchange pre-research: spike-ofac-eu-sanctions-screening seeded in new-ventures (6); OFAC exports, OpenSanctions read
+- 2026-10-18 17:40 | burn-down | Stopping: 3 items built (prompt cadence, bounty scanner, planning re-read), 1 spike seeded; starved-and-cooled

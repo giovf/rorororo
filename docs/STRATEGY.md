@@ -1489,3 +1489,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-18 burn-down: uk-planning weekly origin re-read — planning.data.gov.uk still serves entity-count 0 with no replacement
   dataset; the snapshot stays served under its notice and the next read is 10-25. Why: the Apify actor still ran 21 times in 30 days
   for outside users, so STRATEGY §7's 60-day no-demand clock has not started.
+- 2026-10-18 burn-down: first pre-research pass under the spike rule seeded `spike-ofac-eu-sanctions-screening` (6) in new-ventures
+  instead of parking an idea: OFAC's SDN exports are public-domain flat CSV (last modified 10-15), OpenSanctions sells per-query
+  screening and reseller licences, gankdat already streams the UK list. The spike's number — rival per-query prices against x402's
+  floor and the UK list's external calls (0 in 30 d) — decides promote or park at the 10-21 exchange.
