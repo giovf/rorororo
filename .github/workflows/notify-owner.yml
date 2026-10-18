@@ -17,6 +17,10 @@ name: notify owner
 # and push them first (skip-ci marker: nothing else fires), so the notify step below sends them in
 # the same run and the cursor it records is a commit that stays on main; a 6-hourly schedule keeps
 # the silence detector alive when no routine pushes at all (the case it exists for).
+# Since 2026-10-18 (foundry dependabot-red-gate-to-queue) the same step runs scripts/dependabot-gate.ts:
+# an open Dependabot PR whose latest gate run failed gets one `watchdog | dependabot:` line and a
+# foundry queue item, because GitHub mails that failure to dependabot[bot] and nobody else (PRs #5
+# and #6 sat red for 30 h on 2026-10-16/17 with no trace in the repo).
 on:
   push:
     branches: [main]
@@ -27,7 +31,8 @@ on:
 
 permissions:
   contents: write
-  actions: read # scripts/actions-minutes.mjs reads the week's runs
+  actions: read # scripts/actions-minutes.mjs reads the week's runs; dependabot-gate.ts the gate runs
+  pull-requests: read # scripts/dependabot-gate.ts lists the open Dependabot PRs
 
 concurrency:
   group: notify-owner
@@ -44,7 +49,7 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 22
-      - name: Run watchdog and CI-minutes guard (pushed first, sent by the next step)
+      - name: Run watchdog, CI-minutes guard and Dependabot gate check (pushed first, sent by the next step)
         # Must never block the notifications: a failing script only skips its lines, a failed push
         # is retried by the next run (the line is appended again, the dedupe record is the line on
         # main), and a half-written docs/RUNS.md is reset so the cursor commit below can rebase.
@@ -56,10 +61,11 @@ jobs:
           git config user.email "info@gankdat.com"
           node --disable-warning=ExperimentalWarning scripts/run-watchdog.ts || echo "::warning::run-watchdog failed"
           node scripts/actions-minutes.mjs || echo "::warning::actions-minutes failed"
-          git add docs/RUNS.md
-          git checkout -- docs/RUNS.md
+          node --disable-warning=ExperimentalWarning scripts/dependabot-gate.ts || echo "::warning::dependabot-gate failed"
+          git add docs/RUNS.md docs/pipeline/queues/foundry.json
+          git checkout -- docs/RUNS.md docs/pipeline/queues/foundry.json
           git diff --cached --quiet && { echo "watchdog: nothing to report"; exit 0; }
-          git commit -m "watchdog: missed slot / ci-minutes [skip ci]"
+          git commit -m "watchdog: missed slot / ci-minutes / dependabot gate [skip ci]"
           for i in 1 2 3; do
             git pull --rebase origin main && git push origin HEAD:main && exit 0
             sleep $((i * 5))
