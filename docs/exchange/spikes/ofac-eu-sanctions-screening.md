@@ -13,8 +13,8 @@ Sanctions List Service page, OpenSanctions licensing, sanctions.io/pricing, a gu
 `docs/relay/responses/ofac-eu-spike-2026-10-18/` (18:14 UTC: OpenSanctions API and commercial FAQ pages, four OFAC
 export HEADs, CONS_PRIM.CSV first 4 kB, `changes/latest`, the data.europa.eu dataset page, the EU FSF XML HEAD and
 CSV body, sanctions.io home, sanctionscanner.com/pricing, the Apify store API for `sanctions screening`). A third
-round (`ofac-eu-spike-b-2026-10-18`: sanctions.io's knowledge-base pricing page, verifex.dev) had not answered when
-this file was written; its numbers would refine, not change, the call below. Relay bodies are pruned after 7 days;
+round (`ofac-eu-spike-b-2026-10-18`, 18:29 UTC after a re-fire: sanctions.io's knowledge-base pricing page,
+verifex.dev and its pricing page) refined the rival table below without changing the call. Relay bodies are pruned after 7 days;
 every number used is copied here. gankdat's own numbers come from the Daily numbers rows in
 `ventures/gankdat/RESEARCH.md` (10-11 → 10-18) and the Apify store rows the same job writes.
 
@@ -38,15 +38,16 @@ addresses at ingest as today.
 | Rival (source, date read) | Price per query | Terms that matter | Demand signal |
 | --- | --- | --- | --- |
 | OpenSanctions Screening API (`opensanctions.org/api/`, relay 10-18) | credit bundles, one credit per metered operation: 500 for €50 (**€0.10**), 5,000 for €400 (€0.08), 30,000 for €2,000 (€0.067), 100,000 for €5,000 (€0.05), 500,000 for €15,000 (**€0.03**), 1M+ talk to sales; 2,000 free credits on sign-up; credits valid one year; prices ex-VAT | commercial FAQ: screening on behalf of your customers inside a product you sell is allowed on the same bundles with no reseller licence; redistributing the data collection or giving customers their own API access is not; a reseller licence is needed to load the bulk data into your own matching engine. The data itself is CC-BY-NC 4.0 — gankdat does not build on it | "650+ clients", 470+ sources, 2.0M+ entities, updates 4× a day |
-| sanctions.io (home page, relay 10-18; `/pricing` 404 since a site move dated 10-18 14:21) | not on the home page ("simply usage based"); the knowledge-base pricing page is in relay round b | SOC 2, 99.995 % uptime, batch of 10,000 per request, continuous monitoring | mid-market, sales-led; July 2026 reading was ≈ US$0.16 a screen |
+| sanctions.io (home page and `help.sanctions.io/knowledge-base/pricing-plans`, relay 10-18; `/pricing` 404 since a site move dated 10-18 14:21) | no public figure: "calculate your costs instantly based on your annual screening volume or the number of entities, and receive a custom proposal" | SOC 2, 99.995 % uptime, batch of 10,000 per request, continuous monitoring, Salesforce and HubSpot integrations | mid-market, sales-led; the July 2026 reading of ≈ US$0.16 a screen is no longer published |
 | Sanction Scanner (`/pricing` relay 10-18) | 404 — no public price | — | — |
 | Apify store, search `sanctions screening` (store API, relay 10-18): 377 actors match, the top 17 all pay-per-event | per name screened: `reclarative_kernel` **US$0.08**, `george.the.developer` US$0.015, `scrapemint` US$0.01, `nightwave-owner` US$0.01, `frenchdatalab/sanctions-screening-eu-uk-ofac` US$0.005 (+US$0.001 per entry), `factline` US$0.005, `wsystem` US$0.005 (+US$0.005 per run), `inexhaustible_glass` US$0.005 per item (+US$0.02 per run), `ryanclinton/opensanctions-search` US$0.003 per entity, `haketa` US$0.003, `pink_comic` US$0.002; six more have unpriced events | most wrap OpenSanctions' free data or yente; the three "EU + UK + OFAC" actors were published 2026-06-01, 2026-10-02 and 2026-10-14 | **users in the last 30 days: 0–3 per actor**; lifetime users 2–9 for sixteen of the seventeen, 53 for the oldest (`ryanclinton`, live since 2026-03-13, 3 in 30 days). Seventeen actors share roughly twenty monthly users between them |
-| Verifex (July reading, `NICHE-NEXT-SANCTIONS.md`; `verifex.dev` in relay round b) | US$0.006 a screen pay-as-you-go, US$49/mo plans, 50 free a month | self-serve, startup-targeted | — |
+| Verifex (`verifex.dev` and `/pricing`, relay round b 10-18) | plans, no pay-as-you-go any more: Free US$0 for 50 screens a month (OFAC + UN only, no card), Starter US$49 for 2,500 (**≈ US$0.02** a screen, its own figure), Growth US$99 for 10,000 (≈ US$0.01), Pro US$249 for 50,000 (**≈ US$0.005**), Enterprise custom; KYB dossiers US$500 a month for five | 46 sources from 24 publisher cities, audit evidence per check, billing through Lemon Squeezy (a merchant of record, as gankdat's Stripe Managed Payments) | self-serve, startup-targeted; no user numbers published |
 
 Answer to the first question: yes, rivals sell cross-list screening above US$0.01 — OpenSanctions never below
-€0.03 (≈ US$0.035) and at €0.10 for small buyers, and the Apify shelf runs from US$0.002 to US$0.08 with a median
-at US$0.005. A gankdat `screen_name` at US$0.01 would undercut every hosted vendor and sit in the middle of the
-Apify field.
+€0.03 (≈ US$0.035) and at €0.10 for small buyers, Verifex at US$0.02 a screen on its entry plan falling to
+US$0.005 at 50,000 a month, and the Apify shelf runs from US$0.002 to US$0.08 with a median at US$0.005. A gankdat
+`screen_name` at US$0.01 would undercut every hosted vendor's entry tier and sit in the middle of the Apify field;
+at volume the self-serve rivals already reach x402's US$0.005 floor.
 
 ## Demand: nobody calls the UK list, and the shelf that already sells screening is starved
 

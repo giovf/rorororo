@@ -1321,3 +1321,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 18:30 | burn-down | Evidence: compile is unconditional in @x402/hono paymentMiddleware; Ajv logs it before rethrowing
 - 2026-10-18 18:30 | burn-down | x402.spec: filter test (11 tests); pool does not reproduce workerd's codegen ban; ARCHITECTURE note
 - 2026-10-18 18:30 | burn-down | Queue: gankdat x402-ajv-compile-log-noise done; proof is the next wave-log reading with no such line
+- 2026-10-18 18:35 | burn-down | relay round b read: Verifex US$0.02→0.005 a screen by plan, sanctions.io custom proposal only; spike refined
+- 2026-10-18 18:35 | burn-down | fetch-relay run 39153226504 failed: a push 27 s after the first fetched both requests, rebase conflict; re-fired
+- 2026-10-18 18:35 | burn-down | docs/ci/fetch-relay.yml: concurrency group serialises relay runs (installer moves it); relay README sentence
+- 2026-10-18 18:35 | burn-down | Stopping: 2 items built (sanctions spike parked, x402 Ajv mute), relay serialised; starved-and-cooled

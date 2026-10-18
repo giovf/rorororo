@@ -42,6 +42,10 @@ Rules: only hosts listed in `docs/relay/hosts.txt` (public data and store pages;
 GET and POST responses are capped at 8 MB — use `RANGE` for large files and `HEAD` to check existence;
 never put a credential in a request; everything fetched lands in a public repo, so public data
 only. Add a host to `docs/relay/hosts.txt` in the same commit as the source that needs it.
+Runs are serialised (`concurrency: fetch-relay`, 2026-10-18): a second request pushed while a run is
+in flight waits for it instead of racing its response commit (the 18:14 round b run of 2026-10-18 fetched
+both files and lost both to a rebase conflict); a request still under `requests/` after a failed run is
+re-fired by `workflow_dispatch`, which processes every file left there.
 
 ## PR relay — opening a pull request on someone else's repository
 
