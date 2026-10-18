@@ -674,8 +674,9 @@
       "effort_days": 0.1,
       "proof": "mcp-probe absent from refresh errors for 7 consecutive Daily numbers rows",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-18"
+      "status": "doing",
+      "added": "2026-10-18",
+      "doing_since": "2026-10-18"
     },
     {
       "id": "x402-bazaar-week-1-index-check",
