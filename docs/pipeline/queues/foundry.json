@@ -917,13 +917,25 @@
     {
       "id": "dependabot-pr-5",
       "title": "Dependabot PR #5 (minor-and-patch) is red at Run npm run check: fix forward on main and comment @dependabot rebase",
-      "why": "Filed by scripts/dependabot-gate.ts (2026-10-18): the gate on https://github.com/giovf/rorororo/pull/5 (build(deps): bump the minor-and-patch group with 13 updates) failed at \"Run npm run check\" on 9a7d332 — https://github.com/giovf/rorororo/actions/runs/38948035118. This is a minor/patch group the workflow merges itself once the gate is green. Read the job log for the first error, fix the code on main when the bump is right and the code is wrong (the usual case: a widened type, a renamed export), then comment `@dependabot rebase` on the PR so the gate re-runs; when the bump itself is wrong, say so here and leave the PR to the attended session.",
+      "why": "Filed by scripts/dependabot-gate.ts (2026-10-18): the gate on https://github.com/giovf/rorororo/pull/5 (build(deps): bump the minor-and-patch group with 13 updates) failed at \"Run npm run check\" on 9a7d332 — https://github.com/giovf/rorororo/actions/runs/38948035118. This is a minor/patch group the workflow merges itself once the gate is green. Read the job log for the first error, fix the code on main when the bump is right and the code is wrong (the usual case: a widened type, a renamed export), then comment `@dependabot rebase` on the PR so the gate re-runs; when the bump itself is wrong, say so here and leave the PR to the attended session. 2026-10-18 00:40 burn-down: the code fix is on main (5156be7b, item dependabot-minor-gate-typings); Dependabot ignored the masked rebase comment, so main is merged into the branch once the gate workflow keys on the PR author (dependabot-gate-on-pr-author) — done when the gate merges the PR.",
       "effort_days": 0.2,
       "proof": "PR #5 merged by the dependabot workflow's gate-and-merge job",
       "score": 5,
       "status": "todo",
       "added": "2026-10-18",
       "updated": "2026-10-18"
+    },
+    {
+      "id": "dependabot-gate-on-pr-author",
+      "title": "The dependabot workflow keys on the PR author, so a merge of main into a Dependabot branch re-runs the gate and auto-merge",
+      "why": "2026-10-18 00:38 burn-down: the fix for PR #5 landed on main at 00:21 and `@dependabot rebase` was posted at 00:22 as the owner, but the GitHub tool masks @-mentions (the stored body reads `·@·d·ependabot r·ebase`), so Dependabot never saw a command and the PR sat red with its fix already on main. The workflow's `if: github.actor == 'dependabot[bot]'` skips the job for any push by someone else, so a routine merging main into the branch (the one thing it can do from the sandbox) would get no gate and no merge. Fix: `if: github.event.pull_request.user.login == 'dependabot[bot]'` — the PR stays Dependabot's whoever pushed the last commit; the merge step's title test is unchanged. Dependabot stops rebasing a branch after a foreign push, which is fine once the gate merges it. Filed and built this run (docs/ci/dependabot.yml); PR #5's branch gets main merged in as the first use.",
+      "effort_days": 0.1,
+      "proof": "a Dependabot PR goes green and merges after a routine's merge of main into its branch",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-18",
+      "updated": "2026-10-18",
+      "done_at": "2026-10-18"
     }
   ]
 }

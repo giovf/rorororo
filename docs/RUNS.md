@@ -1249,3 +1249,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 00:50 | burn-down | Queue: foundry watchdog-dispatch-event-trace done; proof is a marker-less dispatch morning with no missed line
 - 2026-10-18 00:36 | watchdog | dependabot: PR #6 majors gate red at Run npm run check (df37191); foundry dependabot-pr-6 filed
 - 2026-10-18 00:36 | watchdog | dependabot: PR #5 minor-and-patch gate red at Run npm run check (9a7d332); foundry dependabot-pr-5 filed
+- 2026-10-18 00:40 | burn-down | notify-owner.yml first run: success (00:36 push; dependabot-gate filed PR #5 and #6 lines and items)
+- 2026-10-18 00:40 | burn-down | PR #5: the @dependabot rebase comment was posted with its mention masked by the GitHub tool; never read
+- 2026-10-18 00:40 | burn-down | docs/ci/dependabot.yml: job keys on the PR author, not the push actor; a main merge re-runs the gate
+- 2026-10-18 00:40 | burn-down | Queue: foundry dependabot-gate-on-pr-author filed and done; dependabot-pr-5 why updated (fix on main)

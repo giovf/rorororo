@@ -1415,3 +1415,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `schedule` run never counts, which keeps the late cron from faking a trace. Why: the 10-17 routine dispatched both
   jobs and skipped its marker, and the second false `missed: metrics` in three days went to the run log; the event is
   the fact the marker only approximated.
+- 2026-10-18 burn-down: foundry `dependabot-gate-on-pr-author` — the `dependabot` workflow runs for a pull request whose
+  author is Dependabot, whoever pushed its last commit, so a routine that fixes the code on `main` can merge `main` into
+  the branch and let the gate merge the PR. Why: the sandbox cannot command Dependabot (the GitHub tool masks
+  @-mentions, so the rebase comment on PR #5 was never read) and a fix that sits on `main` while the PR stays red is the
+  silent failure again, one step later.
