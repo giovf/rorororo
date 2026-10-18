@@ -662,9 +662,10 @@
       "effort_days": 0.4,
       "proof": "Four consecutive Daily numbers rows without uk-trademark-journal under `refresh errors`; /v1/health last_refreshed_at within 26 h on each; the facet pages answer 200",
       "score": 6,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-17",
-      "not_before": "2026-10-18"
+      "not_before": "2026-10-18",
+      "doing_since": "2026-10-18"
     },
     {
       "id": "refresh-mcp-probe",
