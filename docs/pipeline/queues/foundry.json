@@ -759,14 +759,15 @@
     },
     {
       "id": "pre-research-shelf-cap",
-      "title": "Decide whether the night exchange pre-research pass keeps running while the parked shelf outgrows what the weekly exchange promotes",
-      "why": "Research 2026-10-14 00:40 (burn-down, foundry starved): 10 `Exchange pre-research:` passes since 10-05 (one or two a day, 10-13 had two: 09:16 build and 17:17 burn-down) each parked one idea and promoted none; the exchange holds 28 parked / 9 promoted / 10 declined, the 9 promotions came from the Wednesday exchange or the owner (hackathons, bounties 10-11), and the two ideas waiting on today's 10-14 exchange (x402-aggregator-mcp, onchain-keeper-rewards) were parked on 10-07, so a parked register waits a week at best and most wait for a first paid call that is at zero on every surface (3 accounts, 0 paid, 0 x402 on the 10-13 row). Each pass is a Fable session spent on a shelf STRATEGY §5 says not to build from until the funnel converts. Not a bug to fix tonight — a Sunday-review decision with two options: (a) cap the pass (skip it once ≥ 30 ideas are parked and the last exchange promoted none from the shelf, `npm run pipeline cold` prints `shelf-full`), spending nothing; or (b) widen it (a pass may queue a candidate directly at score ≤ 4 in an existing venture queue when the licence is open, a paid rival is documented and the build is under a day), so the idle nights produce buildable items. slot-utilisation-report gives the review the numbers; this item carries the decision and the one-sentence prompt change.",
+      "title": "Night pre-research pass writes spikes into new-ventures (≤ 2 open) instead of parking ideas; skipped when two spikes are open — the review W42 cadence decision, two prompt sentences",
+      "why": "Research 2026-10-14 00:40 (burn-down, foundry starved): 10 `Exchange pre-research:` passes since 10-05 (one or two a day, 10-13 had two: 09:16 build and 17:17 burn-down) each parked one idea and promoted none; the exchange holds 28 parked / 9 promoted / 10 declined, the 9 promotions came from the Wednesday exchange or the owner (hackathons, bounties 10-11), and the two ideas waiting on today's 10-14 exchange (x402-aggregator-mcp, onchain-keeper-rewards) were parked on 10-07, so a parked register waits a week at best and most wait for a first paid call that is at zero on every surface (3 accounts, 0 paid, 0 x402 on the 10-13 row). Each pass is a Fable session spent on a shelf STRATEGY §5 says not to build from until the funnel converts. Not a bug to fix tonight — a Sunday-review decision with two options: (a) cap the pass (skip it once ≥ 30 ideas are parked and the last exchange promoted none from the shelf, `npm run pipeline cold` prints `shelf-full`), spending nothing; or (b) widen it (a pass may queue a candidate directly at score ≤ 4 in an existing venture queue when the licence is open, a paid rival is documented and the build is under a day), so the idle nights produce buildable items. slot-utilisation-report gives the review the numbers; this item carries the decision and the one-sentence prompt change. DECIDED 2026-10-18 (review W42, §4): option (b) in the new-ventures shape. Evidence: the four spikes seeded 10-17 were all done by 19:15 the same day and the queue the owner asked for on 10-17 was empty within a day; starved-and-cooled stops on 10-13 (×2), 10-15 (×2), 10-16, 10-17; ten passes since 10-05 parked ten ideas and promoted none (34 parked). The first `Built %` reading lands in the 10-19 report, so the call rides the one-day drain, not the two-week criterion; the W43 review keeps or reverses it. Apply by replacing the pre-research sentence in docs/routines/burn-down.md (the paragraph starting 'If `npm run pipeline` reports nothing buildable') and the matching clause in docs/routines/build.md LOOP step 1 with: \"do ONE pre-research pass for the exchange instead (max one per night/day window, same `Exchange pre-research:` line rule): if `docs/pipeline/queues/new-ventures.json` holds fewer than two open (todo/doing) spikes, pick a candidate shelf or dataset not yet in `docs/pipeline/exchange.json`, verify its licence and a paid rival through the relay or WebSearch, and add it to new-ventures.json as a scored spike item (≤ 0.5 day, proof = `docs/exchange/spikes/<id>.md` with a number and a promote/park call, evidence in `why`, STRATEGY §5 score) rather than a parked idea; if two or more spikes are open, skip the pass, write one run-log line and stop — never invent build work.\" Also one sentence in docs/routines/exchange.md NEW-VENTURES QUEUE: the night passes keep the queue at two between Wednesdays; the exchange still reads every spike file and refills to 2–4. Update docs/pipeline/README.md's Starvation/pre-research sentence and the burn-down/build Changes lines.",
       "effort_days": 0.1,
-      "proof": "after the 2026-10-19 review the burn-down's starved nights either stop writing pre-research lines or start producing queued items; two weeks of RUNS.md show which",
-      "score": 3,
+      "proof": "from the first slot after the prompt change: every `Exchange pre-research:` line either names a new-ventures spike item or says `skipped (2 spikes open)`; the 2026-10-26 report's Slots table shows new-ventures never empty for more than one night and the burn-down's Built % above 30%",
+      "score": 5,
       "status": "todo",
       "added": "2026-10-14",
-      "not_before": "2026-10-19"
+      "not_before": "2026-10-18",
+      "updated": "2026-10-18"
     },
     {
       "id": "relay-post-json",
@@ -938,6 +939,16 @@
       "added": "2026-10-18",
       "updated": "2026-10-18",
       "done_at": "2026-10-18"
+    },
+    {
+      "id": "bounty-scanner-finished-queue",
+      "title": "Bounty scanner respects a finished queue and runs weekly: file nothing into queues/oss-bounties.json while its status is finished (BOARD.md still written), move bounty-board.yml from daily 05:17 to Mondays, SCHEDULERS row updated",
+      "why": "Review 2026-W42 (10-18) killed oss-bounties (queue finished, venture killed) after seven daily boards with 0 free funded code fixes at US$25+. scripts/bounty-scanner.ts fileBounties() reads the queue and appends todo items whenever a free funded row at US$25+ appears, without checking queue.status, so a stray row would reopen work in a finished queue the next morning; and a daily read of a board that is now only a re-open reading spends seven Actions minutes a week for one. Do: in fileBounties (or its caller) return the queue unchanged when status === 'finished' and print `queue finished — not filing`; keep BOARD.md (the exchange's re-open trigger reads it: two consecutive weekly boards with a free funded escrowed code row); change the cron to one weekly run (Monday 05:17 UTC, before the 07:30 report) via docs/ci/bounty-board.yml (the installer moves it); update the 05:17 row in docs/SCHEDULERS.md in the same commit; one test for the finished-queue branch.",
+      "effort_days": 0.15,
+      "proof": "the next scanner run logs `queue finished — not filing`, queues/oss-bounties.json is untouched by it, and docs/SCHEDULERS.md shows the weekly row; no `bounty board` run on a weekday after the change",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-18"
     }
   ]
 }

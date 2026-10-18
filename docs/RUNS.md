@@ -1265,3 +1265,19 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 01:25 | burn-down | Owner note 00:45 answered: AI-setup course idea parked in the exchange (ai-setup-course), Wednesday researches
 - 2026-10-18 01:25 | burn-down | Owner note 00:49 answered: adult-sector idea declined in the exchange (shelf terms, OSA duties, no distress lines)
 - 2026-10-18 01:30 | burn-down | Stopping: 1 item built (PR #6 root cause + Dependabot ignores), 2 owner notes answered; starved-and-cooled
+- 2026-10-18 08:15 | review | Review 2026-W42: money targets still zero; first 3 paid x402 calls by strangers (10-17/18); bounties killed
+- 2026-10-18 08:15 | review | gankdat: keep — 3 accounts (0 paid), anon MCP doubled to 2,970/day, Bazaar listed 10-16, 3 payers, 1 of 17 routes
+- 2026-10-18 08:15 | review | Variables Toolkit: keep — views 7 to 14, 4 runs, 0 installs at day 27; owner dropped its levers; day-30 read 10-21
+- 2026-10-18 08:15 | review | ReadFocus: keep — Chrome users read 3 or 0 by day, 0 keys; 0.3.0 unsigned 14 days; day-30 read 10-30
+- 2026-10-18 08:15 | review | Highlight Keep: keep — first Firefox download 10-14, 0 Chrome users, 0 keys; 0.4.0 unsigned 13 days
+- 2026-10-18 08:15 | review | Hackathons: keep — PayPal entry submitted 10-16 (1 of 3 the kill rule counts); Nebius dropped; lablab read 10-20
+- 2026-10-18 08:15 | review | Open-source bounties: KILL — 7 daily boards with 0 free funded code fixes at $25+, 8 of 8 filed items dropped
+- 2026-10-18 08:15 | review | Foundry: keep — 33/33 slots, Dependabot self-merges, but six starved-and-cooled stops; supply is the limit
+- 2026-10-18 08:15 | review | Applied: oss-bounties queue finished, venture.json killed, exchange idea parked with a two-board re-open trigger
+- 2026-10-18 08:15 | review | Queued foundry bounty-scanner-finished-queue (5): scanner weekly and silent on a finished queue
+- 2026-10-18 08:15 | review | Cadence call: night pre-research writes spikes into new-ventures (<2 open) — foundry pre-research-shelf-cap 3→5
+- 2026-10-18 08:15 | review | Queued gankdat uk-planning-apify-pause (5, 10-19): pause the flagged actor while the origin stays empty
+- 2026-10-18 08:15 | review | Gap queued: gankdat x402-bazaar-week-1-index-check (4, 10-23) — 1 of 17 routes listed, proof date unread
+- 2026-10-18 08:15 | review | STRATEGY: §4 Now with 10-18 sources, §5 new-ventures row, §7 money-on-offer supply rule, §2 rows, §8 logged
+- 2026-10-18 08:15 | review | Cash: spent £44.40, planned £8, ICO £47 contingent, revenue £0 (US$0.015 USDC); headroom £47.60, 12.9 months
+- 2026-10-18 08:15 | review | Owner: nothing needed — 0 requests open; no notify condition met

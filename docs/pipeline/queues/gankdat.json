@@ -612,13 +612,14 @@
     {
       "id": "x402-bazaar-day-30",
       "title": "Day-30 read of the x402 Bazaar listing: resources indexed, calls and payers by resource from the `bazaar:` clause and the discovery API, our rank for a sample intent search (searchX402Resources 'UK company lookup', 'sanctions list', 'public tenders'), x402_paid excluding internal; record in RESEARCH.md and decide: extend (more routes, curation tier, the aggregator idea's trigger) or leave listed",
-      "why": "Exchange 2026-W42 proof (≥ 50 paid calls from ≥ 5 payers in 30 days). The reading also settles the parked x402-aggregator-mcp trigger (our listing converts) and whether compliance/register data has buyers in the catalogue at all (EDGAR 69 calls / 29 payers and an OFAC screen 12 / 10 were the only compliance-shaped resources in the top 200 on 2026-10-14).",
+      "why": "Exchange 2026-W42 proof (≥ 50 paid calls from ≥ 5 payers in 30 days). The reading also settles the parked x402-aggregator-mcp trigger (our listing converts) and whether compliance/register data has buyers in the catalogue at all (EDGAR 69 calls / 29 payers and an OFAC screen 12 / 10 were the only compliance-shaped resources in the top 200 on 2026-10-14). Ledger convention (review W42, 2026-10-18): x402 receipts are USDC in the seller wallet, below the ledger's pence at half a cent a call — at each day-30 Bazaar read, record the period's receipts (excluding our probe) as one `revenue` row in docs/LEDGER.md at the GBP rate when they reach £0.01, else carry the running USDC total in RESEARCH.md; the first three external paid calls landed 10-17/18 (US$0.015).",
       "effort_days": 0.1,
       "proof": "numbers recorded in RESEARCH.md; keep/extend decision in STRATEGY §8; parked ideas re-triggered or left with the reason",
       "score": 3,
       "status": "todo",
       "not_before": "2026-11-14",
-      "added": "2026-10-14"
+      "added": "2026-10-14",
+      "updated": "2026-10-18"
     },
     {
       "id": "googlebot-401-noindex",
@@ -673,6 +674,28 @@
       "proof": "mcp-probe absent from refresh errors for 7 consecutive Daily numbers rows",
       "score": 6,
       "status": "todo",
+      "added": "2026-10-18"
+    },
+    {
+      "id": "x402-bazaar-week-1-index-check",
+      "title": "Week-1 read of the x402 Bazaar listing: how many of our 17 v2 routes the discovery API lists for our payTo; if fewer than 17, read why and make the missing settled calls",
+      "why": "Review 2026-W42 gap (10-18): the exchange's proof for x402-bazaar-listing was `≥ 17 resources from the discovery API within a week of the settled call` (settled 2026-10-16, so due 2026-10-23), but the Daily numbers row reads `bazaar: 1 listed` on 10-17 and 10-18 (the July v1 route) while `x402 validate: 17/17 valid`, and nothing checks before the 11-14 day-30 read. Meanwhile 3 external payers made 3 paid calls on 10-17/18 — the first paid calls in the lane's life — so the shelf is live and should show every door. Do, on 2026-10-23: `GET /platform/v2/x402/discovery/resources` filtered by our payTo (keyless; the metrics runner already does it), list which routes are indexed; if < 17, re-read docs.cdp.coinbase.com/x402/seller/get-discovered and the cdp-sdk issues (#806, #759: validated but never indexed) for whether indexing is per resource (one settled payment on each route) or per seller, and if per resource make one settled half-cent call on each unlisted route from the probe wallet (X402_PROBE_KEY; ≤ US$0.085 for 17; the Daily numbers row counts the probe's client id as internal); if the catalogue lags by design, record the stated lag and move this item's not_before to it. Write the reading to ventures/gankdat/RESEARCH.md and MARKETPLACE-PREP.md's Bazaar row.",
+      "effort_days": 0.1,
+      "proof": "`bazaar: 17 listed` on a Daily numbers row by 2026-10-25, or RESEARCH.md names the documented reason and the date it will be",
+      "score": 4,
+      "status": "todo",
+      "not_before": "2026-10-23",
+      "added": "2026-10-18"
+    },
+    {
+      "id": "uk-planning-apify-pause",
+      "title": "uk-planning surface pause while the origin is empty: unpublish or pause the `uk-planning-applications` Apify actor (flagged under maintenance by Apify QA 10-17), say so on its README and the /stats page, restore when planning.data.gov.uk serves rows again",
+      "why": "Review 2026-W42 (10-18), a surface pause under STRATEGY §7's dataset rule rather than a retirement (the external-query clock runs from 10-12 and cannot retire anything before 12-11). Facts: the origin dataset was emptied 2026-10-10 (entity count 0, no replacement named); the 10-09 snapshot expired 10-16 and the dataset now answers its notice on REST, MCP and x402; the Apify actor failed 5 of 21 runs in 30 days and Apify QA flagged it `under maintenance` on 2026-10-17 (INBOX 14:08) — a flagged actor is a store-quality signal against the account's 18 actors, and no external key has queried uk-planning (`datasets 30d external: none`). Do only if `refresh-uk-planning-reread-2026-10-18` (dated today) found the origin still empty: via the Apify API from CI (the publish job's token) unpublish the actor or set its README's first line to a dated `Paused: the source register is empty since 2026-10-10; resumes when it republishes`, keep the MCP tool's notice, and add a `paused` state to the stats page notice; record in RESEARCH.md and MARKETPLACE-PREP.md. The weekly re-read item restores everything when entity count > 0.",
+      "effort_days": 0.2,
+      "proof": "Apify's actor page no longer shows the maintenance flag (unpublished or a dated Paused notice) and the next `apify 30d by actor` reading shows 0 new failed runs for the actor; restored within a day of the origin republishing",
+      "score": 5,
+      "status": "todo",
+      "not_before": "2026-10-19",
       "added": "2026-10-18"
     }
   ]

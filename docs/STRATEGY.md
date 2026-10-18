@@ -28,9 +28,9 @@ rows of the new period (10-10, 10-11) read US$0 overage and 0.0M D1 writes a day
 | Browser extensions (ReadFocus, Highlight Keep) | consumers | rivals abandoned; low ticket | US$12 one-off | none, but small |
 | Figma plugin (Variables Toolkit) | designers | paid rivals with gaps | one-off | none |
 | **Hackathon prizes** (`ventures/hackathons`, 2026-10-11: Devpost lists 38 open online hackathons; PayPal AI $67.5k to 11-12, Nebius × NVIDIA $50k to 10-30, both accepting existing projects and UK entrants) | sponsors who have already committed the prize money; judges | the prize tables in the official rules | $5k–$20k per placing | one account per portal (owner), the entry package built by routines, the owner clicks submit |
-| **Open-source bounties** (`ventures/oss-bounties`, 2026-10-11: 553 open GitHub issues carry a bounty label, $50–$800 each on the first page) | maintainers who posted cash on an issue | the amount is on the issue | $50–$800 per merged PR | none per PR; `PR_TOKEN` and one board sign-in up front |
-| **Agent directories** (MCP Registry, mcpservers.org, Glama, awesome-remote-mcp-servers and the Apify Store live; Claude Connectors Directory submitted by the owner 2026-10-04, in review; Docker MCP Catalog entry built 2026-10-10, PR waits on the owner's token, action 021) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30); ~46k keyless calls and no payer from the five live directories by 2026-10-11; the first client to exhaust the keyless preview (10-11: 47 wall hits on contract awards, sanctions and TED) was offered sign-in only — gankdat `preview-wall-next-steps` (review W41) |
-| **x402 Bazaar** (Coinbase CDP discovery catalogue; exchange 2026-W42: 34,668 resources, the top 200 took 518,867 paid calls from 17,160 payer-slots in 30 days at a median US$0.003; no UK or company register, tender or sanctions resource listed; gankdat's x402 lane live since July at US$0.005 with 0 payments, unlisted — `x402-bazaar-listing` queued 2026-10-14) | AI agents holding USDC on Base that search the Bazaar by intent (searchX402Resources, the Bazaar MCP, agentic.market) | the catalogue's own per-resource 30-day call and payer counts; resellers of Exa search at US$0.01 with 168 payers | US$0.005 per call (CDP Facilitator: 1,000 settlements/month free, then US$0.001 each) | none — one settled payment indexes a resource; the owner makes it once (≤ 10 min) |
+| ~~Open-source bounties~~ (`ventures/oss-bounties`, opened 2026-10-11 on 553 labelled GitHub issues; **killed 2026-10-18, review W42**: seven consecutive daily boards 10-11..10-17, ≈ 3,900 issue reads, held 0 free funded code fixes at US$25+ and all 8 filed items were dropped on read — the labelled money is assigned, crowded or not code; Algora's public board 404s, Opire rewards are not escrowed) | maintainers who posted cash on an issue | the amount is on the issue — but on seven boards none was free, funded and code | $50–$800 per merged PR | none per PR; the code, scanner (weekly from now) and claims ledger are kept; the exchange holds the idea parked (re-open: two consecutive weekly boards with a claimable row) |
+| **Agent directories** (MCP Registry, mcpservers.org, Glama, awesome-remote-mcp-servers and the Apify Store live; Claude Connectors Directory submitted by the owner 2026-10-04, in review; Docker MCP Catalog entry built 2026-10-10, PR waits on the owner's token, action 021) | the owners of the agents hitting the paywall (~80/day); Claude Team/Enterprise users | same rivals as the data API; the directory measures rank, accounts and tool calls itself | inside plans (OAuth billing from Claude queued) | none — listed automatically after a policy scan on the owner's paid plan (added 2026-09-30); ~46k keyless calls and no payer from the five live directories by 2026-10-11; the first client to exhaust the keyless preview (10-11: 47 wall hits on contract awards, sanctions and TED) was offered sign-in only — gankdat `preview-wall-next-steps` (review W41); by 2026-10-18 (review W42): Claude in review day 14 (no mail), Docker PR docker/mcp-registry#5622 in review day 7, anonymous MCP calls doubled in the week (1,585 → 2,970/day) with 0 OAuth approvals and 0 `request_api_key`, the 10-11 wall-hitter never returned |
+| **x402 Bazaar** (Coinbase CDP discovery catalogue; exchange 2026-W42: 34,668 resources, the top 200 took 518,867 paid calls from 17,160 payer-slots in 30 days at a median US$0.003; no UK or company register, tender or sanctions resource listed; gankdat's x402 lane live since July at US$0.005 with 0 payments, unlisted — `x402-bazaar-listing` queued 2026-10-14) | AI agents holding USDC on Base that search the Bazaar by intent (searchX402Resources, the Bazaar MCP, agentic.market) | the catalogue's own per-resource 30-day call and payer counts; resellers of Exa search at US$0.01 with 168 payers | US$0.005 per call (CDP Facilitator: 1,000 settlements/month free, then US$0.001 each) | none — one settled payment indexes a resource; the owner makes it once (≤ 10 min); **listed 2026-10-16** (the half-cent settlement made by Claude from the test wallet, action 026 option B) and **the first paid calls by strangers followed within 48 h: 3 calls from 3 payers on 10-17/18**, the only non-zero in the §4 money rows — against `bazaar: 1 listed` (the July v1 route; the 17 v2 routes validate but are not yet indexed, week-1 check 2026-10-23; review W42) |
 
 ## 3. Unit economics (what has to be true)
 
@@ -45,14 +45,14 @@ rows of the new period (10-10, 10-11) read US$0 overage and 0.0M D1 writes a day
 
 | Metric | Now | Target | Where measured |
 | --- | --- | --- | --- |
-| gankdat paying accounts | 0 (1 unpaid account since 09-28, `+0/24h` every day; review W41, Daily numbers 2026-10-11) | 5 | `Daily numbers` rows in `ventures/gankdat/RESEARCH.md` |
-| gankdat MRR | £0 (no `revenue` row, `0 paid` on every row; review W41) | £150 | Stripe (weekly report) |
-| Apify actors live | 18 of 18 (`uk-companies-house-lookup-monitor` public 2026-10-07; review W41) | 17 — met | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — `P public`; all 17 went public 2026-09-28 |
-| Apify paid runs / month | **0 paid** (September developer summary, INBOX 2026-10-06: US$0, 1 unique user); 235 runs by others in the 30 days to 10-11 (≈ 8/day; +96 lifetime runs this week), `18 users/30d` = one per actor = Apify's QA runner — `30d: T runs (O ours, X others)` is the ceiling, the monthly summary mail the paid figure (review W41, Daily numbers 2026-10-11) | 100 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — lifetime `R runs` plus the `+d/24h` delta (`stats.totalRuns`), 30-day runs by everyone (`stats.publicActorRunStats30Days.TOTAL`) minus our own (`GET /v2/actor-runs`) |
-| Change-feed calls / week | 0 (`changes 7d: 0` on every row 09-30..10-11; the keyless Atom feeds: 16 fetches in 30 d by 4 user agents; review W41) | 50 | `changes 7d:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — Analytics Engine, MCP `get_changes` + REST `/v1/changes` |
-| Extension + plugin sales | 0 (Figma 7 views, 3 unique runs, 0 installs, 0 purchases; Chrome: ReadFocus 3 users on 10-11 — its first — Highlight Keep 0; Firefox 0 weekly downloads on both; extension sales have no reading until foundry `metrics-extension-sales` — review W41, Daily check 2026-10-11) | 20 | Stripe / Figma |
-| Directory listings live | 5 (+ Claude Connectors Directory submitted by the owner 10-04, in review, no directory mail yet; Docker MCP Catalog PR docker/mcp-registry#5622 opened 10-11 by the pr relay, in Docker's review — burn-down 10-11) | 8 | `MARKETPLACE-PREP.md` |
-| Bounty PRs merged / paid | 0 claimed, 0 merged, 0 paid; 3 read and dropped on 2026-10-11 (`npm run claims`) | first payout by 2026-12-20; kill at 5 merged PRs unpaid for 60 days (RESEARCH §5) | `## Claims` table in `ventures/oss-bounties/RESEARCH.md` (`npm run claims`, weekly report) |
+| gankdat paying accounts | 0 (3 accounts — 2 external sign-ups on 2026-10-12, `+0/24h` every day since, nothing used; review W42, Daily numbers 2026-10-18) | 5 | `Daily numbers` rows in `ventures/gankdat/RESEARCH.md` |
+| gankdat MRR | £0 (no `revenue` row, `0 paid` on every row; the x402 lane took its first 3 paid calls from 3 external payers on 10-17/18 ≈ US$0.015 in USDC — recorded at the day-30 Bazaar read; review W42) | £150 | Stripe (weekly report); x402 receipts per the ledger convention of 2026-10-18 |
+| Apify actors live | 18 of 18 public, 17 healthy (`uk-planning-applications` flagged under maintenance by Apify QA 2026-10-17 after its origin emptied; surface pause queued — review W42) | 17 — met | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — `P public`; all 17 went public 2026-09-28 |
+| Apify paid runs / month | **0 paid** (September developer summary, INBOX 2026-10-06: US$0, 1 unique user; October's arrives ≈ 11-06); 355 runs by others in the 30 days to 10-18 (≈ 12/day), `18 users/30d` = one per actor = Apify's QA runner; the Companies House actor 10 runs/30 d — `30d: T runs (O ours, X others)` is the ceiling, the monthly summary mail the paid figure (review W42, Daily numbers 2026-10-18) | 100 | `apify:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — lifetime `R runs` plus the `+d/24h` delta (`stats.totalRuns`), 30-day runs by everyone (`stats.publicActorRunStats30Days.TOTAL`) minus our own (`GET /v2/actor-runs`) |
+| Change-feed calls / week | 0 (`changes 7d: 0` on every row 09-30..10-18, 19 days; the keyless Atom feeds: 50 fetches in 30 d by 7 user agents; review W42) | 50 | `changes 7d:` in the Daily numbers row (`ventures/gankdat/RESEARCH.md`) — Analytics Engine, MCP `get_changes` + REST `/v1/changes` |
+| Extension + plugin sales | 0 — read since 2026-10-11 (`sales: 0 keys (2 test)` ReadFocus, `0 keys` Highlight Keep on every Daily check row; Figma `purchase_count 0`). Users: ReadFocus Chrome 3 ↔ 0 (the store count flickers by day), Highlight Keep 1 Firefox weekly download since 10-14 (its first), Figma 14 views / 4 unique runs / 0 installs (review W42, Daily check 2026-10-18) | 20 | Stripe / Figma; `sales:` in the Daily check rows (foundry `metrics-extension-sales`) |
+| Directory listings live | 5 (+ Claude Connectors Directory in review since the owner's 10-04 submission, day 14, no mail; Docker MCP Catalog PR docker/mcp-registry#5622 in Docker's review since 10-11; x402 Bazaar: 1 resource indexed, the 17 v2 routes validated and awaiting indexing — review W42) | 8 | `MARKETPLACE-PREP.md` |
+| Bounty PRs merged / paid | **line killed 2026-10-18** (review W42): 0 claimed, 0 merged, 0 paid, 8 dropped on read; seven daily boards with 0 free funded code fixes at US$25+ (`npm run claims`, RESEARCH 2026-10-18). Target retired with the line; the exchange holds the idea parked | — (was: first payout by 2026-12-20) | `## Claims` table in `ventures/oss-bounties/RESEARCH.md` (`npm run claims`), the weekly `docs/bounties/BOARD.md` |
 
 If gankdat is < £50 MRR **and** Apify < 20 paid runs/month by 2026-12-20 with all listings
 live, the data line is re-positioned (see kill criteria) rather than extended.
@@ -71,7 +71,8 @@ review sets from this table and the exchange sets for a new queue:
 
 | Queue | Weight | Rule |
 | --- | --- | --- |
-| a line in its first 30 days, or one that collects money already on offer (prizes, bounties) | 2 | new income first |
+| a line in its first 30 days, or one that collects money already on offer (prizes; bounties until that line was killed 2026-10-18) | 2 | new income first |
+| `new-ventures` — the exchange's backlog of research spikes for new lines (owner 2026-10-17; weight set by the exchange, confirmed review W42) | 2 | new-line evidence is scheduled work for idle slots, not a Wednesday-only decision |
 | a venture earning, or still putting its first listings on shelves (gankdat), and `foundry` | 1 | the baseline |
 | a launched venture with no revenue 30 days after its listings went live (variables-toolkit, read-focus, highlight-keep on 2026-10-11) | 0.5 | improvements wait behind new lines; the day-30 funnel review decides keep or kill | **Distribution beats
 new datasets** until the funnel shows conversion: as of today the queue is (1) publish the
@@ -107,6 +108,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 
 - Any venture: zero sales **and** zero organic signal (signups, runs, enquiries) 90 days after
   every planned listing is live → kill (keep the code, stop the effort).
+- A money-on-offer line (prizes, bounties): its supply is the reading — when the line's own daily
+  board shows nothing claimable for seven consecutive reads (for bounties: a free, funded, escrowed
+  code-with-tests row at US$25+ absent for a week; STRATEGY §8 2026-10-11) → kill before the
+  outcome rule in its `RESEARCH.md` can ever fire, keep the scanner weekly as the re-open reading
+  (applied to oss-bounties 2026-10-18, review W42). For prizes the rule stays RESEARCH §6: three
+  complete submissions with no placing and no feedback.
 - gankdat dataset: not queried by any customer in 60 days → retire from the surface.
 - Whole data line: < £300 MRR after 4 months of the listings being live → reposition toward
   one buyer type (bid intelligence or KYB) and sell the change feeds as the product.
@@ -1437,3 +1444,34 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   it, UK Online Safety Act age-assurance duties and processor KYC put it beyond a £100 sole trader, and distress-based
   lines are the one kind this operation does not build. Why logged here: the owner delegated these decisions and asked
   for the reasoning in place.
+- 2026-10-18 review (W42): every money target still zero — 0 paying accounts (3 accounts, 2 external since 10-12, unused),
+  £0 MRR, 0 change-feed calls in 19 days, 0 extension/plugin sales now that the `sales:` reading exists, 0 paid Apify
+  runs (October's summary ≈ 11-06). The one non-zero: the x402 lane, listed in the Bazaar on 10-16 by Claude's half-cent
+  settlement, took **3 paid calls from 3 external payers** on 10-17/18 (US$0.015) — the first paid calls in its life,
+  while the catalogue still lists 1 of 17 routes. Anonymous MCP calls doubled (1,585 → 2,970/day), 195 Claude-User
+  requests in 30 d, 0 OAuth approvals, the 10-11 wall-hitter never returned. Verdicts: gankdat keep, variables-toolkit
+  keep (views 7 → 14; day-30 read 10-21), read-focus keep (Chrome 3 ↔ 0), highlight-keep keep (first Firefox download
+  10-14), hackathons keep (PayPal entry submitted 10-16, Nebius dropped by the owner), foundry keep, **oss-bounties kill**.
+  Cash: spent £44.40, planned £8, ICO £47 contingent, headroom £47.60 (≈ 12.9 months). `docs/reviews/2026-W42.md`.
+- 2026-10-18 review: **oss-bounties killed** — seven consecutive daily boards (10-11..10-17, ≈ 3,900 issue reads) with 0
+  free funded code fixes at US$25+ and 8 of 8 filed items dropped on read meet the line's kill rule (a funded, free board
+  row absent for a week, §8 2026-10-11; now a §7 bullet for money-on-offer lines). §3's recurring-job assumption failed
+  on supply: GitHub's labelled money is assigned, crowded (32–85 open PRs on the old code issues) or not code; Algora's
+  public board 404s, Opire rewards are not escrowed. Queue `finished`, `venture.json` killed, code and claims ledger
+  kept, the idea parked in the exchange (re-open: two consecutive weekly boards with a claimable row); foundry
+  `bounty-scanner-finished-queue` (5) makes the scanner weekly and silent on a finished queue. Hackathon prizes stay the
+  money-on-offer line; the owner's 10-11 rule (take, don't wait) is unchanged — it needs supply that exists.
+- 2026-10-18 review: cadence call (foundry `slot-utilisation-report`, 10-14) — the first `Built %` reading lands in the
+  10-19 report, so the two-week criterion cannot be read yet; the decision rides the one-day drain instead: the four
+  new-ventures spikes seeded 10-17 were all done the same day, the week had six starved-and-cooled stops, and ten night
+  pre-research passes since 10-05 parked ten ideas and promoted none. Widened: the night pass writes its candidate as a
+  scored spike into `new-ventures.json` when fewer than two spikes are open, and is skipped otherwise (foundry
+  `pre-research-shelf-cap` raised 3 → 5, dated today, with the prompt sentence). The W43 review reads the first `Built %`
+  and keeps or reverses this.
+- 2026-10-18 review: queued gankdat `x402-bazaar-week-1-index-check` (4, 10-23 — the exchange's own proof date for the 17
+  routes, unread by anything before 11-14) and `uk-planning-apify-pause` (5, 10-19 — a surface pause under §7's dataset
+  rule while the origin is empty and Apify QA has the actor flagged; not a retirement, the external-query clock runs from
+  10-12). Ledger convention: x402 USDC receipts become one `revenue` row per day-30 Bazaar read when they reach £0.01.
+  §4 `Now` refreshed with 10-18 sources; §5 table gains `new-ventures` (2); §2 rows for bounties, Bazaar and directories.
+  Nothing for the owner: OPEN.md shows 0 requests, no notify condition met; the two 10-18 dashboard ideas (AI-setup
+  course parked for Wednesday, adult-sector declined) were answered by the burn-down and the review agrees.

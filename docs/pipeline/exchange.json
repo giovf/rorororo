@@ -284,10 +284,12 @@
     {
       "id": "oss-issue-bounties",
       "title": "Paid open-source issues on bounty boards (553 open GitHub issues carry Algora's bounty label)",
-      "why": "The amount is posted before the work; a merged PR is the sale. Feature and bug-fix issues only.",
-      "status": "promoted",
+      "why": "The amount is posted before the work; a merged PR is the sale. Feature and bug-fix issues only. Review 2026-W42 (10-18): venture killed after seven daily boards with 0 free funded code fixes at US$25+ (8 of 8 filed items dropped on read; Algora's public board 404s, Opire rewards are not escrowed). The weekly scanner keeps docs/bounties/BOARD.md as the re-open reading.",
+      "status": "parked",
       "venture": "oss-bounties",
-      "added": "2026-10-11"
+      "added": "2026-10-11",
+      "trigger": "two consecutive weekly boards (docs/bounties/BOARD.md) each show at least one free (no assignee, no open PR), funded and escrowed code-with-tests row at US$25+ in a language the repo builds; then the exchange reopens queues/oss-bounties.json with first-bounty-pr as its first item and venture.json goes back to building",
+      "parked": "2026-10-18"
     },
     {
       "id": "data-science-prize-competitions",
