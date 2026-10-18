@@ -902,6 +902,28 @@
       "added": "2026-10-18",
       "updated": "2026-10-18",
       "done_at": "2026-10-18"
+    },
+    {
+      "id": "dependabot-pr-6",
+      "title": "Dependabot PR #6 (majors) is red at Run npm run check: root-cause it for the attended session",
+      "why": "Filed by scripts/dependabot-gate.ts (2026-10-18): the gate on https://github.com/giovf/rorororo/pull/6 (build(deps): bump the majors group with 4 updates) failed at \"Run npm run check\" on df37191 — https://github.com/giovf/rorororo/actions/runs/38948094681. This is a majors group, which the dependabot workflow leaves open for an attended session. Read the job log for the first error, fix the code on main when the bump is right and the code is wrong (the usual case: a widened type, a renamed export), then comment `@dependabot rebase` on the PR so the gate re-runs; when the bump itself is wrong, say so here and leave the PR to the attended session.",
+      "effort_days": 0.2,
+      "proof": "the failure is root-caused in this item's why and the attended session can merge or close PR #6 from it",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-18",
+      "updated": "2026-10-18"
+    },
+    {
+      "id": "dependabot-pr-5",
+      "title": "Dependabot PR #5 (minor-and-patch) is red at Run npm run check: fix forward on main and comment @dependabot rebase",
+      "why": "Filed by scripts/dependabot-gate.ts (2026-10-18): the gate on https://github.com/giovf/rorororo/pull/5 (build(deps): bump the minor-and-patch group with 13 updates) failed at \"Run npm run check\" on 9a7d332 — https://github.com/giovf/rorororo/actions/runs/38948035118. This is a minor/patch group the workflow merges itself once the gate is green. Read the job log for the first error, fix the code on main when the bump is right and the code is wrong (the usual case: a widened type, a renamed export), then comment `@dependabot rebase` on the PR so the gate re-runs; when the bump itself is wrong, say so here and leave the PR to the attended session.",
+      "effort_days": 0.2,
+      "proof": "PR #5 merged by the dependabot workflow's gate-and-merge job",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-18",
+      "updated": "2026-10-18"
     }
   ]
 }

@@ -1247,3 +1247,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 00:50 | burn-down | run-watchdog.ts: main reads the dispatched runs from the Actions API, [] without token or on error
 - 2026-10-18 00:50 | burn-down | SCHEDULERS metrics row day 8 (10-17 dispatched, no marker, false missed); metrics.md: marker still owed
 - 2026-10-18 00:50 | burn-down | Queue: foundry watchdog-dispatch-event-trace done; proof is a marker-less dispatch morning with no missed line
+- 2026-10-18 00:36 | watchdog | dependabot: PR #6 majors gate red at Run npm run check (df37191); foundry dependabot-pr-6 filed
+- 2026-10-18 00:36 | watchdog | dependabot: PR #5 minor-and-patch gate red at Run npm run check (9a7d332); foundry dependabot-pr-5 filed
