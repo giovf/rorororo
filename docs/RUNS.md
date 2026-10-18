@@ -1231,3 +1231,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 19:30 | burn-down | Stopping: 4 items built (hmrc-vat spike, triage reconcile, day-7 cron read, empty cooling), pipeline starved-and-cooled
 - 2026-10-18 00:22 | burn-down | Research oss-bounties: 7 boards 10-11..10-17 read, 0 free funded code fixes at $25+, 8 of 8 filed dropped
 - 2026-10-18 00:22 | burn-down | Queue: oss-bounties no items, research_after 10-19; Sunday review asked to set the board trigger and finish
+- 2026-10-18 00:15 | watchdog | ci-minutes: 672 billed min/7d (~2880/month, wall 355; private cap 2,000, warn 1700); top: notify owner 129, owner notes 
