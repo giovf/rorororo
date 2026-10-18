@@ -136,3 +136,4 @@
 - 2026-10-18 18:27 | notification | hotmail.com | Fw: Run failed: fetch relay - main (b2d03e5) | owner forward of the 18:15 fetch relay failure mail logged above | logged
 - 2026-10-18 18:28 | notification | hotmail.com | Fw: bump the minor-and-patch group with 13 updates (PR #5) | owner forward of the PR #5 merged mail (Dependabot) | logged
 - 2026-10-18 18:28 | notification | hotmail.com | Fw: bump the majors group (PR #6) x2 | owner forwards of Dependabot closing PR #6 as superseded | logged
+- 2026-10-18 23:04 | notification | amazon.co.uk | We found something you might like | Amazon marketing mail, unrelated to Foundry | logged
