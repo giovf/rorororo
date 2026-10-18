@@ -730,8 +730,9 @@
       "effort_days": 0.2,
       "proof": "A 24-h Worker log (wave-log step or an observability query) with no `Error compiling schema` line while x402 validate still reads 17/17 valid",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-18"
+      "status": "doing",
+      "added": "2026-10-18",
+      "doing_since": "2026-10-18"
     }
   ]
 }
