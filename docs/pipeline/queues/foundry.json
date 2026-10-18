@@ -2,8 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-17",
-  "researched": "2026-10-16",
+  "updated": "2026-10-18",
+  "researched": "2026-10-18",
   "items": [
     {
       "id": "fetch-relay",
@@ -866,6 +866,39 @@
       "status": "done",
       "added": "2026-10-17",
       "done_at": "2026-10-17"
+    },
+    {
+      "id": "dependabot-minor-gate-typings",
+      "title": "Dependabot PR #5 (13 minor/patch bumps) is red on `@figma/plugin-typings` 1.141: type hygiene.ts's styles as the three style types and rebase the PR",
+      "why": "2026-10-18 00:20 burn-down (foundry research, actions_list + job log): the `dependabot` workflow's first two real runs (10-16 18:31, PRs #5 minor-and-patch and #6 majors) both failed in 40 s at `npm run check` → typecheck: ventures/variables-toolkit/src/figma/hygiene.ts(30,40) `Property 'boundVariables' does not exist on type 'BaseStyle'` — 1.141 adds CustomAnimationStyle to the BaseStyle union and it has no boundVariables, so `const styles: BaseStyle[]` no longer narrows. Fix: type the array as (PaintStyle | TextStyle | EffectStyle)[] (what the three getLocal*StylesAsync calls return; compiles on 1.138 and 1.141 — both checked in a worktree of the PR branch on 10-18), push to main, then comment `@dependabot rebase` on #5 so the gate re-runs and the workflow's auto-merge step fires. #6 (typescript 7, vitest 5, postal-mime 4, stripe 23) stays open for an attended session as the workflow intends; it will keep failing on the same line until this lands.",
+      "effort_days": 0.1,
+      "proof": "PR #5 merged by the dependabot workflow's gate-and-merge job",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-18",
+      "updated": "2026-10-18"
+    },
+    {
+      "id": "dependabot-red-gate-to-queue",
+      "title": "A red Dependabot gate files a foundry queue item and a watchdog line instead of staying silent",
+      "why": "2026-10-18 burn-down (foundry research): PR #5's gate failed 10-16 18:32 and nothing in the repo knew for 30 h — GitHub mails a run failure to its actor, here dependabot[bot], so no `Run failed` reached triage (INBOX has the three PR-opened mails and nothing after), no RUNS line, no queue item; the burn-down found it only by listing the workflow's runs by hand. The auto-merge rule in docs/ops/VERSIONS.md (`minor/patch auto-merged when the gate is green`) is silent exactly when it needs a person. Fix, in scripts/run-watchdog.ts (runs on every routine push and 6-hourly in notify owner, GITHUB_TOKEN present): list open PRs by dependabot[bot]; for each whose latest `dependabot.yml` run on the head sha concluded failure, write one `- … | watchdog | dependabot: PR #N <group> gate red at <failing step>` line (dedupe by PR number + head sha, as the missed: lines dedupe) and add or refresh an idempotent foundry item `dependabot-pr-<N>` (score 5, effort 0.2, why = the failing step and the first error line from the job log) — the refresh-errors-to-queue pattern. Proof: the next red Dependabot gate has a queue item and a watchdog line within 6 h of the run.",
+      "effort_days": 0.5,
+      "proof": "a red Dependabot gate gets a foundry queue item and one watchdog line within 6 h, with no mail involved",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-18",
+      "updated": "2026-10-18"
+    },
+    {
+      "id": "watchdog-dispatch-event-trace",
+      "title": "The watchdog takes a `workflow_dispatch` run of both metrics jobs inside the slot window as the metrics routine's trace",
+      "why": "2026-10-18 burn-down (foundry research): second false `missed: metrics` in three days. 10-17: the 07:00 routine dispatched both jobs (gankdat metrics run 39012858012, event workflow_dispatch, 07:13:53; store-metrics commit 07:14, metrics(gankdat) 07:17) but did not stamp `npm run slot -- start metrics` (docs/ops/SLOTS.md has 10-16 07:16 and no 10-17 line — the Sonnet routine skipped its first action on day 2 of the rule), and run-watchdog.ts wrote `missed: metrics slot 2026-10-17 07:00` at 09:13 because `dispatched` commits count only together with the marker — the comment's reason being that a late cron writes the same commit subjects. The Actions API already tells the two apart: the routine's runs are `event: workflow_dispatch`, the late cron's `event: schedule`. Fix: dispatchedTraces() also accepts, for every pattern in `dispatched`, a workflow_dispatch run of that workflow (gankdat-metrics.yml, store-metrics.yml) started inside the window — read with the job's GITHUB_TOKEN through the runs API, passed in as data so the function stays pure and one test covers marker-less dispatch, cron-only commits and no runs; the marker stays as the other accepted trace, `stalled:` unchanged. Also append the 10-17 case to the metrics row's day log in docs/SCHEDULERS.md and tell the metrics routine file that the marker is still owed (a run without it is traced only by its dispatch).",
+      "effort_days": 0.5,
+      "proof": "a metrics morning with dispatched runs and no slot marker produces no missed: line; the 10-17 fixture passes",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-18",
+      "updated": "2026-10-18"
     }
   ]
 }

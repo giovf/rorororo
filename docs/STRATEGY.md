@@ -1395,3 +1395,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   review is asked to set the board-count trigger at seven such boards (met), mark the line finished and stop the daily
   scanner. Why: the labelled money is assigned, crowded or not code, so §3's recurring-job assumption fails on the
   count before the PR-based kill rule can ever fire.
+- 2026-10-18 burn-down: foundry research — every `main` run of the last 40 is green, but the `dependabot` gate's first two real
+  runs (PRs #5 minor/patch and #6 majors, 10-16 18:32) failed at typecheck on `@figma/plugin-typings` 1.141 and nothing in
+  the repo noticed for 30 h (GitHub mails the failure to dependabot[bot]), and the 10-17 metrics routine dispatched both
+  jobs without its slot marker so the watchdog wrote a second false `missed:`. Three items queued: the typings fix plus
+  a `@dependabot rebase` (6), a red Dependabot gate filing its own queue item (4), the watchdog reading the
+  `workflow_dispatch` event as the metrics trace (4). Why: an auto-merge rule that fails silently is worse than none.

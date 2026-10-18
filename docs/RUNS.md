@@ -1231,3 +1231,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-17 19:30 | burn-down | Stopping: 4 items built (hmrc-vat spike, triage reconcile, day-7 cron read, empty cooling), pipeline starved-and-cooled
 - 2026-10-18 00:22 | burn-down | Research oss-bounties: 7 boards 10-11..10-17 read, 0 free funded code fixes at $25+, 8 of 8 filed dropped
 - 2026-10-18 00:22 | burn-down | Queue: oss-bounties no items, research_after 10-19; Sunday review asked to set the board trigger and finish
+- 2026-10-18 00:30 | burn-down | Research foundry: 40 main runs all green; dependabot gate failed on PRs #5 and #6 at 10-16 18:32, unnoticed 30 h
+- 2026-10-18 00:30 | burn-down | Research foundry: #5 red on plugin-typings 1.141 BaseStyle union (hygiene.ts:30); fix compiles on 1.138 and 1.141
+- 2026-10-18 00:30 | burn-down | Research foundry: 10-17 metrics dispatched 07:13, no slot marker; watchdog wrote missed at 09:13 (2nd false miss)
+- 2026-10-18 00:30 | burn-down | Queue: foundry +3 (dependabot typings fix 6, red gate to queue 4, dispatch-event trace 4); researched 10-18
