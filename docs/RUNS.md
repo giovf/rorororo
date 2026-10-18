@@ -1298,3 +1298,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 17:30 | burn-down | docs/ci/bounty-board.yml: cron moved to Mondays 05:17 (was daily); the installer moves it into place
 - 2026-10-18 17:30 | burn-down | SCHEDULERS: bounty board row moved to the Weekly table (Monday 05:17, no items while finished)
 - 2026-10-18 17:30 | burn-down | Queue: foundry bounty-scanner-finished-queue done; proof is Monday 10-19's run log line
+- 2026-10-18 17:35 | burn-down | uk-planning re-read (relay planning-origin-2026-10-18): origin still empty, count 0, no replacement dataset
+- 2026-10-18 17:35 | burn-down | Queue: gankdat refresh-uk-planning-reread not_before moved to 10-25; clock kept in RESEARCH.md (Apify demand holds)

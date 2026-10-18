@@ -1486,3 +1486,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-18 burn-down: bounty-scanner-finished-queue — the scanner files nothing into a `finished` queue (the board is still
   written as the exchange's re-open reading) and runs weekly on Mondays instead of daily. Why: the W42 review killed oss-bounties,
   and a stray funded row would have reopened work the next morning while seven daily reads a week served one weekly reading.
+- 2026-10-18 burn-down: uk-planning weekly origin re-read — planning.data.gov.uk still serves entity-count 0 with no replacement
+  dataset; the snapshot stays served under its notice and the next read is 10-25. Why: the Apify actor still ran 21 times in 30 days
+  for outside users, so STRATEGY §7's 60-day no-demand clock has not started.
