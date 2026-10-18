@@ -874,9 +874,10 @@
       "effort_days": 0.1,
       "proof": "PR #5 merged by the dependabot workflow's gate-and-merge job",
       "score": 6,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-18",
-      "updated": "2026-10-18"
+      "updated": "2026-10-18",
+      "doing_since": "2026-10-18"
     },
     {
       "id": "dependabot-red-gate-to-queue",
