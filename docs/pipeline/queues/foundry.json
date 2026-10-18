@@ -948,8 +948,9 @@
       "effort_days": 0.15,
       "proof": "the next scanner run logs `queue finished — not filing`, queues/oss-bounties.json is untouched by it, and docs/SCHEDULERS.md shows the weekly row; no `bounty board` run on a weekday after the change",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-18"
+      "status": "doing",
+      "added": "2026-10-18",
+      "doing_since": "2026-10-18"
     }
   ]
 }
