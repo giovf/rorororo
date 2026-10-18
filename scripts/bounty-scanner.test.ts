@@ -488,4 +488,12 @@ describe('board and queue', () => {
     expect(fileBounties(queue, b, '2026-10-11', true).queue.items[0]!.status).toBe('todo');
     expect(itemId(bounty({ repo: 'Go-Gitea/gitea', number: 7 }))).toBe('bounty-go-gitea-gitea-7');
   });
+
+  it('files nothing into a finished queue and says so', () => {
+    const finished: Queue = { ...queue, status: 'finished', finished_reason: 'review 2026-W42' };
+    const out = fileBounties(finished, [bounty({ rank: 400 })], '2026-10-19', true);
+    expect(out.finished).toBe(true);
+    expect(out.added).toEqual([]);
+    expect(out.queue).toBe(finished);
+  });
 });

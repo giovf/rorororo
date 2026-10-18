@@ -1483,3 +1483,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   new-ventures.json when fewer than two are open (skipped at two) instead of parking an idea. Why: the W42 review found ten passes
   since 10-05 parked ten ideas and promoted none, while the four spikes seeded 10-17 were done the same day; a spike is work the next
   slot builds. Prompt text in docs/routines/burn-down.md, build.md and exchange.md; the W43 review keeps or reverses it.
+- 2026-10-18 burn-down: bounty-scanner-finished-queue — the scanner files nothing into a `finished` queue (the board is still
+  written as the exchange's re-open reading) and runs weekly on Mondays instead of daily. Why: the W42 review killed oss-bounties,
+  and a stray funded row would have reopened work the next morning while seven daily reads a week served one weekly reading.

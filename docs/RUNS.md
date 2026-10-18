@@ -1293,3 +1293,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 17:20 | burn-down | build.md LOOP 1 same clause; exchange.md: night passes keep the queue at two between Wednesdays
 - 2026-10-18 17:20 | burn-down | pipeline README starvation sentence updated; Changes lines in burn-down, build and exchange
 - 2026-10-18 17:20 | burn-down | Queue: foundry pre-research-shelf-cap done; proof is the first `Exchange pre-research:` line after it
+- 2026-10-18 17:30 | burn-down | bounty-scanner: fileBounties returns a finished queue untouched; log says `queue finished — not filing`
+- 2026-10-18 17:30 | burn-down | bounty-scanner.test: finished-queue branch covered (20 tests); guard checked against the real queue
+- 2026-10-18 17:30 | burn-down | docs/ci/bounty-board.yml: cron moved to Mondays 05:17 (was daily); the installer moves it into place
+- 2026-10-18 17:30 | burn-down | SCHEDULERS: bounty board row moved to the Weekly table (Monday 05:17, no items while finished)
+- 2026-10-18 17:30 | burn-down | Queue: foundry bounty-scanner-finished-queue done; proof is Monday 10-19's run log line
