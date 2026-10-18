@@ -1289,3 +1289,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 09:23 | build | Queue: gankdat refresh-uk-trademark-journal-2026-10-17 done; silent-row follow-up (5, 10-22) queued
 - 2026-10-18 09:23 | build | Taskmaster row 38 (progress marker); ARCHITECTURE and RESEARCH updated; no version bump; owner: nothing
 - 2026-10-18 09:25 | build | metrics.mjs: `silent nights: <slug> … died after <phase>` clause reads the marker's row even after a later ok
+- 2026-10-18 17:20 | burn-down | burn-down.md: starved pass adds a scored spike to new-ventures (<2 open), skipped at 2; W42 call
+- 2026-10-18 17:20 | burn-down | build.md LOOP 1 same clause; exchange.md: night passes keep the queue at two between Wednesdays
+- 2026-10-18 17:20 | burn-down | pipeline README starvation sentence updated; Changes lines in burn-down, build and exchange
+- 2026-10-18 17:20 | burn-down | Queue: foundry pre-research-shelf-cap done; proof is the first `Exchange pre-research:` line after it

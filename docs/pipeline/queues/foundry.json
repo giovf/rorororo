@@ -764,11 +764,11 @@
       "effort_days": 0.1,
       "proof": "from the first slot after the prompt change: every `Exchange pre-research:` line either names a new-ventures spike item or says `skipped (2 spikes open)`; the 2026-10-26 report's Slots table shows new-ventures never empty for more than one night and the burn-down's Built % above 30%",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-14",
       "not_before": "2026-10-18",
       "updated": "2026-10-18",
-      "doing_since": "2026-10-18"
+      "done_at": "2026-10-18"
     },
     {
       "id": "relay-post-json",

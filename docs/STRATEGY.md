@@ -1479,3 +1479,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   next attempt, naming the phase; the ok row precedes the best-effort stats and the journal's issue fetch times out at 5 min. Why: the
   journal's silent nights were guessed at four times, and the 10-16 job log proved Worker logs carry no cron lines, so the Worker
   itself has to leave the trail. Root cause still open: `refresh-uk-trademark-journal-silent-row-2026-10-22` reads the first row.
+- 2026-10-18 burn-down: pre-research-shelf-cap applied — a starved slot's one exchange pass now adds a scored research spike to
+  new-ventures.json when fewer than two are open (skipped at two) instead of parking an idea. Why: the W42 review found ten passes
+  since 10-05 parked ten ideas and promoted none, while the four spikes seeded 10-17 were done the same day; a spike is work the next
+  slot builds. Prompt text in docs/routines/burn-down.md, build.md and exchange.md; the W43 review keeps or reverses it.
