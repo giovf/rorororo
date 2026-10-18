@@ -1,0 +1,97 @@
+{
+  "request": "sanctions-lists-2026-10-18",
+  "fetched_at": "2026-10-18T17:24:59.112Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV",
+      "fetched_at": "2026-10-18T17:24:53.858Z",
+      "status": 200,
+      "final_url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV",
+      "headers": {
+        "content-type": "text/xml",
+        "content-disposition": "attachment; filename=\"SDN.CSV\"",
+        "last-modified": "Thu, 15 Oct 2026 16:34:27 GMT"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/CONS_ADVANCED.XML",
+      "fetched_at": "2026-10-18T17:24:54.979Z",
+      "status": 400,
+      "final_url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/CONS_ADVANCED.XML",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV",
+      "range": "0-4095",
+      "fetched_at": "2026-10-18T17:24:55.871Z",
+      "status": 206,
+      "final_url": "https://wc2h-sls-prod-public-published.s3.us-gov-west-1.amazonaws.com/Published/b4ccfc9a-f3cd-4ba0-8a0e-be09e84b4581/2026-10-15/717f0934-c28b-4824-bcb9-7060a8fae1af/SDN.CSV?X-Amz-Expires=3600&X-Amz-Security-Token=FwoDYXdzEFcaDAX%2FZawbLUF9C%2FHelyLtBEHf11VEPonCHkJnAbYIJjLWJDCdaDaNZDX7rMu2hR%2F4euZsuU5E2Cucw17x0C%2FZF5qjT8rMst5Q%2Bq7BMSkSK0fH2bzkx7DK0y7UEIv3nt5WThiyp6bMGSUTi1aEP9hc0XbrGldezsi2AZNWanLAHq7cbu2r5v960J5iCjyVWfiwvqGC%2FEK6%2BFglwvxpDaZ%2BEUeEDxqaaniImmAIOouol7bNhxVqo8gYX1ArWzOgtYxfQ6%2F70KRDzps%2FzZhjs29jV1Im6dSvJFuZjCoXeblnGV4XfgjUBoUpS21P4hjPCIcdN9YjSGfh5tLWsOKFmDKi2C3OqIlUd9aCSkfVs9OiirCEIT%2FGfF5dW0bkm%2Fg3Oa070uPRmn9skDpIXAYhNCr3CpBZvYqwQx%2BKXxjzgF8hc0xD8xB%2BhOCE7aEyCuCRti09dmXLyryq2SwUY%2FlS6kiHxlrPsOkDckRVJeHho8vx%2FBojY2Oguf3rQq9sJs%2BqXkm4uZbR6WmtXRNkNtDlaZixwliQ5TOd1aLEDZEi0ImqTlQZFT1zH%2FTo0DsnYWaVhNyBU7ZhTZVMjs8AX%2FdAIn7bMg0yrN4AXvdqLkXPtlktPl1rh%2FvXKiLNtZ1j19Y6c%2BWSfswKsDXUECRy0oMEj5gLQKpYecsEq61mrOsh%2BHT6ADcxA6a%2FxSuDUqw86aVtBlXvtU1I7opDrFHfJ9oUC8K2Z7o0DJ8GhdL8n20FY%2FC0AbUdRaJoHzNHD4spfbc9%2Bx5sjurO56nZXleBiRrGRWtXq1DbfUmfcoH6Ue%2BxorL%2BZ1kv%2BFNy3UksKJ0BCY97AmQ%2BjgYTgRpVayvLDzlWFyit6NPWBjJBWdg3YzO9yB%2F3avi3i54oV%2FL8d%2BxRA3d5m%2BfPOlQPXFskCfIDwakny3VNBV3u1%2F%2FJnIzHlblFjFeBlqZDhmsgCOs%3D&response-content-disposition=attachment%3B%20filename%3D%22sdn.csv%22&response-content-type=text%2Fcsv&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIASARBLFPLB3O4D6ZT%2F20261018%2Fus-gov-west-1%2Fs3%2Faws4_request&X-Amz-Date=20261018T172456Z&X-Amz-SignedHeaders=host&X-Amz-Signature=fa77ac9bf1af69c40aa605e4a72f8907a5e77cf95eb5690ff6675748050907e6",
+      "headers": {
+        "content-type": "text/csv",
+        "content-length": "4096",
+        "content-disposition": "attachment; filename=\"sdn.csv\"",
+        "last-modified": "Thu, 15 Oct 2026 16:34:34 GMT",
+        "etag": "\"69f968c3fe9a3a4341687d5cd24fbe76\""
+      },
+      "file": "3.csv",
+      "bytes": 4096,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://ofac.treasury.gov/sanctions-list-service",
+      "fetched_at": "2026-10-18T17:24:56.625Z",
+      "status": 200,
+      "final_url": "https://ofac.treasury.gov/sanctions-list-service",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "11788"
+      },
+      "file": "4.html",
+      "bytes": 49720,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.opensanctions.org/licensing/",
+      "fetched_at": "2026-10-18T17:24:57.173Z",
+      "status": 200,
+      "final_url": "https://www.opensanctions.org/licensing/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"12f6xlj4h4c2nts\""
+      },
+      "file": "5.html",
+      "bytes": 124259,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.sanctions.io/pricing",
+      "fetched_at": "2026-10-18T17:24:57.645Z",
+      "status": 404,
+      "final_url": "https://www.sanctions.io/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sun, 18 Oct 2026 14:21:17 GMT",
+        "etag": "W/\"d513362d3c95d156e9c4b419a7db7022\""
+      },
+      "file": "6.html",
+      "bytes": 16759,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://data.europa.eu/api/hub/search/datasets/consolidated-list-of-persons-groups-and-entities-subject-to-eu-financial-sanctions",
+      "fetched_at": "2026-10-18T17:24:57.975Z",
+      "status": 404,
+      "final_url": "https://data.europa.eu/api/hub/search/datasets/consolidated-list-of-persons-groups-and-entities-subject-to-eu-financial-sanctions",
+      "headers": {}
+    }
+  ]
+}

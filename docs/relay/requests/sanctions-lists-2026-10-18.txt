@@ -1,7 +1,0 @@
-HEAD https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV
-HEAD https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/CONS_ADVANCED.XML
-GET RANGE=0-4095 https://sanctionslistservice.ofac.treas.gov/api/PublicationPreview/exports/SDN.CSV
-GET https://ofac.treasury.gov/sanctions-list-service
-GET https://www.opensanctions.org/licensing/
-GET https://www.sanctions.io/pricing
-HEAD https://data.europa.eu/api/hub/search/datasets/consolidated-list-of-persons-groups-and-entities-subject-to-eu-financial-sanctions
