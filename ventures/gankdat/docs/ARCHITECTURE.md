@@ -395,7 +395,23 @@ runs `check:root`.
   — rendered `wave 06:05: exceededCpu 900.1s 18 h ago` or `no invocation in 26 h` ahead of the slug
   reading. The runner prints the first invocation row when none parsed, so the next job log shows the
   live shape. The warning itself is muted at the lane (`x402/routes.ts withoutCodegenWarning`, that one
-  message only).
+  message only). **The query is blind to cron invocations** (2026-10-18): the 10-16 job log, its first
+  real read, carried no line from any wave — no `refresh_wave`, no `refresh_failed` for uk-planning —
+  though wave 1 refreshed 14 sources that morning, so the clause reads `no invocation logged`, never
+  "did not fire" (`wave-log-cron-query-blind` queued). **Refresh progress marker** (`sources/progress.ts`,
+  2026-10-18, `refresh-uk-trademark-journal-2026-10-17`): the in-band reading of a silent wave. Every
+  attempt puts `refresh:progress:<slug>` in KV at start and at each phase (`backfill`, `index`,
+  `stream N records` every 25k, `written`, `stats`; one write a second per key, closer marks skipped)
+  and deletes it after its own `refresh_log` row; `store.ts recordSilentRefresh` turns a marker the
+  previous attempt left into that night's missing `error` row — `silent refresh started <when> died
+  after <phase> <detail> at <s> s, no row written` — before the new attempt starts, so every night
+  has a row by the next wave and the Daily numbers row names the phase (`silent nights: <slug> started
+  <when> died after <phase> …`, `metrics.mjs`, the day the row is written, even when the new attempt
+  then succeeded). With it, the `ok` row is
+  written before the best-effort stats in all three refresh paths (a kill inside the journal's
+  45-page facet aggregation no longer costs the row), and the journal's issue fetch aborts after
+  5 minutes (`ISSUE_FETCH_TIMEOUT_MS`) so a request the IPO never answers errors out instead of
+  holding the wave to the kill.
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
   after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
   stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in

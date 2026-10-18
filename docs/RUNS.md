@@ -1281,3 +1281,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 08:15 | review | STRATEGY: §4 Now with 10-18 sources, §5 new-ventures row, §7 money-on-offer supply rule, §2 rows, §8 logged
 - 2026-10-18 08:15 | review | Cash: spent £44.40, planned £8, ICO £47 contingent, revenue £0 (US$0.015 USDC); headroom £47.60, 12.9 months
 - 2026-10-18 08:15 | review | Owner: nothing needed — 0 requests open; no notify condition met
+- 2026-10-18 09:23 | build | progress.ts: every refresh marks its phase in KV; a marker left behind becomes next night's error row
+- 2026-10-18 09:23 | build | store/d1store/cache: ok row written before the best-effort stats; stream marks every 25k records; 5 tests
+- 2026-10-18 09:23 | build | uk-trademark-journal: issue fetch aborts after 5 min so a hung IPO request errors instead of killing wave 7
+- 2026-10-18 09:23 | build | Evidence: 10-17 and 10-18 rows show wave 7 ok both nights; 10-16 job log has no cron line for any wave
+- 2026-10-18 09:23 | build | wave-logs: cron clause now says `no invocation logged` (query blind to crons); wave-log-cron-query-blind queued
+- 2026-10-18 09:23 | build | Queue: gankdat refresh-uk-trademark-journal-2026-10-17 done; silent-row follow-up (5, 10-22) queued
+- 2026-10-18 09:23 | build | Taskmaster row 38 (progress marker); ARCHITECTURE and RESEARCH updated; no version bump; owner: nothing
+- 2026-10-18 09:25 | build | metrics.mjs: `silent nights: <slug> … died after <phase>` clause reads the marker's row even after a later ok

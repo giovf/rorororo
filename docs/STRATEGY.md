@@ -1475,3 +1475,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   §4 `Now` refreshed with 10-18 sources; §5 table gains `new-ventures` (2); §2 rows for bounties, Bazaar and directories.
   Nothing for the owner: OPEN.md shows 0 requests, no notify condition met; the two 10-18 dashboard ideas (AI-setup
   course parked for Wednesday, adult-sector declined) were answered by the burn-down and the review agrees.
+- 2026-10-18 build: gankdat refresh progress marker (progress.ts) — a wave the platform kills now gets its refresh_log row from the
+  next attempt, naming the phase; the ok row precedes the best-effort stats and the journal's issue fetch times out at 5 min. Why: the
+  journal's silent nights were guessed at four times, and the 10-16 job log proved Worker logs carry no cron lines, so the Worker
+  itself has to leave the trail. Root cause still open: `refresh-uk-trademark-journal-silent-row-2026-10-22` reads the first row.

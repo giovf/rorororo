@@ -1375,13 +1375,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-14T17:42:20.379Z"
+      },
+      {
+        "id": "38",
+        "title": "gankdat: refresh progress marker (src/sources/progress.ts) — a killed wave's missing refresh_log row is written by the next attempt, naming the phase",
+        "description": "KV refresh:progress:<slug> written at start/backfill/index/stream/written/stats by store.ts, d1store.ts and cache.ts, cleared after the attempt's own row; recordSilentRefresh writes the error row for a marker left behind. The ok row now precedes the best-effort stats; the journal's issue fetch has a 5-minute timeout. Built 2026-10-18 for refresh-uk-trademark-journal-2026-10-17.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-18T09:22:30.973Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-14T17:42:20.379Z",
-      "taskCount": 37,
-      "completedCount": 30,
+      "lastModified": "2026-10-18T09:22:30.973Z",
+      "taskCount": 38,
+      "completedCount": 31,
       "tags": [
         "master"
       ]

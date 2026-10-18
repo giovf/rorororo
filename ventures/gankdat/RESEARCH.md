@@ -568,3 +568,37 @@ Relay `cf-query-builder-2026-10-17` (read the same run): the Query Builder page 
 documented naming; `wrangler tail`'s object (`outcome: "ok"`, `event`, `eventTimestamp`) is the same record.
 `refresh-uk-trademark-journal-2026-10-17` waits for the 10-17 row (`not_before` 2026-10-18).
 
+## Build 2026-10-18 — refresh progress marker (build)
+
+Built `refresh-uk-trademark-journal-2026-10-17` (score 6). Evidence first: the 10-17 and 10-18 Daily
+numbers rows list no stale journal, so wave 7 wrote `ok` rows on both nights (ok 10-10, silent
+10-11..13, ok 10-14, silent 10-15/16, ok 10-17, ok 10-18 — two in a row, not "every fourth night")
+and the cron-outcome reading built on 10-17 never ran for it. And the 10-16 metrics job log (run
+38866226604), the first real read of the slug query, returned not one line from any cron wave in
+24 h: uk-planning's 7 lines were request lines and the x402 warning, though wave 1 refreshed 14
+sources that morning and logs `refresh_wave` with its slugs, and uk-planning's nightly failure
+logs `refresh_failed`. Workers Logs, as the runner queries them, see HTTP invocations only; the
+clause now says `no invocation logged in 26 h` and `wave-log-cron-query-blind` (4) is queued to find
+the filter or retire the clause. So the diagnosis cannot come from logs — it has to come from the
+Worker itself.
+
+What changed: `src/sources/progress.ts`. Every attempt puts `refresh:progress:<slug>` in KV at
+start and at each phase — `backfill`, `index N rows`, `stream N records` (every 25k), `written`,
+`stats` — and deletes it once its own `refresh_log` row is written (one KV write a second per key:
+closer marks are skipped, the delete waits the gap). A marker still there when the next attempt
+starts means the previous one was killed with no `catch`: `recordSilentRefresh` writes the row that
+night owed — `error`, `silent refresh started 2026-10-15 06:05:03Z died after stream 120000 records
+at 612 s, no row written` (no parentheses or pipes, the row parser splits on them). So a silent night
+has its row by the next 06:05, before the 07:13 metrics job; a second silent night in a row shows
+under `refresh errors` with the phase. Two defensive changes with it: the `ok` row is written before
+the best-effort stats in all three paths (`refreshD1Delta`, `refreshD1Full`, `refreshSource`) — the
+45-class facet aggregation is the longest phase of the journal's wave and a kill inside it took the
+night's row with it; and the journal's issue fetch carries `AbortSignal.timeout(5 min)` so a request
+the IPO never answers becomes an error row, not a silent death (its missing-issue probes re-run
+every 5 days for 11 unpublished ids). The Daily numbers row carries `silent nights: <slug> started <when> died after <phase> …` on
+the day such a row is written, whatever followed it (a later `ok` row rightly hides it from `refresh
+errors`), so the follow-up item reads the phase from the repo. Tests: `test/refresh-progress.spec.ts` (5),
+`refresh-retry` adjusted to ignore the marker's KV writes. Taskmaster row 38. No version bump (refresh internals,
+no surface change). Root cause still open by design: `refresh-uk-trademark-journal-silent-row-2026-10-22`
+(5) reads the first silent-refresh row and fixes the phase it names, or drops on 10-25 with four
+clean rows.
