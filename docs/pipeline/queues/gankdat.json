@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-17",
+  "updated": "2026-10-18",
   "researched": "2026-10-17",
   "items": [
     {
@@ -664,6 +664,16 @@
       "status": "todo",
       "added": "2026-10-17",
       "not_before": "2026-10-18"
+    },
+    {
+      "id": "refresh-mcp-probe",
+      "title": "live /mcp has failed the CI probe 2 times in the last 4 days — find what answers a directory's initialize / tools/list / tools/call with an error and fix it",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list mcp-probe under refresh errors on 2026-10-16 (call 200 (tool error: Source 'uk-planning' is temporarily unavailable; retry later); authe) and 2026-10-18: call n/a (The operation was aborted due to timeout). The probe (scripts/mcp-probe.ts, from the metrics runner) is what Glama, Smithery and the Claude directory see; every directory ranks an erroring server below healthy ones. The step and status are in the message; reproduce it against the local Worker (test/mcp-directory.spec.ts) with the same request, read `/v1/health` through the relay, and fix the Worker — not the probe.",
+      "effort_days": 0.1,
+      "proof": "mcp-probe absent from refresh errors for 7 consecutive Daily numbers rows",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-18"
     }
   ]
 }
