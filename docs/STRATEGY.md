@@ -1401,3 +1401,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   jobs without its slot marker so the watchdog wrote a second false `missed:`. Three items queued: the typings fix plus
   a `@dependabot rebase` (6), a red Dependabot gate filing its own queue item (4), the watchdog reading the
   `workflow_dispatch` event as the metrics trace (4). Why: an auto-merge rule that fails silently is worse than none.
+- 2026-10-18 burn-down: foundry `dependabot-minor-gate-typings` — the one type error that held 13 minor/patch bumps (PR #5)
+  is fixed on `main` (hygiene.ts names the three style types instead of `BaseStyle`), proven green on the PR's own branch
+  in a worktree, and the PR asked to rebase so the gated auto-merge fires. Why: dependency currency without an attended
+  session is the point of the workflow; the first real run must not be the one that fails quietly.

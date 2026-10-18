@@ -22,7 +22,7 @@ export async function readVariableUsage(): Promise<VariableUsage[]> {
   for (const page of figma.root.children) {
     for (const node of page.findAll(() => true)) countBound(node.boundVariables);
   }
-  const styles: BaseStyle[] = [
+  const styles: (PaintStyle | TextStyle | EffectStyle)[] = [
     ...(await figma.getLocalPaintStylesAsync()),
     ...(await figma.getLocalTextStylesAsync()),
     ...(await figma.getLocalEffectStylesAsync()),

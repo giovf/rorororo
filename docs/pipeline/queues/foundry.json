@@ -870,14 +870,14 @@
     {
       "id": "dependabot-minor-gate-typings",
       "title": "Dependabot PR #5 (13 minor/patch bumps) is red on `@figma/plugin-typings` 1.141: type hygiene.ts's styles as the three style types and rebase the PR",
-      "why": "2026-10-18 00:20 burn-down (foundry research, actions_list + job log): the `dependabot` workflow's first two real runs (10-16 18:31, PRs #5 minor-and-patch and #6 majors) both failed in 40 s at `npm run check` → typecheck: ventures/variables-toolkit/src/figma/hygiene.ts(30,40) `Property 'boundVariables' does not exist on type 'BaseStyle'` — 1.141 adds CustomAnimationStyle to the BaseStyle union and it has no boundVariables, so `const styles: BaseStyle[]` no longer narrows. Fix: type the array as (PaintStyle | TextStyle | EffectStyle)[] (what the three getLocal*StylesAsync calls return; compiles on 1.138 and 1.141 — both checked in a worktree of the PR branch on 10-18), push to main, then comment `@dependabot rebase` on #5 so the gate re-runs and the workflow's auto-merge step fires. #6 (typescript 7, vitest 5, postal-mime 4, stripe 23) stays open for an attended session as the workflow intends; it will keep failing on the same line until this lands.",
+      "why": "2026-10-18 00:20 burn-down (foundry research, actions_list + job log): the `dependabot` workflow's first two real runs (10-16 18:31, PRs #5 minor-and-patch and #6 majors) both failed in 40 s at `npm run check` → typecheck: ventures/variables-toolkit/src/figma/hygiene.ts(30,40) `Property 'boundVariables' does not exist on type 'BaseStyle'` — 1.141 adds CustomAnimationStyle to the BaseStyle union and it has no boundVariables, so `const styles: BaseStyle[]` no longer narrows. Fix: type the array as (PaintStyle | TextStyle | EffectStyle)[] (what the three getLocal*StylesAsync calls return; compiles on 1.138 and 1.141 — both checked in a worktree of the PR branch on 10-18), push to main, then comment `@dependabot rebase` on #5 so the gate re-runs and the workflow's auto-merge step fires. #6 (typescript 7, vitest 5, postal-mime 4, stripe 23) stays open for an attended session as the workflow intends; it will keep failing on the same line until this lands. Built 2026-10-18 (burn-down): hygiene.ts types the array as (PaintStyle | TextStyle | EffectStyle)[]; the full root gate passed on a worktree of PR #5's branch with the fix (60 + 58 test files, 932 tests) and on main; `@dependabot rebase` posted on #5 after the push — the gate-and-merge job's auto-merge step closes it.",
       "effort_days": 0.1,
       "proof": "PR #5 merged by the dependabot workflow's gate-and-merge job",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-18",
       "updated": "2026-10-18",
-      "doing_since": "2026-10-18"
+      "done_at": "2026-10-18"
     },
     {
       "id": "dependabot-red-gate-to-queue",
