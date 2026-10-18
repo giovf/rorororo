@@ -80,3 +80,7 @@ developer.x.com  # X developer agreement: redistribution / resale clause (new-ve
 .dexscreener.com  # DexScreener API terms (new-ventures spike 2026-10-17)
 base.gateway.tenderly.co  # Tenderly's keyless Base JSON-RPC: the one public endpoint that serves eth_getLogs to a runner — ≤ 1,000 blocks per call, one call per line (a batch is rate-limited as its items); 616 calls 0.5 s apart passed without a retry (keeper spike 2026-10-17)
 blue-api.morpho.org  # Morpho's public GraphQL API: Base market liquidations with USD values (new-ventures keeper spike 2026-10-17)
+.treas.gov  # OFAC Sanctions List Service: SDN / consolidated list exports (exchange pre-research 2026-10-18)
+ofac.treasury.gov  # OFAC sanctions list pages and terms (exchange pre-research 2026-10-18)
+.opensanctions.org  # OpenSanctions commercial licence prices, the paid rival (exchange pre-research 2026-10-18)
+.sanctions.io  # sanctions.io API pricing, the paid rival (exchange pre-research 2026-10-18)
