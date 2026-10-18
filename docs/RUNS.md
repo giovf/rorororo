@@ -1235,3 +1235,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 00:30 | burn-down | Research foundry: #5 red on plugin-typings 1.141 BaseStyle union (hygiene.ts:30); fix compiles on 1.138 and 1.141
 - 2026-10-18 00:30 | burn-down | Research foundry: 10-17 metrics dispatched 07:13, no slot marker; watchdog wrote missed at 09:13 (2nd false miss)
 - 2026-10-18 00:30 | burn-down | Queue: foundry +3 (dependabot typings fix 6, red gate to queue 4, dispatch-event trace 4); researched 10-18
+- 2026-10-18 00:15 | watchdog | ci-minutes: 672 billed min/7d (~2880/month, wall 355; private cap 2,000, warn 1700); top: notify owner 129, owner notes 
