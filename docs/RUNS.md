@@ -1253,3 +1253,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 00:40 | burn-down | PR #5: the @dependabot rebase comment was posted with its mention masked by the GitHub tool; never read
 - 2026-10-18 00:40 | burn-down | docs/ci/dependabot.yml: job keys on the PR author, not the push actor; a main merge re-runs the gate
 - 2026-10-18 00:40 | burn-down | Queue: foundry dependabot-gate-on-pr-author filed and done; dependabot-pr-5 why updated (fix on main)
+- 2026-10-18 00:44 | burn-down | PR #5 merged by the dependabot gate at 00:43 after main was merged into its branch: 13 minor/patch bumps live
+- 2026-10-18 00:44 | burn-down | Queue: foundry dependabot-pr-5 done (filed by the new step at 00:36, closed by the gate merge); pr-6 stays todo
+- 2026-10-18 00:45 | burn-down | Stopping: 2 research passes + 4 items built (typings fix, red-gate filer, dispatch trace, gate on PR author), starved

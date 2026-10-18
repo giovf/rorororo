@@ -917,13 +917,14 @@
     {
       "id": "dependabot-pr-5",
       "title": "Dependabot PR #5 (minor-and-patch) is red at Run npm run check: fix forward on main and comment @dependabot rebase",
-      "why": "Filed by scripts/dependabot-gate.ts (2026-10-18): the gate on https://github.com/giovf/rorororo/pull/5 (build(deps): bump the minor-and-patch group with 13 updates) failed at \"Run npm run check\" on 9a7d332 — https://github.com/giovf/rorororo/actions/runs/38948035118. This is a minor/patch group the workflow merges itself once the gate is green. Read the job log for the first error, fix the code on main when the bump is right and the code is wrong (the usual case: a widened type, a renamed export), then comment `@dependabot rebase` on the PR so the gate re-runs; when the bump itself is wrong, say so here and leave the PR to the attended session. 2026-10-18 00:40 burn-down: the code fix is on main (5156be7b, item dependabot-minor-gate-typings); Dependabot ignored the masked rebase comment, so main is merged into the branch once the gate workflow keys on the PR author (dependabot-gate-on-pr-author) — done when the gate merges the PR.",
+      "why": "Filed by scripts/dependabot-gate.ts (2026-10-18): the gate on https://github.com/giovf/rorororo/pull/5 (build(deps): bump the minor-and-patch group with 13 updates) failed at \"Run npm run check\" on 9a7d332 — https://github.com/giovf/rorororo/actions/runs/38948035118. This is a minor/patch group the workflow merges itself once the gate is green. Read the job log for the first error, fix the code on main when the bump is right and the code is wrong (the usual case: a widened type, a renamed export), then comment `@dependabot rebase` on the PR so the gate re-runs; when the bump itself is wrong, say so here and leave the PR to the attended session. 2026-10-18 00:40 burn-down: the code fix is on main (5156be7b, item dependabot-minor-gate-typings); Dependabot ignored the masked rebase comment, so main is merged into the branch once the gate workflow keys on the PR author (dependabot-gate-on-pr-author) — done when the gate merges the PR. Done 2026-10-18 00:43 (burn-down): main merged into the branch at 00:40, the gate ran as the PR author's (run 39083604334) and squash-merged #5 at 00:43 (17c98dbf) — 13 minor/patch bumps live.",
       "effort_days": 0.2,
       "proof": "PR #5 merged by the dependabot workflow's gate-and-merge job",
       "score": 5,
-      "status": "todo",
+      "status": "done",
       "added": "2026-10-18",
-      "updated": "2026-10-18"
+      "updated": "2026-10-18",
+      "done_at": "2026-10-18"
     },
     {
       "id": "dependabot-gate-on-pr-author",

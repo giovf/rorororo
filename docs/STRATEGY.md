@@ -1420,3 +1420,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the branch and let the gate merge the PR. Why: the sandbox cannot command Dependabot (the GitHub tool masks
   @-mentions, so the rebase comment on PR #5 was never read) and a fix that sits on `main` while the PR stays red is the
   silent failure again, one step later.
+- 2026-10-18 burn-down: foundry `dependabot-pr-5` — the first item the red-gate filer wrote was closed the same run: main
+  merged into the Dependabot branch, the gate re-ran under the PR-author condition and merged 13 minor/patch bumps.
+  Why: the chain filer → fix on main → merge into the branch → gate → merge is now the whole Dependabot path and needs
+  no person for minor/patch groups; majors (PR #6, score 3) still wait for an attended session.
