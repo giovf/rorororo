@@ -898,9 +898,10 @@
       "effort_days": 0.5,
       "proof": "a metrics morning with dispatched runs and no slot marker produces no missed: line; the 10-17 fixture passes",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-18",
-      "updated": "2026-10-18"
+      "updated": "2026-10-18",
+      "doing_since": "2026-10-18"
     }
   ]
 }
