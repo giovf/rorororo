@@ -1311,3 +1311,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 17:40 | burn-down | bounty-board.yml first run: success (17:22 dispatch; log says queue finished — not filing; BOARD.md only)
 - 2026-10-18 17:40 | burn-down | Exchange pre-research: spike-ofac-eu-sanctions-screening seeded in new-ventures (6); OFAC exports, OpenSanctions read
 - 2026-10-18 17:40 | burn-down | Stopping: 3 items built (prompt cadence, bounty scanner, planning re-read), 1 spike seeded; starved-and-cooled
+- 2026-10-18 17:45 | build | CI red on d1eec60c: the deadline test's cold uk-tenders call ran past 10 s on the runner; snapshot seeded
+- 2026-10-18 17:45 | build | server.ts: an expired call's work runs on under waitUntil, so a cold refresh still writes its snapshot

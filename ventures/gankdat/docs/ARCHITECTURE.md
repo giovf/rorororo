@@ -244,7 +244,8 @@ runs `check:root`.
   JSON answer to a POST; every client sends `Accept: application/json, text/event-stream`). And
   every data tool (`query_*`, `get_changes`) runs under `TOOL_CALL_BUDGET_MS` (10 s,
   `src/lib/deadline.ts`): a call that misses it answers a tool error naming the phase (gate /
-  query / settle) and logs `slow_tool_call`, a late keyed result is not charged. The probe
+  query / settle) and logs `slow_tool_call`, a late keyed result is not charged and the late work
+  runs on under `ctx.waitUntil` so a cold-cache refresh it started still lands in KV. The probe
   (`scripts/mcp-probe.ts`) now tells `body unread (headers arrived)` from no response and bounds
   the body read itself. Cause of the 10-18 hang not proven; the next one is readable.
   `test/mcp-deadline.spec.ts` is the probe's three calls, keyless then keyed, plus the hang.
