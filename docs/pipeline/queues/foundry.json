@@ -886,9 +886,10 @@
       "effort_days": 0.5,
       "proof": "a red Dependabot gate gets a foundry queue item and one watchdog line within 6 h, with no mail involved",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-18",
-      "updated": "2026-10-18"
+      "updated": "2026-10-18",
+      "doing_since": "2026-10-18"
     },
     {
       "id": "watchdog-dispatch-event-trace",
