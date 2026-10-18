@@ -233,6 +233,21 @@ runs `check:root`.
   validated. The Docker MCP Catalog entry (`docs/docker-mcp-catalog/`) ships keyless + optional key;
   its `oauth` block is a second PR once the Worker's dynamic registration (below) is live and the
   entry listed. KV rate limiters fail open on KV errors.
+  **One JSON body per POST, calls under a deadline** (2026-10-18, gankdat `refresh-mcp-probe`): the
+  keyless metrics probe of 10-18 07:10 timed out at 20 s on one `tools/call` (fresh 1,000-row
+  uk-tenders snapshot, no CPU limit in reach) while the keyed call a moment later answered at once,
+  and `/mcp` left no line to read. Two Worker-side guards: `routes/mcp.ts` builds the transport
+  with `enableJsonResponse: true` — an SSE stream returned the Response at once and ran the tool
+  call after the fetch handler had returned, the one shape of work a Worker may drop (a dropped
+  call leaves the stream open until the client gives up); in JSON mode the call runs inside the
+  awaited handler and a death mid-call is an HTTP error a checker can read (the spec allows a
+  JSON answer to a POST; every client sends `Accept: application/json, text/event-stream`). And
+  every data tool (`query_*`, `get_changes`) runs under `TOOL_CALL_BUDGET_MS` (10 s,
+  `src/lib/deadline.ts`): a call that misses it answers a tool error naming the phase (gate /
+  query / settle) and logs `slow_tool_call`, a late keyed result is not charged. The probe
+  (`scripts/mcp-probe.ts`) now tells `body unread (headers arrived)` from no response and bounds
+  the body read itself. Cause of the 10-18 hang not proven; the next one is readable.
+  `test/mcp-deadline.spec.ts` is the probe's three calls, keyless then keyed, plus the hang.
   **Lazy OAuth** (2026-09-30, `src/auth/oauth.ts` + `src/routes/oauth.ts`, migration 0013
   `oauth_grants`): Claude, Cursor and ChatGPT start sign-in only on an HTTP 401 with
   `WWW-Authenticate: Bearer resource_metadata=…` (a 200 tool error never does), so the Worker

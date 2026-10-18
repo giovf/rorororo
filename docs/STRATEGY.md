@@ -1483,3 +1483,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   new-ventures.json when fewer than two are open (skipped at two) instead of parking an idea. Why: the W42 review found ten passes
   since 10-05 parked ten ideas and promoted none, while the four spikes seeded 10-17 were done the same day; a spike is work the next
   slot builds. Prompt text in docs/routines/burn-down.md, build.md and exchange.md; the W43 review keeps or reverses it.
+- 2026-10-18 build: gankdat `refresh-mcp-probe` — the 10-18 keyless probe hang (20 s, keyed call fine, snapshot fresh, no log line)
+  is answered with two Worker guards rather than a guess: `/mcp` answers a POST with one JSON body so the tool call runs inside the
+  awaited fetch handler (the SSE path ran it after the Response was returned, work a Worker may drop), and every data tool runs
+  under a 10 s deadline that names the phase it reached. Why: directories score a hang as an outage; a bounded error is a reading.
+  The x402 Ajv `Error compiling schema` log line (11 of 12 uk-planning lines) is queued at 3, not fixed in this run.

@@ -1387,13 +1387,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-18T09:22:30.973Z"
+      },
+      {
+        "id": "39",
+        "title": "MCP: one JSON body per /mcp POST and a 10 s deadline on every data tool (refresh-mcp-probe)",
+        "description": "routes/mcp.ts builds the @hono/mcp transport with enableJsonResponse so a stateless POST's tool call runs inside the awaited fetch handler (the SSE path ran it after the Response was returned); src/lib/deadline.ts withDeadline bounds query_* and get_changes at TOOL_CALL_BUDGET_MS with a tool error naming the phase and a slow_tool_call log line; scripts/mcp-probe.ts tells a hung body from no response. Version 0.25.2. test/mcp-deadline.spec.ts.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-18T17:25:14.240Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-18T09:22:30.973Z",
-      "taskCount": 38,
-      "completedCount": 31,
+      "lastModified": "2026-10-18T17:25:14.240Z",
+      "taskCount": 39,
+      "completedCount": 32,
       "tags": [
         "master"
       ]

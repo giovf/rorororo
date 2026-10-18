@@ -1293,3 +1293,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 17:20 | burn-down | build.md LOOP 1 same clause; exchange.md: night passes keep the queue at two between Wednesdays
 - 2026-10-18 17:20 | burn-down | pipeline README starvation sentence updated; Changes lines in burn-down, build and exchange
 - 2026-10-18 17:20 | burn-down | Queue: foundry pre-research-shelf-cap done; proof is the first `Exchange pre-research:` line after it
+- 2026-10-18 17:30 | build | mcp probe 10-18: keyless tools/call hung 20 s, keyed answered; snapshot fresh, SDK bump not yet live
+- 2026-10-18 17:30 | build | routes/mcp.ts: a POST answers one JSON body, the tool call runs inside the awaited handler, no SSE
+- 2026-10-18 17:30 | build | deadline.ts + server.ts: every data tool answers within 10 s or a tool error naming the phase
+- 2026-10-18 17:30 | build | mcp-probe.ts: `body unread (headers arrived)` told from no response; body read bounded; 1 test
+- 2026-10-18 17:30 | build | test/mcp-deadline.spec.ts: the probe's three calls keyless and keyed, the hang; version 0.25.2
+- 2026-10-18 17:30 | build | Queue: gankdat refresh-mcp-probe done (cause unproven, next hang readable); x402-ajv-compile-log-noise (3)
+- 2026-10-18 17:30 | build | Evidence: /v1/health 17:15 has uk-trademark-journal last ok 10-17 06:11 (35 h) — wave 7 silent 10-18
+- 2026-10-18 17:30 | build | Taskmaster row 39; ARCHITECTURE note; CI first runs all recorded; owner: nothing

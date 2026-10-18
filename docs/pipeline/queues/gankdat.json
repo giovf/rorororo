@@ -670,13 +670,13 @@
     {
       "id": "refresh-mcp-probe",
       "title": "live /mcp has failed the CI probe 2 times in the last 4 days — find what answers a directory's initialize / tools/list / tools/call with an error and fix it",
-      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list mcp-probe under refresh errors on 2026-10-16 (call 200 (tool error: Source 'uk-planning' is temporarily unavailable; retry later); authe) and 2026-10-18: call n/a (The operation was aborted due to timeout). The probe (scripts/mcp-probe.ts, from the metrics runner) is what Glama, Smithery and the Claude directory see; every directory ranks an erroring server below healthy ones. The step and status are in the message; reproduce it against the local Worker (test/mcp-directory.spec.ts) with the same request, read `/v1/health` through the relay, and fix the Worker — not the probe.",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list mcp-probe under refresh errors on 2026-10-16 (call 200 (tool error: Source 'uk-planning' is temporarily unavailable; retry later); authe) and 2026-10-18: call n/a (The operation was aborted due to timeout). The probe (scripts/mcp-probe.ts, from the metrics runner) is what Glama, Smithery and the Claude directory see; every directory ranks an erroring server below healthy ones. The step and status are in the message; reproduce it against the local Worker (test/mcp-directory.spec.ts) with the same request, read `/v1/health` through the relay, and fix the Worker — not the probe. Built 2026-10-18 (build): the two failures had different causes. 10-16 was uk-planning's expired snapshot (fixed 10-17: probe skips a paused tool, snapshot retained). 10-18 (metrics run 39106552120, probe step 07:10:18–07:10:42): keyless tools/call on query_uk_tenders timed out at 20 s, the keyed call right after answered 200; /v1/health via relay mcp-probe-health-2026-10-18 has uk-tenders refreshed 05:01:06 that morning (snapshot fresh, 1,000 rows, cpu_ms 300000), and the Worker live at 07:10 was the 10-17 17:33 deploy (SDK 1.30.0 — the 1.32.1 bump deployed only at 09:35), so a stale refresh, a big parse, a CPU kill and the dependency bump are all ruled out; /mcp logged nothing. What the code allowed: @hono/mcp's SSE path returns the Response before the tool call runs, so the call ran after the fetch handler returned, kept alive only by the open stream — the one kind of work a Worker may drop, and a dropped call leaves the stream open until the client's timeout, exactly the reading. Fix: routes/mcp.ts answers a POST with one JSON body (enableJsonResponse, spec-allowed, every client accepts both), so the call runs inside the awaited handler; every data tool runs under a 10 s deadline (src/lib/deadline.ts) answering a tool error naming the phase and logging slow_tool_call; the probe tells \"body unread (headers arrived)\" from no response and bounds its own body read. Version 0.25.2 so /v1/health names the build. Cause not proven; the next hang is readable on both sides.",
       "effort_days": 0.1,
       "proof": "mcp-probe absent from refresh errors for 7 consecutive Daily numbers rows",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-18",
-      "doing_since": "2026-10-18"
+      "done_at": "2026-10-18"
     },
     {
       "id": "x402-bazaar-week-1-index-check",
@@ -720,6 +720,16 @@
       "score": 4,
       "status": "todo",
       "not_before": "2026-10-20",
+      "added": "2026-10-18"
+    },
+    {
+      "id": "x402-ajv-compile-log-noise",
+      "title": "Worker logs `Error compiling schema` on x402 calls — Ajv in @x402/extensions compiles with new Function, which Workers forbid; find the call site, stop the error line",
+      "why": "Seen 2026-10-18 (build, metrics run 39106552120 wave-log step): 11 of the 12 Worker log lines mentioning uk-planning in 24 h were `[error] Error compiling schema, function code: const schema1 = scope.schema[1]…`, at 07:15 and 17:23/17:28 on 10-17 — the metrics job's x402 validate and bazaar reads of /x402/data/uk-planning. The string is Ajv's compile failure; the only Ajv in the Worker bundle is @x402/extensions (bazaar resourceService / payment-identifier validation, `ajv.compile(...)` in its dist), and Workers disallow code generation from strings, so every 402 that carries the bazaar discovery extension logs one error line and serves anyway (x402 validate 17/17 valid, 3 payers). Harmless to buyers, but it is the loudest line in the Worker log, fills the wave-log slug search for any source an x402 route names (uk-planning read as 11 of 12 lines of noise), and a real error next to it is hidden. Fix: reproduce in test (console.error spy on a 402 of /x402/data/<slug>), then either pass a precompiled/standalone validator, build the extension payload without the validating helper, or pin the extension at a version that does not compile at runtime; add the string to `isNoiseLine` in src/lib/wave-logs.ts only if the line cannot be removed.",
+      "effort_days": 0.2,
+      "proof": "A 24-h Worker log (wave-log step or an observability query) with no `Error compiling schema` line while x402 validate still reads 17/17 valid",
+      "score": 3,
+      "status": "todo",
       "added": "2026-10-18"
     }
   ]

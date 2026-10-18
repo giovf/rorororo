@@ -112,6 +112,25 @@ describe('probeOnce', () => {
     expect(s.calls[0]?.headers.accept).toContain('text/event-stream');
   });
 
+  it('tells a hung body (headers 200, stream never closed) from no response', async () => {
+    const hung: Handler = ({ method }) =>
+      method === 'tools/call'
+        ? new Response(new ReadableStream({ start: () => undefined }), {
+            status: 200,
+            headers: { 'content-type': 'text/event-stream' },
+          })
+        : healthy({ method, params: {} });
+    const s = server(hung);
+    const run = await probeOnce('https://x/mcp', s.fetch, undefined, 50);
+    const last = run.steps[2];
+    expect(last?.status).toBe(200);
+    expect(last?.note).toContain('body unread (headers arrived)');
+    expect(probeNote({ date: 'd', url: 'u', runs: [run] })).toContain(
+      'call 200 (body unread (headers arrived)',
+    );
+    expect(probeError({ date: 'd', url: 'u', runs: [run] })?.message).toContain('body unread');
+  });
+
   it('stops at a 500 and keeps what the body said', async () => {
     const s = server(() => new Response('Internal Server Error', { status: 500 }));
     const run = await probeOnce('https://x/mcp', s.fetch, 'k');
