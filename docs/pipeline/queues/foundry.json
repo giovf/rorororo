@@ -882,14 +882,14 @@
     {
       "id": "dependabot-red-gate-to-queue",
       "title": "A red Dependabot gate files a foundry queue item and a watchdog line instead of staying silent",
-      "why": "2026-10-18 burn-down (foundry research): PR #5's gate failed 10-16 18:32 and nothing in the repo knew for 30 h — GitHub mails a run failure to its actor, here dependabot[bot], so no `Run failed` reached triage (INBOX has the three PR-opened mails and nothing after), no RUNS line, no queue item; the burn-down found it only by listing the workflow's runs by hand. The auto-merge rule in docs/ops/VERSIONS.md (`minor/patch auto-merged when the gate is green`) is silent exactly when it needs a person. Fix, in scripts/run-watchdog.ts (runs on every routine push and 6-hourly in notify owner, GITHUB_TOKEN present): list open PRs by dependabot[bot]; for each whose latest `dependabot.yml` run on the head sha concluded failure, write one `- … | watchdog | dependabot: PR #N <group> gate red at <failing step>` line (dedupe by PR number + head sha, as the missed: lines dedupe) and add or refresh an idempotent foundry item `dependabot-pr-<N>` (score 5, effort 0.2, why = the failing step and the first error line from the job log) — the refresh-errors-to-queue pattern. Proof: the next red Dependabot gate has a queue item and a watchdog line within 6 h of the run.",
+      "why": "2026-10-18 burn-down (foundry research): PR #5's gate failed 10-16 18:32 and nothing in the repo knew for 30 h — GitHub mails a run failure to its actor, here dependabot[bot], so no `Run failed` reached triage (INBOX has the three PR-opened mails and nothing after), no RUNS line, no queue item; the burn-down found it only by listing the workflow's runs by hand. The auto-merge rule in docs/ops/VERSIONS.md (`minor/patch auto-merged when the gate is green`) is silent exactly when it needs a person. Fix, in scripts/run-watchdog.ts (runs on every routine push and 6-hourly in notify owner, GITHUB_TOKEN present): list open PRs by dependabot[bot]; for each whose latest `dependabot.yml` run on the head sha concluded failure, write one `- … | watchdog | dependabot: PR #N <group> gate red at <failing step>` line (dedupe by PR number + head sha, as the missed: lines dedupe) and add or refresh an idempotent foundry item `dependabot-pr-<N>` (score 5, effort 0.2, why = the failing step and the first error line from the job log) — the refresh-errors-to-queue pattern. Proof: the next red Dependabot gate has a queue item and a watchdog line within 6 h of the run. Built 2026-10-18 (burn-down): scripts/dependabot-gate.ts (pure dependabotGate() over open PRs + the gate workflow's runs + the failing step from the jobs API; 8 tests) runs in the notify-owner watchdog step — docs/ci/notify-owner.yml adds pull-requests: read, the step and the queue file to the commit; the installer moves it and the next slot checks its first run. Proof is the next red Dependabot gate.",
       "effort_days": 0.5,
       "proof": "a red Dependabot gate gets a foundry queue item and one watchdog line within 6 h, with no mail involved",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-18",
       "updated": "2026-10-18",
-      "doing_since": "2026-10-18"
+      "done_at": "2026-10-18"
     },
     {
       "id": "watchdog-dispatch-event-trace",

@@ -1405,3 +1405,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   is fixed on `main` (hygiene.ts names the three style types instead of `BaseStyle`), proven green on the PR's own branch
   in a worktree, and the PR asked to rebase so the gated auto-merge fires. Why: dependency currency without an attended
   session is the point of the workflow; the first real run must not be the one that fails quietly.
+- 2026-10-18 burn-down: foundry `dependabot-red-gate-to-queue` — the notify-owner watchdog step now runs
+  `scripts/dependabot-gate.ts`: an open Dependabot PR whose latest gate run on its head failed gets one `watchdog |
+  dependabot:` line (deduped by PR and sha) and an idempotent foundry item `dependabot-pr-<N>` (5 for minor/patch, 3
+  for majors), the refresh-errors-to-queue pattern. Why: GitHub mails that failure only to dependabot[bot]; the
+  auto-merge rule was silent for 30 h exactly when it needed a person, and the queue is where a routine looks.

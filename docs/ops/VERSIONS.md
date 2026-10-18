@@ -13,7 +13,7 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
 | Claude model, build fallback | `claude-opus-5-5` | `trig_01GraXN5FPXmq5M9wJSYYeHN` | same | same |
 | Claude model, metrics / triage / report / retro routines | `claude-sonnet-5-5` | their routine configs | same | same |
 | Node on GitHub runners | `22` | `.github/workflows/*.yml` (`node-version`) | https://nodejs.org/dist/index.json (active LTS) | versions check → handoff; the repo moves one LTS at a time |
-| npm packages (hono, wrangler, vitest, playwright, …) | `package-lock.json` | root | npm registry | Dependabot monthly, grouped; minor/patch auto-merged when the gate is green (`dependabot` workflow), majors by an attended session |
+| npm packages (hono, wrangler, vitest, playwright, …) | `package-lock.json` | root | npm registry | Dependabot monthly, grouped; minor/patch auto-merged when the gate is green (`dependabot` workflow), majors by an attended session; a red gate files foundry `dependabot-pr-<N>` and a `watchdog | dependabot:` line within 6 h (`scripts/dependabot-gate.ts`, 2026-10-18) |
 | GitHub Actions (`actions/checkout`, `setup-node`, `upload-artifact`) | per workflow | `.github/workflows/*.yml` | GitHub | Dependabot monthly, grouped, same merge rule |
 | Playwright Chromium | `npx playwright install` at run time | demo video / media jobs | Playwright | follows the `playwright` package version |
 | Cloudflare Worker compatibility dates | `wrangler.jsonc` per Worker | gankdat, landing, license-worker | https://developers.cloudflare.com/workers/configuration/compatibility-dates/ | reviewed when wrangler majors land (attended) |

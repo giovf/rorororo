@@ -1239,3 +1239,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 00:35 | burn-down | hygiene.ts: styles typed as PaintStyle | TextStyle | EffectStyle (plugin-typings 1.141 widened BaseStyle)
 - 2026-10-18 00:35 | burn-down | Gate: full root check green on a worktree of Dependabot PR #5 with the fix (932 tests) and on main
 - 2026-10-18 00:35 | burn-down | Queue: foundry dependabot-minor-gate-typings done; @dependabot rebase posted on PR #5 for the auto-merge
+- 2026-10-18 00:45 | burn-down | dependabot-gate.ts: red Dependabot gate → watchdog line + foundry dependabot-pr-N item (5 minor, 3 majors); 8 tests
+- 2026-10-18 00:45 | burn-down | docs/ci/notify-owner.yml: watchdog step runs dependabot-gate.ts, pull-requests read, queue file in its commit
+- 2026-10-18 00:45 | burn-down | SCHEDULERS notify-owner row and VERSIONS.md auto-merge rule name the red-gate filing; proof is the next red gate
+- 2026-10-18 00:45 | burn-down | Queue: foundry dependabot-red-gate-to-queue done; installer commit's first run is the next slot's check
