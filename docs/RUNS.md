@@ -1264,3 +1264,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 01:15 | burn-down | Queue: foundry dependabot-pr-6 done; root cause and next step in its why; PR #6 commented
 - 2026-10-18 01:25 | burn-down | Owner note 00:45 answered: AI-setup course idea parked in the exchange (ai-setup-course), Wednesday researches
 - 2026-10-18 01:25 | burn-down | Owner note 00:49 answered: adult-sector idea declined in the exchange (shelf terms, OSA duties, no distress lines)
+- 2026-10-18 01:30 | burn-down | Stopping: 1 item built (PR #6 root cause + Dependabot ignores), 2 owner notes answered; starved-and-cooled
