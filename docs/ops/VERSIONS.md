@@ -28,3 +28,8 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
   2–7 s), so the four Sonnet routines and the Opus fallback moved to 5.5 the same hour (probes left
   disabled; delete them at https://claude.ai/code/routines). Node 24 is a foundry queue item
   (`node-24-runners`): every workflow's `node-version` plus the devcontainer, one PR, gate green.
+- 2026-10-18 — Dependabot ignores two majors (`.github/dependabot.yml`, burn-down, PR #6): **typescript 7** until
+  typescript-eslint's peer range includes 7 (8.71.2 stops at `<6.1.0` and refuses TS 7 at load; TS 7's `tsc -b` also
+  fails on a fresh clone because `@foundry/licensing`'s `exports` points at an unbuilt `dist/index.d.ts`), and
+  **vitest majors** until `@cloudflare/vitest-pool-workers` accepts vitest 5 (0.23.0 wants ^4.1.0; the root is already
+  on vitest 5, gankdat stays on 4). Lifting either is a one-line delete here plus a green gate.

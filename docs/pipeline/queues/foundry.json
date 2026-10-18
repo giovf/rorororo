@@ -906,14 +906,14 @@
     {
       "id": "dependabot-pr-6",
       "title": "Dependabot PR #6 (majors) is red at Run npm run check: root-cause it for the attended session",
-      "why": "Filed by scripts/dependabot-gate.ts (2026-10-18): the gate on https://github.com/giovf/rorororo/pull/6 (build(deps): bump the majors group with 4 updates) failed at \"Run npm run check\" on df37191 — https://github.com/giovf/rorororo/actions/runs/38948094681. This is a majors group, which the dependabot workflow leaves open for an attended session. Read the job log for the first error, fix the code on main when the bump is right and the code is wrong (the usual case: a widened type, a renamed export), then comment `@dependabot rebase` on the PR so the gate re-runs; when the bump itself is wrong, say so here and leave the PR to the attended session.",
+      "why": "Filed by scripts/dependabot-gate.ts (2026-10-18): the gate on https://github.com/giovf/rorororo/pull/6 (build(deps): bump the majors group with 4 updates) failed at \"Run npm run check\" on df37191 — https://github.com/giovf/rorororo/actions/runs/38948094681. This is a majors group, which the dependabot workflow leaves open for an attended session. Read the job log for the first error, fix the code on main when the bump is right and the code is wrong (the usual case: a widened type, a renamed export), then comment `@dependabot rebase` on the PR so the gate re-runs; when the bump itself is wrong, say so here and leave the PR to the attended session. — Root cause (2026-10-18 01:15 burn-down, reproduced in a worktree of fd20d05): two of the four bumps are wrong for this repo, not the code. (1) typescript 7.0.2: `tsc -b` on a fresh clone fails TS2307 on `@foundry/licensing` because TS 7 resolves the package's `exports` to `dist/index.d.ts` and no longer redirects it to the referenced project's source before that project is built (a second `tsc -b`, dist present, passes); and `npm run check -w @foundry/gankdat` dies in lint with `typescript-eslint does not support TS 7.0` — 8.71.2 is the latest and its peer range is `>=4.8.4 <6.1.0`, so no fix on main can take TS 7 yet. (2) vitest 5.0.4 in gankdat: `@cloudflare/vitest-pool-workers` 0.23.0 (latest, merged by PR #5) wants vitest ^4.1.0, and Dependabot's regenerated package-lock.json has no `vite` entry at all (vitest 5's required peer), so `vitest run` fails at startup in both suites even with TypeScript pinned back to 6.0.3. (3) stripe 23.0.0 and postal-mime 4.0.6 typecheck clean under TS 6.0.3 (root typecheck, lint and format green on the PR branch); their tests could not run on this lock. Done on main: `.github/dependabot.yml` ignores typescript and vitest majors with a lift condition each (typescript-eslint peer range includes 7; the Workers pool's peer range moves); Dependabot re-reads the config on push and should regroup the majors PR to stripe + postal-mime. Attended session: close PR #6 (or let Dependabot replace it) and merge the regrouped majors PR once its gate is green; a `@dependabot rebase` comment is useless from the sandbox (the GitHub tool masks @-mentions).",
       "effort_days": 0.2,
       "proof": "the failure is root-caused in this item's why and the attended session can merge or close PR #6 from it",
       "score": 3,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-18",
       "updated": "2026-10-18",
-      "doing_since": "2026-10-18"
+      "done_at": "2026-10-18"
     },
     {
       "id": "dependabot-pr-5",

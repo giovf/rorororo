@@ -1424,3 +1424,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   merged into the Dependabot branch, the gate re-ran under the PR-author condition and merged 13 minor/patch bumps.
   Why: the chain filer → fix on main → merge into the branch → gate → merge is now the whole Dependabot path and needs
   no person for minor/patch groups; majors (PR #6, score 3) still wait for an attended session.
+- 2026-10-18 burn-down: foundry `dependabot-pr-6` — the majors PR is red because two bumps are wrong for the repo, not
+  the code: TypeScript 7 (typescript-eslint's peer range stops at 6.0; `tsc -b` no longer redirects an `exports` path to
+  an unbuilt referenced project) and vitest 5 in gankdat (`@cloudflare/vitest-pool-workers` wants ^4.1; the regenerated
+  lock lost `vite`). Both majors are now ignored in `.github/dependabot.yml` with a lift condition each, so the monthly
+  majors PR regroups to what can merge (stripe 23, postal-mime 4). Why: a red gate every month for a bump the toolchain
+  cannot take yet is a wasted attended session; the ignore is not silent ageing because its lift condition is written down.

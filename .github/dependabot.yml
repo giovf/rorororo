@@ -15,6 +15,18 @@ updates:
         update-types: [minor, patch]
       majors:
         update-types: [major]
+    # Majors held back with a lift condition each (PR #6, 2026-10-18 burn-down; docs/ops/VERSIONS.md log):
+    # - typescript 7 (2026-07-08): typescript-eslint 8.71.2, the latest, declares `typescript: >=4.8.4
+    #   <6.1.0` and throws "does not support TS 7.0" at load; TS 7's `tsc -b` also no longer resolves
+    #   `@foundry/licensing` through its `exports` before the referenced project is built. Lift when
+    #   typescript-eslint's peer range includes 7.
+    # - vitest majors: gankdat's `@cloudflare/vitest-pool-workers` 0.23.0 wants vitest ^4.1.0, and the
+    #   regenerated lock dropped vitest 5's required `vite` peer. Lift when the pool's peer range moves.
+    ignore:
+      - dependency-name: typescript
+        update-types: ['version-update:semver-major']
+      - dependency-name: vitest
+        update-types: ['version-update:semver-major']
   - package-ecosystem: github-actions
     directory: /
     schedule:

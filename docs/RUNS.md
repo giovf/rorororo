@@ -1256,3 +1256,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 00:44 | burn-down | PR #5 merged by the dependabot gate at 00:43 after main was merged into its branch: 13 minor/patch bumps live
 - 2026-10-18 00:44 | burn-down | Queue: foundry dependabot-pr-5 done (filed by the new step at 00:36, closed by the gate merge); pr-6 stays todo
 - 2026-10-18 00:45 | burn-down | Stopping: 2 research passes + 4 items built (typings fix, red-gate filer, dispatch trace, gate on PR author), starved
+- 2026-10-18 01:15 | burn-down | dependabot.yml first run: failure at Run npm run check on PR #6 (the TS 7 bump, not the gate)
+- 2026-10-18 01:15 | burn-down | PR #6 root cause: TS 7 breaks tsc -b on fresh clones (exports → unbuilt dist) and typescript-eslint
+- 2026-10-18 01:15 | burn-down | PR #6: gankdat vitest 5 conflicts with vitest-pool-workers ^4.1; Dependabot's lock dropped vite
+- 2026-10-18 01:15 | burn-down | PR #6: stripe 23 and postal-mime 4 typecheck clean under TS 6.0.3; left for the attended session
+- 2026-10-18 01:15 | burn-down | .github/dependabot.yml: typescript and vitest majors ignored, lift conditions in the comment
+- 2026-10-18 01:15 | burn-down | Queue: foundry dependabot-pr-6 done; root cause and next step in its why; PR #6 commented
