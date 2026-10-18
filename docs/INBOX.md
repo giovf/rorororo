@@ -125,3 +125,8 @@
 - 2026-10-17 14:08 | store | apify.com | Your Actor UK Planning Applications (planning.data.gov.uk) has been flagged as under maintenance | Apify QA flagged faceless-api/uk-planning-applications after 3 days of failed prefilled runs (run NOjZSxPS2xbA2wvFs); origin dataset emptied upstream, already covered by queue items refresh-uk-planning-2026-10-11 and refresh-uk-planning-reread-2026-10-18 | logged (agent: actor QA failure, not owner)
 - 2026-10-18 00:43 (backlog) | notification | github.com | Re: [giovf/rorororo] bump the minor-and-patch group with 13 updates (PR #5) | Dependabot PR #5 merged into main | logged
 - 2026-10-18 00:46 (backlog) | notification | github.com | Re: [giovf/rorororo] bump the majors group across 1 directory with 4 updates (PR #6) | Dependabot pushed 1 commit (fd20d05) to PR #6 | logged
+- 2026-10-16 23:59 (backlog) | notification | google.com | DMARC report gankdat.com (Report-ID 17927395743080264325) | Google daily aggregate DMARC report | logged
+- 2026-10-18 01:20 (backlog) | notification | github.com | Re: [giovf/rorororo] bump the majors group across 1 directory with 4 updates (PR #6) | Dependabot closed PR #6 as superseded by #7 | logged
+- 2026-10-18 01:21 (backlog) | notification | github.com | [giovf/rorororo] bump the majors group across 1 directory with 2 updates (PR #7) | Dependabot opened PR #7 (postal-mime 3→4, stripe) | logged
+- 2026-10-18 01:21 (backlog) | notification | github.com | [giovf/rorororo] bump the minor-and-patch group with 2 updates (PR #8) | Dependabot opened PR #8 (playwright, wrangler) | logged
+- 2026-10-18 01:24 (backlog) | notification | github.com | Re: [giovf/rorororo] bump the minor-and-patch group with 2 updates (PR #8) | PR #8 merged into main | logged
