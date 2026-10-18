@@ -1430,3 +1430,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   lock lost `vite`). Both majors are now ignored in `.github/dependabot.yml` with a lift condition each, so the monthly
   majors PR regroups to what can merge (stripe 23, postal-mime 4). Why: a red gate every month for a bump the toolchain
   cannot take yet is a wasted attended session; the ignore is not silent ageing because its lift condition is written down.
+- 2026-10-18 burn-down: two owner ideas from the dashboard. The AI-setup course/starter kit is parked in the exchange
+  (`ai-setup-course`) for Wednesday's research: the product shape fits, but §1 ranks an audience-capture line below
+  cut-of-flow lines, so it needs paid-rival evidence first; urgency copy only where true. The adult-sector / 'capitalise
+  on desperation' idea is declined (`adult-sector-ventures`): every shelf we sell through and our merchant of record ban
+  it, UK Online Safety Act age-assurance duties and processor KYC put it beyond a £100 sole trader, and distress-based
+  lines are the one kind this operation does not build. Why logged here: the owner delegated these decisions and asked
+  for the reasoning in place.

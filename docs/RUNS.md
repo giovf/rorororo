@@ -1262,3 +1262,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 01:15 | burn-down | PR #6: stripe 23 and postal-mime 4 typecheck clean under TS 6.0.3; left for the attended session
 - 2026-10-18 01:15 | burn-down | .github/dependabot.yml: typescript and vitest majors ignored, lift conditions in the comment
 - 2026-10-18 01:15 | burn-down | Queue: foundry dependabot-pr-6 done; root cause and next step in its why; PR #6 commented
+- 2026-10-18 01:25 | burn-down | Owner note 00:45 answered: AI-setup course idea parked in the exchange (ai-setup-course), Wednesday researches
+- 2026-10-18 01:25 | burn-down | Owner note 00:49 answered: adult-sector idea declined in the exchange (shelf terms, OSA duties, no distress lines)
