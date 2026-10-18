@@ -1317,3 +1317,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 18:25 | burn-down | spike ofac-eu-sanctions-screening: parked — rivals €0.03–0.10 a query, uk-sanctions 0 external calls
 - 2026-10-18 18:25 | burn-down | Apify: 17 screening actors at US$0.002–0.08 a name share ~20 monthly users; EU list needs no account
 - 2026-10-18 18:25 | burn-down | Queue: new-ventures spike-ofac-eu-sanctions-screening done; queue empty, needs_research (cooling)
+- 2026-10-18 18:30 | burn-down | x402/routes.ts: Ajv's `Error compiling schema` error line muted next to the warning (withoutCodegenError)
+- 2026-10-18 18:30 | burn-down | Evidence: compile is unconditional in @x402/hono paymentMiddleware; Ajv logs it before rethrowing
+- 2026-10-18 18:30 | burn-down | x402.spec: filter test (11 tests); pool does not reproduce workerd's codegen ban; ARCHITECTURE note
+- 2026-10-18 18:30 | burn-down | Queue: gankdat x402-ajv-compile-log-noise done; proof is the next wave-log reading with no such line

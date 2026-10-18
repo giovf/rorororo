@@ -1506,3 +1506,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   monthly users, so a matcher that carries false-negative liability is not a new income line. §5's distribution-first
   rule holds for the two list datasets too. Re-open on the first external `uk-sanctions`/`sam-exclusions` call, a paid
   x402 call on either, or a screening request; the file is the ingest recipe for that day.
+- 2026-10-18 burn-down: gankdat `x402-ajv-compile-log-noise` — the 17 `Error compiling schema` lines per isolate start
+  were Ajv's own `logger.error` inside @x402/extensions' validator, run unconditionally by `paymentMiddleware` on every
+  start and failing under workerd only for the codegen ban, so the lane now drops that one two-argument `console.error`
+  beside the existing warning mute (`withoutCodegenError`). Why: the line hid real errors in every wave-log reading an
+  x402 route touches (11 of 12 uk-planning lines on 10-17); CDP's daily validate remains the real schema check.

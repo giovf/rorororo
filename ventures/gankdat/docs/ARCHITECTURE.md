@@ -411,7 +411,12 @@ runs `check:root`.
   — rendered `wave 06:05: exceededCpu 900.1s 18 h ago` or `no invocation in 26 h` ahead of the slug
   reading. The runner prints the first invocation row when none parsed, so the next job log shows the
   live shape. The warning itself is muted at the lane (`x402/routes.ts withoutCodegenWarning`, that one
-  message only). **The query is blind to cron invocations** (2026-10-18): the 10-16 job log, its first
+  message only), and so is the ERROR line the same compile writes (2026-10-18, `x402-ajv-compile-log-noise`):
+  Ajv's `compileSchema` logs `Error compiling schema, function code:` with the generated validator source
+  before rethrowing, 17 lines per isolate start, 11 of the 12 uk-planning lines in the 10-17 reading;
+  `withoutCodegenError` drops that one two-argument call (the compile cannot be skipped — `paymentMiddleware`
+  validates every route on start — and under workerd it fails only this way; CDP's daily validate is the
+  real schema check). **The query is blind to cron invocations** (2026-10-18): the 10-16 job log, its first
   real read, carried no line from any wave — no `refresh_wave`, no `refresh_failed` for uk-planning —
   though wave 1 refreshed 14 sources that morning, so the clause reads `no invocation logged`, never
   "did not fire" (`wave-log-cron-query-blind` queued). **Refresh progress marker** (`sources/progress.ts`,
