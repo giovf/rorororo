@@ -1390,3 +1390,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   cooling queue out even when it is flagged or emptied, as the burn-down prompt already said they did; the code applied
   the 48 h only to starved queues, so the spike that emptied new-ventures tonight listed it for research hours after
   its research run. Why: the rule lived only in the operator's reading; now the tool enforces it.
+- 2026-10-18 burn-down: oss-bounties research — seven daily boards (≈ 3,900 issue reads) hold 0 free funded code fixes at
+  US$25+ and the eight items filed were all dropped on read. No items added, `research_after` 2026-10-19; the Sunday
+  review is asked to set the board-count trigger at seven such boards (met), mark the line finished and stop the daily
+  scanner. Why: the labelled money is assigned, crowded or not code, so §3's recurring-job assumption fails on the
+  count before the PR-based kill rule can ever fire.

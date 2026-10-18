@@ -190,6 +190,40 @@ mostly dormant projects, not open issues, and a supply read would need every rep
 issue page. Neither becomes a scanner source; the Sunday review decides the line on the board
 count alone.
 
+## Research 2026-10-18 (pipeline starved — burn-down, `research_after` 10-18 reached)
+
+Read: the 10-15, 10-16 and 10-17 boards (the 10-16 build's off-platform drop is in force from 10-17), the `## Claims`
+table (8 rows, all `dropped`), the queue (0 todo, `first-bounty-pr` blocked), the Opire, Algora and IssueHunt readings
+above. **The board count the 10-13 pass asked for, over every board so far** (free = no assignee and no open PR when
+read; the 10-11 board had no Taken column, its three filed rows were read by hand):
+
+| Board | Read | Kept | Free rows at US$25+ | Of them code fixes |
+| --- | --- | --- | --- | --- |
+| 2026-10-11 | 498 | 56 | 3 filed by hand | 0 — assigned + hardware, a contributor's own ask, a report |
+| 2026-10-12 | 498 | 16 | 1 (useagent#61, $80) | 0 — maintainer-assigned app build with device recordings |
+| 2026-10-13 | — | 8 | 0 | 0 |
+| 2026-10-14 | — | 8 | 0 | 0 |
+| 2026-10-15 | 600 | 10 | 1 (trovu#329, $30, not escrowed) | 0 — Android video + human statement, PR #718 open |
+| 2026-10-16 | 593 | 9 | 1 (verdikta#76, $30) | 0 — the claimant funds an on-chain task, nothing paid for a PR |
+| 2026-10-17 | 589 | 9 | 0 | 0 |
+
+Seven boards, about 3,900 issue reads, **0 free funded code fixes at US$25 or more**, and 8 of 8 filed items dropped
+on read. The kept rows that are code (EdgeChains #273/#279/#290, highlight#8032, tt-metal#51655) are 2.5–3 years old
+with 32–85 open PRs each or already assigned; the only free row on the last three boards is a $1 Hacktoberfest
+sponsorship (Salam#1716, a contest). Nothing on the 10-15 board changed in kind: every new source read (Opire, Algora's
+console, IssueHunt) added supply that is a promise, dormant or per-org, and the scanner's shape rules now drop every
+form the eight dropped items took, so the next board can only be shorter.
+
+**Verdict for the Sunday review (08:00 UTC today).** The §3 recurring-job assumption fails on the board count, not on
+PR quality (the §5 kill rule — five merged-quality PRs unpaid in 60 days — can never fire when no PR is worth opening).
+Recommendation: set the board-count trigger at "seven consecutive daily boards with 0 free funded code fixes at
+US$25+" — already met — and mark the queue `finished` (`finished_reason`: the labelled money is assigned, crowded or
+not code), with `bounty-board.yml` moved to weekly or off so the line stops spending an Actions minute a day; the
+exchange keeps the idea `parked` with the trigger "a board shows a free funded code fix at US$25+ two days running".
+Hackathon prizes stay the line that collects money on offer (STRATEGY §1). **No items added:** `research_after:
+2026-10-19` — the review's decision lands first; if it keeps the line open without items, Monday's pass reads its
+reasons rather than restating this one.
+
 ## Metrics
 
 | Date | Event | Users | Rating | Sales | Notes |
@@ -206,3 +240,4 @@ count alone.
 | 2026-10-15 | Research | — | — | — | 10-14 board 8 kept, 0 free (second board under the new rules); Algora tRPC list + IssueHunt sent to the relay; waiting until the 10-18 review |
 | 2026-10-15 | No claim | — | — | — | trovu#329 ($30, Opire) dropped on read: Android video + human statement required, PR #718 open; scanner now pages the timeline and drops both shapes; 7 of 7 filed items dropped |
 | 2026-10-17 | Status | — | — | — | venture.json → building: the board runs daily (3 boards so far), 8 candidates filed and all dropped by the shape rules (already rewarded, contest-style, paid off-platform, claimant must fund); launched = the first claim PR open |
+| 2026-10-18 | Research | — | — | — | 7 boards 10-11..10-17: 0 free funded code fixes at $25+, 8 of 8 filed items dropped; review asked to set the board-count trigger and finish the line; research_after 10-19 |
