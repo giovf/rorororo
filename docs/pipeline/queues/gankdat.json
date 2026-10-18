@@ -2,8 +2,8 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-16",
-  "researched": "2026-10-15",
+  "updated": "2026-10-17",
+  "researched": "2026-10-17",
   "items": [
     {
       "id": "nhs-ods",
@@ -631,7 +631,39 @@
       "added": "2026-10-15",
       "not_before": "2026-10-16",
       "done_at": "2026-10-16"
+    },
+    {
+      "id": "uk-planning-paused-snapshot-retention",
+      "title": "Keep a paused source's last snapshot alive: a failed refresh with a snapshot in KV re-puts the snapshot and its stats blob with a fresh TTL, /stats/<slug> renders the dated notice when the blob is gone instead of a 503, and the MCP/REST 'temporarily unavailable' answer for a source with a `notice` carries that notice",
+      "why": "Research 2026-10-17 (relay gankdat-research-2026-10-17): /v1/health has uk-planning last refreshed 2026-10-09 05:01 (187 h), GET /stats/uk-planning answers 503 'Statistics are being prepared' and the 10-16 Daily numbers row's MCP probe got `tool error: Source 'uk-planning' is temporarily unavailable` on both passes — the keyless call every directory health check makes, on the first listed tool. Cause in code: cache.ts keeps a KV snapshot for cacheTtlSeconds × 7 = 7 days for uk-planning (86,400 s TTL) and the 05:00 wave's refresh throws before writing anything (`origin dataset empty`, by design since the 10-11 decision), so the 10-09 snapshot and the stats blob expired on 10-16 ~05:00 and nothing re-wrote them: readCached has no hit to serve stale, every query 503s, the Apify actor uk-planning-applications (19 runs/30d by others) now fails each run (Apify's QA will flag it within days, third maintenance flag), the indexed /stats page is a JSON 503 and the §7 60-day customer-query clock set on 10-11 cannot be read because nobody can call the dataset. The 10-11 decision ('the last snapshot stays served') assumed retention it did not have. Do: in store.ts refreshOne / cache.ts, when a KV source's refresh fails and a snapshot exists, re-put data + stats keys with snapshotTtlSeconds (a touch, no origin read; log `event: snapshot_retained`); render /stats/<slug> from the snapshot or at least the notice + last_refreshed_at when the blob is missing for a source with `notice`; make the 503/tool-error message for a `notice` source say the notice (agents and the probe then read the cause, not 'retry later'). Score 7: evidence 3 (live 503 on an indexed page, probe red two passes, an Apify actor with outside users failing) × reach 2 (every shelf that lists uk-planning: REST, MCP directories, Apify, x402) ÷ 0.3 day. Built 2026-10-17 (burn-down): cache.ts retainSnapshot re-puts the data and stats keys with a fresh TTL after every failed KV refresh (no origin read; `snapshot_retained` log event); store.ts unavailableMessage puts the origin notice in the REST 503 and both MCP tool errors; the query tool description ends with `Origin notice: …` and scripts/mcp-probe.ts pickTool skips such a tool, so the probe reads a live source; /stats/<slug> with no blob and a notice renders a 200 page with the notice. 4 tests. Proof amended: uk-planning's snapshot was already gone before the fix and cannot be re-created (the origin is empty), so `call 200` on the probe comes from it picking uk-tenders, not from uk-planning serving data; the retention proof is the next paused source keeping its snapshot past 7 days, and /stats/uk-planning answering 200 with the notice through the relay.",
+      "effort_days": 0.3,
+      "proof": "The 10-18 Daily numbers row's `mcp probe:` reads `call 200` with no tool error on both passes (the probe skips the paused tool); GET /stats/uk-planning through the relay answers 200 HTML with the notice; the next source whose refresh fails for more than 7 days still serves its last snapshot (snapshot_retained in its wave log)",
+      "score": 7,
+      "status": "done",
+      "added": "2026-10-17",
+      "done_at": "2026-10-17"
+    },
+    {
+      "id": "wave-log-cron-outcome-reading",
+      "title": "Wave-log reading: read the wave's own cron invocation outcome (`$workers.event.cron`, `$workers.outcome`, wall time) for a stale source and drop request lines and the x402 library's bazaar-validation warning from the slug search, so a silent night names its cause instead of noise",
+      "why": "Research 2026-10-17: the 10-16 metrics job log (run 38866226604) shows the slug search for uk-trademark-journal returned 6 lines in 24 h — three request lines, two `[error] GET /stats/uk-trademark-journal/class/NN` facet 503s and, newest, `x402: Route \"GET /x402/data/uk-trademark-journal\" has an invalid bazaar extension: Schema validation failed: Code generation from strings disallowed for this context` — and uk-planning's 7 lines were five of the same warning. The warning is @x402/hono's validateBazaarRouteExtensions (dynamic-imported on the middleware's first lit request, once per isolate) running Ajv, which compiles schemas with `new Function`; workerd forbids code generation, so every route logs it on every isolate start. Not a defect of the lane: the 402s carry the extension (relay 10-17: 301-byte payment_required bodies) and CDP's validate says `valid: true` for uk-planning and uk-trademark-journal (relay bodies 6 and 7) and 17/17 on the row — but the reading's one newest line is now this noise for every stale source, and the journal's wave (06:05, 10-15 and 10-16) left no `refresh_wave`, `hash_backfill`, `refresh_failed` or `tmj_` line at all, exactly the silent night the 10-09 build notes said to read from the cron invocation (`$workers.outcome` exceededCpu / exceededMemory / canceled, `$workers.event.cron`, wallTime) rather than the slug. Do: in lib/wave-logs.ts (pure) + runner-refresh.mjs: (1) filter out lines matching /^x402: Route / and request lines (/^(GET|POST|HEAD) https?:/) before picking the newest, prefer structured events; (2) for each stale source, a second Query Builder request filtered on `$workers.event.cron` = the source's wave cron (store.ts waveForCron) over 26 h, rendering `wave 06:05: <outcome> <wallTime>s <age>` (or `no invocation` when the trigger never fired); tests with recorded shapes. Optionally silence the library warning at construction (wrap paymentMiddleware's import in a console.warn filter for that exact prefix) — only if cheap. Score 6: evidence 3 (three silent streaks of the journal since 10-04 read nothing each time; the reading built on 10-09 showed noise on its first real test) × reach 2 (every source's silent night, forever) ÷ 0.15 day.",
+      "effort_days": 0.15,
+      "proof": "The next Daily numbers row with a stale source carries `wave HH:MM: <outcome> <wall>s` for it and its `wave log:` line is a refresh event, never `x402: Route`; the journal's silent night has a named outcome",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-17",
+      "done_at": "2026-10-17"
+    },
+    {
+      "id": "refresh-uk-trademark-journal-2026-10-17",
+      "title": "uk-trademark-journal: third silent-night streak since 10-04 (no refresh_log row 10-15, 10-16 after ok 10-14 06:10) — read the wave outcome, find why wave 7 dies on three nights in four, fix so every night writes a row",
+      "why": "Research 2026-10-17: /v1/health (relay gankdat-research-2026-10-17) has the journal last refreshed 2026-10-14 06:10:42; the 10-16 row says `no successful refresh since 2026-10-14` with no error and no skipped row, so wave 7 wrote nothing on 10-15 and 10-16, and the 24-h wave log for the slug has no line from the wave (metrics run 38866226604). Pattern since the 10-09 materialised-CTE fix: ok 10-10 (5 min 56 s into the wave), silent 10-11, 10-12, 10-13, ok 10-14 (5 min 42 s), silent 10-15, 10-16 — a success every fourth night, the ok nights finishing well inside the 15-minute budget. Two facet pages (/stats/uk-trademark-journal/class/35, /class/18) logged `[error]` on 10-15/16, consistent with the facet blobs ageing out while the refresh never completes. Hypotheses to test, in order: (a) a night with a new weekly issue to download (DOWNLOAD_BUDGET_MS 6 min) plus the 162k-row delta plus the 45-class facet aggregation (4-min budget) exceeds the Cron Trigger's CPU or wall limit and the isolate is killed before any row — the next nights load the cached issue (`tmj:issue:*`) and should be faster, which they are not; (b) memory: parsing a full XML issue and holding the (seq, id, hash) index of 162k rows in one isolate exceeds 128 MB (an exceededMemory outcome, no log line); (c) the trigger itself not firing (the `schedules.mjs reset` step shows 7 triggers in sync, so unlikely). First step: the cron-outcome reading (wave-log-cron-outcome-reading) or, sooner, the Workers observability query for `$workers.event.cron = '5 6 * * *'` run by hand from a session with the token. Fix candidates: split wave 7 into download+parse (writes the KV issue cache and a `skipped` row) and delta+facets on the next trigger; or give the journal a wave of its own at 06:20 for facets. Filed under the auto-filer's id pattern so the 10-17 row extends this item instead of filing a duplicate. Dated 2026-10-18 by burn-down 2026-10-17 01:25: its first step, the wave's cron outcome, is read by the 10-17 metrics row (reading built this night, `wave 06:05: <outcome>`); diagnosing before that row exists is the guessing this item exists to end.",
+      "effort_days": 0.4,
+      "proof": "Four consecutive Daily numbers rows without uk-trademark-journal under `refresh errors`; /v1/health last_refreshed_at within 26 h on each; the facet pages answer 200",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-17",
+      "not_before": "2026-10-18"
     }
-  ],
-  "research_after": "2026-10-16"
+  ]
 }

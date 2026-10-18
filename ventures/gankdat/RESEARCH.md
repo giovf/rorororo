@@ -508,3 +508,61 @@ v0.25.1 typed examples) write their first readings on the 10-15 row, after this 
 added:** `research_after: 2026-10-16` — the 10-15 and 10-16 rows carry the first `bazaar:` and
 `x402 validate:` clauses since the v0.25.1 fix and show whether the sign-in drop repeats.
 
+
+## Research 2026-10-17 (pipeline starved — burn-down)
+
+Read: the 10-15 and 10-16 Daily numbers rows (the two the 10-15 pass waited for), `docs/INBOX.md` to
+10-16 21:03, `docs/ALERTS.md`, the queue, the 10-16 metrics job log (run 38866226604) and the relay
+request `gankdat-research-2026-10-17` (`/v1/health`, `/stats/uk-planning`, three x402 402s, CDP validate
+for the two flagged routes — answered 00:17 UTC). **Unchanged:** 3 accounts, 0 paid, 0 x402 paid, `datasets
+30d external: none`, `after wall 1h: 0 clients`, the OAuth sign-in reading still the same two 10-13 events
+(`2 authorize, 2 sign-in, 0 email`, below the ≥ 5 threshold), `bazaar: 1 listed, 0 calls` (the 10-16 row
+was written at 07:19, eight hours before the first settled half-cent call — the 10-17 row is the first that
+can show the listing grow), `x402 validate: 17/17 valid`. **Three new readings, two of them defects:**
+
+| Signal | Reading |
+| --- | --- |
+| uk-planning | `/v1/health`: last refreshed 2026-10-09 05:01, 187 h; `GET /stats/uk-planning` → **503** `Statistics are being prepared`; the 10-16 MCP probe's keyless and authed `tools/call` both got `tool error: Source 'uk-planning' is temporarily unavailable`. Cause: `cache.ts` keeps a KV snapshot for `cacheTtlSeconds × 7` = 7 days and the failing refresh (by design since 10-11) writes nothing, so the 10-09 snapshot and its stats blob expired 10-16 ~05:00 — the "last snapshot stays served" of the 10-11 decision held for exactly seven days. Every REST/MCP/x402/Apify call on the dataset now fails; the indexed stats page is a JSON 503 |
+| Worker log noise | both stale slugs' wave-log lines were `x402: Route "GET /x402/data/<slug>" has an invalid bazaar extension: Schema validation failed: Code generation from strings disallowed for this context` — @x402/hono's `validateBazaarRouteExtensions` runs Ajv (`new Function`) on each isolate's first lit request and workerd forbids code generation; it logs for all 17 routes (the slug search sees only the two stale ones). Reproduced locally: Node has codegen, so the same call only prints Ajv's "unknown format date" notices. No effect on the lane — the 402 bodies and `PAYMENT-REQUIRED` are intact and CDP's validate answers `valid: true` for both routes — but the reading's one newest line is this noise |
+| uk-trademark-journal | `no successful refresh since 2026-10-14` with no error and no skipped row; the 24-h slug log has no wave line at all (6 lines: three requests, two `[error] GET /stats/…/class/NN`, the warning above). Third silent streak since 10-04: ok 10-10, silent 10-11..13, ok 10-14 (06:10:42), silent 10-15..16 — success every fourth night, both ok nights under 6 min |
+
+Queued in `docs/pipeline/queues/gankdat.json`:
+
+| Item | Score | Why now |
+| --- | --- | --- |
+| `uk-planning-paused-snapshot-retention` | 7 | a failed refresh with a snapshot re-puts data + stats with a fresh TTL (a touch, no origin read); `/stats/<slug>` renders the notice when the blob is gone; the 503 / tool error for a `notice` source says the notice. Live 503 on an indexed page, the probe red on both passes, an Apify actor with 19 outside runs/30d failing |
+| `wave-log-cron-outcome-reading` | 6 | drop request lines and the x402 warning from the slug search and read the wave's own cron invocation (`$workers.event.cron`, `$workers.outcome`, wall time) — the reading the 10-09 build notes asked for when a night is silent; built 10-09, its first real test showed noise |
+| `refresh-uk-trademark-journal-2026-10-17` | 6 | why wave 7 dies three nights in four (hypotheses ordered: a new-issue night exceeding the CPU/wall limit; memory on the 162k-row index + XML parse; the trigger), fix so every night writes a row; filed under the auto-filer's id so the 10-17 row extends it |
+| 2026-10-17 | Daily numbers | 3 accts (0 paid, +0/24h) | — | 1 x402 paid (+1 own probe) | MCP 24h: 148 authed, 2736 anon, 88 preview, 4 paywall hits; wanted: connect_account 4; changes 7d: 0 (mcp 0, rest 0); indexnow: 15 urls 200; x402 validate: 17/17 valid; bazaar: 1 listed, 1 calls/30d, 1 payers, last 2026-10-16; mcp probe: init 200, tools 200 (25 tools), call 200; authed: init 200, tools 200 (25 tools), call 200; wave log: uk-planning wave 05:00: no invocation in 26 h, [error] Error compiling schema, function code: const schema1 = scope.schema[1]; const sch 5 min ago (16 of 20 lines); feeds 30d: 45 fetches, 7 user agents, 45 renders; apify: 357 runs (+35/24h), 30d: 355 runs (1 ours, 354 others), 18 users/30d, 18 public; apify 30d by actor: uk-food-hygiene-ratings 23, uk-care-locations-cqc 22, uk-charities-register 22, uk-new-companies-incorporations 22, uk-public-tenders-find-a-tender 22, uk-visa-sponsors-register 22, eu-public-tenders-ted 21, uk-corporate-insolvency-notices-gazette 21, uk-planning-applications 21 (5 failed), uk-sanctions-list-fcdo 21, us-federal-exclusions-sam-gov 20, nhs-organisations-ods 18, uk-contract-awards-contracts-finder 18, uk-no-website-leads 18 (2 failed), uk-schools-gias-ofsted 18, uk-trademark-journal-watch 18, uk-gambling-commission-licence-register 17, uk-companies-house-lookup-monitor 10; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; oauth: 0 connects/24h, 0/30d; connect_account 7d by UA: python-requests/2.34.2 26, BrickBlueBot/0.1 (+https://brick.blue/bot?h=gank 5, node 2; oauth funnel 7d: 83 challenges (preview_exhausted 47, protected_tool 36), 2 authorize, 0 rejected, 2 sign-in, 0 email, 0 consent, 0 approved, 0 denied, 0 expired, 12 token (refresh_token 12), 0 token errors; after wall 1h (7d): 0 clients — request_api_key 0, x402 0, connect 0, gone 0; cf usage (10-10→10-17): d1 0.2M writes / 472.6M reads, 3.6 GB, kv 0.0M reads / 0.0M writes, workers 0.0M req, ae 0.0M pts ≈ US$0 overage; stats crawlers: logs 0 fetches/7d, AI 0 (none); zone n/a (zone: Actor 'com.cloudflare.api.token.c42d0370c6783e3a270770a3a775243c' does not have ); /mcp 63763 req/30d, AI 236 (Claude-User 193, PetalBot 24, Amazonbot 12, ClaudeBot 2, Applebot 1, Google-Extended 1); datasets 30d: uk-care-locations 299, uk-food-hygiene 169, eu-ted 162, nhs-ods 162, uk-sanctions 162, uk-tenders 162, uk-charities 161, uk-companies 161, uk-schools 161, sam-exclusions 160, uk-gambling-operators 160, uk-sponsors 160, uk-insolvency 159, uk-trademark-journal 158, uk-contract-awards 142, uk-planning 138, uk-company-profiles 10; datasets 30d external: none; 0: eu-ted, nhs-ods, sam-exclusions, uk-care-locations, uk-charities, uk-companies, uk-company-profiles, uk-contract-awards, uk-food-hygiene, uk-gambling-operators, uk-insolvency, uk-planning, uk-sanctions, uk-schools, uk-sponsors, uk-tenders, uk-trademark-journal; refresh errors: uk-planning (origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.), apify-uk-planning-applications (2 new failed run(s) since the last row, 5 of 21 in 30 d); search 7d to 10-16: 22 impressions, 0 clicks, avg pos 6.6, top /stats/uk-trademark-journal/class/24 5, indexed 7/19, not: Discovered - currently not indexed ×9, URL is unknown to Google ×3 |
+
+
+Not queued: the x402 warning at source (only if cheap inside the reading item — the lane is unaffected);
+more datasets, pricing, listings (triggers unchanged since 10-05); the Bazaar reading (dated 11-14, the
+10-17 row shows whether the 10-16 payment indexed the routes); the sign-in drop (two events, no repeat).
+`researched: 2026-10-17`; the first item is buildable now and `next` names it.
+
+## Build 2026-10-17 — cron outcome reading (burn-down)
+
+Built `wave-log-cron-outcome-reading` (score 6). What changed: the wave-log reading drops the invocation
+request lines and @x402/hono's Ajv warning before it picks a line, prefers a structured refresh event, and
+reads each stale source's wave by its Cron Trigger as a second observability query. Evidence read this
+run: the Workers Logs docs through the relay (`docs/relay/responses/cf-workers-logs-fields-2026-10-17`,
+page 1 of 3 — the query-builder and fields pages 404 at the guessed paths; a second request,
+`cf-query-builder-2026-10-17`, asks for the sidebar's `/workers/observability/query-builder/` and the
+real-time-logs page for the outcome shape): an invocation log is `$metadata.type = "cf-worker-event"`,
+and a cron invocation's message is the schedule itself (`5 6 * * *`), so the query filters on that type
+and uses the cron as the needle; `$workers.outcome`, `$workers.wallTimeMs` and `$workers.event.cron` are
+read when present (the docs page does not list them; the runner prints the first raw invocation row when
+nothing parsed, so the 10-17 metrics log confirms or corrects the field names). The x402 warning is muted
+at the lane for that exact message only (`withoutCodegenWarning`), because 17 warn lines per isolate
+start were the newest line of every stale source's reading. What the next row should say: for
+uk-trademark-journal, `wave 06:05: <outcome> <wall>s <age>` — `exceededCpu` or `exceededMemory` confirms
+hypothesis (a)/(b) of `refresh-uk-trademark-journal-2026-10-17`, `ok` with no refresh line means the wave
+ran and wrote nothing (a code path, not the platform), `no invocation in 26 h` means the trigger never
+fired (c). If the row reads `wave 06:05: unknown`, the invocation rows carry no `$workers.outcome` in the
+API's shape — read the printed first row in the job log and rename the fields.
+Relay `cf-query-builder-2026-10-17` (read the same run): the Query Builder page names `$workers.cpuTimeMs`,
+`$workers.event.request.path` and `$metadata.message` as filter keys, so the `$workers.*` reads follow the
+documented naming; `wrangler tail`'s object (`outcome: "ok"`, `event`, `eventTimestamp`) is the same record.
+`refresh-uk-trademark-journal-2026-10-17` waits for the 10-17 row (`not_before` 2026-10-18).
+

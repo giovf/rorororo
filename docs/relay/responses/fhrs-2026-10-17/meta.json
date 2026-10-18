@@ -1,0 +1,91 @@
+{
+  "request": "fhrs-2026-10-17",
+  "fetched_at": "2026-10-17T19:24:37.437Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://ratings.food.gov.uk/open-data",
+      "fetched_at": "2026-10-17T19:24:32.469Z",
+      "status": 200,
+      "final_url": "https://ratings.food.gov.uk/open-data",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"txp0vfoyo88iz9\""
+      },
+      "file": "1.html",
+      "bytes": 397849,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.food.gov.uk/terms-and-conditions",
+      "fetched_at": "2026-10-17T19:24:33.185Z",
+      "status": 200,
+      "final_url": "https://www.gov.uk/government/organisations/food-standards-agency/about/about-our-services",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "99947",
+        "etag": "W/\"e0e8e62df982fd202887954162633e38\""
+      },
+      "file": "2.html",
+      "bytes": 99947,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.ratings.food.gov.uk/help",
+      "fetched_at": "2026-10-17T19:24:35.274Z",
+      "status": 200,
+      "final_url": "https://api.ratings.food.gov.uk/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "20415"
+      },
+      "file": "3.html",
+      "bytes": 38854,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.ratings.food.gov.uk/Regions",
+      "fetched_at": "2026-10-17T19:24:36.347Z",
+      "status": 404,
+      "final_url": "https://api.ratings.food.gov.uk/Regions",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "33"
+      },
+      "file": "4.json",
+      "bytes": 33,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.ratings.food.gov.uk/Establishments/basic/1/3",
+      "fetched_at": "2026-10-17T19:24:36.982Z",
+      "status": 404,
+      "final_url": "https://api.ratings.food.gov.uk/Establishments/basic/1/3",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "40"
+      },
+      "file": "5.json",
+      "bytes": 40,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?search=food%20hygiene&limit=50",
+      "fetched_at": "2026-10-17T19:24:37.117Z",
+      "status": 200,
+      "final_url": "https://api.apify.com/v2/store?search=food%20hygiene&limit=50",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"23a16-vz+Q4K94yV/FlcoeB/GqtuNJP1k\""
+      },
+      "file": "6.json",
+      "bytes": 145942,
+      "truncated": false
+    }
+  ]
+}

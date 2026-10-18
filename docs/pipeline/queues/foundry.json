@@ -2,8 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-16",
-  "researched": "2026-10-16",
+  "updated": "2026-10-18",
+  "researched": "2026-10-18",
   "items": [
     {
       "id": "fetch-relay",
@@ -605,13 +605,14 @@
     {
       "id": "metrics-crons-day-7-read",
       "title": "Day-7 read of the odd-minute metrics crons: do `gankdat metrics` (37 6) and `store metrics` (52 6) now start before 08:00 UTC?",
-      "why": "Proof of metrics-crons-off-the-half-hour (built 2026-10-09): on `30 6` / `45 6` both scheduled runs started 11:51–15:17 UTC every day 10-03..10-08. Do: list the scheduled runs of both workflows since 10-10 (GitHub MCP actions_list, event schedule) and record the start times here and in SCHEDULERS.md. Five of seven before 08:00 → done. Still hours late → build the fallback named in the parent item: the push run (any push after 08:00 UTC) performs the runner-only steps — runner-refresh, wave logs, IndexNow, the MCP probe, the error filer — when the day's scheduled run has not happened, so the 07:00 routines and the Daily numbers row never wait seven hours. Day-1 reading 2026-10-10 (burn-down research, actions_list over the 100 runs 10-08 17:10..10-10 00:17): gankdat metrics `37 6` started 13:41, store metrics `52 6` 13:49 on 10-09 — the minute move changed nothing on day 1; check `15 3` started 10:36, gankdat publish `0 4` 10:59, owner notes `20 * * * *` fired 5 of 31 hours, run watchdog `40 */2` 6 of 14 slots, while every push and workflow_dispatch run started within the minute. The fallback is queued now as cron-drift-dispatch-row (the 07:00 routine dispatches the jobs itself); this read still records the seven starts. Day-3/day-4 reading 2026-10-14 00:40 (burn-down research, actions_list): gankdat metrics `37 6` started 16:01 on 10-12 and 14:31 on 10-13, store metrics `52 6` 16:10 and 14:36 — still 7–9 h late on both days, 0 of 4 before 08:00; the 07:00 routine's dispatch (cron-drift-dispatch-row) ran both jobs at 07:15 on 10-12 and 07:14 on 10-13 and the Daily numbers row exists once per day (the late run leaves it alone), so the fallback holds and the day-7 verdict is already clear: the schedule is a duplicate, not the row's source. Day-5/day-6 reading 2026-10-16 00:40 (burn-down research, actions_list): gankdat metrics `37 6` started 12:18 on 10-14 and 12:01 on 10-15, store metrics `52 6` 12:26 and 12:09 — 5 h late, 0 of 6 days before 08:00; both exited on the existing row in 8–14 s (111–188 s on 10-13, before metrics-cron-short-circuit), while the 07:14 dispatches took 143–156 s and 60–61 s and wrote the rows at 07:15–07:17. The day-7 verdict stays: the schedule is a duplicate the short-circuit now bills at the one-minute floor; the remaining question for 10-17 is only whether to delete the two crons outright (−2 billed min/day) and let the 07:00 dispatch be the sole source, which makes the metrics routine's own trace matter (foundry metrics-slot-trace).",
+      "why": "Proof of metrics-crons-off-the-half-hour (built 2026-10-09): on `30 6` / `45 6` both scheduled runs started 11:51–15:17 UTC every day 10-03..10-08. Do: list the scheduled runs of both workflows since 10-10 (GitHub MCP actions_list, event schedule) and record the start times here and in SCHEDULERS.md. Five of seven before 08:00 → done. Still hours late → build the fallback named in the parent item: the push run (any push after 08:00 UTC) performs the runner-only steps — runner-refresh, wave logs, IndexNow, the MCP probe, the error filer — when the day's scheduled run has not happened, so the 07:00 routines and the Daily numbers row never wait seven hours. Day-1 reading 2026-10-10 (burn-down research, actions_list over the 100 runs 10-08 17:10..10-10 00:17): gankdat metrics `37 6` started 13:41, store metrics `52 6` 13:49 on 10-09 — the minute move changed nothing on day 1; check `15 3` started 10:36, gankdat publish `0 4` 10:59, owner notes `20 * * * *` fired 5 of 31 hours, run watchdog `40 */2` 6 of 14 slots, while every push and workflow_dispatch run started within the minute. The fallback is queued now as cron-drift-dispatch-row (the 07:00 routine dispatches the jobs itself); this read still records the seven starts. Day-3/day-4 reading 2026-10-14 00:40 (burn-down research, actions_list): gankdat metrics `37 6` started 16:01 on 10-12 and 14:31 on 10-13, store metrics `52 6` 16:10 and 14:36 — still 7–9 h late on both days, 0 of 4 before 08:00; the 07:00 routine's dispatch (cron-drift-dispatch-row) ran both jobs at 07:15 on 10-12 and 07:14 on 10-13 and the Daily numbers row exists once per day (the late run leaves it alone), so the fallback holds and the day-7 verdict is already clear: the schedule is a duplicate, not the row's source. Day-5/day-6 reading 2026-10-16 00:40 (burn-down research, actions_list): gankdat metrics `37 6` started 12:18 on 10-14 and 12:01 on 10-15, store metrics `52 6` 12:26 and 12:09 — 5 h late, 0 of 6 days before 08:00; both exited on the existing row in 8–14 s (111–188 s on 10-13, before metrics-cron-short-circuit), while the 07:14 dispatches took 143–156 s and 60–61 s and wrote the rows at 07:15–07:17. The day-7 verdict stays: the schedule is a duplicate the short-circuit now bills at the one-minute floor; the remaining question for 10-17 is only whether to delete the two crons outright (−2 billed min/day) and let the 07:00 dispatch be the sole source, which makes the metrics routine's own trace matter (foundry metrics-slot-trace). Day-7 reading 2026-10-17 19:20 (burn-down, actions_list, event schedule and workflow_dispatch, 10-10..10-17): gankdat metrics `37 6` started 12:59, 13:27, 16:01, 14:31, 12:18, 12:01, 11:51, 11:08 UTC; store metrics `52 6` 13:05, 13:34, 16:10, 14:36, 12:26, 12:09, 11:56, 11:12 — 0 of 8 days before 08:00 for both. The 07:00 routine's dispatch ran 07:13–07:17 on all 8 days and wrote both rows; the late cron exits on the existing row. Verdict: the minute move changed nothing; the dispatch is the source; the crons stay as the safety net for a missed 07:00 routine (≈ 2 billed minutes a day, 60 a month of the 2,000 free) rather than being deleted, so the metrics routine's own trace stays a nice-to-have, not a dependency. No push-run fallback queued: cron-drift-dispatch-row already covers it.",
       "effort_days": 0.05,
       "proof": "start times recorded; either five of seven days before 08:00 UTC or the push-run fallback queued",
       "score": 3,
-      "status": "todo",
+      "status": "done",
       "added": "2026-10-09",
-      "not_before": "2026-10-17"
+      "not_before": "2026-10-17",
+      "done_at": "2026-10-17"
     },
     {
       "id": "cron-drift-dispatch-row",
@@ -821,6 +822,120 @@
       "status": "done",
       "added": "2026-10-16",
       "done_at": "2026-10-16"
+    },
+    {
+      "id": "node-24-runners",
+      "title": "Move every GitHub workflow's `node-version` (and the devcontainer) from Node 22 to Node 24, the active LTS, in one change with the full gate green",
+      "why": "docs/ops/VERSIONS.md (owner 2026-10-16: nothing the schedulers depend on may age silently): the first versions check found 14 workflows pinned to 22 while the active LTS is 24. Node 22 is still maintained, so this is currency, not a fix; do it when a run has the whole gate's time (`npm run check` plus the gankdat gate), and update the register's Node row.",
+      "effort_days": 0.3,
+      "proof": "versions check reports no Node finding; CI green on Node 24 for a week",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-16",
+      "not_before": "2026-10-20"
+    },
+    {
+      "id": "first-run-check-new-workflows",
+      "title": "Dispatch a routine-written workflow once after the installer lands it and fix a failing first run in that same run",
+      "why": "Ops retro 2026-W42: demo-video.yml failed twice on its first live runs (INBOX 2026-10-11 20:11 and 20:19; ENOENT ffmpeg, then a PayPal-approval step), pr-relay.yml never fired for the request it was built for (RUNS 2026-10-11 19:24, dispatched by hand) and the 10-16 landing deploy failed 13 s in (INBOX 10-16 18:25). Each was found by mail and fixed by the interactive session. Add to docs/routines/burn-down.md and docs/routines/build.md after the step that writes to docs/ci/: \"When the next slot finds the installer commit (`ci: install workflow(s) <name>`) for a workflow you wrote and it has a `workflow_dispatch` trigger, dispatch it once with `mcp__github__actions_run_trigger`, read the conclusion with `actions_get`, and append `- YYYY-MM-DD HH:MM | <tag> | <name> first run: <success|failure + failing step>` to docs/RUNS.md; on failure fix it in that same run, not a later one.\" Built 2026-10-17 (build): CI WORKFLOWS paragraph in both routine files (installer-commit scan, actions_list/actions_get read, one dispatch when no run started, same-run fix via docs/ci/, never dispatch publish/mirror/demo-video); first live runs of the 10-16 gankdat-metrics and store-metrics edits read as success (07:13 UTC).",
+      "effort_days": 0.2,
+      "proof": "For 14 days after landing, every `ci: install workflow(s)` commit for a routine-written workflow has a `first run:` RUNS line within 1 day and no INBOX `Run failed` line names a workflow within an hour of its installer commit.",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-17",
+      "done_at": "2026-10-17"
+    },
+    {
+      "id": "triage-reconcile-before-owner",
+      "title": "Triage reconciles an amount or status against the ledger/RESEARCH before it files an owner: line",
+      "why": "Ops retro 2026-W42: two owner: lines asked the owner to check what the repo already stated, against inbox-triage.md line 34 (\"`needs owner` is reserved for things only the owner can do\"): ALERTS 2026-10-12 Nebius account active, 'check if the dropped entry can proceed' (answered from ventures/hackathons/RESEARCH.md §2b by the 10-13 burn-down) and 2026-10-13 Cloudflare $49 'check billing for a duplicate' (docs/LEDGER.md already held the 10-10 invoice row; the owner confirmed on 10-16). Append to the WHO DOES WHAT paragraph of docs/routines/inbox-triage.md: \"A mail that states an amount or a status the repo already records (docs/LEDGER.md, a venture's RESEARCH.md) is reconciled against that file first and logged with the matching row; it is `needs owner` only when the amounts differ or the action needs the owner's identity, card or login.\"",
+      "effort_days": 0.1,
+      "proof": "Over 4 weeks no owner: line in docs/ALERTS.md is closed Done with 'already in the ledger' or 'answered from the repo'.",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-17",
+      "done_at": "2026-10-17"
+    },
+    {
+      "id": "empty-skips-cooling-queues",
+      "title": "`npm run pipeline empty` leaves a cooling queue out even when it is flagged or emptied — the prompt says it does, the code lists it",
+      "why": "2026-10-17 burn-down: the last new-ventures spike emptied the queue, so step 2's rule set needs_research: true, and `empty` printed [\"new-ventures\"] although the queue was researched that day — needsResearch() in packages/core/src/pipeline.ts applies the 48-h cooling filter only to starved queues, not to flagged or empty ones, while burn-down.md step 1 says a cooling queue 'is never researched again' and that `empty` leaves it out. The operator rule saved the night; the next slot's runner has to know it. Fix: needsResearch() drops cooling queues from the flagged list too (they return when the 48 h or research_after pass; `cold` already reads the same rule), one test in packages/core, one sentence in docs/pipeline/README.md. — Built 2026-10-17 burn-down: needsResearch() and the `cold` gate both skip a cooling queue whether flagged, emptied or starved; test in packages/core; README sentence.",
+      "effort_days": 0.05,
+      "proof": "over 14 days no research run-log line names a venture whose queue shows `researched` within the previous 48 h",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-17",
+      "done_at": "2026-10-17"
+    },
+    {
+      "id": "dependabot-minor-gate-typings",
+      "title": "Dependabot PR #5 (13 minor/patch bumps) is red on `@figma/plugin-typings` 1.141: type hygiene.ts's styles as the three style types and rebase the PR",
+      "why": "2026-10-18 00:20 burn-down (foundry research, actions_list + job log): the `dependabot` workflow's first two real runs (10-16 18:31, PRs #5 minor-and-patch and #6 majors) both failed in 40 s at `npm run check` → typecheck: ventures/variables-toolkit/src/figma/hygiene.ts(30,40) `Property 'boundVariables' does not exist on type 'BaseStyle'` — 1.141 adds CustomAnimationStyle to the BaseStyle union and it has no boundVariables, so `const styles: BaseStyle[]` no longer narrows. Fix: type the array as (PaintStyle | TextStyle | EffectStyle)[] (what the three getLocal*StylesAsync calls return; compiles on 1.138 and 1.141 — both checked in a worktree of the PR branch on 10-18), push to main, then comment `@dependabot rebase` on #5 so the gate re-runs and the workflow's auto-merge step fires. #6 (typescript 7, vitest 5, postal-mime 4, stripe 23) stays open for an attended session as the workflow intends; it will keep failing on the same line until this lands. Built 2026-10-18 (burn-down): hygiene.ts types the array as (PaintStyle | TextStyle | EffectStyle)[]; the full root gate passed on a worktree of PR #5's branch with the fix (60 + 58 test files, 932 tests) and on main; `@dependabot rebase` posted on #5 after the push — the gate-and-merge job's auto-merge step closes it.",
+      "effort_days": 0.1,
+      "proof": "PR #5 merged by the dependabot workflow's gate-and-merge job",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-18",
+      "updated": "2026-10-18",
+      "done_at": "2026-10-18"
+    },
+    {
+      "id": "dependabot-red-gate-to-queue",
+      "title": "A red Dependabot gate files a foundry queue item and a watchdog line instead of staying silent",
+      "why": "2026-10-18 burn-down (foundry research): PR #5's gate failed 10-16 18:32 and nothing in the repo knew for 30 h — GitHub mails a run failure to its actor, here dependabot[bot], so no `Run failed` reached triage (INBOX has the three PR-opened mails and nothing after), no RUNS line, no queue item; the burn-down found it only by listing the workflow's runs by hand. The auto-merge rule in docs/ops/VERSIONS.md (`minor/patch auto-merged when the gate is green`) is silent exactly when it needs a person. Fix, in scripts/run-watchdog.ts (runs on every routine push and 6-hourly in notify owner, GITHUB_TOKEN present): list open PRs by dependabot[bot]; for each whose latest `dependabot.yml` run on the head sha concluded failure, write one `- … | watchdog | dependabot: PR #N <group> gate red at <failing step>` line (dedupe by PR number + head sha, as the missed: lines dedupe) and add or refresh an idempotent foundry item `dependabot-pr-<N>` (score 5, effort 0.2, why = the failing step and the first error line from the job log) — the refresh-errors-to-queue pattern. Proof: the next red Dependabot gate has a queue item and a watchdog line within 6 h of the run. Built 2026-10-18 (burn-down): scripts/dependabot-gate.ts (pure dependabotGate() over open PRs + the gate workflow's runs + the failing step from the jobs API; 8 tests) runs in the notify-owner watchdog step — docs/ci/notify-owner.yml adds pull-requests: read, the step and the queue file to the commit; the installer moves it and the next slot checks its first run. Proof is the next red Dependabot gate.",
+      "effort_days": 0.5,
+      "proof": "a red Dependabot gate gets a foundry queue item and one watchdog line within 6 h, with no mail involved",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-18",
+      "updated": "2026-10-18",
+      "done_at": "2026-10-18"
+    },
+    {
+      "id": "watchdog-dispatch-event-trace",
+      "title": "The watchdog takes a `workflow_dispatch` run of both metrics jobs inside the slot window as the metrics routine's trace",
+      "why": "2026-10-18 burn-down (foundry research): second false `missed: metrics` in three days. 10-17: the 07:00 routine dispatched both jobs (gankdat metrics run 39012858012, event workflow_dispatch, 07:13:53; store-metrics commit 07:14, metrics(gankdat) 07:17) but did not stamp `npm run slot -- start metrics` (docs/ops/SLOTS.md has 10-16 07:16 and no 10-17 line — the Sonnet routine skipped its first action on day 2 of the rule), and run-watchdog.ts wrote `missed: metrics slot 2026-10-17 07:00` at 09:13 because `dispatched` commits count only together with the marker — the comment's reason being that a late cron writes the same commit subjects. The Actions API already tells the two apart: the routine's runs are `event: workflow_dispatch`, the late cron's `event: schedule`. Fix: dispatchedTraces() also accepts, for every pattern in `dispatched`, a workflow_dispatch run of that workflow (gankdat-metrics.yml, store-metrics.yml) started inside the window — read with the job's GITHUB_TOKEN through the runs API, passed in as data so the function stays pure and one test covers marker-less dispatch, cron-only commits and no runs; the marker stays as the other accepted trace, `stalled:` unchanged. Also append the 10-17 case to the metrics row's day log in docs/SCHEDULERS.md and tell the metrics routine file that the marker is still owed (a run without it is traced only by its dispatch). Built 2026-10-18 (burn-down): RoutineSlot.dispatchedWorkflows + dispatchRunTraces() in scripts/run-watchdog.ts; main() reads the workflow_dispatch runs of the lookback window from the Actions API (readDispatchRuns, [] without a token or on an error) and passes them as WatchInput.dispatchRuns; the 10-17 morning is the fixture (3 new tests, 19 pass). SCHEDULERS metrics row day 8 and docs/routines/metrics.md say the marker is still owed.",
+      "effort_days": 0.5,
+      "proof": "a metrics morning with dispatched runs and no slot marker produces no missed: line; the 10-17 fixture passes",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-18",
+      "updated": "2026-10-18",
+      "done_at": "2026-10-18"
+    },
+    {
+      "id": "dependabot-pr-6",
+      "title": "Dependabot PR #6 (majors) is red at Run npm run check: root-cause it for the attended session",
+      "why": "Filed by scripts/dependabot-gate.ts (2026-10-18): the gate on https://github.com/giovf/rorororo/pull/6 (build(deps): bump the majors group with 4 updates) failed at \"Run npm run check\" on df37191 — https://github.com/giovf/rorororo/actions/runs/38948094681. This is a majors group, which the dependabot workflow leaves open for an attended session. Read the job log for the first error, fix the code on main when the bump is right and the code is wrong (the usual case: a widened type, a renamed export), then comment `@dependabot rebase` on the PR so the gate re-runs; when the bump itself is wrong, say so here and leave the PR to the attended session.",
+      "effort_days": 0.2,
+      "proof": "the failure is root-caused in this item's why and the attended session can merge or close PR #6 from it",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-18",
+      "updated": "2026-10-18"
+    },
+    {
+      "id": "dependabot-pr-5",
+      "title": "Dependabot PR #5 (minor-and-patch) is red at Run npm run check: fix forward on main and comment @dependabot rebase",
+      "why": "Filed by scripts/dependabot-gate.ts (2026-10-18): the gate on https://github.com/giovf/rorororo/pull/5 (build(deps): bump the minor-and-patch group with 13 updates) failed at \"Run npm run check\" on 9a7d332 — https://github.com/giovf/rorororo/actions/runs/38948035118. This is a minor/patch group the workflow merges itself once the gate is green. Read the job log for the first error, fix the code on main when the bump is right and the code is wrong (the usual case: a widened type, a renamed export), then comment `@dependabot rebase` on the PR so the gate re-runs; when the bump itself is wrong, say so here and leave the PR to the attended session. 2026-10-18 00:40 burn-down: the code fix is on main (5156be7b, item dependabot-minor-gate-typings); Dependabot ignored the masked rebase comment, so main is merged into the branch once the gate workflow keys on the PR author (dependabot-gate-on-pr-author) — done when the gate merges the PR.",
+      "effort_days": 0.2,
+      "proof": "PR #5 merged by the dependabot workflow's gate-and-merge job",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-18",
+      "updated": "2026-10-18"
+    },
+    {
+      "id": "dependabot-gate-on-pr-author",
+      "title": "The dependabot workflow keys on the PR author, so a merge of main into a Dependabot branch re-runs the gate and auto-merge",
+      "why": "2026-10-18 00:38 burn-down: the fix for PR #5 landed on main at 00:21 and `@dependabot rebase` was posted at 00:22 as the owner, but the GitHub tool masks @-mentions (the stored body reads `·@·d·ependabot r·ebase`), so Dependabot never saw a command and the PR sat red with its fix already on main. The workflow's `if: github.actor == 'dependabot[bot]'` skips the job for any push by someone else, so a routine merging main into the branch (the one thing it can do from the sandbox) would get no gate and no merge. Fix: `if: github.event.pull_request.user.login == 'dependabot[bot]'` — the PR stays Dependabot's whoever pushed the last commit; the merge step's title test is unchanged. Dependabot stops rebasing a branch after a foreign push, which is fine once the gate merges it. Filed and built this run (docs/ci/dependabot.yml); PR #5's branch gets main merged in as the first use.",
+      "effort_days": 0.1,
+      "proof": "a Dependabot PR goes green and merges after a routine's merge of main into its branch",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-18",
+      "updated": "2026-10-18",
+      "done_at": "2026-10-18"
     }
   ]
 }

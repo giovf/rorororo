@@ -49,6 +49,22 @@ export interface RoutineSlot {
    * commits alone stay missed (a late cron writes the same subjects).
    */
   dispatched?: RegExp[];
+  /**
+   * Workflow files the routine dispatches. A `workflow_dispatch` run of every one of them started
+   * inside the window is the slot's trace on its own (foundry `watchdog-dispatch-event-trace`,
+   * 2026-10-18 — on 10-17 the routine dispatched both jobs at 07:13 and skipped its marker, and the
+   * 09:13 watchdog wrote `missed:`): the event tells the routine's dispatch from a late cron
+   * (`schedule`), which was the reason commits alone could not count.
+   */
+  dispatchedWorkflows?: string[];
+}
+
+/** One Actions run as the watchdog reads it (`event: workflow_dispatch` is the routine's hand). */
+export interface DispatchRun {
+  /** Workflow file name, e.g. `gankdat-metrics.yml`. */
+  workflow: string;
+  event: string;
+  startedAt: Date;
 }
 
 /** Slots before this instant are never reported (the watchdog did not exist). */
@@ -70,6 +86,7 @@ export const ROUTINES: RoutineSlot[] = [
     tags: [],
     commit: /^metrics: /,
     dispatched: [/^store-metrics: /, /^metrics\(gankdat\): /],
+    dispatchedWorkflows: ['store-metrics.yml', 'gankdat-metrics.yml'],
   },
   {
     routine: 'report',
@@ -281,12 +298,76 @@ export function hasDispatchedTrace(slot: DueSlot, traces: Trace[], slotsText: st
   return dispatchedTraces(slot, traces, slotsText).length > 0;
 }
 
+/** A `workflow_dispatch` run of every dispatched workflow started inside the slot's window; [] when one is missing. */
+export function dispatchRunTraces(slot: DueSlot, runs: DispatchRun[]): DispatchRun[] {
+  const workflows = slot.def.dispatchedWorkflows ?? [];
+  if (workflows.length === 0) return [];
+  const from = slot.at.getTime() - 5 * MINUTE;
+  const to = slot.deadline.getTime();
+  const found = workflows.map((w) =>
+    runs.find(
+      (r) =>
+        r.workflow === w &&
+        r.event === 'workflow_dispatch' &&
+        r.startedAt.getTime() >= from &&
+        r.startedAt.getTime() <= to,
+    ),
+  );
+  return found.every((r) => r !== undefined) ? found : [];
+}
+
+/** Runs as GitHub's `GET /repos/{repo}/actions/runs` lists them → DispatchRun[] (runs not yet started are left out). */
+export function dispatchRunsFrom(
+  runs: { path?: string; event?: string; run_started_at?: string | null }[],
+): DispatchRun[] {
+  const out: DispatchRun[] = [];
+  for (const r of runs) {
+    if (!r.path || !r.event || !r.run_started_at) continue;
+    out.push({
+      workflow: path.basename(r.path),
+      event: r.event,
+      startedAt: new Date(r.run_started_at),
+    });
+  }
+  return out;
+}
+
+/** The last LOOKBACK_HOURS + 24 h of `workflow_dispatch` runs, or [] without a token or on an API error (never blocks). */
+export async function readDispatchRuns(
+  repo: string,
+  token: string | undefined,
+  since: Date,
+): Promise<DispatchRun[]> {
+  if (!token) return [];
+  const url = `https://api.github.com/repos/${repo}/actions/runs?event=workflow_dispatch&per_page=100&created=>=${since.toISOString().slice(0, 10)}`;
+  try {
+    const res = await fetch(url, {
+      headers: { Authorization: `Bearer ${token}`, accept: 'application/vnd.github+json' },
+    });
+    if (!res.ok) {
+      console.log(
+        `watchdog: GitHub API ${res.status} listing dispatched runs; commits and markers only`,
+      );
+      return [];
+    }
+    const body = (await res.json()) as {
+      workflow_runs?: { path?: string; event?: string; run_started_at?: string | null }[];
+    };
+    return dispatchRunsFrom(body.workflow_runs ?? []);
+  } catch (e) {
+    console.log(`watchdog: dispatched runs unreadable (${String(e)}); commits and markers only`);
+    return [];
+  }
+}
+
 export interface WatchInput {
   now: Date;
   runsText: string;
   commitsText: string;
   /** docs/ops/SLOTS.md — start markers; absent before 2026-09-30. */
   slotsText?: string;
+  /** `workflow_dispatch` runs from the Actions API; absent when the token or the API is not there. */
+  dispatchRuns?: DispatchRun[];
   defs?: RoutineSlot[];
   since?: number;
   lookbackHours?: number;
@@ -307,7 +388,8 @@ export function missedSlots(input: WatchInput): MissedSlot[] {
       (slot) =>
         !reported.has(slotKey(slot.routine, slot.at)) &&
         !hasTrace(slot, traces) &&
-        !hasDispatchedTrace(slot, traces, slotsText),
+        !hasDispatchedTrace(slot, traces, slotsText) &&
+        dispatchRunTraces(slot, input.dispatchRuns ?? []).length === 0,
     )
     .map((slot) => {
       const started = startedAt(slot, slotsText);
@@ -349,11 +431,12 @@ export function handoffNotifyLine(
   return `- ${stamp(now)} | notify | ${digest}`;
 }
 
-function main(): void {
+async function main(): Promise<void> {
   const root = path.resolve(import.meta.dirname, '..');
   const runsPath = path.join(root, 'docs', 'RUNS.md');
   const now = new Date();
-  const sinceIso = new Date(now.getTime() - (LOOKBACK_HOURS + 24) * 3_600_000).toISOString();
+  const since = new Date(now.getTime() - (LOOKBACK_HOURS + 24) * 3_600_000);
+  const sinceIso = since.toISOString();
   const commitsText = execSync(`git log --since=${sinceIso} --format=%cI%x09%s`, {
     cwd: root,
     encoding: 'utf8',
@@ -361,7 +444,12 @@ function main(): void {
   const runsText = readFileSync(runsPath, 'utf8');
   const slotsPath = path.join(root, SLOTS_FILE);
   const slotsText = existsSync(slotsPath) ? readFileSync(slotsPath, 'utf8') : '';
-  const missed = missedSlots({ now, runsText, commitsText, slotsText });
+  const dispatchRuns = await readDispatchRuns(
+    process.env.GITHUB_REPOSITORY ?? 'giovf/rorororo',
+    process.env.GITHUB_TOKEN,
+    since,
+  );
+  const missed = missedSlots({ now, runsText, commitsText, slotsText, dispatchRuns });
   if (missed.length === 0) {
     console.log(`watchdog: every slot due before ${now.toISOString()} left a trace`);
   }
@@ -376,4 +464,5 @@ function main(): void {
   for (const line of lines) console.log(line);
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) main();
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url))
+  await main();

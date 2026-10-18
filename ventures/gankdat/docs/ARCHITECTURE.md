@@ -366,6 +366,15 @@ runs `check:root`.
   otherwise). The refresh keeps failing with the evidence (`origin dataset empty: …`) so the Daily
   numbers row and the auto-filer see the state every night, and the last snapshot stays served; the
   source file owns the text (isolation rule). First use: uk-planning.
+  **Retention** (2026-10-17, queue `uk-planning-paused-snapshot-retention`): the KV snapshot and stats blob
+  expire at 7 × the cache TTL and a failing refresh wrote nothing, so uk-planning's 10-09 snapshot was gone on
+  10-16 and every REST, MCP, x402 and Apify call 503'd "retry later" while /stats/uk-planning was a JSON 503.
+  Now `cache.ts retainSnapshot` re-puts both keys with a fresh TTL after every failed refresh (no origin read),
+  the 503 / tool error for a `notice` source carries the notice (`store.ts unavailableMessage`), the tool
+  description ends with `Origin notice: …` so the metrics probe picks a live source, and `/stats/<slug>` with no
+  blob renders the notice as a page. The data itself returns only with the origin: a snapshot already expired
+  cannot be re-created, which is why uk-planning stays unavailable (with the notice) until planning.data.gov.uk
+  serves rows again or the §7 clock retires it.
 - **Wave log reading** (`lib/wave-logs.ts`, 2026-10-09): a wave killed at the 15-minute Cron
   Trigger limit writes no `refresh_log` row, and no sandbox or relay can read Worker logs (the
   journal's silent nights 10-05..10-08 were guessed at twice). So the metrics workflow's
@@ -375,7 +384,18 @@ runs `check:root`.
   prints the lines in the job log and leaves `dist/wave-logs.json`; `metrics.mjs` reads it as
   `wave log: <slug> [level] <newest line> <age> (N lines)` — `n/a (HTTP 403 …)` names the
   missing token scope, `no stale source` a clean night. Pure parse + reading in the lib, tests
-  in `test/wave-logs.spec.ts`; never fails the job.
+  in `test/wave-logs.spec.ts`; never fails the job. **Cron outcome** (2026-10-17, `wave-log-cron-outcome-reading`):
+  the slug search's first real test (10-16) returned only the invocation request lines and @x402/hono's
+  per-isolate Ajv warning (workerd forbids code generation; the Bazaar extension is valid), and the
+  journal's 06:05 wave left no line at all. So `dropNoise` leaves those lines out (the row counts them,
+  `2 of 6 lines`), `pickReading` prefers a structured `event=` line over a newer bare one, and a second
+  query per Cron Trigger (`store.ts CRON_BY_WAVE`, `cronOfSource`; none for a runner-fed or lookup source)
+  reads the wave's own invocation log — the documented shape: `$metadata.type = cf-worker-event`, the
+  cron as the message, `$workers.outcome` / `wallTimeMs` when carried (relay cf-workers-logs-fields-2026-10-17)
+  — rendered `wave 06:05: exceededCpu 900.1s 18 h ago` or `no invocation in 26 h` ahead of the slug
+  reading. The runner prints the first invocation row when none parsed, so the next job log shows the
+  live shape. The warning itself is muted at the lane (`x402/routes.ts withoutCodegenWarning`, that one
+  message only).
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
   after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
   stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in

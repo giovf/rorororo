@@ -245,6 +245,9 @@ export function pickTool(tools: { name?: unknown; description?: unknown }[]): st
     if (typeof t.name !== 'string' || !t.name.startsWith('query_')) continue;
     if (typeof t.description === 'string' && t.description.includes('One record per call'))
       continue;
+    // A paused origin (`DataSource.notice`, shown in the description since 2026-10-17) answers
+    // every call with its notice — a true reading of that source, not of the endpoint.
+    if (typeof t.description === 'string' && t.description.includes('Origin notice:')) continue;
     return t.name;
   }
   return null;

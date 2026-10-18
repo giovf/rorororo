@@ -15,6 +15,7 @@ import { fileURLToPath } from 'node:url';
 import {
   CAPITAL_CAP_GBP,
   loadPortfolio,
+  parseExchange,
   parseLedger,
   parseQueue,
   parseRecurring,
@@ -209,6 +210,16 @@ async function main(): Promise<void> {
   }
   const entries = parseEntries(await read('docs/ALERTS.md'));
   const now = new Date();
+  // Plain text for the dashboard: no markdown emphasis or code ticks, and a closed entry's
+  // "— Done …" tail (the handoff ledger's closing note) left out.
+  const plain = (t: string): string =>
+    t
+      .replace(/^- \d{4}-\d{2}-\d{2} [^:]+: ?/, '')
+      .replace(/\s+—\s+(Done|Superseded)\b[\s\S]*$/, '')
+      .replace(/\*\*/g, '')
+      .replace(/`/g, '')
+      .trim()
+      .slice(0, 400);
   const toView = (e: {
     date: string;
     kind: string;
@@ -218,7 +229,7 @@ async function main(): Promise<void> {
     date: e.date,
     kind: e.kind,
     age_days: ageDays(e.date, now),
-    text: e.text.replace(/^- \d{4}-\d{2}-\d{2} [^:]+: ?/, '').slice(0, 400),
+    text: plain(e.text),
     ...(e.closed?.on ? { closed_on: e.closed.on } : {}),
   });
   const open = entries.filter(isOpen);
@@ -230,6 +241,11 @@ async function main(): Promise<void> {
       .filter(
         (e) => e.closed && (e.closed.on ?? '') >= weekAgo && /^(owner|handoff)\b/.test(e.kind),
       )
+      .sort(
+        (a, b) =>
+          (b.closed?.on ?? '').localeCompare(a.closed?.on ?? '') || b.date.localeCompare(a.date),
+      )
+      .slice(0, 8)
       .map(toView),
   };
   const notes = parseNotes(await read('docs/OWNER-NOTES.md').catch(() => '')).slice(0, 30);
@@ -243,6 +259,60 @@ async function main(): Promise<void> {
       return m ? { when: m[1], who: (m[2] ?? '').trim(), text: (m[3] ?? '').trim() } : null;
     })
     .filter(Boolean);
+  // The exchange: ideas by status, the latest decision, and when it next runs (Wednesdays 08:00 UTC).
+  const exchange = parseExchange(await read('docs/pipeline/exchange.json'));
+  const exchangeFiles = (await readdir(path.join(ROOT, 'docs', 'exchange')))
+    .filter((f) => /^\d{4}-W\d{2}\.md$/.test(f))
+    .sort();
+  const latestFile = exchangeFiles.at(-1);
+  const latestMd = latestFile ? await read(`docs/exchange/${latestFile}`) : '';
+  const decision = (/^## Decision\s*\n([\s\S]*?)(?=\n## |$)/m.exec(latestMd)?.[1] ?? '')
+    .replace(/\s+/g, ' ')
+    .replace(/\*\*/g, '')
+    .trim()
+    .slice(0, 700);
+  const nextWednesday = ((): string => {
+    const d = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate(), 8));
+    while (d.getUTCDay() !== 3 || d.getTime() <= now.getTime()) d.setUTCDate(d.getUTCDate() + 1);
+    return d.toISOString().slice(0, 16).replace('T', ' ');
+  })();
+  const ideaView = (i: {
+    id: string;
+    title: string;
+    status: string;
+    trigger?: string;
+    venture?: string;
+    added: string;
+  }): Record<string, unknown> => ({
+    id: i.id,
+    title: i.title.length > 140 ? `${i.title.slice(0, 137)}…` : i.title,
+    status: i.status,
+    added: i.added,
+    ...(i.trigger
+      ? { trigger: i.trigger.length > 200 ? `${i.trigger.slice(0, 197)}…` : i.trigger }
+      : {}),
+    ...(i.venture ? { venture: i.venture } : {}),
+  });
+  const byAddedDesc = (a: { added: string }, b: { added: string }): number =>
+    b.added.localeCompare(a.added);
+  const exchangeView = {
+    last_run: latestFile ? latestFile.replace('.md', '') : null,
+    decision,
+    next_run: `${nextWednesday} UTC`,
+    promoted: exchange.ideas
+      .filter((i) => i.status === 'promoted')
+      .sort(byAddedDesc)
+      .map(ideaView),
+    parked: exchange.ideas
+      .filter((i) => i.status === 'parked')
+      .sort(byAddedDesc)
+      .map(ideaView),
+    declined: exchange.ideas
+      .filter((i) => i.status === 'declined')
+      .sort(byAddedDesc)
+      .slice(0, 10)
+      .map(ideaView),
+  };
   const sha = execSync('git rev-parse --short=12 HEAD', { cwd: ROOT, encoding: 'utf8' }).trim();
   const data = {
     generated_at: now.toISOString(),
@@ -251,6 +321,7 @@ async function main(): Promise<void> {
     ventures: ventureViews,
     queues,
     owner,
+    exchange: exchangeView,
     notes,
     runs,
   };

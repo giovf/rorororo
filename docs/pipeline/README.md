@@ -8,6 +8,8 @@ and write, validated by `npm run pipeline` (part of `npm run check`).
 ```
 docs/pipeline/exchange.json          ideas not yet assigned to a venture (parked / promoted / declined)
 docs/pipeline/queues/<venture>.json  one queue per venture: status open|finished, scored items
+docs/pipeline/queues/new-ventures.json  the exchange's backlog of research spikes for new lines (weight 2;
+                                     owner 2026-10-17: new-venture work visible and scheduled, built by idle slots)
 ```
 
 | Who | When | Does |
@@ -45,7 +47,7 @@ second push was discarded). The watchdog never counts a claim commit as a slot's
 `researched: YYYY-MM-DD`, the day of its last research run (every research run sets it with `updated`); for 48 h after
 that the starvation fallback skips the queue and `npm run pipeline` lists it on a `cooling:` line, so a venture is not
 researched twice in a day (2026-10-05 had five research runs and the next morning's build was offered the same venture
-eleven hours later). When `next` is null and every starved queue is cooling, `empty` prints `[]` and the status says
+eleven hours later). Since 2026-10-17 (foundry `empty-skips-cooling-queues`) the same 48 h cover a flagged or emptied queue: `empty` and `cold` leave it out until the cooling ends, so the spike that empties a queue the day it was researched does not send the next slot back to it. When `next` is null and every starved queue is cooling, `empty` prints `[]` and the status says
 so: the run writes one run-log line and stops (the one exchange pre-research pass per window aside — the burn-down's night from 17:00 UTC, the build's day from 07:00 UTC since 2026-10-10, `npm run pipeline cold [-- --routine=build]` says whether it is spent). **Waiting** (2026-10-07): a
 research run that finds no new evidence — the metrics unchanged since the last pass, every lever built or owner-blocked, the next
 signal a dated reading — sets `research_after: YYYY-MM-DD` (that reading's date) instead of adding items; the fallback treats

@@ -11,10 +11,21 @@
 // anything that needs a credential; a data file since 2026-10-16 so adding a host is not a code push). GET bodies are capped at MAX_BYTES; use RANGE for big files. A POST
 // body is one JSON document, ≤ 4 kB, refused when a key or value is credential-shaped
 // (scripts/fetch-relay-lines.ts) — for JSON-RPC reads and POST-only validation endpoints.
+// A 429 or 503 is retried up to MAX_RETRIES times after Retry-After or a doubling pause, and two
+// consecutive lines to the same host are SAME_HOST_PACE_MS apart (2026-10-17: Base's public RPC
+// throttled 40 log queries fired in one second); meta.json carries `retries` when one was needed.
 import { mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 
-import { hostAllowed, parseHosts, parseLine } from './fetch-relay-lines.ts';
+import {
+  MAX_RETRIES,
+  RETRY_STATUSES,
+  SAME_HOST_PACE_MS,
+  hostAllowed,
+  parseHosts,
+  parseLine,
+  retryDelayMs,
+} from './fetch-relay-lines.ts';
 
 const ROOT = path.resolve(import.meta.dirname, '..', 'docs', 'relay');
 const MAX_BYTES = 8 * 1024 * 1024;
@@ -29,6 +40,8 @@ const ALLOWED = parseHosts(readFileSync(HOSTS_FILE, 'utf8'));
 function allowed(hostname) {
   return hostAllowed(hostname, ALLOWED);
 }
+
+const sleep = (ms) => new Promise((resolve) => globalThis.setTimeout(resolve, ms));
 
 function extOf(contentType) {
   const ct = (contentType ?? '').toLowerCase();
@@ -60,13 +73,20 @@ async function fetchOne(req, outDir, index) {
     headers.accept = 'application/json, */*';
   }
   try {
-    const res = await fetch(url, {
-      method: req.method,
-      headers,
-      body: req.method === 'POST' ? req.body : undefined,
-      redirect: 'follow',
-      signal: globalThis.AbortSignal.timeout(TIMEOUT_MS),
-    });
+    let res;
+    for (let attempt = 0; ; attempt++) {
+      res = await fetch(url, {
+        method: req.method,
+        headers,
+        body: req.method === 'POST' ? req.body : undefined,
+        redirect: 'follow',
+        signal: globalThis.AbortSignal.timeout(TIMEOUT_MS),
+      });
+      if (!RETRY_STATUSES.has(res.status) || attempt >= MAX_RETRIES) break;
+      await res.body?.cancel();
+      meta.retries = attempt + 1;
+      await sleep(retryDelayMs(res.headers.get('retry-after'), attempt));
+    }
     meta.status = res.status;
     meta.final_url = res.url;
     meta.headers = Object.fromEntries(
@@ -103,7 +123,18 @@ async function processRequest(file) {
   mkdirSync(outDir, { recursive: true });
   const lines = readFileSync(file, 'utf8').split('\n').map(parseLine).filter(Boolean);
   const results = [];
-  for (const [i, req] of lines.entries()) results.push(await fetchOne(req, outDir, i + 1));
+  let lastHost;
+  for (const [i, req] of lines.entries()) {
+    let host;
+    try {
+      host = new URL(req.url).hostname;
+    } catch {
+      host = undefined;
+    }
+    if (host && host === lastHost) await sleep(SAME_HOST_PACE_MS);
+    lastHost = host;
+    results.push(await fetchOne(req, outDir, i + 1));
+  }
   writeFileSync(
     path.join(outDir, 'meta.json'),
     JSON.stringify({ request: name, fetched_at: new Date().toISOString(), results }, null, 2) +

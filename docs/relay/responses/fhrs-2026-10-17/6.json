@@ -1,0 +1,3101 @@
+{
+  "data": {
+    "total": 60,
+    "count": 50,
+    "offset": 0,
+    "limit": 50,
+    "desc": false,
+    "items": [
+      {
+        "title": "UK Food Hygiene Ratings Search",
+        "name": "uk-food-hygiene",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 573,
+          "totalUsers": 6,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T21:48:34.365Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 56,
+            "TIMED-OUT": 0,
+            "TOTAL": 56
+          }
+        },
+        "description": "Search the official UK Food Standards Agency (FSA) food hygiene ratings database covering England, Wales, and Northern Ireland.",
+        "categories": [
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/PTTxby8SmH05fhv3J7Ujuc4QmQUN-Y9r6d8IKhTmP-k/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vczJGTTV1Rkg5RjJlWjRwWjktYWN0b3ItOGZZaGh0OE4yRmdmb050eWotVkY2SUFBbXhWNC11ay1mb29kLWh5Z2llbmUucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-03-13T20:41:31.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "rating-fetched": {
+                "eventTitle": "Rating fetched",
+                "eventDescription": "Charged per food hygiene rating record retrieved from the FSA.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-02-27T19:41:58.507Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-02-27T19:42:18.691Z"
+        },
+        "id": "8fYhht8N2FgfoNtyj",
+        "url": "https://apify.com/ryanclinton/uk-food-hygiene"
+      },
+      {
+        "title": "UK Food Hygiene Ratings — Restaurant Leads by Rating (FSA)",
+        "name": "uk-food-hygiene-prospect-finder",
+        "username": "nexgenwatch",
+        "stats": {
+          "totalBuilds": 34,
+          "totalRuns": 131,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-16T23:16:37.651Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Build UK restaurant leads and food-business prospect lists from the FSA's official food hygiene ratings API: rating, scores, address and local-authority contact per establishment, filtered by authority, business type, name and rating. Pay per result.",
+        "categories": [
+          "NEWS",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/C0BnsKHHfR0beolJv6AaZjjTWGxIGxJz6y1MiFquBHk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ0x3ZmZxWkVkV3ZzTVZRYWQtYWN0b3ItRFZUanVmRjBJSUprV0hEekQtbnBlaGZRU0ZyNy11ay1mb29kLWh5Z2llbmUtcHJvc3BlY3QtZmluZGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Watch",
+        "userPictureUrl": "https://images.apifyusercontent.com/o6OYurOmSCLOfsI4R3iuS80czRV7gduDNvLE1-BSd6U/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vczJLbGtqTVBYR2tyQ01aN0VySWpQc1JxNk4tSVl0S25lajRrS0tLQm9lTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMHgzWm1aeFdrVmtWM1p6VFZaUllXUXRjSEp2Wm1sc1pTMUZTVkphTlVsQmMyNDNMVTVIVnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Activate PPE billing: identical amounts, notification suppressed (fixes never-activated custom-event price).",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.02,
+                "isOneTimeEvent": true,
+                "isPrimaryEvent": false
+              },
+              "establishment-result": {
+                "eventTitle": "Establishment record",
+                "eventDescription": "One normalized UK food hygiene establishment record from the FSA's own API, with its rating, scores, address, authority contact and a link to the FSA page. Charged per record returned. A zero-result query and every refusal charge nothing.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.1
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.09
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.08
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.067
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.067
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.067
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-26T21:24:04.344Z",
+          "startedAt": "2026-08-26T21:24:04.344Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "DVTjufF0IIJkWHDzD",
+        "url": "https://apify.com/nexgenwatch/uk-food-hygiene-prospect-finder"
+      },
+      {
+        "title": "UK Food Hygiene Ratings Scraper",
+        "name": "uk-food-hygiene-ratings-scraper",
+        "username": "muhammadafzal",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 102,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-16T12:26:40.015Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search official Food Standards Agency FHRS/FHIS data and return one structured record per UK food establishment. Filter by name, postcode/address, radius, rating, scheme, local authority, business type, or exact FHRS ID across England, Wales, Northern Ireland, and Scotland.",
+        "categories": [
+          "LEAD_GENERATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/O965J0K_vr7q35LzLmpDz10T8TmiYGGaEWurzpC7UAs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdW1xSGw0TGhxbVBIY0JoMEwtYWN0b3IteW1vU1d4cUxNeFZuNVUwcmctRDEwRlVVd2xjVS1VS19Gb29kX0h5Z2llbmUucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhammad Afzal",
+        "userPictureUrl": "https://images.apifyusercontent.com/qyNOWf6DvGK-3ypCN8Nn3H7SSXQisiiQVeIRmrfpKYI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vam1jWUZudEFobWsySTVrbW9XUDJWNVlhSk5LMTgzWlFia3lfREtLUDZ3Zy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkVzF4U0d3MFRHaHhiVkJJWTBKb01Fd3RjSEp2Wm1sc1pTMWpUM294WVRrelIweGpMVTExYUdGdGJXVmtYMEZtZW1Gc1gwMWhiR2xyWDJrdFJsaFRhMUpNWkMxWU15NXFjR2MuanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-20T10:43:45.698Z",
+          "startedAt": "2026-09-20T10:43:45.384Z",
+          "reasonForChange": "Updated tiered event prices to recover measured platform usage and maintain a positive operating margin.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "food-hygiene-rating-result": {
+                "eventTitle": "Food Hygiene Rating Result",
+                "eventDescription": "Charged once for each normalized food establishment record returned from the official FSA FHRS/FHIS API.",
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002501
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002438
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002375
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.006251
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.006094
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005938
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.005
+                  }
+                }
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.008752,
+          "notifiedAboutChangeAt": "2026-09-21T12:36:35.422Z"
+        },
+        "id": "ymoSWxqLMxVn5U0rg",
+        "url": "https://apify.com/muhammadafzal/uk-food-hygiene-ratings-scraper"
+      },
+      {
+        "title": "UK Food Hygiene Ratings Scraper",
+        "name": "uk-food-hygiene-ratings-scraper",
+        "username": "neuton",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 69,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T10:38:31.250Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape Food Standards Agency hygiene ratings for UK restaurants, takeaways, caterers, and food businesses from the official no-key FHRS API.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/xUHvh61cy_JB-C4fF8fLMN7Ju3xA_rjhcr03-iPAyBE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vd3RrQ2lzSHViYVhFcm9HM00tYWN0b3IteHEyTmZjaXJPZnFpemhtVHYtZ1J2OW5COFBObi11ay1mb29kLWh5Z2llbmUtcmF0aW5ncy1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Neuton Scripts",
+        "userPictureUrl": "https://images.apifyusercontent.com/pcBzpb2uivnNBqGh0qJ8cIEKBfODmnfT08guL-uEnXs/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSWExcGNCQzltWmZ5aFpOYU5tc3N6ZVB4NzVQb0FMMzFXRTRmRGZvR2luQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTazFTUTJkQ2NtSXdlR1pSVkRoc2FYbDJRUzFLTm5KUVpsOHlaRUUyZFhCelZtTktkVlUwY1c1UVlVNWlTblU1WjJr.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-10T14:37:10.419Z",
+          "startedAt": "2026-08-10T14:37:07.000Z",
+          "reasonForChange": "Initial launch pricing for uk-food-hygiene-ratings-scraper",
+          "isPriceChangeNotificationSuppressed": true,
+          "forceContainsSignificantPriceChange": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single food hygiene row written to the default dataset.",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          }
+        },
+        "id": "xq2NfcirOfqizhmTv",
+        "url": "https://apify.com/neuton/uk-food-hygiene-ratings-scraper"
+      },
+      {
+        "title": "UK Food Hygiene Establishment Check",
+        "name": "uk-food-hygiene-establishment-check",
+        "username": "nexgenwatch",
+        "stats": {
+          "totalBuilds": 22,
+          "totalRuns": 65,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T10:20:32.711Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "A per-identity check: submit identifiers, get one official answer each. Billed per completed official resolution — a not-found, ambiguous, or unavailable outcome is returned but never charged.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/3Qkwj6jhl0ovyYiuYlfFT32WxDPoKwMS8hRIivXuNTw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ0x3ZmZxWkVkV3ZzTVZRYWQtYWN0b3ItOWFXQnh1b0NKUGFvOFpFQlEtaWJiTENOQUZIQi11ay1mb29kLWh5Z2llbmUtZXN0YWJsaXNobWVudC1jaGVjay5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Watch",
+        "userPictureUrl": "https://images.apifyusercontent.com/o6OYurOmSCLOfsI4R3iuS80czRV7gduDNvLE1-BSd6U/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vczJLbGtqTVBYR2tyQ01aN0VySWpQc1JxNk4tSVl0S25lajRrS0tLQm9lTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMHgzWm1aeFdrVmtWM1p6VFZaUllXUXRjSEp2Wm1sc1pTMUZTVkphTlVsQmMyNDNMVTVIVnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Activate PPE billing at flip: identical amounts, notification suppressed.",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.02,
+                "isOneTimeEvent": true
+              },
+              "establishment-hygiene-check": {
+                "eventTitle": "Establishment Hygiene Check",
+                "eventDescription": "Charged once per completed official answer.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0335
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-12T18:36:16.438Z",
+          "startedAt": "2026-09-12T18:36:16.438Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "9aWBxuoCJPao8ZEBQ",
+        "url": "https://apify.com/nexgenwatch/uk-food-hygiene-establishment-check"
+      },
+      {
+        "title": "UK Food Hygiene Compliance Roster",
+        "name": "uk-food-hygiene-compliance-roster",
+        "username": "nexgenwatch",
+        "stats": {
+          "totalBuilds": 22,
+          "totalRuns": 47,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T15:24:36.416Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 17,
+            "TIMED-OUT": 0,
+            "TOTAL": 17
+          }
+        },
+        "description": "One registry_record per UK food-hygiene establishment — the COMPLIANCE-REFRESH roster for underwriting/ops: normalized rating band, rating staleness (days), pending-rating and component-risk flags, all-UK INCLUDING Scotland's FHIS vocabulary.",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/T-6VMhSRfgG_xFEViyr70blFjfJvqL1HhHR7OtxqfN4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ0x3ZmZxWkVkV3ZzTVZRYWQtYWN0b3ItWTJ0ZDJ5SUx0dk45VjFsVVItOXJpTHZncjU2Ri11ay1mb29kLWh5Z2llbmUtY29tcGxpYW5jZS1yb3N0ZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Watch",
+        "userPictureUrl": "https://images.apifyusercontent.com/o6OYurOmSCLOfsI4R3iuS80czRV7gduDNvLE1-BSd6U/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vczJLbGtqTVBYR2tyQ01aN0VySWpQc1JxNk4tSVl0S25lajRrS0tLQm9lTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMHgzWm1aeFdrVmtWM1p6VFZaUllXUXRjSEp2Wm1sc1pTMUZTVkphTlVsQmMyNDNMVTVIVnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.02,
+                "isOneTimeEvent": true
+              },
+              "registry_record": {
+                "eventTitle": "Registry Record",
+                "eventDescription": "Charged once per unique registry record delivered.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0134
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0134
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0134
+                  }
+                }
+              }
+            }
+          },
+          "isPriceChangeNotificationSuppressed": true,
+          "reasonForChange": "Activate pricing at publication (verbatim, no price change)",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-28T05:33:29.986Z",
+          "startedAt": "2026-09-28T05:33:29.986Z"
+        },
+        "id": "Y2td2yILtvN9V1lUR",
+        "url": "https://apify.com/nexgenwatch/uk-food-hygiene-compliance-roster"
+      },
+      {
+        "title": "Uk Food Hygiene Failures Monitor",
+        "name": "uk-food-hygiene-failures-monitor",
+        "username": "devon_gtme",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 97,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T11:14:44.658Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Catch UK food hygiene rating failures the moment they're published, straight from the official Food Standards Agency (FHRS) database. This is not a lookup tool — it's a trigger monitor: run it weekly and get only what's genuinely new.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/eAQ3eHeDmtozJX9KRZIyqrAo5fuVtLHaeB_iI8wlE6s/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vN1hnbkhkaUV5Qm1TczF3bGItYWN0b3ItWUZtQ2FFUnJGWktNejBwSDUtNEhWUHFTRm1reC1mc2EtaHlnaWVuZS1yYXRpbmdzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Devon Kellar",
+        "userPictureUrl": "https://images.apifyusercontent.com/ZP01WrfG-nT5lJbEj4pOZEyo7z9IeYhMjk3k2b3KEyU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSmU2TVZtNW5fUWFyQXU3R0lqcjktc0xQM0JESUQ3LVZfd0NySU1Sd21lcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOMWhuYmtoa2FVVjVRbTFUY3pGM2JHSXRjSEp2Wm1sc1pTMWFTbE0wYm1kc2VITjBMV2hsWVdSemFHOTBMbXB3WldjLmpwZWc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "One hygiene-rating record (establishment + scores + rating date).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-16T15:28:33.518Z",
+          "startedAt": "2026-07-16T15:28:33.518Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "YFmCaERrFZKMz0pH5",
+        "url": "https://apify.com/devon_gtme/uk-food-hygiene-failures-monitor"
+      },
+      {
+        "title": "UK Food Hygiene Scraper - Business Ratings",
+        "name": "uk-food-hygiene-scraper",
+        "username": "benthepythondev",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 95,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T05:04:35.391Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search UK food establishments and export business type, hygiene rating, inspection date, component scores, address, authority and coordinates.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/GKlp_7tDGuxGTxL5aXatBU2m_yWOC7Src8ZIn0Q-_6g/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vT3JOQ0NWNm8xajU1THlPVFotYWN0b3ItTWhPTldFZWlackdnNkt5bHotTmVsbGpTbHMxYi11ay1mb29kLWh5Z2llbmUtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ben",
+        "userPictureUrl": "https://images.apifyusercontent.com/2uHzQHA1ompnXtYvA4IUQM5GaLvBCLIBmsVFdLt-evY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVzhUaGJqVkNtY24taDZwUUo5ZmM3ME9KajlUcFhGc1VHUGlDUUxpMF9Cdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUM0pPUTBOV05tOHhhalUxVEhsUFZGb3RjSEp2Wm1sc1pTMTJNRlZsUjJkMVMyaHNMV0psYm5Sb1pYQjVkR2h2Ym1SbGRpNXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-02T09:42:00.000Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Add progressive Apify plan discounts while preserving every existing Free-tier event price.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0000425
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0000375
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000035
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Charged for each normalized UK Food Hygiene Rating Scheme API record saved to the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-07-18T09:44:46.274Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-18T09:45:06.444Z",
+          "notifiedAboutChangeAt": "2026-08-05T15:06:26.540Z"
+        },
+        "id": "MhONWEeiZrGg6Kylz",
+        "url": "https://apify.com/benthepythondev/uk-food-hygiene-scraper"
+      },
+      {
+        "title": "UK Food Hygiene Ratings & Business Scraper",
+        "name": "uk-food-hygiene-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 88,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T15:38:39.019Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape UK food business hygiene ratings from the Food Standards Agency. Get business name, full address, postcode, hygiene rating, inspection date, local authority, coordinates and phone when published. Great for UK business leads and research. Export to JSON, CSV or Excel.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/JrbVBshcGdsYk-mKll4WC-yVBCpprq8cLgPe8gHS3rM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3Itb09ZSkE0WVJUNkNBUWNuOUEtenlvYTcwZDVFdS11ay1mb29kLWh5Z2llbmUtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "A data record returned by the scraper.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0076
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0072
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0068
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0068
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0068
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-07-15T23:05:26.000Z",
+          "createdAt": "2026-07-15T23:04:35.342Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "oOYJA4YRT6CAQcn9A",
+        "url": "https://apify.com/scrapers_lat/uk-food-hygiene-scraper"
+      },
+      {
+        "title": "Singapore Food Hygiene Grades & Food Shop Licences Scraper",
+        "name": "singapore-food-hygiene-grades-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 16,
+          "totalRuns": 135,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T22:56:38.751Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape Singapore food shop licences and food hygiene grades (A, B, C, D) from the official SFA/NEA open data on data.gov.sg. No API key. Get licensee name, licence number, address, postal code, district, demerit points, suspension status, plus geocoded coordinates. Export JSON, CSV, Excel.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Vs7yGswGxGyYvcwcDyAM3sLDFVHAG_cVjRFBFHVZGkE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItTzNGY2pjUm95aDEzdm1QRzctUndJQ0lkdDduSi1mb2RkLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "A data record returned by the scraper.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.007385
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.006769
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.006154
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.006154
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.006154
+                  }
+                }
+              },
+              "details": {
+                "eventTitle": "Detail record",
+                "eventDescription": "A record enriched with detail-page data.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.009231
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.008615
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.007385
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.007385
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.007385
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-07-31T00:00:00.000Z",
+          "createdAt": "2026-07-15T23:14:11.157Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-15T23:14:31.282Z",
+          "notifiedAboutChangeAt": "2026-08-05T15:06:14.720Z"
+        },
+        "id": "O3FcjcRoyh13vmPG7",
+        "url": "https://apify.com/scrapers_lat/singapore-food-hygiene-grades-scraper"
+      },
+      {
+        "title": "UK Food Hygiene Rating Downgrade Watchdog",
+        "name": "uk-food-hygiene-rating-watchdog",
+        "username": "hllerdgn80",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 22,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T10:14:40.397Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 2,
+            "SUCCEEDED": 15,
+            "TIMED-OUT": 0,
+            "TOTAL": 17
+          }
+        },
+        "description": "Tracks UK Food Standards Agency hygiene ratings run over run and flags actual changes: rating downgrades, upgrades, and overdue re-inspections. Keyless official FSA API - no other Store Actor compares ratings across time.",
+        "categories": [],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Halil Erdogan",
+        "userPictureUrl": "https://images.apifyusercontent.com/CHnwFnpDmdGGuRu6kmddH6JSeO7rhizAbhi-AcRrveA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaFUxWG56WlExMnRBTVdPMUJhTFIzZU16RVJQQkVsZFN2d3BqeHlWTDJKcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURGxIY0VSSlJtNUxNV3N4UW5Zd05HWXdibFJOVUMxb2FraEVlVkJVUlRWbGRsQk1abm96TVY5MmQzZFFVMkZuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-27T19:03:27.267Z",
+          "createdAt": "2026-09-27T19:03:47.340Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "5s7fO3la1fNuVR0x1",
+        "url": "https://apify.com/hllerdgn80/uk-food-hygiene-rating-watchdog"
+      },
+      {
+        "title": "UK Food Hygiene Ratings & New Restaurant Leads",
+        "name": "uk-food-hygiene-ratings",
+        "username": "digital_influx",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 11,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T19:52:37.491Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 10,
+            "TIMED-OUT": 0,
+            "TOTAL": 10
+          }
+        },
+        "description": "Every UK food business with its official FSA hygiene rating: restaurants, takeaways, pubs, cafés, hotels and shops in any council, postcode or town. Find new food businesses awaiting their first inspection, filter by rating and type, and get only new or re-rated ones on a schedule. No login.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "TRAVEL"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/4iviNkqGC1T7G-UJjhOmLIyjN3sz950Ugc3UPlFR4oI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFNYc09TYVpXbUZXVmJYRkstYWN0b3ItV2U2RU5ITWxoZjdhbmMzZ0MteVJGSVdLQUtGay11ay1mb29kLWh5Z2llbmUtcmF0aW5ncy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Bruno Petrelli",
+        "userPictureUrl": "https://images.apifyusercontent.com/JbGzHhDwRJFVwoyiaIzAvOF2DhnYvDEJRE_d2vJ_ZFU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTzFkaFdyakctM1Y0U0FhVThYUE5zZ3RkWi1Fb1dPQ2JldXhmMHlqNXdkRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMFJRZEdkVVNIaHJWSEV6VFRCQ2IwNURia00xV1VVdFdYQmxSVE00U25GUVp6QjNPVTlDVWt0SmVHVXllV3BuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "business": {
+                "eventTitle": "Food business saved",
+                "eventDescription": "One UK food business saved to the dataset with its FSA hygiene rating, inspection date, scores, address and council. Businesses left out by your filters and businesses already saved by an earlier run are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-02T00:13:57.892Z",
+          "createdAt": "2026-10-02T00:13:57.788Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "We6ENHMlhf7anc3gC",
+        "url": "https://apify.com/digital_influx/uk-food-hygiene-ratings"
+      },
+      {
+        "title": "Uk Food Hygiene Ratings Scraper",
+        "name": "uk-food-hygiene-ratings-scraper",
+        "username": "b2b_lead_generation",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 5,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T11:48:44.493Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 3,
+            "TIMED-OUT": 0,
+            "TOTAL": 3
+          }
+        },
+        "description": "Scrape UK Food Hygiene Rating Scheme records from the public Food Standards Agency. Search by business name, address, local authority, type, or rating, or load single venues by FHRSID. Get one flat row per result, ready to export as JSON, CSV, or Excel. Also pulls authority and business-type lists.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/bz_0-K4BUQ0G-JtiTeEFzueuA1fiNL5mytFm55IxgH4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNDBLUTBKNDNYaWZjN2pUdVctYWN0b3ItZGtWc2Z1YzFsQWFoNHZZbDAtM21uMGZSSzZ3RS1pbWFnZXNfJTI4MSUyOS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "B2B Lead Generation",
+        "userPictureUrl": "https://images.apifyusercontent.com/RxtenBzgnh--8EELAc44IpM_8rRddcsoSD2c9jFkeSU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYlJ4S0tzSmlVR01rbjNWSU9ZLXJrRTJkUkFTZnFzVEZCSU5nazJCYnNBMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOREJMVVRCS05ETllhV1pqTjJwVWRWY3RjSEp2Wm1sc1pTMTJSbW96WVVZd01XMURMVU5vWVhSSFVGUmZTVzFoWjJWZlRXRjVYemRmWHpJd01qWmZYekV5WHpJelh6UXdYMEZOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00599
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00399
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00299
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-14T11:33:29.769Z",
+          "createdAt": "2026-10-14T11:33:30.119Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "dkVsfuc1lAah4vYl0",
+        "url": "https://apify.com/b2b_lead_generation/uk-food-hygiene-ratings-scraper"
+      },
+      {
+        "title": "UK Food Hygiene Ratings: Restaurants & Takeaways (FSA)",
+        "name": "uk-food-hygiene-ratings",
+        "username": "frenchdatalab",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 18,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T15:50:34.391Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 11,
+            "TIMED-OUT": 0,
+            "TOTAL": 11
+          }
+        },
+        "description": "UK restaurants, cafes, takeaways, pubs, hotels and food shops from the official Food Standards Agency register: name, address, postcode, hygiene rating (0-5), inspection date, scores and GPS. Filter by type, council, rating and date; new-inspection alerts.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/MciLlbVWJaEjBMCA2P98kI13hCXwjmqYDXt4-v29bc0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTjhHMW8zM2pYYUdHeHFjcjMtYWN0b3Itc0tkaWcxYUc3ZmlPWThXYVEtR2ZxNTlrY1BJdC1pY29uLXVrLWZvb2QtaHlnaWVuZS01MTIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "French Data lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/x88KnwCbMORfbW_RXPWDrCkl2sJdOyOlVZtxHCbmIAU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdk4zZXBUdm1ZMU5GNW5uVC1BNGhyTGpvZTFKZGJ3a3dJU2NEb3lzT0h6RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUamhITVc4ek0ycFlZVWRIZUhGamNqTXRjSEp2Wm1sc1pTMHdRbEZyWjI0NVZUVnVMV2x0WVdkbExURTNPVEEzTmpJd016YzRNRFV1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-10-06T15:18:05.805Z",
+          "startedAt": "2026-10-06T15:18:05.000Z",
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "establishment": {
+                "eventTitle": "Establishment",
+                "eventDescription": "One UK food business with its hygiene rating returned.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          }
+        },
+        "id": "sKdig1aG7fiOY8WaQ",
+        "url": "https://apify.com/frenchdatalab/uk-food-hygiene-ratings"
+      },
+      {
+        "title": "UK Food Hygiene Rating Change Signals",
+        "name": "uk-food-hygiene-rating-change-signals",
+        "username": "starshaped_bullsnake",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 32,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T12:56:43.617Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Detect business-level changes in official FSA/FHRS public data.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Starshape Tools",
+        "userPictureUrl": "https://images.apifyusercontent.com/bxoA83nqPa0HXrG9QmufAgbpiqMF8PiNGe7eZBdB6ls/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT2dJeGVwOUhwYXl1VUd0UmRtb1NwZHVYbnFzSFJBLUUwZ3ZUWHY0YS1LOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibVprUjNCbmNEQnBObGRZVVc5VFJqVXRjSEp2Wm1sc1pTMWxSblo1YTJVNVEyUlJMV2xqYjI0dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Food hygiene rating change signal",
+                "eventDescription": "One qualified UK food hygiene rating or business change signal written to the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-26T10:14:33.049Z",
+          "createdAt": "2026-09-26T10:14:33.346Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-26T10:35:59.275Z"
+        },
+        "id": "rzd11QZuuCPAPjm8y",
+        "url": "https://apify.com/starshaped_bullsnake/uk-food-hygiene-rating-change-signals"
+      },
+      {
+        "title": "UK Food Hygiene Ratings (FHRS) Leads",
+        "name": "uk-food-hygiene-ratings-leads",
+        "username": "dessy66",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 45,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T15:09:06.936Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Exporta establecimientos alimentarios del esquema oficial de higiene del Reino Unido (FHRS) como leads normalizados (sin clave, open data).",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/nN9RLwYWyfG3wb8dSP3yUh2VXdD1E94sHZmmsQHJ3Es/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbk9QVVpnVHVTcmNuQzJVMDAtYWN0b3ItS0VYVnBsY0VLU3h5d3YyVlUtbkRtTFJDd3VTMS1DYXB0dXJhX2RlX3BhbnRhbGxhXzIwMjYtMDktMDNfMTc0NTIxLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Joshua Hernández Márquez",
+        "userPictureUrl": "https://images.apifyusercontent.com/GE9Lv58rUWn5WwWQpqfYP4V4_4n7b6i6r8J6woQtb08/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcEp4dUtoSXNsbmRKM1BQTTJ0RldlV0xqSC1wdUpYQ1loNFJibVBHQjNGay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMEZ5Y1ZOV00zY3RSRkV3UlZKSGIwRktaSEpuUzJKaWFraDBjVEpIYTJOWkxWTnNSazVoWjB4b1dETlhWVXhuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Priced per establishment returned, aligned with typical FHRS lead datasets. Low event cost keeps tests cheap while covering compute.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-04T00:39:31.589Z",
+          "createdAt": "2026-09-04T00:42:35.213Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-04T01:05:50.658Z"
+        },
+        "id": "KEXVplcEKSxywv2VU",
+        "url": "https://apify.com/dessy66/uk-food-hygiene-ratings-leads"
+      },
+      {
+        "title": "UK Food Hygiene Scraper — Ratings & Businesses",
+        "name": "uk-food-hygiene-scraper",
+        "username": "hipersoft",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 42,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T23:08:36.784Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Fetch UK Food Standards Agency food hygiene ratings in bulk: search businesses by name, address or postcode and get each establishment's rating, address, scores, local authority and location. Clean structured JSON, CSV or Excel for food, compliance, lead generation and n8n.",
+        "categories": [
+          "OTHER",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/95wgO2H3Y1QrX0HcpfBY2bmTpCjc1IRZ4s8tuRuQ2T8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vYTVMdDZkbWQxZTlwUklGWGEtYWN0b3ItVk9NME5lSXZqRmFmcE0wY0MtcERHRnpXdnpBSC11ay1mb29kLWh5Z2llbmUtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "hiper soft",
+        "userPictureUrl": "https://images.apifyusercontent.com/5jDNWOXS0jbJETXx0n8_XFhxi7McbXBp3RacBGYtNLQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSzlITHlxb2k5MnBNZGVkRWVWT2ktVmh5WHBzNmJ4bTNKVzQ5V3ctbGlZYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZVFZNZERaa2JXUXhaVGx3VWtsR1dHRXRjSEp2Wm1sc1pTMHlXVGwwU1had1VEQkxMV2hwY0dWeUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "establishment-scraped": {
+                "eventTitle": "Establishment Scraped",
+                "eventDescription": "Charged per establishment scraped.",
+                "isOneTimeEvent": true,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00065
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0005
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "startedAt": "2026-09-02T19:46:15.442Z",
+          "createdAt": "2026-09-02T19:46:15.663Z"
+        },
+        "id": "VOM0NeIvjFafpM0cC",
+        "url": "https://apify.com/hipersoft/uk-food-hygiene-scraper"
+      },
+      {
+        "title": "UK Food Hygiene Ratings Scraper — FSA Establishments",
+        "name": "uk-food-hygiene-ratings-scraper",
+        "username": "devilscrapes",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 57,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T17:02:58.855Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Export UK Food Standards Agency hygiene ratings — business name, type, rating, rating date, full address, postcode, phone and local authority — as clean JSON, CSV or Excel.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/KqMNEgJZfyQArOJtaNx7gdjc197JfkaWKyhSxsSMat4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vVE9iWEhQUlpzb2t0MFNCUGUtYWN0b3ItNUVLM0phcHBlNFU5ekdYVGYtYjJTdlNXeHI4ai1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "DevilScrapes",
+        "userPictureUrl": "https://images.apifyusercontent.com/2sThxlwPh-1eu3WVnVJ3mpJKE6PaiB1ZYZLuK5Vnepw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZFJGejhXcmFtUUJZTE5hSmllR1VtaFdST2RqV0drQndZMFJTeWdLeGt1NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWRTlpV0VoUVVscHpiMnQwTUZOQ1VHVXRjSEp2Wm1sc1pTMTJiVTlJTjNsbFdHTkhMV1JsZG1sc2MyTnlZWEJsY3kxcFkyOXVMbk4yWnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricePerUnitUsd": 0.0001,
+          "minimalMaxTotalChargeUsd": 0,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Charged once when the Actor begins a run.",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.2
+              },
+              "result": {
+                "eventTitle": "Result emitted",
+                "eventDescription": "Charged for each item written to the dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "reasonForChange": "The per-run start fee is increasing. The per-result price is unchanged, so large extractions cost about the same; small runs now carry more of the cost of starting and maintaining the Actor.",
+          "createdAt": "2026-08-20T09:16:06.390Z",
+          "startedAt": "2026-08-20T09:16:06.390Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-20T09:35:39.622Z"
+        },
+        "id": "5EK3Jappe4U9zGXTf",
+        "url": "https://apify.com/devilscrapes/uk-food-hygiene-ratings-scraper"
+      },
+      {
+        "title": "UK Food Hygiene Ratings Scraper (FSA)",
+        "name": "uk-food-hygiene-ratings-scraper",
+        "username": "pohjastudio",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 61,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T11:04:35.107Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Scrape UK food hygiene ratings from the Food Standards Agency register: business name, type, address, postcode, rating, inspection scores and coordinates.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Pohja Studio",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.02,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "establishment-scraped": {
+                "eventPriceUsd": 0.003,
+                "eventTitle": "Establishment scraped",
+                "eventDescription": "Charged for each food establishment delivered to the dataset.",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "notifiedAboutFutureChangeAt": null,
+          "createdAt": "2026-08-23T15:21:46.666Z",
+          "startedAt": "2026-08-23T15:21:46.666Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-23T15:35:46.049Z"
+        },
+        "id": "fCRjbIhTxzRjdTZdy",
+        "url": "https://apify.com/pohjastudio/uk-food-hygiene-ratings-scraper"
+      },
+      {
+        "title": "UK Food Hygiene Ratings",
+        "name": "uk-food-hygiene-ratings",
+        "username": "wildorigins",
+        "stats": {
+          "totalBuilds": 18,
+          "totalRuns": 171,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T10:20:31.124Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 38,
+            "TIMED-OUT": 0,
+            "TOTAL": 38
+          }
+        },
+        "description": "🏷️ From $0.60 / 1K | Official FSA food hygiene ratings for every UK food business. Search by council, postcode, business type or rating, and isolate businesses rated 2 or below.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ksQo-HIdWRaEysFFdQsa6wnbEmvkEewkinum8KuNf7A/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vejBKdktlamoxM2ZRRmdMbEEtYWN0b3IteVREdVQ2eEFPRE5nSFptWUcteXJDTzhCbDNBby11ay1mb29kLWh5Z2llbmUtcmF0aW5ncy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Wild Origins",
+        "userPictureUrl": "https://images.apifyusercontent.com/Zc8sA0Pbl_3wCm06Z-od0494gzkpsk7V2c1jmGTEO04/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQm5HVU5zaG5mdVZOOUtwaTVFZi12TmlyX1I0ck9HLU9JeUtuaVgwTTFEcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlakJLZGt0bGFtb3hNMlpSUm1kTWJFRXRjSEp2Wm1sc1pTMWhSREZ1ZFdKUGQyZ3hMWEJ5YjJacGJHVXRjR2xqZEhWeVpTMDNNakF1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-16T20:48:02.984Z",
+          "startedAt": "2026-08-16T20:47:55.785Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Establishment",
+                "eventDescription": "Charged for each establishment returned in the dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00085
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0004
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-08-19T08:06:25.938Z"
+        },
+        "id": "yTDuT6xAODNgHZmYG",
+        "url": "https://apify.com/wildorigins/uk-food-hygiene-ratings"
+      },
+      {
+        "title": "UK Food Hygiene Ratings & Restaurant Leads Scraper",
+        "name": "uk-food-hygiene-ratings-scraper",
+        "username": "logiover",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 86,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T07:28:32.956Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Export hundreds of thousands of UK restaurants, takeaways, retailers and food businesses from the official Food Standards Agency API. Includes hygiene ratings, inspection dates, addresses, coordinates, business types and management scores.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/mWtSOgBJF3hR2QaB1AYFleL6d9nZTKmk3nlrlBQlh4g/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vR2pTNm5ROHFhdU9kcTlLR3ktYWN0b3ItTldyWTVrQUlkTnhXeDVSUTMteXFrcW5KUkpUZS11bm5hbWVkLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Logiover",
+        "userPictureUrl": "https://images.apifyusercontent.com/kxSRwmWqUkC5jJXw5FI9NYpfuhuSdnO30XYx7OCQu1M/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZ1JTQnpIUXlnbFY4YTFCakgwNjlyQUNheTdtQjRlenN2NFJmanFPTWNJTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSMnBUTm01Uk9IRmhkVTlrY1RsTFIza3RjSEp2Wm1sc1pTMVlWMUl6VEdGWGFVNVBMVWRxVXpadVVUaHhZWFZQWkhFNVMwZDVMWEJ5YjJacGJHVXRlR1ZYTkhaUE1GUlRWUzExYm01aGJXVmtMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-03T10:04:23.973Z",
+          "startedAt": "2026-08-03T10:04:23.973Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "NWrY5kAIdNxWx5RQ3",
+        "url": "https://apify.com/logiover/uk-food-hygiene-ratings-scraper"
+      },
+      {
+        "title": "UK Food Hygiene Ratings Scraper - FSA Register",
+        "name": "uk-food-hygiene-ratings-scraper",
+        "username": "automation_craft",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 79,
+          "totalUsers": 1,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T10:12:32.360Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search the official FSA hygiene register: 600,000+ UK restaurants, takeaways, pubs, shops and caterers. Filter by rating, council, business type or map radius. Get address, geocodes, score breakdown, inspection date and council contact. Export CSV or JSON. Pay per establishment, empty searches free.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/sXHLlW310YruMfT2zUgeCc0Y7zwM9LGwvaeWN5kAoTM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vVzE2M0hGU1FseEpTV0hCR0stYWN0b3ItNkFsVXdqM3ZsbFBYdXdodFQtZmhJdkFzRmlFZi1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Automation Craft",
+        "userPictureUrl": "https://images.apifyusercontent.com/oDx_o4RspeDKeBgzghZVUfUK8n3VPgp9qwqxtcXFAdU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vLVIyTnd2eG1VSjdHb0tQbml3UVFnWkQwOEl6WS1XWUEwME5YMGpIS0h4US9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMFJaTTNOVFJuQnFOWFo1Tm5aNFltaHVYMmRNYzJ0R1VXRlBVMUZwUWtNeFdrb3RORmROWldKMFNYTlNhbGxu.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": null,
+          "reasonForChange": "Store discount tiers (Silver 10% and Gold 20% below the unchanged base price), primary event marked, event titles clarified. No price increase.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "establishment": {
+                "eventTitle": "Establishment",
+                "eventDescription": "One food business from the FSA register: name, type, full address, geocodes, rating with score breakdown, inspection date and council contact.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0008
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-15T13:18:43.687Z",
+          "startedAt": "2026-09-15T13:18:43.687Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-15T13:35:45.621Z"
+        },
+        "id": "6AlUwj3vllPXuwhtT",
+        "url": "https://apify.com/automation_craft/uk-food-hygiene-ratings-scraper"
+      },
+      {
+        "title": "UK Food Hygiene Ratings Scraper",
+        "name": "fsa-uk-food-hygiene-ratings-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 154,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T03:42:36.320Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrapes UK food hygiene ratings from the Food Standards Agency. Returns each establishment with its rating, address, and business type. Filter by name, local authority, business type, or rating.",
+        "categories": [
+          "LEAD_GENERATION",
+          "TRAVEL",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/72r6WGnpBWEwrjtZh_EDDhzXMLqwM05VpqPsk6WePS4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItMXo5RGFlSVNjb1FyVXJmd0otOEJCdDhFZDBWZS1sb2dvLnBuZw.webp",
+        "notice": null,
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "startedAt": "2026-08-08T17:21:24.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "Result Item",
+                "eventDescription": "Charged once per result collected.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01867
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01711
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01556
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.014
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Initial pricing",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-07-24T17:45:04.352Z",
+          "notifiedAboutFutureChangeAt": "2026-07-24T17:45:24.475Z",
+          "notifiedAboutChangeAt": "2026-08-08T17:35:51.896Z"
+        },
+        "id": "1z9DaeIScoQrUrfwJ",
+        "url": "https://apify.com/parseforge/fsa-uk-food-hygiene-ratings-scraper"
+      },
+      {
+        "title": "France Restaurant Hygiene Ratings API (Alim'confiance)",
+        "name": "france-food-hygiene-inspections",
+        "username": "jet_mythology",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 6,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T12:38:33.633Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 5,
+            "TIMED-OUT": 0,
+            "TOTAL": 5
+          }
+        },
+        "description": "Official hygiene inspection results of French restaurants, bakeries, butchers and food plants (Alim'confiance): rating, date, SIRET, address and GPS. Filter by rating, activity and area, or get daily alerts on new inspections.",
+        "categories": [],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "jet_mythology",
+        "userPictureUrl": "https://images.apifyusercontent.com/jv3rmufTjY_rvp86lB-Uaorn8WWVAwRyVbUyUP0pzaA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWllWR1JkclJ5Z0ZVMThXb3FvYTE1TTh5VGkxNDc3alA0VTZHbE5vSlE5SS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVVF5TTBKNVZsZEhkVXgzWTNaRFptUkNhREJEZUdKVGIxZzNNa3B6VDNOMGMxWkllSE5UWkhRMVpsZzNTemg2YWs0OWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.025
+              },
+              "inspection": {
+                "eventTitle": "Inspection returned",
+                "eventDescription": "Charged for each inspection result in the output.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-12T12:13:26.491Z",
+          "createdAt": "2026-10-12T12:13:26.357Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Vady2O7HBTYNwDjfj",
+        "url": "https://apify.com/jet_mythology/france-food-hygiene-inspections"
+      },
+      {
+        "title": "UK New Food Business Leads - FHRS Hygiene Ratings",
+        "name": "fhrs-food-hygiene-scraper",
+        "username": "scrapersdelight",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 28,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T10:46:40.923Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 24,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "From $0.50 per 1,000 establishments, no start fee. Newly rated and newly registered UK food businesses from the FSA FHRS register, by date window: name, address, postcode, rating, sub-scores, geocode, council. All 363 councils, 613,379 premises, no API key. No business email or phone in this source.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "NEWS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/mhuvSX7g-PctFyE1jaCWhlOvf6UQVk8wJxFZ3-T_zp4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQlRna3dMRUM0YlpWemI4VmItYWN0b3ItdHRSMG1kc3lnN0hON25UMmctQlJWOHEzMEY0Zi1maHJzLWZvb2QtaHlnaWVuZS1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Delight",
+        "userPictureUrl": "https://images.apifyusercontent.com/SjUfVS2plLJy6kHfthU67C5f9v0e6wVrAbVTS2w1R3A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRmxwWnZpaF9memhGWnlPTEI4Ml9FRGhTQm1pUFRiYWJUWWNia00ySUhnNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRbFJuYTNkTVJVTTBZbHBXZW1JNFZtSXRjSEp2Wm1sc1pTMWxTRVJxZW5BMU4wOVlMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZmFuVXhhek5tYW5VeGF6Tm1hblV4YXkxamJHVmhiaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "establishment-scraped": {
+                "eventTitle": "Per establishment returned",
+                "eventDescription": "Charged once for each food business delivered to your dataset. Establishments outside your date window or filters are never delivered and never charged, duplicates across page boundaries are billed once, and there is no run-start fee - so a run that matches nothing costs nothing. Councils that could not be reached are reported in RUN_SUMMARY and charged nothing.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.0005
+              }
+            }
+          },
+          "startedAt": "2026-09-17T00:32:36.000Z",
+          "createdAt": "2026-09-17T00:32:37.445Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ttR0mdsyg7HN7nT2g",
+        "url": "https://apify.com/scrapersdelight/fhrs-food-hygiene-scraper"
+      },
+      {
+        "title": "UK Location Risk & Amenity Report",
+        "name": "uk-location-risk-report",
+        "username": "hllerdgn80",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 18,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T19:52:37.000Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 16,
+            "TIMED-OUT": 0,
+            "TOTAL": 16
+          }
+        },
+        "description": "For any UK postcode: live Environment Agency flood warnings, police.uk street crime counts, and FSA food hygiene ratings nearby, combined into one transparent report with a plain-English composite score.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Halil Erdogan",
+        "userPictureUrl": "https://images.apifyusercontent.com/CHnwFnpDmdGGuRu6kmddH6JSeO7rhizAbhi-AcRrveA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaFUxWG56WlExMnRBTVdPMUJhTFIzZU16RVJQQkVsZFN2d3BqeHlWTDJKcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURGxIY0VSSlJtNUxNV3N4UW5Zd05HWXdibFJOVUMxb2FraEVlVkJVUlRWbGRsQk1abm96TVY5MmQzZFFVMkZuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-27T19:18:31.421Z",
+          "createdAt": "2026-09-27T19:18:38.242Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "7BIG01mS3Rp2iYXvi",
+        "url": "https://apify.com/hllerdgn80/uk-location-risk-report"
+      },
+      {
+        "title": "US & UK Public Records MCP for AI Agents",
+        "name": "public-records-mcp",
+        "username": "digital_influx",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 2,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-06T20:37:09.385Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "MCP server for Claude, ChatGPT, Gemini and Cursor: official public records. Contractor licenses, NPI providers, trucking companies, federal contracts, restaurant inspections, building permits, new businesses, UK house prices and food hygiene.",
+        "categories": [
+          "MCP_SERVERS",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/vfWE_3pEA40M_GKcqfnQOdSf_Iq4NapM8sLFDlQq_dw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFNYc09TYVpXbUZXVmJYRkstYWN0b3IteTFOZVQyc0JrUUZMYTJvVW4tcGpTZk9pOE1pbi1wdWJsaWMtcmVjb3Jkcy1tY3AucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Bruno Petrelli",
+        "userPictureUrl": "https://images.apifyusercontent.com/JbGzHhDwRJFVwoyiaIzAvOF2DhnYvDEJRE_d2vJ_ZFU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTzFkaFdyakctM1Y0U0FhVThYUE5zZ3RkWi1Fb1dPQ2JldXhmMHlqNXdkRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMFJRZEdkVVNIaHJWSEV6VFRCQ2IwNURia00xV1VVdFdYQmxSVE00U25GUVp6QjNPVTlDVWt0SmVHVXllV3BuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE"
+        },
+        "id": "y1NeT2sBkQFLa2oUn",
+        "url": "https://apify.com/digital_influx/public-records-mcp"
+      },
+      {
+        "title": "UK Police Crime Statistics Search",
+        "name": "uk-police-crime-data",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 712,
+          "totalUsers": 12,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T18:34:43.531Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 53,
+            "TIMED-OUT": 0,
+            "TOTAL": 53
+          }
+        },
+        "description": "Search street-level crime records from all 43 police forces across England, Wales, and Northern Ireland using the official UK Police API.",
+        "categories": [
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/zCinzoEKGMUTyiyWB-ccY1kZMSZOLpvkwI7KTL60UsA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vczJGTTV1Rkg5RjJlWjRwWjktYWN0b3ItamlWa3RHQU96NXJ2MTA4UzItMHRSa1Nmc0poYi11ay1wb2xpY2UtY3JpbWUtZGF0YS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-03-13T20:41:31.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "crime-fetched": {
+                "eventTitle": "Crime fetched",
+                "eventDescription": "Charged per crime data record retrieved from UK Police API.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-02-27T19:41:55.791Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-02-27T19:42:15.931Z"
+        },
+        "id": "jiVktGAOz5rv108S2",
+        "url": "https://apify.com/ryanclinton/uk-police-crime-data"
+      },
+      {
+        "title": "UK Food Business Leads & Change Monitor",
+        "name": "new-food-business-leads-uk",
+        "username": "mutech",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 38,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T07:00:14.108Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 12,
+            "TIMED-OUT": 0,
+            "TOTAL": 12
+          }
+        },
+        "description": "Monitor UK food-business candidate leads using official FSA data. Track newly observed businesses and possible business changes, with names, addresses, ratings and source links. Built-in sector exclusions and repeat-run monitoring for agencies and suppliers.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/Lgz534-N3DRAPFGKOx3YpaOtj82BU4GN2aZdPeID4wI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSnZUSHZObkh0MmNxZzRjNkgtYWN0b3ItZFFKSWcwR0pCYTZnZnJIWFYtRTI1Ukh2UTRGSC1NYXBfcGluX2Zvb2Rfc2hvcF9pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Mu Tech",
+        "userPictureUrl": "https://images.apifyusercontent.com/ROuSlwyA0DERphSTqnVtnRMTsl_-PwFz4waOlftgv4A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcU1JaHcwbW1ocFdyUlpPR1BwRDRSQ3M2STBYcGtUSEdwVUVaQVlKSm5Cby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUR3hRWTA1aFZFaHFjell4VTNkSVVYRk5lV3h1TFc5a2JEaGFWRUZzYkRGRGVDMU1hVmxqVXpZNE4wdFNTMDVuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": 0.1,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-04T12:42:15.076Z",
+          "createdAt": "2026-10-04T12:42:15.516Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "dQJIg0GJBa6gfrHXV",
+        "url": "https://apify.com/mutech/new-food-business-leads-uk"
+      },
+      {
+        "title": "UK Food Business First-Seen Leads",
+        "name": "uk-food-business-first-seen-leads",
+        "username": "afkdigital",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 21,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T19:52:38.781Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 2,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 4
+          }
+        },
+        "description": "Track FHRS food businesses first observed after your prior complete scan. Filter by council, region, business type and rating. No opening-date claims or private contacts.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "AFK Digital",
+        "userPictureUrl": "https://images.apifyusercontent.com/wi5EUNNsSEjxWvB5w-DiSLLVTILewh_584Y7aipxUd8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaEptR0dpaDVKMUtNS1p2OERnY3hucnZGcGR4MFlRNUFvNWtZQVBUb09aay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjV2xCU1dObVVEWTRjVTVyVVdsWU0wTXRjSEp2Wm1sc1pTMXNVMHhWYldkWk1IcGxMVUZHUzE5RWFXZHBkR0ZzWDJkbGIyMWxkSEpwYTE5dGIyNXZaM0poYlY5c2IyZHZjM1V1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": 0,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "first-seen-business": {
+                "eventTitle": "First observed food business",
+                "eventDescription": "One FHRS record matching the filters first observed after a complete previous snapshot. No baseline, duplicates, filtered items or FHRS errors charged.",
+                "eventPriceUsd": 0.0025,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-10-13T12:44:25.306Z",
+          "startedAt": "2026-10-13T12:44:25.306Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "OTeUhqq4xCdJidVBo",
+        "url": "https://apify.com/afkdigital/uk-food-business-first-seen-leads"
+      },
+      {
+        "title": "UK Food Business Monitor - FSA hygiene register",
+        "name": "uk-food-monitor",
+        "username": "minimal_ricegrass",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 85,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T07:00:08.734Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Watches the Food Standards Agency register for newly registered food businesses and hygiene-rating changes in the local authorities you choose. Each scheduled run emits only what changed since the last run, with address, rating and coordinates, plus optional webhook POST.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "FJ Banks",
+        "userPictureUrl": "https://images.apifyusercontent.com/hrM0uTgXlmdAa6C-5xP8s1WPm2RbIoX-Wi1REN1noYQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTW5XdTcwNmZRZnBzTzFDSEhKbHBXenlPQ0hicmdHSWR1dFpIUks4cGRlYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURlpRV2pBMmVEWTFSak5XZFVkNVowTlBUa1JwZFhBdFdFWTBjMFp1V0UxRE4xRlVWSFE0Ykc1SFpVTkNTMHRQUWxnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.04
+              }
+            }
+          },
+          "startedAt": "2026-09-04T17:38:37.775Z",
+          "createdAt": "2026-09-04T17:38:38.159Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-04T18:05:50.078Z"
+        },
+        "id": "rHPBvlpPRdQPGo371",
+        "url": "https://apify.com/minimal_ricegrass/uk-food-monitor"
+      },
+      {
+        "title": "Location Risk — Multi-Hazard Underwriting Grade",
+        "name": "location-risk-report",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 204,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-16T15:32:39.458Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 24,
+            "TIMED-OUT": 2,
+            "TOTAL": 26
+          }
+        },
+        "description": "Comprehensive location risk assessment tool that combines up to 15 data sources — FEMA disaster declarations, USGS earthquake data, NOAA weather alerts, GDACS global disasters, UK flood warnings, EPA ECHO enforcement, OpenAQ air quality, crime statistics, OpenStreetMap points of interest, EV...",
+        "categories": [
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": null,
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "analysis-run": {
+                "eventTitle": "Analysis run",
+                "eventDescription": "Full intelligence analysis run",
+                "eventPriceUsd": 0.4,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-03-13T19:41:22.486Z",
+          "startedAt": "2026-03-13T19:41:22.486Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "TAVwTgLG4EzvAYwnp",
+        "url": "https://apify.com/ryanclinton/location-risk-report"
+      },
+      {
+        "title": "UK Business Trust Check: Verify Any UK Company or Trader",
+        "name": "uk-business-trust-check",
+        "username": "nerolabs",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 20,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T22:28:32.897Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 15,
+            "TIMED-OUT": 0,
+            "TOTAL": 15
+          }
+        },
+        "description": "Verify any UK company or trader before you pay. Returns a verdict (looks_legitimate, caution, high_risk, cannot_verify), 0-100 score and cited reasons from Companies House, The Gazette, UK Sanctions List and FSA. Input: name, website or company number; list, CSV or Sheet. Per business. x402, MCP.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/XFAC_1SMVtPtoh-i1QdpAKSvSIjvU_GNj4X5F9zpnjw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veGdEZXYxdkN0NHlBR1duVHctYWN0b3ItWHh2eDFqR2lod2ZlVmlvRUQtNmlkdlhhM0FFbC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Adam Pearce",
+        "userPictureUrl": "https://images.apifyusercontent.com/mjUr3h4hz4H7cesYAJSFSNmk9q-SqEBzZiGDZlSimYQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vanU2bjR2QlZXQ2pidVN1dmhMRTdWdUh0cU84T0IyemVxbWNpSVFxaVZMZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlR2RFWlhZeGRrTjBOSGxCUjFkdVZIY3RjSEp2Wm1sc1pTMW5XV3RuZUc5R1VWRlVMVU5vWVhSSFVGUmZTVzFoWjJWZlFYVm5YelZmWHpJd01qWmZYekE1WHpVM1h6VTRYMEZOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "business-checked": {
+                "eventTitle": "Business checked",
+                "eventDescription": "One business resolved and checked against Companies House, The Gazette, the UK Sanctions List and (for food businesses) the FSA, including a confident 'no register match' result. Rows with no identifier or that failed are not charged.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.035
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.035
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.035
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-30T20:20:19.843Z",
+          "startedAt": "2026-09-30T20:20:18.000Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Xxvx1jGihwfeVioED",
+        "url": "https://apify.com/nerolabs/uk-business-trust-check"
+      },
+      {
+        "title": "UK Food Business Data — FSA Hygiene Ratings & Addresses",
+        "name": "uk-food-business-data",
+        "username": "foxlabs",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 53,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T12:46:39.019Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search the UK Food Standards Agency register of food businesses by name, town or postcode. Returns business name and type, full address and postcode, hygiene rating with inspection date, the hygiene/structural/management sub-scores, local authority and coordinates.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/nus8N4Fw5YYrcwQwuXq0-XgrpCxfJjQPy9EzrlNZyn0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1htTW5VaXhrRTdUSkdlSWYtYWN0b3ItYjNlcDgxd2QwcWVwd0RUa3otT3haZWpXZ05wZC1pbWFnZXNfJTI4OSUyOS5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Berkan Kaplan",
+        "userPictureUrl": "https://images.apifyusercontent.com/kMBdvurXqT-jNhSrS0j6jlsQX8nxa_26e0fFkIgDWSw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veWtzd1Y4WDVsOUlZdGN0dHRxbjlpTENFWE5tRFhfN2tPZjE0SlNZeC1DYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMWh0VFc1VmFYaHJSVGRVU2tkbFNXWXRjSEp2Wm1sc1pTMVRNMDlLWTFsMFVXdDJMVWxOUjE4eU1ESTJNRE13TWw4eE1qVTNOVFZmY21WemFYcGxaQzVLVUVWSA.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-record": {
+                "eventTitle": "Company record",
+                "eventDescription": "One company successfully returned from the source",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-08-22T19:30:59.363Z",
+          "startedAt": "2026-08-22T19:30:59.363Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "b3ep81wd0qepwDTkz",
+        "url": "https://apify.com/foxlabs/uk-food-business-data"
+      },
+      {
+        "title": "NYC Restaurant Inspections Scraper",
+        "name": "nyc-restaurant-inspections-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 145,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T22:28:32.212Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrapes NYC restaurant inspection records from the Department of Health. Returns each inspection as a flat row with grade, score, violations, and date. Filter by borough and letter grade.",
+        "categories": [
+          "TRAVEL",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/0C12gSiX8F3q9s-H1hR8SCkSpcu7-ruS9n8kZ8AQsH4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItZTZISGFyMzFpSnhBcGk2NGMtM2dWUndKc2RQZS1ueWMtcmVzdGF1cmFudC1pbnNwZWN0aW9ucy1zY3JhcGVyLnBuZw.webp",
+        "notice": null,
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.021
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02033
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01967
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.019
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-25T20:55:00.000Z",
+          "createdAt": "2026-05-25T20:58:48.211Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "e6HHar31iJxApi64c",
+        "url": "https://apify.com/parseforge/nyc-restaurant-inspections-scraper"
+      },
+      {
+        "title": "UK Food Business Leads - New Openings & Hygiene Fails",
+        "name": "uk-food-business-leads",
+        "username": "wellbuilt_zythem",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 40,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T09:54:35.522Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 23,
+            "TIMED-OUT": 2,
+            "TOTAL": 25
+          }
+        },
+        "description": "Find UK food businesses at the moment they need you: the ones that just registered and are awaiting their first inspection, and the ones that just failed a hygiene inspection. Swept from all 363 local authority registers via the official Food Standards Agency API.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/lgsPULVPUwzU9ttVieVHkat6oh9sb-XnEpv9sDYKSfo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTGRMWUk3aGdVMTkya0tEcEstYWN0b3ItNHRiZkUzOThDWGtEYmo0RnAtcndEZkM2OUVXTy0wMi1ob3N0ZWxlcmlhLXVrLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Carlos Escanez",
+        "userPictureUrl": "https://images.apifyusercontent.com/CpbxtYGMsN6olGQtkhkeneG-25ODQvD485ps_OLnUeg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVVp5bFdQc3M3bGFjc2pTMzlWc3Q5cHB3M1Z4bFlSNjRJUzdpN1BiMWkyVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6STRNelU0TURFeU16OTJQVFE.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "record": {
+                "eventTitle": "food business record",
+                "eventDescription": "One food business from the official FSA hygiene register, with rating and region.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-09-19T06:02:47.118Z",
+          "createdAt": "2026-09-19T06:02:48.121Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-21T12:36:30.233Z"
+        },
+        "id": "4tbfE398CXkDbj4Fp",
+        "url": "https://apify.com/wellbuilt_zythem/uk-food-business-leads"
+      },
+      {
+        "title": "US Food Safety Inspections - 7 sources, one result vocabulary",
+        "name": "us-food-inspections",
+        "username": "formal_sadness_xvx",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 84,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-16T15:24:37.593Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Restaurant and food-facility inspections from 7 US health departments (~2.3M records) normalised into one schema with a unified pass/fail/conditional result.",
+        "categories": [
+          "LEAD_GENERATION",
+          "NEWS",
+          "SEO_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Rishi Vinodkumar",
+        "userPictureUrl": "https://images.apifyusercontent.com/--xKrTOVrUxWW5uJQKBpGPm2DQH9hYosr6im7LlOjzs/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vX1pFUERXZ2ItTlBaYlUyVFF1M3h2bTZ5TGJJa3pONWZJclF4SjdyanNnSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbXRzVWpCWWJraGxWR3RVYVVOak5pMVZkbkpWU1hKTk9FeERRV1pKUWpOdFFsaDRjM05RUkZkS1ExQmFVekJSUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              },
+              "inspection-record": {
+                "eventTitle": "inspection record",
+                "eventDescription": "each inspection record",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-01T22:44:25.225Z",
+          "createdAt": "2026-08-01T22:44:25.575Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "zVqsaepLaXMTiYNyX",
+        "url": "https://apify.com/formal_sadness_xvx/us-food-inspections"
+      },
+      {
+        "title": "Zoover Reviews Scraper",
+        "name": "zoover-reviews-scraper",
+        "username": "knagymate",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 227041,
+          "totalUsers": 5,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-17T07:05:28.130Z",
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 3,
+            "SUCCEEDED": 66469,
+            "TIMED-OUT": 0,
+            "TOTAL": 66472
+          }
+        },
+        "description": "Scrape guest reviews and ratings from Zoover.nl hotel pages into a structured dataset. Get review text, scores, travel dates, reviewer details, category ratings, hotelier replies, and images. Filter by cutoff date, cap results per hotel, and export to JSON, CSV, or Excel.",
+        "categories": [
+          "TRAVEL",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/gcdqfiuCPXG3s0QiN2SBYAr1DX5RvJ9ZPyL_0cJGjxg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWTJyZ3M1OHl0YlFQc2VjY00tYWN0b3ItS3hWaFpJUEVKWWdvamRJVG8tdmgxcGViaXJhby0xNjEwMDc3Mi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 5,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "knagymate",
+        "userPictureUrl": "https://images.apifyusercontent.com/eeMiKPHQPr2KkEKW9zwE6hxarQ1KmtEf83Trd_CcuUc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdDBJNjVQMXVmX3RkQ2NsQTM0TGllNmlWSUJCNzR0RjFqaUpYVXZjb3VJYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMjlDYUMxck1VTlRkamhmYTBKT1NtNDRNMjV0YlU0dGJVVXhOSFZDYlRNdFVIQTBiMHRXZDFKcmJFYzRPWEkzZDNJ.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.002
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "Cost per review successfully scraped from Zoover.nl.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00433
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00367
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-06T00:11:26.934Z",
+          "createdAt": "2026-07-06T00:11:27.283Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "KxVhZIPEJYgojdITo",
+        "url": "https://apify.com/knagymate/zoover-reviews-scraper"
+      },
+      {
+        "title": "BORG Open Restaurants Inspections (cityofnewyork)",
+        "name": "borg-open-restaurants-inspections-cityofnewyork",
+        "username": "acid-base",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 104,
+          "totalUsers": 3,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-17T05:08:39.087Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "No API key or login required. Extract structured open restaurants inspections (cityofnewyork) data on demand — clean JSON output, run via API, schedule and monitor runs, or integrate with your stack.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Daniel Yates",
+        "userPictureUrl": "https://images.apifyusercontent.com/nu8HVHmLjXG0wRlX2shTJ5PJkZsS8f1MSuWC8fc7ZSE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWG04dDd0U0tJMUMwaVVILU9kRzJhUkhZZkx2VUVpWHZlT0xMb2hsUEpXZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbGsxZEVsaExYcFRhMjE0VjAxeVMyRnZiRTl4UzJOak0xVmtaVlozTmtWYVMycHRhMWxWZUVSV1JEQllkbTlaU0hZ.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-05T05:53:07.869Z",
+          "startedAt": "2026-07-05T05:53:07.869Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "L2v3Np4CapsWjaaIG",
+        "url": "https://apify.com/acid-base/borg-open-restaurants-inspections-cityofnewyork"
+      },
+      {
+        "title": "Chicago Food Inspection Scraper",
+        "name": "chicago-food-inspections",
+        "username": "copious_atoll",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 195,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-16T13:14:46.460Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Extract Chicago food inspection data. Search by name, type, zip, result, risk level. Returns violations, scores, inspection dates, GPS coordinates. Socrata API, no proxy needed.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Grim R",
+        "userPictureUrl": "https://images.apifyusercontent.com/Olc4yg0RWtcnljtRkZeeVuYGVRlra54_fnUJUxfPrjs/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vU1VIQS1YSzJ6cnRUbFhvRXdVVk42RDRSN2RMYUgyZE1BUi1jX2RSVHpQVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUSHBIVERsck9XSnVhVU5KWjNNM2RITkdkR2RoU0ZSbE9YWmpVakppYjFZMlVFOWZSMnhOTWtocGFtWkpSbnBwVjFJOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-04-05T00:00:00.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "One result record",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "createdAt": "2026-03-21T00:05:18.735Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-03-21T00:05:39.058Z"
+        },
+        "id": "JvfQF7bsX6jLKNncs",
+        "url": "https://apify.com/copious_atoll/chicago-food-inspections"
+      },
+      {
+        "title": "CFIA SFCR Food Licence Monitor: Status Alerts",
+        "name": "ca-cfia-sfcr-licence-portfolio-monitor",
+        "username": "plym-actor-factory",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 27,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T11:54:37.625Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 19,
+            "TIMED-OUT": 0,
+            "TOTAL": 19
+          }
+        },
+        "description": "Watch CFIA SFCR food licence numbers for appear/drop, establishment and DBA changes from the official Safe Food for Canadians register. Pay only per delivered change.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Daniel Witney",
+        "userPictureUrl": "https://images.apifyusercontent.com/P1uggaJ7WUFX8y3NrHxjb6YlIKQ8XuxpF2i0jUYVCWg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN19fN2wxWmJhbXJnZmZEODJmb19XM1BoaWxOb2hpNnMzWkMwRE54clI3QS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TXhNVEl6TlRBNU5EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "cfia-sfcr-licence-status-event-delivered": {
+                "eventTitle": "CFIA SFCR licence status event delivered",
+                "eventDescription": "Charged once per unique watched Food licence number directory/establishment/DBA event successfully pushed. Never charged for RUN_STATUS, baselines, quiet books, invalids, duplicates, retries, or fixture health runs.",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "reasonForChange": "Initial PPE Phase 3 #36 CFIA SFCR (private)",
+          "isPriceChangeNotificationSuppressed": true,
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-17T03:49:33.555Z",
+          "startedAt": "2026-09-17T03:49:33.555Z"
+        },
+        "id": "4r9jl5JDjmiuVsFK3",
+        "url": "https://apify.com/plym-actor-factory/ca-cfia-sfcr-licence-portfolio-monitor"
+      },
+      {
+        "title": "🚨 Global Product Recalls — CPSC + FDA (Food/Drug/Device)",
+        "name": "global-product-recalls",
+        "username": "inexhaustible_glass",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 99,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-16T12:16:44.780Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "One unified, normalized feed of official product-safety recalls: US CPSC consumer products + FDA food, drug & medical-device enforcement. Search by brand, product, company, hazard or date. Product, manufacturer, hazard, severity, remedy, injuries, UPC, country, images & official URL. Free, no key.",
+        "categories": [
+          "ECOMMERCE",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Hitman studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/-dGl0H4SMe4cEFtN8UXxE58LOeVSdgZw0FkVyr_0kGY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOXlPcDNDdExSX25iUHB6WVF0aVBYOEFZa1NJbW8yc25BaVBLTVp5akY1RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbnBRTFcxSVozaEJVRmxwTFV0RE9HRnhUR3RtV0RSMVQwNVVRemRyTTFaUlpXZFdTbFkyY1V0WVZrbDBUblpCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.02
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-17T17:25:27.273Z",
+          "createdAt": "2026-07-17T17:25:27.883Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "W9w8VcQV5B1pvKFCn",
+        "url": "https://apify.com/inexhaustible_glass/global-product-recalls"
+      },
+      {
+        "title": "Restaurant Inspections & New Restaurant Openings: 7 US Cities",
+        "name": "us-food-inspection-monitor",
+        "username": "registryfeeds",
+        "stats": {
+          "totalBuilds": 17,
+          "totalRuns": 93,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-17T09:46:31.104Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Restaurant health inspection grades, scores and pass/fail results for NYC, Chicago, San Francisco, Austin, Cincinnati, Boston and Marin County, plus alerts when a new restaurant opens or fails an inspection. Official city data, one deduplicated record per restaurant.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Zach Wallace",
+        "userPictureUrl": "https://images.apifyusercontent.com/7fm2yhXNrHwwBtOcbqztvxQGXwOxusG55yCVgeUCYa0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20va1hVZXlIaERwVlhSS3FlWGl6NHNWOF8yWV8yM1BZdWU4Q01pcDZtYU5tZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RXdORGt5TWpBMk5qOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single establishment record in the default dataset.",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-23T17:32:01.756Z",
+          "startedAt": "2026-07-23T17:32:01.756Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "g8BqbBih8Sj2fvxpS",
+        "url": "https://apify.com/registryfeeds/us-food-inspection-monitor"
+      },
+      {
+        "title": "NYC Restaurant Health Inspections Scraper — No Login, $10/1k",
+        "name": "nyc-restaurant-inspections",
+        "username": "fortuitous_pirate",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 247,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T16:16:44.049Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search NYC restaurant health inspection grades and violations. Get grades, inspection dates, and violation details. For food safety research. No login or cookies. MCP-ready for AI agents. $10 per 1,000 records.",
+        "categories": [
+          "ECOMMERCE",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Fortuitous Pirate",
+        "userPictureUrl": "https://images.apifyusercontent.com/8JeKpijqTl7G8i50eCe0PpBnie_-hPRhosraMzNT46o/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNXNtNUpBWHdTbWxZbVV3VUxQT3AyblFTN1hSZ3JRS3Qtdk1CRmVlMlBfVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RXlNelEwTWpNMU1B.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-13T00:00:00.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result item",
+                "eventDescription": "Single result",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-28T15:42:04.970Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-28T15:42:25.288Z",
+          "notifiedAboutChangeAt": "2026-10-13T00:30:21.188Z"
+        },
+        "id": "mbgcnfgJsR9uOJaIV",
+        "url": "https://apify.com/fortuitous_pirate/nyc-restaurant-inspections"
+      }
+    ]
+  }
+}

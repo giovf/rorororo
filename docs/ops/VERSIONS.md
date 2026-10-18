@@ -10,10 +10,10 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
 | What | Pinned | Where | Source of truth | Kept current by |
 | --- | --- | --- | --- | --- |
 | Claude model, build / burn-down / exchange / review routines | `claude-fable-5-1` | cloud routine configs (`docs/routines/README.md`) | https://platform.claude.com/docs/en/about-claude/models/overview | versions check → handoff → interactive session updates the routines |
-| Claude model, build fallback | `claude-opus-5` | `trig_01GraXN5FPXmq5M9wJSYYeHN` | same | same |
-| Claude model, metrics / triage / report / retro routines | `claude-sonnet-5` | their routine configs | same | same |
+| Claude model, build fallback | `claude-opus-5-5` | `trig_01GraXN5FPXmq5M9wJSYYeHN` | same | same |
+| Claude model, metrics / triage / report / retro routines | `claude-sonnet-5-5` | their routine configs | same | same |
 | Node on GitHub runners | `22` | `.github/workflows/*.yml` (`node-version`) | https://nodejs.org/dist/index.json (active LTS) | versions check → handoff; the repo moves one LTS at a time |
-| npm packages (hono, wrangler, vitest, playwright, …) | `package-lock.json` | root | npm registry | Dependabot monthly, grouped; minor/patch auto-merged when the gate is green (`dependabot` workflow), majors by an attended session |
+| npm packages (hono, wrangler, vitest, playwright, …) | `package-lock.json` | root | npm registry | Dependabot monthly, grouped; minor/patch auto-merged when the gate is green (`dependabot` workflow), majors by an attended session; a red gate files foundry `dependabot-pr-<N>` and a `watchdog | dependabot:` line within 6 h (`scripts/dependabot-gate.ts`, 2026-10-18) |
 | GitHub Actions (`actions/checkout`, `setup-node`, `upload-artifact`) | per workflow | `.github/workflows/*.yml` | GitHub | Dependabot monthly, grouped, same merge rule |
 | Playwright Chromium | `npx playwright install` at run time | demo video / media jobs | Playwright | follows the `playwright` package version |
 | Cloudflare Worker compatibility dates | `wrangler.jsonc` per Worker | gankdat, landing, license-worker | https://developers.cloudflare.com/workers/configuration/compatibility-dates/ | reviewed when wrangler majors land (attended) |
@@ -23,3 +23,8 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
 - 2026-10-16 — register created. The models page already listed Opus 5.5, Sonnet 5.5 and Haiku 5.5
   (Fable 5.1 remains the newest Fable); the interactive session tested the new ids on the routine
   platform the same day (see §8 of `docs/STRATEGY.md` for the outcome).
+- 2026-10-16 — first check found Opus 5 → 5.5 and Sonnet 5 → 5.5 behind the page, and Node 22 vs LTS 24.
+  Two one-off probe routines answered on `claude-sonnet-5-5` and `claude-opus-5-5` (both "model ok",
+  2–7 s), so the four Sonnet routines and the Opus fallback moved to 5.5 the same hour (probes left
+  disabled; delete them at https://claude.ai/code/routines). Node 24 is a foundry queue item
+  (`node-24-runners`): every workflow's `node-version` plus the devcontainer, one PR, gate green.

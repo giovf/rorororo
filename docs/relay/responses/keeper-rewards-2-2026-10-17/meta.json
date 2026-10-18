@@ -1,0 +1,707 @@
+{
+  "request": "keeper-rewards-2-2026-10-17",
+  "fetched_at": "2026-10-17T18:20:02.273Z",
+  "results": [
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x320ba95\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:20.014Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "82"
+      },
+      "file": "1.json",
+      "bytes": 82,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":15,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x320ba95\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:27.315Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":29,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x320ba95\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:27.415Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "3.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320ba96\",\"toBlock\":\"0x3216355\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:27.651Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "82"
+      },
+      "file": "4.json",
+      "bytes": 82,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":16,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320ba96\",\"toBlock\":\"0x3216355\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:34.749Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":30,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320ba96\",\"toBlock\":\"0x3216355\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:34.790Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "6.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3216356\",\"toBlock\":\"0x3220c15\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:34.851Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "82"
+      },
+      "file": "7.json",
+      "bytes": 82,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":17,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3216356\",\"toBlock\":\"0x3220c15\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:41.939Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "8.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":31,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3216356\",\"toBlock\":\"0x3220c15\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:41.983Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "9.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3220c16\",\"toBlock\":\"0x322b4d5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:42.036Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "82"
+      },
+      "file": "10.json",
+      "bytes": 82,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":18,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3220c16\",\"toBlock\":\"0x322b4d5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:49.162Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "11.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":32,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3220c16\",\"toBlock\":\"0x322b4d5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:49.198Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "12.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322b4d6\",\"toBlock\":\"0x3235d95\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:49.250Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "82"
+      },
+      "file": "13.json",
+      "bytes": 82,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":19,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322b4d6\",\"toBlock\":\"0x3235d95\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:56.338Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "14.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":33,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322b4d6\",\"toBlock\":\"0x3235d95\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:56.380Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "15.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3235d96\",\"toBlock\":\"0x3240655\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:18:56.431Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "82"
+      },
+      "file": "16.json",
+      "bytes": 82,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":20,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3235d96\",\"toBlock\":\"0x3240655\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:19:03.518Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "17.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":34,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3235d96\",\"toBlock\":\"0x3240655\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:19:03.555Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "18.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240656\",\"toBlock\":\"0x324af15\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:19:03.605Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "82"
+      },
+      "file": "19.json",
+      "bytes": 82,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":21,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240656\",\"toBlock\":\"0x324af15\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:19:10.693Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "20.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":35,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240656\",\"toBlock\":\"0x324af15\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:19:10.727Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "21.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":8,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x320ba95\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:10.778Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "82"
+      },
+      "file": "22.json",
+      "bytes": 82,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":22,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x320ba95\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:17.867Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "23.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":36,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x320ba95\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:17.909Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "24.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":9,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320ba96\",\"toBlock\":\"0x3216355\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:17.960Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "82"
+      },
+      "file": "25.json",
+      "bytes": 82,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":23,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320ba96\",\"toBlock\":\"0x3216355\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:25.056Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "26.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":37,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320ba96\",\"toBlock\":\"0x3216355\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:25.096Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "27.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":10,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3216356\",\"toBlock\":\"0x3220c15\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:25.148Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "83"
+      },
+      "file": "28.json",
+      "bytes": 83,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":24,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3216356\",\"toBlock\":\"0x3220c15\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:32.239Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "29.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":38,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3216356\",\"toBlock\":\"0x3220c15\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:32.295Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "30.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":11,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3220c16\",\"toBlock\":\"0x322b4d5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:32.348Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "83"
+      },
+      "file": "31.json",
+      "bytes": 83,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":25,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3220c16\",\"toBlock\":\"0x322b4d5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:39.442Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "32.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":39,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3220c16\",\"toBlock\":\"0x322b4d5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:39.485Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "33.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":12,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322b4d6\",\"toBlock\":\"0x3235d95\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:39.537Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "83"
+      },
+      "file": "34.json",
+      "bytes": 83,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":26,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322b4d6\",\"toBlock\":\"0x3235d95\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:46.624Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "35.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":40,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322b4d6\",\"toBlock\":\"0x3235d95\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:46.658Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "111"
+      },
+      "file": "36.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":13,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3235d96\",\"toBlock\":\"0x3240655\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:46.713Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "83"
+      },
+      "file": "37.json",
+      "bytes": 83,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":27,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3235d96\",\"toBlock\":\"0x3240655\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:53.804Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "38.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":41,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3235d96\",\"toBlock\":\"0x3240655\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:53.841Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "39.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://mainnet.base.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":14,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240656\",\"toBlock\":\"0x324af15\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:19:53.898Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://mainnet.base.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "83"
+      },
+      "file": "40.json",
+      "bytes": 83,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":28,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240656\",\"toBlock\":\"0x324af15\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:20:00.992Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "41.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":42,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240656\",\"toBlock\":\"0x324af15\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:20:01.034Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "42.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":43,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3248806\",\"toBlock\":\"0x324af16\",\"topics\":[\"0x9bc239f1724cacfb88cb1d66a2dc437467699b68a8c90d7b63110cf4b6f92410\"]}]}",
+      "fetched_at": "2026-10-17T18:20:01.090Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "43.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":44,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3248806\",\"toBlock\":\"0x324af16\",\"topics\":[\"0x9bc239f1724cacfb88cb1d66a2dc437467699b68a8c90d7b63110cf4b6f92410\"]}]}",
+      "fetched_at": "2026-10-17T18:20:01.125Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "44.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":45,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x324af16\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf\"}]}",
+      "fetched_at": "2026-10-17T18:20:01.189Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "45.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":46,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x324af16\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x46e6b214b524310239732D51387075E0e70970bf\"}]}",
+      "fetched_at": "2026-10-17T18:20:01.720Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "46.json",
+      "bytes": 153,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base-rpc.publicnode.com",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":47,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x324af16\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0xb125E6687d4313864e53df431d5425969c15Eb2F\"}]}",
+      "fetched_at": "2026-10-17T18:20:02.245Z",
+      "status": 403,
+      "final_url": "https://base-rpc.publicnode.com/",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "47.json",
+      "bytes": 153,
+      "truncated": false
+    }
+  ]
+}

@@ -1317,3 +1317,106 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   only the three landing ventures. Why: the store job dispatched at 07:17 and gankdat's row landed at 07:19, so the one
   property owner action 020 was for never got a `search:` clause (10-11..10-16) and the googlebot-401-noindex proof could not
   be read. Proof: the 2026-10-17 Daily numbers row carries `search: … indexed I/N …`.
+- 2026-10-16 interactive (owner): the dashboard at apps.gankdat.com/ops (email code sign-in; ventures, pipeline, owner
+  page, idea box → OWNER-NOTES) and a dependency-currency system: `docs/ops/VERSIONS.md`, a monthly check of routine
+  Claude models and Node against public pages, Dependabot with gated auto-merge. The first check found Opus 5.5 and
+  Sonnet 5.5 already published; after two probe runs the four Sonnet routines and the Opus fallback run on 5.5.
+- 2026-10-17 burn-down: gankdat research pass — the 10-11 "keep serving the uk-planning snapshot" decision lasted seven days: the
+  KV snapshot and stats blob expire at 7 × the cache TTL and a failing refresh never re-writes them, so since 10-16 the dataset 503s
+  everywhere (REST, MCP probe, Apify actor, the indexed /stats page). Queued the retention fix (score 7), a cron-outcome wave-log
+  reading (the slug search returned only @x402/hono's Ajv-under-workerd warning for both stale sources, and nothing from the
+  journal's wave, which has died silently on three nights in four since 10-04) and the journal's third refresh item.
+- 2026-10-17 burn-down: `uk-planning-paused-snapshot-retention` built — a failed KV refresh now keeps the last snapshot and stats
+  blob alive (fresh TTL, no origin read), the REST 503 / MCP tool error for a `notice` source says the notice, the tool
+  description carries it so the metrics probe picks a live source, and `/stats/<slug>` with no blob renders the notice as a
+  page. Why: the 10-11 decision to keep serving uk-planning's snapshot held for exactly the 7-day KV TTL. Limit: the expired
+  snapshot is gone for good; uk-planning answers with its notice until the origin serves rows again or §7 retires it.
+- 2026-10-17 burn-down: gankdat `wave-log-cron-outcome-reading` built — the wave-log reading drops request lines and the x402
+  Ajv warning, prefers a structured refresh event, and reads each stale source's wave by its Cron Trigger (invocation log
+  type `cf-worker-event`, cron as needle, `$workers.outcome` / wall time when carried); the warning is muted at the lane.
+  Why: the reading built 10-09 showed only noise on its first real test (10-16) and the journal's third silent streak read
+  nothing; the next stale row names the wave's outcome, which is what `refresh-uk-trademark-journal-2026-10-17` needs first.
+
+- 2026-10-17 build: foundry `first-run-check-new-workflows` built — build and burn-down read each installer commit's
+  workflow for its first live run (one `workflow_dispatch` when nothing fired; publish, mirror and demo-video never
+  forced), log `<name> first run: …` and fix a failure in the same run. Why: three W42 first runs failed and one never
+  fired, each found by mail a day later; the first run is the only test these workflows get.
+- 2026-10-17 interactive (owner: "I see scheduled work for existing ventures but none for new ones"): the exchange decided
+  weekly but its output was invisible and its new-line candidates sat parked behind triggers. Now `docs/pipeline/queues/
+  new-ventures.json` (weight 2) is the exchange's backlog of research spikes — small evidence items for the best candidates,
+  executed by idle build slots, each ending in `docs/exchange/spikes/<id>.md` with a promote / park call — refilled to 2–4
+  every Wednesday; four seeded today (x402 aggregator margins, pay-per-crawl on the stats pages, keeper-rewards simulation,
+  HMRC VAT lookup). The dashboard gained a "New ventures" tab: next run, last decision, spikes, promoted and parked ideas.
+
+- 2026-10-17 build: new-ventures spike `x402-aggregator-margins` — the Bazaar's own 30-day counts (top 700 of 47,204
+  resources) put proxyable spend at US$9,970 a month, US$3,231 without one entertainment endpoint; a 20–40 % gateway
+  nets US$408–1,054 a month at full capture and US$16–74 at 2–10 %, while 187 of 488 resources cannot carry a 30 %
+  markup past the US$0.001 settlement fee and the upstreams that could (Exa, X, Google Trends, CoinGecko) forbid resale.
+  Parked with a numeric trigger (≥ US$30k/30 d proxyable); the own-listing item stays the x402 line. Why: the owner's
+  10-11 idea deserved the whole market's numbers, not one reseller's; they say the cut is cents a month.
+- 2026-10-17 burn-down: new-ventures spike `pay-per-crawl-stats-pages` — Cloudflare's own docs (relay) put Pay Per Crawl
+  in closed beta and give the charge capability to Enterprise plans with Bot Management only; minimum US$0.001 a crawl,
+  one price per zone, Cloudflare as MoR paying monthly through a dedicated Stripe Connect account, no paying crawler named.
+  Our traffic: 0 AI-crawler fetches of /stats… at the Worker in 7 days, 236 AI-family requests of 63,763 on /mcp in 30 days
+  (193 Claude-User — prospects, not training crawlers), so the take is US$0–12 a month at any allowed price. Declined; the
+  parked idea carries two dated triggers (plan table opens to Free/Pro AND ≥ 3,000 AI fetches/30 d) and the Daily numbers
+  row now measures the crawler share daily. Why: a free zone cannot switch the toggle on, and the crawlers that do visit are
+  the ones we want unmetered.
+- 2026-10-17 burn-down: new-ventures spike `keeper-rewards-simulation` — 7 days of Base liquidations read on-chain through
+  the relay (nine rounds; only Tenderly's public gateway serves `eth_getLogs`, 1,000 blocks a call). Aave v3: 37 events,
+  US$6,523 of bonus, 93 % to one address, median event US$0.66. Morpho Blue: 620 events, US$153,005 of incentive, 85 % to
+  five of 48 callers, 97 % of events on two crash days; the 43 long-tail callers earned a median US$18.72 for the week.
+  Gas is US$0.08–0.17 a transaction, so a £10 budget buys 77–158 attempts — the constraints are repayment capital
+  (median Morpho event repays ≈ US$49, the wallet holds US$1.11) or a flash-liquidation contract, a sub-block cadence and
+  a paid RPC. Liquidation keeping declined; the parked idea keeps one trigger, harvest call fees (the capital-free shape).
+  By-product: the relay retries 429/503 with backoff and paces same-host lines, and hosts.txt records which Base RPC
+  serves logs. Why: the number the owner's idea needed now exists, and it says the money is real but already taken.
+- 2026-10-17 burn-down: new-ventures spike `hmrc-vat-lookup` — HMRC's Check a UK VAT number API read through the relay:
+  v1 (keyless) removed 17 Feb 2025; v2 is application-restricted (OAuth client credentials behind a Developer Hub
+  registration in the owner's name, ~2 weeks, 3 requests/s per application) and declares its sole purpose as a
+  trader's own due diligence. Keyless probes answer 404. The Apify rival scrapes the GOV.UK web form (out of bounds)
+  and has 4 monthly users at US$0.005 a result; RapidAPI, vatstack and TrustComponent sell the check at
+  US$0.003–0.09. Declined: no lawful keyless route, owner identity required, and the price floor is already where
+  gankdat would sit. Exchange idea `uk-vat-number-check` declined; the spike file holds the evidence.
+- 2026-10-17 burn-down: foundry `triage-reconcile-before-owner` — the triage prompt's WHO DOES WHAT paragraph now says a
+  mail stating an amount or status the repo already records (ledger, a venture's RESEARCH.md) is reconciled against
+  that file first and is `needs owner` only when the amounts differ or the owner's identity, card or login is needed.
+  Why: two W42 owner lines (Nebius 10-12, Cloudflare $49 10-13) sent the owner to check what the repo already said.
+- 2026-10-17 burn-down: foundry `metrics-crons-day-7-read` — eight days of scheduled runs read: both metrics crons still
+  start 4.5–9.5 h late (0 of 8 before 08:00) whatever the minute, while the 07:00 routine's dispatch wrote the rows at
+  07:13–07:17 on all eight days. The crons stay as the safety net for a missed routine (≈ 2 billed minutes a day); no
+  further fallback is built. Why: the number decides it, and the dispatch already made the schedule irrelevant.
+- 2026-10-17 burn-down: foundry `empty-skips-cooling-queues` — `npm run pipeline empty` and the `cold` gate now leave a
+  cooling queue out even when it is flagged or emptied, as the burn-down prompt already said they did; the code applied
+  the 48 h only to starved queues, so the spike that emptied new-ventures tonight listed it for research hours after
+  its research run. Why: the rule lived only in the operator's reading; now the tool enforces it.
+- 2026-10-18 burn-down: oss-bounties research — seven daily boards (≈ 3,900 issue reads) hold 0 free funded code fixes at
+  US$25+ and the eight items filed were all dropped on read. No items added, `research_after` 2026-10-19; the Sunday
+  review is asked to set the board-count trigger at seven such boards (met), mark the line finished and stop the daily
+  scanner. Why: the labelled money is assigned, crowded or not code, so §3's recurring-job assumption fails on the
+  count before the PR-based kill rule can ever fire.
+- 2026-10-18 burn-down: foundry research — every `main` run of the last 40 is green, but the `dependabot` gate's first two real
+  runs (PRs #5 minor/patch and #6 majors, 10-16 18:32) failed at typecheck on `@figma/plugin-typings` 1.141 and nothing in
+  the repo noticed for 30 h (GitHub mails the failure to dependabot[bot]), and the 10-17 metrics routine dispatched both
+  jobs without its slot marker so the watchdog wrote a second false `missed:`. Three items queued: the typings fix plus
+  a `@dependabot rebase` (6), a red Dependabot gate filing its own queue item (4), the watchdog reading the
+  `workflow_dispatch` event as the metrics trace (4). Why: an auto-merge rule that fails silently is worse than none.
+- 2026-10-18 burn-down: foundry `dependabot-minor-gate-typings` — the one type error that held 13 minor/patch bumps (PR #5)
+  is fixed on `main` (hygiene.ts names the three style types instead of `BaseStyle`), proven green on the PR's own branch
+  in a worktree, and the PR asked to rebase so the gated auto-merge fires. Why: dependency currency without an attended
+  session is the point of the workflow; the first real run must not be the one that fails quietly.
+- 2026-10-18 burn-down: foundry `dependabot-red-gate-to-queue` — the notify-owner watchdog step now runs
+  `scripts/dependabot-gate.ts`: an open Dependabot PR whose latest gate run on its head failed gets one `watchdog |
+  dependabot:` line (deduped by PR and sha) and an idempotent foundry item `dependabot-pr-<N>` (5 for minor/patch, 3
+  for majors), the refresh-errors-to-queue pattern. Why: GitHub mails that failure only to dependabot[bot]; the
+  auto-merge rule was silent for 30 h exactly when it needed a person, and the queue is where a routine looks.
+- 2026-10-18 burn-down: foundry `watchdog-dispatch-event-trace` — the run watchdog now reads the Actions API and takes a
+  `workflow_dispatch` run of both metrics workflows inside the 07:00 window as the slot's trace, marker or not; a
+  `schedule` run never counts, which keeps the late cron from faking a trace. Why: the 10-17 routine dispatched both
+  jobs and skipped its marker, and the second false `missed: metrics` in three days went to the run log; the event is
+  the fact the marker only approximated.
+- 2026-10-18 burn-down: foundry `dependabot-gate-on-pr-author` — the `dependabot` workflow runs for a pull request whose
+  author is Dependabot, whoever pushed its last commit, so a routine that fixes the code on `main` can merge `main` into
+  the branch and let the gate merge the PR. Why: the sandbox cannot command Dependabot (the GitHub tool masks
+  @-mentions, so the rebase comment on PR #5 was never read) and a fix that sits on `main` while the PR stays red is the
+  silent failure again, one step later.

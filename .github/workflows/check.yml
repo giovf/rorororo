@@ -37,14 +37,14 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7
-      - uses: actions/setup-node@v6
+      - uses: actions/setup-node@v7
         with:
           node-version: 22
       # node_modules cache (2026-10-12, foundry actions-floor-trim): GitHub bills every job rounded up
       # to a whole minute and `npm ci` alone took ~50 s of each run (setup-node's npm cache only saves
       # the download). The installed tree is restored keyed on the lockfile; `npm ci` runs on a miss.
       # The 10-26 actions-minutes reading decides whether the restore beats the install.
-      - uses: actions/cache@v4
+      - uses: actions/cache@v6
         id: node-modules
         with:
           path: |

@@ -1,0 +1,54 @@
+{
+  "venture": "new-ventures",
+  "status": "open",
+  "needs_research": true,
+  "updated": "2026-10-17",
+  "researched": "2026-10-17",
+  "weight": 2,
+  "items": [
+    {
+      "id": "spike-x402-aggregator-margins",
+      "title": "Research spike: x402 aggregator margin map — from the Bazaar's top 200 resources (price, 30-day paid calls, payer count) compute what a 20–40% markup gateway would net per month at observed volumes, which upstreams allow proxying, and the three categories where agents pay most; write docs/exchange/spikes/x402-aggregator-margins.md with a promote / park recommendation",
+      "why": "Owner 2026-10-11: prefer small cuts of money already flowing. The W42 exchange parked the aggregator on one data point (the best known reseller nets about US$38/month) and a trigger that depends on our own listing converting. The Bazaar discovery API is public and lists 34,668 priced resources with usage counts (relay GET), so the margin question can be answered from the whole market now, not from our listing later. — Spike 2026-10-17 (docs/exchange/spikes/x402-aggregator-margins.md): park — ceiling ≈ US$730/month at 100 % capture, US$16–74 at 2–10 %; the markup clears the US$0.001 fee only where resale is forbidden.",
+      "effort_days": 0.3,
+      "proof": "the spike file exists with the numbers and a recommendation the 2026-10-21 exchange cites",
+      "score": 8,
+      "status": "done",
+      "added": "2026-10-17",
+      "done_at": "2026-10-17"
+    },
+    {
+      "id": "spike-pay-per-crawl-stats-pages",
+      "title": "Research spike: AI-crawler pay-per-crawl on the gankdat stats pages — read Cloudflare's Pay Per Crawl docs and eligibility through the relay, count the AI crawler hits on gankdat.com stats pages over 30 days from the traffic analytics (user-agent families: GPTBot, ClaudeBot, PerplexityBot, Bytespider, CCBot …), and estimate the monthly take at the published per-request price; write docs/exchange/spikes/pay-per-crawl.md",
+      "why": "A cut of money already flowing in its purest form: crawlers already fetch the public register pages; Cloudflare's pay-per-crawl charges them per request on our behalf with no audience to capture. Parked on 2026-10-14 for want of the docs read; the traffic reading is ours to take today. — Spike 2026-10-17 (docs/exchange/spikes/pay-per-crawl.md): closed beta, charging is Enterprise with Bot Management only (plan table), min US$0.001/crawl, no paying crawler named; gankdat.com (Free zone) is not eligible. Declined; parked idea re-written with two dated triggers; the stats pages' crawler hits are now a daily reading: 0 AI fetches at the Worker in 7 d, 236 AI-family requests of 63,763 on /mcp in 30 d (US$0.24–11.80/month at any allowed price).",
+      "effort_days": 0.3,
+      "proof": "the spike file states eligibility (beta / waitlist / open), our 30-day crawler hits and the estimated monthly take",
+      "score": 7,
+      "status": "done",
+      "added": "2026-10-17",
+      "done_at": "2026-10-17"
+    },
+    {
+      "id": "spike-keeper-rewards-simulation",
+      "title": "Research spike: on-chain keeper rewards on Base — with the POST relay now built (foundry relay-post-json, 2026-10-14), read 7 days of liquidation and harvest events on Aave v3 and Morpho on Base from a public RPC or explorer API, count the rewards paid to callers, the number of distinct callers and median gas, and state whether a £10 gas budget could have netted anything; write docs/exchange/spikes/keeper-rewards.md",
+      "why": "Owner idea 2026-10-11, parked by the W42 exchange because the measurement needed a POST relay that did not exist; it exists now. The answer is a number, not an opinion, and it decides the idea either way. — Spike 2026-10-17 (docs/exchange/spikes/keeper-rewards.md): Aave v3 US$6,523 of bonus to 13 addresses (93 % to one), Morpho Blue US$153,005 to 48 callers (85 % to five, 97 % on two crash days), long-tail median US$18.72 a week; gas US$0.08–0.17 a transaction; liquidations need repayment capital or a contract. Declined; the parked idea keeps one trigger (harvest call fees).",
+      "effort_days": 0.4,
+      "proof": "the spike file holds the 7-day reward total, caller count, gas median and a net figure for a £10 budget",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-17",
+      "done_at": "2026-10-17"
+    },
+    {
+      "id": "spike-hmrc-vat-lookup",
+      "title": "Research spike: HMRC VAT number check as a gankdat dataset or lookup tool — relay read of HMRC's Check a UK VAT number API documentation (v1 and v2): open access or developer-account only, rate limits, terms on resale and caching; count the Apify actors and RapidAPI listings that resell the same lookup and their prices; write docs/exchange/spikes/hmrc-vat-lookup.md",
+      "why": "Parked 2026-10-14 pending the docs read. A VAT check is a KYB step every invoicing and payments product performs, and the lookup pattern already exists in gankdat (uk-company-profiles), so the build is small if the terms allow it. — Spike 2026-10-17 (docs/exchange/spikes/hmrc-vat-lookup.md): v1 removed 17 Feb 2025, v2 is application-restricted (owner's Developer Hub registration, ~2 weeks, 3 req/s), sole purpose is a trader's own due diligence; rivals at US$0.003–0.09 a check, the Apify UK rival has 4 monthly users. Declined.",
+      "effort_days": 0.2,
+      "proof": "the spike file states access terms, limits and three competitor prices, with a recommendation",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-17",
+      "done_at": "2026-10-17"
+    }
+  ]
+}

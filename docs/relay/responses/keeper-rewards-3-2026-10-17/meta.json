@@ -1,0 +1,1356 @@
+{
+  "request": "keeper-rewards-3-2026-10-17",
+  "fetched_at": "2026-10-17T18:21:59.666Z",
+  "results": [
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x32038e5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:13.589Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "111"
+      },
+      "file": "1.json",
+      "bytes": 112,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32038e6\",\"toBlock\":\"0x3205ff5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:14.197Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "111"
+      },
+      "file": "2.json",
+      "bytes": 112,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3205ff6\",\"toBlock\":\"0x3208705\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:14.729Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "111"
+      },
+      "file": "3.json",
+      "bytes": 112,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3208706\",\"toBlock\":\"0x320ae15\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:15.249Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "110"
+      },
+      "file": "4.json",
+      "bytes": 112,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320ae16\",\"toBlock\":\"0x320d525\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:15.765Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "111"
+      },
+      "file": "5.json",
+      "bytes": 112,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320d526\",\"toBlock\":\"0x320fc35\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:16.278Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "6.json",
+      "bytes": 112,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320fc36\",\"toBlock\":\"0x3212345\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:16.792Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "7.json",
+      "bytes": 112,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":8,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3212346\",\"toBlock\":\"0x3214a55\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:17.457Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "8.json",
+      "bytes": 112,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":9,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3214a56\",\"toBlock\":\"0x3217165\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:17.975Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "9.json",
+      "bytes": 112,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":10,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3217166\",\"toBlock\":\"0x3219875\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:18.490Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "10.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":11,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3219876\",\"toBlock\":\"0x321bf85\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:19.014Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "11.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":12,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x321bf86\",\"toBlock\":\"0x321e695\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:19.536Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "12.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":13,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x321e696\",\"toBlock\":\"0x3220da5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:20.049Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "13.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":14,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3220da6\",\"toBlock\":\"0x32234b5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:20.561Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "14.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":15,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32234b6\",\"toBlock\":\"0x3225bc5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:21.082Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "15.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":16,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3225bc6\",\"toBlock\":\"0x32282d5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:21.594Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "16.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":17,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32282d6\",\"toBlock\":\"0x322a9e5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:22.107Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "17.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":18,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322a9e6\",\"toBlock\":\"0x322d0f5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:22.617Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "18.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":19,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322d0f6\",\"toBlock\":\"0x322f805\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:23.129Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "19.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":20,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322f806\",\"toBlock\":\"0x3231f15\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:23.648Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "20.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":21,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3231f16\",\"toBlock\":\"0x3234625\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:24.163Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "21.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":22,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3234626\",\"toBlock\":\"0x3236d35\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:24.676Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "22.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":23,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3236d36\",\"toBlock\":\"0x3239445\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:25.190Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "23.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":24,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3239446\",\"toBlock\":\"0x323bb55\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:25.717Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "24.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":25,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x323bb56\",\"toBlock\":\"0x323e265\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:26.231Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "25.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":26,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x323e266\",\"toBlock\":\"0x3240975\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:26.742Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "26.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":27,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240976\",\"toBlock\":\"0x3243085\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:27.255Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "27.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":28,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3243086\",\"toBlock\":\"0x3245795\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:27.769Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "28.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":29,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3245796\",\"toBlock\":\"0x3247ea5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:28.282Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "29.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":30,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3247ea6\",\"toBlock\":\"0x324a5b5\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:28.793Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "30.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":31,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x324a5b6\",\"toBlock\":\"0x324af16\",\"topics\":[\"0xe413a321e8681d831f4dbccbca790d2952b56f977908e45be37335533e005286\"],\"address\":\"0xA238Dd80C259a72e81d7e4664a9801593F98d1c5\"}]}",
+      "fetched_at": "2026-10-17T18:21:29.304Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "31.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":32,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32011d6\",\"toBlock\":\"0x32038e5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:29.819Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "32.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":33,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32038e6\",\"toBlock\":\"0x3205ff5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:30.331Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "33.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":34,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3205ff6\",\"toBlock\":\"0x3208705\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:30.842Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "34.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":35,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3208706\",\"toBlock\":\"0x320ae15\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:31.353Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "35.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":36,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320ae16\",\"toBlock\":\"0x320d525\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:31.866Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "36.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":37,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320d526\",\"toBlock\":\"0x320fc35\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:32.384Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "37.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":38,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x320fc36\",\"toBlock\":\"0x3212345\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:32.898Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "38.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":39,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3212346\",\"toBlock\":\"0x3214a55\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:33.409Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "39.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":40,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3214a56\",\"toBlock\":\"0x3217165\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:33.924Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "111"
+      },
+      "file": "40.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":41,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3217166\",\"toBlock\":\"0x3219875\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:34.436Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "41.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":42,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3219876\",\"toBlock\":\"0x321bf85\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:34.949Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "42.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":43,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x321bf86\",\"toBlock\":\"0x321e695\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:35.460Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "43.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":44,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x321e696\",\"toBlock\":\"0x3220da5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:35.974Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "44.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":45,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3220da6\",\"toBlock\":\"0x32234b5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:36.492Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "45.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":46,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32234b6\",\"toBlock\":\"0x3225bc5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:37.004Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "46.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":47,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3225bc6\",\"toBlock\":\"0x32282d5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:37.515Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "47.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":48,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x32282d6\",\"toBlock\":\"0x322a9e5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:38.032Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "48.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":49,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322a9e6\",\"toBlock\":\"0x322d0f5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:38.544Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "49.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":50,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322d0f6\",\"toBlock\":\"0x322f805\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:39.057Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "50.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":51,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x322f806\",\"toBlock\":\"0x3231f15\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:39.573Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "51.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":52,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3231f16\",\"toBlock\":\"0x3234625\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:40.086Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "52.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":53,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3234626\",\"toBlock\":\"0x3236d35\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:40.598Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "53.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":54,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3236d36\",\"toBlock\":\"0x3239445\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:41.152Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "54.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":55,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3239446\",\"toBlock\":\"0x323bb55\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:41.664Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "55.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":56,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x323bb56\",\"toBlock\":\"0x323e265\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:42.177Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "56.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":57,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x323e266\",\"toBlock\":\"0x3240975\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:42.695Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "57.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":58,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240976\",\"toBlock\":\"0x3243085\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:43.215Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "58.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":59,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3243086\",\"toBlock\":\"0x3245795\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:43.728Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "59.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":60,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3245796\",\"toBlock\":\"0x3247ea5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:44.241Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "60.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":61,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3247ea6\",\"toBlock\":\"0x324a5b5\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:44.754Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "61.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":62,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x324a5b6\",\"toBlock\":\"0x324af16\",\"topics\":[\"0xa4946ede45d0c6f06a0f5ce92c9ad3b4751452d2fe0e25010783bcab57a67e41\"],\"address\":\"0xBBBBBbbBBb9cC5e90e3b3Af64bdAF62C37EEFFCb\"}]}",
+      "fetched_at": "2026-10-17T18:21:45.266Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "62.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":63,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3248807\",\"toBlock\":\"0x324af16\",\"topics\":[\"0x9bc239f1724cacfb88cb1d66a2dc437467699b68a8c90d7b63110cf4b6f92410\"]}]}",
+      "fetched_at": "2026-10-17T18:21:45.779Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "63.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":64,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3236d36\",\"toBlock\":\"0x3239445\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:46.292Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "64.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":65,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3239446\",\"toBlock\":\"0x323bb55\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:46.807Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "65.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":66,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x323bb56\",\"toBlock\":\"0x323e265\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:47.319Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "66.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":67,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x323e266\",\"toBlock\":\"0x3240975\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:47.832Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "67.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":68,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240976\",\"toBlock\":\"0x3243085\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:48.345Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "68.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":69,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3243086\",\"toBlock\":\"0x3245795\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:48.857Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "69.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":70,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3245796\",\"toBlock\":\"0x3247ea5\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:49.369Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "70.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":71,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3247ea6\",\"toBlock\":\"0x324a5b5\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:49.883Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "71.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":72,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x324a5b6\",\"toBlock\":\"0x324af16\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x9c4ec768c28520B50860ea7a15bd7213a9fF58bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:50.398Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "72.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":73,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3236d36\",\"toBlock\":\"0x3239445\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x46e6b214b524310239732D51387075E0e70970bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:50.914Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "73.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":74,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3239446\",\"toBlock\":\"0x323bb55\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x46e6b214b524310239732D51387075E0e70970bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:51.426Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "74.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":75,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x323bb56\",\"toBlock\":\"0x323e265\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x46e6b214b524310239732D51387075E0e70970bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:51.941Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "75.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":76,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x323e266\",\"toBlock\":\"0x3240975\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x46e6b214b524310239732D51387075E0e70970bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:52.458Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "76.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":77,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240976\",\"toBlock\":\"0x3243085\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x46e6b214b524310239732D51387075E0e70970bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:52.971Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "77.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":78,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3243086\",\"toBlock\":\"0x3245795\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x46e6b214b524310239732D51387075E0e70970bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:53.485Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "78.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":79,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3245796\",\"toBlock\":\"0x3247ea5\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x46e6b214b524310239732D51387075E0e70970bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:53.997Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "79.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":80,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3247ea6\",\"toBlock\":\"0x324a5b5\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x46e6b214b524310239732D51387075E0e70970bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:54.516Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "80.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":81,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x324a5b6\",\"toBlock\":\"0x324af16\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0x46e6b214b524310239732D51387075E0e70970bf\"}]}",
+      "fetched_at": "2026-10-17T18:21:55.029Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "81.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":82,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3236d36\",\"toBlock\":\"0x3239445\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0xb125E6687d4313864e53df431d5425969c15Eb2F\"}]}",
+      "fetched_at": "2026-10-17T18:21:55.540Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "82.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":83,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3239446\",\"toBlock\":\"0x323bb55\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0xb125E6687d4313864e53df431d5425969c15Eb2F\"}]}",
+      "fetched_at": "2026-10-17T18:21:56.057Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "83.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":84,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x323bb56\",\"toBlock\":\"0x323e265\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0xb125E6687d4313864e53df431d5425969c15Eb2F\"}]}",
+      "fetched_at": "2026-10-17T18:21:56.572Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "84.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":85,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x323e266\",\"toBlock\":\"0x3240975\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0xb125E6687d4313864e53df431d5425969c15Eb2F\"}]}",
+      "fetched_at": "2026-10-17T18:21:57.086Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "85.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":86,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3240976\",\"toBlock\":\"0x3243085\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0xb125E6687d4313864e53df431d5425969c15Eb2F\"}]}",
+      "fetched_at": "2026-10-17T18:21:57.598Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "86.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":87,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3243086\",\"toBlock\":\"0x3245795\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0xb125E6687d4313864e53df431d5425969c15Eb2F\"}]}",
+      "fetched_at": "2026-10-17T18:21:58.111Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "87.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":88,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3245796\",\"toBlock\":\"0x3247ea5\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0xb125E6687d4313864e53df431d5425969c15Eb2F\"}]}",
+      "fetched_at": "2026-10-17T18:21:58.623Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "113"
+      },
+      "file": "88.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":89,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x3247ea6\",\"toBlock\":\"0x324a5b5\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0xb125E6687d4313864e53df431d5425969c15Eb2F\"}]}",
+      "fetched_at": "2026-10-17T18:21:59.137Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "114"
+      },
+      "file": "89.json",
+      "bytes": 113,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.drpc.org",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":90,\"method\":\"eth_getLogs\",\"params\":[{\"fromBlock\":\"0x324a5b6\",\"toBlock\":\"0x324af16\",\"topics\":[\"0x9850ab1af75177e4a9201c65a2cf7976d5d28e40ef63494b44366f86b2f9412e\"],\"address\":\"0xb125E6687d4313864e53df431d5425969c15Eb2F\"}]}",
+      "fetched_at": "2026-10-17T18:21:59.652Z",
+      "status": 400,
+      "final_url": "https://base.drpc.org/",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "112"
+      },
+      "file": "90.json",
+      "bytes": 113,
+      "truncated": false
+    }
+  ]
+}

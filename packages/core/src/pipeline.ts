@@ -351,7 +351,13 @@ export function cooling(queues: VentureQueue[], options: ClockOptions = {}): Ven
  * `today` overrides the clock (tests).
  */
 export function needsResearch(queues: VentureQueue[], options: ClockOptions = {}): VentureQueue[] {
-  const flagged = queues.filter((q) => q.status === 'open' && (q.needs_research || isEmpty(q)));
+  // A cooling queue is left out here too (2026-10-17, foundry `empty-skips-cooling-queues`): a
+  // queue emptied by its last spike is flagged by the build rule the same day it was researched,
+  // and listing it sent the next slot to research a venture read hours earlier.
+  const today = utcToday(clock(options));
+  const flagged = queues.filter(
+    (q) => q.status === 'open' && (q.needs_research || isEmpty(q)) && !isCooling(q, today),
+  );
   if (flagged.length > 0 || nextItem(queues, options) !== undefined) return flagged;
   return starved(queues, options);
 }

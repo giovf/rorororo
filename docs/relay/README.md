@@ -17,6 +17,11 @@ GitHub runner to fetch for it:
    GitHub, Slack, OpenAI or AWS key prefix, a Bearer header, a PEM key) is refused in `meta.json`
    and never sent (`scripts/fetch-relay-lines.ts`). Public bodies only — the request and the
    response are committed to this public repo. Pick a POST host as any other: on the allowlist.
+   Rate limits (2026-10-17): a 429 or 503 is retried up to three times after `Retry-After` or a
+   1-2-4 s pause, and consecutive lines to the same host are sent half a second apart; a line that
+   still fails carries `retries` and the final status in `meta.json`. Public JSON-RPC endpoints
+   (`mainnet.base.org`) throttle a burst of log queries anyway, so spread wide reads over the
+   allowlisted RPC hosts rather than firing 40 lines at one.
 2. Commit and push just that file (`relay: <name>`); it is the one exception to "push once at the end".
 3. Wait for the response **commit**, not for a fixed time: GitHub's hosted runners queue (on 2026-10-05 a request
    sat `queued` for 16+ minutes with nothing else running; two minutes is the floor, not the norm). Poll, and do

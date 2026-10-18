@@ -11,3 +11,9 @@ Never put the literal skip-ci marker (`[skip ci]` and its variants) in a commit 
 subject or body — GitHub honours it anywhere in the message and runs no workflow at all: the
 2026-09-30 21:30 burn-down commit described a job that uses it, and neither `check`, `notify owner`
 nor this installer ran on that push. Refer to it as "the skip-ci marker" instead.
+
+**First run checked** (2026-10-17, foundry `first-run-check-new-workflows`): the next build or burn-down slot
+after the installer commit reads the workflow's first live run (dispatching it once when it has
+`workflow_dispatch` and nothing has fired), writes `<name> first run: …` to `docs/RUNS.md` and fixes a failure in
+that same run by dropping the corrected file here again. Routines never dispatch `gankdat-publish`,
+`mirror-gankdat` or `demo-video` for this check (they publish, push to the public mirror or spend secrets).

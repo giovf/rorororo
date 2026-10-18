@@ -1159,3 +1159,97 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-16 15:30 | interactive | x402 Bazaar onboarding paid: first settled half-cent call from the existing test wallet; probe key set for CI
 - 2026-10-16 17:00 | interactive | Owner dashboard built at apps.gankdat.com/ops: email code sign-in, ventures, pipeline, owner page, idea box
 - 2026-10-16 17:00 | notify | Your dashboard is live at apps.gankdat.com/ops. Sign in with your email, no password
+- 2026-10-16 18:40 | interactive | Versions check built; Sonnet routines and the Opus fallback moved to 5.5 after probe runs; Node 24 queued
+- 2026-10-17 00:24 | burn-down | Research gankdat: uk-planning snapshot + stats blob expired 10-16 (KV TTL x7), /stats 503, probe red
+- 2026-10-17 00:24 | burn-down | Research gankdat: x402 bazaar log warning is Ajv codegen under workerd, lane fine; journal silent 10-15/16
+- 2026-10-17 00:24 | burn-down | Queue: 3 gankdat items added (snapshot retention 7, cron-outcome reading 6, journal refresh 6)
+- 2026-10-17 00:27 | watchdog | ci-minutes: 654 billed min/7d (~2803/month, wall 321; private cap 2,000, warn 1700); top: owner notes 127, notify owner 
+- 2026-10-17 00:35 | burn-down | cache.ts retainSnapshot: a failed KV refresh re-puts snapshot + stats with a fresh TTL; 2 tests
+- 2026-10-17 00:35 | burn-down | REST 503 and MCP tool errors carry a paused source's notice; tool description ends Origin notice
+- 2026-10-17 00:35 | burn-down | /stats/<slug> with no blob renders the notice page (200) instead of a JSON 503; probe skips paused tools
+- 2026-10-17 00:35 | burn-down | Queue: gankdat uk-planning-paused-snapshot-retention done; the lost 10-09 snapshot cannot be re-created
+- 2026-10-17 00:39 | burn-down | Stopping: research + 1 item built (snapshot retention); next wave-log-cron-outcome-reading left for 01:00
+- 2026-10-17 01:20 | burn-down | wave-logs.ts: noise lines (request lines, x402 Ajv warning) dropped, refresh event preferred
+- 2026-10-17 01:20 | burn-down | wave-logs.ts: cron invocation query per wave (cf-worker-event + cron needle), outcome/wall reading
+- 2026-10-17 01:20 | burn-down | store.ts CRON_BY_WAVE + cronOfSource; runner-refresh.mjs queries each stale source's wave; 14 tests
+- 2026-10-17 01:20 | burn-down | x402 lane mutes the workerd codegen warning only (withoutCodegenWarning); docs host relayed
+- 2026-10-17 01:20 | burn-down | Queue: gankdat wave-log-cron-outcome-reading done; proof is `wave 06:05:` on the next stale row
+- 2026-10-17 01:25 | burn-down | Relay: Query Builder docs name $workers.cpuTimeMs, so the $workers.* reads follow the docs
+- 2026-10-17 01:25 | burn-down | Queue: gankdat refresh-uk-trademark-journal-2026-10-17 dated 10-18, needs the 10-17 outcome row
+- 2026-10-17 01:26 | burn-down | Stopping: 1 item built (cron outcome reading); next item dated; starved-and-cooled, pass spent 17:27
+- 2026-10-17 08:10 | retro | Slot reliability: 33 of 33 slots ran; metrics 10-15 was mis-reported missed (fixed 10-16)
+- 2026-10-17 08:10 | retro | Repeat blocker: signing ReadFocus 0.3 and HK 0.4 waits 13 d on blocked extension-publish-in-ci
+- 2026-10-17 08:10 | retro | Defect: new workflows fail on first live run (demo video x2, landing deploy), found by mail
+- 2026-10-17 08:10 | retro | Defect: two owner: asks (Nebius, Cloudflare $49) were answerable from the repo, against triage rule
+- 2026-10-17 08:10 | retro | Queued foundry first-run-check-new-workflows (5) and triage-reconcile-before-owner (4)
+- 2026-10-17 09:12 | build | gankdat-metrics.yml first run: success (07:13 UTC dispatch after the 10-16 17:28 install)
+- 2026-10-17 09:12 | build | store-metrics.yml first run: success (07:13 UTC dispatch after the 10-16 17:28 install)
+- 2026-10-17 09:12 | build | Routines: CI WORKFLOWS step reads a new workflow's first run, dispatches once, fixes in-run
+- 2026-10-17 09:12 | build | docs/ci README and SCHEDULERS note the first-run check; publish, mirror, demo never dispatched
+- 2026-10-17 09:12 | build | Queue: foundry first-run-check-new-workflows done; proof is a first run: line within a day
+- 2026-10-17 09:13 | watchdog | missed: metrics slot 2026-10-17 07:00 UTC left no commit or run line by 09:00; usage limit? see claude.ai/code/routines
+- 2026-10-17 09:00 | interactive | Venture stages corrected on the dashboard: hackathons launched (entry submitted), oss-bounties building
+- 2026-10-17 10:00 | interactive | New-ventures queue (4 research spikes, weight 2) and a New ventures dashboard tab: next run, decision, parked ideas
+- 2026-10-17 17:21 | burn-down | crawler-hits.ts: AI crawler families; stats-page readings from logs, zone and /mcp; 9 tests
+- 2026-10-17 17:21 | burn-down | metrics.mjs: Daily numbers row gains stats crawlers (logs 7d, zone 30d, /mcp 30d), n/a per reading
+- 2026-10-17 17:21 | burn-down | Relay: Pay Per Crawl docs read: closed beta via sign-up form, Cloudflare is MoR, one price per zone
+- 2026-10-17 17:10 | build | Spike x402 aggregator: Bazaar top 700 of 47,204 read; US$9,970/30 d proxyable, 68% one endpoint
+- 2026-10-17 17:10 | build | Spike x402 aggregator: 30% gateway nets ~US$730/mo at 100% capture, US$16–74 at 2–10%; park
+- 2026-10-17 17:10 | build | Spike x402 aggregator: Exa, X, CoinGecko terms forbid resale; markup under the fee where allowed
+- 2026-10-17 17:10 | build | Relay hosts: exa.ai, coingecko, polymarket, developer.x.com, dexscreener added for the terms read
+- 2026-10-17 17:10 | build | Queue: new-ventures spike-x402-aggregator-margins done; exchange x402-aggregator-mcp re-parked
+- 2026-10-17 17:28 | burn-down | Metrics dispatched 17:22: /mcp 30d 63,756 req, AI 236; logs query HTTP 400, zone needs token perm
+- 2026-10-17 17:28 | burn-down | crawler-hits.ts: needle is the bare /stats path, limit 1000; metrics.mjs shows the 400 body
+- 2026-10-17 17:33 | burn-down | Metrics #247: logs 18 lines/7d match /stats, none a request line, AI 0; /mcp 30d AI 236 of 63,763
+- 2026-10-17 17:33 | burn-down | crawler-hits.ts: a zero reading says how many lines matched; 10 tests
+- 2026-10-17 17:33 | burn-down | Spike docs/exchange/spikes/pay-per-crawl.md: closed beta, Enterprise+Bot Management only, take US$0-12/mo
+- 2026-10-17 17:33 | burn-down | Exchange ai-crawler-paywall-stats-pages re-parked with two dated triggers; handoff: token Zone Analytics Read
+- 2026-10-17 17:33 | burn-down | Queue: new-ventures spike-pay-per-crawl-stats-pages done (declined on eligibility and traffic)
+- 2026-10-17 17:35 | burn-down | Stopping: 1 spike done (pay-per-crawl, declined); next spike-keeper-rewards-simulation left for 18:00
+- 2026-10-17 18:55 | burn-down | Relay: 429/503 retried with backoff, same-host lines paced 0.5 s (fetch-relay.mjs); 2 tests
+- 2026-10-17 18:55 | burn-down | Relay: Base logs served only by Tenderly's gateway, 1,000 blocks a call; 8 dead RPC hosts dropped
+- 2026-10-17 18:55 | burn-down | Spike keeper-rewards: Aave v3 Base 37 liquidations, US$6,523 bonus, 93% to one address
+- 2026-10-17 18:55 | burn-down | Spike keeper-rewards: Morpho 620 events, US$153k incentive, 85% to 5 of 48; long tail US$19/wk
+- 2026-10-17 18:55 | burn-down | Spike keeper-rewards: gas US$0.08-0.17 a tx; declined on capital and cadence, harvest-fee trigger kept
+- 2026-10-17 18:55 | burn-down | Queue: new-ventures spike-keeper-rewards-simulation done; exchange onchain-keeper-rewards re-parked
+- 2026-10-17 18:57 | burn-down | Stopping: 1 spike done (keeper rewards, declined) after 9 relay rounds; spike-hmrc-vat-lookup left for 19:00
+- 2026-10-17 18:54 | notify | 3 jobs for your next Claude Code session, oldest 13 days: sign and upload ReadFocus 0.3.0
+- 2026-10-17 19:15 | burn-down | Relay hmrc-vat-2026-10-17: v2 endpoints, reference guide, auth page, 2 keyless probes, Apify store search
+- 2026-10-17 19:15 | burn-down | Spike HMRC VAT: v1 gone Feb 2025; v2 needs the owner's Developer Hub app, 2 weeks, 3 req/s, due-diligence only
+- 2026-10-17 19:15 | burn-down | Spike HMRC VAT: rivals US$0.003-0.09 a check; Apify UK rival 14 users, 4 monthly, scrapes the GOV.UK form
+- 2026-10-17 19:15 | burn-down | Spike docs/exchange/spikes/hmrc-vat-lookup.md written: declined; exchange uk-vat-number-check declined
+- 2026-10-17 19:15 | burn-down | Queue: new-ventures spike-hmrc-vat-lookup done; queue empty, needs_research set (cooling until 10-19)
+- 2026-10-17 19:24 | burn-down | inbox-triage.md WHO DOES WHAT: amounts/statuses the repo records are reconciled before a needs owner
+- 2026-10-17 19:24 | burn-down | Queue: foundry triage-reconcile-before-owner done (proof: 4 weeks without an owner line answered from the repo)
+- 2026-10-17 19:21 | burn-down | Day-7 cron read: metrics crons started 11:08-16:10 UTC on 10-10..10-17, 0 of 8 before 08:00; dispatch 07:13-07:17 daily
+- 2026-10-17 19:21 | burn-down | SCHEDULERS.md: day-7 verdict on both metrics rows; crons kept as the safety net, dispatch is the source
+- 2026-10-17 19:21 | burn-down | Queue: foundry metrics-crons-day-7-read done; empty-skips-cooling-queues queued (score 4, cooling vs empty)
+- 2026-10-17 19:22 | burn-down | pipeline.ts: needsResearch and cold skip a cooling queue even when flagged or emptied; 1 test
+- 2026-10-17 19:22 | burn-down | docs/pipeline/README.md: cooling covers flagged and emptied queues (empty and cold leave them out)
+- 2026-10-17 19:22 | burn-down | Queue: foundry empty-skips-cooling-queues done (filed and built this run; empty printed new-ventures)
+- 2026-10-17 19:30 | burn-down | Exchange pre-research: UK food hygiene ratings parked (FHRS API free, OGL; ~30 Apify wrappers at 1-6 users each)
+- 2026-10-17 19:30 | burn-down | Stopping: 4 items built (hmrc-vat spike, triage reconcile, day-7 cron read, empty cooling), pipeline starved-and-cooled
+- 2026-10-18 00:22 | burn-down | Research oss-bounties: 7 boards 10-11..10-17 read, 0 free funded code fixes at $25+, 8 of 8 filed dropped
+- 2026-10-18 00:22 | burn-down | Queue: oss-bounties no items, research_after 10-19; Sunday review asked to set the board trigger and finish
+- 2026-10-18 00:30 | burn-down | Research foundry: 40 main runs all green; dependabot gate failed on PRs #5 and #6 at 10-16 18:32, unnoticed 30 h
+- 2026-10-18 00:30 | burn-down | Research foundry: #5 red on plugin-typings 1.141 BaseStyle union (hygiene.ts:30); fix compiles on 1.138 and 1.141
+- 2026-10-18 00:30 | burn-down | Research foundry: 10-17 metrics dispatched 07:13, no slot marker; watchdog wrote missed at 09:13 (2nd false miss)
+- 2026-10-18 00:30 | burn-down | Queue: foundry +3 (dependabot typings fix 6, red gate to queue 4, dispatch-event trace 4); researched 10-18
+- 2026-10-18 00:15 | watchdog | ci-minutes: 672 billed min/7d (~2880/month, wall 355; private cap 2,000, warn 1700); top: notify owner 129, owner notes 
+- 2026-10-18 00:35 | burn-down | hygiene.ts: styles typed as PaintStyle | TextStyle | EffectStyle (plugin-typings 1.141 widened BaseStyle)
+- 2026-10-18 00:35 | burn-down | Gate: full root check green on a worktree of Dependabot PR #5 with the fix (932 tests) and on main
+- 2026-10-18 00:35 | burn-down | Queue: foundry dependabot-minor-gate-typings done; @dependabot rebase posted on PR #5 for the auto-merge
+- 2026-10-18 00:45 | burn-down | dependabot-gate.ts: red Dependabot gate → watchdog line + foundry dependabot-pr-N item (5 minor, 3 majors); 8 tests
+- 2026-10-18 00:45 | burn-down | docs/ci/notify-owner.yml: watchdog step runs dependabot-gate.ts, pull-requests read, queue file in its commit
+- 2026-10-18 00:45 | burn-down | SCHEDULERS notify-owner row and VERSIONS.md auto-merge rule name the red-gate filing; proof is the next red gate
+- 2026-10-18 00:45 | burn-down | Queue: foundry dependabot-red-gate-to-queue done; installer commit's first run is the next slot's check
+- 2026-10-18 00:50 | burn-down | run-watchdog.ts: a workflow_dispatch run of both metrics jobs in the window traces the 07:00 slot; 3 tests
+- 2026-10-18 00:50 | burn-down | run-watchdog.ts: main reads the dispatched runs from the Actions API, [] without token or on error
+- 2026-10-18 00:50 | burn-down | SCHEDULERS metrics row day 8 (10-17 dispatched, no marker, false missed); metrics.md: marker still owed
+- 2026-10-18 00:50 | burn-down | Queue: foundry watchdog-dispatch-event-trace done; proof is a marker-less dispatch morning with no missed line
+- 2026-10-18 00:36 | watchdog | dependabot: PR #6 majors gate red at Run npm run check (df37191); foundry dependabot-pr-6 filed
+- 2026-10-18 00:36 | watchdog | dependabot: PR #5 minor-and-patch gate red at Run npm run check (9a7d332); foundry dependabot-pr-5 filed
+- 2026-10-18 00:40 | burn-down | notify-owner.yml first run: success (00:36 push; dependabot-gate filed PR #5 and #6 lines and items)
+- 2026-10-18 00:40 | burn-down | PR #5: the @dependabot rebase comment was posted with its mention masked by the GitHub tool; never read
+- 2026-10-18 00:40 | burn-down | docs/ci/dependabot.yml: job keys on the PR author, not the push actor; a main merge re-runs the gate
+- 2026-10-18 00:40 | burn-down | Queue: foundry dependabot-gate-on-pr-author filed and done; dependabot-pr-5 why updated (fix on main)

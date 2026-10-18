@@ -1,0 +1,3365 @@
+{
+  "data": {
+    "total": 94,
+    "count": 50,
+    "offset": 0,
+    "limit": 50,
+    "desc": false,
+    "items": [
+      {
+        "title": "UK VAT HMRC API",
+        "name": "uk-vat-hmrc-api",
+        "username": "nocodeventure",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 585,
+          "totalUsers": 14,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-16T13:14:41.805Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 76,
+            "TIMED-OUT": 0,
+            "TOTAL": 77
+          }
+        },
+        "description": "Supports Proof of Check. Scrapes UK VAT numbers using the official HMRC service. Validates UK VAT numbers against the official HMRC database.",
+        "categories": [
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/qv2345rKuNKPCNXBbpEhUsfyn02KvcBMMYKqrsYHtNg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vejRjUG5lRm83MnhaSk01bnktYWN0b3IteWZZQjZGcEdjcE5henAzV2wtMFFJdWxhQUk1Ty1kb3dubG9hZF8lMjgzJTI5LnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "No-Code Venture",
+        "userPictureUrl": "https://images.apifyusercontent.com/VnyJk2cDzQoJOyEP46s7c9I-uTnUxFZ0cNlBCsb_PTk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdklsTTZCc09XbkUtTVdZdV9sZEpUR2V4bmdVQjhicGpJbGh3eE5PeDI4TS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlalJqVUc1bFJtODNNbmhhU2swMWJua3RjSEp2Wm1sc1pTMTFhMmxIYlhKVmNuRkVMVTVmWlc1ZlZsOU1iMmR2WDBsdVgxcDNZWEowTFZkcGRGOGxNamd4SlRJNUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.01
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2025-12-30T21:37:11.571Z",
+          "createdAt": "2025-12-30T21:37:15.139Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "yfYB6FpGcpNazp3Wl",
+        "url": "https://apify.com/nocodeventure/uk-vat-hmrc-api"
+      },
+      {
+        "title": "UK Trade Data API — HMRC Imports & Exports by Commodity",
+        "name": "uk-hmrc-overseas-trade-observations",
+        "username": "nexgensignal",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 16,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T22:48:33.101Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 4,
+            "TIMED-OUT": 0,
+            "TOTAL": 4
+          }
+        },
+        "description": "HMRC Overseas Trade Statistics as data: UK imports and exports by commodity code (HS/CN8), partner country, UK port and month, with value in £, net mass and supplementary units. Filter by commodity, country, flow and months. No API key. Part of NexGen Signal — official-source data products",
+        "categories": [
+          "NEWS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/qPvLvw5ChZL9ojfC5ofaTMhrS0JaC7w_o-VhIIfqaO8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSFVFVlB2UEdTb3pJUmFoVHktYWN0b3ItZnF2bmNsb0praHVJN3pacEktTHRYdGw4TkJvVi11ay1obXJjLW92ZXJzZWFzLXRyYWRlLW9ic2VydmF0aW9ucy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Signal",
+        "userPictureUrl": "https://images.apifyusercontent.com/E2AM6xIR3RFe1AIRY7pK-UJ_GvYpK4KjdTJNvRKmJj8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vS0lmSk1xRkFqZlVObzZfNkFoOEtwaWtaQUJXU0tma3U1RDlsdG90M2FHNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTRlZGVmxCMlVFZFRiM3BKVW1Gb1ZIa3RjSEp2Wm1sc1pTMXhUR3AzTjB0VVpXTnBMVTVIVXk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": true,
+          "reasonForChange": "Initial pay-per-record pricing (GOLD ladder) at birth.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "uk_trade_observation": {
+                "eventTitle": "UK trade observation",
+                "eventDescription": "One HMRC Overseas Trade Statistics row (one month, flow, commodity, partner country and port), delivered.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0335
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-10-12T04:07:18.357Z",
+          "startedAt": "2026-10-12T04:07:18.357Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "fqvncloJkhuI7zZpI",
+        "url": "https://apify.com/nexgensignal/uk-hmrc-overseas-trade-observations"
+      },
+      {
+        "title": "UK Import Duty & Landed Cost Calculator",
+        "name": "uk-import-duty-landed-cost",
+        "username": "kestraz",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 1067,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T10:00:17.105Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Duty, VAT, excise and control flags for UK imports, straight from the HMRC Trade Tariff. Returns every underlying measure with its regulation ID, and tells you when the answer is ambiguous instead of guessing.",
+        "categories": [
+          "ECOMMERCE",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/v-4Um2B7LnfRE0XqcNQXOfeA5mxb_W6a_eciX-nJJ8Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20va1FhMlZHanM1OEZvM2l1Z3ItYWN0b3ItN0VGMTZTRzBTcXlXQXplVVotTGtsMkRiWlA5by1rZXN0cmF6LWFjdG9yLXVrLWR1dHkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Kestraz Support",
+        "userPictureUrl": "https://images.apifyusercontent.com/-Mm-rA7HlGkaX1ce228ZUN4_u3U2H3qWzciTnri6iLA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vclRtekN2Vm9UZVlYRnJDczF0QzdBWVpPdm9fT3ZGNnF1aUo4emMxYlFGOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhMUZoTWxaSGFuTTFPRVp2TTJsMVozSXRjSEp2Wm1sc1pTMURaa3ByUWtabU5uUjBMV3RsYzNSeVlYb3RZbkpoYm1RdWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "landed-cost-calculation": {
+                "eventTitle": "Landed cost calculation",
+                "eventDescription": "Full duty, VAT, excise and landed cost for one commodity code and origin.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.12,
+                "isPrimaryEvent": true
+              },
+              "code-lookup": {
+                "eventTitle": "Commodity code lookup",
+                "eventDescription": "Resolve a commodity code or find candidate codes from a product description.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.035
+              },
+              "bulk-catalogue-row-t1": {
+                "eventTitle": "Bulk row (1–1,000)",
+                "eventDescription": "Per-row price for catalogue runs up to 1,000 rows",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.03
+              },
+              "bulk-catalogue-row-t2": {
+                "eventTitle": "Bulk row (1,001–10,000)",
+                "eventDescription": "Per-row price for catalogue runs of 1,001 to 10,000 rows",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.018
+              },
+              "bulk-catalogue-row-t3": {
+                "eventTitle": "Bulk row (10,001+)",
+                "eventDescription": "Per-row price for catalogue runs above 10,000 rows",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.012
+              }
+            }
+          },
+          "startedAt": "2026-08-10T09:22:18.353Z",
+          "createdAt": "2026-08-10T09:22:19.240Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "7EF16SG0SqyWAzeUZ",
+        "url": "https://apify.com/kestraz/uk-import-duty-landed-cost"
+      },
+      {
+        "title": "UK Salary Calculator - PAYE Net Pay by Region",
+        "name": "uk-salary-calculator",
+        "username": "trovevault",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 208,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-16T17:46:34.520Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Calculate your UK net take-home pay with full PAYE breakdown: income tax by region (England/Wales/NI or Scotland), National Insurance, and optional student loan deductions. Uses 2025/26 tax year figures from HMRC.",
+        "categories": [
+          "JOBS",
+          "OTHER",
+          "NEWS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/jAjAYHzPa1eTPicRgmjZZ_IIHv4L3DytH_3bVH7tNPc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdjRXYXlXaGJRdm9IOUt4VE0tYWN0b3ItemJveVIwYldIQXlGZUhMM1UtTktiZlVXaldDdS1tb25leS0yLnN2Zy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Trove Vault",
+        "userPictureUrl": "https://images.apifyusercontent.com/WR40-v717WhHnBlmsxUUpPTJ6J5uNBtuxUb4DIXZapg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYXJ3UFM1cFZnM0xnd09aUzBmQUlmVk5mVlRucHd0MDNMbDhuVXg4RV80QS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkalJYWVhsWGFHSlJkbTlJT1V0NFZFMHRjSEp2Wm1sc1pTMTVXVWxFTWxWbGMwNTJMVlJ5YjNabFgzWmhkV3gwTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Discount for paying users",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Wage",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0019
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0017
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00085
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00085
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00085
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-05-08T12:07:04.261Z",
+          "createdAt": "2026-04-24T12:07:04.497Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-04-24T12:07:24.615Z"
+        },
+        "id": "zboyR0bWHAyFeHL3U",
+        "url": "https://apify.com/trovevault/uk-salary-calculator"
+      },
+      {
+        "title": "UK Company Check - Companies House KYB",
+        "name": "uk-company-check",
+        "username": "sterlingverify",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 17,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T23:57:30.428Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 4,
+            "TIMED-OUT": 0,
+            "TOTAL": 5
+          }
+        },
+        "description": "Companies House company check and UK KYB in one call: company profile and status, directors and officers, PSCs (beneficial owners), HMRC VAT number validation and UK sanctions screening. Bulk company lookup via CSV/JSON or API. Bring your own free Companies House API key.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/0ps-vu5R0nQwlntvd7813gfHtNiQTCXDHFARkcv6088/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZmN0bG1iZ09NQWRSVzc4S2ItYWN0b3ItSG1GSUZGa2RkNlNXNXZUcVgtaWNIbGduaHdlby1zdGVybGluZ3ZlcmlmeS1sb2dvLW5hdnkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Luke Mangan",
+        "userPictureUrl": "https://images.apifyusercontent.com/vyK5a4tNo15OHbvSpJIo--H6zr1P8AtbH1WQcPKXpqI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSzlMSElNT0lSbUNOQWJOWEJJUTJxVzNUcjBocFJ0RWw5NFdkZWprSGpBRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZabU4wYkcxaVowOU5RV1JTVnpjNFMySXRjSEp2Wm1sc1pTMTNUMGxVTldObk1Vd3lMWE4wWlhKc2FXNW5kbVZ5YVdaNUxXeHZaMjh0Ym1GMmVTNXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-checked": {
+                "eventTitle": "Company checked",
+                "eventDescription": "One UK company checked",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-12T13:57:57.618Z",
+          "startedAt": "2026-10-12T13:57:57.618Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "HmFIFFkdd6SW5vTqX",
+        "url": "https://apify.com/sterlingverify/uk-company-check"
+      },
+      {
+        "title": "Company Data Verifier: VAT, Registry and List Cleanup",
+        "name": "company-data-verifier",
+        "username": "kondasviktor",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 11,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T21:08:58.816Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 8,
+            "TIMED-OUT": 0,
+            "TOTAL": 8
+          }
+        },
+        "description": "Clean company master data: EU VAT via VIES, Norway/France/US-public registry lookup, field-level diffs, optional monthly monitor. No Companies House or HMRC in v1.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Viktor Kondas",
+        "userPictureUrl": "https://images.apifyusercontent.com/YtDjJi8v1xe19DqnYrX1LG74R7Cwu7N7jwNVvvTDAKw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTjlQM3pmYlFwMDljN0Fsd0hPUllFYjI0ODVjLXRUaWJLWDVfSFVUaTlrOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVVJtY2s4NE1IVnBWMk5qUm1jMmVteEdMVVJaYVZobmR6UkpSbXhNZFRWTldWRmtNRVU0ZHpKcGIxUnlXREJpT1RNOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": 0.1,
+          "isPriceChangeNotificationSuppressed": true,
+          "reasonForChange": "Company suite Day1: PPE only, min $0.10 — record-checked/verified/best-effort/monitor-recheck/run-minimum",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "record-checked": {
+                "eventTitle": "Record checked",
+                "eventDescription": "One record processed with ID checks and at least one registry or VAT lookup that answered.",
+                "eventPriceUsd": 0.003,
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true
+              },
+              "record-verified": {
+                "eventTitle": "Record verified",
+                "eventDescription": "Matched to a registered entity (confidence ≥ threshold) with fields filled and a diff.",
+                "eventPriceUsd": 0.015,
+                "isOneTimeEvent": false
+              },
+              "record-best-effort": {
+                "eventTitle": "Best-effort imprint match",
+                "eventDescription": "Unsupported country: entity identified from website imprint only (flagged).",
+                "eventPriceUsd": 0.008,
+                "isOneTimeEvent": false
+              },
+              "monitor-recheck": {
+                "eventTitle": "Monitor re-check",
+                "eventDescription": "Scheduled re-check of one stored record.",
+                "eventPriceUsd": 0.002,
+                "isOneTimeEvent": false
+              },
+              "run-minimum": {
+                "eventTitle": "Minimum charge top-up",
+                "eventDescription": "Tops the run up to the $0.10 minimum when event charges are lower.",
+                "eventPriceUsd": 0.01,
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-09T09:37:01.000Z",
+          "createdAt": "2026-10-09T09:36:56.980Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "v8jPsqiD7c46RmjgX",
+        "url": "https://apify.com/kondasviktor/company-data-verifier"
+      },
+      {
+        "title": "UK Gazette Insolvency Notices Scraper – Winding-Up Petitions",
+        "name": "uk-gazette-insolvency-notices",
+        "username": "data_daemon",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 41,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T18:08:42.249Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "UK insolvency notices from The Gazette as JSON: winding-up petitions, administrations, liquidations and creditor meetings with company number, address, petitioner (e.g. HMRC), nature of business, court, case number, hearing date and practitioner. Open Government Licence. From $2 per 1,000.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/OcTq5Tv6_sFVBhZcjHq9yjvPLYLnmRYX4D0q1M9o_9Q/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vblpTaGZqS3c1T0ViaEJCNFEtYWN0b3ItNFdlOElCcEx0SnA2T2tRZDgtbk1Pdmd0dmFvNy11ay1nYXpldHRlLWluc29sdmVuY3ktbm90aWNlcy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Daemon Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/2lF5AGUL_hLiEs8US9AZExNQjoqSnp1i4FYEWSWpF3k/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOUExOFZ0eEdVZms0QUpLSTdTS0VlWjF3T2I2U1gyVXN5SUtCM3FmaWYxTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibHBUYUdacVMzYzFUMFZpYUVKQ05GRXRjSEp2Wm1sc1pTMVRPVkl6YzNwdlVERlNMV1JoWlcxdmJsOWhkbUYwWVhKZk5URXlMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "notice": {
+                "eventTitle": "Notice",
+                "eventDescription": "One Gazette notice from the feed.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              },
+              "notice-details": {
+                "eventTitle": "Notice details",
+                "eventDescription": "Structured linked-data record for one notice: company number, addresses, court, case, dates, practitioners.",
+                "eventPriceUsd": 0.003
+              }
+            }
+          },
+          "createdAt": "2026-09-04T13:14:34.291Z",
+          "startedAt": "2026-09-04T13:14:34.291Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "4We8IBpLtJp6OkQd8",
+        "url": "https://apify.com/data_daemon/uk-gazette-insolvency-notices"
+      },
+      {
+        "title": "UK Fuel Prices API: Forecourt Prices and Every Change",
+        "name": "uk-fuel-prices-enriched",
+        "username": "arjs1000",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 14,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T10:52:42.261Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 8,
+            "TIMED-OUT": 0,
+            "TOTAL": 8
+          }
+        },
+        "description": "Current pump prices for over 8,000 UK forecourts and a feed of every price change, with the forecourt's own timestamp. Plus UK weekly prices back to 2003 and Advisory Fuel Rates against real pump cost per mile.",
+        "categories": [
+          "TRAVEL",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/5SNPPF8GxXm32fg4z2gZADuugeLKRIRp9koALhX-bFI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vT2RneHM4QnM0R2VIMHpyWUktYWN0b3ItU0RrbU03dno2YU1aR0NUR3ItTGVYZE04Sk5CQS1hMS1mdWVsLTUxMi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Arjun Shankar",
+        "userPictureUrl": "https://images.apifyusercontent.com/z3pnSWZYx_gqrqVC9SI6XiXGHkpM__MQrbEal1_TNjo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaFlaYUJXRjNPM1FBS0xjOGV4QjR2RGJGeFB0LTBoYnlmQkFLSGIySzZvRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblpxVTBkc00xaDZkV2wwWjFNME9XUTBha3RaVjBaM2RrUm5iWGMzVTFoWFZuQjRialJQVTJSM2VUZFpRVTlYTVVnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "price-change": {
+                "eventTitle": "Price change",
+                "eventDescription": "One price change at one forecourt for one grade (before, after, delta, the forecourt's own timestamps).",
+                "eventPriceUsd": 0.00045
+              },
+              "station-snapshot-row": {
+                "eventTitle": "Station row",
+                "eventDescription": "One forecourt with its current prices, from a snapshot or a cheapest-near-postcode search.",
+                "eventPriceUsd": 0.00045
+              },
+              "area-report": {
+                "eventTitle": "Report",
+                "eventDescription": "One report: monthly trend report, energy context, fleet AFR comparison or a weekly price series.",
+                "eventPriceUsd": 0.003
+              },
+              "history-station-day": {
+                "eventTitle": "Station day",
+                "eventDescription": "One forecourt, one grade, one day of price history (open, close, min, max, number of changes).",
+                "eventPriceUsd": 0.0003
+              }
+            }
+          },
+          "createdAt": "2026-10-08T17:28:23.129Z",
+          "startedAt": "2026-10-08T17:28:21.654Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "SDkmM7vz6aMZGCTGr",
+        "url": "https://apify.com/arjs1000/uk-fuel-prices-enriched"
+      },
+      {
+        "title": "Intl Test Data Generator: UK NINO, BE RRN, DE Steuer-ID",
+        "name": "internationale-testdata-generator",
+        "username": "codeclouds",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 62,
+          "totalUsers": 6,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-17T08:18:36.795Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "Generate checksum-valid test identifiers for UK/BE/DE software QA (NINO, Rijksregisternummer, Steuer-ID, IBAN, credit card) — each record labeled with a transparent guarantee level.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/BHjf89CERVUiQqHRBqKmfi8MUGkz73oZqipv4kASYS8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRVJQdVIyWGxkUDd0aXRwUWotYWN0b3ItUnlZaXE3NmZYWXU0cHBLWVEtRENVYXdOaTZGUC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Dennis",
+        "userPictureUrl": "https://images.apifyusercontent.com/og-WDi5I9Twkri-L9bV6q6msCc7OzN-Btp-FrlXr1zI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUERpQXk4TDhlTzFBV0QwWkhsQlQ4dGVvd1VUVEdXSGlPZ1pTMTdkbk8yTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpODFPVE01TXpaak1URmxaRGt5TVdVeE9EQTNaalF4Tm1KaE1HWXhaRFk0WWpZM1pqazFPV0U1TXpnNVpUWm1OamRoTWpCak1EWTBOVGxsWVdVelpXSmlQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "generated-identifier": {
+                "eventTitle": "generated-identifier",
+                "eventDescription": "You are charged per generated test identifier (national ID, IBAN or credit card number) delivered in the dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0006,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-27T13:00:56.231Z",
+          "createdAt": "2026-08-27T13:00:56.684Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "RyYiq76fXYu4ppKYQ",
+        "url": "https://apify.com/codeclouds/internationale-testdata-generator"
+      },
+      {
+        "title": "UK Identifier Checker (MPAN, VAT, NINO, NHS, LEI, EIC, IBAN)",
+        "name": "uk-identifier-checker",
+        "username": "landlordtools",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 10,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T22:14:39.992Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 7,
+            "TIMED-OUT": 0,
+            "TOTAL": 7
+          }
+        },
+        "description": "Check the format and check digits of UK and energy-market identifiers in bulk: MPAN, VAT, EORI, National Insurance, NHS, UTR, company numbers, postcodes, IBAN, LEI, EIC and GTIN. Auto-detects the type. No lookups, no data stored.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "LandlordTools",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-03T19:09:56.063Z",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Identifier result",
+                "eventDescription": "One UK identifier format check.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-03T19:09:59.207Z"
+        },
+        "id": "G8cDF61se49SCaa6m",
+        "url": "https://apify.com/landlordtools/uk-identifier-checker"
+      },
+      {
+        "title": "UK Making Tax Digital (Income Tax) Threshold Checker",
+        "name": "uk-mtd-income-tax-checker",
+        "username": "landlordtools",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 12,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T22:14:40.308Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 7,
+            "TIMED-OUT": 0,
+            "TOTAL": 7
+          }
+        },
+        "description": "Does Making Tax Digital for Income Tax apply, and from when? Qualifying income from self-employment turnover and your share of rent, tested against the £50,000, £30,000 and £20,000 thresholds. See README.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "LandlordTools",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-03T19:09:56.063Z",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Check result",
+                "eventDescription": "One MTD Income Tax threshold check.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-03T19:09:58.645Z"
+        },
+        "id": "vilJKWe7M1g6yIRxi",
+        "url": "https://apify.com/landlordtools/uk-mtd-income-tax-checker"
+      },
+      {
+        "title": "UK Trade Tariff Commodity Code Scraper",
+        "name": "uk-trade-tariff-scraper",
+        "username": "thriftykiwi",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 9,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T07:08:49.170Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 8,
+            "TIMED-OUT": 0,
+            "TOTAL": 8
+          }
+        },
+        "description": "Search the UK Trade Tariff for commodity codes by keyword. Returns the 10-digit code, description, chapter and heading, section, HM Revenue & Customs hierarchy and validity start date. Free UK government data, no API key required.",
+        "categories": [
+          "OTHER",
+          "ECOMMERCE"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Thrifty Kiwi",
+        "userPictureUrl": "https://images.apifyusercontent.com/lMMliMgUru2iNerLtz5uGR0IEokbsoLTb5EuK_QvMok/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaUQzZkt0bkRZVEFIZHRUb3BDbnY4OEZFd0MwUDhWRWxxN1ZzRElHV0h3VS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVbFJ4UVdWVVpYQXhaek5wYVRKbGEyUXRjSEp2Wm1sc1pTMXhXalUxZUVJd1JWazNMV3RwZDJrdFpuSjFhWFF0Ym05MGJ5MDFNVEl1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Result item",
+                "eventDescription": "Each result item pushed to the dataset",
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-10-09T19:01:45.335Z",
+          "startedAt": "2026-10-09T19:01:45.335Z",
+          "notifiedAboutChangeAt": "2026-10-09T19:30:24.357Z"
+        },
+        "id": "3GdJ3XF59cmZpdGOD",
+        "url": "https://apify.com/thriftykiwi/uk-trade-tariff-scraper"
+      },
+      {
+        "title": "UK Tax Year and Week Helper",
+        "name": "uk-tax-year-week-helper",
+        "username": "landlordtools",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 8,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T22:14:42.453Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 7,
+            "TIMED-OUT": 0,
+            "TOTAL": 7
+          }
+        },
+        "description": "Batch date-only UK tax year, tax week and tax month labels and inclusive boundaries.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "LandlordTools",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Date result",
+                "eventDescription": "One date labelled with its UK tax year, tax week and tax month.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-10T16:08:48.808Z",
+          "startedAt": "2026-10-10T16:08:48.808Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "C5N3Lr3FDzWHS6VO7",
+        "url": "https://apify.com/landlordtools/uk-tax-year-week-helper"
+      },
+      {
+        "title": "UK Landed Cost Intelligence",
+        "name": "uk-landed-cost-api",
+        "username": "tryva",
+        "stats": {
+          "totalBuilds": 56,
+          "totalRuns": 107,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-17T13:50:48.564Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "Turn product/cart + origin + value + shipping into UK commodity-code candidates, MFN duty baseline, VAT estimate, landed cost, confidence, and warnings.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "smile flow",
+        "userPictureUrl": "https://images.apifyusercontent.com/aoGuh123ij_0djRREn50Q7cRFKbhd-FbZTyNiMKv9Vc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdWdJNncwYUx1VTZIcFZMN0RXR0VqcmQ1THRucWF6dlBCb0pDSGpwLUNoMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVGcwYnpOWE5FOXViblZoYm5NNVluaEhXVVJuUmw5WlgyMXlObUZ2TFVWRGVISTFPRmRFZDFNeWJYYzVVREYzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-06T08:13:45.206Z",
+          "startedAt": "2026-09-06T08:13:45.143Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "forceContainsSignificantPriceChange": false,
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.00001,
+                "isOneTimeEvent": false
+              },
+              "landed-cost-estimate": {
+                "eventTitle": "Landed cost estimate",
+                "eventDescription": "One successful UK landed-cost decision request for a cart or consignment.",
+                "eventPriceUsd": 0.01,
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": null
+        },
+        "id": "HyfX7ZvROewDNquwa",
+        "url": "https://apify.com/tryva/uk-landed-cost-api"
+      },
+      {
+        "title": "HAR.com Texas Real Estate Scraper",
+        "name": "har-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 46,
+          "totalRuns": 965,
+          "totalUsers": 53,
+          "totalUsers7Days": 8,
+          "totalUsers30Days": 15,
+          "totalUsers90Days": 27,
+          "lastRunStartedAt": "2026-10-16T18:36:39.024Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 16,
+            "FAILED": 6,
+            "SUCCEEDED": 185,
+            "TIMED-OUT": 0,
+            "TOTAL": 207
+          }
+        },
+        "description": "Scrape HAR.com, the largest Texas MLS portal: homes for sale, for rent and sold across Houston, Dallas, Austin & San Antonio, with price, beds, baths, sqft, MLS# and listing agent. Plus 127,000+ HAR agents with email, delivered instantly by city or zip. JSON/CSV out.",
+        "categories": [
+          "REAL_ESTATE",
+          "AGENTS",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/25_YplxkubGvcUf2cb04VH6PXar0nI3yI7_nKc3EVTU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItWGZjSXFZS3FvT0hoN1NrVzYtdFBneHdHSG5WYS1oYXItY29tLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Property scraped",
+                "eventDescription": "Charged per property (row) returned in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.004
+              }
+            }
+          },
+          "createdAt": "2026-07-03T20:52:59.346Z",
+          "startedAt": "2026-07-03T20:52:59.346Z"
+        },
+        "id": "XfcIqYKqoOHh7SkW6",
+        "url": "https://apify.com/memo23/har-scraper"
+      },
+      {
+        "title": "HAR.com Texas Real Estate Agent Scraper — Realtor Leads",
+        "name": "har-com-agent-scraper",
+        "username": "scrapersdelight",
+        "stats": {
+          "totalBuilds": 26,
+          "totalRuns": 684,
+          "totalUsers": 6,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-16T17:38:42.285Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 35,
+            "TIMED-OUT": 0,
+            "TOTAL": 36
+          }
+        },
+        "description": "76,042 Texas real-estate agents from HAR.com: name, brokerage, office address, phone (100% fill), city/ZIP, star rating, recent listing activity, languages, Platinum status, bio and photo. Filter by city, ZIP, brokerage, rating or Platinum. No email/license — read the honest limits.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/EHBKkq4v0cQsOkNv-lLOB-rQz6Nyq1lh7A2IAmdCGXs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQlRna3dMRUM0YlpWemI4VmItYWN0b3ItTjdyUFA2d1ZtaW1xSWVQM04tWEhpcGVCYXRKdi01OS1oYXItY29tLWFnZW50LXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Delight",
+        "userPictureUrl": "https://images.apifyusercontent.com/SjUfVS2plLJy6kHfthU67C5f9v0e6wVrAbVTS2w1R3A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRmxwWnZpaF9memhGWnlPTEI4Ml9FRGhTQm1pUFRiYWJUWWNia00ySUhnNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRbFJuYTNkTVJVTTBZbHBXZW1JNFZtSXRjSEp2Wm1sc1pTMWxTRVJxZW5BMU4wOVlMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZmFuVXhhek5tYW5VeGF6Tm1hblV4YXkxamJHVmhiaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "agent-scraped": {
+                "eventTitle": "Per agent returned",
+                "eventDescription": "Charged once for each HAR.com Texas agent returned, including name, brokerage, office address, phone, city/ZIP, rating, recent listing activity, languages, Platinum status, designations, bio and photo.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.003
+              }
+            }
+          },
+          "startedAt": "2026-08-15T04:58:31.000Z",
+          "createdAt": "2026-08-15T04:58:32.390Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "N7rPP6wVmimqIeP3N",
+        "url": "https://apify.com/scrapersdelight/har-com-agent-scraper"
+      },
+      {
+        "title": "Harcourts Scraper · AU Property Listings & Agents · Emails",
+        "name": "harcourts-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 77,
+          "totalRuns": 166,
+          "totalUsers": 17,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-16T11:32:34.740Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrape Harcourts Australia property listings — buy, sold & rent search (with location, price & bedroom filters) or individual property URLs. Returns address, beds/baths/car, price, listing agents and photos in clean JSON/CSV. Auto-paginated, pure HTTP, no browser.",
+        "categories": [
+          "REAL_ESTATE",
+          "AGENTS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/hiAn-CmOaDIVSHaToQLJ-qPToB0cvsVXDbU9jTyMMRQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItRndUbk80ZzJoc3dBdzFKWGotSTdQZjQ1M3M5Sy1oYXJjb3VydHMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Charged for additional data",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.009
+              }
+            }
+          },
+          "startedAt": "2026-09-23T09:31:39.167Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-07T09:34:24.148Z",
+          "notifiedAboutFutureChangeAt": "2026-09-07T09:34:44.397Z",
+          "notifiedAboutChangeAt": "2026-09-23T09:35:58.358Z"
+        },
+        "id": "FwTnO4g2hswAw1JXj",
+        "url": "https://apify.com/memo23/harcourts-scraper"
+      },
+      {
+        "title": "Harcourts Scraper [$1.5/1K💰] | Sold & Rent | Agent Emails",
+        "name": "harcourts-scraper",
+        "username": "ahmed_jasarevic",
+        "stats": {
+          "totalBuilds": 25,
+          "totalRuns": 50,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T04:46:31.386Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrape Harcourts Australia property listings — buy, sold, rent, leased. Address, suburb, price, beds/baths/cars, agent, office, photos, floor plan. Full detail mode harvests agent emails with zero extra requests. Pure HTML parsing, no browser. From ~$1.5 per 1,000 listings (details +$0.50/1K).",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/lBnJ_0copLQA3pymfZ2ltdWG5fDstVkzQr42KuLrW3E/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZHRSN3FuVGJRck5pU0NtajctYWN0b3ItZGJROEdleWRsNm5VUjR6bHgtdzB1Z1lKMllFdC1pbWFnZXNfJTI4MjUlMjkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ahmed Jasarevic",
+        "userPictureUrl": "https://images.apifyusercontent.com/f6R-MYJUv583LmxEVXsgF3lDfBEQ5aOnqbohHsPfKoI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOEl3RTlRa0x2Y1F0T2JLQnhXOGdtajlfenBBS0ttSHZjTEZpN3oyZm5Vdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaSFJTTjNGdVZHSlJjazVwVTBOdGFqY3RjSEp2Wm1sc1pTMW5NR3AzYmt0UE5VRmpMVEUzT1RBek5EQTJNek00TVRrdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "RESULT": {
+                "isOneTimeEvent": false,
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00147
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00148
+                  },
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00147
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00149
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00147
+                  }
+                },
+                "eventTitle": "result",
+                "isPrimaryEvent": true
+              },
+              "PROPERTY_DETAILS": {
+                "eventDescription": "Single result with details in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTitle": "details",
+                "eventPriceUsd": 0.0005
+              },
+              "apify-actor-start": {
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTitle": "Actor Start",
+                "eventPriceUsd": 0.0005
+              }
+            }
+          },
+          "isPriceChangeNotificationSuppressed": false,
+          "startedAt": "2026-09-14T13:59:07.952Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-14T14:00:07.571Z",
+          "pricingModel": "PAY_PER_EVENT"
+        },
+        "id": "dbQ8Geydl6nUR4zlx",
+        "url": "https://apify.com/ahmed_jasarevic/harcourts-scraper"
+      },
+      {
+        "title": "Harcourts Property Scraper [Just 💰$1.5] — real estate",
+        "name": "harcourts-scraper",
+        "username": "blackfalcondata",
+        "stats": {
+          "totalBuilds": 29,
+          "totalRuns": 492,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T10:40:36.197Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 32,
+            "TIMED-OUT": 0,
+            "TOTAL": 33
+          }
+        },
+        "description": "💰 $1.5 per 1,000 listings. Scrape harcourts.net — property across Australia New Zealand & Fiji · price with bedrooms & address · GPS coordinates plus open-home inspection times. Incremental mode tracks new and changed listings across scheduled runs.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ZDXUgiEI8PH-QDDuQL_cPI4INnSpp46KTSBV-JNhBIc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vclB1SjNjc1NCUjVsaTVmd1QtYWN0b3ItVlNSUkRmYWVtZTZKZWhmeWktUjVOY0xNRWplYi1IYXJjb3VydHNfbG9nby5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Black Falcon Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/8lDnbOg80xCVrjeH5M-RIo2buaJVIq4p3Ki6zOG-8dI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vU1dsSjJhRUVyakFEdktQeHFKVWh3OXJrUUd5YWRYVmh2SThIX0I2a1pKYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjbEIxU2pOamMxTkNValZzYVRWbWQxUXRjSEp2Wm1sc1pTMUtUM1p3YUZoNFozcEpMVUpzWVdOclptRnNZMjl1WkdGMFlWOXNiMmR2TG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-17T13:28:44.301Z",
+          "startedAt": "2026-07-17T13:28:44.301Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "VSRRDfaeme6Jehfyi",
+        "url": "https://apify.com/blackfalcondata/harcourts-scraper"
+      },
+      {
+        "title": "Hash Generator - MD5, SHA-256, SHA-512 & HMAC",
+        "name": "hash-generator",
+        "username": "eliai",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 81,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T01:16:49.033Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Generate MD5, SHA-1, SHA-256, SHA-512 and HMAC hashes of text or a fetched file, in hex and base64 - all algorithms in one call. Bulk. $0.0005 per input; failures are free.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/24W5HQqb-pHhPgIHmtdW8t339ErZXojAfyTfpC0Pgxg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veDRkaFprWEFyZWNqWmYwRDEtYWN0b3Itdk1VQm81SzB5TUM5ZXlESFMtZEpZQzUyenluUC1oYXNoLWdlbmVyYXRvci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Broke to Built",
+        "userPictureUrl": "https://images.apifyusercontent.com/QMkw6wv6DWIUToyhWVZW9vdOfV8EJUSu8gM41J7aS-w/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMEd6SV9NU2hjbTF1bjdCYVMxbUo3anBlX085YmlISDNVWU9waGtlQ2Fxcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlRFJrYUZwcldFRnlaV05xV21Zd1JERXRjSEp2Wm1sc1pTMXdSREIzVlU0eVVrazFMV05vWVc1dVpXeHpORjl3Y205bWFXeGxMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-23T01:06:57.821Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "hash-generated": {
+                "eventTitle": "Generated hashes",
+                "eventDescription": "One input (text or fetched file) hashed with MD5/SHA-1/SHA-256/SHA-512 and optional HMAC, hex + base64. Failures are recorded free.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00047
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00044
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00037
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00033
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "reasonForChange": "Subscribers on higher Apify plans now pay less per generated hashe. The Free plan price is unchanged at $0.0005, and it steps down to $0.00033 on Diamond. Output, limits and behaviour are unchanged.",
+          "createdAt": "2026-08-23T01:06:58.907Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-23T01:35:47.668Z"
+        },
+        "id": "vMUBo5K0yMC9eyDHS",
+        "url": "https://apify.com/eliai/hash-generator"
+      },
+      {
+        "title": "HAR.com Scraper",
+        "name": "har-com-scraper",
+        "username": "rigelbytes",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 3,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T10:46:34.135Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "Scrape Texas real estate listings from HAR.com, with optional listing details and seller profiles on the same row.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/RnknE1yNCgEppRCx3jWzRVpyX5ZbC4P2b9b7g7SYEgo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vOFFPbXY4R3loOFB4MGtpNXMtYWN0b3ItT0p4OTAzN0ZpOHZiaUQwZ1ktTDJJZ1Q5ZlV3ZC1oYXIuY29tLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Rigel Bytes",
+        "userPictureUrl": "https://images.apifyusercontent.com/Css0NlDdpWO0WwUqZaVJSChHLAuvQ_ylGzXmzPAU36c/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vM1VhOGdzN0dsWWU5S3JqSWQycVg5a2MyQXlZNDhrQnFCYXRqWmtYeGpNdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZPRkZQYlhZNFIzbG9PRkI0TUd0cE5YTXZlR050ZGxaWFVXRkJUekZWUTFvelpEZ3RVaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "listing": {
+                "eventTitle": "Listing",
+                "eventDescription": "Property Listing Scraped",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0013
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0012
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "listing-details": {
+                "eventTitle": "Listing Detailed",
+                "eventDescription": "Detailed Listing Info",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0013
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0012
+                  }
+                }
+              },
+              "seller-details": {
+                "eventTitle": "Seller Details",
+                "eventDescription": "Detailed Seller Info",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0019
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0017
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-10-16T10:37:42.067Z",
+          "createdAt": "2026-10-16T10:37:42.355Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "OJx9037Fi8vbiD0gY",
+        "url": "https://apify.com/rigelbytes/har-com-scraper"
+      },
+      {
+        "title": "Australian Real Estate 💰$1.50💰· All Portals · Download Agents",
+        "name": "au-property-multi-portal-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 120,
+          "totalRuns": 757,
+          "totalUsers": 40,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 9,
+          "lastRunStartedAt": "2026-10-17T00:18:41.551Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 83,
+            "TIMED-OUT": 0,
+            "TOTAL": 83
+          }
+        },
+        "description": "Scrape AU property listings from Domain, commercialrealestate.com.au, Ray White, Harcourts & LJ Hooker in one unified output. Plus an Instant Agent Database: 89,000+ Australian real estate agents with email & phone, filtered by state, suburb or agency. No browser.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/RUlPBgyxuRSdKFopDoyKmR34oiB_abFb3d8Unuwk3CI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItdE9WNnJNRXZZOXhja3Rnb3YtSkFwaTU0T2tyTS1sb2dvXzJ4LnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Charged for additional data",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0001
+              },
+              "agent-record": {
+                "eventTitle": "Agent record",
+                "eventDescription": "One agent from the Instant Agent Database: name, agency, state, suburb, profile link and licence. Contact details are billed separately, and only when you ask for them.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              },
+              "contact-email": {
+                "eventTitle": "Email address",
+                "eventDescription": "Charged once per agent when you request email addresses. Not charged if you leave emails out of the request.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015
+              },
+              "contact-phone": {
+                "eventTitle": "Phone number",
+                "eventDescription": "Charged once per agent when you request phone numbers. Not charged if you leave phones out of the request.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-09-18T00:00:00.000Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-03T14:04:57.997Z",
+          "notifiedAboutFutureChangeAt": "2026-09-03T14:05:18.441Z",
+          "notifiedAboutChangeAt": "2026-09-21T12:36:22.265Z"
+        },
+        "id": "tOV6rMEvY9xcktgov",
+        "url": "https://apify.com/memo23/au-property-multi-portal-scraper"
+      },
+      {
+        "title": "H&M Scraper — Product Prices, Stock & Sizes Data",
+        "name": "hm-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 189,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T11:28:35.608Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 6,
+            "SUCCEEDED": 68,
+            "TIMED-OUT": 3,
+            "TOTAL": 77
+          }
+        },
+        "description": "Scrape product data from hm.com, Europe's largest fashion retailer alongside Zalando and Zara. Extract names, prices, stock, sizes and images for any search term across 17 European markets, unblocked with Bright Data Web Unlocker.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/7--FUkRYaIBHS0UT0-q5_xYVtW7XVlylNUqhakb22fo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3ItdlV4TW1PSWIxRVlSbHVTc1otUWxrY1BkMUM4NS1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-07T14:29:41.000Z",
+          "reasonForChange": "Switching to automatic per-result billing",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.005,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0012
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-09-07T14:24:41.676Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "vUxMmOIb1EYRluSsZ",
+        "url": "https://apify.com/studio-amba/hm-scraper"
+      },
+      {
+        "title": "Shopee Affiliate Products Finder",
+        "name": "shopee-affiliate-products",
+        "username": "viralanalyzer",
+        "stats": {
+          "totalBuilds": 20,
+          "totalRuns": 461,
+          "totalUsers": 54,
+          "totalUsers7Days": 4,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 10,
+          "lastRunStartedAt": "2026-10-16T23:47:00.870Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 3,
+            "SUCCEEDED": 89,
+            "TIMED-OUT": 2,
+            "TOTAL": 96
+          }
+        },
+        "description": "Discover viral Shopee products with commission rates and generate trackable short links (subIds) via the official Shopee Affiliate Open API (GraphQL + HMAC-SHA256).",
+        "categories": [
+          "ECOMMERCE",
+          "SEO_TOOLS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/rZXlA_Ak4ZfSHQCrCYgoE9t1hMZduY8A1NKwMMsoL8Q/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcnBUYTM3bzFjdGZkRldaazktYWN0b3Itb2NmSjFBc1Zzb3oxNGxkVmEteWozYkUwdHRjUS1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "viralanalyzer",
+        "userPictureUrl": "https://images.apifyusercontent.com/bq9e3NfkGUj5WU5BZQ3_ugsv8Wo1tahZWFfZU7qKtb0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veDNhdXVLLVNJTi1Ba0YxU09iQl8zMi1OUU9aTjBzMVBudnVTSE1HVEpScy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjbkJVWVRNM2J6RmpkR1prUmxkYWF6a3RjSEp2Wm1sc1pTMU1lWGRHUlU4eU9HOWhMV3h2WjI4dE5URXlMV0pzWVdOckxYQmhaR1JsWkM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": 0.5,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "product-discovered": {
+                "eventTitle": "Product discovered",
+                "eventDescription": "Each Shopee affiliate product fetched via productOfferV2 (mode=products).",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0002
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "shop-discovered": {
+                "eventTitle": "Shop discovered",
+                "eventDescription": "Each Shopee shop with differentiated commission fetched via shopOfferV2 (mode=shops).",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0002
+                  }
+                }
+              },
+              "campaign-discovered": {
+                "eventTitle": "Campaign discovered",
+                "eventDescription": "Each official Shopee campaign/offer fetched via shopeeOfferV2 (mode=campaigns).",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0003
+                  }
+                }
+              },
+              "conversion-pulled": {
+                "eventTitle": "Conversion pulled",
+                "eventDescription": "Each conversion record retrieved via conversionReport (mode=conversions) — your private affiliate sales data.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0023
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0013
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0004
+                  }
+                }
+              },
+              "feed-item-discovered": {
+                "eventTitle": "Feed item discovered",
+                "eventDescription": "Each bulk catalog feed metadata record via listItemFeeds (mode=feeds).",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0001
+                  }
+                }
+              },
+              "short-link-generated": {
+                "eventTitle": "Short link generated",
+                "eventDescription": "Each shortlink created via generateBatchShortLink with sub-IDs for attribution tracking.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0003
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-05-12T14:46:54.860Z",
+          "startedAt": "2026-05-12T14:46:54.860Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ocfJ1AsVsoz14ldVa",
+        "url": "https://apify.com/viralanalyzer/shopee-affiliate-products"
+      },
+      {
+        "title": "Webhook Debugger, Logger & API Mocking Suite",
+        "name": "webhook-debugger-logger",
+        "username": "ar27111994",
+        "stats": {
+          "totalBuilds": 585,
+          "totalRuns": 88,
+          "totalUsers": 8,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-13T23:18:03.369Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 0,
+            "TIMED-OUT": 3,
+            "TOTAL": 3
+          }
+        },
+        "description": "Enterprise-grade webhook testing suite for developers. Capture, inspect, replay, forward, validate, and mock webhook traffic in real time without tunnels. Includes SSE live streaming, JSON Schema validation, and signature verification for Stripe, GitHub, Shopify, Slack, and custom HMAC workflows.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "OPEN_SOURCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/JN74AnoanRnpHuamaEFLFi-dxNCyWNUCkR7MslhBMuA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20valJkbG93d3BhTExUZ05maG4tYWN0b3ItZU1oYUdkSjAzRUxpUmxiT2MtMHVWU0NLT0dLdy1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Ahmed Rehan",
+        "userPictureUrl": "https://images.apifyusercontent.com/h-txrcXnGm2Sb3paTiO-yym3fiLWmxVf_cY5TcTUUck/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSzJCMzFqUkQwYWVtb25TSVFrVUVuMTRDUWNNZG9nWllCazljWUdxdC1Qay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RXpNRE0yTmpnM1AzWTlOQQ.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Captured Webhook",
+                "eventDescription": "Single webhook event logged to the dataset.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2025-12-20T11:14:27.553Z",
+          "createdAt": "2025-12-20T11:14:28.017Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "eMhaGdJ03ELiRlbOc",
+        "url": "https://apify.com/ar27111994/webhook-debugger-logger"
+      },
+      {
+        "title": "HAR Scraper [Just 💰$1.5] — Texas Real Estate",
+        "name": "har-scraper",
+        "username": "blackfalcondata",
+        "stats": {
+          "totalBuilds": 42,
+          "totalRuns": 650,
+          "totalUsers": 6,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 6,
+          "lastRunStartedAt": "2026-10-17T07:16:04.468Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 36,
+            "TIMED-OUT": 0,
+            "TOTAL": 36
+          }
+        },
+        "description": "💰 $1.5 per 1,000 listings. Scrape har.com — the largest Texas MLS portal — homes for sale · rent and sold in every Texas market · each listing ships three valuations · tax history and assigned schools. Incremental mode tracks new and changed listings across scheduled runs.",
+        "categories": [
+          "REAL_ESTATE",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/DNMcNhEsWZuyrjcwPukpWGB1xX6RcyOo5x0IQOjuqcM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vclB1SjNjc1NCUjVsaTVmd1QtYWN0b3ItZWgzMnZtS0dMeWNlWVltR3otSExEb2lxNFNiQy1IYXJfVGV4YXNfbG9nby5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Black Falcon Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/8lDnbOg80xCVrjeH5M-RIo2buaJVIq4p3Ki6zOG-8dI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vU1dsSjJhRUVyakFEdktQeHFKVWh3OXJrUUd5YWRYVmh2SThIX0I2a1pKYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjbEIxU2pOamMxTkNValZzYVRWbWQxUXRjSEp2Wm1sc1pTMUtUM1p3YUZoNFozcEpMVUpzWVdOclptRnNZMjl1WkdGMFlWOXNiMmR2TG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Property scraped",
+                "eventDescription": "One property record, including full detail and valuations at no extra charge.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-17T18:16:35.246Z",
+          "startedAt": "2026-07-17T18:16:35.246Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "eh32vmKGLyceYYmGz",
+        "url": "https://apify.com/blackfalcondata/har-scraper"
+      },
+      {
+        "title": "H&M Scraper - Products, Prices, Variants",
+        "name": "hm-scraper",
+        "username": "gio21",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 141,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T03:42:33.323Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape H&M (hm.com) products: name, price, color variants, sizes, category, images, description.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/SQJkgP5f7gVYx8HXFdZPyUbZgE0lf4NhdwZtHJfizQY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZm5TUVJHYUd0OFRhdjdRZkYtYWN0b3ItRDAza2Z4YmNneWJqZDdWV0ktazVhNWx6TEVEWi1IX00ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Gio",
+        "userPictureUrl": "https://images.apifyusercontent.com/wqQe2a-05KMWcEYRyaswgePG12qtblRrbQbimpNugPQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcEZITGhkemlYTUxPT3RqRXo0ZFp5MEoyWFZTSzJ1YTEwOHdtd1pWckJXMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZabTVUVVZKSFlVZDBPRlJoZGpkUlprWXRjSEp2Wm1sc1pTMXplbmhhZWpkdFF6UkJMV2RwYnk1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-06-02T00:40:45.000Z",
+          "reasonForChange": "Initial pricing.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "product": {
+                "eventTitle": "Product scraped",
+                "eventDescription": "Product scraped (one record).",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.05,
+          "createdAt": "2026-06-02T00:40:46.840Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "D03kfxbcgybjd7VWI",
+        "url": "https://apify.com/gio21/hm-scraper"
+      },
+      {
+        "title": "Har Property Listings Extractor",
+        "name": "har-property-listings-extractor",
+        "username": "kawsar",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 60,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T06:58:37.904Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "HAR property listings extractor that pulls prices, photos, beds, baths, square footage, and agent details from any HAR.com search or listing URL, so you can build market reports and deal lists without copying data by hand.",
+        "categories": [
+          "REAL_ESTATE",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/93UTRQABOhPKg3_M9E1Wt8MjSL0QRqy4oPcFcWdgNSs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vU1REbnRaNW5NcThtbXo5UFQtYWN0b3ItTElKWE9WSUpwcXZPbXp5U3YtdmxvaGd0UHcyZS03LTQtZTE2NjY3MDAwMjQyNDYucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Kawsar",
+        "userPictureUrl": "https://images.apifyusercontent.com/NbPj4GhqzRvZ979JRazp7x2iBeV7Gj-kMexG-BjZeaU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOHJVbGI1T2lmTWNCMXU0OTVrTEZwNUZaZExuN2NRSldWQUZTWHhlbDE3OC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVMVJFYm5SYU5XNU5jVGh0YlhvNVVGUXRjSEp2Wm1sc1pTMVBUbVJuUzFoaVZGZ3hMWEJvYjNSdlgzTnRZV3hzWHlVeU9ERWxNamt1YW5CbFp3LmpwZWc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00432
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00366
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00299
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-25T06:16:59.485Z",
+          "createdAt": "2026-08-25T06:16:58.811Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "LIJXOVIJpqvOmzySv",
+        "url": "https://apify.com/kawsar/har-property-listings-extractor"
+      },
+      {
+        "title": "JWT Decoder & Security Analyzer",
+        "name": "jwt-decoder-analyzer",
+        "username": "perryay",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 87,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T16:38:39.571Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Decode JWT tokens, verify HMAC/RSA/ECDSA/EdDSA signatures, detect alg=none bypass, key confusion, weak secrets, and expired tokens. Batch processing and audit report generation for DevSecOps teams.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/LHJJie-WQWzN6aFty1e1eS35yYCBibf_wGPyF5M9jJU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vWElwSFpuOW1aa0R6cVlXQUstYWN0b3ItYURlSkl3VFp1NVF1eUZnb0otNnltdG44SnBFai1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Perry AY",
+        "userPictureUrl": "https://images.apifyusercontent.com/Xl-NSL8QvWeySEe3LPoMxCYJcD3SkwRldVmff0LVCJE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdmdkTjZTa3hCa191cXdoVjlKbVp2VnNldWRzN0N5WVZJdXJBNU9BaVctQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZXRWx3U0ZwdU9XMWFhMFI2Y1ZsWFFVc3RjSEp2Wm1sc1pTMW1VWGhSV0dOV056TTFMV0Z0YVY5d1lYQmhMVEl3TWpNd09UQTRMVEF3TURFdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "jwt-decode": {
+                "eventTitle": "Token Decode",
+                "eventDescription": "Decode a single JWT token",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": true
+              },
+              "vuln-scan": {
+                "eventTitle": "Vulnerability Scan",
+                "eventDescription": "Security vulnerability analysis",
+                "eventPriceUsd": 0.015,
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true
+              },
+              "batch-decode": {
+                "eventTitle": "Batch Decode",
+                "eventDescription": "Per-token in batch mode",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": false
+              },
+              "audit-report": {
+                "eventTitle": "Audit Report Generation",
+                "eventDescription": "Generate a comprehensive audit report",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-07-23T13:43:23.379Z",
+          "startedAt": "2026-07-23T13:43:22.000Z",
+          "isPPEPlatformUsagePaidByUser": true,
+          "minimalMaxTotalChargeUsd": 0.05
+        },
+        "id": "aDeJIwTZu5QuyFgoJ",
+        "url": "https://apify.com/perryay/jwt-decoder-analyzer"
+      },
+      {
+        "title": "UK Court Listings",
+        "name": "uk-court-listings",
+        "username": "wildorigins",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 81,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T11:34:40.441Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "🏷️ From $0.60 / 1K | Daily hearing lists from the HMCTS Court and Tribunal Hearings service. Case number, party, hearing type, time, courtroom and judge for Crown, magistrates, civil, family, tribunal and Insolvency and Companies Court lists.",
+        "categories": [
+          "NEWS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/n7VdUmzgu7vrvT_Gz8v0qTc93-RdM7tl2ceeJmUZzpk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vejBKdktlamoxM2ZRRmdMbEEtYWN0b3ItejZLS3F4WFZ3M0ZQUjhDMGktTE9FRVF5bFE3Ti11ay1jb3VydC1saXN0aW5ncy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Wild Origins",
+        "userPictureUrl": "https://images.apifyusercontent.com/Zc8sA0Pbl_3wCm06Z-od0494gzkpsk7V2c1jmGTEO04/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQm5HVU5zaG5mdVZOOUtwaTVFZi12TmlyX1I0ck9HLU9JeUtuaVgwTTFEcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlakJLZGt0bGFtb3hNMlpSUm1kTWJFRXRjSEp2Wm1sc1pTMWhSREZ1ZFdKUGQyZ3hMWEJ5YjJacGJHVXRjR2xqZEhWeVpTMDNNakF1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-16T20:48:01.593Z",
+          "startedAt": "2026-08-16T20:47:55.785Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "hearing-listed": {
+                "eventTitle": "Hearing",
+                "eventDescription": "Charged for each hearing returned.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00085
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0004
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-08-19T08:06:26.068Z"
+        },
+        "id": "z6KKqxXVw3FPR8C0i",
+        "url": "https://apify.com/wildorigins/uk-court-listings"
+      },
+      {
+        "title": "Webhook Signature MCP",
+        "name": "webhook-signature-mcp",
+        "username": "q_services",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 4,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-07T06:40:49.954Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 0,
+            "TIMED-OUT": 2,
+            "TOTAL": 2
+          }
+        },
+        "description": "Generate and verify HMAC webhook signatures with constant-time comparison, GitHub and Stripe formats, timestamp tolerance and no secret disclosure.",
+        "categories": [
+          "MCP_SERVERS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Q Services",
+        "userPictureUrl": "https://images.apifyusercontent.com/bC1CQ2zZFa58LcVMbyTO9viqfzHiYBJkd6Yw1UJZk9c/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vY2dFS3VKdUJvM0Vlc04xVmNycEQ1cS1wNG9WQlliUHVGWkIxT3ZleDVlOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURnA0TkZkRVYyRjBNM0YzTVVKa1QxaFNaVTlIUTBkeVUyZGtTazVRUjJWWlEzUnlYMlZtYVRSeU9FazNiVzUzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "tool-call": {
+                "eventTitle": "Webhook signature operation",
+                "eventDescription": "Charged once per completed MCP tool call.",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-16T10:12:15.134Z",
+          "startedAt": "2026-07-16T10:12:15.134Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "GDkraCwFqha3E3t20",
+        "url": "https://apify.com/q_services/webhook-signature-mcp"
+      },
+      {
+        "title": "Chrono24 Scraper · All-in-One Watch Listings · $1.50/1k",
+        "name": "chrono24-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 44,
+          "totalRuns": 10296,
+          "totalUsers": 130,
+          "totalUsers7Days": 25,
+          "totalUsers30Days": 39,
+          "totalUsers90Days": 68,
+          "lastRunStartedAt": "2026-10-17T06:45:13.255Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 8,
+            "FAILED": 42,
+            "SUCCEEDED": 5900,
+            "TIMED-OUT": 0,
+            "TOTAL": 5950
+          }
+        },
+        "description": "Chrono24 all-in-one scraper — auto-classifies detail, brand-index, model-index, and search URLs in one run. 35+ fields per listing: reference, year, movement, caliber, materials, dealer country, shipping policy, full image array. JSON-LD product data. Pure HTTP, no browser",
+        "categories": [
+          "AGENTS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/tlNBvAwBmylv2lsGSIUEyBESBYmeONXPMYfvBli20ws/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItUjE2UVpyaG5WY202QzRBNnUteXB0dDJPbHJ0Ry1DaHJvbm8yNC1zY2FsZWQud2VicA.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "startedAt": "2026-09-23T09:31:39.167Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.007
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Output record",
+                "eventDescription": "Charge once per dataset row emitted. One row per watch listing — whether discovered via a brand page, model page, search URL (fan-out paginated), or fed directly as a detail URL. Includes all listing fields from Chrono24's mobile JSON API (40+ fields in detail mode).",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.0015
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Charged for supplementary data attached to a listing.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "createdAt": "2026-09-07T09:31:50.888Z",
+          "notifiedAboutFutureChangeAt": "2026-09-07T09:32:11.598Z",
+          "notifiedAboutChangeAt": "2026-09-23T09:35:58.278Z"
+        },
+        "id": "R16QZrhnVcm6C4A6u",
+        "url": "https://apify.com/memo23/chrono24-scraper"
+      },
+      {
+        "title": "Houzz Pros [$2💰] Contractor & Designer Leads, Reviews, Emails",
+        "name": "houzz-professionals-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 66,
+          "totalRuns": 1165,
+          "totalUsers": 65,
+          "totalUsers7Days": 8,
+          "totalUsers30Days": 22,
+          "totalUsers90Days": 53,
+          "lastRunStartedAt": "2026-10-16T19:20:33.159Z",
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 1,
+            "SUCCEEDED": 163,
+            "TIMED-OUT": 0,
+            "TOTAL": 165
+          }
+        },
+        "description": "Houzz professionals scraper — find contractors, architects, designers and remodelers by trade and city. One row per pro: phone, website, address, rating, review count, services, areas served, license and cost estimate. Opt-in nested reviews and emails. Pure HTTP, no browser.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/2J6WBx0T7IrJ_RB0ss23iPtwwgvn_qlXIymaJZOjt2Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItRWhmNXg5YlJEZFVQcE1sYnctSjNROXJWaUlZZi1ob3V6ei5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 4.999999999999999,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": true,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "professional": {
+                "eventTitle": "Professional",
+                "eventDescription": "One professional row — name, contact name, phone, website, email, full address, review score & count, services provided, areas served, cost estimate, license number, category and profile photo.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0005
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Charged when optional email enrichment finds a contact email for a professional (website scrape).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "createdAt": "2026-08-14T23:34:29.938Z",
+          "startedAt": "2026-08-14T23:34:29.938Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Ehf5x9bRDdUPpMlbw",
+        "url": "https://apify.com/memo23/houzz-professionals-scraper"
+      },
+      {
+        "title": "H&M Product Scraper",
+        "name": "HM-Product-Scraper",
+        "username": "gauzy_penguin",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 24403,
+          "totalUsers": 71,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 10,
+          "totalUsers90Days": 21,
+          "lastRunStartedAt": "2026-10-16T01:02:07.145Z",
+          "actorReviewCount": 4,
+          "actorReviewRating": 5,
+          "bookmarkCount": 7,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 24,
+            "TIMED-OUT": 0,
+            "TOTAL": 24
+          }
+        },
+        "description": "Scrape H&M product listings, prices, colors, sizes, and images from multiple countries. Perfect for price monitoring, product cataloging, and e-commerce analytics.",
+        "categories": [
+          "ECOMMERCE",
+          "AUTOMATION",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/YJQggOjtUp12fa_Vx5adZgRddcxrHahgw66zkZQuR8w/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQ1V2enZyc3Zpa3p0MU1TeFctYWN0b3IteGszTm5pUkVmb3RiSm9hMFctVFhjT3hOWE5VYS1obS1sb2dvLXBuZ19zZWVrbG9nby0yNTE1MzYucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 7,
+        "actorReviewRating": 5.000000000000001,
+        "actorReviewCount": 4,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "scrape anything",
+        "userPictureUrl": "https://images.apifyusercontent.com/4ZUAmQhaV1wQZKvWHcblBKgIPW8P_Gn3n7t-wulRUhI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veWZIRDZKOHUxa3pvT1ZEYnNGaG9MUk1vR3VJWGpPT2I2dG9Vd1E5T0Racy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVVZhY25WalpVUm5RbFZsY1VKeVVUQTRRa2d5YlVGb1ZrUlpkM1JOU1RONmFsb3lORFo0WWtoNGNuZFZabTlpVVQxek9UWXRZdw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": 2,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-03-07T16:37:26.664Z",
+          "createdAt": "2026-03-07T16:37:26.294Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "xk3NniREfotbJoa0W",
+        "url": "https://apify.com/gauzy_penguin/hm-product-scraper"
+      },
+      {
+        "title": "Datasource Pulse · Monitor Actors, APIs & Scrapers for Health",
+        "name": "datasource-pulse",
+        "username": "growth_wizard",
+        "stats": {
+          "totalBuilds": 63,
+          "totalRuns": 327,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T06:00:30.170Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 57,
+            "TIMED-OUT": 0,
+            "TOTAL": 57
+          }
+        },
+        "description": "Monitor Actors, scrapers, and API keys across your whole pipeline. Catches schema drift, empty results, stale data, and quota exhaustion. One alert when something degrades, one notice when it recovers. Learn more: datasourcepulse.com",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/BbHW9s8LQtDwFLNlmqC6zdLsuk5--GaqHagM2QY7EPA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQW5CbVYybW5WYlVoSUZ2dDktYWN0b3ItVUV0MzlrN3YxRGtJWXA4R2gtMldmM2ZDdkozbS1kcC1sb2dvLWFwaWZ5LTEwMjQtZnVsbGJsZWVkLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Cecily Robyn Lough",
+        "userPictureUrl": "https://images.apifyusercontent.com/rAKHnBoG92i_VYm15u9O-LoU794hNS8LXnJJd5E4Qvk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZngtTkFtTUk4SkN1N0xxU21YbTcweVQ2bXdyQ0pVZDJ1SVRKY2Z2bmFWQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVFY2ZUU5cFZHWTJSbTVhVTNoWE5FVmFhMEp1U3pWV1NFUTJSbFJHWWxsTlZYWTVVRkV6VTA4eU0yRlpNRU5GU1Qxek9UWXRZdw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "connector-checked": {
+                "eventTitle": "Connector check",
+                "eventDescription": "Charged once for each data connector checked in a run — API credential/quota health or scraper output quality. Billed on attempt, so a dead or rate-limited connector still counts.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-12T12:21:01.857Z",
+          "createdAt": "2026-08-12T12:21:02.167Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-19T08:06:09.897Z"
+        },
+        "id": "UEt39k7v1DkIYp8Gh",
+        "url": "https://apify.com/growth_wizard/datasource-pulse"
+      },
+      {
+        "title": "AMS Austria Scraper - Government Job Portal",
+        "name": "ams-at-scraper",
+        "username": "santamaria-automations",
+        "stats": {
+          "totalBuilds": 64,
+          "totalRuns": 1009,
+          "totalUsers": 32,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 6,
+          "totalUsers90Days": 8,
+          "lastRunStartedAt": "2026-10-17T08:31:33.123Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 1,
+            "SUCCEEDED": 74,
+            "TIMED-OUT": 1,
+            "TOTAL": 78
+          }
+        },
+        "description": "Extract job listings from jobs.AMS.at, Austria's official public employment service with 100,000+ jobs. Get title, company, location, Bundesland, employment type & job details. Ideal for recruiters, HR platforms & job aggregators targeting the Austrian market.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/SSM7TnsHPT5Z4mX07-trBcwWzGT_1BvWIkGaSme7vq0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSlBUdXNDcmFZcGFic2pEWHEtYWN0b3ItbHlBMmJzdWlOV1FrOFVxeTItc2JZYmlPWVJvTy1pY29uLWFtcy1hdC1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NanoScrape",
+        "userPictureUrl": "https://images.apifyusercontent.com/7aoyvDSYVKjMBDKkOZ5CweA9eg0v0pvmfmOcxCsBHxE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTmpRYW1hMjd4cDNUdlVEeXZwWUNteV9scWFpcWJ2QmVmakJfdkFSMEg0TS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTbEJVZFhORGNtRlpjR0ZpYzJwRVdIRXRjSEp2Wm1sc1pTMTRkRUZ0T1dGRFNFcDVMWGx2ZFhSMVltVXRZWFpoZEdGeUxUZ3dNQzV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-01-23T11:19:01.092Z",
+          "createdAt": "2026-01-23T11:19:01.317Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "lyA2bsuiNWQk8Uqy2",
+        "url": "https://apify.com/santamaria-automations/ams-at-scraper"
+      },
+      {
+        "title": "LinkedIn Hiring Signals Tracker - Company Jobs Monitor",
+        "name": "linkedin-hiring-signals",
+        "username": "kamerozkan",
+        "stats": {
+          "totalBuilds": 57,
+          "totalRuns": 656,
+          "totalUsers": 10,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 10,
+          "lastRunStartedAt": "2026-10-17T08:00:45.110Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 99,
+            "TIMED-OUT": 0,
+            "TOTAL": 100
+          }
+        },
+        "description": "LinkedIn hiring signals tracker and company jobs scraper. Monitor public company job pages as a change feed: new, changed, reopened, and safely confirmed closed roles. Competitor hiring tracker, no login or cookies. Apply URLs, live status, ghost-job risk. For ATS, RPO, recruiting, and sales teams.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/KO3aoIwep_2GTvKxhqTV17NLJxCw83OxEkdOvx7jhsg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20va3ZiR05xRTR4RHJKT1o0UVctYWN0b3ItdWprRUc0Z3BRTmJwWU9RY2MteDhlRUNpdHJsTi1saW5rZWRpbi1oaXJpbmctc2lnbmFscy11cGxvYWQucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Kamer Ozkan",
+        "userPictureUrl": "https://images.apifyusercontent.com/KR2I-OIhAoZdvKPyMfg9VHj9-nQxtosPsnavKPWIagY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUENKOWFkX1kzeEQ2T0U3Sk16WmZDdUMtdWpVQ1Q5X2dUUGQ2OUQ5TkZyVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhM1ppUjA1eFJUUjRSSEpLVDFvMFVWY3RjSEp2Wm1sc1pTMW5iV3hsYms5amVYWnZMV2RwZEdoMVlpMWhkbUYwWVhJdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-scan": {
+                "eventTitle": "Company scan",
+                "eventDescription": "One company job inventory scanned and compared against saved state.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0108
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0096
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0084
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0084
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0084
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-09-08T19:13:29.000Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-25T19:13:29.854Z",
+          "notifiedAboutFutureChangeAt": "2026-08-25T19:13:50.192Z",
+          "notifiedAboutChangeAt": "2026-09-08T19:35:40.991Z"
+        },
+        "id": "ujkEG4gpQNbpYOQcc",
+        "url": "https://apify.com/kamerozkan/linkedin-hiring-signals"
+      },
+      {
+        "title": "Indian IPO Tracker - SEBI DRHP, GMP & Listing API",
+        "name": "indian-ipo-tracker",
+        "username": "contented_academy",
+        "stats": {
+          "totalBuilds": 82,
+          "totalRuns": 28690,
+          "totalUsers": 44,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-16T13:02:40.268Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 4,
+            "TOTAL": 34
+          }
+        },
+        "description": "Track every Indian mainboard & SME IPO from DRHP to listing. Multi-source GMP, live subscription, webhook alerts on lifecycle changes.",
+        "categories": [
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/6q6tYEef5IlHpAkXBJfVLFUmfo3OdwvXnVroE8mVUK0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vOGxTek9oaU4wN2FKSjFmWTctYWN0b3ItZEVJcTlLaVk0TjlvNlJxaHgtaDNhMmRkYlF0Vi1HZW1pbmlfR2VuZXJhdGVkX0ltYWdlX292dnh5Y292dnh5Y292dngucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Ujjawal Yadav",
+        "userPictureUrl": "https://images.apifyusercontent.com/RSfg5baHshplnaDpSjt1zKL0mtmgh9lEuH8NSwltcus/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbUlwUnU0QndCTmdBNWZwSU1ib3F1NkFoMjZGVFBITUFhYkFrY05ENXpsWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTWGRPY2xSd1ZqRlhWR2REWkdsTmRGUlVRbEp6TTAxbGFrczJkVEp6VldNMlEwWm1TVWx5TUdOeGQwTnBlVmN0Ym1ZOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "ipo-record-returned": {
+                "eventTitle": "IPO record",
+                "eventDescription": "One complete cross-source IPO record (SEBI + BSE +      NSE + GMP reconciled) pushed to the dataset",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.05,
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "lifecycle-status-change-detected": {
+                "eventTitle": "Lifecycle change",
+                "eventDescription": "An IPO moved to a new stage, SEBI approved, RHP filed, subscription opened, listed, etc.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.1
+              },
+              "gmp-threshold-crossed": {
+                "eventTitle": "GMP alert",
+                "eventDescription": "Reconciled grey-market premium changed by ≥ the configured % since the last snapshot.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.1
+              },
+              "listing-pop-calculated": {
+                "eventTitle": "Listing pop",
+                "eventDescription": "Opening price captured from BSE/NSE on listing day. Fires once per IPO, ever.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.15
+              },
+              "subscription-milestone-crossed": {
+                "eventTitle": "Subscription milestone",
+                "eventDescription": "Total subscription crossed 1×, 5×, or 10×. Maximum 3 times per IPO.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.1
+              },
+              "subscription-acceleration-detected": {
+                "eventTitle": "NII acceleration",
+                "eventDescription": "NII subscription jumped ≥ 3× day-over-day — the institutional pile-on signal. Rare.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.2
+              },
+              "coverage-gap-detected": {
+                "eventTitle": "Source gap",
+                "eventDescription": "A data source returned < 30% of its 7-run baseline - flags scraper degradation or site change.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.05
+              },
+              "gmp-snapshot-recorded": {
+                "eventTitle": "GMP snapshot",
+                "eventDescription": "One GMP record written in gmp_only fast mode.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              },
+              "subscription-snapshot-captured": {
+                "eventTitle": "Subscription snapshot",
+                "eventDescription": "One subscription multiples record captured by the  bidding-checkpoint schedule.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-05-03T14:54:08.595Z",
+          "createdAt": "2026-05-03T14:54:09.982Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "dEIq9KiY4N9o6Rqhx",
+        "url": "https://apify.com/contented_academy/indian-ipo-tracker"
+      },
+      {
+        "title": "Chrono24 Scraper CHEAP for $1/1k 💰 | Watches | Prices",
+        "name": "chrono24-scraper",
+        "username": "ahmed_jasarevic",
+        "stats": {
+          "totalBuilds": 57,
+          "totalRuns": 310,
+          "totalUsers": 23,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T02:56:36.680Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 2,
+            "TOTAL": 28
+          }
+        },
+        "description": "[⭐$1/1k] Extract luxury watch listings from Chrono24 — prices, brands, models, conditions and dealer data. Monitor Rolex, Omega and Patek Philippe for market research and investment screening.",
+        "categories": [
+          "ECOMMERCE",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/UjpA_1ieDVSQ2STpT7H4XJ8RVIr_L_FRtlGi1oa93xo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZHRSN3FuVGJRck5pU0NtajctYWN0b3ItVktZVWFLd1dRQUcybDhVTTYtaXFDWU50SkhXei1DSFJPTk8uUE5HLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ahmed Jasarevic",
+        "userPictureUrl": "https://images.apifyusercontent.com/f6R-MYJUv583LmxEVXsgF3lDfBEQ5aOnqbohHsPfKoI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOEl3RTlRa0x2Y1F0T2JLQnhXOGdtajlfenBBS0ttSHZjTEZpN3oyZm5Vdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaSFJTTjNGdVZHSlJjazVwVTBOdGFqY3RjSEp2Wm1sc1pTMW5NR3AzYmt0UE5VRmpMVEUzT1RBek5EQTJNek00TVRrdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTitle": "Actor Start",
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "isOneTimeEvent": false,
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00097
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00098
+                  },
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00097
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00099
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00097
+                  }
+                },
+                "eventTitle": "result",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "isPriceChangeNotificationSuppressed": false,
+          "startedAt": "2026-09-14T12:18:34.694Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-14T12:18:51.418Z",
+          "pricingModel": "PAY_PER_EVENT",
+          "notifiedAboutChangeAt": "2026-09-14T12:35:59.463Z"
+        },
+        "id": "VKYUaKwWQAG2l8UM6",
+        "url": "https://apify.com/ahmed_jasarevic/chrono24-scraper"
+      },
+      {
+        "title": "CodePerfection Run Monitor (internal component)",
+        "name": "codeperfection-failure-receiver",
+        "username": "codeperfection",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 349,
+          "totalUsers": 20,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 13,
+          "totalUsers90Days": 17,
+          "lastRunStartedAt": "2026-10-15T16:00:07.081Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 234,
+            "TIMED-OUT": 0,
+            "TOTAL": 234
+          }
+        },
+        "description": "Internal endpoint that codeperfection/x-twitter-scraper calls automatically to report verified run failures so they get fixed. You do not need to run it. Looking for the Twitter (X) scraper? See codeperfection/x-twitter-scraper.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "CodePerfection",
+        "userPictureUrl": "https://images.apifyusercontent.com/41HCr0gHco6EX2WM7gcMylBte_n3OsugkwFjLnn_ArQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbFQxYVJ4akptZFdsUFE2Z2x3b1Nqenl2b0NSYVh2RVlMTGJmdVRkMnEwRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjbVIyWkhkTFpHMWhjM2hrY2pKb2NrTXRjSEp2Wm1sc1pTMXRia2s0T1RaNU1YUTNMVU52WkdWUVpYSm1aV04wYVc5dVgwTlFYMnh2WjI4dWMzWm5MbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE"
+        },
+        "id": "fGe9DSBjqECBr6No5",
+        "url": "https://apify.com/codeperfection/codeperfection-failure-receiver"
+      },
+      {
+        "title": "Package Holiday Price Comparison - Pauschalreise, TUI, DERTOUR",
+        "name": "dach-package-holiday-price-api",
+        "username": "kamerozkan",
+        "stats": {
+          "totalBuilds": 30,
+          "totalRuns": 317,
+          "totalUsers": 13,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 6,
+          "lastRunStartedAt": "2026-10-16T12:46:40.195Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 3,
+            "FAILED": 0,
+            "SUCCEEDED": 83,
+            "TIMED-OUT": 0,
+            "TOTAL": 86
+          }
+        },
+        "description": "Compare Pauschalreise offers and package holiday prices across five German sources (TUI, DERTOUR, weg.de, ab-in-den-urlaub.de, alltours) in one normalized dataset: GIATA hotel matching, airport matrix, 90-day price history, market signals, buy-or-wait forecasts and signed price-drop webhook alerts.",
+        "categories": [
+          "TRAVEL",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/vwpLn_EQEkR55PgF3QSZDVLUt6qisfS06r9o68u5y4M/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20va3ZiR05xRTR4RHJKT1o0UVctYWN0b3Itd2dyZzhSSWRLdFRsM3g1VVQtWDVUeFNaQ0ZUdS1pY29uLTUxMi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Kamer Ozkan",
+        "userPictureUrl": "https://images.apifyusercontent.com/KR2I-OIhAoZdvKPyMfg9VHj9-nQxtosPsnavKPWIagY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUENKOWFkX1kzeEQ2T0U3Sk16WmZDdUMtdWpVQ1Q5X2dUUGQ2OUQ5TkZyVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhM1ppUjA1eFJUUjRSSEpLVDFvMFVWY3RjSEp2Wm1sc1pTMW5iV3hsYms5amVYWnZMV2RwZEdoMVlpMWhkbUYwWVhJdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": 0.02,
+          "startedAt": "2026-09-16T00:00:00.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "offer-emitted": {
+                "eventTitle": "Package offer",
+                "eventDescription": "One normalized package offer written to the dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "successful-source-search": {
+                "eventTitle": "Successful source search",
+                "eventDescription": "One successful operator or departure-airport search.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.015
+              },
+              "detail-enrichment": {
+                "eventTitle": "Detail enrichment",
+                "eventDescription": "One offer enriched with verified detail-page evidence.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004
+              },
+              "comparison-emitted": {
+                "eventTitle": "Hotel comparison",
+                "eventDescription": "One same-hotel or like-for-like comparison written.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002
+              },
+              "history-update": {
+                "eventTitle": "Price observation",
+                "eventDescription": "One new deduplicated price observation persisted.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0005
+              },
+              "airport-matrix-emitted": {
+                "eventTitle": "Airport comparison",
+                "eventDescription": "One departure-airport comparison row written.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003
+              },
+              "market-signal-emitted": {
+                "eventTitle": "Capacity signal",
+                "eventDescription": "One explainable market availability or price signal written.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.027
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.024
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.021
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.021
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.021
+                  }
+                }
+              },
+              "forecast-emitted": {
+                "eventTitle": "Buy or wait forecast",
+                "eventDescription": "One transparent buy or wait forecast written.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.027
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.024
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.021
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.021
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.021
+                  }
+                }
+              },
+              "alert-delivered": {
+                "eventTitle": "Alert delivered",
+                "eventDescription": "One webhook alert successfully delivered.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.035
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.035
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.035
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "createdAt": "2026-09-01T19:22:44.088Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-01T19:23:04.365Z",
+          "notifiedAboutChangeAt": "2026-09-16T00:05:56.350Z"
+        },
+        "id": "wgrg8RIdKtTl3x5UT",
+        "url": "https://apify.com/kamerozkan/dach-package-holiday-price-api"
+      },
+      {
+        "title": "TikTok Scraper — Videos, Profiles & Hashtags | from $3/1K",
+        "name": "tiktok-scraper",
+        "username": "bovi",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 121,
+          "totalUsers": 10,
+          "totalUsers7Days": 4,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 7,
+          "lastRunStartedAt": "2026-10-16T11:08:41.312Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 32,
+            "TIMED-OUT": 0,
+            "TOTAL": 32
+          }
+        },
+        "description": "Scrape TikTok profiles, videos, hashtag feeds, keyword search, comments, and TikTok Shop products without login. Residential proxy built-in — TikTok blocks datacenter IPs, most competitors fail silently. Probe-first stop-gate: zero charges if your run can't reach TikTok.",
+        "categories": [
+          "SOCIAL_MEDIA",
+          "MARKETING"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/-muiWNzmIhh8oLN-dhRSGalwr9PKgT_8l8_4VwKOm0s/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNXpaSmFydGROVHpHcDZ1VTktYWN0b3ItTlo2RTNnaXkwMXFlNE94bWctWUw3NHRKQW94OS10aWt0b2stc2NyYXBlci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Vitalii Bondarev",
+        "userPictureUrl": "https://images.apifyusercontent.com/366A2-rL_Tsix1Ca4RkV0mSisG_m99hKsvrk4FhsOv0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNXNYbDRtMlFubGhoaGhLYVY3YkphQWc0SEFmTXpfeGdSME5mSXJqdVFoRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTamxqYmpkeFVVNTVYMEk1UjFObWNWWmthbUpMTlVaeE1XczVjMkZtT1d0T2VVOXRWa0pNTWxRNWJIZDRSMmxCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-07-24T19:25:50.799Z",
+          "startedAt": "2026-07-24T19:25:50.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0000495
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000049
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0000485
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.000048
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0000475
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Profile item",
+                "eventDescription": "One structured TikTok public profile item (profile-level data).",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00297
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00294
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00291
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00288
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00285
+                  }
+                }
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-07-24T19:35:39.541Z"
+        },
+        "id": "NZ6E3giy01qe4Oxmg",
+        "url": "https://apify.com/bovi/tiktok-scraper"
+      }
+    ]
+  }
+}

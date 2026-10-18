@@ -80,6 +80,16 @@ describe('pickTool', () => {
     expect(pickTool(TOOLS)).toBe('query_uk_sanctions');
     expect(pickTool([{ name: 'list_sources' }])).toBeNull();
   });
+
+  it('skips a tool whose source is paused (its description carries the origin notice)', () => {
+    const paused = {
+      name: 'query_uk_planning',
+      description:
+        'Planning applications. Origin notice: the origin emptied its dataset on 2026-10-10.',
+    };
+    expect(pickTool([paused, ...TOOLS])).toBe('query_uk_sanctions');
+    expect(pickTool([paused])).toBeNull();
+  });
 });
 
 describe('probeOnce', () => {

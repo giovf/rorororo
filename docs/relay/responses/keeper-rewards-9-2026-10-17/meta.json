@@ -1,0 +1,1041 @@
+{
+  "request": "keeper-rewards-9-2026-10-17",
+  "fetched_at": "2026-10-17T18:47:17.444Z",
+  "results": [
+    {
+      "method": "POST",
+      "url": "https://blue-api.morpho.org/graphql",
+      "body": "{\"query\":\"{ assets(first: 100, where: { address_in: [\\\"0x004626a008b1acdc4c74ab51644093b155e59a23\\\",\\\"0x1c2757c1fef1038428b5bef062495ce94bbe92b2\\\",\\\"0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22\\\",\\\"0x311935cd80b76769bf2ecc9d8ab7635b2139cf82\\\",\\\"0x4154550f4db74dc38d1fe98e1f3f28ed6dad627d\\\",\\\"0x4200000000000000000000000000000000000006\\\",\\\"0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42\\\",\\\"0x7300b37dfdfab110d83290a29dfb31b1740219fe\\\",\\\"0x833589fcd6edb6e08f4c7c32d4f71b54bda02913\\\",\\\"0x940181a94a35a4569e4529a3cdfb74e38fd98631\\\",\\\"0x97be14dd8f994a5364573bc035d85309e7cb34de\\\",\\\"0xb200000000000000000000451d033a5000cb479e\\\",\\\"0xb2000000000000000000008501b13360000cb2ec\\\",\\\"0xcb17c9db87b595717c857a08468793f5bab6445f\\\",\\\"0xcb327b99ff831bf8223cced12b1338ff3aa322ff\\\",\\\"0xcb585250f852c6c6bf90434ab21a00f02833a4af\\\",\\\"0xcbada732173e39521cdbe8bf59a6dc85a9fc7b8c\\\",\\\"0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf\\\",\\\"0xcbd06e5a2b0c65597161de254aa074e489deb510\\\",\\\"0xcfa3ef56d303ae4faaba0592388f19d7c3399fb4\\\",\\\"0xdbfefd2e8460a6ee4955a68582f85708baea60a3\\\",\\\"0xe66e3a37c3274ac24fe8590f7d84a2427194dc17\\\"], chainId_in: [8453] }) { items { address symbol decimals priceUsd } } }\"}",
+      "fetched_at": "2026-10-17T18:43:26.131Z",
+      "status": 200,
+      "final_url": "https://blue-api.morpho.org/graphql",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"b41-5Rh0He0ifmH2LHI9Lq/Cskovn6k\""
+      },
+      "file": "1.json",
+      "bytes": 2881,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://blue-api.morpho.org/graphql",
+      "body": "{\"query\":\"{ __type(name: \\\"Market\\\") { fields { name } } }\"}",
+      "fetched_at": "2026-10-17T18:43:27.277Z",
+      "status": 200,
+      "final_url": "https://blue-api.morpho.org/graphql",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "553",
+        "etag": "W/\"229-lmi+l8E84lKh3AaqnwjvTasPTgU\""
+      },
+      "file": "2.json",
+      "bytes": 553,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://blue-api.morpho.org/graphql",
+      "body": "{\"query\":\"{ __type(name: \\\"AssetsFilters\\\") { inputFields { name } } }\"}",
+      "fetched_at": "2026-10-17T18:43:27.980Z",
+      "status": 200,
+      "final_url": "https://blue-api.morpho.org/graphql",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "340",
+        "etag": "W/\"154-3e4ggVar4xvKmphSUpfC0u2Av0o\""
+      },
+      "file": "3.json",
+      "bytes": 340,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://blue-api.morpho.org/graphql",
+      "body": "{\"query\":\"{ __type(name: \\\"MarketFilters\\\") { inputFields { name } } }\"}",
+      "fetched_at": "2026-10-17T18:43:28.647Z",
+      "status": 200,
+      "final_url": "https://blue-api.morpho.org/graphql",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"4da-w8YCULIjaCdvG6aBl9gK6rRubCw\""
+      },
+      "file": "4.json",
+      "bytes": 1242,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x004626a008b1acdc4c74ab51644093b155e59a23\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:28.796Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "230"
+      },
+      "file": "5.json",
+      "bytes": 230,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x004626a008b1acdc4c74ab51644093b155e59a23\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:29.359Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "102"
+      },
+      "file": "6.json",
+      "bytes": 102,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x1c2757c1fef1038428b5bef062495ce94bbe92b2\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:29.871Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "230"
+      },
+      "file": "7.json",
+      "bytes": 230,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":4,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x1c2757c1fef1038428b5bef062495ce94bbe92b2\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:30.385Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "102"
+      },
+      "file": "8.json",
+      "bytes": 102,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":5,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:30.917Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "230"
+      },
+      "file": "9.json",
+      "bytes": 230,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":6,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:31.447Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "102"
+      },
+      "file": "10.json",
+      "bytes": 102,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":7,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x311935cd80b76769bf2ecc9d8ab7635b2139cf82\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:31.977Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "230"
+      },
+      "file": "11.json",
+      "bytes": 230,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":8,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x311935cd80b76769bf2ecc9d8ab7635b2139cf82\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:32.512Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "102"
+      },
+      "file": "12.json",
+      "bytes": 102,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":9,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x4154550f4db74dc38d1fe98e1f3f28ed6dad627d\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:33.023Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "230"
+      },
+      "file": "13.json",
+      "bytes": 230,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":10,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x4154550f4db74dc38d1fe98e1f3f28ed6dad627d\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:33.553Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "14.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":11,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x4200000000000000000000000000000000000006\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:34.082Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "15.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":12,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x4200000000000000000000000000000000000006\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:34.619Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "16.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":13,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:35.152Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "17.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":14,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:35.667Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "18.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":15,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x7300b37dfdfab110d83290a29dfb31b1740219fe\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:36.178Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "19.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":16,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x7300b37dfdfab110d83290a29dfb31b1740219fe\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:36.691Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "20.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":17,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x833589fcd6edb6e08f4c7c32d4f71b54bda02913\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:37.204Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "21.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":18,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x833589fcd6edb6e08f4c7c32d4f71b54bda02913\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:37.716Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "22.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":19,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x940181a94a35a4569e4529a3cdfb74e38fd98631\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:38.228Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "23.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":20,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x940181a94a35a4569e4529a3cdfb74e38fd98631\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:38.741Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "24.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":21,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x97be14dd8f994a5364573bc035d85309e7cb34de\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:39.252Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "25.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":22,\"method\":\"eth_call\",\"params\":[{\"to\":\"0x97be14dd8f994a5364573bc035d85309e7cb34de\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:39.765Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "26.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":23,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xb200000000000000000000451d033a5000cb479e\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:40.279Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "27.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":24,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xb200000000000000000000451d033a5000cb479e\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:40.803Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "28.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":25,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xb2000000000000000000008501b13360000cb2ec\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:41.315Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "29.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":26,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xb2000000000000000000008501b13360000cb2ec\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:41.845Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "30.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":27,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcb17c9db87b595717c857a08468793f5bab6445f\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:42.357Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "31.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":28,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcb17c9db87b595717c857a08468793f5bab6445f\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:42.886Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "32.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":29,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcb327b99ff831bf8223cced12b1338ff3aa322ff\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:43.396Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "33.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":30,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcb327b99ff831bf8223cced12b1338ff3aa322ff\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:43.909Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "34.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":31,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcb585250f852c6c6bf90434ab21a00f02833a4af\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:44.420Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "35.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":32,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcb585250f852c6c6bf90434ab21a00f02833a4af\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:44.950Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "36.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":33,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcbada732173e39521cdbe8bf59a6dc85a9fc7b8c\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:45.479Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "37.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":34,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcbada732173e39521cdbe8bf59a6dc85a9fc7b8c\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:45.991Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "38.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":35,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:46.503Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "39.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":36,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:47.033Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "40.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":37,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcbd06e5a2b0c65597161de254aa074e489deb510\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:47.564Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "41.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":38,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcbd06e5a2b0c65597161de254aa074e489deb510\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:48.076Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "42.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":39,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcfa3ef56d303ae4faaba0592388f19d7c3399fb4\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:48.589Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "43.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":40,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xcfa3ef56d303ae4faaba0592388f19d7c3399fb4\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:49.102Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "44.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":41,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xdbfefd2e8460a6ee4955a68582f85708baea60a3\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:49.631Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "45.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":42,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xdbfefd2e8460a6ee4955a68582f85708baea60a3\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:50.143Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "46.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":43,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe66e3a37c3274ac24fe8590f7d84a2427194dc17\",\"data\":\"0x95d89b41\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:50.656Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "231"
+      },
+      "file": "47.json",
+      "bytes": 231,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://base.gateway.tenderly.co",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":44,\"method\":\"eth_call\",\"params\":[{\"to\":\"0xe66e3a37c3274ac24fe8590f7d84a2427194dc17\",\"data\":\"0x313ce567\"},\"latest\"]}",
+      "fetched_at": "2026-10-17T18:43:51.172Z",
+      "status": 200,
+      "final_url": "https://base.gateway.tenderly.co/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "103"
+      },
+      "file": "48.json",
+      "bytes": 103,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x004626a008b1acdc4c74ab51644093b155e59a23&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:43:51.184Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x004626a008b1acdc4c74ab51644093b155e59a23&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"b13b3a95bef03404efa362a8c715215a\""
+      },
+      "file": "49.json",
+      "bytes": 2,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x1c2757c1fef1038428b5bef062495ce94bbe92b2&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:43:51.795Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x1c2757c1fef1038428b5bef062495ce94bbe92b2&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"8c2bb08f9b406420cba4e47376392b44\""
+      },
+      "file": "50.json",
+      "bytes": 59,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:43:52.382Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x2ae3f1ec7f1f5012cfeab0185bfc7aa3cf0dec22&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"afd8eef4e230a8cad192c691fefaa6fd\""
+      },
+      "file": "51.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x311935cd80b76769bf2ecc9d8ab7635b2139cf82&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:43:52.960Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x311935cd80b76769bf2ecc9d8ab7635b2139cf82&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"e46007f4ace9308723900c8e0563cf92\""
+      },
+      "file": "52.json",
+      "bytes": 61,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x4154550f4db74dc38d1fe98e1f3f28ed6dad627d&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:43:53.548Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x4154550f4db74dc38d1fe98e1f3f28ed6dad627d&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"4032ef06857f60ddd8b41d0c3eb5b6db\""
+      },
+      "file": "53.json",
+      "bytes": 2,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x4200000000000000000000000000000000000006&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:43:54.121Z",
+      "retries": 2,
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x4200000000000000000000000000000000000006&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"4a876395e7d1dada1cf497e1c969c2aa\""
+      },
+      "file": "54.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:44:54.755Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x60a3e35cc302bfa44cb288bc5a4f316fdb1adb42&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"9bd985fde14f7c45c27850d955f381b7\""
+      },
+      "file": "55.json",
+      "bytes": 59,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x7300b37dfdfab110d83290a29dfb31b1740219fe&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:44:55.353Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x7300b37dfdfab110d83290a29dfb31b1740219fe&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"f4f5d69fa5040cc5ce44193dabdc2ecd\""
+      },
+      "file": "56.json",
+      "bytes": 65,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x833589fcd6edb6e08f4c7c32d4f71b54bda02913&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:44:55.969Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x833589fcd6edb6e08f4c7c32d4f71b54bda02913&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"d79f3aee91df993c20071f3b8590e9fe\""
+      },
+      "file": "57.json",
+      "bytes": 63,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x940181a94a35a4569e4529a3cdfb74e38fd98631&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:44:56.519Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x940181a94a35a4569e4529a3cdfb74e38fd98631&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"3b5624f8870ca307e949232b8644f58e\""
+      },
+      "file": "58.json",
+      "bytes": 63,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x97be14dd8f994a5364573bc035d85309e7cb34de&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:44:57.101Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0x97be14dd8f994a5364573bc035d85309e7cb34de&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"41a92b8f48e5e2563f334170bc6a0c51\""
+      },
+      "file": "59.json",
+      "bytes": 61,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xb200000000000000000000451d033a5000cb479e&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:44:57.688Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xb200000000000000000000451d033a5000cb479e&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"31082a7b74c3332b89d002fd0a2dd925\""
+      },
+      "file": "60.json",
+      "bytes": 60,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xb2000000000000000000008501b13360000cb2ec&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:44:58.283Z",
+      "retries": 2,
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xb2000000000000000000008501b13360000cb2ec&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"27bc0cd1014149a4950364f015f868c3\""
+      },
+      "file": "61.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcb17c9db87b595717c857a08468793f5bab6445f&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:45:02.230Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcb17c9db87b595717c857a08468793f5bab6445f&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"76f9ae24ee1a824c8e24d29ccf3be678\""
+      },
+      "file": "62.json",
+      "bytes": 60,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcb327b99ff831bf8223cced12b1338ff3aa322ff&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:45:06.703Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcb327b99ff831bf8223cced12b1338ff3aa322ff&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"b55d3c520838436c4d7166b5867f7bc4\""
+      },
+      "file": "63.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcb585250f852c6c6bf90434ab21a00f02833a4af&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:45:07.639Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcb585250f852c6c6bf90434ab21a00f02833a4af&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"6631e070f6802051a86ad4e2c761824b\""
+      },
+      "file": "64.json",
+      "bytes": 58,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcbada732173e39521cdbe8bf59a6dc85a9fc7b8c&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:45:08.227Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcbada732173e39521cdbe8bf59a6dc85a9fc7b8c&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"bc208b339d3caa6b9961a7985e98e091\""
+      },
+      "file": "65.json",
+      "bytes": 63,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:45:08.824Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcbb7c0000ab88b473b1f5afd9ef808440eed33bf&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "187"
+      },
+      "file": "66.json",
+      "bytes": 187,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcbd06e5a2b0c65597161de254aa074e489deb510&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:45:16.536Z",
+      "retries": 3,
+      "status": 429,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcbd06e5a2b0c65597161de254aa074e489deb510&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "187"
+      },
+      "file": "67.json",
+      "bytes": 187,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcfa3ef56d303ae4faaba0592388f19d7c3399fb4&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:46:47.128Z",
+      "retries": 1,
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xcfa3ef56d303ae4faaba0592388f19d7c3399fb4&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"90068364e2aa48709f642a946fbc0e09\""
+      },
+      "file": "68.json",
+      "bytes": 63,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xdbfefd2e8460a6ee4955a68582f85708baea60a3&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:47:16.759Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xdbfefd2e8460a6ee4955a68582f85708baea60a3&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"3324aa27adbd7d2ab73ab109494394ab\""
+      },
+      "file": "69.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xe66e3a37c3274ac24fe8590f7d84a2427194dc17&vs_currencies=usd",
+      "fetched_at": "2026-10-17T18:47:17.343Z",
+      "status": 200,
+      "final_url": "https://api.coingecko.com/api/v3/simple/token_price/base?contract_addresses=0xe66e3a37c3274ac24fe8590f7d84a2427194dc17&vs_currencies=usd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"728c6daf7ff9360d947d8e00354e43a8\""
+      },
+      "file": "70.json",
+      "bytes": 2,
+      "truncated": false
+    }
+  ]
+}
