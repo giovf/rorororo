@@ -910,9 +910,10 @@
       "effort_days": 0.2,
       "proof": "the failure is root-caused in this item's why and the attended session can merge or close PR #6 from it",
       "score": 3,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-18",
-      "updated": "2026-10-18"
+      "updated": "2026-10-18",
+      "doing_since": "2026-10-18"
     },
     {
       "id": "dependabot-pr-5",
