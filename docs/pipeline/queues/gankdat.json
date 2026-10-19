@@ -741,8 +741,9 @@
       "effort_days": 0.05,
       "proof": "the first Daily numbers row after an external x402 payment names its source and client count; the 10-23 week-1 read cites the per-resource list from the job log",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-19"
+      "status": "doing",
+      "added": "2026-10-19",
+      "doing_since": "2026-10-19"
     }
   ],
   "research_after": "2026-10-23"
