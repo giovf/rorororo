@@ -149,3 +149,4 @@
 - 2026-10-19 14:01 | notification | mail.boots.com | Get your glow on with Clinique Moisture Surge™ ✨ | Boots marketing mail, unrelated to Foundry | logged
 - 2026-10-19 14:06 | notification | bpiauctions.com | Just Added: Contents of DIY Store & more | BPI Auctions marketing mail, unrelated to Foundry | logged
 - 2026-10-19 16:29 | notification | amazon.co.uk | Don't pass up 3 months of Audible for £0.99 a month | Amazon marketing mail, unrelated to Foundry | logged
+- 2026-10-19 18:00 | notification | amazon.co.uk | Explore Today's Deals on Camera Products | Amazon marketing mail, unrelated to Foundry | logged
