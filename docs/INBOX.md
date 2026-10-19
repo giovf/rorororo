@@ -139,3 +139,4 @@
 - 2026-10-18 23:04 | notification | amazon.co.uk | We found something you might like | Amazon marketing mail, unrelated to Foundry | logged
 - 2026-10-19 02:53 | notification | jobstreet.com | Chief Executive Officer (CEO) + 11 new jobs - Job Alert | Jobstreet job-alert newsletter, unrelated to Foundry | logged
 - 2026-10-19 06:25 | notification | info.wise.com | How to tell it's really Wise | Wise newsletter on spotting impersonation scams | logged
+- 2026-10-19 08:10 | notification | alectolegal.com | Re: Flat 7, TW1 4EZ | personal mail to the owner (property conveyancing), unrelated to Foundry | logged
