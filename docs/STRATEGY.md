@@ -1547,3 +1547,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   £2,250 a year, so price room exists; demand does not, and gankdat's own company endpoints have 0 external calls.
   Scraping the closed registers is declined (their terms forbid it). Re-open on a paid company call, an EU register
   request or a de/it/es register appearing in the HVD facet; France (Sirene + recherche-entreprises) would be built first.
+- 2026-10-19 burn-down: gankdat research (starved queue). The 10-17/18 rows carry the lane's first external x402 payments
+  (1 then 3 in 24 h; CDP counts 3 calls from 3 payers on the one indexed resource) and nothing else new; review W42 already
+  queued the week-1 index read, the uk-planning surface pause and the journal's silent-row read. One gap queued:
+  `x402-paid-by-source-reading` (5) — the Daily numbers row cannot say which dataset or client paid, though the analytics
+  point carries both, and the §7 dataset clock ignores paid x402 calls. `research_after` 2026-10-23, the week-1 Bazaar read.

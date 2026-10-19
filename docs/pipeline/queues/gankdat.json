@@ -2,8 +2,8 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-18",
-  "researched": "2026-10-17",
+  "updated": "2026-10-19",
+  "researched": "2026-10-19",
   "items": [
     {
       "id": "nhs-ods",
@@ -733,6 +733,17 @@
       "status": "done",
       "added": "2026-10-18",
       "done_at": "2026-10-18"
+    },
+    {
+      "id": "x402-paid-by-source-reading",
+      "title": "Daily numbers: the `x402 paid` clause names the source, UA family and distinct clients of external x402 payments (24 h and 30 d), the runner prints CDP's per-resource Bazaar list, and paid x402 calls count toward `datasets 30d external`",
+      "why": "Research 2026-10-19 (burn-down): the first external x402 payments landed 10-17/18 (`1 x402 paid`, then `3 x402 paid`; `bazaar: 1 listed, 3 calls/30d, 3 payers`) and no routine can say what sold — `metrics.mjs` reads the `x402_paid` point only as a count (`kinds`) and as an after-wall move, though the point already carries the UA (blob2), the path (blob3), the slug (blob5) and the hashed client id (blob6); `bazaarSummary` sums CDP's per-resource quality numbers and the job log prints no resource list; `datasets 30d external` counts only keyed REST/MCP calls, so a paid x402 call on a register is invisible to STRATEGY §7's dataset clock. Do: one Analytics Engine query over `x402_paid` rows with `blob2 NOT LIKE 'gankdat-x402-probe/%'` grouped by blob5 and the UA family (first token before `/`, as `connect_account 7d by UA` does) for 24 h and 30 d, with COUNT(DISTINCT blob6) clients, rendered `3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients; python-requests 2, x402-fetch 1)` and a `x402 30d: N paid, C clients — <slug> N, …` clause (`0 x402 paid` unchanged when none); print each resource and its quality numbers under the runner's `bazaar:` read (`x402-bazaar-read.ts`, one line per resource); add the 30-day x402 slugs to the `datasets 30d external` reading with an `x402` marker. Pure reads of blobs already written — no Worker change, no version bump; tests on the clause renderer like `test/wave-logs.spec.ts`. No parentheses inside the per-source list beyond the outer pair (`refresh-errors-to-queue` splits rows on them — keep the clause out of `refresh errors`).",
+      "effort_days": 0.05,
+      "proof": "the first Daily numbers row after an external x402 payment names its source and client count; the 10-23 week-1 read cites the per-resource list from the job log",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-19"
     }
-  ]
+  ],
+  "research_after": "2026-10-23"
 }

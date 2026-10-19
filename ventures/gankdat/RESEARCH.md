@@ -609,3 +609,44 @@ errors`), so the follow-up item reads the phase from the repo. Tests: `test/refr
 no surface change). Root cause still open by design: `refresh-uk-trademark-journal-silent-row-2026-10-22`
 (5) reads the first silent-refresh row and fixes the phase it names, or drops on 10-25 with four
 clean rows.
+
+## Research 2026-10-19 (pipeline starved — burn-down)
+
+Read: the 10-17 and 10-18 Daily numbers rows (the two written since the 10-17 pass), the 10-18 metrics
+job log (run 39106552120), `docs/INBOX.md` to 10-18 23:04, `docs/ALERTS.md`, the queue, review W42's
+three gankdat items (10-18) and `src/x402/routes.ts` / `scripts/metrics.mjs` for what the `x402 paid`
+clause can and cannot say. **What changed:** the first external x402 payments in the lane's life —
+`1 x402 paid (+1 own probe)` on 10-17 and `3 x402 paid` on 10-18 (24-h counts excluding the
+`gankdat-x402-probe/` user agent), `bazaar: 1 listed, 3 calls/30d, 3 payers, last 2026-10-18` (CDP's own
+numbers for the one indexed resource; the probe skipped itself on 10-18 because its 10-17 payment was
+under the 7-day spacing). Everything else is the 10-17 reading: 3 accounts, 0 paid, `datasets 30d external:
+none`, `after wall 1h: 0 clients`, the OAuth sign-in reading still the two 10-13 events, `x402 validate:
+17/17 valid`, search 7/18 indexed with 0 clicks, Apify 18 users/30d, uk-planning still empty at the 10-18
+re-read, the journal's two clean nights after the progress marker. **Already acted on:** review W42
+(10-18) queued `x402-bazaar-week-1-index-check` (10-23: why 1 of 17 routes is listed), `uk-planning-apify-pause`
+(opens 10-19 07:00) and `refresh-uk-trademark-journal-silent-row-2026-10-22`, and set the ledger
+convention for USDC receipts (carry the running total in RESEARCH.md until it reaches £0.01; US$0.015 so far).
+
+**The one gap the rows leave:** nothing the routines read says *what sold*. The `x402_paid` analytics
+point carries the user agent (blob2), the path (blob3), the slug (blob5) and the hashed client id (blob6),
+but `metrics.mjs` reads it only as a count in `kinds` and as a `moveRows` kind for the after-wall clause;
+the `bazaar:` clause sums CDP's per-resource numbers over every resource (`bazaarSummary`) and the job log
+prints no resource list. So the row says `3 x402 paid` and neither the dataset, the number of distinct
+payers by our own count, nor whether the payers are the Bazaar's discovery clients, a script, or one
+agent retrying is readable without `npm run traffic` and a Cloudflare token no routine holds. Both dated
+reads that follow (10-23 week-1, 11-14 day-30) and the "extend: more routes, curation tier" decision are
+by resource, and the §7 dataset clock (`datasets 30d external`) does not count x402 calls at all — a paid
+x402 call on a register is external demand it should see.
+
+Queued in `docs/pipeline/queues/gankdat.json`:
+
+| Item | Score | Why now |
+| --- | --- | --- |
+| `x402-paid-by-source-reading` | 5 | the `x402 paid` clause names the source, the UA family and the distinct client count for the 24-h and 30-day external payments (`3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients; python-requests 2, x402-fetch 1)`; `x402 30d: …`), the runner prints CDP's per-resource list under the `bazaar:` read, and paid x402 calls count toward `datasets 30d external`. Pure SQL on blobs already written, a clause and its test — 0.05 day; the first three sales are two days old and unnamed |
+
+Not queued: a first-call nudge email for the three accounts with no call in a week (a product lever on a
+line that has not earned; STRATEGY §5 ranks it behind the dated reads, and the agent-side sign-ups the wall
+is built for would never see it); more routes or a price change before the week-1 index read says why 16
+routes are unlisted; the zone-analytics token scope (10-17 handoff, attended session). `researched:
+2026-10-19`, `research_after: 2026-10-23` — the week-1 Bazaar read is the next dated signal; the item above
+is buildable now and `next` names it alongside `uk-planning-apify-pause` from 07:00.

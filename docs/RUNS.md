@@ -1348,3 +1348,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 01:50 | burn-down | Call: parked with the Ireland idea; scraping DE/IT/ES declined (terms); France first if a trigger fires
 - 2026-10-19 01:50 | burn-down | Queue: new-ventures spike-eu-hvd-company-registers done; 0 spikes open, queue not empty (8 done)
 - 2026-10-19 01:56 | burn-down | Stopping: 1 item (EU HVD register spike parked); gankdat research due, left for the 02:00 slot (time)
+- 2026-10-19 02:25 | burn-down | gankdat researched: 10-17/18 rows read — first 3 external x402 payments, rest unchanged since 10-17
+- 2026-10-19 02:25 | burn-down | Gap: the row says `3 x402 paid` but not the dataset or client; metrics reads the point as a count only
+- 2026-10-19 02:25 | burn-down | Queue: gankdat x402-paid-by-source-reading (5) added; researched 10-19, research_after 10-23 (week-1 read)
