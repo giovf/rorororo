@@ -137,3 +137,4 @@
 - 2026-10-18 18:28 | notification | hotmail.com | Fw: bump the minor-and-patch group with 13 updates (PR #5) | owner forward of the PR #5 merged mail (Dependabot) | logged
 - 2026-10-18 18:28 | notification | hotmail.com | Fw: bump the majors group (PR #6) x2 | owner forwards of Dependabot closing PR #6 as superseded | logged
 - 2026-10-18 23:04 | notification | amazon.co.uk | We found something you might like | Amazon marketing mail, unrelated to Foundry | logged
+- 2026-10-19 02:53 | notification | jobstreet.com | Chief Executive Officer (CEO) + 11 new jobs - Job Alert | Jobstreet job-alert newsletter, unrelated to Foundry | logged
