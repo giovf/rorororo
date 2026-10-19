@@ -1574,3 +1574,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-19 burn-down (exchange pre-research): US NPI provider registry (CMS NPPES, FOIA-public, keyless API) seeded as
   new-ventures spike-us-npi-registry (6): ten Apify NPI actors price the same data at US$2.80–8 per 1,000 on the shelf
   gankdat already sells on; the spike reads their monthly users and the primary terms through the relay and calls it.
+- 2026-10-19 burn-down (spike us-npi-registry): parked. The NPI registry is FOIA-public, keyless and refreshed daily at
+  no charge, and 71 Apify actors already resell it to 114 users a month between them at US$0.002–0.01 a record — a copy
+  would earn cents. Re-open only as a live provider-verification call (NPPES + sam-exclusions + OIG LEIE) when a US
+  buyer shows (first sam-exclusions paid call, an NPI request, or an NPI + exclusion actor passing 10 users).

@@ -1393,3 +1393,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 17:30 | burn-down | docs/ci/notify-owner.yml: `40 */2` cron is the only trigger besides dispatch; push trigger dropped
 - 2026-10-19 17:30 | burn-down | SCHEDULERS rows (notify owner, watchdog, owner notes), SLOTS.md, run-watchdog.ts: lines land 2–4 h late
 - 2026-10-19 17:30 | burn-down | Queue: foundry notify-owner-cron-not-push done; proof is the 10-26 reading (under 80 runs, ≤ 4 h)
+- 2026-10-19 17:40 | burn-down | relay us-npi-registry (10 lines, 20 s): NPPES API 2.1, CMS dissemination page, NPI files, Apify store
+- 2026-10-19 17:40 | burn-down | spike us-npi-registry: FOIA-public, keyless, daily; 71 Apify NPI actors share 114 users/30d, busiest 9
+- 2026-10-19 17:40 | burn-down | Call: parked — free origin, saturated shelf at US$0.002–0.01 a record; re-open as a verification call
+- 2026-10-19 17:40 | burn-down | Queue: new-ventures spike-us-npi-registry done; exchange us-npi-registry parked with 3 dated triggers
+- 2026-10-19 17:42 | burn-down | Stopping: 3 items (notify owner cron, NPI pre-research, NPI spike); 0 spikes open, nothing buildable

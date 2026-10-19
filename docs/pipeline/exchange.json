@@ -445,6 +445,14 @@
       "status": "declined",
       "trigger": "none — declined",
       "added": "2026-10-18"
+    },
+    {
+      "id": "us-npi-registry",
+      "title": "US NPI provider registry (CMS NPPES, 8M+ healthcare providers) on gankdat — as a live provider-verification call (NPPES + sam-exclusions + OIG LEIE), never a register copy",
+      "status": "parked",
+      "why": "Spike 2026-10-19 (new-ventures spike-us-npi-registry, docs/exchange/spikes/us-npi-registry.md, burn-down): parked. Supply is free at the origin — CMS discloses the FOIA-disclosable NPPES data as a query-only registry updated daily and a monthly 1,106 MB bulk file, both at no charge, and the keyless API 2.1 answered the relay in under a second. Demand on the only shelf with numbers is saturated and thin: the Apify Store API lists 71 NPI/NPPES actors sharing 114 users in the last 30 days (busiest 9, 45 at exactly 1, 780 all-time), priced US$0.002–0.01 a record; the paying provider-data demand sits with scrapers of closed directories (Healthgrades, Zocdoc, Vitals). A 72nd listing or a cached D1 copy would earn cents and be a worse product than the origin. The one shape with a product: five actors combine NPI with the OIG exclusion list or watch the register for changes, at 1–2 users each today.",
+      "trigger": "(a) sam-exclusions records its first external paid call or paid Apify run; (b) an NPI request arrives through /feedback, the inbox or an MCP wanted: count; (c) one of the NPI + exclusion / change-monitor actors (overlookdata/npimcp-oig-exclusion-check, kdhan/npi-provider-check, luminar/nppes-provider-change-monitor) passes 10 users in 30 days — re-read with the same three Apify Store searches (npi, nppes, healthcare provider). Then build the verification call (≈ 1 day: live NPPES read joined to sam-exclusions and the OIG LEIE CSV from oig.hhs.gov, added to the relay allowlist first), not the register.",
+      "added": "2026-10-19"
     }
   ]
 }
