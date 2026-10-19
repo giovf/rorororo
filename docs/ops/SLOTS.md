@@ -2,6 +2,9 @@
 
 One line per routine run, written by `npm run slot -- start <routine>` as the run's first push, so
 the fallback and the watchdog can tell an in-flight slot from a missed one. Not sent to the owner.
+Since 2026-10-19 (foundry `notify-owner-cron-not-push`) the watchdog runs on `notify owner`'s 2-hourly
+cron, not on every routine push, so a stamped-then-silent slot shows as `stalled:` 2–4 h after its grace
+window (the first fire inside the window sees nothing yet; the next one reports it).
 
 - 2026-09-30 18:21 | burn-down | started
 - 2026-10-01 09:11 | build | started
