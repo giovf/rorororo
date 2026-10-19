@@ -1,9 +1,9 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": true,
-  "updated": "2026-10-18",
-  "researched": "2026-10-17",
+  "needs_research": false,
+  "updated": "2026-10-19",
+  "researched": "2026-10-19",
   "weight": 2,
   "items": [
     {
@@ -60,6 +60,36 @@
       "status": "done",
       "added": "2026-10-18",
       "done_at": "2026-10-18"
+    },
+    {
+      "id": "spike-ai-setup-course-rivals",
+      "title": "Research spike: paid rivals for the owner's 'autonomous AI operation' starter kit — relay-read the Gumroad listings of the Claude Code setup kits found 2026-10-19 (Agentic Coding Starter Kit US$9, 'Autonomous AI Agents with Claude Code' US$19, Claude Code Agent OS US$29, Claude Code Ops Kit pay-what-you-want / Complete Survival Kit US$39) for ratings counts, sales badges, refund terms and what each promises a non-technical buyer; the Udemy beginner course's ratings count and sale price; the shelf (Gumroad's fee and merchant-of-record VAT handling for a UK seller against Stripe Managed Payments' UK availability); write docs/exchange/spikes/ai-setup-course-rivals.md with a promote / park call against the exchange trigger (≥ 2 paid rivals at ≥ £20 with visible sales)",
+      "why": "Owner idea 2026-10-18 00:45 (dashboard), parked by the burn-down with the trigger 'the exchange researches it'; the research run of 2026-10-19 moves that reading into a spike so Wednesday's exchange (2026-10-21) decides on numbers. WebSearch 2026-10-19: at least four Gumroad kits sell the same shape — CLAUDE.md templates, subagents, hooks, autonomous-run scripts — at US$9, US$19, US$29 and US$39 (pay-what-you-want from US$0 for the Ops Kit alone), the Udemy beginner course 'Claude, Claude Code, Claude Cowork and Claude in MS Office' holds a 4.0 rating from 1,391 ratings at Udemy's US$15–25 sale price, Anthropic's own 'Claude Code in Action' is free (4.9 from 246 DataCamp reviewers), and the top end is Code with Mosh US$249 and AI Hero's live cohort US$795. So buyers pay in the £7–30 band and a free official course sets the floor; the open numbers are each listing's visible sales/ratings (Gumroad shows a ratings count) and whether any rival promises the non-technical buyer what the owner wants (a running autonomous operation, not a coding assistant), which decides the ≥ 2 rivals at ≥ £20 test. UI-copy rule applies: the listing must say a Claude subscription and a terminal are still needed; launch pricing with a real end date only (DMCC Act 2024 fake-urgency rules).",
+      "effort_days": 0.3,
+      "proof": "the spike file lists ≥ 4 rivals with price, ratings/sales count and promise, the shelf's fee and VAT handling, and a promote / park call the 2026-10-21 exchange cites",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-19"
+    },
+    {
+      "id": "spike-beefy-harvest-call-fees",
+      "title": "Research spike: Beefy harvest call fees on Base — relay-read Beefy's fee documentation (the caller's share of the performance fee, per chain) and api.beefy.finance's vault, fee and TVL lists for Base, then a week of StratHarvest(harvester, wantHarvested, tvl) logs on Base through the Tenderly keyless RPC (the keeper spike's proven path) with wantHarvested priced; count the call-fee value reaching harvesters outside the top address; write docs/exchange/spikes/beefy-harvest-call-fees.md with a promote / park call (≥ US$20 a week outside the top address promotes a Worker-only harvester with no capital and no contract; below it the keeper idea is declined outright)",
+      "why": "The 2026-10-17 keeper spike declined liquidations (US$160k in 7 days to 61 bots, 85–93 % to the top five, repayment capital needed) and kept one trigger: harvest call fees, a measurement nobody has run. WebSearch 2026-10-19: Beefy's Strategy Contract docs (developer documentation, last updated 2023) say every harvest() call charges fees paid to the harvest caller, the strategist and the treasury; a third-party contract mirror splits the 4.5 % performance fee as 3 % BIFI stakers, 0.5 % treasury, 0.5 % strategist, 0.5 % harvest caller (Ethereum mainnet figure — the Base share and the current docs are the relay read; docs.beefy.finance does not resolve from the sandbox). The question is contention, not design: Beefy runs its own harvester bot, so the number is what, if anything, reaches other callers in a week. Hosts docs.beefy.finance and api.beefy.finance added to docs/relay/hosts.txt tonight; base.gateway.tenderly.co is already allowed (≤ 1,000 blocks a call, one call per line).",
+      "effort_days": 0.4,
+      "proof": "the spike file holds the caller fee share on Base, 7-day harvest count, call-fee value by harvester address and the share outside the top address, with a promote / park call",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-19"
+    },
+    {
+      "id": "spike-eu-hvd-company-registers",
+      "title": "Research spike: EU high-value-dataset company registers beyond Ireland — which member-state registers are published keyless under Implementing Regulation (EU) 2023/138 (bulk download, API, licence) for the five largest economies and the Nordics, read from data.europa.eu's company-ownership HVD category and the national portals; two paid rivals priced per lookup (OpenCorporates' self-serve tiers, one KYB vendor); Apify actors reselling EU company lookups and their monthly users; write docs/exchange/spikes/eu-hvd-company-registers.md sizing the one-feed sibling idea with a promote / park call",
+      "why": "The 2026-10-13 Ireland CRO pre-research parked the Irish register (score 2, gated on uk-companies converting) and asked the exchange to size the sibling: one EU company feed from every register the HVD regulation obliges member states to publish free of charge with bulk and API (company ownership is one of its six categories, in force since 2024). WebSearch 2026-10-19 confirms the obligation and one live example (Ireland: CC BY 4.0, daily, bulk + API) but no country-by-country status page — that count is the spike. Rival price read tonight: OpenCorporates' self-serve API is £2,250 a year for 500 calls a month up to £12,000 a year for 5,000 (≈ £0.24–4.50 a call at the cap, no self-serve free tier on the official page), which leaves room for a per-call x402/MCP lookup if ≥ 3 registers are keyless under an open licence; park if the registers are behind national accounts or share-alike terms, or if the EU company actors on Apify show < 10 users each.",
+      "effort_days": 0.4,
+      "proof": "the spike file lists ≥ 8 member states with access route, licence and update cadence, two rival per-lookup prices, the Apify actor user counts and a promote / park call",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-19"
     }
   ]
 }

@@ -1325,3 +1325,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 18:35 | burn-down | fetch-relay run 39153226504 failed: a push 27 s after the first fetched both requests, rebase conflict; re-fired
 - 2026-10-18 18:35 | burn-down | docs/ci/fetch-relay.yml: concurrency group serialises relay runs (installer moves it); relay README sentence
 - 2026-10-18 18:35 | burn-down | Stopping: 2 items built (sanctions spike parked, x402 Ajv mute), relay serialised; starved-and-cooled
+- 2026-10-19 00:12 | burn-down | fetch-relay.yml first run: success (00:10 dispatch after the 10-18 18:28 install; 13 s, no request pending)
+- 2026-10-19 00:15 | burn-down | new-ventures researched: 3 spikes seeded — course rivals (7), Beefy harvest fees (5), EU HVD registers (5)
+- 2026-10-19 00:15 | burn-down | Evidence: 4 Gumroad Claude Code kits at US$9–39, Udemy 4.0/1,391 ratings; Beefy caller 0.5 %; OpenCorporates £2,250+/yr
+- 2026-10-19 00:15 | burn-down | exchange: ai-setup-course and keeper ideas marked spiked; Ireland sibling and prize-competition notes dated
+- 2026-10-19 00:15 | burn-down | relay hosts: gumroad, udemy, Beefy docs + API, OpenCorporates added for the three spikes

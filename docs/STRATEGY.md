@@ -1515,3 +1515,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   pushes 27 s apart made the second run fetch both files and lose both to a rebase conflict with the first run's
   response commit, leaving a request unprocessed until a manual re-fire — the general fix for a race every
   two-round research run can hit. Verified next slot by the first-run check.
+- 2026-10-19 burn-down: `new-ventures` researched (the queue emptied 10-18 and had cooled): three spikes seeded so the
+  slots before Wednesday's exchange turn idle capacity into new-line numbers — `spike-ai-setup-course-rivals` (7: the
+  owner's 10-18 idea; WebSearch found four Gumroad kits of the same shape at US$9–39 and a Udemy beginner course with
+  1,391 ratings, so the exchange trigger of two paid rivals at ≥ £20 with visible sales is a listing read away),
+  `spike-beefy-harvest-call-fees` (5: the keeper idea's last trigger — Beefy pays the harvest caller a fee share, quoted
+  at 0.5 % on mainnet; a week of Base StratHarvest logs says whether anything is left outside Beefy's own bot) and
+  `spike-eu-hvd-company-registers` (5: the Ireland sibling the 10-13 pass asked the exchange to size; OpenCorporates sells
+  lookups at £2,250–12,000 a year, the member-state count is the number). No open code-only prize competition found
+  (`data-science-prize-competitions` stays parked, December reading).
