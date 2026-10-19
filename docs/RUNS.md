@@ -1374,3 +1374,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 09:30 | build | Queue: foundry notify-owner-cron-not-push (4) filed: 2-hourly cron replaces the push trigger, -50 billed/week
 - 2026-10-19 09:30 | build | Queue: foundry owner-notes-poll-gap done — leave the poll: longest gap 7.9 h (Sunday), 8 over 4 h; folds in
 - 2026-10-19 09:30 | build | First-run check: no installer commit since 10-16 lacks its first run line; nothing dispatched
+- 2026-10-19 17:16 | build | uk-planning Apify actor paused: README opens with a dated Paused line; a run on the 503 notice ends clean
+- 2026-10-19 17:16 | build | main.mjs catches only the Origin paused 503: status message = notice, no items, no charge; other errors fail
+- 2026-10-19 17:16 | build | Kept public, not unpublished: 18 outside users' schedules survive; no publication spent on the restore
+- 2026-10-19 17:16 | build | /stats/uk-planning: state paused headline row, index mark, notice names REST, MCP, x402, Apify; 2 tests
+- 2026-10-19 17:16 | build | Notice text now says the surfaces are paused (the 10-09 snapshot expired 10-16, nothing is served)
+- 2026-10-19 17:16 | build | Docs: RESEARCH surface-pause note, MARKETPLACE-PREP Apify row, ARCHITECTURE, apify/README; no version bump
+- 2026-10-19 17:16 | build | Queue: gankdat uk-planning-apify-pause done; proof is the apify failed count flat and the flag gone
+- 2026-10-19 17:16 | build | First-run check: every installer commit since 10-16 has its first run line; nothing dispatched

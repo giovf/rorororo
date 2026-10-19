@@ -1562,3 +1562,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   gankdat job, landing twice a day) saves ≈ 65 a week and leaves ≈ 485. The 10-26 reading flips at a week under 467;
   if the cadence keeps it over, the owner choice is GitHub Pro (US$4/month) or staying public behind the mirror.
   Telegram poll left as is (longest gap 7.9 h on a Sunday; a shorter schedule costs runs the week cannot spare).
+- 2026-10-19 build: uk-planning paused on every surface, not unpublished (gankdat `uk-planning-apify-pause`, review
+  W42). The origin has been empty since 10-10, the snapshot expired 10-16 and Apify QA flagged the actor on 10-17 after
+  6 of 22 runs failed on our own 503. A run now ends cleanly with the dated notice and no charge, the README and the
+  stats page say paused, and the actor stays public so the 18 outside users' schedules resume by themselves when
+  planning.data.gov.uk republishes. §7 clock unchanged; the weekly re-read restores everything.
