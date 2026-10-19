@@ -1524,3 +1524,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   `spike-eu-hvd-company-registers` (5: the Ireland sibling the 10-13 pass asked the exchange to size; OpenCorporates sells
   lookups at £2,250–12,000 a year, the member-state count is the number). No open code-only prize competition found
   (`data-science-prize-competitions` stays parked, December reading).
+- 2026-10-19 burn-down: `spike-ai-setup-course-rivals` (the owner's 10-18 course idea) — trigger met: Gumroad Discover
+  shows four paid Claude Code kits at £28–37 with 6–39 buyer ratings and Udemy's top Claude course has 17,760 students,
+  but every listing that promises an autonomous operation that earns for a non-technical buyer has 0–1 buyers (six
+  read). Recommendation to the 10-21 exchange: promote a reshaped Claude Code operations kit for existing Claude Code
+  users (what the buyer gains: scheduled unattended runs, a work queue, a watchdog, a relay, a phone-readable run log)
+  at US$29–39 on Gumroad (10 % + 50¢ direct, 30 % via Discover, merchant of record for VAT), score ≈ 4, kill at < 3 sales
+  in 30 days; the non-technical framing is neither sellable on this shelf nor honestly promisable (a Claude subscription,
+  a terminal and GitHub are still needed), and urgency copy is limited to a launch price with a real end date.

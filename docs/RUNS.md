@@ -1331,3 +1331,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 00:15 | burn-down | exchange: ai-setup-course and keeper ideas marked spiked; Ireland sibling and prize-competition notes dated
 - 2026-10-19 00:15 | burn-down | relay hosts: gumroad, udemy, Beefy docs + API, OpenCorporates added for the three spikes
 - 2026-10-19 00:15 | watchdog | ci-minutes: 555 billed min/7d (~2379/month, wall 317; private cap 2,000, warn 1700); top: notify owner 125, check 73, fe
+- 2026-10-19 00:30 | burn-down | relay ai-setup-course-rivals (3 rounds): 3 Gumroad kits, 72 Discover cards, Gumroad pricing, Stripe MoR docs
+- 2026-10-19 00:30 | burn-down | spike ai-setup-course-rivals: 4 paid Claude Code kits ≥ £20 with 6–39 buyer ratings; 'earn 24/7' kits 0–1
+- 2026-10-19 00:30 | burn-down | Shelf: Gumroad 10 % + 50¢ direct, 30 % Discover, MoR for VAT; Stripe MoR lists GB among 31 EU sellers
+- 2026-10-19 00:30 | burn-down | Call: promote reshaped as a Claude Code operations kit at US$29–39, not the non-technical money-machine
+- 2026-10-19 00:30 | burn-down | Queue: new-ventures spike-ai-setup-course-rivals done; exchange ai-setup-course note carries the call for 10-21
