@@ -961,8 +961,9 @@
       "effort_days": 0.1,
       "proof": "the next 7-day reading shows notify owner under 80 runs and every `notify`/`owner:` line of that week delivered within 4 h",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-19"
+      "status": "doing",
+      "added": "2026-10-19",
+      "doing_since": "2026-10-19"
     }
   ]
 }
