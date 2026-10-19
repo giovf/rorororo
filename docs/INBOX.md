@@ -143,3 +143,6 @@
 - 2026-10-19 09:27 | notification | offers.emails-puregym.com | Ending at midnight: 30% off your first 3 months and £0 joining fee. | PureGym marketing mail, unrelated to Foundry | logged
 - 2026-10-19 09:32 | notification | alectolegal.com | Your weekly update - Flat 7, Swanston Court, TW1 4EZ | personal conveyancing update to the owner, unrelated to Foundry | logged
 - 2026-10-19 11:09 | notification | news.majestic.co.uk | Last chance! Your £20 voucher expires at midnight | Majestic Wine marketing mail, unrelated to Foundry | logged
+- 2026-10-19 12:35 | notification | rewards.airasia.com | Psst… still daydreaming about your dream holiday? | AirAsia marketing mail, unrelated to Foundry | logged
+- 2026-10-19 12:57 | notification | mail.instagram.com | see what ufc and 9 others you follow shared | Instagram recap mail, unrelated to Foundry | logged
+- 2026-10-19 13:01 | notification | nedm.asus.com | Ser miembro tiene recompensa. Tu portátil gamer con regalo | ASUS marketing mail, unrelated to Foundry | logged
