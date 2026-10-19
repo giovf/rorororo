@@ -146,3 +146,5 @@
 - 2026-10-19 12:35 | notification | rewards.airasia.com | Psst… still daydreaming about your dream holiday? | AirAsia marketing mail, unrelated to Foundry | logged
 - 2026-10-19 12:57 | notification | mail.instagram.com | see what ufc and 9 others you follow shared | Instagram recap mail, unrelated to Foundry | logged
 - 2026-10-19 13:01 | notification | nedm.asus.com | Ser miembro tiene recompensa. Tu portátil gamer con regalo | ASUS marketing mail, unrelated to Foundry | logged
+- 2026-10-19 14:01 | notification | mail.boots.com | Get your glow on with Clinique Moisture Surge™ ✨ | Boots marketing mail, unrelated to Foundry | logged
+- 2026-10-19 14:06 | notification | bpiauctions.com | Just Added: Contents of DIY Store & more | BPI Auctions marketing mail, unrelated to Foundry | logged
