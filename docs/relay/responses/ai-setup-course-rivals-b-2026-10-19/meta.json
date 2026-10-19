@@ -1,0 +1,71 @@
+{
+  "request": "ai-setup-course-rivals-b-2026-10-19",
+  "fetched_at": "2026-10-19T00:17:16.217Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.stripe.com/payments/managed-payments",
+      "fetched_at": "2026-10-19T00:17:13.210Z",
+      "status": 200,
+      "final_url": "https://docs.stripe.com/payments/managed-payments",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 448561,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.stripe.com/payments/managed-payments/how-it-works",
+      "fetched_at": "2026-10-19T00:17:14.442Z",
+      "status": 200,
+      "final_url": "https://docs.stripe.com/payments/managed-payments/how-it-works",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 550468,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.stripe.com/payments/managed-payments/eligibility",
+      "fetched_at": "2026-10-19T00:17:15.301Z",
+      "status": 200,
+      "final_url": "https://docs.stripe.com/payments/managed-payments/eligibility",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 555344,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.udemy.com/course/the-complete-claude-ai-course-from-chat-to-cowork/",
+      "fetched_at": "2026-10-19T00:17:15.585Z",
+      "status": 403,
+      "final_url": "https://www.udemy.com/course/the-complete-claude-ai-course-from-chat-to-cowork/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 5927,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.udemy.com/course/claude-code-cowork-course/",
+      "fetched_at": "2026-10-19T00:17:16.174Z",
+      "status": 403,
+      "final_url": "https://www.udemy.com/course/claude-code-cowork-course/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "5.html",
+      "bytes": 5833,
+      "truncated": false
+    }
+  ]
+}
