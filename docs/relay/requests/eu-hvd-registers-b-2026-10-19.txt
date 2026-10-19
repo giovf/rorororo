@@ -1,6 +1,0 @@
-GET https://data.europa.eu/api/hub/search/search?filter=dataset&limit=0&facets=%7B%22is_hvd%22%3A%5B%22true%22%5D%2C%22hvdCategory%22%3A%5B%22c_a9135398%22%5D%7D
-GET https://data.europa.eu/api/hub/search/search?filter=dataset&limit=40&page=0&includes=id,title,country.id,catalog.id,publisher.name,distributions.format.id,distributions.license.id,distributions.access_url,distributions.download_url,license.id,modified,issued&facets=%7B%22is_hvd%22%3A%5B%22true%22%5D%2C%22hvdCategory%22%3A%5B%22c_a9135398%22%5D%7D
-GET https://data.europa.eu/api/hub/search/search?filter=dataset&limit=40&page=1&includes=id,title,country.id,catalog.id,publisher.name,distributions.format.id,distributions.license.id,distributions.access_url,distributions.download_url,license.id,modified,issued&facets=%7B%22is_hvd%22%3A%5B%22true%22%5D%2C%22hvdCategory%22%3A%5B%22c_a9135398%22%5D%7D
-GET https://data.europa.eu/api/hub/search/search?filter=dataset&limit=40&page=2&includes=id,title,country.id,catalog.id,publisher.name,distributions.format.id,distributions.license.id,distributions.access_url,distributions.download_url,license.id,modified,issued&facets=%7B%22is_hvd%22%3A%5B%22true%22%5D%2C%22hvdCategory%22%3A%5B%22c_a9135398%22%5D%7D
-GET https://erhvervsstyrelsen.dk/system-til-system-adgang-til-cvr-data
-GET https://www.boe.es/datosabiertos/api/borme/sumario/20261015
