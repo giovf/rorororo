@@ -1341,3 +1341,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 00:32 | burn-down | Harvester split 6.7 h: one bot 89 % of 477 harvests, ≈ US$0.59/week outside it, below gas — declined
 - 2026-10-19 00:32 | burn-down | Queue: new-ventures spike-beefy-harvest-call-fees done; exchange onchain-keeper-rewards declined
 - 2026-10-19 00:34 | burn-down | Stopping: 3 items (new-ventures research, course spike, Beefy spike); EU HVD spike left for 01:00 (time)
+- 2026-10-19 01:50 | burn-down | relay eu-hvd-registers (3 rounds, 57 lines): data.europa.eu HVD facets, 14 national registers, 4 rivals, Apify
+- 2026-10-19 01:50 | burn-down | spike eu-hvd-company-registers: 119 company HVDs in 13 states; 7 registers keyless+open; DE/IT/ES publish none
+- 2026-10-19 01:50 | burn-down | Demand: 114 EU-register Apify actors, 483 users/30d; the 13 with ≥10 users all scrape closed registers
+- 2026-10-19 01:50 | burn-down | Rivals: OpenCorporates £2,250–12,000/yr (£0.20–0.38 a call), KYC records US$19–119, Apify US$0.002–0.01
+- 2026-10-19 01:50 | burn-down | Call: parked with the Ireland idea; scraping DE/IT/ES declined (terms); France first if a trigger fires
+- 2026-10-19 01:50 | burn-down | Queue: new-ventures spike-eu-hvd-company-registers done; 0 spikes open, queue not empty (8 done)
+- 2026-10-19 01:56 | burn-down | Stopping: 1 item (EU HVD register spike parked); gankdat research due, left for the 02:00 slot (time)

@@ -1538,3 +1538,12 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   6.7-hour log sample shows one bot taking 89 % of harvests; what is left outside it (≈ US$0.59 a week) is below Base
   gas per call. With liquidations measured on 10-17 and harvests today, no permissionless-reward line on Base pays;
   `onchain-keeper-rewards` is declined in the exchange with the numbers as its record.
+- 2026-10-19 burn-down: `spike-eu-hvd-company-registers` sizes the one-EU-company-feed sibling of the parked Irish
+  register — parked. The supply test passes (data.europa.eu tags 119 company-category HVDs; seven registers answered
+  keyless under an open licence: Ireland, France, Finland, Poland, Latvia, Sweden, Malta), but the registers a KYB
+  buyer pays for are the closed ones: Germany, Italy and Spain publish no register, the Netherlands strips names and
+  numbers from its file, and on Apify the 13 register actors with ≥ 10 monthly users all scrape closed portals while
+  the open registers' actors hold 1–4 users each (France 11 across seven). OpenCorporates sells 500 calls a month for
+  £2,250 a year, so price room exists; demand does not, and gankdat's own company endpoints have 0 external calls.
+  Scraping the closed registers is declined (their terms forbid it). Re-open on a paid company call, an EU register
+  request or a de/it/es register appearing in the HVD facet; France (Sirene + recherche-entreprises) would be built first.
