@@ -142,3 +142,4 @@
 - 2026-10-19 08:10 | notification | alectolegal.com | Re: Flat 7, TW1 4EZ | personal mail to the owner (property conveyancing), unrelated to Foundry | logged
 - 2026-10-19 09:27 | notification | offers.emails-puregym.com | Ending at midnight: 30% off your first 3 months and £0 joining fee. | PureGym marketing mail, unrelated to Foundry | logged
 - 2026-10-19 09:32 | notification | alectolegal.com | Your weekly update - Flat 7, Swanston Court, TW1 4EZ | personal conveyancing update to the owner, unrelated to Foundry | logged
+- 2026-10-19 11:09 | notification | news.majestic.co.uk | Last chance! Your £20 voucher expires at midnight | Majestic Wine marketing mail, unrelated to Foundry | logged
