@@ -1,0 +1,2676 @@
+{
+  "data": {
+    "total": 3014,
+    "count": 40,
+    "offset": 0,
+    "limit": 40,
+    "desc": false,
+    "items": [
+      {
+        "title": "US New Business Leads 💰$4/1K — Newly Registered Companies",
+        "name": "us-business-filings",
+        "username": "lergassy",
+        "stats": {
+          "totalBuilds": 67,
+          "totalRuns": 616,
+          "totalUsers": 51,
+          "totalUsers7Days": 10,
+          "totalUsers30Days": 27,
+          "totalUsers90Days": 32,
+          "lastRunStartedAt": "2026-10-18T00:40:50.428Z",
+          "actorReviewCount": 2,
+          "actorReviewRating": 5.000000000000001,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 7,
+            "FAILED": 1,
+            "SUCCEEDED": 172,
+            "TIMED-OUT": 7,
+            "TOTAL": 187
+          }
+        },
+        "description": "New business leads from official open data: newly registered companies from state registries, new business licences in major cities, and funded startups from SEC Form D filings. Every phone and email is checked before you get it, with a lead score on each row.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS",
+          "MCP_SERVERS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/-b62HHUMho7uho3Ms_wloNEgvHi3xWRqY5Z3KbodjsA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vYWhDenhud2ZjajVKeTFxUkotYWN0b3ItaWplTUZHbks3SDRXMmtmM2MtTkNST1Y5OVNWTy1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 5,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Matvey",
+        "userPictureUrl": "https://images.apifyusercontent.com/imuxDmEqCXQS6r4jOx8rZz0AlUbxdpa2a1oa07JoOf8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vc2RfNGVwdjdjQUxrYWlVcHZmMUhIRnltX3J3OFVSUzR6aVVsU3FENjloVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMDVIVTI1bWR6SmtPR1p5WVc1dkxXbHZSbkZ3WWpkUGMwazBhRTQ0VkVWd2IwWlBNRkZ1ZWs1R1kwaFJRVXRhZVdaWFp6MXpPVFl0WXc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-19T00:00:00.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "lead": {
+                "eventTitle": "Lead",
+                "eventDescription": "One new business record returned. Error rows are free.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0036
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0032
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0028
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "contact-check": {
+                "eventTitle": "Add-on: contact check",
+                "eventDescription": "Phone number and e-mail domain checked for a lead.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0027
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0021
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-04T10:28:42.124Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-04T10:29:02.280Z",
+          "notifiedAboutChangeAt": "2026-09-21T12:36:29.313Z"
+        },
+        "id": "ijeMFGnK7H4W2kf3c",
+        "url": "https://apify.com/lergassy/us-business-filings"
+      },
+      {
+        "title": "North Data Company & Register Extractor",
+        "name": "northdata-companies-scraper",
+        "username": "xtracto",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 3866,
+          "totalUsers": 19,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 6,
+          "totalUsers90Days": 16,
+          "lastRunStartedAt": "2026-10-18T09:21:07.336Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 3340,
+            "TIMED-OUT": 1,
+            "TOTAL": 3341
+          }
+        },
+        "description": "Extract German/EU public-register (Handelsregister) data from northdata.com: company name, register number & court, address, officers, founding date, LEI, industry, and the full register/financial event feed with insolvency & liquidation events flagged. URL or company-name search.",
+        "categories": [
+          "LEAD_GENERATION",
+          "JOBS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/g0u9isQPJmUnKh3JsxM8BPxvTIRRfLY1H-RG90BWB2Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUHVPMllrQnRuZkNzMUowYVctYWN0b3ItSWVsbjQ5Y1JqYmVyZ1o4TmItaWZFQkxqak5WaC0zMTMzODQ2Ni5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Farhan Febrian Nauval",
+        "userPictureUrl": "https://images.apifyusercontent.com/jNWKTK64tuv-ni0AXcJGuKrhAnRc3hucF8155u61X6Y/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20va2dPUm9SOWVadmF6cG5ON0ZWSVptWFVxZmNXTG5MaWktZ1QxZXk4TVJGdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVSFZQTWxsclFuUnVaa056TVVvd1lWY3RjSEp2Wm1sc1pTMUtlR1JVU0hjNWRucFBMVE0yTmpZd01EVXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-09T16:16:05.955Z",
+          "createdAt": "2026-07-09T16:16:06.579Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-13T10:36:30.496Z"
+        },
+        "id": "Ieln49cRjbergZ8Nb",
+        "url": "https://apify.com/xtracto/northdata-companies-scraper"
+      },
+      {
+        "title": "FirmenABC Scraper — Austrian Company Register Data",
+        "name": "firmenabc-at-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 1692,
+          "totalUsers": 12,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 6,
+          "lastRunStartedAt": "2026-10-18T10:34:43.376Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1015,
+            "TIMED-OUT": 1,
+            "TOTAL": 1016
+          }
+        },
+        "description": "Scrape company data from FirmenABC.at, Austria's largest business directory. Extract Firmenbuchnummer, VAT ID, address, founding date, industry, and management/shareholder details for any Austrian company by name.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/J_ZANff7AsHRTwIu3kQ03fqFQq4c_3bFOgoiMfirwA4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3ItQlZnQ2p4ZkZHVkV2dXNxS2ktVnJ5UFJmYlVGRC1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-14T21:33:36.000Z",
+          "reasonForChange": "Initial PPE pricing — NICHE tier (company register data)",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.01,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.012,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-14T21:28:36.531Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "BVgCjxfFGVEvusqKi",
+        "url": "https://apify.com/studio-amba/firmenabc-at-scraper"
+      },
+      {
+        "title": "eInforma Scraper — Spanish Company Register Data",
+        "name": "einforma-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 914,
+          "totalUsers": 14,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 6,
+          "totalUsers90Days": 9,
+          "lastRunStartedAt": "2026-10-18T10:03:52.309Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 557,
+            "SUCCEEDED": 145,
+            "TIMED-OUT": 0,
+            "TOTAL": 702
+          }
+        },
+        "description": "Search and extract Spanish company data from eInforma (einforma.com). Look up companies by name and get CIF/VAT ID, legal form, address, founding date, CNAE industry code, business purpose, share capital, and BORME register info. No API key, no login required.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/IbSWMiSKhWAa7olvDoL6pDZ7jUuA2u9XC-NHkn9E0zM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3ItOUtBR1lMbnV0VjkwZG14WGQtT0FpSDNjUmZnOC1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-01T14:41:26.000Z",
+          "reasonForChange": "Switching to automatic per-result billing",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.01,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-08-01T14:36:26.664Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "9KAGYLnutV90dmxXd",
+        "url": "https://apify.com/studio-amba/einforma-scraper"
+      },
+      {
+        "title": "Australian Company Register Search (ASIC ACN Lookup)",
+        "name": "australian-company-register-search",
+        "username": "scrapeworks",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 162,
+          "totalUsers": 14,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T13:14:37.619Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 41,
+            "TIMED-OUT": 0,
+            "TOTAL": 42
+          }
+        },
+        "description": "Bulk-search the official ASIC company register - 4.3M+ Australian companies - by company name, ACN or ABN. Get status, type, class, ABN, registration dates and former names. No API key, no login.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Nicolas van Arkens",
+        "userPictureUrl": "https://images.apifyusercontent.com/YyD0hqoc4Cqj5__n6xah1DwZicbi1K-WY8mAll0f0Oc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZVlUTnhtZmNqOHRDNGVmRHBrSUl1Q1BnUzYyQ0wtUVFwUFk0amU2S3hVOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkVWRNTVdZMWEzVm5jSE5PZGtZelRta3RjSEp2Wm1sc1pTMUJhVTFKTm05VFlWUjFMVk5qY21WbGJuTm9iM1JmTWpBeU5UQTRNamRmTnpBNFgwZGhiR3hsY25sZkpUSTRNU1V5T1M1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-07-19T09:19:04.012Z",
+          "createdAt": "2026-07-05T09:19:07.103Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-05T09:19:27.296Z",
+          "notifiedAboutChangeAt": "2026-07-19T09:35:35.464Z"
+        },
+        "id": "tEbok0HmGWMEQvXOX",
+        "url": "https://apify.com/scrapeworks/australian-company-register-search"
+      },
+      {
+        "title": "Recherche Entreprises Scraper — French Company Register",
+        "name": "recherche-entreprises-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 377,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T07:14:24.620Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search the official French government company register (recherche-entreprises.api.gouv.fr) by name or activity. Returns SIREN, SIRET, legal form, NAF/APE code, address, officers, creation date, and employee bracket. No API key, no login required.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/tKwuIuuTMtK0yZBtjjp6bBttcWkb1dC2Kxz5N8kmqyw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3IteHZUWlhkbmVSWFljeGdYaXYtem0ybmdia2ZieC1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-14T21:45:18.000Z",
+          "reasonForChange": "Switching to automatic per-result billing",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.01,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.012,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-14T21:40:19.264Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "xvTZXdneRXYcxgXiv",
+        "url": "https://apify.com/studio-amba/recherche-entreprises-scraper"
+      },
+      {
+        "title": "Italian Company Register — Registro Imprese Scraper",
+        "name": "registro-imprese-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 730,
+          "totalUsers": 25,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 6,
+          "lastRunStartedAt": "2026-10-18T07:15:36.267Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 65,
+            "TIMED-OUT": 0,
+            "TOTAL": 66
+          }
+        },
+        "description": "Confirm an Italian company name is real and registered before signing a contract, extending credit, or wiring a payment. Search by company name, Codice Fiscale, or Partita IVA and get back the registered name, legal form, and an official lookup URL. No cookies, no login required.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/zY65p_PIqwkxIC2r_9W746gmsNry8hIbyL2FQugdULU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3ItYktseDM1bmRZOHZXNm5nTkQtUDMzZjVvQ3B1RC1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-06-12T12:57:08.000Z",
+          "reasonForChange": "Switching to automatic per-result billing",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.01,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.012,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-05-29T11:57:09.407Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-05-29T11:57:29.594Z"
+        },
+        "id": "bKlx35ndY8vW6ngND",
+        "url": "https://apify.com/studio-amba/registro-imprese-scraper"
+      },
+      {
+        "title": "NZ Companies Office Register Scraper",
+        "name": "nz-companies-office-register-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 331,
+          "totalUsers": 7,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-18T04:40:29.791Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Scrape company records from the New Zealand Companies Office register. Search by company name, number, or NZBN to get full KYC data: company number, NZBN, status, directors, shareholders, and addresses.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/CV4GPRpfUuHwgua8Ml_uE85IMcyn0pZ4gWe8pz3dTk0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItcFUyTlRXQ2ltWlRaSjk3b1ItZW0yZ0hxT0pZaS1uei1jb21wYW5pZXMtb2ZmaWNlLXJlZ2lzdGVyLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:33:55.191Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:33:55.186Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-19T09:34:15.446Z"
+        },
+        "id": "pU2NTWCimZTZJ97oR",
+        "url": "https://apify.com/jungle_synthesizer/nz-companies-office-register-scraper"
+      },
+      {
+        "title": "German Company Register — Handelsregister Scraper",
+        "name": "handelsregister-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 1139,
+          "totalUsers": 7,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T10:14:50.188Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 2,
+            "SUCCEEDED": 123,
+            "TIMED-OUT": 0,
+            "TOTAL": 126
+          }
+        },
+        "description": "Search and extract German company data from the official Handelsregister. Look up by company name, register number, city, or legal form. Returns company name, legal form, address, business purpose, share capital, directors, and registration history. No cookies, no login.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/BbAFo_3mushldkE8InsbuRIYOp3lY714F_2n-0GjIiY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3ItbzBuQkJ6eHQ3ZG45emo4aEEtc1EzUG03UnRsNy1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-06-12T12:57:15.000Z",
+          "reasonForChange": "Switching to automatic per-result billing",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.01,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.012,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-05-29T11:57:15.868Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-05-29T11:57:36.032Z"
+        },
+        "id": "o0nBBzxt7dn9zj8hA",
+        "url": "https://apify.com/studio-amba/handelsregister-scraper"
+      },
+      {
+        "title": "German Handelsregister Company Register Scraper",
+        "name": "handelsregister-de",
+        "username": "bovi",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 75,
+          "totalUsers": 4,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-17T11:12:45.312Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Search the official German Handelsregister (commercial register) by company name. Returns legal form, register court/number, seat, address, filing dates, representatives, prokuristen/officers, and partners for each matching entry.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/AlmxjVp5mFC9tvbm5ydeKwKUgpotSKI8tqyPsAt49kI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNXpaSmFydGROVHpHcDZ1VTktYWN0b3ItOEFCTHc3Nm1oZldrbHlSUWItcUFJMGJIank0MC1oYW5kZWxzcmVnaXN0ZXItZGUtaWNvbi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Vitalii Bondarev",
+        "userPictureUrl": "https://images.apifyusercontent.com/366A2-rL_Tsix1Ca4RkV0mSisG_m99hKsvrk4FhsOv0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNXNYbDRtMlFubGhoaGhLYVY3YkphQWc0SEFmTXpfeGdSME5mSXJqdVFoRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTamxqYmpkeFVVNTVYMEk1UjFObWNWWmthbUpMTlVaeE1XczVjMkZtT1d0T2VVOXRWa0pNTWxRNWJIZDRSMmxCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-19T18:25:46.109Z",
+          "startedAt": "2026-08-19T18:25:45.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-record": {
+                "eventTitle": "Company record",
+                "eventDescription": "Charged once per company record returned.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0023
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002277
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002254
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.002231
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.002208
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002185
+                  }
+                }
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-08-19T18:35:49.340Z"
+        },
+        "id": "8ABLw76mhfWklyRQb",
+        "url": "https://apify.com/bovi/handelsregister-de"
+      },
+      {
+        "title": "NZ Companies Register Scraper",
+        "name": "nz-companies-register-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 165,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-17T23:24:28.891Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Searches the NZ Companies Register by company name or keyword and returns each matching company as a flat row with registration details, directors, addresses, and status.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/uXzQ35Y9c2W31wEBjmnboaFwwglBNUQBPRXba6v412k/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItdDlvd0hDc1ZrZVdsSmZ1MmQtbmRXRWhaOHdwQS1HZW1pbmlfR2VuZXJhdGVkX0ltYWdlXzZlc2c2MDZlc2c2MDZlc2cucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0007
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-06-02T22:34:06.779Z",
+          "createdAt": "2026-06-02T22:26:55.278Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "t9owHCsVkeWlJfu2d",
+        "url": "https://apify.com/parseforge/nz-companies-register-scraper"
+      },
+      {
+        "title": "Ukraine Company Register & Beneficial Owners Scraper (EDR)",
+        "name": "ukraine-edr-companies-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 66,
+          "totalUsers": 4,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-18T10:54:43.464Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Look up Ukrainian companies by EDRPOU code and export firmographics plus ownership: name, status, registration date, charter capital, KVED activities, registered address, director, founders (with codes) and ultimate beneficial owners with nationality and control type. Export to JSON, CSV or Excel.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/OHLYgZ1bt4mHkKJpK4iVn2ovSRVmvwNE6kwoWf5fAfU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItOHd3c3JWVUsyWXg1UE51NUYtOE82UWlxUUxkSS11a3JhaW5lRURSUE9VLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Company record",
+                "eventDescription": "One Ukrainian company record from the EDR register: firmographics, status, charter capital, KVED activities, registered address, director, founders and ultimate beneficial owners with nationality and control type.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0165
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0162
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0159
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0156
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0153
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.015
+                  }
+                }
+              },
+              "ai_risk": {
+                "eventTitle": "AI KYB risk note",
+                "eventDescription": "Optional AI compliance red-flag summary for one company: interprets registration status, beneficial ownership, sanctions/PEP hints and business activity into a concise buyer-facing risk note. Opt-in, disabled for free users, charged only when a usable AI note is produced.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0132
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01296
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01272
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01248
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01224
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.012
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-08-20T00:14:12.000Z",
+          "createdAt": "2026-08-20T00:15:17.704Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-20T00:35:43.020Z"
+        },
+        "id": "8wwsrVUK2Yx5PNu5F",
+        "url": "https://apify.com/scrapers_lat/ukraine-edr-companies-scraper"
+      },
+      {
+        "title": "Slovenia AJPES Company Register Scraper",
+        "name": "slovenia-ajpes-companies-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 96,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T08:48:36.245Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Look up Slovenian companies and sole traders from the official business register (PRS). Get registration number (matična), legal form, registered address and registering authority by company name or registration number. Export to JSON, CSV or Excel.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/qPqQsLhuhlYk_-TAvC0wUSSlgQKy08HE6zjYn7VG7Ns/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItTnZ1bXN1eUZHMXJDM3Z1NDYtT1dFVHh5Qmd2NC1hanBlcy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "A data record returned by the scraper.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0114
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0108
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0102
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0102
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0102
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-07-16T17:26:50.291Z",
+          "startedAt": "2026-07-16T17:26:50.291Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "NvumsuyFG1rC3vu46",
+        "url": "https://apify.com/scrapers_lat/slovenia-ajpes-companies-scraper"
+      },
+      {
+        "title": "Bulgaria Commercial Register Company & UBO Scraper",
+        "name": "bulgaria-commercial-register-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 72,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T19:52:35.153Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Look up Bulgarian companies by UIC/EIK in the Commercial Register and get the full public record: name, legal form, status, seat and address, capital, scope of activity, managers and representatives, sole owner/parent and beneficial owners (UBO). Export to JSON, CSV or Excel.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/8JsuR32nqCyUmzEO8GwbFWrzmajtxnm9AwaoKKazQMI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItVjNjTkc4Q1BvMUhOakZ1Z1ItbEdhcGlheGJtYS1idWxnYXJpYS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "A data record returned by the scraper.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01425
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0135
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01275
+                  }
+                }
+              },
+              "ai_company_summary": {
+                "eventTitle": "ai_company_summary",
+                "eventDescription": "AI-generated English KYB company summary. Charged only on usable AI output.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.015
+                  }
+                }
+              },
+              "ai_risk_flags": {
+                "eventTitle": "ai_risk_flags",
+                "eventDescription": "AI compliance red-flag review. Charged only on usable AI output.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.015
+                  }
+                }
+              },
+              "ai_industry": {
+                "eventTitle": "ai_industry",
+                "eventDescription": "AI industry/sector classification from scope of activity. Charged only on usable AI output.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.015
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-08-29T07:06:00.000Z",
+          "createdAt": "2026-08-14T07:06:01.887Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-08-14T07:06:22.072Z",
+          "notifiedAboutChangeAt": "2026-08-29T07:35:56.816Z"
+        },
+        "id": "V3cNG8CPo1HNjFugR",
+        "url": "https://apify.com/scrapers_lat/bulgaria-commercial-register-scraper"
+      },
+      {
+        "title": "Company Register Scraper — 3M Companies | $4/1K",
+        "name": "company-register-scraper",
+        "username": "datawell",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 70,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T09:34:37.680Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search 3 million registered companies worldwide: legal name, addresses, official register number, legal form, status and founding date. Includes corporate structure — parents and subsidiaries. Germany alone holds 250,000+. No API key. For lead generation, KYB and due diligence.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "datawell",
+        "userPictureUrl": "https://images.apifyusercontent.com/beIh1h2cFUtEefaop4r8BMZ2FdWVQhL6q7tC-4QF9go/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVnBoNm02Yi1RWUpzdGRJOFIwQkFRbGNkS2xadzhqcnQwSHU0Vjk1aFlvcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMjlNVkhGcE1GSm1SSGxFTlhVMVIydEhOa3RMYUVaaFFqUkZhSFZoU3pocFZuZERRMVJJT0VoeWFWSkdaWEYzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "resultItem": {
+                "eventTitle": "Result",
+                "eventDescription": "One company record returned",
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-06T19:06:49.971Z",
+          "startedAt": "2026-08-06T19:06:49.971Z"
+        },
+        "id": "qfoazpb8YWGCqgBDR",
+        "url": "https://apify.com/datawell/company-register-scraper"
+      },
+      {
+        "title": "Norway Company Register | Enhetsregisteret, Officers: 50 in 24s",
+        "name": "norway-brreg-entity-search",
+        "username": "themineworks",
+        "stats": {
+          "totalBuilds": 22,
+          "totalRuns": 51,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-14T11:00:56.791Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "Scrape Norway's official BRREG business register: company status, NACE industry, address, employees, and full officer roster (CEO, board, signatories) by name or org number. 1.16M entities, no API key. Works in Claude, ChatGPT & any MCP agent.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "MCP_SERVERS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/t5knXwxLiEBuAaoHuPneYTNvBmh0qTdmeuZIt8bEcKc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMlNkdDA1UXlwQVN1bGJVbjEtYWN0b3ItNklrQnJTMFpETDJQT0ZFSFktTk5sdHE0QTR1NC1maW5hbmNlLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "The Mine Works",
+        "userPictureUrl": "https://images.apifyusercontent.com/1-r6dF1T_wzvAVHZxqUZuMULYNxNGWTt3wMnIuAiILo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vM3pGaEtVaVRxZmozWkJ0NXUtbVVtQ0FYNUJYSGx1NzRPU2dSZ1MzRWVUTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNbE5rZERBMVVYbHdRVk4xYkdKVmJqRXRjSEp2Wm1sc1pTMDViVWRvY3psd2NuSnpMVlJOVjE5TWIyZHZMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-22T00:00:00.000Z",
+          "reasonForChange": "Correcting the 3 Sep batch, which repriced the primary event but silently dropped the queued $0.005 actor-start fee for this actor as a side effect (single-pending-entry rule) or left an old mispriced value in place. Per-result price unchanged.",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "entity-scraped": {
+                "eventTitle": "Entity scraped",
+                "eventDescription": "Charged per entity scraped successfully returned",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00075
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "createdAt": "2026-09-07T07:56:39.550Z",
+          "notifiedAboutFutureChangeAt": "2026-09-07T07:56:59.706Z",
+          "notifiedAboutChangeAt": "2026-09-22T00:05:56.234Z"
+        },
+        "id": "6IkBrS0ZDL2POFEHY",
+        "url": "https://apify.com/themineworks/norway-brreg-entity-search"
+      },
+      {
+        "title": "North Data Scraper - EU Company Register, Officers & Financials",
+        "name": "northdata-company-scraper",
+        "username": "sian.agency",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 90,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T00:34:39.384Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 40,
+            "TIMED-OUT": 0,
+            "TOTAL": 40
+          }
+        },
+        "description": "Scrape northdata.com for European company data: register court and number, LEI, EUID, officers, year-by-year revenue and earnings with their source filing, and the corporate network.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/6dwguIpHFPotkxUmpf5ufHHfaohGULnP76ROs_iT9Co/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vU0hhYnZOYkU3NlUxYVFhR2QtYWN0b3ItYWZVQ1NoeHF1Q29xdlNUVUEtYWpDT3F0TWJJSy1hY3Rvci1pY29uLkhvOXNFUXRnVVYucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SIÁN OÜ",
+        "userPictureUrl": "https://images.apifyusercontent.com/3-IKZ7tIOa05lY7MEtwSbfqDeQBl6ukkcNU3pSphMaY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaU1mYTktaWVrWlVUTHJKci1jcV9tcDFPdGRkU2lUXzEtZVc5MjJ5ek92NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVMGhoWW5aT1lrVTNObFV4WVZGaFIyUXRjSEp2Wm1sc1pTMTVlSFYyYWtwNVkyWmxMVFV1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-29T20:39:47.067Z",
+          "startedAt": "2026-08-29T20:39:44.339Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "search-result": {
+                "eventTitle": "Company Search",
+                "eventDescription": "One company identity row returned by a search: name, city, country, register key and its North Data URL.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00108
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00027
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00025
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00024
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00022
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00021
+                  }
+                }
+              },
+              "company-profile": {
+                "eventTitle": "Company Profile",
+                "eventDescription": "One complete company profile: register identity, LEI and EUID, address, officers, financial series with source filings, register events and corporate network.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.016
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00376
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00352
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00332
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00312
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004
+                  }
+                }
+              }
+            }
+          }
+        },
+        "id": "afUCShxquCoqvSTUA",
+        "url": "https://apify.com/sian.agency/northdata-company-scraper"
+      },
+      {
+        "title": "Norwegian Company Register with Financials (Brønnøysund)",
+        "name": "norway-company-register",
+        "username": "tapedawn",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 23,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-18T02:48:32.904Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 22,
+            "TIMED-OUT": 0,
+            "TOTAL": 22
+          }
+        },
+        "description": "Every Norwegian company from the Brønnøysund Register Centre open data, with the latest annual accounts: revenue, operating profit, net profit, assets, equity, and debt. Filter by NACE industry, municipality, employees, legal form, VAT status, or registration date.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ed Tan",
+        "userPictureUrl": "https://images.apifyusercontent.com/dP0C3hJ_VHMWcKx9HYE5aCaNrYyLwg71K_gcruPleuA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSEIydzZQNU5CVkpWdkFiT2dETndKTnotSGdjbDZDdWxaVmZxa3lObzAzRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TTBNelUxTWpnMlAzWTlOQQ.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company": {
+                "eventTitle": "Company record",
+                "eventDescription": "One Norwegian company record with its latest annual accounts.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-25T06:03:17.402Z",
+          "startedAt": "2026-09-25T06:03:17.402Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-25T06:06:02.014Z"
+        },
+        "id": "mpZbv4z82yADvq5xz",
+        "url": "https://apify.com/tapedawn/norway-company-register"
+      },
+      {
+        "title": "Estonian Company Register with Financials",
+        "name": "estonia-company-register",
+        "username": "tapedawn",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 22,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-18T02:48:32.974Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 22,
+            "TIMED-OUT": 0,
+            "TOTAL": 22
+          }
+        },
+        "description": "Every Estonian company from the official e-Business Register open data, with the latest annual report figures: revenue, profit, assets, equity, employees, and main EMTAK industry. Filter by name, legal form, county, industry, revenue, employees, or registration date.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ed Tan",
+        "userPictureUrl": "https://images.apifyusercontent.com/dP0C3hJ_VHMWcKx9HYE5aCaNrYyLwg71K_gcruPleuA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSEIydzZQNU5CVkpWdkFiT2dETndKTnotSGdjbDZDdWxaVmZxa3lObzAzRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TTBNelUxTWpnMlAzWTlOQQ.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company": {
+                "eventTitle": "Company record",
+                "eventDescription": "One Estonian company record with its latest annual report figures.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-25T06:03:17.113Z",
+          "startedAt": "2026-09-25T06:03:17.113Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-25T06:06:01.994Z"
+        },
+        "id": "2BcDhNvhEDbd75g3T",
+        "url": "https://apify.com/tapedawn/estonia-company-register"
+      },
+      {
+        "title": "KvK Handelsregister Scraper - Dutch Company Register",
+        "name": "kvk-handelsregister-scraper",
+        "username": "parsebird",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 25,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T00:54:31.093Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 14,
+            "TIMED-OUT": 0,
+            "TOTAL": 14
+          }
+        },
+        "description": "Search the Dutch KvK Handelsregister by company name, keyword or KvK number. Get KvK and establishment numbers, legal form, registration type and date, visiting and postal address, activities and current and former trade names.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/aDJevFITcyGTcXWh8eNho_aq5LY6X2ElJ-s4u3_onmg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc2ZucEJvV2tRWE1rU1V2ZnQtYWN0b3Itc0NCOHRqMDJCSWRRUUZkVVYtMHdZUmN2ZnBxcC1zdmdfaW1hZ2VfLV8yMDI2LTEwLTA0VDIxMDAyNy41NDIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseBird",
+        "userPictureUrl": "https://images.apifyusercontent.com/OlHWJQ_zdtWlC6re6HWpLIRb2eq_YxPvjeLZnYwiz0M/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSFBFUEVXcWdKUHptR0huN21mT2QzVXQ2WEhPZVhZUHgtWTFnaWdWRlRwTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjMlp1Y0VKdlYydFJXRTFyVTFWMlpuUXRjSEp2Wm1sc1pTMHdVRGxXY0ZCMVRHVlFMV1poZG1samIyNHVjM1puTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "result": {
+                "eventTitle": "Record",
+                "eventDescription": "Charged once per record (register entry or Advies & Inspiratie article) saved to the dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00249
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00199
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00159
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00159
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00159
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "search-page": {
+                "eventTitle": "Search request",
+                "eventDescription": "KvK Search Page: charged for each request the scraper sends to the KVK Handelsregister API, including the initial search and every additional page of results that gets fetched. A larger pageSize reduces the number of requests needed for the same dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00089
+              },
+              "retry": {
+                "eventTitle": "Retry",
+                "eventDescription": "Charged each time a failed request is automatically retried. Retries protect your run against transient network issues and KVK rate-limiting; you only see this charge if a request initially fails.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00089
+              },
+              "proxy-datacenter": {
+                "eventTitle": "Proxy (datacenter)",
+                "eventDescription": "Charged once per run when you enable Apify Proxy without a specific proxy group. Use this when scraping from a clean datacenter IP is enough to avoid blocks. Disable proxy in the input to skip this charge.",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "proxy-residential": {
+                "eventTitle": "Proxy (residential)",
+                "eventDescription": "Charged once per run when you enable Apify Proxy with a proxy group such as RESIDENTIAL. Residential IPs are more expensive but significantly reduce blocking on aggressive anti-bot setups. Switch to no proxy or basic proxy to avoid this charge.",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.06
+              }
+            }
+          },
+          "startedAt": "2026-10-04T13:09:23.492Z",
+          "createdAt": "2026-10-04T13:09:24.413Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "sCB8tj02BIdQQFdUV",
+        "url": "https://apify.com/parsebird/kvk-handelsregister-scraper"
+      },
+      {
+        "title": "UK Company Check — Companies House Register & Financials",
+        "name": "uk-company-check",
+        "username": "us0r",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 8,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T13:58:39.851Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 7,
+            "TIMED-OUT": 0,
+            "TOTAL": 7
+          }
+        },
+        "description": "Check UK companies by company number or name against the official Companies House API. One row per company: status, strike-off notice, overdue accounts, insolvency cases, charges, directors, PSCs and balance sheet figures from the latest filed accounts. No scraping, no proxy.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "us0r",
+        "userPictureUrl": "https://images.apifyusercontent.com/4TevYg8PO-yqy96H9TBDrrbgt2niZ08ZOjKOH80cM-o/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaktDaEtudVVtUzU2bjBVZ21mYVNGeC1PTms1Q3U1NnRiNzkwalNhRWlHdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RTBORFExTkRFNU9EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Charged once per run.",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": true
+              },
+              "company-check": {
+                "eventTitle": "Company checked",
+                "eventDescription": "One company row with status, risk flags, filing deadlines, insolvency cases, charges, officers, PSCs and balance sheet figures — charged also for 'not found'. Rows rejected as an invalid company number or for an unreachable source are free.",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-12T13:45:13.756Z",
+          "startedAt": "2026-10-12T13:45:13.756Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "OrkAWfpJcqjzayJ6i",
+        "url": "https://apify.com/us0r/uk-company-check"
+      },
+      {
+        "title": "Northdata Scraper - Company Register, Officers & Financials",
+        "name": "northdata-company",
+        "username": "s-r",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 26,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T00:20:33.827Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 11,
+            "TIMED-OUT": 0,
+            "TOTAL": 11
+          }
+        },
+        "description": "Northdata scraper for company register data from Germany, the Netherlands, Austria, Switzerland and France. Search by company name, North Data URL or register ID and get status, address, LEI, officers, register filings and public financials in one row per company.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SR",
+        "userPictureUrl": "https://images.apifyusercontent.com/0Jsfrod6O50LzPQ7MPpFm47dJEdICS01fuz--1M4kBE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNUl1ZEw2WGQ0dzNZOGNJbVZ2WGF6ajFBQUtiTTF5LUFsd2RKTXk5RFNZQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWRlZaV201SVpqTjNSVVJqY1hGemIyZ3RjSEp2Wm1sc1pTMTRZVW8wUjJ4Wk5URTNMV2x0WVdkbGN5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company": {
+                "eventTitle": "Company record",
+                "eventDescription": "One delivered company record with its nested officers, filings and public financials.",
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-05T11:47:32.765Z",
+          "startedAt": "2026-10-05T11:47:32.765Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "eX7oZd2kYMfNw5jL5",
+        "url": "https://apify.com/s-r/northdata-company"
+      },
+      {
+        "title": "FR SIRENE Company Register Lookup",
+        "name": "fr-sirene-company-register-lookup",
+        "username": "codeclouds",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 32,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T00:34:37.845Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search French companies via official SIRENE open-data API — identity, address, NAF code, status, dirigeants, finances.",
+        "categories": [
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/t448yMzWAfhMcYxUtwyCjHfYrSo5d-2-viAO8yktplY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRVJQdVIyWGxkUDd0aXRwUWotYWN0b3IteEZKSkppdmFqaWhabEFJeVctcFpPOW9OMGh5ci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Dennis",
+        "userPictureUrl": "https://images.apifyusercontent.com/og-WDi5I9Twkri-L9bV6q6msCc7OzN-Btp-FrlXr1zI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUERpQXk4TDhlTzFBV0QwWkhsQlQ4dGVvd1VUVEdXSGlPZ1pTMTdkbk8yTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpODFPVE01TXpaak1URmxaRGt5TVdVeE9EQTNaalF4Tm1KaE1HWXhaRFk0WWpZM1pqazFPV0U1TXpnNVpUWm1OamRoTWpCak1EWTBOVGxsWVdVelpXSmlQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-result": {
+                "eventTitle": "Company Result",
+                "eventDescription": "Charged per company result delivered from official SIRENE API",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "createdAt": "2026-09-21T18:22:36.031Z",
+          "startedAt": "2026-09-21T18:22:36.031Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-21T18:36:17.383Z"
+        },
+        "id": "xFJJJivajihZlAIyW",
+        "url": "https://apify.com/codeclouds/fr-sirene-company-register-lookup"
+      },
+      {
+        "title": "North Data Scraper — European Company Register Data",
+        "name": "northdata-scraper",
+        "username": "hipersoft",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 22,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T09:50:32.923Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 13,
+            "TIMED-OUT": 0,
+            "TOTAL": 14
+          }
+        },
+        "description": "Look up European companies on North Data: legal name, former names, register number, address, founding date, LEI, business purpose, managing directors and officers, and recent register publications. Germany, UK, France, Austria and 20+ countries. Bulk lookups.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/9u1hQ2KwjcD_Jdl6fB1KJXUNLbTyrSgydViWiZHFDUo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vYTVMdDZkbWQxZTlwUklGWGEtYWN0b3ItWm42azVVOEZubzN5dlpaTGUtQk1PUjg1UDQ3aC1ub3J0aGRhdGEtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "hiper soft",
+        "userPictureUrl": "https://images.apifyusercontent.com/5jDNWOXS0jbJETXx0n8_XFhxi7McbXBp3RacBGYtNLQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSzlITHlxb2k5MnBNZGVkRWVWT2ktVmh5WHBzNmJ4bTNKVzQ5V3ctbGlZYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZVFZNZERaa2JXUXhaVGx3VWtsR1dHRXRjSEp2Wm1sc1pTMHlXVGwwU1had1VEQkxMV2hwY0dWeUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company": {
+                "eventTitle": "Company",
+                "eventDescription": "One company record in the dataset (names with no match are free).",
+                "isOneTimeEvent": true,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0032
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0026
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "startedAt": "2026-10-06T03:32:04.297Z",
+          "createdAt": "2026-10-06T03:32:04.569Z"
+        },
+        "id": "Zn6k5U8Fno3yvZZLe",
+        "url": "https://apify.com/hipersoft/northdata-scraper"
+      },
+      {
+        "title": "Zefix Company Register Scraper (Switzerland: Zefix, SHAB)",
+        "name": "swiss-company-register-scraper",
+        "username": "swissalpinedata",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 40,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T01:12:47.112Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Search the Zefix federal commercial register by company name, or pull newly published SHAB commercial register notices (new registrations, mutations, deletions) from amtsblattportal.ch.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "WebAlpine Studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/WpzLmxnbU8zIqOYVfMJ2KNk06AQdQ-HxwUr7S89ZPu8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQlByS21QbDV1WUNBTVl4SUs5SkpFeFU4c3JNTDZlSXhYZlRZVmdWMzZrWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVlUwWVZJMlJqSkpUbUY1TTJKNWVUaFRSR3RuYTJaNmVuTkJZVlUzV0U4d1FtNXhkRGg0U1VOWllsTnpUekoz.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "Company record",
+                "eventDescription": "One company or gazette publication from Zefix or SHAB",
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "createdAt": "2026-09-22T21:28:12.948Z",
+          "startedAt": "2026-09-22T21:28:12.948Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "CC42V1aCJYxn2Eixu",
+        "url": "https://apify.com/swissalpinedata/swiss-company-register-scraper"
+      },
+      {
+        "title": "KvK Scraper — Dutch Company Register (Netherlands)",
+        "name": "kvk-netherlands-company-scraper",
+        "username": "luminous_yukon_plg",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 84,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T07:38:43.293Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search the Dutch Chamber of Commerce register and export company records: KVK number, legal form, officers' registered address, trade names, SBI activity and registration date. Same output schema across every registry in this series.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/pjkgNzPf6euMa3LHmOrKkyz3bHKLkW3N-hNgIEkYCWU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZlZEa0hOZkoyd0xWYjVJakgtYWN0b3ItN3pya203S281dWJQOE5ySk8tQVlvSkdHWjZ2Wi1pY29uLWEtb3JhbmdlLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "nandoll mo",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-23T11:55:04.972Z",
+          "createdAt": "2026-08-23T11:55:05.433Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "7zrkm7Ko5ubP8NrJO",
+        "url": "https://apify.com/luminous_yukon_plg/kvk-netherlands-company-scraper"
+      },
+      {
+        "title": "New Zealand Companies Register Scraper — NZBN & Company Data",
+        "name": "nz-companies-scraper",
+        "username": "haketa",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 20,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T20:42:35.269Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 18,
+            "TIMED-OUT": 0,
+            "TOTAL": 18
+          }
+        },
+        "description": "Search and scrape the New Zealand Companies Register: company name, company number, NZBN, status and entity type. For KYC, due diligence, B2B and compliance. Independent tool, not affiliated with the NZ Companies Office.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/tT5AhefX0KvV6qNLK-dDlL5NKPBMWz-qqXhJimCZlkk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaExlVmUxWExQbE80b3htaXotYWN0b3ItZ1pnNGJpU2Z3Y2lab0F0UWEtaUVyT1AxblRJSi1JTUdfMDU2My5qcGVn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Haketa",
+        "userPictureUrl": "https://images.apifyusercontent.com/v3INZBe8i9FXs3yDWNyES48f4AFPoPUh94BdLRQfLb4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT284Rms2eVdKT3A0OG9NOUxmeDExWGppY1VhNm5sbTJkZzhQdl9NcXRHRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhRXhsVm1VeFdFeFFiRTgwYjNodGFYb3RjSEp2Wm1sc1pTMUJUREpzTUdRMlQzRktMVmRvWVhSelFYQndYMGx0WVdkbFh6SXdNall0TURRdE1UUmZZWFJmTVRjdU5ETXVNVGN1YW5CbFp3LmpwZWc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0033
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00275
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00275
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00275
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-29T15:37:37.159Z",
+          "createdAt": "2026-09-29T15:37:37.493Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "gZg4biSfwciZoAtQa",
+        "url": "https://apify.com/haketa/nz-companies-scraper"
+      },
+      {
+        "title": "Estonia Company Register — Äriregister Lookup",
+        "name": "estonia-company-register",
+        "username": "sourcerow",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 49,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T13:20:37.172Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Look up any of 376,000 Estonian companies by name or registry code — legal form, VAT number, registration status and address, from the official Äriregister open data.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/oynNda_3eF7OvRJJnd_Ytg4u8Y22vs49dhTc6u_uNsw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vN0NKc1J4S1hsZ21XdWZRc1EtYWN0b3ItSDVwZndtTkZ0VEFYemhHV1AtSThNQldjSWNuUy1lc3RvbmlhLWNvbXBhbnktcmVnaXN0ZXIuc3ZnLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SourceRow",
+        "userPictureUrl": "https://images.apifyusercontent.com/_eJPDTdyNd3vNTWH8aOqopLDkxutk98SPKgVk3Gp53g/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUzc0Mlc1Q2dHT3JWcUZKamJlYS1yWm5BVXJRcEZWQjZ1aklfM19ET0F3WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZOME5LYzFKNFMxaHNaMjFYZFdaUmMxRXRjSEp2Wm1sc1pTMHdabEpCWTFnNFlqbDZMVjl3Y205bWFXeHZMbk4yWnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-resolved": {
+                "eventTitle": "Company resolved",
+                "eventDescription": "One Estonian company matched to its register record.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-28T22:06:30.541Z",
+          "createdAt": "2026-08-28T22:06:31.766Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "H5pfwmNFtTAXzhGWP",
+        "url": "https://apify.com/sourcerow/estonia-company-register"
+      },
+      {
+        "title": "Pappers Scraper — French Company Register (SIREN/SIRET) Data",
+        "name": "pappers-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 233,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T07:14:00.187Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 33,
+            "TIMED-OUT": 0,
+            "TOTAL": 33
+          }
+        },
+        "description": "Search and extract French company data from Pappers. Look up companies by name or activity and get SIREN, SIRET, legal form, NAF code, address, status, share capital, revenue, and headcount. No API key, no login required.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/4oipyZoiq7HqeLqvZPLtfEf4CG45T8mv4HAvWcXvom4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3ItV1JDUkVLTnVmMkNwQ2lKcEYtSDNEWHduWG5TdS1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-09T21:30:25.000Z",
+          "reasonForChange": "Switching to automatic per-result billing",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.01,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.012,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-09T21:25:25.557Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "WRCREKNuf2CpCiJpF",
+        "url": "https://apify.com/studio-amba/pappers-scraper"
+      },
+      {
+        "title": "Norway Business Register Companies Scraper",
+        "name": "brreg-norway-companies-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 93,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T20:32:45.876Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrapes Norwegian company records from Brønnøysundregistrene by search query or organization number. Returns each company as a flat row with registered name, address, and industry codes.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/4VanbRLi1pTPR5w1YeyMHJ4xG0y2YzzLv7uE2Z5xDos/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItZW9Ha0w2SmNlNkpnSW03cTMtNjFkSk5xN25ydi1icnJlZy1ub3J3YXktY29tcGFuaWVzLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0085
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00823
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00796
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00769
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00769
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00769
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-07-06T22:30:09.697Z",
+          "createdAt": "2026-07-06T22:30:19.822Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "eoGkL6Jce6JgIm7q3",
+        "url": "https://apify.com/parseforge/brreg-norway-companies-scraper"
+      },
+      {
+        "title": "Societe.com Scraper — French Company Register Data",
+        "name": "societe-com-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 179,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T05:42:32.430Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search and extract French company data from Societe.com. Look up by company name or SIREN/SIRET and get legal name, SIREN, SIRET, VAT number, legal form, NAF code, address, founding date, status, employee count, and dirigeants (managers/directors). No login required.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-24T20:00:52.000Z",
+          "reasonForChange": "Switching to automatic per-result billing",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.01,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.009
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.007
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-24T19:55:53.515Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "goTRciZdN6tdv9gUN",
+        "url": "https://apify.com/studio-amba/societe-com-scraper"
+      },
+      {
+        "title": "Poland KRS Company Register Scraper",
+        "name": "poland-krs-companies-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 98,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T03:12:42.607Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Look up any Polish company in the KRS National Court Register and export its official extract: KRS, REGON and NIP numbers, legal form, registered address, board members and their roles, proxies, partners and shareholders, share capital and PKD activity codes. Export to JSON, CSV or Excel.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/KN6a_XvfGYnQKmydLCMZ4qHmSBAEFiHUuA9ww5oOhh4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItVkloQmFsVjRKZHZodTVseHItOGtMVzdCZ3ZMNy1rcnMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "A data record returned by the scraper.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01425
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0135
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01275
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-07-15T23:05:26.000Z",
+          "createdAt": "2026-07-15T23:05:04.916Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "VIhBalV4Jdvhu5lxr",
+        "url": "https://apify.com/scrapers_lat/poland-krs-companies-scraper"
+      },
+      {
+        "title": "Proff.no Scraper — Norwegian Company Register Data",
+        "name": "proff-no-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 103,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T10:30:45.030Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search and extract Norwegian company data from Proff.no by company name. Returns org number, address, industry, revenue, profit, employees, and board members/officers. No login required.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/G7pTL_ifcRl5DZFrOIfbWRT5zyoFWoCNgist7nIsPxg/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3Itc09WdGQ1cEs3dVVUU2tBNWctYXRQVVdkVHhZMi1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-14T21:02:09.000Z",
+          "reasonForChange": "Switching to automatic per-result billing",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.01,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.012,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-07-14T20:57:09.709Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "sOVtd5pK7uUTSkA5g",
+        "url": "https://apify.com/studio-amba/proff-no-scraper"
+      },
+      {
+        "title": "Estonia e-Business Register Company Scraper",
+        "name": "estonia-business-register-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 98,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T08:48:35.971Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search the Estonian e-Business Register and export company records: registry code, name, previous names, status, legal form and registered legal address. Export to JSON, CSV or Excel.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9Q-OeMS5hD4wz0RCI6fjZooCrb9qg_Dh-g0OpnbM3O8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItaFRSZ0dXeEFUS09MZENoc20tQmhrYjJsM080Mi1lYnVzcy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "A data record returned by the scraper.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01425
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0135
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01275
+                  }
+                }
+              },
+              "details": {
+                "eventTitle": "details",
+                "eventDescription": "Full detail enrichment for a record (extra fields fetched from the item's detail page).",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01875
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.017813
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.016875
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.015938
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.015938
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.015938
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-08-23T21:31:01.000Z",
+          "createdAt": "2026-08-08T21:31:34.685Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-08-08T21:31:54.829Z",
+          "notifiedAboutChangeAt": "2026-08-23T21:35:47.901Z"
+        },
+        "id": "hTRgGWxATKOLdChsm",
+        "url": "https://apify.com/scrapers_lat/estonia-business-register-scraper"
+      },
+      {
+        "title": "New Zealand Companies Register Scraper",
+        "name": "newzealand-companies-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 97,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T03:12:42.606Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search the New Zealand companies register and export company records: company number, NZBN, name, status, entity type, incorporation date and registered office address. Export to JSON, CSV or Excel.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/gC1_JqdK8UCrfLSXGKY77IN97tmqvH-p8TS7AT2doIY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItNVVYSW9id09XYTZ0SlFSSXItRDlVRmVvUndXTy1uZXd6ZWFsYW5kLWNvbXBhbmllcy1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "A data record returned by the scraper.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01425
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0135
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01275
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-07-15T23:05:26.000Z",
+          "createdAt": "2026-07-15T23:04:31.575Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "5UXIobwOWa6tJQRIr",
+        "url": "https://apify.com/scrapers_lat/newzealand-companies-scraper"
+      }
+    ]
+  }
+}

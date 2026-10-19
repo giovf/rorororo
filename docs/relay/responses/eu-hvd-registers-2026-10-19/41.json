@@ -1,0 +1,606 @@
+{
+  "data": {
+    "total": 11,
+    "count": 11,
+    "offset": 0,
+    "limit": 40,
+    "desc": false,
+    "items": [
+      {
+        "title": "Bolagsverket Company Lookup (Sweden)",
+        "name": "bolagsverket-api-fresh",
+        "username": "vhsgreed",
+        "stats": {
+          "totalBuilds": 23,
+          "totalRuns": 67,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T03:56:42.880Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Look up Swedish companies in the official Bolagsverket registry by organisation number or name. Returns legal form, registration date, SNI codes, address, board and officers, and registry status.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/QmQeIMi1kfnZRmR38wvacMHW9zfzIU5AgjYUEqiIbeo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2VEcndtRXh0RERTTUlTekQtYWN0b3Itbmh4dWpOdEJseWFINTRJdGYtZ0I1ZUFuMTE4Zi1zd2VkZW4ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Karl Sundström",
+        "userPictureUrl": "https://images.apifyusercontent.com/np56CFOurcdv0Wps8fndp50qMeHRDNJQNLixitXN5Sg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQkQwdmhjRzhRMUc2ZGEtMy1jY3hrMHl3RVBzX3ZRNk9lRFpLNmNySUoxQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlZFY25kdFJYaDBSRVJUVFVsVGVrUXRjSEp2Wm1sc1pTMTRTMnBKU2twaFFYUnZMV2hsWVdSemFHOTBNakF5TlM1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.002
+              },
+              "result-found": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000184
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000168
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.000152
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.000152
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000152
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-28T07:47:42.118Z",
+          "startedAt": "2026-09-28T07:47:42.118Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-28T08:06:03.604Z"
+        },
+        "id": "nhxujNtBlyaH54Itf",
+        "url": "https://apify.com/vhsgreed/bolagsverket-api-fresh"
+      },
+      {
+        "title": "Swedish Company Register (Bolagsverket + SCB)",
+        "name": "bolagsverket-company-register",
+        "username": "tapedawn",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 21,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-18T02:48:33.010Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 20,
+            "TIMED-OUT": 0,
+            "TOTAL": 21
+          }
+        },
+        "description": "All Swedish companies from the official Bolagsverket and SCB open data: org number, name, legal form, registration date, status, business description, address, SNI industry codes, and marketing opt-out flag. Filter by name, industry, city, legal form, status, or registration date.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ed Tan",
+        "userPictureUrl": "https://images.apifyusercontent.com/dP0C3hJ_VHMWcKx9HYE5aCaNrYyLwg71K_gcruPleuA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSEIydzZQNU5CVkpWdkFiT2dETndKTnotSGdjbDZDdWxaVmZxa3lObzAzRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6TTBNelUxTWpnMlAzWTlOQQ.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company": {
+                "eventTitle": "Company record",
+                "eventDescription": "One Swedish company record from the Bolagsverket and SCB registers.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-25T06:03:16.843Z",
+          "startedAt": "2026-09-25T06:03:16.843Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-25T06:06:01.974Z"
+        },
+        "id": "elB8hzBEWbTaTLLCX",
+        "url": "https://apify.com/tapedawn/bolagsverket-company-register"
+      },
+      {
+        "title": "Bolagsverket Sweden Companies Scraper",
+        "name": "bolagsverket-sweden-companies-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 172,
+          "totalUsers": 8,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-17T22:38:35.102Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Scrapes Swedish company records from Bolagsverket by company name or organization number. Returns each company as one flat row with official registration details.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/2y7Jl1UykECA1dVpg-zelzF6UYPNsd_qbqLlugmLXQA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItaEZjZ2tQTmZYb2phelREZFItN2xzNFNTdWhyWi1ib2xhZ3N2ZXJrZXQtc3dlZGVuLWNvbXBhbmllcy1zY3JhcGVyLnBuZw.webp",
+        "notice": null,
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0085
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00817
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00783
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0075
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0075
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0075
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-06-02T22:12:45.985Z",
+          "createdAt": "2026-06-02T22:12:47.757Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "hFcgkPNfXojazTDdR",
+        "url": "https://apify.com/parseforge/bolagsverket-sweden-companies-scraper"
+      },
+      {
+        "title": "Swedish Company Financials & Annual Reports (årsredovisningar)",
+        "name": "swedish-company-financials",
+        "username": "vhsgreed",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 28,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T10:26:42.331Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 2,
+            "SUCCEEDED": 23,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Multi-year financials for any Swedish aktiebolag — nettoomsättning, årets resultat, rörelseresultat, summa tillgångar, eget kapital, medelantal anställda — keyed on organisationsnummer, parsed from the official Bolagsverket annual reports (iXBRL).",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Karl Sundström",
+        "userPictureUrl": "https://images.apifyusercontent.com/np56CFOurcdv0Wps8fndp50qMeHRDNJQNLixitXN5Sg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQkQwdmhjRzhRMUc2ZGEtMy1jY3hrMHl3RVBzX3ZRNk9lRFpLNmNySUoxQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlZFY25kdFJYaDBSRVJUVFVsVGVrUXRjSEp2Wm1sc1pTMTRTMnBKU2twaFFYUnZMV2hsWVdSemFHOTBNakF5TlM1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.002
+              },
+              "result-found": {
+                "eventTitle": "Company record",
+                "eventDescription": "One company successfully returned from the official registry",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00125
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00115
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00105
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00095
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-28T07:48:01.730Z",
+          "startedAt": "2026-09-28T07:48:01.730Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-28T08:06:03.784Z"
+        },
+        "id": "LQ4MLflhuF9yOJD8X",
+        "url": "https://apify.com/vhsgreed/swedish-company-financials"
+      },
+      {
+        "title": "Swedish Company Register Lookup",
+        "name": "se-company-lookup",
+        "username": "thesjostrandproject",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 9,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T08:26:36.417Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "Look up Swedish companies by organisation number, or search one postal town by name, legal form or SNI code, in Bolagsverket's and SCB's weekly bulk files. Organisations only: no sole traders, no street addresses. Includes the reklamspärr flag. Pay per record.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "The Sjöstrand Project",
+        "userPictureUrl": "https://images.apifyusercontent.com/rhEDHqk6nwsv7UbzKq-je1j6KTnMtgwHZrPQfBhyAt8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNGZvOGJta3FVc1FrWE44MmxwVkU4eUxvM2p1blk4UkRpNUlGLWxmd1YwRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWMGg0YURkd1NUWnVOV3AwTTNCTlozb3RjSEp2Wm1sc1pTMW9kMGxSTVc1R01IUkhMWE5xYjNOMGNtRnVaQzFoZG1GMFlYSXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-17T08:07:36.474Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-record": {
+                "eventTitle": "Company record",
+                "eventDescription": "One company record in the dataset.",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              },
+              "search": {
+                "eventTitle": "Place search",
+                "eventDescription": "One scan of a postal town's part of the index (a place search), charged once per run, right after its first part is read.",
+                "eventPriceUsd": 0.02,
+                "isPrimaryEvent": false
+              },
+              "lookup-miss": {
+                "eventTitle": "Organisation number not found",
+                "eventDescription": "One requested organisation number that returns no record.",
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-10-17T08:07:38.342Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "qnJ83A0MYg1q5aDKf",
+        "url": "https://apify.com/thesjostrandproject/se-company-lookup"
+      },
+      {
+        "title": "Allabolag Scraper",
+        "name": "allabolag-scraper",
+        "username": "solidcode",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 4427,
+          "totalUsers": 31,
+          "totalUsers7Days": 4,
+          "totalUsers30Days": 12,
+          "totalUsers90Days": 18,
+          "lastRunStartedAt": "2026-10-18T10:20:40.181Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 3597,
+            "TIMED-OUT": 0,
+            "TOTAL": 3597
+          }
+        },
+        "description": "[💰 $1.4 / 1K] Extract Swedish company data from allabolag.se — names, organisation numbers, contacts, addresses, industries, and headline financials. Search by keyword and location, or by allabolag.se search URLs.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/pL7F4C7fjWEFg4KAy8pLcyqzBk5Bh0gpvuxmRu7hRjM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc01VSWpTcEpUMXpia1BpTk0tYWN0b3ItaURyVFVROUhnRkRYVWdMbEEtUWNkYUhtd1dXbS00YmVhNjdmYS00NzBlLTQ4MTQtYTM2Mi00OGZhOTc2MGI4NzUucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SolidCode",
+        "userPictureUrl": "https://images.apifyusercontent.com/pOybr7SLIDt4uWHCBExLbYFkPZpc5-7gG1nnWMwTEgc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVmN6WEh5MHJwY3VXMkZ5OVE0Q1djQjg4dGFBZkhBU1k1VXptMUZSMmtmby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjMDFWU1dwVGNFcFVNWHBpYTFCcFRrMHRjSEp2Wm1sc1pTMDNZVW81Y0dKWlZXTkpMVTF2WkdWeWJsOXphR2xsYkdSZmJHOW5iMTkzYVhSb1gzUmxZV3hmY0dGMGFGOGxNamd4SlRJNUxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00165
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-09-06T10:23:42.000Z",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "Moving to Apify's tiered discount pricing — Bronze, Silver, and Gold subscribers now pay progressively less per result.",
+          "createdAt": "2026-08-22T10:23:42.384Z",
+          "notifiedAboutFutureChangeAt": "2026-08-22T10:24:02.628Z",
+          "notifiedAboutChangeAt": "2026-09-06T10:35:48.469Z"
+        },
+        "id": "iDrTUQ9HgFDXUgLlA",
+        "url": "https://apify.com/solidcode/allabolag-scraper"
+      },
+      {
+        "title": "Swedish Company Financials Fresh",
+        "name": "swedish-company-financials-fresh",
+        "username": "vhsgreed",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 19,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T14:02:33.927Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 16,
+            "TIMED-OUT": 0,
+            "TOTAL": 17
+          }
+        },
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Karl Sundström",
+        "userPictureUrl": "https://images.apifyusercontent.com/np56CFOurcdv0Wps8fndp50qMeHRDNJQNLixitXN5Sg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQkQwdmhjRzhRMUc2ZGEtMy1jY3hrMHl3RVBzX3ZRNk9lRFpLNmNySUoxQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlZFY25kdFJYaDBSRVJUVFVsVGVrUXRjSEp2Wm1sc1pTMTRTMnBKU2twaFFYUnZMV2hsWVdSemFHOTBNakF5TlM1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "result-found": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00125
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00115
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00105
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00095
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-29T08:51:14.744Z",
+          "createdAt": "2026-09-29T08:51:15.143Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ZRE1w0a3LkbLhPLCS",
+        "url": "https://apify.com/vhsgreed/swedish-company-financials-fresh"
+      },
+      {
+        "title": "Company ID Finder: Netherlands, Belgium & Nordics",
+        "name": "benelux-nordic-company-ids",
+        "username": "digital_influx",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 11,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T14:46:38.755Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 10,
+            "TIMED-OUT": 0,
+            "TOTAL": 10
+          }
+        },
+        "description": "Find the company behind Dutch, Belgian, Danish, Swedish, Norwegian and Finnish websites: KvK, KBO/BCE, CVR, org.nr or Y-tunnus checked by control digit, VAT ID, legal form, register and address.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Eg7YDh7500mQN8p6ihTvB5zELEWb2IuaY4JugrzijDQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFNYc09TYVpXbUZXVmJYRkstYWN0b3ItemF2ZzNmN2ROVGNyUENwbXctdHFRUUtoRTJOZy1iZW5lbHV4LW5vcmRpYy1jb21wYW55LWlkcy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Bruno Petrelli",
+        "userPictureUrl": "https://images.apifyusercontent.com/JbGzHhDwRJFVwoyiaIzAvOF2DhnYvDEJRE_d2vJ_ZFU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTzFkaFdyakctM1Y0U0FhVThYUE5zZ3RkWi1Fb1dPQ2JldXhmMHlqNXdkRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMFJRZEdkVVNIaHJWSEV6VFRCQ2IwNURia00xV1VVdFdYQmxSVE00U25GUVp6QjNPVTlDVWt0SmVHVXllV3BuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company": {
+                "eventTitle": "Company identified",
+                "eventDescription": "One website whose company was identified: KvK, KBO/BCE, CVR, organisation number or Y-tunnus checked by control digit, with VAT ID, legal form, register and address. Websites without a company number are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-02T19:53:06.877Z",
+          "createdAt": "2026-10-02T19:53:06.706Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "zavg3f7dNTcrPCpmw",
+        "url": "https://apify.com/digital_influx/benelux-nordic-company-ids"
+      }
+    ]
+  }
+}
