@@ -1357,3 +1357,13 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 02:20 | burn-down | Tests: x402-sales.spec (6), bazaarResourceLines; ARCHITECTURE note; no version bump
 - 2026-10-19 02:20 | burn-down | Queue: gankdat x402-paid-by-source-reading done; proof is the 10-19 row naming the x402 sources
 - 2026-10-19 02:18 | burn-down | Stopping: 2 items (gankdat research, x402 sales reading); starved-and-cooled, pre-research spent 17:40
+- 2026-10-19 07:50 | report | Money: revenue £0.00, net -£44.40, headroom £47.60 (about 12.9 months)
+- 2026-10-19 07:50 | report | gankdat: 3 accounts (0 paid), 3 external x402 payments in 30 days, ~1,070 authed MCP calls
+- 2026-10-19 07:50 | report | Highlight Keep: 0 Chrome users, 1 Firefox weekly download, 0 sales
+- 2026-10-19 07:50 | report | ReadFocus: Chrome users flicker 0-3, 0 real sales; Variables Toolkit: views 7 to 14, 0 installs
+- 2026-10-19 07:50 | report | Hackathons: PayPal entry submitted 10-16; oss-bounties killed 10-18, 0 claims, 0 paid
+- 2026-10-19 07:50 | report | Alerts: 6 in 7 days; 2 handoffs open (Cloudflare token scope, versions check), no owner asks
+- 2026-10-19 07:50 | report | Owner: nothing waiting; ReadFocus 0.3.0 and Highlight Keep 0.4.0 uploads overdue for Claude
+- 2026-10-19 07:50 | report | Next: record the first x402 amounts in the ledger; sign and upload the two queued extensions
+- 2026-10-19 07:50 | report | Slots: burn-down built 65%, 47 cold slots, 2 metrics slots missed
+- 2026-10-19 07:50 | notify | usage note: please send your Claude usage, like "usage 62% fable 71%"
