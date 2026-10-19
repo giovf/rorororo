@@ -101,8 +101,9 @@
       "effort_days": 0.5,
       "proof": "docs/exchange/spikes/us-npi-registry.md with the Apify users-to-price number, the API and file terms from the primary pages, and a promote / park call (a promote files the dataset item in the gankdat queue and the idea in the exchange)",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-19"
+      "status": "doing",
+      "added": "2026-10-19",
+      "doing_since": "2026-10-19"
     }
   ]
 }
