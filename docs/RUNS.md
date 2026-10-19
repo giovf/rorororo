@@ -1367,3 +1367,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 07:50 | report | Next: record the first x402 amounts in the ledger; sign and upload the two queued extensions
 - 2026-10-19 07:50 | report | Slots: burn-down built 65%, 47 cold slots, 2 metrics slots missed
 - 2026-10-19 07:50 | notify | usage note: please send your Claude usage, like "usage 62% fable 71%"
+- 2026-10-19 09:30 | build | Actions reading 10-12..10-19: 415 runs, 549 billed min (323 wall), about 2,350/month — no private flip
+- 2026-10-19 09:30 | build | Floor is the run count: notify owner 121, relay 60, check 62; quiet days 46/day fit, 10-16..18 ran 112/day
+- 2026-10-19 09:30 | build | CI-shape levers left total about -65/week (notify owner cron, mirror fold, landing 12 h): still over the cap
+- 2026-10-19 09:30 | build | Queue: foundry actions-minutes back to todo, next reading 10-26 (flip under 467; else GitHub Pro is the owner call)
+- 2026-10-19 09:30 | build | Queue: foundry notify-owner-cron-not-push (4) filed: 2-hourly cron replaces the push trigger, -50 billed/week
+- 2026-10-19 09:30 | build | Queue: foundry owner-notes-poll-gap done — leave the poll: longest gap 7.9 h (Sunday), 8 over 4 h; folds in
+- 2026-10-19 09:30 | build | First-run check: no installer commit since 10-16 lacks its first run line; nothing dispatched

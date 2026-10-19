@@ -1556,3 +1556,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the client count and the UA family behind every external x402 payment (24 h and 30 d), the job log lists the Bazaar's
   per-resource numbers, and paid x402 calls count toward §7's external-demand reading. The 10-19 row is the first that
   can say what the lane's first three sales were.
+- 2026-10-19 build: the dated Actions reading — 549 billed minutes in the week 10-12..10-19 (415 runs; a quiet day is
+  46, a relay-and-Dependabot day 112), over the 2,000-a-month cap, so the repo stays public. The floor is the run
+  count: every CI-shape lever left (notify owner on a 2-hourly cron instead of its push trigger, the mirror inside the
+  gankdat job, landing twice a day) saves ≈ 65 a week and leaves ≈ 485. The 10-26 reading flips at a week under 467;
+  if the cadence keeps it over, the owner choice is GitHub Pro (US$4/month) or staying public behind the mirror.
+  Telegram poll left as is (longest gap 7.9 h on a Sunday; a shorter schedule costs runs the week cannot spare).
