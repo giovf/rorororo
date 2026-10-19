@@ -1562,6 +1562,10 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   gankdat job, landing twice a day) saves ≈ 65 a week and leaves ≈ 485. The 10-26 reading flips at a week under 467;
   if the cadence keeps it over, the owner choice is GitHub Pro (US$4/month) or staying public behind the mirror.
   Telegram poll left as is (longest gap 7.9 h on a Sunday; a shorter schedule costs runs the week cannot spare).
+- 2026-10-19 burn-down: notify owner moved to a `40 */2` cron, push trigger dropped (foundry notify-owner-cron-not-push):
+  121 runs/124 billed minutes last week were a quarter of the 549 and the largest floor; ≈ 72 delivered fires replace them
+  (-50/week). Phone lines, missed-slot bullets and owner notes now land up to 2 h late (4 h on a skipped fire), which the
+  10-19 reading accepted; the first cron run after the installer commit is read at the next slot, the proof on 10-26.
 - 2026-10-19 build: uk-planning paused on every surface, not unpublished (gankdat `uk-planning-apify-pause`, review
   W42). The origin has been empty since 10-10, the snapshot expired 10-16 and Apify QA flagged the actor on 10-17 after
   6 of 22 runs failed on our own 503. A run now ends cleanly with the dated notice and no charge, the README and the

@@ -1382,3 +1382,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 17:16 | build | Docs: RESEARCH surface-pause note, MARKETPLACE-PREP Apify row, ARCHITECTURE, apify/README; no version bump
 - 2026-10-19 17:16 | build | Queue: gankdat uk-planning-apify-pause done; proof is the apify failed count flat and the flag gone
 - 2026-10-19 17:16 | build | First-run check: every installer commit since 10-16 has its first run line; nothing dispatched
+- 2026-10-19 17:30 | burn-down | First-run check: every installer commit since 10-16 has its first run line; nothing dispatched
+- 2026-10-19 17:30 | burn-down | docs/ci/notify-owner.yml: `40 */2` cron is the only trigger besides dispatch; push trigger dropped
+- 2026-10-19 17:30 | burn-down | SCHEDULERS rows (notify owner, watchdog, owner notes), SLOTS.md, run-watchdog.ts: lines land 2–4 h late
+- 2026-10-19 17:30 | burn-down | Queue: foundry notify-owner-cron-not-push done; proof is the 10-26 reading (under 80 runs, ≤ 4 h)
