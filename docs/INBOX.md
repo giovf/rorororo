@@ -148,3 +148,4 @@
 - 2026-10-19 13:01 | notification | nedm.asus.com | Ser miembro tiene recompensa. Tu portátil gamer con regalo | ASUS marketing mail, unrelated to Foundry | logged
 - 2026-10-19 14:01 | notification | mail.boots.com | Get your glow on with Clinique Moisture Surge™ ✨ | Boots marketing mail, unrelated to Foundry | logged
 - 2026-10-19 14:06 | notification | bpiauctions.com | Just Added: Contents of DIY Store & more | BPI Auctions marketing mail, unrelated to Foundry | logged
+- 2026-10-19 16:29 | notification | amazon.co.uk | Don't pass up 3 months of Audible for £0.99 a month | Amazon marketing mail, unrelated to Foundry | logged
