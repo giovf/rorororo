@@ -1336,3 +1336,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 00:30 | burn-down | Shelf: Gumroad 10 % + 50¢ direct, 30 % Discover, MoR for VAT; Stripe MoR lists GB among 31 EU sellers
 - 2026-10-19 00:30 | burn-down | Call: promote reshaped as a Claude Code operations kit at US$29–39, not the non-technical money-machine
 - 2026-10-19 00:30 | burn-down | Queue: new-ventures spike-ai-setup-course-rivals done; exchange ai-setup-course note carries the call for 10-21
+- 2026-10-19 00:32 | burn-down | relay beefy-fees + beefy-harvests: Beefy docs, /vaults/base, /fees, /tvl, /apy, 12 StratHarvest log windows
+- 2026-10-19 00:32 | burn-down | spike beefy-harvest-call-fees: caller share 0.01 % on all 537 Base vaults; chain pool US$5.20/week at 100 %
+- 2026-10-19 00:32 | burn-down | Harvester split 6.7 h: one bot 89 % of 477 harvests, ≈ US$0.59/week outside it, below gas — declined
+- 2026-10-19 00:32 | burn-down | Queue: new-ventures spike-beefy-harvest-call-fees done; exchange onchain-keeper-rewards declined
+- 2026-10-19 00:34 | burn-down | Stopping: 3 items (new-ventures research, course spike, Beefy spike); EU HVD spike left for 01:00 (time)

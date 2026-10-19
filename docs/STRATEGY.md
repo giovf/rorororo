@@ -1532,3 +1532,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   at US$29–39 on Gumroad (10 % + 50¢ direct, 30 % via Discover, merchant of record for VAT), score ≈ 4, kill at < 3 sales
   in 30 days; the non-technical framing is neither sellable on this shelf nor honestly promisable (a Claude subscription,
   a terminal and GitHub are still needed), and urgency copy is limited to a launch price with a real end date.
+- 2026-10-19 burn-down: `spike-beefy-harvest-call-fees` closes the owner's 10-11 keeper idea — declined. Beefy's own fee
+  configuration pays the harvest caller 0.01 % of yield on every Base vault (its docs say 0.05–0.5 %), the 226 active
+  Base vaults earn about US$52,000 a week on US$15 M of TVL, so the whole chain's call-fee pool is US$5.20 a week, and a
+  6.7-hour log sample shows one bot taking 89 % of harvests; what is left outside it (≈ US$0.59 a week) is below Base
+  gas per call. With liquidations measured on 10-17 and harvests today, no permissionless-reward line on Base pays;
+  `onchain-keeper-rewards` is declined in the exchange with the numbers as its record.
