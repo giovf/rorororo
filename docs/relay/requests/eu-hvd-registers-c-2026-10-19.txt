@@ -1,0 +1,9 @@
+HEAD https://vardefulla-datamangder.bolagsverket.se/bolagsverket/bolagsverket_bulkfil.zip
+GET RANGE=0-4095 https://vardefulla-datamangder.bolagsverket.se/arsredovisningar/
+GET https://data.virk.dk/datakatalog/erhvervsstyrelsen/system-til-system-adgang-til-cvr-data
+HEAD https://data.gov.lv/dati/dataset/4de9697f-850b-45ec-8bba-61fa09ce932f/resource/25e80bf3-f107-4ab4-89ef-251b5b9374e9/download/register.csv
+GET RANGE=0-2047 https://data.gov.lv/dati/dataset/4de9697f-850b-45ec-8bba-61fa09ce932f/resource/25e80bf3-f107-4ab4-89ef-251b5b9374e9/download/register.csv
+HEAD https://get.data.gov.lt/datasets/gov/rc/jar/iregistruoti
+GET https://get.data.gov.lt/datasets/gov/rc/jar/iregistruoti?limit(2)
+HEAD https://openapi.baros.mbr.mt/swaggerui
+HEAD https://opendata.cro.ie/dataset/bf6f837d-0946-4c14-9a99-82cd6980c121/resource/3fef41bc-b8f4-4b10-8434-ce51c29b1bba/download/companies.csv.zip
