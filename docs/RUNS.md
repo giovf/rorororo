@@ -1330,3 +1330,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 00:15 | burn-down | Evidence: 4 Gumroad Claude Code kits at US$9–39, Udemy 4.0/1,391 ratings; Beefy caller 0.5 %; OpenCorporates £2,250+/yr
 - 2026-10-19 00:15 | burn-down | exchange: ai-setup-course and keeper ideas marked spiked; Ireland sibling and prize-competition notes dated
 - 2026-10-19 00:15 | burn-down | relay hosts: gumroad, udemy, Beefy docs + API, OpenCorporates added for the three spikes
+- 2026-10-19 00:15 | watchdog | ci-minutes: 555 billed min/7d (~2379/month, wall 317; private cap 2,000, warn 1700); top: notify owner 125, check 73, fe
