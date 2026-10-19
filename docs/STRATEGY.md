@@ -1566,6 +1566,11 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   121 runs/124 billed minutes last week were a quarter of the 549 and the largest floor; ≈ 72 delivered fires replace them
   (-50/week). Phone lines, missed-slot bullets and owner notes now land up to 2 h late (4 h on a skipped fire), which the
   10-19 reading accepted; the first cron run after the installer commit is read at the next slot, the proof on 10-26.
+- 2026-10-19 build: uk-planning paused on every surface, not unpublished (gankdat `uk-planning-apify-pause`, review
+  W42). The origin has been empty since 10-10, the snapshot expired 10-16 and Apify QA flagged the actor on 10-17 after
+  6 of 22 runs failed on our own 503. A run now ends cleanly with the dated notice and no charge, the README and the
+  stats page say paused, and the actor stays public so the 18 outside users' schedules resume by themselves when
+  planning.data.gov.uk republishes. §7 clock unchanged; the weekly re-read restores everything.
 - 2026-10-19 burn-down (exchange pre-research): US NPI provider registry (CMS NPPES, FOIA-public, keyless API) seeded as
   new-ventures spike-us-npi-registry (6): ten Apify NPI actors price the same data at US$2.80–8 per 1,000 on the shelf
   gankdat already sells on; the spike reads their monthly users and the primary terms through the relay and calls it.

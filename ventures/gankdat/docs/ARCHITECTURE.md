@@ -391,6 +391,16 @@ runs `check:root`.
   blob renders the notice as a page. The data itself returns only with the origin: a snapshot already expired
   cannot be re-created, which is why uk-planning stays unavailable (with the notice) until planning.data.gov.uk
   serves rows again or the §7 clock retires it.
+  **Surface pause** (2026-10-19, queue `uk-planning-apify-pause`): a `notice` source is paused on every
+  surface, and says so — `/stats/<slug>` carries a `state: paused` headline row (the index a `· paused`
+  mark) and names REST, MCP, x402 and the Apify actor as answering the notice with no records; the
+  actor's `main.mjs` ends a run that meets the API's 503 `Origin paused` answer cleanly (status message
+  = the dated notice, no items, no charge) instead of failing, which is what Apify's QA had flagged
+  as "under maintenance" on 10-17 (6 of 22 runs failed in 30 days, 18 outside users), and its README
+  opens with a dated `Paused` line. The actor stays public: unpublishing would drop the 18 users'
+  schedules and spend one of the 5 publications a day on the restore. Everything resumes by itself
+  with the first refresh after the origin republishes (the weekly re-read item); the notice text and
+  the catch stay dataset-owned (isolation rule).
 - **Wave log reading** (`lib/wave-logs.ts`, 2026-10-09): a wave killed at the 15-minute Cron
   Trigger limit writes no `refresh_log` row, and no sandbox or relay can read Worker logs (the
   journal's silent nights 10-05..10-08 were guessed at twice). So the metrics workflow's

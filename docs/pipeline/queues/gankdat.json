@@ -693,14 +693,16 @@
     {
       "id": "uk-planning-apify-pause",
       "title": "uk-planning surface pause while the origin is empty: unpublish or pause the `uk-planning-applications` Apify actor (flagged under maintenance by Apify QA 10-17), say so on its README and the /stats page, restore when planning.data.gov.uk serves rows again",
-      "why": "Review 2026-W42 (10-18), a surface pause under STRATEGY §7's dataset rule rather than a retirement (the external-query clock runs from 10-12 and cannot retire anything before 12-11). Facts: the origin dataset was emptied 2026-10-10 (entity count 0, no replacement named); the 10-09 snapshot expired 10-16 and the dataset now answers its notice on REST, MCP and x402; the Apify actor failed 5 of 21 runs in 30 days and Apify QA flagged it `under maintenance` on 2026-10-17 (INBOX 14:08) — a flagged actor is a store-quality signal against the account's 18 actors, and no external key has queried uk-planning (`datasets 30d external: none`). Do only if `refresh-uk-planning-reread-2026-10-18` (dated today) found the origin still empty: via the Apify API from CI (the publish job's token) unpublish the actor or set its README's first line to a dated `Paused: the source register is empty since 2026-10-10; resumes when it republishes`, keep the MCP tool's notice, and add a `paused` state to the stats page notice; record in RESEARCH.md and MARKETPLACE-PREP.md. The weekly re-read item restores everything when entity count > 0.",
+      "why": "Review 2026-W42 (10-18), a surface pause under STRATEGY §7's dataset rule rather than a retirement (the external-query clock runs from 10-12 and cannot retire anything before 12-11). Facts: the origin dataset was emptied 2026-10-10 (entity count 0, no replacement named); the 10-09 snapshot expired 10-16 and the dataset now answers its notice on REST, MCP and x402; the Apify actor failed 5 of 21 runs in 30 days and Apify QA flagged it `under maintenance` on 2026-10-17 (INBOX 14:08) — a flagged actor is a store-quality signal against the account's 18 actors, and no external key has queried uk-planning (`datasets 30d external: none`). Do only if `refresh-uk-planning-reread-2026-10-18` (dated today) found the origin still empty: via the Apify API from CI (the publish job's token) unpublish the actor or set its README's first line to a dated `Paused: the source register is empty since 2026-10-10; resumes when it republishes`, keep the MCP tool's notice, and add a `paused` state to the stats page notice; record in RESEARCH.md and MARKETPLACE-PREP.md. The weekly re-read item restores everything when entity count > 0. Built 2026-10-19 (build): paused, not unpublished — the actor stays public (unpublishing drops the 18 outside users' schedules and spends a publication on the restore); README opens with a dated Paused line, main.mjs ends a run that meets the 503 `Origin paused` answer cleanly (notice as status message, no items, no charge) so failed runs stop rising; /stats/uk-planning carries a `state: paused` row and the index a `· paused` mark; the notice names every paused surface; 2 tests; RESEARCH, MARKETPLACE-PREP, ARCHITECTURE, apify/README. Proof reads from the `apify 30d by actor` failed count no longer rising and the flag gone at the next reading.",
       "effort_days": 0.2,
       "proof": "Apify's actor page no longer shows the maintenance flag (unpublished or a dated Paused notice) and the next `apify 30d by actor` reading shows 0 new failed runs for the actor; restored within a day of the origin republishing",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-10-19",
       "added": "2026-10-18",
-      "doing_since": "2026-10-19"
+      "doing_since": "2026-10-19",
+      "done_at": "2026-10-19",
+      "updated": "2026-10-19"
     },
     {
       "id": "refresh-uk-trademark-journal-silent-row-2026-10-22",

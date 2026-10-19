@@ -1381,3 +1381,15 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 17:19 | burn-down | Exchange pre-research: US NPI provider registry (CMS NPPES) sized — 0 spikes open, one added
 - 2026-10-19 17:19 | burn-down | Evidence: FOIA-public since 2007, keyless API 200/call; 10 Apify NPI actors at US$2.80–8 per 1,000
 - 2026-10-19 17:19 | burn-down | Queue: new-ventures spike-us-npi-registry (6) todo for the next slot; relay hosts cms.gov, cms.hhs.gov
+- 2026-10-19 17:16 | build | uk-planning Apify actor paused: README opens with a dated Paused line; a run on the 503 notice ends clean
+- 2026-10-19 17:16 | build | main.mjs catches only the Origin paused 503: status message = notice, no items, no charge; other errors fail
+- 2026-10-19 17:16 | build | Kept public, not unpublished: 18 outside users' schedules survive; no publication spent on the restore
+- 2026-10-19 17:16 | build | /stats/uk-planning: state paused headline row, index mark, notice names REST, MCP, x402, Apify; 2 tests
+- 2026-10-19 17:16 | build | Notice text now says the surfaces are paused (the 10-09 snapshot expired 10-16, nothing is served)
+- 2026-10-19 17:16 | build | Docs: RESEARCH surface-pause note, MARKETPLACE-PREP Apify row, ARCHITECTURE, apify/README; no version bump
+- 2026-10-19 17:16 | build | Queue: gankdat uk-planning-apify-pause done; proof is the apify failed count flat and the flag gone
+- 2026-10-19 17:16 | build | First-run check: every installer commit since 10-16 has its first run line; nothing dispatched
+- 2026-10-19 17:30 | burn-down | First-run check: every installer commit since 10-16 has its first run line; nothing dispatched
+- 2026-10-19 17:30 | burn-down | docs/ci/notify-owner.yml: `40 */2` cron is the only trigger besides dispatch; push trigger dropped
+- 2026-10-19 17:30 | burn-down | SCHEDULERS rows (notify owner, watchdog, owner notes), SLOTS.md, run-watchdog.ts: lines land 2–4 h late
+- 2026-10-19 17:30 | burn-down | Queue: foundry notify-owner-cron-not-push done; proof is the 10-26 reading (under 80 runs, ≤ 4 h)

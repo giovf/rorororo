@@ -475,6 +475,20 @@ design thread for the dataset — the re-point candidate when it republishes). D
 actor ran 21 times in 30 days for 18 outside users (5 failed on the empty origin), so the §7 clock does
 not start. Next read 2026-10-25 (`refresh-uk-planning-reread-2026-10-18`, `not_before` moved a week).
 
+Surface pause 2026-10-19 (build, `uk-planning-apify-pause`, review W42): the re-read found the origin still
+empty, the 10-09 snapshot expired on 10-16 and cannot be re-created, Apify QA flagged the actor "under
+maintenance" on 10-17 (INBOX 14:08) and the 10-19 row counts 6 failed of 22 runs in 30 days — every one a
+buyer's or QA's run failing on the API's 503 notice. Chosen: pause, not unpublish. The actor stays public
+(unpublishing drops the 18 outside users' schedules and spends one of the day's 5 publications on the
+restore); its README opens with a dated `Paused` line and `main.mjs` ends a run that meets the `Origin paused`
+503 cleanly — status message = the notice, no items pushed, nothing charged — so the failed count stops rising
+and a scheduled run resumes by itself when the origin republishes. `/stats/uk-planning` carries a `state:
+paused` row and names every paused surface (REST, MCP, x402, Apify); the notice text now says the surfaces
+are paused rather than that a snapshot is served. Proof reads from the row: `apify 30d by actor:
+uk-planning-applications N (6 failed)` with the 6 not rising, and the actor page without the maintenance
+flag at the next `apify` reading. §7 clock unchanged (external-query clock from 10-12; demand is the actor's
+18 users, not an external key).
+
 ## Research 2026-10-13 (pipeline starved — burn-down)
 
 Read: the 10-10 → 10-12 Daily numbers rows, `docs/INBOX.md` to 10-12 23:12, `docs/ALERTS.md`, the
