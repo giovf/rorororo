@@ -93,6 +93,16 @@
       "status": "done",
       "added": "2026-10-19",
       "done_at": "2026-10-19"
+    },
+    {
+      "id": "spike-us-npi-registry",
+      "title": "Research spike: US NPI provider registry (CMS NPPES, 8M+ healthcare providers) as a gankdat lookup — read the official API page and the Data Dissemination page through the relay (keyless, 200 records a call, 1,200 a query, monthly bulk file size and refresh, redistribution terms), the monthly users and prices of the ten NPI actors on the Apify Store, and one non-Apify paid rival per lookup; write docs/exchange/spikes/us-npi-registry.md with the users-to-price number and a promote / park call",
+      "why": "Exchange pre-research 2026-10-19 17:25 (burn-down, WebSearch; the CMS and Apify hosts are not reachable from the sandbox, so the numbers below are secondhand and the spike reads the primary pages through the relay). Licence: the NPPES Data Dissemination Notice (72 FR 30011, 30 May 2007) made the FOIA-disclosable NPI data public from September 2007 as a downloadable file, monthly updates and a query-only registry at no charge; the 2024 and 2025 notices (89 FR, 4 March 2024; CMS-0063-N, 31 July 2025) change the published elements, not the access. API: NPPES API 2.1, GET, no key, JSON, at most 200 records a call and 1,200 a query; no rate limit stated (the R package docs); the full file is the NPI Downloadable File. Paid rivals on the shelf gankdat already sells on: at least ten NPI actors on the Apify Store priced US$2.80–8.00 per 1,000 results (benthepythondev 2.80, crawlergang 3.00 with a 5.0 rating from 11 reviews, crawlerbros 3.00, retrainmap 5.00, scrapers_lat 8.00 pay-per-event; haketa, logiover, opendata-labs, cblu, pink_comic, parseforge unpriced in the results), a 'health provider api' with a free tier of 100 lookups a month and PayerPrice's credit-metered /api/v1/npis — monthly users unread (the Apify stat the spike reads; the third-party radar shows logiover at 4.3× 7-day momentum and parseforge cooling). Fit: the shelf is one more keyless US register beside sam-exclusions (built, D1 with idOf) and the NHS ODS sibling; demand is US healthcare developers and billing teams, the biggest provider-lookup market, and the Apify prices put a ceiling of ≈ US$0.003–0.008 a record on what a per-call x402/MCP lookup can charge. Promote if the ten actors sum to ≥ 100 monthly users and the terms allow redistribution (FOIA data, expected); park if the bulk file's monthly refresh makes a cached D1 copy stale against a free daily-refreshed official API, or if the actors' users sit under 30 in total. Evidence 1.5 (rivals priced on our shelf, users unread) × reach 2 (Apify + MCP + x402, built listings) ÷ 0.5 days = 6.",
+      "effort_days": 0.5,
+      "proof": "docs/exchange/spikes/us-npi-registry.md with the Apify users-to-price number, the API and file terms from the primary pages, and a promote / park call (a promote files the dataset item in the gankdat queue and the idea in the exchange)",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-19"
     }
   ]
 }

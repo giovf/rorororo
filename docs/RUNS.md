@@ -1374,7 +1374,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 09:30 | build | Queue: foundry notify-owner-cron-not-push (4) filed: 2-hourly cron replaces the push trigger, -50 billed/week
 - 2026-10-19 09:30 | build | Queue: foundry owner-notes-poll-gap done — leave the poll: longest gap 7.9 h (Sunday), 8 over 4 h; folds in
 - 2026-10-19 09:30 | build | First-run check: no installer commit since 10-16 lacks its first run line; nothing dispatched
-- 2026-10-19 17:30 | burn-down | First-run check: every installer commit since 10-16 has its first run line; nothing dispatched
-- 2026-10-19 17:30 | burn-down | docs/ci/notify-owner.yml: `40 */2` cron is the only trigger besides dispatch; push trigger dropped
-- 2026-10-19 17:30 | burn-down | SCHEDULERS rows (notify owner, watchdog, owner notes), SLOTS.md, run-watchdog.ts: lines land 2–4 h late
-- 2026-10-19 17:30 | burn-down | Queue: foundry notify-owner-cron-not-push done; proof is the 10-26 reading (under 80 runs, ≤ 4 h)
+- 2026-10-19 17:17 | burn-down | First-run check: every installer commit since 10-16 has its first run line; nothing dispatched
+- 2026-10-19 17:17 | burn-down | docs/ci/notify-owner.yml: `40 */2` cron is the only trigger besides dispatch; push trigger dropped
+- 2026-10-19 17:17 | burn-down | SCHEDULERS rows (notify owner, watchdog, owner notes), SLOTS.md, run-watchdog.ts: lines land 2–4 h late
+- 2026-10-19 17:17 | burn-down | Queue: foundry notify-owner-cron-not-push done; proof is the 10-26 reading (under 80 runs, ≤ 4 h)
+- 2026-10-19 17:19 | burn-down | Exchange pre-research: US NPI provider registry (CMS NPPES) sized — 0 spikes open, one added
+- 2026-10-19 17:19 | burn-down | Evidence: FOIA-public since 2007, keyless API 200/call; 10 Apify NPI actors at US$2.80–8 per 1,000
+- 2026-10-19 17:19 | burn-down | Queue: new-ventures spike-us-npi-registry (6) todo for the next slot; relay hosts cms.gov, cms.hhs.gov
