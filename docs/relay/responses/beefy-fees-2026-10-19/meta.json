@@ -1,0 +1,104 @@
+{
+  "request": "beefy-fees-2026-10-19",
+  "fetched_at": "2026-10-19T00:24:41.613Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.beefy.finance/developer-documentation/strategy-contract",
+      "fetched_at": "2026-10-19T00:24:33.362Z",
+      "status": 200,
+      "final_url": "https://docs.beefy.finance/developer-documentation/strategy-contract",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"16ki5j6ip8lfuma\""
+      },
+      "file": "1.html",
+      "bytes": 739564,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.beefy.finance/beefy-products/vaults",
+      "fetched_at": "2026-10-19T00:24:34.253Z",
+      "status": 200,
+      "final_url": "https://docs.beefy.finance/beefy-products/vaults",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"3hk4vfaqofepm2\""
+      },
+      "file": "2.html",
+      "bytes": 686464,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.beefy.finance/ecosystem/safu-protocol/harvests",
+      "fetched_at": "2026-10-19T00:24:35.014Z",
+      "status": 404,
+      "final_url": "https://docs.beefy.finance/ecosystem/safu-protocol/harvests",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"13j3zyk7v84inh\""
+      },
+      "file": "3.html",
+      "bytes": 210815,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.beefy.finance/faq/fees",
+      "fetched_at": "2026-10-19T00:24:37.872Z",
+      "status": 404,
+      "final_url": "https://docs.beefy.finance/faq/fees",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"1m8y8sl3cn4in8\""
+      },
+      "file": "4.html",
+      "bytes": 210806,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.beefy.finance/vaults/base",
+      "fetched_at": "2026-10-19T00:24:38.121Z",
+      "status": 200,
+      "final_url": "https://api.beefy.finance/vaults/base",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"93533-mVKRx+Ttn5/mU9r5quzO0K+z4xk\""
+      },
+      "file": "5.json",
+      "bytes": 603443,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.beefy.finance/fees",
+      "fetched_at": "2026-10-19T00:24:39.555Z",
+      "status": 200,
+      "final_url": "https://api.beefy.finance/fees",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"11a340-V+Kgm5Vqck6N4a4riuc93GMEaYc\""
+      },
+      "file": "6.json",
+      "bytes": 1155904,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.beefy.finance/config",
+      "fetched_at": "2026-10-19T00:24:41.081Z",
+      "status": 200,
+      "final_url": "https://api.beefy.finance/config",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"1045c-8Mnvr8lRtfwQu/KhhV13/2cI1Jw\""
+      },
+      "file": "7.json",
+      "bytes": 66652,
+      "truncated": false
+    }
+  ]
+}
