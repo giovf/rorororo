@@ -10,24 +10,28 @@ name: notify owner
 # Since 2026-10-12 (foundry poller-push-triggers) the job also polls the Telegram bot for owner
 # notes, the per-push half of `owner notes` (whose own push trigger is gone): one billed minute
 # instead of two per routine push, and the notes land with the cursor commit. The hourly
-# `owner notes` cron still polls between pushes.
-# Since 2026-10-12 (foundry actions-floor-trim) the run watchdog rides here too: every routine push
-# already starts this job, and GitHub delivered the watchdog's own 2-hourly cron about half the time,
-# hours late. The watchdog and the CI-minutes guard run first and commit their docs/RUNS.md lines
-# and push them first (skip-ci marker: nothing else fires), so the notify step below sends them in
-# the same run and the cursor it records is a commit that stays on main; a 6-hourly schedule keeps
-# the silence detector alive when no routine pushes at all (the case it exists for).
+# `owner notes` cron still polls between this job's runs.
+# Since 2026-10-12 (foundry actions-floor-trim) the run watchdog rides here too (every routine push
+# started this job until 2026-10-19, see below). The watchdog and the CI-minutes guard run first and
+# commit their docs/RUNS.md lines and push them first (skip-ci marker: nothing else fires), so the
+# notify step below sends them in the same run and the cursor it records is a commit that stays on
+# main; the schedule keeps the silence detector alive when no routine pushes at all (the case it
+# exists for).
 # Since 2026-10-18 (foundry dependabot-red-gate-to-queue) the same step runs scripts/dependabot-gate.ts:
 # an open Dependabot PR whose latest gate run failed gets one `watchdog | dependabot:` line and a
 # foundry queue item, because GitHub mails that failure to dependabot[bot] and nobody else (PRs #5
 # and #6 sat red for 30 h on 2026-10-16/17 with no trace in the repo).
+# Since 2026-10-19 (foundry notify-owner-cron-not-push) the job runs on a 2-hourly cron only, no push
+# trigger: in the week 10-12..10-19 it ran 121 times (97 on routine pushes) for 124 billed minutes, a
+# quarter of the week's 549 and the largest single floor, and everything it carries tolerates two
+# hours — the cursor sends every line since the last run, the watchdog ran `40 */2` until 10-12 and
+# the Telegram poll gets a bounded daytime cadence. 84 fires a week, ≈ 72 delivered, replace 121 runs.
+# A phone line, a missed-slot bullet and an owner note now land up to 2 h late (up to 4 h when GitHub
+# skips a fire, as it did 4 of 28 times for the 6-hourly cron); `workflow_dispatch` sends them at once.
 on:
-  push:
-    branches: [main]
-    paths: ['docs/ALERTS.md', 'docs/RUNS.md', 'docs/for-owner/actions/**']
   schedule:
-    - cron: '40 */6 * * *' # watchdog safety net between pushes (was `40 */2` in run-watchdog.yml)
-  workflow_dispatch: # resend everything since the cursor (e.g. after moving it back by hand)
+    - cron: '40 */2 * * *' # the only trigger since 2026-10-19 (push trigger dropped; was `40 */6` + every push)
+  workflow_dispatch: # resend everything since the cursor (e.g. after moving it back by hand, or to send a line now)
 
 permissions:
   contents: write
@@ -36,7 +40,7 @@ permissions:
 
 concurrency:
   group: notify-owner
-  cancel-in-progress: false # runs are serialised so two pushes never send the same lines twice
+  cancel-in-progress: false # runs are serialised so a dispatch and a cron fire never send the same lines twice
 
 jobs:
   notify:
@@ -74,7 +78,7 @@ jobs:
           git reset -q --hard origin/main
       - run: node --disable-warning=ExperimentalWarning scripts/notify-owner.ts
         env:
-          PUSH_BEFORE: ${{ github.event.before }} # fallback left end when the cursor does not resolve
+          PUSH_BEFORE: ${{ github.event.before }} # fallback left end when the cursor does not resolve (empty on schedule: then the last commit)
           TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           CALLMEBOT_PHONE: ${{ secrets.CALLMEBOT_PHONE }}
