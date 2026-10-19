@@ -1552,3 +1552,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   queued the week-1 index read, the uk-planning surface pause and the journal's silent-row read. One gap queued:
   `x402-paid-by-source-reading` (5) — the Daily numbers row cannot say which dataset or client paid, though the analytics
   point carries both, and the §7 dataset clock ignores paid x402 calls. `research_after` 2026-10-23, the week-1 Bazaar read.
+- 2026-10-19 burn-down: built `x402-paid-by-source-reading` the same night — the Daily numbers row now names the dataset,
+  the client count and the UA family behind every external x402 payment (24 h and 30 d), the job log lists the Bazaar's
+  per-resource numbers, and paid x402 calls count toward §7's external-demand reading. The 10-19 row is the first that
+  can say what the lane's first three sales were.

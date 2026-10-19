@@ -650,3 +650,21 @@ is built for would never see it); more routes or a price change before the week-
 routes are unlisted; the zone-analytics token scope (10-17 handoff, attended session). `researched:
 2026-10-19`, `research_after: 2026-10-23` — the week-1 Bazaar read is the next dated signal; the item above
 is buildable now and `next` names it alongside `uk-planning-apify-pause` from 07:00.
+
+## Build 2026-10-19 — what sold on x402 (burn-down)
+
+Built `x402-paid-by-source-reading` (score 5), the gap this night's research pass found. What changed:
+`src/lib/x402-sales.ts` (pure, tested in `test/x402-sales.spec.ts`) renders the row's sales cell from a
+grouped read of the `x402_paid` points — `3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients;
+python-requests 2, x402-fetch 1)`, the bare count kept when nothing sold, the grouped read failed, or
+the two reads disagree — and a `x402 30d: N paid, C clients — <slug> N, …; <family> N, …` clause after
+the `bazaar:` one; `metrics.mjs` runs the two grouped queries (24 h and 30 d, slug × UA × client, the
+probe's user agent excluded in SQL); paid x402 calls count in `datasets 30d external` as `<slug> N (x402
+N)`; and the Bazaar read prints `bazaar resource: <url> calls C payers P last <date>` per resource of ours
+in the job log (`bazaarResourceLines`, tested). The UA family is the first token up to `/`, a space or `(`,
+with pipes, semicolons and parentheses dropped so the row parsers hold. No Worker change, no version bump.
+What the 10-19 row should say: the sales cell names the dataset and client count of any payment since
+07:10 on 10-18, the `x402 30d:` clause names the three 10-17/18 payments' source and UA family, and the
+job log lists the one indexed resource with its 3 calls / 3 payers. Limits: the owner's own non-probe
+payments cannot be told from a buyer's (only the probe UA is excluded), and points from before 10-11
+carry no client id, so `clients` can read below `paid`.

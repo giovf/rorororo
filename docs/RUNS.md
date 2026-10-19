@@ -1351,3 +1351,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 02:25 | burn-down | gankdat researched: 10-17/18 rows read — first 3 external x402 payments, rest unchanged since 10-17
 - 2026-10-19 02:25 | burn-down | Gap: the row says `3 x402 paid` but not the dataset or client; metrics reads the point as a count only
 - 2026-10-19 02:25 | burn-down | Queue: gankdat x402-paid-by-source-reading (5) added; researched 10-19, research_after 10-23 (week-1 read)
+- 2026-10-19 02:20 | burn-down | x402-sales.ts: sales cell names source, client count and UA family; `x402 30d:` clause after bazaar
+- 2026-10-19 02:20 | burn-down | metrics.mjs: two grouped x402_paid reads (24 h, 30 d; probe UA excluded); datasets external adds `(x402 N)`
+- 2026-10-19 02:20 | burn-down | x402-bazaar-read.ts: `bazaar resource: <url> calls C payers P last <date>` per resource in the job log
+- 2026-10-19 02:20 | burn-down | Tests: x402-sales.spec (6), bazaarResourceLines; ARCHITECTURE note; no version bump
+- 2026-10-19 02:20 | burn-down | Queue: gankdat x402-paid-by-source-reading done; proof is the 10-19 row naming the x402 sources

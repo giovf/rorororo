@@ -519,7 +519,14 @@ runs `check:root`.
   B) the metrics job's probe step (`scripts/x402-probe.mjs`) repeats the settled
   half-cent call through the test client — never twice in 7 days, only while the
   clause reads `0 listed`, on the 1st of the month, or on the `x402_probe` dispatch
-  input.
+  input. **What sold** (2026-10-19, `x402-paid-by-source-reading`): the `x402_paid`
+  point carries the UA, path, slug and hashed client id, so the row's sales cell reads
+  `3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients; python-requests 2, x402-fetch 1)`, a
+  `x402 30d:` clause follows the `bazaar:` one, the job log prints `bazaar resource: <url>
+  calls C payers P last <date>` per resource, and paid x402 calls count in `datasets 30d
+  external` as `<slug> N (x402 N)` — a settled payment is external demand §7's clock must
+  see (`src/lib/x402-sales.ts`; the probe's user agent excluded in SQL). The lane's first
+  three external payments (10-17/18) reached the row as a bare count.
 - **PayPal** (credit packs, **sandbox only**) — built 2026-10-11 as the PayPal AI Hackathon entry
   (v0.24.0, migration 0017 `paypal_orders`, `docs/PAYPAL-SETUP.md`): Orders API v2 against
   `api-m.sandbox.paypal.com` by construction, no live switch. One-off packs (`src/billing/packs.json`,
