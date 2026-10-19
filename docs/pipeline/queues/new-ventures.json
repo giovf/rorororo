@@ -79,8 +79,9 @@
       "effort_days": 0.4,
       "proof": "the spike file holds the caller fee share on Base, 7-day harvest count, call-fee value by harvester address and the share outside the top address, with a promote / park call",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-19"
+      "status": "doing",
+      "added": "2026-10-19",
+      "doing_since": "2026-10-19"
     },
     {
       "id": "spike-eu-hvd-company-registers",
