@@ -697,9 +697,10 @@
       "effort_days": 0.2,
       "proof": "Apify's actor page no longer shows the maintenance flag (unpublished or a dated Paused notice) and the next `apify 30d by actor` reading shows 0 new failed runs for the actor; restored within a day of the origin republishing",
       "score": 5,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-10-19",
-      "added": "2026-10-18"
+      "added": "2026-10-18",
+      "doing_since": "2026-10-19"
     },
     {
       "id": "refresh-uk-trademark-journal-silent-row-2026-10-22",
