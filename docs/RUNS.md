@@ -1356,3 +1356,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 02:20 | burn-down | x402-bazaar-read.ts: `bazaar resource: <url> calls C payers P last <date>` per resource in the job log
 - 2026-10-19 02:20 | burn-down | Tests: x402-sales.spec (6), bazaarResourceLines; ARCHITECTURE note; no version bump
 - 2026-10-19 02:20 | burn-down | Queue: gankdat x402-paid-by-source-reading done; proof is the 10-19 row naming the x402 sources
+- 2026-10-19 02:18 | burn-down | Stopping: 2 items (gankdat research, x402 sales reading); starved-and-cooled, pre-research spent 17:40
