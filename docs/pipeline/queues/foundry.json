@@ -983,8 +983,9 @@
       "effort_days": 0.1,
       "proof": "the next installer commit for an already-recorded workflow gets a new first run line within one slot",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-20"
+      "status": "doing",
+      "added": "2026-10-20",
+      "doing_since": "2026-10-20"
     }
   ]
 }
