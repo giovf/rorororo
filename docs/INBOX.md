@@ -165,3 +165,5 @@
 - 2026-10-20 14:13 | notification | bpiauctions.com | Just Added: Contents of Concrete Garage Manufacturer & more | Auction marketing mail, unrelated to Foundry | logged
 - 2026-10-20 14:13 | notification | foxtons.co.uk | We’ve found a property that matches your search criteria | Estate agent property mailing, personal, unrelated to Foundry | logged
 - 2026-10-20 16:09 | notification | linkedin.com | Associate Software Engineer insights: +36% active job openings and more | LinkedIn job-alert mailing, personal, unrelated to Foundry | logged
+- 2026-10-20 17:15 | notification | amazon.co.uk | Amazon Haul: 30% off best sellers | Retail marketing mail, personal, unrelated to Foundry | logged
+- 2026-10-20 17:19 | notification | o2.com | Information about your Spend Cap | Mobile-provider account notice, personal, unrelated to Foundry | logged
