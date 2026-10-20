@@ -157,3 +157,4 @@
 - 2026-10-20 08:49 | notification | ernest-brooks.com | Your Own Piece of the Canary Wharf Waterfront | Property marketing mail, unrelated to Foundry | logged
 - 2026-10-20 09:01 | notification | majestic.co.uk | HUGE Savings! Save up to 25% on ALL Champagne & Sparkling | Retail marketing mail, unrelated to Foundry | logged
 - 2026-10-20 09:02 | notification | pureseed.com.my | Celebrate Their Big Achievement with a Bouquet of Love | Florist marketing mail, unrelated to Foundry | logged
+- 2026-10-20 09:14 | notification | email.monzo.com | Your September statement | Monzo statement-ready mail, personal, unrelated to Foundry | logged
