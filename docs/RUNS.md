@@ -1418,3 +1418,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-20 00:40 | burn-down | Queue: foundry first-run-line-after-installer done; nothing buildable left, pre-research pass spent 17:19
 - 2026-10-20 00:45 | burn-down | Stopping: hackathons + foundry research, 2 foundry items built; starved-and-cooled, pass spent 17:19
 - 2026-10-20 01:13 | watchdog | ci-minutes: 571 billed min/7d (~2447/month, wall 340; private cap 2,000, warn 1700); top: notify owner 120, fetch relay 
+- 2026-10-20 09:20 | build | Item foundry node-24-runners: 16 workflows dropped in docs/ci/ with node-version 24 (installer moves them)
+- 2026-10-20 09:20 | build | Full gate (root + gankdat) passed on Node 24.22.0 in the sandbox before the push; also green on 22
+- 2026-10-20 09:20 | build | VERSIONS.md Node row now 24 with a log entry; the item is done, proof is CI green a week on 24
+- 2026-10-20 09:20 | build | Devcontainer kept on Node 22: CLAUDE.md asks before .devcontainer changes; handoff in ALERTS.md
+- 2026-10-20 09:20 | build | First-run check: all five installer commits since 10-17 already have a line stamped after them

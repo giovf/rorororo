@@ -1,0 +1,43 @@
+name: fetch relay
+
+# Routines (cloud sandboxes with no egress to data hosts) push docs/relay/requests/<name>.txt;
+# this fetches the URLs from a GitHub runner and commits the responses under
+# docs/relay/responses/<name>/. See docs/relay/README.md.
+on:
+  push:
+    branches: [main]
+    paths: ['docs/relay/requests/**']
+  workflow_dispatch:
+
+# One run at a time (2026-10-18, burn-down): two request pushes 27 s apart started two runs; the
+# second checked out both request files, fetched both, and its `git pull --rebase` then collided
+# with the first run's response commit (same files deleted and added on both sides), so its
+# responses were lost and its request sat unprocessed until a workflow_dispatch re-fire. A queued
+# run processes every file still under requests/, so serialising loses nothing.
+concurrency:
+  group: fetch-relay
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+
+jobs:
+  relay:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: node scripts/fetch-relay.mjs
+      - name: Commit responses
+        run: |
+          git config user.name "foundry-relay[bot]"
+          git config user.email "info@gankdat.com"
+          git add -A docs/relay
+          git diff --cached --quiet && { echo "no change"; exit 0; }
+          git commit -m "relay: $(git diff --cached --name-only | grep -oE 'responses/[^/]+' | sort -u | sed 's#responses/##' | tr '\n' ' ')"
+          git pull --rebase origin main
+          git push origin HEAD:main

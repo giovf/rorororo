@@ -1593,3 +1593,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-20 burn-down (foundry `first-run-line-after-installer`): the first-run check now requires a `<name> first run:` line
   stamped after the installer commit it answers, so a workflow re-installed within a week gets its new version's first run
   checked (10-19 the cron-only notify-owner.yml was accepted on a 10-18 line by two slots).
+- 2026-10-20 build (foundry `node-24-runners`): every workflow pin moved from Node 22 to 24 (the active LTS) through `docs/ci/`
+  after the whole gate passed on Node 24.22.0 in the sandbox; the register row is 24. The devcontainer stays on 22 until an
+  attended session changes it (CLAUDE.md: ask before `.devcontainer/`); the next slot checks the installer commit's first runs.
