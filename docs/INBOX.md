@@ -160,3 +160,5 @@
 - 2026-10-20 09:14 | notification | email.monzo.com | Your September statement | Monzo statement-ready mail, personal, unrelated to Foundry | logged
 - 2026-10-20 11:10 | notification | amazon.co.uk | giovanni, did 'MoKo USB C to 3.5mm Jack Audio Adapter...' meet your expectations? | Amazon review request, personal, unrelated to Foundry | logged
 - 2026-10-20 11:45 | notification | emails.claytonhotels.com | Ai, your autumn break awaits | Hotel marketing mail, unrelated to Foundry | logged
+- 2026-10-20 12:37 | notification | dexters.co.uk | Email from Dexters Teddington | Estate agent property listings, personal, unrelated to Foundry | logged
+- 2026-10-20 12:46 | notification | chasebuchanan.co.uk | Spacious 2 Bedroom Apartment close to Whitton Mainline Station! | Estate agent property mailing, personal, unrelated to Foundry | logged
