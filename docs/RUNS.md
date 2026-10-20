@@ -1409,3 +1409,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-20 00:45 | burn-down | hackathons RESEARCH.md §2 2026-10-20 table + metrics row; queue researched today, research_after 2026-10-26
 - 2026-10-20 00:45 | notify | Meta runs a free online AI hackathon with $1M in prizes: please apply by Saturday 25 Oct
 - 2026-10-20 00:50 | burn-down | notify-owner.yml first run: success (cron-only version installed 10-19 17:17; schedule run 386 at 22:35)
+- 2026-10-20 00:55 | burn-down | Foundry research: both starved queues tonight were dated for 07:00 today; next signals node-24 07:00, 10-26
+- 2026-10-20 00:55 | burn-down | Queue: foundry dated-within-day-not-starved (5) and first-run-line-after-installer (4) filed from tonight's run

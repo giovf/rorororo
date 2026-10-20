@@ -1583,3 +1583,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   is ported to Meta's models inside the 26 Oct–4 Nov window on free credits (no card). lablab's Rise of AI Agents is still
   TBA a week before the aggregators' start (item done, no entry); Vultr Agent Rush (sandboxed-execution agent, Vultr card)
   and Qloo (taste API) declined; MCP_HACK//26 closed. Next hackathons signal 26 Oct (rules + acceptance).
+- 2026-10-20 burn-down (foundry research): no new evidence since 10-18 beyond two defects seen tonight — a queue starved only by an
+  item dated for 07:00 the same morning is researched by every night slot (filed `dated-within-day-not-starved`), and the
+  first-run check accepted a stale line for a re-installed workflow (filed `first-run-line-after-installer`). Next foundry
+  readings: node-24-runners 07:00 today, actions-minutes 10-26.

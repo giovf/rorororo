@@ -2,8 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-19",
-  "researched": "2026-10-18",
+  "updated": "2026-10-20",
+  "researched": "2026-10-20",
   "items": [
     {
       "id": "fetch-relay",
@@ -964,6 +964,26 @@
       "status": "done",
       "added": "2026-10-19",
       "done_at": "2026-10-19"
+    },
+    {
+      "id": "dated-within-day-not-starved",
+      "title": "A queue whose only open items are dated for today or tomorrow is waiting, not starved: `starved()` (packages/core/src/pipeline.ts) and the plain-Node `cold` gate leave it out, so the 00:00–06:59 UTC burn-down slots stop researching a venture whose next item is buildable at 07:00",
+      "why": "2026-10-20 00:07 burn-down: `cold` said work and `empty` listed foundry and hackathons, both starved only by items dated 2026-10-20 (node-24-runners, lablab-rise-of-agents-date-read) that become buildable at 07:00 UTC the same morning; each night slot until 07:00 would have run a research pass on them (three slots tonight) unless a pass set research_after by hand. The hackathons pass happened to find the Meta hackathon, but the trigger was a six-hour wait, not missing evidence. Rule: an open queue with a todo item whose not_before is today or tomorrow (within 24 h of the slot) is not starved; the status line lists it on scheduled: as now and the next message says it waits for dated evidence. Both implementations (core + scripts/pipeline-cold.ts) and the README/prompt text change together; a test pins the 00:07 case.",
+      "effort_days": 0.2,
+      "proof": "the night slots after a day-dated item print starved-and-cooled instead of researching its queue (RUNS.md shows no research line for a queue whose item came due the same morning)",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-20"
+    },
+    {
+      "id": "first-run-line-after-installer",
+      "title": "First-run check: the `<name> first run:` line that satisfies the check must be stamped after the installer commit it answers; the build and burn-down prompts (docs/routines/build.md, burn-down.md) and SLOTS say so, and the check quotes the installer commit time",
+      "why": "2026-10-19 17:17 the installer landed the cron-only notify-owner.yml; the 17:16 build and 17:30 burn-down slots both wrote \"every installer commit since 10-16 has its first run line\" because a `notify-owner.yml first run:` line from 10-18 (an earlier version) matched the rule as written. The first scheduled run of the new version (22:35, success) was only recorded at the 2026-10-20 00:50 slot. A workflow edited twice in a week gets its first-run check only once under the current wording; the fix is one sentence in both prompts plus the Changes line.",
+      "effort_days": 0.1,
+      "proof": "the next installer commit for an already-recorded workflow gets a new first run line within one slot",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-20"
     }
   ]
 }
