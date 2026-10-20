@@ -153,3 +153,7 @@
 - 2026-10-19 20:45 | notification | linkedin.com | Charlie Stapleton - Project Manager reacted to this post… | LinkedIn reaction notice, unrelated to Foundry | logged
 - 2026-10-20 01:12 (backlog) | notification | twitch.tv | Attention Trainers: Gengar Chat Badges are Live! | Twitch marketing mail, unrelated to Foundry | logged
 - 2026-10-20 02:53 (backlog) | notification | jobstreet.com | Chief Executive Officer (Healthcare Group) + 11 new jobs - Job Alert | Jobstreet job-alert mail, unrelated to Foundry | logged
+- 2026-10-20 08:21 | notification | amazon.co.uk | We found something you might like | Amazon marketing mail, unrelated to Foundry | logged
+- 2026-10-20 08:49 | notification | ernest-brooks.com | Your Own Piece of the Canary Wharf Waterfront | Property marketing mail, unrelated to Foundry | logged
+- 2026-10-20 09:01 | notification | majestic.co.uk | HUGE Savings! Save up to 25% on ALL Champagne & Sparkling | Retail marketing mail, unrelated to Foundry | logged
+- 2026-10-20 09:02 | notification | pureseed.com.my | Celebrate Their Big Achievement with a Bouquet of Love | Florist marketing mail, unrelated to Foundry | logged
