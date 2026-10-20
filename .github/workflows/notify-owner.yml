@@ -52,7 +52,7 @@ jobs:
           fetch-depth: 0 # the cursor may be many commits back
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
       - name: Run watchdog, CI-minutes guard and Dependabot gate check (pushed first, sent by the next step)
         # Must never block the notifications: a failing script only skips its lines, a failed push
         # is retried by the next run (the line is appended again, the dedupe record is the line on

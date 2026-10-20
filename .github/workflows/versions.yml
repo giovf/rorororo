@@ -25,7 +25,7 @@ jobs:
           ref: main
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
       - run: node --disable-warning=ExperimentalWarning scripts/versions-check.ts
       - name: Commit
         run: |

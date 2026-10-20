@@ -26,7 +26,7 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
       - run: node --disable-warning=ExperimentalWarning scripts/run-watchdog.ts
       - name: CI-minutes guard (warns in RUNS.md when the month projects past 1,700)
         run: node scripts/actions-minutes.mjs

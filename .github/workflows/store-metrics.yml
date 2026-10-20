@@ -61,7 +61,7 @@ jobs:
       - uses: actions/setup-node@v7
         if: steps.row.outputs.skip != 'true'
         with:
-          node-version: 22
+          node-version: 24
       - name: Append today's Daily check row to each venture's RESEARCH.md
         if: steps.row.outputs.skip != 'true'
         run: node --disable-warning=ExperimentalWarning scripts/store-metrics.ts
