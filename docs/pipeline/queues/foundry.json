@@ -834,9 +834,10 @@
       "effort_days": 0.3,
       "proof": "versions check reports no Node finding; CI green on Node 24 for a week",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-16",
-      "not_before": "2026-10-20"
+      "not_before": "2026-10-20",
+      "doing_since": "2026-10-20"
     },
     {
       "id": "first-run-check-new-workflows",
