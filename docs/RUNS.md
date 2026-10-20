@@ -1417,3 +1417,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-20 00:40 | burn-down | Prompts build.md + burn-down.md: a first-run line counts only when stamped after its installer commit
 - 2026-10-20 00:40 | burn-down | Queue: foundry first-run-line-after-installer done; nothing buildable left, pre-research pass spent 17:19
 - 2026-10-20 00:45 | burn-down | Stopping: hackathons + foundry research, 2 foundry items built; starved-and-cooled, pass spent 17:19
+- 2026-10-20 01:13 | watchdog | ci-minutes: 571 billed min/7d (~2447/month, wall 340; private cap 2,000, warn 1700); top: notify owner 120, fetch relay 
