@@ -1596,3 +1596,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-20 build (foundry `node-24-runners`): every workflow pin moved from Node 22 to 24 (the active LTS) through `docs/ci/`
   after the whole gate passed on Node 24.22.0 in the sandbox; the register row is 24. The devcontainer stays on 22 until an
   attended session changes it (CLAUDE.md: ask before `.devcontainer/`); the next slot checks the installer commit's first runs.
+- 2026-10-20 burn-down: exchange pre-research seeded new-ventures `spike-atlassian-marketplace-forge-shelf` (6) — a paid shelf with
+  Atlassian's billing (Forge apps carry a 0 % commission to US$1M lifetime revenue from 2026-01, payout monthly past US$500) instead
+  of another register sibling, since every register spike since 10-17 parked on the same fact (0 external calls); the spike settles
+  whether a UK sole trader can verify as a paid partner (three contested 2026 threads) and counts small-vendor paid apps by installs
+  through the keyless Marketplace REST API. Node 24 first runs: eight more workflows recorded green (four from their schedules, four
+  dispatched); demo-video, mirror-gankdat and dependabot wait for their own triggers.

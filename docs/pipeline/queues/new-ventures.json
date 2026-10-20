@@ -2,7 +2,7 @@
   "venture": "new-ventures",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "researched": "2026-10-19",
   "weight": 2,
   "items": [
@@ -104,6 +104,16 @@
       "status": "done",
       "added": "2026-10-19",
       "done_at": "2026-10-19"
+    },
+    {
+      "id": "spike-atlassian-marketplace-forge-shelf",
+      "title": "Research spike: the Atlassian Marketplace as a paid shelf for a Forge app — relay-read the partner due-diligence page (registration number and/or tax ID: can a UK sole trader with a UTR verify as a paid-via-Atlassian partner?), the three 2026 community threads on individual vendors (97755, 101919, 102081 with the Partner team's 2026-08-10 reply), the pricing/payment FAQ (payout schedule, minimum, methods) and the Marketplace REST API 2 (keyless /rest/2/addons?hosting=cloud&cost=marketplace&application=confluence|jira with each app's /distribution totalInstalls and /pricing/cloud/live): count the paid cloud apps from small vendors with < 1,000 installs in a utility niche we could build in ≤ 1 week (macros, variables/tokens, lookups, exports), their per-user prices and the floor price; write docs/exchange/spikes/atlassian-marketplace-forge-shelf.md with a promote / park call",
+      "why": "Exchange pre-research 2026-10-20 17:25 (burn-down, WebSearch; marketplace.atlassian.com and developer.atlassian.com do not resolve from the sandbox, so the spike reads them through the relay — four hosts added tonight). Why a shelf and not another register: every gankdat-sibling spike since 10-17 (NPI, OFAC/EU, EU registers, VAT) parked on the same fact — 0 external calls — while the operation's only product that has taken money sold through a shelf that supplies its own buyers and billing (Figma Community). The Atlassian Marketplace is that shape with billing attached: Atlassian sells the app as commercial agent, collects sales tax/VAT and pays the partner within 30 days of the month its profit passes US$500 (developer FAQ, pricing-payment-billing). Fee, read from Atlassian's 2026 revenue-share post and the FAQ: Forge-only apps carry a 0 % commission on revenue earned from 1 January 2026 until a partner's lifetime Forge revenue reaches US$1 million; the standard Forge rate otherwise is 16 % (17 % from 1 October 2026), Connect 20 %→25 %. Forge hosting is free (forge-free-pricing-2025). The open question is the one that decides it: three 2026 developer-community threads ask whether an individual without a registered company can sell — a March 2026 post says Partner Verification wants a registered business entity, an August 2026 post says a Portuguese sole trader was verified and listed paid-via-Atlassian, the due-diligence page asks for 'a registration number and/or tax identification number', and the Turkey thread holds a Partner-team reply dated 2026-08-10 the search cut off. Demand is the second number: the Marketplace REST API 2 is keyless and lists per-app installs and users (community tip 45128; three Apify actors resell it), so the spike can count the small-vendor paid apps in a buildable niche instead of guessing. Promote (open an atlassian-apps venture queue, owner action: partner registration with the UTR) if an individual/sole trader can verify and ≥ 3 paid cloud apps from vendors with one or two listings show ≥ 200 installs at ≥ US$1/user/month in a niche buildable in ≤ 1 week; park if verification needs a company (then the parked limited-company idea is the trigger) or no such niche shows. Score: evidence 1.5 (the shelf's billing and fee are read from Atlassian; the niche and eligibility are the spike) × reach 2 (300k+ Atlassian cloud customers, billing supplied) ÷ 0.5 days = 6.",
+      "effort_days": 0.5,
+      "proof": "docs/exchange/spikes/atlassian-marketplace-forge-shelf.md states whether a UK sole trader can be a paid partner (quoting the due-diligence page and the Partner-team reply), the payout terms, ≥ 3 small-vendor paid apps in one niche with installs and per-user price from the REST API, and a promote / park call",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-20"
     }
   ]
 }

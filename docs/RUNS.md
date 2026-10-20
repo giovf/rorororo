@@ -1428,3 +1428,16 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-20 09:25 | build | gankdat-publish.yml first run: success (push run 49 on the 09:19 installer commit)
 - 2026-10-20 09:25 | build | landing.yml first run: success (push run 46 on the 09:19 installer commit)
 - 2026-10-20 09:25 | build | Other 12 Node 24 workflows run on cron or dispatch; the next slot reads their first runs
+- 2026-10-20 17:12 | burn-down | Gate: BURN.json open, cold says work (pass unspent); next null, build slot holds the gankdat item; main green
+- 2026-10-20 17:15 | burn-down | gankdat-metrics.yml first run: success (schedule run 253 at 12:04 on the 09:19 Node 24 installer)
+- 2026-10-20 17:15 | burn-down | notify-owner.yml first run: success (schedule run 389 at 13:49 after the 09:19 installer)
+- 2026-10-20 17:15 | burn-down | owner-notes.yml first run: success (schedule run 575 at 11:44 after the 09:19 installer)
+- 2026-10-20 17:15 | burn-down | store-metrics.yml first run: success (schedule run 168 at 12:16 after the 09:19 installer)
+- 2026-10-20 17:15 | burn-down | versions.yml first run: success (17:12 dispatch, run 1, 14 s; the file had never run before)
+- 2026-10-20 17:15 | burn-down | run-watchdog.yml first run: success (17:12 dispatch, run 161, 35 s)
+- 2026-10-20 17:15 | burn-down | pr-relay.yml first run: success (17:12 dispatch, run 2, 17 s; nothing pending)
+- 2026-10-20 17:15 | burn-down | fetch-relay.yml first run: success (17:12 dispatch, run 121, 15 s; no request pending)
+- 2026-10-20 17:15 | burn-down | demo-video, mirror-gankdat (never dispatched) and dependabot (PR-only) wait for their own next run
+- 2026-10-20 17:25 | burn-down | Exchange pre-research: Atlassian Marketplace Forge shelf spike seeded in new-ventures (6); 0 spikes were open
+- 2026-10-20 17:25 | burn-down | Read: Forge 0% fee to US$1M lifetime from 2026-01, payout at US$500/month; sole-trader vendor status unsettled
+- 2026-10-20 17:25 | burn-down | Relay hosts: marketplace, developer, community.developer and www.atlassian.com added for the spike
