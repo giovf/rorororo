@@ -1423,3 +1423,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-20 09:20 | build | VERSIONS.md Node row now 24 with a log entry; the item is done, proof is CI green a week on 24
 - 2026-10-20 09:20 | build | Devcontainer kept on Node 22: CLAUDE.md asks before .devcontainer changes; handoff in ALERTS.md
 - 2026-10-20 09:20 | build | First-run check: all five installer commits since 10-17 already have a line stamped after them
+- 2026-10-20 09:25 | build | check.yml first run: success (push run 351 on the 09:19 Node 24 installer commit, 36 s)
+- 2026-10-20 09:25 | build | gankdat.yml first run: success (push run 145 on the 09:19 installer commit, deploy 1 m 51 s)
+- 2026-10-20 09:25 | build | gankdat-publish.yml first run: success (push run 49 on the 09:19 installer commit)
+- 2026-10-20 09:25 | build | landing.yml first run: success (push run 46 on the 09:19 installer commit)
+- 2026-10-20 09:25 | build | Other 12 Node 24 workflows run on cron or dispatch; the next slot reads their first runs
