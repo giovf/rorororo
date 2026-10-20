@@ -167,3 +167,8 @@
 - 2026-10-20 16:09 | notification | linkedin.com | Associate Software Engineer insights: +36% active job openings and more | LinkedIn job-alert mailing, personal, unrelated to Foundry | logged
 - 2026-10-20 17:15 | notification | amazon.co.uk | Amazon Haul: 30% off best sellers | Retail marketing mail, personal, unrelated to Foundry | logged
 - 2026-10-20 17:19 | notification | o2.com | Information about your Spend Cap | Mobile-provider account notice, personal, unrelated to Foundry | logged
+- 2026-10-20 18:09 | notification | linkedin.com | 👤 Giovanni, add Sikander Sehrawat | LinkedIn connection suggestion, personal, unrelated to Foundry | logged
+- 2026-10-20 18:23 | notification | proxydocs.com | Vote on the future of Tesla, Inc. | Trading212 shareholder-vote notice, personal, unrelated to Foundry | logged
+- 2026-10-20 18:28 | notification | 606club.co.uk | 606 Club Live Music - 50th Anniversary Festival | Music-venue newsletter, personal, unrelated to Foundry | logged
+- 2026-10-20 18:57 | notification | theaa.com | Your lessons have been booked | Driving-lesson booking confirmation, personal, unrelated to Foundry | logged
+- 2026-10-20 19:04 | notification | send.namimatcha.com | Nami Matcha is coming near you... | Cafe marketing mail, personal, unrelated to Foundry | logged
