@@ -722,9 +722,10 @@
       "effort_days": 0.3,
       "proof": "A Daily numbers row whose `wave log:` clause shows `wave 05:00: ok <wall>s` for uk-planning on a morning its error row exists; or the invocation clause removed and SCHEDULERS/ARCHITECTURE say why",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-10-20",
-      "added": "2026-10-18"
+      "added": "2026-10-18",
+      "doing_since": "2026-10-20"
     },
     {
       "id": "x402-ajv-compile-log-noise",
