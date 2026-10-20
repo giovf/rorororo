@@ -39,7 +39,7 @@ jobs:
       - uses: actions/checkout@v7
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
       # node_modules cache (2026-10-12, foundry actions-floor-trim): GitHub bills every job rounded up
       # to a whole minute and `npm ci` alone took ~50 s of each run (setup-node's npm cache only saves
       # the download). The installed tree is restored keyed on the lockfile; `npm ci` runs on a miss.
