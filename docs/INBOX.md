@@ -152,3 +152,4 @@
 - 2026-10-19 18:00 | notification | amazon.co.uk | Explore Today's Deals on Camera Products | Amazon marketing mail, unrelated to Foundry | logged
 - 2026-10-19 20:45 | notification | linkedin.com | Charlie Stapleton - Project Manager reacted to this post… | LinkedIn reaction notice, unrelated to Foundry | logged
 - 2026-10-20 01:12 (backlog) | notification | twitch.tv | Attention Trainers: Gengar Chat Badges are Live! | Twitch marketing mail, unrelated to Foundry | logged
+- 2026-10-20 02:53 (backlog) | notification | jobstreet.com | Chief Executive Officer (Healthcare Group) + 11 new jobs - Job Alert | Jobstreet job-alert mail, unrelated to Foundry | logged
