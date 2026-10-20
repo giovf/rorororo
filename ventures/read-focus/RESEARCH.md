@@ -156,6 +156,7 @@ _Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10
 | 2026-10-17 | Daily check | 3 | — | 0 | via store-metrics CI: chrome: 3 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 10-16: 0 impressions, 0 clicks, indexed 0/3, not: URL is unknown to Google ×3; sales: 0 keys (2 test) |
 | 2026-10-18 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 10-17: 0 impressions, 0 clicks, indexed 0/3, not: URL is unknown to Google ×3; sales: 0 keys (2 test) |
 | 2026-10-19 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 10-18: 0 impressions, 0 clicks, indexed 0/2, not: URL is unknown to Google ×2, 1 inspection failed; sales: 0 keys (2 test) |
+| 2026-10-20 | Daily check | 1 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-19: 0 impressions, 0 clicks, indexed 0/3, not: URL is unknown to Google ×3; sales: 0 keys (2 test) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
