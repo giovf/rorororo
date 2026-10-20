@@ -172,3 +172,4 @@
 - 2026-10-20 18:28 | notification | 606club.co.uk | 606 Club Live Music - 50th Anniversary Festival | Music-venue newsletter, personal, unrelated to Foundry | logged
 - 2026-10-20 18:57 | notification | theaa.com | Your lessons have been booked | Driving-lesson booking confirmation, personal, unrelated to Foundry | logged
 - 2026-10-20 19:04 | notification | send.namimatcha.com | Nami Matcha is coming near you... | Cafe marketing mail, personal, unrelated to Foundry | logged
+- 2026-10-20 21:00 | notification | secretlab.co | Let's keep in touch | Retail marketing mail (SMS signup), personal, unrelated to Foundry | logged
