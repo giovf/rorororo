@@ -1398,3 +1398,14 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-19 17:40 | burn-down | Call: parked — free origin, saturated shelf at US$0.002–0.01 a record; re-open as a verification call
 - 2026-10-19 17:40 | burn-down | Queue: new-ventures spike-us-npi-registry done; exchange us-npi-registry parked with 3 dated triggers
 - 2026-10-19 17:42 | burn-down | Stopping: 3 items (notify owner cron, NPI pre-research, NPI spike); 0 spikes open, nothing buildable
+- 2026-10-20 00:20 | burn-down | Gate: BURN.json open, cold says work; next null (foundry, hackathons starved); main green after npm ci + check
+- 2026-10-20 00:25 | burn-down | Relay hackathons-2026-10-20 + -b: lablab Rise/Agent Rush/index, dev.meta.ai, cerebralvalley.ai, aihackathon.dev
+- 2026-10-20 00:40 | burn-down | lablab Rise of AI Agents still "Fall 2026 / TBA", absent from lablab's upcoming list: item done, no entry
+- 2026-10-20 00:40 | burn-down | Vultr Agent Rush (3–8 Nov, $9k cash) declined: sandboxed-execution agent is a new product; Vultr needs a card
+- 2026-10-20 00:45 | burn-down | Meta Global AI Developer Hackathon read: $1M cash, online, free, UK eligible, apply by 25 Oct 11:59 PM ET
+- 2026-10-20 00:45 | burn-down | Queue: hackathons meta-global-ai-hackathon-apply (9, owner), -rules-read (7, 10-26), -entry (9, 10-26) filed
+- 2026-10-20 00:45 | burn-down | Qloo Agentic ($25k, taste API) declined on fit; MCP_HACK//26 ($5k) and Algorand x402 Challenge already closed
+- 2026-10-20 00:45 | burn-down | Owner action 027 written (apply, ~10 min, £0); ALERTS owner line; SELF-CAUSED row for the application mail
+- 2026-10-20 00:45 | burn-down | hackathons RESEARCH.md §2 2026-10-20 table + metrics row; queue researched today, research_after 2026-10-26
+- 2026-10-20 00:45 | notify | Meta runs a free online AI hackathon with $1M in prizes: please apply by Saturday 25 Oct
+- 2026-10-20 00:50 | burn-down | notify-owner.yml first run: success (cron-only version installed 10-19 17:17; schedule run 386 at 22:35)

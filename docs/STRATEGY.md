@@ -1578,3 +1578,8 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   no charge, and 71 Apify actors already resell it to 114 users a month between them at US$0.002–0.01 a record — a copy
   would earn cents. Re-open only as a live provider-verification call (NPPES + sam-exclusions + OIG LEIE) when a US
   buyer shows (first sam-exclusions paid call, an NPI request, or an NPI + exclusion actor passing 10 users).
+- 2026-10-20 burn-down (hackathons research): Meta Global AI Developer Hackathon found on the sponsors' own pages — US$1M cash,
+  fully online, free, UK eligible, applications close 25 Oct; the owner applies (action 027) and the Nebius diligence agent
+  is ported to Meta's models inside the 26 Oct–4 Nov window on free credits (no card). lablab's Rise of AI Agents is still
+  TBA a week before the aggregators' start (item done, no entry); Vultr Agent Rush (sandboxed-execution agent, Vultr card)
+  and Qloo (taste API) declined; MCP_HACK//26 closed. Next hackathons signal 26 Oct (rules + acceptance).

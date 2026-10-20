@@ -5,9 +5,10 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (0)
+## Requests (1)
 
-Nothing is waiting on you.
+1. **Meta's free $1M online AI hackathon** — ~10 min, since 2026-10-20; unblocks hackathons `meta-global-ai-hackathon-apply` (9). Steps: [027](actions/027-meta-hackathon-apply.md).
+   Meta's free $1M online AI hackathon: apply by 25 Oct, ~10 min — docs/for-owner/actions/027-meta-hackathon-apply.md
 
 ## Waiting on an attended Claude session, not you (3)
 
