@@ -972,8 +972,9 @@
       "effort_days": 0.2,
       "proof": "the night slots after a day-dated item print starved-and-cooled instead of researching its queue (RUNS.md shows no research line for a queue whose item came due the same morning)",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-20"
+      "status": "doing",
+      "added": "2026-10-20",
+      "doing_since": "2026-10-20"
     },
     {
       "id": "first-run-line-after-installer",
