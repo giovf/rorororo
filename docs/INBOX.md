@@ -164,3 +164,4 @@
 - 2026-10-20 12:46 | notification | chasebuchanan.co.uk | Spacious 2 Bedroom Apartment close to Whitton Mainline Station! | Estate agent property mailing, personal, unrelated to Foundry | logged
 - 2026-10-20 14:13 | notification | bpiauctions.com | Just Added: Contents of Concrete Garage Manufacturer & more | Auction marketing mail, unrelated to Foundry | logged
 - 2026-10-20 14:13 | notification | foxtons.co.uk | We’ve found a property that matches your search criteria | Estate agent property mailing, personal, unrelated to Foundry | logged
+- 2026-10-20 16:09 | notification | linkedin.com | Associate Software Engineer insights: +36% active job openings and more | LinkedIn job-alert mailing, personal, unrelated to Foundry | logged
