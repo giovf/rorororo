@@ -979,13 +979,13 @@
     {
       "id": "first-run-line-after-installer",
       "title": "First-run check: the `<name> first run:` line that satisfies the check must be stamped after the installer commit it answers; the build and burn-down prompts (docs/routines/build.md, burn-down.md) and SLOTS say so, and the check quotes the installer commit time",
-      "why": "2026-10-19 17:17 the installer landed the cron-only notify-owner.yml; the 17:16 build and 17:30 burn-down slots both wrote \"every installer commit since 10-16 has its first run line\" because a `notify-owner.yml first run:` line from 10-18 (an earlier version) matched the rule as written. The first scheduled run of the new version (22:35, success) was only recorded at the 2026-10-20 00:50 slot. A workflow edited twice in a week gets its first-run check only once under the current wording; the fix is one sentence in both prompts plus the Changes line.",
+      "why": "2026-10-19 17:17 the installer landed the cron-only notify-owner.yml; the 17:16 build and 17:30 burn-down slots both wrote \"every installer commit since 10-16 has its first run line\" because a `notify-owner.yml first run:` line from 10-18 (an earlier version) matched the rule as written. The first scheduled run of the new version (22:35, success) was only recorded at the 2026-10-20 00:50 slot. A workflow edited twice in a week gets its first-run check only once under the current wording; the fix is one sentence in both prompts plus the Changes line. Built 2026-10-20 (burn-down): one sentence in the CI WORKFLOWS paragraph of docs/routines/build.md and burn-down.md plus a Changes line in each; SLOTS.md carries no first-run text, so nothing to change there.",
       "effort_days": 0.1,
       "proof": "the next installer commit for an already-recorded workflow gets a new first run line within one slot",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-20",
-      "doing_since": "2026-10-20"
+      "done_at": "2026-10-20"
     }
   ]
 }

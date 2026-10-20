@@ -1590,3 +1590,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-20 burn-down (foundry `dated-within-day-not-starved`): a queue whose only open items come due today at 07:00 or
   tomorrow is waiting, not starved — `starved()`, `empty` and the plain-Node `cold` gate leave it out, so the night slots no
   longer research a venture whose next item is hours away (tonight's two research passes were triggered that way).
+- 2026-10-20 burn-down (foundry `first-run-line-after-installer`): the first-run check now requires a `<name> first run:` line
+  stamped after the installer commit it answers, so a workflow re-installed within a week gets its new version's first run
+  checked (10-19 the cron-only notify-owner.yml was accepted on a 10-18 line by two slots).

@@ -1414,3 +1414,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-20 00:35 | burn-down | pipeline: awaitsDatedItem() — a queue dated for today/tomorrow is waiting, not starved; cold gate too
 - 2026-10-20 00:35 | burn-down | Tests: the 00:07 case (two queues due at 07:00) pinned in core and cold tests; README + prompt Changes line
 - 2026-10-20 00:35 | burn-down | Queue: foundry dated-within-day-not-starved done; the 01:00 slot should print starved-and-cooled
+- 2026-10-20 00:40 | burn-down | Prompts build.md + burn-down.md: a first-run line counts only when stamped after its installer commit
+- 2026-10-20 00:40 | burn-down | Queue: foundry first-run-line-after-installer done; nothing buildable left, pre-research pass spent 17:19
+- 2026-10-20 00:45 | burn-down | Stopping: hackathons + foundry research, 2 foundry items built; starved-and-cooled, pass spent 17:19
