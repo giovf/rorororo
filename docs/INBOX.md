@@ -158,3 +158,5 @@
 - 2026-10-20 09:01 | notification | majestic.co.uk | HUGE Savings! Save up to 25% on ALL Champagne & Sparkling | Retail marketing mail, unrelated to Foundry | logged
 - 2026-10-20 09:02 | notification | pureseed.com.my | Celebrate Their Big Achievement with a Bouquet of Love | Florist marketing mail, unrelated to Foundry | logged
 - 2026-10-20 09:14 | notification | email.monzo.com | Your September statement | Monzo statement-ready mail, personal, unrelated to Foundry | logged
+- 2026-10-20 11:10 | notification | amazon.co.uk | giovanni, did 'MoKo USB C to 3.5mm Jack Audio Adapter...' meet your expectations? | Amazon review request, personal, unrelated to Foundry | logged
+- 2026-10-20 11:45 | notification | emails.claytonhotels.com | Ai, your autumn break awaits | Hotel marketing mail, unrelated to Foundry | logged
