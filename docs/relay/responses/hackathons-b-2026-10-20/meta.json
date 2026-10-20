@@ -1,0 +1,62 @@
+{
+  "request": "hackathons-b-2026-10-20",
+  "fetched_at": "2026-10-20T00:10:25.593Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/events/global-hackathon",
+      "fetched_at": "2026-10-20T00:10:23.896Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/events/global-hackathon",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 306028,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon.md",
+      "fetched_at": "2026-10-20T00:10:24.307Z",
+      "status": 200,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 7295,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon",
+      "fetched_at": "2026-10-20T00:10:25.369Z",
+      "status": 200,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"da9thyqqi4k29\""
+      },
+      "file": "3.html",
+      "bytes": 212812,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://aihackathon.dev/",
+      "fetched_at": "2026-10-20T00:10:25.428Z",
+      "status": 200,
+      "final_url": "https://aihackathon.dev/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "6014",
+        "last-modified": "Sat, 04 Apr 2026 23:22:52 GMT",
+        "etag": "W/\"69d19d4c-5de8\""
+      },
+      "file": "4.html",
+      "bytes": 24040,
+      "truncated": false
+    }
+  ]
+}
