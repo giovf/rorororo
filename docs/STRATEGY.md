@@ -1587,3 +1587,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   item dated for 07:00 the same morning is researched by every night slot (filed `dated-within-day-not-starved`), and the
   first-run check accepted a stale line for a re-installed workflow (filed `first-run-line-after-installer`). Next foundry
   readings: node-24-runners 07:00 today, actions-minutes 10-26.
+- 2026-10-20 burn-down (foundry `dated-within-day-not-starved`): a queue whose only open items come due today at 07:00 or
+  tomorrow is waiting, not starved — `starved()`, `empty` and the plain-Node `cold` gate leave it out, so the night slots no
+  longer research a venture whose next item is hours away (tonight's two research passes were triggered that way).

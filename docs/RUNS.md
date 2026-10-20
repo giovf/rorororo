@@ -1411,3 +1411,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-20 00:50 | burn-down | notify-owner.yml first run: success (cron-only version installed 10-19 17:17; schedule run 386 at 22:35)
 - 2026-10-20 00:55 | burn-down | Foundry research: both starved queues tonight were dated for 07:00 today; next signals node-24 07:00, 10-26
 - 2026-10-20 00:55 | burn-down | Queue: foundry dated-within-day-not-starved (5) and first-run-line-after-installer (4) filed from tonight's run
+- 2026-10-20 00:35 | burn-down | pipeline: awaitsDatedItem() — a queue dated for today/tomorrow is waiting, not starved; cold gate too
+- 2026-10-20 00:35 | burn-down | Tests: the 00:07 case (two queues due at 07:00) pinned in core and cold tests; README + prompt Changes line
+- 2026-10-20 00:35 | burn-down | Queue: foundry dated-within-day-not-starved done; the 01:00 slot should print starved-and-cooled

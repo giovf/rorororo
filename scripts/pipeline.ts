@@ -40,7 +40,7 @@ if (process.argv[2] === 'cold') {
   const now = new Date();
   const today = now.toISOString().slice(0, 10);
   const dayMs = 86_400_000;
-  const { datedArrived, preResearchSpent } = await import('./pipeline-cold.ts');
+  const { datedArrived, datedWithinDay, preResearchSpent } = await import('./pipeline-cold.ts');
   type ColdItem = { status: string; not_before?: string; doing_since?: string; added: string };
   type ColdQueue = {
     venture: string;
@@ -69,6 +69,8 @@ if (process.argv[2] === 'cold') {
     if (q.items.some(buildable)) reasons.push(`${q.venture}: buildable item`);
     else if (cooling(q))
       continue; // researched within 48 h or waiting: flagged or not, not tonight
+    else if (q.items.some((it) => it.status === 'todo' && datedWithinDay(it.not_before, now)))
+      continue; // an item comes due today at 07:00 or tomorrow: waiting, not starved (2026-10-20)
     else if (q.needs_research || !q.items.some(open)) reasons.push(`${q.venture}: needs research`);
     else reasons.push(`${q.venture}: starved, not cooling`);
   }

@@ -28,6 +28,16 @@ export function datedArrived(not_before: string | undefined, now: Date): boolean
   return not_before < today || (not_before === today && now.getUTCHours() >= DATED_READY_HOUR_UTC);
 }
 
+/**
+ * A `todo` item dated for today (before 07:00 UTC) or tomorrow: its queue is waiting, not starved
+ * (2026-10-20, foundry `dated-within-day-not-starved`; same rule as @foundry/core's `awaitsDatedItem`).
+ */
+export function datedWithinDay(not_before: string | undefined, now: Date): boolean {
+  if (not_before === undefined || datedArrived(not_before, now)) return false;
+  const today = now.toISOString().slice(0, 10);
+  return Date.parse(not_before) - Date.parse(today) <= 86_400_000;
+}
+
 const pad = (n: number): string => String(n).padStart(2, '0');
 
 /** `YYYY-MM-DD HH:MM` (UTC) of the 17:00 that began the burn night containing `now`. */

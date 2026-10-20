@@ -968,13 +968,13 @@
     {
       "id": "dated-within-day-not-starved",
       "title": "A queue whose only open items are dated for today or tomorrow is waiting, not starved: `starved()` (packages/core/src/pipeline.ts) and the plain-Node `cold` gate leave it out, so the 00:00–06:59 UTC burn-down slots stop researching a venture whose next item is buildable at 07:00",
-      "why": "2026-10-20 00:07 burn-down: `cold` said work and `empty` listed foundry and hackathons, both starved only by items dated 2026-10-20 (node-24-runners, lablab-rise-of-agents-date-read) that become buildable at 07:00 UTC the same morning; each night slot until 07:00 would have run a research pass on them (three slots tonight) unless a pass set research_after by hand. The hackathons pass happened to find the Meta hackathon, but the trigger was a six-hour wait, not missing evidence. Rule: an open queue with a todo item whose not_before is today or tomorrow (within 24 h of the slot) is not starved; the status line lists it on scheduled: as now and the next message says it waits for dated evidence. Both implementations (core + scripts/pipeline-cold.ts) and the README/prompt text change together; a test pins the 00:07 case.",
+      "why": "2026-10-20 00:07 burn-down: `cold` said work and `empty` listed foundry and hackathons, both starved only by items dated 2026-10-20 (node-24-runners, lablab-rise-of-agents-date-read) that become buildable at 07:00 UTC the same morning; each night slot until 07:00 would have run a research pass on them (three slots tonight) unless a pass set research_after by hand. The hackathons pass happened to find the Meta hackathon, but the trigger was a six-hour wait, not missing evidence. Rule: an open queue with a todo item whose not_before is today or tomorrow (within 24 h of the slot) is not starved; the status line lists it on scheduled: as now and the next message says it waits for dated evidence. Both implementations (core + scripts/pipeline-cold.ts) and the README/prompt text change together; a test pins the 00:07 case. Built 2026-10-20 (burn-down): awaitsDatedItem() in packages/core/src/pipeline.ts (starved() and the status message), datedWithinDay() in scripts/pipeline-cold.ts used by the cold gate, tests for the 00:07 case, README and prompt Changes line.",
       "effort_days": 0.2,
       "proof": "the night slots after a day-dated item print starved-and-cooled instead of researching its queue (RUNS.md shows no research line for a queue whose item came due the same morning)",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-20",
-      "doing_since": "2026-10-20"
+      "done_at": "2026-10-20"
     },
     {
       "id": "first-run-line-after-installer",

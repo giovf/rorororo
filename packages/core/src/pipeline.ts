@@ -326,14 +326,38 @@ function coolingReason(queue: VentureQueue, today: string): string {
 }
 
 /**
+ * An open queue with a `todo` item dated for today (before 07:00 UTC) or tomorrow is waiting, not
+ * starved (2026-10-20, foundry `dated-within-day-not-starved`): the 00:07 burn-down slot found both
+ * starved queues held only items buildable at 07:00 the same morning, and every night slot until
+ * then would have researched them. Within a day of the item the fallback leaves the queue alone.
+ */
+export function awaitsDatedItem(queue: VentureQueue, now: Date): boolean {
+  const today = utcToday(now);
+  return queue.items.some(
+    (it) =>
+      it.status === 'todo' &&
+      it.not_before !== undefined &&
+      !notBeforeArrived(it.not_before, now) &&
+      Date.parse(it.not_before) - Date.parse(today) <= DAY_MS,
+  );
+}
+
+/**
  * Open queues with no item the build routine could pick today: everything left is blocked or
  * waits on a `not_before` date. Oldest `updated` first, so research rotates between ventures;
  * a cooling queue is left out (`cooling()` lists those).
  */
 export function starved(queues: VentureQueue[], options: ClockOptions = {}): VentureQueue[] {
-  const today = utcToday(clock(options));
+  const now = clock(options);
+  const today = utcToday(now);
   return queues
-    .filter((q) => q.status === 'open' && candidates([q], options).length === 0 && !isCooling(q, today))
+    .filter(
+      (q) =>
+        q.status === 'open' &&
+        candidates([q], options).length === 0 &&
+        !isCooling(q, today) &&
+        !awaitsDatedItem(q, now),
+    )
     .sort((a, b) => a.updated.localeCompare(b.updated) || a.venture.localeCompare(b.venture));
 }
 
@@ -386,7 +410,7 @@ export function formatPipeline(pipeline: Pipeline, options: ClockOptions = {}): 
       ? `next: ${next.venture} / ${next.item.id} (score ${next.item.score}${weightOf(pipeline, next.venture) === 1 ? '' : ` × weight ${weightOf(pipeline, next.venture)}`}) — ${next.item.title}`
       : research.size > 0
         ? `next: nothing to build — research ${[...research][0]!} (pipeline starved: every open item is blocked or dated)`
-        : cool.length > 0
+        : cool.length > 0 || pipeline.queues.some((q) => q.status === 'open' && awaitsDatedItem(q, now))
           ? 'next: nothing to build — pipeline starved and every starved queue was researched within 48 h or waits for dated evidence: write one run-log line and stop'
           : 'next: nothing to build — research needed',
   );

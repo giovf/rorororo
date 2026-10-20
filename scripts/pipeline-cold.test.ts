@@ -5,6 +5,7 @@ import {
   lineStamp,
   nightStart,
   preResearchSpent,
+  datedWithinDay,
 } from './pipeline-cold.ts';
 
 const pass =
@@ -88,5 +89,16 @@ describe('datedArrived', () => {
     expect(datedArrived('2026-10-07', new Date('2026-10-08T00:13:00Z'))).toBe(true);
     expect(datedArrived('2026-10-09', new Date('2026-10-08T23:59:00Z'))).toBe(false);
     expect(datedArrived(undefined, new Date('2026-10-08T00:13:00Z'))).toBe(true);
+  });
+});
+
+describe('datedWithinDay', () => {
+  it('is true for an item due today before 07:00 or tomorrow, false once arrived or further out', () => {
+    const night = new Date('2026-10-20T00:07:00Z');
+    expect(datedWithinDay('2026-10-20', night)).toBe(true);
+    expect(datedWithinDay('2026-10-21', night)).toBe(true);
+    expect(datedWithinDay('2026-10-22', night)).toBe(false);
+    expect(datedWithinDay(undefined, night)).toBe(false);
+    expect(datedWithinDay('2026-10-20', new Date('2026-10-20T07:00:00Z'))).toBe(false);
   });
 });

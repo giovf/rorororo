@@ -25,6 +25,7 @@ Changes: 2026-10-11 — LOOP step 2: a bounty item moves its row in the oss-boun
 Changes: 2026-10-12 — GATE: `npm run pipeline next` + `claim` run right after the gate, before `npm ci` (`next` is plain Node now); a red STEP 0 releases the claim (foundry `claim-before-install`).
 Changes: 2026-10-16 — RELAY: allowed hosts live in `docs/relay/hosts.txt`, not the script (foundry `relay-allowlist-as-data`).
 Changes: 2026-10-17 — CI WORKFLOWS: a routine-written workflow gets its first live run checked (dispatched once when needed) and fixed in the same run (foundry `first-run-check-new-workflows`).
+Changes: 2026-10-20 — GATE / LOOP step 1: a queue whose only open items are dated for today (before 07:00 UTC) or tomorrow is waiting, not starved; `cold`, `empty` and `starved()` leave it out (foundry `dated-within-day-not-starved`).
 Changes: 2026-10-18 — pre-research pass: adds one scored spike to `new-ventures.json` when it holds fewer than two open spikes, skipped otherwise, instead of parking an exchange idea (review W42; foundry `pre-research-shelf-cap`).
 ---
 

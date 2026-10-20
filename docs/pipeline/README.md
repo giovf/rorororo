@@ -52,6 +52,6 @@ so: the run writes one run-log line and stops (the one exchange pre-research pas
 research run that finds no new evidence — the metrics unchanged since the last pass, every lever built or owner-blocked, the next
 signal a dated reading — sets `research_after: YYYY-MM-DD` (that reading's date) instead of adding items; the fallback treats
 the queue as cooling until then and the status says `waiting until <date>` (three ventures had each been researched three times
-in eight days on an unchanged zero). A `finished` queue is a venture
+in eight days on an unchanged zero). **Dated within a day** (2026-10-20, foundry `dated-within-day-not-starved`): a queue whose only open items are `todo` with a `not_before` of today (before 07:00 UTC) or tomorrow is waiting, not starved — `starved()`, `empty` and `cold` leave it out, the status shows it on `scheduled:` and says it waits for dated evidence (the 00:07 night slot had researched two ventures whose next item was buildable at 07:00 the same morning). A `finished` queue is a venture
 with nothing left to do; only the exchange or the review reopens it. Every change to a queue
 lands in the same commit as the work.

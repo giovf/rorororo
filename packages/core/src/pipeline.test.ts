@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  awaitsDatedItem,
   candidates,
   formatPipeline,
   isEmpty,
@@ -165,6 +166,34 @@ describe('scheduling', () => {
     expect(needsResearch([blockedOnly, datedOnly], { today: '2026-10-21' })).toEqual([]);
     const text = formatPipeline({ exchange: { ideas: [] }, queues: [blockedOnly, datedOnly] }, today);
     expect(text).toContain('pipeline starved');
+  });
+
+  it('treats a queue whose only open item is dated for today or tomorrow as waiting, not starved', () => {
+    // 2026-10-20 00:07 UTC: foundry and hackathons each held one todo item dated 2026-10-20 (buildable
+    // from 07:00) and nothing else open; the night gate listed both for research. Within a day of
+    // the item the queue waits; a later date still starves it; at 07:00 the item is simply next.
+    const dueToday = parseQueue(
+      queue('foundry', [{ ...item('node-24', 'todo', 4), not_before: '2026-10-20' }], { updated: '2026-10-19' }),
+    );
+    const dueTomorrow = parseQueue(
+      queue('hackathons', [{ ...item('rules', 'todo', 7), not_before: '2026-10-21' }], { updated: '2026-10-18' }),
+    );
+    const dueLater = parseQueue(
+      queue('toolkit', [{ ...item('day-30', 'todo', 4), not_before: '2026-10-22' }], { updated: '2026-10-17' }),
+    );
+    const night = { now: new Date('2026-10-20T00:07:00Z') };
+    expect(awaitsDatedItem(dueToday, night.now)).toBe(true);
+    expect(awaitsDatedItem(dueTomorrow, night.now)).toBe(true);
+    expect(awaitsDatedItem(dueLater, night.now)).toBe(false);
+    expect(starved([dueToday, dueTomorrow, dueLater], night).map((q) => q.venture)).toEqual(['toolkit']);
+    expect(needsResearch([dueToday, dueTomorrow], night)).toEqual([]);
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [dueToday, dueTomorrow] }, night);
+    expect(text).toContain('waits for dated evidence');
+    expect(text).toContain('foundry/node-24 on 2026-10-20 from 07:00 UTC');
+    // From 07:00 the dated item is buildable and nothing waits.
+    const morning = { now: new Date('2026-10-20T07:00:00Z') };
+    expect(awaitsDatedItem(dueToday, morning.now)).toBe(false);
+    expect(nextItem([dueToday, dueTomorrow], morning)?.item.id).toBe('node-24');
   });
 
   it('leaves a flagged or emptied queue out of research while it is cooling', () => {
