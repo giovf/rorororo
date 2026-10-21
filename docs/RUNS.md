@@ -1445,3 +1445,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-21 05:13 | watchdog | ci-minutes: 575 billed min/7d (~2464/month, wall 342; private cap 2,000, warn 1700); top: notify owner 114, fetch relay 
 - 2026-10-21 09:25 | fallback | Filled the 09:00 build slot (no trace); main was red, so this run only heals it
 - 2026-10-21 09:25 | fallback | Watchdog stall/miss lines shortened to fit the 120-char cap for every routine; main green
+- 2026-10-21 12:16 | watchdog | missed: exchange slot 2026-10-21 08:00 UTC left no commit or run line by 10:00; usage limit? claude.ai/code/routines
+- 2026-10-21 12:16 | watchdog | missed: build slot 2026-10-21 09:00 UTC left no commit or run line by 11:00; usage limit? claude.ai/code/routines
