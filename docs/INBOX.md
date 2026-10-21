@@ -193,3 +193,4 @@
 - 2026-10-21 19:45 | notification | revolut.com | An update on our recent service disruption | Bank service-disruption apology, personal, unrelated to Foundry | logged
 - 2026-10-21 20:20 | notification | linkedin.com | Charlie Stapleton reacted to this post: Working with Infomentum on… | LinkedIn reaction notice, personal, unrelated to Foundry | logged
 - 2026-10-21 21:03 | notification | devpost.com | Recording: Will your project ship? - Nebius x NVIDIA Global AI Hackathon | Hackathon webinar recording link, no action (entries are submitted by the owner) | logged
+- 2026-10-21 21:25 | store | cerebralvalley.ai | Status APPROVED for Meta Global AI Developer Hackathon | Application approved; build window 26 Oct 12:00 – 4 Nov 21:00 ET, remote | logged (self-caused: hackathon application, action 027)

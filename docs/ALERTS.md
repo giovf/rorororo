@@ -333,3 +333,4 @@ closed entries older than 30 days (git keeps the history).
 - 2026-10-20 owner: Meta's free $1M online AI hackathon: apply by 25 Oct, ~10 min — docs/for-owner/actions/027-meta-hackathon-apply.md
 - 2026-10-20 handoff: workflows now run Node 24 (foundry `node-24-runners`); the devcontainer still installs Node 22 — an attended session changes `.devcontainer/Dockerfile` nodesource `setup_22.x` → `setup_24.x` (CLAUDE.md asks before touching `.devcontainer/`), rebuilds the container and records it in `docs/ops/VERSIONS.md`.
 - 2026-10-21 owner: PayPal hackathon organiser says the Devpost entry has no demo access; add the demo link or run steps to the form by 12 Nov.
+- 2026-10-21 Meta Global AI Developer Hackathon: application APPROVED (mail 21:25 UTC); build window 26 Oct–4 Nov — unblocks hackathons `meta-global-ai-hackathon-entry`.
