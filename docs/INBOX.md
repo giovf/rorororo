@@ -179,3 +179,5 @@
 - 2026-10-21 06:25 | notification | info.wise.com | See what Wise customers have earned with Interest | Bank marketing newsletter, personal, unrelated to Foundry | logged
 - 2026-10-21 08:37 | notification | github.com | [giovf/rorororo] Run failed: check - main (f5be9df) | Workflow check failed in 21 s with 2 annotations (reason: failure; failing step not named in the mail), run 39570607614 | logged
 - 2026-10-21 08:31 | notification | news.majestic.co.uk | Be the first to try our latest arrivals | Retail marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 09:24 | notification | paypal.com | Complete setup and start selling with PayPal | PayPal sales-rep follow-up nudging Business account activation; no deadline or amount | logged
+- 2026-10-21 09:34 | notification | kwuk.com | 30 Years On… Where Did That Go? | Personal newsletter, unrelated to Foundry | logged
