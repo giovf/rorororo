@@ -1449,3 +1449,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-21 12:16 | watchdog | missed: build slot 2026-10-21 09:00 UTC left no commit or run line by 11:00; usage limit? claude.ai/code/routines
 - 2026-10-21 17:27 | fallback | Filled the 17:00 build slot (no trace by 17:20); main green
 - 2026-10-21 17:27 | fallback | Variables Toolkit day 30: 15 views, 0 installs, 0 sales; kept at £0, verdict due 2026-12-20
+- 2026-10-21 21:56 | watchdog | missed: build slot 2026-10-21 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
+- 2026-10-21 21:56 | watchdog | missed: burn-down slot 2026-10-21 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
