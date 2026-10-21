@@ -182,3 +182,5 @@
 - 2026-10-21 09:24 | notification | paypal.com | Complete setup and start selling with PayPal | PayPal sales-rep follow-up nudging Business account activation; no deadline or amount | logged
 - 2026-10-21 09:34 | notification | kwuk.com | 30 Years On… Where Did That Go? | Personal newsletter, unrelated to Foundry | logged
 - 2026-10-21 11:07 | notification | dexters.co.uk | Email from Dexters St Margarets | Estate agent property mailing, personal, unrelated to Foundry | logged
+- 2026-10-21 12:21 | notification | amazon.co.uk | We found something you might like | Retail marketing mail, personal, unrelated to Foundry | logged
+- 2026-10-21 12:45 | notification | mail.marugame.co.uk | Meet Mount Fuji Matcha | Restaurant marketing newsletter, personal, unrelated to Foundry | logged
