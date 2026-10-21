@@ -191,3 +191,5 @@
 - 2026-10-21 17:32 | notification | gmail.com | Fwd: Letter of Employment | Personal to-do list forwarded between family/colleagues, unrelated to Foundry | logged
 - 2026-10-21 19:10 | notification | adanola.com | Designed by Hailey Bieber | Retail marketing newsletter, personal, unrelated to Foundry | logged
 - 2026-10-21 19:45 | notification | revolut.com | An update on our recent service disruption | Bank service-disruption apology, personal, unrelated to Foundry | logged
+- 2026-10-21 20:20 | notification | linkedin.com | Charlie Stapleton reacted to this post: Working with Infomentum on… | LinkedIn reaction notice, personal, unrelated to Foundry | logged
+- 2026-10-21 21:03 | notification | devpost.com | Recording: Will your project ship? - Nebius x NVIDIA Global AI Hackathon | Hackathon webinar recording link, no action (entries are submitted by the owner) | logged
