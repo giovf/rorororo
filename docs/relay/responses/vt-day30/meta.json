@@ -1,0 +1,132 @@
+{
+  "request": "vt-day30",
+  "fetched_at": "2026-10-21T17:25:23.552Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=variables%20toolkit&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-21T17:25:12.580Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=variables%20toolkit&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "1.json",
+      "bytes": 341565,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=styles%20to%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-21T17:25:13.955Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=styles%20to%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "2.json",
+      "bytes": 619040,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-21T17:25:15.434Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "3.json",
+      "bytes": 651712,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=design%20tokens&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-21T17:25:16.914Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=design%20tokens&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "4.json",
+      "bytes": 661758,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=unused%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-21T17:25:18.387Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=unused%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "5.json",
+      "bytes": 359016,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=link%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-21T17:25:19.697Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=link%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "6.json",
+      "bytes": 726396,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=convert%20styles%20to%20variables&resource_type=plugin&sort=relevancy",
+      "fetched_at": "2026-10-21T17:25:21.133Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=convert%20styles%20to%20variables&resource_type=plugin&sort=relevancy",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "7.json",
+      "bytes": 675876,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/search/resources?query=variables%20toolkit&resource_type=plugin&sort=relevancy&editor_type=design",
+      "fetched_at": "2026-10-21T17:25:22.607Z",
+      "status": 200,
+      "final_url": "https://www.figma.com/api/search/resources?query=variables%20toolkit&resource_type=plugin&sort=relevancy&editor_type=design",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment"
+      },
+      "file": "8.json",
+      "bytes": 341563,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717",
+      "fetched_at": "2026-10-21T17:25:23.508Z",
+      "status": 404,
+      "final_url": "https://www.figma.com/api/resources/b376009b-9558-43a8-9080-a6d0d2518717",
+      "headers": {
+        "content-type": "text/plain",
+        "content-length": "9"
+      },
+      "file": "9.txt",
+      "bytes": 9,
+      "truncated": false
+    }
+  ]
+}
