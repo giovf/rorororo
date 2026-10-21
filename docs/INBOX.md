@@ -173,3 +173,5 @@
 - 2026-10-20 18:57 | notification | theaa.com | Your lessons have been booked | Driving-lesson booking confirmation, personal, unrelated to Foundry | logged
 - 2026-10-20 19:04 | notification | send.namimatcha.com | Nami Matcha is coming near you... | Cafe marketing mail, personal, unrelated to Foundry | logged
 - 2026-10-20 21:00 | notification | secretlab.co | Let's keep in touch | Retail marketing mail (SMS signup), personal, unrelated to Foundry | logged
+- 2026-10-21 02:29 | store | devpost.com | New message for gankdat - agentic commerce for official data in PayPal AI Hackathon | Organiser says the submission lacks access to a functional demo (needs run instructions in the repo or a hosted demo URL added to the Devpost form); due 2026-11-12 12:00 PT, links not opened | needs owner
+- 2026-10-21 02:53 | notification | e.jobstreet.com | Executive, Integrity + 11 new jobs - Job Alert from Jobstreet.com | Job-alert newsletter, personal, unrelated to Foundry | logged
