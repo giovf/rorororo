@@ -189,3 +189,5 @@
 - 2026-10-21 17:00 | notification | magicmadhouse.co.uk | Get ready for our Mid-October Voucher | Retail marketing newsletter, personal, unrelated to Foundry | logged
 - 2026-10-21 17:04 | notification | m.procook.co.uk | Our St Paul's store opens tomorrow! | Retail marketing newsletter, personal, unrelated to Foundry | logged
 - 2026-10-21 17:32 | notification | gmail.com | Fwd: Letter of Employment | Personal to-do list forwarded between family/colleagues, unrelated to Foundry | logged
+- 2026-10-21 19:10 | notification | adanola.com | Designed by Hailey Bieber | Retail marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 19:45 | notification | revolut.com | An update on our recent service disruption | Bank service-disruption apology, personal, unrelated to Foundry | logged
