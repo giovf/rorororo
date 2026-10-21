@@ -1441,5 +1441,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-20 17:25 | burn-down | Exchange pre-research: Atlassian Marketplace Forge shelf spike seeded in new-ventures (6); 0 spikes were open
 - 2026-10-20 17:25 | burn-down | Read: Forge 0% fee to US$1M lifetime from 2026-01, payout at US$500/month; sole-trader vendor status unsettled
 - 2026-10-20 17:25 | burn-down | Relay hosts: marketplace, developer, community.developer and www.atlassian.com added for the spike
-- 2026-10-20 23:21 | watchdog | stalled: build slot 2026-10-20 17:00 UTC started 17:10 but pushed nothing by 19:00; usage limit? see claude.ai/code/routines
+- 2026-10-20 23:21 | watchdog | stalled: build slot 2026-10-20 17:00 UTC started 17:10, no push by 19:00; usage limit? claude.ai/code/routines
 - 2026-10-21 05:13 | watchdog | ci-minutes: 575 billed min/7d (~2464/month, wall 342; private cap 2,000, warn 1700); top: notify owner 114, fetch relay 
+- 2026-10-21 09:25 | fallback | Filled the 09:00 build slot (no trace); main was red, so this run only heals it
+- 2026-10-21 09:25 | fallback | Watchdog stall/miss lines shortened to fit the 120-char cap for every routine; main green

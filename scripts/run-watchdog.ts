@@ -399,14 +399,14 @@ export function missedSlots(input: WatchInput): MissedSlot[] {
     });
 }
 
-/** The RUNS.md line for one missed or stalled slot (≤ 120 chars of text after the routine column). */
+/** The RUNS.md line for one missed or stalled slot (≤ 120 chars of text after the routine column, burn-down included). */
 export function missedLine(slot: MissedSlot, now: Date): string {
   const hhmm = stamp(slot.deadline).slice(11);
   if (slot.startedAt) {
     const started = stamp(slot.startedAt).slice(11);
-    return `- ${stamp(now)} | watchdog | stalled: ${slot.routine} slot ${stamp(slot.at)} UTC started ${started} but pushed nothing by ${hhmm}; usage limit? see claude.ai/code/routines`;
+    return `- ${stamp(now)} | watchdog | stalled: ${slot.routine} slot ${stamp(slot.at)} UTC started ${started}, no push by ${hhmm}; usage limit? claude.ai/code/routines`;
   }
-  return `- ${stamp(now)} | watchdog | missed: ${slot.routine} slot ${stamp(slot.at)} UTC left no commit or run line by ${hhmm}; usage limit? see claude.ai/code/routines`;
+  return `- ${stamp(now)} | watchdog | missed: ${slot.routine} slot ${stamp(slot.at)} UTC left no commit or run line by ${hhmm}; usage limit? claude.ai/code/routines`;
 }
 
 /** A handoff digest sent this many days ago is not repeated: one phone line a week while it holds. */

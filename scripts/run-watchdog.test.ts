@@ -146,7 +146,7 @@ describe('missedSlots', () => {
     expect(stalled.map((s) => slotKey(s.routine, s.at))).toEqual(['build@2026-09-25 17:00']);
     expect(stalled[0]?.startedAt?.toISOString()).toBe('2026-09-25T17:03:00.000Z');
     expect(missedLine(stalled[0]!, now)).toBe(
-      '- 2026-09-25 19:40 | watchdog | stalled: build slot 2026-09-25 17:00 UTC started 17:03 but pushed nothing by 19:00; usage limit? see claude.ai/code/routines',
+      '- 2026-09-25 19:40 | watchdog | stalled: build slot 2026-09-25 17:00 UTC started 17:03, no push by 19:00; usage limit? claude.ai/code/routines',
     );
     // The stalled line dedupes like a missed one, and a real commit after the marker is the trace.
     expect(reportedSlots(`# Run log\n${missedLine(stalled[0]!, now)}\n`)).toEqual(
@@ -265,10 +265,26 @@ describe('missedLine', () => {
     });
     const line = missedLine(slot!, at('2026-09-25T19:40:00Z'));
     expect(line).toBe(
-      '- 2026-09-25 19:40 | watchdog | missed: build slot 2026-09-25 17:00 UTC left no commit or run line by 19:00; usage limit? see claude.ai/code/routines',
+      '- 2026-09-25 19:40 | watchdog | missed: build slot 2026-09-25 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines',
     );
     const text = line.split('|')[2]?.trim() ?? '';
     expect(text.length).toBeLessThanOrEqual(120);
+  });
+
+  it('keeps missed and stalled lines within the cap for every routine name', () => {
+    const now = at('2026-09-25T19:40:00Z');
+    for (const def of ROUTINES) {
+      const base = {
+        routine: def.routine,
+        at: at('2026-09-25T17:00:00Z'),
+        deadline: at('2026-09-25T19:00:00Z'),
+        def,
+      };
+      for (const slot of [base, { ...base, startedAt: at('2026-09-25T17:03:00Z') }]) {
+        const text = missedLine(slot, now).split('|')[2]?.trim() ?? '';
+        expect(text.length, text).toBeLessThanOrEqual(120);
+      }
+    }
   });
 });
 

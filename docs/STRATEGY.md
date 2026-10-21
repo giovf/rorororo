@@ -1602,3 +1602,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   whether a UK sole trader can verify as a paid partner (three contested 2026 threads) and counts small-vendor paid apps by installs
   through the keyless Marketplace REST API. Node 24 first runs: eight more workflows recorded green (four from their schedules, four
   dispatched); demo-video, mirror-gankdat and dependabot wait for their own triggers.
+- 2026-10-21 fallback: `main` red — the watchdog's stalled line ran 124 chars (cap 120). Shortened the stalled and
+  missed templates (now ≤ 120 for every routine, burn-down included, with a test over all routine names) and the
+  offending RUNS.md line; no item built this slot (STEP 0 rule: heal only).
