@@ -184,3 +184,4 @@
 - 2026-10-21 11:07 | notification | dexters.co.uk | Email from Dexters St Margarets | Estate agent property mailing, personal, unrelated to Foundry | logged
 - 2026-10-21 12:21 | notification | amazon.co.uk | We found something you might like | Retail marketing mail, personal, unrelated to Foundry | logged
 - 2026-10-21 12:45 | notification | mail.marugame.co.uk | Meet Mount Fuji Matcha | Restaurant marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 14:01 | notification | bpiauctions.com | Just Added: Contents of Bespoke Joinery Workshop | Auction marketing newsletter, personal, unrelated to Foundry | logged
