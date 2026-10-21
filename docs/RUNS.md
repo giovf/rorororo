@@ -1447,3 +1447,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-21 09:25 | fallback | Watchdog stall/miss lines shortened to fit the 120-char cap for every routine; main green
 - 2026-10-21 12:16 | watchdog | missed: exchange slot 2026-10-21 08:00 UTC left no commit or run line by 10:00; usage limit? claude.ai/code/routines
 - 2026-10-21 12:16 | watchdog | missed: build slot 2026-10-21 09:00 UTC left no commit or run line by 11:00; usage limit? claude.ai/code/routines
+- 2026-10-21 17:27 | fallback | Filled the 17:00 build slot (no trace by 17:20); main green
+- 2026-10-21 17:27 | fallback | Variables Toolkit day 30: 15 views, 0 installs, 0 sales; kept at £0, verdict due 2026-12-20

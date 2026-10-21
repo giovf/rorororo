@@ -1605,3 +1605,6 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-21 fallback: `main` red — the watchdog's stalled line ran 124 chars (cap 120). Shortened the stalled and
   missed templates (now ≤ 120 for every routine, burn-down included, with a test over all routine names) and the
   offending RUNS.md line; no item built this slot (STEP 0 rule: heal only).
+- 2026-10-21 fallback: variables-toolkit `day-30-review` done (RESEARCH.md §11): 15 views, 0 installs, 0 purchases in 30
+  days, every §8 proof missed but "unused variables" #1. Keep untouched at £0 until the §7 kill date — the channel levers
+  need the owner's Figma desktop, withdrawn 2026-10-11 — and queued `day-90-verdict` (not before 2026-12-20).
