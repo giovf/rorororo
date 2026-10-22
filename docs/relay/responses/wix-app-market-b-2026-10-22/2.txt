@@ -1,0 +1,45 @@
+> Portal Navigation:
+> 
+> - Append `.md` to any URL under `https://dev.wix.com/docs/` to get its markdown version.
+> - Pages are either content pages (article or reference text) or menu pages (a list of links to child pages).
+> - To get a menu page, truncate any URL to a parent path and append `.md` (e.g. `https://dev.wix.com/docs/sdk.md`, `https://dev.wix.com/docs/sdk/core-modules.md`).
+> - Top-level index of all portals: https://dev.wix.com/docs/llms.txt
+> - Full concatenated docs: https://dev.wix.com/docs/llms-full.txt
+
+## Resource: Wix Choice Program
+
+## Article: Wix Choice Program
+
+## Article Link: https://dev.wix.com/docs/build-apps/launch-your-app/app-promotion/promotion-by-wix/wix-choice-program.md
+
+## Article Content:
+
+# The Wix Choice Program
+Wix Choice is a program that recognizes high-quality apps within the Wix App Market. Specifically, these apps meet Wix’s high standards for user experience (UX) and user interface (UI).
+
+## Benefits of the Wix Choice program
+Wix Choice apps will get a prominent badge on the Wix App Market that appears on all pages: the homepage, search results, and the app listing page. These apps will also have a higher position in the search results page. This stamp of approval will greatly increase your exposure to Wix users.
+
+![appmarketchoice](https://wixmp-833713b177cebf373f611808.wixmp.com/images/1a58eae57b2e38f1670c819b9c945645.png)
+
+## How apps are selected for the Wix Choice program
+The Wix team carefully reviews and selects apps that meet the criteria at their sole and absolute discretion. Apps must:
+
+- Meet the standard [App Market guidelines](https://dev.wix.com/docs/build-apps/launch-your-app/app-distribution/app-market-guidelines.md)
+- Follow and meet all of our [UX and UI best practices](https://dev.wix.com/docs/build-apps/develop-your-app/design/ux-and-ui-best-practices.md) (those that are appropriate for your app type)
+- Have been live on the Wix App Market for at least 60 days
+
+Your app must also meet all of the below:
+
+- **Minimum number of Wix App Market installs**: 500 installs on Premium Wix sites. 
+- **Minimum number of Wix App Market reviews**: 45 reviews
+- **Minimum Wix App Market app rating**: 4.3
+
+Apps developed in strategic partnership with Wix may also be selected.
+
+We'll reach out to let you know if your app has been selected.
+
+## See also
+- [App promotion opportunities from Wix](https://dev.wix.com/docs/build-apps/launch-your-app/app-promotion/app-promotion-opportunities-from-wix.md)
+- [About app promotion](https://dev.wix.com/docs/build-apps/launch-your-app/app-promotion/about-app-promotion.md)
+- [UX and UI best practices](https://dev.wix.com/docs/build-apps/develop-your-app/design/ux-and-ui-best-practices.md)
