@@ -198,3 +198,5 @@
 - 2026-10-21 23:35 | notification | twitch.tv | One Twitch Sub. One FREE Month of Apple TV and Ted Lasso Chat Badges! | Twitch promo newsletter, personal, unrelated to Foundry | logged
 - 2026-10-22 02:21 | notification | apple.com | Your iCloud storage is full | iCloud storage notice, personal, unrelated to Foundry | logged
 - 2026-10-22 02:53 | notification | jobstreet.com | Executive / Senior Executive Operational Risk Management + 11 new jobs | Job-alert digest, personal, unrelated to Foundry | logged
+- 2026-10-19 23:59 (backlog) | notification | google.com | Report domain: gankdat.com Submitter: google.com Report-ID: 1429938064962601105 | Google DMARC aggregate report for gankdat.com | logged
+- 2026-10-22 05:01 | notification | pureseed.com.my | A Little Flower, A Big Smile, A Beautiful Moment! | Florist marketing mail, unrelated to Foundry | logged
