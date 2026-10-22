@@ -1,0 +1,17 @@
+GET https://www.atlassian.com/blog/developer/updates-to-marketplace-revenue-share-2026
+GET https://www.atlassian.com/blog/developer/extended-timelines-for-marketplace-revenue-share-changes
+GET https://community.developer.atlassian.com/t/marketplace-revenue-share-updates-2026/91727.json
+GET https://community.developer.atlassian.com/t/tip-check-out-the-marketplace-rest-api-how-to-get-the-total-number-of-users-installs-and-downloads-of-your-atlassian-marketplace-app/45128.json
+GET https://developer.atlassian.com/platform/marketplace/searching-for-apps-using-json/
+GET https://developer.atlassian.com/platform/marketplace/getting-app-details-using-json/
+GET https://developer.atlassian.com/platform/marketplace/forge-pricing/
+GET https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=0
+GET https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=0
+GET https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&limit=0
+GET https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=500
+GET https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=550
+GET https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=500
+GET https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=550
+GET https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=600
+GET https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=650
+GET https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=700
