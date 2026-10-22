@@ -135,8 +135,9 @@
       "effort_days": 0.5,
       "proof": "docs/exchange/spikes/wordpress-org-freemius-shelf.md states the Freemius all-in fee and sole-trader onboarding, the directory rule on freemium plugins, ≥ 3 small-vendor plugins in one niche with active installs and pro price from plugins_api, and a promote / park call",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-22"
+      "status": "doing",
+      "added": "2026-10-22",
+      "doing_since": "2026-10-22"
     },
     {
       "id": "spike-notion-marketplace-paid-templates",
