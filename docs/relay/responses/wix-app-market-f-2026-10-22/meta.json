@@ -1,0 +1,216 @@
+{
+  "request": "wix-app-market-f-2026-10-22",
+  "fetched_at": "2026-10-22T19:20:26.635Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/Site-Spiker",
+      "fetched_at": "2026-10-22T19:19:46.353Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/Site-Spiker",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"18ae2b47ae685bab6e4984a7c5f28f41\""
+      },
+      "file": "1.html",
+      "bytes": 881225,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/Tornado",
+      "fetched_at": "2026-10-22T19:19:49.304Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/Tornado",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"3878382e02a3d037bdd794deabca770c\""
+      },
+      "file": "2.html",
+      "bytes": 919220,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/Effective-Apps",
+      "fetched_at": "2026-10-22T19:19:51.294Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/Effective-Apps",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"a587a7ded43e6c4dbbd38281d0bd754e\""
+      },
+      "file": "3.html",
+      "bytes": 837885,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/Certified-Code",
+      "fetched_at": "2026-10-22T19:19:53.497Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/Certified-Code",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"e846b329b494ad4cba0f78b8e55e90cc\""
+      },
+      "file": "4.html",
+      "bytes": 287112,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/Codeyard",
+      "fetched_at": "2026-10-22T19:19:57.333Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/Codeyard",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"634aca9ed484e44edc8907c19605ad33\""
+      },
+      "file": "5.html",
+      "bytes": 772401,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/Neuralheads",
+      "fetched_at": "2026-10-22T19:20:00.053Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/Neuralheads",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"dcbc0152600985cb2536f24446cf7502\""
+      },
+      "file": "6.html",
+      "bytes": 740524,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/OverLayout",
+      "fetched_at": "2026-10-22T19:20:02.016Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/OverLayout",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"17d5d401759ea2371af3e3bbf9e0e433\""
+      },
+      "file": "7.html",
+      "bytes": 901519,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/PurpleBear",
+      "fetched_at": "2026-10-22T19:20:04.589Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/PurpleBear",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"b514774807ab9f92c9bda47aac2386d1\""
+      },
+      "file": "8.html",
+      "bytes": 2491529,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/BACKLIP",
+      "fetched_at": "2026-10-22T19:20:08.914Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/BACKLIP",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"454d91002064823b87da2e7e97353e03\""
+      },
+      "file": "9.html",
+      "bytes": 878659,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/daxanema",
+      "fetched_at": "2026-10-22T19:20:11.165Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/daxanema",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"90a8368dc05469054f67a90ffdc8d393\""
+      },
+      "file": "10.html",
+      "bytes": 659417,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/Omega",
+      "fetched_at": "2026-10-22T19:20:14.234Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/Omega",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"15bee1e4c815e7deb895bdba13eb2ccf\""
+      },
+      "file": "11.html",
+      "bytes": 801671,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/Amasty",
+      "fetched_at": "2026-10-22T19:20:16.620Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/Amasty",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"888a25550712dc974e8ebd603739b274\""
+      },
+      "file": "12.html",
+      "bytes": 722071,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/FME-Modules",
+      "fetched_at": "2026-10-22T19:20:18.973Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/FME-Modules",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"414338f9fd1e2019a37cce739c7b7d8f\""
+      },
+      "file": "13.html",
+      "bytes": 742356,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/CookieYes-Limited",
+      "fetched_at": "2026-10-22T19:20:21.094Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/CookieYes-Limited",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"b997a682452cf8fd84d0d29394fb106a\""
+      },
+      "file": "14.html",
+      "bytes": 662880,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://market.wix.com/developer/POWR",
+      "fetched_at": "2026-10-22T19:20:22.916Z",
+      "status": 200,
+      "final_url": "https://market.wix.com/developer/POWR",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "etag": "W/\"37e34158645e474e576a0a827dec898f\""
+      },
+      "file": "15.html",
+      "bytes": 1137881,
+      "truncated": false
+    }
+  ]
+}
