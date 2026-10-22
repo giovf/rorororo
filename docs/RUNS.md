@@ -1458,3 +1458,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 09:24 | build | Niche: 7 small-vendor text-render macros 202-911 installs at US$0.10-0.69/user/month; bar of 1 unmet
 - 2026-10-22 09:24 | build | Call: promote reshaped (Forge Confluence macro, 3 days); exchange 2026-10-28 decides; idea parked
 - 2026-10-22 09:24 | build | new-ventures emptied (10 done) and set needs_research; no owner action raised this run
+- 2026-10-22 17:20 | build | new-ventures researched: 4 shelf spikes seeded — JetBrains (6), WordPress+Freemius (5), Notion templates (5), Wix (4)
+- 2026-10-22 17:20 | build | Evidence: JetBrains 15 % fee, bank payout; Freemius 4.7 % + gateway; Notion 8 % + 40c; Wix 100 %/80 %, US$200 per app
+- 2026-10-22 17:20 | build | Why shelves: the Atlassian spike passed every gate but unit price; register siblings all parked on 0 external calls
+- 2026-10-22 17:20 | build | Claim on gankdat refresh-uk-trademark-journal-silent-row released: the research run took precedence
+- 2026-10-22 17:20 | build | bounty-board.yml first run: success (17:13 dispatch run 12 on 10-20, 3 min; the 10-20 slot left it unrecorded)
+- 2026-10-22 17:20 | build | demo-video, mirror-gankdat and dependabot still wait for their own triggers since the 10-20 installer
+- 2026-10-22 17:20 | build | hackathons meta-global-ai-hackathon-apply done: Cerebral Valley approved the application (mail 10-21 21:25)
+- 2026-10-22 17:20 | build | relay hosts: jetbrains, wordpress.org, freemius, notion, wix added for the four spikes; no owner action raised

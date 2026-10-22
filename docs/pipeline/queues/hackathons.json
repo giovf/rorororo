@@ -2,7 +2,7 @@
   "venture": "hackathons",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-20",
+  "updated": "2026-10-22",
   "researched": "2026-10-20",
   "weight": 2,
   "items": [
@@ -108,13 +108,13 @@
     {
       "id": "meta-global-ai-hackathon-apply",
       "title": "Meta Global AI Developer Hackathon (online, 26 Oct–4 Nov 2026, US$1,000,000 cash pool): the owner applies on the Cerebral Valley form by 2026-10-25 11:59 PM ET (action 027), indie developer track, with the due-diligence-agent project idea and the gankdat links; record \"applied\" and the approval mail here",
-      "why": "RESEARCH §2 (read 2026-10-20 from dev.meta.ai and cerebralvalley.ai through the relay): free to enter if selected, 20,000 places on rolling review judged on the project idea and technical skill, UK eligible, US$150 Meta Model API credits plus Baseten/Modal/Fireworks credits for open-weights Llama — a live run without a card. The application form is the only step routines cannot do (owner identity). The approval mail (by 26 Oct 09:00 ET) reaches the inbox; the entry and rules items wait on it.",
+      "why": "RESEARCH §2 (read 2026-10-20 from dev.meta.ai and cerebralvalley.ai through the relay): free to enter if selected, 20,000 places on rolling review judged on the project idea and technical skill, UK eligible, US$150 Meta Model API credits plus Baseten/Modal/Fireworks credits for open-weights Llama — a live run without a card. The application form is the only step routines cannot do (owner identity). The approval mail (by 26 Oct 09:00 ET) reaches the inbox; the entry and rules items wait on it. — 2026-10-21 21:25 UTC: Status APPROVED mail from cerebralvalley.ai (INBOX.md, self-caused action 027); recorded done by the 10-22 build. The rules-read and entry items run from 26 Oct 07:00 UTC.",
       "effort_days": 0.1,
       "proof": "the owner is accepted (approval mail logged in INBOX.md) before 2026-10-26",
       "score": 9,
-      "status": "blocked",
+      "status": "done",
       "added": "2026-10-20",
-      "blocked_on": "owner: apply on cerebralvalley.ai/e/meta-ai-developer-hackathon by 2026-10-25 11:59 PM ET — docs/for-owner/actions/027-meta-hackathon-apply.md; drop all three meta items if not selected"
+      "done_at": "2026-10-21"
     },
     {
       "id": "meta-global-ai-hackathon-rules-read",
