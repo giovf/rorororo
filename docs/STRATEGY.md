@@ -1629,3 +1629,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   the wave's outcome and wall time, timestamp = invocation end) but not complete (10-18..10-20 no row for a wave whose D1 rows
   exist), so the clause keeps `no invocation logged` and the progress marker stays the silent-wave reading; a matched cron now
   ranks first and a cron-less row reads `(cron unread)`, because the substring needle also returns other waves' rows.
+- 2026-10-22 burn-down: new-ventures `spike-jetbrains-marketplace-paid-plugins` done — the shelf passes eligibility on the agreement's own
+  words (natural person, trader declaration), billing and fee (85 %, US$200 floor, VAT handled) and demand (494 paid plugins, 83 from one-
+  or two-listing vendors at ≥ 2,000 downloads, 14 in ≤ 1-week editor-utility shapes); the price bar is unread by the API (one first-hand
+  €120/year), so the call is promote reshaped: the 2026-10-28 exchange checks 14 pricing tabs and opens a `jetbrains-plugins` queue or parks.

@@ -1470,3 +1470,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 17:20 | build | demo-video, mirror-gankdat and dependabot still wait for their own triggers since the 10-20 installer
 - 2026-10-22 17:20 | build | hackathons meta-global-ai-hackathon-apply done: Cerebral Valley approved the application (mail 10-21 21:25)
 - 2026-10-22 17:20 | build | relay hosts: jetbrains, wordpress.org, freemius, notion, wix added for the four spikes; no owner action raised
+- 2026-10-22 17:40 | burn-down | Spike jetbrains-marketplace-paid-plugins done: five relay rounds, agreement v3.2, 5 help pages, 494 paid plugins
+- 2026-10-22 17:40 | burn-down | Read: individual vendors in the agreement and help pages (ID, address, bank details); 85 %, US$200 floor
+- 2026-10-22 17:40 | burn-down | Niche: 83 small-vendor paid plugins ≥ 2,000 downloads, 14 in ≤ 1-week utility shapes; price API closed
+- 2026-10-22 17:40 | burn-down | Call: promote reshaped, exchange 2026-10-28 checks 14 prices; parked jetbrains-marketplace-paid-plugins
+- 2026-10-22 17:40 | burn-down | mirror-gankdat.yml first run: success (push run 17 on 10-22 17:28, 17 s; after the 10-20 install)
+- 2026-10-22 17:40 | burn-down | demo-video.yml first run: none since the 10-20 install (never dispatched by a routine; read from its own runs)
+- 2026-10-22 17:40 | burn-down | dependabot.yml first run: none since the 10-20 install (pull_request only; the next Dependabot PR runs it)
+- 2026-10-22 17:41 | burn-down | Stopping: wave-log item + JetBrains spike built; next spike-wordpress-org-freemius-shelf left for 18:00

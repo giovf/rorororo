@@ -462,6 +462,15 @@
       "trigger": "the 2026-10-28 exchange decides: promote reshaped (open an `atlassian-apps` venture queue — venture.json, RESEARCH.md from the spike, first item the Forge-only macro, scored ≈ 1 at 3 days, kill at < 25 installs or 0 paying sites 60 days after listing — with the owner's partner verification + Atlassian token as the queue's first blocked_on, one batched owner request) or park again until a shelf fact changes (a small-vendor macro passes US$1/user/month, or the 0 % Forge incentive is withdrawn, which would also lower the case)",
       "added": "2026-10-22",
       "spiked": "2026-10-22"
+    },
+    {
+      "id": "jetbrains-marketplace-paid-plugins",
+      "title": "Paid plugins on the JetBrains Marketplace — a one-screen IntelliJ editor utility (log/ANSI renderer, comment renderer, diagram-from-text or a theme) sold per user per month/year through JetBrains' own store at 85 % to the vendor; individual vendors written into the Developer Agreement v3.2",
+      "status": "parked",
+      "why": "Spike 2026-10-22 (new-ventures spike-jetbrains-marketplace-paid-plugins, docs/exchange/spikes/jetbrains-marketplace-paid-plugins.md, burn-down; seeded by the 2026-10-22 build research). Eligibility is explicit: the Developer Agreement v3.2 (effective 2026-08-24) binds 'a legal entity or a natural person', the trader-status page lists what an individual trader supplies (ID document, residential address, phone, bank details; a trade-register number where one exists) and the verified-vendor badge covers 'an individual'. Terms: 85 % of list price ex tax (floor 75 % on a month's notice), JetBrains bills subscriptions in USD/EUR/GBP/CZK and handles VAT, sales report ≤ 30 days after the month and payment ≤ 30 days after the self-billed invoice, accrued to US$200/€200 (always paid at Dec 31), support duty in business hours. Demand (search API, keyless): 494 paid plugins from 224 vendors, 404 updated in 2026; 83 from vendors with 1-2 paid listings at ≥ 2,000 downloads (53 at ≥ 10,000); 14 of them ≤ 1-week utility shapes — ANSI Highlighter Premium 1,553,264 downloads from a one-listing French sole vendor, MyBatis Log 632,639, VSCode Icons 22,018, JavaDoc Clean Read 18,851, Skol themes 15,890, Monokai Pro 9,613. Price: the API withholds it (every /pricing probe 400, the tab is client-rendered); one first-hand price — Wolfram Language plugin (1 listing, 132k downloads) at €120/year personal, €480/year commercial since 2022 — so the ≥ US$10/user/year bar on three plugins is the open number. Score ≈ 0.75 (1.5 × 2 ÷ 4 days, new Kotlin/Gradle toolchain), weight 2.",
+      "trigger": "the 2026-10-28 exchange decides: a ten-minute price read of the 14 §3 rows (pricing tabs); ≥ 3 at ≥ US$10/user/year → promote reshaped (open a `jetbrains-plugins` queue, first item one ≤ 1-week editor utility, kill at < 100 downloads or 0 paying licences 60 days after listing; owner actions batched: Marketplace account + trader declaration with ID, bank details, a permanent token for CI upload); else park with the reading",
+      "added": "2026-10-22",
+      "source": "new-ventures spike (burn-down 2026-10-22)"
     }
   ]
 }
