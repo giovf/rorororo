@@ -1,0 +1,79 @@
+> Portal Navigation:
+> 
+> - Append `.md` to any URL under `https://dev.wix.com/docs/` to get its markdown version.
+> - Pages are either content pages (article or reference text) or menu pages (a list of links to child pages).
+> - To get a menu page, truncate any URL to a parent path and append `.md` (e.g. `https://dev.wix.com/docs/sdk.md`, `https://dev.wix.com/docs/sdk/core-modules.md`).
+> - Top-level index of all portals: https://dev.wix.com/docs/llms.txt
+> - Full concatenated docs: https://dev.wix.com/docs/llms-full.txt
+
+## Resource: Payments and Billing FAQs
+
+## Article: Payments and Billing FAQs
+
+## Article Link: https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/payments-and-billing-faqs.md
+
+## Article Content:
+
+# Payments and Billing FAQs
+This article covers some frequently asked questions about payments and billing. It's important that you've read and understood the [Partner Agreement](https://dev.wix.com/app-market-partner-agreement), particularly **Section > 9: Pricing, Collection and Revenue Sharing**.
+
+## How is revenue share calculated?
+We split all revenue with you **80/20**, with 80% going to you and 20% to us. This revenue share is paid out to you monthly. If it's your first year on our platform, you **keep 100% of everything you earn** for the first 12 months. Revenue is calculated after a 2.5% transaction fee and applicable sales tax. The revenue share applies to users that start at Wix, meaning users who aren't already paying for your app on another website.
+
+## How and when will I receive my payouts?
+*   As per the [Partner Agreement](https://dev.wix.com/app-market-partner-agreement), we pay out monthly once your accumulated revenue share reaches the minimum payout threshold of **$200**. If your earnings are below the threshold, they roll over to the next month until the minimum is met.
+*   Around the middle of the following month, we post the details of your upcoming payout in your Wix Partners account under **Earnings** > **[Payouts](https://manage.wix.com/studio/revenues/payouts)**, if your accumulated earnings have passed the $200 threshold. You need the **Manage Earnings** permission to access this area.
+*   Payment arrives in your bank account at the beginning of the next month. For example, revenue earned in March would arrive at the beginning of May.
+
+## How can I view my payouts?
+Wix provides 2 places to track payout-related information:
+
+*   **App Payouts dashboard**: In your app's dashboard, go to **Payouts** to view per-app revenue, transactions, and refunds. The [Payouts dashboard](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/payouts-dashboard.md) data is updated daily (UTC timezone) and shows your total collections, billing fees, and expected payment amounts.
+*   **Partner Payouts area**: In your [Wix Studio workspace](https://manage.wix.com/studio/revenues/payouts), go to **Earnings** > **Payouts** to track account-level payout status, invoices, and payment history across all your revenue streams, including app revenue share. You need the **Manage Earnings** permission to access this area. Learn more in [Set up your payout account](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-your-payout-account.md).
+
+## Can I offer refunds?
+It’s totally up to you if you want to [offer refunds for your app](https://dev.wix.com/docs/build-apps/manage-your-app/user-support/issue-a-refund.md) and you can do this directly from your app's dashboard (this feature is only accessible to Collaborators defined as 'Owners').
+
+## What happens when a user's payment fails?
+Sometimes payment fails because a user doesn't have sufficient funds on their card, or the card has expired. In such cases we give users 45 days to rectify the issue. This grace period helps to make sure we don't lose users unnecessarily. This process doesn't include fraud cases, which are handled differently and are usually identified immediately by Wix.
+
+How it works:
+
+1.  When payment fails a **45-day** grace period begins.
+2.  During this time our system will keep trying to take payment from the card until it's successful.
+3.  We'll email users every **3 days** to let them know that payment has failed, and remind them to make any necessary changes.
+4.  To resolve the issue, users can add funds to their card or replace the payment method.
+5.  If the charge goes through, the payment cycle stays the same and the start date will be the same as the first charge attempt.
+6.  If we've been unsuccessful in taking payment from the user after 45 days, their package will be cancelled.
+
+## How are international taxes calculated?
+Wix is obliged to adhere to the local fiscal laws and, therefore, charges individuals different tax rates in different territories around the world. When users purchase an app, some territories require us to charge tax, whereas others do not. 
+
+If Wix takes care of your payments and billing, there's nothing you need to do – our system resolves this for you. If you manage billing on your own platform, then you're responsible for all applicable tax rates.
+
+*   [Sales Tax in the US](https://support.wix.com/en/article/sales-tax-in-the-united-states)
+*   [VAT in Europe](https://support.wix.com/en/article/about-vat-in-europe)
+*   [Goods and Services Tax in Australia](https://support.wix.com/en/article/about-goods-and-services-tax-in-australia)
+*   [Tax in Canada](https://support.wix.com/en/article/about-tax-in-canada)
+*   [Goods and Services Tax in Singapore](https://support.wix.com/en/article/goods-and-services-tax-in-singapore)
+*   [Sales and Service Tax in Malaysia](https://support.wix.com/en/article/about-vat-in-malaysia)
+*   [VAT in South Korea](https://support.wix.com/en/article/about-vat-in-south-korea)
+*   [VAT in Chile](https://support.wix.com/en/article/about-vat-in-chile)
+*   [VAT in Moldova](https://support.wix.com/en/article/about-vat-in-moldova)
+
+## How do I manage local currency pricing?
+The primary price of your app is always set in US dollars ($) by you. When we list your app in other territories, our system calculates the fair market rate for that location and sets the price in the local currency to optimize sales. 
+
+This means that the money you receive for each app sale can fluctuate up and down, depending on the territory in which it was sold.
+
+The amount shown in your Payouts dashboard will be shown in US dollars, meaning you'll likely see different dollar amounts reflecting these fluctuating sale amounts.
+
+## What happens when exchange rates change?
+The exchange rate we use is updated from time to time, but we won’t increase the price for existing users. If the updated exchange rate lowers the price, we’ll lower the price for all users who pay in this currency.
+
+## What happens if a Wix user disputes a payment for my app?
+If your app uses Wix’s billing, Wix will automatically attempt to reverse the chargeback. If the reversal fails, you will see the chargeback to the user in your payout data.   
+
+## See also
+- [Monetizing your app](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/about-monetizing-your-app.md)
+- [About pricing plans and business models](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/about-pricing-plans-and-business-models.md)

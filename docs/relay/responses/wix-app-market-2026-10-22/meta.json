@@ -1,0 +1,206 @@
+{
+  "request": "wix-app-market-2026-10-22",
+  "fetched_at": "2026-10-22T18:38:03.290Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://dev.wix.com/docs/build-apps/launch-your-app/legal-and-security/wix-app-market-partner-agreement.md",
+      "fetched_at": "2026-10-22T18:37:43.587Z",
+      "status": 200,
+      "final_url": "https://dev.wix.com/docs/build-apps/launch-your-app/legal-and-security/wix-app-market-partner-agreement.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "1152",
+        "etag": "W/\"480-anjA+dTe/vbyv8XkVqwR5Zc2PH4\""
+      },
+      "file": "1.txt",
+      "bytes": 1152,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.wix.com/docs/build-apps/other/legal-and-security/about-payments-and-billing.md",
+      "fetched_at": "2026-10-22T18:37:44.386Z",
+      "status": 200,
+      "final_url": "https://dev.wix.com/docs/build-apps/other/legal-and-security/about-payments-and-billing.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "7324",
+        "etag": "W/\"1c9c-BCRmTvJiRca2c0kcnhAlSLiakvw\""
+      },
+      "file": "2.txt",
+      "bytes": 7324,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/payments-and-billing-faqs.md",
+      "fetched_at": "2026-10-22T18:37:45.375Z",
+      "status": 200,
+      "final_url": "https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/payments-and-billing-faqs.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "7324",
+        "etag": "W/\"1c9c-BCRmTvJiRca2c0kcnhAlSLiakvw\""
+      },
+      "file": "3.txt",
+      "bytes": 7324,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.wix.com/docs/build-apps/manage-your-app/billing-and-payments/about-payments-and-billing.md",
+      "fetched_at": "2026-10-22T18:37:46.069Z",
+      "status": 200,
+      "final_url": "https://dev.wix.com/docs/build-apps/manage-your-app/billing-and-payments/about-payments-and-billing.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "7324",
+        "etag": "W/\"1c9c-BCRmTvJiRca2c0kcnhAlSLiakvw\""
+      },
+      "file": "4.txt",
+      "bytes": 7324,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://support.wix.com/en/article/developer-request-calculating-payout-threshold-per-partner",
+      "fetched_at": "2026-10-22T18:37:46.759Z",
+      "status": 200,
+      "final_url": "https://support.wix.com/en/article/developer-request-calculating-payout-threshold-per-partner",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"zvshh793gg8iyw\""
+      },
+      "file": "5.html",
+      "bytes": 398437,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market",
+      "fetched_at": "2026-10-22T18:37:47.238Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"134a64-F8xT7qT0OAzQvy092z1fOE17MAk\""
+      },
+      "file": "6.html",
+      "bytes": 1264228,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/price-table",
+      "fetched_at": "2026-10-22T18:37:49.276Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/price-table",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"9913c-snucu/05l/2zzP8olTA6njoSsTs\""
+      },
+      "file": "7.html",
+      "bytes": 627004,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/category/forms",
+      "fetched_at": "2026-10-22T18:37:50.717Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/category/forms",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"6b23a-k5P0fK7XGW9uudhoockgIRcdUgU\""
+      },
+      "file": "8.html",
+      "bytes": 438842,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/category/business-tools",
+      "fetched_at": "2026-10-22T18:37:52.022Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/category/business-tools",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"383ee-4/xQTk3GJaVsPHr5rGKmA1xy8Gc\""
+      },
+      "file": "9.html",
+      "bytes": 230382,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/category/marketing",
+      "fetched_at": "2026-10-22T18:37:53.352Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/category/marketing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"2680a8-Erd4GKLDO2K55gYeUKwtrsJ3408\""
+      },
+      "file": "10.html",
+      "bytes": 2523304,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/category/legal",
+      "fetched_at": "2026-10-22T18:37:56.890Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/category/legal",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"38304-+UM3RlNfG1+EI5DYD7YVyXq3C4E\""
+      },
+      "file": "11.html",
+      "bytes": 230148,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/search?query=form",
+      "fetched_at": "2026-10-22T18:37:58.190Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/search?query=form",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"91c47-hYqtihgqHbkFhEsde7MATUldycU\""
+      },
+      "file": "12.html",
+      "bytes": 597063,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/search?query=cookie",
+      "fetched_at": "2026-10-22T18:38:00.828Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/search?query=cookie",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"91c49-ZdUDmrcnLLS/2uBC8SL+Wa2pKrM\""
+      },
+      "file": "13.html",
+      "bytes": 597065,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/search?query=vat",
+      "fetched_at": "2026-10-22T18:38:02.316Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/search?query=vat",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"91c46-bYeqSes033X1b2Je+uV01UEq9nY\""
+      },
+      "file": "14.html",
+      "bytes": 597062,
+      "truncated": false
+    }
+  ]
+}
