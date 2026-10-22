@@ -1491,3 +1491,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 18:33 | burn-down | Stopping: WordPress + Notion spikes built; spike-wix-app-market-paid-apps left unclaimed for 19:00
 - 2026-10-22 18:39 | burn-down | Wix spike pre-fetched, not claimed: FAQ says US$200 threshold rolls over; Verified = 60 d + 40 Premium installs
 - 2026-10-22 18:39 | burn-down | Wix App Market category/search pages are client-rendered shells (0 app links); the listing API is unread
+- 2026-10-22 19:25 | burn-down | Spike wix-app-market-paid-apps done: six relay rounds, agreement v2026-06-30, 6 portal pages, 14 listings
+- 2026-10-22 19:25 | burn-down | Read: agreement signs 'a developer (whether entity or person)' 18+; payout = Studio partner form + Tipalti, USD wire
+- 2026-10-22 19:25 | burn-down | Read: 100 % for the app's first 12 months then 80 %, less 2.5 % fee Wix may waive; US$200 floor, 30 d after month end
+- 2026-10-22 19:25 | burn-down | Niche: 0 of 14 paid utility apps from a ≤ 2-listing vendor with ≥ 20 reviews; small vendors 6-16 apps, 0-14 reviews
+- 2026-10-22 19:25 | burn-down | Niche: small-vendor paid tiers US$1.27-6.99/month, 7 of 14 'No Reviews Yet'; installs hidden on every listing
+- 2026-10-22 19:25 | burn-down | Call: park; re-read 2026-12-01; idea wix-app-market-paid-apps parked in the exchange with that trigger
+- 2026-10-22 19:25 | burn-down | Relay: the 18:39 'c' run lost a push race (ref lock); re-run by the next request push, no re-fire needed
+- 2026-10-22 19:25 | burn-down | new-ventures emptied (11 done) and set needs_research (cooling, researched today); no owner action raised
