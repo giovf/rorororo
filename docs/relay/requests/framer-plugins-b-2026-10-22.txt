@@ -1,8 +1,6 @@
 GET https://www.framer.com/legal/community-terms/
 GET https://www.framer.com/help/articles/how-refunds-work-on-the-marketplace/
 GET https://www.framer.com/help/articles/how-to-request-a-refund-for-a-purchased-template/
-GET RENDER https://www.framer.com/marketplace/plugins/categories/cms/
-GET RENDER https://www.framer.com/marketplace/plugins/categories/localization/
 GET https://www.framer.com/marketplace/plugins/pdf-export/
 GET https://www.framer.com/marketplace/plugins/forms-plugin/
 GET https://www.framer.com/marketplace/plugins/framerforms/
