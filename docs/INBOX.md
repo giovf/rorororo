@@ -208,3 +208,4 @@
 - 2026-10-22 09:45 | notification | mail.boots.com | Today only: 4 for 2 in store on Christmas gifts | Retail newsletter, unrelated to Foundry | logged
 - 2026-10-22 09:57 | notification | ayjsolicitors.com | Next Steps - Initial Consultation : AY&J Solicitors. | Personal mail from a solicitors' firm, unrelated to Foundry; left unread, not opened | logged
 - 2026-10-22 10:01 | notification | stirlingackroyd.com | Property Match from Stirling Ackroyd | Estate-agent marketing mail, unrelated to Foundry | logged
+- 2026-10-22 17:53 | notification | nebius.com | We've updated our terms of service | Nebius terms-update notice, no action in the mail itself | logged
