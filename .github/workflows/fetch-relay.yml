@@ -24,6 +24,9 @@ permissions:
 jobs:
   relay:
     runs-on: ubuntu-latest
+    # A RENDER line (below) can wait up to 2 min per page; the serialised group must never hold the
+    # next request for an hour behind a hung browser.
+    timeout-minutes: 20
     steps:
       - uses: actions/checkout@v7
         with:
@@ -31,6 +34,15 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
+      # RENDER lines (foundry relay-rendered-fetch, 2026-10-22): a request that asks for a page as
+      # Chromium renders it needs the playwright package and the browser; an ordinary run stays
+      # dependency-free (~15 s), so both are installed only when `needs-render` prints true.
+      - name: Render needed?
+        id: render
+        run: echo "needed=$(node scripts/fetch-relay.mjs needs-render)" >> "$GITHUB_OUTPUT"
+      - name: Browser
+        if: steps.render.outputs.needed == 'true'
+        run: npm ci && npx playwright install --with-deps chromium
       - run: node scripts/fetch-relay.mjs
       - name: Commit responses
         run: |
