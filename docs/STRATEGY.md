@@ -1639,3 +1639,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   tiers at US$69–259 in accessibility helpers and three at US$39–€99 in WooCommerce checkout utilities, on 10k–60k installs); VAT
   validation and cookie consent belong to multi-plugin shops and SaaS. Call: promote reshaped — the 2026-10-28 exchange ranks it with
   the Atlassian and JetBrains shelves; first item UK business checkout fields for WooCommerce (free, complete) + a US$39/year pro add-on.
+- 2026-10-22 burn-down: new-ventures `spike-notion-marketplace-paid-templates` done — parked. The shelf passes eligibility (UK listed; an
+  individual applies, behind a months-long waitlist) and terms (8 % + 40¢, merchant of record, US$20 floor, biweekly payouts), but the
+  gallery's own counters show 0 ratings and ≤ 1 install on every one of 19 paid templates in the sole-trader finance niche against
+  3,210 installs on a free sibling: no visible buyers for paid templates. Re-read the same listings on 2026-12-01.

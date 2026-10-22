@@ -1484,3 +1484,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 18:23 | burn-down | Niche: accessibility 3 small-vendor pro tiers US$69-259 on 10k-60k; checkout rules 3 at US$39-€99
 - 2026-10-22 18:23 | burn-down | Call: promote reshaped (UK business checkout fields, free + US$39/yr pro); exchange 2026-10-28 ranks
 - 2026-10-22 18:23 | burn-down | relay hosts: 9 vendor price pages added; idea wordpress-org-freemius-plugins parked in the exchange
+- 2026-10-22 18:33 | burn-down | Spike notion-marketplace-paid-templates done: four relay rounds, help page, Terms of Use, gallery page data
+- 2026-10-22 18:33 | burn-down | Read: UK eligible, individual applies, waitlist 'a few months'; 8 % + 40¢, 1 % FX, US$20 floor, 14-day hold
+- 2026-10-22 18:33 | burn-down | Niche: 19 paid templates US$9-149 in Taxes/Side Hustle/Cash Flow show 0 ratings, <= 1 install each
+- 2026-10-22 18:33 | burn-down | Call: park (no visible buyers for paid work); re-read 2026-12-01; idea parked in the exchange
+- 2026-10-22 18:33 | burn-down | Stopping: WordPress + Notion spikes built; spike-wix-app-market-paid-apps left unclaimed for 19:00
