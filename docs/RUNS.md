@@ -1452,3 +1452,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-21 21:56 | watchdog | missed: build slot 2026-10-21 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
 - 2026-10-21 21:56 | watchdog | missed: burn-down slot 2026-10-21 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
 - 2026-10-22 00:51 | watchdog | ci-minutes: 553 billed min/7d (~2370/month, wall 341; private cap 2,000, warn 1700); top: notify owner 104, owner notes 
+- 2026-10-22 09:24 | build | Spike atlassian-marketplace-forge-shelf done: four relay rounds, 1,350 paid apps, 25 price lists, 5 threads
+- 2026-10-22 09:24 | build | Read: UK sole trader can be a paid partner (individual path, Stripe Identity + UTR + W-8BEN)
+- 2026-10-22 09:24 | build | Read: payout EFT at US$500 net 30-60 d; Forge fee 0 % to US$1M then 17 %; free 10-user tier
+- 2026-10-22 09:24 | build | Niche: 7 small-vendor text-render macros 202-911 installs at US$0.10-0.69/user/month; bar of 1 unmet
+- 2026-10-22 09:24 | build | Call: promote reshaped (Forge Confluence macro, 3 days); exchange 2026-10-28 decides; idea parked
+- 2026-10-22 09:24 | build | new-ventures emptied (10 done) and set needs_research; no owner action raised this run

@@ -1608,3 +1608,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
 - 2026-10-21 fallback: variables-toolkit `day-30-review` done (RESEARCH.md §11): 15 views, 0 installs, 0 purchases in 30
   days, every §8 proof missed but "unused variables" #1. Keep untouched at £0 until the §7 kill date — the channel levers
   need the owner's Figma desktop, withdrawn 2026-10-11 — and queued `day-90-verdict` (not before 2026-12-20).
+- 2026-10-22 build: new-ventures `spike-atlassian-marketplace-forge-shelf` done (docs/exchange/spikes/). A UK sole
+  trader can sell Paid via Atlassian (two 2026 first-hand accounts, the form's own sole-proprietor question); payout EFT
+  at US$500 net; Forge fee 0 % to US$1M. The ≥ US$1/user/month bar fails in every ≤ 1-week niche (seven small-vendor
+  macros at US$0.10–0.69), so by the item's rule it parks — but the shelf passes every gate nothing else has, so the call
+  is promote reshaped (a Forge-only Confluence text-render macro, ≈ 3 days, score ≈ 1 × weight 2) for the 2026-10-28
+  exchange to decide; parked in the exchange as `atlassian-marketplace-forge-apps`, no owner action raised today.
