@@ -1016,11 +1016,12 @@
       "title": "`npm run pipeline next` returns null — and the CLAIM FIRST step claims nothing — while an open queue out of cooling needs research or is starved, so a slot that will research does not claim and release an item (the prompts' LOOP already puts research before build)",
       "why": "2026-10-22 17:20 build slot: it claimed gankdat refresh-uk-trademark-journal-silent-row right after `next` (CLAIM FIRST, before `npm ci`), then found new-ventures needed research, researched it and released the claim in the same commit (RUNS 17:20 'Claim … released: the research run took precedence'); the 19:11 burn-down slot claimed the same item again and dropped it. Each such pair is a push, a `doing` marker that hides the item from concurrent sessions for the slot's length, and a release line — on a slot that was never going to build it. The order in the prompts is research first (LOOP step 1), but `next` ranks items without looking at `empty`, so the gate claims before the research check runs. Fix in `packages/core/src/pipeline.ts` (`next()` consults the same starved/needs_research set `empty` prints, excluding cooling and waiting queues) and a line in `cold`'s output naming the research queue; prompts unchanged.",
       "effort_days": 0.1,
-      "proof": "no RUNS line of the form 'Claim on … released: the research run took precedence' over 14 days while research runs still happen",
+      "proof": "no RUNS line of the form 'Claim on … released: the research run took precedence' over 14 days while research runs still happen — built 2026-10-22: `nextItem()` returns undefined while `researchFirst()` (flagged or empty queues out of cooling) is non-empty; the status line says `research <venture> first — the build waits` and names the held item; `cold` lists research reasons first; the fallback's `next --max-effort` passes `researchFirst: false`.",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-22",
-      "doing_since": "2026-10-22"
+      "doing_since": "2026-10-22",
+      "done_at": "2026-10-22"
     }
   ]
 }

@@ -64,16 +64,21 @@ if (process.argv[2] === 'cold') {
   const cooling = (q: ColdQueue): boolean =>
     (q.researched !== undefined && Date.parse(today) - Date.parse(q.researched) < 2 * dayMs) ||
     (q.research_after !== undefined && q.research_after > today);
-  const reasons: string[] = [];
+  // Research reasons first (2026-10-22, foundry claim-only-when-buildable): a flagged queue out of
+  // cooling is what the slot does before any build, and `next` is null while one exists.
+  const research: string[] = [];
+  const build: string[] = [];
   for (const q of cold) {
-    if (q.items.some(buildable)) reasons.push(`${q.venture}: buildable item`);
+    if (!cooling(q) && (q.needs_research || !q.items.some(open)))
+      research.push(`${q.venture}: needs research (research first; next claims nothing)`);
+    else if (q.items.some(buildable)) build.push(`${q.venture}: buildable item`);
     else if (cooling(q))
       continue; // researched within 48 h or waiting: flagged or not, not tonight
     else if (q.items.some((it) => it.status === 'todo' && datedWithinDay(it.not_before, now)))
       continue; // an item comes due today at 07:00 or tomorrow: waiting, not starved (2026-10-20)
-    else if (q.needs_research || !q.items.some(open)) reasons.push(`${q.venture}: needs research`);
-    else reasons.push(`${q.venture}: starved, not cooling`);
+    else build.push(`${q.venture}: starved, not cooling`);
   }
+  const reasons: string[] = [...research, ...build];
   const runs = readFileSync(path.resolve(dir, '..', 'RUNS.md'), 'utf8');
   // `-- --routine=build` (npm keeps a bare flag for itself, so npm_config_routine is read too)
   const routineArg =
@@ -126,7 +131,14 @@ if (command === 'next') {
   const cap = process.argv
     .find((a) => a.startsWith('--max-effort='))
     ?.slice('--max-effort='.length);
-  const next = nextItem(pipeline.queues, cap ? { maxEffortDays: Number(cap) } : {});
+  // A plain `next` is null while a flagged queue out of cooling waits for research, so the CLAIM
+  // FIRST step claims nothing on a slot that will research (2026-10-22, foundry
+  // claim-only-when-buildable); the capped call (the fallback, which never does market research)
+  // keeps the raw ranking.
+  const next = nextItem(
+    pipeline.queues,
+    cap ? { maxEffortDays: Number(cap), researchFirst: false } : {},
+  );
   console.log(JSON.stringify(next ?? null, null, 2));
 } else if (command === 'empty') {
   // Flagged or empty queues; when nothing is buildable anywhere, the starved queues instead

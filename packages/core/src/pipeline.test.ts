@@ -7,6 +7,7 @@ import {
   isStaleDoing,
   needsResearch,
   nextItem,
+  researchFirst,
   notBeforeArrived,
   parseExchange,
   parseQueue,
@@ -71,7 +72,13 @@ describe('scheduling', () => {
   ];
 
   it('picks the best-scoring todo item on an open queue, oldest first on ties', () => {
-    expect(nextItem(queues)).toMatchObject({ venture: 'gankdat', item: { id: 'old' } });
+    // `toolkit` is empty, so research comes first and `next` is null; the raw ranking is still there.
+    expect(nextItem(queues)).toBeUndefined();
+    expect(nextItem(queues, { researchFirst: false })).toMatchObject({ venture: 'gankdat', item: { id: 'old' } });
+    expect(nextItem(queues.filter((q) => q.venture !== 'toolkit'))).toMatchObject({
+      venture: 'gankdat',
+      item: { id: 'old' },
+    });
     expect(candidates(queues).map((c) => c.item.id)).toEqual(['old', 'nhs']);
   });
 
@@ -136,6 +143,30 @@ describe('scheduling', () => {
   it('honours an explicit needs_research flag and ignores finished queues', () => {
     const flagged = parseQueue(queue('gankdat', [item('a', 'todo', 1)], { needs_research: true }));
     expect(needsResearch([flagged, queues[3]!]).map((q) => q.venture)).toEqual(['gankdat']);
+  });
+
+  it('claims nothing while a flagged queue out of cooling waits for research (claim-only-when-buildable)', () => {
+    // 2026-10-22 17:20: the build slot claimed a gankdat item right after `next`, then found
+    // new-ventures flagged, researched it and released the claim; the 19:11 slot claimed it again.
+    const buildable = parseQueue(queue('gankdat', [item('journal', 'todo', 6)]));
+    const flagged = parseQueue(queue('new-ventures', [item('spike', 'done', 5)], { needs_research: true }));
+    const cooled = parseQueue(
+      queue('new-ventures', [item('spike', 'done', 5)], { needs_research: true, researched: '2026-10-22' }),
+    );
+    const today = { today: '2026-10-22' };
+    expect(researchFirst([buildable, flagged], today).map((q) => q.venture)).toEqual(['new-ventures']);
+    expect(nextItem([buildable, flagged], today)).toBeUndefined();
+    expect(needsResearch([buildable, flagged], today).map((q) => q.venture)).toEqual(['new-ventures']);
+    // The fallback's capped call keeps the raw ranking.
+    expect(nextItem([buildable, flagged], { ...today, maxEffortDays: 1, researchFirst: false })?.item.id).toBe('journal');
+    // A cooling flagged queue is not research tonight, so the build goes ahead.
+    expect(researchFirst([buildable, cooled], today)).toEqual([]);
+    expect(nextItem([buildable, cooled], today)?.item.id).toBe('journal');
+    // A starved queue (blocked only) never holds the build: it is research only when nothing is buildable.
+    const starvedQ = parseQueue(queue('read-focus', [item('links', 'blocked', 8)]));
+    expect(nextItem([buildable, starvedQ], today)?.item.id).toBe('journal');
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [buildable, flagged] }, today);
+    expect(text).toContain('next: research new-ventures first — the build waits (gankdat / journal');
   });
 
   it('lists starved queues for research only when nothing at all is buildable', () => {
@@ -296,7 +327,10 @@ describe('scheduling', () => {
     const text = formatPipeline({ exchange: { ideas: [] }, queues });
     expect(text).toContain('toolkit');
     expect(text).toContain('NEEDS RESEARCH');
-    expect(text).toContain('next: gankdat / old');
+    // The empty `toolkit` queue is researched first; the best item is named but not offered.
+    expect(text).toContain('next: research toolkit first — the build waits (gankdat / old');
+    const built = formatPipeline({ exchange: { ideas: [] }, queues: queues.filter((q) => q.venture !== 'toolkit') });
+    expect(built).toContain('next: gankdat / old');
   });
 });
 

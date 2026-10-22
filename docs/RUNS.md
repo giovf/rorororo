@@ -1524,3 +1524,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 20:28 | burn-down | Relay probe b: /category/forms landing stays a shell: menu API 404 + React #421, now visible in meta
 - 2026-10-22 20:28 | burn-down | Relay: console noise from our own blocked images/fonts filtered; README says read cards, not hrefs
 - 2026-10-22 20:28 | burn-down | Queue: foundry relay-rendered-fetch done (3 relay rounds, 67-83 s each with Chromium installed)
+- 2026-10-22 20:30 | burn-down | Pipeline: `next` is null while a flagged queue out of cooling waits for research; gate claims nothing
+- 2026-10-22 20:30 | burn-down | Pipeline: status says 'research <venture> first — the build waits'; cold lists research first; 2 tests
+- 2026-10-22 20:30 | burn-down | Pipeline: the fallback's capped `next --max-effort` keeps the raw ranking (it never does market research)
+- 2026-10-22 20:30 | burn-down | Queue: foundry claim-only-when-buildable done; pipeline README documents the research-first rule
