@@ -426,10 +426,20 @@ runs `check:root`.
   before rethrowing, 17 lines per isolate start, 11 of the 12 uk-planning lines in the 10-17 reading;
   `withoutCodegenError` drops that one two-argument call (the compile cannot be skipped — `paymentMiddleware`
   validates every route on start — and under workerd it fails only this way; CDP's daily validate is the
-  real schema check). **The query is blind to cron invocations** (2026-10-18): the 10-16 job log, its first
-  real read, carried no line from any wave — no `refresh_wave`, no `refresh_failed` for uk-planning —
-  though wave 1 refreshed 14 sources that morning, so the clause reads `no invocation logged`, never
-  "did not fire" (`wave-log-cron-query-blind` queued). **Refresh progress marker** (`sources/progress.ts`,
+  real schema check). **What the invocation query reads** (2026-10-22, `wave-log-cron-query-blind`; the 10-16 job
+  log, its first real read, carried no line from any wave though wave 1 refreshed 14 sources that
+  morning): the query is not blind — the 10-21 run returned two `ok` rows (wall 79.8 s and 79.0 s) and
+  10-22 one (104.0 s), a row's timestamp being the invocation's end (05:02:15.7 − 79.8 s = 05:00:56, the
+  second uk-planning's first error line was written), so `wave 05:00: ok 79.0s 1.9 h ago` is a real
+  reading. It is not complete: 10-18, 10-19 and 10-20 answered 200 with no row for a wave whose D1 rows
+  exist, and on 10-22 the 05:15 wave left no row where 10-21's did; the docs name no cause (sampling
+  default 1, 5 billion logs a day, 256 KB a log) and the cached 10-17 page says nothing about an
+  invocation the platform cut off. So the clause keeps `no invocation logged`, never "did not fire", and
+  the progress marker stays the reading of a silent wave. The live rows named no cron, and the needle is
+  a substring (`0 5 * * *` sits inside `30 5 * * *` and `50 5 * * *`) — the 10-21 reading was in fact the
+  05:15 wave's row — so `parseWaveInvocations` ranks a row whose cron matches ahead of a cron-less one, a
+  cron-less reading says `(cron unread)`, and the runner prints the first raw row whenever a parsed row
+  lacks its cron (where the live shape keeps it is the one open question; `test/wave-logs.spec.ts`). **Refresh progress marker** (`sources/progress.ts`,
   2026-10-18, `refresh-uk-trademark-journal-2026-10-17`): the in-band reading of a silent wave. Every
   attempt puts `refresh:progress:<slug>` in KV at start and at each phase (`backfill`, `index`,
   `stream N records` every 25k, `written`, `stats`; one write a second per key, closer marks skipped)

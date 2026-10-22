@@ -1614,3 +1614,7 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   macros at US$0.10–0.69), so by the item's rule it parks — but the shelf passes every gate nothing else has, so the call
   is promote reshaped (a Forge-only Confluence text-render macro, ≈ 3 days, score ≈ 1 × weight 2) for the 2026-10-28
   exchange to decide; parked in the exchange as `atlassian-marketplace-forge-apps`, no owner action raised today.
+- 2026-10-22 burn-down: gankdat `wave-log-cron-query-blind` closed — the observability cron query is not blind (10-21/22 rows read
+  the wave's outcome and wall time, timestamp = invocation end) but not complete (10-18..10-20 no row for a wave whose D1 rows
+  exist), so the clause keeps `no invocation logged` and the progress marker stays the silent-wave reading; a matched cron now
+  ranks first and a cron-less row reads `(cron unread)`, because the substring needle also returns other waves' rows.

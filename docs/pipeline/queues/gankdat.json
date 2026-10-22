@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-19",
+  "updated": "2026-10-22",
   "researched": "2026-10-19",
   "items": [
     {
@@ -719,14 +719,15 @@
     {
       "id": "wave-log-cron-query-blind",
       "title": "Wave-log reading: the observability query returns no line from any cron invocation (10-16 job log: zero `refresh_wave` / `refresh_failed` lines for uk-planning while wave 1 ran) — find the filter or dataset that carries scheduled-event logs, or retire the cron-outcome clause",
-      "why": "Build 2026-10-18: the 10-16 metrics job log (run 38866226604) is the first real read of `lib/wave-logs.ts`'s slug query — uk-planning: 7 lines, all request lines and the x402 warning; uk-trademark-journal: 6, likewise — though wave 1 refreshed 14 sources that morning and every wave logs `refresh_wave` with its slugs and uk-planning's nightly failure logs `refresh_failed`. So the query (`$metadata.service = faceless-api`, needle = slug, view events, 24 h) sees HTTP invocations only, and the cron-outcome clause built 10-17 reads `wave 05:00: no invocation in 26 h` for a wave that ran; the text now says `no invocation logged` (2026-10-18). Candidates: the Query Builder may need `$metadata.trigger` / `$workers.event.cron` or a `scheduled` event filter rather than the request-shaped defaults, cron logs may land under a different `$metadata.type`, or the free tier of Workers Logs may sample them. Read the first raw row the runner prints for an invocation query (`wave-logs.ts` prints it when none parsed), relay `GET https://developers.cloudflare.com/workers/observability/logs/workers-logs/` query sections, and fix the query; if cron events are simply not queryable, drop the invocation query and keep the in-band progress marker (`src/sources/progress.ts`) as the only reading of a silent wave.",
+      "why": "Build 2026-10-18: the 10-16 metrics job log (run 38866226604) is the first real read of `lib/wave-logs.ts`'s slug query — uk-planning: 7 lines, all request lines and the x402 warning; uk-trademark-journal: 6, likewise — though wave 1 refreshed 14 sources that morning and every wave logs `refresh_wave` with its slugs and uk-planning's nightly failure logs `refresh_failed`. So the query (`$metadata.service = faceless-api`, needle = slug, view events, 24 h) sees HTTP invocations only, and the cron-outcome clause built 10-17 reads `wave 05:00: no invocation in 26 h` for a wave that ran; the text now says `no invocation logged` (2026-10-18). Candidates: the Query Builder may need `$metadata.trigger` / `$workers.event.cron` or a `scheduled` event filter rather than the request-shaped defaults, cron logs may land under a different `$metadata.type`, or the free tier of Workers Logs may sample them. Read the first raw row the runner prints for an invocation query (`wave-logs.ts` prints it when none parsed), relay `GET https://developers.cloudflare.com/workers/observability/logs/workers-logs/` query sections, and fix the query; if cron events are simply not queryable, drop the invocation query and keep the in-band progress marker (`src/sources/progress.ts`) as the only reading of a silent wave. Done 2026-10-22 (burn-down): not blind — 10-21 returned two ok rows (79.8 s / 79.0 s, timestamp = invocation end), 10-22 one (104.0 s); 10-18..10-20 none for a wave whose D1 rows exist, so an empty answer stays `no invocation logged` and the progress marker is the reading of a silent wave. The live rows named no cron and the substring needle also matches waves 3 and 5 (10-21's reading was the 05:15 wave's row): a matched cron now ranks first, a cron-less reading says `(cron unread)`, the runner prints the raw row when a cron is missing.",
       "effort_days": 0.3,
       "proof": "A Daily numbers row whose `wave log:` clause shows `wave 05:00: ok <wall>s` for uk-planning on a morning its error row exists; or the invocation clause removed and SCHEDULERS/ARCHITECTURE say why",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-10-20",
       "added": "2026-10-18",
-      "doing_since": "2026-10-22"
+      "done_at": "2026-10-22",
+      "updated": "2026-10-22"
     },
     {
       "id": "x402-ajv-compile-log-noise",

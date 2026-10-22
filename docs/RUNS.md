@@ -1458,3 +1458,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 09:24 | build | Niche: 7 small-vendor text-render macros 202-911 installs at US$0.10-0.69/user/month; bar of 1 unmet
 - 2026-10-22 09:24 | build | Call: promote reshaped (Forge Confluence macro, 3 days); exchange 2026-10-28 decides; idea parked
 - 2026-10-22 09:24 | build | new-ventures emptied (10 done) and set needs_research; no owner action raised this run
+- 2026-10-22 17:21 | burn-down | wave-log reading: cron query not blind — 10-21 two ok rows (79 s, end-stamped), 10-22 one (104 s)
+- 2026-10-22 17:21 | burn-down | wave-log reading: 10-18..10-20 no row for a wave with D1 rows; `no invocation logged` kept, marker is the reading
+- 2026-10-22 17:21 | burn-down | wave-logs.ts: matched cron ranks first, cron-less reading says `(cron unread)`; runner prints raw row; tests
+- 2026-10-22 17:21 | burn-down | ARCHITECTURE wave-log paragraph rewritten; Queue: gankdat wave-log-cron-query-blind done
