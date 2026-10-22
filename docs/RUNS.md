@@ -1536,3 +1536,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 20:45 | burn-down | Spike framer-marketplace-paid-plugins claimed 20:31, relay round of 28 lines pushed 20:32 (run 151)
 - 2026-10-22 20:45 | burn-down | Claim on new-ventures spike-framer-marketplace-paid-plugins released: relay run 151 still running at 20:44
 - 2026-10-22 20:45 | burn-down | Stopping: relay RENDER verb + research-first next built, Framer spike seeded; its response waits for 21:00
+- 2026-10-22 20:48 | burn-down | Relay run 151: the Browser install step still running at 11 min (three earlier runs: 67-83 s in all)
+- 2026-10-22 20:48 | burn-down | docs/ci/fetch-relay.yml: Chromium cached by Playwright version; install 6 min and fetch 12 min step timeouts
