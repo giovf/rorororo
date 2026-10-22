@@ -1,7 +1,0 @@
-# exchange pre-research 2026-10-22 (burn-down): Framer Marketplace paid plugins — terms and shelf
-GET https://www.framer.com/help/articles/how-the-creator-program-works/
-GET https://www.framer.com/legal/creator-terms/
-GET https://www.framer.com/partner
-GET RENDER https://www.framer.com/marketplace/plugins/
-GET RENDER https://www.framer.com/marketplace/category/plugins/
-GET https://www.framer.com/developers/
