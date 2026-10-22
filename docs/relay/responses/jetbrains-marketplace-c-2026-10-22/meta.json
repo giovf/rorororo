@@ -1,0 +1,396 @@
+{
+  "request": "jetbrains-marketplace-c-2026-10-22",
+  "fetched_at": "2026-10-22T17:32:59.687Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=0&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:40.098Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=0&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "1.json",
+      "bytes": 12899,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=20&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:41.071Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=20&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "2.json",
+      "bytes": 12408,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=40&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:41.721Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=40&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "3.json",
+      "bytes": 12259,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=60&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:42.371Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=60&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "4.json",
+      "bytes": 12307,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=80&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:43.030Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=80&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "5.json",
+      "bytes": 12670,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=100&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:43.680Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=100&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "6.json",
+      "bytes": 12678,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=120&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:44.327Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=120&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "7.json",
+      "bytes": 12223,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=140&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:44.976Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=140&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "8.json",
+      "bytes": 12811,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=160&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:45.623Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=160&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "9.json",
+      "bytes": 12175,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=180&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:46.274Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=180&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "10.json",
+      "bytes": 12689,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=200&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:46.923Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=200&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "11.json",
+      "bytes": 12618,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=220&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:47.569Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=220&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "12.json",
+      "bytes": 11810,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=240&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:48.235Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=240&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "13.json",
+      "bytes": 12307,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=260&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:48.881Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=260&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "14.json",
+      "bytes": 11809,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=280&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:49.532Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=280&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "15.json",
+      "bytes": 12470,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=300&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:50.268Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=300&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "16.json",
+      "bytes": 12047,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=320&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:51.010Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=320&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "17.json",
+      "bytes": 12354,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=340&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:51.678Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=340&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "18.json",
+      "bytes": 12400,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=360&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:52.326Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=360&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "19.json",
+      "bytes": 12219,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=380&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:52.991Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=380&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "20.json",
+      "bytes": 12208,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=400&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:53.666Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=400&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "21.json",
+      "bytes": 12192,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=420&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:54.320Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=420&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "22.json",
+      "bytes": 12436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=440&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:54.966Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=440&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "23.json",
+      "bytes": 12271,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=460&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:55.614Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=460&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "24.json",
+      "bytes": 11657,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=480&pricingModels=PAID&orderBy=downloads",
+      "fetched_at": "2026-10-22T17:32:56.299Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/searchPlugins?max=20&offset=480&pricingModels=PAID&orderBy=downloads",
+      "headers": {
+        "content-type": "application/graphql+json"
+      },
+      "file": "25.json",
+      "bytes": 8166,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/22319",
+      "fetched_at": "2026-10-22T17:32:56.963Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/22319",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "26.json",
+      "bytes": 5298,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/18896",
+      "fetched_at": "2026-10-22T17:32:57.621Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/18896",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "27.json",
+      "bytes": 5052,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/18280",
+      "fetched_at": "2026-10-22T17:32:58.274Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/18280",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "28.json",
+      "bytes": 11853,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/22319/pricing",
+      "fetched_at": "2026-10-22T17:32:58.932Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/22319/pricing",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "29.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/marketplace/plugin/22319/pricing",
+      "fetched_at": "2026-10-22T17:32:59.559Z",
+      "status": 404,
+      "final_url": "https://plugins.jetbrains.com/api/marketplace/plugin/22319/pricing",
+      "headers": {
+        "content-type": "application/problem+json"
+      },
+      "file": "30.json",
+      "bytes": 174,
+      "truncated": false
+    }
+  ]
+}
