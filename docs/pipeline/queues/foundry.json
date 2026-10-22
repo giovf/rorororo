@@ -995,8 +995,9 @@
       "effort_days": 0.2,
       "proof": "no `Commit responses`/commit step fails on a `cannot lock ref` or non-fast-forward rejection over 14 days of actions_list (the retry's second attempt is visible in the job log instead)",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-22"
+      "status": "doing",
+      "added": "2026-10-22",
+      "doing_since": "2026-10-22"
     },
     {
       "id": "relay-rendered-fetch",
