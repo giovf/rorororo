@@ -1499,3 +1499,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 19:25 | burn-down | Call: park; re-read 2026-12-01; idea wix-app-market-paid-apps parked in the exchange with that trigger
 - 2026-10-22 19:25 | burn-down | Relay: the 18:39 'c' run lost a push race (ref lock); re-run by the next request push, no re-fire needed
 - 2026-10-22 19:25 | burn-down | new-ventures emptied (11 done) and set needs_research (cooling, researched today); no owner action raised
+- 2026-10-22 19:33 | burn-down | gankdat refresh-uk-trademark-journal-silent-row dropped: no silent row since the 10-18 marker
+- 2026-10-22 19:33 | burn-down | Evidence: /v1/health (relay) journal last ok 10-22 06:06:24, 84 s into wave 7; 5 Daily rows clean
