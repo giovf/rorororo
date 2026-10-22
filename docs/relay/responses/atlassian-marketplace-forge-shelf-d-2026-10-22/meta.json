@@ -1,0 +1,521 @@
+{
+  "request": "atlassian-marketplace-forge-shelf-d-2026-10-22",
+  "fetched_at": "2026-10-22T09:19:33.031Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.skanda.apps.mermaid/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:04.882Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.skanda.apps.mermaid/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 45391,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.skanda.apps.mermaid",
+      "fetched_at": "2026-10-22T09:19:05.580Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.skanda.apps.mermaid",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "inline;filename=f.txt"
+      },
+      "file": "2.json",
+      "bytes": 5538,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/app.conf.cc/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:06.177Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/app.conf.cc/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 530048,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/app.conf.cc",
+      "fetched_at": "2026-10-22T09:19:06.920Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/app.conf.cc",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "inline;filename=f.txt"
+      },
+      "file": "4.json",
+      "bytes": 5238,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/tech.labs.app.mermaid/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:07.954Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/tech.labs.app.mermaid/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 49216,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/tech.labs.app.mermaid",
+      "fetched_at": "2026-10-22T09:19:08.558Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/tech.labs.app.mermaid",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "inline;filename=f.txt"
+      },
+      "file": "6.json",
+      "bytes": 5172,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.nizukshya.labs.apps.confluence.markdown-importer/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:09.596Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.nizukshya.labs.apps.confluence.markdown-importer/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "7.json",
+      "bytes": 531628,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.nizukshya.labs.apps.confluence.markdown-importer",
+      "fetched_at": "2026-10-22T09:19:10.315Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.nizukshya.labs.apps.confluence.markdown-importer",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "inline;filename=f.txt"
+      },
+      "file": "8.json",
+      "bytes": 5634,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/io.atly.confluence.plugins.exportmarkdown/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:11.349Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/io.atly.confluence.plugins.exportmarkdown/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "9.json",
+      "bytes": 255362,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/io.atly.confluence.plugins.exportmarkdown",
+      "fetched_at": "2026-10-22T09:19:12.078Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/io.atly.confluence.plugins.exportmarkdown",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "inline;filename=f.txt"
+      },
+      "file": "10.json",
+      "bytes": 5536,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/net.oharagroup.confluence.plugins.confluence-sequence-diagrams/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:12.631Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/net.oharagroup.confluence.plugins.confluence-sequence-diagrams/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "11.json",
+      "bytes": 284936,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/net.oharagroup.confluence.plugins.confluence-sequence-diagrams",
+      "fetched_at": "2026-10-22T09:19:13.254Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/net.oharagroup.confluence.plugins.confluence-sequence-diagrams",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "inline;filename=f.txt"
+      },
+      "file": "12.json",
+      "bytes": 6564,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/sequencediagramorg/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:13.793Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/sequencediagramorg/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "13.json",
+      "bytes": 108745,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/sequencediagramorg",
+      "fetched_at": "2026-10-22T09:19:14.476Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/sequencediagramorg",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "14.json",
+      "bytes": 5426,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/power-plant-uml/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:15.026Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/power-plant-uml/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "15.json",
+      "bytes": 34839,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/power-plant-uml",
+      "fetched_at": "2026-10-22T09:19:15.687Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/power-plant-uml",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "16.json",
+      "bytes": 3897,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.linhtechnology.mermaid/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:16.253Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.linhtechnology.mermaid/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "17.json",
+      "bytes": 279124,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.linhtechnology.mermaid",
+      "fetched_at": "2026-10-22T09:19:17.014Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.linhtechnology.mermaid",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "inline;filename=f.txt"
+      },
+      "file": "18.json",
+      "bytes": 5442,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/confluenceadvancedcodeblockplugin/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:18.051Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/confluenceadvancedcodeblockplugin/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "19.json",
+      "bytes": 813959,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/confluenceadvancedcodeblockplugin",
+      "fetched_at": "2026-10-22T09:19:18.689Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/confluenceadvancedcodeblockplugin",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "20.json",
+      "bytes": 6960,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.stratusaddons.confluence.plugins.mermaid/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:19.227Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.stratusaddons.confluence.plugins.mermaid/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "21.json",
+      "bytes": 309906,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.stratusaddons.confluence.plugins.mermaid",
+      "fetched_at": "2026-10-22T09:19:19.917Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.stratusaddons.confluence.plugins.mermaid",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "inline;filename=f.txt"
+      },
+      "file": "22.json",
+      "bytes": 6037,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/net.junovi.confluence.properties/versions?limit=50",
+      "fetched_at": "2026-10-22T09:19:20.469Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/net.junovi.confluence.properties/versions?limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "23.json",
+      "bytes": 774976,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/net.junovi.confluence.properties",
+      "fetched_at": "2026-10-22T09:19:21.326Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/net.junovi.confluence.properties",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "24.json",
+      "bytes": 5891,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/tech.labs.app.mermaid/pricing/cloud/live",
+      "fetched_at": "2026-10-22T09:19:21.876Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/tech.labs.app.mermaid/pricing/cloud/live",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "25.json",
+      "bytes": 48997,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/app.conf.cc/pricing/cloud/live",
+      "fetched_at": "2026-10-22T09:19:22.722Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/app.conf.cc/pricing/cloud/live",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "26.json",
+      "bytes": 47839,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/io.atly.confluence.plugins.exportmarkdown/pricing/cloud/live",
+      "fetched_at": "2026-10-22T09:19:23.731Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/io.atly.confluence.plugins.exportmarkdown/pricing/cloud/live",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "27.json",
+      "bytes": 51737,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/sequencediagramorg/pricing/cloud/live",
+      "fetched_at": "2026-10-22T09:19:24.762Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/sequencediagramorg/pricing/cloud/live",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "28.json",
+      "bytes": 48629,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/power-plant-uml/pricing/cloud/live",
+      "fetched_at": "2026-10-22T09:19:26.122Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/power-plant-uml/pricing/cloud/live",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "29.json",
+      "bytes": 48335,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.linhtechnology.mermaid/pricing/cloud/live",
+      "fetched_at": "2026-10-22T09:19:26.659Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.linhtechnology.mermaid/pricing/cloud/live",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "30.json",
+      "bytes": 49707,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.stratusaddons.confluence.plugins.mermaid/pricing/cloud/live",
+      "fetched_at": "2026-10-22T09:19:27.588Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.stratusaddons.confluence.plugins.mermaid/pricing/cloud/live",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "31.json",
+      "bytes": 52371,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/narva.net.mermaid-diagrams/pricing/cloud/live",
+      "fetched_at": "2026-10-22T09:19:28.568Z",
+      "status": 404,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/narva.net.mermaid-diagrams/pricing/cloud/live",
+      "headers": {
+        "content-length": "0"
+      },
+      "file": "32.bin",
+      "bytes": 0,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/render-Markdown/pricing/cloud/live",
+      "fetched_at": "2026-10-22T09:19:29.166Z",
+      "status": 404,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/render-Markdown/pricing/cloud/live",
+      "headers": {
+        "content-length": "0"
+      },
+      "file": "33.bin",
+      "bytes": 0,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons/com.appsfoundry.confluence.plantuml/pricing/cloud/live",
+      "fetched_at": "2026-10-22T09:19:29.766Z",
+      "status": 404,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons/com.appsfoundry.confluence.plantuml/pricing/cloud/live",
+      "headers": {
+        "content-length": "0"
+      },
+      "file": "34.bin",
+      "bytes": 0,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&text=variables&limit=50",
+      "fetched_at": "2026-10-22T09:19:30.372Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&text=variables&limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "35.json",
+      "bytes": 70180,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&text=glossary&limit=50",
+      "fetched_at": "2026-10-22T09:19:30.973Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&text=glossary&limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "36.json",
+      "bytes": 60242,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&text=page+properties&limit=50",
+      "fetched_at": "2026-10-22T09:19:31.574Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&text=page+properties&limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "37.json",
+      "bytes": 207109,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&text=export+pdf&limit=50",
+      "fetched_at": "2026-10-22T09:19:32.257Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&text=export+pdf&limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "38.json",
+      "bytes": 193206,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&text=lookup&limit=50",
+      "fetched_at": "2026-10-22T09:19:32.913Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&text=lookup&limit=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "39.json",
+      "bytes": 62031,
+      "truncated": false
+    }
+  ]
+}
