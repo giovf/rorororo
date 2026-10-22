@@ -1501,3 +1501,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 19:25 | burn-down | new-ventures emptied (11 done) and set needs_research (cooling, researched today); no owner action raised
 - 2026-10-22 19:33 | burn-down | gankdat refresh-uk-trademark-journal-silent-row dropped: no silent row since the 10-18 marker
 - 2026-10-22 19:33 | burn-down | Evidence: /v1/health (relay) journal last ok 10-22 06:06:24, 84 s into wave 7; 5 Daily rows clean
+- 2026-10-22 19:38 | burn-down | Foundry research: 6 of 10 committing workflows push once; relay run 143 lost its push to the 18:38 slot
+- 2026-10-22 19:38 | burn-down | Queue: foundry workflow-push-retry-everywhere (5), relay-rendered-fetch (4), claim-only-when-buildable (4) filed
+- 2026-10-22 19:38 | burn-down | Evidence: Wix shelf pages were client-rendered shells; the 17:20 slot claimed then released an item it researched past
