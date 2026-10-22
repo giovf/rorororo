@@ -1,0 +1,502 @@
+{
+  "request": "wordpress-freemius-d-2026-10-22",
+  "fetched_at": "2026-10-22T18:19:24.369Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://aelia.co/shop/eu-vat-assistant-woocommerce/",
+      "fetched_at": "2026-10-22T18:19:00.016Z",
+      "status": 200,
+      "final_url": "https://aelia.co/shop/eu-vat-assistant-woocommerce/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 333903,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://wponetap.com/pricing/",
+      "fetched_at": "2026-10-22T18:19:01.047Z",
+      "status": 200,
+      "final_url": "https://wponetap.com/pricing/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 764879,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://woosmartcod.com/",
+      "fetched_at": "2026-10-22T18:19:02.931Z",
+      "status": 200,
+      "final_url": "https://woosmartcod.com/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 105328,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wc-donation.com/",
+      "fetched_at": "2026-10-22T18:19:04.028Z",
+      "status": 200,
+      "final_url": "https://www.wc-donation.com/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 305848,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wc-donation.com/pricing/",
+      "fetched_at": "2026-10-22T18:19:05.466Z",
+      "status": 200,
+      "final_url": "https://www.wc-donation.com/pricing/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "5.html",
+      "bytes": 147492,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payforpayment.com/",
+      "fetched_at": "2026-10-22T18:19:05.790Z",
+      "status": 200,
+      "final_url": "https://payforpayment.com/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "6.html",
+      "bytes": 85486,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payforpayment.com/pricing/",
+      "fetched_at": "2026-10-22T18:19:06.533Z",
+      "status": 200,
+      "final_url": "https://payforpayment.com/pricing/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "7.html",
+      "bytes": 38978,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://equalizedigital.com/",
+      "fetched_at": "2026-10-22T18:19:06.686Z",
+      "status": 200,
+      "final_url": "https://equalizedigital.com/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 226398,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://equalizedigital.com/accessibility-checker/pricing/",
+      "fetched_at": "2026-10-22T18:19:07.522Z",
+      "status": 200,
+      "final_url": "https://equalizedigital.com/accessibility-checker/pricing/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.html",
+      "bytes": 194711,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://wplegalpages.com/",
+      "fetched_at": "2026-10-22T18:19:07.728Z",
+      "status": 403,
+      "final_url": "https://wplegalpages.com/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "10.html",
+      "bytes": 5489,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://wplegalpages.com/pricing/",
+      "fetched_at": "2026-10-22T18:19:08.386Z",
+      "status": 403,
+      "final_url": "https://wplegalpages.com/pricing/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "11.html",
+      "bytes": 5489,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://fluidcheckout.com/",
+      "fetched_at": "2026-10-22T18:19:08.421Z",
+      "status": 200,
+      "final_url": "https://fluidcheckout.com/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Thu, 22 Oct 2026 17:52:43 GMT"
+      },
+      "file": "12.html",
+      "bytes": 214554,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://fluidcheckout.com/pricing/",
+      "fetched_at": "2026-10-22T18:19:09.081Z",
+      "status": 200,
+      "final_url": "https://fluidcheckout.com/pricing/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Thu, 22 Oct 2026 18:19:09 GMT"
+      },
+      "file": "13.html",
+      "bytes": 148621,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=artprojectgroup",
+      "fetched_at": "2026-10-22T18:19:09.286Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=artprojectgroup",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "14.json",
+      "bytes": 83113,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=nakedcatplugins",
+      "fetched_at": "2026-10-22T18:19:10.062Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=nakedcatplugins",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "15.json",
+      "bytes": 154735,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=equalizedigital",
+      "fetched_at": "2026-10-22T18:19:10.773Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=equalizedigital",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "16.json",
+      "bytes": 34535,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=vol4ikman",
+      "fetched_at": "2026-10-22T18:19:11.438Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=vol4ikman",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "17.json",
+      "bytes": 3932,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=davidtaroko",
+      "fetched_at": "2026-10-22T18:19:12.085Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=davidtaroko",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "18.json",
+      "bytes": 54,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=overclokk",
+      "fetched_at": "2026-10-22T18:19:12.725Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=overclokk",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "19.json",
+      "bytes": 6077,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=pressidium",
+      "fetched_at": "2026-10-22T18:19:13.371Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=pressidium",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "20.json",
+      "bytes": 9202,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=veks",
+      "fetched_at": "2026-10-22T18:19:14.025Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=veks",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "21.json",
+      "bytes": 3764,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=orenhav",
+      "fetched_at": "2026-10-22T18:19:14.679Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=orenhav",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "22.json",
+      "bytes": 7461,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=wahid0003",
+      "fetched_at": "2026-10-22T18:19:15.320Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=wahid0003",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "23.json",
+      "bytes": 60512,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=stiofansisland",
+      "fetched_at": "2026-10-22T18:19:15.995Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=stiofansisland",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "24.json",
+      "bytes": 93072,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=dots",
+      "fetched_at": "2026-10-22T18:19:16.688Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=dots",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "25.json",
+      "bytes": 245577,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=davidanderson",
+      "fetched_at": "2026-10-22T18:19:17.408Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=davidanderson",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "26.json",
+      "bytes": 117181,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=wpovernight",
+      "fetched_at": "2026-10-22T18:19:18.127Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=query_plugins&request%5Bper_page%5D=50&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bshort_description%5D=1&request%5Bauthor%5D=wpovernight",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "27.json",
+      "bytes": 2321,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=accessibility-checker",
+      "fetched_at": "2026-10-22T18:19:18.773Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=accessibility-checker",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "28.json",
+      "bytes": 74975,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=wp-accessibility-helper",
+      "fetched_at": "2026-10-22T18:19:19.328Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=wp-accessibility-helper",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "29.json",
+      "bytes": 51326,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=wc-apg-nifcifnie-field",
+      "fetched_at": "2026-10-22T18:19:19.880Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=wc-apg-nifcifnie-field",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "30.json",
+      "bytes": 64808,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=woocommerce-eu-vat-compliance",
+      "fetched_at": "2026-10-22T18:19:20.435Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=woocommerce-eu-vat-compliance",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "31.json",
+      "bytes": 94551,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=eu-vat-for-woocommerce",
+      "fetched_at": "2026-10-22T18:19:20.996Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=eu-vat-for-woocommerce",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "32.json",
+      "bytes": 91283,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=nif-num-de-contribuinte-portugues-for-woocommerce",
+      "fetched_at": "2026-10-22T18:19:21.554Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=nif-num-de-contribuinte-portugues-for-woocommerce",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "33.json",
+      "bytes": 44409,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=uk-cookie-consent",
+      "fetched_at": "2026-10-22T18:19:22.107Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=uk-cookie-consent",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "34.json",
+      "bytes": 47138,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=sogo-accessibility",
+      "fetched_at": "2026-10-22T18:19:22.658Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=sogo-accessibility",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "35.json",
+      "bytes": 20366,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=invoicing",
+      "fetched_at": "2026-10-22T18:19:23.207Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=invoicing",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "36.json",
+      "bytes": 86858,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=pressidium-cookie-consent",
+      "fetched_at": "2026-10-22T18:19:23.766Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=pressidium-cookie-consent",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "37.json",
+      "bytes": 47982,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=italy-cookie-choices",
+      "fetched_at": "2026-10-22T18:19:24.317Z",
+      "status": 200,
+      "final_url": "https://api.wordpress.org/plugins/info/1.2/?action=plugin_information&request%5Bfields%5D%5Bsections%5D=1&request%5Bfields%5D%5Bactive_installs%5D=1&request%5Bfields%5D%5Bdownloaded%5D=1&request%5Bfields%5D%5Bhomepage%5D=1&request%5Bslug%5D=italy-cookie-choices",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "38.json",
+      "bytes": 44443,
+      "truncated": false
+    }
+  ]
+}
