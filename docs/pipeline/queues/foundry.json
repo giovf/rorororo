@@ -1006,8 +1006,9 @@
       "effort_days": 0.5,
       "proof": "a RENDER line on `https://www.wix.com/app-market/category/forms` yields an .html whose text contains ≥ 20 `/app-market/web-solution/` links; README and `scripts/fetch-relay-lines.ts` tests cover the new verb",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-22"
+      "status": "doing",
+      "added": "2026-10-22",
+      "doing_since": "2026-10-22"
     },
     {
       "id": "claim-only-when-buildable",
