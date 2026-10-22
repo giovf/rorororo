@@ -1533,3 +1533,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 20:35 | burn-down | Read: creators page: 'Framer takes a 0 % cut', US$753k paid in a November, US$6.5M in 2025; no payout terms
 - 2026-10-22 20:35 | burn-down | Shelf: RENDER listing shows a Price filter and 20 trending plugins by small creators; prices on plugin pages
 - 2026-10-22 20:35 | burn-down | Relay: first RENDER use in research; /legal/creator-terms is 404; host .framer.com added
+- 2026-10-22 20:45 | burn-down | Spike framer-marketplace-paid-plugins claimed 20:31, relay round of 28 lines pushed 20:32 (run 151)
+- 2026-10-22 20:45 | burn-down | Claim on new-ventures spike-framer-marketplace-paid-plugins released: relay run 151 still running at 20:44
+- 2026-10-22 20:45 | burn-down | Stopping: relay RENDER verb + research-first next built, Framer spike seeded; its response waits for 21:00
