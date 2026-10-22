@@ -200,3 +200,4 @@
 - 2026-10-22 02:53 | notification | jobstreet.com | Executive / Senior Executive Operational Risk Management + 11 new jobs | Job-alert digest, personal, unrelated to Foundry | logged
 - 2026-10-19 23:59 (backlog) | notification | google.com | Report domain: gankdat.com Submitter: google.com Report-ID: 1429938064962601105 | Google DMARC aggregate report for gankdat.com | logged
 - 2026-10-22 05:01 | notification | pureseed.com.my | A Little Flower, A Big Smile, A Beautiful Moment! | Florist marketing mail, unrelated to Foundry | logged
+- 2026-10-22 07:45 | notification | ernest-brooks.com | Refined City Living | A Property Match from Ernest-Brooks International | Estate-agent marketing mail, unrelated to Foundry | logged
