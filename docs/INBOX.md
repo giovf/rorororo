@@ -195,3 +195,4 @@
 - 2026-10-21 21:03 | notification | devpost.com | Recording: Will your project ship? - Nebius x NVIDIA Global AI Hackathon | Hackathon webinar recording link, no action (entries are submitted by the owner) | logged
 - 2026-10-21 21:25 | store | cerebralvalley.ai | Status APPROVED for Meta Global AI Developer Hackathon | Application approved; build window 26 Oct 12:00 – 4 Nov 21:00 ET, remote | logged (self-caused: hackathon application, action 027)
 - 2026-10-21 22:12 | notification | linkedin.com | 8 people viewed your profile | LinkedIn profile-view digest, personal, unrelated to Foundry | logged
+- 2026-10-21 23:35 | notification | twitch.tv | One Twitch Sub. One FREE Month of Apple TV and Ted Lasso Chat Badges! | Twitch promo newsletter, personal, unrelated to Foundry | logged
