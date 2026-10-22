@@ -209,3 +209,4 @@
 - 2026-10-22 09:57 | notification | ayjsolicitors.com | Next Steps - Initial Consultation : AY&J Solicitors. | Personal mail from a solicitors' firm, unrelated to Foundry; left unread, not opened | logged
 - 2026-10-22 10:01 | notification | stirlingackroyd.com | Property Match from Stirling Ackroyd | Estate-agent marketing mail, unrelated to Foundry | logged
 - 2026-10-22 17:53 | notification | nebius.com | We've updated our terms of service | Nebius terms-update notice, no action in the mail itself | logged
+- 2026-10-22 18:39 | notification | github.com | [giovf/rorororo] Run failed: fetch relay - main (006e4c6) | fetch relay workflow failed after 15s with 2 annotations (failure with steps; failing step not named in the mail, run 39833236413) | logged
