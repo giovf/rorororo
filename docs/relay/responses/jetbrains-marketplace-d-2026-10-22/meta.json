@@ -1,0 +1,253 @@
+{
+  "request": "jetbrains-marketplace-d-2026-10-22",
+  "fetched_at": "2026-10-22T17:34:20.082Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/9707/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:09.313Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/9707/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "1.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/13905/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:10.066Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/13905/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/16988/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:10.651Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/16988/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "3.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/12887/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:11.234Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/12887/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "4.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/18151/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:11.819Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/18151/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/24816/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:12.403Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/24816/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "6.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/21289/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:12.985Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/21289/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "7.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/10828/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:13.567Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/10828/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "8.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/25828/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:14.150Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/25828/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "9.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/20243/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:14.733Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/20243/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "10.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/23115/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:15.314Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/23115/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "11.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/14053/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:15.896Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/14053/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "12.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/28734/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:16.477Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/28734/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "13.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/21314/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:17.059Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/21314/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "14.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/19660/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:17.641Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/19660/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "15.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/16160/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:18.223Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/16160/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "16.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/22202/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:18.805Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/22202/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "17.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/13841/pricing?family=intellij",
+      "fetched_at": "2026-10-22T17:34:19.386Z",
+      "status": 400,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/13841/pricing?family=intellij",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "18.json",
+      "bytes": 62,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/api/plugins/9707",
+      "fetched_at": "2026-10-22T17:34:19.967Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/api/plugins/9707",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "19.json",
+      "bytes": 7018,
+      "truncated": false
+    }
+  ]
+}
