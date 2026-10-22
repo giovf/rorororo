@@ -1,0 +1,28 @@
+# new-ventures spike-framer-marketplace-paid-plugins (burn-down 2026-10-22): paid plugin pages, Price filter, payout and publishing terms
+GET RENDER https://www.framer.com/marketplace/plugins/categories/utilities/
+GET RENDER https://www.framer.com/marketplace/plugins/?price=paid
+GET https://www.framer.com/help/articles/how-to-publish-a-plugin/
+GET https://www.framer.com/help/articles/how-to-sell-a-plugin/
+GET https://www.framer.com/help/articles/marketplace-payouts/
+GET https://www.framer.com/help/articles/how-to-get-paid-as-a-creator/
+GET https://www.framer.com/legal/
+GET https://www.framer.com/legal/marketplace-terms/
+GET https://www.framer.com/legal/creator-program-terms/
+GET https://www.framer.com/marketplace/plugins/image-lightbox-gallery/
+GET https://www.framer.com/marketplace/plugins/imagegen/
+GET https://www.framer.com/marketplace/plugins/josie/
+GET https://www.framer.com/marketplace/plugins/the-design-futurist/
+GET https://www.framer.com/marketplace/plugins/3d-pdf-flipbook/
+GET https://www.framer.com/marketplace/plugins/frameship/
+GET https://www.framer.com/marketplace/plugins/mcp/
+GET https://www.framer.com/marketplace/plugins/kompa/
+GET https://www.framer.com/marketplace/plugins/framer-forms-connect/
+GET https://www.framer.com/marketplace/plugins/3d-shapes/
+GET https://www.framer.com/marketplace/plugins/edit-image/
+GET https://www.framer.com/marketplace/plugins/context-picker/
+GET https://www.framer.com/marketplace/plugins/lantis-translate-your-site/
+GET https://www.framer.com/marketplace/plugins/colorize/
+GET https://www.framer.com/marketplace/plugins/frameloc/
+GET https://www.framer.com/marketplace/plugins/frameauth/
+GET https://www.framer.com/marketplace/plugins/text-effects-kit/
+GET https://www.framer.com/marketplace/plugins/asset-analyzer/
