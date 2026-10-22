@@ -1489,3 +1489,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 18:33 | burn-down | Niche: 19 paid templates US$9-149 in Taxes/Side Hustle/Cash Flow show 0 ratings, <= 1 install each
 - 2026-10-22 18:33 | burn-down | Call: park (no visible buyers for paid work); re-read 2026-12-01; idea parked in the exchange
 - 2026-10-22 18:33 | burn-down | Stopping: WordPress + Notion spikes built; spike-wix-app-market-paid-apps left unclaimed for 19:00
+- 2026-10-22 18:39 | burn-down | Wix spike pre-fetched, not claimed: FAQ says US$200 threshold rolls over; Verified = 60 d + 40 Premium installs
+- 2026-10-22 18:39 | burn-down | Wix App Market category/search pages are client-rendered shells (0 app links); the listing API is unread
