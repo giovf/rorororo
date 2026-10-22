@@ -1515,3 +1515,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 20:20 | burn-down | Relay: RENDER parsed (GET only; HEAD/POST/RANGE refused), needsRender gate, 5 line tests added
 - 2026-10-22 20:20 | burn-down | docs/ci/fetch-relay.yml: npm ci + Chromium only when a request carries RENDER; job timeout 20 min
 - 2026-10-22 20:20 | burn-down | Local probe: MCP registry home renders to 188 KB DOM against a 24 KB raw shell; README, SCHEDULERS
+- 2026-10-22 20:30 | burn-down | gankdat-metrics.yml first run: success (20:13 dispatch, run 258, 4 min; after the 19:44 installer)
+- 2026-10-22 20:30 | burn-down | workflow-installer.yml first run: success (push run 62 at 20:17 installed fetch-relay.yml; 19:44 install)
+- 2026-10-22 20:30 | burn-down | fetch-relay.yml first run: success (push run 148 at 20:18, 67 s with Chromium; after the 20:17 install)
+- 2026-10-22 20:30 | burn-down | Relay probe a: Wix forms page rendered to 484 KB, title ok, network idle, but 0 app links (as raw)
+- 2026-10-22 20:30 | burn-down | Relay: RENDER now records requests, failed calls and console errors; scrolls once, settles 1.5 s

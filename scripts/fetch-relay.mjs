@@ -43,6 +43,12 @@ const TIMEOUT_MS = 90_000;
  * keeps polling (analytics, chat widgets) is saved as it stands then, not failed. */
 const RENDER_IDLE_MS = 30_000;
 const RENDER_BLOCKED_RESOURCES = new Set(['image', 'media', 'font']);
+/** After the scroll-through, how long the network gets to go idle again; then a fixed settle for
+ * frameworks that paint a tick after their last response. */
+const RENDER_SCROLL_IDLE_MS = 10_000;
+const RENDER_SETTLE_MS = 1_500;
+/** Failed requests and console errors kept per rendered page in meta.json. */
+const RENDER_DIAG_CAP = 20;
 const USER_AGENT =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36 gankdat-relay';
 /** Allowed hosts live in docs/relay/hosts.txt (suffixes `.x` match x and any subdomain; exact hosts otherwise). */
@@ -84,9 +90,16 @@ function saveBody(outDir, index, ext, body) {
   return { file, bytes: truncated ? MAX_BYTES : body.length, truncated };
 }
 
-/** A RENDER line: the page as Chromium renders it, after the network goes idle (or RENDER_IDLE_MS). */
+/** A RENDER line: the page as Chromium renders it, after the network goes idle (or RENDER_IDLE_MS),
+ * one programmatic scroll to the bottom (lazy sections) and a short settle. `rendered` in meta.json
+ * records what happened — request count, failed or 4xx/5xx XHR/fetch calls, console errors — so a
+ * shell that stays a shell can be read (bot wall, blocked API, consent gate) instead of guessed at. */
 async function renderOne(req, url, outDir, index, meta) {
   const context = await (await browser()).newContext({ userAgent: USER_AGENT });
+  const rendered = { network_idle: true, requests: 0, failed: [], console_errors: [] };
+  const note = (list, text) => {
+    if (list.length < RENDER_DIAG_CAP) list.push(text.slice(0, 200));
+  };
   try {
     await context.route('**/*', (route) =>
       RENDER_BLOCKED_RESOURCES.has(route.request().resourceType())
@@ -94,16 +107,44 @@ async function renderOne(req, url, outDir, index, meta) {
         : route.continue(),
     );
     const page = await context.newPage();
-    const res = await page.goto(url.href, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
-    let idle = true;
-    await page.waitForLoadState('networkidle', { timeout: RENDER_IDLE_MS }).catch(() => {
-      idle = false;
+    page.on('request', () => rendered.requests++);
+    page.on('requestfailed', (r) => {
+      if (!RENDER_BLOCKED_RESOURCES.has(r.resourceType()))
+        note(rendered.failed, `${r.method()} ${r.url()} → ${r.failure()?.errorText ?? 'failed'}`);
     });
+    page.on('response', (r) => {
+      const type = r.request().resourceType();
+      if (r.status() >= 400 && (type === 'xhr' || type === 'fetch' || type === 'document'))
+        note(rendered.failed, `${r.request().method()} ${r.url()} → ${r.status()}`);
+    });
+    page.on('console', (m) => {
+      if (m.type() === 'error') note(rendered.console_errors, m.text());
+    });
+    page.on('pageerror', (e) => note(rendered.console_errors, `uncaught: ${e.message}`));
+    const res = await page.goto(url.href, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
+    const idle = (ms) =>
+      page.waitForLoadState('networkidle', { timeout: ms }).catch(() => {
+        rendered.network_idle = false;
+      });
+    await idle(RENDER_IDLE_MS);
+    // One scroll to the bottom in viewport steps: lists that render on intersection load; no clicks, no input.
+    /* eslint-disable no-undef -- runs in the page, where window and document exist */
+    await page.evaluate(async () => {
+      const step = window.innerHeight;
+      for (let y = 0; y < document.documentElement.scrollHeight && y < 20 * step; y += step) {
+        window.scrollTo(0, y);
+        await new Promise((r) => setTimeout(r, 100));
+      }
+      window.scrollTo(0, 0);
+    });
+    /* eslint-enable no-undef */
+    await idle(RENDER_SCROLL_IDLE_MS);
+    await page.waitForTimeout(RENDER_SETTLE_MS);
     const html = Buffer.from(await page.content(), 'utf8');
     meta.status = res?.status() ?? null;
     meta.final_url = page.url();
     meta.title = await page.title();
-    meta.rendered = { network_idle: idle };
+    meta.rendered = rendered;
     if (res) {
       meta.headers = Object.fromEntries(
         ['content-type', 'last-modified', 'etag']

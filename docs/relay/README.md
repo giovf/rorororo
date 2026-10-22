@@ -31,8 +31,11 @@ GitHub runner to fetch for it:
    script tags and zero app links; the Notion gallery only through page-embedded data), after a plain
    GET has shown the data is not in the raw body. GET only (RENDER with HEAD, POST or RANGE is refused
    on the line), same allowlist and 8 MB cap, a fresh context per line (no cookies or storage carried
-   in, no clicks, scrolls or form input: a page that paginates on scroll yields its first page), and
-   images, media and fonts are not loaded. A request file with a RENDER line costs the run `npm ci`
+   in, no clicks or form input; the page is scrolled once to the bottom so sections that render on
+   intersection load, then left 1.5 s to settle), and images, media and fonts are not loaded.
+   `meta.json`'s `rendered` block says what happened — `requests` made, `failed` (network failures and
+   4xx/5xx XHR, fetch or document responses) and `console_errors` — so a page that stays a shell can be
+   read for its cause (a blocked listing API, a bot wall, a consent gate) rather than guessed at. A request file with a RENDER line costs the run `npm ci`
    plus a Chromium install (about 1–2 min) — an ordinary request stays at ~15 s — so put the RENDER
    lines of one round in one file and keep plain GETs elsewhere when the round is time-critical.
 2. Commit and push just that file (`relay: <name>`); it is the one exception to "push once at the end".
