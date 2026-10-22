@@ -1508,3 +1508,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 19:46 | burn-down | relay README: a `Commit responses` ref-lock failure is the push race, re-run by the next request push
 - 2026-10-22 19:46 | burn-down | Queue: foundry workflow-push-retry-everywhere done; the installer commit's first runs are the next slot's check
 - 2026-10-22 19:48 | burn-down | Stopping: Wix spike parked, journal item dropped, foundry research + push retry built; rendered fetch left for 20:00
+- 2026-10-22 20:20 | burn-down | pr-relay.yml first run: success (20:13 dispatch, run 3, 30 s; after the 19:44 installer)
+- 2026-10-22 20:20 | burn-down | run-watchdog.yml first run: success (20:13 dispatch, run 162, 30 s; after the 19:44 installer)
+- 2026-10-22 20:20 | burn-down | owner-notes.yml first run: success (schedule run 587 at 20:10; after the 19:44 installer)
+- 2026-10-22 20:20 | burn-down | Relay: `GET RENDER <url>` renders a page in Chromium on the runner and saves the DOM as <n>.html
+- 2026-10-22 20:20 | burn-down | Relay: RENDER parsed (GET only; HEAD/POST/RANGE refused), needsRender gate, 5 line tests added
+- 2026-10-22 20:20 | burn-down | docs/ci/fetch-relay.yml: npm ci + Chromium only when a request carries RENDER; job timeout 20 min
+- 2026-10-22 20:20 | burn-down | Local probe: MCP registry home renders to 188 KB DOM against a 24 KB raw shell; README, SCHEDULERS

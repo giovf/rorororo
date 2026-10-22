@@ -2,6 +2,13 @@
 //
 //   [HEAD|GET] [RANGE=a-b] <https url>
 //   POST <https url> <json>              (foundry `relay-post-json`, 2026-10-14)
+//   [GET] RENDER <https url>             (foundry `relay-rendered-fetch`, 2026-10-22)
+//
+// A RENDER line opens the page in Playwright's Chromium on the runner and saves the rendered DOM
+// (`scripts/fetch-relay.mjs` renderOne) for shelves whose listing pages are client-rendered shells
+// (the Wix App Market category pages came back as 0.2–2.5 MB of script tags and zero app links,
+// 2026-10-22). GET only — RENDER with HEAD, POST or RANGE is refused on the line; the workflow
+// installs Chromium only when a request file carries one (`needsRender`).
 //
 // A POST line carries one JSON document after the URL — the rest of the line, so spaces inside the
 // JSON are fine. The body must parse, stay under POST_MAX_BYTES, and never look like a credential:
@@ -17,6 +24,8 @@ export const POST_MAX_BYTES = 4096;
 export interface RelayLine {
   method: 'GET' | 'HEAD' | 'POST';
   range?: string;
+  /** GET only: open the page in Chromium and save the rendered DOM instead of the raw body. */
+  render?: true;
   url: string;
   /** POST only: the JSON body exactly as written on the line. */
   body?: string;
@@ -86,6 +95,7 @@ export function parseLine(line: string): RelayLine | null {
   let rest = t;
   let method: RelayLine['method'] = 'GET';
   let range: string | undefined;
+  let render = false;
   for (;;) {
     const m = /^(\S+)(?:\s+|$)/.exec(rest);
     if (!m || m[0].length === rest.length) break; // the last token is the url
@@ -93,6 +103,7 @@ export function parseLine(line: string): RelayLine | null {
     const upper = token.toUpperCase();
     if (upper === 'GET' || upper === 'HEAD' || upper === 'POST') method = upper;
     else if (upper.startsWith('RANGE=')) range = token.slice(6);
+    else if (upper === 'RENDER') render = true;
     else break;
     rest = rest.slice(m[0].length);
   }
@@ -102,6 +113,12 @@ export function parseLine(line: string): RelayLine | null {
   if (method !== 'POST') {
     const out: RelayLine = { method, url: tail ? `${url} ${tail}` : url };
     if (range) out.range = range;
+    if (render) {
+      out.render = true;
+      if (method === 'HEAD') out.error = 'RENDER applies to GET only, not HEAD';
+      else if (range)
+        out.error = 'RANGE does not apply to RENDER (the rendered DOM is capped at 8 MB)';
+    }
     return out;
   }
   const out: RelayLine = { method: 'POST', url };
@@ -109,7 +126,19 @@ export function parseLine(line: string): RelayLine | null {
   const error = postBodyError(tail);
   if (error) out.error = error;
   if (range) out.error ??= 'RANGE does not apply to POST';
+  if (render) out.error ??= 'RENDER applies to GET only, not POST';
   return out;
+}
+
+/**
+ * True when a request file holds at least one RENDER line (ignoring comments and malformed lines):
+ * the `fetch relay` workflow installs Chromium only then, so an ordinary relay run stays at ~15 s.
+ */
+export function needsRender(text: string): boolean {
+  return text.split('\n').some((line) => {
+    const parsed = parseLine(line);
+    return parsed !== null && parsed.render === true && !parsed.error;
+  });
 }
 
 /** An allowlist entry: an exact host, or a `.suffix` that matches the suffix itself and any subdomain. */

@@ -22,6 +22,19 @@ GitHub runner to fetch for it:
    still fails carries `retries` and the final status in `meta.json`. Public JSON-RPC endpoints
    (`mainnet.base.org`) throttle a burst of log queries anyway, so spread wide reads over the
    allowlisted RPC hosts rather than firing 40 lines at one.
+   Rendered pages (2026-10-22, foundry `relay-rendered-fetch`): `GET RENDER <https url>` (or just
+   `RENDER <url>`) opens the page in Playwright's Chromium on the runner, waits for the network to go
+   idle (30 s cap after the document loaded; a page that keeps polling is saved as it stands and
+   `meta.json` says `rendered.network_idle: false`) and saves the rendered DOM as `<n>.html` —
+   `meta.json` carries `title`, `status` and `final_url` as for a GET. Use it for shelves whose listing
+   pages are client-rendered shells (the Wix App Market category pages came back as 0.2–2.5 MB of
+   script tags and zero app links; the Notion gallery only through page-embedded data), after a plain
+   GET has shown the data is not in the raw body. GET only (RENDER with HEAD, POST or RANGE is refused
+   on the line), same allowlist and 8 MB cap, a fresh context per line (no cookies or storage carried
+   in, no clicks, scrolls or form input: a page that paginates on scroll yields its first page), and
+   images, media and fonts are not loaded. A request file with a RENDER line costs the run `npm ci`
+   plus a Chromium install (about 1–2 min) — an ordinary request stays at ~15 s — so put the RENDER
+   lines of one round in one file and keep plain GETs elsewhere when the round is time-critical.
 2. Commit and push just that file (`relay: <name>`); it is the one exception to "push once at the end".
 3. Wait for the response **commit**, not for a fixed time: GitHub's hosted runners queue (on 2026-10-05 a request
    sat `queued` for 16+ minutes with nothing else running; two minutes is the floor, not the norm). Poll, and do
@@ -40,7 +53,7 @@ GitHub runner to fetch for it:
 4. Read what you need, then carry on. Responses are pruned after 7 days.
 
 Rules: only hosts listed in `docs/relay/hosts.txt` (public data and store pages; one host or `.suffix` per line, since 2026-10-16 a data file so adding one is not a code push);
-GET and POST responses are capped at 8 MB — use `RANGE` for large files and `HEAD` to check existence;
+GET, RENDER and POST responses are capped at 8 MB — use `RANGE` for large files and `HEAD` to check existence;
 never put a credential in a request; everything fetched lands in a public repo, so public data
 only. Add a host to `docs/relay/hosts.txt` in the same commit as the source that needs it.
 Runs are serialised (`concurrency: fetch-relay`, 2026-10-18): a second request pushed while a run is
