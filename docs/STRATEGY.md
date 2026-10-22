@@ -1614,6 +1614,17 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   macros at US$0.10–0.69), so by the item's rule it parks — but the shelf passes every gate nothing else has, so the call
   is promote reshaped (a Forge-only Confluence text-render macro, ≈ 3 days, score ≈ 1 × weight 2) for the 2026-10-28
   exchange to decide; parked in the exchange as `atlassian-marketplace-forge-apps`, no owner action raised today.
+- 2026-10-22 build: `new-ventures` researched (emptied by the Atlassian spike this morning): four shelf spikes seeded for the
+  slots before the 2026-10-28 exchange — `spike-jetbrains-marketplace-paid-plugins` (6: JetBrains sells paid plugins as the
+  merchant at a 15 % commission with VAT handled and bank payout within 30 days of month end; the keyless Marketplace API
+  makes small-vendor paid plugins countable; sole-trader eligibility is the open question), `spike-wordpress-org-freemius-shelf`
+  (5: the directory's public active-install counts plus Freemius as merchant of record at 4.7 % + gateway),
+  `spike-notion-marketplace-paid-templates` (5: 8 % + US$0.40, Stripe payouts at US$20, the cheapest build of any shelf) and
+  `spike-wix-app-market-paid-apps` (4: 100 % of revenue for 12 months then 80 %, but a US$200 per-app monthly payout floor).
+  The thread: every register sibling since 10-17 parked on 0 external calls, while the Atlassian spike passed eligibility,
+  billing and fee and failed only on unit price — so the next reads are shelves with billing attached and higher unit prices.
+  Also this slot: the gankdat trademark-journal claim released (research took precedence), bounty-board.yml's Node 24 first
+  run recorded green, and the Meta hackathon application marked done on the 10-21 approval mail.
 - 2026-10-22 burn-down: gankdat `wave-log-cron-query-blind` closed — the observability cron query is not blind (10-21/22 rows read
   the wave's outcome and wall time, timestamp = invocation end) but not complete (10-18..10-20 no row for a wave whose D1 rows
   exist), so the clause keeps `no invocation logged` and the progress marker stays the silent-wave reading; a matched cron now
