@@ -1478,3 +1478,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 17:40 | burn-down | demo-video.yml first run: none since the 10-20 install (never dispatched by a routine; read from its own runs)
 - 2026-10-22 17:40 | burn-down | dependabot.yml first run: none since the 10-20 install (pull_request only; the next Dependabot PR runs it)
 - 2026-10-22 17:41 | burn-down | Stopping: wave-log item + JetBrains spike built; next spike-wordpress-org-freemius-shelf left for 18:00
+- 2026-10-22 18:23 | burn-down | Spike wordpress-org-freemius-shelf done: five relay rounds, Freemius docs, directory guidelines, plugins_api
+- 2026-10-22 18:23 | burn-down | Read: an individual sells on Freemius, UK on the payout list; 3.8 % + 50¢ + 2.3 % WP + ~3.5 % gateway
+- 2026-10-22 18:23 | burn-down | Read: US$100 payout floor on the 10th of the second month; guideline 5 wants a complete free build
+- 2026-10-22 18:23 | burn-down | Niche: accessibility 3 small-vendor pro tiers US$69-259 on 10k-60k; checkout rules 3 at US$39-€99
+- 2026-10-22 18:23 | burn-down | Call: promote reshaped (UK business checkout fields, free + US$39/yr pro); exchange 2026-10-28 ranks
+- 2026-10-22 18:23 | burn-down | relay hosts: 9 vendor price pages added; idea wordpress-org-freemius-plugins parked in the exchange

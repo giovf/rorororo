@@ -1633,3 +1633,9 @@ PECR; a website-building service is human-in-the-loop). Proof: paid runs + filte
   words (natural person, trader declaration), billing and fee (85 %, US$200 floor, VAT handled) and demand (494 paid plugins, 83 from one-
   or two-listing vendors at ≥ 2,000 downloads, 14 in ≤ 1-week editor-utility shapes); the price bar is unread by the API (one first-hand
   €120/year), so the call is promote reshaped: the 2026-10-28 exchange checks 14 pricing tabs and opens a `jetbrains-plugins` queue or parks.
+- 2026-10-22 burn-down: new-ventures `spike-wordpress-org-freemius-shelf` done — the shelf passes eligibility on Freemius's own FAQ (an
+  individual sells without a company or VAT registration; the UK is on the payout list), billing and fee (≈ 9.6 % + 50¢ all-in on the
+  current plan, merchant of record, US$100 floor paid on the 10th of the second month) and demand (plugins_api: three small-vendor pro
+  tiers at US$69–259 in accessibility helpers and three at US$39–€99 in WooCommerce checkout utilities, on 10k–60k installs); VAT
+  validation and cookie consent belong to multi-plugin shops and SaaS. Call: promote reshaped — the 2026-10-28 exchange ranks it with
+  the Atlassian and JetBrains shelves; first item UK business checkout fields for WooCommerce (free, complete) + a US$39/year pro add-on.
