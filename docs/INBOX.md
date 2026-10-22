@@ -204,3 +204,7 @@
 - 2026-10-22 08:27 | notification | ernest-brooks.com | Premium Canary Wharf Living | A Property Match from Ernest-Brooks International | Estate-agent marketing mail, unrelated to Foundry | logged
 - 2026-10-22 08:47 | notification | alectolegal.com | Re: Conveyancing | Personal mail from a law firm, unrelated to Foundry; left unread, not opened | logged
 - 2026-10-22 09:03 | notification | m.procook.co.uk | ProCook has officially arrived in St Paul's | Retail newsletter, unrelated to Foundry | logged
+- 2026-10-22 09:33 | notification | news.majestic.co.uk | Open for your NEW £20 voucher | Wine-retailer marketing mail, unrelated to Foundry | logged
+- 2026-10-22 09:45 | notification | mail.boots.com | Today only: 4 for 2 in store on Christmas gifts | Retail newsletter, unrelated to Foundry | logged
+- 2026-10-22 09:57 | notification | ayjsolicitors.com | Next Steps - Initial Consultation : AY&J Solicitors. | Personal mail from a solicitors' firm, unrelated to Foundry; left unread, not opened | logged
+- 2026-10-22 10:01 | notification | stirlingackroyd.com | Property Match from Stirling Ackroyd | Estate-agent marketing mail, unrelated to Foundry | logged
