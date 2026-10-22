@@ -1540,3 +1540,15 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 20:48 | burn-down | docs/ci/fetch-relay.yml: Chromium cached by Playwright version; install 6 min and fetch 12 min step timeouts
 - 2026-10-22 20:48 | burn-down | Relay run 151 finished at 20:46 (14 min, all in the install step): 28 Framer pages on main for the spike
 - 2026-10-22 20:48 | burn-down | Seen: paid plugins price on their own pages (US$14/project, $29-89 one-time, $8.99/mo); 6 help/legal URLs 404
+- 2026-10-22 21:30 | burn-down | Spike framer-marketplace-paid-plugins done: 3 relay rounds, Community Terms v1.0, 43 plugin pages, 3 help pages
+- 2026-10-22 21:30 | burn-down | Read: Terms §6.3 'Framer does not process, collect, hold, or disburse any payments'; the creator bills; 0 % = directory
+- 2026-10-22 21:30 | burn-down | Read: publish is immediate, no review; §2.7 paid channel disclosed in the listing; taxes, support, refunds the creator's
+- 2026-10-22 21:30 | burn-down | Niche: 14 paid plugins priced (11 on-page): US$14-29 per project, US$19 lifetime Pro twice; 74 of 150 labelled Paid
+- 2026-10-22 21:30 | burn-down | Niche: no install, like or rating count anywhere on the shelf; 13 of 32 creators sell a single listing
+- 2026-10-22 21:30 | burn-down | Call: promote reshaped (styles half of the Figma toolkit, free + US$19 via our Stripe MoR); exchange 10-28 reads Styles
+- 2026-10-22 21:30 | burn-down | Relay run 153 failed: Browser step timed out at 6 min inside apt-get (26 MB of fonts) from playwright --with-deps
+- 2026-10-22 21:30 | burn-down | docs/ci/fetch-relay.yml: `npx playwright install chromium` only, never --with-deps; round b re-sent GET-only (15 s)
+- 2026-10-22 21:30 | burn-down | fetch-relay.yml first run: success (21:14 dispatch, run 152, 13 s; after the 20:44 installer)
+- 2026-10-22 21:30 | burn-down | Framer AUP §2 forbids robots: tonight's rounds were one-off reads; no recurring fetch of framer.com is scheduled
+- 2026-10-22 21:30 | burn-down | new-ventures emptied (12 done) and set needs_research (cooling, researched today); no owner action raised
+- 2026-10-22 21:33 | burn-down | Stopping: Framer spike built, relay fix filed; pipeline starved and cooled, tonight's pre-research done
