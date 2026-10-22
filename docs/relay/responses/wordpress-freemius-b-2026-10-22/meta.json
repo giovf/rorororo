@@ -1,0 +1,156 @@
+{
+  "request": "wordpress-freemius-b-2026-10-22",
+  "fetched_at": "2026-10-22T18:14:06.519Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://freemius.com/help/documentation/getting-started/our-pricing.md",
+      "fetched_at": "2026-10-22T18:13:58.609Z",
+      "status": 200,
+      "final_url": "https://freemius.com/help/documentation/getting-started/our-pricing.md",
+      "headers": {
+        "content-length": "12558",
+        "last-modified": "Tue, 20 Oct 2026 10:52:50 GMT"
+      },
+      "file": "1.bin",
+      "bytes": 12558,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://freemius.com/help/documentation/selling-with-freemius/your-earnings.md",
+      "fetched_at": "2026-10-22T18:13:59.572Z",
+      "status": 200,
+      "final_url": "https://freemius.com/help/documentation/selling-with-freemius/your-earnings.md",
+      "headers": {
+        "content-length": "11792",
+        "last-modified": "Tue, 20 Oct 2026 10:52:50 GMT"
+      },
+      "file": "2.bin",
+      "bytes": 11792,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://freemius.com/help/documentation/selling-with-freemius/supported-countries.md",
+      "fetched_at": "2026-10-22T18:14:00.168Z",
+      "status": 200,
+      "final_url": "https://freemius.com/help/documentation/selling-with-freemius/supported-countries.md",
+      "headers": {
+        "content-length": "5966",
+        "last-modified": "Tue, 20 Oct 2026 10:52:50 GMT"
+      },
+      "file": "3.bin",
+      "bytes": 5966,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://freemius.com/help/documentation/selling-with-freemius/so-what-does-freemius-do.md",
+      "fetched_at": "2026-10-22T18:14:00.781Z",
+      "status": 200,
+      "final_url": "https://freemius.com/help/documentation/selling-with-freemius/so-what-does-freemius-do.md",
+      "headers": {
+        "content-length": "3276",
+        "last-modified": "Tue, 20 Oct 2026 10:52:50 GMT"
+      },
+      "file": "4.bin",
+      "bytes": 3276,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://freemius.com/help/faq/all.md",
+      "fetched_at": "2026-10-22T18:14:01.360Z",
+      "status": 200,
+      "final_url": "https://freemius.com/help/faq/all.md",
+      "headers": {
+        "content-length": "19285",
+        "last-modified": "Tue, 20 Oct 2026 10:52:50 GMT"
+      },
+      "file": "5.bin",
+      "bytes": 19285,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://freemius.com/help/faq/sales.md",
+      "fetched_at": "2026-10-22T18:14:02.003Z",
+      "status": 200,
+      "final_url": "https://freemius.com/help/faq/sales.md",
+      "headers": {
+        "content-length": "9649",
+        "last-modified": "Tue, 20 Oct 2026 10:52:50 GMT"
+      },
+      "file": "6.bin",
+      "bytes": 9649,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://freemius.com/help/payout-methods/",
+      "fetched_at": "2026-10-22T18:14:02.582Z",
+      "status": 200,
+      "final_url": "https://freemius.com/help/faq/all/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Tue, 20 Oct 2026 10:52:50 GMT"
+      },
+      "file": "7.html",
+      "bytes": 81029,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://freemius.com/new-pricing/",
+      "fetched_at": "2026-10-22T18:14:03.575Z",
+      "status": 200,
+      "final_url": "https://freemius.com/pricing/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 449944,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://wordpress.org/plugins/developers/",
+      "fetched_at": "2026-10-22T18:14:04.409Z",
+      "status": 200,
+      "final_url": "https://wordpress.org/plugins/developers/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.html",
+      "bytes": 171950,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://wordpress.org/plugins/about/guidelines/",
+      "fetched_at": "2026-10-22T18:14:05.379Z",
+      "status": 200,
+      "final_url": "https://wordpress.org/plugins/developers/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "10.html",
+      "bytes": 171950,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines.md",
+      "fetched_at": "2026-10-22T18:14:05.976Z",
+      "status": 404,
+      "final_url": "https://developer.wordpress.org/plugins/wordpress-org/detailed-plugin-guidelines.md",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "11.html",
+      "bytes": 132430,
+      "truncated": false
+    }
+  ]
+}

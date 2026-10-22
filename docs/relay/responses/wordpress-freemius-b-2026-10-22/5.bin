@@ -1,0 +1,223 @@
+# Popular
+
+## What kind of products can I sell with Freemius?[​](#what-kind-of-products-can-i-sell-with-freemius "Direct link to What kind of products can I sell with Freemius?")
+
+You can sell any Software-as-a-Service (SaaS) or downloadable or static software. This includes, for example, any cloud-based software application accessed via the web, desktop or mobile apps, Chrome extensions, etc. See the full list [here](https://freemius.com/help/help/documentation/selling-with-freemius/allowed-prohibited-products/.md).
+
+## Do I need a company to start selling my SaaS?[​](#do-i-need-a-company-to-start-selling-my-saas "Direct link to Do I need a company to start selling my SaaS?")
+
+No. You can start selling as an individual. Freemius handles payments, taxes, and compliance on your behalf, so you don't need to:
+
+* Open a company
+* Register for VAT
+* Set up payment processors
+* Many makers start this way and formalize later
+
+## When should I choose an MoR like Freemius over Stripe or Paddle?[​](#when-should-i-choose-an-mor-like-freemius-over-stripe-or-paddle "Direct link to When should I choose an MoR like Freemius over Stripe or Paddle?")
+
+Use an MoR when you want to avoid managing tax compliance, legal liability, and payment operations across regions.
+
+Stripe gives you full control but requires you to handle taxes and compliance; Paddle and Freemius act as MoRs, with Freemius being more tailored to SaaS, plugins, and software products.
+
+## Can I use Freemius with Lovable?[​](#can-i-use-freemius-with-lovable "Direct link to Can I use Freemius with Lovable?")
+
+Yes! Freemius integrates with Lovable using one prompt. See more details [here](https://freemius.com/help/help/documentation/ai/lovable/.md)
+
+You can use that prompt to generate a working checkout + subscription flow inside your Lovable app, including payments, licensing, and webhooks. This lets you skip building billing infrastructure while Freemius handles subscriptions, global taxes, and compliance as a Merchant of Record.
+
+## Will you share the captured emails with someone else?[​](#will-you-share-the-captured-emails-with-someone-else "Direct link to Will you share the captured emails with someone else?")
+
+Your data is safe and sound. We will never-ever, never-ever share your captured user emails with any 3rd party.
+
+## What payment methods can I accept with Freemius?[​](#what-payment-methods-can-i-accept-with-freemius "Direct link to What payment methods can I accept with Freemius?")
+
+We use iDeal (Netherlands), Stripe and PayPal, and therefore accept all major credit cards and PayPal payments. See the list of [supported countries](https://freemius.com/help/help/documentation/selling-with-freemius/supported-countries/.md).
+
+## Do I need to set up a gateway to sell with Freemius?[​](#do-i-need-to-set-up-a-gateway-to-sell-with-freemius "Direct link to Do I need to set up a gateway to sell with Freemius?")
+
+Nope. No need for that because Freemius serves as your reseller.
+
+## What currencies do you support?[​](#what-currencies-do-you-support "Direct link to What currencies do you support?")
+
+With Freemius, you can sell in currencies like:
+
+* USD (US dollars)
+* GBP (British pounds)
+* EUR (euros)
+* CAD (Canadian dollars)
+* AUD (Australian dollars)
+* ILS (Israeli new shekels)
+* PLN (Polish zloty)
+* CHF (Swiss francs)
+* RSD (Serbian dinars)
+
+Earnings from EUR and GBP can be configured to be paid separately in any supported payout currency. Earnings from other currencies are added to the USD balance at the time of purchase and are paid out through the payout method set for USD.
+
+Learn more about [supported currencies](https://freemius.com/help/help/documentation/selling-with-freemius/multi-currency/.md) and [payout methods](https://freemius.com/help/help/documentation/selling-with-freemius/your-earnings/.md).
+
+## Does Freemius store customer credit card numbers on Freemius servers?[​](#does-freemius-store-customer-credit-card-numbers-on-freemius-servers "Direct link to Does Freemius store customer credit card numbers on Freemius servers?")
+
+We aren't crazy 🙂 Credit Cards do not even “touch” our servers and “speak” directly to Stripe, a well trusted and secure gateway.
+
+## Is Freemius Checkout PCI compliant?[​](#is-freemius-checkout-pci-compliant "Direct link to Is Freemius Checkout PCI compliant?")
+
+Yes, we are PCI compliant; we use PayPal Express Checkout and Stripe.js, and our checkout is secured with an HTTPS protocol.
+
+## Is Freemius In-App/Dashboard checkout PCI compliant?[​](#is-freemius-in-appdashboard-checkout-pci-compliant "Direct link to Is Freemius In-App/Dashboard checkout PCI compliant?")
+
+Yes. Whether the housing site runs securely over HTTPS or not, our In-Dashboard Checkout is loaded securely via a PCI compliant HTTPS iframe.
+
+## Can I customize the in-dashboard pricing and checkout pages?[​](#can-i-customize-the-in-dashboard-pricing-and-checkout-pages "Direct link to Can I customize the in-dashboard pricing and checkout pages?")
+
+The pricing page is automatically generated and styled by Freemius, following WordPress admin dashboard design practices. We make sure it looks natural and optimized for best conversation results.
+
+We have years of experience optimizing conversion, and we use data to continuously improve on the pricing page.
+
+We do provide an option to add custom CSS stylesheets to enable personalization.
+
+You can add those stylesheets in ***Plans*** -> **Customization**:
+
+![Freemius Developer Dashboard - Plans page with customization options for the in-dashboard and checkout stylesheets](/help/assets/ideal-img/plans.b1dc295.480.png)
+
+> Note: For now, we do not recommend using custom CSS since changes in the page HTML structure might break your styles. We'll try to communicate any changes in the HTML DOM. Having said that, and for the sake of agile development, we do not guarantee notifying you about any changes – it's up to you to monitor changes.
+
+## Do you support coupons?[​](#do-you-support-coupons "Direct link to Do you support coupons?")
+
+Yes – we support absolute amounts and percentage based [coupons](https://freemius.com/help/help/documentation/selling-with-freemius/coupon-discount/.md). You can set up the effective date range of a coupon's validity, whether the discount should apply for all payments or only for the initial payment, and multiple customization options.
+
+## Does Freemius support EU VAT?[​](#does-freemius-support-eu-vat "Direct link to Does Freemius support EU VAT?")
+
+Yes. Avoid the hassles of EU VAT compliance by having Freemius handle VAT collection, compliance and payments. Utilize support for real-time VAT ID validation and exemption when selling to businesses.
+
+## How much do I have to generate in order volume using Freemius before I can get paid?[​](#how-much-do-i-have-to-generate-in-order-volume-using-freemius-before-i-can-get-paid "Direct link to How much do I have to generate in order volume using Freemius before I can get paid?")
+
+The minimum account balance required for payment is $100.00.
+
+## Can I refund my customers?[​](#can-i-refund-my-customers "Direct link to Can I refund my customers?")
+
+You can refund transactions up to 30 days after the transaction was successfully processed and payment was created.
+
+We currently only offer full refunds (no partial refunds).
+
+If you'd like to refund a customer after the 30-day refund window is over, we recommend resolving the refund request with your own payment services.
+
+## Do you offer automated recurring/subscription-based billing?[​](#do-you-offer-automated-recurringsubscription-based-billing "Direct link to Do you offer automated recurring/subscription-based billing?")
+
+We support automatic renewals, and encourage software makers to sell subscriptions to build long term sustainable businesses. It increases renewal rate, removes the hassle of payment renewal and increases your bottom line. Freemius monthly and annual plans are both automatically renewed.
+
+## How long will it take until the customer sees the refund?[​](#how-long-will-it-take-until-the-customer-sees-the-refund "Direct link to How long will it take until the customer sees the refund?")
+
+While some refunds may be instantaneous, credit refunds can take 5–10 business days to show up in their customer's credit card statement.
+
+## What happens if a customer disputes a payment / chargeback?[​](#what-happens-if-a-customer-disputes-a-payment--chargeback "Direct link to What happens if a customer disputes a payment / chargeback?")
+
+The payment amount will be temporarily held and we'll contact you ASAP, giving you the chance to resolve the dispute directly with the customer.
+
+If the dispute isn't resolved, we'll step in and handle each case individually.
+
+* If the dispute is resolved in your favor, you are all good.
+* If the dispute is resolved in favor of the customer, the held amount will be refunded to the customer.
+* If it was a bank dispute (via Stripe), chargebacks incur a fee of $15, which will be deducted from your balance.
+
+## Do you offer specialized pricing for micro-transactions like on Apple's App Store or Google's Android Market?[​](#do-you-offer-specialized-pricing-for-micro-transactions-like-on-apples-app-store-or-googles-android-market "Direct link to Do you offer specialized pricing for micro-transactions like on Apple's App Store or Google's Android Market?")
+
+The recommended minimum price per transaction is $3.99. Otherwise, your processing fee will be as high as 30%-50% due to the minimum per transaction rates charged by Stripe and PayPal. [Email us](mailto:support@freemius.com) to discuss your specific situation.
+
+## How do you handle downloads and file hosting?[​](#how-do-you-handle-downloads-and-file-hosting "Direct link to How do you handle downloads and file hosting?")
+
+We securely deliver reliable downloads to valid license holders through our API, utilizing S3 hosting on AWS.
+
+## What provision is there for users to export their data if they wanted to leave the platform?[​](#what-provision-is-there-for-users-to-export-their-data-if-they-wanted-to-leave-the-platform "Direct link to What provision is there for users to export their data if they wanted to leave the platform?")
+
+Many marketplaces choose to hide their customers' data from developers and “lock them” inside the platform.
+
+We believe that the data belongs to the developers. If a developer decides to leave the platform for any reason whatsoever, he/she can easily download their user-list from our dashboard with one click, and they can access all of their data by leveraging our RESTful API for migration purposes.
+
+## Can I customize the ‘From' addresses of the email messages sent by Freemius?[​](#can-i-customize-the-from-addresses-of-the-email-messages-sent-by-freemius "Direct link to Can I customize the ‘From' addresses of the email messages sent by Freemius?")
+
+Yep – you can do that in the ‘Email Addresses' section.
+
+## Do you support affiliates?[​](#do-you-support-affiliates "Direct link to Do you support affiliates?")
+
+Yes, we do! Freemius comes with a fully-featured [Affiliation Platform](https://freemius.com/help/help/documentation/affiliate-platform/.md) which you can utilize to onboard and manage affiliates.
+
+## What does the license renewal process look like for customers?[​](#what-does-the-license-renewal-process-look-like-for-customers "Direct link to What does the license renewal process look like for customers?")
+
+All plans (besides lifetime / one-time plan) are automatically renewed. For annual plans, the customer will receive a friendly reminder email a month prior to the renewal date, giving them enough time to cancel the subscription, if they wish to do so.
+
+## How can I send emails to my users and customers?[​](#how-can-i-send-emails-to-my-users-and-customers "Direct link to How can I send emails to my users and customers?")
+
+We don't provide a custom emailing mechanism. We might offer this option in the future as an additional paid package.
+
+For now, the best way is to either download the ‘users list' file from the ***Users*** section in the dashboard,
+
+![Freemius Developer Dashboard - Download the user list](/help/assets/ideal-img/freemius-developer-dashboard-download-users-list.cb2836e.480.png)
+
+or leverage our [webhooks mechanism](https://freemius.com/help/help/documentation/saas/events-webhooks/.md) by pushing users' details, including email addresses, to mailing platforms such as MailChimp or Customer.io.
+
+## Does Freemius support prorating?[​](#does-freemius-support-prorating "Direct link to Does Freemius support prorating?")
+
+Proration handles the increase or decrease to the subscription price when a price changes during any period of a subscription. By default, [Freemius prorates plan updates](https://freemius.com/help/help/documentation/checkout/features/proration/.md) (upgrades or downgrades).
+
+## Can I offer a free trial to my users?[​](#can-i-offer-a-free-trial-to-my-users "Direct link to Can I offer a free trial to my users?")
+
+Yes. You can set a [trial period](https://freemius.com/help/help/documentation/selling-with-freemius/set-up-trials/.md#free-trial--without-a-payment-method) in your plan settings. Just make sure to turn the “Require Credit Card or PayPal” option off.
+
+## Can I offer a paid trial to my users?[​](#can-i-offer-a-paid-trial-to-my-users "Direct link to Can I offer a paid trial to my users?")
+
+Yes. You can offer a [Free Trial with a required payment method](https://freemius.com/help/help/documentation/selling-with-freemius/set-up-trials/.md#paid-trial--requiring-a-payment-method) by setting a trial period in your plan settings and then turning on the “Require Credit Card or PayPal” option.
+
+## Under the “Sites” menu, what is the difference between “Plan” and “Is Premium”?[​](#under-the-sites-menu-what-is-the-difference-between-plan-and-is-premium "Direct link to Under the “Sites” menu, what is the difference between “Plan” and “Is Premium”?")
+
+If you name your paid plan as **“Premium”**, you might get a little confused with the terminology.
+
+The data under the plan column shows the current plan of the install. **“Is Premium”** tells if that site is running the *free* or the *premium* code version of your module.
+
+## How to switch the language on the pricing and checkout pages in the dashboard?[​](#how-to-switch-the-language-on-the-pricing-and-checkout-pages-in-the-dashboard "Direct link to How to switch the language on the pricing and checkout pages in the dashboard?")
+
+You can append the [`language` query parameter](https://freemius.com/help/help/documentation/checkout/integration/freemius-checkout-buy-button/.md#language%20%7C%20locale) to the pricing and checkout page URLs. Adding more translations is part of our roadmap. Please [contact us](mailto:support@freemius.com) if you want to help us with translations or if you want to see a specific language supported.
+
+## Can I offer a discount on license renewals?[​](#can-i-offer-a-discount-on-license-renewals "Direct link to Can I offer a discount on license renewals?")
+
+Yes, you can. Keep in mind though, that our annual and monthly plans renew automatically.
+
+This means that customers don't have to take any proactive action to renew the license.
+
+In other words, you don't need to convince the customer to renew. The decision is whether to cancel the license or continue. Unless a customer is unhappy with your plugin or has stopped using it, a renewal discount has no significant effect on that decision.
+
+Therefore, as a rule of thumb, we do not recommend setting a discount for renewals unless your plugin does not provide a continued value (e.g. a migration plugin, or any one-time action plugin). In that case, maybe it is worth setting up a [lifetime price](https://freemius.com/blog/lifetime-license-for-wordpress-plugins-the-right-way/).
+
+## Can I upsell multi-site licenses?[​](#can-i-upsell-multi-site-licenses "Direct link to Can I upsell multi-site licenses?")
+
+Yes. You can set up custom *monthly*, *annual* and *lifetime* pricing for any amount of licenses.
+
+## Are there any additional fees for receiving payments through PayPal?[​](#are-there-any-additional-fees-for-receiving-payments-through-paypal "Direct link to Are there any additional fees for receiving payments through PayPal?")
+
+PayPal payment transfers to U.S.-based accounts are free. For payment transfers to non-U.S. accounts, PayPal incorporates a 2% fee (maximum of $20 USD).
+
+## What will my customers see on their Credit-Card and PayPal statement?[​](#what-will-my-customers-see-on-their-credit-card-and-paypal-statement "Direct link to What will my customers see on their Credit-Card and PayPal statement?")
+
+Customers who purchase your product through Freemius will receive a credit card statement showing your product's name.
+
+For PayPal transactions, the store name will appear as your product's name. However, PayPal email notifications will state Freemius and include your product description in the plan details. Unfortunately, PayPal does not offer a way to customize this further.
+
+## I received a subscription notification without a payment notification, what's going on?[​](#i-received-a-subscription-notification-without-a-payment-notification-whats-going-on "Direct link to I received a subscription notification without a payment notification, what's going on?")
+
+Due to the way PayPal's recurring profiles mechanism works, it can take up to 24 hours until Freemius receives the approval notification for the subscriptions' initial payment. To keep a smooth purchase experience for customers, Freemius will email the license key and the download link to the paid product – right away.
+
+To mitigate potential abuse, when a customer subscribes to your product the system will issue a 24-hour blocking license. Once we receive the payment notification from PayPal, the license will be extended based on the subscription billing cycle, and the blocking state of the license will be auto-adjusted based on the plan's configuration.
+
+We could have designed the upgrade process slightly differently, emailing the downloadable product only after the payment approval, but we decided that we aren't going to “break” a proper subscription UX just because of a small group of trolls that can abuse this PayPal flaw.
+
+## How can I get paid? How do I get my earnings?[​](#how-can-i-get-paid-how-do-i-get-my-earnings "Direct link to How can I get paid? How do I get my earnings?")
+
+There are currently four payment methods available for you to collect your earnings from Freemius:
+
+1. PayPal (default payment method, using PayPal MassPay)
+2. Payoneer
+3. Wire transfer (international and domestic / IBAN / SWIFT)
+4. Wise (formerly TransferWise)
+
+International wires can be converted to your local currency. Due to our high volumes we've managed to negotiate great terms with our bank for currency conversion-rates and a complete fee waiver on foreign-currency international wire.
+
+Learn more about the supported payment methods and how to set them up in the [Your Earnings](https://freemius.com/help/help/documentation/selling-with-freemius/your-earnings/.md) section.
