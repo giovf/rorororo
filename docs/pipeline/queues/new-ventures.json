@@ -168,8 +168,9 @@
       "effort_days": 0.5,
       "proof": "docs/exchange/spikes/framer-marketplace-paid-plugins.md states whether paid plugins bill through Framer (with the fee, payout processor, minimum and timing as published, and UK individual eligibility), lists ≥ 10 paid plugins with price, creator and category, and makes a promote / park call",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-22"
+      "status": "doing",
+      "added": "2026-10-22",
+      "doing_since": "2026-10-22"
     }
   ]
 }
