@@ -1017,8 +1017,9 @@
       "effort_days": 0.1,
       "proof": "no RUNS line of the form 'Claim on … released: the research run took precedence' over 14 days while research runs still happen",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-22"
+      "status": "doing",
+      "added": "2026-10-22",
+      "doing_since": "2026-10-22"
     }
   ]
 }
