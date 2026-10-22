@@ -1528,3 +1528,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 20:30 | burn-down | Pipeline: status says 'research <venture> first — the build waits'; cold lists research first; 2 tests
 - 2026-10-22 20:30 | burn-down | Pipeline: the fallback's capped `next --max-effort` keeps the raw ranking (it never does market research)
 - 2026-10-22 20:30 | burn-down | Queue: foundry claim-only-when-buildable done; pipeline README documents the research-first rule
+- 2026-10-22 20:35 | burn-down | Exchange pre-research: Framer Marketplace plugins — 0 % fee, auto-enrolled creators; spike seeded (5)
+- 2026-10-22 20:35 | burn-down | Read: Creator Program article: publish a plugin = enrolled; paid templates keep 100 %; plugins sell direct
+- 2026-10-22 20:35 | burn-down | Read: creators page: 'Framer takes a 0 % cut', US$753k paid in a November, US$6.5M in 2025; no payout terms
+- 2026-10-22 20:35 | burn-down | Shelf: RENDER listing shows a Price filter and 20 trending plugins by small creators; prices on plugin pages
+- 2026-10-22 20:35 | burn-down | Relay: first RENDER use in research; /legal/creator-terms is 404; host .framer.com added
