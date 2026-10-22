@@ -1538,3 +1538,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 20:45 | burn-down | Stopping: relay RENDER verb + research-first next built, Framer spike seeded; its response waits for 21:00
 - 2026-10-22 20:48 | burn-down | Relay run 151: the Browser install step still running at 11 min (three earlier runs: 67-83 s in all)
 - 2026-10-22 20:48 | burn-down | docs/ci/fetch-relay.yml: Chromium cached by Playwright version; install 6 min and fetch 12 min step timeouts
+- 2026-10-22 20:48 | burn-down | Relay run 151 finished at 20:46 (14 min, all in the install step): 28 Framer pages on main for the spike
+- 2026-10-22 20:48 | burn-down | Seen: paid plugins price on their own pages (US$14/project, $29-89 one-time, $8.99/mo); 6 help/legal URLs 404
