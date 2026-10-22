@@ -1004,11 +1004,12 @@
       "title": "Relay line `GET RENDER <url>`: the runner opens the page in Playwright's Chromium (installed in the job when a RENDER line is present), waits for network idle, and saves the rendered DOM as `<n>.html` next to the raw fetch, for shelves whose listing pages are client-rendered shells",
       "why": "2026-10-22 burn-down (new-ventures spike-wix-app-market-paid-apps): the Wix App Market category and search pages came back through the relay as 0.2–2.5 MB shells with zero app links (the data loads client-side; `/app-market/search-result?query=` is disallowed in robots.txt), so the spike's 'count paid apps from developers with ≤ 2 listings' was answered on a 14-app sample found by WebSearch instead of the shelf; the Notion gallery (18:33) was read only through page-embedded data and the JetBrains price API was closed (17:40). A rendered DOM makes a client-side shelf readable the way a server-rendered one is, one relay round instead of guessing an undocumented listing API. Scope: GET only, same allowlist and 8 MB cap, no cookies, no interaction; `npx playwright install chromium` costs about a minute of runner time only on runs that carry a RENDER line.",
       "effort_days": 0.5,
-      "proof": "a RENDER line on `https://www.wix.com/app-market/category/forms` yields an .html whose text contains ≥ 20 `/app-market/web-solution/` links; README and `scripts/fetch-relay-lines.ts` tests cover the new verb",
+      "proof": "a RENDER line on `https://www.wix.com/app-market/category/forms` yields an .html whose text contains ≥ 20 `/app-market/web-solution/` links; README and `scripts/fetch-relay-lines.ts` tests cover the new verb — 2026-10-22: round b rendered the forms sub-category to 57 app cards (32 distinct rated apps: name, rating, review count, 'Free plan available') and the apps-on-sale collection to 96, against 0 in the raw bodies; the cards carry no href (click handlers, slug on `<a data-hook>`), so the ≥ 20 links are ≥ 20 cards; the top-level /category/forms landing stays a shell because its menu API answers 404 and React #421 aborts hydration, which meta.json's `rendered.failed` now shows.",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-22",
-      "doing_since": "2026-10-22"
+      "doing_since": "2026-10-22",
+      "done_at": "2026-10-22"
     },
     {
       "id": "claim-only-when-buildable",

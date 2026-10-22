@@ -35,7 +35,13 @@ GitHub runner to fetch for it:
    intersection load, then left 1.5 s to settle), and images, media and fonts are not loaded.
    `meta.json`'s `rendered` block says what happened — `requests` made, `failed` (network failures and
    4xx/5xx XHR, fetch or document responses) and `console_errors` — so a page that stays a shell can be
-   read for its cause (a blocked listing API, a bot wall, a consent gate) rather than guessed at. A request file with a RENDER line costs the run `npm ci`
+   read for its cause (a blocked listing API, a bot wall, a consent gate) rather than guessed at.
+   Read the cards, not only the anchors: a rendered shelf often opens its listings from a click
+   handler, so the app's name, rating, review count and price tier are in the card's text and
+   attributes while no `href` names it (Wix App Market, 2026-10-22: `data-hook="app-box-container"`
+   cards, the slug on the card's `<a data-hook>`; the top-level `/category/forms` landing crashed on a
+   404 menu call while the `/category/communication/forms` sub-category and the collections rendered
+   57 and 96 cards). A request file with a RENDER line costs the run `npm ci`
    plus a Chromium install (about 1–2 min) — an ordinary request stays at ~15 s — so put the RENDER
    lines of one round in one file and keep plain GETs elsewhere when the round is time-critical.
 2. Commit and push just that file (`relay: <name>`); it is the one exception to "push once at the end".

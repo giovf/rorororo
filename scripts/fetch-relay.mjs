@@ -118,7 +118,9 @@ async function renderOne(req, url, outDir, index, meta) {
         note(rendered.failed, `${r.request().method()} ${r.url()} → ${r.status()}`);
     });
     page.on('console', (m) => {
-      if (m.type() === 'error') note(rendered.console_errors, m.text());
+      // Our own aborted images, media and fonts log `net::ERR_FAILED` here; real failures are in `failed`.
+      if (m.type() === 'error' && !/^Failed to load resource: net::ERR_FAILED$/.test(m.text()))
+        note(rendered.console_errors, m.text());
     });
     page.on('pageerror', (e) => note(rendered.console_errors, `uncaught: ${e.message}`));
     const res = await page.goto(url.href, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });

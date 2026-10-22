@@ -1520,3 +1520,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 20:30 | burn-down | fetch-relay.yml first run: success (push run 148 at 20:18, 67 s with Chromium; after the 20:17 install)
 - 2026-10-22 20:30 | burn-down | Relay probe a: Wix forms page rendered to 484 KB, title ok, network idle, but 0 app links (as raw)
 - 2026-10-22 20:30 | burn-down | Relay: RENDER now records requests, failed calls and console errors; scrolls once, settles 1.5 s
+- 2026-10-22 20:28 | burn-down | Relay probe b: forms sub-category renders 57 app cards (32 rated), apps-on-sale 96; raw bodies had 0
+- 2026-10-22 20:28 | burn-down | Relay probe b: /category/forms landing stays a shell: menu API 404 + React #421, now visible in meta
+- 2026-10-22 20:28 | burn-down | Relay: console noise from our own blocked images/fonts filtered; README says read cards, not hrefs
+- 2026-10-22 20:28 | burn-down | Queue: foundry relay-rendered-fetch done (3 relay rounds, 67-83 s each with Chromium installed)
