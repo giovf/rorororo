@@ -5,12 +5,9 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (2)
+## Requests (1)
 
-1. **Meta's free $1M online AI hackathon** — ~10 min, since 2026-10-20; unblocks hackathons `meta-global-ai-hackathon-apply` (9). Steps: [027](actions/027-meta-hackathon-apply.md).
-   Meta's free $1M online AI hackathon: apply by 25 Oct, ~10 min — docs/for-owner/actions/027-meta-hackathon-apply.md
-
-2. **PayPal hackathon organiser says the Devpost entry has no de…** — time not stated, since 2026-10-21; nothing queued waits on it.
+1. **PayPal hackathon organiser says the Devpost entry has no de…** — time not stated, since 2026-10-21; nothing queued waits on it.
    PayPal hackathon organiser says the Devpost entry has no demo access; add the demo link or run steps to the form by 12 Nov.
 
 ## Waiting on an attended Claude session, not you (4)
