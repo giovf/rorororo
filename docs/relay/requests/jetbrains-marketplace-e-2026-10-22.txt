@@ -1,8 +1,0 @@
-GET https://plugins.jetbrains.com/api/plugins/9707/pricing?family=INTELLIJ
-GET https://plugins.jetbrains.com/api/plugins/9707/pricing?family=idea
-GET https://plugins.jetbrains.com/api/plugins/9707/prices
-GET https://plugins.jetbrains.com/api/plugins/9707/price
-GET https://plugins.jetbrains.com/plugin/9707-ansi-highlighter-premium/pricing
-GET https://data.services.jetbrains.com/products?code=PANSIHIGHLIGHT
-GET https://wlplugin.halirutan.de/plugin-on-marketplace/
-GET https://mathematicaplugin.halirutan.de/pricing-changes/
