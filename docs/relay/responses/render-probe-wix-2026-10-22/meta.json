@@ -1,0 +1,39 @@
+{
+  "request": "render-probe-wix-2026-10-22",
+  "fetched_at": "2026-10-22T20:19:17.205Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/category/forms",
+      "render": true,
+      "fetched_at": "2026-10-22T20:19:12.013Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/category/forms",
+      "title": "Best Forms Apps | Wix App Market",
+      "rendered": {
+        "network_idle": true
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"6b23a-RNLO5cqc/6F1fJo7ms4I740g5mA\""
+      },
+      "file": "1.html",
+      "bytes": 484075,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/category/forms",
+      "fetched_at": "2026-10-22T20:19:16.148Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/category/forms",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"6b23a-5WybgHJD4WxMEmLqHeATx0e9yZY\""
+      },
+      "file": "2.html",
+      "bytes": 438842,
+      "truncated": false
+    }
+  ]
+}
