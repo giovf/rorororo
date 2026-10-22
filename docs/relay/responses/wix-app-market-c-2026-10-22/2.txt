@@ -1,0 +1,75 @@
+> Portal Navigation:
+> 
+> - Append `.md` to any URL under `https://dev.wix.com/docs/` to get its markdown version.
+> - Pages are either content pages (article or reference text) or menu pages (a list of links to child pages).
+> - To get a menu page, truncate any URL to a parent path and append `.md` (e.g. `https://dev.wix.com/docs/sdk.md`, `https://dev.wix.com/docs/sdk/core-modules.md`).
+> - Top-level index of all portals: https://dev.wix.com/docs/llms.txt
+> - Full concatenated docs: https://dev.wix.com/docs/llms-full.txt
+
+## Resource: Set Up Your Payout Account
+
+## Article: Set Up Your Payout Account
+
+## Article Link: https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-your-payout-account.md
+
+## Article Content:
+
+# Set Up Your Payout Account
+
+Before you can publish a paid app, you must become a Wix partner and then set up a Tipalti account to receive payouts. This is a one-time setup at the account level, not the app level.
+
+If your app's business model isn't free, a blocker appears during the [app review process](https://dev.wix.com/docs/build-apps/launch-your-app/app-distribution/submit-your-first-app-version.md) requiring you to complete this setup. Until payout account setup is complete, you can't publish the app.
+
+> **Note:** If you don't see the blocker, there's a chance you already have a payout account set up.
+
+<blockquote class="important">
+
+__Important:__
+You need the **Manage Earnings** permission to complete this flow. Account owners have this access by default. To give a teammate access, see [Grant a teammate access to payouts](#grant-a-teammate-access-to-payouts).
+
+</blockquote>
+
+## Set up your payout account
+
+To set up your payout account:
+
+1. In your account dashboard, navigate to **Earnings** > **[Payouts](https://manage.wix.com/studio/revenues/payouts)**.
+1. Click **Join the Partner Program**. The Wix Partners onboarding flow guides you through registering your company as a Wix partner.
+2. Set up your Tipalti account to configure how you receive payouts.
+3. Return to your app and continue the publish flow.
+
+## Grant a teammate access to payouts
+
+If you want a teammate to set up, view, or manage payouts, create a custom role with the **Manage Earnings** permission and assign it to them.
+
+### Step 1 | Create a custom role
+
+1. Go to **Team Management** and [create a custom role](https://manage.wix.com/studio/collaboration/create-role).
+1. Enter a **Role Title** and optional **Description**.
+1. Expand **Studio Workspace**, then select **Manage Earnings**.
+
+    This permission allows teammates to set up a payout account, view payouts from templates, apps, and revenue share, and manage payout settings.
+
+    ![Manage Earnings permission](https://wixmp-833713b177cebf373f611808.wixmp.com/images/2a58cd9798e69e23a7525192631aeb60.png)
+
+1. Click **Save**.
+
+### Step 2 | Invite the teammate and assign the role
+
+1. Go to **Team Management** > **Invite Teammates**.
+1. Enter the teammate's email address.
+1. Under **Site access**, select **All sites and folders**.
+
+    If you grant access to specific sites only, **Earnings** won't appear for the teammate.
+
+    ![Site access for payout role](https://wixmp-833713b177cebf373f611808.wixmp.com/images/847130c64b0b4082972491e9ccc54bbf.png)
+
+1. Under **Select roles**, select the custom role you created.
+1. Click **Send Invite**.
+
+The teammate receives an email invitation. Once they accept, they can set up and manage payouts in **Earnings** > **[Payouts](https://manage.wix.com/studio/revenues/payouts)**.
+
+## See also
+- [Payments and Billing FAQs](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/payments-and-billing-faqs.md)
+- [About the Payouts Dashboard](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/payouts-dashboard.md)
+- [Submit your app for review](https://dev.wix.com/docs/build-apps/launch-your-app/app-distribution/submit-your-first-app-version.md)
