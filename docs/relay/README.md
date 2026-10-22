@@ -33,7 +33,8 @@ GitHub runner to fetch for it:
    acquired by a runner. Read the latest `fetch relay` run's conclusion (GitHub MCP `actions_list`,
    `list_workflow_runs`, `fetch-relay.yml`): `cancelled` with no steps → re-fire it with `actions_run_trigger`
    (`workflow_dispatch`; the job processes every file still under `requests/`) and poll again; `failure` with
-   steps → read its log, the request itself is wrong. Never file a handoff for a dead run. The `fetch relay` workflow has committed
+   steps → read its log, the request itself is wrong. One exception: a `Commit responses` step that fails on `cannot lock ref` lost a push race with a
+   routine's commit (run 143, 2026-10-22) — the next request push re-runs every pending file, and since 2026-10-22 the step retries three times (foundry `workflow-push-retry-everywhere`). Never file a handoff for a dead run. The `fetch relay` workflow has committed
    `docs/relay/responses/<name>/meta.json` (status, headers, bytes, errors per line) and the
    bodies as `1.json`, `2.csv`, … The request file is deleted.
 4. Read what you need, then carry on. Responses are pruned after 7 days.

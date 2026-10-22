@@ -1504,3 +1504,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 19:38 | burn-down | Foundry research: 6 of 10 committing workflows push once; relay run 143 lost its push to the 18:38 slot
 - 2026-10-22 19:38 | burn-down | Queue: foundry workflow-push-retry-everywhere (5), relay-rendered-fetch (4), claim-only-when-buildable (4) filed
 - 2026-10-22 19:38 | burn-down | Evidence: Wix shelf pages were client-rendered shells; the 17:20 slot claimed then released an item it researched past
+- 2026-10-22 19:46 | burn-down | docs/ci: fetch-relay, gankdat-metrics, owner-notes, pr-relay, run-watchdog, workflow-installer retry the push 3x
+- 2026-10-22 19:46 | burn-down | relay README: a `Commit responses` ref-lock failure is the push race, re-run by the next request push
+- 2026-10-22 19:46 | burn-down | Queue: foundry workflow-push-retry-everywhere done; the installer commit's first runs are the next slot's check
+- 2026-10-22 19:48 | burn-down | Stopping: Wix spike parked, journal item dropped, foundry research + push retry built; rendered fetch left for 20:00
