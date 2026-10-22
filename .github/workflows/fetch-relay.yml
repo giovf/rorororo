@@ -37,13 +37,37 @@ jobs:
       # RENDER lines (foundry relay-rendered-fetch, 2026-10-22): a request that asks for a page as
       # Chromium renders it needs the playwright package and the browser; an ordinary run stays
       # dependency-free (~15 s), so both are installed only when `needs-render` prints true.
+      # The browser is cached by Playwright version (run 151, 2026-10-22 20:32: the install step was
+      # still running after 11 min while three earlier runs took 67–83 s in all), and the install and
+      # fetch steps get their own timeouts so a stuck one fails the run fast instead of holding the
+      # serialised relay group for the job's 20 min — the request stays under requests/ and the next
+      # push re-runs it.
       - name: Render needed?
         id: render
         run: echo "needed=$(node scripts/fetch-relay.mjs needs-render)" >> "$GITHUB_OUTPUT"
+      - name: Playwright version
+        if: steps.render.outputs.needed == 'true'
+        id: pw
+        run: echo "version=$(node -p "require('./package.json').devDependencies.playwright")" >> "$GITHUB_OUTPUT"
+      - name: Browser cache
+        if: steps.render.outputs.needed == 'true'
+        id: browser-cache
+        uses: actions/cache@v6
+        with:
+          path: ~/.cache/ms-playwright
+          key: playwright-chromium-${{ steps.pw.outputs.version }}
       - name: Browser
         if: steps.render.outputs.needed == 'true'
-        run: npm ci && npx playwright install --with-deps chromium
+        timeout-minutes: 6
+        run: |
+          npm ci --no-audit --no-fund
+          if [ "${{ steps.browser-cache.outputs.cache-hit }}" = "true" ]; then
+            npx playwright install-deps chromium
+          else
+            npx playwright install --with-deps chromium
+          fi
       - run: node scripts/fetch-relay.mjs
+        timeout-minutes: 12
       - name: Commit responses
         run: |
           git config user.name "foundry-relay[bot]"
