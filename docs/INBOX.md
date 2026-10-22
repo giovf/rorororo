@@ -201,3 +201,6 @@
 - 2026-10-19 23:59 (backlog) | notification | google.com | Report domain: gankdat.com Submitter: google.com Report-ID: 1429938064962601105 | Google DMARC aggregate report for gankdat.com | logged
 - 2026-10-22 05:01 | notification | pureseed.com.my | A Little Flower, A Big Smile, A Beautiful Moment! | Florist marketing mail, unrelated to Foundry | logged
 - 2026-10-22 07:45 | notification | ernest-brooks.com | Refined City Living | A Property Match from Ernest-Brooks International | Estate-agent marketing mail, unrelated to Foundry | logged
+- 2026-10-22 08:27 | notification | ernest-brooks.com | Premium Canary Wharf Living | A Property Match from Ernest-Brooks International | Estate-agent marketing mail, unrelated to Foundry | logged
+- 2026-10-22 08:47 | notification | alectolegal.com | Re: Conveyancing | Personal mail from a law firm, unrelated to Foundry; left unread, not opened | logged
+- 2026-10-22 09:03 | notification | m.procook.co.uk | ProCook has officially arrived in St Paul's | Retail newsletter, unrelated to Foundry | logged
