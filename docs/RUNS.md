@@ -1589,3 +1589,15 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-23 17:23 | build | Queue: search-console-stats-indexing done — sitemap in since 09-28, reading daily since 10-11: 8/19 indexed, 0 clicks
 - 2026-10-23 17:23 | build | Queue: hackathons paypal-hackathon-demo-access (8 x 2) from the organiser's 10-21 Devpost message; next names it
 - 2026-10-23 17:23 | build | RESEARCH.md: 2026-10-23 pass written; gankdat researched 2026-10-23, research_after cleared
+- 2026-10-23 17:16 | burn-down | Exchange pre-research: Etsy digital downloads (UK sole-trader tax spreadsheets) spike seeded (5); 0 spikes open
+- 2026-10-23 17:16 | burn-down | Read: a rival listing shows 172 sales, 18 reviews, 1 year on Etsy at ~US$9; Payhip siblings £6.95-9.99
+- 2026-10-23 17:16 | burn-down | Read: fees 6.5 % + UK 4 % + £0.20 + 20c listing + one-off set-up fee (US$15-29); Persona ID; digital files allowed
+- 2026-10-23 17:16 | burn-down | No relay host added: Etsy's API Terms forbid automated reads of etsy.com; the spike uses WebSearch only
+- 2026-10-23 17:20 | burn-down | Spike etsy-digital-downloads-uk-tax-templates done: 20 searches, no etsy.com fetch (terms forbid automated reads)
+- 2026-10-23 17:20 | burn-down | Read: UK on Etsy Payments' list; Persona ID + selfie, bank account in the seller's name; set-up fee US$15-29 one-off
+- 2026-10-23 17:20 | burn-down | Read: fees on a £7.19 sale ≈ £1.38 (19 %); Etsy remits VAT on downloads; weekly Bacs payouts, no floor
+- 2026-10-23 17:20 | burn-down | Niche: 172 sales/18 reviews at £7.19 after a year; a UK VAT-seller sheet ~1.5k reviews; the £69 sheet 0 sales
+- 2026-10-23 17:20 | burn-down | Call: promote reshaped (2026/27 SA103 + MTD workbook at £6.99); exchange 10-28 ranks it; owner steps batched there
+- 2026-10-23 17:20 | burn-down | new-ventures emptied (16 done) and set needs_research (cooling, researched 10-22); no owner action raised
+- 2026-10-23 17:27 | burn-down | PayPal entry demo access (ALERTS 10-21): gankdat README gains the three run paths; the mirror job publishes it
+- 2026-10-23 17:27 | burn-down | Owner action 028: paste-ready demo URL + testing instructions for the Devpost form (~3 min, £0, by 12 Nov)
