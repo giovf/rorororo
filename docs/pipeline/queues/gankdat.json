@@ -762,8 +762,9 @@
       "effort_days": 0.15,
       "proof": "the next seven Daily numbers rows carry no `silent nights:` clause for a source whose /v1/health last_refreshed_at is that night; the stale-marker test passes",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-23"
+      "status": "doing",
+      "added": "2026-10-23",
+      "doing_since": "2026-10-23"
     },
     {
       "id": "oauth-resource-indicator-variants",
