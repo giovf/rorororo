@@ -686,9 +686,10 @@
       "effort_days": 0.1,
       "proof": "`bazaar: 17 listed` on a Daily numbers row by 2026-10-25, or RESEARCH.md names the documented reason and the date it will be",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-10-23",
-      "added": "2026-10-18"
+      "added": "2026-10-18",
+      "doing_since": "2026-10-23"
     },
     {
       "id": "uk-planning-apify-pause",
