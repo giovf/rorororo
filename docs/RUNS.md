@@ -1552,3 +1552,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 21:30 | burn-down | Framer AUP §2 forbids robots: tonight's rounds were one-off reads; no recurring fetch of framer.com is scheduled
 - 2026-10-22 21:30 | burn-down | new-ventures emptied (12 done) and set needs_research (cooling, researched today); no owner action raised
 - 2026-10-22 21:33 | burn-down | Stopping: Framer spike built, relay fix filed; pipeline starved and cooled, tonight's pre-research done
+- 2026-10-23 05:16 | watchdog | ci-minutes: 623 billed min/7d (~2670/month, wall 391; private cap 2,000, warn 1700); top: fetch relay 115, notify owner 
