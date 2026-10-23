@@ -741,4 +741,11 @@ indexer's own call; `readExampleQuery` → `routeUrl`, so the lookup gets `compa
 the test client prints the facilitator's reason from the 402's `PAYMENT-REQUIRED` `error`. A second forced
 round after the deploy pays the 15 routes that can settle; uk-planning stays unlisted until its origin
 republishes (it answers 503, not 402). **Cost today:** 2 + up to 16 half-cents (≤ US$0.09).
+**Second round 09:44 (run 261, v0.25.3 live at 09:42):** 16 of 17 settled — every list route and the
+lookup (its declared `company_number=00000006` query) — with receipts on Base; only uk-planning
+failed (503, paused). The 09:45 row already reads `bazaar: 2 listed` (eu-ted indexed within 20 min
+of its 09:25 settlement, `last 2026-10-23`), so the catalogue does index per settled resource at
+the documented pace; the 10-24 row should read `16 listed`. No `EXTENSION-RESPONSES` header reached
+the client on any settle (the Worker does not forward it), so the verdict line reads "no header" —
+the catalogue count is the reading. Spent today: 18 half-cents (US$0.09).
 

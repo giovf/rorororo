@@ -1570,3 +1570,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-23 09:40 | build | gankdat v0.25.3: bazaarDescription capped at DESCRIPTION_MAX 500; declaration test asserts it
 - 2026-10-23 09:40 | build | Probe calls each route with its declared example query (lookup got 400 on per_page); 402 reason printed
 - 2026-10-23 09:40 | build | uk-planning stays unlisted while paused: it answers 503, not 402, so the catalogue cannot index it
+- 2026-10-23 09:50 | build | Second forced round (run 261) after the v0.25.3 deploy: 16 of 17 routes settled; uk-planning 503 (paused)
+- 2026-10-23 09:50 | build | Catalogue already lists eu-ted 20 min after its first settlement; 09:45 row reads bazaar: 2 listed
+- 2026-10-23 09:50 | build | Spent today: 18 half-cents (US$0.09) from the test wallet; the 10-24 row should read 16 listed

@@ -545,7 +545,15 @@ runs `check:root`.
   it does not list and every listed route settled 23 days ago (`probeTargets`); the
   `x402_probe` dispatch input pays every route (a re-screen is per resource); at most 20
   half-cents in any 30 days (`PROBE_MONTHLY_CAP`, US$0.10). The client prints the
-  facilitator's Bazaar verdict (`EXTENSION-RESPONSES`: success, processing, rejected). **What sold** (2026-10-19, `x402-paid-by-source-reading`): the `x402_paid`
+  facilitator's Bazaar verdict (`EXTENSION-RESPONSES`: success, processing, rejected) and
+  the facilitator's reason when a signed payment gets a 402. **Description cap (v0.25.3,
+  2026-10-23):** the CDP facilitator rejects verify and settle when the route description
+  exceeds 500 characters, so `bazaarDescription` never exceeds `DESCRIPTION_MAX = 500`
+  (the summary budget is what the title and shape sentence leave) — from v0.25.0 to
+  v0.25.2 thirteen routes were over it and could not take any payment, which validation
+  (`x402 validate: 17/17 valid`) never shows; the declaration test asserts the cap. The
+  probe calls each route with the query its declaration carries (the indexer's own call).
+  **What sold** (2026-10-19, `x402-paid-by-source-reading`): the `x402_paid`
   point carries the UA, path, slug and hashed client id, so the row's sales cell reads
   `3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients; python-requests 2, x402-fetch 1)`, a
   `x402 30d:` clause follows the `bazaar:` one, the job log prints `bazaar resource: <url>
