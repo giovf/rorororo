@@ -7,8 +7,8 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 ## Requests (1)
 
-1. **PayPal hackathon organiser says the Devpost entry has no de…** — time not stated, since 2026-10-21; nothing queued waits on it.
-   PayPal hackathon organiser says the Devpost entry has no demo access; add the demo link or run steps to the form by 12 Nov.
+1. **PayPal hackathon organiser says the Devpost entry has no de…** — ~3 min, since 2026-10-21; nothing queued waits on it. Steps: [028](actions/028-paypal-devpost-demo-access.md).
+   PayPal hackathon organiser says the Devpost entry has no demo access; add the demo link or run steps to the form by 12 Nov. — Prepared 2026-10-23 (burn-down): paste-ready demo URL and testing instructions in docs/for-owner/actions/028-paypal-devpost-demo-access.md (~3 min); the public mirror's README now carries the r…
 
 ## Waiting on an attended Claude session, not you (4)
 
