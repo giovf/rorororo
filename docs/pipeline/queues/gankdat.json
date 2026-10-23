@@ -773,8 +773,9 @@
       "effort_days": 0.1,
       "proof": "`rejected` reads 0 for invalid_target on a 7-day window with ≥ 1 `authorize`, or the next rejection names the value in the row",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-23"
+      "status": "doing",
+      "added": "2026-10-23",
+      "doing_since": "2026-10-23"
     },
     {
       "id": "x402-bazaar-16-listed-read",
