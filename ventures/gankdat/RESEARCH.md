@@ -749,3 +749,45 @@ the documented pace; the 10-24 row should read `16 listed`. No `EXTENSION-RESPON
 the client on any settle (the Worker does not forward it), so the verdict line reads "no header" —
 the catalogue count is the reading. Spent today: 18 half-cents (US$0.09).
 
+
+## Research 2026-10-23 (pipeline starved — build, 17:10)
+
+Read: the 10-20 → 10-23 Daily numbers rows, the 09:44 metrics job log (run 261: the 16 settlements and the
+09:46 `bazaar resource:` lines), `/v1/health` through the relay (`gankdat-research-2026-10-23-17`, 17:30 UTC)
+against the 10-22 19:29 read, the Docker PR #5622 state and comments (same request), the queue, review W42,
+`docs/INBOX.md` to 10-22 21:25, `docs/ALERTS.md`, `src/sources/progress.ts`, `cache.ts` and `store.ts`
+(the marker), `src/auth/oauth.ts` (the resource check) and the MCP authorization spec (raw GitHub).
+**Unchanged:** 4 accounts, 0 paid, `0 x402 paid` since the three 10-17/18 payments (`x402 30d: 3 paid, 3
+clients — uk-tenders 3`), `after wall 1h: 0 clients`, `oauth: 0 connects`, Apify 19 users/30d (one per actor
+plus the Companies House lookup at 15 runs), `search … 0 clicks`, uk-planning still empty (re-read 10-25).
+**New since the 10-19 pass:** `datasets 30d external: uk-trademark-journal 2` from 10-20 — the first external
+keyed calls on a register (the 10-20 `+1/24h` account; two calls, nothing since); the Bazaar's second route
+(eu-ted) 20 minutes after its settlement and the 16-route round at 09:44 (the 10-24 row is the proof); and
+three readings the rows carry that nothing in the queue would act on:
+
+| Signal | Reading | Verdict |
+| --- | --- | --- |
+| `silent nights: uk-sanctions started 2026-10-22 05:01:43Z died after written 6408 records at 3 s, no row written` (10-23 row) | `/v1/health` on 10-22 19:29 showed uk-sanctions `last_refreshed_at 2026-10-22 05:01:46` and on 10-23 17:30 `2026-10-23 05:02:30`; the 10-23 wave-1 invocation read `ok 108.1s`; `refresh errors` lists no uk-sanctions row on any day | a **stale marker, not a death**: `cache.ts refreshSource` writes the `written` mark, the ok row and the (skipped, same second) `stats` mark inside one second, `refreshOne` then deletes the marker after a ≤ 1 s local wait — KV's one-write-a-second-per-key limit or a dropped delete leaves it, and the next night writes an `error` row for a refresh that completed. The first silent-night reading in the lane's life is a phantom; the auto-filer would file `refresh-uk-sanctions-<date>` on a repeat |
+| `oauth funnel 7d: 0 authorize, 2 rejected (invalid_target: resource must be https://gankdat.com/mcp 2)` (10-20 → 10-23 rows) | the only two `/authorize` calls by anyone in the window, refused by the strict compare `q.resource !== resourceUrl(env)`; the value sent is not recorded | the spec lists `https://mcp.example.com` and the port form as valid canonical URIs beside `/mcp`, says uppercase scheme and host "SHOULD" be accepted and only discourages the trailing slash — a client inside the spec was turned away, on a lane with 0 external OAuth connects since 09-30 |
+| `bazaar: 2 listed` at 09:45, 16 settled at 09:44 with `no EXTENSION-RESPONSES header` on every settle | the catalogue indexed eu-ted 20 min after its 09:25 settlement, so 16 should show on the 10-24 row; the facilitator's per-resource verdict never reaches the client because the Worker does not forward the header | a dated read for 10-24; if short, forward the header so a rejected resource says why |
+| Docker PR #5622 (`docker-mcp-catalog-listing`, blocked since 10-11) | open at head 7b5f2a5, updated 10-11 19:18, **no review and no check run after 12 days** (combined status `pending` — a fork's workflows wait for a maintainer's approval), one bot comment (Codex review failed to run) | nothing to do from this side; reading added to the item, re-read with the 10-30 Claude directory read |
+| `search 7d to 10-22: 12 impressions, 0 clicks, indexed 8/19, Discovered - currently not indexed ×9` | the clause `search-console-stats-indexing` waited for has run daily since 10-11; the sitemap went in 09-28 | item closed `done` with the reading; the proof (≥ 10) is not met and no lever is queued — eight indexed pages bring no clicks, so more indexing changes nothing until a page ranks |
+
+Queued in `docs/pipeline/queues/gankdat.json`:
+
+| Item | Score | Why now |
+| --- | --- | --- |
+| `refresh-marker-false-positive-2026-10-23` | 6 | `recordSilentRefresh` writes the `error` row only when no `refresh_log` row of the slug was created at or after the marker's `started_at`, else deletes the stale marker and logs it; the delete retries once after the KV gap; a test for the stale case. The reading built on 10-18 to tell a silent wave is worth keeping only if it cannot lie |
+| `oauth-resource-indicator-variants` | 5 | normalised comparison against `resourceUrl` (case, :443, trailing slash, the bare origin), any other host or path still rejected; the funnel detail names the value the client sent |
+| `x402-bazaar-16-listed-read` | 4 (10-24) | read the 10-24 row and the job log's `bazaar resource:` lines; fewer than 16 → relay the catalogue, re-screen with the dispatch input, forward `EXTENSION-RESPONSES` so the reason is readable |
+
+Also queued, from the inbox: hackathons `paypal-hackathon-demo-access` (8 × weight 2 — `next` names it) — the
+organiser's 10-21 Devpost message says the entry has no demo the judges can run (due 11-12 12:00 PT); the
+demo exists but the form names only `/account` behind a magic link and a sandbox buyer, and the public mirror's
+README has no run steps. The item writes the paste-ready text, the README section and owner action 028.
+**Not queued:** a first-call nudge to the trademark-journal account (the 10-19 call stands); more routes or
+prices before the 16-route reading and the 11-14 day-30 read; a nudge comment on the Docker PR (the item says
+do not argue; a reviewer's silence is not a question). **Sandbox note:** `npm ci` here left out the optional
+`@cloudflare/workerd-linux-64` package, so the gankdat tests could not start until it was installed `--no-save`;
+CI (`check` run 361, `gankdat` run 148) was green on the same head. `researched: 2026-10-23`; `research_after`
+cleared — the first item is buildable now.

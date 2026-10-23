@@ -3,7 +3,7 @@
   "status": "open",
   "needs_research": false,
   "updated": "2026-10-23",
-  "researched": "2026-10-19",
+  "researched": "2026-10-23",
   "items": [
     {
       "id": "nhs-ods",
@@ -41,13 +41,15 @@
     {
       "id": "search-console-stats-indexing",
       "title": "Submit the /stats pages sitemap in Search Console and check indexing",
-      "why": "Cite-bait pages only earn if indexed.",
+      "why": "Cite-bait pages only earn if indexed. — Done 2026-10-23 (build research): the sitemap went in on 09-28 (owner, review W40) and the Search Console reading has run daily since action 020 (10-11); the 10-22 reading: 8 of 19 stats URLs indexed, 9 `Discovered - currently not indexed`, 2 unknown to Google, 12 impressions and 0 clicks in 7 days (avg position 13.3, top /stats/nhs-ods). The proof (≥ 10 indexed) is not met and no lever is queued: the eight indexed pages bring no clicks, so more indexing changes nothing until a page ranks; the 10-30 and 11-05 reads carry the clause.",
       "effort_days": 0.1,
       "proof": "≥ 10 stats pages indexed (Search Console)",
       "score": 4,
-      "status": "blocked",
+      "status": "done",
       "blocked_on": "owner action 020 (2026-10-07): the Search Console API reading is built — `scripts/search-console.ts` in the 06:45 store-metrics job URL-inspects /stats and every /stats/<slug> page and writes `indexed I/N` on gankdat's Daily numbers row — and waits only for the owner to add the read-only service account and paste its key as SEARCH_CONSOLE_KEY. Close this item on the first row whose `search:` clause carries an indexed count (the proof reads ≥ 10 indexed), no export needed.",
-      "added": "2026-09-20"
+      "added": "2026-09-20",
+      "done_at": "2026-10-23",
+      "updated": "2026-10-23"
     },
     {
       "id": "uk-trademark-journal",
@@ -403,8 +405,8 @@
       "status": "blocked",
       "not_before": "2026-10-10",
       "added": "2026-10-07",
-      "updated": "2026-10-10",
-      "blocked_on": "Docker's review of https://github.com/docker/mcp-registry/pull/5622 (opened 2026-10-11 by the pr relay, the first relay run): merged → done and the `oauth` follow-up PR; an OSS-licence demand → dropped, not argued"
+      "updated": "2026-10-23",
+      "blocked_on": "Docker's review of https://github.com/docker/mcp-registry/pull/5622 (opened 2026-10-11 by the pr relay, the first relay run): merged → done and the `oauth` follow-up PR; an OSS-licence demand → dropped, not argued Read 2026-10-23 (build research, relay gankdat-research-2026-10-23-17/17b): still open at head 7b5f2a5, updated 10-11 19:18, no review and no check run on the head after 12 days (combined status `pending` — a fork's workflows wait for a maintainer's approval), one bot comment (Codex review: failed to run); nothing to do from this side, re-read with the 10-30 Claude directory read."
     },
     {
       "id": "uk-company-lookup-day-30",
@@ -752,7 +754,37 @@
       "added": "2026-10-19",
       "done_at": "2026-10-19",
       "updated": "2026-10-19"
+    },
+    {
+      "id": "refresh-marker-false-positive-2026-10-23",
+      "title": "Silent-refresh marker: a marker whose attempt did write its refresh_log row is cleared, never reported — recordSilentRefresh reads the newest refresh_log row of the slug and writes the `error` row only when none was created at or after the marker's started_at (else it deletes the stale marker and logs `refresh_progress_stale`); clearRefreshProgress retries the delete once after the KV same-key gap when it fails; refresh-progress.spec gets the stale-marker case",
+      "why": "The first `silent nights:` reading in the lane's life (10-23 row: `uk-sanctions started 2026-10-22 05:01:43Z died after written 6408 records at 3 s, no row written`) is a phantom: /v1/health read through the relay on 10-22 19:29 and 10-23 17:30 shows uk-sanctions ok rows at 2026-10-22 05:01:46 and 2026-10-23 05:02:30, and the 10-23 wave-1 invocation read `ok 108.1s`. cache.ts refreshSource writes the `written` mark, the ok row and the (skipped, same second) `stats` mark within one second and refreshOne then deletes the marker after a ≤ 1 s local wait — KV's one-write-a-second-per-key limit or a dropped delete leaves the marker, and the next night reports a death that never happened. Left alone, the auto-filer's two-rows-in-four rule files `refresh-uk-sanctions-<date>` on the next repeat and a build slot chases a healthy source; the reading built to tell a silent wave (10-18) is only worth keeping if it cannot lie. The reading itself stays: a marker with no later row is still a silent night.",
+      "effort_days": 0.15,
+      "proof": "the next seven Daily numbers rows carry no `silent nights:` clause for a source whose /v1/health last_refreshed_at is that night; the stale-marker test passes",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-23"
+    },
+    {
+      "id": "oauth-resource-indicator-variants",
+      "title": "OAuth /authorize: accept an RFC 8707 `resource` that names this server in another valid canonical form (trailing slash, upper-case scheme or host, explicit :443, the bare origin https://gankdat.com) by comparing normalised URLs with resourceUrl, still rejecting any other host or path; the `authorize_rejected` funnel detail names the value the client sent (`invalid_target: <value>`) so the row's `rejected (…)` reading shows it",
+      "why": "The 10-20..10-23 Daily numbers rows read `oauth funnel 7d: … 0 authorize, 2 rejected (invalid_target: resource must be https://gankdat.com/mcp 2)`: the only two /authorize calls by anyone in the window were refused on a strict string compare (src/auth/oauth.ts authorizeParamError: `q.resource !== resourceUrl(env)`) and nothing records what they sent. The MCP authorization spec's canonical-URI examples list `https://mcp.example.com/mcp`, `https://mcp.example.com` and the port form as valid for one server and only say the trailing-slash form should be avoided, so a client that passes the origin or a slash is inside the spec and a lost sign-in — the lane has 0 OAuth connects by anyone but the owner since 09-30 and the Docker, Cursor and ChatGPT clients take the resource from their own config. Spec text read 2026-10-23 (authorization.mdx, raw GitHub): valid canonical URIs `https://mcp.example.com/mcp`, `https://mcp.example.com`, `https://mcp.example.com:8443`; invalid: no scheme, a fragment; \"implementations SHOULD accept uppercase scheme and host components\"; the trailing slash \"SHOULD consistently\" be omitted for interoperability, not rejected.",
+      "effort_days": 0.1,
+      "proof": "`rejected` reads 0 for invalid_target on a 7-day window with ≥ 1 `authorize`, or the next rejection names the value in the row",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-23"
+    },
+    {
+      "id": "x402-bazaar-16-listed-read",
+      "title": "Read the 10-24 row's `bazaar:` clause and the 07:14 job log's `bazaar resource:` lines: 16 listed (every route but the paused uk-planning) closes the week-1 proof; fewer means read the catalogue through the relay for the missing routes, re-screen them with the `x402_probe` dispatch input, and make the facilitator's verdict readable — the Worker drops the settle response's EXTENSION-RESPONSES header, so the probe printed `no header` on all 16 settlements; forward that one header to the client in src/x402/routes.ts so a rejected resource says why",
+      "why": "The second forced probe round (run 261, 09:44, after v0.25.3) settled 16 of 17 routes with receipts on Base and the catalogue listed eu-ted within 20 minutes of its 09:25 settlement, so by CDP's documented ≤ 15 min indexing the 10-24 row should read `16 listed`. Nothing in the queue reads that row — the day-30 read is 11-14 — and the verdict header (`bazaar.status` success / processing / rejected + rejectedReason) is the only per-resource reason the facilitator gives.",
+      "effort_days": 0.1,
+      "proof": "`bazaar: 16 listed` on the 10-24 or 10-25 row recorded in RESEARCH.md; otherwise the missing routes named with the facilitator's reason",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-23",
+      "not_before": "2026-10-24"
     }
-  ],
-  "research_after": "2026-10-23"
+  ]
 }

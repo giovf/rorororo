@@ -1580,3 +1580,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-23 17:35 | burn-down | Read: a rival listing shows 172 sales, 18 reviews, 1 year on Etsy at ~US$9; Payhip siblings £6.95-9.99
 - 2026-10-23 17:35 | burn-down | Read: fees 6.5 % + UK 4 % + £0.20 + 20c listing + one-off set-up fee (US$15-29); Persona ID; digital files allowed
 - 2026-10-23 17:35 | burn-down | No relay host added: Etsy's API Terms forbid automated reads of etsy.com; the spike uses WebSearch only
+- 2026-10-23 17:23 | build | Slot: next null, empty [gankdat] (starved, not cooling) — research run; main green (CI check 361, gankdat 148)
+- 2026-10-23 17:23 | build | Sandbox: npm ci left out optional @cloudflare/workerd-linux-64, gankdat tests could not start; installed --no-save
+- 2026-10-23 17:23 | build | Research gankdat: the 10-23 silent-nights clause is a stale marker; health shows uk-sanctions ok on 10-22 and 10-23
+- 2026-10-23 17:23 | build | Read: 2 OAuth /authorize rejections on a strict resource compare; spec allows origin, port and uppercase forms
+- 2026-10-23 17:23 | build | Relay: Docker PR #5622 open, no review or check run in 12 days (status pending); reading added to the item
+- 2026-10-23 17:23 | build | Queue: refresh-marker-false-positive (6), oauth-resource-indicator-variants (5), x402-bazaar-16-listed-read (4, 10-24)
+- 2026-10-23 17:23 | build | Queue: search-console-stats-indexing done — sitemap in since 09-28, reading daily since 10-11: 8/19 indexed, 0 clicks
+- 2026-10-23 17:23 | build | Queue: hackathons paypal-hackathon-demo-access (8 x 2) from the organiser's 10-21 Devpost message; next names it
+- 2026-10-23 17:23 | build | RESEARCH.md: 2026-10-23 pass written; gankdat researched 2026-10-23, research_after cleared
