@@ -281,6 +281,16 @@ runs `check:root`.
   apps, redirect `https://claude.ai/api/mcp/auth_callback`) and
   `https://claude.ai/oauth/claude-code-client-metadata` (Claude Code, port-less loopbacks), both
   verified through the relay on 2026-10-09; `/authorize` with either rendered the sign-in page live.
+  **Resource indicator variants** (2026-10-23, `oauth-resource-indicator-variants`, v0.25.5): the 10-20..10-23 rows read
+  `0 authorize, 2 rejected (invalid_target …)` — the only two /authorize calls in the window refused on a strict string
+  compare of RFC 8707 `resource`, and nothing recorded what they sent. The MCP authorization spec lists
+  `https://mcp.example.com/mcp`, `https://mcp.example.com` and the port form as valid canonical URIs for one server,
+  asks that an upper-case scheme and host be accepted and only discourages the trailing slash, so `resourceMatches`
+  (`auth/oauth.ts`) parses the value and accepts https, this host (`:443` and case folded by the URL parser), no
+  query or fragment, and a path of ``, `/` or `/mcp` with or without the slash — any other host, port or path is
+  still `invalid_target`. The grant stores the canonical form whatever spelling arrived, and the `authorize_rejected`
+  funnel detail reads `invalid_target: <value sent>` (parentheses and pipes replaced, 120 chars) so the row's
+  `rejected (…)` reading names the client's value instead of our own description.
   **Preview wall next steps** (2026-10-11, queue `preview-wall-next-steps`, v0.24.1): the first client to
   spend the preview budget (47 `preview_exhausted` challenges on 10-11, bid-intelligence tools) was told
   only to sign in — a person's path — while the two agent paths went unnamed. The wall now names every
