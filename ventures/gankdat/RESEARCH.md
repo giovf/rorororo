@@ -722,3 +722,23 @@ rules are gone (both are cases of "unlisted or stale"). **Cost:** 16 half-cents 
 ≈ 17 a month to stay listed (US$0.085; the wallet's ≈ US$1.09 lasts about a year — LEDGER row).
 **Proof:** the 10-24 row's `bazaar:` clause reads `17 listed`; the forced dispatch's job log shows the
 16 receipts and verdicts. The 11-14 day-30 read then reads calls and payers per resource.
+
+**Live round 09:25 (forced dispatch, run 260):** 2 of 17 settled — uk-tenders and eu-ted, receipts on
+Base — and 13 routes answered **402 to the signed payment**; uk-planning 503 (origin paused since
+10-10, so it serves no 402 and cannot be indexed until it resumes) and uk-company-profiles 400 (a
+lookup: the probe sent `?per_page=1` without a company number). **Why the 13 (found):** the two that
+settled are the only non-paused list routes whose Bazaar description is ≤ 500 characters (348 and
+476); every rejected route's runs 512–697 (`bazaarDescription` = title + up to 420 chars of the source
+text + a 170-char shape sentence), and CDP's seller guide says "the CDP Facilitator rejects verify and
+settle requests whose description exceeds that limit" (#759 saw the same as `400 'paymentPayload' is
+invalid`). Validation never catches it (the row reads 17/17 valid). So since v0.25.0 (10-14) **13 of
+the 17 x402 routes could not take any payment** — the lane's three external payers all paid uk-tenders,
+which was the only route an agent could pay besides eu-ted, uk-planning and the lookup. **Fix
+(v0.25.3):** `DESCRIPTION_MAX = 500` in `src/x402/bazaar.ts` — the summary budget is what the title and
+shape leave, a first sentence that still does not fit is dropped — and the declaration test asserts ≤ 500
+for every source; the probe calls each route with the query its Bazaar declaration declares (the
+indexer's own call; `readExampleQuery` → `routeUrl`, so the lookup gets `company_number=00000006`) and
+the test client prints the facilitator's reason from the 402's `PAYMENT-REQUIRED` `error`. A second forced
+round after the deploy pays the 15 routes that can settle; uk-planning stays unlisted until its origin
+republishes (it answers 503, not 402). **Cost today:** 2 + up to 16 half-cents (≤ US$0.09).
+

@@ -1564,3 +1564,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-23 09:25 | build | docs/ci/gankdat-metrics.yml: probe step comment and input text match the per-route rule
 - 2026-10-23 09:25 | build | Queue: gankdat x402-bazaar-week-1-index-check done; LEDGER row: 16 half-cents (US$0.08), ~US$1/yr
 - 2026-10-23 09:25 | build | RESEARCH.md: week-1 reading; MARKETPLACE-PREP Bazaar row; ARCHITECTURE per-route note
+- 2026-10-23 09:40 | build | Forced probe round (run 260): uk-tenders and eu-ted settled; 13 routes answered 402 to the payment
+- 2026-10-23 09:40 | build | Found: the 13 have Bazaar descriptions of 512-697 chars; CDP's facilitator rejects settle above 500
+- 2026-10-23 09:40 | build | So 13 of 17 x402 routes could not take any payment since v0.25.0 (10-14); validate never shows it
+- 2026-10-23 09:40 | build | gankdat v0.25.3: bazaarDescription capped at DESCRIPTION_MAX 500; declaration test asserts it
+- 2026-10-23 09:40 | build | Probe calls each route with its declared example query (lookup got 400 on per_page); 402 reason printed
+- 2026-10-23 09:40 | build | uk-planning stays unlisted while paused: it answers 503, not 402, so the catalogue cannot index it
