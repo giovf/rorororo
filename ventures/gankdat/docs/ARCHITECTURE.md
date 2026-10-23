@@ -452,7 +452,14 @@ runs `check:root`.
   written before the best-effort stats in all three refresh paths (a kill inside the journal's
   45-page facet aggregation no longer costs the row), and the journal's issue fetch aborts after
   5 minutes (`ISSUE_FETCH_TIMEOUT_MS`) so a request the IPO never answers errors out instead of
-  holding the wave to the kill.
+  holding the wave to the kill. **Stale marker** (2026-10-23, `refresh-marker-false-positive-2026-10-23`, v0.25.4): the lane's first
+  `silent nights:` reading (uk-sanctions, 10-22) was a phantom — the attempt wrote its ok row three seconds in and
+  only the marker's delete was lost (KV's one-write-a-second gap or a dropped delete) — so `recordSilentRefresh`
+  first reads the slug's newest `refresh_log` row (`refreshLogRowSince`): a row created at or after the marker's
+  `started_at` (floored to the second, `datetime('now')` precision) means the marker is stale — it is deleted and
+  logged `refresh_progress_stale`, no row written; a marker with no later row is still the silent night. And
+  `clearRefreshProgress` retries a failed delete once after the same-key gap. The reading can no longer send the
+  auto-filer after a healthy source.
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
   after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
   stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in

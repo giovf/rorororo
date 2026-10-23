@@ -1604,3 +1604,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-23 17:30 | burn-down | Foundry research-defers-to-build-slot built: cold reads the build marker, defers research for the hour
 - 2026-10-23 17:30 | burn-down | buildSlotInFlight + 4 tests; README and burn-down prompt carry the deferred clause; queue item filed done
 - 2026-10-23 17:27 | build | Queue: paypal-hackathon-demo-access set done — the 17:00 burn-down built it in parallel (README run paths, action 028)
+- 2026-10-23 17:40 | burn-down | gankdat v0.25.4: a progress marker with a refresh_log row at or after its start is stale, cleared, not reported
+- 2026-10-23 17:40 | burn-down | clearRefreshProgress retries a lost delete once; spec gains stale-marker, older-row and lost-delete cases
+- 2026-10-23 17:40 | burn-down | ARCHITECTURE stale-marker note; Queue: gankdat refresh-marker-false-positive-2026-10-23 done
