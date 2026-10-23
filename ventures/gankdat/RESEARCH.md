@@ -692,3 +692,33 @@ What the 10-19 row should say: the sales cell names the dataset and client count
 job log lists the one indexed resource with its 3 calls / 3 payers. Limits: the owner's own non-probe
 payments cannot be told from a buyer's (only the probe UA is excluded), and points from before 10-11
 carry no client id, so `clients` can read below `paid`.
+
+## Build 2026-10-23 — x402 Bazaar week-1 index read (build)
+
+**Read:** the 07:14 metrics job log (`bazaar resource:` lines), the Daily numbers rows 10-17 → 10-23,
+CDP's seller guide *Get discovered (Bazaar)* (docs.cdp.coinbase.com/x402/seller/get-discovered, through
+the relay, `docs/relay/responses/x402-bazaar-index-2026-10-23/`), and cdp-sdk issues #806 and #759.
+**What the catalogue holds:** one resource of ours — `https://gankdat.com/x402/data/uk-tenders`, 3
+calls / 3 payers / last 2026-10-18 — while `x402 validate: 17/17 valid` every day. uk-tenders is the
+test client's default target: the 10-16 onboarding call, the 10-17 probe and all three external
+payments (10-17/18) hit it, and no other route has ever settled a payment. **Why (documented):** CDP
+indexes per resource — "every validated endpoint is eligible for indexing in the CDP Bazaar after a
+successful settled payment"; "on the settlement call that triggers indexing, set both
+`paymentPayload.extensions.bazaar` and `paymentPayload.resource`" (the x402 v2 client does; #806 was a
+client that did not); "indexing runs after a settled payment and takes up to 15 minutes"; and
+"resources that go 30 days without a settlement are removed from both the catalog and search results,
+so a listed route needs ongoing traffic to stay listed". The facilitator reports the verdict per call in
+an `EXTENSION-RESPONSES` header (`bazaar.status`: success / processing / rejected + rejectedReason).
+#759 (open, 100+ services) confirms per-resource behaviour, a 12–14 h typical lag and silent drop-outs.
+So the week-1 proof (`≥ 17 resources within a week of the settled call`) was never reachable with one
+call: it needed 17. **Built:** `scripts/x402-probe.mjs` pays per route — when no probe payment landed
+in 7 days it reads the catalogue (keyless, `scripts/x402-catalogue.mjs`, shared with the `bazaar:`
+clause) and pays every route it does not list and every listed route settled ≥ 23 days ago
+(`probeTargets`, tested); the `x402_probe` dispatch input pays every route (a re-screen after a
+metadata change is per resource too); `ownProbePayments` counts the `(+N own probe)` cells of the last
+30 days and `PROBE_MONTHLY_CAP = 20` stops the step at US$0.10 a month whatever the catalogue does; the
+test client prints the Bazaar verdict from the settle response. The old `0 listed` and 1st-of-month
+rules are gone (both are cases of "unlisted or stale"). **Cost:** 16 half-cents today (US$0.08) and
+≈ 17 a month to stay listed (US$0.085; the wallet's ≈ US$1.09 lasts about a year — LEDGER row).
+**Proof:** the 10-24 row's `bazaar:` clause reads `17 listed`; the forced dispatch's job log shows the
+16 receipts and verdicts. The 11-14 day-30 read then reads calls and payers per resource.

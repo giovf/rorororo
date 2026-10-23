@@ -535,11 +535,17 @@ runs `check:root`.
   `GET /platform/v2/x402/discovery/merchant?payTo=…` for every active resource under it
   and writes `bazaar: N listed, C calls/30d, P payers, last <date>` from the catalogue's
   own `quality` numbers (`bazaar: 0 listed` until indexed; parsing in
-  `scripts/x402-bazaar-read.ts`). With the `X402_PROBE_KEY` secret (action 026 option
-  B) the metrics job's probe step (`scripts/x402-probe.mjs`) repeats the settled
-  half-cent call through the test client — never twice in 7 days, only while the
-  clause reads `0 listed`, on the 1st of the month, or on the `x402_probe` dispatch
-  input. **What sold** (2026-10-19, `x402-paid-by-source-reading`): the `x402_paid`
+  `scripts/x402-bazaar-read.ts`; the keyless reads in `scripts/x402-catalogue.mjs`).
+  **Per-route indexing (2026-10-23, `x402-bazaar-week-1-index-check`):** CDP indexes one
+  resource per settled payment and drops a resource 30 days after its last settlement
+  (seller docs, read 2026-10-23); a week after the first half-cent call only uk-tenders,
+  the route it paid, was listed of 17. With the `X402_PROBE_KEY` secret (action 026
+  option B) the metrics job's probe step (`scripts/x402-probe.mjs`) reads the catalogue
+  when no probe payment landed in 7 days and pays, through the test client, every route
+  it does not list and every listed route settled 23 days ago (`probeTargets`); the
+  `x402_probe` dispatch input pays every route (a re-screen is per resource); at most 20
+  half-cents in any 30 days (`PROBE_MONTHLY_CAP`, US$0.10). The client prints the
+  facilitator's Bazaar verdict (`EXTENSION-RESPONSES`: success, processing, rejected). **What sold** (2026-10-19, `x402-paid-by-source-reading`): the `x402_paid`
   point carries the UA, path, slug and hashed client id, so the row's sales cell reads
   `3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients; python-requests 2, x402-fetch 1)`, a
   `x402 30d:` clause follows the `bazaar:` one, the job log prints `bazaar resource: <url>

@@ -22,6 +22,7 @@ and warns under three.
 | 2026-10-10 | gankdat   | cost    | 37.00 | Cloudflare invoice #IN-83063702, US$49.00 (≈ £37): Workers Paid US$5 + D1 row-write overage ≈ US$44 — 93.9M rows written 2026-09-10→10-10 against the 50M allowance, caused by nightly full reloads of nine D1 registers (5–6M rows/day 09-20→10-05). Fixed 2026-10-04 (delta refresh): 0.02–0.14M rows/day since 10-06, so next period stays inside the allowance. The card charge failed on 10 Oct; paid by the owner, charge confirmed by Cloudflare 12 Oct (the 10-13 'duplicate' question was this same invoice) |
 | 2026-09-17 | portfolio | cost    | 3.70 | Chrome Web Store developer registration — US$5.00 incl. VAT on Mastercard 17 Sep (order CWS.5162-7768-2586-70036); £3.70 at ~1.35, exact GBP per card statement |
 | 2026-10-16 | gankdat   | cost    | 0.00 | x402 Bazaar indexing (action 026, option B): paid US$0.005 from the x402 test wallet funded on 2026-09-19 (US$1.11 USDC on Base, before the ledger counted gankdat); no new money; the wallet's key is the `X402_PROBE_KEY` secret for the monthly liveness probe |
+| 2026-10-23 | gankdat   | cost    | 0.00 | x402 Bazaar per-route indexing (`x402-bazaar-week-1-index-check`): 16 half-cent calls (US$0.08) from the same test wallet, one per route CDP had not indexed; from now the metrics probe pays each route once a month at most (≤ 20 half-cents = US$0.10 / 30 d, ~US$1 a year from the wallet's ≈ US$1.09); no new money |
 
 ## Recurring
 

@@ -1553,3 +1553,14 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-22 21:30 | burn-down | new-ventures emptied (12 done) and set needs_research (cooling, researched today); no owner action raised
 - 2026-10-22 21:33 | burn-down | Stopping: Framer spike built, relay fix filed; pipeline starved and cooled, tonight's pre-research done
 - 2026-10-23 05:16 | watchdog | ci-minutes: 623 billed min/7d (~2670/month, wall 391; private cap 2,000, warn 1700); top: fetch relay 115, notify owner 
+- 2026-10-23 09:25 | build | fetch-relay.yml first run: success (push run 155 at 09:15, 16 s; after the 21:32 installer)
+- 2026-10-23 09:25 | build | Bazaar week-1 read: 1 of 17 routes listed (uk-tenders, the only route ever paid); validate 17/17
+- 2026-10-23 09:25 | build | Read: CDP seller docs (relay): indexing is per resource after a settled call, ≤ 15 min; 30 d unpaid = dropped
+- 2026-10-23 09:25 | build | Read: cdp-sdk #806 (payload needs extensions.bazaar + resource), #759 (per resource, 12-14 h, drop-outs)
+- 2026-10-23 09:25 | build | x402-probe.mjs pays per route: unlisted or 23-day-stale routes, all on the dispatch input; cap 20/30 d
+- 2026-10-23 09:25 | build | x402-catalogue.mjs: slugs, payTo and merchant catalogue reads shared by metrics.mjs and the probe
+- 2026-10-23 09:25 | build | x402-test-client.mjs prints the facilitator's Bazaar verdict from EXTENSION-RESPONSES
+- 2026-10-23 09:25 | build | Tests: probeTargets, ownProbePayments, the 30-day cap (13 in x402-bazaar-read.spec); gates green
+- 2026-10-23 09:25 | build | docs/ci/gankdat-metrics.yml: probe step comment and input text match the per-route rule
+- 2026-10-23 09:25 | build | Queue: gankdat x402-bazaar-week-1-index-check done; LEDGER row: 16 half-cents (US$0.08), ~US$1/yr
+- 2026-10-23 09:25 | build | RESEARCH.md: week-1 reading; MARKETPLACE-PREP Bazaar row; ARCHITECTURE per-route note
