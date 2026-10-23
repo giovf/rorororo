@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "researched": "2026-10-22",
   "items": [
     {
@@ -1022,6 +1022,17 @@
       "added": "2026-10-22",
       "doing_since": "2026-10-22",
       "done_at": "2026-10-22"
+    },
+    {
+      "id": "research-defers-to-build-slot",
+      "title": "`npm run pipeline cold` (burn-down) defers every research reason to a build slot in flight — a `| build | started` marker of the last hour in docs/ops/SLOTS.md with no `| build |` run-log line after it — printing a `(deferred: <venture> research — build slot started HH:MM UTC is in flight)` clause instead of `starved, not cooling` / `needs research`, so the 17:00 burn-down and the 17:00 build never research the same venture twice",
+      "why": "2026-10-23 17:11 burn-down: `cold` said `gankdat: starved, not cooling` one minute after the build slot's 17:10 marker, and the build slot's relay rounds (gankdat-research-2026-10-23-17, -17b) showed it was researching the same queue; the burn-down stepped back by reading the marker by hand (RUNS 17:14). The item claim covers builds (claim-before-install, 2026-10-12) but research has no marker, and the 10-22 night had the same pair (the build researched new-ventures while the burn-down ran). A duplicate research run is two sets of items for one venture, a merge conflict on the queue file, and a slot spent. Built 2026-10-23 (burn-down): `buildSlotInFlight()` in scripts/pipeline-cold.ts (tests in pipeline-cold.test.ts), the `cold` branch of scripts/pipeline.ts moves research reasons into the clause for the burn-down only (`--routine=build` unchanged); README and the routine prompt carry the sentence. Limit: a burn-down that pulls before the marker lands cannot see it; the next hourly fire can.",
+      "effort_days": 0.1,
+      "proof": "no night with two research commits for the same venture from the 17:00 build and the 17:xx burn-down over 14 days; the 17:00 burn-down's gate line carries the deferred clause on nights the build slot researches",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-23",
+      "done_at": "2026-10-23"
     }
   ]
 }

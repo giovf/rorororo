@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  buildSlotInFlight,
   datedArrived,
   dayStart,
   lineStamp,
@@ -100,5 +101,45 @@ describe('datedWithinDay', () => {
     expect(datedWithinDay('2026-10-22', night)).toBe(false);
     expect(datedWithinDay(undefined, night)).toBe(false);
     expect(datedWithinDay('2026-10-20', new Date('2026-10-20T07:00:00Z'))).toBe(false);
+  });
+});
+
+describe('buildSlotInFlight', () => {
+  const slots = (...lines: string[]): string => `# Slot starts\n\n${lines.join('\n')}\n`;
+  const marker = '- 2026-10-23 17:10 | build | started';
+  it('names a build marker of the last hour with no build run-log line after it', () => {
+    expect(buildSlotInFlight(slots(marker), runs(pass), new Date('2026-10-23T17:11:00Z'))).toBe(
+      '2026-10-23 17:10',
+    );
+    expect(buildSlotInFlight(slots(marker), runs(), new Date('2026-10-23T18:05:00Z'))).toBe(
+      '2026-10-23 17:10',
+    );
+  });
+  it('is over once the build slot logged a run-log line at or after its marker', () => {
+    const built = '- 2026-10-23 17:40 | build | gankdat researched: 3 items filed';
+    expect(buildSlotInFlight(slots(marker), runs(built), new Date('2026-10-23T17:45:00Z'))).toBe(
+      undefined,
+    );
+    const earlier = '- 2026-10-23 09:25 | build | Bazaar week-1 read';
+    expect(buildSlotInFlight(slots(marker), runs(earlier), new Date('2026-10-23T17:45:00Z'))).toBe(
+      '2026-10-23 17:10',
+    );
+  });
+  it('ignores a marker older than an hour, a future one, and other routines', () => {
+    expect(buildSlotInFlight(slots(marker), runs(), new Date('2026-10-23T18:11:00Z'))).toBe(
+      undefined,
+    );
+    expect(buildSlotInFlight(slots(marker), runs(), new Date('2026-10-23T17:00:00Z'))).toBe(
+      undefined,
+    );
+    const metrics = '- 2026-10-23 17:10 | metrics | started';
+    expect(buildSlotInFlight(slots(metrics), runs(), new Date('2026-10-23T17:11:00Z'))).toBe(
+      undefined,
+    );
+  });
+  it('never defers the build routine itself', () => {
+    expect(
+      buildSlotInFlight(slots(marker), runs(), new Date('2026-10-23T17:11:00Z'), 'build'),
+    ).toBe(undefined);
   });
 });

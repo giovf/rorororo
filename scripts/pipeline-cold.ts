@@ -88,3 +88,41 @@ export function preResearchSpent(
     );
   });
 }
+
+/** How long a build slot's start marker counts as "in flight" for the burn-down's research deferral. */
+export const BUILD_IN_FLIGHT_MINUTES = 60;
+
+/**
+ * The stamp (`YYYY-MM-DD HH:MM`) of a build slot that is researching right now, or undefined
+ * (2026-10-23, foundry `research-defers-to-build-slot`). The 17:00 build and the 17:00 burn-down
+ * read the same `empty` list, and research has no claim marker, so both researched the same venture
+ * unless one of them reasoned it out by hand (2026-10-23: the burn-down read the 17:10 marker and
+ * stepped back). In flight = a `| build | started` line of docs/ops/SLOTS.md within the last hour
+ * (up to 5 min of clock skew ahead) with no `| build |` run-log line stamped at or after it — a build
+ * that already logged is done, and its research is on main for `cold` to see as cooling. Burn-down
+ * only: the build routine never defers to itself.
+ */
+export function buildSlotInFlight(
+  slots: string,
+  runs: string,
+  now: Date,
+  routine: PassRoutine = 'burn-down',
+): string | undefined {
+  if (routine !== 'burn-down') return undefined;
+  const from = now.getTime() - BUILD_IN_FLIGHT_MINUTES * 60_000;
+  const until = now.getTime() + 5 * 60_000;
+  let marker: string | undefined;
+  for (const line of slots.split('\n')) {
+    const m = /^- (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) \| build \| started\s*$/.exec(line);
+    if (!m) continue;
+    const at = Date.parse(`${m[1]!.replace(' ', 'T')}:00Z`);
+    if (Number.isNaN(at) || at < from || at > until) continue;
+    if (marker === undefined || m[1]! > marker) marker = m[1]!;
+  }
+  if (marker === undefined) return undefined;
+  const logged = runs.split('\n').some((line) => {
+    const stamp = lineStamp(line);
+    return stamp !== undefined && stamp >= marker && line.split(' | ')[1] === 'build';
+  });
+  return logged ? undefined : marker;
+}

@@ -1,7 +1,7 @@
 // Reads the work pipeline (docs/pipeline/) and prints it; fails on any invalid file.
 // Run: npm run pipeline [status|next|empty|cold [--routine=build]|claim <venture>/<id> [--by=<routine>]]
 // (Node 22 runs .ts directly — keep syntax erasable)
-import { readdirSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 
 const dir = path.resolve(import.meta.dirname, '..', 'docs', 'pipeline');
@@ -40,7 +40,8 @@ if (process.argv[2] === 'cold') {
   const now = new Date();
   const today = now.toISOString().slice(0, 10);
   const dayMs = 86_400_000;
-  const { datedArrived, datedWithinDay, preResearchSpent } = await import('./pipeline-cold.ts');
+  const { buildSlotInFlight, datedArrived, datedWithinDay, preResearchSpent } =
+    await import('./pipeline-cold.ts');
   type ColdItem = { status: string; not_before?: string; doing_since?: string; added: string };
   type ColdQueue = {
     venture: string;
@@ -78,18 +79,35 @@ if (process.argv[2] === 'cold') {
       continue; // an item comes due today at 07:00 or tomorrow: waiting, not starved (2026-10-20)
     else build.push(`${q.venture}: starved, not cooling`);
   }
-  const reasons: string[] = [...research, ...build];
   const runs = readFileSync(path.resolve(dir, '..', 'RUNS.md'), 'utf8');
   // `-- --routine=build` (npm keeps a bare flag for itself, so npm_config_routine is read too)
   const routineArg =
     process.argv.find((a) => a.startsWith('--routine='))?.slice('--routine='.length) ??
     process.env['npm_config_routine'];
   const routine = routineArg === 'build' ? 'build' : 'burn-down';
+  // A build slot in flight is researching the same starved or flagged queue (2026-10-23, foundry
+  // research-defers-to-build-slot): the burn-down leaves every research reason to it for the hour
+  // and says so; buildable items are unaffected — the claim marker covers those.
+  const slotsFile = path.resolve(dir, '..', 'ops', 'SLOTS.md');
+  const slots = existsSync(slotsFile) ? readFileSync(slotsFile, 'utf8') : '';
+  const inFlight = buildSlotInFlight(slots, runs, now, routine);
+  const deferred: string[] = [];
+  const reasons: string[] = [];
+  for (const r of [...research, ...build]) {
+    if (inFlight !== undefined && !r.endsWith(': buildable item')) deferred.push(r.split(':')[0]!);
+    else reasons.push(r);
+  }
   if (!preResearchSpent(runs, now, routine))
     reasons.push(
       `exchange: pre-research pass unspent this ${routine === 'build' ? 'day' : 'night'}`,
     );
-  console.log(reasons.length === 0 ? 'starved-and-cooled' : `work: ${reasons.join('; ')}`);
+  const note =
+    deferred.length === 0
+      ? ''
+      : ` (deferred: ${deferred.join(', ')} research — build slot started ${inFlight} UTC is in flight)`;
+  console.log(
+    reasons.length === 0 ? `starved-and-cooled${note}` : `work: ${reasons.join('; ')}${note}`,
+  );
   process.exit(0);
 }
 
