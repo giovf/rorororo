@@ -1610,3 +1610,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-23 17:45 | burn-down | gankdat v0.25.5: /authorize accepts every canonical spelling of its resource (origin, slash, case, :443)
 - 2026-10-23 17:45 | burn-down | The authorize_rejected funnel detail now names the resource value the client sent; 11 spec cases added
 - 2026-10-23 17:45 | burn-down | ARCHITECTURE OAuth note; Queue: gankdat oauth-resource-indicator-variants done
+- 2026-10-23 17:41 | burn-down | Deploys: v0.25.4 green (gankdat run 149, 2.5 min); v0.25.5 run 150 started 17:39, read by the 18:00 slot if not here
+- 2026-10-23 17:41 | burn-down | Stopping: pre-research pass, Etsy spike, demo-access fix, cold deferral and two gankdat items built; starved and cooled
