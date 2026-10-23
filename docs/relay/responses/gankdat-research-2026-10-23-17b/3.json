@@ -1,0 +1,1 @@
+{"ok":false,"error":{"code":"payment_required","message":"This route is paid per call with x402 (USDC on Base, no account): the PAYMENT-REQUIRED header carries the price, network and receiving address. Keyed access without x402 is at /v1/data.","docs_url":"https://gankdat.com/docs#payment_required"}}
