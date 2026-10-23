@@ -2,7 +2,7 @@
   "venture": "hackathons",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-22",
+  "updated": "2026-10-23",
   "researched": "2026-10-20",
   "weight": 2,
   "items": [
@@ -137,6 +137,18 @@
       "status": "todo",
       "not_before": "2026-10-26",
       "added": "2026-10-20"
+    },
+    {
+      "id": "paypal-hackathon-demo-access",
+      "title": "PayPal AI Hackathon: give the judges a working demo path — write ventures/hackathons/entries/paypal-ai-hackathon/DEMO-ACCESS.md (paste-ready for the Devpost demo field and for a reply to the organiser's 10-21 message: hosted URL https://gankdat.com/account, sign in with any email, the credit-pack buttons, the MCP tools buy_credits / confirm_credit_purchase, what a judge sees without a PayPal sandbox buyer and what with one), add a \"Try the demo\" section with the same run steps to ventures/gankdat/README.md (the public mirror github.com/giovf/gankdat the submission links), and owner action file 028: create or reuse a sandbox personal (buyer) account in the PayPal developer dashboard, paste its email and password with the DEMO-ACCESS text into the Devpost form and the organiser's message thread before 2026-11-12 12:00 PT",
+      "why": "INBOX 2026-10-21 02:29: the organiser wrote that the submission lacks access to a functional demo and needs run instructions in the repo or a hosted demo URL added to the form by 2026-11-12 12:00 PT — an entry the judges cannot run is not judged, and this is the only money-on-offer entry in play (US$67,500 pool, 1st US$12k; RESEARCH §1). The demo exists (gankdat v0.24.0 sandbox credit packs, scripts/paypal-walkthrough.mjs, the recorded video), but the form's demo field names only /account, which asks for a magic-link sign-in and a PayPal sandbox buyer the judges do not have, and the mirror README has no run steps. The owner: line of 10-21 in ALERTS stands; this item turns it into a five-minute paste. — Done 2026-10-23 by the 17:00 burn-down in the same minutes this item was filed (commit fc6a5f8e, from the same ALERTS line): the gankdat README carries the three run paths (the mirror job publishes it), owner action 028 holds the paste-ready demo URL and testing instructions for the Devpost form, and the ALERTS line records it. Nothing left to build; the owner pastes.",
+      "effort_days": 0.1,
+      "proof": "the Devpost form carries the demo URL, the run steps and a sandbox buyer login, and the organiser's message is answered before 11-12; recorded in RESEARCH.md",
+      "score": 8,
+      "status": "done",
+      "added": "2026-10-23",
+      "done_at": "2026-10-23",
+      "updated": "2026-10-23"
     }
   ],
   "research_after": "2026-10-26"
