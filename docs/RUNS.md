@@ -1601,3 +1601,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-23 17:20 | burn-down | new-ventures emptied (16 done) and set needs_research (cooling, researched 10-22); no owner action raised
 - 2026-10-23 17:27 | burn-down | PayPal entry demo access (ALERTS 10-21): gankdat README gains the three run paths; the mirror job publishes it
 - 2026-10-23 17:27 | burn-down | Owner action 028: paste-ready demo URL + testing instructions for the Devpost form (~3 min, £0, by 12 Nov)
+- 2026-10-23 17:27 | build | Queue: paypal-hackathon-demo-access set done — the 17:00 burn-down built it in parallel (README run paths, action 028)
