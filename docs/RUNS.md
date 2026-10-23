@@ -1576,7 +1576,13 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-23 17:12 | burn-down | Gate: BURN.json open, cold says work (gankdat research, pass unspent); next null, nothing claimed; main green
 - 2026-10-23 17:14 | burn-down | gankdat-metrics.yml first run: success (09:24 dispatch, run 260, 4 min; after the 09:24 installer)
 - 2026-10-23 17:14 | burn-down | gankdat research left to the 17:10 build slot (its marker landed 17:10); this run takes the pre-research pass
-- 2026-10-23 17:35 | burn-down | Exchange pre-research: Etsy digital downloads (UK sole-trader tax spreadsheets) spike seeded (5); 0 spikes open
-- 2026-10-23 17:35 | burn-down | Read: a rival listing shows 172 sales, 18 reviews, 1 year on Etsy at ~US$9; Payhip siblings £6.95-9.99
-- 2026-10-23 17:35 | burn-down | Read: fees 6.5 % + UK 4 % + £0.20 + 20c listing + one-off set-up fee (US$15-29); Persona ID; digital files allowed
-- 2026-10-23 17:35 | burn-down | No relay host added: Etsy's API Terms forbid automated reads of etsy.com; the spike uses WebSearch only
+- 2026-10-23 17:16 | burn-down | Exchange pre-research: Etsy digital downloads (UK sole-trader tax spreadsheets) spike seeded (5); 0 spikes open
+- 2026-10-23 17:16 | burn-down | Read: a rival listing shows 172 sales, 18 reviews, 1 year on Etsy at ~US$9; Payhip siblings £6.95-9.99
+- 2026-10-23 17:16 | burn-down | Read: fees 6.5 % + UK 4 % + £0.20 + 20c listing + one-off set-up fee (US$15-29); Persona ID; digital files allowed
+- 2026-10-23 17:16 | burn-down | No relay host added: Etsy's API Terms forbid automated reads of etsy.com; the spike uses WebSearch only
+- 2026-10-23 17:20 | burn-down | Spike etsy-digital-downloads-uk-tax-templates done: 20 searches, no etsy.com fetch (terms forbid automated reads)
+- 2026-10-23 17:20 | burn-down | Read: UK on Etsy Payments' list; Persona ID + selfie, bank account in the seller's name; set-up fee US$15-29 one-off
+- 2026-10-23 17:20 | burn-down | Read: fees on a £7.19 sale ≈ £1.38 (19 %); Etsy remits VAT on downloads; weekly Bacs payouts, no floor
+- 2026-10-23 17:20 | burn-down | Niche: 172 sales/18 reviews at £7.19 after a year; a UK VAT-seller sheet ~1.5k reviews; the £69 sheet 0 sales
+- 2026-10-23 17:20 | burn-down | Call: promote reshaped (2026/27 SA103 + MTD workbook at £6.99); exchange 10-28 ranks it; owner steps batched there
+- 2026-10-23 17:20 | burn-down | new-ventures emptied (16 done) and set needs_research (cooling, researched 10-22); no owner action raised
