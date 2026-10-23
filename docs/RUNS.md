@@ -1573,3 +1573,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-23 09:50 | build | Second forced round (run 261) after the v0.25.3 deploy: 16 of 17 routes settled; uk-planning 503 (paused)
 - 2026-10-23 09:50 | build | Catalogue already lists eu-ted 20 min after its first settlement; 09:45 row reads bazaar: 2 listed
 - 2026-10-23 09:50 | build | Spent today: 18 half-cents (US$0.09) from the test wallet; the 10-24 row should read 16 listed
+- 2026-10-23 17:12 | burn-down | Gate: BURN.json open, cold says work (gankdat research, pass unspent); next null, nothing claimed; main green
+- 2026-10-23 17:14 | burn-down | gankdat-metrics.yml first run: success (09:24 dispatch, run 260, 4 min; after the 09:24 installer)
+- 2026-10-23 17:14 | burn-down | gankdat research left to the 17:10 build slot (its marker landed 17:10); this run takes the pre-research pass
+- 2026-10-23 17:35 | burn-down | Exchange pre-research: Etsy digital downloads (UK sole-trader tax spreadsheets) spike seeded (5); 0 spikes open
+- 2026-10-23 17:35 | burn-down | Read: a rival listing shows 172 sales, 18 reviews, 1 year on Etsy at ~US$9; Payhip siblings £6.95-9.99
+- 2026-10-23 17:35 | burn-down | Read: fees 6.5 % + UK 4 % + £0.20 + 20c listing + one-off set-up fee (US$15-29); Persona ID; digital files allowed
+- 2026-10-23 17:35 | burn-down | No relay host added: Etsy's API Terms forbid automated reads of etsy.com; the spike uses WebSearch only
