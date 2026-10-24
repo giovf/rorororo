@@ -1074,8 +1074,9 @@
       "effort_days": 0.2,
       "proof": "no green majors PR is older than 7 days; PR #7 merged or closed with a lift condition by the item's commit",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-24"
+      "status": "doing",
+      "added": "2026-10-24",
+      "doing_since": "2026-10-24"
     },
     {
       "id": "ci-minutes-line-fits-cap",
