@@ -1,0 +1,166 @@
+{
+  "request": "payhip-2026-10-24",
+  "fetched_at": "2026-10-24T18:33:43.173Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://payhip.com/pricing",
+      "fetched_at": "2026-10-24T18:33:37.705Z",
+      "status": 403,
+      "final_url": "https://payhip.com/pricing",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 5485,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/terms",
+      "fetched_at": "2026-10-24T18:33:38.429Z",
+      "status": 403,
+      "final_url": "https://payhip.com/terms",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 5485,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/eu-vat",
+      "fetched_at": "2026-10-24T18:33:38.940Z",
+      "status": 403,
+      "final_url": "https://payhip.com/eu-vat",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 5485,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/features/vat-taxes",
+      "fetched_at": "2026-10-24T18:33:39.450Z",
+      "status": 403,
+      "final_url": "https://payhip.com/features/vat-taxes",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 5771,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/173-how-do-i-get-paid",
+      "fetched_at": "2026-10-24T18:33:39.462Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/article/173-how-do-i-get-paid",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 20146,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/132-how-payhip-works",
+      "fetched_at": "2026-10-24T18:33:40.037Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/article/132-how-payhip-works",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 70652,
+      "truncated": false
+    },
+    {
+      "method": "HEAD",
+      "url": "https://payhip.com/marketplace",
+      "fetched_at": "2026-10-24T18:33:40.058Z",
+      "status": 403,
+      "final_url": "https://payhip.com/marketplace",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://payhip.com/discover",
+      "fetched_at": "2026-10-24T18:33:40.572Z",
+      "status": 403,
+      "final_url": "https://payhip.com/discover",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://payhip.com/search",
+      "fetched_at": "2026-10-24T18:33:41.091Z",
+      "status": 403,
+      "final_url": "https://payhip.com/search",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/b/Mbo7u",
+      "fetched_at": "2026-10-24T18:33:41.617Z",
+      "status": 403,
+      "final_url": "https://payhip.com/b/Mbo7u",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "10.html",
+      "bytes": 5771,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/b/qxR3i",
+      "fetched_at": "2026-10-24T18:33:42.138Z",
+      "status": 403,
+      "final_url": "https://payhip.com/b/qxR3i",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "11.html",
+      "bytes": 5771,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/b/9ZbAV",
+      "fetched_at": "2026-10-24T18:33:42.649Z",
+      "status": 403,
+      "final_url": "https://payhip.com/b/9ZbAV",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "12.html",
+      "bytes": 5771,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/b/QFb24",
+      "fetched_at": "2026-10-24T18:33:43.161Z",
+      "status": 403,
+      "final_url": "https://payhip.com/b/QFb24",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "13.html",
+      "bytes": 5771,
+      "truncated": false
+    }
+  ]
+}
