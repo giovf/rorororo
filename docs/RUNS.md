@@ -1740,3 +1740,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 20:33 | burn-down | Rules: own-billing add-ins allowed + labelled; sole trader = Company account, manual review on a tax doc, £0
 - 2026-10-24 20:33 | burn-down | Relay lesson: AppSource raw pages embed every tile in window.__INITIAL_STATE__; RENDER adds nothing
 - 2026-10-24 20:33 | burn-down | Call: promote reshaped as gankdat appsource-excel-custom-functions-add-in (1.8); new-ventures emptied again
+- 2026-10-24 21:07 | notify | 2 jobs for your next Claude Code session, oldest 20 days: sign and upload ReadFocus 0.3.0
