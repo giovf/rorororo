@@ -1108,8 +1108,9 @@
       "effort_days": 0.1,
       "proof": "No handoff: line older than 3 days names a dashboard, token or .devcontainer/ for 30 days; median open age of owner asks stays under 7 days",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-24"
+      "status": "doing",
+      "added": "2026-10-24",
+      "doing_since": "2026-10-24"
     }
   ]
 }
