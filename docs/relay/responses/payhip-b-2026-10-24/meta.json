@@ -1,0 +1,196 @@
+{
+  "request": "payhip-b-2026-10-24",
+  "fetched_at": "2026-10-24T18:35:58.922Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/102-payhip-pricing-plans",
+      "fetched_at": "2026-10-24T18:35:24.258Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/article/102-payhip-pricing-plans",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 18425,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/65-connecting-your-stripe-account",
+      "fetched_at": "2026-10-24T18:35:25.111Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/article/65-connecting-your-stripe-account",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 24859,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/64-connecting-your-paypal-account",
+      "fetched_at": "2026-10-24T18:35:25.695Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/article/64-connecting-your-paypal-account",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 138728,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/category/391-sales-tax",
+      "fetched_at": "2026-10-24T18:35:26.488Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/category/391-sales-tax",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 15211,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/category/48-developer",
+      "fetched_at": "2026-10-24T18:35:27.161Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/category/48-developer",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 15408,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T18:35:27.243Z",
+      "status": 403,
+      "final_url": "https://payhip.com/pricing",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 12,
+        "failed": [
+          "GET https://payhip.com/pricing → 403",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a4fb14df584acf11/1792866929007/0be4ab05d9c225457f45a1183235efb4f0b22156bb40b9b9de2be92c01c29225/vO2RKFnSjjBArnGfmYsRTxYmAjsgamN",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a4fb14df584acf11/EtAntS1qTpAkrVTahmi2HCtYUi92ZPhMkNy_ijVB83I-1792866928-1.2.1.1-vALy3LwMTqhh4mZKndUE4zyNUzSN..DqSTp6sFVj"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "6.html",
+      "bytes": 28677,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/eu-vat",
+      "render": true,
+      "fetched_at": "2026-10-24T18:35:32.913Z",
+      "status": 403,
+      "final_url": "https://payhip.com/eu-vat",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 11,
+        "failed": [
+          "GET https://payhip.com/eu-vat → 403",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a4fb14fced8ced3f/K6eAPH321lTDTMozG1INWqoxUwlIpRMAf2iQT2Ofl98-1792866933-1.2.1.1-I5q1P6B_wszZ6QKETm2gG6eO81NhUWP6XNPVTAwT",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a4fb14fced8ced3f/1792866933517/49172cbe8dafde3b91e19c9f6bed1a1fd52cb69b2bc0ac74af1dd77b4116cc03/TTbBZCykYY8qka_KZvazTqNNOYqdpmL"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "7.html",
+      "bytes": 28674,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/terms",
+      "render": true,
+      "fetched_at": "2026-10-24T18:35:36.412Z",
+      "status": 403,
+      "final_url": "https://payhip.com/terms",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 12,
+        "failed": [
+          "GET https://payhip.com/terms → 403",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a4fb1512daaa9447/1792866937024/1c0cdb75ea5c6d48693de27fda4f8adb8b49c1e4718c880600143ff362bf138a/c.qRCEzqNJXRqfZAEKU3_opa9d_QMi_",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a4fb1512daaa9447/4MTiKen.X_FlxK_OYmmSbVb7Ctx.vAUU_bSkHWpM3Pk-1792866936-1.2.1.1-mA8Dd_L8yR0oHuacd1hN.3QaJf1lEXy4ZYDHH1X1"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy.",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 28671,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://payhip.com/b/Mbo7u",
+      "render": true,
+      "fetched_at": "2026-10-24T18:35:40.938Z",
+      "status": 403,
+      "final_url": "https://payhip.com/b/Mbo7u",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 9,
+        "failed": [
+          "GET https://payhip.com/b/Mbo7u → 403",
+          "POST https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/3506239014:1792865506:7xRw2xU1kq9z7aDSiPiWzTyegQiDOmIJ-IVR5ESq_us/a4fb152f0eb61584/sF8e3Mk0JzgVhI3S1tyqN1jLyC2kwPYJqiGUlNJ_4Uw-",
+          "POST https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/fo/3506239014:1792865506:7xRw2xU1kq9z7aDSiPiWzTyegQiDOmIJ-IVR5ESq_us/a4fb152f0eb61584/sF8e3Mk0JzgVhI3S1tyqN1jLyC2kwPYJqiGUlNJ_4Uw-"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.html",
+      "bytes": 28677,
+      "truncated": false
+    }
+  ]
+}

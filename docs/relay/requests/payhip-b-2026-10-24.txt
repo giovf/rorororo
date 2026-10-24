@@ -1,9 +1,0 @@
-GET https://help.payhip.com/article/102-payhip-pricing-plans
-GET https://help.payhip.com/article/65-connecting-your-stripe-account
-GET https://help.payhip.com/article/64-connecting-your-paypal-account
-GET https://help.payhip.com/category/391-sales-tax
-GET https://help.payhip.com/category/48-developer
-RENDER https://payhip.com/pricing
-RENDER https://payhip.com/eu-vat
-RENDER https://payhip.com/terms
-RENDER https://payhip.com/b/Mbo7u
