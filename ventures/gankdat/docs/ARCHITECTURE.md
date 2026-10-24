@@ -139,6 +139,16 @@ names — never rename those; see memory/git history for why).
   Googlebot followed the docs' /v1/data and /mcp links into the keyless walls). The
   paths stay crawlable in robots.txt because agents read the wall bodies for the
   sign-up and payment hints; only indexing is declined (2026-10-16)
+- `public/addin/` + `public/addin.html` — **gankdat for Excel** (2026-10-24, queue `appsource-excel-custom-functions-add-in`,
+  v0.26.0): an add-in-only Office manifest, six custom functions in the `GANKDAT` namespace (`UKCOMPANY`, `UKCHARITY`,
+  `CQC`, `SANCTIONS`, `TENDERS`, `QUERY`) that each make one bearer call to `/v1/data/<slug>` with the key the task pane
+  stored in `OfficeRuntime.storage`, and a task pane whose first section is the keyless MCP preview (five rows) — the
+  value before the key step. Static files on this domain only (AppSource policy 1120.5.2), no mobile form factor
+  (1120.2 bans purchase UI there), per-page CSP in `_headers` for Office.js and Office's frames. The store lists it free
+  with "Additional purchase may be required"; keys, plans and credit packs stay on gankdat.com — a distribution surface
+  over the existing API, nothing new to bill. Listing copy, certification notes and the owner's Partner Center steps:
+  `docs/APPSOURCE-ADDIN.md`; `test/addin.spec.ts` pins the certification facts. The add-in is dataset-agnostic (headers
+  are the record's own keys; `QUERY` takes any registered slug) so the isolation rule holds.
 - `docs/` — architecture, runbook, setup docs; `.taskmaster/` — PRD + backlog
 
 ## Stack

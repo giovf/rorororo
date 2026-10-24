@@ -810,3 +810,21 @@ the header forward stays a known gap (ARCHITECTURE.md) to build if a resource is
 Also in the row: `x402 30d: 4 paid, 4 clients — uk-tenders 4; LumiTrustBuyer 1` — a fourth external payer on
 uk-tenders on 10-23, the first since 10-18; still one dataset, the queue's conversion items stand. Cost: £0
 (no probe payment; the 7-day spacing skipped it).
+
+## Build 2026-10-24 — gankdat for Excel on AppSource (burn-down)
+
+Queue `appsource-excel-custom-functions-add-in` (promoted the same evening by spike `appsource-excel-add-in-shelf`:
+316 of 427 Excel add-ins read bill outside the store; data-API rivals Alpha Vantage, Twelve Data, FMP, IEX, Wisesheets
+at 10–50 ratings; no UK-register add-in on the shelf). Built as v0.26.0, static files only — the API, the keyless MCP
+preview, /account, Stripe plans and PayPal credit packs already existed, so the add-in is a distribution surface with
+nothing new to bill: `public/addin/manifest.xml` (TaskPaneApp + custom functions, no mobile form factor), six
+`GANKDAT.*` functions (`UKCOMPANY`, `UKCHARITY`, `CQC`, `SANCTIONS`, `TENDERS`, `QUERY`; one bearer `/v1/data` call
+each, the key from `OfficeRuntime.storage`, results as header + rows), a task pane whose first section is the five-row
+preview and whose second stores the key and links /account, the help page `/addin` (every function's `helpUrl`),
+per-page CSP for Office.js and Office frames, `test/addin.spec.ts` (11 assertions on the certification facts).
+`docs/APPSOURCE-ADDIN.md` carries the listing copy, categories and the notes for certification; action 031 asks the
+owner for the one sitting the shelf needs (Company account under the new £0 flow with manual review on a tax document,
+a sideload test, the offer upload). Not testable here: no sandbox runs Excel, so the first load of the manifest is the
+owner's sideload step; the two likely failure points and their one-line fixes are written down in APPSOURCE-ADDIN.md.
+Proof unchanged (≥ 10 keys' first call from the add-in and ≥ 1 credit pack through its pane within 30 days of listing);
+the Office user agent on the `rest_data` point is how the row will see it. Cost £0.

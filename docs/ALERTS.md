@@ -336,3 +336,4 @@ closed entries older than 30 days (git keeps the history).
 - 2026-10-21 Meta Global AI Developer Hackathon: application APPROVED (mail 21:25 UTC); build window 26 Oct–4 Nov — unblocks hackathons `meta-global-ai-hackathon-entry`.
 - 2026-10-24 owner: UK tax workbook is built — open the Etsy shop (ID check, bank, fee ≤ £25) + free Zoho sign-in, ~30 min — docs/for-owner/actions/029-etsy-shop-and-zoho.md
 - 2026-10-24 owner: add two read scopes to the CI Cloudflare token and say yes/no to Node 24, ~6 min — docs/for-owner/actions/030-cloudflare-token-scopes-and-devcontainer-node.md
+- 2026-10-24 owner: gankdat's Excel add-in is built — try it once in Excel, open a free Partner Center account and submit it to AppSource, ~45 min, £0 — docs/for-owner/actions/031-partner-center-appsource.md

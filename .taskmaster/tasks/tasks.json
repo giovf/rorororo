@@ -1399,13 +1399,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-18T17:25:14.240Z"
+      },
+      {
+        "id": "40",
+        "title": "gankdat for Excel: AppSource add-in (manifest, GANKDAT.* custom functions, task pane, help page, tests)",
+        "description": "Queue gankdat/appsource-excel-custom-functions-add-in built 2026-10-24 (burn-down, v0.26.0). Owner step: action 031.",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-24T21:28:15.393Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-18T17:25:14.240Z",
-      "taskCount": 39,
-      "completedCount": 32,
+      "lastModified": "2026-10-24T21:28:15.393Z",
+      "taskCount": 40,
+      "completedCount": 33,
       "tags": [
         "master"
       ]

@@ -1741,3 +1741,12 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 20:33 | burn-down | Relay lesson: AppSource raw pages embed every tile in window.__INITIAL_STATE__; RENDER adds nothing
 - 2026-10-24 20:33 | burn-down | Call: promote reshaped as gankdat appsource-excel-custom-functions-add-in (1.8); new-ventures emptied again
 - 2026-10-24 21:07 | notify | 2 jobs for your next Claude Code session, oldest 20 days: sign and upload ReadFocus 0.3.0
+- 2026-10-24 21:28 | burn-down | Built gankdat appsource-excel-custom-functions-add-in (v0.26.0): manifest + 6 GANKDAT.* functions
+- 2026-10-24 21:28 | burn-down | Task pane: keyless MCP preview first, then API key into OfficeRuntime.storage, /account links
+- 2026-10-24 21:28 | burn-down | Help page /addin (every helpUrl), landing card, privacy row, sitemap, CSP for Office.js and frames
+- 2026-10-24 21:28 | burn-down | test/addin.spec.ts pins same-domain URLs, no mobile form factor, ids associated, helpUrl anchors
+- 2026-10-24 21:28 | burn-down | docs/APPSOURCE-ADDIN.md: listing copy, categories, certification notes; MARKETPLACE row added
+- 2026-10-24 21:28 | burn-down | Not testable here: no sandbox runs Excel; the owner's sideload is the first load (action 031 step 1)
+- 2026-10-24 21:28 | burn-down | Action 031: Partner Center Company account (new £0 flow, tax document), sideload test, submission
+- 2026-10-24 21:28 | notify | Your Excel add-in is built: one 45-minute sitting opens the Microsoft store account and submits it
+- 2026-10-24 21:28 | burn-down | CI first runs: none owed; Dependabot majors: none open; pipeline starved and cooled after this item
