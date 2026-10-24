@@ -1698,3 +1698,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 18:45 | burn-down | payhip.com blocks the runner (Cloudflare 403, raw + rendered); help centre read in 3 relay rounds
 - 2026-10-24 18:45 | burn-down | Queued tax-workbook payhip-twin-listing (5), blocked on action 029 step 4 (Payhip account, £0)
 - 2026-10-24 18:47 | burn-down | Stopping for time: 2 items (tax workbook built + listing pack, Payhip spike); JetBrains price read next
+- 2026-10-24 19:17 | burn-down | Spike jetbrains-price-read done: 1 RENDER relay round, all 14 pricing tabs rendered (US, personal)
+- 2026-10-24 19:17 | burn-down | Prices: 10 of 14 at ≥ US$10/user/yr — 8 yearly US$10-38, .log US$38, Skol US$20, Monokai US$29 one-off
+- 2026-10-24 19:17 | burn-down | 8 of 14 sit at exactly US$1/mo, US$10/yr personal (ANSI 1.55M downloads among them); 4 at US$1-5/yr
+- 2026-10-24 19:17 | burn-down | Spike §4a table, exchange idea trigger updated: bar cleared, 10-28 exchange re-scores at evidence 2
+- 2026-10-24 19:17 | burn-down | Still open for the exchange: commercial tab prices, address display, whether US$1/mo is a floor
+- 2026-10-24 19:17 | burn-down | CI first runs: none owed (both 10-24 installers have first-run lines after them)

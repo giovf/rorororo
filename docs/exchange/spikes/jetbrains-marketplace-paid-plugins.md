@@ -122,6 +122,53 @@ So the price bar (≥ US$10/user/year on three small-vendor plugins) is **not pr
 other thirteen rows carry downloads only. It is the one open number, and it is readable in minutes by anyone with a
 browser (each plugin's pricing tab), so it goes to the 2026-10-28 exchange as a ten-minute check, not back to the relay.
 
+### 4a. The 14 prices, read 2026-10-24 (queue item `new-ventures/spike-jetbrains-price-read`, burn-down)
+
+One relay round of 14 `RENDER` lines (`docs/relay/responses/jetbrains-prices-2026-10-24`, pruned after 7 days): every
+pricing tab rendered (HTTP 200, 226–271 KB each, network idle, the only failed request on each page a Google ad
+beacon). What the tab shows without a click is the **"For individual use"** price for the **United States** (USD); the
+"For organizations" toggle is a click the relay does not make, so commercial prices stay unread (JetBrains' own IDEs
+price commercial at roughly 2–3× personal; the Wolfram vendor's 4× in §4 is the only plugin reading). Yearly prices are
+the first-year figure; where the vendor joins JetBrains' continuity discount the tab also lists the second year (−20 %)
+and third year onwards (−40 %).
+
+| Plugin (downloads, §3) | Trial | Monthly | Yearly (1st yr → 2nd → 3rd+) | ≥ US$10/user/yr |
+| --- | --- | --- | --- | --- |
+| ANSI Highlighter Premium (1,553,264) | 10 days | US$1.00 | US$10.00 | yes |
+| MyBatis Log (632,639) | 30 days | — | US$5.00 → 4.00 → 3.00 | no |
+| Simple Object Copy (33,460) | 30 days | — | US$1.00 → 1.00 → 1.00 | no |
+| AICommit (24,632) | 30 days | US$1.00 → 0.80 → 0.60 | US$10.00 → 8.00 → 6.00 | yes |
+| VSCode Icons (22,018) | 14 days | — | US$5.00 → 4.00 → 3.00 | no |
+| JavaDoc Clean Read (18,851) | 30 days | US$1.00 → 0.80 → 0.60 | US$10.00 → 8.00 → 6.00 | yes |
+| .log (16,930) | 30 days | US$3.80 → 3.00 → 2.30 | US$38.00 → 30.00 → 23.00 | yes |
+| Skol — Calm Semantic Themes (15,890) | 30 days | US$2.00 | US$20.00 | yes |
+| SequenceDiagram.org (15,778) | 30 days | US$1.00 → 0.80 → 0.60 | US$10.00 → 8.00 → 6.00 | yes |
+| Smart Jump (11,476) | 30 days | — | US$5.00 → 4.00 → 3.00 | no |
+| CodeMate (11,312) | 30 days | US$1.00 → 0.80 → 0.60 | US$10.00 → 8.00 → 6.00 | yes |
+| Monokai Pro Lifetime (9,613) | — | — | US$29.00 perpetual, one payment, all updates | yes (one-off) |
+| Find In Files (Favorites) (3,823) | 30 days | US$1.00 → 0.80 → 0.60 | US$10.00 → 8.00 → 6.00 | yes |
+| Combine and Copy Files to Clipboard for AI (3,349) | 30 days | US$1.00 → 0.80 → 0.60 | — (monthly only; 12 × US$1 = US$12) | yes (monthly) |
+
+**Count: 10 of 14 at ≥ US$10 per user in year one** — eight yearly subscriptions at US$10–38, one monthly-only plan
+worth US$12/year, one US$29 perpetual licence; four below the bar at US$1–5/year (MyBatis Log, Simple Object Copy, VSCode
+Icons, Smart Jump — the two with the most downloads after ANSI are among them). The bar the 2026-10-22 call set (≥ 3)
+is cleared three times over, so the exchange re-scores the idea at **evidence 2**.
+
+What the prices also say:
+
+- **US$1/month and US$10/year is where eight of the fourteen sit**, including the shelf's most-downloaded small-vendor
+  plugin (ANSI Highlighter Premium, 1.55 M downloads, US$10/year personal). Nothing read names a Marketplace minimum
+  price, but eight vendors landing on the same round figure reads like a floor or a default, not a market price; the
+  honest planning number for a one-screen utility is therefore **US$10/user/year personal (US$8.50 to the vendor at
+  85 %)**, with the commercial tier the upside the next read must check (the Wolfram vendor's 4× would make it US$40).
+- **A yearly plan with a monthly option** is the common shape (8 of 14); a yearly-only plan (4) and a one-off perpetual
+  (1) also exist, so a theme can be sold once at US$29 — the Monokai Pro shape — if that fits better than a subscription.
+- **Perpetual fallback licences** (12 months of uninterrupted payment) and the continuity discount are JetBrains-wide
+  terms the tab repeats for every vendor that opted in; a 10–30-day trial is on 13 of 14.
+- **Unit economics at the floor**: at US$10/year × 85 % a plugin needs ~120 paying users for US$1,000/year — ANSI
+  Highlighter Premium's 1.55 M downloads make that plausible at the top of the shelf and the §3 median of 623 downloads
+  makes it unlikely for a new entrant in year one, which is the §5 kill rule's point.
+
 ## 5. Call: promote reshaped — the exchange decides with the price check
 
 What this shelf has that the Atlassian spike (same morning) lacked: the vendor sets a per-user price in the IDE's own
@@ -144,6 +191,7 @@ language.
   account, the trader declaration with ID document, residential address, phone and bank details (~30 min), and a
   Marketplace permanent token for CI's plugin upload. None raised today.
 - **Kill rule for the line, if opened**: < 100 downloads or 0 paying licences 60 days after listing.
-- **What the next read needs**: the 14 prices (pricing tabs), whether an individual's vendor page must show a residential
-  address (trader-status page says name, email, address and phone "will be displayed") and the Marketplace's minimum
-  price if one exists.
+- **What the next read needs**: ~~the 14 prices (pricing tabs)~~ read 2026-10-24 (§4a: 10 of 14 at ≥ US$10/user/year,
+  eight at exactly US$1/month, US$10/year personal); still open — the "For organizations" (commercial) prices behind the
+  tab's toggle, whether an individual's vendor page must show a residential address (trader-status page says name,
+  email, address and phone "will be displayed") and whether US$1/month is the Marketplace's minimum price.

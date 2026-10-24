@@ -243,13 +243,15 @@
     {
       "id": "spike-jetbrains-price-read",
       "title": "Research spike: the JetBrains Marketplace price read the parked idea waits on — RENDER the 14 small-vendor plugin pages of spike jetbrains-marketplace-paid-plugins §3 (their pricing tabs are client-rendered) through the relay, record each price per user per month / year, count those at ≥ US$10/user/year, append the table to the spike file §4 and update the exchange idea's trigger with the number",
-      "why": "Exchange 2026-W43: the idea is parked at 0.75 with one first-hand price (€120/year) and a ten-minute read as its trigger; the RENDER relay line (foundry relay-rendered-fetch, 2026-10-22) now reads such tabs. ≥ 3 plugins at ≥ US$10/user/year raises evidence to 2 for the next exchange; fewer parks it with the number. Score: 1.5 × 2 ÷ 0.5 (0.15 d + a relay round) = 6. Host .jetbrains.com already allow-listed.",
+      "why": "Exchange 2026-W43: the idea is parked at 0.75 with one first-hand price (€120/year) and a ten-minute read as its trigger; the RENDER relay line (foundry relay-rendered-fetch, 2026-10-22) now reads such tabs. ≥ 3 plugins at ≥ US$10/user/year raises evidence to 2 for the next exchange; fewer parks it with the number. Score: 1.5 × 2 ÷ 0.5 (0.15 d + a relay round) = 6. Host .jetbrains.com already allow-listed. Done 2026-10-24: one RENDER relay round, all 14 tabs rendered; 10 of 14 at ≥ US$10/user/year (8 at exactly US$1/mo, US$10/yr personal); table in spike §4a, exchange trigger updated.",
       "effort_days": 0.15,
       "proof": "The spike file §4 carries 14 prices (or the render failures explained) and the exchange idea's trigger states how many pass US$10/user/year",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-24",
-      "doing_since": "2026-10-24"
+      "doing_since": "2026-10-24",
+      "done_at": "2026-10-24",
+      "doing_by": "burn-down"
     },
     {
       "id": "spike-gumroad-shelf-uk-seller",
