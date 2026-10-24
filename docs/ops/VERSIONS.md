@@ -13,7 +13,7 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
 | Claude model, build fallback | `claude-opus-5-5` | `trig_01GraXN5FPXmq5M9wJSYYeHN` | same | same |
 | Claude model, metrics / triage / report / retro routines | `claude-sonnet-5-5` | their routine configs | same | same |
 | Node on GitHub runners | `24` | `.github/workflows/*.yml` (`node-version`) | https://nodejs.org/dist/index.json (active LTS) | versions check → handoff; the repo moves one LTS at a time |
-| npm packages (hono, wrangler, vitest, playwright, …) | `package-lock.json` | root | npm registry | Dependabot monthly, grouped; minor/patch auto-merged when the gate is green (`dependabot` workflow), majors by an attended session; a red gate files foundry `dependabot-pr-<N>` and a `watchdog | dependabot:` line within 6 h (`scripts/dependabot-gate.ts`, 2026-10-18) |
+| npm packages (hono, wrangler, vitest, playwright, …) | `package-lock.json` | root | npm registry | Dependabot monthly, grouped; minor/patch auto-merged when the gate is green (`dependabot` workflow), majors reviewed and merged — or closed with a lift condition — by the burn-down within 7 days (2026-10-24, foundry `dependabot-majors-review-by-routine`); a red gate files foundry `dependabot-pr-<N>` and a `watchdog | dependabot:` line within 6 h (`scripts/dependabot-gate.ts`, 2026-10-18) |
 | GitHub Actions (`actions/checkout`, `setup-node`, `upload-artifact`) | per workflow | `.github/workflows/*.yml` | GitHub | Dependabot monthly, grouped, same merge rule |
 | Playwright Chromium | `npx playwright install` at run time | demo video / media jobs | Playwright | follows the `playwright` package version |
 | Cloudflare Worker compatibility dates | `wrangler.jsonc` per Worker | gankdat, landing, license-worker | https://developers.cloudflare.com/workers/configuration/compatibility-dates/ | reviewed when wrangler majors land (attended) |
@@ -37,3 +37,14 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
   through `docs/ci/` (16 files, one line each); the root and gankdat gates passed on Node 24.22.0 in the sandbox before
   the push. The devcontainer still installs Node 22 (`.devcontainer/Dockerfile`, nodesource `setup_22.x`): CLAUDE.md
   asks before any `.devcontainer/` change, so an attended session bumps it (handoff in `docs/ALERTS.md`).
+- 2026-10-24 — Majors reviewed by the burn-down (foundry `dependabot-majors-review-by-routine`, PR #7: **stripe 22.6.2 → 23.0.0**,
+  **postal-mime 3.0.0 → 4.0.6**). Stripe 23's breaking changes (`verifyHeader`/`verifyHeaderAsync` default tolerance, the
+  top-level `Stripe.constructEventWithoutVerification` and `ErrorType` removed, V2 list types and V2 address params, Node 18
+  dropped, API version pinned to 2026-09-30) touch none of gankdat's calls — `new Stripe(key, { httpClient })`,
+  `Stripe.createFetchHttpClient()`, `Stripe.createSubtleCryptoProvider()` and `stripe.webhooks.constructEventAsync(body,
+  sig, secret, undefined, provider)`, whose omitted tolerance already meant the default. postal-mime 4 changes how legacy
+  mail is read (lax parsing, LF-normalised text, windows-1252 fallback, attachment bytes as sent) and bounds MIME parts;
+  `packages/license-worker/src/mail.ts` reads `from`, `to`, `subject`, `date`, `text`, `html`, `messageId`, `inReplyTo`,
+  `references` from `new PostalMime().parse(raw)` — all still there; its new `prepare` script runs only on installs from git,
+  not from the registry tarball. Rule from today: a green majors PR is reviewed and merged (or closed with a lift condition)
+  by the burn-down within 7 days; the burn-down prompt carries the method, the `dependabot` workflow comment says so.

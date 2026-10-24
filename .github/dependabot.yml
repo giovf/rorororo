@@ -1,7 +1,9 @@
 # Dependency currency (owner 2026-10-16: nothing the schedulers depend on may silently age).
 # Monthly, grouped: one npm PR for minor/patch, one for majors; one PR for GitHub Actions.
 # The `dependabot` workflow runs the full gate on the PR and merges minor/patch when green;
-# majors wait for an attended session. Claude model ids and Node are checked by
+# majors are reviewed by the burn-down within 7 days (breaking changes read against our call
+# sites; merged when none touches a call of ours, else closed with a lift condition below —
+# 2026-10-24, foundry `dependabot-majors-review-by-routine`). Claude model ids and Node are checked by
 # scripts/versions-check.ts (monthly `versions` workflow) — Dependabot cannot see those.
 version: 2
 updates:

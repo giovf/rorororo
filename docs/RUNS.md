@@ -1715,3 +1715,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 19:35 | burn-down | Token import partly taken (Color Import paid HSL-only, Tokens Studio, 3 Figma syncs); no DTCG/Tailwind-config import
 - 2026-10-24 19:35 | burn-down | Export covered free (Styles IO); call: port stays parked at 0.7 reshaped; §7 appended, idea trigger updated
 - 2026-10-24 19:35 | burn-down | new-ventures queue emptied (23 spikes done this week): needs_research set for the next slot
+- 2026-10-24 19:46 | burn-down | Built foundry dependabot-majors-review-by-routine: PR #7 (stripe 23, postal-mime 4) reviewed and merged
+- 2026-10-24 19:46 | burn-down | Breaking changes read vs call sites: constructEventAsync, new Stripe, PostalMime.parse fields — none touched
+- 2026-10-24 19:46 | burn-down | main merged into the Dependabot branch, root gate green locally, gate-and-merge + gankdat green on CI, squash merge
+- 2026-10-24 19:46 | burn-down | Rule: burn-down prompt DEPENDABOT MAJORS paragraph, dependabot.yml comment, VERSIONS.md row + log
+- 2026-10-24 19:46 | burn-down | dependabot.yml workflow with the new comment dropped in docs/ci/ (PR-only trigger: next slot reads, never dispatches)
+- 2026-10-24 19:46 | burn-down | Stopping for time: 4 items (JetBrains prices, Gumroad shelf, Framer Styles, Dependabot majors); 35 min
