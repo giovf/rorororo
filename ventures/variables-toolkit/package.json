@@ -11,7 +11,7 @@
     "build:free": "node build.js --free"
   },
   "devDependencies": {
-    "@figma/plugin-typings": "^1.141.0",
+    "@figma/plugin-typings": "^1.142.0",
     "esbuild": "^0.28.2"
   }
 }
