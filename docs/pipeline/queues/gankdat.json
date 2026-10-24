@@ -807,8 +807,9 @@
       "effort_days": 2.5,
       "proof": "The add-in is listed on AppSource under the gankdat publisher with 'Additional purchase may be required'; within 30 days of listing ≥ 10 distinct API keys make their first call from the add-in (User-Agent / referer tag) and ≥ 1 credit pack is bought through its task pane",
       "score": 1.8,
-      "status": "todo",
-      "added": "2026-10-24"
+      "status": "doing",
+      "added": "2026-10-24",
+      "doing_since": "2026-10-24"
     }
   ]
 }
