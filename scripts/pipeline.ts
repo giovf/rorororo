@@ -2,6 +2,8 @@
 // Run: npm run pipeline [status|next|empty|cold [--routine=build]|claim <venture>/<id> [--by=<routine>]]
 // `cold -- --routine=build` also prints `exchange missed: <Wednesday> — run docs/routines/exchange.md`
 // first, Thursday to Saturday, when the Wednesday 08:00 exchange left no trace (2026-10-24).
+// A plain `cold` (the burn-down) prints `paced: <why>` alone and nothing else when the owner's usage
+// report is stale and the night's slot cap or a usage-limit signal ends the run (2026-10-24).
 // (Node 22 runs .ts directly — keep syntax erasable)
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
@@ -49,6 +51,7 @@ if (process.argv[2] === 'cold') {
     datedWithinDay,
     lastExchangeSlot,
     missedExchange,
+    pacedStop,
     preResearchSpent,
   } = await import('./pipeline-cold.ts');
   type ColdItem = { status: string; not_before?: string; doing_since?: string; added: string };
@@ -94,11 +97,32 @@ if (process.argv[2] === 'cold') {
     process.argv.find((a) => a.startsWith('--routine='))?.slice('--routine='.length) ??
     process.env['npm_config_routine'];
   const routine = routineArg === 'build' ? 'build' : 'burn-down';
+  const slotsFile = path.resolve(dir, '..', 'ops', 'SLOTS.md');
+  const slots = existsSync(slotsFile) ? readFileSync(slotsFile, 'utf8') : '';
+  // Pace (2026-10-24, foundry burn-pace-stale-usage-report): while docs/ops/BURN.json's `report` is
+  // older than 7 days the allowance is unknown, so a Monday or Tuesday night runs at most three
+  // slots that find work and any night ends on a usage-limit signal of the last 24 h (a watchdog
+  // `usage limit?` line, a build slot with no start marker) — the burn-down prints `paced: …` and
+  // ends before `npm ci`, work or not. Burn-down only: the build slot has its own fallback.
+  if (routine === 'burn-down') {
+    let reportDate: string | undefined;
+    try {
+      const burn = JSON.parse(
+        readFileSync(path.resolve(dir, '..', 'ops', 'BURN.json'), 'utf8'),
+      ) as { report?: { date?: string } };
+      reportDate = burn.report?.date;
+    } catch {
+      reportDate = undefined;
+    }
+    const paced = pacedStop(reportDate, runs, slots, now);
+    if (paced !== undefined) {
+      console.log(`paced: ${paced}`);
+      process.exit(0);
+    }
+  }
   // A build slot in flight is researching the same starved or flagged queue (2026-10-23, foundry
   // research-defers-to-build-slot): the burn-down leaves every research reason to it for the hour
   // and says so; buildable items are unaffected — the claim marker covers those.
-  const slotsFile = path.resolve(dir, '..', 'ops', 'SLOTS.md');
-  const slots = existsSync(slotsFile) ? readFileSync(slotsFile, 'utf8') : '';
   const inFlight = buildSlotInFlight(slots, runs, now, routine);
   const deferred: string[] = [];
   const reasons: string[] = [];

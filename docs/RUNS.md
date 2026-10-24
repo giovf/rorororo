@@ -1665,3 +1665,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 17:55 | exchange | Exchange file docs/exchange/2026-W43.md; STRATEGY §2 Etsy row and §8 line; owner note on the course answered
 - 2026-10-24 17:55 | exchange | Owner later: one batched request (Etsy shop + Zoho sign-in, ~30 min) raised by the build that finishes the workbook
 - 2026-10-24 17:55 | build | Exchange missed on Wednesday 2026-10-21: ran the venture exchange in this slot
+- 2026-10-24 17:17 | burn-down | Built foundry burn-pace-stale-usage-report: pacedStop/cutoffSeen in scripts/pipeline-cold.ts, 9 tests
+- 2026-10-24 17:17 | burn-down | cold prints 'paced: <why>' while BURN.json report is >7 d old: Mon/Tue night cap 3 slots, cutoff ends any night
+- 2026-10-24 17:17 | burn-down | Cutoff = watchdog 'usage limit?' line or a 09:00/17:00 build slot with no start marker, 24 h since Thu 03:00
+- 2026-10-24 17:17 | burn-down | Burn-down GATE sentence, SCHEDULERS Usage limit row and BURN.json notes updated; gate says work tonight (Sat)
+- 2026-10-24 17:33 | burn-down | Built foundry watchdog-ci-failed-runs: scripts/ci-failed-runs.ts reads failed Actions runs of 26 h, 7 tests
+- 2026-10-24 17:33 | burn-down | One 'watchdog | ci-failed: <workflow> run N HH:MM — step; later run M ok' line per run; 2 in 7 d file an item
+- 2026-10-24 17:33 | burn-down | notify-owner.yml with the new step line dropped in docs/ci/ (installer moves it; next slot checks its first run)
+- 2026-10-24 17:33 | burn-down | Inbox triage prompt: a Run failed row cites the ci-failed line instead of 'failing step not named'
