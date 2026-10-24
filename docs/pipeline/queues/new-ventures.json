@@ -1,7 +1,7 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": true,
+  "needs_research": false,
   "updated": "2026-10-24",
   "researched": "2026-10-24",
   "weight": 2,
@@ -226,6 +226,46 @@
       "status": "done",
       "added": "2026-10-24",
       "done_at": "2026-10-24"
+    },
+    {
+      "id": "spike-payhip-digital-downloads-shelf",
+      "title": "Research spike: Payhip as the £0-launch twin shelf for the tax workbook — read payhip.com's own pricing, seller terms and help pages through the relay: fees on the free plan and the paid plans, UK individual eligibility and payouts (PayPal / Stripe), whether Payhip is merchant of record for UK and EU VAT on digital downloads, the refund and chargeback rules, whether buyers find listings without the seller's own audience (a marketplace or search page, or none), and the three rival workbooks' pages; write docs/exchange/spikes/payhip-digital-downloads-shelf.md with a promote / park call (twin listing of the same file, or own-Stripe link instead)",
+      "why": "Exchange 2026-W43: the Etsy shop needs the owner's identity and a set-up fee over the £10 launch ceiling; if the owner declines, the workbook still needs a shelf, and three Payhip rivals sell the same product at £6.95–9.99 (spike etsy-digital-downloads-uk-tax-templates §3). The open questions are exactly the ones Etsy answered: who bills, what it takes, whether anyone browses. Score: evidence 1.5 (rivals priced, no counts) × reach 2 ÷ 0.5 d = 6. Relay host payhip.com (add to docs/relay/hosts.txt in the spike's commit); no automated reads beyond one relay round.",
+      "effort_days": 0.5,
+      "proof": "docs/exchange/spikes/payhip-digital-downloads-shelf.md states the fee, VAT handling, payout path, discovery mechanism and the rivals' counts if any, and makes a promote / park call",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "spike-jetbrains-price-read",
+      "title": "Research spike: the JetBrains Marketplace price read the parked idea waits on — RENDER the 14 small-vendor plugin pages of spike jetbrains-marketplace-paid-plugins §3 (their pricing tabs are client-rendered) through the relay, record each price per user per month / year, count those at ≥ US$10/user/year, append the table to the spike file §4 and update the exchange idea's trigger with the number",
+      "why": "Exchange 2026-W43: the idea is parked at 0.75 with one first-hand price (€120/year) and a ten-minute read as its trigger; the RENDER relay line (foundry relay-rendered-fetch, 2026-10-22) now reads such tabs. ≥ 3 plugins at ≥ US$10/user/year raises evidence to 2 for the next exchange; fewer parks it with the number. Score: 1.5 × 2 ÷ 0.5 (0.15 d + a relay round) = 6. Host .jetbrains.com already allow-listed.",
+      "effort_days": 0.15,
+      "proof": "The spike file §4 carries 14 prices (or the render failures explained) and the exchange idea's trigger states how many pass US$10/user/year",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "spike-gumroad-shelf-uk-seller",
+      "title": "Research spike: Gumroad as the shelf for the parked Claude Code operations kit — read gumroad.com and help.gumroad.com through the relay: UK seller eligibility and identity checks, payout path (Stripe / PayPal, schedule, floor), the 10 % direct and 30 % Discover fees as currently published, merchant-of-record VAT on digital products, Discover's ranking inputs, and the four rival kits' current ratings and prices from spike ai-setup-course-rivals; write docs/exchange/spikes/gumroad-shelf-uk-seller.md with a promote / park call",
+      "why": "Exchange 2026-W43 parked the kit (score 4, the owner's 2026-10-18 idea reshaped) behind the Etsy winner and the hackathon entry; its remaining unknown is the shelf — the ai-setup spike could not read Gumroad's UK status (its \"round c\"). A Gumroad listing needs an account on the owner's identity, so the read also says what that account asks for (ID, tax form). Score: 1.5 × 2 ÷ 0.6 (0.4 d + relay) = 5. Relay hosts gumroad.com, help.gumroad.com (add in the spike's commit).",
+      "effort_days": 0.4,
+      "proof": "docs/exchange/spikes/gumroad-shelf-uk-seller.md states eligibility, fees, VAT handling, payout and Discover's mechanics from Gumroad's own pages and makes a promote / park call for the kit",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "spike-framer-styles-category-read",
+      "title": "Research spike: the Framer Marketplace Styles-category read the parked idea waits on — RENDER https://www.framer.com/marketplace/plugins/categories/styles/ and GET the style / token plugin pages it names through the relay; record whether a paid or free token-import plugin exists (W3C DTCG, CSS variables, Tailwind tokens → Framer colour and text styles), append §7 to spike framer-marketplace-paid-plugins and update the exchange idea's trigger",
+      "why": "Exchange 2026-W43: the idea is parked at 0.7 pending this one read (the spike's own trigger); a free plugin already covering import and export parks it for good, no such plugin keeps the port of Variables Toolkit's styles half as the first item of a future framer-plugins queue. Score: 1.25 × 2 ÷ 0.5 (0.15 d + relay) = 5. Host .framer.com already allow-listed; one relay round only (AUP §2 forbids scanners).",
+      "effort_days": 0.15,
+      "proof": "The spike file §7 names every style / token plugin on the category page with its price, and the exchange idea's trigger says promote or park with that reading",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-24"
     }
   ]
 }
