@@ -1616,3 +1616,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 00:15 | burn-down | Evidence (relay, 9 pages): monday bills + 100 % to US$200k; Bubble Stripe payouts 5th, no floor; Zoho 0 %, US$100
 - 2026-10-24 00:15 | burn-down | Zendesk paid apps bill through our own Stripe per agent, 1-3 week review; fee and eligibility are the spikes' reads
 - 2026-10-24 00:15 | burn-down | Read and not seeded: Envato (flat 50 % author fee since July 2026), Adobe Express and Miro (no billing)
+- 2026-10-24 00:40 | burn-down | Spike monday-apps-marketplace-paid-apps done: 5 relay rounds, docs as .md, both Terms, Marketplace render
+- 2026-10-24 00:40 | burn-down | Read: individual can sign; monday bills with VAT, pays twice monthly by invoice, no floor; rate discretionary in Terms
+- 2026-10-24 00:40 | burn-down | Demand: 1.6M installs; 17 small-studio apps at 5.7K-27.1K installs; seat-bucket prices US$1-250/account/month
+- 2026-10-24 00:40 | burn-down | Call: park — submit page bars apps built primarily with AI-generated code; idea parked, re-read 2026-12-01
+- 2026-10-24 00:40 | burn-down | Stopping: new-ventures researched (4 spikes), monday spike closed; Bubble, Zendesk, Zoho wait for the next slot

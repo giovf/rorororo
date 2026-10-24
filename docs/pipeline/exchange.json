@@ -516,6 +516,14 @@
       "venture": "new-ventures",
       "added": "2026-10-23",
       "trigger": "the 2026-10-28 venture exchange ranks it against the Framer, JetBrains and WordPress promotes; if it wins, one batched owner request (Persona ID, bank account, set-up fee ≤ £25) opens the shop"
+    },
+    {
+      "id": "monday-apps-marketplace-paid-apps",
+      "title": "monday.com apps marketplace: a seat-based one-job view app (register-verification panel from the gankdat API, or a status-time utility) billed by monday",
+      "why": "Spike 2026-10-24 (docs/exchange/spikes/monday-apps-marketplace-paid-apps.md): the best-billed shelf read this month — monday collects payment with VAT, pays twice monthly by invoice with no floor, 0 % to US$200k per app then 15 % (a programme; the Listing Terms make the rate discretionary and reserve listing fees), an individual can sign, 1.6M installs and 17 small-studio apps at 5.7K–27.1K installs with seat-bucket prices of US$1–250 per account per month — parked because monday's submit-your-app page excludes apps 'built primarily using no-code platforms or AI-generated vibe code' from approval, which this operation's code is by design (CLAUDE.md 2026-10-11: respect a platform's rule on AI-assisted work); the review checklist (Burp scan, token-encryption evidence, domain association, ToS + privacy policy) is a week of work on top of a one-day view.",
+      "status": "parked",
+      "trigger": "2026-12-01: re-read developer.monday.com/apps/docs/submit-your-app.md — the AI-generated-code clause removed or defined so that a disclosed, test-covered, human-reviewed codebase qualifies; or the owner decides (batched into the exchange's next request) to submit with the code's provenance disclosed on the review board. Then promote reshaped: seat-based view app in a non-saturated category, evidence 1.5 × reach 2 ÷ 6 days ≈ 0.5, weight 2.",
+      "added": "2026-10-24"
     }
   ]
 }
