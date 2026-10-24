@@ -120,7 +120,13 @@ owner leaves notes for every agent by messaging the Telegram bot (`docs/OWNER-NO
   watchdog` job's `missed:` bullet on the owner's phone 2–4 h after the silent slot's grace window (2-hourly cron since 2026-10-19); the owner sees the real figure with `/usage` in
   Claude Code. The
   nightly burn-down is designed to be cut off: each item is one commit, pushed as soon as its
-  gate passes, so a cut leaves nothing half-done.
+  gate passes, so a cut leaves nothing half-done. Since 2026-10-24 (foundry
+  `burn-pace-stale-usage-report`, after Tuesday night 10-20/21 drained the week and every Fable slot of
+  Wednesday 10-21 was rejected) the burn paces itself while `docs/ops/BURN.json`'s `report` is older
+  than 7 days: `npm run pipeline cold` prints `paced: …` and the run ends on a Monday or Tuesday night
+  once three hourly slots have found work, and on any night when the last 24 h (since the Thursday
+  03:00 reset) hold a watchdog `usage limit?` line or a 09:00/17:00 build slot with no start marker;
+  a fresh `usage NN%` owner note re-opens the percentage gate.
 - **Every routine slot is watched** (since 2026-09-28): a routine's trace is its tagged `docs/RUNS.md` line (build,
   exchange, review, report, burn-down, retro) or, for the metrics routine, its `metrics: <date> daily
   check` commit. A slot with neither within 2 h becomes a `watchdog | missed:` line in RUNS.md and

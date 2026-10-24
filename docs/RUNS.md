@@ -1655,3 +1655,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 09:20 | build | Build prompt STEP -1 now runs the gate after the slot marker and runs the exchange on that reason
 - 2026-10-24 09:20 | build | Gate fires today (W43 exchange missed 10-21): the 17:00 build slot runs the exchange instead of an item
 - 2026-10-24 09:20 | build | CI first runs: none owed (10-22 21:32 and 10-23 09:24 installers both have first-run lines after them)
+- 2026-10-24 17:17 | burn-down | Built foundry burn-pace-stale-usage-report: pacedStop/cutoffSeen in scripts/pipeline-cold.ts, 9 tests
+- 2026-10-24 17:17 | burn-down | cold prints 'paced: <why>' while BURN.json report is >7 d old: Mon/Tue night cap 3 slots, cutoff ends any night
+- 2026-10-24 17:17 | burn-down | Cutoff = watchdog 'usage limit?' line or a 09:00/17:00 build slot with no start marker, 24 h since Thu 03:00
+- 2026-10-24 17:17 | burn-down | Burn-down GATE sentence, SCHEDULERS Usage limit row and BURN.json notes updated; gate says work tonight (Sat)

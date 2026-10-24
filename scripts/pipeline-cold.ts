@@ -169,3 +169,135 @@ export function missedExchange(now: Date, runs: string, subjects: string): strin
     return undefined;
   return `exchange missed: ${since.slice(0, 10)} — run docs/routines/exchange.md`;
 }
+
+/** The owner's weekly allowance resets Thursday 03:00 UTC (docs/ops/BURN.json notes). */
+export const RESET_DAY_UTC = 4;
+export const RESET_HOUR_UTC = 3;
+/** A usage report older than this many days says nothing about the week being burned. */
+export const REPORT_FRESH_DAYS = 7;
+/** On a Monday or Tuesday night with no fresh report, the burn runs at most this many slots that find work. */
+export const PACED_SLOT_CAP = 3;
+/** The hours of the Fable build slots whose start marker (docs/ops/SLOTS.md) is the day's earliest trace. */
+export const BUILD_SLOT_HOURS_UTC: readonly number[] = [9, 17];
+/** Grace for the build marker (lands 09:09–09:11, 17:10–17:11); a watchdog grace is two hours, this is first word. */
+export const BUILD_MARKER_GRACE_MINUTES = 30;
+/** The watchdog's `missed:` and `stalled:` lines end with this question. */
+export const USAGE_LIMIT_HINT = 'usage limit?';
+
+/** `YYYY-MM-DD HH:MM` (UTC) of a date, the run-log stamp form. */
+const stampOf = (d: Date): string =>
+  `${d.toISOString().slice(0, 10)} ${pad(d.getUTCHours())}:${pad(d.getUTCMinutes())}`;
+
+/** The most recent Thursday 03:00 UTC at or before `now`, when the week's allowance was reset. */
+export function lastWeeklyReset(now: Date): Date {
+  const reset = new Date(now.getTime());
+  reset.setUTCMinutes(0, 0, 0);
+  reset.setUTCHours(RESET_HOUR_UTC);
+  let back = (reset.getUTCDay() - RESET_DAY_UTC + 7) % 7;
+  if (back === 0 && now.getTime() < reset.getTime()) back = 7;
+  reset.setUTCDate(reset.getUTCDate() - back);
+  return reset;
+}
+
+/** True when `report.date` (YYYY-MM-DD) is missing, unreadable or more than REPORT_FRESH_DAYS before `now`. */
+export function reportStale(reportDate: string | undefined, now: Date): boolean {
+  if (reportDate === undefined) return true;
+  const at = Date.parse(`${reportDate}T00:00:00Z`);
+  if (Number.isNaN(at)) return true;
+  return now.getTime() - at > REPORT_FRESH_DAYS * 86_400_000;
+}
+
+/** The slots of this burn night that found work: the distinct clock hours of `| burn-down |` lines since 17:00. */
+export function burnSlotsUsed(runs: string, now: Date): number {
+  const since = nightStart(now);
+  const hours = new Set<string>();
+  for (const line of runs.split('\n')) {
+    const stamp = lineStamp(line);
+    if (stamp === undefined || stamp < since) continue;
+    if (line.split(' | ')[1] === 'burn-down') hours.add(stamp.slice(0, 13));
+  }
+  return hours.size;
+}
+
+/**
+ * A usage-limit cutoff seen in the last 24 h and since the last Thursday 03:00 reset, or undefined:
+ * a `| watchdog |` line asking `usage limit?` (`missed:` or `stalled:`), or a build slot (09:00 /
+ * 17:00 UTC, Fable) whose start marker — the build routine's very first push — is missing from
+ * docs/ops/SLOTS.md half an hour on and that left no `| build |` run-log line either. The marker
+ * is read before the watchdog's 2–4 h grace: on 2026-10-21 the 09:00 build was rejected at start
+ * and the burn-down could have known by 09:30 what the watchdog wrote at 12:16.
+ */
+export function cutoffSeen(runs: string, slots: string, now: Date): string | undefined {
+  const floor = Math.max(now.getTime() - 86_400_000, lastWeeklyReset(now).getTime());
+  const floorStamp = stampOf(new Date(floor));
+  const lines = runs.split('\n');
+  for (const line of lines) {
+    const stamp = lineStamp(line);
+    if (stamp === undefined || stamp < floorStamp) continue;
+    const cells = line.split(' | ');
+    if (cells[1] === 'watchdog' && (cells[2] ?? '').includes(USAGE_LIMIT_HINT))
+      return `watchdog ${stamp}: ${(cells[2] ?? '').split(';')[0]!.trim()}`;
+  }
+  // Build slots since the floor whose grace has passed, newest first.
+  for (let back = 0; back <= 1; back += 1) {
+    for (const hour of [...BUILD_SLOT_HOURS_UTC].sort((a, b) => b - a)) {
+      const slot = new Date(now.getTime());
+      slot.setUTCMinutes(0, 0, 0);
+      slot.setUTCHours(hour);
+      slot.setUTCDate(slot.getUTCDate() - back);
+      const at = slot.getTime();
+      if (at < floor || at + BUILD_MARKER_GRACE_MINUTES * 60_000 > now.getTime()) continue;
+      const slotStamp = stampOf(slot);
+      const graceEnd = at + BUILD_MARKER_GRACE_MINUTES * 60_000;
+      const marked = slots.split('\n').some((line) => {
+        const m = /^- (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) \| build \| started\s*$/.exec(line);
+        if (!m) return false;
+        const t = Date.parse(`${m[1]!.replace(' ', 'T')}:00Z`);
+        return t >= at && t < graceEnd;
+      });
+      if (marked) continue;
+      const logged = lines.some((line) => {
+        const stamp = lineStamp(line);
+        return (
+          stamp !== undefined &&
+          stamp >= slotStamp &&
+          Date.parse(`${stamp.replace(' ', 'T')}:00Z`) < at + 2 * 3_600_000 &&
+          line.split(' | ')[1] === 'build'
+        );
+      });
+      if (!logged) return `build slot ${slotStamp} UTC left no start marker or run line`;
+    }
+  }
+  return undefined;
+}
+
+/**
+ * Why the burn-down ends this slot before `npm ci` while the owner's usage report is stale, or
+ * undefined (2026-10-24, foundry `burn-pace-stale-usage-report`). docs/ops/BURN.json's `report` was
+ * dated 2026-10-04 for 20 days, so `stop_if_weekly_pct_at_least` had no input and the burn drained
+ * the Fable allowance on Tuesday night 10-20/21: every Fable slot of Wednesday 10-21 (exchange 08:00,
+ * builds 09:00 and 17:00, burn-down 17:00) was rejected and nine night slots were silent until the
+ * Thursday 03:00 reset. With the allowance unknown: a Monday or Tuesday night (UTC, the night that
+ * starts 17:00) runs at most PACED_SLOT_CAP hourly slots that find work; any night ends at once when
+ * `cutoffSeen` names a signal. Wednesday night (the reset is hours away) and Thursday to Sunday are
+ * unchanged, and a fresh report hands the decision back to the percentage gate.
+ */
+export function pacedStop(
+  reportDate: string | undefined,
+  runs: string,
+  slots: string,
+  now: Date,
+): string | undefined {
+  if (!reportStale(reportDate, now)) return undefined;
+  const stale =
+    reportDate === undefined ? 'no usage report' : `usage report ${reportDate} is stale`;
+  const cutoff = cutoffSeen(runs, slots, now);
+  if (cutoff !== undefined) return `${stale}; cutoff seen — ${cutoff}`;
+  const night = nightStart(now);
+  const weekday = new Date(`${night.replace(' ', 'T')}:00Z`).getUTCDay();
+  if (weekday !== 1 && weekday !== 2) return undefined;
+  const used = burnSlotsUsed(runs, now);
+  if (used < PACED_SLOT_CAP) return undefined;
+  const name = weekday === 1 ? 'Monday' : 'Tuesday';
+  return `${stale}; ${name} night ${night.slice(0, 10)} used ${used} of ${PACED_SLOT_CAP} slots`;
+}
