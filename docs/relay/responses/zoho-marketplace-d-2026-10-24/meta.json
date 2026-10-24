@@ -1,0 +1,83 @@
+{
+  "request": "zoho-marketplace-d-2026-10-24",
+  "fetched_at": "2026-10-24T01:29:10.070Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://help.zoho.com/portal/en/kb/zoho-crm-platform/extensions-for-zoho-crm/developer-guide/packaging-your-extension/articles/pricing-an-extension",
+      "render": true,
+      "fetched_at": "2026-10-24T01:27:50.531Z",
+      "status": 200,
+      "final_url": "https://help.zoho.com/portal/en/kb/zoho-crm-platform/extensions-for-zoho-crm/developer-guide/packaging-your-extension/articles/pricing-an-extension",
+      "title": "Pricing an Extension",
+      "rendered": {
+        "network_idle": true,
+        "requests": 72,
+        "failed": [
+          "POST https://logsapi.zoho.in/csplog?service=support → net::ERR_BLOCKED_BY_ORB"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 1020876,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.zoho.com/app/crm/linked-pro-for-zoho-crm",
+      "render": true,
+      "fetched_at": "2026-10-24T01:27:57.712Z",
+      "status": 200,
+      "final_url": "https://marketplace.zoho.com/app/crm/linked-pro-for-zoho-crm",
+      "title": "Linked Pro for Zoho CRM",
+      "rendered": {
+        "network_idle": false,
+        "requests": 111,
+        "failed": [
+          "GET https://accounts.zoho.com/signin?servicename=ZohoMarketplace&css=https://www.zoho.com/css/prdsign.css&hide_secure=true&serviceurl=/getallorgforservice?action=portalSubscription&ext_uuid=1e68927d-3"
+        ],
+        "console_errors": [
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "Access to XMLHttpRequest at 'https://accounts.zoho.com/signin?servicename=ZohoMarketplace&css=https://www.zoho.com/css/prdsign.css&hide_secure=true&serviceurl=/getallorgforservice?action=portalSubscri"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF8"
+      },
+      "file": "2.html",
+      "bytes": 318967,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.zoho.com/app/crm/address-auto-complete-for-zoho-crm",
+      "render": true,
+      "fetched_at": "2026-10-24T01:28:34.074Z",
+      "status": 200,
+      "final_url": "https://marketplace.zoho.com/app/crm/address-auto-complete-for-zoho-crm",
+      "title": "Address Auto Complete for Zoho CRM",
+      "rendered": {
+        "network_idle": false,
+        "requests": 72,
+        "failed": [
+          "GET https://accounts.zoho.com/signin?servicename=ZohoMarketplace&css=https://www.zoho.com/css/prdsign.css&hide_secure=true&serviceurl=/getallorgforservice?action=portalSubscription&ext_uuid=9237d6ea-b"
+        ],
+        "console_errors": [
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "Access to XMLHttpRequest at 'https://accounts.zoho.com/signin?servicename=ZohoMarketplace&css=https://www.zoho.com/css/prdsign.css&hide_secure=true&serviceurl=/getallorgforservice?action=portalSubscri"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF8"
+      },
+      "file": "3.html",
+      "bytes": 218914,
+      "truncated": false
+    }
+  ]
+}
