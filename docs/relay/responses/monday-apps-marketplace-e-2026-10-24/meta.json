@@ -1,0 +1,89 @@
+{
+  "request": "monday-apps-marketplace-e-2026-10-24",
+  "fetched_at": "2026-10-24T00:29:03.858Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://monday.com/l/legal/monday-com-marketplace-listing-terms/",
+      "fetched_at": "2026-10-24T00:28:58.915Z",
+      "status": 200,
+      "final_url": "https://monday.com/l/marketplace-developers/monday-com-marketplace-listing-terms/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Sat, 24 Oct 2026 00:13:12 GMT"
+      },
+      "file": "1.html",
+      "bytes": 530090,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/l/legal/developer-terms/",
+      "fetched_at": "2026-10-24T00:29:00.287Z",
+      "status": 200,
+      "final_url": "https://monday.com/l/marketplace-developers/developer-terms/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 510337,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/legal.md",
+      "fetched_at": "2026-10-24T00:29:01.495Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/legal.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"7ab297f4040168e7fc168c4741e21c50fc8c7206:expanded|c853aabb\""
+      },
+      "file": "3.txt",
+      "bytes": 1275,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/privacy-and-security.md",
+      "fetched_at": "2026-10-24T00:29:02.270Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/privacy-and-security.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"47a9e0778e7b2e60775ff70749f21618119abbef:expanded|c853aabb\""
+      },
+      "file": "4.txt",
+      "bytes": 5432,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/product.md",
+      "fetched_at": "2026-10-24T00:29:03.000Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/product.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"01936e879240161ece1a97aebd276b07ee8686ce:expanded|c853aabb\""
+      },
+      "file": "5.txt",
+      "bytes": 4297,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/documentation-and-support.md",
+      "fetched_at": "2026-10-24T00:29:03.692Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/documentation-and-support.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"c11acf13d423ecf610fe85178a8d16377adf3853:expanded|c853aabb\""
+      },
+      "file": "6.txt",
+      "bytes": 2023,
+      "truncated": false
+    }
+  ]
+}
