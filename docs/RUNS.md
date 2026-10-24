@@ -1727,3 +1727,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 20:13 | burn-down | Handoffs 10-17 (Cloudflare token scopes) and 10-20 (devcontainer Node 24) superseded, re-filed as action 030
 - 2026-10-24 20:13 | burn-down | Action 030: token edit keeps its value (no new secret); devcontainer change waits for a yes/no note
 - 2026-10-24 20:13 | notify | Two quick clicks for you, about 6 minutes: a Cloudflare permission and a yes or no on an upgrade
+- 2026-10-24 20:16 | burn-down | Built foundry ci-minutes-line-fits-cap: scripts/actions-minutes-line.ts builds the watchdog line to fit 120
+- 2026-10-24 20:16 | burn-down | Line: 'ci-minutes: N billed min/7d (~N/mo; cap 2000) top: a N, b N, c N'; whole entries only, names cut last
+- 2026-10-24 20:16 | burn-down | Wall figure and warn threshold moved to the job log; 6 tests incl. the repo's longest workflow names

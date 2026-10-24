@@ -12,6 +12,7 @@
 // on the six clean days (773 vs 781), so `billed` below is max(1, ceil(run minutes)) per run and is
 // the headline; the wall sum stays in the line for comparison.
 import { appendFileSync, readFileSync } from 'node:fs';
+import { ciMinutesLine } from './actions-minutes-line.ts';
 
 const repo = process.env.GITHUB_REPOSITORY ?? 'giovf/rorororo';
 const token = process.env.GITHUB_TOKEN;
@@ -46,24 +47,19 @@ for (;;) {
   page += 1;
 }
 const projection = Math.round((billed * 30) / 7);
-const top = [...byName.entries()]
-  .sort((a, b) => b[1] - a[1])
-  .slice(0, 3)
-  .map(([n, m]) => `${n} ${Math.round(m)}`)
-  .join(', ');
+const topEntries = [...byName.entries()].sort((a, b) => b[1] - a[1]).slice(0, 3);
+const top = topEntries.map(([n, m]) => `${n} ${Math.round(m)}`).join(', ');
 console.log(
-  `actions-minutes: ${billed} billed min in 7 days over ${runs} runs (${Math.round(minutes)} wall) → ~${projection}/month (top: ${top})`,
+  `actions-minutes: ${billed} billed min in 7 days over ${runs} runs (${Math.round(minutes)} wall) → ~${projection}/month, warn ${WARN_MINUTES} (top: ${top})`,
 );
 
 if (projection > WARN_MINUTES) {
   const stamp = new Date().toISOString().slice(0, 16).replace('T', ' ');
   // RUNS.md caps the text after `| watchdog | ` at 120 chars (`npm run runs`, part of `npm run
-  // check`): the first warning (2026-10-04 18:21, 131 chars) turned main red, so the text is cut.
-  const text =
-    `ci-minutes: ${billed} billed min/7d (~${projection}/month, wall ${Math.round(minutes)}; private cap 2,000, warn ${WARN_MINUTES}); top: ${top}`.slice(
-      0,
-      120,
-    );
+  // check`): the first warning (2026-10-04 18:21, 131 chars) turned main red. Until 2026-10-24 the
+  // text was `.slice(0, 120)`d inside the top list (foundry `ci-minutes-line-fits-cap`); the line is
+  // now built to fit with whole entries, and the wall figure and warn threshold live in the log above.
+  const text = ciMinutesLine({ billed, projection, top: topEntries });
   const line = `- ${stamp} | watchdog | ${text}`;
   const runsMd = readFileSync('docs/RUNS.md', 'utf8');
   const today = stamp.slice(0, 10);
