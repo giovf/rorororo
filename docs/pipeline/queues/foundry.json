@@ -1087,8 +1087,9 @@
       "effort_days": 0.05,
       "proof": "seven consecutive ci-minutes lines show three workflows with complete numbers",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-24"
+      "status": "doing",
+      "added": "2026-10-24",
+      "doing_since": "2026-10-24"
     },
     {
       "id": "burn-pace-stale-usage-report",
