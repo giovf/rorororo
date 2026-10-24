@@ -1631,3 +1631,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 01:18 | burn-down | Read: no Zendesk share published, fees reservable on 10 days' notice; own Stripe, USD plans, Stripe Tax; 1-3 wk review
 - 2026-10-24 01:18 | burn-down | Demand: 64 paid small-vendor apps, median 2 installs, 17 at 0; best 189 at US$2/agent; Customer Details rival 2
 - 2026-10-24 01:18 | burn-down | Call: park (gankdat distribution, not a line); idea parked, re-read 2026-12-01; www.zendesk.com shelf is bot-walled
+- 2026-10-24 01:33 | burn-down | Spike zoho-marketplace-paid-extensions done: 4 relay rounds, Developer Agreement, 12 docs pages, 11 listings
+- 2026-10-24 01:33 | burn-down | Read: 0 % commission on three pages, US$100 floor, wire ~15 days; self-serve company profile; review 2-3 wk + demo
+- 2026-10-24 01:33 | burn-down | Prices are per org not per user; 7 of 11 paid listings at 100-2,800 installs; verification rivals 34-53 reviews
+- 2026-10-24 01:33 | burn-down | Call: promote reshaped (US$9/org/month UK verification widget) for the 10-28 exchange; new-ventures queue emptied
+- 2026-10-24 01:33 | burn-down | Stopping for time: four shelf spikes closed tonight; foundry research (starved) left to the 02:00 slot

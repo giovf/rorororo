@@ -1,7 +1,7 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": false,
+  "needs_research": true,
   "updated": "2026-10-24",
   "researched": "2026-10-24",
   "weight": 2,
@@ -223,9 +223,9 @@
       "effort_days": 0.5,
       "proof": "docs/exchange/spikes/zoho-marketplace-paid-extensions.md states the commission as Zoho's pricing / terms pages give it, the eligibility and payout path for a UK individual, lists ≥ 15 paid small-vendor CRM extensions with price per user and review counts, and makes a promote / park call",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-24",
-      "doing_since": "2026-10-24"
+      "done_at": "2026-10-24"
     }
   ]
 }
