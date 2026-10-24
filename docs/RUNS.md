@@ -1650,3 +1650,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 08:10 | retro | Defect: failed CI runs (fetch relay, gankdat publish) read hours late; already queued 10-24
 - 2026-10-24 08:10 | retro | Queued foundry burn-pace-stale-usage-report (6) and owner-only-handoffs-as-owner-lines (4)
 - 2026-10-24 08:10 | retro | Owner: nothing new needed this week; no notify condition met
+- 2026-10-24 09:20 | build | Built foundry exchange-missed-slot-fallback: missedExchange gate in scripts/pipeline-cold.ts, 9 tests
+- 2026-10-24 09:20 | build | cold -- --routine=build prints 'exchange missed: <Wed>' first Thu-Sat when no exchange trace since Wed 08:00
+- 2026-10-24 09:20 | build | Build prompt STEP -1 now runs the gate after the slot marker and runs the exchange on that reason
+- 2026-10-24 09:20 | build | Gate fires today (W43 exchange missed 10-21): the 17:00 build slot runs the exchange instead of an item
+- 2026-10-24 09:20 | build | CI first runs: none owed (10-22 21:32 and 10-23 09:24 installers both have first-run lines after them)

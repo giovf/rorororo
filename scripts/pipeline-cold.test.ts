@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import {
   buildSlotInFlight,
+  lastExchangeSlot,
+  missedExchange,
   datedArrived,
   dayStart,
   lineStamp,
@@ -141,5 +143,56 @@ describe('buildSlotInFlight', () => {
     expect(
       buildSlotInFlight(slots(marker), runs(), new Date('2026-10-23T17:11:00Z'), 'build'),
     ).toBe(undefined);
+  });
+});
+
+describe('lastExchangeSlot', () => {
+  it('is this Wednesday 08:00 from Thursday on, and on Wednesday from 08:00', () => {
+    expect(lastExchangeSlot(new Date('2026-10-22T09:05:00Z'))).toBe('2026-10-21 08:00');
+    expect(lastExchangeSlot(new Date('2026-10-24T17:10:00Z'))).toBe('2026-10-21 08:00');
+    expect(lastExchangeSlot(new Date('2026-10-21T08:00:00Z'))).toBe('2026-10-21 08:00');
+  });
+  it('is the Wednesday before on Wednesday morning and Sunday to Tuesday', () => {
+    expect(lastExchangeSlot(new Date('2026-10-21T07:59:00Z'))).toBe('2026-10-14 08:00');
+    expect(lastExchangeSlot(new Date('2026-10-27T09:00:00Z'))).toBe('2026-10-21 08:00');
+  });
+  it('crosses a month boundary', () => {
+    expect(lastExchangeSlot(new Date('2026-11-01T09:00:00Z'))).toBe('2026-10-28 08:00');
+  });
+});
+
+describe('missedExchange', () => {
+  const thursday = new Date('2026-10-22T09:05:00Z');
+  const saturday = new Date('2026-10-24T17:10:00Z');
+  const exchangeLine =
+    '- 2026-10-21 08:50 | exchange | Winner: Zoho Marketplace verification widget (score 6)';
+  const reason = 'exchange missed: 2026-10-21 — run docs/routines/exchange.md';
+  it('names the missed Wednesday from Thursday to Saturday when no trace exists since 08:00', () => {
+    expect(missedExchange(thursday, runs(pass), '')).toBe(reason);
+    expect(missedExchange(saturday, runs(pass), 'metrics: 2026-10-24 daily numbers\n')).toBe(
+      reason,
+    );
+  });
+  it('is satisfied by an | exchange | run-log line stamped since that Wednesday 08:00', () => {
+    expect(missedExchange(thursday, runs(exchangeLine), '')).toBeUndefined();
+    // the Thursday fallback's own lines count for Friday and Saturday
+    const fallback = exchangeLine.replace('2026-10-21 08:50', '2026-10-22 09:40');
+    expect(missedExchange(saturday, runs(fallback), '')).toBeUndefined();
+  });
+  it('ignores an exchange line from before the slot and another routine mentioning the exchange', () => {
+    const old = exchangeLine.replace('2026-10-21 08:50', '2026-10-14 08:50');
+    const burn = '- 2026-10-24 01:33 | burn-down | Call: promote reshaped for the 10-28 exchange';
+    expect(missedExchange(thursday, runs(old, burn), '')).toBe(reason);
+  });
+  it('is satisfied by a (venture exchange) commit subject and by nothing else', () => {
+    const subjects =
+      'relay: exchange-2026-W43\nexchange: 2026-W43 Zoho widget (venture exchange)\n';
+    expect(missedExchange(thursday, runs(), subjects)).toBeUndefined();
+    const lookalike = 'exchange: Zoho Marketplace spike — promote reshaped (burn-down)\n';
+    expect(missedExchange(thursday, runs(), lookalike)).toBe(reason);
+  });
+  it('is undefined from Sunday to Wednesday (the next exchange is nearer than the missed one)', () => {
+    expect(missedExchange(new Date('2026-10-25T09:05:00Z'), runs(), '')).toBeUndefined();
+    expect(missedExchange(new Date('2026-10-21T09:05:00Z'), runs(), '')).toBeUndefined();
   });
 });

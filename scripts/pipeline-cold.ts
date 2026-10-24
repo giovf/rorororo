@@ -126,3 +126,46 @@ export function buildSlotInFlight(
   });
   return logged ? undefined : marker;
 }
+
+/** The weekly venture exchange fires Wednesdays (UTC day 3) at this hour (docs/SCHEDULERS.md). */
+export const EXCHANGE_DAY_UTC = 3;
+export const EXCHANGE_HOUR_UTC = 8;
+/** Only a run that writes `| exchange |` lines or a `(venture exchange)` commit is the exchange's trace. */
+export const EXCHANGE_COMMIT_SUFFIX = '(venture exchange)';
+
+/** `YYYY-MM-DD HH:MM` (UTC) of the most recent Wednesday 08:00 at or before `now`. */
+export function lastExchangeSlot(now: Date): string {
+  const start = new Date(now.getTime());
+  start.setUTCMinutes(0, 0, 0);
+  start.setUTCHours(EXCHANGE_HOUR_UTC);
+  let back = (start.getUTCDay() - EXCHANGE_DAY_UTC + 7) % 7;
+  if (back === 0 && now.getTime() < start.getTime()) back = 7;
+  start.setUTCDate(start.getUTCDate() - back);
+  return `${start.toISOString().slice(0, 10)} ${pad(start.getUTCHours())}:00`;
+}
+
+/**
+ * The reason the build slot runs the venture exchange instead of its item, or undefined
+ * (2026-10-24, foundry `exchange-missed-slot-fallback`): Wednesday 10-21 every Fable slot of the day
+ * missed (the allowance week ends Thursday 03:00 UTC and the burn runs Tuesday night to the limit),
+ * the W43 exchange never happened and nothing re-runs it, so the week's promote calls waited for
+ * the next Wednesday. From Thursday to Saturday (UTC), when no `| exchange |` run-log line and no
+ * commit subject ending `(venture exchange)` is stamped since that Wednesday 08:00, the gate prints
+ * `exchange missed: <Wednesday> — run docs/routines/exchange.md` and the build prompt takes that
+ * reason before research or build. `subjects` is `git log --since=<Wednesday 08:00> --format=%s`
+ * (one per line); the run log alone also counts, so a shallow clone never hides a trace that is on
+ * main. Sunday to Wednesday the next exchange is nearer than the missed one: undefined.
+ */
+export function missedExchange(now: Date, runs: string, subjects: string): string | undefined {
+  const day = now.getUTCDay();
+  if (day < 4 || day > 6) return undefined;
+  const since = lastExchangeSlot(now);
+  const logged = runs.split('\n').some((line) => {
+    const stamp = lineStamp(line);
+    return stamp !== undefined && stamp >= since && line.split(' | ')[1] === 'exchange';
+  });
+  if (logged) return undefined;
+  if (subjects.split('\n').some((s) => s.trimEnd().endsWith(EXCHANGE_COMMIT_SUFFIX)))
+    return undefined;
+  return `exchange missed: ${since.slice(0, 10)} — run docs/routines/exchange.md`;
+}

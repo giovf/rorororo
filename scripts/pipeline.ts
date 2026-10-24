@@ -1,6 +1,9 @@
 // Reads the work pipeline (docs/pipeline/) and prints it; fails on any invalid file.
 // Run: npm run pipeline [status|next|empty|cold [--routine=build]|claim <venture>/<id> [--by=<routine>]]
+// `cold -- --routine=build` also prints `exchange missed: <Wednesday> — run docs/routines/exchange.md`
+// first, Thursday to Saturday, when the Wednesday 08:00 exchange left no trace (2026-10-24).
 // (Node 22 runs .ts directly — keep syntax erasable)
+import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 
@@ -40,8 +43,14 @@ if (process.argv[2] === 'cold') {
   const now = new Date();
   const today = now.toISOString().slice(0, 10);
   const dayMs = 86_400_000;
-  const { buildSlotInFlight, datedArrived, datedWithinDay, preResearchSpent } =
-    await import('./pipeline-cold.ts');
+  const {
+    buildSlotInFlight,
+    datedArrived,
+    datedWithinDay,
+    lastExchangeSlot,
+    missedExchange,
+    preResearchSpent,
+  } = await import('./pipeline-cold.ts');
   type ColdItem = { status: string; not_before?: string; doing_since?: string; added: string };
   type ColdQueue = {
     venture: string;
@@ -101,6 +110,28 @@ if (process.argv[2] === 'cold') {
     reasons.push(
       `exchange: pre-research pass unspent this ${routine === 'build' ? 'day' : 'night'}`,
     );
+  // A Wednesday exchange that left no trace is run by the Thursday–Saturday build slot before any
+  // research or build (2026-10-24, foundry `exchange-missed-slot-fallback`): the gate prints that
+  // reason first for `--routine=build`. Commit subjects since the slot come from git when the clone
+  // can answer (the build routine unshallows first; a failure reads as no commit, the run log decides).
+  if (routine === 'build') {
+    let subjects: string;
+    try {
+      subjects = execFileSync(
+        'git',
+        ['log', `--since=${lastExchangeSlot(now).replace(' ', 'T')}:00Z`, '--format=%s'],
+        {
+          cwd: path.resolve(dir, '..', '..'),
+          encoding: 'utf8',
+          stdio: ['ignore', 'pipe', 'ignore'],
+        },
+      );
+    } catch {
+      subjects = '';
+    }
+    const missed = missedExchange(now, runs, subjects);
+    if (missed !== undefined) reasons.unshift(missed);
+  }
   const note =
     deferred.length === 0
       ? ''

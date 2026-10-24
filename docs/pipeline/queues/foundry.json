@@ -1041,9 +1041,9 @@
       "effort_days": 0.3,
       "proof": "no missed Wednesday exchange goes a week without an exchange run: the first miss after this lands is run by Thursday 10:00 UTC, with the `(venture exchange)` commit and §8 line",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-24",
-      "doing_since": "2026-10-24"
+      "done_at": "2026-10-24"
     },
     {
       "id": "watchdog-ci-failed-runs",
