@@ -1612,3 +1612,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-23 17:45 | burn-down | ARCHITECTURE OAuth note; Queue: gankdat oauth-resource-indicator-variants done
 - 2026-10-23 17:41 | burn-down | Deploys: v0.25.4 green (gankdat run 149, 2.5 min); v0.25.5 run 150 started 17:39, read by the 18:00 slot if not here
 - 2026-10-23 17:41 | burn-down | Stopping: pre-research pass, Etsy spike, demo-access fix, cold deferral and two gankdat items built; starved and cooled
+- 2026-10-24 00:15 | burn-down | new-ventures researched: 4 billed-shelf spikes seeded — monday (6), Bubble (6), Zendesk (5), Zoho (5)
+- 2026-10-24 00:15 | burn-down | Evidence (relay, 9 pages): monday bills + 100 % to US$200k; Bubble Stripe payouts 5th, no floor; Zoho 0 %, US$100
+- 2026-10-24 00:15 | burn-down | Zendesk paid apps bill through our own Stripe per agent, 1-3 week review; fee and eligibility are the spikes' reads
+- 2026-10-24 00:15 | burn-down | Read and not seeded: Envato (flat 50 % author fee since July 2026), Adobe Express and Miro (no billing)
