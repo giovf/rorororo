@@ -2,7 +2,7 @@
 
 - **Date:** 2026-10-24
 - **Status:** open
-- **Your time:** ~30 minutes (Etsy ~25, Zoho ~5)
+- **Your time:** ~40 minutes (Etsy ~25, Zoho ~5, Payhip ~10)
 - **Cost:** Etsy's one-time shop set-up fee, **≤ £25** — the amount Etsy shows at "Total due now" (US$15–29 plus VAT; waived
   in some promotional periods). It is recorded as `contingent` in `docs/LEDGER.md` and becomes a `cost` row the day you
   pay it. **This is the one line item over the operation's £10 launch rule, so it is your decision** — if you would rather
@@ -61,6 +61,19 @@ listing in `ventures/tax-workbook/LISTING.md`.
   3. Nothing else to configure — Claude builds the extension from the repo and asks you only when the marketplace
      submission needs the vendor profile.
 - **Give back:** "done" and the email the account uses. No API keys are needed yet.
+- **Cost:** £0.
+
+### 4. Payhip store (free) — the twin shelf, and the fallback if you decline Etsy's fee
+- **What:** a free Payhip account so the same file can be sold from a second storefront with no set-up fee (Payhip takes 5 %
+  and handles UK/EU VAT; the money lands in your Stripe or PayPal daily). Spike: `docs/exchange/spikes/payhip-digital-downloads-shelf.md`.
+- **Where:** https://payhip.com → Sign up (use the Foundry email)
+- **Steps:**
+  1. Create the account (Free Forever plan — do not upgrade).
+  2. Account → Settings → Payment Details: connect **Stripe** (the account you already have) or your PayPal; both are fine.
+  3. Settings → Taxes: leave "handle digital UK & EU VAT" ticked (the default).
+  4. Stop there — Claude writes the product listing from `LISTING.md` once the account exists and asks you only for the
+     upload (the sandbox cannot log in). Store name suggestion: the same as the Etsy shop.
+- **Give back:** "Payhip done" and the store URL (payhip.com/<name>).
 - **Cost:** £0.
 
 ## When you're done

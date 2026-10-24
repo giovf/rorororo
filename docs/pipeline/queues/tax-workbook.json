@@ -31,6 +31,17 @@
       "added": "2026-10-24"
     },
     {
+      "id": "payhip-twin-listing",
+      "title": "Twin listing of the workbook on a Payhip store (free plan, Stripe connected, Payhip handles UK/EU VAT): store copy from LISTING.md, link from the apps.gankdat.com product page, Taxes default, marketplace submission once US$10 of sales exist, a sale webhook into the Daily numbers",
+      "why": "Spike docs/exchange/spikes/payhip-digital-downloads-shelf.md (burn-down 2026-10-24): £0 launch, Payhip 5 % + Stripe UK ≈ 9 % of a £6.99 sale (≈ £6.34 kept vs ≈ £5.80 on Etsy), Payhip acts as reseller for UK/EU VAT, payouts daily through the owner's Stripe, a buyer-facing marketplace that admits a store after US$10 of its own sales, and webhooks that let the funnel be read without mail. Not the primary shelf: demand is unmeasurable there (no counts; payhip.com blocks automated reads) and the buyers are on Etsy — so a twin at the same price, and the fallback shelf if the owner declines Etsy's set-up fee. Score 1.5 × 1 ÷ (0.2 d + 10 owner min) ≈ 5.",
+      "effort_days": 0.2,
+      "proof": "The Payhip store page is live with the file at £6.99 and linked from the product page; a sale webhook row appears in the Daily numbers; first Payhip sale within 60 days or the twin is delisted at the Etsy day-60 read",
+      "score": 5,
+      "status": "blocked",
+      "blocked_on": "owner: action 029 step 4 (2026-10-24, ALERTS 2026-10-24) — a Payhip account on the Foundry email with Stripe (or PayPal) connected, ~10 min, £0",
+      "added": "2026-10-24"
+    },
+    {
       "id": "reseller-workbook-second-listing",
       "title": "Second listing for the same shop: a UK reseller (eBay / Vinted / Depop) P&L workbook with platform fees, inventory, Trading Allowance check and the £1,700 platform-reporting threshold",
       "why": "The niche's best-reviewed cheap sheet is a reseller P&L at £3.99 with 35 five-star reviews in 293 days (spike §3); a second listing in the same shop doubles the shelf presence for one more half-day and shares the Setup tab, the tax estimate and the Trading Allowance logic of the first workbook. Priced £5.99, same listing rules (what the buyer gains, no invented scarcity). Dated after the first workbook so the slots build the winner and raise the owner request first.",

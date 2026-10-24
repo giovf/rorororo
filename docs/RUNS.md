@@ -1693,3 +1693,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 18:30 | burn-down | LISTING.md: title, 13 tags, description (gains, not-for list), £6.99 to 30 Nov then £8.99, refund policy
 - 2026-10-24 18:30 | burn-down | Action 029 raised (Etsy shop ≤ £25 fee + free Zoho sign-in); ledger contingent £25; venture validated
 - 2026-10-24 18:30 | notify | Your tax spreadsheet is ready: open an Etsy shop to sell it, about 30 minutes and a fee up to £25
+- 2026-10-24 18:45 | burn-down | new-ventures spike-payhip-digital-downloads-shelf done: promote as the twin; spike file written
+- 2026-10-24 18:45 | burn-down | Payhip: free plan 5 % + Stripe ≈ 9 %, reseller for UK/EU VAT, daily payouts, marketplace after US$10 sales
+- 2026-10-24 18:45 | burn-down | payhip.com blocks the runner (Cloudflare 403, raw + rendered); help centre read in 3 relay rounds
+- 2026-10-24 18:45 | burn-down | Queued tax-workbook payhip-twin-listing (5), blocked on action 029 step 4 (Payhip account, £0)
+- 2026-10-24 18:47 | burn-down | Stopping for time: 2 items (tax workbook built + listing pack, Payhip spike); JetBrains price read next

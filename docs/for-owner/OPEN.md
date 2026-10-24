@@ -7,7 +7,7 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 ## Requests (2)
 
-1. **UK tax workbook is built** — ~30 min, since 2026-10-24; unblocks gankdat `zoho-crm-uk-registers-widget` (2.4), tax-workbook `etsy-listing-live` (10). Steps: [029](actions/029-etsy-shop-and-zoho.md).
+1. **UK tax workbook is built** — ~30 min, since 2026-10-24; unblocks gankdat `zoho-crm-uk-registers-widget` (2.4), tax-workbook `etsy-listing-live` (10), tax-workbook `payhip-twin-listing` (5). Steps: [029](actions/029-etsy-shop-and-zoho.md).
    UK tax workbook is built — open the Etsy shop (ID check, bank, fee ≤ £25) + free Zoho sign-in, ~30 min — docs/for-owner/actions/029-etsy-shop-and-zoho.md
 
 2. **PayPal hackathon organiser says the Devpost entry has no de…** — ~3 min, since 2026-10-21; nothing queued waits on it. Steps: [028](actions/028-paypal-devpost-demo-access.md).

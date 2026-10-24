@@ -230,13 +230,15 @@
     {
       "id": "spike-payhip-digital-downloads-shelf",
       "title": "Research spike: Payhip as the £0-launch twin shelf for the tax workbook — read payhip.com's own pricing, seller terms and help pages through the relay: fees on the free plan and the paid plans, UK individual eligibility and payouts (PayPal / Stripe), whether Payhip is merchant of record for UK and EU VAT on digital downloads, the refund and chargeback rules, whether buyers find listings without the seller's own audience (a marketplace or search page, or none), and the three rival workbooks' pages; write docs/exchange/spikes/payhip-digital-downloads-shelf.md with a promote / park call (twin listing of the same file, or own-Stripe link instead)",
-      "why": "Exchange 2026-W43: the Etsy shop needs the owner's identity and a set-up fee over the £10 launch ceiling; if the owner declines, the workbook still needs a shelf, and three Payhip rivals sell the same product at £6.95–9.99 (spike etsy-digital-downloads-uk-tax-templates §3). The open questions are exactly the ones Etsy answered: who bills, what it takes, whether anyone browses. Score: evidence 1.5 (rivals priced, no counts) × reach 2 ÷ 0.5 d = 6. Relay host payhip.com (add to docs/relay/hosts.txt in the spike's commit); no automated reads beyond one relay round.",
+      "why": "Exchange 2026-W43: the Etsy shop needs the owner's identity and a set-up fee over the £10 launch ceiling; if the owner declines, the workbook still needs a shelf, and three Payhip rivals sell the same product at £6.95–9.99 (spike etsy-digital-downloads-uk-tax-templates §3). The open questions are exactly the ones Etsy answered: who bills, what it takes, whether anyone browses. Score: evidence 1.5 (rivals priced, no counts) × reach 2 ÷ 0.5 d = 6. Relay host payhip.com (add to docs/relay/hosts.txt in the spike's commit); no automated reads beyond one relay round. Done 2026-10-24 (burn-down): docs/exchange/spikes/payhip-digital-downloads-shelf.md — promote as the twin listing (free plan 5 % + Stripe ≈ 9 %, Payhip handles UK/EU VAT as reseller, daily Stripe payouts, marketplace gated on US$10 of own sales, webhooks for the funnel); payhip.com blocks the runner (Cloudflare 403, raw and rendered) so terms and rival pages are search-index only; tax-workbook/payhip-twin-listing queued (5), blocked on a £0 step added to action 029.",
       "effort_days": 0.5,
       "proof": "docs/exchange/spikes/payhip-digital-downloads-shelf.md states the fee, VAT handling, payout path, discovery mechanism and the rivals' counts if any, and makes a promote / park call",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-24",
-      "doing_since": "2026-10-24"
+      "doing_since": "2026-10-24",
+      "done_at": "2026-10-24",
+      "doing_by": "burn-down"
     },
     {
       "id": "spike-jetbrains-price-read",

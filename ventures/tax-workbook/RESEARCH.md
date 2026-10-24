@@ -56,6 +56,14 @@ combines SA103 mapping, MTD quarterly totals and a Trading Allowance check with 
 - **Support**: buyer messages arrive by email; the inbox triage drafts replies, the owner sends them (~15 min a month
   at the rival's volume). A `docs/ops/SELF-CAUSED.md` row on launch covers Etsy's own mail.
 
+### 3b. The £0 twin: Payhip (spike 2026-10-24, `docs/exchange/spikes/payhip-digital-downloads-shelf.md`)
+
+Free plan 5 % + Stripe UK ≈ 9 % of a £6.99 sale (≈ £6.34 kept), Payhip acts as reseller for UK/EU VAT by default, payouts
+daily through the owner's Stripe, a buyer-facing marketplace that admits a store after US$10 of its own sales, sale webhooks
+for the funnel. No counts are visible and payhip.com blocks automated reads (Cloudflare 403 to the runner), so demand there is
+unmeasurable: the twin lists the same file at the same price (`payhip-twin-listing`, action 029 step 4) and is the fallback
+shelf if the owner declines Etsy's set-up fee.
+
 ## 4. Validation gate (ARCHITECTURE)
 
 | Gate | Reading |
