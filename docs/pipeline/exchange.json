@@ -524,6 +524,14 @@
       "status": "parked",
       "trigger": "2026-12-01: re-read developer.monday.com/apps/docs/submit-your-app.md — the AI-generated-code clause removed or defined so that a disclosed, test-covered, human-reviewed codebase qualifies; or the owner decides (batched into the exchange's next request) to submit with the code's provenance disclosed on the review board. Then promote reshaped: seat-based view app in a non-saturated category, evidence 1.5 × reach 2 ÷ 6 days ≈ 0.5, weight 2.",
       "added": "2026-10-24"
+    },
+    {
+      "id": "bubble-plugin-marketplace-paid-plugins",
+      "title": "Bubble plugin marketplace: a 'UK registers' subscription plugin (Companies House, charities, tenders, sanctions through the gankdat API) billed by Bubble",
+      "why": "Spike 2026-10-24 (docs/exchange/spikes/bubble-plugin-marketplace-paid-plugins.md): the easiest shelf read this month — self-serve, Stripe KYC only, payouts on the 5th with no floor, a flat 25 % commission, price US$3–300, a one-day JavaScript build — parked because demand fails: the exact rival (a Companies House plugin at US$2/mo) has 3 installs after 16 months, API-wrapper plugins sit at tens of installs because Bubble's API Connector is free, and the shelf's own FAQ and sellers say installs count trials (298 installs ≈ €12/month for one seller). Distribution for existing data, not a new line: if built it is a gankdat item.",
+      "status": "parked",
+      "trigger": "a gankdat shelf converts (first paying account or ≥ 20 paid Apify runs/month), or the Companies House UK plugin or another small-vendor data-lookup plugin on Bubble shows ≥ 200 installs at ≥ US$5/month (re-read at the 2026-12-01 exchange); then a one-day gankdat item `bubble-plugin-uk-registers`, evidence 1 × reach 2 ÷ 1 day = 2.",
+      "added": "2026-10-24"
     }
   ]
 }

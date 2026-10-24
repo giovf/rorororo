@@ -1621,3 +1621,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 00:40 | burn-down | Demand: 1.6M installs; 17 small-studio apps at 5.7K-27.1K installs; seat-bucket prices US$1-250/account/month
 - 2026-10-24 00:40 | burn-down | Call: park — submit page bars apps built primarily with AI-generated code; idea parked, re-read 2026-12-01
 - 2026-10-24 00:40 | burn-down | Stopping: new-ventures researched (4 spikes), monday spike closed; Bubble, Zendesk, Zoho wait for the next slot
+- 2026-10-24 00:48 | burn-down | Spike bubble-plugin-marketplace-paid-plugins done: policies page, 4 rendered listings, 3 forum threads read
+- 2026-10-24 00:48 | burn-down | Read: 25 % commission, price US$3-300, Stripe payout on the 5th, no floor; a UK individual sells with Stripe KYC
+- 2026-10-24 00:48 | burn-down | Demand: the Companies House plugin rival has 3 installs at US$2/mo; 298 installs paid one seller ~EUR 12/month
+- 2026-10-24 00:48 | burn-down | Call: park (below baseline; a gankdat distribution item if ever built); idea parked, re-read 2026-12-01
+- 2026-10-24 00:48 | burn-down | Stopping for time: monday and Bubble spikes closed; Zendesk and Zoho spikes wait for the next slot
