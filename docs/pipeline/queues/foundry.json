@@ -1052,9 +1052,9 @@
       "effort_days": 0.2,
       "proof": "every failed Actions run over 7 days has a watchdog line naming its step within 2 h; triage rows for `Run failed` mail cite the line; a workflow failing twice in a week has a queue item the same day",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-24",
-      "doing_since": "2026-10-24"
+      "done_at": "2026-10-24"
     },
     {
       "id": "registry-publish-silent-exit",
