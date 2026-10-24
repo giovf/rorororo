@@ -1,0 +1,591 @@
+{
+  "request": "monday-apps-marketplace-d-2026-10-24",
+  "fetched_at": "2026-10-24T00:28:43.254Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://monday.com/l/marketplace-developers/monday-com-marketplace-listing-terms/",
+      "fetched_at": "2026-10-24T00:22:52.405Z",
+      "status": 200,
+      "final_url": "https://monday.com/l/marketplace-developers/monday-com-marketplace-listing-terms/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 530090,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/category/15/new-apps",
+      "render": true,
+      "fetched_at": "2026-10-24T00:22:53.716Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/category/15/new-apps",
+      "title": "monday.com Marketplace",
+      "rendered": {
+        "network_idle": false,
+        "requests": 273,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801379468&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801378265&cv=11&fst=1792801378265&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=1&ae=g&auid=1247587932.1792801381&dt=monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F15%2Fnew-app",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801378265&cv=11&fst=1792801378265&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=7&frm=0&apvc=0&auid=1247587932.1792801381&dt=monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801378531&cv=11&fst=1792801378531&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801379228&cv=11&fst=1792801379228&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801378606&cv=11&fst=1792801378606&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801378826&cv=11&fst=1792801378826&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=0&auid=1247587932.1792801381&dt=monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801379230&cv=11&fst=1792801379230&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=0&auid=1247587932.1792801381&dt=monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%",
+          "POST https://www.google.com/ccm/collect?rcb=15&frm=0&apvc=0&auid=1247587932.1792801381&dt=monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F",
+          "POST https://www.google.com/ccm/collect?rcb=2&frm=0&apvc=0&ae=g&auid=1247587932.1792801381&dt=monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F15%2Fn",
+          "POST https://www.google.com/ccm/collect?rcb=2&frm=0&apvc=0&ae=g&auid=1247587932.1792801381&dt=monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F15%2Fn",
+          "POST https://www.google.com/ccm/collect?rcb=2&frm=0&apvc=0&auid=1247587932.1792801381&dt=monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F15%"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 649999,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/category/10000004/trending-this-week",
+      "render": true,
+      "fetched_at": "2026-10-24T00:23:37.462Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/category/10000004/trending-this-week",
+      "title": "monday.com Marketplace",
+      "rendered": {
+        "network_idle": false,
+        "requests": 280,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801422813&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=0&ae=g&auid=309895255.1792801423&dt=monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F100000",
+          "POST https://www.google.com/ccm/collect?rcb=2&frm=0&apvc=0&auid=309895255.1792801423&dt=monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F",
+          "POST https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=0&auid=309895255.1792801423&dt=monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F1",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801420456&cv=11&fst=1792801420456&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=7&frm=0&apvc=0&auid=309895255.1792801423&dt=monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F1000",
+          "POST https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=0&auid=309895255.1792801423&dt=monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801420526&cv=11&fst=1792801420526&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=7&frm=0&apvc=0&auid=309895255.1792801423&dt=monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801420926&cv=11&fst=1792801420926&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=1&ae=g&auid=309895255.1792801423&dt=monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F10000004%2Ftre",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801420457&cv=11&fst=1792801420457&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801421417&cv=11&fst=1792801421417&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=0&ae=g&auid=309895255.1792801423&dt=monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fcategory%2F100000",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801420859&cv=11&fst=1792801420859&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801421415&cv=11&fst=1792801421415&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 754713,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10001284/formula-column-automation",
+      "render": true,
+      "fetched_at": "2026-10-24T00:23:55.805Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10001284/formula-column-automation",
+      "title": "Formula Column Automation - monday.com Marketplace",
+      "rendered": {
+        "network_idle": false,
+        "requests": 272,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801441684&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=8&frm=0&apvc=1&ae=g&auid=89793670.1792801442&dt=Formula%20Column%20Automation%20-%20monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmark",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801439061&cv=11&fst=1792801439061&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801439192&cv=11&fst=1792801439192&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801439611&cv=11&fst=1792801439611&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801439193&cv=11&fst=1792801439193&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=15&frm=0&apvc=0&auid=89793670.1792801442&dt=Formula%20Column%20Automation%20-%20monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmo",
+          "POST https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=0&auid=89793670.1792801442&dt=Formula%20Column%20Automation%20-%20monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801440051&cv=11&fst=1792801440051&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=11&frm=0&apvc=0&ae=g&auid=89793670.1792801442&dt=Formula%20Column%20Automation%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.co",
+          "POST https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=0&auid=89793670.1792801442&dt=Formula%20Column%20Automation%20-%20monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmo",
+          "POST https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=0&auid=89793670.1792801442&dt=Formula%20Column%20Automation%20-%20monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmonda",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801439534&cv=11&fst=1792801439534&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=0&auid=89793670.1792801442&dt=Formula%20Column%20Automation%20-%20monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmon",
+          "POST https://www.google.com/ccm/collect?rcb=11&frm=0&apvc=0&ae=g&auid=89793670.1792801442&dt=Formula%20Column%20Automation%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.co",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801440048&cv=11&fst=1792801440048&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 599804,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10001283/print",
+      "render": true,
+      "fetched_at": "2026-10-24T00:24:39.100Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10001283/print",
+      "title": "Print - monday.com Marketplace",
+      "rendered": {
+        "network_idle": false,
+        "requests": 262,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801484796&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=0&ae=g&auid=1930048664.1792801485&dt=Print%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Flist",
+          "POST https://www.google.com/ccm/collect?rcb=7&frm=0&apvc=0&auid=1930048664.1792801485&dt=Print%20-%20monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801482180&cv=11&fst=1792801482180&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6am0h2v9214554228za20szb78383297zd78383297xe",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801482400&cv=11&fst=1792801482400&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6am0h2v9184680452za20szb78383297zd78383297xe",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801482537&cv=11&fst=1792801482537&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6am0h2v9101559452za20szb78383297zd78383297xe",
+          "POST https://www.google.com/ccm/collect?rcb=13&frm=0&apvc=0&auid=1930048664.1792801485&dt=Print%20-%20monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2",
+          "POST https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=0&auid=1930048664.1792801485&dt=Print%20-%20monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801483027&cv=11&fst=1792801483027&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6am0h2z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801483030&cv=11&fst=1792801483030&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6am0h2z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801482536&cv=11&fst=1792801482536&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6am0h2v9101559452za20szb78383297zd78383297xe",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801482466&cv=11&fst=1792801482466&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6am0h2v891024089za20szb78383297zd78383297xecxf",
+          "POST https://www.google.com/ccm/collect?rcb=12&frm=0&apvc=0&auid=1930048664.1792801485&dt=Print%20-%20monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace",
+          "POST https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=1&ae=g&auid=1930048664.1792801485&dt=Print%20-%20monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Flisting%2F1",
+          "POST https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=0&ae=g&auid=1930048664.1792801485&dt=Print%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Flist",
+          "POST https://www.google.com/ccm/collect?rcb=8&frm=0&apvc=0&auid=1930048664.1792801485&dt=Print%20-%20monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fli"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 597839,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10000363/same-item-multiple-boards-replace-mirror-columns-sync-updates-subitems",
+      "render": true,
+      "fetched_at": "2026-10-24T00:25:22.426Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10000363/same-item-multiple-boards-replace-mirror-columns-sync-updates-subitems",
+      "title": "Same Item Multiple Boards - Replace Mirror Columns, Sync Updates & Subitems - monday.com Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 267,
+        "failed": [
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801528415&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=7&frm=0&apvc=0&auid=165887457.1792801529&dt=Same%20Item%20Multiple%20Boards%20-%20Replace%20Mirror%20Columns%2C%20Sync%20Updates%20%26%20Subitems%20-%20mond",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801525742&cv=11&fst=1792801525742&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/ccm/collect?rcb=15&frm=0&apvc=0&ae=g&auid=165887457.1792801529&dt=Same%20Item%20Multiple%20Boards%20-%20Replace%20Mirror%20Columns%2C%20Sync%20Updates%20%26%20Subitems%20-%",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801525941&cv=11&fst=1792801525941&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801525808&cv=11&fst=1792801525808&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801525942&cv=11&fst=1792801525942&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801526019&cv=11&fst=1792801526019&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=7&frm=0&apvc=0&auid=165887457.1792801529&dt=Same%20Item%20Multiple%20Boards%20-%20Replace%20Mirror%20Columns%2C%20Sync%20Updates%20%26%20Subitems%20-%20mond",
+          "POST https://www.google.com/ccm/collect?rcb=18&frm=0&apvc=0&auid=165887457.1792801529&dt=Same%20Item%20Multiple%20Boards%20-%20Replace%20Mirror%20Columns%2C%20Sync%20Updates%20%26%20Subitems%20-%20mon",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801526881&cv=11&fst=1792801526881&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=14&frm=0&apvc=0&auid=165887457.1792801529&dt=Same%20Item%20Multiple%20Boards%20-%20Replace%20Mirror%20Columns%2C%20Sync%20Updates%20%26%20Subitems%20-%20mon",
+          "POST https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=1&ae=g&auid=165887457.1792801529&dt=Same%20Item%20Multiple%20Boards%20-%20Replace%20Mirror%20Columns%2C%20Sync%20Updates%20%26%20Subitems%20-%",
+          "POST https://www.google.com/ccm/collect?rcb=15&frm=0&apvc=0&ae=g&auid=165887457.1792801529&dt=Same%20Item%20Multiple%20Boards%20-%20Replace%20Mirror%20Columns%2C%20Sync%20Updates%20%26%20Subitems%20-%",
+          "POST https://www.google.com/ccm/collect?rcb=11&frm=0&apvc=0&auid=165887457.1792801529&dt=Same%20Item%20Multiple%20Boards%20-%20Replace%20Mirror%20Columns%2C%20Sync%20Updates%20%26%20Subitems%20-%20mon",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801526885&cv=11&fst=1792801526885&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 644914,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10000472/calendar-masterplan",
+      "render": true,
+      "fetched_at": "2026-10-24T00:25:31.448Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10000472/calendar-masterplan",
+      "title": "Calendar MasterPlan - monday.com Marketplace",
+      "rendered": {
+        "network_idle": false,
+        "requests": 268,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801536840&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801534701&cv=11&fst=1792801534701&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6am0h2v9184680452za20szb78383297zd78383297xe",
+          "POST https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=1&ae=g&auid=2044289392.1792801538&dt=Calendar%20MasterPlan%20-%20monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketpla",
+          "POST https://www.google.com/ccm/collect?rcb=14&frm=0&apvc=0&auid=2044289392.1792801538&dt=Calendar%20MasterPlan%20-%20monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmonday.c",
+          "POST https://www.google.com/ccm/collect?rcb=5&frm=0&apvc=0&ae=g&auid=2044289392.1792801538&dt=Calendar%20MasterPlan%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmar",
+          "POST https://www.google.com/ccm/collect?rcb=5&frm=0&apvc=0&ae=g&auid=2044289392.1792801538&dt=Calendar%20MasterPlan%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmar",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801534831&cv=11&fst=1792801534831&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6am0h2v891024089za20szb78383297zd78383297xecxf",
+          "POST https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=0&auid=2044289392.1792801538&dt=Calendar%20MasterPlan%20-%20monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmonday.c",
+          "POST https://www.google.com/ccm/collect?rcb=14&frm=0&apvc=0&auid=2044289392.1792801538&dt=Calendar%20MasterPlan%20-%20monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmonday.c",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801535548&cv=11&fst=1792801535548&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6am0h2z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801535054&cv=11&fst=1792801535054&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6am0h2v9101559452za20szb78383297zd78383297xe",
+          "POST https://www.google.com/ccm/collect?rcb=15&frm=0&apvc=0&auid=2044289392.1792801538&dt=Calendar%20MasterPlan%20-%20monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.com%2",
+          "POST https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=0&auid=2044289392.1792801538&dt=Calendar%20MasterPlan%20-%20monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmonday.com",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801535550&cv=11&fst=1792801535550&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6am0h2z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801535054&cv=11&fst=1792801535054&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6am0h2v9101559452za20szb78383297zd78383297xe",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801534895&cv=11&fst=1792801534895&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6am0h2v9214554228za20szb78383297zd78383297xe"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 611167,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10000321/connected-boards-automations",
+      "render": true,
+      "fetched_at": "2026-10-24T00:25:49.821Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10000321/connected-boards-automations",
+      "title": "Connected Boards Automations - monday.com Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 258,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801555085&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801552816&cv=11&fst=1792801552816&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=0&auid=1735456002.1792801556&dt=Connected%20Boards%20Automations%20-%20monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmo",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801552956&cv=11&fst=1792801552956&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801553653&cv=11&fst=1792801553653&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801553650&cv=11&fst=1792801553650&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801553167&cv=11&fst=1792801553167&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801553023&cv=11&fst=1792801553023&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=0&auid=1735456002.1792801556&dt=Connected%20Boards%20Automations%20-%20monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F",
+          "POST https://www.google.com/ccm/collect?rcb=15&frm=0&apvc=0&ae=g&auid=1735456002.1792801556&dt=Connected%20Boards%20Automations%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmond",
+          "POST https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=0&auid=1735456002.1792801556&dt=Connected%20Boards%20Automations%20-%20monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2F",
+          "POST https://www.google.com/ccm/collect?rcb=13&frm=0&apvc=0&auid=1735456002.1792801556&dt=Connected%20Boards%20Automations%20-%20monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F",
+          "POST https://www.google.com/ccm/collect?rcb=18&frm=0&apvc=1&ae=g&auid=1735456002.1792801556&dt=Connected%20Boards%20Automations%20-%20monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%",
+          "POST https://www.google.com/ccm/collect?rcb=15&frm=0&apvc=0&ae=g&auid=1735456002.1792801556&dt=Connected%20Boards%20Automations%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmond",
+          "POST https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=0&auid=1735456002.1792801556&dt=Connected%20Boards%20Automations%20-%20monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801552816&cv=11&fst=1792801552816&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 610611,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10000458/google-calendar-sync",
+      "render": true,
+      "fetched_at": "2026-10-24T00:25:58.096Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10000458/google-calendar-sync",
+      "title": "Google Calendar Sync - monday.com Marketplace",
+      "rendered": {
+        "network_idle": false,
+        "requests": 268,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801563973&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801561550&cv=11&fst=1792801561550&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=1&ae=g&auid=458380348.1792801565&dt=Google%20Calendar%20Sync%20-%20monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketp",
+          "POST https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=0&auid=458380348.1792801565&dt=Google%20Calendar%20Sync%20-%20monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmonday.co",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801561727&cv=11&fst=1792801561727&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801561648&cv=11&fst=1792801561648&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801562379&cv=11&fst=1792801562379&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=0&auid=458380348.1792801565&dt=Google%20Calendar%20Sync%20-%20monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.com",
+          "POST https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=0&ae=g&auid=458380348.1792801565&dt=Google%20Calendar%20Sync%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2F",
+          "POST https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=0&ae=g&auid=458380348.1792801565&dt=Google%20Calendar%20Sync%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2F",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801561647&cv=11&fst=1792801561647&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=0&auid=458380348.1792801565&dt=Google%20Calendar%20Sync%20-%20monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmonday",
+          "POST https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=0&auid=458380348.1792801565&dt=Google%20Calendar%20Sync%20-%20monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmonday.",
+          "POST https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=0&auid=458380348.1792801565&dt=Google%20Calendar%20Sync%20-%20monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmonday.",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801561888&cv=11&fst=1792801561888&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801562383&cv=11&fst=1792801562383&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.html",
+      "bytes": 614059,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10001048/superplanner",
+      "render": true,
+      "fetched_at": "2026-10-24T00:26:41.377Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10001048/superplanner",
+      "title": "SuperPlanner - monday.com Marketplace",
+      "rendered": {
+        "network_idle": false,
+        "requests": 266,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801606866&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=1&ae=g&auid=1737076162.1792801608&dt=SuperPlanner%20-%20monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Flist",
+          "POST https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=0&auid=1737076162.1792801608&dt=SuperPlanner%20-%20monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmark",
+          "POST https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=0&auid=1737076162.1792801608&dt=SuperPlanner%20-%20monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarke",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801604728&cv=11&fst=1792801604728&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801604943&cv=11&fst=1792801604943&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801604944&cv=11&fst=1792801604944&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801605549&cv=11&fst=1792801605549&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=2&frm=0&apvc=0&auid=1737076162.1792801608&dt=SuperPlanner%20-%20monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketp",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801604659&cv=11&fst=1792801604659&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801604868&cv=11&fst=1792801604868&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=0&auid=1737076162.1792801608&dt=SuperPlanner%20-%20monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarke",
+          "POST https://www.google.com/ccm/collect?rcb=4&frm=0&apvc=0&ae=g&auid=1737076162.1792801608&dt=SuperPlanner%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%",
+          "POST https://www.google.com/ccm/collect?rcb=4&frm=0&apvc=0&auid=1737076162.1792801608&dt=SuperPlanner%20-%20monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketpla",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801605552&cv=11&fst=1792801605552&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=4&frm=0&apvc=0&ae=g&auid=1737076162.1792801608&dt=SuperPlanner%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 632083,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10000360/docexport-pdf-generator",
+      "render": true,
+      "fetched_at": "2026-10-24T00:26:59.931Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10000360/docexport-pdf-generator",
+      "title": "DocExport PDF Generator - monday.com Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 258,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801625529&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=13&frm=0&apvc=0&ae=g&auid=1730783043.1792801627&dt=DocExport%20PDF%20Generator%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.co",
+          "POST https://www.google.com/ccm/collect?rcb=5&frm=0&apvc=0&auid=1730783043.1792801627&dt=DocExport%20PDF%20Generator%20-%20monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.",
+          "POST https://www.google.com/ccm/collect?rcb=8&frm=0&apvc=0&auid=1730783043.1792801627&dt=DocExport%20PDF%20Generator%20-%20monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmon",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801624009&cv=11&fst=1792801624009&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801624012&cv=11&fst=1792801624012&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801623138&cv=11&fst=1792801623138&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801623138&cv=11&fst=1792801623138&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801623209&cv=11&fst=1792801623209&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=11&frm=0&apvc=0&auid=1730783043.1792801627&dt=DocExport%20PDF%20Generator%20-%20monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmond",
+          "POST https://www.google.com/ccm/collect?rcb=13&frm=0&apvc=0&ae=g&auid=1730783043.1792801627&dt=DocExport%20PDF%20Generator%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.co",
+          "POST https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=0&auid=1730783043.1792801627&dt=DocExport%20PDF%20Generator%20-%20monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmon",
+          "POST https://www.google.com/ccm/collect?rcb=7&frm=0&apvc=1&ae=g&auid=1730783043.1792801627&dt=DocExport%20PDF%20Generator%20-%20monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmark",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801623358&cv=11&fst=1792801623358&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/ccm/collect?rcb=9&frm=0&apvc=0&auid=1730783043.1792801627&dt=DocExport%20PDF%20Generator%20-%20monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmon",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801623429&cv=11&fst=1792801623429&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 614661,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10000034/superform",
+      "render": true,
+      "fetched_at": "2026-10-24T00:27:08.559Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10000034/superform",
+      "title": "SuperForm - monday.com Marketplace",
+      "rendered": {
+        "network_idle": false,
+        "requests": 267,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801634079&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=0&ae=g&auid=1109156125.1792801635&dt=SuperForm%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2F",
+          "POST https://www.google.com/ccm/collect?rcb=2&frm=0&apvc=0&auid=1109156125.1792801635&dt=SuperForm%20-%20monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketpl",
+          "POST https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=0&ae=g&auid=1109156125.1792801635&dt=SuperForm%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2F",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801631493&cv=11&fst=1792801631493&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=1&ae=g&auid=1109156125.1792801635&dt=SuperForm%20-%20monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Flisting%",
+          "POST https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=0&auid=1109156125.1792801635&dt=SuperForm%20-%20monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketp",
+          "POST https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=0&auid=1109156125.1792801635&dt=SuperForm%20-%20monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketp",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801631558&cv=11&fst=1792801631558&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801632280&cv=11&fst=1792801632280&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801631558&cv=11&fst=1792801631558&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801631691&cv=11&fst=1792801631691&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801631768&cv=11&fst=1792801631768&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=0&auid=1109156125.1792801635&dt=SuperForm%20-%20monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace",
+          "POST https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=0&auid=1109156125.1792801635&dt=SuperForm%20-%20monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketpla",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801632278&cv=11&fst=1792801632278&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.html",
+      "bytes": 638418,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10000616/google-forms-integration-plus",
+      "render": true,
+      "fetched_at": "2026-10-24T00:27:51.751Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10000616/google-forms-integration-plus",
+      "title": "Google Forms Integration Plus - monday.com Marketplace",
+      "rendered": {
+        "network_idle": false,
+        "requests": 268,
+        "failed": [
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801677294&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=0&ae=g&auid=351292345.1792801679&dt=Google%20Forms%20Integration%20Plus%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmon",
+          "POST https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=0&ae=g&auid=351292345.1792801679&dt=Google%20Forms%20Integration%20Plus%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmon",
+          "POST https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=0&auid=351292345.1792801679&dt=Google%20Forms%20Integration%20Plus%20-%20monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801675018&cv=11&fst=1792801675018&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=1&ae=g&auid=351292345.1792801679&dt=Google%20Forms%20Integration%20Plus%20-%20monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.co",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801675153&cv=11&fst=1792801675153&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=5&frm=0&apvc=0&auid=351292345.1792801679&dt=Google%20Forms%20Integration%20Plus%20-%20monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801675937&cv=11&fst=1792801675937&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=0&auid=351292345.1792801679&dt=Google%20Forms%20Integration%20Plus%20-%20monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2",
+          "POST https://www.google.com/ccm/collect?rcb=7&frm=0&apvc=0&auid=351292345.1792801679&dt=Google%20Forms%20Integration%20Plus%20-%20monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2",
+          "POST https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=0&auid=351292345.1792801679&dt=Google%20Forms%20Integration%20Plus%20-%20monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801675940&cv=11&fst=1792801675940&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801675087&cv=11&fst=1792801675087&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801675283&cv=11&fst=1792801675283&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801675153&cv=11&fst=1792801675153&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.html",
+      "bytes": 612092,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace/listing/10001281/sales-radar-ai",
+      "render": true,
+      "fetched_at": "2026-10-24T00:28:35.226Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace/listing/10001281/sales-radar-ai",
+      "title": "Sales Radar AI - monday.com Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 257,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801720711&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=0&ae=g&auid=46531861.1792801722&dt=Sales%20Radar%20AI%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketp",
+          "POST https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=0&auid=46531861.1792801722&dt=Sales%20Radar%20AI%20-%20monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fm",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801718366&cv=11&fst=1792801718366&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801718428&cv=11&fst=1792801718428&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=0&auid=46531861.1792801722&dt=Sales%20Radar%20AI%20-%20monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fma",
+          "POST https://www.google.com/ccm/collect?rcb=8&frm=0&apvc=1&ae=g&auid=46531861.1792801722&dt=Sales%20Radar%20AI%20-%20monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace%2Fl",
+          "POST https://www.google.com/ccm/collect?rcb=10&frm=0&apvc=0&ae=g&auid=46531861.1792801722&dt=Sales%20Radar%20AI%20-%20monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketp",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801718427&cv=11&fst=1792801718427&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=14&frm=0&apvc=0&auid=46531861.1792801722&dt=Sales%20Radar%20AI%20-%20monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmark",
+          "POST https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=0&auid=46531861.1792801722&dt=Sales%20Radar%20AI%20-%20monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmonday.com%2F",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801719183&cv=11&fst=1792801719183&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=0&auid=46531861.1792801722&dt=Sales%20Radar%20AI%20-%20monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fm",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801718697&cv=11&fst=1792801718697&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801719181&cv=11&fst=1792801719181&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801718551&cv=11&fst=1792801718551&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.html",
+      "bytes": 615791,
+      "truncated": false
+    }
+  ]
+}
