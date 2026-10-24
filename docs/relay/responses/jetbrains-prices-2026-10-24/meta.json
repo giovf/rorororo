@@ -1,0 +1,335 @@
+{
+  "request": "jetbrains-prices-2026-10-24",
+  "fetched_at": "2026-10-24T19:14:52.127Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/9707-ansi-highlighter-premium/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:13:45.344Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/9707-ansi-highlighter-premium/pricing",
+      "title": "ANSI Highlighter Premium Plugin for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 102,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=9&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F9707-ansi-highlighter-premium%2Fpricing&scrsrc=www.googlet"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 234113,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/13905-mybatis-log/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:13:52.485Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/13905-mybatis-log/pricing",
+      "title": "MyBatis Log Plugin for IntelliJ IDEA & Android Studio | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 101,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=16&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F13905-mybatis-log%2Fpricing&scrsrc=www.googletagmanager.c"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 232013,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/18151-simple-object-copy/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:13:57.046Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/18151-simple-object-copy/pricing",
+      "title": "Simple Object Copy Plugin for IntelliJ IDEA & Android Studio | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 100,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=0&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F18151-simple-object-copy%2Fpricing&scrsrc=www.googletagman"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 226495,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/21289-aicommit/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:01.616Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/21289-aicommit/pricing",
+      "title": "AICommit Theme for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 102,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=7&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F21289-aicommit%2Fpricing&scrsrc=www.googletagmanager.com&r"
+        ],
+        "console_errors": [
+          "Connecting to 'https://noembed.com/embed?url=https://youtu.be/sDG8cx6i_kM' violates the following Content Security Policy directive: \"connect-src 'self' https://hub.jetbrains.com https://youtrack.jetb",
+          "Fetch API cannot load https://noembed.com/embed?url=https://youtu.be/sDG8cx6i_kM. Refused to connect because it violates the document's Content Security Policy.",
+          "Connecting to 'https://noembed.com/embed?url=https://youtu.be/sDG8cx6i_kM' violates the following Content Security Policy directive: \"connect-src 'self' https://hub.jetbrains.com https://youtrack.jetb",
+          "Fetch API cannot load https://noembed.com/embed?url=https://youtu.be/sDG8cx6i_kM. Refused to connect because it violates the document's Content Security Policy.",
+          "uncaught: Unhandled Promise Rejection: Failed to fetch",
+          "uncaught: Unhandled Promise Rejection: Failed to fetch"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 271134,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/24816-vscode-icons/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:06.427Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/24816-vscode-icons/pricing",
+      "title": "VSCode Icons Plugin for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 101,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=5&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F24816-vscode-icons%2Fpricing&scrsrc=www.googletagmanager.c"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "5.html",
+      "bytes": 228099,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/10828-javadoc-clean-read/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:11.021Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/10828-javadoc-clean-read/pricing",
+      "title": "JavaDoc Clean Read Plugin for IntelliJ IDEA & Android Studio | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 101,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=14&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F10828-javadoc-clean-read%2Fpricing&scrsrc=www.googletagma"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "6.html",
+      "bytes": 233882,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/25828--log/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:15.599Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/25828--log/pricing",
+      "title": ".log Plugin for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 101,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=16&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F25828--log%2Fpricing&scrsrc=www.googletagmanager.com&rnd="
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "7.html",
+      "bytes": 232826,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/20243-skol--calm-semantic-themes/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:20.188Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/20243-skol--calm-semantic-themes/pricing",
+      "title": "Skol - Calm Semantic Themes Theme for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 103,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=11&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F20243-skol--calm-semantic-themes%2Fpricing&scrsrc=www.goo"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 231664,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/23115-sequencediagram-org/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:24.702Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/23115-sequencediagram-org/pricing",
+      "title": "SequenceDiagram.org Plugin for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 103,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=0&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F23115-sequencediagram-org%2Fpricing&scrsrc=www.googletagma"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "9.html",
+      "bytes": 237138,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/14053-smart-jump/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:29.363Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/14053-smart-jump/pricing",
+      "title": "Smart Jump Plugin for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 102,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=3&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F14053-smart-jump%2Fpricing&scrsrc=www.googletagmanager.com"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "10.html",
+      "bytes": 234825,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/21314-codemate/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:34.070Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/21314-codemate/pricing",
+      "title": "CodeMate Plugin for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 101,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=10&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F21314-codemate%2Fpricing&scrsrc=www.googletagmanager.com&"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "11.html",
+      "bytes": 235016,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/28734-monokai-pro-lifetime/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:38.547Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/28734-monokai-pro-lifetime/pricing",
+      "title": "Monokai Pro Lifetime Theme for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 103,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=4&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F28734-monokai-pro-lifetime%2Fpricing&scrsrc=www.googletagm"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "12.html",
+      "bytes": 235035,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/16217-find-in-files-favorites-/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:43.327Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/16217-find-in-files-favorites-/pricing",
+      "title": "Find In Files (Favorites) Plugin for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 101,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=17&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F16217-find-in-files-favorites-%2Fpricing&scrsrc=www.googl"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "13.html",
+      "bytes": 231005,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://plugins.jetbrains.com/plugin/24753-combine-and-copy-files-to-clipboard-for-ai-and-llm/pricing",
+      "render": true,
+      "fetched_at": "2026-10-24T19:14:48.058Z",
+      "status": 200,
+      "final_url": "https://plugins.jetbrains.com/plugin/24753-combine-and-copy-files-to-clipboard-for-ai-and-llm/pricing",
+      "title": "Combine and Copy Files to Clipboard For AI and LLM Plugin for JetBrains IDEs | JetBrains Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 101,
+        "failed": [
+          "POST https://pagead2.googlesyndication.com/ccm/collect?rcb=6&frm=0&apvc=1&ae=g&en=page_view&dl=https%3A%2F%2Fplugins.jetbrains.com%2Fplugin%2F24753-combine-and-copy-files-to-clipboard-for-ai-and-llm%2"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "14.html",
+      "bytes": 226595,
+      "truncated": false
+    }
+  ]
+}
