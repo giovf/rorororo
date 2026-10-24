@@ -1,0 +1,174 @@
+{
+  "request": "appsource-b-2026-10-24",
+  "fetched_at": "2026-10-24T20:29:33.808Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=api&page=1",
+      "fetched_at": "2026-10-24T20:29:16.433Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&search=api&page=1",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"29b3c8-2ryhxrG8fHcYuQsENOp2ZqIJqw0\""
+      },
+      "file": "1.html",
+      "bytes": 2733000,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=api&page=2",
+      "fetched_at": "2026-10-24T20:29:19.076Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&search=api&page=2",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"28bc94-F+v5O843ORRGHlO/eRe9/rt/N9E\""
+      },
+      "file": "2.html",
+      "bytes": 2669716,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=api&page=3",
+      "fetched_at": "2026-10-24T20:29:20.423Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&search=api&page=3",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"295fbe-IQ6dMPNkj7gWVdIlF2yEbPR5qTY\""
+      },
+      "file": "3.html",
+      "bytes": 2711486,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=license&page=1",
+      "fetched_at": "2026-10-24T20:29:21.756Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&search=license&page=1",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"298b4a-szfJ4/JAr5w8TpaB0uFru1xLwSQ\""
+      },
+      "file": "4.html",
+      "bytes": 2722634,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=company%20data&page=1",
+      "fetched_at": "2026-10-24T20:29:24.041Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&search=company+data&page=1",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"29ea16-pcoLnCTbfnqKSmrT9cfede+oAYk\""
+      },
+      "file": "5.html",
+      "bytes": 2746902,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&page=2",
+      "fetched_at": "2026-10-24T20:29:25.706Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&page=2",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"298523-JIcl6tWuH0YCULte1QpIN9LhrNQ\""
+      },
+      "file": "6.html",
+      "bytes": 2721059,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&page=3",
+      "fetched_at": "2026-10-24T20:29:27.209Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&page=3",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"29eb80-hQonzGnT3IKUQnTTlYmjrFAY/nE\""
+      },
+      "file": "7.html",
+      "bytes": 2747264,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&page=4",
+      "fetched_at": "2026-10-24T20:29:28.289Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&page=4",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"292c55-mQhudYWAk/FGRIIoSIBc7ZyFOjg\""
+      },
+      "file": "8.html",
+      "bytes": 2698325,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/product/office/WA200005502",
+      "fetched_at": "2026-10-24T20:29:29.757Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/product/WA200005502",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"3cabdd-FJl3WPeIZZrb+Y2ZEtNnWw6OhUA\""
+      },
+      "file": "9.html",
+      "bytes": 3976157,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/product/office/WA102957665",
+      "fetched_at": "2026-10-24T20:29:31.128Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/product/WA102957665",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"3c75e5-1GdnaHeSgrdJ3GmZwTir+Y8CZEg\""
+      },
+      "file": "10.html",
+      "bytes": 3962341,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/product/office/WA200005669",
+      "fetched_at": "2026-10-24T20:29:32.345Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/product/WA200005669",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"3c84af-pcuaA+ccsvIT+Pj7NOUl2rNj3Lc\""
+      },
+      "file": "11.html",
+      "bytes": 3966127,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/product/office/WA200004933",
+      "fetched_at": "2026-10-24T20:29:33.412Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/product/WA200004933",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"3cc04a-+ZJEidxLvV/OgrEU4JKag0PaGOs\""
+      },
+      "file": "12.html",
+      "bytes": 3981386,
+      "truncated": false
+    }
+  ]
+}
