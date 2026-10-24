@@ -1704,3 +1704,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 19:17 | burn-down | Spike §4a table, exchange idea trigger updated: bar cleared, 10-28 exchange re-scores at evidence 2
 - 2026-10-24 19:17 | burn-down | Still open for the exchange: commercial tab prices, address display, whether US$1/mo is a floor
 - 2026-10-24 19:17 | burn-down | CI first runs: none owed (both 10-24 installers have first-run lines after them)
+- 2026-10-24 19:29 | burn-down | Spike gumroad-shelf-uk-seller done: 4 relay rounds — Terms, pricing, prohibited list, 24 help articles, 4 rivals
+- 2026-10-24 19:29 | burn-down | Read: UK individual sells, GBP bank payout Wednesdays from US$100, Stripe KYC (ID + address), name+email public
+- 2026-10-24 19:29 | burn-down | Fees: 10 % + 50¢ PLUS card processing 2.9 % + 30¢ direct (≈ 15-16 % at US$29-39); Discover 30 % all-in; VAT on top
+- 2026-10-24 19:29 | burn-down | Discover lists only after US$100 of genuine direct sales + ~3-week risk review; 4 rivals: 0 new ratings in 5 d
+- 2026-10-24 19:29 | burn-down | Call: park (re-scored 2.7-5.3, under baseline); kit idea trigger updated; Gumroad is not the £6.99 workbook's twin
+- 2026-10-24 19:29 | burn-down | Relay lesson: help.gumroad.com redirects to the index; gumroad.com/help/article pages carry HTML in data-page

@@ -256,13 +256,15 @@
     {
       "id": "spike-gumroad-shelf-uk-seller",
       "title": "Research spike: Gumroad as the shelf for the parked Claude Code operations kit — read gumroad.com and help.gumroad.com through the relay: UK seller eligibility and identity checks, payout path (Stripe / PayPal, schedule, floor), the 10 % direct and 30 % Discover fees as currently published, merchant-of-record VAT on digital products, Discover's ranking inputs, and the four rival kits' current ratings and prices from spike ai-setup-course-rivals; write docs/exchange/spikes/gumroad-shelf-uk-seller.md with a promote / park call",
-      "why": "Exchange 2026-W43 parked the kit (score 4, the owner's 2026-10-18 idea reshaped) behind the Etsy winner and the hackathon entry; its remaining unknown is the shelf — the ai-setup spike could not read Gumroad's UK status (its \"round c\"). A Gumroad listing needs an account on the owner's identity, so the read also says what that account asks for (ID, tax form). Score: 1.5 × 2 ÷ 0.6 (0.4 d + relay) = 5. Relay hosts gumroad.com, help.gumroad.com (add in the spike's commit).",
+      "why": "Exchange 2026-W43 parked the kit (score 4, the owner's 2026-10-18 idea reshaped) behind the Etsy winner and the hackathon entry; its remaining unknown is the shelf — the ai-setup spike could not read Gumroad's UK status (its \"round c\"). A Gumroad listing needs an account on the owner's identity, so the read also says what that account asks for (ID, tax form). Score: 1.5 × 2 ÷ 0.6 (0.4 d + relay) = 5. Relay hosts gumroad.com, help.gumroad.com (add in the spike's commit). Done 2026-10-24: four relay rounds (Terms, pricing, prohibited list, 24 help articles, 4 rival listings); UK individual yes, fees 10 % + 50¢ + processing 2.9 % + 30¢ direct / 30 % Discover, VAT by Gumroad; Discover gated behind US$100 of direct sales + ~3-week review → park, idea trigger updated.",
       "effort_days": 0.4,
       "proof": "docs/exchange/spikes/gumroad-shelf-uk-seller.md states eligibility, fees, VAT handling, payout and Discover's mechanics from Gumroad's own pages and makes a promote / park call for the kit",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-24",
-      "doing_since": "2026-10-24"
+      "doing_since": "2026-10-24",
+      "done_at": "2026-10-24",
+      "doing_by": "burn-down"
     },
     {
       "id": "spike-framer-styles-category-read",
