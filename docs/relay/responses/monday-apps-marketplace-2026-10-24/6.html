@@ -1,0 +1,1800 @@
+
+																																																										
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+<!DOCTYPE html>
+<html
+	lang="en"
+	data-page-template="article"
+	
+ data-page-id="ci_a8f6fc3029fe898852c5fa4e8b7c3850ddb591418263d55879802506d39fae6a" data-confluence-content-id="4279402528"
+		data-color-scheme="light"
+>
+<head>
+	<meta charset="UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<meta name="color-scheme" content="light">
+
+						<link id="pageTreeSource" rel="preload" href="/monday/__pagetree.json" as="fetch" type="application/json" crossorigin="anonymous">
+
+		<meta name="site-path" content="/">
+
+					<link rel="x-site-path" href="/">
+	<link rel="x-root-path" href="/">
+
+	<meta name="site-default-language" content="en">
+		<meta name="site-languages" content="en">
+		<meta name="confluence-content-type" content="page">
+		<meta name="confluence-base-url" content="https://saasjet.atlassian.net/wiki">
+		<meta name="confluence-space-key" content="MA">
+	
+		<meta name="google-site-verification" content="dfduhhkMWTxcTztgf9xyhGeSyMp2_kwhXVljqmYfvq0"/>
+
+
+
+	<link rel="icon" href="/__site/6a13e0af-38cf-4b54-8d4b-0c92196084a6/sj%20icon%20color.png" type="image/svg+xml">
+
+
+
+
+
+
+
+
+
+
+
+		<title>How to calculate the price for app on your monday account? | SaaSJet Help Center</title>
+		<meta property="og:title" content="How to calculate the price for app on your monday account? | SaaSJet Help Center">
+		<meta property="twitter:title" content="How to calculate the price for app on your monday account? | SaaSJet Help Center">
+
+		<link rel="canonical" href="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account">
+		<meta property="og:url" content="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account">
+
+		<meta name="description" content="Pricing for our monday.com apps is based on two things: Your monday seat tier The billing cycle you choose - Monthly or Annual Even if only a few people active…">
+		<meta property="og:description" content="Pricing for our monday.com apps is based on two things: Your monday seat tier The billing cycle you choose - Monthly or Annual Even if only a few people active…">
+		<meta property="twitter:description" content="Pricing for our monday.com apps is based on two things: Your monday seat tier The billing cycle you choose - Monthly or Annual Even if only a few people active…">
+
+		<meta property="og:image" content="https://help.saasjet.com/__site/6a13e0af-38cf-4b54-8d4b-0c92196084a6/sj%20icon%20color.png">
+		<meta property="twitter:image" content="https://help.saasjet.com/__site/6a13e0af-38cf-4b54-8d4b-0c92196084a6/sj%20icon%20color.png">
+
+	<meta property="og:type" content="website">
+	<meta property="twitter:card" content="summary_large_image">
+
+		<meta name="page-last-modified" content="2025-12-03T12:02:47.696Z">
+
+		<script>
+		(function () {
+			const defaultLanguageMeta = /** @type {string|undefined} */(document.querySelector('meta[name="site-default-language"]')?.content);
+			const availableLanguagesMeta = /** @type {string|undefined} */(document.querySelector('meta[name="site-languages"]')?.content);
+			const fallbackLanguage = defaultLanguageMeta ?? 'en';
+			const supportedLanguagesFromMeta = availableLanguagesMeta?.split(',') ?? [];
+			const supportedLanguages = [...new Set([fallbackLanguage, ...supportedLanguagesFromMeta])].filter(Boolean);
+			const detectedLanguage = new URLSearchParams(self.location.search).get('l') || document.documentElement.lang;
+			const resolvedLanguage = supportedLanguages.includes(detectedLanguage) ? detectedLanguage : fallbackLanguage;
+			document.documentElement.lang = resolvedLanguage;
+			const sheet = new CSSStyleSheet();
+			document.adoptedStyleSheets.push(sheet);
+			// Hide any element with a `data-lang` attribute that does NOT match the detected language
+			sheet.replaceSync('[data-lang]:not([data-lang="' + resolvedLanguage + '"]) { display: none; }');
+		})();
+	</script>
+
+		<script>
+		(function() {
+			/** @typedef {'light'|'dark'} ColorScheme */
+			/** @type {ColorScheme[]} */
+			const availableColorSchemes = document.documentElement.querySelector('meta[name="color-scheme"]').content.split(' ').filter(Boolean);
+			/** @type {ColorScheme|'system'} */
+			const userPreference = localStorage?.getItem('color-scheme-preference') ?? 'system';
+			// Clean-up user preference in case there's nothing to choose from
+			// Fall back to the HTML document's default color theme
+			if (availableColorSchemes.length <= 1 || ![...availableColorSchemes, 'system'].includes(userPreference)) {
+				localStorage?.removeItem('color-scheme-preference');
+				return;
+			}
+			// Override default HTML document with client-side user preference
+			if (userPreference === 'system') {
+				updateThemeAttribute(self.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark')
+			} else {
+				updateThemeAttribute(userPreference)
+			}
+			/** @param {ColorScheme} colorScheme */
+			function updateThemeAttribute(colorScheme) {
+				document.documentElement.setAttribute('data-color-scheme', colorScheme);
+			}
+		})();
+	</script>
+
+		<script>
+		
+		function sortContentSources(a, b) {
+			let result = a.precedence - b.precedence;
+
+			if (result === 0) {
+				result = a.value.localeCompare(b.value);
+			}
+
+			return result;
+		}
+
+		
+		function applyContentSourceOrderToElements({ parent, children }) {
+			const contentSourceElements = [...children];
+
+			contentSourceElements
+				.sort((a, b) => (
+					sortContentSources(
+						{ value: a.dataset.orderValue, precedence: a.dataset.orderPrecedence },
+						{ value: b.dataset.orderValue, precedence: b.dataset.orderPrecedence }
+					)
+				))
+				.forEach((element) => {
+					delete element.dataset.orderValue;
+					delete element.dataset.orderPrecedence;
+				});
+
+			parent.replaceChildren(...contentSourceElements);
+		}
+	</script>
+
+<script>
+	(() => {
+		if (isInAppHelpEnabled()) {
+			document.documentElement.dataset.inAppHelp = 'true';
+
+			if (isTitleHidden()) {
+				document.documentElement.dataset.hideTitle = 'true';
+			}
+		}
+
+		function isInAppHelpEnabled() {
+			return new URLSearchParams(location.search).get('inAppHelp') === 'true';
+		}
+
+		function isTitleHidden() {
+			return new URLSearchParams(location.search).get('title') === 'false';
+		}
+	})();
+</script>
+
+<link rel="stylesheet" href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/in-app-help.css"/>
+<script type="module" src="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/in-app-help.js"></script>
+
+	<link rel="stylesheet" href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/styles.css">
+	<link rel="stylesheet" href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/fonts.css">
+	<link rel="stylesheet" href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/search-styles-bundle.css">
+
+	
+
+	<style>
+		@layer overrides {
+			:root {
+				--theme-headline-font: "Roboto";
+				--theme-text-font: "Roboto";
+				--theme-headline-scale: calc(100 / 100);
+				--theme-text-scale: calc(100 / 100);
+			}
+		}
+	</style>
+
+	<style>
+		@layer overrides {
+			:root, :host {
+					--theme-header-logo-size: 40px;
+					--theme-footer-logo-size: 40px;
+			}
+
+			:root[data-color-scheme='light'],
+			:host([data-color-scheme='light']) {
+					--theme-header-text-color: #FFFFFF;
+					--theme-header-background-color: #0d284f;
+					--theme-footer-text-color: #FFF;
+					--theme-footer-background-color: #0d284f;
+			}
+
+			:root[data-color-scheme='dark'],
+			:host([data-color-scheme='dark']) {
+					--theme-header-text-color: #FFFFFF;
+					--theme-header-background-color: #0a0b0c;
+					--theme-footer-text-color: #FFFFFF;
+					--theme-footer-background-color: #0a0b0c;
+			}
+		}
+	</style>
+
+	 
+
+
+
+
+
+<script data-site-data="content-sources" type="application/json">
+{
+	"collection": {
+		"members": [
+
+
+	{
+	"name": "Time in Status",
+	"id": "1fb4940e-e26d-48d4-8de4-9031141db6b7",
+	"key": "TIS",
+	"path": "/tis",
+		"prefix": "/tis",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Issue History for Jira",
+	"id": "ffdd355a-40cf-40e4-971d-6d59d690dfb3",
+	"key": "IH",
+	"path": "/ih_cloud",
+		"prefix": "/ih_cloud",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Smart Forms for Jira",
+	"id": "71e98f5c-1128-4bbb-a3de-dfd273a0d5b8",
+	"key": "FORMS",
+	"path": "/forms",
+		"prefix": "/forms",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "SLA Time and Report for Jira",
+	"id": "647f5f33-ea75-476e-a8c1-f47c35223ecf",
+	"key": "STARFJ",
+	"path": "/sla",
+		"prefix": "/sla",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "AI Apps Builder for Jira",
+	"id": "0c9018f2-a8a7-4d3e-8f8f-2f73f573e83d",
+	"key": "FAG",
+	"path": "/forge-app-generator",
+		"prefix": "/forge-app-generator",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Time Metrics Tracker І Time Between Statuses",
+	"id": "4bc2a3ac-75cf-4774-8eea-cee23057724a",
+	"key": "TBS",
+	"path": "/tbs",
+		"prefix": "/tbs",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Time &amp; Cost Tracker for Jira",
+	"id": "e979aed1-f805-4e87-89f9-2cee5619de84",
+	"key": "TCTFJ",
+	"path": "/time_cost_tracker",
+		"prefix": "/time_cost_tracker",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Email&amp;Tasks: Jira Cloud for Gmail",
+	"id": "c93571b0-6551-4fd6-98a3-12b2a066c6c4",
+	"key": "E2TASK",
+	"path": "/email_task",
+		"prefix": "/email_task",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Issue Checklist Template and Report",
+	"id": "35eccf94-27a4-4073-bc99-99a188db4eea",
+	"key": "ICTR",
+	"path": "/checklist",
+		"prefix": "/checklist",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Business Process Manager",
+	"id": "d36ea3b5-a868-41c8-8e95-4431ff398681",
+	"key": "BPM",
+	"path": "/bpm",
+		"prefix": "/bpm",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Issue Creator for Jira Cloud",
+	"id": "355fd01b-b9d3-42a4-bb02-49755d150adc",
+	"key": "ICJC",
+	"path": "/icjc",
+		"prefix": "/icjc",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Mentions Dashboard for Jira",
+	"id": "1663d7c7-8631-4b79-8e6a-73766f276e93",
+	"key": "MC",
+	"path": "/mc",
+		"prefix": "/mc",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Boomerang: Reminders for Jira Issues",
+	"id": "34323249-b0e3-4acf-85c1-8b6e89e003cc",
+	"key": "RM",
+	"path": "/rm",
+		"prefix": "/rm",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Google Maps for Jira",
+	"id": "d6748230-cc39-4ce8-abc5-2ddc93e69586",
+	"key": "GMFJ",
+	"path": "/maps",
+		"prefix": "/maps",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Advanced Audit Log for Jira",
+	"id": "54d807ac-15c4-4699-b8be-1caff1304213",
+	"key": "ALFJ",
+	"path": "/alfj",
+		"prefix": "/alfj",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Time in Status for Jira Data Center",
+	"id": "fee642f6-873e-47ee-ae2a-045258cfdcf7",
+	"key": "TISJDC",
+	"path": "/tisjdc",
+		"prefix": "/tisjdc",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Issue History for Jira | Data Center",
+	"id": "7238fd8f-d5a1-4bcf-ac09-b5f882abfa13",
+	"key": "IHFJDC",
+	"path": "/ih_dc",
+		"prefix": "/ih_dc",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Smart Forms for Jira Data Center",
+	"id": "896b93aa-2fb6-455e-9eaf-cfea756334fe",
+	"key": "SFDC",
+	"path": "/sfdc",
+		"prefix": "/sfdc",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Time Between Statuses for Jira Data Center",
+	"id": "5bed80a3-b293-4a02-9fd3-70efa75ef713",
+	"key": "TBSDC",
+	"path": "/tbsdc",
+		"prefix": "/tbsdc",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Assets History for Jira",
+	"id": "63526f8d-07db-4219-9716-6f672c8e9394",
+	"key": "AH",
+	"path": "/ah",
+		"prefix": "/ah",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "SLA Time and Report for Jira Data Center",
+	"id": "0f44aee9-defd-40e5-93da-a1c92bf3f799",
+	"key": "DCSLA",
+	"path": "/dcsla",
+		"prefix": "/dcsla",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Time in Status for monday.com",
+	"id": "5af8a6cf-d4e1-4cb7-acf4-379d44ffce1f",
+	"key": "TISMON",
+	"path": "/tismon",
+		"prefix": "/tismon",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Email to Tasks for monday.com - Gmail integration",
+	"id": "22eb8e55-74fa-426f-a9f3-018b7247760e",
+	"key": "EM",
+	"path": "/em",
+		"prefix": "/em",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Capture for monday.com",
+	"id": "423077d9-a474-4f15-b802-a176376b07ca",
+	"key": "capturebug",
+	"path": "/capturebug",
+		"prefix": "/capturebug",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "monday.com Apps",
+	"id": "c8305bf0-3c1a-4836-9d74-9fcdda7a130f",
+	"key": "MA",
+	"path": "/monday",
+		"prefix": "/monday",
+		"current": true,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Azure DevOps Apps",
+	"id": "8d8f31fa-8e56-4e97-b5bb-6fe0487eb421",
+	"key": "ADA",
+	"path": "/ada",
+		"prefix": "/ada",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Time in State for Azure DevOps",
+	"id": "713d3215-7963-4c2c-adef-3b4b7f9f36f4",
+	"key": "TISAZ",
+	"path": "/tisaz",
+		"prefix": "/tisaz",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "SaaSJet",
+	"id": "10943d05-7942-4e9a-aa33-af4fb5a58dda",
+	"key": "SAASJET",
+	"path": "/saasjet",
+		"prefix": "/saasjet",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+,
+
+
+	{
+	"name": "Marketplace Insights GPTs",
+	"id": "01c09fb5-3ee9-4257-b646-d7de341fcffd",
+	"key": "INSIGHT",
+	"path": "/insights",
+		"prefix": "/insights",
+		"current": false,
+	"versions": {
+		"available": [
+		]
+	},
+	"variants": {
+		"available": [
+		]
+	},
+	"languages": {
+		"available": [
+		]
+	}
+}
+
+		]
+	}
+}
+</script>
+
+
+<script data-theme-placeholder="site" type="application/json">
+	{
+		"id": "06e2a201-f5fc-4ace-ae78-abba8680d864",
+		"path": "/",
+		"url": "/",
+		"domain": "help.saasjet.com",
+		"aiSearchEnabled": true,
+		"isMcpServerEnabled": false,
+		"visibleToSearchEngines": true,
+		"isProtectionEnabled": false,
+		"isPublished": true,
+		"isAiAssistantEnabled": false
+	}
+</script>
+
+ 
+<script data-config="cookieconsent" type="application/json">
+{
+	"enabled": false,
+	"mode": "opt-in",
+	"heading": "Cookie Notice",
+	"description": "Please read our privacy statement.",
+	"links": [
+	]
+}
+</script>
+
+	<script type="module" src="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/main.js"></script>
+	<script type="module" src="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/page-tree.js" fetchpriority="high"></script>
+	<script type="module" src="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/search-bundle.js"></script>
+
+							<script type="module" src="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/article.js"></script>
+
+		<link rel="stylesheet" href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/ai-actions.css">
+		<script type="module" src="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/ai-actions.js"></script>
+
+
+
+
+
+
+
+
+<script data-cfasync="false">
+	(() => {
+		if (new URLSearchParams(location.search).has('disable-custom-overrides')) {
+			return;
+		}
+
+		document.querySelectorAll('[data-custom-overrides]').forEach(template => {
+			const type = template.getAttribute('data-type');
+
+			if (type === 'code-asset') {
+				const assetElement = template.content.cloneNode(true).firstElementChild;
+				const appendAsset = () => document.head.appendChild(assetElement);
+
+				if (assetElement.tagName === 'SCRIPT') {
+															if (document.readyState === 'complete') {
+						appendAsset();
+					} else {
+												document.addEventListener('DOMContentLoaded', appendAsset, { once: true });
+					}
+				} else {
+					appendAsset();
+				}
+			}
+		});
+	})();
+</script>
+
+
+			
+		<script data-config="integration:ga" type="application/json">
+			{
+				"enabled": true,
+				"tagId": "G-QXY251Q7D4"
+			}
+		</script>
+		<script
+			type="text/plain"
+			data-category="analytics"
+			data-service="ga"
+			data-src="https://www.googletagmanager.com/gtag/js?id=G-QXY251Q7D4"
+			async
+		></script>
+
+
+
+
+
+
+
+
+
+		<script data-config="integration:jsm" type="application/json">
+			{
+				"enabled": true
+			}
+		</script>
+												<script
+			type="text/plain"
+			data-category="functional"
+			data-service="jsm"
+			data-jsd-embedded
+			data-key="1e6c1dd0-0eab-4188-8a85-d12ed85243ee"
+			data-base-url="https://jsd-widget.atlassian.com"
+			data-src="https://jsd-widget.atlassian.com/assets/embed.js"
+		></script>
+		<script
+			type="text/plain"
+			data-category="functional"
+			data-service="jsm"
+			data-src="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/jsm-widget-init.js"
+		></script>
+
+
+
+			</head>
+<body>
+	<a href="#content" class="skip-link">
+		<i18n-message i18nkey="navigation.skip.to.main.label">Skip to main content</i18n-message>
+	</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+<header data-component="header" class="header">
+
+	<div class="header-site-branding">
+		<i18n-message id="3dca39a8ce366b00-2" class="sr-only" i18nkey="header.home.label"></i18n-message>
+
+		<a href="/" aria-labelledby="3dca39a8ce366b00-2">
+
+
+
+
+		<img class="header-logo header-logo--dark" src="/__site/6a13e0af-38cf-4b54-8d4b-0c92196084a6/sj%20icon%20color.png" alt="">
+
+		<img class="header-logo header-logo--light" src="/__site/6a13e0af-38cf-4b54-8d4b-0c92196084a6/sj%20icon%20color.png" alt="">
+
+		</a>
+
+			<a href="/monday" class="header-site-name">
+				monday.com Apps
+			</a>
+	</div>
+	<div class="header-content">
+			<div class="header-links">
+				<ul>
+						<li><a href="https://trust.saasjet.com/">Trust Center</a></li>
+						<li><a href="https://saasjet.atlassian.net/servicedesk/customer/portal/1">Support</a></li>
+				</ul>
+			</div>
+
+		<div class="header-pickers">
+
+		</div>
+
+			<div class="header-search">
+				<search-bar quicksearch></search-bar>
+			</div>
+
+
+				<button type="button" aria-controls="drawer-3dca39a8ce366b00-1" aria-haspopup="dialog" aria-expanded="false" class="header-nav-toggle" onclick="self['drawer-3dca39a8ce366b00-1'].showModal()">
+	<svg role="img" aria-hidden="true" data-component="icon" class="icon icon-menu ">
+		<use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#menu"></use>
+	</svg>
+			<i18n-message class="sr-only" i18nkey="navigation.main.label">Main navigation</i18n-message>
+		</button>
+	</div>
+
+	
+
+<dialog id="drawer-3dca39a8ce366b00-1" class="drawer">
+	<header data-component="header" class="header">
+
+	<div class="header-site-branding">
+		<i18n-message id="3dca39a8ce366b00-3" class="sr-only" i18nkey="header.home.label"></i18n-message>
+
+		<a href="/" aria-labelledby="3dca39a8ce366b00-3">
+
+
+
+
+		<img class="header-logo header-logo--dark" src="/__site/6a13e0af-38cf-4b54-8d4b-0c92196084a6/sj%20icon%20color.png" alt="">
+
+		<img class="header-logo header-logo--light" src="/__site/6a13e0af-38cf-4b54-8d4b-0c92196084a6/sj%20icon%20color.png" alt="">
+
+		</a>
+
+			<a href="/monday" class="header-site-name">
+				monday.com Apps
+			</a>
+	</div>
+
+		<div class="header-content">
+			<button type="button" aria-controls="drawer-3dca39a8ce366b00-1" aria-haspopup="dialog" aria-expanded="true" autofocus class="drawer-toggle" onclick="self['drawer-3dca39a8ce366b00-1'].close()">
+	<svg role="img" aria-hidden="true" data-component="icon" class="icon icon-close ">
+		<use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#close"></use>
+	</svg>
+				<i18n-message class="sr-only" i18nkey="action.close.label">Close</i18n-message>
+			</button>
+		</div>
+	</header>
+
+	<div class="drawer-section drawer-search">
+		<search-bar quicksearch></search-bar>
+	</div>
+
+
+	<nav id="drawer-nav" class="drawer-section drawer-nav tree" aria-labelledby="drawer-nav-label">
+		<i18n-message id="drawer-nav-label" class="sr-only" i18nkey="navigation.main.label">Main</i18n-message>
+
+						<copy-page-tree target="articleTree"></copy-page-tree>
+	</nav>
+
+			<div class="drawer-section drawer-links tree">
+<ul  >
+		<li class="tree-item">
+			<div class="tree-item-header">
+				<a id="3dca39a8ce366b00-4" href="https://trust.saasjet.com/" >Trust Center</a>
+			</div>
+
+		</li>
+		<li class="tree-item">
+			<div class="tree-item-header">
+				<a id="3dca39a8ce366b00-5" href="https://saasjet.atlassian.net/servicedesk/customer/portal/1" >Support</a>
+			</div>
+
+		</li>
+</ul>
+		</div>
+</dialog>
+
+</header>
+		<section class="article-page body">
+		<theme-navigator class="navigator">
+			<button id="navigator-toggle" class="navigator-toggle" aria-controls="navigator-nav" aria-labelledby="navigator-nav-label" aria-expanded="true">
+	<svg role="img" aria-hidden="true" data-component="icon" class="icon icon-menu navigator-icon-closed">
+		<use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#menu"></use>
+	</svg>
+	<svg role="img" aria-hidden="true" data-component="icon" class="icon icon-chevron_left navigator-icon-opened">
+		<use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#chevron_left"></use>
+	</svg>
+			</button>
+						<nav id="navigator-nav" class="navigator-body tree" aria-labelledby="navigator-nav-label">
+				<i18n-message id="navigator-nav-label" class="sr-only" i18nkey="navigation.main.label">Main</i18n-message>
+				<theme-page-tree id="articleTree">
+<ul  >
+		<li class="tree-item">
+			<div class="tree-item-header">
+					<button
+						class="tree-action"
+						type="button"
+						aria-expanded="true"
+aria-controls="3dca39a8ce366b00-7"						aria-labelledby="3dca39a8ce366b00-6"
+					></button>
+				<a id="3dca39a8ce366b00-6" href="/monday/template-how-to-guide" >General FAQs about Azure DevOps</a>
+			</div>
+
+<ul  id="3dca39a8ce366b00-7" >
+		<li class="tree-item">
+			<div class="tree-item-header">
+				<a id="3dca39a8ce366b00-8" href="/monday/how-to-calculate-the-price-for-app-on-your-monday-account" aria-current="page">How to calculate the price for app on your monday account?</a>
+			</div>
+
+		</li>
+		<li class="tree-item">
+			<div class="tree-item-header">
+				<a id="3dca39a8ce366b00-9" href="/monday/how-to-install-the-app-from-monday-com-marketplace" >How to install the app from monday.com Marketplace?</a>
+			</div>
+
+		</li>
+		<li class="tree-item">
+			<div class="tree-item-header">
+				<a id="3dca39a8ce366b00-10" href="/monday/how-to-upgrade-downgrade-or-cancel-the-subscription" >How to upgrade, downgrade, or cancel the subscription?</a>
+			</div>
+
+		</li>
+		<li class="tree-item">
+			<div class="tree-item-header">
+				<a id="3dca39a8ce366b00-11" href="/monday/where-can-i-contact-support-for-help" >Where can I contact support for help?</a>
+			</div>
+
+		</li>
+		<li class="tree-item">
+			<div class="tree-item-header">
+				<a id="3dca39a8ce366b00-12" href="/monday/how-to-uninstall-an-app-from-monday-com" >How to uninstall an app from monday.com?</a>
+			</div>
+
+		</li>
+		<li class="tree-item">
+			<div class="tree-item-header">
+				<a id="3dca39a8ce366b00-13" href="/monday/how-are-discounts-applied-to-my-subscription" >How are discounts applied to my subscription?</a>
+			</div>
+
+		</li>
+</ul>
+		</li>
+</ul>
+				</theme-page-tree>
+			</nav>
+		</theme-navigator>
+
+		<main class="main-content">
+			<div class="topbar">
+
+
+
+
+	<theme-breadcrumbs class="breadcrumbs" itemsbeforecollapse="2" maxitems="4">
+		<i18n-message id="3dca39a8ce366b00-14" class="sr-only" i18nkey="breadcrumbs.label">Breadcrumbs</i18n-message>
+		<nav aria-labelledby="3dca39a8ce366b00-14">
+				<ol>
+							<li>
+								<a href="/">
+										<i18n-message key="breadcrumbs.home.label">Home</i18n-message>
+								</a>
+							</li>
+							<li>
+								<a href="/monday">
+										monday.com Apps
+								</a>
+							</li>
+							<li>
+								<a href="/monday/template-how-to-guide">
+										General FAQs about Azure DevOps
+								</a>
+							</li>
+				</ol>
+		</nav>
+	</theme-breadcrumbs>
+					<ai-actions class="ai-actions"><theme-dropdown></theme-dropdown></ai-actions>
+			</div>
+				<script src="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/breadcrumbs.js"></script>
+		<nav class="toc sticky" data-component="toc" aria-labelledby="3dca39a8ce366b00-15">
+			<h2 class="toc-heading" id="3dca39a8ce366b00-15">
+				<i18n-message i18nkey="page.article.toc.label">On this Page</i18n-message>
+			</h2>
+			<theme-toc for="content"></theme-toc>
+		</nav>
+			<article id="content" tabindex="-1" class="fb-layout-container">
+				<header>
+					<h1>How to calculate the price for app on your monday account?</h1>
+				</header>
+				<section class="article-body fb-layout-body" data-searchable-content>
+			
+
+	
+	
+
+	
+
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+		
+		
+	
+	
+	
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+						
+		
+
+
+				
+
+
+						
+		
+
+
+				
+
+
+						
+		
+
+
+				
+
+
+						
+		
+
+
+				
+
+
+						
+		
+
+
+				
+
+
+						
+		
+
+
+				
+
+
+						
+		
+
+
+				
+
+
+						
+		
+
+
+				
+
+
+						
+		
+
+
+				
+
+
+	
+	
+	
+	
+	
+	<p>Pricing for our monday.com apps is based on two things:</p>
+<ol>
+ <li>
+  <p><strong>Your monday seat tier</strong></p>
+ </li>
+ <li>
+  <p><strong>The billing cycle you choose</strong> - Monthly or Annual</p>
+ </li>
+</ol>
+<p>Even if only a few people actively use the app, monday.com charges according to your <strong>total number of seats</strong>, since the app integrates across the entire workspace.</p>
+<hr>
+<h2 id="✔-Important:-Annual-plans-are-charged-monthly" style=""><span id="Howtocalculatethepriceforapponyourmondayaccount?-✔Important:Annualplansarechargedmonthly"></span>✔ Important: Annual plans are <em>charged monthly</em>
+ <i18n-message i18nkey="clipboard.copyLink.label" attribute="description">
+  <copy-clipboard class="anchor-copy-button" value="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account#✔-Important:-Annual-plans-are-charged-monthly">
+   <svg role="img" aria-hidden="true" data-component="icon" class="icon icon-link copy-headline-link-icon">
+    <use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#link"></use>
+   </svg>
+  </copy-clipboard>
+ </i18n-message></h2>
+<p>If you choose an annual plan, you <strong>do not pay the full year upfront</strong>.
+ <br>
+ Instead, monday.com <strong>charges you once per month at the discounted annual rate</strong>.</p>
+<p>Example:
+ <br>
+ If your annual plan is <strong>$31/month</strong>, you pay <strong>$31 each month</strong>, not $372 at once.</p>
+<hr>
+<h2 id="🕒-Time-in-Status---Pricing" style=""><span id="Howtocalculatethepriceforapponyourmondayaccount?-🕒TimeinStatus-Pricing"></span>🕒 <strong>Time in Status - Pricing</strong>
+ <i18n-message i18nkey="clipboard.copyLink.label" attribute="description">
+  <copy-clipboard class="anchor-copy-button" value="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account#🕒-Time-in-Status---Pricing">
+   <svg role="img" aria-hidden="true" data-component="icon" class="icon icon-link copy-headline-link-icon">
+    <use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#link"></use>
+   </svg>
+  </copy-clipboard>
+ </i18n-message></h2>
+<h3 id="Time-in-Status-Pricing-Table" style=""><span id="Howtocalculatethepriceforapponyourmondayaccount?-TimeinStatusPricingTable"></span><strong>Time in Status Pricing Table</strong>
+ <i18n-message i18nkey="clipboard.copyLink.label" attribute="description">
+  <copy-clipboard class="anchor-copy-button" value="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account#Time-in-Status-Pricing-Table">
+   <svg role="img" aria-hidden="true" data-component="icon" class="icon icon-link copy-headline-link-icon">
+    <use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#link"></use>
+   </svg>
+  </copy-clipboard>
+ </i18n-message></h3> 
+<div class="theme-table">
+ <table-expand>
+  <scroll-shadow>
+   <table-sort>
+    <div data-component="table" data-align="unset" data-number-column="false">
+     <table>
+      <tbody>
+       <tr>
+        <th>
+         <p><strong>Seat Tier</strong></p>
+        </th>
+        <th>
+         <p><strong>Annual Plan (charged monthly)</strong></p>
+        </th>
+        <th>
+         <p><strong>Monthly Plan</strong></p>
+        </th>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>Up to 2 seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$1/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$2/month</strong></p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>20 seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$11/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$12/month</strong></p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>50 seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$22/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$24/month</strong></p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>100 seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$31/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$34/month</strong></p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>200 seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$58/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$62/month</strong></p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>Unlimited seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$79/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$84/month</strong></p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </table-sort>
+  </scroll-shadow>
+ </table-expand>
+</div>
+<hr>
+<h2 id="📧📸-Email-to-Tasks-&amp;-Capture---Pricing" style=""><span id="Howtocalculatethepriceforapponyourmondayaccount?-📧📸EmailtoTasks&amp;amp;Capture-Pricing"></span>📧📸 <strong>Email to Tasks &amp; Capture - Pricing</strong>
+ <i18n-message i18nkey="clipboard.copyLink.label" attribute="description">
+  <copy-clipboard class="anchor-copy-button" value="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account#📧📸-Email-to-Tasks-&amp;amp;-Capture---Pricing">
+   <svg role="img" aria-hidden="true" data-component="icon" class="icon icon-link copy-headline-link-icon">
+    <use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#link"></use>
+   </svg>
+  </copy-clipboard>
+ </i18n-message></h2>
+<blockquote>
+ <p>Both apps share the same pricing model.</p>
+</blockquote>
+<h3 id="Email-to-Tasks-+-Capture-Pricing-Table" style=""><span id="Howtocalculatethepriceforapponyourmondayaccount?-EmailtoTasks+CapturePricingTable"></span><strong>Email to Tasks + Capture Pricing Table</strong>
+ <i18n-message i18nkey="clipboard.copyLink.label" attribute="description">
+  <copy-clipboard class="anchor-copy-button" value="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account#Email-to-Tasks-+-Capture-Pricing-Table">
+   <svg role="img" aria-hidden="true" data-component="icon" class="icon icon-link copy-headline-link-icon">
+    <use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#link"></use>
+   </svg>
+  </copy-clipboard>
+ </i18n-message></h3> 
+<div class="theme-table">
+ <table-expand>
+  <scroll-shadow>
+   <table-sort>
+    <div data-component="table" data-align="unset" data-number-column="false">
+     <table>
+      <tbody>
+       <tr>
+        <th>
+         <p><strong>Seat Tier</strong></p>
+        </th>
+        <th>
+         <p><strong>Annual Plan (charged monthly)</strong></p>
+        </th>
+        <th>
+         <p><strong>Monthly Plan</strong></p>
+        </th>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>5 seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$8/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$10/month</strong></p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>25 seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$25/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$30/month</strong></p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>50 seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$40/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$50/month</strong></p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>100 seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$75/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$90/month</strong></p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>200 seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$125/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$150/month</strong></p>
+        </td>
+       </tr>
+       <tr>
+        <td>
+         <p><strong>Unlimited seats</strong></p>
+        </td>
+        <td>
+         <p><strong>$250/month</strong></p>
+        </td>
+        <td>
+         <p><strong>$300/month</strong></p>
+        </td>
+       </tr>
+      </tbody>
+     </table>
+    </div>
+   </table-sort>
+  </scroll-shadow>
+ </table-expand>
+</div>
+<hr>
+<h2 id="How-billing-works" style=""><span id="Howtocalculatethepriceforapponyourmondayaccount?-Howbillingworks"></span><strong>How billing works</strong>
+ <i18n-message i18nkey="clipboard.copyLink.label" attribute="description">
+  <copy-clipboard class="anchor-copy-button" value="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account#How-billing-works">
+   <svg role="img" aria-hidden="true" data-component="icon" class="icon icon-link copy-headline-link-icon">
+    <use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#link"></use>
+   </svg>
+  </copy-clipboard>
+ </i18n-message></h2>
+<h4 id="Annual-Plan" style=""><span id="Howtocalculatethepriceforapponyourmondayaccount?-AnnualPlan"></span><strong>Annual Plan</strong>
+ <i18n-message i18nkey="clipboard.copyLink.label" attribute="description">
+  <copy-clipboard class="anchor-copy-button" value="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account#Annual-Plan">
+   <svg role="img" aria-hidden="true" data-component="icon" class="icon icon-link copy-headline-link-icon">
+    <use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#link"></use>
+   </svg>
+  </copy-clipboard>
+ </i18n-message></h4>
+<ul>
+ <li>
+  <p>Billed <strong>monthly</strong>, not upfront</p>
+ </li>
+ <li>
+  <p>Lower price per month</p>
+ </li>
+ <li>
+  <p>Ideal for teams planning to use the app long-term</p>
+ </li>
+</ul>
+<h4 id="Monthly-Plan" style=""><span id="Howtocalculatethepriceforapponyourmondayaccount?-MonthlyPlan"></span><strong>Monthly Plan</strong>
+ <i18n-message i18nkey="clipboard.copyLink.label" attribute="description">
+  <copy-clipboard class="anchor-copy-button" value="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account#Monthly-Plan">
+   <svg role="img" aria-hidden="true" data-component="icon" class="icon icon-link copy-headline-link-icon">
+    <use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#link"></use>
+   </svg>
+  </copy-clipboard>
+ </i18n-message></h4>
+<ul>
+ <li>
+  <p>Pay month-to-month</p>
+ </li>
+ <li>
+  <p>No discount</p>
+ </li>
+ <li>
+  <p>Can cancel anytime</p>
+ </li>
+</ul>
+<hr>
+<h2 id="This-model-ensures-accurate,-reliable-performance-for-all-your-reports." style=""><span id="Howtocalculatethepriceforapponyourmondayaccount?-Thismodelensuresaccurate,reliableperformanceforallyourreports."></span>This model ensures accurate, reliable performance for all your reports.
+ <i18n-message i18nkey="clipboard.copyLink.label" attribute="description">
+  <copy-clipboard class="anchor-copy-button" value="https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account#This-model-ensures-accurate,-reliable-performance-for-all-your-reports.">
+   <svg role="img" aria-hidden="true" data-component="icon" class="icon icon-link copy-headline-link-icon">
+    <use href="/__theme/b_8ca5a7d7-80f3-41c8-bea7-75cce14ad14f/scroll-sites-help-center-theme/55/icons.svg#link"></use>
+   </svg>
+  </copy-clipboard>
+ </i18n-message></h2>
+<div data-component="panel" role="note" data-appearance="info">
+ <div class="panel-content">
+  <p>If you need any help or have questions, please contact us via <a href="https://saasjet.atlassian.net/servicedesk/customer/portal/1" data-scope="external" rel="external noreferrer"><u>SaaSJet Support</u></a>&nbsp;or email&nbsp;<a href="mailto:support@saasjet.atlassian.net" data-scope="external" rel="external noreferrer"><u>support@saasjet.atlassian.net</u></a></p>
+ </div>
+</div>
+<div data-component="panel" role="note" data-appearance="success">
+ <div class="panel-content">
+  <p>Haven't used our apps yet? <a href="https://saasjet-force.monday.com/marketplace/v2/app/partner/10000054/SaaSJet" data-scope="external" rel="external noreferrer"><u>Try it now! &gt;&gt;&gt;</u></a></p>
+ </div>
+</div>
+
+
+																				<script>
+						// Mark block images on the first level as breakout so they can grow wider than the article content.
+						document.querySelectorAll('.article-body > .theme-block-image [data-component="image"]').forEach((element) => {
+							const propertyValue = element.style.getPropertyValue('--width');
+							if (!propertyValue) {
+								return;
+							}
+							if (parseInt(propertyValue) >= 760) {
+								element.closest('.theme-block-image').classList.add('theme-block-image--breakout');
+							}
+						});
+
+						// Remove the inline size on page layouts as this would lead to layouts breaking out of the article content.
+						document.querySelectorAll('.article-body [data-component="layout-section"]').forEach((element) => {
+							const propertyValue = element.style.getPropertyValue('--inline-size');
+							if (!propertyValue) {
+								return;
+							}
+							// ONLY for this very specific width (Confluence default)
+							if (parseInt(propertyValue) === 760) {
+								element.style.removeProperty('--inline-size');
+							}
+						})
+
+						// Set the initial state of the navigation toggle to prevent shifting in the UI
+						try {
+							const navigationToggle = document.querySelector('#navigator-toggle');
+							const navigationState = localStorage.getItem('theme-navigation-state');
+
+							if (navigationState === 'collapsed' && navigationToggle) {
+								navigationToggle.setAttribute('aria-expanded', 'false');
+							}
+						} catch (error) {
+							console.error(error);
+						}
+					</script>
+																			</section>
+				<footer>
+
+				</footer>
+			</article>
+		</main>
+	</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer data-component="footer" class="footer">
+
+
+
+
+
+		<img class="footer-logo footer-logo--dark" src="/__site/aaf32c35-622b-454c-bc6b-91ad4eecf422/saasjet%20logo.png" alt="">
+
+		<img class="footer-logo footer-logo--light" src="/__site/aaf32c35-622b-454c-bc6b-91ad4eecf422/saasjet%20logo.png" alt="">
+	<ul class="footer-content">
+		<li><i18n-message i18nkey="footer.copyright.label">Copyright</i18n-message> <current-year></current-year></li>		<li><i18n-message i18nkey="footer.poweredBy.label">Powered by</i18n-message> <a href="https://www.k15t.com/products/scroll-sites-for-confluence?utm_campaign=k15t-sts-attribution-line&utm_source=k15t-apps" rel="external nofollow">Scroll&nbsp;Sites</a> & <a href="https://www.atlassian.com/software/confluence" rel="external nofollow">Atlassian&nbsp;Confluence</a></li>
+	</ul>
+
+</footer>
+
+
+	</body>
+</html>
