@@ -1,7 +1,7 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": true,
+  "needs_research": false,
   "updated": "2026-10-24",
   "researched": "2026-10-24",
   "weight": 2,
@@ -278,6 +278,16 @@
       "doing_since": "2026-10-24",
       "done_at": "2026-10-24",
       "doing_by": "burn-down"
+    },
+    {
+      "id": "spike-appsource-excel-add-in-shelf",
+      "title": "Research spike: Microsoft AppSource as a shelf for a paid Excel add-in from a UK sole trader — through the relay (learn.microsoft.com, appsource.microsoft.com; add any further host it needs) read the Partner Center account rules for Office add-ins (individual vs company account, what the company verification asks a sole trader for, the registration fee as it stands today, countries and payout — or no payout at all because the store does not bill add-ins), the AppSource / Office Store validation policies for add-ins that sell their own licences or API keys (trial, pricing disclosure, in-add-in purchase rules), and ≥ 10 small-vendor paid Excel add-in listings (price, licensing model, rating count, last update); write docs/exchange/spikes/appsource-excel-add-in-shelf.md with a promote / park call (promote shape: a free gankdat custom-functions add-in — =UKCOMPANY, =CQC, =TENDERS … — built on Office.js and the existing API, the paid part being the API key and credit packs already sold; owner minutes: the Partner Center company account)",
+      "why": "Exchange pre-research 2026-10-24 (burn-down; WebSearch only — learn.microsoft.com and creativemarket.com do not resolve from the sandbox). Why it is on the list: Excel's in-app store reaches every Microsoft 365 desk, and the index shows the exact shape gankdat would take — OilPriceAPI lists an Excel add-in on AppSource with a 7-day trial and an API key sold on its own site; Pine BI sells per-seat yearly licences from US$57.34; Analytics Edge activates paid keys in-app — while the store itself does not bill add-ins, so the licence Worker and gankdat's API keys do the paid part with no new processor. Rules read so far: a person 'acting in relation to their trade or profession' needs a Partner Center company account (verification under the owner's name; cannot be changed later); the current Learn page says no registration fee for either account type (an older page says US$19). Open — the spike's job: what the company verification asks a UK sole trader for, the AppSource validation policies for own-commerce add-ins, and whether small-vendor paid Excel add-ins carry ratings and installs. Score: evidence 1 (three paid or keyed rivals and the account rule read in the index, none from the policy pages) × reach 2 (Excel's own add-in store, no marketing) ÷ 0.5 days = 4. Exchange idea appsource-office-add-ins (parked, trigger = this spike); the sibling Creative Market candidate read in the same pass was parked without a spike (design-portfolio gate, ≈ 50 % split, no spreadsheet listings in the index).",
+      "effort_days": 0.5,
+      "proof": "docs/exchange/spikes/appsource-excel-add-in-shelf.md states the account route and fee for a UK sole trader and the own-commerce validation rules as Microsoft publishes them, lists ≥ 10 small-vendor paid Excel add-ins with price, licensing model and rating count, and makes a promote / park call",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-24"
     }
   ]
 }

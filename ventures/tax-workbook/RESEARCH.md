@@ -64,6 +64,8 @@ for the funnel. No counts are visible and payhip.com blocks automated reads (Clo
 unmeasurable: the twin lists the same file at the same price (`payhip-twin-listing`, action 029 step 4) and is the fallback
 shelf if the owner declines Etsy's set-up fee.
 
+**Not a twin — Creative Market (pre-research 2026-10-24, exchange `creative-market-templates-shelf`).** Shops open by application against a design portfolio of 10–20 works, the split is ≈ 50 % (official: 'varies per shop/per product'), and five search-index passes found no spreadsheet or Google Sheets listing on the shelf at all; parked, no relay read.
+
 ## 4. Validation gate (ARCHITECTURE)
 
 | Gate | Reading |

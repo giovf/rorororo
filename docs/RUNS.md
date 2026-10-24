@@ -1730,3 +1730,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 20:16 | burn-down | Built foundry ci-minutes-line-fits-cap: scripts/actions-minutes-line.ts builds the watchdog line to fit 120
 - 2026-10-24 20:16 | burn-down | Line: 'ci-minutes: N billed min/7d (~N/mo; cap 2000) top: a N, b N, c N'; whole entries only, names cut last
 - 2026-10-24 20:16 | burn-down | Wall figure and warn threshold moved to the job log; 6 tests incl. the repo's longest workflow names
+- 2026-10-24 20:24 | burn-down | Exchange pre-research: AppSource paid Excel add-ins — spike seeded in new-ventures (4); 0 spikes were open
+- 2026-10-24 20:24 | burn-down | Read: a sole trader needs a Partner Center company account; store does not bill add-ins; 3 keyed/paid rivals
+- 2026-10-24 20:24 | burn-down | Creative Market read too and parked without a spike: portfolio-review gate, ~50 % split, no spreadsheet listings
+- 2026-10-24 20:24 | burn-down | Relay hosts added for the spike: learn.microsoft.com, appsource.microsoft.com (neither resolves from the sandbox)
