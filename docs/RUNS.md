@@ -1710,3 +1710,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 19:29 | burn-down | Discover lists only after US$100 of genuine direct sales + ~3-week risk review; 4 rivals: 0 new ratings in 5 d
 - 2026-10-24 19:29 | burn-down | Call: park (re-scored 2.7-5.3, under baseline); kit idea trigger updated; Gumroad is not the £6.99 workbook's twin
 - 2026-10-24 19:29 | burn-down | Relay lesson: help.gumroad.com redirects to the index; gumroad.com/help/article pages carry HTML in data-page
+- 2026-10-24 19:35 | burn-down | Spike framer-styles-category-read done: category RENDER + 18 listing GETs; free/paid from Product JSON-LD
+- 2026-10-24 19:35 | burn-down | Styles category: 18 plugins, 8 paid, 10 free, 7 touched in 6 months; StylePassport US$24 one-off via Stripe + key
+- 2026-10-24 19:35 | burn-down | Token import partly taken (Color Import paid HSL-only, Tokens Studio, 3 Figma syncs); no DTCG/Tailwind-config import
+- 2026-10-24 19:35 | burn-down | Export covered free (Styles IO); call: port stays parked at 0.7 reshaped; §7 appended, idea trigger updated
+- 2026-10-24 19:35 | burn-down | new-ventures queue emptied (23 spikes done this week): needs_research set for the next slot

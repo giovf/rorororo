@@ -1,7 +1,7 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": false,
+  "needs_research": true,
   "updated": "2026-10-24",
   "researched": "2026-10-24",
   "weight": 2,
@@ -269,13 +269,15 @@
     {
       "id": "spike-framer-styles-category-read",
       "title": "Research spike: the Framer Marketplace Styles-category read the parked idea waits on — RENDER https://www.framer.com/marketplace/plugins/categories/styles/ and GET the style / token plugin pages it names through the relay; record whether a paid or free token-import plugin exists (W3C DTCG, CSS variables, Tailwind tokens → Framer colour and text styles), append §7 to spike framer-marketplace-paid-plugins and update the exchange idea's trigger",
-      "why": "Exchange 2026-W43: the idea is parked at 0.7 pending this one read (the spike's own trigger); a free plugin already covering import and export parks it for good, no such plugin keeps the port of Variables Toolkit's styles half as the first item of a future framer-plugins queue. Score: 1.25 × 2 ÷ 0.5 (0.15 d + relay) = 5. Host .framer.com already allow-listed; one relay round only (AUP §2 forbids scanners).",
+      "why": "Exchange 2026-W43: the idea is parked at 0.7 pending this one read (the spike's own trigger); a free plugin already covering import and export parks it for good, no such plugin keeps the port of Variables Toolkit's styles half as the first item of a future framer-plugins queue. Score: 1.25 × 2 ÷ 0.5 (0.15 d + relay) = 5. Host .framer.com already allow-listed; one relay round only (AUP §2 forbids scanners). Done 2026-10-24: 2 relay rounds (category RENDER + 18 listing GETs; free/paid from each page's Product JSON-LD); 8 paid / 10 free; CSS-variable import exists paid (HSL only), no DTCG / Tailwind-config import at any price, export free (Styles IO) → parked at 0.7 reshaped, §7 appended, trigger updated.",
       "effort_days": 0.15,
       "proof": "The spike file §7 names every style / token plugin on the category page with its price, and the exchange idea's trigger says promote or park with that reading",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-24",
-      "doing_since": "2026-10-24"
+      "doing_since": "2026-10-24",
+      "done_at": "2026-10-24",
+      "doing_by": "burn-down"
     }
   ]
 }

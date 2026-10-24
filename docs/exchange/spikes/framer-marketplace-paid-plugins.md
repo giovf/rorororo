@@ -173,3 +173,59 @@ name **150 distinct plugins: 74 Paid, 76 Free**.
 - Any sales figure for any plugin: none is published anywhere reached tonight.
 - The CMS and Localization category listings as rendered pages: the two `RENDER` lines were dropped when relay run 153
   timed out installing Chromium (fixed in `docs/ci/fetch-relay.yml` tonight); the category plugin pages read cover them.
+
+## 7. The Styles category, read 2026-10-24 (queue item `new-ventures/spike-framer-styles-category-read`, burn-down)
+
+Two relay rounds (`docs/relay/responses/framer-styles{,-b}-2026-10-24`, pruned after 7 days): one `RENDER` of
+`/marketplace/plugins/categories/styles/` (18 cards, all in the page's `ItemList` JSON-LD) and a plain `GET` of each of
+the 18 listing pages. Free or paid comes from each page's `Product` JSON-LD — a free plugin carries an `Offer` at price 0,
+a paid one carries no offer (the category cards and the listing header show no label; the `?price=` filter is client-side
+state, as §2 found). Prices are what the description states; Framer never shows one.
+
+| Plugin (creator) | Free / paid | What it does with styles or tokens | Published / updated |
+| --- | --- | --- | --- |
+| Styles IO (Giles Perry) | **free** | **export** colour + text styles to JSON and **import** them into another Framer project (Framer's own JSON, match by name or ID) | Nov 2024 |
+| Style Transfer (Floyka Design Studio) | paid | project-to-project style package, JSON export, package library | Mar 2026 |
+| StylePassport (Luke Sn) | paid, **US$24 one-off** (Stripe checkout, licence key by email — stated on the page) | **export only**: saved styles → HTML brand guide + CSS variables + JSON + README in a ZIP | Oct 2026 (new) |
+| Color Import (Igor Mosijchuk) | paid | **import CSS custom properties → grouped colour styles with light/dark**; HSL/HSLA only, `.light`/`.dark` naming convention | 5 Oct 2026 (new) |
+| Tokens Studio for Framer (Hyma) | paid (needs the Tokens Studio "Studio" platform) | design tokens → Framer styles from the Tokens Studio platform (Figma's token tool, now with Framer as second target) | Apr 2025 |
+| FrameKit (Kanishak Mahendiratta) | paid | type scale + colour scale generator; import Figma local colour styles via JSON; share a style system by URL | Dec 2024 |
+| Figma Sync (Benjamin Barak) | paid | Figma colour + text styles, light/dark pairs and assets → Framer, via Figma account | May 2026 / Sep 2026 |
+| Design Sync (Pixels) | paid (Polar.sh licence key) | Figma file URL → Framer colour + text styles, light/dark by name prefix | Jul 2026 |
+| Framer/Figma Sync (Yann-Edern Gillet) | paid ("Plus" and "Plus Unlimited" tiers) | Figma colour styles → Framer; text styles and modes in Plus | Oct 2024 |
+| Color Palettes (Julien Vier) | free | Tailwind's preset palettes → colour styles, dark-mode inversion | Nov 2024 |
+| Color Gen (Aframe Studio) | free | tone scales from a base colour; Tailwind / Spectrum / Material / HIG presets; WCAG check | Mar 2025 |
+| Fluidity (Parth Gupta) | free | fluid `clamp()` type scales → text styles, CSS published via custom code | Jun 2026 |
+| TypeSystem (Cédric) | free | type-scale → 6 heading + 2 body text styles | Oct 2024 |
+| Fontwise (Saeef) | paid | bulk font replacer; text-style manager flags unstyled text ("Missing" badge); 350 pairings | Dec 2025 / Jun 2026 |
+| Style Manager (Anoop) | free | search/filter every colour and text style, see connected layers, edit with undo | Oct 2025 |
+| Google Font Checker (Robbi Firmansah) | free | audit: text layers still loading Google Fonts (GDPR), CSV export | Mar 2026 |
+| ThemeShift — Dark Mode Toggle (Proofly.ae) | free (paid tier in the text) | site-side theme toggle on Framer colour styles | Mar 2026 |
+| Shadow Supply (Gabe Amaya) | free | 20 shadow presets with copyable values | Apr 2026 |
+
+**18 plugins, 8 paid, 10 free; 7 of the 18 published or updated in the last six months** — a live, crowded category.
+Against the three jobs the port in §4 would do:
+
+- **Import a token file as Framer styles** — *partly taken*: CSS custom properties import exists as a **paid** plugin
+  three weeks old, HSL-only, with a naming convention of its own (Color Import); Tokens Studio sells the design-system
+  crowd its own platform-to-Framer path; three paid plugins import from **Figma** via the API; a free one imports
+  **Tailwind's preset palettes**, not a project's `tailwind.config`. **No plugin at any price imports W3C DTCG JSON, a
+  hex/rgb/oklch CSS variable file or a Tailwind config.** That is the open gap, narrower than it was on 2026-10-22.
+- **Export styles back out** — *covered free*: Styles IO exports and re-imports Framer's own JSON for nothing;
+  StylePassport sells CSS variables + JSON + a brand guide for US$24 one-off — export is not a paid feature we can own.
+- **Audit hard-coded colours and fonts** — *partly covered free*: Style Manager (free) shows connected layers, Fontwise
+  (paid) flags unstyled text, Google Font Checker (free) audits fonts; nothing lists colour values used off-style.
+
+**Price points the category confirms**: US$24 one-off (StylePassport, with the exact Stripe-plus-licence-key shape §4
+proposes) — the §4 US$19 per-project unlock sits at the category's price, and the shelf's two newest paid entries (Color
+Import, StylePassport) are both one-person plugins published this month, so the entry bar is where §5 said.
+
+**Reading for the exchange's trigger**: neither branch is clean. A token-import plugin *does* exist (paid: Color Import,
+Tokens Studio; free only for Tailwind presets), so the "no paid or free token-import plugin" branch does not fire; and the
+free plugin that covers import and export (Styles IO) moves **Framer's own** JSON between Framer projects, not external
+tokens, so "parked for good" does not fire either. The port shrinks to the standards gap — **DTCG JSON / any CSS variable
+file / Tailwind config → colour and text styles, with the off-style audit as the paid feature and export left to the free
+tools** — at the same 0.7 × 2 the W43 exchange gave it, with the demand factor still unreadable by the shelf's design and
+now with eight paid neighbours. Call: **stays parked at 0.7, reshaped**; it opens a `framer-plugins` queue only on the
+starvation condition already in the trigger (two Monday reports with Built % under 50 %), and a re-read is owed before
+building: Color Import's next release (if it adds hex/rgb or DTCG, the gap closes for free or for a few dollars).
