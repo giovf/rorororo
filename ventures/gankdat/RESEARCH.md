@@ -793,3 +793,20 @@ do not argue; a reviewer's silence is not a question). **Sandbox note:** `npm ci
 `@cloudflare/workerd-linux-64` package, so the gankdat tests could not start until it was installed `--no-save`;
 CI (`check` run 361, `gankdat` run 148) was green on the same head. `researched: 2026-10-23`; `research_after`
 cleared — the first item is buildable now.
+
+## Build 2026-10-24 — x402 Bazaar week-1 proof closed (burn-down)
+
+Read: the 10-24 Daily numbers row (07:10, run 263) and its job log's `bazaar resource:` lines. **The row reads
+`bazaar: 16 listed, 22 calls/30d, 19 payers, last 2026-10-23`** — up from `2 listed` at 09:45 the day before —
+and the log lists all 16 resources the catalogue holds: uk-tenders (6 calls, 4 payers), eu-ted (2, 1) and the
+other fourteen list routes plus the Companies House lookup (`uk-company-profiles`) at 1 call / 1 payer each,
+every one `last 2026-10-23` (the 09:44 forced round). The one route missing is uk-planning, paused since its
+origin emptied (503, not 402), so the catalogue indexed every resource that settled, within a day of the
+settlement and in line with CDP's documented pace. **Verdict:** the week-1 proof set on 10-16 (`≥ 17 resources
+within a week of the settled call`, reshaped on 10-23 to "every route that can settle") is met at 16 of 17;
+the day-30 read (11-14) is the next dated signal. The "fewer than 16" branch of the item — relay the
+catalogue, re-screen with the dispatch input, forward `EXTENSION-RESPONSES` to the client — is not needed;
+the header forward stays a known gap (ARCHITECTURE.md) to build if a resource is ever rejected, not before.
+Also in the row: `x402 30d: 4 paid, 4 clients — uk-tenders 4; LumiTrustBuyer 1` — a fourth external payer on
+uk-tenders on 10-23, the first since 10-18; still one dataset, the queue's conversion items stand. Cost: £0
+(no probe payment; the 7-day spacing skipped it).
