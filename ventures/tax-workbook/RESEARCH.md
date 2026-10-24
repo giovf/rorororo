@@ -69,6 +69,13 @@ combines SA103 mapping, MTD quarterly totals and a Trading Allowance check with 
 
 ## 5. Product
 
+**Built 2026-10-24 (v1.0)** by `ventures/tax-workbook/src` — `npm run build` writes `release/UK-Sole-Trader-Tax-Workbook-2026-27.xlsx`,
+`npm run recalc` proves it in LibreOffice (0 formula errors, the Example tab equal to `src/tax.ts`), `npm run images` renders the
+five listing PNGs from SVG. Rates: gov.uk 2026/27 (Class 4 LPL £12,570 / UPL £50,270 at 6 % / 2 %; Class 2 SPT £7,105,
+voluntary £3.65 a week; personal allowance £12,570, basic band £37,700, additional rate from £125,140; mileage 45p/25p/24p/20p;
+Trading Allowance £1,000; MTD £50,000 from April 2026). SA103S box numbers follow the 2025 form (9, 10, 10.1, 11–19, 20–23, 31).
+Listing copy in `LISTING.md`; the owner's steps in `docs/for-owner/actions/029-etsy-shop-and-zoho.md`.
+
 `UK Sole Trader Tax Workbook 2026/27` — one `.xlsx` (Google Sheets-compatible formulas; the owner uploads a copy to
 Drive for the Sheets link): Setup (tax year, bands, NI thresholds, mileage rates as named cells) · Income log · Expense
 log with SA103S category drop-downs · Mileage log · Quarterly (MTD) totals · SA103 year-end pack · Tax and Class 4 NI
@@ -91,6 +98,7 @@ the DMCC fake-urgency rule), then £8.99. No invented scarcity.
 | Date | Event | Users | Rating | Sales | Notes |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-24 | Opened | — | — | 0 | venture opened by exchange 2026-W43; workbook queued; shop opening waits on the owner's one batched request |
+| 2026-10-24 | Built | — | — | 0 | workbook v1.0 built and recalculated (2,122 formulas, 0 errors, Example = hand-worked £5,025.80); LISTING.md + 5 images; action 029 raised; status `validated` |
 
 ## 8. Owner steps (batched, raised by the build that finishes the workbook, never before)
 

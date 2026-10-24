@@ -1681,3 +1681,15 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 17:38 | burn-down | Dry run: registry 0.25.5 = server.json, up to date; sandbox proxy 403 on the releases call now named, not silent
 - 2026-10-24 17:33 | watchdog | ci-failed: gankdat-publish.yml run 54 17:34 — step MCP registry — publish if server.json i…; later run 55 ok
 - 2026-10-24 17:36 | burn-down | Stopping for time: 4 items built (pace gate, failed-runs watchdog, Bazaar read, registry script); tax-workbook next
+- 2026-10-24 18:12 | burn-down | notify-owner.yml first run: success (schedule run 408 at 17:32; after the 17:29 installer)
+- 2026-10-24 18:12 | burn-down | gankdat-publish.yml first run: success (push run 57 at 17:35, 30 s; after the 17:35 installer)
+- 2026-10-24 18:30 | burn-down | Built tax-workbook workbook-2026-27-build: ventures/tax-workbook/src (ExcelJS), 10 tabs, 2,122 formulas
+- 2026-10-24 18:30 | burn-down | Setup tab holds every 2026/27 rate as a named cell with its gov.uk source; drop-downs from Setup lists
+- 2026-10-24 18:30 | burn-down | Logs: Income, Expenses (SA103S boxes 11-19 + AIA), Mileage (10,000-mile step-down); MTD Quarterly tab
+- 2026-10-24 18:30 | burn-down | SA103 pack (boxes 9-31), Tax tab (bands, taper, Class 4, Class 2, POA), Allowance check, Example tab
+- 2026-10-24 18:30 | burn-down | src/recalc.ts: LibreOffice macro recalc, 0 formula errors, Example £5,025.80 = hand-worked case, 13 checks
+- 2026-10-24 18:30 | burn-down | 15 tests (tax.ts vs hand-worked figures; workbook names, lists, no Sheets-unsafe functions; recalc)
+- 2026-10-24 18:30 | burn-down | Release file ventures/tax-workbook/release/…2026-27.xlsx committed; 5 listing PNGs rendered from SVG
+- 2026-10-24 18:30 | burn-down | LISTING.md: title, 13 tags, description (gains, not-for list), £6.99 to 30 Nov then £8.99, refund policy
+- 2026-10-24 18:30 | burn-down | Action 029 raised (Etsy shop ≤ £25 fee + free Zoho sign-in); ledger contingent £25; venture validated
+- 2026-10-24 18:30 | notify | Your tax spreadsheet is ready: open an Etsy shop to sell it, about 30 minutes and a fee up to £25
