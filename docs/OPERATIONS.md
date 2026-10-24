@@ -116,6 +116,13 @@ Mail that our own automation triggers (Apify pricing/publish confirmations, DMAR
 failures on our pushes, the retired SAM key reminder) is listed in `docs/ops/SELF-CAUSED.md`; triage
 logs a match and never escalates it, and the weekly report never makes one a next step.
 
+**Owner asks versus handoffs (2026-10-24, foundry `owner-only-handoffs-as-owner-lines`).** A step that edits an
+account, a token scope, a dashboard setting or a path CLAUDE.md lists under *Things to ask before doing* is an
+`owner:` line batched into the next `docs/for-owner/actions/` file, never a `handoff:`; a `handoff:` is only work the
+repo and a Claude session can finish. The W43 retro found two owner-only steps (a Cloudflare token's read scopes, the
+devcontainer's Node line) filed as handoffs and waiting a week for an attended session that never ran, while the phone
+digest counts only `owner:` lines; they were re-filed as action 030 the same day.
+
 **Handoff ledger (2026-10-01, foundry `handoff-ledger`).** `npm run handoffs` prints every open
 `handoff:` / `owner:` entry of `docs/ALERTS.md` oldest first with its age (`--stale N` sets the
 threshold, `--all` adds the closed ones, `--json` for scripts); the weekly report's "Waiting on the

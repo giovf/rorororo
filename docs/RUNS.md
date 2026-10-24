@@ -1721,3 +1721,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 19:46 | burn-down | Rule: burn-down prompt DEPENDABOT MAJORS paragraph, dependabot.yml comment, VERSIONS.md row + log
 - 2026-10-24 19:46 | burn-down | dependabot.yml workflow with the new comment dropped in docs/ci/ (PR-only trigger: next slot reads, never dispatches)
 - 2026-10-24 19:46 | burn-down | Stopping for time: 4 items (JetBrains prices, Gumroad shelf, Framer Styles, Dependabot majors); 35 min
+- 2026-10-24 20:13 | burn-down | dependabot.yml first run: success (pull_request run 9 at 19:49, PR #9; after the 19:47 installer)
+- 2026-10-24 20:13 | burn-down | Built foundry owner-only-handoffs-as-owner-lines: owner-ask-vs-handoff rule in OPERATIONS + triage prompt
+- 2026-10-24 20:13 | burn-down | Rule: account, token-scope, dashboard or ask-first-path steps are owner: lines, never handoff:
+- 2026-10-24 20:13 | burn-down | Handoffs 10-17 (Cloudflare token scopes) and 10-20 (devcontainer Node 24) superseded, re-filed as action 030
+- 2026-10-24 20:13 | burn-down | Action 030: token edit keeps its value (no new secret); devcontainer change waits for a yes/no note
+- 2026-10-24 20:13 | notify | Two quick clicks for you, about 6 minutes: a Cloudflare permission and a yes or no on an upgrade
