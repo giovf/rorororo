@@ -286,8 +286,9 @@
       "effort_days": 0.5,
       "proof": "docs/exchange/spikes/appsource-excel-add-in-shelf.md states the account route and fee for a UK sole trader and the own-commerce validation rules as Microsoft publishes them, lists ≥ 10 small-vendor paid Excel add-ins with price, licensing model and rating count, and makes a promote / park call",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-24"
+      "status": "doing",
+      "added": "2026-10-24",
+      "doing_since": "2026-10-24"
     }
   ]
 }
