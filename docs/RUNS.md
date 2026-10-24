@@ -1636,3 +1636,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 01:33 | burn-down | Prices are per org not per user; 7 of 11 paid listings at 100-2,800 installs; verification rivals 34-53 reviews
 - 2026-10-24 01:33 | burn-down | Call: promote reshaped (US$9/org/month UK verification widget) for the 10-28 exchange; new-ventures queue emptied
 - 2026-10-24 01:33 | burn-down | Stopping for time: four shelf spikes closed tonight; foundry research (starved) left to the 02:00 slot
+- 2026-10-24 02:30 | burn-down | Foundry research (starved queue): 5 items filed from the week's traces, the Actions API and the open PR
+- 2026-10-24 02:30 | burn-down | Evidence: all four Fable slots of Wed 10-21 missed (allowance week ends Thu 03:00); no exchange re-run exists
+- 2026-10-24 02:30 | burn-down | Evidence: publish run 54 (v0.25.4) exited 1 silently in registry-publish.sh; run 55 repaired it 5 min later
+- 2026-10-24 02:30 | burn-down | Evidence: 3 'Run failed' mails in 36 h triaged 'step not named'; PR #7 (stripe 23, postal-mime 4) green 6 days
+- 2026-10-24 02:30 | burn-down | Items: exchange-missed-slot-fallback 6, watchdog-ci-failed-runs 5, registry silent exit 4, majors review 4, cap 3
+- 2026-10-24 02:30 | burn-down | CI first runs: none owed (the 10-22 21:32 and 10-23 09:24 installers both have first-run lines after them)
+- 2026-10-24 02:34 | burn-down | Stopping for time: foundry researched (5 items); exchange-missed-slot-fallback (0.3 d) is next for the 09:00 build

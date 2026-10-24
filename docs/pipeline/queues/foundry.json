@@ -2,8 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-23",
-  "researched": "2026-10-22",
+  "updated": "2026-10-24",
+  "researched": "2026-10-24",
   "items": [
     {
       "id": "fetch-relay",
@@ -1033,6 +1033,56 @@
       "status": "done",
       "added": "2026-10-23",
       "done_at": "2026-10-23"
+    },
+    {
+      "id": "exchange-missed-slot-fallback",
+      "title": "The Thursday 09:00 build slot runs the venture exchange when the Wednesday 08:00 exchange left no trace: `npm run pipeline cold -- --routine=build` prints `exchange missed: <Wednesday> — run docs/routines/exchange.md` when no `(venture exchange)` commit or `| exchange |` run-log line exists since that Wednesday 08:00 UTC and today is Thursday to Saturday; the build prompt takes that reason before research or build, and its run writes the exchange's own traces",
+      "why": "Wednesday 10-21: all four Fable slots of the day missed — exchange 08:00, build 09:00, build 17:00, burn-down 17:00 (watchdog 12:16 and 21:56) — and only the Opus fallback worked (17:24, variables-toolkit day-30). Wednesday is the last day of the allowance week (reset Thursday 03:00 UTC, BURN.json) and the burn runs Tuesday night to the limit, so the exchange, the pipeline's only producer of new lines, is the slot most likely to starve, and nothing re-runs it: the last exchange ran 10-14 (W42), the W43 one never happened, and the week's promote calls (Framer 10-22, Etsy 10-23, Zoho 10-24, WooCommerce 10-22) all wait for 10-28 — a second miss moves them to 11-04, a month after the spikes. The watchdog already detects the miss (ROUTINES has exchange Wed 08:00) but only writes a line. Build: a `missedExchange(now, log)` in scripts/pipeline-cold.ts reading `git log` subjects and docs/RUNS.md tags, the `cold` branch of scripts/pipeline.ts printing it first for `--routine=build`, tests, README and the build prompt sentence (docs/routines/build.md; the stored prompt reads the file); the Thursday run stamps its slot marker as a build and writes `| exchange |` lines so the watchdog and the next Thursday see the trace. Not for the burn-down: its Thursday 00:00–02:00 slots fall before the reset.",
+      "effort_days": 0.3,
+      "proof": "no missed Wednesday exchange goes a week without an exchange run: the first miss after this lands is run by Thursday 10:00 UTC, with the `(venture exchange)` commit and §8 line",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "watchdog-ci-failed-runs",
+      "title": "The watchdog (the 2-hourly notify-owner step) reads failed Actions runs of the last 26 h through the Actions API it already holds (`GITHUB_TOKEN`, actions:read since 10-18) and writes one `| watchdog | ci-failed: <workflow> run N HH:MM — step <name>; <later run M ok | no later run>` line per failed run (the line is the dedupe record); a workflow failing twice in 7 days gets an idempotent foundry `ci-<workflow>-failing` item (score 5), as refresh-errors-to-queue does for a source; the inbox triage's `Run failed:` row cites the watchdog line instead of \"failing step not named in the mail\"",
+      "why": "Three `Run failed` mails in 36 h — fetch relay 10-22 18:39 (006e4c6) and 21:25 (58cef16), gankdat publish 10-23 17:35 (89bb528) — were each triaged with \"failing step not named in the mail\" (INBOX), and the publish failure (run 54: registry-publish.sh exited 1 after `server.json 0.25.4 · registry 0.25.3`) was read by nobody until this research 8.5 h later: the routine prompts check only the first run of a new workflow (first-run-check-new-workflows, 10-17), triage reads mail, and the watchdog reads only `workflow_dispatch` runs for the slot trace. A failed run a later run already repaired (run 55 published 0.25.5 five minutes later) should cost one line; a repeating one a queue item nobody has to file by hand. Build: `failedRuns()` beside `dispatchRuns()` in scripts/run-watchdog.ts (`GET /actions/runs?status=failure&created=>=…`, then `/actions/runs/{id}/jobs` for the failing step name, and the workflow's later runs for the repair), the line and item writers with tests, the triage prompt sentence (docs/routines/inbox-triage.md). Never blocks: without a token or on an API error it writes nothing, like the dispatch read.",
+      "effort_days": 0.2,
+      "proof": "every failed Actions run over 7 days has a watchdog line naming its step within 2 h; triage rows for `Run failed` mail cite the line; a workflow failing twice in a week has a queue item the same day",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "registry-publish-silent-exit",
+      "title": "`ventures/gankdat/scripts/registry-publish.sh` names the step that fails and survives a rate-limited GitHub API: the releases call sends `Authorization: Bearer $GITHUB_TOKEN` (the workflow passes it to the step), each curl prints its HTTP status when it fails, the registry read tells \"unreachable\" from \"not published\" instead of falling back to an empty version, the publisher's login and publish output is shown, and a failed publish retries once after 30 s",
+      "why": "gankdat publish run 54 (10-23 17:34, the v0.25.4 push) failed with exit 1 and no message after the version line. Under `set -euo pipefail` the only silent exit-1 path in the script is `curl -sf api.github.com/repos/modelcontextprotocol/registry/releases/latest | grep | cut` — an unauthenticated call from a shared hosted-runner IP, which GitHub rate-limits at 60 requests an hour per IP; grep then exits 1 on empty input and `url` is never set, while a failed `mcp-publisher login` or `publish` would have printed to stderr. Run 55 (v0.25.5, 17:39) succeeded, so the registry is current and nothing was lost this time; a last push of a night would have left the registry a version behind until the 04:00 schedule or the next server.json push, with a `Run failed` mail in the inbox and no reading of why. Gate: `npm run check -w @foundry/gankdat`; the workflow edit goes through docs/ci/gankdat-publish.yml (env `GITHUB_TOKEN: ${{ github.token }}` on the registry step).",
+      "effort_days": 0.1,
+      "proof": "the next failure of the registry step names its step and HTTP status in the log; no gankdat publish run fails on the releases call over 30 days",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "dependabot-majors-review-by-routine",
+      "title": "A green Dependabot majors PR is reviewed by the burn-down instead of waiting for an attended session: the routine reads the PR's breaking-change list against the calls the code makes (the package's imports and call sites), merges it when no breaking change touches a call of ours and the gate is green, and otherwise records the lift condition in `.github/dependabot.yml` and closes the PR; the dependabot workflow comment, docs/ops/VERSIONS.md and the burn-down prompt say so. First case: PR #7",
+      "why": "PR #7 (postal-mime 3.0.0 → 4.0.6, stripe 22.6.2 → 23.0.0) has been open since 10-18 01:21 with the gate green (`gate-and-merge` 2 min 50 s and the `gankdat` job both success, mergeable_state clean) — six days, and the attended session last ran 10-16. The owner's rule of 2026-10-16 was dependency currency *without* an attended session per bump; \"majors wait for an attended session\" was the workflow's own caution, and the 10-18 burn-down already did this review for typescript 7 and vitest 5 (lift conditions written into dependabot.yml), so the routine has the method. Today's read of PR #7: stripe 23's breaking changes are `verifyHeader`/`verifyHeaderAsync` defaulting to DEFAULT_TOLERANCE when the tolerance is omitted, the removal of the top-level `Stripe.constructEventWithoutVerification` and of `ErrorType`, V2 list types, operation-specific V2 address params and Node 18 dropped — gankdat calls only `stripe.webhooks.constructEventAsync` (ventures/gankdat/src/routes/billing.ts:65) and `new Stripe(key, {...})` (billing/client.ts:8), and the workflows run Node 24; postal-mime 4 (packages/license-worker/src/mail.ts, `new PostalMime().parse(raw)`) changes parsing of legacy mail (lax reads, LF-normalised text, windows-1252 fallback) and adds a `prepare` script that runs only on installs from git, not from the registry tarball. The build of this item merges #7 after the gate on the branch is green on today's main (merge main in first; the workflow re-runs on the Dependabot author), and keeps the rule for the next monthly majors PR.",
+      "effort_days": 0.2,
+      "proof": "no green majors PR is older than 7 days; PR #7 merged or closed with a lift condition by the item's commit",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "ci-minutes-line-fits-cap",
+      "title": "The watchdog's `ci-minutes:` line fits the 120-char run-log cap with its top-3 list intact: `ci-minutes: 630 billed min/7d (~2700/mo; cap 2000) top: fetch relay 139, owner notes 84, notify owner 71` — the wall figure and the warn threshold leave the line (they are in the job log), and the list is never cut mid-number",
+      "why": "Every `ci-minutes:` line since 10-17 is cut by `.slice(0, 120)` in scripts/actions-minutes.mjs inside the top list: 10-24 01:00 reads `top: fetch relay 139, owner notes 8` (owner notes was not 8 minutes), 10-21 ends at `fetch relay `, 10-19 at `fe`. The top list is the only part of the line that names a lever (fetch relay overtook notify owner on 10-23 and only the first entry shows), and the actions-minutes reading of 10-26 is built on these lines; 60 of the 120 chars are fixed boilerplate. Build: shorten the template, round the list to whole minutes, drop the third entry before cutting a number; a test for the longest workflow names.",
+      "effort_days": 0.05,
+      "proof": "seven consecutive ci-minutes lines show three workflows with complete numbers",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-24"
     }
   ]
 }
