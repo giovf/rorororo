@@ -1626,3 +1626,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 00:48 | burn-down | Demand: the Companies House plugin rival has 3 installs at US$2/mo; 298 installs paid one seller ~EUR 12/month
 - 2026-10-24 00:48 | burn-down | Call: park (below baseline; a gankdat distribution item if ever built); idea parked, re-read 2026-12-01
 - 2026-10-24 00:48 | burn-down | Stopping for time: monday and Bubble spikes closed; Zendesk and Zoho spikes wait for the next slot
+- 2026-10-24 01:00 | watchdog | ci-minutes: 630 billed min/7d (~2700/month, wall 405; private cap 2,000, warn 1700); top: fetch relay 139, owner notes 8
