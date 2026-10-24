@@ -13,8 +13,9 @@
       "effort_days": 0.5,
       "proof": "The workbook recalculates with 0 formula errors and the example tab's tax + NI figure matches a hand-worked 2026/27 case; LISTING.md and five images exist; action 029 is open with one ALERTS owner line",
       "score": 12,
-      "status": "todo",
-      "added": "2026-10-24"
+      "status": "doing",
+      "added": "2026-10-24",
+      "doing_since": "2026-10-24"
     },
     {
       "id": "etsy-listing-live",
