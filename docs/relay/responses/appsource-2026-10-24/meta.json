@@ -1,0 +1,168 @@
+{
+  "request": "appsource-2026-10-24",
+  "fetched_at": "2026-10-24T20:26:14.756Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/account-types-locations-and-fees",
+      "fetched_at": "2026-10-24T20:25:58.887Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/open-a-developer-account",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 24 Aug 2026 14:37:31 GMT",
+        "etag": "\"ZkabXkPvp2GYSjoxqWupUhV1ZCI=\""
+      },
+      "file": "1.html",
+      "bytes": 69645,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/open-a-developer-account",
+      "fetched_at": "2026-10-24T20:26:00.776Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/windows/apps/publish/partner-center/open-a-developer-account",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 24 Aug 2026 14:37:31 GMT",
+        "etag": "\"ZkabXkPvp2GYSjoxqWupUhV1ZCI=\""
+      },
+      "file": "2.html",
+      "bytes": 69645,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/office/dev/store/open-a-developer-account",
+      "fetched_at": "2026-10-24T20:26:01.561Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/open-a-developer-account",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 24 Aug 2026 16:02:31 GMT",
+        "etag": "\"Eq+yjHPC/4NmpJ0n8y0qkts3tiE=\""
+      },
+      "file": "3.html",
+      "bytes": 55478,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/office/dev/store/submit-to-appsource-via-partner-center",
+      "fetched_at": "2026-10-24T20:26:03.762Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/submit-to-appsource-via-partner-center",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Thu, 01 Oct 2026 16:03:10 GMT",
+        "etag": "\"tOfs1vfcPutpShrEgbOPnJAH+is=\""
+      },
+      "file": "4.html",
+      "bytes": 57035,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/office/dev/store/add-in-submission-guide",
+      "fetched_at": "2026-10-24T20:26:05.450Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/add-in-submission-guide",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Thu, 01 Oct 2026 16:03:10 GMT",
+        "etag": "\"mOyNH9Jc/hWvt+2BvuAjF0QZ/uI=\""
+      },
+      "file": "5.html",
+      "bytes": 64600,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace",
+      "fetched_at": "2026-10-24T20:26:08.224Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/monetize-addins-through-microsoft-commercial-marketplace",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 24 Aug 2026 16:02:30 GMT",
+        "etag": "\"NKmLQiHF35ocZEeujlUleeNsTTg=\""
+      },
+      "file": "6.html",
+      "bytes": 66155,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/office/dev/store/office-store-submission-faq",
+      "fetched_at": "2026-10-24T20:26:09.890Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/appsource-submission-faq",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Thu, 01 Oct 2026 16:03:10 GMT",
+        "etag": "\"oMQ5C7L14TRBOLpLxaeZgPsqsV4=\""
+      },
+      "file": "7.html",
+      "bytes": 79814,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/legal/marketplace/certification-policies",
+      "fetched_at": "2026-10-24T20:26:11.845Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/legal/marketplace/certification-policies",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 18 Sep 2026 22:31:07 GMT",
+        "etag": "\"cUJFOqS9e4k0Sacnr1j95ejyjDY=\""
+      },
+      "file": "8.html",
+      "bytes": 238565,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/partner-center/account-settings/verification-responses",
+      "fetched_at": "2026-10-24T20:26:12.532Z",
+      "status": 404,
+      "final_url": "https://learn.microsoft.com/en-us/partner-center/account-settings/verification-responses",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "17973"
+      },
+      "file": "9.html",
+      "bytes": 17973,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/create-account",
+      "fetched_at": "2026-10-24T20:26:13.348Z",
+      "status": 404,
+      "final_url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/create-account",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "17973"
+      },
+      "file": "10.html",
+      "bytes": 17973,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&page=1",
+      "fetched_at": "2026-10-24T20:26:13.557Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&page=1",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"2ad678-5p3JG+JrmXNx3HPVDiHAvDTAflo\""
+      },
+      "file": "11.html",
+      "bytes": 2807416,
+      "truncated": false
+    }
+  ]
+}

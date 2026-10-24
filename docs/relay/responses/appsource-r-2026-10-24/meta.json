@@ -1,0 +1,94 @@
+{
+  "request": "appsource-r-2026-10-24",
+  "fetched_at": "2026-10-24T20:26:40.475Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&page=1",
+      "render": true,
+      "fetched_at": "2026-10-24T20:26:14.756Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&page=1",
+      "title": "Microsoft 365, Excel, Microsoft 365 Apps Apps | Microsoft Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 110,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"2ad678-5p3JG+JrmXNx3HPVDiHAvDTAflo\""
+      },
+      "file": "1.html",
+      "bytes": 2838492,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&filters=paid&page=1",
+      "render": true,
+      "fetched_at": "2026-10-24T20:26:20.121Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&filters=paid&page=1",
+      "title": "Microsoft 365, Excel, Microsoft 365 Apps Apps | Microsoft Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 110,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"2e3488-F2KEID+jJz+sPSagorsANLUyog8\""
+      },
+      "file": "2.html",
+      "bytes": 3059060,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&filters=free-trial&page=1",
+      "render": true,
+      "fetched_at": "2026-10-24T20:26:27.103Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&filters=free-trial&page=1",
+      "title": "Microsoft 365, Excel, Microsoft 365 Apps, Free trial Apps | Microsoft Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 76,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"24af44-yfZMyr7UUOq6dD8hE6JLPYvAzTg\""
+      },
+      "file": "3.html",
+      "bytes": 2410064,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=api&page=1",
+      "render": true,
+      "fetched_at": "2026-10-24T20:26:32.727Z",
+      "status": 200,
+      "final_url": "https://marketplace.microsoft.com/en-gb/search/products?product=office%3Bexcel&search=api&page=1",
+      "title": "api Microsoft 365, Excel, Microsoft 365 Apps Apps | Microsoft Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 105,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"2a1029-yC5SF0xyBo0wATwMMZDh/YZVChQ\""
+      },
+      "file": "4.html",
+      "bytes": 2782798,
+      "truncated": false
+    }
+  ]
+}
