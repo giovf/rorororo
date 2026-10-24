@@ -1,0 +1,88 @@
+{
+  "request": "framer-styles-c-2026-10-24",
+  "fetched_at": "2026-10-24T19:34:45.478Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/categories/styles/?price=paid",
+      "render": true,
+      "fetched_at": "2026-10-24T19:34:31.853Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/categories/styles/?price=paid",
+      "title": "Color & Text Style Plugins for Framer",
+      "rendered": {
+        "network_idle": true,
+        "requests": 390,
+        "failed": [
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "POST https://www.google.com/ccm/collect?rcb=2&frm=0&apvc=1&ae=g&auid=1656185402.1792870473&dt=Color%20%26%20Text%20Style%20Plugins%20for%20Framer&en=page_view&dl=https%3A%2F%2Fwww.framer.com%2Fmarketp",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/site/users/me → 401",
+          "POST https://www.google.com/rmkt/collect/767568133/?random=1339859070&fst=1792870473805&cv=10&fmt=8&bg=ffffff&guid=ON&u_w=1280&u_h=720&gtm=45j91e6am0h2v9101309483z99203990758za20ozb79263478zd79263478x",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=KZRkSk8BdSmpffp7UBAb9b&st=oaiq-web&sv=0.1.93&t=1792870474845&ec=2 → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "[GSI_LOGGER]: FedCM get() rejects with TypeError: Failed to execute 'get' on 'CredentialsContainer': Failed to read the 'identity' property from 'CredentialRequestOptions': Failed to read the 'mode' p"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 147911,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/categories/styles/?price=free",
+      "render": true,
+      "fetched_at": "2026-10-24T19:34:39.060Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/categories/styles/?price=free",
+      "title": "Color & Text Style Plugins for Framer",
+      "rendered": {
+        "network_idle": true,
+        "requests": 388,
+        "failed": [
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "POST https://www.google.com/ccm/collect?rcb=18&frm=0&apvc=1&ae=g&auid=1794971734.1792870480&dt=Color%20%26%20Text%20Style%20Plugins%20for%20Framer&en=page_view&dl=https%3A%2F%2Fwww.framer.com%2Fmarket",
+          "GET https://api.framer.com/site/users/me → 401",
+          "POST https://www.google.com/rmkt/collect/767568133/?random=637255090&fst=1792870480697&cv=10&fmt=8&bg=ffffff&guid=ON&u_w=1280&u_h=720&gtm=45j91e6al1v9101309483z99203990758za20ozb79263478zd79263478xf1&",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=KZRkSk8BdSmpffp7UBAb9b&st=oaiq-web&sv=0.1.93&t=1792870481560&ec=2 → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "[GSI_LOGGER]: FedCM get() rejects with TypeError: Failed to execute 'get' on 'CredentialsContainer': Failed to read the 'identity' property from 'CredentialRequestOptions': Failed to read the 'mode' p"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 147911,
+      "truncated": false
+    }
+  ]
+}
