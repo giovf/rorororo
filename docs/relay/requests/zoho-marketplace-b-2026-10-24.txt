@@ -1,0 +1,8 @@
+GET https://www.zoho.com/marketplace/help-guide/creating-vendor-profile.html
+GET https://www.zoho.com/marketplace/help-guide/review-process-guidelines.html
+GET https://www.zoho.com/marketplace/help-guide/activities-after-listing.html
+GET https://www.zoho.com/marketplace/help-guide/partner-console.html
+GET https://www.zoho.com/marketplace/help-guide/data-sharing.html
+GET https://www.zoho.com/marketplace/help-guide/aboutmarketplace.html
+GET https://www.zoho.com/marketplace/faq.html
+RENDER https://marketplace.zoho.com/app/crm?pricing=paid
