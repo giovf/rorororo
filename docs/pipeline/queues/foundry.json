@@ -1083,6 +1083,26 @@
       "score": 3,
       "status": "todo",
       "added": "2026-10-24"
+    },
+    {
+      "id": "burn-pace-stale-usage-report",
+      "title": "Cap Mon/Tue burn nights when the usage report is stale or a cutoff was seen",
+      "why": "2026-W43 retro: docs/ops/BURN.json report is dated 2026-10-04 (20 days), so stop_if_weekly_pct_at_least 80 has no input; the burn ran to the limit and on 10-21 the exchange 08:00, build 09:00 and 17:00 and burn-down 17:00 slots were missed (watchdog 12:16, 21:56, 'usage limit?') and 9 night slots were silent (10-21 18:00 to 10-22 02:00) until the Thursday 03:00 reset; only the Opus fallback worked. Fix in scripts/pipeline.ts (the gate printed for --routine=burn) and the Gate sentence of docs/routines/burn-down.md: when report.date is over 7 days old treat the allowance as unknown and run Monday and Tuesday nights for at most the first 3 hourly slots that find work; Wednesday night and Thursday to Sunday unchanged; a watchdog 'missed: ... usage limit?' line or a silent slot in the last 24 h ends that night's burn at once. A fresh report re-opens the old gate; the owner's 70-80 % goal stands. Test the date and cutoff branches in core/cold tests; update SCHEDULERS.md Usage limit row in the same commit.",
+      "effort_days": 0.5,
+      "proof": "Over 4 weeks no build, exchange or review slot is missed with a 'usage limit?' watchdog line on the day after a burn night, and built slots per week stay at 20 or more",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "owner-only-handoffs-as-owner-lines",
+      "title": "File dashboard, token-scope and ask-first steps as owner: lines, not handoff:",
+      "why": "2026-W43 retro: two of the five open handoffs are owner-only, not attended-session work: ALERTS 2026-10-17 (CLOUDFLARE_API_TOKEN needs Zone Read + Zone Analytics Read in the dashboard) and 2026-10-20 (.devcontainer/Dockerfile, which CLAUDE.md lists under Things to ask before doing). No | interactive | line since 2026-10-17 10:00, so handoffs wait for a session that has not run; the phone digest counts only jobs for the next Claude Code session. Add to docs/OPERATIONS.md Owner notifications and to the WHO DOES WHAT paragraph of docs/routines/inbox-triage.md: 'A step that edits an account, token scope, dashboard setting or a path CLAUDE.md lists under Things to ask before doing is an owner: line batched into the next docs/for-owner/actions/ file, never a handoff:; a handoff: is only work the repo and a Claude session can finish.' Re-file the two open entries as owner: lines when the sentence lands.",
+      "effort_days": 0.1,
+      "proof": "No handoff: line older than 3 days names a dashboard, token or .devcontainer/ for 30 days; median open age of owner asks stays under 7 days",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-24"
     }
   ]
 }

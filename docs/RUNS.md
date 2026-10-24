@@ -1643,3 +1643,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 02:30 | burn-down | Items: exchange-missed-slot-fallback 6, watchdog-ci-failed-runs 5, registry silent exit 4, majors review 4, cap 3
 - 2026-10-24 02:30 | burn-down | CI first runs: none owed (the 10-22 21:32 and 10-23 09:24 installers both have first-run lines after them)
 - 2026-10-24 02:34 | burn-down | Stopping for time: foundry researched (5 items); exchange-missed-slot-fallback (0.3 d) is next for the 09:00 build
+- 2026-10-24 08:10 | retro | Slot reliability: 89 of 95 slots traced; 6 missed, 9 silent, all one usage-limit week (10-21)
+- 2026-10-24 08:10 | retro | Repeat blocker: stale usage report (20 d) lets the burn drain Fable; 10-21 exchange and builds lost
+- 2026-10-24 08:10 | retro | Repeat blocker: signing and attended handoffs wait 20 d; no interactive session since 10-17
+- 2026-10-24 08:10 | retro | Defect: two owner-only steps (Cloudflare token scope, .devcontainer) were filed as handoff: lines
+- 2026-10-24 08:10 | retro | Defect: failed CI runs (fetch relay, gankdat publish) read hours late; already queued 10-24
+- 2026-10-24 08:10 | retro | Queued foundry burn-pace-stale-usage-report (6) and owner-only-handoffs-as-owner-lines (4)
+- 2026-10-24 08:10 | retro | Owner: nothing new needed this week; no notify condition met
