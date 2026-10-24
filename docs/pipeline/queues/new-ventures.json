@@ -234,8 +234,9 @@
       "effort_days": 0.5,
       "proof": "docs/exchange/spikes/payhip-digital-downloads-shelf.md states the fee, VAT handling, payout path, discovery mechanism and the rivals' counts if any, and makes a promote / park call",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-24"
+      "status": "doing",
+      "added": "2026-10-24",
+      "doing_since": "2026-10-24"
     },
     {
       "id": "spike-jetbrains-price-read",
