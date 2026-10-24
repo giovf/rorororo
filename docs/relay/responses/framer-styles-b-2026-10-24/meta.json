@@ -1,0 +1,240 @@
+{
+  "request": "framer-styles-b-2026-10-24",
+  "fetched_at": "2026-10-24T19:32:39.872Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/color-gen/",
+      "fetched_at": "2026-10-24T19:32:24.586Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/color-gen/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 111164,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/color-import/",
+      "fetched_at": "2026-10-24T19:32:25.613Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/color-import/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 93669,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/color-palettes/",
+      "fetched_at": "2026-10-24T19:32:26.557Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/color-palettes/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 106534,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/design-sync/",
+      "fetched_at": "2026-10-24T19:32:27.495Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/design-sync/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 93425,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/figma-sync/",
+      "fetched_at": "2026-10-24T19:32:28.307Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/figma-sync/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 109654,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/fluidity/",
+      "fetched_at": "2026-10-24T19:32:29.128Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/fluidity/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 116864,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/fontwise/",
+      "fetched_at": "2026-10-24T19:32:30.006Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/fontwise/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 119195,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/framekit/",
+      "fetched_at": "2026-10-24T19:32:30.858Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/framekit/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 107188,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/framerfigma-sync/",
+      "fetched_at": "2026-10-24T19:32:31.953Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/framerfigma-sync/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.html",
+      "bytes": 104664,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/google-font-checker/",
+      "fetched_at": "2026-10-24T19:32:32.805Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/google-font-checker/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 99516,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/shadow-supply/",
+      "fetched_at": "2026-10-24T19:32:33.675Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/shadow-supply/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 101065,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/style-manager/",
+      "fetched_at": "2026-10-24T19:32:34.463Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/style-manager/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.html",
+      "bytes": 121749,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/style-transfer/",
+      "fetched_at": "2026-10-24T19:32:35.338Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/style-transfer/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.html",
+      "bytes": 121707,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/stylepassport/",
+      "fetched_at": "2026-10-24T19:32:36.137Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/stylepassport/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.html",
+      "bytes": 134978,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/styles-io/",
+      "fetched_at": "2026-10-24T19:32:36.930Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/styles-io/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.html",
+      "bytes": 97133,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/themeshift-dark-mode-toggle/",
+      "fetched_at": "2026-10-24T19:32:37.815Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/themeshift-dark-mode-toggle/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.html",
+      "bytes": 131870,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/tokens-studio-for-framer/",
+      "fetched_at": "2026-10-24T19:32:38.731Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/tokens-studio-for-framer/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.html",
+      "bytes": 100995,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/typesystem/",
+      "fetched_at": "2026-10-24T19:32:39.582Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/typesystem/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.html",
+      "bytes": 96114,
+      "truncated": false
+    }
+  ]
+}
