@@ -1,0 +1,326 @@
+{
+  "request": "zendesk-marketplace-b-2026-10-24",
+  "fetched_at": "2026-10-24T01:13:14.513Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.de/marketplace/apps/support/1095191/intelligence-viewer/",
+      "fetched_at": "2026-10-24T01:12:13.453Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.de/marketplace/apps/support/1095191/intelligence-viewer/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:12:13 GMT"
+      },
+      "file": "1.html",
+      "bytes": 573090,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://zendesk.nl/marketplace/apps/support/1095191/intelligence-viewer/",
+      "fetched_at": "2026-10-24T01:12:14.053Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.nl/marketplace/apps/support/1095191/intelligence-viewer/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:12:14 GMT"
+      },
+      "file": "2.html",
+      "bytes": 567125,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.com.br/marketplace/apps/support/1095191/intelligence-viewer/",
+      "fetched_at": "2026-10-24T01:12:14.770Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.com.br/marketplace/apps/support/1095191/intelligence-viewer/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:12:15 GMT"
+      },
+      "file": "3.html",
+      "bytes": 572424,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/?pricing=paid",
+      "render": true,
+      "fetched_at": "2026-10-24T01:12:15.453Z",
+      "status": 404,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/?pricing=paid",
+      "title": "404",
+      "rendered": {
+        "network_idle": false,
+        "requests": 222,
+        "failed": [
+          "GET https://www.zendesk.co.uk/marketplace/apps/support/?pricing=paid → 404",
+          "POST https://alb.reddit.com/rp?id=a2_ewmtwf8ujfcn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://www.google.com/rmkt/collect/972607400/?random=1792804339162&cv=11&fst=1792804339162&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45be6al1v894993257z86150033za20gzb6150033zd6150033xeaxf1&gcd=13t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=0&auid=769630607.1792804340&dt=404&tid=AW-972607400&en=page_view&dl=https%3A%2F%2Fwww.zendesk.co.uk%2Fmarketplace%2Fapps%2Fsupport%2F&scrsrc=ww",
+          "POST https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=0&ae=g&auid=769630607.1792804340&dt=404&tid=AW-972607400&dl=https%3A%2F%2Fwww.zendesk.co.uk%2Fmarketplace%2Fapps%2Fsupport%2F&scrsrc=www.google",
+          "POST https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=1&ae=g&auid=769630607.1792804340&dt=404&en=page_view&dl=https%3A%2F%2Fwww.zendesk.co.uk%2Fmarketplace%2Fapps%2Fsupport%2F%3Fpricing%3Dpaid&scrs"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "identify error: Error: No visitor ID available. Load may have failed.\n    at https://cdn.vector.co/pixel.js:2:219512\n    at Generator.<anonymous> (https://cdn.vector.co/pixel.js:2:212684)\n    at Gener",
+          "uncaught: No visitor ID available. Load may have failed."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 438823,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/?pricing=paid",
+      "fetched_at": "2026-10-24T01:13:00.576Z",
+      "status": 404,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/?pricing=paid",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 461153,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/1095191/intelligence-viewer/",
+      "fetched_at": "2026-10-24T01:13:01.247Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/1095191/intelligence-viewer/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:01 GMT"
+      },
+      "file": "6.html",
+      "bytes": 567213,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/967372/ai-agent-assist-pro/",
+      "fetched_at": "2026-10-24T01:13:02.094Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/967372/ai-agent-assist-pro/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:02 GMT"
+      },
+      "file": "7.html",
+      "bytes": 553217,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/312650/marketplace-channels/",
+      "fetched_at": "2026-10-24T01:13:03.050Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/312650/marketplace-channels/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:03 GMT"
+      },
+      "file": "8.html",
+      "bytes": 621251,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/1228471/sideticket/",
+      "fetched_at": "2026-10-24T01:13:03.881Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/1228471/sideticket/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:04 GMT"
+      },
+      "file": "9.html",
+      "bytes": 518127,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/1238607/sidebar-search/",
+      "fetched_at": "2026-10-24T01:13:04.615Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/1238607/sidebar-search/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:04 GMT"
+      },
+      "file": "10.html",
+      "bytes": 510266,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/1095194/csat-viewer/",
+      "fetched_at": "2026-10-24T01:13:05.441Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/1095194/csat-viewer/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:05 GMT"
+      },
+      "file": "11.html",
+      "bytes": 567919,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/959977/hubspot-crm-connect/",
+      "fetched_at": "2026-10-24T01:13:06.298Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/959977/hubspot-crm-connect/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:06 GMT"
+      },
+      "file": "12.html",
+      "bytes": 642414,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/1097296/klick-zen-action-buttons/",
+      "fetched_at": "2026-10-24T01:13:07.049Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/1097296/klick-zen-action-buttons/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:07 GMT"
+      },
+      "file": "13.html",
+      "bytes": 510255,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/1101657/agent-notes/",
+      "fetched_at": "2026-10-24T01:13:07.801Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/1101657/agent-notes/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:08 GMT"
+      },
+      "file": "14.html",
+      "bytes": 499265,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/933555/mirakl/",
+      "fetched_at": "2026-10-24T01:13:08.534Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/933555/mirakl/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:08 GMT"
+      },
+      "file": "15.html",
+      "bytes": 542630,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/1042858/octopia-connector-by-volvox/",
+      "fetched_at": "2026-10-24T01:13:09.345Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/1042858/octopia-connector-by-volvox/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:09 GMT"
+      },
+      "file": "16.html",
+      "bytes": 622459,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/marketplace/apps/support/189715/hubspot-by-helphouseio/",
+      "fetched_at": "2026-10-24T01:13:10.125Z",
+      "status": 200,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/189715/hubspot-by-helphouseio/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sat, 24 Oct 2026 01:13:10 GMT"
+      },
+      "file": "17.html",
+      "bytes": 583516,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/apps/support/customer-details-advanced",
+      "fetched_at": "2026-10-24T01:13:10.786Z",
+      "status": 404,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/customer-details-advanced/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.html",
+      "bytes": 461153,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/apps/support/chargeover",
+      "fetched_at": "2026-10-24T01:13:11.655Z",
+      "status": 404,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/chargeover/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.html",
+      "bytes": 461153,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/apps/support/customer-details",
+      "fetched_at": "2026-10-24T01:13:12.563Z",
+      "status": 404,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/customer-details/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.html",
+      "bytes": 461153,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/apps/support/quickie-plus",
+      "fetched_at": "2026-10-24T01:13:13.340Z",
+      "status": 404,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/quickie-plus/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "21.html",
+      "bytes": 461153,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.zendesk.co.uk/apps/support/stripe-by-zenplates",
+      "fetched_at": "2026-10-24T01:13:14.278Z",
+      "status": 404,
+      "final_url": "https://www.zendesk.co.uk/marketplace/apps/support/stripe-by-zenplates/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "22.html",
+      "bytes": 461153,
+      "truncated": false
+    }
+  ]
+}
