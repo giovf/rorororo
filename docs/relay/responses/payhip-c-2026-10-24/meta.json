@@ -1,0 +1,58 @@
+{
+  "request": "payhip-c-2026-10-24",
+  "fetched_at": "2026-10-24T18:36:38.867Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/307-marketplace",
+      "fetched_at": "2026-10-24T18:36:37.169Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/article/307-marketplace",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 20450,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/127-digital-eu-vat",
+      "fetched_at": "2026-10-24T18:36:37.814Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/article/127-digital-eu-vat",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 21262,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/347-public-api",
+      "fetched_at": "2026-10-24T18:36:38.332Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/article/347-public-api",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 18289,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/281-refund-request",
+      "fetched_at": "2026-10-24T18:36:38.849Z",
+      "status": 200,
+      "final_url": "https://help.payhip.com/article/281-refund-request",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 21067,
+      "truncated": false
+    }
+  ]
+}
