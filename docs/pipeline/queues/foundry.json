@@ -1063,9 +1063,9 @@
       "effort_days": 0.1,
       "proof": "the next failure of the registry step names its step and HTTP status in the log; no gankdat publish run fails on the releases call over 30 days",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-24",
-      "doing_since": "2026-10-24"
+      "done_at": "2026-10-24"
     },
     {
       "id": "dependabot-majors-review-by-routine",

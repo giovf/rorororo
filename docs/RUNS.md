@@ -1665,3 +1665,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 17:33 | burn-down | Inbox triage prompt: a Run failed row cites the ci-failed line instead of 'failing step not named'
 - 2026-10-24 17:31 | burn-down | gankdat x402-bazaar-16-listed-read done: 10-24 row reads 16 listed, 22 calls, 19 payers; job log lists all 16
 - 2026-10-24 17:31 | burn-down | Week-1 Bazaar proof closed (16 of 17; uk-planning paused); header forward not needed; day-30 read 11-14
+- 2026-10-24 17:38 | burn-down | Built foundry registry-publish-silent-exit: registry-publish.sh names its step and HTTP status on failure
+- 2026-10-24 17:38 | burn-down | Registry read tells 404 (not published) from 5xx (unreachable); releases API authed; publish retries once
+- 2026-10-24 17:38 | burn-down | gankdat-publish.yml with GITHUB_TOKEN on the registry step dropped in docs/ci/ (publish job: never dispatched)
+- 2026-10-24 17:38 | burn-down | Dry run: registry 0.25.5 = server.json, up to date; sandbox proxy 403 on the releases call now named, not silent
