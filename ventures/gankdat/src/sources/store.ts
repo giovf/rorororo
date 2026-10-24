@@ -1,8 +1,15 @@
 import { computeStats } from '../lib/stats';
 import type { SourceStats } from '../lib/stats';
-import { readCached, readSnapshot, readSourceStats, refreshSource } from './cache';
+import { readCached, readSnapshot, readSourceStats, refreshSource, writeRefreshLog } from './cache';
 import { queryD1Source, refreshD1Source } from './d1store';
 import { isLookup, lookupRecord } from './lookup';
+import {
+  clearRefreshProgress,
+  markRefreshProgress,
+  readRefreshProgress,
+  silentRefreshMessage,
+} from './progress';
+import type { RefreshProgress } from './progress';
 import { applyQuery } from './query';
 import type { QueryPage } from './query';
 import { listSources } from './registry';
@@ -142,6 +149,61 @@ export function isTransientD1Error(err: unknown): boolean {
   return TRANSIENT_D1_ERROR.test(err instanceof Error ? err.message : String(err));
 }
 
+/**
+ * A marker the previous attempt never cleared means it died silently (killed by the platform, no
+ * `catch` ran): write the row it owed, naming the phase it reached (progress.ts). Returns it.
+ */
+export async function recordSilentRefresh(
+  env: CloudflareBindings,
+  slug: string,
+): Promise<RefreshProgress | null> {
+  const previous = await readRefreshProgress(env, slug);
+  if (!previous) return null;
+  if (await refreshLogRowSince(env, slug, previous.started_at)) {
+    // The attempt did write its row and only the delete was lost (KV's one-write-a-second gap or
+    // a dropped delete): a stale marker, not a death (refresh-marker-false-positive-2026-10-23 —
+    // the lane's first `silent nights:` reading, uk-sanctions 10-22, named a night with an ok row).
+    console.error(
+      JSON.stringify({ level: 'warn', event: 'refresh_progress_stale', source: slug, ...previous }),
+    );
+    await clearRefreshProgress(env, slug);
+    return null;
+  }
+  const message = silentRefreshMessage(previous);
+  console.error(
+    JSON.stringify({ level: 'error', event: 'refresh_died', source: slug, ...previous }),
+  );
+  await writeRefreshLog(env, slug, 'error', 0, previous.elapsed_ms, message);
+  return previous;
+}
+
+/**
+ * True when the slug's newest refresh_log row was created at or after `startedAt` (an ISO stamp) —
+ * the row the marker's own attempt wrote. `created_at` is SQLite's `datetime('now')` at second
+ * precision, so the marker's start is floored to the second before comparing. A row that cannot be
+ * read, or a marker without a start, counts as no row: the night is reported, never hidden.
+ */
+export async function refreshLogRowSince(
+  env: CloudflareBindings,
+  slug: string,
+  startedAt: string,
+): Promise<boolean> {
+  const started = Date.parse(startedAt);
+  if (Number.isNaN(started)) return false;
+  try {
+    const row = await env.DB.prepare(
+      'SELECT created_at FROM refresh_log WHERE source_slug = ?1 ORDER BY id DESC LIMIT 1',
+    )
+      .bind(slug)
+      .first<{ created_at: string }>();
+    if (!row) return false;
+    const created = Date.parse(`${row.created_at.replace(' ', 'T')}Z`);
+    return !Number.isNaN(created) && created >= Math.floor(started / 1000) * 1000;
+  } catch {
+    return false;
+  }
+}
+
 /** One source's refresh, retried once on a transient D1 error while the wave is young; true when it succeeded. */
 export async function refreshOne(
   env: CloudflareBindings,
@@ -149,6 +211,9 @@ export async function refreshOne(
   waveStartedAt = Date.now(),
   delayMs = RETRY_DELAY_MS,
 ): Promise<boolean> {
+  await recordSilentRefresh(env, source.slug);
+  const startedAt = Date.now();
+  await markRefreshProgress(env, source.slug, startedAt, 'start');
   for (let attempt = 1; ; attempt += 1) {
     try {
       if (source.storage === 'd1') {
@@ -156,6 +221,7 @@ export async function refreshOne(
       } else {
         await refreshSource(env, source);
       }
+      await clearRefreshProgress(env, source.slug);
       return true;
     } catch (err) {
       const retry =
@@ -170,8 +236,12 @@ export async function refreshOne(
           message: err instanceof Error ? err.message : String(err),
         }),
       );
-      if (!retry) return false;
+      if (!retry) {
+        await clearRefreshProgress(env, source.slug);
+        return false;
+      }
       await new Promise((resolve) => setTimeout(resolve, delayMs));
+      await markRefreshProgress(env, source.slug, startedAt, 'retry', `attempt ${attempt + 1}`);
     }
   }
 }

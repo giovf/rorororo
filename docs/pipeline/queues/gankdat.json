@@ -2,8 +2,8 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-17",
-  "researched": "2026-10-17",
+  "updated": "2026-10-24",
+  "researched": "2026-10-23",
   "items": [
     {
       "id": "nhs-ods",
@@ -41,13 +41,15 @@
     {
       "id": "search-console-stats-indexing",
       "title": "Submit the /stats pages sitemap in Search Console and check indexing",
-      "why": "Cite-bait pages only earn if indexed.",
+      "why": "Cite-bait pages only earn if indexed. — Done 2026-10-23 (build research): the sitemap went in on 09-28 (owner, review W40) and the Search Console reading has run daily since action 020 (10-11); the 10-22 reading: 8 of 19 stats URLs indexed, 9 `Discovered - currently not indexed`, 2 unknown to Google, 12 impressions and 0 clicks in 7 days (avg position 13.3, top /stats/nhs-ods). The proof (≥ 10 indexed) is not met and no lever is queued: the eight indexed pages bring no clicks, so more indexing changes nothing until a page ranks; the 10-30 and 11-05 reads carry the clause.",
       "effort_days": 0.1,
       "proof": "≥ 10 stats pages indexed (Search Console)",
       "score": 4,
-      "status": "blocked",
+      "status": "done",
       "blocked_on": "owner action 020 (2026-10-07): the Search Console API reading is built — `scripts/search-console.ts` in the 06:45 store-metrics job URL-inspects /stats and every /stats/<slug> page and writes `indexed I/N` on gankdat's Daily numbers row — and waits only for the owner to add the read-only service account and paste its key as SEARCH_CONSOLE_KEY. Close this item on the first row whose `search:` clause carries an indexed count (the proof reads ≥ 10 indexed), no export needed.",
-      "added": "2026-09-20"
+      "added": "2026-09-20",
+      "done_at": "2026-10-23",
+      "updated": "2026-10-23"
     },
     {
       "id": "uk-trademark-journal",
@@ -403,8 +405,8 @@
       "status": "blocked",
       "not_before": "2026-10-10",
       "added": "2026-10-07",
-      "updated": "2026-10-10",
-      "blocked_on": "Docker's review of https://github.com/docker/mcp-registry/pull/5622 (opened 2026-10-11 by the pr relay, the first relay run): merged → done and the `oauth` follow-up PR; an OSS-licence demand → dropped, not argued"
+      "updated": "2026-10-23",
+      "blocked_on": "Docker's review of https://github.com/docker/mcp-registry/pull/5622 (opened 2026-10-11 by the pr relay, the first relay run): merged → done and the `oauth` follow-up PR; an OSS-licence demand → dropped, not argued Read 2026-10-23 (build research, relay gankdat-research-2026-10-23-17/17b): still open at head 7b5f2a5, updated 10-11 19:18, no review and no check run on the head after 12 days (combined status `pending` — a fork's workflows wait for a maintainer's approval), one bot comment (Codex review: failed to run); nothing to do from this side, re-read with the 10-30 Claude directory read."
     },
     {
       "id": "uk-company-lookup-day-30",
@@ -545,13 +547,14 @@
     {
       "id": "refresh-uk-planning-reread-2026-10-18",
       "title": "uk-planning weekly origin re-read: has planning.data.gov.uk republished the planning-application dataset?",
-      "why": "Decision 2026-10-11 (burn-down, RESEARCH.md): the planning-application dataset was emptied on the platform on 2026-10-10 (entity-count 0, phase alpha, no replacement-dataset; relay planning-origin-2026-10-11); gankdat serves the 10-09 snapshot under a dated notice and the nightly refresh fails loudly with that evidence. The dataset is still queried (88 REST calls, 13 Apify runs in 30 days), so STRATEGY §7 does not retire it yet. Do, through the relay: GET https://www.planning.data.gov.uk/dataset/planning-application.json and entity.json?dataset=planning-application&limit=5. If entity-count > 0: verify the layout against the response, drop `notice` and the count-0 throw's date, refresh, done. If still 0: move this item's not_before a week on, keep the clock in RESEARCH.md (retire per §7 when the dataset goes 60 days without a customer query, or re-point when the page names a replacement-dataset). The id starts with refresh-uk-planning- on purpose: scripts/refresh-errors-to-queue.ts then appends each night's evidence to this open item instead of filing a new refresh-uk-planning-<date> every two days. Still failing 2026-10-11: refresh returned 0 records. Still failing 2026-10-12: origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.), uk-trademark-journal (no successful refresh since 2026-10-10. Still failing 2026-10-13: origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.), uk-trademark-journal (no successful refresh since 2026-10-10. Still failing 2026-10-14: origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.. Still failing 2026-10-15: origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.. Still failing 2026-10-16: origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.), uk-trademark-journal (no successful refresh since 2026-10-14.",
+      "why": "Decision 2026-10-11 (burn-down, RESEARCH.md): the planning-application dataset was emptied on the platform on 2026-10-10 (entity-count 0, phase alpha, no replacement-dataset; relay planning-origin-2026-10-11); gankdat serves the 10-09 snapshot under a dated notice and the nightly refresh fails loudly with that evidence. The dataset is still queried (88 REST calls, 13 Apify runs in 30 days), so STRATEGY §7 does not retire it yet. Do, through the relay: GET https://www.planning.data.gov.uk/dataset/planning-application.json and entity.json?dataset=planning-application&limit=5. If entity-count > 0: verify the layout against the response, drop `notice` and the count-0 throw's date, refresh, done. If still 0: move this item's not_before a week on, keep the clock in RESEARCH.md (retire per §7 when the dataset goes 60 days without a customer query, or re-point when the page names a replacement-dataset). The id starts with refresh-uk-planning- on purpose: scripts/refresh-errors-to-queue.ts then appends each night's evidence to this open item instead of filing a new refresh-uk-planning-<date> every two days. Still failing 2026-10-11: refresh returned 0 records. Still failing 2026-10-12: origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.), uk-trademark-journal (no successful refresh since 2026-10-10. Still failing 2026-10-13: origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.), uk-trademark-journal (no successful refresh since 2026-10-10. Still failing 2026-10-14: origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.. Still failing 2026-10-15: origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.. Still failing 2026-10-16: origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.), uk-trademark-journal (no successful refresh since 2026-10-14. Re-read 2026-10-18 (relay planning-origin-2026-10-18): entity-count still 0, no replacement-dataset, page names consideration planning-applications-decisions and github-discussion 25; Apify actor 21 runs/30d for 18 outside users so the §7 clock does not start; next read 10-25.",
       "effort_days": 0.05,
       "proof": "either an ok uk-planning refresh with records > 0, or a dated line in RESEARCH.md moving the clock on with the entity-count read that week",
       "score": 4,
       "status": "todo",
       "added": "2026-10-11",
-      "not_before": "2026-10-18"
+      "not_before": "2026-10-25",
+      "updated": "2026-10-18"
     },
     {
       "id": "refresh-uk-insolvency-2026-10-11",
@@ -612,13 +615,14 @@
     {
       "id": "x402-bazaar-day-30",
       "title": "Day-30 read of the x402 Bazaar listing: resources indexed, calls and payers by resource from the `bazaar:` clause and the discovery API, our rank for a sample intent search (searchX402Resources 'UK company lookup', 'sanctions list', 'public tenders'), x402_paid excluding internal; record in RESEARCH.md and decide: extend (more routes, curation tier, the aggregator idea's trigger) or leave listed",
-      "why": "Exchange 2026-W42 proof (≥ 50 paid calls from ≥ 5 payers in 30 days). The reading also settles the parked x402-aggregator-mcp trigger (our listing converts) and whether compliance/register data has buyers in the catalogue at all (EDGAR 69 calls / 29 payers and an OFAC screen 12 / 10 were the only compliance-shaped resources in the top 200 on 2026-10-14).",
+      "why": "Exchange 2026-W42 proof (≥ 50 paid calls from ≥ 5 payers in 30 days). The reading also settles the parked x402-aggregator-mcp trigger (our listing converts) and whether compliance/register data has buyers in the catalogue at all (EDGAR 69 calls / 29 payers and an OFAC screen 12 / 10 were the only compliance-shaped resources in the top 200 on 2026-10-14). Ledger convention (review W42, 2026-10-18): x402 receipts are USDC in the seller wallet, below the ledger's pence at half a cent a call — at each day-30 Bazaar read, record the period's receipts (excluding our probe) as one `revenue` row in docs/LEDGER.md at the GBP rate when they reach £0.01, else carry the running USDC total in RESEARCH.md; the first three external paid calls landed 10-17/18 (US$0.015).",
       "effort_days": 0.1,
       "proof": "numbers recorded in RESEARCH.md; keep/extend decision in STRATEGY §8; parked ideas re-triggered or left with the reason",
       "score": 3,
       "status": "todo",
       "not_before": "2026-11-14",
-      "added": "2026-10-14"
+      "added": "2026-10-14",
+      "updated": "2026-10-18"
     },
     {
       "id": "googlebot-401-noindex",
@@ -657,13 +661,144 @@
     {
       "id": "refresh-uk-trademark-journal-2026-10-17",
       "title": "uk-trademark-journal: third silent-night streak since 10-04 (no refresh_log row 10-15, 10-16 after ok 10-14 06:10) — read the wave outcome, find why wave 7 dies on three nights in four, fix so every night writes a row",
-      "why": "Research 2026-10-17: /v1/health (relay gankdat-research-2026-10-17) has the journal last refreshed 2026-10-14 06:10:42; the 10-16 row says `no successful refresh since 2026-10-14` with no error and no skipped row, so wave 7 wrote nothing on 10-15 and 10-16, and the 24-h wave log for the slug has no line from the wave (metrics run 38866226604). Pattern since the 10-09 materialised-CTE fix: ok 10-10 (5 min 56 s into the wave), silent 10-11, 10-12, 10-13, ok 10-14 (5 min 42 s), silent 10-15, 10-16 — a success every fourth night, the ok nights finishing well inside the 15-minute budget. Two facet pages (/stats/uk-trademark-journal/class/35, /class/18) logged `[error]` on 10-15/16, consistent with the facet blobs ageing out while the refresh never completes. Hypotheses to test, in order: (a) a night with a new weekly issue to download (DOWNLOAD_BUDGET_MS 6 min) plus the 162k-row delta plus the 45-class facet aggregation (4-min budget) exceeds the Cron Trigger's CPU or wall limit and the isolate is killed before any row — the next nights load the cached issue (`tmj:issue:*`) and should be faster, which they are not; (b) memory: parsing a full XML issue and holding the (seq, id, hash) index of 162k rows in one isolate exceeds 128 MB (an exceededMemory outcome, no log line); (c) the trigger itself not firing (the `schedules.mjs reset` step shows 7 triggers in sync, so unlikely). First step: the cron-outcome reading (wave-log-cron-outcome-reading) or, sooner, the Workers observability query for `$workers.event.cron = '5 6 * * *'` run by hand from a session with the token. Fix candidates: split wave 7 into download+parse (writes the KV issue cache and a `skipped` row) and delta+facets on the next trigger; or give the journal a wave of its own at 06:20 for facets. Filed under the auto-filer's id pattern so the 10-17 row extends this item instead of filing a duplicate. Dated 2026-10-18 by burn-down 2026-10-17 01:25: its first step, the wave's cron outcome, is read by the 10-17 metrics row (reading built this night, `wave 06:05: <outcome>`); diagnosing before that row exists is the guessing this item exists to end.",
+      "why": "Research 2026-10-17: /v1/health (relay gankdat-research-2026-10-17) has the journal last refreshed 2026-10-14 06:10:42; the 10-16 row says `no successful refresh since 2026-10-14` with no error and no skipped row, so wave 7 wrote nothing on 10-15 and 10-16, and the 24-h wave log for the slug has no line from the wave (metrics run 38866226604). Pattern since the 10-09 materialised-CTE fix: ok 10-10 (5 min 56 s into the wave), silent 10-11, 10-12, 10-13, ok 10-14 (5 min 42 s), silent 10-15, 10-16 — a success every fourth night, the ok nights finishing well inside the 15-minute budget. Two facet pages (/stats/uk-trademark-journal/class/35, /class/18) logged `[error]` on 10-15/16, consistent with the facet blobs ageing out while the refresh never completes. Hypotheses to test, in order: (a) a night with a new weekly issue to download (DOWNLOAD_BUDGET_MS 6 min) plus the 162k-row delta plus the 45-class facet aggregation (4-min budget) exceeds the Cron Trigger's CPU or wall limit and the isolate is killed before any row — the next nights load the cached issue (`tmj:issue:*`) and should be faster, which they are not; (b) memory: parsing a full XML issue and holding the (seq, id, hash) index of 162k rows in one isolate exceeds 128 MB (an exceededMemory outcome, no log line); (c) the trigger itself not firing (the `schedules.mjs reset` step shows 7 triggers in sync, so unlikely). First step: the cron-outcome reading (wave-log-cron-outcome-reading) or, sooner, the Workers observability query for `$workers.event.cron = '5 6 * * *'` run by hand from a session with the token. Fix candidates: split wave 7 into download+parse (writes the KV issue cache and a `skipped` row) and delta+facets on the next trigger; or give the journal a wave of its own at 06:20 for facets. Filed under the auto-filer's id pattern so the 10-17 row extends this item instead of filing a duplicate. Dated 2026-10-18 by burn-down 2026-10-17 01:25: its first step, the wave's cron outcome, is read by the 10-17 metrics row (reading built this night, `wave 06:05: <outcome>`); diagnosing before that row exists is the guessing this item exists to end. Built 2026-10-18 (build): the 10-17 and 10-18 Daily numbers rows list no stale journal — wave 7 wrote `ok` rows both nights, so the cron-outcome reading never ran for it; and the 10-16 metrics job log (run 38866226604) shows the observability query returned not one line from ANY cron wave in 24 h — no `refresh_wave`, no `refresh_failed` for uk-planning, though wave 1 verifiably ran (14 sources refreshed in 26 h) — so Worker logs cannot diagnose a silent night from a sandbox or the runner. Fix built in-band instead: `src/sources/progress.ts` — every attempt puts `refresh:progress:<slug>` at start and at each phase (backfill, index, stream N records, written, stats), clears it after its own row; a marker still there when the next attempt starts becomes the missing `error` row `silent refresh started <when> died after <phase> <detail> at <s> s, no row written`, so a killed night has a row the next morning and the Daily numbers row names the phase. Also: the `ok` row is written before the best-effort stats/facets in all three paths (a wave killed inside the 45-class facet aggregation keeps its row), and the journal's issue fetch carries a 5-minute `AbortSignal.timeout` (a hung IPO request was the one silent cause the source could name). Root cause still open: the follow-up item reads the first `silent refresh` row.",
       "effort_days": 0.4,
       "proof": "Four consecutive Daily numbers rows without uk-trademark-journal under `refresh errors`; /v1/health last_refreshed_at within 26 h on each; the facet pages answer 200",
       "score": 6,
-      "status": "todo",
+      "status": "done",
       "added": "2026-10-17",
-      "not_before": "2026-10-18"
+      "not_before": "2026-10-18",
+      "done_at": "2026-10-18"
+    },
+    {
+      "id": "refresh-mcp-probe",
+      "title": "live /mcp has failed the CI probe 2 times in the last 4 days — find what answers a directory's initialize / tools/list / tools/call with an error and fix it",
+      "why": "Filed by the 06:30 metrics job (scripts/refresh-errors-to-queue.ts): the Daily numbers rows list mcp-probe under refresh errors on 2026-10-16 (call 200 (tool error: Source 'uk-planning' is temporarily unavailable; retry later); authe) and 2026-10-18: call n/a (The operation was aborted due to timeout). The probe (scripts/mcp-probe.ts, from the metrics runner) is what Glama, Smithery and the Claude directory see; every directory ranks an erroring server below healthy ones. The step and status are in the message; reproduce it against the local Worker (test/mcp-directory.spec.ts) with the same request, read `/v1/health` through the relay, and fix the Worker — not the probe. Built 2026-10-18 (build): the two failures had different causes. 10-16 was uk-planning's expired snapshot (fixed 10-17: probe skips a paused tool, snapshot retained). 10-18 (metrics run 39106552120, probe step 07:10:18–07:10:42): keyless tools/call on query_uk_tenders timed out at 20 s, the keyed call right after answered 200; /v1/health via relay mcp-probe-health-2026-10-18 has uk-tenders refreshed 05:01:06 that morning (snapshot fresh, 1,000 rows, cpu_ms 300000), and the Worker live at 07:10 was the 10-17 17:33 deploy (SDK 1.30.0 — the 1.32.1 bump deployed only at 09:35), so a stale refresh, a big parse, a CPU kill and the dependency bump are all ruled out; /mcp logged nothing. What the code allowed: @hono/mcp's SSE path returns the Response before the tool call runs, so the call ran after the fetch handler returned, kept alive only by the open stream — the one kind of work a Worker may drop, and a dropped call leaves the stream open until the client's timeout, exactly the reading. Fix: routes/mcp.ts answers a POST with one JSON body (enableJsonResponse, spec-allowed, every client accepts both), so the call runs inside the awaited handler; every data tool runs under a 10 s deadline (src/lib/deadline.ts) answering a tool error naming the phase and logging slow_tool_call; the probe tells \"body unread (headers arrived)\" from no response and bounds its own body read. Version 0.25.2 so /v1/health names the build. Cause not proven; the next hang is readable on both sides.",
+      "effort_days": 0.1,
+      "proof": "mcp-probe absent from refresh errors for 7 consecutive Daily numbers rows",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-18",
+      "done_at": "2026-10-18"
+    },
+    {
+      "id": "x402-bazaar-week-1-index-check",
+      "title": "Week-1 read of the x402 Bazaar listing: how many of our 17 v2 routes the discovery API lists for our payTo; if fewer than 17, read why and make the missing settled calls",
+      "why": "Review 2026-W42 gap (10-18): the exchange's proof for x402-bazaar-listing was `≥ 17 resources from the discovery API within a week of the settled call` (settled 2026-10-16, so due 2026-10-23), but the Daily numbers row reads `bazaar: 1 listed` on 10-17 and 10-18 (the July v1 route) while `x402 validate: 17/17 valid`, and nothing checks before the 11-14 day-30 read. Meanwhile 3 external payers made 3 paid calls on 10-17/18 — the first paid calls in the lane's life — so the shelf is live and should show every door. Do, on 2026-10-23: `GET /platform/v2/x402/discovery/resources` filtered by our payTo (keyless; the metrics runner already does it), list which routes are indexed; if < 17, re-read docs.cdp.coinbase.com/x402/seller/get-discovered and the cdp-sdk issues (#806, #759: validated but never indexed) for whether indexing is per resource (one settled payment on each route) or per seller, and if per resource make one settled half-cent call on each unlisted route from the probe wallet (X402_PROBE_KEY; ≤ US$0.085 for 17; the Daily numbers row counts the probe's client id as internal); if the catalogue lags by design, record the stated lag and move this item's not_before to it. Write the reading to ventures/gankdat/RESEARCH.md and MARKETPLACE-PREP.md's Bazaar row. — Done 2026-10-23 (build): 1 of 17 listed (uk-tenders, the only route ever paid; CDP indexes one resource per settled payment, drops it 30 days after the last one, lag ≤ 15 min — seller docs read through the relay, cdp-sdk #806/#759); the probe now pays every unlisted or 23-day-stale route under a 20-half-cent/30-d cap, the forced dispatch settled only uk-tenders and eu-ted and showed 13 routes rejecting every signed payment — their Bazaar description exceeded CDP's 500-char facilitator limit (unpayable since v0.25.0) — fixed in v0.25.3 (DESCRIPTION_MAX) and re-sent after the deploy; uk-planning stays unlisted while paused (503); proof is the 10-24 row's `bazaar:` clause.",
+      "effort_days": 0.1,
+      "proof": "`bazaar: 17 listed` on a Daily numbers row by 2026-10-25, or RESEARCH.md names the documented reason and the date it will be",
+      "score": 4,
+      "status": "done",
+      "not_before": "2026-10-23",
+      "added": "2026-10-18",
+      "done_at": "2026-10-23"
+    },
+    {
+      "id": "uk-planning-apify-pause",
+      "title": "uk-planning surface pause while the origin is empty: unpublish or pause the `uk-planning-applications` Apify actor (flagged under maintenance by Apify QA 10-17), say so on its README and the /stats page, restore when planning.data.gov.uk serves rows again",
+      "why": "Review 2026-W42 (10-18), a surface pause under STRATEGY §7's dataset rule rather than a retirement (the external-query clock runs from 10-12 and cannot retire anything before 12-11). Facts: the origin dataset was emptied 2026-10-10 (entity count 0, no replacement named); the 10-09 snapshot expired 10-16 and the dataset now answers its notice on REST, MCP and x402; the Apify actor failed 5 of 21 runs in 30 days and Apify QA flagged it `under maintenance` on 2026-10-17 (INBOX 14:08) — a flagged actor is a store-quality signal against the account's 18 actors, and no external key has queried uk-planning (`datasets 30d external: none`). Do only if `refresh-uk-planning-reread-2026-10-18` (dated today) found the origin still empty: via the Apify API from CI (the publish job's token) unpublish the actor or set its README's first line to a dated `Paused: the source register is empty since 2026-10-10; resumes when it republishes`, keep the MCP tool's notice, and add a `paused` state to the stats page notice; record in RESEARCH.md and MARKETPLACE-PREP.md. The weekly re-read item restores everything when entity count > 0. Built 2026-10-19 (build): paused, not unpublished — the actor stays public (unpublishing drops the 18 outside users' schedules and spends a publication on the restore); README opens with a dated Paused line, main.mjs ends a run that meets the 503 `Origin paused` answer cleanly (notice as status message, no items, no charge) so failed runs stop rising; /stats/uk-planning carries a `state: paused` row and the index a `· paused` mark; the notice names every paused surface; 2 tests; RESEARCH, MARKETPLACE-PREP, ARCHITECTURE, apify/README. Proof reads from the `apify 30d by actor` failed count no longer rising and the flag gone at the next reading.",
+      "effort_days": 0.2,
+      "proof": "Apify's actor page no longer shows the maintenance flag (unpublished or a dated Paused notice) and the next `apify 30d by actor` reading shows 0 new failed runs for the actor; restored within a day of the origin republishing",
+      "score": 5,
+      "status": "done",
+      "not_before": "2026-10-19",
+      "added": "2026-10-18",
+      "doing_since": "2026-10-19",
+      "done_at": "2026-10-19",
+      "updated": "2026-10-19"
+    },
+    {
+      "id": "refresh-uk-trademark-journal-silent-row-2026-10-22",
+      "title": "uk-trademark-journal: read the first `silent refresh … died after <phase>` refresh_log row (health or Daily numbers) and fix the phase it names; split wave 7 only if the phase is `stats` or `stream` past 600 s",
+      "why": "Build 2026-10-18 (`refresh-uk-trademark-journal-2026-10-17`): the progress marker now turns a killed wave 7 into an `error` row written by the next attempt, naming the phase (backfill / index / stream N records / written / stats) and the seconds into the run. The 10-17 and 10-18 nights succeeded, so no such row exists yet. When one appears (relay `GET https://gankdat.com/v1/health` plus the Daily numbers `refresh errors` entry when two silent nights follow each other): `stats` means the facet aggregation (45 Nice-class pages, 4-minute budget checked between pages) is what dies — move the facets to a wave of their own at 06:20 or cut the budget; `stream` late in the run means the KV-cached issue loads plus the delta pass are too slow — split download+parse from delta; `start` or `backfill` at a few seconds means the isolate dies before any work — memory on the index load, read `/v1/health` and the KV issue sizes. If no silent night happens by 2026-10-25 (proof of the parent item: four rows without the journal under refresh errors), set `dropped` with that evidence. — Dropped 2026-10-22 (burn-down): no silent-refresh row ever appeared. /v1/health read through the relay at 19:30 UTC (gankdat-health-2026-10-22-19) shows uk-trademark-journal last ok 2026-10-22 06:06:24 (84 s into wave 7), and the five Daily numbers rows 10-18..10-22 list no uk-trademark-journal entry under `refresh errors` and no `silent nights` clause — one row more than the four the proof asked for, so the 10-25 wait adds nothing. The marker stays armed: the first silent night still writes its `error` row and the auto-filer's two-rows-in-four rule re-files this item with the phase named.",
+      "effort_days": 0.3,
+      "proof": "The phase named by the first silent-refresh row is fixed and seven consecutive Daily numbers rows list no uk-trademark-journal entry under `refresh errors`; or dropped on 2026-10-25 with four clean rows",
+      "score": 5,
+      "status": "dropped",
+      "not_before": "2026-10-22",
+      "added": "2026-10-18",
+      "dropped_at": "2026-10-22"
+    },
+    {
+      "id": "wave-log-cron-query-blind",
+      "title": "Wave-log reading: the observability query returns no line from any cron invocation (10-16 job log: zero `refresh_wave` / `refresh_failed` lines for uk-planning while wave 1 ran) — find the filter or dataset that carries scheduled-event logs, or retire the cron-outcome clause",
+      "why": "Build 2026-10-18: the 10-16 metrics job log (run 38866226604) is the first real read of `lib/wave-logs.ts`'s slug query — uk-planning: 7 lines, all request lines and the x402 warning; uk-trademark-journal: 6, likewise — though wave 1 refreshed 14 sources that morning and every wave logs `refresh_wave` with its slugs and uk-planning's nightly failure logs `refresh_failed`. So the query (`$metadata.service = faceless-api`, needle = slug, view events, 24 h) sees HTTP invocations only, and the cron-outcome clause built 10-17 reads `wave 05:00: no invocation in 26 h` for a wave that ran; the text now says `no invocation logged` (2026-10-18). Candidates: the Query Builder may need `$metadata.trigger` / `$workers.event.cron` or a `scheduled` event filter rather than the request-shaped defaults, cron logs may land under a different `$metadata.type`, or the free tier of Workers Logs may sample them. Read the first raw row the runner prints for an invocation query (`wave-logs.ts` prints it when none parsed), relay `GET https://developers.cloudflare.com/workers/observability/logs/workers-logs/` query sections, and fix the query; if cron events are simply not queryable, drop the invocation query and keep the in-band progress marker (`src/sources/progress.ts`) as the only reading of a silent wave. Done 2026-10-22 (burn-down): not blind — 10-21 returned two ok rows (79.8 s / 79.0 s, timestamp = invocation end), 10-22 one (104.0 s); 10-18..10-20 none for a wave whose D1 rows exist, so an empty answer stays `no invocation logged` and the progress marker is the reading of a silent wave. The live rows named no cron and the substring needle also matches waves 3 and 5 (10-21's reading was the 05:15 wave's row): a matched cron now ranks first, a cron-less reading says `(cron unread)`, the runner prints the raw row when a cron is missing.",
+      "effort_days": 0.3,
+      "proof": "A Daily numbers row whose `wave log:` clause shows `wave 05:00: ok <wall>s` for uk-planning on a morning its error row exists; or the invocation clause removed and SCHEDULERS/ARCHITECTURE say why",
+      "score": 4,
+      "status": "done",
+      "not_before": "2026-10-20",
+      "added": "2026-10-18",
+      "done_at": "2026-10-22",
+      "updated": "2026-10-22"
+    },
+    {
+      "id": "x402-ajv-compile-log-noise",
+      "title": "Worker logs `Error compiling schema` on x402 calls — Ajv in @x402/extensions compiles with new Function, which Workers forbid; find the call site, stop the error line",
+      "why": "Seen 2026-10-18 (build, metrics run 39106552120 wave-log step): 11 of the 12 Worker log lines mentioning uk-planning in 24 h were `[error] Error compiling schema, function code: const schema1 = scope.schema[1]…`, at 07:15 and 17:23/17:28 on 10-17 — the metrics job's x402 validate and bazaar reads of /x402/data/uk-planning. The string is Ajv's compile failure; the only Ajv in the Worker bundle is @x402/extensions (bazaar resourceService / payment-identifier validation, `ajv.compile(...)` in its dist), and Workers disallow code generation from strings, so every 402 that carries the bazaar discovery extension logs one error line and serves anyway (x402 validate 17/17 valid, 3 payers). Harmless to buyers, but it is the loudest line in the Worker log, fills the wave-log slug search for any source an x402 route names (uk-planning read as 11 of 12 lines of noise), and a real error next to it is hidden. Fix: reproduce in test (console.error spy on a 402 of /x402/data/<slug>), then either pass a precompiled/standalone validator, build the extension payload without the validating helper, or pin the extension at a version that does not compile at runtime; add the string to `isNoiseLine` in src/lib/wave-logs.ts only if the line cannot be removed. — Built 2026-10-18 (burn-down): the compile is unconditional (@x402/hono paymentMiddleware runs validateBazaarRouteExtensions on every isolate start, no option) and the line is Ajv's own logger.error before it rethrows, so `withoutCodegenError` in x402/routes.ts drops that one two-argument call next to the warning mute; the test pool does not reproduce workerd's codegen ban, so the unit test covers the filter and the proof is the next wave-log reading.",
+      "effort_days": 0.2,
+      "proof": "A 24-h Worker log (wave-log step or an observability query) with no `Error compiling schema` line while x402 validate still reads 17/17 valid",
+      "score": 3,
+      "status": "done",
+      "added": "2026-10-18",
+      "done_at": "2026-10-18"
+    },
+    {
+      "id": "x402-paid-by-source-reading",
+      "title": "Daily numbers: the `x402 paid` clause names the source, UA family and distinct clients of external x402 payments (24 h and 30 d), the runner prints CDP's per-resource Bazaar list, and paid x402 calls count toward `datasets 30d external`",
+      "why": "Research 2026-10-19 (burn-down): the first external x402 payments landed 10-17/18 (`1 x402 paid`, then `3 x402 paid`; `bazaar: 1 listed, 3 calls/30d, 3 payers`) and no routine can say what sold — `metrics.mjs` reads the `x402_paid` point only as a count (`kinds`) and as an after-wall move, though the point already carries the UA (blob2), the path (blob3), the slug (blob5) and the hashed client id (blob6); `bazaarSummary` sums CDP's per-resource quality numbers and the job log prints no resource list; `datasets 30d external` counts only keyed REST/MCP calls, so a paid x402 call on a register is invisible to STRATEGY §7's dataset clock. Do: one Analytics Engine query over `x402_paid` rows with `blob2 NOT LIKE 'gankdat-x402-probe/%'` grouped by blob5 and the UA family (first token before `/`, as `connect_account 7d by UA` does) for 24 h and 30 d, with COUNT(DISTINCT blob6) clients, rendered `3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients; python-requests 2, x402-fetch 1)` and a `x402 30d: N paid, C clients — <slug> N, …` clause (`0 x402 paid` unchanged when none); print each resource and its quality numbers under the runner's `bazaar:` read (`x402-bazaar-read.ts`, one line per resource); add the 30-day x402 slugs to the `datasets 30d external` reading with an `x402` marker. Pure reads of blobs already written — no Worker change, no version bump; tests on the clause renderer like `test/wave-logs.spec.ts`. No parentheses inside the per-source list beyond the outer pair (`refresh-errors-to-queue` splits rows on them — keep the clause out of `refresh errors`).",
+      "effort_days": 0.05,
+      "proof": "the first Daily numbers row after an external x402 payment names its source and client count; the 10-23 week-1 read cites the per-resource list from the job log",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-19",
+      "done_at": "2026-10-19",
+      "updated": "2026-10-19"
+    },
+    {
+      "id": "refresh-marker-false-positive-2026-10-23",
+      "title": "Silent-refresh marker: a marker whose attempt did write its refresh_log row is cleared, never reported — recordSilentRefresh reads the newest refresh_log row of the slug and writes the `error` row only when none was created at or after the marker's started_at (else it deletes the stale marker and logs `refresh_progress_stale`); clearRefreshProgress retries the delete once after the KV same-key gap when it fails; refresh-progress.spec gets the stale-marker case",
+      "why": "The first `silent nights:` reading in the lane's life (10-23 row: `uk-sanctions started 2026-10-22 05:01:43Z died after written 6408 records at 3 s, no row written`) is a phantom: /v1/health read through the relay on 10-22 19:29 and 10-23 17:30 shows uk-sanctions ok rows at 2026-10-22 05:01:46 and 2026-10-23 05:02:30, and the 10-23 wave-1 invocation read `ok 108.1s`. cache.ts refreshSource writes the `written` mark, the ok row and the (skipped, same second) `stats` mark within one second and refreshOne then deletes the marker after a ≤ 1 s local wait — KV's one-write-a-second-per-key limit or a dropped delete leaves the marker, and the next night reports a death that never happened. Left alone, the auto-filer's two-rows-in-four rule files `refresh-uk-sanctions-<date>` on the next repeat and a build slot chases a healthy source; the reading built to tell a silent wave (10-18) is only worth keeping if it cannot lie. The reading itself stays: a marker with no later row is still a silent night. Built 2026-10-23 17:40 (burn-down, v0.25.4): `refreshLogRowSince` in store.ts reads the slug's newest refresh_log row and recordSilentRefresh deletes the marker with a `refresh_progress_stale` log line when that row was created at or after the marker's started_at (floored to the second); clearRefreshProgress retries a failed delete once after the gap; refresh-progress.spec gains the stale-marker, older-row and lost-delete cases (8 pass).",
+      "effort_days": 0.15,
+      "proof": "the next seven Daily numbers rows carry no `silent nights:` clause for a source whose /v1/health last_refreshed_at is that night; the stale-marker test passes",
+      "score": 6,
+      "status": "done",
+      "added": "2026-10-23",
+      "done_at": "2026-10-23"
+    },
+    {
+      "id": "oauth-resource-indicator-variants",
+      "title": "OAuth /authorize: accept an RFC 8707 `resource` that names this server in another valid canonical form (trailing slash, upper-case scheme or host, explicit :443, the bare origin https://gankdat.com) by comparing normalised URLs with resourceUrl, still rejecting any other host or path; the `authorize_rejected` funnel detail names the value the client sent (`invalid_target: <value>`) so the row's `rejected (…)` reading shows it",
+      "why": "The 10-20..10-23 Daily numbers rows read `oauth funnel 7d: … 0 authorize, 2 rejected (invalid_target: resource must be https://gankdat.com/mcp 2)`: the only two /authorize calls by anyone in the window were refused on a strict string compare (src/auth/oauth.ts authorizeParamError: `q.resource !== resourceUrl(env)`) and nothing records what they sent. The MCP authorization spec's canonical-URI examples list `https://mcp.example.com/mcp`, `https://mcp.example.com` and the port form as valid for one server and only say the trailing-slash form should be avoided, so a client that passes the origin or a slash is inside the spec and a lost sign-in — the lane has 0 OAuth connects by anyone but the owner since 09-30 and the Docker, Cursor and ChatGPT clients take the resource from their own config. Spec text read 2026-10-23 (authorization.mdx, raw GitHub): valid canonical URIs `https://mcp.example.com/mcp`, `https://mcp.example.com`, `https://mcp.example.com:8443`; invalid: no scheme, a fragment; \"implementations SHOULD accept uppercase scheme and host components\"; the trailing slash \"SHOULD consistently\" be omitted for interoperability, not rejected. Built 2026-10-23 17:45 (burn-down, v0.25.5): `resourceMatches` in auth/oauth.ts compares parsed URLs (https, this host, no query or fragment, path ``/`/`/`/mcp` slash-tolerant), the grant stores the canonical form, the funnel detail reads `invalid_target: <value sent>`; oauth.spec gains five accepted spellings, six refusals and the funnel line (26 pass).",
+      "effort_days": 0.1,
+      "proof": "`rejected` reads 0 for invalid_target on a 7-day window with ≥ 1 `authorize`, or the next rejection names the value in the row",
+      "score": 5,
+      "status": "done",
+      "added": "2026-10-23",
+      "done_at": "2026-10-23"
+    },
+    {
+      "id": "x402-bazaar-16-listed-read",
+      "title": "Read the 10-24 row's `bazaar:` clause and the 07:14 job log's `bazaar resource:` lines: 16 listed (every route but the paused uk-planning) closes the week-1 proof; fewer means read the catalogue through the relay for the missing routes, re-screen them with the `x402_probe` dispatch input, and make the facilitator's verdict readable — the Worker drops the settle response's EXTENSION-RESPONSES header, so the probe printed `no header` on all 16 settlements; forward that one header to the client in src/x402/routes.ts so a rejected resource says why",
+      "why": "The second forced probe round (run 261, 09:44, after v0.25.3) settled 16 of 17 routes with receipts on Base and the catalogue listed eu-ted within 20 minutes of its 09:25 settlement, so by CDP's documented ≤ 15 min indexing the 10-24 row should read `16 listed`. Nothing in the queue reads that row — the day-30 read is 11-14 — and the verdict header (`bazaar.status` success / processing / rejected + rejectedReason) is the only per-resource reason the facilitator gives.",
+      "effort_days": 0.1,
+      "proof": "`bazaar: 16 listed` on the 10-24 or 10-25 row recorded in RESEARCH.md; otherwise the missing routes named with the facilitator's reason",
+      "score": 4,
+      "status": "done",
+      "added": "2026-10-23",
+      "not_before": "2026-10-24",
+      "done_at": "2026-10-24"
+    },
+    {
+      "id": "zoho-crm-uk-registers-widget",
+      "title": "Zoho Marketplace: a \"UK organisation verification\" Zoho CRM extension (Sigma related-list widget on Account and Lead: company status and officers, charity record, sanctions hit from the gankdat registers) at US$9 per org per month or US$90 a year, 10-day trial, billed by Zoho at 0 % commission",
+      "why": "Exchange 2026-W43 (docs/exchange/2026-W43.md): the first billed shelf of the eight read in October that passes both halves (spike docs/exchange/spikes/zoho-marketplace-paid-extensions.md, 2026-10-24): Zoho bills the buyer in USD and handles tax, extension developers keep 100 % (the commission report defines total value and commission as equal; \"we will never charge a fee for extension development\"), a statement on the 1st when ≥ US$100 is due and a wire in ~15 working days, a self-serve company profile is the only gate (small verified vendors from the UK, Pakistan, India, Bangladesh sell there), review 2–3 weeks with a demo call; demand first-hand — seven of eleven paid CRM listings at 100–2,800 installs (Linked Pro 600+ at US$20/org/month, 49 reviews), verification extensions with 34–53 reviews, no UK-register or KYB extension on the shelf, Zoho's own enrichment covers size and financials on Enterprise only. Build: a Sigma extension (zet CLI) whose widget calls uk-company-profiles, uk-charities and uk-sanctions for the record's company name or number with the buyer's gankdat key or a bundled x402/credit lane, Deluge only as glue; 2 days. Score 2 × 2.5 ÷ (2 d + an owner hour) ≈ 2.4 at weight 1 — queued beside the week's winner rather than parked because its owner step rides the same batched request and idle slots exist (47 cold burn-down slots in W42). Blocked until the owner's free Zoho Developer Console sign-in exists: the widget cannot be tested without a developer org, and account creation is the owner's (CLAUDE.md).",
+      "effort_days": 2,
+      "proof": "Listed on marketplace.zoho.com; ≥ 25 installs and ≥ 3 paying orgs within 60 days of listing (partner console); kill below 10 installs at day 60",
+      "score": 2.4,
+      "status": "blocked",
+      "blocked_on": "owner: a free Zoho Developer Console sign-in (marketplace.zoho.com company profile under the trading name) — batched into action 029 with the Etsy shop (raised 2026-10-24, ALERTS 2026-10-24); bank details and the demo call come at listing time",
+      "added": "2026-10-24"
     }
   ]
 }

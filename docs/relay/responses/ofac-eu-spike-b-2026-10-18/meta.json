@@ -1,0 +1,46 @@
+{
+  "request": "ofac-eu-spike-b-2026-10-18",
+  "fetched_at": "2026-10-18T18:27:39.314Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://help.sanctions.io/knowledge-base/pricing-plans",
+      "fetched_at": "2026-10-18T18:27:37.001Z",
+      "status": 200,
+      "final_url": "https://help.sanctions.io/knowledge-base/resources/pricing-plans",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Fri, 16 Oct 2026 21:00:59 GMT"
+      },
+      "file": "1.html",
+      "bytes": 107577,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://verifex.dev/",
+      "fetched_at": "2026-10-18T18:27:37.766Z",
+      "status": 200,
+      "final_url": "https://verifex.dev/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 342660,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://verifex.dev/pricing",
+      "fetched_at": "2026-10-18T18:27:39.010Z",
+      "status": 200,
+      "final_url": "https://verifex.dev/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 190298,
+      "truncated": false
+    }
+  ]
+}

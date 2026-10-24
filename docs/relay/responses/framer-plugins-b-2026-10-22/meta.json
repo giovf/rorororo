@@ -1,0 +1,379 @@
+{
+  "request": "framer-plugins-b-2026-10-22",
+  "fetched_at": "2026-10-22T21:25:57.056Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/legal/community-terms/",
+      "fetched_at": "2026-10-22T21:25:39.407Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/legal/community-terms",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "104322",
+        "last-modified": "Thu, 22 Oct 2026 19:50:19 GMT",
+        "etag": "\"92ed0f409962446cf31bc475a05318fa\""
+      },
+      "file": "1.html",
+      "bytes": 940899,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/help/articles/how-refunds-work-on-the-marketplace/",
+      "fetched_at": "2026-10-22T21:25:40.180Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/help/articles/how-refunds-work-on-the-marketplace/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "100570",
+        "last-modified": "Thu, 22 Oct 2026 20:01:40 GMT",
+        "etag": "\"ebb6a2930511d2a22f9a28fa05e3508a\""
+      },
+      "file": "2.html",
+      "bytes": 950665,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/help/articles/how-to-request-a-refund-for-a-purchased-template/",
+      "fetched_at": "2026-10-22T21:25:40.893Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/help/articles/how-refunds-work-on-the-marketplace/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "100570",
+        "last-modified": "Thu, 22 Oct 2026 20:01:40 GMT",
+        "etag": "\"ebb6a2930511d2a22f9a28fa05e3508a\""
+      },
+      "file": "3.html",
+      "bytes": 950665,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/pdf-export/",
+      "fetched_at": "2026-10-22T21:25:41.409Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/pdf-export/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 163131,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/forms-plugin/",
+      "fetched_at": "2026-10-22T21:25:42.079Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/forms-plugin/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 232998,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/framerforms/",
+      "fetched_at": "2026-10-22T21:25:42.660Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/framerforms/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 181889,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/password-protect/",
+      "fetched_at": "2026-10-22T21:25:43.237Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/password-protect/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 154680,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/password-gate/",
+      "fetched_at": "2026-10-22T21:25:43.853Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/password-gate/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 183015,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/clean-my-framer/",
+      "fetched_at": "2026-10-22T21:25:44.588Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/clean-my-framer/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.html",
+      "bytes": 159225,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/template-checker/",
+      "fetched_at": "2026-10-22T21:25:45.175Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/template-checker/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 170311,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/shieldpage/",
+      "fetched_at": "2026-10-22T21:25:45.859Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/shieldpage/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 147928,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/tweaker/",
+      "fetched_at": "2026-10-22T21:25:46.457Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/tweaker/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.html",
+      "bytes": 166854,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/breakpoint-pilot/",
+      "fetched_at": "2026-10-22T21:25:47.048Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/breakpoint-pilot/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.html",
+      "bytes": 191023,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/feedify-rss/",
+      "fetched_at": "2026-10-22T21:25:47.671Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/feedify-rss/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.html",
+      "bytes": 162478,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/asset-manager/",
+      "fetched_at": "2026-10-22T21:25:48.347Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/asset-manager/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.html",
+      "bytes": 150794,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/layout-scale/",
+      "fetched_at": "2026-10-22T21:25:49.002Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/layout-scale/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.html",
+      "bytes": 159738,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/punchcut/",
+      "fetched_at": "2026-10-22T21:25:49.824Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/punchcut/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.html",
+      "bytes": 147862,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/ai-design-to-framer/",
+      "fetched_at": "2026-10-22T21:25:50.531Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/ai-design-to-framer/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.html",
+      "bytes": 163264,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/superfields/",
+      "fetched_at": "2026-10-22T21:25:51.100Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/superfields/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.html",
+      "bytes": 183651,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/noteframe/",
+      "fetched_at": "2026-10-22T21:25:51.710Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/noteframe/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.html",
+      "bytes": 183091,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/migrate/",
+      "fetched_at": "2026-10-22T21:25:52.508Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/migrate/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "21.html",
+      "bytes": 179342,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/react-export/",
+      "fetched_at": "2026-10-22T21:25:53.084Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/react-export/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "22.html",
+      "bytes": 174425,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/angled-screen/",
+      "fetched_at": "2026-10-22T21:25:53.661Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/angled-screen/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "23.html",
+      "bytes": 163273,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/videoframe/",
+      "fetched_at": "2026-10-22T21:25:54.400Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/videoframe/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "24.html",
+      "bytes": 179683,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/framer-commerce/",
+      "fetched_at": "2026-10-22T21:25:55.058Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/framer-commerce/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "25.html",
+      "bytes": 178555,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/figma-sync/",
+      "fetched_at": "2026-10-22T21:25:55.626Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/figma-sync/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "26.html",
+      "bytes": 162475,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/design-bridge-mcp/",
+      "fetched_at": "2026-10-22T21:25:56.255Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/design-bridge-mcp/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "27.html",
+      "bytes": 155332,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/shadergradient/",
+      "fetched_at": "2026-10-22T21:25:56.928Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/shadergradient/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "28.html",
+      "bytes": 160012,
+      "truncated": false
+    }
+  ]
+}

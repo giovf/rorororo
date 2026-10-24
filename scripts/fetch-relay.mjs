@@ -7,6 +7,13 @@
 //
 // Line syntax:   [HEAD|GET] [RANGE=a-b] <https url>      (# comments and blank lines ignored)
 //                POST <https url> <json>                  (foundry relay-post-json, 2026-10-14)
+//                [GET] RENDER <https url>                 (foundry relay-rendered-fetch, 2026-10-22)
+// A RENDER line opens the page in Playwright's Chromium (a fresh context: no cookies, no storage, no
+// interaction; images, media and fonts are not loaded), waits for the network to go idle, and saves
+// the rendered DOM as <n>.html — for shelves whose listing pages are client-rendered shells (the Wix
+// App Market category pages came back as 0.2–2.5 MB of script tags and zero app links on 2026-10-22).
+// Same allowlist and MAX_BYTES cap as a GET. The workflow runs `npm ci` and installs Chromium only
+// when `node scripts/fetch-relay.mjs needs-render` prints true, so an ordinary run stays dependency-free.
 // Only hosts listed in docs/relay/hosts.txt are fetched (public data and store pages — never
 // anything that needs a credential; a data file since 2026-10-16 so adding a host is not a code push). GET bodies are capped at MAX_BYTES; use RANGE for big files. A POST
 // body is one JSON document, ≤ 4 kB, refused when a key or value is credential-shaped
@@ -22,6 +29,7 @@ import {
   RETRY_STATUSES,
   SAME_HOST_PACE_MS,
   hostAllowed,
+  needsRender,
   parseHosts,
   parseLine,
   retryDelayMs,
@@ -31,6 +39,16 @@ const ROOT = path.resolve(import.meta.dirname, '..', 'docs', 'relay');
 const MAX_BYTES = 8 * 1024 * 1024;
 const KEEP_DAYS = 7;
 const TIMEOUT_MS = 90_000;
+/** A rendered page gets this long for its network to go idle after the document loaded; a page that
+ * keeps polling (analytics, chat widgets) is saved as it stands then, not failed. */
+const RENDER_IDLE_MS = 30_000;
+const RENDER_BLOCKED_RESOURCES = new Set(['image', 'media', 'font']);
+/** After the scroll-through, how long the network gets to go idle again; then a fixed settle for
+ * frameworks that paint a tick after their last response. */
+const RENDER_SCROLL_IDLE_MS = 10_000;
+const RENDER_SETTLE_MS = 1_500;
+/** Failed requests and console errors kept per rendered page in meta.json. */
+const RENDER_DIAG_CAP = 20;
 const USER_AGENT =
   'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0 Safari/537.36 gankdat-relay';
 /** Allowed hosts live in docs/relay/hosts.txt (suffixes `.x` match x and any subdomain; exact hosts otherwise). */
@@ -54,6 +72,94 @@ function extOf(contentType) {
   return 'bin';
 }
 
+/** The one Chromium per run, launched on the first RENDER line (needs `npm ci` + the browser). */
+let browserPromise;
+function browser() {
+  // RELAY_CHROMIUM: a local run points at a browser it already has (the sandbox's /opt/pw-browsers/chromium).
+  browserPromise ??= import('playwright').then(({ chromium }) =>
+    chromium.launch({ executablePath: process.env.RELAY_CHROMIUM || undefined }),
+  );
+  return browserPromise;
+}
+
+/** Writes `body` as `<index>.<ext>`, capped at MAX_BYTES; returns the file fields for meta.json. */
+function saveBody(outDir, index, ext, body) {
+  const truncated = body.length > MAX_BYTES;
+  const file = `${index}.${ext}`;
+  writeFileSync(path.join(outDir, file), truncated ? body.subarray(0, MAX_BYTES) : body);
+  return { file, bytes: truncated ? MAX_BYTES : body.length, truncated };
+}
+
+/** A RENDER line: the page as Chromium renders it, after the network goes idle (or RENDER_IDLE_MS),
+ * one programmatic scroll to the bottom (lazy sections) and a short settle. `rendered` in meta.json
+ * records what happened — request count, failed or 4xx/5xx XHR/fetch calls, console errors — so a
+ * shell that stays a shell can be read (bot wall, blocked API, consent gate) instead of guessed at. */
+async function renderOne(req, url, outDir, index, meta) {
+  const context = await (await browser()).newContext({ userAgent: USER_AGENT });
+  const rendered = { network_idle: true, requests: 0, failed: [], console_errors: [] };
+  const note = (list, text) => {
+    if (list.length < RENDER_DIAG_CAP) list.push(text.slice(0, 200));
+  };
+  try {
+    await context.route('**/*', (route) =>
+      RENDER_BLOCKED_RESOURCES.has(route.request().resourceType())
+        ? route.abort()
+        : route.continue(),
+    );
+    const page = await context.newPage();
+    page.on('request', () => rendered.requests++);
+    page.on('requestfailed', (r) => {
+      if (!RENDER_BLOCKED_RESOURCES.has(r.resourceType()))
+        note(rendered.failed, `${r.method()} ${r.url()} → ${r.failure()?.errorText ?? 'failed'}`);
+    });
+    page.on('response', (r) => {
+      const type = r.request().resourceType();
+      if (r.status() >= 400 && (type === 'xhr' || type === 'fetch' || type === 'document'))
+        note(rendered.failed, `${r.request().method()} ${r.url()} → ${r.status()}`);
+    });
+    page.on('console', (m) => {
+      // Our own aborted images, media and fonts log `net::ERR_FAILED` here; real failures are in `failed`.
+      if (m.type() === 'error' && !/^Failed to load resource: net::ERR_FAILED$/.test(m.text()))
+        note(rendered.console_errors, m.text());
+    });
+    page.on('pageerror', (e) => note(rendered.console_errors, `uncaught: ${e.message}`));
+    const res = await page.goto(url.href, { waitUntil: 'domcontentloaded', timeout: TIMEOUT_MS });
+    const idle = (ms) =>
+      page.waitForLoadState('networkidle', { timeout: ms }).catch(() => {
+        rendered.network_idle = false;
+      });
+    await idle(RENDER_IDLE_MS);
+    // One scroll to the bottom in viewport steps: lists that render on intersection load; no clicks, no input.
+    /* eslint-disable no-undef -- runs in the page, where window and document exist */
+    await page.evaluate(async () => {
+      const step = window.innerHeight;
+      for (let y = 0; y < document.documentElement.scrollHeight && y < 20 * step; y += step) {
+        window.scrollTo(0, y);
+        await new Promise((r) => setTimeout(r, 100));
+      }
+      window.scrollTo(0, 0);
+    });
+    /* eslint-enable no-undef */
+    await idle(RENDER_SCROLL_IDLE_MS);
+    await page.waitForTimeout(RENDER_SETTLE_MS);
+    const html = Buffer.from(await page.content(), 'utf8');
+    meta.status = res?.status() ?? null;
+    meta.final_url = page.url();
+    meta.title = await page.title();
+    meta.rendered = rendered;
+    if (res) {
+      meta.headers = Object.fromEntries(
+        ['content-type', 'last-modified', 'etag']
+          .filter((k) => res.headers()[k] !== undefined)
+          .map((k) => [k, res.headers()[k]]),
+      );
+    }
+    return { ...meta, ...saveBody(outDir, index, 'html', html) };
+  } finally {
+    await context.close();
+  }
+}
+
 async function fetchOne(req, outDir, index) {
   const meta = { ...req, fetched_at: new Date().toISOString() };
   let url;
@@ -65,7 +171,14 @@ async function fetchOne(req, outDir, index) {
   if (url.protocol !== 'https:' || !allowed(url.hostname)) {
     return { ...meta, error: `host not on the relay allowlist: ${url.hostname}` };
   }
-  if (req.error) return { ...meta, error: req.error }; // a malformed or credential-shaped POST line
+  if (req.error) return { ...meta, error: req.error }; // a malformed, credential-shaped or mis-verbed line
+  if (req.render) {
+    try {
+      return await renderOne(req, url, outDir, index, meta);
+    } catch (err) {
+      return { ...meta, error: `render: ${err instanceof Error ? err.message : String(err)}` };
+    }
+  }
   const headers = { 'user-agent': USER_AGENT, accept: '*/*' };
   if (req.range) headers.range = `bytes=${req.range}`;
   if (req.method === 'POST') {
@@ -165,13 +278,22 @@ if (process.argv[1] && path.resolve(process.argv[1]) === new URL(import.meta.url
   const files = readdirSync(reqDir)
     .filter((f) => f.endsWith('.txt'))
     .map((f) => path.join(reqDir, f));
-  for (const f of files) {
-    const { name, results } = await processRequest(f);
-    for (const r of results) {
-      console.log(
-        `${name}: ${r.method} ${r.url} → ${r.error ? 'ERR ' + r.error : `${r.status} ${r.file ?? ''} ${r.bytes ?? ''}${r.truncated ? ' (truncated)' : ''}`}`,
-      );
+  if (process.argv[2] === 'needs-render') {
+    // The workflow's gate: `true` when any pending request carries a usable RENDER line.
+    console.log(String(files.some((f) => needsRender(readFileSync(f, 'utf8')))));
+    process.exit(0);
+  }
+  try {
+    for (const f of files) {
+      const { name, results } = await processRequest(f);
+      for (const r of results) {
+        console.log(
+          `${name}: ${r.method}${r.render ? ' RENDER' : ''} ${r.url} → ${r.error ? 'ERR ' + r.error : `${r.status} ${r.file ?? ''} ${r.bytes ?? ''}${r.truncated ? ' (truncated)' : ''}`}`,
+        );
+      }
     }
+  } finally {
+    if (browserPromise) await (await browserPromise).close();
   }
   prune();
   if (files.length === 0) console.log('no relay requests');

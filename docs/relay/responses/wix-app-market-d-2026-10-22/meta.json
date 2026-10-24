@@ -1,0 +1,273 @@
+{
+  "request": "wix-app-market-d-2026-10-22",
+  "fetched_at": "2026-10-22T19:16:18.180Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/robots.txt",
+      "fetched_at": "2026-10-22T19:15:48.401Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/robots.txt",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "content-length": "774",
+        "etag": "W/\"aed-r5CEorhKSq/eP8snSanEMQnYCKY\""
+      },
+      "file": "1.txt",
+      "bytes": 2797,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/optimizer-valid-vat-address",
+      "fetched_at": "2026-10-22T19:15:48.947Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/optimizer-valid-vat-address",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"89684-L9PWnJVqB1tc840jBxKzwRQZB6Q\""
+      },
+      "file": "2.html",
+      "bytes": 562820,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/fme-modules-vat-dual-pricing",
+      "fetched_at": "2026-10-22T19:15:50.227Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/fme-modules-vat-dual-pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"7a7f5-fxbylMclj3DLUVLBXkSuLqnQkfI\""
+      },
+      "file": "3.html",
+      "bytes": 501749,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/exemptify",
+      "fetched_at": "2026-10-22T19:15:51.815Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/exemptify",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"7da85-n5+4f52eWGv+3o8evkX2BDn+Xbo\""
+      },
+      "file": "4.html",
+      "bytes": 514693,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/763efe52-be2e-46ea-b187-35de457df0d5",
+      "fetched_at": "2026-10-22T19:15:53.275Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/763efe52-be2e-46ea-b187-35de457df0d5",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"7d474-m55utuTa71AjWsu354ODg+DT2Ec\""
+      },
+      "file": "5.html",
+      "bytes": 513140,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/gdpr-cookie-consent",
+      "fetched_at": "2026-10-22T19:15:54.712Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/gdpr-cookie-consent",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"95112-cSZEVJaaG0V4UF6Yt2QjE1SYNMc\""
+      },
+      "file": "6.html",
+      "bytes": 610578,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/overlayout-cookie-banner-for-consent",
+      "fetched_at": "2026-10-22T19:15:56.135Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/overlayout-cookie-banner-for-consent",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"8a39f-5mJQbg2+uagOe3Fgsfjmu/iudfc\""
+      },
+      "file": "7.html",
+      "bytes": 566175,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/cookieyes-gdpr-cookie-banner",
+      "fetched_at": "2026-10-22T19:15:57.983Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/cookieyes-gdpr-cookie-banner",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"9cbdb-vZNMOsiJybOn0DylpIzlqHUoLo4\""
+      },
+      "file": "8.html",
+      "bytes": 642011,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/cookie-consent-gdpr",
+      "fetched_at": "2026-10-22T19:15:59.667Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/cookie-consent-gdpr",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"98220-a8nyVZj3VF7WM+/NNGzka+hbXx8\""
+      },
+      "file": "9.html",
+      "bytes": 623136,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/consentik-gdpr-cookie-banner",
+      "fetched_at": "2026-10-22T19:16:01.444Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/consentik-gdpr-cookie-banner",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"9ce1c-N/RkgjL0dAe3PqfaE7a+YA8KO+0\""
+      },
+      "file": "10.html",
+      "bytes": 642588,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/victor14898-consentify-1",
+      "fetched_at": "2026-10-22T19:16:03.534Z",
+      "status": 404,
+      "final_url": "https://www.wix.com/app-market/victor14898-consentify-1",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"38199-FQIsLD6OkyygO9YGFrtUYkzsZNY\""
+      },
+      "file": "11.html",
+      "bytes": 229785,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/age-verification-popup",
+      "fetched_at": "2026-10-22T19:16:04.911Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/age-verification-popup",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"96ca2-mR2OGifGhkJER8RPEGBkK2md5Xw\""
+      },
+      "file": "12.html",
+      "bytes": 617634,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/age-verification-verify-age",
+      "fetched_at": "2026-10-22T19:16:06.456Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/age-verification-verify-age",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"98f47-Fc8q9fBBpcrR5OZV6NB7bYlbkn4\""
+      },
+      "file": "13.html",
+      "bytes": 626503,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/bl-age-verification-18-21",
+      "fetched_at": "2026-10-22T19:16:09.120Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/bl-age-verification-18-21",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"7d3a8-C7JyuAufFQZSMt6Yo2YYI30kVVI\""
+      },
+      "file": "14.html",
+      "bytes": 512936,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/agecheck-age-verification",
+      "fetched_at": "2026-10-22T19:16:10.726Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/agecheck-age-verification",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"7b0af-KsQZFn9lCS19cunUy/4QQhTrvb0\""
+      },
+      "file": "15.html",
+      "bytes": 503983,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/age-verification-ultra",
+      "fetched_at": "2026-10-22T19:16:12.149Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/age-verification-ultra",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"894d7-Lbz9U/tCzf/rUw0P1NZjEAZM2JU\""
+      },
+      "file": "16.html",
+      "bytes": 562391,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/codeyard-age-verification-popup-1",
+      "fetched_at": "2026-10-22T19:16:13.698Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/codeyard-age-verification-popup-1",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"7f328-l11RkbPqJ7GqdVlNLgWxBWFREIY\""
+      },
+      "file": "17.html",
+      "bytes": 521000,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/70511f15-4fee-416b-a9e5-b918eaddd8e0",
+      "fetched_at": "2026-10-22T19:16:15.527Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/70511f15-4fee-416b-a9e5-b918eaddd8e0",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"7d4cc-Oihcpg0rk/LGw04vAvSz4J0Lf4o\""
+      },
+      "file": "18.html",
+      "bytes": 513228,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.wix.com/app-market/web-solution/28083b21-7176-4860-9067-40661a55e6f1",
+      "fetched_at": "2026-10-22T19:16:17.048Z",
+      "status": 200,
+      "final_url": "https://www.wix.com/app-market/28083b21-7176-4860-9067-40661a55e6f1",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"89774-GPn0LjFGlqo3jrmEfxKpAcVVBM0\""
+      },
+      "file": "19.html",
+      "bytes": 563060,
+      "truncated": false
+    }
+  ]
+}

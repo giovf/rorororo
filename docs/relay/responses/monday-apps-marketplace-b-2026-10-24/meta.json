@@ -1,0 +1,128 @@
+{
+  "request": "monday-apps-marketplace-b-2026-10-24",
+  "fetched_at": "2026-10-24T00:20:54.477Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/implementing-monetization.md",
+      "fetched_at": "2026-10-24T00:20:46.469Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/implementing-monetization.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"9d8481c81339d8dd3aa87e036b1ad5f351c2135c:expanded|c853aabb\""
+      },
+      "file": "1.txt",
+      "bytes": 2775,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/monetization.md",
+      "fetched_at": "2026-10-24T00:20:47.421Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/monetization.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"8e7a5fe7cd9f2c2b735c4b847dc00c7f03c6bb64:expanded|c853aabb\""
+      },
+      "file": "2.txt",
+      "bytes": 1764,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/changelog/new-monetization-requirements-for-marketplace-approval.md",
+      "fetched_at": "2026-10-24T00:20:48.177Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/changelog/new-monetization-requirements-for-marketplace-approval.md",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 1143296,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/installs.md",
+      "fetched_at": "2026-10-24T00:20:49.370Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/installs.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"71c3760ce46935b3bcbdcc13460d28111b233e50:expanded|c853aabb\""
+      },
+      "file": "4.txt",
+      "bytes": 4035,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/marketplace-programs.md",
+      "fetched_at": "2026-10-24T00:20:50.168Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/marketplace-programs.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"ad67efec282fd0fee61e6180657504cef26c61a2-267bb26958529e4c7fd9baf4cebf13e420965714:expanded|c853aabb\""
+      },
+      "file": "5.txt",
+      "bytes": 1223,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/partner-program.md",
+      "fetched_at": "2026-10-24T00:20:51.011Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/partner-program.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"6105578837c0a0ea2592c95dd6cd3705fdb4fdb3:expanded|c853aabb\""
+      },
+      "file": "6.txt",
+      "bytes": 7698,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://community.monday.com/t/app-payouts-payoneer/64682.json",
+      "fetched_at": "2026-10-24T00:20:51.337Z",
+      "status": 404,
+      "final_url": "https://community.monday.com/t/app-payouts-payoneer/64682.json",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "7.html",
+      "bytes": 320570,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-community.monday.com/api-apps-framework-4/app-payouts-payoneer-2035",
+      "fetched_at": "2026-10-24T00:20:51.860Z",
+      "status": 200,
+      "final_url": "https://developer-community.monday.com/api-apps-framework-4/app-payouts-payoneer-2035",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 242479,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer-community.monday.com/share-your-app-6/per-seat-pricing-do-all-monday-users-have-to-pay-for-my-app-in-seat-based-pricing-5249",
+      "fetched_at": "2026-10-24T00:20:53.558Z",
+      "status": 200,
+      "final_url": "https://developer-community.monday.com/share-your-app-6/per-seat-pricing-do-all-monday-users-have-to-pay-for-my-app-in-seat-based-pricing-5249",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.html",
+      "bytes": 198152,
+      "truncated": false
+    }
+  ]
+}

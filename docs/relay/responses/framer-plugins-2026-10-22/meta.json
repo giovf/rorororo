@@ -1,0 +1,437 @@
+{
+  "request": "framer-plugins-2026-10-22",
+  "fetched_at": "2026-10-22T20:46:36.238Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/categories/utilities/",
+      "render": true,
+      "fetched_at": "2026-10-22T20:46:02.644Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/categories/utilities/",
+      "title": "Utility Plugins for Framer",
+      "rendered": {
+        "network_idle": true,
+        "requests": 392,
+        "failed": [
+          "POST https://www.google.com/ccm/collect?rcb=2&frm=0&apvc=1&ae=g&auid=1108031695.1792701964&dt=Utility%20Plugins%20for%20Framer&en=page_view&dl=https%3A%2F%2Fwww.framer.com%2Fmarketplace%2Fplugins%2Fca",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/site/users/me → 401",
+          "POST https://www.google.com/rmkt/collect/767568133/?random=1167782581&fst=1792701964711&cv=10&fmt=8&bg=ffffff&guid=ON&u_w=1280&u_h=720&gtm=45j91e6al0v9101309483z99203990758za20ozb79263478zd79263478xf1",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=KZRkSk8BdSmpffp7UBAb9b&st=oaiq-web&sv=0.1.93&t=1792701965767&ec=2 → net::ERR_ABORTED",
+          "POST https://inferred.litix.io/ → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "[GSI_LOGGER]: FedCM get() rejects with TypeError: Failed to execute 'get' on 'CredentialsContainer': Failed to read the 'identity' property from 'CredentialRequestOptions': Failed to read the 'mode' p"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 182957,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/?price=paid",
+      "render": true,
+      "fetched_at": "2026-10-22T20:46:10.526Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/?price=paid",
+      "title": "Plugins — Framer Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 345,
+        "failed": [
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/auth/signin → 401",
+          "POST https://www.google.com/ccm/collect?rcb=19&frm=0&apvc=1&ae=g&auid=2017632116.1792701971&dt=Plugins%20%E2%80%94%20Framer%20Marketplace&en=page_view&dl=https%3A%2F%2Fwww.framer.com%2Fmarketplace%2Fp",
+          "GET https://api.framer.com/auth/signin → 401",
+          "GET https://api.framer.com/site/users/me → 401",
+          "POST https://www.google.com/rmkt/collect/767568133/?random=138877304&fst=1792701972168&cv=10&fmt=8&bg=ffffff&guid=ON&u_w=1280&u_h=720&gtm=45j91e6al0v9101309483z99203990758za20ozb79263478zd79263478xf1&",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=KZRkSk8BdSmpffp7UBAb9b&st=oaiq-web&sv=0.1.93&t=1792701973124&ec=2 → net::ERR_ABORTED",
+          "POST https://inferred.litix.io/ → net::ERR_ABORTED",
+          "POST https://inferred.litix.io/ → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "Failed to load resource: the server responded with a status of 401 ()",
+          "[GSI_LOGGER]: FedCM get() rejects with TypeError: Failed to execute 'get' on 'CredentialsContainer': Failed to read the 'identity' property from 'CredentialRequestOptions': Failed to read the 'mode' p"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 180255,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/help/articles/how-to-publish-a-plugin/",
+      "fetched_at": "2026-10-22T20:46:16.939Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/help/articles/how-to-publish-a-plugin/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "101986",
+        "last-modified": "Thu, 22 Oct 2026 19:53:37 GMT",
+        "etag": "\"9450437a99bea70c043521c9bd13b3cd\""
+      },
+      "file": "3.html",
+      "bytes": 960822,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/help/articles/how-to-sell-a-plugin/",
+      "fetched_at": "2026-10-22T20:46:17.780Z",
+      "status": 404,
+      "final_url": "https://www.framer.com/help/articles/how-to-sell-a-plugin/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "91408",
+        "last-modified": "Thu, 22 Oct 2026 19:49:54 GMT",
+        "etag": "\"3e771f468cf26838e3b48496a1d349fa\""
+      },
+      "file": "4.html",
+      "bytes": 837162,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/help/articles/marketplace-payouts/",
+      "fetched_at": "2026-10-22T20:46:18.341Z",
+      "status": 404,
+      "final_url": "https://www.framer.com/help/articles/marketplace-payouts/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "91408",
+        "last-modified": "Thu, 22 Oct 2026 19:49:54 GMT",
+        "etag": "\"3e771f468cf26838e3b48496a1d349fa\""
+      },
+      "file": "5.html",
+      "bytes": 837162,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/help/articles/how-to-get-paid-as-a-creator/",
+      "fetched_at": "2026-10-22T20:46:18.902Z",
+      "status": 404,
+      "final_url": "https://www.framer.com/help/articles/how-to-get-paid-as-a-creator/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "91408",
+        "last-modified": "Thu, 22 Oct 2026 19:49:54 GMT",
+        "etag": "\"3e771f468cf26838e3b48496a1d349fa\""
+      },
+      "file": "6.html",
+      "bytes": 837162,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/legal/",
+      "fetched_at": "2026-10-22T20:46:19.469Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/legal/acceptable-use-policy",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "95230",
+        "last-modified": "Thu, 22 Oct 2026 19:54:31 GMT",
+        "etag": "\"88aa689d3590740d5814982243867a20\""
+      },
+      "file": "7.html",
+      "bytes": 882011,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/legal/marketplace-terms/",
+      "fetched_at": "2026-10-22T20:46:20.112Z",
+      "status": 404,
+      "final_url": "https://www.framer.com/legal/marketplace-terms/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "91408",
+        "last-modified": "Thu, 22 Oct 2026 19:49:54 GMT",
+        "etag": "\"3e771f468cf26838e3b48496a1d349fa\""
+      },
+      "file": "8.html",
+      "bytes": 837162,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/legal/creator-program-terms/",
+      "fetched_at": "2026-10-22T20:46:20.675Z",
+      "status": 404,
+      "final_url": "https://www.framer.com/legal/creator-program-terms/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "91408",
+        "last-modified": "Thu, 22 Oct 2026 19:49:54 GMT",
+        "etag": "\"3e771f468cf26838e3b48496a1d349fa\""
+      },
+      "file": "9.html",
+      "bytes": 837162,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/image-lightbox-gallery/",
+      "fetched_at": "2026-10-22T20:46:21.237Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/image-lightbox-gallery/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 170861,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/imagegen/",
+      "fetched_at": "2026-10-22T20:46:22.112Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/imagegen/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 145701,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/josie/",
+      "fetched_at": "2026-10-22T20:46:22.920Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/josie/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.html",
+      "bytes": 171234,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/the-design-futurist/",
+      "fetched_at": "2026-10-22T20:46:23.701Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/the-design-futurist/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.html",
+      "bytes": 142783,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/3d-pdf-flipbook/",
+      "fetched_at": "2026-10-22T20:46:24.770Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/3d-pdf-flipbook/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.html",
+      "bytes": 164283,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/frameship/",
+      "fetched_at": "2026-10-22T20:46:25.552Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/frameship/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.html",
+      "bytes": 180712,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/mcp/",
+      "fetched_at": "2026-10-22T20:46:26.553Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/mcp/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.html",
+      "bytes": 181596,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/kompa/",
+      "fetched_at": "2026-10-22T20:46:27.430Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/kompa/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.html",
+      "bytes": 166739,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/framer-forms-connect/",
+      "fetched_at": "2026-10-22T20:46:28.297Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/framer-forms-connect/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.html",
+      "bytes": 184968,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/3d-shapes/",
+      "fetched_at": "2026-10-22T20:46:29.116Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/3d-shapes/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.html",
+      "bytes": 177545,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/edit-image/",
+      "fetched_at": "2026-10-22T20:46:30.024Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/edit-image/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.html",
+      "bytes": 171923,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/context-picker/",
+      "fetched_at": "2026-10-22T20:46:30.895Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/context-picker/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "21.html",
+      "bytes": 169194,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/lantis-translate-your-site/",
+      "fetched_at": "2026-10-22T20:46:31.803Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/lantis-translate-your-site/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "22.html",
+      "bytes": 151988,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/colorize/",
+      "fetched_at": "2026-10-22T20:46:32.619Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/colorize/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "23.html",
+      "bytes": 144765,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/frameloc/",
+      "fetched_at": "2026-10-22T20:46:33.341Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/frameloc/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "24.html",
+      "bytes": 164601,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/frameauth/",
+      "fetched_at": "2026-10-22T20:46:34.150Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/frameauth/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "25.html",
+      "bytes": 167032,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/text-effects-kit/",
+      "fetched_at": "2026-10-22T20:46:34.997Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/text-effects-kit/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "26.html",
+      "bytes": 167471,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.framer.com/marketplace/plugins/asset-analyzer/",
+      "fetched_at": "2026-10-22T20:46:35.886Z",
+      "status": 200,
+      "final_url": "https://www.framer.com/marketplace/plugins/asset-analyzer/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "27.html",
+      "bytes": 173899,
+      "truncated": false
+    }
+  ]
+}

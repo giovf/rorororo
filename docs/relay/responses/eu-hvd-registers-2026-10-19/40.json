@@ -1,0 +1,2914 @@
+{
+  "data": {
+    "total": 40,
+    "count": 40,
+    "offset": 0,
+    "limit": 40,
+    "desc": false,
+    "items": [
+      {
+        "title": "Spain Company Directory Scraper - Registro Mercantil",
+        "name": "spain-company-directory-scraper",
+        "username": "regdata",
+        "stats": {
+          "totalBuilds": 123,
+          "totalRuns": 5128,
+          "totalUsers": 97,
+          "totalUsers7Days": 7,
+          "totalUsers30Days": 20,
+          "totalUsers90Days": 40,
+          "lastRunStartedAt": "2026-10-18T02:16:45.449Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 3,
+            "FAILED": 116,
+            "SUCCEEDED": 411,
+            "TIMED-OUT": 6,
+            "TOTAL": 536
+          }
+        },
+        "description": "Scrape company data from Spain's official OpenData Registradores directory. Get NIF, officers, CNAE codes, legal form, address, and status from the Registro Mercantil - no API exists for this data.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/kEps_uHTQmhT1Ksk7YdU92Dj4YbIQf5ukg_iSBypr9o/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMHVKUVZ6eVRmbnlwVHlPOG8tYWN0b3ItOE5GanhUZUxaU2JRMXN2ZTktYkcxWnJPNDNXdC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "getregdata",
+        "userPictureUrl": "https://images.apifyusercontent.com/d8RApraTOL_e2yvNuB8M2xkOmO4okE8CbkOElLKqXF4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcU9aMVRZTDRQZ1FWcHhhOC1ES3ZkdldCVk9XcWhOMmhtb3V5YWg2NE4xNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNSFZLVVZaNmVWUm1ibmx3VkhsUE9HOHRjSEp2Wm1sc1pTMDFTbFp2U1hSTmRETnVMV2RsZEhKbFoyUmhkR0V0Ykc5bmJ5MDBNREF1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Company Record",
+                "eventDescription": "Single Spanish company record with NIF, officers, CNAE code, legal form, address, status, and registry data.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "search-session": {
+                "eventTitle": "Search session",
+                "eventDescription": "Charged once per run, and only when the run returns an answer - a company record or a definitive \"not in this registry\". A run that cannot reach the registry, cannot get past its CAPTCHA, or is given unusable input returns nothing and costs nothing.",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.025
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.015
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-08-31T08:25:42.745Z",
+          "createdAt": "2026-08-31T08:25:43.019Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-31T08:35:48.816Z"
+        },
+        "id": "8NFjxTeLZSbQ1sve9",
+        "url": "https://apify.com/regdata/spain-company-directory-scraper"
+      },
+      {
+        "title": "Spain Registro Mercantil Scraper - Companies, CNAE & Filings",
+        "name": "spain-registro-mercantil-cuentas-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 344,
+          "totalUsers": 24,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 7,
+          "lastRunStartedAt": "2026-10-18T07:48:39.997Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 81,
+            "TIMED-OUT": 0,
+            "TOTAL": 82
+          }
+        },
+        "description": "Look up Spanish companies by name from einforma.com free profiles. Get legal name, legal form, status, address, CNAE code, business purpose, last filed accounts year and recent BORME acts. KYC/KYB lookups and Spanish B2B directory enrichment.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/mwWFp95hLbzcfrKDv2-fUDj4CBBTo1elfR8GjHD2t7g/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItNzByN3MwRUdSVno4SGpOUk8tMjY3M2NaY001VS1zcGFpbi1yZWdpc3Ryby1tZXJjYW50aWwtY3VlbnRhcy1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:40:02.750Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:40:02.730Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "70r7s0EGRVz8HjNRO",
+        "url": "https://apify.com/jungle_synthesizer/spain-registro-mercantil-cuentas-scraper"
+      },
+      {
+        "title": "BORME Spain: New Companies and Registro Mercantil Changes",
+        "name": "borme-spain-new-companies",
+        "username": "sefran1",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 19,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T07:34:32.803Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 5,
+            "TIMED-OUT": 0,
+            "TOTAL": 5
+          }
+        },
+        "description": "Daily Spanish company register acts from BORME open data: new companies (constituciones) with address, capital and business purpose, plus moves, capital changes, dissolutions. $0.002 per company act.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Iberia Channel Desk",
+        "userPictureUrl": "https://images.apifyusercontent.com/FDNUvPbt0Ys6SS2QDWwO4QMTs_sHDV__nKH75HLIy7Q/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRkhjQmtCOFhhZU02MDJDcnNHU3J3U01WNFJQazVPUGcyRlRLQ25BU29NZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpODRNV0U1TnpRMlltUTROVGM0TVRsaFpEY3lPREUxT1RneE5EZzBNV1EyTUdJd1pEWmtOalU1TVRZek16Y3lOV1JqWXpka1lUQTNPRGc0WkRkbVpEZzNQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": 0.5,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "One result saved to the dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-14T07:26:30.622Z",
+          "startedAt": "2026-10-14T07:26:30.622Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-14T07:30:28.661Z"
+        },
+        "id": "Wu5cRGW9HIwbO7A22",
+        "url": "https://apify.com/sefran1/borme-spain-new-companies"
+      },
+      {
+        "title": "Aviso Legal Scraper — Spain CIF, Registro Mercantil & Contacts",
+        "name": "aviso-legal-contact-scraper",
+        "username": "scrapersdelight",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 186,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-17T11:00:37.215Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Turn Spanish company domains into verified B2B/KYB leads from each site's statutory Aviso Legal (Ley 34/2002): legal name, CIF/NIF with the official AEAT check digit, Registro Mercantil province + tomo/folio/hoja, domicilio social, email and phone.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/s7sEh2L6FuAiEfXFge-iMm54gv-MFw9ie4lfQ8Ffklo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQlRna3dMRUM0YlpWemI4VmItYWN0b3ItaE1Qd2dMQkpST0xacWswOXItODJYYnZxQ3liYS0xMTAtYXZpc28tbGVnYWwtY29udGFjdC1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Delight",
+        "userPictureUrl": "https://images.apifyusercontent.com/SjUfVS2plLJy6kHfthU67C5f9v0e6wVrAbVTS2w1R3A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRmxwWnZpaF9memhGWnlPTEI4Ml9FRGhTQm1pUFRiYWJUWWNia00ySUhnNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRbFJuYTNkTVJVTTBZbHBXZW1JNFZtSXRjSEp2Wm1sc1pTMWxTRVJxZW5BMU4wOVlMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZmFuVXhhek5tYW5VeGF6Tm1hblV4YXkxamJHVmhiaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "aviso-legal-scraped": {
+                "eventTitle": "Per Aviso Legal lead returned",
+                "eventDescription": "Charged for each domain whose Aviso Legal page resolved into a lead that met your minimum-fields bar (status: ok), delivered and billed atomically so a charge cap can never leak an unpaid row. Blocked, not-found and partial rows are delivered free.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "aviso-legal-rendered": {
+                "eventTitle": "Per browser-rendered lead",
+                "eventDescription": "Charged instead of the standard event when a lead could only be recovered by the opt-in headless-Chromium pass, which costs a full browser. Fires only when Render JavaScript is enabled.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": false,
+                "eventPriceUsd": 0.008
+              }
+            }
+          },
+          "startedAt": "2026-09-04T06:50:46.000Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "createdAt": "2026-09-04T06:50:47.463Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "hMPwgLBJROLZqk09r",
+        "url": "https://apify.com/scrapersdelight/aviso-legal-contact-scraper"
+      },
+      {
+        "title": "Spanish Company Registry BORME Scraper — No Login",
+        "name": "registro-mercantil-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 500,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-18T05:48:46.345Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 8,
+            "FAILED": 1,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 36
+          }
+        },
+        "description": "Scrape Spanish company registry data from BORME (Boletin Oficial del Registro Mercantil). Extract incorporations, director appointments, capital changes. Search by company name, CIF/NIF, or province.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/OgrZax0JQar2HlgeAojemywrRGseQe1i0N-Jib7PHys/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3IteklzN0RsVEZlbzBuSndGUjktYmhhVUUyRGR4bi1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-14T09:15:56.000Z",
+          "reasonForChange": "Pricing adjusted to reflect infrastructure cost",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.01,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventPriceUsd": 0.012,
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-06-30T08:15:56.588Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-06-30T08:16:16.816Z",
+          "notifiedAboutChangeAt": "2026-07-14T09:35:38.099Z"
+        },
+        "id": "zIs7DlTFeo0nJwFR9",
+        "url": "https://apify.com/studio-amba/registro-mercantil-scraper"
+      },
+      {
+        "title": "BORME Scraper Pro",
+        "name": "borme-scraper-pro",
+        "username": "startquicklabs",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 394,
+          "totalUsers": 21,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-17T20:00:39.181Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 37,
+            "TIMED-OUT": 0,
+            "TOTAL": 37
+          }
+        },
+        "description": "Este actor permite la descarga estructurada de datos del Boletín Oficial del Registro Mercantil (BORME)",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ACfg-7T7Ef-gD7voDo-zimfGfnHsIkj2yqow5wOYwNo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZlBsaDJyM2JRZ0UxR1ZQZXQtYWN0b3ItVFN1VTREM1VtZEtuRkphUHEtZDJnTWdhaFR1WC1HZW1pbmlfR2VuZXJhdGVkX0ltYWdlX2d5YW5rNmd5YW5rNmd5YW4ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Start Quick Labs",
+        "userPictureUrl": "https://images.apifyusercontent.com/MfkEMiUV51FvCP3I4d9sQ8jec_rDYkjCCgkTGPm_tMc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNDYycTRuWEhma2VDVTlneDJmVE1RTTcwa3NRTm5yUUxRMy1JZ1NkM0wtSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZabEJzYURKeU0ySlJaMFV4UjFaUVpYUXRjSEp2Wm1sc1pTMTBjM294ZGpseVYwaGtMVXh2WjI5VGRHRnlkRkYxYVdOclRHRmljeTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "row",
+                "eventDescription": "datos anuncio",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00125,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-02-02T13:56:57.842Z",
+          "createdAt": "2026-02-02T13:56:58.340Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "TSuU4D3UmdKnFJaPq",
+        "url": "https://apify.com/startquicklabs/borme-scraper-pro"
+      },
+      {
+        "title": "Spain BORME Corporate Acts Parser",
+        "name": "borme-corporate-acts-scraper",
+        "username": "regdata",
+        "stats": {
+          "totalBuilds": 17,
+          "totalRuns": 261,
+          "totalUsers": 14,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-18T02:08:41.257Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "Parse daily BORME (Boletin Oficial del Registro Mercantil) Section A PDFs into structured corporate acts - company incorporations, officer appointments, capital changes, dissolutions, and more.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/E8oexoAK3P6B0cIkeG30J8-jY1E_33gaYS6769KApwU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMHVKUVZ6eVRmbnlwVHlPOG8tYWN0b3ItdUJTNDZmTEQ2TFZad2F4Q2MtdWlBd1R1RnRkTS1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "getregdata",
+        "userPictureUrl": "https://images.apifyusercontent.com/d8RApraTOL_e2yvNuB8M2xkOmO4okE8CbkOElLKqXF4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcU9aMVRZTDRQZ1FWcHhhOC1ES3ZkdldCVk9XcWhOMmhtb3V5YWg2NE4xNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNSFZLVVZaNmVWUm1ibmx3VkhsUE9HOHRjSEp2Wm1sc1pTMDFTbFp2U1hSTmRETnVMV2RsZEhKbFoyUmhkR0V0Ykc5bmJ5MDBNREF1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Corporate Act",
+                "eventDescription": "Single corporate act entry parsed from BORME Section A - includes company name, act type, officers, and registry data.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0012
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-09-01T09:19:25.667Z",
+          "createdAt": "2026-09-01T09:19:25.990Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-01T09:35:52.414Z"
+        },
+        "id": "uBS46fLD6LVZwaxCc",
+        "url": "https://apify.com/regdata/borme-corporate-acts-scraper"
+      },
+      {
+        "title": "Spain BORME Company Registry Scraper",
+        "name": "spain-borme-scraper",
+        "username": "ivosandoval",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 63,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T11:06:41.212Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Scrape corporate registry data from Spain's BORME (Boletín Oficial del Registro Mercantil). Extract company incorporations, officer appointments, capital changes, mergers, and more from all 24 provinces.",
+        "categories": [
+          "AUTOMATION",
+          "LEAD_GENERATION",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/kbsFlBJ64ABfCKkLar4rpueopCH232Zm1DubiZX-dco/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZU94ZURIOGg4VjF4ZVBnMFAtYWN0b3ItRGpOczloWFp2OWJqSXBlN1otN2ZGNzRaeE5nTi1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ivo Sandoval",
+        "userPictureUrl": "https://images.apifyusercontent.com/iYo46L1eWtdgcJRZk_wBYKKUEOo7Fs-U1fX863qKTeQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vX0RrVVpFLUVYb2lkNS1QR3IyRW1oOFpJYmNSX1dfdXdneUFFaTY3UHIzWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTa2hmWWpoaE5UZFhVbEF0WVRKb1Iwb3dWbU50YVVoaVEyWXRhSGh3YWw5cVIyUXROR1YwZURBdE0zZExZMGxCVEhR.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-16T16:07:22.426Z",
+          "createdAt": "2026-08-16T16:07:22.698Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "DjNs9hXZv9bjIpe7Z",
+        "url": "https://apify.com/ivosandoval/spain-borme-scraper"
+      },
+      {
+        "title": "Spain New Companies & BORME Registry Events",
+        "name": "borme-spain-companies",
+        "username": "trilling_karst",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 27,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T11:30:34.772Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 21,
+            "TIMED-OUT": 0,
+            "TOTAL": 21
+          }
+        },
+        "description": "Every new Spanish company (constitución) and Registro Mercantil event from the official BORME, as clean JSON: business purpose, address, municipality, capital, start date, registry data. Official open data, no proxies.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Álvaro",
+        "userPictureUrl": "https://images.apifyusercontent.com/1xxoLMcwpDz4j_6n_Rt7Pk8iQXnBsyAmhzYI8kD4-eY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWXdZTlBRZVZJd0l3YkhDcEJpVEdaN2JaX3BkQkZBRE10c0swYWJ2NGRKVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVWQxVUVWd1JVRjBiM0Z1ZFZKblFuWkpSWGxoZUVsaFNsSjNNMVZ0WlhCVGVqSlZlR1kwTTFSRU5IQjRSR2RSUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventPriceUsd": 0.002,
+                "eventDescription": "One company entry (new company or registry event) in the dataset."
+              }
+            }
+          },
+          "createdAt": "2026-09-24T12:20:07.095Z",
+          "startedAt": "2026-09-24T12:20:07.095Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "NbiHyqa94RArgwsRI",
+        "url": "https://apify.com/trilling_karst/borme-spain-companies"
+      },
+      {
+        "title": "Aviso Legal Scraper: CIF/NIF & Emails from Spanish Websites",
+        "name": "aviso-legal-scraper",
+        "username": "sandy_yclept",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 6,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-13T18:44:05.410Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "Read the aviso legal of Spanish websites: company name, CIF/NIF (control letter checked), Registro Mercantil entry, address and emails. The host's, the agency's and a platform's numbers are left out. Pay per company with an email.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "MCP_SERVERS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/vKnoB5mGoUN2jqFFg_8f1ae8hWjdhl7GMoarjsu6Ydk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ0F0R2d0dlR1N1lHZVM3dzEtYWN0b3ItRmhNMDBHNUplaHF3NVpaR1MtQnNyY2VmY3RjMC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Rafal Sav",
+        "userPictureUrl": "https://images.apifyusercontent.com/ZBCHq7TvISk8fEBys5UCsjsgNd_zurR5OAZbNiPjuK8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMGhwQVVIaFlzS2RUaFJpWHE2VVJid0NwUzVxTHltc1ZiRG9VOTU2YnF2dy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMEYwUjJkMGRsUjFOMWxIWlZNM2R6RXRjSEp2Wm1sc1pTMHdhelpPTkdsYWRWUlFMWE5oYm1SNVgzbGpiR1Z3ZEY5aGRtRjBZWEpmYzNGMVlYSmxMbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000045
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00004
+                  }
+                }
+              },
+              "company-lead": {
+                "eventTitle": "Company lead",
+                "eventDescription": "A website whose pages gave an email on its own domain (or on the one it moved to) or a personal mailbox it uses, that accepts mail - with every email, phone, fax and social profile found and the company details from its Impressum. Once per website. No such email: never charged.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0045
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00405
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0036
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0036
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0036
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-10-10T15:16:23.324Z",
+          "startedAt": "2026-10-10T15:16:23.324Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "FhM00G5Jehqw5ZZGS",
+        "url": "https://apify.com/sandy_yclept/aviso-legal-scraper"
+      },
+      {
+        "title": "eInforma Scraper — Spanish Company Register Data",
+        "name": "einforma-scraper",
+        "username": "studio-amba",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 914,
+          "totalUsers": 14,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 6,
+          "totalUsers90Days": 9,
+          "lastRunStartedAt": "2026-10-18T10:03:52.309Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 557,
+            "SUCCEEDED": 145,
+            "TIMED-OUT": 0,
+            "TOTAL": 702
+          }
+        },
+        "description": "Search and extract Spanish company data from eInforma (einforma.com). Look up companies by name and get CIF/VAT ID, legal form, address, founding date, CNAE industry code, business purpose, share capital, and BORME register info. No API key, no login required.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/IbSWMiSKhWAa7olvDoL6pDZ7jUuA2u9XC-NHkn9E0zM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFkzanRZQXJTelRhUTBiZkstYWN0b3ItOUtBR1lMbnV0VjkwZG14WGQtT0FpSDNjUmZnOC1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Studio Amba",
+        "userPictureUrl": "https://images.apifyusercontent.com/mOoJ44mAweO8KUDrOYikwhSHREhdFkdDdYBUbZUj9os/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcXBjYTlPX2xHa1hTaVRlTUN3d25hLXFmdm5UVnZnLXpBaWViUnNKWWVPVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRmt6YW5SWlFYSlRlbFJoVVRCaVprc3RjSEp2Wm1sc1pTMUVlWEptWmxodVJXOXJMWE4wZFdScGIyRnRZbUV0Ykc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-01T14:41:26.000Z",
+          "reasonForChange": "Switching to automatic per-result billing",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventPriceUsd": 0.01,
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event)."
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result scraped",
+                "eventDescription": "Charged for each scraped item in the dataset",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-08-01T14:36:26.664Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "9KAGYLnutV90dmxXd",
+        "url": "https://apify.com/studio-amba/einforma-scraper"
+      },
+      {
+        "title": "RUES Colombia Company Registry & NIT Scraper",
+        "name": "rues-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 19,
+          "totalRuns": 169,
+          "totalUsers": 11,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-17T23:00:42.744Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 40,
+            "TIMED-OUT": 1,
+            "TOTAL": 41
+          }
+        },
+        "description": "RUES Colombia scraper and NIT lookup API. Search the unified business registry by name, NIT or matricula: get razon social, estado, camara de comercio, CIIU, dates and NIT check digit. Companies and ESAL non-profits. Export JSON, CSV, Excel. No login.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/S9snVKMiarNMcM8xo1npuYjATfrNGuktZjK5Z0R_OsI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItM21CanJTMExUZ2laaDE3VVAtNTlRV1NhS2dsOS1ydWVzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.013846
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.012692
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.011538
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.011538
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.011538
+                  }
+                }
+              },
+              "details": {
+                "eventTitle": "details",
+                "eventDescription": "Single result with details in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.017308
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.016154
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.013846
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.013846
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.013846
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.009818
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.009636
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.009455
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.009273
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.009091
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-09-09T12:20:44.000Z",
+          "createdAt": "2026-08-25T12:21:00.638Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-08-25T12:21:20.892Z",
+          "notifiedAboutChangeAt": "2026-09-09T12:35:56.668Z"
+        },
+        "id": "3mBjrS0LTgiZh17UP",
+        "url": "https://apify.com/scrapers_lat/rues-scraper"
+      },
+      {
+        "title": "Colombia Company Registry Scraper - RUES",
+        "name": "colombia-rues-company-scraper",
+        "username": "regdata",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 112,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-18T09:54:37.891Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search the official Colombian business registry (RUES) by name, NIT or matrícula. Returns registered name, matrícula, chamber of commerce, legal form, status and category for companies and non-profits. No API key.",
+        "categories": [
+          "AGENTS",
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9T6E4iWf-IatyDjbZXDiGfWkiqPGm4kMK5xWM3RXVOk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMHVKUVZ6eVRmbnlwVHlPOG8tYWN0b3ItQnVjdDJmb1N5cVZMVXdpVjgtMG01SGtwTmdLNi1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "getregdata",
+        "userPictureUrl": "https://images.apifyusercontent.com/d8RApraTOL_e2yvNuB8M2xkOmO4okE8CbkOElLKqXF4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcU9aMVRZTDRQZ1FWcHhhOC1ES3ZkdldCVk9XcWhOMmhtb3V5YWg2NE4xNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNSFZLVVZaNmVWUm1ibmx3VkhsUE9HOHRjSEp2Wm1sc1pTMDFTbFp2U1hSTmRETnVMV2RsZEhKbFoyUmhkR0V0Ykc5bmJ5MDBNREF1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-search": {
+                "eventTitle": "Company search",
+                "eventDescription": "One search of the Colombian RUES public register by company name, NIT or matrícula, returning up to 500 matching entities with matrícula, chamber of commerce, legal form, registration status and category. A search that confirms no entity matches is charged the same, because that verified negative is the result.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.012
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-07-20T13:50:27.960Z",
+          "createdAt": "2026-07-20T13:50:28.750Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-20T14:05:49.983Z"
+        },
+        "id": "Buct2foSyqVLUwiV8",
+        "url": "https://apify.com/regdata/colombia-rues-company-scraper"
+      },
+      {
+        "title": "Spain BORME Company Registrations Scraper",
+        "name": "spain-borme-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 84,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T11:00:36.848Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Extract Spanish company acts from the official BORME mercantile registry gazette. For any publication date get company name, act types (incorporations, appointments, capital changes, dissolutions), province and registry data. Export to JSON, CSV or Excel.",
+        "categories": [
+          "LEAD_GENERATION",
+          "NEWS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/nAV_JVoMdq4r-9GOvwPGk8pArB8Fb7VvQz4tFGt9ywU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItZFV1SENxSHJwZFJLZlZGdUgtOUdWQ1pJb0I4dS1ib3JtZS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "A data record returned by the scraper.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01425
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0135
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01275
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01275
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-07-15T23:05:26.000Z",
+          "createdAt": "2026-07-15T23:04:52.308Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "dUuHCqHrpdRKfVFuH",
+        "url": "https://apify.com/scrapers_lat/spain-borme-scraper"
+      },
+      {
+        "title": "Borme Spain Corporate Acts Gazette Scraper",
+        "name": "borme-spain-corporate-acts-gazette-scraper",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 29,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T08:28:36.097Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Daily Spanish corporate-acts gazette (BORME) parsed into structured incorporations, officer changes, capital moves and dissolutions across all 52 mercantile registries.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/-6BSA5xvUbVA_O-70ovROZuoCxn8zJweenP2jP1wiAQ/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItTVp3U0hPOE5xZHZCMlNPS1QtYjF5V05ORmlCeS1ib3JtZS1zcGFpbi1jb3Jwb3JhdGUtYWN0cy1nYXpldHRlLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-09-26T13:59:33.601Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "orbtop-actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory.",
+                "eventPriceUsd": 0.0001
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0009000000000000001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0008
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-26T13:59:33.755Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "MZwSHO8NqdvB2SOKT",
+        "url": "https://apify.com/jungle_synthesizer/borme-spain-corporate-acts-gazette-scraper"
+      },
+      {
+        "title": "Legal Notice Extractor: France, Italy, Spain & UK",
+        "name": "eu-legal-notice",
+        "username": "digital_influx",
+        "stats": {
+          "totalBuilds": 6,
+          "totalRuns": 13,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T01:18:33.789Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 12,
+            "TIMED-OUT": 0,
+            "TOTAL": 12
+          }
+        },
+        "description": "Find the company behind French, Italian, Spanish and British websites from their legal notice: SIREN, Partita IVA, CIF or UK company number checked by control digit, VAT ID, register, share capital, legal form and address.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/4rryFe2tRwmBtRWtrswCaBbvnb3hUqpkwRQGtJrsAdA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFNYc09TYVpXbUZXVmJYRkstYWN0b3ItZTJGN255UTNjTE9VeFQ0VkotSmNqRkh6ZWhaaC1ldS1sZWdhbC1ub3RpY2UucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Bruno Petrelli",
+        "userPictureUrl": "https://images.apifyusercontent.com/JbGzHhDwRJFVwoyiaIzAvOF2DhnYvDEJRE_d2vJ_ZFU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTzFkaFdyakctM1Y0U0FhVThYUE5zZ3RkWi1Fb1dPQ2JldXhmMHlqNXdkRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMFJRZEdkVVNIaHJWSEV6VFRCQ2IwNURia00xV1VVdFdYQmxSVE00U25GUVp6QjNPVTlDVWt0SmVHVXllV3BuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company": {
+                "eventTitle": "Company identified",
+                "eventDescription": "One website whose company was identified from its legal notice: SIREN, Partita IVA, CIF or UK company number checked by control digit, with VAT ID, register, capital and address. Websites without a company ID are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-02T19:46:38.293Z",
+          "createdAt": "2026-10-02T19:46:38.140Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "e2F7nyQ3cLOUxT4VJ",
+        "url": "https://apify.com/digital_influx/eu-legal-notice"
+      },
+      {
+        "title": "Spain BORME Scraper — Company Registry Filings & Data",
+        "name": "spain-borme-companies",
+        "username": "xamto1987",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 54,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-17T11:20:37.254Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape Spanish company registry filings (BORME): incorporations with share capital, CNAE and address, director appointments and removals, insolvency proceedings — parsed field by field, one item per company. Actos societarios del BORME parseados campo a campo.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ew-z9LBe3FDF4DwOg4zWhGIfj1BHF6rZa-0MBRpa_PA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vYXk2eW90UXFkMG5SZTZXcHUtYWN0b3ItNnJxOHl0dklJTGRtaFl6TEMtajlzd0NpWERmNi1zcGFpbi1ib3JtZS1jb21wYW5pZXMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Santi Belloso Lopez",
+        "userPictureUrl": "https://images.apifyusercontent.com/lkyQ7Epb3BSM3NxmGfOQbhbTQyK4Y6FeZPVZ9jbkb1Y/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veXU2S0N5YUFiaGJSc2VqY2syWF9BWmszcXhJZTM5dWplWWMxcmktVXFlZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbTR0VjBaVFIwVllUa1J5VWpORWFuQldkREJoU0VVNFIweE9RM3BoU1hwNFRYVkdTMFUwZVhJek1IZGlXSEZSUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-23T16:51:57.300Z",
+          "createdAt": "2026-08-23T16:51:57.736Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "6rq8ytvIILdmhYzLC",
+        "url": "https://apify.com/xamto1987/spain-borme-companies"
+      },
+      {
+        "title": "NIT Colombia RUES API",
+        "name": "nit-colombia",
+        "username": "latinamericadata",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 190,
+          "totalUsers": 18,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 5,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-17T12:06:36.071Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Consulta NIT Colombia, razon social o matricula mercantil en datos abiertos RUES y entrega empresas estructuradas para validacion, CRM, BI y automatizacion.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/3UNk-f-Z4SzxcRApWuYSAg0y4p0wHMDhJLj18J85DQM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMmJrQm5VVVVhRHBGRDZjQnUtYWN0b3ItcTN0QUxCQ3hTcmdlcUVBYkktZ1B1TER5aHBWUi1HZW5lcmF0ZWRfaW1hZ2VfMi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Latin America Data",
+        "userPictureUrl": "https://images.apifyusercontent.com/VIhvBDjfVF9yrviN2FwGgkb4R4hHzwvWKAzbRErgVpQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vREx4Z0pHdWxkaU1NaVdIcjI4TzFwd1NTU1NBTjQtWWFrNzZ0TWR3SDc0Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNbUpyUW01VlZWVmhSSEJHUkRaalFuVXRjSEp2Wm1sc1pTMUdlV1ZXUzJjNE5XNHpMVVJsYzJsbmJtVnlYeVV5T0RNbE1qa3VjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "startedAt": "2026-07-08T00:00:00.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Empresa entregada",
+                "eventDescription": "Cada empresa colombiana entregada desde datos abiertos RUES con NIT y fuente auditable.",
+                "eventPriceUsd": 0.003,
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-06-23T16:09:01.952Z",
+          "notifiedAboutFutureChangeAt": "2026-06-23T16:09:22.083Z",
+          "notifiedAboutChangeAt": "2026-07-13T10:36:21.223Z"
+        },
+        "id": "q3tALBCxSrgeqEAbI",
+        "url": "https://apify.com/latinamericadata/nit-colombia"
+      },
+      {
+        "title": "Resoluciones DGSJFP y dictámenes del Consejo de Estado",
+        "name": "doctrina-administrativa-espana",
+        "username": "opendata-cr",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 26,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T01:28:27.963Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 8,
+            "TIMED-OUT": 0,
+            "TOTAL": 8
+          }
+        },
+        "description": "Resoluciones de la DGSJFP sobre la calificación registral (Propiedad, Mercantil y Bienes Muebles), dictámenes del Consejo de Estado y resoluciones de Pleno del TACRC, con texto completo. Filtre por palabras, fechas o registro y reciba solo las novedades. Para notarías, registros y despachos.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION",
+          "NEWS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Tornwar",
+        "userPictureUrl": "https://images.apifyusercontent.com/Dty7QasJalyVyjIl7eMrDoRfxjJQy0WEwT_l5F2KRW0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcVFBbEdIVTBla0JDLW44VTNnMUdDZnU5U1lPNHZoM093aVlrbFo4c3A2MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibXhWUzBkTmFWbzViVEUyYVhOcmVETXRjSEp2Wm1sc1pTMTZSblozWVVNNVUxSmtMVk5qY21WbGJuTm9iM1JmTWpBeU5pMHdOQzB3TkY4d09UTTNOREF1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Inicio",
+                "eventDescription": "Cargo fijo, una vez por ejecución, cuando una fuente oficial responde. No se cobra si la entrada es inválida o si el máximo a cobrar no alcanza para el inicio y un documento. Flat fee, once per run.",
+                "eventPriceUsd": 0.1,
+                "isOneTimeEvent": true
+              },
+              "documento-texto": {
+                "eventTitle": "Documento con texto",
+                "eventDescription": "Una resolución o dictamen entregado con su texto completo y metadatos estructurados. / One document delivered with full text and structured metadata.",
+                "eventPriceUsd": 0.012,
+                "isPrimaryEvent": true
+              },
+              "documento-metadatos": {
+                "eventTitle": "Documento solo con metadatos",
+                "eventDescription": "Una resolución o dictamen entregado solo con metadatos y enlace a la fuente. / One document delivered as metadata and source link only.",
+                "eventPriceUsd": 0.004
+              }
+            }
+          },
+          "createdAt": "2026-10-10T16:04:38.635Z",
+          "startedAt": "2026-10-10T16:04:38.635Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "jNYnDK2RIskPqvtKB",
+        "url": "https://apify.com/opendata-cr/doctrina-administrativa-espana"
+      },
+      {
+        "title": "Spain Company Registry (BORME) Fresh Announcements",
+        "name": "spain-borme-api-fresh",
+        "username": "vhsgreed",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 46,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T03:18:38.999Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 38,
+            "TIMED-OUT": 0,
+            "TOTAL": 38
+          }
+        },
+        "description": "Search official Spanish BORME registry announcements by company name. Returns incorporations, officer appointments and cessations, capital changes and dissolutions with bulletin reference and act text.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9T5S1C6D0IA8R7I-FMp3dDpAnMBT4YZfsfNojaf0c_Y/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2VEcndtRXh0RERTTUlTekQtYWN0b3ItV3FlN0JJZkF0bDJMdEVMNmgtUG1mMU5nSkNmTS1zcGFpbi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Karl Sundström",
+        "userPictureUrl": "https://images.apifyusercontent.com/np56CFOurcdv0Wps8fndp50qMeHRDNJQNLixitXN5Sg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQkQwdmhjRzhRMUc2ZGEtMy1jY3hrMHl3RVBzX3ZRNk9lRFpLNmNySUoxQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlZFY25kdFJYaDBSRVJUVFVsVGVrUXRjSEp2Wm1sc1pTMTRTMnBKU2twaFFYUnZMV2hsWVdSemFHOTBNakF5TlM1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running.",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.002
+              },
+              "result-found": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.00125
+              }
+            }
+          },
+          "createdAt": "2026-09-28T07:47:51.941Z",
+          "startedAt": "2026-09-28T07:47:51.941Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-28T08:06:03.686Z"
+        },
+        "id": "Wqe7BIfAtl2LtEL6h",
+        "url": "https://apify.com/vhsgreed/spain-borme-api-fresh"
+      },
+      {
+        "title": "Northdata Company Scraper",
+        "name": "northdata-scraper",
+        "username": "silentflow",
+        "stats": {
+          "totalBuilds": 14,
+          "totalRuns": 90112,
+          "totalUsers": 129,
+          "totalUsers7Days": 7,
+          "totalUsers30Days": 20,
+          "totalUsers90Days": 50,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 2,
+          "lastRunStartedAt": "2026-10-18T06:53:38.579Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 0,
+            "SUCCEEDED": 17464,
+            "TIMED-OUT": 0,
+            "TOTAL": 17466
+          }
+        },
+        "description": "Scrape Northdata.com for European company profiles. Pull registry, officers, address, foundingDate, industry, status, events and corporate purpose from UK Companies House, Siren, Handelsregister, KBO, KvK and more. Search by name or load specific URLs. Per-result pricing, proxies included.",
+        "categories": [
+          "LEAD_GENERATION",
+          "SEO_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/FodeYAEiFSvC842b_mJ8YxZkfHQeTxG0pZol8BcYWoY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaTlmMUJhSzlvVnhZRnk0b0ktYWN0b3ItTlBGZ3FKYWh3aUdUakdtZEYtV01iakx0V094cS1ub3J0aGRhdGEtbG9nby5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SilentFlow",
+        "userPictureUrl": "https://images.apifyusercontent.com/iFlkZp4jvg7Yxa7alfhSLS4_CEc3mLYF6ukjxDJWnrY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT2FVaXRaMjdYa1FibDVYOUJ5YkR1VlRMTXY4TzJVNUhaTkVxX215VnVlRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhVGxtTVVKaFN6bHZWbmhaUm5rMGIwa3RjSEp2Wm1sc1pTMWFWMWhyTVRKVGFIcHVMVk5wYkdWdWRFWnNiM2N4TGpFdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00733
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00667
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.006
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-15T21:56:57.450Z",
+          "createdAt": "2026-05-15T21:56:57.723Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "NPFgqJahwiGTjGmdF",
+        "url": "https://apify.com/silentflow/northdata-scraper"
+      },
+      {
+        "title": "Spain Growth Signals — Capital Increase Leads",
+        "name": "spain-growth-signal-leads",
+        "username": "rodimuxai",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 78,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-18T02:18:39.381Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 22,
+            "TIMED-OUT": 4,
+            "TOTAL": 26
+          }
+        },
+        "description": "Spanish companies that just raised capital, enriched with their website and verified contact email. Reads the official BORME gazette daily — the strongest public B2B buying signal: companies funding growth are about to spend. Pay only for delivered leads.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/HgUm5lYePUBdzvRygd3qS2vEVykCV6AW7w54d2mC9e8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vM1FsOTF5ZUl2dldFdXRET1UtYWN0b3ItSkRZblVvN0FUcENZYzhHZjEtcXZid3ZTUTN1Qy1pY29uby1ncm93dGgtNC5qcGc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "RodimuxAI",
+        "userPictureUrl": "https://images.apifyusercontent.com/VFyaDvofyP3UsN2XWYgNfGvRd6bb9bZnUhKou-oc5PM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVEJYYXU3QmVsZVFhVjdjVi0zR2hBM3M5TUtzeWZNQTRHU0dyWmRndG5kUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNMUZzT1RGNVpVbDJkbGRGZFhSRVQxVXRjSEp2Wm1sc1pTMHhRa0ZNTURaSFdsTnVMV0YyWVhSaGNpMDBMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "growth-signal": {
+                "eventTitle": "Growth signal",
+                "eventDescription": "A Spanish company growth signal (capital increase) delivered: company, amount, province, date.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              },
+              "enriched-lead": {
+                "eventTitle": "Enriched lead (website + email)",
+                "eventDescription": "Charged only when the company website and a verified contact email are also delivered.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.08,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-07-30T05:28:32.669Z",
+          "createdAt": "2026-07-30T05:28:33.068Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "JDYnUo7ATpCYc8Gf1",
+        "url": "https://apify.com/rodimuxai/spain-growth-signal-leads"
+      },
+      {
+        "title": "Aduanas Chile API - Importaciones, DIN y CIF",
+        "name": "aduanas-chile",
+        "username": "scraperschile",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 204,
+          "totalUsers": 11,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-18T02:28:35.092Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "API de Aduanas Chile para consultar importaciones por partida arancelaria y obtener registros DIN, mercancías, origen, cantidades y valores FOB/CIF. Entrega datos estructurados para inteligencia comercial, análisis de competencia y estudios de comercio exterior.",
+        "categories": [
+          "OTHER",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/EPuoqy08RsJmvSVff7eFY3vTR14q5LZFkhLrkMSIvMo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaFo3aHB0N2pHNko5ZGVOcG4tYWN0b3Itbms0WnpkQkIxS3BPN1ZmRzQtYUZzRXhYTFdkTy1hZHVhbmFzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Scrapers Chile",
+        "userPictureUrl": "https://images.apifyusercontent.com/iXpzHNE06nVA2ewl9pFwQDGwYOQGHU1mIxQuGaYu_Io/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZFNzMjFycGN3a3RmR2FLalVsTFlseVBxVXdVVkQxSnhQb0RIcW92UWVtOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhRm8zYUhCME4ycEhOa281WkdWT2NHNHRjSEp2Wm1sc1pTMDVTMWM1T0ZkaGRteGlMVU5vWVhSSFVGUmZTVzFoWjJWZlRXRjVYek5mWHpJd01qWmZYekE1WHpFelh6UXpYMUJOTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-07-03T15:10:38.419Z",
+          "createdAt": "2026-06-19T15:10:39.038Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-06-19T15:10:59.266Z"
+        },
+        "id": "nk4ZzdBB1KpO7VfG4",
+        "url": "https://apify.com/scraperschile/aduanas-chile"
+      },
+      {
+        "title": "Italy Real Estate Market Data API - Prices, Sales, Forecasts",
+        "name": "italy-real-estate-market-data-api",
+        "username": "nabeelbaghoor",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 22,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T17:16:43.836Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 21,
+            "TIMED-OUT": 0,
+            "TOTAL": 21
+          }
+        },
+        "description": "Italian real estate market data by region, province, municipality or micro-zone: listing prices and history, price forecasts, listings stock, transaction prices and volumes, and buyer and tenant demand, for sale and rent. Read only. Pay per result. Bring your own credentials.",
+        "categories": [
+          "REAL_ESTATE",
+          "BUSINESS",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Nabeel Hassan",
+        "userPictureUrl": "https://images.apifyusercontent.com/N5BXXkDuLbfeQd4735e15yPK_0fc0r_frdtpeslpm3E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vb3ZmR29HSVVnR29BT05RYWw4Tk4xdHNoTzNreTl4b2tzY0kwUm9EY0RqYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbll5ZDJWT04zZGhYMmRpWldJek1teHVPRWd5UVUxUlRGUnhOUzF2ZGpGRWMxWk1MVTR6VUdzMWVYUmtUakpSV21ROWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "market-record": {
+                "eventTitle": "Market record returned",
+                "eventDescription": "Charged once for each market reading about one zone and period: listing prices with percentiles by typology, rooms and condition, price history, a five year price forecast with its 95 percent range, listings stock and time on market, transaction prices and volumes from processed land registry data, or buyer and tenant demand. One row is a complete answer about one zone. Zones the provider holds no data for are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.015,
+                "isPrimaryEvent": true
+              },
+              "zone-record": {
+                "eventTitle": "Zone record returned",
+                "eventDescription": "Charged once for each zone in a zone listing: one region, province, municipality, macro-zone or micro-zone with its ID and its parent names. Priced well below a market reading because one request commonly returns dozens of zones, and because these IDs are what the market services are asked with.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": false
+              },
+              "reference-record": {
+                "eventTitle": "Reference record returned",
+                "eventDescription": "Charged once for a reference vocabulary: the request codes for contract, typology, cadastral category, surface class, zone type and window, or the list of periods for which data is available. Priced low because it is what you read before spending anything on market data.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-09-24T21:00:08.627Z",
+          "startedAt": "2026-09-24T21:00:08.627Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "zjRID3dhCAZlWiSti",
+        "url": "https://apify.com/nabeelbaghoor/italy-real-estate-market-data-api"
+      },
+      {
+        "title": "UK Land Registry Price Paid — Valuation & Deal Finder",
+        "name": "uk-land-registry",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 1078,
+          "totalUsers": 15,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T22:34:39.920Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 53,
+            "TIMED-OUT": 0,
+            "TOTAL": 54
+          }
+        },
+        "description": "Turn HM Land Registry Price Paid data into decisions: fair value, comparable sales, deal-check verdicts, market scores, repeat-sale growth, street rankings and below-market deal finding across England & Wales. Deterministic, no AI, free government data.",
+        "categories": [
+          "REAL_ESTATE",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/rxq-qAIAM7u0CPDCBWiZuPkKb-cYr8JE3O6j0zoNfeA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vczJGTTV1Rkg5RjJlWjRwWjktYWN0b3Itdm0zWmlOUGdRWkR0bVljdlAtMUFCZEZkSENVQS11ay1sYW5kLXJlZ2lzdHJ5LnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-03-13T20:41:31.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "record-fetched": {
+                "eventTitle": "Record fetched",
+                "eventDescription": "Charged per land registry price paid record retrieved.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-02-27T19:41:59.475Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-02-27T19:42:19.686Z"
+        },
+        "id": "vm3ZiNPgQZDtmYcvP",
+        "url": "https://apify.com/ryanclinton/uk-land-registry"
+      },
+      {
+        "title": "UK Companies House Search",
+        "name": "uk-companies-house",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 1155,
+          "totalUsers": 34,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-17T21:34:40.928Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 56,
+            "TIMED-OUT": 0,
+            "TOTAL": 56
+          }
+        },
+        "description": "Search the official UK Companies House registry for company profiles, directors, officers, filing history, and registered addresses.",
+        "categories": [
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/AlWCv-w7nhSuOPDU6fw4b-6A6bHs9bejQWphapdLhnw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vczJGTTV1Rkg5RjJlWjRwWjktYWN0b3ItQ1BZNWJhTWVlNzNvTWtvbGEtR3NlUndub09KYS1DaGF0R1BUX0ltYWdlX01hcl8xNV9fMjAyNl9fMDlfMTdfMjdfUE0ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-03-13T20:41:31.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "company-fetched": {
+                "eventTitle": "Company fetched",
+                "eventDescription": "Charged per company record retrieved from UK Companies House.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-02-27T19:41:57.556Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-02-27T19:42:17.713Z"
+        },
+        "id": "CPY5baMee73oMkola",
+        "url": "https://apify.com/ryanclinton/uk-companies-house"
+      },
+      {
+        "title": "Парсер объявлений Авито / Avito Scraper: телефоны и цены",
+        "name": "avito-listings-scraper",
+        "username": "zen-studio",
+        "stats": {
+          "totalBuilds": 181,
+          "totalRuns": 103535,
+          "totalUsers": 1236,
+          "totalUsers7Days": 103,
+          "totalUsers30Days": 213,
+          "totalUsers90Days": 393,
+          "lastRunStartedAt": "2026-10-18T10:48:13.322Z",
+          "actorReviewCount": 3,
+          "actorReviewRating": 4.999999999999999,
+          "bookmarkCount": 14,
+          "publicActorRunStats30Days": {
+            "ABORTED": 32,
+            "FAILED": 88,
+            "SUCCEEDED": 22550,
+            "TIMED-OUT": 1,
+            "TOTAL": 22671
+          }
+        },
+        "description": "Парсер объявлений Авито: телефоны продавцов в открытом виде, цены, характеристики, отзывы и координаты. 76 категорий: авто, недвижимость, вакансии, услуги, посуточная аренда и отели.",
+        "categories": [
+          "LEAD_GENERATION",
+          "ECOMMERCE",
+          "REAL_ESTATE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/QK95e8X91Qe6HuioQiojnUTD7cepnTgTwS-jeBMZLNk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTldZc09HOTZmTUR5OHljZGYtYWN0b3ItNFNzS1llWHhMdElKTHR6SHAtODZoR1FkYzY3RC1hdml0by1saXN0aW5ncy1zY3JhcGVyLWxvZ28ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 14,
+        "actorReviewRating": 5,
+        "actorReviewCount": 3,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Zen Studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/XMfpdE7tBsAAv_EyM0mkoEV3EXM9twvq8HXK3duwdnc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vU0hoZWhacGVxbko4TEYwSmNfZVBSZVZqeTNoVGdZTnNpTVp5WWJDV2RBay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUbGRaYzA5SE9UWm1UVVI1T0hsalpHWXRjSEp2Wm1sc1pTMWphMU41ZWpWelNHUnpMWHBsYmkxemRIVmthVzh0WVhCcFpua3VjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Парсер значительно расширен: объявления по ссылке или ID в пакетном режиме, история авто (владельцы, ДТП, пробег), проверка в Росреестре, оценка стоимости квартир, 11 новых полей и больше фильтров. Первое изменение цены с момента запуска.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "listing-scraped": {
+                "eventTitle": "Listing",
+                "eventDescription": "Cost per basic listing scraped",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00499
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00399
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00379
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00349
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00349
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00349
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "detail-enriched": {
+                "eventTitle": "Product Detail",
+                "eventDescription": "Add-on: Cost per full product details scraped",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00299
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00199
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00179
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00149
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00149
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00149
+                  }
+                }
+              },
+              "phone-enriched": {
+                "eventTitle": "Phone Number",
+                "eventDescription": "Add-on: Cost per seller's phone number scraped",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00199
+              },
+              "product-reviews-enriched": {
+                "eventTitle": "Product Review",
+                "eventDescription": "Add-on: Cost per product reviews scraped (price for all scraped review - max. 2500 reviews)",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.000799
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000699
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000649
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.000599
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.000599
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000599
+                  }
+                }
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "startedAt": "2026-06-20T13:24:10.867Z",
+          "createdAt": "2026-06-06T13:24:11.556Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-06-06T13:24:34.524Z"
+        },
+        "id": "4SsKYeXxLtIJLtzHp",
+        "url": "https://apify.com/zen-studio/avito-listings-scraper"
+      },
+      {
+        "title": "TikTok Ads Scraper",
+        "name": "tiktok-ads-scraper",
+        "username": "data_xplorer",
+        "stats": {
+          "totalBuilds": 62,
+          "totalRuns": 12180,
+          "totalUsers": 367,
+          "totalUsers7Days": 13,
+          "totalUsers30Days": 34,
+          "totalUsers90Days": 105,
+          "lastRunStartedAt": "2026-10-18T09:14:57.719Z",
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 4,
+          "publicActorRunStats30Days": {
+            "ABORTED": 9,
+            "FAILED": 0,
+            "SUCCEEDED": 2292,
+            "TIMED-OUT": 0,
+            "TOTAL": 2301
+          }
+        },
+        "description": "💸🥇 THE MOST COMPLETE AND CHEAPEST TIKTOK ADS SCRAPER. 🥇💸 Two modes: Ads Library (EU transparency, targeting, spend) + Top Ads (Creative Center, engagement metrics, 80+ countries). Search by keyword, advertiser, and industry. Extract videos, performance data, and creative assets.",
+        "categories": [
+          "AI",
+          "LEAD_GENERATION",
+          "SOCIAL_MEDIA"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ZmJ11VXHq8LAl6VZy2TIxifyeU-52cV480m9NIdpFgU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdzhDZkhEa1FxZXphcnFNb2QtYWN0b3ItckZGelQybVJ1T2QxSzRpVE0tMnZxWk1heWd6Vi1QaG9lbml4XzEwX0Rlc2lnbl9hX21vZGVybl9sb2dvX2Zvcl9UaWtUb2tfYWRzX3RoYXRfaW5jb3Jwb3JhdF8w.webp",
+        "notice": "NONE",
+        "bookmarkCount": 4,
+        "actorReviewRating": 5,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Data Xplorer",
+        "userPictureUrl": "https://images.apifyusercontent.com/hiJrUFK0QGV5WRo9HZBMJpzBpc00qhcSRuwvc96j-lg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdHpITjAzMXlGWjU4MWFVRXJZaVllWGRTSldiMEhhWnZzeGwwdjFHaWtUdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkemhEWmtoRWExRnhaWHBoY25GTmIyUXRjSEp2Wm1sc1pTMUJWMmRDZUZOMWJVNW9MVVpzZFhoZlJHVjJYMEp5WVc1a1gwNWhiV1ZmV0hCc2IzSmxja3h2WjI5ZlEyOXVZMlZ3ZEY5VWFHVmZiRzluYjE5emFHOTFiR1JmWm1WaGRIVnlYekE.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00125
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00075
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00075
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00075
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              }
+            }
+          },
+          "startedAt": "2026-10-09T13:47:38.163Z",
+          "createdAt": "2026-09-25T13:47:38.458Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-25T13:47:59.817Z",
+          "notifiedAboutChangeAt": "2026-10-09T14:00:26.133Z"
+        },
+        "id": "rFFzT2mRuOd1K4iTM",
+        "url": "https://apify.com/data_xplorer/tiktok-ads-scraper"
+      },
+      {
+        "title": "TikTok Ad Library & Creative Center Scraper",
+        "name": "tiktok-ad-library-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 30,
+          "totalRuns": 1102,
+          "totalUsers": 30,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 8,
+          "totalUsers90Days": 18,
+          "lastRunStartedAt": "2026-10-18T08:08:21.990Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 750,
+            "TIMED-OUT": 0,
+            "TOTAL": 750
+          }
+        },
+        "description": "Scrape TikTok ads from the public Ad Library (EEA, UK, Switzerland, Turkey) and Creative Center Top Ads: advertiser & sponsor, dates shown, reach, creatives, landing page & targeting. Filter by advertiser, region, date & audience; monitor new ads. Independent tool, not affiliated with ByteDance.",
+        "categories": [
+          "SOCIAL_MEDIA",
+          "ECOMMERCE",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/vlKc73kmPLixxnDdaUNusESataujarKkOQEiV9mKlkU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItVFhaSzVEbVZSU3RyTWZMYXEtdXMyUE5hSlJhaC1UaWtUb2sucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "ad": {
+                "eventTitle": "TikTok ad",
+                "eventDescription": "Each top-performing TikTok ad: ad copy, brand, industry, objective, CTR, likes, video creative & Creative Center link.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              },
+              "ad-detail": {
+                "eventTitle": "Ad detail enrichment",
+                "eventDescription": "Each ad enriched via its detail page: advertiser landing-page URL, all countries it runs in, comments, shares, CTR percentile & objective breakdown.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.007
+              }
+            }
+          },
+          "startedAt": "2026-06-28T02:57:57.239Z",
+          "createdAt": "2026-06-28T02:57:57.975Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "TXZK5DmVRStrMfLaq",
+        "url": "https://apify.com/scrapesage/tiktok-ad-library-scraper"
+      },
+      {
+        "title": "Google Maps Reviews Scraper + Reputation Intelligence",
+        "name": "google-maps-reviews-scraper",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 43,
+          "totalRuns": 300,
+          "totalUsers": 8,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-17T18:48:36.861Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrapes Google Maps reviews from a business name, postcode, or place URL. Returns the complete review set with a coverage audit (claimed vs collected), sentiment, complaint themes, rating trajectory, response health, and a ranked reputation attention queue.",
+        "categories": [
+          "ECOMMERCE",
+          "SEO_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/s0WPnAJS4MDTbqHliRo-mNzzP4tCPz6sYsumNSonPwA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vczJGTTV1Rkg5RjJlWjRwWjktYWN0b3Itd2JTa0tIRXg0V2sxTENpYUYtYWNBaEVsVkJzYy1nb29nbGUtbWFwcy1yZXZpZXdzLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "review_scraped": {
+                "eventTitle": "Review scraped",
+                "eventDescription": "Charged per individual review returned, with its coverage audit (claimed vs collected) and reviewer trust metadata. The signals profile adds sentiment, complaint themes, rating trajectory, and attention routing. Billed on output only, never on Apify platform compute.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000282
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00021
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.000144
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.000108
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000108
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-08-21T19:33:17.164Z",
+          "startedAt": "2026-08-21T19:33:17.164Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-21T19:35:46.680Z"
+        },
+        "id": "wbSkKHEx4Wk1LCiaF",
+        "url": "https://apify.com/ryanclinton/google-maps-reviews-scraper"
+      },
+      {
+        "title": "France Property Valuation & Sold Prices (DVF)",
+        "name": "france-property-valuation-dvf",
+        "username": "kris_fili",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 16,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-18T10:46:51.689Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 5,
+            "TIMED-OUT": 0,
+            "TOTAL": 5
+          }
+        },
+        "description": "Value any apartment or house in France from official DVF sale prices (notarial deeds): estimate, price per m², range, comparable sales, or a market report for any address or commune.",
+        "categories": [
+          "REAL_ESTATE",
+          "AI",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Krzysztof Filipiak",
+        "userPictureUrl": "https://images.apifyusercontent.com/1tD9C2wHwtKugk6N8cU_2GI6hi_4iWfgu5eVOTAB_aA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcmdpTGlYN3dpeGZpd1puVG9fZGRweDRDRExNZkNySzhKdE9ReXRKM0w0ay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTWHBZYWtwR2JrdzNaRzVQVW00NFIxRk1kamhhWVV0UmJ6aFFTMHhKWTBGS1QyMU1USFJFYkcxNU1sRkZOMUYzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "valuation": {
+                "eventTitle": "Property valuation",
+                "eventDescription": "One valuation of one property (charged only when an estimate is produced).",
+                "eventPriceUsd": 0.15,
+                "isPrimaryEvent": true
+              },
+              "market-report": {
+                "eventTitle": "Market report",
+                "eventDescription": "One statistical report for the requested area (charged only when sales are found).",
+                "eventPriceUsd": 0.1,
+                "isPrimaryEvent": false
+              },
+              "transaction-record": {
+                "eventTitle": "Sale record",
+                "eventDescription": "One DVF sale written to the dataset (market report with the list of sales).",
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": false
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-10-13T10:37:29.941Z",
+          "startedAt": "2026-10-13T10:37:29.000Z",
+          "minimalMaxTotalChargeUsd": 0.2,
+          "reasonForChange": "Pricing per statistical report and per record instead of a flat per-row fee - you pay for the report only when it contains data."
+        },
+        "id": "d12kv2iT8KdJWczmZ",
+        "url": "https://apify.com/kris_fili/france-property-valuation-dvf"
+      },
+      {
+        "title": "Clinical Trials Intelligence MCP",
+        "name": "clinical-trials-mcp",
+        "username": "red.cars",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 17,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-05-31T11:30:54.615Z"
+        },
+        "description": "Site feasibility intelligence for AI agents. Compare clinical trial site enrollment benchmarks, eligibility completeness, and geographic coverage via ClinicalTrials.gov API v2.",
+        "categories": [
+          "MCP_SERVERS",
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "AutomateLab",
+        "userPictureUrl": "https://images.apifyusercontent.com/ghbt527ELPRlaZx_t8CVRkl5MqE2qNBilE81Ig0Uuhw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVzVBQWRGRVVUVEZwV0tHUWRwZjdLc0ZZZUNGUVJVN0NqNVlJSDM2RW0wNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMjVCZVhWM2EyUjNNR1l5V0VSbFFuUXRjSEp2Wm1sc1pTMVRjVXhIVUZWcFpGSjZMVUYxZEc5dFlYUmxUR0ZpWDB4dloyOHVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-05-22T10:41:37.158Z",
+          "minimalMaxTotalChargeUsd": null,
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001,
+                "isPrimaryEvent": true
+              },
+              "analyze_site_feasibility": {
+                "eventTitle": "Analyze Site Feasibility",
+                "eventDescription": "Charged per analyze_site_feasibility call.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.15
+              },
+              "get_trial_enrollment_trends": {
+                "eventTitle": "Get Trial Enrollment Trends",
+                "eventDescription": "Charged per get_trial_enrollment_trends call.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.08
+              },
+              "compare_enrollment_benchmarks": {
+                "eventTitle": "Compare Enrollment Benchmarks",
+                "eventDescription": "Charged per compare_enrollment_benchmarks call.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.08
+              },
+              "screen_eligibility_criteria": {
+                "eventTitle": "Screen Eligibility Criteria",
+                "eventDescription": "Charged per screen_eligibility_criteria call.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.05
+              },
+              "search_trials": {
+                "eventTitle": "Search Trials",
+                "eventDescription": "Charged per search_trials call.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.05
+              }
+            }
+          },
+          "createdAt": "2026-05-08T10:41:37.516Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-05-08T10:41:57.663Z"
+        },
+        "id": "xOqJEW6EHliW84N6a",
+        "url": "https://apify.com/red.cars/clinical-trials-mcp"
+      },
+      {
+        "title": "Company Profile: financials, filings, events",
+        "name": "company-profile",
+        "username": "companyfacts",
+        "stats": {
+          "totalBuilds": 31,
+          "totalRuns": 432,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-16T11:39:41.842Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 2,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 3
+          }
+        },
+        "description": "US, UK and Indian company profiles by name, ticker, CIK, Companies House number or CIN: financials, filings, officers, beneficial owners, group structure, sanctions screening and change alerts — every fact with its source. Standby REST API + MCP server.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/praZuftyG9gS32-SRBixV8VUPWk54UEpd3CDxG79EMs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZ1dJa1hSMG9qZDlsa05udG8tYWN0b3Itc2UyT2ZHa3lCclV5cDBUSHgtWHVoNzRCS1NYdC1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Jhutan Debnath",
+        "userPictureUrl": "https://images.apifyusercontent.com/6k3OQhs1-1EXzYSJYrUPEEDpZBVWPIaZGBNznQFo6ZQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQUE1Z21VSE9lY0loOFlpbGNBLW9pNVNQSkZnY0JTcHBXQ1VNOFB1VWY2MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTME0zTTJ0NFJGaHFjRmhKZEV4eGNWOU5lVTkwVUVKTmVVUjZaazVOWDB3dFdFUnlXRWxPU2xsclgzQTVWVmt3TVhjOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "profile-us": {
+                "eventTitle": "US company profile",
+                "eventDescription": "One resolved US company profile: identity, business details, 10-year financials, filings, events. Unresolved queries are not charged.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              },
+              "profile-uk": {
+                "eventTitle": "UK company profile",
+                "eventDescription": "One resolved UK company profile with Companies House financials, officers and PSC. Coming in the next release.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.03
+              },
+              "person": {
+                "eventTitle": "Officer / person record",
+                "eventDescription": "One officer, director or insider record attached to a profile. Coming in the next release.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005
+              },
+              "change-detected": {
+                "eventTitle": "Change detected",
+                "eventDescription": "One change event emitted by monitoring: new filing, name, status, officer or PSC change. Coming in the next release.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              },
+              "profile-in": {
+                "eventTitle": "India company profile",
+                "eventDescription": "One resolved Indian company profile: MCA identity, capital, and quarterly/annual financials for listed companies (NSE + BSE filings).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              },
+              "resolve-match": {
+                "eventTitle": "Batch name match",
+                "eventDescription": "One matched record in batch entity resolution (CSV/list matching to registry ids). Unresolved queries are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              },
+              "screen": {
+                "eventTitle": "Company screen query",
+                "eventDescription": "One screening query (find companies by criteria: country, industry, financial ranges, risk flags).",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01
+              }
+            }
+          },
+          "startedAt": "2026-08-31T13:25:18.613Z",
+          "createdAt": "2026-08-31T13:25:19.988Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-31T13:35:50.338Z"
+        },
+        "id": "se2OfGkyBrUyp0THx",
+        "url": "https://apify.com/companyfacts/company-profile"
+      },
+      {
+        "title": "Prop 65 60-Day Notice Search + Settlement Benchmark",
+        "name": "prop-65-60-day-notice-settlement-benchmark",
+        "username": "malekh",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 79,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-17T18:38:46.852Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search every California Proposition 65 60-day notice by product, chemical, company or plaintiff, from the Attorney General's own register. Returns what comparable notices actually settled for - civil penalty vs attorney fees, with the sample size attached - and profiles each filer.",
+        "categories": [
+          "AUTOMATION",
+          "OTHER"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Malek H",
+        "userPictureUrl": "https://images.apifyusercontent.com/PeAO1YBIUqSAfwm4lttk8JaiJ0Pi5bN58IIACJxqiuE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdThlcDBCLUZ0MHFZOThVM3MtREd6dGVZeURBanluQ3pmLWpOTHl3eU05by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RXhPVEV6T0RRMU1UOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "Charged per result row written to the dataset.",
+                "eventPriceUsd": 0.00001,
+                "isPrimaryEvent": true
+              },
+              "notice-search": {
+                "eventTitle": "Notice search with settlement benchmark",
+                "eventDescription": "Charged once per search, and only after the Attorney General's register passes its freshness and column checks. A run that aborts on a stale or malformed register costs you nothing.",
+                "eventPriceUsd": 2
+              },
+              "filer-benchmark": {
+                "eventTitle": "Serial-filer profile",
+                "eventDescription": "Charged per noticing party actually profiled. Set 'Filers to profile' to 0 to skip profiling and pay nothing for it; a party whose history cannot be resolved is not charged.",
+                "eventPriceUsd": 1.5
+              },
+              "notice-record": {
+                "eventTitle": "Notice record returned",
+                "eventDescription": "Charged per individual notice record returned. Set 'Return individual notice records' to off to get only the search summary and filer profiles and pay nothing here.",
+                "eventPriceUsd": 0.02
+              }
+            }
+          },
+          "createdAt": "2026-07-30T03:34:30.097Z",
+          "startedAt": "2026-07-30T03:34:30.097Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "mAyUUS7tj5jEVcc8S",
+        "url": "https://apify.com/malekh/prop-65-60-day-notice-settlement-benchmark"
+      },
+      {
+        "title": "Poland Apartment Valuation (AVM) – Notarial Deed Prices",
+        "name": "poland-apartment-valuation",
+        "username": "kris_fili",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 43,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T05:40:34.444Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 9,
+            "TIMED-OUT": 0,
+            "TOTAL": 9
+          }
+        },
+        "description": "Estimate the market value of any apartment in Poland from real notarial deed prices (official RCN register): value, price per m², range, confidence and comparable sales.",
+        "categories": [
+          "REAL_ESTATE",
+          "AI",
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Krzysztof Filipiak",
+        "userPictureUrl": "https://images.apifyusercontent.com/1tD9C2wHwtKugk6N8cU_2GI6hi_4iWfgu5eVOTAB_aA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcmdpTGlYN3dpeGZpd1puVG9fZGRweDRDRExNZkNySzhKdE9ReXRKM0w0ay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTWHBZYWtwR2JrdzNaRzVQVW00NFIxRk1kamhhWVV0UmJ6aFFTMHhKWTBGS1QyMU1USFJFYkcxNU1sRkZOMUYzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "valuation": {
+                "eventTitle": "Apartment valuation",
+                "eventDescription": "One valuation of one apartment (charged only when an estimate is produced).",
+                "eventPriceUsd": 0.49,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-10-09T09:08:31.236Z",
+          "startedAt": "2026-10-09T09:08:30.000Z",
+          "minimalMaxTotalChargeUsd": 0.5,
+          "reasonForChange": "Pricing per statistical report and per record instead of a flat per-row fee - you pay for the report only when it contains data."
+        },
+        "id": "5KXCBv1LnCqIVges3",
+        "url": "https://apify.com/kris_fili/poland-apartment-valuation"
+      },
+      {
+        "title": "Higher-Ed Institution Records — US IPEDS",
+        "name": "higher-education-institution-records",
+        "username": "nexgensignal",
+        "stats": {
+          "totalBuilds": 15,
+          "totalRuns": 71,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T03:58:13.246Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Keyless, pay-per-record NCES IPEDS register — one row per US college/university with control, level, and admissions decisions (applicants, admits, admit/yield rates, SAT/ACT). Public-domain; no person data.",
+        "categories": [
+          "NEWS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/sNT7ttkdLKidET2kpwd3cUEPeG65ZSLHzx9JpZPNub0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSFVFVlB2UEdTb3pJUmFoVHktYWN0b3ItdFRmdUFOQkM3cDZLRVIxbWktYk42MFZwYTZLQS1oaWdoZXItZWR1Y2F0aW9uLWluc3RpdHV0aW9uLXJlY29yZHMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGen Signal",
+        "userPictureUrl": "https://images.apifyusercontent.com/E2AM6xIR3RFe1AIRY7pK-UJ_GvYpK4KjdTJNvRKmJj8/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vS0lmSk1xRkFqZlVObzZfNkFoOEtwaWtaQUJXU0tma3U1RDlsdG90M2FHNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTRlZGVmxCMlVFZFRiM3BKVW1Gb1ZIa3RjSEp2Wm1sc1pTMXhUR3AzTjB0VVpXTnBMVTVIVXk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "PRICING ACTIVATION FIX: re-file identical amounts with the activation flag (isPriceChangeNotificationSuppressed) so the saved price actually bills customers.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "institution_record": {
+                "eventTitle": "Institution record",
+                "eventDescription": "One NCES IPEDS postsecondary institution record delivered to your dataset.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0335
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0335
+                  }
+                }
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "isPriceChangeNotificationSuppressed": true,
+          "createdAt": "2026-08-26T21:35:26.410Z",
+          "startedAt": "2026-08-26T21:35:26.410Z"
+        },
+        "id": "tTfuANBC7p6KER1mi",
+        "url": "https://apify.com/nexgensignal/higher-education-institution-records"
+      },
+      {
+        "title": "H1B Visa Sponsor Lookup (US & UK Sponsor Licence, No Login)",
+        "name": "visa-sponsors",
+        "username": "locaihost",
+        "stats": {
+          "totalBuilds": 27,
+          "totalRuns": 137,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-18T07:16:41.323Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 11,
+            "TIMED-OUT": 0,
+            "TOTAL": 11
+          }
+        },
+        "description": "Find out which companies sponsor H-1B visas: certified H1B and E-3 filings by year, denials, top job titles with median wage and wage level, PERM green-card cases and UK sponsor licence status. Official US and UK government data, no login. No match is free. $2.50 per 1,000 records.",
+        "categories": [
+          "JOBS",
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/58uVRWxEEN7wbDHeJTsqI846FlgJxbdU2NEbXMlwyro/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUDJTUTd4M0lwa2FLb09nT1gtYWN0b3Itc0Nnejd4RVNFUFYwNFBMa3AtWHhQYmlNbHVDcy12aXNhLXNwb25zb3JzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "locaihost data",
+        "userPictureUrl": "https://images.apifyusercontent.com/bPaADyQ1kUXw9brwSAKjo5OiZxihAurONaMVlc6Dbww/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSDBvQUR2ZFFIMnNKaU84b3BZNUlZWTE0ZXFZLXRTZk96OGVxaEowQ0tfZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVREpUVVRkNE0wbHdhMkZMYjA5blQxZ3RjSEp2Wm1sc1pTMXRVVkZMVWsxMU5GRkxMV3h2WTJGcGFHOXpkQzFoZG1GMFlYSXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "minimalMaxTotalChargeUsd": 0.05,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00005
+                  }
+                }
+              },
+              "record": {
+                "eventTitle": "Result",
+                "eventDescription": "One employer sponsorship profile, or one live job with sponsorship evidence. Companies not found are free.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0019
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0014
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-10-18T08:00:54.000Z",
+          "reasonForChange": "Event titles only; prices unchanged",
+          "createdAt": "2026-10-18T08:00:59.869Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "sCgz7xESEPV04PLkp",
+        "url": "https://apify.com/locaihost/visa-sponsors"
+      }
+    ]
+  }
+}

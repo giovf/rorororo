@@ -1,0 +1,50 @@
+{
+  "request": "gankdat-research-2026-10-23-17b",
+  "fetched_at": "2026-10-23T17:20:18.745Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/docker/mcp-registry/commits/7b5f2a519265bd6d7797834abece0ce2aeb121c0/check-runs",
+      "fetched_at": "2026-10-23T17:20:16.911Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/docker/mcp-registry/commits/7b5f2a519265bd6d7797834abece0ce2aeb121c0/check-runs",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "62",
+        "etag": "W/\"11231b9abe4dcab8fb0323785426894ca5176b2135de970a9752874eb7f5bd6f\""
+      },
+      "file": "1.json",
+      "bytes": 47,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/docker/mcp-registry/commits/7b5f2a519265bd6d7797834abece0ce2aeb121c0/status",
+      "fetched_at": "2026-10-23T17:20:17.737Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/docker/mcp-registry/commits/7b5f2a519265bd6d7797834abece0ce2aeb121c0/status",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1073",
+        "etag": "W/\"a49acfd7d053fcb1ae16245f47c61bb9ca5e50b3504f649b3758dbffabeb533e\""
+      },
+      "file": "2.json",
+      "bytes": 4961,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/x402/data/uk-tenders?per_page=1",
+      "fetched_at": "2026-10-23T17:20:17.906Z",
+      "status": 402,
+      "final_url": "https://gankdat.com/x402/data/uk-tenders?per_page=1",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "301"
+      },
+      "file": "3.json",
+      "bytes": 301,
+      "truncated": false
+    }
+  ]
+}

@@ -12,7 +12,7 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
 | Claude model, build / burn-down / exchange / review routines | `claude-fable-5-1` | cloud routine configs (`docs/routines/README.md`) | https://platform.claude.com/docs/en/about-claude/models/overview | versions check → handoff → interactive session updates the routines |
 | Claude model, build fallback | `claude-opus-5-5` | `trig_01GraXN5FPXmq5M9wJSYYeHN` | same | same |
 | Claude model, metrics / triage / report / retro routines | `claude-sonnet-5-5` | their routine configs | same | same |
-| Node on GitHub runners | `22` | `.github/workflows/*.yml` (`node-version`) | https://nodejs.org/dist/index.json (active LTS) | versions check → handoff; the repo moves one LTS at a time |
+| Node on GitHub runners | `24` | `.github/workflows/*.yml` (`node-version`) | https://nodejs.org/dist/index.json (active LTS) | versions check → handoff; the repo moves one LTS at a time |
 | npm packages (hono, wrangler, vitest, playwright, …) | `package-lock.json` | root | npm registry | Dependabot monthly, grouped; minor/patch auto-merged when the gate is green (`dependabot` workflow), majors by an attended session; a red gate files foundry `dependabot-pr-<N>` and a `watchdog | dependabot:` line within 6 h (`scripts/dependabot-gate.ts`, 2026-10-18) |
 | GitHub Actions (`actions/checkout`, `setup-node`, `upload-artifact`) | per workflow | `.github/workflows/*.yml` | GitHub | Dependabot monthly, grouped, same merge rule |
 | Playwright Chromium | `npx playwright install` at run time | demo video / media jobs | Playwright | follows the `playwright` package version |
@@ -33,3 +33,7 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
   fails on a fresh clone because `@foundry/licensing`'s `exports` points at an unbuilt `dist/index.d.ts`), and
   **vitest majors** until `@cloudflare/vitest-pool-workers` accepts vitest 5 (0.23.0 wants ^4.1.0; the root is already
   on vitest 5, gankdat stays on 4). Lifting either is a one-line delete here plus a green gate.
+- 2026-10-20 — Node 24 on the runners (build, foundry `node-24-runners`): every workflow's `node-version` moved 22 → 24
+  through `docs/ci/` (16 files, one line each); the root and gankdat gates passed on Node 24.22.0 in the sandbox before
+  the push. The devcontainer still installs Node 22 (`.devcontainer/Dockerfile`, nodesource `setup_22.x`): CLAUDE.md
+  asks before any `.devcontainer/` change, so an attended session bumps it (handoff in `docs/ALERTS.md`).

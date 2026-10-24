@@ -2,6 +2,9 @@ name: gankdat publish
 
 # The keys live here, not in any Claude sandbox: routines commit actors / server.json, CI
 # publishes. Runs after every push touching the actors or the registry manifest.
+# Since 2026-10-24 (foundry registry-publish-silent-exit) the registry step gets GITHUB_TOKEN for the
+# releases API: run 54 (10-23 17:34) failed with exit 1 and no message when the unauthenticated call
+# from a shared runner IP hit GitHub's 60/h limit; the script now names its step and HTTP status.
 on:
   push:
     branches: [main]
@@ -29,7 +32,7 @@ jobs:
           fetch-depth: 0 # the push range (github.event.before..sha) spans every commit of the push; depth 2 lost a two-commit push (2026-09-30)
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
       - name: Apify actors — push changed, price, publish
         run: node ventures/gankdat/scripts/publish-actors.mjs ${{ inputs.all && '--all' || '' }}
         env:
@@ -41,3 +44,4 @@ jobs:
         run: bash ventures/gankdat/scripts/registry-publish.sh
         env:
           MCP_REGISTRY_KEY: ${{ secrets.MCP_REGISTRY_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # authenticated releases API (1000/h) instead of 60/h per shared runner IP

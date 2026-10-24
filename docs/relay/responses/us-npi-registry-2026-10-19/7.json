@@ -1,0 +1,2787 @@
+{
+  "data": {
+    "total": 138,
+    "count": 40,
+    "offset": 0,
+    "limit": 40,
+    "desc": false,
+    "items": [
+      {
+        "title": "NPI/NPPES Healthcare Provider Scraper",
+        "name": "npi-nppes-scraper",
+        "username": "parseforge",
+        "stats": {
+          "totalBuilds": 24,
+          "totalRuns": 730,
+          "totalUsers": 79,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 6,
+          "lastRunStartedAt": "2026-10-18T12:40:38.096Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 36,
+            "TIMED-OUT": 0,
+            "TOTAL": 36
+          }
+        },
+        "description": "Scrapes NPI numbers and healthcare provider details from the NPPES registry. Returns each provider as a flat row with NPI, name, taxonomy, address, and phone. Supports search filters and direct API URLs.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/w0gcYhkqrQr0BsiHx20ujzG3GYusR7lFHCDxbxCQQM8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1ZNRVRxQUhSTmJuT0N6QXEtYWN0b3ItOWlzY3BXWENCRWE2VFlOaUUtaDltb1RkbXVkWS1ucGktbnBwZXMtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseForge",
+        "userPictureUrl": "https://images.apifyusercontent.com/7v_fw1tYOZK4ZaPIPpFJPq4bd1wmXxpvscQbD-yADiU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWkphSmZPeFdyX3NPNFdCNU0wNEpfRWYyc1BlaWxmN0JyWUJGTkt5TmNFdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMVpOUlZSeFFVaFNUbUp1VDBONlFYRXRjSEp2Wm1sc1pTMW5VbmxJWTBGSlFXNWtMWEJoY25ObFptOXlaMlZmYkc5bmJ5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.16
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.12333
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.08667
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.05
+                  }
+                }
+              },
+              "result-item": {
+                "eventTitle": "Result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01067
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00933
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.008
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-08T17:21:24.000Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-07-24T17:23:34.948Z"
+        },
+        "id": "9iscpWXCBEa6TYNiE",
+        "url": "https://apify.com/parseforge/npi-nppes-scraper"
+      },
+      {
+        "title": "NPPES NPI Registry Search - Healthcare Provider KYB Leads",
+        "name": "nppes-npi-registry",
+        "username": "pink_comic",
+        "stats": {
+          "totalBuilds": 17,
+          "totalRuns": 2022,
+          "totalUsers": 61,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 8,
+          "totalUsers90Days": 19,
+          "lastRunStartedAt": "2026-10-19T10:00:04.631Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 99,
+            "TIMED-OUT": 0,
+            "TOTAL": 99
+          }
+        },
+        "description": "Official NPPES NPI Registry search for healthcare KYB, directories, and credentialing. Lookup NPI, name, taxonomy, city, state, or ZIP. Export addresses, phones, taxonomy, and NPI-status evidence. Related: LEIE, PECOS, CMS Doctors.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/rFsYuf6NPzupnVmTPkJ-C-YnXdxgBUEiveKzyb1d3Iw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcUhCNFdCdVdsUmtraUdIWXctYWN0b3ItWktFdHpIbHlQU3FkWGRpOWotaHJGSEtPZ3I0by1ucHBlcy1ucGktcmVnaXN0cnkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ava Torres",
+        "userPictureUrl": "https://images.apifyusercontent.com/xHIQ8NPgSWhC7jbdKz1bniz5JDgrODfO99BuuEXmJbQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV19KMWN2OFBpYlc5enZjT2ZWUVcxTnNyQVk1eU9Sd0F3QkMwWWYzWGpRSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVWhDTkZkQ2RWZHNVbXRyYVVkSVdYY3RjSEp2Wm1sc1pTMW1NakYwYkdwVFFraDNMWE5qY21WbGJuTm9iM1JmTWpBeU5pMHdNeTB5TkY5aGRGODRMalExTGpFMVgwRk5MbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-03-28T06:25:13.492Z",
+          "startedAt": "2026-03-28T06:25:13.492Z"
+        },
+        "id": "ZKEtzHlyPSqdXdi9j",
+        "url": "https://apify.com/pink_comic/nppes-npi-registry"
+      },
+      {
+        "title": "Nppes Npi Registry Api",
+        "name": "nppes-npi-registry-api",
+        "username": "agenscrape",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 1903,
+          "totalUsers": 20,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T21:16:41.609Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 190,
+            "TIMED-OUT": 0,
+            "TOTAL": 191
+          }
+        },
+        "description": "Search NPPES NPI Registry for healthcare providers. Find doctors, nurses, dentists, hospitals & clinics with NPI numbers, specialties, addresses & contact info. Filter by name, specialty, location, or organization. Extract complete provider profiles for credentialing & healthcare analytics.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Agenscrape",
+        "userPictureUrl": "https://images.apifyusercontent.com/SbdyczhbT48Lld9UFHKkwxS06RCIFTdNJKzHIx3Ee3o/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vR05iUUlVa2lHdElSRFdvbVZMNXp4ekpoOUZMSWY2RVNPN1hhcW81VWtoRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaMjF0UWswMVJYWTVXVkJ1Y1RkTFNsQXRjSEp2Wm1sc1pTMDNUWFV5Vm5sdlZXZHNMVU5vWVhSSFVGUmZTVzFoWjJWZlQyTjBYekUzWDE4eU1ESTFYMTh4TUY4ek5WOHpNMTlRVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.0005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.0005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2025-11-27T17:42:46.803Z",
+          "createdAt": "2025-11-27T17:42:47.685Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "lXxtefmzV2Y7aAXIe",
+        "url": "https://apify.com/agenscrape/nppes-npi-registry-api"
+      },
+      {
+        "title": "NPI Registry lookup - healthcare providers (NPPES API)",
+        "name": "npi-provider-registry",
+        "username": "retrainmap",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 45,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-18T12:58:49.047Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 33,
+            "TIMED-OUT": 0,
+            "TOTAL": 33
+          }
+        },
+        "description": "Healthcare providers from the CMS NPI Registry (NPPES API 2.1): look up NPI numbers or search by taxonomy, name, organization, city, state, ZIP and NPI type. One flat row per provider: name, credential, primary taxonomy and license, practice and mailing address, phone, dates, status.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "RetrainMap Team",
+        "userPictureUrl": "https://images.apifyusercontent.com/74b0yLU1r2e8ePhLT6Rcdtjzp97pG3upfz96-oSp_x0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vandhRHFJWUw5NWRoTVBzZ1BxZFNhRHBTb25sZEVfOEpOV2U4OFcyYnI1Zy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVGRuZUhwTFlXa3pZakZVWmxNM1drWXRjSEp2Wm1sc1pTMTFjRkphV2xCMFZuaElMV0Z3Y0d4bExYUnZkV05vTFdsamIyNHVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "run-start": {
+                "eventTitle": "Actor run",
+                "eventDescription": "Charged once per run",
+                "eventPriceUsd": 0.1,
+                "isOneTimeEvent": true
+              },
+              "record": {
+                "eventTitle": "Record",
+                "eventDescription": "Charged per row written",
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-05T01:39:12.000Z",
+          "createdAt": "2026-09-05T01:39:12.432Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "3AQzUw7AMZY1lV6NR",
+        "url": "https://apify.com/retrainmap/npi-provider-registry"
+      },
+      {
+        "title": "NPPES NPI Healthcare Provider Crawler",
+        "name": "nppes-npi-crawler",
+        "username": "jungle_synthesizer",
+        "stats": {
+          "totalBuilds": 22,
+          "totalRuns": 282,
+          "totalUsers": 30,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 7,
+          "lastRunStartedAt": "2026-10-18T16:04:38.968Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Crawl healthcare provider records from the CMS NPPES NPI Registry. Extract NPI numbers, names, credentials, specialties, taxonomy codes, practice addresses, and phone numbers. Filter by state, specialty, city, ZIP, and provider type. Ideal for pharma sales, medical devices, and provider directories.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/u5pHT_WSALkZnj1gGa5rO8Z4v9sJDynDuXH-iBSGr04/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdHhtaXBaRkw5SHdTOWd3dGotYWN0b3ItZ0pEMW1lems1NUpWZzUzZzYtaExPOHc3RXJNNC1ucHBlcy1ucGktY3Jhd2xlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "BowTiedRaccoon",
+        "userPictureUrl": "https://images.apifyusercontent.com/VEtsj3qf9BbTWx1ttNlQj90Gy-uhoSjI_wvgFV96Xn0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYzFvTWZwZVRrTzhCUkRCWmZHZHFwcEZjS05sdVNqU2VtQTVzeG9SNUo2WS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkSGh0YVhCYVJrdzVTSGRUT1dkM2RHb3RjSEp2Wm1sc1pTMVdabWx0WWtveVpsUkRMVU5vWVhSSFVGUmZTVzFoWjJWZlFYQnlYekV6WDE4eU1ESTFYMTh3TVY4ME9WOHhNbDlCVFM1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-10-04T09:33:25.707Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.1
+              },
+              "data-record": {
+                "eventTitle": "Record scraped",
+                "eventDescription": "Cost per record scraped.",
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.001
+              },
+              "data-record-premium": {
+                "eventTitle": "Record scraped - premium",
+                "eventDescription": "Cost per scraping premium record",
+                "eventPriceUsd": 0.002
+              }
+            }
+          },
+          "createdAt": "2026-09-19T09:33:25.743Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-11T00:00:20.329Z"
+        },
+        "id": "gJD1mezk55JVg53g6",
+        "url": "https://apify.com/jungle_synthesizer/nppes-npi-crawler"
+      },
+      {
+        "title": "NPPES NPI Registry Scraper - Healthcare Providers",
+        "name": "nppes-npi-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 29,
+          "totalRuns": 182,
+          "totalUsers": 6,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-19T11:00:46.780Z",
+          "actorReviewCount": 2,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search the official NPPES NPI Registry for US healthcare provider data, no API key. Look up doctors, physicians and organizations by NPI number, name, taxonomy/specialty, city, state or ZIP. Export NPI, credentials, license, taxonomy, addresses, phone and fax to JSON, CSV or Excel.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/f6FuhdOoTgg8Z6X8A2IZJSV0qyxrZK-Zfl1GinaI5B4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItcjZYa2ZEc1ByNEd6SE14b1MtVmlGV25Xamo0ci1ucHBlcy5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.007385
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.006769
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.006154
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.006154
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.006154
+                  }
+                }
+              },
+              "details": {
+                "eventTitle": "details",
+                "eventDescription": "Single result with details in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.009231
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.008615
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.007385
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.007385
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.007385
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-07-31T00:00:00.000Z",
+          "createdAt": "2026-07-15T23:12:41.148Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-15T23:13:01.446Z",
+          "notifiedAboutChangeAt": "2026-08-05T15:06:14.170Z"
+        },
+        "id": "r6XkfDsPr4GzHMxoS",
+        "url": "https://apify.com/scrapers_lat/nppes-npi-scraper"
+      },
+      {
+        "title": "Healthcare Provider Leads — NPI / NPPES (Phone & Address)",
+        "name": "npi-healthcare-leads",
+        "username": "inexhaustible_glass",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 140,
+          "totalUsers": 5,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T06:06:30.449Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Find US doctors, dentists, clinics and hospitals from the official NPI/NPPES registry as clean leads: name, specialty, practice address, phone and fax. Filter by specialty, state and city. No API key.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/BPBL-s2CcUrVuno2KVuRu4BgTiAQowno-Daicd7YG34/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaDA3Y3ZyWVhDNmdHYnkzT2EtYWN0b3ItNHNrc3FHcE9pMG84elppYXAtdDBiQWhrOGpoSi1tZWRpY2FsLWljb24tYmctcG5nLWRlaHJhZmxpY2tzLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Hitman studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/-dGl0H4SMe4cEFtN8UXxE58LOeVSdgZw0FkVyr_0kGY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vOXlPcDNDdExSX25iUHB6WVF0aVBYOEFZa1NJbW8yc25BaVBLTVp5akY1RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTbnBRTFcxSVozaEJVRmxwTFV0RE9HRnhUR3RtV0RSMVQwNVVRemRyTTFaUlpXZFdTbFkyY1V0WVZrbDBUblpCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.01
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Provider lead",
+                "eventDescription": "One healthcare provider with contact details.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-27T15:47:50.315Z",
+          "startedAt": "2026-09-27T15:47:50.315Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-27T16:05:57.965Z"
+        },
+        "id": "4sksqGpOi0o8zZiap",
+        "url": "https://apify.com/inexhaustible_glass/npi-healthcare-leads"
+      },
+      {
+        "title": "US Healthcare Provider Search: Normalized NPI Data (NPPES)",
+        "name": "npimcp-search",
+        "username": "overlookdata",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 103,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T11:10:47.557Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search all 9M+ US healthcare providers with no 1,200-result cap. Normalized NPPES data: parsed credentials, deduplicated addresses, OIG exclusion + Medicare enrollment flags, quality scores. Filter by state, specialty, credential. $3 per 1,000 results.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ZTWlbgcWaYaPNiERWMi0mA2WawCJIAMUQ4W9LrPdf38/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMkN4T05MU2VCQ1VidzNGQk0tYWN0b3ItQTJabFcxUTUzOHV6ZGJ2WmotMmpyUksxQXNGQS1pY29uX3NlYXJjaC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Aaron Melton",
+        "userPictureUrl": "https://images.apifyusercontent.com/9yDttfSAniUnckeXS_y4jxwAn-Hdtfn1xFjaZI3RDl4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vXzFUT2FhMWFDYWY3NEVYcHZSNHZsZGVDcldabzB1b3U5ZDBjSHFKcC1scy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpOWtZVGs0WWpSbE5qY3pOREk1T1dNM05HRXlPVE01Wm1abU56RmxNVFJtT0RCbU1EQmpOR1V5TVRRMU1UZ3lNR1U1WVRNeE5UWTROR0ptT0dSaU1EVXhQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-05T02:29:49.134Z",
+          "createdAt": "2026-08-05T02:29:49.263Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "A2ZlW1Q538uzdbvZj",
+        "url": "https://apify.com/overlookdata/npimcp-search"
+      },
+      {
+        "title": "NPPES Organization NPI Snapshot",
+        "name": "public-registry-license-lookup-api",
+        "username": "zentrafoundry",
+        "stats": {
+          "totalBuilds": 63,
+          "totalRuns": 130,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T19:14:46.654Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "CMS NPPES organization NPIs in Boston. Last-run names the legal name + NPI. Not a state license board. $0.01.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Zentra",
+        "userPictureUrl": "https://images.apifyusercontent.com/xhZGAd3ceXm8pLfppQSITi5l6p7MhYejQ_cvpwjNi_A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTGwxb0d0Znc5cXZyQUFmSm0wVEoycVFFa25weUJWT3hlZFdWbHVVVnJORS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaSEpTVVZveFNIRmhWMDVIVEZkNldEVXRjSEp2Wm1sc1pTMTRPSGhLU1dGRFYwbGxMWHBsYm5SeVlWOXBZMjl1WDI5dWJIa3VVRTVITG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "reasonForChange": "Unstack PPE to $0.01 / NPI",
+          "minimalMaxTotalChargeUsd": 0.5,
+          "startedAt": "2026-10-01T17:06:22.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result-delivered": {
+                "eventTitle": "Result delivered",
+                "eventDescription": "$0.01 / NPI",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          },
+          "createdAt": "2026-09-16T17:06:22.821Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-16T17:06:50.221Z",
+          "notifiedAboutChangeAt": "2026-10-01T17:35:57.466Z"
+        },
+        "id": "TH4I07dQc6b8O620B",
+        "url": "https://apify.com/zentrafoundry/public-registry-license-lookup-api"
+      },
+      {
+        "title": "NPPES Healthcare Organization Change Monitor",
+        "name": "nppes-healthcare-organization-change-monitor",
+        "username": "theleadforge",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 75,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T11:36:45.981Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Track new and reactivated healthcare organization NPIs from official CMS NPPES weekly data. Filter by state or taxonomy, or monitor up to 100 NPIs.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/I8pKVxrNRAJ6wIB2fha6wSfqltfso2AHZ38xZ94WFKA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vU2JkOFpoVTN2SE5Gb2ozamUtYWN0b3ItUWF0Y2R5dllWSWVVYVlrWkUtQXJhZXN6OThneS1OUFBFUy1IZWFsdGhjYXJlLU9yZ2FuaXphdGlvbi1Nb25pdG9yLUljb24ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Mason",
+        "userPictureUrl": "https://images.apifyusercontent.com/WLrTQUt93kSGs0jUsPYo1W4tIqWNAkCCW9E9TaRGqX4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWUcxSEUwdnVqRWtGcXFEa1pNYjdQVmg3Q3ktZ0NjUGFfbFY1a3FOaGV6ay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVMkprT0Zwb1ZUTjJTRTVHYjJvemFtVXRjSEp2Wm1sc1pTMVhNMHhrTm14MFdtVTRMVWhsWVdSemFHOTBMbXB3WncuanBn.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "qualifying-organization-change": {
+                "eventTitle": "Qualifying organization change",
+                "eventDescription": "One unique validated NPPES organization lifecycle event persisted successfully with durable replay protection.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-15T07:08:29.755Z",
+          "createdAt": "2026-08-15T07:08:31.503Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "QatcdyvYVIeUaYkZE",
+        "url": "https://apify.com/theleadforge/nppes-healthcare-organization-change-monitor"
+      },
+      {
+        "title": "NPPES NPI Bulk Scraper — Every Provider by Specialty & State",
+        "name": "nppes-provider-scraper",
+        "username": "scrapersdelight",
+        "stats": {
+          "totalBuilds": 13,
+          "totalRuns": 116,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T10:36:35.778Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "Pull an ENTIRE medical specialty from the official NPPES NPI Registry. The CMS API caps every query at 1,200 records; this Actor auto-splits by state and ZIP until each slice fits — 22,189 NY dentists, not 1,200. Name, phone, fax, practice address, license. Or paste NPI numbers to verify a list.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/BECF70Kxn6XpheFrpFOcAgLizf_wT0AoniubjVx9gG0/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQlRna3dMRUM0YlpWemI4VmItYWN0b3Itcmk5ZVhzRUd0c0s5NnZkWEwtOEE2NWJ2aHZOdC0zOS1ucHBlcy1wcm92aWRlci1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Delight",
+        "userPictureUrl": "https://images.apifyusercontent.com/SjUfVS2plLJy6kHfthU67C5f9v0e6wVrAbVTS2w1R3A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRmxwWnZpaF9memhGWnlPTEI4Ml9FRGhTQm1pUFRiYWJUWWNia00ySUhnNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRbFJuYTNkTVJVTTBZbHBXZW1JNFZtSXRjSEp2Wm1sc1pTMWxTRVJxZW5BMU4wOVlMVWRsYldsdWFWOUhaVzVsY21GMFpXUmZTVzFoWjJWZmFuVXhhek5tYW5VeGF6Tm1hblV4YXkxamJHVmhiaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider-scraped": {
+                "eventTitle": "Per provider returned",
+                "eventDescription": "Charged once for each unique healthcare provider returned, including NPI, name, credential, specialty, licence number, practice address, phone and fax.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventPriceUsd": 0.002
+              }
+            }
+          },
+          "startedAt": "2026-08-12T19:59:54.000Z",
+          "createdAt": "2026-08-12T19:59:56.883Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "ri9eXsEGtsK96vdXL",
+        "url": "https://apify.com/scrapersdelight/nppes-provider-scraper"
+      },
+      {
+        "title": "NPPES US Healthcare Provider & NPI Registry",
+        "name": "nppes-us",
+        "username": "dromb",
+        "stats": {
+          "totalBuilds": 28,
+          "totalRuns": 179,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T05:38:30.964Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search and verify individual healthcare providers and organizations in the official CMS NPI Registry.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/pCf4dPe6pQw-E2HWHkhAaqZEmt3l5ITYt0ItThLuk70/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZDhqRkNNZnhoQ0wzWmpFdVgtYWN0b3ItOTBRQzVtb0U1RWJkY2RpaEUtUkxtMzNBdkVMWS1DaGF0R1BUX0ltYWdlX0ZlYl84X18yMDI2X18wOF81Nl80NF9QTS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Dmitriy Gyrbu",
+        "userPictureUrl": "https://images.apifyusercontent.com/T9yXugLow14oZW81VmxPhXVC1Ty4iovp0un6UmaGTRc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZUNXNk9BWUxlaHlMU3V2aHUwQUphLTAzVkdfVDI4dEdLbkpQbjduTkFTby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTa0pmVkhSTVIyRmtNUzFJY1RaNFdVTk5VR0kyYjNWR2RTMXRNMW93Ymxaa04wWlZTQzAxTkdGV2NqaEtiREV3VlQxek9UWXRZdw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-08-28T15:05:29.425Z",
+          "createdAt": "2026-08-28T15:05:32.845Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-28T15:05:58.337Z"
+        },
+        "id": "90QC5moE5EbdcdihE",
+        "url": "https://apify.com/dromb/nppes-us"
+      },
+      {
+        "title": "NPI Registry Scraper – NPPES Healthcare Provider Leads",
+        "name": "npi-healthcare-provider-leads",
+        "username": "dedicated_crest",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 5,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T17:30:06.079Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "NPI Registry scraper (official CMS NPPES API): US doctors, dentists, clinics & other providers with NPI, specialty, practice address, phone, fax, authorized official, license. Filter by specialty, state, city, ZIP. Past the 1,200 cap. $1/1,000.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AUTOMATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ben Barazandeh",
+        "userPictureUrl": "https://images.apifyusercontent.com/kOZ_eYjtPWJU1H2rTco_JV25uaZ4MlHvic7IhzBw6OY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMnNJRVNzbFp2Y01EN3Yya2pMYmctX3VMUWhna1lOSkd2LWlYTWZqLWFmYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVTVDUkdoQlMyWnBlWEpDTTB4SlMwZHJSMk51YUVoRVluSktielJTYm1KSWNFTlVUWE5WV1ZReWRUbE9kekExYzNrOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider": {
+                "eventTitle": "Provider",
+                "eventDescription": "Charged once for each healthcare provider (unique NPI) pushed to the dataset",
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-17T17:44:57.968Z",
+          "startedAt": "2026-10-17T17:44:57.968Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "AeZTbhypXKAXC4S18",
+        "url": "https://apify.com/dedicated_crest/npi-healthcare-provider-leads"
+      },
+      {
+        "title": "NPI Registry: US Healthcare Providers (Official NPPES)",
+        "name": "npi-registry-healthcare-providers",
+        "username": "frenchdatalab",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 24,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T00:54:35.855Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 15,
+            "TIMED-OUT": 0,
+            "TOTAL": 15
+          }
+        },
+        "description": "Every US doctor, dentist, nurse practitioner, clinic, pharmacy or hospital from the official NPI Registry (CMS NPPES): specialty, practice address, phone, fax, license. Searches beyond the 1,200-result limit, plus NPI number look-up.",
+        "categories": [
+          "LEAD_GENERATION",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/xsypwqLhv_0y9xIyl48TBlkZxeGmr2dWEvh3DLtMfvk/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vTjhHMW8zM2pYYUdHeHFjcjMtYWN0b3ItU3pSaThZS0ZGWE1FOEdqdUktOTlCaldLQzN5aS1pY29uLW5waS1yZWdpc3RyeS01MTIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "French Data lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/x88KnwCbMORfbW_RXPWDrCkl2sJdOyOlVZtxHCbmIAU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vdk4zZXBUdm1ZMU5GNW5uVC1BNGhyTGpvZTFKZGJ3a3dJU2NEb3lzT0h6RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUamhITVc4ek0ycFlZVWRIZUhGamNqTXRjSEp2Wm1sc1pTMHdRbEZyWjI0NVZUVnVMV2x0WVdkbExURTNPVEEzTmpJd016YzRNRFV1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-10-03T08:40:55.716Z",
+          "startedAt": "2026-10-03T08:40:54.000Z",
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "provider": {
+                "eventTitle": "Provider",
+                "eventDescription": "One healthcare provider (NPI record) returned. NPI numbers that are invalid or not found are free.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              }
+            }
+          }
+        },
+        "id": "SzRi8YKFFXME8GjuI",
+        "url": "https://apify.com/frenchdatalab/npi-registry-healthcare-providers"
+      },
+      {
+        "title": "NPI Provider Check - NPPES Registry + OIG Exclusion List (LEIE)",
+        "name": "npi-provider-check",
+        "username": "kdhan",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 4,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T01:48:28.424Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 2,
+            "TIMED-OUT": 0,
+            "TOTAL": 2
+          }
+        },
+        "description": "Check US healthcare providers by NPI number or name: NPPES registry status and specialty, plus a match against the HHS-OIG exclusion list (LEIE), with the field behind every risk flag. Official public data, no API key, no phone or address output.",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Doohan Kim",
+        "userPictureUrl": "https://images.apifyusercontent.com/qsGeDAfQl3VrgPC2w9NXHN20MBkeQgpOe4izN3gGWQk/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMEJUc0dlOGFWZTVWQUZnQ3A1N3ZfTDNUVFZvamJtenpQSXl4Uk1ZUGN1cy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTelozVFU1d1JYRm9RMDEzUW1OMFUzTkViRXh6V0VKT04xWjRWbGwxU20wNWVVSlZhRGhGYURaU2RrUjFYMlpuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "provider-record": {
+                "eventTitle": "Provider record",
+                "eventDescription": "One provider checked and returned",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-18T01:43:40.757Z",
+          "createdAt": "2026-10-18T01:43:41.043Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "tpgLPnTfy8M9BIK4F",
+        "url": "https://apify.com/kdhan/npi-provider-check"
+      },
+      {
+        "title": "NPI Registry Scraper - NPI Lookup & NPPES Provider Search",
+        "name": "npi-registry",
+        "username": "s-r",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 23,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T05:47:26.385Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 9,
+            "TIMED-OUT": 0,
+            "TOTAL": 9
+          }
+        },
+        "description": "Look up NPI numbers in bulk and search the official NPPES NPI Registry by name, specialty and location. Get provider names, specialties, licenses, practice and mailing addresses, phone numbers, other IDs and update dates.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "SR",
+        "userPictureUrl": "https://images.apifyusercontent.com/0Jsfrod6O50LzPQ7MPpFm47dJEdICS01fuz--1M4kBE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNUl1ZEw2WGQ0dzNZOGNJbVZ2WGF6ajFBQUtiTTF5LUFsd2RKTXk5RFNZQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWRlZaV201SVpqTjNSVVJqY1hGemIyZ3RjSEp2Wm1sc1pTMTRZVW8wUjJ4Wk5URTNMV2x0WVdkbGN5NXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider": {
+                "eventTitle": "Provider",
+                "eventDescription": "One NPPES provider record delivered to the dataset",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-05T16:55:08.157Z",
+          "startedAt": "2026-10-05T16:55:08.157Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "zUTzTQLU74HSy4lvV",
+        "url": "https://apify.com/s-r/npi-registry"
+      },
+      {
+        "title": "NPI Registry Scraper - NPPES Bulk Provider Export",
+        "name": "apify-npi-bulk-exporter",
+        "username": "mmaker-bot",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 19,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-19T10:34:42.612Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 18,
+            "TIMED-OUT": 0,
+            "TOTAL": 18
+          }
+        },
+        "description": "NPI Registry scraper and NPPES lookup in bulk: export every US doctor, nurse, dentist or clinic by specialty (taxonomy), state, city or ZIP from the official CMS API. Beats the 1,200-result cap. NPI number, name, address, phone. $1.50/1k. AI-operated.",
+        "categories": [],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Kay Đặng",
+        "userPictureUrl": "https://images.apifyusercontent.com/yzIb5K4jX0vE_J8PFGITmMEp20WICP4HsK-9eUZN4iU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTDc3ZzVwRTVGQTAzaC1fazhEOEFHcmN4Q0Foam9YRmZaWmZQTWtHVV81SS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMWRXVlZCb05DMXRaR2REY1dkT2VFTlljMmhoTUMxeExUZERNbkJRVkZGemVXdG1Velp4TVRoUE5qbE1SV3BuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider": {
+                "eventTitle": "Provider exported",
+                "eventDescription": "One healthcare provider row pushed to the dataset",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-09-30T06:30:01.580Z",
+          "createdAt": "2026-09-30T06:30:02.334Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-30T06:35:56.753Z"
+        },
+        "id": "WxThvelREmuWg5aVk",
+        "url": "https://apify.com/mmaker-bot/apify-npi-bulk-exporter"
+      },
+      {
+        "title": "New NPI Healthcare Providers - Weekly NPPES New Registrations",
+        "name": "nppes-new-npi-providers",
+        "username": "jaybeckham",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 10,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T01:58:37.202Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 8,
+            "TIMED-OUT": 0,
+            "TOTAL": 8
+          }
+        },
+        "description": "Get newly issued NPIs from the official CMS NPPES weekly file: new doctors, dentists, clinics and agencies with specialty, license, practice address, phone and authorized official. Filter by state, type and specialty. $2 per 1,000.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9Dkg5SeSTUGvznPo3zr0B40osxUornLJak5YfG2lTPE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaTJ1R0tRSlR4cFR0S21xSzMtYWN0b3ItT29XYUkwek5raWU5dkRSY2EtSHRiZEJhNjN6RC1OUElfRGFpbHkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Jay Beckham",
+        "userPictureUrl": "https://images.apifyusercontent.com/6M0rAaxE6qVcZbkBLsF_PasgcRfLOwG2EsYD9tko8xA/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbEZrU0xob1NtckNrbDBaUERzS0pMTDZ6S3FJUTRQcXZselBwMmxTRHp0QS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURGt5VVRCemQwTXlWamRDTWtkNVNGVkNUV2RLWTFSRlJqUnBibWRLUTFodE0wdElkR1l6WVVKZldXNVY.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "One new record in the dataset.",
+                "eventPriceUsd": 0.002
+              }
+            }
+          },
+          "createdAt": "2026-10-12T01:36:00.314Z",
+          "startedAt": "2026-10-12T01:36:00.314Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "OoWaI0zNkie9vDRca",
+        "url": "https://apify.com/jaybeckham/nppes-new-npi-providers"
+      },
+      {
+        "title": "NPI Registry Lookup (NPPES Official API)",
+        "name": "npi-registry-lookup",
+        "username": "clearpathdata",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 5,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T00:14:45.027Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 4,
+            "TIMED-OUT": 0,
+            "TOTAL": 4
+          }
+        },
+        "description": "Verify NPI numbers or search US healthcare providers and organizations by name, specialty, city, state or ZIP using CMS's official NPPES API.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Six Figure Salute",
+        "userPictureUrl": "https://images.apifyusercontent.com/jC2IkMnTu8UusLpBMXM_DU40Cg1XdoONYiH2MtHCJWc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vc21jb2RiUTlsQW43Y3FGNE5uVG1fd3owZk9lcWdGOExSSGdxQl8yRk1Vdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTamxxY0ZOelh6Um9jSE5DYjJkRFNGTTJTR1UwT0dWYWJGWjZZalpWYVVoYU1XdDBMVUl0YkdzeWJTMVljMGRuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider": {
+                "eventTitle": "Provider record",
+                "eventDescription": "Charged per NPI provider record returned.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-10-16T00:05:33.252Z",
+          "startedAt": "2026-10-16T00:05:33.252Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "7kghPLh4RrG25ICYF",
+        "url": "https://apify.com/clearpathdata/npi-registry-lookup"
+      },
+      {
+        "title": "NPPES NPI Registry Scraper (US Providers)",
+        "name": "nppes-npi-registry",
+        "username": "knotty_mistveil",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 33,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T05:30:28.718Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 25
+          }
+        },
+        "description": "US health care providers from the official CMS NPPES NPI Registry API: NPI, taxonomy, licence, practice address, phone, fax and authorized official.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Jason",
+        "userPictureUrl": "https://images.apifyusercontent.com/u8gC8BlKv5WrKIUlglCxUtKw_cB6TE_xSkCNY2bTRp4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vR1hKVi1JNTlzUDJ1OVhiWjR2bzAxcFRZYWRVVFpuajk1NThhWmxfVHNkQS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RTNPVE15TkRJNE5EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Provider returned",
+                "eventDescription": "One NPPES provider record delivered to the dataset.",
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-08T11:47:43.566Z",
+          "startedAt": "2026-09-08T11:47:43.566Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "vio8sRWIhcunb1kvf",
+        "url": "https://apify.com/knotty_mistveil/nppes-npi-registry"
+      },
+      {
+        "title": "NPPES NPI Registry Provider Scraper",
+        "name": "nppes-healthcare-provider-scraper",
+        "username": "parselab",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 36,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T10:38:36.076Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Search the official US NPI Registry for doctors, clinics and other healthcare providers by name, specialty, city, state or ZIP code. Get NPI numbers, credentials, primary specialty, practice address, phone number and status. Build provider lead lists and export them to CSV or Excel.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/0UeSJq0zRfj_jnKgAg9dIFoVj33ggIT-ycYGxGL7XOE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc3UzQ0JZYm9UUlhMNXExc2wtYWN0b3ItaGJIaG1jM3ZWcWdUVHF6QXotQzRFUzZVQWJpbC1ucHBlcy1oZWFsdGhjYXJlLXByb3ZpZGVyLXNjcmFwZXItbG9nby5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ParseLab",
+        "userPictureUrl": "https://images.apifyusercontent.com/RgzP0kBd9RQzQvPS1L2Lwu49Jw8LsQiHXyNAOuuDcOE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMk1WX28xTEk0VnZpUEJVWHFGSTYwU1RseWhfbUFPQXhrWDlsSnVLNUxROC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6SXhNekUwTXpjek56OTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              },
+              "result-item": {
+                "eventTitle": "Result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.022
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.02017
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01833
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0165
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0165
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0165
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-14T23:12:20.330Z",
+          "startedAt": "2026-09-14T23:12:20.330Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "hbHhmc3vVqgTTqzAz",
+        "url": "https://apify.com/parselab/nppes-healthcare-provider-scraper"
+      },
+      {
+        "title": "NPPES Provider & Organization Change Monitor",
+        "name": "nppes-provider-change-monitor",
+        "username": "luminar",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 63,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T08:54:33.570Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Look up and export official CMS NPPES provider and organization records, then track verified NEW, UPDATED, DEACTIVATED, and REACTIVATED changes from V2 releases.",
+        "categories": [
+          "AUTOMATION",
+          "BUSINESS",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/_uh4v73G8PqBHyK6zI5ThVhHpUK1XJDFCEfOk9w0IbI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUGF1QkZXdU1NUE94bEFlak8tYWN0b3ItR3hXblRmWjhvMk1wMHliR04tYndEdnlBVlBoZS1jbXMuanBn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Luka",
+        "userPictureUrl": "https://images.apifyusercontent.com/OPa26Qdx1wvme08-u-Rq4zVVzSZUPblsH4fwJRamDGY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vRGhWX2NWeENTSE14cXJtRUlYNW9WS0tlTUJZMXBVa1BFZjA4cy1kOU8xcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVR0YxUWtaWGRVMU5VRTk0YkVGbGFrOHRjSEp2Wm1sc1pTMDNPV2hsV2tWRFVFWlVMVWRwZEVoMVlpMXdjbTltYVd4dVlTMU1kV3RoTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "lookup_start": {
+                "eventTitle": "Verified NPPES search",
+                "eventDescription": "Charged once only after the official NPPES API returns trustworthy rows or positively confirms no matches.",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0095
+                  }
+                }
+              },
+              "lookup_result": {
+                "eventTitle": "Current NPPES record",
+                "eventDescription": "One unique current official NPPES provider or organization record delivered by Search.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00095
+                  }
+                }
+              },
+              "snapshot_scan": {
+                "eventTitle": "Validated monthly V2 snapshot",
+                "eventDescription": "Charged once after the official monthly archive and every requested V2 source entry pass validation and traversal can produce trustworthy coverage.",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.5
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.5
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.5
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.5
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.5
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.5
+                  }
+                }
+              },
+              "snapshot_result": {
+                "eventTitle": "Snapshot provider record",
+                "eventDescription": "One unique official V2 NPI record delivered from the reconciled monthly snapshot and later weekly releases.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00275
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0027
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00265
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0026
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0026
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0026
+                  }
+                }
+              },
+              "monitor_scan": {
+                "eventTitle": "Verified NPPES change scan",
+                "eventDescription": "Charged once only after the complete comparable monitoring scope is verified; this fixed event covers the measured cold V2 source work even when zero changes are delivered.",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.121
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.121
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.121
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.121
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.121
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.121
+                  }
+                }
+              },
+              "change_event": {
+                "eventTitle": "Verified NPPES change",
+                "eventDescription": "One delivered NEW, UPDATED, DEACTIVATED, or REACTIVATED event backed by official V2 release evidence.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00829
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00829
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00829
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00829
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00829
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00829
+                  }
+                }
+              },
+              "deactivation_index": {
+                "eventTitle": "Validated deactivation index",
+                "eventDescription": "Charged once after the official cumulative V2 deactivation report is validated for exact-NPI status checks.",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0095
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0095
+                  }
+                }
+              },
+              "npi_status_check": {
+                "eventTitle": "Exact NPI status result",
+                "eventDescription": "One valid NPI reconciled across the current Read API and V2 deactivation history, including active, deactivated, or never-issued outcomes.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00095
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00095
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-29T11:19:41.119Z",
+          "startedAt": "2026-08-29T11:19:41.119Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "GxWnTfZ8o2Mp0ybGN",
+        "url": "https://apify.com/luminar/nppes-provider-change-monitor"
+      },
+      {
+        "title": "NPPES NPI Registry Lookup",
+        "name": "nppes-npi-registry-lookup",
+        "username": "praise-most-high",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 52,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T02:42:56.256Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "NPPES NPI Registry Lookup extracts US healthcare providers from the CMS NPPES registry and returns 89 flat columns per provider: identity, status, taxonomies, every state licence, mailing and practice addresses, other identifiers and HIE endpoints. Search by NPI, name, specialty or state.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/VmGwsJ8k73pOqdt8Zq3W3THmgOqTka4-wgdxJgcD8ZY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMGV6YXVub2lWS0Y1TEZVdXAtYWN0b3ItMjNZRUFQUkVwMVNZblI4ekEtRXZxbWdabWxEUi1ucHBlcy1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "angel nguyen",
+        "userPictureUrl": "https://images.apifyusercontent.com/JCUUn2yApyyy3ptVLLu6YJ3xe6qhB1kTTkda8Y2HGGo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNnlHbElFSlZkcGxyV1JrVzNPdkgyWjlUelpOcF94bVEzLWpFSVhXaWM2Zy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpUREp4ZWxZd1drUkdWM1ZLYW5OSlQwVkxjMFprWW0xRFNsZEVNVVpUV2pGVFgweFdka0ZoVjBKSGRGbGhhVWwzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider-record": {
+                "eventTitle": "Provider record returned",
+                "eventDescription": "Charged once per US healthcare provider record written to the dataset, with all 89 columns. A query that matches no provider is never charged, and with 'Only new or updated providers' on (the default) a provider whose NPPES record has not changed since your last run is never charged again.",
+                "eventPriceUsd": 0.0025,
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true
+              },
+              "actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Starting a run is charged at the platform minimum of $0.00001 - one cent per thousand runs, effectively free. You pay for the provider records the run actually delivers, not for running it.",
+                "eventPriceUsd": 0.00001,
+                "isOneTimeEvent": false
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-05T20:40:56.766Z",
+          "startedAt": "2026-09-05T20:40:56.746Z"
+        },
+        "id": "23YEAPREp1SYnR8zA",
+        "url": "https://apify.com/praise-most-high/nppes-npi-registry-lookup"
+      },
+      {
+        "title": "Healthcare Provider Verification — NPPES/NPI",
+        "name": "provider-verification",
+        "username": "alaudinburki",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 44,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T05:32:37.321Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Verify a healthcare provider's NPI registration status, specialty (taxonomy), and practice location from CMS's free official NPPES registry. Covers both individual and organization NPIs. No key required.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/AKD9ieIdZFkxsJurRN7EMp2kXv2Zv_v_Th8JpvJ425Q/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNHF5bjQ3WnNRZlcyOVJOUmEtYWN0b3ItYUJKSXVZM3EwYlR0c01sOGktejQ2eWZQNXFkQy1zdG9yZS1sb2dvLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "alaudin burki",
+        "userPictureUrl": "https://images.apifyusercontent.com/1iPJ4xvH5bEOjAeCQECJTzPj91Rs8s4S2rk2BXULUVo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNktMODlxVkV2eVRTaVQtelBBY192bzlZLW9ZRmpYeE02dWtWZTN1YUZLWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTME41ZUZOM1Z6aHRWVjk1Tm1vdGRESkNiM04zZGxsMVVsY3pWWEZhZVRsRWQzcE9hMGRaU2xoZlpVbEhNMVEyVmxnOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-09-03T18:13:29.420Z",
+          "startedAt": "2026-09-03T18:13:29.420Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "aBJIuY3q0bTtsMl8i",
+        "url": "https://apify.com/alaudinburki/provider-verification"
+      },
+      {
+        "title": "NPPES NPI Registry Scraper - US Healthcare Provider Lookup",
+        "name": "nppes-npi-registry-scraper",
+        "username": "recordsdata",
+        "stats": {
+          "totalBuilds": 18,
+          "totalRuns": 118,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T00:22:33.934Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 24,
+            "TIMED-OUT": 0,
+            "TOTAL": 24
+          }
+        },
+        "description": "Scrape the official CMS NPPES NPI Registry for US healthcare providers and organizations: NPI, credentials, addresses, phone and fax, specialty taxonomies and license numbers. Filter by name, NPI, specialty, state, city or ZIP. Export CSV, Excel, JSON. No login or API key.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/PCncCA9MotbRRQh26jtS6YPEZGv0r1p2BYbKssW-3A8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20veEFlcmlrNm1PczUyNVN2cXItYWN0b3Itakp0WUU3Z3VZWlBoenpKSjItREQ0b2J6S3Ezby1EaXNlX29fc2luX3RfdHVsb18lMjgxNCUyOS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "RecordsData",
+        "userPictureUrl": "https://images.apifyusercontent.com/3t6fJXhIc3JynEiu9ZCGYabKjvFJWMdOpM9L_opHswY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSU1ROFVfcm84bElkN0d4blEtMEpRVDduNTd1YlZyTzkxMnBjT2dkcE5TUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZlRUZsY21sck5tMVBjelV5TlZOMmNYSXRjSEp2Wm1sc1pTMXFSbTlrYTIxcU4zVXlMVkJwZUdWc1lYUmxaRjlTUkY5TWIyZHZYM2RwZEdoZlRHbHRaVjlCWTJObGJuUXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider-record": {
+                "eventTitle": "Provider record",
+                "eventDescription": "One healthcare provider or organization: name, credentials, status, addresses, phone, specialty taxonomies with license numbers.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01733
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.016
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01547
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01547
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01547
+                  }
+                }
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 5,
+          "createdAt": "2026-10-01T14:37:51.350Z",
+          "startedAt": "2026-10-01T14:37:51.350Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-01T15:05:52.073Z"
+        },
+        "id": "jJtYE7guYZPhzzJJ2",
+        "url": "https://apify.com/recordsdata/nppes-npi-registry-scraper"
+      },
+      {
+        "title": "NPPES NPI Lookup",
+        "name": "nppes-lookup-pilot",
+        "username": "eddmx",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 23,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T18:34:42.835Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 21,
+            "TIMED-OUT": 0,
+            "TOTAL": 21
+          }
+        },
+        "description": "Look up up to five NPI numbers in the official CMS/NPPES Registry. Export normalized registry fields and explicit lookup statuses, with source links and retrieval timestamps.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "M P",
+        "userPictureUrl": "https://images.apifyusercontent.com/QSplB9SJ_dKgfzR8YCoxfsAQ7NmD02FEOv-yGIjGXbI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUEw3cEtzNklSdksxbWRReEJuczVwc3g2akRqbHlaMXJLNzRBd2ZzM2IyZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUM05NT0hNeU5GbFZXVk5aUkRKc1FuY3RjSEp2Wm1sc1pTMDBkbVppYlRWTlVVVm5MWEJvYjNSdmJXOWtaVjh6TURFd01qQXlORjh3TmpReU16QXVjRzVuLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-25T02:52:44.594Z",
+          "createdAt": "2026-09-25T02:52:44.990Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "UNEFs2Zf31S80IENO",
+        "url": "https://apify.com/eddmx/nppes-lookup-pilot"
+      },
+      {
+        "title": "US Healthcare Organization Data — NPI Registry (NPPES)",
+        "name": "npi-healthcare-organization-data",
+        "username": "foxlabs",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 55,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T08:52:36.376Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Look up US healthcare organizations and providers in the official NPPES NPI registry by name, NPI number, state or taxonomy. Returns NPI, legal and doing-business-as names, taxonomy specialty, licence numbers, practice and mailing addresses, phone and authorized official.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/iqO5t5zKBnyKbJy3fFYx8qqy2vN97y83P0OWO2rOotM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vY1htTW5VaXhrRTdUSkdlSWYtYWN0b3ItVjM4dGEyM3lKdW11ZWR3ZVItcEJVdzk5bk9QUy1ucGktaGVhbHRoY2FyZS1vcmdhbml6YXRpb24tZGF0YS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Berkan Kaplan",
+        "userPictureUrl": "https://images.apifyusercontent.com/kMBdvurXqT-jNhSrS0j6jlsQX8nxa_26e0fFkIgDWSw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veWtzd1Y4WDVsOUlZdGN0dHRxbjlpTENFWE5tRFhfN2tPZjE0SlNZeC1DYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZZMWh0VFc1VmFYaHJSVGRVU2tkbFNXWXRjSEp2Wm1sc1pTMVRNMDlLWTFsMFVXdDJMVWxOUjE4eU1ESTJNRE13TWw4eE1qVTNOVFZmY21WemFYcGxaQzVLVUVWSA.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "company-record": {
+                "eventTitle": "Company record",
+                "eventDescription": "One company successfully returned from the source",
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-08-22T19:30:44.883Z",
+          "startedAt": "2026-08-22T19:30:44.883Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "V38ta23yJumuedweR",
+        "url": "https://apify.com/foxlabs/npi-healthcare-organization-data"
+      },
+      {
+        "title": "Healthcare Provider Contact Finder — NPI/NPPES Bulk Lookup",
+        "name": "npi-healthcare-providers-scraper",
+        "username": "cblu",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 101,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T12:48:35.382Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Extract US healthcare provider records from the official NPPES NPI Registry — NPI number, specialty, license, practice address, phone, fax, authorized officials. Search by specialty, state, city, ZIP, or name. Pay per provider record.",
+        "categories": [
+          "LEAD_GENERATION"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Steven Carleton",
+        "userPictureUrl": "https://images.apifyusercontent.com/Iu0yph7xI0afEP5WujwTSCsex-S7_MWmlGX2U5MvlLM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbXpKcTVHQzllVWljOGlBYy1ZT09SQmRia3VSQWh3YWhBVmxpekZjd3h1VS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTkzZDNjdVozSmhkbUYwWVhJdVkyOXRMMkYyWVhSaGNpOW1PVFJpTTJObE0yWm1PV0k0WVRaaE5HWTBNelZrTkRZNU9HVmhOalZpWVRKa1pqY3haalkwTVRoaE1EbGlZalkwTnpGaFl6aGhNVEZsTnpRMU1EZzVQMlE5YUhSMGNITWxNMEVsTWtZbE1rWmpaRzR1WVhCcFpua3VZMjl0SlRKR2FXMW5KVEpHYVdOdmJuTWxNa1poYm05dWVXMXZkWE5mZFhObGNsOXdhV04wZFhKbExuQnVadw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider-record": {
+                "eventTitle": "provider record",
+                "eventDescription": "Charged once per healthcare-provider record in the results.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.00001
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-09-23T23:28:09.688Z",
+          "createdAt": "2026-09-23T23:28:09.834Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-23T23:35:59.950Z"
+        },
+        "id": "vBRZnRZEMCWS1quF2",
+        "url": "https://apify.com/cblu/npi-healthcare-providers-scraper"
+      },
+      {
+        "title": "NPI Healthcare Provider Scraper (NPPES)",
+        "name": "npi-healthcare-provider-scraper",
+        "username": "devilscrapes",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 146,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-19T09:00:31.223Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 26
+          }
+        },
+        "description": "Bulk-query the official CMS NPPES NPI Registry and export structured US healthcare provider leads — doctors, dentists, specialists — to JSON or CSV. Filter by state, city, specialty, and name. 7 M+ providers covered.",
+        "categories": [
+          "LEAD_GENERATION",
+          "MARKETING"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/kPcbfkh_Rufg-heUtxT5hrBLDhpE226EBkZexx-vKbw/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vVE9iWEhQUlpzb2t0MFNCUGUtYWN0b3ItNGpEenFrS2dJSjBiUHpyWXEtSGtpa3c4Tlp3Vi1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "DevilScrapes",
+        "userPictureUrl": "https://images.apifyusercontent.com/2sThxlwPh-1eu3WVnVJ3mpJKE6PaiB1ZYZLuK5Vnepw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZFJGejhXcmFtUUJZTE5hSmllR1VtaFdST2RqV0drQndZMFJTeWdLeGt1NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWRTlpV0VoUVVscHpiMnQwTUZOQ1VHVXRjSEp2Wm1sc1pTMTJiVTlJTjNsbFdHTkhMV1JsZG1sc2MyTnlZWEJsY3kxcFkyOXVMbk4yWnk1d2JtYy5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricePerUnitUsd": 0.0001,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor start",
+                "eventDescription": "Charged once when the Actor begins a run.",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.2
+              },
+              "result": {
+                "eventTitle": "Result emitted",
+                "eventDescription": "Charged for each provider record written to the dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "reasonForChange": "The per-run start fee is increasing. The per-result price is unchanged, so large extractions cost about the same; small runs now carry more of the cost of starting and maintaining the Actor.",
+          "createdAt": "2026-08-20T09:14:32.793Z",
+          "startedAt": "2026-08-20T09:14:32.793Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-08-20T09:35:39.073Z"
+        },
+        "id": "4jDzqkKgIJ0bPzrYq",
+        "url": "https://apify.com/devilscrapes/npi-healthcare-provider-scraper"
+      },
+      {
+        "title": "NPPES NPI Registry API — US Healthcare Providers",
+        "name": "nppes-npi-registry-pro",
+        "username": "adobeflex",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 97,
+          "totalUsers": 1,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T14:18:41.211Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Search US NPI providers (NPPES). Name, taxonomy, address for healthcare lead enrichment.",
+        "categories": [
+          "AI",
+          "DEVELOPER_TOOLS",
+          "OTHER"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Yahor",
+        "userPictureUrl": "https://images.apifyusercontent.com/H7BF4bohxfufOr2KzBjW2Rb4iXu9sbM27_4yLgjpAcE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZlFDZHRlX3p3WjdmRTZzZDBZTFFka0VlY3MzbFNtTVFSd1RuMTY1cWpWUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVUZXTlhoMlpGcHNNRkoxVldrdGFYVTBTbkpLWHpSelZ6QTVOMGhDY1RNNGNVaDZSSGRSYkVOME5tTlJZbVYzUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "search_run": {
+                "eventTitle": "Search run",
+                "eventDescription": "One NPI registry search.",
+                "eventPriceUsd": 0.001
+              },
+              "result_row": {
+                "eventTitle": "Result row",
+                "eventDescription": "One provider/NPI row.",
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-07-16T20:17:23.822Z",
+          "startedAt": "2026-07-16T20:17:23.822Z",
+          "notifiedAboutChangeAt": "2026-07-16T20:35:43.371Z"
+        },
+        "id": "aoDuytVlnXvXdMvjR",
+        "url": "https://apify.com/adobeflex/nppes-npi-registry-pro"
+      },
+      {
+        "title": "NPPES Provider Scraper - NPI Healthcare Registry Data",
+        "name": "nppes-provider-scraper",
+        "username": "benthepythondev",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 101,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-18T20:46:31.003Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 26,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Search the official CMS NPPES API for healthcare organizations and professionals, NPI numbers, taxonomies, practice locations and business phones.",
+        "categories": [
+          "BUSINESS",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/F1-I3JZhqP0mVmktaO91JuOX0_9K7SBV8tralitcq40/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vT3JOQ0NWNm8xajU1THlPVFotYWN0b3ItS2hNZTcyTmNOVER2TWNtSHItcXp2ZjNoYklROS1ucHBlcy1wcm92aWRlci1zY3JhcGVyLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ben",
+        "userPictureUrl": "https://images.apifyusercontent.com/2uHzQHA1ompnXtYvA4IUQM5GaLvBCLIBmsVFdLt-evY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVzhUaGJqVkNtY24taDZwUUo5ZmM3ME9KajlUcFhGc1VHUGlDUUxpMF9Cdy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZUM0pPUTBOV05tOHhhalUxVEhsUFZGb3RjSEp2Wm1sc1pTMTJNRlZsUjJkMVMyaHNMV0psYm5Sb1pYQjVkR2h2Ym1SbGRpNXdibWMucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-08-02T09:42:00.000Z",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "Add progressive Apify plan discounts while preserving every existing Free-tier event price.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.000045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0000425
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0000375
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000035
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "provider",
+                "eventDescription": "Charged for each NPPES provider record saved to the default dataset.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0017
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0014
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-07-18T09:45:01.761Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-07-18T09:45:21.908Z",
+          "notifiedAboutChangeAt": "2026-08-05T15:06:26.317Z"
+        },
+        "id": "KhMe72NcNTDvMcmHr",
+        "url": "https://apify.com/benthepythondev/nppes-provider-scraper"
+      },
+      {
+        "title": "NPI / NPPES Healthcare Provider Registry Lookup",
+        "name": "npi-nppes-registry",
+        "username": "bovi",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 58,
+          "totalUsers": 1,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T04:28:35.074Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Look up US healthcare providers and organizations in the official CMS NPI Registry (NPPES). Search by NPI number, name, organization, specialty/taxonomy, or location. Returns NPI number, status, name, specialty, and practice address.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/og23PYZc9mqcLCbOV2xwnb5M5eWco2iDPRfOg-QDCoY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vNXpaSmFydGROVHpHcDZ1VTktYWN0b3ItRjNEcFhyYmVKdVYxcGtjT0gtUGQxNThndkRQbS1ucGktbnBwZXMtcmVnaXN0cnktaWNvbi5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Vitalii Bondarev",
+        "userPictureUrl": "https://images.apifyusercontent.com/366A2-rL_Tsix1Ca4RkV0mSisG_m99hKsvrk4FhsOv0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNXNYbDRtMlFubGhoaGhLYVY3YkphQWc0SEFmTXpfeGdSME5mSXJqdVFoRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTamxqYmpkeFVVNTVYMEk1UjFObWNWWmthbUpMTlVaeE1XczVjMkZtT1d0T2VVOXRWa0pNTWxRNWJIZDRSMmxCUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-19T22:54:55.411Z",
+          "startedAt": "2026-09-19T22:54:54.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0000495
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000049
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0000485
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0000485
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0000485
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "NPI / NPPES Healthcare Provider Registry Lookup",
+                "eventDescription": "One scraped result with all fields.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0016
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001584
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001568
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001552
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001552
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001552
+                  }
+                }
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-09-21T12:36:33.030Z"
+        },
+        "id": "F3DpXrbeJuV1pkcOH",
+        "url": "https://apify.com/bovi/npi-nppes-registry"
+      },
+      {
+        "title": "Doctor & Clinic NPI Lookup (CMS NPPES)",
+        "name": "npi-provider-lookup",
+        "username": "sovereign_workspace",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 27,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-19T03:08:53.707Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 24,
+            "SUCCEEDED": 0,
+            "TIMED-OUT": 0,
+            "TOTAL": 24
+          }
+        },
+        "description": "Look up any US doctor, nurse, or clinic by NPI number or name/state. Returns address, phone, specialty code, and status from the official CMS provider registry.",
+        "categories": [],
+        "notice": "UNDER_MAINTENANCE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Chase Mariano",
+        "userPictureUrl": "https://images.apifyusercontent.com/sKwoqZRWnYUhccG-0YDTPqEDiyr1vrMIirZ7E2kv-Dc/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vR3ZoSngtZEZZalRfcDBGQ1J0U3BEV1RWeE1QSDB4VlJ3ZWZMMmd2U1ZmNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTM0ozTFZCWmRVNDFiVTAzT1RGRGJtSkxhemQ0TUZOMlF6aFpaVEpvVEVWMGMyUnZObms0Ulhoa1NqUkNSRlZSUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "isPPEPlatformUsagePaidByUser": true,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider-record": {
+                "eventTitle": "Provider record",
+                "eventDescription": "Provider record returned by the Actor.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-22T21:42:08.449Z",
+          "createdAt": "2026-09-22T21:42:09.236Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "cQGdiVhfuygDLB026",
+        "url": "https://apify.com/sovereign_workspace/npi-provider-lookup"
+      },
+      {
+        "title": "NPI Registry Scraper - Healthcare Providers & Leads",
+        "name": "npi-nppes-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 12,
+          "totalRuns": 6714,
+          "totalUsers": 7,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-18T18:52:38.474Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 6632,
+            "TIMED-OUT": 0,
+            "TOTAL": 6632
+          }
+        },
+        "description": "Scrape the NPPES NPI Registry: US doctors, clinicians & healthcare organizations by name, NPI, state, city, ZIP or specialty. Get addresses, phone & fax, taxonomies, licenses, org authorized officials, contact leads & lead scores. Monitor new registrations. No key.",
+        "categories": [
+          "LEAD_GENERATION",
+          "AGENTS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ET38b-AqvjeT72owZn_7-SxkQBjKPJC8GOeEVH40uvs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItTFRXWTRFNW1Vd0g2ZlB2dEMtaEExNkJETDIxTi1OUElfUmVnaXN0cnlfU2NyYXBlcl8tX0hlYWx0aGNhcmVfUHJvdmlkZXJzX19fTGVhZHMucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "provider": {
+                "eventTitle": "Provider record scraped",
+                "eventDescription": "One full NPPES provider/organization record: NPI, type & status, name, primary specialty & all taxonomies (with license & state), practice and mailing addresses, phone & fax, practice locations, other identifiers, endpoints and key dates.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0034
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0022
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00152
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                }
+              },
+              "providerLead": {
+                "eventTitle": "Provider contact lead scraped",
+                "eventDescription": "One contact-focused B2B healthcare lead: provider/organization name, primary specialty, a named contact with title & direct phone, practice phone & fax, address, license, any website/email found, plus a 0-100 lead score.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0068
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0056
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0044
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00304
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-13T00:20:30.664Z",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "introducing tiered pricing — FREE tier unchanged, higher plan tiers discounted",
+          "startedAt": "2026-08-13T00:20:30.664Z",
+          "notifiedAboutChangeAt": "2026-08-19T08:06:13.871Z"
+        },
+        "id": "LTWY4E5mUwH6fPvtC",
+        "url": "https://apify.com/scrapesage/npi-nppes-scraper"
+      },
+      {
+        "title": "NPI Registry Scraper | 7M+ US Healthcare Providers (CMS)",
+        "name": "nppes-npi-registry-scraper",
+        "username": "haketa",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 259,
+          "totalUsers": 22,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 5,
+          "totalUsers90Days": 9,
+          "lastRunStartedAt": "2026-10-18T11:58:42.428Z",
+          "actorReviewCount": 1,
+          "actorReviewRating": 5,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 4,
+            "FAILED": 0,
+            "SUCCEEDED": 55,
+            "TIMED-OUT": 0,
+            "TOTAL": 59
+          }
+        },
+        "description": "NPPES NPI Registry scraper & API: search 8M+ US healthcare providers and export NPI, name, taxonomy and specialty, practice and mailing address, phone, credentials and enumeration date. Healthcare provider data, verification and lead generation — fast, no login.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "LEAD_GENERATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Noy98HMyJQJG0AS_bg38PpehjhTyCOG9Bhne4G_8KWo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaExlVmUxWExQbE80b3htaXotYWN0b3ItSFFWOWVISEV3cjRoMFFWRmktOTcyVFA2bHlMSi1JTUdfMDE4NC53ZWJwLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 5,
+        "actorReviewCount": 1,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Haketa",
+        "userPictureUrl": "https://images.apifyusercontent.com/v3INZBe8i9FXs3yDWNyES48f4AFPoPUh94BdLRQfLb4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT284Rms2eVdKT3A0OG9NOUxmeDExWGppY1VhNm5sbTJkZzhQdl9NcXRHRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZhRXhsVm1VeFdFeFFiRTgwYjNodGFYb3RjSEp2Wm1sc1pTMUJUREpzTUdRMlQzRktMVmRvWVhSelFYQndYMGx0WVdkbFh6SXdNall0TURRdE1UUmZZWFJmTVRjdU5ETXVNVGN1YW5CbFp3LmpwZWc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-18T14:42:49.136Z",
+          "createdAt": "2026-05-18T14:42:49.421Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "HQV9eHHEwr4h0QVFi",
+        "url": "https://apify.com/haketa/nppes-npi-registry-scraper"
+      },
+      {
+        "title": "NPI Registry Scraper - US Healthcare Providers",
+        "name": "nppes-npi-provider-registry",
+        "username": "dataio",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 19,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-09-19T13:45:58.873Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "Scrape the NPPES NPI Registry: US healthcare providers as one row per practice location, with specialty (taxonomy), license number, phone, fax and, for organizations, the authorized official. Filter by specialty, state, city and postal code for healthcare leads.",
+        "categories": [
+          "LEAD_GENERATION",
+          "MCP_SERVERS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/2wdaXyXMI3Cvek34lE5hG4bJjb4pZ4iNn-qkxz3Xg20/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRkR5Y3lvYXRncURPSDZKMmotYWN0b3ItaDNoRzNnRlROa3J6RUgxbVUtdlBvMlNCNWROeS1ucHBlcy1ucGktcHJvdmlkZXItcmVnaXN0cnkucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Tom Awake",
+        "userPictureUrl": "https://images.apifyusercontent.com/rY_gJr6YqC_vm2Ik3JMVbo9Z1ro0toN0jQsjEj8SO6M/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vaDRTSWxmSGpmZ3hFY2pNczZrMk42d015eGlSWlFxWU5DT05oMlFxM2xMby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTekF6Y0ZCS2RVSkpRM1pEUTNKRU0wdFNWRTQwWTBjdFJIZG5TVXRhT1hKWlgxWXlMVlJZV0ZZM05HZEtjejF6T1RZdFl3.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "location-extracted": {
+                "eventTitle": "Provider location",
+                "eventDescription": "One practice location returned, with specialty, licence and phone.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.006
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0054
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0048
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.004
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-09-19T13:18:47.498Z",
+          "startedAt": "2026-09-19T13:18:47.498Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-09-21T12:36:31.553Z"
+        },
+        "id": "h3hG3gFTNkrzEH1mU",
+        "url": "https://apify.com/dataio/nppes-npi-provider-registry"
+      },
+      {
+        "title": "US Business Entity Search - Bulk Multi-State KYB Registry API",
+        "name": "us-business-entity-search",
+        "username": "pink_comic",
+        "stats": {
+          "totalBuilds": 44,
+          "totalRuns": 81641,
+          "totalUsers": 219,
+          "totalUsers7Days": 14,
+          "totalUsers30Days": 26,
+          "totalUsers90Days": 59,
+          "lastRunStartedAt": "2026-10-19T09:50:28.985Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 4,
+          "publicActorRunStats30Days": {
+            "ABORTED": 1,
+            "FAILED": 0,
+            "SUCCEEDED": 9669,
+            "TIMED-OUT": 2,
+            "TOTAL": 9672
+          }
+        },
+        "description": "Bulk US business entity search: 16 no-key SOS registries + optional CA. KYB/merchant/vendor checks — status, agents, officers, addresses. $0.002/result. Related: texas-business-leads, new-york-business-leads, sunbiz-florida-business-leads, nppes-npi-registry, whois-domain-lookup.",
+        "categories": [
+          "LEAD_GENERATION",
+          "BUSINESS",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/LtbR1URQRNpvFMrgW6EfXVm0d8kRjD3dwsBgWgtBUxo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcUhCNFdCdVdsUmtraUdIWXctYWN0b3ItYWVrcWhYQk52RnhXRkVkSDQtYjd3Y1RiSWVMUi11cy1idXNpbmVzcy1lbnRpdHktc2VhcmNoLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 4,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ava Torres",
+        "userPictureUrl": "https://images.apifyusercontent.com/xHIQ8NPgSWhC7jbdKz1bniz5JDgrODfO99BuuEXmJbQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV19KMWN2OFBpYlc5enZjT2ZWUVcxTnNyQVk1eU9Sd0F3QkMwWWYzWGpRSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVWhDTkZkQ2RWZHNVbXRyYVVkSVdYY3RjSEp2Wm1sc1pTMW1NakYwYkdwVFFraDNMWE5qY21WbGJuTm9iM1JmTWpBeU5pMHdNeTB5TkY5aGRGODRMalExTGpFMVgwRk5MbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-03-27T03:46:36.148Z",
+          "startedAt": "2026-03-27T03:46:36.148Z"
+        },
+        "id": "aekqhXBNvFxWFEdH4",
+        "url": "https://apify.com/pink_comic/us-business-entity-search"
+      }
+    ]
+  }
+}

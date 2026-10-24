@@ -1,7 +1,12 @@
 // Reads the work pipeline (docs/pipeline/) and prints it; fails on any invalid file.
 // Run: npm run pipeline [status|next|empty|cold [--routine=build]|claim <venture>/<id> [--by=<routine>]]
+// `cold -- --routine=build` also prints `exchange missed: <Wednesday> — run docs/routines/exchange.md`
+// first, Thursday to Saturday, when the Wednesday 08:00 exchange left no trace (2026-10-24).
+// A plain `cold` (the burn-down) prints `paced: <why>` alone and nothing else when the owner's usage
+// report is stale and the night's slot cap or a usage-limit signal ends the run (2026-10-24).
 // (Node 22 runs .ts directly — keep syntax erasable)
-import { readdirSync, readFileSync } from 'node:fs';
+import { execFileSync } from 'node:child_process';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
 
 const dir = path.resolve(import.meta.dirname, '..', 'docs', 'pipeline');
@@ -40,7 +45,15 @@ if (process.argv[2] === 'cold') {
   const now = new Date();
   const today = now.toISOString().slice(0, 10);
   const dayMs = 86_400_000;
-  const { datedArrived, preResearchSpent } = await import('./pipeline-cold.ts');
+  const {
+    buildSlotInFlight,
+    datedArrived,
+    datedWithinDay,
+    lastExchangeSlot,
+    missedExchange,
+    pacedStop,
+    preResearchSpent,
+  } = await import('./pipeline-cold.ts');
   type ColdItem = { status: string; not_before?: string; doing_since?: string; added: string };
   type ColdQueue = {
     venture: string;
@@ -64,13 +77,19 @@ if (process.argv[2] === 'cold') {
   const cooling = (q: ColdQueue): boolean =>
     (q.researched !== undefined && Date.parse(today) - Date.parse(q.researched) < 2 * dayMs) ||
     (q.research_after !== undefined && q.research_after > today);
-  const reasons: string[] = [];
+  // Research reasons first (2026-10-22, foundry claim-only-when-buildable): a flagged queue out of
+  // cooling is what the slot does before any build, and `next` is null while one exists.
+  const research: string[] = [];
+  const build: string[] = [];
   for (const q of cold) {
-    if (q.items.some(buildable)) reasons.push(`${q.venture}: buildable item`);
+    if (!cooling(q) && (q.needs_research || !q.items.some(open)))
+      research.push(`${q.venture}: needs research (research first; next claims nothing)`);
+    else if (q.items.some(buildable)) build.push(`${q.venture}: buildable item`);
     else if (cooling(q))
       continue; // researched within 48 h or waiting: flagged or not, not tonight
-    else if (q.needs_research || !q.items.some(open)) reasons.push(`${q.venture}: needs research`);
-    else reasons.push(`${q.venture}: starved, not cooling`);
+    else if (q.items.some((it) => it.status === 'todo' && datedWithinDay(it.not_before, now)))
+      continue; // an item comes due today at 07:00 or tomorrow: waiting, not starved (2026-10-20)
+    else build.push(`${q.venture}: starved, not cooling`);
   }
   const runs = readFileSync(path.resolve(dir, '..', 'RUNS.md'), 'utf8');
   // `-- --routine=build` (npm keeps a bare flag for itself, so npm_config_routine is read too)
@@ -78,11 +97,72 @@ if (process.argv[2] === 'cold') {
     process.argv.find((a) => a.startsWith('--routine='))?.slice('--routine='.length) ??
     process.env['npm_config_routine'];
   const routine = routineArg === 'build' ? 'build' : 'burn-down';
+  const slotsFile = path.resolve(dir, '..', 'ops', 'SLOTS.md');
+  const slots = existsSync(slotsFile) ? readFileSync(slotsFile, 'utf8') : '';
+  // Pace (2026-10-24, foundry burn-pace-stale-usage-report): while docs/ops/BURN.json's `report` is
+  // older than 7 days the allowance is unknown, so a Monday or Tuesday night runs at most three
+  // slots that find work and any night ends on a usage-limit signal of the last 24 h (a watchdog
+  // `usage limit?` line, a build slot with no start marker) — the burn-down prints `paced: …` and
+  // ends before `npm ci`, work or not. Burn-down only: the build slot has its own fallback.
+  if (routine === 'burn-down') {
+    let reportDate: string | undefined;
+    try {
+      const burn = JSON.parse(
+        readFileSync(path.resolve(dir, '..', 'ops', 'BURN.json'), 'utf8'),
+      ) as { report?: { date?: string } };
+      reportDate = burn.report?.date;
+    } catch {
+      reportDate = undefined;
+    }
+    const paced = pacedStop(reportDate, runs, slots, now);
+    if (paced !== undefined) {
+      console.log(`paced: ${paced}`);
+      process.exit(0);
+    }
+  }
+  // A build slot in flight is researching the same starved or flagged queue (2026-10-23, foundry
+  // research-defers-to-build-slot): the burn-down leaves every research reason to it for the hour
+  // and says so; buildable items are unaffected — the claim marker covers those.
+  const inFlight = buildSlotInFlight(slots, runs, now, routine);
+  const deferred: string[] = [];
+  const reasons: string[] = [];
+  for (const r of [...research, ...build]) {
+    if (inFlight !== undefined && !r.endsWith(': buildable item')) deferred.push(r.split(':')[0]!);
+    else reasons.push(r);
+  }
   if (!preResearchSpent(runs, now, routine))
     reasons.push(
       `exchange: pre-research pass unspent this ${routine === 'build' ? 'day' : 'night'}`,
     );
-  console.log(reasons.length === 0 ? 'starved-and-cooled' : `work: ${reasons.join('; ')}`);
+  // A Wednesday exchange that left no trace is run by the Thursday–Saturday build slot before any
+  // research or build (2026-10-24, foundry `exchange-missed-slot-fallback`): the gate prints that
+  // reason first for `--routine=build`. Commit subjects since the slot come from git when the clone
+  // can answer (the build routine unshallows first; a failure reads as no commit, the run log decides).
+  if (routine === 'build') {
+    let subjects: string;
+    try {
+      subjects = execFileSync(
+        'git',
+        ['log', `--since=${lastExchangeSlot(now).replace(' ', 'T')}:00Z`, '--format=%s'],
+        {
+          cwd: path.resolve(dir, '..', '..'),
+          encoding: 'utf8',
+          stdio: ['ignore', 'pipe', 'ignore'],
+        },
+      );
+    } catch {
+      subjects = '';
+    }
+    const missed = missedExchange(now, runs, subjects);
+    if (missed !== undefined) reasons.unshift(missed);
+  }
+  const note =
+    deferred.length === 0
+      ? ''
+      : ` (deferred: ${deferred.join(', ')} research — build slot started ${inFlight} UTC is in flight)`;
+  console.log(
+    reasons.length === 0 ? `starved-and-cooled${note}` : `work: ${reasons.join('; ')}${note}`,
+  );
   process.exit(0);
 }
 
@@ -124,7 +204,14 @@ if (command === 'next') {
   const cap = process.argv
     .find((a) => a.startsWith('--max-effort='))
     ?.slice('--max-effort='.length);
-  const next = nextItem(pipeline.queues, cap ? { maxEffortDays: Number(cap) } : {});
+  // A plain `next` is null while a flagged queue out of cooling waits for research, so the CLAIM
+  // FIRST step claims nothing on a slot that will research (2026-10-22, foundry
+  // claim-only-when-buildable); the capped call (the fallback, which never does market research)
+  // keeps the raw ranking.
+  const next = nextItem(
+    pipeline.queues,
+    cap ? { maxEffortDays: Number(cap), researchFirst: false } : {},
+  );
   console.log(JSON.stringify(next ?? null, null, 2));
 } else if (command === 'empty') {
   // Flagged or empty queues; when nothing is buildable anywhere, the starved queues instead

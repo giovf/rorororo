@@ -253,41 +253,72 @@ export function pickTool(tools: { name?: unknown; description?: unknown }[]): st
   return null;
 }
 
+interface CallOutcome {
+  status: number | null;
+  message: RpcMessage | null;
+  raw: string;
+  /** The headers arrived but the body never finished (a hung stream), raw says why. */
+  bodyUnread?: boolean;
+}
+
 async function call(
   fetchFn: FetchLike,
   url: string,
   key: string | undefined,
   body: Record<string, unknown>,
   timeoutMs: number,
-): Promise<{ status: number | null; message: RpcMessage | null; raw: string }> {
+): Promise<CallOutcome> {
   const headers: Record<string, string> = {
     'content-type': 'application/json',
     accept: 'application/json, text/event-stream',
     'user-agent': USER_AGENT,
   };
   if (key) headers.authorization = `Bearer ${key}`;
+  const deadline = Date.now() + timeoutMs;
+  let res: Response;
   try {
-    const res = await fetchFn(url, {
+    res = await fetchFn(url, {
       method: 'POST',
       headers,
       body: JSON.stringify(body),
       signal: AbortSignal.timeout(timeoutMs),
     });
-    const clone = res.clone();
-    const message = await rpcBody(res);
-    return { status: res.status, message, raw: message ? '' : await clone.text() };
   } catch (e) {
     return { status: null, message: null, raw: e instanceof Error ? e.message : String(e) };
   }
+  // The 2026-10-18 reading `call n/a (aborted due to timeout)` could not say whether the
+  // edge never answered or answered 200 and left the stream open; the two halves are told
+  // apart from here on (gankdat `refresh-mcp-probe`).
+  // The body read is bounded here too: the abort signal covers the body in Node's fetch, but
+  // a hung stream must not hang the step on a runtime where it does not.
+  let bodyTimer: ReturnType<typeof setTimeout> | undefined;
+  const bodyBudget = new Promise<never>((_, reject) => {
+    bodyTimer = setTimeout(
+      () => reject(new Error(`no end of body within ${timeoutMs} ms`)),
+      Math.max(1, deadline - Date.now()),
+    );
+  });
+  try {
+    const clone = res.clone();
+    const message = await Promise.race([rpcBody(res), bodyBudget]);
+    return { status: res.status, message, raw: message ? '' : await clone.text() };
+  } catch (e) {
+    const reason = e instanceof Error ? e.message : String(e);
+    return {
+      status: res.status,
+      message: null,
+      raw: `body unread (headers arrived): ${reason}`,
+      bodyUnread: true,
+    };
+  } finally {
+    clearTimeout(bodyTimer);
+  }
 }
 
-function stepOf(
-  name: StepName,
-  r: { status: number | null; message: RpcMessage | null; raw: string },
-  tool?: string,
-): ProbeStep {
+function stepOf(name: StepName, r: CallOutcome, tool?: string): ProbeStep {
   let note = '';
   if (r.status === null) note = excerpt(r.raw || 'no response');
+  else if (r.bodyUnread) note = excerpt(r.raw);
   else if (r.status !== 200) note = excerpt(r.message?.error?.message ?? r.raw ?? '');
   else if (r.message?.error) note = excerpt(`rpc error: ${r.message.error.message ?? ''}`);
   else if (!r.message?.result) note = excerpt(r.raw ? `unreadable body: ${r.raw}` : 'no result');

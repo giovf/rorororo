@@ -1,1 +1,0 @@
-{"jsonrpc":"2.0","id":23,"error":{"code":-32600,"message":"You can make eth_getLogs requests with up to a 10 block range. Based on your parameters, this block range should work: [0x32011d6, 0x32011df]"}}

@@ -235,6 +235,13 @@ _Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10
 | 2026-10-15 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 9, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1271, link to variables 10/175, unused variables 1/49, variables toolkit absent/45, relink variables 17/22, swap variables >100/126, library variables >100/399; search 7d to 10-14: 0 impressions, 0 clicks, indexed 0/2, not: URL is unknown to Google ×2 |
 | 2026-10-16 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 12, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1271, link to variables 10/175, unused variables 1/49, variables toolkit absent/47, relink variables 17/22, swap variables >100/126, library variables >100/400; search 7d to 10-15: 0 impressions, 0 clicks, indexed 0/2, not: URL is unknown to Google ×2 |
 | 2026-10-17 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 14, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1271, link to variables 10/175, unused variables 1/49, variables toolkit absent/47, relink variables 17/22, swap variables >100/126, library variables >100/401; search 7d to 10-16: 0 impressions, 0 clicks, indexed 0/2, not: URL is unknown to Google ×2 |
+| 2026-10-18 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 14, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1271, link to variables 10/175, unused variables 1/49, variables toolkit absent/47, relink variables 17/22, swap variables >100/126, library variables >100/402; search 7d to 10-17: 0 impressions, 0 clicks, indexed 0/2, not: URL is unknown to Google ×2 |
+| 2026-10-19 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 14, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1272, link to variables 10/175, unused variables 1/49, variables toolkit absent/47, relink variables 17/22, swap variables >100/126, library variables >100/403; search 7d to 10-18: 0 impressions, 0 clicks, indexed 0/2, not: URL is unknown to Google ×2 |
+| 2026-10-20 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 14, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1273, link to variables 10/176, unused variables 1/49, variables toolkit absent/47, relink variables 17/22, swap variables >100/127, library variables >100/403; search 7d to 10-19: 0 impressions, 0 clicks, indexed 0/2, not: URL is unknown to Google ×2 |
+| 2026-10-21 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 15, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1276, link to variables 10/176, unused variables 1/49, variables toolkit absent/47, relink variables 16/21, swap variables >100/127, library variables >100/404; search 7d to 10-20: 0 impressions, 0 clicks, indexed 0/2, not: Crawled - currently not indexed ×1, URL is unknown to Google ×1 |
+| 2026-10-22 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 15, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1276, link to variables 10/176, unused variables 1/49, variables toolkit absent/47, relink variables 16/21, swap variables >100/127, library variables >100/404; search 7d to 10-21: 0 impressions, 0 clicks, indexed 0/2, not: Crawled - currently not indexed ×1, URL is unknown to Google ×1 |
+| 2026-10-23 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 17, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1276, link to variables 10/176, unused variables 1/49, variables toolkit absent/47, relink variables 16/21, swap variables >100/127, library variables >100/404; search 7d to 10-22: 0 impressions, 0 clicks, indexed 0/2, not: Crawled - currently not indexed ×1, URL is unknown to Google ×1 |
+| 2026-10-24 | Daily check | 0 | 0 | 0 | via store-metrics CI: figma: install_count 0, like_count 0, view_count 17, unique_run_count 4, comment_count 0, purchase_count 0, version 286603 (2026-10-11); rank: styles to variables 68/1277, link to variables 10/177, unused variables 1/50, variables toolkit absent/47, relink variables 16/21, swap variables >100/127, library variables >100/405; search 7d to 10-23: 0 impressions, 0 clicks, indexed 0/2, not: Crawled - currently not indexed ×2 |
 
 ## 7. Post-launch measurement (day 1 / 7 / 30)
 
@@ -245,7 +252,7 @@ likes and purchases in §6 above; these are the dates that matter for the decisi
 | --- | --- | --- | --- |
 | Day 1 | 2026-09-22 | listing reachable, install count starts moving | listing is discoverable at all |
 | Day 7 | 2026-09-28 | **read: 0 installs (the 1 "user" is our own test run), 0 likes, 0 purchases, 2 views, 0 comments** | no install→purchase read is possible: nobody reaches the page. §8 shows why (search rank) and what changes |
-| Day 30 | 2026-10-21 | users, likes, purchases | scored against the §1 benchmark |
+| Day 30 | 2026-10-21 | **read: 15 views, 0 installs, 4 unique runs, 0 likes, 0 purchases, 0 comments; rank 68 "styles to variables", 1/49 "unused variables", 4 "convert styles to variables"; Google 0 impressions** | under 20 views: the channel is the problem; the owner withdrew the levers on 10-11, so keep at £0 to the kill date (§11) |
 
 Benchmark from §1 (measured across 167 Figma-checkout plugins): the **median paid plugin has 16
 purchases lifetime**, and design-system/variables tools convert free→paid at **1.7–2.9%** — the
@@ -480,3 +487,33 @@ Third starvation pass in eight days (09-30/10-04, 10-05 built out the same night
 7 views, 3 runs, 0 installs and 0 purchases unchanged since 09-28; the free finder, the playground file and the relink republish all wait on Figma desktop actions 017–019. Nothing unblocked is left that the earlier passes did not queue and build, so no items are
 added; the queue carries `research_after: 2026-10-21`, the `day-30-review` reading, and the fallback skips it until then
 (`docs/pipeline/README.md`, Waiting).
+
+## 11. Day-30 review (2026-10-21, fallback): keep at £0, no new levers, verdict on 2026-12-20
+
+Read from the 06:45 store-metrics row (§6, 2026-10-21) and the relay (`docs/relay/responses/vt-day30/`, the day-7 request
+re-run; the resource endpoint now answers 404, the search bodies carry the same record):
+
+| Measure | Day 7 | Day 30 | Proof (§8) |
+| --- | --- | --- | --- |
+| views | 2 | **15** | ≥ 100 — missed |
+| installs | 0 | **0** | ≥ 10 — missed |
+| unique runs | 1 (ours) | 4 | — |
+| likes / comments / purchases | 0 / 0 / 0 | 0 / 0 / 0 | — |
+| "styles to variables" | 79 / 1,222 | 68 / 1,276 | ≤ 20 — missed |
+| "unused variables" | 41 / 48 | **1 / 49** | ≤ 5 — met (brings no views, §9) |
+| "convert styles to variables" | absent | **4** of top 100 | — |
+| "link (to) variables" | 14 | 10 / 176 | — |
+| "variables toolkit" | 8 / 45 | absent / 47 | — |
+| Google (comparison + relink pages) | — | 0 impressions, 0 clicks; 1 page crawled not indexed, 1 unknown | ≥ 20 impressions by 10-31 — on track to miss |
+
+What changed since day 10: the owner's 2026-10-11 republish (version 286603) carries the Relink tab, and the listing's
+*name* is now the tagline sentence ("Convert styles to variables, link hard-coded values to variables, find and delete
+unused variables."). That is why "variables toolkit" fell out of the results on 10-11 and "convert styles to variables"
+went from absent to 4th — the name still drives Figma's search, as §8 found. Views went 7 → 15 after it; installs stayed 0.
+
+Decision: **keep, untouched, until the §7 kill date.** Under 20 views at day 30 means the channel is the problem (§8),
+and the channel levers — the playground file, the free finder plugin — need the owner's Figma desktop, which the owner
+withdrew on 2026-10-11 ("let's forget about the figma plugin"). Zero purchases is the shelf's norm for a paid 2026 newcomer
+(§10), so it says nothing about $12; no relist, no price change, no new feature. The listing costs £0, so killing it early
+gains nothing. Queue: `day-90-verdict` (not before 2026-12-20) applies §7 — any install, like, comment or purchase keeps it;
+none sets the venture to killed and keeps the code.

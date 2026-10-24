@@ -5,12 +5,17 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (0)
+## Requests (2)
 
-Nothing is waiting on you.
+1. **UK tax workbook is built** — ~30 min, since 2026-10-24; unblocks gankdat `zoho-crm-uk-registers-widget` (2.4), tax-workbook `etsy-listing-live` (10), tax-workbook `payhip-twin-listing` (5). Steps: [029](actions/029-etsy-shop-and-zoho.md).
+   UK tax workbook is built — open the Etsy shop (ID check, bank, fee ≤ £25) + free Zoho sign-in, ~30 min — docs/for-owner/actions/029-etsy-shop-and-zoho.md
 
-## Waiting on an attended Claude session, not you (3)
+2. **PayPal hackathon organiser says the Devpost entry has no de…** — ~3 min, since 2026-10-21; nothing queued waits on it. Steps: [028](actions/028-paypal-devpost-demo-access.md).
+   PayPal hackathon organiser says the Devpost entry has no demo access; add the demo link or run steps to the form by 12 Nov. — Prepared 2026-10-23 (burn-down): paste-ready demo URL and testing instructions in docs/for-owner/actions/028-paypal-devpost-demo-access.md (~3 min); the public mirror's README now carries the r…
+
+## Waiting on an attended Claude session, not you (4)
 
 - since 2026-10-04 — sign and upload ReadFocus 0.3.0 (ruler colour / height / opacity / lock-in-place controls, plus 0.2.1's Firefox for Android: `gecko_android`, phone-width popup, tap-to-place ruler) once 0.2.0 clears…
 - since 2026-10-05 — sign and upload Highlight Keep 0.4.0 (imports from Weava/Glasp .csv and Hypothesis exports, the "On for every site" switch, frames/shadow DOM, Markdown-files and Readwise CSV downloads; includes the…
 - since 2026-10-17 — the CI Cloudflare token (CLOUDFLARE_API_TOKEN) lacks Zone Read + Zone Analytics Read for gankdat.com, so the Daily numbers `stats crawlers: zone` reading (AI-crawler fetches of /stats… over 30 d, spi…
+- since 2026-10-20 — workflows now run Node 24 (foundry `node-24-runners`); the devcontainer still installs Node 22 — an attended session changes `.devcontainer/Dockerfile` nodesource `setup_22.x` → `setup_24.x` (CLAUDE.…

@@ -1,0 +1,3834 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sanctionsData xmlns="https://www.treasury.gov/ofac/DeltaFile/1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="https://www.treasury.gov/ofac/DeltaFile/1.0 https://www.treasury.gov/ofac/downloads/sanctions/1.0/DeltaFile.xsd">
+  <publicationInfo>
+    <datePublished>2026-10-15T00:00:00-04:00</datePublished>
+    <publicationType>Standard Action</publicationType>
+  </publicationInfo>
+  <referenceValues />
+  <featureTypes />
+  <entities>
+    <entity id="58571" action="add">
+      <generalInfo>
+        <identityId>50058</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61279" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64244" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51248" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50480" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="90655">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="91494">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>INTERNATIONAL DEVELOPMENT BANK FOR INVESTMENT AND FINANCE</formattedLastName>
+              <formattedFullName>INTERNATIONAL DEVELOPMENT BANK FOR INVESTMENT AND FINANCE</formattedFullName>
+              <nameParts>
+                <namePart id="151790">
+                  <type refId="1525">Entity Name</type>
+                  <value>International Development Bank for Investment and Finance</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92127">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫مصرف التنمية الدولي للاستثمار والتمويل‬</formattedLastName>
+              <formattedFullName>‫مصرف التنمية الدولي للاستثمار والتمويل‬</formattedFullName>
+              <nameParts>
+                <namePart id="152757">
+                  <type refId="1525">Entity Name</type>
+                  <value>مصرف التنمية الدولي للاستثمار والتمويل</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="90656">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>true</isLowQuality>
+          <translations>
+            <translation id="91495">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>INTERNATIONAL DEVELOPMENT BANK</formattedLastName>
+              <formattedFullName>INTERNATIONAL DEVELOPMENT BANK</formattedFullName>
+              <nameParts>
+                <namePart id="151791">
+                  <type refId="1525">Entity Name</type>
+                  <value>International Development Bank</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="90657">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="91496">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>IRAQ DEVELOPMENT BANK</formattedLastName>
+              <formattedFullName>IRAQ DEVELOPMENT BANK</formattedFullName>
+              <nameParts>
+                <namePart id="151792">
+                  <type refId="1525">Entity Name</type>
+                  <value>Iraq Development Bank</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90169">
+          <country refId="11110">Iraq</country>
+          <translations>
+            <translation id="68794">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="124750">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Arasat Ave, Karada</value>
+                </addressPart>
+                <addressPart id="124751">
+                  <type refId="1454">CITY</type>
+                  <value>Baghdad</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+        <address id="90170">
+          <country refId="11110">Iraq</country>
+          <translations>
+            <translation id="68795">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="124752">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Karrada, Hay Babil Dist. 929, Arasat Ave., St No. 21, Building 1</value>
+                </addressPart>
+                <addressPart id="124753">
+                  <type refId="1454">CITY</type>
+                  <value>Baghdad</value>
+                </addressPart>
+                <addressPart id="124754">
+                  <type refId="1456">POSTAL CODE</type>
+                  <value>10069</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="101137">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>98692</versionId>
+          <value>11 Jan 2011</value>
+          <valueDate id="156698">
+            <fromDateBegin>2011-01-11</fromDateBegin>
+            <fromDateEnd>2011-01-11</fromDateEnd>
+            <toDateBegin>2011-01-11</toDateBegin>
+            <toDateEnd>2011-01-11</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="101139">
+          <type featureTypeId="13">SWIFT/BIC</type>
+          <versionId>98694</versionId>
+          <value>IDBQIQBA</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104607">
+          <type featureTypeId="826">Target Type</type>
+          <versionId>102162</versionId>
+          <value>Financial Institution</value>
+          <valueRefId>92036</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="101138">
+          <type featureTypeId="14">Website</type>
+          <versionId>98693</versionId>
+          <value>https://www.idb.iq</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53355">
+          <type refId="91752">Legal Entity Number</type>
+          <name nameId="90655" nameTranslationId="91494">INTERNATIONAL DEVELOPMENT BANK FOR INVESTMENT AND FINANCE</name>
+          <documentNumber>2549001T72VRU0W37E62</documentNumber>
+          <isValid>true</isValid>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58930" action="add">
+      <generalInfo>
+        <identityId>50389</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61605" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64673" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51603" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50929" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91117">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92027">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Zhila</formattedFirstName>
+              <formattedLastName>MOHAMMADI</formattedLastName>
+              <formattedFullName>MOHAMMADI, Zhila</formattedFullName>
+              <nameParts>
+                <namePart id="152578">
+                  <type refId="1521">First Name</type>
+                  <value>Zhila</value>
+                </namePart>
+                <namePart id="152577">
+                  <type refId="1520">Last Name</type>
+                  <value>Mohammadi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92074">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫ژیلا محمدی‬</formattedLastName>
+              <formattedFullName>‫ژیلا محمدی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152661">
+                  <type refId="1521">First Name</type>
+                  <value>ژیلا</value>
+                </namePart>
+                <namePart id="152660">
+                  <type refId="1520">Last Name</type>
+                  <value>محمدی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91127">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92037">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Jela</formattedFirstName>
+              <formattedLastName>MOHAMADI</formattedLastName>
+              <formattedFullName>MOHAMADI, Jela</formattedFullName>
+              <nameParts>
+                <namePart id="152593">
+                  <type refId="1521">First Name</type>
+                  <value>Jela</value>
+                </namePart>
+                <namePart id="152592">
+                  <type refId="1520">Last Name</type>
+                  <value>Mohamadi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91128">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92038">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Zhila</formattedFirstName>
+              <formattedLastName>MOHAMMADI ALIABAD</formattedLastName>
+              <formattedFullName>MOHAMMADI ALIABAD, Zhila</formattedFullName>
+              <nameParts>
+                <namePart id="152595">
+                  <type refId="1521">First Name</type>
+                  <value>Zhila</value>
+                </namePart>
+                <namePart id="152594">
+                  <type refId="1520">Last Name</type>
+                  <value>Mohammadi Aliabad</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92039">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫ژیلا محمدی علی آباد‬</formattedLastName>
+              <formattedFullName>‫ژیلا محمدی علی آباد‬</formattedFullName>
+              <nameParts>
+                <namePart id="152598">
+                  <type refId="1521">First Name</type>
+                  <value>ژیلا</value>
+                </namePart>
+                <namePart id="152597">
+                  <type refId="1520">Last Name</type>
+                  <value>محمدی علی آباد</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90839">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69157">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104583">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102138</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104340">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101895</versionId>
+          <value>28 Jun 1991</value>
+          <valueDate id="158467">
+            <fromDateBegin>1991-06-28</fromDateBegin>
+            <fromDateEnd>1991-06-28</fromDateEnd>
+            <toDateBegin>1991-06-28</toDateBegin>
+            <toDateEnd>1991-06-28</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104342">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101897</versionId>
+          <value>Female</value>
+          <valueRefId>91527</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104339">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101894</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104341">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101896</versionId>
+          <value>Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53818">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91117" nameTranslationId="92027">MOHAMMADI, Zhila</name>
+          <documentNumber>5660004288</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26106">
+          <type refId="15002">Acting for or on behalf of</type>
+          <relatedEntity entityId="57173">FARAB SOROUSH AFAGH QESHM COMPANY</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58934" action="add">
+      <generalInfo>
+        <identityId>50393</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61609" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64677" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51607" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50933" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91121">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92031">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>ELITESPHERE TRADING CO., LIMITED</formattedLastName>
+              <formattedFullName>ELITESPHERE TRADING CO., LIMITED</formattedFullName>
+              <nameParts>
+                <namePart id="152582">
+                  <type refId="1525">Entity Name</type>
+                  <value>Elitesphere Trading Co., Limited</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90825">
+          <country refId="11065">China</country>
+          <translations>
+            <translation id="69149">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125873">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Rm 9042, 9/F, Block B</value>
+                </addressPart>
+                <addressPart id="125874">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>Chung Mei Centre</value>
+                </addressPart>
+                <addressPart id="125875">
+                  <type refId="1453">ADDRESS3</type>
+                  <value>15-17 Hong Yip Street, Kwun Tong</value>
+                </addressPart>
+                <addressPart id="125876">
+                  <type refId="1454">CITY</type>
+                  <value>Hong Kong</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+        <address id="90826">
+          <country refId="11065">China</country>
+          <translations>
+            <translation id="69150">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125907">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Unit 11, 9/F, The Cloud</value>
+                </addressPart>
+                <addressPart id="125908">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>No. 111 Tuang Chau Street</value>
+                </addressPart>
+                <addressPart id="125909">
+                  <type refId="1453">ADDRESS3</type>
+                  <value>Tai Koktsui, Kowloon</value>
+                </addressPart>
+                <addressPart id="125910">
+                  <type refId="1454">CITY</type>
+                  <value>Hong Kong</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104324">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>101879</versionId>
+          <value>20 Aug 2024</value>
+          <valueDate id="158433">
+            <fromDateBegin>2024-08-20</fromDateBegin>
+            <fromDateEnd>2024-08-20</fromDateEnd>
+            <toDateBegin>2024-08-20</toDateBegin>
+            <toDateEnd>2024-08-20</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53809">
+          <type refId="91760">Business Registration Number</type>
+          <name nameId="91121" nameTranslationId="92031">ELITESPHERE TRADING CO., LIMITED</name>
+          <documentNumber>76961842</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11247">Hong Kong</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58935" action="add">
+      <generalInfo>
+        <identityId>50394</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61610" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64678" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51608" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50935" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91122">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92032">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>SEYYED ABBAS HOSSEINI PARSA AND PARTNERS QESHM GENERAL PARTNERSHIP COMPANY</formattedLastName>
+              <formattedFullName>SEYYED ABBAS HOSSEINI PARSA AND PARTNERS QESHM GENERAL PARTNERSHIP COMPANY</formattedFullName>
+              <nameParts>
+                <namePart id="152583">
+                  <type refId="1525">Entity Name</type>
+                  <value>Seyyed Abbas Hosseini Parsa and Partners Qeshm General Partnership Company</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92076">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫شرکت تضامنی سید عباس حسینی پارسا و شرکا قشم‬</formattedLastName>
+              <formattedFullName>‫شرکت تضامنی سید عباس حسینی پارسا و شرکا قشم‬</formattedFullName>
+              <nameParts>
+                <namePart id="152663">
+                  <type refId="1525">Entity Name</type>
+                  <value>شرکت تضامنی سید عباس حسینی پارسا و شرکا قشم</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90828">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69151">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125867">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Unit 2078, Ground Floor, Atta, Ferdowsi Qeshm Commercial Complex Passage, No. 0, Vali Asr Boulevard, Main Street</value>
+                </addressPart>
+                <addressPart id="125868">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>Sina Desert</value>
+                </addressPart>
+                <addressPart id="125869">
+                  <type refId="1453">ADDRESS3</type>
+                  <value>Central District</value>
+                </addressPart>
+                <addressPart id="125870">
+                  <type refId="1454">CITY</type>
+                  <value>Qeshm</value>
+                </addressPart>
+                <addressPart id="125872">
+                  <type refId="1456">POSTAL CODE</type>
+                  <value>7951919639</value>
+                </addressPart>
+                <addressPart id="125871">
+                  <type refId="1455">STATE/PROVINCE</type>
+                  <value>Hormozgan</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104596">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102151</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104336">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>101891</versionId>
+          <value>14 Jun 2016</value>
+          <valueDate id="158455">
+            <fromDateBegin>2016-06-14</fromDateBegin>
+            <fromDateEnd>2016-06-14</fromDateEnd>
+            <toDateBegin>2016-06-14</toDateBegin>
+            <toDateEnd>2016-06-14</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104614">
+          <type featureTypeId="647">Organization Type:</type>
+          <versionId>102169</versionId>
+          <value>Other monetary intermediation</value>
+          <valueRefId>92063</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53811">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91122" nameTranslationId="92032">SEYYED ABBAS HOSSEINI PARSA AND PARTNERS QESHM GENERAL PARTNERSHIP COMPANY</name>
+          <documentNumber>14005927381</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+        <identityDocument id="53810">
+          <type refId="91761">Registration Number</type>
+          <name nameId="91122" nameTranslationId="92032">SEYYED ABBAS HOSSEINI PARSA AND PARTNERS QESHM GENERAL PARTNERSHIP COMPANY</name>
+          <documentNumber>5549</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58936" action="add">
+      <generalInfo>
+        <identityId>50395</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61611" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64679" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51609" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50936" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91123">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92033">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Khaled</formattedFirstName>
+              <formattedLastName>MOHIESNEJAD</formattedLastName>
+              <formattedFullName>MOHIESNEJAD, Khaled</formattedFullName>
+              <nameParts>
+                <namePart id="152585">
+                  <type refId="1521">First Name</type>
+                  <value>Khaled</value>
+                </namePart>
+                <namePart id="152584">
+                  <type refId="1520">Last Name</type>
+                  <value>Mohiesnejad</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92079">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫خالد محیسن نژاد‬</formattedLastName>
+              <formattedFullName>‫خالد محیسن نژاد‬</formattedFullName>
+              <nameParts>
+                <namePart id="152670">
+                  <type refId="1521">First Name</type>
+                  <value>خالد</value>
+                </namePart>
+                <namePart id="152669">
+                  <type refId="1520">Last Name</type>
+                  <value>محیسن نژاد</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90830">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69152">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104592">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102147</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104326">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101881</versionId>
+          <value>21 Sep 1982</value>
+          <valueDate id="158442">
+            <fromDateBegin>1982-09-21</fromDateBegin>
+            <fromDateEnd>1982-09-21</fromDateEnd>
+            <toDateBegin>1982-09-21</toDateBegin>
+            <toDateEnd>1982-09-21</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104327">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101882</versionId>
+          <value>Male</value>
+          <valueRefId>91526</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104465">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>102020</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104325">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101880</versionId>
+          <value>Ahvaz, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53812">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91123" nameTranslationId="92033">MOHIESNEJAD, Khaled</name>
+          <documentNumber>1754430317</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26070">
+          <type refId="15002">Acting for or on behalf of</type>
+          <relatedEntity entityId="58935">SEYYED ABBAS HOSSEINI PARSA AND PARTNERS QESHM GENERAL PARTNERSHIP COMPANY</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58937" action="add">
+      <generalInfo>
+        <identityId>50396</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61612" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64680" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51610" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50937" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91124">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92034">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Seyyed Abbas</formattedFirstName>
+              <formattedLastName>HOSSEINI PARSA</formattedLastName>
+              <formattedFullName>HOSSEINI PARSA, Seyyed Abbas</formattedFullName>
+              <nameParts>
+                <namePart id="152587">
+                  <type refId="1521">First Name</type>
+                  <value>Seyyed</value>
+                </namePart>
+                <namePart id="152586">
+                  <type refId="1520">Last Name</type>
+                  <value>Hosseini Parsa</value>
+                </namePart>
+                <namePart id="152588">
+                  <type refId="1522">Middle Name</type>
+                  <value>Abbas</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92078">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫سید عباس حسینی پارسا‬</formattedLastName>
+              <formattedFullName>‫سید عباس حسینی پارسا‬</formattedFullName>
+              <nameParts>
+                <namePart id="152667">
+                  <type refId="1521">First Name</type>
+                  <value>سید</value>
+                </namePart>
+                <namePart id="152666">
+                  <type refId="1520">Last Name</type>
+                  <value>حسینی پارسا</value>
+                </namePart>
+                <namePart id="152668">
+                  <type refId="1522">Middle Name</type>
+                  <value>عباس</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90832">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69153">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104593">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102148</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104329">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101884</versionId>
+          <value>15 Jul 1956</value>
+          <valueDate id="158446">
+            <fromDateBegin>1956-07-15</fromDateBegin>
+            <fromDateEnd>1956-07-15</fromDateEnd>
+            <toDateBegin>1956-07-15</toDateBegin>
+            <toDateEnd>1956-07-15</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104330">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101885</versionId>
+          <value>Male</value>
+          <valueRefId>91526</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104331">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101886</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104328">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101883</versionId>
+          <value>Tehran, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53813">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91124" nameTranslationId="92034">HOSSEINI PARSA, Seyyed Abbas</name>
+          <documentNumber>0083131019</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26069">
+          <type refId="15002">Acting for or on behalf of</type>
+          <relatedEntity entityId="58935">SEYYED ABBAS HOSSEINI PARSA AND PARTNERS QESHM GENERAL PARTNERSHIP COMPANY</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58938" action="add">
+      <generalInfo>
+        <identityId>50397</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61613" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64681" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51611" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50938" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91125">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92035">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Sadegh</formattedFirstName>
+              <formattedLastName>BAVI</formattedLastName>
+              <formattedFullName>BAVI, Sadegh</formattedFullName>
+              <nameParts>
+                <namePart id="152590">
+                  <type refId="1521">First Name</type>
+                  <value>Sadegh</value>
+                </namePart>
+                <namePart id="152589">
+                  <type refId="1520">Last Name</type>
+                  <value>Bavi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92077">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫صادق باوی‬</formattedLastName>
+              <formattedFullName>‫صادق باوی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152665">
+                  <type refId="1521">First Name</type>
+                  <value>صادق</value>
+                </namePart>
+                <namePart id="152664">
+                  <type refId="1520">Last Name</type>
+                  <value>باوی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90834">
+          <country refId="11210">United Arab Emirates</country>
+          <translations>
+            <translation id="69154">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125729">
+                  <type refId="1454">CITY</type>
+                  <value>Dubai</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104594">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102149</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104333">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101888</versionId>
+          <value>21 Mar 1964</value>
+          <valueDate id="158450">
+            <fromDateBegin>1964-03-21</fromDateBegin>
+            <fromDateEnd>1964-03-21</fromDateEnd>
+            <toDateBegin>1964-03-21</toDateBegin>
+            <toDateEnd>1964-03-21</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104332">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101887</versionId>
+          <value>Male</value>
+          <valueRefId>91526</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104335">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101890</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104608">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>102163</versionId>
+          <value>Dominica</value>
+          <valueRefId>11078</valueRefId>
+          <isPrimary>false</isPrimary>
+        </feature>
+        <feature id="104334">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101889</versionId>
+          <value>Ahvaz, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53814">
+          <type refId="1571">Passport</type>
+          <name nameId="91125" nameTranslationId="92035">BAVI, Sadegh</name>
+          <documentNumber>N97128850</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+          <expirationDate id="158451">
+            <fromDateBegin>2027-05-11</fromDateBegin>
+            <fromDateEnd>2027-05-11</fromDateEnd>
+            <toDateBegin>2027-05-11</toDateBegin>
+            <toDateEnd>2027-05-11</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </expirationDate>
+        </identityDocument>
+        <identityDocument id="53815">
+          <type refId="1571">Passport</type>
+          <name nameId="91125" nameTranslationId="92035">BAVI, Sadegh</name>
+          <documentNumber>RA045652</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11078">Dominica</issuingCountry>
+          <expirationDate id="158453">
+            <fromDateBegin>2032-09-26</fromDateBegin>
+            <fromDateEnd>2032-09-26</fromDateEnd>
+            <toDateBegin>2032-09-26</toDateBegin>
+            <toDateEnd>2032-09-26</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </expirationDate>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58939" action="add">
+      <generalInfo>
+        <identityId>50398</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61614" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64682" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51612" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50939" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91126">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92036">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>BAVI AND PARTNERS EXCHANGE COMPANY</formattedLastName>
+              <formattedFullName>BAVI AND PARTNERS EXCHANGE COMPANY</formattedFullName>
+              <nameParts>
+                <namePart id="152591">
+                  <type refId="1525">Entity Name</type>
+                  <value>Bavi and Partners Exchange Company</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92080">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫شرکت صرافی باوی و شرکاء‬</formattedLastName>
+              <formattedFullName>‫شرکت صرافی باوی و شرکاء‬</formattedFullName>
+              <nameParts>
+                <namePart id="152671">
+                  <type refId="1525">Entity Name</type>
+                  <value>شرکت صرافی باوی و شرکاء</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90836">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69155">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125730">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Unit 3, Floor 2, No. 114, Karim Khan Zand Boulevard, Mahshahr Street</value>
+                </addressPart>
+                <addressPart id="125731">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>Iranshahr</value>
+                </addressPart>
+                <addressPart id="125732">
+                  <type refId="1454">CITY</type>
+                  <value>Tehran</value>
+                </addressPart>
+                <addressPart id="125733">
+                  <type refId="1456">POSTAL CODE</type>
+                  <value>1584773815</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104595">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102150</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104337">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>101892</versionId>
+          <value>18 Nov 2024</value>
+          <valueDate id="158457">
+            <fromDateBegin>2024-11-18</fromDateBegin>
+            <fromDateEnd>2024-11-18</fromDateEnd>
+            <toDateBegin>2024-11-18</toDateBegin>
+            <toDateEnd>2024-11-18</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104615">
+          <type featureTypeId="647">Organization Type:</type>
+          <versionId>102170</versionId>
+          <value>Other monetary intermediation</value>
+          <valueRefId>92063</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53816">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91126" nameTranslationId="92036">BAVI AND PARTNERS EXCHANGE COMPANY</name>
+          <documentNumber>14013961908</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+        <identityDocument id="53817">
+          <type refId="91761">Registration Number</type>
+          <name nameId="91126" nameTranslationId="92036">BAVI AND PARTNERS EXCHANGE COMPANY</name>
+          <documentNumber>641804</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58940" action="add">
+      <generalInfo>
+        <identityId>50399</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61615" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64683" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51613" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50940" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91129">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92040">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>ABOLHASAN JALALI AND PARTNERS EXCHANGE COMPANY</formattedLastName>
+              <formattedFullName>ABOLHASAN JALALI AND PARTNERS EXCHANGE COMPANY</formattedFullName>
+              <nameParts>
+                <namePart id="152599">
+                  <type refId="1525">Entity Name</type>
+                  <value>ABOLHASAN JALALI AND PARTNERS EXCHANGE COMPANY</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92069">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫شرکت صرافی ابوالحسن جلالی و شرکا‬</formattedLastName>
+              <formattedFullName>‫شرکت صرافی ابوالحسن جلالی و شرکا‬</formattedFullName>
+              <nameParts>
+                <namePart id="152653">
+                  <type refId="1525">Entity Name</type>
+                  <value>شرکت صرافی ابوالحسن جلالی و شرکا</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91197">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92128">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>JALALI AND PARTNERS GENERAL PARTNERSHIP COMPANY</formattedLastName>
+              <formattedFullName>JALALI AND PARTNERS GENERAL PARTNERSHIP COMPANY</formattedFullName>
+              <nameParts>
+                <namePart id="152758">
+                  <type refId="1525">Entity Name</type>
+                  <value>Jalali and Partners General Partnership Company</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90838">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69156">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125861">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Ground Floor</value>
+                </addressPart>
+                <addressPart id="125862">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>Salarieh Commercial Complex, No. 0, Mohammad Amin Boulevard</value>
+                </addressPart>
+                <addressPart id="125863">
+                  <type refId="1453">ADDRESS3</type>
+                  <value>Iran Marinos Street, Salarieh</value>
+                </addressPart>
+                <addressPart id="125864">
+                  <type refId="1454">CITY</type>
+                  <value>Qom, Central District</value>
+                </addressPart>
+                <addressPart id="125866">
+                  <type refId="1456">POSTAL CODE</type>
+                  <value>3716975454</value>
+                </addressPart>
+                <addressPart id="125865">
+                  <type refId="1455">STATE/PROVINCE</type>
+                  <value>Qom Province</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104591">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102146</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104343">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>101898</versionId>
+          <value>04 May 2016</value>
+          <valueDate id="158468">
+            <fromDateBegin>2016-05-04</fromDateBegin>
+            <fromDateEnd>2016-05-04</fromDateEnd>
+            <toDateBegin>2016-05-04</toDateBegin>
+            <toDateEnd>2016-05-04</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104617">
+          <type featureTypeId="647">Organization Type:</type>
+          <versionId>102172</versionId>
+          <value>Other monetary intermediation</value>
+          <valueRefId>92063</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53820">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91129" nameTranslationId="92040">ABOLHASAN JALALI AND PARTNERS EXCHANGE COMPANY</name>
+          <documentNumber>14005814280</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+        <identityDocument id="53819">
+          <type refId="91761">Registration Number</type>
+          <name nameId="91129" nameTranslationId="92040">ABOLHASAN JALALI AND PARTNERS EXCHANGE COMPANY</name>
+          <documentNumber>14150</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58941" action="add">
+      <generalInfo>
+        <identityId>50400</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61616" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64684" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51614" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50941" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91130">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92041">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Abolhasan</formattedFirstName>
+              <formattedLastName>JALALI</formattedLastName>
+              <formattedFullName>JALALI, Abolhasan</formattedFullName>
+              <nameParts>
+                <namePart id="152601">
+                  <type refId="1521">First Name</type>
+                  <value>Abolhasan</value>
+                </namePart>
+                <namePart id="152600">
+                  <type refId="1520">Last Name</type>
+                  <value>Jalali</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92070">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫ابوالحسن جلالی‬</formattedLastName>
+              <formattedFullName>‫ابوالحسن جلالی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152655">
+                  <type refId="1521">First Name</type>
+                  <value>ابوالحسن</value>
+                </namePart>
+                <namePart id="152654">
+                  <type refId="1520">Last Name</type>
+                  <value>جلالی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90843">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69159">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104589">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102144</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104348">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101903</versionId>
+          <value>01 Sep 1966</value>
+          <valueDate id="158478">
+            <fromDateBegin>1966-09-01</fromDateBegin>
+            <fromDateEnd>1966-09-01</fromDateEnd>
+            <toDateBegin>1966-09-01</toDateBegin>
+            <toDateEnd>1966-09-01</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104351">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101906</versionId>
+          <value>Male</value>
+          <valueRefId>91526</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104344">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101899</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104350">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101905</versionId>
+          <value>Maragheh, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53821">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91130" nameTranslationId="92041">JALALI, Abolhasan</name>
+          <documentNumber>1550929674</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58942" action="add">
+      <generalInfo>
+        <identityId>50401</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61617" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64685" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51615" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50942" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91131">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92042">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Milad</formattedFirstName>
+              <formattedLastName>KATEBI</formattedLastName>
+              <formattedFullName>KATEBI, Milad</formattedFullName>
+              <nameParts>
+                <namePart id="152603">
+                  <type refId="1521">First Name</type>
+                  <value>Milad</value>
+                </namePart>
+                <namePart id="152602">
+                  <type refId="1520">Last Name</type>
+                  <value>Katebi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92043">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫میلاد کاتبی‬</formattedLastName>
+              <formattedFullName>‫میلاد کاتبی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152605">
+                  <type refId="1521">First Name</type>
+                  <value>میلاد</value>
+                </namePart>
+                <namePart id="152604">
+                  <type refId="1520">Last Name</type>
+                  <value>کاتبی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90842">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69158">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104582">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102137</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104346">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101901</versionId>
+          <value>31 Dec 1989</value>
+          <valueDate id="158477">
+            <fromDateBegin>1989-12-31</fromDateBegin>
+            <fromDateEnd>1989-12-31</fromDateEnd>
+            <toDateBegin>1989-12-31</toDateBegin>
+            <toDateEnd>1989-12-31</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104345">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101900</versionId>
+          <value>Male</value>
+          <valueRefId>91526</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104349">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101904</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104347">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101902</versionId>
+          <value>Tehran, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53822">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91131" nameTranslationId="92042">KATEBI, Milad</name>
+          <documentNumber>0011436913</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26105">
+          <type refId="15002">Acting for or on behalf of</type>
+          <relatedEntity entityId="57173">FARAB SOROUSH AFAGH QESHM COMPANY</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58943" action="add">
+      <generalInfo>
+        <identityId>50402</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61618" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64686" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51616" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50943" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91132">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92044">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Amir</formattedFirstName>
+              <formattedLastName>SABETI</formattedLastName>
+              <formattedFullName>SABETI, Amir</formattedFullName>
+              <nameParts>
+                <namePart id="152607">
+                  <type refId="1521">First Name</type>
+                  <value>Amir</value>
+                </namePart>
+                <namePart id="152606">
+                  <type refId="1520">Last Name</type>
+                  <value>Sabeti</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92046">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫امیر ثابتی‬</formattedLastName>
+              <formattedFullName>‫امیر ثابتی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152612">
+                  <type refId="1521">First Name</type>
+                  <value>امیر</value>
+                </namePart>
+                <namePart id="152611">
+                  <type refId="1520">Last Name</type>
+                  <value>ثابتی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90847">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69161">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104584">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102139</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104357">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101912</versionId>
+          <value>30 Aug 1981</value>
+          <valueDate id="158483">
+            <fromDateBegin>1981-08-30</fromDateBegin>
+            <fromDateEnd>1981-08-30</fromDateEnd>
+            <toDateBegin>1981-08-30</toDateBegin>
+            <toDateEnd>1981-08-30</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104356">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101911</versionId>
+          <value>Male</value>
+          <valueRefId>91526</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104354">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101909</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104358">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101913</versionId>
+          <value>Shemiran, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53823">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91132" nameTranslationId="92044">SABETI, Amir</name>
+          <documentNumber>0451397711</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26107">
+          <type refId="15002">Acting for or on behalf of</type>
+          <relatedEntity entityId="57173">FARAB SOROUSH AFAGH QESHM COMPANY</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58944" action="add">
+      <generalInfo>
+        <identityId>50403</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61619" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64687" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51617" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50944" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91133">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92045">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Ensiyeh</formattedFirstName>
+              <formattedLastName>MULLAH MOHAMMADI</formattedLastName>
+              <formattedFullName>MULLAH MOHAMMADI, Ensiyeh</formattedFullName>
+              <nameParts>
+                <namePart id="152609">
+                  <type refId="1521">First Name</type>
+                  <value>Ensiyeh</value>
+                </namePart>
+                <namePart id="152608">
+                  <type refId="1520">Last Name</type>
+                  <value>Mullah Mohammadi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92071">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫انسیه ملامحمدی‬</formattedLastName>
+              <formattedFullName>‫انسیه ملامحمدی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152657">
+                  <type refId="1521">First Name</type>
+                  <value>انسیه</value>
+                </namePart>
+                <namePart id="152656">
+                  <type refId="1520">Last Name</type>
+                  <value>ملامحمدی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90846">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69160">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104590">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102145</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104368">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101923</versionId>
+          <value>18 May 1976</value>
+          <valueDate id="158491">
+            <fromDateBegin>1976-05-18</fromDateBegin>
+            <fromDateEnd>1976-05-18</fromDateEnd>
+            <toDateBegin>1976-05-18</toDateBegin>
+            <toDateEnd>1976-05-18</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104353">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101908</versionId>
+          <value>Female</value>
+          <valueRefId>91527</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104352">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101907</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104355">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101910</versionId>
+          <value>Qom, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53825">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91133" nameTranslationId="92045">MULLAH MOHAMMADI, Ensiyeh</name>
+          <documentNumber>0381750760</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58945" action="add">
+      <generalInfo>
+        <identityId>50404</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61620" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64688" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51618" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50945" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91134">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92047">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Nazanin</formattedFirstName>
+              <formattedLastName>BORJI</formattedLastName>
+              <formattedFullName>BORJI, Nazanin</formattedFullName>
+              <nameParts>
+                <namePart id="152614">
+                  <type refId="1521">First Name</type>
+                  <value>Nazanin</value>
+                </namePart>
+                <namePart id="152613">
+                  <type refId="1520">Last Name</type>
+                  <value>Borji</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92048">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫نازنین برجی‬</formattedLastName>
+              <formattedFullName>‫نازنین برجی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152616">
+                  <type refId="1521">First Name</type>
+                  <value>نازنین</value>
+                </namePart>
+                <namePart id="152615">
+                  <type refId="1520">Last Name</type>
+                  <value>برجی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90849">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69162">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104581">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102136</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104364">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101919</versionId>
+          <value>10 Jun 1996</value>
+          <valueDate id="158487">
+            <fromDateBegin>1996-06-10</fromDateBegin>
+            <fromDateEnd>1996-06-10</fromDateEnd>
+            <toDateBegin>1996-06-10</toDateBegin>
+            <toDateEnd>1996-06-10</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104363">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101918</versionId>
+          <value>Female</value>
+          <valueRefId>91527</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104366">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101921</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104365">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101920</versionId>
+          <value>Tehran, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53824">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91134" nameTranslationId="92047">BORJI, Nazanin</name>
+          <documentNumber>0019123337</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26104">
+          <type refId="15002">Acting for or on behalf of</type>
+          <relatedEntity entityId="57173">FARAB SOROUSH AFAGH QESHM COMPANY</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58946" action="add">
+      <generalInfo>
+        <identityId>50405</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61621" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64689" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51619" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50946" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91135">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92049">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Farzad</formattedFirstName>
+              <formattedLastName>ALLAHYAR</formattedLastName>
+              <formattedFullName>ALLAHYAR, Farzad</formattedFullName>
+              <nameParts>
+                <namePart id="152618">
+                  <type refId="1521">First Name</type>
+                  <value>Farzad</value>
+                </namePart>
+                <namePart id="152617">
+                  <type refId="1520">Last Name</type>
+                  <value>Allahyar</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92050">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫فرزاد الهیار‬</formattedLastName>
+              <formattedFullName>‫فرزاد الهیار‬</formattedFullName>
+              <nameParts>
+                <namePart id="152620">
+                  <type refId="1521">First Name</type>
+                  <value>فرزاد</value>
+                </namePart>
+                <namePart id="152619">
+                  <type refId="1520">Last Name</type>
+                  <value>الهیار</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90851">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69163">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104580">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102135</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104371">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101926</versionId>
+          <value>12 Aug 2001</value>
+          <valueDate id="158492">
+            <fromDateBegin>2001-08-12</fromDateBegin>
+            <fromDateEnd>2001-08-12</fromDateEnd>
+            <toDateBegin>2001-08-12</toDateBegin>
+            <toDateEnd>2001-08-12</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104369">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101924</versionId>
+          <value>Male</value>
+          <valueRefId>91526</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104370">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101925</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104372">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101927</versionId>
+          <value>Tehran, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53826">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91135" nameTranslationId="92049">ALLAHYAR, Farzad</name>
+          <documentNumber>0024557455</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26103">
+          <type refId="15002">Acting for or on behalf of</type>
+          <relatedEntity entityId="57173">FARAB SOROUSH AFAGH QESHM COMPANY</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58947" action="add">
+      <generalInfo>
+        <identityId>50406</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61622" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64690" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51620" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50947" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91136">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92051">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Fatemeh</formattedFirstName>
+              <formattedLastName>VASIGHI MERAJI</formattedLastName>
+              <formattedFullName>VASIGHI MERAJI, Fatemeh</formattedFullName>
+              <nameParts>
+                <namePart id="152622">
+                  <type refId="1521">First Name</type>
+                  <value>Fatemeh</value>
+                </namePart>
+                <namePart id="152621">
+                  <type refId="1520">Last Name</type>
+                  <value>Vasighi Meraji</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92052">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫فاطمه وثیقی معراجی‬</formattedLastName>
+              <formattedFullName>‫فاطمه وثیقی معراجی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152624">
+                  <type refId="1521">First Name</type>
+                  <value>فاطمه</value>
+                </namePart>
+                <namePart id="152623">
+                  <type refId="1520">Last Name</type>
+                  <value>وثیقی معراجی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91137">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92053">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Fatemeh</formattedFirstName>
+              <formattedLastName>VASIGHI</formattedLastName>
+              <formattedFullName>VASIGHI, Fatemeh</formattedFullName>
+              <nameParts>
+                <namePart id="152626">
+                  <type refId="1521">First Name</type>
+                  <value>Fatemeh</value>
+                </namePart>
+                <namePart id="152625">
+                  <type refId="1520">Last Name</type>
+                  <value>Vasighi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90853">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69164">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104585">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102140</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104375">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101930</versionId>
+          <value>21 Aug 1987</value>
+          <valueDate id="158499">
+            <fromDateBegin>1987-08-21</fromDateBegin>
+            <fromDateEnd>1987-08-21</fromDateEnd>
+            <toDateBegin>1987-08-21</toDateBegin>
+            <toDateEnd>1987-08-21</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104373">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101928</versionId>
+          <value>Female</value>
+          <valueRefId>91527</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104374">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101929</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104376">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101931</versionId>
+          <value>Qom, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53827">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91136" nameTranslationId="92051">VASIGHI MERAJI, Fatemeh</name>
+          <documentNumber>0386128804</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26108">
+          <type refId="15002">Acting for or on behalf of</type>
+          <relatedEntity entityId="57173">FARAB SOROUSH AFAGH QESHM COMPANY</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58948" action="add">
+      <generalInfo>
+        <identityId>50407</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61623" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64691" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51621" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50948" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91138">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92054">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>SOHEIL AND SORUSH NAJAFZADEH AND PARTNERS COMPANY</formattedLastName>
+              <formattedFullName>SOHEIL AND SORUSH NAJAFZADEH AND PARTNERS COMPANY</formattedFullName>
+              <nameParts>
+                <namePart id="152627">
+                  <type refId="1525">Entity Name</type>
+                  <value>SOHEIL AND SORUSH NAJAFZADEH AND PARTNERS COMPANY</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92063">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫شرکت سهیل و سروش نجف زاده و شرکا‬</formattedLastName>
+              <formattedFullName>‫شرکت سهیل و سروش نجف زاده و شرکا‬</formattedFullName>
+              <nameParts>
+                <namePart id="152644">
+                  <type refId="1525">Entity Name</type>
+                  <value>شرکت سهیل و سروش نجف زاده و شرکا</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90856">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69165">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125897">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Ground Floor, No. 149, Sarv Sharghi Boulevard, Majd Street</value>
+                </addressPart>
+                <addressPart id="125898">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>Saadat Abad, Tehran, Central District</value>
+                </addressPart>
+                <addressPart id="125899">
+                  <type refId="1454">CITY</type>
+                  <value>Tehran</value>
+                </addressPart>
+                <addressPart id="125900">
+                  <type refId="1456">POSTAL CODE</type>
+                  <value>1998644341</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104599">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102154</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104378">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>101933</versionId>
+          <value>07 Apr 2015</value>
+          <valueDate id="158505">
+            <fromDateBegin>2015-04-07</fromDateBegin>
+            <fromDateEnd>2015-04-07</fromDateEnd>
+            <toDateBegin>2015-04-07</toDateBegin>
+            <toDateEnd>2015-04-07</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104616">
+          <type featureTypeId="647">Organization Type:</type>
+          <versionId>102171</versionId>
+          <value>Other monetary intermediation</value>
+          <valueRefId>92063</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53828">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91138" nameTranslationId="92054">SOHEIL AND SORUSH NAJAFZADEH AND PARTNERS COMPANY</name>
+          <documentNumber>14004832696</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+        <identityDocument id="53829">
+          <type refId="91761">Registration Number</type>
+          <name nameId="91138" nameTranslationId="92054">SOHEIL AND SORUSH NAJAFZADEH AND PARTNERS COMPANY</name>
+          <documentNumber>470601</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58949" action="add">
+      <generalInfo>
+        <identityId>50408</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61624" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64692" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51622" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50949" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91139">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92055">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Azadeh</formattedFirstName>
+              <formattedLastName>ABDOLALIPUR</formattedLastName>
+              <formattedFullName>ABDOLALIPUR, Azadeh</formattedFullName>
+              <nameParts>
+                <namePart id="152629">
+                  <type refId="1521">First Name</type>
+                  <value>Azadeh</value>
+                </namePart>
+                <namePart id="152628">
+                  <type refId="1520">Last Name</type>
+                  <value>Abdolalipur</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92056">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫آزاده عبدالعلی پور‬</formattedLastName>
+              <formattedFullName>‫آزاده عبدالعلی پور‬</formattedFullName>
+              <nameParts>
+                <namePart id="152631">
+                  <type refId="1521">First Name</type>
+                  <value>آزاده</value>
+                </namePart>
+                <namePart id="152630">
+                  <type refId="1520">Last Name</type>
+                  <value>عبدالعلی پور</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91140">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92057">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Azadeh</formattedFirstName>
+              <formattedLastName>ALIPUR</formattedLastName>
+              <formattedFullName>ALIPUR, Azadeh</formattedFullName>
+              <nameParts>
+                <namePart id="152633">
+                  <type refId="1521">First Name</type>
+                  <value>Azadeh</value>
+                </namePart>
+                <namePart id="152632">
+                  <type refId="1520">Last Name</type>
+                  <value>Alipur</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90857">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69166">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104579">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102134</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104382">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101937</versionId>
+          <value>11 Sep 1988</value>
+          <valueDate id="158508">
+            <fromDateBegin>1988-09-11</fromDateBegin>
+            <fromDateEnd>1988-09-11</fromDateEnd>
+            <toDateBegin>1988-09-11</toDateBegin>
+            <toDateEnd>1988-09-11</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104380">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101935</versionId>
+          <value>Female</value>
+          <valueRefId>91527</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104381">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101936</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104383">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101938</versionId>
+          <value>Shiraz, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53830">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91139" nameTranslationId="92055">ABDOLALIPUR, Azadeh</name>
+          <documentNumber>2300151421</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26102">
+          <type refId="15002">Acting for or on behalf of</type>
+          <relatedEntity entityId="57173">FARAB SOROUSH AFAGH QESHM COMPANY</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58950" action="add">
+      <generalInfo>
+        <identityId>50409</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61625" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64693" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51623" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50950" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91141">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92058">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Sorush</formattedFirstName>
+              <formattedLastName>NAJAFZADEH</formattedLastName>
+              <formattedFullName>NAJAFZADEH, Sorush</formattedFullName>
+              <nameParts>
+                <namePart id="152635">
+                  <type refId="1521">First Name</type>
+                  <value>Sorush</value>
+                </namePart>
+                <namePart id="152634">
+                  <type refId="1520">Last Name</type>
+                  <value>Najafzadeh</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92065">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫سروش نجف زاده‬</formattedLastName>
+              <formattedFullName>‫سروش نجف زاده‬</formattedFullName>
+              <nameParts>
+                <namePart id="152648">
+                  <type refId="1521">First Name</type>
+                  <value>سروش</value>
+                </namePart>
+                <namePart id="152647">
+                  <type refId="1520">Last Name</type>
+                  <value>نجف زاده</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91142">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92059">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Sorosh</formattedFirstName>
+              <formattedLastName>NAJAFZADEH</formattedLastName>
+              <formattedFullName>NAJAFZADEH, Sorosh</formattedFullName>
+              <nameParts>
+                <namePart id="152637">
+                  <type refId="1521">First Name</type>
+                  <value>Sorosh</value>
+                </namePart>
+                <namePart id="152636">
+                  <type refId="1520">Last Name</type>
+                  <value>Najafzadeh</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90859">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69167">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104588">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102143</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104384">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101939</versionId>
+          <value>27 Aug 1982</value>
+          <valueDate id="158515">
+            <fromDateBegin>1982-08-27</fromDateBegin>
+            <fromDateEnd>1982-08-27</fromDateEnd>
+            <toDateBegin>1982-08-27</toDateBegin>
+            <toDateEnd>1982-08-27</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104386">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101941</versionId>
+          <value>Male</value>
+          <valueRefId>91526</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104395">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101950</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104385">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101940</versionId>
+          <value>Tehran, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53831">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91141" nameTranslationId="92058">NAJAFZADEH, Sorush</name>
+          <documentNumber>0069940177</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58951" action="add">
+      <generalInfo>
+        <identityId>50410</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61626" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64694" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51624" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50951" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91143">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92060">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Soheil</formattedFirstName>
+              <formattedLastName>NAJAFZADEH</formattedLastName>
+              <formattedFullName>NAJAFZADEH, Soheil</formattedFullName>
+              <nameParts>
+                <namePart id="152639">
+                  <type refId="1521">First Name</type>
+                  <value>Soheil</value>
+                </namePart>
+                <namePart id="152638">
+                  <type refId="1520">Last Name</type>
+                  <value>Najafzadeh</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92064">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫سهیل نجف زاده‬</formattedLastName>
+              <formattedFullName>‫سهیل نجف زاده‬</formattedFullName>
+              <nameParts>
+                <namePart id="152646">
+                  <type refId="1521">First Name</type>
+                  <value>سهیل</value>
+                </namePart>
+                <namePart id="152645">
+                  <type refId="1520">Last Name</type>
+                  <value>نجف زاده</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91144">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92061">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Suhail</formattedFirstName>
+              <formattedLastName>NAJAFZADEH</formattedLastName>
+              <formattedFullName>NAJAFZADEH, Suhail</formattedFullName>
+              <nameParts>
+                <namePart id="152641">
+                  <type refId="1521">First Name</type>
+                  <value>Suhail</value>
+                </namePart>
+                <namePart id="152640">
+                  <type refId="1520">Last Name</type>
+                  <value>Najafzadeh</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90861">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69168">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104587">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102142</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104387">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101942</versionId>
+          <value>12 Apr 1976</value>
+          <valueDate id="158519">
+            <fromDateBegin>1976-04-12</fromDateBegin>
+            <fromDateEnd>1976-04-12</fromDateEnd>
+            <toDateBegin>1976-04-12</toDateBegin>
+            <toDateEnd>1976-04-12</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104389">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101944</versionId>
+          <value>Male</value>
+          <valueRefId>91526</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104390">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101945</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104388">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101943</versionId>
+          <value>Tehran, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53832">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91143" nameTranslationId="92060">NAJAFZADEH, Soheil</name>
+          <documentNumber>0069004250</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58952" action="add">
+      <generalInfo>
+        <identityId>50411</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61627" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64695" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51625" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50952" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91145">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92062">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Mansureh</formattedFirstName>
+              <formattedLastName>MIRMOHAMMADI</formattedLastName>
+              <formattedFullName>MIRMOHAMMADI, Mansureh</formattedFullName>
+              <nameParts>
+                <namePart id="152643">
+                  <type refId="1521">First Name</type>
+                  <value>Mansureh</value>
+                </namePart>
+                <namePart id="152642">
+                  <type refId="1520">Last Name</type>
+                  <value>Mirmohammadi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92066">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫منصوره میرمحمدی‬</formattedLastName>
+              <formattedFullName>‫منصوره میرمحمدی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152650">
+                  <type refId="1521">First Name</type>
+                  <value>منصوره</value>
+                </namePart>
+                <namePart id="152649">
+                  <type refId="1520">Last Name</type>
+                  <value>میرمحمدی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90864">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69170">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104586">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102141</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104392">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>101947</versionId>
+          <value>13 May 1982</value>
+          <valueDate id="158524">
+            <fromDateBegin>1982-05-13</fromDateBegin>
+            <fromDateEnd>1982-05-13</fromDateEnd>
+            <toDateBegin>1982-05-13</toDateBegin>
+            <toDateEnd>1982-05-13</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104394">
+          <type featureTypeId="224">Gender</type>
+          <versionId>101949</versionId>
+          <value>Female</value>
+          <valueRefId>91527</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104391">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>101946</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104393">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>101948</versionId>
+          <value>Golpayegan, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53833">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91145" nameTranslationId="92062">MIRMOHAMMADI, Mansureh</name>
+          <documentNumber>1219437239</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26071">
+          <type refId="15002">Acting for or on behalf of</type>
+          <relatedEntity entityId="58948">SOHEIL AND SORUSH NAJAFZADEH AND PARTNERS COMPANY</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58953" action="add">
+      <generalInfo>
+        <identityId>50412</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61628" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64696" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51626" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50953" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91146">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92067">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>JAZIREH INTERNATIONAL BANK COMPANY</formattedLastName>
+              <formattedFullName>JAZIREH INTERNATIONAL BANK COMPANY</formattedFullName>
+              <nameParts>
+                <namePart id="152651">
+                  <type refId="1525">Entity Name</type>
+                  <value>Jazireh International Bank Company</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92075">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫بانک بین المللی جزیره‬</formattedLastName>
+              <formattedFullName>‫بانک بین المللی جزیره‬</formattedFullName>
+              <nameParts>
+                <namePart id="152662">
+                  <type refId="1525">Entity Name</type>
+                  <value>بانک بین المللی جزیره</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91147">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92068">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>BANK-E BEINAMELALI JAZIREH</formattedLastName>
+              <formattedFullName>BANK-E BEINAMELALI JAZIREH</formattedFullName>
+              <nameParts>
+                <namePart id="152652">
+                  <type refId="1525">Entity Name</type>
+                  <value>Bank-E Beinamelali Jazireh</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90866">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69171">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125901">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Ground Floor, NBO-9, No. 0, Andisheh Boulevard</value>
+                </addressPart>
+                <addressPart id="125902">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>Sanai Boulevard, Bank Complex</value>
+                </addressPart>
+                <addressPart id="125903">
+                  <type refId="1453">ADDRESS3</type>
+                  <value>Kish District, Bandar-e Lengeh County</value>
+                </addressPart>
+                <addressPart id="125904">
+                  <type refId="1454">CITY</type>
+                  <value>Kish</value>
+                </addressPart>
+                <addressPart id="125906">
+                  <type refId="1456">POSTAL CODE</type>
+                  <value>7941773662</value>
+                </addressPart>
+                <addressPart id="125905">
+                  <type refId="1455">STATE/PROVINCE</type>
+                  <value>Hormozgan</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+        <address id="90867">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69172">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125845">
+                  <type refId="1454">CITY</type>
+                  <value>Kish</value>
+                </addressPart>
+                <addressPart id="125846">
+                  <type refId="1455">STATE/PROVINCE</type>
+                  <value>Hormozgan</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104597">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102152</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104396">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>101951</versionId>
+          <value>03 Jan 2022</value>
+          <valueDate id="158533">
+            <fromDateBegin>2022-01-03</fromDateBegin>
+            <fromDateEnd>2022-01-03</fromDateEnd>
+            <toDateBegin>2022-01-03</toDateBegin>
+            <toDateEnd>2022-01-03</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104603">
+          <type featureTypeId="826">Target Type</type>
+          <versionId>102158</versionId>
+          <value>Financial Institution</value>
+          <valueRefId>92036</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53834">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91146" nameTranslationId="92067">JAZIREH INTERNATIONAL BANK COMPANY</name>
+          <documentNumber>14010665053</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+        <identityDocument id="53835">
+          <type refId="91761">Registration Number</type>
+          <name nameId="91146" nameTranslationId="92067">JAZIREH INTERNATIONAL BANK COMPANY</name>
+          <documentNumber>14485</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58954" action="add">
+      <generalInfo>
+        <identityId>50413</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61629" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64697" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51627" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="50954" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91148">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92072">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>CHABAHAR INTERNATIONAL BANK OVERSEAS COMPANY</formattedLastName>
+              <formattedFullName>CHABAHAR INTERNATIONAL BANK OVERSEAS COMPANY</formattedFullName>
+              <nameParts>
+                <namePart id="152658">
+                  <type refId="1525">Entity Name</type>
+                  <value>CHABAHAR INTERNATIONAL BANK OVERSEAS COMPANY</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92073">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫شرکت بانک بین المللی چابهار برون مرزی‬</formattedLastName>
+              <formattedFullName>‫شرکت بانک بین المللی چابهار برون مرزی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152659">
+                  <type refId="1525">Entity Name</type>
+                  <value>شرکت بانک بین المللی چابهار برون مرزی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90869">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69173">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125888">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Unit 173, Second Floor, Booth 303</value>
+                </addressPart>
+                <addressPart id="125889">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>Salehyar Complex, No. 0, Vahdat Street</value>
+                </addressPart>
+                <addressPart id="125890">
+                  <type refId="1453">ADDRESS3</type>
+                  <value>Imam Khomeini Boulevard, Free Zone Neighborhood, Central District, Chabahar Country</value>
+                </addressPart>
+                <addressPart id="125891">
+                  <type refId="1454">CITY</type>
+                  <value>Chabahar City</value>
+                </addressPart>
+                <addressPart id="125893">
+                  <type refId="1456">POSTAL CODE</type>
+                  <value>9971768361</value>
+                </addressPart>
+                <addressPart id="125892">
+                  <type refId="1455">STATE/PROVINCE</type>
+                  <value>Sistan and Baluchestan Province</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104598">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102153</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104397">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>101952</versionId>
+          <value>17 Jan 2022</value>
+          <valueDate id="158539">
+            <fromDateBegin>2022-01-17</fromDateBegin>
+            <fromDateEnd>2022-01-17</fromDateEnd>
+            <toDateBegin>2022-01-17</toDateBegin>
+            <toDateEnd>2022-01-17</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104601">
+          <type featureTypeId="826">Target Type</type>
+          <versionId>102156</versionId>
+          <value>Financial Institution</value>
+          <valueRefId>92036</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53836">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91148" nameTranslationId="92072">CHABAHAR INTERNATIONAL BANK OVERSEAS COMPANY</name>
+          <documentNumber>14010705831</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+        <identityDocument id="53837">
+          <type refId="91761">Registration Number</type>
+          <name nameId="91148" nameTranslationId="92072">CHABAHAR INTERNATIONAL BANK OVERSEAS COMPANY</name>
+          <documentNumber>4060</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58990" action="add">
+      <generalInfo>
+        <identityId>50430</identityId>
+        <entityType refId="600">Individual</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61665" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64794" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51663" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="51050" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91165">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92097">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Sayyed Ruhollah</formattedFirstName>
+              <formattedLastName>RAZAVI</formattedLastName>
+              <formattedFullName>RAZAVI, Sayyed Ruhollah</formattedFullName>
+              <nameParts>
+                <namePart id="152718">
+                  <type refId="1521">First Name</type>
+                  <value>Sayyed Ruhollah</value>
+                </namePart>
+                <namePart id="152717">
+                  <type refId="1520">Last Name</type>
+                  <value>Razavi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92098">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫سید روح اله رضوی‬</formattedLastName>
+              <formattedFullName>‫سید روح اله رضوی‬</formattedFullName>
+              <nameParts>
+                <namePart id="152720">
+                  <type refId="1521">First Name</type>
+                  <value>سید روح اله</value>
+                </namePart>
+                <namePart id="152719">
+                  <type refId="1520">Last Name</type>
+                  <value>رضوی</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91166">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92099">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Seyed</formattedFirstName>
+              <formattedLastName>ROOHULLAH RAZAVI</formattedLastName>
+              <formattedFullName>ROOHULLAH RAZAVI, Seyed</formattedFullName>
+              <nameParts>
+                <namePart id="152722">
+                  <type refId="1521">First Name</type>
+                  <value>Seyed</value>
+                </namePart>
+                <namePart id="152721">
+                  <type refId="1520">Last Name</type>
+                  <value>Roohullah Razavi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91167">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92100">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Rouhollah</formattedFirstName>
+              <formattedLastName>RAZAVI</formattedLastName>
+              <formattedFullName>RAZAVI, Rouhollah</formattedFullName>
+              <nameParts>
+                <namePart id="152724">
+                  <type refId="1521">First Name</type>
+                  <value>Rouhollah</value>
+                </namePart>
+                <namePart id="152723">
+                  <type refId="1520">Last Name</type>
+                  <value>Razavi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91168">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92101">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedFirstName>Ruhollah</formattedFirstName>
+              <formattedLastName>RAZAVI</formattedLastName>
+              <formattedFullName>RAZAVI, Ruhollah</formattedFullName>
+              <nameParts>
+                <namePart id="152726">
+                  <type refId="1521">First Name</type>
+                  <value>Ruhollah</value>
+                </namePart>
+                <namePart id="152725">
+                  <type refId="1520">Last Name</type>
+                  <value>Razavi</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90894">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69194">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+            </translation>
+          </translations>
+        </address>
+        <address id="90895">
+          <country refId="11210">United Arab Emirates</country>
+          <translations>
+            <translation id="69195">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125777">
+                  <type refId="1454">CITY</type>
+                  <value>Dubai</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104604">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102159</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104457">
+          <type featureTypeId="8">Birthdate</type>
+          <versionId>102012</versionId>
+          <value>19 Sep 1981</value>
+          <valueDate id="158634">
+            <fromDateBegin>1981-09-19</fromDateBegin>
+            <fromDateEnd>1981-09-19</fromDateEnd>
+            <toDateBegin>1981-09-19</toDateBegin>
+            <toDateEnd>1981-09-19</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104459">
+          <type featureTypeId="11">Citizenship Country</type>
+          <versionId>102014</versionId>
+          <value>Dominica</value>
+          <valueRefId>11078</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104460">
+          <type featureTypeId="11">Citizenship Country</type>
+          <versionId>102015</versionId>
+          <value>Turkey</value>
+          <valueRefId>11205</valueRefId>
+          <isPrimary>false</isPrimary>
+        </feature>
+        <feature id="104458">
+          <type featureTypeId="224">Gender</type>
+          <versionId>102013</versionId>
+          <value>Male</value>
+          <valueRefId>91526</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104461">
+          <type featureTypeId="10">Nationality Country</type>
+          <versionId>102016</versionId>
+          <value>Iran</value>
+          <valueRefId>11109</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104605">
+          <type featureTypeId="9">Place of Birth</type>
+          <versionId>102160</versionId>
+          <value>Qom, Iran</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53886">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91165" nameTranslationId="92097">RAZAVI, Sayyed Ruhollah</name>
+          <documentNumber>0381818969</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+    <entity id="58991" action="add">
+      <generalInfo>
+        <identityId>50431</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61666" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64795" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51664" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="51051" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91169">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92102">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>TEJARAT GOSTAR ATLAS PARSIAN KISH COMPANY</formattedLastName>
+              <formattedFullName>TEJARAT GOSTAR ATLAS PARSIAN KISH COMPANY</formattedFullName>
+              <nameParts>
+                <namePart id="152727">
+                  <type refId="1525">Entity Name</type>
+                  <value>Tejarat Gostar Atlas Parsian Kish Company</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92103">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫شرکت تجارت گستراطلس پارسیان کیش‬</formattedLastName>
+              <formattedFullName>‫شرکت تجارت گستراطلس پارسیان کیش‬</formattedFullName>
+              <nameParts>
+                <namePart id="152728">
+                  <type refId="1525">Entity Name</type>
+                  <value>شرکت تجارت گستراطلس پارسیان کیش</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90897">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69196">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125852">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Unit 208, Second Floor, Plot EX20, Sepehr Building, Eghtesad Square, Iran Boulevard</value>
+                </addressPart>
+                <addressPart id="125853">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>Kish Industrial Phase 2</value>
+                </addressPart>
+                <addressPart id="125854">
+                  <type refId="1454">CITY</type>
+                  <value>Kish</value>
+                </addressPart>
+                <addressPart id="125856">
+                  <type refId="1456">POSTAL CODE</type>
+                  <value>7941658112</value>
+                </addressPart>
+                <addressPart id="125855">
+                  <type refId="1455">STATE/PROVINCE</type>
+                  <value>Hormozgan</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104606">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102161</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104463">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>102018</versionId>
+          <value>24 Feb 2015</value>
+          <valueDate id="158640">
+            <fromDateBegin>2015-02-24</fromDateBegin>
+            <fromDateEnd>2015-02-24</fromDateEnd>
+            <toDateBegin>2015-02-24</toDateBegin>
+            <toDateEnd>2015-02-24</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53887">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91169" nameTranslationId="92102">TEJARAT GOSTAR ATLAS PARSIAN KISH COMPANY</name>
+          <documentNumber>14004757110</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26068">
+          <type refId="15003">Owned or Controlled By</type>
+          <relatedEntity entityId="58990">RAZAVI, Sayyed Ruhollah</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58992" action="add">
+      <generalInfo>
+        <identityId>50432</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61667" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64793" refId="91901">IRAN-EO13902</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51665" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="51049" refId="91902">Executive Order 13902 (Iran)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91170">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92104">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>FARZANEGAN ENERGY PARS COMPANY</formattedLastName>
+              <formattedFullName>FARZANEGAN ENERGY PARS COMPANY</formattedFullName>
+              <nameParts>
+                <namePart id="152729">
+                  <type refId="1525">Entity Name</type>
+                  <value>Farzanegan Energy Pars Company</value>
+                </namePart>
+              </nameParts>
+            </translation>
+            <translation id="92105">
+              <isPrimary>false</isPrimary>
+              <script refId="20100">Arabic</script>
+              <formattedLastName>‫شرکت فرزانگان انرژی پارس‬</formattedLastName>
+              <formattedFullName>‫شرکت فرزانگان انرژی پارس‬</formattedFullName>
+              <nameParts>
+                <namePart id="152730">
+                  <type refId="1525">Entity Name</type>
+                  <value>شرکت فرزانگان انرژی پارس</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90899">
+          <country refId="11109">Iran</country>
+          <translations>
+            <translation id="69197">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125840">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>North Unit, First Floor, No. 14</value>
+                </addressPart>
+                <addressPart id="125841">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>Shahid Davoud Jahanbaksh Nejad Street, Farmanieh</value>
+                </addressPart>
+                <addressPart id="125842">
+                  <type refId="1454">CITY</type>
+                  <value>Tajrish</value>
+                </addressPart>
+                <addressPart id="125844">
+                  <type refId="1456">POSTAL CODE</type>
+                  <value>1957944813</value>
+                </addressPart>
+                <addressPart id="125843">
+                  <type refId="1455">STATE/PROVINCE</type>
+                  <value>Tehran</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104602">
+          <type featureTypeId="125">Additional Sanctions Information -</type>
+          <versionId>102157</versionId>
+          <value>Subject to Secondary Sanctions</value>
+          <valueRefId>91473</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104467">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>102022</versionId>
+          <value>26 Oct 2015</value>
+          <valueDate id="158647">
+            <fromDateBegin>2015-10-26</fromDateBegin>
+            <fromDateEnd>2015-10-26</fromDateEnd>
+            <toDateBegin>2015-10-26</toDateBegin>
+            <toDateEnd>2015-10-26</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53888">
+          <type refId="1584">National ID No.</type>
+          <name nameId="91170" nameTranslationId="92104">FARZANEGAN ENERGY PARS COMPANY</name>
+          <documentNumber>14005314445</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11109">Iran</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+      <relationships>
+        <relationship id="26072">
+          <type refId="15003">Owned or Controlled By</type>
+          <relatedEntity entityId="58990">RAZAVI, Sayyed Ruhollah</relatedEntity>
+        </relationship>
+      </relationships>
+    </entity>
+    <entity id="58997" action="add">
+      <generalInfo>
+        <identityId>50437</identityId>
+        <entityType refId="601">Entity</entityType>
+      </generalInfo>
+      <sanctionsLists>
+        <sanctionsList id="61672" refId="1550" datePublished="2026-10-15">SDN List</sanctionsList>
+      </sanctionsLists>
+      <sanctionsPrograms>
+        <sanctionsProgram id="64747" refId="92882">CUBA-EO14404</sanctionsProgram>
+      </sanctionsPrograms>
+      <sanctionsTypes>
+        <sanctionsType id="51670" refId="1705">Block</sanctionsType>
+      </sanctionsTypes>
+      <legalAuthorities>
+        <legalAuthority id="51000" refId="92884">Executive Order 14404 (Cuba)</legalAuthority>
+      </legalAuthorities>
+      <names>
+        <name id="91175">
+          <isPrimary>true</isPrimary>
+          <isLowQuality>false</isLowQuality>
+          <translations>
+            <translation id="92110">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>BANCO INTERNACIONAL DE COMERCIO S.A.</formattedLastName>
+              <formattedFullName>BANCO INTERNACIONAL DE COMERCIO S.A.</formattedFullName>
+              <nameParts>
+                <namePart id="152745">
+                  <type refId="1525">Entity Name</type>
+                  <value>BANCO INTERNACIONAL DE COMERCIO S.A.</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+        <name id="91176">
+          <isPrimary>false</isPrimary>
+          <aliasType refId="1400">A.K.A.</aliasType>
+          <isLowQuality>true</isLowQuality>
+          <translations>
+            <translation id="92111">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <formattedLastName>BICSA</formattedLastName>
+              <formattedFullName>BICSA</formattedFullName>
+              <nameParts>
+                <namePart id="152746">
+                  <type refId="1525">Entity Name</type>
+                  <value>BICSA</value>
+                </namePart>
+              </nameParts>
+            </translation>
+          </translations>
+        </name>
+      </names>
+      <addresses>
+        <address id="90926">
+          <country refId="11073">Cuba</country>
+          <translations>
+            <translation id="69202">
+              <isPrimary>true</isPrimary>
+              <script refId="20122">Latin</script>
+              <addressParts>
+                <addressPart id="125799">
+                  <type refId="1451">ADDRESS1</type>
+                  <value>Oficina 506, Edificio Santa Clara</value>
+                </addressPart>
+                <addressPart id="125800">
+                  <type refId="1452">ADDRESS2</type>
+                  <value>Centro de Negocios Miramar, Calle 3 entre 76 y 78, Miramar</value>
+                </addressPart>
+                <addressPart id="125801">
+                  <type refId="1453">ADDRESS3</type>
+                  <value>Playa</value>
+                </addressPart>
+                <addressPart id="125802">
+                  <type refId="1454">CITY</type>
+                  <value>Havana</value>
+                </addressPart>
+              </addressParts>
+            </translation>
+          </translations>
+        </address>
+      </addresses>
+      <features>
+        <feature id="104488">
+          <type featureTypeId="646">Organization Established Date</type>
+          <versionId>102043</versionId>
+          <value>23 Oct 1993</value>
+          <valueDate id="158687">
+            <fromDateBegin>1993-10-23</fromDateBegin>
+            <fromDateEnd>1993-10-23</fromDateEnd>
+            <toDateBegin>1993-10-23</toDateBegin>
+            <toDateEnd>1993-10-23</toDateEnd>
+            <isApproximate>false</isApproximate>
+            <isDateRange>false</isDateRange>
+          </valueDate>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104489">
+          <type featureTypeId="13">SWIFT/BIC</type>
+          <versionId>102044</versionId>
+          <value>BIDCCUHH</value>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104490">
+          <type featureTypeId="826">Target Type</type>
+          <versionId>102045</versionId>
+          <value>Financial Institution</value>
+          <valueRefId>92036</valueRefId>
+          <isPrimary>true</isPrimary>
+        </feature>
+        <feature id="104600">
+          <type featureTypeId="826">Target Type</type>
+          <versionId>102155</versionId>
+          <value>State-Owned Enterprise</value>
+          <valueRefId>92048</valueRefId>
+          <isPrimary>false</isPrimary>
+        </feature>
+      </features>
+      <identityDocuments>
+        <identityDocument id="53893">
+          <type refId="92883">Entity Code</type>
+          <name nameId="91175" nameTranslationId="92110">BANCO INTERNACIONAL DE COMERCIO S.A.</name>
+          <documentNumber>60290</documentNumber>
+          <isValid>true</isValid>
+          <issuingCountry refId="11073">Cuba</issuingCountry>
+        </identityDocument>
+      </identityDocuments>
+    </entity>
+  </entities>
+</sanctionsData>

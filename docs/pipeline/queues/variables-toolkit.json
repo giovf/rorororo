@@ -2,9 +2,9 @@
   "venture": "variables-toolkit",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-11",
+  "updated": "2026-10-21",
   "researched": "2026-10-05",
-  "research_after": "2026-10-21",
+  "research_after": "2026-12-20",
   "weight": 0.5,
   "items": [
     {
@@ -36,9 +36,10 @@
       "effort_days": 0.3,
       "proof": "§7 day-30 row filled with views/installs/purchases/ranks; decision written (keep / relist again / playground file / kill 2026-12-20)",
       "score": 4,
-      "status": "todo",
+      "status": "done",
       "added": "2026-09-28",
-      "not_before": "2026-10-21"
+      "not_before": "2026-10-21",
+      "done_at": "2026-10-21"
     },
     {
       "id": "figma-search-rank-in-ci",
@@ -138,6 +139,17 @@
       "status": "done",
       "added": "2026-10-05",
       "done_at": "2026-10-05"
+    },
+    {
+      "id": "day-90-verdict",
+      "title": "Day-90 verdict (2026-12-20): kill or keep the listing on STRATEGY §7 terms (zero sales and zero organic signal → kill, keep the code)",
+      "why": "Day-30 review (RESEARCH.md §11, 2026-10-21): 15 views, 0 installs, 0 purchases, 0 comments in 30 days; the owner withdrew the Figma desktop levers on 2026-10-11, so the listing runs untouched at £0 until the §7 kill date. Read the Daily check rows: any install, like, comment or purchase by 12-20 is organic signal and keeps it; none → set venture.json to killed and keep the code; unpublishing is an owner click, asked only if the listing costs anything.",
+      "effort_days": 0.1,
+      "proof": "RESEARCH.md §7 day-90 row and venture.json status written (killed or kept, with the numbers)",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-21",
+      "not_before": "2026-12-20"
     }
   ]
 }

@@ -23,12 +23,9 @@ import {
   zoneStatsRows,
 } from '../src/lib/crawler-hits.ts';
 import { afterWallNote, connectCallersNote, oauthFunnelNote } from '../src/lib/oauth-funnel.ts';
-import {
-  bazaarClause,
-  bazaarSummary,
-  merchantResources,
-  payToFromPaymentRequired,
-} from './x402-bazaar-read.ts';
+import { x402CallsBySlug, x402Paid30dNote, x402PaidClause } from '../src/lib/x402-sales.ts';
+import { bazaarClause, bazaarResourceLines, bazaarSummary } from './x402-bazaar-read.ts';
+import { readMerchantCatalogue, readPayTo } from './x402-catalogue.mjs';
 
 const ACCOUNT_ID = '37e56f3ce4dfe49919e85d4380467f44'; // not a secret
 const DATABASE_ID = 'ac051277-5f69-46ba-965b-50da2f1ec524'; // wrangler.jsonc
@@ -112,6 +109,13 @@ const stale = await sql(
 const skipped = await sql(
   "SELECT source_slug, MAX(message) AS message FROM refresh_log WHERE status = 'skipped' AND created_at > datetime('now','-1 day') GROUP BY source_slug",
 );
+// A night the platform killed writes no row of its own; the next attempt writes it from the
+// progress marker (src/sources/progress.ts, 2026-10-18) as `silent refresh started … died after
+// <phase> …`. A later `ok` row hides it from `refresh errors` — rightly, the data is fresh — so the
+// phase is read here, for the day it was written, whatever followed it.
+const silent = await sql(
+  "SELECT source_slug, MAX(message) AS message FROM refresh_log WHERE status = 'error' AND message LIKE 'silent refresh %' AND created_at > datetime('now','-1 day') GROUP BY source_slug",
+).catch(() => []);
 for (const s of stale) {
   if (errors.some((e) => e.source_slug === s.source_slug)) continue;
   const skip = skipped.find((k) => k.source_slug === s.source_slug);
@@ -685,8 +689,13 @@ async function sourceSlugs() {
   }
   return slugs;
 }
-/** `{ label, restWhere, mcpWhere }` → `datasets 30d<label>: <slug> N, …; 0: a, b`. */
-async function datasetQueries30d(label = '', restWhere = '', mcpWhere = '') {
+/**
+ * `{ label, restWhere, mcpWhere, extra }` → `datasets 30d<label>: <slug> N, …; 0: a, b`. `extra` is
+ * paid x402 calls per slug (2026-10-19, `x402-paid-by-source-reading`): a settled payment on a
+ * register is external demand §7's clock must see, so it counts in the total and the slug reads
+ * `uk-sanctions 3 (x402 3)`.
+ */
+async function datasetQueries30d(label = '', restWhere = '', mcpWhere = '', extra = null) {
   const slugs = await sourceSlugs();
   const counts = new Map([...slugs].map((s) => [s, 0]));
   const add = (slug, n) => {
@@ -704,16 +713,35 @@ async function datasetQueries30d(label = '', restWhere = '', mcpWhere = '') {
       if (tool.startsWith('query_')) add(tool.slice('query_'.length).replaceAll('_', '-'), r.n);
     }
   }
+  const paid = new Map();
+  for (const [slug, n] of extra ?? []) {
+    if (slugs.has(slug) && n > 0) {
+      add(slug, n);
+      paid.set(slug, n);
+    }
+  }
   const used = [...counts]
     .filter(([, n]) => n > 0)
     .sort((a, b) => b[1] - a[1])
-    .map(([s, n]) => `${s} ${Math.round(n)}`);
+    .map(([s, n]) => `${s} ${Math.round(n)}${paid.has(s) ? ` (x402 ${paid.get(s)})` : ''}`);
   const zero = [...counts]
     .filter(([, n]) => n === 0)
     .map(([s]) => s)
     .sort();
   return `datasets 30d${label}: ${used.length ? used.join(', ') : 'none'}${zero.length ? `; 0: ${zero.join(', ')}` : ''}`;
 }
+// What sold on the x402 lane (2026-10-19, `x402-paid-by-source-reading`): the `x402_paid` point
+// carries the UA (blob2), the slug (blob5) and the hashed client id (blob6), so the row names the
+// source, the distinct clients and the UA family behind its count — the lane's first three
+// external payments (10-17/18) reached the row as a bare `3 x402 paid`. Grouped reads for 24 h
+// and 30 d, the probe's user agent excluded; a failed read leaves the bare count in place.
+const x402PaidRows = (days) =>
+  ae(
+    `SELECT blob5 AS slug, blob2 AS ua, blob6 AS client, SUM(_sample_interval * double1) AS n FROM gankdat_traffic WHERE blob1 = 'x402_paid' AND blob2 NOT LIKE 'gankdat-x402-probe/%' AND timestamp > NOW() - INTERVAL '${days}' DAY GROUP BY slug, ua, client LIMIT 5000`,
+  ).catch(() => null);
+const x402Rows24 = await x402PaidRows(1);
+const x402Rows30 = await x402PaidRows(30);
+const x402Note30d = x402Paid30dNote(x402Rows30);
 const datasetsNote = await datasetQueries30d().catch(
   (e) => `datasets 30d: n/a (${e.message.slice(0, 100)})`,
 );
@@ -723,9 +751,12 @@ const internalAccountIds = await sql(`SELECT id FROM accounts WHERE ${INTERNAL_E
 const notIn = (blob) =>
   ` AND ${blob} != ''${internalAccountIds.length ? ` AND ${blob} NOT IN (${internalAccountIds.map((id) => `'${id}'`).join(', ')})` : ''}`;
 const datasetsExternalNote = internalAccountIds
-  ? await datasetQueries30d(' external', notIn('blob4'), notIn('blob6')).catch(
-      (e) => `datasets 30d external: n/a (${e.message.slice(0, 100)})`,
-    )
+  ? await datasetQueries30d(
+      ' external',
+      notIn('blob4'),
+      notIn('blob6'),
+      x402CallsBySlug(x402Rows30),
+    ).catch((e) => `datasets 30d external: n/a (${e.message.slice(0, 100)})`)
   : 'datasets 30d external: n/a (internal accounts unreadable from D1)';
 
 const date = new Date().toISOString().slice(0, 10);
@@ -737,7 +768,7 @@ const ownX402 = await ae(
 )
   .then((rows) => Math.round(Number(rows[0]?.n ?? 0)))
   .catch(() => 0);
-const sales = `${kinds.x402_paid ?? 0} x402 paid${ownX402 ? ` (+${ownX402} own probe)` : ''}`;
+const sales = `${x402PaidClause(kinds.x402_paid ?? 0, x402Rows24)}${ownX402 ? ` (+${ownX402} own probe)` : ''}`;
 
 const file = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', 'RESEARCH.md');
 let md = await readFile(file, 'utf8');
@@ -836,34 +867,15 @@ const x402ValidateNote = await (async () => {
 // indexing call). The receiving wallet is a Worker secret, so the runner reads it from the 402 of
 // the first live route (`PAYMENT-REQUIRED`, keyless, no payment), then asks CDP's keyless merchant
 // discovery endpoint for every active resource under that payTo and sums the quality numbers the
-// Bazaar ranks by. `bazaar: 0 listed` until the one settled payment indexes us (action 026);
+// Bazaar ranks by (both reads in scripts/x402-catalogue.mjs, shared with the probe since
+// 2026-10-23: CDP lists one resource per settled payment, so the probe pays each unlisted route).
 // `n/a (<reason>)` when either read fails. Pure parsing lives in scripts/x402-bazaar-read.ts.
 const bazaarNote = await (async () => {
   const slugs = await x402Slugs;
   if (!slugs.length) throw new Error('no live sources');
-  const unpaid = await fetch(`${x402Base}/x402/data/${slugs[0]}?per_page=1`, {
-    headers: { 'User-Agent': 'gankdat-metrics/1 (+https://gankdat.com)' },
-    signal: AbortSignal.timeout(15_000),
-  });
-  const payTo = payToFromPaymentRequired(
-    unpaid.headers.get('payment-required'),
-    await unpaid.json().catch(() => null),
-  );
-  if (!payTo) throw new Error(`no payTo in the ${unpaid.status} from /x402/data/${slugs[0]}`);
-  const resources = [];
-  for (let offset = 0, page = 0; page < 5; page++, offset += 100) {
-    const url = `https://api.cdp.coinbase.com/platform/v2/x402/discovery/merchant?payTo=${payTo}&limit=100&offset=${offset}`;
-    const res = await fetch(url, {
-      headers: { Accept: 'application/json' },
-      signal: AbortSignal.timeout(20_000),
-    });
-    if (!res.ok) throw new Error(`merchant HTTP ${res.status}`);
-    const body = await res.json();
-    const items = merchantResources(body);
-    resources.push(...items);
-    const total = Number(body?.pagination?.total ?? 0);
-    if (items.length < 100 || resources.length >= total) break;
-  }
+  const payTo = await readPayTo(x402Base, slugs[0], 'gankdat-metrics/1 (+https://gankdat.com)');
+  const resources = await readMerchantCatalogue(payTo);
+  for (const line of bazaarResourceLines(resources, x402Base)) console.log(line);
   return bazaarClause(bazaarSummary(resources, x402Base));
 })().catch((e) => `bazaar: n/a (${String(e instanceof Error ? e.message : e).slice(0, 100)})`);
 
@@ -876,6 +888,7 @@ const notes = [
   indexnowNote,
   x402ValidateNote,
   bazaarNote,
+  x402Note30d,
   mcpProbeNote,
   waveLogText,
   feedsNote,
@@ -894,6 +907,16 @@ const notes = [
   crawlersNote,
   datasetsNote,
   datasetsExternalNote,
+  ...(silent.length
+    ? [
+        `silent nights: ${silent
+          .map(
+            (e) =>
+              `${e.source_slug} ${errorText(String(e.message ?? '').replace(/^silent refresh /, ''))}`,
+          )
+          .join(', ')}`,
+      ]
+    : []),
   errors.length
     ? `refresh errors: ${errors
         .map((e) => {

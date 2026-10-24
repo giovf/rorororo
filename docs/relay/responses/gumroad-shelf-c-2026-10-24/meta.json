@@ -1,0 +1,305 @@
+{
+  "request": "gumroad-shelf-c-2026-10-24",
+  "fetched_at": "2026-10-24T19:25:00.766Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/13-getting-paid",
+      "fetched_at": "2026-10-24T19:24:47.015Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/13-getting-paid",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 50774,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/260-your-payout-settings-page",
+      "fetched_at": "2026-10-24T19:24:47.765Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/260-your-payout-settings-page",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 25774,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/66-gumroads-fees",
+      "fetched_at": "2026-10-24T19:24:48.423Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/66-gumroads-fees",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 19643,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/121-sales-tax-on-gumroad",
+      "fetched_at": "2026-10-24T19:24:49.031Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/121-sales-tax-on-gumroad",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 19103,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/325-indirect-taxes-on-sales-via-discover",
+      "fetched_at": "2026-10-24T19:24:49.628Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/325-indirect-taxes-on-sales-via-discover",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 18772,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/79-gumroad-discover",
+      "fetched_at": "2026-10-24T19:24:50.230Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/79-gumroad-discover",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 23628,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/222-product-ratings-on-gumroad",
+      "fetched_at": "2026-10-24T19:24:50.834Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/222-product-ratings-on-gumroad",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 23545,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/275-paypal-connect",
+      "fetched_at": "2026-10-24T19:24:51.431Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/275-paypal-connect",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 26919,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/46-what-currency-does-gumroad-use",
+      "fetched_at": "2026-10-24T19:24:52.037Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/46-what-currency-does-gumroad-use",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.html",
+      "bytes": 22461,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/160-suspension",
+      "fetched_at": "2026-10-24T19:24:52.632Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/160-suspension",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 35561,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/161-what-gumroad-considers-fraud",
+      "fetched_at": "2026-10-24T19:24:53.232Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/161-what-gumroad-considers-fraud",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 21456,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/64-is-gumroad-for-me",
+      "fetched_at": "2026-10-24T19:24:53.833Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/64-is-gumroad-for-me",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.html",
+      "bytes": 22116,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/155-things-you-cant-sell-on-gumroad",
+      "fetched_at": "2026-10-24T19:24:54.641Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/155-things-you-cant-sell-on-gumroad",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.html",
+      "bytes": 24713,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/120-protecting-your-privacy-on-gumroad",
+      "fetched_at": "2026-10-24T19:24:55.251Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/120-protecting-your-privacy-on-gumroad",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.html",
+      "bytes": 20743,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/281-payout-delays",
+      "fetched_at": "2026-10-24T19:24:55.863Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/281-payout-delays",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.html",
+      "bytes": 34371,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/15-1099s",
+      "fetched_at": "2026-10-24T19:24:56.466Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/15-1099s",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.html",
+      "bytes": 24348,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/51-what-is-gumroads-refund-policy",
+      "fetched_at": "2026-10-24T19:24:57.058Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/51-what-is-gumroads-refund-policy",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.html",
+      "bytes": 19697,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/335-custom-refund-policy",
+      "fetched_at": "2026-10-24T19:24:57.656Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/335-custom-refund-policy",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.html",
+      "bytes": 18950,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/76-license-keys",
+      "fetched_at": "2026-10-24T19:24:58.254Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/76-license-keys",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.html",
+      "bytes": 34725,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/252-multiple-accounts",
+      "fetched_at": "2026-10-24T19:24:58.850Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/252-multiple-accounts",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.html",
+      "bytes": 23132,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/70-can-i-sell-services",
+      "fetched_at": "2026-10-24T19:24:59.450Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/70-can-i-sell-services",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "21.html",
+      "bytes": 24964,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad",
+      "fetched_at": "2026-10-24T19:25:00.049Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/355-connect-ai-assistants-to-gumroad",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "22.html",
+      "bytes": 25813,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/42-content-security",
+      "fetched_at": "2026-10-24T19:25:00.669Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/42-content-security",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "23.html",
+      "bytes": 17546,
+      "truncated": false
+    }
+  ]
+}

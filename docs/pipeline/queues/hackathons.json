@@ -2,8 +2,8 @@
   "venture": "hackathons",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-16",
-  "researched": "2026-10-15",
+  "updated": "2026-10-23",
+  "researched": "2026-10-20",
   "weight": 2,
   "items": [
     {
@@ -97,14 +97,59 @@
     {
       "id": "lablab-rise-of-agents-date-read",
       "title": "Re-read lablab.ai's 'The Rise of AI Agents' hackathon page (relay) for its online build window; when it is announced and at least five days away, file an entry item for the 'Best use of Vultr' cash track with the gankdat agent reused under an MIT-licensed entry folder",
-      "why": "Read 2026-10-13 through the relay: lablab.ai lists the hackathon as hybrid (online build phase for everyone, on-site finale in Dubai by invitation), date 'Fall 2026 / TBA', solo entry allowed, 'Best use of Vultr' pays $5,000 / $3,000 / $1,000 cash plus API credits, 'Best use of Gemini' pays GCP credits only; submissions must be original and MIT-compliant (the entry's own code can be MIT while gankdat stays as is), and a project must deploy on a Vultr VM with 30-day credits (a payment method only if kept afterwards). Aggregators quote 26 Oct–2 Nov online; the official page does not, so the date is read, not assumed. Not an entry until the window is known. Research 2026-10-15 (burn-down): read Vultr: Agent Rush (lablab.ai/ai-hackathons/vultr-hackathon — online build 3–8 Nov, registration opens 2026-11-03, tracks and prizes TBA on the page) in the same relay round and file an entry item for it too if a cash track is published and an existing project qualifies; also re-search for Meta's 'Global AI Developer Hackathon' official rules (aggregators only on 10-15).",
+      "why": "Read 2026-10-13 through the relay: lablab.ai lists the hackathon as hybrid (online build phase for everyone, on-site finale in Dubai by invitation), date 'Fall 2026 / TBA', solo entry allowed, 'Best use of Vultr' pays $5,000 / $3,000 / $1,000 cash plus API credits, 'Best use of Gemini' pays GCP credits only; submissions must be original and MIT-compliant (the entry's own code can be MIT while gankdat stays as is), and a project must deploy on a Vultr VM with 30-day credits (a payment method only if kept afterwards). Aggregators quote 26 Oct–2 Nov online; the official page does not, so the date is read, not assumed. Not an entry until the window is known. Research 2026-10-15 (burn-down): read Vultr: Agent Rush (lablab.ai/ai-hackathons/vultr-hackathon — online build 3–8 Nov, registration opens 2026-11-03, tracks and prizes TBA on the page) in the same relay round and file an entry item for it too if a cash track is published and an existing project qualifies; also re-search for Meta's 'Global AI Developer Hackathon' official rules (aggregators only on 10-15). Read 2026-10-20 (burn-down, relay): the official page still says \"Fall 2026 / TBA\" and lablab's own upcoming list omits the event; the Vultr track wants a web enterprise agent deployed on Vultr, whose account sign-up needs a payment method (no card on a £0 line). Vultr: Agent Rush (3–8 Nov, US$9,000 cash) read too: a sandboxed code/browser-execution agent, a new product, declined. Meta's official rules page read instead (see meta-global-ai-hackathon-apply). No entry filed.",
       "effort_days": 0.1,
       "proof": "an entry item filed with the official dates, or the item dropped with the reason",
       "score": 4,
-      "status": "todo",
+      "status": "done",
       "added": "2026-10-13",
-      "not_before": "2026-10-20"
+      "done_at": "2026-10-20"
+    },
+    {
+      "id": "meta-global-ai-hackathon-apply",
+      "title": "Meta Global AI Developer Hackathon (online, 26 Oct–4 Nov 2026, US$1,000,000 cash pool): the owner applies on the Cerebral Valley form by 2026-10-25 11:59 PM ET (action 027), indie developer track, with the due-diligence-agent project idea and the gankdat links; record \"applied\" and the approval mail here",
+      "why": "RESEARCH §2 (read 2026-10-20 from dev.meta.ai and cerebralvalley.ai through the relay): free to enter if selected, 20,000 places on rolling review judged on the project idea and technical skill, UK eligible, US$150 Meta Model API credits plus Baseten/Modal/Fireworks credits for open-weights Llama — a live run without a card. The application form is the only step routines cannot do (owner identity). The approval mail (by 26 Oct 09:00 ET) reaches the inbox; the entry and rules items wait on it. — 2026-10-21 21:25 UTC: Status APPROVED mail from cerebralvalley.ai (INBOX.md, self-caused action 027); recorded done by the 10-22 build. The rules-read and entry items run from 26 Oct 07:00 UTC.",
+      "effort_days": 0.1,
+      "proof": "the owner is accepted (approval mail logged in INBOX.md) before 2026-10-26",
+      "score": 9,
+      "status": "done",
+      "added": "2026-10-20",
+      "done_at": "2026-10-21"
+    },
+    {
+      "id": "meta-global-ai-hackathon-rules-read",
+      "title": "Read the Meta Global AI Developer Hackathon Official Rules the day they appear (26 Oct, relay: dev.meta.ai and cerebralvalley.ai pages and the rules link): existing-project rule, AI-built code, licence, IP and prize terms, submission format; copy the findings into RESEARCH §2 and stop the entry if an existing project or AI-assisted work is excluded",
+      "why": "The rules are \"published before the Hackathon begins on October 26, 2026 and must be accepted by the selected participants\" (cerebralvalley.ai, 2026-10-20); whether a pre-existing agent may be ported and whether AI-written code is allowed decides the entry, as it did for GenAI.Works (Cursor-only) and GitLab (MIT-only). Ten minutes of reading before a day of building.",
+      "effort_days": 0.1,
+      "proof": "RESEARCH §2 quotes the rules on existing projects, AI tools and licence; the entry item is unblocked or dropped the same day",
+      "score": 7,
+      "status": "todo",
+      "not_before": "2026-10-26",
+      "added": "2026-10-20"
+    },
+    {
+      "id": "meta-global-ai-hackathon-entry",
+      "title": "Meta Global AI Developer Hackathon entry (build 26 Oct–4 Nov 9:00 PM ET): port scripts/nebius-diligence-agent.ts to Meta's models — Meta Model API (Muse Spark) or open-weights Llama on a partner endpoint (Baseten / Modal / Fireworks, OpenAI-compatible) chosen by env, same Budget guard and fixtures — add a small web UI (Hono page on the landing Worker or a static page) that takes a UK company name and streams the one-page risk report, run it live on the credits, record the demo with the demo-video workflow (entry meta-global-ai-hackathon), write SUBMISSION.md / WALKTHROUGH.md / DEMO-SCRIPT.md under ventures/hackathons/entries/meta-global-ai-hackathon/, and the owner: line for the submission form",
+      "why": "RESEARCH §2 (2026-10-20): US$1M cash across two tracks, indie track judged on \"creativity, technical ambition, and whether it works\", theme \"Build for Your World\" — a due-diligence agent over seven official UK registers is a problem the owner knows firsthand and the agent already exists against fixtures (nebius-diligence-agent, 8 tests). New work: the model adapter, the live run on free credits (US$150 Meta + partner credits, no card), a UI judges can click, the video. Built inside the window so the work counts whatever the rules say about pre-existing code; the rules-read item (26 Oct) and the owner's acceptance (apply item) gate it.",
+      "effort_days": 1.5,
+      "proof": "submission accepted on the Cerebral Valley form before 2026-11-04 9:00 PM ET; any placing is the venture's proof",
+      "score": 9,
+      "status": "todo",
+      "not_before": "2026-10-26",
+      "added": "2026-10-20"
+    },
+    {
+      "id": "paypal-hackathon-demo-access",
+      "title": "PayPal AI Hackathon: give the judges a working demo path — write ventures/hackathons/entries/paypal-ai-hackathon/DEMO-ACCESS.md (paste-ready for the Devpost demo field and for a reply to the organiser's 10-21 message: hosted URL https://gankdat.com/account, sign in with any email, the credit-pack buttons, the MCP tools buy_credits / confirm_credit_purchase, what a judge sees without a PayPal sandbox buyer and what with one), add a \"Try the demo\" section with the same run steps to ventures/gankdat/README.md (the public mirror github.com/giovf/gankdat the submission links), and owner action file 028: create or reuse a sandbox personal (buyer) account in the PayPal developer dashboard, paste its email and password with the DEMO-ACCESS text into the Devpost form and the organiser's message thread before 2026-11-12 12:00 PT",
+      "why": "INBOX 2026-10-21 02:29: the organiser wrote that the submission lacks access to a functional demo and needs run instructions in the repo or a hosted demo URL added to the form by 2026-11-12 12:00 PT — an entry the judges cannot run is not judged, and this is the only money-on-offer entry in play (US$67,500 pool, 1st US$12k; RESEARCH §1). The demo exists (gankdat v0.24.0 sandbox credit packs, scripts/paypal-walkthrough.mjs, the recorded video), but the form's demo field names only /account, which asks for a magic-link sign-in and a PayPal sandbox buyer the judges do not have, and the mirror README has no run steps. The owner: line of 10-21 in ALERTS stands; this item turns it into a five-minute paste. — Done 2026-10-23 by the 17:00 burn-down in the same minutes this item was filed (commit fc6a5f8e, from the same ALERTS line): the gankdat README carries the three run paths (the mirror job publishes it), owner action 028 holds the paste-ready demo URL and testing instructions for the Devpost form, and the ALERTS line records it. Nothing left to build; the owner pastes.",
+      "effort_days": 0.1,
+      "proof": "the Devpost form carries the demo URL, the run steps and a sandbox buyer login, and the organiser's message is answered before 11-12; recorded in RESEARCH.md",
+      "score": 8,
+      "status": "done",
+      "added": "2026-10-23",
+      "done_at": "2026-10-23",
+      "updated": "2026-10-23"
     }
   ],
-  "research_after": "2026-10-20"
+  "research_after": "2026-10-26"
 }

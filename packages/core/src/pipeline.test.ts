@@ -1,11 +1,13 @@
 import { describe, expect, it } from 'vitest';
 import {
+  awaitsDatedItem,
   candidates,
   formatPipeline,
   isEmpty,
   isStaleDoing,
   needsResearch,
   nextItem,
+  researchFirst,
   notBeforeArrived,
   parseExchange,
   parseQueue,
@@ -70,7 +72,13 @@ describe('scheduling', () => {
   ];
 
   it('picks the best-scoring todo item on an open queue, oldest first on ties', () => {
-    expect(nextItem(queues)).toMatchObject({ venture: 'gankdat', item: { id: 'old' } });
+    // `toolkit` is empty, so research comes first and `next` is null; the raw ranking is still there.
+    expect(nextItem(queues)).toBeUndefined();
+    expect(nextItem(queues, { researchFirst: false })).toMatchObject({ venture: 'gankdat', item: { id: 'old' } });
+    expect(nextItem(queues.filter((q) => q.venture !== 'toolkit'))).toMatchObject({
+      venture: 'gankdat',
+      item: { id: 'old' },
+    });
     expect(candidates(queues).map((c) => c.item.id)).toEqual(['old', 'nhs']);
   });
 
@@ -137,6 +145,30 @@ describe('scheduling', () => {
     expect(needsResearch([flagged, queues[3]!]).map((q) => q.venture)).toEqual(['gankdat']);
   });
 
+  it('claims nothing while a flagged queue out of cooling waits for research (claim-only-when-buildable)', () => {
+    // 2026-10-22 17:20: the build slot claimed a gankdat item right after `next`, then found
+    // new-ventures flagged, researched it and released the claim; the 19:11 slot claimed it again.
+    const buildable = parseQueue(queue('gankdat', [item('journal', 'todo', 6)]));
+    const flagged = parseQueue(queue('new-ventures', [item('spike', 'done', 5)], { needs_research: true }));
+    const cooled = parseQueue(
+      queue('new-ventures', [item('spike', 'done', 5)], { needs_research: true, researched: '2026-10-22' }),
+    );
+    const today = { today: '2026-10-22' };
+    expect(researchFirst([buildable, flagged], today).map((q) => q.venture)).toEqual(['new-ventures']);
+    expect(nextItem([buildable, flagged], today)).toBeUndefined();
+    expect(needsResearch([buildable, flagged], today).map((q) => q.venture)).toEqual(['new-ventures']);
+    // The fallback's capped call keeps the raw ranking.
+    expect(nextItem([buildable, flagged], { ...today, maxEffortDays: 1, researchFirst: false })?.item.id).toBe('journal');
+    // A cooling flagged queue is not research tonight, so the build goes ahead.
+    expect(researchFirst([buildable, cooled], today)).toEqual([]);
+    expect(nextItem([buildable, cooled], today)?.item.id).toBe('journal');
+    // A starved queue (blocked only) never holds the build: it is research only when nothing is buildable.
+    const starvedQ = parseQueue(queue('read-focus', [item('links', 'blocked', 8)]));
+    expect(nextItem([buildable, starvedQ], today)?.item.id).toBe('journal');
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [buildable, flagged] }, today);
+    expect(text).toContain('next: research new-ventures first — the build waits (gankdat / journal');
+  });
+
   it('lists starved queues for research only when nothing at all is buildable', () => {
     // 2026-10-01: every remaining item was blocked or dated, no queue was flagged, and both
     // build slots had nothing to do — blocked and scheduled items count as work, but a slot
@@ -165,6 +197,34 @@ describe('scheduling', () => {
     expect(needsResearch([blockedOnly, datedOnly], { today: '2026-10-21' })).toEqual([]);
     const text = formatPipeline({ exchange: { ideas: [] }, queues: [blockedOnly, datedOnly] }, today);
     expect(text).toContain('pipeline starved');
+  });
+
+  it('treats a queue whose only open item is dated for today or tomorrow as waiting, not starved', () => {
+    // 2026-10-20 00:07 UTC: foundry and hackathons each held one todo item dated 2026-10-20 (buildable
+    // from 07:00) and nothing else open; the night gate listed both for research. Within a day of
+    // the item the queue waits; a later date still starves it; at 07:00 the item is simply next.
+    const dueToday = parseQueue(
+      queue('foundry', [{ ...item('node-24', 'todo', 4), not_before: '2026-10-20' }], { updated: '2026-10-19' }),
+    );
+    const dueTomorrow = parseQueue(
+      queue('hackathons', [{ ...item('rules', 'todo', 7), not_before: '2026-10-21' }], { updated: '2026-10-18' }),
+    );
+    const dueLater = parseQueue(
+      queue('toolkit', [{ ...item('day-30', 'todo', 4), not_before: '2026-10-22' }], { updated: '2026-10-17' }),
+    );
+    const night = { now: new Date('2026-10-20T00:07:00Z') };
+    expect(awaitsDatedItem(dueToday, night.now)).toBe(true);
+    expect(awaitsDatedItem(dueTomorrow, night.now)).toBe(true);
+    expect(awaitsDatedItem(dueLater, night.now)).toBe(false);
+    expect(starved([dueToday, dueTomorrow, dueLater], night).map((q) => q.venture)).toEqual(['toolkit']);
+    expect(needsResearch([dueToday, dueTomorrow], night)).toEqual([]);
+    const text = formatPipeline({ exchange: { ideas: [] }, queues: [dueToday, dueTomorrow] }, night);
+    expect(text).toContain('waits for dated evidence');
+    expect(text).toContain('foundry/node-24 on 2026-10-20 from 07:00 UTC');
+    // From 07:00 the dated item is buildable and nothing waits.
+    const morning = { now: new Date('2026-10-20T07:00:00Z') };
+    expect(awaitsDatedItem(dueToday, morning.now)).toBe(false);
+    expect(nextItem([dueToday, dueTomorrow], morning)?.item.id).toBe('node-24');
   });
 
   it('leaves a flagged or emptied queue out of research while it is cooling', () => {
@@ -267,7 +327,10 @@ describe('scheduling', () => {
     const text = formatPipeline({ exchange: { ideas: [] }, queues });
     expect(text).toContain('toolkit');
     expect(text).toContain('NEEDS RESEARCH');
-    expect(text).toContain('next: gankdat / old');
+    // The empty `toolkit` queue is researched first; the best item is named but not offered.
+    expect(text).toContain('next: research toolkit first — the build waits (gankdat / old');
+    const built = formatPipeline({ exchange: { ideas: [] }, queues: queues.filter((q) => q.venture !== 'toolkit') });
+    expect(built).toContain('next: gankdat / old');
   });
 });
 

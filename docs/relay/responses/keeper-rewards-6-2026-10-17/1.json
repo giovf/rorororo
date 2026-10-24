@@ -1,1 +1,0 @@
-{"errors":[{"message":"Cannot query field \"transactions\" on type \"Query\".","status":"GRAPHQL_VALIDATION_FAILED","extensions":{}},{"message":"Unknown type \"MarketLiquidationTransactionData\". Did you mean \"MarketTransactionData\" or \"MarketTransactionTransferData\"?","status":"GRAPHQL_VALIDATION_FAILED","extensions":{}}],"extensions":{"maximumComplexity":1000000}}

@@ -1,0 +1,279 @@
+{
+  "request": "gumroad-shelf-2026-10-24",
+  "fetched_at": "2026-10-24T19:20:28.582Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/13-getting-paid",
+      "fetched_at": "2026-10-24T19:20:17.422Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/152-can-i-use-gumroad-in-my-country",
+      "fetched_at": "2026-10-24T19:20:18.358Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/260-your-payout-settings-page",
+      "fetched_at": "2026-10-24T19:20:18.969Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/66-gumroads-fees",
+      "fetched_at": "2026-10-24T19:20:19.573Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/121-sales-tax-on-gumroad",
+      "fetched_at": "2026-10-24T19:20:20.183Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/10-dealing-with-vat",
+      "fetched_at": "2026-10-24T19:20:20.782Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/325-indirect-taxes-on-sales-via-discover",
+      "fetched_at": "2026-10-24T19:20:21.386Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/79-gumroad-discover",
+      "fetched_at": "2026-10-24T19:20:22.016Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/222-product-ratings-on-gumroad",
+      "fetched_at": "2026-10-24T19:20:22.622Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/275-paypal-connect",
+      "fetched_at": "2026-10-24T19:20:23.224Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/46-what-currency-does-gumroad-use",
+      "fetched_at": "2026-10-24T19:20:23.852Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/160-suspension",
+      "fetched_at": "2026-10-24T19:20:24.452Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/161-what-gumroad-considers-fraud",
+      "fetched_at": "2026-10-24T19:20:25.073Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "13.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.gumroad.com/article/64-is-gumroad-for-me",
+      "fetched_at": "2026-10-24T19:20:25.692Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "14.html",
+      "bytes": 32436,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/pricing",
+      "fetched_at": "2026-10-24T19:20:25.797Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "15.html",
+      "bytes": 46974,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/terms",
+      "fetched_at": "2026-10-24T19:20:26.332Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/terms",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "16.html",
+      "bytes": 152699,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/prohibited",
+      "fetched_at": "2026-10-24T19:20:26.877Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/prohibited",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "17.html",
+      "bytes": 34826,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://yourchatgptguide.gumroad.com/l/ClaudeOS",
+      "fetched_at": "2026-10-24T19:20:26.917Z",
+      "status": 200,
+      "final_url": "https://yourchatgptguide.gumroad.com/l/ClaudeOS",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.html",
+      "bytes": 32273,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://bariqrifki.gumroad.com/l/claudecode0100",
+      "fetched_at": "2026-10-24T19:20:27.214Z",
+      "status": 200,
+      "final_url": "https://bariqrifki.gumroad.com/l/claudecode0100",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.html",
+      "bytes": 30350,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://growthpioneer.gumroad.com/l/jobsearchos",
+      "fetched_at": "2026-10-24T19:20:27.484Z",
+      "status": 200,
+      "final_url": "https://growthpioneer.gumroad.com/l/jobsearchos",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.html",
+      "bytes": 48030,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://growthpioneer.gumroad.com/l/pmos",
+      "fetched_at": "2026-10-24T19:20:28.357Z",
+      "status": 200,
+      "final_url": "https://growthpioneer.gumroad.com/l/pmos",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "21.html",
+      "bytes": 41675,
+      "truncated": false
+    }
+  ]
+}

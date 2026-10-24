@@ -34,7 +34,11 @@ ventures/variables-toolkit   V1 Figma plugin — launched 2026-09-21 on Figma Co
 ventures/gankdat         V4 data API (gankdat.com) — Cloudflare Worker, Stripe + x402 (+ PayPal sandbox credit packs, 2026-10-11); adopted 2026-09-19,
                          self-contained gates (`npm run check -w @foundry/gankdat`), deploys via CI
 ventures/hackathons      cash-prize hackathon entries built from the live products (Devpost; opened 2026-10-11)
-ventures/oss-bounties    paid open-source issues on bounty boards, feature and bug-fix work only (opened 2026-10-11)
+ventures/oss-bounties    paid open-source issues on bounty boards (opened 2026-10-11; killed 2026-10-18 — seven boards
+                         with no claimable funded code fix; code and weekly scanner kept, idea parked in the exchange)
+ventures/tax-workbook    UK Sole Trader Tax Workbook 2026/27 — an .xlsx built from TypeScript (ExcelJS), recalculated in
+                         LibreOffice before release, sold as an Etsy digital download (opened 2026-10-24, validated the same day;
+                         the owner opens the shop — action 029)
 docs/LEDGER.md           every pound in and out, per venture (£100 cap enforced)
 docs/launch/             per-channel launch checklists
 docs/for-owner/actions/      batched requests that need the owner's identity/wallet

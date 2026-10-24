@@ -1,14 +1,17 @@
 name: bounty board
 
-# Daily board of open-source issues with a posted cash bounty (oss-bounties `bounty-scanner`,
+# Weekly board of open-source issues with a posted cash bounty (oss-bounties `bounty-scanner`,
 # 2026-10-11; owner direction: collect money already on offer). scripts/bounty-scanner.ts reads
 # GitHub's search API with the job's own token, drops sandbox and security repositories and issues
-# that read as security findings, ranks the rest and writes docs/bounties/BOARD.md plus up to three
-# oss-bounties queue items (blocked until PR_TOKEN exists, so the build routine can push a fork).
-# Odd minute like the other crons (GitHub delays busy-minute schedules most).
+# that read as security findings, ranks the rest and writes docs/bounties/BOARD.md. Queue items
+# (up to three, blocked until PR_TOKEN exists) are filed only while queues/oss-bounties.json is
+# open: the W42 review (2026-10-18) finished that queue after seven daily boards with no free
+# funded code fix, so the board is now the exchange's weekly re-open reading and the scanner
+# logs `queue finished — not filing` (foundry `bounty-scanner-finished-queue`). Mondays before the
+# 07:30 report; odd minute like the other crons (GitHub delays busy-minute schedules most).
 on:
   schedule:
-    - cron: '17 5 * * *'
+    - cron: '17 5 * * 1'
   workflow_dispatch:
 
 permissions:
@@ -28,7 +31,7 @@ jobs:
           ref: main
       - uses: actions/setup-node@v7
         with:
-          node-version: 22
+          node-version: 24
       - name: Scan and rank open bounties
         run: node --disable-warning=ExperimentalWarning scripts/bounty-scanner.ts
         env:

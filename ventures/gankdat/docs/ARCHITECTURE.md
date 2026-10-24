@@ -233,6 +233,22 @@ runs `check:root`.
   validated. The Docker MCP Catalog entry (`docs/docker-mcp-catalog/`) ships keyless + optional key;
   its `oauth` block is a second PR once the Worker's dynamic registration (below) is live and the
   entry listed. KV rate limiters fail open on KV errors.
+  **One JSON body per POST, calls under a deadline** (2026-10-18, gankdat `refresh-mcp-probe`): the
+  keyless metrics probe of 10-18 07:10 timed out at 20 s on one `tools/call` (fresh 1,000-row
+  uk-tenders snapshot, no CPU limit in reach) while the keyed call a moment later answered at once,
+  and `/mcp` left no line to read. Two Worker-side guards: `routes/mcp.ts` builds the transport
+  with `enableJsonResponse: true` — an SSE stream returned the Response at once and ran the tool
+  call after the fetch handler had returned, the one shape of work a Worker may drop (a dropped
+  call leaves the stream open until the client gives up); in JSON mode the call runs inside the
+  awaited handler and a death mid-call is an HTTP error a checker can read (the spec allows a
+  JSON answer to a POST; every client sends `Accept: application/json, text/event-stream`). And
+  every data tool (`query_*`, `get_changes`) runs under `TOOL_CALL_BUDGET_MS` (10 s,
+  `src/lib/deadline.ts`): a call that misses it answers a tool error naming the phase (gate /
+  query / settle) and logs `slow_tool_call`, a late keyed result is not charged and the late work
+  runs on under `ctx.waitUntil` so a cold-cache refresh it started still lands in KV. The probe
+  (`scripts/mcp-probe.ts`) now tells `body unread (headers arrived)` from no response and bounds
+  the body read itself. Cause of the 10-18 hang not proven; the next one is readable.
+  `test/mcp-deadline.spec.ts` is the probe's three calls, keyless then keyed, plus the hang.
   **Lazy OAuth** (2026-09-30, `src/auth/oauth.ts` + `src/routes/oauth.ts`, migration 0013
   `oauth_grants`): Claude, Cursor and ChatGPT start sign-in only on an HTTP 401 with
   `WWW-Authenticate: Bearer resource_metadata=…` (a 200 tool error never does), so the Worker
@@ -265,6 +281,16 @@ runs `check:root`.
   apps, redirect `https://claude.ai/api/mcp/auth_callback`) and
   `https://claude.ai/oauth/claude-code-client-metadata` (Claude Code, port-less loopbacks), both
   verified through the relay on 2026-10-09; `/authorize` with either rendered the sign-in page live.
+  **Resource indicator variants** (2026-10-23, `oauth-resource-indicator-variants`, v0.25.5): the 10-20..10-23 rows read
+  `0 authorize, 2 rejected (invalid_target …)` — the only two /authorize calls in the window refused on a strict string
+  compare of RFC 8707 `resource`, and nothing recorded what they sent. The MCP authorization spec lists
+  `https://mcp.example.com/mcp`, `https://mcp.example.com` and the port form as valid canonical URIs for one server,
+  asks that an upper-case scheme and host be accepted and only discourages the trailing slash, so `resourceMatches`
+  (`auth/oauth.ts`) parses the value and accepts https, this host (`:443` and case folded by the URL parser), no
+  query or fragment, and a path of ``, `/` or `/mcp` with or without the slash — any other host, port or path is
+  still `invalid_target`. The grant stores the canonical form whatever spelling arrived, and the `authorize_rejected`
+  funnel detail reads `invalid_target: <value sent>` (parentheses and pipes replaced, 120 chars) so the row's
+  `rejected (…)` reading names the client's value instead of our own description.
   **Preview wall next steps** (2026-10-11, queue `preview-wall-next-steps`, v0.24.1): the first client to
   spend the preview budget (47 `preview_exhausted` challenges on 10-11, bid-intelligence tools) was told
   only to sign in — a person's path — while the two agent paths went unnamed. The wall now names every
@@ -375,6 +401,16 @@ runs `check:root`.
   blob renders the notice as a page. The data itself returns only with the origin: a snapshot already expired
   cannot be re-created, which is why uk-planning stays unavailable (with the notice) until planning.data.gov.uk
   serves rows again or the §7 clock retires it.
+  **Surface pause** (2026-10-19, queue `uk-planning-apify-pause`): a `notice` source is paused on every
+  surface, and says so — `/stats/<slug>` carries a `state: paused` headline row (the index a `· paused`
+  mark) and names REST, MCP, x402 and the Apify actor as answering the notice with no records; the
+  actor's `main.mjs` ends a run that meets the API's 503 `Origin paused` answer cleanly (status message
+  = the dated notice, no items, no charge) instead of failing, which is what Apify's QA had flagged
+  as "under maintenance" on 10-17 (6 of 22 runs failed in 30 days, 18 outside users), and its README
+  opens with a dated `Paused` line. The actor stays public: unpublishing would drop the 18 users'
+  schedules and spend one of the 5 publications a day on the restore. Everything resumes by itself
+  with the first refresh after the origin republishes (the weekly re-read item); the notice text and
+  the catch stay dataset-owned (isolation rule).
 - **Wave log reading** (`lib/wave-logs.ts`, 2026-10-09): a wave killed at the 15-minute Cron
   Trigger limit writes no `refresh_log` row, and no sandbox or relay can read Worker logs (the
   journal's silent nights 10-05..10-08 were guessed at twice). So the metrics workflow's
@@ -395,7 +431,45 @@ runs `check:root`.
   — rendered `wave 06:05: exceededCpu 900.1s 18 h ago` or `no invocation in 26 h` ahead of the slug
   reading. The runner prints the first invocation row when none parsed, so the next job log shows the
   live shape. The warning itself is muted at the lane (`x402/routes.ts withoutCodegenWarning`, that one
-  message only).
+  message only), and so is the ERROR line the same compile writes (2026-10-18, `x402-ajv-compile-log-noise`):
+  Ajv's `compileSchema` logs `Error compiling schema, function code:` with the generated validator source
+  before rethrowing, 17 lines per isolate start, 11 of the 12 uk-planning lines in the 10-17 reading;
+  `withoutCodegenError` drops that one two-argument call (the compile cannot be skipped — `paymentMiddleware`
+  validates every route on start — and under workerd it fails only this way; CDP's daily validate is the
+  real schema check). **What the invocation query reads** (2026-10-22, `wave-log-cron-query-blind`; the 10-16 job
+  log, its first real read, carried no line from any wave though wave 1 refreshed 14 sources that
+  morning): the query is not blind — the 10-21 run returned two `ok` rows (wall 79.8 s and 79.0 s) and
+  10-22 one (104.0 s), a row's timestamp being the invocation's end (05:02:15.7 − 79.8 s = 05:00:56, the
+  second uk-planning's first error line was written), so `wave 05:00: ok 79.0s 1.9 h ago` is a real
+  reading. It is not complete: 10-18, 10-19 and 10-20 answered 200 with no row for a wave whose D1 rows
+  exist, and on 10-22 the 05:15 wave left no row where 10-21's did; the docs name no cause (sampling
+  default 1, 5 billion logs a day, 256 KB a log) and the cached 10-17 page says nothing about an
+  invocation the platform cut off. So the clause keeps `no invocation logged`, never "did not fire", and
+  the progress marker stays the reading of a silent wave. The live rows named no cron, and the needle is
+  a substring (`0 5 * * *` sits inside `30 5 * * *` and `50 5 * * *`) — the 10-21 reading was in fact the
+  05:15 wave's row — so `parseWaveInvocations` ranks a row whose cron matches ahead of a cron-less one, a
+  cron-less reading says `(cron unread)`, and the runner prints the first raw row whenever a parsed row
+  lacks its cron (where the live shape keeps it is the one open question; `test/wave-logs.spec.ts`). **Refresh progress marker** (`sources/progress.ts`,
+  2026-10-18, `refresh-uk-trademark-journal-2026-10-17`): the in-band reading of a silent wave. Every
+  attempt puts `refresh:progress:<slug>` in KV at start and at each phase (`backfill`, `index`,
+  `stream N records` every 25k, `written`, `stats`; one write a second per key, closer marks skipped)
+  and deletes it after its own `refresh_log` row; `store.ts recordSilentRefresh` turns a marker the
+  previous attempt left into that night's missing `error` row — `silent refresh started <when> died
+  after <phase> <detail> at <s> s, no row written` — before the new attempt starts, so every night
+  has a row by the next wave and the Daily numbers row names the phase (`silent nights: <slug> started
+  <when> died after <phase> …`, `metrics.mjs`, the day the row is written, even when the new attempt
+  then succeeded). With it, the `ok` row is
+  written before the best-effort stats in all three refresh paths (a kill inside the journal's
+  45-page facet aggregation no longer costs the row), and the journal's issue fetch aborts after
+  5 minutes (`ISSUE_FETCH_TIMEOUT_MS`) so a request the IPO never answers errors out instead of
+  holding the wave to the kill. **Stale marker** (2026-10-23, `refresh-marker-false-positive-2026-10-23`, v0.25.4): the lane's first
+  `silent nights:` reading (uk-sanctions, 10-22) was a phantom — the attempt wrote its ok row three seconds in and
+  only the marker's delete was lost (KV's one-write-a-second gap or a dropped delete) — so `recordSilentRefresh`
+  first reads the slug's newest `refresh_log` row (`refreshLogRowSince`): a row created at or after the marker's
+  `started_at` (floored to the second, `datetime('now')` precision) means the marker is stale — it is deleted and
+  logged `refresh_progress_stale`, no row written; a marker with no later row is still the silent night. And
+  `clearRefreshProgress` retries a failed delete once after the same-key gap. The reading can no longer send the
+  auto-filer after a healthy source.
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
   after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
   stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in
@@ -478,11 +552,32 @@ runs `check:root`.
   `GET /platform/v2/x402/discovery/merchant?payTo=…` for every active resource under it
   and writes `bazaar: N listed, C calls/30d, P payers, last <date>` from the catalogue's
   own `quality` numbers (`bazaar: 0 listed` until indexed; parsing in
-  `scripts/x402-bazaar-read.ts`). With the `X402_PROBE_KEY` secret (action 026 option
-  B) the metrics job's probe step (`scripts/x402-probe.mjs`) repeats the settled
-  half-cent call through the test client — never twice in 7 days, only while the
-  clause reads `0 listed`, on the 1st of the month, or on the `x402_probe` dispatch
-  input.
+  `scripts/x402-bazaar-read.ts`; the keyless reads in `scripts/x402-catalogue.mjs`).
+  **Per-route indexing (2026-10-23, `x402-bazaar-week-1-index-check`):** CDP indexes one
+  resource per settled payment and drops a resource 30 days after its last settlement
+  (seller docs, read 2026-10-23); a week after the first half-cent call only uk-tenders,
+  the route it paid, was listed of 17. With the `X402_PROBE_KEY` secret (action 026
+  option B) the metrics job's probe step (`scripts/x402-probe.mjs`) reads the catalogue
+  when no probe payment landed in 7 days and pays, through the test client, every route
+  it does not list and every listed route settled 23 days ago (`probeTargets`); the
+  `x402_probe` dispatch input pays every route (a re-screen is per resource); at most 20
+  half-cents in any 30 days (`PROBE_MONTHLY_CAP`, US$0.10). The client prints the
+  facilitator's Bazaar verdict (`EXTENSION-RESPONSES`: success, processing, rejected) and
+  the facilitator's reason when a signed payment gets a 402. **Description cap (v0.25.3,
+  2026-10-23):** the CDP facilitator rejects verify and settle when the route description
+  exceeds 500 characters, so `bazaarDescription` never exceeds `DESCRIPTION_MAX = 500`
+  (the summary budget is what the title and shape sentence leave) — from v0.25.0 to
+  v0.25.2 thirteen routes were over it and could not take any payment, which validation
+  (`x402 validate: 17/17 valid`) never shows; the declaration test asserts the cap. The
+  probe calls each route with the query its declaration carries (the indexer's own call).
+  **What sold** (2026-10-19, `x402-paid-by-source-reading`): the `x402_paid`
+  point carries the UA, path, slug and hashed client id, so the row's sales cell reads
+  `3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients; python-requests 2, x402-fetch 1)`, a
+  `x402 30d:` clause follows the `bazaar:` one, the job log prints `bazaar resource: <url>
+  calls C payers P last <date>` per resource, and paid x402 calls count in `datasets 30d
+  external` as `<slug> N (x402 N)` — a settled payment is external demand §7's clock must
+  see (`src/lib/x402-sales.ts`; the probe's user agent excluded in SQL). The lane's first
+  three external payments (10-17/18) reached the row as a bare count.
 - **PayPal** (credit packs, **sandbox only**) — built 2026-10-11 as the PayPal AI Hackathon entry
   (v0.24.0, migration 0017 `paypal_orders`, `docs/PAYPAL-SETUP.md`): Orders API v2 against
   `api-m.sandbox.paypal.com` by construction, no live switch. One-off packs (`src/billing/packs.json`,

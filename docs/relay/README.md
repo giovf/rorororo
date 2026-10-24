@@ -22,6 +22,28 @@ GitHub runner to fetch for it:
    still fails carries `retries` and the final status in `meta.json`. Public JSON-RPC endpoints
    (`mainnet.base.org`) throttle a burst of log queries anyway, so spread wide reads over the
    allowlisted RPC hosts rather than firing 40 lines at one.
+   Rendered pages (2026-10-22, foundry `relay-rendered-fetch`): `GET RENDER <https url>` (or just
+   `RENDER <url>`) opens the page in Playwright's Chromium on the runner, waits for the network to go
+   idle (30 s cap after the document loaded; a page that keeps polling is saved as it stands and
+   `meta.json` says `rendered.network_idle: false`) and saves the rendered DOM as `<n>.html` —
+   `meta.json` carries `title`, `status` and `final_url` as for a GET. Use it for shelves whose listing
+   pages are client-rendered shells (the Wix App Market category pages came back as 0.2–2.5 MB of
+   script tags and zero app links; the Notion gallery only through page-embedded data), after a plain
+   GET has shown the data is not in the raw body. GET only (RENDER with HEAD, POST or RANGE is refused
+   on the line), same allowlist and 8 MB cap, a fresh context per line (no cookies or storage carried
+   in, no clicks or form input; the page is scrolled once to the bottom so sections that render on
+   intersection load, then left 1.5 s to settle), and images, media and fonts are not loaded.
+   `meta.json`'s `rendered` block says what happened — `requests` made, `failed` (network failures and
+   4xx/5xx XHR, fetch or document responses) and `console_errors` — so a page that stays a shell can be
+   read for its cause (a blocked listing API, a bot wall, a consent gate) rather than guessed at.
+   Read the cards, not only the anchors: a rendered shelf often opens its listings from a click
+   handler, so the app's name, rating, review count and price tier are in the card's text and
+   attributes while no `href` names it (Wix App Market, 2026-10-22: `data-hook="app-box-container"`
+   cards, the slug on the card's `<a data-hook>`; the top-level `/category/forms` landing crashed on a
+   404 menu call while the `/category/communication/forms` sub-category and the collections rendered
+   57 and 96 cards). A request file with a RENDER line costs the run `npm ci`
+   plus a Chromium install (about 1–2 min) — an ordinary request stays at ~15 s — so put the RENDER
+   lines of one round in one file and keep plain GETs elsewhere when the round is time-critical.
 2. Commit and push just that file (`relay: <name>`); it is the one exception to "push once at the end".
 3. Wait for the response **commit**, not for a fixed time: GitHub's hosted runners queue (on 2026-10-05 a request
    sat `queued` for 16+ minutes with nothing else running; two minutes is the floor, not the norm). Poll, and do
@@ -33,15 +55,20 @@ GitHub runner to fetch for it:
    acquired by a runner. Read the latest `fetch relay` run's conclusion (GitHub MCP `actions_list`,
    `list_workflow_runs`, `fetch-relay.yml`): `cancelled` with no steps → re-fire it with `actions_run_trigger`
    (`workflow_dispatch`; the job processes every file still under `requests/`) and poll again; `failure` with
-   steps → read its log, the request itself is wrong. Never file a handoff for a dead run. The `fetch relay` workflow has committed
+   steps → read its log, the request itself is wrong. One exception: a `Commit responses` step that fails on `cannot lock ref` lost a push race with a
+   routine's commit (run 143, 2026-10-22) — the next request push re-runs every pending file, and since 2026-10-22 the step retries three times (foundry `workflow-push-retry-everywhere`). Never file a handoff for a dead run. The `fetch relay` workflow has committed
    `docs/relay/responses/<name>/meta.json` (status, headers, bytes, errors per line) and the
    bodies as `1.json`, `2.csv`, … The request file is deleted.
 4. Read what you need, then carry on. Responses are pruned after 7 days.
 
 Rules: only hosts listed in `docs/relay/hosts.txt` (public data and store pages; one host or `.suffix` per line, since 2026-10-16 a data file so adding one is not a code push);
-GET and POST responses are capped at 8 MB — use `RANGE` for large files and `HEAD` to check existence;
+GET, RENDER and POST responses are capped at 8 MB — use `RANGE` for large files and `HEAD` to check existence;
 never put a credential in a request; everything fetched lands in a public repo, so public data
 only. Add a host to `docs/relay/hosts.txt` in the same commit as the source that needs it.
+Runs are serialised (`concurrency: fetch-relay`, 2026-10-18): a second request pushed while a run is
+in flight waits for it instead of racing its response commit (the 18:14 round b run of 2026-10-18 fetched
+both files and lost both to a rebase conflict); a request still under `requests/` after a failed run is
+re-fired by `workflow_dispatch`, which processes every file left there.
 
 ## PR relay — opening a pull request on someone else's repository
 

@@ -1,4 +1,4 @@
-# Open-source bounty board — 2026-10-17
+# Open-source bounty board — 2026-10-20
 
 Written daily by `scripts/bounty-scanner.ts` (`.github/workflows/bounty-board.yml`) from GitHub's search API:
 open issues that received a `/bounty $N` command in the last 90 days or carry a bounty label, plus the issues
@@ -13,16 +13,17 @@ creator arranges payment after the merge, if the PR meets the issue — so an Op
 Rank = amount × language fit ÷ (1 + age in months) ÷ (1 + open PRs + assigned). Taken says what stands between a new
 claim and the money; the top 3 free ones at $25 or more become `oss-bounties` queue items.
 
-Read 589 issues (4 listed on Opire), kept 9; dropped: under 20 stars 273, no amount found 132, sandbox or security repository 86, proposed, not funded 51, no push in 90 days 12, reads as a security finding 11, contest or usage task, not a fix 3, already rewarded 3, fork 3, needs a real device or the claimant's own recording 3, archived 2, the claimant must fund it or it pays to a wallet off GitHub 1.
+Read 594 issues (4 listed on Opire), kept 10; dropped: under 20 stars 232, no amount found 170, sandbox or security repository 80, proposed, not funded 52, reads as a security finding 15, no push in 90 days 11, already rewarded 9, contest or usage task, not a fix 6, fork 6, archived 2, needs a real device or the claimant's own recording 1.
 
 | Amount | Rank | Repository | Issue | Age | Taken | Attempts |
 | --- | --- | --- | --- | --- | --- | --- |
-| $1000 | 93 | [tenstorrent/tt-metal](https://github.com/tenstorrent/tt-metal) (1712★, Python, Apache-2.0) | [#51655](https://github.com/tenstorrent/tt-metal/issues/51655) [Bounty $1,000] ttnn.typecast to uint16 rounds while every other integer destination and t | 78 d | assigned | 0 |
-| $500 | 44 | [Arrow-air/project-quiver](https://github.com/Arrow-air/project-quiver) (567★, HTML, CERN-OHL-S-2.0) | [#256](https://github.com/Arrow-air/project-quiver/issues/256) T-09: Platform Engineering Report, the decision register from PT1 to the 2026 dev kit | 38 d | 1 PR open | 0 |
-| $60 | 0 | [lablab-ai/community-content](https://github.com/lablab-ai/community-content) (69★, MDX, no licence) | [#462](https://github.com/lablab-ai/community-content/issues/462) Crafting a Comprehensive Tutorial for Vectara Chat | 935 d | 5 PRs open | 11 |
-| $50 | 0 | [arakoodev/EdgeChains](https://github.com/arakoodev/EdgeChains) (429★, JavaScript, AGPL-3.0) | [#290](https://github.com/arakoodev/EdgeChains/issues/290) BOUNTY: integrate AWS Comprehend as a utility to redact data | 1049 d | 56 PRs open | 49 |
-| $30 | 0 | [arakoodev/EdgeChains](https://github.com/arakoodev/EdgeChains) (429★, JavaScript, AGPL-3.0) | [#273](https://github.com/arakoodev/EdgeChains/issues/273) BOUNTY: add support for qdrant vector database in javascript sdk | 1056 d | 85 PRs open | 54 |
-| $25 | 0 | [arakoodev/EdgeChains](https://github.com/arakoodev/EdgeChains) (429★, JavaScript, AGPL-3.0) | [#279](https://github.com/arakoodev/EdgeChains/issues/279) BOUNTY: add support for Google Palm2 API in javascript/typescript | 1052 d | 32 PRs open | 25 |
-| $20 | 0 | [highlight/highlight](https://github.com/highlight/highlight) (9380★, TypeScript, no licence) | [#8032](https://github.com/highlight/highlight/issues/8032) document sveltekit backend instrumentation | 946 d | 47 PRs open | 48 |
-| $3 | 0 | [tscircuit/pcb-viewer](https://github.com/tscircuit/pcb-viewer) (22★, TypeScript, MIT) | [#163](https://github.com/tscircuit/pcb-viewer/issues/163) Remove `disableAutoFocus` in favor of `focusOnHover={false}` | 609 d | 47 PRs open | 56 |
-| $1 | 0 | [SalamLang/Salam](https://github.com/SalamLang/Salam) (58★, TeX, GPL-3.0) | [#1716](https://github.com/SalamLang/Salam/issues/1716) 🎃 Hacktoberfest 2026: Contribute to Salam and earn via GitHub Sponsors | 21 d | free | 0 |
+| $102367 | 25592 | [asyncapi/community](https://github.com/asyncapi/community) (140★, JavaScript, CC-BY-4.0) | [#3633](https://github.com/asyncapi/community/issues/3633) Budget 2027 \| Planning and discussion | 30 d | assigned | 0 |
+| $20 | 8 | [slick/slick](https://github.com/slick/slick) (2666★, Scala, BSD-2-Clause) | [#3885](https://github.com/slick/slick/issues/3885) Long union chains overflow the stack in MergeToComprehensions | 1 d | free | 0 |
+| $100 | 4 | [moorcheh-ai/memanto](https://github.com/moorcheh-ai/memanto) (2334★, Python, MIT) | [#1852](https://github.com/moorcheh-ai/memanto/issues/1852) [BOUNTY $100]🛡️The Memanto Security Challenge: Test Our Defenses | 69 d | 6 PRs open | 10 |
+| $2 | 1 | [auscaster/frantic-board](https://github.com/auscaster/frantic-board) (613★, Shell, MIT) | [#541](https://github.com/auscaster/frantic-board/issues/541) Frantic bounty #143: Write and validate your own MAP description with the mailschema packa | 0 d | free | 0 |
+| $60 | 0 | [lablab-ai/community-content](https://github.com/lablab-ai/community-content) (69★, MDX, no licence) | [#462](https://github.com/lablab-ai/community-content/issues/462) Crafting a Comprehensive Tutorial for Vectara Chat | 938 d | 5 PRs open | 11 |
+| $50 | 0 | [arakoodev/EdgeChains](https://github.com/arakoodev/EdgeChains) (429★, JavaScript, AGPL-3.0) | [#290](https://github.com/arakoodev/EdgeChains/issues/290) BOUNTY: integrate AWS Comprehend as a utility to redact data | 1052 d | 59 PRs open | 50 |
+| $3 | 0 | [tscircuit/pcb-viewer](https://github.com/tscircuit/pcb-viewer) (22★, TypeScript, MIT) | [#163](https://github.com/tscircuit/pcb-viewer/issues/163) Remove `disableAutoFocus` in favor of `focusOnHover={false}` | 612 d | 49 PRs open | 57 |
+| $1 | 0 | [auscaster/frantic-board](https://github.com/auscaster/frantic-board) (613★, Shell, MIT) | [#538](https://github.com/auscaster/frantic-board/issues/538) Frantic bounty #139: Send your first email with the Nitrosend CLI and report how it went | 0 d | 1 PR open | 0 |
+| $1 | 0 | [auscaster/frantic-board](https://github.com/auscaster/frantic-board) (613★, Shell, MIT) | [#539](https://github.com/auscaster/frantic-board/issues/539) Frantic bounty #140: Send an email with a 30-line Nitrosend SDK script and report how it w | 0 d | free | 0 |
+| $1 | 0 | [auscaster/frantic-board](https://github.com/auscaster/frantic-board) (613★, Shell, MIT) | [#540](https://github.com/auscaster/frantic-board/issues/540) Frantic bounty #141: Let your agent onboard itself through the Nitrosend MCP server and se | 0 d | free | 0 |

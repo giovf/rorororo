@@ -1,0 +1,67 @@
+{
+  "venture": "tax-workbook",
+  "status": "open",
+  "needs_research": false,
+  "updated": "2026-10-24",
+  "researched": "2026-10-24",
+  "weight": 2,
+  "items": [
+    {
+      "id": "workbook-2026-27-build",
+      "title": "Build the UK Sole Trader Tax Workbook 2026/27 (.xlsx, Google Sheets-compatible) with its listing pack, then raise the one batched owner request (action 029: Etsy shop + Zoho developer sign-in)",
+      "why": "Exchange 2026-W43 winner (docs/exchange/2026-W43.md): a one-listing UK shop sells the same job at £7.19 with 172 sales and 18 five-star reviews in a year, a VAT-seller sheet carries ~1.5k reviews, the £69 sheet sold nothing, and no sub-£10 listing combines SA103 mapping, MTD quarterly totals and a Trading Allowance check with visible sales (ventures/tax-workbook/RESEARCH.md §2). Build: Setup tab (tax year, bands, NI thresholds, HMRC mileage rates as named cells), Income log, Expense log with SA103S category drop-downs, Mileage log, Quarterly (MTD) totals, SA103 year-end pack, Tax + Class 4 NI estimate with payments on account, Trading Allowance check, a filled example tab and a README tab — formulas only (no macros, no xlsx-only functions so the file imports into Google Sheets), built with the xlsx tooling under ventures/tax-workbook/src and recalculated headless (LibreOffice) to prove zero formula errors; ventures/tax-workbook/LISTING.md with the title, 13 tags, the description (what the buyer gains; record-keeping, not MTD filing software; English/Welsh bands; excludes partnerships and VAT-registered traders), the refund policy (replacement or refund within 14 days if the file does not open), the launch price £6.99 with its stated end date then £8.99 (DMCC: no invented scarcity), and five listing images rendered from SVG. Then the owner request: docs/for-owner/actions/029-etsy-shop-and-zoho.md (Persona ID + selfie, personal bank account, card, the set-up fee ≤ £25 — the one item over ARCHITECTURE's £10 launch ceiling, so it is the owner's call, with the amount Etsy shows at \"Total due now\"; plus the free Zoho Developer Console sign-in for gankdat/zoho-crm-uk-registers-widget), one `owner:` line in docs/ALERTS.md and one `notify` line (owner must do something). Set venture.json to validated in the same commit. Done 2026-10-24 (burn-down): ventures/tax-workbook/src builds the file with ExcelJS (10 tabs, 2,122 formulas, named Setup cells, drop-downs), src/recalc.ts proves 0 formula errors in LibreOffice and the Example tab at £5,025.80, five images rendered from SVG, LISTING.md written, action 029 raised, venture validated.",
+      "effort_days": 0.5,
+      "proof": "The workbook recalculates with 0 formula errors and the example tab's tax + NI figure matches a hand-worked 2026/27 case; LISTING.md and five images exist; action 029 is open with one ALERTS owner line",
+      "score": 12,
+      "status": "done",
+      "added": "2026-10-24",
+      "doing_since": "2026-10-24",
+      "done_at": "2026-10-24",
+      "doing_by": "burn-down"
+    },
+    {
+      "id": "etsy-listing-live",
+      "title": "Record the Etsy listing going live: URL, LEDGER row for the set-up fee, SELF-CAUSED row for Etsy mail, LISTING.md dates, venture.json launched, notify line",
+      "why": "The shop and the upload are the owner's hands (the sandbox cannot log in to Etsy and must never read etsy.com by automation). When action 029 is done this item records the listing: its URL and date in LISTING.md, the set-up fee as a docs/LEDGER.md cost row the day it was charged, a docs/ops/SELF-CAUSED.md row so Etsy's seller mail is never escalated, venture.json status launched, a Metrics row, the notify line \"UK Sole Trader Tax Workbook is live on Etsy: …\" and a day-60 read item (not_before = listing date + 60) with the kill rule of RESEARCH.md §6.",
+      "effort_days": 0.1,
+      "proof": "LISTING.md carries the live URL and date; the ledger and SELF-CAUSED rows exist; venture.json reads launched; a dated day-60 item is queued",
+      "score": 10,
+      "status": "blocked",
+      "blocked_on": "owner: action 029 (raised 2026-10-24 by workbook-2026-27-build, ALERTS 2026-10-24) — the Etsy shop opened, the set-up fee decided and the file uploaded",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "payhip-twin-listing",
+      "title": "Twin listing of the workbook on a Payhip store (free plan, Stripe connected, Payhip handles UK/EU VAT): store copy from LISTING.md, link from the apps.gankdat.com product page, Taxes default, marketplace submission once US$10 of sales exist, a sale webhook into the Daily numbers",
+      "why": "Spike docs/exchange/spikes/payhip-digital-downloads-shelf.md (burn-down 2026-10-24): £0 launch, Payhip 5 % + Stripe UK ≈ 9 % of a £6.99 sale (≈ £6.34 kept vs ≈ £5.80 on Etsy), Payhip acts as reseller for UK/EU VAT, payouts daily through the owner's Stripe, a buyer-facing marketplace that admits a store after US$10 of its own sales, and webhooks that let the funnel be read without mail. Not the primary shelf: demand is unmeasurable there (no counts; payhip.com blocks automated reads) and the buyers are on Etsy — so a twin at the same price, and the fallback shelf if the owner declines Etsy's set-up fee. Score 1.5 × 1 ÷ (0.2 d + 10 owner min) ≈ 5.",
+      "effort_days": 0.2,
+      "proof": "The Payhip store page is live with the file at £6.99 and linked from the product page; a sale webhook row appears in the Daily numbers; first Payhip sale within 60 days or the twin is delisted at the Etsy day-60 read",
+      "score": 5,
+      "status": "blocked",
+      "blocked_on": "owner: action 029 step 4 (2026-10-24, ALERTS 2026-10-24) — a Payhip account on the Foundry email with Stripe (or PayPal) connected, ~10 min, £0",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "reseller-workbook-second-listing",
+      "title": "Second listing for the same shop: a UK reseller (eBay / Vinted / Depop) P&L workbook with platform fees, inventory, Trading Allowance check and the £1,700 platform-reporting threshold",
+      "why": "The niche's best-reviewed cheap sheet is a reseller P&L at £3.99 with 35 five-star reviews in 293 days (spike §3); a second listing in the same shop doubles the shelf presence for one more half-day and shares the Setup tab, the tax estimate and the Trading Allowance logic of the first workbook. Priced £5.99, same listing rules (what the buyer gains, no invented scarcity). Dated after the first workbook so the slots build the winner and raise the owner request first.",
+      "effort_days": 0.4,
+      "proof": "A second .xlsx recalculates with 0 formula errors and its LISTING.md section exists; listed by the owner in the same shop",
+      "score": 7,
+      "status": "todo",
+      "not_before": "2026-11-03",
+      "added": "2026-10-24"
+    },
+    {
+      "id": "april-2027-refresh",
+      "title": "Refresh the workbook for 2027/28 (bands, thresholds, NI rates, mileage rates, MTD £30,000 threshold) the week the Spring Statement settles them",
+      "why": "The job recurs every tax year and the niche's listings are dated by year; a fresh file each April is the line's recurring sale (RESEARCH.md §1). The build updates the Setup tab from gov.uk's published rates, re-runs the recalculation, and writes the new listing copy for the owner's upload.",
+      "effort_days": 0.3,
+      "proof": "A 2027/28 file with the published rates and a LISTING.md section for the new year, uploaded by the owner before 6 April 2027",
+      "score": 3,
+      "status": "todo",
+      "not_before": "2027-03-20",
+      "added": "2026-10-24"
+    }
+  ]
+}

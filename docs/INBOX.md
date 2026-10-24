@@ -125,3 +125,90 @@
 - 2026-10-17 14:08 | store | apify.com | Your Actor UK Planning Applications (planning.data.gov.uk) has been flagged as under maintenance | Apify QA flagged faceless-api/uk-planning-applications after 3 days of failed prefilled runs (run NOjZSxPS2xbA2wvFs); origin dataset emptied upstream, already covered by queue items refresh-uk-planning-2026-10-11 and refresh-uk-planning-reread-2026-10-18 | logged (agent: actor QA failure, not owner)
 - 2026-10-18 00:43 (backlog) | notification | github.com | Re: [giovf/rorororo] bump the minor-and-patch group with 13 updates (PR #5) | Dependabot PR #5 merged into main | logged
 - 2026-10-18 00:46 (backlog) | notification | github.com | Re: [giovf/rorororo] bump the majors group across 1 directory with 4 updates (PR #6) | Dependabot pushed 1 commit (fd20d05) to PR #6 | logged
+- 2026-10-16 23:59 (backlog) | notification | google.com | DMARC report gankdat.com (Report-ID 17927395743080264325) | Google daily aggregate DMARC report | logged
+- 2026-10-18 01:20 (backlog) | notification | github.com | Re: [giovf/rorororo] bump the majors group across 1 directory with 4 updates (PR #6) | Dependabot closed PR #6 as superseded by #7 | logged
+- 2026-10-18 01:21 (backlog) | notification | github.com | [giovf/rorororo] bump the majors group across 1 directory with 2 updates (PR #7) | Dependabot opened PR #7 (postal-mime 3→4, stripe) | logged
+- 2026-10-18 01:21 (backlog) | notification | github.com | [giovf/rorororo] bump the minor-and-patch group with 2 updates (PR #8) | Dependabot opened PR #8 (playwright, wrangler) | logged
+- 2026-10-18 01:24 (backlog) | notification | github.com | Re: [giovf/rorororo] bump the minor-and-patch group with 2 updates (PR #8) | PR #8 merged into main | logged
+- 2026-10-18 17:39 | notification | github.com | [giovf/rorororo] Run failed: gankdat - main (dc241b5) | gankdat workflow failed after 2m09s with 5 annotations (failure with steps; failing step not named in the mail, run 39150418290) | logged
+- 2026-10-18 18:15 (backlog) | notification | github.com | [giovf/rorororo] Run failed: fetch relay - main (b2d03e5) | fetch relay workflow failed after 49s with 2 annotations (failure with steps; failing step not named in the mail, run 39153226504) | logged
+- 2026-10-18 18:27 | notification | hotmail.com | Fw: Run failed: gankdat - main (dc241b5) | owner forward of the 17:39 gankdat failure mail already logged above | logged
+- 2026-10-18 18:27 | notification | hotmail.com | Fw: Run failed: fetch relay - main (b2d03e5) | owner forward of the 18:15 fetch relay failure mail logged above | logged
+- 2026-10-18 18:28 | notification | hotmail.com | Fw: bump the minor-and-patch group with 13 updates (PR #5) | owner forward of the PR #5 merged mail (Dependabot) | logged
+- 2026-10-18 18:28 | notification | hotmail.com | Fw: bump the majors group (PR #6) x2 | owner forwards of Dependabot closing PR #6 as superseded | logged
+- 2026-10-18 23:04 | notification | amazon.co.uk | We found something you might like | Amazon marketing mail, unrelated to Foundry | logged
+- 2026-10-19 02:53 | notification | jobstreet.com | Chief Executive Officer (CEO) + 11 new jobs - Job Alert | Jobstreet job-alert newsletter, unrelated to Foundry | logged
+- 2026-10-19 06:25 | notification | info.wise.com | How to tell it's really Wise | Wise newsletter on spotting impersonation scams | logged
+- 2026-10-19 08:10 | notification | alectolegal.com | Re: Flat 7, TW1 4EZ | personal mail to the owner (property conveyancing), unrelated to Foundry | logged
+- 2026-10-19 09:27 | notification | offers.emails-puregym.com | Ending at midnight: 30% off your first 3 months and £0 joining fee. | PureGym marketing mail, unrelated to Foundry | logged
+- 2026-10-19 09:32 | notification | alectolegal.com | Your weekly update - Flat 7, Swanston Court, TW1 4EZ | personal conveyancing update to the owner, unrelated to Foundry | logged
+- 2026-10-19 11:09 | notification | news.majestic.co.uk | Last chance! Your £20 voucher expires at midnight | Majestic Wine marketing mail, unrelated to Foundry | logged
+- 2026-10-19 12:35 | notification | rewards.airasia.com | Psst… still daydreaming about your dream holiday? | AirAsia marketing mail, unrelated to Foundry | logged
+- 2026-10-19 12:57 | notification | mail.instagram.com | see what ufc and 9 others you follow shared | Instagram recap mail, unrelated to Foundry | logged
+- 2026-10-19 13:01 | notification | nedm.asus.com | Ser miembro tiene recompensa. Tu portátil gamer con regalo | ASUS marketing mail, unrelated to Foundry | logged
+- 2026-10-19 14:01 | notification | mail.boots.com | Get your glow on with Clinique Moisture Surge™ ✨ | Boots marketing mail, unrelated to Foundry | logged
+- 2026-10-19 14:06 | notification | bpiauctions.com | Just Added: Contents of DIY Store & more | BPI Auctions marketing mail, unrelated to Foundry | logged
+- 2026-10-19 16:29 | notification | amazon.co.uk | Don't pass up 3 months of Audible for £0.99 a month | Amazon marketing mail, unrelated to Foundry | logged
+- 2026-10-19 18:00 | notification | amazon.co.uk | Explore Today's Deals on Camera Products | Amazon marketing mail, unrelated to Foundry | logged
+- 2026-10-19 20:45 | notification | linkedin.com | Charlie Stapleton - Project Manager reacted to this post… | LinkedIn reaction notice, unrelated to Foundry | logged
+- 2026-10-20 01:12 (backlog) | notification | twitch.tv | Attention Trainers: Gengar Chat Badges are Live! | Twitch marketing mail, unrelated to Foundry | logged
+- 2026-10-20 02:53 (backlog) | notification | jobstreet.com | Chief Executive Officer (Healthcare Group) + 11 new jobs - Job Alert | Jobstreet job-alert mail, unrelated to Foundry | logged
+- 2026-10-20 08:21 | notification | amazon.co.uk | We found something you might like | Amazon marketing mail, unrelated to Foundry | logged
+- 2026-10-20 08:49 | notification | ernest-brooks.com | Your Own Piece of the Canary Wharf Waterfront | Property marketing mail, unrelated to Foundry | logged
+- 2026-10-20 09:01 | notification | majestic.co.uk | HUGE Savings! Save up to 25% on ALL Champagne & Sparkling | Retail marketing mail, unrelated to Foundry | logged
+- 2026-10-20 09:02 | notification | pureseed.com.my | Celebrate Their Big Achievement with a Bouquet of Love | Florist marketing mail, unrelated to Foundry | logged
+- 2026-10-20 09:14 | notification | email.monzo.com | Your September statement | Monzo statement-ready mail, personal, unrelated to Foundry | logged
+- 2026-10-20 11:10 | notification | amazon.co.uk | giovanni, did 'MoKo USB C to 3.5mm Jack Audio Adapter...' meet your expectations? | Amazon review request, personal, unrelated to Foundry | logged
+- 2026-10-20 11:45 | notification | emails.claytonhotels.com | Ai, your autumn break awaits | Hotel marketing mail, unrelated to Foundry | logged
+- 2026-10-20 12:37 | notification | dexters.co.uk | Email from Dexters Teddington | Estate agent property listings, personal, unrelated to Foundry | logged
+- 2026-10-20 12:46 | notification | chasebuchanan.co.uk | Spacious 2 Bedroom Apartment close to Whitton Mainline Station! | Estate agent property mailing, personal, unrelated to Foundry | logged
+- 2026-10-20 14:13 | notification | bpiauctions.com | Just Added: Contents of Concrete Garage Manufacturer & more | Auction marketing mail, unrelated to Foundry | logged
+- 2026-10-20 14:13 | notification | foxtons.co.uk | We’ve found a property that matches your search criteria | Estate agent property mailing, personal, unrelated to Foundry | logged
+- 2026-10-20 16:09 | notification | linkedin.com | Associate Software Engineer insights: +36% active job openings and more | LinkedIn job-alert mailing, personal, unrelated to Foundry | logged
+- 2026-10-20 17:15 | notification | amazon.co.uk | Amazon Haul: 30% off best sellers | Retail marketing mail, personal, unrelated to Foundry | logged
+- 2026-10-20 17:19 | notification | o2.com | Information about your Spend Cap | Mobile-provider account notice, personal, unrelated to Foundry | logged
+- 2026-10-20 18:09 | notification | linkedin.com | 👤 Giovanni, add Sikander Sehrawat | LinkedIn connection suggestion, personal, unrelated to Foundry | logged
+- 2026-10-20 18:23 | notification | proxydocs.com | Vote on the future of Tesla, Inc. | Trading212 shareholder-vote notice, personal, unrelated to Foundry | logged
+- 2026-10-20 18:28 | notification | 606club.co.uk | 606 Club Live Music - 50th Anniversary Festival | Music-venue newsletter, personal, unrelated to Foundry | logged
+- 2026-10-20 18:57 | notification | theaa.com | Your lessons have been booked | Driving-lesson booking confirmation, personal, unrelated to Foundry | logged
+- 2026-10-20 19:04 | notification | send.namimatcha.com | Nami Matcha is coming near you... | Cafe marketing mail, personal, unrelated to Foundry | logged
+- 2026-10-20 21:00 | notification | secretlab.co | Let's keep in touch | Retail marketing mail (SMS signup), personal, unrelated to Foundry | logged
+- 2026-10-21 02:29 | store | devpost.com | New message for gankdat - agentic commerce for official data in PayPal AI Hackathon | Organiser says the submission lacks access to a functional demo (needs run instructions in the repo or a hosted demo URL added to the Devpost form); due 2026-11-12 12:00 PT, links not opened | needs owner
+- 2026-10-21 02:53 | notification | e.jobstreet.com | Executive, Integrity + 11 new jobs - Job Alert from Jobstreet.com | Job-alert newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 05:08 | notification | cerebralvalley.ai | Welcome to Cerebral Valley, Giovanni | Welcome newsletter for an AI events platform signup | logged
+- 2026-10-21 06:25 | notification | info.wise.com | See what Wise customers have earned with Interest | Bank marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 08:37 | notification | github.com | [giovf/rorororo] Run failed: check - main (f5be9df) | Workflow check failed in 21 s with 2 annotations (reason: failure; failing step not named in the mail), run 39570607614 | logged
+- 2026-10-21 08:31 | notification | news.majestic.co.uk | Be the first to try our latest arrivals | Retail marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 09:24 | notification | paypal.com | Complete setup and start selling with PayPal | PayPal sales-rep follow-up nudging Business account activation; no deadline or amount | logged
+- 2026-10-21 09:34 | notification | kwuk.com | 30 Years On… Where Did That Go? | Personal newsletter, unrelated to Foundry | logged
+- 2026-10-21 11:07 | notification | dexters.co.uk | Email from Dexters St Margarets | Estate agent property mailing, personal, unrelated to Foundry | logged
+- 2026-10-21 12:21 | notification | amazon.co.uk | We found something you might like | Retail marketing mail, personal, unrelated to Foundry | logged
+- 2026-10-21 12:45 | notification | mail.marugame.co.uk | Meet Mount Fuji Matcha | Restaurant marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 14:01 | notification | bpiauctions.com | Just Added: Contents of Bespoke Joinery Workshop | Auction marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 14:25 | notification | mkt.telenet.be | Dernière chance : -50 % sur BASE Internet pendant 4 mois. | Telecom marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 17:00 | notification | magicmadhouse.co.uk | Get ready for our Mid-October Voucher | Retail marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 17:04 | notification | m.procook.co.uk | Our St Paul's store opens tomorrow! | Retail marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 17:32 | notification | gmail.com | Fwd: Letter of Employment | Personal to-do list forwarded between family/colleagues, unrelated to Foundry | logged
+- 2026-10-21 19:10 | notification | adanola.com | Designed by Hailey Bieber | Retail marketing newsletter, personal, unrelated to Foundry | logged
+- 2026-10-21 19:45 | notification | revolut.com | An update on our recent service disruption | Bank service-disruption apology, personal, unrelated to Foundry | logged
+- 2026-10-21 20:20 | notification | linkedin.com | Charlie Stapleton reacted to this post: Working with Infomentum on… | LinkedIn reaction notice, personal, unrelated to Foundry | logged
+- 2026-10-21 21:03 | notification | devpost.com | Recording: Will your project ship? - Nebius x NVIDIA Global AI Hackathon | Hackathon webinar recording link, no action (entries are submitted by the owner) | logged
+- 2026-10-21 21:25 | store | cerebralvalley.ai | Status APPROVED for Meta Global AI Developer Hackathon | Application approved; build window 26 Oct 12:00 – 4 Nov 21:00 ET, remote | logged (self-caused: hackathon application, action 027)
+- 2026-10-21 22:12 | notification | linkedin.com | 8 people viewed your profile | LinkedIn profile-view digest, personal, unrelated to Foundry | logged
+- 2026-10-21 23:35 | notification | twitch.tv | One Twitch Sub. One FREE Month of Apple TV and Ted Lasso Chat Badges! | Twitch promo newsletter, personal, unrelated to Foundry | logged
+- 2026-10-22 02:21 | notification | apple.com | Your iCloud storage is full | iCloud storage notice, personal, unrelated to Foundry | logged
+- 2026-10-22 02:53 | notification | jobstreet.com | Executive / Senior Executive Operational Risk Management + 11 new jobs | Job-alert digest, personal, unrelated to Foundry | logged
+- 2026-10-19 23:59 (backlog) | notification | google.com | Report domain: gankdat.com Submitter: google.com Report-ID: 1429938064962601105 | Google DMARC aggregate report for gankdat.com | logged
+- 2026-10-22 05:01 | notification | pureseed.com.my | A Little Flower, A Big Smile, A Beautiful Moment! | Florist marketing mail, unrelated to Foundry | logged
+- 2026-10-22 07:45 | notification | ernest-brooks.com | Refined City Living | A Property Match from Ernest-Brooks International | Estate-agent marketing mail, unrelated to Foundry | logged
+- 2026-10-22 08:27 | notification | ernest-brooks.com | Premium Canary Wharf Living | A Property Match from Ernest-Brooks International | Estate-agent marketing mail, unrelated to Foundry | logged
+- 2026-10-22 08:47 | notification | alectolegal.com | Re: Conveyancing | Personal mail from a law firm, unrelated to Foundry; left unread, not opened | logged
+- 2026-10-22 09:03 | notification | m.procook.co.uk | ProCook has officially arrived in St Paul's | Retail newsletter, unrelated to Foundry | logged
+- 2026-10-22 09:33 | notification | news.majestic.co.uk | Open for your NEW £20 voucher | Wine-retailer marketing mail, unrelated to Foundry | logged
+- 2026-10-22 09:45 | notification | mail.boots.com | Today only: 4 for 2 in store on Christmas gifts | Retail newsletter, unrelated to Foundry | logged
+- 2026-10-22 09:57 | notification | ayjsolicitors.com | Next Steps - Initial Consultation : AY&J Solicitors. | Personal mail from a solicitors' firm, unrelated to Foundry; left unread, not opened | logged
+- 2026-10-22 10:01 | notification | stirlingackroyd.com | Property Match from Stirling Ackroyd | Estate-agent marketing mail, unrelated to Foundry | logged
+- 2026-10-22 17:53 | notification | nebius.com | We've updated our terms of service | Nebius terms-update notice, no action in the mail itself | logged
+- 2026-10-22 18:39 | notification | github.com | [giovf/rorororo] Run failed: fetch relay - main (006e4c6) | fetch relay workflow failed after 15s with 2 annotations (failure with steps; failing step not named in the mail, run 39833236413) | logged
+- 2026-10-22 21:25 | notification | github.com | [giovf/rorororo] Run failed: fetch relay - main (58cef16) | fetch relay workflow failed after 6m23s with 2 annotations (failure with steps; failing step not named in the mail, run 39856156578); second fetch relay failure today | logged
+- 2026-10-23 17:35 | notification | github.com | [giovf/rorororo] Run failed: gankdat publish - main (89bb528) | gankdat publish workflow failed after 33s with 2 annotations (failure with steps; failing step not named in the mail, run 39996133213) | logged

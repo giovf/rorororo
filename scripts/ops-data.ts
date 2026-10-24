@@ -30,7 +30,13 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const OUT_FILE = path.join('packages', 'landing', 'src', 'ops-data.json');
 
 export type Group =
-  'Data API' | 'Browser extensions' | 'Figma plugins' | 'Prize entries' | 'Bounties' | 'Other';
+  | 'Data API'
+  | 'Browser extensions'
+  | 'Figma plugins'
+  | 'Prize entries'
+  | 'Bounties'
+  | 'Digital downloads'
+  | 'Other';
 export function groupOf(channel: string): Group {
   switch (channel) {
     case 'api-marketplace':
@@ -44,6 +50,8 @@ export function groupOf(channel: string): Group {
       return 'Prize entries';
     case 'bounty-board':
       return 'Bounties';
+    case 'etsy':
+      return 'Digital downloads';
     default:
       return 'Other';
   }

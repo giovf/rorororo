@@ -9,6 +9,7 @@ describe('ops-data', () => {
     expect(groupOf('figma-community')).toBe('Figma plugins');
     expect(groupOf('hackathon')).toBe('Prize entries');
     expect(groupOf('bounty-board')).toBe('Bounties');
+    expect(groupOf('etsy')).toBe('Digital downloads');
     expect(groupOf('vscode-marketplace')).toBe('Other');
   });
   it('reads the metrics table rows', () => {

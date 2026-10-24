@@ -1,0 +1,131 @@
+{
+  "request": "monday-apps-marketplace-2026-10-24",
+  "fetched_at": "2026-10-24T00:20:24.316Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/llms.txt",
+      "fetched_at": "2026-10-24T00:19:36.120Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/llms.txt",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "etag": "W/\"54e6-XGD/SdKEU5q/QpAWaJWKAtxRits\""
+      },
+      "file": "1.txt",
+      "bytes": 21734,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/changelog/announcing-the-revshare-program.md",
+      "fetched_at": "2026-10-24T00:19:37.008Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/changelog/announcing-the-revshare-program.md",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 1143088,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/submit-your-plans-and-pricing.md",
+      "fetched_at": "2026-10-24T00:19:38.164Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/submit-your-plans-and-pricing.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"75c74bed7170db33f1a8d7888b5dce7e682d8cb5:expanded|c853aabb\""
+      },
+      "file": "3.txt",
+      "bytes": 6326,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/changelog/seat-based-pricing-available-for-all-monetized-apps.md",
+      "fetched_at": "2026-10-24T00:19:38.843Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/changelog/seat-based-pricing-available-for-all-monetized-apps.md",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 1143265,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monday.com/marketplace",
+      "render": true,
+      "fetched_at": "2026-10-24T00:19:39.664Z",
+      "status": 200,
+      "final_url": "https://monday.com/marketplace",
+      "title": "monday.com Marketplace",
+      "rendered": {
+        "network_idle": false,
+        "requests": 290,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_q9tc8qn&event=ViewContent → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-28-1053047382554.us-central1.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=E1qQ9Gn9MGRb65oVXbSN4j&st=oaiq-web&sv=0.1.93&t=1792801185421&ec=3 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=1&ae=g&auid=1359462904.1792801186&dt=monday.com%20Marketplace&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace&scrsrc=monday.com&rnd=134",
+          "POST https://www.google.com/ccm/collect?rcb=6&frm=0&apvc=0&auid=1359462904.1792801186&dt=monday.com%20Marketplace&tid=AW-11532251586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace&scrsrc=monda",
+          "POST https://www.google.com/rmkt/collect/11059637586/?random=1792801183102&cv=11&fst=1792801183102&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9184680452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801183721&cv=11&fst=1792801183721&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=0&auid=1359462904.1792801186&dt=monday.com%20Marketplace&tid=AW-933380251&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace&scrsrc=monday.",
+          "POST https://www.google.com/ccm/collect?rcb=4&frm=0&apvc=0&ae=g&auid=1359462904.1792801186&dt=monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace&scrsrc=monday.com&r",
+          "POST https://www.google.com/rmkt/collect/11532251586/?random=1792801182951&cv=11&fst=1792801182951&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9214554228za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/11084453121/?random=1792801183200&cv=11&fst=1792801183200&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/rmkt/collect/10853517003/?random=1792801183201&cv=11&fst=1792801183201&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v9101559452za20szb78383297zd78383297xecx",
+          "POST https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=0&auid=1359462904.1792801186&dt=monday.com%20Marketplace&tid=AW-11059637586&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace&scrsrc=monda",
+          "POST https://www.google.com/rmkt/collect/AW-933380251/?random=1792801183724&cv=11&fst=1792801183724&fmt=8&bg=ffffff&guid=ON&async=1&gtm=45892e6al1z878383297za20kzb78383297zd78383297xeaxf4&gcd=13t3t3t3",
+          "POST https://www.google.com/ccm/collect?rcb=13&frm=0&apvc=0&auid=1359462904.1792801186&dt=monday.com%20Marketplace&tid=DC-8175736&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace&scrsrc=monday.c",
+          "POST https://www.google.com/rmkt/collect/933380251/?random=1792801183352&cv=11&fst=1792801183352&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45892e6al1v891024089za20szb78383297zd78383297xecxf4&",
+          "POST https://www.google.com/ccm/collect?rcb=4&frm=0&apvc=0&ae=g&auid=1359462904.1792801186&dt=monday.com%20Marketplace&tid=AW-AW-933380251&dl=https%3A%2F%2Fmonday.com%2Fmarketplace&scrsrc=monday.com&r",
+          "POST https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=0&auid=1359462904.1792801186&dt=monday.com%20Marketplace&tid=AW-11084453121&en=page_view&dl=https%3A%2F%2Fmonday.com%2Fmarketplace&scrsrc=monda"
+        ],
+        "console_errors": [
+          "Error calling callback for  backbone-init Previous callbacks: [babel-polyfill-and-helpers-init, client-init_mf-preload-init, client-init_block-screens-init, inbox-count-init, client-init_granted-featu"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 816314,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account",
+      "fetched_at": "2026-10-24T00:20:22.748Z",
+      "status": 200,
+      "final_url": "https://help.saasjet.com/monday/how-to-calculate-the-price-for-app-on-your-monday-account",
+      "headers": {
+        "content-type": "text/html",
+        "etag": "W/\"1c166a015c225b11006c225f0481740e\""
+      },
+      "file": "6.html",
+      "bytes": 42836,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.creativas.io/display/SPREAD/Pricing",
+      "fetched_at": "2026-10-24T00:20:23.181Z",
+      "status": 200,
+      "final_url": "https://help.creativas.io/app/spread/pricing-69107738.html",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 60916,
+      "truncated": false
+    }
+  ]
+}

@@ -10,7 +10,8 @@ export type Channel =
   | 'web'
   | 'api-marketplace'
   | 'hackathon' // cash-prize competitions (Devpost and the sponsors' own portals)
-  | 'bounty-board'; // paid open-source issues (Algora-style boards on GitHub)
+  | 'bounty-board' // paid open-source issues (Algora-style boards on GitHub)
+  | 'etsy'; // seller-designed digital downloads sold through Etsy's own checkout (exchange 2026-W43)
 
 export type VentureStatus =
   | 'idea' // named, not yet validated

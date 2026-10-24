@@ -8,6 +8,7 @@ import {
   SAME_HOST_PACE_MS,
   credentialShaped,
   hostAllowed,
+  needsRender,
   parseHosts,
   parseLine,
   postBodyError,
@@ -36,6 +37,40 @@ describe('parseLine', () => {
       range: '0-9',
       url: 'https://a.gov.uk/x.csv',
     });
+  });
+
+  it('reads a RENDER line as a GET whose DOM is rendered in Chromium, and refuses it elsewhere', () => {
+    expect(parseLine('GET RENDER https://www.wix.com/app-market/category/forms')).toEqual({
+      method: 'GET',
+      render: true,
+      url: 'https://www.wix.com/app-market/category/forms',
+    });
+    expect(parseLine('render https://www.wix.com/app-market/category/forms')).toEqual({
+      method: 'GET',
+      render: true,
+      url: 'https://www.wix.com/app-market/category/forms',
+    });
+    expect(parseLine('HEAD RENDER https://a.gov.uk/x')).toMatchObject({
+      method: 'HEAD',
+      render: true,
+      error: 'RENDER applies to GET only, not HEAD',
+    });
+    expect(parseLine('GET RENDER RANGE=0-9 https://a.gov.uk/x')?.error).toMatch(
+      /^RANGE does not apply to RENDER/,
+    );
+    expect(parseLine('POST RENDER https://mainnet.base.org {"a":1}')).toMatchObject({
+      method: 'POST',
+      body: '{"a":1}',
+      error: 'RENDER applies to GET only, not POST',
+    });
+  });
+
+  it('needsRender sees a usable RENDER line only, never a comment or a refused one', () => {
+    expect(needsRender('GET https://a.gov.uk/x\nHEAD https://a.gov.uk/y\n')).toBe(false);
+    expect(needsRender('# RENDER https://a.gov.uk/x\n')).toBe(false);
+    expect(needsRender('HEAD RENDER https://a.gov.uk/x\n')).toBe(false);
+    expect(needsRender('GET https://a.gov.uk/x\nRENDER https://a.gov.uk/y\n')).toBe(true);
+    expect(needsRender('')).toBe(false);
   });
 
   it('reads a POST line: the url, then the JSON body as the rest of the line, spaces included', () => {

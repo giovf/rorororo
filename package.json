@@ -13,7 +13,7 @@
     "ventures/*"
   ],
   "scripts": {
-    "typecheck": "tsc -b && tsc -p scripts && tsc -p packages/landing && tsc -p ventures/variables-toolkit && tsc -p ventures/read-focus && tsc -p ventures/read-focus/e2e && tsc -p ventures/highlight-keep && tsc -p ventures/highlight-keep/e2e",
+    "typecheck": "tsc -b && tsc -p scripts && tsc -p ventures/tax-workbook && tsc -p packages/landing && tsc -p ventures/variables-toolkit && tsc -p ventures/read-focus && tsc -p ventures/read-focus/e2e && tsc -p ventures/highlight-keep && tsc -p ventures/highlight-keep/e2e",
     "build": "tsc -b",
     "lint": "eslint .",
     "format": "prettier --write .",
@@ -56,6 +56,6 @@
     "typescript": "^6.0.3",
     "typescript-eslint": "^8.71.2",
     "vitest": "^5.0.1",
-    "playwright": "1.64.0"
+    "playwright": "1.64.1"
   }
 }

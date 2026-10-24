@@ -1,0 +1,97 @@
+{
+  "request": "ai-setup-course-rivals-2026-10-19",
+  "fetched_at": "2026-10-19T00:16:09.682Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://alphaletgo.gumroad.com/l/agentic-coding-kit",
+      "fetched_at": "2026-10-19T00:16:05.548Z",
+      "status": 200,
+      "final_url": "https://alphaletgo.gumroad.com/l/agentic-coding-kit",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 27236,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://planfulnest.gumroad.com/l/womhu",
+      "fetched_at": "2026-10-19T00:16:06.076Z",
+      "status": 200,
+      "final_url": "https://planfulnest.gumroad.com/l/womhu",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 27586,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://yurukusa.gumroad.com/l/cc-codex-ops-kit",
+      "fetched_at": "2026-10-19T00:16:06.421Z",
+      "status": 200,
+      "final_url": "https://yurukusa.gumroad.com/l/cc-codex-ops-kit",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 34281,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/discover?query=claude%20code",
+      "fetched_at": "2026-10-19T00:16:06.805Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/discover?query=claude%20code",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 120695,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/pricing",
+      "fetched_at": "2026-10-19T00:16:08.179Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 46899,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gumroad.com/help/article/121-sales-tax-on-gumroad",
+      "fetched_at": "2026-10-19T00:16:08.703Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/help/article/121-sales-tax-on-gumroad",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 19103,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://discover.gumroad.com/discover?query=autonomous%20ai%20agents%20claude",
+      "fetched_at": "2026-10-19T00:16:08.813Z",
+      "status": 200,
+      "final_url": "https://gumroad.com/discover?query=autonomous%20ai%20agents%20claude",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 122084,
+      "truncated": false
+    }
+  ]
+}

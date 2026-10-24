@@ -1,0 +1,397 @@
+
+
+<!DOCTYPE html>
+<html>
+    
+<head>
+    <meta charset="utf-8"/>
+    <title>Developer - Help Center</title>
+    <meta name="viewport" content="width=device-width, maximum-scale=1"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="description" content="How developers can integrate Payhip into their applications"/>
+    <meta name="author" content="Payhip"/>
+    <link rel="canonical" href="https://help.payhip.com/category/48-developer"/>
+    
+
+    
+        <link rel="stylesheet" href="//d3eto7onm69fcz.cloudfront.net/assets/stylesheets/launch-1792684138505.css">
+    
+    <style>
+        body { background: #ffffff; }
+        .navbar .navbar-inner { background: #2c323d; }
+        .navbar .nav li a, 
+        .navbar .icon-private-w  { color: #c0c0c0; }
+        .navbar .brand, 
+        .navbar .nav li a:hover, 
+        .navbar .nav li a:focus, 
+        .navbar .nav .active a, 
+        .navbar .nav .active a:hover, 
+        .navbar .nav .active a:focus  { color: #ffffff; }
+        .navbar a:hover .icon-private-w, 
+        .navbar a:focus .icon-private-w, 
+        .navbar .active a .icon-private-w, 
+        .navbar .active a:hover .icon-private-w, 
+        .navbar .active a:focus .icon-private-w { color: #ffffff; }
+        #serp-dd .result a:hover,
+        #serp-dd .result > li.active,
+        #fullArticle strong a,
+        #fullArticle a strong,
+        .collection a,
+        .contentWrapper a,
+        .most-pop-articles .popArticles a,
+        .most-pop-articles .popArticles a:hover span,
+        .category-list .category .article-count,
+        .category-list .category:hover .article-count { color: #4381b5; }
+        #fullArticle, 
+        #fullArticle p, 
+        #fullArticle ul, 
+        #fullArticle ol, 
+        #fullArticle li, 
+        #fullArticle div, 
+        #fullArticle blockquote, 
+        #fullArticle dd, 
+        #fullArticle table { color:#585858; }
+    </style>
+    
+        <link rel="stylesheet" href="//s3.amazonaws.com/helpscout.net/docs/assets/608826bec9133261f23f4c0b/attachments/6a440349d94e5cf21d433abc/helpscout-3.css">
+    
+    <link rel="apple-touch-icon-precomposed" href="//d33v4339jhl8k0.cloudfront.net/docs/assets/608826bec9133261f23f4c0b/images/60cdb51d00fd0d7c253f7c3e/apple-touch-icon-152x152.png">
+    <link rel="shortcut icon" type="image/png" href="//d33v4339jhl8k0.cloudfront.net/docs/assets/608826bec9133261f23f4c0b/images/60cdb51d8556b07a28847a19/favicon-196x196.png">
+    <!--[if lt IE 9]>
+    
+        <script src="//d3eto7onm69fcz.cloudfront.net/assets/javascripts/html5shiv.min.js"></script>
+    
+    <![endif]-->
+    
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"WebSite","url":"https://help.payhip.com","potentialAction":{"@type":"SearchAction","target":"https://help.payhip.com/search?query={query}","query-input":"required name=query"}}
+        </script>
+    
+        <script type="application/ld+json">
+        {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Help Center","item":"https://help.payhip.com"},{"@type":"ListItem","position":2,"name":"Sellers","item":"https://help.payhip.com/collection/37-sellers"},{"@type":"ListItem","position":3,"name":"Developer","item":"https://help.payhip.com/category/48-developer"}]}
+        </script>
+    
+    
+        <script type="text/javascript">!function(e,t,n){function a(){var e=t.getElementsByTagName("script")[0],n=t.createElement("script");n.type="text/javascript",n.async=!0,n.src="https://beacon-v2.helpscout.net",e.parentNode.insertBefore(n,e)}if(e.Beacon=n=function(t,n,a){e.Beacon.readyQueue.push({method:t,options:n,data:a})},n.readyQueue=[],"complete"===t.readyState)return a();e.attachEvent?e.attachEvent("onload",a):e.addEventListener("load",a,!1)}(window,document,window.Beacon||function(){});
+</script><script type="text/javascript">window.Beacon('init', 'a65a9008-835a-40f9-9c41-b4e120876fc0')</script>
+
+<script type="text/javascript">
+
+	var PayhipHelpCenterPage = (function(){
+
+		// Constructor
+		function PayhipHelpCenterPage() {
+			this.init();
+		}
+
+		PayhipHelpCenterPage.prototype = {
+
+			init: function()
+			{
+				this.opts  = this.setOptions();
+				this.initUI();
+				this.attachEvents();
+			},
+
+			setOptions: function()
+			{
+				var options = {};
+
+				// Selectors
+
+				// Misc
+
+				options.homeIconSvg = '<svg viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg" fill="#000000" stroke="#000000" height="140" width="140"><g transform="matrix(5.833333333333333,0,0,5.833333333333333,0,0)"><path d="m23.707 11.293-11-11a1 1 0 0 0-1.414 0l-11 11A1 1 0 0 0 1 13h1.25a.25.25 0 0 1 .25.25V23a1 1 0 0 0 1 1h5.75a.25.25 0 0 0 .25-.25V19a2.5 2.5 0 0 1 5 0v4.75a.25.25 0 0 0 .25.25h5.75a1 1 0 0 0 1-1v-9.75a.25.25 0 0 1 .25-.25H23a1 1 0 0 0 .707-1.707z" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"></path></g></svg>';
+
+				options.payhipUrl = 'https://payhip.com';
+				options.beaconId = 'a65a9008-835a-40f9-9c41-b4e120876fc0';
+
+				return options;
+			},
+
+			initUI: function()
+			{
+				this.injectGoToPayhipButton();
+
+				this.injectContactUsEmailAddress();
+
+				this.initBeacon();
+			},
+
+			injectGoToPayhipButton: function()
+			{
+				var shopLink = document.createElement('a');
+				shopLink.href = this.opts.payhipUrl;
+				shopLink.innerText = 'Go to payhip.com';
+				shopLink.className = 'main-payhip-link';
+				var shopLinkListItem = document.createElement("li");
+				shopLinkListItem.appendChild(shopLink);
+				var ul = document.querySelector('#mainNav nav ul');
+				ul.insertBefore(shopLinkListItem, ul.firstChild);
+			},
+
+			injectContactUsEmailAddress: function()
+			{
+				var footer = document.querySelector('footer');
+				var firstP = document.querySelector('footer > p');
+
+				var contactUsEmailAddressWrapper = document.createElement('p');
+				contactUsEmailAddressWrapper.className = 'footer-contact-us-email-address-wrapper';
+				contactUsEmailAddressWrapper.innerHTML = 'Can\'t find what you\'re looking for? Shoot us an email at <a href="mailto:contact@payhip.com">contact@payhip.com</a>';
+
+				footer.insertBefore(contactUsEmailAddressWrapper, firstP);
+			},
+
+			initBeacon: function()
+			{
+				window.Beacon('init', this.opts.beaconId);
+			},
+
+			attachEvents: function()
+			{
+				var that = this;
+			}
+
+		};
+
+		return PayhipHelpCenterPage;
+
+	})();
+
+	window.addEventListener("DOMContentLoaded", function() {
+		var payhipHelpCenterPage = new PayhipHelpCenterPage();
+	});
+
+</script>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-34658431-3', 'auto');
+  ga('create', 'UA-34658431-1', 'auto', 'mainPayhip');
+
+  ga('send', 'pageview');
+  ga('mainPayhip.send', 'pageview');  
+
+</script>
+
+<style>.embed-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<script type="text/javascript" src="https://payhip.com/payhip.js"></script>
+<script type="text/javascript">
+     var PayhipConfig = {
+        enableCart: true
+    };
+</script>
+    
+</head>
+    
+    <body>
+        
+<header id="mainNav" class="navbar">
+    <div class="navbar-inner">
+        <div class="container-fluid">
+            <a class="brand" href="/">
+            
+                <span>Help Center</span>
+            
+            </a>
+            
+            <div class="nav-collapse collapse">
+                <nav role="navigation"><!-- added for accessibility -->
+                <ul class="nav">
+                    
+                    
+                    
+                    
+                </ul>
+                </nav>
+            </div><!--/.nav-collapse -->
+        </div><!--/container-->
+    </div><!--/navbar-inner-->
+</header>
+        <section id="contentArea" class="container-fluid">
+            <div class="row-fluid">
+                <section id="main-content" class="span9">
+                    <div class="contentWrapper">
+                        
+    <hgroup id="categoryHead">
+        <h1>Developer</h1>
+        <p class="descrip">How developers can integrate Payhip into their applications</p>
+        <div class="sort">
+             
+
+<form action="/category/48-developer" method="GET" >
+    
+                <select name="sort" id="sortBy" title="sort-by" onchange="this.form.submit();" aria-label="Page reloads on selection">
+                    
+                        <option value="" >Sort by Default</option>
+                    
+                        <option value="name" >Sort A-Z</option>
+                    
+                        <option value="popularity" >Sort by Popularity</option>
+                    
+                        <option value="updatedAt" >Sort by Last Updated</option>
+                    
+                </select>
+            
+</form>
+
+        </div>
+    </hgroup><!--/categoryHead-->
+
+    
+        <ul class="articleList">
+            
+                <li><a href="/article/115-webhooks"><i class="icon-article-doc"></i><span>Webhooks</span></a></li>
+            
+                <li><a href="/article/317-software-license-keys-new"><i class="icon-article-doc"></i><span>Software License Keys</span></a></li>
+            
+                <li><a href="/article/114-software-license-keys"><i class="icon-article-doc"></i><span>Software License Keys (Legacy)</span></a></li>
+            
+                <li><a href="/article/347-public-api"><i class="icon-article-doc"></i><span>Public API</span></a></li>
+            
+        </ul><!--/articleList-->
+
+        
+    
+
+                    </div><!--/contentWrapper-->
+                    
+                </section><!--/content-->
+                <aside id="sidebar" class="span3">
+                 
+
+<form action="/search" method="GET" id="searchBar" class="sm" autocomplete="off">
+    
+                    <input type="hidden" name="collectionId" value="608979338af76a714bfdbf79"/>
+                    <input type="text" name="query" title="search-query" class="search-query" placeholder="Search" value="" aria-label="Search" />
+                    <button type="submit">
+                        <span class="sr-only">Toggle Search</span>
+                        <i class="icon-search"></i>
+                    </button>
+                    <div id="serp-dd" style="display: none;" class="sb">
+                        <ul class="result">
+                        </ul>
+                    </div>
+                
+</form>
+
+                
+                    <h3>Categories</h3>
+                    <ul class="nav nav-list">
+                    
+                        
+                            <li ><a href="/category/40-getting-started">Getting Started  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/350-payments">Payments  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/41-products">Products  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/42-customers">Customers  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/43-marketing">Marketing  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/44-customization">Customization  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/45-popular-questions">Popular Questions  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/47-account-settings">Account Settings  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li  class="active" ><a href="/category/48-developer">Developer  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/50-buyers">Buyers  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/49-integrations">Integrations  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/46-analytics">Analytics  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/191-courses">Courses  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/256-membership">Memberships  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/391-sales-tax">Sales Tax  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                        
+                            <li ><a href="/category/130-domain-providers">Domain Providers  <i class="icon-arrow"></i></a></li>
+                        
+                    
+                    </ul>
+                
+                </aside><!--/span-->
+            </div><!--/row-->
+            <div id="noResults" style="display:none;">No results found</div>
+            <footer>
+                
+
+<p>&copy;
+    
+        <a href="https://payhip.com">Payhip</a>
+    
+    2026. <span>Powered by <a rel="nofollow noopener noreferrer" href="https://www.helpscout.com/docs-refer/?co=Payhip&utm_source=docs&utm_medium=footerlink&utm_campaign=Docs+Branding" target="_blank">Help Scout</a></span>
+    
+        
+    
+    
+</p>
+
+            </footer>
+        </section><!--/.fluid-container-->
+        
+        
+    <script src="//d3eto7onm69fcz.cloudfront.net/assets/javascripts/app4.min.js"></script>
+
+<script>
+// keep iOS links from opening safari
+if(("standalone" in window.navigator) && window.navigator.standalone){
+// If you want to prevent remote links in standalone web apps opening Mobile Safari, change 'remotes' to true
+var noddy, remotes = false;
+document.addEventListener('click', function(event) {
+noddy = event.target;
+while(noddy.nodeName !== "A" && noddy.nodeName !== "HTML") {
+noddy = noddy.parentNode;
+}
+
+if('href' in noddy && noddy.href.indexOf('http') !== -1 && (noddy.href.indexOf(document.location.host) !== -1 || remotes)){
+event.preventDefault();
+document.location.href = noddy.href;
+}
+
+},false);
+}
+</script>
+        
+    </body>
+</html>

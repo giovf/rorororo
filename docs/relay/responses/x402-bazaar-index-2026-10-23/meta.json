@@ -1,0 +1,48 @@
+{
+  "request": "x402-bazaar-index-2026-10-23",
+  "fetched_at": "2026-10-23T09:15:47.521Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.cdp.coinbase.com/x402/seller/get-discovered",
+      "fetched_at": "2026-10-23T09:15:45.668Z",
+      "status": 200,
+      "final_url": "https://docs.cdp.coinbase.com/x402/seller/get-discovered",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"95cqnfsh9agwcf\""
+      },
+      "file": "1.html",
+      "bytes": 788500,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.cdp.coinbase.com/x402/core-concepts/x402-bazaar",
+      "fetched_at": "2026-10-23T09:15:46.538Z",
+      "status": 404,
+      "final_url": "https://docs.cdp.coinbase.com/x402/core-concepts/x402-bazaar",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"15j8sagq10j2lor\""
+      },
+      "file": "2.html",
+      "bytes": 121419,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/x402/data/uk-sanctions?per_page=1",
+      "fetched_at": "2026-10-23T09:15:46.978Z",
+      "status": 402,
+      "final_url": "https://gankdat.com/x402/data/uk-sanctions?per_page=1",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "301"
+      },
+      "file": "3.json",
+      "bytes": 301,
+      "truncated": false
+    }
+  ]
+}

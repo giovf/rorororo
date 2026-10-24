@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1500" viewBox="0 0 2000 1500" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif">
+<rect width="2000" height="1500" fill="#F4F7FB"/>
+<text x="1000" y="150" font-size="92" fill="#1F3A5F" font-weight="bold" text-anchor="middle">Ten tabs, one file</text>
+<text x="1000" y="225" font-size="40" fill="#5A6675" font-weight="normal" text-anchor="middle">Type into the blue cells; every figure in black is a formula</text>
+<rect x="120" y="300" width="860" height="200" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+<rect x="120" y="300" width="16" height="200" rx="8" fill="#1F3A5F"/>
+<text x="152" y="364" font-size="38" fill="#1F3A5F" font-weight="bold" text-anchor="start">Setup</text>
+<text x="152" y="418" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="start">2026/27 rates and thresholds, each with its gov.uk source</text>
+<rect x="1020" y="300" width="860" height="200" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+<rect x="1020" y="300" width="16" height="200" rx="8" fill="#2E7D4F"/>
+<text x="1052" y="364" font-size="38" fill="#2E7D4F" font-weight="bold" text-anchor="start">Income</text>
+<text x="1052" y="418" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="start">One row per payment: sales turnover or other business income</text>
+<rect x="120" y="528" width="860" height="200" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+<rect x="120" y="528" width="16" height="200" rx="8" fill="#2E7D4F"/>
+<text x="152" y="592" font-size="38" fill="#2E7D4F" font-weight="bold" text-anchor="start">Expenses</text>
+<text x="152" y="646" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="start">SA103S category drop-down, business share, allowable amount</text>
+<rect x="1020" y="528" width="860" height="200" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+<rect x="1020" y="528" width="16" height="200" rx="8" fill="#2E7D4F"/>
+<text x="1052" y="592" font-size="38" fill="#2E7D4F" font-weight="bold" text-anchor="start">Mileage</text>
+<text x="1052" y="646" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="start">HMRC approved rates, 10,000-mile step-down worked out for you</text>
+<rect x="120" y="756" width="860" height="200" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+<rect x="120" y="756" width="16" height="200" rx="8" fill="#1F3A5F"/>
+<text x="152" y="820" font-size="38" fill="#1F3A5F" font-weight="bold" text-anchor="start">Quarterly</text>
+<text x="152" y="874" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="start">MTD quarters with income, expenses, profit and update deadlines</text>
+<rect x="1020" y="756" width="860" height="200" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+<rect x="1020" y="756" width="16" height="200" rx="8" fill="#1F3A5F"/>
+<text x="1052" y="820" font-size="38" fill="#1F3A5F" font-weight="bold" text-anchor="start">Allowance</text>
+<text x="1052" y="874" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="start">Trading Allowance versus actual expenses: which is lower</text>
+<rect x="120" y="984" width="860" height="200" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+<rect x="120" y="984" width="16" height="200" rx="8" fill="#1F3A5F"/>
+<text x="152" y="1048" font-size="38" fill="#1F3A5F" font-weight="bold" text-anchor="start">SA103</text>
+<text x="152" y="1102" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="start">Boxes 9 to 31 ready to copy into the short self-employment pages</text>
+<rect x="1020" y="984" width="860" height="200" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+<rect x="1020" y="984" width="16" height="200" rx="8" fill="#1F3A5F"/>
+<text x="1052" y="1048" font-size="38" fill="#1F3A5F" font-weight="bold" text-anchor="start">Tax</text>
+<text x="1052" y="1102" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="start">Income Tax, Class 4 NI, balancing payment, payments on account</text>
+<rect x="120" y="1212" width="860" height="200" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+<rect x="120" y="1212" width="16" height="200" rx="8" fill="#B8860B"/>
+<text x="152" y="1276" font-size="38" fill="#B8860B" font-weight="bold" text-anchor="start">Example</text>
+<text x="152" y="1330" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="start">A filled year checked by hand so you can see it finished</text>
+<rect x="1020" y="1212" width="860" height="200" rx="24" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+<rect x="1020" y="1212" width="16" height="200" rx="8" fill="#1F3A5F"/>
+<text x="1052" y="1276" font-size="38" fill="#1F3A5F" font-weight="bold" text-anchor="start">README</text>
+<text x="1052" y="1330" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="start">What it covers, what it does not, how to import to Google Sheets</text>
+</svg>

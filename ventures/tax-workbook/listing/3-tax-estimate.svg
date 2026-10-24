@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2000" height="1500" viewBox="0 0 2000 1500" font-family="DejaVu Sans, Liberation Sans, Arial, sans-serif">
+<rect width="2000" height="1500" fill="#F4F7FB"/>
+<text x="1000" y="150" font-size="92" fill="#1F3A5F" font-weight="bold" text-anchor="middle">See what the year will cost</text>
+<text x="1000" y="225" font-size="40" fill="#5A6675" font-weight="normal" text-anchor="middle">The worked example on the Example tab, every line a formula from the Setup rates</text>
+<rect x="120" y="300" width="1760" height="900" rx="32" fill="#FFFFFF" stroke="#D9E1EC" stroke-width="3"/>
+
+<text x="200" y="420" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="start">Turnover</text>
+<text x="1800" y="420" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="end">£42,000.00</text>
+
+<text x="200" y="512" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="start">Allowable expenses</text>
+<text x="1800" y="512" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="end">£6,500.00</text>
+
+<text x="200" y="604" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="start">Mileage: 8,000 miles at 45p</text>
+<text x="1800" y="604" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="end">£3,600.00</text>
+<rect x="160" y="638" width="1680" height="84" rx="14" fill="#DDEBD3"/>
+<text x="200" y="696" font-size="42" fill="#1A1A1A" font-weight="bold" text-anchor="start">Taxable profit</text>
+<text x="1800" y="696" font-size="42" fill="#2E7D4F" font-weight="bold" text-anchor="end">£31,900.00</text>
+
+<text x="200" y="788" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="start">Personal Allowance</text>
+<text x="1800" y="788" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="end">£12,570.00</text>
+
+<text x="200" y="880" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="start">Income Tax at 20 %</text>
+<text x="1800" y="880" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="end">£3,866.00</text>
+
+<text x="200" y="972" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="start">Class 4 NI at 6 %</text>
+<text x="1800" y="972" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="end">£1,159.80</text>
+<rect x="160" y="1006" width="1680" height="84" rx="14" fill="#DDEBD3"/>
+<text x="200" y="1064" font-size="42" fill="#1A1A1A" font-weight="bold" text-anchor="start">Total due 31 January 2028</text>
+<text x="1800" y="1064" font-size="42" fill="#2E7D4F" font-weight="bold" text-anchor="end">£5,025.80</text>
+
+<text x="200" y="1156" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="start">Each payment on account for 2027/28</text>
+<text x="1800" y="1156" font-size="42" fill="#1A1A1A" font-weight="normal" text-anchor="end">£2,512.90</text>
+<text x="1000" y="1320" font-size="30" fill="#5A6675" font-weight="normal" text-anchor="middle">England, Wales and Northern Ireland tax bands · Class 4 at 6 % and 2 % · payments on account above £1,000</text>
+<text x="1000" y="1380" font-size="32" fill="#5A6675" font-weight="normal" text-anchor="middle">An estimate for planning — HMRC’s own calculation is the one you pay</text>
+</svg>

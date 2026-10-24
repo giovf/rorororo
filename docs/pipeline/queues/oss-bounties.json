@@ -1,6 +1,6 @@
 {
   "venture": "oss-bounties",
-  "status": "open",
+  "status": "finished",
   "needs_research": false,
   "updated": "2026-10-18",
   "researched": "2026-10-18",
@@ -20,13 +20,13 @@
     {
       "id": "first-bounty-pr",
       "title": "First bounty: take the scanner's top-ranked issue, fork, fix with tests in the project's conventions, open the PR with `/claim #<issue>` and a plain note on how it was built, then track it to merge",
-      "why": "The posted amount is the proof of demand; a merged PR is the whole sale. Needs PR_TOKEN (action 021) to push the fork from CI and the board sign-in (action 022) so the claim resolves to the owner's account. Unblocked 2026-10-11: PR_TOKEN present and the owner signed in to the board with their GitHub account.",
+      "why": "The posted amount is the proof of demand; a merged PR is the whole sale. Needs PR_TOKEN (action 021) to push the fork from CI and the board sign-in (action 022) so the claim resolves to the owner's account. Unblocked 2026-10-11: PR_TOKEN present and the owner signed in to the board with their GitHub account. Dropped 2026-10-18 (review W42): no free funded code row appeared on seven daily boards (10-11..10-17); the line is killed and the queue finished. If the exchange reopens the queue on its trigger, this is the first item again.",
       "effort_days": 1,
       "proof": "PR merged and the bounty paid (revenue row in docs/LEDGER.md)",
       "score": 9,
-      "status": "blocked",
+      "status": "dropped",
       "added": "2026-10-11",
-      "blocked_on": "a funded bounty with no assignee and no open PR that is code with tests — none on the 2026-10-11 or 2026-10-12 boards (10-12 top three: a mobile app needing maintainer assignment and real-device recordings, a $5 user-testing task, a $5 showcase reward); the scanner now drops contests, usage tasks, device-recording, maintainer-assigned and hardware shapes and files nothing under $25, so the next board that files a free funded code item unblocks this"
+      "updated": "2026-10-18"
     },
     {
       "id": "bounty-scanner-funding-and-taken",
@@ -183,5 +183,5 @@
       "done_at": "2026-10-16"
     }
   ],
-  "research_after": "2026-10-19"
+  "finished_reason": "killed 2026-10-18 (review W42): seven consecutive daily boards 10-11..10-17 (about 3,900 issue reads) held 0 free funded code fixes at US$25+ and all 8 scanner-filed items were dropped on read — the review's kill rule for the line (STRATEGY §8 2026-10-11, §7 from today: a funded, free board row absent for a week). The labelled money on GitHub is assigned, crowded or not code; §3's recurring-job assumption failed on supply. Code, scanner and claims ledger kept; the exchange holds the idea parked with a re-open trigger (two consecutive weekly boards with a free, funded, escrowed code-with-tests row at US$25+)."
 }

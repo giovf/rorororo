@@ -1,0 +1,384 @@
+{
+  "request": "atlassian-marketplace-forge-shelf-2026-10-22",
+  "fetched_at": "2026-10-22T09:13:17.256Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://developer.atlassian.com/platform/marketplace/partner-due-diligence/",
+      "fetched_at": "2026-10-22T09:12:57.877Z",
+      "status": 200,
+      "final_url": "https://developer.atlassian.com/platform/marketplace/partner-due-diligence/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "1.html",
+      "bytes": 727031,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.atlassian.com/platform/marketplace/pricing-payment-and-billing/",
+      "fetched_at": "2026-10-22T09:12:58.616Z",
+      "status": 200,
+      "final_url": "https://developer.atlassian.com/platform/marketplace/pricing-payment-and-billing/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "2.html",
+      "bytes": 824792,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.atlassian.com/platform/marketplace/onboarding-hub/plan/register-as-an-atlassian-marketplace-partner/",
+      "fetched_at": "2026-10-22T09:12:59.221Z",
+      "status": 200,
+      "final_url": "https://developer.atlassian.com/platform/marketplace/onboarding-hub/plan/register-as-an-atlassian-marketplace-partner/",
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "3.html",
+      "bytes": 716728,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.atlassian.com/licensing/marketplace/partneragreement",
+      "fetched_at": "2026-10-22T09:12:59.319Z",
+      "status": 200,
+      "final_url": "https://www.atlassian.com/licensing/marketplace/partneragreement",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "last-modified": "Wed, 21 Oct 2026 18:38:47 GMT"
+      },
+      "file": "4.html",
+      "bytes": 270882,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://community.developer.atlassian.com/t/does-atlassian-no-longer-support-individual-developers-publishing-apps/97755.json",
+      "fetched_at": "2026-10-22T09:12:59.522Z",
+      "status": 200,
+      "final_url": "https://community.developer.atlassian.com/t/does-atlassian-no-longer-support-individual-developers-publishing-apps/97755.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "5.json",
+      "bytes": 15317,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://community.developer.atlassian.com/t/can-a-uk-sole-trader-no-limited-company-register-as-a-paid-marketplace-vendor/101919.json",
+      "fetched_at": "2026-10-22T09:13:00.346Z",
+      "status": 200,
+      "final_url": "https://community.developer.atlassian.com/t/can-a-uk-sole-trader-no-limited-company-register-as-a-paid-marketplace-vendor/101919.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "6.json",
+      "bytes": 27054,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://community.developer.atlassian.com/t/can-an-individual-sole-proprietor-based-in-turkey-publish-and-sell-paid-marketplace-apps/102081.json",
+      "fetched_at": "2026-10-22T09:13:01.109Z",
+      "status": 200,
+      "final_url": "https://community.developer.atlassian.com/t/can-an-individual-sole-proprietor-based-in-turkey-publish-and-sell-paid-marketplace-apps/102081.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "7.json",
+      "bytes": 18827,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://community.developer.atlassian.com/t/individual-developer-no-registered-company-whats-the-minimum-verification-needed-to-publish-a-paid-via-atlassian-app/102404.json",
+      "fetched_at": "2026-10-22T09:13:01.752Z",
+      "status": 200,
+      "final_url": "https://community.developer.atlassian.com/t/individual-developer-no-registered-company-whats-the-minimum-verification-needed-to-publish-a-paid-via-atlassian-app/102404.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "8.json",
+      "bytes": 20118,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://community.developer.atlassian.com/t/partner-verification-for-a-swiss-sole-proprietorship-einzelunternehmen-what-exactly-is-needed/102458.json",
+      "fetched_at": "2026-10-22T09:13:02.393Z",
+      "status": 200,
+      "final_url": "https://community.developer.atlassian.com/t/partner-verification-for-a-swiss-sole-proprietorship-einzelunternehmen-what-exactly-is-needed/102458.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "9.json",
+      "bytes": 18607,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=0",
+      "fetched_at": "2026-10-22T09:13:02.521Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=0",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "10.json",
+      "bytes": 214481,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=50",
+      "fetched_at": "2026-10-22T09:13:03.392Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "11.json",
+      "bytes": 213432,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=100",
+      "fetched_at": "2026-10-22T09:13:04.107Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=100",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "12.json",
+      "bytes": 213071,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=150",
+      "fetched_at": "2026-10-22T09:13:04.791Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=150",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "13.json",
+      "bytes": 209830,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=200",
+      "fetched_at": "2026-10-22T09:13:05.565Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=200",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "14.json",
+      "bytes": 208218,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=250",
+      "fetched_at": "2026-10-22T09:13:06.336Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=250",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "15.json",
+      "bytes": 208522,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=300",
+      "fetched_at": "2026-10-22T09:13:07.111Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=300",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "16.json",
+      "bytes": 207705,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=350",
+      "fetched_at": "2026-10-22T09:13:07.786Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=350",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "17.json",
+      "bytes": 208572,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=400",
+      "fetched_at": "2026-10-22T09:13:08.572Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=400",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "18.json",
+      "bytes": 203186,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=450",
+      "fetched_at": "2026-10-22T09:13:09.508Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=confluence&limit=50&offset=450",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "19.json",
+      "bytes": 205209,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=0",
+      "fetched_at": "2026-10-22T09:13:10.272Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=0",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "20.json",
+      "bytes": 215490,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=50",
+      "fetched_at": "2026-10-22T09:13:11.064Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=50",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "21.json",
+      "bytes": 214879,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=100",
+      "fetched_at": "2026-10-22T09:13:11.852Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=100",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "22.json",
+      "bytes": 212568,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=150",
+      "fetched_at": "2026-10-22T09:13:12.542Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=150",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "23.json",
+      "bytes": 209603,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=200",
+      "fetched_at": "2026-10-22T09:13:13.330Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=200",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "24.json",
+      "bytes": 213350,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=250",
+      "fetched_at": "2026-10-22T09:13:14.122Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=250",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "25.json",
+      "bytes": 210076,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=300",
+      "fetched_at": "2026-10-22T09:13:14.814Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=300",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "26.json",
+      "bytes": 210982,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=350",
+      "fetched_at": "2026-10-22T09:13:15.517Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=350",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "27.json",
+      "bytes": 210474,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=400",
+      "fetched_at": "2026-10-22T09:13:16.222Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=400",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "28.json",
+      "bytes": 208602,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=450",
+      "fetched_at": "2026-10-22T09:13:16.968Z",
+      "status": 200,
+      "final_url": "https://marketplace.atlassian.com/rest/2/addons?hosting=cloud&cost=marketplace&application=jira&limit=50&offset=450",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "29.json",
+      "bytes": 205836,
+      "truncated": false
+    }
+  ]
+}

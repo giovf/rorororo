@@ -1,0 +1,52 @@
+> Portal Navigation:
+> 
+> - Append `.md` to any URL under `https://dev.wix.com/docs/` to get its markdown version.
+> - Pages are either content pages (article or reference text) or menu pages (a list of links to child pages).
+> - To get a menu page, truncate any URL to a parent path and append `.md` (e.g. `https://dev.wix.com/docs/sdk.md`, `https://dev.wix.com/docs/sdk/core-modules.md`).
+> - Top-level index of all portals: https://dev.wix.com/docs/llms.txt
+> - Full concatenated docs: https://dev.wix.com/docs/llms-full.txt
+
+# [Build Apps](https://dev.wix.com/docs/api/get-menu-content?url=https%3A%2F%2Fdev.wix.com%2Fdocs%2Fbuild-apps&format=markdown.md)
+
+## [Launch Your App](https://dev.wix.com/docs/build-apps/launch-your-app.md)
+
+
+### [Pricing and Billing](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing.md)
+
+
+- [About Monetizing Your App](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/about-monetizing-your-app.md)
+
+- [About Pricing Plans and Business Models](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/about-pricing-plans-and-business-models.md)
+
+- [The App Purchase Lifecycle in Wix](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/the-app-purchase-lifecycle-in-wix.md)
+
+- [Pricing Page Best Practices](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/pricing-page-best-practices.md)
+
+- [Set Up a Freemium Business Model](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-a-freemium-business-model.md)
+
+- [Set Up a Premium Business Model](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-a-premium-business-model.md)
+
+- [Set Up a Usage-Based Business Model](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-a-usage-based-business-model.md)
+
+- [Set Up a Pay As You Go Business Model](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-a-pay-as-you-go-business-model.md)
+
+- [Set Up One-Time Payments](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-one-time-payments.md)
+
+- [Set Up a Wix Pricing Page](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-a-wix-pricing-page.md)
+
+- [Set Up an External Pricing Page](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-an-external-pricing-page.md)
+
+- [Set Up and Manage Free Trials](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-and-manage-free-trials.md)
+
+- [Identify and Manage App Users](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/identify-and-manage-app-users.md)
+
+- [Change App Pricing](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/change-app-pricing.md)
+
+- [Report Revenue for Partner Billed Apps](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/report-revenue-for-partner-billed-apps.md)
+
+- [Payouts Dashboard](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/payouts-dashboard.md)
+
+- [Set Up Your Payout Account](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/set-up-your-payout-account.md)
+
+- [Payments and Billing FAQs](https://dev.wix.com/docs/build-apps/launch-your-app/pricing-and-billing/payments-and-billing-faqs.md)
+

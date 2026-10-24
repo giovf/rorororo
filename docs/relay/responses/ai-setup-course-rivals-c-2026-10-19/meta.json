@@ -1,0 +1,20 @@
+{
+  "request": "ai-setup-course-rivals-c-2026-10-19",
+  "fetched_at": "2026-10-19T00:20:10.705Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.stripe.com/payments/managed-payments/eligibility.md",
+      "fetched_at": "2026-10-19T00:20:10.404Z",
+      "status": 200,
+      "final_url": "https://docs.stripe.com/payments/managed-payments/eligibility.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-length": "35471"
+      },
+      "file": "1.txt",
+      "bytes": 35471,
+      "truncated": false
+    }
+  ]
+}

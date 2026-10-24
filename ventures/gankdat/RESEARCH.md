@@ -468,6 +468,27 @@ new fix item every two days. **Clock:** retire per §7 when the dataset goes 60 
 query (the `datasets 30d` reading), or re-point when the platform names a `replacement-dataset`;
 either way the row says so.
 
+Re-read 2026-10-18 (burn-down, relay `planning-origin-2026-10-18`): unchanged — `entity-count 0`,
+`phase alpha`, `replacement-dataset ""`, `entity.json?limit=5` answers `count 0`; the page now carries
+`consideration: planning-applications-decisions` and `github-discussion 25` (the platform's own
+design thread for the dataset — the re-point candidate when it republishes). Demand holds: the Apify
+actor ran 21 times in 30 days for 18 outside users (5 failed on the empty origin), so the §7 clock does
+not start. Next read 2026-10-25 (`refresh-uk-planning-reread-2026-10-18`, `not_before` moved a week).
+
+Surface pause 2026-10-19 (build, `uk-planning-apify-pause`, review W42): the re-read found the origin still
+empty, the 10-09 snapshot expired on 10-16 and cannot be re-created, Apify QA flagged the actor "under
+maintenance" on 10-17 (INBOX 14:08) and the 10-19 row counts 6 failed of 22 runs in 30 days — every one a
+buyer's or QA's run failing on the API's 503 notice. Chosen: pause, not unpublish. The actor stays public
+(unpublishing drops the 18 outside users' schedules and spends one of the day's 5 publications on the
+restore); its README opens with a dated `Paused` line and `main.mjs` ends a run that meets the `Origin paused`
+503 cleanly — status message = the notice, no items pushed, nothing charged — so the failed count stops rising
+and a scheduled run resumes by itself when the origin republishes. `/stats/uk-planning` carries a `state:
+paused` row and names every paused surface (REST, MCP, x402, Apify); the notice text now says the surfaces
+are paused rather than that a snapshot is served. Proof reads from the row: `apify 30d by actor:
+uk-planning-applications N (6 failed)` with the 6 not rising, and the actor page without the maintenance
+flag at the next `apify` reading. §7 clock unchanged (external-query clock from 10-12; demand is the actor's
+18 users, not an external key).
+
 ## Research 2026-10-13 (pipeline starved — burn-down)
 
 Read: the 10-10 → 10-12 Daily numbers rows, `docs/INBOX.md` to 10-12 23:12, `docs/ALERTS.md`, the
@@ -534,6 +555,8 @@ Queued in `docs/pipeline/queues/gankdat.json`:
 | `wave-log-cron-outcome-reading` | 6 | drop request lines and the x402 warning from the slug search and read the wave's own cron invocation (`$workers.event.cron`, `$workers.outcome`, wall time) — the reading the 10-09 build notes asked for when a night is silent; built 10-09, its first real test showed noise |
 | `refresh-uk-trademark-journal-2026-10-17` | 6 | why wave 7 dies three nights in four (hypotheses ordered: a new-issue night exceeding the CPU/wall limit; memory on the 162k-row index + XML parse; the trigger), fix so every night writes a row; filed under the auto-filer's id so the 10-17 row extends it |
 | 2026-10-17 | Daily numbers | 3 accts (0 paid, +0/24h) | — | 1 x402 paid (+1 own probe) | MCP 24h: 148 authed, 2736 anon, 88 preview, 4 paywall hits; wanted: connect_account 4; changes 7d: 0 (mcp 0, rest 0); indexnow: 15 urls 200; x402 validate: 17/17 valid; bazaar: 1 listed, 1 calls/30d, 1 payers, last 2026-10-16; mcp probe: init 200, tools 200 (25 tools), call 200; authed: init 200, tools 200 (25 tools), call 200; wave log: uk-planning wave 05:00: no invocation in 26 h, [error] Error compiling schema, function code: const schema1 = scope.schema[1]; const sch 5 min ago (16 of 20 lines); feeds 30d: 45 fetches, 7 user agents, 45 renders; apify: 357 runs (+35/24h), 30d: 355 runs (1 ours, 354 others), 18 users/30d, 18 public; apify 30d by actor: uk-food-hygiene-ratings 23, uk-care-locations-cqc 22, uk-charities-register 22, uk-new-companies-incorporations 22, uk-public-tenders-find-a-tender 22, uk-visa-sponsors-register 22, eu-public-tenders-ted 21, uk-corporate-insolvency-notices-gazette 21, uk-planning-applications 21 (5 failed), uk-sanctions-list-fcdo 21, us-federal-exclusions-sam-gov 20, nhs-organisations-ods 18, uk-contract-awards-contracts-finder 18, uk-no-website-leads 18 (2 failed), uk-schools-gias-ofsted 18, uk-trademark-journal-watch 18, uk-gambling-commission-licence-register 17, uk-companies-house-lookup-monitor 10; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; oauth: 0 connects/24h, 0/30d; connect_account 7d by UA: python-requests/2.34.2 26, BrickBlueBot/0.1 (+https://brick.blue/bot?h=gank 5, node 2; oauth funnel 7d: 83 challenges (preview_exhausted 47, protected_tool 36), 2 authorize, 0 rejected, 2 sign-in, 0 email, 0 consent, 0 approved, 0 denied, 0 expired, 12 token (refresh_token 12), 0 token errors; after wall 1h (7d): 0 clients — request_api_key 0, x402 0, connect 0, gone 0; cf usage (10-10→10-17): d1 0.2M writes / 472.6M reads, 3.6 GB, kv 0.0M reads / 0.0M writes, workers 0.0M req, ae 0.0M pts ≈ US$0 overage; stats crawlers: logs 0 fetches/7d, AI 0 (none); zone n/a (zone: Actor 'com.cloudflare.api.token.c42d0370c6783e3a270770a3a775243c' does not have ); /mcp 63763 req/30d, AI 236 (Claude-User 193, PetalBot 24, Amazonbot 12, ClaudeBot 2, Applebot 1, Google-Extended 1); datasets 30d: uk-care-locations 299, uk-food-hygiene 169, eu-ted 162, nhs-ods 162, uk-sanctions 162, uk-tenders 162, uk-charities 161, uk-companies 161, uk-schools 161, sam-exclusions 160, uk-gambling-operators 160, uk-sponsors 160, uk-insolvency 159, uk-trademark-journal 158, uk-contract-awards 142, uk-planning 138, uk-company-profiles 10; datasets 30d external: none; 0: eu-ted, nhs-ods, sam-exclusions, uk-care-locations, uk-charities, uk-companies, uk-company-profiles, uk-contract-awards, uk-food-hygiene, uk-gambling-operators, uk-insolvency, uk-planning, uk-sanctions, uk-schools, uk-sponsors, uk-tenders, uk-trademark-journal; refresh errors: uk-planning (origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.), apify-uk-planning-applications (2 new failed run(s) since the last row, 5 of 21 in 30 d); search 7d to 10-16: 22 impressions, 0 clicks, avg pos 6.6, top /stats/uk-trademark-journal/class/24 5, indexed 7/19, not: Discovered - currently not indexed ×9, URL is unknown to Google ×3 |
+| 2026-10-18 | Daily numbers | 3 accts (0 paid, +0/24h) | — | 3 x402 paid | MCP 24h: 143 authed, 2970 anon, 88 preview, 4 paywall hits; wanted: connect_account 4; changes 7d: 0 (mcp 0, rest 0); indexnow: 15 urls 200; x402 validate: 17/17 valid; bazaar: 1 listed, 3 calls/30d, 3 payers, last 2026-10-18; mcp probe: init 200, tools 200 (25 tools), call n/a (The operation was aborted due to timeout); authed: init 200, tools 200 (25 tools), call 200; wave log: uk-planning wave 05:00: no invocation in 26 h, [error] Error compiling schema, function code: const schema1 = scope.schema[1]; const sch 13.7 h ago (11 of 12 lines); feeds 30d: 50 fetches, 7 user agents, 50 renders; apify: 358 runs (+1/24h), 30d: 356 runs (1 ours, 355 others), 18 users/30d, 18 public; apify 30d by actor: uk-food-hygiene-ratings 23, uk-care-locations-cqc 22, uk-charities-register 22, uk-new-companies-incorporations 22, uk-public-tenders-find-a-tender 22, uk-visa-sponsors-register 22, eu-public-tenders-ted 21, uk-corporate-insolvency-notices-gazette 21, uk-planning-applications 21 (5 failed), uk-sanctions-list-fcdo 21, us-federal-exclusions-sam-gov 20, nhs-organisations-ods 18, uk-contract-awards-contracts-finder 18, uk-gambling-commission-licence-register 18, uk-no-website-leads 18 (2 failed), uk-schools-gias-ofsted 18, uk-trademark-journal-watch 18, uk-companies-house-lookup-monitor 10; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; oauth: 0 connects/24h, 0/30d; connect_account 7d by UA: python-requests/2.34.2 26, BrickBlueBot/0.1 (+https://brick.blue/bot?h=gank 5, agent-collector/0.1 (+capability survey/ no paym 1; oauth funnel 7d: 33 challenges (protected_tool 33), 2 authorize, 0 rejected, 2 sign-in, 0 email, 0 consent, 0 approved, 0 denied, 0 expired, 12 token (refresh_token 12), 0 token errors; after wall 1h (7d): 0 clients — request_api_key 0, x402 0, connect 0, gone 0; cf usage (10-10→10-18): d1 0.2M writes / 511.2M reads, 3.6 GB, kv 0.0M reads / 0.0M writes, workers 0.1M req, ae 0.0M pts ≈ US$0 overage; stats crawlers: logs 0 fetches/7d, AI 0 (none) — 23 lines matched, none a request line; zone n/a (zone: Actor 'com.cloudflare.api.token.c42d0370c6783e3a270770a3a775243c' does not have ); /mcp 65179 req/30d, AI 243 (Claude-User 195, PetalBot 29, Amazonbot 12, ClaudeBot 2, Applebot 1, Google-Extended 1); datasets 30d: uk-care-locations 299, sam-exclusions 169, uk-gambling-operators 169, eu-ted 162, nhs-ods 162, uk-sanctions 162, uk-tenders 162, uk-charities 161, uk-companies 161, uk-schools 161, uk-food-hygiene 160, uk-insolvency 160, uk-sponsors 160, uk-trademark-journal 158, uk-contract-awards 142, uk-planning 138, uk-company-profiles 10; datasets 30d external: none; 0: eu-ted, nhs-ods, sam-exclusions, uk-care-locations, uk-charities, uk-companies, uk-company-profiles, uk-contract-awards, uk-food-hygiene, uk-gambling-operators, uk-insolvency, uk-planning, uk-sanctions, uk-schools, uk-sponsors, uk-tenders, uk-trademark-journal; refresh errors: mcp-probe (call n/a (The operation was aborted due to timeout)), uk-planning (origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.); search 7d to 10-17: 19 impressions, 0 clicks, avg pos 6.8, top /stats/uk-trademark-journal/class/24 5, indexed 7/18, not: Discovered - currently not indexed ×8, URL is unknown to Google ×3, 1 inspection failed |
+
 
 
 Not queued: the x402 warning at source (only if cheap inside the reading item — the lane is unaffected);
@@ -566,3 +589,224 @@ Relay `cf-query-builder-2026-10-17` (read the same run): the Query Builder page 
 documented naming; `wrangler tail`'s object (`outcome: "ok"`, `event`, `eventTimestamp`) is the same record.
 `refresh-uk-trademark-journal-2026-10-17` waits for the 10-17 row (`not_before` 2026-10-18).
 
+## Build 2026-10-18 — refresh progress marker (build)
+
+Built `refresh-uk-trademark-journal-2026-10-17` (score 6). Evidence first: the 10-17 and 10-18 Daily
+numbers rows list no stale journal, so wave 7 wrote `ok` rows on both nights (ok 10-10, silent
+10-11..13, ok 10-14, silent 10-15/16, ok 10-17, ok 10-18 — two in a row, not "every fourth night")
+and the cron-outcome reading built on 10-17 never ran for it. And the 10-16 metrics job log (run
+38866226604), the first real read of the slug query, returned not one line from any cron wave in
+24 h: uk-planning's 7 lines were request lines and the x402 warning, though wave 1 refreshed 14
+sources that morning and logs `refresh_wave` with its slugs, and uk-planning's nightly failure
+logs `refresh_failed`. Workers Logs, as the runner queries them, see HTTP invocations only; the
+clause now says `no invocation logged in 26 h` and `wave-log-cron-query-blind` (4) is queued to find
+the filter or retire the clause. So the diagnosis cannot come from logs — it has to come from the
+Worker itself.
+
+What changed: `src/sources/progress.ts`. Every attempt puts `refresh:progress:<slug>` in KV at
+start and at each phase — `backfill`, `index N rows`, `stream N records` (every 25k), `written`,
+`stats` — and deletes it once its own `refresh_log` row is written (one KV write a second per key:
+closer marks are skipped, the delete waits the gap). A marker still there when the next attempt
+starts means the previous one was killed with no `catch`: `recordSilentRefresh` writes the row that
+night owed — `error`, `silent refresh started 2026-10-15 06:05:03Z died after stream 120000 records
+at 612 s, no row written` (no parentheses or pipes, the row parser splits on them). So a silent night
+has its row by the next 06:05, before the 07:13 metrics job; a second silent night in a row shows
+under `refresh errors` with the phase. Two defensive changes with it: the `ok` row is written before
+the best-effort stats in all three paths (`refreshD1Delta`, `refreshD1Full`, `refreshSource`) — the
+45-class facet aggregation is the longest phase of the journal's wave and a kill inside it took the
+night's row with it; and the journal's issue fetch carries `AbortSignal.timeout(5 min)` so a request
+the IPO never answers becomes an error row, not a silent death (its missing-issue probes re-run
+every 5 days for 11 unpublished ids). The Daily numbers row carries `silent nights: <slug> started <when> died after <phase> …` on
+the day such a row is written, whatever followed it (a later `ok` row rightly hides it from `refresh
+errors`), so the follow-up item reads the phase from the repo. Tests: `test/refresh-progress.spec.ts` (5),
+`refresh-retry` adjusted to ignore the marker's KV writes. Taskmaster row 38. No version bump (refresh internals,
+no surface change). Root cause still open by design: `refresh-uk-trademark-journal-silent-row-2026-10-22`
+(5) reads the first silent-refresh row and fixes the phase it names, or drops on 10-25 with four
+clean rows.
+
+## Research 2026-10-19 (pipeline starved — burn-down)
+
+Read: the 10-17 and 10-18 Daily numbers rows (the two written since the 10-17 pass), the 10-18 metrics
+job log (run 39106552120), `docs/INBOX.md` to 10-18 23:04, `docs/ALERTS.md`, the queue, review W42's
+three gankdat items (10-18) and `src/x402/routes.ts` / `scripts/metrics.mjs` for what the `x402 paid`
+clause can and cannot say. **What changed:** the first external x402 payments in the lane's life —
+`1 x402 paid (+1 own probe)` on 10-17 and `3 x402 paid` on 10-18 (24-h counts excluding the
+`gankdat-x402-probe/` user agent), `bazaar: 1 listed, 3 calls/30d, 3 payers, last 2026-10-18` (CDP's own
+numbers for the one indexed resource; the probe skipped itself on 10-18 because its 10-17 payment was
+under the 7-day spacing). Everything else is the 10-17 reading: 3 accounts, 0 paid, `datasets 30d external:
+none`, `after wall 1h: 0 clients`, the OAuth sign-in reading still the two 10-13 events, `x402 validate:
+17/17 valid`, search 7/18 indexed with 0 clicks, Apify 18 users/30d, uk-planning still empty at the 10-18
+re-read, the journal's two clean nights after the progress marker. **Already acted on:** review W42
+(10-18) queued `x402-bazaar-week-1-index-check` (10-23: why 1 of 17 routes is listed), `uk-planning-apify-pause`
+(opens 10-19 07:00) and `refresh-uk-trademark-journal-silent-row-2026-10-22`, and set the ledger
+convention for USDC receipts (carry the running total in RESEARCH.md until it reaches £0.01; US$0.015 so far).
+
+**The one gap the rows leave:** nothing the routines read says *what sold*. The `x402_paid` analytics
+point carries the user agent (blob2), the path (blob3), the slug (blob5) and the hashed client id (blob6),
+but `metrics.mjs` reads it only as a count in `kinds` and as a `moveRows` kind for the after-wall clause;
+the `bazaar:` clause sums CDP's per-resource numbers over every resource (`bazaarSummary`) and the job log
+prints no resource list. So the row says `3 x402 paid` and neither the dataset, the number of distinct
+payers by our own count, nor whether the payers are the Bazaar's discovery clients, a script, or one
+agent retrying is readable without `npm run traffic` and a Cloudflare token no routine holds. Both dated
+reads that follow (10-23 week-1, 11-14 day-30) and the "extend: more routes, curation tier" decision are
+by resource, and the §7 dataset clock (`datasets 30d external`) does not count x402 calls at all — a paid
+x402 call on a register is external demand it should see.
+
+Queued in `docs/pipeline/queues/gankdat.json`:
+
+| Item | Score | Why now |
+| --- | --- | --- |
+| `x402-paid-by-source-reading` | 5 | the `x402 paid` clause names the source, the UA family and the distinct client count for the 24-h and 30-day external payments (`3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients; python-requests 2, x402-fetch 1)`; `x402 30d: …`), the runner prints CDP's per-resource list under the `bazaar:` read, and paid x402 calls count toward `datasets 30d external`. Pure SQL on blobs already written, a clause and its test — 0.05 day; the first three sales are two days old and unnamed |
+| 2026-10-19 | Daily numbers | 3 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 139 authed, 3138 anon, 112 preview, 6 paywall hits; wanted: connect_account 6; changes 7d: 0 (mcp 0, rest 0); indexnow: 15 urls 200; x402 validate: 17/17 valid; bazaar: 1 listed, 3 calls/30d, 3 payers, last 2026-10-18; x402 30d: 3 paid, 3 clients — uk-tenders 3; SettledScout 1, lumiere-paycheck-prober 1, vet402-observatory-l1 1; mcp probe: init 200, tools 200 (25 tools), call 200; authed: init 200, tools 200 (25 tools), call 200; wave log: uk-planning wave 05:00: no invocation logged in 26 h, no log line in 24 h (2 noise lines); feeds 30d: 51 fetches, 8 user agents, 51 renders; apify: 376 runs (+18/24h), 30d: 374 runs (1 ours, 373 others), 18 users/30d, 18 public; apify 30d by actor: uk-food-hygiene-ratings 24, uk-care-locations-cqc 23, uk-charities-register 23, uk-new-companies-incorporations 23, uk-public-tenders-find-a-tender 23, uk-visa-sponsors-register 23, eu-public-tenders-ted 22, uk-corporate-insolvency-notices-gazette 22, uk-planning-applications 22 (6 failed), uk-sanctions-list-fcdo 22, us-federal-exclusions-sam-gov 21, nhs-organisations-ods 19, uk-contract-awards-contracts-finder 19, uk-gambling-commission-licence-register 19, uk-no-website-leads 19 (2 failed), uk-schools-gias-ofsted 19, uk-trademark-journal-watch 19, uk-companies-house-lookup-monitor 11; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; oauth: 0 connects/24h, 0/30d; connect_account 7d by UA: python-requests/2.34.2 26, BrickBlueBot/0.1 (+https://brick.blue/bot?h=gank 5, agent-collector/0.1 (+capability survey/ no paym 1; oauth funnel 7d: 33 challenges (protected_tool 33), 2 authorize, 0 rejected, 2 sign-in, 0 email, 0 consent, 0 approved, 0 denied, 0 expired, 14 token (refresh_token 14), 0 token errors; after wall 1h (7d): 0 clients — request_api_key 0, x402 0, connect 0, gone 0; cf usage (10-10→10-19): d1 0.2M writes / 570.4M reads, 3.6 GB, kv 0.0M reads / 0.0M writes, workers 0.1M req, ae 0.0M pts ≈ US$0 overage; stats crawlers: logs 0 fetches/7d, AI 0 (none) — 21 lines matched, none a request line; zone n/a (zone: Actor 'com.cloudflare.api.token.c42d0370c6783e3a270770a3a775243c' does not have ); /mcp 67601 req/30d, AI 252 (Claude-User 203, PetalBot 29, Amazonbot 12, ClaudeBot 2, Applebot 1, Google-Extended 1); datasets 30d: uk-care-locations 319, uk-gambling-operators 180, uk-food-hygiene 179, eu-ted 172, uk-sanctions 172, uk-tenders 172, nhs-ods 171, uk-charities 171, uk-companies 171, uk-schools 171, sam-exclusions 170, uk-sponsors 170, uk-insolvency 169, uk-trademark-journal 168, uk-contract-awards 152, uk-planning 138, uk-company-profiles 11; datasets 30d external: uk-tenders 3 (x402 3); 0: eu-ted, nhs-ods, sam-exclusions, uk-care-locations, uk-charities, uk-companies, uk-company-profiles, uk-contract-awards, uk-food-hygiene, uk-gambling-operators, uk-insolvency, uk-planning, uk-sanctions, uk-schools, uk-sponsors, uk-trademark-journal; refresh errors: uk-planning (origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.), apify-uk-planning-applications (1 new failed run(s) since the last row, 6 of 22 in 30 d); search 7d to 10-18: 18 impressions, 0 clicks, avg pos 10.3, top /terms 4, indexed 8/19, not: Discovered - currently not indexed ×9, URL is unknown to Google ×2 |
+| 2026-10-20 | Daily numbers | 4 accts (0 paid, +1/24h) | — | 0 x402 paid | MCP 24h: 155 authed, 3126 anon, 84 preview, 3 paywall hits; wanted: connect_account 3; changes 7d: 1 (mcp 0, rest 1); indexnow: 15 urls 200; x402 validate: 17/17 valid; bazaar: 1 listed, 3 calls/30d, 3 payers, last 2026-10-18; x402 30d: 3 paid, 3 clients — uk-tenders 3; SettledScout 1, lumiere-paycheck-prober 1, vet402-observatory-l1 1; mcp probe: init 200, tools 200 (25 tools), call 200; authed: init 200, tools 200 (25 tools), call 200; wave log: uk-planning wave 05:00: no invocation logged in 26 h, no log line in 24 h (10 noise lines); feeds 30d: 54 fetches, 8 user agents, 54 renders; apify: 395 runs (+19/24h), 30d: 392 runs (1 ours, 391 others), 19 users/30d, 18 public; apify 30d by actor: uk-visa-sponsors-register 25, uk-care-locations-cqc 24, uk-charities-register 24, uk-food-hygiene-ratings 24, uk-new-companies-incorporations 24, uk-public-tenders-find-a-tender 24, eu-public-tenders-ted 23, uk-corporate-insolvency-notices-gazette 23, uk-planning-applications 23 (7 failed), uk-sanctions-list-fcdo 23, us-federal-exclusions-sam-gov 22, nhs-organisations-ods 20, uk-contract-awards-contracts-finder 20, uk-gambling-commission-licence-register 20, uk-no-website-leads 20 (2 failed), uk-schools-gias-ofsted 20, uk-trademark-journal-watch 20, uk-companies-house-lookup-monitor 12; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; oauth: 0 connects/24h, 0/30d; connect_account 7d by UA: python-requests/2.34.2 25, BrickBlueBot/0.1 (+https://brick.blue/bot?h=gank 4, SentinelOracle/0.1 (+https://glimind.com/opt-out 1; oauth funnel 7d: 30 challenges (protected_tool 30), 0 authorize, 2 rejected (invalid_target: resource must be https://gankdat.com/mcp 2), 0 sign-in, 0 email, 0 consent, 0 approved, 0 denied, 0 expired, 14 token (refresh_token 14), 0 token errors; after wall 1h (7d): 0 clients — request_api_key 0, x402 0, connect 0, gone 0; cf usage (10-10→10-20): d1 0.3M writes / 634.0M reads, 3.6 GB, kv 0.0M reads / 0.0M writes, workers 0.1M req, ae 0.0M pts ≈ US$0 overage; stats crawlers: logs 0 fetches/7d, AI 0 (none) — 14 lines matched, none a request line; zone n/a (zone: Actor 'com.cloudflare.api.token.c42d0370c6783e3a270770a3a775243c' does not have ); /mcp 70015 req/30d, AI 271 (Claude-User 219, PetalBot 32, Amazonbot 12, ClaudeBot 2, Applebot 1, Google-Extended 1); datasets 30d: uk-care-locations 339, uk-gambling-operators 190, uk-food-hygiene 189, eu-ted 182, uk-sanctions 182, uk-tenders 182, nhs-ods 181, uk-charities 181, uk-companies 181, uk-schools 181, sam-exclusions 180, uk-sponsors 180, uk-trademark-journal 180, uk-insolvency 179, uk-contract-awards 162, uk-planning 138, uk-company-profiles 12; datasets 30d external: uk-tenders 3 (x402 3), uk-trademark-journal 2; 0: eu-ted, nhs-ods, sam-exclusions, uk-care-locations, uk-charities, uk-companies, uk-company-profiles, uk-contract-awards, uk-food-hygiene, uk-gambling-operators, uk-insolvency, uk-planning, uk-sanctions, uk-schools, uk-sponsors; refresh errors: uk-planning (origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.), apify-uk-planning-applications (1 new failed run(s) since the last row, 7 of 23 in 30 d); search 7d to 10-19: 16 impressions, 0 clicks, avg pos 9.3, top /terms 4, indexed 8/19, not: URL is unknown to Google ×6, Discovered - currently not indexed ×5 |
+| 2026-10-21 | Daily numbers | 4 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 167 authed, 3121 anon, 103 preview, 5 paywall hits; wanted: connect_account 5; changes 7d: 4 (mcp 0, rest 4); indexnow: 15 urls 200; x402 validate: 17/17 valid; bazaar: 1 listed, 3 calls/30d, 3 payers, last 2026-10-18; x402 30d: 3 paid, 3 clients — uk-tenders 3; SettledScout 1, lumiere-paycheck-prober 1, vet402-observatory-l1 1; mcp probe: init 200, tools 200 (25 tools), call 200; authed: init 200, tools 200 (25 tools), call 200; wave log: uk-planning wave 05:00: ok 79.0s 1.9 h ago, [error] origin dataset empty: planning-application answered count 0 (emptied on planning 2.0 h ago (2 of 10 lines); feeds 30d: 54 fetches, 8 user agents, 54 renders; apify: 416 runs (+21/24h), 30d: 412 runs (0 ours, 412 others), 19 users/30d, 18 public; apify 30d by actor: uk-visa-sponsors-register 28, uk-food-hygiene-ratings 26, uk-care-locations-cqc 25, uk-charities-register 25, uk-new-companies-incorporations 25, uk-public-tenders-find-a-tender 25, eu-public-tenders-ted 24, uk-corporate-insolvency-notices-gazette 24, uk-planning-applications 24 (7 failed), uk-sanctions-list-fcdo 24, us-federal-exclusions-sam-gov 23, nhs-organisations-ods 21, uk-contract-awards-contracts-finder 21, uk-gambling-commission-licence-register 21, uk-no-website-leads 21 (2 failed), uk-schools-gias-ofsted 21, uk-trademark-journal-watch 21, uk-companies-house-lookup-monitor 13; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; oauth: 0 connects/24h, 0/30d; connect_account 7d by UA: python-requests/2.34.2 24, BrickBlueBot/0.1 (+https://brick.blue/bot?h=gank 4, SentinelOracle/0.1 (+https://glimind.com/opt-out 1; oauth funnel 7d: 29 challenges (protected_tool 29), 0 authorize, 2 rejected (invalid_target: resource must be https://gankdat.com/mcp 2), 0 sign-in, 0 email, 0 consent, 0 approved, 0 denied, 0 expired, 15 token (refresh_token 15), 0 token errors; after wall 1h (7d): 0 clients — request_api_key 0, x402 0, connect 0, gone 0; cf usage (10-10→10-21): d1 0.3M writes / 694.6M reads, 3.7 GB, kv 0.0M reads / 0.0M writes, workers 0.1M req, ae 0.0M pts ≈ US$0 overage; stats crawlers: logs 0 fetches/7d, AI 0 (none) — 134 lines matched, none a request line; zone n/a (zone: Actor 'com.cloudflare.api.token.c42d0370c6783e3a270770a3a775243c' does not have ); /mcp 71308 req/30d, AI 277 (Claude-User 225, PetalBot 32, Amazonbot 12, ClaudeBot 2, Applebot 1, Google-Extended 1); datasets 30d: uk-care-locations 359, uk-gambling-operators 200, uk-food-hygiene 199, eu-ted 192, uk-sanctions 192, uk-tenders 192, uk-charities 191, uk-companies 191, uk-schools 191, nhs-ods 190, sam-exclusions 190, uk-sponsors 190, uk-trademark-journal 190, uk-insolvency 189, uk-contract-awards 171, uk-planning 138, uk-company-profiles 13; datasets 30d external: uk-tenders 3 (x402 3), uk-trademark-journal 2; 0: eu-ted, nhs-ods, sam-exclusions, uk-care-locations, uk-charities, uk-companies, uk-company-profiles, uk-contract-awards, uk-food-hygiene, uk-gambling-operators, uk-insolvency, uk-planning, uk-sanctions, uk-schools, uk-sponsors; refresh errors: uk-planning (origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.); search 7d to 10-20: 14 impressions, 0 clicks, avg pos 10.2, top /terms 3, indexed 8/19, not: Discovered - currently not indexed ×9, URL is unknown to Google ×2 |
+| 2026-10-22 | Daily numbers | 4 accts (0 paid, +0/24h) | — | 0 x402 paid | MCP 24h: 272 authed, 1728 anon, 107 preview, 4 paywall hits; wanted: connect_account 4; changes 7d: 4 (mcp 0, rest 4); indexnow: 15 urls 200; x402 validate: 17/17 valid; bazaar: 1 listed, 3 calls/30d, 3 payers, last 2026-10-18; x402 30d: 3 paid, 3 clients — uk-tenders 3; SettledScout 1, lumiere-paycheck-prober 1, vet402-observatory-l1 1; mcp probe: init 200, tools 200 (25 tools), call 200; authed: init 200, tools 200 (25 tools), call 200; wave log: uk-planning wave 05:00: ok 104.0s 15.2 h ago, no log line in 24 h (11 noise lines); feeds 30d: 59 fetches, 9 user agents, 59 renders; apify: 451 runs (+35/24h), 30d: 447 runs (0 ours, 447 others), 19 users/30d, 18 public; apify 30d by actor: uk-visa-sponsors-register 31, uk-care-locations-cqc 27, uk-charities-register 27, uk-food-hygiene-ratings 27, uk-new-companies-incorporations 27, uk-public-tenders-find-a-tender 27, eu-public-tenders-ted 26, uk-corporate-insolvency-notices-gazette 26, uk-planning-applications 26 (7 failed), uk-sanctions-list-fcdo 26, us-federal-exclusions-sam-gov 25, nhs-organisations-ods 23, uk-contract-awards-contracts-finder 23, uk-no-website-leads 23 (2 failed), uk-schools-gias-ofsted 23, uk-trademark-journal-watch 23, uk-gambling-commission-licence-register 22, uk-companies-house-lookup-monitor 15; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; oauth: 0 connects/24h, 0/30d; connect_account 7d by UA: python-requests/2.34.2 23, BrickBlueBot/0.1 (+https://brick.blue/bot?h=gank 3, SentinelOracle/0.1 (+https://glimind.com/opt-out 1; oauth funnel 7d: 27 challenges (protected_tool 27), 0 authorize, 2 rejected (invalid_target: resource must be https://gankdat.com/mcp 2), 0 sign-in, 0 email, 0 consent, 0 approved, 0 denied, 0 expired, 14 token (refresh_token 14), 0 token errors; after wall 1h (7d): 0 clients — request_api_key 0, x402 0, connect 0, gone 0; cf usage (10-10→10-22): d1 0.4M writes / 764.8M reads, 3.7 GB, kv 0.0M reads / 0.0M writes, workers 0.1M req, ae 0.0M pts ≈ US$0 overage; stats crawlers: logs 0 fetches/7d, AI 0 (none) — 146 lines matched, none a request line; zone n/a (zone: Actor 'com.cloudflare.api.token.c42d0370c6783e3a270770a3a775243c' does not have ); /mcp 73421 req/30d, AI 385 (Claude-User 332, PetalBot 34, Amazonbot 11, ClaudeBot 2, Applebot 1, Google-Extended 1); datasets 30d: uk-care-locations 399, uk-food-hygiene 219, uk-companies 213, eu-ted 212, uk-sanctions 212, uk-schools 211, uk-tenders 211, nhs-ods 210, sam-exclusions 210, uk-charities 210, uk-gambling-operators 210, uk-sponsors 210, uk-trademark-journal 210, uk-insolvency 209, uk-contract-awards 191, uk-planning 138, uk-company-profiles 15; datasets 30d external: uk-tenders 3 (x402 3), uk-trademark-journal 2; 0: eu-ted, nhs-ods, sam-exclusions, uk-care-locations, uk-charities, uk-companies, uk-company-profiles, uk-contract-awards, uk-food-hygiene, uk-gambling-operators, uk-insolvency, uk-planning, uk-sanctions, uk-schools, uk-sponsors; refresh errors: uk-planning (origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.); search 7d to 10-21: 14 impressions, 0 clicks, avg pos 12.1, top /stats/nhs-ods 9, indexed 8/19, not: Discovered - currently not indexed ×10, URL is unknown to Google ×1 |
+| 2026-10-23 | Daily numbers | 4 accts (0 paid, +0/24h) | — | 0 x402 paid (+10 own probe) | MCP 24h: 167 authed, 1674 anon, 108 preview, 5 paywall hits; wanted: connect_account 5; changes 7d: 4 (mcp 0, rest 4); indexnow: 15 urls 200; x402 validate: 17/17 valid; bazaar: 2 listed, 3 calls/30d, 3 payers, last 2026-10-23; x402 30d: 3 paid, 3 clients — uk-tenders 3; SettledScout 1, lumiere-paycheck-prober 1, vet402-observatory-l1 1; mcp probe: init 200, tools 200 (25 tools), call 200; authed: init 200, tools 200 (25 tools), call 200; wave log: uk-planning wave 05:00: ok 108.1s 4.7 h ago, [log] [x402] extension responses: {"bazaar":{"status":"processing"}} 20 min ago (1 of 11 lines); uk-sanctions wave 05:00: ok 108.1s 4.7 h ago, no log line in 24 h (10 noise lines); feeds 30d: 60 fetches, 9 user agents, 60 renders; apify: 458 runs (+7/24h), 30d: 442 runs (0 ours, 442 others), 19 users/30d, 18 public; apify 30d by actor: uk-visa-sponsors-register 30, eu-public-tenders-ted 26, uk-care-locations-cqc 26, uk-charities-register 26, uk-corporate-insolvency-notices-gazette 26, uk-food-hygiene-ratings 26, uk-new-companies-incorporations 26, uk-planning-applications 26 (7 failed), uk-public-tenders-find-a-tender 26, uk-sanctions-list-fcdo 26, us-federal-exclusions-sam-gov 25, nhs-organisations-ods 23, uk-contract-awards-contracts-finder 23, uk-gambling-commission-licence-register 23, uk-no-website-leads 23 (2 failed), uk-schools-gias-ofsted 23, uk-trademark-journal-watch 23, uk-companies-house-lookup-monitor 15; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; oauth: 0 connects/24h, 0/30d; connect_account 7d by UA: python-requests/2.34.2 24, BrickBlueBot/0.1 (+https://brick.blue/bot?h=gank 4, SentinelOracle/0.1 (+https://glimind.com/opt-out 1; oauth funnel 7d: 29 challenges (protected_tool 29), 0 authorize, 2 rejected (invalid_target: resource must be https://gankdat.com/mcp 2), 0 sign-in, 0 email, 0 consent, 0 approved, 0 denied, 0 expired, 14 token (refresh_token 14), 0 token errors; after wall 1h (7d): 0 clients — request_api_key 0, x402 0, connect 0, gone 0; cf usage (10-10→10-23): d1 0.4M writes / 819.7M reads, 3.7 GB, kv 0.0M reads / 0.0M writes, workers 0.1M req, ae 0.0M pts ≈ US$0 overage; stats crawlers: logs 0 fetches/7d, AI 0 (none) — 150 lines matched, none a request line; zone n/a (zone: Actor 'com.cloudflare.api.token.c42d0370c6783e3a270770a3a775243c' does not have ); /mcp 74036 req/30d, AI 384 (Claude-User 336, PetalBot 35, Amazonbot 10, OAI-SearchBot 1, ClaudeBot 1, Meta-ExternalAgent 1); datasets 30d: uk-care-locations 409, uk-food-hygiene 229, uk-schools 221, nhs-ods 220, uk-gambling-operators 220, uk-trademark-journal 220, uk-companies 213, eu-ted 212, uk-sanctions 212, uk-tenders 211, sam-exclusions 210, uk-charities 210, uk-sponsors 210, uk-insolvency 209, uk-contract-awards 201, uk-planning 138, uk-company-profiles 15; datasets 30d external: uk-tenders 3 (x402 3), uk-trademark-journal 2; 0: eu-ted, nhs-ods, sam-exclusions, uk-care-locations, uk-charities, uk-companies, uk-company-profiles, uk-contract-awards, uk-food-hygiene, uk-gambling-operators, uk-insolvency, uk-planning, uk-sanctions, uk-schools, uk-sponsors; silent nights: uk-sanctions started 2026-10-22 05:01:43Z died after written 6408 records at 3 s, no row written; refresh errors: uk-planning (origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.); search 7d to 10-22: 12 impressions, 0 clicks, avg pos 13.3, top /stats/nhs-ods 10, indexed 8/19, not: Discovered - currently not indexed ×9, URL is unknown to Google ×2 |
+
+
+
+
+
+
+Not queued: a first-call nudge email for the three accounts with no call in a week (a product lever on a
+line that has not earned; STRATEGY §5 ranks it behind the dated reads, and the agent-side sign-ups the wall
+is built for would never see it); more routes or a price change before the week-1 index read says why 16
+routes are unlisted; the zone-analytics token scope (10-17 handoff, attended session). `researched:
+2026-10-19`, `research_after: 2026-10-23` — the week-1 Bazaar read is the next dated signal; the item above
+is buildable now and `next` names it alongside `uk-planning-apify-pause` from 07:00.
+
+## Build 2026-10-19 — what sold on x402 (burn-down)
+
+Built `x402-paid-by-source-reading` (score 5), the gap this night's research pass found. What changed:
+`src/lib/x402-sales.ts` (pure, tested in `test/x402-sales.spec.ts`) renders the row's sales cell from a
+grouped read of the `x402_paid` points — `3 x402 paid (uk-sanctions 2, eu-ted 1; 3 clients;
+python-requests 2, x402-fetch 1)`, the bare count kept when nothing sold, the grouped read failed, or
+the two reads disagree — and a `x402 30d: N paid, C clients — <slug> N, …; <family> N, …` clause after
+the `bazaar:` one; `metrics.mjs` runs the two grouped queries (24 h and 30 d, slug × UA × client, the
+probe's user agent excluded in SQL); paid x402 calls count in `datasets 30d external` as `<slug> N (x402
+N)`; and the Bazaar read prints `bazaar resource: <url> calls C payers P last <date>` per resource of ours
+in the job log (`bazaarResourceLines`, tested). The UA family is the first token up to `/`, a space or `(`,
+with pipes, semicolons and parentheses dropped so the row parsers hold. No Worker change, no version bump.
+What the 10-19 row should say: the sales cell names the dataset and client count of any payment since
+07:10 on 10-18, the `x402 30d:` clause names the three 10-17/18 payments' source and UA family, and the
+job log lists the one indexed resource with its 3 calls / 3 payers. Limits: the owner's own non-probe
+payments cannot be told from a buyer's (only the probe UA is excluded), and points from before 10-11
+carry no client id, so `clients` can read below `paid`.
+
+## Build 2026-10-23 — x402 Bazaar week-1 index read (build)
+
+**Read:** the 07:14 metrics job log (`bazaar resource:` lines), the Daily numbers rows 10-17 → 10-23,
+CDP's seller guide *Get discovered (Bazaar)* (docs.cdp.coinbase.com/x402/seller/get-discovered, through
+the relay, `docs/relay/responses/x402-bazaar-index-2026-10-23/`), and cdp-sdk issues #806 and #759.
+**What the catalogue holds:** one resource of ours — `https://gankdat.com/x402/data/uk-tenders`, 3
+calls / 3 payers / last 2026-10-18 — while `x402 validate: 17/17 valid` every day. uk-tenders is the
+test client's default target: the 10-16 onboarding call, the 10-17 probe and all three external
+payments (10-17/18) hit it, and no other route has ever settled a payment. **Why (documented):** CDP
+indexes per resource — "every validated endpoint is eligible for indexing in the CDP Bazaar after a
+successful settled payment"; "on the settlement call that triggers indexing, set both
+`paymentPayload.extensions.bazaar` and `paymentPayload.resource`" (the x402 v2 client does; #806 was a
+client that did not); "indexing runs after a settled payment and takes up to 15 minutes"; and
+"resources that go 30 days without a settlement are removed from both the catalog and search results,
+so a listed route needs ongoing traffic to stay listed". The facilitator reports the verdict per call in
+an `EXTENSION-RESPONSES` header (`bazaar.status`: success / processing / rejected + rejectedReason).
+#759 (open, 100+ services) confirms per-resource behaviour, a 12–14 h typical lag and silent drop-outs.
+So the week-1 proof (`≥ 17 resources within a week of the settled call`) was never reachable with one
+call: it needed 17. **Built:** `scripts/x402-probe.mjs` pays per route — when no probe payment landed
+in 7 days it reads the catalogue (keyless, `scripts/x402-catalogue.mjs`, shared with the `bazaar:`
+clause) and pays every route it does not list and every listed route settled ≥ 23 days ago
+(`probeTargets`, tested); the `x402_probe` dispatch input pays every route (a re-screen after a
+metadata change is per resource too); `ownProbePayments` counts the `(+N own probe)` cells of the last
+30 days and `PROBE_MONTHLY_CAP = 20` stops the step at US$0.10 a month whatever the catalogue does; the
+test client prints the Bazaar verdict from the settle response. The old `0 listed` and 1st-of-month
+rules are gone (both are cases of "unlisted or stale"). **Cost:** 16 half-cents today (US$0.08) and
+≈ 17 a month to stay listed (US$0.085; the wallet's ≈ US$1.09 lasts about a year — LEDGER row).
+**Proof:** the 10-24 row's `bazaar:` clause reads `17 listed`; the forced dispatch's job log shows the
+16 receipts and verdicts. The 11-14 day-30 read then reads calls and payers per resource.
+
+**Live round 09:25 (forced dispatch, run 260):** 2 of 17 settled — uk-tenders and eu-ted, receipts on
+Base — and 13 routes answered **402 to the signed payment**; uk-planning 503 (origin paused since
+10-10, so it serves no 402 and cannot be indexed until it resumes) and uk-company-profiles 400 (a
+lookup: the probe sent `?per_page=1` without a company number). **Why the 13 (found):** the two that
+settled are the only non-paused list routes whose Bazaar description is ≤ 500 characters (348 and
+476); every rejected route's runs 512–697 (`bazaarDescription` = title + up to 420 chars of the source
+text + a 170-char shape sentence), and CDP's seller guide says "the CDP Facilitator rejects verify and
+settle requests whose description exceeds that limit" (#759 saw the same as `400 'paymentPayload' is
+invalid`). Validation never catches it (the row reads 17/17 valid). So since v0.25.0 (10-14) **13 of
+the 17 x402 routes could not take any payment** — the lane's three external payers all paid uk-tenders,
+which was the only route an agent could pay besides eu-ted, uk-planning and the lookup. **Fix
+(v0.25.3):** `DESCRIPTION_MAX = 500` in `src/x402/bazaar.ts` — the summary budget is what the title and
+shape leave, a first sentence that still does not fit is dropped — and the declaration test asserts ≤ 500
+for every source; the probe calls each route with the query its Bazaar declaration declares (the
+indexer's own call; `readExampleQuery` → `routeUrl`, so the lookup gets `company_number=00000006`) and
+the test client prints the facilitator's reason from the 402's `PAYMENT-REQUIRED` `error`. A second forced
+round after the deploy pays the 15 routes that can settle; uk-planning stays unlisted until its origin
+republishes (it answers 503, not 402). **Cost today:** 2 + up to 16 half-cents (≤ US$0.09).
+**Second round 09:44 (run 261, v0.25.3 live at 09:42):** 16 of 17 settled — every list route and the
+lookup (its declared `company_number=00000006` query) — with receipts on Base; only uk-planning
+failed (503, paused). The 09:45 row already reads `bazaar: 2 listed` (eu-ted indexed within 20 min
+of its 09:25 settlement, `last 2026-10-23`), so the catalogue does index per settled resource at
+the documented pace; the 10-24 row should read `16 listed`. No `EXTENSION-RESPONSES` header reached
+the client on any settle (the Worker does not forward it), so the verdict line reads "no header" —
+the catalogue count is the reading. Spent today: 18 half-cents (US$0.09).
+
+
+## Research 2026-10-23 (pipeline starved — build, 17:10)
+
+Read: the 10-20 → 10-23 Daily numbers rows, the 09:44 metrics job log (run 261: the 16 settlements and the
+09:46 `bazaar resource:` lines), `/v1/health` through the relay (`gankdat-research-2026-10-23-17`, 17:30 UTC)
+against the 10-22 19:29 read, the Docker PR #5622 state and comments (same request), the queue, review W42,
+`docs/INBOX.md` to 10-22 21:25, `docs/ALERTS.md`, `src/sources/progress.ts`, `cache.ts` and `store.ts`
+(the marker), `src/auth/oauth.ts` (the resource check) and the MCP authorization spec (raw GitHub).
+**Unchanged:** 4 accounts, 0 paid, `0 x402 paid` since the three 10-17/18 payments (`x402 30d: 3 paid, 3
+clients — uk-tenders 3`), `after wall 1h: 0 clients`, `oauth: 0 connects`, Apify 19 users/30d (one per actor
+plus the Companies House lookup at 15 runs), `search … 0 clicks`, uk-planning still empty (re-read 10-25).
+**New since the 10-19 pass:** `datasets 30d external: uk-trademark-journal 2` from 10-20 — the first external
+keyed calls on a register (the 10-20 `+1/24h` account; two calls, nothing since); the Bazaar's second route
+(eu-ted) 20 minutes after its settlement and the 16-route round at 09:44 (the 10-24 row is the proof); and
+three readings the rows carry that nothing in the queue would act on:
+
+| Signal | Reading | Verdict |
+| --- | --- | --- |
+| `silent nights: uk-sanctions started 2026-10-22 05:01:43Z died after written 6408 records at 3 s, no row written` (10-23 row) | `/v1/health` on 10-22 19:29 showed uk-sanctions `last_refreshed_at 2026-10-22 05:01:46` and on 10-23 17:30 `2026-10-23 05:02:30`; the 10-23 wave-1 invocation read `ok 108.1s`; `refresh errors` lists no uk-sanctions row on any day | a **stale marker, not a death**: `cache.ts refreshSource` writes the `written` mark, the ok row and the (skipped, same second) `stats` mark inside one second, `refreshOne` then deletes the marker after a ≤ 1 s local wait — KV's one-write-a-second-per-key limit or a dropped delete leaves it, and the next night writes an `error` row for a refresh that completed. The first silent-night reading in the lane's life is a phantom; the auto-filer would file `refresh-uk-sanctions-<date>` on a repeat |
+| `oauth funnel 7d: 0 authorize, 2 rejected (invalid_target: resource must be https://gankdat.com/mcp 2)` (10-20 → 10-23 rows) | the only two `/authorize` calls by anyone in the window, refused by the strict compare `q.resource !== resourceUrl(env)`; the value sent is not recorded | the spec lists `https://mcp.example.com` and the port form as valid canonical URIs beside `/mcp`, says uppercase scheme and host "SHOULD" be accepted and only discourages the trailing slash — a client inside the spec was turned away, on a lane with 0 external OAuth connects since 09-30 |
+| `bazaar: 2 listed` at 09:45, 16 settled at 09:44 with `no EXTENSION-RESPONSES header` on every settle | the catalogue indexed eu-ted 20 min after its 09:25 settlement, so 16 should show on the 10-24 row; the facilitator's per-resource verdict never reaches the client because the Worker does not forward the header | a dated read for 10-24; if short, forward the header so a rejected resource says why |
+| Docker PR #5622 (`docker-mcp-catalog-listing`, blocked since 10-11) | open at head 7b5f2a5, updated 10-11 19:18, **no review and no check run after 12 days** (combined status `pending` — a fork's workflows wait for a maintainer's approval), one bot comment (Codex review failed to run) | nothing to do from this side; reading added to the item, re-read with the 10-30 Claude directory read |
+| `search 7d to 10-22: 12 impressions, 0 clicks, indexed 8/19, Discovered - currently not indexed ×9` | the clause `search-console-stats-indexing` waited for has run daily since 10-11; the sitemap went in 09-28 | item closed `done` with the reading; the proof (≥ 10) is not met and no lever is queued — eight indexed pages bring no clicks, so more indexing changes nothing until a page ranks |
+
+Queued in `docs/pipeline/queues/gankdat.json`:
+
+| Item | Score | Why now |
+| --- | --- | --- |
+| `refresh-marker-false-positive-2026-10-23` | 6 | `recordSilentRefresh` writes the `error` row only when no `refresh_log` row of the slug was created at or after the marker's `started_at`, else deletes the stale marker and logs it; the delete retries once after the KV gap; a test for the stale case. The reading built on 10-18 to tell a silent wave is worth keeping only if it cannot lie |
+| `oauth-resource-indicator-variants` | 5 | normalised comparison against `resourceUrl` (case, :443, trailing slash, the bare origin), any other host or path still rejected; the funnel detail names the value the client sent |
+| `x402-bazaar-16-listed-read` | 4 (10-24) | read the 10-24 row and the job log's `bazaar resource:` lines; fewer than 16 → relay the catalogue, re-screen with the dispatch input, forward `EXTENSION-RESPONSES` so the reason is readable |
+| 2026-10-24 | Daily numbers | 4 accts (0 paid, +0/24h) | — | 1 x402 paid (uk-tenders 1; 1 client; LumiTrustBuyer 1) (+18 own probe) | MCP 24h: 163 authed, 3091 anon, 88 preview, 4 paywall hits; wanted: connect_account 4; changes 7d: 4 (mcp 0, rest 4); indexnow: 15 urls 200; x402 validate: 17/17 valid; bazaar: 16 listed, 22 calls/30d, 19 payers, last 2026-10-23; x402 30d: 4 paid, 4 clients — uk-tenders 4; LumiTrustBuyer 1, SettledScout 1, lumiere-paycheck-prober 1, vet402-observatory-l1 1; mcp probe: init 200, tools 200 (25 tools), call 200; authed: init 200, tools 200 (25 tools), call 200; wave log: uk-planning wave 05:00: ok 71.8s 2.1 h ago, [error] origin dataset empty: planning-application answered count 0 (emptied on planning 2.2 h ago (1 of 10 lines); feeds 30d: 61 fetches, 9 user agents, 61 renders; apify: 470 runs (+12/24h), 30d: 449 runs (0 ours, 449 others), 19 users/30d, 18 public; apify 30d by actor: uk-visa-sponsors-register 30, eu-public-tenders-ted 26, uk-care-locations-cqc 26, uk-charities-register 26, uk-corporate-insolvency-notices-gazette 26, uk-food-hygiene-ratings 26, uk-new-companies-incorporations 26, uk-planning-applications 26 (6 failed), uk-public-tenders-find-a-tender 26, uk-sanctions-list-fcdo 26, us-federal-exclusions-sam-gov 25, nhs-organisations-ods 24, uk-contract-awards-contracts-finder 24, uk-gambling-commission-licence-register 24, uk-no-website-leads 24 (2 failed), uk-schools-gias-ofsted 24, uk-trademark-journal-watch 24, uk-companies-house-lookup-monitor 16; agent sign-up: 0 req/24h, 0 keys/24h, 0 keys/30d; oauth: 0 connects/24h, 0/30d; connect_account 7d by UA: python-requests/2.34.2 24, BrickBlueBot/0.1 (+https://brick.blue/bot?h=gank 4, SentinelOracle/0.1 (+https://glimind.com/opt-out 1; oauth funnel 7d: 29 challenges (protected_tool 29), 0 authorize, 2 rejected (invalid_target: resource must be https://gankdat.com/mcp 2), 0 sign-in, 0 email, 0 consent, 0 approved, 0 denied, 0 expired, 13 token (refresh_token 13), 0 token errors; after wall 1h (7d): 0 clients — request_api_key 0, x402 0, connect 0, gone 0; cf usage (10-10→10-24): d1 0.4M writes / 868.2M reads, 3.7 GB, kv 0.0M reads / 0.0M writes, workers 0.1M req, ae 0.0M pts ≈ US$0 overage; stats crawlers: logs 0 fetches/7d, AI 0 (none) — 128 lines matched, none a request line; zone n/a (zone: Actor 'com.cloudflare.api.token.c42d0370c6783e3a270770a3a775243c' does not have ); /mcp 75707 req/30d, AI 385 (Claude-User 336, PetalBot 35, Amazonbot 10, Meta-ExternalAgent 2, OAI-SearchBot 1, ClaudeBot 1); datasets 30d: uk-care-locations 419, uk-gambling-operators 230, uk-food-hygiene 229, uk-companies 223, eu-ted 222, uk-sanctions 222, uk-schools 221, uk-tenders 221, nhs-ods 220, sam-exclusions 220, uk-charities 220, uk-sponsors 220, uk-trademark-journal 220, uk-insolvency 219, uk-contract-awards 201, uk-planning 138, uk-company-profiles 16; datasets 30d external: uk-tenders 4 (x402 4), uk-trademark-journal 2; 0: eu-ted, nhs-ods, sam-exclusions, uk-care-locations, uk-charities, uk-companies, uk-company-profiles, uk-contract-awards, uk-food-hygiene, uk-gambling-operators, uk-insolvency, uk-planning, uk-sanctions, uk-schools, uk-sponsors; refresh errors: uk-planning (origin dataset empty: planning-application answered count 0 (emptied on planning.data.gov.); search 7d to 10-23: 12 impressions, 0 clicks, avg pos 14.0, top /stats/nhs-ods 10, indexed 8/19, not: Discovered - currently not indexed ×10, URL is unknown to Google ×1 |
+
+
+Also queued, from the inbox: hackathons `paypal-hackathon-demo-access` (8 × weight 2 — `next` names it) — the
+organiser's 10-21 Devpost message says the entry has no demo the judges can run (due 11-12 12:00 PT); the
+demo exists but the form names only `/account` behind a magic link and a sandbox buyer, and the public mirror's
+README has no run steps. The item writes the paste-ready text, the README section and owner action 028.
+**Not queued:** a first-call nudge to the trademark-journal account (the 10-19 call stands); more routes or
+prices before the 16-route reading and the 11-14 day-30 read; a nudge comment on the Docker PR (the item says
+do not argue; a reviewer's silence is not a question). **Sandbox note:** `npm ci` here left out the optional
+`@cloudflare/workerd-linux-64` package, so the gankdat tests could not start until it was installed `--no-save`;
+CI (`check` run 361, `gankdat` run 148) was green on the same head. `researched: 2026-10-23`; `research_after`
+cleared — the first item is buildable now.
+
+## Build 2026-10-24 — x402 Bazaar week-1 proof closed (burn-down)
+
+Read: the 10-24 Daily numbers row (07:10, run 263) and its job log's `bazaar resource:` lines. **The row reads
+`bazaar: 16 listed, 22 calls/30d, 19 payers, last 2026-10-23`** — up from `2 listed` at 09:45 the day before —
+and the log lists all 16 resources the catalogue holds: uk-tenders (6 calls, 4 payers), eu-ted (2, 1) and the
+other fourteen list routes plus the Companies House lookup (`uk-company-profiles`) at 1 call / 1 payer each,
+every one `last 2026-10-23` (the 09:44 forced round). The one route missing is uk-planning, paused since its
+origin emptied (503, not 402), so the catalogue indexed every resource that settled, within a day of the
+settlement and in line with CDP's documented pace. **Verdict:** the week-1 proof set on 10-16 (`≥ 17 resources
+within a week of the settled call`, reshaped on 10-23 to "every route that can settle") is met at 16 of 17;
+the day-30 read (11-14) is the next dated signal. The "fewer than 16" branch of the item — relay the
+catalogue, re-screen with the dispatch input, forward `EXTENSION-RESPONSES` to the client — is not needed;
+the header forward stays a known gap (ARCHITECTURE.md) to build if a resource is ever rejected, not before.
+Also in the row: `x402 30d: 4 paid, 4 clients — uk-tenders 4; LumiTrustBuyer 1` — a fourth external payer on
+uk-tenders on 10-23, the first since 10-18; still one dataset, the queue's conversion items stand. Cost: £0
+(no probe payment; the 7-day spacing skipped it).

@@ -1265,3 +1265,453 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-18 01:25 | burn-down | Owner note 00:45 answered: AI-setup course idea parked in the exchange (ai-setup-course), Wednesday researches
 - 2026-10-18 01:25 | burn-down | Owner note 00:49 answered: adult-sector idea declined in the exchange (shelf terms, OSA duties, no distress lines)
 - 2026-10-18 01:30 | burn-down | Stopping: 1 item built (PR #6 root cause + Dependabot ignores), 2 owner notes answered; starved-and-cooled
+- 2026-10-18 08:15 | review | Review 2026-W42: money targets still zero; first 3 paid x402 calls by strangers (10-17/18); bounties killed
+- 2026-10-18 08:15 | review | gankdat: keep — 3 accounts (0 paid), anon MCP doubled to 2,970/day, Bazaar listed 10-16, 3 payers, 1 of 17 routes
+- 2026-10-18 08:15 | review | Variables Toolkit: keep — views 7 to 14, 4 runs, 0 installs at day 27; owner dropped its levers; day-30 read 10-21
+- 2026-10-18 08:15 | review | ReadFocus: keep — Chrome users read 3 or 0 by day, 0 keys; 0.3.0 unsigned 14 days; day-30 read 10-30
+- 2026-10-18 08:15 | review | Highlight Keep: keep — first Firefox download 10-14, 0 Chrome users, 0 keys; 0.4.0 unsigned 13 days
+- 2026-10-18 08:15 | review | Hackathons: keep — PayPal entry submitted 10-16 (1 of 3 the kill rule counts); Nebius dropped; lablab read 10-20
+- 2026-10-18 08:15 | review | Open-source bounties: KILL — 7 daily boards with 0 free funded code fixes at $25+, 8 of 8 filed items dropped
+- 2026-10-18 08:15 | review | Foundry: keep — 33/33 slots, Dependabot self-merges, but six starved-and-cooled stops; supply is the limit
+- 2026-10-18 08:15 | review | Applied: oss-bounties queue finished, venture.json killed, exchange idea parked with a two-board re-open trigger
+- 2026-10-18 08:15 | review | Queued foundry bounty-scanner-finished-queue (5): scanner weekly and silent on a finished queue
+- 2026-10-18 08:15 | review | Cadence call: night pre-research writes spikes into new-ventures (<2 open) — foundry pre-research-shelf-cap 3→5
+- 2026-10-18 08:15 | review | Queued gankdat uk-planning-apify-pause (5, 10-19): pause the flagged actor while the origin stays empty
+- 2026-10-18 08:15 | review | Gap queued: gankdat x402-bazaar-week-1-index-check (4, 10-23) — 1 of 17 routes listed, proof date unread
+- 2026-10-18 08:15 | review | STRATEGY: §4 Now with 10-18 sources, §5 new-ventures row, §7 money-on-offer supply rule, §2 rows, §8 logged
+- 2026-10-18 08:15 | review | Cash: spent £44.40, planned £8, ICO £47 contingent, revenue £0 (US$0.015 USDC); headroom £47.60, 12.9 months
+- 2026-10-18 08:15 | review | Owner: nothing needed — 0 requests open; no notify condition met
+- 2026-10-18 09:23 | build | progress.ts: every refresh marks its phase in KV; a marker left behind becomes next night's error row
+- 2026-10-18 09:23 | build | store/d1store/cache: ok row written before the best-effort stats; stream marks every 25k records; 5 tests
+- 2026-10-18 09:23 | build | uk-trademark-journal: issue fetch aborts after 5 min so a hung IPO request errors instead of killing wave 7
+- 2026-10-18 09:23 | build | Evidence: 10-17 and 10-18 rows show wave 7 ok both nights; 10-16 job log has no cron line for any wave
+- 2026-10-18 09:23 | build | wave-logs: cron clause now says `no invocation logged` (query blind to crons); wave-log-cron-query-blind queued
+- 2026-10-18 09:23 | build | Queue: gankdat refresh-uk-trademark-journal-2026-10-17 done; silent-row follow-up (5, 10-22) queued
+- 2026-10-18 09:23 | build | Taskmaster row 38 (progress marker); ARCHITECTURE and RESEARCH updated; no version bump; owner: nothing
+- 2026-10-18 09:25 | build | metrics.mjs: `silent nights: <slug> … died after <phase>` clause reads the marker's row even after a later ok
+- 2026-10-18 17:20 | burn-down | burn-down.md: starved pass adds a scored spike to new-ventures (<2 open), skipped at 2; W42 call
+- 2026-10-18 17:20 | burn-down | build.md LOOP 1 same clause; exchange.md: night passes keep the queue at two between Wednesdays
+- 2026-10-18 17:20 | burn-down | pipeline README starvation sentence updated; Changes lines in burn-down, build and exchange
+- 2026-10-18 17:20 | burn-down | Queue: foundry pre-research-shelf-cap done; proof is the first `Exchange pre-research:` line after it
+- 2026-10-18 17:30 | build | mcp probe 10-18: keyless tools/call hung 20 s, keyed answered; snapshot fresh, SDK bump not yet live
+- 2026-10-18 17:30 | build | routes/mcp.ts: a POST answers one JSON body, the tool call runs inside the awaited handler, no SSE
+- 2026-10-18 17:30 | build | deadline.ts + server.ts: every data tool answers within 10 s or a tool error naming the phase
+- 2026-10-18 17:30 | build | mcp-probe.ts: `body unread (headers arrived)` told from no response; body read bounded; 1 test
+- 2026-10-18 17:30 | build | test/mcp-deadline.spec.ts: the probe's three calls keyless and keyed, the hang; version 0.25.2
+- 2026-10-18 17:30 | build | Queue: gankdat refresh-mcp-probe done (cause unproven, next hang readable); x402-ajv-compile-log-noise (3)
+- 2026-10-18 17:30 | build | Evidence: /v1/health 17:15 has uk-trademark-journal last ok 10-17 06:11 (35 h) — wave 7 silent 10-18
+- 2026-10-18 17:30 | build | Taskmaster row 39; ARCHITECTURE note; CI first runs all recorded; owner: nothing
+- 2026-10-18 17:30 | burn-down | bounty-scanner: fileBounties returns a finished queue untouched; log says `queue finished — not filing`
+- 2026-10-18 17:30 | burn-down | bounty-scanner.test: finished-queue branch covered (20 tests); guard checked against the real queue
+- 2026-10-18 17:30 | burn-down | docs/ci/bounty-board.yml: cron moved to Mondays 05:17 (was daily); the installer moves it into place
+- 2026-10-18 17:30 | burn-down | SCHEDULERS: bounty board row moved to the Weekly table (Monday 05:17, no items while finished)
+- 2026-10-18 17:30 | burn-down | Queue: foundry bounty-scanner-finished-queue done; proof is Monday 10-19's run log line
+- 2026-10-18 17:35 | burn-down | uk-planning re-read (relay planning-origin-2026-10-18): origin still empty, count 0, no replacement dataset
+- 2026-10-18 17:35 | burn-down | Queue: gankdat refresh-uk-planning-reread not_before moved to 10-25; clock kept in RESEARCH.md (Apify demand holds)
+- 2026-10-18 17:40 | burn-down | bounty-board.yml first run: success (17:22 dispatch; log says queue finished — not filing; BOARD.md only)
+- 2026-10-18 17:40 | burn-down | Exchange pre-research: spike-ofac-eu-sanctions-screening seeded in new-ventures (6); OFAC exports, OpenSanctions read
+- 2026-10-18 17:40 | burn-down | Stopping: 3 items built (prompt cadence, bounty scanner, planning re-read), 1 spike seeded; starved-and-cooled
+- 2026-10-18 17:45 | build | CI red on d1eec60c: the deadline test's cold uk-tenders call ran past 10 s on the runner; snapshot seeded
+- 2026-10-18 17:45 | build | server.ts: an expired call's work runs on under waitUntil, so a cold refresh still writes its snapshot
+- 2026-10-18 18:25 | burn-down | relay ofac-eu-spike: OFAC export names, EU FSF public-token files, OpenSanctions credits, Apify shelf read
+- 2026-10-18 18:25 | burn-down | spike ofac-eu-sanctions-screening: parked — rivals €0.03–0.10 a query, uk-sanctions 0 external calls
+- 2026-10-18 18:25 | burn-down | Apify: 17 screening actors at US$0.002–0.08 a name share ~20 monthly users; EU list needs no account
+- 2026-10-18 18:25 | burn-down | Queue: new-ventures spike-ofac-eu-sanctions-screening done; queue empty, needs_research (cooling)
+- 2026-10-18 18:30 | burn-down | x402/routes.ts: Ajv's `Error compiling schema` error line muted next to the warning (withoutCodegenError)
+- 2026-10-18 18:30 | burn-down | Evidence: compile is unconditional in @x402/hono paymentMiddleware; Ajv logs it before rethrowing
+- 2026-10-18 18:30 | burn-down | x402.spec: filter test (11 tests); pool does not reproduce workerd's codegen ban; ARCHITECTURE note
+- 2026-10-18 18:30 | burn-down | Queue: gankdat x402-ajv-compile-log-noise done; proof is the next wave-log reading with no such line
+- 2026-10-18 18:35 | burn-down | relay round b read: Verifex US$0.02→0.005 a screen by plan, sanctions.io custom proposal only; spike refined
+- 2026-10-18 18:35 | burn-down | fetch-relay run 39153226504 failed: a push 27 s after the first fetched both requests, rebase conflict; re-fired
+- 2026-10-18 18:35 | burn-down | docs/ci/fetch-relay.yml: concurrency group serialises relay runs (installer moves it); relay README sentence
+- 2026-10-18 18:35 | burn-down | Stopping: 2 items built (sanctions spike parked, x402 Ajv mute), relay serialised; starved-and-cooled
+- 2026-10-19 00:12 | burn-down | fetch-relay.yml first run: success (00:10 dispatch after the 10-18 18:28 install; 13 s, no request pending)
+- 2026-10-19 00:15 | burn-down | new-ventures researched: 3 spikes seeded — course rivals (7), Beefy harvest fees (5), EU HVD registers (5)
+- 2026-10-19 00:15 | burn-down | Evidence: 4 Gumroad Claude Code kits at US$9–39, Udemy 4.0/1,391 ratings; Beefy caller 0.5 %; OpenCorporates £2,250+/yr
+- 2026-10-19 00:15 | burn-down | exchange: ai-setup-course and keeper ideas marked spiked; Ireland sibling and prize-competition notes dated
+- 2026-10-19 00:15 | burn-down | relay hosts: gumroad, udemy, Beefy docs + API, OpenCorporates added for the three spikes
+- 2026-10-19 00:15 | watchdog | ci-minutes: 555 billed min/7d (~2379/month, wall 317; private cap 2,000, warn 1700); top: notify owner 125, check 73, fe
+- 2026-10-19 00:30 | burn-down | relay ai-setup-course-rivals (3 rounds): 3 Gumroad kits, 72 Discover cards, Gumroad pricing, Stripe MoR docs
+- 2026-10-19 00:30 | burn-down | spike ai-setup-course-rivals: 4 paid Claude Code kits ≥ £20 with 6–39 buyer ratings; 'earn 24/7' kits 0–1
+- 2026-10-19 00:30 | burn-down | Shelf: Gumroad 10 % + 50¢ direct, 30 % Discover, MoR for VAT; Stripe MoR lists GB among 31 EU sellers
+- 2026-10-19 00:30 | burn-down | Call: promote reshaped as a Claude Code operations kit at US$29–39, not the non-technical money-machine
+- 2026-10-19 00:30 | burn-down | Queue: new-ventures spike-ai-setup-course-rivals done; exchange ai-setup-course note carries the call for 10-21
+- 2026-10-19 00:32 | burn-down | relay beefy-fees + beefy-harvests: Beefy docs, /vaults/base, /fees, /tvl, /apy, 12 StratHarvest log windows
+- 2026-10-19 00:32 | burn-down | spike beefy-harvest-call-fees: caller share 0.01 % on all 537 Base vaults; chain pool US$5.20/week at 100 %
+- 2026-10-19 00:32 | burn-down | Harvester split 6.7 h: one bot 89 % of 477 harvests, ≈ US$0.59/week outside it, below gas — declined
+- 2026-10-19 00:32 | burn-down | Queue: new-ventures spike-beefy-harvest-call-fees done; exchange onchain-keeper-rewards declined
+- 2026-10-19 00:34 | burn-down | Stopping: 3 items (new-ventures research, course spike, Beefy spike); EU HVD spike left for 01:00 (time)
+- 2026-10-19 01:50 | burn-down | relay eu-hvd-registers (3 rounds, 57 lines): data.europa.eu HVD facets, 14 national registers, 4 rivals, Apify
+- 2026-10-19 01:50 | burn-down | spike eu-hvd-company-registers: 119 company HVDs in 13 states; 7 registers keyless+open; DE/IT/ES publish none
+- 2026-10-19 01:50 | burn-down | Demand: 114 EU-register Apify actors, 483 users/30d; the 13 with ≥10 users all scrape closed registers
+- 2026-10-19 01:50 | burn-down | Rivals: OpenCorporates £2,250–12,000/yr (£0.20–0.38 a call), KYC records US$19–119, Apify US$0.002–0.01
+- 2026-10-19 01:50 | burn-down | Call: parked with the Ireland idea; scraping DE/IT/ES declined (terms); France first if a trigger fires
+- 2026-10-19 01:50 | burn-down | Queue: new-ventures spike-eu-hvd-company-registers done; 0 spikes open, queue not empty (8 done)
+- 2026-10-19 01:56 | burn-down | Stopping: 1 item (EU HVD register spike parked); gankdat research due, left for the 02:00 slot (time)
+- 2026-10-19 02:25 | burn-down | gankdat researched: 10-17/18 rows read — first 3 external x402 payments, rest unchanged since 10-17
+- 2026-10-19 02:25 | burn-down | Gap: the row says `3 x402 paid` but not the dataset or client; metrics reads the point as a count only
+- 2026-10-19 02:25 | burn-down | Queue: gankdat x402-paid-by-source-reading (5) added; researched 10-19, research_after 10-23 (week-1 read)
+- 2026-10-19 02:20 | burn-down | x402-sales.ts: sales cell names source, client count and UA family; `x402 30d:` clause after bazaar
+- 2026-10-19 02:20 | burn-down | metrics.mjs: two grouped x402_paid reads (24 h, 30 d; probe UA excluded); datasets external adds `(x402 N)`
+- 2026-10-19 02:20 | burn-down | x402-bazaar-read.ts: `bazaar resource: <url> calls C payers P last <date>` per resource in the job log
+- 2026-10-19 02:20 | burn-down | Tests: x402-sales.spec (6), bazaarResourceLines; ARCHITECTURE note; no version bump
+- 2026-10-19 02:20 | burn-down | Queue: gankdat x402-paid-by-source-reading done; proof is the 10-19 row naming the x402 sources
+- 2026-10-19 02:18 | burn-down | Stopping: 2 items (gankdat research, x402 sales reading); starved-and-cooled, pre-research spent 17:40
+- 2026-10-19 07:50 | report | Money: revenue £0.00, net -£44.40, headroom £47.60 (about 12.9 months)
+- 2026-10-19 07:50 | report | gankdat: 3 accounts (0 paid), 3 external x402 payments in 30 days, ~1,070 authed MCP calls
+- 2026-10-19 07:50 | report | Highlight Keep: 0 Chrome users, 1 Firefox weekly download, 0 sales
+- 2026-10-19 07:50 | report | ReadFocus: Chrome users flicker 0-3, 0 real sales; Variables Toolkit: views 7 to 14, 0 installs
+- 2026-10-19 07:50 | report | Hackathons: PayPal entry submitted 10-16; oss-bounties killed 10-18, 0 claims, 0 paid
+- 2026-10-19 07:50 | report | Alerts: 6 in 7 days; 2 handoffs open (Cloudflare token scope, versions check), no owner asks
+- 2026-10-19 07:50 | report | Owner: nothing waiting; ReadFocus 0.3.0 and Highlight Keep 0.4.0 uploads overdue for Claude
+- 2026-10-19 07:50 | report | Next: record the first x402 amounts in the ledger; sign and upload the two queued extensions
+- 2026-10-19 07:50 | report | Slots: burn-down built 65%, 47 cold slots, 2 metrics slots missed
+- 2026-10-19 07:50 | notify | usage note: please send your Claude usage, like "usage 62% fable 71%"
+- 2026-10-19 09:30 | build | Actions reading 10-12..10-19: 415 runs, 549 billed min (323 wall), about 2,350/month — no private flip
+- 2026-10-19 09:30 | build | Floor is the run count: notify owner 121, relay 60, check 62; quiet days 46/day fit, 10-16..18 ran 112/day
+- 2026-10-19 09:30 | build | CI-shape levers left total about -65/week (notify owner cron, mirror fold, landing 12 h): still over the cap
+- 2026-10-19 09:30 | build | Queue: foundry actions-minutes back to todo, next reading 10-26 (flip under 467; else GitHub Pro is the owner call)
+- 2026-10-19 09:30 | build | Queue: foundry notify-owner-cron-not-push (4) filed: 2-hourly cron replaces the push trigger, -50 billed/week
+- 2026-10-19 09:30 | build | Queue: foundry owner-notes-poll-gap done — leave the poll: longest gap 7.9 h (Sunday), 8 over 4 h; folds in
+- 2026-10-19 09:30 | build | First-run check: no installer commit since 10-16 lacks its first run line; nothing dispatched
+- 2026-10-19 17:17 | burn-down | First-run check: every installer commit since 10-16 has its first run line; nothing dispatched
+- 2026-10-19 17:17 | burn-down | docs/ci/notify-owner.yml: `40 */2` cron is the only trigger besides dispatch; push trigger dropped
+- 2026-10-19 17:17 | burn-down | SCHEDULERS rows (notify owner, watchdog, owner notes), SLOTS.md, run-watchdog.ts: lines land 2–4 h late
+- 2026-10-19 17:17 | burn-down | Queue: foundry notify-owner-cron-not-push done; proof is the 10-26 reading (under 80 runs, ≤ 4 h)
+- 2026-10-19 17:19 | burn-down | Exchange pre-research: US NPI provider registry (CMS NPPES) sized — 0 spikes open, one added
+- 2026-10-19 17:19 | burn-down | Evidence: FOIA-public since 2007, keyless API 200/call; 10 Apify NPI actors at US$2.80–8 per 1,000
+- 2026-10-19 17:19 | burn-down | Queue: new-ventures spike-us-npi-registry (6) todo for the next slot; relay hosts cms.gov, cms.hhs.gov
+- 2026-10-19 17:16 | build | uk-planning Apify actor paused: README opens with a dated Paused line; a run on the 503 notice ends clean
+- 2026-10-19 17:16 | build | main.mjs catches only the Origin paused 503: status message = notice, no items, no charge; other errors fail
+- 2026-10-19 17:16 | build | Kept public, not unpublished: 18 outside users' schedules survive; no publication spent on the restore
+- 2026-10-19 17:16 | build | /stats/uk-planning: state paused headline row, index mark, notice names REST, MCP, x402, Apify; 2 tests
+- 2026-10-19 17:16 | build | Notice text now says the surfaces are paused (the 10-09 snapshot expired 10-16, nothing is served)
+- 2026-10-19 17:16 | build | Docs: RESEARCH surface-pause note, MARKETPLACE-PREP Apify row, ARCHITECTURE, apify/README; no version bump
+- 2026-10-19 17:16 | build | Queue: gankdat uk-planning-apify-pause done; proof is the apify failed count flat and the flag gone
+- 2026-10-19 17:16 | build | First-run check: every installer commit since 10-16 has its first run line; nothing dispatched
+- 2026-10-19 17:30 | burn-down | First-run check: every installer commit since 10-16 has its first run line; nothing dispatched
+- 2026-10-19 17:30 | burn-down | docs/ci/notify-owner.yml: `40 */2` cron is the only trigger besides dispatch; push trigger dropped
+- 2026-10-19 17:30 | burn-down | SCHEDULERS rows (notify owner, watchdog, owner notes), SLOTS.md, run-watchdog.ts: lines land 2–4 h late
+- 2026-10-19 17:30 | burn-down | Queue: foundry notify-owner-cron-not-push done; proof is the 10-26 reading (under 80 runs, ≤ 4 h)
+- 2026-10-19 17:40 | burn-down | relay us-npi-registry (10 lines, 20 s): NPPES API 2.1, CMS dissemination page, NPI files, Apify store
+- 2026-10-19 17:40 | burn-down | spike us-npi-registry: FOIA-public, keyless, daily; 71 Apify NPI actors share 114 users/30d, busiest 9
+- 2026-10-19 17:40 | burn-down | Call: parked — free origin, saturated shelf at US$0.002–0.01 a record; re-open as a verification call
+- 2026-10-19 17:40 | burn-down | Queue: new-ventures spike-us-npi-registry done; exchange us-npi-registry parked with 3 dated triggers
+- 2026-10-19 17:42 | burn-down | Stopping: 3 items (notify owner cron, NPI pre-research, NPI spike); 0 spikes open, nothing buildable
+- 2026-10-20 00:20 | burn-down | Gate: BURN.json open, cold says work; next null (foundry, hackathons starved); main green after npm ci + check
+- 2026-10-20 00:25 | burn-down | Relay hackathons-2026-10-20 + -b: lablab Rise/Agent Rush/index, dev.meta.ai, cerebralvalley.ai, aihackathon.dev
+- 2026-10-20 00:40 | burn-down | lablab Rise of AI Agents still "Fall 2026 / TBA", absent from lablab's upcoming list: item done, no entry
+- 2026-10-20 00:40 | burn-down | Vultr Agent Rush (3–8 Nov, $9k cash) declined: sandboxed-execution agent is a new product; Vultr needs a card
+- 2026-10-20 00:45 | burn-down | Meta Global AI Developer Hackathon read: $1M cash, online, free, UK eligible, apply by 25 Oct 11:59 PM ET
+- 2026-10-20 00:45 | burn-down | Queue: hackathons meta-global-ai-hackathon-apply (9, owner), -rules-read (7, 10-26), -entry (9, 10-26) filed
+- 2026-10-20 00:45 | burn-down | Qloo Agentic ($25k, taste API) declined on fit; MCP_HACK//26 ($5k) and Algorand x402 Challenge already closed
+- 2026-10-20 00:45 | burn-down | Owner action 027 written (apply, ~10 min, £0); ALERTS owner line; SELF-CAUSED row for the application mail
+- 2026-10-20 00:45 | burn-down | hackathons RESEARCH.md §2 2026-10-20 table + metrics row; queue researched today, research_after 2026-10-26
+- 2026-10-20 00:45 | notify | Meta runs a free online AI hackathon with $1M in prizes: please apply by Saturday 25 Oct
+- 2026-10-20 00:50 | burn-down | notify-owner.yml first run: success (cron-only version installed 10-19 17:17; schedule run 386 at 22:35)
+- 2026-10-20 00:55 | burn-down | Foundry research: both starved queues tonight were dated for 07:00 today; next signals node-24 07:00, 10-26
+- 2026-10-20 00:55 | burn-down | Queue: foundry dated-within-day-not-starved (5) and first-run-line-after-installer (4) filed from tonight's run
+- 2026-10-20 00:35 | burn-down | pipeline: awaitsDatedItem() — a queue dated for today/tomorrow is waiting, not starved; cold gate too
+- 2026-10-20 00:35 | burn-down | Tests: the 00:07 case (two queues due at 07:00) pinned in core and cold tests; README + prompt Changes line
+- 2026-10-20 00:35 | burn-down | Queue: foundry dated-within-day-not-starved done; the 01:00 slot should print starved-and-cooled
+- 2026-10-20 00:40 | burn-down | Prompts build.md + burn-down.md: a first-run line counts only when stamped after its installer commit
+- 2026-10-20 00:40 | burn-down | Queue: foundry first-run-line-after-installer done; nothing buildable left, pre-research pass spent 17:19
+- 2026-10-20 00:45 | burn-down | Stopping: hackathons + foundry research, 2 foundry items built; starved-and-cooled, pass spent 17:19
+- 2026-10-20 01:13 | watchdog | ci-minutes: 571 billed min/7d (~2447/month, wall 340; private cap 2,000, warn 1700); top: notify owner 120, fetch relay 
+- 2026-10-20 09:20 | build | Item foundry node-24-runners: 16 workflows dropped in docs/ci/ with node-version 24 (installer moves them)
+- 2026-10-20 09:20 | build | Full gate (root + gankdat) passed on Node 24.22.0 in the sandbox before the push; also green on 22
+- 2026-10-20 09:20 | build | VERSIONS.md Node row now 24 with a log entry; the item is done, proof is CI green a week on 24
+- 2026-10-20 09:20 | build | Devcontainer kept on Node 22: CLAUDE.md asks before .devcontainer changes; handoff in ALERTS.md
+- 2026-10-20 09:20 | build | First-run check: all five installer commits since 10-17 already have a line stamped after them
+- 2026-10-20 09:25 | build | check.yml first run: success (push run 351 on the 09:19 Node 24 installer commit, 36 s)
+- 2026-10-20 09:25 | build | gankdat.yml first run: success (push run 145 on the 09:19 installer commit, deploy 1 m 51 s)
+- 2026-10-20 09:25 | build | gankdat-publish.yml first run: success (push run 49 on the 09:19 installer commit)
+- 2026-10-20 09:25 | build | landing.yml first run: success (push run 46 on the 09:19 installer commit)
+- 2026-10-20 09:25 | build | Other 12 Node 24 workflows run on cron or dispatch; the next slot reads their first runs
+- 2026-10-20 17:12 | burn-down | Gate: BURN.json open, cold says work (pass unspent); next null, build slot holds the gankdat item; main green
+- 2026-10-20 17:15 | burn-down | gankdat-metrics.yml first run: success (schedule run 253 at 12:04 on the 09:19 Node 24 installer)
+- 2026-10-20 17:15 | burn-down | notify-owner.yml first run: success (schedule run 389 at 13:49 after the 09:19 installer)
+- 2026-10-20 17:15 | burn-down | owner-notes.yml first run: success (schedule run 575 at 11:44 after the 09:19 installer)
+- 2026-10-20 17:15 | burn-down | store-metrics.yml first run: success (schedule run 168 at 12:16 after the 09:19 installer)
+- 2026-10-20 17:15 | burn-down | versions.yml first run: success (17:12 dispatch, run 1, 14 s; the file had never run before)
+- 2026-10-20 17:15 | burn-down | run-watchdog.yml first run: success (17:12 dispatch, run 161, 35 s)
+- 2026-10-20 17:15 | burn-down | pr-relay.yml first run: success (17:12 dispatch, run 2, 17 s; nothing pending)
+- 2026-10-20 17:15 | burn-down | fetch-relay.yml first run: success (17:12 dispatch, run 121, 15 s; no request pending)
+- 2026-10-20 17:15 | burn-down | demo-video, mirror-gankdat (never dispatched) and dependabot (PR-only) wait for their own next run
+- 2026-10-20 17:25 | burn-down | Exchange pre-research: Atlassian Marketplace Forge shelf spike seeded in new-ventures (6); 0 spikes were open
+- 2026-10-20 17:25 | burn-down | Read: Forge 0% fee to US$1M lifetime from 2026-01, payout at US$500/month; sole-trader vendor status unsettled
+- 2026-10-20 17:25 | burn-down | Relay hosts: marketplace, developer, community.developer and www.atlassian.com added for the spike
+- 2026-10-20 23:21 | watchdog | stalled: build slot 2026-10-20 17:00 UTC started 17:10, no push by 19:00; usage limit? claude.ai/code/routines
+- 2026-10-21 05:13 | watchdog | ci-minutes: 575 billed min/7d (~2464/month, wall 342; private cap 2,000, warn 1700); top: notify owner 114, fetch relay 
+- 2026-10-21 09:25 | fallback | Filled the 09:00 build slot (no trace); main was red, so this run only heals it
+- 2026-10-21 09:25 | fallback | Watchdog stall/miss lines shortened to fit the 120-char cap for every routine; main green
+- 2026-10-21 12:16 | watchdog | missed: exchange slot 2026-10-21 08:00 UTC left no commit or run line by 10:00; usage limit? claude.ai/code/routines
+- 2026-10-21 12:16 | watchdog | missed: build slot 2026-10-21 09:00 UTC left no commit or run line by 11:00; usage limit? claude.ai/code/routines
+- 2026-10-21 17:27 | fallback | Filled the 17:00 build slot (no trace by 17:20); main green
+- 2026-10-21 17:27 | fallback | Variables Toolkit day 30: 15 views, 0 installs, 0 sales; kept at £0, verdict due 2026-12-20
+- 2026-10-21 21:56 | watchdog | missed: build slot 2026-10-21 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
+- 2026-10-21 21:56 | watchdog | missed: burn-down slot 2026-10-21 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines
+- 2026-10-22 00:51 | watchdog | ci-minutes: 553 billed min/7d (~2370/month, wall 341; private cap 2,000, warn 1700); top: notify owner 104, owner notes 
+- 2026-10-22 09:24 | build | Spike atlassian-marketplace-forge-shelf done: four relay rounds, 1,350 paid apps, 25 price lists, 5 threads
+- 2026-10-22 09:24 | build | Read: UK sole trader can be a paid partner (individual path, Stripe Identity + UTR + W-8BEN)
+- 2026-10-22 09:24 | build | Read: payout EFT at US$500 net 30-60 d; Forge fee 0 % to US$1M then 17 %; free 10-user tier
+- 2026-10-22 09:24 | build | Niche: 7 small-vendor text-render macros 202-911 installs at US$0.10-0.69/user/month; bar of 1 unmet
+- 2026-10-22 09:24 | build | Call: promote reshaped (Forge Confluence macro, 3 days); exchange 2026-10-28 decides; idea parked
+- 2026-10-22 09:24 | build | new-ventures emptied (10 done) and set needs_research; no owner action raised this run
+- 2026-10-22 17:21 | burn-down | wave-log reading: cron query not blind — 10-21 two ok rows (79 s, end-stamped), 10-22 one (104 s)
+- 2026-10-22 17:21 | burn-down | wave-log reading: 10-18..10-20 no row for a wave with D1 rows; `no invocation logged` kept, marker is the reading
+- 2026-10-22 17:21 | burn-down | wave-logs.ts: matched cron ranks first, cron-less reading says `(cron unread)`; runner prints raw row; tests
+- 2026-10-22 17:21 | burn-down | ARCHITECTURE wave-log paragraph rewritten; Queue: gankdat wave-log-cron-query-blind done
+- 2026-10-22 17:20 | build | new-ventures researched: 4 shelf spikes seeded — JetBrains (6), WordPress+Freemius (5), Notion templates (5), Wix (4)
+- 2026-10-22 17:20 | build | Evidence: JetBrains 15 % fee, bank payout; Freemius 4.7 % + gateway; Notion 8 % + 40c; Wix 100 %/80 %, US$200 per app
+- 2026-10-22 17:20 | build | Why shelves: the Atlassian spike passed every gate but unit price; register siblings all parked on 0 external calls
+- 2026-10-22 17:20 | build | Claim on gankdat refresh-uk-trademark-journal-silent-row released: the research run took precedence
+- 2026-10-22 17:20 | build | bounty-board.yml first run: success (17:13 dispatch run 12 on 10-20, 3 min; the 10-20 slot left it unrecorded)
+- 2026-10-22 17:20 | build | demo-video, mirror-gankdat and dependabot still wait for their own triggers since the 10-20 installer
+- 2026-10-22 17:20 | build | hackathons meta-global-ai-hackathon-apply done: Cerebral Valley approved the application (mail 10-21 21:25)
+- 2026-10-22 17:20 | build | relay hosts: jetbrains, wordpress.org, freemius, notion, wix added for the four spikes; no owner action raised
+- 2026-10-22 17:40 | burn-down | Spike jetbrains-marketplace-paid-plugins done: five relay rounds, agreement v3.2, 5 help pages, 494 paid plugins
+- 2026-10-22 17:40 | burn-down | Read: individual vendors in the agreement and help pages (ID, address, bank details); 85 %, US$200 floor
+- 2026-10-22 17:40 | burn-down | Niche: 83 small-vendor paid plugins ≥ 2,000 downloads, 14 in ≤ 1-week utility shapes; price API closed
+- 2026-10-22 17:40 | burn-down | Call: promote reshaped, exchange 2026-10-28 checks 14 prices; parked jetbrains-marketplace-paid-plugins
+- 2026-10-22 17:40 | burn-down | mirror-gankdat.yml first run: success (push run 17 on 10-22 17:28, 17 s; after the 10-20 install)
+- 2026-10-22 17:40 | burn-down | demo-video.yml first run: none since the 10-20 install (never dispatched by a routine; read from its own runs)
+- 2026-10-22 17:40 | burn-down | dependabot.yml first run: none since the 10-20 install (pull_request only; the next Dependabot PR runs it)
+- 2026-10-22 17:41 | burn-down | Stopping: wave-log item + JetBrains spike built; next spike-wordpress-org-freemius-shelf left for 18:00
+- 2026-10-22 18:23 | burn-down | Spike wordpress-org-freemius-shelf done: five relay rounds, Freemius docs, directory guidelines, plugins_api
+- 2026-10-22 18:23 | burn-down | Read: an individual sells on Freemius, UK on the payout list; 3.8 % + 50¢ + 2.3 % WP + ~3.5 % gateway
+- 2026-10-22 18:23 | burn-down | Read: US$100 payout floor on the 10th of the second month; guideline 5 wants a complete free build
+- 2026-10-22 18:23 | burn-down | Niche: accessibility 3 small-vendor pro tiers US$69-259 on 10k-60k; checkout rules 3 at US$39-€99
+- 2026-10-22 18:23 | burn-down | Call: promote reshaped (UK business checkout fields, free + US$39/yr pro); exchange 2026-10-28 ranks
+- 2026-10-22 18:23 | burn-down | relay hosts: 9 vendor price pages added; idea wordpress-org-freemius-plugins parked in the exchange
+- 2026-10-22 18:33 | burn-down | Spike notion-marketplace-paid-templates done: four relay rounds, help page, Terms of Use, gallery page data
+- 2026-10-22 18:33 | burn-down | Read: UK eligible, individual applies, waitlist 'a few months'; 8 % + 40¢, 1 % FX, US$20 floor, 14-day hold
+- 2026-10-22 18:33 | burn-down | Niche: 19 paid templates US$9-149 in Taxes/Side Hustle/Cash Flow show 0 ratings, <= 1 install each
+- 2026-10-22 18:33 | burn-down | Call: park (no visible buyers for paid work); re-read 2026-12-01; idea parked in the exchange
+- 2026-10-22 18:33 | burn-down | Stopping: WordPress + Notion spikes built; spike-wix-app-market-paid-apps left unclaimed for 19:00
+- 2026-10-22 18:39 | burn-down | Wix spike pre-fetched, not claimed: FAQ says US$200 threshold rolls over; Verified = 60 d + 40 Premium installs
+- 2026-10-22 18:39 | burn-down | Wix App Market category/search pages are client-rendered shells (0 app links); the listing API is unread
+- 2026-10-22 19:25 | burn-down | Spike wix-app-market-paid-apps done: six relay rounds, agreement v2026-06-30, 6 portal pages, 14 listings
+- 2026-10-22 19:25 | burn-down | Read: agreement signs 'a developer (whether entity or person)' 18+; payout = Studio partner form + Tipalti, USD wire
+- 2026-10-22 19:25 | burn-down | Read: 100 % for the app's first 12 months then 80 %, less 2.5 % fee Wix may waive; US$200 floor, 30 d after month end
+- 2026-10-22 19:25 | burn-down | Niche: 0 of 14 paid utility apps from a ≤ 2-listing vendor with ≥ 20 reviews; small vendors 6-16 apps, 0-14 reviews
+- 2026-10-22 19:25 | burn-down | Niche: small-vendor paid tiers US$1.27-6.99/month, 7 of 14 'No Reviews Yet'; installs hidden on every listing
+- 2026-10-22 19:25 | burn-down | Call: park; re-read 2026-12-01; idea wix-app-market-paid-apps parked in the exchange with that trigger
+- 2026-10-22 19:25 | burn-down | Relay: the 18:39 'c' run lost a push race (ref lock); re-run by the next request push, no re-fire needed
+- 2026-10-22 19:25 | burn-down | new-ventures emptied (11 done) and set needs_research (cooling, researched today); no owner action raised
+- 2026-10-22 19:33 | burn-down | gankdat refresh-uk-trademark-journal-silent-row dropped: no silent row since the 10-18 marker
+- 2026-10-22 19:33 | burn-down | Evidence: /v1/health (relay) journal last ok 10-22 06:06:24, 84 s into wave 7; 5 Daily rows clean
+- 2026-10-22 19:38 | burn-down | Foundry research: 6 of 10 committing workflows push once; relay run 143 lost its push to the 18:38 slot
+- 2026-10-22 19:38 | burn-down | Queue: foundry workflow-push-retry-everywhere (5), relay-rendered-fetch (4), claim-only-when-buildable (4) filed
+- 2026-10-22 19:38 | burn-down | Evidence: Wix shelf pages were client-rendered shells; the 17:20 slot claimed then released an item it researched past
+- 2026-10-22 19:46 | burn-down | docs/ci: fetch-relay, gankdat-metrics, owner-notes, pr-relay, run-watchdog, workflow-installer retry the push 3x
+- 2026-10-22 19:46 | burn-down | relay README: a `Commit responses` ref-lock failure is the push race, re-run by the next request push
+- 2026-10-22 19:46 | burn-down | Queue: foundry workflow-push-retry-everywhere done; the installer commit's first runs are the next slot's check
+- 2026-10-22 19:48 | burn-down | Stopping: Wix spike parked, journal item dropped, foundry research + push retry built; rendered fetch left for 20:00
+- 2026-10-22 20:20 | burn-down | pr-relay.yml first run: success (20:13 dispatch, run 3, 30 s; after the 19:44 installer)
+- 2026-10-22 20:20 | burn-down | run-watchdog.yml first run: success (20:13 dispatch, run 162, 30 s; after the 19:44 installer)
+- 2026-10-22 20:20 | burn-down | owner-notes.yml first run: success (schedule run 587 at 20:10; after the 19:44 installer)
+- 2026-10-22 20:20 | burn-down | Relay: `GET RENDER <url>` renders a page in Chromium on the runner and saves the DOM as <n>.html
+- 2026-10-22 20:20 | burn-down | Relay: RENDER parsed (GET only; HEAD/POST/RANGE refused), needsRender gate, 5 line tests added
+- 2026-10-22 20:20 | burn-down | docs/ci/fetch-relay.yml: npm ci + Chromium only when a request carries RENDER; job timeout 20 min
+- 2026-10-22 20:20 | burn-down | Local probe: MCP registry home renders to 188 KB DOM against a 24 KB raw shell; README, SCHEDULERS
+- 2026-10-22 20:30 | burn-down | gankdat-metrics.yml first run: success (20:13 dispatch, run 258, 4 min; after the 19:44 installer)
+- 2026-10-22 20:30 | burn-down | workflow-installer.yml first run: success (push run 62 at 20:17 installed fetch-relay.yml; 19:44 install)
+- 2026-10-22 20:30 | burn-down | fetch-relay.yml first run: success (push run 148 at 20:18, 67 s with Chromium; after the 20:17 install)
+- 2026-10-22 20:30 | burn-down | Relay probe a: Wix forms page rendered to 484 KB, title ok, network idle, but 0 app links (as raw)
+- 2026-10-22 20:30 | burn-down | Relay: RENDER now records requests, failed calls and console errors; scrolls once, settles 1.5 s
+- 2026-10-22 20:28 | burn-down | Relay probe b: forms sub-category renders 57 app cards (32 rated), apps-on-sale 96; raw bodies had 0
+- 2026-10-22 20:28 | burn-down | Relay probe b: /category/forms landing stays a shell: menu API 404 + React #421, now visible in meta
+- 2026-10-22 20:28 | burn-down | Relay: console noise from our own blocked images/fonts filtered; README says read cards, not hrefs
+- 2026-10-22 20:28 | burn-down | Queue: foundry relay-rendered-fetch done (3 relay rounds, 67-83 s each with Chromium installed)
+- 2026-10-22 20:30 | burn-down | Pipeline: `next` is null while a flagged queue out of cooling waits for research; gate claims nothing
+- 2026-10-22 20:30 | burn-down | Pipeline: status says 'research <venture> first — the build waits'; cold lists research first; 2 tests
+- 2026-10-22 20:30 | burn-down | Pipeline: the fallback's capped `next --max-effort` keeps the raw ranking (it never does market research)
+- 2026-10-22 20:30 | burn-down | Queue: foundry claim-only-when-buildable done; pipeline README documents the research-first rule
+- 2026-10-22 20:35 | burn-down | Exchange pre-research: Framer Marketplace plugins — 0 % fee, auto-enrolled creators; spike seeded (5)
+- 2026-10-22 20:35 | burn-down | Read: Creator Program article: publish a plugin = enrolled; paid templates keep 100 %; plugins sell direct
+- 2026-10-22 20:35 | burn-down | Read: creators page: 'Framer takes a 0 % cut', US$753k paid in a November, US$6.5M in 2025; no payout terms
+- 2026-10-22 20:35 | burn-down | Shelf: RENDER listing shows a Price filter and 20 trending plugins by small creators; prices on plugin pages
+- 2026-10-22 20:35 | burn-down | Relay: first RENDER use in research; /legal/creator-terms is 404; host .framer.com added
+- 2026-10-22 20:45 | burn-down | Spike framer-marketplace-paid-plugins claimed 20:31, relay round of 28 lines pushed 20:32 (run 151)
+- 2026-10-22 20:45 | burn-down | Claim on new-ventures spike-framer-marketplace-paid-plugins released: relay run 151 still running at 20:44
+- 2026-10-22 20:45 | burn-down | Stopping: relay RENDER verb + research-first next built, Framer spike seeded; its response waits for 21:00
+- 2026-10-22 20:48 | burn-down | Relay run 151: the Browser install step still running at 11 min (three earlier runs: 67-83 s in all)
+- 2026-10-22 20:48 | burn-down | docs/ci/fetch-relay.yml: Chromium cached by Playwright version; install 6 min and fetch 12 min step timeouts
+- 2026-10-22 20:48 | burn-down | Relay run 151 finished at 20:46 (14 min, all in the install step): 28 Framer pages on main for the spike
+- 2026-10-22 20:48 | burn-down | Seen: paid plugins price on their own pages (US$14/project, $29-89 one-time, $8.99/mo); 6 help/legal URLs 404
+- 2026-10-22 21:30 | burn-down | Spike framer-marketplace-paid-plugins done: 3 relay rounds, Community Terms v1.0, 43 plugin pages, 3 help pages
+- 2026-10-22 21:30 | burn-down | Read: Terms §6.3 'Framer does not process, collect, hold, or disburse any payments'; the creator bills; 0 % = directory
+- 2026-10-22 21:30 | burn-down | Read: publish is immediate, no review; §2.7 paid channel disclosed in the listing; taxes, support, refunds the creator's
+- 2026-10-22 21:30 | burn-down | Niche: 14 paid plugins priced (11 on-page): US$14-29 per project, US$19 lifetime Pro twice; 74 of 150 labelled Paid
+- 2026-10-22 21:30 | burn-down | Niche: no install, like or rating count anywhere on the shelf; 13 of 32 creators sell a single listing
+- 2026-10-22 21:30 | burn-down | Call: promote reshaped (styles half of the Figma toolkit, free + US$19 via our Stripe MoR); exchange 10-28 reads Styles
+- 2026-10-22 21:30 | burn-down | Relay run 153 failed: Browser step timed out at 6 min inside apt-get (26 MB of fonts) from playwright --with-deps
+- 2026-10-22 21:30 | burn-down | docs/ci/fetch-relay.yml: `npx playwright install chromium` only, never --with-deps; round b re-sent GET-only (15 s)
+- 2026-10-22 21:30 | burn-down | fetch-relay.yml first run: success (21:14 dispatch, run 152, 13 s; after the 20:44 installer)
+- 2026-10-22 21:30 | burn-down | Framer AUP §2 forbids robots: tonight's rounds were one-off reads; no recurring fetch of framer.com is scheduled
+- 2026-10-22 21:30 | burn-down | new-ventures emptied (12 done) and set needs_research (cooling, researched today); no owner action raised
+- 2026-10-22 21:33 | burn-down | Stopping: Framer spike built, relay fix filed; pipeline starved and cooled, tonight's pre-research done
+- 2026-10-23 05:16 | watchdog | ci-minutes: 623 billed min/7d (~2670/month, wall 391; private cap 2,000, warn 1700); top: fetch relay 115, notify owner 
+- 2026-10-23 09:25 | build | fetch-relay.yml first run: success (push run 155 at 09:15, 16 s; after the 21:32 installer)
+- 2026-10-23 09:25 | build | Bazaar week-1 read: 1 of 17 routes listed (uk-tenders, the only route ever paid); validate 17/17
+- 2026-10-23 09:25 | build | Read: CDP seller docs (relay): indexing is per resource after a settled call, ≤ 15 min; 30 d unpaid = dropped
+- 2026-10-23 09:25 | build | Read: cdp-sdk #806 (payload needs extensions.bazaar + resource), #759 (per resource, 12-14 h, drop-outs)
+- 2026-10-23 09:25 | build | x402-probe.mjs pays per route: unlisted or 23-day-stale routes, all on the dispatch input; cap 20/30 d
+- 2026-10-23 09:25 | build | x402-catalogue.mjs: slugs, payTo and merchant catalogue reads shared by metrics.mjs and the probe
+- 2026-10-23 09:25 | build | x402-test-client.mjs prints the facilitator's Bazaar verdict from EXTENSION-RESPONSES
+- 2026-10-23 09:25 | build | Tests: probeTargets, ownProbePayments, the 30-day cap (13 in x402-bazaar-read.spec); gates green
+- 2026-10-23 09:25 | build | docs/ci/gankdat-metrics.yml: probe step comment and input text match the per-route rule
+- 2026-10-23 09:25 | build | Queue: gankdat x402-bazaar-week-1-index-check done; LEDGER row: 16 half-cents (US$0.08), ~US$1/yr
+- 2026-10-23 09:25 | build | RESEARCH.md: week-1 reading; MARKETPLACE-PREP Bazaar row; ARCHITECTURE per-route note
+- 2026-10-23 09:40 | build | Forced probe round (run 260): uk-tenders and eu-ted settled; 13 routes answered 402 to the payment
+- 2026-10-23 09:40 | build | Found: the 13 have Bazaar descriptions of 512-697 chars; CDP's facilitator rejects settle above 500
+- 2026-10-23 09:40 | build | So 13 of 17 x402 routes could not take any payment since v0.25.0 (10-14); validate never shows it
+- 2026-10-23 09:40 | build | gankdat v0.25.3: bazaarDescription capped at DESCRIPTION_MAX 500; declaration test asserts it
+- 2026-10-23 09:40 | build | Probe calls each route with its declared example query (lookup got 400 on per_page); 402 reason printed
+- 2026-10-23 09:40 | build | uk-planning stays unlisted while paused: it answers 503, not 402, so the catalogue cannot index it
+- 2026-10-23 09:50 | build | Second forced round (run 261) after the v0.25.3 deploy: 16 of 17 routes settled; uk-planning 503 (paused)
+- 2026-10-23 09:50 | build | Catalogue already lists eu-ted 20 min after its first settlement; 09:45 row reads bazaar: 2 listed
+- 2026-10-23 09:50 | build | Spent today: 18 half-cents (US$0.09) from the test wallet; the 10-24 row should read 16 listed
+- 2026-10-23 17:12 | burn-down | Gate: BURN.json open, cold says work (gankdat research, pass unspent); next null, nothing claimed; main green
+- 2026-10-23 17:14 | burn-down | gankdat-metrics.yml first run: success (09:24 dispatch, run 260, 4 min; after the 09:24 installer)
+- 2026-10-23 17:14 | burn-down | gankdat research left to the 17:10 build slot (its marker landed 17:10); this run takes the pre-research pass
+- 2026-10-23 17:35 | burn-down | Exchange pre-research: Etsy digital downloads (UK sole-trader tax spreadsheets) spike seeded (5); 0 spikes open
+- 2026-10-23 17:35 | burn-down | Read: a rival listing shows 172 sales, 18 reviews, 1 year on Etsy at ~US$9; Payhip siblings £6.95-9.99
+- 2026-10-23 17:35 | burn-down | Read: fees 6.5 % + UK 4 % + £0.20 + 20c listing + one-off set-up fee (US$15-29); Persona ID; digital files allowed
+- 2026-10-23 17:35 | burn-down | No relay host added: Etsy's API Terms forbid automated reads of etsy.com; the spike uses WebSearch only
+- 2026-10-23 17:23 | build | Slot: next null, empty [gankdat] (starved, not cooling) — research run; main green (CI check 361, gankdat 148)
+- 2026-10-23 17:23 | build | Sandbox: npm ci left out optional @cloudflare/workerd-linux-64, gankdat tests could not start; installed --no-save
+- 2026-10-23 17:23 | build | Research gankdat: the 10-23 silent-nights clause is a stale marker; health shows uk-sanctions ok on 10-22 and 10-23
+- 2026-10-23 17:23 | build | Read: 2 OAuth /authorize rejections on a strict resource compare; spec allows origin, port and uppercase forms
+- 2026-10-23 17:23 | build | Relay: Docker PR #5622 open, no review or check run in 12 days (status pending); reading added to the item
+- 2026-10-23 17:23 | build | Queue: refresh-marker-false-positive (6), oauth-resource-indicator-variants (5), x402-bazaar-16-listed-read (4, 10-24)
+- 2026-10-23 17:23 | build | Queue: search-console-stats-indexing done — sitemap in since 09-28, reading daily since 10-11: 8/19 indexed, 0 clicks
+- 2026-10-23 17:23 | build | Queue: hackathons paypal-hackathon-demo-access (8 x 2) from the organiser's 10-21 Devpost message; next names it
+- 2026-10-23 17:23 | build | RESEARCH.md: 2026-10-23 pass written; gankdat researched 2026-10-23, research_after cleared
+- 2026-10-23 17:16 | burn-down | Exchange pre-research: Etsy digital downloads (UK sole-trader tax spreadsheets) spike seeded (5); 0 spikes open
+- 2026-10-23 17:16 | burn-down | Read: a rival listing shows 172 sales, 18 reviews, 1 year on Etsy at ~US$9; Payhip siblings £6.95-9.99
+- 2026-10-23 17:16 | burn-down | Read: fees 6.5 % + UK 4 % + £0.20 + 20c listing + one-off set-up fee (US$15-29); Persona ID; digital files allowed
+- 2026-10-23 17:16 | burn-down | No relay host added: Etsy's API Terms forbid automated reads of etsy.com; the spike uses WebSearch only
+- 2026-10-23 17:20 | burn-down | Spike etsy-digital-downloads-uk-tax-templates done: 20 searches, no etsy.com fetch (terms forbid automated reads)
+- 2026-10-23 17:20 | burn-down | Read: UK on Etsy Payments' list; Persona ID + selfie, bank account in the seller's name; set-up fee US$15-29 one-off
+- 2026-10-23 17:20 | burn-down | Read: fees on a £7.19 sale ≈ £1.38 (19 %); Etsy remits VAT on downloads; weekly Bacs payouts, no floor
+- 2026-10-23 17:20 | burn-down | Niche: 172 sales/18 reviews at £7.19 after a year; a UK VAT-seller sheet ~1.5k reviews; the £69 sheet 0 sales
+- 2026-10-23 17:20 | burn-down | Call: promote reshaped (2026/27 SA103 + MTD workbook at £6.99); exchange 10-28 ranks it; owner steps batched there
+- 2026-10-23 17:20 | burn-down | new-ventures emptied (16 done) and set needs_research (cooling, researched 10-22); no owner action raised
+- 2026-10-23 17:27 | burn-down | PayPal entry demo access (ALERTS 10-21): gankdat README gains the three run paths; the mirror job publishes it
+- 2026-10-23 17:27 | burn-down | Owner action 028: paste-ready demo URL + testing instructions for the Devpost form (~3 min, £0, by 12 Nov)
+- 2026-10-23 17:30 | burn-down | Foundry research-defers-to-build-slot built: cold reads the build marker, defers research for the hour
+- 2026-10-23 17:30 | burn-down | buildSlotInFlight + 4 tests; README and burn-down prompt carry the deferred clause; queue item filed done
+- 2026-10-23 17:27 | build | Queue: paypal-hackathon-demo-access set done — the 17:00 burn-down built it in parallel (README run paths, action 028)
+- 2026-10-23 17:40 | burn-down | gankdat v0.25.4: a progress marker with a refresh_log row at or after its start is stale, cleared, not reported
+- 2026-10-23 17:40 | burn-down | clearRefreshProgress retries a lost delete once; spec gains stale-marker, older-row and lost-delete cases
+- 2026-10-23 17:40 | burn-down | ARCHITECTURE stale-marker note; Queue: gankdat refresh-marker-false-positive-2026-10-23 done
+- 2026-10-23 17:45 | burn-down | gankdat v0.25.5: /authorize accepts every canonical spelling of its resource (origin, slash, case, :443)
+- 2026-10-23 17:45 | burn-down | The authorize_rejected funnel detail now names the resource value the client sent; 11 spec cases added
+- 2026-10-23 17:45 | burn-down | ARCHITECTURE OAuth note; Queue: gankdat oauth-resource-indicator-variants done
+- 2026-10-23 17:41 | burn-down | Deploys: v0.25.4 green (gankdat run 149, 2.5 min); v0.25.5 run 150 started 17:39, read by the 18:00 slot if not here
+- 2026-10-23 17:41 | burn-down | Stopping: pre-research pass, Etsy spike, demo-access fix, cold deferral and two gankdat items built; starved and cooled
+- 2026-10-24 00:15 | burn-down | new-ventures researched: 4 billed-shelf spikes seeded — monday (6), Bubble (6), Zendesk (5), Zoho (5)
+- 2026-10-24 00:15 | burn-down | Evidence (relay, 9 pages): monday bills + 100 % to US$200k; Bubble Stripe payouts 5th, no floor; Zoho 0 %, US$100
+- 2026-10-24 00:15 | burn-down | Zendesk paid apps bill through our own Stripe per agent, 1-3 week review; fee and eligibility are the spikes' reads
+- 2026-10-24 00:15 | burn-down | Read and not seeded: Envato (flat 50 % author fee since July 2026), Adobe Express and Miro (no billing)
+- 2026-10-24 00:40 | burn-down | Spike monday-apps-marketplace-paid-apps done: 5 relay rounds, docs as .md, both Terms, Marketplace render
+- 2026-10-24 00:40 | burn-down | Read: individual can sign; monday bills with VAT, pays twice monthly by invoice, no floor; rate discretionary in Terms
+- 2026-10-24 00:40 | burn-down | Demand: 1.6M installs; 17 small-studio apps at 5.7K-27.1K installs; seat-bucket prices US$1-250/account/month
+- 2026-10-24 00:40 | burn-down | Call: park — submit page bars apps built primarily with AI-generated code; idea parked, re-read 2026-12-01
+- 2026-10-24 00:40 | burn-down | Stopping: new-ventures researched (4 spikes), monday spike closed; Bubble, Zendesk, Zoho wait for the next slot
+- 2026-10-24 00:48 | burn-down | Spike bubble-plugin-marketplace-paid-plugins done: policies page, 4 rendered listings, 3 forum threads read
+- 2026-10-24 00:48 | burn-down | Read: 25 % commission, price US$3-300, Stripe payout on the 5th, no floor; a UK individual sells with Stripe KYC
+- 2026-10-24 00:48 | burn-down | Demand: the Companies House plugin rival has 3 installs at US$2/mo; 298 installs paid one seller ~EUR 12/month
+- 2026-10-24 00:48 | burn-down | Call: park (below baseline; a gankdat distribution item if ever built); idea parked, re-read 2026-12-01
+- 2026-10-24 00:48 | burn-down | Stopping for time: monday and Bubble spikes closed; Zendesk and Zoho spikes wait for the next slot
+- 2026-10-24 01:00 | watchdog | ci-minutes: 630 billed min/7d (~2700/month, wall 405; private cap 2,000, warn 1700); top: fetch relay 139, owner notes 8
+- 2026-10-24 01:18 | burn-down | Spike zendesk-marketplace-paid-apps done: 3 relay rounds, Developer Terms, 7 docs pages, 12 listings via .co.uk
+- 2026-10-24 01:18 | burn-down | Read: no Zendesk share published, fees reservable on 10 days' notice; own Stripe, USD plans, Stripe Tax; 1-3 wk review
+- 2026-10-24 01:18 | burn-down | Demand: 64 paid small-vendor apps, median 2 installs, 17 at 0; best 189 at US$2/agent; Customer Details rival 2
+- 2026-10-24 01:18 | burn-down | Call: park (gankdat distribution, not a line); idea parked, re-read 2026-12-01; www.zendesk.com shelf is bot-walled
+- 2026-10-24 01:33 | burn-down | Spike zoho-marketplace-paid-extensions done: 4 relay rounds, Developer Agreement, 12 docs pages, 11 listings
+- 2026-10-24 01:33 | burn-down | Read: 0 % commission on three pages, US$100 floor, wire ~15 days; self-serve company profile; review 2-3 wk + demo
+- 2026-10-24 01:33 | burn-down | Prices are per org not per user; 7 of 11 paid listings at 100-2,800 installs; verification rivals 34-53 reviews
+- 2026-10-24 01:33 | burn-down | Call: promote reshaped (US$9/org/month UK verification widget) for the 10-28 exchange; new-ventures queue emptied
+- 2026-10-24 01:33 | burn-down | Stopping for time: four shelf spikes closed tonight; foundry research (starved) left to the 02:00 slot
+- 2026-10-24 02:30 | burn-down | Foundry research (starved queue): 5 items filed from the week's traces, the Actions API and the open PR
+- 2026-10-24 02:30 | burn-down | Evidence: all four Fable slots of Wed 10-21 missed (allowance week ends Thu 03:00); no exchange re-run exists
+- 2026-10-24 02:30 | burn-down | Evidence: publish run 54 (v0.25.4) exited 1 silently in registry-publish.sh; run 55 repaired it 5 min later
+- 2026-10-24 02:30 | burn-down | Evidence: 3 'Run failed' mails in 36 h triaged 'step not named'; PR #7 (stripe 23, postal-mime 4) green 6 days
+- 2026-10-24 02:30 | burn-down | Items: exchange-missed-slot-fallback 6, watchdog-ci-failed-runs 5, registry silent exit 4, majors review 4, cap 3
+- 2026-10-24 02:30 | burn-down | CI first runs: none owed (the 10-22 21:32 and 10-23 09:24 installers both have first-run lines after them)
+- 2026-10-24 02:34 | burn-down | Stopping for time: foundry researched (5 items); exchange-missed-slot-fallback (0.3 d) is next for the 09:00 build
+- 2026-10-24 08:10 | retro | Slot reliability: 89 of 95 slots traced; 6 missed, 9 silent, all one usage-limit week (10-21)
+- 2026-10-24 08:10 | retro | Repeat blocker: stale usage report (20 d) lets the burn drain Fable; 10-21 exchange and builds lost
+- 2026-10-24 08:10 | retro | Repeat blocker: signing and attended handoffs wait 20 d; no interactive session since 10-17
+- 2026-10-24 08:10 | retro | Defect: two owner-only steps (Cloudflare token scope, .devcontainer) were filed as handoff: lines
+- 2026-10-24 08:10 | retro | Defect: failed CI runs (fetch relay, gankdat publish) read hours late; already queued 10-24
+- 2026-10-24 08:10 | retro | Queued foundry burn-pace-stale-usage-report (6) and owner-only-handoffs-as-owner-lines (4)
+- 2026-10-24 08:10 | retro | Owner: nothing new needed this week; no notify condition met
+- 2026-10-24 09:20 | build | Built foundry exchange-missed-slot-fallback: missedExchange gate in scripts/pipeline-cold.ts, 9 tests
+- 2026-10-24 09:20 | build | cold -- --routine=build prints 'exchange missed: <Wed>' first Thu-Sat when no exchange trace since Wed 08:00
+- 2026-10-24 09:20 | build | Build prompt STEP -1 now runs the gate after the slot marker and runs the exchange on that reason
+- 2026-10-24 09:20 | build | Gate fires today (W43 exchange missed 10-21): the 17:00 build slot runs the exchange instead of an item
+- 2026-10-24 09:20 | build | CI first runs: none owed (10-22 21:32 and 10-23 09:24 installers both have first-run lines after them)
+- 2026-10-24 17:55 | exchange | W43 (run 10-24, Wednesday missed): winner tax-workbook — UK Sole Trader Tax Workbook on Etsy, 12 × 2 = 24 vs baseline 18
+- 2026-10-24 17:55 | exchange | New venture ventures/tax-workbook (idea, channel etsy): venture.json, RESEARCH.md, queue of 4 (weight 2)
+- 2026-10-24 17:55 | exchange | Queued tax-workbook: workbook-2026-27-build 12, etsy-listing-live 10 (owner-blocked), reseller 7, april-2027 3
+- 2026-10-24 17:55 | exchange | Queued gankdat zoho-crm-uk-registers-widget 2.4, blocked on the owner's free Zoho developer sign-in
+- 2026-10-24 17:55 | exchange | new-ventures refilled: spikes Payhip 6, JetBrains prices 6, Gumroad 5, Framer Styles 5
+- 2026-10-24 17:55 | exchange | Parked: ai-setup-course kit 8 (Gumroad spike decides), Atlassian 1, JetBrains 0.75, Framer 0.7, WordPress 0.6
+- 2026-10-24 17:55 | exchange | Declined: nothing new; the set-up fee over the £10 launch rule is not spent — the owner decides in action 029
+- 2026-10-24 17:55 | exchange | Exchange file docs/exchange/2026-W43.md; STRATEGY §2 Etsy row and §8 line; owner note on the course answered
+- 2026-10-24 17:55 | exchange | Owner later: one batched request (Etsy shop + Zoho sign-in, ~30 min) raised by the build that finishes the workbook
+- 2026-10-24 17:55 | build | Exchange missed on Wednesday 2026-10-21: ran the venture exchange in this slot
+- 2026-10-24 17:17 | burn-down | Built foundry burn-pace-stale-usage-report: pacedStop/cutoffSeen in scripts/pipeline-cold.ts, 9 tests
+- 2026-10-24 17:17 | burn-down | cold prints 'paced: <why>' while BURN.json report is >7 d old: Mon/Tue night cap 3 slots, cutoff ends any night
+- 2026-10-24 17:17 | burn-down | Cutoff = watchdog 'usage limit?' line or a 09:00/17:00 build slot with no start marker, 24 h since Thu 03:00
+- 2026-10-24 17:17 | burn-down | Burn-down GATE sentence, SCHEDULERS Usage limit row and BURN.json notes updated; gate says work tonight (Sat)
+- 2026-10-24 17:33 | burn-down | Built foundry watchdog-ci-failed-runs: scripts/ci-failed-runs.ts reads failed Actions runs of 26 h, 7 tests
+- 2026-10-24 17:33 | burn-down | One 'watchdog | ci-failed: <workflow> run N HH:MM — step; later run M ok' line per run; 2 in 7 d file an item
+- 2026-10-24 17:33 | burn-down | notify-owner.yml with the new step line dropped in docs/ci/ (installer moves it; next slot checks its first run)
+- 2026-10-24 17:33 | burn-down | Inbox triage prompt: a Run failed row cites the ci-failed line instead of 'failing step not named'
+- 2026-10-24 17:31 | burn-down | gankdat x402-bazaar-16-listed-read done: 10-24 row reads 16 listed, 22 calls, 19 payers; job log lists all 16
+- 2026-10-24 17:31 | burn-down | Week-1 Bazaar proof closed (16 of 17; uk-planning paused); header forward not needed; day-30 read 11-14
+- 2026-10-24 17:38 | burn-down | Built foundry registry-publish-silent-exit: registry-publish.sh names its step and HTTP status on failure
+- 2026-10-24 17:38 | burn-down | Registry read tells 404 (not published) from 5xx (unreachable); releases API authed; publish retries once
+- 2026-10-24 17:38 | burn-down | gankdat-publish.yml with GITHUB_TOKEN on the registry step dropped in docs/ci/ (publish job: never dispatched)
+- 2026-10-24 17:38 | burn-down | Dry run: registry 0.25.5 = server.json, up to date; sandbox proxy 403 on the releases call now named, not silent
+- 2026-10-24 17:33 | watchdog | ci-failed: gankdat-publish.yml run 54 17:34 — step MCP registry — publish if server.json i…; later run 55 ok
+- 2026-10-24 17:36 | burn-down | Stopping for time: 4 items built (pace gate, failed-runs watchdog, Bazaar read, registry script); tax-workbook next
+- 2026-10-24 18:12 | burn-down | notify-owner.yml first run: success (schedule run 408 at 17:32; after the 17:29 installer)
+- 2026-10-24 18:12 | burn-down | gankdat-publish.yml first run: success (push run 57 at 17:35, 30 s; after the 17:35 installer)
+- 2026-10-24 18:30 | burn-down | Built tax-workbook workbook-2026-27-build: ventures/tax-workbook/src (ExcelJS), 10 tabs, 2,122 formulas
+- 2026-10-24 18:30 | burn-down | Setup tab holds every 2026/27 rate as a named cell with its gov.uk source; drop-downs from Setup lists
+- 2026-10-24 18:30 | burn-down | Logs: Income, Expenses (SA103S boxes 11-19 + AIA), Mileage (10,000-mile step-down); MTD Quarterly tab
+- 2026-10-24 18:30 | burn-down | SA103 pack (boxes 9-31), Tax tab (bands, taper, Class 4, Class 2, POA), Allowance check, Example tab
+- 2026-10-24 18:30 | burn-down | src/recalc.ts: LibreOffice macro recalc, 0 formula errors, Example £5,025.80 = hand-worked case, 13 checks
+- 2026-10-24 18:30 | burn-down | 15 tests (tax.ts vs hand-worked figures; workbook names, lists, no Sheets-unsafe functions; recalc)
+- 2026-10-24 18:30 | burn-down | Release file ventures/tax-workbook/release/…2026-27.xlsx committed; 5 listing PNGs rendered from SVG
+- 2026-10-24 18:30 | burn-down | LISTING.md: title, 13 tags, description (gains, not-for list), £6.99 to 30 Nov then £8.99, refund policy
+- 2026-10-24 18:30 | burn-down | Action 029 raised (Etsy shop ≤ £25 fee + free Zoho sign-in); ledger contingent £25; venture validated
+- 2026-10-24 18:30 | notify | Your tax spreadsheet is ready: open an Etsy shop to sell it, about 30 minutes and a fee up to £25
+- 2026-10-24 18:45 | burn-down | new-ventures spike-payhip-digital-downloads-shelf done: promote as the twin; spike file written
+- 2026-10-24 18:45 | burn-down | Payhip: free plan 5 % + Stripe ≈ 9 %, reseller for UK/EU VAT, daily payouts, marketplace after US$10 sales
+- 2026-10-24 18:45 | burn-down | payhip.com blocks the runner (Cloudflare 403, raw + rendered); help centre read in 3 relay rounds
+- 2026-10-24 18:45 | burn-down | Queued tax-workbook payhip-twin-listing (5), blocked on action 029 step 4 (Payhip account, £0)
+- 2026-10-24 18:47 | burn-down | Stopping for time: 2 items (tax workbook built + listing pack, Payhip spike); JetBrains price read next
+- 2026-10-24 19:17 | burn-down | Spike jetbrains-price-read done: 1 RENDER relay round, all 14 pricing tabs rendered (US, personal)
+- 2026-10-24 19:17 | burn-down | Prices: 10 of 14 at ≥ US$10/user/yr — 8 yearly US$10-38, .log US$38, Skol US$20, Monokai US$29 one-off
+- 2026-10-24 19:17 | burn-down | 8 of 14 sit at exactly US$1/mo, US$10/yr personal (ANSI 1.55M downloads among them); 4 at US$1-5/yr
+- 2026-10-24 19:17 | burn-down | Spike §4a table, exchange idea trigger updated: bar cleared, 10-28 exchange re-scores at evidence 2
+- 2026-10-24 19:17 | burn-down | Still open for the exchange: commercial tab prices, address display, whether US$1/mo is a floor
+- 2026-10-24 19:17 | burn-down | CI first runs: none owed (both 10-24 installers have first-run lines after them)
+- 2026-10-24 19:29 | burn-down | Spike gumroad-shelf-uk-seller done: 4 relay rounds — Terms, pricing, prohibited list, 24 help articles, 4 rivals
+- 2026-10-24 19:29 | burn-down | Read: UK individual sells, GBP bank payout Wednesdays from US$100, Stripe KYC (ID + address), name+email public
+- 2026-10-24 19:29 | burn-down | Fees: 10 % + 50¢ PLUS card processing 2.9 % + 30¢ direct (≈ 15-16 % at US$29-39); Discover 30 % all-in; VAT on top
+- 2026-10-24 19:29 | burn-down | Discover lists only after US$100 of genuine direct sales + ~3-week risk review; 4 rivals: 0 new ratings in 5 d
+- 2026-10-24 19:29 | burn-down | Call: park (re-scored 2.7-5.3, under baseline); kit idea trigger updated; Gumroad is not the £6.99 workbook's twin
+- 2026-10-24 19:29 | burn-down | Relay lesson: help.gumroad.com redirects to the index; gumroad.com/help/article pages carry HTML in data-page
+- 2026-10-24 19:35 | burn-down | Spike framer-styles-category-read done: category RENDER + 18 listing GETs; free/paid from Product JSON-LD
+- 2026-10-24 19:35 | burn-down | Styles category: 18 plugins, 8 paid, 10 free, 7 touched in 6 months; StylePassport US$24 one-off via Stripe + key
+- 2026-10-24 19:35 | burn-down | Token import partly taken (Color Import paid HSL-only, Tokens Studio, 3 Figma syncs); no DTCG/Tailwind-config import
+- 2026-10-24 19:35 | burn-down | Export covered free (Styles IO); call: port stays parked at 0.7 reshaped; §7 appended, idea trigger updated
+- 2026-10-24 19:35 | burn-down | new-ventures queue emptied (23 spikes done this week): needs_research set for the next slot

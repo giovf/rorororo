@@ -292,11 +292,30 @@ export function candidates(
     .map(({ venture, item }) => ({ venture, item }));
 }
 
-/** The next item to build (optionally only items up to `maxEffortDays`), or undefined when nothing qualifies. */
+/**
+ * Open queues the routines research before building anything: flagged `needs_research` or empty,
+ * and not cooling. The same set `needsResearch()` prints first; split out so `nextItem()` can
+ * consult it without the recursion.
+ */
+export function researchFirst(queues: VentureQueue[], options: ClockOptions = {}): VentureQueue[] {
+  const today = utcToday(clock(options));
+  return queues.filter((q) => q.status === 'open' && (q.needs_research || isEmpty(q)) && !isCooling(q, today));
+}
+
+/**
+ * The next item to build (optionally only items up to `maxEffortDays`), or undefined when nothing
+ * qualifies — or when a queue is waiting for research (2026-10-22, foundry
+ * `claim-only-when-buildable`): the routines' LOOP researches such a queue before building, so a
+ * slot that will research must not claim an item it then releases (the 17:20 build slot claimed
+ * `refresh-uk-trademark-journal-silent-row`, researched new-ventures and released it; the 19:11
+ * slot claimed it again). `researchFirst: false` keeps the raw ranking — the fallback routine's
+ * `--max-effort` call, which never does market research and would otherwise idle.
+ */
 export function nextItem(
   queues: VentureQueue[],
-  options: ClockOptions & { maxEffortDays?: number } = {},
+  options: ClockOptions & { maxEffortDays?: number; researchFirst?: boolean } = {},
 ): { venture: string; item: QueueItem } | undefined {
+  if (options.researchFirst !== false && researchFirst(queues, options).length > 0) return undefined;
   return candidates(queues, options)[0];
 }
 
@@ -326,14 +345,38 @@ function coolingReason(queue: VentureQueue, today: string): string {
 }
 
 /**
+ * An open queue with a `todo` item dated for today (before 07:00 UTC) or tomorrow is waiting, not
+ * starved (2026-10-20, foundry `dated-within-day-not-starved`): the 00:07 burn-down slot found both
+ * starved queues held only items buildable at 07:00 the same morning, and every night slot until
+ * then would have researched them. Within a day of the item the fallback leaves the queue alone.
+ */
+export function awaitsDatedItem(queue: VentureQueue, now: Date): boolean {
+  const today = utcToday(now);
+  return queue.items.some(
+    (it) =>
+      it.status === 'todo' &&
+      it.not_before !== undefined &&
+      !notBeforeArrived(it.not_before, now) &&
+      Date.parse(it.not_before) - Date.parse(today) <= DAY_MS,
+  );
+}
+
+/**
  * Open queues with no item the build routine could pick today: everything left is blocked or
  * waits on a `not_before` date. Oldest `updated` first, so research rotates between ventures;
  * a cooling queue is left out (`cooling()` lists those).
  */
 export function starved(queues: VentureQueue[], options: ClockOptions = {}): VentureQueue[] {
-  const today = utcToday(clock(options));
+  const now = clock(options);
+  const today = utcToday(now);
   return queues
-    .filter((q) => q.status === 'open' && candidates([q], options).length === 0 && !isCooling(q, today))
+    .filter(
+      (q) =>
+        q.status === 'open' &&
+        candidates([q], options).length === 0 &&
+        !isCooling(q, today) &&
+        !awaitsDatedItem(q, now),
+    )
     .sort((a, b) => a.updated.localeCompare(b.updated) || a.venture.localeCompare(b.venture));
 }
 
@@ -354,11 +397,8 @@ export function needsResearch(queues: VentureQueue[], options: ClockOptions = {}
   // A cooling queue is left out here too (2026-10-17, foundry `empty-skips-cooling-queues`): a
   // queue emptied by its last spike is flagged by the build rule the same day it was researched,
   // and listing it sent the next slot to research a venture read hours earlier.
-  const today = utcToday(clock(options));
-  const flagged = queues.filter(
-    (q) => q.status === 'open' && (q.needs_research || isEmpty(q)) && !isCooling(q, today),
-  );
-  if (flagged.length > 0 || nextItem(queues, options) !== undefined) return flagged;
+  const flagged = researchFirst(queues, options);
+  if (flagged.length > 0 || candidates(queues, options).length > 0) return flagged;
   return starved(queues, options);
 }
 
@@ -381,12 +421,15 @@ export function formatPipeline(pipeline: Pipeline, options: ClockOptions = {}): 
   }
   const next = nextItem(pipeline.queues, { now });
   const cool = cooling(pipeline.queues, { now });
+  const held = next === undefined ? nextItem(pipeline.queues, { now, researchFirst: false }) : undefined;
   lines.push(
     next
       ? `next: ${next.venture} / ${next.item.id} (score ${next.item.score}${weightOf(pipeline, next.venture) === 1 ? '' : ` × weight ${weightOf(pipeline, next.venture)}`}) — ${next.item.title}`
-      : research.size > 0
-        ? `next: nothing to build — research ${[...research][0]!} (pipeline starved: every open item is blocked or dated)`
-        : cool.length > 0
+      : held
+        ? `next: research ${[...research][0]!} first — the build waits (${held.venture} / ${held.item.id} is the best item after it; claim nothing)`
+        : research.size > 0
+          ? `next: nothing to build — research ${[...research][0]!} (pipeline starved: every open item is blocked or dated)`
+        : cool.length > 0 || pipeline.queues.some((q) => q.status === 'open' && awaitsDatedItem(q, now))
           ? 'next: nothing to build — pipeline starved and every starved queue was researched within 48 h or waits for dated evidence: write one run-log line and stop'
           : 'next: nothing to build — research needed',
   );
