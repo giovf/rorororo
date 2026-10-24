@@ -1,0 +1,12 @@
+GET https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=api&page=1
+GET https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=api&page=2
+GET https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=api&page=3
+GET https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=license&page=1
+GET https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&search=company%20data&page=1
+GET https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&page=2
+GET https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&page=3
+GET https://appsource.microsoft.com/en-gb/marketplace/apps?product=office%3Bexcel&page=4
+GET https://appsource.microsoft.com/en-gb/product/office/WA200005502
+GET https://appsource.microsoft.com/en-gb/product/office/WA102957665
+GET https://appsource.microsoft.com/en-gb/product/office/WA200005669
+GET https://appsource.microsoft.com/en-gb/product/office/WA200004933
