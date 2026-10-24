@@ -532,6 +532,14 @@
       "status": "parked",
       "trigger": "a gankdat shelf converts (first paying account or ≥ 20 paid Apify runs/month), or the Companies House UK plugin or another small-vendor data-lookup plugin on Bubble shows ≥ 200 installs at ≥ US$5/month (re-read at the 2026-12-01 exchange); then a one-day gankdat item `bubble-plugin-uk-registers`, evidence 1 × reach 2 ÷ 1 day = 2.",
       "added": "2026-10-24"
+    },
+    {
+      "id": "zendesk-marketplace-paid-apps",
+      "title": "Zendesk Marketplace: a ticket-sidebar panel showing the requester's organisation from the gankdat registers (company status, officers, charity record, sanctions hit) at ~US$3 per agent per month through our own Stripe",
+      "why": "Spike 2026-10-24 (docs/exchange/spikes/zendesk-marketplace-paid-apps.md): the best terms of the seven shelves read this month — paid apps bill through the developer's own Stripe account (USD plans, per agent or per account, trials 1–90 days), Zendesk publishes no commission (Developer Terms §4.4 reserves fees on 10 days' notice), there is no payout floor, a free non-expiring 5-agent developer instance, 1–3 weeks of review, and nothing bars a UK individual — parked because demand for the job fails on the shelf's own numbers: 64 paid small-vendor apps (read from the .co.uk mirror's listing data) sit at a median of 2 installs (17 at 0, 3 at 50+), the exact rival Customer Details (Volvox, US$1/agent) has 2 installs after four years and the two CRM sidebars 5 and 14; the apps that reach 50–189 installs are connectors to marketplaces a team must answer in. Distribution for gankdat's data, not a new line; needs four owner-identity actions (portal, sponsored account, a separate Stripe account, a Stripe Tax registration the non-VAT-registered owner cannot make without asking Zendesk).",
+      "status": "parked",
+      "trigger": "a gankdat shelf converts (first paying account or ≥ 20 paid Apify runs/month), or the Customer Details or HubSpot sidebar listings show ≥ 50 installs at the 2026-12-01 exchange re-read (www.zendesk.co.uk/marketplace/apps/support/255765/, /189715/ — the page's __NEXT_DATA__ carries exact installation_count), or Zendesk Marketplace support answers what a non-VAT-registered UK seller collects under Stripe Tax; then a two-day gankdat item `zendesk-sidebar-uk-registers`, evidence 1.5 × reach 2 ÷ 2 days ≈ 1.5, with the four owner actions batched into one request.",
+      "added": "2026-10-24"
     }
   ]
 }

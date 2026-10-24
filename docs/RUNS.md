@@ -1627,3 +1627,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 00:48 | burn-down | Call: park (below baseline; a gankdat distribution item if ever built); idea parked, re-read 2026-12-01
 - 2026-10-24 00:48 | burn-down | Stopping for time: monday and Bubble spikes closed; Zendesk and Zoho spikes wait for the next slot
 - 2026-10-24 01:00 | watchdog | ci-minutes: 630 billed min/7d (~2700/month, wall 405; private cap 2,000, warn 1700); top: fetch relay 139, owner notes 8
+- 2026-10-24 01:18 | burn-down | Spike zendesk-marketplace-paid-apps done: 3 relay rounds, Developer Terms, 7 docs pages, 12 listings via .co.uk
+- 2026-10-24 01:18 | burn-down | Read: no Zendesk share published, fees reservable on 10 days' notice; own Stripe, USD plans, Stripe Tax; 1-3 wk review
+- 2026-10-24 01:18 | burn-down | Demand: 64 paid small-vendor apps, median 2 installs, 17 at 0; best 189 at US$2/agent; Customer Details rival 2
+- 2026-10-24 01:18 | burn-down | Call: park (gankdat distribution, not a line); idea parked, re-read 2026-12-01; www.zendesk.com shelf is bot-walled
