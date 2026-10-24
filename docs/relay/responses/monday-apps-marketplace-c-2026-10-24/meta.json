@@ -1,0 +1,118 @@
+{
+  "request": "monday-apps-marketplace-c-2026-10-24",
+  "fetched_at": "2026-10-24T00:21:37.803Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/plans-and-pricing.md",
+      "fetched_at": "2026-10-24T00:21:32.741Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/plans-and-pricing.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"a36afa2959997b21cf2a78e31fab484d52bc257c:expanded|c853aabb\""
+      },
+      "file": "1.txt",
+      "bytes": 7288,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/submit-your-app.md",
+      "fetched_at": "2026-10-24T00:21:33.611Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/submit-your-app.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"1f44f8f6735f5745be82a8944156abe687a04dbb:expanded|c853aabb\""
+      },
+      "file": "2.txt",
+      "bytes": 5032,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/app-review-checklist.md",
+      "fetched_at": "2026-10-24T00:21:34.267Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/app-review-checklist.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"bcb85d7fb239001c904f0e86ac8705f4da79b857:expanded|c853aabb\""
+      },
+      "file": "3.txt",
+      "bytes": 2212,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/partnership.md",
+      "fetched_at": "2026-10-24T00:21:34.952Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/partnership.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"6e32d5abeaed60ed32cef481bca5416e104652a3:expanded|c853aabb\""
+      },
+      "file": "4.txt",
+      "bytes": 1210,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/payment.md",
+      "fetched_at": "2026-10-24T00:21:35.579Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/payment.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"7a99c2b76dc81e4eafcf1676905b18a0a57a73b1:expanded|c853aabb\""
+      },
+      "file": "5.txt",
+      "bytes": 3018,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/marketplace-pricing.md",
+      "fetched_at": "2026-10-24T00:21:36.286Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/marketplace-pricing.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"b1305591152b7ab6a08a70b7162b1380b9ff4f1a:expanded|c853aabb\""
+      },
+      "file": "6.txt",
+      "bytes": 2610,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/sales.md",
+      "fetched_at": "2026-10-24T00:21:36.963Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/sales.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"4854807a9bda447837ee3d8ed5d6f0b2dbb0f6a1:expanded|c853aabb\""
+      },
+      "file": "7.txt",
+      "bytes": 3875,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.monday.com/apps/docs/install-and-share-your-apps.md",
+      "fetched_at": "2026-10-24T00:21:37.646Z",
+      "status": 200,
+      "final_url": "https://developer.monday.com/apps/docs/install-and-share-your-apps.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "etag": "\"e69db71c4226fd8b357275277c83aef2a6cf08d8:expanded|c853aabb\""
+      },
+      "file": "8.txt",
+      "bytes": 4445,
+      "truncated": false
+    }
+  ]
+}
