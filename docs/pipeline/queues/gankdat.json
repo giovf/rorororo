@@ -799,6 +799,16 @@
       "status": "blocked",
       "blocked_on": "owner: a free Zoho Developer Console sign-in (marketplace.zoho.com company profile under the trading name) — batched into action 029 with the Etsy shop (raised 2026-10-24, ALERTS 2026-10-24); bank details and the demo call come at listing time",
       "added": "2026-10-24"
+    },
+    {
+      "id": "appsource-excel-custom-functions-add-in",
+      "title": "gankdat Excel add-in on Microsoft AppSource: custom functions (=UKCOMPANY, =CQC, =TENDERS, =UKCHARITY …) over the existing API, a task pane that runs the keyless preview and then takes the user's API key and links the credit packs; add-in-only manifest, Office.js, hosted on gankdat.com (HTML, JS and functions metadata on one domain), privacy / EULA / support pages, certification test notes; listed free with 'Additional purchase may be required' — the store never bills, the key does",
+      "why": "Spike 2026-10-24 (new-ventures spike-appsource-excel-add-in-shelf, docs/exchange/spikes/appsource-excel-add-in-shelf.md): 316 of the 427 Excel add-ins read (74 %) bill outside the store exactly this way; data-API vendors (Alpha Vantage, Twelve Data, Financial Modeling Prep, IEX Cloud, Wisesheets) sit at 10–50 ratings; no UK-register add-in among 427 tiles or the 'company data' search (173 results). Rules (certification policies §1120, Learn 2025-09-25 / 2026-10-01): own-billing add-ins are allowed and labelled, custom functions need helpUrl, add-in commands, same-domain hosting and test notes; no mobile declaration (§1120.2 bans purchase UI on iOS/Android); validation 3–5 working days. Owner step at build time: a Partner Center Company account (a sole trader is 'a person acting in relation to their trade or profession'), £0 on the new storedeveloper.microsoft.com flow, manual review on a tax document (UTR letter / SA return) and an Entra work account on gankdat.com — batched into the actions file of the build, ~45 min. Score: evidence 2 × reach 3 ÷ (2.5 d + 0.75) = 1.8. Re-score up on a first paying gankdat key or a UK-register add-in appearing on the shelf.",
+      "effort_days": 2.5,
+      "proof": "The add-in is listed on AppSource under the gankdat publisher with 'Additional purchase may be required'; within 30 days of listing ≥ 10 distinct API keys make their first call from the add-in (User-Agent / referer tag) and ≥ 1 credit pack is bought through its task pane",
+      "score": 1.8,
+      "status": "todo",
+      "added": "2026-10-24"
     }
   ]
 }

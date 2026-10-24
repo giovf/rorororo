@@ -1734,3 +1734,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 20:24 | burn-down | Read: a sole trader needs a Partner Center company account; store does not bill add-ins; 3 keyed/paid rivals
 - 2026-10-24 20:24 | burn-down | Creative Market read too and parked without a spike: portfolio-review gate, ~50 % split, no spreadsheet listings
 - 2026-10-24 20:24 | burn-down | Relay hosts added for the spike: learn.microsoft.com, appsource.microsoft.com (neither resolves from the sandbox)
+- 2026-10-24 20:33 | burn-down | Spike appsource-excel-add-in-shelf done: 3 relay rounds (10 Learn pages, 9 raw shelf pages, 4 product pages)
+- 2026-10-24 20:33 | burn-down | Shelf: 427 of 1,937 Excel add-ins read; 316 (74 %) bill outside the store; 59 of those have ≥ 10 ratings
+- 2026-10-24 20:33 | burn-down | Data-API rivals: Alpha Vantage 12, Twelve Data 10, FMP 10, IEX 11, Wisesheets 22 ratings; no UK-register add-in
+- 2026-10-24 20:33 | burn-down | Rules: own-billing add-ins allowed + labelled; sole trader = Company account, manual review on a tax doc, £0
+- 2026-10-24 20:33 | burn-down | Relay lesson: AppSource raw pages embed every tile in window.__INITIAL_STATE__; RENDER adds nothing
+- 2026-10-24 20:33 | burn-down | Call: promote reshaped as gankdat appsource-excel-custom-functions-add-in (1.8); new-ventures emptied again
