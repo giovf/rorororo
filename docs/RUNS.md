@@ -1655,6 +1655,16 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 09:20 | build | Build prompt STEP -1 now runs the gate after the slot marker and runs the exchange on that reason
 - 2026-10-24 09:20 | build | Gate fires today (W43 exchange missed 10-21): the 17:00 build slot runs the exchange instead of an item
 - 2026-10-24 09:20 | build | CI first runs: none owed (10-22 21:32 and 10-23 09:24 installers both have first-run lines after them)
+- 2026-10-24 17:55 | exchange | W43 (run 10-24, Wednesday missed): winner tax-workbook — UK Sole Trader Tax Workbook on Etsy, 12 × 2 = 24 vs baseline 18
+- 2026-10-24 17:55 | exchange | New venture ventures/tax-workbook (idea, channel etsy): venture.json, RESEARCH.md, queue of 4 (weight 2)
+- 2026-10-24 17:55 | exchange | Queued tax-workbook: workbook-2026-27-build 12, etsy-listing-live 10 (owner-blocked), reseller 7, april-2027 3
+- 2026-10-24 17:55 | exchange | Queued gankdat zoho-crm-uk-registers-widget 2.4, blocked on the owner's free Zoho developer sign-in
+- 2026-10-24 17:55 | exchange | new-ventures refilled: spikes Payhip 6, JetBrains prices 6, Gumroad 5, Framer Styles 5
+- 2026-10-24 17:55 | exchange | Parked: ai-setup-course kit 8 (Gumroad spike decides), Atlassian 1, JetBrains 0.75, Framer 0.7, WordPress 0.6
+- 2026-10-24 17:55 | exchange | Declined: nothing new; the set-up fee over the £10 launch rule is not spent — the owner decides in action 029
+- 2026-10-24 17:55 | exchange | Exchange file docs/exchange/2026-W43.md; STRATEGY §2 Etsy row and §8 line; owner note on the course answered
+- 2026-10-24 17:55 | exchange | Owner later: one batched request (Etsy shop + Zoho sign-in, ~30 min) raised by the build that finishes the workbook
+- 2026-10-24 17:55 | build | Exchange missed on Wednesday 2026-10-21: ran the venture exchange in this slot
 - 2026-10-24 17:17 | burn-down | Built foundry burn-pace-stale-usage-report: pacedStop/cutoffSeen in scripts/pipeline-cold.ts, 9 tests
 - 2026-10-24 17:17 | burn-down | cold prints 'paced: <why>' while BURN.json report is >7 d old: Mon/Tue night cap 3 slots, cutoff ends any night
 - 2026-10-24 17:17 | burn-down | Cutoff = watchdog 'usage limit?' line or a 09:00/17:00 build slot with no start marker, 24 h since Thu 03:00
@@ -1669,3 +1679,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 17:38 | burn-down | Registry read tells 404 (not published) from 5xx (unreachable); releases API authed; publish retries once
 - 2026-10-24 17:38 | burn-down | gankdat-publish.yml with GITHUB_TOKEN on the registry step dropped in docs/ci/ (publish job: never dispatched)
 - 2026-10-24 17:38 | burn-down | Dry run: registry 0.25.5 = server.json, up to date; sandbox proxy 403 on the releases call now named, not silent
+- 2026-10-24 17:33 | watchdog | ci-failed: gankdat-publish.yml run 54 17:34 — step MCP registry — publish if server.json i…; later run 55 ok
+- 2026-10-24 17:36 | burn-down | Stopping for time: 4 items built (pace gate, failed-runs watchdog, Bazaar read, registry script); tax-workbook next
