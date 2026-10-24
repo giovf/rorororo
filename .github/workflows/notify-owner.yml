@@ -21,6 +21,10 @@ name: notify owner
 # an open Dependabot PR whose latest gate run failed gets one `watchdog | dependabot:` line and a
 # foundry queue item, because GitHub mails that failure to dependabot[bot] and nobody else (PRs #5
 # and #6 sat red for 30 h on 2026-10-16/17 with no trace in the repo).
+# Since 2026-10-24 (foundry watchdog-ci-failed-runs) the same step runs scripts/ci-failed-runs.ts: every
+# Actions run of the last 26 h that concluded failure gets one `watchdog | ci-failed:` line naming its
+# failing step and whether a later run repaired it, and a workflow failing twice in 7 days a foundry
+# item (three `Run failed` mails in 36 h were triaged "step not named" and publish run 54 went unread 8.5 h).
 # Since 2026-10-19 (foundry notify-owner-cron-not-push) the job runs on a 2-hourly cron only, no push
 # trigger: in the week 10-12..10-19 it ran 121 times (97 on routine pushes) for 124 billed minutes, a
 # quarter of the week's 549 and the largest single floor, and everything it carries tolerates two
@@ -35,7 +39,7 @@ on:
 
 permissions:
   contents: write
-  actions: read # scripts/actions-minutes.mjs reads the week's runs; dependabot-gate.ts the gate runs
+  actions: read # scripts/actions-minutes.mjs reads the week's runs; dependabot-gate.ts the gate runs; ci-failed-runs.ts the failed runs
   pull-requests: read # scripts/dependabot-gate.ts lists the open Dependabot PRs
 
 concurrency:
@@ -53,7 +57,7 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 24
-      - name: Run watchdog, CI-minutes guard and Dependabot gate check (pushed first, sent by the next step)
+      - name: Run watchdog, CI-minutes guard, Dependabot gate and failed-runs check (pushed first, sent by the next step)
         # Must never block the notifications: a failing script only skips its lines, a failed push
         # is retried by the next run (the line is appended again, the dedupe record is the line on
         # main), and a half-written docs/RUNS.md is reset so the cursor commit below can rebase.
@@ -66,10 +70,11 @@ jobs:
           node --disable-warning=ExperimentalWarning scripts/run-watchdog.ts || echo "::warning::run-watchdog failed"
           node scripts/actions-minutes.mjs || echo "::warning::actions-minutes failed"
           node --disable-warning=ExperimentalWarning scripts/dependabot-gate.ts || echo "::warning::dependabot-gate failed"
+          node --disable-warning=ExperimentalWarning scripts/ci-failed-runs.ts || echo "::warning::ci-failed-runs failed"
           git add docs/RUNS.md docs/pipeline/queues/foundry.json
           git checkout -- docs/RUNS.md docs/pipeline/queues/foundry.json
           git diff --cached --quiet && { echo "watchdog: nothing to report"; exit 0; }
-          git commit -m "watchdog: missed slot / ci-minutes / dependabot gate [skip ci]"
+          git commit -m "watchdog: missed slot / ci-minutes / dependabot gate / ci-failed [skip ci]"
           for i in 1 2 3; do
             git pull --rebase origin main && git push origin HEAD:main && exit 0
             sleep $((i * 5))
