@@ -1,0 +1,84 @@
+[
+  {
+    "sha": "4a31fce51453e02b73e0d4561f73c8077d562297",
+    "node_id": "C_kwDOCaGmZNoAKDRhMzFmY2U1MTQ1M2UwMmI3M2UwZDQ1NjFmNzNjODA3N2Q1NjIyOTc",
+    "commit": {
+      "author": {
+        "name": "MattCollins-Jones",
+        "email": "60160115+MattCollins-Jones@users.noreply.github.com",
+        "date": "2022-02-08T00:19:28Z"
+      },
+      "committer": {
+        "name": "GitHub",
+        "email": "noreply@github.com",
+        "date": "2022-02-08T00:19:28Z"
+      },
+      "message": "Companies house (independent publisher) (#1350)\n\n* Add files via upload\r\n\r\n* Delete settings.json\r\n\r\n* Add files via upload\r\n\r\n* Update apiDefinition.swagger.json\r\n\r\n* Add files via upload\r\n\r\n* Update apiProperties.json",
+      "tree": {
+        "sha": "85beb5622bec37802e04dc969a429256117f5ea2",
+        "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/85beb5622bec37802e04dc969a429256117f5ea2"
+      },
+      "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/commits/4a31fce51453e02b73e0d4561f73c8077d562297",
+      "comment_count": 0,
+      "verification": {
+        "verified": true,
+        "reason": "valid",
+        "signature": "-----BEGIN PGP SIGNATURE-----\n\nwsBcBAABCAAQBQJiAbcQCRBK7hj4Ov3rIwAAq4EIAKx4zMskn3IvIuiQUbPa7dT2\nKPYWHElwiVKDssovZ3ZS+JakXzsJa1i3DUzE+u+U/97MrHeSz2j+PxjwBPwQosn6\n6y4LyNGm2XLN4flkc7H6MmI6L/01/aZ78EN9ps8U75/94c/N0DkUB0xafnhN9GI7\nGm0vImvfhswSjus4HFOknYpUfDHd0xCxEN6uZaFJdJDYh4w7srNXNy/65+ZNsBe3\n7i5DTzvtrQFv7DmRSoIuGkCUKkclH03+lmavM9ekdIetsUW+iiHQqAg67nYAOOmU\n/rhhRI4wkXiOdL9IOqxxfyVb+JkeopThcSu5Duxd9k9I4hEpl8xZHaK4TG52bcg=\n=IDB1\n-----END PGP SIGNATURE-----\n",
+        "payload": "tree 85beb5622bec37802e04dc969a429256117f5ea2\nparent d0a93a631577349e24f3279180b6448469bc6df4\nauthor MattCollins-Jones <60160115+MattCollins-Jones@users.noreply.github.com> 1644279568 +0000\ncommitter GitHub <noreply@github.com> 1644279568 -0800\n\nCompanies house (independent publisher) (#1350)\n\n* Add files via upload\r\n\r\n* Delete settings.json\r\n\r\n* Add files via upload\r\n\r\n* Update apiDefinition.swagger.json\r\n\r\n* Add files via upload\r\n\r\n* Update apiProperties.json",
+        "verified_at": "2024-01-16T19:59:59Z"
+      }
+    },
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/commits/4a31fce51453e02b73e0d4561f73c8077d562297",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/commit/4a31fce51453e02b73e0d4561f73c8077d562297",
+    "comments_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/commits/4a31fce51453e02b73e0d4561f73c8077d562297/comments",
+    "author": {
+      "login": "MattCollins-Jones",
+      "id": 60160115,
+      "node_id": "MDQ6VXNlcjYwMTYwMTE1",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60160115?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/MattCollins-Jones",
+      "html_url": "https://github.com/MattCollins-Jones",
+      "followers_url": "https://api.github.com/users/MattCollins-Jones/followers",
+      "following_url": "https://api.github.com/users/MattCollins-Jones/following{/other_user}",
+      "gists_url": "https://api.github.com/users/MattCollins-Jones/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/MattCollins-Jones/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/MattCollins-Jones/subscriptions",
+      "organizations_url": "https://api.github.com/users/MattCollins-Jones/orgs",
+      "repos_url": "https://api.github.com/users/MattCollins-Jones/repos",
+      "events_url": "https://api.github.com/users/MattCollins-Jones/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/MattCollins-Jones/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "committer": {
+      "login": "web-flow",
+      "id": 19864447,
+      "node_id": "MDQ6VXNlcjE5ODY0NDQ3",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19864447?v=4",
+      "gravatar_id": "",
+      "url": "https://api.github.com/users/web-flow",
+      "html_url": "https://github.com/web-flow",
+      "followers_url": "https://api.github.com/users/web-flow/followers",
+      "following_url": "https://api.github.com/users/web-flow/following{/other_user}",
+      "gists_url": "https://api.github.com/users/web-flow/gists{/gist_id}",
+      "starred_url": "https://api.github.com/users/web-flow/starred{/owner}{/repo}",
+      "subscriptions_url": "https://api.github.com/users/web-flow/subscriptions",
+      "organizations_url": "https://api.github.com/users/web-flow/orgs",
+      "repos_url": "https://api.github.com/users/web-flow/repos",
+      "events_url": "https://api.github.com/users/web-flow/events{/privacy}",
+      "received_events_url": "https://api.github.com/users/web-flow/received_events",
+      "type": "User",
+      "user_view_type": "public",
+      "site_admin": false
+    },
+    "parents": [
+      {
+        "sha": "d0a93a631577349e24f3279180b6448469bc6df4",
+        "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/commits/d0a93a631577349e24f3279180b6448469bc6df4",
+        "html_url": "https://github.com/microsoft/PowerPlatformConnectors/commit/d0a93a631577349e24f3279180b6448469bc6df4"
+      }
+    ]
+  }
+]

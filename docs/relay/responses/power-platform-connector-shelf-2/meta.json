@@ -1,0 +1,206 @@
+{
+  "request": "power-platform-connector-shelf-2",
+  "fetched_at": "2026-10-25T17:29:57.510Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/abstractcompanyenric/",
+      "fetched_at": "2026-10-25T17:29:49.256Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/abstractcompanyenric/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 07 Aug 2026 01:11:44 GMT",
+        "etag": "\"PrvEPfqbLSu67nLGleAobDvC1cY=\""
+      },
+      "file": "1.html",
+      "bytes": 40676,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/hunterip/",
+      "fetched_at": "2026-10-25T17:29:50.092Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/hunterip/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 07 Aug 2026 01:11:42 GMT",
+        "etag": "\"xDZp2MqrhCi50HFZ1fXLwxqm6nI=\""
+      },
+      "file": "2.html",
+      "bytes": 71077,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/clearbitip/",
+      "fetched_at": "2026-10-25T17:29:50.762Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/clearbitip/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 07 Aug 2026 01:11:45 GMT",
+        "etag": "\"MhNrfsy9KmkpH29oLrHwK+FFIhM=\""
+      },
+      "file": "3.html",
+      "bytes": 38927,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/opensanctions/",
+      "fetched_at": "2026-10-25T17:29:51.406Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/opensanctions/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 07 Aug 2026 01:11:44 GMT",
+        "etag": "\"SZMN0xuQ3ciESLGdAs/q37hA4KM=\""
+      },
+      "file": "4.html",
+      "bytes": 86316,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/opencagegeocodingip/",
+      "fetched_at": "2026-10-25T17:29:52.179Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/opencagegeocodingip/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 07 Aug 2026 01:11:45 GMT",
+        "etag": "\"0WKPyl4TFV7lzaUGR2lD6PoWS+0=\""
+      },
+      "file": "5.html",
+      "bytes": 73570,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/cqcdata/",
+      "fetched_at": "2026-10-25T17:29:52.801Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/cqcdata/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 07 Aug 2026 01:11:42 GMT",
+        "etag": "\"raf3nfxToKZ66gU5NKH718yz/oU=\""
+      },
+      "file": "6.html",
+      "bytes": 67004,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/ukgovtcheckvatip/",
+      "fetched_at": "2026-10-25T17:29:53.785Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/ukgovtcheckvatip/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 07 Aug 2026 01:11:47 GMT",
+        "etag": "\"vhMDAC5+hj3qRQUPbjdkJROr1Xc=\""
+      },
+      "file": "7.html",
+      "bytes": 43808,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/taxidpro/",
+      "fetched_at": "2026-10-25T17:29:54.394Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/taxidpro/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 07 Aug 2026 01:11:45 GMT",
+        "etag": "\"tXWUw+IH0grfFP1pqnkKUqE4VpQ=\""
+      },
+      "file": "8.html",
+      "bytes": 45229,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/README.md",
+      "fetched_at": "2026-10-25T17:29:54.477Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/README.md",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "19938",
+        "last-modified": "Thu, 22 Oct 2026 13:21:01 GMT",
+        "etag": "\"75834fd1770e256b9737b86f92bd375e6a8d7b08\""
+      },
+      "file": "9.json",
+      "bytes": 19938,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/",
+      "fetched_at": "2026-10-25T17:29:55.293Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "16140",
+        "last-modified": "Sun, 25 Oct 2026 11:17:27 GMT",
+        "etag": "\"afc438cc32990d77a837c0cc21d00c0f24f08f60\""
+      },
+      "file": "10.json",
+      "bytes": 16140,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/independent-publisher-connectors/Companies%20House/readme.md",
+      "fetched_at": "2026-10-25T17:29:55.933Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/independent-publisher-connectors/Companies%20House/readme.md",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "4343",
+        "last-modified": "Thu, 22 Oct 2026 13:21:01 GMT",
+        "etag": "\"1f642ce354950cc86cb1ebc5a88fe9bf44f1c0d0\""
+      },
+      "file": "11.json",
+      "bytes": 4343,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/commits?path=independent-publisher-connectors/Companies%20House&per_page=1",
+      "fetched_at": "2026-10-25T17:29:56.571Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/commits?path=independent-publisher-connectors/Companies%20House&per_page=1",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1567",
+        "last-modified": "Tue, 08 Feb 2022 00:19:28 GMT",
+        "etag": "W/\"34806f37ac0f4fa026ef2cf5f8718e4558e2334d1d235dfcde94259fc7ed4afc\""
+      },
+      "file": "12.json",
+      "bytes": 5322,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors",
+      "fetched_at": "2026-10-25T17:29:57.325Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "1729",
+        "last-modified": "Sun, 25 Oct 2026 11:17:27 GMT",
+        "etag": "W/\"afaaa822a05c392c2e355d15b9a30a743d8e5439dadacd2fdb1137ff3fbc12d2\""
+      },
+      "file": "13.json",
+      "bytes": 7943,
+      "truncated": false
+    }
+  ]
+}

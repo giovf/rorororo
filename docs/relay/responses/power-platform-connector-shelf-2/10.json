@@ -1,0 +1,290 @@
+[
+  {
+    "name": ".github",
+    "path": ".github",
+    "sha": "840e7f54267fadd45d2ae20ab5914f03cf5f67d5",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/.github?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/.github",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/840e7f54267fadd45d2ae20ab5914f03cf5f67d5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/.github?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/840e7f54267fadd45d2ae20ab5914f03cf5f67d5",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/.github"
+    }
+  },
+  {
+    "name": ".gitignore",
+    "path": ".gitignore",
+    "sha": "05264ca45bd9a7c9fba3569e62ebc4b0ba302342",
+    "size": 403,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/.gitignore?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/.gitignore",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/05264ca45bd9a7c9fba3569e62ebc4b0ba302342",
+    "download_url": "https://raw.githubusercontent.com/microsoft/PowerPlatformConnectors/dev/.gitignore",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/.gitignore?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/05264ca45bd9a7c9fba3569e62ebc4b0ba302342",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/.gitignore"
+    }
+  },
+  {
+    "name": ".pipelines",
+    "path": ".pipelines",
+    "sha": "c5006adeadb90a449574e1c0a4c6d6c0a1f2c474",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/.pipelines?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/.pipelines",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/c5006adeadb90a449574e1c0a4c6d6c0a1f2c474",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/.pipelines?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/c5006adeadb90a449574e1c0a4c6d6c0a1f2c474",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/.pipelines"
+    }
+  },
+  {
+    "name": ".vscode",
+    "path": ".vscode",
+    "sha": "aadde178d5be75e74835381435c6add680ee31ab",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/.vscode?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/.vscode",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/aadde178d5be75e74835381435c6add680ee31ab",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/.vscode?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/aadde178d5be75e74835381435c6add680ee31ab",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/.vscode"
+    }
+  },
+  {
+    "name": "Create Asset - Oxmaint",
+    "path": "Create Asset - Oxmaint",
+    "sha": "f08077e7b5ce4a373eb66efd51ccd65caa14a8f5",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/Create%20Asset%20-%20Oxmaint?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/Create%20Asset%20-%20Oxmaint",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/f08077e7b5ce4a373eb66efd51ccd65caa14a8f5",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/Create%20Asset%20-%20Oxmaint?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/f08077e7b5ce4a373eb66efd51ccd65caa14a8f5",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/Create%20Asset%20-%20Oxmaint"
+    }
+  },
+  {
+    "name": "LICENSE",
+    "path": "LICENSE",
+    "sha": "21071075c24599ee98254f702bcfc504cdc275a6",
+    "size": 1162,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/LICENSE?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/LICENSE",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/21071075c24599ee98254f702bcfc504cdc275a6",
+    "download_url": "https://raw.githubusercontent.com/microsoft/PowerPlatformConnectors/dev/LICENSE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/LICENSE?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/21071075c24599ee98254f702bcfc504cdc275a6",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/LICENSE"
+    }
+  },
+  {
+    "name": "NOTICE",
+    "path": "NOTICE",
+    "sha": "21a1719e9e6f5b508e532772b7a5fbc8fd635a91",
+    "size": 625,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/NOTICE?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/NOTICE",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/21a1719e9e6f5b508e532772b7a5fbc8fd635a91",
+    "download_url": "https://raw.githubusercontent.com/microsoft/PowerPlatformConnectors/dev/NOTICE",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/NOTICE?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/21a1719e9e6f5b508e532772b7a5fbc8fd635a91",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/NOTICE"
+    }
+  },
+  {
+    "name": "README.md",
+    "path": "README.md",
+    "sha": "75834fd1770e256b9737b86f92bd375e6a8d7b08",
+    "size": 13787,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/README.md?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/README.md",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/75834fd1770e256b9737b86f92bd375e6a8d7b08",
+    "download_url": "https://raw.githubusercontent.com/microsoft/PowerPlatformConnectors/dev/README.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/README.md?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/75834fd1770e256b9737b86f92bd375e6a8d7b08",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/README.md"
+    }
+  },
+  {
+    "name": "SECURITY.md",
+    "path": "SECURITY.md",
+    "sha": "869fdfe2b246991a053fab9cfec1bed3ab532ab1",
+    "size": 2757,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/SECURITY.md?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/SECURITY.md",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/869fdfe2b246991a053fab9cfec1bed3ab532ab1",
+    "download_url": "https://raw.githubusercontent.com/microsoft/PowerPlatformConnectors/dev/SECURITY.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/SECURITY.md?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/869fdfe2b246991a053fab9cfec1bed3ab532ab1",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/SECURITY.md"
+    }
+  },
+  {
+    "name": "certified-connectors",
+    "path": "certified-connectors",
+    "sha": "fa4c247650737e499efcc917fded778411a21973",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/certified-connectors?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/certified-connectors",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/fa4c247650737e499efcc917fded778411a21973",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/certified-connectors?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/fa4c247650737e499efcc917fded778411a21973",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/certified-connectors"
+    }
+  },
+  {
+    "name": "custom-connectors",
+    "path": "custom-connectors",
+    "sha": "dcfb34075ce072fdb7a86ebe53c7857efd0bbfd8",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/custom-connectors?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/custom-connectors",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/dcfb34075ce072fdb7a86ebe53c7857efd0bbfd8",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/custom-connectors?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/dcfb34075ce072fdb7a86ebe53c7857efd0bbfd8",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/custom-connectors"
+    }
+  },
+  {
+    "name": "independent-publisher-connectors",
+    "path": "independent-publisher-connectors",
+    "sha": "56c3224f67db8bbfd8f46c3dfc93ea8bfeb4116b",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/independent-publisher-connectors?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/independent-publisher-connectors",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/56c3224f67db8bbfd8f46c3dfc93ea8bfeb4116b",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/independent-publisher-connectors?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/56c3224f67db8bbfd8f46c3dfc93ea8bfeb4116b",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/independent-publisher-connectors"
+    }
+  },
+  {
+    "name": "intro.md",
+    "path": "intro.md",
+    "sha": "350a8f7feacdf863d4529f15802ce9cbdbbcc6a5",
+    "size": 1999,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/intro.md?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/intro.md",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/350a8f7feacdf863d4529f15802ce9cbdbbcc6a5",
+    "download_url": "https://raw.githubusercontent.com/microsoft/PowerPlatformConnectors/dev/intro.md",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/intro.md?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/350a8f7feacdf863d4529f15802ce9cbdbbcc6a5",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/intro.md"
+    }
+  },
+  {
+    "name": "metadata.json",
+    "path": "metadata.json",
+    "sha": "f82dc95f5344c88cff14710acfa0f43d8fbafc93",
+    "size": 43,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/metadata.json?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/metadata.json",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/f82dc95f5344c88cff14710acfa0f43d8fbafc93",
+    "download_url": "https://raw.githubusercontent.com/microsoft/PowerPlatformConnectors/dev/metadata.json",
+    "type": "file",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/metadata.json?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/blobs/f82dc95f5344c88cff14710acfa0f43d8fbafc93",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/blob/dev/metadata.json"
+    }
+  },
+  {
+    "name": "schemas",
+    "path": "schemas",
+    "sha": "0d439532456bdddb598774254c4b7ad82adb89ef",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/schemas?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/schemas",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/0d439532456bdddb598774254c4b7ad82adb89ef",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/schemas?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/0d439532456bdddb598774254c4b7ad82adb89ef",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/schemas"
+    }
+  },
+  {
+    "name": "scripts",
+    "path": "scripts",
+    "sha": "cb816a3309ddaeeac12af15bfec091207eddd801",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/scripts?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/scripts",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/cb816a3309ddaeeac12af15bfec091207eddd801",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/scripts?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/cb816a3309ddaeeac12af15bfec091207eddd801",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/scripts"
+    }
+  },
+  {
+    "name": "templates",
+    "path": "templates",
+    "sha": "564e39615dda46c333c6efc1588ed06ce478c6c1",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/templates?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/templates",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/564e39615dda46c333c6efc1588ed06ce478c6c1",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/templates?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/564e39615dda46c333c6efc1588ed06ce478c6c1",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/templates"
+    }
+  },
+  {
+    "name": "tools",
+    "path": "tools",
+    "sha": "dd5c27fc875ef2f9ec6e303556e3b0ce24c33a5c",
+    "size": 0,
+    "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/tools?ref=dev",
+    "html_url": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/tools",
+    "git_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/dd5c27fc875ef2f9ec6e303556e3b0ce24c33a5c",
+    "download_url": null,
+    "type": "dir",
+    "_links": {
+      "self": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/tools?ref=dev",
+      "git": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/git/trees/dd5c27fc875ef2f9ec6e303556e3b0ce24c33a5c",
+      "html": "https://github.com/microsoft/PowerPlatformConnectors/tree/dev/tools"
+    }
+  }
+]
