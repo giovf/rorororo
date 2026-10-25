@@ -551,10 +551,11 @@
       "effort_days": 0.05,
       "proof": "either an ok uk-planning refresh with records > 0, or a dated line in RESEARCH.md moving the clock on with the entity-count read that week",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-11",
       "not_before": "2026-10-25",
-      "updated": "2026-10-18"
+      "updated": "2026-10-18",
+      "doing_since": "2026-10-25"
     },
     {
       "id": "refresh-uk-insolvency-2026-10-11",
