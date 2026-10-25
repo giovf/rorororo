@@ -588,6 +588,18 @@ runs `check:root`.
   external` as `<slug> N (x402 N)` — a settled payment is external demand §7's clock must
   see (`src/lib/x402-sales.ts`; the probe's user agent excluded in SQL). The lane's first
   three external payments (10-17/18) reached the row as a bare count.
+  **Buyers vs probers** (2026-10-25, `x402-buyer-vs-survey-split`): 15 of the 19 paid calls
+  of the 30 days to 10-25 were `lumiere-paycheck-prober` paying each unpaid route once — a
+  catalogue survey the day-30 reads and two exchange triggers would have read as demand. The
+  30-day read is grouped by UTC day too, and `splitX402Payers` classes each client: a user agent
+  naming itself a probe, prober, scout, observatory, survey or collector (`PROBER_UA`), or one
+  client paying every live route once in a day (the route count from `/v1/data`), is a prober;
+  the rest are buyers, and a buyer paying on two or more days is a repeat payer. The row reads
+  `x402 30d: 19 paid, 4 clients — buyers 4 paid, 3 clients, repeat 1 (…); probers 15 paid, 1 client
+  (lumiere-paycheck-prober 15)`, the sales cell sets probers apart (`0 by buyers; probers 15: …`),
+  and only buyers' calls reach `datasets 30d external`. The same filter grouped by user agent
+  renders `changes 7d by UA: python-requests 4 (rest)` (`src/lib/change-feed-callers.ts`), so the
+  weekly change-feed target names its callers and tags a scanner `prober`.
 - **PayPal** (credit packs, **sandbox only**) — built 2026-10-11 as the PayPal AI Hackathon entry
   (v0.24.0, migration 0017 `paypal_orders`, `docs/PAYPAL-SETUP.md`): Orders API v2 against
   `api-m.sandbox.paypal.com` by construction, no live switch. One-off packs (`src/billing/packs.json`,
