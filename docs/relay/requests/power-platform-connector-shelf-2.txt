@@ -1,0 +1,13 @@
+GET https://learn.microsoft.com/en-us/connectors/abstractcompanyenric/
+GET https://learn.microsoft.com/en-us/connectors/hunterip/
+GET https://learn.microsoft.com/en-us/connectors/clearbitip/
+GET https://learn.microsoft.com/en-us/connectors/opensanctions/
+GET https://learn.microsoft.com/en-us/connectors/opencagegeocodingip/
+GET https://learn.microsoft.com/en-us/connectors/cqcdata/
+GET https://learn.microsoft.com/en-us/connectors/ukgovtcheckvatip/
+GET https://learn.microsoft.com/en-us/connectors/taxidpro/
+GET https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/README.md
+GET https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/
+GET https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/independent-publisher-connectors/Companies%20House/readme.md
+GET https://api.github.com/repos/microsoft/PowerPlatformConnectors/commits?path=independent-publisher-connectors/Companies%20House&per_page=1
+GET https://api.github.com/repos/microsoft/PowerPlatformConnectors
