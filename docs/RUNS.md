@@ -1751,3 +1751,16 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 21:28 | notify | Your Excel add-in is built: one 45-minute sitting opens the Microsoft store account and submits it
 - 2026-10-24 21:28 | burn-down | CI first runs: none owed; Dependabot majors: none open; pipeline starved and cooled after this item
 - 2026-10-25 00:30 | watchdog | ci-minutes: 611 billed min/7d (~2619/mo; cap 2000) top: fetch relay 129, owner notes 86, notify owner 63
+- 2026-10-25 08:16 | review | Review 2026-W43: money targets still zero; Bazaar fully listed, but 15 of 19 paid calls were one prober
+- 2026-10-25 08:16 | review | gankdat: keep — 4 accounts (0 paid), 3 real x402 buyers, first change-feed calls, first non-QA Apify user
+- 2026-10-25 08:16 | review | Variables Toolkit: keep — 17 views, 0 installs, 0 sales at day 34; untouched until the 12-20 verdict
+- 2026-10-25 08:16 | review | ReadFocus: keep — first Firefox user, Chrome 0, 0 keys; 0.3.0 unsigned 21 days; day-30 read 10-30
+- 2026-10-25 08:16 | review | Highlight Keep: keep — 2 Firefox downloads a week, Chrome 0, 0 keys; 0.4.0 unsigned; day-30 read 10-30
+- 2026-10-25 08:16 | review | Hackathons: keep — PayPal entry in, Meta approved 10-21; entry built 26 Oct to 4 Nov
+- 2026-10-25 08:16 | review | Tax workbook: keep — built 10-24, waits on the owner's Etsy shop; its sale clock starts at listing
+- 2026-10-25 08:16 | review | Open-source bounties: stays killed — 10-20 board's only free row is $20, under the $25 floor
+- 2026-10-25 08:16 | review | Foundry: keep — spikes kept new-ventures fed; the 10-21 usage-limit outage was the week's loss
+- 2026-10-25 08:16 | review | Cadence: burn-down Built % 65% and 40%, both over 30%, so the W42 call stands; weights unchanged
+- 2026-10-25 08:16 | review | Gap queued: gankdat x402-buyer-vs-survey-split (4): split buyers from probers, name change-feed callers
+- 2026-10-25 08:16 | review | Gap queued: tax-workbook etsy-sale-mail-reading (4): triage counts Etsy sale mails before the shop opens
+- 2026-10-25 08:16 | review | Applied: two exchange triggers keep parked (a prober's paid call does not count); STRATEGY §4, §2, §8
