@@ -99,16 +99,24 @@ the DMCC fake-urgency rule), then £8.99. No invented scarcity.
 - **Proof**: a first sale within 30 days of listing; ≥ 10 sales in the first 60 days (the rival's rate is ~14 a month).
 - **Kill**: 0 sales 60 days after listing with ≥ 5 listing views a day in Shop Manager → delist, keep the file for the
   Payhip twin or our own Stripe link (£0 shelves, weaker reach).
-- **Reading**: Etsy's seller emails (sale notifications through inbox triage) and the owner's Shop Manager stats, sent
-  as a usage-style note; the Open API v3 only later and only for this shop's own stats with the owner's OAuth grant.
+- **Reading**: Etsy's seller emails — the hourly inbox triage writes each order mail as a `Sale` row below and each
+  deposit mail as a `revenue` row in `docs/LEDGER.md` (`docs/routines/inbox-triage.md` ETSY SALES, 2026-10-25) — and the
+  owner's Shop Manager stats, sent as a usage-style note; the Open API v3 only later and only for this shop's own stats with the owner's OAuth grant.
   No metrics job reads the shelf.
 
 ## 7. Metrics
+
+Row kinds (2026-10-25, `etsy-sale-mail-reading`): `Sale` and `Refund` rows are written by the inbox triage from Etsy's
+order and refund mail — the Sales column is the running total after the row, the Notes cell the listing, item price,
+quantity and the mail's time, never the buyer's name, address, email, username, order number or message (Blind Mode).
+The weekly report reads them (net sales for the week, running total); the pounds live in `docs/LEDGER.md` `revenue`
+rows written from Etsy's deposit mail. The day-60 kill clock (§6) starts at the `Listed` row.
 
 | Date | Event | Users | Rating | Sales | Notes |
 | --- | --- | --- | --- | --- | --- |
 | 2026-10-24 | Opened | — | — | 0 | venture opened by exchange 2026-W43; workbook queued; shop opening waits on the owner's one batched request |
 | 2026-10-24 | Built | — | — | 0 | workbook v1.0 built and recalculated (2,122 formulas, 0 errors, Example = hand-worked £5,025.80); LISTING.md + 5 images; action 029 raised; status `validated` |
+| 2026-10-25 | Reading wired | — | — | 0 | inbox triage writes `Sale`/`Refund` rows from Etsy order mail and deposits to the ledger; the weekly report counts them; shop still waits on action 029 |
 
 ## 8. Owner steps (batched, raised by the build that finishes the workbook, never before)
 

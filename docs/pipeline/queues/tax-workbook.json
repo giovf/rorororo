@@ -66,13 +66,15 @@
     {
       "id": "etsy-sale-mail-reading",
       "title": "Inbox triage records each Etsy order mail (\"You made a sale on Etsy\" / order confirmation from etsy.com) as a `Sale` row in the Metrics table of ventures/tax-workbook/RESEARCH.md (date, listing, price, no buyer name or address), and the weekly report counts them",
-      "why": "Review 2026-W43 gap: RESEARCH.md names Etsy seller emails through inbox triage as the sales reading (Etsy forbids automated reads), but docs/routines/inbox-triage.md has no Etsy rule, so the first sale would land in INBOX.md as a store line and nothing would count it. The line's proof (first sale within 30 days of listing, ≥ 10 in 60) and kill (0 sales at day 60) need the count before the shop opens. Blind Mode: the row carries no buyer personal data.",
+      "why": "Review 2026-W43 gap: RESEARCH.md names Etsy seller emails through inbox triage as the sales reading (Etsy forbids automated reads), but docs/routines/inbox-triage.md has no Etsy rule, so the first sale would land in INBOX.md as a store line and nothing would count it. The line's proof (first sale within 30 days of listing, ≥ 10 in 60) and kill (0 sales at day 60) need the count before the shop opens. Blind Mode: the row carries no buyer personal data. Done 2026-10-25 (build): inbox-triage.md ETSY SALES rule (Sale/Refund rows, deposit → ledger revenue row, set-up mail self-caused), weekly-report.md section 2 counts them, RESEARCH.md §6/§7 carry the row format.",
       "effort_days": 0.1,
       "proof": "inbox-triage.md carries the Etsy rule with a Changes line; RESEARCH.md has the Metrics table header for Sale rows; the weekly-report prompt counts them",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-25",
-      "doing_since": "2026-10-25"
+      "doing_since": "2026-10-25",
+      "done_at": "2026-10-25",
+      "doing_by": "build"
     }
   ]
 }

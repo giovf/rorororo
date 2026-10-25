@@ -1764,3 +1764,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 08:16 | review | Gap queued: gankdat x402-buyer-vs-survey-split (4): split buyers from probers, name change-feed callers
 - 2026-10-25 08:16 | review | Gap queued: tax-workbook etsy-sale-mail-reading (4): triage counts Etsy sale mails before the shop opens
 - 2026-10-25 08:16 | review | Applied: two exchange triggers keep parked (a prober's paid call does not count); STRATEGY §4, §2, §8
+- 2026-10-25 09:25 | build | tax-workbook etsy-sale-mail-reading done: triage writes a Sale row per Etsy order mail
+- 2026-10-25 09:25 | build | inbox-triage.md ETSY SALES rule: Sale/Refund rows, deposit mail → ledger revenue row, no buyer data
+- 2026-10-25 09:25 | build | weekly-report.md section 2 counts the week's net Etsy sales, running total and deposits
+- 2026-10-25 09:25 | build | tax-workbook RESEARCH.md §6/§7 carry the row format; STRATEGY §4 Etsy row reads 0, reading wired
+- 2026-10-25 09:25 | build | first-run check: every installer commit of the last 3 days already has its first-run line
