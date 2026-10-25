@@ -819,8 +819,9 @@
       "effort_days": 0.2,
       "proof": "the next Daily numbers row carries `x402 30d buyers: N (repeat R), probers: M` and `changes 7d by UA: …`; the 10-24/25 prober reads as a prober",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-25"
+      "status": "doing",
+      "added": "2026-10-25",
+      "doing_since": "2026-10-25"
     }
   ]
 }
