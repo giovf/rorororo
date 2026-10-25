@@ -911,3 +911,14 @@ user agents of the week's authed REST calls, internal mailboxes and the probe ex
 the first call from Excel or a Power Platform flow is readable from the row the day it lands, with no guess at the
 vendors' user-agent strings. Nothing else queued: a second or third item would be invented work (review W42), and
 the next signal is dated — `research_after: 2026-10-30` (the Claude directory day-30 read, the first dated item).
+
+## Build 2026-10-25 — REST callers by user agent (burn-down, 18:50)
+
+Queue `rest-callers-by-user-agent-reading` (4, queued by this evening's research pass). `src/lib/rest-callers.ts`
+renders `rest 7d by UA: <family> N (<k> datasets[, prober])…` from the week's authed `rest_data` points grouped by
+user agent and slug — external accounts only (`notIn('blob4')`, the filter `datasets 30d external` uses), the two
+probe user agents excluded, top eight families, `+N more` beyond them, `none` / `n/a` like the change-feed clause;
+`metrics.mjs` places it after `changes 7d by UA`. With it the add-in's proof (keys used from Excel) and the
+connector's (connections' first call from a Power Platform flow) are readable from the row the day the shelves
+list — Office and the Power Platform gateway each send their own user agent, and the clause will name whatever
+arrives rather than a string guessed today. Tests in `test/rest-callers.spec.ts`; no Worker change, no version bump.

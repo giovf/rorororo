@@ -1795,3 +1795,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 18:47 | burn-down | gankdat research: evidence unchanged since 10-23 and review W43; one gap from today's two shelves
 - 2026-10-25 18:47 | burn-down | gankdat rest-callers-by-user-agent-reading queued (4): rest 7d by UA clause the shelf proofs need
 - 2026-10-25 18:47 | burn-down | gankdat researched 10-25, research_after 2026-10-30 (next dated reading); RESEARCH.md written
+- 2026-10-25 18:52 | burn-down | gankdat rest-callers-by-user-agent-reading done: Daily numbers row adds `rest 7d by UA:`
+- 2026-10-25 18:52 | burn-down | rest-callers.ts restByUaNote: top 8 UA families, datasets touched, prober tag; external accounts only
+- 2026-10-25 18:52 | burn-down | metrics.mjs query after changes-by-UA; tests; ARCHITECTURE and RESEARCH notes

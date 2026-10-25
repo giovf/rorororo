@@ -1423,13 +1423,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-25T18:33:08.043Z"
+      },
+      {
+        "id": "42",
+        "title": "gankdat: Daily numbers rest 7d by UA clause (REST data callers by user agent)",
+        "description": "src/lib/rest-callers.ts restByUaNote + metrics.mjs query: authed rest_data calls of the last 7 days by UA family, external accounts only, probes excluded, top 8 with datasets touched and prober tag; the reading the AppSource add-in and Power Platform connector proofs need",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-25T18:46:45.054Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-25T18:33:08.043Z",
-      "taskCount": 41,
-      "completedCount": 34,
+      "lastModified": "2026-10-25T18:46:45.054Z",
+      "taskCount": 42,
+      "completedCount": 35,
       "tags": [
         "master"
       ]

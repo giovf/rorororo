@@ -611,6 +611,12 @@ runs `check:root`.
   and only buyers' calls reach `datasets 30d external`. The same filter grouped by user agent
   renders `changes 7d by UA: python-requests 4 (rest)` (`src/lib/change-feed-callers.ts`), so the
   weekly change-feed target names its callers and tags a scanner `prober`.
+  **REST callers by user agent** (2026-10-25, `rest-callers-by-user-agent-reading`): the Excel add-in's
+  and the Power Platform connector's proofs read "user agents on `rest_data`" and no clause did, so the
+  row adds `rest 7d by UA: python-requests 12 (2 datasets), azure-logic-apps 2 (1 dataset), SettledScout 1
+  (1 dataset, prober) +2 more` (`src/lib/rest-callers.ts`): authed `rest_data` points of the week,
+  external accounts only (the same NOT IN as `datasets 30d external`), probes excluded, top eight UA
+  families with the datasets each touched — it lists what arrives and never guesses a vendor's string.
 - **PayPal** (credit packs, **sandbox only**) — built 2026-10-11 as the PayPal AI Hackathon entry
   (v0.24.0, migration 0017 `paypal_orders`, `docs/PAYPAL-SETUP.md`): Orders API v2 against
   `api-m.sandbox.paypal.com` by construction, no live switch. One-off packs (`src/billing/packs.json`,
