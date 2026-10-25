@@ -214,3 +214,4 @@
 - 2026-10-23 17:35 | notification | github.com | [giovf/rorororo] Run failed: gankdat publish - main (89bb528) | gankdat publish workflow failed after 33s with 2 annotations (failure with steps; failing step not named in the mail, run 39996133213) | logged
 - 2026-10-24 19:49 | notification | github.com | [giovf/rorororo] build(deps): bump the minor-and-patch group with 7 updates (PR #9) | Dependabot PR opened, no action in the mail itself | logged
 - 2026-10-24 19:52 | notification | github.com | Re: [giovf/rorororo] build(deps): bump the minor-and-patch group with 7 updates (PR #9) | PR #9 merged into main | logged
+- 2026-10-25 21:31 | notification | google.com | New reasons prevent pages from being indexed on site https://gankdat.com/ | Google Search Console flags new unindexed reasons for gankdat.com: "Not found (404)" and "Blocked due to other 4xx issue"; not a listing-state change, no ALERTS line | logged
