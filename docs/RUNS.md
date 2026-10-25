@@ -1783,3 +1783,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 17:33 | burn-down | Power Platform: verified lane is ours, free, Partner Center account = action 031; Swagger 2.0 package
 - 2026-10-25 17:33 | burn-down | shelf read: 435 IP connectors, 5 key-billed data-API vendors, Companies House wrapper from 2022
 - 2026-10-25 17:33 | burn-down | gankdat/power-platform-certified-connector queued (3.2); new-ventures empty, needs research
+- 2026-10-25 17:37 | burn-down | Stopping: next is power-platform-certified-connector, a 1-day build; 23 min left, the 18:00 slot takes it
