@@ -1769,6 +1769,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 09:25 | build | weekly-report.md section 2 counts the week's net Etsy sales, running total and deposits
 - 2026-10-25 09:25 | build | tax-workbook RESEARCH.md §6/§7 carry the row format; STRATEGY §4 Etsy row reads 0, reading wired
 - 2026-10-25 09:25 | build | first-run check: every installer commit of the last 3 days already has its first-run line
+- 2026-10-25 17:20 | build | gankdat refresh-uk-planning-reread: origin still empty (entity-count 0, no replacement); re-read 11-01
+- 2026-10-25 17:20 | build | uk-planning §7 clock unchanged: actor 26 runs/30d for outside users, REST external 0; nothing retires
+- 2026-10-25 17:20 | build | RESEARCH.md re-read 10-25 paragraph; queue item back to todo with not_before 2026-11-01
+- 2026-10-25 17:20 | build | first-run check: every installer commit of the last 3 days already has its first-run line
 - 2026-10-25 17:20 | burn-down | gankdat x402-buyer-vs-survey-split done: x402 30d row reads buyers (repeat) vs probers
 - 2026-10-25 17:20 | burn-down | x402-sales.ts splitX402Payers: prober by UA name or a one-day sweep of every route; tests
 - 2026-10-25 17:20 | burn-down | change-feed-callers.ts: Daily numbers row adds `changes 7d by UA:` with surface + prober tag
