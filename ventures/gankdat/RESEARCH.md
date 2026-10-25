@@ -866,3 +866,27 @@ has one buyer of record and the day-30 proof stands at 1 of 50 calls. Limits: a 
 agent that spreads its sweep over two days (as lumiere did, 5 + 10 routes) is caught only by its name; a buyer that
 genuinely queries every route in one day would read as a prober for that day (none seen); points before 10-11
 carry no client id and are classed by user agent alone. No Worker change, no version bump.
+
+## Build 2026-10-25 — Power Platform certified connector (burn-down)
+
+Queue `power-platform-certified-connector` (promoted 17:33 the same evening by spike `power-platform-connector-shelf`,
+score 3.2). The connector package is rendered from the registry — `src/connector/render.ts`, `npm run connector`,
+`connector/` — as Swagger 2.0 with 28 operations (17 dataset queries, 9 change feeds, the listing, the usage read),
+every response typed from the record schema, the key as the one connection parameter (`Bearer yourKey`, the pattern
+the shelf's bearer-key connectors use: OpenAI, Cohere, Hugging Face, Resend read 2026-10-25), a 230 px icon, readme and
+intro. `test/connector.spec.ts` pins Microsoft's "Prepare connector files" rules (title ≤ 30, description 30–500,
+summaries ≤ 80 chars of letters/digits/parentheses, sentence descriptions, exact typed responses, no 2020-12 construct,
+visibility on every operation) for every source and fails when the committed files drift from the registry.
+`docs/POWER-PLATFORM-CONNECTOR.md` carries the rules table, the owner's seven steps (developer environment, `paconn`
+create, ten test calls, solution + checker, package + SAS link, the Connectors & Agents offer, the open-sourcing PR
+built-with-Claude-Code body) and the sources; action 031 gained step 4 (~50 min on the same Seller account).
+
+What the shelf said, for the record: 1,578 connectors, 435 independent-publisher; the verified lane needs the Partner
+Center Seller account and the Microsoft 365 and Copilot program; Premium tier cannot be removed; 24–48 h to the
+certification report, a 48-business-hour preview test, 10–14 days to all regions. The honest owner-time number is
+~50 min, not the spike's 15: the verified package is a solution export from a Power Platform environment plus a
+blob SAS link, which no sandbox can produce — the files are ready, the sitting is the owner's.
+
+Proof unchanged: ≥ 10 connections' first call within 30 days of the offer going live, read from Power Platform gateway
+user agents on `rest_data`; the day-30 item is filed when the owner notes `connector live`. No Worker change and no
+version bump (the connector calls the live routes; `info.version` follows `APP_VERSION`).

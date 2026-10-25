@@ -1784,3 +1784,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 17:33 | burn-down | shelf read: 435 IP connectors, 5 key-billed data-API vendors, Companies House wrapper from 2022
 - 2026-10-25 17:33 | burn-down | gankdat/power-platform-certified-connector queued (3.2); new-ventures empty, needs research
 - 2026-10-25 17:37 | burn-down | Stopping: next is power-platform-certified-connector, a 1-day build; 23 min left, the 18:00 slot takes it
+- 2026-10-25 18:34 | burn-down | gankdat power-platform-certified-connector done: Swagger 2.0 package rendered from the registry
+- 2026-10-25 18:34 | burn-down | src/connector/render.ts: 28 typed operations (17 queries, 9 change feeds, listing, usage); x-ms-* extensions
+- 2026-10-25 18:34 | burn-down | toSwaggerSchema: nullable, unions, const, bounds → Swagger 2.0; untyped node throws (no empty schema)
+- 2026-10-25 18:34 | burn-down | connector/: apiDefinition.swagger.json, apiProperties.json (Bearer key), readme, intro, 230 px icon
+- 2026-10-25 18:34 | burn-down | npm run connector (esbuild + Node, Prettier) regenerates the folder; test/connector.spec.ts pins the rules
+- 2026-10-25 18:34 | burn-down | docs/POWER-PLATFORM-CONNECTOR.md: rules table, owner steps 1–7, PR body; action 031 step 4 (~50 min)
+- 2026-10-25 18:34 | burn-down | MARKETPLACE-PREP, RESEARCH, ARCHITECTURE, SELF-CAUSED rows; owner alerted (same Partner Center sitting)
+- 2026-10-25 18:34 | notify | gankdat's Power Platform connector is built: submit it in the same Partner Center sitting

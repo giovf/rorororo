@@ -149,6 +149,17 @@ names — never rename those; see memory/git history for why).
   over the existing API, nothing new to bill. Listing copy, certification notes and the owner's Partner Center steps:
   `docs/APPSOURCE-ADDIN.md`; `test/addin.spec.ts` pins the certification facts. The add-in is dataset-agnostic (headers
   are the record's own keys; `QUERY` takes any registered slug) so the isolation rule holds.
+- `connector/` + `src/connector/render.ts` — **Power Platform certified connector** (2026-10-25, queue
+  `power-platform-certified-connector`): the API rendered a third time from the registry, as the Swagger 2.0 package
+  Microsoft certifies — one `query_<slug>` action per dataset, one `changes_<slug>` action per register, `list_sources`,
+  `get_usage`; every response typed from the record schema (`toSwaggerSchema`: nullable → `x-nullable`, unions → the
+  branch, `const` → `enum`, no empty schema), `x-ms-summary` on every parameter and property, the bearer key as the one
+  API-key connection parameter entered `Bearer yourKey` (the shelf's pattern for bearer APIs), a 230 px icon on the
+  landing's `#0a0a0a`. `npm run connector` (esbuild + Node) writes the folder; `test/connector.spec.ts` pins Microsoft's
+  certification rules for every source and fails when the committed package no longer matches the registry. No Worker
+  change: the connector calls the live `/v1/data` and `/v1/changes` routes. Owner steps (the same Partner Center Seller
+  account as AppSource, the verified-publisher lane, Premium tier) in `docs/POWER-PLATFORM-CONNECTOR.md` and action 031
+  step 4.
 - `docs/` — architecture, runbook, setup docs; `.taskmaster/` — PRD + backlog
 
 ## Stack

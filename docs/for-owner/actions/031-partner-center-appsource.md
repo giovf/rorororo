@@ -1,11 +1,16 @@
-# Owner action request #031 — a Partner Center account and the AppSource submission for gankdat's Excel add-in
+# Owner action request #031 — a Partner Center account, the AppSource submission for gankdat's Excel add-in, and the Power Platform connector offer on the same account
 
 - **Date:** 2026-10-24
 - **Status:** open
 - **Your time:** ~45 minutes in one sitting (account 25–30, sideload test 5, offer upload 10), then a manual review by
-  Microsoft of unknown length (no action from you while it runs)
+  Microsoft of unknown length (no action from you while it runs); **plus ~50 minutes for the second shelf** (step 4,
+  added 2026-10-25: the Power Platform connector — environment 5, connector + ten test calls 10, solution 10,
+  package + storage link 10, offer 10; later a 5-minute pull request when Microsoft asks for it)
 - **Cost:** £0.00 (the new Partner Center flow has no registration fee; the add-in is listed free)
-- **Blocks:** gankdat `appsource-excel-custom-functions-add-in` reaching the shelf — the add-in is built and served at
+- **Blocks:** gankdat `appsource-excel-custom-functions-add-in` reaching the shelf, and (since 2026-10-25) gankdat
+  `power-platform-certified-connector` reaching the Power Automate / Power Apps / Logic Apps / Copilot Studio connector
+  picker — the connector package is built and tested under `ventures/gankdat/connector/`; the Seller account, the
+  solution export and the offer need your identity — the add-in is built and served at
   https://gankdat.com/addin (help page) and https://gankdat.com/addin/manifest.xml; only the publisher account and the
   submission need your identity (CLAUDE.md: account creation is yours).
 
@@ -65,7 +70,25 @@ categories). Read `docs/exchange/spikes/appsource-excel-add-in-shelf.md` §1–2
 - **Give back:** a Telegram note `appsource submitted`; later the approval or the rejection text (a rejection becomes a
   queue item the next burn-down fixes and resubmits — resubmissions are free).
 
+### 4. Second shelf on the same account: the Power Platform connector (~50 min, after step 2; added 2026-10-25)
+- **What:** Microsoft certifies connectors for free and lists them as Premium in every Power Automate, Power Apps,
+  Logic Apps and Copilot Studio tenant. The connector package (Swagger, connection parameter, icon, readme, intro) is
+  rendered from the API's own schema and committed under `ventures/gankdat/connector/`; only a Power Platform
+  environment can turn it into a connector, and only your Seller account can submit it.
+- **Where:** make.powerautomate.com / make.powerapps.com (free developer environment), partner.microsoft.com, and a
+  storage link for the package.
+- **Steps:** follow `ventures/gankdat/docs/POWER-PLATFORM-CONNECTOR.md` → *Owner steps* 1–7 in order (environment,
+  create the connector from the files with `paconn` or the OpenAPI import, ten test calls, solution + Solution
+  checker, zip + validator + SAS link, the **Connectors & Agents in Microsoft Copilot Studio** offer, then the
+  open-sourcing pull request when Microsoft asks). Every value to paste is in that file.
+- **Cost:** £0 expected (the Azure Storage blob for the package link sits in the free tier; if anything is charged it
+  is pennies — tell me and it goes in `docs/LEDGER.md`).
+- **Give back:** a Telegram note `connector submitted` after the offer is published, and `connector live` when the
+  offer shows *Live*; a failed certification report becomes a queue item the next routine fixes.
+
 ## What happens next
 - The daily metrics row counts add-in calls by their Office user agent once the first key is used from Excel; the item's
   proof is ≥ 10 keys and ≥ 1 credit pack through the pane within 30 days of listing.
 - Nothing recurs: no renewal, no fee, no store billing to reconcile.
+- The connector: 24–48 h to the certification report, a preview-environment test you confirm with *Go live*, then 10–14
+  days to every region. The day-30 reading (≥ 10 connections' first call) is filed when you note `connector live`.

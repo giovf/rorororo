@@ -1411,13 +1411,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-24T21:28:15.393Z"
+      },
+      {
+        "id": "41",
+        "title": "gankdat: Power Platform certified connector package rendered from the registry",
+        "description": "Swagger 2.0 package (28 typed operations, Bearer API-key connection, icon, readme, intro) under ventures/gankdat/connector/, rendered by npm run connector from src/connector/render.ts; test/connector.spec.ts pins Microsoft's certification rules; owner steps in docs/POWER-PLATFORM-CONNECTOR.md and action 031 step 4",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-25T18:33:08.043Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-24T21:28:15.393Z",
-      "taskCount": 40,
-      "completedCount": 33,
+      "lastModified": "2026-10-25T18:33:08.043Z",
+      "taskCount": 41,
+      "completedCount": 34,
       "tags": [
         "master"
       ]

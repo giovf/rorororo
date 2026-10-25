@@ -5,7 +5,7 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (4)
+## Requests (5)
 
 1. **add two read scopes to the CI Cloudflare token and say yes/…** — ~6 min, since 2026-10-24; unblocks gankdat `zoho-crm-uk-registers-widget` (2.4), tax-workbook `etsy-listing-live` (10), tax-workbook `payhip-twin-listing` (5). Steps: [030](actions/030-cloudflare-token-scopes-and-devcontainer-node.md).
    add two read scopes to the CI Cloudflare token and say yes/no to Node 24, ~6 min — docs/for-owner/actions/030-cloudflare-token-scopes-and-devcontainer-node.md
@@ -18,6 +18,9 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 4. **PayPal hackathon organiser says the Devpost entry has no de…** — ~3 min, since 2026-10-21; nothing queued waits on it. Steps: [028](actions/028-paypal-devpost-demo-access.md).
    PayPal hackathon organiser says the Devpost entry has no demo access; add the demo link or run steps to the form by 12 Nov. — Prepared 2026-10-23 (burn-down): paste-ready demo URL and testing instructions in docs/for-owner/actions/028-paypal-devpost-demo-access.md (~3 min); the public mirror's README now carries the r…
+
+5. **gankdat's Power Platform connector is built** — ~50 min, since 2026-10-25; nothing queued waits on it. Steps: [031](actions/031-partner-center-appsource.md).
+   gankdat's Power Platform connector is built — one more ~50 min step on the Partner Center account, £0 — docs/for-owner/actions/031-partner-center-appsource.md step 4
 
 ## Waiting on an attended Claude session, not you (2)
 
