@@ -299,8 +299,9 @@
       "effort_days": 0.5,
       "proof": "docs/exchange/spikes/power-platform-connector-shelf.md states the verified-publisher account route and cost for a UK sole trader as Microsoft publishes them, lists ≥ 5 key-billed data-API connectors on the shelf with their lane, names the gaps between gankdat's OpenAPI and the certification files, and makes a promote / park call",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-25"
+      "status": "doing",
+      "added": "2026-10-25",
+      "doing_since": "2026-10-25"
     }
   ]
 }
