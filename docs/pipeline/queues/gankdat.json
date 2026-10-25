@@ -829,8 +829,9 @@
       "effort_days": 1,
       "proof": "ventures/gankdat/connector/ holds apiDefinition.swagger.json, apiProperties.json, readme.md and intro.md rendered from the registry and a spec that pins the certification rules; the Partner Center steps are in docs/for-owner/actions/031; day 30 after the connector goes live the Daily numbers row shows ≥ 10 connections' first call (Power Platform gateway user agents on rest_data)",
       "score": 3.2,
-      "status": "todo",
-      "added": "2026-10-25"
+      "status": "doing",
+      "added": "2026-10-25",
+      "doing_since": "2026-10-25"
     }
   ]
 }
