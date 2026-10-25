@@ -3,7 +3,7 @@
   "status": "open",
   "needs_research": false,
   "updated": "2026-10-25",
-  "researched": "2026-10-23",
+  "researched": "2026-10-25",
   "items": [
     {
       "id": "nhs-ods",
@@ -832,6 +832,17 @@
       "status": "done",
       "added": "2026-10-25",
       "done_at": "2026-10-25"
+    },
+    {
+      "id": "rest-callers-by-user-agent-reading",
+      "title": "Daily numbers: `rest 7d by UA:` clause — authed `rest_data` calls of the last 7 days grouped by user agent (top 8, internal mailboxes and the probe excluded, the `prober` tag of changes-by-UA reused), so a call from the Excel add-in or the Power Platform connector is readable the day it lands",
+      "why": "Research 2026-10-25: both Microsoft shelf items built this weekend state their proof as user agents on `rest_data` — the add-in (action 031: '≥ 10 keys and ≥ 1 credit pack through the pane in 30 days', read by the Office user agent) and the connector ('≥ 10 connections' first call in 30 days, Power Platform gateway user agents') — but the row reads REST only by slug (`datasets 30d`) and by account (`datasets 30d external`); `changes 7d by UA` (built 2026-10-25) is the only user-agent reading and covers the change feeds alone. Without it the two proofs are unreadable when the shelves list, and a Zoho widget (blocked, same shape) would add a third. Measurement before the shelves, no guess at vendor strings: the clause lists what arrives.",
+      "effort_days": 0.2,
+      "proof": "the next Daily numbers row carries `rest 7d by UA: …` naming the user agents behind the week's authed REST calls; a call from Excel or a Power Platform flow is identifiable from the row alone",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-25"
     }
-  ]
+  ],
+  "research_after": "2026-10-30"
 }

@@ -1792,3 +1792,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 18:34 | burn-down | docs/POWER-PLATFORM-CONNECTOR.md: rules table, owner steps 1–7, PR body; action 031 step 4 (~50 min)
 - 2026-10-25 18:34 | burn-down | MARKETPLACE-PREP, RESEARCH, ARCHITECTURE, SELF-CAUSED rows; owner alerted (same Partner Center sitting)
 - 2026-10-25 18:34 | notify | gankdat's Power Platform connector is built: submit it in the same Partner Center sitting
+- 2026-10-25 18:47 | burn-down | gankdat research: evidence unchanged since 10-23 and review W43; one gap from today's two shelves
+- 2026-10-25 18:47 | burn-down | gankdat rest-callers-by-user-agent-reading queued (4): rest 7d by UA clause the shelf proofs need
+- 2026-10-25 18:47 | burn-down | gankdat researched 10-25, research_after 2026-10-30 (next dated reading); RESEARCH.md written

@@ -890,3 +890,24 @@ blob SAS link, which no sandbox can produce — the files are ready, the sitting
 Proof unchanged: ≥ 10 connections' first call within 30 days of the offer going live, read from Power Platform gateway
 user agents on `rest_data`; the day-30 item is filed when the owner notes `connector live`. No Worker change and no
 version bump (the connector calls the live routes; `info.version` follows `APP_VERSION`).
+
+## Research 2026-10-25 (pipeline starved — burn-down, 18:45)
+
+Read: the 10-24 and 10-25 Daily numbers rows, review W43 (this morning, 08:16: the gankdat row, gap table and the
+`x402-buyer-vs-survey-split` item it queued and the 17:20 slot built), the 10-23 research pass, `docs/INBOX.md` to
+10-24 19:52, `docs/ALERTS.md`, the open items (six dated, two owner-blocked) and `scripts/metrics.mjs` (which
+readings exist for REST traffic). **Unchanged since 10-23:** 4 accounts, 0 paid, `0 keys/30d`, `oauth: 0 connects`,
+`after wall 1h: 0 clients`, buyers on x402 still the 4 uk-tenders calls from 3 clients (the other 15 paid calls are
+`lumiere-paycheck-prober`, now read as such), `changes 7d: 4 (rest 4)`, Apify 19 users / 456 runs, 0 paid,
+uk-planning still empty (re-read 10-25, next 11-01), Docker PR #5622 untouched. The W43 review's one verdict —
+*shelf conversion is the only question; distribution before features* — stands, and every shelf in flight (Claude
+directory 10-30, Docker, AppSource, Power Platform, Zoho) waits on a reviewer or the owner.
+
+**One new gap, made by this weekend's own work:** the add-in's and the connector's proofs both read "user agents on
+`rest_data`", and no clause reads REST calls by user agent — `datasets 30d` is by slug, `datasets 30d external` by
+account, and `changes 7d by UA` (built this afternoon) covers the change feeds only. Queued
+`rest-callers-by-user-agent-reading` (4, 0.2 days): a `rest 7d by UA:` clause in the Daily numbers row, top eight
+user agents of the week's authed REST calls, internal mailboxes and the probe excluded, the `prober` tag reused — so
+the first call from Excel or a Power Platform flow is readable from the row the day it lands, with no guess at the
+vendors' user-agent strings. Nothing else queued: a second or third item would be invented work (review W42), and
+the next signal is dated — `research_after: 2026-10-30` (the Claude directory day-30 read, the first dated item).
