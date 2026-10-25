@@ -70,8 +70,9 @@
       "effort_days": 0.1,
       "proof": "inbox-triage.md carries the Etsy rule with a Changes line; RESEARCH.md has the Metrics table header for Sale rows; the weekly-report prompt counts them",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-25"
+      "status": "doing",
+      "added": "2026-10-25",
+      "doing_since": "2026-10-25"
     }
   ]
 }
