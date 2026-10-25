@@ -1,0 +1,169 @@
+{
+  "request": "power-platform-connector-shelf",
+  "fetched_at": "2026-10-25T17:28:09.657Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/custom-connectors/submit-certification",
+      "fetched_at": "2026-10-25T17:28:03.227Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/custom-connectors/submit-certification",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Thu, 27 Aug 2026 19:07:26 GMT",
+        "etag": "\"YbpmaM404zELNGGv9loO/uWjCtE=\""
+      },
+      "file": "1.html",
+      "bytes": 47416,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/custom-connectors/submit-for-certification",
+      "fetched_at": "2026-10-25T17:28:03.996Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/custom-connectors/submit-for-certification",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Thu, 27 Aug 2026 19:07:26 GMT",
+        "etag": "\"2jCtgTTZ6FV1trxSDMwvlvze5AI=\""
+      },
+      "file": "2.html",
+      "bytes": 53221,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/custom-connectors/certification-submission",
+      "fetched_at": "2026-10-25T17:28:04.965Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/custom-connectors/certification-submission",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 30 Sep 2026 19:12:00 GMT",
+        "etag": "\"nOZTOV8Vh9sDV+AFro8jYVVqV14=\""
+      },
+      "file": "3.html",
+      "bytes": 62720,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/custom-connectors/certification-submission-ip",
+      "fetched_at": "2026-10-25T17:28:05.593Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/custom-connectors/certification-submission-ip",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Thu, 27 Aug 2026 19:07:26 GMT",
+        "etag": "\"3CBvG9h1sevEX8kxknGncDiu8Gg=\""
+      },
+      "file": "4.html",
+      "bytes": 51928,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/custom-connectors/faq",
+      "fetched_at": "2026-10-25T17:28:06.222Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/custom-connectors/faq",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 30 Sep 2026 19:12:00 GMT",
+        "etag": "\"1+czkSpemEcc5nYYU9XdUC0PDiY=\""
+      },
+      "file": "5.html",
+      "bytes": 46352,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/companieshouseip/",
+      "fetched_at": "2026-10-25T17:28:06.829Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/companieshouseip/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 07 Aug 2026 01:11:46 GMT",
+        "etag": "\"ysddIKQgd5P2//NbLhaRtyLUQIY=\""
+      },
+      "file": "6.html",
+      "bytes": 106521,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/connectors/connector-reference/connector-reference-powerautomate-connectors",
+      "fetched_at": "2026-10-25T17:28:07.420Z",
+      "status": 200,
+      "final_url": "https://learn.microsoft.com/en-us/connectors/connector-reference/connector-reference-powerautomate-connectors",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Fri, 02 Oct 2026 19:11:58 GMT",
+        "etag": "\"aY3bwoDId8JJGGeveX53EcduCu8=\""
+      },
+      "file": "7.html",
+      "bytes": 720005,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/create-account",
+      "fetched_at": "2026-10-25T17:28:08.056Z",
+      "status": 404,
+      "final_url": "https://learn.microsoft.com/en-us/partner-center/marketplace-offers/create-account",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "17973"
+      },
+      "file": "8.html",
+      "bytes": 17973,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/CONTRIBUTING.md",
+      "fetched_at": "2026-10-25T17:28:08.140Z",
+      "status": 404,
+      "final_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/CONTRIBUTING.md",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "141"
+      },
+      "file": "9.json",
+      "bytes": 141,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/.github/PULL_REQUEST_TEMPLATE.md",
+      "fetched_at": "2026-10-25T17:28:08.875Z",
+      "status": 404,
+      "final_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/.github/PULL_REQUEST_TEMPLATE.md",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "141"
+      },
+      "file": "10.json",
+      "bytes": 141,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/independent-publisher-connectors/Companies%20House",
+      "fetched_at": "2026-10-25T17:28:09.509Z",
+      "status": 200,
+      "final_url": "https://api.github.com/repos/microsoft/PowerPlatformConnectors/contents/independent-publisher-connectors/Companies%20House",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "3890",
+        "last-modified": "Sun, 25 Oct 2026 11:17:27 GMT",
+        "etag": "\"afc438cc32990d77a837c0cc21d00c0f24f08f60\""
+      },
+      "file": "11.json",
+      "bytes": 3890,
+      "truncated": false
+    }
+  ]
+}
