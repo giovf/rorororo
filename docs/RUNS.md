@@ -1773,3 +1773,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 17:20 | burn-down | x402-sales.ts splitX402Payers: prober by UA name or a one-day sweep of every route; tests
 - 2026-10-25 17:20 | burn-down | change-feed-callers.ts: Daily numbers row adds `changes 7d by UA:` with surface + prober tag
 - 2026-10-25 17:20 | burn-down | datasets 30d external counts buyers' x402 calls only; ARCHITECTURE, RESEARCH, STRATEGY §4/§8
+- 2026-10-25 17:30 | burn-down | Exchange pre-research: Power Platform certified connector shelf — spike seeded (4); 0 spikes were open
+- 2026-10-25 17:30 | burn-down | gankdat queue is empty but its research is deferred: the 17:09 build slot is researching it

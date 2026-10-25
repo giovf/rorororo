@@ -1,8 +1,8 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": true,
-  "updated": "2026-10-24",
+  "needs_research": false,
+  "updated": "2026-10-25",
   "researched": "2026-10-24",
   "weight": 2,
   "items": [
@@ -291,6 +291,16 @@
       "doing_since": "2026-10-24",
       "done_at": "2026-10-24",
       "doing_by": "burn-down"
+    },
+    {
+      "id": "spike-power-platform-connector-shelf",
+      "title": "Research spike: Microsoft Power Platform certified connector as a shelf for the gankdat API — through the relay (learn.microsoft.com, api.github.com; add any further host it needs) read the verified-publisher certification rules (registration form fields, whether a Partner Center or Microsoft AI Cloud Partner Program ID or a company is required and what a UK sole trader can supply, cost, the Premium tier, timing), the independent-publisher rule on APIs the publisher owns (if gankdat may only be listed by a third party, say so), the technical requirements against gankdat's /openapi.json and API-key auth (Swagger 2.0 export, apiDefinition.swagger.json + apiProperties.json, icon, support and privacy URLs, naming, 'test the connector' screenshots), ≥ 5 data-API vendors' connectors whose connections take a paid API key (name, auth type, publisher lane), the state of the 'Companies House (Independent Publisher)' connector, and microsoft/PowerPlatformConnectors' CONTRIBUTING / PR template for any rule on AI-assisted contributions; write docs/exchange/spikes/power-platform-connector-shelf.md with a promote / park call (promote shape: a gankdat verified-publisher connector generated from the registry's OpenAPI — one action per dataset plus get_changes — the key sold as today; owner minutes: the registration form and any partner ID)",
+      "why": "Exchange pre-research 2026-10-25 (burn-down; WebSearch only, learn.microsoft.com is already on the relay). Why it is on the list: a certified connector sits in the connector picker of every Power Automate, Power Apps and Logic Apps tenant — distribution that costs nothing and needs no audience — and the index shows the shelf already holds a 'Companies House (Independent Publisher)' connector, so a UK-register connector is a known shape there; Microsoft certifies for free in 3–5 working days, verified publishers own the API (gankdat's lane), independent publishers may only list APIs they do not own. The paid part is the API key the connection asks for, as with the AppSource add-in (built 10-24) — no new billing. Open: what the verified lane asks of a sole trader (partner ID, company), the certification files against our OpenAPI 3.1 (connectors take Swagger 2.0), key-billed vendor connectors as rivals, and the repository's rule on AI-assisted PRs. Score: evidence 1 × reach 2 ÷ 0.5 days = 4. Exchange idea power-platform-certified-connector (parked, trigger = this spike).",
+      "effort_days": 0.5,
+      "proof": "docs/exchange/spikes/power-platform-connector-shelf.md states the verified-publisher account route and cost for a UK sole trader as Microsoft publishes them, lists ≥ 5 key-billed data-API connectors on the shelf with their lane, names the gaps between gankdat's OpenAPI and the certification files, and makes a promote / park call",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-25"
     }
   ]
 }
