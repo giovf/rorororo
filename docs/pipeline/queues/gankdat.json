@@ -821,6 +821,16 @@
       "status": "done",
       "added": "2026-10-25",
       "done_at": "2026-10-25"
+    },
+    {
+      "id": "power-platform-certified-connector",
+      "title": "Power Platform certified connector for gankdat: a Swagger 2.0 package rendered from the registry (one action per dataset, get_changes, the lookup; the bearer key as the one API-key connection parameter; x-ms-* extensions, typed outputs, icon, readme, intro) under ventures/gankdat/connector/ with a `npm run connector` renderer and a test that pins the certification rules; the owner's Partner Center step (Seller account vetting + Microsoft 365 and Copilot program, then New offer → Connectors & Agents, package by SAS URI, and the certified-connectors open-sourcing PR) appended to action 031 as a second shelf on the same account",
+      "why": "Spike power-platform-connector-shelf (2026-10-25): Microsoft certifies connectors for free; the verified-publisher lane (an API you own) needs a Partner Center Seller account — the account action 031 already requests for AppSource — and releases the connector as Premium into every Power Automate, Power Apps, Logic Apps and Copilot Studio tenant's picker, 3–5 business days + 7–10 to deploy. The shelf already carries 435 independent-publisher connectors including five key-billed data-API vendors with the identical one-API-key connection (Abstract ×9, Hunter, OpenSanctions, OpenCage, Tax ID Pro) and single-register wrappers for Companies House (unchanged since 2022-02-08), CQC and UK VAT; nobody offers the cross-register bundle or a change feed as a connector. The store lists, the key bills (same as the Excel add-in). Score: evidence 2 × reach 2 ÷ (1 day + 15 owner min) = 3.2. Rules to keep: Swagger 2.0 with typed outputs (no dynamic schema), no empty operations, the package open-sourced in microsoft/PowerPlatformConnectors certified-connectors (public, no secrets), and the PR says it was built with Claude Code.",
+      "effort_days": 1,
+      "proof": "ventures/gankdat/connector/ holds apiDefinition.swagger.json, apiProperties.json, readme.md and intro.md rendered from the registry and a spec that pins the certification rules; the Partner Center steps are in docs/for-owner/actions/031; day 30 after the connector goes live the Daily numbers row shows ≥ 10 connections' first call (Power Platform gateway user agents on rest_data)",
+      "score": 3.2,
+      "status": "todo",
+      "added": "2026-10-25"
     }
   ]
 }

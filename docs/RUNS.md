@@ -1779,3 +1779,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 17:20 | burn-down | datasets 30d external counts buyers' x402 calls only; ARCHITECTURE, RESEARCH, STRATEGY §4/§8
 - 2026-10-25 17:30 | burn-down | Exchange pre-research: Power Platform certified connector shelf — spike seeded (4); 0 spikes were open
 - 2026-10-25 17:30 | burn-down | gankdat queue is empty but its research is deferred: the 17:09 build slot is researching it
+- 2026-10-25 17:33 | burn-down | new-ventures spike-power-platform-connector-shelf done: promote (3.2) — spike doc written
+- 2026-10-25 17:33 | burn-down | Power Platform: verified lane is ours, free, Partner Center account = action 031; Swagger 2.0 package
+- 2026-10-25 17:33 | burn-down | shelf read: 435 IP connectors, 5 key-billed data-API vendors, Companies House wrapper from 2022
+- 2026-10-25 17:33 | burn-down | gankdat/power-platform-certified-connector queued (3.2); new-ventures empty, needs research
