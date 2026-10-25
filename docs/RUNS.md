@@ -1798,3 +1798,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 18:52 | burn-down | gankdat rest-callers-by-user-agent-reading done: Daily numbers row adds `rest 7d by UA:`
 - 2026-10-25 18:52 | burn-down | rest-callers.ts restByUaNote: top 8 UA families, datasets touched, prober tag; external accounts only
 - 2026-10-25 18:52 | burn-down | metrics.mjs query after changes-by-UA; tests; ARCHITECTURE and RESEARCH notes
+- 2026-10-25 18:50 | burn-down | Stopping: pipeline starved and cooled; tonight's exchange pre-research was spent at 17:30
