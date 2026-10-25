@@ -830,3 +830,26 @@ a sideload test, the offer upload). Not testable here: no sandbox runs Excel, so
 owner's sideload step; the two likely failure points and their one-line fixes are written down in APPSOURCE-ADDIN.md.
 Proof unchanged (≥ 10 keys' first call from the add-in and ≥ 1 credit pack through its pane within 30 days of listing);
 the Office user agent on the `rest_data` point is how the row will see it. Cost £0.
+
+## Build 2026-10-25 — buyers vs probers on x402 (burn-down)
+
+Built `x402-buyer-vs-survey-split` (score 4), the gap review W43 queued. The 10-25 row read `x402 30d: 19 paid,
+4 clients`, but 15 of the 19 were `lumiere-paycheck-prober` paying each unpaid route once on 10-24/25, and the
+11-14 day-30 read (≥ 50 paid calls from ≥ 5 payers) and two parked exchange triggers quote that clause as demand.
+What changed: `src/lib/x402-sales.ts` gains `splitX402Payers` (tested in `test/x402-sales.spec.ts`) — a client whose
+user agent names itself a probe, prober, scout, observatory, survey or collector (`PROBER_UA`), or that paid every
+live route once in a single day (the route count read from `/v1/data`), is a prober; every other client is a
+buyer, and a buyer paying on two or more days is a repeat payer. The 30-day read in `metrics.mjs` is grouped by
+UTC day as well so the sweep rule and the repeat count can see days. Renderings: `x402 30d: N paid, C clients —
+buyers N paid, C clients, repeat R (<slug> N, …; <family> N, …); probers M paid, C clients (<family> M, …)`; the
+sales cell `15 x402 paid (0 by buyers; probers 15: lumiere-paycheck-prober 15)` (unchanged when no prober paid);
+`datasets 30d external` counts buyers' x402 calls only. The second half: `changes 7d by UA: python-requests 4
+(rest)` (`src/lib/change-feed-callers.ts`, tested) names the user agents behind the change-feed calls with the
+surface and a `prober` tag when the agent names itself one.
+What the 10-26 row should say, on the 10-25 data: `buyers 1 paid, 1 client, repeat 0 (uk-tenders 1;
+LumiTrustBuyer 1); probers 18 paid, 3 clients (lumiere-paycheck-prober 16, SettledScout 1, vet402-observatory-l1
+1)` — two of the three "real buyers" review W43 counted call themselves a scout and an observatory, so the lane
+has one buyer of record and the day-30 proof stands at 1 of 50 calls. Limits: a prober with an ordinary user
+agent that spreads its sweep over two days (as lumiere did, 5 + 10 routes) is caught only by its name; a buyer that
+genuinely queries every route in one day would read as a prober for that day (none seen); points before 10-11
+carry no client id and are classed by user agent alone. No Worker change, no version bump.

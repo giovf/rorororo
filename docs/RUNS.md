@@ -1769,3 +1769,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 09:25 | build | weekly-report.md section 2 counts the week's net Etsy sales, running total and deposits
 - 2026-10-25 09:25 | build | tax-workbook RESEARCH.md §6/§7 carry the row format; STRATEGY §4 Etsy row reads 0, reading wired
 - 2026-10-25 09:25 | build | first-run check: every installer commit of the last 3 days already has its first-run line
+- 2026-10-25 17:20 | burn-down | gankdat x402-buyer-vs-survey-split done: x402 30d row reads buyers (repeat) vs probers
+- 2026-10-25 17:20 | burn-down | x402-sales.ts splitX402Payers: prober by UA name or a one-day sweep of every route; tests
+- 2026-10-25 17:20 | burn-down | change-feed-callers.ts: Daily numbers row adds `changes 7d by UA:` with surface + prober tag
+- 2026-10-25 17:20 | burn-down | datasets 30d external counts buyers' x402 calls only; ARCHITECTURE, RESEARCH, STRATEGY §4/§8
