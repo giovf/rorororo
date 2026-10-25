@@ -1750,3 +1750,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-24 21:28 | burn-down | Action 031: Partner Center Company account (new £0 flow, tax document), sideload test, submission
 - 2026-10-24 21:28 | notify | Your Excel add-in is built: one 45-minute sitting opens the Microsoft store account and submits it
 - 2026-10-24 21:28 | burn-down | CI first runs: none owed; Dependabot majors: none open; pipeline starved and cooled after this item
+- 2026-10-25 00:30 | watchdog | ci-minutes: 611 billed min/7d (~2619/mo; cap 2000) top: fetch relay 129, owner notes 86, notify owner 63
