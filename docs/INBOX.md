@@ -215,3 +215,4 @@
 - 2026-10-24 19:49 | notification | github.com | [giovf/rorororo] build(deps): bump the minor-and-patch group with 7 updates (PR #9) | Dependabot PR opened, no action in the mail itself | logged
 - 2026-10-24 19:52 | notification | github.com | Re: [giovf/rorororo] build(deps): bump the minor-and-patch group with 7 updates (PR #9) | PR #9 merged into main | logged
 - 2026-10-25 21:31 | notification | google.com | New reasons prevent pages from being indexed on site https://gankdat.com/ | Google Search Console flags new unindexed reasons for gankdat.com: "Not found (404)" and "Blocked due to other 4xx issue"; not a listing-state change, no ALERTS line | logged
+- 2026-10-25 22:12 | notification | google.com | New reasons prevent pages from being indexed on site gankdat.com | Google Search Console repeats the new unindexed reasons (404, other 4xx) for gankdat.com; not a listing-state change | logged
