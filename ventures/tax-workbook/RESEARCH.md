@@ -150,3 +150,20 @@ five listing images with the listing copy from `LISTING.md`, and set the payout 
 answer buyer messages the triage drafts; each April, upload the refreshed file. **Added 2026-10-26 (step 5, ~15 min, £0):** open a KDP
 account, complete the tax interview (W-8BEN, UK resident) and bank details, upload the EPUB and cover with the copy in `KINDLE.md`,
 tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start the 7-day £2.99 Countdown Deal once live.
+
+## 9. Research log
+
+- **2026-10-26 01:33 (burn-down, queue starved):** no new build item; `research_after: 2026-11-03`. Three products of this line are
+  built and none is live — the Etsy workbook (`etsy-listing-live`), its Payhip twin (`payhip-twin-listing`) and the Kindle guide
+  (`kdp-listing-live`) all wait on the owner's one sitting (action 029, raised 2026-10-24, step 5 added tonight) — so every lever is
+  owner-blocked, the metrics rows carry 0 sales because nothing is on a shelf yet, and STRATEGY §6 (distribution before new features)
+  says a fourth unlisted product would not change that. The next dated signal is the reseller workbook's `not_before` (2026-11-03) and
+  the owner's "029 done" note, whichever comes first. Candidates read tonight and **not** queued until the first listing is live (the
+  next research pass scores them against the first shelf's reading): (a) a second Kindle title shaped like the shelf's best seller —
+  "Making Tax Digital for Sole Traders: quarter by quarter" (the £3.99 playbook with 245 ratings in two months, spike §2), ~0.5 day
+  from chapter 11's material, dated after the first book's day-30 read; (b) a KDP paperback of the guide (£0 to list, print cost
+  deducted from the royalty), only if the Kindle edition sells; (c) a UK landlord / SA105 property workbook — the same recurring job
+  on the same Etsy shop (the £1,000 property allowance, finance-cost credit, MTD from the same £50k/£30k/£20k thresholds on
+  property income), ~0.5 day, listed as a third item in the shop once the first two sell; (d) a Scottish-bands variant of the workbook
+  (one Setup table swap), only on a buyer message asking for it. Nothing here needs a relay read; nothing was fetched.
+

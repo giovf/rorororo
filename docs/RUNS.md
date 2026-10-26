@@ -1825,3 +1825,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 01:30 | burn-down | Action 029 step 5 (KDP account, W-8BEN, upload, ~15 min, £0); ALERTS owner line; SELF-CAUSED row for KDP mail
 - 2026-10-26 01:30 | burn-down | tax-workbook kdp-listing-live queued, blocked on action 029 step 5; deps jszip + sharp added to the venture
 - 2026-10-26 01:30 | notify | Your UK tax guide is ready for Kindle: one free 15-minute sitting opens the Amazon account and uploads it
+- 2026-10-26 01:33 | burn-down | tax-workbook research: three products built, none live; every lever waits on action 029 (owner sitting)
+- 2026-10-26 01:33 | burn-down | tax-workbook researched 10-26, research_after 2026-11-03 (reseller item date); 4 candidates logged, none queued
+- 2026-10-26 01:33 | burn-down | Stopping: pipeline starved and cooled; tonight's exchange pre-research was spent at 00:25

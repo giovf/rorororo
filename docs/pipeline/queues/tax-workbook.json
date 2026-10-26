@@ -3,7 +3,7 @@
   "status": "open",
   "needs_research": false,
   "updated": "2026-10-26",
-  "researched": "2026-10-24",
+  "researched": "2026-10-26",
   "weight": 2,
   "items": [
     {
@@ -100,5 +100,6 @@
       "blocked_on": "owner: action 029 step 5 (raised 2026-10-26 by kdp-tax-guide-ebook, ALERTS 2026-10-26) — the KDP account, tax interview and bank, and the EPUB + cover upload",
       "added": "2026-10-26"
     }
-  ]
+  ],
+  "research_after": "2026-11-03"
 }
