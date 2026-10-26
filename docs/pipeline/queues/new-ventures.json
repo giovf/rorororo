@@ -332,8 +332,9 @@
       "effort_days": 0.4,
       "proof": "docs/exchange/spikes/heroku-elements-add-on.md states who can sign the agreement, the GA support obligations, the API-type add-ons on the shelf with their plan prices, the integration effort against the Worker, and a promote / park call",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-10-26"
     }
   ]
 }
