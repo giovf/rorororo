@@ -1124,8 +1124,9 @@
       "effort_days": 0.3,
       "proof": "notify-owner starts every 2 h ± 15 min for seven consecutive days (actions_list), so a notify line or an owner note waits at most 2 h 15 min",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-10-26"
     },
     {
       "id": "node-entry-import-extensions",
