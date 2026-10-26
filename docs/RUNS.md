@@ -1804,3 +1804,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 00:25 | burn-down | KDP: AI-written text must be disclosed, allowed; 70 % ex-VAT less delivery; Freshworks 80/20, bills in GBP
 - 2026-10-26 00:25 | burn-down | Heroku agreement §5.1 pays 70 % of net subscription revenue in 30 days; GA needs 15 testers, no installs shown
 - 2026-10-26 00:25 | burn-down | Read and not seeded: Xero (App Store billing retired, API tiers charge devs), Vercel (Pro team US$20/mo first)
+- 2026-10-26 00:28 | burn-down | Spike kdp-sole-trader-tax-guide done: promote — 10 KDP pages read; rival detail pages hit Amazon's bot wall
+- 2026-10-26 00:28 | burn-down | KDP terms: 70 % band £1.77–12.99, delivery £0.10/MB, VAT added by Amazon, AI text disclosed and allowed
+- 2026-10-26 00:28 | burn-down | Content-quality rules bar companions, redirects and adverts — the guide must stand alone; low-content is print
+- 2026-10-26 00:28 | burn-down | tax-workbook kdp-tax-guide-ebook queued (3 × 2): standalone EPUB guide at £4.99, owner KDP step on action 029
+- 2026-10-26 00:28 | burn-down | Exchange: kdp-uk-sole-trader-tax-guide promoted; tax-workbook RESEARCH.md carries the Kindle shelf note

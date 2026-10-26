@@ -2,7 +2,7 @@
   "venture": "tax-workbook",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "researched": "2026-10-24",
   "weight": 2,
   "items": [
@@ -75,6 +75,16 @@
       "doing_since": "2026-10-25",
       "done_at": "2026-10-25",
       "doing_by": "build"
+    },
+    {
+      "id": "kdp-tax-guide-ebook",
+      "title": "Kindle guide: 'UK Sole Trader Tax 2026/27 — Self Assessment, Making Tax Digital and the numbers' as an EPUB built from TypeScript (the workbook's rates, thresholds, SA103S categories, Class 4 NI, trading allowance, MTD quarterly updates, mileage, payments on account and a worked example as a complete standalone guide — no redirect to the workbook for 'the full content', one plain back-matter sentence naming it), with cover, description, seven keywords and two categories prepared; disclosed to KDP as AI-generated text; list £4.99 at the 70 % option with a one-week Kindle Countdown Deal at £2.99; the owner's KDP account, tax interview (W-8BEN) and bank are appended to action 029 as one sitting (~15 min) and the upload is the owner's click",
+      "why": "Spike 2026-10-26 (new-ventures spike-kdp-sole-trader-tax-guide, docs/exchange/spikes/kdp-sole-trader-tax-guide.md): amazon.co.uk's Kindle search shows buyers counted on the shelf — a £3.99 MTD playbook with 245 ratings since 26 Aug 2026, a £9.99 MTD guide (34), a £6.50 annual Self Assessment series every April since 2017 (11–36 ratings an edition) and a near-identical £4.99 'Sole Trader & Side Hustle Tax Workbook 2026/27' ebook published 21 Oct 2026; KDP lists for £0, bills and remits VAT, pays 70 % of the ex-VAT price less £0.10/MB (£2.70 on £4.99), requires AI-generated text to be disclosed and allows it, and its content-quality rules bar companion books, incomplete books and adverts — which fixes the shape as a complete original guide. STRATEGY §1: a shelf with its own buyers for the line already validated; the same content, a second shelf, half the net per copy and no fee. Proof as the §4 Etsy row: first sale within 30 days of listing, ≥ 10 within 60, read from KDP's sales report (the owner pastes the month's count into a note; no mail parsing). Score: evidence 2 × reach 2 ÷ (1 day + 20 owner minutes) ≈ 3.",
+      "effort_days": 1,
+      "proof": "ventures/tax-workbook/kindle/ builds the EPUB and cover with npm run kindle, RESEARCH.md §5 carries the guide's outline and the KDP disclosure, action 029 gains the KDP step, and the listing is live with its first sale within 30 days",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-26"
     }
   ]
 }
