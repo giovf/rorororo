@@ -1,0 +1,16 @@
+GET https://www.kobo.com/writinglife
+GET https://www.kobo.com/writinglife/faq
+GET https://www.kobo.com/writinglife/terms
+GET https://www.kobo.com/writinglife/learn
+GET https://help.kobo.com/hc/en-us/search?query=writing+life+royalty
+GET https://help.kobo.com/hc/en-us/search?query=writing+life+payment
+GET RENDER https://www.kobo.com/gb/en/search?query=sole+trader+tax+2026
+GET RENDER https://www.kobo.com/gb/en/search?query=self+assessment+tax+return+uk
+GET https://support.google.com/books/partner/answer/3244021
+GET https://support.google.com/books/partner/
+GET https://play.google.com/books/publish/
+GET RENDER https://play.google.com/store/search?q=sole%20trader%20tax%202026&c=books&gl=GB
+GET https://www.draft2digital.com/faq/
+GET https://www.draft2digital.com/
+GET https://www.draft2digital.com/terms-of-service/
+GET https://www.draft2digital.com/pricing/
