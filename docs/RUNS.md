@@ -1909,3 +1909,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 19:46 | burn-down | Stopping at ~34 min: 3 items built (gankdat sitemap-5xx-read, 2 foundry); next slot takes first-run-check-script
 - 2026-10-26 20:07 | watchdog | ci-failed: fetch-relay.yml run 198 18:20 — step Run node scripts/fetch-relay.mjs; later run 199 failure
 - 2026-10-26 20:07 | watchdog | ci-failed: fetch-relay.yml run 199 18:43 — step Run node scripts/fetch-relay.mjs; later run 200 ok
+- 2026-10-26 23:07 | triage | notify owner dispatched: last run started 20:06 UTC, 3 h ago
