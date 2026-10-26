@@ -1,0 +1,266 @@
+{
+  "request": "ebook-shelves-2026-10-26",
+  "fetched_at": "2026-10-26T17:25:21.488Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.kobo.com/writinglife",
+      "fetched_at": "2026-10-26T17:25:00.676Z",
+      "status": 403,
+      "final_url": "https://www.kobo.com/writinglife",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 84452,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kobo.com/writinglife/faq",
+      "fetched_at": "2026-10-26T17:25:01.384Z",
+      "status": 403,
+      "final_url": "https://www.kobo.com/writinglife/faq",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 84464,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kobo.com/writinglife/terms",
+      "fetched_at": "2026-10-26T17:25:01.964Z",
+      "status": 403,
+      "final_url": "https://www.kobo.com/writinglife/terms",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 84470,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kobo.com/writinglife/learn",
+      "fetched_at": "2026-10-26T17:25:02.530Z",
+      "status": 403,
+      "final_url": "https://www.kobo.com/writinglife/learn",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 84470,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.kobo.com/hc/en-us/search?query=writing+life+royalty",
+      "fetched_at": "2026-10-26T17:25:02.597Z",
+      "status": 200,
+      "final_url": "https://help.kobo.com/hc/en-us/search?query=writing+life+royalty",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 81417,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.kobo.com/hc/en-us/search?query=writing+life+payment",
+      "fetched_at": "2026-10-26T17:25:03.867Z",
+      "status": 200,
+      "final_url": "https://help.kobo.com/hc/en-us/search?query=writing+life+payment",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 83068,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kobo.com/gb/en/search?query=sole+trader+tax+2026",
+      "render": true,
+      "fetched_at": "2026-10-26T17:25:04.559Z",
+      "status": 403,
+      "final_url": "https://www.kobo.com/gb/en/search?query=sole+trader+tax+2026",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 12,
+        "failed": [
+          "GET https://www.kobo.com/gb/en/search?query=sole+trader+tax+2026 → 403",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a50b2889af3215f9/RQQUTYQkRAr8k2QaY1gDrnkMEGPf6c5y25.119pcbn0-1793035506-1.2.1.1-McawEiAXMOn8RG5pC.jZYsqmQtARKpp5..x1uVAX",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a50b2889af3215f9/1793035506425/29a4bfcf65b78b4fe635b749c2f324b292ef1c8b62afac281f1ef010b8bee3f6/5ONchsZsBPuCJXQ3Ugeu6Y8W_R8oZSV"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy.",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "7.html",
+      "bytes": 85748,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kobo.com/gb/en/search?query=self+assessment+tax+return+uk",
+      "render": true,
+      "fetched_at": "2026-10-26T17:25:09.289Z",
+      "status": 403,
+      "final_url": "https://www.kobo.com/gb/en/search?query=self+assessment+tax+return+uk",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 12,
+        "failed": [
+          "GET https://www.kobo.com/gb/en/search?query=self+assessment+tax+return+uk → 403",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/pat/a50b289fda80c621/1793035509979/e177044176a4334181a938b02c35784cc32ce64a38a14b9ff19e3df796f733b4/FPwN9jpqgLy82N53G7jQaAoGk78KHFR",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/b/i/a50b289fda80c621/yJX2PdCDHpKJIh859erVxuMDNdWKuvt4sE8D2gByQ3k-1793035509-1.2.1.1-onCptTsQCIY_FqRVwhK_nh90tid374ZxeHnBXWOX"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://valid.al",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy.",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 85796,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/answer/3244021",
+      "fetched_at": "2026-10-26T17:25:12.650Z",
+      "status": 200,
+      "final_url": "https://support.google.com/books/partner/answer/3244021",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.html",
+      "bytes": 1593341,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/",
+      "fetched_at": "2026-10-26T17:25:13.881Z",
+      "status": 200,
+      "final_url": "https://support.google.com/books/partner/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "10.html",
+      "bytes": 1484442,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/books/publish/",
+      "fetched_at": "2026-10-26T17:25:14.367Z",
+      "status": 200,
+      "final_url": "https://play.google.com/books/publish/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 72945,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=sole%20trader%20tax%202026&c=books&gl=GB",
+      "render": true,
+      "fetched_at": "2026-10-26T17:25:15.093Z",
+      "status": 200,
+      "final_url": "https://play.google.com/store/search?q=sole%20trader%20tax%202026&c=books&gl=GB",
+      "title": "sole trader tax 2026 - Books on Google Play",
+      "rendered": {
+        "network_idle": true,
+        "requests": 79,
+        "failed": [
+          "POST https://www.google.com/ccm/collect?rcb=2&frm=0&apvc=1&ae=g&auid=1277131739.1793035516&dt=sole%20trader%20tax%202026%20-%20Books%20on%20Google%20Play&en=page_view&dl=https%3A%2F%2Fplay.google.com%"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.html",
+      "bytes": 1094842,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.draft2digital.com/faq/",
+      "fetched_at": "2026-10-26T17:25:18.488Z",
+      "status": 200,
+      "final_url": "https://draft2digital.com/faq/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"48b7680d837bfaaacafd5ecc6f8767c6-gzip\""
+      },
+      "file": "13.html",
+      "bytes": 54168,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.draft2digital.com/",
+      "fetched_at": "2026-10-26T17:25:19.615Z",
+      "status": 200,
+      "final_url": "https://draft2digital.com/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"1a91fdd991dd6df6e219fecbf06d4efd-gzip\""
+      },
+      "file": "14.html",
+      "bytes": 36132,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.draft2digital.com/terms-of-service/",
+      "fetched_at": "2026-10-26T17:25:20.262Z",
+      "status": 200,
+      "final_url": "https://draft2digital.com/terms-of-service/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"20bc8d3406832f412e6945f00ddd08c7-gzip\""
+      },
+      "file": "15.html",
+      "bytes": 80939,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.draft2digital.com/pricing/",
+      "fetched_at": "2026-10-26T17:25:20.928Z",
+      "status": 200,
+      "final_url": "https://draft2digital.com/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"1a91fdd991dd6df6e219fecbf06d4efd-gzip\""
+      },
+      "file": "16.html",
+      "bytes": 36132,
+      "truncated": false
+    }
+  ]
+}
