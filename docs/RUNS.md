@@ -1872,3 +1872,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 17:50 | burn-down | Exchange: google-play-books-tax-guide-shelf promoted; KINDLE.md and RESEARCH.md carry the third-shelf note
 - 2026-10-26 17:50 | burn-down | new-ventures emptied by the spike, needs research again
 - 2026-10-26 17:52 | burn-down | Stopping: pipeline starved and cooled; pre-research spent 17:31; foundry/hackathons research is the build slot's
+- 2026-10-26 18:26 | burn-down | foundry research: four items from the week’s own traces — cron delivery, Node-run imports, SC mails, first-run script
+- 2026-10-26 18:26 | burn-down | GitHub delivered 3 of 18 owner-notes and 3 of 9 notify-owner cron fires on 10-26; lines ran up to 6 h late
+- 2026-10-26 18:26 | burn-down | Queued schedule-delivery-dispatch (6): hourly triage dispatches a stale notify-owner; owner-notes cron goes
+- 2026-10-26 18:26 | burn-down | Queued node-entry-import-extensions (5): a root test walks Node-run entry points for extensionless relative imports
+- 2026-10-26 18:26 | burn-down | Queued search-console-error-mail-rule (4): five SC 404/5xx mails in 36 h logged as noise; sitemap HEADs via relay
+- 2026-10-26 18:26 | burn-down | Queued first-run-check-script (3): one command prints the first runs still owed; 17:20 and 17:31 both stamped landing

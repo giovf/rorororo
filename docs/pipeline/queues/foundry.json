@@ -2,8 +2,8 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-24",
-  "researched": "2026-10-24",
+  "updated": "2026-10-26",
+  "researched": "2026-10-26",
   "items": [
     {
       "id": "fetch-relay",
@@ -1116,6 +1116,46 @@
       "doing_since": "2026-10-24",
       "done_at": "2026-10-24",
       "doing_by": "burn-down"
+    },
+    {
+      "id": "schedule-delivery-dispatch",
+      "title": "The phone line runs when due: the hourly inbox-triage routine dispatches notify-owner.yml (GitHub MCP run_workflow) when its last run started more than 2 h 10 min ago, and the separate owner-notes hourly cron goes (its poll has ridden notify-owner since 2026-10-12)",
+      "why": "GitHub delivers this repo’s crons at a fraction of their rate and hours late (metrics.md measured it 10-10 and forbids moving cron minutes): on 2026-10-26 the 2-hourly notify-owner cron (`40 */2`, the watchdog and the only phone line since 10-19) ran at 00:39, 05:14 and 13:28 — 3 of 9 fires by 18:00 — and the hourly owner-notes cron (`20 * * * *`) at 01:14, 06:18 and 13:18, 3 of 18; 10-25 delivered 5 of 12 and 5 of 24. The register (docs/SCHEDULERS.md) assumed ≈ 72 delivered fires a week when the push trigger went; the week shows ≈ 30. Cost tonight: the 09:35 `| notify |` line about the Meta entry reached the owner’s phone at 13:28, the 07:18 metrics failure became a `ci-failed:` line at 13:29 (six hours; the 09:35 build had healed it from the report instead), and a dashboard idea typed after 06:18 waits until 13:18 for its note. A `workflow_dispatch` starts within the minute (metrics.md) and the inbox-triage cloud routine already fires every hour at :05 with the GitHub MCP, so one prompt step (`actions_list` notify-owner.yml, latest run `run_started_at`; older than 2 h 10 min → `actions_run_trigger` ref main) makes the 2-hourly cadence real at no new secret; owner-notes.yml loses its cron (poll rides notify-owner) and keeps `workflow_dispatch`. Minutes against the 11-02 actions-minutes reading: today’s delivery bills ≈ 6 runs/day for the two workflows, the dispatched cadence 12/day with owner-notes gone — ≈ +40 billed/week, recorded in the item’s commit so the 11-02 reading can name it. Build: a dated paragraph in docs/routines/inbox-triage.md, the cron removed from owner-notes.yml through docs/ci/, SCHEDULERS.md rows updated in the same commit.",
+      "effort_days": 0.3,
+      "proof": "notify-owner starts every 2 h ± 15 min for seven consecutive days (actions_list), so a notify line or an owner note waits at most 2 h 15 min",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-26"
+    },
+    {
+      "id": "node-entry-import-extensions",
+      "title": "Node-run TypeScript is gated for extensionless relative imports: a root test walks every `node … <file>.ts|.mjs` entry point in .github/workflows/*.yml and the relative imports it reaches, and fails on a specifier without .ts/.js/.mjs/.json",
+      "why": "2026-10-26 07:18: the gankdat Daily numbers job (gankdat-metrics run 267) died with ERR_MODULE_NOT_FOUND src/lib/x402-sales — rest-callers.ts and change-feed-callers.ts imported ./x402-sales without an extension. The venture’s tsconfig resolves Bundler-style (the Worker is bundled by wrangler: 335 extensionless relative imports under ventures/gankdat/src are fine there) and vitest resolves them too, so the gate was green while Node 24’s type stripping on the runner refused the import; the row was missing for a day, the Monday report carried an alert line and the 09:35 build healed it by hand (`.ts` on both imports, allowImportingTsExtensions). The shape waits for the next lib scripts/metrics.mjs pulls in: it imports six src/lib/*.ts modules statically and three more dynamically (wave-logs, apify-outcomes, scripts/mcp-probe.ts), none under a NodeNext tsconfig. The 18 root scripts/*.ts entry points are safe only because tsconfig.base is NodeNext, where tsc rejects an extensionless import. Build: scripts/node-entry-imports.test.ts — parse the workflows for `node [flags] <path>.(ts|mjs)` (the demo-video `scripts/demo-${{ inputs.entry }}.ts` line expands to scripts/demo-*.ts), follow static and dynamic relative imports (`from ‘./x’`, `import(‘./x’)`) with a regex through the reachable files, assert every relative specifier ends in .ts/.js/.mjs/.json; it runs in `npm test` at the root, so the pre-push hook sees it.",
+      "effort_days": 0.2,
+      "proof": "no ERR_MODULE_NOT_FOUND in any Node-run workflow for 30 days; adding an extensionless import to a reachable file turns the root test red naming the file and specifier",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-26"
+    },
+    {
+      "id": "search-console-error-mail-rule",
+      "title": "Inbox triage files a dated venture item when a Search Console mail reports a server error (5xx) or a 404 / other 4xx on a venture’s pages, instead of logging it as “not a listing-state change”",
+      "why": "Five Search Console mails in 36 h (10-25 21:31 and 22:12, 10-26 10:54, 10:55 and 11:58, INBOX.md) said new reasons prevent gankdat.com pages from being indexed — “Not found (404)”, “Blocked due to other 4xx issue”, then “Server error (5xx)” for sitemap pages — and triage logged each as `logged`, correctly by its rule (a listing-state change is what it watches for). Nobody read the pages: a 5xx on sitemap URLs of the earning product is a defect signal, Google drops pages that keep failing, and the search-console job’s URL-inspection verdict only covers the pages it names. Tonight’s burn-down HEADs all 69 sitemap URLs through the relay (gankdat-sitemap-status-2026-10-26) and records the reading in the run log. Build: a dated rule in docs/routines/inbox-triage.md — a Search Console mail naming a 5xx files `<venture>/sc-5xx-<date>` (score 6, 0.1 day: HEAD the venture’s sitemap URLs through the relay, fix or record) and one naming 404 / other 4xx files `<venture>/sc-4xx-<date>` (4), once per reason per week, with the mail’s wording in `why`; the venture is read from the mail’s property (gankdat.com → gankdat, apps.gankdat.com → the landing’s venture pages).",
+      "effort_days": 0.2,
+      "proof": "the next Search Console 5xx/4xx mail has a queue item within the hour of its triage; the item’s reading lands in the run log the same night",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-26"
+    },
+    {
+      "id": "first-run-check-script",
+      "title": "`npm run first-runs` prints the workflows whose first run after an installer commit is still unrecorded (or `nothing owed`), so a slot runs one command instead of re-deriving the CI WORKFLOWS rule — and two slots stop stamping the same run",
+      "why": "The CI WORKFLOWS rule (10-17, 10-20) asks every slot to list installer commits of the last 3 days, read each file’s triggers, compare run-log stamps with the installer’s commit time and the workflow’s latest run. Tonight the 17:11 build slot and the 17:31 burn-down both stamped `landing.yml first run: success (push run 73 at 09:38 …)` and both a demo-video.yml line (RUNS.md 17:20 and 17:31) — the second slot re-derived the rule with the first’s lines already in the file; 10-24 had the same pair of readings by two slots for gankdat-publish.yml. A plain-Node script next to pipeline-cold.ts (scripts/first-runs.ts: `git log --since=‘3 days ago’ --grep=‘^ci: install workflow’`, the names in each subject, the first `<name> first run:` run-log line stamped after that commit’s %ci, whether the file has workflow_dispatch) prints one line per workflow still owed — `landing.yml: installer 09:37, dispatchable, no line` — or `nothing owed`; both routine prompts call it before the GitHub reads, and a workflow with a line is never read again.",
+      "effort_days": 0.2,
+      "proof": "no duplicate `<name> first run:` line in RUNS.md for 14 days; the two prompts’ CI WORKFLOWS paragraph starts with the command",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-26"
     }
   ]
 }
