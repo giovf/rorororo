@@ -68,10 +68,20 @@ jobs:
           npx playwright install chromium
       - run: node scripts/fetch-relay.mjs
         timeout-minutes: 12
+      # Runs even when the fetch step hit its cap (foundry relay-round-survives-stalled-host,
+      # 2026-10-26): the script writes meta.json after every line, so a killed round is committed
+      # as a partial one (`partial: true`) and its request file is removed here — before, the
+      # 10-26 sitemap rounds left nothing twice and the request would have hung the next run too.
       - name: Commit responses
+        if: always()
         run: |
           git config user.name "foundry-relay[bot]"
           git config user.email "info@gankdat.com"
+          for f in docs/relay/requests/*.txt; do
+            [ -f "$f" ] || continue
+            n=$(basename "$f" .txt)
+            [ -f "docs/relay/responses/$n/meta.json" ] && git rm -q "$f" && echo "partial round: $n"
+          done
           git add -A docs/relay
           git diff --cached --quiet && { echo "no change"; exit 0; }
           git commit -m "relay: $(git diff --cached --name-only | grep -oE 'responses/[^/]+' | sort -u | sed 's#responses/##' | tr '\n' ' ')"
