@@ -1884,3 +1884,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 18:29 | burn-down | Built foundry schedule-delivery-dispatch (6): triage dispatches notify-owner when its last run is over 2 h 10 min old
 - 2026-10-26 18:29 | burn-down | docs/ci/owner-notes.yml drops the hourly cron (poll rides notify owner; 3 of 18 fires on 10-26); dispatch stays
 - 2026-10-26 18:29 | burn-down | SCHEDULERS rows for owner notes and notify owner carry the 10-26 change; the 11-02 minutes reading names the delta
+- 2026-10-26 18:36 | burn-down | Built foundry node-entry-import-extensions (5): a root test walks the workflows’ Node entry points for bare imports
+- 2026-10-26 18:36 | burn-down | scripts/node-entry-imports.ts + 6 tests; the live walk reaches every lib metrics.mjs pulls in and prints nothing
