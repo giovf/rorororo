@@ -1172,6 +1172,17 @@
       "status": "done",
       "added": "2026-10-26",
       "done_at": "2026-10-26"
+    },
+    {
+      "id": "ci-fetch-relay-failing",
+      "title": "The fetch relay workflow (fetch-relay.yml) failed 2 times this week: root-cause and fix it",
+      "why": "Filed by scripts/ci-failed-runs.ts (2026-10-26): fetch-relay.yml failed 2 times in 7 days — run 198 (2026-10-26 18:20 UTC, step \"Run node scripts/fetch-relay.mjs\", later run 199 failure) — https://github.com/giovf/rorororo/actions/runs/40376846120; run 199 (2026-10-26 18:43 UTC, step \"Run node scripts/fetch-relay.mjs\", later run 200 ok) — https://github.com/giovf/rorororo/actions/runs/40380293000. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/fetch-relay.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done.",
+      "effort_days": 0.2,
+      "proof": "seven days of fetch-relay.yml runs with no ci-failed line in docs/RUNS.md",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-26",
+      "updated": "2026-10-26"
     }
   ]
 }
