@@ -1,0 +1,62 @@
+<!DOCTYPE html><html><head data-public_web_addons_api_url="https://addons.heroku.com" data-public_web_backboard_source_name="partner-portal-ui" data-public_web_backboard_url="https://backboard.heroku.com" data-public_web_buildpack_api_url="https://buildpack-registry.heroku.com" data-public_web_github_connect_landing_url="https://dashboard.heroku.com/buildpack-registry/connect-github" data-public_web_heroku_oauth_url="https://id.heroku.com" data-public_web_kolkrabbi_url="https://kolkrabbi.heroku.com" data-public_web_login_url="https://auth.heroku.com" data-public_web_otel_exporter_otlp_endpoint="https://backboard.heroku.com/otel/v1/traces" data-public_web_platform_api_url="https://api.heroku.com" data-public_web_sentry_dsn="https://d25f148b20e4ca3cd77b6e94daf00ec7@o4508609692368896.ingest.us.sentry.io/4510364687990785" data-public_web_sentry_environment="production"><meta http-equiv="Content-Security-Policy" content="default-src 'self'; connect-src 'self' https://www.herokucdn.com https://addons.heroku.com https://addons-staging.herokuapp.com https://api.heroku.com https://backboard.heroku.com https://backboard-staging.herokuapp.com https://buildpack-registry.heroku.com https://buildpack-registry-staging.herokuapp.com https://kolkrabbi.heroku.com https://kolkrabbi-staging.herokai.com https://id.heroku.com https://auth.heroku.com https://auth-staging.herokai.com https://auth-staging-cloud.herokai.com https://*.ingest.us.sentry.io https://*.ingest.sentry.io https://*.herokudev.com; script-src 'self' https://www.herokucdn.com 'sha256-iTXlDOuB0DC/QazcojKCUjRaxlVr5Ti8S+8lqi4GMcA=' 'sha256-L+VcoJBJ96kDn28ENXT72IooUtTGpnaD122BR9glCTA=' 'sha256-9rR4LDfEQTsUSKsBw/39yoAfS97UXztaAqMA2jT1ZYY=' 'sha256-Ka2Bj962KtQU78/03MNuKejsZ1wIxQXQZjxfE/3HT0c='; style-src 'self' https://www.herokucdn.com 'unsafe-inline'; img-src 'self' data: https://www.herokucdn.com https://avatars.githubusercontent.com https://gravatar.com https://i0.wp.com https://s3.amazonaws.com/assets.heroku.com/ https://s3.amazonaws.com/buildpack-registry/; font-src 'self' data: https://www.herokucdn.com https://fonts.gstatic.com; media-src 'self'; manifest-src 'self'; worker-src 'self'; object-src 'none'; form-action 'self' https://id.heroku.com https://auth.heroku.com https://auth-staging.herokai.com https://auth-staging-cloud.herokai.com; base-uri 'self'">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Partner Portal | Heroku</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    
+<meta name="partner-portal-ui/config/environment" content="%7B%22modulePrefix%22%3A%22partner-portal-ui%22%2C%22changeFlags%22%3A%7B%22specs%22%3A%7B%22CHANGE_FLAG_GENERATION_UI%22%3A%7B%22description%22%3A%22Show%20copy%2FUX%2Ffunctionality%20changes%20to%20Cedar%20spaces%2Fapps%2Fpipelines%20to%20account%20for%20fir%22%2C%22phase%22%3A%22release%22%7D%7D%2C%22enableFlags%22%3A%5B%5D%2C%22enableForChannel%22%3A%22canary%22%7D%2C%22environment%22%3A%22production%22%2C%22rootURL%22%3A%22%2F%22%2C%22locationType%22%3A%22auto%22%2C%22EmberENV%22%3A%7B%22FEATURES%22%3A%7B%7D%2C%22EXTEND_PROTOTYPES%22%3A%7B%22Date%22%3Afalse%7D%7D%2C%22APP%22%3A%7B%7D%2C%22heroku-identity%22%3A%7B%22logoutUrl%22%3A%22https%3A%2F%2Fid.heroku.com%2Flogout%22%7D%2C%22ember-simple-auth%22%3A%7B%22localStorageKey%22%3A%22ember_simple_auth-session%22%2C%22routeAfterAuthentication%22%3A%22protected%22%7D%2C%22flashMessageDefaults%22%3A%7B%22destroyOnClick%22%3Afalse%2C%22timeout%22%3A4000%7D%2C%22sentryDsn%22%3A%22https%3A%2F%2Fd25f148b20e4ca3cd77b6e94daf00ec7%40o4508609692368896.ingest.us.sentry.io%2F4510364687990785%22%2C%22sentryEnvironment%22%3A%22staging%22%2C%22addonsApiUrl%22%3A%22https%3A%2F%2Faddons.heroku.com%22%2C%22backboardUrl%22%3A%22https%3A%2F%2Fbackboard.heroku.com%22%2C%22backboardSourceName%22%3A%22partner-portal-ui-staging%22%2C%22buildpackApiUrl%22%3A%22https%3A%2F%2Fbuildpack-registry.heroku.com%22%2C%22githubConnectLandingUrl%22%3A%22https%3A%2F%2Fdashboard.heroku.com%2Fbuildpack-registry%2Fconnect-github%22%2C%22herokuOauthUrl%22%3A%22https%3A%2F%2Fid.heroku.com%22%2C%22kolkrabbiUrl%22%3A%22https%3A%2F%2Fkolkrabbi.heroku.com%22%2C%22loginUrl%22%3A%22https%3A%2F%2Fauth-staging.herokai.com%22%2C%22platformApiUrl%22%3A%22https%3A%2F%2Fapi.heroku.com%22%2C%22addonProgressionFormUrl%22%3A%22https%3A%2F%2Fgoo.gl%2Fforms%2FrGFavsLLOJGAe7d42%22%2C%22planAvailabilityChangeFormUrl%22%3A%22https%3A%2F%2Fgoo.gl%2Fforms%2FvSNYJYaEJeOuacD73%22%2C%22componentSaveDebounceMS%22%3A1000%2C%22moment%22%3A%7B%22outputFormat%22%3A%22MM%2FDD%2FYY%2C%20h%3Amm%3Ass%20a%20Z%22%7D%2C%22otelExporterOtlpEndpoint%22%3A%22https%3A%2F%2Fbackboard.staging.herokudev.com%2Fotel%2Fv1%2Ftraces%22%2C%22ember-malibu-icon%22%3A%7B%22malibuVersion%22%3A%2233%22%7D%2C%22ember-a11y-testing%22%3A%7B%22componentOptions%22%3A%7B%22axeOptions%22%3A%7B%22rules%22%3A%7B%22region%22%3A%7B%22enabled%22%3Atrue%7D%7D%2C%22checks%22%3A%7B%22color-contrast%22%3A%7B%22options%22%3A%7B%22noScroll%22%3Atrue%7D%7D%7D%7D%7D%7D%2C%22ember-cli-mirage%22%3A%7B%22usingProxy%22%3Afalse%2C%22useDefaultPassthroughs%22%3Atrue%7D%2C%22contentSecurityPolicy%22%3A%7B%22style-src%22%3A%22'self'%20'unsafe-inline'%20'unsave-eval'%22%7D%2C%22exportApplicationGlobal%22%3Afalse%2C%22ember-modal-dialog%22%3A%7B%7D%7D">
+<script type="text/javascript">if (window.performance && window.performance.mark) {
+  window.performance.mark('@sentry/ember:initial-load-start');
+}
+</script>
+<meta name="buildpack-registry/config/environment" content="%7B%22modulePrefix%22%3A%22buildpack-registry%22%2C%22environment%22%3A%22production%22%2C%22debounceInputMS%22%3A1000%2C%22ember-a11y-testing%22%3A%7B%22componentOptions%22%3A%7B%22axeOptions%22%3A%7B%22rules%22%3A%7B%22region%22%3A%7B%22enabled%22%3Atrue%7D%7D%2C%22checks%22%3A%7B%22color-contrast%22%3A%7B%22options%22%3A%7B%22noScroll%22%3Atrue%7D%7D%7D%7D%7D%7D%7D"> <script>window.ENV = JSON.parse(decodeURIComponent(document.querySelector('[name="partner-portal-ui/config/environment"]').content));</script>
+
+    <link rel="stylesheet" href="https://www.herokucdn.com/purple3/4.9.0/purple3.min.css">
+    <link integrity="" rel="stylesheet" href="/assets/vendor-3d306fbfcc9c0566006dac570317bf8c.css">
+    <link integrity="" rel="stylesheet" href="/assets/partner-portal-ui-9ff202529703888140653bbef4b8f7db.css">
+    <link href="/images/favicon.ico" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <script src="https://www.herokucdn.com/glostick/latest/glostick-heroku-partner-portal.min.js"></script>
+
+    <meta name="partner-portal-ui/config/asset-manifest" content="%7B%22bundles%22%3A%7B%22buildpack-registry%22%3A%7B%22assets%22%3A%5B%7B%22uri%22%3A%22/engines-dist/buildpack-registry/config/environment-d26b82df091969fdb7ad347064843fec.js%22%2C%22type%22%3A%22js%22%7D%5D%7D%7D%7D">
+  </head>
+  <body>
+    <div id="hk-slide-panels"></div>
+
+    <script src="/assets/deprecation-workflow.js"></script>
+    <script src="/assets/vendor-f7a5ba945311ab5dc1809e67889f42e1.js"></script>
+<script src="/assets/chunk.702.eca37cf1ddd205cf0857.js"></script>
+<script src="/assets/chunk.143.b1d01b830e27a199d6ca.js"></script>
+    <script src="/assets/partner-portal-ui-d9f37c816c18f37637104136ded1f432.js"></script>
+
+    
+        <script>
+          (function() {
+            var req = new XMLHttpRequest();
+
+            req.addEventListener('load', function(event) {
+              var src = event.target.responseText;
+              var div = document.createElement('div');
+
+              div.innerHTML = src;
+
+              var svg = div.querySelector('svg');
+
+              document.body.appendChild(svg);
+            });
+
+            req.open('GET', 'https://www.herokucdn.com/malibu/33/sprite.svg');
+
+            req.send();
+          })();
+        </script>
+      
+<script type="text/javascript">if (window.performance && window.performance.mark) {
+  window.performance.mark('@sentry/ember:initial-load-end');
+}
+</script>
+<div id="ember-basic-dropdown-wormhole"></div>
+  
+
+</body></html>

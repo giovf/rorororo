@@ -1,0 +1,123 @@
+{
+  "request": "heroku-spike-2026-10-26",
+  "fetched_at": "2026-10-26T00:39:43.427Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://addons-next.heroku.com/provider/home",
+      "fetched_at": "2026-10-26T00:39:39.899Z",
+      "status": 200,
+      "final_url": "https://addons-next.heroku.com/provider/home",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Sun, 25 Oct 2026 05:43:35 GMT",
+        "etag": "\"dmdohsijjdsr68z-gzip\""
+      },
+      "file": "1.html",
+      "bytes": 8099,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://devcenter.heroku.com/categories/add-on-guidelines-requirements",
+      "fetched_at": "2026-10-26T00:39:40.182Z",
+      "status": 200,
+      "final_url": "https://devcenter.heroku.com/categories/add-on-guidelines-requirements",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"569a99af4d57b2ebbe83e5b04abc13e9\""
+      },
+      "file": "2.html",
+      "bytes": 195597,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://devcenter.heroku.com/articles/support-channels",
+      "fetched_at": "2026-10-26T00:39:40.799Z",
+      "status": 200,
+      "final_url": "https://devcenter.heroku.com/articles/support-channels",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"e2e63d3446ea3a04f68e8f7a224122ae\""
+      },
+      "file": "3.html",
+      "bytes": 197754,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://devcenter.heroku.com/articles/usage-and-billing",
+      "fetched_at": "2026-10-26T00:39:41.338Z",
+      "status": 200,
+      "final_url": "https://devcenter.heroku.com/articles/usage-and-billing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"e3b4134c627007a2ab8901ce4b012de9\""
+      },
+      "file": "4.html",
+      "bytes": 208152,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://elements.heroku.com/addons/activeprime-cleandata",
+      "fetched_at": "2026-10-26T00:39:41.347Z",
+      "status": 200,
+      "final_url": "https://elements.heroku.com/addons/activeprime-cleandata",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "42316",
+        "etag": "W/\"5891935c36f45762544740e17f0faad6\""
+      },
+      "file": "5.html",
+      "bytes": 42316,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://elements.heroku.com/addons/breezypdf",
+      "fetched_at": "2026-10-26T00:39:42.102Z",
+      "status": 200,
+      "final_url": "https://elements.heroku.com/addons/breezypdf",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "40140",
+        "etag": "W/\"9fa5edc00fefc5dd9cac76094e8956b1\""
+      },
+      "file": "6.html",
+      "bytes": 40140,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://elements.heroku.com/addons/attachment-scanner",
+      "fetched_at": "2026-10-26T00:39:42.697Z",
+      "status": 200,
+      "final_url": "https://elements.heroku.com/addons/attachment-scanner",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "46725",
+        "etag": "W/\"c1322f458894a93d2130f37e9e765fcd\""
+      },
+      "file": "7.html",
+      "bytes": 46725,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://elements.heroku.com/addons/algoliasearch",
+      "fetched_at": "2026-10-26T00:39:43.307Z",
+      "status": 200,
+      "final_url": "https://elements.heroku.com/addons/algoliasearch",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "47202",
+        "etag": "W/\"a2d6c958726e8eccb47075ef673cb145\""
+      },
+      "file": "8.html",
+      "bytes": 47202,
+      "truncated": false
+    }
+  ]
+}
