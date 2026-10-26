@@ -83,8 +83,9 @@
       "effort_days": 1,
       "proof": "ventures/tax-workbook/kindle/ builds the EPUB and cover with npm run kindle, RESEARCH.md §5 carries the guide's outline and the KDP disclosure, action 029 gains the KDP step, and the listing is live with its first sale within 30 days",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-10-26"
     }
   ]
 }
