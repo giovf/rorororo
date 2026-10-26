@@ -1,0 +1,171 @@
+{
+  "request": "billed-shelves-b-2026-10-26",
+  "fetched_at": "2026-10-26T00:15:39.281Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://devcenter.heroku.com/articles/becoming-an-add-on-partner",
+      "fetched_at": "2026-10-26T00:15:32.278Z",
+      "status": 200,
+      "final_url": "https://devcenter.heroku.com/articles/becoming-an-add-on-partner",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"6379136db277d0a071a7a0b9f55c70f4\""
+      },
+      "file": "1.html",
+      "bytes": 200597,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://devcenter.heroku.com/articles/submitting-an-add-on",
+      "fetched_at": "2026-10-26T00:15:33.113Z",
+      "status": 200,
+      "final_url": "https://devcenter.heroku.com/articles/bringing-an-add-on-to-market",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"87269f164b9282afb8fd8f32ac8a52c2\""
+      },
+      "file": "2.html",
+      "bytes": 210338,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://addons.heroku.com/provider/resources/HerokuElementsLicensing_Heroku.pdf",
+      "fetched_at": "2026-10-26T00:15:33.214Z",
+      "status": 200,
+      "final_url": "https://addons.heroku.com/provider/resources/HerokuElementsLicensing_Heroku.pdf",
+      "headers": {
+        "content-type": "application/pdf",
+        "content-length": "353079",
+        "last-modified": "Fri, 23 Oct 2026 19:24:21 GMT"
+      },
+      "file": "3.bin",
+      "bytes": 594227,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.heroku.com/elements/partner/",
+      "fetched_at": "2026-10-26T00:15:33.476Z",
+      "status": 200,
+      "final_url": "https://www.heroku.com/elements/partner/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 352391,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://vercel.com/marketplace/program",
+      "fetched_at": "2026-10-26T00:15:34.889Z",
+      "status": 200,
+      "final_url": "https://vercel.com/marketplace/program",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline"
+      },
+      "file": "5.html",
+      "bytes": 498238,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://vercel.com/docs/integrations/create-integration/marketplace-api",
+      "fetched_at": "2026-10-26T00:15:35.838Z",
+      "status": 200,
+      "final_url": "https://vercel.com/docs/integrations/create-integration/marketplace-api",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 1425372,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://vercel.com/docs/integrations/marketplace-product",
+      "fetched_at": "2026-10-26T00:15:36.400Z",
+      "status": 200,
+      "final_url": "https://vercel.com/docs/integrations/create-integration/marketplace-product",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 906772,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.freshworks.com/docs/getting-started/paid-apps-program/",
+      "fetched_at": "2026-10-26T00:15:36.624Z",
+      "status": 200,
+      "final_url": "https://developers.freshworks.com/docs/getting-started/paid-apps-program/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 08:35:28 GMT",
+        "etag": "W/\"282b0e13270e80ef1abbd62ae6c67c91\""
+      },
+      "file": "8.html",
+      "bytes": 105078,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.freshworks.com/docs/getting-started/paid-apps-benefits/",
+      "fetched_at": "2026-10-26T00:15:37.648Z",
+      "status": 200,
+      "final_url": "https://developers.freshworks.com/docs/getting-started/paid-apps-benefits/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Wed, 14 Oct 2026 08:35:28 GMT",
+        "etag": "W/\"61be1c05026152b01e8206b38a0d2dee\""
+      },
+      "file": "9.html",
+      "bytes": 78201,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G200644210",
+      "fetched_at": "2026-10-26T00:15:37.689Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G200644210",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "10.html",
+      "bytes": 185657,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G201293780",
+      "fetched_at": "2026-10-26T00:15:38.451Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G201293780",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "11.html",
+      "bytes": 190568,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G200641280",
+      "fetched_at": "2026-10-26T00:15:39.089Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G200641280",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "12.html",
+      "bytes": 191133,
+      "truncated": false
+    }
+  ]
+}
