@@ -587,6 +587,14 @@
       "why": "Spike 2026-10-26 (new-ventures spike-freshworks-marketplace-paid-apps, docs/exchange/spikes/freshworks-marketplace-paid-apps.md, burn-down): the shelf bills itself (Developer Terms 2.15–2.20: Freshworks collects as agent, pays 80 % of MRR monthly in USD, remits sales taxes, individuals allowed, no AI-code rule), but the readable demand is thin — paid apps on the Freshdesk landing hold 3–100+ installs (median ≈ 27) against 3k–5.1k for free ones, and the Data Enrichment category was not reachable. Score ≈ 1, below the Zoho widget (2.4) already queued for the same registers.",
       "trigger": "the Zoho CRM verification widget passes 10 installs; or a gankdat account signs up from a helpdesk/CRM user agent; or a read of the Data Enrichment category (marketplace search API, subscription_types=paid) shows ≥ 3 paid company-lookup apps with ≥ 50 installs at ≥ US$3/agent/month",
       "added": "2026-10-26"
+    },
+    {
+      "id": "heroku-elements-add-on",
+      "title": "Heroku Elements Marketplace add-on for the gankdat API — the key tiers as capped hourly plans billed on the customer's Heroku invoice, 70 % of net subscription revenue to us",
+      "status": "parked",
+      "why": "Spike 2026-10-26 (new-ventures spike-heroku-elements-add-on, docs/exchange/spikes/heroku-elements-add-on.md, burn-down): the License and Distribution Agreement pays 70 % of net subscription revenue within 30 days and the integration is ≈ 2 Worker days, but sole-trader eligibility is behind the Partner Portal login and the agreement speaks only of a company, paid plans need GA after 15 unique Heroku app owners test a free plan, and the 156-add-on catalogue shows no install or review counts and no register-type API (its API add-ons: IP geolocation, email validation, PDF conversion, anti-virus at $69–499/mo). Score ≈ 1.",
+      "trigger": "a gankdat account or paid call from a Heroku-hosted app (*.herokuapp.com origin or a Heroku user agent in `rest 7d by UA:`); or the Add-on Support and Security Requirements articles read with no staffed-support obligation and the owner's one Partner Portal sign-in confirming an individual can register",
+      "added": "2026-10-26"
     }
   ]
 }

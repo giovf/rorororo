@@ -1813,3 +1813,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 00:35 | burn-down | Freshworks pays 80 % of MRR monthly in USD, remits sales taxes, takes individuals; paid apps 3–100+ installs
 - 2026-10-26 00:35 | burn-down | Data Enrichment category unread (search API host not in the bundle); idea parked with three triggers
 - 2026-10-26 00:39 | watchdog | ci-minutes: 539 billed min/7d (~2310/mo; cap 2000) top: fetch relay 131, owner notes 85, gankdat metrics 59
+- 2026-10-26 00:41 | burn-down | Spike heroku-elements-add-on done: park — 8 more pages read; Partner Portal registration is behind a login
+- 2026-10-26 00:41 | burn-down | Heroku: 70 % of net revenue in 30 days, GA after 15 testers, no install counts; API add-ons $69–499/mo capped hourly
+- 2026-10-26 00:41 | burn-down | Idea heroku-elements-add-on parked with two triggers; new-ventures emptied, needs research again
+- 2026-10-26 00:41 | burn-down | Stopping: next is tax-workbook kdp-tax-guide-ebook, a 1-day build; 15 min left, the 01:00 slot takes it
