@@ -99,6 +99,17 @@
       "status": "blocked",
       "blocked_on": "owner: action 029 step 5 (raised 2026-10-26 by kdp-tax-guide-ebook, ALERTS 2026-10-26) — the KDP account, tax interview and bank, and the EPUB + cover upload",
       "added": "2026-10-26"
+    },
+    {
+      "id": "google-play-listing",
+      "title": "List the Kindle guide EPUB on Google Play Books after the KDP Select term: `src/kindle/google-play.ts` exporting the Play listing (title, description with the AI-authorship line, categories, £4.99 GBP for territory GB, Google Books preview setting) with form-limit tests beside kdp.ts, a 'Paste into Partner Centre' section in KINDLE.md, and action 029 step 6 for the owner (open the Partner Centre with the Foundry Google account, payments profile, upload the same EPUB and cover, ~10 min, £0); then a `google-play-listing-live` record item on the owner's URL",
+      "why": "Spike google-play-books-tax-guide-shelf 2026-10-26 (docs/exchange/spikes/google-play-books-tax-guide-shelf.md). Google's own pages: the United Kingdom is ticked for seller sign-ups and GBP payments; 70 % of the list price with no fees and no price band; the content policies carry no rule on AI-written text. Seven priced UK tax guides for 2026 sell on the GB shelf at £2.29–19.99 (two at five stars). Zero build beyond the metadata export — the EPUB, cover and copy exist. Blocked on KDP Select: kdp.ts enrols the guide (the Countdown Deal needs it) and Select forbids selling the ebook on any other shelf during each 90-day term; on Amazon's ~88 % UK share the launch price on the big shelf outweighs an early listing on the small one. `kdp-listing-live` sets this item's not_before to the live date + 90 days (and the owner is told not to renew Select unless Kindle Unlimited reads are paying); the owner declining Select unblocks it at once. Evidence 1.5 × reach 2 ÷ 0.3 days + 10 owner minutes ≈ 6.",
+      "effort_days": 0.3,
+      "proof": "google-play.ts exports the listing and its tests pass; KINDLE.md carries the Partner Centre paste section; action 029 step 6 written; the live URL recorded by the follow-up item",
+      "score": 6,
+      "status": "blocked",
+      "blocked_on": "KDP Select 90-day exclusivity: the Kindle listing enrols for its Countdown Deal, so the ebook may not be sold elsewhere until the first term ends — kdp-listing-live sets not_before = live + 90 days; the owner declining Select unblocks it at once",
+      "added": "2026-10-26"
     }
   ],
   "research_after": "2026-11-03"

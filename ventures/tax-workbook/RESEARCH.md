@@ -115,6 +115,10 @@ copyright page and colophon say the same. Listing pack (title, subtitle, descrip
 £4.99 at 70 % ≈ £2.70 net, a 7-day Countdown Deal at £2.99, KDP Select) in `KINDLE.md`, mirrored by `src/kindle/kdp.ts` with tests
 on the form limits. New dependencies: `jszip` (already in the tree through ExcelJS) and `sharp` (JPEG encoding). The owner's KDP
 account, tax interview (W-8BEN) and bank, and the upload, are action 029 step 5 (~15 min, £0); `kdp-listing-live` records the ASIN.
+**Third shelf (spike 2026-10-26, `docs/exchange/spikes/google-play-books-tax-guide-shelf.md`)**: Google Play Books takes UK sellers in GBP,
+pays 70 % of list with no fees and has no AI rule (seven priced UK tax guides on the GB shelf, £2.29–19.99); `google-play-listing` is
+queued but blocked on the KDP Select 90-day exclusivity the Countdown Deal needs — `kdp-listing-live` dates it live + 90 d. Kobo Writing
+Life and Draft2Digital were declined: both reject AI-written nonfiction, and D2D charges US$20 + US$12/yr plus ~10 % of retail.
 
 ## 6. Numbers that decide
 
@@ -166,4 +170,8 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   on the same Etsy shop (the £1,000 property allowance, finance-cost credit, MTD from the same £50k/£30k/£20k thresholds on
   property income), ~0.5 day, listed as a third item in the shop once the first two sell; (d) a Scottish-bands variant of the workbook
   (one Setup table swap), only on a buyer message asking for it. Nothing here needs a relay read; nothing was fetched.
-
+- **2026-10-26 17:50 (burn-down, exchange spike):** Google Play Books read through the relay (Supported-countries table, Revenue split FAQ,
+  content policies, Partner Centre overview, two rendered GB searches) — UK ticked for seller sign-ups and GBP payments, 70 % of list, no
+  AI rule, seven priced 2026 UK tax guides at £2.29–19.99. Promoted as `google-play-listing` (6), blocked on the KDP Select term the Kindle
+  listing takes for its Countdown Deal; `kdp-listing-live` dates it live + 90 d. Kobo Writing Life (kobo.com behind a Cloudflare wall;
+  rejects AI-written books) and Draft2Digital (no non-credentialled AI nonfiction; US$20 + US$12/yr, ~10 % of retail) declined.

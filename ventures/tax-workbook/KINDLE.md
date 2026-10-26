@@ -112,4 +112,5 @@ What it is not: tax advice, or a substitute for HMRC's own calculation. It uses 
 | Date | Event |
 | --- | --- |
 | 2026-10-26 | Guide v1 built: EPUB (17 sections, 9,102 words) and cover; listing pack written; KDP step added to action 029 |
+| 2026-10-26 | Google Play Books read as the third shelf (70 % to UK sellers, no AI rule); listing queued for after the first KDP Select term (`google-play-listing`) |
 | — | Live on amazon.co.uk: ASIN, URL and date to be filled by `kdp-listing-live`. |

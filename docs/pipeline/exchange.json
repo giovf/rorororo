@@ -599,10 +599,11 @@
     {
       "id": "google-play-books-tax-guide-shelf",
       "title": "Google Play Books (Partner Centre) as the third shelf for the UK sole-trader tax guide EPUB — Google bills in GBP and pays 70 % of the list price to UK sellers; the file, cover and metadata already exist",
-      "status": "parked",
-      "why": "Exchange pre-research 2026-10-26 (burn-down). Google's Supported-countries table ticks the United Kingdom for seller sign-ups and payments in GBP; the Revenue split FAQ pays 70 % of the list price with no fees and no price band; the content policies carry no rule on AI-written text. Seven priced rivals on the GB shelf at £2.29–19.99 (two at five stars). Spike `new-ventures/spike-google-play-books-tax-guide-shelf` (6) reads the payments-profile requirements, the VAT and pricing rule and the rivals' rating counts and makes the promote / park call; the promote shape is a metadata export beside kdp.ts plus a 10-minute owner step on action 029.",
-      "trigger": "the spike (promote / park call); on promote, tax-workbook gains a google-play listing item blocked on action 029 step 6",
-      "added": "2026-10-26"
+      "status": "promoted",
+      "why": "Exchange pre-research 2026-10-26 (burn-down). Google's Supported-countries table ticks the United Kingdom for seller sign-ups and payments in GBP; the Revenue split FAQ pays 70 % of the list price with no fees and no price band; the content policies carry no rule on AI-written text. Seven priced rivals on the GB shelf at £2.29–19.99 (two at five stars). Spike `new-ventures/spike-google-play-books-tax-guide-shelf` (6) reads the payments-profile requirements, the VAT and pricing rule and the rivals' rating counts and makes the promote / park call; the promote shape is a metadata export beside kdp.ts plus a 10-minute owner step on action 029. — Spike 2026-10-26: promoted, dated — tax-workbook `google-play-listing` (6), blocked on the KDP Select 90-day exclusivity that the Kindle listing takes for its Countdown Deal; the Play listing follows the first Select term (or the owner declining Select).",
+      "trigger": "promoted: tax-workbook/google-play-listing (dated by kdp-listing-live at live + 90 days)",
+      "added": "2026-10-26",
+      "venture": "tax-workbook"
     },
     {
       "id": "kobo-writing-life-shelf",

@@ -1865,3 +1865,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 17:31 | burn-down | Google's pages (relay, 7): UK ticked for seller sign-ups and GBP payments; 70 % of list price, no fees, no AI rule
 - 2026-10-26 17:31 | burn-down | GB Play Books shelf rendered: 7 priced UK tax guides £2.29–19.99 (MTD guide £7.99 at 5 stars); no rating counts
 - 2026-10-26 17:31 | burn-down | Declined: Kobo Writing Life (403 bot wall; rejects AI-written books), Draft2Digital (no AI nonfiction; fees)
+- 2026-10-26 17:50 | burn-down | Spike google-play-books-tax-guide-shelf done: promote, dated — 7 Google pages + 2 rendered GB searches read
+- 2026-10-26 17:50 | burn-down | Google Play Books: UK ticked for sign-ups and GBP payouts, 70 % of list, no fees, no AI rule; rivals £2.29–19.99
+- 2026-10-26 17:50 | burn-down | KDP Select (Countdown Deal) bars other ebook shelves for 90 days: Play listing dated after the first term
+- 2026-10-26 17:50 | burn-down | tax-workbook google-play-listing queued (6), blocked on the Select term; kdp-listing-live dates it live + 90 d
+- 2026-10-26 17:50 | burn-down | Exchange: google-play-books-tax-guide-shelf promoted; KINDLE.md and RESEARCH.md carry the third-shelf note
+- 2026-10-26 17:50 | burn-down | new-ventures emptied by the spike, needs research again
+- 2026-10-26 17:52 | burn-down | Stopping: pipeline starved and cooled; pre-research spent 17:31; foundry/hackathons research is the build slot's
