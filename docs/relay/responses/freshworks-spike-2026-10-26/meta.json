@@ -1,0 +1,149 @@
+{
+  "request": "freshworks-spike-2026-10-26",
+  "fetched_at": "2026-10-26T00:33:33.754Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.freshworks.com/apps/_nuxt/searchApiUtils.e27feb38.js",
+      "fetched_at": "2026-10-26T00:33:12.900Z",
+      "status": 200,
+      "final_url": "https://www.freshworks.com/apps/_nuxt/searchApiUtils.e27feb38.js",
+      "headers": {
+        "content-type": "application/javascript",
+        "content-length": "852",
+        "last-modified": "2026-10-06T04:35:17.013Z",
+        "etag": "\"354-gI/1ALnm6YymsP6KRswglpG2YcI\""
+      },
+      "file": "1.bin",
+      "bytes": 1868,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.freshworks.com/terms-of-use/",
+      "fetched_at": "2026-10-26T00:33:13.115Z",
+      "status": 200,
+      "final_url": "https://developers.freshworks.com/terms-of-use/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Tue, 21 Jul 2026 12:46:47 GMT",
+        "etag": "W/\"c9b6882fd57fa62e2231a5ffdf61826c\""
+      },
+      "file": "2.html",
+      "bytes": 183227,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.freshworks.com/marketplace-user-terms/",
+      "fetched_at": "2026-10-26T00:33:13.232Z",
+      "status": 200,
+      "final_url": "https://www.freshworks.com/marketplace-user-terms/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 309189,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.freshworks.com/grow",
+      "fetched_at": "2026-10-26T00:33:13.288Z",
+      "status": 200,
+      "final_url": "https://developers.freshworks.com/grow/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Tue, 21 Jul 2026 12:46:47 GMT",
+        "etag": "W/\"ea986289f081ce7a562234773554bc4c\""
+      },
+      "file": "4.html",
+      "bytes": 139034,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.freshworks.com/apps/freshdesk/collection/AI%20powered%20apps/",
+      "fetched_at": "2026-10-26T00:33:13.443Z",
+      "status": 200,
+      "final_url": "https://www.freshworks.com/apps/freshdesk/collection/AI%20powered%20apps/",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 347882,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.freshworks.com/apps/freshdesk/",
+      "render": true,
+      "fetched_at": "2026-10-26T00:33:14.012Z",
+      "status": 200,
+      "final_url": "https://www.freshworks.com/apps/freshdesk/",
+      "title": "Freshdesk Marketplace: Apps & Integrations",
+      "rendered": {
+        "network_idle": false,
+        "requests": 226,
+        "failed": [
+          "GET https://js.qualified.com/qualified.js?token=V3bzvnGRbEeRoKuU → csp",
+          "POST https://www.google.com/ccm/collect?rcb=8&frm=0&apvc=1&auid=162669918.1792974799&dt=Freshdesk%20Marketplace%3A%20Apps%20%26%20Integrations&tid=DC-14487658&en=page_view&dl=https%3A%2F%2Fwww.freshwo",
+          "POST https://alb.reddit.com/rp?id=t2_bworvc8bx&event=PageVisit → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=t2_bworvc8bx&event=ViewContent → net::ERR_ABORTED",
+          "GET blob:https://www.freshworks.com/2f28914c-9957-4027-8355-26607a43760c → csp",
+          "POST https://www.google.com/rmkt/collect/996274243/?random=1792974799636&cv=11&fst=1792974799636&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6al1v885223205za200zb76997353zd76997353xecxf1&gcd=",
+          "POST https://www.google.com/rmkt/collect/996274243/?random=1792974799607&cv=11&fst=1792974799607&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6al1v885223205za208zb76997353zd76997353xecxf1&gc",
+          "POST https://www.google.com/ccm/collect?rcb=18&frm=0&apvc=0&auid=162669918.1792974799&dt=Freshdesk%20Marketplace%3A%20Apps%20%26%20Integrations&tid=AW-996274243&en=factors_userid_update&dl=https%3A%2F",
+          "POST https://www.google.com/ccm/collect?rcb=18&frm=0&apvc=0&auid=162669918.1792974799&dt=Freshdesk%20Marketplace%3A%20Apps%20%26%20Integrations&tid=AW-996274243&en=page_view&dl=https%3A%2F%2Fwww.fresh",
+          "POST https://www.google.com/rmkt/collect/996274243/?random=1792974799645&cv=11&fst=1792974799645&fmt=8&bg=ffffff&guid=ON&async=1&en=factors_userid_update&gtm=45be6al1v885223205za200zb76997353zd7699735"
+        ],
+        "console_errors": [
+          "Loading the script 'https://js.qualified.com/qualified.js?token=V3bzvnGRbEeRoKuU' violates the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.",
+          "Error loading Qualified: Event",
+          "Loading the script 'blob:https://www.freshworks.com/2f28914c-9957-4027-8355-26607a43760c' violates the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' 'unsafe-eval' htt"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 1019303,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.freshworks.com/apps/freshsales/",
+      "render": true,
+      "fetched_at": "2026-10-26T00:33:30.645Z",
+      "status": 200,
+      "final_url": "https://www.freshworks.com/apps/freshsales/",
+      "title": "Freshworks Freshsales Integration | Freshworks Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 191,
+        "failed": [
+          "GET https://js.qualified.com/qualified.js?token=V3bzvnGRbEeRoKuU → csp",
+          "POST https://www.google.com/ccm/collect?rcb=0&frm=0&apvc=1&auid=952701721.1792974813&dt=Freshworks%20Freshsales%20Integration%20%7C%20Freshworks%20Marketplace&tid=DC-14487658&en=page_view&dl=https%3A%",
+          "POST https://alb.reddit.com/rp?id=t2_bworvc8bx&event=PageVisit → net::ERR_ABORTED",
+          "GET blob:https://www.freshworks.com/14254bdf-1f04-4762-990f-8ac0a7a6ec8a → csp",
+          "POST https://www.google.com/rmkt/collect/996274243/?random=1792974813379&cv=11&fst=1792974813379&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6al1v885223205za208zb76997353zd76997353xecxf1&gc",
+          "POST https://www.google.com/rmkt/collect/996274243/?random=1792974813416&cv=11&fst=1792974813416&fmt=8&bg=ffffff&guid=ON&async=1&en=factors_userid_update&gtm=45be6al1v885223205za200zb76997353zd7699735",
+          "POST https://www.google.com/rmkt/collect/996274243/?random=1792974813405&cv=11&fst=1792974813405&fmt=8&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6al1v885223205za200zb76997353zd76997353xecxf1&gcd=",
+          "POST https://www.google.com/ccm/collect?rcb=7&frm=0&apvc=0&auid=952701721.1792974813&dt=Freshworks%20Freshsales%20Integration%20%7C%20Freshworks%20Marketplace&tid=AW-996274243&en=factors_userid_update",
+          "POST https://www.google.com/ccm/collect?rcb=7&frm=0&apvc=0&auid=952701721.1792974813&dt=Freshworks%20Freshsales%20Integration%20%7C%20Freshworks%20Marketplace&tid=AW-996274243&en=page_view&dl=https%3A"
+        ],
+        "console_errors": [
+          "Loading the script 'https://js.qualified.com/qualified.js?token=V3bzvnGRbEeRoKuU' violates the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.",
+          "Error loading Qualified: Event",
+          "Loading the script 'blob:https://www.freshworks.com/14254bdf-1f04-4762-990f-8ac0a7a6ec8a' violates the following Content Security Policy directive: \"script-src 'self' 'unsafe-inline' 'unsafe-eval' htt"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 516685,
+      "truncated": false
+    }
+  ]
+}
