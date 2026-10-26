@@ -395,9 +395,29 @@ runs `check:root`.
   `/stats/<slug>/<segment>/<value>` — one per value the source lists, never derived from the
   data — each with its own headline, trend, breakdowns (a `groupBy` may `sort: 'value'` for
   chronological issue/week tables) and the filtered query + change-feed poll; precomputed at
-  refresh with the parent (`aggregateFacets`, a 4-minute budget per source, the rest 503
-  "being prepared" until tomorrow) and indexed from the parent page and `sitemap.xml`.
-  First use: 45 Nice-class pages for `uk-trademark-journal` (`NICE_CLASSES` in the source).
+  refresh with the parent (`aggregateFacets`, a 4-minute budget per source) and indexed from the
+  parent page and `sitemap.xml`. First use: 45 Nice-class pages for `uk-trademark-journal`
+  (`NICE_CLASSES` in the source). **The parent blob is written before the facets, and pages past the budget are
+  carried, not dropped** (2026-10-26, `sitemap-5xx-read`, v0.26.1): the one KV write of the stats
+  blob came after the facet pass, so once the ok row moved ahead of the stats (10-18) a wave killed
+  inside the journal's 45-page pass renewed nothing — invisibly, night after night — and the blob
+  expired with its 7-day retention: from 10-25 every journal stats page, the parent included, was a
+  JSON 503 "being prepared" (relay probe 19:17 UTC: `/stats/uk-trademark-journal`, `class/01`,
+  `class/25`, `class/42` all 503 after three retries; `/stats/uk-gambling-operators` and `/feedback`
+  200), and Search Console mailed "Server error (5xx)" for sitemap pages on 10-26. Now
+  `precomputeStats` writes the parent stats as soon as they exist with every facet page carried from
+  the previous blob, marks `stats facets` progress (started a second after the ok row, so the
+  stale-marker rule does not hide a kill there: it is the next night's `silent nights:` reading),
+  aggregates the facets stalest first (never computed, then the oldest carried page) under their
+  4-minute budget and `STATS_DEADLINE_MS` (11 min from the wave's start), and writes again; a value
+  the budget does not reach keeps the previous page with `FacetPage.as_of` (the `last_refreshed_at`
+  it was computed for, shown as the page's "last refreshed" and `dateModified`), the
+  `stats_facets_budget` log line counts `computed`, `carried` and `missing`, a failed aggregation
+  re-puts the previous blob with a fresh TTL (`stats_precompute_failed … retained`), and only a value
+  with no earlier page still 503s. A relay round that HEADs those 503 pages pays the Worker's
+  `Retry-After: 3600` as three 30 s retries per line (`scripts/fetch-relay.mjs`), ~95 s a line —
+  which is how the two 10-26 sitemap rounds died at the 12-minute step cap with nothing written
+  (foundry `relay-round-survives-stalled-host`).
 - **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
   `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
   facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50

@@ -1891,3 +1891,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 18:44 | burn-down | Queued gankdat sitemap-5xx-read (7): find the URLs behind the SC 404/5xx mails and the sitemap stall, fix, re-submit
 - 2026-10-26 18:44 | burn-down | Queued foundry relay-round-survives-stalled-host (4): per-line writes, 30 s HEAD/GET timeout, skip a host after 3 stalls
 - 2026-10-26 18:44 | burn-down | Stopping at ~50 min: 2 research passes, 2 items built, 2 filed; next slot takes gankdat sitemap-5xx-read (relay round)
+- 2026-10-26 19:28 | burn-down | Relay probe 19:17: journal stats parent and class/01, 25, 42 all 503 'being prepared' after 3 retries; two others 200
+- 2026-10-26 19:28 | burn-down | Cause: the journal's stats blob expired — since 10-18 the ok row lands before stats; a wave killed in facets wrote none
+- 2026-10-26 19:28 | burn-down | Built gankdat sitemap-5xx-read (7): parent stats blob written before the facet pass; facets under an 11-min deadline
+- 2026-10-26 19:28 | burn-down | v0.26.1: facet pages past the budget carried stalest-first with as_of; a failed aggregation re-puts the previous blob
+- 2026-10-26 19:28 | burn-down | A 'stats facets' progress marker started after the ok row makes a wave killed there tomorrow's silent-nights reading
+- 2026-10-26 19:28 | burn-down | Tests: d1store parent-first and carry-over, stats page dates a carried page; add-in manifest and connector at 0.26.1
+- 2026-10-26 19:28 | burn-down | Relay: both dead sitemap requests removed; a 503 with Retry-After costs a relay line ~95 s, noted on the foundry item
+- 2026-10-26 19:28 | burn-down | Queued gankdat sitemap-5xx-verify (6, from 10-27): four HEADs after the first 06:05 wave on v0.26.1 prove the fix

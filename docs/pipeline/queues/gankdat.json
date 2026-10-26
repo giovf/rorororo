@@ -851,9 +851,20 @@
       "effort_days": 0.3,
       "proof": "every sitemap URL answers 200 within 5 s through the relay; the next Search Console mail on gankdat.com is a recovery or none arrives in 14 days; the Daily check `search:` clause shows no 5xx verdict",
       "score": 7,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-26",
-      "doing_since": "2026-10-26"
+      "done_at": "2026-10-26"
+    },
+    {
+      "id": "sitemap-5xx-verify",
+      "title": "Verify the journal stats pages answer 200 after the first 06:05 wave on v0.26.1: a relay round of four HEADs (/stats/uk-trademark-journal, class/01, class/25, class/42) after 07:00 UTC; if any still 503, read the wave's log through the metrics job (wave-logs for uk-trademark-journal) and fix the parent aggregation",
+      "why": "sitemap-5xx-read (10-26 19:28) found every journal stats page a JSON 503 because the stats blob expired: since 10-18 the ok row lands before the stats, a wave killed in the 45-page facet pass wrote no blob, and after seven nights the retention ran out. v0.26.1 writes the parent blob before the facets and carries pages, but the fix is proven only by the next wave: no sandbox can trigger a D1 refresh, and if the parent aggregation itself dies inside the wave there is no previous blob to retain yet. Four HEADs keep the round under the 12-minute relay cap even if all four still 503 (about 95 s each).",
+      "effort_days": 0.1,
+      "proof": "the four HEADs answer 200 through the relay, meta.json carries no retries; the Daily numbers row of 10-28 lists no silent night for uk-trademark-journal",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-26",
+      "not_before": "2026-10-27"
     }
   ],
   "research_after": "2026-10-30"
