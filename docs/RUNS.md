@@ -1850,3 +1850,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 09:35 | notify | Meta hackathon entry built: one free 10-minute key step unlocks the live demo and video
 - 2026-10-26 09:35 | build | Dry recording in the sandbox: 7 shots, mp4 and transcript.md written (system ffmpeg linked for Playwright)
 - 2026-10-26 13:29 | watchdog | ci-failed: gankdat-metrics.yml run 267 07:18 — step Append today's numbers to RESEARCH.md; later run 268 ok
+- 2026-10-26 17:20 | build | landing.yml first run: success (push run 73 at 09:38, 64 s; after the 09:37 installer; cron run 74 ok)
+- 2026-10-26 17:20 | build | demo-video.yml first run: none since the 09:37 install; never dispatched by rule (it publishes)
+- 2026-10-26 17:20 | build | actions-minutes 10-26 reading: 521 billed min/7d per run, 459 per job (323 runs, 343 wall; to 09:00)
+- 2026-10-26 17:20 | build | Per job by workflow: fetch relay 118, gankdat metrics 52, gankdat 45, check 40, owner notes 38, notify 35
+- 2026-10-26 17:20 | build | Two owner-notes runs stayed open 27 and 22 min after jobs of 110 s and 10 s: per-run rule billed 50 for 3
+- 2026-10-26 17:20 | build | actions-minutes.mjs bills per job for runs over a minute, 0 for skipped runs; dry run via proxy 502/7d
+- 2026-10-26 17:20 | build | No flip: 459 is 8 min under the cap's weekly share (467), inside one relay round; the cap is a cliff
+- 2026-10-26 17:20 | build | actions-minutes back to todo, not_before 2026-11-02: the second week under 467 per job flips the repo

@@ -9,8 +9,13 @@
 // duration rounded UP to the next whole minute, so a 12-second poller run costs one minute and the
 // week's bill is well above its wall-clock sum (10-05..10-12: 805 jobs, 731 wall min, 1,334 billed).
 // Per-run rounding (one job per run here, gankdat's two aside) matched the per-job sum within 1 %
-// on the six clean days (773 vs 781), so `billed` below is max(1, ceil(run minutes)) per run and is
-// the headline; the wall sum stays in the line for comparison.
+// on the six clean days (773 vs 781), so `billed` was max(1, ceil(run minutes)) per run.
+// Per job since 2026-10-26 (the 10-26 reading): a run's span can outlive its job — two hourly
+// owner-notes runs whose job took 110 s and 10 s stayed open 27 and 22 min (10-19 15:40, 10-21 15:18)
+// and the per-run rule billed them 50 for GitHub's 3 — so a run over a minute fetches its jobs and
+// bills max(1, ceil(job minutes)) per job, a run under a minute bills 1 without the call (≈ 75 calls a
+// week), and a run concluded `skipped` (the installer's own push) bills 0. The week to 10-26 09:00
+// read 521 per run but 459 per job; the wall sum stays in the log for comparison.
 import { appendFileSync, readFileSync } from 'node:fs';
 import { ciMinutesLine } from './actions-minutes-line.ts';
 
@@ -19,6 +24,27 @@ const token = process.env.GITHUB_TOKEN;
 const WARN_MINUTES = Number(process.env.CI_WARN_MINUTES ?? 1700);
 const since = new Date(Date.now() - 7 * 86_400_000).toISOString();
 const headers = { Authorization: `Bearer ${token}`, accept: 'application/vnd.github+json' };
+
+/** Billed minutes of one run from its jobs: each non-skipped job rounded up to a whole minute. */
+async function billedJobs(run) {
+  const fallback = Math.max(
+    1,
+    Math.ceil((Date.parse(run.updated_at) - Date.parse(run.run_started_at)) / 60_000),
+  );
+  const res = await fetch(`${run.jobs_url}?per_page=100`, { headers });
+  if (!res.ok) return fallback;
+  const body = await res.json();
+  const jobs = (body.jobs ?? []).filter(
+    (j) => j.conclusion !== 'skipped' && j.started_at && j.completed_at,
+  );
+  if (jobs.length === 0) return body.jobs?.length ? 0 : fallback;
+  return jobs.reduce(
+    (sum, j) =>
+      sum +
+      Math.max(1, Math.ceil((Date.parse(j.completed_at) - Date.parse(j.started_at)) / 60_000)),
+    0,
+  );
+}
 
 let page = 1;
 let minutes = 0;
@@ -37,7 +63,7 @@ for (;;) {
   for (const r of items) {
     if (r.status !== 'completed' || !r.run_started_at || !r.updated_at) continue;
     const m = (Date.parse(r.updated_at) - Date.parse(r.run_started_at)) / 60_000;
-    const b = Math.max(1, Math.ceil(m));
+    const b = r.conclusion === 'skipped' ? 0 : m > 1 ? await billedJobs(r) : 1;
     minutes += m;
     billed += b;
     runs += 1;
