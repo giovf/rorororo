@@ -1799,3 +1799,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-25 18:52 | burn-down | rest-callers.ts restByUaNote: top 8 UA families, datasets touched, prober tag; external accounts only
 - 2026-10-25 18:52 | burn-down | metrics.mjs query after changes-by-UA; tests; ARCHITECTURE and RESEARCH notes
 - 2026-10-25 18:50 | burn-down | Stopping: pipeline starved and cooled; tonight's exchange pre-research was spent at 17:30
+- 2026-10-26 00:25 | burn-down | new-ventures researched: 3 billed-shelf spikes seeded — KDP tax guide (7), Freshworks (5), Heroku (4)
+- 2026-10-26 00:25 | burn-down | Evidence (relay, 33 pages): KDP rivals £3.99 MTD book 245 ratings, a £4.99 2026/27 workbook ebook 5 days old
+- 2026-10-26 00:25 | burn-down | KDP: AI-written text must be disclosed, allowed; 70 % ex-VAT less delivery; Freshworks 80/20, bills in GBP
+- 2026-10-26 00:25 | burn-down | Heroku agreement §5.1 pays 70 % of net subscription revenue in 30 days; GA needs 15 testers, no installs shown
+- 2026-10-26 00:25 | burn-down | Read and not seeded: Xero (App Store billing retired, API tiers charge devs), Vercel (Pro team US$20/mo first)

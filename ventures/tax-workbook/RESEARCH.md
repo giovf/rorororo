@@ -64,6 +64,8 @@ for the funnel. No counts are visible and payhip.com blocks automated reads (Clo
 unmeasurable: the twin lists the same file at the same price (`payhip-twin-listing`, action 029 step 4) and is the fallback
 shelf if the owner declines Etsy's set-up fee.
 
+**A Kindle sibling, not a twin — Amazon KDP (new-ventures research 2026-10-26, spike `spike-kdp-sole-trader-tax-guide`).** The rendered amazon.co.uk Kindle search for "self assessment tax return 2026 27 sole trader" (relay `billed-shelves-2026-10-26`, 16 results) shows buyers counted on the shelf: a £3.99 Making Tax Digital playbook with 245 ratings since 26 Aug 2026, a £9.99 MTD guide (34), the £6.50 "How to prepare your UK Self Assessment Tax Return" sold as a new edition every April since 2017 (11–36 ratings an edition), and a direct rival to this workbook — "UK Sole Trader & Side Hustle Tax Workbook 2026/27: Self Assessment and Making Tax Digital", £4.99, published 21 Oct 2026, no ratings yet. An ebook cannot carry the formulas, so the KDP shape is a guide-plus-companion that points at the workbook; KDP requires AI-generated text to be disclosed and allows it; 70 % of the ex-VAT price less delivery. The spike decides.
+
 **Not a twin — Creative Market (pre-research 2026-10-24, exchange `creative-market-templates-shelf`).** Shops open by application against a design portfolio of 10–20 works, the split is ≈ 50 % (official: 'varies per shop/per product'), and five search-index passes found no spreadsheet or Google Sheets listing on the shelf at all; parked, no relay read.
 
 ## 4. Validation gate (ARCHITECTURE)
