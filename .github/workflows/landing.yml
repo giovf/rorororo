@@ -22,6 +22,9 @@ concurrency:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    env:
+      # Read by the secret step's `if` below (a step cannot test its own env); empty until action 032.
+      META_MODEL_API_KEY: ${{ secrets.META_MODEL_API_KEY }}
     defaults:
       run:
         working-directory: packages/landing
@@ -39,5 +42,22 @@ jobs:
       - name: Deploy landing site + /ops dashboard (Worker with static assets, apps.gankdat.com)
         run: npx wrangler deploy
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: 37e56f3ce4dfe49919e85d4380467f44
+      - name: Model key for /diligence (hackathons meta-global-ai-hackathon-entry, 2026-10-26)
+        # The counterparty-check page runs Muse Spark on Meta Model API with the key the owner saved as
+        # the META_MODEL_API_KEY repository secret (docs/for-owner/actions/032-meta-model-api-key.md);
+        # the optional GANKDAT_DEMO_API_KEY lets the registers answer in full. Absent, the step is
+        # skipped and the page says the key is not configured. Never printed: piped straight into
+        # wrangler, which stores it as the Worker secret.
+        if: env.META_MODEL_API_KEY != ''
+        run: |
+          printf '%s' "$META_MODEL_API_KEY" | npx wrangler secret put DILIGENCE_API_KEY
+          if [ -n "$GANKDAT_DEMO_API_KEY" ]; then
+            printf '%s' "$GANKDAT_DEMO_API_KEY" | npx wrangler secret put DILIGENCE_GANKDAT_KEY
+          fi
+        env:
+          META_MODEL_API_KEY: ${{ secrets.META_MODEL_API_KEY }}
+          GANKDAT_DEMO_API_KEY: ${{ secrets.GANKDAT_DEMO_API_KEY }}
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: 37e56f3ce4dfe49919e85d4380467f44
