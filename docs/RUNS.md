@@ -1878,3 +1878,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 18:26 | burn-down | Queued node-entry-import-extensions (5): a root test walks Node-run entry points for extensionless relative imports
 - 2026-10-26 18:26 | burn-down | Queued search-console-error-mail-rule (4): five SC 404/5xx mails in 36 h logged as noise; sitemap HEADs via relay
 - 2026-10-26 18:26 | burn-down | Queued first-run-check-script (3): one command prints the first runs still owed; 17:20 and 17:31 both stamped landing
+- 2026-10-26 18:30 | burn-down | hackathons research: web sweep, nothing fits an existing-project entry; no item, research_after 2026-11-05
+- 2026-10-26 18:30 | burn-down | Gemma 4 (Kaggle, $100k) is a model benchmark and papers; Agent Rush tracks still TBA; MCP and x402 editions all 2025
+- 2026-10-26 18:30 | burn-down | Watch for the 11-05 pass: an Anthropic + Gradio MCP birthday 2026 edition (2025 ran 14-30 Nov, $21k) fits the MCP server

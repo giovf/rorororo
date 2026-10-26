@@ -142,6 +142,26 @@ Eligibility (identical Devpost rules text across the three): open to individuals
 majority; the UK is not on any exclusion list. Entries are submitted by the owner's Devpost account
 (one-off, action 022); everything else is built by routines.
 
+Read 2026-10-26 18:30 (burn-down) — the queue is starved (the entry's second half waits on the owner's
+model key, action 032 step 1), so a sweep for a next entry by web search; the sandbox resolves neither
+kaggle.com, internshala.com nor lablab.ai, so what the search index shows is the evidence and the primary
+read goes through the relay when a candidate fits. Nothing fits an existing-project entry; no item added:
+
+| Candidate | What the search index shows | Verdict |
+| --- | --- | --- |
+| Gemma 4 Developer Agent Competition (Kaggle, Google) | US$100,000 pool: a Kaggle prediction competition (awards US$37k / 18k / 10k) aimed at ML researchers plus a paper track (US$35k, best paper US$15k, final deadline 13 Nov; the competition 25 Nov per an aggregator); a Kaggle account on the owner's identity | **none** — a model benchmark and papers, not an application; the official rules page is unread (kaggle.com unreachable from the sandbox) and nothing in the listings suggests an app track |
+| Vultr: Agent Rush (lablab.ai, hybrid) | tracks still "TBA", registration opens 3 Nov 15:00 UTC, submissions close 8 Nov 22:00 UTC, no prize table ("winners get highlighted"); aggregators keep the US$9,000 + credits figure | declined 2026-10-20 on the Vultr payment-method rule; unchanged |
+| Colosseum agent hackathon, second edition | nothing announced; the April–May Frontier Hackathon (Solana, US$30k top prize in a token) was a separate event | watch stays with the exchange |
+| MCP hackathons | every result is a 2025 edition — Descope Global MCP Hackathon (Aug–Sep 2025, US$4k cash first), MCP's 1st Birthday (Anthropic + Gradio, 14–30 Nov 2025, US$21k + credits), Pendo (credits); MCP_HACK//26 closed 10-20 | **the one to watch**: a 2026 "MCP's 2nd Birthday" by Anthropic and Gradio would appear on huggingface.co in early November and fit gankdat's MCP server as the agentregistry track would have; the 11-05 pass reads huggingface.co/MCP-1st-Birthday and its successor through the relay |
+| x402 hackathons | SF Agentic Commerce x402 (Feb 2026, US$50k), Berlin (June 2026, US$20k USDC), Solana x402 (Oct–Nov 2025), Cronos PayTech (Dec 2025–Jan 2026, US$42k); no November 2026 edition announced | none open; the Solana x402 shape (Oct–Nov) is a yearly watch — gankdat's Bazaar listing is the entry if one opens |
+| Code for a Billion (Code for India), HackIndia AgentVerse '26 | ₹18 lakh pool, India-only and a 90-day build; HackIndia's registration closed 23 Oct | none |
+| PayPal AI Hackathon | submissions to 12 Nov 12:00 PT, judging 1–15 Dec | entered (action 023); demo access prepared (action 028) |
+| Meta Global AI Developer Hackathon | submissions to 4 Nov 9:00 PM ET, judging to 8 Nov, winners 9 Nov | entry built 10-26; live run blocked on action 032 step 1 |
+
+Next signal: the Meta deadline (4 Nov) and the November hackathon announcements; `research_after` set to
+2026-11-05 — that pass reads the Meta result page, the MCP birthday successor, lablab's index and
+colosseum.com through the relay, and the PayPal judging (1–15 Dec) is the dated reading after it.
+
 ## 3. Validation gate
 
 - Buyers with money: the prize money is already committed by the sponsor — the only "buyer" is a judge.
