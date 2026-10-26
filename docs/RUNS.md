@@ -1809,3 +1809,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 00:28 | burn-down | Content-quality rules bar companions, redirects and adverts — the guide must stand alone; low-content is print
 - 2026-10-26 00:28 | burn-down | tax-workbook kdp-tax-guide-ebook queued (3 × 2): standalone EPUB guide at £4.99, owner KDP step on action 029
 - 2026-10-26 00:28 | burn-down | Exchange: kdp-uk-sole-trader-tax-guide promoted; tax-workbook RESEARCH.md carries the Kindle shelf note
+- 2026-10-26 00:35 | burn-down | Spike freshworks-marketplace-paid-apps done: park — terms (7 pages) read, Freshdesk landing rendered
+- 2026-10-26 00:35 | burn-down | Freshworks pays 80 % of MRR monthly in USD, remits sales taxes, takes individuals; paid apps 3–100+ installs
+- 2026-10-26 00:35 | burn-down | Data Enrichment category unread (search API host not in the bundle); idea parked with three triggers

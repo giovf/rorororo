@@ -579,6 +579,14 @@
       "why": "Spike 2026-10-26 (new-ventures spike-kdp-sole-trader-tax-guide, docs/exchange/spikes/kdp-sole-trader-tax-guide.md, burn-down; seeded by the same night's new-ventures research): a shelf with its own buyers and billing for the line validated on 10-23 — rivals carry 245, 34 and 11–36 ratings on the shelf and a near-identical £4.99 workbook ebook went live on 21 Oct 2026; KDP's 70 % option pays £2.70 on a £4.99 sale with VAT and delivery handled, AI-generated text is allowed once disclosed, and the content-quality rules fix the shape as a complete original guide (no companion, no redirect, no advert). Queued as tax-workbook/kdp-tax-guide-ebook (3 × 2); the owner's KDP account rides action 029.",
       "venture": "tax-workbook",
       "added": "2026-10-26"
+    },
+    {
+      "id": "freshworks-marketplace-paid-apps",
+      "title": "Freshworks Marketplace (Freshdesk, Freshsales, Freshservice): a paid ticket- or contact-sidebar app showing the requester's organisation from the gankdat registers, £9 per account per month, Freshworks billing at 80/20",
+      "status": "parked",
+      "why": "Spike 2026-10-26 (new-ventures spike-freshworks-marketplace-paid-apps, docs/exchange/spikes/freshworks-marketplace-paid-apps.md, burn-down): the shelf bills itself (Developer Terms 2.15–2.20: Freshworks collects as agent, pays 80 % of MRR monthly in USD, remits sales taxes, individuals allowed, no AI-code rule), but the readable demand is thin — paid apps on the Freshdesk landing hold 3–100+ installs (median ≈ 27) against 3k–5.1k for free ones, and the Data Enrichment category was not reachable. Score ≈ 1, below the Zoho widget (2.4) already queued for the same registers.",
+      "trigger": "the Zoho CRM verification widget passes 10 installs; or a gankdat account signs up from a helpdesk/CRM user agent; or a read of the Data Enrichment category (marketplace search API, subscription_types=paid) shows ≥ 3 paid company-lookup apps with ≥ 50 installs at ≥ US$3/agent/month",
+      "added": "2026-10-26"
     }
   ]
 }
