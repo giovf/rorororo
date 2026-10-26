@@ -1886,3 +1886,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 18:29 | burn-down | SCHEDULERS rows for owner notes and notify owner carry the 10-26 change; the 11-02 minutes reading names the delta
 - 2026-10-26 18:36 | burn-down | Built foundry node-entry-import-extensions (5): a root test walks the workflows’ Node entry points for bare imports
 - 2026-10-26 18:36 | burn-down | scripts/node-entry-imports.ts + 6 tests; the live walk reaches every lib metrics.mjs pulls in and prints nothing
+- 2026-10-26 18:44 | burn-down | Relay gankdat-sitemap-status-2026-10-26 died: GET /sitemap.xml and the HEADs hung 90 s each, step killed at 12 min
+- 2026-10-26 18:44 | burn-down | Metrics job dispatched 18:39 for a live probe: API answers (mcp init/tools/call 200); the stall is the sitemap path
+- 2026-10-26 18:44 | burn-down | Queued gankdat sitemap-5xx-read (7): find the URLs behind the SC 404/5xx mails and the sitemap stall, fix, re-submit
+- 2026-10-26 18:44 | burn-down | Queued foundry relay-round-survives-stalled-host (4): per-line writes, 30 s HEAD/GET timeout, skip a host after 3 stalls
+- 2026-10-26 18:44 | burn-down | Stopping at ~50 min: 2 research passes, 2 items built, 2 filed; next slot takes gankdat sitemap-5xx-read (relay round)

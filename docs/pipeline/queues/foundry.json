@@ -1160,6 +1160,16 @@
       "score": 3,
       "status": "todo",
       "added": "2026-10-26"
+    },
+    {
+      "id": "relay-round-survives-stalled-host",
+      "title": "A relay round survives a stalled host: fetch-relay.mjs writes meta.json and the bodies after every line (not at the end), gives HEAD and GET a 30 s timeout, and after three consecutive timeouts on one host marks that host’s remaining lines `skipped: host stalled` instead of waiting 90 s on each",
+      "why": "Round gankdat-sitemap-status-2026-10-26 (70 lines, one host) returned nothing: the first lines hung, the 90 s per-line timeout (TIMEOUT_MS in scripts/fetch-relay.mjs) times 70 lines is 105 minutes against the step’s 12-minute cap (fetch-relay.yml), so the step was killed at 18:32 before meta.json existed and the Commit responses step was skipped — the routine waited 20 minutes for a response that could never come and learned only from the job log that the host stalls, which is itself the reading it wanted. Writing the response files incrementally and committing whatever landed (the Commit step runs `if: always()` with the skip-ci marker) turns a dead round into a partial one with the stall recorded per line (`timeout` status, elapsed ms); the host-level skip after three consecutive timeouts bounds a one-host round at ≈ 90 s; HEAD/GET at 30 s (RENDER keeps 90 s) catches a stalled server in a third of the time. Tests on the pure parts (fetch-relay-lines.ts: the skip decision, the per-line record).",
+      "effort_days": 0.3,
+      "proof": "a round against a host that never answers commits a meta.json within 3 minutes with every line marked timeout or skipped; the next 30 rounds lose no line to the step cap",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-26"
     }
   ]
 }

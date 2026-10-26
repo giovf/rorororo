@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "researched": "2026-10-25",
   "items": [
     {
@@ -843,6 +843,16 @@
       "status": "done",
       "added": "2026-10-25",
       "done_at": "2026-10-25"
+    },
+    {
+      "id": "sitemap-5xx-read",
+      "title": "Read why gankdat.com pages fail for Google: Search Console reported 404, other 4xx and then server error (5xx) on sitemap pages (10-25/26), and tonight’s relay round hung on a plain GET of /sitemap.xml and the HEADs after it (90 s each, step dead at 12 min); find the failing URLs and the cause, fix the Worker or the sitemap, re-submit",
+      "why": "Five Search Console mails in 36 h (INBOX.md 10-25 21:31 and 22:12, 10-26 10:54, 10:55, 11:58): “Not found (404)”, “Blocked due to other 4xx issue”, then “Server error (5xx)” for pages in the sitemap — each logged as not a listing-state change (foundry `search-console-error-mail-rule` fixes the triage rule). The 10-26 Daily numbers row at 09:41 read indexnow 15 urls 200 and mcp probe init/tools/call 200, so the API answered this morning. The burn-down’s relay round gankdat-sitemap-status-2026-10-26 (18:20, one GET of https://gankdat.com/sitemap.xml then HEAD on the 69 sitemap URLs) produced no meta.json: fetch-relay.mjs timed out after 12 minutes with no line answered, which at the 90 s per-line timeout means the first eight or so requests — the static sitemap first — never returned; on 10-23 three relay rounds read gankdat.com normally. Either the Worker (or the route for static assets / HEAD) stalls, or the runner’s path to gankdat.com did at 18:20. Build: (1) dispatch gankdat-metrics.yml and read the probe (done at 18:40 by the burn-down, result in the run log); (2) a relay round of ten lines at most — GET /sitemap.xml, GET /, GET /stats, HEAD /stats/uk-tenders, GET /docs, GET /addin, GET /robots.txt and three stats pages — so a stalled host cannot burn the round, reading status, time and `cf-ray`; (3) the Worker’s own logs for 5xx (wave-logs reading, Workers Logs query) over 10-24..10-26; (4) fix what fails (a static-asset route that misses, a middleware that hangs on HEAD, a stats page throwing) with a test, bump the version, and re-submit the sitemap through the Search Console API if the job supports it, else note the inspection verdict on tomorrow’s Daily check row; (5) record the cause on this item and in ARCHITECTURE.md. Reading 18:42 (burn-down dispatched gankdat-metrics.yml): from a GitHub runner the API answers — mcp probe init 200, tools 200 (25 tools), call 200; indexnow 15 urls 200 — so the Worker is up and the stall is on the path the relay took: the static /sitemap.xml asset and HEAD requests. Start step (2) with GET /sitemap.xml, GET /robots.txt and HEAD / on their own lines, then the stats pages.",
+      "effort_days": 0.3,
+      "proof": "every sitemap URL answers 200 within 5 s through the relay; the next Search Console mail on gankdat.com is a recovery or none arrives in 14 days; the Daily check `search:` clause shows no 5xx verdict",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-26"
     }
   ],
   "research_after": "2026-10-30"
