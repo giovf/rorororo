@@ -178,6 +178,34 @@ export const MAX_RETRIES = 3;
  * calls in the same second had been served). */
 export const SAME_HOST_PACE_MS = 500;
 const RETRY_AFTER_CAP_MS = 30_000;
+/** HEAD, GET and POST lines abort after this long (foundry `relay-round-survives-stalled-host`,
+ * 2026-10-26; was 90 s for every line — 70 lines at 90 s is 105 min against the step's 12-minute
+ * cap). RENDER keeps its own 90 s in fetch-relay.mjs. */
+export const FETCH_TIMEOUT_MS = 30_000;
+/** Consecutive timeouts on one host after which the round skips that host's remaining lines. */
+export const HOST_STALL_LIMIT = 3;
+
+/**
+ * Whether a response with `status` is retried: 429 and 503, unless its `Retry-After` says longer
+ * than the cap — the server said tomorrow, not soon (gankdat's "being prepared" 503 carries 3600;
+ * three capped retries cost the 10-26 sitemap rounds ~95 s a line and the whole step).
+ */
+export function shouldRetry(status: number, retryAfter: string | null | undefined): boolean {
+  if (!RETRY_STATUSES.has(status)) return false;
+  const secs = Number(retryAfter);
+  return !(retryAfter && Number.isFinite(secs) && secs * 1000 > RETRY_AFTER_CAP_MS);
+}
+
+/** Consecutive timeouts per host within one round; at the limit the host is skipped. */
+export class HostStalls {
+  private readonly runs = new Map<string, number>();
+  record(host: string, timedOut: boolean): void {
+    this.runs.set(host, timedOut ? (this.runs.get(host) ?? 0) + 1 : 0);
+  }
+  stalled(host: string): boolean {
+    return (this.runs.get(host) ?? 0) >= HOST_STALL_LIMIT;
+  }
+}
 
 /**
  * How long to wait before retry `attempt` (0-based): the server's `Retry-After` seconds when it

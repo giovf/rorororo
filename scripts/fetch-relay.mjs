@@ -25,19 +25,22 @@ import { mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync }
 import path from 'node:path';
 
 import {
+  FETCH_TIMEOUT_MS,
+  HostStalls,
   MAX_RETRIES,
-  RETRY_STATUSES,
   SAME_HOST_PACE_MS,
   hostAllowed,
   needsRender,
   parseHosts,
   parseLine,
   retryDelayMs,
+  shouldRetry,
 } from './fetch-relay-lines.ts';
 
 const ROOT = path.resolve(import.meta.dirname, '..', 'docs', 'relay');
 const MAX_BYTES = 8 * 1024 * 1024;
 const KEEP_DAYS = 7;
+/** RENDER lines only; HEAD/GET/POST abort after FETCH_TIMEOUT_MS (30 s) since 2026-10-26. */
 const TIMEOUT_MS = 90_000;
 /** A rendered page gets this long for its network to go idle after the document loaded; a page that
  * keeps polling (analytics, chat widgets) is saved as it stands then, not failed. */
@@ -160,7 +163,7 @@ async function renderOne(req, url, outDir, index, meta) {
   }
 }
 
-async function fetchOne(req, outDir, index) {
+async function fetchOne(req, outDir, index, stalls) {
   const meta = { ...req, fetched_at: new Date().toISOString() };
   let url;
   try {
@@ -172,6 +175,9 @@ async function fetchOne(req, outDir, index) {
     return { ...meta, error: `host not on the relay allowlist: ${url.hostname}` };
   }
   if (req.error) return { ...meta, error: req.error }; // a malformed, credential-shaped or mis-verbed line
+  // A host that timed out HOST_STALL_LIMIT lines in a row is not asked again this round (foundry
+  // relay-round-survives-stalled-host, 2026-10-26): its remaining lines are recorded as skipped.
+  if (stalls.stalled(url.hostname)) return { ...meta, skipped: 'host stalled' };
   if (req.render) {
     try {
       return await renderOne(req, url, outDir, index, meta);
@@ -185,6 +191,7 @@ async function fetchOne(req, outDir, index) {
     headers['content-type'] = 'application/json';
     headers.accept = 'application/json, */*';
   }
+  const startedAt = Date.now();
   try {
     let res;
     for (let attempt = 0; ; attempt++) {
@@ -193,14 +200,21 @@ async function fetchOne(req, outDir, index) {
         headers,
         body: req.method === 'POST' ? req.body : undefined,
         redirect: 'follow',
-        signal: globalThis.AbortSignal.timeout(TIMEOUT_MS),
+        signal: globalThis.AbortSignal.timeout(FETCH_TIMEOUT_MS),
       });
-      if (!RETRY_STATUSES.has(res.status) || attempt >= MAX_RETRIES) break;
+      const retryAfter = res.headers.get('retry-after');
+      if (!shouldRetry(res.status, retryAfter) || attempt >= MAX_RETRIES) {
+        // A 429/503 whose Retry-After exceeds the cap is final: the server said later, not soon.
+        if (retryAfter && res.status >= 400) meta.retry_after = retryAfter;
+        break;
+      }
       await res.body?.cancel();
       meta.retries = attempt + 1;
-      await sleep(retryDelayMs(res.headers.get('retry-after'), attempt));
+      await sleep(retryDelayMs(retryAfter, attempt));
     }
+    stalls.record(url.hostname, false);
     meta.status = res.status;
+    meta.elapsed_ms = Date.now() - startedAt;
     meta.final_url = res.url;
     meta.headers = Object.fromEntries(
       ['content-type', 'content-length', 'content-disposition', 'last-modified', 'etag']
@@ -225,8 +239,31 @@ async function fetchOne(req, outDir, index) {
     writeFileSync(path.join(outDir, file), Buffer.concat(chunks));
     return { ...meta, file, bytes, truncated };
   } catch (err) {
-    return { ...meta, error: err instanceof Error ? err.message : String(err) };
+    const elapsed_ms = Date.now() - startedAt;
+    if (err instanceof Error && err.name === 'TimeoutError') {
+      stalls.record(url.hostname, true);
+      return { ...meta, error: 'timeout', timeout: true, elapsed_ms };
+    }
+    return { ...meta, error: err instanceof Error ? err.message : String(err), elapsed_ms };
   }
+}
+
+/** meta.json after every line (`partial: true` until the round ends), so a round the step cap
+ * kills still leaves what it read — the 10-26 sitemap rounds left nothing, twice. */
+function writeMeta(outDir, name, results, partial) {
+  writeFileSync(
+    path.join(outDir, 'meta.json'),
+    JSON.stringify(
+      {
+        request: name,
+        fetched_at: new Date().toISOString(),
+        ...(partial ? { partial } : {}),
+        results,
+      },
+      null,
+      2,
+    ) + '\n',
+  );
 }
 
 async function processRequest(file) {
@@ -236,6 +273,7 @@ async function processRequest(file) {
   mkdirSync(outDir, { recursive: true });
   const lines = readFileSync(file, 'utf8').split('\n').map(parseLine).filter(Boolean);
   const results = [];
+  const stalls = new HostStalls();
   let lastHost;
   for (const [i, req] of lines.entries()) {
     let host;
@@ -246,13 +284,10 @@ async function processRequest(file) {
     }
     if (host && host === lastHost) await sleep(SAME_HOST_PACE_MS);
     lastHost = host;
-    results.push(await fetchOne(req, outDir, i + 1));
+    results.push(await fetchOne(req, outDir, i + 1, stalls));
+    writeMeta(outDir, name, results, true);
   }
-  writeFileSync(
-    path.join(outDir, 'meta.json'),
-    JSON.stringify({ request: name, fetched_at: new Date().toISOString(), results }, null, 2) +
-      '\n',
-  );
+  writeMeta(outDir, name, results, false);
   rmSync(file);
   return { name, results };
 }
@@ -288,7 +323,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === new URL(import.meta.url
       const { name, results } = await processRequest(f);
       for (const r of results) {
         console.log(
-          `${name}: ${r.method}${r.render ? ' RENDER' : ''} ${r.url} → ${r.error ? 'ERR ' + r.error : `${r.status} ${r.file ?? ''} ${r.bytes ?? ''}${r.truncated ? ' (truncated)' : ''}`}`,
+          `${name}: ${r.method}${r.render ? ' RENDER' : ''} ${r.url} → ${r.skipped ? 'SKIPPED ' + r.skipped : r.error ? 'ERR ' + r.error : `${r.status} ${r.file ?? ''} ${r.bytes ?? ''}${r.truncated ? ' (truncated)' : ''}`}`,
         );
       }
     }

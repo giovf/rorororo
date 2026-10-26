@@ -1902,3 +1902,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 19:36 | burn-down | owner-notes.yml first run: success (dispatch run 609 at 19:32, 21 s; after the 18:32 installer)
 - 2026-10-26 19:36 | burn-down | Built foundry search-console-error-mail-rule (4): inbox triage step 3 files sc-5xx-<date> (6) or sc-4xx-<date> (4)
 - 2026-10-26 19:36 | burn-down | One item per reason per venture per 7 days; the venture is the mail's property; the why quotes the mail, never a link
+- 2026-10-26 19:41 | burn-down | Built foundry relay-round-survives-stalled-host (4): meta.json after every line, 30 s HEAD/GET/POST timeout
+- 2026-10-26 19:41 | burn-down | A host that times out 3 lines in a row is skipped for the round; a 429/503 with Retry-After over 30 s is final
+- 2026-10-26 19:41 | burn-down | docs/ci/fetch-relay.yml: the Commit step runs always, commits a killed round as partial and drops its request
+- 2026-10-26 19:41 | burn-down | Tests: shouldRetry and HostStalls in scripts/fetch-relay-lines.test.ts (15 pass); README step 3 names partial rounds

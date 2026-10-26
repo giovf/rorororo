@@ -1169,9 +1169,9 @@
       "effort_days": 0.3,
       "proof": "a round against a host that never answers commits a meta.json within 3 minutes with every line marked timeout or skipped; the next 30 rounds lose no line to the step cap",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-26",
-      "doing_since": "2026-10-26"
+      "done_at": "2026-10-26"
     }
   ]
 }

@@ -2,6 +2,9 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import {
+  FETCH_TIMEOUT_MS,
+  HOST_STALL_LIMIT,
+  HostStalls,
   MAX_RETRIES,
   POST_MAX_BYTES,
   RETRY_STATUSES,
@@ -13,6 +16,7 @@ import {
   parseLine,
   postBodyError,
   retryDelayMs,
+  shouldRetry,
 } from './fetch-relay-lines.ts';
 
 describe('parseLine', () => {
@@ -229,5 +233,30 @@ describe('retryDelayMs', () => {
     expect(RETRY_STATUSES.has(500)).toBe(false);
     expect(MAX_RETRIES).toBe(3);
     expect(SAME_HOST_PACE_MS).toBe(500);
+  });
+});
+
+describe('stalled hosts (foundry relay-round-survives-stalled-host)', () => {
+  it('retries 429 and 503 only while Retry-After is within the cap', () => {
+    expect(shouldRetry(503, null)).toBe(true);
+    expect(shouldRetry(429, '5')).toBe(true);
+    expect(shouldRetry(503, '30')).toBe(true);
+    expect(shouldRetry(503, '3600')).toBe(false); // gankdat's "being prepared" page: tomorrow
+    expect(shouldRetry(500, null)).toBe(false);
+    expect(shouldRetry(200, '3600')).toBe(false);
+  });
+
+  it('skips a host after three consecutive timeouts and forgives it on an answer', () => {
+    expect(FETCH_TIMEOUT_MS).toBe(30_000);
+    expect(HOST_STALL_LIMIT).toBe(3);
+    const stalls = new HostStalls();
+    stalls.record('gankdat.com', true);
+    stalls.record('gankdat.com', true);
+    expect(stalls.stalled('gankdat.com')).toBe(false);
+    stalls.record('gankdat.com', true);
+    expect(stalls.stalled('gankdat.com')).toBe(true);
+    expect(stalls.stalled('www.gov.uk')).toBe(false);
+    stalls.record('gankdat.com', false);
+    expect(stalls.stalled('gankdat.com')).toBe(false);
   });
 });

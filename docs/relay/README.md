@@ -59,6 +59,13 @@ GitHub runner to fetch for it:
    routine's commit (run 143, 2026-10-22) — the next request push re-runs every pending file, and since 2026-10-22 the step retries three times (foundry `workflow-push-retry-everywhere`). Never file a handoff for a dead run. The `fetch relay` workflow has committed
    `docs/relay/responses/<name>/meta.json` (status, headers, bytes, errors per line) and the
    bodies as `1.json`, `2.csv`, … The request file is deleted.
+   **Partial rounds** (2026-10-26, foundry `relay-round-survives-stalled-host`): `meta.json` is
+   written after every line, HEAD/GET/POST lines abort after 30 s (`error: "timeout"`, `elapsed_ms`;
+   RENDER keeps 90 s), a host that times out three lines in a row has its remaining lines recorded
+   as `skipped: "host stalled"`, a 429/503 whose `Retry-After` exceeds the 30 s cap is final (one
+   attempt, `retry_after` in the record) instead of three capped retries, and the Commit step runs
+   even when the fetch step hit its 12-minute cap — a killed round is committed with `partial: true`
+   and its request file removed. Read `partial` before trusting a round's line count.
 4. Read what you need, then carry on. Responses are pruned after 7 days.
 
 Rules: only hosts listed in `docs/relay/hosts.txt` (public data and store pages; one host or `.suffix` per line, since 2026-10-16 a data file so adding one is not a code push);
