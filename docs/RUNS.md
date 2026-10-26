@@ -1899,3 +1899,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 19:28 | burn-down | Tests: d1store parent-first and carry-over, stats page dates a carried page; add-in manifest and connector at 0.26.1
 - 2026-10-26 19:28 | burn-down | Relay: both dead sitemap requests removed; a 503 with Retry-After costs a relay line ~95 s, noted on the foundry item
 - 2026-10-26 19:28 | burn-down | Queued gankdat sitemap-5xx-verify (6, from 10-27): four HEADs after the first 06:05 wave on v0.26.1 prove the fix
+- 2026-10-26 19:36 | burn-down | owner-notes.yml first run: success (dispatch run 609 at 19:32, 21 s; after the 18:32 installer)
+- 2026-10-26 19:36 | burn-down | Built foundry search-console-error-mail-rule (4): inbox triage step 3 files sc-5xx-<date> (6) or sc-4xx-<date> (4)
+- 2026-10-26 19:36 | burn-down | One item per reason per venture per 7 days; the venture is the mail's property; the why quotes the mail, never a link
