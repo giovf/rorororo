@@ -1849,3 +1849,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 09:35 | build | First-run check: the 10-24 notify-owner, gankdat-publish and dependabot installs are already stamped; nothing dispatched
 - 2026-10-26 09:35 | notify | Meta hackathon entry built: one free 10-minute key step unlocks the live demo and video
 - 2026-10-26 09:35 | build | Dry recording in the sandbox: 7 shots, mp4 and transcript.md written (system ffmpeg linked for Playwright)
+- 2026-10-26 13:29 | watchdog | ci-failed: gankdat-metrics.yml run 267 07:18 — step Append today's numbers to RESEARCH.md; later run 268 ok
