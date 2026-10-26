@@ -1,4 +1,4 @@
-# Open-source bounty board — 2026-10-20
+# Open-source bounty board — 2026-10-26
 
 Written daily by `scripts/bounty-scanner.ts` (`.github/workflows/bounty-board.yml`) from GitHub's search API:
 open issues that received a `/bounty $N` command in the last 90 days or carry a bounty label, plus the issues
@@ -13,17 +13,17 @@ creator arranges payment after the merge, if the PR meets the issue — so an Op
 Rank = amount × language fit ÷ (1 + age in months) ÷ (1 + open PRs + assigned). Taken says what stands between a new
 claim and the money; the top 3 free ones at $25 or more become `oss-bounties` queue items.
 
-Read 594 issues (4 listed on Opire), kept 10; dropped: under 20 stars 232, no amount found 170, sandbox or security repository 80, proposed, not funded 52, reads as a security finding 15, no push in 90 days 11, already rewarded 9, contest or usage task, not a fix 6, fork 6, archived 2, needs a real device or the claimant's own recording 1.
+Read 589 issues (3 listed on Opire), kept 10; dropped: under 20 stars 304, no amount found 119, sandbox or security repository 82, proposed, not funded 17, no push in 90 days 11, contest or usage task, not a fix 10, reads as a security finding 10, the claimant must fund it or it pays to a wallet off GitHub 9, fork 9, already rewarded 5, archived 2, needs hardware the sandbox lacks 1.
 
 | Amount | Rank | Repository | Issue | Age | Taken | Attempts |
 | --- | --- | --- | --- | --- | --- | --- |
-| $102367 | 25592 | [asyncapi/community](https://github.com/asyncapi/community) (140★, JavaScript, CC-BY-4.0) | [#3633](https://github.com/asyncapi/community/issues/3633) Budget 2027 \| Planning and discussion | 30 d | assigned | 0 |
-| $20 | 8 | [slick/slick](https://github.com/slick/slick) (2666★, Scala, BSD-2-Clause) | [#3885](https://github.com/slick/slick/issues/3885) Long union chains overflow the stack in MergeToComprehensions | 1 d | free | 0 |
-| $100 | 4 | [moorcheh-ai/memanto](https://github.com/moorcheh-ai/memanto) (2334★, Python, MIT) | [#1852](https://github.com/moorcheh-ai/memanto/issues/1852) [BOUNTY $100]🛡️The Memanto Security Challenge: Test Our Defenses | 69 d | 6 PRs open | 10 |
-| $2 | 1 | [auscaster/frantic-board](https://github.com/auscaster/frantic-board) (613★, Shell, MIT) | [#541](https://github.com/auscaster/frantic-board/issues/541) Frantic bounty #143: Write and validate your own MAP description with the mailschema packa | 0 d | free | 0 |
-| $60 | 0 | [lablab-ai/community-content](https://github.com/lablab-ai/community-content) (69★, MDX, no licence) | [#462](https://github.com/lablab-ai/community-content/issues/462) Crafting a Comprehensive Tutorial for Vectara Chat | 938 d | 5 PRs open | 11 |
-| $50 | 0 | [arakoodev/EdgeChains](https://github.com/arakoodev/EdgeChains) (429★, JavaScript, AGPL-3.0) | [#290](https://github.com/arakoodev/EdgeChains/issues/290) BOUNTY: integrate AWS Comprehend as a utility to redact data | 1052 d | 59 PRs open | 50 |
-| $3 | 0 | [tscircuit/pcb-viewer](https://github.com/tscircuit/pcb-viewer) (22★, TypeScript, MIT) | [#163](https://github.com/tscircuit/pcb-viewer/issues/163) Remove `disableAutoFocus` in favor of `focusOnHover={false}` | 612 d | 49 PRs open | 57 |
-| $1 | 0 | [auscaster/frantic-board](https://github.com/auscaster/frantic-board) (613★, Shell, MIT) | [#538](https://github.com/auscaster/frantic-board/issues/538) Frantic bounty #139: Send your first email with the Nitrosend CLI and report how it went | 0 d | 1 PR open | 0 |
-| $1 | 0 | [auscaster/frantic-board](https://github.com/auscaster/frantic-board) (613★, Shell, MIT) | [#539](https://github.com/auscaster/frantic-board/issues/539) Frantic bounty #140: Send an email with a 30-line Nitrosend SDK script and report how it w | 0 d | free | 0 |
-| $1 | 0 | [auscaster/frantic-board](https://github.com/auscaster/frantic-board) (613★, Shell, MIT) | [#540](https://github.com/auscaster/frantic-board/issues/540) Frantic bounty #141: Let your agent onboard itself through the Nitrosend MCP server and se | 0 d | free | 0 |
+| $1000 | 882 | [dev-kp-eloper/BountyScout](https://github.com/dev-kp-eloper/BountyScout) (28★, Python, no licence) | [#1636](https://github.com/dev-kp-eloper/BountyScout/issues/1636) 🎯 Bounty Alert: 11 New Opportunityies found | 4 d | free | 0 |
+| $500 | 39 | [Arrow-air/project-quiver](https://github.com/Arrow-air/project-quiver) (582★, HTML, CERN-OHL-S-2.0) | [#256](https://github.com/Arrow-air/project-quiver/issues/256) T-09: Platform Engineering Report, the decision register from PT1 to the 2026 dev kit | 47 d | 1 PR open | 0 |
+| $100 | 4 | [moorcheh-ai/memanto](https://github.com/moorcheh-ai/memanto) (2342★, Python, MIT) | [#1852](https://github.com/moorcheh-ai/memanto/issues/1852) [BOUNTY $100]🛡️The Memanto Security Challenge: Test Our Defenses | 75 d | 6 PRs open | 10 |
+| $250 | 0 | [onyx-dot-app/onyx](https://github.com/onyx-dot-app/onyx) (32994★, Python, no licence) | [#2281](https://github.com/onyx-dot-app/onyx/issues/2281) Jira Service Management Connector | 787 d | 47 PRs open | 92 |
+| $60 | 0 | [lablab-ai/community-content](https://github.com/lablab-ai/community-content) (69★, MDX, no licence) | [#462](https://github.com/lablab-ai/community-content/issues/462) Crafting a Comprehensive Tutorial for Vectara Chat | 944 d | 6 PRs open | 13 |
+| $50 | 0 | [arakoodev/EdgeChains](https://github.com/arakoodev/EdgeChains) (432★, JavaScript, AGPL-3.0) | [#290](https://github.com/arakoodev/EdgeChains/issues/290) BOUNTY: integrate AWS Comprehend as a utility to redact data | 1058 d | 67 PRs open | 54 |
+| $30 | 0 | [arakoodev/EdgeChains](https://github.com/arakoodev/EdgeChains) (432★, JavaScript, AGPL-3.0) | [#273](https://github.com/arakoodev/EdgeChains/issues/273) BOUNTY: add support for qdrant vector database in javascript sdk | 1065 d | 93 PRs open | 61 |
+| $25 | 0 | [arakoodev/EdgeChains](https://github.com/arakoodev/EdgeChains) (432★, JavaScript, AGPL-3.0) | [#279](https://github.com/arakoodev/EdgeChains/issues/279) BOUNTY: add support for Google Palm2 API in javascript/typescript | 1061 d | 34 PRs open | 26 |
+| $20 | 0 | [highlight/highlight](https://github.com/highlight/highlight) (9384★, TypeScript, no licence) | [#8032](https://github.com/highlight/highlight/issues/8032) document sveltekit backend instrumentation | 955 d | 50 PRs open | 51 |
+| $3 | 0 | [tscircuit/pcb-viewer](https://github.com/tscircuit/pcb-viewer) (22★, TypeScript, MIT) | [#163](https://github.com/tscircuit/pcb-viewer/issues/163) Remove `disableAutoFocus` in favor of `focusOnHover={false}` | 618 d | 50 PRs open | 57 |
