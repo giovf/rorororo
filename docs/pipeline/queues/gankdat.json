@@ -851,8 +851,9 @@
       "effort_days": 0.3,
       "proof": "every sitemap URL answers 200 within 5 s through the relay; the next Search Console mail on gankdat.com is a recovery or none arrives in 14 days; the Daily check `search:` clause shows no 5xx verdict",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-10-26"
     }
   ],
   "research_after": "2026-10-30"
