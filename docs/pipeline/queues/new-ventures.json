@@ -310,8 +310,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/kdp-sole-trader-tax-guide.md states the UK 70 % band and delivery fee from the list-price page, the content-quality rules that apply, the owner's account steps, the four rivals' price, ratings count, publication date and rank, and a promote / park call (a promote files the build item in the tax-workbook queue)",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-10-26"
     },
     {
       "id": "spike-freshworks-marketplace-paid-apps",
