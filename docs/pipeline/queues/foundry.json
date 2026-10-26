@@ -1136,8 +1136,9 @@
       "effort_days": 0.2,
       "proof": "no ERR_MODULE_NOT_FOUND in any Node-run workflow for 30 days; adding an extensionless import to a reachable file turns the root test red naming the file and specifier",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-10-26"
     },
     {
       "id": "search-console-error-mail-rule",
