@@ -321,8 +321,9 @@
       "effort_days": 0.4,
       "proof": "docs/exchange/spikes/freshworks-marketplace-paid-apps.md quotes the Terms of Use on eligibility, payout and AI-built apps, states the review time, lists ≥ 5 paid data-enrichment apps with vendor, installs, rating count and price, and gives a promote / park call",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-10-26"
     },
     {
       "id": "spike-heroku-elements-add-on",
