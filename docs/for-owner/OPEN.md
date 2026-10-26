@@ -5,21 +5,24 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (5)
+## Requests (6)
 
 1. **add two read scopes to the CI Cloudflare token and say yes/…** — ~6 min, since 2026-10-24; unblocks gankdat `zoho-crm-uk-registers-widget` (2.4), tax-workbook `etsy-listing-live` (10), tax-workbook `payhip-twin-listing` (5). Steps: [030](actions/030-cloudflare-token-scopes-and-devcontainer-node.md).
    add two read scopes to the CI Cloudflare token and say yes/no to Node 24, ~6 min — docs/for-owner/actions/030-cloudflare-token-scopes-and-devcontainer-node.md
 
-2. **UK tax workbook is built** — ~30 min, since 2026-10-24; unblocks gankdat `zoho-crm-uk-registers-widget` (2.4), tax-workbook `etsy-listing-live` (10), tax-workbook `payhip-twin-listing` (5). Steps: [029](actions/029-etsy-shop-and-zoho.md).
+2. **the Kindle guide 'UK Sole Trader Tax 2026/27' is built** — ~15 min, since 2026-10-26; unblocks gankdat `zoho-crm-uk-registers-widget` (2.4), tax-workbook `etsy-listing-live` (10), tax-workbook `payhip-twin-listing` (5), tax-workbook `kdp-listing-live` (8). Steps: [029](actions/029-etsy-shop-and-zoho.md).
+   the Kindle guide 'UK Sole Trader Tax 2026/27' is built — open a free KDP account and upload it, ~15 min, £0 — docs/for-owner/actions/029-etsy-shop-and-zoho.md step 5
+
+3. **UK tax workbook is built** — ~30 min, since 2026-10-24; unblocks gankdat `zoho-crm-uk-registers-widget` (2.4), tax-workbook `etsy-listing-live` (10), tax-workbook `payhip-twin-listing` (5), tax-workbook `kdp-listing-live` (8). Steps: [029](actions/029-etsy-shop-and-zoho.md).
    UK tax workbook is built — open the Etsy shop (ID check, bank, fee ≤ £25) + free Zoho sign-in, ~30 min — docs/for-owner/actions/029-etsy-shop-and-zoho.md
 
-3. **gankdat's Excel add-in is built** — ~45 min, since 2026-10-24; unblocks gankdat `zoho-crm-uk-registers-widget` (2.4), tax-workbook `etsy-listing-live` (10), tax-workbook `payhip-twin-listing` (5). Steps: [031](actions/031-partner-center-appsource.md).
+4. **gankdat's Excel add-in is built** — ~45 min, since 2026-10-24; unblocks gankdat `zoho-crm-uk-registers-widget` (2.4), tax-workbook `etsy-listing-live` (10), tax-workbook `payhip-twin-listing` (5). Steps: [031](actions/031-partner-center-appsource.md).
    gankdat's Excel add-in is built — try it once in Excel, open a free Partner Center account and submit it to AppSource, ~45 min, £0 — docs/for-owner/actions/031-partner-center-appsource.md
 
-4. **PayPal hackathon organiser says the Devpost entry has no de…** — ~3 min, since 2026-10-21; nothing queued waits on it. Steps: [028](actions/028-paypal-devpost-demo-access.md).
+5. **PayPal hackathon organiser says the Devpost entry has no de…** — ~3 min, since 2026-10-21; nothing queued waits on it. Steps: [028](actions/028-paypal-devpost-demo-access.md).
    PayPal hackathon organiser says the Devpost entry has no demo access; add the demo link or run steps to the form by 12 Nov. — Prepared 2026-10-23 (burn-down): paste-ready demo URL and testing instructions in docs/for-owner/actions/028-paypal-devpost-demo-access.md (~3 min); the public mirror's README now carries the r…
 
-5. **gankdat's Power Platform connector is built** — ~50 min, since 2026-10-25; nothing queued waits on it. Steps: [031](actions/031-partner-center-appsource.md).
+6. **gankdat's Power Platform connector is built** — ~50 min, since 2026-10-25; nothing queued waits on it. Steps: [031](actions/031-partner-center-appsource.md).
    gankdat's Power Platform connector is built — one more ~50 min step on the Partner Center account, £0 — docs/for-owner/actions/031-partner-center-appsource.md step 4
 
 ## Waiting on an attended Claude session, not you (2)

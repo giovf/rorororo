@@ -338,3 +338,4 @@ closed entries older than 30 days (git keeps the history).
 - 2026-10-24 owner: add two read scopes to the CI Cloudflare token and say yes/no to Node 24, ~6 min — docs/for-owner/actions/030-cloudflare-token-scopes-and-devcontainer-node.md
 - 2026-10-24 owner: gankdat's Excel add-in is built — try it once in Excel, open a free Partner Center account and submit it to AppSource, ~45 min, £0 — docs/for-owner/actions/031-partner-center-appsource.md
 - 2026-10-25 owner: gankdat's Power Platform connector is built — one more ~50 min step on the Partner Center account, £0 — docs/for-owner/actions/031-partner-center-appsource.md step 4
+- 2026-10-26 owner: the Kindle guide 'UK Sole Trader Tax 2026/27' is built — open a free KDP account and upload it, ~15 min, £0 — docs/for-owner/actions/029-etsy-shop-and-zoho.md step 5

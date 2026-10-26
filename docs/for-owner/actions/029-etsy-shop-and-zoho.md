@@ -2,13 +2,14 @@
 
 - **Date:** 2026-10-24
 - **Status:** open
-- **Your time:** ~40 minutes (Etsy ~25, Zoho ~5, Payhip ~10)
+- **Your time:** ~55 minutes (Etsy ~25, Zoho ~5, Payhip ~10, Kindle ~15 — step 5 added 2026-10-26)
 - **Cost:** Etsy's one-time shop set-up fee, **≤ £25** — the amount Etsy shows at "Total due now" (US$15–29 plus VAT; waived
   in some promotional periods). It is recorded as `contingent` in `docs/LEDGER.md` and becomes a `cost` row the day you
   pay it. **This is the one line item over the operation's £10 launch rule, so it is your decision** — if you would rather
   not pay it, say so and the workbook goes on Payhip (free, weaker reach) instead. Zoho: £0.
-- **Blocks:** `tax-workbook/etsy-listing-live` (the first product on Etsy) and `gankdat/zoho-crm-uk-registers-widget`
-  (a paid Zoho CRM extension, built once the developer sign-in exists)
+- **Blocks:** `tax-workbook/etsy-listing-live` (the first product on Etsy), `gankdat/zoho-crm-uk-registers-widget`
+  (a paid Zoho CRM extension, built once the developer sign-in exists) and, since 2026-10-26, `tax-workbook/kdp-listing-live`
+  (the Kindle guide, step 5)
 
 Everything below needs *your* identity or wallet; nothing else in the backlog does. The product is finished:
 `ventures/tax-workbook/release/UK-Sole-Trader-Tax-Workbook-2026-27.xlsx` (checked: 0 formula errors, the worked example
@@ -76,8 +77,30 @@ listing in `ventures/tax-workbook/LISTING.md`.
 - **Give back:** "Payhip done" and the store URL (payhip.com/<name>).
 - **Cost:** £0.
 
+### 5. Amazon KDP — publish the Kindle guide (free, ~15 min; added 2026-10-26)
+- **What:** a KDP account in your own name and one upload: the finished ebook `UK Sole Trader Tax 2026/27` (a standalone
+  guide built from the same rates as the workbook) and its cover. Amazon lists it for £0, adds VAT and pays 70 % of the
+  ex-VAT price (≈ £2.70 a sale at £4.99) by bank transfer in GBP about 60 days after each month.
+- **Where:** https://kdp.amazon.com → Sign up (your Amazon login works) → Bookshelf
+- **Steps:**
+  1. Create the KDP account with the Foundry email (so "your book is live" and payment mails reach the inbox triage).
+  2. **Account → Tax interview:** individual, not a US person, UK resident; it produces a W-8BEN with 0 % US withholding
+     under the UK treaty. Give your UK tax identifier (UTR or National Insurance number). **Bank:** your UK account in
+     your name (sort code + account number). Nothing is charged to you — KDP only pays out.
+  3. Bookshelf → Create → Kindle eBook. Paste every field from `ventures/tax-workbook/KINDLE.md` (title, subtitle,
+     description, 7 keywords, 2 categories). **Answer "Yes" to the AI-generated content question** and choose "Text:
+     AI-generated" — KDP requires the disclosure and allows the book; it is not shown to buyers.
+  4. Upload `ventures/tax-workbook/kindle/UK-Sole-Trader-Tax-2026-27.epub` and `ventures/tax-workbook/kindle/cover.jpg`.
+     Open the previewer once. DRM: no.
+  5. Pricing: enrol in KDP Select, all territories, primary marketplace Amazon.co.uk, 70 % royalty, £4.99. Publish.
+  6. When the "live" mail arrives (up to 72 h): Bookshelf → Promote and Advertise → Kindle Countdown Deal, £2.99 for 7 days.
+- **Give back:** the book's amazon.co.uk URL (or ASIN) and the date it went live. Once a month, a note `kindle: N sold`
+  from KDP Reports. No passwords in chat.
+- **Cost:** £0.
+
 ## When you're done
 1. Set **Status** above to `done` and note anything that differed from the steps (especially the fee amount).
 2. Nothing goes in `.env` for this request.
 3. Say "029 done" (Telegram note or the dashboard idea box): the next run records the listing (`etsy-listing-live`),
-   adds the fee to the ledger and unblocks the Zoho item.
+   adds the fee to the ledger and unblocks the Zoho item. If you do the Kindle step on its own, say "029 kindle done" with
+   the book URL and the next run records it (`kdp-listing-live`).

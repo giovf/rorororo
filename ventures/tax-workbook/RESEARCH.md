@@ -64,7 +64,7 @@ for the funnel. No counts are visible and payhip.com blocks automated reads (Clo
 unmeasurable: the twin lists the same file at the same price (`payhip-twin-listing`, action 029 step 4) and is the fallback
 shelf if the owner declines Etsy's set-up fee.
 
-**A Kindle sibling, not a twin — Amazon KDP (new-ventures research 2026-10-26, spike `spike-kdp-sole-trader-tax-guide`).** The rendered amazon.co.uk Kindle search for "self assessment tax return 2026 27 sole trader" (relay `billed-shelves-2026-10-26`, 16 results) shows buyers counted on the shelf: a £3.99 Making Tax Digital playbook with 245 ratings since 26 Aug 2026, a £9.99 MTD guide (34), the £6.50 "How to prepare your UK Self Assessment Tax Return" sold as a new edition every April since 2017 (11–36 ratings an edition), and a direct rival to this workbook — "UK Sole Trader & Side Hustle Tax Workbook 2026/27: Self Assessment and Making Tax Digital", £4.99, published 21 Oct 2026, no ratings yet. An ebook cannot carry the formulas, so the KDP shape is a guide-plus-companion that points at the workbook; KDP requires AI-generated text to be disclosed and allows it; 70 % of the ex-VAT price less delivery. The spike decides.
+**A Kindle sibling, not a twin — Amazon KDP (new-ventures research 2026-10-26, spike `spike-kdp-sole-trader-tax-guide`).** The rendered amazon.co.uk Kindle search for "self assessment tax return 2026 27 sole trader" (relay `billed-shelves-2026-10-26`, 16 results) shows buyers counted on the shelf: a £3.99 Making Tax Digital playbook with 245 ratings since 26 Aug 2026, a £9.99 MTD guide (34), the £6.50 "How to prepare your UK Self Assessment Tax Return" sold as a new edition every April since 2017 (11–36 ratings an edition), and a direct rival to this workbook — "UK Sole Trader & Side Hustle Tax Workbook 2026/27: Self Assessment and Making Tax Digital", £4.99, published 21 Oct 2026, no ratings yet. KDP requires AI-generated text to be disclosed and allows it; 70 % of the ex-VAT price less delivery. The spike (same night) promoted it: KDP's content-quality rules bar companion books and books that redirect readers for the full content, so the shape is a complete standalone guide — built 2026-10-26, §5b.
 
 **Not a twin — Creative Market (pre-research 2026-10-24, exchange `creative-market-templates-shelf`).** Shops open by application against a design portfolio of 10–20 works, the split is ≈ 50 % (official: 'varies per shop/per product'), and five search-index passes found no spreadsheet or Google Sheets listing on the shelf at all; parked, no relay read.
 
@@ -96,11 +96,32 @@ what the buyer gains and what it is not: record-keeping, not MTD-recognised fili
 excludes partnerships and VAT-registered traders. Price £6.99 launch with a stated end date (a true launch price, per
 the DMCC fake-urgency rule), then £8.99. No invented scarcity.
 
+### 5b. The Kindle sibling — `UK Sole Trader Tax 2026/27` (built 2026-10-26, burn-down, `kdp-tax-guide-ebook`)
+
+`ventures/tax-workbook/src/kindle/` — `npm run kindle` writes `kindle/UK-Sole-Trader-Tax-2026-27.epub` (EPUB 3, JSZip; 17 sections,
+9,102 words, 267 kB; epubcheck 5.2.1 0 errors / 0 warnings) and `kindle/cover.jpg` (1600 × 2560, SVG → resvg → sharp). Every figure in
+the prose and the tables is computed from `src/rates.ts` and `src/tax.ts` (Sam's year is the workbook's Example tab: £31,900 profit,
+£5,025.80 due, £2,512.90 payments on account; Priya £58,000 profit into the higher rate; Leo's £3,400 side income on the trading
+allowance; Amy's £6,200 first year and voluntary Class 2 at £189.80; 12,400 miles over the step-down), so the book and the workbook
+cannot disagree. Outline: about · 1 basics (tax year, tax-year basis, registering by 5 Oct, cash basis) · 2 the 2026/27 numbers and
+dates · 3 records · 4 income · 5 expenses (SA103S boxes 11–19, home working flat rates, equipment under cash basis / AIA box 23) ·
+6 mileage · 7 trading allowance · 8 Income Tax (bands, taper, Scotland/Wales) · 9 NI (Class 4; Class 2 abolished 2024, voluntary
+£3.65) · 10 paying (31 Jan, payments on account, SA303, budget plan) · 11 MTD (timetable £50k/£30k/£20k, quarters and the 7 Aug /
+Nov / Feb / May deadlines, calendar election, final declaration, points) · 12 SA103S box by box · 13 a complete year · 14 deadlines,
+penalties, checklist · sources · colophon. **KDP content-quality shape**: standalone, no redirect for "the full content", not a
+companion — the workbook is named once, in the colophon, as a separate product (`kindle.test.ts` enforces exactly one mention, back
+matter only, no URLs). **Disclosure**: the text is AI-generated under KDP's definition and is declared so on the KDP form; the
+copyright page and colophon say the same. Listing pack (title, subtitle, description ≤ 4,000 chars, 7 keywords, 2 categories,
+£4.99 at 70 % ≈ £2.70 net, a 7-day Countdown Deal at £2.99, KDP Select) in `KINDLE.md`, mirrored by `src/kindle/kdp.ts` with tests
+on the form limits. New dependencies: `jszip` (already in the tree through ExcelJS) and `sharp` (JPEG encoding). The owner's KDP
+account, tax interview (W-8BEN) and bank, and the upload, are action 029 step 5 (~15 min, £0); `kdp-listing-live` records the ASIN.
+
 ## 6. Numbers that decide
 
 - **Proof**: a first sale within 30 days of listing; ≥ 10 sales in the first 60 days (the rival's rate is ~14 a month).
 - **Kill**: 0 sales 60 days after listing with ≥ 5 listing views a day in Shop Manager → delist, keep the file for the
   Payhip twin or our own Stripe link (£0 shelves, weaker reach).
+- **Kindle reading** (2026-10-26): KDP Reports → Dashboard, pasted by the owner as a monthly `kindle: N sold` note; the same proof and kill clock as Etsy, counted from the day the book goes live. No mail parsing, no reads of amazon.co.uk.
 - **Reading**: Etsy's seller emails — the hourly inbox triage writes each order mail as a `Sale` row below and each
   deposit mail as a `revenue` row in `docs/LEDGER.md` (`docs/routines/inbox-triage.md` ETSY SALES, 2026-10-25) — and the
   owner's Shop Manager stats, sent as a usage-style note; the Open API v3 only later and only for this shop's own stats with the owner's OAuth grant.
@@ -119,10 +140,13 @@ rows written from Etsy's deposit mail. The day-60 kill clock (§6) starts at the
 | 2026-10-24 | Opened | — | — | 0 | venture opened by exchange 2026-W43; workbook queued; shop opening waits on the owner's one batched request |
 | 2026-10-24 | Built | — | — | 0 | workbook v1.0 built and recalculated (2,122 formulas, 0 errors, Example = hand-worked £5,025.80); LISTING.md + 5 images; action 029 raised; status `validated` |
 | 2026-10-25 | Reading wired | — | — | 0 | inbox triage writes `Sale`/`Refund` rows from Etsy order mail and deposits to the ledger; the weekly report counts them; shop still waits on action 029 |
+| 2026-10-26 | Kindle built | — | — | 0 | `UK Sole Trader Tax 2026/27` EPUB (9,102 words, epubcheck clean) and cover built; KINDLE.md listing pack; action 029 step 5 raised (KDP account + upload, ~15 min, £0) |
 
 ## 8. Owner steps (batched, raised by the build that finishes the workbook, never before)
 
 One sitting of ~30 minutes: open the Etsy shop (Persona ID + selfie, a personal bank account in the owner's name, a
 card for fees), pay the set-up fee (≤ £25, a `docs/LEDGER.md` `cost` row the day it is charged), upload the file and
 five listing images with the listing copy from `LISTING.md`, and set the payout schedule to weekly. Later: forward or
-answer buyer messages the triage drafts; each April, upload the refreshed file.
+answer buyer messages the triage drafts; each April, upload the refreshed file. **Added 2026-10-26 (step 5, ~15 min, £0):** open a KDP
+account, complete the tax interview (W-8BEN, UK resident) and bank details, upload the EPUB and cover with the copy in `KINDLE.md`,
+tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start the 7-day £2.99 Countdown Deal once live.

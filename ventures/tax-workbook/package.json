@@ -3,15 +3,18 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "UK Sole Trader Tax Workbook 2026/27 — an .xlsx built from TypeScript (ExcelJS), recalculated headless with LibreOffice, sold as an Etsy digital download.",
+  "description": "UK Sole Trader Tax Workbook 2026/27 — an .xlsx built from TypeScript (ExcelJS), recalculated headless with LibreOffice, sold as an Etsy digital download; and its Kindle sibling, a standalone 2026/27 sole-trader tax guide built as an EPUB (JSZip) for Amazon KDP.",
   "scripts": {
     "build": "node --disable-warning=ExperimentalWarning src/build.ts",
     "recalc": "node --disable-warning=ExperimentalWarning src/recalc.ts",
     "images": "node --disable-warning=ExperimentalWarning src/images.ts",
     "test": "vitest run --root ../.. ventures/tax-workbook",
-    "typecheck": "tsc --noEmit -p tsconfig.json"
+    "typecheck": "tsc --noEmit -p tsconfig.json",
+    "kindle": "node --disable-warning=ExperimentalWarning src/kindle/build.ts"
   },
   "dependencies": {
-    "exceljs": "^4.4.0"
+    "exceljs": "^4.4.0",
+    "jszip": "^3.10.2",
+    "sharp": "^0.35.5"
   }
 }

@@ -1817,3 +1817,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 00:41 | burn-down | Heroku: 70 % of net revenue in 30 days, GA after 15 testers, no install counts; API add-ons $69–499/mo capped hourly
 - 2026-10-26 00:41 | burn-down | Idea heroku-elements-add-on parked with two triggers; new-ventures emptied, needs research again
 - 2026-10-26 00:41 | burn-down | Stopping: next is tax-workbook kdp-tax-guide-ebook, a 1-day build; 15 min left, the 01:00 slot takes it
+- 2026-10-26 01:30 | burn-down | tax-workbook kdp-tax-guide-ebook done: standalone Kindle guide 'UK Sole Trader Tax 2026/27' built as EPUB 3
+- 2026-10-26 01:30 | burn-down | src/kindle/content.ts: 17 sections, 9,102 words; every figure computed from rates.ts and tax.ts (4 worked examples)
+- 2026-10-26 01:30 | burn-down | src/kindle/epub.ts + cover.ts + build.ts: JSZip package, 1600x2560 JPEG cover; epubcheck 5.2.1 0 errors 0 warnings
+- 2026-10-26 01:30 | burn-down | kindle.test.ts: well-formed XHTML, manifest, figures, one workbook mention in back matter only, KDP form limits
+- 2026-10-26 01:30 | burn-down | KINDLE.md + kdp.ts: title, description, 7 keywords, 2 categories, £4.99 at 70 %, 7-day £2.99 Countdown, AI disclosure
+- 2026-10-26 01:30 | burn-down | Action 029 step 5 (KDP account, W-8BEN, upload, ~15 min, £0); ALERTS owner line; SELF-CAUSED row for KDP mail
+- 2026-10-26 01:30 | burn-down | tax-workbook kdp-listing-live queued, blocked on action 029 step 5; deps jszip + sharp added to the venture
+- 2026-10-26 01:30 | notify | Your UK tax guide is ready for Kindle: one free 15-minute sitting opens the Amazon account and uploads it
