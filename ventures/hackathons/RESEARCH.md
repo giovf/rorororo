@@ -68,6 +68,57 @@ Next signal: the owner's application (action 027, by 25 Oct) and the Official Ru
 2026-10-26. Research sources that stay open: lablab.ai's hackathon index (Agent Rush's extra tracks), the next MCP_HACK and
 Colosseum editions, and the Meta Model API docs (`dev.meta.ai`) for the entry's endpoint shape.
 
+Read 2026-10-26 (build) — the Meta Global AI Developer Hackathon **Official Rules**, published as the
+event waiver (`cerebralvalley.ai/e/meta-ai-developer-hackathon/waiver`, "Hackathon Terms & Conditions
+('Official Rules') and Event Waiver", dated 25 Oct 2026; relay `meta-hackathon-rules-2026-10-26`,
+`meta-hackathon-rules-b-2026-10-26`). The `/details` page the welcome blast points to is behind the
+participant login (rendered: a sign-in form), so the Credit Terms it links are unread — step 1 of
+action 032 asks the owner to read them before claiming the credits.
+
+| Question | What the rules say | For the entry |
+| --- | --- | --- |
+| Existing project? | "Participants build with Meta AI products"; a Submission must be "original work product", "solely owned by the Participant", and may "include open source software … provided … the Submission enhances or builds upon the underlying open source product". No clause excludes pre-existing code or demands work from scratch | **allowed** — the agent, the page and the CLI were built inside the window on top of the owner's own product (gankdat) and the owner's fixture-only prototype |
+| AI-assisted work? | nothing on AI tools or coding agents; "Participants may contract with a third party for technical assistance, provided the Submission components remain the Participant's own work and the Participant owns all rights to them" | **allowed** — the submission says it was built with Claude Code |
+| IP and licence | "the entrant retains ownership of all intellectual and industrial property rights"; grants the Organizers a perpetual, royalty-free, non-exclusive licence to use, publish and adapt the Submission "for any purpose", including marketing; all "Materials" shared during the event are non-confidential | acceptable: the code is public anyway; nothing private goes in |
+| Judging (projects) | Impact 30 % (real-world potential, fits a problem statement), Use of Meta AI Tooling 25 % ("beyond a basic integration"), Technical Depth & Execution 20 %, Demo 25 % (working demo that "holds up live", video quality) | SUBMISSION.md is written to the four; the live page is the demo |
+| Prizes | indie track US$400k: 150k / 100k / 75k / 50k / 25k; startup track US$550k; bonus prizes up to US$50k (community vote, most viral, …) announced ~10 Nov; prizes in USD after eligibility verification; winners pay fees and taxes and may need a **W-8BEN** | the owner is eligible (UK individual, 18+, not sanctioned, not Meta/CV staff) |
+| Tracks and teams | one track per participant and per project; indie track for individuals and students, teams up to four; submissions at `cerebralvalley.ai/e/meta-ai-developer-hackathon/hackathon/submit` | solo, indie track |
+| Credits | "$150 in Meta Model API credits, valid for a 10-day development window", Credit Terms to be read before claiming | the whole entry runs on them (§2c: a check is a few cents) |
+| Dates | application deadline 25 Oct 11:59 PM EST; the event page now reads "Event Closed" for applications; submissions due 4 Nov 9:00 PM ET, judging to 8 Nov, winners 9 Nov; organisers may change dates on the page | `meta-global-ai-hackathon-live-run` before 4 Nov; the owner submits (action 032 step 3) |
+| Other | California law, San Francisco venue; release and indemnity; code of conduct; the Organizers may record and use screen shares and submissions | nothing that blocks |
+
+**Decision:** entry built 2026-10-26 (`meta-global-ai-hackathon-entry` done; §2c for the model terms):
+the counterparty-check page at https://apps.gankdat.com/diligence (Muse Spark on Meta Model API over
+gankdat's seven registers via MCP, server-sent-event stream, per-visitor and daily caps), the CLI
+`scripts/meta-diligence-agent.ts`, the shared core `packages/landing/src/diligence-core.ts`, the demo
+recorder `scripts/demo-meta-global-ai-hackathon.ts`, and `entries/meta-global-ai-hackathon/`
+(SUBMISSION.md, WALKTHROUGH.md, DEMO-SCRIPT.md). The live run, the video and the final text wait on
+the model key (action 032 step 1); the owner submits by 4 Nov (step 3).
+
+### 2c. Meta Model API terms (official docs, read 2026-10-26 through the relay)
+
+- Endpoint (`dev.meta.ai/docs/api-reference`, `/docs/sdks`): `https://api.meta.ai/v1`, bearer key
+  (`LLM_<id>_<secret>`, created in the Model API dashboard's API keys tab, shown once), OpenAI-compatible
+  Chat Completions (`/v1/chat/completions` with `tools`, `tool_choice`, `reasoning_effort`
+  minimal…xhigh — `none` is a 400 on Muse Spark; `temperature` best left at its default), a Responses API
+  and an Anthropic-compatible Messages API on the same models. Tool names: `^[a-zA-Z0-9_.-]+$` with at
+  most one dot (gankdat's `query_uk_sanctions` form passes).
+- Models (`/docs/models`): `muse-spark-1.3` (recommended; 1,048,576-token context, tool calling,
+  structured output), `muse-spark-1.2`, `-contributor` variants (content used for training, cheaper),
+  `muse-wonder-1.0` (preview, 16× the price). **Muse Spark Open** (816B MoE, 42B active) is not on
+  Model API: self-host or a hosted provider — Baseten, Fireworks AI, Groq, Modal, Nebius, Together AI,
+  OpenRouter are launch partners — under the Muse Model License and Acceptable Use Policy.
+- Prices (`/docs/pricing-rate-limits`): Muse Spark Standard US$1.25 input / US$4.25 output / US$0.15
+  cached per million tokens (Contributor US$0.10 / US$0.20); Muse Wonder US$4 / US$20. Rate limits
+  3,000 RPM and 4M TPM per team. A diligence run of three model calls and ~10k tokens costs about
+  two cents; the agent's 300k-token guard bounds any run under US$1.50, and the page's 150 checks a
+  day bound the hackathon at US$150 only if every check hit the guard. Standard mode: "your content
+  … is not used to train Meta models".
+- Hackathon partner credits (event page): Baseten US$100 (2M TPM), Modal US$100, Fireworks US$25,
+  for the open-weight models — the same request with another base URL and model id
+  (`DILIGENCE_BASE_URL`, `DILIGENCE_MODEL`, `DILIGENCE_API_KEY`); not used unless the Meta credits
+  run short.
+
 ### 2b. Nebius Token Factory terms (official docs, read 2026-10-13 through the relay)
 
 - Billing (`docs.tokenfactory.nebius.com/other-capabilities/billing-new`): "Billing setup is mandatory — you

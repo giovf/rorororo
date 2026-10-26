@@ -28,6 +28,8 @@ packages/landing         Cloudflare Worker at https://apps.gankdat.com/: public 
                          sign-in, ventures by type, pipeline by queue, owner page with an idea box that
                          flows into docs/OWNER-NOTES.md through the hourly owner-notes job); data is
                          `src/ops-data.json`, rebuilt from the repo at every deploy (`npm run ops:data`)
+                         plus /diligence (2026-10-26): the Meta hackathon's public counterparty-check page — Muse Spark on
+                         Meta Model API over gankdat's registers via MCP (`src/diligence-core.ts`, shared with the CLI)
 packages/telemetry       opt-in funnel event counting (planned, V2)
 ventures/<slug>/         one workspace per product: venture.json, RESEARCH.md, src/
 ventures/variables-toolkit   V1 Figma plugin — launched 2026-09-21 on Figma Community, $12 one-time

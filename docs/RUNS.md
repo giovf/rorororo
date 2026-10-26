@@ -1835,3 +1835,17 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 07:50 | report | alert: gankdat Daily numbers job fails under Node 24 (x402-sales import); no 10-26 row
 - 2026-10-26 07:50 | report | owner waiting: 6 asks, none older than 7 days; 2 agent handoffs overdue (22 and 21 days)
 - 2026-10-26 07:50 | report | next: owner does the Etsy/Zoho sitting (action 029); agent fixes the Node 24 import
+- 2026-10-26 09:35 | build | hackathons meta-global-ai-hackathon-rules-read done: Official Rules = event waiver; existing project, AI work allowed
+- 2026-10-26 09:35 | build | Rules: entrant keeps IP; judged Impact 30/Meta tooling 25/depth 20/demo 25; indie $150k–25k; submit by 4 Nov 9 PM ET
+- 2026-10-26 09:35 | build | hackathons meta-global-ai-hackathon-entry done: Muse Spark agent over gankdat's 7 registers, page, CLI, recorder, text
+- 2026-10-26 09:35 | build | packages/landing/src/diligence-core.ts: tool loop, Meta Model API call, MCP discovery, Budget guard, fixtures; 12 tests
+- 2026-10-26 09:35 | build | apps.gankdat.com/diligence: form, SSE stream per register, report, 6/hour per visitor and 150/day caps in KV; 4 tests
+- 2026-10-26 09:35 | build | scripts/meta-diligence-agent.ts (Meta default, partner endpoints by env, --transcript) + demo recorder; 6 tests
+- 2026-10-26 09:35 | build | docs/ci/landing.yml stores META_MODEL_API_KEY as the Worker secret; demo-video.yml gains company input, *.md artifact
+- 2026-10-26 09:35 | build | Entry docs: SUBMISSION.md to the four criteria, WALKTHROUGH.md dry run, DEMO-SCRIPT.md (7 shots, 158.5 s planned)
+- 2026-10-26 09:35 | build | meta-global-ai-hackathon-live-run queued (9), blocked on action 032 step 1 (Meta Model API key); owner submits in step 3
+- 2026-10-26 09:35 | build | Meta Model API terms (RESEARCH §2c): api.meta.ai/v1, muse-spark-1.3 at $1.25/$4.25 per M tokens; a check ≈ 2 cents
+- 2026-10-26 09:35 | build | gankdat heal: rest-callers.ts and change-feed-callers.ts import ./x402-sales.ts; Daily numbers job loads under Node 24
+- 2026-10-26 09:35 | build | First-run check: the 10-24 notify-owner, gankdat-publish and dependabot installs are already stamped; nothing dispatched
+- 2026-10-26 09:35 | notify | Meta hackathon entry built: one free 10-minute key step unlocks the live demo and video
+- 2026-10-26 09:35 | build | Dry recording in the sandbox: 7 shots, mp4 and transcript.md written (system ffmpeg linked for Playwright)

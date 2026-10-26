@@ -8,6 +8,7 @@
 import { Hono, type Context } from 'hono';
 import { getCookie, setCookie, deleteCookie } from 'hono/cookie';
 import raw from './ops-data.json' with { type: 'json' };
+import { diligence } from './diligence';
 
 type Bindings = {
   ASSETS: Fetcher;
@@ -16,6 +17,10 @@ type Bindings = {
   EMAIL_FROM: string;
   RESEND_API_KEY?: string;
   OPS_INTERNAL_TOKEN?: string;
+  DILIGENCE_API_KEY?: string;
+  DILIGENCE_GANKDAT_KEY?: string;
+  DILIGENCE_BASE_URL?: string;
+  DILIGENCE_MODEL?: string;
 };
 type Ctx = Context<{ Bindings: Bindings }>;
 
@@ -199,6 +204,12 @@ app.post('/ops/api/ideas/ack', async (c) => {
   }
   return c.json({ acknowledged: n });
 });
+
+// ------------------------------------------------------------------ /diligence: the Meta hackathon demo
+// The counterparty-check page and its event stream (src/diligence.ts, hackathons
+// `meta-global-ai-hackathon-entry`, 2026-10-26); public, no session, its own caps in KV.
+
+app.route('/diligence', diligence);
 
 // ------------------------------------------------------------------ everything else: the static site
 

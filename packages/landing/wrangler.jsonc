@@ -13,15 +13,22 @@
     "binding": "ASSETS",
     "html_handling": "none",
     "not_found_handling": "none",
-    "run_worker_first": ["/ops", "/ops/*"],
+    "run_worker_first": ["/ops", "/ops/*", "/diligence", "/diligence/*"],
   },
   "kv_namespaces": [{ "binding": "OPS_KV", "id": "445a391f7ec14e4b9ee7976ff592a3ff" }],
   "vars": {
     // Who may sign in to /ops (comma-separated, case-insensitive). Codes go only to these.
     "OWNER_EMAILS": "gio@1402celsius.com,giova1506@hotmail.com",
     "EMAIL_FROM": "Foundry Ops <no-reply@mail.gankdat.com>",
+    // /diligence (hackathons meta-global-ai-hackathon-entry, 2026-10-26): the model behind the
+    // counterparty check — Muse Spark on Meta Model API; a partner endpoint serving Muse Spark Open
+    // is another base URL and model id here.
+    "DILIGENCE_BASE_URL": "https://api.meta.ai/v1",
+    "DILIGENCE_MODEL": "muse-spark-1.3",
   },
-  // Secrets (wrangler secret put): RESEND_API_KEY, OPS_INTERNAL_TOKEN.
+  // Secrets (wrangler secret put): RESEND_API_KEY, OPS_INTERNAL_TOKEN; DILIGENCE_API_KEY (the landing
+  // workflow sets it from the META_MODEL_API_KEY repository secret, action 032) and the optional
+  // DILIGENCE_GANKDAT_KEY (a gankdat API key so the registers answer in full on /diligence).
   "routes": [{ "pattern": "apps.gankdat.com", "custom_domain": true }],
   "workers_dev": true,
 }
