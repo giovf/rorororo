@@ -1881,3 +1881,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 18:30 | burn-down | hackathons research: web sweep, nothing fits an existing-project entry; no item, research_after 2026-11-05
 - 2026-10-26 18:30 | burn-down | Gemma 4 (Kaggle, $100k) is a model benchmark and papers; Agent Rush tracks still TBA; MCP and x402 editions all 2025
 - 2026-10-26 18:30 | burn-down | Watch for the 11-05 pass: an Anthropic + Gradio MCP birthday 2026 edition (2025 ran 14-30 Nov, $21k) fits the MCP server
+- 2026-10-26 18:29 | burn-down | Built foundry schedule-delivery-dispatch (6): triage dispatches notify-owner when its last run is over 2 h 10 min old
+- 2026-10-26 18:29 | burn-down | docs/ci/owner-notes.yml drops the hourly cron (poll rides notify owner; 3 of 18 fires on 10-26); dispatch stays
+- 2026-10-26 18:29 | burn-down | SCHEDULERS rows for owner notes and notify owner carry the 10-26 change; the 11-02 minutes reading names the delta
