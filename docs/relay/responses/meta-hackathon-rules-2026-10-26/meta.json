@@ -1,0 +1,176 @@
+{
+  "request": "meta-hackathon-rules-2026-10-26",
+  "fetched_at": "2026-10-26T09:15:40.018Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/details.md",
+      "fetched_at": "2026-10-26T09:15:32.790Z",
+      "status": 404,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/details.md",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline",
+        "etag": "W/\"f939c1d9c4a3c48facc82e6a30984cc7\""
+      },
+      "file": "1.html",
+      "bytes": 63787,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/details",
+      "fetched_at": "2026-10-26T09:15:33.520Z",
+      "status": 200,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/details",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"gum5t57ukk49lr\""
+      },
+      "file": "2.html",
+      "bytes": 199274,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon.md",
+      "fetched_at": "2026-10-26T09:15:34.099Z",
+      "status": 200,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 7277,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/rules.md",
+      "fetched_at": "2026-10-26T09:15:34.871Z",
+      "status": 404,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/rules.md",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline",
+        "etag": "W/\"f939c1d9c4a3c48facc82e6a30984cc7\""
+      },
+      "file": "4.html",
+      "bytes": 63787,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/rules",
+      "fetched_at": "2026-10-26T09:15:35.439Z",
+      "status": 404,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/rules",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline",
+        "etag": "W/\"f939c1d9c4a3c48facc82e6a30984cc7\""
+      },
+      "file": "5.html",
+      "bytes": 63787,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/waiver.md",
+      "fetched_at": "2026-10-26T09:15:35.997Z",
+      "status": 404,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/waiver.md",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline",
+        "etag": "W/\"f939c1d9c4a3c48facc82e6a30984cc7\""
+      },
+      "file": "6.html",
+      "bytes": 63787,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/discord.md",
+      "fetched_at": "2026-10-26T09:15:36.542Z",
+      "status": 404,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/discord.md",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline",
+        "etag": "W/\"f939c1d9c4a3c48facc82e6a30984cc7\""
+      },
+      "file": "7.html",
+      "bytes": 63787,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/events/global-hackathon",
+      "fetched_at": "2026-10-26T09:15:36.608Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/events/global-hackathon",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 266821,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/",
+      "fetched_at": "2026-10-26T09:15:37.599Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/overview",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.html",
+      "bytes": 290515,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/overview",
+      "fetched_at": "2026-10-26T09:15:38.505Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/overview",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 290516,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/cookbook/",
+      "fetched_at": "2026-10-26T09:15:39.161Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/cookbook",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 247064,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/llms.txt",
+      "fetched_at": "2026-10-26T09:15:39.934Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/llms.txt",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "content-disposition": "inline; filename=\"llms.txt\"",
+        "last-modified": "Sat, 24 Oct 2026 18:06:53 GMT",
+        "etag": "W/\"a179472f87650128af185a2718d84c76\""
+      },
+      "file": "12.txt",
+      "bytes": 31596,
+      "truncated": false
+    }
+  ]
+}
