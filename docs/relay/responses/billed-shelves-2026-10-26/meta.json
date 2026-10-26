@@ -1,0 +1,358 @@
+{
+  "request": "billed-shelves-2026-10-26",
+  "fetched_at": "2026-10-26T00:14:49.739Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://devcenter.heroku.com/articles/building-an-add-on",
+      "fetched_at": "2026-10-26T00:14:09.703Z",
+      "status": 200,
+      "final_url": "https://devcenter.heroku.com/articles/building-an-add-on",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"1270e20eb68e85caf24eb37d2c1ff711\""
+      },
+      "file": "1.html",
+      "bytes": 214643,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://devcenter.heroku.com/articles/add-on-partner-program",
+      "fetched_at": "2026-10-26T00:14:10.663Z",
+      "status": 404,
+      "final_url": "https://devcenter.heroku.com/articles/add-on-partner-program",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 171100,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.heroku.com/policy/addons-partner-agreement",
+      "fetched_at": "2026-10-26T00:14:11.061Z",
+      "status": 404,
+      "final_url": "https://www.heroku.com/policy/addons-partner-agreement",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 329448,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://elements.heroku.com/addons",
+      "fetched_at": "2026-10-26T00:14:12.354Z",
+      "status": 200,
+      "final_url": "https://elements.heroku.com/addons",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "231529",
+        "etag": "W/\"3d2c83f07189b1d7ea984d9d5eefa392\""
+      },
+      "file": "4.html",
+      "bytes": 231529,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://elements.heroku.com/addons/categories/data-stores",
+      "fetched_at": "2026-10-26T00:14:13.411Z",
+      "status": 200,
+      "final_url": "https://elements.heroku.com/addons/categories/data-stores",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "57367",
+        "etag": "W/\"9268ea4e8aba858a2c851c97fc01bf90\""
+      },
+      "file": "5.html",
+      "bytes": 57367,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://elements.heroku.com/addons/heroku-postgresql",
+      "fetched_at": "2026-10-26T00:14:14.024Z",
+      "status": 200,
+      "final_url": "https://elements.heroku.com/addons/heroku-postgresql",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "458657",
+        "etag": "W/\"e771a32503fcf1c8294be837ef35eb34\""
+      },
+      "file": "6.html",
+      "bytes": 458657,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://vercel.com/docs/integrations/marketplace-product",
+      "fetched_at": "2026-10-26T00:14:14.245Z",
+      "status": 200,
+      "final_url": "https://vercel.com/docs/integrations/create-integration/marketplace-product",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 906772,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://vercel.com/docs/integrations/create-integration/marketplace-api",
+      "fetched_at": "2026-10-26T00:14:15.033Z",
+      "status": 200,
+      "final_url": "https://vercel.com/docs/integrations/create-integration/marketplace-api",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 1425372,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://vercel.com/partners/integrations",
+      "fetched_at": "2026-10-26T00:14:15.748Z",
+      "status": 404,
+      "final_url": "https://vercel.com/partners/integrations",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"yush5c3f955q5n\""
+      },
+      "file": "9.html",
+      "bytes": 267203,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G200672390",
+      "fetched_at": "2026-10-26T00:14:16.557Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G200672390",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "10.html",
+      "bytes": 188406,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/GHWEWUEN3QT4D7E4",
+      "fetched_at": "2026-10-26T00:14:18.025Z",
+      "status": 404,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/GHWEWUEN3QT4D7E4",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "11.html",
+      "bytes": 181210,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G200644210",
+      "fetched_at": "2026-10-26T00:14:18.850Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G200644210",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "12.html",
+      "bytes": 185657,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G201274690",
+      "fetched_at": "2026-10-26T00:14:19.586Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G201274690",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "13.html",
+      "bytes": 191200,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.xero.com/documentation/xero-app-store/",
+      "fetched_at": "2026-10-26T00:14:19.822Z",
+      "status": 200,
+      "final_url": "https://developer.xero.com/documentation/xero-app-store/",
+      "headers": {
+        "content-length": "16"
+      },
+      "file": "14.bin",
+      "bytes": 16,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developer.xero.com/partner/",
+      "fetched_at": "2026-10-26T00:14:20.973Z",
+      "status": 200,
+      "final_url": "https://developer.xero.com/documentation/xero-app-store/app-partner-guides/grow-your-app-with-xero",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "33433",
+        "last-modified": "Thu, 15 Oct 2026 23:24:11 GMT",
+        "etag": "\"62810e785a432f4a2d9c74b5fa790253\""
+      },
+      "file": "15.html",
+      "bytes": 138397,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://developers.freshworks.com/docs/marketplace/",
+      "fetched_at": "2026-10-26T00:14:21.419Z",
+      "status": 404,
+      "final_url": "https://developers.freshworks.com/docs/marketplace/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Tue, 21 Jul 2026 12:46:44 GMT",
+        "etag": "W/\"c26d12048cfe1ffd491983c40e67a204\""
+      },
+      "file": "16.html",
+      "bytes": 4628,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.freshworks.com/apps/freshdesk/",
+      "fetched_at": "2026-10-26T00:14:21.810Z",
+      "status": 200,
+      "final_url": "https://www.freshworks.com/apps/freshdesk/",
+      "headers": {
+        "content-type": "text/html;charset=utf-8"
+      },
+      "file": "17.html",
+      "bytes": 589245,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://elements.heroku.com/addons/categories/analytics",
+      "render": true,
+      "fetched_at": "2026-10-26T00:14:22.611Z",
+      "status": 404,
+      "final_url": "https://elements.heroku.com/addons/categories/analytics",
+      "title": "404 Page Not Found - Heroku Elements",
+      "rendered": {
+        "network_idle": true,
+        "requests": 87,
+        "failed": [
+          "GET https://elements.heroku.com/addons/categories/analytics → 404",
+          "GET https://blog.heroku.com/news/feed → net::ERR_FAILED",
+          "GET https://blog.heroku.com/news/feed → net::ERR_FAILED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Access to XMLHttpRequest at 'https://blog.heroku.com/news/feed' from origin 'https://elements.heroku.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the req",
+          "Access to XMLHttpRequest at 'https://blog.heroku.com/news/feed' from origin 'https://elements.heroku.com' has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the req",
+          "Executing inline event handler violates the following Content Security Policy directive 'script-src 'self' https: www.googletagmanager.com 'strict-dynamic' 'unsafe-eval' 'nonce-V/hFQlCXu0FjdIxcGcrBfw="
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.html",
+      "bytes": 402162,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://vercel.com/marketplace",
+      "render": true,
+      "fetched_at": "2026-10-26T00:14:27.629Z",
+      "status": 200,
+      "final_url": "https://vercel.com/marketplace",
+      "title": "Vercel Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 304,
+        "failed": [],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "19.html",
+      "bytes": 832339,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apps.xero.com/uk",
+      "render": true,
+      "fetched_at": "2026-10-26T00:14:31.806Z",
+      "status": 200,
+      "final_url": "https://apps.xero.com/uk",
+      "title": "Xero App Store UK — App Marketplace & Small Business Software Reviews",
+      "rendered": {
+        "network_idle": true,
+        "requests": 137,
+        "failed": [
+          "POST https://www.google.com/ccm/collect?rcb=14&frm=0&apvc=1&ae=g&auid=1501117197.1792973673&dt=Xero%20App%20Store%20UK%20%E2%80%94%20App%20Marketplace%20%26%20Small%20Business%20Software%20Reviews&en="
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "20.html",
+      "bytes": 638333,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/s?k=self+assessment+tax+return+2026+27+sole+trader&i=digital-text",
+      "render": true,
+      "fetched_at": "2026-10-26T00:14:43.609Z",
+      "status": 200,
+      "final_url": "https://www.amazon.co.uk/s?k=self+assessment+tax+return+2026+27+sole+trader&i=digital-text",
+      "title": "Amazon.co.uk : self assessment tax return 2026 27 sole trader",
+      "rendered": {
+        "network_idle": true,
+        "requests": 158,
+        "failed": [],
+        "console_errors": [
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred.",
+          "uncaught: A network error occurred."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "21.html",
+      "bytes": 813524,
+      "truncated": false
+    }
+  ]
+}
