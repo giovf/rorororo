@@ -1148,8 +1148,9 @@
       "effort_days": 0.2,
       "proof": "the next Search Console 5xx/4xx mail has a queue item within the hour of its triage; the item’s reading lands in the run log the same night",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-10-26"
     },
     {
       "id": "first-run-check-script",
