@@ -1906,3 +1906,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 19:41 | burn-down | A host that times out 3 lines in a row is skipped for the round; a 429/503 with Retry-After over 30 s is final
 - 2026-10-26 19:41 | burn-down | docs/ci/fetch-relay.yml: the Commit step runs always, commits a killed round as partial and drops its request
 - 2026-10-26 19:41 | burn-down | Tests: shouldRetry and HostStalls in scripts/fetch-relay-lines.test.ts (15 pass); README step 3 names partial rounds
+- 2026-10-26 19:46 | burn-down | Stopping at ~34 min: 3 items built (gankdat sitemap-5xx-read, 2 foundry); next slot takes first-run-check-script
