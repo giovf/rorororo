@@ -1,0 +1,83 @@
+{
+  "request": "meta-hackathon-rules-b-2026-10-26",
+  "fetched_at": "2026-10-26T09:18:44.763Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/details",
+      "render": true,
+      "fetched_at": "2026-10-26T09:18:30.035Z",
+      "status": 200,
+      "final_url": "https://cerebralvalley.ai/auth/login",
+      "title": "Log In – Cerebral Valley",
+      "rendered": {
+        "network_idle": true,
+        "requests": 102,
+        "failed": [
+          "GET https://cerebralvalley.ai/?_rsc=rVgikmG0JeqXmfzC → net::ERR_ABORTED",
+          "GET https://cerebralvalley.ai/?_rsc=-kKA_aqqt6UGT1af → net::ERR_ABORTED"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"lerltzrxtk49lr\""
+      },
+      "file": "1.html",
+      "bytes": 210304,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/waiver",
+      "render": true,
+      "fetched_at": "2026-10-26T09:18:34.874Z",
+      "status": 200,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/waiver",
+      "title": "Waiver – Meta Global AI Developer Hackathon – Cerebral Valley",
+      "rendered": {
+        "network_idle": true,
+        "requests": 131,
+        "failed": [
+          "POST https://mpc-prod-25-s6uit34pua-wl.a.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-25-s6uit34pua-wl.a.run.app/events?cee=no → net::ERR_ABORTED"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"17bo0f5c05i46ow\""
+      },
+      "file": "2.html",
+      "bytes": 251108,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon",
+      "render": true,
+      "fetched_at": "2026-10-26T09:18:40.225Z",
+      "status": 200,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon",
+      "title": "Meta Global AI Developer Hackathon – Cerebral Valley",
+      "rendered": {
+        "network_idle": true,
+        "requests": 143,
+        "failed": [
+          "POST https://alb.reddit.com/rp?id=a2_iwyhdlo42pkq&event=Custom → net::ERR_ABORTED",
+          "POST https://alb.reddit.com/rp?id=a2_iwyhdlo42pkq&event=PageVisit → net::ERR_ABORTED",
+          "POST https://mpc-prod-25-s6uit34pua-wl.a.run.app/events?cee=no → net::ERR_ABORTED",
+          "POST https://mpc-prod-25-s6uit34pua-wl.a.run.app/events?cee=no → net::ERR_ABORTED"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"mhqjs49yek4jq3\""
+      },
+      "file": "3.html",
+      "bytes": 243601,
+      "truncated": false
+    }
+  ]
+}

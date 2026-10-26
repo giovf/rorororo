@@ -1,0 +1,196 @@
+{
+  "request": "meta-model-api-docs-2026-10-26",
+  "fetched_at": "2026-10-26T09:18:51.407Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/waiver",
+      "fetched_at": "2026-10-26T09:18:44.764Z",
+      "status": 200,
+      "final_url": "https://cerebralvalley.ai/e/meta-ai-developer-hackathon/waiver",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"17bo0f5c05i46ow\""
+      },
+      "file": "1.html",
+      "bytes": 195469,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/api-reference.md",
+      "fetched_at": "2026-10-26T09:18:44.893Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/api-reference.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"api-reference.md\"",
+        "last-modified": "Sat, 24 Oct 2026 22:08:39 GMT",
+        "etag": "W/\"c21adaa4de4e5b4dc7e71ff70a934a49\""
+      },
+      "file": "2.txt",
+      "bytes": 2305,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/protocols/chat-completions.md",
+      "fetched_at": "2026-10-26T09:18:45.518Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/protocols/chat-completions.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"chat-completions.md\"",
+        "last-modified": "Sat, 24 Oct 2026 22:12:28 GMT",
+        "etag": "W/\"b5a6bee76a54eec6924742df6be04eae\""
+      },
+      "file": "3.txt",
+      "bytes": 26753,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/tool-calling.md",
+      "fetched_at": "2026-10-26T09:18:46.097Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/tool-calling.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"tool-calling.md\"",
+        "last-modified": "Sat, 24 Oct 2026 22:12:39 GMT",
+        "etag": "W/\"58841f794aecaa517df32a6cd9350657\""
+      },
+      "file": "4.txt",
+      "bytes": 23455,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/models.md",
+      "fetched_at": "2026-10-26T09:18:46.671Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/models.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"models.md\"",
+        "last-modified": "Sat, 24 Oct 2026 17:46:17 GMT",
+        "etag": "W/\"12c25f15e746bb0280bdb54fa823258a\""
+      },
+      "file": "5.txt",
+      "bytes": 19771,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/pricing-rate-limits.md",
+      "fetched_at": "2026-10-26T09:18:47.251Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/pricing-rate-limits.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"pricing-rate-limits.md\"",
+        "last-modified": "Sat, 24 Oct 2026 17:46:17 GMT",
+        "etag": "W/\"6d3e29c18ed7f58a40b37a42394f408d\""
+      },
+      "file": "6.txt",
+      "bytes": 11196,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/authentication.md",
+      "fetched_at": "2026-10-26T09:18:47.824Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/authentication.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"authentication.md\"",
+        "last-modified": "Mon, 26 Oct 2026 09:18:48 GMT",
+        "etag": "W/\"475bd91e5e72fbc36d3702045a8464bd\""
+      },
+      "file": "7.txt",
+      "bytes": 2692,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/quickstart.md",
+      "fetched_at": "2026-10-26T09:18:48.524Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/quickstart.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"quickstart.md\"",
+        "last-modified": "Sun, 25 Oct 2026 10:36:11 GMT",
+        "etag": "W/\"b78e627194c8217d4816835fa77beeee\""
+      },
+      "file": "8.txt",
+      "bytes": 10273,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/muse-spark-open.md",
+      "fetched_at": "2026-10-26T09:18:49.181Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/muse-spark-open.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"muse-spark-open.md\"",
+        "last-modified": "Sun, 25 Oct 2026 18:37:07 GMT",
+        "etag": "W/\"eb724e0f2273f3d299186b5664035158\""
+      },
+      "file": "9.txt",
+      "bytes": 3733,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/sdks.md",
+      "fetched_at": "2026-10-26T09:18:49.756Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/sdks.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"sdks.md\"",
+        "last-modified": "Mon, 26 Oct 2026 09:18:49 GMT",
+        "etag": "W/\"7a77ff341fdf8eabf8611b2b3b6bc6ff\""
+      },
+      "file": "10.txt",
+      "bytes": 5426,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/cookbook/basic-agent-loop.md",
+      "fetched_at": "2026-10-26T09:18:50.467Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/cookbook/basic-agent-loop.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"basic-agent-loop.md\"",
+        "last-modified": "Mon, 26 Oct 2026 09:18:50 GMT",
+        "etag": "W/\"48193bcb3d848abf37ce8ca8bfea874e\""
+      },
+      "file": "11.txt",
+      "bytes": 11098,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://dev.meta.ai/docs/api-reference/chat-completions/create-chat-completion.md",
+      "fetched_at": "2026-10-26T09:18:51.175Z",
+      "status": 200,
+      "final_url": "https://dev.meta.ai/docs/api-reference/chat-completions/create-chat-completion.md",
+      "headers": {
+        "content-type": "text/markdown; charset=utf-8",
+        "content-disposition": "inline; filename=\"create-chat-completion.md\"",
+        "last-modified": "Mon, 26 Oct 2026 09:18:51 GMT",
+        "etag": "W/\"00f849a67bf7512aab65d0f397f5a6de\""
+      },
+      "file": "12.txt",
+      "bytes": 2253,
+      "truncated": false
+    }
+  ]
+}
