@@ -1858,3 +1858,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 17:20 | build | actions-minutes.mjs bills per job for runs over a minute, 0 for skipped runs; dry run via proxy 502/7d
 - 2026-10-26 17:20 | build | No flip: 459 is 8 min under the cap's weekly share (467), inside one relay round; the cap is a cliff
 - 2026-10-26 17:20 | build | actions-minutes back to todo, not_before 2026-11-02: the second week under 467 per job flips the repo
+- 2026-10-26 17:31 | burn-down | landing.yml first run: success (push run 73 at 09:38, 64 s; after the 09:37 installer)
+- 2026-10-26 17:31 | burn-down | demo-video.yml first run: no run since the 09:37 install; never dispatched by a routine, the live-run item records it
+- 2026-10-26 17:31 | burn-down | Dependabot majors: no open Dependabot PR; nothing to review
+- 2026-10-26 17:31 | burn-down | Exchange pre-research: Google Play Books shelf for the tax guide EPUB — spike seeded (6); 0 spikes were open
+- 2026-10-26 17:31 | burn-down | Google's pages (relay, 7): UK ticked for seller sign-ups and GBP payments; 70 % of list price, no fees, no AI rule
+- 2026-10-26 17:31 | burn-down | GB Play Books shelf rendered: 7 priced UK tax guides £2.29–19.99 (MTD guide £7.99 at 5 stars); no rating counts
+- 2026-10-26 17:31 | burn-down | Declined: Kobo Writing Life (403 bot wall; rejects AI-written books), Draft2Digital (no AI nonfiction; fees)

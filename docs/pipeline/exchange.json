@@ -595,6 +595,30 @@
       "why": "Spike 2026-10-26 (new-ventures spike-heroku-elements-add-on, docs/exchange/spikes/heroku-elements-add-on.md, burn-down): the License and Distribution Agreement pays 70 % of net subscription revenue within 30 days and the integration is ≈ 2 Worker days, but sole-trader eligibility is behind the Partner Portal login and the agreement speaks only of a company, paid plans need GA after 15 unique Heroku app owners test a free plan, and the 156-add-on catalogue shows no install or review counts and no register-type API (its API add-ons: IP geolocation, email validation, PDF conversion, anti-virus at $69–499/mo). Score ≈ 1.",
       "trigger": "a gankdat account or paid call from a Heroku-hosted app (*.herokuapp.com origin or a Heroku user agent in `rest 7d by UA:`); or the Add-on Support and Security Requirements articles read with no staffed-support obligation and the owner's one Partner Portal sign-in confirming an individual can register",
       "added": "2026-10-26"
+    },
+    {
+      "id": "google-play-books-tax-guide-shelf",
+      "title": "Google Play Books (Partner Centre) as the third shelf for the UK sole-trader tax guide EPUB — Google bills in GBP and pays 70 % of the list price to UK sellers; the file, cover and metadata already exist",
+      "status": "parked",
+      "why": "Exchange pre-research 2026-10-26 (burn-down). Google's Supported-countries table ticks the United Kingdom for seller sign-ups and payments in GBP; the Revenue split FAQ pays 70 % of the list price with no fees and no price band; the content policies carry no rule on AI-written text. Seven priced rivals on the GB shelf at £2.29–19.99 (two at five stars). Spike `new-ventures/spike-google-play-books-tax-guide-shelf` (6) reads the payments-profile requirements, the VAT and pricing rule and the rivals' rating counts and makes the promote / park call; the promote shape is a metadata export beside kdp.ts plus a 10-minute owner step on action 029.",
+      "trigger": "the spike (promote / park call); on promote, tax-workbook gains a google-play listing item blocked on action 029 step 6",
+      "added": "2026-10-26"
+    },
+    {
+      "id": "kobo-writing-life-shelf",
+      "title": "Kobo Writing Life as a shelf for the UK sole-trader tax guide EPUB",
+      "status": "declined",
+      "why": "Declined 2026-10-26 (exchange pre-research, burn-down). kobo.com answers the relay with a Cloudflare challenge (403, plain and rendered), so the terms could only be read second-hand: Kobo's CEO told the press in June 2026 that Kobo Writing Life rejected 45 % of its 2025 submissions, more than 80 % of them judged AI-generated, and Kobo's help page lists 'wholly or partly AI-generated content' as a rejection ground with no disclosure route. The guide is AI-written and disclosed as such on KDP; a shelf that rejects the fact rather than asking for the disclosure is not a shelf for it.",
+      "trigger": "a Kobo Writing Life policy that accepts disclosed AI-written nonfiction, read from kobo.com itself",
+      "added": "2026-10-26"
+    },
+    {
+      "id": "draft2digital-wide-distribution",
+      "title": "Draft2Digital as the aggregator route to Apple Books, Barnes & Noble, Kobo and the OverDrive / Hoopla library services for the tax guide EPUB",
+      "status": "declined",
+      "why": "Declined 2026-10-26 (exchange pre-research, burn-down; D2D FAQ read through the relay). Draft2Digital 'does not accept noncredentialled nonfiction content produced by AI and may require further documentation of subject matter expertise', and the operation has no credentialled author to name; the fee shape also fails the £0 rule for a line with no sales yet — a non-refundable US$20 activation fee, US$12 a year for accounts under US$100 of sales, about 10 % of retail on top of the store's share, and 30 % US withholding for international publishers until a treaty form is filed.",
+      "trigger": "a credentialled co-author on the tax line, or D2D dropping the nonfiction AI rule",
+      "added": "2026-10-26"
     }
   ]
 }
