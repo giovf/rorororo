@@ -1,0 +1,121 @@
+{
+  "request": "ebook-shelves-b-2026-10-26",
+  "fetched_at": "2026-10-26T17:26:34.131Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/table/6052428?hl=en-GB",
+      "fetched_at": "2026-10-26T17:26:25.006Z",
+      "status": 200,
+      "final_url": "https://support.google.com/books/partner/table/6052428?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 1456161,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/answer/1067634?hl=en-GB",
+      "fetched_at": "2026-10-26T17:26:25.907Z",
+      "status": 200,
+      "final_url": "https://support.google.com/books/partner/answer/1067634?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 1605921,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/answer/9331459?hl=en-GB",
+      "fetched_at": "2026-10-26T17:26:26.688Z",
+      "status": 200,
+      "final_url": "https://support.google.com/books/partner/answer/9331459?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 1605523,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/answer/3157463?hl=en-GB",
+      "fetched_at": "2026-10-26T17:26:27.434Z",
+      "status": 200,
+      "final_url": "https://support.google.com/books/partner/answer/3157463?hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 1608134,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.draft2digital.com/blog/ai-and-draft2digital/",
+      "fetched_at": "2026-10-26T17:26:27.649Z",
+      "status": 404,
+      "final_url": "https://draft2digital.com/blog/ai-and-draft2digital/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "5.html",
+      "bytes": 358286,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.draft2digital.com/blog/",
+      "fetched_at": "2026-10-26T17:26:29.571Z",
+      "status": 200,
+      "final_url": "https://draft2digital.com/blog/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "content-length": "51494"
+      },
+      "file": "6.html",
+      "bytes": 466353,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.kobo.com/writinglife/pricing",
+      "fetched_at": "2026-10-26T17:26:30.052Z",
+      "status": 403,
+      "final_url": "https://www.kobo.com/writinglife/pricing",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "7.html",
+      "bytes": 84497,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=self%20assessment%20tax%20return%20uk&c=books&gl=GB",
+      "render": true,
+      "fetched_at": "2026-10-26T17:26:30.185Z",
+      "status": 200,
+      "final_url": "https://play.google.com/store/search?q=self%20assessment%20tax%20return%20uk&c=books&gl=GB",
+      "title": "self assessment tax return uk - Books on Google Play",
+      "rendered": {
+        "network_idle": true,
+        "requests": 90,
+        "failed": [
+          "POST https://www.google.com/ccm/collect?rcb=17&frm=0&apvc=1&ae=g&auid=672268658.1793035592&dt=self%20assessment%20tax%20return%20uk%20-%20Books%20on%20Google%20Play&en=page_view&dl=https%3A%2F%2Fplay."
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 1252681,
+      "truncated": false
+    }
+  ]
+}
