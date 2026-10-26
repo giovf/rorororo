@@ -1828,3 +1828,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 01:33 | burn-down | tax-workbook research: three products built, none live; every lever waits on action 029 (owner sitting)
 - 2026-10-26 01:33 | burn-down | tax-workbook researched 10-26, research_after 2026-11-03 (reseller item date); 4 candidates logged, none queued
 - 2026-10-26 01:33 | burn-down | Stopping: pipeline starved and cooled; tonight's exchange pre-research was spent at 00:25
+- 2026-10-26 07:50 | report | W44 money: revenue £0, net −£44.40, headroom £47.60 (≈12.9 months)
+- 2026-10-26 07:50 | report | gankdat W44: accounts 3→4, 0 paid, 16 x402 payments (mostly one prober), 1,176 authed MCP calls
+- 2026-10-26 07:50 | report | store products W44: ReadFocus 0→1 Chrome user, Highlight Keep 0, Variables Toolkit 0 installs, 0 sales
+- 2026-10-26 07:50 | report | tax workbook W44: shop not open yet; Kindle guide built; both wait on owner action 029
+- 2026-10-26 07:50 | report | alert: gankdat Daily numbers job fails under Node 24 (x402-sales import); no 10-26 row
+- 2026-10-26 07:50 | report | owner waiting: 6 asks, none older than 7 days; 2 agent handoffs overdue (22 and 21 days)
+- 2026-10-26 07:50 | report | next: owner does the Etsy/Zoho sitting (action 029); agent fixes the Node 24 import
