@@ -1812,3 +1812,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 00:35 | burn-down | Spike freshworks-marketplace-paid-apps done: park — terms (7 pages) read, Freshdesk landing rendered
 - 2026-10-26 00:35 | burn-down | Freshworks pays 80 % of MRR monthly in USD, remits sales taxes, takes individuals; paid apps 3–100+ installs
 - 2026-10-26 00:35 | burn-down | Data Enrichment category unread (search API host not in the bundle); idea parked with three triggers
+- 2026-10-26 00:39 | watchdog | ci-minutes: 539 billed min/7d (~2310/mo; cap 2000) top: fetch relay 131, owner notes 85, gankdat metrics 59
