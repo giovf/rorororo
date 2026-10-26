@@ -1,0 +1,168 @@
+{
+  "request": "kdp-spike-2026-10-26",
+  "fetched_at": "2026-10-26T00:24:54.338Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G200634560",
+      "fetched_at": "2026-10-26T00:24:37.329Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G200634560",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 194249,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G200634500",
+      "fetched_at": "2026-10-26T00:24:38.271Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G200634500",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 200614,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G200952510",
+      "fetched_at": "2026-10-26T00:24:39.026Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G200952510",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 207406,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/GGE5T76TWKA85DJM",
+      "fetched_at": "2026-10-26T00:24:39.774Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/GGE5T76TWKA85DJM",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 189108,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G200641050",
+      "fetched_at": "2026-10-26T00:24:40.524Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G200641050",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "5.html",
+      "bytes": 182946,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G201645450",
+      "fetched_at": "2026-10-26T00:24:41.279Z",
+      "status": 200,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G201645450",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "6.html",
+      "bytes": 188057,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0FWKWTN22",
+      "render": true,
+      "fetched_at": "2026-10-26T00:24:41.525Z",
+      "status": 200,
+      "final_url": "https://www.amazon.co.uk/dp/B0FWKWTN22",
+      "title": "Amazon.co.uk",
+      "rendered": {
+        "network_idle": true,
+        "requests": 3,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "7.html",
+      "bytes": 3519,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0FSLTMCM9",
+      "render": true,
+      "fetched_at": "2026-10-26T00:24:46.183Z",
+      "status": 200,
+      "final_url": "https://www.amazon.co.uk/dp/B0FSLTMCM9",
+      "title": "Amazon.co.uk",
+      "rendered": {
+        "network_idle": true,
+        "requests": 3,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "8.html",
+      "bytes": 3519,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0HGLKQRD4",
+      "render": true,
+      "fetched_at": "2026-10-26T00:24:49.069Z",
+      "status": 200,
+      "final_url": "https://www.amazon.co.uk/dp/B0HGLKQRD4",
+      "title": "Amazon.co.uk",
+      "rendered": {
+        "network_idle": true,
+        "requests": 3,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "9.html",
+      "bytes": 3519,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/dp/B0F3X9FH5X",
+      "render": true,
+      "fetched_at": "2026-10-26T00:24:51.959Z",
+      "status": 200,
+      "final_url": "https://www.amazon.co.uk/dp/B0F3X9FH5X",
+      "title": "Amazon.co.uk",
+      "rendered": {
+        "network_idle": true,
+        "requests": 3,
+        "failed": [],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "10.html",
+      "bytes": 3519,
+      "truncated": false
+    }
+  ]
+}
