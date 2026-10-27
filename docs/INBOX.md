@@ -227,3 +227,4 @@
 - 2026-10-26 18:33 | notification | github.com | [giovf/rorororo] Run failed: fetch relay - main (cf9c4a9) | fetch relay workflow failed after 12m24s with 2 annotations (failure with steps; failing step not named in the mail, run 40376846120) | logged
 - 2026-10-26 18:56 | notification | github.com | [giovf/rorororo] Run failed: fetch relay - main (d6dfeaa) | fetch relay workflow failed after 12m22s with 2 annotations (failure with steps; failing step not named in the mail); second fetch relay failure today, same reason | logged
 - 2026-10-27 01:03 | notification | devpost.com | HACKATHONS just for you, gio | Devpost marketing digest of virtual hackathons; no action (we never scan Devpost) | logged
+- 2026-10-27 16:04 | notification | devpost.com | Final stretch — here's your submission checklist - Nebius x NVIDIA Hackathon | Generic participant reminder: submissions due Oct 30 10:00 PT; no action in the mail itself (entries submitted by owner) | logged
