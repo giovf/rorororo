@@ -454,6 +454,16 @@ runs `check:root`.
   returned a structured line (10-16 either), so where Workers Logs keeps a JSON `console.log` is
   the open question — when a window shows no `event=` line the runner prints the raw rows of every
   line the Worker wrote in it (no needle, ten rows), and the next query is written against that shape.
+  **Read** (09:59, metrics run 275): Workers Logs keeps what the Worker logged under `source` — a
+  string log as `{ level, message }`, a JSON log as the parsed object itself with no `message`
+  anywhere, which is why the needle search never returned a structured line; and every line an
+  invocation writes shares its `$metadata.requestId`. So `parseWaveLogEvents` reads a `source`
+  object as the message, `WaveInvocation` carries `requestId`, and the runner reads the wave's lines
+  with `invocationLinesQuery` (filter `$metadata.requestId`, no needle) over the invocation's window.
+  The line itself: `stats_precompute_failed … D1_ERROR: D1 DB exceeded its CPU time limit and was
+  reset.` at 06:08:18 — a facet page's statement over the 196k-row generation exceeds D1's
+  per-statement CPU limit, so no class page has been computable since the window filled; the pass is
+  rewritten as one scan per statement in `facet-aggregation-one-scan` (7).
 - **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
   `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
   facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50

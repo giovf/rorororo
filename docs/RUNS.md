@@ -1926,3 +1926,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-27 09:45 | build | Runner reads the wave's own window (invocation end less wall time) for a queried source's log
 - 2026-10-27 09:48 | build | Metrics run 274: the journal's wave window held 1 request line, none of the refresh's JSON lines
 - 2026-10-27 09:58 | build | Runner prints the raw rows of a wave window with no structured line (where Workers Logs keeps JSON)
+- 2026-10-27 09:59 | build | Cause read: facet pass threw D1_ERROR exceeded its CPU time limit at 06:08:18 (metrics run 275 raw rows)
+- 2026-10-27 10:10 | build | Wave-log parser reads JSON logs kept under source; runner reads an invocation's lines by requestId
+- 2026-10-27 10:10 | build | Queued gankdat facet-aggregation-one-scan (7): one scan per statement for all 45 class pages

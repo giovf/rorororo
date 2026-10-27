@@ -949,3 +949,13 @@ write, and the `stats_precompute_failed` line is older than the 20 newest reques
 (same slot): a page's statements fail on their own (`stats_facet_page_failed`, carried or left
 out, three in a row end the pass) and the runner reads `"source":"<slug>"` lines ahead of the
 request lines. The 10-28 row names the failing statement; `sitemap-5xx-verify-2` reads it.
+
+Read at 09:59 (metrics run 275, raw rows of the wave window 06:05:21–06:08:28): the wave's own
+line is `{"level":"warn","event":"stats_precompute_failed","source":"uk-trademark-journal",
+"reason":"D1_ERROR: D1 DB exceeded its CPU time limit and was reset.","retained":false}` at
+06:08:18.567, kept by Workers Logs under `source` with no `message` (so no needle ever found it)
+and stamped with the invocation's `$metadata.requestId`. A per-page facet statement over the
+196k-row generation exceeds D1's per-statement CPU limit; v0.26.3's isolation skips the page but
+the same statement fails for every class, so `facet-aggregation-one-scan` (7) rewrites the pass as
+one scan per statement (json_each over the facet field, GROUP BY value, window function for the
+per-page limits). The runner now reads an invocation's lines by its requestId.
