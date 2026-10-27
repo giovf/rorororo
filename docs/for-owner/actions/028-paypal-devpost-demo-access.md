@@ -1,7 +1,7 @@
 # Owner action request #028 — give the PayPal hackathon judges demo access (Devpost form)
 
 - **Date:** 2026-10-23
-- **Status:** open
+- **Status:** done
 - **Your time:** ~3 minutes
 - **Cost:** £0.00
 - **Deadline:** **Wednesday 2026-11-12, 12:00 PT** (20:00 UK) — the organiser's message of 2026-10-21 02:29 (INBOX) says the

@@ -1,7 +1,7 @@
 # Owner action request #027 — apply to the Meta Global AI Developer Hackathon
 
 - **Date:** 2026-10-20
-- **Status:** open
+- **Status:** applied
 - **Your time:** ~10 minutes
 - **Cost:** £0.00 (free to enter; selected participants get US$150 of Meta Model API credits and partner credits)
 - **Deadline:** **Saturday 2026-10-25, 11:59 PM ET** (04:59 UK, Sunday 26 Oct) — or earlier if the 20,000 places fill; applications are reviewed on a rolling basis, so sooner is better
