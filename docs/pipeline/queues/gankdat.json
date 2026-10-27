@@ -885,8 +885,9 @@
       "effort_days": 0.5,
       "proof": "the 45 journal class pages answer 200 the morning after the deploy (relay HEADs of class/01, 25, 42); the wave log clause shows stats_facets_done with computed 45 and no stats_facet_page_failed; d1store tests for an array facet field and a scalar one",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-27"
+      "status": "doing",
+      "added": "2026-10-27",
+      "doing_since": "2026-10-27"
     }
   ],
   "research_after": "2026-10-30"
