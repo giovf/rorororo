@@ -1922,3 +1922,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-27 09:28 | build | Metrics run 272 read the 06:05 wave: ok, wall 167 s, CPU 4.4 s, 0 of 45 pages — the pass threw
 - 2026-10-27 09:36 | build | gankdat v0.26.3: a failing facet page is logged and carried, three in a row end the pass
 - 2026-10-27 09:36 | build | Runner reads a source's structured log lines ("source":"<slug>") ahead of request lines
+- 2026-10-27 09:40 | build | Metrics run 273: the structured-line read found nothing, the API returns 10 newest lines only
+- 2026-10-27 09:45 | build | Runner reads the wave's own window (invocation end less wall time) for a queried source's log

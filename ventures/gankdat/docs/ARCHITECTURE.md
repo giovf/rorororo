@@ -444,6 +444,11 @@ runs `check:root`.
   runner reads each queried source's structured lines with the needle `"source":"<slug>"` (how every
   JSON event names its source) merged ahead of the request lines, so the 10-28 Daily numbers row
   names the statement that fails instead of `no log line in 24 h (10 noise lines)`.
+  The second dispatched run (09:37) still read ten request lines and no structured one — the API
+  hands back ten lines newest first whatever the limit, and the `"source"` needle found nothing — so
+  the runner now also reads **the wave's own window** (`waveWindowQuery`, `lib/wave-logs.ts`): the
+  invocation it found (`WaveInvocation.at`) less its wall time, ten seconds either side, where the
+  Worker's lines for the source stand alone; those lines lead the merged reading.
 - **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
   `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
   facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50
