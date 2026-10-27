@@ -449,6 +449,11 @@ runs `check:root`.
   the runner now also reads **the wave's own window** (`waveWindowQuery`, `lib/wave-logs.ts`): the
   invocation it found (`WaveInvocation.at`) less its wall time, ten seconds either side, where the
   Worker's lines for the source stand alone; those lines lead the merged reading.
+  The window read (09:48) then held one request line and none of the JSON lines the refresh logs
+  (`refresh_delta`, the ok row's phases, `stats_precompute_failed`): the needle search has never
+  returned a structured line (10-16 either), so where Workers Logs keeps a JSON `console.log` is
+  the open question — when a window shows no `event=` line the runner prints the raw rows of every
+  line the Worker wrote in it (no needle, ten rows), and the next query is written against that shape.
 - **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
   `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
   facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50

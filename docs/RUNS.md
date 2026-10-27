@@ -1924,3 +1924,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-27 09:36 | build | Runner reads a source's structured log lines ("source":"<slug>") ahead of request lines
 - 2026-10-27 09:40 | build | Metrics run 273: the structured-line read found nothing, the API returns 10 newest lines only
 - 2026-10-27 09:45 | build | Runner reads the wave's own window (invocation end less wall time) for a queried source's log
+- 2026-10-27 09:48 | build | Metrics run 274: the journal's wave window held 1 request line, none of the refresh's JSON lines
+- 2026-10-27 09:58 | build | Runner prints the raw rows of a wave window with no structured line (where Workers Logs keeps JSON)
