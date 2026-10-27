@@ -862,9 +862,10 @@
       "effort_days": 0.1,
       "proof": "the four HEADs answer 200 through the relay, meta.json carries no retries; the Daily numbers row of 10-28 lists no silent night for uk-trademark-journal",
       "score": 6,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-26",
-      "not_before": "2026-10-27"
+      "not_before": "2026-10-27",
+      "doing_since": "2026-10-27"
     }
   ],
   "research_after": "2026-10-30"
