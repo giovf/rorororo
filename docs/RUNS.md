@@ -1929,3 +1929,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-27 09:59 | build | Cause read: facet pass threw D1_ERROR exceeded its CPU time limit at 06:08:18 (metrics run 275 raw rows)
 - 2026-10-27 10:10 | build | Wave-log parser reads JSON logs kept under source; runner reads an invocation's lines by requestId
 - 2026-10-27 10:10 | build | Queued gankdat facet-aggregation-one-scan (7): one scan per statement for all 45 class pages
+- 2026-10-27 10:11 | build | Metrics run 276 reads the wave's 6 lines by requestId; the Daily numbers row now names the D1 CPU reset
+- 2026-10-27 10:15 | build | Stopping at ~65 min: item built (v0.26.2/3), cause read, 4 metrics dispatches; next: facet-aggregation-one-scan
