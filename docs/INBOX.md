@@ -229,3 +229,4 @@
 - 2026-10-27 01:03 | notification | devpost.com | HACKATHONS just for you, gio | Devpost marketing digest of virtual hackathons; no action (we never scan Devpost) | logged
 - 2026-10-27 16:04 | notification | devpost.com | Final stretch — here's your submission checklist - Nebius x NVIDIA Hackathon | Generic participant reminder: submissions due Oct 30 10:00 PT; no action in the mail itself (entries submitted by owner) | logged
 - 2026-10-27 17:03 | notification | devpost.com | Final call for submissions - Nebius x NVIDIA Global AI Hackathon | Generic participant reminder: 3 days left; no action in the mail itself (entries submitted by owner) | logged
+- 2026-10-27 20:23 | notification | youraitools.co | Claim your gankdat listing on YourAITools (free) | Unsolicited directory outreach: free listing of gankdat's x402 endpoint, offers claim by reply; no action (we do not claim via unsolicited mail) | logged
