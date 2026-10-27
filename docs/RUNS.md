@@ -1933,3 +1933,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-27 10:15 | build | Stopping at ~65 min: item built (v0.26.2/3), cause read, 4 metrics dispatches; next: facet-aggregation-one-scan
 - 2026-10-27 11:12 | triage | notify owner dispatched: last run started 08:07 UTC, 3 h ago
 - 2026-10-27 15:17 | triage | notify owner dispatched: last run started 12:36 UTC, 2 h 41 min ago
+- 2026-10-27 18:08 | triage | notify owner dispatched: last run started 15:17 UTC, 2 h 50 min ago
