@@ -1911,3 +1911,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-26 20:07 | watchdog | ci-failed: fetch-relay.yml run 199 18:43 — step Run node scripts/fetch-relay.mjs; later run 200 ok
 - 2026-10-26 23:07 | triage | notify owner dispatched: last run started 20:06 UTC, 3 h ago
 - 2026-10-27 00:03 | watchdog | ci-minutes: 498 billed min/7d (~2134/mo; cap 2000) top: fetch relay 152, gankdat metrics 60, gankdat 48
+- 2026-10-27 03:07 | triage | notify owner dispatched: last run started 00:02 UTC, 3 h ago
