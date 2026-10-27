@@ -1919,3 +1919,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-27 09:25 | build | Metrics runner reads the wave log of a facet source whose blob is short of pages (journal today)
 - 2026-10-27 09:25 | build | gankdat v0.26.2 in server.json, constants, add-in manifest, connector; d1store test for a dying pass
 - 2026-10-27 09:25 | build | Queued gankdat sitemap-5xx-verify-2 (5, from 10-28): three HEADs + the 10-28 row's wave log clause
+- 2026-10-27 09:28 | build | Metrics run 272 read the 06:05 wave: ok, wall 167 s, CPU 4.4 s, 0 of 45 pages — the pass threw
+- 2026-10-27 09:36 | build | gankdat v0.26.3: a failing facet page is logged and carried, three in a row end the pass
+- 2026-10-27 09:36 | build | Runner reads a source's structured log lines ("source":"<slug>") ahead of request lines

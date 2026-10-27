@@ -433,6 +433,17 @@ runs `check:root`.
   rest over the following nights. The metrics runner (`runner-refresh.mjs readWaveLogs`) also queries
   the wave log of every facet source whose blob holds fewer pages than its spec lists, printing
   `stats facets <slug>: N of M pages in the blob`, so the Daily numbers row reads the pass's own lines.
+  **The pass threw, and a page's failure is now its own** (same day, v0.26.3): the metrics run
+  dispatched after the push read the 06:05 invocation as `ok`, wall 167.3 s, CPU 4.4 s — the wave was
+  not killed; the parent blob landed at 45 s, then something in the first page's statements threw
+  and `stats_precompute_failed` took every page of the night with it — and the slug read showed only
+  request lines (a relay round and the morning's crawlers fill the 20 newest within minutes). So each
+  page's statements run in their own try: a failing page is logged `stats_facet_page_failed`
+  (segment, value, reason, elapsed_ms) and carried or left out while the pass goes on, three failures
+  in a row end the pass (`FACET_FAILURES_IN_A_ROW`), `stats_facets_budget` counts `failed`, and the
+  runner reads each queried source's structured lines with the needle `"source":"<slug>"` (how every
+  JSON event names its source) merged ahead of the request lines, so the 10-28 Daily numbers row
+  names the statement that fails instead of `no log line in 24 h (10 noise lines)`.
 - **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
   `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
   facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50

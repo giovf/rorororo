@@ -941,3 +941,11 @@ Fix (v0.26.2): `aggregateFacets` writes the blob after a computed page every 20 
 per page, logs `stats_facets_done`, and the failure path keeps an interim blob. Proof is
 `sitemap-5xx-verify-2` (5, from 10-28): `class/01` 200 through the relay and the 10-28 row's wave
 log clause naming `stats_facets_done` with `computed > 0` or the failure.
+
+Read after the push (metrics run 272, dispatched 09:24): wave cron `5 6 * * *` — one invocation,
+`ok`, wall 167,328 ms, CPU 4,363 ms; the slug read returned 10 request lines (the relay round's
+own HEADs among them), no structured line. So the pass was not killed: it threw after the parent
+write, and the `stats_precompute_failed` line is older than the 20 newest request lines. v0.26.3
+(same slot): a page's statements fail on their own (`stats_facet_page_failed`, carried or left
+out, three in a row end the pass) and the runner reads `"source":"<slug>"` lines ahead of the
+request lines. The 10-28 row names the failing statement; `sitemap-5xx-verify-2` reads it.
