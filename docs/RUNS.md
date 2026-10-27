@@ -1913,3 +1913,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-27 00:03 | watchdog | ci-minutes: 498 billed min/7d (~2134/mo; cap 2000) top: fetch relay 152, gankdat metrics 60, gankdat 48
 - 2026-10-27 03:07 | triage | notify owner dispatched: last run started 00:02 UTC, 3 h ago
 - 2026-10-27 08:07 | triage | notify owner dispatched: last run started 05:30 UTC, 2 h 37 min ago
+- 2026-10-27 09:13 | build | fetch-relay.yml first run: success (push run 201 at 09:12, 22 s; after the 19:45 installer)
+- 2026-10-27 09:13 | build | Relay sitemap-5xx-verify: parent journal stats page 200; class/01, 25, 42 still 503, no retries
+- 2026-10-27 09:25 | build | Built gankdat sitemap-5xx-verify (6): facet pages written to the blob as computed, marker per page
+- 2026-10-27 09:25 | build | Metrics runner reads the wave log of a facet source whose blob is short of pages (journal today)
+- 2026-10-27 09:25 | build | gankdat v0.26.2 in server.json, constants, add-in manifest, connector; d1store test for a dying pass
+- 2026-10-27 09:25 | build | Queued gankdat sitemap-5xx-verify-2 (5, from 10-28): three HEADs + the 10-28 row's wave log clause

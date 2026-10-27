@@ -418,6 +418,21 @@ runs `check:root`.
   `Retry-After: 3600` as three 30 s retries per line (`scripts/fetch-relay.mjs`), ~95 s a line —
   which is how the two 10-26 sitemap rounds died at the 12-minute step cap with nothing written
   (foundry `relay-round-survives-stalled-host`).
+  **Pages are written as they are computed** (2026-10-27, `sitemap-5xx-verify`, v0.26.2): the first
+  wave on v0.26.1 (06:05) wrote the parent blob (the page answered 200 at 09:13, `dateModified`
+  06:05:45, no class links) and never the second write — `class/01`, `class/25` and `class/42` were
+  still a 503 with `Retry-After: 3600`, and with no previous blob there was no page to carry. Whether
+  the pass was killed or threw is unread: the journal had its ok row, so the runner queried no wave
+  log for it. Now `aggregateFacets` writes the blob after a computed page whenever 20 s have passed
+  since the last write (`FACETS_WRITE_GAP_MS`; finished facets, this facet's computed pages with the
+  rest carried, the facets not started carried whole), marks `stats facets` progress `page N of M
+  (<segment>/<value>)` per page so a silent night names the page it died on, logs
+  `stats_facets_done` (computed, of, interim_writes, elapsed_s) at the end, and the failure path
+  leaves an interim blob alone (`stats_precompute_failed … retained: "interim"`) instead of re-putting
+  the previous one over it. A pass that dies leaves the pages it finished, and stalest-first fills the
+  rest over the following nights. The metrics runner (`runner-refresh.mjs readWaveLogs`) also queries
+  the wave log of every facet source whose blob holds fewer pages than its spec lists, printing
+  `stats facets <slug>: N of M pages in the blob`, so the Daily numbers row reads the pass's own lines.
 - **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
   `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
   facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50

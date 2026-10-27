@@ -925,3 +925,19 @@ probe user agents excluded, top eight families, `+N more` beyond them, `none` / 
 connector's (connections' first call from a Power Platform flow) are readable from the row the day the shelves
 list — Office and the Power Platform gateway each send their own user agent, and the clause will name whatever
 arrives rather than a string guessed today. Tests in `test/rest-callers.spec.ts`; no Worker change, no version bump.
+
+## Build 2026-10-27 — journal facet pages written as they are computed (build, 09:10)
+
+Queue `sitemap-5xx-verify` (6). The relay round `sitemap-5xx-verify-2026-10-27` (09:13 UTC, three
+hours after the first 06:05 wave on v0.26.1): `/stats/uk-trademark-journal` 200 in 653 ms
+(`dateModified` 2026-10-27T06:05:45Z, 196,657 records, no Nice-class links on the page);
+`class/01`, `class/25`, `class/42` each 503 with `Retry-After: 3600` in 52–214 ms (no retries — the
+10-26 relay fix holds). So the parent blob was written at 45 s and the facet pass's second write
+never landed; with no previous blob there was no page to carry. The 10-27 Daily numbers row has no
+wave log for the journal (its ok row hid the pass), so killed-or-thrown stays unread until the
+10-28 row: the runner now queries the journal's log whenever its blob is short of pages.
+
+Fix (v0.26.2): `aggregateFacets` writes the blob after a computed page every 20 s, marks progress
+per page, logs `stats_facets_done`, and the failure path keeps an interim blob. Proof is
+`sitemap-5xx-verify-2` (5, from 10-28): `class/01` 200 through the relay and the 10-28 row's wave
+log clause naming `stats_facets_done` with `computed > 0` or the failure.

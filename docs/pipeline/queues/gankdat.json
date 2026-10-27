@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-26",
+  "updated": "2026-10-27",
   "researched": "2026-10-25",
   "items": [
     {
@@ -858,14 +858,25 @@
     {
       "id": "sitemap-5xx-verify",
       "title": "Verify the journal stats pages answer 200 after the first 06:05 wave on v0.26.1: a relay round of four HEADs (/stats/uk-trademark-journal, class/01, class/25, class/42) after 07:00 UTC; if any still 503, read the wave's log through the metrics job (wave-logs for uk-trademark-journal) and fix the parent aggregation",
-      "why": "sitemap-5xx-read (10-26 19:28) found every journal stats page a JSON 503 because the stats blob expired: since 10-18 the ok row lands before the stats, a wave killed in the 45-page facet pass wrote no blob, and after seven nights the retention ran out. v0.26.1 writes the parent blob before the facets and carries pages, but the fix is proven only by the next wave: no sandbox can trigger a D1 refresh, and if the parent aggregation itself dies inside the wave there is no previous blob to retain yet. Four HEADs keep the round under the 12-minute relay cap even if all four still 503 (about 95 s each).",
+      "why": "sitemap-5xx-read (10-26 19:28) found every journal stats page a JSON 503 because the stats blob expired: since 10-18 the ok row lands before the stats, a wave killed in the 45-page facet pass wrote no blob, and after seven nights the retention ran out. v0.26.1 writes the parent blob before the facets and carries pages, but the fix is proven only by the next wave: no sandbox can trigger a D1 refresh, and if the parent aggregation itself dies inside the wave there is no previous blob to retain yet. Four HEADs keep the round under the 12-minute relay cap even if all four still 503 (about 95 s each). Read 2026-10-27 09:13 (build, relay sitemap-5xx-verify-2026-10-27): the parent answers 200 (dateModified 06:05:45, no class links) and class/01, 25 and 42 still 503 with Retry-After 3600 — the parent blob landed, the second write never did, and with no previous page nothing could be carried. Fixed in v0.26.2: facet pages are written to the blob as they are computed (one interim write per 20 s, progress marker per page) and the metrics runner reads the wave log of any facet source whose blob holds fewer pages than its spec.",
       "effort_days": 0.1,
       "proof": "the four HEADs answer 200 through the relay, meta.json carries no retries; the Daily numbers row of 10-28 lists no silent night for uk-trademark-journal",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-26",
       "not_before": "2026-10-27",
-      "doing_since": "2026-10-27"
+      "done_at": "2026-10-27"
+    },
+    {
+      "id": "sitemap-5xx-verify-2",
+      "title": "Verify the journal's Nice-class pages fill after the first 06:05 wave on v0.26.2: a relay round of three HEADs (class/01, class/25, class/42) after 07:00 UTC plus the 10-28 Daily numbers row's wave log clause for uk-trademark-journal (stats_facets_done / stats_precompute_failed / silent nights); if the pass still computes no page, read why from that log and fix the aggregation",
+      "why": "sitemap-5xx-verify (10-27 09:13) found the parent blob written at 45 s and the facet pass's second write missing after the first wave on v0.26.1, with no log of why (the journal had an ok row, so the runner read no wave log). v0.26.2 writes the pages as they are computed and the runner now reads the journal's log whenever the blob is short of pages, so the 10-28 row names the cause and these HEADs show whether at least the first pages exist. Three HEADs keep the round short even if all still 503.",
+      "effort_days": 0.1,
+      "proof": "class/01 answers 200 through the relay; the 10-28 Daily numbers row's wave log clause for uk-trademark-journal shows stats_facets_done with computed > 0, or names the failure",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-27",
+      "not_before": "2026-10-28"
     }
   ],
   "research_after": "2026-10-30"
