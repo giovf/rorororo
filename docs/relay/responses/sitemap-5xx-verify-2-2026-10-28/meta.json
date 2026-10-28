@@ -1,0 +1,41 @@
+{
+  "request": "sitemap-5xx-verify-2-2026-10-28",
+  "fetched_at": "2026-10-28T09:26:32.985Z",
+  "results": [
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/stats/uk-trademark-journal/class/01",
+      "fetched_at": "2026-10-28T09:26:30.990Z",
+      "status": 200,
+      "elapsed_ms": 569,
+      "final_url": "https://gankdat.com/stats/uk-trademark-journal/class/01",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/stats/uk-trademark-journal/class/25",
+      "fetched_at": "2026-10-28T09:26:32.060Z",
+      "retry_after": "3600",
+      "status": 503,
+      "elapsed_ms": 207,
+      "final_url": "https://gankdat.com/stats/uk-trademark-journal/class/25",
+      "headers": {
+        "content-type": "application/json"
+      }
+    },
+    {
+      "method": "HEAD",
+      "url": "https://gankdat.com/stats/uk-trademark-journal/class/42",
+      "fetched_at": "2026-10-28T09:26:32.768Z",
+      "retry_after": "3600",
+      "status": 503,
+      "elapsed_ms": 217,
+      "final_url": "https://gankdat.com/stats/uk-trademark-journal/class/42",
+      "headers": {
+        "content-type": "application/json"
+      }
+    }
+  ]
+}
