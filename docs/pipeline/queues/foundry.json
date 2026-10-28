@@ -1159,8 +1159,9 @@
       "effort_days": 0.2,
       "proof": "no duplicate `<name> first run:` line in RUNS.md for 14 days; the two prompts’ CI WORKFLOWS paragraph starts with the command",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-26"
+      "status": "doing",
+      "added": "2026-10-26",
+      "doing_since": "2026-10-28"
     },
     {
       "id": "relay-round-survives-stalled-host",
