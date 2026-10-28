@@ -1943,3 +1943,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-28 07:12 | triage | notify owner dispatched: last run started 04:06 UTC, 3 h ago
 - 2026-10-28 09:26 | fallback | 09:00 build slot left no trace (slot check: missed); fallback filled it with a 0.1-day item
 - 2026-10-28 09:26 | fallback | Journal class pages: class/01 now 200, 25 and 42 still 503; last night's pass computed 14 of 45 pages
+- 2026-10-28 11:10 | triage | notify owner dispatched: last run started 08:55 UTC, 2 h 12 min ago
