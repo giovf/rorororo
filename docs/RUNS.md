@@ -1950,3 +1950,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-28 16:08 | triage | notify owner dispatched: last run started 13:20 UTC, 2 h 47 min ago
 - 2026-10-28 17:30 | fallback | 17:00 build slot left no trace (slot check: missed); fallback filled it with a 0.2-day item
 - 2026-10-28 17:30 | fallback | Built `npm run first-runs`: lists workflows still owed a first-run line; both prompts call it first
+- 2026-10-28 19:07 | triage | notify owner dispatched: last run started 16:48 UTC, 2 h 19 min ago
