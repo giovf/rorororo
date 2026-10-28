@@ -1946,3 +1946,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-28 11:10 | triage | notify owner dispatched: last run started 08:55 UTC, 2 h 12 min ago
 - 2026-10-28 11:08 | watchdog | missed: exchange slot 2026-10-28 08:00 UTC left no commit or run line by 10:00; usage limit? claude.ai/code/routines
 - 2026-10-28 11:08 | watchdog | missed: build slot 2026-10-28 09:00 UTC left no commit or run line by 11:00; usage limit? claude.ai/code/routines
+- 2026-10-28 13:20 | triage | notify owner dispatched: last run started 11:08 UTC, 2 h 12 min ago
