@@ -1944,3 +1944,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-28 09:26 | fallback | 09:00 build slot left no trace (slot check: missed); fallback filled it with a 0.1-day item
 - 2026-10-28 09:26 | fallback | Journal class pages: class/01 now 200, 25 and 42 still 503; last night's pass computed 14 of 45 pages
 - 2026-10-28 11:10 | triage | notify owner dispatched: last run started 08:55 UTC, 2 h 12 min ago
+- 2026-10-28 11:08 | watchdog | missed: exchange slot 2026-10-28 08:00 UTC left no commit or run line by 10:00; usage limit? claude.ai/code/routines
+- 2026-10-28 11:08 | watchdog | missed: build slot 2026-10-28 09:00 UTC left no commit or run line by 11:00; usage limit? claude.ai/code/routines
