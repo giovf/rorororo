@@ -1948,3 +1948,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-28 11:08 | watchdog | missed: build slot 2026-10-28 09:00 UTC left no commit or run line by 11:00; usage limit? claude.ai/code/routines
 - 2026-10-28 13:20 | triage | notify owner dispatched: last run started 11:08 UTC, 2 h 12 min ago
 - 2026-10-28 16:08 | triage | notify owner dispatched: last run started 13:20 UTC, 2 h 47 min ago
+- 2026-10-28 17:30 | fallback | 17:00 build slot left no trace (slot check: missed); fallback filled it with a 0.2-day item
+- 2026-10-28 17:30 | fallback | Built `npm run first-runs`: lists workflows still owed a first-run line; both prompts call it first
