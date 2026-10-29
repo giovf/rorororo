@@ -1,0 +1,94 @@
+{
+  "request": "envato-c-2026-10-29",
+  "fetched_at": "2026-10-29T17:48:27.114Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/13313674070681.json",
+      "fetched_at": "2026-10-29T17:48:22.584Z",
+      "status": 200,
+      "elapsed_ms": 509,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/13313674070681.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"a713c91574548bde30271485db500e79\""
+      },
+      "file": "1.json",
+      "bytes": 4383,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/360000472943.json",
+      "fetched_at": "2026-10-29T17:48:23.601Z",
+      "status": 200,
+      "elapsed_ms": 349,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/360000472943.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"52822f8ac825c91a6be19cd77cbfe96a\""
+      },
+      "file": "2.json",
+      "bytes": 16057,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://author.envato.com/hub/update-to-elements-author-agreement-and-market-author-terms",
+      "fetched_at": "2026-10-29T17:48:23.952Z",
+      "status": 200,
+      "elapsed_ms": 1426,
+      "final_url": "https://author.envato.com/hub/update-to-elements-author-agreement-and-market-author-terms/",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 69788,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://forums.envato.com/t/new-policy-on-ai-generated-content-for-market-and-elements/439244.json",
+      "fetched_at": "2026-10-29T17:48:25.383Z",
+      "status": 403,
+      "elapsed_ms": 195,
+      "final_url": "https://help.author.envato.com/hc/en-us",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 5724,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=W-8&locale=en-us&per_page=10",
+      "fetched_at": "2026-10-29T17:48:25.583Z",
+      "status": 200,
+      "elapsed_ms": 542,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=W-8&locale=en-us&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"9ea7ca78f2544d4f9d1ef72fa23fdab4\""
+      },
+      "file": "5.json",
+      "bytes": 128444,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=author+fee+2026&locale=en-us&per_page=10",
+      "fetched_at": "2026-10-29T17:48:26.642Z",
+      "status": 200,
+      "elapsed_ms": 461,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=author+fee+2026&locale=en-us&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"9aa781797726a1072a18b08caac83850\""
+      },
+      "file": "6.json",
+      "bytes": 141916,
+      "truncated": false
+    }
+  ]
+}
