@@ -1,0 +1,264 @@
+{
+  "request": "aws-dx-2026-10-29-d",
+  "fetched_at": "2026-10-29T18:32:55.267Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/marketplace/pp/prodview-q2ctuj7gq3ri2",
+      "render": true,
+      "fetched_at": "2026-10-29T18:32:19.962Z",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/marketplace/pp/prodview-q2ctuj7gq3ri2",
+      "title": "Sanctions, PEPs & Adverse Media Customer Screening & Monitoring | AWS Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 95,
+        "failed": [
+          "GET https://prod.tools.shortbread.aws.dev/1x1.png?awsccc=1793298741478 → 403",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "GET https://112-tzm-766.mktoresp.com/webevents/visitWebPage?_mchNc=1793298742753&_mchCn=&_mchId=112-TZM-766&_mchTk=_mch-aws.amazon.com-1793298742753-75497&_mchHo=aws.amazon.com&_mchPo=&_mchRu=%2Fmarke"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "[TangerineBox] Telemetry configuration is missing. Error: G9: Telemetry broker not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "Couldn't determine console domain and dual-stack values.",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "[InvalidDiscoveredModule Error] Module \"page-context-provider\" was not found by any resolver strategy. {code: InvalidDiscoveredModule, moduleId: page-context-provider}"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "etag": "W/\"a4fc267b58bf83a1cbc085cb32bb3bb8\""
+      },
+      "file": "1.html",
+      "bytes": 4432196,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/marketplace/pp/prodview-egcuoh26tgyps",
+      "render": true,
+      "fetched_at": "2026-10-29T18:32:27.121Z",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/marketplace/pp/prodview-egcuoh26tgyps",
+      "title": "Global Biz Verify API - Check company registration worldwide | AWS Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 89,
+        "failed": [
+          "GET https://prod.tools.shortbread.aws.dev/1x1.png?awsccc=1793298747812 → 403",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "[TangerineBox] Telemetry configuration is missing. Error: G9: Telemetry broker not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "Couldn't determine console domain and dual-stack values.",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "[InvalidDiscoveredModule Error] Module \"page-context-provider\" was not found by any resolver strategy. {code: InvalidDiscoveredModule, moduleId: page-context-provider}"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "etag": "W/\"30547aff315aeb945e961975ffe9accc\""
+      },
+      "file": "2.html",
+      "bytes": 4275562,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/marketplace/pp/prodview-ekg4c2htxjv7w",
+      "render": true,
+      "fetched_at": "2026-10-29T18:32:32.961Z",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/marketplace/pp/prodview-ekg4c2htxjv7w",
+      "title": "All UK companies by postcode town | AWS Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 91,
+        "failed": [
+          "GET https://prod.tools.shortbread.aws.dev/1x1.png?awsccc=1793298753591 → 403",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "[TangerineBox] Telemetry configuration is missing. Error: G9: Telemetry broker not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "Couldn't determine console domain and dual-stack values.",
+          "[InvalidDiscoveredModule Error] Module \"page-context-provider\" was not found by any resolver strategy. {code: InvalidDiscoveredModule, moduleId: page-context-provider}",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "Couldn't determine console domain and dual-stack values."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "etag": "W/\"0108dac70e71915413ead12415950081\""
+      },
+      "file": "3.html",
+      "bytes": 4256584,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/marketplace/pp/prodview-g5yvuyl6el7zc",
+      "render": true,
+      "fetched_at": "2026-10-29T18:32:38.688Z",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/marketplace/pp/prodview-g5yvuyl6el7zc",
+      "title": "UK Company List with Employee Count (Sample) | AWS Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 91,
+        "failed": [
+          "GET https://prod.tools.shortbread.aws.dev/1x1.png?awsccc=1793298759367 → 403",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "[TangerineBox] Telemetry configuration is missing. Error: G9: Telemetry broker not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "Couldn't determine console domain and dual-stack values.",
+          "[InvalidDiscoveredModule Error] Module \"page-context-provider\" was not found by any resolver strategy. {code: InvalidDiscoveredModule, moduleId: page-context-provider}",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "Couldn't determine console domain and dual-stack values."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "etag": "W/\"f0687be519782e33f5f004292dac6265\""
+      },
+      "file": "4.html",
+      "bytes": 4241670,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/marketplace/pp/prodview-4qcjwmbdkhzg6",
+      "render": true,
+      "fetched_at": "2026-10-29T18:32:44.408Z",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/marketplace/pp/prodview-4qcjwmbdkhzg6",
+      "title": "UK Company List with Employee Count | AWS Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 90,
+        "failed": [
+          "GET https://prod.tools.shortbread.aws.dev/1x1.png?awsccc=1793298765067 → 403",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "[TangerineBox] Telemetry configuration is missing. Error: G9: Telemetry broker not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "Couldn't determine console domain and dual-stack values.",
+          "[InvalidDiscoveredModule Error] Module \"page-context-provider\" was not found by any resolver strategy. {code: InvalidDiscoveredModule, moduleId: page-context-provider}",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "Couldn't determine console domain and dual-stack values."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "etag": "W/\"1f86972de977689967b24a8d683274d6\""
+      },
+      "file": "5.html",
+      "bytes": 4255397,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/marketplace/pp/prodview-u7zuwjxevbeo2",
+      "render": true,
+      "fetched_at": "2026-10-29T18:32:50.123Z",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/marketplace/pp/prodview-u7zuwjxevbeo2",
+      "title": "Indian Company Registry Database | AWS Marketplace",
+      "rendered": {
+        "network_idle": true,
+        "requests": 89,
+        "failed": [
+          "GET https://prod.tools.shortbread.aws.dev/1x1.png?awsccc=1793298770828 → 403",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "[TangerineBox] Telemetry configuration is missing. Error: G9: Telemetry broker not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [undefined] {message: ignored global js error: [undefined] - source: [undefined] - line: [undefined] - colno: [u",
+          "Couldn't determine console domain and dual-stack values.",
+          "[InvalidDiscoveredModule Error] Module \"page-context-provider\" was not found by any resolver strategy. {code: InvalidDiscoveredModule, moduleId: page-context-provider}",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "Couldn't determine console domain and dual-stack values."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "etag": "W/\"d11951a5663eb2b65f4338cd1586e4ba\""
+      },
+      "file": "6.html",
+      "bytes": 4255388,
+      "truncated": false
+    }
+  ]
+}
