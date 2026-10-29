@@ -5,10 +5,13 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (1)
+## Requests (2)
 
 1. **Meta hackathon entry built** — ~10 min, since 2026-10-26; unblocks hackathons `meta-global-ai-hackathon-live-run` (9). Steps: [032](actions/032-meta-model-api-key.md).
    Meta hackathon entry built — create a free Meta API key, ~10 min — docs/for-owner/actions/032-meta-model-api-key.md
+
+2. **the tax workbook is ready for your Payhip store** — ~13 min, since 2026-10-29; unblocks tax-workbook `payhip-listing-live` (5). Steps: [033](actions/033-payhip-upload-and-webhook.md).
+   the tax workbook is ready for your Payhip store — upload it and switch on the sale webhook, ~13 min, £0 — docs/for-owner/actions/033-payhip-upload-and-webhook.md
 
 ## Waiting on an attended Claude session, not you (2)
 

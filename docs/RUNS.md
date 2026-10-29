@@ -1991,4 +1991,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 17:52 | burn-down | Queued payhip-listing-live (blocked: action 033) and payhip-marketplace-submission (blocked: US$10 sales)
 - 2026-10-29 17:52 | burn-down | Action 033 raised (~13 min, £0): upload the workbook on Payhip and set the sale webhook + its secret
 - 2026-10-29 17:52 | notify | Tax workbook ready for your Payhip store: one upload and a webhook switch, about 13 minutes
-- 2026-10-29 18:04 | burn-down | Stopping at ~53 min: 2 items done (new-ventures spike parked, tax-workbook Payhip twin); next slot continues
+- 2026-10-29 17:43 | burn-down | Two items done at 32 min (new-ventures spike parked, tax-workbook Payhip twin); loop continues
