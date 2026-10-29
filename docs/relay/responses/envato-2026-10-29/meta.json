@@ -1,0 +1,250 @@
+{
+  "request": "envato-2026-10-29",
+  "fetched_at": "2026-10-29T17:46:05.811Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=author+fee&per_page=10",
+      "fetched_at": "2026-10-29T17:45:51.706Z",
+      "status": 404,
+      "elapsed_ms": 480,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=author+fee&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "1.json",
+      "bytes": 52,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=exclusive+non-exclusive&per_page=10",
+      "fetched_at": "2026-10-29T17:45:52.693Z",
+      "status": 404,
+      "elapsed_ms": 277,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=exclusive+non-exclusive&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "2.json",
+      "bytes": 52,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=tax+information+W-8&per_page=10",
+      "fetched_at": "2026-10-29T17:45:53.471Z",
+      "status": 404,
+      "elapsed_ms": 254,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=tax+information+W-8&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "3.json",
+      "bytes": 52,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=withdrawal+payout+methods&per_page=10",
+      "fetched_at": "2026-10-29T17:45:54.227Z",
+      "status": 404,
+      "elapsed_ms": 257,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=withdrawal+payout+methods&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "4.json",
+      "bytes": 52,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=AI+generated&per_page=10",
+      "fetched_at": "2026-10-29T17:45:54.987Z",
+      "status": 404,
+      "elapsed_ms": 263,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=AI+generated&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "5.json",
+      "bytes": 52,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=review+queue+requirements+codecanyon&per_page=10",
+      "fetched_at": "2026-10-29T17:45:55.751Z",
+      "status": 404,
+      "elapsed_ms": 618,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=review+queue+requirements+codecanyon&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "6.json",
+      "bytes": 52,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=become+an+author+requirements&per_page=10",
+      "fetched_at": "2026-10-29T17:45:56.870Z",
+      "status": 404,
+      "elapsed_ms": 281,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/en-us/articles/search.json?query=become+an+author+requirements&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "7.json",
+      "bytes": 52,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/legal/author",
+      "fetched_at": "2026-10-29T17:45:57.153Z",
+      "status": 403,
+      "elapsed_ms": 146,
+      "final_url": "https://help.author.envato.com/hc/en-us/articles/41371538488473-Author-Terms",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 5899,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/legal/market",
+      "fetched_at": "2026-10-29T17:45:57.803Z",
+      "status": 403,
+      "elapsed_ms": 196,
+      "final_url": "https://help.market.envato.com/hc/en-us/articles/41383541904281-Envato-Market-Terms",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.html",
+      "bytes": 5920,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/category/javascript?sort=sales",
+      "fetched_at": "2026-10-29T17:45:58.500Z",
+      "status": 403,
+      "elapsed_ms": 21,
+      "final_url": "https://codecanyon.net/category/javascript?sort=sales",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "10.html",
+      "bytes": 5862,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/category/javascript?sort=sales",
+      "render": true,
+      "fetched_at": "2026-10-29T17:45:59.022Z",
+      "status": 403,
+      "final_url": "https://codecanyon.net/category/javascript?sort=sales",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 12,
+        "failed": [
+          "GET https://codecanyon.net/category/javascript?sort=sales → 403",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a523ff45eaecd65b/1793295960502/f07491669419d7a3797d0e2945a59ccff7ceaa030d7666c3c65af238f5c615f8/CoNP6kNiRCJ-vzmMKVjLbhr0hZiR_z-",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/i/a523ff45eaecd65b/CpKXyBrFZhWIjGlL0ehbkiaofCjPnpyRm5Cy9cCUV3b2ovmAvrK-1iq_ATEkT8JM4C-7UTY4fpeH7YVxhNOXf8BZv5WsxSPdLk_G-rp"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy.",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%o font-size:0;color:transparent {}"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "11.html",
+      "bytes": 28957,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/category/javascript?sort=date",
+      "fetched_at": "2026-10-29T17:46:03.421Z",
+      "status": 403,
+      "elapsed_ms": 68,
+      "final_url": "https://codecanyon.net/category/javascript?sort=date",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "12.html",
+      "bytes": 5859,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/category/php-scripts?sort=sales",
+      "fetched_at": "2026-10-29T17:46:03.990Z",
+      "status": 403,
+      "elapsed_ms": 71,
+      "final_url": "https://codecanyon.net/category/php-scripts?sort=sales",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "13.html",
+      "bytes": 5865,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/category/javascript/forms?sort=sales",
+      "fetched_at": "2026-10-29T17:46:04.561Z",
+      "status": 403,
+      "elapsed_ms": 72,
+      "final_url": "https://codecanyon.net/category/javascript/forms?sort=sales",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "14.html",
+      "bytes": 5880,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/category/javascript/calendars?sort=sales",
+      "fetched_at": "2026-10-29T17:46:05.135Z",
+      "status": 403,
+      "elapsed_ms": 73,
+      "final_url": "https://codecanyon.net/category/javascript/calendars?sort=sales",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "15.html",
+      "bytes": 5892,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/category/php-scripts/calendars?sort=sales",
+      "fetched_at": "2026-10-29T17:46:05.708Z",
+      "status": 403,
+      "elapsed_ms": 100,
+      "final_url": "https://codecanyon.net/category/php-scripts/calendars?sort=sales",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "16.html",
+      "bytes": 5916,
+      "truncated": false
+    }
+  ]
+}
