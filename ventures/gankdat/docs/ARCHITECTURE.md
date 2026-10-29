@@ -464,6 +464,17 @@ runs `check:root`.
   reset.` at 06:08:18 — a facet page's statement over the 196k-row generation exceeds D1's
   per-statement CPU limit, so no class page has been computable since the window filled; the pass is
   rewritten as one scan per statement in `facet-aggregation-one-scan` (7).
+  **One scan per statement** (2026-10-29, `facet-aggregation-one-scan`, v0.26.4): `scanFacet` computes a
+  whole facet in 2 + groupBy.length statements — `json_each` over the facet field's elements
+  (`facetElementsExpr`: an array as it is, a comma-separated text split into items, any other
+  scalar wrapped) with `GROUP BY value` for the totals and the months (cut to the newest 12 per
+  value in the Worker) and a windowed top-N per breakdown (`ROW_NUMBER() OVER (PARTITION BY
+  value …)` so the result stays values × limit rows) — the journal's 45 Nice-class pages cost 7
+  statements, not 315, each linear in the generation. A value now selects the records whose field
+  equals it or whose list contains it (trimmed), the same set as `?classes=09`. The pass's budget,
+  stalest-first order, interim writes, carry and three-failures-in-a-row rule all work per facet
+  (`stats_facet_failed` names the segment; `stats_facets_budget` counts a carried facet's pages),
+  and the progress marker reads `facet <segment>: N pages in S statements`.
 - **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
   `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
   facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50

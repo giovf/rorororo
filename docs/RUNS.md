@@ -2005,6 +2005,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 18:26 | notify | Tax workbook can sell from our own page too: one Stripe payment link from you, about 3 minutes
 - 2026-10-29 18:35 | burn-down | license-worker.yml first run: failure (invalid workflow file: a step name held an unquoted colon)
 - 2026-10-29 18:35 | burn-down | Fix: both step names quoted, full file dropped again in docs/ci/license-worker.yml; next slot checks run 2
-- 2026-10-29 18:40 | burn-down | Spike aws-data-exchange-provider: AWS provider, seller, fee and pricing pages read (4 relay rounds)
-- 2026-10-29 18:40 | burn-down | Park: UK individual eligible, 3 % fee, but VAT number + US bank + KYC + a card-backed AWS account needed
-- 2026-10-29 18:40 | burn-down | Rivals priced: mnAi UK company lists US$280k/yr, verify API US$0.25/check; parked on a VAT/incorporation trigger
+- 2026-10-29 18:33 | burn-down | Spike aws-data-exchange-provider: AWS provider, seller, fee and pricing pages read (4 relay rounds)
+- 2026-10-29 18:33 | burn-down | Park: UK individual eligible, 3 % fee, but VAT number + US bank + KYC + a card-backed AWS account needed
+- 2026-10-29 18:33 | burn-down | Rivals priced: mnAi UK company lists US$280k/yr, verify API US$0.25/check; parked on a VAT/incorporation trigger
+- 2026-10-29 18:37 | burn-down | license-worker.yml first run after the fix: success (run 8: build, KV put, deploy, smoke 200/403)
+- 2026-10-29 18:42 | burn-down | Built gankdat facet-aggregation-one-scan (7): a facet in 2 + groupBy statements, json_each GROUP BY value
+- 2026-10-29 18:42 | burn-down | d1store scanFacet + facetElementsExpr (array, comma-list, scalar); windowed top-N per breakdown; v0.26.4
+- 2026-10-29 18:42 | burn-down | Facet pass per facet: budget, stalest-first, interim writes, carry, failures; 4 tests rewritten + 1 new
+- 2026-10-29 18:42 | burn-down | Proof deferred to the 10-30 wave: class pages 200 and stats_facets_done computed 45 in the Daily numbers row

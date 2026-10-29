@@ -880,14 +880,16 @@
     },
     {
       "id": "facet-aggregation-one-scan",
-      "title": "Aggregate a facet's pages in one scan per statement instead of one per value: json_each over the facet field (array or scalar) with GROUP BY value, month and each groupBy field, ROW_NUMBER() OVER (PARTITION BY value) for the per-page limits, so the journal's 45 Nice-class pages cost 7 statements, not 315",
+      "title": "Aggregate a facet's pages in one scan per statement instead of one per value: json_each over the facet field (array or scalar) with GROUP BY value, month and each groupBy field, ROW_NUMBER() OVER (PARTITION BY value) for the per-page limits, so the journal's 45 Nice-class pages cost 7 statements, not 315 — Done 2026-10-29 (burn-down, v0.26.4): d1store `scanFacet` + `facetElementsExpr` (array / comma-list / scalar), totals and months GROUP BY value, windowed top-N per breakdown; the pass works per facet (budget, stalest-first, interim writes, carry, failures in a row); four facet tests rewritten at facet granularity plus the array / comma-list elements test; the live proof (class pages 200 the morning after) is the 10-30 Daily numbers row's `stats facets` reading.",
       "why": "The 06:05 wave of 2026-10-27 (v0.26.1) wrote the parent blob and then threw `D1_ERROR: D1 DB exceeded its CPU time limit and was reset.` 167 s in (raw wave-window rows, metrics run 275): a facet page's statements each scan the whole 196k-row generation with json_extract and a substring filter on classes — 7 statements per value, 315 for the 45 classes — and one of them now exceeds D1's per-statement CPU limit, so no class page has been computable since the window filled (every page was a 503 from 10-25, Search Console mailed Server error 5xx). v0.26.3 isolates a failing page and carries the rest, but the same statement fails for every value, so the pages stay missing until the pass is cheaper. One scan per statement over json_each(classes) GROUP BY class keeps every statement linear in the generation and bounded in CPU; the per-page top-N comes from a window function. Dataset-agnostic: the facet field may be an array or a scalar (json_type decides), nothing names a source.",
       "effort_days": 0.5,
       "proof": "the 45 journal class pages answer 200 the morning after the deploy (relay HEADs of class/01, 25, 42); the wave log clause shows stats_facets_done with computed 45 and no stats_facet_page_failed; d1store tests for an array facet field and a scalar one",
       "score": 7,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-27",
-      "doing_since": "2026-10-29"
+      "doing_since": "2026-10-29",
+      "done_at": "2026-10-29",
+      "doing_by": "burn-down"
     },
     {
       "id": "apify-companies-house-qa-repair",
