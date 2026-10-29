@@ -2036,3 +2036,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 19:47 | burn-down | Fold leaves request events out and the job log prints every message; re-dispatched to read the lookup's
 - 2026-10-29 19:57 | burn-down | Run 284 log: the day's Worker errors are D1 — 29 'internal error; reference', 2 'overloaded', 1 network lost
 - 2026-10-29 19:57 | burn-down | Fold now ties each message to its request path (shared requestId) and folds D1 reference ids; re-dispatched
+- 2026-10-29 19:49 | watchdog | ci-failed: check.yml run 403 19:31 — step Run npm run check:root; later run 404 ok
+- 2026-10-29 19:49 | watchdog | ci-failed: gankdat-metrics.yml run 282 19:31 — step Append today's numbers to RESEARCH.md; later run 283 ok

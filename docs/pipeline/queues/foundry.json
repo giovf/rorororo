@@ -1200,6 +1200,17 @@
       "updated": "2026-10-29",
       "doing_since": "2026-10-29",
       "done_at": "2026-10-29"
+    },
+    {
+      "id": "ci-gankdat-metrics-failing",
+      "title": "The gankdat metrics workflow (gankdat-metrics.yml) failed 1 times this week: root-cause and fix it",
+      "why": "Filed by scripts/ci-failed-runs.ts (2026-10-29): gankdat-metrics.yml failed 1 times in 7 days — run 282 (2026-10-29 19:31 UTC, step \"Append today's numbers to RESEARCH.md\", later run 283 ok) — https://github.com/giovf/rorororo/actions/runs/40940822630. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/gankdat-metrics.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done.",
+      "effort_days": 0.2,
+      "proof": "seven days of gankdat-metrics.yml runs with no ci-failed line in docs/RUNS.md",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-29",
+      "updated": "2026-10-29"
     }
   ]
 }
