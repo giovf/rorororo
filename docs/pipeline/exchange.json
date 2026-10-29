@@ -629,6 +629,15 @@
       "trigger": "Re-read 2026-12-01 with one relay round (the JSON export and page 0 of the votes endpoint); earlier only if a Daily numbers row shows a first paid Apify run (0 paid at 482 runs/30 d on 2026-10-29). Promote only an in-policy public-data idea at ≥ 10 votes with no Store actor above 10 users.",
       "added": "2026-10-29",
       "source": "new-ventures spike (burn-down 2026-10-29)"
+    },
+    {
+      "id": "envato-codecanyon-shelf",
+      "title": "Envato Market (CodeCanyon) as a billed code shelf with public sales counts — ≤ 1-week JavaScript utilities sold through Envato as merchant of record",
+      "status": "parked",
+      "why": "Spike 2026-10-29 (new-ventures spike-envato-codecanyon-shelf, docs/exchange/spikes/envato-codecanyon-shelf.md, burn-down; seeded by the 2026-W44 exchange). Envato's help centre (keyless Zendesk search API, article bodies dated this week): open author applications are paused — no form, no waitlist, no way to request an invitation, no reopening date (2026-10-29); the author fee is a flat 50 % of the item price, with a fixed buyer fee on top and US royalty withholding before it (worked example: US$5.20 earned of a US$16 list price; payouts monthly at a US$50 floor); the AI-generated content policy (2026-10-28) bars AI-generated content as a standalone item or the primary component of the download file 'across all content types'; after approval an author completes tax information, payout details, a DSA trader declaration and a biometric ID check; items are non-exclusive. The shelf itself (codecanyon.net) answers a Cloudflare challenge to the runner raw and rendered, so its sales counts were read only from search-index snippets: form utilities at US$9–16 with 12, 361, 471 and 3,500 lifetime sales, the JavaScript-only ones the smallest and oldest. Park: three of the four promote conditions fail on Envato's own pages (no new authors, AI-generated items barred, the worst take of any shelf spiked since W42 at ≈ 32–40 % of list), the fourth unproven.",
+      "trigger": "Re-read 2027-01-15, one relay line each for help-centre articles 53981083605913 (applications paused) and 13313674070681 (AI policy): promote only if applications reopen for code items and AI-generated software is no longer barred; the sales-count bar is then read from a rendered category page if the challenge wall has gone, else from snippets.",
+      "added": "2026-10-29",
+      "source": "new-ventures spike (burn-down 2026-10-29)"
     }
   ]
 }
