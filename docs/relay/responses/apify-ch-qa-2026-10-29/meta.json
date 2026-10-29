@@ -1,0 +1,95 @@
+{
+  "request": "apify-ch-qa-2026-10-29",
+  "fetched_at": "2026-10-29T19:20:51.963Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/acts/faceless-api~uk-companies-house-lookup-monitor",
+      "fetched_at": "2026-10-29T19:20:48.362Z",
+      "status": 200,
+      "elapsed_ms": 320,
+      "final_url": "https://api.apify.com/v2/acts/faceless-api~uk-companies-house-lookup-monitor",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"1298-u1Nzv7NXRnS9bTqTIai8KDNegXc\""
+      },
+      "file": "1.json",
+      "bytes": 4760,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/actor-runs/Hnm5gGE2pk5B1lxWd",
+      "fetched_at": "2026-10-29T19:20:49.186Z",
+      "status": 200,
+      "elapsed_ms": 112,
+      "final_url": "https://api.apify.com/v2/actor-runs/Hnm5gGE2pk5B1lxWd",
+      "headers": {
+        "content-type": "application/json; charset=utf-8"
+      },
+      "file": "2.json",
+      "bytes": 2730,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/logs/Hnm5gGE2pk5B1lxWd",
+      "fetched_at": "2026-10-29T19:20:49.799Z",
+      "status": 200,
+      "elapsed_ms": 265,
+      "final_url": "https://api.apify.com/v2/logs/Hnm5gGE2pk5B1lxWd",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "content-disposition": "inline; filename=\"Hnm5gGE2pk5B1lxWd.log\""
+      },
+      "file": "3.txt",
+      "bytes": 1294,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/acts/faceless-api~uk-companies-house-lookup-monitor/runs?limit=10&desc=1",
+      "fetched_at": "2026-10-29T19:20:50.565Z",
+      "status": 401,
+      "elapsed_ms": 60,
+      "final_url": "https://api.apify.com/v2/acts/faceless-api~uk-companies-house-lookup-monitor/runs?limit=10&desc=1",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "content-length": "109",
+        "etag": "W/\"6d-//MRi/FTE5O9snWaO4ZbLTz9O2s\""
+      },
+      "file": "4.json",
+      "bytes": 109,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/v1/health",
+      "fetched_at": "2026-10-29T19:20:50.626Z",
+      "status": 200,
+      "elapsed_ms": 769,
+      "final_url": "https://gankdat.com/v1/health",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "5.json",
+      "bytes": 1503,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://gankdat.com/v1/data/uk-company-profiles?company_number=00000006&per_page=1",
+      "fetched_at": "2026-10-29T19:20:51.896Z",
+      "status": 401,
+      "elapsed_ms": 66,
+      "final_url": "https://gankdat.com/v1/data/uk-company-profiles?company_number=00000006&per_page=1",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "350"
+      },
+      "file": "6.json",
+      "bytes": 350,
+      "truncated": false
+    }
+  ]
+}

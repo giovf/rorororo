@@ -1,0 +1,90 @@
+{
+  "data": {
+    "id": "IQcY0d1CgnRr70hg8",
+    "userId": "VcapAQgluym4HTqoG",
+    "name": "uk-companies-house-lookup-monitor",
+    "username": "faceless-api",
+    "description": "Look up UK companies by number or name from the official Companies House API — status, SIC codes, accounts and confirmation-statement due dates, charges, latest filings, corporate PSCs. Schedule it in changes mode to monitor your own list and get only what changed. Pay per result.",
+    "isPublic": true,
+    "createdAt": "2026-10-07T09:39:20.293Z",
+    "modifiedAt": "2026-10-07T09:41:19.473Z",
+    "taggedBuilds": {
+      "latest": {
+        "buildId": "LYEHAad08EZ44LGVh",
+        "finishedAt": "2026-10-07T09:39:27.225Z",
+        "buildNumberInt": 100001,
+        "buildNumber": "0.1.1"
+      }
+    },
+    "stats": {
+      "totalBuilds": 1,
+      "totalRuns": 22,
+      "totalUsers": 2,
+      "totalUsers7Days": 1,
+      "totalUsers30Days": 1,
+      "totalUsers90Days": 1,
+      "actorReviewCount": 0,
+      "actorReviewRating": 0,
+      "bookmarkCount": 0,
+      "lastRunStartedAt": "2026-10-29T10:34:29.568Z",
+      "publicActorRunStats30Days": {
+        "ABORTED": 0,
+        "FAILED": 2,
+        "SUCCEEDED": 20,
+        "TIMED-OUT": 0,
+        "TOTAL": 22
+      }
+    },
+    "versions": [
+      {
+        "versionNumber": "0.1",
+        "sourceType": "SOURCE_FILES",
+        "buildTag": "latest"
+      }
+    ],
+    "defaultRunOptions": {
+      "build": "latest",
+      "timeoutSecs": 3600,
+      "memoryMbytes": 4096
+    },
+    "exampleRunInput": {
+      "body": "{ \"helloWorld\": 123 }",
+      "contentType": "application/json; charset=utf-8"
+    },
+    "categories": [
+      "LEAD_GENERATION",
+      "BUSINESS"
+    ],
+    "isDeprecated": false,
+    "title": "UK Companies House Lookup & Monitor",
+    "seoTitle": "UK Companies House Lookup & Monitor",
+    "seoDescription": "Look up UK companies by number or name from the official Companies House API — status, SIC codes, accounts and confirmation-statement due dates, charges, latest",
+    "pricingInfos": [
+      {
+        "pricingModel": "PAY_PER_EVENT",
+        "pricingPerEvent": {
+          "actorChargeEvents": {
+            "result": {
+              "eventTitle": "Result (one record)",
+              "eventDescription": "One record written to the dataset",
+              "eventPriceUsd": 0.001
+            }
+          }
+        },
+        "createdAt": "2026-10-07T09:41:19.480Z",
+        "startedAt": "2026-10-07T09:41:19.480Z",
+        "apifyMarginPercentage": 0.2,
+        "notifiedAboutChangeAt": "2026-10-07T10:00:29.152Z"
+      }
+    ],
+    "notice": "UNDER_MAINTENANCE",
+    "isCritical": false,
+    "isGeneric": false,
+    "hasNoDataset": false,
+    "isSourceCodeHidden": true,
+    "standbyUrl": null,
+    "actorPermissionLevel": "LIMITED_PERMISSIONS",
+    "readmeSummary": "## UK Companies House Lookup & Monitor\n\nA lookup and monitoring Actor that queries the official UK Companies House API (no scraping) to return one registry record per company, keyed to identifiers or names. It extracts company identity and status, company type and jurisdiction, SIC classification, incorporation and dissolution dates, previous names, registered-office area, accounts metadata (filing type, last period end, next due date, overdue flag), confirmation-statement metadata (last made up to, next due, overdue flag), insolvency and liquidation indicators, charges summary plus recent charge entries with status and dates, recent filing events with dates, categories, form types and description codes, and corporate persons with significant control including natures of control. The Actor can run in a scheduled monitoring mode that stores a prior-run baseline and returns only companies that changed since the previous run, indicating added/removed/changed status, which fields changed, and change timestamps. Data sources: Companies House API and gankdat.com.\n\n## Use cases\n\n- Credit control and supplier onboarding — detect overdue accounts or confirmation statements, new charges, status changes such as liquidation or strike-off filings.  \n- Know-Your-Business (KYB) refresh — periodic re-checks of client portfolios for status, SIC and controller changes.  \n- Portfolio watch — monitor competitors, customers or investees for new filings, charges and other registry events.",
+    "deploymentKey": "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC6zJTp/q98z18ADkQ4yO8JEMRye+iPk6yTbFEm5UYhXZdTUS/eid76nKXYtkvZJj5C/9e22oV9R3iDqwPbO+z0qeyDsI/+lpW8mKenKPJU2xNSE3bQt+cHDphUcpfCrku6WAMtkzyFtNMxTxWHxIa/BGbZvkMpbYrU2t5g1oArMCoVOJwkXjKuyoM4HhaXfyXxElka1pmXtprgFFfmfa/r6YckRS/OYdE4QQ23v5GD6tbi64/VveUS91lJUmffF332SGG47NYT0+tdVLpj3J/HDaVBmlWKOBqfQUgoEKpOT2FOQJR5ThP0Ia71bXXKAqIjfdZhdv1Ce8xDaee0m4Z7 \n"
+  }
+}

@@ -1,0 +1,16 @@
+2026-10-29T10:34:29.821Z ACTOR: Pulling container image of build LYEHAad08EZ44LGVh from registry.
+2026-10-29T10:34:32.870Z ACTOR: Creating container.
+2026-10-29T10:34:32.943Z ACTOR: Starting container.
+2026-10-29T10:34:32.949Z ACTOR: Running under "LIMITED_PERMISSIONS".
+2026-10-29T10:34:33.467Z INFO  System info {"apifyVersion":"3.7.2","apifyClientVersion":"2.25.0","crawleeVersion":"3.18.2","osType":"Linux","nodeVersion":"v22.23.3"}
+2026-10-29T10:34:33.563Z INFO  Looking up 1 companies; returning up to 1000
+2026-10-29T10:34:36.065Z file:///usr/src/app/src/gankdat.mjs:162
+2026-10-29T10:34:36.068Z     if (!res.ok) throw new Error(`gankdat API ${res.status}: ${(await res.text()).slice(0, 200)}`);
+2026-10-29T10:34:36.070Z                        ^
+2026-10-29T10:34:36.073Z 
+2026-10-29T10:34:36.075Z Error: gankdat API 500: {"ok":false,"error":{"code":"internal","message":"Internal server error","docs_url":"https://gankdat.com/docs#internal"}}
+2026-10-29T10:34:36.077Z     at runLookupActor (file:///usr/src/app/src/gankdat.mjs:162:24)
+2026-10-29T10:34:36.080Z     at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+2026-10-29T10:34:36.082Z     at async file:///usr/src/app/src/main.mjs:10:1
+2026-10-29T10:34:36.084Z 
+2026-10-29T10:34:36.087Z Node.js v22.23.3
