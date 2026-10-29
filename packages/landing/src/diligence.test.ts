@@ -87,6 +87,18 @@ describe('/diligence', () => {
     expect(String(evs[0]?.message)).toContain('credit set aside for this demo is used up');
   });
 
+  it('starts no run while the spending-alert stop is set', async () => {
+    const env: DiligenceBindings = { OPS_KV: fakeKv(), DILIGENCE_API_KEY: 'LLM_1_x', DILIGENCE_STOP: 'meta spending alert 2026-10-30' };
+    const res = await diligence.request(
+      '/run',
+      { method: 'POST', body: JSON.stringify({ company: 'Acme Widgets Ltd' }), headers: { 'content-type': 'application/json' } },
+      env,
+    );
+    const evs = await events(res);
+    expect(evs).toHaveLength(1);
+    expect(String(evs[0]?.message)).toContain('spending limit');
+  });
+
   it('names the model from the vars, Muse Spark on Meta Model API by default', () => {
     expect(modelOf({ OPS_KV: fakeKv() })).toEqual({
       baseUrl: 'https://api.meta.ai/v1',

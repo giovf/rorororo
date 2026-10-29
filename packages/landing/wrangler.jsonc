@@ -25,6 +25,10 @@
     // is another base URL and model id here.
     "DILIGENCE_BASE_URL": "https://api.meta.ai/v1",
     "DILIGENCE_MODEL": "muse-spark-1.3",
+    // Hard stop (2026-10-29): non-empty = /diligence starts no more model runs. The inbox triage sets it
+    // to "meta spending alert YYYY-MM-DD" when Meta's spending-limit alert mail arrives (owner's alert,
+    // action 032); the push redeploys the page. Clearing it is a deliberate commit, never automatic.
+    "DILIGENCE_STOP": "",
   },
   // Secrets (wrangler secret put): RESEND_API_KEY, OPS_INTERNAL_TOKEN; DILIGENCE_API_KEY (the landing
   // workflow sets it from the META_MODEL_API_KEY repository secret, action 032) and the optional

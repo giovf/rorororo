@@ -1,7 +1,8 @@
 # Owner action request #032 — Meta hackathon: the model key, then the submission
 
 - **Date:** 2026-10-26
-- **Status:** pending
+- **Status:** waiting on Meta — dev.meta.ai logs you out when creating a key (2026-10-29); the credit claim is in and
+  Meta issues it within a few days. Try step 1 again once the "credits issued" mail arrives.
 - **Your time:** ~10 minutes now (step 1), ~15 minutes by 4 Nov (step 3)
 - **Cost:** £0.00 expected. *Corrected 2026-10-29 from the Credit Terms you saved:* Meta requires a card on file for any
   Model API account and charges it at standard prices once the US$150 credit is used up, with no cap on their side. The
@@ -29,7 +30,11 @@ US$150k / 100k / 75k / 50k / 25k) sign a W-8BEN; submissions close **4 Nov 2026,
   2. **Create API key**, name it `foundry diligence demo`, copy it (shown once; it starts `LLM_`).
   3. GitHub → https://github.com/giovf/rorororo/settings/secrets/actions → **New repository secret**
      → name `META_MODEL_API_KEY`, paste the key. Also put it in `.env` as `META_MODEL_API_KEY=…`.
-  4. Optional (~2 min): a gankdat API key from https://gankdat.com/account as the repository secret
+  4. **Spending alert (~1 min):** in the dashboard's billing / spending limit settings, set an alert at **US$100**
+     (below the US$150 credit), sent to the account's email. When that mail reaches the Foundry inbox the hourly inbox
+     triage switches the page off (`DILIGENCE_STOP`), on top of the page's own ≈ US$85 cap. If the alert can only go to
+     another address, forward it to the Foundry mailbox or note which address it uses.
+  5. Optional (~2 min): a gankdat API key from https://gankdat.com/account as the repository secret
      `GANKDAT_DEMO_API_KEY`, so the registers answer in full on the page instead of preview rows.
 - **Give back:** say "key done". The next build or burn-down run dispatches the `landing` workflow
   (it stores the key as the Worker secret), checks the page live, records the video and finishes the

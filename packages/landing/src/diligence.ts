@@ -33,6 +33,8 @@ export type DiligenceBindings = {
   DILIGENCE_GANKDAT_KEY?: string;
   DILIGENCE_BASE_URL?: string;
   DILIGENCE_MODEL?: string;
+  /** Non-empty: no new runs (set by the inbox triage on Meta's spending-limit alert). */
+  DILIGENCE_STOP?: string;
 };
 
 /** Checks one visitor may start per hour (the page is a demo, not a service). */
@@ -108,6 +110,8 @@ diligence.post('/run', async (c) => {
   return streamSSE(c, async (stream) => {
     const send = (data: Record<string, unknown>): Promise<void> => stream.writeSSE({ data: JSON.stringify(data) });
     if (!company) return send({ type: 'error', message: 'Type a company name of 2 to 80 characters.' });
+    if (c.env.DILIGENCE_STOP)
+      return send({ type: 'error', message: 'The spending limit set for this demo has been reached, so the page no longer runs checks. The CLI in the repo runs the same loop.' });
     if (!key) return send({ type: 'error', message: 'The model key is not configured on this deployment yet, so no check can run. The CLI in the repo runs the same loop with --dry-run.' });
     if (!visitorOk) return send({ type: 'error', message: `This demo allows ${PER_VISITOR_HOUR} checks an hour per visitor. Try again later.` });
     if (!dayOk) return send({ type: 'error', message: `Today's ${PER_DAY} checks are used up; the page opens again at 00:00 UTC.` });
