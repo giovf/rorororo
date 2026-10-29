@@ -55,4 +55,7 @@ MEDIUM risk — an insolvency notice is on the Gazette; no sanctions match.
 The same events, streamed: a status line (`Running muse-spark-1.3 on Meta Model API — reading the
 registers…`), one line per register as its result lands (`query_uk_sanctions "Acme Widgets Ltd" → 0
 matches`), the report rendered with the verdict as a coloured pill, and the meter
-(`model calls 2/40 · tokens 2040/300000 · 21.4 s`).
+(`model calls 2/40 · tokens 2040/300000 · 21.4 s`). When no single Companies House record with a
+company number stands behind the run (the name matched several companies, or none by number), the
+page relabels every risk grade `unconfirmed — name match only` and the Verdict section says why and
+what to check — a HIGH verdict is never shown for a name alone (2026-10-29).

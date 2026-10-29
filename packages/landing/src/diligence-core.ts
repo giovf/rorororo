@@ -120,6 +120,10 @@ export function systemPrompt(): string {
     'register at a time, with the company name as `q`; you may call several tools in one turn. Never',
     'invent a record: every statement in the report cites the tool that returned it, and a register',
     'with no match says so. Keep each tool result as the only evidence for what it covers.',
+    'Identity first: a name can belong to several companies, so when Companies House returns more',
+    'than one company, or none, look the right one up by its company number with',
+    'query_uk_company_profiles (`company_number`) before you judge; a report whose company number',
+    'is not pinned is labelled unconfirmed by the page whatever you write.',
     'When the evidence is in, answer with a one-page Markdown report titled',
     '"Due diligence: <company>" with sections Identity, Red flags, Public money, Verdict (one of',
     'LOW / MEDIUM / HIGH risk with one sentence why) and Sources (one line per tool called).',
@@ -151,9 +155,11 @@ export interface RunOptions {
 }
 
 export interface RunResult {
+  /** The model's report, relabelled by `confirmVerdict` when the company is not pinned by number. */
   report: string;
   steps: Step[];
   budget: Budget;
+  identity: Identity;
 }
 
 /** The tool loop: ask the model, run every tool it asks for, repeat until it answers in prose. */
@@ -172,7 +178,10 @@ export async function runAgent(o: RunOptions): Promise<RunResult> {
     if (!msg) throw new Error('model returned no choices');
     messages.push(msg);
     const calls = msg.tool_calls ?? [];
-    if (calls.length === 0) return { report: msg.content ?? '', steps, budget };
+    if (calls.length === 0) {
+      const identity = identityOf(steps);
+      return { report: confirmVerdict(msg.content ?? '', identity), steps, budget, identity };
+    }
     for (const c of calls) {
       const args = parseArgs(c.function.arguments);
       const result = await o.callTool(c.function.name, args);
@@ -347,47 +356,43 @@ export async function gankdatTools(
 
 // --- dry run: a scripted model and canned registers, so tests and rehearsals need no key ---
 
+/** What a gankdat `query_*` tool returns (the live shape: `{ ok, data, meta: { total } }`). */
+export function registerResult(slug: string, data: Record<string, unknown>[]): string {
+  return JSON.stringify({ ok: true, data, meta: { source: slug, total: data.length } });
+}
+
 export const FIXTURES: Record<string, (q: string) => string> = {
   query_uk_companies: (q) =>
-    JSON.stringify({
-      total: 1,
-      items: [
-        {
-          company_number: '01234567',
-          company_name: q.toUpperCase(),
-          company_status: 'active',
-          incorporation_date: '2009-03-04',
-          sic_codes: ['62012'],
-          registered_office: 'Manchester',
-        },
-      ],
-    }),
-  query_uk_sanctions: () => JSON.stringify({ total: 0, items: [] }),
+    registerResult('uk-companies', [
+      {
+        company_number: '01234567',
+        company_name: q.toUpperCase(),
+        company_status: 'active',
+        incorporation_date: '2009-03-04',
+        sic_codes: ['62012'],
+        registered_office: 'Manchester',
+      },
+    ]),
+  query_uk_sanctions: () => registerResult('uk-sanctions', []),
   query_uk_insolvency: (q) =>
-    JSON.stringify({
-      total: 1,
-      items: [
-        {
-          notice_type: 'Notices of Intended Dividends',
-          company: q.toUpperCase(),
-          published: '2025-11-02',
-          gazette: 'https://www.thegazette.co.uk/notice/4567890',
-        },
-      ],
-    }),
-  query_uk_sponsors: () => JSON.stringify({ total: 0, items: [] }),
+    registerResult('uk-insolvency', [
+      {
+        notice_type: 'Notices of Intended Dividends',
+        company: q.toUpperCase(),
+        published: '2025-11-02',
+        gazette: 'https://www.thegazette.co.uk/notice/4567890',
+      },
+    ]),
+  query_uk_sponsors: () => registerResult('uk-sponsors', []),
   query_uk_contract_awards: (q) =>
-    JSON.stringify({
-      total: 1,
-      items: [
-        {
-          buyer: 'Manchester City Council',
-          supplier: q.toUpperCase(),
-          value_gbp: 48000,
-          awarded: '2024-06-18',
-        },
-      ],
-    }),
+    registerResult('uk-contract-awards', [
+      {
+        buyer: 'Manchester City Council',
+        supplier: q.toUpperCase(),
+        value_gbp: 48000,
+        awarded: '2024-06-18',
+      },
+    ]),
 };
 
 export function dryRunTools(): { tools: ToolDef[]; callTool: ToolCallFn } {
@@ -402,7 +407,7 @@ export function dryRunTools(): { tools: ToolDef[]; callTool: ToolCallFn } {
   const callTool: ToolCallFn = (name, args) => {
     const q = typeof args['q'] === 'string' ? args['q'] : '';
     const f = FIXTURES[name];
-    return Promise.resolve(f ? f(q) : JSON.stringify({ total: 0, items: [] }));
+    return Promise.resolve(f ? f(q) : registerResult(name.replace(/^query_/, '').replace(/_/g, '-'), []));
   };
   return { tools, callTool };
 }
@@ -410,16 +415,7 @@ export function dryRunTools(): { tools: ToolDef[]; callTool: ToolCallFn } {
 /** The report shape the live model is asked for, filled from the dry-run fixtures. */
 export function renderReport(company: string, steps: Step[]): string {
   const by = new Map(steps.map((s) => [s.tool, s.result]));
-  const count = (tool: string): number => {
-    try {
-      const parsed: unknown = JSON.parse(by.get(tool) ?? '{}');
-      return typeof parsed === 'object' && parsed !== null && 'total' in parsed
-        ? Number(parsed.total)
-        : 0;
-    } catch {
-      return 0;
-    }
-  };
+  const count = (tool: string): number => parseRegisterResult(by.get(tool) ?? '').total ?? 0;
   const insolvency = count('query_uk_insolvency');
   const sanctions = count('query_uk_sanctions');
   const verdict = sanctions > 0 ? 'HIGH' : insolvency > 0 ? 'MEDIUM' : 'LOW';
@@ -515,16 +511,109 @@ export function cleanCompany(input: unknown): string | null {
   return name.length >= 2 && name.length <= 80 ? name : null;
 }
 
+export interface RegisterResult {
+  /** The register's match count, or null when the text is not a register result. */
+  total: number | null;
+  records: Record<string, unknown>[];
+}
+
+function isRecord(v: unknown): v is Record<string, unknown> {
+  return typeof v === 'object' && v !== null && !Array.isArray(v);
+}
+
+/**
+ * A tool result as the registers return it: gankdat's MCP payload `{ ok, data: [...], meta: { total } }`
+ * (2026-10-29: the page's step lines read the match count from a top-level `total` that the live
+ * payload never had, so every live step said "N chars") or the older `{ total, items }` shape.
+ */
+export function parseRegisterResult(text: string): RegisterResult {
+  try {
+    const parsed: unknown = JSON.parse(text);
+    if (!isRecord(parsed)) return { total: null, records: [] };
+    const rows = Array.isArray(parsed['data']) ? parsed['data'] : Array.isArray(parsed['items']) ? parsed['items'] : null;
+    const records = (rows ?? []).filter(isRecord);
+    const meta = isRecord(parsed['meta']) ? parsed['meta'] : {};
+    const rawTotal = 'total' in parsed ? parsed['total'] : 'total' in meta ? meta['total'] : rows ? rows.length : null;
+    const total = rawTotal === null ? null : Number(rawTotal);
+    return { total: total !== null && Number.isFinite(total) ? total : null, records };
+  } catch {
+    return { total: null, records: [] };
+  }
+}
+
+/** The verdict label a report carries when no single company number backs it. */
+export const UNCONFIRMED_LABEL = 'UNCONFIRMED — name match only';
+const COMPANIES_HOUSE_TOOLS = new Set(['query_uk_companies', 'query_uk_company_profiles']);
+
+export interface Identity {
+  /** True when one Companies House record with a company number stands behind the report. */
+  confirmed: boolean;
+  companyNumber: string | null;
+  /** Companies House matches for the typed name across the run (the largest count seen), null when never asked. */
+  nameMatches: number | null;
+  /** One plain clause for the report, e.g. "Companies House returned 3 companies for this name". */
+  reason: string;
+}
+
+/**
+ * Whether the run pinned one company (2026-10-29, hackathons `diligence-name-only-unconfirmed`):
+ * a Companies House tool returned exactly one record carrying a company number — a name search
+ * with one hit, or a profile lookup by `company_number` — and that number is the report's key. A
+ * name shared by several companies, or a name no register pinned by number, leaves the report
+ * `unconfirmed`: Meta's acceptable-use policy bars defamatory content, and a HIGH verdict on a
+ * public page about the wrong company is exactly that.
+ */
+export function identityOf(steps: Step[]): Identity {
+  let nameMatches: number | null = null;
+  let companyNumber: string | null = null;
+  for (const step of steps) {
+    if (!COMPANIES_HOUSE_TOOLS.has(step.tool)) continue;
+    const { total, records } = parseRegisterResult(step.result);
+    const byNumber = typeof step.args['company_number'] === 'string' || typeof step.args['q'] === 'string' && /^\d{6,8}$/.test(step.args['q'].trim());
+    if (!byNumber && total !== null) nameMatches = Math.max(nameMatches ?? 0, total);
+    const only = records.length === 1 && (total === null || total === 1) ? records[0] : undefined;
+    const number = only?.['company_number'];
+    if (typeof number === 'string' && number.trim() !== '' && (byNumber || !companyNumber)) companyNumber = number.trim();
+  }
+  if (companyNumber) {
+    return { confirmed: true, companyNumber, nameMatches, reason: `Companies House company ${companyNumber}` };
+  }
+  const reason =
+    nameMatches === null
+      ? 'no Companies House record was read for this name'
+      : nameMatches === 0
+        ? 'Companies House returned no company for this name and none was looked up by number'
+        : nameMatches === 1
+          ? 'the one Companies House match carried no company number'
+          : `Companies House returned ${nameMatches} companies for this name and none was pinned by number`;
+  return { confirmed: false, companyNumber: null, nameMatches, reason };
+}
+
+const VERDICT_RE = /\b(LOW|MEDIUM|HIGH)[ -]risk\b/gi;
+
+/**
+ * The report as the page may show it: confirmed, unchanged; unconfirmed, every `LOW/MEDIUM/HIGH
+ * risk` phrase becomes the unconfirmed label, a bare HIGH in the Verdict section goes with it, and
+ * the Verdict section ends with why and what to check — so no HIGH is ever printed without a
+ * company number, whatever the model wrote.
+ */
+export function confirmVerdict(report: string, identity: Identity): string {
+  if (identity.confirmed) return report;
+  const note = `${identity.reason}, so the records above may belong to another company with this name. Confirm the company number on Companies House before relying on this report.`;
+  const relabelled = report.replace(VERDICT_RE, UNCONFIRMED_LABEL);
+  const m = /^## Verdict[^\n]*\n/m.exec(relabelled);
+  if (!m) return `${relabelled.trimEnd()}\n\n## Verdict\n${UNCONFIRMED_LABEL} — ${note}\n`;
+  const start = m.index + m[0].length;
+  const next = relabelled.slice(start).search(/^## /m);
+  const end = next === -1 ? relabelled.length : start + next;
+  const section = relabelled.slice(start, end).replace(/\bHIGH\b/g, 'unconfirmed');
+  const body = section.includes(UNCONFIRMED_LABEL) ? section : `${UNCONFIRMED_LABEL} — ${section.trimStart()}`;
+  return `${relabelled.slice(0, start)}${body.trimEnd()}\n\n${note}\n${end === relabelled.length ? '' : '\n'}${relabelled.slice(end)}`;
+}
+
 /** One line of what a tool returned, for a transcript or a progress list. */
 export function stepSummary(step: Step): string {
-  let total: number | null = null;
-  try {
-    const parsed: unknown = JSON.parse(step.result);
-    if (typeof parsed === 'object' && parsed !== null && 'total' in parsed)
-      total = Number(parsed.total);
-  } catch {
-    total = null;
-  }
+  const { total } = parseRegisterResult(step.result);
   const q = typeof step.args['q'] === 'string' ? step.args['q'] : JSON.stringify(step.args);
   const matches = total === null ? `${step.result.length} chars` : `${total} match${total === 1 ? '' : 'es'}`;
   return `${step.tool} "${q}" → ${matches}`;

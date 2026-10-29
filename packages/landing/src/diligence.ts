@@ -131,6 +131,7 @@ diligence.post('/run', async (c) => {
       await send({
         type: 'report',
         markdown: result.report,
+        identity: result.identity,
         calls: result.budget.calls,
         maxCalls: result.budget.maxCalls,
         tokens: result.budget.tokens,
@@ -160,7 +161,7 @@ ol.steps li.pending{color:var(--mute)}
 #report h1{font-size:22px;margin:0 0 10px}#report h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--mute);margin:18px 0 6px}
 #report ul{margin:0;padding-left:20px}#report li{margin:4px 0}#report p{margin:6px 0}
 .verdict{display:inline-block;padding:4px 10px;border-radius:999px;border:1px solid currentColor;font-weight:600;font-size:14px}
-.verdict.LOW{color:var(--good)}.verdict.MEDIUM{color:var(--warn)}.verdict.HIGH{color:var(--bad)}
+.verdict.LOW{color:var(--good)}.verdict.MEDIUM{color:var(--warn)}.verdict.HIGH{color:var(--bad)}.verdict.UNCONFIRMED{color:var(--warn)}
 #meter{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;color:var(--mute);margin-top:12px}
 .err{color:var(--bad)}.notice{border-color:var(--warn)}
 `;
@@ -182,6 +183,7 @@ function md(text){var html=[],list=false,lines=text.split('\\n');
   else html.push('<p>'+inline(l)+'</p>');}
  if(list)html.push('</ul>');return html.join('')}
 function inline(s){s=esc(s).replace(/\\*\\*(.+?)\\*\\*/g,'<b>$1</b>').replace(/\`(.+?)\`/g,'<code>$1</code>');
+ s=s.replace(/UNCONFIRMED \u2014 name match only/g,'<span class="verdict UNCONFIRMED">unconfirmed \u2014 name match only</span>');
  return s.replace(/\\b(LOW|MEDIUM|HIGH) risk\\b/,function(m,v){return '<span class="verdict '+v+'">'+v+' risk</span>'})}
 function handle(ev){window.diligenceEvents.push(ev);
  if(ev.type==='start'){status.textContent='Running '+ev.model+' on '+ev.provider+' — reading the registers…';
@@ -219,7 +221,7 @@ ${hasKey ? '' : '<p class="err" style="margin:0 0 10px">The model key is not con
 <div class="card small mute">
 <p style="margin:0 0 6px"><b>How it works.</b> The model decides which registers to read and calls them as tools — ${registers} — over the Model Context Protocol; the page streams each call as it lands. A spend guard stops any run past 40 model calls or 300k tokens. ${fullRegisters ? 'The registers answer in full.' : 'The registers answer in preview mode (a few rows each, a daily cap), so a large company may show a sample of its records.'}</p>
 <p style="margin:0 0 6px"><b>What it is.</b> An entry in the Meta Global AI Developer Hackathon (26 Oct – 4 Nov 2026), built on <a href="https://gankdat.com">gankdat</a>, a live data product for AI agents. Source: <a href="https://github.com/giovf/rorororo/blob/main/packages/landing/src/diligence-core.ts">diligence-core.ts</a>; CLI: <code>scripts/meta-diligence-agent.ts</code>. Built with Claude Code.</p>
-<p style="margin:0">This is a demonstration, not advice: the report repeats what public registers return for the name you typed, which may match several companies. Check the company number on <a href="https://find-and-update.company-information.service.gov.uk/">Companies House</a> before you rely on it.</p>
+<p style="margin:0">This is a demonstration, not advice: the report repeats what public registers return for the name you typed, which may match several companies. When the agent has not pinned one company number, the verdict reads <b>unconfirmed — name match only</b> and no risk grade is shown. Check the company number on <a href="https://find-and-update.company-information.service.gov.uk/">Companies House</a> before you rely on it.</p>
 </div>
 </div><script>${JS}</script></body></html>`;
 }

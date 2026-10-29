@@ -1979,3 +1979,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 17:23 | burn-down | Spike apify-actor-ideas-board: board read via its own JSON export and votes API (4 relay rounds); 148 open
 - 2026-10-29 17:23 | burn-down | Park: 134 of 148 open ideas at 0 votes; the top three (19/12/10) are Zalo, n8n, Internet Archive, none public data
 - 2026-10-29 17:23 | burn-down | Lottery, regulatory and FX ideas sit at 0 votes with a Store actor each; parked in the exchange, re-read 12-01
+- 2026-10-29 17:20 | build | Built hackathons diligence-name-only-unconfirmed: /diligence verdict needs one company number
+- 2026-10-29 17:20 | build | diligence-core: identityOf + confirmVerdict relabel a name-only report UNCONFIRMED, strip HIGH
+- 2026-10-29 17:20 | build | System prompt asks the model to pin the company number via query_uk_company_profiles
+- 2026-10-29 17:20 | build | Tool results now parsed in the live MCP shape (ok/data/meta.total); step lines said N chars
+- 2026-10-29 17:20 | build | Tests: two-company name + HIGH model verdict -> UNCONFIRMED, no HIGH; page shows the label
+- 2026-10-29 17:20 | build | SUBMISSION, WALKTHROUGH and ARCHITECTURE note the rule; item done, nothing for the owner

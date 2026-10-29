@@ -41,6 +41,8 @@ describe('/diligence', () => {
     expect(html).toContain('Counterparty check');
     expect(html).toContain('muse-spark-1.3');
     expect(html).toContain('not configured');
+    expect(html).toContain('unconfirmed — name match only');
+    expect(html).toContain('verdict UNCONFIRMED');
     expect(html).toMatch(/<button id="run" type="submit" disabled>/);
     const live = await diligence.request('/', {}, { ...env, DILIGENCE_API_KEY: 'LLM_1_x' });
     expect(await live.text()).toMatch(/<button id="run" type="submit">/);
