@@ -2059,3 +2059,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 21:40 | burn-down | Night cap 3 burn-down slots Thu–Tue after the two builds, none Wednesday; 8 tests; routine GATE text updated
 - 2026-10-29 21:30 | burn-down | gankdat zoho-crm-uk-registers-widget blocked: listing needs profile, bank, agreement, demo call
 - 2026-10-29 21:30 | burn-down | Owner-request cap (≤ 15 min, no business identity unless score ≥ 10) at 2.4; card fold kept in lib
+- 2026-10-29 21:45 | burn-down | foundry ci-workflow-yaml-gate built: npm run ci-yaml parses docs/ci + workflows with the yaml package
+- 2026-10-29 21:45 | burn-down | In check:root and the pre-push hook for pushed workflow files; the 18:27 file is the red fixture; 6 tests
+- 2026-10-29 21:45 | burn-down | yaml 2.9.1 added as a root dev dependency (no transitive packages); docs/ci/README notes the gate

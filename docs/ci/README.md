@@ -17,3 +17,11 @@ after the installer commit reads the workflow's first live run (dispatching it o
 `workflow_dispatch` and nothing has fired), writes `<name> first run: …` to `docs/RUNS.md` and fixes a failure in
 that same run by dropping the corrected file here again. Routines never dispatch `gankdat-publish`,
 `mirror-gankdat` or `demo-video` for this check (they publish, push to the public mirror or spend secrets).
+
+**Parsed before it is pushed (2026-10-29, foundry `ci-workflow-yaml-gate`).** `npm run ci-yaml` (part of
+`npm run check`; the pre-push hook runs it on any pushed workflow file) parses every file here and in
+`.github/workflows/` with the `yaml` package and checks the shape GitHub needs — `on`, `jobs`, each job with
+`runs-on` or `uses`, a non-empty `steps` list whose steps carry `run` or `uses` and string names. On 2026-10-29 a
+step name with an unquoted colon (`… (private: served only …)`) reached main through the installer: GitHub refused
+the file with "No jobs were run" on all seven pushes until it was quoted — an unparsable file has no path filters.
+Quote any value that holds `: ` or ` #`.

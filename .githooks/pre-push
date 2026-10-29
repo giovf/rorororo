@@ -5,7 +5,8 @@
 # an edit breaks: Prettier and ESLint on the files about to be pushed, the run-log cap and the pipeline files,
 # and (2026-10-29, foundry `ci-gankdat-metrics-failing`) the Node entry-point import walk on any pushed code file —
 # the gankdat-only gate never ran the root test that holds it, and two metrics runs died on it in three days.
-# Typecheck and tests stay with `npm run check`. CI never runs it (GitHub sets CI); SKIP_HOOKS=1 bypasses it.
+# A pushed workflow file (docs/ci, .github/workflows) is parsed with the shape GitHub needs (2026-10-29, foundry
+# `ci-workflow-yaml-gate`: one unquoted colon cost seven failed runs). Typecheck and tests stay with `npm run check`. CI never runs it (GitHub sets CI); SKIP_HOOKS=1 bypasses it.
 [ -n "$CI" ] && exit 0
 [ "$SKIP_HOOKS" = "1" ] && exit 0
 zero=0000000000000000000000000000000000000000
@@ -34,4 +35,5 @@ if [ -n "$code" ]; then
 fi
 case "$files" in *docs/RUNS.md*|*docs/STRATEGY.md*) npm run -s runs || exit 1 ;; esac
 case "$files" in *docs/pipeline/*) npm run -s pipeline >/dev/null || exit 1 ;; esac
+case "$files" in *docs/ci/*|*.github/workflows/*) npm run -s ci-yaml || { echo "pre-push: GitHub would refuse this workflow file (No jobs were run) — fix it in docs/ci/"; exit 1; } ;; esac
 exit 0
