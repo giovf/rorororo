@@ -898,8 +898,9 @@
       "effort_days": 0.2,
       "proof": "a prefilled-input run of the actor succeeds in under 5 minutes (Apify run outcome via CI or relay) and the maintenance flag clears",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-29"
+      "status": "doing",
+      "added": "2026-10-29",
+      "doing_since": "2026-10-29"
     }
   ],
   "research_after": "2026-10-30"
