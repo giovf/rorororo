@@ -5,6 +5,7 @@
 // A plain `cold` (the burn-down) prints `paced: <why>` alone and nothing else when the owner's usage
 // report is stale and the night's slot cap or a usage-limit signal ends the run (2026-10-24).
 // (Node 22 runs .ts directly — keep syntax erasable)
+import type { WeekBudget } from './pipeline-cold.ts';
 import { execFileSync } from 'node:child_process';
 import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import path from 'node:path';
@@ -106,15 +107,18 @@ if (process.argv[2] === 'cold') {
   // ends before `npm ci`, work or not. Burn-down only: the build slot has its own fallback.
   if (routine === 'burn-down') {
     let reportDate: string | undefined;
+    const budget: WeekBudget = {};
     try {
       const burn = JSON.parse(
         readFileSync(path.resolve(dir, '..', 'ops', 'BURN.json'), 'utf8'),
-      ) as { report?: { date?: string } };
+      ) as { report?: { date?: string }; week_slots?: number; week_reserve?: number };
       reportDate = burn.report?.date;
+      if (typeof burn.week_slots === 'number') budget.week_slots = burn.week_slots;
+      if (typeof burn.week_reserve === 'number') budget.week_reserve = burn.week_reserve;
     } catch {
       reportDate = undefined;
     }
-    const paced = pacedStop(reportDate, runs, slots, now);
+    const paced = pacedStop(reportDate, runs, slots, now, budget);
     if (paced !== undefined) {
       console.log(`paced: ${paced}`);
       process.exit(0);

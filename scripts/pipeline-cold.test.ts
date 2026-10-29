@@ -14,6 +14,9 @@ import {
   preResearchSpent,
   reportStale,
   datedWithinDay,
+  learntWeekSlots,
+  weekBudgetStop,
+  workingSlots,
 } from './pipeline-cold.ts';
 
 const pass =
@@ -370,5 +373,106 @@ describe('pacedStop', () => {
       'usage report 2026-10-04 is stale; cutoff seen — build slot 2026-10-21 09:00 UTC left no start marker or run line',
     );
     expect(pacedStop('2026-10-18', runs(), tue, wed)).toBeUndefined();
+  });
+});
+
+describe('week budget (foundry burn-weekly-slot-budget)', () => {
+  // W44 in miniature: the reset is Thursday 2026-10-22 03:00; the week's first cutoff is the
+  // Tuesday 17:00 build slot the watchdog reported at 21:07.
+  const week = runs(
+    '- 2026-10-22 09:30 | build | Built a',
+    '- 2026-10-22 17:30 | build | Built b',
+    '- 2026-10-22 17:40 | burn-down | Built c',
+    '- 2026-10-22 18:10 | burn-down | Built d',
+    '- 2026-10-23 09:20 | build | Built e',
+    '- 2026-10-23 12:00 | triage | notify owner dispatched: not a working slot',
+    '- 2026-10-24 17:40 | burn-down | Built f',
+    '- 2026-10-27 17:05 | build | after the cutoff slot: not counted',
+    '- 2026-10-27 21:07 | watchdog | stalled: build slot 2026-10-27 17:00 UTC started 17:12, no push by 19:00; usage limit? claude.ai/code/routines',
+    '- 2026-10-27 21:07 | watchdog | missed: burn-down slot 2026-10-27 17:00 UTC left no commit or run line by 19:00; usage limit? claude.ai/code/routines',
+    '- 2026-10-28 11:08 | watchdog | missed: exchange slot 2026-10-28 08:00 UTC left no commit or run line by 10:00; usage limit? claude.ai/code/routines',
+  );
+  const reset = new Date('2026-10-22T03:00:00Z');
+  it('workingSlots counts distinct routine × hour of build and burn-down lines in the window', () => {
+    expect(workingSlots(week, reset, new Date('2026-10-29T03:00:00Z'))).toBe(7);
+    expect(workingSlots(week, reset, new Date('2026-10-22T18:00:00Z'))).toBe(3);
+    expect(workingSlots(runs(), reset, new Date('2026-10-29T03:00:00Z'))).toBe(0);
+  });
+  it('learntWeekSlots is the working slots before the first cutoff slot of the week, or undefined', () => {
+    expect(learntWeekSlots(week, reset)).toBe(6);
+    expect(learntWeekSlots(week, new Date('2026-10-15T03:00:00Z'))).toBeUndefined();
+    // a line with no `slot … UTC` text counts from its own stamp
+    const bare = runs(
+      '- 2026-10-23 09:20 | build | Built e',
+      '- 2026-10-23 12:00 | watchdog | missed: something; usage limit? claude.ai/code/routines',
+      '- 2026-10-23 17:20 | build | Built f',
+    );
+    expect(learntWeekSlots(bare, reset)).toBe(1);
+  });
+  it('weekBudgetStop stops the week at the learnt budget less the Wednesday reserve', () => {
+    // the next week (reset 2026-10-29 03:00) learns 6 from W44 → 3 to spend; four used by Friday
+    const next = runs(
+      ...week.split('\n').filter((l) => l.startsWith('- ')),
+      '- 2026-10-29 09:20 | build | Built g',
+      '- 2026-10-29 17:20 | build | Built h',
+      '- 2026-10-30 09:20 | build | Built i',
+      '- 2026-10-30 17:20 | build | Built j',
+    );
+    expect(weekBudgetStop(next, new Date('2026-10-30T18:03:00Z'), { week_slots: 40 })).toBe(
+      'week budget: 4 of 3 working slots used since the 2026-10-29 03:00 reset (6 from the week of 2026-10-22, 3 kept for Wednesday)',
+    );
+    // BURN.json's week_slots is the fallback when the previous week saw no cutoff
+    expect(weekBudgetStop(runs(), new Date('2026-10-30T18:03:00Z'), {})).toBeUndefined();
+    const fallback = runs(
+      '- 2026-10-29 09:20 | build | Built g',
+      '- 2026-10-29 17:20 | build | Built h',
+    );
+    expect(
+      weekBudgetStop(fallback, new Date('2026-10-29T18:03:00Z'), {
+        week_slots: 5,
+        week_reserve: 3,
+      }),
+    ).toBe(
+      'week budget: 2 of 2 working slots used since the 2026-10-29 03:00 reset (5 from BURN.json, 3 kept for Wednesday)',
+    );
+  });
+  it('weekBudgetStop caps each Thursday-to-Tuesday night at its share after the daily builds', () => {
+    // 33 slots → 30 to spend → (30 − 12 builds) / 6 nights = 3 burn-down slots a night
+    const three = runs(
+      '- 2026-10-29 17:40 | burn-down | Built a',
+      '- 2026-10-29 18:33 | burn-down | Built b',
+      '- 2026-10-29 19:41 | burn-down | Built c',
+    );
+    expect(weekBudgetStop(three, new Date('2026-10-29T20:03:00Z'), { week_slots: 33 })).toBe(
+      'night cap: 2026-10-29 used 3 of 3 burn-down slots (30 working slots over 6 nights, 2 builds a day)',
+    );
+    const two = runs(
+      '- 2026-10-29 17:40 | burn-down | Built a',
+      '- 2026-10-29 18:33 | burn-down | Built b',
+    );
+    expect(
+      weekBudgetStop(two, new Date('2026-10-29T20:03:00Z'), { week_slots: 33 }),
+    ).toBeUndefined();
+    // Wednesday night keeps no nightly cap (the reset is hours away)
+    const wed = three.replaceAll('2026-10-29', '2026-11-04');
+    expect(
+      weekBudgetStop(wed, new Date('2026-11-04T20:03:00Z'), { week_slots: 33 }),
+    ).toBeUndefined();
+  });
+  it('pacedStop carries the week budget after the cutoff check, only while the report is stale', () => {
+    const three = runs(
+      '- 2026-10-29 17:40 | burn-down | Built a',
+      '- 2026-10-29 18:33 | burn-down | Built b',
+      '- 2026-10-29 19:41 | burn-down | Built c',
+    );
+    const marked = `# Slot starts\n\n- 2026-10-29 09:10 | build | started\n- 2026-10-29 17:10 | build | started\n`;
+    expect(
+      pacedStop('2026-10-04', three, marked, new Date('2026-10-29T20:03:00Z'), { week_slots: 33 }),
+    ).toBe(
+      'usage report 2026-10-04 is stale; night cap: 2026-10-29 used 3 of 3 burn-down slots (30 working slots over 6 nights, 2 builds a day)',
+    );
+    expect(
+      pacedStop('2026-10-28', three, marked, new Date('2026-10-29T20:03:00Z'), { week_slots: 33 }),
+    ).toBeUndefined();
   });
 });

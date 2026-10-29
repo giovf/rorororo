@@ -2054,3 +2054,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 21:19 | burn-down | Gate: BURN.json open, cold says work (foundry starved); next null; main green after npm ci (one ECONNRESET retry)
 - 2026-10-29 21:19 | burn-down | foundry research: 3 items from the week's traces — week slot budget (7), CI YAML gate (6), worker-logs job (5)
 - 2026-10-29 21:19 | burn-down | Evidence: 26 working slots by Tue 10-27 10:15 then Wed dark again; 7 failed runs from one unquoted colon
+- 2026-10-29 21:40 | burn-down | foundry burn-weekly-slot-budget built: cold paces the week from last week's capacity (W44: 33 slots)
+- 2026-10-29 21:40 | burn-down | weekBudgetStop + learntWeekSlots + workingSlots in pipeline-cold.ts; BURN.json week_slots 33, reserve 3
+- 2026-10-29 21:40 | burn-down | Night cap 3 burn-down slots Thu–Tue after the two builds, none Wednesday; 8 tests; routine GATE text updated

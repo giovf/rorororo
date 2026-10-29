@@ -280,19 +280,23 @@ export function cutoffSeen(runs: string, slots: string, now: Date): string | und
  * Thursday 03:00 reset. With the allowance unknown: a Monday or Tuesday night (UTC, the night that
  * starts 17:00) runs at most PACED_SLOT_CAP hourly slots that find work; any night ends at once when
  * `cutoffSeen` names a signal. Wednesday night (the reset is hours away) and Thursday to Sunday are
- * unchanged, and a fresh report hands the decision back to the percentage gate.
+ * unchanged, and a fresh report hands the decision back to the percentage gate. Since 2026-10-29
+ * (foundry `burn-weekly-slot-budget`) the whole week is paced too: see `weekBudgetStop`.
  */
 export function pacedStop(
   reportDate: string | undefined,
   runs: string,
   slots: string,
   now: Date,
+  budget: WeekBudget = {},
 ): string | undefined {
   if (!reportStale(reportDate, now)) return undefined;
   const stale =
     reportDate === undefined ? 'no usage report' : `usage report ${reportDate} is stale`;
   const cutoff = cutoffSeen(runs, slots, now);
   if (cutoff !== undefined) return `${stale}; cutoff seen — ${cutoff}`;
+  const week = weekBudgetStop(runs, now, budget);
+  if (week !== undefined) return `${stale}; ${week}`;
   const night = nightStart(now);
   const weekday = new Date(`${night.replace(' ', 'T')}:00Z`).getUTCDay();
   if (weekday !== 1 && weekday !== 2) return undefined;
@@ -300,4 +304,99 @@ export function pacedStop(
   if (used < PACED_SLOT_CAP) return undefined;
   const name = weekday === 1 ? 'Monday' : 'Tuesday';
   return `${stale}; ${name} night ${night.slice(0, 10)} used ${used} of ${PACED_SLOT_CAP} slots`;
+}
+
+/** Routines whose run-log lines mark a Fable slot that found work (the watchdog's own tags). */
+const WORKING_TAGS: readonly string[] = ['burn-down', 'build'];
+/** Wednesday's slots the week budget keeps back: the 08:00 exchange and the two build slots. */
+export const WEEK_RESERVE_DEFAULT = 3;
+/** The nights the spendable budget spreads over before Wednesday: Thursday to Tuesday. */
+export const BUDGET_NIGHTS = 6;
+/** Build slots a day (09:00 and 17:00) that take their share of the budget before any burn slot. */
+const BUILD_SLOTS_PER_DAY = BUILD_SLOT_HOURS_UTC.length;
+
+/** `week_slots` and `week_reserve` of docs/ops/BURN.json (foundry `burn-weekly-slot-budget`). */
+export interface WeekBudget {
+  week_slots?: number;
+  week_reserve?: number;
+}
+
+/** Working slots: distinct routine × clock hour with a `| burn-down |` or `| build |` line stamped in [from, to). */
+export function workingSlots(runs: string, from: Date, to: Date): number {
+  const a = stampOf(from);
+  const b = stampOf(to);
+  const hours = new Set<string>();
+  for (const line of runs.split('\n')) {
+    const stamp = lineStamp(line);
+    if (stamp === undefined || stamp < a || stamp >= b) continue;
+    const tag = line.split(' | ')[1];
+    if (tag !== undefined && WORKING_TAGS.includes(tag)) hours.add(`${tag} ${stamp.slice(0, 13)}`);
+  }
+  return hours.size;
+}
+
+/** The slot a watchdog `usage limit?` line names (`slot YYYY-MM-DD HH:MM UTC`), else the line's own stamp; undefined for any other line. */
+function cutoffAt(line: string): Date | undefined {
+  const stamp = lineStamp(line);
+  if (stamp === undefined) return undefined;
+  const cells = line.split(' | ');
+  if (cells[1] !== 'watchdog' || !(cells[2] ?? '').includes(USAGE_LIMIT_HINT)) return undefined;
+  const m = /slot (\d{4}-\d{2}-\d{2} \d{2}:\d{2}) UTC/.exec(cells[2] ?? '');
+  return new Date(`${(m?.[1] ?? stamp).replace(' ', 'T')}:00Z`);
+}
+
+/**
+ * A week's capacity read from its own trace: the working slots between its Thursday 03:00 `reset`
+ * and the first slot a watchdog `usage limit?` line of that week names, or undefined when the week
+ * saw no cutoff (W44: 26 slots before the 2026-10-27 17:00 build stalled and the burn-down was missed).
+ */
+export function learntWeekSlots(runs: string, reset: Date): number | undefined {
+  const end = new Date(reset.getTime() + 7 * 86_400_000);
+  const a = stampOf(reset);
+  const b = stampOf(end);
+  let first: Date | undefined;
+  for (const line of runs.split('\n')) {
+    const stamp = lineStamp(line);
+    if (stamp === undefined || stamp < a || stamp >= b) continue;
+    const at = cutoffAt(line);
+    if (at !== undefined && at >= reset && (first === undefined || at < first)) first = at;
+  }
+  return first === undefined ? undefined : workingSlots(runs, reset, first);
+}
+
+/**
+ * Why the burn-down stops for the week's budget, or undefined (2026-10-29, foundry
+ * `burn-weekly-slot-budget`). Two weeks running the Fable allowance ran out on Tuesday and every
+ * Wednesday slot — the exchange, the week's decision — was rejected: the Monday/Tuesday cap could not
+ * see Friday's ten slots. The budget is the capacity the previous week showed (`learntWeekSlots`),
+ * else BURN.json `week_slots`; `week_reserve` slots stay for Wednesday; the rest is spent as the
+ * week's working slots (build and burn-down) since the last reset, and each Thursday-to-Tuesday
+ * night runs at most its share of what the two daily build slots leave. Wednesday night, hours from
+ * the reset, keeps no nightly cap.
+ */
+export function weekBudgetStop(
+  runs: string,
+  now: Date,
+  budget: WeekBudget = {},
+): string | undefined {
+  const reset = lastWeeklyReset(now);
+  const previous = new Date(reset.getTime() - 7 * 86_400_000);
+  const learnt = learntWeekSlots(runs, previous);
+  const slots = learnt ?? budget.week_slots;
+  if (slots === undefined) return undefined;
+  const reserve = budget.week_reserve ?? WEEK_RESERVE_DEFAULT;
+  const spend = Math.max(0, slots - reserve);
+  const used = workingSlots(runs, reset, now);
+  const source =
+    learnt === undefined ? 'BURN.json' : `the week of ${previous.toISOString().slice(0, 10)}`;
+  if (used >= spend)
+    return `week budget: ${used} of ${spend} working slots used since the ${stampOf(reset)} reset (${slots} from ${source}, ${reserve} kept for Wednesday)`;
+  const night = nightStart(now);
+  const weekday = new Date(`${night.replace(' ', 'T')}:00Z`).getUTCDay();
+  if (weekday === 3) return undefined;
+  const cap = Math.max(1, Math.ceil((spend - BUILD_SLOTS_PER_DAY * BUDGET_NIGHTS) / BUDGET_NIGHTS));
+  const tonight = burnSlotsUsed(runs, now);
+  if (tonight >= cap)
+    return `night cap: ${night.slice(0, 10)} used ${tonight} of ${cap} burn-down slots (${spend} working slots over ${BUDGET_NIGHTS} nights, ${BUILD_SLOTS_PER_DAY} builds a day)`;
+  return undefined;
 }
