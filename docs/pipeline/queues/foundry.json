@@ -2,7 +2,7 @@
   "venture": "foundry",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-26",
+  "updated": "2026-10-29",
   "researched": "2026-10-26",
   "items": [
     {
@@ -1176,15 +1176,17 @@
     },
     {
       "id": "ci-fetch-relay-failing",
-      "title": "The fetch relay workflow (fetch-relay.yml) failed 2 times this week: root-cause and fix it",
+      "title": "The fetch relay workflow (fetch-relay.yml) failed 2 times this week: root-cause and fix it — Done 2026-10-29 (burn-down): cause named, no new fix needed. Runs 198 and 199 (10-26 18:20 and 18:43) were the two gankdat sitemap rounds that HEADed 503 'being prepared' stats pages: each 503 carried Retry-After: 3600, which fetch-relay.mjs paid as three 30 s retries per line, so both rounds hit the 12-minute step cap with nothing written. Fixed the same evening by foundry relay-round-survives-stalled-host (meta.json and bodies written after every line, 30 s timeouts, a host marked stalled after three consecutive timeouts); run 200 at 19:17 and the 14 runs since (201–214, four of them this slot) all succeeded; run 212 was a concurrency cancel, not a failure. The seven-day proof (no ci-failed line from 10-26 20:07) completes on 11-02; the watchdog re-files on a recurrence.",
       "why": "Filed by scripts/ci-failed-runs.ts (2026-10-26): fetch-relay.yml failed 2 times in 7 days — run 198 (2026-10-26 18:20 UTC, step \"Run node scripts/fetch-relay.mjs\", later run 199 failure) — https://github.com/giovf/rorororo/actions/runs/40376846120; run 199 (2026-10-26 18:43 UTC, step \"Run node scripts/fetch-relay.mjs\", later run 200 ok) — https://github.com/giovf/rorororo/actions/runs/40380293000. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/fetch-relay.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done.",
       "effort_days": 0.2,
       "proof": "seven days of fetch-relay.yml runs with no ci-failed line in docs/RUNS.md",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-26",
       "updated": "2026-10-26",
-      "doing_since": "2026-10-29"
+      "doing_since": "2026-10-29",
+      "done_at": "2026-10-29",
+      "doing_by": "burn-down"
     }
   ]
 }

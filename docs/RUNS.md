@@ -2013,3 +2013,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 18:42 | burn-down | d1store scanFacet + facetElementsExpr (array, comma-list, scalar); windowed top-N per breakdown; v0.26.4
 - 2026-10-29 18:42 | burn-down | Facet pass per facet: budget, stalest-first, interim writes, carry, failures; 4 tests rewritten + 1 new
 - 2026-10-29 18:42 | burn-down | Proof deferred to the 10-30 wave: class pages 200 and stats_facets_done computed 45 in the Daily numbers row
+- 2026-10-29 18:50 | burn-down | foundry ci-fetch-relay-failing done: runs 198/199 died on Retry-After retries of 503 pages at the 12-min cap
+- 2026-10-29 18:50 | burn-down | Already fixed by relay-round-survives-stalled-host (10-26); 15 relay runs since all green, run 212 a cancel
+- 2026-10-29 18:50 | burn-down | Stopping at ~36 min: 4 items done (own-checkout, AWS spike parked, facet one-scan, relay cause); next slot continues
