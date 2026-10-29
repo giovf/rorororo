@@ -1993,7 +1993,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 17:52 | notify | Tax workbook ready for your Payhip store: one upload and a webhook switch, about 13 minutes
 - 2026-10-29 17:43 | burn-down | Two items done at 32 min (new-ventures spike parked, tax-workbook Payhip twin); loop continues
 - 2026-10-29 17:46 | burn-down | landing.yml first run: success (run 88 on the installer commit; PAYHIP_API_KEY step skipped until action 033)
-- 2026-10-29 17:58 | burn-down | Spike envato-codecanyon-shelf: help centre read via its search API (3 relay rounds); codecanyon.net walled
-- 2026-10-29 17:58 | burn-down | Park: Envato paused new authors (no date, no waitlist), 50 % author fee, AI-generated items barred for all types
-- 2026-10-29 17:58 | burn-down | Sales bar unproven: category pages behind a Cloudflare challenge; snippets show 12–3,500 lifetime sales
-- 2026-10-29 18:05 | burn-down | Stopping at ~54 min: 3 items done (2 new-ventures spikes parked, tax-workbook Payhip twin); next slot continues
+- 2026-10-29 17:52 | burn-down | Spike envato-codecanyon-shelf: help centre read via its search API (3 relay rounds); codecanyon.net walled
+- 2026-10-29 17:52 | burn-down | Park: Envato paused new authors (no date, no waitlist), 50 % author fee, AI-generated items barred for all types
+- 2026-10-29 17:52 | burn-down | Sales bar unproven: category pages behind a Cloudflare challenge; snippets show 12–3,500 lifetime sales
+- 2026-10-29 17:53 | burn-down | Stopping at ~42 min: 3 items done (2 new-ventures spikes parked, tax-workbook Payhip twin); next slot continues
