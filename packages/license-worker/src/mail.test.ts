@@ -4,8 +4,10 @@ import type { KV } from './worker.js';
 
 class MemoryKV implements KV {
   readonly map = new Map<string, string>();
-  get(k: string): Promise<string | null> {
-    return Promise.resolve(this.map.get(k) ?? null);
+  get(k: string): Promise<string | null>;
+  get(k: string, type: 'arrayBuffer'): Promise<ArrayBuffer | null>;
+  get(k: string, type?: 'arrayBuffer'): Promise<string | ArrayBuffer | null> {
+    return Promise.resolve(type === 'arrayBuffer' ? null : (this.map.get(k) ?? null));
   }
   put(k: string, v: string): Promise<void> {
     this.map.set(k, v);

@@ -1,5 +1,9 @@
-# Deploy: npx wrangler deploy (needs CLOUDFLARE_API_TOKEN). Secrets via `wrangler secret put`:
-#   STRIPE_WEBHOOK_SECRET, LICENSE_SIGNING_KEY, RESEND_API_KEY, ADMIN_TOKEN
+# Deploy: CI (`.github/workflows/license-worker.yml`, from docs/ci/, 2026-10-29) on pushes touching this package,
+# @foundry/licensing or ventures/tax-workbook/release; by hand `npx wrangler deploy` (needs CLOUDFLARE_API_TOKEN).
+# Secrets via `wrangler secret put`: STRIPE_WEBHOOK_SECRET, LICENSE_SIGNING_KEY, RESEND_API_KEY, ADMIN_TOKEN.
+# The LICENSES namespace also holds the download products' files under `asset:<venture>` (src/downloads.ts),
+# written by the deploy workflow with `wrangler kv key put --path`; never served by URL, only through
+# GET /v1/downloads/<signed token>.
 name = "foundry-licenses"
 main = "dist/index.js"
 compatibility_date = "2026-09-01"

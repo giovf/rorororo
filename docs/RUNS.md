@@ -1997,3 +1997,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 17:52 | burn-down | Park: Envato paused new authors (no date, no waitlist), 50 % author fee, AI-generated items barred for all types
 - 2026-10-29 17:52 | burn-down | Sales bar unproven: category pages behind a Cloudflare challenge; snippets show 12–3,500 lifetime sales
 - 2026-10-29 17:53 | burn-down | Stopping at ~42 min: 3 items done (2 new-ventures spikes parked, tax-workbook Payhip twin); next slot continues
+- 2026-10-29 18:26 | burn-down | Built tax-workbook own-checkout-listing (5): the workbook on our own Stripe checkout, one owner link away
+- 2026-10-29 18:26 | burn-down | licence Worker downloads.ts: signed 30-day link, file from private KV, refund revokes, resend re-mints; 7 tests
+- 2026-10-29 18:26 | burn-down | docs/ci/license-worker.yml: first CI deploy of foundry-licenses (build, KV put of the .xlsx, deploy, smoke)
+- 2026-10-29 18:26 | burn-down | tax-workbook.html Buy block hidden behind a placeholder, thanks-tax-workbook.html, page test ties hidden to it
+- 2026-10-29 18:26 | burn-down | Action 034 raised (~3 min, £0): one Stripe Payment Link with metadata venture=tax-workbook; own-checkout-live queued
+- 2026-10-29 18:26 | notify | Tax workbook can sell from our own page too: one Stripe payment link from you, about 3 minutes

@@ -1,9 +1,12 @@
 import { issueLicense, payloadFromSession, verifyStripeSignature, type LicensePayload } from '@foundry/licensing';
+import { DOWNLOADS, downloadEmail, mintDownloadToken, verifyDownloadToken, type DownloadProduct } from './downloads.js';
 import { getMail, listMail, markRead, reply } from './mail.js';
 
 /** Minimal KV surface so tests don't need Cloudflare types. */
 export interface KV {
   get(key: string): Promise<string | null>;
+  /** Binary read (download products' files under `asset:<venture>`, downloads.ts). */
+  get(key: string, type: 'arrayBuffer'): Promise<ArrayBuffer | null>;
   put(key: string, value: string): Promise<void>;
   /** Keys under a prefix (mail listing). */
   list(prefix: string): Promise<string[]>;
@@ -35,6 +38,8 @@ interface StoredLicense {
   revoked?: boolean;
   /** Activation timestamps (ms), most recent last; no device data. Kept to the last 50. */
   activations?: number[];
+  /** Download products: how many times the file was fetched with this order's links. */
+  downloads?: number;
 }
 
 /**
@@ -54,6 +59,10 @@ export function createHandler(deps: Deps = { fetch, now: () => new Date() }) {
     const path = url.pathname.replace(/\/$/, '');
 
     if (request.method === 'POST' && path === '/stripe/webhook') return webhook(request, env, deps);
+
+    // Download products: the signed link from the purchase mail serves the file from KV.
+    const download = /^\/v1\/downloads\/([^/]+)$/.exec(path);
+    if (request.method === 'GET' && download?.[1]) return serveDownload(decodeURIComponent(download[1]), env, deps);
 
     const status = /^\/v1\/keys\/([^/]+)\/status$/.exec(path);
     if (request.method === 'GET' && status?.[1]) {
@@ -94,7 +103,7 @@ export function createHandler(deps: Deps = { fetch, now: () => new Date() }) {
       if (!stored) return json({ error: 'not found' }, 404);
       const to = new URL(request.url).searchParams.get('to') ?? stored.email;
       if (!to) return json({ error: 'no email on record; pass ?to=' }, 400);
-      const sent = await sendKeyEmail(deps.fetch, env, to, stored.payload, stored.key);
+      const sent = await sendPurchaseEmail(deps, env, to, stored, url.origin);
       return json({ ok: sent.ok, to, ...(sent.error ? { error: sent.error } : {}) });
     }
 
@@ -148,7 +157,7 @@ async function webhook(request: Request, env: Env, deps: Deps): Promise<Response
   let emailed = false;
   let emailError: string | undefined;
   if (issued.email && !existing) {
-    const sent = await sendKeyEmail(deps.fetch, env, issued.email, issued.payload, key);
+    const sent = await sendPurchaseEmail(deps, env, issued.email, { key, payload: issued.payload }, new URL(request.url).origin);
     emailed = sent.ok;
     emailError = sent.error;
   }
@@ -176,14 +185,57 @@ export function licenseEmail(payload: LicensePayload, key: string): { subject: s
   };
 }
 
-async function sendKeyEmail(
+/** A download product gets a fresh signed link (so a re-send after expiry works); anything else gets its key. */
+async function sendPurchaseEmail(
+  deps: Deps,
+  env: Env,
+  to: string,
+  stored: Pick<StoredLicense, 'key' | 'payload'>,
+  origin: string,
+): Promise<{ ok: boolean; error?: string }> {
+  const product = DOWNLOADS[stored.payload.venture];
+  if (!product) return sendMail(deps.fetch, env, to, licenseEmail(stored.payload, stored.key));
+  const expires = new Date(deps.now().getTime() + product.linkDays * 86_400_000);
+  const token = await mintDownloadToken(env.LICENSE_SIGNING_KEY, {
+    v: stored.payload.venture,
+    id: stored.payload.id,
+    exp: Math.floor(expires.getTime() / 1000),
+  });
+  return sendMail(deps.fetch, env, to, downloadEmail(product, `${origin}/v1/downloads/${token}`, expires));
+}
+
+/**
+ * The file behind a purchase link: the token must verify and be in date, the order must exist and
+ * not be revoked (a refund revokes it), and the file must be loaded (503 with a plain message
+ * otherwise, so a buyer who clicks before the deploy ran sees why rather than a 404).
+ */
+async function serveDownload(token: string, env: Env, deps: Deps): Promise<Response> {
+  const claim = await verifyDownloadToken(env.LICENSE_SIGNING_KEY, token, deps.now());
+  const product: DownloadProduct | undefined = claim ? DOWNLOADS[claim.v] : undefined;
+  if (!claim || !product) return new Response('This download link is not valid or has expired. Reply to your purchase email for a fresh one.', { status: 403 });
+  const stored = await readLicense(env, claim.id);
+  if (!stored || stored.revoked === true || stored.payload.venture !== claim.v) {
+    return new Response('This download link is no longer active. Reply to your purchase email if you think that is wrong.', { status: 403 });
+  }
+  const bytes = await env.LICENSES.get(product.asset, 'arrayBuffer');
+  if (!bytes) return new Response('The file is not available yet. Try again in a few minutes or reply to your purchase email.', { status: 503 });
+  await env.LICENSES.put(`license:${claim.id}`, JSON.stringify({ ...stored, downloads: (stored.downloads ?? 0) + 1 }));
+  return new Response(bytes, {
+    status: 200,
+    headers: {
+      'content-type': product.contentType,
+      'content-disposition': `attachment; filename="${product.filename}"`,
+      'cache-control': 'private, no-store',
+    },
+  });
+}
+
+async function sendMail(
   fetchImpl: typeof fetch,
   env: Env,
   to: string,
-  payload: LicensePayload,
-  key: string,
+  { subject, text }: { subject: string; text: string },
 ): Promise<{ ok: boolean; error?: string }> {
-  const { subject, text } = licenseEmail(payload, key);
   try {
     const res = await fetchImpl('https://api.resend.com/emails', {
       method: 'POST',

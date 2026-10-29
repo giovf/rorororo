@@ -22,7 +22,9 @@ job, a paid competitor with a documented gap, ≤ 1 week to build, no policy/ToS
 ```
 packages/core            venture manifest types, portfolio loader, ledger parser
 packages/licensing       Ed25519 signed licence keys; Stripe webhook verify; revocation
-packages/license-worker  Cloudflare Worker: Stripe webhook → key → Resend email; status API
+packages/license-worker  Cloudflare Worker: Stripe webhook → key → Resend email; status API; download products (2026-10-29:
+                         venture=tax-workbook sessions get a signed 30-day download link, the file served from private KV,
+                         never a public URL); deployed by CI since 2026-10-29 (`docs/ci/license-worker.yml`)
 packages/landing         Cloudflare Worker at https://apps.gankdat.com/: public product pages (static
                          assets) and the owner's dashboard at /ops (2026-10-16: email one-time-code
                          sign-in, ventures by type, pipeline by queue, owner page with an idea box that

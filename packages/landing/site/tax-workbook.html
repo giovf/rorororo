@@ -30,6 +30,21 @@
       </p>
 
       <h2>Where to buy — £6.99, instant download</h2>
+      <!--
+        Own checkout (tax-workbook own-checkout-listing, 2026-10-29): the Stripe Payment Link is created by the
+        owner (action 034). Until its URL replaces the placeholder below and `hidden` is removed, the block stays
+        out of the page; scripts/landing-tax-workbook-page.test.ts enforces that pairing.
+      -->
+      <p id="buy" hidden>
+        <a class="button" href="STRIPE_PAYMENT_LINK_PLACEHOLDER"
+          >Buy here — £6.99, download by email</a
+        ><br />
+        <span class="muted"
+          >Sold by our merchant of record (Stripe), which charges the right VAT for your country and
+          emails your download link within a minute. The link works for 30 days; the file is yours
+          to keep.</span
+        >
+      </p>
       <ul>
         <li>
           <a href="https://www.etsy.com/listing/4605571079">On Etsy</a> (shop
@@ -131,7 +146,8 @@
       <p>
         If the file does not open on your device, message the shop you bought from within 14 days
         for a replacement file or a full refund. Etsy refunds go through Etsy; Payhip refunds go
-        back to the card or PayPal account you paid with.
+        back to the card or PayPal account you paid with; a purchase made on this page is refunded
+        by replying to the download email.
       </p>
     </main>
     <footer>

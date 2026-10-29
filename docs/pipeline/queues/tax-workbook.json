@@ -136,14 +136,16 @@
     },
     {
       "id": "own-checkout-listing",
-      "title": "The workbook on our own checkout: a product page beside readfocus.html on apps.gankdat.com (LISTING.md copy — what the buyer gains, what the file is not, the £6.99 launch price with its dated end, the refund policy, Blind Mode), the licence Worker's webhook branch for venture=tax-workbook that mails a signed, time-limited download link for the release .xlsx (served by the Worker from a private asset, never a public URL) through the existing Stripe Managed Payments → Resend path, tests for the page and the branch, a `Listed` row in RESEARCH §7, a SELF-CAUSED row for Stripe's sale mail, and action 029 step 6 for the owner (create one Stripe Payment Link for the £6.99 product with metadata venture=tax-workbook and paste its URL, ~3 min — live-mode Stripe objects are ask-first); the page is built and tested against a placeholder and nothing is published until the link exists",
+      "title": "The workbook on our own checkout: a product page beside readfocus.html on apps.gankdat.com (LISTING.md copy — what the buyer gains, what the file is not, the £6.99 launch price with its dated end, the refund policy, Blind Mode), the licence Worker's webhook branch for venture=tax-workbook that mails a signed, time-limited download link for the release .xlsx (served by the Worker from a private asset, never a public URL) through the existing Stripe Managed Payments → Resend path, tests for the page and the branch, a `Listed` row in RESEARCH §7, a SELF-CAUSED row for Stripe's sale mail, and action 029 step 6 for the owner (create one Stripe Payment Link for the £6.99 product with metadata venture=tax-workbook and paste its URL, ~3 min — live-mode Stripe objects are ask-first); the page is built and tested against a placeholder and nothing is published until the link exists — Built 2026-10-29 (burn-down): packages/license-worker/src/downloads.ts (catalogue, HMAC download tokens, the buyer's mail) and the Worker's webhook/resend/download branches with 7 new tests; docs/ci/license-worker.yml deploys the Worker and loads the file into the LICENSES namespace (first CI deploy of this Worker); tax-workbook.html Buy block hidden behind a placeholder + thanks-tax-workbook.html + scripts/landing-tax-workbook-page.test.ts; RESEARCH §7 'Own checkout built' row (Listed follows the link), SELF-CAUSED Stripe row, action 034 raised (029 is already done, so a new request rather than a step 6); own-checkout-live queued blocked on it.",
       "why": "Exchange 2026-W44 (docs/exchange/2026-W44.md, run 2026-10-29): the line's three products are finished and every listing waits on action 029 (open since 10-24, no reply; eight owner asks open), and the W43 exchange named our own Stripe link as the fallback shelf. This is the one listing that needs no new account, identity check or fee: the Stripe account, merchant-of-record setup, licence Worker and product pages already sell ReadFocus. Evidence 3 (172 sales at £7.19 from a one-listing Etsy shop, ≈ 1,500 reviews on the VAT sibling — RESEARCH §2) × reach 1 (apps.gankdat.com's own ranking; ReadFocus pages draw ≈ 20 impressions a week) ÷ (0.5 d + 3 owner min) ≈ 5, weight 2. STRATEGY §6: distribution before features. Beats the baseline (gankdat facet-aggregation-one-scan, 7 × 1).",
       "effort_days": 0.5,
       "proof": "The product page is live on apps.gankdat.com with a working checkout and the download mail delivers the file (tested with a Stripe test event); a first sale within 60 days of the page going live; 0 sales at day 60 with ≥ 5 views a day → the page stays as the file’s home and no further own-checkout work is queued",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-29",
-      "doing_since": "2026-10-29"
+      "doing_since": "2026-10-29",
+      "done_at": "2026-10-29",
+      "doing_by": "burn-down"
     },
     {
       "id": "payhip-listing-live",
@@ -165,6 +167,17 @@
       "score": 4,
       "status": "blocked",
       "blocked_on": "US$10 of Payhip sales (gross_pence ≥ ~800 in the /hooks/payhip/summary reading, or two Sale rows in RESEARCH.md §7 from Payhip); then a ~1-minute owner click raised as an action step",
+      "added": "2026-10-29"
+    },
+    {
+      "id": "own-checkout-live",
+      "title": "Put the own checkout live: paste the owner's Stripe Payment Link into tax-workbook.html (replace the placeholder and remove `hidden`; the page test ties the two), check the licence Worker's first CI run deployed and loaded the file (GET /v1/downloads/x → 403, not 404; the deploy log's KV put), make one £0 test purchase with a 100 %-off coupon so the download mail and the file arrive end to end, then the RESEARCH §7 `Listed` row, LISTING.md/PAYHIP.md cross-reference, venture.json channel and a notify line (new shelf live)",
+      "why": "The Payment Link is a live-mode Stripe object, so it is the owner's (action 034, 2026-10-29, ~3 min). Everything else — the Worker branch, the deploy, the page block — is built and tested against a placeholder by own-checkout-listing; this item is the switch, with the end-to-end proof the parent item's proof column asks for (the download mail delivers the file).",
+      "effort_days": 0.1,
+      "proof": "tax-workbook.html shows the Buy button with a buy.stripe.com link; a test purchase's mail carried a link that downloaded the .xlsx; RESEARCH §7 has the `Listed (own checkout)` row; the day-60 read (etsy-day-60-read) counts this shelf too",
+      "score": 5,
+      "status": "blocked",
+      "blocked_on": "Owner action 034: one Stripe Payment Link (£6.99, metadata venture=tax-workbook, redirect to thanks-tax-workbook.html) — docs/for-owner/actions/034-stripe-payment-link-tax-workbook.md; unblocked by the owner's '034 done <url>' note",
       "added": "2026-10-29"
     }
   ],
