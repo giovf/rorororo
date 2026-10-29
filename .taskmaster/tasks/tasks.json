@@ -1435,13 +1435,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-25T18:46:45.054Z"
+      },
+      {
+        "id": "43",
+        "title": "gankdat: worker error lines in the Daily numbers row (lib/error-lines.ts)",
+        "description": "Workers Logs error-level lines of the last 24 h folded by message into the metrics row; built for apify-companies-house-qa-repair 2026-10-29",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-29T19:29:12.096Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-25T18:46:45.054Z",
-      "taskCount": 42,
-      "completedCount": 35,
+      "lastModified": "2026-10-29T19:29:12.096Z",
+      "taskCount": 43,
+      "completedCount": 36,
       "tags": [
         "master"
       ]

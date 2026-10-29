@@ -2028,3 +2028,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 19:27 | burn-down | foundry ci-license-worker-failing done: runs 1–7 were a jobless invalid workflow file (unquoted colon)
 - 2026-10-29 19:27 | burn-down | Fixed 18:35 by the quoted step names; path filters do not apply to a file YAML cannot parse
 - 2026-10-29 19:27 | burn-down | ci-failed-runs.ts labels a jobless failed run 'no job ran (invalid workflow file)' instead of 'unnamed'
+- 2026-10-29 19:35 | burn-down | gankdat apify-companies-house-qa-repair: QA run read via relay — gankdat API 500 on the prefilled lookup
+- 2026-10-29 19:35 | burn-down | The 500's message is only in Workers Logs: built lib/error-lines.ts + `worker errors 24h` row clause, 3 tests
+- 2026-10-29 19:35 | burn-down | ARCHITECTURE notes the reading; metrics job dispatched to read today's error lines; item stays doing

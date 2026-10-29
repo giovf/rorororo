@@ -568,6 +568,14 @@ runs `check:root`.
   logged `refresh_progress_stale`, no row written; a marker with no later row is still the silent night. And
   `clearRefreshProgress` retries a failed delete once after the same-key gap. The reading can no longer send the
   auto-filer after a healthy source.
+- **Worker error lines** (`lib/error-lines.ts`, 2026-10-29, `apify-companies-house-qa-repair`): `app.onError`
+  answers every uncaught throw with a bare `internal` 500 and logs `{ level: 'error', requestId, message, stack }`,
+  and nothing in the repo read that line — Apify's QA runner got the 500 from `/v1/data/uk-company-profiles` for
+  three days (flagged "under maintenance" 10-29) while every reading counted refresh errors only. The metrics job
+  now POSTs the Query Builder for the service's `$metadata.level = error` lines of the last 24 h, folds them by
+  message (the `source` object's `message`, as wave-logs reads it) and writes `worker errors 24h: N (<message>
+  ×n, …)` in the Daily numbers row (`n/a (<why>)` without the token scope), so a 500 on any route is diagnosable
+  from the repo the next morning; `test/error-lines.spec.ts`.
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
   after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
   stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in
