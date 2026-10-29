@@ -1,0 +1,10 @@
+GET https://help.author.envato.com/api/v2/help_center/articles/search.json?query=author+fee&locale=en-us&per_page=10
+GET https://help.author.envato.com/api/v2/help_center/articles/search.json?query=exclusive+non-exclusive&locale=en-us&per_page=10
+GET https://help.author.envato.com/api/v2/help_center/articles/search.json?query=tax+information&locale=en-us&per_page=10
+GET https://help.author.envato.com/api/v2/help_center/articles/search.json?query=withdrawal+methods&locale=en-us&per_page=10
+GET https://help.author.envato.com/api/v2/help_center/articles/search.json?query=AI+generated+content&locale=en-us&per_page=10
+GET https://help.author.envato.com/api/v2/help_center/articles/search.json?query=review+requirements&locale=en-us&per_page=10
+GET https://help.author.envato.com/api/v2/help_center/articles/search.json?query=become+an+author&locale=en-us&per_page=10
+GET https://help.author.envato.com/api/v2/help_center/en-us/categories.json
+RENDER https://codecanyon.net/category/javascript?sort=sales
+RENDER https://codecanyon.net/legal/author
