@@ -1,0 +1,557 @@
+{
+  "data": {
+    "total": 1131,
+    "count": 10,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "Reddit Answers API - \"Ask Reddit\" AI Insights for n8n",
+        "name": "reddit-answers-api",
+        "username": "clearpath",
+        "stats": {
+          "totalBuilds": 90,
+          "totalRuns": 34919,
+          "totalUsers": 59,
+          "totalUsers7Days": 9,
+          "totalUsers30Days": 24,
+          "totalUsers90Days": 34,
+          "lastRunStartedAt": "2026-10-29T06:53:14.956Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 8,
+            "SUCCEEDED": 4790,
+            "TIMED-OUT": 168,
+            "TOTAL": 4966
+          }
+        },
+        "description": "Extract AI-powered answers in 6 languages from Reddit discussions at scale. Structured JSON + markdown for n8n, Make, and LLM pipelines. Includes full post/comment context, quotes with citations, and subreddit metadata. 6 languages supported. No login required. Pay per successful answer.",
+        "categories": [
+          "AI",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Wx_RgnLGSv9XdWkfeY-rQ1YPptPKvGY0oyv7UBQ_PCA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFN2TUNBd3N1Zk15WmVMeXQtYWN0b3ItMzhGSWd1eEplUFhxREJFNW0tUGhBcVdRSVpCYi1yZWRkaXQtYW5zd2Vycy1hcGktbG9nby5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ClearPath",
+        "userPictureUrl": "https://images.apifyusercontent.com/g3LfeX-eHh6DHWymIWx3s3F_AboAOKaYxmjA4ZRWv_Y/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vU2JPZnFsaFhZUHhMWjM4TVNITWNIM2kzZmtIQnV0Y3JjZUUwM2Fuc0M4MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRk4yVFVOQmQzTjFaazE1V21WTWVYUXRjSEp2Wm1sc1pTMXpkalZaTjJOUGJVMW9MV05zWldGeWNHRjBhQzFzYjJkdkxXRndhV1o1TG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "answer-received": {
+                "eventTitle": "Reddit Answer",
+                "eventDescription": "Full answer with enriched sources: post/comment context, subreddit metadata, similar communities, and all citations.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.035
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.03
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.025
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.02
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2025-12-24T08:40:58.382Z",
+          "createdAt": "2025-12-24T08:40:58.919Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "38FIguxJePXqDBE5m",
+        "url": "https://apify.com/clearpath/reddit-answers-api"
+      },
+      {
+        "title": "Bulk HTTP Requests — API Calls for Clay, n8n, CSV & Datasets",
+        "name": "bulk-http-requests",
+        "username": "saliga",
+        "stats": {
+          "totalBuilds": 22,
+          "totalRuns": 178,
+          "totalUsers": 19,
+          "totalUsers7Days": 3,
+          "totalUsers30Days": 14,
+          "totalUsers90Days": 14,
+          "lastRunStartedAt": "2026-10-29T04:26:25.084Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 5,
+            "FAILED": 1,
+            "SUCCEEDED": 145,
+            "TIMED-OUT": 0,
+            "TOTAL": 151
+          }
+        },
+        "description": "Send bulk HTTP requests: call any API once for every row of a CSV, JSON list or Apify dataset. Write the request once with {{column}} placeholders. Up to 200 parallel requests, per-host rate limit, free retries, JSON field extraction, webhooks for Clay, n8n and Make. $1 per 1,000 requests.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AUTOMATION",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/p0BDxBYpmR5zcdUTXNfsyH2qgmSCyhyhfJAfFwIbue4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbE5GUTlMSVpHTWEyUkc0WmYtYWN0b3ItU09RbWdrT0J5azZkdHI1T3ItdEd1eVJva0dmNi1odHRwX2UucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Salih Küçükkayış",
+        "userPictureUrl": "https://images.apifyusercontent.com/bupRJcV0zkpqHiGcg4squfHUpEp5tC-mIN5Wdzz-U_c/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZ1ZvZjh4VVFOVG0zMmVZR3kzaHlMS2VJYXE1Y3Q4T25Wd1ljYVlpUEhsVS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURkZuVkVOaVl6RldSVmc0Wm1WSFUxWnZkM0JhYW01aVpVNTRia2RKUWxoT2QwUmtMVWMxV1RGSVQyeFlSelpuUFhNNU5pMWo.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "http-request": {
+                "eventTitle": "HTTP request",
+                "eventDescription": "One request from your input. Retries are free.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0007
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0007
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-10-10T14:23:56.030Z",
+          "createdAt": "2026-10-10T14:23:56.482Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-10-10T14:30:26.393Z"
+        },
+        "id": "SOQmgkOByk6dtr5Or",
+        "url": "https://apify.com/saliga/bulk-http-requests"
+      },
+      {
+        "title": "n8n Workflow Templates Scraper",
+        "name": "n8n-workflow-templates-scraper",
+        "username": "lexis-solutions",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 128,
+          "totalUsers": 2,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-28T11:30:32.126Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 30,
+            "TIMED-OUT": 0,
+            "TOTAL": 30
+          }
+        },
+        "description": "Scrapes n8n workflow automation templates including title, description, categories, view counts, author details, and node compositions.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "AI",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9lwICi59PD1BMd09BpWTarvLWBwzq0_xzTGpL4lh_XM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRGV2YmtZM2FkTVRCdW9FQ3QtYWN0b3ItNVVSOGhjOGlQSUxQZ2xnNjUtTHFOSXdiMFU1MS1JY29uXyUyODIlMjkuanBlZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Lexis Solutions",
+        "userPictureUrl": "https://images.apifyusercontent.com/w6fgguezd0VqQ371uTghlQ5W1bkPWD36aUaQ5oCDq3Q/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWURtUkRMTnNtT2I3aXM4R0REd211MXZicGQxWW1TLThnbnFkYXN6WWtiRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11WVcxaGVtOXVZWGR6TG1OdmJTOUVaWFppYTFrellXUk5WRUoxYjBWRGRDOUlRVVZCVG1wcE5ETndTRXBtUkdaaVlTMXNiMmR2TFdkeVlXUnBaVzUwTG1wd1p3LmpwZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Template",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0059
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0049
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0039
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0029
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0029
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0029
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0025
+              }
+            }
+          },
+          "startedAt": "2026-06-24T14:23:59.941Z",
+          "createdAt": "2026-06-24T14:24:00.243Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "5UR8hc8iPILPglg65",
+        "url": "https://apify.com/lexis-solutions/n8n-workflow-templates-scraper"
+      },
+      {
+        "title": "n8n Workflow Template Scraper",
+        "name": "n8n-scraper",
+        "username": "muhammetakkurtt",
+        "stats": {
+          "totalBuilds": 30,
+          "totalRuns": 1459,
+          "totalUsers": 369,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 6,
+          "totalUsers90Days": 11,
+          "lastRunStartedAt": "2026-10-28T21:18:24.513Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 47,
+            "TIMED-OUT": 0,
+            "TOTAL": 47
+          },
+          "actorReviewCount": 6,
+          "actorReviewRating": 5,
+          "bookmarkCount": 38
+        },
+        "description": "Automate n8n.io workflow template collection with this Apify actor. Scrape by category (AI, Marketing, DevOps), sort (relevancy, popularity), & get detailed structured data. Fetch importable JSONs for direct n8n use. Ideal for developers, automation experts & businesses.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/tz8SJ37DO5UCy2Zrrz-hxaCU-3qWGHuGqd03Znd113g/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vSElNQUNaaE9uN1lKNzFkVHUtYWN0b3ItM3NJQzBENWV6Rm9RcEczbXotTTNpS21ldlJpcy1uOG4ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 38,
+        "actorReviewRating": 5,
+        "actorReviewCount": 6,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhammet Akkurt",
+        "userPictureUrl": "https://images.apifyusercontent.com/BPb9TQxvLy8fNRIrOXdosJXJ_sqgfOSeE2rJ2hLBYgo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZWRIdmctSDhVeDJNXzNlVzNNbFdHYVdmSm1XS1RyYnFsMkdMZ0JMQl9mUS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6Z3lNek14TURrMFAzWTlOQQ.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": 0.1,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "The pricing has been simplified and made more affordable for most use cases.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged once when the actor starts running.",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.001
+              },
+              "workflow": {
+                "eventTitle": "Each Workflow",
+                "eventDescription": "Charged for each workflow item successfully saved to the dataset, including template metadata or importable workflow JSON.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-10T13:54:41.736Z",
+          "createdAt": "2026-04-26T13:54:41.426Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-04-26T13:55:01.709Z"
+        },
+        "id": "3sIC0D5ezFoQpG3mz",
+        "url": "https://apify.com/muhammetakkurtt/n8n-scraper"
+      },
+      {
+        "title": "n8n Workflow Marketplace Analyzer",
+        "name": "n8n-marketplace-analyzer",
+        "username": "scraper_guru",
+        "stats": {
+          "totalBuilds": 25,
+          "totalRuns": 470,
+          "totalUsers": 45,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-28T13:02:33.006Z",
+          "actorReviewCount": 2,
+          "actorReviewRating": 4.999999999999999,
+          "bookmarkCount": 2,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Search and analyze n8n marketplace workflows. Extract integrations, creators, pricing, views, AI usage, and complexity for market research and training datasets.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/7T5Ux-ua4UiypL-bcy0p6i2pW6XKzb5tZt1WqbHLEnI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRkxlS2JZSUtqVW5rY0FhRngtYWN0b3ItSk1yUGw3ZTVWSTJ6cW83eTItMVdSUERVQnozUC13b3JrZmxvd0FuYWx5emVyLmpwZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 2,
+        "actorReviewRating": 5,
+        "actorReviewCount": 2,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "LIAICHI MUSTAPHA",
+        "userPictureUrl": "https://images.apifyusercontent.com/0vlKft9096Ww0h6iUh9akjfEjYYEF1LvUYIGeW3a1Xs/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZlZzZlRMdXJ1UDhrTjVrRDl0VUQ1V0RPUjY2NmpLWlBJaWpLZUc5NEI4SS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSa3hsUzJKWlNVdHFWVzVyWTBGaFJuZ3RjSEp2Wm1sc1pTMDRZVGhLWmtOR2JtUllMWEJ5YjJacGJHVnNiMmR2TG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "reasonForChange": "We've updated the pricing to better reflect the value this Actor delivers. The n8n Marketplace Analyzer goes beyond basic scraping, it provides comprehensive analytics, creator insights, complexity metrics, and optional ML training data generation.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0005,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-03-14T03:19:14.920Z",
+          "createdAt": "2026-02-28T03:19:15.698Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-02-28T03:19:36.001Z"
+        },
+        "id": "JMrPl7e5VI2zqo7y2",
+        "url": "https://apify.com/scraper_guru/n8n-marketplace-analyzer"
+      },
+      {
+        "title": "Reddit Scraper - Markdown for AI & n8n",
+        "name": "reddit-to-llm-api",
+        "username": "clearpath",
+        "stats": {
+          "totalBuilds": 83,
+          "totalRuns": 1204,
+          "totalUsers": 40,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 7,
+          "lastRunStartedAt": "2026-10-28T19:24:30.569Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 2,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Extract Reddit posts and comments as LLM-ready Markdown. No API key needed. Direct n8n/Make integration—connect output to AI nodes instantly. 20x faster than browser scrapers. Perfect for lead gen, product validation, and market research workflows.",
+        "categories": [
+          "AGENTS",
+          "AUTOMATION",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/pl7VHbQxJvYwi97VKiBXgGncnA2JDKQFtyeCYHCB52Q/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRFN2TUNBd3N1Zk15WmVMeXQtYWN0b3ItbDR1cEh3RDFtaEYzTWR2Z1gtY1Z0ckY4RGoxVy1yZWRkaXQtdG8tbGxtLWxvZ28ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "ClearPath",
+        "userPictureUrl": "https://images.apifyusercontent.com/g3LfeX-eHh6DHWymIWx3s3F_AboAOKaYxmjA4ZRWv_Y/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vU2JPZnFsaFhZUHhMWjM4TVNITWNIM2kzZmtIQnV0Y3JjZUUwM2Fuc0M4MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSRk4yVFVOQmQzTjFaazE1V21WTWVYUXRjSEp2Wm1sc1pTMXpkalZaTjJOUGJVMW9MV05zWldGeWNHRjBhQzFzYjJkdkxXRndhV1o1TG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "post-scraped": {
+                "eventTitle": "Post scraped",
+                "eventDescription": "Price per post scraped",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0008
+                  }
+                },
+                "isPrimaryEvent": true
+              },
+              "post-with-comments-scraped": {
+                "eventTitle": "Post with all comments scraped",
+                "eventDescription": "Add-on: Cost per post including all comments scraped",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002
+                  }
+                }
+              },
+              "image-scraped": {
+                "eventTitle": "Image scraped and stored",
+                "eventDescription": "Add-on: Cost per image stored in your Apify storage",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0004
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0004
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0004
+                  },
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0004
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0004
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2025-12-22T10:55:59.897Z",
+          "createdAt": "2025-12-22T10:56:00.793Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "l4upHwD1mhF3MdvgX",
+        "url": "https://apify.com/clearpath/reddit-to-llm-api"
+      }
+    ]
+  }
+}

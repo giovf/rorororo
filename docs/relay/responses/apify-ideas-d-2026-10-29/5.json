@@ -1,0 +1,784 @@
+{
+  "data": {
+    "total": 7131,
+    "count": 10,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "Zalo Exporter - Group Members, Contacts and Chats",
+        "name": "zalo-member-profile-exporter",
+        "username": "kazkn",
+        "stats": {
+          "totalBuilds": 40,
+          "totalRuns": 114,
+          "totalUsers": 27,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 8,
+          "lastRunStartedAt": "2026-10-23T16:50:36.793Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 19,
+            "SUCCEEDED": 4,
+            "TIMED-OUT": 0,
+            "TOTAL": 23
+          }
+        },
+        "description": "Connect your Zalo account by QR and export joined groups, visible members, contacts, profiles, or bounded chat history to CSV/JSON. Choose a guided preset, reuse the encrypted session, and track conversation completeness and run limits.",
+        "categories": [
+          "LEAD_GENERATION",
+          "SOCIAL_MEDIA",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/0xzulvlLCVYUiAtPbEDa9Z1cAQDtsz4iBa0ubANKuNU/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vRU1tNFVoV2luTjc2dHJiT2ItYWN0b3ItSk04dkFWN2U3ZEo2ZEc1dlotUUFwak94RU5hcS11bm5hbWVkLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "KazKN",
+        "userPictureUrl": "https://images.apifyusercontent.com/tSAUXkQeU2K4GHGUFixdpQnVuS7MA_vBuD-hWeggDlQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVHh5YUpRTHhKQ0JZOWNqR2RSVmktVUZBdXpCb1hyWmtQdVZtNWplb1Z4NC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZSVTF0TkZWb1YybHVUamMyZEhKaVQySXRjSEp2Wm1sc1pTMUJPVVExT1U0eFNqZFJMVU5vWVhSSFVGUmZTVzFoWjJWZk1qTmZiV0Z5YzE4eU1ESTJYMTh4TVY4MU5sOHlOaTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "Price each successfully exported Zalo result by its delivered value, with subscription-tier discounts.",
+          "createdAt": "2026-08-03T03:25:09.150Z",
+          "startedAt": "2026-08-03T03:19:46.000Z",
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.05
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.04
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.035
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.035
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.035
+                  }
+                },
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": true
+              },
+              "profile-record": {
+                "eventTitle": "Profile",
+                "eventDescription": "One visible Zalo contact or profile saved to the Dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0027
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00225
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0018
+                  }
+                },
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": false
+              },
+              "group-record": {
+                "eventTitle": "Group",
+                "eventDescription": "One joined Zalo group summary saved to the Dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0036
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0024
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0024
+                  }
+                },
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": false
+              },
+              "group-member-record": {
+                "eventTitle": "Group member",
+                "eventDescription": "One visible member of a joined Zalo group saved to the Dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0025
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00225
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.001875
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0015
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0015
+                  }
+                },
+                "isPrimaryEvent": true,
+                "isOneTimeEvent": false
+              },
+              "conversation-record": {
+                "eventTitle": "Conversation",
+                "eventDescription": "One accessible direct or joined-group conversation summary saved to the Dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00315
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.002625
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0021
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0021
+                  }
+                },
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": false
+              },
+              "message-record": {
+                "eventTitle": "Message",
+                "eventDescription": "One accessible Zalo message saved to the Dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.0018
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00162
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00135
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00108
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00108
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00108
+                  }
+                },
+                "isPrimaryEvent": false,
+                "isOneTimeEvent": false
+              }
+            }
+          }
+        },
+        "id": "JM8vAV7e7dJ6dG5vZ",
+        "url": "https://apify.com/kazkn/zalo-member-profile-exporter"
+      },
+      {
+        "title": "Zalora Scraper - SE Asia Fashion Products, Prices & Sellers",
+        "name": "zalora-scraper",
+        "username": "scrapesage",
+        "stats": {
+          "totalBuilds": 23,
+          "totalRuns": 176,
+          "totalUsers": 11,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-29T06:06:24.347Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 37,
+            "TIMED-OUT": 0,
+            "TOTAL": 37
+          }
+        },
+        "description": "Scrape Zalora fashion products across Singapore, Malaysia, Philippines, Hong Kong & Indonesia - names, brands, prices, discounts, sizes, stock, images, sellers, ratings & reviews. Search by keyword, segment, brand, category or URL. Monitor price drops. No login or API key. Export JSON, CSV, Excel.",
+        "categories": [
+          "ECOMMERCE",
+          "LEAD_GENERATION",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/6bjQxj1JGEVw22PmNbt71RHI9sDSIEjSoYSWZWazCis/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vS2ZJMkRCWGxKenl1QUZxTXotYWN0b3ItREN4VmFpdFRWYUViMlVYWXctaTVhR0pvMXNKUy1aYWxvcmEucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrape Sage",
+        "userPictureUrl": "https://images.apifyusercontent.com/4S7GKlllKQyVtLhgCdN20Y9_jGA5IW09930pQc_S0GU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMHJ5WFF1LTc3bzZZNjlIRUIyZ3dmRHZaREZSNFZ5Qk5FenlVTFRsZ1A4by9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZTMlpKTWtSQ1dHeEtlbmwxUVVaeFRYb3RjSEp2Wm1sc1pTMTZjMWxZZUhoQmVIbEhMVk5qY21Gd1pWOVRZV2RsTG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "product": {
+                "eventTitle": "Product scraped",
+                "eventDescription": "One Zalora product with name, brand, price, sale price, discount, images, seller, category, rating and review count.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0034
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0028
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0022
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00152
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001
+                  }
+                }
+              },
+              "productDetail": {
+                "eventTitle": "Product details scraped",
+                "eventDescription": "Full product-page enrichment: complete description, every size with live stock, colour, specifications, care info, seller details, shipping & returns, full image gallery and review tags.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.007
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00595
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0049
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00386
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00266
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00175
+                  }
+                }
+              }
+            }
+          },
+          "createdAt": "2026-08-13T00:21:05.057Z",
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "introducing tiered pricing — FREE tier unchanged, higher plan tiers discounted",
+          "startedAt": "2026-08-13T00:21:05.057Z",
+          "notifiedAboutChangeAt": "2026-08-19T08:06:15.364Z"
+        },
+        "id": "DCxVaitTVaEb2UXYw",
+        "url": "https://apify.com/scrapesage/zalora-scraper"
+      },
+      {
+        "title": "Zalora Listings Scraper",
+        "name": "zalora-listings-scraper",
+        "username": "piotrv1001",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 190,
+          "totalUsers": 8,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-28T13:00:36.389Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 37,
+            "TIMED-OUT": 0,
+            "TOTAL": 37
+          }
+        },
+        "description": "The Zalora Listings Scraper extracts products from Zalora stores in Malaysia, Singapore, Indonesia, the Philippines, and Hong Kong by keyword or category URL, capturing names, brands, prices, discounts, ratings, images, sellers, and colors — ideal for price monitoring and fashion market research.",
+        "categories": [
+          "ECOMMERCE",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/9PFbfY6ck1hbUlN-9kwk_LdmbUE5esgumd51i35WNyI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcE9IY1J1Zk5OQWtic0FoN08tYWN0b3ItdjBtNjVjOGptbjJFMEtXMEktNUlPT2xjTVB4ZC1VbnRpdGxlZF9kZXNpZ24lMjgxOSUyOS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "FalconScrape",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwpcE_mmsxc5tdo93bC-pAbO1W_iD3j4d9HUAWxt_u0/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vQXZwNS1MdmdVLUdFU0d6Z3NIdm5pZENtOFR4dmRsUnpkZUFFMlZpS0FUNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjRTlJWTFKMVprNU9RV3RpYzBGb04wOHRjSEp2Wm1sc1pTMDNRMk5SY1hsNVNXWkNMV0Z3YVdaNVgyeHZaMjh1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "product-listing": {
+                "eventTitle": "Product",
+                "eventDescription": "Fee for each product listing scraped and stored in the dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-06-04T15:54:30.752Z",
+          "createdAt": "2026-06-04T15:54:39.676Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "v0m65c8jmn2E0KW0I",
+        "url": "https://apify.com/piotrv1001/zalora-listings-scraper"
+      },
+      {
+        "title": "Zalo Discovery Extractor",
+        "name": "zalo-discovery-extractor",
+        "username": "getdataforme",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 129,
+          "totalUsers": 8,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-28T10:30:28.541Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 29,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Extract valuable data from Zalo posts with high accuracy and efficiency. Tailor extraction parameters, process large datasets quickly, and export in JSON, CSV, or Excel for market research, competitive intelligence, and more....",
+        "categories": [
+          "AI",
+          "AUTOMATION",
+          "ECOMMERCE"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "GetDataForMe",
+        "userPictureUrl": "https://images.apifyusercontent.com/IrsUNrGY66yv-Hls478fzfYRDnv3UVinpaya_kucM_A/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vSk5hcW9sVC1JUXFnd1EwbE9oSGxxSXFJdTRPQ1doNDRpMUJMRzllLTh3MC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RTJORGcwTURjM05UOTJQVFE.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.05
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.009,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-06-29T12:09:34.381Z",
+          "createdAt": "2026-06-29T12:09:36.051Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "s7CYPulVN9HkY2dPo",
+        "url": "https://apify.com/getdataforme/zalo-discovery-extractor"
+      },
+      {
+        "title": "Zalora Fashion Scraper — Products, Prices & Discounts",
+        "name": "zalora-scraper",
+        "username": "sheshinmcfly",
+        "stats": {
+          "totalBuilds": 24,
+          "totalRuns": 241,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-29T03:52:23.182Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 25,
+            "TIMED-OUT": 2,
+            "TOTAL": 27
+          }
+        },
+        "description": "Scrape fashion products from Zalora — Southeast Asia's leading online fashion platform. Extract product names, brands, prices, discounts, and images across Philippines, Singapore, Malaysia, Indonesia, and Hong Kong. No login required.",
+        "categories": [
+          "ECOMMERCE",
+          "LEAD_GENERATION",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/5npxac3I1AcBi7xhZxf5R1aj8pCIHz0L6Bcnl97IoR4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaXl0em5mSFo5RHhTT2YwNGYtYWN0b3ItNWJGbUE5cnZzUDFKd3d4WWgtNGNadjl4eE45MC16YWxvcmEtc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Sheshinmcfly",
+        "userPictureUrl": "https://images.apifyusercontent.com/qQUMyY8Mgw6pto3cCL_3bjSmr1XX8c9KzkSn-8pEAig/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vM2xoaldPZWhZYVFCX1p4TXBHSG11OTN4Wm1CMHRXUC1iX1d5RTlsc3gzWS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURWc1YjNCRlRXSkRXSGhYWWxJdGRGaDJPRkYxYlVkWWNFNTROMnQyYlUxbWVXNVdkV2N6ZVdZd2RESmlVM0JaTkQxek9UWXRZdw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.015,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-09-17T00:00:00.000Z",
+          "createdAt": "2026-09-02T02:54:36.182Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-02T02:54:56.394Z",
+          "notifiedAboutChangeAt": "2026-09-17T00:06:05.866Z"
+        },
+        "id": "5bFmA9rvsP1JwwxYh",
+        "url": "https://apify.com/sheshinmcfly/zalora-scraper"
+      },
+      {
+        "title": "Zalo Official Account Scraper (No login)",
+        "name": "zalo-official-account-scraper-no-login",
+        "username": "dead00",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 22,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-29T04:58:24.219Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 20,
+            "TIMED-OUT": 0,
+            "TOTAL": 20
+          }
+        },
+        "description": "Scrape public Zalo Official Account pages without login. Get name, verified badge, category, address, working hours, phone, website, avatar and QR code. Paste links or IDs, export to JSON, CSV or Excel.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/ZuvaEluhkoQ4C7q5p1QyndY9HXNwJVntI_XwynhQr9M/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQW03dlNTYmNCYlBXM2N2TDEtYWN0b3ItM2RHbk1PeGJWdVdBMUlWUTYtenVtWUU2dXlIaS11bm5hbWVkLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Dead",
+        "userPictureUrl": "https://images.apifyusercontent.com/GIZkdpd2qPhLEtCfMaroaxp2zEGfTkyyskZfD3H8nOM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbVllblVQWHdRUHo4aGc3ZjhmOHlsRjYwMWZ4dm9ib0E1dDFJYm9rSlJZRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVzV5WmpCNVJsZHZURzF2ZWpFd2RXOXpNRVZIWm1WcFNqUTNia1l4WkZsTVZrSXdVM2xQVG1oYVVFNTBaSHBJVmpN.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "oa-page-scraped": {
+                "eventTitle": "Official Account scraped",
+                "eventDescription": "Charged per public Official Account successfully scraped. Invalid links, not-found pages and errors are free.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-09T16:37:28.774Z",
+          "createdAt": "2026-10-09T16:37:29.909Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "3dGnMOxbVuWA1IVQ6",
+        "url": "https://apify.com/dead00/zalo-official-account-scraper-no-login"
+      },
+      {
+        "title": "Zalo Data Scraper",
+        "name": "zalo-data-scraper",
+        "username": "dead00",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 8,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-18T05:59:09.682Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 3,
+            "SUCCEEDED": 0,
+            "TIMED-OUT": 0,
+            "TOTAL": 3
+          }
+        },
+        "description": "Export your Zalo account's friends, groups, group members and chat history to JSON, CSV or Excel. Log in once by scanning a QR code with the Zalo app; the session is saved, so later runs need no scan.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/lDjhdnCcg_EDyATzXdI63uWiqyFHoisbI4RiLYbZgnE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQW03dlNTYmNCYlBXM2N2TDEtYWN0b3ItN0ZkRFduQWp5QUJZVkE5bmQtTjJwTXB6T3M3UC11bm5hbWVkLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Dead",
+        "userPictureUrl": "https://images.apifyusercontent.com/GIZkdpd2qPhLEtCfMaroaxp2zEGfTkyyskZfD3H8nOM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vbVllblVQWHdRUHo4aGc3ZjhmOHlsRjYwMWZ4dm9ib0E1dDFJYm9rSlJZRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTVzV5WmpCNVJsZHZURzF2ZWpFd2RXOXpNRVZIWm1WcFNqUTNia1l4WkZsTVZrSXdVM2xQVG1oYVVFNTBaSHBJVmpN.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "id-lookup": {
+                "eventTitle": "ID lookup",
+                "eventDescription": "Charged per user ID or group ID looked up",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003,
+                "isPrimaryEvent": true
+              },
+              "friend-exported": {
+                "eventTitle": "Friend exported",
+                "eventDescription": "Charged per friend record exported from the account.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003
+              },
+              "group-exported": {
+                "eventTitle": "Group exported",
+                "eventDescription": "Charged per group record exported from the account.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.003
+              },
+              "group-member-exported": {
+                "eventTitle": "Group member exported",
+                "eventDescription": "Charged per group whose member list is exported.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004
+              },
+              "chat-message-exported": {
+                "eventTitle": "Chat message exported",
+                "eventDescription": "Charged per conversation (group or private) whose recent message history is exported",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0045
+              },
+              "extra-data-exported": {
+                "eventTitle": "Extra data exported",
+                "eventDescription": "Charged once per optional \"More options\" dataset produced: account info, labels, close friends, pinned/archived/muted chats, devices, settings, catalogs, group pending members or reminders, etc.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              }
+            }
+          },
+          "startedAt": "2026-10-09T15:53:44.648Z",
+          "createdAt": "2026-10-09T15:53:45.735Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "7FdDWnAjyABYVA9nd",
+        "url": "https://apify.com/dead00/zalo-data-scraper"
+      },
+      {
+        "title": "Zalo Business Finder: Vietnam Official Accounts",
+        "name": "zalo-scraper",
+        "username": "reventadata",
+        "stats": {
+          "totalBuilds": 18,
+          "totalRuns": 63,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-29T09:52:25.096Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 17,
+            "TIMED-OUT": 0,
+            "TOTAL": 17
+          }
+        },
+        "description": "Find Vietnamese businesses on Zalo by keyword and city, or look up Official Account URLs. Returns name, category, verified flag, address, phone, opening hours, website and OA id from public pages. Verified businesses only by default. No login, no chats, no personal profiles.",
+        "categories": [
+          "LEAD_GENERATION",
+          "SOCIAL_MEDIA"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/yE51x7DC11ndmZMuYl4OTQ_LC1WnxTo6FxVRePvhB5I/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vc1YxdzFkazg4QldmZFlVOUYtYWN0b3ItWnFLYnV1RU5KbThIb3BScEMtWmRONTVDTG1RSC1pY29uLXphbG8tc2NyYXBlci5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "reventadata",
+        "userPictureUrl": "https://images.apifyusercontent.com/HdOeUCQ_uRychoEack5RguhQoa6fWM10C3RI89k2h1c/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vd1dadXh4NnJ2ZmpubHNyekh6eXNUWUFxTkxDdFNWV3NGWE5fb2ZRVUV4RS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjMVl4ZHpGa2F6ZzRRbGRtWkZsVk9VWXRjSEp2Wm1sc1pTMWtaSGczYzJkV2EyUlNMWEpsZG1WdWRHRmtZWFJoTFdGMllYUmhjaTAxTVRJdWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "minimalMaxTotalChargeUsd": 0.01,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-12T09:25:19.000Z",
+          "createdAt": "2026-10-12T09:25:20.158Z"
+        },
+        "id": "ZqKbuuENJm8HopRpC",
+        "url": "https://apify.com/reventadata/zalo-scraper"
+      },
+      {
+        "title": "Zalora Shop Detail Scraper",
+        "name": "zalora-shop-detail-scraper",
+        "username": "romy",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 2,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-29T01:00:23.226Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 1,
+            "TIMED-OUT": 0,
+            "TOTAL": 1
+          }
+        },
+        "description": "Scrape seller/shop detail information from Zalora Indonesia using the shop ID. Returns shop name, brand info, and product listings.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ih_3IEX6c91yocQ0JG2Q0s6n97a9g8rMm_0m3JCtCAE/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vV0hyV0xWU2Jya3V4SnNzZHYtYWN0b3ItUzVlVml6VzdiRWRkbEFsNmYtZGJCZnFMZjBvRC13aGF0bm90LWljb24ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Romy",
+        "userPictureUrl": "https://images.apifyusercontent.com/YdOCst_32uGcuyi2S6XFj66yeH-gLw6TT2u-Ueo2rPU/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vTWZVR0NyR3U2cGFZeG50VThZcTR3VWdpUVFXdzhla2ZrYVhrYUZVRHlPTS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZWMGh5VjB4V1UySnlhM1Y0U25OelpIWXRjSEp2Wm1sc1pTMUlUazV2WTJOMVdXVmxMVFV4TkRJd01ETTNOMTh4T0RBME5USTBOVGd4TURVME5ETXdOMTh5TURFM05ETTBOemM0TlRRNE9EQTFOVEkxWDI0dWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE"
+        },
+        "id": "4lWh9EYMKj1aStdvc",
+        "url": "https://apify.com/romy/zalora-shop-detail-scraper"
+      }
+    ]
+  }
+}

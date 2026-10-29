@@ -1,0 +1,178 @@
+{
+  "request": "apify-ideas-b-2026-10-29",
+  "fetched_at": "2026-10-29T17:17:58.268Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://apify.com/_next/static/chunks/3_f9njdgaxexm.js?dpl=cfd55ff433",
+      "fetched_at": "2026-10-29T17:17:51.733Z",
+      "status": 200,
+      "elapsed_ms": 162,
+      "final_url": "https://apify.com/_next/static/chunks/3_f9njdgaxexm.js?dpl=cfd55ff433",
+      "headers": {
+        "content-type": "application/javascript; charset=UTF-8",
+        "last-modified": "Thu, 29 Oct 2026 13:00:31 GMT",
+        "etag": "W/\"6175-1a187bf6998\""
+      },
+      "file": "1.bin",
+      "bytes": 24949,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/_next/static/chunks/1dx-b8zqu5gzo.js?dpl=cfd55ff433",
+      "fetched_at": "2026-10-29T17:17:52.397Z",
+      "status": 200,
+      "elapsed_ms": 5,
+      "final_url": "https://apify.com/_next/static/chunks/1dx-b8zqu5gzo.js?dpl=cfd55ff433",
+      "headers": {
+        "content-type": "application/javascript; charset=UTF-8",
+        "last-modified": "Thu, 29 Oct 2026 13:00:31 GMT",
+        "etag": "W/\"8b07-1a187bf6998\""
+      },
+      "file": "2.bin",
+      "bytes": 35591,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/_next/static/chunks/2ev6kg6phzlj8.js?dpl=cfd55ff433",
+      "fetched_at": "2026-10-29T17:17:52.901Z",
+      "status": 200,
+      "elapsed_ms": 4,
+      "final_url": "https://apify.com/_next/static/chunks/2ev6kg6phzlj8.js?dpl=cfd55ff433",
+      "headers": {
+        "content-type": "application/javascript; charset=UTF-8",
+        "last-modified": "Thu, 29 Oct 2026 13:00:31 GMT",
+        "etag": "W/\"a424-1a187bf6998\""
+      },
+      "file": "3.bin",
+      "bytes": 42020,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/_next/static/chunks/3gykujymb2bm0.js?dpl=cfd55ff433",
+      "fetched_at": "2026-10-29T17:17:53.407Z",
+      "status": 200,
+      "elapsed_ms": 5,
+      "final_url": "https://apify.com/_next/static/chunks/3gykujymb2bm0.js?dpl=cfd55ff433",
+      "headers": {
+        "content-type": "application/javascript; charset=UTF-8",
+        "last-modified": "Thu, 29 Oct 2026 13:00:31 GMT",
+        "etag": "W/\"ddc3-1a187bf6998\""
+      },
+      "file": "4.bin",
+      "bytes": 56771,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/_next/static/chunks/0i-8qjzlsny2d.js?dpl=cfd55ff433",
+      "fetched_at": "2026-10-29T17:17:53.914Z",
+      "status": 200,
+      "elapsed_ms": 4,
+      "final_url": "https://apify.com/_next/static/chunks/0i-8qjzlsny2d.js?dpl=cfd55ff433",
+      "headers": {
+        "content-type": "application/javascript; charset=UTF-8",
+        "last-modified": "Thu, 29 Oct 2026 13:00:31 GMT",
+        "etag": "W/\"13875-1a187bf6998\""
+      },
+      "file": "5.bin",
+      "bytes": 79989,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/_next/static/chunks/1lm_81i811xc4.js?dpl=cfd55ff433",
+      "fetched_at": "2026-10-29T17:17:54.419Z",
+      "status": 200,
+      "elapsed_ms": 5,
+      "final_url": "https://apify.com/_next/static/chunks/1lm_81i811xc4.js?dpl=cfd55ff433",
+      "headers": {
+        "content-type": "application/javascript; charset=UTF-8",
+        "last-modified": "Thu, 29 Oct 2026 13:00:31 GMT",
+        "etag": "W/\"fae5-1a187bf6998\""
+      },
+      "file": "6.bin",
+      "bytes": 64229,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/_next/static/chunks/178p67lab3zse.js?dpl=cfd55ff433",
+      "fetched_at": "2026-10-29T17:17:54.925Z",
+      "status": 200,
+      "elapsed_ms": 5,
+      "final_url": "https://apify.com/_next/static/chunks/178p67lab3zse.js?dpl=cfd55ff433",
+      "headers": {
+        "content-type": "application/javascript; charset=UTF-8",
+        "last-modified": "Thu, 29 Oct 2026 13:00:31 GMT",
+        "etag": "W/\"11b92-1a187bf6998\""
+      },
+      "file": "7.bin",
+      "bytes": 72594,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.apify.com/academy/build-and-publish/actor-ideas/find-actor-ideas",
+      "fetched_at": "2026-10-29T17:17:54.931Z",
+      "status": 200,
+      "elapsed_ms": 173,
+      "final_url": "https://docs.apify.com/academy/build-and-publish/actor-ideas/find-actor-ideas",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "14940",
+        "last-modified": "Thu, 29 Oct 2026 13:34:39 GMT",
+        "etag": "W/\"6ae34b6f-fcd0\""
+      },
+      "file": "8.html",
+      "bytes": 64720,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/ideas/internet-archive",
+      "fetched_at": "2026-10-29T17:17:55.162Z",
+      "status": 200,
+      "elapsed_ms": 756,
+      "final_url": "https://apify.com/ideas/internet-archive",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.html",
+      "bytes": 373267,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/ideas/ev-charging-stations-6f2c77c8",
+      "fetched_at": "2026-10-29T17:17:56.489Z",
+      "status": 200,
+      "elapsed_ms": 701,
+      "final_url": "https://apify.com/ideas/ev-charging-stations-6f2c77c8",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 374818,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/ideas/currency-rates-scraper",
+      "fetched_at": "2026-10-29T17:17:57.751Z",
+      "status": 200,
+      "elapsed_ms": 456,
+      "final_url": "https://apify.com/libor.vachal/currency-rates-scraper",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"efezpbz3zb9niq\""
+      },
+      "file": "11.html",
+      "bytes": 450541,
+      "truncated": false
+    }
+  ]
+}
