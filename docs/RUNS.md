@@ -1966,3 +1966,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 09:22 | exchange | Exchange file docs/exchange/2026-W44.md (missed Wednesday 10-28, run by the 09:00 build); STRATEGY §8 line
 - 2026-10-29 09:22 | exchange | Owner later: one 3-minute Stripe payment link, raised by the build that finishes the listing; 8 asks open
 - 2026-10-29 09:22 | build | Exchange missed on Wednesday 2026-10-28: ran the venture exchange in this slot
+- 2026-10-29 11:19 | triage | notify owner dispatched: last run started 09:07 UTC, 2 h 12 min ago
