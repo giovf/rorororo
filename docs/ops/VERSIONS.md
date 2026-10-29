@@ -37,6 +37,9 @@ routine-model changes (the RemoteTrigger API is only reachable there) and record
   through `docs/ci/` (16 files, one line each); the root and gankdat gates passed on Node 24.22.0 in the sandbox before
   the push. The devcontainer still installs Node 22 (`.devcontainer/Dockerfile`, nodesource `setup_22.x`): CLAUDE.md
   asks before any `.devcontainer/` change, so an attended session bumps it (handoff in `docs/ALERTS.md`).
+- 2026-10-29 — Devcontainer on Node 24 (owner's yes, action 030 step 2): `.devcontainer/Dockerfile` nodesource `setup_22.x`
+  → `setup_24.x`. Takes effect the next time the container is rebuilt (VS Code: "Dev Containers: Rebuild Container");
+  `package.json` keeps `engines.node >=22`, so a machine still on 22 works until then. Runners and devcontainer now match.
 - 2026-10-24 — Majors reviewed by the burn-down (foundry `dependabot-majors-review-by-routine`, PR #7: **stripe 22.6.2 → 23.0.0**,
   **postal-mime 3.0.0 → 4.0.6**). Stripe 23's breaking changes (`verifyHeader`/`verifyHeaderAsync` default tolerance, the
   top-level `Stripe.constructEventWithoutVerification` and `ErrorType` removed, V2 list types and V2 address params, Node 18

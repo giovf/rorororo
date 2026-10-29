@@ -1,7 +1,7 @@
 # Owner action request #030 — two read scopes on the CI Cloudflare token, and a yes/no on the devcontainer's Node line
 
 - **Date:** 2026-10-24
-- **Status:** open
+- **Status:** step 2 done 2026-10-29 (yes — devcontainer moved to Node 24); step 1 half done, one permission left
 - **Your time:** ~6 minutes (Cloudflare ~5, the yes/no ~1)
 - **Cost:** £0.00
 - **Blocks:** the `stats crawlers: zone` reading on gankdat's daily metrics row (AI-crawler fetches of the `/stats`
@@ -23,7 +23,12 @@ Both were filed on 2026-10-17 and 2026-10-20 as `handoff:` lines for an attended
 - **Steps:**
   1. Find the token CI uses (the one created for the gankdat deploy; its name usually says Workers or CI). Do not create a
      new one — click **Edit** (the ⋯ menu on its row).
-  2. Under *Permissions*, click **+ Add more** twice and add: `Zone` → `Zone` → `Read`, and `Zone` → `Analytics` → `Read`.
+  2. Under *Permissions*, add **Analytics → Read** for the zone. *Update 2026-10-29:* the permission picker groups
+     permissions into categories, and the token already has everything in **DNS & Zone** — that covers Zone Read (the
+     daily job's zone lookup works). What is still missing is **zone analytics**, which is **not** in DNS & Zone: in the
+     permission picker search for `Analytics` and pick the one scoped to a **zone** (named "Analytics" or "Zone
+     Analytics", level Read) — not "Account Analytics". The daily job's error is
+     `Actor 'com.cloudflare.api.token…' does not have [permission]` on the analytics query, after the zone lookup succeeded.
   3. Under *Zone Resources*, make sure `gankdat.com` is included (Specific zone → gankdat.com, or All zones).
   4. **Continue to summary** → **Save** (editing never shows the token value again; that is expected).
 - **Give back:** a Telegram note `cloudflare token scopes done`. The next 06:45 metrics run fills the `stats crawlers:

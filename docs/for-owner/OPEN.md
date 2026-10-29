@@ -13,17 +13,17 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 2. **PayPal hackathon organiser says the Devpost entry has no de…** — ~3 min, since 2026-10-21; nothing queued waits on it. Steps: [028](actions/028-paypal-devpost-demo-access.md).
    PayPal hackathon organiser says the Devpost entry has no demo access; add the demo link or run steps to the form by 12 Nov. — Prepared 2026-10-23 (burn-down): paste-ready demo URL and testing instructions in docs/for-owner/actions/028-paypal-devpost-demo-access.md (~3 min); the public mirror's README now carries the r…
 
-3. **add two read scopes to the CI Cloudflare token and say yes/…** — ~6 min, since 2026-10-24; nothing queued waits on it. Steps: [030](actions/030-cloudflare-token-scopes-and-devcontainer-node.md).
-   add two read scopes to the CI Cloudflare token and say yes/no to Node 24, ~6 min — docs/for-owner/actions/030-cloudflare-token-scopes-and-devcontainer-node.md
-
-4. **gankdat's Excel add-in is built** — ~45 min, since 2026-10-24; nothing queued waits on it. Steps: [031](actions/031-partner-center-appsource.md).
+3. **gankdat's Excel add-in is built** — ~45 min, since 2026-10-24; nothing queued waits on it. Steps: [031](actions/031-partner-center-appsource.md).
    gankdat's Excel add-in is built — try it once in Excel, open a free Partner Center account and submit it to AppSource, ~45 min, £0 — docs/for-owner/actions/031-partner-center-appsource.md
 
-5. **gankdat's Power Platform connector is built** — ~50 min, since 2026-10-25; nothing queued waits on it. Steps: [031](actions/031-partner-center-appsource.md).
+4. **gankdat's Power Platform connector is built** — ~50 min, since 2026-10-25; nothing queued waits on it. Steps: [031](actions/031-partner-center-appsource.md).
    gankdat's Power Platform connector is built — one more ~50 min step on the Partner Center account, £0 — docs/for-owner/actions/031-partner-center-appsource.md step 4
 
-6. **Claim the $150 Meta hackathon credits with the form in the…** — time not stated, since 2026-10-26; nothing queued waits on it.
+5. **Claim the $150 Meta hackathon credits with the form in the…** — time not stated, since 2026-10-26; nothing queued waits on it.
    Claim the $150 Meta hackathon credits with the form in the Cerebral Valley email by 4 Nov (needs your card).
+
+6. **one more Cloudflare token permission** — ~3 min, since 2026-10-29; nothing queued waits on it. Steps: [030](actions/030-cloudflare-token-scopes-and-devcontainer-node.md).
+   one more Cloudflare token permission — zone Analytics Read for gankdat.com (not in the DNS & Zone group), ~3 min — docs/for-owner/actions/030-cloudflare-token-scopes-and-devcontainer-node.md step 1
 
 ## Waiting on an attended Claude session, not you (2)
 

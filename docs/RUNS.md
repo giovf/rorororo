@@ -1969,3 +1969,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 11:19 | triage | notify owner dispatched: last run started 09:07 UTC, 2 h 12 min ago
 - 2026-10-29 13:30 | notify | Your UK Sole Trader Tax Workbook is live on Etsy at £6.99: taxelicious.etsy.com
 - 2026-10-29 13:30 | interactive | Recorded 029 done: Etsy listing live (£14.20 fees), Zoho and Payhip unblocked, Kindle in KDP review
+- 2026-10-29 13:40 | interactive | Action 030: devcontainer on Node 24 (owner yes); token needs one more scope, zone Analytics Read

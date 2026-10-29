@@ -28,8 +28,8 @@ RUN apt-get update \
       fd-find \
  && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
-# ---------- Node.js 22 LTS ----------
-RUN curl -fsSL https://deb.nodesource.com/setup_22.x | bash - \
+# ---------- Node.js 24 LTS ----------
+RUN curl -fsSL https://deb.nodesource.com/setup_24.x | bash - \
  && apt-get install -y nodejs \
  && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
