@@ -1,0 +1,4 @@
+GET https://apify.com/ideas
+RENDER https://apify.com/ideas
+RENDER https://apify.com/ideas?sortBy=votes
+GET https://api.apify.com/v2/store?limit=5&search=companies%20house
