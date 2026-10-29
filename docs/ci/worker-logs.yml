@@ -1,0 +1,54 @@
+name: worker logs
+
+# One dispatch reads a Worker log (foundry `worker-logs-dispatch-job`, 2026-10-29). Every Worker-side
+# cause of W44 was read by dispatching the gankdat Daily numbers job — nine two-minute runs that each
+# appended a RESEARCH.md row and pushed a commit — because no sandbox can call the Cloudflare API.
+# This job asks Workers Logs for the gankdat Worker's lines in a window (narrowed by a path or other
+# needle, a request id and/or a level), prints them to the job log and writes nothing; a routine reads
+# them with the GitHub MCP `get_job_logs`. Manual only: nothing scheduled, nothing committed.
+
+on:
+  workflow_dispatch:
+    inputs:
+      needle:
+        description: 'Text the line must contain: a path (/v1/uk-company-profiles), a slug, a message fragment'
+        type: string
+        default: ''
+      request_id:
+        description: 'Read every line of one invocation ($metadata.requestId)'
+        type: string
+        default: ''
+      level:
+        description: 'Only lines at this level (error, warn, info, log); empty for all'
+        type: string
+        default: ''
+      since_minutes:
+        description: 'Window back from now, minutes'
+        type: string
+        default: '60'
+      limit:
+        description: 'Most lines to print (newest first, max 1000)'
+        type: string
+        default: '50'
+
+permissions:
+  contents: read
+
+jobs:
+  logs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: main
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - name: "Read the Worker's lines (no install: the script imports only the venture's own lib)"
+        run: >
+          node --disable-warning=ExperimentalWarning ventures/gankdat/scripts/worker-logs.mjs
+          "--needle=${{ inputs.needle }}" "--request-id=${{ inputs.request_id }}" "--level=${{ inputs.level }}"
+          "--since-minutes=${{ inputs.since_minutes }}" "--limit=${{ inputs.limit }}"
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

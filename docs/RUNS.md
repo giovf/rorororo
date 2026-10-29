@@ -2062,3 +2062,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 21:45 | burn-down | foundry ci-workflow-yaml-gate built: npm run ci-yaml parses docs/ci + workflows with the yaml package
 - 2026-10-29 21:45 | burn-down | In check:root and the pre-push hook for pushed workflow files; the 18:27 file is the red fixture; 6 tests
 - 2026-10-29 21:45 | burn-down | yaml 2.9.1 added as a root dev dependency (no transitive packages); docs/ci/README notes the gate
+- 2026-10-29 21:50 | burn-down | foundry worker-logs-dispatch-job built: docs/ci/worker-logs.yml prints Worker log lines, commits nothing
+- 2026-10-29 21:50 | burn-down | scripts/worker-logs.mjs: one Query Builder POST (needle, request id, level, window, limit) over wave-logs.ts
+- 2026-10-29 21:50 | burn-down | ARCHITECTURE, SCHEDULERS and the burn-down prompt point at it; first run checked by the next slot

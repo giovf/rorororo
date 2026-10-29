@@ -579,6 +579,12 @@ runs `check:root`.
   message (the `source` object's `message`, as wave-logs reads it) and writes `worker errors 24h: N (<message>
   ×n, …)` in the Daily numbers row (`n/a (<why>)` without the token scope), so a 500 on any route is diagnosable
   from the repo the next morning; `test/error-lines.spec.ts`.
+  **Reading a Worker log on demand** (2026-10-29, foundry `worker-logs-dispatch-job`): the `worker logs` workflow
+  (`docs/ci/worker-logs.yml` → `.github/workflows/`, `workflow_dispatch` only) runs `scripts/worker-logs.mjs`, which POSTs
+  the same Query Builder for the service's lines in a window narrowed by a needle (a path, a slug, a message fragment),
+  a `$metadata.requestId` and/or a level, and prints them — folded lines, then the raw events — to the job log in under
+  a minute, committing nothing; a routine dispatches it with `actions_run_trigger` and reads `get_job_logs`. Nine Daily
+  numbers dispatches on 10-27 and 10-29 each read one such line at two minutes and a RESEARCH.md commit apiece.
 - **IndexNow** (`lib/indexnow.ts`, 2026-10-05; from the runner since 2026-10-07): once a day,
   after the waves, the metrics workflow's `runner-refresh.mjs` step POSTs the parent and facet
   stats URLs of every source with an `ok` refresh in the last 26 h (facets from the stats blob in
