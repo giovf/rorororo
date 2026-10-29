@@ -2051,3 +2051,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 20:55 | burn-down | gankdat zoho-crm-uk-registers-widget started: verify-org.ts folds the three registers into one card
 - 2026-10-29 20:55 | burn-down | Lookup by number or name, charity by number/unambiguous name, sanctions by name or alias; 7 tests
 - 2026-10-29 20:55 | burn-down | Left: Sigma widget shell and manifest, listing assets, pricing block, the owner's profile and demo call
+- 2026-10-29 21:19 | burn-down | Gate: BURN.json open, cold says work (foundry starved); next null; main green after npm ci (one ECONNRESET retry)
+- 2026-10-29 21:19 | burn-down | foundry research: 3 items from the week's traces — week slot budget (7), CI YAML gate (6), worker-logs job (5)
+- 2026-10-29 21:19 | burn-down | Evidence: 26 working slots by Tue 10-27 10:15 then Wed dark again; 7 failed runs from one unquoted colon

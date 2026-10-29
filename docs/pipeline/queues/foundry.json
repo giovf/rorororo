@@ -3,7 +3,7 @@
   "status": "open",
   "needs_research": false,
   "updated": "2026-10-29",
-  "researched": "2026-10-26",
+  "researched": "2026-10-29",
   "items": [
     {
       "id": "fetch-relay",
@@ -1212,6 +1212,36 @@
       "added": "2026-10-29",
       "updated": "2026-10-29",
       "done_at": "2026-10-29"
+    },
+    {
+      "id": "burn-weekly-slot-budget",
+      "title": "The burn-down and build slots pace the whole week, not only Monday and Tuesday: `npm run pipeline cold` counts the working slots since the Thursday 03:00 UTC reset and prints `paced: week budget` when they reach `week_slots` in docs/ops/BURN.json less a Wednesday reserve of three (the 08:00 exchange and the two build slots); the watchdog rewrites `week_slots` from the count it sees at the first usage-limit signal of a week",
+      "why": "Two weeks in a row the Fable allowance ran out on Tuesday and Wednesday was dark: W43 (Tuesday 10-21 night burned it, every Fable slot of Wednesday 10-21 rejected — the reason burn-pace-stale-usage-report was built 10-24) and W44 again with that gate in place. Counted from docs/RUNS.md, distinct hours with a `| burn-down |` or `| build |` line since Thursday 10-23 03:00: 10-23 3, 10-24 10, 10-25 4, 10-26 7 (the gate held Monday night to 3), 10-27 2 — 26 working slots, then the watchdog’s `stalled: build slot 10-27 17:00 started 17:12, no push by 19:00` and `missed: burn-down 17:00`, and on Wednesday 10-28 `missed:` for the 08:00 exchange, the 09:00 and 17:00 build and the 17:00 burn-down: the week’s decision slot ran a day late in the Thursday 09:00 build (`exchange-missed-slot-fallback`) and 29 nightly and daytime slots fired for nothing. The Mon/Tue three-slot cap cannot see Friday’s ten slots (10-24: eight burn-down hours plus two builds), and the usage report in BURN.json is from 10-04, so the percentage gate never engages. The budget is in the repo’s own trace: the slot count at the first `usage limit?` watchdog line is the week’s capacity (26 in W44); spend it as 26 − 3 across Thursday to Tuesday with a per-night cap of ⌈budget ÷ 6⌉ so no single evening eats it, and keep the Wednesday reserve for the exchange and its two build slots. Build: `pipeline cold` (plain Node, before `npm ci`) counts working slots as the watchdog does (an hour with a non-claim, non-`Stopping:`-only line of either tag, since the last Thursday 03:00) and compares them with BURN.json `week_slots` (new field, default 26) and `week_reserve` (3); `scripts/watchdog` (`run-watchdog.yml`) writes `week_slots` = the count at the moment it files the week’s first `missed:`/`stalled: … usage limit?` line, and the Monday `npm run slots` report prints the budget and the slots used. A fresh `usage NN%` owner note keeps precedence (the percentage gate). Owner minutes: none.",
+      "effort_days": 0.5,
+      "proof": "Wednesday 11-05 and 11-12 run the 08:00 exchange and both build slots with a trace (no `missed:` watchdog line for a Wednesday slot in two consecutive weeks); the week’s working slots stay within week_slots − 3",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-29"
+    },
+    {
+      "id": "ci-workflow-yaml-gate",
+      "title": "A workflow file that GitHub cannot parse never reaches main: `npm run ci-yaml` (part of `npm run check` and the pre-push hook) parses every docs/ci/*.yml and .github/workflows/*.yml with the `yaml` package and checks the shape — `on`, `jobs`, every job with `runs-on` or `uses` and `steps`, every step `name`/`run`/`uses` a string — naming the file and line on failure",
+      "why": "2026-10-29 18:27–18:35: the licence Worker’s first CI workflow (docs/ci/license-worker.yml, installed by `ci: install workflow(s) license-worker`) carried a step name with an unquoted colon; GitHub refused the file (“No jobs were run”, an invalid workflow file has no path filters), so it failed on all seven pushes until the 18:35 fix — seven failed runs, seven `Run failed` mails in docs/INBOX.md, seven watchdog `ci-failed:` lines, a scanner-filed foundry item (`ci-license-worker-failing`, closed 19:27) and the ci-failed scanner itself patched to label a jobless run. `npm run check` was green throughout: nothing in the repo parses YAML, and the installer job moves the file without reading it. The same class (a tab, a duplicated key, an unquoted `*` or `:`) hit the first runs of W42 that `first-run-check-new-workflows` was built for. Build: a root script with the `yaml` package (new dev dependency, ≈ 0 transitive) that parses both directories, applies the shape rules above plus the two this repo already relies on (a `workflow_dispatch` key where docs/ci README asks for one; a `name:` on every step so the ci-failed scanner can name it), is wired into `check` and `.githooks/pre-push`, and has a test with the 18:27 file as the red fixture. Owner minutes: none.",
+      "effort_days": 0.2,
+      "proof": "the 18:27 license-worker.yml fails `npm run ci-yaml` naming line and column; no `No jobs were run` failure on main for 30 days",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-29"
+    },
+    {
+      "id": "worker-logs-dispatch-job",
+      "title": "A Worker log is read in one dispatch: docs/ci/worker-logs.yml (`workflow_dispatch` with inputs `path`, `request_id`, `since_minutes`, `limit`) prints the matching Workers Logs lines of the gankdat Worker into its job log in under a minute, commits nothing, and the routine reads them with the GitHub MCP `get_job_logs`",
+      "why": "Every Worker-side cause this week was read by dispatching the gankdat Daily numbers job and reading its log: 10-27 09:40–10:11 four dispatches (metrics runs 273–276) to find the facet pass’s D1 CPU reset, 10-29 19:35–20:08 five (runs 282–285, one of them the ERR_MODULE_NOT_FOUND failure) to find the lookup’s D1 blip — nine two-minute runs, each appending a Daily numbers row to ventures/gankdat/RESEARCH.md and pushing a commit the slot then had to pull before its own push, and each widening the metrics job (`error-lines.ts`, the per-path fold, the raw-row print) to carry a reading it does not need daily. The watchdog’s ci-minutes line puts gankdat metrics second (80 billed min/7d) behind the relay. The sandbox cannot call the Cloudflare API itself (the token lives in Actions secrets), so a dispatch is right; it is the wrong job. Build: a 25-line workflow calling the existing Workers Logs reader in ventures/gankdat/scripts (the wave-log parser and error-lines modules already take a path and a window) with the four inputs, output to stdout only, `timeout-minutes: 3`; `ventures/gankdat/docs/ARCHITECTURE.md` names it as the way to read a 500’s message; the burn-down prompt’s dataset paragraph points at it. Owner minutes: none.",
+      "effort_days": 0.3,
+      "proof": "the next Worker-side cause is read with one worker-logs dispatch and no Daily numbers dispatch (RUNS.md); gankdat metrics billed minutes fall below 60 per 7 days on the ci-minutes line",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-29"
     }
   ]
 }
