@@ -97,7 +97,9 @@ high-signal — it's part of every prompt, so verbosity costs tokens.
   (`docs/reviews/`). Rewrite STRATEGY.md when the facts change; log decisions in its §8.
 - The owner has delegated all product and strategy decisions. Decide, log the
   decision (task notes, `RESEARCH.md`, ARCHITECTURE.md), keep going. Batch the rare
-  owner-only actions (accounts, payments, keys) into one request per channel.
+  owner-only actions (accounts, payments, keys) into one request per channel. Keep the owner's part minimal
+  (owner 2026-10-29): a request asks ≤ 15 min and no new identity/business verification unless the work it
+  unblocks scores ≥ 10 (STRATEGY §3); never append steps to an open request.
 - Use Taskmaster for breaking down work. Before implementing any non-trivial
   feature, check `task-master next` or read `.taskmaster/tasks/tasks.json`.
 - Update task status with `task-master set-status --id <id> --status done` as

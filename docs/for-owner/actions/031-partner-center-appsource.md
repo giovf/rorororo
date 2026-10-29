@@ -1,7 +1,11 @@
 # Owner action request #031 — a Partner Center account, the AppSource submission for gankdat's Excel add-in, and the Power Platform connector offer on the same account
 
 - **Date:** 2026-10-24
-- **Status:** open
+- **Status:** **withdrawn 2026-10-29 — nothing to do.** The owner's rule (2026-10-29): involvement stays minimal
+  unless a venture has extremely good prospects. This request asked ~95 minutes plus a Microsoft business verification
+  for two shelves scoring 1.8 and 3.2, on a venture with 0 paying accounts. The add-in (gankdat.com/addin) and the
+  connector package (`ventures/gankdat/connector/`) stay built; the request is re-raised, cut to its minimum, only if
+  gankdat reaches 3 paying accounts (STRATEGY §4 target 5) and a routine re-scores the shelves at ≥ 10.
 - **Your time:** ~45 minutes in one sitting (account 25–30, sideload test 5, offer upload 10), then a manual review by
   Microsoft of unknown length (no action from you while it runs); **plus ~50 minutes for the second shelf** (step 4,
   added 2026-10-25: the Power Platform connector — environment 5, connector + ten test calls 10, solution 10,
