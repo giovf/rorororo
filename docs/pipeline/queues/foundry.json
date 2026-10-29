@@ -1220,8 +1220,9 @@
       "effort_days": 0.5,
       "proof": "Wednesday 11-05 and 11-12 run the 08:00 exchange and both build slots with a trace (no `missed:` watchdog line for a Wednesday slot in two consecutive weeks); the week’s working slots stay within week_slots − 3",
       "score": 7,
-      "status": "todo",
-      "added": "2026-10-29"
+      "status": "doing",
+      "added": "2026-10-29",
+      "doing_since": "2026-10-29"
     },
     {
       "id": "ci-workflow-yaml-gate",
