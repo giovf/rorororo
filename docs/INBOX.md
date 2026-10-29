@@ -246,3 +246,4 @@
 - 2026-10-29 13:05 | store | amazon.com | [Action Required] Verify your identity on KDP | KDP asks for ID verification; the 13:08 mail confirms it was done | logged (self-caused: KDP account set-up, action 029)
 - 2026-10-29 13:08 | store | amazon.com | Your identity was successfully verified | KDP identity verified; publishing features available for the Kindle guide upload | logged (self-caused: KDP account set-up, action 029)
 - 2026-10-29 13:22 | store | accounts-payable.amazon.com | Verifying your Bank Account | Amazon deposited GBP 0.01 to confirm bank details for KDP royalties; no action needed | logged (self-caused: KDP account set-up, action 029)
+- 2026-10-29 17:10 | notification | cloudflare.com | [Notice] Cloudflare Observability pricing changes starting December 1, 2026 | Volume-based Observability pricing from 1 Dec (50 GB ingest included on Paid); no figure billed, no action required | logged
