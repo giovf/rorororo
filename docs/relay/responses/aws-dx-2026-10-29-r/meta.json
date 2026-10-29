@@ -1,0 +1,146 @@
+{
+  "request": "aws-dx-2026-10-29-r",
+  "fetched_at": "2026-10-29T18:29:44.400Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/marketplace/search/results?searchTerms=sanctions&FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE",
+      "render": true,
+      "fetched_at": "2026-10-29T18:28:53.693Z",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/marketplace/search/results?FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE&searchTerms=sanctions",
+      "title": "AWS Marketplace: Search Results",
+      "rendered": {
+        "network_idle": true,
+        "requests": 98,
+        "failed": [
+          "GET https://prod.tools.shortbread.aws.dev/1x1.png?awsccc=1793298535075 → 403",
+          "GET https://aws.amazon.com/marketplace/api/projects → 404",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "Couldn't determine console domain and dual-stack values.",
+          "[InvalidDiscoveredModule Error] Module \"page-context-provider\" was not found by any resolver strategy. {code: InvalidDiscoveredModule, moduleId: page-context-provider}"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 4234867,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/marketplace/search/results?searchTerms=company+register&FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE",
+      "render": true,
+      "fetched_at": "2026-10-29T18:29:09.484Z",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/marketplace/search/results?FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE&searchTerms=company+register",
+      "title": "AWS Marketplace: Search Results",
+      "rendered": {
+        "network_idle": true,
+        "requests": 98,
+        "failed": [
+          "GET https://prod.tools.shortbread.aws.dev/1x1.png?awsccc=1793298550043 → 403",
+          "GET https://aws.amazon.com/marketplace/api/projects → 404",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "Couldn't determine console domain and dual-stack values.",
+          "[InvalidDiscoveredModule Error] Module \"page-context-provider\" was not found by any resolver strategy. {code: InvalidDiscoveredModule, moduleId: page-context-provider}"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 4244147,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/marketplace/search/results?searchTerms=tenders+procurement&FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE",
+      "render": true,
+      "fetched_at": "2026-10-29T18:29:23.696Z",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/marketplace/search/results?FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE&searchTerms=tenders+procurement",
+      "title": "AWS Marketplace: Search Results",
+      "rendered": {
+        "network_idle": true,
+        "requests": 99,
+        "failed": [
+          "GET https://prod.tools.shortbread.aws.dev/1x1.png?awsccc=1793298564217 → 403",
+          "GET https://aws.amazon.com/marketplace/api/projects → 404",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "Couldn't determine console domain and dual-stack values.",
+          "[InvalidDiscoveredModule Error] Module \"page-context-provider\" was not found by any resolver strategy. {code: InvalidDiscoveredModule, moduleId: page-context-provider}"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 4250422,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/marketplace/search/results?searchTerms=united+kingdom&FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE",
+      "render": true,
+      "fetched_at": "2026-10-29T18:29:38.685Z",
+      "status": 200,
+      "final_url": "https://aws.amazon.com/marketplace/search/results?FULFILLMENT_OPTION_TYPE=DATA_EXCHANGE&searchTerms=united+kingdom",
+      "title": "AWS Marketplace: Search Results",
+      "rendered": {
+        "network_idle": true,
+        "requests": 88,
+        "failed": [
+          "GET https://prod.tools.shortbread.aws.dev/1x1.png?awsccc=1793298579222 → 403",
+          "GET https://aws.amazon.com/marketplace/api/projects → 404",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d2c.aws.amazon.com/csds/collector/v1/events/batch → net::ERR_ABORTED",
+          "POST https://d3m541spbrkbzd.cloudfront.net/invokeTool → 400",
+          "POST https://d3m541spbrkbzd.cloudfront.net/invokeTool → 400"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Failed to load resource: the server responded with a status of 404 ()",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "[TangerineBox] Telemetry configuration is missing. Error: Error: Session data meta tag not found",
+          "Couldn't determine console domain and dual-stack values.",
+          "Couldn't determine console domain and dual-stack values.",
+          "[InvalidDiscoveredModule Error] Module \"page-context-provider\" was not found by any resolver strategy. {code: InvalidDiscoveredModule, moduleId: page-context-provider}",
+          "Failed to load resource: the server responded with a status of 400 ()",
+          "Failed to load resource: the server responded with a status of 400 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 4205570,
+      "truncated": false
+    }
+  ]
+}
