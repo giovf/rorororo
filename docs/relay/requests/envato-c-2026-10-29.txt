@@ -1,0 +1,6 @@
+GET https://help.author.envato.com/api/v2/help_center/en-us/articles/13313674070681.json
+GET https://help.author.envato.com/api/v2/help_center/en-us/articles/360000472943.json
+GET https://author.envato.com/hub/update-to-elements-author-agreement-and-market-author-terms
+GET https://forums.envato.com/t/new-policy-on-ai-generated-content-for-market-and-elements/439244.json
+GET https://help.author.envato.com/api/v2/help_center/articles/search.json?query=W-8&locale=en-us&per_page=10
+GET https://help.author.envato.com/api/v2/help_center/articles/search.json?query=author+fee+2026&locale=en-us&per_page=10
