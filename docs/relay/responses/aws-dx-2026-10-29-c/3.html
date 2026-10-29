@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml" lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /><title>Data in AWS Data Exchange - AWS Data Exchange User Guide</title><meta name="viewport" content="width=device-width,initial-scale=1" /><meta name="assets_root" content="/assets" /><meta name="target_state" content="data-sets" /><meta name="default_state" content="data-sets" /><link rel="icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="shortcut icon" type="image/ico" href="/assets/images/favicon.ico" /><link rel="canonical" href="https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html" /><link rel="alternate" type="text/markdown" href="https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.md" title="Markdown version" /><meta name="description" content="Learn about data sets, revisions, and assets, how to make them, and how to use them in AWS Data Exchange." /><meta name="deployment_region" content="IAD" /><meta name="product" content="AWS Data Exchange User Guide" /><meta name="guide" content="AWS Data Exchange User Guide" /><meta name="abstract" content="Describes how to use AWS Data Exchange, the online marketplace where you can provide or subscribe to data in AWS." /><meta name="guide-locale" content="en_us" /><meta name="tocs" content="toc-contents.json" /><link rel="canonical" href="https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/data-exchange/latest/userguide/data-sets.html" hreflang="id-id" /><link rel="alternate" href="https://docs.aws.amazon.com/id_id/data-exchange/latest/userguide/data-sets.html" hreflang="id" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/data-exchange/latest/userguide/data-sets.html" hreflang="de-de" /><link rel="alternate" href="https://docs.aws.amazon.com/de_de/data-exchange/latest/userguide/data-sets.html" hreflang="de" /><link rel="alternate" href="https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html" hreflang="en-us" /><link rel="alternate" href="https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html" hreflang="en" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/data-exchange/latest/userguide/data-sets.html" hreflang="es-es" /><link rel="alternate" href="https://docs.aws.amazon.com/es_es/data-exchange/latest/userguide/data-sets.html" hreflang="es" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/data-exchange/latest/userguide/data-sets.html" hreflang="fr-fr" /><link rel="alternate" href="https://docs.aws.amazon.com/fr_fr/data-exchange/latest/userguide/data-sets.html" hreflang="fr" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/data-exchange/latest/userguide/data-sets.html" hreflang="it-it" /><link rel="alternate" href="https://docs.aws.amazon.com/it_it/data-exchange/latest/userguide/data-sets.html" hreflang="it" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/data-exchange/latest/userguide/data-sets.html" hreflang="ja-jp" /><link rel="alternate" href="https://docs.aws.amazon.com/ja_jp/data-exchange/latest/userguide/data-sets.html" hreflang="ja" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/data-exchange/latest/userguide/data-sets.html" hreflang="ko-kr" /><link rel="alternate" href="https://docs.aws.amazon.com/ko_kr/data-exchange/latest/userguide/data-sets.html" hreflang="ko" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/data-exchange/latest/userguide/data-sets.html" hreflang="pt-br" /><link rel="alternate" href="https://docs.aws.amazon.com/pt_br/data-exchange/latest/userguide/data-sets.html" hreflang="pt" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_cn/data-exchange/latest/userguide/data-sets.html" hreflang="zh-cn" /><link rel="alternate" href="https://docs.aws.amazon.com/zh_tw/data-exchange/latest/userguide/data-sets.html" hreflang="zh-tw" /><link rel="alternate" href="https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html" hreflang="x-default" /><meta name="feedback-item" content="Marketplace and Partner Services" /><meta name="this_doc_product" content="AWS Data Exchange User Guide" /><meta name="this_doc_guide" content="" /><head xmlns="http://www.w3.org/1999/xhtml"> <script defer="" src="/assets/r/awsdocs-doc-page.2.0.0.js"></script><link href="/assets/r/awsdocs-doc-page.2.0.0.css" rel="stylesheet"/></head>
+<script defer="" id="awsc-panorama-bundle" type="text/javascript" src="https://prod.pa.cdn.uis.awsstatic.com/panorama-nav-init.js" data-config="{'appEntity':'aws-documentation','region':'us-east-1','service':'data-exchange'}"></script><meta id="panorama-serviceSubSection" value="" /><meta id="panorama-serviceConsolePage" value="Data in AWS Data Exchange" /></head><body class="awsdocs awsui"><div class="awsdocs-container"><p><a href="data-sets.md">View a markdown version of this page</a></p><awsdocs-header></awsdocs-header><awsui-app-layout id="app-layout" class="awsui-util-no-gutters" ng-controller="ContentController as $ctrl" header-selector="awsdocs-header" navigation-hide="false" navigation-width="$ctrl.navWidth" navigation-open="$ctrl.navOpen" navigation-change="$ctrl.onNavChange($event)" tools-hide="$ctrl.hideTools" tools-width="$ctrl.toolsWidth" tools-open="$ctrl.toolsOpen" tools-change="$ctrl.onToolsChange($event)"><div id="guide-toc" dom-region="navigation"><awsdocs-toc></awsdocs-toc></div><div id="main-column" dom-region="content" tabindex="-1"><awsdocs-view class="awsdocs-view"><div id="awsdocs-content"><head><title>Data in AWS Data Exchange - AWS Data Exchange User Guide</title><meta name="pdf" content="/pdfs/data-exchange/latest/userguide/data-exchange-ug.pdf#data-sets" /><meta name="rss" content="data-exchange-ug.rss" /><meta name="forums" content="https://repost.aws/tags/TAHjoZLkacSFamx1D_MSWzMQ" /><meta name="feedback" content="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=Marketplace%20and%20Partner%20Services&amp;topic_url=https://docs.aws.amazon.com/en_us/data-exchange/latest/userguide/data-sets.html" /><meta name="feedback-yes" content="feedbackyes.html?topic_url=https://docs.aws.amazon.com/en_us/data-exchange/latest/userguide/data-sets.html" /><meta name="feedback-no" content="feedbackno.html?topic_url=https://docs.aws.amazon.com/en_us/data-exchange/latest/userguide/data-sets.html" /><meta name="keywords" content="Data Exchange,Provider,Subscriber,Data products,Dataset,Data Set,Assets,Revisions" /><script type="application/ld+json">
+{
+    "@context" : "https://schema.org",
+    "@type" : "BreadcrumbList",
+    "itemListElement" : [
+      {
+        "@type" : "ListItem",
+        "position" : 1,
+        "name" : "AWS",
+        "item" : "https://aws.amazon.com"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 2,
+        "name" : "AWS Data Exchange",
+        "item" : "https://docs.aws.amazon.com/data-exchange/index.html"
+      },
+      {
+        "@type" : "ListItem",
+        "position" : 3,
+        "name" : "Data in AWS Data Exchange",
+        "item" : "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html"
+      }
+    ]
+}
+</script></head><body><div id="main"><div style="display: none"><a href="/pdfs/data-exchange/latest/userguide/data-exchange-ug.pdf#data-sets" target="_blank" rel="noopener noreferrer" title="Open PDF"></a></div><div id="breadcrumbs" class="breadcrumb"><a href="/index.html">Documentation</a><a href="/data-exchange/index.html">AWS Data Exchange</a><a href="what-is.html"></a></div><div id="page-toc-src"><a href="#assets">Assets</a><a href="#revisions">Revisions</a><a href="#data-sets-concept">Data sets</a><a href="#data-set-tags">Tags</a></div><div id="main-content" class="awsui-util-container"><div id="main-col-body"><awsdocs-language-banner data-service="$ctrl.pageService"></awsdocs-language-banner><h1 class="topictitle" id="data-sets">Data in AWS Data Exchange</h1><div class="awsdocs-page-header-container"><awsdocs-page-header></awsdocs-page-header><awsdocs-filter-selector id="awsdocs-filter-selector"></awsdocs-filter-selector></div><p>Data is organized in AWS Data Exchange using three building blocks:</p><div class="itemizedlist">
+     
+     
+     
+  <ul class="itemizedlist"><li class="listitem">
+      <p><b><a href="#assets">Assets</a></b> – A piece of
+        data </p>
+    </li><li class="listitem">
+      <p><b><a href="#revisions">Revisions</a></b> – A
+        container for one or more assets</p>
+    </li><li class="listitem">
+      <p><b><a href="#data-sets-concept">Data sets</a></b>
+        – A series of one or more revisions</p>
+    </li></ul></div><p>These three building blocks form the foundation of the product that you manage using the
+    AWS Data Exchange console or the AWS Data Exchange API.</p><p>To create, view, update, or delete data sets, you can use the AWS Data Exchange console, the AWS Command Line Interface
+    (AWS CLI), your own REST client, or one of the AWS SDKs. For more information about
+    programmatically managing AWS Data Exchange data sets, see the <a href="https://docs.aws.amazon.com/data-exchange/latest/apireference">AWS Data Exchange API Reference</a>.</p>
+    <h2 id="assets">Assets</h2>
+    <p>Assets are the <em>data</em> in AWS Data Exchange. </p>
+    <p>The type of asset defines how the data is delivered to the
+      receiver or
+      subscriber through the data
+      sets, data
+      grants, or products that
+      contain
+      them.</p>
+    <p>An asset can be any of the following:</p>
+    <div class="itemizedlist">
+       
+       
+       
+       
+       
+       
+    <ul class="itemizedlist"><li class="listitem">
+        <p>A file stored on your local computer</p>
+      </li><li class="listitem">
+        <p>A file stored as an object in Amazon Simple Storage Service (Amazon S3)</p>
+      </li><li class="listitem">
+        <p>A REST API created in Amazon API Gateway</p>
+      </li><li class="listitem">
+        <p>An Amazon Redshift data set</p>
+      </li><li class="listitem">
+        <p>An AWS Lake Formation data permission (Preview)</p>
+      </li><li class="listitem">
+        <p>An Amazon S3 data access data set</p>
+      </li></ul></div>
+     
+      <h3 id="assets-structure">Asset structure</h3>
+      <p>Assets have the following parameters:</p>
+      <div class="itemizedlist">
+         
+         
+         
+         
+         
+         
+         
+      <ul class="itemizedlist"><li class="listitem">
+          <p><code class="code">DataSetId</code> – The ID of the data set that contains this
+            asset.</p>
+        </li><li class="listitem">
+          <p><code class="code">RevisionId</code> – The ID of the revision that contains this
+            asset.</p>
+        </li><li class="listitem">
+          <p><code class="code">Id</code> – A unique ID generated when the asset is created. </p>
+        </li><li class="listitem">
+          <p><code class="code">Arn</code> – A unique identifier for an AWS resource name.</p>
+        </li><li class="listitem">
+          <p><code class="code">CreatedAt</code> and <code class="code">UpdatedAt</code> – Date and timestamps for
+            the creation and last update of the asset.</p>
+        </li><li class="listitem">
+          <p><code class="code">AssetDetails</code> – Information about the asset.</p>
+        </li><li class="listitem">
+          <p><code class="code">AssetType</code> – Either a snapshot of an Amazon S3 object, an Amazon API Gateway
+            API, an Amazon Redshift data set, or an Amazon S3 data set.</p>
+        </li></ul></div>
+      <div class="example"><h6>Example asset resource</h6><div class="example-contents"><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli ()--><code class="nohighlight"><span>{</span>
+    "Name": "<code class="replaceable">automation/cloudformation.yaml</code>",
+    "Arn": "arn:aws:dataexchange:us-east-1::data-sets/<code class="replaceable">29EXAMPLE24b82c6858af3cEXAMPLEcf</code>/revisions/<code class="replaceable">bbEXAMPLE74c02f4745c660EXAMPLE20</code>/assets/<code class="replaceable">baEXAMPLE660c9fe7267966EXAMPLEf5</code>",
+    "Id": "<code class="replaceable">baEXAMPLE660c9fe7267966EXAMPLEf5</code>",
+    "CreatedAt": "2019-10-17T21:31:29.833Z",
+    "UpdatedAt": "2019-10-17T21:31:29.833Z",
+    "AssetType": "S3_SNAPSHOT",
+    "RevisionId": "<code class="replaceable">bbEXAMPLE74c02f4745c660EXAMPLE20</code>",
+    "DataSetId": "<code class="replaceable">29EXAMPLE24b82c6858af3cEXAMPLEcf</code>",
+    "AssetDetails": <span>{</span>
+        "S3SnapshotAsset": <span>{</span>
+            "Size": 9423
+        }
+    }
+}</code></pre></div></div>
+     
+     
+      <h3 id="asset-types">Asset types</h3>
+      <div class="highlights" id="inline-topiclist"><h6>Types</h6><ul><li><p><a href="#s3-asset-type">Files data set</a></p></li><li><p><a href="#API-asset-type">API assets</a></p></li><li><p><a href="#RS-asset-type">Amazon Redshift datashare assets</a></p></li><li><p><a href="#LF-asset-type">AWS Lake Formation data permission (Preview)</a></p></li><li><p><a href="#S3-access-asset-type">Amazon S3 data access</a></p></li></ul></div>
+       
+        <h4 id="s3-asset-type">Files data set</h4>
+        <p>Using Files, subscribers can access a copy of the data set as an entitled data set and
+          export the assets.</p>
+        <p>A data set owner can both import and export Files using the AWS Data Exchange console,
+          programmatically through the AWS CLI, their own REST application, or one of the AWS SDKs.
+          For more information, about importing Amazon S3 assets. see <a href="./importing-from-s3.html">Importing AWS Data Exchange assets from an S3 bucket</a>. For more information about exporting assets, see
+            <a href="./exporting-from-s3.html">Exporting AWS Data Exchange assets to an S3 bucket</a>.</p>
+       
+       
+        <h4 id="API-asset-type">API assets</h4>
+        <p>With API assets, data recipients or subscribers can view the API and download the API
+          specification as an entitled data set. You can also make API calls to AWS Data Exchange-managed
+          endpoints, which are then proxied through to API-owner endpoints.</p>
+        <p>A data set owner who has an existing Amazon API Gateway API can add an API asset using the
+          AWS Data Exchange console, programmatically through the AWS CLI, or one of the AWS SDKs. For more
+          information about importing API assets, see <a href="./import-API-asset.html">Importing AWS Data Exchange assets from an Amazon API Gateway API</a>.</p>
+        <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Currently, the <code class="code">SendApiAsset</code> operation is not supported for the
+            following SDKs:</p><div class="itemizedlist">
+             
+             
+             
+          <ul class="itemizedlist"><li class="listitem">
+              <p>SDK for .NET</p>
+            </li><li class="listitem">
+              <p>AWS SDK for C++</p>
+            </li><li class="listitem">
+              <p>SDK for Java 2.x</p>
+            </li></ul></div></div></div>
+        <p>Data set owners who do not have an existing Amazon API Gateway API must create one before
+          adding an API asset to their product. For more information, see <a href="https://docs.aws.amazon.com/apigateway/latest/developerguide/rest-api-develop.html">Developing a REST API in API Gateway</a> in the <em>Amazon API Gateway
+            Developer Guide</em>.</p>
+       
+       
+        <h4 id="RS-asset-type">Amazon Redshift datashare assets</h4>
+        <p> With Amazon Redshift datashare assets, recipients can get read-only access to query the data in
+          Amazon Redshift without extracting, transforming, and loading data.</p>
+        <p> For more information about importing Amazon Redshift datashare assets, see <a href="./import-RS-asset.html">Importing AWS Data Exchange assets from an AWS Data Exchange datashare for Amazon Redshift</a>.</p>
+       
+       
+        <h4 id="LF-asset-type">AWS Lake Formation data permission (Preview)</h4>
+        <p>With AWS Lake Formation data permission assets, recipients or subscribers can access and query
+          all databases, tables, or columns associated with the tags specified.</p>
+        <p>Data set owners must create and tag their data before importing the tags as part of an
+          AWS Data Exchange asset. For more information about importing Lake Formation data permission assets, see <a href="./import-LF-asset.html">Importing AWS Data Exchange assets from AWS Lake Formation (Preview)</a>.</p>
+       
+       
+        <h4 id="S3-access-asset-type">Amazon S3 data access</h4>
+        <p>With Amazon S3 data access assets, recipients or subscribers can directly access and use
+          the provider's data without creating or managing data copies. Data set owners can set up
+          AWS Data Exchange for Amazon S3 on top of their existing Amazon S3 buckets to share direct access to an
+          entire S3 bucket or specific prefixes and Amazon S3 objects.</p>
+       
+     
+   
+    <h2 id="revisions">Revisions</h2>
+    <p>A revision is a <em>container</em> for one or more assets. </p>
+    <p>You use revisions to update data in Amazon S3. For example, you can group a collection of .csv
+      files or a single .csv file and a dictionary to create a revision. As new data is available, you
+      create revisions and add assets. After you create and finalize the revision using the AWS Data Exchange
+      console, that revision will be immediately available to subscribers. For more information, see
+        <a href="./publishing-products.html">Publishing a new product in AWS Data Exchange</a>.</p>
+    <p>Keep the following in mind:</p>
+    <div class="itemizedlist">
+       
+       
+       
+       
+    <ul class="itemizedlist"><li class="listitem">
+        <p>To be finalized, a revision must contain at least one asset.</p>
+      </li><li class="listitem">
+        <p>It is your responsibility to ensure that the assets are correct before you finalize
+          your revision.</p>
+      </li><li class="listitem">
+        <p>A finalized revision published to at least one data grant or product can't be
+          unfinalized or changed in any way. (Except through the revoke revision process)</p>
+      </li><li class="listitem">
+        <p>After the revision is finalized, it is automatically published to your data grants or
+          products.</p>
+      </li></ul></div>
+     
+      <h3 id="revisions-structure">Revision structure</h3>
+      <p>Revisions have the following parameters:</p>
+      <div class="itemizedlist">
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+         
+      <ul class="itemizedlist"><li class="listitem">
+          <p><code class="code">DataSetId</code> – The ID of the data set that contains this
+            revision.</p>
+        </li><li class="listitem">
+          <p><code class="code">Comment</code> – A comment about the revision. This field can be 128
+            characters long. </p>
+        </li><li class="listitem">
+          <p><code class="code">Finalized</code> – Either true or false. Used to indicate whether the
+            revision is finalized.</p>
+        </li><li class="listitem">
+          <p><code class="code">Id</code> – The unique identifier for the revision generated when it's
+            created.</p>
+        </li><li class="listitem">
+          <p><code class="code">Arn</code> – A unique identifier for an AWS resource name.</p>
+        </li><li class="listitem">
+          <p><code class="code">CreatedAt</code> – Date and timestamp for the creation of the revision.
+            Entitled revisions are created at the time of publishing.</p>
+        </li><li class="listitem">
+          <p><code class="code">UpdatedAt</code> – Date and timestamp for the last update of the
+            revision.</p>
+        </li><li class="listitem">
+          <p><code class="code">Revoked</code> – A status indicating that subscribers' access to the
+            revision was revoked.</p>
+        </li><li class="listitem">
+          <p><code class="code">RevokedAt</code> – Date and timestamp indicating when subscriber access
+            to the revision was revoked.</p>
+        </li><li class="listitem">
+          <p><code class="code">RevocationComment</code> – A required comment to inform subscribers of
+            the reason their access to the revision was revoked. The minimum required character
+            length is 10. This field can be between 10 and 512 characters long.</p>
+        </li><li class="listitem">
+          <p><code class="code">SourceID</code> – The revision ID of the owned revision corresponding to
+            the entitled revision being viewed. This parameter is returned when a revision owner is
+            viewing the entitled copy of its owned revision.</p>
+        </li></ul></div>
+      <div class="example"><h6>Example revision resource</h6><div class="example-contents"><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli ()--><code class="nohighlight">
+        <span>{</span>
+            "UpdatedAt": "2019-10-11T14:13:31.749Z",
+            "DataSetId": "<code class="replaceable">1EXAMPLE404460dc9b005a0d9EXAMPLE2f</code>",
+            "Comment": "<code class="replaceable">initial data revision</code>",
+            "Finalized": true,
+            "Id": "<code class="replaceable">e5EXAMPLE224f879066f9999EXAMPLE42</code>",
+            "Arn": "arn:aws:dataexchange:us-east-1:<code class="replaceable">123456789012</code>:data-sets/<code class="replaceable">1EXAMPLE404460dc9b005a0d9EXAMPLE2f</code>/revisions/<code class="replaceable">e5EXAMPLE224f879066f9999EXAMPLE42</code>",
+            "CreatedAt": "2019-10-11T14:11:58.064Z"
+        }
+</code></pre></div></div>
+     
+   
+    <h2 id="data-sets-concept">Data sets</h2>
+    <p>A data set in AWS Data Exchange is a <em>collection</em> of data that
+      can change over time. </p>
+    <p>When recipients or subscribers access a Files data set, they're accessing a specific
+      revision in the data set. This structure enables providers to change the data available in
+      data sets over time without having to worry about changes to historical data.</p>
+    <p>When recipients or subscribers access an API data set, they're accessing a data set that
+      contains API assets, which enable subscribers to make API calls to AWS Data Exchange-managed endpoints,
+      which are then proxied through to provider endpoints.</p>
+    <p>When recipients or subscribers access an Amazon Redshift data set, they're accessing an AWS Data Exchange
+      datashare for Amazon Redshift. This datashare gives subscribers read-only access to the schemas, tables,
+      views, and user-defined functions that the data owner has added to the datashares. </p>
+    <p>When recipients or subscribers access an AWS Lake Formation data permission data set, they're
+      accessing the databases, tables, and/or columns tagged with an LF-tag specified by the data
+      set owner.</p>
+    <p>When recipients or subscribers access an Amazon S3 data access data set, they're granted
+      read-only access to shared Amazon S3 objects hosted in the provider's Amazon S3 buckets. Recipients or
+      subscribers can use this data directly with other AWS services.</p>
+    <p>To create, view, update, or delete data sets, providers can use the AWS Data Exchange console, AWS
+      CLI, your own REST client, or one of the AWS SDKs. For more information about
+      programmatically managing AWS Data Exchange data sets, see the <a href="https://docs.aws.amazon.com/data-exchange/latest/apireference/welcome.html">AWS Data Exchange API Reference</a>.</p>
+    <div class="highlights" id="inline-topiclist"><h6>Topics</h6><ul><li><p><a href="#owned-data-sets">Owned data sets</a></p></li><li><p><a href="#entitled-data-sets">Entitled data sets</a></p></li><li><p><a href="#data-set-types">Data set types</a></p></li><li><p><a href="#s3-data-set-type">Amazon S3 data access data set</a></p></li><li><p><a href="#LF-data-set-type">AWS Lake Formation data set (Preview)</a></p></li><li><p><a href="#data-set-regions">AWS Regions and data sets</a></p></li><li><p><a href="#data-set-structure">Data set structure</a></p></li><li><p><a href="#data-set-best-practices">Data set best practices</a></p></li></ul></div>
+     
+      <h3 id="owned-data-sets">Owned data sets</h3>
+      <p>A data set is owned by the account that created it. Owned data sets can be identified
+        using the <code class="code">origin</code> parameter, which is set to <code class="code">OWNED</code>.</p>
+     
+     
+      <h3 id="entitled-data-sets">Entitled data sets</h3>
+      <p>Entitled data sets are a read-only view of a sender's owned data sets. Entitled data
+        sets are created at time of data grant creation or product publishing and are made available
+        to recipients or subscribers who have an active data grant or subscription to the product.
+        Entitled data sets can be identified using the <code class="code">origin</code> parameter, which is set
+        to <code class="code">ENTITLED</code>.</p>
+      <p>As a recipient, you can view and interact with your entitled data sets using the AWS Data Exchange
+        API or in the AWS Data Exchange console.</p>
+      <p>As a data set owner, you also have access to the entitled data set view that your
+        recipients or subscribers see. You can do so using the AWS Data Exchange API, or by choosing the data
+        set name in the data grant or product page in the AWS Data Exchange console.</p>
+     
+     
+      <h3 id="data-set-types">Data set types</h3>
+      <p>The following data set types are supported in AWS Data Exchange: </p>
+      <div class="itemizedlist">
+         
+         
+         
+         
+         
+      <ul class="itemizedlist"><li class="listitem">
+          <p><a href="#S3-object-data-set-type">Files data set</a></p>
+        </li><li class="listitem">
+          <p><a href="#api-data-set-type">API data set</a></p>
+        </li><li class="listitem">
+          <p><a href="#RS-data-set-type">Amazon Redshift data set</a></p>
+        </li><li class="listitem">
+          <p><a href="#s3-data-set-type">Amazon S3 data access data set</a></p>
+        </li><li class="listitem">
+          <p><a href="#LF-data-set-type">AWS Lake Formation data set (Preview)</a></p>
+        </li></ul></div>
+       
+        <h4 id="S3-object-data-set-type">Files data set</h4>
+        <p>A Files data set is a data set that contains flat files permitted by Amazon S3.</p>
+        <p>As a recipient or subscriber, you can export data either locally (download to your
+          computer) or to your Amazon S3 bucket.</p>
+        <p>As a data set owner, you can import any type of flat file from your Amazon S3 bucket and
+          add it to the data set.</p>
+       
+       
+        <h4 id="api-data-set-type">API data set</h4>
+        <p>An API data set is a data set that contains API assets. API assets enable recipients
+          or subscribers to make API calls to AWS Data Exchange-managed endpoints, which are then proxied
+          through to data set owner endpoints.</p>
+        <p>As a data set owner, you create an API in Amazon API Gateway and add it to the data set to
+          license access to your API upon data grant creation or subscription.</p>
+       
+       
+        <h4 id="RS-data-set-type">Amazon Redshift data set</h4>
+        <p>An Amazon Redshift data set includes AWS Data Exchange datashares for Amazon Redshift. When you subscribe to a data set
+          with datashares, you are added as a consumer of the datashare. This gives you read-only
+          access to the schemas, tables, views, and user-defined functions the data set owner has
+          added to the datashares.</p>
+        <p>As a data set owner, you can create a database from the datashare in Amazon Redshift and then
+          query live data without extracting, transforming, and loading files. You are automatically
+          granted access to the datashare when your data grant or subscription is activated and lose
+          access after your either of these expire.</p>
+        <p>As a data set owner, you create a datashare in Amazon Redshift and add it to the data set to
+          license access to your datashare upon data grant creation or subscription.</p>
+       
+     
+     
+      <h3 id="s3-data-set-type">Amazon S3 data access data set</h3>
+      <p>With AWS Data Exchange for Amazon S3 data access, data recipients or subscribers can access third-party
+        data files directly from data set owners' Amazon S3 buckets.</p>
+      <p>When you subscribe to an AWS Data Exchange for Amazon S3 data access product, AWS Data Exchange automatically does
+        the following: </p>
+      <div class="itemizedlist">
+         
+         
+      <ul class="itemizedlist"><li class="listitem">
+          <p>Provisions an Amazon S3 access point. Amazon S3 Access Point is a feature of Amazon S3 that
+            simplifies data sharing to an Amazon S3 bucket.</p>
+        </li><li class="listitem">
+          <p>Updates the S3 Access Point resource policies to grant you read-only access.</p>
+        </li></ul></div>
+      <p>With AWS Data Exchange for Amazon S3, data set owners can share direct access to an entire Amazon S3 bucket or
+        specific prefixes and Amazon S3 objects. In addition, AWS Data Exchange can be used to automatically manage
+        data grants, subscriptions, entitlements, billing, and payments.</p>
+     
+     
+      <h3 id="LF-data-set-type">AWS Lake Formation data set (Preview)</h3>
+      <p>An AWS Lake Formation data set is a data set that contains AWS Lake Formation data permission assets.</p>
+      <p>As a data recipient or subscriber, you can manage the data made available to you in your
+        AWS Lake Formation. After creating resource links in your AWS Lake Formation, you can query the data using
+        analytics services like Amazon Athena.</p>
+      <p>As a data set owner, you tag your data using LF-tags in AWS Lake Formation and import those tags
+        as assets when creating your data set.</p>
+     
+     
+      <h3 id="data-set-regions">AWS Regions and data sets</h3>
+      <p>Your data sets can be in any supported AWS Region, but all data sets in a single data
+        grant or product must be in the same AWS Region.</p>
+     
+     
+      <h3 id="data-set-structure">Data set structure</h3>
+      <p>Data sets have the following parameters:</p>
+      <div class="itemizedlist">
+         
+         
+         
+         
+         
+         
+         
+      <ul class="itemizedlist"><li class="listitem">
+          <p><code class="code">Name</code> – The name of the data set. This value can be up to 256
+            characters long.</p>
+        </li><li class="listitem">
+          <p><code class="code">Description</code> – A description for the data set. This value can be
+            up to 16,348 characters long.</p>
+        </li><li class="listitem">
+          <p><code class="code">AssetType</code> – Defines the type of assets the data set
+            contains.</p>
+        </li><li class="listitem">
+          <p><code class="code">Origin</code> – A property that defines the data set as
+              <code class="code">Owned</code> by the account (for providers) or <code class="code">Entitled</code> to the
+            account (for subscribers). </p>
+        </li><li class="listitem">
+          <p><code class="code">Id</code> – An ID that uniquely identifies the data set. Data set IDs
+            are generated at data set creation. Entitled data sets have a different ID than the
+            original owned data set.</p>
+        </li><li class="listitem">
+          <p><code class="code">Arn</code> – A unique identifier for an AWS resource name.</p>
+        </li><li class="listitem">
+          <p><code class="code">CreatedAt</code> and <code class="code">UpdatedAt</code> – Date and timestamps for
+            the creation and last update of the data set.</p>
+        </li></ul></div>
+      <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>As a data set
+          owner,
+          you can change some properties for owned data sets, like the <b>Name</b> or
+            <b>Description</b>. Updating properties in an owned data set won't update
+          the properties in the corresponding entitled data set.</p></div></div>
+      <div class="example"><h6>Example data set resource</h6><div class="example-contents"><pre class="programlisting"><div class="code-btn-container"><div class="btn-copy-code" title="Copy"><awsui-icon name="copy"></awsui-icon></div></div><!--DEBUG: cli ()--><code class="nohighlight"><span>{</span>
+    "Origin": "OWNED", 
+    "AssetType": "S3_SNAPSHOT", 
+    "Name": "<code class="replaceable">MyDataSetName</code>", 
+    "CreatedAt": "2019-09-09T19:31:49.704Z", 
+    "UpdatedAt": "2019-09-09T19:31:49.704Z", 
+    "Id": "<code class="replaceable">fEXAMPLE1fd9a5c8b0d2e6fEXAMPLEe1</code>", 
+    "Arn": "arn:aws:dataexchange:us-east-2:<code class="replaceable">123456789109</code>:data-sets/<code class="replaceable">fEXAMPLE1fd9a5c8b0d2e6fEXAMPLEe1</code>", 
+    "Description": "<code class="replaceable">This is my data set's description that describes the contents of the data set.</code>"
+}</code></pre></div></div>
+     
+     
+      <h3 id="data-set-best-practices">Data set best practices</h3>
+      <p>As a
+        data
+        set owner, when you create and update data sets, keep the following best
+        practices in mind:</p>
+      <div class="itemizedlist">
+         
+         
+      <ul class="itemizedlist"><li class="listitem">
+          <p>The name of the data set is visible in the
+            data grant or
+            product details in the catalog. We recommend that you choose a
+            concise, descriptive name so customers easily understand the content of the data
+            set.</p>
+        </li><li class="listitem">
+          <p>The description is visible to
+            recipients or
+            subscribers who have an active
+            data grant or
+            subscription to the product. We recommend that you include coverage
+            information and the features and benefits of the data set.</p>
+        </li></ul></div>
+     
+   
+    <h2 id="data-set-tags">Tags</h2>
+    <p>You can add tags to your owned data sets and their revisions. When you use tagging, you
+      can also use tag-based access control in AWS Identity and Access Management (IAM) policies to control access to these
+      data sets and revisions.</p>
+    <p>Entitled data sets can't be tagged. Tags of owned data sets and their revisions are not
+      propagated to their corresponding entitled versions. Specifically, recipients or subscribers,
+      who have read-only access to entitled data sets and revisions, won't see the tags of the
+      original owned data set.</p>
+    <div class="awsdocs-note"><div class="awsdocs-note-title"><awsui-icon name="status-info" variant="link"></awsui-icon><h6>Note</h6></div><div class="awsdocs-note-text"><p>Currently, assets and jobs don't support tagging.</p></div></div>
+  <awsdocs-copyright class="copyright-print"></awsdocs-copyright><awsdocs-thumb-feedback right-edge="{{$ctrl.thumbFeedbackRightEdge}}"></awsdocs-thumb-feedback></div><noscript><div><div><div><div id="js_error_message"><p><img src="https://d1ge0kk1l5kms0.cloudfront.net/images/G/01/webservices/console/warning.png" alt="Warning" /> <strong>Javascript is disabled or is unavailable in your browser.</strong></p><p>To use the Amazon Web Services Documentation, Javascript must be enabled. Please refer to your browser's Help pages for instructions.</p></div></div></div></div></noscript><div id="main-col-footer" class="awsui-util-font-size-0"><div id="doc-conventions"><a target="_top" href="/general/latest/gr/docconventions.html">Document Conventions</a></div><div class="prev-next"><div id="previous" class="prev-link" accesskey="p" href="./open-data-no-account.html">Getting started without an
+        AWS account</div><div id="next" class="next-link" accesskey="n" href="./creating-data-grants.html">Creating data grants</div></div></div><awsdocs-page-utilities></awsdocs-page-utilities></div><div id="quick-feedback-yes" style="display: none;"><div class="title">Did this page help you? - Yes</div><div class="content"><p>Thanks for letting us know we're doing a good job!</p><p>If you've got a moment, please tell us what we did right so we can do more of it.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=Marketplace and Partner Services&amp;topic_url=https://docs.aws.amazon.com/en_us/data-exchange/latest/userguide/data-sets.html"></awsui-button></p></div></div><div id="quick-feedback-no" style="display: none;"><div class="title">Did this page help you? - No</div><div class="content"><p>Thanks for letting us know this page needs work. We're sorry we let you down.</p><p>If you've got a moment, please tell us how we can make the documentation better.</p><p><awsui-button id="fblink" rel="noopener noreferrer" target="_blank" text="Feedback" click="linkClick($event)" href="https://docs.aws.amazon.com/forms/aws-doc-feedback?hidden_service_name=Marketplace and Partner Services&amp;topic_url=https://docs.aws.amazon.com/en_us/data-exchange/latest/userguide/data-sets.html"></awsui-button></p></div></div></div></body></div></awsdocs-view><div class="page-loading-indicator" id="page-loading-indicator"><awsui-spinner size="large"></awsui-spinner></div></div><div id="tools-panel" dom-region="tools"><awsdocs-tools-panel id="awsdocs-tools-panel"></awsdocs-tools-panel></div></awsui-app-layout><awsdocs-cookie-banner class="doc-cookie-banner"></awsdocs-cookie-banner></div></body></html>

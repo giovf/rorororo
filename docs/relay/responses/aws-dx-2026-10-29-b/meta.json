@@ -1,0 +1,210 @@
+{
+  "request": "aws-dx-2026-10-29-b",
+  "fetched_at": "2026-10-29T18:30:27.638Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/provider-getting-started.html",
+      "fetched_at": "2026-10-29T18:30:20.125Z",
+      "status": 200,
+      "elapsed_ms": 231,
+      "final_url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/provider-getting-started.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "5369",
+        "last-modified": "Thu, 29 Oct 2026 17:24:42 GMT",
+        "etag": "\"aTt2MmPkpPrCoE8XU5aRMbiLFNw=-gzip\""
+      },
+      "file": "1.html",
+      "bytes": 21802,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/seller-eligibility.html",
+      "fetched_at": "2026-10-29T18:30:20.861Z",
+      "status": 200,
+      "elapsed_ms": 130,
+      "final_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/seller-eligibility.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "4478",
+        "last-modified": "Thu, 29 Oct 2026 17:24:15 GMT",
+        "etag": "\"1t4XbAxAbkATOiCBcvERSPclzHE=-gzip\""
+      },
+      "file": "2.html",
+      "bytes": 18010,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/provider-financials.html",
+      "fetched_at": "2026-10-29T18:30:21.492Z",
+      "status": 200,
+      "elapsed_ms": 138,
+      "final_url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/provider-financials.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "4140",
+        "last-modified": "Thu, 29 Oct 2026 17:27:07 GMT",
+        "etag": "\"XTe99i0dT2ZFEzxhCMrs88gZvD0=-gzip\""
+      },
+      "file": "3.html",
+      "bytes": 16249,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-products.html",
+      "fetched_at": "2026-10-29T18:30:22.131Z",
+      "status": 200,
+      "elapsed_ms": 128,
+      "final_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-products.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "3625",
+        "last-modified": "Thu, 29 Oct 2026 17:24:38 GMT",
+        "etag": "\"vJr+kYAHdZGJ6i7hYSAtVwHk7xA=-gzip\""
+      },
+      "file": "4.html",
+      "bytes": 13330,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/subscription-verification-pro.html",
+      "fetched_at": "2026-10-29T18:30:22.760Z",
+      "status": 200,
+      "elapsed_ms": 153,
+      "final_url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/subscription-verification-pro.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "4278",
+        "last-modified": "Thu, 29 Oct 2026 17:27:08 GMT",
+        "etag": "\"3b7xZ5hwUAsPkGCEQNh91i1RvIU=-gzip\""
+      },
+      "file": "5.html",
+      "bytes": 16990,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html",
+      "fetched_at": "2026-10-29T18:30:23.415Z",
+      "status": 200,
+      "elapsed_ms": 134,
+      "final_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/user-guide-for-sellers.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "7774",
+        "last-modified": "Thu, 29 Oct 2026 17:24:24 GMT",
+        "etag": "\"0u6hIsSgEGhPIjAKEEMHW+2uhgs=-gzip\""
+      },
+      "file": "6.html",
+      "bytes": 43882,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/seller-registration-process.html",
+      "fetched_at": "2026-10-29T18:30:24.050Z",
+      "status": 200,
+      "elapsed_ms": 282,
+      "final_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1067",
+        "last-modified": "Thu, 29 Oct 2026 17:24:30 GMT",
+        "etag": "\"/GHARxyzwlQa1rH1L637jrn9tqc=-gzip\""
+      },
+      "file": "7.html",
+      "bytes": 2339,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/providing-api-data-sets.html",
+      "fetched_at": "2026-10-29T18:30:24.833Z",
+      "status": 200,
+      "elapsed_ms": 204,
+      "final_url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1053",
+        "last-modified": "Thu, 29 Oct 2026 17:24:51 GMT",
+        "etag": "\"PAYrybB5mlZUVuWX6rT9QkCyIfw=-gzip\""
+      },
+      "file": "8.html",
+      "bytes": 2274,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/publishing-api-data-set-products.html",
+      "fetched_at": "2026-10-29T18:30:25.537Z",
+      "status": 200,
+      "elapsed_ms": 138,
+      "final_url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1053",
+        "last-modified": "Thu, 29 Oct 2026 17:24:51 GMT",
+        "etag": "\"PAYrybB5mlZUVuWX6rT9QkCyIfw=-gzip\""
+      },
+      "file": "9.html",
+      "bytes": 2274,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/pricing-data-products.html",
+      "fetched_at": "2026-10-29T18:30:26.197Z",
+      "status": 200,
+      "elapsed_ms": 144,
+      "final_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1067",
+        "last-modified": "Thu, 29 Oct 2026 17:24:30 GMT",
+        "etag": "\"/GHARxyzwlQa1rH1L637jrn9tqc=-gzip\""
+      },
+      "file": "10.html",
+      "bytes": 2339,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/data-product-pricing.html",
+      "fetched_at": "2026-10-29T18:30:26.841Z",
+      "status": 200,
+      "elapsed_ms": 157,
+      "final_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1067",
+        "last-modified": "Thu, 29 Oct 2026 17:24:30 GMT",
+        "etag": "\"/GHARxyzwlQa1rH1L637jrn9tqc=-gzip\""
+      },
+      "file": "11.html",
+      "bytes": 2339,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/seller-dcop.html",
+      "fetched_at": "2026-10-29T18:30:27.498Z",
+      "status": 200,
+      "elapsed_ms": 139,
+      "final_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1067",
+        "last-modified": "Thu, 29 Oct 2026 17:24:30 GMT",
+        "etag": "\"/GHARxyzwlQa1rH1L637jrn9tqc=-gzip\""
+      },
+      "file": "12.html",
+      "bytes": 2339,
+      "truncated": false
+    }
+  ]
+}

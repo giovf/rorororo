@@ -1,0 +1,89 @@
+{
+  "request": "aws-dx-2026-10-29-c",
+  "fetched_at": "2026-10-29T18:30:29.260Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/listing-fees.html",
+      "fetched_at": "2026-10-29T18:30:27.639Z",
+      "status": 200,
+      "elapsed_ms": 77,
+      "final_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/listing-fees.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "4392",
+        "last-modified": "Thu, 29 Oct 2026 17:24:14 GMT",
+        "etag": "\"/9CaXZ7XtQJDlSETgZSuVsFmZlg=-gzip\""
+      },
+      "file": "1.html",
+      "bytes": 17565,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://aws.amazon.com/blogs/awsmarketplace/monetize-your-custom-http-apis-via-aws-data-exchange/",
+      "fetched_at": "2026-10-29T18:30:27.717Z",
+      "status": 200,
+      "elapsed_ms": 112,
+      "final_url": "https://aws.amazon.com/blogs/awsmarketplace/monetize-your-custom-http-apis-via-aws-data-exchange/",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8",
+        "last-modified": "Mon, 26 Oct 2026 22:51:58 GMT"
+      },
+      "file": "2.html",
+      "bytes": 1447700,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html",
+      "fetched_at": "2026-10-29T18:30:27.850Z",
+      "status": 200,
+      "elapsed_ms": 137,
+      "final_url": "https://docs.aws.amazon.com/data-exchange/latest/userguide/data-sets.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "8623",
+        "last-modified": "Thu, 29 Oct 2026 17:24:59 GMT",
+        "etag": "\"p/qFi2a9gHifSxmoEfGUePWc7gk=-gzip\""
+      },
+      "file": "3.html",
+      "bytes": 38521,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/seller-registration-tax-information.html",
+      "fetched_at": "2026-10-29T18:30:28.488Z",
+      "status": 200,
+      "elapsed_ms": 137,
+      "final_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1067",
+        "last-modified": "Thu, 29 Oct 2026 17:24:30 GMT",
+        "etag": "\"/GHARxyzwlQa1rH1L637jrn9tqc=-gzip\""
+      },
+      "file": "4.html",
+      "bytes": 2339,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://docs.aws.amazon.com/marketplace/latest/userguide/seller-bank-account.html",
+      "fetched_at": "2026-10-29T18:30:29.125Z",
+      "status": 200,
+      "elapsed_ms": 134,
+      "final_url": "https://docs.aws.amazon.com/marketplace/latest/userguide/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "1067",
+        "last-modified": "Thu, 29 Oct 2026 17:24:30 GMT",
+        "etag": "\"/GHARxyzwlQa1rH1L637jrn9tqc=-gzip\""
+      },
+      "file": "5.html",
+      "bytes": 2339,
+      "truncated": false
+    }
+  ]
+}
