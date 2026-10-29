@@ -2031,3 +2031,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 19:35 | burn-down | gankdat apify-companies-house-qa-repair: QA run read via relay — gankdat API 500 on the prefilled lookup
 - 2026-10-29 19:35 | burn-down | The 500's message is only in Workers Logs: built lib/error-lines.ts + `worker errors 24h` row clause, 3 tests
 - 2026-10-29 19:35 | burn-down | ARCHITECTURE notes the reading; metrics job dispatched to read today's error lines; item stays doing
+- 2026-10-29 19:36 | burn-down | Metrics run 282 failed: error-lines.ts import lacked .ts (Node 24 type-stripping, as 10-26); fixed, re-dispatched
