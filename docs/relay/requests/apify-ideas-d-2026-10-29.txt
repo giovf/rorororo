@@ -1,7 +1,0 @@
-GET https://api.apify.com/v2/store?limit=10&search=internet%20archive
-GET https://api.apify.com/v2/store?limit=10&search=euromillions
-GET https://api.apify.com/v2/store?limit=10&search=exchange%20rates
-GET https://api.apify.com/v2/store?limit=10&search=n8n
-GET https://api.apify.com/v2/store?limit=10&search=zalo
-GET https://api.apify.com/v2/store?limit=10&search=regulatory%20compliance
-GET https://apify.com/api/ideas/data?page=1&sort=votes&status=toDevelop

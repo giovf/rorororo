@@ -1,0 +1,92 @@
+{
+  "data": {
+    "total": 2,
+    "count": 2,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "EuroMillions Results Scraper",
+        "name": "euromillions-results-scraper",
+        "username": "automation-lab",
+        "stats": {
+          "totalBuilds": 8,
+          "totalRuns": 101,
+          "totalUsers": 3,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-28T14:14:29.564Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 29
+          }
+        },
+        "description": "Extract EuroMillions draw history with dates, five winning numbers, two Lucky Stars, jackpots, and source links. Filter by date or process exact result URLs.",
+        "categories": [
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/lM_mkCnMR8y2FaOmYhpaVuE7y7D9OzZCHTZ6qCRrNa4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbnRIQ25oTlVrelhSN25iVVotYWN0b3ItV3JpTlVCN3p4bnE5SkV0YWUtYUNjTGVRNXBuOC1hY3Rvci1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Automation Lab",
+        "userPictureUrl": "https://images.apifyusercontent.com/K_C4LOMfOgJZv5UcVqbze6xlfc6mS23zsoHRS5nDXvM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMDdsSFdveGptQlpJN0NMWkJqVi1wUlBjV0ZHRFQyRzIwVjdkVzBRSzBCay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiblJJUTI1b1RsVnJlbGhTTjI1aVZWb3RjSEp2Wm1sc1pTMW9ORkJYYTNsWWVVSmxMV0YxZEc5dFlYUnBiMjR0YkdGaUxYQnliMlpwYkdVdGJHOW5ieTV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "start": {
+                "eventTitle": "Run started",
+                "eventDescription": "One-time fee charged when a run starts. Covers fixed startup cost (init, proxy warmup, first HTTP setup).",
+                "eventPriceUsd": 0.005,
+                "isOneTimeEvent": true
+              },
+              "item": {
+                "eventTitle": "Item extracted",
+                "eventDescription": "Charged per item extracted.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00552
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0048
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.003744
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00288
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00192
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.001344
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-25T20:03:19.297Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-08-25T20:03:19.399Z",
+          "notifiedAboutChangeAt": "2026-08-25T20:05:52.939Z"
+        },
+        "id": "WriNUB7zxnq9JEtae",
+        "url": "https://apify.com/automation-lab/euromillions-results-scraper"
+      }
+    ]
+  }
+}

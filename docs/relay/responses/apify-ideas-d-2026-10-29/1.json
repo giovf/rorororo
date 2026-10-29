@@ -1,0 +1,608 @@
+{
+  "data": {
+    "total": 790,
+    "count": 10,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "Internet Archive Search — Advanced Archive.org Query",
+        "name": "archive-org-advanced-search",
+        "username": "maged120",
+        "stats": {
+          "totalBuilds": 14,
+          "totalRuns": 594,
+          "totalUsers": 40,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 9,
+          "lastRunStartedAt": "2026-10-28T18:58:26.183Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 1,
+            "SUCCEEDED": 43,
+            "TIMED-OUT": 0,
+            "TOTAL": 44
+          },
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "Search the Internet Archive (archive.org) with full advanced filter support — date range, media type, language, subject, and more. Returns metadata from archived web pages, books, audio, and video.",
+        "categories": [
+          "OTHER",
+          "DEVELOPER_TOOLS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/7_gsD7WIGUvBSLPeCR6ySj4SeYZM2fYVmVjfzOkm5ng/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdGFoaDIweGp1aWxLckdFanEtYWN0b3ItcWQ1aWZjSXNaUlpjU3J2ZmctMWZjVUtFMmZ4by1pbnRlcm5ldC1hcmNoaXZlLWljb24tMTAyNHgxMDI0LWw3MHh3cnF4LnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Maged",
+        "userPictureUrl": "https://images.apifyusercontent.com/kYr8_wummFTqWrsCcLjt1oQJV2qx3V8U7SfTHEQc0pY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT3hlSkxsbFRmQnJxX0VKR1VTVExWeVVjS2pNS0FxT2xYZ2FxWDFyck9Hcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkR0ZvYURJd2VHcDFhV3hMY2tkRmFuRXRjSEp2Wm1sc1pTMVNaREJhWWpGc1YxRk9MVmRvWVhSelFYQndYMGx0WVdkbFh6SXdNalV0TURndE16QmZZWFJmTVM0d01DNHlPRjlCVFM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.016
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.014
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.012
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.012
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-20T22:11:54.091Z",
+          "createdAt": "2026-05-06T22:11:54.251Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-05-06T22:12:14.478Z"
+        },
+        "id": "qd5ifcIsZRZcSrvfg",
+        "url": "https://apify.com/maged120/archive-org-advanced-search"
+      },
+      {
+        "title": "Internet Archive Scraper — Wayback + Search + Metadata [$1.5💰]",
+        "name": "internet-archive-scraper",
+        "username": "memo23",
+        "stats": {
+          "totalBuilds": 19,
+          "totalRuns": 198,
+          "totalUsers": 28,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 20,
+          "lastRunStartedAt": "2026-10-29T07:30:26.377Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "Internet Archive all-in-one scraper — paste a URL or domain for Wayback snapshot history, a keyword for library search, or an item ID for full metadata + file lists. Date filters, availability checks, flat JSON rows. Pure HTTP via open APIs, no browser, no proxies. $1.50/1k rows.",
+        "categories": [
+          "SEO_TOOLS",
+          "AGENTS",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Tkb7JVd6vvGNN4CCZI23E7wLy3CwGe-DUvxaTNiyBaA/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbmduOHZSRVNUa3NleVdFNnAtYWN0b3ItOUo5UmNFdGhDcEtYM3hEeDMtNUVQN1dMeVZUai1pbnRlcm5ldF9hcmNodmllLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Muhamed Didovic",
+        "userPictureUrl": "https://images.apifyusercontent.com/UWS1pm5ZK_CTekVvsOq-WWGxQTL9CtDAmNs39dAoxOQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vVWV2Smp2aUpCclh6Q1NrRUhpZ1pYWnlhYU1MMkhjUmlwSE9YSl9aVi1LNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZibWR1T0haU1JWTlVhM05sZVZkRk5uQXZTM0ZpY21RM2NuTk1ZbVJzVTFsa2FGY3RNVFl5T1RJNE5URXdNakU1TkM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-default-dataset-item": {
+                "eventTitle": "Archive row",
+                "eventDescription": "One row pushed to the dataset — a Wayback snapshot, a library search result, an item-metadata record, or an availability check. $1.50 per 1,000 rows.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              },
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "additional-data": {
+                "eventTitle": "Additional data",
+                "eventDescription": "Charged for additional-data",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001
+              }
+            }
+          },
+          "startedAt": "2026-09-23T09:31:39.167Z",
+          "apifyMarginPercentage": 0.2,
+          "createdAt": "2026-09-07T09:33:31.385Z",
+          "notifiedAboutFutureChangeAt": "2026-09-07T09:33:51.733Z",
+          "notifiedAboutChangeAt": "2026-09-23T09:35:59.018Z"
+        },
+        "id": "9J9RcEthCpKX3xDx3",
+        "url": "https://apify.com/memo23/internet-archive-scraper"
+      },
+      {
+        "title": "Internet Archive & Wayback Machine Scraper",
+        "name": "internet-archive-scraper",
+        "username": "cloud9_ai",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 261,
+          "totalUsers": 26,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-28T19:18:28.104Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 33,
+            "TIMED-OUT": 0,
+            "TOTAL": 33
+          }
+        },
+        "description": "Search Internet Archive and check Wayback Machine snapshots. Access 800B+ archived pages, books, movies, audio. Search items, get metadata, or check URL archive history. No API key needed. For SEO, OSINT, legal, and research.",
+        "categories": [
+          "AI"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "cloud9",
+        "userPictureUrl": "https://images.apifyusercontent.com/asTfz15pizt6qRGFIkRo4GWYX0hbqvzIIwBaLmAs9yg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZ1VCN0xqZkdNcldFQUU4cEtMV3dSV3gzSFpVcVhicW9sbjd2MWxFNHhCMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6WXdOVFEyTVRNMlAzWTlOQQ.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Charged for each data record returned.",
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-04-02T16:14:56.232Z",
+          "startedAt": "2026-04-02T16:14:56.232Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "9fhPnItB7ixq5ATvu",
+        "url": "https://apify.com/cloud9_ai/internet-archive-scraper"
+      },
+      {
+        "title": "Wayback Machine Snapshots Scraper — Internet Archive History",
+        "name": "wayback-machine-snapshots-scraper",
+        "username": "seemuapps",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 210,
+          "totalUsers": 14,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 5,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-28T11:04:27.851Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "List every Internet Archive snapshot of a URL, page, or whole domain. Timestamp, snapshot URL, status code, mime type, content length. No login.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "AGENTS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/jPoC-CQWx14niHKYlQxWO6_M8MR77TTMM5MKR8q-I0U/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZkxFclF3Y3NsR2VjeVFpS0ktYWN0b3ItOXZpTmZsTlN1cU9JTU05akYtZ1gzallNY2ZpRC13YXliYWNrLW1hY2hpbmUtc25hcHNob3RzLXNjcmFwZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Seemu Scraping",
+        "userPictureUrl": "https://images.apifyusercontent.com/UUvo8HBHs3fNAt-J9JEOjG8OVq-4xYgRSfwRiPNLs8Y/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vYTcxdE1KVG9IZy1CeGZ3RlJfTmNPNmZ2bDZVRjNuVlgxS01SY0tmM3Nxay9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZaa3hGY2xGM1kzTnNSMlZqZVZGcFMwa3RjSEp2Wm1sc1pTMTFWSEZhTTFkeU1tdDRMV1kyWXpVNE16TmhMV0U1TXpZdE5EVmtOUzFoTVRBM0xXUmtNVGs0WlRkbU56azRaUzV3Ym1jLnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "snapshot-result": {
+                "eventTitle": "Archived snapshot returned",
+                "eventDescription": "Charged for each Internet Archive snapshot returned in the dataset",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-11T23:58:21.371Z",
+          "createdAt": "2026-05-11T23:58:21.748Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "9viNflNSuqOIMM9jF",
+        "url": "https://apify.com/seemuapps/wayback-machine-snapshots-scraper"
+      },
+      {
+        "title": "Internet Archive Scraper — $0.0005/Item · Books, Texts & Media",
+        "name": "archive-org-items-scraper",
+        "username": "gio21",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 175,
+          "totalUsers": 8,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 4,
+          "lastRunStartedAt": "2026-10-29T04:10:32.218Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 37,
+            "TIMED-OUT": 0,
+            "TOTAL": 37
+          }
+        },
+        "description": "Search archive.org by keyword or Lucene query: books, texts, audio, video, software. Title, description, downloads, size, subjects, direct download link. $0.0005/item, 36x cheaper than maged120 ($0.018) and half the price of rel8ble ($0.001).",
+        "categories": [
+          "ECOMMERCE",
+          "DEVELOPER_TOOLS",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/D9AwLWgagXZ0qUNBZgsT48T5JgTEqz8zs7nK7Rm4CE4/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vZm5TUVJHYUd0OFRhdjdRZkYtYWN0b3ItREN5WlQxalpWdlAxbEdpTUEtN0d3bGpIWk9FYi1pbnRlcm5ldC1hcmNoaXZlLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Gio",
+        "userPictureUrl": "https://images.apifyusercontent.com/wqQe2a-05KMWcEYRyaswgePG12qtblRrbQbimpNugPQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcEZITGhkemlYTUxPT3RqRXo0ZFp5MEoyWFZTSzJ1YTEwOHdtd1pWckJXMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZabTVUVVZKSFlVZDBPRlJoZGpkUlprWXRjSEp2Wm1sc1pTMXplbmhhZWpkdFF6UkJMV2RwYnk1cWNHYy5qcGc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-05-28T01:09:37.000Z",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005,
+                "isOneTimeEvent": true
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Item scraped",
+                "eventDescription": "Charged per item scraped successfully scraped. Errors are NOT charged.",
+                "eventPriceUsd": 0.0005,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "minimalMaxTotalChargeUsd": 0.25,
+          "createdAt": "2026-05-28T01:09:42.033Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "DCyZT1jZVvP1lGiMA",
+        "url": "https://apify.com/gio21/archive-org-items-scraper"
+      },
+      {
+        "title": "Internet Archive & Wayback Machine Scraper",
+        "name": "internet-archive",
+        "username": "bakos_bence",
+        "stats": {
+          "totalBuilds": 29,
+          "totalRuns": 141,
+          "totalUsers": 4,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-29T05:12:24.455Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 3,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 34
+          }
+        },
+        "description": "Search archive.org and the Wayback Machine for OSINT, journalism, and research — books, movies, audio, software, item metadata, file lists, and URL snapshots. Official public APIs, no login. Unofficial — not affiliated with the Internet Archive.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "SEO_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/RGMiCHO_7ZWXDuonDeIW2anBQ9oKKvTQy-bVmAA8APo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQnBGdUZsdThSV0pXVmo3U2UtYWN0b3ItS0Rkb0ZkQXRVZ3VPT09JaXItSkhWZFpJem9hWi1pbnRlcm5ldC1hcmNoaXZlLWFjdG9yLWljb24ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Bakos Bence",
+        "userPictureUrl": "https://images.apifyusercontent.com/UU7IsYXdpgPKuMoYh_V_8b3B0M4f4fdnZuDvpXa7_Hs/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vU05Cem1zakpmWDhudFRNUkVwTmZ2M0ZQbktKYnNCSnlNc01VZWREdDBkNC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRbkJHZFVac2RUaFNWMHBYVm1vM1UyVXRjSEp2Wm1sc1pTMVROVEZ3Y2xsbFUzWXpMWEJ5YjJZdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "minimalMaxTotalChargeUsd": null,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.003
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.003
+                  }
+                }
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Result",
+                "eventDescription": "Each row saved to the default dataset.",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.00149
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.001241
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.000994
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.000745
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.000745
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.000745
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-01T08:19:26.000Z",
+          "createdAt": "2026-09-17T07:19:27.295Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-09-17T07:19:47.482Z",
+          "notifiedAboutChangeAt": "2026-10-01T08:35:59.053Z"
+        },
+        "id": "KDdoFdAtUguOOOIir",
+        "url": "https://apify.com/bakos_bence/internet-archive"
+      },
+      {
+        "title": "Internet Archive Scraper - Books, Audio, Film & Web",
+        "name": "internet-archive-scraper",
+        "username": "dami_studio",
+        "stats": {
+          "totalBuilds": 30,
+          "totalRuns": 361,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-29T10:09:23.180Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Internet Archive scraper for archive.org books, audio, film, software and web items, by keyword or Lucene query. Each row holds the identifier, title, creator, year, media type, download count, subjects, description and link. Uploaders write the metadata, so gaps are common. $2.00 per 1,000 items.",
+        "categories": [
+          "INTEGRATIONS",
+          "NEWS",
+          "OTHER"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/dvQxglyDWdzFjzlZAIUNzd0PcG-8JMWH5S9-jZy9FFs/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vQ1ZLZnBubVZTSkxQVWVHa1QtYWN0b3ItZzQ2SVNiSjlNdzBzQjRoRU8tVmhTaWFxSmZSay1pbnRlcm5ldC1hcmNoaXZlLXNjcmFwZXIuanBn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Dami's Studio",
+        "userPictureUrl": "https://images.apifyusercontent.com/YUEyVQ4w3LNN7SR7CGhx1DkmkdjSHXYxL4yAR0OqwsM/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vazIzQzJKcGFZclJXOHFLWE5RSWY4SHFhalF2NjhwTTYtYW0tdnlWRC12SS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZRMVpMWm5CdWJWWlRTa3hRVldWSGExUXRjSEp2Wm1sc1pTMTBNMVYyUzFCd1ZXVnFMV2xqYjI0dWNHNW4ucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "item": {
+                "eventTitle": "Item",
+                "eventDescription": "Charged per archive item returned.",
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.002
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.00198
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.00196
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00194
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00194
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.00194
+                  }
+                }
+              }
+            }
+          },
+          "apifyMarginPercentage": 0.2,
+          "reasonForChange": "Paid plans now pay a little less: Starter, Scale and Business each get a small discount, and the Free plan price stays the same.",
+          "createdAt": "2026-10-03T21:59:49.924Z",
+          "startedAt": "2026-10-03T21:59:49.924Z",
+          "notifiedAboutChangeAt": "2026-10-03T22:06:06.251Z"
+        },
+        "id": "RWjQIaqyPT6aselA1",
+        "url": "https://apify.com/dami_studio/internet-archive-scraper"
+      },
+      {
+        "title": "Internet Archive Scraper - archive.org Items, Metadata & Files",
+        "name": "internet-archive-scraper",
+        "username": "inovaflow",
+        "stats": {
+          "totalBuilds": 11,
+          "totalRuns": 79,
+          "totalUsers": 3,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-29T03:26:25.568Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 31,
+            "TIMED-OUT": 0,
+            "TOTAL": 31
+          }
+        },
+        "description": "Search the Internet Archive (archive.org) and extract item metadata, files and direct download links. Books, movies, audio, software, images and data — no login required.",
+        "categories": [
+          "OTHER",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/m6b1z_anzXqrl0uS-xB7Hn5jJOYrm0pXjfod674gsFc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vMHk0cVAyeGJmY2xKT01hR2gtYWN0b3ItOGFFS0tTbllCR0plV3gzZnotRjZobnI1eGZJMC1DaGF0R1BUX0ltYWdlX0F1Z18xOF9fMjAyNl9fMDlfMzlfMzJfQU0ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "inovaflow",
+        "userPictureUrl": "https://images.apifyusercontent.com/0TgSgo7L5KerAPPhpoXMHKCQIseMG1DvedUnKn0tZ6w/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUlRTakFkMUJVc0hyRE1rdzI1aE9kLWo3Wk1SVFR5bUlLdlN2WWhPd09say9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZNSGswY1ZBeWVHSm1ZMnhLVDAxaFIyZ3RjSEp2Wm1sc1pTMXZTRUV4UlRkS2NIcDBMVVoxYkd4TWIyZHZYMVJ5WVc1emNHRnlaVzUwWDA1dlFuVm1abVZ5WHlVeU9ESTJKVEk1TG5CdVp3LnBuZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Archive record",
+                "eventDescription": "One archive.org row (search result, item metadata or file entry) written to your dataset. You pay only for rows you receive; an empty run costs nothing.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-08-18T07:37:30.772Z",
+          "createdAt": "2026-08-18T07:37:30.992Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "8aEKKSnYBGJeWx3fz",
+        "url": "https://apify.com/inovaflow/internet-archive-scraper"
+      }
+    ]
+  }
+}

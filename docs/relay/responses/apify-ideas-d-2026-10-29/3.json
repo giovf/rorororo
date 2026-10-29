@@ -1,0 +1,521 @@
+{
+  "data": {
+    "total": 5171,
+    "count": 10,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "Currency Exchange Rate Tracker",
+        "name": "exchange-rate-tracker",
+        "username": "ryanclinton",
+        "stats": {
+          "totalBuilds": 9,
+          "totalRuns": 1805,
+          "totalUsers": 29,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 6,
+          "lastRunStartedAt": "2026-10-28T17:49:08.550Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 195,
+            "TIMED-OUT": 0,
+            "TOTAL": 195
+          }
+        },
+        "description": "Currency Exchange Rate Tracker is an Apify actor that retrieves live foreign exchange rates for over 160 world currencies using the open ExchangeRate-API.",
+        "categories": [
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ReUQN4ClezGeEOu4vZVBHErNTay1cxNi36sE6qbrAy8/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vczJGTTV1Rkg5RjJlWjRwWjktYWN0b3Itd3NDNFltUm1KSmw1UkFWVlktVjR6QXdKazlnVC1leGNoYW5nZS1yYXRlLXRyYWNrZXIucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": false,
+        "userFullName": "Ryan Clinton",
+        "userPictureUrl": "https://images.apifyusercontent.com/hwNq8Rl80-xjUd5O-Dmg89NgHFps28Zlb9r_p19yYZI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vNWVuSjhLeUxpWXdCOVlTSkYtRFpBT05iMl9vUGthdy1YQzB4aEZyd1Bkcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpURzF3TkZGdmEyNUhUVlZQVDNscGFEaDJjMmhYWkZoaFJURnlSRWxHYURGcGNrTk9iVTVET1VkRGRsUTVlR3hDZW5nOWN6azJMV00.webp",
+        "currentPricingInfo": {
+          "pricingModel": "FREE",
+          "createdAt": "2026-04-29T22:59:41.651Z",
+          "startedAt": "2026-05-13T22:59:41.075Z",
+          "apifyMarginPercentage": 0,
+          "notifiedAboutFutureChangeAt": "2026-04-29T23:00:01.908Z"
+        },
+        "id": "wsC4YmRmJJl5RAVVY",
+        "url": "https://apify.com/ryanclinton/exchange-rate-tracker"
+      },
+      {
+        "title": "Central Bank of Egypt — Live Currency Exchange Rates",
+        "name": "central-bank-of-egypt-todays-rates",
+        "username": "maged120",
+        "stats": {
+          "totalBuilds": 21,
+          "totalRuns": 4905,
+          "totalUsers": 22,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 4,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-29T08:00:24.425Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 984,
+            "TIMED-OUT": 0,
+            "TOTAL": 984
+          },
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0
+        },
+        "description": "Today's official Central Bank of Egypt exchange rates — buy, sell and mid-market — for one currency pair or every CBE-listed currency against EGP. Schedule a daily feed.",
+        "categories": [
+          "BUSINESS",
+          "DEVELOPER_TOOLS",
+          "INTEGRATIONS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/6BoyhuEopPsc_EYe_FO2MnQgomHi42gOmSInEBfLq2A/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vdGFoaDIweGp1aWxLckdFanEtYWN0b3ItMTlsN1RKd1ZYNkpGdnBlOUUtMjBiTTZlSkNmYS0zN2U5NjgxNDM4NTQzNDEuNjI4MjYzODc5NTk3OS5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Maged",
+        "userPictureUrl": "https://images.apifyusercontent.com/kYr8_wummFTqWrsCcLjt1oQJV2qx3V8U7SfTHEQc0pY/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vT3hlSkxsbFRmQnJxX0VKR1VTVExWeVVjS2pNS0FxT2xYZ2FxWDFyck9Hcy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZkR0ZvYURJd2VHcDFhV3hMY2tkRmFuRXRjSEp2Wm1sc1pTMVNaREJhWWpGc1YxRk9MVmRvWVhSelFYQndYMGx0WVdkbFh6SXdNalV0TURndE16QmZZWFJmTVM0d01DNHlPRjlCVFM1cWNHVm4uanBlZw.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.015
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.01333
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.01167
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.01
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.01
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-05-20T19:53:43.478Z",
+          "createdAt": "2026-05-06T19:53:42.761Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutFutureChangeAt": "2026-05-06T19:54:02.978Z"
+        },
+        "id": "19l7TJwVX6JFvpe9E",
+        "url": "https://apify.com/maged120/central-bank-of-egypt-todays-rates"
+      },
+      {
+        "title": "Binance Exchange rate Scraper",
+        "name": "binance-exchange-rate-scraper",
+        "username": "moving_beacon-owner1",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 256,
+          "totalUsers": 21,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 12,
+          "lastRunStartedAt": "2026-10-28T11:42:26.519Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 32,
+            "TIMED-OUT": 0,
+            "TOTAL": 32
+          }
+        },
+        "description": "Binance Public Market Data — Crypto Tickers & Order Books\n\nReal-time crypto data from Binance\n\nModes\n\n* ticker24h — 24h price change stats\n* price — Latest price snapshot\n* orderbook — Bids, asks, spread, depth\n* trades — Recent trades with side\n* klines — OHLCV candlesticks (1s–1M)",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "OTHER",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/kKhtW044L6nrwg_ntugk54Rift1drtwf66eJTN86CLo/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcExzcGFDS2ptZ1JOZDNhb3AtYWN0b3ItSHg1MGhNS0RGbFNkdmZLU0stdjFBaE5QOFBNZC1DaGF0R1BUX0ltYWdlX0Fwcl8xNV9fMjAyNl9fMDlfMDBfNTRfUE0ucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Jamshaid Arif",
+        "userPictureUrl": "https://images.apifyusercontent.com/XyvR67NX5h8OU9SvxhUxhSDre9IrWyK4hFmyULjHn_E/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV2NHaTMwclVtUXlyWFZxbDFOTEVXSWVWNGR2My1XazN0V19yQ3RoQk1HRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTblJJT1RscFpUUmtXRXMzV0VjM1REaEZhVlpWTjFCUVZXOHpjek5oWTBoeFgwdERSa0phVDBvd2VrcHBlV2xHZFRj.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-04-15T16:01:30.470Z",
+          "createdAt": "2026-04-15T16:01:30.829Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "Hx50hMKDFlSdvfKSK",
+        "url": "https://apify.com/moving_beacon-owner1/binance-exchange-rate-scraper"
+      },
+      {
+        "title": "Currency Exchange Rates — Real-Time FX Data",
+        "name": "currency-exchange-rates",
+        "username": "nexgendata",
+        "stats": {
+          "totalBuilds": 35,
+          "totalRuns": 310,
+          "totalUsers": 12,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 5,
+          "lastRunStartedAt": "2026-10-28T13:56:25.616Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 33,
+            "TIMED-OUT": 0,
+            "TOTAL": 33
+          }
+        },
+        "description": "Real-time & historical exchange rates for 150+ currencies. Open Exchange Rates, Fixer.io & CurrencyLayer alternative for fintech apps, FX dashboards and international pricing tools. No API key needed. Pay per result.",
+        "categories": [
+          "BUSINESS",
+          "AI",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/ncay3Qf00ZJB3_meuYom_JbNg1XG4U4gog1cloJVZZc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vUFFZaExmMkt1NllxeUNXYngtYWN0b3ItWndwTDJZNHpFaW9kdDJTUzAtQjN5YWoyaVFTQy1pY29uLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "NexGenData",
+        "userPictureUrl": "https://images.apifyusercontent.com/DFoEfAV1iSBokBNjpIZdoeMlxK2y6UEav2Se4BxUDrI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20veU5Nancta2JUQ2FFN3lQUTNGZnR1SHBQX0FoWkVNVlVFLTdfSVFOTjNzby9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZVRkZaYUV4bU1rdDFObGx4ZVVOWFluZ3RjSEp2Wm1sc1pTMXVSMmRzVGxZeU5VVkRMVzVuWkMxemRHRmphMlZrTFd4dlkydDFjQzFrWVhKckxuQnVady5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "startedAt": "2026-07-17T01:26:40.000Z",
+          "reasonForChange": "A9 metadata normalization (Steve-authorized 2026-07-17): explicit isPrimaryEvent:false on apify-actor-start. SAME PRICE - no price value changes.",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005,
+                "isPrimaryEvent": false
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Exchange rate",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.01,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-17T01:26:41.167Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-17T01:35:42.132Z"
+        },
+        "id": "ZwpL2Y4zEiodt2SS0",
+        "url": "https://apify.com/nexgendata/currency-exchange-rates"
+      },
+      {
+        "title": "Exchange Rate & Currency Data Scraper",
+        "name": "exchange-rate-scraper",
+        "username": "cloud9_ai",
+        "stats": {
+          "totalBuilds": 5,
+          "totalRuns": 227,
+          "totalUsers": 4,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-28T19:18:30.353Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Get real-time and historical exchange rates for 160+ currencies powered by ECB data. Latest rates with auto failover, historical lookups, and time series analysis. No API key needed. For e-commerce, forex, and financial dashboards.",
+        "categories": [
+          "ECOMMERCE"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "cloud9",
+        "userPictureUrl": "https://images.apifyusercontent.com/asTfz15pizt6qRGFIkRo4GWYX0hbqvzIIwBaLmAs9yg/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vZ1VCN0xqZkdNcldFQUU4cEtMV3dSV3gzSFpVcVhicW9sbjd2MWxFNHhCMC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6WXdOVFEyTVRNMlAzWTlOQQ.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Charged for each data record returned.",
+                "eventPriceUsd": 0.0015,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-04-02T16:14:57.413Z",
+          "startedAt": "2026-04-02T16:14:57.413Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "IpnBBIxIhGZ4ljDBr",
+        "url": "https://apify.com/cloud9_ai/exchange-rate-scraper"
+      },
+      {
+        "title": "Currency & Crypto Exchange Rates",
+        "name": "currency-crypto-rates",
+        "username": "blazing_stake",
+        "stats": {
+          "totalBuilds": 1,
+          "totalRuns": 112,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "lastRunStartedAt": "2026-10-29T05:32:30.498Z",
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Live fiat exchange rates and crypto prices in one call. Convert amounts, track pairs, get market cap and 24h change. No API key. For finance dashboards and automations.",
+        "categories": [
+          "DEVELOPER_TOOLS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Mehmet Kut",
+        "userPictureUrl": "https://images.apifyusercontent.com/mwDzmBSSrhPLv8xbDzMz37GQagml7I6bZDVZLIGBxfI/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vN0RKQkExVFhuV0xEUUFUVGtOZF9Tc01XcmtCYnVkbFdwdFcxWEpleHJBRS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURVdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMeTF1YjBSRmMyeHdWREJEY3k5QlFVRkJRVUZCUVVGQlNTOUJRVUZCUVVGQlFVRmhPQzlaWTNkeGRqQmxZVll0TkM5d2FHOTBieTVxY0djLmpwZw.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "createdAt": "2026-07-06T23:41:36.390Z",
+          "startedAt": "2026-07-06T23:41:35.000Z",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "rate-fetched": {
+                "eventPriceUsd": 0.001,
+                "eventTitle": "Rate fetched",
+                "eventDescription": "Charged for each currency or crypto rate fetched",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "notifiedAboutChangeAt": "2026-07-13T10:36:13.326Z"
+        },
+        "id": "oqUe2HdxGFNEP7XHe",
+        "url": "https://apify.com/blazing_stake/currency-crypto-rates"
+      },
+      {
+        "title": "Exchange Rates — Live & Historical Currency Rates",
+        "name": "exchange-rates",
+        "username": "omao",
+        "stats": {
+          "totalBuilds": 3,
+          "totalRuns": 105,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-28T20:52:24.180Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Get live or historical foreign-exchange rates (ECB reference rates) for any base and target currencies. One clean JSON row per currency pair with rate, date and amount. No API key, no anti-bot.",
+        "categories": [
+          "DEVELOPER_TOOLS",
+          "BUSINESS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/PEbbjItVZrlqsIgCEEbWgyL0xnskVbuCDtZth6eR_UM/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vakJCRDN5amg4dW02MnI4ZHUtYWN0b3ItY1lhY1NadWhOOTVzaHRmekMtM3Jja2RKcUVlUi1leGNoYW5nZS1yYXRlcy5zdmcucG5n.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Marouane Oulabass",
+        "userPictureUrl": "https://images.apifyusercontent.com/uKD-e466-0YMi8Fh24qeks7hM0PEZePdI7ojTlHaMQw/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vMVVxZTJpZWo4M0kwb3cxbFJGS2FselptX2Z6dGViZU1PTjZDRm40WkZUYy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZha0pDUkRONWFtZzRkVzAyTW5JNFpIVXRjSEp2Wm1sc1pTMWpUMGxpYlhGNWJuQkNMVU5vWVhSSFVGUmZTVzFoWjJWZk1URmZhblZwYkM1Zk1qQXlObDlmTWpCZk5UWmZNVFV1Y0c1bi5wbmc.webp",
+        "currentPricingInfo": {
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "rate": {
+                "eventDescription": "Per rate returned.",
+                "eventTieredPricingUsd": {
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.00072
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.0008
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0009
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0006
+                  },
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.001
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.00066
+                  }
+                },
+                "eventTitle": "Rate",
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "pricingModel": "PAY_PER_EVENT",
+          "createdAt": "2026-07-16T00:15:51.340Z",
+          "startedAt": "2026-07-16T00:15:51.340Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-16T00:35:39.813Z"
+        },
+        "id": "cYacSZuhN95shtfzC",
+        "url": "https://apify.com/omao/exchange-rates"
+      },
+      {
+        "title": "Currency Exchange Rates Scraper (ECB)",
+        "name": "currency-exchange-scraper-max",
+        "username": "chrisp1211",
+        "stats": {
+          "totalBuilds": 2,
+          "totalRuns": 98,
+          "totalUsers": 3,
+          "totalUsers7Days": 2,
+          "totalUsers30Days": 2,
+          "totalUsers90Days": 2,
+          "lastRunStartedAt": "2026-10-28T22:32:29.040Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "Scrape Currency Exchange Rates and get base, currency, rate, date, amount, url for every result. Export to JSON, CSV, Excel or Google Sheets, or call it from the API. No API key or login needed. Pay per result - failed and empty runs are free.",
+        "categories": [
+          "BUSINESS"
+        ],
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Christian Pichichero",
+        "userPictureUrl": "https://images.apifyusercontent.com/O23SnfPXMWPDLu4PHVA43tJ5qWOC1QF1Jl4sCupzxgo/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vUkpadU1LUFlXV2h1RWpZbXlYQ2Z0N0dma0JKclJJMklUNXNyR1B2bEZ1SS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6STJPRFE0TVRBd01EOTJQVFE.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "record": {
+                "eventTitle": "Record",
+                "eventDescription": "One scraped record. No start fee, no minimum; failed or empty runs charge nothing.",
+                "isOneTimeEvent": false,
+                "eventPriceUsd": 0.0004,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-07-22T04:00:24.552Z",
+          "startedAt": "2026-07-22T04:00:24.552Z",
+          "apifyMarginPercentage": 0.2,
+          "notifiedAboutChangeAt": "2026-07-22T04:05:42.530Z"
+        },
+        "id": "Y1d6GH6oKOdZLG4Fg",
+        "url": "https://apify.com/chrisp1211/currency-exchange-scraper-max"
+      }
+    ]
+  }
+}

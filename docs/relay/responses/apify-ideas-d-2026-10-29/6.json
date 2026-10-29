@@ -1,0 +1,297 @@
+{
+  "data": {
+    "total": 1666,
+    "count": 10,
+    "offset": 0,
+    "limit": 10,
+    "desc": false,
+    "items": [
+      {
+        "title": "Regulatory Compliance Search",
+        "name": "regulatory-compliance-search",
+        "username": "aimojo",
+        "stats": {
+          "totalBuilds": 4,
+          "totalRuns": 12,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-28T15:30:28.408Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 9,
+            "TIMED-OUT": 0,
+            "TOTAL": 9
+          }
+        },
+        "description": "Search company names in public regulatory registers: FDIC failed banks, the EU Transparency Register, the French HATVP lobbying register and CNIL enforcement decisions. Fuzzy matching with scores, source links and attribution.",
+        "categories": [],
+        "pictureUrl": "https://images.apifyusercontent.com/8wc9kum5IAzLMc10-OCmFyQVGMryzuHjwi269QJ1l8o/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20va3ZvVjJheUw0anF2UEZlaFQtYWN0b3ItbGNrdG42N0lzZ3BjamtSMkwtTmNDTUdRVUprVS1yZWd1bGF0b3J5LWNvbXBsaWFuY2Utc2VhcmNoLWljb24uanBn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "AI Mojo",
+        "userPictureUrl": "https://images.apifyusercontent.com/rYig5zKPRgWq6vTuVGjmhn3ydHMqi1K_1Ef2wJ-0W90/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vcWFyZzljT1Ezb0IxaF9FMkVGVlBwRGRvaGtyenhWR1VlaFBQS0NMVXRWZy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTlzYURNdVoyOXZaMnhsZFhObGNtTnZiblJsYm5RdVkyOXRMMkV2UVVObk9HOWpTMGR1YUdGV1NqTmhSbEZtU1ZSNFppMWZZbTB6ZWxsWmNHbEZZVFJhUkZsSE1WRjRUelJ2Y0Rsc09HSXhkbWhIYUV3.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "Matched record",
+                "eventDescription": "One company-name match against a register record (one dataset row).",
+                "isOneTimeEvent": false,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.005
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.0045
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.004
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.0035
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.0035
+                  }
+                },
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2026-10-20T15:13:42.664Z",
+          "createdAt": "2026-10-20T15:13:43.074Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "lcktn67IsgpcjkR2L",
+        "url": "https://apify.com/aimojo/regulatory-compliance-search"
+      },
+      {
+        "title": "EUDAMED Medical Device Companies Scraper",
+        "name": "eudamed-medical-device-actors-scraper",
+        "username": "scrapers_lat",
+        "stats": {
+          "totalBuilds": 10,
+          "totalRuns": 95,
+          "totalUsers": 2,
+          "totalUsers7Days": 1,
+          "totalUsers30Days": 1,
+          "totalUsers90Days": 1,
+          "lastRunStartedAt": "2026-10-28T16:06:27.584Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 27,
+            "TIMED-OUT": 0,
+            "TOTAL": 27
+          }
+        },
+        "description": "Directory of EU EUDAMED-registered medical device operators: manufacturers, authorised reps, importers and pack producers with email, phone, EU VAT, EORI, trade register number and named regulatory-compliance contacts. JSON, CSV, Excel.",
+        "categories": [
+          "BUSINESS",
+          "AUTOMATION",
+          "DEVELOPER_TOOLS"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/_nKeLximAbtKaKmLABIGRiTg-nN7uiDH93WsiEyEGfc/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vbTVLZDRMUndSRXpFeWlaYzYtYWN0b3ItQmxiQ29YUjdXek11aFRWYmUtV2FncFNyQWlUWi1ldWRhbWVkLnBuZw.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Scrapers Lat",
+        "userPictureUrl": "https://images.apifyusercontent.com/rBcgpGpYdgE3cGr3-QfCZ3NOt8yqFDlvM6muZEnZXT4/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vWlN6TUtGSUVjYzNFLURyZ1B3TXFxajRUakRRX1V6akhZdnFWazVJUGM5Yy9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZiVFZMWkRSTVVuZFNSWHBGZVdsYVl6WXRjSEp2Wm1sc1pTMTRSV0ZYTVU5V1oxTnpMVEUzTmpJeU56VTRNVGsyTkRNdWFuQm4uanBn.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "result": {
+                "eventTitle": "Result",
+                "eventDescription": "A registered medical device economic operator: name, SRN, role, country, contact email/phone, address and — when enrichment is enabled — EU VAT, EORI, trade register number, website, named regulatory-compliance contact person(s) and validating competent authority.",
+                "isOneTimeEvent": false,
+                "isPrimaryEvent": true,
+                "eventTieredPricingUsd": {
+                  "FREE": {
+                    "tieredEventPriceUsd": 0.02
+                  },
+                  "BRONZE": {
+                    "tieredEventPriceUsd": 0.019
+                  },
+                  "SILVER": {
+                    "tieredEventPriceUsd": 0.018
+                  },
+                  "GOLD": {
+                    "tieredEventPriceUsd": 0.017
+                  },
+                  "PLATINUM": {
+                    "tieredEventPriceUsd": 0.017
+                  },
+                  "DIAMOND": {
+                    "tieredEventPriceUsd": 0.017
+                  }
+                }
+              }
+            }
+          },
+          "startedAt": "2026-08-19T22:06:26.000Z",
+          "createdAt": "2026-08-19T22:06:28.330Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "BlbCoXR7WzMuhTVbe",
+        "url": "https://apify.com/scrapers_lat/eudamed-medical-device-actors-scraper"
+      },
+      {
+        "title": "Funding Intel",
+        "name": "funding-intel",
+        "username": "fiery_dream",
+        "stats": {
+          "totalBuilds": 7,
+          "totalRuns": 347,
+          "totalUsers": 9,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 0,
+          "totalUsers90Days": 0,
+          "lastRunStartedAt": "2026-10-28T16:34:27.825Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 1,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 28,
+            "TIMED-OUT": 0,
+            "TOTAL": 28
+          }
+        },
+        "description": "AI-powered agent that discovers grants, monitors regulatory compliance, and tracks legal/supply chain risks across 14+ free government data sources.",
+        "categories": [
+          "AI",
+          "AGENTS",
+          "AUTOMATION"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/Bt_l6ywZP-it8O6WQTX--iTvTvwbaaa5MnXI9IevvMI/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vaW9YblVHRjBzVDd6SkFrV3MtYWN0b3ItMDl5UDlXSGxKR2ZhczRWdTktOExLVlh1WkVsRS1mdW5kaW5nLWludGVsLWljb24uanBn.webp",
+        "notice": "NONE",
+        "bookmarkCount": 1,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Cody Churchwell",
+        "userPictureUrl": "https://images.apifyusercontent.com/YViCVKzu0TbAA1iJErJmsuMqqhA1a41Chbwz6PogQaE/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vc2RaRXh3Zzg4eXhGclBwT3VTWlhNbE1yR2U2QmxydURCT19CenloTG5fOC9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloZG1GMFlYSnpMbWRwZEdoMVluVnpaWEpqYjI1MFpXNTBMbU52YlM5MUx6RTVPVEl3TmpreU16OTJQVFE.webp",
+        "currentPricingInfo": {
+          "minimalMaxTotalChargeUsd": null,
+          "pricingModel": "PAY_PER_EVENT",
+          "isPriceChangeNotificationSuppressed": false,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "eventPriceUsd": 0.00005
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.00001,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "startedAt": "2025-11-27T07:42:54.794Z",
+          "createdAt": "2025-11-27T07:42:53.589Z",
+          "apifyMarginPercentage": 0.2
+        },
+        "id": "09yP9WHlJGfas4Vu9",
+        "url": "https://apify.com/fiery_dream/funding-intel"
+      },
+      {
+        "title": "Federal Register Scraper - Rules & Regulations API",
+        "name": "federal-register-search",
+        "username": "pink_comic",
+        "stats": {
+          "totalBuilds": 18,
+          "totalRuns": 986,
+          "totalUsers": 9,
+          "totalUsers7Days": 0,
+          "totalUsers30Days": 3,
+          "totalUsers90Days": 3,
+          "lastRunStartedAt": "2026-10-29T07:00:03.367Z",
+          "actorReviewCount": 0,
+          "actorReviewRating": 0,
+          "bookmarkCount": 0,
+          "publicActorRunStats30Days": {
+            "ABORTED": 0,
+            "FAILED": 0,
+            "SUCCEEDED": 34,
+            "TIMED-OUT": 0,
+            "TOTAL": 34
+          }
+        },
+        "description": "Scrape Federal Register rules, proposed rules, notices, and presidential documents by keyword, agency, date, CFR title/part, or comment deadline. Built for regulatory monitoring, compliance, lobbying, and policy research. No API key needed.",
+        "categories": [
+          "AUTOMATION",
+          "DEVELOPER_TOOLS",
+          "AI"
+        ],
+        "pictureUrl": "https://images.apifyusercontent.com/sQtbVG971Gj_W9gJJOk6TseG4Wn-sf5zolz5dACVSxY/rs:fill:76:76/cb:1/aHR0cHM6Ly9hcGlmeS1pbWFnZS11cGxvYWRzLXByb2QuczMudXMtZWFzdC0xLmFtYXpvbmF3cy5jb20vcUhCNFdCdVdsUmtraUdIWXctYWN0b3ItQ0V0NFlvV2UyaVNsTzJQbnMtVjhFTWh6YTgzeC1mZWRlcmFsLXJlZ2lzdGVyLXNlYXJjaC5wbmc.webp",
+        "notice": "NONE",
+        "bookmarkCount": 0,
+        "actorReviewRating": 0,
+        "actorReviewCount": 0,
+        "badge": null,
+        "isWhiteListedForAgenticPayments": true,
+        "userFullName": "Ava Torres",
+        "userPictureUrl": "https://images.apifyusercontent.com/xHIQ8NPgSWhC7jbdKz1bniz5JDgrODfO99BuuEXmJbQ/rs:fill:32:32/cb:1/aHR0cHM6Ly9pbWFnZXMuYXBpZnl1c2VyY29udGVudC5jb20vV19KMWN2OFBpYlc5enZjT2ZWUVcxTnNyQVk1eU9Sd0F3QkMwWWYzWGpRSS9yczpmaWxsOjMyOjMyL2NiOjEvYUhSMGNITTZMeTloY0dsbWVTMXBiV0ZuWlMxMWNHeHZZV1J6TFhCeWIyUXVjek11ZFhNdFpXRnpkQzB4TG1GdFlYcHZibUYzY3k1amIyMHZjVWhDTkZkQ2RWZHNVbXRyYVVkSVdYY3RjSEp2Wm1sc1pTMW1NakYwYkdwVFFraDNMWE5qY21WbGJuTm9iM1JmTWpBeU5pMHdNeTB5TkY5aGRGODRMalExTGpFMVgwRk5MbkJ1WncucG5n.webp",
+        "currentPricingInfo": {
+          "pricingModel": "PAY_PER_EVENT",
+          "apifyMarginPercentage": 0.2,
+          "pricingPerEvent": {
+            "actorChargeEvents": {
+              "apify-actor-start": {
+                "eventTitle": "Actor Start",
+                "eventDescription": "Charged when the Actor starts running. Number of events charged depends on Actor memory (one event per GB, minimum one event).",
+                "isOneTimeEvent": true,
+                "eventPriceUsd": 0.0001
+              },
+              "apify-default-dataset-item": {
+                "eventTitle": "result",
+                "eventDescription": "Single result in the default dataset.",
+                "eventPriceUsd": 0.002,
+                "isPrimaryEvent": true
+              }
+            }
+          },
+          "createdAt": "2026-03-28T06:25:09.831Z",
+          "startedAt": "2026-03-28T06:25:09.831Z"
+        },
+        "id": "CEt4YoWe2iSlO2Pns",
+        "url": "https://apify.com/pink_comic/federal-register-search"
+      }
+    ]
+  }
+}

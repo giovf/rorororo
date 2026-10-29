@@ -1,0 +1,110 @@
+{
+  "request": "apify-ideas-d-2026-10-29",
+  "fetched_at": "2026-10-29T17:20:57.284Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?limit=10&search=internet%20archive",
+      "fetched_at": "2026-10-29T17:20:53.557Z",
+      "status": 200,
+      "elapsed_ms": 368,
+      "final_url": "https://api.apify.com/v2/store?limit=10&search=internet%20archive",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"701a-BSh2+Ep9qVbv5J8XKATKhUDDass\""
+      },
+      "file": "1.json",
+      "bytes": 28698,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?limit=10&search=euromillions",
+      "fetched_at": "2026-10-29T17:20:54.432Z",
+      "status": 200,
+      "elapsed_ms": 105,
+      "final_url": "https://api.apify.com/v2/store?limit=10&search=euromillions",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"eba-bK3hw6GpQJ9JMqSY0HGOw+i14wY\""
+      },
+      "file": "2.json",
+      "bytes": 3770,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?limit=10&search=exchange%20rates",
+      "fetched_at": "2026-10-29T17:20:55.038Z",
+      "status": 200,
+      "elapsed_ms": 112,
+      "final_url": "https://api.apify.com/v2/store?limit=10&search=exchange%20rates",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"5d6c-WysseFGI6Ne05L/Y8M+AHjTGCY0\""
+      },
+      "file": "3.json",
+      "bytes": 23916,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?limit=10&search=n8n",
+      "fetched_at": "2026-10-29T17:20:55.651Z",
+      "status": 200,
+      "elapsed_ms": 105,
+      "final_url": "https://api.apify.com/v2/store?limit=10&search=n8n",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"61ea-U1jyJfO7KjWC+1cEzunkERxl954\""
+      },
+      "file": "4.json",
+      "bytes": 25066,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?limit=10&search=zalo",
+      "fetched_at": "2026-10-29T17:20:56.257Z",
+      "status": 200,
+      "elapsed_ms": 105,
+      "final_url": "https://api.apify.com/v2/store?limit=10&search=zalo",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"8cba-6KItCP2XnqcwQmMaNwMKcRL534M\""
+      },
+      "file": "5.json",
+      "bytes": 36026,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?limit=10&search=regulatory%20compliance",
+      "fetched_at": "2026-10-29T17:20:56.863Z",
+      "status": 200,
+      "elapsed_ms": 136,
+      "final_url": "https://api.apify.com/v2/store?limit=10&search=regulatory%20compliance",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"35a4-4cALxck5DmQQEl6+C0arcG06o2M\""
+      },
+      "file": "6.json",
+      "bytes": 13732,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/api/ideas/data?page=1&sort=votes&status=toDevelop",
+      "fetched_at": "2026-10-29T17:20:57.000Z",
+      "status": 200,
+      "elapsed_ms": 225,
+      "final_url": "https://apify.com/api/ideas/data?page=1&sort=votes&status=toDevelop",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "7.json",
+      "bytes": 88418,
+      "truncated": false
+    }
+  ]
+}
