@@ -2017,3 +2017,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 18:50 | burn-down | Already fixed by relay-round-survives-stalled-host (10-26); 15 relay runs since all green, run 212 a cancel
 - 2026-10-29 18:50 | burn-down | Stopping at ~36 min: 4 items done (own-checkout, AWS spike parked, facet one-scan, relay cause); next slot continues
 - 2026-10-29 19:08 | triage | notify owner dispatched: last run started 16:07 UTC, 3 h ago
+- 2026-10-29 19:10 | watchdog | ci-failed: license-worker.yml run 1 18:27 — step an unnamed step; later run 2 failure
+- 2026-10-29 19:10 | watchdog | ci-failed: license-worker.yml run 2 18:27 — step an unnamed step; later run 3 failure
+- 2026-10-29 19:10 | watchdog | ci-failed: license-worker.yml run 3 18:28 — step an unnamed step; later run 4 failure
+- 2026-10-29 19:10 | watchdog | ci-failed: license-worker.yml run 4 18:29 — step an unnamed step; later run 5 failure
+- 2026-10-29 19:10 | watchdog | ci-failed: license-worker.yml run 5 18:29 — step an unnamed step; later run 6 failure
+- 2026-10-29 19:10 | watchdog | ci-failed: license-worker.yml run 6 18:31 — step an unnamed step; later run 7 failure
+- 2026-10-29 19:10 | watchdog | ci-failed: license-worker.yml run 7 18:35 — step an unnamed step; later run 8 ok

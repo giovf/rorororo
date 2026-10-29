@@ -1187,6 +1187,17 @@
       "doing_since": "2026-10-29",
       "done_at": "2026-10-29",
       "doing_by": "burn-down"
+    },
+    {
+      "id": "ci-license-worker-failing",
+      "title": "The .github/workflows/license-worker.yml workflow (license-worker.yml) failed 7 times this week: root-cause and fix it",
+      "why": "Filed by scripts/ci-failed-runs.ts (2026-10-29): license-worker.yml failed 7 times in 7 days — run 1 (2026-10-29 18:27 UTC, step \"unnamed\", later run 2 failure) — https://github.com/giovf/rorororo/actions/runs/40930996230; run 2 (2026-10-29 18:27 UTC, step \"unnamed\", later run 3 failure) — https://github.com/giovf/rorororo/actions/runs/40931008083; run 3 (2026-10-29 18:28 UTC, step \"unnamed\", later run 4 failure) — https://github.com/giovf/rorororo/actions/runs/40931114621; run 4 (2026-10-29 18:29 UTC, step \"unnamed\", later run 5 failure) — https://github.com/giovf/rorororo/actions/runs/40931225347; run 5 (2026-10-29 18:29 UTC, step \"unnamed\", later run 6 failure) — https://github.com/giovf/rorororo/actions/runs/40931287245; run 6 (2026-10-29 18:31 UTC, step \"unnamed\", later run 7 failure) — https://github.com/giovf/rorororo/actions/runs/40931681812; run 7 (2026-10-29 18:35 UTC, step \"unnamed\", later run 8 ok) — https://github.com/giovf/rorororo/actions/runs/40932258662. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/license-worker.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done.",
+      "effort_days": 0.2,
+      "proof": "seven days of license-worker.yml runs with no ci-failed line in docs/RUNS.md",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-29",
+      "updated": "2026-10-29"
     }
   ]
 }
