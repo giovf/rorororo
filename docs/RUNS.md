@@ -2032,3 +2032,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 19:35 | burn-down | The 500's message is only in Workers Logs: built lib/error-lines.ts + `worker errors 24h` row clause, 3 tests
 - 2026-10-29 19:35 | burn-down | ARCHITECTURE notes the reading; metrics job dispatched to read today's error lines; item stays doing
 - 2026-10-29 19:36 | burn-down | Metrics run 282 failed: error-lines.ts import lacked .ts (Node 24 type-stripping, as 10-26); fixed, re-dispatched
+- 2026-10-29 19:47 | burn-down | Row read: worker errors 24h 76 — /mcp POST events 25, class/15 page 7, D1 overloaded 2; lookup's line past top 3
+- 2026-10-29 19:47 | burn-down | Fold leaves request events out and the job log prints every message; re-dispatched to read the lookup's
