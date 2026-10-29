@@ -1,0 +1,4 @@
+GET https://apify.com/api/ideas/download?format=json&status=toDevelop
+GET https://apify.com/api/ideas/data?page=0&sort=votes&status=toDevelop
+GET https://apify.com/api/ideas/categories
+GET https://apify.com/api/ideas/download?format=csv&status=completed
