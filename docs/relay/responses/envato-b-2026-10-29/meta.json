@@ -1,0 +1,189 @@
+{
+  "request": "envato-b-2026-10-29",
+  "fetched_at": "2026-10-29T17:47:52.816Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=author+fee&locale=en-us&per_page=10",
+      "fetched_at": "2026-10-29T17:47:32.767Z",
+      "status": 200,
+      "elapsed_ms": 677,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=author+fee&locale=en-us&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"0d5bdc44ae82a133ff83eec3245da76f\""
+      },
+      "file": "1.json",
+      "bytes": 199719,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=exclusive+non-exclusive&locale=en-us&per_page=10",
+      "fetched_at": "2026-10-29T17:47:33.960Z",
+      "status": 200,
+      "elapsed_ms": 747,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=exclusive+non-exclusive&locale=en-us&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"3ef52d04fe6e678db242e62845d05d63\""
+      },
+      "file": "2.json",
+      "bytes": 267044,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=tax+information&locale=en-us&per_page=10",
+      "fetched_at": "2026-10-29T17:47:35.333Z",
+      "status": 200,
+      "elapsed_ms": 530,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=tax+information&locale=en-us&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"b56c868025b1489b2323148f4f9d2878\""
+      },
+      "file": "3.json",
+      "bytes": 83923,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=withdrawal+methods&locale=en-us&per_page=10",
+      "fetched_at": "2026-10-29T17:47:36.366Z",
+      "status": 200,
+      "elapsed_ms": 513,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=withdrawal+methods&locale=en-us&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"b6aa473fe59c9a2920cb1d18ba600775\""
+      },
+      "file": "4.json",
+      "bytes": 233337,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=AI+generated+content&locale=en-us&per_page=10",
+      "fetched_at": "2026-10-29T17:47:37.422Z",
+      "status": 200,
+      "elapsed_ms": 548,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=AI+generated+content&locale=en-us&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"461c73d4405ddf4116e4522a8ea6f0ca\""
+      },
+      "file": "5.json",
+      "bytes": 124146,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=review+requirements&locale=en-us&per_page=10",
+      "fetched_at": "2026-10-29T17:47:38.475Z",
+      "status": 200,
+      "elapsed_ms": 476,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=review+requirements&locale=en-us&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"040272dad8ebb70661e4aaca1a874976\""
+      },
+      "file": "6.json",
+      "bytes": 63148,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=become+an+author&locale=en-us&per_page=10",
+      "fetched_at": "2026-10-29T17:47:39.559Z",
+      "status": 200,
+      "elapsed_ms": 641,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/articles/search.json?query=become+an+author&locale=en-us&per_page=10",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"6f9b798b6b5f5f95efa406b7f36edebc\""
+      },
+      "file": "7.json",
+      "bytes": 145553,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.author.envato.com/api/v2/help_center/en-us/categories.json",
+      "fetched_at": "2026-10-29T17:47:40.709Z",
+      "status": 200,
+      "elapsed_ms": 558,
+      "final_url": "https://help.author.envato.com/api/v2/help_center/en-us/categories.json",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"1b37f2fb12ed97fae5d4d025a59ccb8f\""
+      },
+      "file": "8.json",
+      "bytes": 3019,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/category/javascript?sort=sales",
+      "render": true,
+      "fetched_at": "2026-10-29T17:47:41.268Z",
+      "status": 403,
+      "final_url": "https://codecanyon.net/category/javascript?sort=sales",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 12,
+        "failed": [
+          "GET https://codecanyon.net/category/javascript?sort=sales → 403",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a52401c40a31eab2/1793296062398/452f794035277bc89b2fa5e2a7cc81ed2ff6592823bb3221e762661d099aa2ef/CnTBh1NC5znO3sU8Eqg05sORnjstuvi",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/i/a52401c40a31eab2/Cn-A8vPT5CRoTO8-NL2vhj1MF8pUQIP_mXp5u9XyZnE0HJ8AWYDxzIEyn66uE2gtco9cdyiwtlKrVEMCjMy9BNmR-tGdgjQHOrk1B6z"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%o font-size:0;color:transparent {}",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "9.html",
+      "bytes": 28978,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://codecanyon.net/legal/author",
+      "render": true,
+      "fetched_at": "2026-10-29T17:47:46.068Z",
+      "status": 200,
+      "final_url": "https://help.author.envato.com/hc/en-us/articles/41371538488473-Envato-Market-Author-Terms",
+      "title": "Envato Market Author Terms – Envato Author Support | Help Center",
+      "rendered": {
+        "network_idle": true,
+        "requests": 62,
+        "failed": [
+          "POST https://help.author.envato.com/hc/activity → net::ERR_ABORTED",
+          "POST https://account.envato.com/api/public/zendesk_token → 401",
+          "POST https://envatoauthors.zendesk.com/frontendevents/pv?client=1B752747-577B-429A-A0E0-83861AF69088 → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "uncaught: this.model is not a constructor",
+          "Failed to load resource: the server responded with a status of 401 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 248195,
+      "truncated": false
+    }
+  ]
+}
