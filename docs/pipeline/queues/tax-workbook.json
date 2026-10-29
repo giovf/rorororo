@@ -141,8 +141,9 @@
       "effort_days": 0.5,
       "proof": "The product page is live on apps.gankdat.com with a working checkout and the download mail delivers the file (tested with a Stripe test event); a first sale within 60 days of the page going live; 0 sales at day 60 with ≥ 5 views a day → the page stays as the file’s home and no further own-checkout work is queued",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-29"
+      "status": "doing",
+      "added": "2026-10-29",
+      "doing_since": "2026-10-29"
     },
     {
       "id": "payhip-listing-live",
