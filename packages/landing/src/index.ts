@@ -9,6 +9,7 @@ import { Hono, type Context } from 'hono';
 import { getCookie, setCookie, deleteCookie } from 'hono/cookie';
 import raw from './ops-data.json' with { type: 'json' };
 import { diligence } from './diligence';
+import { payhip } from './payhip';
 
 type Bindings = {
   ASSETS: Fetcher;
@@ -21,6 +22,7 @@ type Bindings = {
   DILIGENCE_GANKDAT_KEY?: string;
   DILIGENCE_BASE_URL?: string;
   DILIGENCE_MODEL?: string;
+  PAYHIP_API_KEY?: string;
 };
 type Ctx = Context<{ Bindings: Bindings }>;
 
@@ -210,6 +212,8 @@ app.post('/ops/api/ideas/ack', async (c) => {
 // `meta-global-ai-hackathon-entry`, 2026-10-26); public, no session, its own caps in KV.
 
 app.route('/diligence', diligence);
+// Payhip sale webhook + keyless 30-day summary (tax-workbook payhip-twin-listing, 2026-10-29): src/payhip.ts.
+app.route('/hooks/payhip', payhip);
 
 // ------------------------------------------------------------------ everything else: the static site
 

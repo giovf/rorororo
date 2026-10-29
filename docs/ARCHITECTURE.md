@@ -31,6 +31,8 @@ packages/landing         Cloudflare Worker at https://apps.gankdat.com/: public 
                          plus /diligence (2026-10-26): the Meta hackathon's public counterparty-check page — Muse Spark on
                          Meta Model API over gankdat's registers via MCP (`src/diligence-core.ts`, shared with the CLI);
                          a report with no company number pinned is relabelled `UNCONFIRMED — name match only`, never HIGH (2026-10-29)
+                         plus /hooks/payhip (2026-10-29): the Payhip sale webhook for the tax workbook's twin listing — signed posts into
+                         per-day KV counts, keyless /summary read by gankdat's Daily numbers (`src/payhip.ts`)
 packages/telemetry       opt-in funnel event counting (planned, V2)
 ventures/<slug>/         one workspace per product: venture.json, RESEARCH.md, src/
 ventures/variables-toolkit   V1 Figma plugin — launched 2026-09-21 on Figma Community, $12 one-time

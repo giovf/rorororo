@@ -56,13 +56,13 @@
     {
       "id": "payhip-twin-listing",
       "title": "Twin listing of the workbook on a Payhip store (free plan, Stripe connected, Payhip handles UK/EU VAT): store copy from LISTING.md, link from the apps.gankdat.com product page, Taxes default, marketplace submission once US$10 of sales exist, a sale webhook into the Daily numbers",
-      "why": "Spike docs/exchange/spikes/payhip-digital-downloads-shelf.md (burn-down 2026-10-24): £0 launch, Payhip 5 % + Stripe UK ≈ 9 % of a £6.99 sale (≈ £6.34 kept vs ≈ £5.80 on Etsy), Payhip acts as reseller for UK/EU VAT, payouts daily through the owner's Stripe, a buyer-facing marketplace that admits a store after US$10 of its own sales, and webhooks that let the funnel be read without mail. Not the primary shelf: demand is unmeasurable there (no counts; payhip.com blocks automated reads) and the buyers are on Etsy — so a twin at the same price, and the fallback shelf if the owner declines Etsy's set-up fee. Score 1.5 × 1 ÷ (0.2 d + 10 owner min) ≈ 5. Unblocked 2026-10-29: the owner's Payhip store is https://payhip.com/gankdat (Stripe or PayPal connected per action 029 step 4); the product upload itself stays the owner's click (payhip.com cannot be logged into from the sandbox).",
+      "why": "Spike docs/exchange/spikes/payhip-digital-downloads-shelf.md (burn-down 2026-10-24): £0 launch, Payhip 5 % + Stripe UK ≈ 9 % of a £6.99 sale (≈ £6.34 kept vs ≈ £5.80 on Etsy), Payhip acts as reseller for UK/EU VAT, payouts daily through the owner's Stripe, a buyer-facing marketplace that admits a store after US$10 of its own sales, and webhooks that let the funnel be read without mail. Not the primary shelf: demand is unmeasurable there (no counts; payhip.com blocks automated reads) and the buyers are on Etsy — so a twin at the same price, and the fallback shelf if the owner declines Etsy's set-up fee. Score 1.5 × 1 ÷ (0.2 d + 10 owner min) ≈ 5. Unblocked 2026-10-29: the owner's Payhip store is https://payhip.com/gankdat (Stripe or PayPal connected per action 029 step 4); the product upload itself stays the owner's click (payhip.com cannot be logged into from the sandbox). — Built 2026-10-29 (burn-down): paste-ready store listing in ventures/tax-workbook/PAYHIP.md (same copy and price as Etsy, Payhip's download-mail delivery line, Taxes default kept, marketplace button held until US$10); the product page apps.gankdat.com/tax-workbook.html (linked from the index card and the sitemap) with the Etsy listing and the Payhip store; the sale webhook receiver /hooks/payhip on the landing Worker (packages/landing/src/payhip.ts: signature = sha256 of the store API key per Payhip's webhooks article, per-day counts and pence in KV, no buyer data, keyless /hooks/payhip/summary) read into the gankdat Daily numbers row as `payhip 30d: …`; docs/ci/landing.yml stores the PAYHIP_API_KEY repository secret on the Worker. The upload and the Developer-tab webhook are the owner's (action 033, ~13 min): payhip-listing-live and payhip-marketplace-submission follow.",
       "effort_days": 0.2,
       "proof": "The Payhip store page is live with the file at £6.99 and linked from the product page; a sale webhook row appears in the Daily numbers; first Payhip sale within 60 days or the twin is delisted at the Etsy day-60 read",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-24",
-      "doing_since": "2026-10-29"
+      "done_at": "2026-10-29"
     },
     {
       "id": "reseller-workbook-second-listing",
@@ -142,6 +142,28 @@
       "proof": "The product page is live on apps.gankdat.com with a working checkout and the download mail delivers the file (tested with a Stripe test event); a first sale within 60 days of the page going live; 0 sales at day 60 with ≥ 5 views a day → the page stays as the file’s home and no further own-checkout work is queued",
       "score": 5,
       "status": "todo",
+      "added": "2026-10-29"
+    },
+    {
+      "id": "payhip-listing-live",
+      "title": "Record the Payhip twin listing live: switch the product page and index card from the store link to the product permalink the owner gives back, a RESEARCH.md §7 Metrics row, confirm the webhook secret is on the Worker (the summary endpoint answers 200 and the next Daily numbers row reads `payhip 30d:` without n/a), and date the day-60 read with the Etsy one",
+      "why": "The upload and the Developer-tab webhook are the owner's hands (action 033, 2026-10-29; payhip.com cannot be opened from the sandbox). When the owner gives back the product link and 'Payhip webhook set', this item records the listing and checks the reading end to end; the proof clock of payhip-twin-listing (first Payhip sale within 60 days or the twin is delisted at the Etsy day-60 read, 2026-12-28) starts at the live date.",
+      "effort_days": 0.1,
+      "proof": "tax-workbook.html links payhip.com/b/<key>; a Metrics row `Payhip live` exists; the Daily numbers row carries `payhip 30d: 0 sales` (not n/a) the day after",
+      "score": 5,
+      "status": "blocked",
+      "blocked_on": "Owner action 033: the product upload on payhip.com/gankdat and the webhook URL + PAYHIP_API_KEY repository secret (docs/for-owner/actions/033-payhip-upload-and-webhook.md); unblocked by the owner's '033 done' note with the product link",
+      "added": "2026-10-29"
+    },
+    {
+      "id": "payhip-marketplace-submission",
+      "title": "Submit the workbook to Payhip's marketplace once the store has US$10 of its own sales (the eligibility rule in Payhip's Marketplace article, read 2026-10-24 and 2026-10-29): raise the one-click owner step (Category & Tags tab → Submit to marketplace, ~1 min) and record the approval (aim 10 days) in RESEARCH.md §7",
+      "why": "Payhip's marketplace recommends products to buyers outside the store's own following at no extra fee, but admits a store only after US$10 of total sales (self-purchases excluded) and a review; digital products only, each product approved separately. The Daily numbers `payhip 30d:` reading (and the §7 Sale rows) say when the bar is met — about two sales of the £6.99 workbook. Reach is the only thing this shelf lacks, so the submission is the lever worth one owner minute.",
+      "effort_days": 0.05,
+      "proof": "the store is admitted and the product approved on the marketplace; sales from marketplace traffic appear in the Payhip summary within 30 days of approval",
+      "score": 4,
+      "status": "blocked",
+      "blocked_on": "US$10 of Payhip sales (gross_pence ≥ ~800 in the /hooks/payhip/summary reading, or two Sale rows in RESEARCH.md §7 from Payhip); then a ~1-minute owner click raised as an action step",
       "added": "2026-10-29"
     }
   ],

@@ -1985,3 +1985,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 17:20 | build | Tool results now parsed in the live MCP shape (ok/data/meta.total); step lines said N chars
 - 2026-10-29 17:20 | build | Tests: two-company name + HIGH model verdict -> UNCONFIRMED, no HIGH; page shows the label
 - 2026-10-29 17:20 | build | SUBMISSION, WALKTHROUGH and ARCHITECTURE note the rule; item done, nothing for the owner
+- 2026-10-29 17:52 | burn-down | Built tax-workbook payhip-twin-listing (5): PAYHIP.md store copy, product page tax-workbook.html, sitemap, card
+- 2026-10-29 17:52 | burn-down | Landing Worker /hooks/payhip: signed Payhip webhook, per-day counts in KV, keyless 30-day summary; 6 tests
+- 2026-10-29 17:52 | burn-down | gankdat Daily numbers row reads `payhip 30d:` from the summary; docs/ci/landing.yml stores PAYHIP_API_KEY
+- 2026-10-29 17:52 | burn-down | Queued payhip-listing-live (blocked: action 033) and payhip-marketplace-submission (blocked: US$10 sales)
+- 2026-10-29 17:52 | burn-down | Action 033 raised (~13 min, £0): upload the workbook on Payhip and set the sale webhook + its secret
+- 2026-10-29 17:52 | notify | Tax workbook ready for your Payhip store: one upload and a webhook switch, about 13 minutes
+- 2026-10-29 18:04 | burn-down | Stopping at ~53 min: 2 items done (new-ventures spike parked, tax-workbook Payhip twin); next slot continues

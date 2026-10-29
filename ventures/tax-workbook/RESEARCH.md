@@ -146,6 +146,7 @@ rows written from Etsy's deposit mail. The day-60 kill clock (§6) starts at the
 | 2026-10-25 | Reading wired | — | — | 0 | inbox triage writes `Sale`/`Refund` rows from Etsy order mail and deposits to the ledger; the weekly report counts them; shop still waits on action 029 |
 | 2026-10-26 | Kindle built | — | — | 0 | `UK Sole Trader Tax 2026/27` EPUB (9,102 words, epubcheck clean) and cover built; KINDLE.md listing pack; action 029 step 5 raised (KDP account + upload, ~15 min, £0) |
 | 2026-10-29 | Listed | — | — | 0 | Etsy listing live (shop taxelicious.etsy.com, listing 4605571079, £6.99 launch price to 30 Nov); set-up fee £14 + £0.20 listing fee; the day-60 clock (§6) runs to 2026-12-28. Same sitting: Payhip store open (payhip.com/gankdat, twin listing next), Kindle guide submitted to KDP and in review |
+| 2026-10-29 | Payhip twin built | — | — | 0 | PAYHIP.md copy, product page apps.gankdat.com/tax-workbook.html, webhook receiver /hooks/payhip live on the landing Worker (counts only, no buyer data), Daily numbers reads `payhip 30d:`; the upload and the webhook switch are action 033 |
 
 ## 8. Owner steps (batched, raised by the build that finishes the workbook, never before)
 
@@ -182,3 +183,4 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   action 029 since 10-24 with no reply and this is the one shelf that needs no new account, identity check or fee. Its only owner step
   (one Payment Link, ~3 min, live-mode Stripe objects being ask-first) is raised by the build as action 029 step 6. The Kindle EPUB is
   not sold there: KDP Select's exclusivity would be breached. Nothing fetched; `research_after` 2026-11-03 unchanged.
+- **2026-10-29 17:52 (burn-down, `payhip-twin-listing`):** Payhip's webhooks article read through the relay (`help.payhip.com/article/115-webhooks`, updated 2026-09-29): four events (`paid`, `refunded`, two subscription ones), a JSON POST with prices in pence and a `signature` equal to sha256 of the store's API key, a retry once an hour for three hours unless the endpoint answers 200; the marketplace article unchanged (US$10 of own sales, then review). Built: the receiver at `apps.gankdat.com/hooks/payhip` keeping per-day counts and pence in KV (never the buyer's email or IP) with a keyless 30-day summary the gankdat Daily numbers row reads as `payhip 30d:`; the store copy `PAYHIP.md`; the product page. The owner's part is action 033 (~13 min). Nothing else fetched; `research_after` unchanged.
