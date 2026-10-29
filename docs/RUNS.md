@@ -2003,3 +2003,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 18:26 | burn-down | tax-workbook.html Buy block hidden behind a placeholder, thanks-tax-workbook.html, page test ties hidden to it
 - 2026-10-29 18:26 | burn-down | Action 034 raised (~3 min, £0): one Stripe Payment Link with metadata venture=tax-workbook; own-checkout-live queued
 - 2026-10-29 18:26 | notify | Tax workbook can sell from our own page too: one Stripe payment link from you, about 3 minutes
+- 2026-10-29 18:35 | burn-down | license-worker.yml first run: failure (invalid workflow file: a step name held an unquoted colon)
+- 2026-10-29 18:35 | burn-down | Fix: both step names quoted, full file dropped again in docs/ci/license-worker.yml; next slot checks run 2
+- 2026-10-29 18:40 | burn-down | Spike aws-data-exchange-provider: AWS provider, seller, fee and pricing pages read (4 relay rounds)
+- 2026-10-29 18:40 | burn-down | Park: UK individual eligible, 3 % fee, but VAT number + US bank + KYC + a card-backed AWS account needed
+- 2026-10-29 18:40 | burn-down | Rivals priced: mnAi UK company lists US$280k/yr, verify API US$0.25/check; parked on a VAT/incorporation trigger

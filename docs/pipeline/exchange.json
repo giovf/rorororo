@@ -638,6 +638,14 @@
       "trigger": "Re-read 2027-01-15, one relay line each for help-centre articles 53981083605913 (applications paused) and 13313674070681 (AI policy): promote only if applications reopen for code items and AI-generated software is no longer barred; the sales-count bar is then read from a rendered category page if the challenge wall has gone, else from snippets.",
       "added": "2026-10-29",
       "source": "new-ventures spike (burn-down 2026-10-29)"
+    },
+    {
+      "id": "aws-data-exchange-provider",
+      "title": "AWS Data Exchange as a data-marketplace shelf for gankdat's registers (an API Gateway wrapper listed as an 'AWS Data Exchange for APIs' product)",
+      "status": "parked",
+      "why": "Spike 2026-10-29 (new-ventures spike-aws-data-exchange-provider, docs/exchange/spikes/aws-data-exchange-provider.md, burn-down; seeded by the 2026-W44 exchange). AWS's own pages, four relay rounds: a UK individual is an eligible provider (no company needed) and the economics pass — a 3 % listing fee on Data Exchange public offers (Seller Guide, 2024-01-05) and ≈ US$3.50 per million API Gateway requests against US$0.001 per result — but a paid non-US provider must give a W-8, a VAT or GST registration number (the UK footnote: 'VAT registration information in country of establishment'), a US bank account (or a Hyperwallet virtual one) with KYC for a UK bank, and pass a Support-case qualification by the Data Exchange team; an API product must answer subscriber support in 1 business day; and the seller account sits on an AWS account, which asks for a card at sign-up (none exists here) — no card on a £0 line (owner 2026-10-16) and no new business verification below a score of 10 (owner 2026-10-29). The shelf has buyers for exactly this data: mnAi sells five Companies House derivatives at US$280,000 a year each, Open Automation a company-verification API at US$0.25 per check, ComplyAdvantage sanctions screening at US$65,000 a year — procurement prices, no subscriber counts published, and the catalogue's data-only filter did not apply in the rendered search.",
+      "trigger": "the owner registers for VAT or incorporates and accepts an AWS account with a card (same family as the Snowflake park: the data line passing £300 MRR makes the admin worth it); then a gankdat item wraps the Worker in an API Gateway REST endpoint and lists one product per register family",
+      "added": "2026-10-29"
     }
   ]
 }
