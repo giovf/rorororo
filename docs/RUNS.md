@@ -2042,3 +2042,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 20:08 | burn-down | Cause: cold-key auth read hit a D1 blip; a fresh isolate has no fallback, so the QA's one call 500'd
 - 2026-10-29 20:08 | burn-down | Shared actor client (17 single-source actors) retries a 5xx twice; CI rebuilds them; Worker retry queued
 - 2026-10-29 20:08 | burn-down | Stopping at ~52 min: 1 item done (ci-license-worker), 1 in progress (Apify QA repair); next slot continues
+- 2026-10-29 20:30 | burn-down | foundry ci-gankdat-metrics-failing done: run 282 died on error-lines importing ./crawler-hits sans .ts
+- 2026-10-29 20:30 | burn-down | Fixed 19:36; the root guard existed but the gankdat-only gate and the pre-push hook never ran it
+- 2026-10-29 20:30 | burn-down | Walker is now a CLI (npm run entry-imports) run by the pre-push hook and the gankdat check script

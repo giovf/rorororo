@@ -6,11 +6,16 @@
 // gate was green while Node 24's type stripping on the runner refused the import; the row was
 // missing for a day. This module walks every `node … <file>.ts|.mjs|.js` entry point named in
 // `.github/workflows/*.yml`, follows the relative imports it reaches (static and dynamic) and
-// reports each specifier that carries no extension. The root test fails on one, so the pre-push
-// hook sees it. Bare specifiers (packages, node: builtins) are not followed.
+// reports each specifier that carries no extension. The root test fails on one. Bare specifiers
+// (packages, node: builtins) are not followed. 2026-10-29 (foundry `ci-gankdat-metrics-failing`):
+// the same failure again (metrics run 282, error-lines.ts importing `./crawler-hits`) — gankdat
+// work is gated with `npm run check -w @foundry/gankdat`, which never ran this root test, and the
+// pre-push hook ran only Prettier and ESLint; so the module is also a CLI (`npm run entry-imports`,
+// one second) that the hook runs on any pushed code file and the gankdat `check` script runs too.
 
 import { existsSync, readFileSync, readdirSync, statSync } from 'node:fs';
 import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
 export interface Violation {
   /** repo-relative file that holds the import */
@@ -140,4 +145,19 @@ export function formatViolations(violations: Violation[]): string {
   return violations
     .map((v) => `${v.file}: import '${v.specifier}' has no extension (Node refuses it)`)
     .join('\n');
+}
+
+// CLI: `node scripts/node-entry-imports.ts` prints the violations and exits 1 on any; nothing when
+// imported (the test imports this module).
+if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+  const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+  const violations = checkWorkflows(root);
+  if (violations.length > 0) {
+    console.error(formatViolations(violations));
+    console.error(
+      `entry-imports: ${violations.length} extensionless relative import(s) reachable from a Node-run workflow entry point — Node 24 type stripping refuses them on the runner`,
+    );
+    process.exit(1);
+  }
+  console.log('entry-imports: ok');
 }

@@ -41,6 +41,7 @@
     "mcp-probe": "node --disable-warning=ExperimentalWarning scripts/mcp-probe.ts",
     "handoffs": "node --disable-warning=ExperimentalWarning scripts/handoffs.ts",
     "runs": "node --disable-warning=ExperimentalWarning scripts/runs-check.ts",
+    "entry-imports": "node --disable-warning=ExperimentalWarning scripts/node-entry-imports.ts",
     "first-runs": "node --disable-warning=ExperimentalWarning scripts/first-runs.ts",
     "claims": "node --disable-warning=ExperimentalWarning scripts/bounty-claims.ts",
     "slots": "node --disable-warning=ExperimentalWarning scripts/slot-utilisation.ts",
