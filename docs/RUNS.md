@@ -2057,3 +2057,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 21:40 | burn-down | foundry burn-weekly-slot-budget built: cold paces the week from last week's capacity (W44: 33 slots)
 - 2026-10-29 21:40 | burn-down | weekBudgetStop + learntWeekSlots + workingSlots in pipeline-cold.ts; BURN.json week_slots 33, reserve 3
 - 2026-10-29 21:40 | burn-down | Night cap 3 burn-down slots Thu–Tue after the two builds, none Wednesday; 8 tests; routine GATE text updated
+- 2026-10-29 21:30 | burn-down | gankdat zoho-crm-uk-registers-widget blocked: listing needs profile, bank, agreement, demo call
+- 2026-10-29 21:30 | burn-down | Owner-request cap (≤ 15 min, no business identity unless score ≥ 10) at 2.4; card fold kept in lib
