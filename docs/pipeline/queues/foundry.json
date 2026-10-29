@@ -1208,9 +1208,10 @@
       "effort_days": 0.2,
       "proof": "seven days of gankdat-metrics.yml runs with no ci-failed line in docs/RUNS.md",
       "score": 5,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-10-29",
-      "updated": "2026-10-29"
+      "updated": "2026-10-29",
+      "doing_since": "2026-10-29"
     }
   ]
 }
