@@ -2065,3 +2065,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 21:50 | burn-down | foundry worker-logs-dispatch-job built: docs/ci/worker-logs.yml prints Worker log lines, commits nothing
 - 2026-10-29 21:50 | burn-down | scripts/worker-logs.mjs: one Query Builder POST (needle, request id, level, window, limit) over wave-logs.ts
 - 2026-10-29 21:50 | burn-down | ARCHITECTURE, SCHEDULERS and the burn-down prompt point at it; first run checked by the next slot
+- 2026-10-29 21:41 | burn-down | Exchange pre-research: Nomad Data buyer-request channel for the registers — spike seeded (4); 0 spikes were open
+- 2026-10-29 21:41 | burn-down | WebSearch: vendors pay no fee or revenue share, anonymous profile via 'book a call', buyers pay for contact
+- 2026-10-29 21:41 | burn-down | Skipped: Databricks Marketplace needs a Premium account and the Data Partner Program (a paid account on a £0 line)
+- 2026-10-29 21:41 | burn-down | Dependabot majors: no open Dependabot PR (list_pull_requests: only the 2025 Develop PR); nothing to review
+- 2026-10-29 21:41 | burn-down | Stopping at ~30 min: foundry researched, 3 items built, Zoho parked, spike seeded; night cap stops the next slots
