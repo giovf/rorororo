@@ -1246,8 +1246,9 @@
       "effort_days": 0.3,
       "proof": "the next Worker-side cause is read with one worker-logs dispatch and no Daily numbers dispatch (RUNS.md); gankdat metrics billed minutes fall below 60 per 7 days on the ci-minutes line",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-29"
+      "status": "doing",
+      "added": "2026-10-29",
+      "doing_since": "2026-10-29"
     }
   ]
 }
