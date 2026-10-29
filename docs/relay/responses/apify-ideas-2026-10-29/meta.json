@@ -1,0 +1,128 @@
+{
+  "request": "apify-ideas-2026-10-29",
+  "fetched_at": "2026-10-29T17:15:12.164Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://apify.com/ideas",
+      "fetched_at": "2026-10-29T17:13:45.072Z",
+      "status": 200,
+      "elapsed_ms": 199,
+      "final_url": "https://apify.com/ideas",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"oonkkawyb068hw\""
+      },
+      "file": "1.html",
+      "bytes": 290993,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/ideas",
+      "render": true,
+      "fetched_at": "2026-10-29T17:13:45.780Z",
+      "status": 200,
+      "final_url": "https://apify.com/ideas",
+      "title": "Actor and integration ideas · Apify",
+      "rendered": {
+        "network_idle": false,
+        "requests": 399,
+        "failed": [
+          "POST https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=1&ae=g&auid=734995545.1793294027&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&en=page_view&dl=https%3A%2F%2Fapify.com%2Fideas&scrsrc=w",
+          "POST https://www.google.com/rmkt/collect/695293971/?random=1793294027904&cv=11&fst=1793294027904&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6as0v9178109438za20ozb79053307zd79053307xecxf1&g",
+          "POST https://www.google.com/ccm/collect?rcb=18&frm=0&apvc=0&auid=734995545.1793294027&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&tid=AW-695293971&en=page_view&dl=https%3A%2F%2Fapify.com%2Fi",
+          "POST https://www.google.com/rmkt/collect/695293971/?random=1793294027940&cv=11&fst=1793294027940&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6as0v9178109438za20ozb79053307zd79053307xecxf1&g",
+          "POST https://www.google.com/ccm/collect?rcb=18&frm=0&apvc=0&auid=734995545.1793294027&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&tid=AW-695293971&en=page_view&dl=https%3A%2F%2Fapify.com%2Fi",
+          "POST https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=0&auid=734995545.1793294027&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&tid=DC-15511372&en=page_view&dl=https%3A%2F%2Fapify.com%2Fide",
+          "POST https://www.google.com/ccm/collect?rcb=11&frm=0&apvc=0&auid=734995545.1793294027&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&tid=AW-18019971215&en=page_view&dl=https%3A%2F%2Fapify.com%2",
+          "POST https://www.google.com/rmkt/collect/18019971215/?random=1793294028100&cv=11&fst=1793294028100&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6as0v9254641577za20ozb79053307zd79053307xecxf1",
+          "GET https://js-na1.hs-scripts.com/50876454.js → net::ERR_BLOCKED_BY_ORB",
+          "POST https://alb.reddit.com/rp?id=t2_jg1y67k9&event=PageVisit → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=1&frm=0&apvc=0&auid=734995545.1793294027&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&tid=AW-18174043595&en=page_view&dl=https%3A%2F%2Fapify.com%2F",
+          "POST https://www.google.com/rmkt/collect/18174043595/?random=1793294028276&cv=11&fst=1793294028276&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6as0v9254875533za208zb79053307zd79053307xecxf1",
+          "GET https://apify.com/ideas/n8n-integration?_rsc=9NHbgy1eC4aHv_oS → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/zalo-scraper?_rsc=9NHbgy1eC4aHv_oS → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/internet-archive?_rsc=9NHbgy1eC4aHv_oS → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/twitterads-scraper?_rsc=9NHbgy1eC4aHv_oS → net::ERR_ABORTED",
+          "POST https://bzr.openai.com/v1/sdk/events?pid=KwiuP3w5jdJh8Hiv2ejbQU&st=oaiq-web&sv=0.1.93&t=1793294029567&ec=3 → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/chatgpt-deepfake-identifier?_rsc=4E0WnXCOn50ex1u4 → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/webflow-mcp-80006df4?_rsc=4E0WnXCOn50ex1u4 → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/ev-charging-stations-6f2c77c8?_rsc=4E0WnXCOn50ex1u4 → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Loading the image 'https://www.googleadservices.com/ccm/conversion/695293971/?random=1793294027930&cv=11&fst=1793294027930&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6as0v9178109438za20ozb79",
+          "Loading the image 'https://www.googleadservices.com/ccm/conversion/695293971/?random=1793294027951&cv=11&fst=1793294027951&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6as0v9178109438za20ozb79"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"oonkkawyb068hw\""
+      },
+      "file": "2.html",
+      "bytes": 425035,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/ideas?sortBy=votes",
+      "render": true,
+      "fetched_at": "2026-10-29T17:14:29.055Z",
+      "status": 200,
+      "final_url": "https://apify.com/ideas?sortBy=votes",
+      "title": "Actor and integration ideas · Apify",
+      "rendered": {
+        "network_idle": false,
+        "requests": 455,
+        "failed": [
+          "GET https://apify.com/?_rsc=4E0WnXCOn50ex1u4 → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=2&frm=0&apvc=1&ae=g&auid=270450728.1793294070&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&en=page_view&dl=https%3A%2F%2Fapify.com%2Fideas%3FsortBy",
+          "GET https://apify.com/ideas/n8n-integration?_rsc=4E0WnXCOn50ex1u4 → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/internet-archive?_rsc=4E0WnXCOn50ex1u4 → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/twitterads-scraper?_rsc=4E0WnXCOn50ex1u4 → net::ERR_ABORTED",
+          "GET https://js-na1.hs-scripts.com/50876454.js → net::ERR_BLOCKED_BY_ORB",
+          "POST https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=0&auid=270450728.1793294070&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&tid=DC-15511372&en=page_view&dl=https%3A%2F%2Fapify.com%2Fid",
+          "POST https://www.google.com/ccm/collect?rcb=3&frm=0&apvc=0&auid=270450728.1793294070&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&tid=AW-18019971215&en=page_view&dl=https%3A%2F%2Fapify.com%2F",
+          "POST https://www.google.com/rmkt/collect/18019971215/?random=1793294070852&cv=11&fst=1793294070852&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6as0h1v9254641577za20ozb79053307zd79053307xecx",
+          "POST https://alb.reddit.com/rp?id=t2_jg1y67k9&event=PageVisit → net::ERR_ABORTED",
+          "POST https://www.google.com/ccm/collect?rcb=4&frm=0&apvc=0&auid=270450728.1793294070&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&tid=AW-695293971&en=page_view&dl=https%3A%2F%2Fapify.com%2Fid",
+          "POST https://www.google.com/rmkt/collect/695293971/?random=1793294070967&cv=11&fst=1793294070967&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6as0h1v9178109438za20ozb79053307zd79053307xecxf1",
+          "POST https://www.google.com/rmkt/collect/695293971/?random=1793294071003&cv=11&fst=1793294071003&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6as0h1v9178109438za20ozb79053307zd79053307xecxf1",
+          "POST https://www.google.com/ccm/collect?rcb=4&frm=0&apvc=0&auid=270450728.1793294070&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&tid=AW-695293971&en=page_view&dl=https%3A%2F%2Fapify.com%2Fid",
+          "POST https://www.google.com/ccm/collect?rcb=16&frm=0&apvc=0&auid=270450728.1793294070&dt=Actor%20and%20integration%20ideas%20%C2%B7%20Apify&tid=AW-18174043595&en=page_view&dl=https%3A%2F%2Fapify.com%2",
+          "POST https://www.google.com/rmkt/collect/18174043595/?random=1793294071194&cv=11&fst=1793294071194&fmt=8&bg=ffffff&guid=ON&async=1&en=gtag.config&gtm=45be6as0v9254875533za208zb79053307zd79053307xecxf1",
+          "GET https://apify.com/ideas/n8n-integration?_rsc=9NHbgy1eC4aHv_oS → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/twitterads-scraper?_rsc=9NHbgy1eC4aHv_oS → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/internet-archive?_rsc=9NHbgy1eC4aHv_oS → net::ERR_ABORTED",
+          "GET https://apify.com/ideas/zalo-scraper?_rsc=9NHbgy1eC4aHv_oS → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Loading the image 'https://www.googleadservices.com/ccm/conversion/695293971/?random=1793294070991&cv=11&fst=1793294070991&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6as0h1v9178109438za20ozb",
+          "Loading the image 'https://www.googleadservices.com/ccm/conversion/695293971/?random=1793294071013&cv=11&fst=1793294071013&fmt=3&bg=ffffff&guid=ON&async=1&en=page_view&gtm=45be6as0h1v9178109438za20ozb"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"oonkkawyb068hw\""
+      },
+      "file": "3.html",
+      "bytes": 425295,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://api.apify.com/v2/store?limit=5&search=companies%20house",
+      "fetched_at": "2026-10-29T17:15:11.951Z",
+      "status": 200,
+      "elapsed_ms": 212,
+      "final_url": "https://api.apify.com/v2/store?limit=5&search=companies%20house",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "etag": "W/\"3f26-sgTx0GyxyNDp8Yo+LIxISbcjHX4\""
+      },
+      "file": "4.json",
+      "bytes": 16166,
+      "truncated": false
+    }
+  ]
+}
