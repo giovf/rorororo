@@ -2048,3 +2048,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 20:40 | burn-down | gankdat apify-companies-house-qa-repair: cold-key auth retries a transient D1 read once (200 ms)
 - 2026-10-29 20:40 | burn-down | Three tests: retry authenticates; second transient error 500s after two reads; non-transient at once
 - 2026-10-29 20:40 | burn-down | Item stays doing for its proof: the 10-30 Daily numbers row's Apify QA outcome and the flag
+- 2026-10-29 20:55 | burn-down | gankdat zoho-crm-uk-registers-widget started: verify-org.ts folds the three registers into one card
+- 2026-10-29 20:55 | burn-down | Lookup by number or name, charity by number/unambiguous name, sanctions by name or alias; 7 tests
+- 2026-10-29 20:55 | burn-down | Left: Sigma widget shell and manifest, listing assets, pricing block, the owner's profile and demo call
