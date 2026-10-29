@@ -1190,15 +1190,16 @@
     },
     {
       "id": "ci-license-worker-failing",
-      "title": "The .github/workflows/license-worker.yml workflow (license-worker.yml) failed 7 times this week: root-cause and fix it",
+      "title": "The .github/workflows/license-worker.yml workflow (license-worker.yml) failed 7 times this week: root-cause and fix it — Done 2026-10-29 (burn-down): cause named, fix already on main. Runs 1–7 (18:27–18:35) were GitHub refusing the workflow file itself: the step name `Load the download products' files … (private: served only by …)` held an unquoted colon, so the YAML did not parse and every push to main fired a jobless 'No jobs were run' failure regardless of the path filters (relay and claim commits included). The 18:35 burn-down quoted both step names and dropped the file in docs/ci/; installer commit 62b6f44 (18:35:45) moved it and run 8 on that commit succeeded (build, KV put, deploy, smoke 200/403). The scanner now labels a jobless failed run `no job ran (invalid workflow file)` instead of `unnamed`. The seven-day proof completes on 11-05; the watchdog re-files on a recurrence.",
       "why": "Filed by scripts/ci-failed-runs.ts (2026-10-29): license-worker.yml failed 7 times in 7 days — run 1 (2026-10-29 18:27 UTC, step \"unnamed\", later run 2 failure) — https://github.com/giovf/rorororo/actions/runs/40930996230; run 2 (2026-10-29 18:27 UTC, step \"unnamed\", later run 3 failure) — https://github.com/giovf/rorororo/actions/runs/40931008083; run 3 (2026-10-29 18:28 UTC, step \"unnamed\", later run 4 failure) — https://github.com/giovf/rorororo/actions/runs/40931114621; run 4 (2026-10-29 18:29 UTC, step \"unnamed\", later run 5 failure) — https://github.com/giovf/rorororo/actions/runs/40931225347; run 5 (2026-10-29 18:29 UTC, step \"unnamed\", later run 6 failure) — https://github.com/giovf/rorororo/actions/runs/40931287245; run 6 (2026-10-29 18:31 UTC, step \"unnamed\", later run 7 failure) — https://github.com/giovf/rorororo/actions/runs/40931681812; run 7 (2026-10-29 18:35 UTC, step \"unnamed\", later run 8 ok) — https://github.com/giovf/rorororo/actions/runs/40932258662. Read the first error of each job log; a fix in code the workflow runs lands on main, a fix in the workflow itself is dropped as the full file in docs/ci/license-worker.yml (the installer moves it); a failure a later run repaired on its own still needs its cause named here before the item is done.",
       "effort_days": 0.2,
       "proof": "seven days of license-worker.yml runs with no ci-failed line in docs/RUNS.md",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-29",
       "updated": "2026-10-29",
-      "doing_since": "2026-10-29"
+      "doing_since": "2026-10-29",
+      "done_at": "2026-10-29"
     }
   ]
 }

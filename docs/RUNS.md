@@ -2024,3 +2024,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 19:10 | watchdog | ci-failed: license-worker.yml run 5 18:29 — step an unnamed step; later run 6 failure
 - 2026-10-29 19:10 | watchdog | ci-failed: license-worker.yml run 6 18:31 — step an unnamed step; later run 7 failure
 - 2026-10-29 19:10 | watchdog | ci-failed: license-worker.yml run 7 18:35 — step an unnamed step; later run 8 ok
+- 2026-10-29 19:27 | burn-down | license-worker.yml first run: success (run 8 on installer 62b6f44: build, KV put, deploy, smoke 200/403)
+- 2026-10-29 19:27 | burn-down | foundry ci-license-worker-failing done: runs 1–7 were a jobless invalid workflow file (unquoted colon)
+- 2026-10-29 19:27 | burn-down | Fixed 18:35 by the quoted step names; path filters do not apply to a file YAML cannot parse
+- 2026-10-29 19:27 | burn-down | ci-failed-runs.ts labels a jobless failed run 'no job ran (invalid workflow file)' instead of 'unnamed'

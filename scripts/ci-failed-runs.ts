@@ -247,6 +247,11 @@ export async function readGitHub(
     const failed = jobs?.jobs?.find((j) => j.conclusion === 'failure');
     const step = failed?.steps?.find((s) => s.conclusion === 'failure')?.name;
     if (step) run.failingStep = step;
+    // A run with no job at all is GitHub refusing the workflow file (2026-10-29: license-worker.yml fired seven
+    // "No jobs were run" failures on unrelated pushes until a step name's unquoted colon was fixed); say so
+    // instead of "unnamed", so the item's reader opens the file, not a job log.
+    else if (jobs && (jobs.jobs ?? []).length === 0)
+      run.failingStep = 'no job ran (invalid workflow file)';
     if (!laterRuns.has(workflow)) {
       const wf = await gh<{ workflow_runs?: GhRun[] }>(
         `${api}/actions/workflows/${workflow}/runs?per_page=20`,
