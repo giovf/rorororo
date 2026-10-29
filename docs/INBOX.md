@@ -233,3 +233,4 @@
 - 2026-10-28 02:22 | notification | mcptry.com | gankdat is listed on mcptry (score 89/100) | Directory auto-listing of gankdat from the MCP Registry, #189 in Legal & Government; offers claim via GitHub/DNS; no action (we do not claim via unsolicited mail) | logged
 - 2026-10-28 09:42 | notification | paypal.com | We’re here when you’re ready to complete your PayPal account | PayPal sales rep closing out outreach about finishing a Business account; no action | logged
 - 2026-10-28 16:03 | notification | devpost.com | Two weeks to go: get your project checked early - PayPal AI Hackathon | Generic participant reminder: submissions close Nov 12 12:00 PST, early check if submitted by Nov 5; no action in the mail itself (entries submitted by owner) | logged
+- 2026-10-29 01:57 | notification | agentmail.to | Feature gankdat on Agent Control — $19 / 7 days | Unsolicited paid directory-promotion pitch ($19 USDC featured slot); no action (no paid promotion) | logged
