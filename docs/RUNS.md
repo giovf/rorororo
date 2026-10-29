@@ -2016,3 +2016,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 18:50 | burn-down | foundry ci-fetch-relay-failing done: runs 198/199 died on Retry-After retries of 503 pages at the 12-min cap
 - 2026-10-29 18:50 | burn-down | Already fixed by relay-round-survives-stalled-host (10-26); 15 relay runs since all green, run 212 a cancel
 - 2026-10-29 18:50 | burn-down | Stopping at ~36 min: 4 items done (own-checkout, AWS spike parked, facet one-scan, relay cause); next slot continues
+- 2026-10-29 19:08 | triage | notify owner dispatched: last run started 16:07 UTC, 3 h ago
