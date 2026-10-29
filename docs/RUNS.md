@@ -1975,3 +1975,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 14:30 | interactive | Meta terms read: /diligence gets a lifetime ~US$85 token cap and 18+/data wording; 032 card note fixed
 - 2026-10-29 14:40 | interactive | Meta credits applied for by owner (issued in a few days); key creation blocked by a dev.meta.ai sign-in loop
 - 2026-10-29 14:47 | interactive | /diligence hard stop: Meta's spending-alert mail flips DILIGENCE_STOP via the inbox triage
+- 2026-10-29 16:08 | triage | notify owner dispatched: last run started 13:38 UTC, 2 h 30 min ago
