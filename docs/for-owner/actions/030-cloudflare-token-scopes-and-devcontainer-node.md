@@ -1,7 +1,7 @@
 # Owner action request #030 — two read scopes on the CI Cloudflare token, and a yes/no on the devcontainer's Node line
 
 - **Date:** 2026-10-24
-- **Status:** step 2 done 2026-10-29 (yes — devcontainer moved to Node 24); step 1 half done, one permission left
+- **Status:** done 2026-10-29 — step 2: yes, devcontainer on Node 24; step 1: the account token (Manage Account → Account API Tokens) now carries All zones → Zone Observability Read, Logs Read, Analytics Read, and the daily job's `/stats%` zone query returns rows (verified interactively: 81 user agents, 3,980 requests over 30 days)
 - **Your time:** ~6 minutes (Cloudflare ~5, the yes/no ~1)
 - **Cost:** £0.00
 - **Blocks:** the `stats crawlers: zone` reading on gankdat's daily metrics row (AI-crawler fetches of the `/stats`

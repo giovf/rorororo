@@ -5,7 +5,7 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (6)
+## Requests (5)
 
 1. **Meta hackathon entry built** — ~10 min, since 2026-10-26; unblocks hackathons `meta-global-ai-hackathon-live-run` (9). Steps: [032](actions/032-meta-model-api-key.md).
    Meta hackathon entry built — create a free Meta API key, ~10 min — docs/for-owner/actions/032-meta-model-api-key.md
@@ -21,9 +21,6 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 5. **Claim the $150 Meta hackathon credits with the form in the…** — time not stated, since 2026-10-26; nothing queued waits on it.
    Claim the $150 Meta hackathon credits with the form in the Cerebral Valley email by 4 Nov (needs your card).
-
-6. **one more Cloudflare token permission** — ~3 min, since 2026-10-29; nothing queued waits on it. Steps: [030](actions/030-cloudflare-token-scopes-and-devcontainer-node.md).
-   one more Cloudflare token permission — zone Analytics Read for gankdat.com (not in the DNS & Zone group), ~3 min — docs/for-owner/actions/030-cloudflare-token-scopes-and-devcontainer-node.md step 1
 
 ## Waiting on an attended Claude session, not you (2)
 
