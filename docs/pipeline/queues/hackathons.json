@@ -170,8 +170,9 @@
       "effort_days": 0.2,
       "proof": "diligence-core tests show a multi-match name yields 'unconfirmed' and no HIGH; the live page shows the label",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-29"
+      "status": "doing",
+      "added": "2026-10-29",
+      "doing_since": "2026-10-29"
     }
   ],
   "research_after": "2026-11-05"
