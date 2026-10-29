@@ -889,6 +889,16 @@
       "status": "doing",
       "added": "2026-10-27",
       "doing_since": "2026-10-27"
+    },
+    {
+      "id": "apify-companies-house-qa-repair",
+      "title": "Repair the uk-companies-house-lookup-monitor actor so Apify's daily prefilled QA run succeeds within 5 minutes (prefilled input must resolve a real company), then republish through CI",
+      "why": "Apify mail of 2026-10-29 11:59 UTC 'Your Actor UK Companies House Lookup & Monitor has been flagged as under maintenance': the actor failed the automated QA run (prefilled input schema, 5-minute limit) for three days. Read the failed run's log via the Apify API in CI or the relay; likely the prefill lacks a valid company number/name or the lookup times out.",
+      "effort_days": 0.2,
+      "proof": "a prefilled-input run of the actor succeeds in under 5 minutes (Apify run outcome via CI or relay) and the maintenance flag clears",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-29"
     }
   ],
   "research_after": "2026-10-30"
