@@ -2045,3 +2045,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 20:30 | burn-down | foundry ci-gankdat-metrics-failing done: run 282 died on error-lines importing ./crawler-hits sans .ts
 - 2026-10-29 20:30 | burn-down | Fixed 19:36; the root guard existed but the gankdat-only gate and the pre-push hook never ran it
 - 2026-10-29 20:30 | burn-down | Walker is now a CLI (npm run entry-imports) run by the pre-push hook and the gankdat check script
+- 2026-10-29 20:40 | burn-down | gankdat apify-companies-house-qa-repair: cold-key auth retries a transient D1 read once (200 ms)
+- 2026-10-29 20:40 | burn-down | Three tests: retry authenticates; second transient error 500s after two reads; non-transient at once
+- 2026-10-29 20:40 | burn-down | Item stays doing for its proof: the 10-30 Daily numbers row's Apify QA outcome and the flag

@@ -239,7 +239,10 @@ runs `check:root`.
   upgrade path documented, not built). MCP: anonymous `initialize`/`tools/list`
   so registries/directories can index tools (per-IP, in-isolate limiter —
   zero KV ops); a presented key is always validated and bad ones 401 with
-  `WWW-Authenticate`. **Keyless preview** (2026-09-30, `src/mcp/preview.ts`, for the
+  `WWW-Authenticate`. A cold key's D1 read (KV miss, isolate never saw it) is retried once after
+  200 ms on a transient D1 error — the `store.ts` regex the refresh waves use — before the
+  isolate-cache fallback and the 500 (2026-10-29, `apify-companies-house-qa-repair`: 29 such
+  blips in a day, every one on a cold key; Apify's one-shot QA call died on one for three days). **Keyless preview** (2026-09-30, `src/mcp/preview.ts`, for the
   Claude Connectors Directory whose review requires every tool to answer without
   credentials): a data tool called without a key returns page 1 with ≤ 5 rows, 20 calls
   per UTC day per client (sha-256 of IP + UA, KV `preview:<id>:<day>`), then a tool error
