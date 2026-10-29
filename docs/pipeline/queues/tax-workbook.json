@@ -2,7 +2,7 @@
   "venture": "tax-workbook",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-26",
+  "updated": "2026-10-29",
   "researched": "2026-10-26",
   "weight": 2,
   "items": [
@@ -110,6 +110,16 @@
       "status": "blocked",
       "blocked_on": "KDP Select 90-day exclusivity: the Kindle listing enrols for its Countdown Deal, so the ebook may not be sold elsewhere until the first term ends — kdp-listing-live sets not_before = live + 90 days; the owner declining Select unblocks it at once",
       "added": "2026-10-26"
+    },
+    {
+      "id": "own-checkout-listing",
+      "title": "The workbook on our own checkout: a product page beside readfocus.html on apps.gankdat.com (LISTING.md copy — what the buyer gains, what the file is not, the £6.99 launch price with its dated end, the refund policy, Blind Mode), the licence Worker's webhook branch for venture=tax-workbook that mails a signed, time-limited download link for the release .xlsx (served by the Worker from a private asset, never a public URL) through the existing Stripe Managed Payments → Resend path, tests for the page and the branch, a `Listed` row in RESEARCH §7, a SELF-CAUSED row for Stripe's sale mail, and action 029 step 6 for the owner (create one Stripe Payment Link for the £6.99 product with metadata venture=tax-workbook and paste its URL, ~3 min — live-mode Stripe objects are ask-first); the page is built and tested against a placeholder and nothing is published until the link exists",
+      "why": "Exchange 2026-W44 (docs/exchange/2026-W44.md, run 2026-10-29): the line's three products are finished and every listing waits on action 029 (open since 10-24, no reply; eight owner asks open), and the W43 exchange named our own Stripe link as the fallback shelf. This is the one listing that needs no new account, identity check or fee: the Stripe account, merchant-of-record setup, licence Worker and product pages already sell ReadFocus. Evidence 3 (172 sales at £7.19 from a one-listing Etsy shop, ≈ 1,500 reviews on the VAT sibling — RESEARCH §2) × reach 1 (apps.gankdat.com's own ranking; ReadFocus pages draw ≈ 20 impressions a week) ÷ (0.5 d + 3 owner min) ≈ 5, weight 2. STRATEGY §6: distribution before features. Beats the baseline (gankdat facet-aggregation-one-scan, 7 × 1).",
+      "effort_days": 0.5,
+      "proof": "The product page is live on apps.gankdat.com with a working checkout and the download mail delivers the file (tested with a Stripe test event); a first sale within 60 days of the page going live; 0 sales at day 60 with ≥ 5 views a day → the page stays as the file’s home and no further own-checkout work is queued",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-29"
     }
   ],
   "research_after": "2026-11-03"

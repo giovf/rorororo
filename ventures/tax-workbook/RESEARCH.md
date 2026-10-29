@@ -175,3 +175,9 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   AI rule, seven priced 2026 UK tax guides at £2.29–19.99. Promoted as `google-play-listing` (6), blocked on the KDP Select term the Kindle
   listing takes for its Countdown Deal; `kdp-listing-live` dates it live + 90 d. Kobo Writing Life (kobo.com behind a Cloudflare wall;
   rejects AI-written books) and Draft2Digital (no non-credentialled AI nonfiction; US$20 + US$12/yr, ~10 % of retail) declined.
+- **2026-10-29 09:20 (exchange 2026-W44, run by the build slot for the missed Wednesday):** `own-checkout-listing` (5 × 2 = 10) queued — the
+  workbook sold from a product page on apps.gankdat.com through the Stripe Managed Payments checkout ReadFocus already uses, the licence
+  Worker mailing a signed download link; the W43 exchange's named fallback, taken now because every listing of the line has waited on
+  action 029 since 10-24 with no reply and this is the one shelf that needs no new account, identity check or fee. Its only owner step
+  (one Payment Link, ~3 min, live-mode Stripe objects being ask-first) is raised by the build as action 029 step 6. The Kindle EPUB is
+  not sold there: KDP Select's exclusivity would be breached. Nothing fetched; `research_after` 2026-11-03 unchanged.

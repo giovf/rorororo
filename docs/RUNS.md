@@ -1958,3 +1958,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 01:08 | watchdog | ci-minutes: 547 billed min/7d (~2344/mo; cap 2000) top: fetch relay 150, gankdat metrics 80, notify owner 67
 - 2026-10-29 04:06 | triage | notify owner dispatched: last run started 01:07 UTC, 3 h ago
 - 2026-10-29 09:08 | triage | notify owner dispatched: last run started 06:22 UTC, 2 h 45 min ago
+- 2026-10-29 09:22 | exchange | Winner: tax-workbook own-checkout-listing (5 × 2 = 10) — the workbook sold from our own Stripe checkout
+- 2026-10-29 09:22 | exchange | Queued tax-workbook/own-checkout-listing (5): product page, signed download mail; owner pastes one link
+- 2026-10-29 09:22 | exchange | Queued new-ventures spikes: Apify ideas board (6), Envato CodeCanyon (5), AWS Data Exchange (4)
+- 2026-10-29 09:22 | exchange | Parked: JetBrains re-scored 1.8; it, Atlassian and Framer wait on the 11-02 report's Built %; kit 2.7
+- 2026-10-29 09:22 | exchange | Declined: nothing new; bounty board 10-26 has no free funded code fix at US$25+, the line stays killed
+- 2026-10-29 09:22 | exchange | Exchange file docs/exchange/2026-W44.md (missed Wednesday 10-28, run by the 09:00 build); STRATEGY §8 line
+- 2026-10-29 09:22 | exchange | Owner later: one 3-minute Stripe payment link, raised by the build that finishes the listing; 8 asks open
+- 2026-10-29 09:22 | build | Exchange missed on Wednesday 2026-10-28: ran the venture exchange in this slot
