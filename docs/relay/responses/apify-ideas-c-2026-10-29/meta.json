@@ -1,0 +1,65 @@
+{
+  "request": "apify-ideas-c-2026-10-29",
+  "fetched_at": "2026-10-29T17:19:17.283Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://apify.com/api/ideas/download?format=json&status=toDevelop",
+      "fetched_at": "2026-10-29T17:19:14.621Z",
+      "status": 200,
+      "elapsed_ms": 406,
+      "final_url": "https://apify.com/api/ideas/download?format=json&status=toDevelop",
+      "headers": {
+        "content-type": "application/json",
+        "content-disposition": "attachment; filename=\"actor_ideas_toDevelop.json\""
+      },
+      "file": "1.json",
+      "bytes": 207681,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/api/ideas/data?page=0&sort=votes&status=toDevelop",
+      "fetched_at": "2026-10-29T17:19:15.585Z",
+      "status": 200,
+      "elapsed_ms": 105,
+      "final_url": "https://apify.com/api/ideas/data?page=0&sort=votes&status=toDevelop",
+      "headers": {
+        "content-type": "application/json"
+      },
+      "file": "2.json",
+      "bytes": 71033,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/api/ideas/categories",
+      "fetched_at": "2026-10-29T17:19:16.203Z",
+      "status": 404,
+      "elapsed_ms": 108,
+      "final_url": "https://apify.com/api/ideas/categories",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "\"6gkigyxm8r3r8c\""
+      },
+      "file": "3.html",
+      "bytes": 175290,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://apify.com/api/ideas/download?format=csv&status=completed",
+      "fetched_at": "2026-10-29T17:19:16.815Z",
+      "status": 200,
+      "elapsed_ms": 363,
+      "final_url": "https://apify.com/api/ideas/download?format=csv&status=completed",
+      "headers": {
+        "content-type": "text/csv",
+        "content-disposition": "attachment; filename=\"actor_ideas_completed.csv\""
+      },
+      "file": "4.csv",
+      "bytes": 711114,
+      "truncated": false
+    }
+  ]
+}
