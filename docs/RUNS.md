@@ -1976,3 +1976,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 14:40 | interactive | Meta credits applied for by owner (issued in a few days); key creation blocked by a dev.meta.ai sign-in loop
 - 2026-10-29 14:47 | interactive | /diligence hard stop: Meta's spending-alert mail flips DILIGENCE_STOP via the inbox triage
 - 2026-10-29 16:08 | triage | notify owner dispatched: last run started 13:38 UTC, 2 h 30 min ago
+- 2026-10-29 17:20 | build | Built hackathons diligence-name-only-unconfirmed: /diligence verdict needs one company number
+- 2026-10-29 17:20 | build | diligence-core: identityOf + confirmVerdict relabel a name-only report UNCONFIRMED, strip HIGH
+- 2026-10-29 17:20 | build | System prompt asks the model to pin the company number via query_uk_company_profiles
+- 2026-10-29 17:20 | build | Tool results now parsed in the live MCP shape (ok/data/meta.total); step lines said N chars
+- 2026-10-29 17:20 | build | Tests: two-company name + HIGH model verdict -> UNCONFIRMED, no HIGH; page shows the label
+- 2026-10-29 17:20 | build | SUBMISSION, WALKTHROUGH and ARCHITECTURE note the rule; item done, nothing for the owner

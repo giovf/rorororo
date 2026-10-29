@@ -168,11 +168,12 @@
       "title": "/diligence: when the agent matched the typed name to more than one company, or to none by number, label the verdict 'unconfirmed — name match only' and never print HIGH without a company number; a test pins it",
       "why": "Meta Model API Acceptable Use Policy (read 2026-10-29, terms/README.md) bars defamatory content; a name shared by several companies can yield a HIGH-risk verdict for the wrong one on a public page. SUBMISSION.md already lists company-number disambiguation as future work; this is the minimum before judges and the public run it.",
       "effort_days": 0.2,
-      "proof": "diligence-core tests show a multi-match name yields 'unconfirmed' and no HIGH; the live page shows the label",
+      "proof": "diligence-core tests: a two-company name with a HIGH model verdict yields 'UNCONFIRMED — name match only' and no HIGH; a profile lookup by company_number confirms; the page shows the label (2026-10-29 build)",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-29",
-      "doing_since": "2026-10-29"
+      "done_at": "2026-10-29",
+      "updated": "2026-10-29"
     }
   ],
   "research_after": "2026-11-05"

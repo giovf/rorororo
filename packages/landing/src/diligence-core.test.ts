@@ -6,12 +6,17 @@ import {
   META_BASE_URL,
   META_DEFAULT_MODEL,
   SOURCES,
+  UNCONFIRMED_LABEL,
   cleanCompany,
+  confirmVerdict,
   dryRunChat,
   dryRunTools,
   gankdatTools,
+  identityOf,
   modelAllowed,
   openAiChat,
+  parseRegisterResult,
+  registerResult,
   rpcBody,
   runAgent,
   stepSummary,
@@ -81,6 +86,81 @@ describe('runAgent (dry run)', () => {
     expect(r.report).toContain('- query_uk_sanctions {"q":"Acme Widgets Ltd"}');
     expect(r.budget.calls).toBe(2);
     expect(r.budget.tokens).toBe(2040);
+    expect(r.identity).toEqual({
+      confirmed: true,
+      companyNumber: '01234567',
+      nameMatches: 1,
+      reason: 'Companies House company 01234567',
+    });
+    expect(r.report).not.toContain(UNCONFIRMED_LABEL);
+  });
+
+  it('relabels a HIGH verdict unconfirmed when the name matched several companies', async () => {
+    const twoCompanies = (q: string): string =>
+      registerResult('uk-companies', [
+        { company_number: '01111111', company_name: `${q.toUpperCase()} LIMITED` },
+        { company_number: '02222222', company_name: `${q.toUpperCase()} (UK) LIMITED` },
+      ]);
+    const { tools } = dryRunTools();
+    const callTool = (name: string, args: Record<string, unknown>): Promise<string> =>
+      Promise.resolve(
+        name === 'query_uk_companies'
+          ? twoCompanies(String(args['q']))
+          : name === 'query_uk_sanctions'
+            ? registerResult('uk-sanctions', [{ name: 'ACME WIDGETS', regime: 'Russia' }])
+            : registerResult(name.slice(6).replace(/_/g, '-'), []),
+      );
+    const chat: ChatFn = (messages) => {
+      if (!messages.some((m) => m.role === 'tool'))
+        return Promise.resolve({
+          choices: [
+            {
+              message: {
+                role: 'assistant',
+                content: null,
+                tool_calls: ['query_uk_companies', 'query_uk_sanctions'].map((name, i) => ({
+                  id: `c${i}`,
+                  type: 'function',
+                  function: { name, arguments: '{"q":"Acme Widgets"}' },
+                })),
+              },
+            },
+          ],
+        });
+      return Promise.resolve({
+        choices: [
+          {
+            message: {
+              role: 'assistant',
+              content: [
+                '# Due diligence: Acme Widgets',
+                '',
+                '## Identity',
+                '- Companies House: 2 matches (query_uk_companies).',
+                '',
+                '## Red flags',
+                '- Sanctions: 1 match (query_uk_sanctions).',
+                '',
+                '## Verdict',
+                'HIGH risk — a sanctions match. HIGH.',
+                '',
+                '## Sources',
+                '- query_uk_companies {"q":"Acme Widgets"}',
+              ].join('\n'),
+            },
+          },
+        ],
+      });
+    };
+    const r = await runAgent({ company: 'Acme Widgets', chat, tools, callTool });
+    expect(r.identity.confirmed).toBe(false);
+    expect(r.identity.nameMatches).toBe(2);
+    expect(r.report).not.toMatch(/\bHIGH\b/);
+    expect(r.report).toContain(`## Verdict\n${UNCONFIRMED_LABEL} — a sanctions match. unconfirmed.`);
+    expect(r.report).toContain('Companies House returned 2 companies for this name and none was pinned by number');
+    expect(r.report).toContain('Confirm the company number on Companies House');
+    expect(r.report).toMatch(/\n\n## Sources\n- query_uk_companies/);
+    expect(r.report).toContain('- Sanctions: 1 match (query_uk_sanctions).');
   });
 
   it('aborts a model that never stops calling tools', async () => {
@@ -215,9 +295,69 @@ describe('gankdatTools', () => {
   });
 });
 
+describe('identity', () => {
+  const name = (result: string, q = 'Acme'): Step => ({ tool: 'query_uk_companies', args: { q }, result });
+
+  it('is confirmed by one Companies House hit with a number, or a profile looked up by number', () => {
+    expect(identityOf([name(registerResult('uk-companies', [{ company_number: '09876543' }]))]).confirmed).toBe(true);
+    const many = name(registerResult('uk-companies', [{ company_number: '1' }, { company_number: '2' }]));
+    expect(identityOf([many])).toMatchObject({ confirmed: false, nameMatches: 2 });
+    const profile: Step = {
+      tool: 'query_uk_company_profiles',
+      args: { company_number: '00000002' },
+      result: registerResult('uk-company-profiles', [{ company_number: '00000002', company_name: 'ACME (UK) LIMITED' }]),
+    };
+    expect(identityOf([many, profile])).toEqual({
+      confirmed: true,
+      companyNumber: '00000002',
+      nameMatches: 2,
+      reason: 'Companies House company 00000002',
+    });
+  });
+
+  it('is unconfirmed with no hit, no number or no Companies House read; a profile by name pins its one number', () => {
+    expect(identityOf([name(registerResult('uk-companies', []))]).reason).toMatch(/returned no company/);
+    expect(identityOf([name(registerResult('uk-companies', [{ company_name: 'ACME' }]))]).reason).toMatch(/carried no company number/);
+    expect(identityOf([{ tool: 'query_uk_sanctions', args: { q: 'Acme' }, result: '{"total":0}' }]).reason).toMatch(/no Companies House record was read/);
+    // A profile lookup by name returns the search's top hit: one record, one company number the
+    // report can name — pinned, and the reader can check that number.
+    const byName: Step = {
+      tool: 'query_uk_company_profiles',
+      args: { company: 'Acme' },
+      result: registerResult('uk-company-profiles', [{ company_number: '00000003' }]),
+    };
+    expect(identityOf([byName]).confirmed).toBe(true);
+    const twoThenName = identityOf([name(registerResult('uk-companies', [{ company_number: '1' }, { company_number: '2' }])), byName]);
+    expect(twoThenName.confirmed).toBe(true);
+  });
+
+  it('relabels every risk grade and adds a Verdict section when the model wrote none', () => {
+    const identity = identityOf([name(registerResult('uk-companies', []))]);
+    const report = '# Due diligence: X\n\n## Red flags\n- Sanctions: 1 match.\n\n## Verdict\nMEDIUM risk — flags.\n';
+    const out = confirmVerdict(report, identity);
+    expect(out).not.toMatch(/MEDIUM risk|HIGH risk|LOW risk/);
+    expect(out).toContain(`## Verdict\n${UNCONFIRMED_LABEL} — flags.\n\nCompanies House returned no company`);
+    const noSection = confirmVerdict('Just prose, high-risk counterparty.', identity);
+    expect(noSection).toContain(`## Verdict\n${UNCONFIRMED_LABEL} — `);
+    expect(noSection).toContain(`Just prose, ${UNCONFIRMED_LABEL} counterparty.`);
+    expect(confirmVerdict('HIGH risk', { confirmed: true, companyNumber: '1', nameMatches: 1, reason: '' })).toBe('HIGH risk');
+  });
+});
+
 describe('helpers', () => {
   it('maps every source to a query tool', () => {
     expect(SOURCES.map(toolName)).toContain('query_uk_company_profiles');
+  });
+
+  it('reads a register result in the live MCP shape and in the old one', () => {
+    expect(parseRegisterResult(registerResult('uk-sanctions', [{ a: 1 }, { a: 2 }]))).toEqual({
+      total: 2,
+      records: [{ a: 1 }, { a: 2 }],
+    });
+    expect(parseRegisterResult('{"ok":true,"data":[],"meta":{"total":1234}}').total).toBe(1234);
+    expect(parseRegisterResult('{"total":3,"items":[{"b":1}]}')).toEqual({ total: 3, records: [{ b: 1 }] });
+    expect(parseRegisterResult('error: slow')).toEqual({ total: null, records: [] });
+    expect(parseRegisterResult('[1,2]')).toEqual({ total: null, records: [] });
   });
 
   it('cleans a typed company name and rejects the rest', () => {
@@ -230,6 +370,7 @@ describe('helpers', () => {
   it('summarises a step by its match count or its length', () => {
     const step: Step = { tool: 'query_uk_sanctions', args: { q: 'Acme' }, result: '{"total":0}' };
     expect(stepSummary(step)).toBe('query_uk_sanctions "Acme" → 0 matches');
+    expect(stepSummary({ ...step, result: registerResult('uk-sanctions', [{ a: 1 }]) })).toBe('query_uk_sanctions "Acme" → 1 match');
     expect(stepSummary({ ...step, result: 'plain text' })).toBe('query_uk_sanctions "Acme" → 10 chars');
   });
 });

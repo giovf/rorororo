@@ -80,7 +80,8 @@ the same loop is a 300-line file any firm can run behind its own key.
   with its server-sent-event stream and caps, the CLI, the demo recorder and the tests — all written
   inside the window on an agent that previously existed only against fixtures.
 - Tests: the budget guard, the dry-run report, the Meta request shape, the MCP tool filter, the
-  page's event stream and caps, the demo shot list.
+  page's event stream and caps, the demo shot list, and the identity rule — a name shared by two
+  companies with a HIGH model verdict comes out `UNCONFIRMED — name match only`, never HIGH.
 
 ## Demo
 
@@ -92,8 +93,10 @@ the same loop is a 300-line file any firm can run behind its own key.
 ## What's next
 
 A verdict rubric the model must fill from the registers (so two runs on one company agree), the
-company number as the key (the name can match several companies), and the change feeds gankdat
-already serves — a watch that re-runs the check when a register changes for a counterparty.
+company number as the key from the first call (today the agent is asked to pin it with
+`query_uk_company_profiles`, and a report it has not pinned is labelled **unconfirmed — name match
+only** with no risk grade, 2026-10-29), and the change feeds gankdat already serves — a watch that
+re-runs the check when a register changes for a counterparty.
 
 ## Team
 
