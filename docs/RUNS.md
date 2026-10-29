@@ -2070,3 +2070,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 21:41 | burn-down | Skipped: Databricks Marketplace needs a Premium account and the Data Partner Program (a paid account on a £0 line)
 - 2026-10-29 21:41 | burn-down | Dependabot majors: no open Dependabot PR (list_pull_requests: only the 2025 Develop PR); nothing to review
 - 2026-10-29 21:41 | burn-down | Stopping at ~30 min: foundry researched, 3 items built, Zoho parked, spike seeded; night cap stops the next slots
+- 2026-10-29 22:07 | triage | notify owner dispatched: last run started 19:48 UTC, 2 h 19 min ago
