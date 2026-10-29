@@ -1967,3 +1967,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 09:22 | exchange | Owner later: one 3-minute Stripe payment link, raised by the build that finishes the listing; 8 asks open
 - 2026-10-29 09:22 | build | Exchange missed on Wednesday 2026-10-28: ran the venture exchange in this slot
 - 2026-10-29 11:19 | triage | notify owner dispatched: last run started 09:07 UTC, 2 h 12 min ago
+- 2026-10-29 13:30 | notify | Your UK Sole Trader Tax Workbook is live on Etsy at £6.99: taxelicious.etsy.com
+- 2026-10-29 13:30 | interactive | Recorded 029 done: Etsy listing live (£14.20 fees), Zoho and Payhip unblocked, Kindle in KDP review

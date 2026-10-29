@@ -113,4 +113,5 @@ What it is not: tax advice, or a substitute for HMRC's own calculation. It uses 
 | --- | --- |
 | 2026-10-26 | Guide v1 built: EPUB (17 sections, 9,102 words) and cover; listing pack written; KDP step added to action 029 |
 | 2026-10-26 | Google Play Books read as the third shelf (70 % to UK sellers, no AI rule); listing queued for after the first KDP Select term (`google-play-listing`) |
+| 2026-10-29 | Submitted on KDP by the owner (action 029 step 5), in review. The owner entered the title **"The UK Sole Trader - A guide for the self employed & side hustlers"** instead of the pack's "UK Sole Trader Tax 2026/27"; the cover and title page still carry the pack's title, which KDP's review may flag as a metadata mismatch — if it does, set the KDP title back to the cover's (no rebuild needed). |
 | — | Live on amazon.co.uk: ASIN, URL and date to be filled by `kdp-listing-live`. |

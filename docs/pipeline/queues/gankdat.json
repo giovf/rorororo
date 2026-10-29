@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-27",
+  "updated": "2026-10-29",
   "researched": "2026-10-25",
   "items": [
     {
@@ -792,12 +792,11 @@
     {
       "id": "zoho-crm-uk-registers-widget",
       "title": "Zoho Marketplace: a \"UK organisation verification\" Zoho CRM extension (Sigma related-list widget on Account and Lead: company status and officers, charity record, sanctions hit from the gankdat registers) at US$9 per org per month or US$90 a year, 10-day trial, billed by Zoho at 0 % commission",
-      "why": "Exchange 2026-W43 (docs/exchange/2026-W43.md): the first billed shelf of the eight read in October that passes both halves (spike docs/exchange/spikes/zoho-marketplace-paid-extensions.md, 2026-10-24): Zoho bills the buyer in USD and handles tax, extension developers keep 100 % (the commission report defines total value and commission as equal; \"we will never charge a fee for extension development\"), a statement on the 1st when ≥ US$100 is due and a wire in ~15 working days, a self-serve company profile is the only gate (small verified vendors from the UK, Pakistan, India, Bangladesh sell there), review 2–3 weeks with a demo call; demand first-hand — seven of eleven paid CRM listings at 100–2,800 installs (Linked Pro 600+ at US$20/org/month, 49 reviews), verification extensions with 34–53 reviews, no UK-register or KYB extension on the shelf, Zoho's own enrichment covers size and financials on Enterprise only. Build: a Sigma extension (zet CLI) whose widget calls uk-company-profiles, uk-charities and uk-sanctions for the record's company name or number with the buyer's gankdat key or a bundled x402/credit lane, Deluge only as glue; 2 days. Score 2 × 2.5 ÷ (2 d + an owner hour) ≈ 2.4 at weight 1 — queued beside the week's winner rather than parked because its owner step rides the same batched request and idle slots exist (47 cold burn-down slots in W42). Blocked until the owner's free Zoho Developer Console sign-in exists: the widget cannot be tested without a developer org, and account creation is the owner's (CLAUDE.md).",
+      "why": "Exchange 2026-W43 (docs/exchange/2026-W43.md): the first billed shelf of the eight read in October that passes both halves (spike docs/exchange/spikes/zoho-marketplace-paid-extensions.md, 2026-10-24): Zoho bills the buyer in USD and handles tax, extension developers keep 100 % (the commission report defines total value and commission as equal; \"we will never charge a fee for extension development\"), a statement on the 1st when ≥ US$100 is due and a wire in ~15 working days, a self-serve company profile is the only gate (small verified vendors from the UK, Pakistan, India, Bangladesh sell there), review 2–3 weeks with a demo call; demand first-hand — seven of eleven paid CRM listings at 100–2,800 installs (Linked Pro 600+ at US$20/org/month, 49 reviews), verification extensions with 34–53 reviews, no UK-register or KYB extension on the shelf, Zoho's own enrichment covers size and financials on Enterprise only. Build: a Sigma extension (zet CLI) whose widget calls uk-company-profiles, uk-charities and uk-sanctions for the record's company name or number with the buyer's gankdat key or a bundled x402/credit lane, Deluge only as glue; 2 days. Score 2 × 2.5 ÷ (2 d + an owner hour) ≈ 2.4 at weight 1 — queued beside the week's winner rather than parked because its owner step rides the same batched request and idle slots exist (47 cold burn-down slots in W42). Blocked until the owner's free Zoho Developer Console sign-in exists: the widget cannot be tested without a developer org, and account creation is the owner's (CLAUDE.md). Unblocked 2026-10-29: the owner's free Zoho Developer Console sign-in is done on the Foundry mailbox (action 029 step 3); the marketplace company profile, bank details and demo call come at listing time.",
       "effort_days": 2,
       "proof": "Listed on marketplace.zoho.com; ≥ 25 installs and ≥ 3 paying orgs within 60 days of listing (partner console); kill below 10 installs at day 60",
       "score": 2.4,
-      "status": "blocked",
-      "blocked_on": "owner: a free Zoho Developer Console sign-in (marketplace.zoho.com company profile under the trading name) — batched into action 029 with the Etsy shop (raised 2026-10-24, ALERTS 2026-10-24); bank details and the demo call come at listing time",
+      "status": "todo",
       "added": "2026-10-24"
     },
     {

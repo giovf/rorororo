@@ -22,23 +22,45 @@
     {
       "id": "etsy-listing-live",
       "title": "Record the Etsy listing going live: URL, LEDGER row for the set-up fee, SELF-CAUSED row for Etsy mail, LISTING.md dates, venture.json launched, notify line",
-      "why": "The shop and the upload are the owner's hands (the sandbox cannot log in to Etsy and must never read etsy.com by automation). When action 029 is done this item records the listing: its URL and date in LISTING.md, the set-up fee as a docs/LEDGER.md cost row the day it was charged, a docs/ops/SELF-CAUSED.md row so Etsy's seller mail is never escalated, venture.json status launched, a Metrics row, the notify line \"UK Sole Trader Tax Workbook is live on Etsy: …\" and a day-60 read item (not_before = listing date + 60) with the kill rule of RESEARCH.md §6.",
+      "why": "The shop and the upload are the owner's hands (the sandbox cannot log in to Etsy and must never read etsy.com by automation). When action 029 is done this item records the listing: its URL and date in LISTING.md, the set-up fee as a docs/LEDGER.md cost row the day it was charged, a docs/ops/SELF-CAUSED.md row so Etsy's seller mail is never escalated, venture.json status launched, a Metrics row, the notify line \"UK Sole Trader Tax Workbook is live on Etsy: …\" and a day-60 read item (not_before = listing date + 60) with the kill rule of RESEARCH.md §6. Done 2026-10-29 (interactive): owner's '029 done' — listing 4605571079 in shop taxelicious.etsy.com at £6.99; LEDGER cost rows £14 set-up + £0.20 listing fee (the £25 contingent row replaced); SELF-CAUSED row for Etsy shop mail; LISTING.md and RESEARCH §7 Listed rows; venture.json launched; notify line; etsy-day-60-read and etsy-launch-price-end queued.",
       "effort_days": 0.1,
       "proof": "LISTING.md carries the live URL and date; the ledger and SELF-CAUSED rows exist; venture.json reads launched; a dated day-60 item is queued",
       "score": 10,
-      "status": "blocked",
-      "blocked_on": "owner: action 029 (raised 2026-10-24 by workbook-2026-27-build, ALERTS 2026-10-24) — the Etsy shop opened, the set-up fee decided and the file uploaded",
-      "added": "2026-10-24"
+      "status": "done",
+      "added": "2026-10-24",
+      "done_at": "2026-10-29",
+      "doing_by": "interactive"
+    },
+    {
+      "id": "etsy-launch-price-end",
+      "title": "Owner reminder: change the Etsy listing price from the £6.99 launch price to £8.99 on 1 December 2026 (one `owner:` ALERTS line and a notify line on the day; LISTING.md Status row once done)",
+      "why": "The listing says the launch price ends 30 November 2026; keeping that true is the DMCC Act 2024 rule the listing was written to (LISTING.md §5). The price is edited in Etsy's editor, which only the owner can open, so the item's whole job is a dated, plain reminder.",
+      "effort_days": 0.05,
+      "proof": "An ALERTS owner line dated 2026-12-01 exists; the owner confirms £8.99 and LISTING.md records it",
+      "score": 6,
+      "status": "todo",
+      "not_before": "2026-12-01",
+      "added": "2026-10-29"
+    },
+    {
+      "id": "etsy-day-60-read",
+      "title": "Day-60 read of the Etsy listing (listed 2026-10-29): count the `Sale` rows in RESEARCH §7 and apply §6 — proof ≥ 10 sales, kill at 0 sales with ≥ 5 views a day (views from the owner's Shop Manager note), and decide the Payhip twin and own-checkout pages with the same reading",
+      "why": "RESEARCH.md §6 sets the line's proof (first sale within 30 days, ≥ 10 within 60) and kill rule against the listing date; this is the dated reading that applies it, so the decision is made on the number rather than left open.",
+      "effort_days": 0.1,
+      "proof": "A RESEARCH §7 `Day 60` row with the count and the decision (keep, reprice, or delist), and STRATEGY §8 line if the line is killed",
+      "score": 8,
+      "status": "todo",
+      "not_before": "2026-12-28",
+      "added": "2026-10-29"
     },
     {
       "id": "payhip-twin-listing",
       "title": "Twin listing of the workbook on a Payhip store (free plan, Stripe connected, Payhip handles UK/EU VAT): store copy from LISTING.md, link from the apps.gankdat.com product page, Taxes default, marketplace submission once US$10 of sales exist, a sale webhook into the Daily numbers",
-      "why": "Spike docs/exchange/spikes/payhip-digital-downloads-shelf.md (burn-down 2026-10-24): £0 launch, Payhip 5 % + Stripe UK ≈ 9 % of a £6.99 sale (≈ £6.34 kept vs ≈ £5.80 on Etsy), Payhip acts as reseller for UK/EU VAT, payouts daily through the owner's Stripe, a buyer-facing marketplace that admits a store after US$10 of its own sales, and webhooks that let the funnel be read without mail. Not the primary shelf: demand is unmeasurable there (no counts; payhip.com blocks automated reads) and the buyers are on Etsy — so a twin at the same price, and the fallback shelf if the owner declines Etsy's set-up fee. Score 1.5 × 1 ÷ (0.2 d + 10 owner min) ≈ 5.",
+      "why": "Spike docs/exchange/spikes/payhip-digital-downloads-shelf.md (burn-down 2026-10-24): £0 launch, Payhip 5 % + Stripe UK ≈ 9 % of a £6.99 sale (≈ £6.34 kept vs ≈ £5.80 on Etsy), Payhip acts as reseller for UK/EU VAT, payouts daily through the owner's Stripe, a buyer-facing marketplace that admits a store after US$10 of its own sales, and webhooks that let the funnel be read without mail. Not the primary shelf: demand is unmeasurable there (no counts; payhip.com blocks automated reads) and the buyers are on Etsy — so a twin at the same price, and the fallback shelf if the owner declines Etsy's set-up fee. Score 1.5 × 1 ÷ (0.2 d + 10 owner min) ≈ 5. Unblocked 2026-10-29: the owner's Payhip store is https://payhip.com/gankdat (Stripe or PayPal connected per action 029 step 4); the product upload itself stays the owner's click (payhip.com cannot be logged into from the sandbox).",
       "effort_days": 0.2,
       "proof": "The Payhip store page is live with the file at £6.99 and linked from the product page; a sale webhook row appears in the Daily numbers; first Payhip sale within 60 days or the twin is delisted at the Etsy day-60 read",
       "score": 5,
-      "status": "blocked",
-      "blocked_on": "owner: action 029 step 4 (2026-10-24, ALERTS 2026-10-24) — a Payhip account on the Foundry email with Stripe (or PayPal) connected, ~10 min, £0",
+      "status": "todo",
       "added": "2026-10-24"
     },
     {
@@ -97,7 +119,7 @@
       "proof": "KINDLE.md carries the live URL and date; a Metrics row exists; a dated day-60 item is queued",
       "score": 8,
       "status": "blocked",
-      "blocked_on": "owner: action 029 step 5 (raised 2026-10-26 by kdp-tax-guide-ebook, ALERTS 2026-10-26) — the KDP account, tax interview and bank, and the EPUB + cover upload",
+      "blocked_on": "KDP review: submitted by the owner 2026-10-29 (action 029 step 5) under the title 'The UK Sole Trader - A guide for the self employed & side hustlers'; unblocks on the 'is now live' mail in inbox triage (SELF-CAUSED kdp row, a `store` line) or the owner's URL. A review flag on title vs cover is fixed by setting the KDP title to the cover's 'UK Sole Trader Tax 2026/27' (KINDLE.md Status)",
       "added": "2026-10-26"
     },
     {

@@ -145,6 +145,7 @@ rows written from Etsy's deposit mail. The day-60 kill clock (§6) starts at the
 | 2026-10-24 | Built | — | — | 0 | workbook v1.0 built and recalculated (2,122 formulas, 0 errors, Example = hand-worked £5,025.80); LISTING.md + 5 images; action 029 raised; status `validated` |
 | 2026-10-25 | Reading wired | — | — | 0 | inbox triage writes `Sale`/`Refund` rows from Etsy order mail and deposits to the ledger; the weekly report counts them; shop still waits on action 029 |
 | 2026-10-26 | Kindle built | — | — | 0 | `UK Sole Trader Tax 2026/27` EPUB (9,102 words, epubcheck clean) and cover built; KINDLE.md listing pack; action 029 step 5 raised (KDP account + upload, ~15 min, £0) |
+| 2026-10-29 | Listed | — | — | 0 | Etsy listing live (shop taxelicious.etsy.com, listing 4605571079, £6.99 launch price to 30 Nov); set-up fee £14 + £0.20 listing fee; the day-60 clock (§6) runs to 2026-12-28. Same sitting: Payhip store open (payhip.com/gankdat, twin listing next), Kindle guide submitted to KDP and in review |
 
 ## 8. Owner steps (batched, raised by the build that finishes the workbook, never before)
 

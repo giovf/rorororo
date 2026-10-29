@@ -1,7 +1,7 @@
 # Owner action request #029 — open the Etsy shop for the tax workbook, and the free Zoho developer sign-in
 
 - **Date:** 2026-10-24
-- **Status:** open
+- **Status:** done (2026-10-29)
 - **Your time:** ~55 minutes (Etsy ~25, Zoho ~5, Payhip ~10, Kindle ~15 — step 5 added 2026-10-26)
 - **Cost:** Etsy's one-time shop set-up fee, **≤ £25** — the amount Etsy shows at "Total due now" (US$15–29 plus VAT; waived
   in some promotional periods). It is recorded as `contingent` in `docs/LEDGER.md` and becomes a `cost` row the day you
@@ -43,8 +43,12 @@ listing in `ventures/tax-workbook/LISTING.md`.
 - **What:** one digital listing from the paste-ready copy.
 - **Where:** Shop Manager → Listings → Add a listing → type **Digital files**
 - **Steps:**
+  0. **Set "What type of item is it?" to Digital first** (the editor defaults to Physical, which asks for delivery,
+     returns and GPSR details and hides the file upload). `LISTING.md` follows the editor's sections top to bottom
+     (re-checked against your screenshot, 2026-10-29).
   1. Upload the five images from `ventures/tax-workbook/listing/` in order (1-hero … 5-fit-and-refund).
-  2. Title, tags (13), description, category and price: copy each from `ventures/tax-workbook/LISTING.md`. Price
+  2. Title, tags (13, typed one at a time), description (the plain-text block), attributes, "How it's made" and price:
+     copy each from `ventures/tax-workbook/LISTING.md`. Price
      **£6.99** now; set a reminder to change it to £8.99 on 1 December 2026 (the description says the launch price ends
      30 November — keep that true).
   3. Digital file: upload `ventures/tax-workbook/release/UK-Sole-Trader-Tax-Workbook-2026-27.xlsx`.
@@ -74,7 +78,7 @@ listing in `ventures/tax-workbook/LISTING.md`.
   3. Settings → Taxes: leave "handle digital UK & EU VAT" ticked (the default).
   4. Stop there — Claude writes the product listing from `LISTING.md` once the account exists and asks you only for the
      upload (the sandbox cannot log in). Store name suggestion: the same as the Etsy shop.
-- **Give back:** "Payhip done" and the store URL (payhip.com/<name>).
+- **Give back:** "Payhip done" and the store URL (payhip.com/\<name\>).
 - **Cost:** £0.
 
 ### 5. Amazon KDP — publish the Kindle guide (free, ~15 min; added 2026-10-26)
@@ -86,7 +90,8 @@ listing in `ventures/tax-workbook/LISTING.md`.
   1. Create the KDP account with the Foundry email (so "your book is live" and payment mails reach the inbox triage).
   2. **Account → Tax interview:** individual, not a US person, UK resident; it produces a W-8BEN with 0 % US withholding
      under the UK treaty. Give your UK tax identifier (UTR or National Insurance number). **Bank:** your UK account in
-     your name (sort code + account number). Nothing is charged to you — KDP only pays out.
+     your name. KDP asks for the **IBAN** (and the BIC/SWIFT code if it asks), not the sort code and account number; both
+     are printed in your banking app or on a statement. A UK IBAN already contains the sort code and account number. Nothing is charged to you — KDP only pays out.
   3. Bookshelf → Create → Kindle eBook. Paste every field from `ventures/tax-workbook/KINDLE.md` (title, subtitle,
      description, 7 keywords, 2 categories). **Answer "Yes" to the AI-generated content question** and choose "Text:
      AI-generated" — KDP requires the disclosure and allows the book; it is not shown to buyers.
@@ -104,3 +109,15 @@ listing in `ventures/tax-workbook/LISTING.md`.
 3. Say "029 done" (Telegram note or the dashboard idea box): the next run records the listing (`etsy-listing-live`),
    adds the fee to the ledger and unblocks the Zoho item. If you do the Kindle step on its own, say "029 kindle done" with
    the book URL and the next run records it (`kdp-listing-live`).
+
+## Outcome (2026-10-29, owner)
+
+1. Etsy shop https://taxelicious.etsy.com opened (shop name differs from the suggestion — fine). Set-up fee **£14** plus a
+   **£0.20** listing fee, both in `docs/LEDGER.md`.
+2. Listing live: https://www.etsy.com/uk/listing/4605571079/uk-sole-trader-tax-workbook-202627-self. The editor differed
+   from the original pack (item type defaulted to Physical, plain-text description, tags cut short when pasted together);
+   `LISTING.md` was re-ordered to match it the same day.
+3. Zoho Developer Console: done, on the Foundry mailbox.
+4. Payhip: https://payhip.com/gankdat.
+5. KDP: submitted, in review. Differences: KDP asked for the IBAN rather than sort code + account number (step corrected);
+   the title was entered as "The UK Sole Trader - A guide for the self employed & side hustlers" (see `KINDLE.md` Status).
