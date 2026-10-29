@@ -1233,8 +1233,9 @@
       "effort_days": 0.2,
       "proof": "the 18:27 license-worker.yml fails `npm run ci-yaml` naming line and column; no `No jobs were run` failure on main for 30 days",
       "score": 6,
-      "status": "todo",
-      "added": "2026-10-29"
+      "status": "doing",
+      "added": "2026-10-29",
+      "doing_since": "2026-10-29"
     },
     {
       "id": "worker-logs-dispatch-job",
