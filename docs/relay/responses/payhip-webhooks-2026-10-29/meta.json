@@ -1,0 +1,34 @@
+{
+  "request": "payhip-webhooks-2026-10-29",
+  "fetched_at": "2026-10-29T17:29:19.223Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/115-webhooks",
+      "fetched_at": "2026-10-29T17:29:18.238Z",
+      "status": 200,
+      "elapsed_ms": 405,
+      "final_url": "https://help.payhip.com/article/115-webhooks",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 24353,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.payhip.com/article/307-marketplace",
+      "fetched_at": "2026-10-29T17:29:19.151Z",
+      "status": 200,
+      "elapsed_ms": 70,
+      "final_url": "https://help.payhip.com/article/307-marketplace",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 20450,
+      "truncated": false
+    }
+  ]
+}
