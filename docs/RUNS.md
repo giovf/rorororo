@@ -2038,3 +2038,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 19:57 | burn-down | Fold now ties each message to its request path (shared requestId) and folds D1 reference ids; re-dispatched
 - 2026-10-29 19:49 | watchdog | ci-failed: check.yml run 403 19:31 — step Run npm run check:root; later run 404 ok
 - 2026-10-29 19:49 | watchdog | ci-failed: gankdat-metrics.yml run 282 19:31 — step Append today's numbers to RESEARCH.md; later run 283 ok
+- 2026-10-29 20:08 | burn-down | Run 285: the D1 internal errors fell on /mcp 25, /token 2, uk-company-profiles lookup 1, /feedback 1
+- 2026-10-29 20:08 | burn-down | Cause: cold-key auth read hit a D1 blip; a fresh isolate has no fallback, so the QA's one call 500'd
+- 2026-10-29 20:08 | burn-down | Shared actor client (17 single-source actors) retries a 5xx twice; CI rebuilds them; Worker retry queued
+- 2026-10-29 20:08 | burn-down | Stopping at ~52 min: 1 item done (ci-license-worker), 1 in progress (Apify QA repair); next slot continues
