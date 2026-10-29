@@ -4,6 +4,7 @@ name: license worker
 # download link → Resend mail; status, activation and download endpoints) on pushes that change it. Until
 # 2026-10-29 it was deployed by hand from an attended session (2026-09-18); tax-workbook `own-checkout-listing`
 # added a download product whose file must reach the Worker's KV on every release, so the deploy moved to CI
+# (first run 2026-10-29 18:28: invalid workflow, a step name held an unquoted colon — names quoted since).
 # like `landing` and `gankdat`. Secrets (STRIPE_WEBHOOK_SECRET, LICENSE_SIGNING_KEY, RESEND_API_KEY,
 # ADMIN_TOKEN) were set once with `wrangler secret put` and survive deploys; nothing here prints or sets them.
 on:
@@ -37,10 +38,10 @@ jobs:
           cache: npm
       - run: npm ci
         working-directory: .
-      - name: Build (tsc -b; the Worker's main is dist/index.js)
+      - name: "Build (tsc -b; the Worker's main is dist/index.js)"
         run: npm run build --silent
         working-directory: .
-      - name: Load the download products' files into the LICENSES namespace (private: served only by /v1/downloads/<token>)
+      - name: "Load the download products' files into the LICENSES namespace (private, served only by /v1/downloads/<token>)"
         # One `asset:<venture>` key per entry of src/downloads.ts DOWNLOADS, written from the venture's release
         # folder on every deploy so a refreshed file (the April 2027 workbook) goes live with its commit.
         run: |
