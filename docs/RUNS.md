@@ -1972,3 +1972,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 13:40 | interactive | Action 030: devcontainer on Node 24 (owner yes); token needs one more scope, zone Analytics Read
 - 2026-10-29 13:53 | interactive | Action 030 done: CI token reads zone analytics (/stats query verified), devcontainer on Node 24
 - 2026-10-29 14:02 | interactive | Action 031 withdrawn: owner asks capped at 15 min unless the work scores 10+ (STRATEGY §3)
+- 2026-10-29 14:30 | interactive | Meta terms read: /diligence gets a lifetime ~US$85 token cap and 18+/data wording; 032 card note fixed

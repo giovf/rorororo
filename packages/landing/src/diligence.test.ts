@@ -1,5 +1,15 @@
 import { describe, expect, it } from 'vitest';
-import { PER_DAY, PER_VISITOR_HOUR, diligence, modelOf, underCap, type DiligenceBindings } from './diligence';
+import {
+  PER_DAY,
+  PER_VISITOR_HOUR,
+  TOTAL_TOKENS,
+  addSpent,
+  diligence,
+  modelOf,
+  tokensSpent,
+  underCap,
+  type DiligenceBindings,
+} from './diligence';
 
 /** A KV namespace in memory: enough for the caps and the page. */
 function fakeKv(): KVNamespace {
@@ -58,6 +68,23 @@ describe('/diligence', () => {
     for (let i = 0; i < PER_VISITOR_HOUR; i += 1) expect(await underCap(kv, 'v', PER_VISITOR_HOUR, 60)).toBe(true);
     expect(await underCap(kv, 'v', PER_VISITOR_HOUR, 60)).toBe(false);
     expect(await underCap(kv, 'd', PER_DAY, 60)).toBe(true);
+  });
+
+  it('stops starting runs once the lifetime token total leaves no room for a full run', async () => {
+    const kv = fakeKv();
+    await addSpent(kv, 1000);
+    await addSpent(kv, 0);
+    expect(await tokensSpent(kv)).toBe(1000);
+    await addSpent(kv, TOTAL_TOKENS - 1000 - 100_000);
+    const env: DiligenceBindings = { OPS_KV: kv, DILIGENCE_API_KEY: 'LLM_1_x' };
+    const res = await diligence.request(
+      '/run',
+      { method: 'POST', body: JSON.stringify({ company: 'Acme Widgets Ltd' }), headers: { 'content-type': 'application/json' } },
+      env,
+    );
+    const evs = await events(res);
+    expect(evs).toHaveLength(1);
+    expect(String(evs[0]?.message)).toContain('credit set aside for this demo is used up');
   });
 
   it('names the model from the vars, Muse Spark on Meta Model API by default', () => {

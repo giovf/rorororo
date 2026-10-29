@@ -39,6 +39,14 @@ export type DiligenceBindings = {
 export const PER_VISITOR_HOUR = 6;
 /** Checks the whole page may start per UTC day: US$150 of credits over ten days, a few cents each. */
 export const PER_DAY = 150;
+/**
+ * Tokens the page may spend in its whole life, counted in KV across every run (2026-10-29: Meta's
+ * credit terms charge the owner's card at standard prices once the US$150 credit is used up, and
+ * offer no spending cap). Priced at the output rate (US$4.25 per million), 20M tokens is US$85, so
+ * no mix of input and output reaches the credit; a run starts only while a full run still fits.
+ */
+export const TOTAL_TOKENS = 20_000_000;
+const SPENT_KEY = 'dil:tokens:total';
 
 export interface Caps {
   perVisitorHour?: number;
@@ -58,6 +66,16 @@ export async function underCap(kv: KVNamespace, key: string, max: number, ttl: n
   const n = Number((await kv.get(key)) ?? '0') + 1;
   await kv.put(key, String(n), { expirationTtl: ttl });
   return n <= max;
+}
+
+/** Tokens spent by every run so far. */
+export async function tokensSpent(kv: KVNamespace): Promise<number> {
+  return Number((await kv.get(SPENT_KEY)) ?? '0');
+}
+
+/** Adds one run's tokens to the lifetime total. */
+export async function addSpent(kv: KVNamespace, tokens: number): Promise<void> {
+  if (tokens > 0) await kv.put(SPENT_KEY, String((await tokensSpent(kv)) + tokens));
 }
 
 export function modelOf(env: DiligenceBindings): { baseUrl: string; model: string; provider: string } {
@@ -85,12 +103,15 @@ diligence.post('/run', async (c) => {
   const day = new Date().toISOString().slice(0, 10);
   const visitorOk = await underCap(c.env.OPS_KV, `rl:dil:v:${await sha256(ip)}`, PER_VISITOR_HOUR, 3600);
   const dayOk = visitorOk && (await underCap(c.env.OPS_KV, `rl:dil:d:${day}`, PER_DAY, 2 * 86_400));
+  const budget = new Budget();
+  const creditOk = (await tokensSpent(c.env.OPS_KV)) + budget.maxTokens <= TOTAL_TOKENS;
   return streamSSE(c, async (stream) => {
     const send = (data: Record<string, unknown>): Promise<void> => stream.writeSSE({ data: JSON.stringify(data) });
     if (!company) return send({ type: 'error', message: 'Type a company name of 2 to 80 characters.' });
     if (!key) return send({ type: 'error', message: 'The model key is not configured on this deployment yet, so no check can run. The CLI in the repo runs the same loop with --dry-run.' });
     if (!visitorOk) return send({ type: 'error', message: `This demo allows ${PER_VISITOR_HOUR} checks an hour per visitor. Try again later.` });
     if (!dayOk) return send({ type: 'error', message: `Today's ${PER_DAY} checks are used up; the page opens again at 00:00 UTC.` });
+    if (!creditOk) return send({ type: 'error', message: 'The hackathon credit set aside for this demo is used up, so the page no longer runs checks. The CLI in the repo runs the same loop.' });
     await send({ type: 'start', company, model: m.model, provider: m.provider, registers: SOURCES });
     try {
       const chat = openAiChat({ baseUrl: m.baseUrl, model: m.model, apiKey: key, reasoningEffort: REASONING_EFFORT });
@@ -100,7 +121,7 @@ diligence.post('/run', async (c) => {
         company,
         chat,
         ...tools,
-        budget: new Budget(),
+        budget,
         onStep: (s) => send({ type: 'step', tool: s.tool, args: s.args, summary: stepSummary(s), chars: s.result.length }),
       });
       await send({
@@ -114,6 +135,8 @@ diligence.post('/run', async (c) => {
       });
     } catch (e) {
       await send({ type: 'error', message: e instanceof Error ? e.message : String(e) });
+    } finally {
+      await addSpent(c.env.OPS_KV, budget.tokens);
     }
   });
 });
@@ -186,7 +209,7 @@ export function page(hasKey: boolean, model: string, provider: string, fullRegis
 <div class="card">
 ${hasKey ? '' : '<p class="err" style="margin:0 0 10px">The model key is not configured on this deployment yet, so checks cannot run here. The same loop runs from the repository with <code>--dry-run</code>.</p>'}
 <form id="f"><input id="company" name="company" maxlength="80" minlength="2" required placeholder="e.g. Acme Widgets Ltd" autocomplete="organization" ${hasKey ? 'autofocus' : 'disabled'}><button id="run" type="submit"${hasKey ? '' : ' disabled'}>Run the check</button></form>
-<p class="small mute" style="margin:10px 0 0">Up to ${PER_VISITOR_HOUR} checks an hour per visitor, ${PER_DAY} a day for everyone: the page runs on hackathon credits. The name you type goes to the model provider and to gankdat and is not stored by this page.</p>
+<p class="small mute" style="margin:10px 0 0">Up to ${PER_VISITOR_HOUR} checks an hour per visitor, ${PER_DAY} a day for everyone: the page runs on hackathon credits. For adults (18+) and for UK companies, not individuals. The name you type and the register records the agent reads are sent to Meta's Model API, which may retain them under its own terms, and to gankdat; this page itself stores neither.</p>
 </div>
 <div id="out" class="card hid"><p id="status" class="mute" style="margin:0"></p><ol id="steps" class="steps"></ol><div id="report" class="hid"></div><div id="meter" class="hid"></div></div>
 <div class="card small mute">

@@ -2,7 +2,7 @@
   "venture": "hackathons",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-26",
+  "updated": "2026-10-29",
   "researched": "2026-10-26",
   "weight": 2,
   "items": [
@@ -162,6 +162,16 @@
       "status": "blocked",
       "blocked_on": "owner action 032 step 1: META_MODEL_API_KEY repository secret (Meta Model API key from dev.meta.ai)",
       "added": "2026-10-26"
+    },
+    {
+      "id": "diligence-name-only-unconfirmed",
+      "title": "/diligence: when the agent matched the typed name to more than one company, or to none by number, label the verdict 'unconfirmed — name match only' and never print HIGH without a company number; a test pins it",
+      "why": "Meta Model API Acceptable Use Policy (read 2026-10-29, terms/README.md) bars defamatory content; a name shared by several companies can yield a HIGH-risk verdict for the wrong one on a public page. SUBMISSION.md already lists company-number disambiguation as future work; this is the minimum before judges and the public run it.",
+      "effort_days": 0.2,
+      "proof": "diligence-core tests show a multi-match name yields 'unconfirmed' and no HIGH; the live page shows the label",
+      "score": 6,
+      "status": "todo",
+      "added": "2026-10-29"
     }
   ],
   "research_after": "2026-11-05"

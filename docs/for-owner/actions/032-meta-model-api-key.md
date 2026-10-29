@@ -3,7 +3,10 @@
 - **Date:** 2026-10-26
 - **Status:** pending
 - **Your time:** ~10 minutes now (step 1), ~15 minutes by 4 Nov (step 3)
-- **Cost:** £0.00 (the hackathon's US$150 of Meta Model API credits; nothing on a card)
+- **Cost:** £0.00 expected. *Corrected 2026-10-29 from the Credit Terms you saved:* Meta requires a card on file for any
+  Model API account and charges it at standard prices once the US$150 credit is used up, with no cap on their side. The
+  page therefore stops itself at ≈ US$85 of tokens (`TOTAL_TOKENS`, `packages/landing/src/diligence.ts`), so the card
+  should never be charged. Summary of the terms: `ventures/hackathons/entries/meta-global-ai-hackathon/terms/README.md`.
 - **Blocks:** hackathons `meta-global-ai-hackathon-live-run` (the live run, the video, the final text)
 
 The Meta Global AI Developer Hackathon entry is built (2026-10-26 build run): a counterparty-check
@@ -22,7 +25,7 @@ US$150k / 100k / 75k / 50k / 25k) sign a W-8BEN; submissions close **4 Nov 2026,
 - **Steps:**
   1. Claim the hackathon credits first if the dashboard or the Cerebral Valley event page asks you to
      (the Official Rules say "before claiming your credits, carefully review the Credit Terms" — they
-     are behind the participant login, so read them there; stop if they ask for a card).
+     are behind the participant login, so read them there). Meta asks for a card: add it — see Cost above.
   2. **Create API key**, name it `foundry diligence demo`, copy it (shown once; it starts `LLM_`).
   3. GitHub → https://github.com/giovf/rorororo/settings/secrets/actions → **New repository secret**
      → name `META_MODEL_API_KEY`, paste the key. Also put it in `.env` as `META_MODEL_API_KEY=…`.
