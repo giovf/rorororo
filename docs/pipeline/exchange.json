@@ -620,6 +620,15 @@
       "why": "Declined 2026-10-26 (exchange pre-research, burn-down; D2D FAQ read through the relay). Draft2Digital 'does not accept noncredentialled nonfiction content produced by AI and may require further documentation of subject matter expertise', and the operation has no credentialled author to name; the fee shape also fails the £0 rule for a line with no sales yet — a non-refundable US$20 activation fee, US$12 a year for accounts under US$100 of sales, about 10 % of retail on top of the store's share, and 30 % US withholding for international publishers until a treaty form is filed.",
       "trigger": "a credentialled co-author on the tax line, or D2D dropping the nonfiction AI rule",
       "added": "2026-10-26"
+    },
+    {
+      "id": "apify-actor-ideas-board",
+      "title": "Apify's public actor-ideas board (apify.com/ideas) as a source of paid data requests — build the voted public-register or open-data ideas as gankdat Apify actors, votes as the evidence number",
+      "status": "parked",
+      "why": "Spike 2026-10-29 (new-ventures spike-apify-actor-ideas-board, docs/exchange/spikes/apify-actor-ideas-board.md, burn-down; seeded by the 2026-W44 exchange). The board's own endpoints (found in its JS: /api/ideas/download?format=json&status=toDevelop and /api/ideas/data?page=N&sort=votes&status=toDevelop) give every open idea with votes: 148 open, 605 completed; 134 of the 148 at 0 votes; the three at ≥ 10 votes are Zalo Scraper (19, personal data from a messaging app), Integration for n8n (12, not data) and Internet Archive Scraper (10, five actors listed on the idea page and eight more pay-per-event in Store search, the largest at 40 users); Twitter Ads (8), Naver (7) and Currency Rates (6, paid FX API vendors) are out of policy. No open idea names a public register; the lottery, regulatory-compliance and astronomy ideas sit at 0 votes with a Store actor each, and the public-data ideas the board once held (Sunbiz, USPTO trade marks, VAT, income tax, lottery results, population, air and water quality, Federal Register) are in the completed list, built by others. 57 of the 148 open ideas are Apify-seeded '<Name> API' stubs and the 2026 entries include test posts. Park: the item's own rule (no in-policy idea at ≥ 10 votes).",
+      "trigger": "Re-read 2026-12-01 with one relay round (the JSON export and page 0 of the votes endpoint); earlier only if a Daily numbers row shows a first paid Apify run (0 paid at 482 runs/30 d on 2026-10-29). Promote only an in-policy public-data idea at ≥ 10 votes with no Store actor above 10 users.",
+      "added": "2026-10-29",
+      "source": "new-ventures spike (burn-down 2026-10-29)"
     }
   ]
 }

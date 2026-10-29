@@ -1976,3 +1976,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 14:40 | interactive | Meta credits applied for by owner (issued in a few days); key creation blocked by a dev.meta.ai sign-in loop
 - 2026-10-29 14:47 | interactive | /diligence hard stop: Meta's spending-alert mail flips DILIGENCE_STOP via the inbox triage
 - 2026-10-29 16:08 | triage | notify owner dispatched: last run started 13:38 UTC, 2 h 30 min ago
+- 2026-10-29 17:23 | burn-down | Spike apify-actor-ideas-board: board read via its own JSON export and votes API (4 relay rounds); 148 open
+- 2026-10-29 17:23 | burn-down | Park: 134 of 148 open ideas at 0 votes; the top three (19/12/10) are Zalo, n8n, Internet Archive, none public data
+- 2026-10-29 17:23 | burn-down | Lottery, regulatory and FX ideas sit at 0 votes with a Store actor each; parked in the exchange, re-read 12-01

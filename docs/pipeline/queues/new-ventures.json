@@ -350,13 +350,13 @@
     {
       "id": "spike-apify-actor-ideas-board",
       "title": "Research spike: Apify's public actor-ideas board (apify.com/ideas) as a source of paid data requests on the one shelf strangers already use (19 users, 482 runs/30 d, 0 paid — Daily numbers 2026-10-29) — through the relay (RENDER the board and GET the idea pages it names; add apify.com to docs/relay/hosts.txt if missing) read the open ideas for public registers, open data and official-source feeds with their votes, dates and whether a public actor already serves them; keep only sources whose terms allow automated access and whose licence allows resale (OGL, CC-BY, public-domain government data) and drop anything that scrapes a site that forbids it; write docs/exchange/spikes/apify-actor-ideas-board.md with a table (idea, votes, source, licence, existing actors, build days) and a promote / park call (promote shape: ≤ 3 gankdat Apify-actor items at ≤ 1 day each with the vote count as the evidence number, priced pay-per-event like the 18 live actors; park if no in-policy idea has ≥ 10 votes)",
-      "why": "Exchange 2026-W44 (docs/exchange/2026-W44.md): STRATEGY §1 names 'paid data or integration requests on marketplaces' as a money-on-offer source, and the Apify Store is the only shelf where strangers run our products without an owner step (482 runs/30 d by others, 19 users, 18 public actors, CI pushes and prices actors itself). The ideas board is Apify's own public request list, never read by this operation (no mention in docs/ or any RESEARCH.md). Score: evidence 2 × reach 3 (buyers already on the shelf) ÷ 0.3 d ≈ 6 at weight 2; 0 owner minutes.",
+      "why": "Exchange 2026-W44 (docs/exchange/2026-W44.md): STRATEGY §1 names 'paid data or integration requests on marketplaces' as a money-on-offer source, and the Apify Store is the only shelf where strangers run our products without an owner step (482 runs/30 d by others, 19 users, 18 public actors, CI pushes and prices actors itself). The ideas board is Apify's own public request list, never read by this operation (no mention in docs/ or any RESEARCH.md). Score: evidence 2 × reach 3 (buyers already on the shelf) ÷ 0.3 d ≈ 6 at weight 2; 0 owner minutes. — Spike 2026-10-29 (docs/exchange/spikes/apify-actor-ideas-board.md): park. The board is read through its own endpoints (JSON export of the 148 open ideas, the votes-sorted data pages); 134 of 148 open ideas have 0 votes and the three at ≥ 10 votes are Zalo (19, a messaging-app scraper), an n8n connector (12) and the Internet Archive (10, 13 Store actors already); no open idea names a public register, and the lottery, regulatory and FX ideas sit at 0 votes with a Store actor each. No actor item queued; parked in the exchange with a 2026-12-01 re-read.",
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/apify-actor-ideas-board.md with the table and a promote / park call; promoted items carry a vote count",
       "score": 6,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-29",
-      "doing_since": "2026-10-29"
+      "done_at": "2026-10-29"
     },
     {
       "id": "spike-envato-codecanyon-shelf",
