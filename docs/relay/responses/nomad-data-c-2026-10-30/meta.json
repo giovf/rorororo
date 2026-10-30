@@ -1,0 +1,167 @@
+{
+  "request": "nomad-data-c-2026-10-30",
+  "fetched_at": "2026-10-30T09:22:32.065Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://app.nomad-data.com/direct-signup",
+      "render": true,
+      "fetched_at": "2026-10-30T09:22:11.756Z",
+      "status": 200,
+      "final_url": "https://auth.nomad-data.com/u/signup/identifier?state=hKFo2SBqdF9HR3A3Yzc1T0VtLWlMdDJDcUQzSDZSUEFyVU5pUKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIHo4T0NQbmhiUUZCMkJEYjl1UTItZUJNMHJ2TFNBOEZio2NpZNkgQUNSWmJQbE5PU1BKNEhOMno2NnY2NzBnNTY4UU95RXA",
+      "title": "Sign up | Nomad Data",
+      "rendered": {
+        "network_idle": true,
+        "requests": 43,
+        "failed": [
+          "GET https://auth.nomad-data.com/authorize?client_id=ACRZbPlNOSPJ4HN2z66v670g568QOyEp&scope=openid+strut%3Adefault+offline_access&redirect_uri=https%3A%2F%2Fapp.nomad-data.com%2Fauthorize&audience=Stru",
+          "GET https://auth.nomad-data.com/authorize?client_id=ACRZbPlNOSPJ4HN2z66v670g568QOyEp&scope=openid+strut%3Adefault+offline_access&redirect_uri=https%3A%2F%2Fapp.nomad-data.com%2Fauthorize&audience=Stru"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Thu, 22 Oct 2026 00:46:11 GMT",
+        "etag": "\"ee572bb7b64854618f38605dd9fb5342\""
+      },
+      "file": "1.html",
+      "bytes": 55198,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://app.nomad-data.com/login",
+      "render": true,
+      "fetched_at": "2026-10-30T09:22:16.529Z",
+      "status": 200,
+      "final_url": "https://app.nomad-data.com/login",
+      "title": "Nomad",
+      "rendered": {
+        "network_idle": true,
+        "requests": 46,
+        "failed": [
+          "GET https://strut-staging.s3.amazonaws.com/app-alerts/app-alerts.json?t=1793352137538 → 403"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 (Forbidden)"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Thu, 22 Oct 2026 00:46:11 GMT",
+        "etag": "\"ee572bb7b64854618f38605dd9fb5342\""
+      },
+      "file": "2.html",
+      "bytes": 37377,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-sellers",
+      "render": true,
+      "fetched_at": "2026-10-30T09:22:20.194Z",
+      "status": 200,
+      "final_url": "https://www.nomad-data.com/data-sellers",
+      "title": "Data Selling Companies | Data Sellers - Nomad",
+      "rendered": {
+        "network_idle": true,
+        "requests": 103,
+        "failed": [],
+        "console_errors": [
+          "requestStorageAccess: Permission denied."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:22:20 GMT"
+      },
+      "file": "3.html",
+      "bytes": 44386,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/whats-new",
+      "render": true,
+      "fetched_at": "2026-10-30T09:22:25.325Z",
+      "status": 200,
+      "final_url": "https://www.nomad-data.com/whats-new",
+      "title": "What's New | Nomad",
+      "rendered": {
+        "network_idle": true,
+        "requests": 334,
+        "failed": [],
+        "console_errors": [
+          "requestStorageAccess: Permission denied."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 17:46:56 GMT"
+      },
+      "file": "4.html",
+      "bytes": 77676,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monda.ai/partners/nomad-data",
+      "fetched_at": "2026-10-30T09:22:30.231Z",
+      "status": 404,
+      "elapsed_ms": 571,
+      "final_url": "https://www.monda.ai/partners/nomad-data",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 18 Sep 2026 13:20:17 GMT"
+      },
+      "file": "5.html",
+      "bytes": 3823,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/blog/ten-things-nomad-data-has-learned-after-two-years-helping-firms-track-their-data-vendor-relationships",
+      "fetched_at": "2026-10-30T09:22:30.805Z",
+      "status": 200,
+      "elapsed_ms": 124,
+      "final_url": "https://www.nomad-data.com/blog/ten-things-nomad-data-has-learned-after-two-years-helping-firms-track-their-data-vendor-relationships",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:22:30 GMT"
+      },
+      "file": "6.html",
+      "bytes": 35147,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/blog/nomad-launch",
+      "fetched_at": "2026-10-30T09:22:31.430Z",
+      "status": 200,
+      "elapsed_ms": 65,
+      "final_url": "https://www.nomad-data.com/blog/nomad-launch",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:22:31 GMT"
+      },
+      "file": "7.html",
+      "bytes": 29793,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/blog/reimagining-data-marketplaces---how-nomad-data-built-a-global-network",
+      "fetched_at": "2026-10-30T09:22:31.997Z",
+      "status": 200,
+      "elapsed_ms": 66,
+      "final_url": "https://www.nomad-data.com/blog/reimagining-data-marketplaces---how-nomad-data-built-a-global-network",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:22:32 GMT"
+      },
+      "file": "8.html",
+      "bytes": 36872,
+      "truncated": false
+    }
+  ]
+}
