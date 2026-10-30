@@ -1038,3 +1038,27 @@ and stamped with the invocation's `$metadata.requestId`. A per-page facet statem
 the same statement fails for every class, so `facet-aggregation-one-scan` (7) rewrites the pass as
 one scan per statement (json_each over the facet field, GROUP BY value, window function for the
 per-page limits). The runner now reads an invocation's lines by its requestId.
+
+## Research pass 2026-10-30 (burn-down, 18:45 UTC)
+
+`npm run pipeline empty` listed gankdat (`research_after: 2026-10-30`, the Claude directory day-30 read's date, reached;
+every open item dated November). Read: the 10-30 Daily numbers row and the metrics job log behind it (run 288), the 10-30
+wave logs, one `worker logs` dispatch (level error, 24 h), `docs/INBOX.md` (Glama "unhealthy" 10-29, Apify QA flag 10-29 →
+item filed), the day-30 directory read and tonight's `mcp-protocol-2026-07-28` build. Four items queued, each from a line
+in our own logs:
+
+| Reading | What it says | Item |
+| --- | --- | --- |
+| `stats facets uk-trademark-journal: 15 of 45 pages in the blob`; wave 06:05 lines `stats_facet_failed reason=D1_ERROR: out of memory: SQLITE_NOMEM elapsed_ms=5547 values=45`, `stats_facets_budget computed=0 carried=15 missing=30 failed=1` | the 10-29 one-scan rewrite traded D1's CPU limit for its memory limit: the 45-value window over 196k rows cannot be held; 30 class pages still 503 (PetalBot and KeenableBot hit `/class/21` today) | `facet-scan-sqlite-nomem` (7) — batch the values per statement |
+| `worker errors 24h: 54 (… ×3, … ×1)` — 54 lines, 4 named; the job log: `54 lines, 50 request events` | the platform marks a 5xx response's request event `level: error`; the clause counts them and names none — tonight's `worker logs` reads show they are the class-page 503s (the 12 newest error-level events of the 24 h: `GET /stats/uk-trademark-journal/class/16` ×10, `/class/24`, `/class/35`, all 503 — one crawler retrying a page that has not existed since 10-25) and uk-planning's | `worker-errors-request-paths` (4) — fold by route and status |
+| `stats crawlers: logs 0 fetches/7d — 29 lines matched, none a request line` beside `zone 3320 req/30d, AI 670` | `statsLineOf` parses `message` as a JSON string; Workers Logs keeps the Worker's JSON request line as the `source` object (the 10-29 wave-log reading), so every line is dropped | `stats-crawlers-logs-source-object` (3) |
+| `claude tool callers: 30d 0 clients, 0 calls`; tonight's deploy answers 2026-07-28 bodies with the v2 ladder (relay smoke: the header-missing 400, never the old 404) | the proof of tonight's build is dated: tomorrow's Cowork traffic and the probe's new `2026-07-28:` line | `mcp-2026-07-28-day-7-read` (4, 2026-11-06) |
+
+Also read, not queued: `oauth funnel 7d: 26 token (refresh_token 26)` with 0 authorize — one already-connected OAuth client
+refreshing (the same key the day-30 read saw on Cowork), not a funnel; `connect_account 7d by UA: python-requests 12,
+BrickBlueBot 6, SentinelOracle 1` — scanners, no person behind the 19 challenges; `x402 30d: buyers 5 paid, 3 clients,
+repeat 0` and `datasets 30d external` unchanged since 10-29 (the day-30 Bazaar read is dated 11-14); Search Console 17
+impressions / 0 clicks, 8 of 19 indexed (the IndexNow day-30 read is dated 11-05); Apify 502 runs by others, 19 users, two
+actors with failed QA runs already covered by `apify-companies-house-qa-repair` (doing). `researched: 2026-10-30`,
+`research_after: 2026-11-06` (the day-7 read; the queue is no longer starved).
+

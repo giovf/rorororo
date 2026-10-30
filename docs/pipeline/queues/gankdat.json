@@ -3,7 +3,7 @@
   "status": "open",
   "needs_research": false,
   "updated": "2026-10-30",
-  "researched": "2026-10-25",
+  "researched": "2026-10-30",
   "items": [
     {
       "id": "nhs-ods",
@@ -929,7 +929,48 @@
       "added": "2026-10-29",
       "doing_since": "2026-10-29",
       "updated": "2026-10-29"
+    },
+    {
+      "id": "facet-scan-sqlite-nomem",
+      "title": "The one-scan facet aggregation runs D1 out of memory on the journal's 196k-row generation (`stats_facet_failed reason=D1_ERROR: out of memory: SQLITE_NOMEM`, 06:07 UTC 2026-10-30, computed 0 of 45, carried 15, missing 30): bound the scan — run the three statement kinds per batch of facet values (e.g. 9 Nice classes a statement, `trim(e.value) IN (…)` over the batch) and, for the windowed top-N per breakdown, aggregate `GROUP BY value, gv` into a temp result first and rank in the Worker when the window is what SQLite cannot hold; keep the per-facet budget, stalest-first, interim writes, carry and failures-in-a-row; a d1store test with a 1,500-row fixture asserts batches × statements and identical pages to the unbatched scan",
+      "why": "Found by this night's research pass in the 10-30 Daily numbers row's wave log (`stats facets uk-trademark-journal: 15 of 45 pages in the blob`; the 06:05 wave's lines: `stats_facet_failed … SQLITE_NOMEM elapsed_ms=5547 values=45`, `stats_facets_budget computed=0 carried=15 missing=30 failed=1`). `facet-aggregation-one-scan` (10-29) replaced the per-value statements that exceeded D1's CPU limit with one `json_each` scan + `GROUP BY value` and a `ROW_NUMBER() OVER (PARTITION BY value)` window over all 45 values at once — SQLite now runs out of memory instead of time. Reach: 30 of the journal's 45 class pages still answer 503 (a `worker logs` read tonight: the day's 50 error-level request events are such 5xx — the 12 newest all `GET /stats/uk-trademark-journal/class/16|24|35` 503, PetalBot and KeenableBot on `/class/21` earlier), Search Console mailed 5xx for sitemap pages on 10-26, and the journal is the one register with external demand (`datasets 30d external: uk-trademark-journal 4`). Evidence 3 (our own log names the statement and the error) × reach 2 (30 public pages, the sitemap, the AI crawlers that index them) ÷ 0.5 day ≈ 12, capped by precedent at 7 (the 10-26..10-29 facet items scored 5–7).",
+      "effort_days": 0.5,
+      "proof": "`stats facets uk-trademark-journal: 45 of 45 pages in the blob` in the Daily numbers row the morning after the deploy, `stats_facets_done computed=45`, and `/stats/uk-trademark-journal/class/21` 200 through the relay",
+      "score": 7,
+      "status": "todo",
+      "added": "2026-10-30"
+    },
+    {
+      "id": "worker-errors-request-paths",
+      "title": "Name the error-level request events in the `worker errors 24h` clause: fold them by path family and status (`GET /stats/<slug>/class/* 503 ×N`, `GET /v1/data/uk-planning 503 ×N`, `POST /mcp 500 ×N`) after the thrown messages, so the row says which route 5xx'd and how often instead of counting them silently",
+      "why": "The 10-30 row reads `worker errors 24h: 54 (Network connection lost. ×3, origin dataset empty … ×1)` — 54 lines, four named: `foldErrorLines` counts an error-level invocation event (the platform marks a 5xx response's request event `level: error`) in `lines` and keeps only its path for the thrown messages' attribution, so 50 of the day's 54 error lines reach the row as a bare number. A `worker logs` dispatch tonight (level error, 24 h) showed what they are: 5xx request events — the 12 newest of the day all `GET /stats/uk-trademark-journal/class/16|24|35` → 503 (one crawler retrying `/class/16` ten times), the journal's missing class pages (PetalBot, KeenableBot), uk-planning's paused-origin 503s to the Apify actor — exactly the routes a reader needs named to tell a crawler hitting a known 503 from a new 500 (the 10-29 Glama 'unhealthy' mail was two `/mcp` 500s that this clause would have shown by path). `error-lines.ts` already has the request line's URL and the row's status is in `$workers.event.response.status` (the event shape read tonight) — a fold by `method + path family + status` and a `requests: …` tail on the clause, tests in `test/error-lines.spec.ts`. Evidence 2 × reach 2 (every 5xx on any route becomes a dated reading) ÷ 0.2 day ≈ 4 (reading item, precedent 3–5).",
+      "effort_days": 0.2,
+      "proof": "the next Daily numbers row's `worker errors 24h` clause names the 5xx routes (`requests: GET /stats/uk-trademark-journal/class/* 503 ×N …`) and the named count plus the thrown count equals the line total",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-30"
+    },
+    {
+      "id": "stats-crawlers-logs-source-object",
+      "title": "Read the `/stats` crawler lines from the Query Builder event's `source` object (the Worker's JSON request line as Workers Logs keeps it: `path`, `userAgent`, `status`), not from a JSON string in `message`: `statsLineOf` in `src/lib/crawler-hits.ts` parses `$metadata.message` as JSON and the platform never puts the logged object there, so `stats crawlers: logs` has read `0 fetches — N lines matched, none a request line` since it shipped; or drop the logs clause for the zone reading that now fills",
+      "why": "The 10-30 row: `stats crawlers: logs 0 fetches/7d, AI 0 (none) — 29 lines matched, none a request line; zone 3320 req/30d, AI 670 (PetalBot 310, Bingbot 170 …)`. The 29 lines are the Worker's own request lines for `/stats…` (middleware/logging.ts `console.log(JSON.stringify({ requestId, method, path, userAgent, status … }))`) — and the 10-29 wave-log reading established that Workers Logs keeps a JSON `console.log` as the parsed object under `source`, with no `message` string anywhere (`wave-logs.ts` reads `raw.source` for that reason). `statsLineOf` still requires `message` to start with `{`, so every line is dropped and the clause reads zero while the zone Analytics reading (owner action 030, 10-29) shows 3,320 requests and 670 AI-crawler fetches a month on the same pages. Fix: read `raw.source.path` / `raw.source.userAgent` (string message kept as a fallback), one fixture test with the live event shape; the two clauses then agree or the logs one goes. Evidence 3 (our own code against the shape we read) × reach 1 (one clause of the row, the pay-per-crawl spike's reading) ÷ 0.2 day ≈ 3.",
+      "effort_days": 0.2,
+      "proof": "the next Daily numbers row's `stats crawlers: logs` reading is non-zero and its AI families match the zone reading's (PetalBot, Bingbot, Amazonbot) within the week",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-30"
+    },
+    {
+      "id": "mcp-2026-07-28-day-7-read",
+      "title": "Day-7 read of the SDK v2 /mcp (v0.27.0, deployed 2026-10-30 18:31 UTC): the week's `claude tool callers` (clients, calls), the probe's `2026-07-28:` line every morning, one `worker logs` dispatch with needle `2026-07-28` for the status codes Claude's clients got (Cowork, claude.ai, Code), and the 2025 side (`mcp probe` 2025 line, Glama's health mail absent); if ≥ 1 client with ≥ 1 call: record the proof in RESEARCH.md and the exchange's n8n trigger reading; if 0: read the first 2026-07-28 request's full invocation (`request_id`) and queue the next cause",
+      "why": "The item `mcp-protocol-2026-07-28` (built tonight) has a dated proof — a 2026-07-28 tools/call answering 200 in the Worker log and `claude tool callers ≥ 1 client, ≥ 1 call within a week of the deploy` — and no item reads it. Tonight's live smoke could only reach the v2 ladder's 400 through the relay (the relay sends no `MCP-Protocol-Version` header), so the first real 2026-07-28 traffic is tomorrow's Cowork session (09–11 UTC on 10-30) and the 10-31 probe row. Evidence 3 × reach 4 ÷ 0.1 day, dated — scored as a reading (4), like the other day-N reads in this queue.",
+      "effort_days": 0.1,
+      "proof": "a RESEARCH.md paragraph dated 2026-11-06 with the three numbers (clients, calls, 2026-07-28 status codes) and either the proof met or the next item queued",
+      "score": 4,
+      "status": "todo",
+      "not_before": "2026-11-06",
+      "added": "2026-10-30"
     }
   ],
-  "research_after": "2026-10-30"
+  "research_after": "2026-11-06"
 }

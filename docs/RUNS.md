@@ -2119,3 +2119,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 18:37 | burn-down | Taxcafe sells a 299-page sole-trader paperback yearly; amazon.co.uk paperback search walled raw and rendered
 - 2026-10-30 18:37 | burn-down | Call: promote — tax-workbook/kdp-paperback-edition (7) queued, blocked on the Kindle going live
 - 2026-10-30 18:37 | burn-down | Live smoke via relay: /mcp answers a 2026-07-28 body with the v2 ladder's 400 (header missing) — v0.27.0 deployed
+- 2026-10-30 18:45 | burn-down | gankdat research pass: 10-30 row, metrics job log, wave logs, one worker-logs dispatch (level error)
+- 2026-10-30 18:45 | burn-down | Queued facet-scan-sqlite-nomem (7): one-scan facets hit SQLITE_NOMEM; 30 of 45 class pages still 503
+- 2026-10-30 18:45 | burn-down | Queued worker-errors-request-paths (4): 50 of 54 error lines are unnamed 5xx request events
+- 2026-10-30 18:45 | burn-down | Queued stats-crawlers-logs-source-object (3): statsLineOf reads message, the platform keeps source
+- 2026-10-30 18:45 | burn-down | Queued mcp-2026-07-28-day-7-read (4, 11-06); gankdat researched, research_after 2026-11-06
