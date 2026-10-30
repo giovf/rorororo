@@ -1,7 +1,7 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": false,
+  "needs_research": true,
   "updated": "2026-10-30",
   "researched": "2026-10-29",
   "weight": 2,
@@ -395,14 +395,16 @@
     },
     {
       "id": "spike-kdp-paperback-tax-guide",
-      "title": "Research spike: a KDP paperback of 'UK Sole Trader Tax 2026/27' — through the relay (kdp.amazon.com and www.amazon.co.uk are allowed; add www.taxcafe.co.uk) read KDP's printing-cost page (the amazon.co.uk black-ink rows: fixed cost for 24–108 pages, fixed + per page from 110), the paperback list-price requirements and the 60 % royalty rule, the print content and cover specs (6×9 trim, margins, spine width for our page count, PDF/X requirements), whether print titles need anything beyond the existing KDP account (tax interview and bank already done 10-29), and the amazon.co.uk paperback search for 'sole trader tax 2026/27' and 'self assessment tax return 2026' (title, price, pages, edition year, rating count — Taxcafe's Small Business Tax Saving Tactics and the annual self-assessment series first); compute our page count at 6×9 from the EPUB (9,102 words), the print cost, the minimum list price and the net per copy at £7.99 / £9.99 / £12.99 against the Kindle's 70 % net; write docs/exchange/spikes/kdp-paperback-tax-guide.md with a promote / park call (promote shape: a tax-workbook item that builds the interior PDF with Chromium print from the Kindle content module and the wrap cover PDF from the cover SVG, ≤ 0.5 day, listed by the owner from the same KDP title in ~10 min once kdp-listing-live is done; park if the net per copy at a rival-matching price is under £3, if KDP print needs a new account or verification, or if no 2026/27 sole-trader paperback rival is on the shelf)",
+      "title": "Research spike: a KDP paperback of 'UK Sole Trader Tax 2026/27' — through the relay (kdp.amazon.com and www.amazon.co.uk are allowed; add www.taxcafe.co.uk) read KDP's printing-cost page (the amazon.co.uk black-ink rows: fixed cost for 24–108 pages, fixed + per page from 110), the paperback list-price requirements and the 60 % royalty rule, the print content and cover specs (6×9 trim, margins, spine width for our page count, PDF/X requirements), whether print titles need anything beyond the existing KDP account (tax interview and bank already done 10-29), and the amazon.co.uk paperback search for 'sole trader tax 2026/27' and 'self assessment tax return 2026' (title, price, pages, edition year, rating count — Taxcafe's Small Business Tax Saving Tactics and the annual self-assessment series first); compute our page count at 6×9 from the EPUB (9,102 words), the print cost, the minimum list price and the net per copy at £7.99 / £9.99 / £12.99 against the Kindle's 70 % net; write docs/exchange/spikes/kdp-paperback-tax-guide.md with a promote / park call (promote shape: a tax-workbook item that builds the interior PDF with Chromium print from the Kindle content module and the wrap cover PDF from the cover SVG, ≤ 0.5 day, listed by the owner from the same KDP title in ~10 min once kdp-listing-live is done; park if the net per copy at a rival-matching price is under £3, if KDP print needs a new account or verification, or if no 2026/27 sole-trader paperback rival is on the shelf) — Done 2026-10-30 (burn-down): docs/exchange/spikes/kdp-paperback-tax-guide.md — KDP print cost £1.93 fixed (24–110 pp, amazon.co.uk), 60 % royalty from £7.99; our 9,102 words ≈ 42–56 pages at 6×9; net £4.06 a copy at £9.99 (£2.86 at £7.99, £5.86 at £12.99); no new account or identity step; Taxcafe sells a 299-page sole-trader paperback yearly; amazon.co.uk paperback search unreadable (bot wall raw and rendered). Call: promote as tax-workbook/kdp-paperback-edition (7), blocked on the Kindle going live.",
       "why": "Exchange pre-research 2026-10-30 (burn-down, idea kdp-paperback-tax-guide in exchange.json): the Kindle sibling is in KDP review and the 10-26 research gated a paperback on Kindle sales before the print economics were read. KDP's own example prices a 55-page black-ink amazon.co.uk paperback at a fixed £1.93 with 60 % royalty on the list price and no VAT on UK print books, so the same 9,102-word guide nets ≈ £4 a copy at £9.99 against ≈ £2.60 for the £4.99 Kindle; Taxcafe's annual sole-trader paperback (304 pages, 2025/26 ISBN 9781911020981) and its 2026/27 property-tax paperback (published 20 Jan 2026) show print buyers for annual UK tax guides exist this year; the owner's KDP account, tax interview and bank are done, so the upload is ~10 owner minutes and no identity step. Evidence 3 × reach 3 ÷ (0.3 spike + ~0.5 build + 10 owner min); STRATEGY §1 money already flowing on a shelf that already carries our title. Every figure above is from a WebSearch index and the spike reads the primary pages. Whop (a digital-product marketplace with discovery) was read tonight and skipped: payouts need Stripe KYC on a new account, and no tax-template rival is on it.",
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/kdp-paperback-tax-guide.md with the printing-cost rows from KDP, our page count and net per copy at three prices, the paperback rival table from amazon.co.uk, the account check, and a promote / park call",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-30",
-      "doing_since": "2026-10-30"
+      "doing_since": "2026-10-30",
+      "done_at": "2026-10-30",
+      "doing_by": "burn-down"
     }
   ]
 }

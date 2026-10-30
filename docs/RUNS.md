@@ -2113,3 +2113,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 18:22 | burn-down | @hono/mcp and @modelcontextprotocol/sdk removed; @modelcontextprotocol/server 2.4.0 + client (tests)
 - 2026-10-30 18:22 | burn-down | 5 conformance tests for the modern era; deadline test on the v2 client; 22 existing MCP tests green
 - 2026-10-30 18:22 | burn-down | Live probe gains a keyless 2026-07-28 pass: 2026-07-28: tools 200 (N tools), call 200 in the row
+- 2026-10-30 18:37 | burn-down | Spike kdp-paperback-tax-guide done: 3 relay rounds (7 KDP help pages, Taxcafe, Amazon raw+rendered)
+- 2026-10-30 18:37 | burn-down | KDP print cost £1.93 fixed (24–110 pp, amazon.co.uk); 60 % royalty from £7.99; 9,102 words ≈ 42–56 pp
+- 2026-10-30 18:37 | burn-down | Net £4.06 a copy at £9.99 (£2.86 at £7.99); print premium over the Kindle £0.59–1.36, not a multiple
+- 2026-10-30 18:37 | burn-down | Taxcafe sells a 299-page sole-trader paperback yearly; amazon.co.uk paperback search walled raw and rendered
+- 2026-10-30 18:37 | burn-down | Call: promote — tax-workbook/kdp-paperback-edition (7) queued, blocked on the Kindle going live
+- 2026-10-30 18:37 | burn-down | Live smoke via relay: /mcp answers a 2026-07-28 body with the v2 ladder's 400 (header missing) — v0.27.0 deployed

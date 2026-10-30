@@ -2,7 +2,7 @@
   "venture": "tax-workbook",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "researched": "2026-10-26",
   "weight": 2,
   "items": [
@@ -179,6 +179,17 @@
       "status": "blocked",
       "blocked_on": "Owner action 034: one Stripe Payment Link (£6.99, metadata venture=tax-workbook, redirect to thanks-tax-workbook.html) — docs/for-owner/actions/034-stripe-payment-link-tax-workbook.md; unblocked by the owner's '034 done <url>' note",
       "added": "2026-10-29"
+    },
+    {
+      "id": "kdp-paperback-edition",
+      "title": "KDP paperback of 'UK Sole Trader Tax 2026/27' as a second format of the live Kindle title: interior PDF printed with Chromium from src/kindle/content.ts at 6\" × 9\" (0.375\" gutter, 0.5\" outside, 11 pt serif, chapters on a new page, running heads, page numbers, the chapter-2 and chapter-13 tables as tables, fonts embedded), wrap cover PDF from the cover SVG at (0.125 + 6 + spine + 6 + 0.125)\" × 9.25\" with spine = pages × 0.002252\" and no spine text; a build check asserting 24 ≤ pages ≤ 110 and the cover width against the page count; KINDLE.md gains a Paperback section (white paper, no bleed, £9.99, free KDP ISBN) and the owner's ~10-minute add-a-format step appended to action 029's done list as a follow-up, no new request",
+      "why": "Spike kdp-paperback-tax-guide (burn-down 2026-10-30, docs/exchange/spikes/kdp-paperback-tax-guide.md; KDP pages read through the relay): black-ink paperbacks of 24–110 pages cost a fixed £1.93 on amazon.co.uk and the royalty is 60 % of list from £7.99 (50 % below), so the 9,102-word guide (≈ 42–56 pages at 6×9) nets £4.06 a copy at £9.99 — over the £3 park line, and the price the MTD rival asks for its Kindle edition. Nothing new from the owner: the paperback is a format added to the same KDP title on the account whose tax interview and bank are done; print books are zero-rated in the UK so the list price is the buyer's price. The shelf sells annual UK tax guides in print every year (Taxcafe's 299-page sole-trader guide, 13th edition; the self-assessment annual series on Amazon since 2017). The print premium over the Kindle is £0.59–1.36 a copy, so the case is the second buyer (a print reader does not buy the e-book), not margin. Evidence 2 × reach 2 ÷ (0.5 d + 10 owner min) ≈ 7 at weight 2.",
+      "effort_days": 0.5,
+      "proof": "paperback live beside the Kindle edition on amazon.co.uk within 7 days of the owner's upload (ASIN in KINDLE.md); first paperback sale ≤ 60 days in the owner's monthly `kindle: N sold` note; Kindle sales not lower in the month after than the month before",
+      "score": 7,
+      "status": "blocked",
+      "blocked_on": "kdp-listing-live: KDP reviews a title's formats together and the Kindle edition (submitted 2026-10-29) is still in review with a title-vs-cover fix pending; build the day the 'is now live' mail lands (inbox triage, SELF-CAUSED kdp row)",
+      "added": "2026-10-30"
     }
   ],
   "research_after": "2026-11-03"
