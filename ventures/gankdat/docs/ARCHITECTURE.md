@@ -495,6 +495,24 @@ runs `check:root`.
   stalest-first order, interim writes, carry and three-failures-in-a-row rule all work per facet
   (`stats_facet_failed` names the segment; `stats_facets_budget` counts a carried facet's pages),
   and the progress marker reads `facet <segment>: N pages in S statements`.
+  **Batches of values** (2026-10-30, `facet-scan-sqlite-nomem`, v0.27.1): the first wave on v0.26.4 (06:05)
+  ran D1 out of memory instead of time — `stats_facet_failed … D1_ERROR: out of memory: SQLITE_NOMEM
+  elapsed_ms=5547 values=45`, 0 of 45 computed, 15 carried, 30 class pages still a 503. SQLite sorts every
+  input row of a GROUP BY before it aggregates, and the window over a breakdown keeps the grouped rows as
+  well, so one statement over all 45 values held every (class, applicant) row of the 196k-row generation
+  at once. `aggregateFacets` now runs a facet's values in batches of `FACET_BATCH_VALUES` (9): each batch
+  is the same 2 + groupBy.length statements with `trim(e.value) IN (<batch>)`, so the journal costs 5
+  batches × 7 statements, each still one linear scan and bounded in memory by the batch; a batch that
+  still fails with `SQLITE_NOMEM` is split in two and retried (`scanFacetBatch`, logged
+  `stats_facet_batch_split`) down to one value, so the bound holds whatever the generation grows to.
+  The values run stalest first within the facet (never computed, then the oldest carried page), the
+  budget and the wave deadline are checked between batches, a batch the pass does not reach keeps its
+  previous page with `as_of`, the interim write and the progress marker (`facet <segment>: N of M pages
+  in S statements (batch B of K)`) land per batch, a failed batch is one `stats_facet_failed` (segment,
+  values, batch, first value) and one failure in the three-in-a-row count while the next batch goes on,
+  and `stats_facets_budget` counts a partly computed facet's `computed`, `carried`, `missing` and
+  `failed`. `test/d1store.spec.ts` asserts batches × statements and identical pages to the one-batch
+  scan on a 1,500-row fixture, the in-facet carry stalest first, and the split.
 - **Keyless Atom feeds** (`routes/feeds.ts`, 2026-10-05): `/feeds/<slug>.xml` and
   `/feeds/<slug>/<segment>/<value>.xml` (facet values the source lists, same filter as the
   facet stats page) carry the register's last 7 days of added / removed / changed rows, ≤ 50

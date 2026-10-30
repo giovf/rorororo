@@ -2125,3 +2125,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 18:45 | burn-down | Queued stats-crawlers-logs-source-object (3): statsLineOf reads message, the platform keeps source
 - 2026-10-30 18:45 | burn-down | Queued mcp-2026-07-28-day-7-read (4, 11-06); gankdat researched, research_after 2026-11-06
 - 2026-10-30 19:07 | triage | notify owner dispatched: last run started 16:28 UTC, 2 h 38 min ago
+- 2026-10-30 19:22 | burn-down | gankdat facet-scan-sqlite-nomem done (v0.27.1): facet values scanned in batches of 9
+- 2026-10-30 19:22 | burn-down | SQLite sorts every GROUP BY input row: one statement over 45 classes held the generation
+- 2026-10-30 19:22 | burn-down | A batch that still hits SQLITE_NOMEM splits in two down to one value; budget checked per batch
+- 2026-10-30 19:22 | burn-down | Values run stalest first within the facet; unreached batches carry their previous page
+- 2026-10-30 19:22 | burn-down | 3 d1store tests: 1,500-row fixture batches × statements and identical pages, carry, split

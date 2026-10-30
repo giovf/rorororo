@@ -937,9 +937,11 @@
       "effort_days": 0.5,
       "proof": "`stats facets uk-trademark-journal: 45 of 45 pages in the blob` in the Daily numbers row the morning after the deploy, `stats_facets_done computed=45`, and `/stats/uk-trademark-journal/class/21` 200 through the relay",
       "score": 7,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-30",
-      "doing_since": "2026-10-30"
+      "doing_since": "2026-10-30",
+      "done_at": "2026-10-30",
+      "doing_by": "burn-down"
     },
     {
       "id": "worker-errors-request-paths",
