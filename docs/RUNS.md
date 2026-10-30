@@ -2091,3 +2091,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 17:40 | burn-down | Google 16 impressions/7d on the Weava page, 0 clicks; no first funnel step to measure, no fix worth a slot
 - 2026-10-30 17:40 | burn-down | Keep at £0 untouched; day-90-verdict queued for 2026-12-21; research_after moved to 12-21
 - 2026-10-30 17:40 | burn-down | 0.4.0 still unsigned 25 days (attended-session handoff of 10-05); Chrome keywords owner-blocked
+- 2026-10-30 17:24 | burn-down | Exchange pre-research: KDP paperback of the tax guide — spike seeded (5); 0 spikes were open
+- 2026-10-30 17:24 | burn-down | WebSearch: KDP example £1.93 print cost for a 55-page UK paperback, 60 % royalty; ≈ £4 net at £9.99 vs £2.60 Kindle
+- 2026-10-30 17:24 | burn-down | Taxcafe sells an annual sole-trader paperback (304 pp) and a 2026/27 property one; same KDP account, no new identity
+- 2026-10-30 17:24 | burn-down | Skipped: Whop (payouts need Stripe KYC on a new account; no tax-template rival on it)
+- 2026-10-30 17:24 | burn-down | Dependabot majors: no open Dependabot PR (list_pull_requests: only the 2025 Develop PR); nothing to review
+- 2026-10-30 17:24 | burn-down | Stopping: 2 day-30 reviews done, spike seeded; gankdat research deferred to the 17:10 build slot; nothing else buildable
