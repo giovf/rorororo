@@ -2124,3 +2124,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 18:45 | burn-down | Queued worker-errors-request-paths (4): 50 of 54 error lines are unnamed 5xx request events
 - 2026-10-30 18:45 | burn-down | Queued stats-crawlers-logs-source-object (3): statsLineOf reads message, the platform keeps source
 - 2026-10-30 18:45 | burn-down | Queued mcp-2026-07-28-day-7-read (4, 11-06); gankdat researched, research_after 2026-11-06
+- 2026-10-30 19:07 | triage | notify owner dispatched: last run started 16:28 UTC, 2 h 38 min ago
