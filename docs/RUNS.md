@@ -2071,3 +2071,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-29 21:41 | burn-down | Dependabot majors: no open Dependabot PR (list_pull_requests: only the 2025 Develop PR); nothing to review
 - 2026-10-29 21:41 | burn-down | Stopping at ~30 min: foundry researched, 3 items built, Zoho parked, spike seeded; night cap stops the next slots
 - 2026-10-29 22:07 | triage | notify owner dispatched: last run started 19:48 UTC, 2 h 19 min ago
+- 2026-10-30 00:14 | watchdog | ci-minutes: 602 billed min/7d (~2580/mo; cap 2000) top: fetch relay 112, gankdat metrics 92, gankdat 89
