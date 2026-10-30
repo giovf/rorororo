@@ -623,6 +623,14 @@ runs `check:root`.
   /stats/uk-trademark-journal/class/* 503 ×44, GET /v1/data/uk-planning 503 ×5 +1 more` after the thrown messages
   (each list cut to three), the job log prints one `worker request ×N:` line per route, and the named counts add up
   to the line total — so a crawler retrying a known 503 is told from a new 500 by path.
+  **The `/stats` crawler lines are read from the kept object** (2026-10-30, `stats-crawlers-logs-source-object`):
+  `statsLineOf` (`lib/crawler-hits.ts`) parsed `$metadata.message` as a JSON string, which the platform never
+  writes for a JSON `console.log` — it keeps the parsed object under `source` (the 10-29 wave-log reading) — so
+  `stats crawlers: logs` read `0 fetches — 29 lines matched, none a request line` from the day it shipped while the
+  zone reading saw 3,320 requests and 670 AI-crawler fetches a month on the same pages. The reader now takes
+  `source.path` / `source.userAgent` first (a JSON text in `message` stays the fallback) and still drops the
+  invocation event the same needle matches, so a fetch is counted once; the logs and zone clauses should agree
+  on the AI families from the next row.
   **Reading a Worker log on demand** (2026-10-29, foundry `worker-logs-dispatch-job`): the `worker logs` workflow
   (`docs/ci/worker-logs.yml` → `.github/workflows/`, `workflow_dispatch` only) runs `scripts/worker-logs.mjs`, which POSTs
   the same Query Builder for the service's lines in a window narrowed by a needle (a path, a slug, a message fragment),

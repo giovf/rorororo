@@ -2133,3 +2133,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 19:29 | burn-down | gankdat worker-errors-request-paths done: 5xx request events folded by route and status
 - 2026-10-30 19:29 | burn-down | Live event shape read from tonight's worker-logs run: status at $workers.event.response.status
 - 2026-10-30 19:29 | burn-down | Clause tail `requests: GET /stats/<slug>/class/* 503 ×N`; path family = first 3 segments; 2 tests
+- 2026-10-30 19:36 | burn-down | gankdat stats-crawlers-logs-source-object done: statsLineOf reads the kept source object
+- 2026-10-30 19:36 | burn-down | The clause read 0 fetches since it shipped: the platform never puts a JSON log in message
+- 2026-10-30 19:36 | burn-down | Invocation events the /stats needle matches stay dropped (one count per fetch); 2 tests
