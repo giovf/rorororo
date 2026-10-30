@@ -2081,3 +2081,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 09:26 | build | A matched request is an email answered by 'login to respond', no vendor API: each lead is an owner login
 - 2026-10-30 09:26 | build | Demand trace: 7 SEO use-case pages near our registers, no UK-register vendor visible, buyers pay US$300–3,000/mo
 - 2026-10-30 09:26 | build | Call: park; exchange.json trigger = paying account + one owner onboarding call; new-ventures emptied, needs_research
+- 2026-10-30 12:08 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
