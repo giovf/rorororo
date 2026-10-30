@@ -2075,3 +2075,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 03:07 | triage | notify owner dispatched: last run started 00:13 UTC, 2 h 54 min ago
 - 2026-10-30 06:08 | triage | notify owner dispatched: last run started 03:06 UTC, 3 h ago
 - 2026-10-30 09:07 | triage | notify owner dispatched: last run started 06:20 UTC, 2 h 46 min ago
+- 2026-10-30 09:18 | build | worker-logs.yml first run: success (run 1, 14 s; 2 error lines in 24 h: POST /mcp 500 on a D1 internal error 09:14)
+- 2026-10-30 09:26 | build | Spike nomad-data-vendor-profile: 3 relay rounds (site, landing pages, rendered Auth0 sign-up); 4 hosts allowlisted
+- 2026-10-30 09:26 | build | Nomad vendor side: self-serve email sign-up, no fees on every page, no vendor terms published, onboarding ends in a call
+- 2026-10-30 09:26 | build | A matched request is an email answered by 'login to respond', no vendor API: each lead is an owner login
+- 2026-10-30 09:26 | build | Demand trace: 7 SEO use-case pages near our registers, no UK-register vendor visible, buyers pay US$300–3,000/mo
+- 2026-10-30 09:26 | build | Call: park; exchange.json trigger = paying account + one owner onboarding call; new-ventures emptied, needs_research

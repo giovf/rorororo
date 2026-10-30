@@ -1,8 +1,8 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": false,
-  "updated": "2026-10-29",
+  "needs_research": true,
+  "updated": "2026-10-30",
   "researched": "2026-10-29",
   "weight": 2,
   "items": [
@@ -383,14 +383,15 @@
     },
     {
       "id": "spike-nomad-data-vendor-profile",
-      "title": "Research spike: Nomad Data as a buyer-request channel for gankdat's registers — through the relay (add nomad-data.com and landing.nomad-data.com to docs/relay/hosts.txt) read the provider pages, the vendor terms and the browse page: whether a vendor profile is self-serve (a form) or only after a booked call, what a UK individual must give (identity, company, data-licensing attestation), whether the vendor side is free of any fee or revenue share in the terms (not only the marketing page), how a matched request reaches the vendor and is answered, whether buyers' requests for UK company, charity, sanctions or tender data exist (the browse page's use cases and any public request examples), and which UK-register or sanctions vendors it already lists with their public prices; write docs/exchange/spikes/nomad-data-vendor-profile.md with a promote / park call (promote shape: a gankdat item that creates the anonymous profile under the trading name and answers requests with a plan link, owner minutes 0–10; park if the profile needs a call or a registered company, if the terms take a cut or a listing fee, or if no register request can be found)",
+      "title": "Research spike: Nomad Data as a buyer-request channel for gankdat's registers — through the relay (add nomad-data.com and landing.nomad-data.com to docs/relay/hosts.txt) read the provider pages, the vendor terms and the browse page: whether a vendor profile is self-serve (a form) or only after a booked call, what a UK individual must give (identity, company, data-licensing attestation), whether the vendor side is free of any fee or revenue share in the terms (not only the marketing page), how a matched request reaches the vendor and is answered, whether buyers' requests for UK company, charity, sanctions or tender data exist (the browse page's use cases and any public request examples), and which UK-register or sanctions vendors it already lists with their public prices; write docs/exchange/spikes/nomad-data-vendor-profile.md with a promote / park call (promote shape: a gankdat item that creates the anonymous profile under the trading name and answers requests with a plan link, owner minutes 0–10; park if the profile needs a call or a registered company, if the terms take a cut or a listing fee, or if no register request can be found) — Done 2026-10-30 (build): park. docs/exchange/spikes/nomad-data-vendor-profile.md: the profile starts as a self-serve Auth0 sign-up (email only) and every vendor page says no fees, no revenue share, keep 100 %, but Nomad publishes no vendor terms at all, its own blog ends onboarding with 'a short, live call', and a matched request is answered by 'login to respond' — a human step per lead with no vendor API. Requests are private ('there are no listings'); the only trace of UK-register demand is seven SEO use-case pages, and the buyers pay US$300–3,000 a month to search for proprietary data. Parked in exchange.json with a paying-account + owner-call trigger.",
       "why": "Exchange pre-research 2026-10-29 (burn-down, idea nomad-data-vendor-profile in exchange.json): a marketplace of 3,000+ data vendors whose buyers post the data need first and whose vendor side its own pages call free (no revenue share, no commission) — STRATEGY §1's money already on offer, with no shelf billing to pass and the sale closed on gankdat's own Stripe plans. Evidence 2 (the company's pages and a testimonial, no fee schedule or request counts read yet) × reach 3 (enterprise data buyers with a stated need; direct payment at plan prices, not US$0.001 rows) ÷ (0.3 d + an owner step that may be 0 or a 30-minute call) ≈ 4 at weight 2 as a spike; promoted work is a gankdat item at weight 1. The sandbox cannot reach nomad-data.com (connect_rejected 21:43), so the spike is a relay read.",
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/nomad-data-vendor-profile.md with the vendor-terms table, the sign-up gate (form or call), three listed UK-register or sanctions vendors with prices, and a promote / park call",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-29",
-      "doing_since": "2026-10-30"
+      "doing_since": "2026-10-30",
+      "done_at": "2026-10-30"
     }
   ]
 }
