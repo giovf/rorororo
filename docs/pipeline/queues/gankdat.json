@@ -2,7 +2,7 @@
   "venture": "gankdat",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-29",
+  "updated": "2026-10-30",
   "researched": "2026-10-25",
   "items": [
     {
@@ -231,14 +231,16 @@
     },
     {
       "id": "mcp-protocol-2026-07-28",
-      "title": "MCP server speaks the 2026-07-28 protocol revision: move /mcp from @hono/mcp 0.3 + SDK 1.32 to the SDK v2 line (@modelcontextprotocol/server 2.4, legacy stateless on) so Claude's current clients complete a tool call instead of a 404",
+      "title": "MCP server speaks the 2026-07-28 protocol revision: move /mcp from @hono/mcp 0.3 + SDK 1.32 to the SDK v2 line (@modelcontextprotocol/server 2.4, legacy stateless on) so Claude's current clients complete a tool call instead of a 404 — Done 2026-10-30 (burn-down, v0.27.0): @modelcontextprotocol/server 2.4.0 replaces @hono/mcp 0.3 + SDK 1.32; routes/mcp.ts routes a 2025-era body (isLegacyRequest) to a stateless v2 transport in JSON mode and a 2026-07-28 body to createMcpHandler (legacy rejected there); server/discover counts as introspection; requestShape reads Mcp-Method/Mcp-Name; spec changelog read through the relay; probe gains a keyless 2026-07-28 pass (tools/list + tools/call); 5 conformance tests for the modern era. Proof reads from the 10-31 probe row and `claude tool callers` over the week.",
       "why": "Found by the day-30 directory read (2026-10-30, build). Worker log, 24 h, needle Claude-User: 55 POST /mcp from 160.79.106.x (Anthropic egress) with x-anthropic-client: Cowork and one API key — 31 answered 404, all carrying mcp-protocol-version: 2026-07-28, the current spec (stateless core, no initialize or Mcp-Session-Id, server/discover, Mcp-Method + Mcp-Name request headers, client info in _meta). @hono/mcp 0.3.2 validates the header against SDK 1.32.x's SUPPORTED_PROTOCOL_VERSIONS (latest 2025-11-25; 1.32.2 of 10-23 unchanged) and throws 404 'Unsupported protocol version' before any handler; the client's retry on 2025-11-25 gets 200/202 but in 30 days no Claude-surface request carried a tools/call (new Daily numbers reading `claude tool callers`: 0). So every current Claude client (claude.ai, Desktop, Cowork, Code via the directory) opens on a 404 that the directory's error breakdown counts, and the shelf won by exchange W40 has served no tool call. Evidence 3 (our own logs) × reach 4 (every Claude surface + the directory health badge) ÷ 1 day = 12. Build: adopt the v2 packages (github.com/modelcontextprotocol/typescript-sdk releases: v2.4.0 of 2026-10-23, `@modelcontextprotocol/server` with `legacy: 'stateless'` as the default, Skills notes say 'works on 2025-11-25 and 2026-07-28'; the v1→v2 upgrade guide is in the repo and as a codemod package) behind a Web-standard fetch handler in routes/mcp.ts (Workers have no Node http), keep JSON responses, the Origin gate, the keyless preview, the lazy-OAuth 401, the analytics write and the tool annotations; requestShape also reads Mcp-Method / Mcp-Name when the body is not JSON-RPC; mcp probe (scripts) sends one 2026-07-28 request (tools/list with the two headers) and one 2025-11-25 request; test/mcp-directory.spec.ts gains the 2026-07-28 shape. If @hono/mcp ships a v2-based release first, prefer it. Read the spec changelog through the relay (modelcontextprotocol.io is not an allowed host; add it to docs/relay/hosts.txt) before writing: the Worker must still answer 2025-11-25 clients (Glama, the registries, Cursor). Proof: a 2026-07-28 request answers 200 in the Worker log and `claude tool callers` reads ≥ 1 client with calls.",
       "effort_days": 1,
       "proof": "a 2026-07-28 tools/list and tools/call answer 200 (probe line in the Daily numbers row); `claude tool callers` ≥ 1 client, ≥ 1 call within a week of the deploy; 2025-11-25 probe still green",
       "score": 12,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-30",
-      "doing_since": "2026-10-30"
+      "doing_since": "2026-10-30",
+      "done_at": "2026-10-30",
+      "doing_by": "burn-down"
     },
     {
       "id": "refresh-uk-insolvency",

@@ -170,7 +170,7 @@ and since 2026-09-29 the REST surface too — `src/middleware/traffic.ts` writes
 `rest_data`/`rest_changes` for every served `/v1/data/:source` and `/v1/changes/:source`,
 UA and source slug only, never an IP, denials excluded, so STRATEGY §4's weekly
 change-feed target is readable from the daily metrics row) ·
-stripe-node (fetch client) · official MCP TS SDK · @x402/hono (x402 v2, since
+stripe-node (fetch client) · official MCP TS SDK v2 (`@modelcontextprotocol/server`, since 2026-10-30; `@hono/mcp` + SDK 1.x before) · @x402/hono (x402 v2, since
 2026-10-14; x402-hono 1.2 before) · vitest with
 @cloudflare/vitest-pool-workers · ESLint + Prettier · npm · wrangler.
 The x402 packages (@x402/hono, @x402/core, @x402/evm, @x402/extensions,
@@ -260,8 +260,8 @@ runs `check:root`.
   **One JSON body per POST, calls under a deadline** (2026-10-18, gankdat `refresh-mcp-probe`): the
   keyless metrics probe of 10-18 07:10 timed out at 20 s on one `tools/call` (fresh 1,000-row
   uk-tenders snapshot, no CPU limit in reach) while the keyed call a moment later answered at once,
-  and `/mcp` left no line to read. Two Worker-side guards: `routes/mcp.ts` builds the transport
-  with `enableJsonResponse: true` — an SSE stream returned the Response at once and ran the tool
+  and `/mcp` left no line to read. Two Worker-side guards: `routes/mcp.ts` builds the 2025-era
+  transport with `enableJsonResponse: true` — an SSE stream returned the Response at once and ran the tool
   call after the fetch handler had returned, the one shape of work a Worker may drop (a dropped
   call leaves the stream open until the client gives up); in JSON mode the call runs inside the
   awaited handler and a death mid-call is an HTTP error a checker can read (the spec allows a
@@ -273,6 +273,23 @@ runs `check:root`.
   (`scripts/mcp-probe.ts`) now tells `body unread (headers arrived)` from no response and bounds
   the body read itself. Cause of the 10-18 hang not proven; the next one is readable.
   `test/mcp-deadline.spec.ts` is the probe's three calls, keyless then keyed, plus the hang.
+  **Protocol revision 2026-07-28** (2026-10-30, `mcp-protocol-2026-07-28`, v0.27.0): the current spec (changelog read
+  through the relay, `docs/relay/responses/mcp-spec-2026-07-28`) removed sessions and the `initialize` handshake — every
+  request carries `_meta` (`io.modelcontextprotocol/protocolVersion`, `clientCapabilities`, `clientInfo`) and the required
+  `MCP-Protocol-Version`, `Mcp-Method` and `Mcp-Name` headers, discovery is the mandatory `server/discover`, `ping` is gone.
+  Claude's current clients (claude.ai, Desktop, Cowork, Code via the directory) speak it, and `@hono/mcp` 0.3 on SDK 1.32
+  answered them 404 "Unsupported protocol version" before any handler for a month (the day-30 directory read: 31 of 55
+  Cowork POSTs on 10-30, the retries on 2025-11-25 never carrying a tool call). `/mcp` now runs the SDK v2 line: one
+  `buildMcpServer` factory, `isLegacyRequest` (the SDK's own classifier) routes a 2025-era body — `initialize`, or a
+  request with no envelope — to a stateless `WebStandardStreamableHTTPServerTransport` in JSON mode (the SDK's built-in
+  legacy fallback streams SSE, so that leg is wired by hand), and everything else to `createMcpHandler(factory,
+  { legacy: 'reject', responseMode: 'auto' })`, whose validation ladder rejects a malformed envelope or a header/body
+  mismatch with the spec's 400 and otherwise answers one JSON body. The gates in front (Origin, the keyless kinds, the
+  OAuth 401, the preview wall, analytics) read the JSON-RPC body as before and `server/discover` counts as introspection;
+  `requestShape` reads `Mcp-Method`/`Mcp-Name` when the body is unreadable. The metrics probe adds a keyless 2026-07-28
+  pass (`tools/list` + one `tools/call`, rendered `2026-07-28: tools 200 (N tools), call 200`) beside the 2025 handshake,
+  so either era regressing is the next morning's `mcp probe:` reading; `test/mcp-directory.spec.ts` pins both eras.
+  Proof: a 2026-07-28 request 200 in the Worker log and `claude tool callers` ≥ 1 client within a week of the deploy.
   **Lazy OAuth** (2026-09-30, `src/auth/oauth.ts` + `src/routes/oauth.ts`, migration 0013
   `oauth_grants`): Claude, Cursor and ChatGPT start sign-in only on an HTTP 401 with
   `WWW-Authenticate: Bearer resource_metadata=…` (a 200 tool error never does), so the Worker

@@ -2107,3 +2107,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 17:32 | build | Worker log: 55 Cowork POST /mcp today, 31 answered 404 — protocol 2026-07-28 rejected by SDK 1.32 transport
 - 2026-10-30 17:32 | build | /mcp crawler line now counts MCP kinds only (it summed every traffic row); W42–W43 reading corrected
 - 2026-10-30 17:32 | build | Queued gankdat mcp-protocol-2026-07-28 (12): SDK v2 line so Claude's current clients complete a tool call
+- 2026-10-30 18:22 | burn-down | gankdat mcp-protocol-2026-07-28 done (v0.27.0): /mcp on SDK v2, speaks 2026-07-28 and 2025-11-25
+- 2026-10-30 18:22 | burn-down | Spec changelog read through the relay: envelope in _meta, Mcp-Method/Mcp-Name required, server/discover
+- 2026-10-30 18:22 | burn-down | SDK's legacy fallback streams SSE, so the 2025 leg is a hand-wired v2 transport in JSON mode
+- 2026-10-30 18:22 | burn-down | @hono/mcp and @modelcontextprotocol/sdk removed; @modelcontextprotocol/server 2.4.0 + client (tests)
+- 2026-10-30 18:22 | burn-down | 5 conformance tests for the modern era; deadline test on the v2 client; 22 existing MCP tests green
+- 2026-10-30 18:22 | burn-down | Live probe gains a keyless 2026-07-28 pass: 2026-07-28: tools 200 (N tools), call 200 in the row

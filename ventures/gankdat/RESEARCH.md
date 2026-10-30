@@ -167,6 +167,22 @@ scored item `mcp-protocol-2026-07-28` (12) moves the server to the SDK v2 line
 2025-11-25 as latest) so a Claude surface completes a tool call. Until it ships, every current
 Claude client's first request to gankdat is a 404 in the directory's error breakdown.
 
+**Built the same evening (burn-down 2026-10-30, v0.27.0, `mcp-protocol-2026-07-28` done).** The spec's
+own changelog, read through the relay (`docs/relay/responses/mcp-spec-2026-07-28`, three pages 200),
+says what the Worker log showed: sessions and the `initialize` handshake are gone, every request
+carries `_meta` (`io.modelcontextprotocol/protocolVersion`, `clientCapabilities`, `clientInfo`),
+the `Mcp-Method` and `Mcp-Name` headers are required on Streamable HTTP POSTs (SEP-2243),
+`server/discover` is mandatory, `ping` removed, and earlier revisions stay served by era detection
+(Versioning: Backward Compatibility). `/mcp` now runs `@modelcontextprotocol/server` 2.4.0 (SDK v2;
+`@hono/mcp` and SDK 1.32 removed): the SDK's `isLegacyRequest` sends a 2025-era body to a stateless v2
+transport in JSON mode and a 2026-07-28 body to `createMcpHandler` (legacy rejected there, so the
+hand-wired JSON leg stays the only 2025 path — the SDK's own fallback would stream SSE, the shape
+`refresh-mcp-probe` ruled out). Keyless `server/discover` counts as introspection. Tests: both eras
+on one endpoint (discover, tools/list, preview and keyed tools/call, the OAuth 401, a header/body
+mismatch → 400, the 2025 handshake unchanged). The live probe runs a keyless 2026-07-28 pass each
+morning (`2026-07-28: tools 200 (N tools), call 200` in `mcp probe:`), so the proof reads from the
+10-31 Daily numbers row and the `claude tool callers` reading over the following week.
+
 
 ## Research 2026-10-05 (pipeline starved — burn-down)
 

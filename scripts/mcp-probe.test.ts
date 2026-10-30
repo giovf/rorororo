@@ -4,14 +4,17 @@ import {
   deleteProbeKey,
   generateProbeKey,
   mintProbeKey,
+  MODERN_PROTOCOL_VERSION,
   PER_PAGE,
   pickTool,
   probe,
   PROBE_EMAIL,
   probeError,
   probeNote,
+  probeModern,
   probeOnce,
   rpcBody,
+  runFailed,
   sha256Hex,
   USER_AGENT,
   withProbeKey,
@@ -173,14 +176,56 @@ describe('probeOnce', () => {
   });
 });
 
+describe('probeModern', () => {
+  it('sends the 2026-07-28 envelope and headers, no initialize, and reads two steps', async () => {
+    const s = server(healthy);
+    const run = await probeModern('https://x/mcp', s.fetch);
+    expect(run.protocol).toBe(MODERN_PROTOCOL_VERSION);
+    expect(run.steps.map((step) => [step.name, step.status])).toEqual([
+      ['tools/list', 200],
+      ['tools/call', 200],
+    ]);
+    expect(run.tools).toBe(4);
+    expect(s.calls.map((c) => c.body.method)).toEqual(['tools/list', 'tools/call']);
+    const list = s.calls[0]!;
+    expect(list.headers['mcp-protocol-version']).toBe('2026-07-28');
+    expect(list.headers['mcp-method']).toBe('tools/list');
+    expect(list.headers['mcp-name']).toBeUndefined();
+    expect((list.body.params as Record<string, unknown>)._meta).toMatchObject({
+      'io.modelcontextprotocol/protocolVersion': '2026-07-28',
+      'io.modelcontextprotocol/clientCapabilities': {},
+    });
+    const call = s.calls[1]!;
+    expect(call.headers['mcp-method']).toBe('tools/call');
+    expect(call.headers['mcp-name']).toBe('query_uk_sanctions');
+    expect(runFailed(run)).toBe(false);
+  });
+
+  it('a 404 on the modern pass is a failed run listed under its revision', async () => {
+    const s = server((body) =>
+      body.params && '_meta' in body.params
+        ? json({ jsonrpc: '2.0', id: 2, error: { message: 'Unsupported protocol version' } }, 404)
+        : healthy(body),
+    );
+    const result = await probe('https://x/mcp', s.fetch, undefined, '2026-10-30');
+    expect(probeNote(result)).toBe(
+      'mcp probe: init 200, tools 200 (4 tools), call 200; 2026-07-28: tools 404 (Unsupported protocol version); authed: n/a (no key)',
+    );
+    expect(probeError(result)).toEqual({
+      slug: 'mcp-probe',
+      message: '2026-07-28 tools 404 (Unsupported protocol version)',
+    });
+  });
+});
+
 describe('probe, probeNote and probeError', () => {
   it('renders a clean keyless run and says the authed run is optional', async () => {
     const s = server(healthy);
     const result = await probe('https://x/mcp', s.fetch, undefined, '2026-10-08');
     expect(result.date).toBe('2026-10-08');
-    expect(result.runs).toHaveLength(1);
+    expect(result.runs).toHaveLength(2);
     expect(probeNote(result)).toBe(
-      'mcp probe: init 200, tools 200 (4 tools), call 200; authed: n/a (no key)',
+      'mcp probe: init 200, tools 200 (4 tools), call 200; 2026-07-28: tools 200 (4 tools), call 200; authed: n/a (no key)',
     );
     expect(probeError(result)).toBeNull();
   });
@@ -205,13 +250,13 @@ describe('probe, probeNote and probeError', () => {
       body.method === 'tools/list' ? json({ e: 1 }, 503) : healthy(body),
     );
     const result = await probe('https://x/mcp', s.fetch, 'secret', '2026-10-08');
-    expect(result.runs.map((r) => r.authed)).toEqual([false, true]);
+    expect(result.runs.map((r) => r.authed)).toEqual([false, false, true]);
     expect(probeNote(result)).toBe(
-      'mcp probe: init 200, tools 503 (failed); authed: init 200, tools 503 (failed)',
+      'mcp probe: init 200, tools 503 (failed); 2026-07-28: tools 503 (failed); authed: init 200, tools 503 (failed)',
     );
     expect(probeError(result)).toEqual({
       slug: 'mcp-probe',
-      message: 'tools 503 (failed); authed tools 503 (failed)',
+      message: 'tools 503 (failed); 2026-07-28 tools 503 (failed); authed tools 503 (failed)',
     });
     expect(JSON.stringify(result)).not.toContain('secret');
   });

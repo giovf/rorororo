@@ -40,6 +40,18 @@ export const RESULT_FILE = path.join('ventures', 'gankdat', 'dist', 'mcp-probe.j
 export const PROBE_SLUG = 'mcp-probe';
 export const USER_AGENT = 'gankdat-mcp-probe/1 (metrics job)';
 export const PROTOCOL_VERSION = '2025-06-18';
+/**
+ * The current revision (gankdat `mcp-protocol-2026-07-28`, 2026-10-30): no `initialize`, a
+ * `_meta` envelope on every request and three standard headers; what Claude's clients send and
+ * what the 1.x transport answered 404 to for a month. The probe runs it keyless beside the 2025
+ * handshake so a regression on either era is a reading the next morning.
+ */
+export const MODERN_PROTOCOL_VERSION = '2026-07-28';
+const MODERN_ENVELOPE = {
+  'io.modelcontextprotocol/protocolVersion': MODERN_PROTOCOL_VERSION,
+  'io.modelcontextprotocol/clientCapabilities': {},
+  'io.modelcontextprotocol/clientInfo': { name: 'gankdat-mcp-probe', version: '1' },
+};
 /** Rows a probe call asks for: the smallest page, so the keyless preview budget barely moves. */
 export const PER_PAGE = 1;
 /** One call's budget; a hung edge is a reading too. */
@@ -59,6 +71,8 @@ export interface ProbeStep {
 
 export interface ProbeRun {
   authed: boolean;
+  /** The 2026-07-28 pass (no initialize step); absent on a 2025-handshake run. */
+  protocol?: typeof MODERN_PROTOCOL_VERSION;
   steps: ProbeStep[];
   /** tools/list only: how many tools the server listed. */
   tools: number | null;
@@ -267,11 +281,13 @@ async function call(
   key: string | undefined,
   body: Record<string, unknown>,
   timeoutMs: number,
+  extraHeaders: Record<string, string> = {},
 ): Promise<CallOutcome> {
   const headers: Record<string, string> = {
     'content-type': 'application/json',
     accept: 'application/json, text/event-stream',
     'user-agent': USER_AGENT,
+    ...extraHeaders,
   };
   if (key) headers.authorization = `Bearer ${key}`;
   const deadline = Date.now() + timeoutMs;
@@ -408,6 +424,72 @@ export async function probeOnce(
   return run;
 }
 
+/** A 2026-07-28 request: the envelope in `params._meta` and the three standard headers. */
+function modernRequest(
+  id: number,
+  method: string,
+  params: Record<string, unknown>,
+): { body: Record<string, unknown>; headers: Record<string, string> } {
+  const headers: Record<string, string> = {
+    'mcp-protocol-version': MODERN_PROTOCOL_VERSION,
+    'mcp-method': method,
+  };
+  if (method === 'tools/call' && typeof params.name === 'string') headers['mcp-name'] = params.name;
+  return {
+    body: { jsonrpc: '2.0', id, method, params: { ...params, _meta: MODERN_ENVELOPE } },
+    headers,
+  };
+}
+
+/** The two calls a 2026-07-28 client makes (tools/list, then one tools/call), keyless. */
+export async function probeModern(
+  url: string,
+  fetchFn: FetchLike,
+  timeoutMs = TIMEOUT_MS,
+): Promise<ProbeRun> {
+  const run: ProbeRun = {
+    authed: false,
+    protocol: MODERN_PROTOCOL_VERSION,
+    steps: [],
+    tools: null,
+  };
+  const listReq = modernRequest(2, 'tools/list', {});
+  const listed = await call(fetchFn, url, undefined, listReq.body, timeoutMs, listReq.headers);
+  const list = stepOf('tools/list', listed);
+  const tools = Array.isArray(listed.message?.result?.tools)
+    ? (listed.message.result.tools as { name?: unknown; description?: unknown }[])
+    : [];
+  if (stepOk(list)) run.tools = tools.length;
+  run.steps.push(list);
+  if (!stepOk(list)) return run;
+
+  const tool = pickTool(tools);
+  if (!tool) {
+    run.steps.push({ name: 'tools/call', status: null, note: 'no query_ tool listed', tool: '' });
+    return run;
+  }
+  const callReq = modernRequest(3, 'tools/call', {
+    name: tool,
+    arguments: { per_page: PER_PAGE },
+  });
+  const called = await call(fetchFn, url, undefined, callReq.body, timeoutMs, callReq.headers);
+  const step = stepOf('tools/call', called, tool);
+  if (stepOk(step) && called.message?.result?.isError === true) {
+    const content: unknown = called.message.result.content;
+    const first: unknown = Array.isArray(content) ? content[0] : undefined;
+    const text =
+      typeof first === 'object' &&
+      first !== null &&
+      'text' in first &&
+      typeof first.text === 'string'
+        ? first.text
+        : '';
+    step.note = excerpt(`tool error: ${text}`);
+  }
+  run.steps.push(step);
+  return run;
+}
+
 export async function probe(
   url: string,
   fetchFn: FetchLike,
@@ -415,7 +497,10 @@ export async function probe(
   today = new Date().toISOString().slice(0, 10),
   timeoutMs = TIMEOUT_MS,
 ): Promise<ProbeResult> {
-  const runs = [await probeOnce(url, fetchFn, undefined, timeoutMs)];
+  const runs = [
+    await probeOnce(url, fetchFn, undefined, timeoutMs),
+    await probeModern(url, fetchFn, timeoutMs),
+  ];
   if (key) runs.push(await probeOnce(url, fetchFn, key, timeoutMs));
   return { date: today, url, runs };
 }
@@ -437,14 +522,25 @@ function stepText(s: ProbeStep, run: ProbeRun): string {
 }
 
 export function runFailed(run: ProbeRun): boolean {
-  return run.steps.length < 3 || run.steps.some((s) => !stepOk(s));
+  const expected = run.protocol ? 2 : 3;
+  return run.steps.length < expected || run.steps.some((s) => !stepOk(s));
 }
 
-/** The row's `mcp probe:` note — `init 200, tools 200 (31 tools), call 200[; authed: …]`. */
+/** `authed` for the keyed 2025 run, the revision for the modern one, '' for the keyless 2025 run. */
+function runLabel(run: ProbeRun): string {
+  if (run.authed) return 'authed';
+  return run.protocol ?? '';
+}
+
+/**
+ * The row's `mcp probe:` note — `init 200, tools 200 (31 tools), call 200; 2026-07-28: tools 200
+ * (31 tools), call 200[; authed: …]`.
+ */
 export function probeNote(result: ProbeResult): string {
   const parts = result.runs.map((run) => {
     const text = run.steps.map((s) => stepText(s, run)).join(', ');
-    return run.authed ? `authed: ${text}` : text;
+    const label = runLabel(run);
+    return label ? `${label}: ${text}` : text;
   });
   if (!result.runs.some((r) => r.authed))
     parts.push(`authed: n/a (${result.authed_skipped ?? 'no key'})`);
@@ -457,7 +553,8 @@ export function probeError(result: ProbeResult): { slug: string; message: string
   const parts = failed.map((run) => {
     const bad = run.steps.find((s) => !stepOk(s)) ?? run.steps[run.steps.length - 1];
     const text = bad ? stepText(bad, run) : 'no step ran';
-    return run.authed ? `authed ${text}` : text;
+    const label = runLabel(run);
+    return label ? `${label} ${text}` : text;
   });
   // A mint that failed is the authed reading missing for a reason this side can fix.
   if (result.authed_skipped?.startsWith('mint failed'))

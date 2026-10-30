@@ -1447,13 +1447,25 @@
         "priority": "medium",
         "subtasks": [],
         "updatedAt": "2026-10-29T19:29:12.096Z"
+      },
+      {
+        "id": "44",
+        "title": "gankdat /mcp speaks protocol revision 2026-07-28: SDK v2 (@modelcontextprotocol/server 2.4) replaces @hono/mcp 0.3 + SDK 1.32",
+        "description": "createMcpHandler for the 2026-07-28 era (envelope, Mcp-Method/Mcp-Name headers, server/discover) with the 2025 handshake routed by isLegacyRequest to a stateless v2 transport in JSON mode; probe gains a 2026-07-28 pass; v0.27.0",
+        "details": "",
+        "testStrategy": "",
+        "status": "done",
+        "dependencies": [],
+        "priority": "medium",
+        "subtasks": [],
+        "updatedAt": "2026-10-30T18:21:44.060Z"
       }
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-10-29T19:29:12.096Z",
-      "taskCount": 43,
-      "completedCount": 36,
+      "lastModified": "2026-10-30T18:21:44.060Z",
+      "taskCount": 44,
+      "completedCount": 37,
       "tags": [
         "master"
       ]
