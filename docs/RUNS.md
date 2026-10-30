@@ -2089,3 +2089,11 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 17:20 | build | Exchange: n8n node trigger now the repo reading or the portal's Used a tool ≥ 20; ChatGPT app stays declined
 - 2026-10-30 17:20 | build | Queued claude-directory-day-60 (3) for 2026-11-29; owner action 035 asks the portal status + 4 numbers
 - 2026-10-30 17:20 | notify | Please read gankdat's Claude directory status and usage numbers in the portal, about 3 min
+- 2026-10-30 17:25 | burn-down | read-focus day-30-funnel-review done: Chrome 1 user, Firefox 1 adu, 0 keys, no ratings at day 30
+- 2026-10-30 17:25 | burn-down | Google 26 impressions/7d, 0 clicks, 22 on the ruler page at position 12; no page or listing fix worth a slot
+- 2026-10-30 17:25 | burn-down | Keep at £0 untouched (VT precedent); day-90-verdict queued for 2026-12-21; research_after moved to 12-21
+- 2026-10-30 17:25 | burn-down | 0.3.0 still unsigned 26 days (attended-session handoff of 10-04); the only lever that reaches users
+- 2026-10-30 17:40 | burn-down | highlight-keep day-30-funnel-review done: 0 users on every row, 0 keys, no ratings at day 30
+- 2026-10-30 17:40 | burn-down | Google 16 impressions/7d on the Weava page, 0 clicks; no first funnel step to measure, no fix worth a slot
+- 2026-10-30 17:40 | burn-down | Keep at £0 untouched; day-90-verdict queued for 2026-12-21; research_after moved to 12-21
+- 2026-10-30 17:40 | burn-down | 0.4.0 still unsigned 25 days (attended-session handoff of 10-05); Chrome keywords owner-blocked

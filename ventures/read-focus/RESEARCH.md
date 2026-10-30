@@ -167,6 +167,7 @@ _Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10
 | 2026-10-28 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-27: 21 impressions, 0 clicks, avg pos 12.7, top /reading-ruler.html 18, indexed 3/3; sales: 0 keys (2 test) |
 | 2026-10-29 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-28: 20 impressions, 0 clicks, avg pos 12.8, top /reading-ruler.html 17, indexed 3/3; sales: 0 keys (2 test) |
 | 2026-10-30 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-29: 26 impressions, 0 clicks, avg pos 11.7, top /reading-ruler.html 22, indexed 3/3; sales: 0 keys (2 test) |
+| 2026-10-30 | Day-30 funnel review (burn-down) | 2 | — | 0 | Chrome 1 user, Firefox 1 adu, no ratings, 0 keys (2 test), 0 activations, £0 ledger; Google 26 impressions/7d, 0 clicks; 0.3.0 unsigned 26 d; keep at £0, `day-90-verdict` 2026-12-21 (§ Day-30 funnel review) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
@@ -378,3 +379,44 @@ Third starvation pass in eight days (09-30/10-04, 10-05 built out the same night
 0 users and no ratings on Chrome and Firefox (0.2.0) on every row; 0.3.0 waits on the signing handoff; Edge, AlternativeTo and the promo tile are owner-blocked. Nothing unblocked is left that the earlier passes did not queue and build, so no items are
 added; the queue carries `research_after: 2026-10-30`, the `day-30-funnel-review` reading, and the fallback skips it until then
 (`docs/pipeline/README.md`, Waiting).
+
+## Day-30 funnel review (2026-10-30, burn-down): keep at £0, no new levers, verdict on 2026-12-21
+
+Read from the Daily check rows above (store-metrics CI, 2026-09-30 → 10-30), the licence Worker's key count on the
+same rows (`sales: N keys (activations, test)`, `scripts/license-sales.ts`) and `docs/LEDGER.md` (no ReadFocus row:
+£0 out, £0 in). Chrome was found live on 2026-09-30 (approved between 09-21 and 09-30, no mail), Firefox on 09-22,
+so this is day 30–38 of both listings.
+
+| Measure | Day 1 (09-30) | Day 30 (10-30) | Honest EV (§ Decision) |
+| --- | --- | --- | --- |
+| Chrome users | 0 | **1** (0 on 20 of 31 rows; peaks of 2–3 on 10-10/11/12/17, 1 since 10-26) | 5–20k in year one |
+| Firefox average daily users | 0 | **1** (first on 10-20, flat since) / 1 weekly download | — |
+| ratings or reviews, either store | none | **none** | — |
+| licence keys sold / activations | 0 / 0 | **0 / 0** (2 test keys) | 1–2 % of users |
+| Google impressions, 7 d (3 ReadFocus pages) | 0 (0/3 indexed) | **26**, 0 clicks, avg position 11.7; 22 of 26 on `/reading-ruler.html`; 3/3 indexed since 10-22 | — |
+| store-search rank | n/a | not read — the `rank:` reading exists for Figma’s search API only; Chrome Web Store search has no API | — |
+
+Listings fixed as the item asked: AMO previews, category, tags and homepage set 2026-10-04 (0.1.1 handoff), the Chrome
+privacy URL moved by the owner 2026-10-04 (action 013), 0.2.0 (web PDFs) live on both stores since 10-05/06, the
+comparison, reading-ruler and Google-Docs pages live and indexed. Still unshipped: **0.3.0** (ruler colour / height /
+opacity / lock, wider spacing, page tint, read aloud, Firefox for Android) — built 10-04/05, unsigned for 26 days
+because signing needs the AMO and CWS secrets of an attended session (ALERTS handoff 2026-10-04; foundry
+`extension-publish-in-ci` blocked on the same). The 0.2.1 Android proof (AMO `compatibility` lists `android`,
+Android installs) therefore never ran: nothing to drop, the code ships with 0.3.0. Owner-blocked and unchanged:
+the Chrome promo tile, AlternativeTo / Product Hunt. Dropped: Edge.
+
+What the numbers say: the stores have not surfaced the listing — one user on each after 30 days is within what
+the owner's and the signing session's own installs account for, and a 0–3 flicker is Chrome rounding, not growth.
+The only reading with motion is Google: impressions went 0 → 26 a week in the eight days since the pages were
+indexed, almost all for the reading-ruler page at position 11–12 (page two), with 0 clicks. At that volume even a
+good click rate is one visit a week, so there is no page fix worth a slot; a listing-copy change needs the owner's
+dashboard (withdrawn under the 10-29 owner-time rule) and the AMO description is set only at the next signed
+version. The one lever that reaches users is shipping 0.3.0, and it already has a handoff.
+
+Decision: **keep, untouched, at £0 until the §7 date.** No recurring cost, no owner time, the code is done; killing
+at day 30 gains nothing and §7 reads at 90 days. Weight stays 0.5. No new items (every unblocked lever is built,
+same as the 10-04/05/07 passes); `research_after` moves to 2026-12-21 so the starvation fallback skips the queue.
+Queue: `day-90-verdict` (not before 2026-12-21, 90 days after the last listing went live by the item's own date;
+Chrome's exact approval day is unknown, 12-29 at the latest) applies §7: a key sold, a rating or review, a Google
+click to a ReadFocus page, a support mail, or ≥ 5 users on either store keeps it; none of those sets the venture to
+`killed` and keeps the code and the listings (a live listing costs nothing and a later sale still pays).
