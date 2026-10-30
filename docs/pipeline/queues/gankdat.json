@@ -236,8 +236,9 @@
       "effort_days": 1,
       "proof": "a 2026-07-28 tools/list and tools/call answer 200 (probe line in the Daily numbers row); `claude tool callers` ≥ 1 client, ≥ 1 call within a week of the deploy; 2025-11-25 probe still green",
       "score": 12,
-      "status": "todo",
-      "added": "2026-10-30"
+      "status": "doing",
+      "added": "2026-10-30",
+      "doing_since": "2026-10-30"
     },
     {
       "id": "refresh-uk-insolvency",
