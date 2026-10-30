@@ -1,0 +1,422 @@
+{
+  "request": "nomad-data-b-2026-10-30",
+  "fetched_at": "2026-10-30T09:20:00.786Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-sellers",
+      "fetched_at": "2026-10-30T09:19:46.318Z",
+      "status": 200,
+      "elapsed_ms": 227,
+      "final_url": "https://www.nomad-data.com/data-sellers",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:46 GMT"
+      },
+      "file": "1.html",
+      "bytes": 31544,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/privacy",
+      "fetched_at": "2026-10-30T09:19:47.055Z",
+      "status": 200,
+      "elapsed_ms": 61,
+      "final_url": "https://www.nomad-data.com/privacy",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:47 GMT"
+      },
+      "file": "2.html",
+      "bytes": 48973,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/faqs",
+      "fetched_at": "2026-10-30T09:19:47.618Z",
+      "status": 200,
+      "elapsed_ms": 67,
+      "final_url": "https://www.nomad-data.com/faqs",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:47 GMT"
+      },
+      "file": "3.html",
+      "bytes": 108126,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/security",
+      "fetched_at": "2026-10-30T09:19:48.188Z",
+      "status": 200,
+      "elapsed_ms": 105,
+      "final_url": "https://www.nomad-data.com/security",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:48 GMT"
+      },
+      "file": "4.html",
+      "bytes": 67381,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/search",
+      "fetched_at": "2026-10-30T09:19:48.794Z",
+      "status": 200,
+      "elapsed_ms": 69,
+      "final_url": "https://www.nomad-data.com/search",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:48 GMT"
+      },
+      "file": "5.html",
+      "bytes": 8347,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases-list",
+      "fetched_at": "2026-10-30T09:19:49.365Z",
+      "status": 200,
+      "elapsed_ms": 53,
+      "final_url": "https://www.nomad-data.com/data-use-cases-list",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:49 GMT"
+      },
+      "file": "6.html",
+      "bytes": 53586,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/pricing-previous-2",
+      "fetched_at": "2026-10-30T09:19:49.920Z",
+      "status": 200,
+      "elapsed_ms": 173,
+      "final_url": "https://www.nomad-data.com/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:50 GMT"
+      },
+      "file": "7.html",
+      "bytes": 70502,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-relationship-manager",
+      "fetched_at": "2026-10-30T09:19:50.596Z",
+      "status": 200,
+      "elapsed_ms": 46,
+      "final_url": "https://www.nomad-data.com/data-relationship-manager",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:50 GMT"
+      },
+      "file": "8.html",
+      "bytes": 90795,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/whats-new?ece43748_page=2",
+      "fetched_at": "2026-10-30T09:19:51.146Z",
+      "status": 200,
+      "elapsed_ms": 59,
+      "final_url": "https://www.nomad-data.com/whats-new?ece43748_page=2",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:51 GMT"
+      },
+      "file": "9.html",
+      "bytes": 64107,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/whats-new?ece43748_page=3",
+      "fetched_at": "2026-10-30T09:19:51.722Z",
+      "status": 200,
+      "elapsed_ms": 57,
+      "final_url": "https://www.nomad-data.com/whats-new?ece43748_page=3",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:51 GMT"
+      },
+      "file": "10.html",
+      "bytes": 64136,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/whats-new?6e6ce134_page=2",
+      "fetched_at": "2026-10-30T09:19:52.281Z",
+      "status": 200,
+      "elapsed_ms": 47,
+      "final_url": "https://www.nomad-data.com/whats-new?6e6ce134_page=2",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 22:04:18 GMT"
+      },
+      "file": "11.html",
+      "bytes": 63953,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/information/3-effective-strategies-for-vetting-reliable-data-buyers",
+      "fetched_at": "2026-10-30T09:19:52.829Z",
+      "status": 200,
+      "elapsed_ms": 26,
+      "final_url": "https://www.nomad-data.com/information/3-effective-strategies-for-vetting-reliable-data-buyers",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 20:19:42 GMT"
+      },
+      "file": "12.html",
+      "bytes": 34728,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/information/best-practices-for-monetizing-your-business-data",
+      "fetched_at": "2026-10-30T09:19:53.357Z",
+      "status": 200,
+      "elapsed_ms": 56,
+      "final_url": "https://www.nomad-data.com/information/best-practices-for-monetizing-your-business-data",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:53 GMT"
+      },
+      "file": "13.html",
+      "bytes": 32206,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases/uk-public-sector-contracts-data-blog-nomad-data",
+      "fetched_at": "2026-10-30T09:19:53.914Z",
+      "status": 200,
+      "elapsed_ms": 67,
+      "final_url": "https://www.nomad-data.com/data-use-cases/uk-public-sector-contracts-data-blog-nomad-data",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:53 GMT"
+      },
+      "file": "14.html",
+      "bytes": 28869,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases/unlocking-insights-with-uk-public-sector-contracts-data",
+      "fetched_at": "2026-10-30T09:19:54.482Z",
+      "status": 200,
+      "elapsed_ms": 55,
+      "final_url": "https://www.nomad-data.com/data-use-cases/unlocking-insights-with-uk-public-sector-contracts-data",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:54 GMT"
+      },
+      "file": "15.html",
+      "bytes": 38279,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases/corporate-ownership-insights-nomad-data---blog",
+      "fetched_at": "2026-10-30T09:19:55.038Z",
+      "status": 200,
+      "elapsed_ms": 52,
+      "final_url": "https://www.nomad-data.com/data-use-cases/corporate-ownership-insights-nomad-data---blog",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:55 GMT"
+      },
+      "file": "16.html",
+      "bytes": 34186,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases/unlocking-insights-with-beneficial-ownership-data",
+      "fetched_at": "2026-10-30T09:19:55.591Z",
+      "status": 200,
+      "elapsed_ms": 52,
+      "final_url": "https://www.nomad-data.com/data-use-cases/unlocking-insights-with-beneficial-ownership-data",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:55 GMT"
+      },
+      "file": "17.html",
+      "bytes": 36228,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases/unlock-business-potential-with-us-corporate-registration-data",
+      "fetched_at": "2026-10-30T09:19:56.144Z",
+      "status": 200,
+      "elapsed_ms": 53,
+      "final_url": "https://www.nomad-data.com/data-use-cases/unlock-business-potential-with-us-corporate-registration-data",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:56 GMT"
+      },
+      "file": "18.html",
+      "bytes": 37409,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases/uk-business-locations-data-nomad-data---blog",
+      "fetched_at": "2026-10-30T09:19:56.698Z",
+      "status": 200,
+      "elapsed_ms": 62,
+      "final_url": "https://www.nomad-data.com/data-use-cases/uk-business-locations-data-nomad-data---blog",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:56 GMT"
+      },
+      "file": "19.html",
+      "bytes": 35506,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases/global-environmental-and-social-risk-ratings-data-for-due-diligence-and-compliance",
+      "fetched_at": "2026-10-30T09:19:57.260Z",
+      "status": 200,
+      "elapsed_ms": 59,
+      "final_url": "https://www.nomad-data.com/data-use-cases/global-environmental-and-social-risk-ratings-data-for-due-diligence-and-compliance",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:57 GMT"
+      },
+      "file": "20.html",
+      "bytes": 56962,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/blog/public-procurement-data-can-reveal-trends-in-government-spending",
+      "fetched_at": "2026-10-30T09:19:57.820Z",
+      "status": 200,
+      "elapsed_ms": 51,
+      "final_url": "https://www.nomad-data.com/blog/public-procurement-data-can-reveal-trends-in-government-spending",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:19:57 GMT"
+      },
+      "file": "21.html",
+      "bytes": 30442,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://app.nomad-data.com/direct-signup",
+      "fetched_at": "2026-10-30T09:19:57.877Z",
+      "status": 200,
+      "elapsed_ms": 320,
+      "final_url": "https://app.nomad-data.com/direct-signup",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "7028",
+        "last-modified": "Thu, 22 Oct 2026 00:46:11 GMT",
+        "etag": "\"ee572bb7b64854618f38605dd9fb5342\""
+      },
+      "file": "22.html",
+      "bytes": 7028,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://app.nomad-data.com/login",
+      "fetched_at": "2026-10-30T09:19:58.698Z",
+      "status": 200,
+      "elapsed_ms": 103,
+      "final_url": "https://app.nomad-data.com/login",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "7028",
+        "last-modified": "Thu, 22 Oct 2026 00:46:11 GMT",
+        "etag": "\"ee572bb7b64854618f38605dd9fb5342\""
+      },
+      "file": "23.html",
+      "bytes": 7028,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://app.nomad-data.com/",
+      "fetched_at": "2026-10-30T09:19:59.301Z",
+      "status": 200,
+      "elapsed_ms": 66,
+      "final_url": "https://app.nomad-data.com/",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "7028",
+        "last-modified": "Thu, 22 Oct 2026 00:46:11 GMT",
+        "etag": "\"ee572bb7b64854618f38605dd9fb5342\""
+      },
+      "file": "24.html",
+      "bytes": 7028,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://app.nomad-data.com/provider-signup",
+      "fetched_at": "2026-10-30T09:19:59.867Z",
+      "status": 200,
+      "elapsed_ms": 104,
+      "final_url": "https://app.nomad-data.com/provider-signup",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "7028",
+        "last-modified": "Thu, 22 Oct 2026 00:46:11 GMT",
+        "etag": "\"ee572bb7b64854618f38605dd9fb5342\""
+      },
+      "file": "25.html",
+      "bytes": 7028,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://app.nomad-data.com/signup",
+      "fetched_at": "2026-10-30T09:20:00.471Z",
+      "status": 200,
+      "elapsed_ms": 77,
+      "final_url": "https://app.nomad-data.com/signup",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "7028",
+        "last-modified": "Thu, 22 Oct 2026 00:46:11 GMT",
+        "etag": "\"ee572bb7b64854618f38605dd9fb5342\""
+      },
+      "file": "26.html",
+      "bytes": 7028,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://auth.nomad-data.com/u/signup",
+      "fetched_at": "2026-10-30T09:20:00.548Z",
+      "status": 400,
+      "elapsed_ms": 238,
+      "final_url": "https://auth.nomad-data.com/u/signup",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-length": "3257",
+        "etag": "W/\"cb9-2/HeuXDEj07ULFZYgThqJYJ+sLs\""
+      },
+      "file": "27.html",
+      "bytes": 3257,
+      "truncated": false
+    }
+  ]
+}

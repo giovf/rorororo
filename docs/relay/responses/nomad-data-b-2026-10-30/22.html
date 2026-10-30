@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://use.typekit.net/tvo3has.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <meta
+      name="description"
+      content="Nomad is an onramp to the world of data"
+    />
+    <script src="https://js.chargebee.com/v2/chargebee.js"></script>
+    <script>
+      (function (apiKey) {
+        (function (p, e, n, d, o) {
+          var v, w, x, y, z;
+          o = p[d] = p[d] || {};
+          o._q = o._q || [];
+          v = ['initialize', 'identify', 'updateOptions', 'pageLoad', 'track'];
+          for (w = 0, x = v.length; w < x; ++w)
+            (function (m) {
+              o[m] =
+                o[m] ||
+                function () {
+                  o._q[m === v[0] ? 'unshift' : 'push'](
+                    [m].concat([].slice.call(arguments, 0))
+                  );
+                };
+            })(v[w]);
+          y = e.createElement(n);
+          y.async = !0;
+          y.src = 'https://cdn.pendo.io/agent/static/' + apiKey + '/pendo.js';
+          z = e.getElementsByTagName(n)[0];
+          z.parentNode.insertBefore(y, z);
+        })(window, document, 'script', 'pendo');
+      })('bf2fa605-5cf5-4062-64c5-b1cd73040fd8');
+    </script>
+    <!-- <link rel="apple-touch-icon" href="/public/logo192.png" /> -->
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="/manifest.json" />
+    <!--
+      Notice the use of /public in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "/public/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <!-- Google Tag Manager -->
+    <script>
+      // TODO: use vite for enable GTM conditionally
+      const enableGtm = 'true'.toLowerCase();
+      if (enableGtm === 'true') {
+        (function (w, d, s, l, i) {
+          w[l] = w[l] || [];
+          w[l].push({ 'gtm.start': new Date().getTime(), event: 'gtm.js' });
+          var f = d.getElementsByTagName(s)[0],
+            j = d.createElement(s),
+            dl = l != 'dataLayer' ? '&l=' + l : '';
+          j.async = true;
+          j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+          f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-PSQM8BK');
+      }
+    </script>
+    <style>
+      @font-face {
+        font-family: 'sawton_circularbold';
+        src: url('/fonts/sawtoncircular-bold-webfont.eot');
+        src:
+          url('/fonts/sawtoncircular-bold-webfont.eot?#iefix')
+            format('embedded-opentype'),
+          url('/fonts/sawtoncircular-bold-webfont.woff2') format('woff2'),
+          url('/fonts/sawtoncircular-bold-webfont.woff') format('woff'),
+          url('/fonts/sawtoncircular-bold-webfont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'sawton_circularlight';
+        src: url('/fonts/sawtoncircular-light-webfont.eot');
+        src:
+          url('/fonts/sawtoncircular-light-webfont.eot?#iefix')
+            format('embedded-opentype'),
+          url('/fonts/sawtoncircular-light-webfont.woff2') format('woff2'),
+          url('/fonts/sawtoncircular-light-webfont.woff') format('woff'),
+          url('/fonts/sawtoncircular-light-webfont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'sawton_circularmedium';
+        src: url('/fonts/sawtoncircular-medium-webfont.eot');
+        src:
+          url('/fonts/sawtoncircular-medium-webfont.eot?#iefix')
+            format('embedded-opentype'),
+          url('/fonts/sawtoncircular-medium-webfont.woff2') format('woff2'),
+          url('/fonts/sawtoncircular-medium-webfont.woff') format('woff'),
+          url('/fonts/sawtoncircular-medium-webfont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'sawton_circularregular';
+        src: url('/fonts/sawtoncircular-regular-webfont.eot');
+        src:
+          url('/fonts/sawtoncircular-regular-webfont.eot?#iefix')
+            format('embedded-opentype'),
+          url('/fonts/sawtoncircular-regular-webfont.woff2') format('woff2'),
+          url('/fonts/sawtoncircular-regular-webfont.woff') format('woff'),
+          url('/fonts/sawtoncircular-regular-webfont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+
+      @font-face {
+        font-family: 'sawton_circularthin';
+        src: url('/fonts/sawtoncircular-thin-webfont.eot');
+        src:
+          url('/fonts/sawtoncircular-thin-webfont.eot?#iefix')
+            format('embedded-opentype'),
+          url('/fonts/sawtoncircular-thin-webfont.woff2') format('woff2'),
+          url('/fonts/sawtoncircular-thin-webfont.woff') format('woff'),
+          url('/fonts/sawtoncircular-thin-webfont.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
+      }
+    </style>
+    <!-- End Google Tag Manager -->
+    <title>Nomad</title>
+    <script type="module" crossorigin src="/assets/index-CePL8RdQ.js"></script>
+    <link rel="stylesheet" crossorigin href="/assets/index-C2ljUV_I.css">
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PSQM8BK"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      >
+      </iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root"></div>
+    <div id="bg-images"></div>
+
+    <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+  </body>
+</html>
