@@ -213,9 +213,10 @@
       "effort_days": 0.2,
       "proof": "numbers recorded; parked shelves promoted or left parked with the reason",
       "score": 4,
-      "status": "todo",
+      "status": "doing",
       "not_before": "2026-10-30",
-      "added": "2026-09-30"
+      "added": "2026-09-30",
+      "doing_since": "2026-10-30"
     },
     {
       "id": "refresh-uk-insolvency",
