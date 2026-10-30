@@ -191,3 +191,4 @@ auth.nomad-data.com  # Nomad Data Auth0 sign-up page (new-ventures spike nomad-d
 modelcontextprotocol.io  # MCP specification: 2026-07-28 changelog and transports (gankdat mcp-protocol-2026-07-28, 2026-10-30)
 www.taxcafe.co.uk  # Taxcafe: annual UK tax-guide paperbacks, prices and page counts (new-ventures spike kdp-paperback-tax-guide, 2026-10-30)
 www.taxcafe.com  # Taxcafe alternate host (same spike)
+gankdat.com  # our own Worker: live smoke reads after a deploy (gankdat mcp-protocol-2026-07-28, 2026-10-30)
