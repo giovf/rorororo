@@ -963,8 +963,9 @@
       "effort_days": 0.2,
       "proof": "the next Daily numbers row's `stats crawlers: logs` reading is non-zero and its AI families match the zone reading's (PetalBot, Bingbot, Amazonbot) within the week",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-30"
+      "status": "doing",
+      "added": "2026-10-30",
+      "doing_since": "2026-10-30"
     },
     {
       "id": "mcp-2026-07-28-day-7-read",
