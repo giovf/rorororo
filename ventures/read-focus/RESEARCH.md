@@ -166,6 +166,7 @@ _Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10
 | 2026-10-27 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-26: 14 impressions, 0 clicks, avg pos 15.5, top /reading-ruler.html 11, indexed 3/3; sales: 0 keys (2 test) |
 | 2026-10-28 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-27: 21 impressions, 0 clicks, avg pos 12.7, top /reading-ruler.html 18, indexed 3/3; sales: 0 keys (2 test) |
 | 2026-10-29 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-28: 20 impressions, 0 clicks, avg pos 12.8, top /reading-ruler.html 17, indexed 3/3; sales: 0 keys (2 test) |
+| 2026-10-30 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-29: 26 impressions, 0 clicks, avg pos 11.7, top /reading-ruler.html 22, indexed 3/3; sales: 0 keys (2 test) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
