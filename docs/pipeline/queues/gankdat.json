@@ -950,8 +950,9 @@
       "effort_days": 0.2,
       "proof": "the next Daily numbers row's `worker errors 24h` clause names the 5xx routes (`requests: GET /stats/uk-trademark-journal/class/* 503 ×N …`) and the named count plus the thrown count equals the line total",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-30"
+      "status": "doing",
+      "added": "2026-10-30",
+      "doing_since": "2026-10-30"
     },
     {
       "id": "stats-crawlers-logs-source-object",
