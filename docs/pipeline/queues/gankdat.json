@@ -209,14 +209,25 @@
     {
       "id": "claude-directory-day-30",
       "title": "Day-30 read of the Claude directory listing: rank, accounts that used a tool, tool calls, error rate; keys from claude.ai",
-      "why": "The listing measures itself in the developer portal (beta metrics, daily, ≥ 5 calls per row). Record the numbers in RESEARCH.md against the proof of claude-directory-listing and decide: extend (n8n node, ChatGPT app if the owner opts in) or stop.",
+      "why": "The listing measures itself in the developer portal (beta metrics, daily, ≥ 5 calls per row). Record the numbers in RESEARCH.md against the proof of claude-directory-listing and decide: extend (n8n node, ChatGPT app if the owner opts in) or stop. Read 2026-10-30 (build): the portal (claude.ai/directory/manage) is owner-only (403 to the sandbox) and no directory mail has arrived in 26 days — none is expected, Anthropic lists a scanned connector as Community with no mail unless a person reviews it — so the listing's status is unknown from the repo. Repo-side: Claude-User requests in the traffic dataset 193 (10-17) → 344 (10-25) → 449 (10-30) per 30 d, but that count mixes MCP messages with REST pages read by Claude's fetch tool; agent sign-up 0 keys/30 d and oauth 0 connects by anyone but the owner on every row. Proof (≥ 20 accounts used a tool, ≥ 1 key from claude.ai) is unprovable from here and the key half is 0. Built: the Daily numbers row gains `claude tool callers: 30d N clients, M calls; 7d …` (MCP tools/call from the Claude-User UA, distinct clients — src/lib/crawler-hits.ts, 3 tests); owner action 035 reads the portal's status and four numbers (~3 min); n8n node stays parked on a trigger the repo can read; ChatGPT app stays declined; day-60 read queued (claude-directory-day-60, 2026-11-29).",
       "effort_days": 0.2,
       "proof": "numbers recorded; parked shelves promoted or left parked with the reason",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "not_before": "2026-10-30",
       "added": "2026-09-30",
-      "doing_since": "2026-10-30"
+      "done_at": "2026-10-30"
+    },
+    {
+      "id": "claude-directory-day-60",
+      "title": "Day-60 read of the Claude directory listing: the Daily numbers `claude tool callers` reading against the n8n trigger (≥ 20 clients in 30 d) and the owner's portal numbers from action 035",
+      "why": "Day-30 read 2026-10-30 could not see the portal (owner-only) and the repo's Claude-User count mixed MCP and REST traffic, so the `claude tool callers` reading was added to the Daily numbers row that day and action 035 asks the owner for the listing status, rank, Used a tool, tool calls and error rate once. This read closes the question with 30 days of the new reading: promote `n8n-community-node` from the exchange if ≥ 20 distinct clients called a tool in 30 d (or the portal says Used a tool ≥ 20), close the directory row in the exchange if action 035 reports Not approved, else leave parked with the numbers. If action 035 is still open, decide on the repo reading alone — never append to the open request.",
+      "effort_days": 0.1,
+      "proof": "numbers recorded in RESEARCH.md; n8n-community-node promoted or left parked with the reason",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-30",
+      "not_before": "2026-11-29"
     },
     {
       "id": "refresh-uk-insolvency",

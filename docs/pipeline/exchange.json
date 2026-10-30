@@ -141,10 +141,11 @@
     {
       "id": "claude-connectors-directory",
       "title": "List gankdat's MCP server in the Claude Connectors Directory (then lazy OAuth so plans bill from Claude)",
-      "why": "Exchange 2026-W40 winner, score 11 (evidence 3 × reach 4 ÷ 0.75 days + 20 owner min). A shelf with the agents' owners as buyers that lists automatically after a policy scan on the owner's paid Claude plan — no third-party gate. Server needs tool annotations, Origin 403, a keyless preview so every tool answers, and a listing pack; OAuth (CIMD + PKCE) queued second so paid plans work inside Claude and the same server becomes submittable to ChatGPT/Cursor.",
+      "why": "Exchange 2026-W40 winner, score 11 (evidence 3 × reach 4 ÷ 0.75 days + 20 owner min). A shelf with the agents' owners as buyers that lists automatically after a policy scan on the owner's paid Claude plan — no third-party gate. Server needs tool annotations, Origin 403, a keyless preview so every tool answers, and a listing pack; OAuth (CIMD + PKCE) queued second so paid plans work inside Claude and the same server becomes submittable to ChatGPT/Cursor. Day-30 read 2026-10-30 (gankdat `claude-directory-day-30`): status unknown from the repo (portal owner-only, no mail expected for an automatic Community listing), Claude-User requests 193 → 449 per 30 d since 10-17, 0 keys and 0 OAuth connects from Claude users; the row now carries a `claude tool callers` reading, the owner reads the portal once (action 035), day-60 read queued for 2026-11-29.",
       "status": "promoted",
       "venture": "gankdat",
-      "added": "2026-09-30"
+      "added": "2026-09-30",
+      "updated": "2026-10-30"
     },
     {
       "id": "apify-quality-score-pass",
@@ -159,8 +160,9 @@
       "title": "n8n verified community node for gankdat (npm publish with provenance via GitHub Actions)",
       "why": "A shelf inside n8n Cloud; verification needs provenance publishing (workflow installer can), no runtime deps, one service per package, and an npm token from the owner. Evidence 2, reach 3, 1 day + 10 min → 5.1, below the 7 baseline (W40).",
       "status": "parked",
-      "trigger": "the Claude directory listing shows ≥ 20 distinct accounts using a tool in 30 days",
-      "added": "2026-09-30"
+      "trigger": "the Daily numbers `claude tool callers` reading shows ≥ 20 distinct clients calling an MCP tool in 30 days, or the owner's portal read (action 035) shows Used a tool ≥ 20 (day-30 read 2026-10-30: the portal is owner-only and the old trigger was unreadable from the repo)",
+      "added": "2026-09-30",
+      "updated": "2026-10-30"
     },
     {
       "id": "snowflake-marketplace",

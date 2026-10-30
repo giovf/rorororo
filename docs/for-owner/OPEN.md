@@ -5,7 +5,7 @@ Ordered by payoff: the score of the queued work each request unblocks (`docs/pip
 the minutes it takes you; a request that unblocks nothing queued yet follows, oldest first. Decisions already
 taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
-## Requests (3)
+## Requests (4)
 
 1. **sell the tax workbook from our own page too** — ~3 min, since 2026-10-29; unblocks tax-workbook `own-checkout-live` (5). Steps: [034](actions/034-stripe-payment-link-tax-workbook.md).
    sell the tax workbook from our own page too — create one Stripe Payment Link, ~3 min, £0 — docs/for-owner/actions/034-stripe-payment-link-tax-workbook.md
@@ -15,6 +15,9 @@ taken and the history stay in [OUTSTANDING.md](OUTSTANDING.md).
 
 3. **the tax workbook is ready for your Payhip store** — ~13 min, since 2026-10-29; unblocks tax-workbook `payhip-listing-live` (5). Steps: [033](actions/033-payhip-upload-and-webhook.md).
    the tax workbook is ready for your Payhip store — upload it and switch on the sale webhook, ~13 min, £0 — docs/for-owner/actions/033-payhip-upload-and-webhook.md
+
+4. **Claude directory** — ~3 min, since 2026-10-30; nothing queued waits on it. Steps: [035](actions/035-claude-directory-read.md).
+   Claude directory: read gankdat's status + 4 numbers, ~3 min — docs/for-owner/actions/035-claude-directory-read.md
 
 ## Waiting on an attended Claude session, not you (2)
 
