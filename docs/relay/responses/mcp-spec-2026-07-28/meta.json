@@ -1,0 +1,51 @@
+{
+  "request": "mcp-spec-2026-07-28",
+  "fetched_at": "2026-10-30T18:16:20.337Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+      "fetched_at": "2026-10-30T18:16:17.345Z",
+      "status": 200,
+      "elapsed_ms": 438,
+      "final_url": "https://modelcontextprotocol.io/specification/2026-07-28/changelog",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 18:14:44 GMT"
+      },
+      "file": "1.html",
+      "bytes": 158805,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports",
+      "fetched_at": "2026-10-30T18:16:18.292Z",
+      "status": 200,
+      "elapsed_ms": 93,
+      "final_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/transports",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 18:16:18 GMT"
+      },
+      "file": "2.html",
+      "bytes": 136092,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/lifecycle",
+      "fetched_at": "2026-10-30T18:16:18.887Z",
+      "status": 200,
+      "elapsed_ms": 1441,
+      "final_url": "https://modelcontextprotocol.io/specification/2026-07-28/basic/versioning",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 18:14:43 GMT"
+      },
+      "file": "3.html",
+      "bytes": 174537,
+      "truncated": false
+    }
+  ]
+}
