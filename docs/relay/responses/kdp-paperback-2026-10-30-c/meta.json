@@ -1,0 +1,40 @@
+{
+  "request": "kdp-paperback-2026-10-30-c",
+  "fetched_at": "2026-10-30T18:34:42.167Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.taxcafe.co.uk/small-business-tax-tactics.html",
+      "fetched_at": "2026-10-30T18:34:40.101Z",
+      "status": 200,
+      "elapsed_ms": 1417,
+      "final_url": "https://www.taxcafe.co.uk/small-business-tax-tactics.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "3895",
+        "last-modified": "Wed, 15 Apr 2026 09:31:11 GMT",
+        "etag": "\"273f-64f7c605535c0-gzip\""
+      },
+      "file": "1.html",
+      "bytes": 10047,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.taxcafe.co.uk/budgettaxchanges.html",
+      "fetched_at": "2026-10-30T18:34:42.025Z",
+      "status": 200,
+      "elapsed_ms": 141,
+      "final_url": "https://www.taxcafe.co.uk/budgettaxchanges.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "4371",
+        "last-modified": "Wed, 15 Apr 2026 09:27:45 GMT",
+        "etag": "\"2bc1-64f7c540de640-gzip\""
+      },
+      "file": "2.html",
+      "bytes": 11201,
+      "truncated": false
+    }
+  ]
+}
