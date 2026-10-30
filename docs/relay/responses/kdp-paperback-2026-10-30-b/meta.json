@@ -1,0 +1,155 @@
+{
+  "request": "kdp-paperback-2026-10-30-b",
+  "fetched_at": "2026-10-30T18:33:21.196Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.taxcafe.co.uk/business-tax.html",
+      "fetched_at": "2026-10-30T18:33:14.168Z",
+      "status": 200,
+      "elapsed_ms": 593,
+      "final_url": "https://www.taxcafe.co.uk/business-tax.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "2097",
+        "last-modified": "Thu, 08 Oct 2026 08:23:38 GMT",
+        "etag": "\"17ba-65d4ff2d35680-gzip\""
+      },
+      "file": "1.html",
+      "bytes": 6074,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.taxcafe.co.uk/annualtaxguide.html",
+      "fetched_at": "2026-10-30T18:33:15.266Z",
+      "status": 200,
+      "elapsed_ms": 85,
+      "final_url": "https://www.taxcafe.co.uk/annualtaxguide.html",
+      "headers": {
+        "content-type": "text/html",
+        "content-length": "2469",
+        "last-modified": "Fri, 30 Jan 2026 12:30:43 GMT",
+        "etag": "\"17b4-6499a244bc2c0-gzip\""
+      },
+      "file": "2.html",
+      "bytes": 6068,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/GPQL5W3J6WNRCZTV",
+      "fetched_at": "2026-10-30T18:33:15.354Z",
+      "status": 200,
+      "elapsed_ms": 206,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/GPQL5W3J6WNRCZTV",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 184621,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/G201857950",
+      "fetched_at": "2026-10-30T18:33:16.062Z",
+      "status": 200,
+      "elapsed_ms": 118,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/G201857950",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 199552,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/GVBQ3CMEQW3W2VL6",
+      "fetched_at": "2026-10-30T18:33:16.681Z",
+      "status": 200,
+      "elapsed_ms": 129,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/GVBQ3CMEQW3W2VL6",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "5.html",
+      "bytes": 209931,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.amazon.co.uk/s?k=sole+trader+tax+2026%2F27&i=stripbooks",
+      "render": true,
+      "fetched_at": "2026-10-30T18:33:16.814Z",
+      "status": 503,
+      "final_url": "https://www.amazon.co.uk/s?k=sole+trader+tax+2026%2F27&i=stripbooks",
+      "title": "503 - Service Unavailable Error",
+      "rendered": {
+        "network_idle": true,
+        "requests": 3,
+        "failed": [
+          "GET https://www.amazon.co.uk/s?k=sole+trader+tax+2026%2F27&i=stripbooks → 503"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 503 ()"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html"
+      },
+      "file": "6.html",
+      "bytes": 1098,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-11-25\",\"capabilities\":{},\"clientInfo\":{\"name\":\"foundry-relay-smoke\",\"version\":\"1\"}}}",
+      "fetched_at": "2026-10-30T18:33:19.657Z",
+      "status": 406,
+      "elapsed_ms": 442,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "142"
+      },
+      "file": "7.json",
+      "bytes": 142,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/list\",\"params\":{}}",
+      "fetched_at": "2026-10-30T18:33:20.599Z",
+      "status": 406,
+      "elapsed_ms": 52,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "142"
+      },
+      "file": "8.json",
+      "bytes": 142,
+      "truncated": false
+    },
+    {
+      "method": "POST",
+      "url": "https://gankdat.com/mcp",
+      "body": "{\"jsonrpc\":\"2.0\",\"id\":3,\"method\":\"tools/list\",\"params\":{\"_meta\":{\"io.modelcontextprotocol/protocolVersion\":\"2026-07-28\",\"io.modelcontextprotocol/clientCapabilities\":{}}}}",
+      "fetched_at": "2026-10-30T18:33:21.153Z",
+      "status": 400,
+      "elapsed_ms": 43,
+      "final_url": "https://gankdat.com/mcp",
+      "headers": {
+        "content-type": "application/json",
+        "content-length": "378"
+      },
+      "file": "9.json",
+      "bytes": 378,
+      "truncated": false
+    }
+  ]
+}
