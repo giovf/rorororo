@@ -258,3 +258,4 @@
 - 2026-10-29 19:33 (backlog) | notification | github.com | [giovf/rorororo] Run failed: gankdat metrics - main (37a915d) | gankdat-metrics.yml run 282 failed in 1m54s; watchdog RUNS 19:49: step "Append today's numbers to RESEARCH.md", later run 283 ok | logged
 - 2026-10-30 02:18 (backlog) | notification | eu.zohocorp.com | Your Zoho CRM trial: what matters to YOUR job role? | Zoho CRM trial marketing nudge | logged
 - 2026-10-30 10:05 | notification | eu.zohocorp.com | Your Zoho CRM Requirements | Zoho CRM trial sales follow-up asking for requirements | logged
+- 2026-10-30 10:19 | notification | eu.zohocorp.com | Zoho CRM: Get on a call to know more | sales nudge for a Zoho CRM trial, to another address | logged
