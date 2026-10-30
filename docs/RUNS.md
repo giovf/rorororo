@@ -2103,3 +2103,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 17:24 | burn-down | Skipped: Whop (payouts need Stripe KYC on a new account; no tax-template rival on it)
 - 2026-10-30 17:24 | burn-down | Dependabot majors: no open Dependabot PR (list_pull_requests: only the 2025 Develop PR); nothing to review
 - 2026-10-30 17:24 | burn-down | Stopping: 2 day-30 reviews done, spike seeded; gankdat research deferred to the 17:10 build slot; nothing else buildable
+- 2026-10-30 17:32 | build | First 'claude tool callers' reading (metrics run 288): 0 clients, 0 calls beside 492 Claude-User requests
+- 2026-10-30 17:32 | build | Worker log: 55 Cowork POST /mcp today, 31 answered 404 — protocol 2026-07-28 rejected by SDK 1.32 transport
+- 2026-10-30 17:32 | build | /mcp crawler line now counts MCP kinds only (it summed every traffic row); W42–W43 reading corrected
+- 2026-10-30 17:32 | build | Queued gankdat mcp-protocol-2026-07-28 (12): SDK v2 line so Claude's current clients complete a tool call

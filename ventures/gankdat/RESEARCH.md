@@ -147,6 +147,26 @@ Claude-User line grows — so the read closes the gap instead of guessing:
 4. `claude-directory-day-60` (3) dated 2026-11-29 reads 30 days of the new figure plus whatever
    action 035 returned and promotes or leaves parked.
 
+**First live reading, same slot (metrics run 288, 17:24 UTC): `claude tool callers: 30d 0 clients,
+0 calls` — beside 492 `Claude-User` requests in the `/mcp` line.** So the Worker's own request
+log was read (`worker logs` dispatch, needle `Claude-User`, 24 h, 80 lines → 55 request events,
+09:15–10:57 UTC). Every one is `POST /mcp` from `160.79.106.x` (Anthropic's egress range) with
+`x-anthropic-client: Cowork`, 28 of them presenting the same API key (`keyId f19e015f…`, one
+client — possibly the owner's own Cowork): **31 answered 404, 16 → 200, 8 → 202.** The 404s carry
+`mcp-protocol-version: 2026-07-28` — the current MCP specification (published 2026-07-28:
+stateless, no `initialize`/`Mcp-Session-Id`, `server/discover`, `Mcp-Method` + `Mcp-Name`
+headers, client info in `_meta`); `@hono/mcp` 0.3.2 on SDK 1.32.x answers 404 "Unsupported
+protocol version (supported: 2025-11-25 …)" before any handler runs. The 200/202s are the same
+client retrying on `2025-11-25` (8 such headers), and in 30 days not one of those retries carried
+a `tools/call` (the reading above is written before the transport runs, so it would have counted
+one). Two corrections follow: the `/mcp` crawler line now counts the MCP kinds only (it summed
+every traffic row, REST and x402 included, so the 193 → 492 "Claude users add the server" reading
+of reviews W42–W43 was all traffic from Claude's fetch tool and this proxy together), and a
+scored item `mcp-protocol-2026-07-28` (12) moves the server to the SDK v2 line
+(`@modelcontextprotocol/server` 2.4.0 speaks both revisions; 1.32.2 of 10-23 still lists
+2025-11-25 as latest) so a Claude surface completes a tool call. Until it ships, every current
+Claude client's first request to gankdat is a 404 in the directory's error breakdown.
+
 
 ## Research 2026-10-05 (pipeline starved — burn-down)
 
