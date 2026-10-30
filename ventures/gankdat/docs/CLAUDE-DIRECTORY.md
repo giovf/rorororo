@@ -123,3 +123,9 @@ only; UA and tool name in analytics, never an IP), public documentation at `/doc
 Community listing appears after the automatic scan. Metrics (rank, distinct accounts, tool
 calls, error rate) live in the portal; the queue item `claude-directory-day-30` records them
 on 2026-10-30. Anthropic's egress range for the Daily numbers row: `160.79.104.0/21`.
+
+Day-30 read (2026-10-30): the portal is owner-only (403 to the sandbox) and the traffic dataset
+keeps no IP, so the egress range is unreadable here; the Daily numbers row instead carries
+`claude tool callers: 30d N clients, M calls; 7d …` — MCP `tools/call` requests whose User-Agent
+is Claude's (`Claude-User`), counted by hashed client — as the repo's floor for the portal's
+"Used a tool" card. The portal's own numbers come from the owner once (action 035).

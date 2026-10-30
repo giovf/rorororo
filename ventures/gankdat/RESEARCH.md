@@ -111,6 +111,43 @@ used a tool in 30 days and ≥ 1 key issued from a claude.ai referrer; `/mcp` ca
 bill inside Claude — `mcp-oauth-lazy-auth` (8) is next.
 
 
+## Claude Connectors Directory — day-30 read (2026-10-30, build)
+
+Queue `claude-directory-day-30` (4), dated 2026-10-30; the owner submitted the listing on 2026-10-04,
+so this is day 26. The portal that holds the item's numbers (`claude.ai/directory/manage`: directory
+rank, "Used a tool" = distinct Claude accounts that made a `tools/call` in 30 days, tool calls 30 d,
+error rate) is readable only on the owner's Claude plan — the sandbox gets a 403 — and Anthropic's
+own pages say a connector is scanned and listed as Community "with no action from you" and that only
+a human review emails, so the 26 silent days say nothing either way. A web search finds no public
+page for the listing. What the repo can read:
+
+| Signal | Reading (Daily numbers rows) |
+| --- | --- |
+| `Claude-User` requests in the traffic dataset, rolling 30 d | 193 (10-17, first reading) → 225 (10-21) → 344 (10-25) → 449 (10-30); ≈ 17/day over the last four days against ≈ 6/day before 10-17. The reading counts every Claude-User request in `gankdat_traffic` — MCP messages and REST pages read by Claude's fetch tool alike — so it cannot say how many Claude users call a tool |
+| Keys issued from claude.ai | `agent sign-up: 0 keys/30d` on every row; `oauth: 0 connects/30d` by anyone but the owner (`7d by client: claude.ai 1`, 10-05 → 10-11, is the owner's end-to-end test of 10-04) |
+| Keyless preview | 114/day on 10-01, 84–139/day through 10-26, 22–26/day since 10-28; paywall hits 1/day; `wanted: connect_account 1` |
+| Listing status | unknown: no mail, no public page, portal owner-only |
+
+Verdict against the proof written on 2026-09-30 (≥ 20 distinct Claude accounts used a tool in 30 d
+and ≥ 1 key from a claude.ai referrer): the key half is 0 and the account half is unreadable from the
+repo. Neither "extend" nor "stop" follows from that — the shelf costs nothing to keep and the
+Claude-User line grows — so the read closes the gap instead of guessing:
+
+1. The Daily numbers row gains `claude tool callers: 30d N clients, M calls; 7d …` from the next
+   06:30 run: MCP data points only, a `tools/call` in the method list, the Claude surfaces'
+   User-Agent, counted by client (the key's account id when authed, else the hashed IP+UA of the
+   preview limiter). A client is not an account — one account reaches us from several proxy IPs and
+   one IP serves many accounts — so it is the floor for the portal's "Used a tool" card, read daily
+   (`src/lib/crawler-hits.ts`, `claudeClientsSql`; 3 tests).
+2. Owner action 035 (~3 min, no identity): the status word on the submission card — `Approved`
+   would mean nobody clicked Publish — and, if published, the four portal numbers.
+3. Exchange: `n8n-community-node` stays parked, its trigger rewritten to the new reading (≥ 20
+   clients in 30 d) or the owner's "Used a tool" ≥ 20; `chatgpt-app-directory` stays declined
+   (OpenAI business verification, outside the owner-request rule).
+4. `claude-directory-day-60` (3) dated 2026-11-29 reads 30 days of the new figure plus whatever
+   action 035 returned and promotes or leaves parked.
+
+
 ## Research 2026-10-05 (pipeline starved — burn-down)
 
 Every open gankdat item was blocked or dated (`npm run pipeline next` → null), so this is the

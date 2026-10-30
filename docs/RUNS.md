@@ -2083,3 +2083,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 09:26 | build | Call: park; exchange.json trigger = paying account + one owner onboarding call; new-ventures emptied, needs_research
 - 2026-10-30 12:08 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-10-30 16:30 | triage | notify owner dispatched: last run started 13:26 UTC, 3 h ago
+- 2026-10-30 17:20 | build | claude-directory-day-30 (4) read: portal owner-only (403), no mail in 26 d, status unknown
+- 2026-10-30 17:20 | build | Repo side: Claude-User requests 193 → 449 per 30 d since 10-17, but MCP and REST mixed; 0 keys, 0 connects
+- 2026-10-30 17:20 | build | Daily numbers gains 'claude tool callers' (MCP tools/call from Claude-User, distinct clients), 3 tests
+- 2026-10-30 17:20 | build | Exchange: n8n node trigger now the repo reading or the portal's Used a tool ≥ 20; ChatGPT app stays declined
+- 2026-10-30 17:20 | build | Queued claude-directory-day-60 (3) for 2026-11-29; owner action 035 asks the portal status + 4 numbers
+- 2026-10-30 17:20 | notify | Please read gankdat's Claude directory status and usage numbers in the portal, about 3 min
