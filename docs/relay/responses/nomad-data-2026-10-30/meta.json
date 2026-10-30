@@ -1,0 +1,389 @@
+{
+  "request": "nomad-data-2026-10-30",
+  "fetched_at": "2026-10-30T09:17:33.912Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/",
+      "fetched_at": "2026-10-30T09:17:19.329Z",
+      "status": 200,
+      "elapsed_ms": 370,
+      "final_url": "https://www.nomad-data.com/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 17:46:45 GMT"
+      },
+      "file": "1.html",
+      "bytes": 71452,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/connect",
+      "fetched_at": "2026-10-30T09:17:20.206Z",
+      "status": 200,
+      "elapsed_ms": 34,
+      "final_url": "https://www.nomad-data.com/connect",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 17:46:56 GMT"
+      },
+      "file": "2.html",
+      "bytes": 45564,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/about",
+      "fetched_at": "2026-10-30T09:17:20.742Z",
+      "status": 200,
+      "elapsed_ms": 147,
+      "final_url": "https://www.nomad-data.com/about-us",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 17:46:46 GMT"
+      },
+      "file": "3.html",
+      "bytes": 31806,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/whats-new",
+      "fetched_at": "2026-10-30T09:17:21.392Z",
+      "status": 200,
+      "elapsed_ms": 30,
+      "final_url": "https://www.nomad-data.com/whats-new",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 17:46:56 GMT"
+      },
+      "file": "4.html",
+      "bytes": 63664,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/sitemap.xml",
+      "fetched_at": "2026-10-30T09:17:21.925Z",
+      "status": 200,
+      "elapsed_ms": 69,
+      "final_url": "https://www.nomad-data.com/sitemap.xml",
+      "headers": {
+        "content-type": "application/rss+xml; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:17:21 GMT"
+      },
+      "file": "5.xml",
+      "bytes": 1193328,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/robots.txt",
+      "fetched_at": "2026-10-30T09:17:22.526Z",
+      "status": 200,
+      "elapsed_ms": 68,
+      "final_url": "https://www.nomad-data.com/robots.txt",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:17:22 GMT"
+      },
+      "file": "6.txt",
+      "bytes": 192,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/terms",
+      "fetched_at": "2026-10-30T09:17:23.095Z",
+      "status": 404,
+      "elapsed_ms": 150,
+      "final_url": "https://www.nomad-data.com/terms",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 15:47:23 GMT",
+        "etag": "W/\"f63aaa453b319362cb267aee9a1a55b6\""
+      },
+      "file": "7.html",
+      "bytes": 17248,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/terms-of-service",
+      "fetched_at": "2026-10-30T09:17:23.747Z",
+      "status": 404,
+      "elapsed_ms": 150,
+      "final_url": "https://www.nomad-data.com/terms-of-service",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 15:47:23 GMT",
+        "etag": "W/\"f63aaa453b319362cb267aee9a1a55b6\""
+      },
+      "file": "8.html",
+      "bytes": 17248,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/privacy-policy",
+      "fetched_at": "2026-10-30T09:17:24.400Z",
+      "status": 404,
+      "elapsed_ms": 167,
+      "final_url": "https://www.nomad-data.com/privacy-policy",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 15:47:23 GMT",
+        "etag": "W/\"f63aaa453b319362cb267aee9a1a55b6\""
+      },
+      "file": "9.html",
+      "bytes": 17248,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/pricing",
+      "fetched_at": "2026-10-30T09:17:25.069Z",
+      "status": 200,
+      "elapsed_ms": 63,
+      "final_url": "https://www.nomad-data.com/pricing",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:17:25 GMT"
+      },
+      "file": "10.html",
+      "bytes": 70502,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/providers",
+      "fetched_at": "2026-10-30T09:17:25.633Z",
+      "status": 404,
+      "elapsed_ms": 155,
+      "final_url": "https://www.nomad-data.com/providers",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 15:47:23 GMT",
+        "etag": "W/\"f63aaa453b319362cb267aee9a1a55b6\""
+      },
+      "file": "11.html",
+      "bytes": 17248,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-providers",
+      "fetched_at": "2026-10-30T09:17:26.289Z",
+      "status": 404,
+      "elapsed_ms": 139,
+      "final_url": "https://www.nomad-data.com/data-providers",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 15:47:23 GMT",
+        "etag": "W/\"f63aaa453b319362cb267aee9a1a55b6\""
+      },
+      "file": "12.html",
+      "bytes": 17248,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/browse",
+      "fetched_at": "2026-10-30T09:17:26.929Z",
+      "status": 404,
+      "elapsed_ms": 141,
+      "final_url": "https://www.nomad-data.com/browse",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 15:47:23 GMT",
+        "etag": "W/\"f63aaa453b319362cb267aee9a1a55b6\""
+      },
+      "file": "13.html",
+      "bytes": 17248,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases",
+      "fetched_at": "2026-10-30T09:17:27.571Z",
+      "status": 404,
+      "elapsed_ms": 142,
+      "final_url": "https://www.nomad-data.com/data-use-cases",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Thu, 29 Oct 2026 15:47:23 GMT",
+        "etag": "W/\"f63aaa453b319362cb267aee9a1a55b6\""
+      },
+      "file": "14.html",
+      "bytes": 17248,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases/company-details-data-blog-nomad-data",
+      "fetched_at": "2026-10-30T09:17:28.214Z",
+      "status": 200,
+      "elapsed_ms": 59,
+      "final_url": "https://www.nomad-data.com/data-use-cases/company-details-data-blog-nomad-data",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:17:28 GMT"
+      },
+      "file": "15.html",
+      "bytes": 28360,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/data-use-cases/business-compliance-data-nomad-data---blog",
+      "fetched_at": "2026-10-30T09:17:28.773Z",
+      "status": 200,
+      "elapsed_ms": 78,
+      "final_url": "https://www.nomad-data.com/data-use-cases/business-compliance-data-nomad-data---blog",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:17:28 GMT"
+      },
+      "file": "16.html",
+      "bytes": 32635,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/blog/why-were-making-the-worlds-largest-data-market-free-to-search-plus-two-new-features",
+      "fetched_at": "2026-10-30T09:17:29.353Z",
+      "status": 200,
+      "elapsed_ms": 69,
+      "final_url": "https://www.nomad-data.com/blog/why-were-making-the-worlds-largest-data-market-free-to-search-plus-two-new-features",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:17:29 GMT"
+      },
+      "file": "17.html",
+      "bytes": 32468,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/blog/nomad-data-adds-its-5-000th-provider",
+      "fetched_at": "2026-10-30T09:17:29.923Z",
+      "status": 200,
+      "elapsed_ms": 53,
+      "final_url": "https://www.nomad-data.com/blog/nomad-data-adds-its-5-000th-provider",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:17:29 GMT"
+      },
+      "file": "18.html",
+      "bytes": 30697,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.nomad-data.com/blog/nomad-data-launches-referral-program-for-all-in-the-datasphere",
+      "fetched_at": "2026-10-30T09:17:30.477Z",
+      "status": 200,
+      "elapsed_ms": 61,
+      "final_url": "https://www.nomad-data.com/blog/nomad-data-launches-referral-program-for-all-in-the-datasphere",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:17:30 GMT"
+      },
+      "file": "19.html",
+      "bytes": 29345,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://landing.nomad-data.com/en-us/nomad-data",
+      "fetched_at": "2026-10-30T09:17:30.539Z",
+      "status": 200,
+      "elapsed_ms": 307,
+      "final_url": "https://landing.nomad-data.com/en-us/nomad-data",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Sun, 13 Sep 2026 14:02:51 GMT"
+      },
+      "file": "20.html",
+      "bytes": 54764,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://landing.nomad-data.com/learn-more",
+      "fetched_at": "2026-10-30T09:17:31.348Z",
+      "status": 200,
+      "elapsed_ms": 171,
+      "final_url": "https://landing.nomad-data.com/learn-more",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Sun, 13 Sep 2026 14:02:57 GMT"
+      },
+      "file": "21.html",
+      "bytes": 47972,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://landing.nomad-data.com/harbr_providers",
+      "fetched_at": "2026-10-30T09:17:32.032Z",
+      "status": 200,
+      "elapsed_ms": 157,
+      "final_url": "https://landing.nomad-data.com/harbr_providers",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Sun, 13 Sep 2026 14:03:01 GMT"
+      },
+      "file": "22.html",
+      "bytes": 58655,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://landing.nomad-data.com/letstalk",
+      "fetched_at": "2026-10-30T09:17:32.692Z",
+      "status": 200,
+      "elapsed_ms": 145,
+      "final_url": "https://landing.nomad-data.com/letstalk",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Tue, 13 Oct 2026 18:06:41 GMT"
+      },
+      "file": "23.html",
+      "bytes": 48575,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://landing.nomad-data.com/sitemap.xml",
+      "fetched_at": "2026-10-30T09:17:33.338Z",
+      "status": 200,
+      "elapsed_ms": 65,
+      "final_url": "https://landing.nomad-data.com/sitemap.xml",
+      "headers": {
+        "content-type": "application/xml",
+        "last-modified": "Tue, 13 Oct 2026 18:20:35 GMT",
+        "etag": "W/\"241309f5a27bd8909101f12b4484a2ea\""
+      },
+      "file": "24.xml",
+      "bytes": 223,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://monda.ai/blog/monda-and-nomad-data-partner-to-make-it-easy-for-daas-companies-to-join-the-worlds-largest-data-market",
+      "fetched_at": "2026-10-30T09:17:33.404Z",
+      "status": 200,
+      "elapsed_ms": 507,
+      "final_url": "https://www.monda.ai/blog/monda-and-nomad-data-partner-to-make-it-easy-for-daas-companies-to-join-the-worlds-largest-data-market",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Fri, 30 Oct 2026 09:17:33 GMT"
+      },
+      "file": "25.html",
+      "bytes": 40597,
+      "truncated": false
+    }
+  ]
+}
