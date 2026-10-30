@@ -2083,3 +2083,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 09:26 | build | Call: park; exchange.json trigger = paying account + one owner onboarding call; new-ventures emptied, needs_research
 - 2026-10-30 12:08 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-10-30 16:30 | triage | notify owner dispatched: last run started 13:26 UTC, 3 h ago
+- 2026-10-30 17:25 | burn-down | read-focus day-30-funnel-review done: Chrome 1 user, Firefox 1 adu, 0 keys, no ratings at day 30
+- 2026-10-30 17:25 | burn-down | Google 26 impressions/7d, 0 clicks, 22 on the ruler page at position 12; no page or listing fix worth a slot
+- 2026-10-30 17:25 | burn-down | Keep at £0 untouched (VT precedent); day-90-verdict queued for 2026-12-21; research_after moved to 12-21
+- 2026-10-30 17:25 | burn-down | 0.3.0 still unsigned 26 days (attended-session handoff of 10-04); the only lever that reaches users

@@ -2,9 +2,9 @@
   "venture": "read-focus",
   "status": "open",
   "needs_research": false,
-  "updated": "2026-10-11",
-  "researched": "2026-10-05",
-  "research_after": "2026-10-30",
+  "updated": "2026-10-30",
+  "researched": "2026-10-30",
+  "research_after": "2026-12-21",
   "weight": 0.5,
   "items": [
     {
@@ -36,10 +36,10 @@
       "effort_days": 0.1,
       "proof": "A RESEARCH.md metrics row on the date with installs, activations and sales, and a decision line in STRATEGY §8",
       "score": 5,
-      "status": "doing",
+      "status": "done",
       "added": "2026-09-30",
       "not_before": "2026-10-30",
-      "doing_since": "2026-10-30"
+      "done_at": "2026-10-30"
     },
     {
       "id": "cws-promo-tile",
@@ -160,6 +160,17 @@
       "status": "done",
       "added": "2026-10-05",
       "done_at": "2026-10-05"
+    },
+    {
+      "id": "day-90-verdict",
+      "title": "Day-90 verdict per STRATEGY §7: a sale, rating, Google click, support mail or ≥ 5 users on either store keeps ReadFocus; none → killed, code and listings kept",
+      "why": "Day-30 funnel review 2026-10-30 (RESEARCH.md): Chrome 1 user and Firefox 1 average daily user after 30 days with every listing fixed and 0.2.0 live on both stores, no ratings, 0 keys sold (2 test), 0 activations, £0 in the ledger; Google shows 26 impressions a week with 0 clicks, 22 of them for the reading-ruler page at position 11–12. Every unblocked lever is built; 0.3.0 (ruler controls, spacing, tint, read aloud, Firefox for Android) has waited 26 days for an attended session to sign it. §7 kills a venture with zero sales and zero organic signal 90 days after every planned listing is live: Firefox 09-22, Chrome found live 09-30 (approved between 09-21 and 09-30), so the read is 2026-12-21 (12-29 at the latest). On the date read the Daily check rows, the key count and the ledger; any key sold, rating or review, Search Console click to a ReadFocus page, support mail, or ≥ 5 users on either store keeps the venture at weight 0.5; none of those sets venture.json to killed, keeps the code and the live listings (£0 to keep, a later sale still pays) and finishes the queue.",
+      "effort_days": 0.1,
+      "proof": "A RESEARCH.md metrics row on the date with users, keys and sales, a decision line in STRATEGY §8, and venture.json status set per §7",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-30",
+      "not_before": "2026-12-21"
     }
   ]
 }
