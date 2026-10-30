@@ -110,6 +110,7 @@ _Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10
 | 2026-10-28 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-27: 11 impressions, 0 clicks, avg pos 7.1, top /weava-alternative.html 11, indexed 2/2; sales: 0 keys |
 | 2026-10-29 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-28: 11 impressions, 0 clicks, avg pos 7.1, top /weava-alternative.html 11, indexed 2/2; sales: 0 keys |
 | 2026-10-30 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-29: 16 impressions, 0 clicks, avg pos 18.6, top /weava-alternative.html 16, indexed 2/2; sales: 0 keys |
+| 2026-10-30 | Day-30 funnel review (burn-down) | 0 | — | 0 | Chrome 0 users on every row, Firefox 0 adu (1–2 weekly downloads), no ratings, 0 keys, £0 ledger; Google 16 impressions/7d, 0 clicks; 0.4.0 unsigned 25 d; keep at £0, `day-90-verdict` 2026-12-21 (§ Day-30 funnel review) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
@@ -328,3 +329,43 @@ Third starvation pass in eight days (09-30/10-04, 10-05 built out the same night
 0 users and no ratings on Chrome (0.2.0 live since 10-06) and Firefox (0.2.0) on every row since listing; 0.4.0 waits on the signing handoff; the listing levers are owner-blocked (action 013). Nothing unblocked is left that the earlier passes did not queue and build, so no items are
 added; the queue carries `research_after: 2026-10-30`, the `day-30-funnel-review` reading, and the fallback skips it until then
 (`docs/pipeline/README.md`, Waiting).
+
+## Day-30 funnel review (2026-10-30, burn-down): keep at £0, no new levers, verdict on 2026-12-21
+
+Read from the Daily check rows above (store-metrics CI, 2026-09-30 → 10-30), the licence Worker's key count on the
+same rows (`sales: N keys`, `scripts/license-sales.ts`) and `docs/LEDGER.md` (no Highlight Keep row: £0 out, £0 in).
+Chrome was found live on 2026-09-30 (approved between 09-21 and 09-30, no mail), Firefox on 09-22, so this is day
+30–38 of both listings; 0.2.0 (PDF highlighting) has been the live version on both stores since 10-05/06.
+
+| Measure | Day 1 (09-30) | Day 30 (10-30) | Thesis (§ Gate) |
+| --- | --- | --- | --- |
+| Chrome users | 0 | **0** on all 31 rows | the 500k-user category's paid incumbent is abandoned |
+| Firefox average daily users / weekly downloads | 0 / 0 | **0** / 1 (13 rows at 1, 4 at 2: downloads that never become a retained user) | — |
+| ratings or reviews, either store | none | **none** | — |
+| licence keys sold / activations | 0 / 0 | **0 / 0** | — |
+| Google impressions, 7 d (2 pages: product page, `/weava-alternative.html`) | 0 (0/2 indexed) | **16**, 0 clicks, all for the Weava page; avg position 7.1 on 10-26..28, 18.6 on 10-29; 2/2 indexed since 10-22 | — |
+
+Listings fixed as the item asked: AMO previews, category, tags and homepage set 2026-10-04 (0.1.1 handoff), the Chrome
+privacy URL moved by the owner 2026-10-04 (action 013), the comparison page live and indexed. Not applied: the Chrome
+listing copy and keywords (`cws-listing-keywords`, owner-blocked on a dashboard pass since 10-04; the 10-29 owner-time
+rule keeps a dashboard ask for a venture with no paying account off the request list). Still unshipped: **0.4.0**
+(Weava / Glasp / Hypothesis / Super Simple Highlighter imports, every-site mode, frames and shadow DOM, Markdown and
+Readwise exports) — built 10-04/05, unsigned for 25 days because signing needs the AMO and CWS secrets of an attended
+session (ALERTS handoff 2026-10-05; foundry `extension-publish-in-ci` blocked on the same).
+
+What the numbers say: nobody has installed Highlight Keep from either store in 30 days — not one Chrome user on any
+row, no Firefox daily user behind one or two downloads a week — so the funnel has no first step to measure
+conversion on. The only motion is Google: the Weava comparison page went 0 → 16 impressions a week in the eight days
+since indexing, first at position 7 then slipping to 18, with 0 clicks. One click a week at best is not a page fix
+worth a slot, and the store listings themselves get no reading (Chrome Web Store search has no API). The import
+features that answer the review sample's asks (lost data, PDF, moving off Weava) sit in the unsigned 0.4.0, so the
+one lever that reaches a user already has its handoff.
+
+Decision: **keep, untouched, at £0 until the §7 date** — the same call as ReadFocus and Variables Toolkit: no
+recurring cost, no owner time, the code is done, and §7 reads at 90 days, so killing at day 30 gains nothing. Weight
+stays 0.5. No new items (every unblocked lever is built, as on 10-04/05/07); `research_after` moves to 2026-12-21 so
+the starvation fallback skips the queue. Queue: `day-90-verdict` (not before 2026-12-21, 90 days after the last
+listing went live; Chrome's exact approval day is unknown, 12-29 at the latest) applies §7: a key sold, a rating or
+review, a Google click to a Highlight Keep page, a support mail, or ≥ 5 users on either store keeps it; none of those
+sets the venture to `killed` and keeps the code and the listings (a live listing costs nothing and a later sale still
+pays).
