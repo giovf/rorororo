@@ -614,6 +614,15 @@ runs `check:root`.
   message (the `source` object's `message`, as wave-logs reads it) and writes `worker errors 24h: N (<message>
   ×n, …)` in the Daily numbers row (`n/a (<why>)` without the token scope), so a 500 on any route is diagnosable
   from the repo the next morning; `test/error-lines.spec.ts`.
+  **Request events by route** (2026-10-30, `worker-errors-request-paths`): the 10-30 row read `worker errors 24h: 54
+  (… ×3, … ×1)` — 50 of the 54 lines were error-level invocation events (the platform marks a 5xx response's event
+  `level: error`; its message is the request line `GET https://gankdat.com/<path>` and the status sits at
+  `$workers.event.response.status`, the live shape read 2026-10-30 18:44) counted and never named. `foldErrorLines`
+  now folds them by `METHOD <path family> <status>` (`routeFamily`: the path's first three segments, anything after
+  them `*`, so the journal's 45 class pages read as one route) into `routes`, the clause ends `; requests: GET
+  /stats/uk-trademark-journal/class/* 503 ×44, GET /v1/data/uk-planning 503 ×5 +1 more` after the thrown messages
+  (each list cut to three), the job log prints one `worker request ×N:` line per route, and the named counts add up
+  to the line total — so a crawler retrying a known 503 is told from a new 500 by path.
   **Reading a Worker log on demand** (2026-10-29, foundry `worker-logs-dispatch-job`): the `worker logs` workflow
   (`docs/ci/worker-logs.yml` → `.github/workflows/`, `workflow_dispatch` only) runs `scripts/worker-logs.mjs`, which POSTs
   the same Query Builder for the service's lines in a window narrowed by a needle (a path, a slug, a message fragment),

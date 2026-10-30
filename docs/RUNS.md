@@ -2130,3 +2130,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-30 19:22 | burn-down | A batch that still hits SQLITE_NOMEM splits in two down to one value; budget checked per batch
 - 2026-10-30 19:22 | burn-down | Values run stalest first within the facet; unreached batches carry their previous page
 - 2026-10-30 19:22 | burn-down | 3 d1store tests: 1,500-row fixture batches × statements and identical pages, carry, split
+- 2026-10-30 19:29 | burn-down | gankdat worker-errors-request-paths done: 5xx request events folded by route and status
+- 2026-10-30 19:29 | burn-down | Live event shape read from tonight's worker-logs run: status at $workers.event.response.status
+- 2026-10-30 19:29 | burn-down | Clause tail `requests: GET /stats/<slug>/class/* 503 ×N`; path family = first 3 segments; 2 tests
