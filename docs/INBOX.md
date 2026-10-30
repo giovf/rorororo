@@ -260,3 +260,4 @@
 - 2026-10-30 10:05 | notification | eu.zohocorp.com | Your Zoho CRM Requirements | Zoho CRM trial sales follow-up asking for requirements | logged
 - 2026-10-30 10:19 | notification | eu.zohocorp.com | Zoho CRM: Get on a call to know more | sales nudge for a Zoho CRM trial, to another address | logged
 - 2026-10-30 13:51 | notification | eu.zohocorp.com | Is Zoho CRM right for you? | Zoho CRM trial sales nudge, to another address | logged
+- 2026-10-30 19:09 | notification | github.com | [giovf/rorororo] Run failed: notify owner - main (6c0741c) | notify-owner.yml run 461 failed, step "Run node --disable-warning=Experimental…" (watchdog ci-failed line 19:39); later run 462 succeeded | logged
