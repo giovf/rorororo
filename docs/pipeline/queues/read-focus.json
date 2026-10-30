@@ -36,9 +36,10 @@
       "effort_days": 0.1,
       "proof": "A RESEARCH.md metrics row on the date with installs, activations and sales, and a decision line in STRATEGY §8",
       "score": 5,
-      "status": "todo",
+      "status": "doing",
       "added": "2026-09-30",
-      "not_before": "2026-10-30"
+      "not_before": "2026-10-30",
+      "doing_since": "2026-10-30"
     },
     {
       "id": "cws-promo-tile",
