@@ -23,6 +23,10 @@
 // RUNS-COUNT.json then carries both sides' `"runs":` lines: parseFloor reads the higher value of every
 // key, and `check` rewrites the file whenever its text is not the clean serialisation of that floor.
 //
+// Decision-log rollover (2026-10-31, foundry `strategy-decision-log-rollover`): `npm run decisions-roll`
+// moves STRATEGY §8 entries older than 30 days into docs/decisions/<YYYY-MM>.md, so the `strategy`
+// floor counts the §8 bullets plus every month file's — a roll moves lines, the count never falls.
+//
 // Run: npm run runs                       → check lines dated >= CAP_FROM and the floor, exit 1 on a violation
 //      npm run runs -- check [--from YYYY-MM-DD] [--cap 120]
 //      npm run runs -- list  [--from YYYY-MM-DD] [--cap 120]   → every offender, never fails
@@ -30,6 +34,8 @@
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+import { decisionsFileCount } from './decisions-roll.ts';
 
 export const RUNS_FILE = path.join('docs', 'RUNS.md');
 export const STRATEGY_FILE = path.join('docs', 'STRATEGY.md');
@@ -125,7 +131,7 @@ export function datedLineCount(md: string): number {
 export interface Floor {
   /** Dated bullets in docs/RUNS.md the last time the check ran. */
   runs: number;
-  /** Dated bullets in docs/STRATEGY.md (the decision log) the last time the check ran. */
+  /** Dated bullets in docs/STRATEGY.md §8 plus docs/decisions/*.md (the decision log) the last time the check ran. */
   strategy: number;
   updated: string;
 }
@@ -163,7 +169,7 @@ export function floorViolations(
     `${file}: ${now} dated lines, floor ${was} (${was - now} lost) — the file is append-only; a whole-file write replaced it. Restore it from git and append your lines.`;
   if (counts.runs < floor.runs) out.push(say(RUNS_FILE, counts.runs, floor.runs));
   if (counts.strategy < floor.strategy)
-    out.push(say(STRATEGY_FILE, counts.strategy, floor.strategy));
+    out.push(say(`${STRATEGY_FILE} §8 + docs/decisions`, counts.strategy, floor.strategy));
   return out;
 }
 
@@ -226,9 +232,10 @@ function main(): void {
       }
       const counts = {
         runs: datedLineCount(md),
-        strategy: existsSync(path.resolve(STRATEGY_FILE))
-          ? datedLineCount(readFileSync(path.resolve(STRATEGY_FILE), 'utf8'))
-          : 0,
+        strategy:
+          (existsSync(path.resolve(STRATEGY_FILE))
+            ? datedLineCount(readFileSync(path.resolve(STRATEGY_FILE), 'utf8'))
+            : 0) + decisionsFileCount(),
       };
       const floorPath = path.resolve(FLOOR_FILE);
       const floorText = existsSync(floorPath) ? readFileSync(floorPath, 'utf8') : '';

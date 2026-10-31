@@ -124,7 +124,7 @@ describe('append-only floor', () => {
     expect(lost).toHaveLength(1);
     expect(lost[0]).toMatch(/^docs\/RUNS\.md: 3 dated lines, floor 472 \(469 lost\)/);
     expect(floorViolations({ runs: 480, strategy: 6 }, floor)[0]).toMatch(
-      /^docs\/STRATEGY\.md: 6 dated lines, floor 569/,
+      /^docs\/STRATEGY\.md §8 \+ docs\/decisions: 6 dated lines, floor 569/,
     );
     expect(floorViolations({ runs: 472, strategy: 569 }, floor)).toEqual([]);
     expect(floorViolations({ runs: 500, strategy: 570 }, floor)).toEqual([]);

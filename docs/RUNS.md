@@ -2197,3 +2197,6 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 19:16 | burn-down | htmlToText keeps links as text (href), alt, JSON-LD, description metas; 12 real pages 20.4 MB → 0.2 MB
 - 2026-10-31 19:16 | burn-down | RAW line token (GET/RENDER only) keeps markup; meta.json gains extracted, raw_bytes; 5 new tests
 - 2026-10-31 19:16 | burn-down | Relay README, build.md and burn-down.md RELAY lines name the text bodies, RAW and the 2 MB cap
+- 2026-10-31 19:30 | burn-down | Built foundry strategy-decision-log-rollover: npm run decisions-roll moves §8 entries over 30 days old
+- 2026-10-31 19:30 | burn-down | First roll: 55 September entries → docs/decisions/2026-09.md; STRATEGY.md 292 → 258 KB (October is 240 KB)
+- 2026-10-31 19:30 | burn-down | runs floor counts §8 plus docs/decisions/*.md (401 unchanged); 4 roll tests; retro runs the roll
