@@ -168,6 +168,7 @@ _Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10
 | 2026-10-29 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-28: 20 impressions, 0 clicks, avg pos 12.8, top /reading-ruler.html 17, indexed 3/3; sales: 0 keys (2 test) |
 | 2026-10-30 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-29: 26 impressions, 0 clicks, avg pos 11.7, top /reading-ruler.html 22, indexed 3/3; sales: 0 keys (2 test) |
 | 2026-10-30 | Day-30 funnel review (burn-down) | 2 | — | 0 | Chrome 1 user, Firefox 1 adu, no ratings, 0 keys (2 test), 0 activations, £0 ledger; Google 26 impressions/7d, 0 clicks; 0.3.0 unsigned 26 d; keep at £0, `day-90-verdict` 2026-12-21 (§ Day-30 funnel review) |
+| 2026-10-31 | Daily check | 2 | — | 0 | via store-metrics CI: chrome: 1 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 1 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-30: 23 impressions, 0 clicks, avg pos 8.3, top /reading-ruler.html 20, indexed 3/3; sales: 0 keys (2 test) |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 

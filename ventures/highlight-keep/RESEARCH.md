@@ -111,6 +111,7 @@ _Rows `Reviews checked` / `Comments checked (07:00 metrics routine)` ran 2026-10
 | 2026-10-29 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-28: 11 impressions, 0 clicks, avg pos 7.1, top /weava-alternative.html 11, indexed 2/2; sales: 0 keys |
 | 2026-10-30 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 5, 2026; firefox: 0 adu, 1 weekly downloads, no ratings, v0.2.0; search 7d to 10-29: 16 impressions, 0 clicks, avg pos 18.6, top /weava-alternative.html 16, indexed 2/2; sales: 0 keys |
 | 2026-10-30 | Day-30 funnel review (burn-down) | 0 | — | 0 | Chrome 0 users on every row, Firefox 0 adu (1–2 weekly downloads), no ratings, 0 keys, £0 ledger; Google 16 impressions/7d, 0 clicks; 0.4.0 unsigned 25 d; keep at £0, `day-90-verdict` 2026-12-21 (§ Day-30 funnel review) |
+| 2026-10-31 | Daily check | 0 | — | 0 | via store-metrics CI: chrome: 0 users, no ratings, v0.2.0, updated October 6, 2026; firefox: 0 adu, 0 weekly downloads, no ratings, v0.2.0; search 7d to 10-30: 16 impressions, 0 clicks, avg pos 18.6, top /weava-alternative.html 16, indexed 2/2; sales: 0 keys |
 
 ## Research 2026-09-30 (burn-down; queue emptied after `post-approval-links`)
 
