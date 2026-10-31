@@ -1281,8 +1281,9 @@
       "effort_days": 0.2,
       "proof": "STRATEGY.md is under 80 KB after the first roll and under 120 KB thirty days later; `npm run check` is green with the floor counting both places; the retro's run-log line names the roll; no routine prompt needs a change beyond the retro's one command",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-31"
+      "status": "doing",
+      "added": "2026-10-31",
+      "doing_since": "2026-10-31"
     },
     {
       "id": "notify-owner-send-retry",
