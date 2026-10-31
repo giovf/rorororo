@@ -2,15 +2,19 @@ import { describe, expect, it } from 'vitest';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import {
+  FETCH_MAX_BYTES,
   FETCH_TIMEOUT_MS,
   HOST_STALL_LIMIT,
   HostStalls,
+  MAX_BYTES,
   MAX_RETRIES,
   POST_MAX_BYTES,
   RETRY_STATUSES,
   SAME_HOST_PACE_MS,
   credentialShaped,
+  decodeEntities,
   hostAllowed,
+  htmlToText,
   needsRender,
   parseHosts,
   parseLine,
@@ -67,6 +71,27 @@ describe('parseLine', () => {
       body: '{"a":1}',
       error: 'RENDER applies to GET only, not POST',
     });
+  });
+
+  it('reads RAW as a GET (or RENDER) that keeps the markup, and refuses it on HEAD and POST', () => {
+    expect(parseLine('GET RAW https://www.wix.com/app-market/category/forms')).toEqual({
+      method: 'GET',
+      raw: true,
+      url: 'https://www.wix.com/app-market/category/forms',
+    });
+    expect(parseLine('RENDER RAW https://www.wix.com/app-market/category/forms')).toEqual({
+      method: 'GET',
+      render: true,
+      raw: true,
+      url: 'https://www.wix.com/app-market/category/forms',
+    });
+    expect(parseLine('HEAD RAW https://a.gov.uk/x')?.error).toBe(
+      'RAW applies to GET only, not HEAD',
+    );
+    expect(parseLine('POST RAW https://mainnet.base.org {"a":1}')?.error).toBe(
+      'RAW applies to GET only, not POST',
+    );
+    expect(needsRender('RENDER RAW https://a.gov.uk/x\n')).toBe(true);
   });
 
   it('needsRender sees a usable RENDER line only, never a comment or a refused one', () => {
@@ -258,5 +283,62 @@ describe('stalled hosts (foundry relay-round-survives-stalled-host)', () => {
     expect(stalls.stalled('www.gov.uk')).toBe(false);
     stalls.record('gankdat.com', false);
     expect(stalls.stalled('gankdat.com')).toBe(false);
+  });
+});
+
+describe('html bodies as text (foundry relay-bodies-cap-in-history)', () => {
+  it('caps a saved body at 2 MB and reads a page up to 8 MB before extracting', () => {
+    expect(MAX_BYTES).toBe(2 * 1024 * 1024);
+    expect(FETCH_MAX_BYTES).toBe(8 * 1024 * 1024);
+  });
+
+  it('decodes the named, decimal and hex entities a page uses and leaves the rest', () => {
+    expect(
+      decodeEntities('Tom &amp; Jerry &pound;12 &#163;3 &#x41;&nbsp;&ndash; &bogus; &#0;'),
+    ).toBe('Tom & Jerry £12 £3 A – &bogus; &#0;');
+  });
+
+  it('keeps the text, links, alt text, JSON-LD and description meta; drops script, style and tags', () => {
+    const page = `<!doctype html><html><head><title>Forms &amp; Surveys</title>
+      <meta name="description" content="57 apps, from &pound;0">
+      <meta property="og:title" content="Forms">
+      <meta name="viewport" content="width=device-width">
+      <script type="application/ld+json">{"@type":"Product",
+        "aggregateRating":{"ratingValue":4.6}}</script>
+      <script>window.__DATA__ = {"secret": "nothing a reader wants"};</script>
+      <style>.card{display:none}</style></head>
+      <body><!-- a comment --><nav><a href="/">Home</a> <a href="#">skip</a></nav>
+      <div class="card"><h3><a href="/app/form-builder">Form Builder</a></h3>
+        <img src="x.png" alt="Form Builder logo"><p>4.6 &#9733; (1,204 reviews) &middot; Free plan</p></div>
+      <table><tr><td>Plan</td><td>Price</td></tr><tr><td>Premium</td><td>$4.95/mo</td></tr></table>
+      <svg><path d="M0 0"/></svg><p>Visit <a href='https://example.com/x'>https://example.com/x</a> now.</p>
+      </body></html>`;
+    const text = htmlToText(page);
+    expect(text.split('\n')).toEqual([
+      '{"@type":"Product", "aggregateRating":{"ratingValue":4.6}}',
+      'meta description: 57 apps, from £0',
+      'meta og:title: Forms',
+      'Forms & Surveys',
+      'Home (/) skip',
+      'Form Builder (/app/form-builder)',
+      '[Form Builder logo]',
+      '4.6 ★ (1,204 reviews) · Free plan',
+      'Plan\tPrice',
+      'Premium\t$4.95/mo',
+      'Visit https://example.com/x now.',
+      '',
+    ]);
+    expect(text).not.toMatch(/__DATA__|display:none|viewport|<\/?\w/);
+    expect(htmlToText('')).toBe('');
+    expect(htmlToText('<script>only()</script>')).toBe('');
+  });
+
+  it('shrinks a listing page to a fraction of its markup', () => {
+    const card = (i: number) =>
+      `<div class="c" data-hook="app-box-container" style="--x:${i}"><a data-hook="app-link" href="/app/slug-${i}"><span class="n">App ${i}</span></a><span class="r" aria-label="rating">4.${i % 10}</span><script>track(${i})</script></div>`;
+    const html = `<html><body>${Array.from({ length: 2000 }, (_, i) => card(i)).join('')}</body></html>`;
+    const text = htmlToText(html);
+    expect(text).toContain('App 1999 (/app/slug-1999)');
+    expect(text.length).toBeLessThan(html.length / 5);
   });
 });

@@ -14,8 +14,14 @@
 // App Market category pages came back as 0.2–2.5 MB of script tags and zero app links on 2026-10-22).
 // Same allowlist and MAX_BYTES cap as a GET. The workflow runs `npm ci` and installs Chromium only
 // when `node scripts/fetch-relay.mjs needs-render` prints true, so an ordinary run stays dependency-free.
+//                [GET] RAW <https url>                    (foundry relay-bodies-cap-in-history, 2026-10-31)
+// An HTML body (content-type html, or any RENDER) is committed as extracted text — `<n>.txt`,
+// `extracted: "text"` and `raw_bytes` in meta.json — because the bodies were growing the git
+// history by ~200 MB a week and every routine's `git fetch --unshallow` downloads it; the 7-day
+// prune() below bounds the working tree only. RAW on the line keeps the markup. Every saved body
+// is capped at MAX_BYTES (2 MB); a page is read up to FETCH_MAX_BYTES first so its text stays whole.
 // Only hosts listed in docs/relay/hosts.txt are fetched (public data and store pages — never
-// anything that needs a credential; a data file since 2026-10-16 so adding a host is not a code push). GET bodies are capped at MAX_BYTES; use RANGE for big files. A POST
+// anything that needs a credential; a data file since 2026-10-16 so adding a host is not a code push). Saved bodies are capped at MAX_BYTES; use RANGE for big files. A POST
 // body is one JSON document, ≤ 4 kB, refused when a key or value is credential-shaped
 // (scripts/fetch-relay-lines.ts) — for JSON-RPC reads and POST-only validation endpoints.
 // A 429 or 503 is retried up to MAX_RETRIES times after Retry-After or a doubling pause, and two
@@ -25,11 +31,14 @@ import { mkdirSync, readdirSync, readFileSync, rmSync, statSync, writeFileSync }
 import path from 'node:path';
 
 import {
+  FETCH_MAX_BYTES,
   FETCH_TIMEOUT_MS,
   HostStalls,
+  MAX_BYTES,
   MAX_RETRIES,
   SAME_HOST_PACE_MS,
   hostAllowed,
+  htmlToText,
   needsRender,
   parseHosts,
   parseLine,
@@ -38,7 +47,7 @@ import {
 } from './fetch-relay-lines.ts';
 
 const ROOT = path.resolve(import.meta.dirname, '..', 'docs', 'relay');
-const MAX_BYTES = 8 * 1024 * 1024;
+/** Response folders older than this leave the working tree; the history keeps them, hence MAX_BYTES. */
 const KEEP_DAYS = 7;
 /** RENDER lines only; HEAD/GET/POST abort after FETCH_TIMEOUT_MS (30 s) since 2026-10-26. */
 const TIMEOUT_MS = 90_000;
@@ -85,12 +94,29 @@ function browser() {
   return browserPromise;
 }
 
-/** Writes `body` as `<index>.<ext>`, capped at MAX_BYTES; returns the file fields for meta.json. */
-function saveBody(outDir, index, ext, body) {
+/**
+ * Writes `body` as `<index>.<ext>`, capped at MAX_BYTES; returns the file fields for meta.json.
+ * An HTML body is saved as its extracted text (`<index>.txt`, `extracted: "text"`, `raw_bytes` =
+ * the markup's size) unless the line said RAW (foundry relay-bodies-cap-in-history, 2026-10-31).
+ * `truncated` is true when the saved file is cut, by this cap or by the read cap upstream.
+ */
+function saveBody(outDir, index, ext, body, { raw = false, readTruncated = false } = {}) {
+  const extra = {};
+  if (ext === 'html' && !raw) {
+    extra.extracted = 'text';
+    extra.raw_bytes = body.length;
+    body = Buffer.from(htmlToText(body.toString('utf8')), 'utf8');
+    ext = 'txt';
+  }
   const truncated = body.length > MAX_BYTES;
   const file = `${index}.${ext}`;
   writeFileSync(path.join(outDir, file), truncated ? body.subarray(0, MAX_BYTES) : body);
-  return { file, bytes: truncated ? MAX_BYTES : body.length, truncated };
+  return {
+    file,
+    bytes: truncated ? MAX_BYTES : body.length,
+    truncated: truncated || readTruncated,
+    ...extra,
+  };
 }
 
 /** A RENDER line: the page as Chromium renders it, after the network goes idle (or RENDER_IDLE_MS),
@@ -157,7 +183,7 @@ async function renderOne(req, url, outDir, index, meta) {
           .map((k) => [k, res.headers()[k]]),
       );
     }
-    return { ...meta, ...saveBody(outDir, index, 'html', html) };
+    return { ...meta, ...saveBody(outDir, index, 'html', html, { raw: req.raw === true }) };
   } finally {
     await context.close();
   }
@@ -222,22 +248,30 @@ async function fetchOne(req, outDir, index, stalls) {
         .map((k) => [k, res.headers.get(k)]),
     );
     if (req.method === 'HEAD' || !res.body) return meta;
+    // An HTML page to be extracted is read up to FETCH_MAX_BYTES so its text stays whole; any other
+    // body stops at MAX_BYTES, which is all saveBody would keep.
+    const ext = extOf(res.headers.get('content-type'));
+    const readCap = ext === 'html' && req.raw !== true ? FETCH_MAX_BYTES : MAX_BYTES;
     const chunks = [];
     let bytes = 0;
-    let truncated = false;
+    let readTruncated = false;
     for await (const chunk of res.body) {
-      if (bytes + chunk.length > MAX_BYTES) {
-        chunks.push(chunk.subarray(0, MAX_BYTES - bytes));
-        bytes = MAX_BYTES;
-        truncated = true;
+      if (bytes + chunk.length > readCap) {
+        chunks.push(chunk.subarray(0, readCap - bytes));
+        bytes = readCap;
+        readTruncated = true;
         break;
       }
       chunks.push(chunk);
       bytes += chunk.length;
     }
-    const file = `${index}.${extOf(res.headers.get('content-type'))}`;
-    writeFileSync(path.join(outDir, file), Buffer.concat(chunks));
-    return { ...meta, file, bytes, truncated };
+    return {
+      ...meta,
+      ...saveBody(outDir, index, ext, Buffer.concat(chunks), {
+        raw: req.raw === true,
+        readTruncated,
+      }),
+    };
   } catch (err) {
     const elapsed_ms = Date.now() - startedAt;
     if (err instanceof Error && err.name === 'TimeoutError') {
@@ -323,7 +357,7 @@ if (process.argv[1] && path.resolve(process.argv[1]) === new URL(import.meta.url
       const { name, results } = await processRequest(f);
       for (const r of results) {
         console.log(
-          `${name}: ${r.method}${r.render ? ' RENDER' : ''} ${r.url} → ${r.skipped ? 'SKIPPED ' + r.skipped : r.error ? 'ERR ' + r.error : `${r.status} ${r.file ?? ''} ${r.bytes ?? ''}${r.truncated ? ' (truncated)' : ''}`}`,
+          `${name}: ${r.method}${r.render ? ' RENDER' : ''}${r.raw ? ' RAW' : ''} ${r.url} → ${r.skipped ? 'SKIPPED ' + r.skipped : r.error ? 'ERR ' + r.error : `${r.status} ${r.file ?? ''} ${r.bytes ?? ''}${r.extracted ? ` (text of ${r.raw_bytes})` : ''}${r.truncated ? ' (truncated)' : ''}`}`,
         );
       }
     }

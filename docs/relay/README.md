@@ -12,7 +12,7 @@ GitHub runner to fetch for it:
    the line, e.g. `POST https://mainnet.base.org {"jsonrpc":"2.0","id":1,"method":"eth_blockNumber","params":[]}`
    or `POST https://api.cdp.coinbase.com/platform/v2/x402/validate {"resource":"https://gankdat.com/x402/data/uk-tenders","method":"GET"}`.
    The body must be valid JSON under 4 kB and is sent as `application/json`; the response is saved
-   like a GET's (same 8 MB cap). A line whose body has a credential-shaped key (`token`, `secret`,
+   like a GET's (same 2 MB cap). A line whose body has a credential-shaped key (`token`, `secret`,
    `password`, `api_key`, `private_key`, `authorization`, `cookie` …) or value (a JWT, a Stripe,
    GitHub, Slack, OpenAI or AWS key prefix, a Bearer header, a PEM key) is refused in `meta.json`
    and never sent (`scripts/fetch-relay-lines.ts`). Public bodies only — the request and the
@@ -25,12 +25,13 @@ GitHub runner to fetch for it:
    Rendered pages (2026-10-22, foundry `relay-rendered-fetch`): `GET RENDER <https url>` (or just
    `RENDER <url>`) opens the page in Playwright's Chromium on the runner, waits for the network to go
    idle (30 s cap after the document loaded; a page that keeps polling is saved as it stands and
-   `meta.json` says `rendered.network_idle: false`) and saves the rendered DOM as `<n>.html` —
+   `meta.json` says `rendered.network_idle: false`) and saves the rendered DOM's text as `<n>.txt` (or
+   the DOM itself as `<n>.html` on a `RENDER RAW` line, see below) —
    `meta.json` carries `title`, `status` and `final_url` as for a GET. Use it for shelves whose listing
    pages are client-rendered shells (the Wix App Market category pages came back as 0.2–2.5 MB of
    script tags and zero app links; the Notion gallery only through page-embedded data), after a plain
    GET has shown the data is not in the raw body. GET only (RENDER with HEAD, POST or RANGE is refused
-   on the line), same allowlist and 8 MB cap, a fresh context per line (no cookies or storage carried
+   on the line), same allowlist and 2 MB cap, a fresh context per line (no cookies or storage carried
    in, no clicks or form input; the page is scrolled once to the bottom so sections that render on
    intersection load, then left 1.5 s to settle), and images, media and fonts are not loaded.
    `meta.json`'s `rendered` block says what happened — `requests` made, `failed` (network failures and
@@ -44,6 +45,22 @@ GitHub runner to fetch for it:
    57 and 96 cards). A request file with a RENDER line costs the run `npm ci`
    plus a Chromium install (about 1–2 min) — an ordinary request stays at ~15 s — so put the RENDER
    lines of one round in one file and keep plain GETs elsewhere when the round is time-critical.
+   **HTML as text** (2026-10-31, foundry `relay-bodies-cap-in-history`): an HTML body — a GET whose
+   content-type says html, or any RENDER — is committed as its extracted text, `<n>.txt`, with
+   `extracted: "text"` and `raw_bytes` (the markup's size) in `meta.json`: comments, script, style
+   and svg dropped, every tag stripped, an anchor kept as `text (href)` so a listing's slugs survive,
+   an image as its `[alt]`, table cells tab-separated, JSON-LD blocks and the `description` /
+   `og:` / `twitter:` / `product:` metas kept as their own first lines (ratings, prices and counts
+   often live only there), entities decoded, whitespace folded. The relay's bodies were the
+   fastest-growing thing in git (469 MB of the raw history on 2026-10-31, 201 and 188 MB added in
+   the two weeks before, mostly rendered shelf pages of 4 MB each) and every routine's
+   `git fetch --unshallow` downloads that pack; the text is ~1 % of the markup on the pages read so
+   far and is what the readers grep anyway. A page whose data sits in attributes or in scripts other
+   than JSON-LD (a `data-hook` card, an `AF_initDataCallback` blob) is asked for with `GET RAW <url>`
+   or `RENDER RAW <url>`, which keeps the markup as `<n>.html`; a `raw_bytes` of a megabyte beside a
+   few kB of text is the sign to re-ask that way. Every saved body is capped at 2 MB (was 8;
+   `truncated: true` when cut); an HTML page is read up to 8 MB before extraction so its text stays
+   whole, and `RANGE` still reads a slice of a big JSON or CSV.
 2. Commit and push just that file (`relay: <name>`); it is the one exception to "push once at the end".
 3. Wait for the response **commit**, not for a fixed time: GitHub's hosted runners queue (on 2026-10-05 a request
    sat `queued` for 16+ minutes with nothing else running; two minutes is the floor, not the norm). Poll, and do
@@ -66,10 +83,12 @@ GitHub runner to fetch for it:
    attempt, `retry_after` in the record) instead of three capped retries, and the Commit step runs
    even when the fetch step hit its 12-minute cap — a killed round is committed with `partial: true`
    and its request file removed. Read `partial` before trusting a round's line count.
-4. Read what you need, then carry on. Responses are pruned after 7 days.
+4. Read what you need, then carry on. Responses leave the working tree after 7 days (the script's
+   `prune`); the git history keeps every body ever committed, which is why they are small.
 
 Rules: only hosts listed in `docs/relay/hosts.txt` (public data and store pages; one host or `.suffix` per line, since 2026-10-16 a data file so adding one is not a code push);
-GET, RENDER and POST responses are capped at 8 MB — use `RANGE` for large files and `HEAD` to check existence;
+GET, RENDER and POST responses are capped at 2 MB — use `RANGE` for large files and `HEAD` to check existence;
+HTML comes back as extracted text unless the line says `RAW`;
 never put a credential in a request; everything fetched lands in a public repo, so public data
 only. Add a host to `docs/relay/hosts.txt` in the same commit as the source that needs it.
 Runs are serialised (`concurrency: fetch-relay`, 2026-10-18): a second request pushed while a run is

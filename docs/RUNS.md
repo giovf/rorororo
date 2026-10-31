@@ -2193,3 +2193,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 18:48 | burn-down | metrics.mjs reads notice from the actor detail, logs flagged actors, merges refresh errors
 - 2026-10-31 18:48 | burn-down | Took the 0.1 d item over relay-bodies-cap-in-history (5, 0.3 d) for the slot's last 25 min
 - 2026-10-31 18:52 | burn-down | Stopping at ~42 min: 3 items done (QA repair proof, foundry research, notice row); next: relay bodies
+- 2026-10-31 19:16 | burn-down | Built foundry relay-bodies-cap-in-history: HTML bodies land as text, saved bodies capped at 2 MB
+- 2026-10-31 19:16 | burn-down | htmlToText keeps links as text (href), alt, JSON-LD, description metas; 12 real pages 20.4 MB → 0.2 MB
+- 2026-10-31 19:16 | burn-down | RAW line token (GET/RENDER only) keeps markup; meta.json gains extracted, raw_bytes; 5 new tests
+- 2026-10-31 19:16 | burn-down | Relay README, build.md and burn-down.md RELAY lines name the text bodies, RAW and the 2 MB cap
