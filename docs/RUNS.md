@@ -2174,3 +2174,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 17:31 | burn-down | Four classifier tests (one per shape, plus summaries and parked lines that must not count)
 - 2026-10-31 17:31 | burn-down | Slot table 10-24..10-30 now reads burn-down Built 21 of 70 and build 5 of 14, was 0
 - 2026-10-31 17:31 | burn-down | build.md and burn-down.md RUN LOG name the built-line shapes the slot table counts
+- 2026-10-31 17:40 | burn-down | Spike virtuals-acp-provider-agent done: parked, dated 2026-12-01; 3 relay rounds, full docs read
+- 2026-10-31 17:40 | burn-down | ACP facts: protocol cut 5 % not 20 %, no graduation step, SSE listener required, hosted deploy unread
+- 2026-10-31 17:40 | burn-down | ACP demand: aGDP is trading value, fee revenue US$4.53M lifetime, top ten all Trade, catalogue login-walled
+- 2026-10-31 17:40 | burn-down | new-ventures queue emptied (3 spikes done today): needs_research set; parked idea added to the exchange

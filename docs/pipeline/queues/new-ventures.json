@@ -1,7 +1,7 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": false,
+  "needs_research": true,
   "updated": "2026-10-31",
   "researched": "2026-10-31",
   "weight": 2,
@@ -431,13 +431,13 @@
     {
       "id": "spike-virtuals-acp-provider-agent",
       "title": "Research spike: gankdat as a provider agent on Virtuals' Agent Commerce Protocol (ACP, on Base) — through the relay (.virtuals.io is allowed) read os.virtuals.io/acp (the protocol fee page — a seller reports a 20 % cut — registration, the graduation review, the Provider SDK's job loop and whether a Worker or GitHub Actions cron can serve jobs without a 24/7 process), the rendered app.virtuals.io/acp/offerings and /acp/agents pages filtered to data, lookup, research and verification offerings (price, jobs, unique users — the 2026-10-31 scan page's top ten by aGDP are all trading agents), and any public job feed for company, sanctions, tender or register lookups; price one offering (UK company profile, sanctions screen or tender search at US$0.02–0.10 a job against our x402 prices) and write docs/exchange/spikes/virtuals-acp-provider-agent.md with the observed data-job volume, our net per job after the protocol cut (gas is sponsored) and a promote / park call",
-      "why": "new-ventures research 2026-10-31 (build; relay new-ventures-research-2026-10-31 lines 19–23 and the rendered scan page): the x402 Bazaar is the one shelf where strangers pay gankdat (5 buyer calls in 30 days), and ACP is the other agent-to-agent payment rail on the same chain with the same wallet. Its live scan (app.virtuals.io/acp/scan, rendered 10-31): total aGDP US$481.82M, total revenue US$4.53M, 2.55M jobs, 36.7K unique active wallets, a job completing every few minutes; the top ten agents by 7-day aGDP are all `Trade` (Capminal US$157.5K over 12,807 jobs; Nox 91,976 jobs). The whitepaper (about-virtuals/commerce-layer) describes request → negotiation → transaction → evaluation with payment in escrow until an Evaluator signs off, full docs at os.virtuals.io/acp. A graduated seller's own numbers (printmoneylab, 2026-04-02): a US$0.01 job nets US$0.008 after a 20 % protocol fee, gas sponsored, 18,000+ registered agents, zero production jobs at graduation because Butler routes by reputation — a cold-start shelf. STRATEGY §1 fit: a cut of money already flowing between agents, no identity step; the open question is whether anyone on ACP buys data lookups at all. Evidence 2 × reach 2 ÷ (0.4 spike + ~1 build) ≈ 2.9.",
+      "why": "new-ventures research 2026-10-31 (build; relay new-ventures-research-2026-10-31 lines 19–23 and the rendered scan page): the x402 Bazaar is the one shelf where strangers pay gankdat (5 buyer calls in 30 days), and ACP is the other agent-to-agent payment rail on the same chain with the same wallet. Its live scan (app.virtuals.io/acp/scan, rendered 10-31): total aGDP US$481.82M, total revenue US$4.53M, 2.55M jobs, 36.7K unique active wallets, a job completing every few minutes; the top ten agents by 7-day aGDP are all `Trade` (Capminal US$157.5K over 12,807 jobs; Nox 91,976 jobs). The whitepaper (about-virtuals/commerce-layer) describes request → negotiation → transaction → evaluation with payment in escrow until an Evaluator signs off, full docs at os.virtuals.io/acp. A graduated seller's own numbers (printmoneylab, 2026-04-02): a US$0.01 job nets US$0.008 after a 20 % protocol fee, gas sponsored, 18,000+ registered agents, zero production jobs at graduation because Butler routes by reputation — a cold-start shelf. STRATEGY §1 fit: a cut of money already flowing between agents, no identity step; the open question is whether anyone on ACP buys data lookups at all. Evidence 2 × reach 2 ÷ (0.4 spike + ~1 build) ≈ 2.9. — Spike 2026-10-31 (burn-down, docs/exchange/spikes/virtuals-acp-provider-agent.md; three relay rounds incl. the full economyOS docs): park, dated 2026-12-01. The current protocol's cut is 5 % (95/5, or 90/5/5 with an evaluator), not 20 %; fixed-price offerings need no negotiation code and one handler serves x402, MPP and ACP-native buyers. Against: the offerings catalogue is unreadable from a runner (login wall, client-side tabs, metrics API blocked), aGDP is trading value by the glossary (fee revenue US$4.53M lifetime), the public top ten are all Trade, the only readable data seller projected 0–5 jobs a day; the protocol needs a live SSE `events listen` that neither a Worker nor an Actions cron can hold (Virtuals' hosted deploy exists, terms unread); registration is a browser OAuth identity step for work scoring ≈ 1.",
       "effort_days": 0.4,
       "proof": "docs/exchange/spikes/virtuals-acp-provider-agent.md with the protocol fee from the docs, the count and job volume of data or lookup offerings, the serving model a cron can sustain, our net per job and a promote / park call",
       "score": 4,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-31",
-      "doing_since": "2026-10-31"
+      "done_at": "2026-10-31"
     }
   ]
 }

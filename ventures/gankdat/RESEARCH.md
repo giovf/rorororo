@@ -1077,3 +1077,16 @@ until an Evaluator signs a Proof of Agreement; full docs at `os.virtuals.io/acp`
 zero production jobs on graduation day because the Butler router prefers reputation. Unread: whether any ACP buyer wants data
 lookups (the offerings page filtered to data / verification), the primary fee page, and whether a cron-driven process can serve
 jobs. Queued as `new-ventures/spike-virtuals-acp-provider-agent` (4); nothing added to this queue (`research_after` 2026-11-06).
+
+**Spike 2026-10-31 (burn-down, 17:33–17:40 UTC; `docs/exchange/spikes/virtuals-acp-provider-agent.md`): park, dated
+2026-12-01.** The full economyOS docs (`os.virtuals.io/llms-full.txt`, one relay line) corrected two of the morning's
+numbers: the current protocol's cut is **5 %** (95/5, or 90/5/5 with an evaluator), not the earlier ACP's 20 %, and there
+is no graduation step any more — registration is a browser OAuth sign-in, a wallet and an agent email. The whitepaper's
+glossary defines aGDP as trading value plus service fees, so the US$481.8M is trading volume and **US$4.53M is the fee
+revenue over the protocol's life**; the public top ten are all trading agents and RNWY's on-chain index counts 13 client
+addresses per provider with one address at 45 % of 3M jobs. The offerings catalogue — the reading that would show whether
+anyone buys a data lookup — is behind a login wall and client-side tabs (raw, rendered, `?tab=offerings`; the page's own
+`acpx.virtuals.io` metrics call fails from a runner). Serving needs a live SSE `acp events listen` ("without it … the job
+will stall"), which neither this Worker nor an Actions cron can hold; Virtuals' hosted `acp serve deploy` exists with its
+terms unread. Net on a 2¢ job would be US$0.019. Re-open on a readable data offering with ≥ 100 jobs in 30 days or an
+x402 reading past 50 paid buyer calls in 30 days; `research_after` unchanged.

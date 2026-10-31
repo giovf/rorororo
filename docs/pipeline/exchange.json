@@ -675,6 +675,16 @@
       "status": "parked",
       "trigger": "the Play ebook listing's day-30 read (≈ March 2027) shows one or more sales — then promote as tax-workbook `google-play-audiobook` (0.3 day + ~10 owner minutes, £5.99, a British voice, score ≈ 5 at weight 2); or the two rival listings' rating counts, read rendered, show sales",
       "added": "2026-10-31"
+    },
+    {
+      "id": "virtuals-acp-provider-agent",
+      "title": "gankdat as a provider agent on Virtuals' Agent Commerce Protocol (ACP, Base): company, sanctions and tender lookups sold as fixed-price USDC-escrow jobs to other agents, one handler behind x402, MPP and ACP-native endpoints",
+      "why": "new-ventures research 2026-10-31 seeded the spike: ACP is the second agent-to-agent payment rail on the chain gankdat already sells on through x402 (STRATEGY §1: a cut of money already flowing between agents, no new audience). Spike 2026-10-31 (burn-down, docs/exchange/spikes/virtuals-acp-provider-agent.md; the full economyOS docs, the whitepaper glossary, the scan page and RNWY's index read through the relay): the current protocol's cut is 5 % (95/5, or 90/5/5 with an evaluator), not the 20 % of the earlier ACP; fixed-price offerings need no negotiation code; a provider is listed in the registry from day one. Against it: no observable demand for data lookups — the offerings catalogue is behind a login wall and client-side tabs, aGDP (US$481.8M) is trading value by the glossary's definition and fee revenue is US$4.53M over the protocol's life, the public top ten are all trading agents, RNWY counts 13 client addresses per provider with one address at 45 % of 3M jobs, and the only readable data seller projected 0–5 jobs a day at 1¢; the protocol needs a live SSE `acp events listen` that neither a Worker nor an Actions cron can hold (Virtuals' hosted `acp serve deploy` exists, terms and price unread); registration is a browser OAuth sign-in, a wallet and an agent email on the owner's identity, for work scoring ≈ 1.",
+      "status": "parked",
+      "trigger": "Re-open when either a keyless offerings or jobs feed shows at least one data / lookup / verification offering with ≥ 100 jobs in 30 days (probe `acpx.virtuals.io`'s metrics API first, then RNWY if it adds offering names), or gankdat's x402 Bazaar reading passes 50 paid buyer calls in 30 days — and only once `acp serve deploy`'s terms have been read. Dated re-read 2026-12-01 (the x402 day-60 reading).",
+      "added": "2026-10-31",
+      "spiked": "2026-10-31",
+      "updated": "2026-10-31"
     }
   ]
 }
