@@ -1,9 +1,9 @@
 {
   "venture": "new-ventures",
   "status": "open",
-  "needs_research": true,
-  "updated": "2026-10-30",
-  "researched": "2026-10-29",
+  "needs_research": false,
+  "updated": "2026-10-31",
+  "researched": "2026-10-31",
   "weight": 2,
   "items": [
     {
@@ -405,6 +405,36 @@
       "doing_since": "2026-10-30",
       "done_at": "2026-10-30",
       "doing_by": "burn-down"
+    },
+    {
+      "id": "spike-google-play-auto-narrated-audiobook",
+      "title": "Research spike: an auto-narrated audiobook of 'UK Sole Trader Tax 2026/27' on Google Play Books — through the relay (support.google.com and play.google.com are allowed) read the Partner Center narrator library (table/10957334: which en-GB voices exist), the auto-narrated program policies (answer/10013009) and the upload-and-sell article (answer/14164701: audiobook list-price floor, sale countries, downloading the files), fetch the GB audiobook shelf for rival UK tax titles with a working search URL (the 2026-10-31 `store/search?q=…&c=audiobooks&gl=GB` lines answered 404 — try `hl=en-GB&gl=GB` without `c=`, or the Play Books web reader's search), count the numbers and tables in the EPUB a voice would read badly and list the rewrites a spoken edition needs, and settle the date: the audiobook needs the EPUB live on Play (`google-play-listing`, itself dated by KDP Select) and the AVV terms bar any audio distribution during the ebook's 90-day exclusivity; write docs/exchange/spikes/google-play-auto-narrated-audiobook.md with the net per copy at 52 % of £6.99 / £7.99 / £9.99, the rival table and a promote / park call",
+      "why": "new-ventures research 2026-10-31 (build; relay new-ventures-research-2026-10-31 lines 1–9): the Kindle guide is in KDP review and the EPUB exists, so a spoken edition is a shelf without a build. Google's own pages: the Partner Center country table marks the United Kingdom ✔ for auto-narrated audiobook creation (read 10-26, line 1 of ebook-shelves-b), the programme page (play.google.com/books/publish/autonarrated) says an English EPUB on Play qualifies, creation and publishing cost nothing 'for a limited time', the files can be downloaded and sold on any other retailer provided the title stays on Play, and publishers receive a 52 % revenue share. KDP's Audible route was read the same morning and is parked: 'Audiobooks with virtual voice' is an invite-only beta, 'only available for books to be distributed in the US marketplace at this time' (list price US$3.99–14.99, 40 % royalty, sold on Amazon.com and Audible only — a UK buyer never sees it), and its terms say that during the digital book's 90-day exclusivity you cannot sell or distribute the book in audio format anywhere. So Google is the only spoken shelf a UK title can reach, and it waits on the Play listing. Open: rival narrated UK tax titles and their prices, en-GB voices, how the guide's tables read aloud. Evidence 2 × reach 3 ÷ (0.3 spike + 0.3 build + 10 owner min) — dated with `google-play-listing`.",
+      "effort_days": 0.3,
+      "proof": "docs/exchange/spikes/google-play-auto-narrated-audiobook.md with the narrator list, the rival table from the GB audiobook shelf, the net per copy at three prices, the rewrite list for the spoken edition and a promote / park call",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-31"
+    },
+    {
+      "id": "spike-leanpub-claude-code-kit",
+      "title": "Research spike: Leanpub as the shelf for the Claude Code operations kit (exchange idea `ai-setup-course`, parked 2026-10-29 for want of a channel) — through the relay (.leanpub.com is allowed) read the bookstore search for 'claude code', 'ai agents' and 'cursor' with the working URL leanpub.com/bookstore?search=… (the 2026-10-31 /bookstore/book?search= lines answered 404 raw and rendered) and record each book's reader count, price band and last-updated date; read the 'how and when do you pay royalties' (article 110527) and 'supported countries for royalty payments' help articles (UK, Wise or PayPal, US$20 minimum), the Shelf advertising mechanics and the Standard / Pro author plan prices (article 3691778); decide what the kit is as a Leanpub product — a short book plus Extras (CLAUDE.md, the routine prompts, the pipeline scripts and the relay as a zip) — and whether a text drafted by this operation and curated by the owner passes the human-curated rule with an honest AI Usage page; write docs/exchange/spikes/leanpub-claude-code-kit.md with the reader counts, the net per sale at US$19 / 29 / 39 and a promote / park call",
+      "why": "new-ventures research 2026-10-31 (build; relay new-ventures-research-2026-10-31 lines 12–17): the W43 exchange re-scored the kit to 2.7 because Gumroad's Discover lists a product only after US$100 of direct sales, so the kit had no channel. Leanpub's own pages: an 80 % royalty on every sale (80 % less a 50¢ fee under US$7.99), no exclusivity and no price-matching rule, royalties in USD via Wise or PayPal from a US$20 minimum, a free author plan, and a catalogue whose buyers are developers — the one audience the kit is honestly for. Its AI rule is explicit (help 11853585, blog 2025-07-31): authors are encouraged to use AI, 'AI slop' and AI-automated mass production are banned, and 'AI agents are not permitted to use Leanpub' nor to accept its terms — so the owner holds the account, curates and publishes (an email and the existing PayPal, no identity check), and this operation drafts; disclosure goes on the book's AI Usage page. Open: how many comparable books exist and how many readers they show (Leanpub prints reader counts on every landing page). Evidence 2 × reach 2 ÷ (0.3 spike + ~1 build + 0.5 h owner) ≈ 2.2 as a venture; the spike's own score counts its 0.3 day.",
+      "effort_days": 0.3,
+      "proof": "docs/exchange/spikes/leanpub-claude-code-kit.md with the reader counts and prices of comparable Leanpub books, the royalty and payout facts, the product shape, and a promote / park call",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-31"
+    },
+    {
+      "id": "spike-virtuals-acp-provider-agent",
+      "title": "Research spike: gankdat as a provider agent on Virtuals' Agent Commerce Protocol (ACP, on Base) — through the relay (.virtuals.io is allowed) read os.virtuals.io/acp (the protocol fee page — a seller reports a 20 % cut — registration, the graduation review, the Provider SDK's job loop and whether a Worker or GitHub Actions cron can serve jobs without a 24/7 process), the rendered app.virtuals.io/acp/offerings and /acp/agents pages filtered to data, lookup, research and verification offerings (price, jobs, unique users — the 2026-10-31 scan page's top ten by aGDP are all trading agents), and any public job feed for company, sanctions, tender or register lookups; price one offering (UK company profile, sanctions screen or tender search at US$0.02–0.10 a job against our x402 prices) and write docs/exchange/spikes/virtuals-acp-provider-agent.md with the observed data-job volume, our net per job after the protocol cut (gas is sponsored) and a promote / park call",
+      "why": "new-ventures research 2026-10-31 (build; relay new-ventures-research-2026-10-31 lines 19–23 and the rendered scan page): the x402 Bazaar is the one shelf where strangers pay gankdat (5 buyer calls in 30 days), and ACP is the other agent-to-agent payment rail on the same chain with the same wallet. Its live scan (app.virtuals.io/acp/scan, rendered 10-31): total aGDP US$481.82M, total revenue US$4.53M, 2.55M jobs, 36.7K unique active wallets, a job completing every few minutes; the top ten agents by 7-day aGDP are all `Trade` (Capminal US$157.5K over 12,807 jobs; Nox 91,976 jobs). The whitepaper (about-virtuals/commerce-layer) describes request → negotiation → transaction → evaluation with payment in escrow until an Evaluator signs off, full docs at os.virtuals.io/acp. A graduated seller's own numbers (printmoneylab, 2026-04-02): a US$0.01 job nets US$0.008 after a 20 % protocol fee, gas sponsored, 18,000+ registered agents, zero production jobs at graduation because Butler routes by reputation — a cold-start shelf. STRATEGY §1 fit: a cut of money already flowing between agents, no identity step; the open question is whether anyone on ACP buys data lookups at all. Evidence 2 × reach 2 ÷ (0.4 spike + ~1 build) ≈ 2.9.",
+      "effort_days": 0.4,
+      "proof": "docs/exchange/spikes/virtuals-acp-provider-agent.md with the protocol fee from the docs, the count and job volume of data or lookup offerings, the serving model a cron can sustain, our net per job and a promote / park call",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-31"
     }
   ]
 }

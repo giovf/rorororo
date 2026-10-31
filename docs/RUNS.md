@@ -2150,3 +2150,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 08:10 | retro | Queued foundry slot-table-built-line-shapes (9); appended W44 evidence to actions-minutes
 - 2026-10-31 08:10 | retro | Owner: nothing new needed; 4 asks open, median age 2 d; no notify condition met
 - 2026-10-31 09:07 | triage | notify owner dispatched: last run started 06:11 UTC, 2 h 55 min ago
+- 2026-10-31 09:27 | build | new-ventures researched: 3 spikes seeded — Play auto-narrated audiobook (5), Leanpub kit (5), Virtuals ACP (4)
+- 2026-10-31 09:27 | build | Evidence (relay, 27 pages): Play auto-narration open to UK partners, 52 % share, free in beta, files portable
+- 2026-10-31 09:27 | build | KDP Virtual Voice read and parked: invite-only, US marketplace only, 40 %, no audio elsewhere during Select
+- 2026-10-31 09:27 | build | Leanpub: 80 % royalty, Wise/PayPal from US$20, AI-assisted allowed, AI agents barred — owner holds the account
+- 2026-10-31 09:27 | build | ACP scan: US$481.8M aGDP, 2.55M jobs, top ten agents all trading; a seller nets US$0.008 on a 1¢ job
+- 2026-10-31 09:27 | build | first-runs: nothing owed; main green at STEP 0; tax-workbook and gankdat research logs carry the reads

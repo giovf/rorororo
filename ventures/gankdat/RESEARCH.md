@@ -1064,3 +1064,16 @@ impressions / 0 clicks, 8 of 19 indexed (the IndexNow day-30 read is dated 11-05
 actors with failed QA runs already covered by `apify-companies-house-qa-repair` (doing). `researched: 2026-10-30`,
 `research_after: 2026-11-06` (the day-7 read; the queue is no longer starved).
 
+
+## Research 2026-10-31 — Virtuals ACP as a second agent-payment rail (build, new-ventures research)
+
+Read through the relay (`new-ventures-research-2026-10-31`, lines 19–23 and the rendered `app.virtuals.io/acp/scan`): Virtuals'
+Agent Commerce Protocol on Base is the other rail on which agents pay agents, same chain and wallet as our x402 listing. Live
+scan 10-31: total aGDP US$481.82M, total revenue US$4.53M, 2.55M jobs, 36.7K unique active wallets, a job completing every few
+minutes; every one of the top ten agents by 7-day aGDP is a `Trade` agent (Capminal US$157.5K over 12,807 jobs; Nox 91,976
+jobs). The whitepaper's commerce-layer page: request → negotiation → transaction → evaluation, payment and deliverable in escrow
+until an Evaluator signs a Proof of Agreement; full docs at `os.virtuals.io/acp`. One graduated seller's published numbers
+(printmoneylab, 2026-04-02): a US$0.01 job nets US$0.008 after a 20 % protocol fee, gas sponsored, 18,000+ registered agents,
+zero production jobs on graduation day because the Butler router prefers reputation. Unread: whether any ACP buyer wants data
+lookups (the offerings page filtered to data / verification), the primary fee page, and whether a cron-driven process can serve
+jobs. Queued as `new-ventures/spike-virtuals-acp-provider-agent` (4); nothing added to this queue (`research_after` 2026-11-06).
