@@ -2183,3 +2183,8 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 18:22 | burn-down | Relay apify-ch-qa-2026-10-31: actor object, store search, store page; SUCCEEDED 22, FAILED 2 of 24
 - 2026-10-31 18:22 | burn-down | Queued gankdat apify-notice-in-daily-row (4): the row names a flagged actor from the object's notice
 - 2026-10-31 18:22 | burn-down | first-runs: nothing owed; no Dependabot majors PR open; main green at STEP 0
+- 2026-10-31 18:30 | burn-down | foundry research pass: git history by directory, W44 retro, watchdog lines, run 461 log, doc sizes
+- 2026-10-31 18:30 | burn-down | Queued relay-bodies-cap-in-history (5): relay bodies added 201 and 188 MB to history in two weeks
+- 2026-10-31 18:30 | burn-down | Queued strategy-decision-log-rollover (4): §8 is 272 of 291 KB; six prompts read it every slot
+- 2026-10-31 18:30 | burn-down | Queued notify-owner-send-retry (3): run 461 one dropped fetch; the resend duplicated a message
+- 2026-10-31 18:30 | burn-down | foundry researched 2026-10-31; the 7-day relay prune bounds the tree (190 MB), not the history

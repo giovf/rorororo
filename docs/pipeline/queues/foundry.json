@@ -3,7 +3,7 @@
   "status": "open",
   "needs_research": false,
   "updated": "2026-10-31",
-  "researched": "2026-10-29",
+  "researched": "2026-10-31",
   "items": [
     {
       "id": "fetch-relay",
@@ -1262,6 +1262,36 @@
       "status": "done",
       "added": "2026-10-31",
       "done_at": "2026-10-31"
+    },
+    {
+      "id": "relay-bodies-cap-in-history",
+      "title": "Relay bodies stop growing the git history: fetch-relay commits HTML as extracted text (raw HTML only on a `RAW` request line) and truncates any body over 2 MB, meta.json saying so",
+      "why": "Research 2026-10-31 (burn-down, from this clone's history): docs/relay blobs are 469 MB of the repository's raw history, the largest class after the legacy data/ tensors (150 MB), and the weekly additions are 41 MB (week of 10-10), 201 MB (10-17) and 188 MB (10-24) — the spikes' rendered pages (aws-dx-2026-10-29-d: four 4.1 MB HTML bodies; appsource-b-2026-10-24: 36 MB; ofac-eu-spike-2026-10-18/13.txt 8 MB). scripts/fetch-relay.mjs prune() deletes a response folder after 7 days, which bounds the working tree (190 MB over 63 folders today) but not the history: the pack is 83 MiB and every routine's `git fetch --unshallow` (CLONE rule, 2026-10-10) downloads it, ~15 times a day. Readers grep text out of the pages (the spikes' run-log lines quote counts and prices), so an extracted-text body (tags stripped, script/style dropped, whitespace folded) serves the same reads at a tenth of the size; a reader that needs markup asks for it (`GET RAW <url>`). JSON and CSV stay whole up to 2 MB; above it the body is cut at 2 MB with `truncated: true` and the request line can use `GET RANGE=` as now. Not a rewrite of history (never force anything on main); the gain is forward-only. The README's '7 days' sentence names the prune as tree-only.",
+      "effort_days": 0.3,
+      "proof": "the next four weekly sums of blobs added under docs/relay/responses (`git log --diff-filter=A` over the week, sizes by `git cat-file --batch-check`) are each under 30 MB (was 201 and 188 MB), and no spike or research run-log line reports a page it could not read from the text body",
+      "score": 5,
+      "status": "todo",
+      "added": "2026-10-31"
+    },
+    {
+      "id": "strategy-decision-log-rollover",
+      "title": "STRATEGY §8 keeps the last 30 days: older decision-log entries roll into docs/decisions/<YYYY-MM>.md, and the RUNS-COUNT floor counts the rolled files so a roll is never read as a deletion",
+      "why": "Research 2026-10-31 (burn-down): docs/STRATEGY.md is 290,803 bytes, of which §8 (the decision log, 398 entries, one paragraph each) is 272,507 — 94 %. Six routine prompts (build, burn-down, exchange, fallback, ops-retro, review) say 'read STRATEGY §5, §7, §8' at the start of every slot, and the burn-down alone fires 10 times a night: a full read of §8 is about 70k tokens a slot, while the decisions a slot needs are the last few weeks' (the Sunday review reads the month). docs/RUNS.md is the same size (290,570 bytes, 2,158 lines) but is read by date (`grep '^- 2026-10-31'`), so it waits for the same mechanism later. Shape: a root script (`npm run decisions-roll`, run by the Saturday retro and idempotent) moves §8 entries older than 30 days into docs/decisions/<YYYY-MM>.md (newest last, same line shape), leaves a one-line pointer under the §8 heading, and scripts/runs-count (the `npm run runs` floor in docs/ops/RUNS-COUNT.json counts decision-log lines) counts the §8 lines plus every docs/decisions file so the floor still rises; the retro prompt gains the one command. The git history keeps every entry either way.",
+      "effort_days": 0.2,
+      "proof": "STRATEGY.md is under 80 KB after the first roll and under 120 KB thirty days later; `npm run check` is green with the floor counting both places; the retro's run-log line names the roll; no routine prompt needs a change beyond the retro's one command",
+      "score": 4,
+      "status": "todo",
+      "added": "2026-10-31"
+    },
+    {
+      "id": "notify-owner-send-retry",
+      "title": "notify-owner retries a channel send once after 2 s when the fetch throws, so one dropped connection no longer fails the run and resends every message on the next push",
+      "why": "Research 2026-10-31 (burn-down): notify-owner.yml run 461 (2026-10-30 19:06, dispatched by triage) sent two messages — the open owner ask and its new-request line — and the first Telegram POST threw `fetch failed` (a dropped connection, not a 4xx), the second answered 200; `send()` in scripts/notify-owner.ts counts the refusal, main() exits 1 and leaves the cursor, so run 462 (19:38) resent both: the owner's phone got the second message twice, and the one dropped socket cost a red run, a watchdog `ci-failed` line (RUNS 19:39), an inbox mail and a triage entry. 1 failure in 471 runs, so the fix is the smallest one: `attempt()` retries once after 2 s only when the fetch throws (a 4xx/5xx answer stays a refusal, the cursor rule is unchanged), logging `telegram: retry`. A stub fetch that throws once then answers 200 is the test.",
+      "effort_days": 0.05,
+      "proof": "the test passes (throw once → 200 accepted with one retry logged; two throws → refused); no `ci-failed: notify-owner.yml` watchdog line and no duplicate phone message for 30 days",
+      "score": 3,
+      "status": "todo",
+      "added": "2026-10-31"
     }
   ]
 }
