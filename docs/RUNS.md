@@ -2156,3 +2156,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 09:27 | build | Leanpub: 80 % royalty, Wise/PayPal from US$20, AI-assisted allowed, AI agents barred — owner holds the account
 - 2026-10-31 09:27 | build | ACP scan: US$481.8M aGDP, 2.55M jobs, top ten agents all trading; a seller nets US$0.008 on a 1¢ job
 - 2026-10-31 09:27 | build | first-runs: nothing owed; main green at STEP 0; tax-workbook and gankdat research logs carry the reads
+- 2026-10-31 12:10 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
