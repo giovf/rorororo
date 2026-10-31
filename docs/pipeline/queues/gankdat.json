@@ -988,8 +988,9 @@
       "effort_days": 0.1,
       "proof": "the Daily numbers row after a flag lands names the actor with `notice: UNDER_MAINTENANCE` and the row after it clears drops the suffix; the next flagged actor gets a queue item from the auto-filer before or with Apify's mail, and no relay round is spent to read a flag",
       "score": 4,
-      "status": "todo",
-      "added": "2026-10-31"
+      "status": "doing",
+      "added": "2026-10-31",
+      "doing_since": "2026-10-31"
     }
   ],
   "research_after": "2026-11-06"
