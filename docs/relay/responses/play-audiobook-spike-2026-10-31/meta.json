@@ -1,0 +1,160 @@
+{
+  "request": "play-audiobook-spike-2026-10-31",
+  "fetched_at": "2026-10-31T17:11:17.960Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/table/10957334?hl=en",
+      "fetched_at": "2026-10-31T17:11:09.987Z",
+      "status": 200,
+      "elapsed_ms": 472,
+      "final_url": "https://support.google.com/books/partner/table/10957334?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 1468366,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/answer/10957334?hl=en",
+      "fetched_at": "2026-10-31T17:11:11.004Z",
+      "status": 404,
+      "elapsed_ms": 172,
+      "final_url": "https://support.google.com/books/partner/answer/10957334?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 1456739,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=self%20assessment%20tax&c=audiobooks&gl=GB",
+      "fetched_at": "2026-10-31T17:11:11.214Z",
+      "status": 404,
+      "elapsed_ms": 128,
+      "final_url": "https://play.google.com/store/search?q=self%20assessment%20tax&c=audiobooks&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 1673,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=self%20assessment%20tax%20uk&c=books&gl=GB",
+      "fetched_at": "2026-10-31T17:11:11.843Z",
+      "status": 200,
+      "elapsed_ms": 50,
+      "final_url": "https://play.google.com/store/search?q=self%20assessment%20tax%20uk&c=books&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 1305132,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=sole%20trader%20tax&c=books&gl=GB",
+      "fetched_at": "2026-10-31T17:11:12.804Z",
+      "status": 200,
+      "elapsed_ms": 46,
+      "final_url": "https://play.google.com/store/search?q=sole%20trader%20tax&c=books&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 1246354,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=self%20employed%20tax%20uk&c=books&gl=GB",
+      "fetched_at": "2026-10-31T17:11:13.615Z",
+      "status": 200,
+      "elapsed_ms": 53,
+      "final_url": "https://play.google.com/store/search?q=self%20employed%20tax%20uk&c=books&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "6.html",
+      "bytes": 1215845,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=self%20assessment%20tax&hl=en-GB&gl=GB",
+      "fetched_at": "2026-10-31T17:11:14.415Z",
+      "status": 200,
+      "elapsed_ms": 129,
+      "final_url": "https://play.google.com/store/search?q=self+assessment+tax&hl=en-GB&gl=GB&c=apps",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "7.html",
+      "bytes": 1200302,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/audiobooks/details?id=AQAAAEBG_mW-MM&gl=GB",
+      "fetched_at": "2026-10-31T17:11:15.382Z",
+      "status": 200,
+      "elapsed_ms": 145,
+      "final_url": "https://play.google.com/store/audiobooks/details?id=AQAAAEBG_mW-MM&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "8.html",
+      "bytes": 989930,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/audiobooks/details?id=AQAAAECGFVpVzM&gl=GB",
+      "fetched_at": "2026-10-31T17:11:16.165Z",
+      "status": 200,
+      "elapsed_ms": 64,
+      "final_url": "https://play.google.com/store/audiobooks/details?id=AQAAAECGFVpVzM&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "9.html",
+      "bytes": 1000397,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/books/details?id=sNYDEgAAQBAJ&gl=GB",
+      "fetched_at": "2026-10-31T17:11:16.950Z",
+      "status": 200,
+      "elapsed_ms": 105,
+      "final_url": "https://play.google.com/store/books/details?id=sNYDEgAAQBAJ&gl=GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 946662,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/audiobooks?gl=GB",
+      "fetched_at": "2026-10-31T17:11:17.727Z",
+      "status": 200,
+      "elapsed_ms": 97,
+      "final_url": "https://play.google.com/store/books/category/audiobooks",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 2030725,
+      "truncated": false
+    }
+  ]
+}
