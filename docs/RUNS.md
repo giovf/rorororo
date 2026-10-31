@@ -2179,3 +2179,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 17:40 | burn-down | ACP demand: aGDP is trading value, fee revenue US$4.53M lifetime, top ten all Trade, catalogue login-walled
 - 2026-10-31 17:40 | burn-down | new-ventures queue emptied (3 spikes done today): needs_research set; parked idea added to the exchange
 - 2026-10-31 17:44 | burn-down | Stopping at ~34 min: 3 items done (Leanpub promoted, slot table, ACP parked); next: apify QA repair
+- 2026-10-31 18:22 | burn-down | gankdat apify-companies-house-qa-repair done: flag NONE, build 0.1.2, QA runs 10-30 and 10-31 green
+- 2026-10-31 18:22 | burn-down | Relay apify-ch-qa-2026-10-31: actor object, store search, store page; SUCCEEDED 22, FAILED 2 of 24
+- 2026-10-31 18:22 | burn-down | Queued gankdat apify-notice-in-daily-row (4): the row names a flagged actor from the object's notice
+- 2026-10-31 18:22 | burn-down | first-runs: nothing owed; no Dependabot majors PR open; main green at STEP 0
