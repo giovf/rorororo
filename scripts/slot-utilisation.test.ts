@@ -229,6 +229,48 @@ describe('classOfTraces', () => {
     );
     expect(classOfTraces([t('metrics: 2026-10-12 daily check', 'commit')])).toBe('ran');
   });
+
+  // foundry `slot-table-built-line-shapes` (2026-10-31): the routines stopped writing `Queue:` lines on
+  // 10-24 and the table read Built 0 for a week; every shape RUNS.md 10-24..10-30 used counts.
+  it('counts a `Built <venture> <id>:` line as built', () => {
+    expect(
+      classOfTraces([
+        t(
+          'Built foundry watchdog-ci-failed-runs: scripts/ci-failed-runs.ts reads failed runs',
+          'build',
+        ),
+      ]),
+    ).toBe('built');
+  });
+
+  it('counts a `<venture> <id> done:` line as built', () => {
+    expect(
+      classOfTraces([t('gankdat x402-bazaar-16-listed-read done: 10-24 row reads 16 listed')]),
+    ).toBe('built');
+    expect(
+      classOfTraces([
+        t('new-ventures spike-payhip-digital-downloads-shelf done: promote as the twin'),
+      ]),
+    ).toBe('built');
+  });
+
+  it('counts a `Spike <id> done:` line as built', () => {
+    expect(
+      classOfTraces([t('Spike gumroad-shelf-uk-seller done: 4 relay rounds — Terms, pricing')]),
+    ).toBe('built');
+  });
+
+  it('does not count summaries, parked spikes or emptied queues as built', () => {
+    for (const text of [
+      'Stopping at ~42 min: 3 items done (2 new-ventures spikes parked, tax-workbook Payhip twin)',
+      'new-ventures queue emptied (23 spikes done this week): needs_research set for the next slot',
+      'Spike aws-data-exchange-provider parked: provider terms need a US entity',
+      'Queue: gankdat facet-scan blocked on the D1 memory limit',
+      'SUBMISSION, WALKTHROUGH and ARCHITECTURE note the rule; item done, nothing for the owner',
+    ]) {
+      expect(classOfTraces([t(text)])).toBe('ran');
+    }
+  });
 });
 
 describe('table and idleLines', () => {

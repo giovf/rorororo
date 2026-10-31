@@ -1255,13 +1255,13 @@
     {
       "id": "slot-table-built-line-shapes",
       "title": "Slot table: count the build routine's current RUNS shapes as built",
-      "why": "2026-W44 retro: scripts/slot-utilisation.ts:172 BUILT_RE = /^Queue: .*\\bdone\\b/ matches no line of 2026-10-24..10-30 (0 'Queue:' lines; 108 in 10-10..10-23) although 58 queue done transitions landed, so 'npm run slots' prints Built 0 / Built % 0 for every row. The Monday report, the Sunday review's Built % > 30 % cadence call and the exchange's 11-02 parking triggers (JetBrains, Atlassian, Framer) read that number. Extend BUILT_RE to also match '^Built \\S+ \\S+', '^\\S+ \\S+ done\\b' and '^Spike \\S+ done\\b' (shapes in RUNS.md 10-24..10-30), one test per shape, and list the accepted shapes in the file header and the RUNS-line sentence of docs/routines/build.md.",
+      "why": "2026-W44 retro: scripts/slot-utilisation.ts:172 BUILT_RE = /^Queue: .*\\bdone\\b/ matches no line of 2026-10-24..10-30 (0 'Queue:' lines; 108 in 10-10..10-23) although 58 queue done transitions landed, so 'npm run slots' prints Built 0 / Built % 0 for every row. The Monday report, the Sunday review's Built % > 30 % cadence call and the exchange's 11-02 parking triggers (JetBrains, Atlassian, Framer) read that number. Extend BUILT_RE to also match '^Built \\S+ \\S+', '^\\S+ \\S+ done\\b' and '^Spike \\S+ done\\b' (shapes in RUNS.md 10-24..10-30), one test per shape, and list the accepted shapes in the file header and the RUNS-line sentence of docs/routines/build.md. — Built 2026-10-31 (burn-down): BUILT_RE now also matches `Built <venture> <id>:`, `<venture> <id> done` and `Spike <id> done` (four tests, one per shape plus the non-matching summaries); the 10-24..10-30 table reads burn-down Built 21 of 70 (49 %) and build 5 of 14 (36 %) instead of 0; the shapes are listed in the file header and in the RUN LOG sentence of build.md and burn-down.md.",
       "effort_days": 0.3,
       "proof": "The next three weekly slot tables show Built % within 15 points of (queue done transitions / slots that had work)",
       "score": 9,
-      "status": "doing",
+      "status": "done",
       "added": "2026-10-31",
-      "doing_since": "2026-10-31"
+      "done_at": "2026-10-31"
     }
   ]
 }

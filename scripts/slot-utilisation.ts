@@ -9,7 +9,14 @@
 // scripts/run-watchdog.ts, with the burn-down widened from its watched 17:00 hour to every hourly fire
 // of the night (17:00–23:00 and 00:00–02:00 UTC, docs/SCHEDULERS.md) — attributes each docs/RUNS.md
 // line and each routine commit to the slot it belongs to, and classifies the slot:
-//   built        a `Queue: … done` line (an item shipped)
+//   built        an item shipped — a run-log line of one of the accepted shapes (foundry
+//                `slot-table-built-line-shapes`, 2026-10-31: the routines stopped writing `Queue:`
+//                lines on 10-24 and the table read Built 0 for a week of 58 done transitions):
+//                  `Queue: <venture> <id> done …`      (the shape to 10-23)
+//                  `Built <venture> <id>: …`           (build / burn-down since 10-24)
+//                  `<venture> <id> done: …`            (e.g. `gankdat x402-bazaar-16-listed-read done: …`)
+//                  `Spike <id> done: …`                (a research spike finished)
+//                `dropped`, `blocked`, `parked` and `Stopping … N items done` lines do not count
 //   researched   a research pass (`research` / `research_after` / `Queue: <venture> +N`)
 //   pre-research the night's or day's one `Exchange pre-research:` pass
 //   ran          a trace with none of the above (fixed routines: metrics, report, review …; or a
@@ -168,8 +175,13 @@ export function tracesBySlot(slots: readonly Slot[], traces: readonly Trace[]): 
   return out;
 }
 
-/** `Queue: <venture> <id> done …` — an item shipped (dropped / blocked / filed lines do not count). */
-const BUILT_RE = /^Queue: .*\bdone\b/;
+/**
+ * An item shipped — one of the accepted built-line shapes (listed in the file header and in the
+ * RUN LOG sentence of docs/routines/build.md and burn-down.md): `Queue: <venture> <id> done …`,
+ * `Built <venture> <id>: …`, `<venture> <id> done …` or `Spike <id> done …`. Dropped / blocked /
+ * parked lines and `Stopping at ~N min: 3 items done` summaries do not count.
+ */
+export const BUILT_RE = /^(?:Queue: .*\bdone\b|Built \S+ \S+|\S+ \S+ done\b|Spike \S+ done\b)/;
 /** A research pass: `<venture> research: …`, `Queue: … research_after <date>`, `Queue: <venture> +N (…)`. Not `pre-research`. */
 const RESEARCH_RE = /(?<![\w-])research(?:ed)?\b|research_after|^Queue: \S+ \+\d/;
 

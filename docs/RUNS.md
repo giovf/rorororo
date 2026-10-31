@@ -2170,3 +2170,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 17:26 | burn-down | Leanpub terms: 80 % over $7.99, 60-day hold, PayPal $20 / Wise $100 floor, AI agents barred, Extras ok
 - 2026-10-31 17:26 | burn-down | Call: promote at 3 — W45 exchange opens claude-code-kit; book + Extras zip at $19 / $29, owner ~20 min
 - 2026-10-31 17:26 | burn-down | Bookstore search route is /store?search=; /bookstore?search= and /bookstore/book?search= both 404
+- 2026-10-31 17:31 | burn-down | Built foundry slot-table-built-line-shapes: BUILT_RE takes Built/<id> done/Spike done lines
+- 2026-10-31 17:31 | burn-down | Four classifier tests (one per shape, plus summaries and parked lines that must not count)
+- 2026-10-31 17:31 | burn-down | Slot table 10-24..10-30 now reads burn-down Built 21 of 70 and build 5 of 14, was 0
+- 2026-10-31 17:31 | burn-down | build.md and burn-down.md RUN LOG name the built-line shapes the slot table counts
