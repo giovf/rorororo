@@ -1,0 +1,341 @@
+{
+  "request": "new-ventures-research-2026-10-31",
+  "fetched_at": "2026-10-31T09:17:34.036Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/GMPQGZAZJH6FF456",
+      "fetched_at": "2026-10-31T09:17:19.422Z",
+      "status": 200,
+      "elapsed_ms": 295,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/GMPQGZAZJH6FF456",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "1.html",
+      "bytes": 187758,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/GJSXT4GZLP4PL62B",
+      "fetched_at": "2026-10-31T09:17:20.221Z",
+      "status": 200,
+      "elapsed_ms": 173,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/GJSXT4GZLP4PL62B",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "2.html",
+      "bytes": 194567,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/GHJW2N8GLTQLK9TY",
+      "fetched_at": "2026-10-31T09:17:20.895Z",
+      "status": 200,
+      "elapsed_ms": 712,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/GHJW2N8GLTQLK9TY",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "3.html",
+      "bytes": 192220,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/GWHSFAK69P2537YR",
+      "fetched_at": "2026-10-31T09:17:22.109Z",
+      "status": 200,
+      "elapsed_ms": 186,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/GWHSFAK69P2537YR",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "4.html",
+      "bytes": 188056,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://kdp.amazon.com/en_US/help/topic/GFAQU3LUEHCRB8KD",
+      "fetched_at": "2026-10-31T09:17:22.797Z",
+      "status": 200,
+      "elapsed_ms": 192,
+      "final_url": "https://kdp.amazon.com/en_US/help/topic/GFAQU3LUEHCRB8KD",
+      "headers": {
+        "content-type": "text/html;charset=UTF-8"
+      },
+      "file": "5.html",
+      "bytes": 192288,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/answer/10013009?hl=en",
+      "fetched_at": "2026-10-31T09:17:22.991Z",
+      "status": 200,
+      "elapsed_ms": 259,
+      "final_url": "https://support.google.com/books/partner/answer/10013009?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "6.html",
+      "bytes": 1603958,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/answer/14164701?hl=en",
+      "fetched_at": "2026-10-31T09:17:23.823Z",
+      "status": 200,
+      "elapsed_ms": 175,
+      "final_url": "https://support.google.com/books/partner/answer/14164701?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "7.html",
+      "bytes": 1602472,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://support.google.com/books/partner/answer/9331459?hl=en",
+      "fetched_at": "2026-10-31T09:17:24.535Z",
+      "status": 200,
+      "elapsed_ms": 194,
+      "final_url": "https://support.google.com/books/partner/answer/9331459?hl=en",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "8.html",
+      "bytes": 1607525,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/books/publish/autonarrated",
+      "fetched_at": "2026-10-31T09:17:24.763Z",
+      "status": 200,
+      "elapsed_ms": 144,
+      "final_url": "https://play.google.com/books/publish/autonarrated/",
+      "headers": {
+        "content-type": "text/html",
+        "last-modified": "Mon, 24 Aug 2026 05:18:00 GMT"
+      },
+      "file": "9.html",
+      "bytes": 148889,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=self%20assessment%20tax&c=audiobooks&gl=GB&hl=en-GB",
+      "fetched_at": "2026-10-31T09:17:25.423Z",
+      "status": 404,
+      "elapsed_ms": 43,
+      "final_url": "https://play.google.com/store/search?q=self%20assessment%20tax&c=audiobooks&gl=GB&hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "10.html",
+      "bytes": 1673,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://play.google.com/store/search?q=sole%20trader%20tax&c=audiobooks&gl=GB&hl=en-GB",
+      "fetched_at": "2026-10-31T09:17:25.967Z",
+      "status": 404,
+      "elapsed_ms": 67,
+      "final_url": "https://play.google.com/store/search?q=sole%20trader%20tax&c=audiobooks&gl=GB&hl=en-GB",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "11.html",
+      "bytes": 1673,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://leanpub.com/terms",
+      "fetched_at": "2026-10-31T09:17:26.063Z",
+      "status": 200,
+      "elapsed_ms": 311,
+      "final_url": "https://leanpub.com/terms",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "12.html",
+      "bytes": 165859,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.leanpub.com/en/articles/5468013-what-is-leanpub-s-royalty-rate-are-there-any-restrictions-on-where-i-can-self-publish-my-book-and-what-price-i-can-charge",
+      "fetched_at": "2026-10-31T09:17:26.466Z",
+      "status": 200,
+      "elapsed_ms": 404,
+      "final_url": "https://help.leanpub.com/en/articles/5468013-what-is-leanpub-s-royalty-rate-are-there-any-restrictions-on-where-i-can-self-publish-my-book-and-what-price-i-can-charge",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"02e0de2611872ccfc2e585a8a5977d75\""
+      },
+      "file": "13.html",
+      "bytes": 90977,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.leanpub.com/en/articles/110725-i-d-like-to-become-a-leanpub-author-what-should-i-do-what-do-i-need-to-know",
+      "fetched_at": "2026-10-31T09:17:27.402Z",
+      "status": 200,
+      "elapsed_ms": 308,
+      "final_url": "https://help.leanpub.com/en/articles/110725-i-d-like-to-become-a-leanpub-author-what-should-i-do-what-do-i-need-to-know",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"19fb27adb390577d8b869d0e70ec63c5\""
+      },
+      "file": "14.html",
+      "bytes": 110800,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.leanpub.com/en/articles/11853585-ai-slop-is-not-permitted-on-leanpub",
+      "fetched_at": "2026-10-31T09:17:28.211Z",
+      "status": 200,
+      "elapsed_ms": 342,
+      "final_url": "https://help.leanpub.com/en/articles/11853585-ai-slop-is-not-permitted-on-leanpub",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"556ac7771620f12bc65f1d3374353d42\""
+      },
+      "file": "15.html",
+      "bytes": 92579,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.leanpub.com/en/articles/9363893-ai-usage-disclosure-details-for-leanpub-authors",
+      "fetched_at": "2026-10-31T09:17:29.085Z",
+      "status": 200,
+      "elapsed_ms": 290,
+      "final_url": "https://help.leanpub.com/en/articles/9363893-ai-usage-disclosure-details-for-leanpub-authors",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"b77801b0b2330aabc8f1ce25f3fd1296\""
+      },
+      "file": "16.html",
+      "bytes": 91893,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://leanpub.com/blog/no-ai-slop/",
+      "fetched_at": "2026-10-31T09:17:29.377Z",
+      "status": 200,
+      "elapsed_ms": 228,
+      "final_url": "https://leanpub.com/blog/no-ai-slop/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"4f85-QxkFzkFoWu6j3JqRUrU++b+txpI\""
+      },
+      "file": "17.html",
+      "bytes": 20357,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://leanpub.com/bookstore/book?search=claude%20code",
+      "fetched_at": "2026-10-31T09:17:30.108Z",
+      "status": 404,
+      "elapsed_ms": 211,
+      "final_url": "https://leanpub.com/bookstore/book?search=claude%20code",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "18.html",
+      "bytes": 67931,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://whitepaper.virtuals.io/",
+      "fetched_at": "2026-10-31T09:17:30.369Z",
+      "status": 200,
+      "elapsed_ms": 214,
+      "final_url": "https://whitepaper.virtuals.io/",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"8jkucpnvg87t64\""
+      },
+      "file": "19.html",
+      "bytes": 364474,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://whitepaper.virtuals.io/info-hub/builders-hub/agent-commerce-protocol-acp",
+      "fetched_at": "2026-10-31T09:17:31.093Z",
+      "status": 404,
+      "elapsed_ms": 224,
+      "final_url": "https://whitepaper.virtuals.io/info-hub/builders-hub/agent-commerce-protocol-acp",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"wqigbwmpc13njy\""
+      },
+      "file": "20.html",
+      "bytes": 170564,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://whitepaper.virtuals.io/about-virtuals/agent-commerce-protocol-acp",
+      "fetched_at": "2026-10-31T09:17:31.819Z",
+      "status": 200,
+      "elapsed_ms": 331,
+      "final_url": "https://whitepaper.virtuals.io/about-virtuals/commerce-layer",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"oam9qp55ns7jcw\""
+      },
+      "file": "21.html",
+      "bytes": 351778,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://rnwy.com/learn/virtuals-acp-agent-rankings",
+      "fetched_at": "2026-10-31T09:17:32.152Z",
+      "status": 200,
+      "elapsed_ms": 281,
+      "final_url": "https://rnwy.com/learn/virtuals-acp-agent-rankings",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "content-disposition": "inline"
+      },
+      "file": "22.html",
+      "bytes": 66869,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://www.printmoneylab.com/2026/04/acp-agent-episode-7-graduated-revenue-honest-numbers.html",
+      "fetched_at": "2026-10-31T09:17:32.434Z",
+      "retries": 1,
+      "status": 200,
+      "elapsed_ms": 1592,
+      "final_url": "https://www.printmoneylab.com/2026/04/acp-agent-episode-7-graduated-revenue-honest-numbers.html",
+      "headers": {
+        "content-type": "text/html; charset=UTF-8",
+        "last-modified": "Mon, 28 Sep 2026 08:55:08 GMT",
+        "etag": "W/\"69e39aae5100fee8852e5266160239ba24b8da3ea5f0cd286ffd545ae958de00\""
+      },
+      "file": "23.html",
+      "bytes": 113050,
+      "truncated": false
+    }
+  ]
+}
