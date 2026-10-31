@@ -1,0 +1,178 @@
+{
+  "request": "leanpub-kit-b-2026-10-31",
+  "fetched_at": "2026-10-31T17:14:30.048Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://leanpub.com/store?search=claude%20code",
+      "render": true,
+      "fetched_at": "2026-10-31T17:14:08.104Z",
+      "status": 200,
+      "final_url": "https://leanpub.com/store?search=claude%20code",
+      "title": "Leanpub Bookstore: Programming Books, Courses & Bundles",
+      "rendered": {
+        "network_idle": true,
+        "requests": 185,
+        "failed": [],
+        "console_errors": [
+          "requestStorageAccess: Permission denied."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "1.html",
+      "bytes": 240305,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://leanpub.com/store?search=ai%20agents",
+      "render": true,
+      "fetched_at": "2026-10-31T17:14:14.457Z",
+      "status": 200,
+      "final_url": "https://leanpub.com/store?search=ai%20agents",
+      "title": "Leanpub Bookstore: Programming Books, Courses & Bundles",
+      "rendered": {
+        "network_idle": true,
+        "requests": 190,
+        "failed": [],
+        "console_errors": [
+          "requestStorageAccess: Permission denied."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.html",
+      "bytes": 242791,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://leanpub.com/store?search=cursor",
+      "render": true,
+      "fetched_at": "2026-10-31T17:14:20.081Z",
+      "status": 200,
+      "final_url": "https://leanpub.com/store?search=cursor",
+      "title": "Leanpub Bookstore: Programming Books, Courses & Bundles",
+      "rendered": {
+        "network_idle": true,
+        "requests": 179,
+        "failed": [],
+        "console_errors": [
+          "requestStorageAccess: Permission denied."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.html",
+      "bytes": 206013,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://leanpub.com/store?search=claude%20code",
+      "fetched_at": "2026-10-31T17:14:25.600Z",
+      "status": 200,
+      "elapsed_ms": 171,
+      "final_url": "https://leanpub.com/store?search=claude%20code",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "4.html",
+      "bytes": 250874,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://leanpub.com/help/api",
+      "fetched_at": "2026-10-31T17:14:26.279Z",
+      "status": 200,
+      "elapsed_ms": 92,
+      "final_url": "https://leanpub.com/help/api",
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "5.html",
+      "bytes": 152553,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.leanpub.com/en/articles/6029922",
+      "fetched_at": "2026-10-31T17:14:26.374Z",
+      "status": 200,
+      "elapsed_ms": 388,
+      "final_url": "https://help.leanpub.com/en/articles/6029922-supported-countries-for-leanpub-royalty-payments-to-self-published-authors",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"da56935f3829190aa577d184017c3d2e\""
+      },
+      "file": "6.html",
+      "bytes": 88076,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.leanpub.com/en/articles/1615745",
+      "fetched_at": "2026-10-31T17:14:27.264Z",
+      "status": 200,
+      "elapsed_ms": 294,
+      "final_url": "https://help.leanpub.com/en/articles/1615745-what-s-the-shelf",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"709e12e7c2458f41fe07340e89f7252a\""
+      },
+      "file": "7.html",
+      "bytes": 78264,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.leanpub.com/en/articles/5196744",
+      "fetched_at": "2026-10-31T17:14:28.060Z",
+      "status": 200,
+      "elapsed_ms": 345,
+      "final_url": "https://help.leanpub.com/en/articles/5196744-i-m-thinking-of-buying-a-spot-on-the-shelf-along-with-a-sponsored-deal-newsletter-spot-how-many-users-does-leanpub-get-how-much-traffic-the-leanpub-homepage-get-how-many-subscribers-do-the-newsletters-get",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"e3428accc2a3bad63d3cbcceeef9915b\""
+      },
+      "file": "8.html",
+      "bytes": 109047,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.leanpub.com/en/articles/10339186",
+      "fetched_at": "2026-10-31T17:14:28.907Z",
+      "status": 200,
+      "elapsed_ms": 355,
+      "final_url": "https://help.leanpub.com/en/articles/10339186-marketing-packages-for-authors",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"0192efc557e5cfe8f583887acd1181c2\""
+      },
+      "file": "9.html",
+      "bytes": 87100,
+      "truncated": false
+    },
+    {
+      "method": "GET",
+      "url": "https://help.leanpub.com/en/articles/5022608",
+      "fetched_at": "2026-10-31T17:14:29.763Z",
+      "status": 200,
+      "elapsed_ms": 282,
+      "final_url": "https://help.leanpub.com/en/articles/5022608-what-does-it-mean-to-use-some-of-your-unpaid-royalties-to-get-a-service-like-a-shelf-advertising-spot-or-translateai-on-leanpub",
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "etag": "W/\"27b396c548949359e03e2346b3f29081\""
+      },
+      "file": "10.html",
+      "bytes": 83352,
+      "truncated": false
+    }
+  ]
+}
