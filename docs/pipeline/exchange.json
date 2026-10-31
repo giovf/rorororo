@@ -667,6 +667,14 @@
       "added": "2026-10-30",
       "updated": "2026-10-30",
       "venture": "tax-workbook"
+    },
+    {
+      "id": "google-play-auto-narrated-audiobook",
+      "title": "Google Play auto-narrated audiobook of 'UK Sole Trader Tax 2026/27' — a spoken edition of the Kindle EPUB narrated by Google's British voice, 52 % of list, nothing to pay, sold on the Play audiobook shelf beside the ebook",
+      "why": "Spike 2026-10-31 (build; docs/exchange/spikes/google-play-auto-narrated-audiobook.md, relay play-audiobook-spike-2026-10-31 and -b). Google's narrator library has four British English voices (Alistair, Anya, Archie, Ava); the Learning Center needs only an English EPUB that the account already offers on Play; the beta charges nothing and pays 52 %. The GB shelf already sells two AI-narrated UK tax titles made the same way (Fastchapters 'Self-Assessment Deadline and No Records Anywhere' £4.49 for 4 h 8 min, Oct 2026; Wish Publications 'Making Tax Digital for Small Landlords' £5.49 for 1 h 39 min, Sep 2026 — both American voices, 5.0/4.9 shown, counts unreadable). Our 9,102 words are ≈ 55–65 min; 11 tables (88 rows), 31 form-box references, 50 '2026/27' forms and a URL list need a spoken edition from the same content module (≈ 0.3 day). Net per copy at 52 % of the VAT-net list: £1.95 at £4.49, £2.38 at £5.49, £2.60 at £5.99, £3.03 at £6.99 — under the £3 line at a price the shelf supports, and under the Kindle's £2.70. Dated: the Kindle enrolled in KDP Select 2026-10-31, so the Play ebook (google-play-listing) cannot go up before 2027-01-29 and Google narrates only an ebook the account offers on Play.",
+      "status": "parked",
+      "trigger": "the Play ebook listing's day-30 read (≈ March 2027) shows one or more sales — then promote as tax-workbook `google-play-audiobook` (0.3 day + ~10 owner minutes, £5.99, a British voice, score ≈ 5 at weight 2); or the two rival listings' rating counts, read rendered, show sales",
+      "added": "2026-10-31"
     }
   ]
 }

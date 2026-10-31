@@ -2159,8 +2159,14 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 12:10 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-10-31 15:10 | triage | notify | Your Kindle guide is now live on Amazon
 - 2026-10-31 16:06 | triage | notify owner dispatched: last run started 12:59 UTC, 3 h ago
-- 2026-10-31 17:50 | burn-down | Spike leanpub-claude-code-kit: 4 relay rounds, 31 Leanpub book pages read; copies sold from page data
-- 2026-10-31 17:50 | burn-down | Leanpub shelf: 4 ops handbooks of the kit's shape sold 11–13 each in 5 months; general guides 81–530
-- 2026-10-31 17:50 | burn-down | Leanpub terms: 80 % over $7.99, 60-day hold, PayPal $20 / Wise $100 floor, AI agents barred, Extras ok
-- 2026-10-31 17:50 | burn-down | Call: promote at 3 — W45 exchange opens claude-code-kit; book + Extras zip at $19 / $29, owner ~20 min
-- 2026-10-31 17:50 | burn-down | Bookstore search route is /store?search=; /bookstore?search= and /bookstore/book?search= both 404
+- 2026-10-31 17:25 | build | Spike google-play-auto-narrated-audiobook done: parked, dated to the Play ebook's day-30 read
+- 2026-10-31 17:25 | build | Relay (17 pages): 4 British voices; 2 AI-narrated UK tax audiobooks on the GB shelf at £4.49–5.49
+- 2026-10-31 17:25 | build | Counted: 11 tables, 88 rows, 31 box refs in the EPUB — a spoken edition (0.3 d) is needed first
+- 2026-10-31 17:25 | build | Net at 52 % of the VAT-net list: £2.20–2.60 a copy at £4.99–5.99; £3 line only from £6.99
+- 2026-10-31 17:25 | build | Date: Kindle in KDP Select from today, so the Play ebook waits to 2027-01-29 and audio follows it
+- 2026-10-31 17:25 | build | first-runs: nothing owed; main green at STEP 0; no owner action; idea parked in the exchange
+- 2026-10-31 17:26 | burn-down | Spike leanpub-claude-code-kit: 4 relay rounds, 31 Leanpub book pages read; copies sold from page data
+- 2026-10-31 17:26 | burn-down | Leanpub shelf: 4 ops handbooks of the kit's shape sold 11–13 each in 5 months; general guides 81–530
+- 2026-10-31 17:26 | burn-down | Leanpub terms: 80 % over $7.99, 60-day hold, PayPal $20 / Wise $100 floor, AI agents barred, Extras ok
+- 2026-10-31 17:26 | burn-down | Call: promote at 3 — W45 exchange opens claude-code-kit; book + Extras zip at $19 / $29, owner ~20 min
+- 2026-10-31 17:26 | burn-down | Bookstore search route is /store?search=; /bookstore?search= and /bookstore/book?search= both 404

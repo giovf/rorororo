@@ -1,6 +1,6 @@
 # Spike: Leanpub as the shelf for the Claude Code operations kit
 
-Queue item `new-ventures/spike-leanpub-claude-code-kit` (burn-down, 2026-10-31 17:10–17:50 UTC; seeded by the same
+Queue item `new-ventures/spike-leanpub-claude-code-kit` (burn-down, 2026-10-31 17:10–17:26 UTC; seeded by the same
 morning's new-ventures research, exchange idea `ai-setup-course`, parked 2026-10-29 for want of a channel). Sources: three
 fetch-relay rounds (`docs/relay/responses/new-ventures-research-2026-10-31` lines 12–17 — the terms, the royalty, author,
 AI-slop and AI-disclosure help articles and the *No AI Slop!* blog post; `leanpub-kit-2026-10-31` — *How and when do you
