@@ -1259,8 +1259,9 @@
       "effort_days": 0.3,
       "proof": "The next three weekly slot tables show Built % within 15 points of (queue done transitions / slots that had work)",
       "score": 9,
-      "status": "todo",
-      "added": "2026-10-31"
+      "status": "doing",
+      "added": "2026-10-31",
+      "doing_since": "2026-10-31"
     }
   ]
 }
