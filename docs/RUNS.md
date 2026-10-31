@@ -2149,3 +2149,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 08:10 | retro | Defect: license-worker.yml failed 7 times on one bad step name; yaml gate built the same night
 - 2026-10-31 08:10 | retro | Queued foundry slot-table-built-line-shapes (9); appended W44 evidence to actions-minutes
 - 2026-10-31 08:10 | retro | Owner: nothing new needed; 4 asks open, median age 2 d; no notify condition met
+- 2026-10-31 09:07 | triage | notify owner dispatched: last run started 06:11 UTC, 2 h 55 min ago
