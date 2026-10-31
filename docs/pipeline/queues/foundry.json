@@ -1292,8 +1292,9 @@
       "effort_days": 0.05,
       "proof": "the test passes (throw once → 200 accepted with one retry logged; two throws → refused); no `ci-failed: notify-owner.yml` watchdog line and no duplicate phone message for 30 days",
       "score": 3,
-      "status": "todo",
-      "added": "2026-10-31"
+      "status": "doing",
+      "added": "2026-10-31",
+      "doing_since": "2026-10-31"
     }
   ]
 }
