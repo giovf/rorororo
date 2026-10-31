@@ -197,3 +197,14 @@ tick the AI-content disclosure, set £4.99 at 70 %, enrol in Select and start th
   `google-play-listing`. Spike queued in `new-ventures`: `spike-google-play-auto-narrated-audiobook` (5) — en-GB voices, the GB
   audiobook shelf's rival UK tax titles (the 10-31 store-search URL answered 404), what the tables sound like read aloud, net per
   copy at 52 %. `research_after` 2026-11-03 unchanged.
+- **2026-10-31 17:25 (build, spike `google-play-auto-narrated-audiobook`):** read through the relay (`play-audiobook-spike-2026-10-31`, `-b`):
+  the narrator library has four British English voices (Alistair, Anya, Archie, Ava); the Learning Center's conditions are audio
+  rights, an English EPUB and an ebook the account offers on Play; no programme fee, 52 % of list, no stated price floor. The GB
+  shelf sells two AI-narrated UK tax audiobooks made the same way in the last six weeks — Fastchapters' *Self-Assessment Deadline
+  and No Records Anywhere* (£4.49, 4 h 8 min, ebook £3.79) and Wish Publications' *Making Tax Digital for Small Landlords* (£5.49,
+  1 h 39 min, ebook £7.99), both American voices, ratings shown without counts; the 10-26 HMRC Tax Guide rival has no audiobook.
+  Counted from the content module: 9,102 words ≈ 55–65 min; 11 tables / 88 rows, 222 pound amounts, 50 "2026/27", 31 box
+  references, 7 gov.uk URLs — a spoken edition (≈ 0.3 day) is needed, not a straight narration. Net at 52 % of the VAT-net list:
+  £2.20–2.60 a copy at £4.99–5.99, £3.03 at £6.99. **Parked, dated** (`docs/exchange/spikes/google-play-auto-narrated-audiobook.md`):
+  the Kindle enrolled in KDP Select today, the Play ebook cannot go up before 2027-01-29, and the Play ebook's day-30 sales decide
+  whether a £5.99 spoken edition follows. `research_after` 2026-11-03 unchanged.
