@@ -2142,3 +2142,10 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 00:01 | watchdog | ci-minutes: 624 billed min/7d (~2674/mo; cap 2000) top: fetch relay 116, notify owner 101, gankdat 95
 - 2026-10-31 03:07 | triage | notify owner dispatched: last run started 00:00 UTC, 3 h ago
 - 2026-10-31 06:08 | triage | notify owner dispatched: last run started 03:06 UTC, 3 h ago
+- 2026-10-31 08:10 | retro | Slot reliability: 89 of 95 slots traced; 6 missed, 18 silent, one usage-limit event 10-27 to 10-29
+- 2026-10-31 08:10 | retro | Repeat blocker: usage limit again after the Mon/Tue cap; weekly slot budget (built 10-29) is the fix
+- 2026-10-31 08:10 | retro | Repeat blocker: extension signing waits 27 d; already a blocked item, nothing re-added
+- 2026-10-31 08:10 | retro | Defect: slot table reads Built 0 % because builds no longer write Queue: lines
+- 2026-10-31 08:10 | retro | Defect: license-worker.yml failed 7 times on one bad step name; yaml gate built the same night
+- 2026-10-31 08:10 | retro | Queued foundry slot-table-built-line-shapes (9); appended W44 evidence to actions-minutes
+- 2026-10-31 08:10 | retro | Owner: nothing new needed; 4 asks open, median age 2 d; no notify condition met
