@@ -1,7 +1,0 @@
-GET https://os.virtuals.io/acp
-GET https://os.virtuals.io/
-GET https://os.virtuals.io/sitemap.xml
-GET https://app.virtuals.io/acp/offerings
-GET RENDER https://app.virtuals.io/acp/offerings
-GET RENDER https://app.virtuals.io/acp/agents?category=data
-GET https://rnwy.com/learn/virtuals-acp-agent-rankings
