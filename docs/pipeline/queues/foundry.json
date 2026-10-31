@@ -1270,8 +1270,9 @@
       "effort_days": 0.3,
       "proof": "the next four weekly sums of blobs added under docs/relay/responses (`git log --diff-filter=A` over the week, sizes by `git cat-file --batch-check`) are each under 30 MB (was 201 and 188 MB), and no spike or research run-log line reports a page it could not read from the text body",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-31"
+      "status": "doing",
+      "added": "2026-10-31",
+      "doing_since": "2026-10-31"
     },
     {
       "id": "strategy-decision-log-rollover",
