@@ -413,8 +413,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/google-play-auto-narrated-audiobook.md with the narrator list, the rival table from the GB audiobook shelf, the net per copy at three prices, the rewrite list for the spoken edition and a promote / park call",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-31"
+      "status": "doing",
+      "added": "2026-10-31",
+      "doing_since": "2026-10-31"
     },
     {
       "id": "spike-leanpub-claude-code-kit",
