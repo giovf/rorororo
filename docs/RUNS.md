@@ -2188,3 +2188,7 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 18:30 | burn-down | Queued strategy-decision-log-rollover (4): §8 is 272 of 291 KB; six prompts read it every slot
 - 2026-10-31 18:30 | burn-down | Queued notify-owner-send-retry (3): run 461 one dropped fetch; the resend duplicated a message
 - 2026-10-31 18:30 | burn-down | foundry researched 2026-10-31; the 7-day relay prune bounds the tree (190 MB), not the history
+- 2026-10-31 18:48 | burn-down | gankdat apify-notice-in-daily-row done: the row reads each actor's notice and flags it
+- 2026-10-31 18:48 | burn-down | apify-outcomes: flaggedNotice, flaggedActors, suffix "flagged X", parser safe with the comma; 3 tests
+- 2026-10-31 18:48 | burn-down | metrics.mjs reads notice from the actor detail, logs flagged actors, merges refresh errors
+- 2026-10-31 18:48 | burn-down | Took the 0.1 d item over relay-bodies-cap-in-history (5, 0.3 d) for the slot's last 25 min

@@ -655,6 +655,11 @@ runs `check:root`.
   `refresh-apify-<name>` by its two-rows-in-four rule. Why rising, not non-zero: both maintenance
   flags so far (09-25, 10-10) were learned from Apify's mail three days in, and a fixed actor must
   drop out the next day rather than be re-filed for the 30 days its old failures stay in the window.
+  Notice (2026-10-31, `apify-notice-in-daily-row`): the same actor object carries `notice`
+  (`UNDER_MAINTENANCE` while Apify's QA flag is up, `NONE` otherwise), so the suffix also reads
+  `flagged <NOTICE>` and a flagged actor is listed under `refresh errors` every day the flag stands —
+  the day it lands and the day it clears are both read from the row, with no relay round (the third
+  flag, 10-29, cost three slots, the last only to read the flag).
 - **Live MCP probe** (`scripts/mcp-probe.ts`, 2026-10-08, queue `mcp-live-probe`): the metrics job's
   runner does what an agent directory's health checker does — `initialize`, `tools/list`, one keyless
   preview `tools/call` on the first listing data tool — against the live `/mcp` and the same with a
