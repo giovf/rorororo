@@ -2178,3 +2178,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 17:40 | burn-down | ACP facts: protocol cut 5 % not 20 %, no graduation step, SSE listener required, hosted deploy unread
 - 2026-10-31 17:40 | burn-down | ACP demand: aGDP is trading value, fee revenue US$4.53M lifetime, top ten all Trade, catalogue login-walled
 - 2026-10-31 17:40 | burn-down | new-ventures queue emptied (3 spikes done today): needs_research set; parked idea added to the exchange
+- 2026-10-31 17:44 | burn-down | Stopping at ~34 min: 3 items done (Leanpub promoted, slot table, ACP parked); next: apify QA repair
