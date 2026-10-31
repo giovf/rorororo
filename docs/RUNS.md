@@ -2200,3 +2200,5 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 19:30 | burn-down | Built foundry strategy-decision-log-rollover: npm run decisions-roll moves §8 entries over 30 days old
 - 2026-10-31 19:30 | burn-down | First roll: 55 September entries → docs/decisions/2026-09.md; STRATEGY.md 292 → 258 KB (October is 240 KB)
 - 2026-10-31 19:30 | burn-down | runs floor counts §8 plus docs/decisions/*.md (401 unchanged); 4 roll tests; retro runs the roll
+- 2026-10-31 19:36 | burn-down | Built foundry notify-owner-send-retry: a thrown channel fetch is retried once after 2 s
+- 2026-10-31 19:36 | burn-down | A 4xx/5xx answer stays a refusal with no retry; cursor rule unchanged; one test, injectable delay

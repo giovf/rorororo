@@ -9,6 +9,7 @@ import {
   pickRange,
   runBullets,
   send,
+  SEND_RETRY_DELAY_MS,
 } from './notify-owner.ts';
 
 const SHA = '1007fe1354a19ed2e4a5e3c4d8c0b940f853504b';
@@ -164,10 +165,45 @@ describe('send', () => {
       configured: 1,
       accepted: 0,
     });
-    expect(await send('x', telegram, () => Promise.reject(new Error('ECONNRESET')))).toEqual({
-      configured: 1,
-      accepted: 0,
-    });
+    const noDelay = (): Promise<void> => Promise.resolve();
+    expect(
+      await send('x', telegram, () => Promise.reject(new Error('ECONNRESET')), noDelay),
+    ).toEqual({ configured: 1, accepted: 0 });
+  });
+
+  it('retries once after a thrown fetch, not after a refusal (foundry notify-owner-send-retry)', async () => {
+    const delays: number[] = [];
+    const delay = (ms: number): Promise<void> => {
+      delays.push(ms);
+      return Promise.resolve();
+    };
+    let calls = 0;
+    const onceThenOk = (): Promise<{ ok: boolean; status: number }> =>
+      ++calls === 1
+        ? Promise.reject(new Error('fetch failed'))
+        : Promise.resolve({ ok: true, status: 200 });
+    expect(await send('x', telegram, onceThenOk, delay)).toEqual({ configured: 1, accepted: 1 });
+    expect(calls).toBe(2);
+    expect(delays).toEqual([SEND_RETRY_DELAY_MS]);
+    // Two throws: refused, one retry only.
+    calls = 0;
+    delays.length = 0;
+    const alwaysThrows = (): Promise<{ ok: boolean; status: number }> => {
+      calls++;
+      return Promise.reject(new Error('fetch failed'));
+    };
+    expect(await send('x', telegram, alwaysThrows, delay)).toEqual({ configured: 1, accepted: 0 });
+    expect(calls).toBe(2);
+    // A 5xx answer is final: no retry, no delay.
+    calls = 0;
+    delays.length = 0;
+    const refuses = (): Promise<{ ok: boolean; status: number }> => {
+      calls++;
+      return Promise.resolve({ ok: false, status: 502 });
+    };
+    expect(await send('x', telegram, refuses, delay)).toEqual({ configured: 1, accepted: 0 });
+    expect(calls).toBe(1);
+    expect(delays).toEqual([]);
   });
 
   it('with no secrets nothing is configured', async () => {

@@ -180,17 +180,41 @@ export interface SendResult {
   accepted: number;
 }
 
-/** Sends one text to every configured channel. Never throws on a bad answer; a thrown fetch counts as refused. */
-export async function send(text: string, env: Channels, fetchFn: FetchLike): Promise<SendResult> {
+/** Pause before the one retry of a send whose fetch threw (foundry `notify-owner-send-retry`, 2026-10-31). */
+export const SEND_RETRY_DELAY_MS = 2000;
+
+/**
+ * Sends one text to every configured channel. Never throws on a bad answer. A fetch that throws
+ * (a dropped connection, `fetch failed`) is retried once after SEND_RETRY_DELAY_MS; a second throw
+ * counts as refused, and a 4xx/5xx answer is a refusal at once — run 461 of 2026-10-30 lost one
+ * Telegram socket, exited red and resent both messages on the next push, so the owner's phone got
+ * one twice. `delay` is injectable for the test.
+ */
+export async function send(
+  text: string,
+  env: Channels,
+  fetchFn: FetchLike,
+  delay: (ms: number) => Promise<void> = (ms) => new Promise((r) => setTimeout(r, ms)),
+): Promise<SendResult> {
   const result: SendResult = { configured: 0, accepted: 0 };
   const attempt = async (label: string, url: string, init?: RequestInit): Promise<void> => {
     result.configured += 1;
-    try {
-      const r = await fetchFn(url, init);
-      console.log(`${label}:`, r.status);
-      if (r.ok) result.accepted += 1;
-    } catch (err) {
-      console.log(`${label}: failed (${err instanceof Error ? err.message : String(err)})`);
+    for (let tries = 0; ; tries++) {
+      try {
+        const r = await fetchFn(url, init);
+        console.log(`${label}:`, r.status);
+        if (r.ok) result.accepted += 1;
+        return;
+      } catch (err) {
+        const message = err instanceof Error ? err.message : String(err);
+        if (tries === 0) {
+          console.log(`${label}: retry in ${SEND_RETRY_DELAY_MS} ms (${message})`);
+          await delay(SEND_RETRY_DELAY_MS);
+          continue;
+        }
+        console.log(`${label}: failed (${message})`);
+        return;
+      }
     }
   };
   if (env.TELEGRAM_BOT_TOKEN && env.TELEGRAM_CHAT_ID) {
