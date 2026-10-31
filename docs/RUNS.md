@@ -2203,3 +2203,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 19:36 | burn-down | Built foundry notify-owner-send-retry: a thrown channel fetch is retried once after 2 s
 - 2026-10-31 19:36 | burn-down | A 4xx/5xx answer stays a refusal with no retry; cursor rule unchanged; one test, injectable delay
 - 2026-10-31 19:41 | burn-down | Stopping at ~32 min: 3 items done (relay text bodies, §8 roll, notify retry); night cap 3 of 3, pass left
+- 2026-10-31 21:07 | triage | notify owner dispatched: last run started 18:42 UTC, 2 h 25 min ago
