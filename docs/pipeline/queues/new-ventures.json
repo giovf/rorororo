@@ -424,8 +424,9 @@
       "effort_days": 0.3,
       "proof": "docs/exchange/spikes/leanpub-claude-code-kit.md with the reader counts and prices of comparable Leanpub books, the royalty and payout facts, the product shape, and a promote / park call",
       "score": 5,
-      "status": "todo",
-      "added": "2026-10-31"
+      "status": "doing",
+      "added": "2026-10-31",
+      "doing_since": "2026-10-31"
     },
     {
       "id": "spike-virtuals-acp-provider-agent",
