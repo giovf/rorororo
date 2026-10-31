@@ -2158,3 +2158,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-10-31 09:27 | build | first-runs: nothing owed; main green at STEP 0; tax-workbook and gankdat research logs carry the reads
 - 2026-10-31 12:10 | triage | notify owner dispatched: last run started 09:06 UTC, 3 h ago
 - 2026-10-31 15:10 | triage | notify | Your Kindle guide is now live on Amazon
+- 2026-10-31 16:06 | triage | notify owner dispatched: last run started 12:59 UTC, 3 h ago
