@@ -1,0 +1,245 @@
+{
+  "request": "creative-fabrica-r-2026-11-01",
+  "fetched_at": "2026-11-01T17:22:21.920Z",
+  "results": [
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/open-store/",
+      "render": true,
+      "fetched_at": "2026-11-01T17:21:55.563Z",
+      "status": 403,
+      "final_url": "https://www.creativefabrica.com/open-store/",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 11,
+        "failed": [
+          "GET https://www.creativefabrica.com/open-store/ → 403",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a53c942b2d2e5120/1793553717465/b225b84723ead7197441ea47b595512bb6a548db0f34831601ca4ffc06a5d3cd/CiNMfdFLmsg0z7D3FY60y2X5hTTTwwM",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/i/a53c942b2d2e5120/CtM3uaNUz-1D0YZ_oohIvBrHl4WyJ-pexX7ERWSOzbbFjwTaVRgkycA8_Vmvt08By9sHSNgWv0QrmB8FyuFBd8nBW5OGUzwZzFYp7hz"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy.",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%o font-size:0;color:transparent {}"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "1.txt",
+      "bytes": 503,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 28964
+    },
+    {
+      "method": "GET",
+      "url": "https://help.creativefabrica.com/hc/en-us/articles/360014596379-What-are-the-guidelines-for-setting-up-a-store",
+      "render": true,
+      "fetched_at": "2026-11-01T17:22:00.201Z",
+      "status": 200,
+      "final_url": "https://help.creativefabrica.com/hc/en-us/articles/360014596379-What-are-the-guidelines-for-setting-up-a-store",
+      "title": "What are the guidelines for setting up a store? – Creative Fabrica",
+      "rendered": {
+        "network_idle": true,
+        "requests": 26,
+        "failed": [
+          "GET https://help.creativefabrica.com/hc/theming_assets/2017065/114094435072/style.css?digest=31200025404444 → net::ERR_ABORTED",
+          "GET https://help.creativefabrica.com/hc/theming_assets/2017065/114094435072/script.js?digest=31200025404444 → net::ERR_ABORTED",
+          "GET https://help.creativefabrica.com/hc/theming_assets/01M5EE282SSYHBBQ65VTNCNJ58 → net::ERR_ABORTED",
+          "POST https://help.creativefabrica.com/hc/activity → net::ERR_ABORTED"
+        ],
+        "console_errors": [
+          "Refused to apply style from 'https://help.creativefabrica.com/hc/theming_assets/2017065/114094435072/style.css?digest=31200025404444' because its MIME type ('text/html') is not a supported stylesheet ",
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Refused to execute script from 'https://help.creativefabrica.com/hc/theming_assets/2017065/114094435072/script.js?digest=31200025404444' because its MIME type ('text/html') is not executable, and stri"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "2.txt",
+      "bytes": 4953,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 91044
+    },
+    {
+      "method": "GET",
+      "url": "https://help.creativefabrica.com/hc/en-us/articles/360015099500-How-can-I-open-a-store",
+      "render": true,
+      "fetched_at": "2026-11-01T17:22:04.196Z",
+      "status": 200,
+      "final_url": "https://help.creativefabrica.com/hc/en-us/articles/360015099500-How-can-I-open-a-store",
+      "title": "How can I open a store? – Creative Fabrica",
+      "rendered": {
+        "network_idle": true,
+        "requests": 22,
+        "failed": [
+          "POST https://help.creativefabrica.com/hc/activity → net::ERR_ABORTED"
+        ],
+        "console_errors": []
+      },
+      "headers": {
+        "content-type": "text/html; charset=utf-8"
+      },
+      "file": "3.txt",
+      "bytes": 4689,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 93663
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/tag/budget-spreadsheet/",
+      "render": true,
+      "fetched_at": "2026-11-01T17:22:07.519Z",
+      "status": 403,
+      "final_url": "https://www.creativefabrica.com/tag/budget-spreadsheet/",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 12,
+        "failed": [
+          "GET https://www.creativefabrica.com/tag/budget-spreadsheet/ → 403",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a53c946f5a1b9181/1793553728080/f5e4c515fbab2ae8e787e79da796ba65d0ed125fabd898c549ce9addfcca79e7/Ck-fB4LopwPL0XjoU8K8pYAkSl_9DB-",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/i/a53c946f5a1b9181/CsjV2pTzaL4vAbAtzlyjeI2ls-0dLt81fY4zKrTjfVQ77qbnxDSj80ztna5gDEk1f3Lu6cRhOyFmiXy5-u6f0BWVq5hYEG31bTNWwO9"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%o font-size:0;color:transparent {}",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy."
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "4.txt",
+      "bytes": 503,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 29043
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/designer/spreadsheetshub/",
+      "render": true,
+      "fetched_at": "2026-11-01T17:22:11.351Z",
+      "status": 403,
+      "final_url": "https://www.creativefabrica.com/designer/spreadsheetshub/",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 12,
+        "failed": [
+          "GET https://www.creativefabrica.com/designer/spreadsheetshub/ → 403",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a53c9487abd6a1f7/1793553732136/71d68390b0f54db0e29b24932965261da0e9e155f2d9c2b09cf8f0a54077401d/CkJTdJ9gNTJXHO3pIrMeV3uTbyVi03D",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/i/a53c9487abd6a1f7/CvEr9NlC7QTga2Vax2ognQIreUICE7hJ-KocDTAONsFLYw8fwldtQObs6uDr-L6930hGmMsMEz8IaqzYwkO0wWYFfiriMFKjvNIK8lS"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy.",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%o font-size:0;color:transparent {}"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "5.txt",
+      "bytes": 503,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 29049
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/product/budget-planner-excel-rainbow-theme/",
+      "render": true,
+      "fetched_at": "2026-11-01T17:22:15.014Z",
+      "status": 403,
+      "final_url": "https://www.creativefabrica.com/product/budget-planner-excel-rainbow-theme/",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 11,
+        "failed": [
+          "GET https://www.creativefabrica.com/product/budget-planner-excel-rainbow-theme/ → 403",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a53c949e5b43a20f/1793553735618/0367e3e9604a7f9ef1978ee29ba9b8d6771faf2960aae88680542e60e264e90c/CiswcQw_S1vEP6mh7dDjWpKrnVMnma0",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/i/a53c949e5b43a20f/Cg9bSwfdWvE6ESubkJaiLtmDwyc5UfAmKAr9htuZUMdzRp7l2MhCOx41KGAbhOhsOytmX1MO9EcuEyTqj2mXc2YSg5BWJC6Rfbt-22x"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy.",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%o font-size:0;color:transparent {}"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "6.txt",
+      "bytes": 503,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 29102
+    },
+    {
+      "method": "GET",
+      "url": "https://www.creativefabrica.com/tag/self-employed/",
+      "render": true,
+      "fetched_at": "2026-11-01T17:22:18.447Z",
+      "status": 403,
+      "final_url": "https://www.creativefabrica.com/tag/self-employed/",
+      "title": "Just a moment...",
+      "rendered": {
+        "network_idle": true,
+        "requests": 12,
+        "failed": [
+          "GET https://www.creativefabrica.com/tag/self-employed/ → 403",
+          "GET https://challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/pat/a53c94b39803a22d/1793553739226/5ef836c578d2cce0b618b901e930380fbb2d3f2abdae6b62a43f62e5caefabb3/CmDBEKVmLYYp78k5KdNDzU2_fC-JtrY",
+          "GET https://brunhild.challenges.cloudflare.com/cdn-cgi/challenge-platform/h/g/i/a53c94b39803a22d/CjFwGCXKDi_nhQzksEAepRb5CkiZYNT98sU3I1jxe1ZrvryA0Lnm4SbOGQmjLyCv-7k6P6r7rWgh678sYzw2pzhnDOH28WnIvznGsWB"
+        ],
+        "console_errors": [
+          "Failed to load resource: the server responded with a status of 403 ()",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Connecting to 'data:,' violates the following Content Security Policy directive: \"connect-src 'self' https://hagen.challenges.cloudflare.com https://brunhild.challenges.cloudflare.com https://*.alg13.",
+          "Fetch API cannot load data:,. Refused to connect because it violates the document's Content Security Policy.",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%d font-size:0;color:transparent NaN",
+          "%c%o font-size:0;color:transparent {}",
+          "%c%o font-size:0;color:transparent {}"
+        ]
+      },
+      "headers": {
+        "content-type": "text/html; charset=UTF-8"
+      },
+      "file": "7.txt",
+      "bytes": 503,
+      "truncated": false,
+      "extracted": "text",
+      "raw_bytes": 28985
+    }
+  ]
+}
