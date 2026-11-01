@@ -575,6 +575,16 @@ the notice, the count-0 throw and the paused surfaces stay as shipped 10-19. Nex
 consideration and github-discussion 25; when the page names a `replacement-dataset` the re-read re-points
 instead of waiting.
 
+Re-read 2026-11-01 (build, relay `planning-origin-2026-11-01`, `refresh-uk-planning-reread-2026-10-18`):
+unchanged for a fourth week — `/dataset/planning-application.json` is still the 867-byte page of 10-18 and
+10-25 (`entity-count 0`, `phase alpha`, `replacement-dataset ""`, `consideration
+planning-applications-decisions`, `github-discussion 25`) and `entity.json?dataset=planning-application&limit=5`
+answers `count 0`. Demand: the 11-01 Daily numbers row has the paused Apify actor at 27 runs in 30 days for
+outside users (4 failed, the clean-exit pause holding), `datasets 30d: uk-planning 118` all internal, external
+0 (the three `GET /v1/data/uk-planning 503` of the day are the notice answering probes), x402 unlisted; so
+the §7 clock (external-query clock from 10-12, demand carried by the actor's users) does not start and nothing
+retires. No code change. Next read 2026-11-08 (`not_before` moved a week). Re-point candidate unchanged.
+
 ## Research 2026-10-13 (pipeline starved — burn-down)
 
 Read: the 10-10 → 10-12 Daily numbers rows, `docs/INBOX.md` to 10-12 23:12, `docs/ALERTS.md`, the
