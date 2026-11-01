@@ -9,14 +9,19 @@ import {
   handoffDigestLine,
   formatLine,
   isOpen,
+  isShelfAskWeek,
+  lastMondayOf,
   ledger,
   medianAge,
+  notifyLines,
   ownActionIds,
   parseArgs,
   parseEntries,
   parseMinutes,
   rankAsks,
   renderOpen,
+  SHELF_ASK_MARK,
+  shelfAsk,
   summary,
   type Queue,
 } from './handoffs.ts';
@@ -341,5 +346,39 @@ describe('owner digest (OPEN.md, notify line, median age)', () => {
     const empty = renderOpen([], [], new Map());
     expect(empty).toContain('Nothing is waiting on you.');
     expect(empty).toContain('None.');
+  });
+});
+
+describe('shelfAsk (tax-workbook shelf-stats-owner-note)', () => {
+  const runs = `- 2026-11-30 07:40 | notify | 2 requests waiting on you, oldest 9 days: Meta key\n`;
+
+  it('names the last Monday of a month', () => {
+    expect(lastMondayOf(2026, 10).toISOString().slice(0, 10)).toBe('2026-11-30');
+    expect(lastMondayOf(2026, 11).toISOString().slice(0, 10)).toBe('2026-12-28');
+    expect(lastMondayOf(2027, 1).toISOString().slice(0, 10)).toBe('2027-02-22');
+  });
+
+  it('asks only in the last Monday week, from the first dated report on', () => {
+    expect(isShelfAskWeek(new Date('2026-11-23T07:30:00Z'))).toBe(false);
+    expect(isShelfAskWeek(new Date('2026-11-30T07:30:00Z'))).toBe(true);
+    expect(isShelfAskWeek(new Date('2026-12-03T22:00:00Z'))).toBe(true);
+    expect(isShelfAskWeek(new Date('2026-12-07T07:30:00Z'))).toBe(false);
+    expect(isShelfAskWeek(new Date('2026-12-28T07:30:00Z'))).toBe(true);
+    expect(isShelfAskWeek(new Date('2026-10-26T07:30:00Z'))).toBe(false);
+  });
+
+  it('prints one plain sentence with the dedupe words, within the phone limit', () => {
+    const ask = shelfAsk(new Date('2026-11-30T07:30:00Z'), runs);
+    expect(ask).toContain(SHELF_ASK_MARK);
+    expect(ask).toContain('etsy views 4/day kindle 2 sold');
+    expect(ask?.length ?? 99).toBeLessThanOrEqual(DIGEST_MAX_CHARS);
+    expect(shelfAsk(new Date('2026-11-23T07:30:00Z'), runs)).toBeUndefined();
+  });
+
+  it('stays quiet for three weeks after a notify line carried the words', () => {
+    const asked = `${runs}- 2026-11-30 07:41 | notify | Monthly ${SHELF_ASK_MARK}: "etsy views 4/day kindle 2 sold"\n`;
+    expect(shelfAsk(new Date('2026-12-01T07:30:00Z'), asked)).toBeUndefined();
+    expect(shelfAsk(new Date('2026-12-28T07:30:00Z'), asked)).toBeDefined();
+    expect(notifyLines(asked)).toHaveLength(2);
   });
 });

@@ -12,6 +12,8 @@
 //                                                        then rebuilds docs/for-owner/OPEN.md (the owner's list, by payoff),
 //                                                        prints the median open age of the owner asks and — when one is older
 //                                                        than 7 days — one `notify:` digest line for the weekly report
+//                                                        and, in the last Monday's week of each month from 2026-11-30, one
+//                                                        `shelf-ask:` sentence the report appends to that digest line
 //      npm run handoffs -- list [--stale 7] [--all] [--json] [--no-write]
 //      npm run handoffs -- close "<substring of the entry's first line>" --by <routine> --how "<how>"
 //                               [--superseded] [--on YYYY-MM-DD]
@@ -383,6 +385,66 @@ export function renderOpen(
   return lines.join('\n');
 }
 
+// ---------------------------------------------------------------------------------------------
+// Shelf-stats ask (2026-11-01, tax-workbook `shelf-stats-owner-note`): the tax workbook's §6 kill
+// rule needs Etsy Shop Manager's listing views a day and KDP Reports' copies sold, readings only the
+// owner can see (Etsy forbids automated reads; the sandbox never opens kdp.amazon.com). Once a
+// month — the week of the last Monday, first 2026-11-30 — `npm run handoffs` prints one
+// `shelf-ask:` sentence that the Monday report appends to its `| notify |` digest line (or sends
+// alone); the owner answers with one Telegram note, `etsy views 4/day kindle 2 sold`, which
+// scripts/shelf-note.ts turns into RESEARCH §7 rows the run it arrives. The words SHELF_ASK_MARK
+// are the dedupe record: a `| notify |` line carrying them within SHELF_ASK_DEDUPE_DAYS keeps the
+// script quiet, so a report run twice in a week asks once.
+
+export const RUNS_FILE = path.join('docs', 'RUNS.md');
+/** Phrase every shelf ask carries — the dedupe record in RUNS.md, like the usage ask's. */
+export const SHELF_ASK_MARK = 'shelf note';
+/** The first Monday report that asks (the Etsy listing's day 32; the Kindle's day 30). */
+export const SHELF_ASK_FIRST = '2026-11-30';
+/** One ask per month-window: a line within this many days keeps the script quiet. */
+export const SHELF_ASK_DEDUPE_DAYS = 21;
+
+/** The last Monday of a month, UTC midnight (`month0` 0–11). */
+export function lastMondayOf(year: number, month0: number): Date {
+  const last = new Date(Date.UTC(year, month0 + 1, 0));
+  const back = (last.getUTCDay() + 6) % 7; // days since Monday
+  return new Date(Date.UTC(year, month0, last.getUTCDate() - back));
+}
+
+/** True on the last Monday of the month and the six days after it, from SHELF_ASK_FIRST on. */
+export function isShelfAskWeek(today: Date): boolean {
+  const day = Date.UTC(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate());
+  if (day < Date.parse(`${SHELF_ASK_FIRST}T00:00:00Z`)) return false;
+  const y = today.getUTCFullYear();
+  const m = today.getUTCMonth();
+  // the week of a month's last Monday may run into the next month (2026-11-30 → 2026-12-06)
+  let monday = lastMondayOf(y, m).getTime();
+  if (day < monday) monday = lastMondayOf(m === 0 ? y - 1 : y, (m + 11) % 12).getTime();
+  return day >= monday && day < monday + 7 * 86_400_000;
+}
+
+/** `| notify |` lines of RUNS.md as `{ at, text }`. */
+export function notifyLines(runsText: string): { at: number; text: string }[] {
+  const out: { at: number; text: string }[] = [];
+  for (const m of runsText.matchAll(/^- (\d{4}-\d{2}-\d{2}) (\d{2}:\d{2}) \| notify \| (.*)$/gm)) {
+    out.push({ at: Date.parse(`${m[1]}T${m[2]}:00Z`), text: m[3] ?? '' });
+  }
+  return out;
+}
+
+/**
+ * The one-sentence monthly ask for the two shelf readings, or undefined outside the ask week or
+ * when RUNS.md already carries a `| notify |` line with SHELF_ASK_MARK from the last
+ * SHELF_ASK_DEDUPE_DAYS days. ≤ DIGEST_MAX_CHARS: it rides the Monday report's digest line.
+ */
+export function shelfAsk(today: Date, runsText: string): string | undefined {
+  if (!isShelfAskWeek(today)) return undefined;
+  const floor = today.getTime() - SHELF_ASK_DEDUPE_DAYS * 86_400_000;
+  const asked = notifyLines(runsText).some((l) => l.text.includes(SHELF_ASK_MARK) && l.at >= floor);
+  if (asked) return undefined;
+  return `Monthly ${SHELF_ASK_MARK}: "etsy views 4/day kindle 2 sold" from Etsy stats and KDP Reports`;
+}
+
 /** Every queue under docs/pipeline/queues (venture + items); unreadable files are skipped. */
 export function loadQueues(dir: string): Queue[] {
   if (!existsSync(dir)) return [];
@@ -472,6 +534,9 @@ function main(): void {
       if (digest) console.log(`notify: ${digest}`);
       const handoffDigest = handoffDigestLine(handoffs, today);
       if (handoffDigest) console.log(`handoffs (the watchdog sends this one): ${handoffDigest}`);
+      const runsFile = path.resolve(RUNS_FILE);
+      const ask = shelfAsk(today, existsSync(runsFile) ? readFileSync(runsFile, 'utf8') : '');
+      if (ask) console.log(`shelf-ask: ${ask}`);
       if (!flags['no-write']) {
         const content = renderOpen(asks, handoffs, loadActionFiles(path.resolve(ACTIONS_DIR)));
         if (writeOpen(path.resolve(OPEN_FILE), content)) console.log(`${OPEN_FILE} rebuilt`);

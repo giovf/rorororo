@@ -5,7 +5,10 @@
 // place. Telegram's update offset lives in the file's last line so nothing is duplicated; a
 // dashboard idea is acknowledged on the Worker (`POST /ops/api/ideas/ack`) only after the file
 // is written, so a failed run leaves it to be collected next hour.
+// A note with the two monthly shelf readings (`etsy views 4/day kindle 2 sold`, asked by the Monday
+// report, 2026-11-01) also lands as rows of ventures/tax-workbook/RESEARCH.md §7 (scripts/shelf-note.ts).
 import { readFileSync, writeFileSync, existsSync } from 'node:fs';
+import { recordShelfNotes } from './shelf-note.ts';
 
 const token = process.env.TELEGRAM_BOT_TOKEN;
 const chatId = process.env.TELEGRAM_CHAT_ID;
@@ -64,6 +67,17 @@ md =
   `\n\n<!-- offset:${nextOffset} -->\n`;
 writeFileSync(file, md);
 console.log(`${updates.length} new note(s), ${ideas.length} dashboard idea(s)`);
+
+// 3. Shelf readings (tax-workbook shelf-stats-owner-note, 2026-11-01): a note carrying
+// `etsy views N/day` and/or `kindle N sold` — the monthly ask on the Monday report's digest line —
+// becomes RESEARCH §7 rows the run it arrives; committed with the notes. Never blocks the notes.
+try {
+  const rows = recordShelfNotes(lines);
+  if (rows.length)
+    console.log(`${rows.length} shelf reading row(s) written to ventures/tax-workbook/RESEARCH.md`);
+} catch (e) {
+  console.error(`shelf readings: ${e.message}`);
+}
 
 if (ideas.length) {
   const ack = await fetch(`${opsBase}/ops/api/ideas/ack`, {

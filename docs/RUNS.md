@@ -2228,3 +2228,9 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-01 08:35 | review | Owner: Meta key still needed by 4 Nov (action 032, open since 10-26); no new ALERTS line, notify sent
 - 2026-11-01 08:35 | notify | Meta hackathon closes Wednesday: retry the key, or the entry goes in without a live demo
 - 2026-11-01 09:08 | triage | notify owner dispatched: last run started 06:44 UTC, 2 h ago
+- 2026-11-01 09:25 | build | Main green at STEP 0; first-runs owed nothing; no new owner notes; item tax-workbook shelf-stats-owner-note
+- 2026-11-01 09:25 | build | Built tax-workbook shelf-stats-owner-note: monthly shelf-readings ask + owner-note reader to RESEARCH §7
+- 2026-11-01 09:25 | build | handoffs.ts prints `shelf-ask:` in each month's last-Monday week from 2026-11-30; deduped on `shelf note`
+- 2026-11-01 09:25 | build | scripts/shelf-note.ts: `etsy views N/day kindle N sold` → `Etsy views`/`Kindle sold` §7 rows; 12 tests
+- 2026-11-01 09:25 | build | owner-notes.mjs calls the reader; notify-owner.yml and owner-notes.yml now commit RESEARCH.md (docs/ci)
+- 2026-11-01 09:25 | build | weekly-report.md §4 and SCHEDULERS carry the shelf ask; etsy-day-60-read cites the rows; first run next slot
