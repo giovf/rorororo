@@ -2227,3 +2227,4 @@ over 120 chars after the `| <routine> | ` prefix; earlier lines are grandfathere
 - 2026-11-01 08:35 | review | STRATEGY §4 Now column refreshed from the 11-01 rows; §2 Etsy, directories, Bazaar rows; §8 five lines
 - 2026-11-01 08:35 | review | Owner: Meta key still needed by 4 Nov (action 032, open since 10-26); no new ALERTS line, notify sent
 - 2026-11-01 08:35 | notify | Meta hackathon closes Wednesday: retry the key, or the entry goes in without a live demo
+- 2026-11-01 09:08 | triage | notify owner dispatched: last run started 06:44 UTC, 2 h ago
