@@ -263,3 +263,5 @@
 - 2026-10-30 19:09 | notification | github.com | [giovf/rorororo] Run failed: notify owner - main (6c0741c) | notify-owner.yml run 461 failed, step "Run node --disable-warning=Experimental…" (watchdog ci-failed line 19:39); later run 462 succeeded | logged
 - 2026-10-31 14:32 | store | amazon.com (KDP) | Your book is available in the Kindle Store! | Kindle guide live, enrolled in KDP Select | logged (ALERTS line, KINDLE.md status)
 - 2026-10-31 15:05 | notification | amazon.com | Welcome to Amazon: Shopping just got easier | account welcome promo | logged
+- 2026-11-01 13:59 | notification | github.com | [giovf/rorororo] build(deps): bump the minor-and-patch group with 12 updates (PR #10) | Dependabot PR opened | logged
+- 2026-11-01 14:03 | notification | github.com | Re: [giovf/rorororo] build(deps): bump the minor-and-patch group (PR #10) | PR #10 merged into main | logged
