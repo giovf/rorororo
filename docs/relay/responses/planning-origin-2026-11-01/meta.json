@@ -1,12 +1,13 @@
 {
-  "request": "planning-origin-2026-10-25",
-  "fetched_at": "2026-10-25T17:10:42.825Z",
+  "request": "planning-origin-2026-11-01",
+  "fetched_at": "2026-11-01T17:11:02.525Z",
   "results": [
     {
       "method": "GET",
       "url": "https://www.planning.data.gov.uk/dataset/planning-application.json",
-      "fetched_at": "2026-10-25T17:10:41.476Z",
+      "fetched_at": "2026-11-01T17:11:01.502Z",
       "status": 200,
+      "elapsed_ms": 414,
       "final_url": "https://www.planning.data.gov.uk/dataset/planning-application.json",
       "headers": {
         "content-type": "application/json",
@@ -19,8 +20,9 @@
     {
       "method": "GET",
       "url": "https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=5",
-      "fetched_at": "2026-10-25T17:10:42.647Z",
+      "fetched_at": "2026-11-01T17:11:02.419Z",
       "status": 200,
+      "elapsed_ms": 105,
       "final_url": "https://www.planning.data.gov.uk/entity.json?dataset=planning-application&limit=5",
       "headers": {
         "content-type": "application/json",
